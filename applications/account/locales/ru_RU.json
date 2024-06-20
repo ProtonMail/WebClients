@@ -118,9 +118,6 @@
       "Add label": [
         "Добавить ярлык"
       ],
-      "Add multiple users": [
-        "Добавление нескольких пользователей"
-      ],
       "Add notification": [
         "Добавить уведомление"
       ],
@@ -303,9 +300,6 @@
       ],
       "Create link": [
         "Создать ссылку"
-      ],
-      "Create user": [
-        "Создать пользователя"
       ],
       "Create users": [
         "Создать пользователей"
@@ -3437,12 +3431,25 @@
         ".rpm для Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Со сквозным шифрованием"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Дополнительная безопасность совместного доступа"
       ],
       "Encrypted cloud storage for all your files": [
         "Зашифрованное облачное хранилище для всех ваших файлов"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Защищено швейцарскими законами о конфиденциальности"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "Защищенное облачное хранилище и общий доступ к файлам, защищающие ваши данные"
       ]
     },
     "Duration": {
@@ -3880,11 +3887,6 @@
         "Предупреждение"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "Двухфакторная аутентификация"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Платные функции ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
@@ -4209,6 +4211,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Пожалуйста, сначала задайте адрес электронной почты для восстановления/уведомлений"
+      ],
+      "Please try again in a few moments.": [
+        "Пожалуйста, попробуйте еще раз чуть позже."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Пожалуйста, перейдите на бизнес-план с более чем 1 пользователем, чтобы получить многопользовательскую поддержку"
@@ -6085,14 +6090,6 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -7156,6 +7153,9 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
+      "Invite rejected": [
+        "Приглашение отклонено"
+      ],
       "Invite successfully sent": [
         "Приглашение успешно отправлено",
         "Приглашения успешно отправлено",
@@ -7398,9 +7398,6 @@
       ],
       "Open source": [
         "Открытый исходный код"
-      ],
-      "Optional": [
-        "Необязательно"
       ],
       "or ${ selectFileButton }": [
         "или ${ selectFileButton }"
@@ -7942,9 +7939,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Эта проверка может занять до одного часа. Вы можете безопасно перейти к следующим шагам."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Это отменит вашу текущую платную подписку и вы потеряете все льготы по лояльности, которые вы накопили."
       ],
@@ -7989,9 +7983,6 @@
       ],
       "to ${ product } Business": [
         "на ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Чтобы разрешить домену ${ boldDomainName } использовать SAML SSO, необходимо подтвердить право собственности на него, добавив следующую запись DNS TXT к домену вашего поставщика DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Чтобы избежать потери данных, удаляйте его только в том случае, если вы знаете, что делаете, или экспортировали копию."
@@ -8600,6 +8591,14 @@
         "Ваша заявка в службу поддержки была закрыта. Благодарим вас за обращение в службу поддержки ${ BRAND_NAME }."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Когда включено, вложенные папки наследуют цвет родительской папки."
@@ -9046,6 +9045,9 @@
       "Access to my events": [
         "Доступ к моим событиям"
       ],
+      "Account recovery": [
+        "Восстановление аккаунта"
+      ],
       "Account storage": [
         "Хранилище учётной записи"
       ],
@@ -9456,6 +9458,9 @@
       ],
       "Folder location": [
         "Размещение папки"
+      ],
+      "Folders and labels": [
+        "Папки и ярлыки"
       ],
       "Font family": [
         "Семейство шрифта"
@@ -10339,9 +10344,6 @@
       ],
       "Limited time offer": [
         "Limited time offer"
-      ],
-      "Secure email that protects your privacy": [
-        "Защищенная электронная почта, обеспечивающая неприкосновенность частной жизни"
       ]
     },
     "mailtrial2024: Action": {
@@ -12908,11 +12910,6 @@
         "Дополнительный часовой пояс"
       ]
     },
-    "Private Member": {
-      "private": [
-        "конфиденциальный"
-      ]
-    },
     "Property type": {
       "Address": [
         "Адрес"
@@ -14117,8 +14114,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } календарь на пользователя",
+        "${ MaxCalendars } календаря на пользователя",
+        "${ MaxCalendars } календарей на пользователя",
+        "${ MaxCalendars } календарей на пользователя"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } пользовательский домен электронной почты",
+        "${ maxDomainNames } пользовательских домена электронной почты",
+        "${ maxDomainNames } пользовательских доменов электронной почты",
+        "Пользовательских доменов электронной почты: ${ maxDomainNames }"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } адрес электронной почты на пользователя",
+        "${ maxEmails } адреса электронной почты на пользователя",
+        "${ maxEmails } адресов электронной почты на пользователя",
+        "Адресов электронной почты на пользователя: ${ maxEmails }"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME }, включая неограниченное количество псевдонимов hide-my-email"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
       ],
       "${ planMaxSpace } total storage": [
         "Хранилище объемом ${ planMaxSpace }"
@@ -14138,11 +14156,20 @@
       "10 email addresses": [
         "10 адресов электронной почты"
       ],
+      "20 email addresses per user": [
+        "20 адресов электронной почты на пользователя"
+      ],
+      "25 calendars per user": [
+        "25 календарей на пользователя"
+      ],
       "6 users": [
         "6 пользователей"
       ],
       "Add any new files": [
         "Добавление любых новых файлов"
+      ],
+      "Automatic email forwarding": [
+        "Автоматическая пересылка электронной почты"
       ],
       "Back up photos from your devices": [
         "Резервное копирование фотографий с ваших устройств"
@@ -14179,6 +14206,9 @@
       ],
       "I still want to cancel": [
         "Я все еще хочу отменить"
+      ],
+      "Keep ${ config.planName }": [
+        "Сохранить ${ config.planName }"
       ],
       "Learn more about our impact": [
         "Узнайте больше о нашем вкладе"
@@ -14227,6 +14257,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Разблокирование доступа к Интернету в Иране"
+      ],
+      "Unlimited folders and labels": [
+        "Неограниченное количество папок / ярлыков"
       ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
@@ -14495,9 +14528,6 @@
       ],
       "Undo in progress": [
         "Выполняется отмена"
-      ],
-      "User created": [
-        "Пользователь создан"
       ],
       "User updated": [
         "Пользователь обновлён"
@@ -14835,9 +14865,6 @@
       ],
       "Add filter": [
         "Добавить фильтр"
-      ],
-      "Add new user": [
-        "Добавить нового пользователя"
       ],
       "Add PayPal payment method": [
         "Добавить способ оплаты PayPal"
@@ -16212,11 +16239,6 @@
       ],
       "Primary admin": [
         "Основной администратор"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
       ]
     },
     "Validation": {

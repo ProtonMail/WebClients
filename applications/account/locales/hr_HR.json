@@ -16,6 +16,9 @@
       "activate": [
         "aktiviraj"
       ],
+      "Activate": [
+        "Aktiviraj"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
       ],
@@ -192,9 +195,6 @@
       ],
       "Create link": [
         "Stvori poveznicu"
-      ],
-      "Create user": [
-        "Stvori korisnika"
       ],
       "Create users": [
         "Stvori korisnike"
@@ -792,6 +792,9 @@
       ],
       "Void": [
         "Nevažeće"
+      ],
+      "Welcome": [
+        "Dobrodošli"
       ],
       "Wipe": [
         "Očisti"
@@ -2304,6 +2307,11 @@
         "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "End-to-End šifriranje"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuta"
@@ -2457,14 +2465,12 @@
         "Upozorenje"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ]
     },
     "Error": {
@@ -4149,9 +4155,6 @@
       "Open source": [
         "Otvoreni kôd"
       ],
-      "Optional": [
-        "Neobavezno"
-      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
       ],
@@ -4874,6 +4877,9 @@
         "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
         "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
       ],
+      "Account recovery": [
+        "Oporavak računa"
+      ],
       "Account storage": [
         "Prostor za pohranu računa"
       ],
@@ -5146,6 +5152,9 @@
       ],
       "Folder location": [
         "Lokacija mape"
+      ],
+      "Folders and labels": [
+        "Mape i oznake"
       ],
       "Font family": [
         "Obitelj fontova"
@@ -6668,11 +6677,6 @@
         "Sekundarna vremenska zona"
       ]
     },
-    "Private Member": {
-      "private": [
-        "privatno"
-      ]
-    },
     "Property type": {
       "Address": [
         "Adresa"
@@ -7016,6 +7020,11 @@
         "Nadogradnja"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mjesec",
@@ -7172,6 +7181,19 @@
       ]
     },
     "Subscription reminder": {
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendar po korisniku",
+        "${ MaxCalendars } kalendara po korisniku",
+        "${ MaxCalendars } kalendara po korisniku"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-pošta po korisniku",
+        "${ maxEmails } e-pošte po korisniku",
+        "${ maxEmails } e-pošte po korisniku"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostora za pohranu po korisniku"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -7196,6 +7218,9 @@
       "Reactivate": [
         "Ponovo aktiviraj"
       ],
+      "Unlimited folders and labels": [
+        "Neograničen broj mapa i oznaka"
+      ],
       "Version history": [
         "Povijest verzija"
       ]
@@ -7206,6 +7231,9 @@
       ],
       "Desktop app": [
         "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -7331,9 +7359,6 @@
       ],
       "Sessions revoked": [
         "Sesije su opozvane"
-      ],
-      "User created": [
-        "Korisnik je stvoren"
       ],
       "User updated": [
         "Korisnik je ažuriran"
@@ -7634,6 +7659,9 @@
       "Close": [
         "Zatvori"
       ],
+      "Confirm": [
+        "Potvrdi"
+      ],
       "Confirm address": [
         "Potvrdite adresu e-pošte"
       ],
@@ -7699,6 +7727,9 @@
       ],
       "Delete user?": [
         "Izbriši korisnika?"
+      ],
+      "Details": [
+        "Pojedinosti"
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
@@ -7771,6 +7802,9 @@
       ],
       "Error": [
         "Pogreška"
+      ],
+      "Event": [
+        "Događaj"
       ],
       "Export": [
         "Izvoz"
