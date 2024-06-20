@@ -1,13 +1,25 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
-import { encryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
 import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
+
 export type OfflineConfig = { salt: string; params: Argon2Params };
-export type OfflineComponents = { offlineKD: string; offlineConfig: OfflineConfig };
+
+export type OfflineComponents = {
+    /** Argon2 derivation of the user password. Kept encrypted
+     * in the persisted session blob. */
+    offlineKD: string;
+    /** The salt & argon2 parameters used to generated the offline
+     * key derivation. Defaults to `ARGON2_PARAMS.RECOMMENDED` */
+    offlineConfig: OfflineConfig;
+    /** A random 32 bytes string encrypted with the offlineKD.
+     * Allows verifying a local password via argon2 derivation. */
+    offlineVerifier: string;
+};
 
 const KEY_ALGORITHM = { name: 'AES-GCM', length: 256 };
 export const CACHE_SALT_LENGTH = 32;
@@ -80,8 +92,17 @@ export const encryptOfflineCacheKey = async (cacheKey: CryptoKey, offlineKD: Uin
     return encryptData(offlineKey, new Uint8Array(rawCacheKey), PassEncryptionTag.Offline);
 };
 
+export const getOfflineVerifier = async (offlineKD: Uint8Array): Promise<string> => {
+    const offlineKey = await getSymmetricKey(offlineKD);
+    const verifier = generateKey();
+    const offlineVerifier = await encryptData(offlineKey, verifier, PassEncryptionTag.Offline);
+
+    return uint8ArrayToString(offlineVerifier);
+};
+
 export const getOfflineComponents = async (loginPassword: string): Promise<OfflineComponents> => {
     const offlineSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
+
     const offlineKD = await getOfflineKeyDerivation(loginPassword, offlineSalt).catch((error) => {
         captureMessage('Offline: Argon2 error', { level: 'error', extra: { error, context: OFFLINE_ARGON2_PARAMS } });
         throw error;
@@ -90,5 +111,6 @@ export const getOfflineComponents = async (loginPassword: string): Promise<Offli
     return {
         offlineConfig: { salt: uint8ArrayToString(offlineSalt), params: OFFLINE_ARGON2_PARAMS },
         offlineKD: uint8ArrayToString(offlineKD),
+        offlineVerifier: await getOfflineVerifier(offlineKD),
     };
 };

@@ -6,7 +6,6 @@ import type { AuthService } from '@proton/pass/lib/auth/service';
 import { getOfflineComponents, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
 import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import type { Maybe } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -17,10 +16,7 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
  * we can only password lock if we have a valid offline config in
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
-export const passwordLockAdapterFactory = (
-    auth: AuthService,
-    options: { getEncryptedCacheKey: (userID: Maybe<string>) => Promise<Maybe<string>> }
-): LockAdapter => {
+export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
     const { authStore, getPersistedSession, onSessionPersist } = auth.config;
 
     /** Persist the `unlockRetryCount` without re-encrypting
@@ -42,8 +38,12 @@ export const passwordLockAdapterFactory = (
 
         check: async () => {
             logger.info(`[PasswordLock] checking password lock`);
-            authStore.setLockLastExtendTime(getEpoch());
 
+            const offlineConfig = authStore.getOfflineConfig();
+            const offlineVerifier = authStore.getOfflineVerifier();
+            if (!(offlineConfig && offlineVerifier)) return { mode: LockMode.NONE, locked: false };
+
+            authStore.setLockLastExtendTime(getEpoch());
             return { mode: adapter.type, locked: false, ttl: authStore.getLockTTL() };
         },
 
@@ -60,9 +60,10 @@ export const passwordLockAdapterFactory = (
             await onBeforeCreate?.();
 
             if (!authStore.hasOfflinePassword()) {
-                const { offlineConfig, offlineKD } = await getOfflineComponents(secret);
+                const { offlineConfig, offlineKD, offlineVerifier } = await getOfflineComponents(secret);
                 authStore.setOfflineConfig(offlineConfig);
                 authStore.setOfflineKD(offlineKD);
+                authStore.setOfflineVerifier(offlineVerifier);
             }
 
             authStore.setLockMode(adapter.type);
@@ -118,18 +119,19 @@ export const passwordLockAdapterFactory = (
                 });
 
                 const offlineConfig = authStore.getOfflineConfig();
-                const userID = authStore.getUserID();
-                const encryptedCacheKey = await options.getEncryptedCacheKey(userID);
-                if (!(offlineConfig && encryptedCacheKey)) throw new Error('Invalid password lock');
+                const offlineVerifier = authStore.getOfflineVerifier();
+
+                if (!(offlineConfig && offlineVerifier)) throw new PassCryptoError('Invalid password lock');
 
                 const { salt, params } = offlineConfig;
                 const offlineKD = await getOfflineKeyDerivation(secret, stringToUint8Array(salt), params);
                 const offlineKey = await getSymmetricKey(offlineKD);
 
                 /** this will throw if the derived offlineKD is incorrect */
-                await decryptData(offlineKey, stringToUint8Array(encryptedCacheKey), PassEncryptionTag.Offline);
+                await decryptData(offlineKey, stringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
                 const hash = uint8ArrayToString(offlineKD);
                 authStore.setOfflineKD(hash);
+
                 await setRetryCount(0).catch(noop);
 
                 return hash;
