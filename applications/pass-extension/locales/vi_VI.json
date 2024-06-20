@@ -86,6 +86,9 @@
       "Continue": [
         "Tiếp tục"
       ],
+      "Continue offline": [
+        "Tiếp tục ngoại tuyến"
+      ],
       "Continue without pinning": [
         "Tiếp tục nhưng không ghim"
       ],
@@ -410,6 +413,9 @@
       "Try again": [
         "Thử lại"
       ],
+      "Unlock offline with password": [
+        "Mở khóa ngoại tuyến bằng mật khẩu"
+      ],
       "Update": [
         "Cập nhật"
       ],
@@ -634,6 +640,9 @@
       "Moving item failed": [
         "Dời nội dung thất bại"
       ],
+      "Network error": [
+        "Lỗi mạng"
+      ],
       "Passphrase is incorrect": [
         "Đăng nhập không chính xác"
       ],
@@ -706,6 +715,9 @@
       "Unknown passkey": [
         "Khóa truy cập không xác định"
       ],
+      "Unlock failure": [
+        "Mở khóa thất bại"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Định dạng tệp ${ PASS_APP_NAME } không được hỗ trợ"
       ],
@@ -726,6 +738,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Sai mã PIN. Hãy thử lại."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Bạn đang ngoại tuyến. Vui lòng kết nối lại để mở khóa ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Mã PIN của bạn đã bị gỡ bỏ bởi một người dùng ${ PASS_APP_NAME } khác"
@@ -757,8 +772,14 @@
       "Byte": [
         "Byte\nBytes"
       ],
+      "Gigabyte": [
+        "Gigabytes"
+      ],
       "Kilobyte": [
         "Kilôbytes"
+      ],
+      "Megabyte": [
+        "Megabytes"
       ]
     },
     "Info": {
@@ -779,6 +800,9 @@
       ],
       "${ n } item": [
         "${ n } nội dung"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } sẽ luôn truy câp được"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } sẽ hiển thị biểu tượng của nội dung qua các máy chủ hình ảnh ẩn danh của ${ BRAND_NAME }."
@@ -819,8 +843,14 @@
       "Access successfully confirmed": [
         "Xác thực truy cập thành công"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Truy cập vào ${ PASS_APP_NAME } sẽ luôn yêu cầu mật khẩu ${ BRAND_NAME } của bạn."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Truy cập các mật khẩu của bạn khi di chuyển với các ứng dụng di động của chúng tôi."
+      ],
+      "Add a username field": [
+        "Thêm một tên tài khoản"
       ],
       "Admin": [
         "Quản trị viên"
@@ -879,6 +909,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Chọn một khóa đăng nhập đã lưu để đăng nhập vào ${ domain }"
       ],
+      "Click here to add a field for a username.": [
+        "Bấm vào đây để thêm một trường cho tên tài khoản."
+      ],
       "Click the icon to open it anytime.": [
         "Nhấn vào biểu tượng để mở nó bất kỳ lúc nào."
       ],
@@ -909,6 +942,15 @@
       "Deleting \"${ payload.content.name }\"": [
         "Đang xóa \"${ payload.content.name }\""
       ],
+      "Disabling auto-lock": [
+        "Tắt tự động khóa"
+      ],
+      "Disabling auto-lock failed": [
+        "Tắt tự động khóa thất bại"
+      ],
+      "Disabling offline mode...": [
+        "Đang tắt chế độ ngoại tuyến..."
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Xem video YouTube của ${ PASS_APP_NAME }"
       ],
@@ -923,6 +965,21 @@
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Kích hoạt ${ PASS_APP_NAME } qua liên kết tài khoản ${ BRAND_NAME } của bạn"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Bật tự động khóa để bảo vệ dữ liệu của bạn"
+      ],
+      "Enabling offline mode...": [
+        "Đang bật chế độ ngoại tuyến..."
+      ],
+      "Enabling password auto-lock": [
+        "Bật tự động khóa bằng mật khẩu"
+      ],
+      "Enabling password lock failed": [
+        "Bật khóa bằng mật khẩu thất bại"
+      ],
+      "Enabling PIN auto-lock": [
+        "Bật tự động khóa bằng mã PIN"
       ],
       "Enter your PIN code": [
         "Nhập mã PIN của bạn"
@@ -1056,11 +1113,17 @@
       "None": [
         "Không"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Chế độ ngoại tuyến không thể được tắt lúc này"
+      ],
       "Offline mode could not be enabled at the moment": [
-        "Truy cập ngoại tuyến không thể được bật lúc này"
+        "Chế độ ngoại tuyến không thể được bật lúc này"
       ],
       "Offline support successfully disabled": [
         "Truy cập ngoại tuyến đã được tắt"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Truy cập trực tuyến vào ${ PASS_APP_NAME } sẽ cần mã PIN để mở khóa phiên làm việc của bạn. Bạn sẽ bị đăng xuất sau 3 lần thử thất bại."
       ],
       "Open the Extensions menu": [
         "Mở danh sách tùy chọn của các tiện ích mở rộng"
@@ -1080,6 +1143,9 @@
       "Password copied": [
         "Đã sao chép mật khẩu"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
+      ],
       "Pending access to the shared data": [
         "Đang chờ truy cập vào dữ liệu được chia sẻ"
       ],
@@ -1091,6 +1157,21 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để tự động khóa bằng mật khẩu."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để hủy đăng ký phương thức khóa hiện tại."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để cập nhật thời gian tự động khóa."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Vui lòng xác nhận mã PIN của bạn để chỉnh sửa cài đặt này."
@@ -1112,6 +1193,9 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Được bảo vệ bởi ${ PROTON_SENTINEL_LINK }, phần mềm bảo vệ tài khoản nâng cao của chúng tôi"
+      ],
+      "Registering PIN lock failed": [
+        "Đăng ký khóa bằng mã PIN thất bại"
       ],
       "Restoring items from trash": [
         "Đang khôi phục nội dung từ thùng rác"
@@ -1421,6 +1505,9 @@
       "Create an encrypted note": [
         "Tạo ghi chú được mã hóa"
       ],
+      "Create lock": [
+        "Tạo khóa"
+      ],
       "Create new vault": [
         "Tạo kho lưu trữ mới"
       ],
@@ -1450,6 +1537,12 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Email (alias)": [
+        "Email (alias)"
+      ],
+      "Email (new alias)": [
+        "Email (alias mới)"
       ],
       "Email aliases": [
         "Email bí danh"
@@ -1613,6 +1706,9 @@
       "PIN": [
         "Mã PIN"
       ],
+      "PIN code": [
+        "Mã PIN"
+      ],
       "Prefix": [
         "Tiền tố"
       ],
@@ -1718,6 +1814,9 @@
       "Username": [
         "Tên người dùng"
       ],
+      "Username/email": [
+        "Tên đăng nhập/Email"
+      ],
       "Vault ID": [
         "ID kho lưu trữ"
       ],
@@ -1746,6 +1845,9 @@
       ],
       "Sign in to your account": [
         "Đăng nhập vào tài khoản của bạn"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME } của bạn."
       ]
     },
     "lobby: Title": {
@@ -1820,11 +1922,17 @@
       "Enter a prefix": [
         "Nhập tiền tố"
       ],
+      "Enter email": [
+        "Nhập email"
+      ],
       "Enter email or username": [
         "Nhập email hoặc tên người dùng"
       ],
       "Enter password": [
         "Nhập mật khẩu"
+      ],
+      "Enter username": [
+        "Điền tên đăng nhập"
       ],
       "Full Name": [
         "Tên đầy đủ"
