@@ -11,7 +11,7 @@ type BaseWebsocketPayload = {
 export type WebsocketConnectionEventPayloads = {
   [WebsocketConnectionEvent.Connecting]: BaseWebsocketPayload
   [WebsocketConnectionEvent.Connected]: BaseWebsocketPayload
-  [WebsocketConnectionEvent.CommitIdOutOfSync]: BaseWebsocketPayload
+  [WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync]: BaseWebsocketPayload
   [WebsocketConnectionEvent.Disconnected]: BaseWebsocketPayload & {
     serverReason: ConnectionCloseReason
   }
