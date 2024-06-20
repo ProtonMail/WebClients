@@ -29,9 +29,6 @@
       "Add domain": [
         "加入網域"
       ],
-      "Add multiple users": [
-        "添加多位使用者"
-      ],
       "Add PayPal": [
         "加入 PayPal"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "創建閘道器"
-      ],
-      "Create user": [
-        "創建使用者"
       ],
       "Create users": [
         "創建使用者"
@@ -303,7 +297,7 @@
         "保持進階版訂購授權"
       ],
       "Let's talk": [
-        "讓我們來聊聊！"
+        "我們一起聊聊！"
       ],
       "Load more": [
         "載入更多"
@@ -615,7 +609,7 @@
         "檢視方案詳細內容"
       ],
       "What do I get?": [
-        "我的方案服務內容："
+        "我的專屬服務方案："
       ],
       "Your server will be provisioned in the next days": [
         "您的伺服器將在接下來的幾天內設定完成"
@@ -1995,11 +1989,6 @@
         "驗證電子郵件已傳送至 ${ address }"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "雙重驗證"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
@@ -3370,7 +3359,7 @@
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "若您取消，您的${ planTitle }訂購授權將會於${ expiryDate }到期"
+        "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
@@ -3548,9 +3537,6 @@
       ],
       "Open source": [
         "開放原始碼"
-      ],
-      "Optional": [
-        "選項"
       ],
       "or ${ selectFileButton }": [
         "或${ selectFileButton }"
@@ -3766,7 +3752,7 @@
         "每${ cycle }個月自動續訂。"
       ],
       "Subscription auto-renews every month.": [
-        "每月自動續訂"
+        "每月自動續購授權"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
@@ -3837,11 +3823,8 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此使用者目前負責您組織的付款。降級此成員後，將會由您負責組織的付款。"
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "此驗證或需時長達一小時。您可安心繼續之後的步驟。"
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "此會取消目前訂購授權，您會失去目前使用的福利"
+        "若您仍要進行這步驟，則現有付費的授權會被取消，您過去累積的老客戶專屬福利，也無法續存。"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "這將允許使用 PayPal 來支付您的 ${ BRAND_NAME } 訂購授權。我們將在瀏覽器的新分頁中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用它然後再繼續。"
@@ -3866,9 +3849,6 @@
       ],
       "to ${ product } Business": [
         "至${ product }商業版"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "若要允許 ${ boldDomainName } 網域使用 SAML SSO，您必須前往您的 DNS 提供者新增下列 DNS TXT 記錄到您的網域中，以便驗證其為您所有。"
       ],
       "To cancel your subscription, please reach out to us.": [
         "要取消您的訂購授權，請聯絡我們。"
@@ -4467,9 +4447,6 @@
       "Country": [
         "國家"
       ],
-      "Create password": [
-        "創建密碼"
-      ],
       "Credits used": [
         "已使用儲值"
       ],
@@ -4958,7 +4935,7 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "您組織的${ twoFAMembers.length }/${ members.length }成員使用了雙重身分驗證"
+        "${ twoFAMembers.length }/${ members.length }位組織成員採用雙重身分驗證"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -6398,11 +6375,6 @@
         "免費"
       ]
     },
-    "Private Member": {
-      "private": [
-        "私密"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "取消"
@@ -7228,6 +7200,18 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "每位使用者${ MaxCalendars }個行事曆"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 個自訂電郵網域"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } 組電郵位址/每位使用者"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } 可用空間 / 每位使用者"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
       ],
@@ -7242,6 +7226,9 @@
       ],
       "Add any new files": [
         "新增任何檔案"
+      ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -7269,6 +7256,9 @@
       ],
       "I still want to cancel": [
         "我還想取消"
+      ],
+      "Keep ${ config.planName }": [
+        "保留 ${ config.planName }"
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
@@ -7299,6 +7289,9 @@
       ],
       "Unblocking internet access in Iran": [
         "解除於伊朗的網路存取權"
+      ],
+      "Unlimited folders and labels": [
+        "無限的資料夾 / 標籤"
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
@@ -7495,9 +7488,6 @@
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
-      ],
-      "User created": [
-        "使用者已創建"
       ],
       "User updated": [
         "使用者已更新"
@@ -7698,9 +7688,6 @@
       ],
       "Add domain": [
         "加入網域"
-      ],
-      "Add new user": [
-        "新增使用者"
       ],
       "Add PayPal payment method": [
         "加入 PayPal 繳款方式"
@@ -8102,7 +8089,7 @@
         "請選擇一個方案"
       ],
       "Send email reminders?": [
-        "傳送電子郵件提醒"
+        "傳送電郵提醒？"
       ],
       "Set new password": [
         "設定新密碼"
@@ -8371,16 +8358,6 @@
       ],
       "Primary admin": [
         "主要系統管理員"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "單一登入"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "您身份提供者提供的單一登入使用者"
       ]
     },
     "Validation": {

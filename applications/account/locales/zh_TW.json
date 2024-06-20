@@ -98,9 +98,6 @@
       "Add label": [
         "加入標籤"
       ],
-      "Add multiple users": [
-        "添加多位使用者"
-      ],
       "Add notification": [
         "加入通知"
       ],
@@ -286,9 +283,6 @@
       ],
       "Create link": [
         "創建連結"
-      ],
-      "Create user": [
-        "創建使用者"
       ],
       "Create users": [
         "創建使用者"
@@ -624,7 +618,7 @@
         "離開"
       ],
       "Let's talk": [
-        "讓我們來聊聊！"
+        "我們一起聊聊！"
       ],
       "Load more": [
         "載入更多"
@@ -1146,7 +1140,7 @@
         "歡迎"
       ],
       "What do I get?": [
-        "我的方案服務內容："
+        "我的專屬服務方案："
       ],
       "Wipe": [
         "清除"
@@ -3369,12 +3363,25 @@
         ".rpm 給 Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "點對點加密"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "進階的共享安全性"
       ],
       "Encrypted cloud storage for all your files": [
         "加密的雲端儲存您的檔案"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隱私法律保障"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "安全雲端儲存和檔案共享保護您的資料"
       ]
     },
     "Duration": {
@@ -3787,11 +3794,6 @@
         "警告"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "雙重驗證"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
@@ -4104,6 +4106,9 @@
       ],
       "Please set a recovery/notification email first": [
         "請先設定一個復原/通知電郵"
+      ],
+      "Please try again in a few moments.": [
+        "請稍候再試."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "請升級至選用多於 1 位使用者的企業方案，以便享用多使用者支援"
@@ -5923,17 +5928,6 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -6002,7 +5996,7 @@
         "${ number } 個伺服器"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } 個上傳的檔案並非正確的私鑰。請確認後再試一次"
+        "${ numberOfNonPrivateKeys } 個已上傳的檔案並不是有效的密鑰。請確認後再試一次"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -6104,7 +6098,7 @@
         "復原檔可讓您在重設帳號後，解鎖並檢視您的資料"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
-        "如果您忘記密碼，復原短語將讓您可以存取您的帳號並復原您的加密訊息。"
+        "倘若想不起密碼時，復原短語讓您可以存取帳號，復原加密郵件訊息"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
@@ -6764,7 +6758,7 @@
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "若您取消，您的${ planTitle }訂購授權將會於${ expiryDate }到期"
+        "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
@@ -6879,6 +6873,9 @@
       ],
       "Internet connection restored.": [
         "網際網路連線已恢復。"
+      ],
+      "Invite rejected": [
+        "邀請已婉拒"
       ],
       "Invite successfully sent": [
         "邀請已成功傳送"
@@ -7116,9 +7113,6 @@
       ],
       "Open source": [
         "開放原始碼"
-      ],
-      "Optional": [
-        "選項"
       ],
       "or ${ selectFileButton }": [
         "或${ selectFileButton }"
@@ -7481,7 +7475,7 @@
         "每${ cycle }個月自動續訂。"
       ],
       "Subscription auto-renews every month.": [
-        "每月自動續訂"
+        "每月自動續購授權"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
@@ -7624,11 +7618,8 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此使用者目前負責您組織的付款。降級此成員後，將會由您負責組織的付款。"
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "此驗證或需時長達一小時。您可安心繼續之後的步驟。"
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "此會取消目前訂購授權，您會失去目前使用的福利"
+        "若您仍要進行這步驟，則現有付費的授權會被取消，您過去累積的老客戶專屬福利，也無法續存。"
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "這將會為您的檔案刪除${ rententionLabel }之前所有先前的版本。"
@@ -7668,9 +7659,6 @@
       ],
       "to ${ product } Business": [
         "至${ product }商業版"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "若要允許 ${ boldDomainName } 網域使用 SAML SSO，您必須前往您的 DNS 提供者新增下列 DNS TXT 記錄到您的網域中，以便驗證其為您所有。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
@@ -7919,7 +7907,7 @@
         "我們建議您使用你的復原短語取代它。"
       ],
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
-        "我們在您信任的裝置上妥善保管復原金鑰，以防發生資料丟失。"
+        "我們在您信任的裝置上妥善保管復原金鑰，以防發生資料丟失"
       ],
       "We use 3-D Secure to protect your payments": [
         "我們使用3-D安全來保護你的付款資訊"
@@ -7994,7 +7982,7 @@
         "透過已加密的 ${ BRAND_NAME } 位址，您可以使用全部的 ${ BRAND_NAME } 服務"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "使用目前的方案，你只能透過@pm.me郵件地位址接收訊息，升級以透過@pm.me傳送訊息，及創建更多的@pm.me位址"
+        "您現有的服務方案，僅可用您的 @pm.me 電郵位址接收訊息郵件。現在就升級方案，即可使用 @pm.me 位址傳送電郵，還可創建其它所需的 @pm.me 電郵位址"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "如果沒有啟用，您將無法創建新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
@@ -8253,6 +8241,17 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的密鑰。請將密鑰個別上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8675,6 +8674,9 @@
       "Access to my events": [
         "存取我的行程"
       ],
+      "Account recovery": [
+        "帳號復原"
+      ],
       "Account storage": [
         "帳號儲存空間"
       ],
@@ -9079,6 +9081,9 @@
       ],
       "Folder location": [
         "資料夾位置"
+      ],
+      "Folders and labels": [
+        "資料夾和標籤"
       ],
       "Font family": [
         "字型系列"
@@ -9892,7 +9897,7 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "您組織的${ twoFAMembers.length }/${ members.length }成員使用了雙重身分驗證"
+        "${ twoFAMembers.length }/${ members.length }位組織成員採用雙重身分驗證"
       ],
       "Almost there": [
         "快完成了"
@@ -9976,9 +9981,6 @@
       ],
       "Limited time offer": [
         "限時促銷"
-      ],
-      "Secure email that protects your privacy": [
-        "安全防護的電子郵件保護隱私"
       ]
     },
     "mailtrial2024: Action": {
@@ -12308,11 +12310,6 @@
         "次要時區"
       ]
     },
-    "Private Member": {
-      "private": [
-        "私密"
-      ]
-    },
     "Property type": {
       "Address": [
         "位址"
@@ -13424,6 +13421,18 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "每位使用者${ MaxCalendars }個行事曆"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 個自訂電郵網域"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } 組電郵位址/每位使用者"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } 可用空間 / 每位使用者"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 總儲存空間"
       ],
@@ -13438,6 +13447,9 @@
       ],
       "Add any new files": [
         "新增任何檔案"
+      ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -13465,6 +13477,9 @@
       ],
       "I still want to cancel": [
         "我還想取消"
+      ],
+      "Keep ${ config.planName }": [
+        "保留 ${ config.planName }"
       ],
       "Learn more about our impact": [
         "了解更多我們的影響"
@@ -13495,6 +13510,9 @@
       ],
       "Unblocking internet access in Iran": [
         "解除於伊朗的網路存取權"
+      ],
+      "Unlimited folders and labels": [
+        "無限的資料夾 / 標籤"
       ],
       "Unlimited folders, labels and filters": [
         "資料夾、標籤與篩選器無上限"
@@ -13757,9 +13775,6 @@
       ],
       "Undo in progress": [
         "復原進行中"
-      ],
-      "User created": [
-        "使用者已創建"
       ],
       "User updated": [
         "使用者已更新"
@@ -14076,9 +14091,6 @@
       ],
       "Add filter": [
         "加入篩選器"
-      ],
-      "Add new user": [
-        "新增使用者"
       ],
       "Add PayPal payment method": [
         "加入 PayPal 繳款方式"
@@ -14825,7 +14837,7 @@
         "請選擇您想此通知何時傳送"
       ],
       "Send email reminders?": [
-        "傳送電子郵件提醒"
+        "傳送電郵提醒？"
       ],
       "Session management": [
         "工作階段管理"
@@ -15444,16 +15456,6 @@
       ],
       "Primary admin": [
         "主要系統管理員"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "單一登入"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "您身份提供者提供的單一登入使用者"
       ]
     },
     "Validation": {

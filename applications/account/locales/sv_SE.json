@@ -118,9 +118,6 @@
       "Add label": [
         "Lägg till etikett"
       ],
-      "Add multiple users": [
-        "Lägg till flera användare"
-      ],
       "Add notification": [
         "Lägg till avisering"
       ],
@@ -312,9 +309,6 @@
       ],
       "Create link": [
         "Skapa länk"
-      ],
-      "Create user": [
-        "Skapa användare"
       ],
       "Create users": [
         "Skapa användare"
@@ -949,6 +943,9 @@
       "Send my username": [
         "Skicka mitt användarnamn"
       ],
+      "Send new invite": [
+        "Skicka ny inbjudan"
+      ],
       "Send reminder": [
         "Skicka påminnelse"
       ],
@@ -1149,6 +1146,9 @@
       ],
       "Verify account": [
         "Verifiera konto"
+      ],
+      "Verify domain": [
+        "Verifiera domän"
       ],
       "View": [
         "Visa"
@@ -3958,11 +3958,6 @@
         "Varning"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Betalda funktioner för ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }"
@@ -4079,6 +4074,9 @@
       ],
       "Email address is invalid": [
         "E-postadress är ogiltig"
+      ],
+      "Email address is not available": [
+        "E-postadress är inte tillgänglig"
       ],
       "Email address is required": [
         "E-postadress är obligatoriskt"
@@ -4233,6 +4231,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnyckel måste vara aktiverad för att skapa inbjudna användare"
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
@@ -6153,17 +6154,6 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -7181,6 +7171,12 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "Invitation link expired": [
+        "Inbjudningslänk löpt ut"
+      ],
+      "Invitation link used": [
+        "Inbjudningslänk använd"
+      ],
       "Invite Accepted": [
         "Inbjudan accepterad"
       ],
@@ -7482,9 +7478,6 @@
       "Open source": [
         "Öppen källkod"
       ],
-      "Optional": [
-        "Valfritt"
-      ],
       "or ${ selectFileButton }": [
         "eller ${ selectFileButton }"
       ],
@@ -7632,6 +7625,9 @@
       "Preview for this file type is not supported": [
         "Förhandsgranskning för denna filtyp stöds inte"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Förhandsgranskning av dokument stöds inte ännu. Öppna dokumentet för att visa det."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
       ],
@@ -7649,6 +7645,9 @@
       ],
       "Public link invite": [
         "Offentlig länkinbjudan"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Offentlig delning av dokument stöds ännu inte. Be ägaren att bjuda in dig direkt till dokumentet."
       ],
       "purchase additional storage": [
         "köp ytterligare lagring"
@@ -7779,6 +7778,9 @@
       "Set recovery phrase": [
         "Ställ in återställningsfras"
       ],
+      "Set your password": [
+        "Ställ in ditt lösenord"
+      ],
       "Setting up your organization": [
         "Ställer in din organisation"
       ],
@@ -7820,9 +7822,6 @@
       ],
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för företagsanvändare med anpassade domäner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
@@ -7999,6 +7998,12 @@
       "This file is too large to preview": [
         "Denna fil är för stor för att förhandsgranska"
       ],
+      "This invitation link already used. Please sign in directly instead.": [
+        "Denna inbjudningslänk har redan använts. Logga in direkt istället."
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Denna inbjudningslänk har löpt ut. Kontakta din administratör för att begära åtkomst."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Detta är en fras på 12 ord som du blev ombedd att ställa in."
       ],
@@ -8007,6 +8012,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Detta är en krypteringsnyckel som du kanske har sparat tidigare."
+      ],
+      "This is an invitation from:": [
+        "Detta är en inbjudan från:"
       ],
       "This is the password you used before the password reset.": [
         "Det här är lösenordet som du hade innan lösenordsåterställningen."
@@ -8035,8 +8043,11 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denna användare ansvarar för närvarande för betalningar för din organisation. Genom att degradera denna medlem, kommer du bli ansvarig för betalningar för din organisation."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Denna verifiering kan ta upp till en timme. Du kan säkert fortsätta till nästa steg."
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Denna verifiering kan ta upp till en timme. Efter lyckad verifiering, ta inte bort TXT-posten eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
+      ],
+      "This will cancel the previous invite and send a new one to **${ email }**.": [
+        "Detta kommer avbryta den tidigare inbjudan och skicka en ny till **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
@@ -8083,8 +8094,8 @@
       "to ${ product } Business": [
         "till ${ product } Business"
       ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "För att tillåta domänen ${ boldDomainName } att använda SAML SSO måste du verifiera äganderätten till den genom att lägga till följande DNS TXT-post till din domän i din DNS-leverantör."
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "För att tillåta domänen **${ domainName }** att använda SAML SSO måste du verifiera äganderätten till den genom att lägga till följande DNS TXT-post till din domän i din DNS-leverantör."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "För att undvika dataförlust, ta bara bort det om du vet vad du gör eller har exporterat en kopia."
@@ -8599,6 +8610,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Du måste fortfarande svara på inbjudningar för att värden ska se ditt svar."
       ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Du kommer att kunna befordra användaren till administratör eller göra dem privata när de har accepterat inbjudan."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
       ],
@@ -8722,6 +8736,17 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9178,6 +9203,9 @@
       "Access to my events": [
         "Åtkomst till mina händelser"
       ],
+      "Account recovery": [
+        "Kontoåterställning"
+      ],
       "Account storage": [
         "Kontolagring"
       ],
@@ -9585,6 +9613,9 @@
       ],
       "Folder location": [
         "Mappens plats"
+      ],
+      "Folders and labels": [
+        "Mappar och etiketter"
       ],
       "Font family": [
         "Typsnittsfamilj"
@@ -10299,6 +10330,9 @@
       "Create an alias": [
         "Skapa ett alias"
       ],
+      "Don't have access to your 2FA?": [
+        "Har du inte åtkomst till din 2FA?"
+      ],
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
@@ -10500,9 +10534,26 @@
       ],
       "Limited time offer": [
         "Tidsbegränsat erbjudande"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "An encrypted email service that puts your privacy first": [
+        "En krypterad e-posttjänst som sätter din integritet främst"
       ],
-      "Secure email that protects your privacy": [
-        "Säker e-post som skyddar din integritet"
+      "Encrypted email and calendar to get you started": [
+        "Krypterad e-post och kalender för att du ska komma igång"
+      ],
+      "Encrypted solutions to protect your entire business": [
+        "Krypterade lösningar för att skydda hela ditt företag"
+      ],
+      "Enhanced security and premium features for teams": [
+        "Förbättrad säkerhet och premiumfunktioner för team"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Tidsbegränsat erbjudande: **Få upp till 35 % rabatt** på årliga paket"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Du har blivit inbjuden att prova ${ MAIL_APP_NAME }"
       ]
     },
     "mailtrial2024: Action": {
@@ -10587,11 +10638,17 @@
       "Delete": [
         "Ta bort"
       ],
+      "Delete and revoke invite": [
+        "Ta bort och återkalla inbjudan"
+      ],
       "Edit": [
         "Redigera"
       ],
       "Remove": [
         "Ta bort"
+      ],
+      "Resend invite link": [
+        "Skicka inbjudningslänk igen"
       ],
       "Revoke sessions": [
         "Återkalla sessioner"
@@ -11056,6 +11113,9 @@
       "Advanced sharing security": [
         "Avancerad delningssäkerhet"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Alla ${ BRAND_NAME }-tjänster"
+      ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
       ],
@@ -11301,6 +11361,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Tailored to your needs": [
+        "Skräddarsytt efter dina behov"
       ],
       "Tor over VPN": [
         "Tor över VPN"
@@ -12528,6 +12591,9 @@
       "Current plan": [
         "Nuvarande paket"
       ],
+      "Customizable services for large teams.": [
+        "Anpassningsbara tjänster för stora team."
+      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Ladda ner och installera relevanta appar och tillägg för att börja använda ${ PASS_APP_NAME }"
       ],
@@ -13079,11 +13145,6 @@
       ],
       "Secondary time zone": [
         "Sekundär tidszon"
-      ]
-    },
-    "Private Member": {
-      "private": [
-        "privat"
       ]
     },
     "Property type": {
@@ -13742,6 +13803,9 @@
       "Actions": [
         "Åtgärder"
       ],
+      "Drag to reorder": [
+        "Dra för att sortera om"
+      ],
       "Labels": [
         "Etiketter"
       ]
@@ -13822,6 +13886,11 @@
       ],
       "Verification": [
         "Verifikation"
+      ]
+    },
+    "signup: Action": {
+      "Request a demo": [
+        "Begär en demo"
       ]
     },
     "specialoffer: Action": {
@@ -14851,9 +14920,6 @@
       "Undo in progress": [
         "Ångra pågår"
       ],
-      "User created": [
-        "Användare skapad"
-      ],
       "User updated": [
         "Användare uppdaterad"
       ],
@@ -14888,6 +14954,9 @@
     "Success message": {
       "Domain deleted": [
         "Domän borttagen"
+      ],
+      "Invitation resent": [
+        "Inbjudan skickad igen"
       ],
       "Sessions revoked": [
         "Sessioner återkallade"
@@ -15024,6 +15093,9 @@
       ],
       "Import": [
         "Importera"
+      ],
+      "Invitation email": [
+        "E-postinbjudan"
       ],
       "List": [
         "Lista"
@@ -15184,9 +15256,6 @@
       ],
       "Add filter": [
         "Lägg till filter"
-      ],
-      "Add new user": [
-        "Lägg till ny användare"
       ],
       "Add PayPal payment method": [
         "Lägg till PayPal betalningsmetod"
@@ -15522,6 +15591,9 @@
       ],
       "Edit organization identity": [
         "Redigera organisationsidentitet"
+      ],
+      "Edit profile": [
+        "Redigera profil"
       ],
       "Edit servers": [
         "Redigera servrar"
@@ -15963,6 +16035,9 @@
       "Send email reminders?": [
         "Skicka e-postpåminnelser?"
       ],
+      "Send new invite?": [
+        "Skicka ny inbjudan?"
+      ],
       "Session management": [
         "Sessionshantering"
       ],
@@ -16375,6 +16450,9 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppera e-postmeddelanden i samma konversation tillsammans i din inkorg eller visa dem separat."
       ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Identitetsleverantörens offentliga nyckel används för att signera autentiseringspåståenden. Hämta certifikathashen från din identitetsleverantör."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
       ],
@@ -16599,17 +16677,90 @@
         "Primär admin"
       ]
     },
-    "Users table: AI-powered": {
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-adress"
+      ],
+      "Add multiple users": [
+        "Lägg till flera användare"
+      ],
+      "Add new user": [
+        "Lägg till ny användare"
+      ],
+      "Admin": [
+        "Admin"
+      ],
+      "An invitation will be sent to this email address.": [
+        "En inbjudan kommer att skickas till denna e-postadress."
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Confirm password": [
+        "Bekräfta lösenord"
+      ],
+      "Create password": [
+        "Skapa lösenord"
+      ],
+      "Create password instead": [
+        "Skapa lösenord istället"
+      ],
+      "Create user": [
+        "Skapa användare"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Name": [
+        "Namn"
+      ],
+      "Optional": [
+        "Valfritt"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Kom ihåg att dela användarens inloggningsinformation med dem."
+      ],
+      "Send invite link via email instead": [
+        "Skicka inbjudningslänk via e-post istället"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Detta kommer skapa en ny ${ MAIL_APP_NAME }-adress."
+      ],
+      "User created": [
+        "Användare skapad"
+      ],
+      "VPN connections": [
+        "VPN-anslutningar"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administratörer kan inte komma åt privata användares data"
+      ],
       "AI": [
         "AI"
-      ]
-    },
-    "Users table: single sign-on enabled": {
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Inbjudan skickad, inväntar svar från den inbjudna medlemmen"
+      ],
+      "Invite sent": [
+        "Inbjudan skickad"
+      ],
+      "It's you": [
+        "Det är du"
+      ],
+      "Private": [
+        "Privat"
+      ],
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
+      ],
       "SSO user provided by your identity provider": [
         "SSO-användare tillhandahållen av din identitetsleverantör"
       ]

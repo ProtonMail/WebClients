@@ -476,10 +476,10 @@
       "Not now": [
         "Şimdi değil"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6134,14 +6134,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hesabı sil"
@@ -6163,6 +6155,14 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -8282,6 +8282,47 @@
         "${ totalPrice } için"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "and 15 more premium features": [
+        "ve 15 ücretli özellik daha"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Otomatik e-posta iletme ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Ücretli bir tarifeye geçerek İnterneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+      ],
+      "No ads or tracking": [
+        "Reklam veya izleme yok"
+      ],
+      "Short @pm.me email address": [
+        "Kısa @pm.me e-posta adresi"
+      ],
+      "Support our mission": [
+        "Amacımızı destekleyin"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade your productivity": [
+        "Verimliliğinizi artırın"
+      ],
+      "We don't sell your data": [
+        "Verilerinizi satmayız"
+      ],
+      "Your privacy is our mission": [
+        "Amacımız gizliliğinizi sağlamaktır"
+      ]
+    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } tek gelir kaynağını kullanıcı aboneliklerinden sağlıyor. Desteğiniz bağımsız kalmamızı, çevrim içi gizliliğe odaklanma misyonumuzu ilerletmemizi ve gizlilik ve özgürlük için mücadele eden aktivistleri ve kuruluşları desteklemeyi sürdürmemizi sağlıyor."
@@ -8302,8 +8343,23 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "Her kullanıcı için ${ MaxCalendars } takvim",
+        "Her kullanıcı için ${ MaxCalendars } takvim"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } özel e-posta etki alanı",
+        "${ maxDomainNames } özel e-posta etki alanı"
+      ],
+      "${ maxEmails } email address per user": [
+        "Her kullanıcı için ${ maxEmails } e-posta adresi",
+        "Her kullanıcı için ${ maxEmails } e-posta adresi"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ve sınırsız hide-my-email takma adı"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } toplam depolama alanı"
@@ -8335,6 +8391,12 @@
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "20 email addresses per user": [
+        "Her kullanıcı için 20 e-posta adresi"
+      ],
+      "25 calendars per user": [
+        "Her kullanıcı için 25 takvim"
+      ],
       "6 users": [
         "6 kullanıcı"
       ],
@@ -8346,6 +8408,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 5 GB Drive depolama alanı ve 1 GB Mail depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
+      ],
+      "Automatic email forwarding": [
+        "Otomatik e-posta iletme"
       ],
       "Back up photos from your devices": [
         "Aygıtlarınızdaki fotoğrafları yedekleyemezsiniz"
@@ -8422,6 +8487,9 @@
       "Unblocking internet access in Iran": [
         "İran İnternet erişimi engelini kaldırmak"
       ],
+      "Unlimited folders and labels": [
+        "Sınırsız sayıda klasör ve etiket"
+      ],
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
       ],
@@ -8460,47 +8528,6 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB depolama alanı"
-      ],
-      "and 15 more premium features": [
-        "ve 15 ücretli özellik daha"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Otomatik e-posta iletme ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Verilerin ele geçirilmesi uyarıları ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Masaüstü uygulaması"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek İnterneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
-      ],
-      "No ads or tracking": [
-        "Reklam veya izleme yok"
-      ],
-      "Short @pm.me email address": [
-        "Kısa @pm.me e-posta adresi"
-      ],
-      "Support our mission": [
-        "Amacımızı destekleyin"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade your productivity": [
-        "Verimliliğinizi artırın"
-      ],
-      "We don't sell your data": [
-        "Verilerinizi satmayız"
-      ],
-      "Your privacy is our mission": [
-        "Amacımız gizliliğinizi sağlamaktır"
       ]
     },
     "Subscription renewal state": {

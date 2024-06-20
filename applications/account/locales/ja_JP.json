@@ -98,9 +98,6 @@
       "Add label": [
         "ラベルを追加する"
       ],
-      "Add multiple users": [
-        "複数のユーザーを追加する"
-      ],
       "Add notification": [
         "通知を追加"
       ],
@@ -283,9 +280,6 @@
       ],
       "Create link": [
         "リンクを作成"
-      ],
-      "Create user": [
-        "ユーザー作成"
       ],
       "Create users": [
         "ユーザーを作成"
@@ -3275,12 +3269,25 @@
         "Fedora / Red Hat 用の .rpm"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "エンドツーエンド暗号化"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "高度な共有セキュリティ"
       ],
       "Encrypted cloud storage for all your files": [
         "すべてのファイルを暗号化されたクラウド ストレージに保存"
+      ],
+      "Protected by Swiss privacy laws": [
+        "スイスのプライバシー法によって保護されています"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "データを保護する安全なクラウド ストレージとファイル共有"
       ]
     },
     "Duration": {
@@ -3657,11 +3664,6 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "警告"
-      ]
-    },
-    "Enabled 2FA": {
-      "2FA": [
-        "2要素認証"
       ]
     },
     "eoy2023: Deal details": {
@@ -5779,17 +5781,6 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -6754,6 +6745,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "Invite rejected": [
+        "招待を拒否"
+      ],
       "Invite successfully sent": [
         "招待状が正常に送信されました"
       ],
@@ -6990,9 +6984,6 @@
       ],
       "Open source": [
         "オープンソース"
-      ],
-      "Optional": [
-        "オプション"
       ],
       "or ${ selectFileButton }": [
         "または ${ selectFileButton }"
@@ -7492,9 +7483,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "この検証には最大 1 時間かかる場合があります。安全に次のステップに進むことができます。"
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "現在の有料サブスクリプションがキャンセルされ、蓄積されたロイヤリティ特典も失われます。"
       ],
@@ -7536,9 +7524,6 @@
       ],
       "to ${ product } Business": [
         "${ product }ビジネスへ"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "ドメイン ${ boldDomainName } で SAML SSO を使用できるようにするには、DNS プロバイダーのドメインに次の DNS TXT レコードを追加して、ドメインの所有権を確認する必要があります。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "データの損失を避けるため、何をしているのかわかっている場合、またはコピーをエクスポートした場合にのみデータを削除してください。"
@@ -8105,6 +8090,17 @@
         "Zoom ミーティング"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "有効にすると、サブフォルダーは親フォルダーの色を継承します。"
@@ -8545,6 +8541,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
+      "Account recovery": [
+        "アカウントの回復"
+      ],
       "Account storage": [
         "アカウントの容量"
       ],
@@ -8949,6 +8948,9 @@
       ],
       "Folder location": [
         "フォルダーの場所"
+      ],
+      "Folders and labels": [
+        "フォルダーとラベル"
       ],
       "Font family": [
         "フォントファミリー"
@@ -9801,9 +9803,6 @@
       ],
       "Limited time offer": [
         "期間限定の特別な特典"
-      ],
-      "Secure email that protects your privacy": [
-        "プライバシーを保護する安全なメール"
       ]
     },
     "mailtrial2024: Action": {
@@ -12193,11 +12192,6 @@
         "セカンダリータイムゾーン"
       ]
     },
-    "Private Member": {
-      "private": [
-        "プライベート"
-      ]
-    },
     "Property type": {
       "Address": [
         "住所"
@@ -13316,6 +13310,18 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "ユーザーあたり ${ MaxCalendars } 個のカレンダー"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 件の独自メールドメイン"
+      ],
+      "${ maxEmails } email address per user": [
+        "1 ユーザーあたり ${ maxEmails } 件のメールアドレス"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "1 ユーザーあたり ${ planMaxSpace } のストレージ"
+      ],
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
       ],
@@ -13324,6 +13330,15 @@
       ],
       "10 email addresses": [
         "10個のメールアドレス"
+      ],
+      "20 email addresses per user": [
+        "ユーザーあたり 20 個の電子メール アドレス"
+      ],
+      "25 calendars per user": [
+        "ユーザーあたり 25 個のカレンダー"
+      ],
+      "Automatic email forwarding": [
+        "自動メール転送"
       ],
       "Calendar sharing": [
         "カレンダーの共有"
@@ -13352,6 +13367,9 @@
       "I still want to cancel": [
         "それでもキャンセルしたいのですが"
       ],
+      "Keep ${ config.planName }": [
+        "${ config.planName } を使い続ける"
+      ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
       ],
@@ -13372,6 +13390,9 @@
       ],
       "Unblocking internet access in Iran": [
         "イランでのインターネットアクセスのブロックを解除"
+      ],
+      "Unlimited folders and labels": [
+        "無制限のフォルダーとラベル"
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -13604,9 +13625,6 @@
       ],
       "Undo in progress": [
         "取り消し中"
-      ],
-      "User created": [
-        "ユーザーが作成されました。"
       ],
       "User updated": [
         "ユーザが更新されました。"
@@ -13914,9 +13932,6 @@
       ],
       "Add filter": [
         "フィルターを追加"
-      ],
-      "Add new user": [
-        "新規ユーザーの追加"
       ],
       "Add PayPal payment method": [
         "PayPal 支払いの追加"
@@ -15264,16 +15279,6 @@
       ],
       "Primary admin": [
         "管理責任者"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
     "Validation": {

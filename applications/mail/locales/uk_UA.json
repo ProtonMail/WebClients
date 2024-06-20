@@ -1173,12 +1173,6 @@
       "Trust": [
         "Довіряти"
       ],
-      "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
-      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -5044,6 +5038,9 @@
     "Header": {
       "Contacts": [
         "Контакти"
+      ],
+      "Report an issue": [
+        "Повідомити про проблему"
       ],
       "Search": [
         "Пошук"
@@ -11223,6 +11220,27 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } календар на користувача",
+        "${ MaxCalendars } календарі на користувача",
+        "${ MaxCalendars } календарів на користувача",
+        "${ MaxCalendars } календарі на користувача"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } власний домен",
+        "${ maxDomainNames } власні домени",
+        "${ maxDomainNames } власних доменів",
+        "${ maxDomainNames } власних доменів"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } адреса е-пошти на користувача",
+        "${ maxEmails } адреси е-пошти на користувача",
+        "${ maxEmails } адрес е-пошти на користувача",
+        "${ maxEmails } адрес е-пошти на користувача"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
       "${ planMaxSpace } total storage": [
         "Усього ${ planMaxSpace } сховища"
       ],
@@ -11231,6 +11249,9 @@
       ],
       "10 email addresses": [
         "10 адрес електронної пошти"
+      ],
+      "Automatic email forwarding": [
+        "Автоматичне пересилання пошти"
       ],
       "Calendar sharing": [
         "Спільний доступ до календаря"
@@ -11261,6 +11282,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Розблокування доступу до Інтернету в Ірані"
+      ],
+      "Unlimited folders and labels": [
+        "Необмежена кількість тек і міток"
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"

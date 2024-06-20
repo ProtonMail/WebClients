@@ -444,10 +444,10 @@
       "Not now": [
         "Most nem"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5630,14 +5630,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -5659,6 +5651,14 @@
       ],
       "Switch plan": [
         "Csomag váltása"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -7264,6 +7264,17 @@
         "Neki: ${ totalPrice }"
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -7271,6 +7282,17 @@
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } naptár felhasználónként",
+        "${ MaxCalendars } naptár felhasználónként"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mail cím felhasználónként",
+        "${ maxEmails } e-mail cím felhasználónként"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tárhely felhasználónként"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } teljes tárhely"
@@ -7290,22 +7312,14 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
+      "Unlimited folders and labels": [
+        "Korlátlan mappa és címke"
+      ],
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
       ],
       "Version history": [
         "Verziótörténet"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
       ]
     },
     "Subscription renewal state": {

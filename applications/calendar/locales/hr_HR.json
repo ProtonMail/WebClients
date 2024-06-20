@@ -366,10 +366,10 @@
       "Not now": [
         "Ne sada"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2020,6 +2020,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ]
     },
     "Error": {
@@ -4108,11 +4111,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -4122,6 +4120,11 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -4886,6 +4889,11 @@
         "Nadogradnja"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mjesec",
@@ -4993,7 +5001,31 @@
         "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "Subscription reminder": {
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendar po korisniku",
+        "${ MaxCalendars } kalendara po korisniku",
+        "${ MaxCalendars } kalendara po korisniku"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-pošta po korisniku",
+        "${ maxEmails } e-pošte po korisniku",
+        "${ maxEmails } e-pošte po korisniku"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostora za pohranu po korisniku"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -5006,16 +5038,11 @@
       "Priority support": [
         "Prioritetna podrška"
       ],
+      "Unlimited folders and labels": [
+        "Neograničen broj mapa i oznaka"
+      ],
       "Version history": [
         "Povijest verzija"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
       ]
     },
     "Subscription renewal state": {
@@ -5419,6 +5446,9 @@
       ],
       "Deleting contacts": [
         "Brisanje kontakata"
+      ],
+      "Details": [
+        "Pojedinosti"
       ],
       "Downgrade account": [
         "Smanjite svoj plan"

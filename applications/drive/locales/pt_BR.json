@@ -819,6 +819,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
+      "Understood": [
+        "Entendido"
+      ],
       "Undo": [
         "Desfazer"
       ],
@@ -4177,6 +4180,9 @@
       "Downloading": [
         "Baixando"
       ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "O download de arquivos de ${ DOCS_APP_NAME } do ${ DRIVE_APP_NAME } atualmente não é suportado e não serão incluídos no download."
+      ],
       "Downloading all encrypted files": [
         "Baixando todos os arquivos criptografados"
       ],
@@ -4624,6 +4630,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Insira a senha para descriptografar e visualizar o conteúdo."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Exporte-os diretamente do aplicativo ${ DOCS_APP_NAME } se desejar baixá-los."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Observe que os endereços atribuídos a esses grupos NÃO serão excluídos."
@@ -5703,6 +5712,9 @@
       ],
       "Import to:": [
         "Importar para:"
+      ],
+      "Include message and file name in invite email": [
+        "Incluir mensagem e nome do arquivo no e-mail do convite."
       ],
       "Keep both": [
         "Manter ambos"
@@ -7412,6 +7424,9 @@
       "External invitation removed from the share": [
         "Convite externo removido dos compartilhados"
       ],
+      "External invitation's email was sent again": [
+        "O e-mail do convite externo foi enviado novamente"
+      ],
       "Failed to accept share invitation": [
         "Falha ao aceitar convite de compartilhamento"
       ],
@@ -7445,9 +7460,6 @@
       ],
       "File removed": [
         "Arquivo removido"
-      ],
-      "Invitation email was sent again": [
-        "O e-mail de convite foi enviado novamente"
       ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
@@ -7658,11 +7670,17 @@
       "Card number": [
         "Número do cartão"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Atualmente a renovação automática da assinatura está desativada. Se você alterar a assinatura agora, a renovação automática será ativada novamente."
+      ],
       "CVC": [
         "CVC"
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months }. Você pode cancelar a qualquer momento."
@@ -8595,6 +8613,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } com compartilhamento de calendário e disponibilidade"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
         "${ dayDiff } dias restantes"
@@ -8653,6 +8674,9 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento por usuário para e-mails, anexos, eventos, e arquivos. Você também está elegível para bônus de armazenamento anualmente."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } oferece ${ planMaxSpace } de armazenamento por usuário para e-mails, anexos, eventos, arquivos e senhas. Você também está elegível para bônus de armazenamento anualmente."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programa ${ PROTON_SENTINEL_NAME }"
       ],
@@ -8685,6 +8709,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura do ${ planName } expirar, você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 5 GB para armazenamento do Drive e até 1 GB para armazenamento do Mail. Você também perderá todos os bônus de armazenamentos concedidos anteriormente."
+      ],
+      "All you need for your business": [
+        "Tudo que você precisa na sua empresa"
       ],
       "Any custom email domains will be disabled": [
         "Qualquer domínio de e-mail personalizado será desativado"
@@ -9742,6 +9769,9 @@
       ],
       "Your changes are not synced yet": [
         "Sua alteração não foram sintonizadas ainda"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "O download tem um arquivo do ${ DOCS_APP_NAME }."
       ],
       "Your exposed information": [
         "Sua informação exposta"

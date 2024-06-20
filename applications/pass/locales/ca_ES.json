@@ -434,7 +434,7 @@
         "Torni-ho a intentar."
       ],
       "Unlock offline with password": [
-        "Continuar sense connexió"
+        "Desbloqueja fora de línia amb contrasenya"
       ],
       "Unpin item": [
         "Desancora l'element"
@@ -461,7 +461,7 @@
         "Veure l'historial d'elements"
       ],
       "View older history": [
-        "Veure l'historial més antic"
+        "Mostra l'historial més antic"
       ],
       "Write us on Reddit": [
         "Escriviu-nos a Reddit"
@@ -755,6 +755,9 @@
       "The file you are trying to import is empty": [
         "El fitxer que esteu intentant importar està buit"
       ],
+      "The session has expired. Please sign in again.": [
+        "La sessió ha caducat. Torneu a accedir."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Massa intents erronis. Torneu a iniciar la sessió."
       ],
@@ -807,7 +810,7 @@
         "Codi PIN incorrecte. Proveu de nou."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Actualment està fora de línia. Reprèn la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
+        "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Error message": {
@@ -923,7 +926,7 @@
         "S'ha confirmat l'accés."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "L'accés a ${ PASS_APP_NAME } sempre requerirà la seva contrasenya de ${ BRAND_NAME }."
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
       "Add a username field": [
         "Afegiu un camp de nom d'usuari"
@@ -944,7 +947,7 @@
         "S'han resolt totes les infraccions d'aquesta adreça"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
-        "Totes les infraccions actuals es marcaran com a resoltes. En cas de futures infraccions de dades, se li notificarà."
+        "Totes les infraccions actuals es marcaran com a resoltes. En cas de futures infraccions de dades, se us notificarà."
       ],
       "All items successfully moved": [
         "S'han mogut tots els elements."
@@ -959,10 +962,10 @@
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "N'està segur, de voler moure elements a \"${ name }\"?"
+        "N'esteu segur, de voler moure elements a \"${ name }\"?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Està segur que vol moure l'element a \"${ name }\"?"
+        "Esteu segur que voleu moure l'element a \"${ name }\"?"
       ],
       "Auto-lock successfully disabled.": [
         "El bloqueig automàtic s'ha desactivat correctament."
@@ -1007,7 +1010,7 @@
         "Els elements eliminats es mouran aquí primer"
       ],
       "Didn't receive the code?": [
-        "No ha rebut el codi?"
+        "No heu rebut el codi?"
       ],
       "Disabling auto-lock": [
         "S'està desactivant el bloqueig automàtic"
@@ -1046,7 +1049,7 @@
         "Habiliti ${ PASS_SHORT_APP_NAME } beta"
       ],
       "Enable auto-locking to secure your data": [
-        "Activi el bloqueig automàtic per protegir les seves dades"
+        "Activeu el bloqueig automàtic per protegir les vostres dades"
       ],
       "Enabling offline mode...": [
         "S'està activant el mode fora de línia..."
@@ -1189,13 +1192,13 @@
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
       "Moving an item to another vault will erase its history": [
-        "Si mou un element a una altra caixa forta, se n'esborrarà l'historial"
+        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial"
       ],
       "Moving items": [
         "S'estan movent elements"
       ],
       "Moving items to another vault will erase their history": [
-        "Si mou els elements a una altra caixa forta, se n'esborrarà l'historial"
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial"
       ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
@@ -1219,7 +1222,7 @@
         "El mode fora de línia no s'ha pogut desactivar en aquest moment"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se li tancarà la sessió després de 3 intents fallits."
+        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se us tancarà la sessió després de 3 intents fallits."
       ],
       "Owner": [
         "Propietari"
@@ -1234,7 +1237,7 @@
         "contrasenya"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzi'l per desbloquejar ${ PASS_APP_NAME }"
+        "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
       ],
       "Paused": [
         "Pausat"
@@ -1252,25 +1255,28 @@
         "Comproveu la carpeta de correu brossa o proveu de tornar a enviar el codi."
       ],
       "Please confirm your ${ BRAND_NAME } password": [
-        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME }"
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME }"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME } per tal de bloquejar-la automàticament amb la seva contrasenya"
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per tal de bloquejar-la automàticament amb la vostra contrasenya"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirmi la seva contrasenya de ${ BRAND_NAME } per anul·lar el registre del seu bloqueig actual."
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per anul·lar el registre del vostre bloqueig actual."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME } per actualitzar l'hora de bloqueig automàtic."
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per actualitzar l'hora del bloqueig automàtic."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Si us plau, confirmi el seu codi PIN per tal d'anul·lar el registre del seu bloqueig actual."
+        "Confirmeu el vostre codi PIN per tal d'anul·lar el registre del vostre bloqueig actual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmeu el codi PIN per a editar aquesta preferència."
       ],
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
+      ],
+      "Please do not close this window": [
+        "No tanqueu aquesta finestra"
       ],
       "Please enter your current PIN code to continue": [
         "Introduïu el codi PIN actual per a continuar."
@@ -1280,6 +1286,9 @@
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacitat és una gran preocupació per a nosaltres. Apreneu per què ${ PASS_APP_NAME } és diferent."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
       ],
       "Reconnect": [
         "Torna a connectar"
@@ -1446,13 +1455,13 @@
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
       ],
       "You will be notified of data breaches for these email addresses.": [
-        "Rebrà notificacions sobre les infraccions de dades d'aquestes adreces de correu electrònic."
+        "Rebreu notificacions sobre les infraccions de dades d'aquestes adreces de correu electrònic."
       ],
       "You will be notified of data breaches for this email address.": [
-        "Se li notificaran les infraccions de dades d'aquesta adreça de correu electrònic."
+        "Se us notificaran les infraccions de dades d'aquesta adreça de correu electrònic."
       ],
       "You will no longer be notified of data breaches for these email addresses.": [
-        "Ja no li notificaran les infraccions de dades d'aquestes adreces de correu electrònic."
+        "Ja no us notificaran les infraccions de dades d'aquestes adreces de correu electrònic."
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Aquesta adreça de correu electrònic deixarà de rebre notificacions sobre infraccions de dades."
@@ -1938,7 +1947,7 @@
         "Inicieu sessió al vostre compte"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloquegi ${ PASS_SHORT_APP_NAME } amb la seva contrasenya ${ BRAND_NAME }"
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2308,7 +2317,7 @@
         "Vol restaurar aquesta versió?"
       ],
       "Resume monitoring?": [
-        "Reprendre la supervisió?"
+        "Cal reprendre la supervisió?"
       ],
       "Reused ${ count } time": [
         "Reutilitzat ${ count } vegada",
