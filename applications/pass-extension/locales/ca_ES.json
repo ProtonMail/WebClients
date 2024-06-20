@@ -447,7 +447,7 @@
         "Proveu de nou"
       ],
       "Unlock offline with password": [
-        "Continuar sense connexió"
+        "Desbloqueja fora de línia amb contrasenya"
       ],
       "Unpin item": [
         "Desancora l'element"
@@ -477,7 +477,7 @@
         "Veure l'historial d'elements"
       ],
       "View older history": [
-        "Veure l'historial més antic"
+        "Mostra l'historial més antic"
       ],
       "Write us on Reddit": [
         "Escriviu-nos a Reddit"
@@ -814,7 +814,7 @@
         "Codi PIN incorrecte. Proveu de nou."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Actualment està fora de línia. Reprèn la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
+        "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Error message": {
@@ -934,7 +934,7 @@
         "S'ha confirmat l'accés."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "L'accés a ${ PASS_APP_NAME } sempre requerirà la seva contrasenya de ${ BRAND_NAME }."
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
@@ -964,10 +964,10 @@
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
-        "N'està segur, de voler moure elements a \"${ name }\"?"
+        "N'esteu segur, de voler moure elements a \"${ name }\"?"
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Està segur que vol moure l'element a \"${ name }\"?"
+        "Esteu segur que voleu moure l'element a \"${ name }\"?"
       ],
       "Auto-lock successfully disabled.": [
         "El bloqueig automàtic s'ha desactivat correctament."
@@ -991,7 +991,7 @@
         "Permet veure els elements d'aquesta caixa forte."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "Triï una contrasenya desada per iniciar la sessió a ${ domain }"
+        "Trieu una contrasenya desada per iniciar la sessió a ${ domain }"
       ],
       "Click here to add a field for a username.": [
         "Feu clic aquí per afegir un camp per a un nom d'usuari."
@@ -1000,10 +1000,10 @@
         "Feu clic a la icona per obrir-la en qualsevol moment."
       ],
       "Close this window in order to use a security key or another passkey.": [
-        "Tanqui aquesta finestra per utilitzar una clau de seguretat o una altra contrasenya."
+        "Tanqueu aquesta finestra per utilitzar una clau de seguretat o una altra contrasenya."
       ],
       "Close this window in order to use another passkey manager.": [
-        "Tanqui aquesta finestra per tal d'utilitzar un altre gestor de contrasenyes."
+        "Tanqueu aquesta finestra per tal d'utilitzar un altre gestor de contrasenyes."
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
@@ -1063,7 +1063,7 @@
         "Activeu ${ PASS_APP_NAME } connectant el vostre compte de ${ BRAND_NAME }"
       ],
       "Enable auto-locking to secure your data": [
-        "Activi el bloqueig automàtic per protegir les seves dades"
+        "Activeu el bloqueig automàtic per protegir les vostres dades"
       ],
       "Enabling offline mode...": [
         "S'està activant el mode fora de línia..."
@@ -1191,13 +1191,13 @@
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
       "Moving an item to another vault will erase its history": [
-        "Si mou un element a una altra caixa forta, se n'esborrarà l'historial"
+        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial"
       ],
       "Moving items": [
         "S'estan movent elements"
       ],
       "Moving items to another vault will erase their history": [
-        "Si mou els elements a una altra caixa forta, se n'esborrarà l'historial"
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial"
       ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
@@ -1215,7 +1215,7 @@
         "El mode fora de línia no s'ha pogut desactivar en aquest moment"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se li tancarà la sessió després de 3 intents fallits."
+        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se us tancarà la sessió després de 3 intents fallits."
       ],
       "Open the Extensions menu": [
         "Obre el menú d'Extensions"
@@ -1236,7 +1236,7 @@
         "S'ha copiat la contrasenya."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzi'l per desbloquejar ${ PASS_APP_NAME }"
+        "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
       ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
@@ -1254,25 +1254,28 @@
         "Ancorant l'element..."
       ],
       "Please confirm your ${ BRAND_NAME } password": [
-        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME }"
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME }"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME } per tal de bloquejar-la automàticament amb la seva contrasenya"
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per tal de bloquejar-la automàticament amb la vostra contrasenya"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirmi la seva contrasenya de ${ BRAND_NAME } per anul·lar el registre del seu bloqueig actual."
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per anul·lar el registre del vostre bloqueig actual."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Si us plau, confirmi la seva contrasenya de ${ BRAND_NAME } per actualitzar l'hora de bloqueig automàtic."
+        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per actualitzar l'hora del bloqueig automàtic."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Si us plau, confirmi el seu codi PIN per tal d'anul·lar el registre del seu bloqueig actual."
+        "Confirmeu el vostre codi PIN per tal d'anul·lar el registre del vostre bloqueig actual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmeu el codi PIN per a editar aquesta preferència."
       ],
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
+      ],
+      "Please do not close this window": [
+        "No tanqueu aquesta finestra"
       ],
       "Please enter your current PIN code to continue": [
         "Introduïu el codi PIN actual per a continuar."
@@ -1282,6 +1285,9 @@
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacitat és una gran preocupació per a nosaltres. Apreneu per què ${ PASS_APP_NAME } és diferent."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
       ],
       "Registering PIN lock failed": [
         "No s'ha pogut registrar el bloqueig del PIN"
@@ -1299,7 +1305,7 @@
         "Desa la clau d'accés"
       ],
       "Select an existing login item to update.": [
-        "Seleccioni un element d'inici de sessió existent per actualitzar."
+        "Seleccioneu un element d'inici de sessió existent per actualitzar."
       ],
       "Select an existing login or create a new one.": [
         "Seleccioneu un inici de sessió existent o creeu-ne un de nou."
@@ -1375,10 +1381,10 @@
         "Nombre il·limitat d'àlies hide-my-email"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloquegi ${ PASS_APP_NAME } amb el seu codi PIN per accedir a les seves claus d'accés"
+        "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per accedir a les vostres claus d'accés"
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloquegi ${ PASS_APP_NAME } amb el seu codi PIN per desar aquesta clau d'accés"
+        "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per desar aquesta clau d'accés"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
@@ -1955,7 +1961,7 @@
         "Inicieu sessió al vostre compte"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloquegi ${ PASS_SHORT_APP_NAME } amb la seva contrasenya ${ BRAND_NAME }"
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2384,7 +2390,7 @@
         "No hi ha cap element coincident"
       ],
       "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "No s'han trobat claus d'accés. Desi les seves claus d'accés a ${ PASS_APP_NAME } per iniciar la sessió a ${ domain }."
+        "No s'han trobat claus d'accés. Deseu les vostres claus d'accés a ${ PASS_APP_NAME } per iniciar la sessió a ${ domain }."
       ],
       "No password manager selected": [
         "No s'ha seleccionat cap gestor de contrasenyes"
