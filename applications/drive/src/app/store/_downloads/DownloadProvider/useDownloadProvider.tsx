@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
@@ -17,7 +16,6 @@ import {
     isTransferPausedByConnection,
     isTransferProgress,
 } from '../../../utils/transfer';
-import { useDocumentActions } from '../../_documents';
 import { SignatureIssues } from '../../_links';
 import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
@@ -48,8 +46,6 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
     const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
     const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
 
-    const { downloadDocument } = useDocumentActions();
-
     /**
      * download should be considered as main entry point for download files
      * in Drive app. It does all necessary checks, such as checking if the
@@ -57,19 +53,6 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
      * to the queue.
      */
     const download = async (links: LinkDownload[], options?: { virusScan?: boolean }): Promise<void> => {
-        // Document downloads are handled in two ways:
-        //  1. single files are redirected to the Docs app using `downloadDocument`
-        //  2. multiple files are ignored, using `handleContainsDocument` in the queue
-        const documentLink = links.length === 1 && isProtonDocument(links[0].mimeType) ? links[0] : undefined;
-
-        if (documentLink) {
-            downloadDocument({
-                shareId: documentLink.shareId,
-                linkId: documentLink.linkId,
-            });
-            return;
-        }
-
         await queue.add(links, options).catch((err: any) => {
             if ((err as Error).name === 'DownloadUserError') {
                 createNotification({
