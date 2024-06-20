@@ -29,9 +29,6 @@
       "Add domain": [
         "Domein toevoegen"
       ],
-      "Add multiple users": [
-        "Meerdere gebruikers toevoegen"
-      ],
       "Add PayPal": [
         "PayPal toevoegen"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "Gateway opzetten"
-      ],
-      "Create user": [
-        "Gebruiker aanmaken"
       ],
       "Create users": [
         "Gebruikers aanmaken"
@@ -2018,11 +2012,6 @@
         "Verificatiemail verzonden naar ${ address }"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Betaalde ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- en ${ PASS_SHORT_APP_NAME }-functies"
@@ -3617,9 +3606,6 @@
       "Open source": [
         "Open source"
       ],
-      "Optional": [
-        "Optioneel"
-      ],
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
       ],
@@ -3908,9 +3894,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Deze verificatie kan tot één uur duren. U kunt veilig doorgaan tot de volgende stappen."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
       ],
@@ -3937,9 +3920,6 @@
       ],
       "to ${ product } Business": [
         "naar ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Om het domein ${ boldDomainName } toe te staan SAML SSO te gebruiken u moet het eigendom hiervan verifiëren door het volgende DNS-TXT-record toe te voegen aan uw domein in uw DNS-provider."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Om uw abonnement op te zeggen, neem contact met ons op."
@@ -4557,9 +4537,6 @@
       "Country": [
         "Land"
       ],
-      "Create password": [
-        "Wachtwoord aanmaken"
-      ],
       "Credits used": [
         "Verbruikt tegoed"
       ],
@@ -4832,6 +4809,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
       ],
       "Why would you like to cancel?": [
         "Waarom wil u annuleren?"
@@ -5371,6 +5351,9 @@
       "Centralized settings and billings": [
         "Gecentraliseerde instellingen en facturen"
       ],
+      "Collaborate and share large files": [
+        "Samenwerken en grote bestanden delen"
+      ],
       "Contact groups": [
         "Contactgroepen"
       ],
@@ -5443,6 +5426,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Generate emails with only a prompt": [
+        "E-mails genereren met alleen een verzoek"
+      ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
@@ -5486,6 +5472,12 @@
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
+      "Password health": [
+        "Wachtwoordgezondheid"
+      ],
+      "Password manager to secure credentials": [
+        "Wachtwoordmanager om inloggegevens veilig te houden"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -5501,6 +5493,9 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
+      "Proofread and refine your texts": [
+        "Uw tekst herlezen en verfijnen"
+      ],
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
@@ -5508,11 +5503,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
       ],
+      "Reply to messages": [
+        "Antwoorden op berichten"
+      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
       "Router support": [
         "Routerondersteuning"
+      ],
+      "Save time emailing": [
+        "Bespaar tijd op e-mailen"
       ],
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
@@ -6542,6 +6543,9 @@
       "Select state": [
         "Selecteer provincie"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ],
       "yourdomain.com": [
         "uwdomein.com"
       ]
@@ -6573,11 +6577,6 @@
     "Price": {
       "Free": [
         "Gratis"
-      ]
-    },
-    "Private Member": {
-      "private": [
-        "privé"
       ]
     },
     "Recovery Email": {
@@ -7537,6 +7536,21 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } agenda per gebruiker",
+        "${ MaxCalendars } agenda's per gebruiker"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } aangepast e-maildomein",
+        "${ maxDomainNames } aangepaste e-maildomeinen"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mailadres per gebruiker",
+        "${ maxEmails } e-mailadressen per gebruiker"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } opslagruimte"
       ],
@@ -7546,8 +7560,17 @@
       "10 email addresses": [
         "10 e-mailadressen"
       ],
+      "20 email addresses per user": [
+        "20 e-mailadressen per gebruiker"
+      ],
+      "25 calendars per user": [
+        "25 agenda's per gebruiker"
+      ],
       "6 users": [
         "6 gebruikers"
+      ],
+      "Automatic email forwarding": [
+        "Automatisch e-mail doorsturen"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -7567,6 +7590,9 @@
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
       ],
+      "Extra storage and users": [
+        "Extra opslag en gebruikers"
+      ],
       "Have a question?": [
         "Heeft u een vraag?"
       ],
@@ -7575,6 +7601,12 @@
       ],
       "I still want to cancel": [
         "Ik wil nog steeds opzeggen"
+      ],
+      "Keep ${ config.planName }": [
+        "${ config.planName } behouden"
+      ],
+      "Learn more": [
+        "Lees meer"
       ],
       "Learn more about our impact": [
         "Meer informatie over onze impact"
@@ -7588,11 +7620,20 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Productivity features": [
+        "Productiviteitsfuncties"
+      ],
       "Reactivate": [
         "Opnieuw activeren"
       ],
       "Read the story": [
         "Lees het verhaal"
+      ],
+      "See your colleagues’ availability": [
+        "Bekijk de beschikbaarheid van uw collega's"
+      ],
+      "Stay secure and connected anywhere": [
+        "Blijf overal veilig en verbonden"
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
@@ -7600,8 +7641,14 @@
       "Unblocking internet access in Iran": [
         "Ontgrendelen van internettoegang in Iran"
       ],
+      "Unlimited folders and labels": [
+        "Onbeperkte mappen en labels"
+      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Users won’t be able to send emails": [
+        "Gebruikers zullen geen e-mails kunnen verzenden"
       ],
       "Version history": [
         "Versiegeschiedenis"
@@ -7795,9 +7842,6 @@
       ],
       "SPF value copied to clipboard": [
         "SPF-waarde gekopieerd naar klembord"
-      ],
-      "User created": [
-        "Gebruiker aangemaakt"
       ],
       "User updated": [
         "Gebruiker bijgewerkt"
@@ -7998,9 +8042,6 @@
       ],
       "Add domain": [
         "Domein toevoegen"
-      ],
-      "Add new user": [
-        "Voeg nieuwe gebruiker toe"
       ],
       "Add PayPal payment method": [
         "Voeg PayPal als betalingsmethode toe"
@@ -8672,16 +8713,6 @@
       ],
       "Primary admin": [
         "Primaire administrator"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "SSO-gebruiker verstrekt door uw identiteitsprovider"
       ]
     },
     "Validation": {

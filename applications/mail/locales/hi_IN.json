@@ -1107,10 +1107,6 @@
       "Trust": [
         "भरोसा करें"
       ],
-      "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
-      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -4400,6 +4396,9 @@
     "Header": {
       "Contacts": [
         "संपर्क"
+      ],
+      "Report an issue": [
+        "समस्या रिपोर्ट करें"
       ],
       "Search": [
         "खोजें"
@@ -9267,6 +9266,14 @@
         "${ dayDiff } दिन बाकी",
         "${ dayDiff } दिन बाकी"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर"
+      ],
+      "${ maxEmails } email address per user": [
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पते"
+      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
@@ -9275,6 +9282,9 @@
       ],
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Automatic email forwarding": [
+        "स्वचालित ईमेल फॉरवर्ड"
       ],
       "Calendar sharing": [
         "कैलेंडर शेयर"

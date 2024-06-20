@@ -118,9 +118,6 @@
       "Add label": [
         "लेबल जोड़ें"
       ],
-      "Add multiple users": [
-        "एकाधिक उपयोगकर्ता जोड़ें"
-      ],
       "Add notification": [
         "अधिसूचना जोड़ें"
       ],
@@ -128,7 +125,7 @@
         "PayPal जोड़ें"
       ],
       "Add public holidays": [
-        "सार्वजनिक अवकाश जोड़ें"
+        "सार्वजनिक छुट्टियां जोड़ें"
       ],
       "Add sieve filter": [
         "चलनी फ़िल्टर जोड़ें"
@@ -291,9 +288,6 @@
       ],
       "Create link": [
         "लिंक बनाएं"
-      ],
-      "Create user": [
-        "उपयोगकर्ता बनाएं"
       ],
       "Create users": [
         "उपयोगकर्ता बनाएं"
@@ -3155,9 +3149,17 @@
         "Fedora / Red Hat के लिए .rpm"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "शुरु-से-अंत तक एन्क्रिप्ट किया"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "एडवांस शेयर करते हुए सुरक्षा"
+      ],
+      "Protected by Swiss privacy laws": [
+        "स्विस निजता कानूनो से सुरक्षित रखा गया"
       ]
     },
     "Duration": {
@@ -3440,11 +3442,6 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "चेतावनी"
-      ]
-    },
-    "Enabled 2FA": {
-      "2FA": [
-        "2-एफए"
       ]
     },
     "eoy2023: Deal details": {
@@ -3897,7 +3894,7 @@
         "गलत सत्यापन कोड। कृपया सुनिश्चित करें कि आपने सत्यापन कोड को सही तरीके से कॉपी किया है और पुनः प्रयास करें। परिवर्तनों को प्रभावी होने में 24 घंटे तक का समय लग सकता है।"
       ],
       "You already added this holidays calendar": [
-        "आपने यह अवकाश कैलेंडर पहले ही जोड़ लिया है"
+        "आपने ये घुट्टियों का कैलेंडर पहले ही जोड़ लिया है"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
@@ -5416,14 +5413,6 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -6302,6 +6291,9 @@
       "Internet connection restored.": [
         "इंटरनेट कनेक्शन बहाल"
       ],
+      "Invite rejected": [
+        "न्योता ठुकराया गया"
+      ],
       "Invite successfully sent": [
         "न्योता सफलतापूर्वक भेजा गया",
         "न्योते सफलतापूर्वक भेजे गए"
@@ -6512,9 +6504,6 @@
       ],
       "Open source": [
         "ओपन सोर्स"
-      ],
-      "Optional": [
-        "वैकल्पिक"
       ],
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
@@ -7573,6 +7562,14 @@
         "ज़ूम मीटिंग"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "सक्षम होने पर, उप-फ़ोल्डर मूल फ़ोल्डर का रंग इनहेरिट करते हैं।"
@@ -8382,6 +8379,9 @@
       ],
       "Folder location": [
         "फ़ोल्डर स्थान"
+      ],
+      "Folders and labels": [
+        "फ़ोल्डर्स और लेबल"
       ],
       "Font family": [
         "फ़ॉन्ट परिवार"
@@ -10812,6 +10812,9 @@
       "Secure vault sharing": [
         "सुरक्षित वॉल्ट साझाकरण"
       ],
+      "Setting up your organization": [
+        "अपना संगठन स्थापित करना"
+      ],
       "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
         "अपग्रेड करके ${ PASS_APP_NAME } प्रीमियम सुविधाओं को अनलॉक करें"
       ],
@@ -11088,11 +11091,6 @@
       ],
       "Secondary time zone": [
         "दूसरा समय क्षेत्र"
-      ]
-    },
-    "Private Member": {
-      "private": [
-        "निजी"
       ]
     },
     "Property type": {
@@ -12029,6 +12027,14 @@
         "${ dayDiff } दिन बाकी",
         "${ dayDiff } दिन बाकी"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर"
+      ],
+      "${ maxEmails } email address per user": [
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पते"
+      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
@@ -12037,6 +12043,9 @@
       ],
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Automatic email forwarding": [
+        "स्वचालित ईमेल फॉरवर्ड"
       ],
       "Calendar sharing": [
         "कैलेंडर शेयर"
@@ -12052,6 +12061,9 @@
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
+      ],
+      "Keep ${ config.planName }": [
+        "${ config.planName } रखे"
       ],
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
@@ -12273,9 +12285,6 @@
       ],
       "Undo in progress": [
         "अनडू चल रहा"
-      ],
-      "User created": [
-        "उपयोगकर्ता बनाया गया"
       ],
       "User updated": [
         "यूज़र अपडेट किए गए"
@@ -12577,9 +12586,6 @@
       ],
       "Add filter": [
         "फिल्टर जोड़ें"
-      ],
-      "Add new user": [
-        "नया उपयोगकर्ता जोड़ें"
       ],
       "Add PayPal payment method": [
         "पेपैल भुगतान विधि जोड़ें"

@@ -779,8 +779,14 @@
       "Something went wrong": [
         "Något gick fel"
       ],
+      "Something went wrong. Please sign in again.": [
+        "Något gick fel. Logga in igen."
+      ],
       "The file you are trying to import is empty": [
         "Filen du försöker importera är tom"
+      ],
+      "The session has expired. Please sign in again.": [
+        "Sessionen har löpt ut. Logga in igen."
       ],
       "Too many failed attempts. Please sign in again.": [
         "För många misslyckade försök. Logga in igen."
@@ -1132,6 +1138,9 @@
       ],
       "Enabling offline mode...": [
         "Aktiverar offlineläge …"
+      ],
+      "Enabling password auto-lock": [
+        "Aktiverar automatisk lösenordslåsning"
       ],
       "Enabling password lock failed": [
         "Aktivering av lösenordslås misslyckades"

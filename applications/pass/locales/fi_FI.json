@@ -788,8 +788,14 @@
       "Something went wrong": [
         "Jotain meni pieleen"
       ],
+      "Something went wrong. Please sign in again.": [
+        "Jotain meni pieleen. Kirjaudu sisään uudelleen."
+      ],
       "The file you are trying to import is empty": [
         "Tiedosto, jota yrität tuoda, on tyhjä"
+      ],
+      "The session has expired. Please sign in again.": [
+        "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
@@ -1381,6 +1387,9 @@
       ],
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
+      ],
+      "Please do not close this window": [
+        "Älä sulje tätä ikkunaa"
       ],
       "Please enter your current PIN code to continue": [
         "Jatka syöttämällä nykyinen PIN-koodisi"

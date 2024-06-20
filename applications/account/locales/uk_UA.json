@@ -118,9 +118,6 @@
       "Add label": [
         "Додати мітку"
       ],
-      "Add multiple users": [
-        "Додати кількох користувачів"
-      ],
       "Add notification": [
         "Додати сповіщення"
       ],
@@ -303,9 +300,6 @@
       ],
       "Create link": [
         "Створити посилання"
-      ],
-      "Create user": [
-        "Створити користувача"
       ],
       "Create users": [
         "Створити користувачів"
@@ -3411,12 +3405,25 @@
         ".rpm для Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Наскрізно зашифровано"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Розширені можливості спільного доступу"
       ],
       "Encrypted cloud storage for all your files": [
         "Зашифроване хмарне сховище для всіх ваших файлів"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Захищено швейцарськими законами про приватність"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "Безпечне хмарне сховище та обмін файлами із захистом ваших даних"
       ]
     },
     "Duration": {
@@ -3854,11 +3861,6 @@
         "Попередження"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "Двоетапна перевірка (2FA)"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Платні функції ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }"
@@ -4186,6 +4188,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Спершу вкажіть е-пошту для відновлення/сповіщень"
+      ],
+      "Please try again in a few moments.": [
+        "Будь ласка, спробуйте знову за хвильку."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Для підтримки декількох користувачів, перейдіть на тарифний план для бізнесу"
@@ -6071,17 +6076,6 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -7148,6 +7142,9 @@
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
       ],
+      "Invite rejected": [
+        "Запрошення відхилено"
+      ],
       "Invite successfully sent": [
         "Запрошення успішно надіслано",
         "Запрошення успішно надіслані",
@@ -7393,9 +7390,6 @@
       ],
       "Open source": [
         "Відкритий програмний код"
-      ],
-      "Optional": [
-        "Необов'язково"
       ],
       "or ${ selectFileButton }": [
         "або ${ selectFileButton }"
@@ -7925,9 +7919,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Перевірка може тривати до однієї години. Тим часом ви можете перейти до наступних кроків."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
       ],
@@ -7969,9 +7960,6 @@
       ],
       "to ${ product } Business": [
         "у ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Щоб дозволити домену ${ boldDomainName } використовувати SAML SSO, ви повинні засвідчити володіння ним, додавши зазначений запис DNS TXT до вашого домену на панелі керування вашого провайдера DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
@@ -8586,6 +8574,17 @@
         "зустріч у Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Якщо увімкнено, підтеки успадковують колір теки вищого рівня."
@@ -9047,6 +9046,9 @@
       "Access to my events": [
         "Доступ до моїх подій"
       ],
+      "Account recovery": [
+        "Відновлення облікового запису"
+      ],
       "Account storage": [
         "Сховище облікового запису"
       ],
@@ -9451,6 +9453,9 @@
       ],
       "Folder location": [
         "Розташування теки"
+      ],
+      "Folders and labels": [
+        "Теки й мітки"
       ],
       "Font family": [
         "Сімейство шрифтів"
@@ -10354,9 +10359,6 @@
       ],
       "Limited time offer": [
         "Обмежена пропозиція"
-      ],
-      "Secure email that protects your privacy": [
-        "Безпечна електронна пошта, що захищає вашу приватність"
       ]
     },
     "mailtrial2024: Action": {
@@ -12937,11 +12939,6 @@
         "Другий часовий пояс"
       ]
     },
-    "Private Member": {
-      "private": [
-        "приватний"
-      ]
-    },
     "Property type": {
       "Address": [
         "Адреса"
@@ -14256,6 +14253,27 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } календар на користувача",
+        "${ MaxCalendars } календарі на користувача",
+        "${ MaxCalendars } календарів на користувача",
+        "${ MaxCalendars } календарі на користувача"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } власний домен",
+        "${ maxDomainNames } власні домени",
+        "${ maxDomainNames } власних доменів",
+        "${ maxDomainNames } власних доменів"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } адреса е-пошти на користувача",
+        "${ maxEmails } адреси е-пошти на користувача",
+        "${ maxEmails } адрес е-пошти на користувача",
+        "${ maxEmails } адрес е-пошти на користувача"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } сховища на користувача"
+      ],
       "${ planMaxSpace } total storage": [
         "Усього ${ planMaxSpace } сховища"
       ],
@@ -14264,6 +14282,9 @@
       ],
       "10 email addresses": [
         "10 адрес електронної пошти"
+      ],
+      "Automatic email forwarding": [
+        "Автоматичне пересилання пошти"
       ],
       "Calendar sharing": [
         "Спільний доступ до календаря"
@@ -14292,6 +14313,9 @@
       "I still want to cancel": [
         "Я все одно хочу скасувати"
       ],
+      "Keep ${ config.planName }": [
+        "Залишити ${ config.planName }"
+      ],
       "Learn more about our impact": [
         "Дізнайтеся більше про результати нашої діяльності"
       ],
@@ -14312,6 +14336,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Розблокування доступу до Інтернету в Ірані"
+      ],
+      "Unlimited folders and labels": [
+        "Необмежена кількість тек і міток"
       ],
       "Unlimited folders, labels and filters": [
         "Необмежена кількість тек, міток і фільтрів"
@@ -14577,9 +14604,6 @@
       ],
       "Undo in progress": [
         "Скасовується"
-      ],
-      "User created": [
-        "Користувача створено"
       ],
       "User updated": [
         "Користувача оновлено"
@@ -14911,9 +14935,6 @@
       ],
       "Add filter": [
         "Додати фільтр"
-      ],
-      "Add new user": [
-        "Додати нового користувача"
       ],
       "Add PayPal payment method": [
         "Додати спосіб оплати PayPal"
@@ -16288,16 +16309,6 @@
       ],
       "Primary admin": [
         "Головний адміністратор"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "Користувач SSO, наданий вашим провайдером ідентифікації"
       ]
     },
     "Validation": {

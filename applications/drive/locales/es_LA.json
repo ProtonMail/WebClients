@@ -4683,6 +4683,9 @@
       "Preview for this file type is not supported": [
         "La vista previa para este tipo de archivo no está soportada"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "La previsualización de documentos aún no está disponible. Abra el documento para verlo."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Las versiones anteriores son conservadas durante ${ retentionLabel }"
       ],
@@ -4697,6 +4700,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Búsqueda privada activada. Puede cerrar esta ventana y buscar archivos y carpetas."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "El intercambio público de documentos aún no está disponible. Pregunte al propietario que le invite directamente al documento."
       ],
       "Queued": [
         "En espera"
@@ -7461,6 +7467,9 @@
       "External invitation removed from the share": [
         "La invitación externa fue borrada de los elementos compartidos."
       ],
+      "External invitation's email was sent again": [
+        "Se envió nuevamente el correo de invitación externa."
+      ],
       "Failed to accept share invitation": [
         "Ocurrió un error al aceptar la invitación compartida"
       ],
@@ -7495,7 +7504,7 @@
       "File removed": [
         "Archivo borrado"
       ],
-      "Invitation email was sent again": [
+      "Invitation's email was sent again": [
         "Se envió nuevamente el correo de invitación."
       ],
       "Link copied to clipboard": [
@@ -8733,7 +8742,7 @@
         "${ VPN_APP_NAME } con acceso a todos los servidores de gran velocidad en ${ vpnCountries } países"
       ],
       "${ VPN_APP_NAME } with malware and ad-blocking": [
-        "${ VPN_APP_NAME } con bloqueo de malware y publicidad"
+        "${ VPN_APP_NAME } con bloqueo de malware y anuncios"
       ],
       "10 email addresses": [
         "10 direcciones de correo electrónico"
@@ -8778,7 +8787,7 @@
         "Calendarios compartidos"
       ],
       "Catch-all email address": [
-        "Dirección de correo catch-all"
+        "Dirección de correo electrónico «catch-all»"
       ],
       "Comprehensive privacy and security": [
         "Privacidad y seguridad integrales"
@@ -8802,7 +8811,7 @@
         "Almacenamiento adicional y bonificaciones"
       ],
       "Extra storage and users": [
-        "Almacenamiento adicional y usuarios"
+        "Almacenamiento y usuarios adicionales"
       ],
       "Helping activists in Hong Kong": [
         "Ayuda a activistas en Hong Kong"
@@ -8820,7 +8829,7 @@
         "Si excede los límites del plan gratuito cuando la suscripción de ${ planName } expire, no podrá:"
       ],
       "Invited members will be removed from your organization": [
-        "Los miembros invitados se eliminarán de su organización"
+        "Los miembros invitados se eliminarán de la organización."
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Mantenga a su equipo seguro mientras viaja con nuestras aplicaciones para web, iOS, Android, Windows, Mac y Linux."
@@ -8832,7 +8841,7 @@
         "Más información acerca de nuestro impacto"
       ],
       "Make your business stand out": [
-        "Haga que su negocio destaque"
+        "Haga que su negocio se destaque"
       ],
       "Manage your calendar": [
         "Gestionar los calendarios"

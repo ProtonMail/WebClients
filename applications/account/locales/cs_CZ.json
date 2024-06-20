@@ -118,9 +118,6 @@
       "Add label": [
         "Přidat štítek"
       ],
-      "Add multiple users": [
-        "Přidat více uživatelů"
-      ],
       "Add notification": [
         "Přidat upozornění"
       ],
@@ -306,9 +303,6 @@
       ],
       "Create link": [
         "Vytvořit odkaz"
-      ],
-      "Create user": [
-        "Vytvořit uživatele"
       ],
       "Create users": [
         "Vytvořit uživatele"
@@ -1246,10 +1240,10 @@
         "${ price } za uživatele"
       ],
       "${ seats } writing assistant seat": [
-        "${ seats } místo asistenta psaní",
-        "${ seats } místa asistenta psaní",
-        "${ seats } míst asistenta psaní",
-        "${ seats } míst asistenta psaní"
+        "${ seats } licence asistenta psaní",
+        "${ seats } licence asistenta psaní",
+        "${ seats } licencí asistenta psaní",
+        "${ seats } licencí asistenta psaní"
       ],
       "${ users } user": [
         "${ users } uživatel",
@@ -1642,7 +1636,7 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Přístup k blokovanému obsahu a soukromé procházení webu. Zahrnuje 3000+ serverů v 65+ zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrent a další funkce."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
@@ -3523,12 +3517,25 @@
         ".rpm pro Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Koncově šifrováno"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
       ],
       "Encrypted cloud storage for all your files": [
         "Šifrované cloudové úložiště pro všechny vaše soubory"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chráněno švýcarskými zákony o ochraně soukromí"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "Bezpečné cloudové úložiště a sdílení souborů, které chrání vaše údaje"
       ]
     },
     "Duration": {
@@ -3966,11 +3973,6 @@
         "Varování"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Placené funkce ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
@@ -4298,6 +4300,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Nejprve prosím zadejte e-mailovou adresu pro obnovení a zasílání upozornění"
+      ],
+      "Please try again in a few moments.": [
+        "Zkuste to prosím za chvíli znovu."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Chcete-li získat podporu pro více uživatelů, přejděte na firemní tarif"
@@ -6192,17 +6197,6 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -7278,6 +7272,9 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "Invite rejected": [
+        "Pozvánka odmítnuta"
+      ],
       "Invite successfully sent": [
         "Pozvánka byla úspěšně odeslána",
         "Pozvánky byla úspěšně odeslány",
@@ -7523,9 +7520,6 @@
       ],
       "Open source": [
         "Open source"
-      ],
-      "Optional": [
-        "Volitelné"
       ],
       "or ${ selectFileButton }": [
         "nebo ${ selectFileButton }"
@@ -8076,9 +8070,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Toto ověření může trvat až jednu hodinu. Můžete nyní bez obav pokračovat dalšími kroky."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
       ],
@@ -8123,9 +8114,6 @@
       ],
       "to ${ product } Business": [
         "do ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Aby doména ${ boldDomainName } mohla používat SAML SSO, je nutné ověřit, že jste jejím vlastníkem. Provedete to přidáním následujícího DNS TXT záznamu k vaší doméně u vašeho poskytovatele DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
@@ -8752,6 +8740,17 @@
         "setkání na Zoomu"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Když je povoleno, podsložky budou mít stejnou barvu jako nadřazená složka."
@@ -9218,6 +9217,9 @@
       "Access to my events": [
         "Přístup k mým událostem"
       ],
+      "Account recovery": [
+        "Obnovení účtu"
+      ],
       "Account storage": [
         "Prostor pro účet"
       ],
@@ -9628,6 +9630,9 @@
       ],
       "Folder location": [
         "Umístění složky"
+      ],
+      "Folders and labels": [
+        "Složky a štítky"
       ],
       "Font family": [
         "Rodina písma"
@@ -10555,9 +10560,6 @@
       ],
       "Limited time offer": [
         "Časově omezená nabídka"
-      ],
-      "Secure email that protects your privacy": [
-        "Zabezpečený e-mail, který chrání vaše soukromí"
       ]
     },
     "mailtrial2024: Action": {
@@ -13204,11 +13206,6 @@
         "Sekundární časové pásmo"
       ]
     },
-    "Private Member": {
-      "private": [
-        "soukromé"
-      ]
-    },
     "Property type": {
       "Address": [
         "Adresa"
@@ -14537,8 +14534,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendář na uživatele",
+        "${ MaxCalendars } kalendáře na uživatele",
+        "${ MaxCalendars } kalendářů na uživatele",
+        "${ MaxCalendars } kalendářů na uživatele"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } vlastní e-mailová doména",
+        "${ maxDomainNames } vlastní e-mailové domény",
+        "${ maxDomainNames } vlastních e-mailových domén",
+        "${ maxDomainNames } vlastních e-mailových domén"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mailová adresa na uživatele",
+        "${ maxEmails } e-mailové adresy na uživatele",
+        "${ maxEmails } e-mailových adres na uživatele",
+        "${ maxEmails } e-mailových adres na uživatele"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } včetně neomezeného počtu aliasů Hide-my-email"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostoru na uživatele"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } úložného prostoru"
@@ -14570,6 +14588,12 @@
       "10 email addresses": [
         "10 e-mailových adres"
       ],
+      "20 email addresses per user": [
+        "20 e-mailových adres na uživatele"
+      ],
+      "25 calendars per user": [
+        "25 kalendářů na uživatele"
+      ],
       "6 users": [
         "6 uživatelů"
       ],
@@ -14581,6 +14605,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršení vašeho předplatného ${ planName } bude váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
+      ],
+      "Automatic email forwarding": [
+        "Automatické přesměrování e-mailů"
       ],
       "Back up photos from your devices": [
         "Zálohovat fotografie ze svých zařízení"
@@ -14633,6 +14660,9 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Pokud po vypršení platnosti předplatného ${ planName } překročíte limity bezplatného tarifu, nebudete moci:"
       ],
+      "Keep ${ config.planName }": [
+        "Ponechat ${ config.planName }"
+      ],
       "Learn more about our impact": [
         "Zjistěte více o našem dopadu"
       ],
@@ -14680,6 +14710,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Odblokování internetového přístupu v Íránu"
+      ],
+      "Unlimited folders and labels": [
+        "Neomezený počet složek a štítků"
       ],
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
@@ -14966,9 +14999,6 @@
       ],
       "Undo in progress": [
         "Probíhá zrušení"
-      ],
-      "User created": [
-        "Uživatel vytvořen"
       ],
       "User updated": [
         "Uživatel aktualizován"
@@ -15309,9 +15339,6 @@
       ],
       "Add filter": [
         "Přidat filtr"
-      ],
-      "Add new user": [
-        "Přidat nového uživatele"
       ],
       "Add PayPal payment method": [
         "Přidat PayPal jako platební metodu"
@@ -16713,21 +16740,6 @@
       ],
       "Primary admin": [
         "Hlavní správce"
-      ]
-    },
-    "Users table: AI-powered": {
-      "AI": [
-        "AI"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "SSO uživatel poskytnutý poskytovatelem identity"
       ]
     },
     "Validation": {

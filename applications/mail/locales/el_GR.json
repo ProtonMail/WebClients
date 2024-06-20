@@ -991,6 +991,9 @@
       "Revert to original display": [
         "Επαναφορά αρχικής εμφάνισης"
       ],
+      "Run on servers": [
+        "Εκτέλεση σε διακομιστές"
+      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -1203,10 +1206,6 @@
       ],
       "Trust": [
         "Αξιόπιστο"
-      ],
-      "Trust key": [
-        "Εμπιστοσύνη στο κλειδί",
-        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4094,6 +4093,9 @@
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
       ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Ο βοηθός γραφής δεν μπορεί να προχωρήσει με το αίτημά σας. Παρακαλούμε δοκιμάστε μια διαφορετική προτροπή."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Υπερβολικός αριθμός φακέλων στον εξωτερικό λογαριασμό σας. Παρακαλούμε προσαρμόστε την εισαγωγή, προς διαγραφή μερικών φακέλων."
       ],
@@ -5062,6 +5064,9 @@
       "Hardware not compatible": [
         "Το υλικό δεν είναι συμβατό"
       ],
+      "Report an issue": [
+        "Αναφορά προβλήματος"
+      ],
       "Resume downloading": [
         "Συνέχιση λήψης"
       ],
@@ -6018,6 +6023,12 @@
       "Estimating time remaining...": [
         "Εκτίμηση απομένοντος χρόνου..."
       ],
+      "Expand selection": [
+        "Ανάπτυξη επιλογής"
+      ],
+      "Expand text": [
+        "Ανάπτυξη κειμένου"
+      ],
       "Expiration time": [
         "Χρόνος λήξης"
       ],
@@ -6428,6 +6439,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Παρακαλούμε επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ομάδα ${ groupName }."
+      ],
+      "Please share what the issue is": [
+        "Παρακαλούμε μοιραστείτε με μας ποιο είναι το πρόβλημα"
       ],
       "Please share what you expected": [
         "Παρακαλώ μοιραστείτε αυτό που περιμένατε"
@@ -7089,6 +7103,9 @@
       "You can now return to the application to continue": [
         "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
+      "You can open only one writing assistant at a time": [
+        "Μπορείτε να ανοίξετε μόνο έναν βοηθό γραφής κάθε φορά"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
@@ -7218,6 +7235,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Το πρόγραμμα περιήγησής σας δεν υποστηρίζει τον βοηθό γραφής. Κατεβάστε την εφαρμογή επιφάνειας εργασίας ${ MAIL_APP_NAME } ή δοκιμάστε να το εκτελέσετε σε διακομιστές."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Το πρόγραμμα περιήγησής σας δεν υποστηρίζει τον βοηθό γραφής. Δοκιμάστε να το εκτελέσετε σε διακομιστές."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
@@ -7232,6 +7255,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Το υλικό σας δεν υποστηρίζει την εκτέλεση του βοηθού γραφής τοπικά. Δοκιμάστε να το εκτελέσετε σε διακομιστές."
       ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
@@ -11033,8 +11059,23 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } ημερολόγιο ανά χρήστη",
+        "${ MaxCalendars } ημερολόγια ανά χρήστη"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ maxDomainNames } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ maxEmails } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } συμπεριλαμβανομένων απεριόριστων hide-my-email ψευδώνυμων"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
@@ -11066,6 +11107,12 @@
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "20 email addresses per user": [
+        "20 διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "25 calendars per user": [
+        "25 ημερολόγια ανά χρήστη"
+      ],
       "6 users": [
         "6 χρήστες"
       ],
@@ -11077,6 +11124,12 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 5 GB χώρου αποθήκευσης στο Drive και έως 1 GB αποθηκευτικού χώρου στο Mail. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
+      ],
+      "All you need for your business": [
+        "Όλα όσα χρειάζεστε για την επιχείρησή σας"
+      ],
+      "Automatic email forwarding": [
+        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "Back up photos from your devices": [
         "Δημιουργία αντιγράφων ασφαλείας φωτογραφιών από τις συσκευές σας"
@@ -11113,6 +11166,9 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Εάν υπερβείτε τα όρια του δωρεάν προγράμματος όταν λήξει η συνδρομή σας ${ planName }, δε θα μπορείτε να:"
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
       ],
       "Learn more about our impact": [
         "Μάθετε περισσότερα για τον αντίκτυπό μας"
@@ -11152,6 +11208,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Ξεμπλοκάρισμα πρόσβασης στο διαδίκτυο στο Ιράν"
+      ],
+      "Unlimited folders and labels": [
+        "Απεριόριστοι φάκελοι και ετικέτες"
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"

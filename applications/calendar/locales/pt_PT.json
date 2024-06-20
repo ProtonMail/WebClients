@@ -458,11 +458,11 @@
       "Not now": [
         "Agora não"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -5943,14 +5943,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar conta"
@@ -5972,6 +5964,14 @@
       ],
       "Switch plan": [
         "Alterar o plano"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -7800,6 +7800,38 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "and 15 more premium features": [
+        "e mais 15 funcionalidades premium"
+      ],
+      "Desktop app": [
+        "Aplicação de desktop"
+      ],
+      "No ads or tracking": [
+        "Sem anúncios ou rastreamento"
+      ],
+      "Short @pm.me email address": [
+        "Endereço de e-mail curto @pm.me"
+      ],
+      "Support our mission": [
+        "Apoie a nossa missão"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade your productivity": [
+        "Melhore a sua produtividade"
+      ],
+      "We don't sell your data": [
+        "Não vendemos os seus dados."
+      ],
+      "Your privacy is our mission": [
+        "A sua privacidade é a nossa missão."
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
@@ -7807,6 +7839,21 @@
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } calendário por utilizador",
+        "${ MaxCalendars } calendários por utilizador"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } domínio de e-mail personalizado",
+        "${ maxDomainNames } domínios de e-mail personalizados"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } endereço de e-mail por utilizador",
+        "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por utilizador"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
@@ -7817,11 +7864,20 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "20 email addresses per user": [
+        "20 endereços de e-mail por utilizador"
+      ],
+      "25 calendars per user": [
+        "25 calendários por utilizador"
+      ],
       "6 users": [
         "6 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -7856,6 +7912,9 @@
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
       ],
+      "Unlimited folders and labels": [
+        "Pastas e etiquetas ilimitadas"
+      ],
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
       ],
@@ -7867,38 +7926,6 @@
       ],
       "Yearly free storage bonuses": [
         "Bónus de armazenamento gratuito anual"
-      ]
-    },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB de armazenamento"
-      ],
-      "and 15 more premium features": [
-        "e mais 15 funcionalidades premium"
-      ],
-      "Desktop app": [
-        "Aplicação de desktop"
-      ],
-      "No ads or tracking": [
-        "Sem anúncios ou rastreamento"
-      ],
-      "Short @pm.me email address": [
-        "Endereço de e-mail curto @pm.me"
-      ],
-      "Support our mission": [
-        "Apoie a nossa missão"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade your productivity": [
-        "Melhore a sua produtividade"
-      ],
-      "We don't sell your data": [
-        "Não vendemos os seus dados."
-      ],
-      "Your privacy is our mission": [
-        "A sua privacidade é a nossa missão."
       ]
     },
     "Subscription renewal state": {

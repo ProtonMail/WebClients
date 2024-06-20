@@ -118,9 +118,6 @@
       "Add label": [
         "Dodaj oznako"
       ],
-      "Add multiple users": [
-        "Dodaj več uporabnikov"
-      ],
       "Add notification": [
         "Dodaj obvestilo"
       ],
@@ -303,9 +300,6 @@
       ],
       "Create link": [
         "Ustvari povezavo"
-      ],
-      "Create user": [
-        "Ustvari uporabnika"
       ],
       "Create users": [
         "Ustvari uporabnike"
@@ -1381,12 +1375,35 @@
         "Aplikacije ${ BRAND_NAME }"
       ]
     },
+    "Assistant option": {
+      "Run on servers": [
+        "Zagon na strežnikih"
+      ]
+    },
     "Assistant toggle": {
       "${ localPrice } /month": [
         "${ localPrice } na mesec"
       ],
+      "Add writing assistant": [
+        "Dodajte pomočnika za pisanje"
+      ],
+      "Add writing assistant to your plan": [
+        "V svoj načrt dodajte pomočnika pri pisanju"
+      ],
+      "Assign it to specific users in ${ userAndAddressesButton }": [
+        "Dodelite ga določenim uporabnikom v ${ userAndAddressesButton }"
+      ],
+      "Cancel writing assistant add-on": [
+        "Prekliči dodatek za pomočnika pri pisanju"
+      ],
       "Renew subscription": [
         "Obnovite naročnino"
+      ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
+        "Dvignite produktivnost e-pošte na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil. ${ learnMore }."
+      ],
+      "Trial in progress": [
+        "Preizkus v teku"
       ]
     },
     "Attached ics file error": {
@@ -3458,12 +3475,25 @@
         ".rpm za Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Celovito šifriranje"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Napredna varnost deljenja"
       ],
       "Encrypted cloud storage for all your files": [
         "Šifrirana shramba v oblaku za vse vaše datoteke"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Zaščiteni s švicarskimi zakoni o zasebnosti."
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "Varna shramba v oblaku in delitev datotek, ki varuje vaše podatke"
       ]
     },
     "Duration": {
@@ -3901,11 +3931,6 @@
         "Opozorilo"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Plačljive funkcije ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } in ${ PASS_SHORT_APP_NAME }"
@@ -4233,6 +4258,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Najprej nastavite e-poštno sporočilo za obnovitev/obvestilo"
+      ],
+      "Please try again in a few moments.": [
+        "Poskusite znova čez nekaj trenutkov."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da dobite večuporabniško podporo."
@@ -6124,17 +6152,6 @@
         "Del vsebine koledarja ni podprt in ne bo uvožen."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ključ ${ fingerprint } je že bil naložen."
-      ],
-      "Selected color:": [
-        "Izberi barvo:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
@@ -7201,6 +7218,9 @@
       "Internet connection restored.": [
         "Internetna povezava je spet vzpostavljena."
       ],
+      "Invite rejected": [
+        "Povabilo zavrnjeno"
+      ],
       "Invite successfully sent": [
         "Vabilo uspešno poslano",
         "Vabili uspešno poslani",
@@ -7446,9 +7466,6 @@
       ],
       "Open source": [
         "Odprtokoden"
-      ],
-      "Optional": [
-        "Neobvezno"
       ],
       "or ${ selectFileButton }": [
         "ali ${ selectFileButton }"
@@ -7993,9 +8010,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ta uporabnik trenutno skrbi za plačila za vašo organizacijo. Z odstranitvijo tega člana boste vi postali odgovorni za plačila za vašo organizacijo."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "To preverjanje lahko traja do ene ure. Varno lahko nadaljujete z naslednjimi koraki."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "To bo preklicalo vašo trenutno plačano naročnino in izgubili boste vse prednosti, ki ste jih pridobili."
       ],
@@ -8040,9 +8054,6 @@
       ],
       "to ${ product } Business": [
         "pri ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Če želite domeni ${ boldDomainName } dovoliti uporabo SAML SSO, morate potrditi lastništvo z dodajanjem naslednjega zapisa DNS TXT vaši domeni pri vašem ponudniku DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Za preprečevanje izgube podatkov jih izbrišite samo, če veste, kaj delate, ali ste izvozili kopijo."
@@ -8660,6 +8671,17 @@
         "Srečanje Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Selected color:": [
+        "Izberi barvo:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Ko je omogočeno, podmape prevzamejo barvo nadrejene mape."
@@ -9121,6 +9143,9 @@
       "Access to my events": [
         "Dostop do mojih dogodkov"
       ],
+      "Account recovery": [
+        "Obnovitev računa"
+      ],
       "Account storage": [
         "Shramba računa"
       ],
@@ -9528,6 +9553,9 @@
       ],
       "Folder location": [
         "Mesto mape"
+      ],
+      "Folders and labels": [
+        "Mape in oznake"
       ],
       "Font family": [
         "Družina pisave"
@@ -10449,9 +10477,6 @@
       ],
       "Limited time offer": [
         "Časovno omejena ponudba"
-      ],
-      "Secure email that protects your privacy": [
-        "Varna e-pošta, ki ščiti vašo zasebnost"
       ]
     },
     "mailtrial2024: Action": {
@@ -11154,6 +11179,9 @@
       "GDPR data processing agreement": [
         "GDPR pogodba o obdelavi podatkov"
       ],
+      "Generate emails with only a prompt": [
+        "Ustvarite e-pošto samo s pozivom"
+      ],
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
@@ -11220,6 +11248,9 @@
       "Priority support & live chat": [
         "Prednostna podpora in klepet v živo"
       ],
+      "Proofread and refine your texts": [
+        "Lektorirajte in izboljšajte svoja besedila"
+      ],
       "Protect ${ n } device at a time": [
         "Zaščitite ${ n } napravo hkrati.",
         "Zaščitite ${ n } naprave hkrati.",
@@ -11228,6 +11259,9 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, katera je potrebno posodobiti."
+      ],
+      "Reply to messages": [
+        "Odgovorite na sporočila"
       ],
       "Require 2FA for organization": [
         "Za organizacijo zahtevajte 2FA"
@@ -13062,11 +13096,6 @@
         "Sekundarni časovni pas"
       ]
     },
-    "Private Member": {
-      "private": [
-        "zasebno"
-      ]
-    },
     "Property type": {
       "Address": [
         "Naslov"
@@ -14390,8 +14419,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Program ${ MAIL_APP_NAME } za namizje"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } koledar na uporabnika",
+        "${ MaxCalendars } koledarji na uporabnika",
+        "${ MaxCalendars } koledarja na uporabnika",
+        "${ MaxCalendars } koledarja na uporabnika"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } e-poštna domena po meri",
+        "${ maxDomainNames } e-poštni domeni po meri",
+        "${ maxDomainNames } e-poštne domene po meri",
+        "${ maxDomainNames } e-poštnih domen po meri"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-poštni naslov na uporabnika",
+        "${ maxEmails } e-poštna naslova na uporabnika",
+        "${ maxEmails } e-poštni naslovi na uporabnika",
+        "${ maxEmails } e-poštnih naslovov na uporabnika"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } vključno z neomejenimi vzdevki hide-my-email"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } shrambe na uporabnika"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } skupnega prostora shrambe"
@@ -14423,6 +14473,12 @@
       "10 email addresses": [
         "10 e-poštnih naslovov"
       ],
+      "20 email addresses per user": [
+        "20 e-poštnih naslovov na uporabnika"
+      ],
+      "25 calendars per user": [
+        "25 koledarjev na uporabnika"
+      ],
       "6 users": [
         "6 uporabnikov"
       ],
@@ -14434,6 +14490,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Ko se vaša naročnina ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 5 GB prostora za shranjevanje za disk in do 1 GB prostora za shranjevanje za pošto. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
+      ],
+      "Automatic email forwarding": [
+        "Samodejno posredovanje elektronske pošte"
       ],
       "Back up photos from your devices": [
         "Varnostno kopiranje fotografij iz naprav"
@@ -14486,6 +14545,9 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Če ob izteku naročnine ${ planName } prekoračite omejitve brezplačnega načrta, ne boste mogli:"
       ],
+      "Keep ${ config.planName }": [
+        "Ohrani ${ config.planName }."
+      ],
       "Learn more about our impact": [
         "Več o našem vplivu"
       ],
@@ -14533,6 +14595,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Omogočanje dostopa do interneta v Iranu"
+      ],
+      "Unlimited folders and labels": [
+        "Neomejeno število map in oznak"
       ],
       "Unlimited folders, labels and filters": [
         "Neomejeno število map, oznak in filtrov"
@@ -14819,9 +14884,6 @@
       ],
       "Undo in progress": [
         "Razveljavljanje poteka"
-      ],
-      "User created": [
-        "Uporabnik ustvarjen"
       ],
       "User updated": [
         "Uporabnik posodobljen"
@@ -15150,9 +15212,6 @@
       ],
       "Add filter": [
         "Dodajanje filtra"
-      ],
-      "Add new user": [
-        "Dodaj novega uporabnika"
       ],
       "Add PayPal payment method": [
         "Dodaj vrsto PayPal plačila"
@@ -16545,16 +16604,6 @@
       ],
       "Primary admin": [
         "Glavni skrbnik"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "Uporabnik SSO, ki ga je zagotovil vaš ponudnik identitete"
       ]
     },
     "Validation": {

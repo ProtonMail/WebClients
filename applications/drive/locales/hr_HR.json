@@ -414,6 +414,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvori ${ CALENDAR_APP_NAME } postavke"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Otvori u ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Otvori navigaciju"
       ],
@@ -1877,6 +1880,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ]
     },
     "Error": {
@@ -4097,6 +4103,9 @@
       "Last name": [
         "Prezime"
       ],
+      "Message": [
+        "Poruka"
+      ],
       "Name": [
         "Naziv"
       ],
@@ -4342,6 +4351,11 @@
         "Nadogradnja"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mjesec",
@@ -4445,6 +4459,19 @@
       ]
     },
     "Subscription reminder": {
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendar po korisniku",
+        "${ MaxCalendars } kalendara po korisniku",
+        "${ MaxCalendars } kalendara po korisniku"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-pošta po korisniku",
+        "${ maxEmails } e-pošte po korisniku",
+        "${ maxEmails } e-pošte po korisniku"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } prostora za pohranu po korisniku"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -4457,6 +4484,9 @@
       "Priority support": [
         "Prioritetna podrška"
       ],
+      "Unlimited folders and labels": [
+        "Neograničen broj mapa i oznaka"
+      ],
       "Version history": [
         "Povijest verzija"
       ]
@@ -4467,6 +4497,9 @@
       ],
       "Desktop app": [
         "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
@@ -4781,6 +4814,9 @@
       ],
       "Deleting contacts": [
         "Brisanje kontakata"
+      ],
+      "Details": [
+        "Pojedinosti"
       ],
       "Discard": [
         "Odbaci"

@@ -29,9 +29,6 @@
       "Add domain": [
         "Adicionar domínio"
       ],
-      "Add multiple users": [
-        "Adicionar vários utilizadores"
-      ],
       "Add PayPal": [
         "Adicionar PayPal"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "Criar gateway"
-      ],
-      "Create user": [
-        "Criar utilizador"
       ],
       "Create users": [
         "Criar utilizadores"
@@ -1931,11 +1925,6 @@
         "E-mail de verificação enviado para ${ address }"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "A2F"
-      ]
-    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3364,9 +3353,6 @@
       "Open source": [
         "Código aberto"
       ],
-      "Optional": [
-        "Opcional"
-      ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
       ],
@@ -4240,9 +4226,6 @@
       ],
       "Country": [
         "País"
-      ],
-      "Create password": [
-        "Criar a palavra-passe"
       ],
       "Credits used": [
         "Créditos utilizados"
@@ -5982,11 +5965,6 @@
         "Gratuito"
       ]
     },
-    "Private Member": {
-      "private": [
-        "privado"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Cancelar"
@@ -6793,6 +6771,21 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } calendário por utilizador",
+        "${ MaxCalendars } calendários por utilizador"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } domínio de e-mail personalizado",
+        "${ maxDomainNames } domínios de e-mail personalizados"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } endereço de e-mail por utilizador",
+        "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por utilizador"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
       ],
@@ -6802,11 +6795,20 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "20 email addresses per user": [
+        "20 endereços de e-mail por utilizador"
+      ],
+      "25 calendars per user": [
+        "25 calendários por utilizador"
+      ],
       "6 users": [
         "6 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -6831,6 +6833,9 @@
       ],
       "I still want to cancel": [
         "Eu ainda quero cancelar."
+      ],
+      "Keep ${ config.planName }": [
+        "Manter ${ config.planName }"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
@@ -6861,6 +6866,9 @@
       ],
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
+      ],
+      "Unlimited folders and labels": [
+        "Pastas e etiquetas ilimitadas"
       ],
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
@@ -7039,9 +7047,6 @@
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiado para a área de transferência"
-      ],
-      "User created": [
-        "Utilizador criado"
       ],
       "User updated": [
         "Utilizador atualizado"
@@ -7239,9 +7244,6 @@
       ],
       "Add domain": [
         "Adicionar domínio"
-      ],
-      "Add new user": [
-        "Adicionar um novo utilizador"
       ],
       "Add PayPal payment method": [
         "Adicionar pagamento com PayPal"
@@ -7877,11 +7879,6 @@
       ],
       "Primary admin": [
         "Administrador principal"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
       ]
     },
     "Validation": {

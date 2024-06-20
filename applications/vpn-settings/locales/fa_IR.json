@@ -2726,9 +2726,6 @@
       "Country": [
         "کشور"
       ],
-      "Create password": [
-        "ایجاد رمزعبور"
-      ],
       "Credits used": [
         "اعتبار استفاده شده"
       ],
@@ -3755,11 +3752,6 @@
         "رایگان"
       ]
     },
-    "Private Member": {
-      "private": [
-        "خصوصی"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "انصراف"
@@ -4005,6 +3997,17 @@
       ]
     },
     "Subscription reminder": {
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } دامنه ایمیل سفارشی",
+        "${ maxDomainNames } دامنه ایمیل سفارشی"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } آدرس ایمیل برای هر کاربر",
+        "${ maxEmails } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } فضای ذخیره‌سازی کلی"
       ],
@@ -4013,6 +4016,9 @@
       ],
       "Calendar sharing": [
         "اشتراک گذاری تقویم"
+      ],
+      "Keep ${ config.planName }": [
+        "${ config.planName } را نگه دار"
       ],
       "Priority support": [
         "اولویت پشتیبانی"
@@ -4110,9 +4116,6 @@
       ],
       "SPF value copied to clipboard": [
         "مقدار SPF در کلیپ‌بورد کپی شد"
-      ],
-      "User created": [
-        "کاربر ایجاد شد"
       ],
       "User updated": [
         "کاربر بروز شد"

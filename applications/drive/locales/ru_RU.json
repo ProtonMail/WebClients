@@ -549,6 +549,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Открыть в ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Открыть панель навигации"
       ],
@@ -7471,9 +7474,6 @@
       "File removed": [
         "Файл удален"
       ],
-      "Invitation email was sent again": [
-        "Письмо с приглашением было отправлено снова"
-      ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
@@ -8576,8 +8576,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } календарь на пользователя",
+        "${ MaxCalendars } календаря на пользователя",
+        "${ MaxCalendars } календарей на пользователя",
+        "${ MaxCalendars } календарей на пользователя"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } пользовательский домен электронной почты",
+        "${ maxDomainNames } пользовательских домена электронной почты",
+        "${ maxDomainNames } пользовательских доменов электронной почты",
+        "Пользовательских доменов электронной почты: ${ maxDomainNames }"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } адрес электронной почты на пользователя",
+        "${ maxEmails } адреса электронной почты на пользователя",
+        "${ maxEmails } адресов электронной почты на пользователя",
+        "Адресов электронной почты на пользователя: ${ maxEmails }"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME }, включая неограниченное количество псевдонимов hide-my-email"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "Объем хранилища на пользователя: ${ planMaxSpace }"
       ],
       "${ planMaxSpace } total storage": [
         "Хранилище объемом ${ planMaxSpace }"
@@ -8597,11 +8618,20 @@
       "10 email addresses": [
         "10 адресов электронной почты"
       ],
+      "20 email addresses per user": [
+        "20 адресов электронной почты на пользователя"
+      ],
+      "25 calendars per user": [
+        "25 календарей на пользователя"
+      ],
       "6 users": [
         "6 пользователей"
       ],
       "Add any new files": [
         "Добавление любых новых файлов"
+      ],
+      "Automatic email forwarding": [
+        "Автоматическая пересылка электронной почты"
       ],
       "Back up photos from your devices": [
         "Резервное копирование фотографий с ваших устройств"
@@ -8662,6 +8692,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Разблокирование доступа к Интернету в Иране"
+      ],
+      "Unlimited folders and labels": [
+        "Неограниченное количество папок / ярлыков"
       ],
       "Unlimited folders, labels and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
