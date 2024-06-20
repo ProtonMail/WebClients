@@ -128,9 +128,12 @@ describe('AckLedger', () => {
 
       expect(ledger.concerningMessages.size).toBe(1)
       expect(mockMetric).toHaveBeenCalledTimes(1)
-      expect(mockMetric).toHaveBeenCalledWith({
-        type: 'concern_threshold',
-      })
+      expect(mockMetric).toHaveBeenCalledWith(
+        {
+          type: 'concern_threshold',
+        },
+        1,
+      )
     })
 
     it('should add to erorred messages if error threshold is passed', () => {
@@ -153,9 +156,12 @@ describe('AckLedger', () => {
       expect(ledger.erroredMessages.size).toBe(1)
       expect(ledger.concerningMessages.size).toBe(0)
       expect(mockMetric).toHaveBeenCalledTimes(1)
-      expect(mockMetric).toHaveBeenCalledWith({
-        type: 'error_threshold',
-      })
+      expect(mockMetric).toHaveBeenCalledWith(
+        {
+          type: 'error_threshold',
+        },
+        1,
+      )
     })
 
     it('should notify of status change if messages are added', () => {
