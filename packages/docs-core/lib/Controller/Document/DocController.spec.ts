@@ -302,7 +302,7 @@ describe('DocController', () => {
     it('should refetch commit', () => {
       controller.refetchCommitDueToStaleContents = jest.fn()
 
-      controller.handleCommitIdOutOfSyncEvent()
+      controller.handleFailedToGetTokenDueToCommitIdOutOfSyncEvent()
 
       expect(controller.refetchCommitDueToStaleContents).toHaveBeenCalled()
     })
@@ -313,7 +313,7 @@ describe('DocController', () => {
       controller._loadCommit.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
       controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.fail('Unable to resolve'))
 
-      await controller.refetchCommitDueToStaleContents()
+      await controller.refetchCommitDueToStaleContents('rts-disconnect')
 
       expect(controller.eventBus.publish).toHaveBeenCalledWith({
         type: DocControllerEvent.UnableToResolveCommitIdConflict,
@@ -331,7 +331,7 @@ describe('DocController', () => {
 
       controller.setInitialCommit = jest.fn()
 
-      await controller.refetchCommitDueToStaleContents()
+      await controller.refetchCommitDueToStaleContents('rts-disconnect')
 
       expect(controller.setInitialCommit).toHaveBeenCalled()
     })
@@ -344,7 +344,7 @@ describe('DocController', () => {
         }),
       )
 
-      await controller.refetchCommitDueToStaleContents()
+      await controller.refetchCommitDueToStaleContents('rts-disconnect')
 
       expect(controller.websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalled()
     })
@@ -362,7 +362,7 @@ describe('DocController', () => {
     it('should block editing', () => {
       controller.handleWebsocketFailedToConnectEvent()
 
-      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(false)
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
     })
 
     it('should set state to disconnected', () => {

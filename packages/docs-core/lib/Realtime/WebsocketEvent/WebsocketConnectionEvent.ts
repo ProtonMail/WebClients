@@ -7,5 +7,5 @@ export enum WebsocketConnectionEvent {
   EventMessage = 'event-message',
   EncryptionError = 'encryption-error',
   AckStatusChange = 'ack-status-change',
-  CommitIdOutOfSync = 'commit-id-out-of-sync',
+  FailedToGetTokenCommitIdOutOfSync = 'commit-id-out-of-sync',
 }
