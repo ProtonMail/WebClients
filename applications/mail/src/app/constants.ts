@@ -31,7 +31,7 @@ export const FUTURE_MESSAGES_BUFFER = 120;
 
 export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
-export const MAIL_ACTION_DEFAULT_CHUNK_SIZE = 25;
+export const MAIL_ACTION_DEFAULT_CHUNK_SIZE = 10;
 
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
