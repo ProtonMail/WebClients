@@ -171,8 +171,10 @@ export class WebsocketService implements WebsocketServiceInterface {
 
       onFailToGetToken: (errorCode) => {
         if (errorCode === DocsApiErrorCode.CommitIdOutOfSync) {
-          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.CommitIdOutOfSync]>({
-            type: WebsocketConnectionEvent.CommitIdOutOfSync,
+          this.eventBus.publish<
+            WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync]
+          >({
+            type: WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync,
             payload: {
               document,
             },

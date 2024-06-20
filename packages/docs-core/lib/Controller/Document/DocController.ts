@@ -102,7 +102,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.DocumentUpdateMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
-    eventBus.addEventHandler(this, WebsocketConnectionEvent.CommitIdOutOfSync)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync)
   }
 
   public get role(): DocumentRole {
@@ -146,7 +146,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     if (payload.serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
-      void this.refetchCommitDueToStaleContents()
+      void this.refetchCommitDueToStaleContents('rts-disconnect')
     }
 
     if (payload.serverReason.props.code === ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE) {
@@ -162,6 +162,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   handleWebsocketFailedToConnectEvent(): void {
     this.websocketStatus = 'disconnected'
+
     this.reloadEditingLockedState()
   }
 
@@ -187,13 +188,17 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.handleWebsocketAckStatusChangeEvent(
         event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange],
       )
-    } else if (event.type === WebsocketConnectionEvent.CommitIdOutOfSync) {
-      this.handleCommitIdOutOfSyncEvent()
+    } else if (event.type === WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync) {
+      this.handleFailedToGetTokenDueToCommitIdOutOfSyncEvent()
     }
   }
 
-  handleCommitIdOutOfSyncEvent(): void {
-    void this.refetchCommitDueToStaleContents()
+  /**
+   * The client was unable to get a token from the Docs API because the Commit ID the client had did not match
+   * what the server was expecting.
+   */
+  handleFailedToGetTokenDueToCommitIdOutOfSyncEvent(): void {
+    void this.refetchCommitDueToStaleContents('token-fail')
   }
 
   handleWebsocketAckStatusChangeEvent(
@@ -389,12 +394,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
    * If the RTS rejects or drops our connection due to our commit ID not being what it has, we will refetch the document
    * and its binary from the main API and update our content.
    */
-  async refetchCommitDueToStaleContents() {
+  async refetchCommitDueToStaleContents(source: 'token-fail' | 'rts-disconnect') {
     if (!this.entitlements) {
       throw new Error('Attempting to reload document before entitlements are initialized')
     }
 
-    this.logger.info('Refetching document due to stale commit ID')
+    this.logger.info('Refetching document due to stale commit ID from source', source)
 
     const result = await this._getDocumentMeta.execute(this.nodeMeta)
     if (result.isFailed()) {
