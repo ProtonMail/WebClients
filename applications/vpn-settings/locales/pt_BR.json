@@ -29,9 +29,6 @@
       "Add domain": [
         "Adicionar domínio"
       ],
-      "Add multiple users": [
-        "Adicionar vários usuários"
-      ],
       "Add PayPal": [
         "Adicionar PayPal"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "Criar gateway"
-      ],
-      "Create user": [
-        "Criar usuário"
       ],
       "Create users": [
         "Criar usuários"
@@ -2060,11 +2054,6 @@
         "O e-mail de verificação foi enviado para ${ address }."
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "A2F"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Recursos pagos do ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
@@ -3671,9 +3660,6 @@
       "Open source": [
         "Código aberto"
       ],
-      "Optional": [
-        "Opcional"
-      ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
       ],
@@ -3980,9 +3966,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Essa verificação pode levar até uma hora. Você pode prosseguir com segurança para as próximas etapas."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esta ação cancelará seu atual plano pago e você perderá todas as vantagens e benefícios acumulados"
       ],
@@ -4012,9 +3995,6 @@
       ],
       "to ${ product } Business": [
         "para ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Para permitir que o domínio ${ boldDomainName } use SAML SSO, você deve verificar a propriedade dele, adicionando o seguinte registro DNS TXT ao seu domínio no seu provedor DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Para cancelar sua assinatura, entre em contato conosco."
@@ -4639,9 +4619,6 @@
       ],
       "Country": [
         "País"
-      ],
-      "Create password": [
-        "Criar senha"
       ],
       "Credits used": [
         "Créditos usados"
@@ -6598,6 +6575,9 @@
       "Card number": [
         "Número do cartão"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Atualmente a renovação automática da assinatura está desativada. Se você alterar a assinatura agora, a renovação automática será ativada novamente."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -6606,6 +6586,9 @@
       ],
       "Processing payment": [
         "Processando pagamento"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months }. Você pode cancelar a qualquer momento."
@@ -6749,11 +6732,6 @@
     "Price": {
       "Free": [
         "Gratuito"
-      ]
-    },
-    "Private Member": {
-      "private": [
-        "privado"
       ]
     },
     "Recovery Email": {
@@ -7709,6 +7687,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } com compartilhamento de calendário e disponibilidade"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
         "${ dayDiff } dias restantes"
@@ -7767,6 +7748,9 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento por usuário para e-mails, anexos, eventos, e arquivos. Você também está elegível para bônus de armazenamento anualmente."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } oferece ${ planMaxSpace } de armazenamento por usuário para e-mails, anexos, eventos, arquivos e senhas. Você também está elegível para bônus de armazenamento anualmente."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programa ${ PROTON_SENTINEL_NAME }"
       ],
@@ -7799,6 +7783,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura do ${ planName } expirar, você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 5 GB para armazenamento do Drive e até 1 GB para armazenamento do Mail. Você também perderá todos os bônus de armazenamentos concedidos anteriormente."
+      ],
+      "All you need for your business": [
+        "Tudo que você precisa na sua empresa"
       ],
       "Any custom email domains will be disabled": [
         "Qualquer domínio de e-mail personalizado será desativado"
@@ -8158,9 +8145,6 @@
       "SPF value copied to clipboard": [
         "Valor SPF copiado para a área de transferência"
       ],
-      "User created": [
-        "Usuário criado"
-      ],
       "User updated": [
         "Usuário atualizado"
       ],
@@ -8360,9 +8344,6 @@
       ],
       "Add domain": [
         "Adicionar domínio"
-      ],
-      "Add new user": [
-        "Adicionar novo usuário"
       ],
       "Add PayPal payment method": [
         "Adicionar o Paypal como método de pagamento"
@@ -9046,21 +9027,6 @@
       ],
       "Primary admin": [
         "Administrador principal"
-      ]
-    },
-    "Users table: AI-powered": {
-      "AI": [
-        "IA"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "Usuário SSO fornecido pelo seu provedor de identidade"
       ]
     },
     "Validation": {

@@ -29,9 +29,6 @@
       "Add domain": [
         "დომენის დამატება"
       ],
-      "Add multiple users": [
-        "ერთზე მეტი მომხმარებლის დამატება"
-      ],
       "Add PayPal": [
         "PayPal-ის დამატება"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "რაუტერის შექმნა"
-      ],
-      "Create user": [
-        "მომხმარებლის შექმნა"
       ],
       "Create users": [
         "მომხმარებლების შექმნა"
@@ -2051,11 +2045,6 @@
         "გადამოწმების ელფოსტა გაგზავნილია ${ address }-თან"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ის და ${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
@@ -3635,9 +3624,6 @@
       "Open source": [
         "ღია კოდი"
       ],
-      "Optional": [
-        "არასავალდებულო"
-      ],
       "or ${ selectFileButton }": [
         "ან ${ selectFileButton }"
       ],
@@ -3938,9 +3924,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "ეს მომხმარებელი, ამჟამად, პასუხისმგებელია თქვენი ორგანიზაციის გადასახადების გადახდაზე. მისი ჩამოქვეითებით, ორგანიზაციის გადახდებზე პასუხისმგებელი თქვენ გახდებით."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "ამ გადამოწმებას ერთ საათამდე შეიძლება, დასჭირდეს. შეგიძლიათ, შემდეგ ნაბიჯზე უსაფრთხოდ გადახვიდეთ."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "ეს გააუქმებს თქვენს მიმდინარე ფასიან გამოწერას და ყველა ერთგულების ნიშნად გადმოცემულ უპირატესობას დაკარგავთ."
       ],
@@ -3970,9 +3953,6 @@
       ],
       "to ${ product } Business": [
         "${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "იმისათვის, რომ ნება დართოთ დომენს ${ boldDomainName } SAML SSO გამოიყენოს. ჯერ უნდა დაამტკიცოთ, რომ ის თქვენ გეკუთვნით, შემდეგი DNS TXT ჩანაწერის დამატებით თქვენს DNS სერვისის მომწოდებელში."
       ],
       "To cancel your subscription, please reach out to us.": [
         "გამოწერის გასაუქმებლად, დაგვიკავშირდით."
@@ -4580,9 +4560,6 @@
       ],
       "Country": [
         "ქვეყანა"
-      ],
-      "Create password": [
-        "პაროლის შექმნა"
       ],
       "Credits used": [
         "გამოყენებული სახსრები"
@@ -6656,11 +6633,6 @@
         "უფასო"
       ]
     },
-    "Private Member": {
-      "private": [
-        "პირადი"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "გაუქმება"
@@ -6722,6 +6694,11 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
+      ]
+    },
+    "Remove organization logo": {
+      "Users will no longer see your custom logo or organization name.": [
+        "მომხმარებლები ვეღარ დაინახავენ თქვენს მორგებულ ლოგოს ან ორგანიზაციის სახელს."
       ]
     },
     "Restore administrator panel": {
@@ -7561,11 +7538,17 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } კალენდრის გაზიარებასაც შეიცავს"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებით და ხელმისაწვდომობით"
+      ],
       "${ dayDiff } day left": [
         "დარჩენილია ${ dayDiff } დღე",
         "დარჩენილია ${ dayDiff } დღე"
       ],
       "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
+      ],
+      "${ DRIVE_APP_NAME } with version history": [
         "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
       ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
@@ -7574,8 +7557,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } ავტომატური ელფოსტის გადაგზავნით"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი",
+        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი"
+      ],
+      "${ maxEmails } email address per user": [
+        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } ${ DARK_WEB_MONITORING_NAME }-ით"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
       ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
@@ -7583,14 +7587,32 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
+      ],
       "10 email addresses": [
         "10 ელფოსტის მისამართი"
+      ],
+      "20 email addresses per user": [
+        "20 ელფოსტის  მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "25 calendars per user": [
+        "25 კალენდარი თითოეული მომხმარებლისთვის"
       ],
       "6 users": [
         "6 მომხმარებელი"
       ],
       "Add any new files": [
         "დაამატეთ ნებისმიერი ახალი ფაილები"
+      ],
+      "All you need for your business": [
+        "ყველაფერი, რაც თქვენი ბიზნესისთვის გჭირდებათ"
+      ],
+      "Any custom email domains will be disabled": [
+        "ყველა მორგებული ელფოსტის დომენი გაითიშება"
+      ],
+      "Automatic email forwarding": [
+        "ავტომატური ელფოსტის გადაგზავნა"
       ],
       "Back up photos from your devices": [
         "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
@@ -7604,6 +7626,9 @@
       "Cancel subscription?": [
         "გავაუქმო ხელმოწერა?"
       ],
+      "Catch-all email address": [
+        "დომენის ყველა ელფოსტის მიმღები მისამართი"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -7613,14 +7638,23 @@
       "Custom schedule send and snooze times": [
         "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "კომპიუტერის აპი და ელფოსტის კლიენტის მხარდაჭერა (IMAP-ით)"
+      ],
       "Direct contribution to our mission": [
         "პირდაპირი შემოწირვა ჩვენს მისიაზე"
       ],
       "Early access to new apps and features": [
         "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
       ],
+      "Email productivity features": [
+        "ელფოსტის პროდუქტიულობის ფუნქციები"
+      ],
       "Extra storage and bonuses": [
         "დამატებითი საცავი და ბონუსები"
+      ],
+      "Extra storage and users": [
+        "დამატებითი საცავი და მომხმარებლები"
       ],
       "Have a question?": [
         "კითხვები გაქვთ?"
@@ -7631,8 +7665,20 @@
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
       ],
+      "Invited members will be removed from your organization": [
+        "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
+      ],
+      "Keep ${ config.planName }": [
+        "${ config.planName }-ის დატოვება"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Make your business stand out": [
+        "გახადეთ თქვენი ბიზნესი გამორჩეული"
       ],
       "Manage your calendar": [
         "მართეთ თქვენი კალენდარი"
@@ -7649,6 +7695,9 @@
       "Priority support": [
         "პრიორიტეტული მხარდაჭერა"
       ],
+      "Productivity features": [
+        "პროდუქტიულობის ფუნქციები"
+      ],
       "Reactivate": [
         "რეაქტივაცია"
       ],
@@ -7661,11 +7710,20 @@
       "Receive new emails": [
         "ახალი ელფოსტების მიღება"
       ],
+      "See your colleagues’ availability": [
+        "დაინახეთ კოლეგის ხელმისაწვდომობა"
+      ],
       "Send emails with attachments": [
         "დანართებიანი ელფოსტების გაგზავნა"
       ],
+      "Stay secure and connected anywhere": [
+        "დარჩით უსაფრთხოდ და მიერთებულად ნებისმიერი ადგილიდან"
+      ],
       "Subscription canceled": [
         "გამოწერა გაუქმებულია"
+      ],
+      "Support your compliance objectives": [
+        "თავსებადობა თქვენს მოთხოვნებთან"
       ],
       "Sync files on devices": [
         "ფაილების დასინქრონება მოწყობილობებზე"
@@ -7676,8 +7734,20 @@
       "Unblocking internet access in Iran": [
         "ინტერნეტთან წვდომის განბლოკვა ირანში"
       ],
+      "Unlimited folders and labels": [
+        "შეუზღუდავი საქაღალდეები და ჭდეები"
+      ],
       "Unlimited folders, labels and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "მომხმარებლები თავიანთი კალენდრების მართვას ვერ შეძლებენ"
+      ],
+      "Users won’t be able to send emails": [
+        "მომმხარებლები ელფოსტას ვერ გააგზავნიან"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "მომხმარებლებს თავიანთ მოწყობილობებზე ფაილებსი სინქრონიზაციის საშუალება არ ექნებათ"
       ],
       "Version history": [
         "ვერსიის ისტორია"
@@ -7874,9 +7944,6 @@
       ],
       "SPF value copied to clipboard": [
         "SPF-ის მნიშვნელობა დაკოპირდა გაცვლის ბაფერში"
-      ],
-      "User created": [
-        "მომხმარებელი შექმნილია"
       ],
       "User updated": [
         "მომხმარებელი განახლებულია"
@@ -8077,9 +8144,6 @@
       ],
       "Add domain": [
         "დომენის დამატება"
-      ],
-      "Add new user": [
-        "ახალი მომხმარებლის დამატება"
       ],
       "Add PayPal payment method": [
         "გადახდის მეთოდად PayPal-ის დამატება"
@@ -8757,21 +8821,6 @@
       ],
       "Primary admin": [
         "ძირითადი ადმინისტრატორი"
-      ]
-    },
-    "Users table: AI-powered": {
-      "AI": [
-        "AI"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "თქვენი იდენტიფიკატორების მომწოდებლის მიერ გამოყოფილი SSO მომხმარებელი"
       ]
     },
     "Validation": {
