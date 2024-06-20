@@ -6,6 +6,7 @@ import { WebsocketState, WebsocketStateInterface } from './WebsocketState'
 import metrics from '@proton/metrics'
 import { isLocalEnvironment } from '../Util/isDevOrBlack'
 import { ApiResult } from '../Domain/Result/ApiResult'
+import { ConnectionCloseMetrics } from './ConnectionCloseMetrics'
 
 const DebugDisableSockets = false
 
@@ -197,6 +198,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       const reason = ConnectionCloseReason.create({
         code: event.code,
         message: event.reason,
+      })
+
+      metrics.docs_realtime_disconnect_error_total.increment({
+        type: ConnectionCloseMetrics[reason.props.code],
       })
 
       if (this.state.isConnected) {
