@@ -64,12 +64,12 @@ import clsx from '@proton/utils/clsx'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
 import { sendErrorMessage } from '../Utils/errorMessage'
-import { INSERT_TABLE_COMMAND } from '@lexical/table'
 import TableIcon from '../Icons/TableIcon'
 import { PredefinedTextColorOptions, PredefinedHighlightColorOptions } from '../Shared/Color'
 import { useActiveBreakpoint } from '@proton/components'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
 import { DocumentInteractionMode } from '../DocumentInteractionMode'
+import { INSERT_TABLE_COMMAND } from '../Plugins/Table/InsertTableCommand'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -242,6 +242,11 @@ export default function DocumentEditorToolbar({
     activeEditor.dispatchCommand(INSERT_TABLE_COMMAND, {
       rows: '3',
       columns: '3',
+      includeHeaders: {
+        rows: true,
+        columns: false,
+      },
+      fullWidth: true,
     })
   }
 

@@ -147,3 +147,25 @@
 		}
 	}
 }
+
+.Lexical__blockCursor {
+	display: block;
+	pointer-events: none;
+	position: absolute;
+}
+
+.Lexical__blockCursor::after {
+	content: '';
+	display: block;
+	position: absolute;
+	inset-block-start: -2px;
+	inline-size: 20px;
+	border-block-start: 1px solid var(--text-norm);
+	animation: CursorBlink 1.1s steps(2, start) infinite;
+}
+
+@keyframes CursorBlink {
+	to {
+		visibility: hidden;
+	}
+}
