@@ -1,6 +1,9 @@
 import { LoggerInterface } from '@proton/utils/logs'
 import { AckLedger } from './AckLedger'
 import { ClientMessageWithDocumentUpdates, ServerMessageWithMessageAcks } from '@proton/docs-proto'
+import metrics from '@proton/metrics'
+
+const mockMetric = jest.mocked(metrics.docs_document_updates_ack_error_total.increment)
 
 describe('AckLedger', () => {
   let ledger: AckLedger
@@ -19,6 +22,7 @@ describe('AckLedger', () => {
 
   afterEach(() => {
     ledger.destroy()
+    mockMetric.mockClear()
   })
 
   describe('messagePosted', () => {
@@ -123,6 +127,10 @@ describe('AckLedger', () => {
       ledger.checkForUnackedMessages()
 
       expect(ledger.concerningMessages.size).toBe(1)
+      expect(mockMetric).toHaveBeenCalledTimes(1)
+      expect(mockMetric).toHaveBeenCalledWith({
+        type: 'concern_threshold',
+      })
     })
 
     it('should add to erorred messages if error threshold is passed', () => {
@@ -144,6 +152,10 @@ describe('AckLedger', () => {
 
       expect(ledger.erroredMessages.size).toBe(1)
       expect(ledger.concerningMessages.size).toBe(0)
+      expect(mockMetric).toHaveBeenCalledTimes(1)
+      expect(mockMetric).toHaveBeenCalledWith({
+        type: 'error_threshold',
+      })
     })
 
     it('should notify of status change if messages are added', () => {
