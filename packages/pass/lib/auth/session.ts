@@ -1,6 +1,6 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
+import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { isObject } from '@proton/pass/utils/object/is-object';
@@ -11,6 +11,7 @@ import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
 import type { LockMode } from './lock/types';
@@ -28,6 +29,7 @@ export type AuthSession = {
     lockTTL?: number;
     offlineConfig?: OfflineConfig;
     offlineKD?: string;
+    offlineVerifier?: string;
     payloadVersion?: AuthSessionVersion;
     RefreshTime?: number;
     RefreshToken: string;
@@ -51,6 +53,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'lockTTL',
     'offlineConfig',
     'offlineKD',
+    'offlineVerifier',
     'payloadVersion',
     'RefreshToken',
     'sessionLockToken',
@@ -165,4 +168,17 @@ export const resumeSession = async (
         if (onSessionInvalid) return await onSessionInvalid(error, { localID, invalidSession: persistedSession });
         else throw error;
     }
+};
+
+export const migrateSession = async (authStore: AuthStore): Promise<boolean> => {
+    const offlineKD = authStore.getOfflineKD();
+    const offlineConfig = authStore.getOfflineConfig();
+    const offlineVerifier = authStore.getOfflineVerifier();
+
+    if (offlineKD && offlineConfig && !offlineVerifier) {
+        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+        return true;
+    }
+
+    return false;
 };

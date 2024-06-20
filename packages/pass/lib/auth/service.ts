@@ -40,6 +40,7 @@ import {
     getPersistedSessionKey,
     isValidSession,
     mergeSessionTokens,
+    migrateSession,
     resumeSession,
 } from './session';
 import { type AuthStore } from './store';
@@ -156,6 +157,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 authStore.setSession(session);
                 await api.reset();
+
+                const migrated = await migrateSession(authStore);
+                if (migrated) await authService.persistSession().catch(noop);
 
                 const lockMode = authStore.getLockMode();
 

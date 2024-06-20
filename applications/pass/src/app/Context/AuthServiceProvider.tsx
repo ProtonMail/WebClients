@@ -6,7 +6,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import type { ServiceWorkerMessageHandler } from 'proton-pass-web/app/ServiceWorker/ServiceWorkerProvider';
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/ServiceWorkerProvider';
 import { store } from 'proton-pass-web/app/Store/store';
-import { deletePassDB, getDBCache, getEncryptedCacheKey } from 'proton-pass-web/lib/database';
+import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -28,6 +28,7 @@ import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/li
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
+import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
@@ -44,6 +45,7 @@ import {
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
@@ -114,17 +116,18 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onInit: async () => {
+                const pathLocalID = getLocalIDFromPathname(location.pathname);
+                const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const error = getRouteError(history.location.search);
 
                 if (error !== null) {
                     setRedirectPath('/');
+                    const pathname = pathLocalID ? `/u/${pathLocalID}` : '/';
                     client.current.setStatus(AppStatus.ERROR);
-                    history.replace({ search: '', pathname: '/', state: { error } });
+                    history.replace({ search: '', pathname, state: { error } });
                     return false;
                 } else history.replace({ state: null });
 
-                const pathLocalID = getLocalIDFromPathname(location.pathname);
-                const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const persistedSession = await auth.config.getPersistedSession(initialLocalID);
 
                 /** configure the authentication store partially in order to
@@ -139,10 +142,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 authStore.setOfflineKD(undefined);
 
                 const passwordUnlockable = canPasswordUnlock({
-                    cache: await getDBCache(authStore.getUserID()),
                     lockMode: authStore.getLockMode(),
                     offline: !online.current,
                     offlineConfig: authStore.getOfflineConfig(),
+                    offlineVerifier: authStore.getOfflineVerifier(),
                     offlineEnabled: (await getOfflineEnabled?.()) ?? false,
                 });
 
@@ -242,10 +245,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 sw?.send({ type: 'fork', localID: LocalID, userID: UserID, broadcast: true });
 
-                if (Boolean(offlineConfig && offlineKD)) {
+                if (offlineConfig && offlineKD) {
                     logger.info('[AuthServiceProvider] Automatically creating password lock');
                     session.lockMode = LockMode.PASSWORD;
                     session.lockTTL = 900;
+                    session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                     authStore.setLockLastExtendTime(getEpoch());
                 }
             },
@@ -374,7 +378,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         });
 
         auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
-        auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth, { getEncryptedCacheKey }));
+        auth.registerLockAdapter(LockMode.PASSWORD, passwordLockAdapterFactory(auth));
 
         return auth;
     }, []);
@@ -393,10 +397,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
          * the auth store and reload the page silently to avoid maintaing a stale
          * local session alive. This edge-case can happen when the pass web-app is
          * opened on new a localID which may trigger a re-auth for the same UserID. */
-        const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID }) => {
+        const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID, localID }) => {
             if (authStore.getUserID() === userID) {
                 authStore.clear();
-                window.location.href = '/?error=fork';
+                window.location.href = `/u/${localID}?error=fork`;
             }
         };
 
