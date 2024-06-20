@@ -37,7 +37,6 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
-    BillingPlatform,
     ChargebeeEnabled,
     Currency,
     Cycle,
@@ -59,7 +58,12 @@ import noop from '@proton/utils/noop';
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
 import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
-import { BillingAddress, PAYMENT_METHOD_TYPES } from '../../../../components/payments/core';
+import {
+    BillingAddress,
+    CheckWithAutomaticOptions,
+    PAYMENT_METHOD_TYPES,
+    isOnSessionMigration,
+} from '../../../../components/payments/core';
 import { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
 import { PaymentProcessorHook, PaymentProcessorType } from '../../../../components/payments/react-extensions/interface';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
@@ -528,6 +532,7 @@ const SubscriptionContainer = ({
         currency,
         selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
         billingAddress: model.taxBillingAddress,
+        billingPlatform: subscription?.BillingPlatform,
         onChargeable: (operations, { sourceType, paymentProcessorType }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
@@ -553,7 +558,11 @@ const SubscriptionContainer = ({
         flow: 'subscription',
     });
 
-    const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
+    const check = async (
+        newModel: Model = model,
+        wantToApplyNewGiftCode: boolean = false,
+        selectedMethod?: string
+    ): Promise<boolean> => {
         const copyNewModel = {
             ...newModel,
             initialCheckComplete: true,
@@ -584,7 +593,7 @@ const SubscriptionContainer = ({
 
         const isInhouseForcedUser =
             chargebeeContext.enableChargebeeRef.current === ChargebeeEnabled.INHOUSE_FORCED ||
-            subscription.BillingPlatform === BillingPlatform.Proton;
+            isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform);
 
         if (
             isSubscriptionUnchanged(latestSubscription, copyNewModel.planIDs, copyNewModel.cycle) &&
@@ -613,6 +622,21 @@ const SubscriptionContainer = ({
 
             const coupon = getAutoCoupon({ coupon: newModel.coupon, planIDs: newModel.planIDs, cycle: newModel.cycle });
 
+            let options: CheckWithAutomaticOptions | undefined;
+            if (
+                // the first check handle the onMethod callback because the
+                // component is not rerendered and didn't update paymentFacade by that time yet.
+                // the second check handles the case when the component was already rerendered
+                (selectedMethod === PAYMENT_METHOD_TYPES.BITCOIN ||
+                    paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN) &&
+                isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
+            ) {
+                options = {
+                    forcedVersion: 'v4',
+                    reason: 'bitcoin-on-session',
+                };
+            }
+
             const checkResult = await paymentsApi.checkWithAutomaticVersion(
                 {
                     Plans: newModel.planIDs,
@@ -624,7 +648,8 @@ const SubscriptionContainer = ({
                         State: newModel.taxBillingAddress.State,
                     },
                 },
-                abortControllerRef.current.signal
+                abortControllerRef.current.signal,
+                options
             );
 
             const { Gift = 0 } = checkResult;
@@ -996,6 +1021,14 @@ const SubscriptionContainer = ({
                                     hideFirstLabel={true}
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     hasSomeVpnPlan={hasSomeVpnPlan}
+                                    onMethod={(value) => {
+                                        if (
+                                            value === PAYMENT_METHOD_TYPES.BITCOIN &&
+                                            isOnSessionMigration(user.ChargebeeUser, subscription.BillingPlatform)
+                                        ) {
+                                            void withLoadingCheck(check(model, false, value));
+                                        }
+                                    }}
                                 />
                             </div>
                             <NoPaymentRequiredNote
