@@ -30,6 +30,7 @@ import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorStat
 import { Application } from './Application'
 import { ThemeStyles } from './Theme'
 import { DocumentInteractionMode } from './DocumentInteractionMode'
+import debounce from '@proton/utils/debounce'
 
 type Props = {
   nonInteractiveMode: boolean
@@ -265,6 +266,29 @@ export function App({ nonInteractiveMode = false }: Props) {
     },
     [setInteractionMode, application],
   )
+
+  useEffect(() => {
+    if (!bridge || !editorRef || !editorRef.current) {
+      return
+    }
+
+    const updateFrameSize = debounce(() => {
+      const element = editorRef.current?.getRootElement()
+      if (element) {
+        void bridge.getClientInvoker().updateFrameSize(element.scrollHeight)
+      }
+    }, 1_000)
+
+    const removeListener = editorRef.current.registerUpdateListener(updateFrameSize)
+    window.addEventListener('resize', updateFrameSize)
+    window.addEventListener('beforeprint', updateFrameSize)
+    updateFrameSize()
+    return () => {
+      removeListener()
+      window.removeEventListener('resize', updateFrameSize)
+      window.removeEventListener('beforeprint', updateFrameSize)
+    }
+  }, [editorRef.current, bridge])
 
   if (!initialConfig || !docState) {
     return (
