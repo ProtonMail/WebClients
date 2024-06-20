@@ -217,6 +217,19 @@ describe('WebsocketService', () => {
       expect(connection.broadcastMessage).not.toHaveBeenCalled()
     })
 
+    it('should ignore sending ClientHasSentACommentMessage event if not in realtime mode', async () => {
+      Object.defineProperty(buffer, 'isBufferEnabled', { value: true })
+
+      await service.sendEventMessage(
+        {} as NodeMeta,
+        stringToUtf8Array('123'),
+        EventTypeEnum.ClientHasSentACommentMessage,
+        BroadcastSource.AwarenessUpdateHandler,
+      )
+
+      expect(connection.broadcastMessage).not.toHaveBeenCalled()
+    })
+
     it('should send ClientIsBroadcastingItsPresenceState event if in realtime mode', async () => {
       Object.defineProperty(buffer, 'isBufferEnabled', { value: false })
 
