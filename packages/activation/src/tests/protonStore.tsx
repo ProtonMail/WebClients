@@ -6,9 +6,9 @@ import { featuresReducer } from '@proton/features';
 import { categoriesReducer, importerConfigReducer, mailSettingsReducer } from '@proton/mail';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
-export const extraThunkArguments = {} as ProtonThunkArguments;
+const extraThunkArguments = {} as ProtonThunkArguments;
 
-export const listenerMiddleware = createListenerMiddleware();
+const listenerMiddleware = createListenerMiddleware();
 
 const rootReducer = combineReducers({
     ...userReducer,
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
     ...calendarsReducer,
     features: featuresReducer.reducer,
 });
-export type ActivationState = ReturnType<typeof rootReducer>;
+type ActivationState = ReturnType<typeof rootReducer>;
 export const setupStore = ({ preloadedState }: { preloadedState?: ActivationState } = {}) => {
     return configureStore({
         preloadedState,
@@ -31,6 +31,3 @@ export const setupStore = ({ preloadedState }: { preloadedState?: ActivationStat
             }).prepend(listenerMiddleware.middleware),
     });
 };
-
-export type ActivationStore = ReturnType<typeof setupStore>;
-export type ActivationDispatch = ActivationStore['dispatch'];

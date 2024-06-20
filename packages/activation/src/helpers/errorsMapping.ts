@@ -3,7 +3,7 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
 
-export const RESERVED_NAMES = ['scheduled', 'spam', 'trash', 'outbox', 'snoozed'];
+const RESERVED_NAMES = ['scheduled', 'spam', 'trash', 'outbox', 'snoozed'];
 
 export const isNameTooLong = (folderPath: string) => new Blob([folderPath]).size >= 100;
 

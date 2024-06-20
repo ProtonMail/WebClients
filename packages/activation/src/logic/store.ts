@@ -33,7 +33,7 @@ export const useGenerateEasySwitchStore = () => {
 };
 
 export type EasySwitchState = ReturnType<ReturnType<typeof useGenerateEasySwitchStore>['getState']>;
-export type EasySwitchDispatch = ReturnType<typeof useGenerateEasySwitchStore>['dispatch'];
+type EasySwitchDispatch = ReturnType<typeof useGenerateEasySwitchStore>['dispatch'];
 export type EasySwitchThunkExtra = {
     state: EasySwitchState;
     dispatch: EasySwitchDispatch;

@@ -27,15 +27,15 @@ export interface ApiEvent {
     ImporterSyncs?: ApiSyncEvent[];
 }
 
-export interface ApiImportReportEvent extends ApiEventType {
+interface ApiImportReportEvent extends ApiEventType {
     ImportReport?: ApiReport;
 }
 
-export interface ApiImportEvent extends ApiEventType {
+interface ApiImportEvent extends ApiEventType {
     Importer?: ApiImporter;
 }
 
-export interface ApiSyncEvent extends ApiEventType {
+interface ApiSyncEvent extends ApiEventType {
     ImporterSync?: ApiSync;
 }
 
