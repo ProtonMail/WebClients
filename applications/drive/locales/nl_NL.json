@@ -1186,6 +1186,11 @@
         "Uw abonnement voortzetten"
       ]
     },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "Heractiveer abonnement"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } gebruiker",
@@ -5873,6 +5878,9 @@
       "What happened?": [
         "Wat is er gebeurd?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
+      ],
       "Wonderful": [
         "Uitstekend"
       ],
@@ -6509,6 +6517,9 @@
       "Centralized billing": [
         "Gecentraliseerde facturatie"
       ],
+      "Collaborate and share large files": [
+        "Samenwerken en grote bestanden delen"
+      ],
       "Contact groups": [
         "Contactgroepen"
       ],
@@ -6578,6 +6589,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Generate emails with only a prompt": [
+        "E-mails genereren met alleen een verzoek"
+      ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
@@ -6615,6 +6629,12 @@
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
+      "Password health": [
+        "Wachtwoordgezondheid"
+      ],
+      "Password manager to secure credentials": [
+        "Wachtwoordmanager om inloggegevens veilig te houden"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -6630,6 +6650,9 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
+      "Proofread and refine your texts": [
+        "Uw tekst herlezen en verfijnen"
+      ],
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
@@ -6637,11 +6660,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
       ],
+      "Reply to messages": [
+        "Antwoorden op berichten"
+      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
       "Router support": [
         "Routerondersteuning"
+      ],
+      "Save time emailing": [
+        "Bespaar tijd op e-mailen"
       ],
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
@@ -7289,9 +7318,6 @@
       "File removed": [
         "Bestand verwijderd"
       ],
-      "Invitation email was sent again": [
-        "Uitnodigings e-mail is opnieuw verzonden"
-      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
@@ -7627,6 +7653,9 @@
       ],
       "Set date": [
         "Datum instellen"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
       ],
       "Start typing an email address": [
         "Voer een e-mailadres in"
@@ -8421,6 +8450,21 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } agenda per gebruiker",
+        "${ MaxCalendars } agenda's per gebruiker"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } aangepast e-maildomein",
+        "${ maxDomainNames } aangepaste e-maildomeinen"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mailadres per gebruiker",
+        "${ maxEmails } e-mailadressen per gebruiker"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } opslagruimte"
       ],
@@ -8430,8 +8474,17 @@
       "10 email addresses": [
         "10 e-mailadressen"
       ],
+      "20 email addresses per user": [
+        "20 e-mailadressen per gebruiker"
+      ],
+      "25 calendars per user": [
+        "25 agenda's per gebruiker"
+      ],
       "6 users": [
         "6 gebruikers"
+      ],
+      "Automatic email forwarding": [
+        "Automatisch e-mail doorsturen"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -8442,8 +8495,14 @@
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
       ],
+      "Extra storage and users": [
+        "Extra opslag en gebruikers"
+      ],
       "Helping activists in Hong Kong": [
         "Activisten helpen in Hongkong"
+      ],
+      "Learn more": [
+        "Lees meer"
       ],
       "Learn more about our impact": [
         "Meer informatie over onze impact"
@@ -8457,14 +8516,29 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Productivity features": [
+        "Productiviteitsfuncties"
+      ],
       "Read the story": [
         "Lees het verhaal"
+      ],
+      "See your colleagues’ availability": [
+        "Bekijk de beschikbaarheid van uw collega's"
+      ],
+      "Stay secure and connected anywhere": [
+        "Blijf overal veilig en verbonden"
       ],
       "Unblocking internet access in Iran": [
         "Ontgrendelen van internettoegang in Iran"
       ],
+      "Unlimited folders and labels": [
+        "Onbeperkte mappen en labels"
+      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Users won’t be able to send emails": [
+        "Gebruikers zullen geen e-mails kunnen verzenden"
       ],
       "Version history": [
         "Versiegeschiedenis"

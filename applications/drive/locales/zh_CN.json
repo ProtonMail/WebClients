@@ -493,6 +493,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "在 ${ DOCS_SHORT_APP_NAME } 中打开"
+      ],
       "Open navigation": [
         "打开导航栏"
       ],
@@ -7503,6 +7506,18 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "每位用户 ${ MaxCalendars } 个日历"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 个自有域名"
+      ],
+      "${ maxEmails } email address per user": [
+        "每位用户 ${ maxEmails } 个邮箱地址"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "每位用户 ${ planMaxSpace } 存储空间"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 总存储空间"
       ],
@@ -7511,6 +7526,9 @@
       ],
       "10 email addresses": [
         "10 个邮箱地址"
+      ],
+      "Automatic email forwarding": [
+        "自动转发邮件"
       ],
       "Calendar sharing": [
         "日历共享"
@@ -7526,6 +7544,9 @@
       ],
       "Priority support": [
         "优先支持"
+      ],
+      "Unlimited folders and labels": [
+        "文件夹和标签不限量"
       ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
