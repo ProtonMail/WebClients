@@ -39,6 +39,33 @@ describe('DocumentUpdateBuffer', () => {
       expect(buffer.flush).not.toHaveBeenCalled()
       expect(buffer.buffer.length).toBe(1)
     })
+
+    it('should increment current buffer size', () => {
+      const data = new Uint8Array([1, 2, 3, 4, 5])
+      buffer.addUpdate(data)
+
+      expect(buffer.currentBufferSize).toBe(data.byteLength)
+    })
+
+    it('should not flush if size limit is not exceeded', () => {
+      buffer.flush = jest.fn()
+
+      const maxSize = buffer.maxSizeBeforeFlush
+
+      buffer.addUpdate(new Uint8Array(maxSize - 1))
+
+      expect(buffer.flush).not.toHaveBeenCalled()
+    })
+
+    it('should flush if size limit is exceeded', () => {
+      buffer.flush = jest.fn()
+
+      const maxSize = buffer.maxSizeBeforeFlush
+
+      buffer.addUpdate(new Uint8Array(maxSize))
+
+      expect(buffer.flush).toHaveBeenCalledTimes(1)
+    })
   })
 
   describe('hasPendingUpdates', () => {
@@ -58,6 +85,16 @@ describe('DocumentUpdateBuffer', () => {
       buffer.flush()
 
       expect(onFlush).not.toHaveBeenCalled()
+    })
+
+    it('should reset the current buffer size', () => {
+      buffer.addUpdate(new Uint8Array([1]))
+
+      expect(buffer.currentBufferSize).toBeGreaterThan(0)
+
+      buffer.flush()
+
+      expect(buffer.currentBufferSize).toBe(0)
     })
 
     it('should flush buffer', () => {
