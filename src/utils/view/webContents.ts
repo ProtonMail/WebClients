@@ -37,7 +37,7 @@ export function handleWebContents(contents: WebContents) {
     };
 
     contents.on("did-navigate-in-page", (ev, url) => {
-        log("did-navigate-in-page", app.isPackaged ? "" : url);
+        log("did-navigate-in-page", url);
 
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
@@ -56,7 +56,7 @@ export function handleWebContents(contents: WebContents) {
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
-        log("will-navigate", app.isPackaged ? "" : details.url);
+        log("will-navigate", details.url);
 
         if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
             return preventDefault(details);
