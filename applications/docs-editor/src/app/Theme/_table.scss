@@ -5,10 +5,16 @@
 	overflow-y: scroll;
 	table-layout: fixed;
 	margin: 0;
+	margin-block-start: 1.25rem;
+}
+
+[contenteditable='true'] .Lexical__table {
+	margin-block-end: 1.65rem;
 }
 
 .Lexical__tableSelection *::selection {
 	background-color: transparent !important;
+	color: var(--text-norm);
 }
 
 .Lexical__tableSelected {
@@ -16,20 +22,19 @@
 }
 
 .Lexical__tableCell {
-	border: 1px solid var(--border-norm);
+	border: 1px solid var(--border-weak);
 	min-inline-size: 75px;
 	vertical-align: top;
 	text-align: start;
 	padding-block: 6px;
 	padding-inline: 8px;
 	position: relative;
-	cursor: default;
 	outline: none;
 }
 
 .Lexical__tableCellHeader {
-	background-color: var(--primary-minor-1);
-	border-color: var(--border-norm);
+	background-color: var(--background-weak);
+	border-color: var(--border-weak);
 	text-align: start;
 }
 

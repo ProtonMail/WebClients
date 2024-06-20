@@ -4,7 +4,6 @@ import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { CheckListPlugin } from '@lexical/react/LexicalCheckListPlugin'
-import { TablePlugin } from '@lexical/react/LexicalTablePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { useCallback, useMemo } from 'react'
 import { Provider } from '@lexical/yjs'
@@ -28,7 +27,6 @@ import ImagesPlugin from './Plugins/Image/ImagePlugin'
 import TypingBotPlugin from './Plugins/TypingBot/TypingBotPlugin'
 import SeedInitialContentPlugin from './Plugins/Collaboration/SeedInitialContent'
 import { EditorReadonlyPlugin } from './Plugins/EditorReadonlyPlugin'
-import TableActionMenuPlugin from './Plugins/TableActionMenuPlugin'
 import TableCellResizerPlugin from './Plugins/TableCellResizer'
 import { LinkInfoPlugin } from './Plugins/Link/LinkInfoPlugin'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
@@ -39,6 +37,8 @@ import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
 import { sendErrorMessage } from './Utils/errorMessage'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
 import { DocumentInteractionMode } from './DocumentInteractionMode'
+import { TablePlugin } from './Plugins/Table/TablePlugin'
+import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
 
 const TypingBotEnabled = false
 
@@ -138,8 +138,7 @@ export function Editor({
         <ListPlugin />
         <CheckListPlugin />
         {injectWithNewContent && <SeedInitialContentPlugin docState={docState} content={injectWithNewContent} />}
-        <TablePlugin hasCellBackgroundColor hasCellMerge hasTabHandler />
-        <TableActionMenuPlugin />
+        <TablePlugin hasCellBackgroundColor hasTabHandler />
         <TableCellResizerPlugin />
         <TabIndentationPlugin />
         <LinkPlugin />
@@ -158,6 +157,7 @@ export function Editor({
         {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={!editingLocked} />}
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
+        {!nonInteractiveMode && <DraggableBlockPlugin />}
       </LexicalComposer>
     </CollaborationContext.Provider>
   )
