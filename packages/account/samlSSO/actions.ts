@@ -1,6 +1,6 @@
 import { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { setupSCIM as setupSCIMConfig, updateSCIM as updateSCIMConfig } from '@proton/shared/lib/api/samlSSO';
 import { generateRandomBytes } from '@proton/shared/lib/helpers/crypto';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';

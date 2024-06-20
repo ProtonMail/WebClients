@@ -1,6 +1,6 @@
 import { TypedUseSelectorHook } from 'react-redux';
 
-import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/redux-shared-store';
+import { baseUseDispatch, baseUseSelector, baseUseStore } from '@proton/react-redux-store';
 
 import { EODispatch, EOStore, EOStoreState } from 'proton-mail/store/eo/eoStore';
 

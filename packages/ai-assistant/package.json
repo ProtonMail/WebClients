@@ -3,7 +3,6 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "build": "tsc && NODE_ENV='production' vite build",
         "check-types": "tsc",
         "dev": "vite",
         "lint": "eslint src",
@@ -12,8 +11,8 @@
         "test:dev": "jest --watch"
     },
     "dependencies": {
-        "@proton/llm": "workspace:packages/llm",
-        "@proton/shared": "workspace:packages/shared"
+        "@proton/llm": "workspace:^",
+        "@proton/shared": "workspace:^"
     },
     "devDependencies": {
         "@mlc-ai/web-llm": "0.2.32",

@@ -7,7 +7,6 @@
     "scripts": {
         "check-types": "tsc",
         "i18n:validate": "proton-i18n validate lint-functions lib",
-        "i18n:validate:context": "proton-i18n extract shared && proton-i18n validate",
         "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "NODE_ENV=test karma start test/karma.conf.js",
@@ -17,9 +16,9 @@
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/colors": "workspace:^",
-        "@proton/crypto": "workspace:packages/crypto",
-        "@proton/srp": "workspace:packages/srp",
-        "@proton/styles": "workspace:packages/styles",
+        "@proton/crypto": "workspace:^",
+        "@proton/srp": "workspace:^",
+        "@proton/styles": "workspace:^",
         "@protontech/bip39": "^1.0.2",
         "@protontech/mimemessage": "~v1.1.4",
         "@protontech/mutex-browser": "^1.0.5",
@@ -45,8 +44,8 @@
     },
     "devDependencies": {
         "@babel/plugin-transform-runtime": "^7.24.6",
-        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
-        "@proton/i18n": "workspace:packages/i18n",
+        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/i18n": "workspace:^",
         "@types/jasmine": "^5.1.4",
         "@webgpu/types": "^0.1.42",
         "eslint": "^8.57.0",

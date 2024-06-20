@@ -1,10 +1,12 @@
-import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 
+import { BadgeType } from '@proton/components/components/badge/Badge';
 import {
     DKIM_STATE,
     DMARC_STATE,
     DOMAIN_STATE,
+    Domain,
+    DomainAddress,
     MX_STATE,
     SPF_STATE,
     VERIFY_STATE,
@@ -16,42 +18,49 @@ const VERIFY_TYPES = {
     [VERIFY_STATE.VERIFY_STATE_DEFAULT]: 'origin',
     [VERIFY_STATE.VERIFY_STATE_EXIST]: 'error',
     [VERIFY_STATE.VERIFY_STATE_GOOD]: 'success',
-};
+} satisfies { [key in VERIFY_STATE]: BadgeType };
 
 const MX_TYPES = {
     [MX_STATE.MX_STATE_DEFAULT]: 'origin',
     [MX_STATE.MX_STATE_NO_US]: 'error',
     [MX_STATE.MX_STATE_INC_US]: 'error',
     [MX_STATE.MX_STATE_GOOD]: 'success',
-};
+} satisfies { [key in MX_STATE]: BadgeType };
 
 const SPF_TYPES = {
     [SPF_STATE.SPF_STATE_DEFAULT]: 'origin',
     [SPF_STATE.SPF_STATE_ONE]: 'error',
     [SPF_STATE.SPF_STATE_MULT]: 'error',
     [SPF_STATE.SPF_STATE_GOOD]: 'success',
-};
+} satisfies { [key in SPF_STATE]: BadgeType };
 
 const DKIM_TYPES = {
     [DKIM_STATE.DKIM_STATE_DEFAULT]: 'origin',
     [DKIM_STATE.DKIM_STATE_ERROR]: 'error',
     [DKIM_STATE.DKIM_STATE_GOOD]: 'success',
     [DKIM_STATE.DKIM_STATE_WARNING]: 'warning',
-};
+    [DKIM_STATE.DKIM_STATE_DELEGATED]: 'origin',
+} satisfies { [key in DKIM_STATE]: BadgeType };
 
 const DMARC_TYPES = {
     [DMARC_STATE.DMARC_STATE_DEFAULT]: 'origin',
     [DMARC_STATE.DMARC_STATE_ONE]: 'error',
     [DMARC_STATE.DMARC_STATE_MULT]: 'error',
     [DMARC_STATE.DMARC_STATE_GOOD]: 'success',
-};
+    [DMARC_STATE.DMARC_STATE_RELAXED]: 'origin',
+} satisfies { [key in DMARC_STATE]: BadgeType };
 
-const DomainStatus = ({ domain, domainAddresses }) => {
+interface Props {
+    domain: Domain;
+    domainAddresses: DomainAddress[];
+}
+
+const DomainStatus = ({ domain, domainAddresses }: Props) => {
     const n = domainAddresses.length;
 
     const catchAllEnabled = domainAddresses.some((address) => address.CatchAll);
 
-    const badges = [
+    const badges: { text: string; type: BadgeType }[] = [
         { text: c('Domain label').t`Verified`, type: VERIFY_TYPES[domain.VerifyState] },
         {
             text: c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n),
@@ -73,11 +82,6 @@ const DomainStatus = ({ domain, domainAddresses }) => {
             ))}
         </>
     );
-};
-
-DomainStatus.propTypes = {
-    domain: PropTypes.object.isRequired,
-    domainAddresses: PropTypes.array.isRequired,
 };
 
 export default DomainStatus;

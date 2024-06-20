@@ -6446,7 +6446,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -6461,17 +6468,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/activation@workspace:packages/activation":
+"@proton/activation@workspace:^, @proton/activation@workspace:packages/activation":
   version: 0.0.0-use.local
   resolution: "@proton/activation@workspace:packages/activation"
   dependencies:
-    "@proton/atoms": "workspace:packages/atoms"
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/utils": "workspace:packages/utils"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/dom": "npm:^10.1.0"
     "@testing-library/jest-dom": "npm:^6.4.5"
@@ -6507,8 +6515,8 @@ __metadata:
   resolution: "@proton/ai-assistant@workspace:packages/ai-assistant"
   dependencies:
     "@mlc-ai/web-llm": "npm:0.2.32"
-    "@proton/llm": "workspace:packages/llm"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/llm": "workspace:^"
+    "@proton/shared": "workspace:^"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     typescript: "npm:^5.4.5"
@@ -6525,13 +6533,13 @@ __metadata:
     "@babel/core": "npm:^7.24.6"
     "@babel/preset-react": "npm:^7.24.6"
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@storybook/addon-actions": "npm:^6.5.16"
     "@storybook/addon-essentials": "npm:^6.5.16"
     "@storybook/addon-links": "npm:^6.5.16"
@@ -6571,7 +6579,7 @@ __metadata:
   resolution: "@proton/calendar@workspace:packages/calendar"
   dependencies:
     "@proton/account": "workspace:^"
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -6586,12 +6594,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/chargebee@workspace:packages/chargebee":
+"@proton/chargebee@workspace:^, @proton/chargebee@workspace:packages/chargebee":
   version: 0.0.0-use.local
   resolution: "@proton/chargebee@workspace:packages/chargebee"
   dependencies:
     "@fullhuman/postcss-purgecss": "npm:^6.0.0"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/styles": "workspace:^"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     postcss: "npm:^8.4.38"
@@ -6608,7 +6616,6 @@ __metadata:
   resolution: "@proton/colors@workspace:packages/colors"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:^"
     "@types/css-tree": "npm:^2.3.7"
     "@types/jest": "npm:^29.5.12"
     "@types/node": "npm:^20.12.13"
@@ -6627,7 +6634,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/components@workspace:packages/components":
+"@proton/components@workspace:^, @proton/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@proton/components@workspace:packages/components"
   dependencies:
@@ -6642,17 +6649,20 @@ __metadata:
     "@noble/ed25519": "npm:1.7.3"
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
-    "@proton/chargebee": "workspace:packages/chargebee"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/chargebee": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
-    "@proton/i18n": "workspace:packages/i18n"
+    "@proton/i18n": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/metrics": "workspace:packages/metrics"
+    "@proton/metrics": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/sieve": "workspace:packages/sieve"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/sieve": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6723,22 +6733,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/cross-storage@workspace:packages/cross-storage":
+"@proton/cross-storage@workspace:^, @proton/cross-storage@workspace:packages/cross-storage":
   version: 0.0.0-use.local
   resolution: "@proton/cross-storage@workspace:packages/cross-storage"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/shared": "workspace:^"
     eslint: "npm:^8.57.0"
     typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
-"@proton/crypto@workspace:packages/crypto":
+"@proton/crypto@workspace:^, @proton/crypto@workspace:packages/crypto":
   version: 0.0.0-use.local
   resolution: "@proton/crypto@workspace:packages/crypto"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     "@types/chai": "npm:^4.3.16"
     "@types/chai-as-promised": "npm:^7.1.8"
     chai: "npm:^5.1.1"
@@ -6764,19 +6774,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/docs-core@workspace:packages/docs-core":
+"@proton/docs-core@workspace:^, @proton/docs-core@workspace:packages/docs-core":
   version: 0.0.0-use.local
   resolution: "@proton/docs-core@workspace:packages/docs-core"
   dependencies:
     "@lexical/yjs": "npm:0.16.0"
-    "@proton/components": "workspace:packages/components"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/docs-proto": "workspace:packages/docs-proto"
-    "@proton/docs-shared": "workspace:packages/docs-shared"
-    "@proton/drive-store": "workspace:packages/drive-store"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/docs-proto": "workspace:^"
+    "@proton/docs-shared": "workspace:^"
+    "@proton/drive-store": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/shared": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^14.3.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6804,7 +6814,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/docs-proto@workspace:packages/docs-proto":
+"@proton/docs-proto@workspace:^, @proton/docs-proto@workspace:packages/docs-proto":
   version: 0.0.0-use.local
   resolution: "@proton/docs-proto@workspace:packages/docs-proto"
   dependencies:
@@ -6822,12 +6832,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/docs-shared@workspace:packages/docs-shared":
+"@proton/docs-shared@workspace:^, @proton/docs-shared@workspace:packages/docs-shared":
   version: 0.0.0-use.local
   resolution: "@proton/docs-shared@workspace:packages/docs-shared"
   dependencies:
     "@lexical/yjs": "npm:0.16.0"
-    "@proton/docs-proto": "workspace:packages/docs-proto"
+    "@proton/docs-proto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@types/google-protobuf": "npm:^3.15.12"
@@ -6845,19 +6855,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/drive-store@workspace:packages/drive-store":
+"@proton/drive-store@workspace:^, @proton/drive-store@workspace:packages/drive-store":
   version: 0.0.0-use.local
   resolution: "@proton/drive-store@workspace:packages/drive-store"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@noble/hashes": "npm:^1.4.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
-    "@proton/components": "workspace:packages/components"
-    "@proton/crypto": "workspace:packages/crypto"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6885,16 +6895,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/encrypted-search@workspace:packages/encrypted-search":
+"@proton/encrypted-search@workspace:^, @proton/encrypted-search@workspace:packages/encrypted-search":
   version: 0.0.0-use.local
   resolution: "@proton/encrypted-search@workspace:packages/encrypted-search"
   dependencies:
-    "@proton/components": "workspace:packages/components"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/utils": "workspace:packages/utils"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@types/jasmine": "npm:^5.1.4"
     eslint: "npm:^8.57.0"
     eslint-plugin-jasmine: "npm:^4.1.3"
@@ -6927,7 +6937,7 @@ __metadata:
     eslint-config-prettier: "npm:^9.1.0"
     eslint-import-resolver-alias: "npm:^1.1.2"
     eslint-import-resolver-typescript: "npm:^3.6.1"
-    eslint-plugin-custom-rules: "workspace:packages/eslint-plugin-custom-rules"
+    eslint-plugin-custom-rules: "workspace:^"
     eslint-plugin-es: "npm:^4.1.0"
     eslint-plugin-import: "npm:^2.29.1"
     eslint-plugin-jsx-a11y: "npm:^6.8.0"
@@ -6951,7 +6961,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/hooks@workspace:packages/hooks":
+"@proton/hooks@workspace:^, @proton/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@proton/hooks@workspace:packages/hooks"
   dependencies:
@@ -6968,7 +6978,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/i18n@workspace:packages/i18n":
+"@proton/i18n@workspace:^, @proton/i18n@workspace:packages/i18n":
   version: 0.0.0-use.local
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
@@ -6985,16 +6995,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/key-transparency@workspace:packages/key-transparency":
+"@proton/key-transparency@workspace:^, @proton/key-transparency@workspace:packages/key-transparency":
   version: 0.0.0-use.local
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
   dependencies:
     "@noble/ed25519": "npm:1.7.3"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/shared": "workspace:^"
     "@types/jasmine": "npm:^5.1.4"
     "@types/pkijs": "npm:0.0.14"
     eslint: "npm:^8.57.0"
@@ -7013,7 +7023,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/llm@workspace:packages/llm":
+"@proton/llm@workspace:^, @proton/llm@workspace:packages/llm":
   version: 0.0.0-use.local
   resolution: "@proton/llm@workspace:packages/llm"
   dependencies:
@@ -7021,8 +7031,8 @@ __metadata:
     "@babel/preset-env": "npm:^7.24.6"
     "@jest/globals": "npm:^29.7.0"
     "@mlc-ai/web-llm": "npm:0.2.32"
-    "@proton/components": "workspace:packages/components"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/components": "workspace:^"
+    "@proton/shared": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@types/jest": "npm:^29.5.12"
@@ -7043,7 +7053,8 @@ __metadata:
   resolution: "@proton/mail@workspace:packages/mail"
   dependencies:
     "@proton/account": "workspace:^"
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -7058,12 +7069,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/metrics@workspace:packages/metrics":
+"@proton/metrics@workspace:^, @proton/metrics@workspace:packages/metrics":
   version: 0.0.0-use.local
   resolution: "@proton/metrics@workspace:packages/metrics"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/shared": "workspace:^"
     "@types/node": "npm:^20.12.13"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
@@ -7076,7 +7087,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/pack@workspace:packages/pack":
+"@proton/pack@workspace:^, @proton/pack@workspace:packages/pack":
   version: 0.0.0-use.local
   resolution: "@proton/pack@workspace:packages/pack"
   dependencies:
@@ -7141,21 +7152,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/pass@workspace:packages/pass":
+"@proton/pass@workspace:^, @proton/pass@workspace:packages/pass":
   version: 0.0.0-use.local
   resolution: "@proton/pass@workspace:packages/pass"
   dependencies:
     "@protobuf-ts/plugin": "npm:^2.9.4"
     "@proton/atoms": "workspace:^"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/key-transparency": "workspace:packages/key-transparency"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/srp": "workspace:packages/srp"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/key-transparency": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@protontech/pass-rust-core": "npm:^0.7.12"
     "@reduxjs/toolkit": "npm:^2.2.5"
@@ -7194,11 +7205,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/polyfill@workspace:packages/polyfill":
+"@proton/polyfill@workspace:^, @proton/polyfill@workspace:packages/polyfill":
   version: 0.0.0-use.local
   resolution: "@proton/polyfill@workspace:packages/polyfill"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     abortcontroller-polyfill: "npm:^1.7.5"
     core-js: "npm:^3.37.1"
     eslint: "npm:^8.57.0"
@@ -7219,18 +7230,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/recovery-kit@workspace:packages/recovery-kit":
+"@proton/react-redux-store@workspace:^, @proton/react-redux-store@workspace:packages/react-redux-store":
+  version: 0.0.0-use.local
+  resolution: "@proton/react-redux-store@workspace:packages/react-redux-store"
+  dependencies:
+    react: "npm:^18.3.1"
+    react-redux: "npm:^9.1.2"
+  languageName: unknown
+  linkType: soft
+
+"@proton/recovery-kit@workspace:^, @proton/recovery-kit@workspace:packages/recovery-kit":
   version: 0.0.0-use.local
   resolution: "@proton/recovery-kit@workspace:packages/recovery-kit"
   dependencies:
     "@pdfme/common": "npm:^3.4.0"
     "@pdfme/generator": "npm:^3.4.0"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/utils": "workspace:packages/utils"
+    "@proton/utils": "workspace:^"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     ts-jest: "npm:^29.1.4"
     typescript: "npm:^5.4.5"
+  languageName: unknown
+  linkType: soft
+
+"@proton/redux-shared-store-types@workspace:^, @proton/redux-shared-store-types@workspace:packages/redux-shared-store-types":
+  version: 0.0.0-use.local
+  resolution: "@proton/redux-shared-store-types@workspace:packages/redux-shared-store-types"
+  dependencies:
+    "@proton/shared": "workspace:^"
+    "@reduxjs/toolkit": "npm:^2.2.5"
+    "@types/history": "npm:^4.7.11"
+    react: "npm:^18.3.1"
+    react-redux: "npm:^9.1.2"
+    unleash-proxy-client: "npm:^3.4.0"
   languageName: unknown
   linkType: soft
 
@@ -7241,6 +7274,8 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/mail": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
@@ -7253,7 +7288,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -7275,11 +7310,11 @@ __metadata:
     "@babel/plugin-transform-runtime": "npm:^7.24.6"
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@proton/colors": "workspace:^"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/srp": "workspace:packages/srp"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/srp": "workspace:^"
+    "@proton/styles": "workspace:^"
     "@protontech/bip39": "npm:^1.0.2"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
@@ -7322,7 +7357,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/sieve@workspace:packages/sieve":
+"@proton/sieve@workspace:^, @proton/sieve@workspace:packages/sieve":
   version: 0.0.0-use.local
   resolution: "@proton/sieve@workspace:packages/sieve"
   dependencies:
@@ -7333,7 +7368,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/srp@workspace:packages/srp":
+"@proton/srp@workspace:^, @proton/srp@workspace:packages/srp":
   version: 0.0.0-use.local
   resolution: "@proton/srp@workspace:packages/srp"
   dependencies:
@@ -7341,8 +7376,8 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.24.6"
     "@babel/register": "npm:^7.24.6"
     "@openpgp/noble-hashes": "npm:^1.3.3"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
     bcryptjs: "npm:^2.4.3"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
@@ -7352,7 +7387,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/stylelint-config-proton@workspace:packages/stylelint-config-proton":
+"@proton/stylelint-config-proton@workspace:^, @proton/stylelint-config-proton@workspace:packages/stylelint-config-proton":
   version: 0.0.0-use.local
   resolution: "@proton/stylelint-config-proton@workspace:packages/stylelint-config-proton"
   dependencies:
@@ -7379,7 +7414,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/testing@workspace:packages/testing":
+"@proton/testing@workspace:^, @proton/testing@workspace:packages/testing":
   version: 0.0.0-use.local
   resolution: "@proton/testing@workspace:packages/testing"
   dependencies:
@@ -7387,8 +7422,9 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/shared": "workspace:^"
     cross-fetch: "npm:^4.0.0"
+    eslint: "npm:^8.57.0"
     msw: "npm:^2.3.0"
   languageName: unknown
   linkType: soft
@@ -7405,7 +7441,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/utils@workspace:packages/utils":
+"@proton/utils@workspace:^, @proton/utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@proton/utils@workspace:packages/utils"
   dependencies:
@@ -20069,7 +20105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules":
+"eslint-plugin-custom-rules@workspace:^, eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules":
   version: 0.0.0-use.local
   resolution: "eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules"
   languageName: unknown
@@ -32539,25 +32575,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proton-account@workspace:applications/account":
+"proton-account@workspace:^, proton-account@workspace:applications/account":
   version: 0.0.0-use.local
   resolution: "proton-account@workspace:applications/account"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
     "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
+    "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/metrics": "workspace:packages/metrics"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/recovery-kit": "workspace:packages/recovery-kit"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/pass": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-polymorphic-types": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/recovery-kit": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/user-event": "npm:^14.5.2"
@@ -32579,7 +32627,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
-    ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.7"
     typescript: "npm:^5.4.5"
   languageName: unknown
@@ -32590,14 +32637,20 @@ __metadata:
   resolution: "proton-admin@workspace:applications/admin"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@testing-library/dom": "npm:^10.1.0"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -32628,16 +32681,27 @@ __metadata:
   resolution: "proton-calendar@workspace:applications/calendar"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/calendar": "workspace:^"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/encrypted-search": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@protontech/interval-tree": "npm:^1.0.0"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -32687,12 +32751,20 @@ __metadata:
     "@lexical/table": "npm:0.16.0"
     "@lexical/utils": "npm:0.16.0"
     "@lexical/yjs": "npm:0.16.0"
-    "@proton/components": "workspace:packages/components"
-    "@proton/docs-shared": "workspace:packages/docs-shared"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/docs-core": "workspace:^"
+    "@proton/docs-shared": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
@@ -32730,16 +32802,28 @@ __metadata:
   resolution: "proton-docs@workspace:applications/docs"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/docs-core": "workspace:packages/docs-core"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/docs-core": "workspace:^"
+    "@proton/docs-proto": "workspace:^"
+    "@proton/docs-shared": "workspace:^"
+    "@proton/drive-store": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.3"
@@ -32783,16 +32867,28 @@ __metadata:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@noble/hashes": "npm:^1.4.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/encrypted-search": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/srp": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -32833,7 +32929,7 @@ __metadata:
   resolution: "proton-e2e@workspace:tests"
   dependencies:
     "@playwright/test": "npm:^1.44.1"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     "@types/chance": "npm:^1.1.6"
     "@types/nodemailer": "npm:^6.4.15"
     chance: "npm:^1.1.11"
@@ -32867,20 +32963,30 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-runtime": "npm:^7.24.6"
     "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
+    "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/llm": "workspace:packages/llm"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/encrypted-search": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/llm": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/srp": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.10.1"
     "@reduxjs/toolkit": "npm:^2.2.5"
@@ -32947,9 +33053,9 @@ __metadata:
     "@electron-forge/plugin-webpack": "npm:^7.4.0"
     "@electron-forge/shared-types": "npm:^7.4.0"
     "@electron/fuses": "npm:^1.8.0"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.4"
     cross-env: "npm:^7.0.3"
     electron: "npm:^29.4.2"
@@ -32970,9 +33076,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-pass-extension@workspace:applications/pass-extension"
   dependencies:
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/pass": "workspace:packages/pass"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/pass": "workspace:^"
     "@redux-devtools/remote": "npm:^0.9.3"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/webextension-polyfill": "npm:^0.10.7"
@@ -32996,10 +33102,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-pass@workspace:applications/pass"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/pass": "workspace:packages/pass"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/pass": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
@@ -33015,7 +33128,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-preview-sandbox@workspace:applications/preview-sandbox"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     browserslist-to-esbuild: "npm:^2.1.1"
     cross-env: "npm:^7.0.3"
     docx-preview: "npm:^0.3.2"
@@ -33031,11 +33144,11 @@ __metadata:
   resolution: "proton-storybook@workspace:applications/storybook"
   dependencies:
     "@babel/core": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
     "@storybook/addon-actions": "npm:^6.5.16"
     "@storybook/addon-essentials": "npm:^6.5.16"
     "@storybook/addon-links": "npm:^6.5.16"
@@ -33068,11 +33181,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-verify@workspace:applications/verify"
   dependencies:
-    "@proton/components": "workspace:packages/components"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-router-dom": "npm:^5.3.3"
@@ -33094,14 +33211,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-vpn-settings@workspace:applications/vpn-settings"
   dependencies:
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/metrics": "workspace:packages/metrics"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/calendar": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-router-dom": "npm:^5.3.3"
@@ -33109,7 +33234,7 @@ __metadata:
     eslint: "npm:^8.57.0"
     lodash.template: "npm:^4.5.0"
     prettier: "npm:^3.2.5"
-    proton-account: "workspace:applications/account"
+    proton-account: "workspace:^"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
@@ -35915,8 +36040,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/stylelint-config-proton": "workspace:^"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
     "@types/jest-when": "npm:^3.5.5"
     husky: "npm:^9.0.11"
@@ -40607,7 +40732,7 @@ __metadata:
   dependencies:
     "@manypkg/find-root": "npm:^2.2.1"
     "@manypkg/get-packages": "npm:^2.2.1"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     chalk: "npm:^5.3.0"
     commander: "npm:^12.1.0"
     execa: "npm:^5.1.1"

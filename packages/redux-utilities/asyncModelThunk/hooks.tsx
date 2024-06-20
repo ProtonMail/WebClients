@@ -8,7 +8,7 @@ import {
     baseUseDispatch as useDispatch,
     baseUseSelector as useSelector,
     baseUseStore as useStore,
-} from '@proton/redux-shared-store/sharedContext';
+} from '@proton/react-redux-store';
 
 import type { ReducerValue } from './interface';
 
