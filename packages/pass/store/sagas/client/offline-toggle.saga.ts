@@ -29,9 +29,10 @@ function* offlineToggleWorker(
          * the authentication store, generate the `offlineConfig`
          * `offlineKD` and persist the session immediately */
         if (payload.enabled && !hasOfflineComponents) {
-            const { offlineConfig, offlineKD }: OfflineComponents = yield getOfflineComponents(payload.loginPassword);
-            authStore.setOfflineConfig(offlineConfig);
-            authStore.setOfflineKD(offlineKD);
+            const data: OfflineComponents = yield getOfflineComponents(payload.loginPassword);
+            authStore.setOfflineConfig(data.offlineConfig);
+            authStore.setOfflineKD(data.offlineKD);
+            authStore.setOfflineVerifier(data.offlineVerifier);
             yield auth.persistSession();
         }
 
