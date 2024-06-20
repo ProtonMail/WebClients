@@ -1,4 +1,3 @@
-import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
@@ -39,6 +38,7 @@ import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin
 import { DocumentInteractionMode } from './DocumentInteractionMode'
 import { TablePlugin } from './Plugins/Table/TablePlugin'
 import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
+import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
 
 const TypingBotEnabled = false
 
@@ -104,7 +104,7 @@ export function Editor({
           <CircleLoader size="large" />
         </div>
       )}
-      <LexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
+      <SafeLexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
         {!nonInteractiveMode && (
           <Toolbar hasEditAccess={hasEditAccess} onInteractionModeChange={onInteractionModeChange} />
         )}
@@ -126,6 +126,7 @@ export function Editor({
                   fontFamily: DefaultFont.value,
                   gridRow: 1,
                   gridColumn: 1,
+                  // eslint-disable-next-line custom-rules/deprecate-classes
                   justifySelf: 'center',
                 }}
               />
@@ -158,7 +159,7 @@ export function Editor({
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
         {!nonInteractiveMode && <DraggableBlockPlugin />}
-      </LexicalComposer>
+      </SafeLexicalComposer>
     </CollaborationContext.Provider>
   )
 }

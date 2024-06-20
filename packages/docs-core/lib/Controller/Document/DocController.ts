@@ -1,3 +1,4 @@
+import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { c } from 'ttag'
 import { LoggerInterface } from '@proton/utils/logs'
 import { SquashDocument } from '../../UseCase/SquashDocument'
@@ -24,7 +25,6 @@ import {
   DocumentRole,
 } from '@proton/docs-shared'
 import { EventType, EventTypeEnum, ConnectionCloseReason, RTSConfig } from '@proton/docs-proto'
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { DocControllerInterface } from './DocControllerInterface'
@@ -687,7 +687,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
           await editorInvoker.broadcastPresenceState()
           break
         case EventTypeEnum.ServerIsInformingClientThatTheDocumentCommitHasBeenUpdated:
-          const decodedContent = uint8ArrayToString(event.props.content)
+          const decodedContent = utf8ArrayToString(event.props.content)
           const parsedMessage = JSON.parse(decodedContent)
           this.lastCommitIdReceivedFromRtsOrApi = parsedMessage.commitId
           break
