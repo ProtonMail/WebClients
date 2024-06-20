@@ -55,5 +55,5 @@ export function onSessionMigrationChargebeeStatus(
 }
 
 export function onSessionMigrationPaymentsVersion(user: User, subscription: Subscription | undefined): PaymentsVersion {
-    return isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform) ? 'v4' : 'v5';
+    return onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.INHOUSE_FORCED ? 'v4' : 'v5';
 }
