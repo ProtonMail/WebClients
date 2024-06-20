@@ -29,9 +29,6 @@
       "Add domain": [
         "Tilføj domæne"
       ],
-      "Add multiple users": [
-        "Tilføj flere brugere"
-      ],
       "Add PayPal": [
         "Tilføj PayPal"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "Opret gateway"
-      ],
-      "Create user": [
-        "Opret bruger"
       ],
       "Create users": [
         "Opret brugere"
@@ -476,6 +470,9 @@
       "Send my username": [
         "Send mit brugernavn"
       ],
+      "Send new invite": [
+        "Send ny invitation"
+      ],
       "Send reminder": [
         "Send påmindelse"
       ],
@@ -604,6 +601,9 @@
       ],
       "Verify code again": [
         "Verificér koden igen"
+      ],
+      "Verify domain": [
+        "Bekræft domæne"
       ],
       "View": [
         "Vis"
@@ -2063,11 +2063,6 @@
         "Bekræftelses e-mail afsendt til ${ address }"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Betalt ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME } funktioner"
@@ -2125,6 +2120,9 @@
       ],
       "Email address is invalid": [
         "E-mailadresse er ugyldig"
+      ],
+      "Email address is not available": [
+        "E-mail-adressen er ikke tilgængelig"
       ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
@@ -2200,6 +2198,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsnøglen skal aktiveres for at oprette inviterede brugere"
       ],
       "Organization key must be activated to create non-private users": [
         "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
@@ -3671,9 +3672,6 @@
       "Open source": [
         "Open source"
       ],
-      "Optional": [
-        "Valgfri"
-      ],
       "or ${ selectFileButton }": [
         "eller ${ selectFileButton }"
       ],
@@ -3769,11 +3767,17 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Forhåndsvisning af dokumenter understøttes ikke endnu. Åbn dokumentet for at se det."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Offentlig deling af dokumenter understøttes ikke endnu. Bed ejeren om at invitere dig direkte til dokumentet."
       ],
       "read our two-factor authentication guide first": [
         "læser vores to-faktor-godkendelsesguide først"
@@ -3977,8 +3981,11 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Denne verifikation kan tage op til en time. Du kan roligt fortsætte til de næste trin."
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Denne bekræftelse kan tage op til en time. Efter en vellykket bekræftelse må du ikke fjerne TXT-posten, da den skal bruges til at bekræfte, at du fortsat ejer domænet."
+      ],
+      "This will cancel the previous invite and send a new one to **${ email }**.": [
+        "Dette vil annullere den tidligere invitation og sende en ny til **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil opsige dit nuværende betalte abonnement, og du vil miste alle de loyalitetsfordele, du har optjent."
@@ -4010,8 +4017,8 @@
       "to ${ product } Business": [
         "til ${ product } Business"
       ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "For at tillade domænet ${ boldDomainName } at bruge SAML SSO, skal du bekræfte ejerskabet af det ved at tilføje følgende DNS TXT-post til dit domæne hos din DNS-udbyder."
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "For at tillade, at domænet **${ domainName }** bruger SAML SSO, skal du bekræfte dit ejerskab ved at tilføje følgende DNS TXT-post til dit domæne hos din DNS-udbyder."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Kontakt os for at opsige dit abonnement."
@@ -4320,6 +4327,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Du vil kunne gøre brugeren til administrator eller gøre til privatperson, når de har accepteret invitationen."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
@@ -4639,9 +4649,6 @@
       ],
       "Country": [
         "Land"
-      ],
-      "Create password": [
-        "Opret adgangskode"
       ],
       "Credits used": [
         "Kredit forbrugt"
@@ -5051,6 +5058,9 @@
       "Create account": [
         "Opret konto"
       ],
+      "Don't have access to your 2FA?": [
+        "Har du ikke adgang til din 2FA?"
+      ],
       "Forgot password?": [
         "Glemt adgangskode?"
       ],
@@ -5229,11 +5239,17 @@
       "Delete": [
         "Slet"
       ],
+      "Delete and revoke invite": [
+        "Slet og tilbagekald invitation"
+      ],
       "Edit": [
         "Redigér"
       ],
       "Remove": [
         "Fjern"
+      ],
+      "Resend invite link": [
+        "Send invitationslink igen"
       ],
       "Revoke sessions": [
         "Tilbagekald sessioner"
@@ -6745,11 +6761,6 @@
         "Gratis"
       ]
     },
-    "Private Member": {
-      "private": [
-        "privat"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Annuller"
@@ -6867,6 +6878,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Forudsætning:** SAML-godkendelse skal være konfigureret for at aktivere SCIM-provisionering."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Forudsætning:** For at aktivere SCIM-levering skal du bekræfte dit ejerskab af domænet **${ domainName }**. Denne bekræftelse kan tage op til en time."
       ],
       "Enter token into your identity provider": [
         "Indtast token hos din identitetsudbyder"
@@ -8206,9 +8220,6 @@
       "SPF value copied to clipboard": [
         "SPF-værdi kopieret til udklipsholder"
       ],
-      "User created": [
-        "Bruger oprettet"
-      ],
       "User updated": [
         "Bruger opdateret"
       ],
@@ -8234,6 +8245,9 @@
     "Success message": {
       "Domain deleted": [
         "Domæne slettet"
+      ],
+      "Invitation resent": [
+        "Invitation gensendt"
       ],
       "Sessions revoked": [
         "Sessioner tilbagekaldt"
@@ -8330,6 +8344,9 @@
       "Email addresses": [
         "E-mailadresser"
       ],
+      "Invitation email": [
+        "Invitationsmail"
+      ],
       "Name": [
         "Navn"
       ],
@@ -8408,9 +8425,6 @@
       ],
       "Add domain": [
         "Tilføj domæne"
-      ],
-      "Add new user": [
-        "Tilføj ny bruger"
       ],
       "Add PayPal payment method": [
         "Tilføj PayPal-betalingsmetode"
@@ -8817,6 +8831,9 @@
       "Send email reminders?": [
         "Send e-mail-påmindelser?"
       ],
+      "Send new invite?": [
+        "Send ny invitation?"
+      ],
       "Set new password": [
         "Angiv ny adgangskode"
       ],
@@ -9096,17 +9113,90 @@
         "Primær admin"
       ]
     },
-    "Users table: AI-powered": {
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresse"
+      ],
+      "Add multiple users": [
+        "Tilføj flere brugere"
+      ],
+      "Add new user": [
+        "Tilføj ny bruger"
+      ],
+      "Admin": [
+        "Admin"
+      ],
+      "An invitation will be sent to this email address.": [
+        "En invitation vil blive tilsendt denne e-mailadresse."
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
+      "Confirm password": [
+        "Bekræft adgangskode"
+      ],
+      "Create password": [
+        "Opret adgangskode"
+      ],
+      "Create password instead": [
+        "Opret adgangskode i stedet"
+      ],
+      "Create user": [
+        "Opret bruger"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Optional": [
+        "Valgfri"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Husk at dele brugerens login-oplysninger med dem."
+      ],
+      "Send invite link via email instead": [
+        "Send invitationslink via e-mail i stedet"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Dette vil oprette en ny ${ MAIL_APP_NAME }-adresse."
+      ],
+      "User created": [
+        "Bruger oprettet"
+      ],
+      "VPN connections": [
+        "VPN-forbindelser"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administratorer kan ikke tilgå private brugeres data"
+      ],
       "AI": [
         "AI"
-      ]
-    },
-    "Users table: single sign-on enabled": {
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Invitation sendt, afventer svar fra det inviterede medlem"
+      ],
+      "Invite sent": [
+        "Invitation sendt"
+      ],
+      "It's you": [
+        "Det er dig"
+      ],
+      "Private": [
+        "Privat"
+      ],
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
+      ],
       "SSO user provided by your identity provider": [
         "SSO-bruger leveret af din identitetsudbyder"
       ]

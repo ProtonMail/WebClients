@@ -26,9 +26,6 @@
       "Add domain": [
         "Domain hozzáadása"
       ],
-      "Add multiple users": [
-        "Több felhasználó hozzáadása"
-      ],
       "Add PayPal": [
         "PayPal hozzáadása"
       ],
@@ -103,9 +100,6 @@
       ],
       "Create": [
         "Létrehozás"
-      ],
-      "Create user": [
-        "Felhasználó létrehozása"
       ],
       "Create users": [
         "Felhasználók létrehozása"
@@ -1776,11 +1770,6 @@
         "Az ellenőrző e-mailt elküldtük erre a címre: ${ address }"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "Kétfaktoros hitelesítés"
-      ]
-    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -2915,9 +2904,6 @@
       "Open source": [
         "Nyílt forráskódú"
       ],
-      "Optional": [
-        "Választható"
-      ],
       "or ${ selectFileButton }": [
         "vagy ${ selectFileButton }"
       ],
@@ -3647,9 +3633,6 @@
       ],
       "Country": [
         "Ország"
-      ],
-      "Create password": [
-        "Jelszó létrehozása"
       ],
       "Credits used": [
         "Felhasznált kredit"
@@ -4996,11 +4979,6 @@
         "Ingyenes"
       ]
     },
-    "Private Member": {
-      "private": [
-        "privát"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Mégsem"
@@ -5643,6 +5621,17 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } naptár felhasználónként",
+        "${ MaxCalendars } naptár felhasználónként"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mail cím felhasználónként",
+        "${ maxEmails } e-mail cím felhasználónként"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } tárhely felhasználónként"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } teljes tárhely"
       ],
@@ -5661,11 +5650,17 @@
       "Cancel subscription?": [
         "Előfizetés lemondása?"
       ],
+      "Keep ${ config.planName }": [
+        "Maradjon ${ config.planName }"
+      ],
       "Online privacy, for your whole family": [
         "Online adatvédelem az egész családnak"
       ],
       "Priority support": [
         "Elsőbbségi támogatás"
+      ],
+      "Unlimited folders and labels": [
+        "Korlátlan mappa és címke"
       ],
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
@@ -5790,9 +5785,6 @@
       ],
       "SPF value copied to clipboard": [
         "Az SPF érték a vágólapra másolva"
-      ],
-      "User created": [
-        "Felhasználó létrehozva"
       ],
       "User updated": [
         "Felhasználó frissítve"
@@ -5981,9 +5973,6 @@
       ],
       "Add domain": [
         "Domain hozzáadása"
-      ],
-      "Add new user": [
-        "Új felhasználó hozzáadása"
       ],
       "Add PayPal payment method": [
         "PayPal hozzáadása"

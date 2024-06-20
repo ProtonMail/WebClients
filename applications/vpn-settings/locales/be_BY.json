@@ -29,9 +29,6 @@
       "Add domain": [
         "Дадаць дамен"
       ],
-      "Add multiple users": [
-        "Дадаць некалькі карыстальнікаў"
-      ],
       "Add PayPal": [
         "Дадаць PayPal"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "Стварыць шлюз"
-      ],
-      "Create user": [
-        "Стварыць карыстальніка"
       ],
       "Create users": [
         "Стварыць карыстальнікаў"
@@ -476,6 +470,9 @@
       "Send my username": [
         "Адправіць маё імя карыстальніка"
       ],
+      "Send new invite": [
+        "Адправіць новае запрашэнне"
+      ],
       "Send reminder": [
         "Адправіць напамін"
       ],
@@ -605,6 +602,9 @@
       "Verify code again": [
         "Праверыць код яшчэ раз"
       ],
+      "Verify domain": [
+        "Праверыць дамен"
+      ],
       "View": [
         "Прагледзець"
       ],
@@ -657,8 +657,8 @@
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
         "${ seats } ліцэнзіі памочніка ў напісанні",
-        "${ seats }ліцэнзій памочніка ў напісанні",
-        "${ seats }ліцэнзій памочніка ў напісанні"
+        "${ seats } ліцэнзій памочніка ў напісанні",
+        "${ seats } ліцэнзій памочніка ў напісанні"
       ],
       "${ users } user": [
         "${ users } карыстальнік",
@@ -2081,11 +2081,6 @@
         "Праверачны ліст адпраўлены на ${ address }"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2ФА"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Платныя функцыі ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }"
@@ -2143,6 +2138,9 @@
       ],
       "Email address is invalid": [
         "Памылковы адрас электроннай пошты"
+      ],
+      "Email address is not available": [
+        "Адрас электроннай пошты недаступны"
       ],
       "Email is not valid": [
         "Несапраўдная электронная пошта"
@@ -2218,6 +2216,9 @@
       ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць запрошаных карыстальнікаў"
       ],
       "Organization key must be activated to create non-private users": [
         "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
@@ -3737,9 +3738,6 @@
       "Open source": [
         "Адкрыты зыходны код"
       ],
-      "Optional": [
-        "Неабавязкова"
-      ],
       "or ${ selectFileButton }": [
         "або ${ selectFileButton }"
       ],
@@ -3839,11 +3837,17 @@
       "Preview for this file type is not supported": [
         "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Папярэдні прагляд дакументаў пакуль не падтрымліваецца. Адкрыйце дакумент, каб паглядзець яго."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
       ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Публічнае абагульванне дакументаў пакуль не падтрымліваецца. Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
       ],
       "read our two-factor authentication guide first": [
         "спачатку прачытайце наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
@@ -4055,8 +4059,11 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Гэта праверка можа заняць да адной гадзіны. Вы можаце бяспечна працягваць на наступных кроках."
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Гэта праверка можа заняць да адной гадзіны. Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ],
+      "This will cancel the previous invite and send a new one to **${ email }**.": [
+        "Гэта скасуе папярэдняе запрашэнне і адправіць новае на **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
@@ -4088,8 +4095,8 @@
       "to ${ product } Business": [
         "у ${ product } Business"
       ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Каб дазволіць дамену ${ boldDomainName } выкарыстоўваць SAML SSO, вы павінны праверыць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Каб дазволіць дамену **${ domainName }** выкарыстоўваць SAML SSO, вы павінны праверыць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Звяжыцеся з намі, каб скасаваць сваю падпіску"
@@ -4408,6 +4415,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal. Калі вы гэтага яшчэ не зрабілі, націсніце на кнопку ніжэй."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "У вас будзе магчымасць падвысіць карыстальніка да адміністратара або зрабіць яго прыватным, як толькі ён прыме запрашэнне."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
@@ -4733,9 +4743,6 @@
       ],
       "Country": [
         "Краіна"
-      ],
-      "Create password": [
-        "Стварыць пароль"
       ],
       "Credits used": [
         "Выкарыстана крэдытаў"
@@ -5145,6 +5152,9 @@
       "Create account": [
         "Стварыць уліковы запіс"
       ],
+      "Don't have access to your 2FA?": [
+        "Адсутнічае доступ да вашых 2ФА?"
+      ],
       "Forgot password?": [
         "Забылі пароль?"
       ],
@@ -5325,11 +5335,17 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete and revoke invite": [
+        "Выдаліць і адклікаць запрашэнне"
+      ],
       "Edit": [
         "Рэдагаваць"
       ],
       "Remove": [
         "Выдаліць"
+      ],
+      "Resend invite link": [
+        "Паўторна адправіць запрашальную спасылку"
       ],
       "Revoke sessions": [
         "Адклікаць сеансы"
@@ -6895,11 +6911,6 @@
         "Бясплатна"
       ]
     },
-    "Private Member": {
-      "private": [
-        "прыватны"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Скасаваць"
@@ -7019,6 +7030,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Неабходная ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігурыравана для ўключэння падрыхтоўкі SCIM."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Абавязковая ўмова:** для ўключэння кантролю выкарыстання SCIM, вам неабходна пацвердзіць права ўласнасці на дамен **${ domainName }**. Гэта праверка можа заняць да адной гадзіны."
       ],
       "Enter token into your identity provider": [
         "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
@@ -7921,6 +7935,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }, які ўключае абагульванне календара"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } з абагульваннем календара і даступнасцю"
+      ],
       "${ dayDiff } day left": [
         "Застаўся ${ dayDiff } дзень",
         "Засталося ${ dayDiff } дні",
@@ -7930,6 +7947,9 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME }, які ўключае гісторыю версій"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } з гісторыяй версій"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } і ўсе прэміяльныя функцыі прадукцыйнасці"
       ],
@@ -7938,6 +7958,9 @@
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } захоўвае вашы дзелавыя даныя ў бяспецы і дазваляе адпраўляць зашыфраваныя лісты любому карыстальніку."
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } з аўтаматычным перасыланнем лістоў"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } каляндар на карыстальніка",
@@ -7960,6 +7983,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } з ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "Аб'ём сховішча на карыстальніка: ${ planMaxSpace }"
       ],
@@ -7971,6 +7997,9 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай і арганізаванай у сваёй працы з доступам да ўсіх праграм ${ BRAND_NAME } і іх прэміяльных функцый."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай, арганізаванай і кантраляваць сваю паштовую скрыню, расклад і іншыя рэчы."
@@ -7987,14 +8016,26 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } прапануе сховішча аб'ёмам ${ planMaxSpace } для вашых файлаў і фатаграфій. У вас таксама будзе права атрымаць штогадовыя бонусы ў выглядзе сховішча."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } прапануе сховішча аб'ёмам ${ planMaxSpace } на карыстальніка для лістоў, далучэнняў, падзей, пароляў і файлаў. У вас таксама будзе права атрымаць штогадовыя бонусы ў выглядзе сховішча."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } прапануе сховішча аб'ёмам ${ planMaxSpace } на карыстальніка для лістоў, далучэнняў, падзей, файлаў і пароляў. У вас таксама будзе права атрымаць штогадовыя бонусы ў выглядзе сховішча."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Праграма ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } з доступам да ўсіх высакахуткасных сервераў у ${ vpnCountries } краінах"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } з блакіроўкай шкодных праграм і рэкламы"
+      ],
       "10 email addresses": [
         "10 адрасоў электроннай пошты"
+      ],
+      "20 email addresses per user": [
+        "20 адрасоў электроннай пошты на карыстальніка"
       ],
       "25 calendars per user": [
         "25 календароў на карыстальніка"
@@ -8007,6 +8048,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Пасля таго, як міне падпіска ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
@@ -8062,6 +8106,9 @@
       "Extra storage and bonuses": [
         "Дадатковае сховішча і бонусы"
       ],
+      "Extra storage and users": [
+        "Дадатковае сховішча і карыстальнікі"
+      ],
       "Have a question?": [
         "Засталіся пытанні"
       ],
@@ -8085,6 +8132,9 @@
       ],
       "Invited members will be removed from your organization": [
         "Запрошаныя ўдзельнікі будуць выдалены з вашай арганізацыі"
+      ],
+      "Keep ${ config.planName }": [
+        "Пакінуць ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Забяспечвайце бяспеку сваёй каманды дзе б яны не былі з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
@@ -8118,6 +8168,9 @@
       ],
       "Priority support": [
         "Прыярытэтная падтрымка"
+      ],
+      "Productivity features": [
+        "Функцыі прадукцыйнасці"
       ],
       "Reactivate": [
         "Актываваць паўторна"
@@ -8181,6 +8234,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Вы таксама згубіце ўсе папярэднія бонусы сховішча, якія атрымалі раней."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Калі вы скасуеце падпіску ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Пры скасаванні ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 5 ГБ сховішча Drive і да 1 ГБ сховішча Mail. Вы таксама згубіце ўсе папярэднія прысуджаныя бонусы сховішча."
@@ -8390,9 +8446,6 @@
       "SPF value copied to clipboard": [
         "Значэнне SPF скапіявана ў буфер абмену"
       ],
-      "User created": [
-        "Карыстальнік створаны"
-      ],
       "User updated": [
         "Карыстальнік абноўлены"
       ],
@@ -8418,6 +8471,9 @@
     "Success message": {
       "Domain deleted": [
         "Дамен выдалены"
+      ],
+      "Invitation resent": [
+        "Запрашэнне адпраўлена паўторна"
       ],
       "Sessions revoked": [
         "Сеансы адкліканы"
@@ -8514,6 +8570,9 @@
       "Email addresses": [
         "Адрасы электроннай пошты"
       ],
+      "Invitation email": [
+        "Электронны ліст запрашэння"
+      ],
       "Name": [
         "Імя"
       ],
@@ -8592,9 +8651,6 @@
       ],
       "Add domain": [
         "Дадаць дамен"
-      ],
-      "Add new user": [
-        "Дадаць новага карыстальніка"
       ],
       "Add PayPal payment method": [
         "Дадаць спосаб аплаты PayPal"
@@ -9007,6 +9063,9 @@
       "Send email reminders?": [
         "Адправіць напаміны поштай?"
       ],
+      "Send new invite?": [
+        "Адправіць новае запрашэнне?"
+      ],
       "Set new password": [
         "Задаць новы пароль"
       ],
@@ -9288,17 +9347,90 @@
         "Асноўны адміністратар"
       ]
     },
-    "Users table: AI-powered": {
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "Адрас ${ BRAND_NAME }"
+      ],
+      "Add multiple users": [
+        "Дадаць некалькі карыстальнікаў"
+      ],
+      "Add new user": [
+        "Дадаць новага карыстальніка"
+      ],
+      "Admin": [
+        "Адміністратар"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Запрашэнне будзе адпраўлена на гэты адрас электроннай пошты."
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Confirm password": [
+        "Пацвердзіце пароль"
+      ],
+      "Create password": [
+        "Стварыць пароль"
+      ],
+      "Create password instead": [
+        "Замест гэтага стварыце пароль"
+      ],
+      "Create user": [
+        "Стварыць карыстальніка"
+      ],
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Name": [
+        "Імя"
+      ],
+      "Optional": [
+        "Неабавязкова"
+      ],
+      "Private": [
+        "Прыватнае"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
+      ],
+      "Send invite link via email instead": [
+        "Замест гэтага адправіць запрашальную спасылку праз электронную пошту"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Гэта створыць новы адрас ${ MAIL_APP_NAME }"
+      ],
+      "User created": [
+        "Карыстальнік створаны"
+      ],
+      "VPN connections": [
+        "Падключэнні па VPN"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў"
+      ],
       "AI": [
         "ШІ"
-      ]
-    },
-    "Users table: single sign-on enabled": {
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Запрашэнне адпраўлена. Чаканне адказу ад запрошанага ўдзельніка"
+      ],
+      "Invite sent": [
+        "Запрашэнне адпраўлена"
+      ],
+      "It's you": [
+        "Гэта вы"
+      ],
+      "Private": [
+        "Прыватнае"
+      ],
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
+      ],
       "SSO user provided by your identity provider": [
         "Карыстальнік SSO прадстаўляецца вашым пастаўшчыком пасведчанняў"
       ]

@@ -29,9 +29,6 @@
       "Add domain": [
         "डोमेन जोड़ें"
       ],
-      "Add multiple users": [
-        "एकाधिक उपयोगकर्ता जोड़ें"
-      ],
       "Add PayPal": [
         "PayPal जोड़ें"
       ],
@@ -112,9 +109,6 @@
       ],
       "Create": [
         "बनाएँ"
-      ],
-      "Create user": [
-        "उपयोगकर्ता बनाएं"
       ],
       "Create users": [
         "उपयोगकर्ता बनाएं"
@@ -1846,11 +1840,6 @@
         "सत्यापन ईमेल ${ address } पर भेजा गया"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2-एफए"
-      ]
-    },
     "eoy2023: Deal details": {
       "6 users": [
         "6 यूज़र"
@@ -3164,9 +3153,6 @@
       "Open source": [
         "ओपन सोर्स"
       ],
-      "Optional": [
-        "वैकल्पिक"
-      ],
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
       ],
@@ -3979,9 +3965,6 @@
       ],
       "Country": [
         "देश"
-      ],
-      "Create password": [
-        "पासवर्ड बनाएं"
       ],
       "Credits used": [
         "खर्च किए गए क्रेडिट"
@@ -5579,11 +5562,6 @@
         "मुफ्त"
       ]
     },
-    "Private Member": {
-      "private": [
-        "निजी"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "रद्द करें"
@@ -6242,6 +6220,14 @@
         "${ dayDiff } दिन बाकी",
         "${ dayDiff } दिन बाकी"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ MaxCalendars } कैलेंडर"
+      ],
+      "${ maxEmails } email address per user": [
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ maxEmails } ईमेल पते"
+      ],
       "${ planMaxSpace } total storage": [
         "कुल स्टोरेज ${ planMaxSpace }"
       ],
@@ -6250,6 +6236,9 @@
       ],
       "10 email addresses": [
         "10 ईमेल पते"
+      ],
+      "Automatic email forwarding": [
+        "स्वचालित ईमेल फॉरवर्ड"
       ],
       "Calendar sharing": [
         "कैलेंडर शेयर"
@@ -6265,6 +6254,9 @@
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
+      ],
+      "Keep ${ config.planName }": [
+        "${ config.planName } रखे"
       ],
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
@@ -6420,9 +6412,6 @@
       ],
       "SPF value copied to clipboard": [
         "क्लिपबोर्ड पर कॉपी किया गया SPF मान"
-      ],
-      "User created": [
-        "उपयोगकर्ता बनाया गया"
       ],
       "User updated": [
         "यूज़र अपडेट किए गए"
@@ -6614,9 +6603,6 @@
       ],
       "Add domain": [
         "डोमेन जोड़ें"
-      ],
-      "Add new user": [
-        "नया उपयोगकर्ता जोड़ें"
       ],
       "Add PayPal payment method": [
         "पेपैल भुगतान विधि जोड़ें"

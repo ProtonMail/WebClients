@@ -29,9 +29,6 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
-      "Add multiple users": [
-        "Birkaç kullanıcı ekle"
-      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "Ağ geçidi ekle"
-      ],
-      "Create user": [
-        "Kullanıcı ekle"
       ],
       "Create users": [
         "Kullanıcılar ekle"
@@ -2063,11 +2057,6 @@
         "Doğrulama e-postası ${ address } alıcısına gönderildi"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "İki adımlı doğrulama"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri"
@@ -3671,9 +3660,6 @@
       "Open source": [
         "Açık kaynaklı"
       ],
-      "Optional": [
-        "İsteğe bağlı"
-      ],
       "or ${ selectFileButton }": [
         "ya da ${ selectFileButton }un"
       ],
@@ -3977,9 +3963,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Bu doğrulama bir saat kadar sürebilir. Güvenle sonraki adımlara geçebilirsiniz."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
       ],
@@ -4009,9 +3992,6 @@
       ],
       "to ${ product } Business": [
         "${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "${ boldDomainName } etki alanının SAML tek oturum açma kullanmasını sağlamak için, aşağıdaki DNS TXT kaydını DNS hizmeti sağlayıcınıza ekleyerek etki alanının sahipliğini doğrulamanız gerekir."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Aboneliğinizi iptal etmek için lütfen bizimle görüşün."
@@ -4639,9 +4619,6 @@
       ],
       "Country": [
         "Ülke"
-      ],
-      "Create password": [
-        "Parola oluştur"
       ],
       "Credits used": [
         "Kullanılan kredi"
@@ -6742,11 +6719,6 @@
         "Ücretsiz"
       ]
     },
-    "Private Member": {
-      "private": [
-        "kişisel"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "İptal"
@@ -7713,8 +7685,23 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "Her kullanıcı için ${ MaxCalendars } takvim",
+        "Her kullanıcı için ${ MaxCalendars } takvim"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } özel e-posta etki alanı",
+        "${ maxDomainNames } özel e-posta etki alanı"
+      ],
+      "${ maxEmails } email address per user": [
+        "Her kullanıcı için ${ maxEmails } e-posta adresi",
+        "Her kullanıcı için ${ maxEmails } e-posta adresi"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ve sınırsız hide-my-email takma adı"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "Her kullanıcı için ${ planMaxSpace } depolama alanı"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } toplam depolama alanı"
@@ -7746,6 +7733,12 @@
       "10 email addresses": [
         "10 e-posta adresi"
       ],
+      "20 email addresses per user": [
+        "Her kullanıcı için 20 e-posta adresi"
+      ],
+      "25 calendars per user": [
+        "Her kullanıcı için 25 takvim"
+      ],
       "6 users": [
         "6 kullanıcı"
       ],
@@ -7757,6 +7750,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 5 GB Drive depolama alanı ve 1 GB Mail depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
+      ],
+      "Automatic email forwarding": [
+        "Otomatik e-posta iletme"
       ],
       "Back up photos from your devices": [
         "Aygıtlarınızdaki fotoğrafları yedekleyemezsiniz"
@@ -7809,6 +7805,9 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "${ planName } aboneliğiniz sona erdiğinde Free tarifesi sınırlarını aşarsanız şunları yapamazsınız:"
       ],
+      "Keep ${ config.planName }": [
+        "${ config.planName } tarifesinde kal"
+      ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"
       ],
@@ -7856,6 +7855,9 @@
       ],
       "Unblocking internet access in Iran": [
         "İran İnternet erişimi engelini kaldırmak"
+      ],
+      "Unlimited folders and labels": [
+        "Sınırsız sayıda klasör ve etiket"
       ],
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
@@ -8077,9 +8079,6 @@
       "SPF value copied to clipboard": [
         "SPF değeri panoya kopyalandı"
       ],
-      "User created": [
-        "Kullanıcı eklendi"
-      ],
       "User updated": [
         "Kullanıcı güncellendi"
       ],
@@ -8279,9 +8278,6 @@
       ],
       "Add domain": [
         "Etki alanı ekle"
-      ],
-      "Add new user": [
-        "Yeni kullanıcı ekle"
       ],
       "Add PayPal payment method": [
         "PayPal ödeme yöntemi ekle"
@@ -8965,21 +8961,6 @@
       ],
       "Primary admin": [
         "Birincil yönetici"
-      ]
-    },
-    "Users table: AI-powered": {
-      "AI": [
-        "Yapay Zeka"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "Tek oturum açma"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "Kimlik hizmeti sağlayıcınızın belirttiği tek oturum açma"
       ]
     },
     "Validation": {
