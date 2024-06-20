@@ -350,11 +350,13 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
       {activeCell != null && !isMouseDown && (
         <>
           <div
+            data-table-cell-resizer
             className="TableCellResizer__resizer TableCellResizer__ui"
             style={resizerStyles.right || undefined}
             onMouseDown={toggleResize('right')}
           />
           <div
+            data-table-cell-resizer
             className="TableCellResizer__resizer TableCellResizer__ui"
             style={resizerStyles.bottom || undefined}
             onMouseDown={toggleResize('bottom')}
