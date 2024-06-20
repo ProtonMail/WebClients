@@ -72,6 +72,7 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
 
   return (
     <iframe
+      id="editor-frame"
       title="Docs Editor"
       src={url}
       style={{ width: '100%', height: '100%' }}
