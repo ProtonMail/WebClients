@@ -27,4 +27,5 @@ export interface EditorRequiresClientMethods {
   openLink(url: string): Promise<void>
 
   reportError(error: Error, errorInfo?: ErrorInfo): Promise<void>
+  updateFrameSize(size: number): void
 }

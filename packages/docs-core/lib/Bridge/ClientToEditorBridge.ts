@@ -16,12 +16,13 @@ import { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrch
 export class ClientToEditorBridge {
   private logger = new Logger('DocsClient', DOCS_EDITOR_DEBUG_KEY)
   public readonly editorInvoker = new EditorInvoker(this.editorFrame, this.logger)
-  private editorRequestHandler = new EditorToClientRequestHandler(this.editorController)
+  private editorRequestHandler: EditorToClientRequestHandler
 
   constructor(
     private editorFrame: HTMLIFrameElement,
     private readonly editorController: EditorOrchestratorInterface,
   ) {
+    this.editorRequestHandler = new EditorToClientRequestHandler(this.editorFrame, this.editorController)
     window.addEventListener('message', (event) => {
       if (event.source !== this.editorFrame.contentWindow) {
         this.logger.info('Ignoring message from unknown source', event.data)
