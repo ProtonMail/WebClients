@@ -23,9 +23,9 @@ export async function connectNetLogger(
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
 
         if (details.statusCode >= 200 && details.statusCode < 400) {
-            netLogger(viewName).info(details.method, details.url, details.statusCode, details.statusLine);
+            netLogger(viewName).verbose(details.method, details.url, details.statusCode, details.statusLine);
         } else {
-            netLogger(viewName).info(
+            netLogger(viewName).error(
                 details.method,
                 details.url,
                 details.statusCode,
