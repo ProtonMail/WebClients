@@ -53,6 +53,7 @@ interface Props {
     onDetails?: () => void;
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
+    onOpenInDocs?: () => void;
     date?: Date | string | number;
 
     colorUi?: 'standard' | 'prominent';
@@ -200,6 +201,7 @@ const FilePreview = (
         onDetails,
         onShare,
         onRestore,
+        onOpenInDocs,
         date,
 
         colorUi = 'prominent',
@@ -290,6 +292,7 @@ const FilePreview = (
                 onDetails={onDetails}
                 onShare={onShare}
                 onRestore={onRestore}
+                onOpenInDocs={onOpenInDocs}
                 date={date}
             >
                 {isDirty ? <div className="flex items-center">{c('Info').t`Unsaved changes`}</div> : navigationControls}

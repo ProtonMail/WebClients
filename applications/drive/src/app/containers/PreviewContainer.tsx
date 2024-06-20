@@ -16,6 +16,7 @@ import useIsEditEnabled from '../components/sections/useIsEditEnabled';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useActions, useDriveSharingFlags, useFileView } from '../store';
+import { useOpenInDocs } from '../store/_documents';
 // TODO: ideally not use here
 import useSearchResults from '../store/_search/useSearchResults';
 import { getSharedStatus } from '../utils/share';
@@ -60,6 +61,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         downloadFile,
         navigation,
     } = useFileView(shareId, linkId, useNavigation);
+
+    const { showOpenInDocs, openInDocsAction } = useOpenInDocs(link);
 
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
@@ -189,6 +192,13 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                     !isAdmin || isLinkLoading || !!link?.trashed
                         ? undefined
                         : () => showLinkSharingModal({ shareId, linkId })
+                }
+                onOpenInDocs={
+                    showOpenInDocs
+                        ? () => {
+                              openInDocsAction({ shareId, linkId });
+                          }
+                        : undefined
                 }
                 imgThumbnailUrl={link?.cachedThumbnailUrl}
                 ref={rootRef}
