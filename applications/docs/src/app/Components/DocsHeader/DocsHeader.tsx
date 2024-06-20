@@ -32,16 +32,18 @@ const DocsHeader = () => {
       <div className="mr-auto" />
       <DocumentActiveUsers className="mr-2 hidden md:flex" />
       {controller?.role.isAdmin() && (
+        <Button
+          shape="ghost"
+          className="hidden items-center gap-2 text-sm md:flex"
+          data-testid="share-button"
+          onClick={() => controller.openDocumentSharingModal()}
+        >
+          <Icon name="user-plus" />
+          {c('Action').t`Share`}
+        </Button>
+      )}
+      {controller?.role.canComment() && (
         <>
-          <Button
-            shape="ghost"
-            className="hidden items-center gap-2 text-sm md:flex"
-            data-testid="share-button"
-            onClick={() => controller.openDocumentSharingModal()}
-          >
-            <Icon name="user-plus" />
-            {c('Action').t`Share`}
-          </Button>
           <CommentsButton controller={controller} />
         </>
       )}
