@@ -1,18 +1,14 @@
 import { LexicalEditor, FORMAT_ELEMENT_COMMAND, ElementFormatType } from 'lexical'
-import AlignCenterIcon from '../Icons/AlignCenterIcon'
-import AlignJustifyIcon from '../Icons/AlignJustifyIcon'
-import AlignLeftIcon from '../Icons/AlignLeftIcon'
-import AlignRightIcon from '../Icons/AlignRightIcon'
 import { c } from 'ttag'
 import { memo } from 'react'
-import { DropdownMenuButton } from '@proton/components'
+import { DropdownMenuButton, Icon } from '@proton/components'
 import clsx from '@proton/utils/clsx'
 
 export const AlignmentOptions = [
   {
     align: 'left',
     name: c('Action').t`Left align`,
-    icon: <AlignLeftIcon className="h-4 w-4 fill-current" />,
+    icon: <Icon name="text-align-left" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')
     },
@@ -20,7 +16,7 @@ export const AlignmentOptions = [
   {
     align: 'center',
     name: c('Action').t`Center align`,
-    icon: <AlignCenterIcon className="h-4 w-4 fill-current" />,
+    icon: <Icon name="text-align-center" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')
     },
@@ -28,7 +24,7 @@ export const AlignmentOptions = [
   {
     align: 'right',
     name: c('Action').t`Right align`,
-    icon: <AlignRightIcon className="h-4 w-4 fill-current" />,
+    icon: <Icon name="text-align-right" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')
     },
@@ -36,7 +32,7 @@ export const AlignmentOptions = [
   {
     align: 'justify',
     name: c('Action').t`Justify align`,
-    icon: <AlignJustifyIcon className="h-4 w-4 fill-current" />,
+    icon: <Icon name="text-align-justify" />,
     onClick: (activeEditor: LexicalEditor) => {
       activeEditor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')
     },
