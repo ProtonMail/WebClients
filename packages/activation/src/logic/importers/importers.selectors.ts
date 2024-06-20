@@ -4,17 +4,12 @@ import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/a
 import orderBy from '@proton/utils/orderBy';
 
 import { EasySwitchState } from '../store';
-import { ActiveImportID, ActiveImporter, ActiveImportersMap, Importer, ImportersMap } from './importers.interface';
+import { ActiveImportID, ActiveImporter, ActiveImportersMap, ImportersMap } from './importers.interface';
 
 const selectImportersMap = (state: EasySwitchState): ImportersMap => state.importers.importers;
 const selectActiveImportersMap = (state: EasySwitchState): ActiveImportersMap => state.importers.activeImporters;
-export const selectImportersState = (state: EasySwitchState) => state.importers.loading;
 
-export const selectImporters = createSelector([selectImportersMap], (importersMap): Importer[] =>
-    Object.values(importersMap)
-);
-
-export const selectActiveImporters = createSelector(selectActiveImportersMap, (activeImportersMap): ActiveImporter[] =>
+const selectActiveImporters = createSelector(selectActiveImportersMap, (activeImportersMap): ActiveImporter[] =>
     Object.values(activeImportersMap)
 );
 

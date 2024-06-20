@@ -2,9 +2,7 @@ import { MailImportFields } from '@proton/activation/src/components/Modals/Custo
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Separator } from './createImporter.action';
-
-export type ImporterContact = {
+type ImporterContact = {
     error?: string;
 };
 
@@ -17,14 +15,6 @@ export type ImporterCalendar = {
     newCalendar?: boolean;
     mergedTo?: VisualCalendar;
 };
-export interface ImporterFolder {
-    Source: string;
-    Separator: Separator;
-    Flags: any[];
-    DestinationFolder?: string;
-    DestinationCategory?: string;
-}
-
 export type ImporterData = {
     importerId: string;
     importedEmail: string;
