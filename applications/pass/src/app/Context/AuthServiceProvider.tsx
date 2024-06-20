@@ -116,17 +116,18 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onInit: async () => {
+                const pathLocalID = getLocalIDFromPathname(location.pathname);
+                const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const error = getRouteError(history.location.search);
 
                 if (error !== null) {
                     setRedirectPath('/');
+                    const pathname = pathLocalID ? `/u/${pathLocalID}` : '/';
                     client.current.setStatus(AppStatus.ERROR);
-                    history.replace({ search: '', pathname: '/', state: { error } });
+                    history.replace({ search: '', pathname, state: { error } });
                     return false;
                 } else history.replace({ state: null });
 
-                const pathLocalID = getLocalIDFromPathname(location.pathname);
-                const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const persistedSession = await auth.config.getPersistedSession(initialLocalID);
 
                 /** configure the authentication store partially in order to
@@ -396,10 +397,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
          * the auth store and reload the page silently to avoid maintaing a stale
          * local session alive. This edge-case can happen when the pass web-app is
          * opened on new a localID which may trigger a re-auth for the same UserID. */
-        const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID }) => {
+        const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID, localID }) => {
             if (authStore.getUserID() === userID) {
                 authStore.clear();
-                window.location.href = '/?error=fork';
+                window.location.href = `/u/${localID}?error=fork`;
             }
         };
 
