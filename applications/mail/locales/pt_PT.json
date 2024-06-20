@@ -465,6 +465,9 @@
       "Forward as attachment": [
         "Encaminhar como anexo"
       ],
+      "Generate text": [
+        "Gerar texto"
+      ],
       "Get in touch": [
         "Entrar em contacto"
       ],
@@ -473,6 +476,9 @@
       ],
       "Get started": [
         "Começar"
+      ],
+      "Get the writing assistant": [
+        "Obtenha o assistente de escrita"
       ],
       "Get verification code": [
         "Obter código de verificação"
@@ -627,6 +633,9 @@
       ],
       "Loading${ ellipsis }": [
         "A carregar${ ellipsis }"
+      ],
+      "Make it friendly": [
+        "Torná-lo amigável"
       ],
       "Manage folders": [
         "Gerir pastas"
@@ -940,6 +949,9 @@
       "Resume": [
         "Retomar"
       ],
+      "Resume downloading": [
+        "Retomar transferência"
+      ],
       "Retry": [
         "Repetir"
       ],
@@ -1108,6 +1120,9 @@
       "Stay": [
         "Ficar"
       ],
+      "Stop generating result": [
+        "Parar de gerar resultado"
+      ],
       "Strikethrough": [
         "Riscado"
       ],
@@ -1146,10 +1161,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -3570,6 +3581,9 @@
       "Draft could not be saved. Try again.": [
         "Não foi possível guardar o rascunho. Tente novamente."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Devido a um erro, não foi possível cancelar a geração de texto"
+      ],
       "Email address disabled": [
         "Endereço de e-mail desativado"
       ],
@@ -3832,6 +3846,9 @@
       ],
       "Tab closed": [
         "Separador fechado"
+      ],
+      "Thanks for the feedback!": [
+        "Obrigado pelo seu comentário!"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "O anexo não pôde ser desencriptado.\nSe tiver a chave privada correspondente, ainda será capaz de o desencriptar com um programa como o GnuPG.",
@@ -4831,6 +4848,9 @@
     "Header": {
       "Contacts": [
         "Contactos"
+      ],
+      "Report an issue": [
+        "Reportar um problema"
       ],
       "Search": [
         "Pesquisar"
@@ -9047,6 +9067,12 @@
       ],
       "Senders blocked": [
         "Remetentes bloqueados"
+      ],
+      "The writing assistant is ready to use": [
+        "O assistente de escrita está pronto para ser usado"
+      ],
+      "Trial started": [
+        "Avaliação Iniciada"
       ]
     },
     "Oauth instructions": {
@@ -10266,6 +10292,21 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } calendário por utilizador",
+        "${ MaxCalendars } calendários por utilizador"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } domínio de e-mail personalizado",
+        "${ maxDomainNames } domínios de e-mail personalizados"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } endereço de e-mail por utilizador",
+        "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por utilizador"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
       ],
@@ -10275,11 +10316,20 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "20 email addresses per user": [
+        "20 endereços de e-mail por utilizador"
+      ],
+      "25 calendars per user": [
+        "25 calendários por utilizador"
+      ],
       "6 users": [
         "6 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -10313,6 +10363,9 @@
       ],
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
+      ],
+      "Unlimited folders and labels": [
+        "Pastas e etiquetas ilimitadas"
       ],
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
