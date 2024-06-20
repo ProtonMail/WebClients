@@ -7882,6 +7882,21 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } calendário por utilizador",
+        "${ MaxCalendars } calendários por utilizador"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } domínio de e-mail personalizado",
+        "${ maxDomainNames } domínios de e-mail personalizados"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } endereço de e-mail por utilizador",
+        "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por utilizador"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
       ],
@@ -7891,11 +7906,20 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "20 email addresses per user": [
+        "20 endereços de e-mail por utilizador"
+      ],
+      "25 calendars per user": [
+        "25 calendários por utilizador"
+      ],
       "6 users": [
         "6 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -7929,6 +7953,9 @@
       ],
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
+      ],
+      "Unlimited folders and labels": [
+        "Pastas e etiquetas ilimitadas"
       ],
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
