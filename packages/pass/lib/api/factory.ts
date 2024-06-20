@@ -138,7 +138,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const error = getApiErrorMessage(e);
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
-                const notAllowed = code === PassErrorCode.NOT_ALLOWED;
+                const notAllowed = code === PassErrorCode.NOT_ALLOWED && options.url?.includes('pass/v1/user/access');
                 const offline = getIsOfflineError(e) || networkError;
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
