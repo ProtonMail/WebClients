@@ -25,6 +25,7 @@ import {
     extendStatus,
     isSignupFlow,
 } from './interface';
+import { isOnSessionMigration } from './utils';
 
 export class PaymentMethods {
     public get amount(): number {
@@ -224,7 +225,7 @@ export class PaymentMethods {
             !isInvoice &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
-            this.chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED &&
+            (this.chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED || this.isOnSessionMigration()) &&
             !this.isChargebeeBitcoinAvailable()
         );
     }
@@ -245,7 +246,8 @@ export class PaymentMethods {
             this.amount >= MIN_BITCOIN_AMOUNT &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             isEnabledFlow &&
-            !isB2BPlan;
+            !isB2BPlan &&
+            !this.isOnSessionMigration();
 
         return bitcoinAvailable;
     }
@@ -335,10 +337,7 @@ export class PaymentMethods {
     }
 
     private isOnSessionMigration() {
-        return (
-            this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED &&
-            this.billingPlatform === BillingPlatform.Proton
-        );
+        return isOnSessionMigration(this.chargebeeEnabled, this.billingPlatform);
     }
 }
 

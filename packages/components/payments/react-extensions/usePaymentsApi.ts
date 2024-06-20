@@ -16,6 +16,7 @@ import { useApi, useConfig, usePlans, useSubscription } from '../../hooks';
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
+    CheckWithAutomaticOptions,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PaymentsApi,
@@ -212,16 +213,24 @@ export const usePaymentsApi = (
 
         const checkWithAutomaticVersion = async (
             data: CheckSubscriptionData,
-            signal?: AbortSignal
+            signal?: AbortSignal,
+            options?: CheckWithAutomaticOptions
         ): Promise<SubscriptionCheckResponse> => {
             const chargebeeEnabled = getChargebeeEnabled();
-
             if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
                 return checkV4(data, signal, { system: 'inhouse', reason: 'forced' });
             }
 
+            if (options?.forcedVersion === 'v4') {
+                return checkV4(data, signal, { system: 'inhouse', reason: options.reason });
+            }
+
             if (chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
                 return checkV5(data, signal, { system: 'chargebee', reason: 'forced' });
+            }
+
+            if (options?.forcedVersion === 'v5') {
+                return checkV5(data, signal, { system: 'chargebee', reason: options.reason });
             }
 
             const passB2bPlans = [PLANS.PASS_PRO, PLANS.PASS_BUSINESS];
