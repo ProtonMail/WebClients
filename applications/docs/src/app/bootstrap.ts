@@ -11,7 +11,6 @@ import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guest
 import { FeatureCode, fetchFeatures } from '@proton/features'
 import createApi from '@proton/shared/lib/api/createApi'
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig'
-import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone'
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames'
 import { ProtonConfig } from '@proton/shared/lib/interfaces'
 import noop from '@proton/utils/noop'
@@ -78,15 +77,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
       return dispatch(addressesThunk())
     }
 
-    const loadPreloadButIgnored = () => {
-      loadAllowedTimeZones(silentApi).catch(noop)
-    }
-
     const userPromise = loadUser()
     const preloadPromise = loadPreload()
     const evPromise = bootstrap.eventManager({ api: silentApi })
     const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop)
-    loadPreloadButIgnored()
 
     await unleashPromise
     // Needs unleash to be loaded.
