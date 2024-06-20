@@ -29,9 +29,6 @@
       "Add domain": [
         "ドメインを追加"
       ],
-      "Add multiple users": [
-        "複数のユーザーを追加する"
-      ],
       "Add PayPal": [
         "PayPal を追加"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "ゲートウェイ作成"
-      ],
-      "Create user": [
-        "ユーザー作成"
       ],
       "Create users": [
         "ユーザーを作成"
@@ -1939,11 +1933,6 @@
         "確認メールが ${ address } に送信されました"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2要素認証"
-      ]
-    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3492,9 +3481,6 @@
       "Open source": [
         "オープンソース"
       ],
-      "Optional": [
-        "オプション"
-      ],
       "or ${ selectFileButton }": [
         "または ${ selectFileButton }"
       ],
@@ -3774,9 +3760,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "この検証には最大 1 時間かかる場合があります。安全に次のステップに進むことができます。"
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "現在の有料サブスクリプションがキャンセルされ、蓄積されたロイヤリティ特典も失われます。"
       ],
@@ -3803,9 +3786,6 @@
       ],
       "to ${ product } Business": [
         "${ product }ビジネスへ"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "ドメイン ${ boldDomainName } で SAML SSO を使用できるようにするには、DNS プロバイダーのドメインに次の DNS TXT レコードを追加して、ドメインの所有権を確認する必要があります。"
       ],
       "To cancel your subscription, please reach out to us.": [
         "サブスクリプションをキャンセルされる場合は、弊社までご連絡ください。"
@@ -4396,9 +4376,6 @@
       ],
       "Country": [
         "国"
-      ],
-      "Create password": [
-        "パスワードを作成"
       ],
       "Credits used": [
         "使用クレジット"
@@ -6325,11 +6302,6 @@
         "無料"
       ]
     },
-    "Private Member": {
-      "private": [
-        "プライベート"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "キャンセル"
@@ -7173,6 +7145,18 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "ユーザーあたり ${ MaxCalendars } 個のカレンダー"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 件の独自メールドメイン"
+      ],
+      "${ maxEmails } email address per user": [
+        "1 ユーザーあたり ${ maxEmails } 件のメールアドレス"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "1 ユーザーあたり ${ planMaxSpace } のストレージ"
+      ],
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
       ],
@@ -7181,6 +7165,15 @@
       ],
       "10 email addresses": [
         "10個のメールアドレス"
+      ],
+      "20 email addresses per user": [
+        "ユーザーあたり 20 個の電子メール アドレス"
+      ],
+      "25 calendars per user": [
+        "ユーザーあたり 25 個のカレンダー"
+      ],
+      "Automatic email forwarding": [
+        "自動メール転送"
       ],
       "Calendar sharing": [
         "カレンダーの共有"
@@ -7209,6 +7202,9 @@
       "I still want to cancel": [
         "それでもキャンセルしたいのですが"
       ],
+      "Keep ${ config.planName }": [
+        "${ config.planName } を使い続ける"
+      ],
       "Learn more about our impact": [
         "私たちの影響について詳しく知る"
       ],
@@ -7229,6 +7225,9 @@
       ],
       "Unblocking internet access in Iran": [
         "イランでのインターネットアクセスのブロックを解除"
+      ],
+      "Unlimited folders and labels": [
+        "無制限のフォルダーとラベル"
       ],
       "Unlimited folders, labels and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -7395,9 +7394,6 @@
       ],
       "SPF value copied to clipboard": [
         "SPF 値がクリップボードにコピーされました"
-      ],
-      "User created": [
-        "ユーザーが作成されました。"
       ],
       "User updated": [
         "ユーザが更新されました。"
@@ -7595,9 +7591,6 @@
       ],
       "Add domain": [
         "ドメインを追加"
-      ],
-      "Add new user": [
-        "新規ユーザーの追加"
       ],
       "Add PayPal payment method": [
         "PayPal 支払いの追加"
@@ -8262,16 +8255,6 @@
       ],
       "Primary admin": [
         "管理責任者"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
     "Validation": {

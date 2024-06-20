@@ -29,9 +29,6 @@
       "Add domain": [
         "Προσθήκη domain"
       ],
-      "Add multiple users": [
-        "Προσθήκη πολλαπλών χρηστών"
-      ],
       "Add PayPal": [
         "Προσθήκη PayPal"
       ],
@@ -121,9 +118,6 @@
       ],
       "Create Gateway": [
         "Δημιουργία Πύλης"
-      ],
-      "Create user": [
-        "Δημιουργία χρήστη"
       ],
       "Create users": [
         "Δημιουργία χρηστών"
@@ -2063,11 +2057,6 @@
         "Στάλθηκε μήνυμα επαλήθευσης στο ${ address }"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Πληρωμένα ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME } χαρακτηριστικά"
@@ -3671,9 +3660,6 @@
       "Open source": [
         "Ανοιχτού κώδικα"
       ],
-      "Optional": [
-        "Προαιρετικό"
-      ],
       "or ${ selectFileButton }": [
         "ή ${ selectFileButton }"
       ],
@@ -3977,9 +3963,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μπορείτε να συνεχίσετε με ασφάλεια στα επόμενα βήματα."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Αυτό θα ακυρώσει την τρέχουσα συνδρομή επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συγκεντρώσει."
       ],
@@ -4009,9 +3992,6 @@
       ],
       "to ${ product } Business": [
         "στο ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Για να επιτρέψετε στον τομέα ${ boldDomainName } να χρησιμοποιεί SAML SSO, πρέπει να επαληθεύσετε την κατοχή του προσθέτοντας την ακόλουθη εγγραφή DNS TXT στον τομέα σας στην υπηρεσία παροχής DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Για να ακυρώσετε τη συνδρομή σας, επικοινωνήστε μαζί μας."
@@ -4639,9 +4619,6 @@
       ],
       "Country": [
         "Χώρα"
-      ],
-      "Create password": [
-        "Δημιουργία κωδικού πρόσβασης"
       ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
@@ -6742,11 +6719,6 @@
         "Δωρεάν"
       ]
     },
-    "Private Member": {
-      "private": [
-        "ιδιωτικό"
-      ]
-    },
     "Recovery Email": {
       "Cancel": [
         "Ακύρωση"
@@ -7713,8 +7685,23 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } ημερολόγιο ανά χρήστη",
+        "${ MaxCalendars } ημερολόγια ανά χρήστη"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ maxDomainNames } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ maxEmails } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } συμπεριλαμβανομένων απεριόριστων hide-my-email ψευδώνυμων"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } συνολικός αποθηκευτικός χώρος"
@@ -7746,6 +7733,12 @@
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "20 email addresses per user": [
+        "20 διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "25 calendars per user": [
+        "25 ημερολόγια ανά χρήστη"
+      ],
       "6 users": [
         "6 χρήστες"
       ],
@@ -7757,6 +7750,12 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Μετά τη λήξη της συνδρομής σας ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 5 GB χώρου αποθήκευσης στο Drive και έως 1 GB αποθηκευτικού χώρου στο Mail. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
+      ],
+      "All you need for your business": [
+        "Όλα όσα χρειάζεστε για την επιχείρησή σας"
+      ],
+      "Automatic email forwarding": [
+        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "Back up photos from your devices": [
         "Δημιουργία αντιγράφων ασφαλείας φωτογραφιών από τις συσκευές σας"
@@ -7809,6 +7808,12 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Εάν υπερβείτε τα όρια του δωρεάν προγράμματος όταν λήξει η συνδρομή σας ${ planName }, δε θα μπορείτε να:"
       ],
+      "Keep ${ config.planName }": [
+        "Διατήρηση ${ config.planName }"
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ],
       "Learn more about our impact": [
         "Μάθετε περισσότερα για τον αντίκτυπό μας"
       ],
@@ -7856,6 +7861,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Ξεμπλοκάρισμα πρόσβασης στο διαδίκτυο στο Ιράν"
+      ],
+      "Unlimited folders and labels": [
+        "Απεριόριστοι φάκελοι και ετικέτες"
       ],
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
@@ -8077,9 +8085,6 @@
       "SPF value copied to clipboard": [
         "Η τιμή SPF αντιγράφηκε στο πρόχειρο"
       ],
-      "User created": [
-        "Ο χρήστης δημιουργήθηκε"
-      ],
       "User updated": [
         "Ο χρήστης ενημερώθηκε"
       ],
@@ -8276,9 +8281,6 @@
       ],
       "Add domain": [
         "Προσθήκη domain"
-      ],
-      "Add new user": [
-        "Προσθήκη νέου χρήστη"
       ],
       "Add PayPal payment method": [
         "Προσθέστε μία μέθοδο πληρωμής PayPal"
@@ -8962,21 +8964,6 @@
       ],
       "Primary admin": [
         "Κύριος διαχειριστής"
-      ]
-    },
-    "Users table: AI-powered": {
-      "AI": [
-        "Τεχνητή Νοημοσύνη"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "Χρήστης SSO που παρέχεται από τον πάροχο ταυτότητάς σας"
       ]
     },
     "Validation": {
