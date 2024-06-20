@@ -4,8 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import { DOCS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg';
 import clsx from '@proton/utils/clsx';
 
 import { TimeIntl, useActiveBreakpoint } from '../../';
@@ -32,6 +34,7 @@ interface Props {
     onDetails?: () => void;
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
+    onOpenInDocs?: () => void;
     date?: Date | string | number;
     children?: ReactNode;
 }
@@ -49,6 +52,7 @@ const Header = ({
     onDetails,
     onShare,
     onRestore,
+    onOpenInDocs,
     date,
     children,
 }: Props) => {
@@ -56,6 +60,7 @@ const Header = ({
     const [saveError, setSaveError] = useState();
     const { viewportWidth } = useActiveBreakpoint();
     const isMobileHeaderPreview = viewportWidth['<=small'] && isMobile();
+    const isLargeViewport = viewportWidth['>=large'];
 
     let headerSpacing = 'p-7';
 
@@ -106,12 +111,31 @@ const Header = ({
             )}
             {children}
             <div className="flex items-center">
+                {isLargeViewport && onOpenInDocs && (
+                    <Button
+                        title={
+                            // translator: Open in Docs
+                            c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
+                        }
+                        onClick={onOpenInDocs}
+                        shape="solid"
+                        className="mr-4 flex items-center"
+                        color="norm"
+                        data-testid="file-preview:actions:open-in-docs"
+                    >
+                        <img className="mr-2 pointer-events-none" src={documentIcon} alt="" aria-hidden="true" />
+                        {
+                            // translator: Open in Docs
+                            c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
+                        }
+                    </Button>
+                )}
                 {onRestore && (
                     <Button
                         title={c('Action').t`Restore`}
                         onClick={onRestore}
                         shape="solid"
-                        className="mx-2 lg:mr-11"
+                        className="mx-2 lg:mr-4"
                         color="norm"
                         data-testid="file-preview:actions:restore"
                     >
