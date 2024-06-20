@@ -370,7 +370,7 @@
         "稍後"
       ],
       "Let's talk": [
-        "讓我們來聊聊！"
+        "我們一起聊聊！"
       ],
       "Load": [
         "載入"
@@ -453,11 +453,11 @@
       "Not now": [
         "現在不要"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -727,7 +727,7 @@
         "查看帳單"
       ],
       "What do I get?": [
-        "我的方案服務內容："
+        "我的專屬服務方案："
       ],
       "Yes": [
         "是"
@@ -4336,7 +4336,7 @@
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "若您取消，您的${ planTitle }訂購授權將會於${ expiryDate }到期"
+        "如果您還是決定取消，現有 ${ planTitle } 授權將不再自動續購，到期日為 ${ expiryDate }"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
@@ -4621,7 +4621,7 @@
         "每${ cycle }個月自動續訂。"
       ],
       "Subscription auto-renews every month.": [
-        "每月自動續訂"
+        "每月自動續購授權"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
@@ -6008,14 +6008,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "刪除帳號"
@@ -6037,6 +6029,14 @@
       ],
       "Switch plan": [
         "切換方案"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -7996,83 +7996,6 @@
         "${ totalPrice } 版"
       ]
     },
-    "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "剩下${ dayDiff }天"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } 桌面應用程式"
-      ],
-      "${ planMaxSpace } total storage": [
-        "${ planMaxSpace } 總儲存空間"
-      ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } 方案"
-      ],
-      "10 email addresses": [
-        "10 個電子信箱"
-      ],
-      "6 users": [
-        "6 位使用者"
-      ],
-      "Add any new files": [
-        "新增任何檔案"
-      ],
-      "Calendar sharing": [
-        "行事曆分享"
-      ],
-      "Custom schedule send and snooze times": [
-        "自訂寄出時間與暫緩處理郵件"
-      ],
-      "Early access to new apps and features": [
-        "搶先體驗新應用程式與功能"
-      ],
-      "Helping activists in Hong Kong": [
-        "支持於香港的行動"
-      ],
-      "Learn more about our impact": [
-        "了解更多我們的影響"
-      ],
-      "Manage your calendar": [
-        "管理您的行事曆"
-      ],
-      "Online privacy, for your whole family": [
-        "您整個家庭的線上隱私"
-      ],
-      "Our fight against censorship in Russia": [
-        "我們對抗俄羅斯審查"
-      ],
-      "Priority support": [
-        "優先支援"
-      ],
-      "Read the story": [
-        "已讀的訊息"
-      ],
-      "Sync files on devices": [
-        "於裝置同步"
-      ],
-      "Unblocking internet access in Iran": [
-        "解除於伊朗的網路存取權"
-      ],
-      "Unlimited folders, labels and filters": [
-        "資料夾、標籤與篩選器無上限"
-      ],
-      "Version history": [
-        "版本歷史紀錄"
-      ],
-      "Watch the interview": [
-        "瀏覽訪談"
-      ],
-      "Yearly free storage bonuses": [
-        "年度免費儲存加成"
-      ],
-      "Your own custom email domain": [
-        "您持有的自訂電子郵件網域名稱"
-      ],
-      "Your own short @pm.me email alias": [
-        "您自己短@pm.me電子郵件別名"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 GB 儲存空間"
@@ -8112,6 +8035,101 @@
       ],
       "Your privacy is our mission": [
         "您的隱私是我們責任"
+      ]
+    },
+    "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "剩下${ dayDiff }天"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "每位使用者${ MaxCalendars }個行事曆"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 個自訂電郵網域"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } 組電郵位址/每位使用者"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } 可用空間 / 每位使用者"
+      ],
+      "${ planMaxSpace } total storage": [
+        "${ planMaxSpace } 總儲存空間"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 方案"
+      ],
+      "10 email addresses": [
+        "10 個電子信箱"
+      ],
+      "6 users": [
+        "6 位使用者"
+      ],
+      "Add any new files": [
+        "新增任何檔案"
+      ],
+      "Automatic email forwarding": [
+        "自動郵件轉寄"
+      ],
+      "Calendar sharing": [
+        "行事曆分享"
+      ],
+      "Custom schedule send and snooze times": [
+        "自訂寄出時間與暫緩處理郵件"
+      ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
+      ],
+      "Helping activists in Hong Kong": [
+        "支持於香港的行動"
+      ],
+      "Learn more about our impact": [
+        "了解更多我們的影響"
+      ],
+      "Manage your calendar": [
+        "管理您的行事曆"
+      ],
+      "Online privacy, for your whole family": [
+        "您整個家庭的線上隱私"
+      ],
+      "Our fight against censorship in Russia": [
+        "我們對抗俄羅斯審查"
+      ],
+      "Priority support": [
+        "優先支援"
+      ],
+      "Read the story": [
+        "已讀的訊息"
+      ],
+      "Sync files on devices": [
+        "於裝置同步"
+      ],
+      "Unblocking internet access in Iran": [
+        "解除於伊朗的網路存取權"
+      ],
+      "Unlimited folders and labels": [
+        "無限的資料夾 / 標籤"
+      ],
+      "Unlimited folders, labels and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Version history": [
+        "版本歷史紀錄"
+      ],
+      "Watch the interview": [
+        "瀏覽訪談"
+      ],
+      "Yearly free storage bonuses": [
+        "年度免費儲存加成"
+      ],
+      "Your own custom email domain": [
+        "您持有的自訂電子郵件網域名稱"
+      ],
+      "Your own short @pm.me email alias": [
+        "您自己短@pm.me電子郵件別名"
       ]
     },
     "Subscription renewal state": {

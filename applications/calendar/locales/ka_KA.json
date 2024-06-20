@@ -456,10 +456,10 @@
       "Not now": [
         "არა ახლა"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6088,14 +6088,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "ანგარიშის წაშლა"
@@ -6117,6 +6109,14 @@
       ],
       "Switch plan": [
         "სატარიფო გეგმის გადართვა"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -8184,123 +8184,6 @@
         "${ totalPrice }-თვის"
       ]
     },
-    "Subscription reminder": {
-      "${ CALENDAR_APP_NAME } including calendar sharing": [
-        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებასაც შეიცავს"
-      ],
-      "${ dayDiff } day left": [
-        "დარჩენილია ${ dayDiff } დღე",
-        "დარჩენილია ${ dayDiff } დღე"
-      ],
-      "${ DRIVE_APP_NAME } including version history": [
-        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
-      ],
-      "${ MAIL_APP_NAME } and all premium productivity features": [
-        "${ MAIL_APP_NAME } და ყველა პროდუქიულობის ფასიანი თვისება"
-      ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
-      ],
-      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
-      ],
-      "${ planMaxSpace } total storage": [
-        "ჯამში საცავი ${ planMaxSpace }"
-      ],
-      "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME } პროგრამა"
-      ],
-      "10 email addresses": [
-        "10 ელფოსტის მისამართი"
-      ],
-      "6 users": [
-        "6 მომხმარებელი"
-      ],
-      "Add any new files": [
-        "დაამატეთ ნებისმიერი ახალი ფაილები"
-      ],
-      "Back up photos from your devices": [
-        "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
-      ],
-      "Calendar sharing": [
-        "კალენდრის გაზიარება"
-      ],
-      "Comprehensive privacy and security": [
-        "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
-      ],
-      "Custom schedule send and snooze times": [
-        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
-      ],
-      "Direct contribution to our mission": [
-        "პირდაპირი შემოწირვა ჩვენს მისიაზე"
-      ],
-      "Early access to new apps and features": [
-        "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
-      ],
-      "Extra storage and bonuses": [
-        "დამატებითი საცავი და ბონუსები"
-      ],
-      "Helping activists in Hong Kong": [
-        "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
-      ],
-      "Learn more about our impact": [
-        "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
-      ],
-      "Manage your calendar": [
-        "მართეთ თქვენი კალენდარი"
-      ],
-      "Online privacy, for your whole family": [
-        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
-      ],
-      "Our fight against censorship in Russia": [
-        "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
-      ],
-      "Premium productivity features": [
-        "ფასიანი პროდუქტიულობის ფუნქციები"
-      ],
-      "Priority support": [
-        "პრიორიტეტული მხარდაჭერა"
-      ],
-      "Read the story": [
-        "ისტორიის წაკითხვა"
-      ],
-      "Receive new emails": [
-        "ახალი ელფოსტების მიღება"
-      ],
-      "Send emails with attachments": [
-        "დანართებიანი ელფოსტების გაგზავნა"
-      ],
-      "Sync files on devices": [
-        "ფაილების დასინქრონება მოწყობილობებზე"
-      ],
-      "The best of ${ BRAND_NAME }": [
-        "${ BRAND_NAME }-ის საუკეთესი ნაწილი"
-      ],
-      "Unblocking internet access in Iran": [
-        "ინტერნეტთან წვდომის განბლოკვა ირანში"
-      ],
-      "Unlimited folders, labels and filters": [
-        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
-      ],
-      "Version history": [
-        "ვერსიის ისტორია"
-      ],
-      "Watch the interview": [
-        "ინტერვიუს ყურება"
-      ],
-      "What you give up when you cancel ${ planName }": [
-        "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
-      ],
-      "Yearly free storage bonuses": [
-        "წლიური უფასო საცავის ბონუსები"
-      ],
-      "Your own custom email domain": [
-        "თქვენი საკუთარი ელფოსტის დომენი"
-      ],
-      "Your own short @pm.me email alias": [
-        "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
-      ]
-    },
     "subscription reminder": {
       "15 GB storage": [
         "15 გბ საცავი"
@@ -8337,6 +8220,213 @@
       ],
       "Your privacy is our mission": [
         "თქვენი კონფიდენციალობა ჩვენი მისიაა"
+      ]
+    },
+    "Subscription reminder": {
+      "${ CALENDAR_APP_NAME } including calendar sharing": [
+        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებასაც შეიცავს"
+      ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } კალენდრის გაზიარებით და ხელმისაწვდომობით"
+      ],
+      "${ dayDiff } day left": [
+        "დარჩენილია ${ dayDiff } დღე",
+        "დარჩენილია ${ dayDiff } დღე"
+      ],
+      "${ DRIVE_APP_NAME } including version history": [
+        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
+      ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } ვერსიის ისტორიის ჩათვლით"
+      ],
+      "${ MAIL_APP_NAME } and all premium productivity features": [
+        "${ MAIL_APP_NAME } და ყველა პროდუქიულობის ფასიანი თვისება"
+      ],
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } ავტომატური ელფოსტის გადაგზავნით"
+      ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ MaxCalendars } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი",
+        "ელფოსტის ${ maxDomainNames } ხელით მითითებული დომენი"
+      ],
+      "${ maxEmails } email address per user": [
+        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ maxEmails } მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმების ჩათვლით"
+      ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } ${ DARK_WEB_MONITORING_NAME }-ით"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace }/მომხმარებელი"
+      ],
+      "${ planMaxSpace } total storage": [
+        "ჯამში საცავი ${ planMaxSpace }"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } პროგრამა"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
+      ],
+      "10 email addresses": [
+        "10 ელფოსტის მისამართი"
+      ],
+      "20 email addresses per user": [
+        "20 ელფოსტის  მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "25 calendars per user": [
+        "25 კალენდარი თითოეული მომხმარებლისთვის"
+      ],
+      "6 users": [
+        "6 მომხმარებელი"
+      ],
+      "Add any new files": [
+        "დაამატეთ ნებისმიერი ახალი ფაილები"
+      ],
+      "All you need for your business": [
+        "ყველაფერი, რაც თქვენი ბიზნესისთვის გჭირდებათ"
+      ],
+      "Any custom email domains will be disabled": [
+        "ყველა მორგებული ელფოსტის დომენი გაითიშება"
+      ],
+      "Automatic email forwarding": [
+        "ავტომატური ელფოსტის გადაგზავნა"
+      ],
+      "Back up photos from your devices": [
+        "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
+      ],
+      "Calendar sharing": [
+        "კალენდრის გაზიარება"
+      ],
+      "Catch-all email address": [
+        "დომენის ყველა ელფოსტის მიმღები მისამართი"
+      ],
+      "Comprehensive privacy and security": [
+        "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
+      ],
+      "Custom schedule send and snooze times": [
+        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "კომპიუტერის აპი და ელფოსტის კლიენტის მხარდაჭერა (IMAP-ით)"
+      ],
+      "Direct contribution to our mission": [
+        "პირდაპირი შემოწირვა ჩვენს მისიაზე"
+      ],
+      "Early access to new apps and features": [
+        "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
+      ],
+      "Email productivity features": [
+        "ელფოსტის პროდუქტიულობის ფუნქციები"
+      ],
+      "Extra storage and bonuses": [
+        "დამატებითი საცავი და ბონუსები"
+      ],
+      "Extra storage and users": [
+        "დამატებითი საცავი და მომხმარებლები"
+      ],
+      "Helping activists in Hong Kong": [
+        "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
+      "Invited members will be removed from your organization": [
+        "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ],
+      "Learn more about our impact": [
+        "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Make your business stand out": [
+        "გახადეთ თქვენი ბიზნესი გამორჩეული"
+      ],
+      "Manage your calendar": [
+        "მართეთ თქვენი კალენდარი"
+      ],
+      "Online privacy, for your whole family": [
+        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
+      ],
+      "Our fight against censorship in Russia": [
+        "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
+      ],
+      "Premium productivity features": [
+        "ფასიანი პროდუქტიულობის ფუნქციები"
+      ],
+      "Priority support": [
+        "პრიორიტეტული მხარდაჭერა"
+      ],
+      "Productivity features": [
+        "პროდუქტიულობის ფუნქციები"
+      ],
+      "Read the story": [
+        "ისტორიის წაკითხვა"
+      ],
+      "Receive new emails": [
+        "ახალი ელფოსტების მიღება"
+      ],
+      "See your colleagues’ availability": [
+        "დაინახეთ კოლეგის ხელმისაწვდომობა"
+      ],
+      "Send emails with attachments": [
+        "დანართებიანი ელფოსტების გაგზავნა"
+      ],
+      "Stay secure and connected anywhere": [
+        "დარჩით უსაფრთხოდ და მიერთებულად ნებისმიერი ადგილიდან"
+      ],
+      "Support your compliance objectives": [
+        "თავსებადობა თქვენს მოთხოვნებთან"
+      ],
+      "Sync files on devices": [
+        "ფაილების დასინქრონება მოწყობილობებზე"
+      ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME }-ის საუკეთესი ნაწილი"
+      ],
+      "Unblocking internet access in Iran": [
+        "ინტერნეტთან წვდომის განბლოკვა ირანში"
+      ],
+      "Unlimited folders and labels": [
+        "შეუზღუდავი საქაღალდეები და ჭდეები"
+      ],
+      "Unlimited folders, labels and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Users won’t be able to manage their calendars": [
+        "მომხმარებლები თავიანთი კალენდრების მართვას ვერ შეძლებენ"
+      ],
+      "Users won’t be able to send emails": [
+        "მომმხარებლები ელფოსტას ვერ გააგზავნიან"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "მომხმარებლებს თავიანთ მოწყობილობებზე ფაილებსი სინქრონიზაციის საშუალება არ ექნებათ"
+      ],
+      "Version history": [
+        "ვერსიის ისტორია"
+      ],
+      "Watch the interview": [
+        "ინტერვიუს ყურება"
+      ],
+      "What you give up when you cancel ${ planName }": [
+        "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
+      ],
+      "Yearly free storage bonuses": [
+        "წლიური უფასო საცავის ბონუსები"
+      ],
+      "Your own custom email domain": [
+        "თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "Your own short @pm.me email alias": [
+        "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
       ]
     },
     "Subscription renewal state": {
