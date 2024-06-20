@@ -8,6 +8,9 @@ const AUTO_FLUSH_INTERVAL = 30_000
 /** If no updates are queued for this amount of time, commit immediately after this period rather than waiting the global counter */
 const COMMIT_AFTER_INACTIVITY_PERIOD = 10_000
 
+/** Immediately flush the buffer if the cumalative buffer size exceeds this threshold */
+const MAX_BUFFER_BYTE_SIZE_BEFORE_FLUSH = 250_000
+
 /**
  * An object that collects document updates and occasionally dispatches them, merging them into one update before so.
  */
@@ -16,6 +19,7 @@ export class DocumentUpdateBuffer {
   private flushInterval: NodeJS.Timeout | null = null
   private idleTimeout: NodeJS.Timeout | null = null
   private bufferingEnabled = true
+  currentBufferSize = 0
 
   constructor(
     public readonly document: NodeMeta,
@@ -44,6 +48,10 @@ export class DocumentUpdateBuffer {
     return COMMIT_AFTER_INACTIVITY_PERIOD
   }
 
+  get maxSizeBeforeFlush(): number {
+    return MAX_BUFFER_BYTE_SIZE_BEFORE_FLUSH
+  }
+
   setBufferEnabled(enabled: boolean): void {
     this.bufferingEnabled = enabled
 
@@ -69,7 +77,16 @@ export class DocumentUpdateBuffer {
 
     this.buffer.push(update)
 
-    this.logger.info(`Added update to buffer. Buffer length: ${this.buffer.length}`)
+    this.currentBufferSize += update.byteLength
+
+    this.logger.info(
+      `Added update to buffer. Buffer length: ${this.buffer.length} Buffer size: ${this.currentBufferSize}`,
+    )
+
+    if (this.currentBufferSize >= this.maxSizeBeforeFlush) {
+      this.logger.info('Flushing due to buffer size')
+      this.flush()
+    }
   }
 
   public hasPendingUpdates(): boolean {
@@ -86,6 +103,8 @@ export class DocumentUpdateBuffer {
     const updates = this.buffer.slice()
 
     this.buffer.length = 0
+
+    this.currentBufferSize = 0
 
     const merged = mergeUpdates(updates)
 
