@@ -15,6 +15,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     defaultMethod?: PAYMENT_METHOD_TYPES;
     hasSomeVpnPlan: boolean;
     themeCode: ThemeCode;
+    onMethod?: (method: string | undefined) => void;
 };
 
 const PaymentWrapper = ({
@@ -42,6 +43,7 @@ const PaymentWrapper = ({
     bitcoinInhouse,
     bitcoinChargebee,
     isChargebeeEnabled,
+    onMethod,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -53,7 +55,10 @@ const PaymentWrapper = ({
             amount={amount}
             currency={currency}
             card={card.card}
-            onMethod={methods.selectMethod}
+            onMethod={(value) => {
+                methods.selectMethod(value);
+                onMethod?.(value);
+            }}
             onCard={card.setCardProperty}
             cardErrors={card.errors}
             paypal={paypal}

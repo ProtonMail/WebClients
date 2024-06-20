@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
-import { applyHOCs, withEventManager } from '@proton/testing/index';
+import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing/index';
 
 import {
     Loader,
@@ -31,6 +31,7 @@ const PaymentMethodsSectionContext = applyHOCs(withEventManager())(PaymentMethod
 describe('PaymentMethodsSection', () => {
     beforeEach(() => {
         jest.resetAllMocks();
+        mockUseUser();
         jest.mocked(usePaymentMethods).mockReturnValue([[], false]);
         jest.mocked(useSubscription).mockReturnValue([FREE_SUBSCRIPTION as any, false]);
         jest.mocked(useModals).mockReturnValue({
