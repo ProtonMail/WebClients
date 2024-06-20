@@ -35,6 +35,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     this.document,
     this.userDisplayName,
     this.eventBus,
+    this.logger,
   )
 
   constructor(
@@ -85,14 +86,10 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   public beganTypingInThread(threadID: string): void {
-    this.logger.info('BeganTypingInThread', threadID)
-
     this.liveComments.setIsTypingComment(threadID, true)
   }
 
   public stoppedTypingInThread(threadID: string): void {
-    this.logger.info('StoppedTypingInThread', threadID)
-
     this.liveComments.setIsTypingComment(threadID, false)
   }
 

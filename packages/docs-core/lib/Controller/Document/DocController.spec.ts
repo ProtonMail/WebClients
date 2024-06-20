@@ -358,6 +358,20 @@ describe('DocController', () => {
     })
   })
 
+  describe('handleWebsocketFailedToConnectEvent', () => {
+    it('should block editing', () => {
+      controller.handleWebsocketFailedToConnectEvent()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(false)
+    })
+
+    it('should set state to disconnected', () => {
+      controller.handleWebsocketFailedToConnectEvent()
+
+      expect(controller.websocketStatus).toBe('disconnected')
+    })
+  })
+
   describe('handleWebsocketAckStatusChangeEvent', () => {
     it('should reload editing locked state', () => {
       controller.reloadEditingLockedState = jest.fn()

@@ -95,9 +95,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   ) {
     this.username = userService.user.Email || userService.getUserId()
 
-    eventBus.addEventHandler(this, WebsocketConnectionEvent.Disconnected)
-    eventBus.addEventHandler(this, WebsocketConnectionEvent.Connected)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.Connected)
+    eventBus.addEventHandler(this, WebsocketConnectionEvent.Disconnected)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.DocumentUpdateMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
@@ -135,6 +136,19 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   handleWebsocketDisconnectedEvent(
     payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected],
   ): void {
+    this.websocketStatus = 'disconnected'
+
+    if (this.editorInvoker) {
+      this.logger.info('Changing editing allowance to false after RTS disconnect')
+
+      void this.editorInvoker.performClosingCeremony()
+      this.reloadEditingLockedState()
+    }
+
+    if (payload.serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
+      void this.refetchCommitDueToStaleContents()
+    }
+
     if (payload.serverReason.props.code === ConnectionCloseReason.CODES.TRAFFIC_ABUSE_MAX_DU_SIZE) {
       metrics.docs_document_updates_save_error_total.increment({
         type: 'document_too_big',
@@ -144,18 +158,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         type: 'update_too_big',
       })
     }
+  }
 
-    if (this.editorInvoker) {
-      this.logger.info('Changing editing allowance to false after RTS disconnect')
-
-      void this.editorInvoker.performClosingCeremony()
-      this.websocketStatus = 'disconnected'
-      this.reloadEditingLockedState()
-    }
-
-    if (payload.serverReason.props.code === ConnectionCloseReason.CODES.STALE_COMMIT_ID) {
-      void this.refetchCommitDueToStaleContents()
-    }
+  handleWebsocketFailedToConnectEvent(): void {
+    this.websocketStatus = 'disconnected'
+    this.reloadEditingLockedState()
   }
 
   async handleEvent(event: InternalEventInterface<unknown>): Promise<void> {
@@ -163,6 +170,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.handleWebsocketDisconnectedEvent(
         event.payload as WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected],
       )
+    } else if (event.type === WebsocketConnectionEvent.FailedToConnect) {
+      this.handleWebsocketFailedToConnectEvent()
     } else if (event.type === WebsocketConnectionEvent.Connected) {
       this.handleWebsocketConnectedEvent()
     } else if (event.type === WebsocketConnectionEvent.Connecting) {
@@ -451,11 +460,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   sendInitialCommitToEditor(): void {
     if (this.docMeta && this.initialCommit && this.editorInvoker) {
-      this.logger.info('Sending initial commit to editor')
+      const squashedContent = this.initialCommit.squashedRepresentation()
+
+      this.logger.info(`Sending initial commit to editor with size ${squashedContent.byteLength} bytes`)
 
       void this.editorInvoker.receiveMessage({
         type: { wrapper: 'du' },
-        content: this.initialCommit.squashedRepresentation(),
+        content: squashedContent,
         origin: DocUpdateOrigin.InitialLoad,
       })
     }
