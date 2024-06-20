@@ -118,9 +118,6 @@
       "Add label": [
         "Adicionar marcador"
       ],
-      "Add multiple users": [
-        "Adicionar vários usuários"
-      ],
       "Add notification": [
         "Adicionar notificação"
       ],
@@ -312,9 +309,6 @@
       ],
       "Create link": [
         "Criar link"
-      ],
-      "Create user": [
-        "Criar usuário"
       ],
       "Create users": [
         "Criar usuários"
@@ -1398,6 +1392,12 @@
       ]
     },
     "Assistant option": {
+      "Faster, broader device compatibility": [
+        "Compatibilidade com dispositivos mais rápidos e ampliada"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Nenhuma transmissão de dados durante o uso, requer download único"
+      ],
       "Run locally": [
         "Executar localmente"
       ],
@@ -3954,11 +3954,6 @@
         "Alerta"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "A2F"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Recursos pagos do ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
@@ -6144,17 +6139,6 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -7473,9 +7457,6 @@
       "Open source": [
         "Código aberto"
       ],
-      "Optional": [
-        "Opcional"
-      ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
       ],
@@ -7812,9 +7793,6 @@
       "Single sign-on removed": [
         "Autenticação única removida"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem e-mails por meio do ${ MAIL_APP_NAME } para seus endereços de domínio personalizados. Este recurso está disponível apenas para usuários ${ BRAND_NAME } for Business com domínios personalizados."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de uso, os domínios personalizados que gostaria de usar e os números de e-mail previstos por hora e por dia."
       ],
@@ -7960,6 +7938,9 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
       ],
+      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
+        "O complemento do assistente de escrita **não renovará automaticamente**. Você pode aproveitar o serviço até **${ subscriptionRenewalDate }.**"
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes arquivos de configuração permitem escolher a qual servidor do ${ VPN_APP_NAME } você será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
       ],
@@ -8026,9 +8007,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Essa verificação pode levar até uma hora. Você pode prosseguir com segurança para as próximas etapas."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esta ação cancelará seu atual plano pago e você perderá todas as vantagens e benefícios acumulados"
       ],
@@ -8073,9 +8051,6 @@
       ],
       "to ${ product } Business": [
         "para ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Para permitir que o domínio ${ boldDomainName } use SAML SSO, você deve verificar a propriedade dele, adicionando o seguinte registro DNS TXT ao seu domínio no seu provedor DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Para evitar perda de dados, apenas delete se você sabe o que está fazendo ou se exportou uma cópia."
@@ -8718,6 +8693,17 @@
         "Reunião no Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando habilitado, as subpastas herdam a cor da pasta pai."
@@ -9172,6 +9158,9 @@
       "Access to my events": [
         "Acesso aos meus eventos"
       ],
+      "Account recovery": [
+        "Recuperar conta"
+      ],
       "Account storage": [
         "Armazenamento da conta"
       ],
@@ -9585,6 +9574,9 @@
       ],
       "Folder location": [
         "Localização da pasta"
+      ],
+      "Folders and labels": [
+        "Pastas e marcadores"
       ],
       "Font family": [
         "Família de fontes"
@@ -10500,9 +10492,6 @@
       ],
       "Limited time offer": [
         "Oferta por tempo limitado"
-      ],
-      "Secure email that protects your privacy": [
-        "E-mail seguro que protege sua privacidade"
       ]
     },
     "mailtrial2024: Action": {
@@ -12856,6 +12845,9 @@
       "Card number": [
         "Número do cartão"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Atualmente a renovação automática da assinatura está desativada. Se você alterar a assinatura agora, a renovação automática será ativada novamente."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -12864,6 +12856,9 @@
       ],
       "Processing payment": [
         "Processando pagamento"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months }. Você pode cancelar a qualquer momento."
@@ -13079,11 +13074,6 @@
       ],
       "Secondary time zone": [
         "Fuso horário secundário"
-      ]
-    },
-    "Private Member": {
-      "private": [
-        "privado"
       ]
     },
     "Property type": {
@@ -14329,6 +14319,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } incluindo compartilhamento do calendário"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } com compartilhamento de calendário e disponibilidade"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
         "${ dayDiff } dias restantes"
@@ -14387,6 +14380,9 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento por usuário para e-mails, anexos, eventos, e arquivos. Você também está elegível para bônus de armazenamento anualmente."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } oferece ${ planMaxSpace } de armazenamento por usuário para e-mails, anexos, eventos, arquivos e senhas. Você também está elegível para bônus de armazenamento anualmente."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Programa ${ PROTON_SENTINEL_NAME }"
       ],
@@ -14419,6 +14415,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Depois que sua assinatura do ${ planName } expirar, você fará o downgrade para a ${ BRAND_NAME } Free, que oferece somente até 5 GB para armazenamento do Drive e até 1 GB para armazenamento do Mail. Você também perderá todos os bônus de armazenamentos concedidos anteriormente."
+      ],
+      "All you need for your business": [
+        "Tudo que você precisa na sua empresa"
       ],
       "Any custom email domains will be disabled": [
         "Qualquer domínio de e-mail personalizado será desativado"
@@ -14844,9 +14843,6 @@
       "Undo in progress": [
         "Desfazer em andamento"
       ],
-      "User created": [
-        "Usuário criado"
-      ],
       "User updated": [
         "Usuário atualizado"
       ],
@@ -15177,9 +15173,6 @@
       ],
       "Add filter": [
         "Adicionar filtro"
-      ],
-      "Add new user": [
-        "Adicionar novo usuário"
       ],
       "Add PayPal payment method": [
         "Adicionar o Paypal como método de pagamento"
@@ -15835,9 +15828,6 @@
       ],
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalize o rodapé do seu e-mail"
       ],
       "Phone": [
         "Telefone"
@@ -16596,21 +16586,6 @@
       ],
       "Primary admin": [
         "Administrador principal"
-      ]
-    },
-    "Users table: AI-powered": {
-      "AI": [
-        "IA"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "Usuário SSO fornecido pelo seu provedor de identidade"
       ]
     },
     "Validation": {

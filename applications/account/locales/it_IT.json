@@ -118,9 +118,6 @@
       "Add label": [
         "Aggiungi un'etichetta"
       ],
-      "Add multiple users": [
-        "Aggiungi più di un utente"
-      ],
       "Add notification": [
         "Aggiungi notifica"
       ],
@@ -312,9 +309,6 @@
       ],
       "Create link": [
         "Crea link"
-      ],
-      "Create user": [
-        "Crea utente"
       ],
       "Create users": [
         "Crea gli utenti"
@@ -949,6 +943,9 @@
       "Send my username": [
         "Invia il mio nome utente"
       ],
+      "Send new invite": [
+        "Spedisci un nuovo invito"
+      ],
       "Send reminder": [
         "Invia promemoria"
       ],
@@ -1149,6 +1146,9 @@
       ],
       "Verify account": [
         "Verifica account"
+      ],
+      "Verify domain": [
+        "Verifica il dominio"
       ],
       "View": [
         "Visualizza"
@@ -3975,11 +3975,6 @@
         "Avviso"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "2FA"
-      ]
-    },
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Funzionalità a pagamento di ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
@@ -4096,6 +4091,9 @@
       ],
       "Email address is invalid": [
         "L'indirizzo email non è valido"
+      ],
+      "Email address is not available": [
+        "L'indirizzo email non è disponibile"
       ],
       "Email address is required": [
         "L'indirizzo email è obbligatorio"
@@ -4250,6 +4248,9 @@
       ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Devi attivare la chiave dell'organizzazione per poter invitare gli utenti"
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
@@ -6156,17 +6157,6 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
@@ -7187,6 +7177,12 @@
       "Internet connection restored.": [
         "Connessione Internet ripristinata."
       ],
+      "Invitation link expired": [
+        "Il link di invito è scaduto"
+      ],
+      "Invitation link used": [
+        "Il link di invito è stato utilizzato"
+      ],
       "Invite Accepted": [
         "Invito accettato"
       ],
@@ -7512,9 +7508,6 @@
       "Open source": [
         "Open source"
       ],
-      "Optional": [
-        "Opzionale"
-      ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
       ],
@@ -7662,6 +7655,9 @@
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "L'anteprima dei documenti non è ancora supportata. Apri il documento per visualizzarlo."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
       ],
@@ -7679,6 +7675,9 @@
       ],
       "Public link invite": [
         "Link di invito pubblico"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "La condivisione pubblica dei documenti non è ancora supportata. Chiedi al proprietario di invitarti direttamente al documento."
       ],
       "purchase additional storage": [
         "comprare dello spazio di archiviazione aggiuntivo"
@@ -7808,6 +7807,9 @@
       ],
       "Set recovery phrase": [
         "Imposta una frase di recupero"
+      ],
+      "Set your password": [
+        "Scegli la tua password"
       ],
       "Setting up your organization": [
         "Configurazione della tua organizzazione in corso..."
@@ -8032,6 +8034,12 @@
       "This file is too large to preview": [
         "Questo file è troppo grande per l'anteprima"
       ],
+      "This invitation link already used. Please sign in directly instead.": [
+        "Questo link di invito è già stato utilizzato. Effettua invece l'accesso diretto."
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Questo link di invito è scaduto. Contatta l'amministratore per richiedere l'accesso."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Questa è una frase di 12 parole che ti è stato chiesto di impostare."
       ],
@@ -8040,6 +8048,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Questa è una chiave di crittografia che potresti aver salvato in precedenza."
+      ],
+      "This is an invitation from:": [
+        "Questo è un invito da:"
       ],
       "This is the password you used before the password reset.": [
         "Questa è la password che hai usato prima della reimpostazione della password."
@@ -8068,8 +8079,11 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Questa verifica può richiedere fino a un'ora. Puoi tranquillamente continuare con i passaggi successivi."
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Questa verifica può richiedere fino a un'ora. Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
+      ],
+      "This will cancel the previous invite and send a new one to **${ email }**.": [
+        "Questa azione annullerà l'invito precedente e ne invierà uno nuovo a **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Questa azione annullerà il tuo attuale abbonamento a pagamento e perderai tutti i vantaggi fedeltà accumulati."
@@ -8116,8 +8130,8 @@
       "to ${ product } Business": [
         "su ${ product } Business"
       ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Per consentire l'utilizzo di SAML SSO al dominio ${ boldDomainName }, devi confermarne il possesso aggiungendo il seguente record TXT DNS al tuo dominio nel tuo fornitore DNS."
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Per consentire l'utilizzo di SAML SSO al dominio **${ domainName }**, devi confermarne il possesso aggiungendo il seguente record TXT DNS al tuo dominio nel tuo fornitore DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitare la perdita di dati, eliminala solamente se sai cosa stai facendo o se ne hai esportato una copia."
@@ -8638,6 +8652,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Devi ancora rispondere agli inviti per consentire all'organizzatore di vedere la tua risposta."
       ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Sarai in grado di promuovere l'utente ad amministratore o renderlo privato una volta che avrà accettato l'invito."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
       ],
@@ -8764,6 +8781,17 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9220,6 +9248,9 @@
       "Access to my events": [
         "Accesso ai miei eventi"
       ],
+      "Account recovery": [
+        "Recupero dell'account"
+      ],
       "Account storage": [
         "Spazio dell'account"
       ],
@@ -9634,6 +9665,9 @@
       "Folder location": [
         "Percorso cartella"
       ],
+      "Folders and labels": [
+        "Cartelle ed etichette"
+      ],
       "Font family": [
         "Tipo di carattere"
       ],
@@ -10003,6 +10037,9 @@
       "Spam": [
         "Spam"
       ],
+      "Spam and filters": [
+        "Spam e filtri"
+      ],
       "Starred": [
         "Importante"
       ],
@@ -10350,6 +10387,9 @@
       "Create an alias": [
         "Crea un alias"
       ],
+      "Don't have access to your 2FA?": [
+        "Non hai accesso alla tua 2FA?"
+      ],
       "Encryption and keys": [
         "Crittografia e chiavi"
       ],
@@ -10551,9 +10591,37 @@
       ],
       "Limited time offer": [
         "Offerta a tempo limitato"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda"
       ],
-      "Secure email that protects your privacy": [
-        "Un'email sicura che protegge la tua privacy"
+      "An encrypted email service that puts your privacy first": [
+        "Un servizio di posta elettronica crittografato che mette la tua privacy al primo posto"
+      ],
+      "Encrypted email and calendar to get you started": [
+        "Inizia con email e calendario crittografati"
+      ],
+      "Encrypted solutions to protect your entire business": [
+        "Soluzioni crittografate per proteggere l'intera azienda"
+      ],
+      "Enhanced security and premium features for teams": [
+        "Sicurezza avanzata e funzionalità premium per i team"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Offerta a tempo limitato: **Ottieni il 35% di sconto** sui piani annuali"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Sei stato invitato a provare ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "Per le aziende"
+      ],
+      "For individuals": [
+        "Per privati"
       ]
     },
     "mailtrial2024: Action": {
@@ -10641,11 +10709,17 @@
       "Delete": [
         "Elimina"
       ],
+      "Delete and revoke invite": [
+        "Elimina e revoca un invito"
+      ],
       "Edit": [
         "Modifica"
       ],
       "Remove": [
         "Rimuovi"
+      ],
+      "Resend invite link": [
+        "Rispedisci il link di invito"
       ],
       "Revoke sessions": [
         "Revoca le sessioni"
@@ -11107,6 +11181,9 @@
       "Advanced sharing security": [
         "Sicurezza di condivisione avanzata"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Tutti i servizi ${ BRAND_NAME }"
+      ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
       ],
@@ -11166,6 +11243,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitoraggio di violazioni di dati (in arrivo)"
+      ],
+      "Dedicated account manager": [
+        "Account manager dedicato"
       ],
       "Dedicated servers and IP": [
         "Server e IP dedicati"
@@ -11355,6 +11435,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
+      ],
+      "Tailored to your needs": [
+        "Su misura per te"
       ],
       "Tor over VPN": [
         "Tor su VPN"
@@ -12588,6 +12671,9 @@
       "Current plan": [
         "Piano attuale"
       ],
+      "Customizable services for large teams.": [
+        "Servizi personalizzabili per team di grandi dimensioni."
+      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Scarica e installa le apposite app ed estensioni per iniziare ad usare ${ PASS_APP_NAME }"
       ],
@@ -13138,11 +13224,6 @@
         "Fuso orario secondario"
       ]
     },
-    "Private Member": {
-      "private": [
-        "privato"
-      ]
-    },
     "Property type": {
       "Address": [
         "Indirizzo"
@@ -13334,6 +13415,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Prerequisito:** l'autenticazione SAML deve essere configurata per abilitare il provisioning SCIM."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Prerequisito:** per abilitare il provisioning SCIM, è necessario verificare la proprietà del dominio **${ domainName }**. Questa verifica può richiedere fino a un'ora."
       ],
       "Enter token into your identity provider": [
         "Inserisci il token nel tuo provider di identità"
@@ -13822,6 +13906,9 @@
       "Actions": [
         "Azioni"
       ],
+      "Drag to reorder": [
+        "Trascina per ordinare"
+      ],
       "Labels": [
         "Etichette"
       ]
@@ -13902,6 +13989,16 @@
       ],
       "Verification": [
         "Verifica"
+      ]
+    },
+    "signup: Action": {
+      "Request a demo": [
+        "Richiedi una demo"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "Conforme al GDPR"
       ]
     },
     "specialoffer: Action": {
@@ -14955,9 +15052,6 @@
       "Undo in progress": [
         "Annullamento in corso"
       ],
-      "User created": [
-        "Utente creato"
-      ],
       "User updated": [
         "Utente aggiornato"
       ],
@@ -14992,6 +15086,9 @@
     "Success message": {
       "Domain deleted": [
         "Dominio eliminato"
+      ],
+      "Invitation resent": [
+        "Invito spedito nuovamente"
       ],
       "Sessions revoked": [
         "Sessioni revocate"
@@ -15128,6 +15225,9 @@
       ],
       "Import": [
         "Importa"
+      ],
+      "Invitation email": [
+        "Email di invito"
       ],
       "List": [
         "Lista"
@@ -15285,9 +15385,6 @@
       ],
       "Add filter": [
         "Aggiungi filtro"
-      ],
-      "Add new user": [
-        "Aggiungi nuovo utente"
       ],
       "Add PayPal payment method": [
         "Aggiungi metodo di pagamento PayPal"
@@ -15626,6 +15723,9 @@
       ],
       "Edit organization identity": [
         "Modifica l'identità dell'organizzazione"
+      ],
+      "Edit profile": [
+        "Modifica profilo"
       ],
       "Edit servers": [
         "Modifica server"
@@ -16060,6 +16160,9 @@
       ],
       "Send email reminders?": [
         "Vuoi inviare i promemoria email?"
+      ],
+      "Send new invite?": [
+        "Vuoi spedire un nuovo invito?"
       ],
       "Session management": [
         "Gestione delle sessioni"
@@ -16697,17 +16800,90 @@
         "Amministratore principale"
       ]
     },
-    "Users table: AI-powered": {
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "Indirizzo ${ BRAND_NAME }"
+      ],
+      "Add multiple users": [
+        "Aggiungi più di un utente"
+      ],
+      "Add new user": [
+        "Aggiungi un nuovo utente"
+      ],
+      "Admin": [
+        "Amministratore"
+      ],
+      "An invitation will be sent to this email address.": [
+        "L'invito sarà spedito a questo indirizzo email."
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Confirm password": [
+        "Conferma la password"
+      ],
+      "Create password": [
+        "Crea una password"
+      ],
+      "Create password instead": [
+        "Crea invece una password"
+      ],
+      "Create user": [
+        "Crea un utente"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Optional": [
+        "Facoltativo"
+      ],
+      "Private": [
+        "Privato"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Ricordati di condividere con loro i dettagli di accesso dell'utente."
+      ],
+      "Send invite link via email instead": [
+        "Spedisci invece il link di invito via email"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Questa azione creerà un nuovo indirizzo ${ MAIL_APP_NAME }."
+      ],
+      "User created": [
+        "Utente creato"
+      ],
+      "VPN connections": [
+        "Connessioni VPN"
+      ],
+      "Writing assistant": [
+        "Assistente alla scrittura"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Gli amministratori non possono accedere ai dati degli utenti privati"
+      ],
       "AI": [
         "IA"
-      ]
-    },
-    "Users table: single sign-on enabled": {
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Invito spedito, in attesa di risposta da parte del membro invitato"
+      ],
+      "Invite sent": [
+        "Invito spedito"
+      ],
+      "It's you": [
+        "Sei tu"
+      ],
+      "Private": [
+        "Privato"
+      ],
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
+      ],
       "SSO user provided by your identity provider": [
         "Utente SSO fornito dal tuo fornitore di identità"
       ]

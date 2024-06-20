@@ -89,9 +89,6 @@
       "Add label": [
         "创建标签"
       ],
-      "Add multiple users": [
-        "批量添加用户"
-      ],
       "Add notification": [
         "添加通知"
       ],
@@ -268,9 +265,6 @@
       ],
       "Create link": [
         "创建链接"
-      ],
-      "Create user": [
-        "创建用户"
       ],
       "Create users": [
         "创建用户"
@@ -3129,9 +3123,17 @@
         "Fedora / Red Hat (.rpm)"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "端到端加密"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "保障文件分享安全"
+      ],
+      "Protected by Swiss privacy laws": [
+        "由瑞士隐私法律保护"
       ]
     },
     "Duration": {
@@ -3413,11 +3415,6 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "警告"
-      ]
-    },
-    "Enabled 2FA": {
-      "2FA": [
-        "双重验证"
       ]
     },
     "eof2023: Deal details": {
@@ -3711,6 +3708,9 @@
       ],
       "Please set a recovery/notification email first": [
         "请先设置密保/通知邮箱"
+      ],
+      "Please try again in a few moments.": [
+        "请稍后再试."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "请先升级为支持多用户的商务账户"
@@ -5296,17 +5296,6 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
@@ -6400,9 +6389,6 @@
       "Open source": [
         "开放源代码"
       ],
-      "Optional": [
-        "非必填"
-      ],
       "or ${ selectFileButton }": [
         "或${ selectFileButton }"
       ],
@@ -7454,6 +7440,17 @@
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "令下层文件夹的颜色与上层文件夹一致"
@@ -7855,6 +7852,9 @@
       "Access to my events": [
         "访问我的活动"
       ],
+      "Account recovery": [
+        "账户恢复"
+      ],
       "Account storage": [
         "账户存储空间"
       ],
@@ -8244,6 +8244,9 @@
       ],
       "Folder location": [
         "文件夹位置"
+      ],
+      "Folders and labels": [
+        "标签与文件夹"
       ],
       "Font family": [
         "字体"
@@ -10927,11 +10930,6 @@
         "第二时区"
       ]
     },
-    "Private Member": {
-      "private": [
-        "私有"
-      ]
-    },
     "Property type": {
       "Address": [
         "地址"
@@ -11887,6 +11885,18 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "每位用户 ${ MaxCalendars } 个日历"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } 个自有域名"
+      ],
+      "${ maxEmails } email address per user": [
+        "每位用户 ${ maxEmails } 个邮箱地址"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "每位用户 ${ planMaxSpace } 存储空间"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } 总存储空间"
       ],
@@ -11895,6 +11905,9 @@
       ],
       "10 email addresses": [
         "10 个邮箱地址"
+      ],
+      "Automatic email forwarding": [
+        "自动转发邮件"
       ],
       "Calendar sharing": [
         "日历共享"
@@ -11914,11 +11927,17 @@
       "Early access to new apps and features": [
         "抢先访问新应用和功能"
       ],
+      "Keep ${ config.planName }": [
+        "保持计划 ${ config.planName }"
+      ],
       "Online privacy, for your whole family": [
         "与全家人共同守护网络隐私"
       ],
       "Priority support": [
         "优先支持"
+      ],
+      "Unlimited folders and labels": [
+        "文件夹和标签不限量"
       ],
       "Unlimited folders, labels and filters": [
         "文件夹、标签、筛选规则不限量"
@@ -12121,9 +12140,6 @@
       ],
       "Undo in progress": [
         "正在撤销"
-      ],
-      "User created": [
-        "用户已创建"
       ],
       "User updated": [
         "用户已更新"
@@ -12431,9 +12447,6 @@
       ],
       "Add filter": [
         "创建筛选规则"
-      ],
-      "Add new user": [
-        "添加新用户"
       ],
       "Add PayPal payment method": [
         "添加 PayPal 支付方式"
@@ -13641,11 +13654,6 @@
       ],
       "Primary admin": [
         "主管理员"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "单点登录"
       ]
     },
     "Validation": {

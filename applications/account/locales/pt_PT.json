@@ -103,9 +103,6 @@
       "Add label": [
         "Adicionar etiqueta"
       ],
-      "Add multiple users": [
-        "Adicionar vários utilizadores"
-      ],
       "Add notification": [
         "Adicionar notificação"
       ],
@@ -288,9 +285,6 @@
       ],
       "Create link": [
         "Criar ligação"
-      ],
-      "Create user": [
-        "Criar utilizador"
       ],
       "Create users": [
         "Criar utilizadores"
@@ -3268,9 +3262,17 @@
         ".rpm para Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Encriptado de ponta a ponta"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Segurança avançada de partilha"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido pelas leis de privacidade suíças"
       ]
     },
     "Duration": {
@@ -3649,11 +3651,6 @@
         "Aviso"
       ]
     },
-    "Enabled 2FA": {
-      "2FA": [
-        "A2F"
-      ]
-    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3945,6 +3942,9 @@
       ],
       "Please set a recovery/notification email first": [
         "Defina um e-mail de recuperação/notificação"
+      ],
+      "Please try again in a few moments.": [
+        "Por favor, tente novamente dentro de alguns momentos."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Subscreva um plano empresarial com mais de 1 utilizador para obter suporte multiutilizador."
@@ -5757,17 +5757,6 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi enviada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -6655,6 +6644,9 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Invite rejected": [
+        "O convite foi rejeitado."
+      ],
       "Invite successfully sent": [
         "Convite enviado",
         "Convites enviados"
@@ -6874,9 +6866,6 @@
       ],
       "Open source": [
         "Código aberto"
-      ],
-      "Optional": [
-        "Opcional"
       ],
       "or ${ selectFileButton }": [
         "ou ${ selectFileButton }"
@@ -7958,6 +7947,17 @@
         "Reunião no Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi enviada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando ativado, as sub-pastas herdam a cor da pasta principal."
@@ -8383,6 +8383,9 @@
       "Access to my events": [
         "Acesso aos meus eventos"
       ],
+      "Account recovery": [
+        "Recuperação da conta"
+      ],
       "Account storage": [
         "Armazenamento da conta"
       ],
@@ -8781,6 +8784,9 @@
       ],
       "Folder location": [
         "Localização da pasta"
+      ],
+      "Folders and labels": [
+        "Pastas e etiquetas"
       ],
       "Font family": [
         "Família de letras"
@@ -10886,6 +10892,9 @@
       "Reminder has been sent": [
         "O lembrete foi enviado."
       ],
+      "Trial started": [
+        "Avaliação Iniciada"
+      ],
       "Two-factor authentication has been enforced for administrators": [
         "A autenticação de dois fatores foi imposta aos administradores."
       ],
@@ -11803,11 +11812,6 @@
       ],
       "Secondary time zone": [
         "Fuso horário secundário"
-      ]
-    },
-    "Private Member": {
-      "private": [
-        "privado"
       ]
     },
     "Property type": {
@@ -12877,6 +12881,21 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo para desktop do ${ MAIL_APP_NAME }"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } calendário por utilizador",
+        "${ MaxCalendars } calendários por utilizador"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } domínio de e-mail personalizado",
+        "${ maxDomainNames } domínios de e-mail personalizados"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } endereço de e-mail por utilizador",
+        "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } de armazenamento por utilizador"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
       ],
@@ -12886,11 +12905,20 @@
       "10 email addresses": [
         "10 endereços de e-mail"
       ],
+      "20 email addresses per user": [
+        "20 endereços de e-mail por utilizador"
+      ],
+      "25 calendars per user": [
+        "25 calendários por utilizador"
+      ],
       "6 users": [
         "6 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
+      ],
+      "Automatic email forwarding": [
+        "Encaminhamento automático de e-mail"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -12915,6 +12943,9 @@
       ],
       "I still want to cancel": [
         "Eu ainda quero cancelar."
+      ],
+      "Keep ${ config.planName }": [
+        "Manter ${ config.planName }"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
@@ -12945,6 +12976,9 @@
       ],
       "The best of ${ BRAND_NAME }": [
         "O melhor da ${ BRAND_NAME }"
+      ],
+      "Unlimited folders and labels": [
+        "Pastas e etiquetas ilimitadas"
       ],
       "Unlimited folders, labels and filters": [
         "Pastas, etiquetas e filtros ilimitados"
@@ -13189,9 +13223,6 @@
       ],
       "Undo in progress": [
         "Desfazer em curso"
-      ],
-      "User created": [
-        "Utilizador criado"
       ],
       "User updated": [
         "Utilizador atualizado"
@@ -13508,9 +13539,6 @@
       ],
       "Add filter": [
         "Adicionar filtro"
-      ],
-      "Add new user": [
-        "Adicionar um novo utilizador"
       ],
       "Add PayPal payment method": [
         "Adicionar pagamento com PayPal"
@@ -14831,11 +14859,6 @@
       ],
       "Primary admin": [
         "Administrador principal"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
       ]
     },
     "Validation": {

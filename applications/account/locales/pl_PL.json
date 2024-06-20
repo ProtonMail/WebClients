@@ -118,9 +118,6 @@
       "Add label": [
         "Dodaj etykietę"
       ],
-      "Add multiple users": [
-        "Dodaj wiele użytkowników"
-      ],
       "Add notification": [
         "Dodaj powiadomienie"
       ],
@@ -306,9 +303,6 @@
       ],
       "Create link": [
         "Utwórz link"
-      ],
-      "Create user": [
-        "Utwórz użytkownika"
       ],
       "Create users": [
         "Utwórz użytkowników"
@@ -3520,12 +3514,25 @@
         ".rpm dla Fedora / Red Hat"
       ]
     },
+    "drive_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Szyfrowany end-to-end"
+      ]
+    },
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Zaawansowane bezpieczeństwo udostępniania"
       ],
       "Encrypted cloud storage for all your files": [
         "Szyfrowana przestrzeń dyskowa w chmurze na Twoje pliki"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
+      ]
+    },
+    "drive_signup_2023: Title": {
+      "Secure cloud storage and file sharing that protects your data": [
+        "Bezpieczna przestrzeń dyskowa w chmurze i udostępnianie plików, które chronią Twoje dane"
       ]
     },
     "Duration": {
@@ -3961,11 +3968,6 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Ostrzeżenie"
-      ]
-    },
-    "Enabled 2FA": {
-      "2FA": [
-        "Uwierzytelnianie dwustopniowe"
       ]
     },
     "eof2023: Deal details": {
@@ -6192,17 +6194,6 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -7575,9 +7566,6 @@
       "Open source": [
         "Otwarty kod źródłowy"
       ],
-      "Optional": [
-        "Opcjonalnie"
-      ],
       "or ${ selectFileButton }": [
         "lub ${ selectFileButton }"
       ],
@@ -7899,9 +7887,6 @@
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
       ],
@@ -8121,9 +8106,6 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ten użytkownik jest obecnie odpowiedzialny za płatności w Twojej organizacji. Obniżając status tego użytkownika, staniesz się jednocześnie odpowiedzialny za płatności."
       ],
-      "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Weryfikacja może potrwać do godziny. Możesz bezpiecznie przejść do kolejnych kroków."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych."
       ],
@@ -8168,9 +8150,6 @@
       ],
       "to ${ product } Business": [
         "w ${ product } Business"
-      ],
-      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Zweryfikuj domenę ${ boldDomainName } za pomocą rekordu TXT, aby zezwolić na logowanie SSO (SAML)."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Aby uniknąć utraty danych, usuń klucz tylko wtedy, kiedy wiesz co robisz lub posiadasz kopię zapasową klucza."
@@ -8827,6 +8806,17 @@
         "spotkanie na Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
@@ -9293,6 +9283,9 @@
       "Access to my events": [
         "Dostęp do wydarzeń"
       ],
+      "Account recovery": [
+        "Odzyskiwanie konta"
+      ],
       "Account storage": [
         "Przestrzeń dyskowa konta"
       ],
@@ -9703,6 +9696,9 @@
       ],
       "Folder location": [
         "Lokalizacja folderu"
+      ],
+      "Folders and labels": [
+        "Foldery i etykiety"
       ],
       "Font family": [
         "Czcionka"
@@ -10627,9 +10623,6 @@
       ],
       "Limited time offer": [
         "Oferta ograniczona czasowo"
-      ],
-      "Secure email that protects your privacy": [
-        "Bezpieczna poczta e-mail, która chroni Twoją prywatność"
       ]
     },
     "mailtrial2024: Action": {
@@ -13255,11 +13248,6 @@
         "Dodatkowa strefa czasowa"
       ]
     },
-    "Private Member": {
-      "private": [
-        "prywatny"
-      ]
-    },
     "Property type": {
       "Address": [
         "Adres"
@@ -14588,8 +14576,29 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } kalendarz na użytkownika",
+        "${ MaxCalendars } kalendarze na użytkownika",
+        "${ MaxCalendars } kalendarzy na użytkownika",
+        "${ MaxCalendars } kalendarzy na użytkownika"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } niestandardowa domena",
+        "${ maxDomainNames } niestandardowe domeny",
+        "${ maxDomainNames } niestandardowych domen",
+        "${ maxDomainNames } niestandardowych domen"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } adres e-mail na użytkownika",
+        "${ maxEmails } adresy e-mail na użytkownika",
+        "${ maxEmails } adresów e-mail na użytkownika",
+        "${ maxEmails } adresów e-mail na użytkownika"
+      ],
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } z nieograniczoną liczbą aliasów hide-my-email"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } przestrzeni dyskowej na użytkownika"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } przestrzeni dyskowej"
@@ -14621,6 +14630,12 @@
       "10 email addresses": [
         "10 adresów e-mail"
       ],
+      "20 email addresses per user": [
+        "20 adresów na użytkownika"
+      ],
+      "25 calendars per user": [
+        "25 kalendarzy na użytkownika"
+      ],
       "6 users": [
         "6 użytkowników"
       ],
@@ -14632,6 +14647,9 @@
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po wygaśnięciu subskrypcji ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 5 GB przestrzeni dyskowej Proton Drive i 1 GB przestrzeni dyskowej Proton Mail. Stracisz również bonusową przestrzeń dyskową."
+      ],
+      "Automatic email forwarding": [
+        "Automatyczne przekierowanie"
       ],
       "Back up photos from your devices": [
         "Tworzenia kopii zapasowej zdjęć na urządzeniach"
@@ -14684,6 +14702,9 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Jeśli po wygaśnięciu subskrypcji ${ planName } przekroczysz limity darmowego planu, stracisz możliwości:"
       ],
+      "Keep ${ config.planName }": [
+        "Zachowaj plan ${ config.planName }"
+      ],
       "Learn more about our impact": [
         "Dowiedz się więcej o naszym wpływie"
       ],
@@ -14731,6 +14752,9 @@
       ],
       "Unblocking internet access in Iran": [
         "Odblokowanie dostępu do Internetu w Iranie"
+      ],
+      "Unlimited folders and labels": [
+        "Nieograniczona liczba folderów i etykiet"
       ],
       "Unlimited folders, labels and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -15017,9 +15041,6 @@
       ],
       "Undo in progress": [
         "Cofnięcie jest w toku"
-      ],
-      "User created": [
-        "Użytkownik został utworzony"
       ],
       "User updated": [
         "Użytkownik został zaktualizowany"
@@ -15360,9 +15381,6 @@
       ],
       "Add filter": [
         "Dodaj filtr"
-      ],
-      "Add new user": [
-        "Dodaj nowego użytkownika"
       ],
       "Add PayPal payment method": [
         "Dodaj PayPal jako metodę płatności"
@@ -16020,9 +16038,6 @@
       ],
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
-      ],
-      "Personalise your e-mail footer": [
-        "Spersonalizuj stopkę"
       ],
       "Phone": [
         "Telefon"
@@ -16782,21 +16797,6 @@
       ],
       "Primary admin": [
         "Główny administrator"
-      ]
-    },
-    "Users table: AI-powered": {
-      "AI": [
-        "Sztuczna inteligencja"
-      ]
-    },
-    "Users table: single sign-on enabled": {
-      "SSO": [
-        "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your identity provider": [
-        "Użytkownik SSO od dostawcy tożsamości"
       ]
     },
     "Validation": {
