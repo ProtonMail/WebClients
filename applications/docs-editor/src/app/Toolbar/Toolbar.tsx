@@ -530,6 +530,10 @@ export default function DocumentEditorToolbar({
   const showCodeAndQuoteOptionsInToolbar = !viewportWidth['<=medium']
   const showInsertOptionsInToolbar = viewportMoreThanLarge
 
+  const DropdownContentProps = {
+    onClosed: () => focusEditor(),
+  }
+
   return (
     <div
       className="border-weak bg-norm flex flex-nowrap items-center justify-around gap-1.5 overflow-auto border-y px-3 py-1.5 print:hidden"
@@ -575,6 +579,7 @@ export default function DocumentEditorToolbar({
             </span>
           }
           disabled={!isEditable}
+          contentProps={DropdownContentProps}
         >
           <DropdownMenu>
             {blockTypes.map(({ type, name, onClick }) => (
@@ -602,6 +607,7 @@ export default function DocumentEditorToolbar({
             </span>
           }
           disabled={!isEditable}
+          contentProps={DropdownContentProps}
         >
           <DropdownMenu>
             {FontOptions.map(({ id, label, value }) => (
@@ -630,6 +636,7 @@ export default function DocumentEditorToolbar({
           className="color-norm px-2 text-left text-sm"
           content={<>{fontSize}</>}
           disabled={!isEditable}
+          contentProps={DropdownContentProps}
         >
           <DropdownMenu>
             {FontSizes.map((size) => (
@@ -684,6 +691,7 @@ export default function DocumentEditorToolbar({
               className="text-[--text-norm]"
               content={<Icon name="palette" />}
               disabled={!isEditable}
+              contentProps={DropdownContentProps}
             >
               <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Text colour`}</div>
               <DropdownMenu>
@@ -754,6 +762,7 @@ export default function DocumentEditorToolbar({
                 AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <Icon name="text-align-left" />
               }
               disabled={!isEditable}
+              contentProps={DropdownContentProps}
             >
               <DropdownMenu>
                 <AlignmentMenuOptions
@@ -780,6 +789,7 @@ export default function DocumentEditorToolbar({
                 )
               }
               disabled={!isEditable}
+              contentProps={DropdownContentProps}
             >
               <DropdownMenu>
                 {listTypes.map(({ type, icon, name, onClick }) => (
@@ -863,6 +873,7 @@ export default function DocumentEditorToolbar({
           content={<Icon name="three-dots-vertical" />}
           disabled={!isEditable}
           hasCaret={false}
+          contentProps={DropdownContentProps}
         >
           <DropdownMenu className="[&>li>hr]:min-h-px">
             {!showUndoRedoInToolbar && (
@@ -1045,6 +1056,7 @@ export default function DocumentEditorToolbar({
         caretClassName="-ml-1"
         content={<>{isEditable ? <Icon name="pencil" /> : <Icon name="eye" />}</>}
         hasCaret={!viewportWidth['<=small']}
+        contentProps={DropdownContentProps}
       >
         <DropdownMenu>
           {hasEditAccess && (
