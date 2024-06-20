@@ -88,6 +88,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('reportError', [error])
   }
 
+  async updateFrameSize(size: number): Promise<void> {
+    return this.invokeClientMethod('updateFrameSize', [size])
+  }
+
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
     const pendingMessage = this.pendingMessages.find((m) => m.messageId === message.messageId)
     if (pendingMessage) {

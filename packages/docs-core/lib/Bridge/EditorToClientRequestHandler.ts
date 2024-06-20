@@ -12,7 +12,10 @@ import { ErrorInfo } from 'react'
 
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
-  constructor(private readonly docOrchestrator: EditorOrchestratorInterface) {}
+  constructor(
+    private editorFrame: HTMLIFrameElement,
+    private readonly docOrchestrator: EditorOrchestratorInterface,
+  ) {}
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
     return this.docOrchestrator.editorRequestsPropagationOfUpdate(message, debugSource)
@@ -88,5 +91,11 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
         errorInfo,
       },
     })
+  }
+
+  updateFrameSize(size: number): void {
+    if (this.editorFrame) {
+      this.editorFrame.style.setProperty('--print-min-height', `${size}px`)
+    }
   }
 }
