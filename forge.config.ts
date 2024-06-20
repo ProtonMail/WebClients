@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-require("dotenv").config({ path: ['.env', '.env.default'] });
+require("dotenv").config({ path: [".env", ".env.default"] });
 
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
@@ -13,6 +13,7 @@ import { rendererConfig } from "./webpack.renderer.config";
 import pkg from "./package.json";
 
 let currentArch = "";
+
 const config: ForgeConfig = {
     hooks: {
         generateAssets: async (_x, _y, arch) => {
@@ -60,7 +61,10 @@ const config: ForgeConfig = {
                 iconUrl: `${__dirname}/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
-                signWithParams: process.env.WINDOWS_PACKAGE_SIGNING === 'yes' ? `/a /d "Proton Mail Desktop" /t "http://timestamp.sectigo.com" /fd SHA256` : undefined,
+                signWithParams:
+                    process.env.WINDOWS_PACKAGE_SIGNING === "yes"
+                        ? `/a /d "Proton Mail Desktop" /t "http://timestamp.sectigo.com" /fd SHA256`
+                        : undefined,
             },
         },
         {

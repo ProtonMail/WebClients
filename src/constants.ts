@@ -10,12 +10,10 @@ export const CERT_PROTON_ME = [
 
 // TODO @proton/shared/lib/apps/desktopVersions.ts
 export enum RELEASE_CATEGORIES {
-    STABLE = 'Stable',
-    ALPHA = 'Alpha',
-    EARLY_ACCESS = 'EarlyAccess',
+    STABLE = "Stable",
+    ALPHA = "Alpha",
+    EARLY_ACCESS = "EarlyAccess",
 }
 
 // TOOD import type { Environment } from '@proton/shared/lib/interfaces';
-export type Environment = 'alpha' | 'beta';
-
-
+export type Environment = "alpha" | "beta";
