@@ -12,8 +12,7 @@ import {
     userInvitationsListener,
     userKeysListener,
 } from '@proton/account';
-
-import type { ProtonDispatch, ProtonThunkArguments } from './interface';
+import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 interface RequiredState extends AddressKeysState, UserKeysState, OrganizationKeyState, UserInvitationsState {}
 

@@ -12,7 +12,7 @@
         "test:dev": "jest --watch"
     },
     "dependencies": {
-        "@proton/styles": "workspace:packages/styles"
+        "@proton/styles": "workspace:^"
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^6.0.0",

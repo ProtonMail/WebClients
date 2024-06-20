@@ -34,16 +34,8 @@ getDistDirectory() {
     return 0
   fi
 
-  # Cache for the CI so we're faster
-  if [ -s 'webapp-bundle.tar.gz' ]; then
-    echo "we extract the bundle"
-    rm -rf dist || true
-    mkdir dist
-    tar xzf webapp-bundle.tar.gz -C dist
-  else
-    echo "we create the bundle"
-    yarn run build
-  fi
+  echo "application must be built first"
+  return 1
 }
 
 function main {
@@ -69,12 +61,12 @@ function main {
     echo "[Parsing] $file";
     if [[ "$OSTYPE" = "darwin"* ]]; then
       if [[ "$(uname -m)" == 'arm64'  ]]; then
-        /tmp/sourcemapper/bin/isourcemapper-arm --input "$file" --output 'i18n-js' &
+        /tmp/sourcemapper/bin/isourcemapper-arm --input "$file" --output 'i18n-js' &> /dev/null &
       else
-        /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &
+        /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &> /dev/null &
       fi
     else
-      /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &
+      /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &> /dev/null &
     fi
   done;
 

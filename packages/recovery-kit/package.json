@@ -11,7 +11,7 @@
     "dependencies": {
         "@pdfme/common": "^3.4.0",
         "@pdfme/generator": "^3.4.0",
-        "@proton/utils": "workspace:packages/utils"
+        "@proton/utils": "workspace:^"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
