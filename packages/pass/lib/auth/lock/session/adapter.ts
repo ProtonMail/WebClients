@@ -123,6 +123,7 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
                     onNotification?.({
                         key: NotificationKey.LOCK,
                         text: c('Error').t`Your PIN code was removed by another ${PASS_APP_NAME} client`,
+                        type: 'error',
                     });
 
                     authStore.setLocked(false);

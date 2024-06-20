@@ -11,6 +11,7 @@ import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
 
 export const startEventPolling = createAction('events::polling::start');
@@ -45,7 +46,14 @@ export const bootIntent = createAction('boot::intent', (payload?: { offline: boo
 export const bootFailure = createAction('boot::failure', (error?: unknown) =>
     pipe(
         withRequest({ id: bootRequest(), status: 'failure' }),
-        error ? withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error }) : identity
+        error
+            ? withNotification({
+                  type: 'error',
+                  text: c('Error')
+                      .t`We encountered an issue while starting ${PASS_SHORT_APP_NAME}. If this problem continues, please contact our customer support for assistance.`,
+                  error,
+              })
+            : identity
     )({ payload: {}, error })
 );
 

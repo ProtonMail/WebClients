@@ -138,6 +138,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const error = getApiErrorMessage(e);
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
+                const notAllowed = code === PassErrorCode.NOT_ALLOWED && options.url?.includes('pass/v1/user/access');
                 const offline = getIsOfflineError(e) || networkError;
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
@@ -156,6 +157,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
 
                 if (sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
                 if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive' });
+                if (notAllowed) pubsub.publish({ type: 'session', status: 'not-allowed', error });
                 if (error && !getSilenced(e.config, code)) pubsub.publish({ type: 'error', error });
 
                 throw e;
