@@ -216,7 +216,6 @@ export async function loadURL(viewID: ViewID, url: string) {
         };
 
         const handleStopLoading = () => {
-            viewLogger(viewID).info("loadURL loaded", url);
             clearTimeout(loadingTimeoutID);
             view.webContents.off("did-stop-loading", handleStopLoading);
             resolve();
