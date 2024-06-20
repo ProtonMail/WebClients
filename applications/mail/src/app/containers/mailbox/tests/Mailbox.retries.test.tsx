@@ -102,28 +102,35 @@ describe('Mailbox retries and waitings', () => {
         fireEvent.click(trash);
         await tick();
         // TODO fix later, needed for useMoveToFolder using getLabels
-            await wait(0);fireEvent.click(checkAll);
+        await wait(0);
+        fireEvent.click(checkAll);
         await tick();
         trash = screen.getByTestId('toolbar:movetotrash');
         fireEvent.click(trash);
         await tick();
 
         // We are moving 100 elements to trash, and then we fake undoing all requests.
-        // Because we batch requests to 25 elements, we need to resolve the request 4 times
+        // Because we batch requests to 10 elements, we need to resolve the request 10 times
         expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
         expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, true);
 
         await act(async () => {
             resolvers[0]({ UndoToken: 'fake' });
             resolvers[1]({ UndoToken: 'fake' });
+            resolvers[2]({ UndoToken: 'fake' });
+            resolvers[3]({ UndoToken: 'fake' });
+            resolvers[4]({ UndoToken: 'fake' });
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
         expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, true);
 
         await act(async () => {
-            resolvers[2]({ UndoToken: 'fake' });
-            resolvers[3]({ UndoToken: 'fake' });
+            resolvers[5]({ UndoToken: 'fake' });
+            resolvers[6]({ UndoToken: 'fake' });
+            resolvers[7]({ UndoToken: 'fake' });
+            resolvers[8]({ UndoToken: 'fake' });
+            resolvers[9]({ UndoToken: 'fake' });
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(4);
