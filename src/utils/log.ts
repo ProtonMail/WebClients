@@ -5,6 +5,7 @@ import { VIEW_TARGET } from "../ipc/ipcConstants";
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
 export const netLogger = Logger.scope("net");
+export const settingsLogger = Logger.scope("settings");
 export const squirrelLogger = Logger.scope("squirrel");
 export const updateLogger = Logger.scope("update");
 export const viewLogger = (viewID: VIEW_TARGET) => Logger.scope(viewID);

@@ -1,7 +1,7 @@
 import Store from "electron-store";
 import { SerializedTheme } from "../utils/themes";
 import { RELEASE_CATEGORIES, Environment } from "../constants";
-import { mainLogger } from "../utils/log";
+import { settingsLogger } from "../utils/log";
 
 const store = new Store<{ settings: SettingsStore }>({
     configFileMode: 0o600,
@@ -23,7 +23,7 @@ const defaultSettings = {
 } as const satisfies SettingsStore;
 
 export const saveSettings = (settings: SettingsStore) => {
-    mainLogger.info("Settings saved", settings);
+    settingsLogger.info("Settings saved", JSON.stringify(settings));
     store.set("settings", settings);
 };
 
@@ -43,19 +43,19 @@ export const getSettings = (): SettingsStore => {
         }
 
         if (saveDefaults) {
-            mainLogger.info("Some default values were missing, saving settings.");
+            settingsLogger.info("Some default values were missing, saving settings.");
             saveSettings(settings);
         }
 
         return settings;
     }
 
-    mainLogger.info("Settings not found, using default settings");
+    settingsLogger.info("Settings not found, using default settings");
     return defaultSettings;
 };
 
 export function setReleaseCategory(targetEnv: Environment | undefined) {
-    mainLogger.info("Updating release cathegory", targetEnv);
+    settingsLogger.info("Updating release cathegory", targetEnv);
     const settings = getSettings();
     settings.releaseCategory = targetEnv ? RELEASE_CATEGORIES.EARLY_ACCESS : RELEASE_CATEGORIES.STABLE;
     saveSettings(settings);
