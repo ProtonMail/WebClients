@@ -1,6 +1,6 @@
 import { exec } from "child_process";
 import { app } from "electron";
-import { existsSync } from "original-fs";
+import { existsSync } from "fs";
 import { join } from "path";
 import { isMac } from "../utils/helpers";
 
