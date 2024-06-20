@@ -5,9 +5,8 @@ import orderBy from '@proton/utils/orderBy';
 import { EasySwitchState } from '../store';
 import { Report, ReportSummariesMap, ReportSummary, ReportSummaryID, ReportsMap } from './reports.interface';
 
-export const selectReportsMap = (state: EasySwitchState): ReportsMap => state.reports.reports;
-export const selectReportsSummariesMap = (state: EasySwitchState): ReportSummariesMap => state.reports.summaries;
-export const selectReportsState = (state: EasySwitchState) => state.reports.loading;
+const selectReportsMap = (state: EasySwitchState): ReportsMap => state.reports.reports;
+const selectReportsSummariesMap = (state: EasySwitchState): ReportSummariesMap => state.reports.summaries;
 
 export const selectReportById = createSelector(
     selectReportsMap,
@@ -20,18 +19,15 @@ export const selectReportSummaryById = createSelector(
     (summariesMap, ID) => summariesMap[ID]
 );
 
-export const selectReports = createSelector(selectReportsMap, (reportsMap): Report[] => {
+const selectReports = createSelector(selectReportsMap, (reportsMap): Report[] => {
     const reports = Object.values(reportsMap);
     return reports;
 });
 
-export const selectReportSummaries = createSelector(
-    selectReportsSummariesMap,
-    (reportsSummariesMap): ReportSummary[] => {
-        const summaries = Object.values(reportsSummariesMap);
-        return summaries;
-    }
-);
+const selectReportSummaries = createSelector(selectReportsSummariesMap, (reportsSummariesMap): ReportSummary[] => {
+    const summaries = Object.values(reportsSummariesMap);
+    return summaries;
+});
 
 /**
  * @returns array of summary ids ordered by report date DESC

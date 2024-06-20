@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CreateNotificationOptions } from '@proton/components';
+import { CreateNotificationOptions } from '@proton/components/containers';
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD } from './interface';
@@ -39,13 +39,6 @@ export const IMAPS = {
     [ImportProvider.YAHOO]: 'export.imap.mail.yahoo.com',
     [ImportProvider.OUTLOOK]: 'outlook.office365.com',
     [OAUTH_PROVIDER.OUTLOOK]: 'outlook.office365.com',
-};
-
-export const PORTS = {
-    [OAUTH_PROVIDER.GOOGLE]: '993',
-    [ImportProvider.YAHOO]: '993',
-    [ImportProvider.OUTLOOK]: '993',
-    [OAUTH_PROVIDER.OUTLOOK]: '993',
 };
 
 export const EASY_SWITCH_EMAIL_PLACEHOLDER = {
