@@ -1,3 +1,4 @@
+import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { EventTypeEnum, ServerMessageWithDocumentUpdates, ServerMessageWithEvents } from '@proton/docs-proto'
 import { LoggerInterface } from '@proton/utils/logs'
@@ -9,7 +10,6 @@ import { BroadcastSource, InternalEventBusInterface, WebsocketConnectionInterfac
 import { DocumentUpdateBuffer } from './Buffer/DocumentUpdateBuffer'
 import { Result } from '../../Domain/Result/Result'
 import { EncryptionMetadata } from '../../Types/EncryptionMetadata'
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 
@@ -27,14 +27,14 @@ describe('WebsocketService', () => {
     } as unknown as jest.Mocked<InternalEventBusInterface>
 
     encryptMessage = {
-      execute: jest.fn().mockReturnValue(Result.ok(stringToUint8Array('123'))),
+      execute: jest.fn().mockReturnValue(Result.ok(stringToUtf8Array('123'))),
     } as unknown as jest.Mocked<EncryptMessage>
 
     service = new WebsocketService(
       {} as jest.Mocked<GetRealtimeUrlAndToken>,
       encryptMessage,
       {
-        execute: jest.fn().mockReturnValue(Result.ok(stringToUint8Array('123'))),
+        execute: jest.fn().mockReturnValue(Result.ok(stringToUtf8Array('123'))),
       } as unknown as jest.Mocked<DecryptMessage>,
       {
         info: jest.fn(),
@@ -192,11 +192,11 @@ describe('WebsocketService', () => {
 
   describe('sendEventMessage', () => {
     it('should encrypt event message', async () => {
-      const encryptMock = (service.encryptMessage = jest.fn().mockReturnValue(stringToUint8Array('123')))
+      const encryptMock = (service.encryptMessage = jest.fn().mockReturnValue(stringToUtf8Array('123')))
 
       await service.sendEventMessage(
         {} as NodeMeta,
-        stringToUint8Array('123'),
+        stringToUtf8Array('123'),
         EventTypeEnum.ClientHasSentACommentMessage,
         BroadcastSource.AwarenessUpdateHandler,
       )
@@ -209,7 +209,7 @@ describe('WebsocketService', () => {
 
       await service.sendEventMessage(
         {} as NodeMeta,
-        stringToUint8Array('123'),
+        stringToUtf8Array('123'),
         EventTypeEnum.ClientIsBroadcastingItsPresenceState,
         BroadcastSource.AwarenessUpdateHandler,
       )
@@ -222,7 +222,7 @@ describe('WebsocketService', () => {
 
       await service.sendEventMessage(
         {} as NodeMeta,
-        stringToUint8Array('123'),
+        stringToUtf8Array('123'),
         EventTypeEnum.ClientIsBroadcastingItsPresenceState,
         BroadcastSource.AwarenessUpdateHandler,
       )
@@ -331,7 +331,7 @@ describe('WebsocketService', () => {
 
       try {
         await service.encryptMessage(
-          stringToUint8Array('123'),
+          stringToUtf8Array('123'),
           {} as EncryptionMetadata,
           document,
           {} as DocumentKeys,

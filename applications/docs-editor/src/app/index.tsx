@@ -2,9 +2,9 @@ import { createRoot } from 'react-dom/client'
 import '@proton/polyfill'
 import { App } from './App'
 import './style'
-import ErrorBoundary from './ErrorBoundary'
 import { sendErrorMessage } from './Utils/errorMessage'
 import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared'
+import { ErrorBoundary } from '@proton/components/containers'
 
 const searchParams = new URLSearchParams(window.location.search)
 
@@ -18,7 +18,11 @@ window.addEventListener('error', (event: ErrorEvent) => {
 const container = document.querySelector('.app-root')
 const root = createRoot(container!)
 root.render(
-  <ErrorBoundary>
+  <ErrorBoundary
+    onError={(error) => {
+      sendErrorMessage(error)
+    }}
+  >
     <App nonInteractiveMode={isViewOnly} />
   </ErrorBoundary>,
 )
