@@ -62,14 +62,8 @@ export class AckLedger implements AckLedgerInterface {
       const timeSincePosted = now.getTime() - entry.postedAt.getTime()
       if (timeSincePosted > this.thresholdForError()) {
         erroredMessages.push(entry)
-        metrics.docs_document_updates_ack_error_total.increment({
-          type: 'error_threshold',
-        })
       } else if (timeSincePosted > this.thresholdForConcern()) {
         concerningMessages.push(entry)
-        metrics.docs_document_updates_ack_error_total.increment({
-          type: 'concern_threshold',
-        })
       }
     }
 
@@ -86,6 +80,24 @@ export class AckLedger implements AckLedgerInterface {
       (entry) => !this.concerningMessages.has(entry.message.uuid),
     )
     const newlyErroredMessages = erroredMessages.filter((entry) => !this.erroredMessages.has(entry.message.uuid))
+
+    if (newlyConcerningMessages.length) {
+      metrics.docs_document_updates_ack_error_total.increment(
+        {
+          type: 'concern_threshold',
+        },
+        newlyConcerningMessages.length,
+      )
+    }
+
+    if (newlyErroredMessages.length) {
+      metrics.docs_document_updates_ack_error_total.increment(
+        {
+          type: 'error_threshold',
+        },
+        newlyErroredMessages.length,
+      )
+    }
 
     if (newlyConcerningMessages.length > 0 || newlyErroredMessages.length > 0) {
       this.concerningMessages = new Set([
