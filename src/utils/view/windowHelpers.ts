@@ -8,7 +8,7 @@ import { isLinux, isMac, isWindows } from "../helpers";
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
 export const areDevToolsAvailable = () => {
-    return !app.isPackaged || !isProdEnv();
+    return !isProdEnv();
 };
 
 const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {

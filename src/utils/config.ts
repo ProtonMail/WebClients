@@ -27,7 +27,11 @@ const prodConfig: Config = {
 };
 
 export const getConfig = () => {
-    return app.isPackaged ? prodConfig : devConfig;
+    if (app) {
+        return app.isPackaged ? prodConfig : devConfig;
+    } else {
+        return process.env.NODE_ENV === "development" ? devConfig : prodConfig;
+    }
 };
 
 export const getIco = () => {
@@ -62,7 +66,11 @@ export const getExtraResource = () => {
     }
 };
 
-export const isProdEnv = () => {
+export const isProdEnv = (): boolean => {
+    if (app && !app.isPackaged) {
+        return false;
+    }
+
     return getConfig().url.account.endsWith("proton.me");
 };
 

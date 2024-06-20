@@ -18,6 +18,7 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
+import { isProdEnv } from "./utils/config";
 
 (async function () {
     initializeLog();
@@ -51,7 +52,7 @@ import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
     // Config initialization
     saveAppID();
 
-    if (!app.isPackaged) {
+    if (!isProdEnv()) {
         app.commandLine.appendSwitch("ignore-certificate-errors");
     }
 

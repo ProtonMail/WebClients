@@ -4,6 +4,7 @@ import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/viewManagement";
 import { areDevToolsAvailable } from "../view/windowHelpers";
+import { isProdEnv } from "../config";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
 interface MenuProps extends MenuItemConstructorOptions {
@@ -155,7 +156,7 @@ export const setApplicationMenu = () => {
             ],
         });
 
-        if (!app.isPackaged) {
+        if (!isProdEnv()) {
             const submenu = temp[0].submenu as MenuItemConstructorOptions[];
             temp[0].submenu = [...submenu, { type: "separator" }, { role: "services" }];
         }
