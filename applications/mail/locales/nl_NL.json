@@ -468,17 +468,29 @@
       "Forgot password?": [
         "Wachtwoord vergeten?"
       ],
+      "Formalize": [
+        "Formaliseren"
+      ],
       "Forward as attachment": [
         "Doorsturen als bijlage"
       ],
+      "Generate text": [
+        "Genereer tekst"
+      ],
       "Get in touch": [
         "Neem contact op"
+      ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Krijg het vanaf slechts ${ addonPriceWithCurrency } /maand"
       ],
       "Get SimpleLogin extension": [
         "Verkrijg SimpleLogin extensies"
       ],
       "Get started": [
         "Aan de slag"
+      ],
+      "Get the writing assistant": [
+        "Verkrijg de schrijfassistent"
       ],
       "Get verification code": [
         "Krijg verificatie code"
@@ -700,6 +712,9 @@
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
       ],
+      "More refine actions": [
+        "Meer verfijnacties"
+      ],
       "More search options": [
         "Meer zoekopties"
       ],
@@ -850,6 +865,9 @@
       "Print": [
         "Afdrukken"
       ],
+      "Proofread": [
+        "Herlezen"
+      ],
       "Quit": [
         "Afsluiten"
       ],
@@ -949,11 +967,17 @@
       "Resume": [
         "Hervatten"
       ],
+      "Resume downloading": [
+        "Download hervatten"
+      ],
       "Retry": [
         "Opnieuw proberen"
       ],
       "Revert to original display": [
         "Terugkeren naar originele weergave"
+      ],
+      "Run on servers": [
+        "Uitvoeren op servers"
       ],
       "Save": [
         "Opslaan"
@@ -963,6 +987,9 @@
       ],
       "Schedule message": [
         "Bericht plannen"
+      ],
+      "Scroll to bottom": [
+        "Naar beneden scrollen"
       ],
       "Search": [
         "Zoeken"
@@ -1117,6 +1144,9 @@
       "Stay": [
         "Blijf"
       ],
+      "Stop generating result": [
+        "Stoppen met genereren resultaat"
+      ],
       "Strikethrough": [
         "Doorstrepen"
       ],
@@ -1155,10 +1185,6 @@
       ],
       "Trust": [
         "Vertrouwen"
-      ],
-      "Trust key": [
-        "Sleutel vertrouwen",
-        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1244,6 +1270,9 @@
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
+      "Use this": [
+        "Gebruik dit"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Gebruik uw muis om de grootte van het beeld te wijzigen. Als u uw toetsenbord gebruikt, kunt u de linker en rechter pijltjestoetsen gebruiken om de grootte te wijzigen."
       ],
@@ -1307,6 +1336,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Uw e-mailschrijfassistent"
       ],
       "Zoom in": [
         "Inzoomen"
@@ -1451,8 +1483,14 @@
       ]
     },
     "Assistant option": {
+      "Fast and secure": [
+        "Snel en veilig"
+      ],
       "No logs": [
         "Geen logboeken"
+      ],
+      "Run locally": [
+        "Lokaal uitvoeren"
       ]
     },
     "Attached ics file error": {
@@ -1967,6 +2005,11 @@
       ],
       "Cancel expiration": [
         "Vervaldatum annuleren"
+      ]
+    },
+    "Cancellation reminder": {
+      "Reactivate subscription": [
+        "Heractiveer abonnement"
       ]
     },
     "Checkout row": {
@@ -3283,6 +3326,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Stel een herstelmethode in om te voorkomen dat u de toegang tot uw account verliest."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "Voeg de schrijfassistent toe aan uw abonnement om deze te blijven gebruiken."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "Vraag toegang aan uw beheerder om de schrijfassistent te blijven gebruiken."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
@@ -3306,6 +3355,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
+      ],
+      "Use the writing assistant to:": [
+        "Gebruik de schrijfassistent om:"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "We hebben geen bekende trackers en tracking URL's in deze e-mail gevonden."
@@ -3861,6 +3913,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Bied ofwel een voornaam, een achternaam of een weergavenaam aan"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Selecteer een categorie en wat er fout liep met de gegenereerde tekst"
+      ],
+      "Please try generating the text again": [
+        "Probeer de tekst opnieuw te genereren."
+      ],
       "Port is required": [
         "Poort is vereist"
       ],
@@ -3878,6 +3936,12 @@
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Probleem bij het downloaden van de schrijfassistent. Probeer het opnieuw."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Probleem bij het laden van de schrijfassistent naar uw apparaat. Probeer het opnieuw."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Probleem bij het ontladen van gegevens die niet nodig zijn wanneer de schrijfassistent inactief is"
       ],
       "Process aborted": [
         "Proces afgebroken"
@@ -3946,6 +4010,9 @@
       "Tab closed": [
         "Tab gesloten"
       ],
+      "Thanks for the feedback!": [
+        "Bedankt voor de feedback!"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
         "Sommige bijlagen konden niet worden gedecodeerd.\nAls u de bijbehorende privé sleutel heeft, kunt u nog steeds\nde bestanden decoderen met een programma zoals GnuPG."
@@ -3979,6 +4046,9 @@
       ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "De schrijfassistent kan niet verder gaan met uw verzoek. Probeer een ander verzoek."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Er zijn te veel mappen op uw externe account. Pas de import aan om enkele mappen te verwijderen."
@@ -4945,11 +5015,29 @@
       "Contacts": [
         "Contacten"
       ],
+      "Hardware not compatible": [
+        "Hardware niet compatibel"
+      ],
+      "Report an issue": [
+        "Een probleem melden"
+      ],
+      "Resume downloading": [
+        "Download hervatten"
+      ],
       "Search": [
         "Zoeken"
       ],
       "Security Center": [
         "Beveiligingscentrum"
+      ],
+      "Set up the writing assistant": [
+        "De schrijfassistent instellen"
+      ],
+      "Tell us more": [
+        "Vertel ons meer"
+      ],
+      "Write faster with the writing assistant": [
+        "Schrijf sneller met de schrijfassistent"
       ]
     },
     "Hint": {
@@ -5678,6 +5766,9 @@
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Het wissen van browsergegevens deactiveert ook het zoeken naar berichteninhoud op dit toestel. Alle berichten zullen opnieuw moeten worden gedownload om erin te kunnen zoeken."
       ],
+      "Clears browser data (including downloaded messages, …)": [
+        "Wist browsergegevens (inclusief gedownloade berichten, …)"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -5794,6 +5885,9 @@
       "Downloading paused: ${ progressDisplay } GB": [
         "Downloaden gepauzeerd: ${ progressDisplay } GB"
       ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Schrijfassistent downloaden: ${ progressDisplay } GB"
+      ],
       "Draft": [
         "Concept"
       ],
@@ -5883,6 +5977,12 @@
       "Estimating time remaining...": [
         "Geschatte resterende tijd..."
       ],
+      "Expand selection": [
+        "Selectie uitbreiden"
+      ],
+      "Expand text": [
+        "Tekst uitvouwen"
+      ],
       "Expiration time": [
         "Vervaltijd"
       ],
@@ -5918,6 +6018,9 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Probeer voor meer zoekresultaten op dit trefwoord te zoeken in de inhoud van uw e-mailberichten."
+      ],
+      "Free for 14 days": [
+        "14 dagen gratis"
       ],
       "From": [
         "Afzender"
@@ -6008,6 +6111,9 @@
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
+      "Initializing…": [
+        "Initialiseren..."
+      ],
       "Insert image": [
         "Afbeelding invoegen"
       ],
@@ -6049,6 +6155,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Learn more about ${ PrivacyLink }": [
+        "Leer meer over ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -6285,6 +6394,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
+      "Please share what the issue is": [
+        "Deel wat het probleem is"
+      ],
       "Please share what you expected": [
         "Deel alstublieft wat u verwachtte"
       ],
@@ -6344,6 +6456,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Verwijder alle gegevens geassocieerd met deze app (inclusief gedownloade berichten, ...)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Door een bericht als phishing aan te merken, wordt het naar ProtonMail verzonden, zodat het mogelijk is de inhoud te analyseren en de spamfilters te verbeteren. Dit betekent dat we alle inhoud van dit betreffende bericht kunnen zien."
@@ -6587,6 +6702,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Deze uitnodiging is opgeslagen in een uitgeschakelde agenda."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Dit is bedoeld als schrijfhulp. Controleer de voorgestelde tekst op nauwkeurigheid. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
@@ -6936,6 +7054,9 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
+      "You can open only one writing assistant at a time": [
+        "U kunt slechts één schrijfassistent tegelijk openen"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
@@ -7065,6 +7186,12 @@
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
       ],
+      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
+        "Uw browser ondersteunt de schrijfassistent niet. Download de ${ MAIL_APP_NAME } desktop-app of probeer het uit te voeren op servers."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Uw browser ondersteunt de schrijfassistent niet. Probeer het uit te voeren op servers."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw ${ BRAND_NAME } account."
       ],
@@ -7079,6 +7206,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Uw hardware biedt geen ondersteuning voor het uitvoeren van de schrijfassistent. Probeer het uit te voeren op servers."
       ],
       "Your information was found on ${ displayedDate }": [
         "Uw informatie is gevonden op ${ displayedDate }"
@@ -7561,11 +7691,17 @@
       "Density": [
         "Dichtheid"
       ],
+      "Did not follow instructions": [
+        "Heeft de instructies niet gevolgd"
+      ],
       "Do you have any suggestions for our team?": [
         "Heeft u suggesties voor ons team?"
       ],
       "Don't ask again": [
         "Niet opnieuw vragen"
+      ],
+      "Don't like the style": [
+        "Vind de stijl niet leuk"
       ],
       "Don't show this again": [
         "Toon dit niet opnieuw"
@@ -7735,6 +7871,9 @@
       "No label found": [
         "Geen label gevonden"
       ],
+      "Not factually correct": [
+        "Niet feitelijk correct"
+      ],
       "Note": [
         "Notitie"
       ],
@@ -7891,6 +8030,9 @@
       "Undisclosed Recipients": [
         "Niet-openbaar gemaakte ontvangers"
       ],
+      "Unsafe or problematic": [
+        "Onveilig of problematisch"
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -7902,6 +8044,9 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
+      ],
+      "What is your main reason for canceling or downgrading?": [
+        "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
       ],
       "With attachment": [
         "Met bijlage"
@@ -8014,6 +8159,9 @@
       ]
     },
     "Link": {
+      "${ BRAND_NAME }'s industry-leading privacy": [
+        "${ BRAND_NAME }'s toonaangevende privacy"
+      ],
       "Add a gift code": [
         "Voeg een geschenkcode toe"
       ],
@@ -8702,6 +8850,9 @@
       "Centralized billing": [
         "Gecentraliseerde facturatie"
       ],
+      "Collaborate and share large files": [
+        "Samenwerken en grote bestanden delen"
+      ],
       "Contact groups": [
         "Contactgroepen"
       ],
@@ -8771,6 +8922,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Generate emails with only a prompt": [
+        "E-mails genereren met alleen een verzoek"
+      ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
@@ -8808,6 +8962,12 @@
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
+      "Password health": [
+        "Wachtwoordgezondheid"
+      ],
+      "Password manager to secure credentials": [
+        "Wachtwoordmanager om inloggegevens veilig te houden"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -8823,6 +8983,9 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
+      "Proofread and refine your texts": [
+        "Uw tekst herlezen en verfijnen"
+      ],
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
@@ -8830,11 +8993,17 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
       ],
+      "Reply to messages": [
+        "Antwoorden op berichten"
+      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
       "Router support": [
         "Routerondersteuning"
+      ],
+      "Save time emailing": [
+        "Bespaar tijd op e-mailen"
       ],
       "Schedule and snooze emails for any time": [
         "E-mails plannen en snoozen wanneer u wilt"
@@ -9349,6 +9518,12 @@
       ],
       "Senders blocked": [
         "Afzenders geblokkeerd"
+      ],
+      "The writing assistant is ready to use": [
+        "De schrijfassistent is klaar voor gebruik"
+      ],
+      "Trial started": [
+        "Proefperiode gestart"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9636,6 +9811,9 @@
       "First name": [
         "Voornaam"
       ],
+      "Generating...": [
+        "Genereren..."
+      ],
       "Gift code": [
         "Geschenkcode"
       ],
@@ -9672,6 +9850,12 @@
       "Please insert link first": [
         "Voeg eerst koppeling in"
       ],
+      "Please share what you expected": [
+        "Deel wat uw verwachting was"
+      ],
+      "Refining your text...": [
+        "Uw tekst verfijnen..."
+      ],
       "Search date, name, email address, or subject line": [
         "Zoek datum, naam, e-mailadres, of onderwerp"
       ],
@@ -9699,6 +9883,9 @@
       "Select state": [
         "Selecteer provincie"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ],
       "Start date": [
         "Begindatum"
       ],
@@ -9710,6 +9897,18 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "To": [
+        "Naar"
+      ],
+      "Try “Cancel my gym membership”": [
+        "Probeer \"Annuleer mijn sportschoollidmaatschap\""
+      ],
+      "Try “Invite Jane to my party”": [
+        "Probeer \"Nodig Jane uit voor mijn feest\""
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "Probeer “Schrijf een follow-up-e-mail naar een klant”"
       ],
       "Type a command…": [
         "Typ een opdracht..."
@@ -10746,6 +10945,21 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
       ],
+      "${ MaxCalendars } calendar per user": [
+        "${ MaxCalendars } agenda per gebruiker",
+        "${ MaxCalendars } agenda's per gebruiker"
+      ],
+      "${ maxDomainNames } custom email domain": [
+        "${ maxDomainNames } aangepast e-maildomein",
+        "${ maxDomainNames } aangepaste e-maildomeinen"
+      ],
+      "${ maxEmails } email address per user": [
+        "${ maxEmails } e-mailadres per gebruiker",
+        "${ maxEmails } e-mailadressen per gebruiker"
+      ],
+      "${ planMaxSpace } storage per user": [
+        "${ planMaxSpace } opslagruimte per gebruiker"
+      ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } opslagruimte"
       ],
@@ -10755,8 +10969,17 @@
       "10 email addresses": [
         "10 e-mailadressen"
       ],
+      "20 email addresses per user": [
+        "20 e-mailadressen per gebruiker"
+      ],
+      "25 calendars per user": [
+        "25 agenda's per gebruiker"
+      ],
       "6 users": [
         "6 gebruikers"
+      ],
+      "Automatic email forwarding": [
+        "Automatisch e-mail doorsturen"
       ],
       "Calendar sharing": [
         "Agenda-delen"
@@ -10767,8 +10990,14 @@
       "Early access to new apps and features": [
         "Vroegtijdige toegang nieuwe applicaties functies"
       ],
+      "Extra storage and users": [
+        "Extra opslag en gebruikers"
+      ],
       "Helping activists in Hong Kong": [
         "Activisten helpen in Hongkong"
+      ],
+      "Learn more": [
+        "Lees meer"
       ],
       "Learn more about our impact": [
         "Meer informatie over onze impact"
@@ -10782,14 +11011,29 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Productivity features": [
+        "Productiviteitsfuncties"
+      ],
       "Read the story": [
         "Lees het verhaal"
+      ],
+      "See your colleagues’ availability": [
+        "Bekijk de beschikbaarheid van uw collega's"
+      ],
+      "Stay secure and connected anywhere": [
+        "Blijf overal veilig en verbonden"
       ],
       "Unblocking internet access in Iran": [
         "Ontgrendelen van internettoegang in Iran"
       ],
+      "Unlimited folders and labels": [
+        "Onbeperkte mappen en labels"
+      ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Users won’t be able to send emails": [
+        "Gebruikers zullen geen e-mails kunnen verzenden"
       ],
       "Version history": [
         "Versiegeschiedenis"
@@ -12037,6 +12281,9 @@
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
+      ],
+      "Your free trial has ended": [
+        "Uw gratis proefperiode is afgelopen"
       ]
     },
     "Title subscription": {
