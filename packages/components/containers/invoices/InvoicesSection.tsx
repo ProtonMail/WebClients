@@ -56,7 +56,7 @@ const InvoiceGroup = ({ invoices, loading, error, page, requestInvoices }: Invoi
 
     return (
         <>
-            {showError && c('Error').t`Coudn't load invoices. Please try again later.`}
+            {showError && c('Error').t`Couldn't load invoices. Please try again later.`}
             {isEmpty && c('Info').t`You have no invoices.`}
             {showContent && (
                 <div style={{ overflow: 'auto' }}>
