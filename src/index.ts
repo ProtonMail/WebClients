@@ -11,7 +11,7 @@ import { isLinux, isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { isHostAllowed } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
-import { getMainWindow, viewCreationAppStartup } from "./utils/view/viewManagement";
+import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
@@ -106,7 +106,7 @@ import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
                 cache: false,
             });
 
-            connectNetLogger(secureSession);
+            connectNetLogger(secureSession, getWebContentsViewName);
 
             app.on("activate", () => {
                 if (isMac) {
