@@ -70,6 +70,7 @@ const CreditsModal = (props: ModalProps) => {
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
         currency,
+        billingPlatform: subscription?.BillingPlatform,
         chargebeeEnabled: onSessionMigrationChargebeeStatus(user, subscription),
         onChargeable: (operations) => {
             const run = async () => {

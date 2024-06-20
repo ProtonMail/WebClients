@@ -38,16 +38,22 @@ export function canUseChargebee(chargebeeEnabled: ChargebeeEnabled): boolean {
     );
 }
 
+export function isOnSessionMigration(
+    chargebeeUser: ChargebeeEnabled,
+    billingPlatform: BillingPlatform | undefined
+): boolean {
+    return chargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED && billingPlatform === BillingPlatform.Proton;
+}
+
 export function onSessionMigrationChargebeeStatus(
     user: User,
     subscription: Subscription | undefined
 ): ChargebeeEnabled {
-    return user.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED &&
-        subscription?.BillingPlatform === BillingPlatform.Proton
+    return isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform)
         ? ChargebeeEnabled.INHOUSE_FORCED
         : user.ChargebeeUser;
 }
 
 export function onSessionMigrationPaymentsVersion(user: User, subscription: Subscription | undefined): PaymentsVersion {
-    return onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.INHOUSE_FORCED ? 'v4' : 'v5';
+    return isOnSessionMigration(user.ChargebeeUser, subscription?.BillingPlatform) ? 'v4' : 'v5';
 }

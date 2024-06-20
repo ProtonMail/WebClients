@@ -387,10 +387,16 @@ export type ChargeableV5PaymentParameters = ChargeablePaymentParameters & {
 export type ChargebeeFetchedPaymentToken = (ChargeableV5PaymentToken | NonChargeableV5PaymentToken) &
     (AuthorizedV5PaymentToken | NonAuthorizedV5PaymentToken);
 
+export type CheckWithAutomaticOptions = {
+    forcedVersion: PaymentsVersion;
+    reason: string;
+};
+
 export interface PaymentsApi {
     checkWithAutomaticVersion: (
         data: CheckSubscriptionData,
-        signal?: AbortSignal
+        signal?: AbortSignal,
+        options?: CheckWithAutomaticOptions
     ) => Promise<SubscriptionCheckResponse>;
     statusExtendedAutomatic: () => Promise<PaymentMethodStatusExtended>;
     statusExtended: (version: PaymentsVersion) => Promise<PaymentMethodStatusExtended>;
