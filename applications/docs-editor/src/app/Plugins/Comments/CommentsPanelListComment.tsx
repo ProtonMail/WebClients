@@ -8,9 +8,7 @@ import {
   useConfirmActionModal,
 } from '@proton/components/components'
 import clsx from '@proton/utils/clsx'
-
 import { CommentTime } from './CommentTime'
-import { CommentViewer } from './CommentEditor'
 import { CommentInterface, CommentThreadInterface, CommentThreadState } from '@proton/docs-shared'
 import { Button } from '@proton/atoms'
 import { CommentsComposer } from './CommentsComposer'
@@ -20,6 +18,7 @@ import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useCollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import { useApplication } from '../../ApplicationProvider'
+import { CommentViewer } from './CommentViewer'
 
 export function CommentsPanelListComment({
   comment,

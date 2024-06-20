@@ -1,3 +1,4 @@
+import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
 import { WebsocketCallbacks } from '../../Realtime/WebsocketCallbacks'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
@@ -32,7 +33,6 @@ import {
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { DocumentUpdateBuffer } from './Buffer/DocumentUpdateBuffer'
 import { GenerateUUID } from '../../Util/GenerateUuid'
@@ -568,7 +568,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    const content = new Uint8Array(stringToUint8Array(JSON.stringify({ authorAddress: keys.userOwnAddress })))
+    const content = stringToUtf8Array(JSON.stringify({ authorAddress: keys.userOwnAddress }))
 
     void this.sendEventMessage(
       document,
