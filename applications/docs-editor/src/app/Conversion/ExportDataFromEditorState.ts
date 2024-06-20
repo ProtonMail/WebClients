@@ -4,12 +4,12 @@ import { $nodesOfType, SerializedEditorState } from 'lexical'
 import { AllNodes } from '../AllNodes'
 import { sendErrorMessage } from '../Utils/errorMessage'
 import { generatePlaintextFromEditor } from './GeneratePlaintextFromEditor'
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { generateMarkdownFromEditor } from './GenerateMarkdownFromEditor'
 import { $unwrapCommentThreadMarkNode, CommentThreadMarkNode } from '../Plugins/Comments/CommentThreadMarkNode'
 import { generateHTMLFromEditor } from './GenerateHTMLFromEditor'
 import { generateDocxFromEditor } from './GenerateDocxFromEditor/GenerateDocxFromEditor'
 import { Packer } from 'docx'
+import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 
 export async function exportDataFromEditorState(
   editorState: SerializedEditorState,
@@ -42,17 +42,17 @@ export async function exportDataFromEditorState(
 
   if (format === 'txt') {
     const plaintext = generatePlaintextFromEditor(editor)
-    return stringToUint8Array(plaintext)
+    return stringToUtf8Array(plaintext)
   }
 
   if (format === 'md') {
     const markdown = generateMarkdownFromEditor(editor)
-    return stringToUint8Array(markdown)
+    return stringToUtf8Array(markdown)
   }
 
   if (format === 'html') {
     const html = generateHTMLFromEditor(editor)
-    return stringToUint8Array(html)
+    return stringToUtf8Array(html)
   }
 
   if (format === 'docx') {

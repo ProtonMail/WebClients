@@ -1,3 +1,4 @@
+import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { VERIFICATION_STATUS } from '@proton/crypto'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
@@ -6,9 +7,9 @@ import { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
 import { CommentResponseDto } from '../Api/Comments/Types'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import { base64StringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
@@ -52,7 +53,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         dto.CommentID,
         new ServerTime(dto.CreateTime),
         new ServerTime(dto.ModifyTime),
-        uint8ArrayToString(decrypted.getValue().content),
+        utf8ArrayToString(decrypted.getValue().content),
         dto.ParentCommentID,
         dto.Author,
         [],

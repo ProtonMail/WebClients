@@ -1,4 +1,3 @@
-import { LexicalComposer } from '@lexical/react/LexicalComposer'
 import DocumentEditorTheme from '../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
@@ -20,6 +19,7 @@ import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin'
 import clsx from '@proton/utils/clsx'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
 
 type Props = {
   initialContent: string | undefined
@@ -84,7 +84,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
     }))
 
     return (
-      <LexicalComposer
+      <SafeLexicalComposer
         initialConfig={{
           namespace: 'CommentEditor',
           nodes: [],
@@ -116,30 +116,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
         {autoFocus && <AutoFocusPlugin />}
         <HistoryPlugin />
         <ClearEditorPlugin />
-      </LexicalComposer>
+      </SafeLexicalComposer>
     )
   },
 )
-
-export const CommentViewer = ({ content, className }: { content: string; className: string }) => {
-  return (
-    <LexicalComposer
-      initialConfig={{
-        namespace: 'CommentViewer',
-        nodes: [],
-        onError: (error: Error) => {
-          sendErrorMessage(error)
-        },
-        theme: DocumentEditorTheme,
-        editorState: content,
-        editable: false,
-      }}
-    >
-      <RichTextPlugin
-        contentEditable={<ContentEditable className={className} readOnly />}
-        placeholder={null}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
-    </LexicalComposer>
-  )
-}

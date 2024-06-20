@@ -1,3 +1,4 @@
+import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import {
   CommentsMessageType,
   AnyCommentMessageData,
@@ -9,7 +10,6 @@ import {
   BeganTypingData,
   StoppedTypingData,
 } from '@proton/docs-shared'
-import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding'
 import { Comment, CommentThread } from '../Models'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { LiveComments } from '../Realtime/LiveComments/LiveComments'
@@ -23,7 +23,7 @@ import { Result } from '../Domain/Result/Result'
 export class HandleRealtimeCommentsEvent implements SyncUseCaseInterface<void> {
   execute(localCommentsState: LocalCommentsState, liveComments: LiveComments, content: Uint8Array): Result<void> {
     try {
-      const jsonString = uint8ArrayToString(content)
+      const jsonString = utf8ArrayToString(content)
       const { type, data } = JSON.parse(jsonString) as { type: CommentsMessageType; data: AnyCommentMessageData }
       switch (type) {
         case CommentsMessageType.AddThread: {
