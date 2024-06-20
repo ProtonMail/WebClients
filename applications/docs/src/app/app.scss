@@ -1,3 +1,4 @@
+/* stylelint-disable */
 @import '~@proton/styles/scss/proton-docs';
 
 @tailwind base;
@@ -57,5 +58,43 @@ body {
 		& > svg {
 			display: none;
 		}
+	}
+}
+
+/*
+* This is somewhat hacky,
+* but this is the best solution we found so far for GA to have the Cmd+P print the iframe and not be blank
+* This will work on modern browsers only (baseline was Dec 2023 with Firefox, 2022 for all Chromium based browsers)
+* https://developer.mozilla.org/en-US/docs/Web/CSS/:has
+* TODO:[DRVDOC-560] Investigate better solutions for printing without CSS hacks
+*/
+@media print {
+	body:has(#editor-frame),
+	body:has(#editor-frame) * {
+		display: block !important;
+		visibility: visible !important;
+		overflow: visible !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		border: none !important;
+		background: none !important;
+		position: static !important;
+	}
+
+	body *:not(:has(#editor-frame)) {
+		display: none !important;
+	}
+
+	body {
+		position: relative !important;
+		height: auto !important;
+		min-height: 100vh !important;
+		overflow: visible !important;
+	}
+
+	#editor-frame#editor-frame#editor-frame {
+		min-height: var(--print-min-height, 100vh) !important;
+		display: block !important;
+		position: absolute !important;
 	}
 }
