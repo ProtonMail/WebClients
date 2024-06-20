@@ -62,8 +62,8 @@ export const getExtraResource = () => {
     }
 };
 
-export const isProdEnv = (config: Config) => {
-    return config.url.account.endsWith("proton.me");
+export const isProdEnv = () => {
+    return getConfig().url.account.endsWith("proton.me");
 };
 
 const transportSecuirityException = {

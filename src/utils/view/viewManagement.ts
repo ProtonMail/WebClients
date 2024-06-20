@@ -12,10 +12,7 @@ import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL } from "../urls/urlTests";
 import { mainLogger, viewLogger } from "../log";
 
-const config = getConfig();
-const settings = getSettings();
-
-type ViewID = keyof (typeof config)["url"];
+type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
 let currentViewID: ViewID;
 
@@ -90,6 +87,7 @@ const createViews = (session: Session) => {
     browserViewMap.calendar.setAutoResize({ width: true, height: true });
     browserViewMap.account.setAutoResize({ width: true, height: true });
 
+    const config = getConfig();
     loadURL("mail", config.url.mail);
     loadURL("calendar", config.url.calendar);
 };
@@ -261,18 +259,18 @@ export async function resetHiddenViews() {
 }
 
 export async function showEndOfTrial() {
-    const trialEndURL = `${config.url.account}/trial-ended`;
+    const trialEndURL = `${getConfig().url.account}/trial-ended`;
     await loadURL("account", trialEndURL);
     showView("account");
     resetHiddenViews();
 }
 
 export function getSpellCheckStatus() {
-    return mainWindow?.webContents?.session?.spellCheckerEnabled ?? settings.spellChecker;
+    return mainWindow?.webContents?.session?.spellCheckerEnabled ?? getSettings().spellChecker;
 }
 
 export function toggleSpellCheck(enabled: boolean) {
-    saveSettings({ ...settings, spellChecker: enabled });
+    saveSettings({ ...getSettings(), spellChecker: enabled });
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
 }
 

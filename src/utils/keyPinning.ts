@@ -1,15 +1,13 @@
 import crypto from "crypto";
 import { Request, app } from "electron";
 import { CERT_PROTON_ME } from "../constants";
-import { getConfig, isProdEnv } from "./config";
+import { isProdEnv } from "./config";
 import { isHostAllowed } from "./urls/urlTests";
-
-const config = getConfig();
 
 export const checkKeys = (request: Request) => {
     if (isHostAllowed(request.hostname)) {
         // We dont do any verification for dev and testing environments
-        if (!app.isPackaged || !isProdEnv(config)) {
+        if (!app.isPackaged || !isProdEnv()) {
             return 0;
         }
 
@@ -44,7 +42,7 @@ export function verifyDownloadCertificate(request: Request, callback: (code: Ver
         }
 
         // We dont do any verification for dev and testing environments
-        if (!app.isPackaged || !isProdEnv(config)) {
+        if (!app.isPackaged || !isProdEnv()) {
             return VerificationResult.Accept;
         }
 

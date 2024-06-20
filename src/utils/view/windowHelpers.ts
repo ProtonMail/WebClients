@@ -6,10 +6,9 @@ import { getConfig, isProdEnv } from "../config";
 import { isLinux, isMac, isWindows } from "../helpers";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
-const config = getConfig();
 
 export const areDevToolsAvailable = () => {
-    return !app.isPackaged || !isProdEnv(config);
+    return !app.isPackaged || !isProdEnv();
 };
 
 const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
@@ -33,7 +32,7 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
     const settings = getSettings();
 
     return {
-        title: config.appTitle,
+        title: getConfig().appTitle,
         icon: join(app.getAppPath(), "assets/icon.png"),
         x,
         y,
