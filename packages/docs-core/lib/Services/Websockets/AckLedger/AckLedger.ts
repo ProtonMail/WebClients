@@ -1,6 +1,7 @@
 import { LoggerInterface } from '@proton/utils/logs'
 import { ClientMessageWithDocumentUpdates, DocumentUpdate, ServerMessageWithMessageAcks } from '@proton/docs-proto'
 import { AckLedgerInterface } from './AckLedgerInterface'
+import metrics from '@proton/metrics'
 
 const MAX_TIME_TO_WAIT_FOR_ACK = 10_000
 
@@ -61,8 +62,14 @@ export class AckLedger implements AckLedgerInterface {
       const timeSincePosted = now.getTime() - entry.postedAt.getTime()
       if (timeSincePosted > this.thresholdForError()) {
         erroredMessages.push(entry)
+        metrics.docs_document_updates_ack_error_total.increment({
+          type: 'error_threshold',
+        })
       } else if (timeSincePosted > this.thresholdForConcern()) {
         concerningMessages.push(entry)
+        metrics.docs_document_updates_ack_error_total.increment({
+          type: 'concern_threshold',
+        })
       }
     }
 
