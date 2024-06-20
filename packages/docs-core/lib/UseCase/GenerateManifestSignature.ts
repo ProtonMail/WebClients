@@ -1,8 +1,8 @@
+import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { Commit } from '@proton/docs-proto'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 import { DriveCompat, NodeMeta } from '@proton/drive-store'
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { getErrorString } from '../Util/GetErrorString'
 
 type ReturnValue = {
@@ -22,12 +22,12 @@ export class GenerateManifestSignature implements UseCaseInterface<ReturnValue> 
       const { manifestSignature, signatureAddress } = await this.driveCompat.signDocumentManifest(lookup, data)
       const { signature: rawSignature, hash: contentHash } = await this.driveCompat.signDocumentData(lookup, data)
 
-      const encodedManifestSignature = stringToUint8Array(manifestSignature)
+      const encodedManifestSignature = stringToUtf8Array(manifestSignature)
 
       return Result.ok({
         manifestSignature: encodedManifestSignature,
         signatureAddress,
-        encSignature: stringToUint8Array(rawSignature),
+        encSignature: stringToUtf8Array(rawSignature),
         contentHash,
       })
     } catch (error) {

@@ -1,3 +1,4 @@
+import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { Observable } from 'lib0/observable'
 import { Doc } from 'yjs'
 import * as encoding from 'lib0/encoding'
@@ -11,7 +12,6 @@ import { DocStateCallbacks } from './DocStateCallbacks'
 import { RtsMessagePayload } from './RtsMessagePayload'
 import { EventTypeEnum } from '@proton/docs-proto'
 import { wrapRawYjsMessage } from './wrapRawYjsMessage'
-import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { BroadcastSource } from '../Bridge/BroadcastSource'
 
 export enum DocUpdateOrigin {
@@ -63,7 +63,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   public performOpeningCeremony(): void {
     const message: RtsMessagePayload = {
       type: { wrapper: 'events', eventType: EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState },
-      content: stringToUint8Array(JSON.stringify(true)),
+      content: stringToUtf8Array(JSON.stringify(true)),
     }
 
     void this.callbacks.docStateRequestsPropagationOfUpdate(message, BroadcastSource.AwarenessWebSocketOpen)
