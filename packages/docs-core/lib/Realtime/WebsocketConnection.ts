@@ -19,7 +19,7 @@ const DebugDisableSockets = false
 const HeartbeatEnabled: false = false
 
 export const DebugConnection = {
-  enabled: isLocalEnvironment() && true,
+  enabled: isLocalEnvironment() && false,
   url: 'ws://localhost:4000/websockets',
 }
 
