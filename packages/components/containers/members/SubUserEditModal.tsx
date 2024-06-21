@@ -13,14 +13,7 @@ import { Button, Card } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    APPS,
-    GIGA,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-    MEMBER_SUBSCRIBER,
-    NAME_PLACEHOLDER,
-} from '@proton/shared/lib/constants';
+import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { EnhancedMember } from '@proton/shared/lib/interfaces';
@@ -37,7 +30,6 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalProps,
     Prompt,
-    SettingsLink,
     Toggle,
     Tooltip,
     useFormErrors,
@@ -53,6 +45,7 @@ import {
 } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
+import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import { adminTooltipText } from './constants';
 
@@ -63,6 +56,7 @@ interface Props extends ModalProps<'form'> {
     allowPrivateMemberConfiguration?: boolean;
     allowAIAssistantConfiguration?: boolean;
     showAddressesSection?: boolean;
+    aiSeatsRemaining: boolean;
 }
 
 const SubUserEditModal = ({
@@ -72,6 +66,7 @@ const SubUserEditModal = ({
     allowPrivateMemberConfiguration,
     allowAIAssistantConfiguration,
     showAddressesSection,
+    aiSeatsRemaining,
     ...rest
 }: Props) => {
     const [organization] = useOrganization();
@@ -87,9 +82,7 @@ const SubUserEditModal = ({
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     // We want to keep AI enabled if all seats are taken but the user already has a seat
-    const disableAI = !allowAIAssistantConfiguration && !member.NumAI;
-    const { MaxAI = 0, UsedAI = 0 } = organization || {};
-    const assistantSeatRemaining = MaxAI > UsedAI;
+    const disableAI = !organization?.MaxAI || (!aiSeatsRemaining && !member.NumAI);
 
     useEffect(() => {
         dispatch(getMemberAddresses({ member })).catch(noop);
@@ -353,13 +346,7 @@ const SubUserEditModal = ({
                             <label className="text-semibold" htmlFor="ai-assistant-toggle">
                                 {c('Info').t`Writing assistant`}
                             </label>
-                            {!assistantSeatRemaining && (
-                                <SettingsLink
-                                    target="_blank"
-                                    app={APPS.PROTONMAIL}
-                                    path="/mail/dashboard#assistant-toggle"
-                                >{c('Link').t`Add to your subscription`}</SettingsLink>
-                            )}
+                            {!aiSeatsRemaining && <AssistantUpdateSubscriptionButton />}
                         </div>
                     )}
 

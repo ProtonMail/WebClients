@@ -9,9 +9,11 @@ import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 interface Props {
     modalProps: ModalProps;
+    onResolve?: () => void;
+    onReject?: () => void;
 }
 
-const AssistantIncompatibleHardwareModal = ({ modalProps }: Props) => {
+const AssistantIncompatibleHardwareModal = ({ modalProps, onReject, onResolve }: Props) => {
     const { onClose } = modalProps;
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -20,6 +22,12 @@ const AssistantIncompatibleHardwareModal = ({ modalProps }: Props) => {
     const handleUpdateSetting = async () => {
         await withLoading(api(updateAIAssistant(AI_ASSISTANT_ACCESS.SERVER_ONLY)));
         await call();
+        onResolve?.();
+        onClose?.();
+    };
+
+    const handleClose = () => {
+        onReject?.();
         onClose?.();
     };
 
@@ -35,12 +43,16 @@ const AssistantIncompatibleHardwareModal = ({ modalProps }: Props) => {
             buttons={[
                 <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
                     .t`Run on servers`}</Button>,
-                <Button onClick={onClose}>{c('Action').t`Got it`}</Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...modalProps}
+            onClose={handleClose}
         >
-            <span>{modalText}</span>
-            <Href className="ml-2" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant#local-or-server')}>
+            <span className="mr-1">{modalText}</span>
+            <Href
+                className="inline-block"
+                href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant#local-or-server')}
+            >
                 {c('Info').t`Learn more`}
             </Href>
         </Prompt>

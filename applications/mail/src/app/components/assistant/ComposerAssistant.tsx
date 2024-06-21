@@ -1,4 +1,4 @@
-import { RefObject, useMemo, useRef, useState } from 'react';
+import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -22,6 +22,7 @@ import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposer
 
 import useComposerAssistantPosition from '../../hooks/assistant/useComposerAssistantPosition';
 import AssitantFeedbackModal from './modals/AssistantFeedbackModal';
+import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';
 
 import './ComposerAssistant.scss';
 
@@ -59,6 +60,9 @@ const ComposerAssistant = ({
         inputSelectedText ? 'refineSelectedText' : undefined
     );
     const [submittedPrompt, setSubmittedPrompt] = useState('');
+    const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+    const inputContainerRef = useRef<HTMLDivElement>(null);
+    const { assistantRefManager } = useComposerAssistantProvider();
 
     const { sendUseAnswerAssistantReport, sendNotUseAnswerAssistantReport } = useAssistantTelemetry();
 
@@ -98,7 +102,12 @@ const ComposerAssistant = ({
         handleMouseDown,
         handleCloseRefinePopover,
         handleSelectionChange,
-    } = useComposerAssistantSelectedText({ assistantResultRef, inputSelectedText, onResetRequest: handleResetRequest });
+    } = useComposerAssistantSelectedText({
+        assistantID,
+        assistantResultRef,
+        inputSelectedText,
+        onResetRequest: handleResetRequest,
+    });
 
     const hasAssistantError = useMemo(() => {
         return !!error;
@@ -127,7 +136,7 @@ const ComposerAssistant = ({
             sendUseAnswerAssistantReport();
         }
 
-        // TODO: To remove before merge
+        // TODO: replace this later
         if (replacementStyle === undefined) {
             throw new Error('replacementStyle is undefined');
         }
@@ -239,6 +248,14 @@ const ComposerAssistant = ({
         >{c('Link').t`Learn more`}</Href>
     );
 
+    useEffect(() => {
+        assistantRefManager.container.set(assistantID, inputContainerRef);
+
+        return () => {
+            assistantRefManager.container.delete(assistantID);
+        };
+    }, []);
+
     return (
         <div
             className={clsx([
@@ -270,7 +287,10 @@ const ComposerAssistant = ({
                     </div>
                 )}
 
-                <div className="relative shrink-0 flex flex-row flex-nowrap flex-column md:flex-row items-start my-0 w-full">
+                <div
+                    className="relative shrink-0 flex flex-row flex-nowrap flex-column md:flex-row items-start my-0 w-full"
+                    ref={inputContainerRef}
+                >
                     <ComposerAssistantInput
                         assistantID={assistantID}
                         assistantResult={result}
@@ -285,7 +305,10 @@ const ComposerAssistant = ({
                         onContentChange={() => expandAssistant()}
                         onGenerateResult={handleGenerateResult}
                         onRefine={handleRefineEditorContent}
-                        onResetSelection={() => setSelectedText('')}
+                        onResetSelection={() => {
+                            setFeedbackSubmitted(false);
+                            setSelectedText('');
+                        }}
                         setInnerModal={setInnerModal}
                     />
                 </div>
@@ -338,6 +361,8 @@ const ComposerAssistant = ({
                                 disabled={!result || isGeneratingResult}
                                 result={result}
                                 prompt={submittedPrompt}
+                                feedbackSubmitted={feedbackSubmitted}
+                                setFeedbackSubmitted={setFeedbackSubmitted}
                             />
                             <p className="color-weak mt-2 mb-0 text-sm pr-4 flex-1">{
                                 // translator: full sentence is: This is intended as a writing aid. Check suggested text for accuracy. <Learn more>

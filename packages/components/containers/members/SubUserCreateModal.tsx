@@ -14,15 +14,7 @@ import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    APPS,
-    APP_NAMES,
-    BRAND_NAME,
-    GIGA,
-    MAIL_APP_NAME,
-    MEMBER_ROLE,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, GIGA, MAIL_APP_NAME, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -49,7 +41,6 @@ import {
     Option,
     PasswordInputTwo,
     SelectTwo,
-    SettingsLink,
     Toggle,
     Tooltip,
     useFormErrors,
@@ -65,6 +56,7 @@ import {
 } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
+import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
@@ -91,6 +83,7 @@ interface Props extends ModalProps {
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
     disableAddressValidation?: boolean;
+    aiSeatsRemaining: boolean;
 }
 
 const SubUserCreateModal = ({
@@ -110,6 +103,7 @@ const SubUserCreateModal = ({
     disableStorageValidation,
     disableDomainValidation,
     disableAddressValidation,
+    aiSeatsRemaining,
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -123,8 +117,6 @@ const SubUserCreateModal = ({
     const errorHandler = useErrorHandler();
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
-    const { MaxAI = 0, UsedAI = 0 } = organization || {};
-    const assistantSeatRemaining = MaxAI > UsedAI;
 
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
@@ -145,8 +137,8 @@ const SubUserCreateModal = ({
         password: '',
         confirm: '',
         address: '',
-        numAI: assistantSeatRemaining && isVisionary, // Visionary users should have the toggle set to true by default
         invitationEmail: '',
+        numAI: aiSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
         domain: useEmail ? null : verifiedDomains[0]?.DomainName ?? null,
         vpn:
             organization &&
@@ -486,19 +478,13 @@ const SubUserCreateModal = ({
                         <Toggle
                             id="ai-assistant-toggle"
                             checked={model.numAI}
-                            disabled={!assistantSeatRemaining}
+                            disabled={!aiSeatsRemaining}
                             onChange={({ target }) => handleChange('numAI')(target.checked)}
                         />
                         <label className="text-semibold" htmlFor="ai-assistant-toggle">
                             {c('user_modal').t`Writing assistant`}
                         </label>
-                        {!assistantSeatRemaining && (
-                            <SettingsLink
-                                target="_blank"
-                                app={APPS.PROTONMAIL}
-                                path="/mail/dashboard#assistant-toggle"
-                            >{c('Link').t`Add to your subscription`}</SettingsLink>
-                        )}
+                        {!aiSeatsRemaining && <AssistantUpdateSubscriptionButton />}
                     </div>
                 )}
 

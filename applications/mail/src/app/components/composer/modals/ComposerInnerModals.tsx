@@ -29,6 +29,7 @@ interface Props {
     handleSendAnyway: () => void;
     handleCancelSend: (error: string) => void;
     attachmentsFoundKeyword: string;
+    composerID: string;
 }
 
 const ComposerInnerModals = ({
@@ -44,6 +45,7 @@ const ComposerInnerModals = ({
     handleSendAnyway,
     handleCancelSend,
     attachmentsFoundKeyword,
+    composerID,
 }: Props) => {
     return (
         <>
@@ -119,7 +121,7 @@ const ComposerInnerModals = ({
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.AssistantSettings && (
-                <ComposerAssistantSettingModal onClose={handleCloseInnerModal} />
+                <ComposerAssistantSettingModal onClose={handleCloseInnerModal} composerID={composerID} />
             )}
         </>
     );
