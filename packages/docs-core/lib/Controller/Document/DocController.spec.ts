@@ -321,6 +321,17 @@ describe('DocController', () => {
       })
     })
 
+    it('should not reprocess if already processing', async () => {
+      controller._loadCommit.execute = jest.fn().mockReturnValue(Result.ok({}))
+      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.ok({}))
+
+      controller.isRefetchingStaleCommit = true
+
+      await controller.refetchCommitDueToStaleContents('rts-disconnect')
+
+      expect(controller._loadCommit.execute).not.toHaveBeenCalled()
+    })
+
     it('should re-set the initial commit if commit is successfully resolved', async () => {
       controller._loadCommit.execute = jest.fn().mockReturnValue(
         Result.ok({
