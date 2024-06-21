@@ -79,7 +79,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     {isDocsEnabled && (
                         <CreateDocumentButton
                             onClick={() => {
-                                createDocument({
+                                void createDocument({
                                     shareId: activeFolder.shareId,
                                     parentLinkId: activeFolder.linkId,
                                 });
