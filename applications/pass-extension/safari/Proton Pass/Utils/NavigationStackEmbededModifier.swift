@@ -23,7 +23,7 @@ import SwiftUI
 
 struct NavigationStackEmbededModifier: ViewModifier {
     func body(content: Content) -> some View {
-        if #available(macCatalyst 16.0, *) {
+        if #available(iOS 16.0, *) {
             NavigationStack {
                 content
             }
