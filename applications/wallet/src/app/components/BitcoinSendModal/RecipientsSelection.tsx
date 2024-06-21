@@ -20,6 +20,7 @@ import { useBitcoinNetwork } from '../../store/hooks';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { RecipientDetailsModal } from './RecipientDetailsModal';
 import { WalletNotFoundErrorDropdown } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
 import { WalletNotFoundErrorModal } from './WalletNotFoundError/WalletNotFoundErrorModal';
 
@@ -37,6 +38,11 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
     const { contactEmails, contactEmailsMap } = useContactEmailsCache();
     const [loadingBitcoinAddressLookup, withLoadingBitcoinAddressLookup] = useLoading();
     const [walletNotFoundModal, setWalletNotFoundModal] = useModalStateWithData<{ email: string }>();
+    const [recipientDetailsModal, setRecipientDetailsModal] = useModalStateWithData<{
+        recipient: Recipient;
+        btcAddress: string;
+        index: number;
+    }>();
     const [network] = useBitcoinNetwork();
     const walletApi = useWalletApiClients();
     const api = useApi();
@@ -161,6 +167,11 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     fetchedEmailListItemRightNode={({ email, error }) =>
                         error ? <WalletNotFoundErrorDropdown email={email} /> : null
                     }
+                    onClickRecipient={(recipient, btcAddress, index) => {
+                        if (btcAddress.value) {
+                            setRecipientDetailsModal({ recipient, btcAddress: btcAddress.value, index });
+                        }
+                    }}
                     onAddRecipients={(recipients: Recipient[]) => {
                         void withLoadingBitcoinAddressLookup(handleAddRecipients(recipients));
                     }}
@@ -182,6 +193,10 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     </div>
                 ) : null}
             </div>
+
+            {recipientDetailsModal.data && (
+                <RecipientDetailsModal {...recipientDetailsModal.data} {...recipientDetailsModal} />
+            )}
 
             {walletNotFoundModal.data && (
                 <WalletNotFoundErrorModal email={walletNotFoundModal.data.email} {...walletNotFoundModal} />
