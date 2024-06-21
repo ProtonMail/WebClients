@@ -47,14 +47,14 @@ export class MessageAck extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.uuid.length) {writer.writeString(1, this.uuid)}
-    if (!w) {return writer.getResultBuffer()}
+    if (this.uuid.length) writer.writeString(1, this.uuid)
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MessageAck {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new MessageAck()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           message.uuid = reader.readString()
