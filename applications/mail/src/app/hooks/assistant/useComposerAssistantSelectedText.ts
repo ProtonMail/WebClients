@@ -1,14 +1,24 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 
+import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
+
 interface Props {
     assistantResultRef: RefObject<HTMLDivElement>;
     inputSelectedText?: string;
     onResetRequest?: () => void;
+    assistantID: string;
 }
-const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedText, onResetRequest }: Props) => {
+const useComposerAssistantSelectedText = ({
+    assistantID,
+    assistantResultRef,
+    inputSelectedText,
+    onResetRequest,
+}: Props) => {
     // Selected text in the composer or assistant result that the user might want to refine
     const [selectedText, setSelectedText] = useState(inputSelectedText);
     const prevSelectionRef = useRef<string>('');
+
+    const { assistantRefManager } = useComposerAssistantProvider();
 
     const [displayRefinePopover, setDisplayRefinePopover] = useState<boolean>(false);
 
@@ -42,9 +52,15 @@ const useComposerAssistantSelectedText = ({ assistantResultRef, inputSelectedTex
     // Listen mouse up at document lvl to handle the case when the user clicks
     // outside the assistant
     useEffect(() => {
-        const handleMouseUp = () => {
+        const handleMouseUp = (e: any) => {
+            const inputContainerElement = assistantRefManager.container.get(assistantID);
+
             if (mouseDownRef.current) {
                 mouseDownRef.current = false;
+                // Do not reset the selection if user clicks in the input container
+                if (inputContainerElement.current?.contains(e.target)) {
+                    return;
+                }
                 handleSelectionChange();
             }
         };

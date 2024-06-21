@@ -1,68 +1,68 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms/index';
-import { ModalProps, Prompt, useApi, useEventManager, useSettingsLink } from '@proton/components/index';
+import { ModalProps, Prompt, useApi, useEventManager } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
-import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 interface Props {
     modalProps: ModalProps;
+    onResolve?: () => void;
+    onReject?: () => void;
 }
 
-const AssistantIncompatibleBrowserModal = ({ modalProps }: Props) => {
+/**
+ * TODO: Revert this later
+ * We currently have an issue on the desktop app where it's not possible to run the assistant locally,
+ * because "shader-f16" is missing.
+ * We need to remove desktop app mentions from this modal for the release, and put them back once we have a fix
+ */
+const AssistantIncompatibleBrowserModal = ({ modalProps, onReject, onResolve }: Props) => {
     const { onClose } = modalProps;
-    const goToSettings = useSettingsLink();
+    // const goToSettings = useSettingsLink();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const api = useApi();
 
-    const handleDownloadDesktopApp = () => {
-        goToSettings('/get-the-apps#proton-mail-desktop-apps', APPS.PROTONMAIL, true);
-
+    const handleRejectThenClose = () => {
+        onReject?.();
         onClose?.();
     };
 
     const handleUpdateSetting = async () => {
         await withLoading(api(updateAIAssistant(AI_ASSISTANT_ACCESS.SERVER_ONLY)));
         await call();
+        onResolve?.();
         onClose?.();
     };
 
-    const modalText = isElectronMail
-        ? /* translator:
-           * Full string for reference: Your browser doesn’t support the writing assistant. Try running it on Proton servers.
-           */
-          c('Info').t`Your browser doesn't support the writing assistant. Try running it on servers.`
-        : /* translator:
-           * Full string for reference: Your browser doesn’t support the writing assistant. Download the Proton Mail desktop app or try running it on Proton servers.
-           */
-          c('Info')
-              .t`Your browser doesn't support the writing assistant. Download the ${MAIL_APP_NAME} desktop app or try running it on servers.`;
+    /* translator:
+     * Full string for reference: Your browser doesn’t support the writing assistant. Try running it on Proton servers.
+     */
+    const modalText = c('Info').t`Your browser doesn't support the writing assistant. Try running it on servers.`;
 
     const buttons: [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element] = (() => {
-        if (isElectronMail) {
-            return [
-                <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
-                    .t`Run on servers`}</Button>,
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
-            ];
-        }
-
         return [
-            <Button color="norm" onClick={handleDownloadDesktopApp}>{c('Action').t`Download Desktop App`}</Button>,
-            <Button onClick={handleUpdateSetting} loading={loading}>{c('Action').t`Run on servers`}</Button>,
-            <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
+                .t`Run on servers`}</Button>,
+            <Button onClick={handleRejectThenClose}>{c('Action').t`Cancel`}</Button>,
         ];
     })();
 
     return (
-        <Prompt title={c('Info').t`Browser not supported`} buttons={buttons} {...modalProps}>
-            <span>{modalText}</span>
-            <Href className="ml-2" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant#local-or-server')}>
+        <Prompt
+            title={c('Info').t`Browser not supported`}
+            buttons={buttons}
+            {...modalProps}
+            onClose={handleRejectThenClose}
+        >
+            <span className="mr-1">{modalText}</span>
+            <Href
+                className="inline-block"
+                href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant#local-or-server')}
+            >
                 {c('Info').t`Learn more`}
             </Href>
         </Prompt>

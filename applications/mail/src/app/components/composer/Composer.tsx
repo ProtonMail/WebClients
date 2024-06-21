@@ -344,6 +344,7 @@ const Composer = (
                 handleDelete={handleDelete}
                 handleSendAnyway={handleSendAnyway}
                 handleCancelSend={handleCancelSend}
+                composerID={composerID}
             />
             <div className="composer-blur-container flex flex-column flex-1 max-w-full">
                 {isAssistantOpenedInComposer && (
