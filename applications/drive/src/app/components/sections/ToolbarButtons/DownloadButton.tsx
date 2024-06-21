@@ -24,7 +24,7 @@ const DownloadButton = ({ selectedLinks, disabledFolders }: Props) => {
             selectedLinks.length === 1 && isProtonDocument(selectedLinks[0].mimeType) ? selectedLinks[0] : undefined;
 
         if (documentLink) {
-            downloadDocument({
+            void downloadDocument({
                 shareId: documentLink.rootShareId,
                 linkId: documentLink.linkId,
             });

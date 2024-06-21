@@ -104,7 +104,7 @@ const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
             document.getSelection()?.removeAllRanges();
 
             if (isDocsEnabled && isProtonDocument(item.mimeType)) {
-                openDocument({
+                void openDocument({
                     linkId: item.id,
                     shareId: item.rootShareId,
                 });

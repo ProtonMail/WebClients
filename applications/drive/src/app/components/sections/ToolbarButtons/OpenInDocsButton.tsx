@@ -37,7 +37,7 @@ const OpenInDocsButton = ({ selectedLinks, shareId }: Props) => {
             }
             onClick={() => {
                 if (selectedLink) {
-                    openInDocsAction({
+                    void openInDocsAction({
                         shareId,
                         linkId: selectedLink.linkId,
                     });
