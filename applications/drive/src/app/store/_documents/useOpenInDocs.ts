@@ -19,11 +19,11 @@ export const useOpenInDocs = (link: DecryptedLink | undefined) => {
 
     const showOpenInDocs = isDocsEnabled && (isDocument || isConvertibleDocument);
 
-    const openInDocsAction = (doc: { shareId: string; linkId: string }) => {
+    const openInDocsAction = async (doc: { shareId: string; linkId: string }) => {
         if (isDocument) {
-            openDocument(doc);
+            await openDocument(doc);
         } else if (isConvertibleDocument) {
-            convertDocument(doc);
+            await convertDocument(doc);
         }
     };
 

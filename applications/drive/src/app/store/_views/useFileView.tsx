@@ -59,7 +59,7 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
         contentsMimeType,
         downloadFile: async () => {
             if (isProtonDocument(contentsMimeType || link?.mimeType || '')) {
-                downloadDocument({
+                await downloadDocument({
                     shareId,
                     linkId,
                 });

@@ -24,7 +24,9 @@ const OpenInDocsButton = ({ shareId, link, close }: Props) => {
             }
             icon="file-arrow-out"
             testId="context-menu-open-in-docs"
-            action={() => openInDocsAction({ shareId, linkId: link.linkId })}
+            action={() => {
+                void openInDocsAction({ shareId, linkId: link.linkId });
+            }}
             close={close}
         >
             {/* TODO: Remove New tag when expired */}
