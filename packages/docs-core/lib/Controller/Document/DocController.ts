@@ -71,6 +71,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   realtimeConnectionReady = false
   docsServerConnectionReady = false
   didAlreadyReceiveEditorReadyEvent = false
+  isRefetchingStaleCommit = false
   readonly updatesReceivedWhileEditorInvokerWasNotReady: (DecryptedMessage | ProcessedIncomingRealtimeEventMessage)[] =
     []
   websocketStatus: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
@@ -399,15 +400,27 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Attempting to reload document before entitlements are initialized')
     }
 
+    if (this.isRefetchingStaleCommit) {
+      this.logger.info('Attempting to refetch stale commit but refetch already in progress')
+      return
+    }
+
+    this.isRefetchingStaleCommit = true
+
     this.logger.info('Refetching document due to stale commit ID from source', source)
 
-    const result = await this._getDocumentMeta.execute(this.nodeMeta)
-    if (result.isFailed()) {
-      this.logger.error('Failed to reload document meta', result.getError())
+    const fail = (error: string) => {
+      this.isRefetchingStaleCommit = false
+      this.logger.error(error)
       this.eventBus.publish({
         type: DocControllerEvent.UnableToResolveCommitIdConflict,
         payload: undefined,
       })
+    }
+
+    const result = await this._getDocumentMeta.execute(this.nodeMeta)
+    if (result.isFailed()) {
+      fail(`Failed to reload document meta: ${result.getError()}`)
 
       return
     }
@@ -415,34 +428,28 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const latestCommitId = result.getValue().latestCommitId()
 
     if (!latestCommitId || latestCommitId === this.commitId) {
-      this.logger.error(
-        !latestCommitId ? 'Reloaded commit but commit id was null' : 'Reloaded commit id is the same as current',
-      )
-      this.eventBus.publish({
-        type: DocControllerEvent.UnableToResolveCommitIdConflict,
-        payload: undefined,
-      })
+      fail(!latestCommitId ? 'Reloaded commit but commit id was null' : 'Reloaded commit id is the same as current')
 
       return
     }
 
     const decryptResult = await this._loadCommit.execute(this.nodeMeta, latestCommitId, this.entitlements.keys)
     if (decryptResult.isFailed()) {
-      this.logger.error('Failed to reload or decrypt commit', decryptResult.getError())
-      this.eventBus.publish({
-        type: DocControllerEvent.UnableToResolveCommitIdConflict,
-        payload: undefined,
-      })
+      fail(`Failed to reload or decrypt commit: ${decryptResult.getError()}`)
 
       return Result.fail(decryptResult.getError())
     }
 
     const decryptedCommit = decryptResult.getValue()
-    this.logger.info(`Reownloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
+    this.logger.info(
+      `Reownloaded and decrypted commit id ${decryptedCommit.commitId} with ${decryptedCommit?.numberOfUpdates()} updates`,
+    )
 
     this.setInitialCommit(decryptedCommit)
 
     void this.websocketService.reconnectToDocumentWithoutDelay(this.nodeMeta)
+
+    this.isRefetchingStaleCommit = false
   }
 
   setInitialCommit(decryptedCommit: DecryptedCommit | undefined): void {
