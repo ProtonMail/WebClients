@@ -1,3 +1,7 @@
+export enum ServerEventVersion {
+  V1 = 1,
+}
+
 export enum ClientEventVersion {
   V1 = 1,
 }
