@@ -45,6 +45,14 @@ Bump build number, optionally ask for input if build number not provided as argu
 
 Get latest TestFlight build number and bump build number by one
 
+### build_and_upload
+
+```sh
+[bundle exec] fastlane build_and_upload
+```
+
+Build and upload to App Store Connect then post a message to Slack
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
