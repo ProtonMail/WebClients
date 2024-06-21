@@ -19,6 +19,7 @@ import { $insertFirst, $insertNodeToNearestRoot, mergeRegister } from '@lexical/
 import {
   $createParagraphNode,
   $getNodeByKey,
+  $isElementNode,
   $isTextNode,
   $nodesOfType,
   COMMAND_PRIORITY_EDITOR,
@@ -101,6 +102,19 @@ export function TablePlugin({
         COMMAND_PRIORITY_EDITOR,
       ),
       editor.registerNodeTransform(TableNode, (node) => {
+        if (node.getChildren().some((child) => !$isTableRowNode(child))) {
+          node.getChildren().forEach((child) => {
+            if (!$isTableRowNode(child)) {
+              // We remove any nodes that are not TableRowNodes
+              child.remove()
+              // If the child is an ElementNode, we re-insert it above
+              // the TableNode so that the data is still preserved
+              if ($isElementNode(child)) {
+                node.insertBefore(child)
+              }
+            }
+          })
+        }
         const [gridMap] = $computeTableMapSkipCellCheck(node, null, null)
         const maxRowLength = gridMap.reduce((curLength, row) => {
           return Math.max(curLength, row.length)
@@ -191,12 +205,16 @@ export function TablePlugin({
         const rowsCount = gridMap.length
         const columnsCount = gridMap[0].length
         let row = gridNode.getFirstChild()
-        invariant($isTableRowNode(row), 'Expected TableNode first child to be a RowNode')
+        if (!$isTableRowNode(row)) {
+          return
+        }
         const unmerged = []
         for (let i = 0; i < rowsCount; i++) {
           if (i !== 0) {
             row = row.getNextSibling()
-            invariant($isTableRowNode(row), 'Expected TableNode first child to be a RowNode')
+            if (!$isTableRowNode(row)) {
+              return
+            }
           }
           let lastRowCell: null | TableCellNode = null
           for (let j = 0; j < columnsCount; j++) {
@@ -206,7 +224,9 @@ export function TablePlugin({
               lastRowCell = cell
               unmerged.push(cell)
             } else if (cell.getColSpan() > 1 || cell.getRowSpan() > 1) {
-              invariant($isTableCellNode(cell), 'Expected TableNode cell to be a TableCellNode')
+              if (!$isTableCellNode(cell)) {
+                return
+              }
               const newCell = $createTableCellNode(cell.__headerState)
               if (lastRowCell !== null) {
                 lastRowCell.insertAfter(newCell)
@@ -245,18 +265,19 @@ export function TablePlugin({
   return (
     <Portal container={editorContainer} disabled={!editorContainer}>
       <TableMenu />
-      {tables.map((table) => (
-        <div
-          key={table.getKey()}
-          data-table-actions
-          style={{
-            display: 'contents',
-          }}
-        >
-          <TableAddButtons tableNode={table} />
-          <TableRowAndColumnMenus tableNode={table} />
-        </div>
-      ))}
+      {isEditable &&
+        tables.map((table) => (
+          <div
+            key={table.getKey()}
+            data-table-actions
+            style={{
+              display: 'contents',
+            }}
+          >
+            <TableAddButtons tableNode={table} />
+            <TableRowAndColumnMenus tableNode={table} />
+          </div>
+        ))}
     </Portal>
   )
 }
