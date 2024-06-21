@@ -80,7 +80,6 @@ export class WebsocketService implements WebsocketServiceInterface {
       if (buffer.hasPendingUpdates()) {
         buffer.flush()
         event.preventDefault()
-        event.returnValue = c('Info').t`Recent changes are still being saved. Do not leave this page yet.`
       }
     }
   }
@@ -447,7 +446,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     for (const update of message.updates.documentUpdates) {
       if (update.authorAddress !== keys.userOwnAddress) {
-        this.switchToRealtimeMode(buffer)
+        this.switchToRealtimeMode(buffer, 'receiving DU from other user')
       }
 
       const decryptionResult = await this._decryptMessage.execute({
@@ -474,12 +473,12 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
   }
 
-  switchToRealtimeMode(buffer: DocumentUpdateBuffer): void {
+  switchToRealtimeMode(buffer: DocumentUpdateBuffer, reason: string): void {
     if (!buffer.isBufferEnabled) {
       return
     }
 
-    this.logger.info('Switching to realtime mode')
+    this.logger.info('Switching to realtime mode due to', reason)
 
     buffer.flush()
     buffer.setBufferEnabled(false)
@@ -497,7 +496,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     for (const event of message.events) {
       if (eventsThatTakeUsIntoRealtimeMode.includes(event.type)) {
-        this.switchToRealtimeMode(buffer)
+        this.switchToRealtimeMode(buffer, `receiving event ${EventTypeEnum[event.type]}`)
       }
 
       const type = EventType.create(event.type)
