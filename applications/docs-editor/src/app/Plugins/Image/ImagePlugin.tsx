@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $wrapNodeInElement } from '@lexical/utils'
+import { $wrapNodeInElement, mergeRegister } from '@lexical/utils'
 import {
   $createParagraphNode,
   $insertNodes,
   $isRootOrShadowRoot,
   COMMAND_PRIORITY_EDITOR,
+  COMMAND_PRIORITY_HIGH,
+  DROP_COMMAND,
   LexicalCommand,
   createCommand,
 } from 'lexical'
@@ -31,38 +33,61 @@ export default function ImagesPlugin(): JSX.Element | null {
       throw new Error('ImagesPlugin: ImageNode not registered on editor')
     }
 
-    return editor.registerCommand<InsertImagePayload>(
-      INSERT_IMAGE_COMMAND,
-      (payload) => {
-        function createAndInsertImageNode(src: string) {
-          editor.update(() => {
-            const imageNode = $createImageNode({
-              src,
-              altText: '',
+    return mergeRegister(
+      editor.registerCommand<InsertImagePayload>(
+        INSERT_IMAGE_COMMAND,
+        (payload) => {
+          function createAndInsertImageNode(src: string) {
+            editor.update(() => {
+              const imageNode = $createImageNode({
+                src,
+                altText: '',
+              })
+              $insertNodes([imageNode])
+              if ($isRootOrShadowRoot(imageNode.getParentOrThrow())) {
+                $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
+              }
             })
-            $insertNodes([imageNode])
-            if ($isRootOrShadowRoot(imageNode.getParentOrThrow())) {
-              $wrapNodeInElement(imageNode, $createParagraphNode).selectEnd()
-            }
-          })
-        }
-
-        async function handleDownsizingAndInsert() {
-          const base64 = await toBase64(payload)
-
-          if (payload.size <= FIVE_HUNDRED_KILO_BYTES) {
-            createAndInsertImageNode(base64)
-            return
           }
 
-          const downsizedImage = await downSize(base64, FIVE_HUNDRED_KILO_BYTES, payload.type)
-          createAndInsertImageNode(downsizedImage)
-        }
+          async function handleDownsizingAndInsert() {
+            const base64 = await toBase64(payload)
 
-        handleDownsizingAndInsert().catch(sendErrorMessage)
-        return true
-      },
-      COMMAND_PRIORITY_EDITOR,
+            if (payload.size <= FIVE_HUNDRED_KILO_BYTES) {
+              createAndInsertImageNode(base64)
+              return
+            }
+
+            const downsizedImage = await downSize(base64, FIVE_HUNDRED_KILO_BYTES, payload.type)
+            createAndInsertImageNode(downsizedImage)
+          }
+
+          handleDownsizingAndInsert().catch(sendErrorMessage)
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
+      editor.registerCommand(
+        DROP_COMMAND,
+        (payload) => {
+          if (!payload.dataTransfer) {
+            return false
+          }
+          const files = payload.dataTransfer.files
+          if (files.length === 0) {
+            return false
+          }
+          for (const file of files) {
+            const isImage = file.type.startsWith('image/')
+            if (!isImage) {
+              continue
+            }
+            editor.dispatchCommand(INSERT_IMAGE_COMMAND, file)
+          }
+          return false
+        },
+        COMMAND_PRIORITY_HIGH,
+      ),
     )
   }, [editor])
 
