@@ -1,4 +1,11 @@
-import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT, EDITOR_READY_POST_MESSAGE_EVENT } from '@proton/docs-shared'
+import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess'
+import {
+  BridgeOriginProvider,
+  EDITOR_IFRAME_FOCUS_EVENT,
+  EDITOR_READY_POST_MESSAGE_EVENT,
+  EDITOR_TAG_INFO_EVENT,
+  EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH,
+} from '@proton/docs-shared'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 type Props = {
@@ -29,17 +36,19 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
   const [iframe, setIframe] = useState<HTMLIFrameElement | null>(null)
   const url = useMemo(() => GetEditorUrl(isViewOnly), [isViewOnly])
   const didAlreadyLoad = useRef(false)
+  const willReloadDueToTagMismatch = useRef(false)
 
   const onReady = useCallback(() => {
     if (!iframe) {
       throw new Error('Frame not found')
     }
 
-    if (didAlreadyLoad.current) {
+    if (didAlreadyLoad.current && !willReloadDueToTagMismatch.current) {
       return
     }
 
     didAlreadyLoad.current = true
+    willReloadDueToTagMismatch.current = false
 
     onFrameReady(iframe)
   }, [iframe, onFrameReady])
@@ -54,8 +63,19 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
         return
       }
 
+      if (event.data === EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH) {
+        willReloadDueToTagMismatch.current = true
+      }
+
       if (event.data === EDITOR_READY_POST_MESSAGE_EVENT) {
         onReady()
+        iframe.contentWindow?.postMessage(
+          {
+            type: EDITOR_TAG_INFO_EVENT,
+            versionCookieAtLoad,
+          },
+          BridgeOriginProvider.GetEditorOrigin(),
+        )
       }
 
       if (event.data === EDITOR_IFRAME_FOCUS_EVENT) {
