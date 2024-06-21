@@ -11,7 +11,6 @@ import {
     PromptRejectedError,
     UNLOAD_ASSISTANT_TIMEOUT,
     buildMLCConfig,
-    checkHarmful,
     getAssistantStatus,
     getGenerationType,
     queryAssistantModels,
@@ -19,7 +18,13 @@ import {
 import { GpuLlmManager } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
-import { AssistantConfig, DownloadProgressInfo, LlmManager, LlmModel } from '@proton/llm/lib/types';
+import {
+    AssistantConfig,
+    DownloadProgressInfo,
+    GenerationCallbackDetails,
+    LlmManager,
+    LlmModel,
+} from '@proton/llm/lib/types';
 import useAssistantTelemetry, { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/llm/lib/useAssistantTelemetry';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -364,17 +369,20 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                 // We don't want to generate a result anymore.
                 if (llmModel.current && !isResolved) {
                     let promptRejectedOnce = false;
-                    const generationCallback = (fulltext: string) => {
+                    const generationCallback = (fulltext: string, details?: GenerationCallbackDetails) => {
                         if (promptRejectedOnce) {
                             return;
                         }
                         generatedTokensNumber.current++;
-                        const isHarmful = checkHarmful(fulltext);
+                        const isHarmful = details?.harmful;
 
                         if (!isHarmful) {
                             callback(fulltext);
                         } else {
                             promptRejectedOnce = true;
+                            runningActionsRef.current
+                                ?.find((a) => a.assistantID === assistantID)
+                                ?.runningAction?.cancel();
                         }
                     };
 
@@ -423,8 +431,11 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                     addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_FAIL });
                 }
                 traceInitiativeError('assistant', e);
-
                 console.error(e);
+
+                // Reset assistant result when an error occurred while generating
+                // Otherwise, on next submit the previous result will be displayed for a few ms
+                callback('');
             }
 
             // Reset the generating state

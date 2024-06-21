@@ -2,15 +2,13 @@ import { addDays, fromUnixTime, getUnixTime, isAfter, isBefore } from 'date-fns'
 import { c } from 'ttag';
 
 import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
-import { hasAIAssistant } from '@proton/shared/lib/helpers/subscription';
 
-import { FeatureCode, useOrganization } from '../..';
+import { FeatureCode } from '../..';
 import useFeature from '../useFeature';
 import useNotifications from '../useNotifications';
-import useSubscription from '../useSubscription';
 import useUser from '../useUser';
 
-export const ASSISTANT_TRIAL_TIME_DAYS = 14;
+export const ASSISTANT_TRIAL_TIME_DAYS = 30;
 
 export type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' | 'is-paid';
 
@@ -19,16 +17,11 @@ let started = false;
 
 const useAssistantSubscriptionStatus = () => {
     const [user] = useUser();
-    const [organization] = useOrganization();
-    const [subscription] = useSubscription();
     const { createNotification } = useNotifications();
     const { sendFreeTrialStart } = useAssistantTelemetry();
     const nowDate = new Date();
 
-    const hasAiAssistantAddon = user.isAdmin ? !!user.NumAI : hasAIAssistant(subscription);
-    // B2B sub users has AI without requiring a subscription
-    const userHasAI = organization && user.isSubUser && !!user.NumAI;
-
+    const hasAiAssistantAddon = !!user.NumAI;
     const trialStartDateFeat = useFeature(FeatureCode.ComposerAssistantTrialStartDate);
     const trialStartDate =
         trialStartDateFeat.feature?.Value && typeof trialStartDateFeat.feature?.Value === 'number'
@@ -38,7 +31,7 @@ const useAssistantSubscriptionStatus = () => {
     const endDate = trialStartDate ? addDays(trialStartDate, ASSISTANT_TRIAL_TIME_DAYS) : null;
 
     const trialStatus: TrialStatus = (() => {
-        if (hasAiAssistantAddon || userHasAI) {
+        if (hasAiAssistantAddon) {
             return 'is-paid';
         }
 

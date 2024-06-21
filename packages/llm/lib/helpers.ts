@@ -119,6 +119,41 @@ export function removeStopStrings(text: string, customStopStrings?: string[]) {
     return text;
 }
 
+export function convertToDoubleNewlines(input: string): string {
+    const lines = input.split('\n');
+
+    let paragraphs: string[][] = [];
+    let paragraph: string[] = [];
+    let inList = false; // we're currently in a list
+    let listJustBegan = false; // marks that the next line will be a list
+
+    for (let originalLine of lines) {
+        const linePreserveStartSpace = originalLine.trimEnd();
+        const line = originalLine.trim();
+        if (!line) {
+            paragraphs.push(paragraph);
+            paragraph = [];
+            continue;
+        }
+        const isListLine = /^(\d+[\.\)]|\-|\*|\•|[a-zA-Z][\.\)]) /.test(line);
+        inList = isListLine || listJustBegan;
+        if (!inList) {
+            paragraphs.push(paragraph);
+            paragraph = [];
+        }
+        paragraph.push(inList ? linePreserveStartSpace : line);
+        listJustBegan = line.endsWith(':');
+    }
+    if (paragraph) {
+        paragraphs.push(paragraph);
+    }
+
+    return paragraphs
+        .map((lines) => lines.join('\n'))
+        .join('\n\n')
+        .replace(/\n{3,}/g, '\n\n');
+}
+
 export const validateAndCleanupWriteFullEmail: TransformCallback = (inputText: string): string | undefined => {
     /* The LLM generates text that contains extraneous data, such as:
      *
@@ -177,11 +212,11 @@ export const validateAndCleanupWriteFullEmail: TransformCallback = (inputText: s
     // Drop spaces at the beginning of lines (not sure why it happens, but it does).
     lines = lines.map((line) => line.replace(/^ +/, ''));
 
-    // Join back the lines into a string. If some lines have been removed, we collapse the newlines to 2 max.
-    const outputText = lines
-        .join('\n')
-        .replaceAll(/\n{3,}/g, '\n\n')
-        .trim();
+    // Join back the lines into a string. We set newlines to 2 between paragraphs.
+    let outputText = lines.join('\n').trim();
+    outputText = convertToDoubleNewlines(outputText);
+    outputText = outputText.trim();
+
     return outputText;
 };
 
