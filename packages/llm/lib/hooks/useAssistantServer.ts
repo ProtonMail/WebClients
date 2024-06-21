@@ -14,6 +14,7 @@ import {
 import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 import throttle from '@proton/utils/throttle';
@@ -175,6 +176,13 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
                     errorType: ERROR_TYPE.GENERATION_HARMFUL,
                 });
                 addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_HARMFUL });
+            } else if (e?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                const errorMessage = c('Error').t`The system is busy at the moment. Please try again in a few minutes.`;
+                sendAssistantErrorReport({
+                    assistantType: ASSISTANT_TYPE.SERVER,
+                    errorType: ERROR_TYPE.TOO_MANY_REQUESTS,
+                });
+                addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.TOO_MANY_REQUESTS });
             } else {
                 const errorMessage = c('Error').t`Please try generating the text again`;
                 sendAssistantErrorReport({
@@ -185,6 +193,10 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
             }
             traceInitiativeError('assistant', e);
             console.error(e);
+
+            // Reset assistant result when an error occurred while generating
+            // Otherwise, on next submit the previous result will be displayed for a few ms
+            callback('');
         }
 
         // Reset the generating state
