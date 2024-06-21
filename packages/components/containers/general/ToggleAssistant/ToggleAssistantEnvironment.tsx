@@ -8,14 +8,18 @@ import {
     RadioGroup,
     useModalStateObject,
 } from '@proton/components';
-import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 import useAssistantToggle from '../../payments/subscription/assistant/useAssistantToggle';
 
-const { SERVER_ONLY, CLIENT_ONLY, UNSET, OFF } = AI_ASSISTANT_ACCESS;
+interface Props {
+    aiFlag: AI_ASSISTANT_ACCESS;
+}
+
+const { SERVER_ONLY, CLIENT_ONLY } = AI_ASSISTANT_ACCESS;
 
 const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     if (runtime === SERVER_ONLY) {
@@ -35,11 +39,10 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     );
 };
 
-const ToggleAssistantEnvironment = () => {
+const ToggleAssistantEnvironment = ({ aiFlag }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
-    const [{ AIAssistantFlags }] = useUserSettings();
     const { hasHardwareForModel } = useAssistantToggle();
     const { createNotification } = useNotifications();
 
@@ -47,7 +50,10 @@ const ToggleAssistantEnvironment = () => {
     const browserModal = useModalStateObject();
 
     const handleIncompatibleClick = () => {
-        const badBrowser = hasHardwareForModel === 'noWebGpu' || hasHardwareForModel === 'noWebGpuFirefox';
+        const badBrowser =
+            hasHardwareForModel === 'noWebGpu' ||
+            hasHardwareForModel === 'noWebGpuFirefox' ||
+            hasHardwareForModel === 'noWebGpuSafari';
 
         if (badBrowser) {
             browserModal.openModal(true);
@@ -63,16 +69,12 @@ const ToggleAssistantEnvironment = () => {
         createNotification({ text: c('Success').t`Writing assistant setting updated` });
     };
 
-    if (AIAssistantFlags === OFF) {
-        return null;
-    }
-
     return (
         <>
             <div className="flex flex-column gap-2">
                 <RadioGroup<AI_ASSISTANT_ACCESS>
                     name="assistant-runtime"
-                    value={AIAssistantFlags === UNSET ? SERVER_ONLY : AIAssistantFlags}
+                    value={aiFlag}
                     disableChange={loading}
                     onChange={(value) => {
                         void withLoading(handleChange(value));
@@ -92,8 +94,8 @@ const ToggleAssistantEnvironment = () => {
                 />
             </div>
             {hasHardwareForModel !== 'ok' && (
-                <Button color="norm" shape="underline" onClick={handleIncompatibleClick}>{c('Action')
-                    .t`Why can't the model run locally?`}</Button>
+                <Button color="norm" shape="underline" className="py-0" onClick={handleIncompatibleClick}>{c('Action')
+                    .t`Learn why this option is unavailable`}</Button>
             )}
             {browserModal.render && <AssistantIncompatibleBrowserModal modalProps={browserModal.modalProps} />}
             {hardwareModal.render && <AssistantIncompatibleHardwareModal modalProps={hardwareModal.modalProps} />}

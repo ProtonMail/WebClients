@@ -126,6 +126,7 @@ export enum TelemetryMailComposerAssistantEvents {
     pause_download = 'pause_download',
     load_model = 'load_model',
     unload_model = 'unload_model',
+    incompatible_assistant = 'incompatible_assistant',
 }
 
 export enum TelemetryChangelog {
