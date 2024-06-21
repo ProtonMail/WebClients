@@ -10,8 +10,8 @@ import {
   WebsocketConnectionInterface,
   RealtimeUrlAndToken,
   BroadcastSource,
-  assertUnreachable,
   ProcessedIncomingRealtimeEventMessage,
+  assertUnreachableAndLog,
 } from '@proton/docs-shared'
 import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -505,9 +505,10 @@ export class WebsocketService implements WebsocketServiceInterface {
       this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
 
       switch (type.value) {
-        case EventTypeEnum.ServerIsDisconnectingAllClientsFromTheStream:
+        case EventTypeEnum.ServerIsReadyToAcceptClientMessages:
         case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
+        case EventTypeEnum.ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream:
           break
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
         case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
@@ -546,7 +547,7 @@ export class WebsocketService implements WebsocketServiceInterface {
           break
         }
         default:
-          assertUnreachable(type.value)
+          assertUnreachableAndLog(type.value)
       }
     }
 

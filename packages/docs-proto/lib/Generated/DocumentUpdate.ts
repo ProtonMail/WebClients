@@ -121,18 +121,18 @@ export class DocumentUpdate extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.encryptedContent.length) {writer.writeBytes(1, this.encryptedContent)}
-    if (this.version != 0) {writer.writeInt32(2, this.version)}
-    if (this.timestamp != 0) {writer.writeUint64(3, this.timestamp)}
-    if (this.authorAddress.length) {writer.writeString(4, this.authorAddress)}
-    if (this.uuid.length) {writer.writeString(5, this.uuid)}
-    if (!w) {return writer.getResultBuffer()}
+    if (this.encryptedContent.length) writer.writeBytes(1, this.encryptedContent)
+    if (this.version != 0) writer.writeInt32(2, this.version)
+    if (this.timestamp != 0) writer.writeUint64(3, this.timestamp)
+    if (this.authorAddress.length) writer.writeString(4, this.authorAddress)
+    if (this.uuid.length) writer.writeString(5, this.uuid)
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): DocumentUpdate {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new DocumentUpdate()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           message.encryptedContent = reader.readBytes()
@@ -222,15 +222,15 @@ export class SignedPlaintextContent extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.content.length) {writer.writeBytes(1, this.content)}
-    if (this.signature.length) {writer.writeBytes(2, this.signature)}
-    if (!w) {return writer.getResultBuffer()}
+    if (this.content.length) writer.writeBytes(1, this.content)
+    if (this.signature.length) writer.writeBytes(2, this.signature)
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): SignedPlaintextContent {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new SignedPlaintextContent()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           message.content = reader.readBytes()
@@ -297,14 +297,14 @@ export class DocumentUpdateArray extends pb_1.Message {
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
     if (this.documentUpdates.length)
-      {writer.writeRepeatedMessage(1, this.documentUpdates, (item: DocumentUpdate) => item.serialize(writer))}
-    if (!w) {return writer.getResultBuffer()}
+      writer.writeRepeatedMessage(1, this.documentUpdates, (item: DocumentUpdate) => item.serialize(writer))
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): DocumentUpdateArray {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new DocumentUpdateArray()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           reader.readMessage(message.documentUpdates, () =>

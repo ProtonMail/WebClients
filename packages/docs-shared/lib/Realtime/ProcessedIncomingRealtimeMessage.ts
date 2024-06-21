@@ -17,6 +17,8 @@ export class ProcessedIncomingRealtimeEventMessage {
             | EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas
             | EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive
             | EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit
+            | EventTypeEnum.ServerIsReadyToAcceptClientMessages
+            | EventTypeEnum.ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream
         }
       | {
           type: never

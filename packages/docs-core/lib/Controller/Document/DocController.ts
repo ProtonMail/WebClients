@@ -17,12 +17,12 @@ import {
   DocUpdateOrigin,
   InternalEventHandlerInterface,
   InternalEventInterface,
-  assertUnreachable,
   BroadcastSource,
   DecryptedMessage,
   ProcessedIncomingRealtimeEventMessage,
   DataTypesThatDocumentCanBeExportedAs,
   DocumentRole,
+  assertUnreachableAndLog,
 } from '@proton/docs-shared'
 import { EventType, EventTypeEnum, ConnectionCloseReason, RTSConfig } from '@proton/docs-proto'
 import { LoadDocument } from '../../UseCase/LoadDocument'
@@ -730,9 +730,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
           break
         case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
+        case EventTypeEnum.ServerIsReadyToAcceptClientMessages:
+        case EventTypeEnum.ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream:
           break
         default:
-          assertUnreachable(event.props)
+          assertUnreachableAndLog(event.props)
       }
     }
   }
