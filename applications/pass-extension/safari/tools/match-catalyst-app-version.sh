@@ -9,4 +9,4 @@ extension_version=$("$python_path" "$script_dir/get-extension-version.py")
 
 # Match the catalyst app'sv version with the extension's version
 echo "Extension version is $extension_version. Matching catalyst app's version..."
-bundle exec fastlane bump_version version:"$extension_version"
+bundle exec fastlane bump_version_number version_number:"$extension_version"
