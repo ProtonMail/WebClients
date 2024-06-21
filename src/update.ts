@@ -37,7 +37,7 @@ autoUpdater.on("before-quit-for-update", () => {
 export function initializeUpdateChecks() {
     updateLogger.info("Initialization of update checks.");
 
-    const ses = session.fromPartition("persistent:update", { cache: false });
+    const ses = session.fromPartition("persist:update", { cache: false });
     ses.setCertificateVerifyProc(verifyDownloadCertificate);
 
     checkForValidUpdates();
@@ -125,10 +125,10 @@ function isANewerThanB(a: string, b: string) {
 }
 
 function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<ReleaseList | undefined> {
-    const ses = session.fromPartition("persist:update");
+    const ses = session.fromPartition("persist:update", { cache: false });
 
     return ses
-        .fetch(getVersionURL(platform))
+        .fetch(getVersionURL(platform), { cache: "no-cache" })
         .then((r) => r.json())
         .then((data) => releaseListSchema.parse(data))
         .then((unsortedVersions) => {
