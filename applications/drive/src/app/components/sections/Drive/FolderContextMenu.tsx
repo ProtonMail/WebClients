@@ -89,7 +89,7 @@ export function FolderContextMenu({
                     <CreateNewDocumentButton
                         close={close}
                         action={() => {
-                            createDocument({
+                            void createDocument({
                                 shareId: activeFolder.shareId,
                                 parentLinkId: activeFolder.linkId,
                             });
