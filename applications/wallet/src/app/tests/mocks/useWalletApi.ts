@@ -2,6 +2,7 @@ import {
     WasmBitcoinAddressClient,
     WasmEmailIntegrationClient,
     WasmExchangeRateClient,
+    WasmInviteClient,
     WasmNetworkClient,
     WasmPaymentGatewayClient,
     WasmProtonWalletApiClient,
@@ -19,6 +20,7 @@ type PartiallyMockedWalletApiClient = Partial<{
     network: Partial<Omit<WasmNetworkClient, 'free'>>;
     settings: Partial<Omit<WasmSettingsClient, 'free'>>;
     wallet: Partial<Omit<WasmWalletClient, 'free'>>;
+    invite: Partial<Omit<WasmInviteClient, 'free'>>;
     payment_gateway: Partial<Omit<WasmPaymentGatewayClient, 'free'>>;
 }>;
 
@@ -62,6 +64,10 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
                     deleteWalletTransaction: mockedValue?.wallet?.deleteWalletTransaction ?? vi.fn(),
                     addEmailAddress: mockedValue?.wallet?.addEmailAddress ?? vi.fn(),
                     removeEmailAddress: mockedValue?.wallet?.removeEmailAddress ?? vi.fn(),
+                    setWalletTransactionFlag: mockedValue?.wallet?.setWalletTransactionFlag ?? vi.fn(),
+                    deleteWalletTransactionFlag: mockedValue?.wallet?.deleteWalletTransactionFlag ?? vi.fn(),
+                    updateExternalWalletTransactionSender:
+                        mockedValue?.wallet?.updateExternalWalletTransactionSender ?? vi.fn(),
                 }),
                 bitcoin_address: freeable({
                     getBitcoinAddresses: mockedValue?.bitcoin_address?.getBitcoinAddresses ?? vi.fn(),
@@ -76,6 +82,12 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
                     getPaymentMethods: mockedValue?.payment_gateway?.getPaymentMethods ?? vi.fn(),
                     getQuotes: mockedValue?.payment_gateway?.getQuotes ?? vi.fn(),
                     createOnRampCheckout: mockedValue?.payment_gateway?.createOnRampCheckout ?? vi.fn(),
+                    signUrl: mockedValue?.payment_gateway?.signUrl ?? vi.fn(),
+                }),
+                invite: freeable({
+                    checkInviteStatus: mockedValue?.invite?.checkInviteStatus ?? vi.fn(),
+                    sendNewcomerInvite: mockedValue?.invite?.sendNewcomerInvite ?? vi.fn(),
+                    sendEmailIntegrationInvite: mockedValue?.invite?.sendEmailIntegrationInvite ?? vi.fn(),
                 }),
             }),
     });
