@@ -9,9 +9,12 @@ import {
   EditorToClientReplyMessage,
   BridgeOriginProvider,
   DOCS_EDITOR_DEBUG_KEY,
+  EDITOR_TAG_INFO_EVENT,
+  EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH,
 } from '@proton/docs-shared'
 
 import { ClientInvoker } from './ClientInvoker'
+import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess'
 
 export class EditorToClientBridge {
   private logger = new Logger('EditorIframe', DOCS_EDITOR_DEBUG_KEY)
@@ -22,6 +25,16 @@ export class EditorToClientBridge {
     window.addEventListener('message', (event) => {
       if (event.source !== this.clientFrame) {
         this.logger.info('Ignoring message from unknown source', event.data)
+        return
+      }
+
+      if (event.data.type === EDITOR_TAG_INFO_EVENT) {
+        const tag = event.data.versionCookieAtLoad
+        if (tag && tag !== versionCookieAtLoad) {
+          updateVersionCookie(tag, undefined)
+          this.clientFrame.postMessage(EDITOR_WILL_RELOAD_DUE_TO_TAG_MISTMATCH, BridgeOriginProvider.GetClientOrigin())
+          window.location.reload()
+        }
         return
       }
 
