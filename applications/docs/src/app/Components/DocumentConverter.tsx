@@ -4,6 +4,7 @@ import { useApplication } from '../Containers/ApplicationProvider'
 import { FileToDocConversionResult, Result } from '@proton/docs-core'
 import { DecryptedNode, NodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
+import useLoading from '@proton/hooks/useLoading'
 
 type Props = {
   lookup: NodeMeta
@@ -17,25 +18,25 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props)
   const [isConverting, setIsConverting] = useState(false)
   const [conversionResult, setConversionResult] = useState<Result<FileToDocConversionResult> | null>(null)
 
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, withLoading] = useLoading()
   const [contents, setContents] = useState<Uint8Array | null>(null)
   const [node, setNode] = useState<DecryptedNode | null>(null)
   const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
-    getNodeContents(lookup)
-      .then(({ contents, node }) => {
-        setLoading(false)
-        setError(null)
-        setContents(contents)
-        setNode(node)
-      })
-      .catch((e) => {
-        setLoading(false)
-        setError(e)
-        setContents(null)
-        setNode(null)
-      })
+    withLoading(
+      getNodeContents(lookup)
+        .then(({ contents, node }) => {
+          setError(null)
+          setContents(contents)
+          setNode(node)
+        })
+        .catch((e: Error) => {
+          setError(e)
+          setContents(null)
+          setNode(null)
+        }),
+    )
   }, [lookup, getNodeContents])
 
   const performConversion = useCallback(async () => {
@@ -79,7 +80,8 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props)
             c('Info').jt`Error converting document: ${errorMessage}`}
           {isConverting && c('Info').t`Converting document...`}
           {isLoading && c('Info').t`Loading...`}
-          {(contents === null || node === null) &&
+          {isLoading === false &&
+            error != null &&
             // translator: the variable is a javascript error message
             c('Info').jt`Error loading document${errorDetail}`}
         </div>
