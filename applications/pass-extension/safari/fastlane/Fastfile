@@ -83,6 +83,7 @@ lane :build_and_upload do
       skip_waiting_for_build_processing: true,
       pkg: pkg_path)
   
-  # Return the name of the build
-  build_name
+  # Post message to Slack
+  env = ENV["BUILD_ENV"]
+  sh "../tools/new_build_slack_message.sh \":safari: #{build_name} (#{env})\""
 end
