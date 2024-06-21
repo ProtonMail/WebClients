@@ -44,6 +44,7 @@ export default class ConcurrentIterator {
             if (!link.isFile) {
                 yield link as StartedNestedLinkDownload;
             } else {
+                log(`ConcurrentIterator: Waiting for load size to decrease. link: ${link.linkId}`);
                 await waitUntil(
                     () =>
                         (this.loadSize < FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS_LOAD &&
@@ -51,8 +52,11 @@ export default class ConcurrentIterator {
                         this.canceled
                 );
                 if (this.canceled) {
+                    log(`ConcurrentIterator: Waiting canceled. link: ${link.linkId}`);
                     return;
                 }
+
+                log(`ConcurrentIterator: Waiting finished. link: ${link.linkId}`);
 
                 const uniqueId = generateUID();
                 const controls = initDownloadLinkFile(
@@ -74,8 +78,8 @@ export default class ConcurrentIterator {
                     options
                 );
                 this.loadSize += link.size;
-                const stream = controls.start();
                 this.fileControlers.set(uniqueId, controls);
+                const stream = controls.start();
                 yield {
                     ...link,
                     stream,
