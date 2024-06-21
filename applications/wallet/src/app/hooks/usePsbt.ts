@@ -6,6 +6,7 @@ import { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda
 import { useUserKeys } from '@proton/components/hooks';
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
+import { SECOND } from '@proton/shared/lib/constants';
 import { IWasmApiWalletData, encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
@@ -22,6 +23,10 @@ interface BroadcastData
     signingKeys: PrivateKeyReference[];
     encryptionKeys: PublicKeyReference[];
 }
+
+const getNowTimestamp = (): string => {
+    return Math.floor(Date.now() / SECOND).toString();
+};
 
 export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreatePsbt = false) => {
     const blockchainClient = useBlockchainClient();
@@ -112,7 +117,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                                   key: 'ExchangeRate',
                                   value: exchangeRateId,
                               }
-                            : { key: 'TransactionTime', value: Date.now().toString() },
+                            : { key: 'TransactionTime', value: getNowTimestamp() },
                     },
                     isUsingBitcoinViaEmail
                         ? {
