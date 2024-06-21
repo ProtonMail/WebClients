@@ -132,7 +132,6 @@ export const apiWalletUserSettings: UserWalletSettings = {
     UserID: 999,
     TwoFactorAmountThreshold: 100000,
     HideEmptyUsedAddresses: 1,
-    ShowWalletRecovery: 1,
     FiatCurrencyID: 6,
     BitcoinUnitID: 7,
     CreateTime: 1701139393899,
@@ -263,6 +262,5 @@ export const userWalletSettings: WasmUserSettings = {
     BitcoinUnit: 'BTC',
     FiatCurrency: 'USD',
     HideEmptyUsedAddresses: 0,
-    ShowWalletRecovery: 0,
     TwoFactorAmountThreshold: null,
 };
