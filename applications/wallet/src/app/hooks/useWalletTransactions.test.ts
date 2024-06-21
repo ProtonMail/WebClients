@@ -105,6 +105,9 @@ hKMuDXNCtFRZsU3pstl2+xuSXfrhy2HJcIvnlGvKwpxlDPnkeLerRNmtw7o3
         Body: null,
         ToList: null,
         Sender: null,
+        IsPrivate: false,
+        IsSuspicious: false,
+        Type: 'ExternalReceive',
     },
     {
         WalletID: '01',
@@ -138,6 +141,9 @@ FbEaKeH1aHQSHNOHPK3UgFHx05sjsjnJpJ8lGvxJzRWfGmOJCQ==
         Body: null,
         ToList: null,
         Sender: null,
+        IsPrivate: false,
+        IsSuspicious: false,
+        Type: 'ExternalReceive',
     },
     {
         WalletID: '01',
@@ -171,6 +177,9 @@ zTy3ydb5qp51qfSnrOxWqyY/VvnRk97PIeysGWSCERueUzfp8Q==
         Body: null,
         ToList: null,
         Sender: null,
+        IsPrivate: false,
+        IsSuspicious: false,
+        Type: 'ExternalReceive',
     },
 ];
 
@@ -206,6 +215,9 @@ QBT5KXMc9NeCRz1aMA3fyrySG8jmDhYaRdivUiOrIGbRVsfLAw==
     Body: null,
     ToList: null,
     Sender: null,
+    IsPrivate: false,
+    IsSuspicious: false,
+    Type: 'ExternalReceive',
 };
 
 // TODO: move this to proper file
@@ -347,6 +359,9 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
                 Subject: null,
                 Body: null,
                 ToList: null,
+                IsPrivate: false,
+                IsSuspicious: false,
+                Type: 'ExternalReceive',
             },
             free: noop,
         }));
