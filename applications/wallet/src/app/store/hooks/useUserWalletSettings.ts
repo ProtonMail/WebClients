@@ -12,7 +12,6 @@ const DEFAULT_STATE: WasmUserSettings = {
     BitcoinUnit: DEFAULT_DISPLAY_BITCOIN_UNIT,
     FiatCurrency: DEFAULT_FIAT_CURRENCY,
     HideEmptyUsedAddresses: 0,
-    ShowWalletRecovery: 0,
     TwoFactorAmountThreshold: null,
 };
 

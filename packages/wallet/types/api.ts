@@ -87,8 +87,6 @@ export interface UserWalletSettings {
     TwoFactorAmountThreshold: number;
     // Hide empty used addresses
     HideEmptyUsedAddresses: number;
-    // Show wallet mnemonic to user if applicable
-    ShowWalletRecovery: number;
     // CurrencyID of the wallet
     FiatCurrencyID: number;
     // BitcoinUnitID of the wallet
