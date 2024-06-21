@@ -196,7 +196,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 onOpenInDocs={
                     showOpenInDocs
                         ? () => {
-                              openInDocsAction({ shareId, linkId });
+                              void openInDocsAction({ shareId, linkId });
                           }
                         : undefined
                 }

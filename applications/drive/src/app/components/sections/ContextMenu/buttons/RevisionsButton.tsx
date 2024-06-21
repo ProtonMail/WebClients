@@ -23,7 +23,7 @@ const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Props) => 
             testId="context-menu-revisions"
             action={() => {
                 if (isProtonDocument(selectedLink.mimeType)) {
-                    openDocumentHistory({
+                    void openDocumentHistory({
                         shareId: selectedLink.rootShareId,
                         linkId: selectedLink.linkId,
                     });
