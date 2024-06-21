@@ -214,21 +214,8 @@ export default function DocumentEditorToolbar({
     if (!isCodeBlock) {
       editor.update(
         () => {
-          let selection = $getSelection()
-
-          if (selection !== null) {
-            if (selection.isCollapsed()) {
-              $setBlocksType(selection, () => $createCodeNode())
-            } else {
-              const textContent = selection.getTextContent()
-              const codeNode = $createCodeNode()
-              selection.insertNodes([codeNode])
-              selection = $getSelection()
-              if ($isRangeSelection(selection)) {
-                selection.insertRawText(textContent)
-              }
-            }
-          }
+          const selection = $getSelection()
+          $setBlocksType(selection, () => $createCodeNode())
         },
         {
           onUpdate: focusEditor,
