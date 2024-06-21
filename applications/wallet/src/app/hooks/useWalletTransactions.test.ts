@@ -105,8 +105,8 @@ hKMuDXNCtFRZsU3pstl2+xuSXfrhy2HJcIvnlGvKwpxlDPnkeLerRNmtw7o3
         Body: null,
         ToList: null,
         Sender: null,
-        IsPrivate: false,
-        IsSuspicious: false,
+        IsPrivate: 0,
+        IsSuspicious: 0,
         Type: 'ExternalReceive',
     },
     {
@@ -114,7 +114,7 @@ hKMuDXNCtFRZsU3pstl2+xuSXfrhy2HJcIvnlGvKwpxlDPnkeLerRNmtw7o3
         WalletAccountID: '001',
         ID: '0002',
         TransactionID: `-----BEGIN PGP MESSAGE-----
-            
+
 wcBMA5fAXxAlQaycAQgAgr5lvL3k96n4gU01hTA7dnYnQd/gxIYzXkaIpaq5
 ffcl8fwPlpAuEYdlUtUZ79SdzgG5YcYSYblvX6dfmFyGbHeumWbvVZn3OJ0I
 sBRWvH0UzH3TFyboajhz17NxMpvW8TVZ23K4ZDjajk3E699l9pLfTe0G9lGM
@@ -141,8 +141,8 @@ FbEaKeH1aHQSHNOHPK3UgFHx05sjsjnJpJ8lGvxJzRWfGmOJCQ==
         Body: null,
         ToList: null,
         Sender: null,
-        IsPrivate: false,
-        IsSuspicious: false,
+        IsPrivate: 0,
+        IsSuspicious: 0,
         Type: 'ExternalReceive',
     },
     {
@@ -150,7 +150,7 @@ FbEaKeH1aHQSHNOHPK3UgFHx05sjsjnJpJ8lGvxJzRWfGmOJCQ==
         WalletAccountID: '001',
         ID: '0003',
         TransactionID: `-----BEGIN PGP MESSAGE-----
-        
+
 wcBMA5fAXxAlQaycAQf/URoX0CIQ/1LtfYXiVGXN35lfd46JNj8MSJW/8Tun
 i5EUAPfpatHrQVInfXPnuhPMo0CvG7ReSfJXp6vm0wGa1ym+e4Msh/Nmm9WI
 S4jc1jehG8l2X2AyOjMyDw7Fb8SJUu9IZUjZ9/aFXQy2EbU6JMyaJjDze4Rp
@@ -177,8 +177,8 @@ zTy3ydb5qp51qfSnrOxWqyY/VvnRk97PIeysGWSCERueUzfp8Q==
         Body: null,
         ToList: null,
         Sender: null,
-        IsPrivate: false,
-        IsSuspicious: false,
+        IsPrivate: 0,
+        IsSuspicious: 0,
         Type: 'ExternalReceive',
     },
 ];
@@ -215,8 +215,8 @@ QBT5KXMc9NeCRz1aMA3fyrySG8jmDhYaRdivUiOrIGbRVsfLAw==
     Body: null,
     ToList: null,
     Sender: null,
-    IsPrivate: false,
-    IsSuspicious: false,
+    IsPrivate: 0,
+    IsSuspicious: 0,
     Type: 'ExternalReceive',
 };
 
@@ -359,8 +359,8 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
                 Subject: null,
                 Body: null,
                 ToList: null,
-                IsPrivate: false,
-                IsSuspicious: false,
+                IsPrivate: 0,
+                IsSuspicious: 0,
                 Type: 'ExternalReceive',
             },
             free: noop,
