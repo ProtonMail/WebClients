@@ -164,7 +164,7 @@ function Drive({ activeFolder, folderView }: Props) {
             document.getSelection()?.removeAllRanges();
 
             if (isDocsEnabled && isProtonDocument(item.mimeType)) {
-                openDocument({
+                void openDocument({
                     linkId: id,
                     shareId,
                 });
