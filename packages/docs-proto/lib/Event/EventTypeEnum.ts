@@ -7,5 +7,6 @@ export enum EventTypeEnum {
   ServerIsRequestingClientToBroadcastItsState = 11,
   ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive = 12,
   ServerHasMoreOrLessGivenTheClientEverythingItHas = 13,
-  ServerIsDisconnectingAllClientsFromTheStream = 14,
+  ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream = 14,
+  ServerIsReadyToAcceptClientMessages = 15,
 }

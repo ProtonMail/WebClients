@@ -139,18 +139,18 @@ export class ServerMessage extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.type != 0) {writer.writeInt32(1, this.type)}
+    if (this.type != 0) writer.writeInt32(1, this.type)
     if (this.has_documentUpdatesMessage)
-      {writer.writeMessage(2, this.documentUpdatesMessage, () => this.documentUpdatesMessage.serialize(writer))}
-    if (this.has_eventsMessage) {writer.writeMessage(3, this.eventsMessage, () => this.eventsMessage.serialize(writer))}
-    if (this.has_acksMessage) {writer.writeMessage(4, this.acksMessage, () => this.acksMessage.serialize(writer))}
-    if (!w) {return writer.getResultBuffer()}
+      writer.writeMessage(2, this.documentUpdatesMessage, () => this.documentUpdatesMessage.serialize(writer))
+    if (this.has_eventsMessage) writer.writeMessage(3, this.eventsMessage, () => this.eventsMessage.serialize(writer))
+    if (this.has_acksMessage) writer.writeMessage(4, this.acksMessage, () => this.acksMessage.serialize(writer))
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessage {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new ServerMessage()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           message.type = reader.readInt32()
@@ -234,14 +234,14 @@ export class ServerMessageWithDocumentUpdates extends pb_1.Message {
   serialize(w: pb_1.BinaryWriter): void
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
-    if (this.has_updates) {writer.writeMessage(1, this.updates, () => this.updates.serialize(writer))}
-    if (!w) {return writer.getResultBuffer()}
+    if (this.has_updates) writer.writeMessage(1, this.updates, () => this.updates.serialize(writer))
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessageWithDocumentUpdates {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new ServerMessageWithDocumentUpdates()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           reader.readMessage(
@@ -308,14 +308,14 @@ export class ServerMessageWithEvents extends pb_1.Message {
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
     if (this.events.length)
-      {writer.writeRepeatedMessage(1, this.events, (item: dependency_2.Event) => item.serialize(writer))}
-    if (!w) {return writer.getResultBuffer()}
+      writer.writeRepeatedMessage(1, this.events, (item: dependency_2.Event) => item.serialize(writer))
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessageWithEvents {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new ServerMessageWithEvents()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           reader.readMessage(message.events, () =>
@@ -386,14 +386,14 @@ export class ServerMessageWithMessageAcks extends pb_1.Message {
   serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
     const writer = w || new pb_1.BinaryWriter()
     if (this.acks.length)
-      {writer.writeRepeatedMessage(1, this.acks, (item: dependency_3.MessageAck) => item.serialize(writer))}
-    if (!w) {return writer.getResultBuffer()}
+      writer.writeRepeatedMessage(1, this.acks, (item: dependency_3.MessageAck) => item.serialize(writer))
+    if (!w) return writer.getResultBuffer()
   }
   static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ServerMessageWithMessageAcks {
     const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes),
       message = new ServerMessageWithMessageAcks()
     while (reader.nextField()) {
-      if (reader.isEndGroup()) {break}
+      if (reader.isEndGroup()) break
       switch (reader.getFieldNumber()) {
         case 1:
           reader.readMessage(message.acks, () =>
