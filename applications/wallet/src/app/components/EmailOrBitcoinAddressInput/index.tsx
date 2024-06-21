@@ -30,7 +30,7 @@ import { CoreButton, Input, InputProps } from '../../atoms';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
 import { getThemeByIndex, isValidBitcoinAddress } from '../../utils';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
-import { RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
+import { BtcAddressOrError, RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
 
 import './EmailOrBitcoinAddressInput.scss';
 
@@ -41,6 +41,7 @@ export interface RecipientWithBtcAddress extends Recipient {
 interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
     onAddRecipients: (recipients: Recipient[]) => void;
     onRemoveRecipient?: (recipient: Recipient) => void;
+    onClickRecipient?: (recipient: Recipient, btcAddress: BtcAddressOrError, index: number) => void;
     recipientEmailMap: RecipientEmailMap;
     contactEmails?: ContactEmail[];
     contactEmailsMap?: SimpleMap<ContactEmail>;
@@ -138,6 +139,7 @@ export const EmailOrBitcoinAddressInput = ({
     onChange,
     onAddRecipients,
     onRemoveRecipient,
+    onClickRecipient,
     excludedEmails = [],
     network,
     loading,
@@ -270,6 +272,7 @@ export const EmailOrBitcoinAddressInput = ({
                                     index={index}
                                     address={recipient.Address}
                                     name={recipient.Name}
+                                    onClick={() => onClickRecipient?.(recipient, btcAddress, index)}
                                     rightNode={fetchedEmailListItemRightNode({
                                         email: recipient.Address,
                                         error: btcAddress.error,

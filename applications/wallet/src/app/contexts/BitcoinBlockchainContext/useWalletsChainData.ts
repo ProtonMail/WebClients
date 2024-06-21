@@ -154,9 +154,9 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 try {
                     const wasmAccount = account.account;
 
-                    addNewSyncing(walletId, accountId);
-
                     if ((await blockchainClient.shouldSync(wasmAccount)) || manual) {
+                        addNewSyncing(walletId, accountId);
+
                         // If syncing is manual, we do a full sync
                         if ((await wasmAccount.hasSyncData()) && !manual) {
                             await blockchainClient.partialSync(wasmAccount);
