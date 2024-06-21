@@ -1,4 +1,4 @@
-import { KeyboardEvent, MouseEvent, MutableRefObject, useMemo, useRef, useState } from 'react';
+import { KeyboardEvent, MouseEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -35,13 +35,13 @@ import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import clsx from '@proton/utils/clsx';
 
-import { ASSISTANT_INPUT_ID } from 'proton-mail/constants';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
 
 import { ReplacementStyle } from './ComposerAssistant';
 import AssistantUnsafeErrorFeedbackModal from './modals/AssistantUnsafeErrorFeedbackModal';
 import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
+import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';
 import ComposerAssistantInitialSetupSpotlight, {
     ComposerAssistantInitialSetupSpotlightRef,
 } from './spotlights/ComposerAssistantInitialSetupSpotlight';
@@ -84,6 +84,11 @@ const ComposerAssistantInput = ({
     // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
     const [inputOnFocus, setInputOnFocus] = useState(false);
+
+    const inputRef = useRef<HTMLTextAreaElement>(null);
+
+    const { assistantRefManager: assistantInputRefManager } = useComposerAssistantProvider();
+
     /**
      * In some conditions, we want to show the refine buttons:
      * - When the assistant is opened the first time, even though we focus the input by default (init state value)
@@ -207,6 +212,12 @@ const ComposerAssistantInput = ({
     }
 
     const startGeneratingResult = async (actionType?: ActionType) => {
+        // If user hasn't set the assistant yet, invite him to do so
+        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
+            setInnerModal(ComposerInnerModalStates.AssistantSettings);
+            return;
+        }
+
         // Warn the user that we need the download to be completed before generating a result
         if (downloadPaused) {
             setResumeDownloadModalOpen(true);
@@ -222,12 +233,12 @@ const ComposerAssistantInput = ({
         // Unselect text (may take effect later, due to useState?)
         onResetSelection();
 
-        // If actionType is undefined, it means the we're being called with a user request
+        // If actionType is undefined, it means we're being called with a user request
         // (user has typed stuff the AI input field), but caller doesn't know if this
         // has to be applied to full message generation or refinement of a specific part.
         const hasGeneratedText = Boolean(expanded && assistantResult);
         if (!actionType) {
-            actionType = hasGeneratedText && hasSelection ? 'customRefine' : 'writeFullEmail';
+            actionType = hasSelection ? 'customRefine' : 'writeFullEmail';
         }
 
         // Figure out which replacement style must be used to insert the new content
@@ -278,11 +289,6 @@ const ComposerAssistantInput = ({
     };
 
     const handleGenerateSubmit = async () => {
-        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
-            setInnerModal(ComposerInnerModalStates.AssistantSettings);
-            return;
-        }
-
         await startGeneratingResult(undefined);
     };
 
@@ -398,23 +404,21 @@ const ComposerAssistantInput = ({
      *  - Not loading the model on the GPU
      *  - Some text is selected or present in the editor or generated text present in the assistant (canUseRefineActions)
      */
-    const canShowRefineButtons = useMemo(() => {
-        return (
-            !isGeneratingResult &&
-            !isModelDownloading &&
-            !isModelLoadingOnGPU &&
-            !downloadPaused &&
-            canUseRefineActions &&
-            !hasDownloadError
-        );
-    }, [
-        isGeneratingResult,
-        isModelDownloading,
-        isModelLoadingOnGPU,
-        downloadPaused,
-        canUseRefineActions,
-        hasDownloadError,
-    ]);
+    const canShowRefineButtons =
+        !isGeneratingResult &&
+        !isModelDownloading &&
+        !isModelLoadingOnGPU &&
+        !downloadPaused &&
+        canUseRefineActions &&
+        !hasDownloadError;
+
+    useEffect(() => {
+        assistantInputRefManager.input.set(assistantID, inputRef);
+
+        return () => {
+            assistantInputRefManager.input.delete(assistantID);
+        };
+    }, []);
 
     const getRightButton = () => {
         if (isGeneratingResult) {
@@ -607,16 +611,12 @@ const ComposerAssistantInput = ({
                     <span className="shrink-0 mt-1 mr-2 flex items-start">{getLeftIcon()}</span>
                     <label className="sr-only">{c('Label').t`Type a prompt to generate an output`}</label>
                     <InputFieldTwo
+                        ref={inputRef}
                         as={TextArea}
-                        id={ASSISTANT_INPUT_ID}
-                        autoFocus={!hasSelection}
+                        autoFocus={!hasSelection && !isAssistantInitialSetup}
                         value={assistantRequest}
                         onClick={handleClickOnInput}
-                        placeholder={
-                            hasSelection
-                                ? c('Placeholder').t`How do you want the selected text modified?`
-                                : placeholderRandom
-                        }
+                        placeholder={hasSelection ? c('Placeholder').t`Describe what to change` : placeholderRandom}
                         onValue={(value: string) => {
                             onContentChange?.();
                             setAssistantRequest(value);

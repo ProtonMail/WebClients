@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
-import { editMemberInvitation, inviteMember } from '@proton/shared/lib/api/members';
+import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
 import { GIGA, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
+import noop from '@proton/utils/noop';
 
 import {
     InputFieldTwo,
@@ -17,17 +19,27 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalStateProps,
+    Toggle,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
+import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalStateProps {
     organization?: Organization;
     member: Member | null | undefined;
+    allowAIAssistantConfiguration: boolean;
+    aiSeatsRemaining: boolean;
 }
 
-const UserInviteOrEditModal = ({ organization, member, ...modalState }: Props) => {
+const UserInviteOrEditModal = ({
+    organization,
+    member,
+    allowAIAssistantConfiguration,
+    aiSeatsRemaining,
+    ...modalState
+}: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [submitting, withLoading] = useLoading();
@@ -38,11 +50,15 @@ const UserInviteOrEditModal = ({ organization, member, ...modalState }: Props) =
     const storageSizeUnit = GIGA;
     const isEditing = !!member?.ID;
 
+    const [subscription] = useSubscription();
+    const isVisionary = hasNewVisionary(subscription);
+
     const initialModel = useMemo(
         () => ({
             address: '',
             storage: member ? member.MaxSpace : clamp(500 * GIGA, storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
+            numAI: aiSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
         [member]
@@ -62,13 +78,20 @@ const UserInviteOrEditModal = ({ organization, member, ...modalState }: Props) =
     };
 
     const sendInvitation = async () => {
-        await api(inviteMember(model.address, model.storage));
+        const res = await api(inviteMember(model.address, model.storage));
+
+        // Users could have the Writing Assistant enabled when created and we need to update the member when this is the case
+        if (model.numAI) {
+            await api(updateAI(res.Member.ID, 1)).catch(noop);
+        }
+
         createNotification({ text: c('Success').t`Invitation sent` });
     };
 
     const editInvitation = async () => {
         let updated = false;
         await api(editMemberInvitation(member!.ID, model.storage));
+        await api(updateAI(member!.ID, model.numAI ? 1 : 0));
         updated = true;
         if (updated) {
             createNotification({ text: c('familyOffer_2023:Success').t`Member updated` });
@@ -129,6 +152,21 @@ const UserInviteOrEditModal = ({ organization, member, ...modalState }: Props) =
                         disableChange={submitting}
                         autoFocus
                     />
+                )}
+
+                {allowAIAssistantConfiguration && (
+                    <div className="flex items-center gap-2 mb-6">
+                        <Toggle
+                            id="ai-assistant-toggle"
+                            checked={model.numAI}
+                            disabled={!aiSeatsRemaining}
+                            onChange={({ target }) => handleChange('numAI')(target.checked)}
+                        />
+                        <label className="text-semibold" htmlFor="ai-assistant-toggle">
+                            {c('Info').t`Writing assistant`}
+                        </label>
+                        {!aiSeatsRemaining && <AssistantUpdateSubscriptionButton />}
+                    </div>
                 )}
 
                 <MemberStorageSelector

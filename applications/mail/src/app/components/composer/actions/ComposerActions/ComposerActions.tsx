@@ -110,13 +110,11 @@ const ComposerActions = ({
         if (!isAssistantOpened && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             if (!hasCompatibleHardware) {
                 displayAssistantModal('incompatibleHardware');
-                sendShowAssistantReport();
                 return;
             }
 
             if (!hasCompatibleBrowser) {
                 displayAssistantModal('incompatibleBrowser');
-                sendShowAssistantReport();
                 return;
             }
 
@@ -125,7 +123,6 @@ const ComposerActions = ({
         }
 
         onToggleAssistant();
-
         sendShowAssistantReport();
     };
 
@@ -204,7 +201,7 @@ const ComposerActions = ({
                                 <Tooltip
                                     title={
                                         disableAssistant
-                                            ? c('Info').t`You can open only one writing assistant at a time`
+                                            ? c('Info').t`Only one writing assistant may be be open at a time`
                                             : c('Action').t`Your email writing assistant`
                                     }
                                 >

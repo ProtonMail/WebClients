@@ -20,12 +20,14 @@ export const getUpgradePath = ({
     plan,
     app,
     audience,
+    target,
 }: {
     user?: UserModel;
     plan?: PLANS;
     subscription?: Subscription;
     audience?: Audience;
     app?: APP_NAMES;
+    target?: 'compare' | 'checkout';
 }) => {
     const params = new URLSearchParams();
     if (plan) {
@@ -45,7 +47,7 @@ export const getUpgradePath = ({
     if (!params.has('plan')) {
         params.set('plan', currentPlan?.Name ?? PLANS.BUNDLE);
     }
-    params.set('target', 'compare');
+    params.set('target', target ?? 'compare');
     return `/dashboard?${params}`;
 };
 

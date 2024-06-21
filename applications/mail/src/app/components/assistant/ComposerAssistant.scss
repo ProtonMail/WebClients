@@ -31,8 +31,13 @@
 		}
 
 		+ .composer-body-container .editor-textarea {
-			margin-block-start: 4.2em; // move it from good size (includes room for status)
-			block-size: calc(100% - 4.2em);
+			margin-block-start: 4.9em; // move it from good size (includes room for status)
+			block-size: calc(100% - 4.9em);
+		}
+
+		&:has(.composer-assistant-hint:empty) + .composer-body-container .editor-textarea {
+			margin-block-start: 3.5em;
+			block-size: calc(100% - 3.5em);
 		}
 	}
 
@@ -86,7 +91,7 @@
 		margin-block-start: 1px;
 
 		&:empty {
-			min-block-size: 0; // to see if we keep it
+			min-block-size: 0;
 		}
 	}
 

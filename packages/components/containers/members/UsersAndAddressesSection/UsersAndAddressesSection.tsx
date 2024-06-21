@@ -8,22 +8,13 @@ import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
-import {
-    APP_NAMES,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-    MEMBER_SUBSCRIBER,
-    MEMBER_TYPE,
-    ORGANIZATION_STATE,
-} from '@proton/shared/lib/constants';
+import { APP_NAMES, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import {
-    getHasMailB2BPlan,
     getHasPassB2BPlan,
     getHasVpnOrPassB2BPlan,
-    hasAnyBundlePro,
     hasFamily,
     hasNewVisionary,
 } from '@proton/shared/lib/helpers/subscription';
@@ -43,7 +34,17 @@ import {
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
-import { Block, Info, SearchInput, Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
+import {
+    Badge,
+    Block,
+    Info,
+    SearchInput,
+    Table,
+    TableBody,
+    TableCell,
+    TableRow,
+    useModalState,
+} from '../../../components';
 import {
     useAddresses,
     useApi,
@@ -65,7 +66,6 @@ import { AddressModal } from '../../addresses';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import useUnprivatizeMembers from '../../organization/useUnprivatizeMembers';
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments/subscription';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal from '../LoginMemberModal';
@@ -79,6 +79,7 @@ import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
+import UserAndAddressesSectionIntro from './UserAndAddressesSectionIntro';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
 
@@ -105,7 +106,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [subscription] = useSubscription();
     const [addresses] = useAddresses();
     const [user] = useUser();
-    const [openSubscriptionModal] = useSubscriptionModal();
     const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
     const [keywords, setKeywords] = useState('');
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
@@ -128,7 +128,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
-    const hasInboxB2BPlan = hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
 
     const useEmail = hasVpnOrPassB2BPlan;
     const allowStorageConfiguration = !hasVpnOrPassB2BPlan;
@@ -139,6 +138,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const showMultipleUserUploadButton = hasVpnOrPassB2BPlan;
     const showAddressesSection = !hasVpnOrPassB2BPlan;
     const showFeaturesColumn = !hasVpnOrPassB2BPlan;
+
+    const { MaxAI = 0, UsedAI = 0 } = organization || {};
+    const aiSeatsRemaining = MaxAI > UsedAI;
 
     const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
@@ -337,21 +339,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         setChangeMemberPasswordModalOpen(true);
     };
 
-    const handleGetMoreLicense = () => {
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disablePlanSelection: true,
-            metrics: {
-                /**
-                 * The `vpn` in `vpn-um-get-more` is unimportant.
-                 * The intention is to observe the user journey, not the specific plan the journey is for.
-                 * However changing this would require a new metric schema version.
-                 */
-                source: 'vpn-um-get-more',
-            },
-        });
-    };
-
     const userFound = membersSelected.length;
 
     const tableLabel = [
@@ -374,38 +361,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
     const disableAddAddressButton = loadingAddAddresses || organization?.State === ORGANIZATION_STATE.DELINQUENT;
-    const selfMember = members?.find((member) => member.Self);
-
-    const settingsParagraphContent = (() => {
-        if (hasFamily(subscription)) {
-            return c('familyOffer_2023:Info for members section')
-                .t`Add, remove, and make changes to user accounts in your family group.`;
-        }
-
-        const defaultString = c('familyOffer_2023:Info for members section')
-            .t`Add, remove, and make changes to user accounts in your organization.`;
-
-        if (hasVpnOrPassB2BPlan || hasInboxB2BPlan) {
-            const maxMembers = organization?.MaxMembers || 0;
-            const usedMembers = organization?.UsedMembers || 0;
-            return (
-                <>
-                    {c('Info').ngettext(
-                        msgid`You are currently using ${usedMembers} of your ${maxMembers} available user license.`,
-                        `You are currently using ${usedMembers} of your ${maxMembers} available user licenses.`,
-                        maxMembers
-                    )}
-                    {user.canPay && selfMember?.Subscriber === MEMBER_SUBSCRIBER.PAYER && (
-                        <Button shape="outline" color="norm" size="small" onClick={handleGetMoreLicense}>
-                            {c('Action').t`Get more licenses`}
-                        </Button>
-                    )}
-                </>
-            );
-        }
-
-        return defaultString;
-    })();
 
     const tmpMember = members?.find((member) => tmpMemberID === member.ID);
 
@@ -413,8 +368,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         <SettingsSectionWide>
             {organizationModals.info}
             {organizationModals.modals}
-            <SettingsParagraph large className="flex items-baseline mb-6 gap-2">
-                {settingsParagraphContent}
+            <SettingsParagraph large className="flex items-center mb-6 gap-2">
+                <UserAndAddressesSectionIntro />
             </SettingsParagraph>
             <Block className="flex items-start">
                 {renderUserSetupModal && (
@@ -461,6 +416,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         useEmail={useEmail}
                         optionalName={hasVpnOrPassB2BPlan}
                         members={members}
+                        aiSeatsRemaining={aiSeatsRemaining}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
@@ -491,6 +447,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 {renderSubUserEditModal && tmpMember && (
                     <SubUserEditModal
                         member={tmpMember}
+                        aiSeatsRemaining={aiSeatsRemaining}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
@@ -503,6 +460,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     <UserInviteOrEditModal
                         member={tmpMember}
                         organization={organization}
+                        aiSeatsRemaining={aiSeatsRemaining}
+                        allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         {...userInviteOrEditModalProps}
                     />
                 )}
@@ -516,6 +475,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     <InviteUserCreateSubUserModal
                         members={members}
                         organization={organization}
+                        aiSeatsRemaining={aiSeatsRemaining}
                         verifiedDomains={verifiedDomains}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         onInviteUser={handleInviteUser}
@@ -657,9 +617,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     </UserTableBadge>
                                                                 )}
                                                             {member.NumAI > 0 && (
-                                                                <UserTableBadge type="info">
-                                                                    {c('Users table: badge').t`AI`}
-                                                                </UserTableBadge>
+                                                                <Badge type="origin">{c('Users table: badge')
+                                                                    .t`Writing assistant`}</Badge>
                                                             )}
                                                             {Boolean(member.SSO) && (
                                                                 <UserTableBadge

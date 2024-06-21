@@ -24,9 +24,11 @@ interface Props {
     result?: string;
     prompt?: string;
     disabled: boolean;
+    feedbackSubmitted: boolean;
+    setFeedbackSubmitted: (value: boolean) => void;
 }
 
-const AssitantFeedbackModal = ({ disabled, result, prompt }: Props) => {
+const AssitantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, setFeedbackSubmitted }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -35,6 +37,8 @@ const AssitantFeedbackModal = ({ disabled, result, prompt }: Props) => {
     const { assistantConfig } = useAssistant();
     const [selectedOption, setSelectedOption] = useState<string | undefined>(undefined);
     const [body, setBody] = useState<string | undefined>(undefined);
+
+    const isServerGeneration = AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY;
 
     const feedbackModal = useModalStateObject({
         onClose: () => {
@@ -55,12 +59,11 @@ const AssitantFeedbackModal = ({ disabled, result, prompt }: Props) => {
         const formData = new FormData(e.currentTarget);
         const modelContent = formData.get('model-content');
 
-        const isServer = AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY;
         const requestBody: AssistantFeedback = {
             Category: selectedOption,
             Sentiment: 'Negative',
-            Environment: isServer ? 'Remote' : 'Local',
-            ModelID: isServer ? undefined : assistantConfig?.model_list[0]?.model_id ?? '',
+            Environment: isServerGeneration ? 'Remote' : 'Local',
+            ModelID: isServerGeneration ? undefined : assistantConfig?.model_list[0]?.model_id ?? '',
             Body: body,
             Component: 'Mail',
             Prompt: undefined,
@@ -73,10 +76,27 @@ const AssitantFeedbackModal = ({ disabled, result, prompt }: Props) => {
         }
 
         await api(sendAssistantFeedback(requestBody));
-        createNotification({ text: c('Error').t`Thanks for the feedback!` });
+        createNotification({ text: c('Success').t`Thanks for the feedback!` });
 
         setSelectedOption(undefined);
         feedbackModal.openModal(false);
+        setFeedbackSubmitted(true);
+    };
+
+    const handlePositiveSubmit = async () => {
+        await api(
+            sendAssistantFeedback({
+                Category: 'positive',
+                Sentiment: 'Positive',
+                Environment: isServerGeneration ? 'Remote' : 'Local',
+                ModelID: isServerGeneration ? undefined : assistantConfig?.model_list[0]?.model_id ?? '',
+                Body: '',
+                Component: 'Mail',
+            })
+        );
+
+        createNotification({ text: c('Success').t`Thanks for the feedback!` });
+        setFeedbackSubmitted(true);
     };
 
     const feedbackOptions = [
@@ -106,18 +126,30 @@ const AssitantFeedbackModal = ({ disabled, result, prompt }: Props) => {
         feedbackOptions.find(({ value }) => value === selectedOption)?.placeHolder ??
         c('Info').t`Please share what you expected`;
 
+    const disableButtons = feedbackSubmitted || loading || disabled;
+
     if (disabled) {
         return null;
     }
 
     return (
         <>
+            <Button
+                icon
+                shape="ghost"
+                style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
+                disabled={disableButtons}
+                loading={loading}
+                onClick={() => withLoading(handlePositiveSubmit())}
+            >
+                <Icon name="thumb-up" size={6} alt={c('Action').t`Report a good content`} />
+            </Button>
             <Tooltip title={c('Action').t`Report an issue`}>
                 <Button
                     icon
                     shape="ghost"
                     style={{ '--padding-block': '0.3125rem', '--padding-inline': '0.3125rem' }}
-                    disabled={disabled}
+                    disabled={disableButtons}
                     onClick={() => feedbackModal.openModal(true)}
                 >
                     <Icon name="thumb-down" size={6} alt={c('Action').t`Report an issue`} />

@@ -32,6 +32,7 @@ export interface RunningAction {
 
 export type GenerationCallbackDetails = {
     slow: boolean;
+    harmful: boolean;
 };
 export type GenerationCallback = (fulltext: string, details?: GenerationCallbackDetails) => void;
 

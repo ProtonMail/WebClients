@@ -24,6 +24,12 @@ export const enum ERROR_TYPE {
     DOWNLOAD_FAIL = 'DOWNLOAD_FAIL',
     UNLOAD_FAIL = 'UNLOAD_FAIL',
     GENERATION_CANCEL_FAIL = 'GENERATION_CANCEL_FAIL',
+    TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS',
+}
+
+export const enum INCOMPATIBILITY_TYPE {
+    BROWSER = 'BROWSER',
+    HARDWARE = 'HARDWARE',
 }
 
 const useAssistantTelemetry = () => {
@@ -154,6 +160,21 @@ const useAssistantTelemetry = () => {
         });
     };
 
+    const sendIncompatibleAssistantReport = ({
+        incompatibilityType,
+    }: {
+        incompatibilityType: INCOMPATIBILITY_TYPE;
+    }) => {
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+            event: TelemetryMailComposerAssistantEvents.incompatible_assistant,
+            dimensions: {
+                incompatibility_type: incompatibilityType,
+            },
+        });
+    };
+
     return {
         sendShowAssistantReport,
         sendFreeTrialStart,
@@ -166,6 +187,7 @@ const useAssistantTelemetry = () => {
         sendPauseDownloadAssistantReport,
         sendLoadModelAssistantReport,
         sendUnloadModelAssistantReport,
+        sendIncompatibleAssistantReport,
     };
 };
 

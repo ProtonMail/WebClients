@@ -5,21 +5,29 @@ import {
     SettingsLayout,
     SettingsLayoutLeft,
     SettingsLayoutRight,
-    useAssistantSubscriptionStatus,
     useFlag,
-    useUser,
+    useOrganization,
+    useUserSettings,
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 import ToggleAssistant from './ToggleAssistant';
 import ToggleAssistantEnvironment from './ToggleAssistantEnvironment';
 
-// This toggle allow users to enable or disable the writing assistant
-// Moreover, they can choose to select between server and client side
+const { OFF, UNSET, SERVER_ONLY } = AI_ASSISTANT_ACCESS;
+
 const ToggleAssistantContainer = () => {
     const assistantFeatureEnabled = useFlag('ComposerAssistant');
-    const { trialStatus } = useAssistantSubscriptionStatus();
-    const [user] = useUser();
+    const [{ AIAssistantFlags }] = useUserSettings();
+    const [organization] = useOrganization();
+
+    const isVisionary = isOrganizationVisionary(organization);
+    let aiFlag = AIAssistantFlags;
+    if (AIAssistantFlags === UNSET) {
+        aiFlag = isVisionary ? OFF : SERVER_ONLY;
+    }
 
     if (!assistantFeatureEnabled) {
         return null;
@@ -30,17 +38,17 @@ const ToggleAssistantContainer = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="assistantSelect" className="flex-1">
-                        <span className="text-semibold">{c('Title').t`Enable writing assistant`}</span>
+                        <span className="text-semibold">{c('Title').t`Writing assistant`}</span>
                     </label>
                     <Href className="block text-sm" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant')}>{c(
                         'Link'
                     ).t`Learn more`}</Href>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
-                    <ToggleAssistant id="assistantSelect" />
+                    <ToggleAssistant id="assistantSelect" aiFlag={aiFlag} />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            {(trialStatus === 'trial-ongoing' || user.NumAI > 0) && <ToggleAssistantEnvironment />}
+            {aiFlag !== OFF && <ToggleAssistantEnvironment aiFlag={AIAssistantFlags} />}
         </>
     );
 };

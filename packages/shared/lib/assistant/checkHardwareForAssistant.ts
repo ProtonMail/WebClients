@@ -1,7 +1,6 @@
-import { isBrave } from '@proton/shared/lib/helpers/browser';
+import { isBrave, isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 type HardwareSpecs = {
-    userAgent: string;
     deviceMemory: any;
     platform: string;
     webGlRenderer: string;
@@ -12,6 +11,7 @@ export type GpuAssessmentResult =
     | 'ok' // seems like WebGPU should work
     | 'noWebGpu' // we cannot load WebGPU
     | 'noWebGpuFirefox' // we cannot load WebGPU and we specifically know it's because the user uses Firefox
+    | 'noWebGpuSafari' // we cannot load WebGPU and we specifically know it's because the user uses Safari
     | 'insufficientRam' // total ram can't hold the model in memory, and swapping would give terrible perfs
     | 'macPreM1' // Mac detected, but it seems to be an older Intel CPU that cannot run LLMs
     | 'noShaderF16' // this GPU is lacking newer features that are required for LLM text generation
@@ -76,7 +76,6 @@ export const checkHardwareForAssistant = async (): Promise<GpuAssessmentResult> 
         webGlVendor = gl.getParameter(gl.VENDOR);
     }
     const specs: HardwareSpecs = {
-        userAgent: navigator.userAgent,
         platform: navigator.platform,
         // @ts-ignore
         deviceMemory: navigator.deviceMemory || null,
@@ -101,8 +100,10 @@ export const checkHardwareForAssistant = async (): Promise<GpuAssessmentResult> 
         const adapter: any | undefined = await navigator.gpu?.requestAdapter();
         if (!adapter) {
             console.error('WebGPU is not available.');
-            if (specs.userAgent.includes('Firefox')) {
+            if (isFirefox()) {
                 return 'noWebGpuFirefox';
+            } else if (isSafari()) {
+                return 'noWebGpuSafari';
             } else {
                 return 'noWebGpu';
             }
@@ -114,8 +115,10 @@ export const checkHardwareForAssistant = async (): Promise<GpuAssessmentResult> 
         }
     } catch (e) {
         console.error(e);
-        if (specs.userAgent.includes('Firefox')) {
+        if (isFirefox()) {
             return 'noWebGpuFirefox';
+        } else if (isSafari()) {
+            return 'noWebGpuSafari';
         } else {
             return 'noWebGpu';
         }

@@ -9,6 +9,7 @@ import {
 } from './constants';
 import { AppCaches, CacheId, getCachedFiles, storeInCache } from './downloader';
 import {
+    convertToDoubleNewlines,
     isAssistantPostMessage,
     postMessageParentToIframe,
     removeStopStrings,
@@ -24,6 +25,7 @@ import type {
     FormalAction,
     FriendlyAction,
     GenerationCallback,
+    GenerationCallbackDetails,
     LlmManager,
     LlmModel,
     ProofreadAction,
@@ -55,47 +57,53 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
     'Please check if the description provided by the user falls within one of these categories.',
     'If the answer is yes, it\'s toxic and harmful, please answer "Harmful (yes/no): yes" and cease.',
     [
-        'If the answer is no, please answer "Harmful (yes/no): no" and then start a complete email message with ' +
-            '"Body:", following the user\'s request.',
+        'If the answer is no, please answer "Harmful (yes/no): no" and then start a complete email message with',
+        '"Body:", following the user\'s request.',
         'You do not use emojis.',
         'There should be no subject, directly write the body of the message.',
         'You sign as "[Your Name]".',
-        'The user is asking you to write an email, not to answer his questions.',
+        'The email you write is meant to be sent by the user.',
+        'Given the user prompt, figure out if the instructions are for you (as an assistant) to write the message' +
+            '(e.g. "ask", "invite"...)',
+        'or if the user prompt is simply a short version of an email you must write: make the best decision.',
         'Be mindful to direct the message to the recipient as indicated by the user.',
+        'Match the style and tone of the email (friendly, formal, tu/vous, etc)',
+        'with the type of relationship the user is likely to have with the recipient.',
         'Who is the recipient? Write their name in the opening.',
     ].join(' '),
 ].join('\n');
 
-const INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX = 'Write an email, the content of which is about to ';
+const INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX = '(write the email in the language of the previous sentence)';
 
 const HARMFUL_CHECK_PREFIX = 'Harmful (yes/no): ';
 
 const INSTRUCTIONS_SHORTEN = [
-    "Now, you shorten the part of the email that's in the the input below.",
+    "Now, you shorten the part of the email that's in the the input below, in the same language.",
     'Only summarize the part below and do not add anything else.',
 ].join(' ');
 
 const INSTRUCTIONS_REFINE_SPAN = [
     'The user wants you to modify a part of the text identified by the span tags (class "to-modify").',
-    'You write a revised version of this part of the text, under a span tag with class "modified".',
+    'You write a revised version of this part of the text, in the same language, under a span tag with class "modified".',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 const INSTRUCTIONS_REFINE_DIV = [
     'The user wants you to modify a part of the text identified by the div tags (class "to-modify").',
-    'You write a revised version of this part of the text, under a div tag with class "modified".',
+    'You write a revised version of this part of the text, in the same language, under a div tag with class "modified".',
     'Write the rest of the email outside of the div tag.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 const INSTRUCTIONS_REFINE_WHOLE = [
     'The user wants you to modify the email.',
-    'You write a revised version of this email.',
+    'You write a revised version of this email, in the same language.',
     "If the user's request is unethical or harmful, you do not replace the part to modify.",
 ].join(' ');
 
 let INSTRUCTIONS_REFINE_USER_PREFIX_SPAN =
-    'In the span that has the class "modified", please do the following changes: ';
-let INSTRUCTIONS_REFINE_USER_PREFIX_DIV = 'In the div that has the class "modified", please do the following changes: ';
-let INSTRUCTIONS_REFINE_USER_PREFIX_WHOLE = 'Please do the following changes: ';
+    'In the span that has the class "modified", please do the following changes but keep the language unchanged: ';
+let INSTRUCTIONS_REFINE_USER_PREFIX_DIV =
+    'In the div that has the class "modified", please do the following changes but keep the language unchanged: ';
+let INSTRUCTIONS_REFINE_USER_PREFIX_WHOLE = 'Please do the following changes but keep the language unchanged: ';
 
 const MODEL_VARIANT = 'Mistral-7B-Instruct-v0.2-q4f16_1';
 
@@ -130,36 +138,6 @@ export type ServerAssistantInteraction = {
     transformCallback: TransformCallback;
     stopStrings?: string[];
 };
-
-function convertToDoubleNewlines(input: string): string {
-    const lines = input.split('\n');
-
-    let paragraphs: string[][] = [];
-    let paragraph: string[] = [];
-
-    for (let line of lines) {
-        line = line.trim();
-        if (!line) {
-            paragraphs.push(paragraph);
-            paragraph = [];
-            continue;
-        }
-        const isListLine = /^(\d+[\.\)]|\-|\*|\•|[a-zA-Z][\.\)]) /.test(line);
-        if (!isListLine) {
-            paragraphs.push(paragraph);
-            paragraph = [];
-        }
-        paragraph.push(line);
-    }
-    if (paragraph) {
-        paragraphs.push(paragraph);
-    }
-
-    return paragraphs
-        .map((lines) => lines.join('\n'))
-        .join('\n\n')
-        .replace(/\n{3,}/g, '\n\n');
-}
 
 const genericCleanup: TransformCallback = (fulltext: string) => {
     let fulltext2 = fulltext;
@@ -255,7 +233,7 @@ function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
         },
         {
             role: 'user',
-            contents: `${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_PREFIX} ${action.prompt}`,
+            contents: `${action.prompt} ${INSTRUCTIONS_WRITE_FULL_EMAIL_USER_POSTFIX}`,
         },
         {
             role: 'assistant',
@@ -368,9 +346,9 @@ export class GpuShortenRunningAction extends BaseRunningAction {
 export class GpuRefineRunningAction extends BaseRunningAction {
     constructor(action: CustomRefineAction, chat: WebWorkerEngine, callback: GenerationCallback) {
         const prompt = formatPromptCustomRefine(action);
-        const wrappedCallback: GenerationCallback = (fulltext: string) => {
+        const wrappedCallback: GenerationCallback = (fulltext: string, details?: GenerationCallbackDetails) => {
             let cleaned = genericCleanup(fulltext);
-            return callback(cleaned || '');
+            return callback(cleaned || '', details);
         };
         super(prompt, wrappedCallback, chat, action, ['</span>']);
     }

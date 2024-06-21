@@ -46,8 +46,9 @@ export class BaseRunningAction implements RunningAction {
             }
             lastTimestamp = now;
 
-            const fulltext = transform(message) || '';
-            callback(fulltext, { slow });
+            const fulltext = transform(message);
+            const harmful = fulltext === undefined;
+            callback(fulltext || '', { slow, harmful });
         };
 
         this.finishedPromise = new Promise<void>((resolve: PromiseResolve, reject: PromiseReject) => {

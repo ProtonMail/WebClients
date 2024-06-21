@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { FeatureFlag, useFlag } from '@proton/components/containers';
-import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
+import { useAssistantSubscriptionStatus, useOrganization, useUserSettings } from '@proton/components/hooks';
 import {
     getAssistantHasCompatibleBrowser,
     getAssistantHasCompatibleHardware,
@@ -9,14 +9,18 @@ import {
 } from '@proton/llm/lib';
 import useAssistantErrors from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 interface Props {
     assistantFeature: FeatureFlag;
 }
 
+const { OFF, UNSET } = AI_ASSISTANT_ACCESS;
+
 const useAssistantCommons = ({ assistantFeature }: Props) => {
     const assistantFeatureEnabled = useFlag(assistantFeature);
     const [{ AIAssistantFlags }] = useUserSettings();
+    const [organization] = useOrganization();
 
     const assistantSubscriptionStatus = useAssistantSubscriptionStatus();
 
@@ -24,7 +28,19 @@ const useAssistantCommons = ({ assistantFeature }: Props) => {
 
     // Show the feature in the UI only when the feature flag is ON and setting is not OFF
     const canShowAssistant = useMemo(() => {
-        return getCanShowAssistant(assistantFeatureEnabled) && AIAssistantFlags !== AI_ASSISTANT_ACCESS.OFF;
+        // We don't show the assistant to users that are not in supported plan or have the feature disabled
+        const assistantEnabled = getCanShowAssistant(assistantFeatureEnabled);
+        if (!assistantEnabled || AIAssistantFlags === OFF) {
+            return false;
+        }
+
+        // We don't show the assistant to visionary users that have not set the AIAssistant setting
+        const isVisionaryUnset = isOrganizationVisionary(organization) && AIAssistantFlags === UNSET;
+        if (isVisionaryUnset) {
+            return false;
+        }
+
+        return true;
     }, [assistantFeatureEnabled, AIAssistantFlags]);
 
     // When hardware is not compatible, show an error in the UI
@@ -40,7 +56,7 @@ const useAssistantCommons = ({ assistantFeature }: Props) => {
         const compatibility = await getAssistantHasCompatibleHardware();
         // TODO we need to improve the hardware detection, I'm afraid it can lead to false positive with Firefox
         // If the webGPU is not working on Firefox, propose to the user to use the desktop app instead
-        if (compatibility === 'noWebGpuFirefox') {
+        if (compatibility === 'noWebGpuFirefox' || compatibility === 'noWebGpuSafari') {
             setHasCompatibleBrowser(false);
             setHasCompatibleHardware(true);
         } else {
