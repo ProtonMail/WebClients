@@ -41,10 +41,10 @@
 	}
 
 	.header,
-	.sidebar,
+	.sidebar-header,
 	.loader-page.h-full,
 	.file-preview-header,
-	.sign-layout-bg {
+	.sign-layout-main-header {
 		-webkit-app-region: drag;
 		user-select: none;
 
@@ -60,20 +60,22 @@
 		}
 	}
 
+	&.is-drawer-app,
+	.drawer-app-view,
 	&:has(.eventpopover),
 	&:has(#webpack-dev-server-client-overlay) {
 		.header,
-		.sidebar,
+		.sidebar-header,
 		.loader-page.h-full,
 		.file-preview-header,
-		.sign-layout-bg {
+		.sign-layout-main-header {
 			-webkit-app-region: no-drag;
 			user-select: initial;
 		}
 	}
 
-	.sidebar .navigation,
-	dialog {
+	dialog,
+	[role='dialog'] {
 		-webkit-app-region: no-drag;
 		user-select: initial;
 	}
