@@ -14,13 +14,7 @@ getFileList() {
   rm -rf webpack:/*/webpack | true
   rm -rf webpack:/*/locales | true
 
-  # can't use the iregex flag,
-  # it doesn't work on PopOS 20.04 (wtf) and on MacOS as the find utility
-  # is too old. -> can't even run find --version
-  find * \
-    -type f \
-    -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx"
-  # -not -path does not work
+  grep -Ril "from 'ttag'" .
 }
 
 getDistDirectory() {
