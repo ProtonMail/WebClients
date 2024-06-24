@@ -15,9 +15,10 @@ if [ -z "$token" ]; then
     exit 1
 fi
 
-if [[ -n "${CI_COMMIT_REF_NAME:-}" && -n "${CI_COMMIT_SHA:-}" ]]; then
-    branch_name="$CI_COMMIT_REF_NAME"
-    commit_hash="$CI_COMMIT_SHA"
+if [[ -n "${BRANCH_OR_TAG:-}" && -n "${CI_JOB_TOKEN:-}" ]]; then
+    repo_url="https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.protontech.ch/web/clients.git"
+    branch_name="$BRANCH_OR_TAG"
+    commit_hash=$(git ls-remote $repo_url $BRANCH_OR_TAG | awk '{print $1}')
 else
     branch_name=$(git rev-parse --abbrev-ref HEAD)
     commit_hash=$(git rev-parse HEAD)
