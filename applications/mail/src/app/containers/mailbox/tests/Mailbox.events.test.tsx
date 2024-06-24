@@ -13,6 +13,13 @@ import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, 
 
 jest.setTimeout(20000);
 
+// This file makes an API call to FF so in order to prevent API call count issue for following tests
+// It is necessary to mock the TopNavbarUpgradeButton component
+jest.mock('@proton/components/components/topnavbar/TopNavbarUpgradeButton.tsx', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+
 describe('Mailbox elements list reacting to events', () => {
     const { labelID } = props;
 
