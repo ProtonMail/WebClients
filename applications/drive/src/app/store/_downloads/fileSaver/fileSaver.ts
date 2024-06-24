@@ -59,13 +59,6 @@ class FileSaver {
             });
         } catch (err: any) {
             log(`Save via download failed. Reason: ${err.message}`);
-
-            if (!isTransferCancelError(err)) {
-                const message = 'Failed to save file via download, falling back to in-memory download:';
-                console.warn(message, err);
-                log(message);
-                await this.saveViaBuffer(stream, meta, log);
-            }
             throw err;
         }
     }
