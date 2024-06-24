@@ -6,7 +6,7 @@
     "author": "",
     "main": "index.js",
     "scripts": {
-        "build": "build-storybook --docs",
+        "build:storybook": "build-storybook --docs",
         "check-types": "tsc",
         "deploy": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --dir applications/storybook/storybook-static --alias $NETLIFY_ALIAS",
         "deploy:prod": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod --dir applications/storybook/storybook-static",
