@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { logger } from '../utils/logger';
+import { logger } from '@proton/pass/utils/logger';
 
 export type ActivityProbe = ReturnType<typeof createActivityProbe>;
 
