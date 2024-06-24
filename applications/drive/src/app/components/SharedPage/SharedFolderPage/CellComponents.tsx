@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint } from '@proton/components';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
@@ -156,23 +157,27 @@ function DownloadCell({ item }: { item: PublicLink }) {
         'mouse:group-hover:opacity-100',
     ]);
 
+    const hideDownload = isProtonDocument(item.mimeType);
+
     return (
         <TableCell
             className="m-0 flex flex-nowrap file-browser-list--icon-column w-custom"
             style={{ '--w-custom': '23vw' }}
             data-testid="column-size"
         >
-            <Button
-                className={className}
-                shape="ghost"
-                size="small"
-                onClick={handleClick}
-                loading={isCurrentInProgress}
-                disabled={isAnyInProgress && !isCurrentInProgress}
-            >
-                <span>{c('Action').t`Download`}</span>
-                {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml-2" /> : null}
-            </Button>
+            {hideDownload ? null : (
+                <Button
+                    className={className}
+                    shape="ghost"
+                    size="small"
+                    onClick={handleClick}
+                    loading={isCurrentInProgress}
+                    disabled={isAnyInProgress && !isCurrentInProgress}
+                >
+                    <span>{c('Action').t`Download`}</span>
+                    {!isCurrentInProgress ? <Icon name="arrow-down-line" className="ml-2" /> : null}
+                </Button>
+            )}
         </TableCell>
     );
 }

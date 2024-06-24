@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { NavigationControl } from '@proton/components/containers';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { DecryptedLink, useDownload, usePublicFolderView } from '../../../store';
 import { usePublicFileView } from '../../../store/_views/useFileView';
@@ -53,6 +54,7 @@ function SharedPagePreviewContainer({
     } = usePublicFileView(shareId, linkId, true, sortParams);
 
     const rootRef = useRef<HTMLDivElement>(null);
+    const hideDownload = isProtonDocument(loadedLink?.mimeType || '');
 
     return (
         <FilePreview
@@ -80,7 +82,7 @@ function SharedPagePreviewContainer({
                 )
             }
             onClose={onClose}
-            onDownload={onDownload}
+            onDownload={hideDownload ? undefined : onDownload}
         />
     );
 }

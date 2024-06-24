@@ -6,10 +6,13 @@ import { Href } from '@proton/atoms';
 import { Icon, Spotlight } from '@proton/components/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import { useDownloadScanFlag } from '../../../store';
+import { useSelection } from '../../FileBrowser';
+import { getSelectedItems } from '../../sections/helpers';
 import { DownloadButton, DownloadButtonProps } from './DownloadButton';
 
 interface Props extends DownloadButtonProps {
@@ -67,6 +70,13 @@ const InfoIcon = () => {
 export default function SharedPageHeader({ children, rootItem, items, className }: Props) {
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
+    const selectionControls = useSelection();
+
+    const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
+
+    const hasOnlyDocuments =
+        (items.length > 0 && items.every((item) => item.isFile && isProtonDocument(item.mimeType))) ||
+        (selectedItems.length > 0 && selectedItems.every((item) => item.isFile && isProtonDocument(item.mimeType)));
 
     return (
         <div className={clsx('flex flex-nowrap shrink-0 justify-space-between items-center', className)}>
@@ -85,10 +95,16 @@ export default function SharedPageHeader({ children, rootItem, items, className 
                                 className="mx-4"
                                 color="weak"
                                 hideIcon
+                                disabled={hasOnlyDocuments}
                             />
                         </>
                     ) : null}
-                    <DownloadButton rootItem={rootItem} items={items} hideIcon={isDownloadScanEnabled} />
+                    <DownloadButton
+                        rootItem={rootItem}
+                        items={items}
+                        hideIcon={isDownloadScanEnabled}
+                        disabled={hasOnlyDocuments}
+                    />
                 </>
             )}
         </div>
