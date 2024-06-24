@@ -1,9 +1,11 @@
-import { useUser } from '@proton/components/hooks';
+import { selectUser } from '@proton/account';
+import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
 
 import { isScribePaymentsEnabled } from './helpers';
 
 const useScribePaymentsEnabled = () => {
-    const [user] = useUser();
+    // Using the base selector instead of user to support signup
+    const user = baseUseSelector(selectUser)?.value;
     return isScribePaymentsEnabled(user);
 };
 
