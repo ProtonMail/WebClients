@@ -66,6 +66,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         settings.beta = BUILD_TARGET === 'web' && sanitizeBetaSetting(settings.beta);
         settings.lockTTL = authStore.getLockTTL();
         settings.lockMode = authStore.getLockMode();
+        settings.extraPassword = authStore.getExtraPassword();
 
         /** Activate offline mode by default for paid users who
          * haven't touched the `offlineEnabled` setting yet */

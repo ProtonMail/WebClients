@@ -4,6 +4,7 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
+    extraPasswordToggle,
     itemCreationSuccess,
     lockCreateSuccess,
     lockSync,
@@ -31,6 +32,7 @@ export type SettingsState = {
     beta?: boolean;
     createdItemsCount: number /* explicitly created, not including import */;
     disallowedDomains: DomainCriterias;
+    extraPassword?: boolean;
     loadDomainImages: boolean;
     locale?: string;
     lockMode: LockMode;
@@ -40,7 +42,7 @@ export type SettingsState = {
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
 };
 
-export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode'] as const;
+export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
 export type ExcludedProxiedSettingsKeys = Unpack<typeof EXCLUDED_SETTINGS_KEYS>;
 
 /* proxied settings will also be copied on local
@@ -102,6 +104,10 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
 
     if (offlineToggle.success.match(action)) {
         return partialMerge<SettingsState>(state, { offlineEnabled: action.payload });
+    }
+
+    if (extraPasswordToggle.success.match(action)) {
+        return partialMerge<SettingsState>(state, { extraPassword: action.payload });
     }
 
     return state;
