@@ -89,6 +89,13 @@ export function Editor({
     [clientInvoker],
   )
 
+  const showGenericAlertModal = useCallback(
+    (message: string) => {
+      clientInvoker.showGenericAlertModal(message)
+    },
+    [clientInvoker],
+  )
+
   return (
     <CollaborationContext.Provider
       value={{
@@ -158,7 +165,7 @@ export function Editor({
         {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={!editingLocked} />}
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
-        {!nonInteractiveMode && <DraggableBlockPlugin />}
+        {!nonInteractiveMode && <DraggableBlockPlugin showGenericAlertModal={showGenericAlertModal} />}
       </SafeLexicalComposer>
     </CollaborationContext.Provider>
   )

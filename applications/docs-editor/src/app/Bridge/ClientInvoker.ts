@@ -92,6 +92,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('updateFrameSize', [size])
   }
 
+  async showGenericAlertModal(message: string): Promise<void> {
+    return this.invokeClientMethod('showGenericAlertModal', [message])
+  }
+
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
     const pendingMessage = this.pendingMessages.find((m) => m.messageId === message.messageId)
     if (pendingMessage) {
