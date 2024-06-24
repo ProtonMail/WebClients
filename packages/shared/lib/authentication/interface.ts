@@ -42,6 +42,7 @@ export interface PullForkResponse {
     ExpiresIn: number;
     TokenType: string;
     UserID: string;
+    Scopes: string[];
 }
 
 export interface RefreshSessionResponse {
