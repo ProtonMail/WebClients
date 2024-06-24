@@ -27,16 +27,19 @@ const UnsupportedPreview = ({
     const { viewportWidth } = useActiveBreakpoint();
 
     let message = c('Info').t`Preview for this file type is not supported`;
+    let subtext = undefined;
 
     if (isDocument) {
         if (isPublic) {
-            message = c('Info')
-                .t`Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.`;
+            message = c('Info').t`Public sharing of documents is not yet supported.`;
+            subtext = c('Info').t`Please ask the owner to directly invite you to the document.`;
         } else {
-            message = c('Info').t`Preview of documents is not yet supported. Please open the document to view it.`;
+            message = c('Info').t`Preview of documents is not yet supported.`;
+            subtext = c('Info').t`Please open the document to view it.`;
         }
     } else if (browser) {
         message = c('Info').t`Preview for this file type is currently not supported on this browser.`;
+        subtext = c('Info').t`Please use another browser or download the file.`;
     } else if (tooLarge) {
         message = c('Info').t`This file is too large to preview`;
     }
@@ -57,7 +60,7 @@ const UnsupportedPreview = ({
             >
                 {message}
             </h2>
-            {browser && <h3 className="pb-1">{c('Info').t`Please use another browser or download the file.`}</h3>}
+            {subtext && <h3 className="pb-1">{subtext}</h3>}
 
             {onDownload && (
                 <PrimaryButton
