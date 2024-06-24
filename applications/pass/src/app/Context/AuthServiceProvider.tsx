@@ -18,6 +18,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { type RouteErrorState, getBootRedirectPath, getRouteError } from '@proton/pass/components/Navigation/routing';
+import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
@@ -117,7 +118,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 return isValidPersistedSession(persistedSession) ? persistedSession : null;
             },
 
-            onInit: async () => {
+            onInit: async (options) => {
                 const pathLocalID = getLocalIDFromPathname(location.pathname);
                 const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const error = getRouteError(history.location.search);
@@ -136,32 +137,34 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                  * hydrate the userID and offline salts properties */
                 if (persistedSession) authStore.setSession(persistedSession);
 
-                /** if we had an in-memory session - most likely due to a
-                 * soft reload - clear the session lock token and offlineKD
-                 * to force the user to unlock on boot */
-                authStore.setLocked(false);
-                authStore.setLockToken(undefined);
-                authStore.setOfflineKD(undefined);
+                if (options.forceLock) {
+                    /** if we had an in-memory session - most likely due to a
+                     * soft reload - clear the session lock token and offlineKD
+                     * to force the user to unlock on boot */
+                    authStore.setLocked(false);
+                    authStore.setLockToken(undefined);
+                    authStore.setOfflineKD(undefined);
 
-                const passwordUnlockable = canPasswordUnlock({
-                    lockMode: authStore.getLockMode(),
-                    offline: !online.current,
-                    offlineConfig: authStore.getOfflineConfig(),
-                    offlineVerifier: authStore.getOfflineVerifier(),
-                    offlineEnabled: (await getOfflineEnabled?.()) ?? false,
-                });
+                    const passwordUnlockable = canPasswordUnlock({
+                        lockMode: authStore.getLockMode(),
+                        offline: !online.current,
+                        offlineConfig: authStore.getOfflineConfig(),
+                        offlineVerifier: authStore.getOfflineVerifier(),
+                        offlineEnabled: (await getOfflineEnabled?.()) ?? false,
+                    });
 
-                if (passwordUnlockable) {
-                    authStore.setPassword(undefined);
-                    client.current.setStatus(AppStatus.PASSWORD_LOCKED);
-                    return false;
+                    if (passwordUnlockable) {
+                        authStore.setPassword(undefined);
+                        client.current.setStatus(AppStatus.PASSWORD_LOCKED);
+                        return false;
+                    }
                 }
 
                 const session = authStore.getSession();
 
                 const loggedIn = await (authStore.hasSession(pathLocalID) && isValidSession(session)
-                    ? auth.login(session, { forceLock: true })
-                    : auth.resumeSession(initialLocalID, { forceLock: true }));
+                    ? auth.login(session, options)
+                    : auth.resumeSession(initialLocalID, options));
 
                 const locked = authStore.getLocked();
                 const hasLocalID = pathLocalID !== undefined;
@@ -223,6 +226,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 history.replace('/');
             },
 
+            onMissingScope: () => {
+                flushSync(() => client.current.setStatus(AppStatus.MISSING_SCOPE));
+                history.replace('/');
+            },
+
             onForkConsumed: async (session, state) => {
                 const { offlineConfig, offlineKD, UserID, LocalID } = session;
                 history.replace({ hash: '' }); /** removes selector from hash */
@@ -250,7 +258,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (offlineConfig && offlineKD) {
                     logger.info('[AuthServiceProvider] Automatically creating password lock');
                     session.lockMode = LockMode.PASSWORD;
-                    session.lockTTL = 900;
+                    session.lockTTL = DEFAULT_LOCK_TTL;
                     session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                     authStore.setLockLastExtendTime(getEpoch());
                 }
@@ -394,7 +402,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const run = async () => {
             if (matchConsumeFork) {
                 return authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
-            } else return authService.init({ forceLock: false });
+            } else return authService.init({ forceLock: true });
         };
 
         /** If a fork for the same UserID has been consumed in another tab - clear
