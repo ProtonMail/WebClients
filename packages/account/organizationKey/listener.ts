@@ -2,7 +2,7 @@ import type { Action } from '@reduxjs/toolkit';
 
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
-import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
+import { getIsAddressConfirmed, getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -95,7 +95,9 @@ export const organizationKeysManagementListener = (startListening: SharedStartLi
             listenerApi.unsubscribe();
 
             const addresses = await listenerApi.dispatch(addressesThunk());
-            const activeAddresses = addresses.filter(getIsAddressEnabled);
+            const activeAddresses = addresses.filter(
+                (address) => getIsAddressEnabled(address) && getIsAddressConfirmed(address)
+            );
             const primaryActiveAddress = activeAddresses[0];
             if (!primaryActiveAddress) {
                 return;
