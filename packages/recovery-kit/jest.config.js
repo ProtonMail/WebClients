@@ -4,7 +4,8 @@ module.exports = {
     testRegex: '.*\\.test\\.ts$',
     clearMocks: true,
     collectCoverage: true,
-    coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageReporters: ['text-summary', 'json'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     coverageThreshold: {
         global: {
             branches: 90,

@@ -53,7 +53,7 @@ module.exports = (config) => {
             'text/x-typescript': ['ts', 'tsx'],
         },
         reporters: ['spec'],
-        port: 9876,
+        port: 9877,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
