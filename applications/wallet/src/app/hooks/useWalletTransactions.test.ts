@@ -14,7 +14,7 @@ import {
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
-import { mockUseGetAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
+import { mockUseAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
 import { IWasmApiWalletData, getSymmetricKey } from '@proton/wallet';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
@@ -243,7 +243,7 @@ describe('useWalletTransactions', () => {
         userKeys = await getUserKeys();
 
         addressKey = await getAddressKey();
-        mockUseGetAddressKeys(vi.fn(async () => addressKey.keys));
+        mockUseAddressKeys([[addressKey], false]);
     });
 
     afterAll(async () => {

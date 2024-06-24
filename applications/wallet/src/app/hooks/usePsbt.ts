@@ -22,6 +22,7 @@ interface BroadcastData
     exchangeRateId?: string;
     signingKeys: PrivateKeyReference[];
     encryptionKeys: PublicKeyReference[];
+    addressId?: string;
 }
 
 const getNowTimestamp = (): string => {
@@ -77,6 +78,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
             message,
             signingKeys,
             encryptionKeys,
+            addressId,
         }: BroadcastData,
         isUsingBitcoinViaEmail: boolean
     ) => {
@@ -121,7 +123,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                     },
                     isUsingBitcoinViaEmail
                         ? {
-                              address_id: account.Addresses[0]?.ID ?? null,
+                              address_id: addressId ?? null,
                               subject: null,
                               body: encryptedData,
                           }
