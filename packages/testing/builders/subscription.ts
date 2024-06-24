@@ -30,7 +30,6 @@ export const buildSubscription = (value?: Partial<SubscriptionModel>): Subscript
                 MaxMembers: 1,
                 MaxVPN: 10,
                 MaxTier: 2,
-                MaxAI: 0,
                 Services: 15,
                 Features: 1,
                 State: 1,

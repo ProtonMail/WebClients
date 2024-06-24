@@ -34,15 +34,16 @@ export interface OpenCallbackProps
         | 'upsellRef'
         | 'maximumCycle'
         | 'minimumCycle'
+        | 'onSubscribed'
+        | 'onUnsubscribed'
+        | 'mode'
+        | 'withB2CAddons'
+        | 'allowedAddonTypes'
     > {
     hasClose?: boolean;
     onClose?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
-    onSubscribed?: () => void;
-    onUnsubscribed?: () => void;
-    mode?: 'upsell-modal';
-    withB2CAddons?: boolean;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;

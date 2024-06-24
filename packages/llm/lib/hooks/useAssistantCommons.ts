@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { FeatureFlag, useFlag } from '@proton/components/containers';
+import { FeatureFlag, useFlag, useScribePaymentsEnabled } from '@proton/components/containers';
 import { useAssistantSubscriptionStatus, useOrganization, useUserSettings } from '@proton/components/hooks';
 import {
     getAssistantHasCompatibleBrowser,
@@ -21,6 +21,7 @@ const useAssistantCommons = ({ assistantFeature }: Props) => {
     const assistantFeatureEnabled = useFlag(assistantFeature);
     const [{ AIAssistantFlags }] = useUserSettings();
     const [organization] = useOrganization();
+    const scribePaymentsEnabled = useScribePaymentsEnabled();
 
     const assistantSubscriptionStatus = useAssistantSubscriptionStatus();
 
@@ -29,7 +30,8 @@ const useAssistantCommons = ({ assistantFeature }: Props) => {
     // Show the feature in the UI only when the feature flag is ON and setting is not OFF
     const canShowAssistant = useMemo(() => {
         // We don't show the assistant to users that are not in supported plan or have the feature disabled
-        const assistantEnabled = getCanShowAssistant(assistantFeatureEnabled);
+        // In addition, we need to hide the assistant if user can't buy scribe because of payments migration
+        const assistantEnabled = getCanShowAssistant(assistantFeatureEnabled) && scribePaymentsEnabled;
         if (!assistantEnabled || AIAssistantFlags === OFF) {
             return false;
         }

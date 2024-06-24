@@ -9,7 +9,7 @@ import {
     SCRIBE_ADDON_PREFIX,
     isFreeSubscription,
 } from '../constants';
-import { Addon, Organization, Plan, PlanIDs, PlansMap, SubscriptionModel } from '../interfaces';
+import { Addon, Organization, Plan, PlanIDs, PlansMap, SubscriptionModel, getMaxValue } from '../interfaces';
 
 const {
     MAIL,
@@ -37,6 +37,30 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
         acc[planName as keyof PlanIDs] = quantity;
         return acc;
     }, {});
+};
+
+export const removeAddon = (originalPlanIDs: PlanIDs, addonGuard: AddonGuard): PlanIDs => {
+    const planIDs: PlanIDs = { ...originalPlanIDs };
+
+    // if guard returns true, it means that the addon should be removed
+    for (const addonName of Object.keys(planIDs) as (ADDON_NAMES | PLANS)[]) {
+        if (addonGuard(addonName)) {
+            delete planIDs[addonName];
+        }
+    }
+
+    return planIDs;
+};
+
+export const countAddonsByType = (planIDs: PlanIDs, addonGuard: AddonGuard): number => {
+    return Object.keys(planIDs).reduce((acc, key) => {
+        const addonName = key as ADDON_NAMES | PLANS;
+
+        if (addonGuard(addonName)) {
+            return acc + (planIDs[addonName] ?? 0);
+        }
+        return acc;
+    }, 0);
 };
 
 export const getPlanFromCheckout = (planIDs: PlanIDs, plansMap: PlansMap): Plan | null => {
@@ -147,31 +171,34 @@ function isAddonType(addonOrName: AddonOrName, addonPrefix: string): boolean {
     return addonName.startsWith(addonPrefix);
 }
 
+export type AddonGuard = (addonOrName: AddonOrName) => boolean;
+
 const ORG_SIZE_ADDONS = [
     ADDON_NAMES.MEMBER_VPN_BUSINESS,
     ADDON_NAMES.MEMBER_VPN_PRO,
     ADDON_NAMES.MEMBER_PASS_BUSINESS,
     ADDON_NAMES.MEMBER_PASS_PRO,
 ];
-export function isOrgSizeAddon(addonOrName: AddonOrName): boolean {
+
+export const isOrgSizeAddon: AddonGuard = (addonOrName): boolean => {
     return ORG_SIZE_ADDONS.some((name) => addonOrName === name);
-}
+};
 
-export function isMemberAddon(addonOrName: AddonOrName): boolean {
+export const isMemberAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, MEMBER_ADDON_PREFIX);
-}
+};
 
-export function isDomainAddon(addonOrName: AddonOrName): boolean {
+export const isDomainAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, DOMAIN_ADDON_PREFIX);
-}
+};
 
-export function isIpAddon(addonOrName: AddonOrName): boolean {
+export const isIpAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, IP_ADDON_PREFIX);
-}
+};
 
-export function isScribeAddon(addonOrName: AddonOrName): boolean {
+export const isScribeAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, SCRIBE_ADDON_PREFIX);
-}
+};
 
 export function hasScribeAddon(subscriptionOrPlanIds: SubscriptionModel | FreeSubscription | undefined): boolean {
     const subscription = subscriptionOrPlanIds;
@@ -298,11 +325,13 @@ export const switchPlan = ({
 
         if (isScribeAddon(addon) && plan && organization) {
             const gptAddon = plans.find(({ Name }) => Name === addon);
-            const diffAIs = (organization.UsedAI || 0) - plan.MaxAI;
+            const diffAIs = (organization.UsedAI || 0) - getMaxValue(plan, 'MaxAI');
 
             if (gptAddon) {
                 const gptAddonsWithEnoughSeats =
-                    diffAIs > 0 && gptAddon.MaxAI ? Math.ceil(diffAIs / gptAddon.MaxAI) : 0;
+                    diffAIs > 0 && getMaxValue(gptAddon, 'MaxAI')
+                        ? Math.ceil(diffAIs / getMaxValue(gptAddon, 'MaxAI'))
+                        : 0;
 
                 // let count all available GPT addons in the new planIDs selection
                 let gptAddons = 0;
