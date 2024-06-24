@@ -49,6 +49,7 @@ export type MemberUnprivatization =
           State: Exclude<MemberUnprivatizationState, MemberUnprivatizationState.Ready>;
           InvitationData: string;
           InvitationSignature: string;
+          InvitationEmail: string;
           PrivateKey: null;
           ActivationToken: null;
       }
@@ -56,6 +57,7 @@ export type MemberUnprivatization =
           State: MemberUnprivatizationState.Ready;
           InvitationData: string;
           InvitationSignature: string;
+          InvitationEmail: string;
           PrivateKey: string;
           ActivationToken: string;
       };
