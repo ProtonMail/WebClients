@@ -9,8 +9,9 @@ import { type AuthSession, SESSION_VERSION } from './session';
 export type AuthStore = ReturnType<typeof createAuthStore>;
 
 const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
+const PASS_EXTRA_PWD_KEY = 'pass:extra_password';
 const PASS_LOCAL_ID_KEY = 'pass:local_id';
-const PASS_LOCK_LAST_EXTEND_TIME = 'pass:lock_extend_time';
+const PASS_LOCK_EXTEND_TIME_KEY = 'pass:lock_extend_time';
 const PASS_LOCK_MODE_KEY = 'pass:lock_mode';
 const PASS_LOCK_STATE_KEY = 'pass:lock_state';
 const PASS_LOCK_TOKEN_KEY = 'pass:lock_token';
@@ -18,7 +19,7 @@ const PASS_LOCK_TTL_KEY = 'pass:lock_ttl';
 const PASS_MAILBOX_PWD_KEY = 'pass:mailbox_pwd';
 const PASS_OFFLINE_CONFIG_KEY = 'pass:offline_config';
 const PASS_OFFLINE_KD_KEY = 'pass:offline_kd';
-const PASS_OFFLINE_VERIFIER = 'pass:offline_verifier';
+const PASS_OFFLINE_VERIFIER_KEY = 'pass:offline_verifier';
 const PASS_REFRESH_TIME_KEY = 'pass:refresh_time';
 const PASS_REFRESH_TOKEN_KEY = 'pass:refresh_token';
 const PASS_SESSION_VERSION_KEY = 'pass:session_version';
@@ -38,6 +39,7 @@ export const createAuthStore = (store: Store) => {
 
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',
+            extraPassword: authStore.getExtraPassword(),
             keyPassword: authStore.getPassword() ?? '',
             LocalID: authStore.getLocalID(),
             lockMode: authStore.getLockMode(),
@@ -56,6 +58,7 @@ export const createAuthStore = (store: Store) => {
 
         setSession: (session: Partial<AuthSession>) => {
             if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
+            if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
             if (session.lockMode) authStore.setLockMode(session.lockMode);
@@ -92,8 +95,8 @@ export const createAuthStore = (store: Store) => {
         getOfflineKD: encodedGetter(store)(PASS_OFFLINE_KD_KEY),
         setOfflineConfig: (config: Maybe<OfflineConfig>) => store.set(PASS_OFFLINE_CONFIG_KEY, config),
         getOfflineConfig: (): Maybe<OfflineConfig> => store.get(PASS_OFFLINE_CONFIG_KEY),
-        setOfflineVerifier: encodedSetter(store)(PASS_OFFLINE_VERIFIER),
-        getOfflineVerifier: encodedGetter(store)(PASS_OFFLINE_VERIFIER),
+        setOfflineVerifier: encodedSetter(store)(PASS_OFFLINE_VERIFIER_KEY),
+        getOfflineVerifier: encodedGetter(store)(PASS_OFFLINE_VERIFIER_KEY),
 
         setLockMode: (mode: LockMode): void => store.set(PASS_LOCK_MODE_KEY, mode),
         getLockMode: (): LockMode => store.get(PASS_LOCK_MODE_KEY) ?? LockMode.NONE,
@@ -103,11 +106,14 @@ export const createAuthStore = (store: Store) => {
         getLockToken: encodedGetter(store)(PASS_LOCK_TOKEN_KEY),
         setLockTTL: (ttl: Maybe<number>) => store.set(PASS_LOCK_TTL_KEY, ttl),
         getLockTTL: (): Maybe<number> => store.get(PASS_LOCK_TTL_KEY),
-        setLockLastExtendTime: (extendTime: Maybe<number>): void => store.set(PASS_LOCK_LAST_EXTEND_TIME, extendTime),
-        getLockLastExtendTime: (): Maybe<number> => store.get(PASS_LOCK_LAST_EXTEND_TIME),
+        setLockLastExtendTime: (extendTime: Maybe<number>): void => store.set(PASS_LOCK_EXTEND_TIME_KEY, extendTime),
+        getLockLastExtendTime: (): Maybe<number> => store.get(PASS_LOCK_EXTEND_TIME_KEY),
 
         setUnlockRetryCount: (count: number): void => store.set(PASS_UNLOCK_RETRY_KEY, count),
         getUnlockRetryCount: (): number => store.get(PASS_UNLOCK_RETRY_KEY) ?? 0,
+
+        setExtraPassword: (enabled: boolean): void => store.set(PASS_EXTRA_PWD_KEY, enabled),
+        getExtraPassword: () => store.get(PASS_EXTRA_PWD_KEY) ?? false,
 
         getSessionVersion: (): AuthSessionVersion => store.get(PASS_SESSION_VERSION_KEY) ?? SESSION_VERSION,
         setSessionVersion: (version: AuthSessionVersion) => store.set(PASS_SESSION_VERSION_KEY, version),
