@@ -18,18 +18,21 @@ getFileList() {
 }
 
 getDistDirectory() {
-  # inside the CI we have the dist directory available
-  if [ -n "$CI_COMMIT_REF_NAME" ] && [ -s dist ]; then
-    return 0;
-  fi
-
   if [ -s "dist" ]; then
     echo "extract from dist bundle local"
     return 0
   fi
 
-  echo "application must be built first"
-  return 1
+  # Cache for the CI so we're faster
+  if [ -s 'webapp-bundle.tar.gz' ]; then
+    echo "we extract the bundle"
+    rm -rf dist || true
+    mkdir dist
+    tar xzf webapp-bundle.tar.gz -C dist
+  else
+    echo "bundle must be built first"
+    exit 1
+  fi
 }
 
 function main {
@@ -39,13 +42,8 @@ function main {
   appName="$(jq -r .name package.json)"
 
   if [ ! -d "/tmp/sourcemapper" ]; then
-    git clone \
-      --quiet \
-      --single-branch \
-      --depth 1 \
-      https://github.com/dhoko/sourcemapper.git "/tmp/sourcemapper";
-  else
-    echo "we have a cache for the sourcemapper"
+    echo "missing source mapper, run ./build.sh"
+    exit 1
   fi;
 
   getDistDirectory
@@ -83,7 +81,7 @@ function main {
     sed -i 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
   fi
 
-  rm -rf "./i18n-js";
+  #rm -rf "./i18n-js";
 }
 
 main "$1";

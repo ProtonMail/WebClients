@@ -3,7 +3,8 @@ module.exports = {
     preset: 'ts-jest',
     testEnvironment: './jest.env.js',
     collectCoverageFrom: ['*.ts'],
-    coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageReporters: ['text-summary', 'json'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     coverageThreshold: {
         global: {
             branches: 100,

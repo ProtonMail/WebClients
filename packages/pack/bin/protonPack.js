@@ -17,6 +17,7 @@ const getPort = (basePort) => {
 
 const writeConfig = async (configFile) => {
     const configPath = path.resolve('./src/app/config.ts');
+    console.log(`writing file ${configPath}`);
     await fs.mkdir(path.dirname(configPath), { recursive: true });
     await fs.writeFile(configPath, configFile);
 };
@@ -102,6 +103,19 @@ addGlobalOptions(program.command('build').description('create an optimized produ
         );
         await commandWithLog(`${path.resolve(__dirname, `../scripts/validate.sh`)} ${outputPath}`, {
             stdio: 'inherit',
+        });
+        const dotFiles = await Promise.all(
+            ['.htaccess', '.well-known'].map(async (file) => {
+                try {
+                    await fs.access(`${outputPath}/${file}`);
+                    return file;
+                } catch {}
+            })
+        );
+        await commandWithLog(`tar -czvf ../webapp-bundle.tar.gz * ${dotFiles.filter(Boolean).join(' ')} 2> /dev/null`, {
+            stdio: 'inherit',
+            cwd: outputPath,
+            shell: true,
         });
     });
 

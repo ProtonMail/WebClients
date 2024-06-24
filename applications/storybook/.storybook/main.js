@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { getJsLoader } = require('@proton/pack/webpack/js.loader');
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
+const getOptimization = require('@proton/pack/webpack/optimization');
 
 module.exports = {
     core: {
@@ -49,6 +50,8 @@ module.exports = {
             hasReactRefresh: false,
         };
 
+        const optimization = getOptimization(options);
+
         return {
             ...config,
             resolve: {
@@ -79,6 +82,10 @@ module.exports = {
                     },
                     ...[getJsLoader(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
                 ],
+            },
+            optimization: {
+                ...config.optimization,
+                minimizer: optimization.minimizer,
             },
             plugins: [
                 ...config.plugins,

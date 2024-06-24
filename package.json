@@ -14,6 +14,7 @@
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "create-atom": "yarn workspace @proton/atoms create-atom",
         "postinstall": "is-ci || (husky; yarn run config-app)",
+        "nyc": "npx nyc",
         "start-all": "cd utilities/local-sso && bash ./run.sh",
         "version": "yarn workspace version run version"
     },
@@ -41,6 +42,7 @@
         "@types/jest-when": "^3.5.5",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.5",
+        "nyc": "^17.0.0",
         "prettier": "^3.2.5",
         "sort-package-json": "^2.10.0",
         "turbo": "^2.0.5"
