@@ -62,10 +62,13 @@ interface MemberPayload {
     MaxAI: number;
 }
 
+interface UnprivatizationInvitation {
+    Email: string;
+    Data: string;
+    Signature: string;
+}
 interface InviteMemberPayload extends MemberPayload {
-    InvitationEmail: string;
-    InvitationData: string;
-    InvitationSignature: string;
+    Invitation: UnprivatizationInvitation;
 }
 
 export const createMember = (data: MemberPayload | InviteMemberPayload) => ({
