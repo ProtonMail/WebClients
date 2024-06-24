@@ -2,6 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import useAssistantTelemetry, {
+    ASSISTANT_TYPE,
+    ERROR_TYPE,
+} from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useApi } from '@proton/components/hooks';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 import {
@@ -18,8 +22,6 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 import throttle from '@proton/utils/throttle';
-
-import useAssistantTelemetry, { ASSISTANT_TYPE, ERROR_TYPE } from '../useAssistantTelemetry';
 
 interface Props {
     commonState: ReturnType<typeof useAssistantCommons>;

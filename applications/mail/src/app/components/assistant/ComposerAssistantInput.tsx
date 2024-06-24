@@ -18,6 +18,7 @@ import {
     usePopperAnchor,
 } from '@proton/components/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import useAssistantTelemetry, { ERROR_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
 import {
     Action,
@@ -29,7 +30,6 @@ import {
     isRefineActionType,
 } from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
-import useAssistantTelemetry, { ERROR_TYPE } from '@proton/llm/lib/useAssistantTelemetry';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
