@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
@@ -45,7 +46,7 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
         : transaction.networkData.received - transaction.networkData.sent;
 
     return (
-        <>
+        <Scroll>
             <div className="flex flex-column">
                 <div className="flex flex-column mb-10">
                     <div className="flex flex-row flex-nowrap items-center my-1">
@@ -122,6 +123,6 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                     </div>
                 )}
             </div>
-        </>
+        </Scroll>
     );
 };
