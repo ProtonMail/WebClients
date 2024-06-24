@@ -1,13 +1,17 @@
 import unary from '@proton/utils/unary';
 
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
-import { Address, Domain, Member, Recipient, UserModel } from '../interfaces';
+import { Address, AddressConfirmationState, Domain, Member, Recipient, UserModel } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { getIsDomainActive } from '../organization/helper';
 import { canonicalizeInternalEmail } from './email';
 
 export const getIsAddressEnabled = (address: Address) => {
     return address.Status === ADDRESS_STATUS.STATUS_ENABLED;
+};
+
+export const getIsAddressConfirmed = (address: Address) => {
+    return address.ConfirmationState === AddressConfirmationState.CONFIRMATION_CONFIRMED;
 };
 
 export const getIsAddressDisabled = (address: Address) => {
