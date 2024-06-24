@@ -27,11 +27,7 @@ const ResendInvitePrompt = ({ onClose, onResend, email, ...rest }: Props) => {
             ]}
             {...rest}
         >
-            <p>
-                {getBoldFormattedText(
-                    c('Info').t`This will cancel the previous invite and send a new one to **${email}**.`
-                )}
-            </p>
+            <p>{getBoldFormattedText(c('Info').t`This will send a new invite to **${email}**.`)}</p>
         </Prompt>
     );
 };
