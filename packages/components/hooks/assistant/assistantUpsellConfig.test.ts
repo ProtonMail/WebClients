@@ -1,10 +1,7 @@
+import { SelectedPlan } from '@proton/components/payments/core/subscription/selected-plan';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import {
-    OrganizationWithSettings,
-    SubscriptionModel,
-    SubscriptionPlan,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import { PLANS_MAP } from '@proton/testing/data';
 
 import { SUBSCRIPTION_STEPS } from '../..';
 import { getAssistantUpsellConfig } from './assistantUpsellConfig';
@@ -25,8 +22,9 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isSubUser: true,
         } as unknown as UserModel;
-        const currentPlan = undefined;
-        const config = getAssistantUpsellConfig('upsellRef', user, false, currentPlan);
+        const selectedPlan = new SelectedPlan({}, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+
+        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
         expect(config).toEqual(undefined);
     });
@@ -35,8 +33,8 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: false,
         } as unknown as UserModel;
-        const currentPlan = undefined;
-        const config = getAssistantUpsellConfig('upsellRef', user, false, currentPlan);
+        const selectedPlan = new SelectedPlan({}, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -51,11 +49,8 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const currentPlan = {
-            Name: PLANS.MAIL,
-            Cycle: CYCLE.MONTHLY,
-        } as unknown as SubscriptionPlan;
-        const config = getAssistantUpsellConfig('upsellRef', user, false, currentPlan);
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL]: 1 }, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -71,11 +66,9 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const currentPlan = {
-            Name: PLANS.MAIL,
-            Cycle: CYCLE.YEARLY,
-        } as unknown as SubscriptionPlan;
-        const config = getAssistantUpsellConfig('upsellRef', user, false, currentPlan);
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL]: 1 }, PLANS_MAP, CYCLE.YEARLY, 'EUR');
+
+        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -91,11 +84,10 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const currentPlan = {
-            Name: PLANS.MAIL,
-            Cycle: CYCLE.TWO_YEARS,
-        } as unknown as SubscriptionPlan;
-        const config = getAssistantUpsellConfig('upsellRef', user, false, currentPlan);
+
+        const selectedPlan = new SelectedPlan({ [PLANS.MAIL]: 1 }, PLANS_MAP, CYCLE.TWO_YEARS, 'EUR');
+
+        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -112,11 +104,17 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const currentPlan = {
-            Name: PLANS.FAMILY,
-            Cycle: CYCLE.TWO_YEARS,
-        } as unknown as SubscriptionPlan;
-        const config = getAssistantUpsellConfig('upsellRef', user, false, currentPlan);
+
+        const selectedPlan = new SelectedPlan(
+            {
+                [PLANS.FAMILY]: 1,
+            },
+            PLANS_MAP,
+            CYCLE.TWO_YEARS,
+            'EUR'
+        );
+
+        const config = getAssistantUpsellConfig('upsellRef', user, false, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -133,30 +131,24 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const currentPlan = {
-            Name: PLANS.MAIL_PRO,
-            Cycle: CYCLE.TWO_YEARS,
-        } as unknown as SubscriptionPlan;
-        const subscription = {
-            Plans: [
-                { Name: PLANS.MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-            ],
-        } as unknown as SubscriptionModel;
-        const organization = {
-            MaxMembers: 4,
-            MaxAI: 0,
-        } as unknown as OrganizationWithSettings;
-        const config = getAssistantUpsellConfig('upsellRef', user, true, currentPlan, subscription, organization);
+
+        const selectedPlan = new SelectedPlan(
+            {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 4,
+            },
+            PLANS_MAP,
+            CYCLE.TWO_YEARS,
+            'EUR'
+        );
+
+        const config = getAssistantUpsellConfig('upsellRef', user, true, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             cycle: CYCLE.TWO_YEARS,
-            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 4, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 4 },
+            planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 4, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 5 },
             maximumCycle: CYCLE.TWO_YEARS,
             minimumCycle: CYCLE.TWO_YEARS,
             withB2CAddons: true,
@@ -167,26 +159,19 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const currentPlan = {
-            Name: PLANS.MAIL_PRO,
-            Cycle: CYCLE.TWO_YEARS,
-        } as unknown as SubscriptionPlan;
-        const subscription = {
-            Plans: [
-                { Name: PLANS.MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO, Quantity: 1 },
-            ],
-        } as unknown as SubscriptionModel;
-        const organization = {
-            MaxMembers: 4,
-            MaxAI: 2,
-        } as unknown as OrganizationWithSettings;
-        const config = getAssistantUpsellConfig('upsellRef', user, true, currentPlan, subscription, organization);
+
+        const selectedPlan = new SelectedPlan(
+            {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 4,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+            },
+            PLANS_MAP,
+            CYCLE.TWO_YEARS,
+            'EUR'
+        );
+
+        const config = getAssistantUpsellConfig('upsellRef', user, true, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,
@@ -203,28 +188,20 @@ describe('getAssistantUpsellConfig', () => {
         const user = {
             isPaid: true,
         } as unknown as UserModel;
-        const currentPlan = {
-            Name: PLANS.MAIL_PRO,
-            Cycle: CYCLE.TWO_YEARS,
-        } as unknown as SubscriptionPlan;
-        const subscription = {
-            Plans: [
-                { Name: PLANS.MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.IP_VPN_BUSINESS, Quantity: 1 },
-                { Name: ADDON_NAMES.IP_VPN_BUSINESS, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO, Quantity: 1 },
-                { Name: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO, Quantity: 1 },
-            ],
-        } as unknown as SubscriptionModel;
-        const organization = {
-            MaxMembers: 4,
-            MaxAI: 2,
-        } as unknown as OrganizationWithSettings;
-        const config = getAssistantUpsellConfig('upsellRef', user, true, currentPlan, subscription, organization);
+
+        const selectedPlan = new SelectedPlan(
+            {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.IP_VPN_BUSINESS]: 2,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 4,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+            },
+            PLANS_MAP,
+            CYCLE.TWO_YEARS,
+            'EUR'
+        );
+
+        const config = getAssistantUpsellConfig('upsellRef', user, true, selectedPlan);
 
         expect(config).toEqual({
             ...baseConfig,

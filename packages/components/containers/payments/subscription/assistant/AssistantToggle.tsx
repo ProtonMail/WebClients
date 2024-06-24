@@ -8,10 +8,11 @@ import {
     Icon,
     useAssistantSubscriptionStatus,
     useAssistantUpsellConfig,
-    useFlag,
+    usePlans,
     useSubscription,
     useSubscriptionModal,
 } from '@proton/components';
+import { useAssistantFeatureEnabled } from '@proton/llm/lib';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -22,8 +23,9 @@ import useAssistantToggle from './useAssistantToggle';
 const AssistantToggle = () => {
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
+    const [plans] = usePlans();
 
-    const composerAssistantEnabled = useFlag('ComposerAssistant');
+    const composerAssistantEnabled = useAssistantFeatureEnabled();
     const hasVisionary = hasNewVisionary(subscription);
 
     const { hasBoughtPlan, loading, hasHardwareForModel } = useAssistantToggle();
@@ -36,10 +38,10 @@ const AssistantToggle = () => {
         feature: MAIL_UPSELL_PATHS.ASSISTANT_TOGGLE,
         isSettings: true,
     });
-    const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef });
+    const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef, plans: plans?.plans ?? [] });
 
     // We don't want to propose the upsell if the users cannot use the assistant and didn't purchase it beforehand
-    if (!composerAssistantEnabled && !hasBoughtPlan) {
+    if (!composerAssistantEnabled.enabled && !hasBoughtPlan) {
         return null;
     }
 

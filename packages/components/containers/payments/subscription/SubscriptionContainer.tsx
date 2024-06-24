@@ -22,7 +22,13 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getPlanFromPlanIDs, hasPlanIDs, hasScribeAddon, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import {
+    AddonGuard,
+    getPlanFromPlanIDs,
+    hasPlanIDs,
+    hasScribeAddon,
+    switchPlan,
+} from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
@@ -83,8 +89,9 @@ import { isSubscriptionUnchanged } from '../../payments/helper';
 import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
-import ProtonPlanCustomization, { getHasPlanCustomizer } from '../ProtonPlanCustomizer';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
+import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
+import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
 import { NewVisionaryWarningModal, NewVisionaryWarningModalOwnProps } from './PlanLossWarningModal';
@@ -175,6 +182,10 @@ export interface SubscriptionContainerProps {
     upsellRef?: string;
     parent?: string;
     withB2CAddons?: boolean;
+    /**
+     * If none specified, then shows all addons
+     */
+    allowedAddonTypes?: AddonGuard[];
 }
 
 // that's temporary solution to avoid merge conflicts with Mail B2B plans.
@@ -215,6 +226,7 @@ const SubscriptionContainer = ({
     mode,
     parent,
     withB2CAddons,
+    allowedAddonTypes,
 }: SubscriptionContainerProps) => {
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
@@ -953,7 +965,7 @@ const SubscriptionContainer = ({
                                         </h2>
                                         {hasPlanCustomizer && currentPlan && (
                                             <>
-                                                <ProtonPlanCustomization
+                                                <ProtonPlanCustomizer
                                                     loading={blockAccountSizeSelector}
                                                     currency={model.currency}
                                                     cycle={model.cycle}
@@ -971,6 +983,7 @@ const SubscriptionContainer = ({
                                                     forceHideDescriptions
                                                     showUsersTooltip={false}
                                                     latestSubscription={latestSubscription}
+                                                    allowedAddonTypes={allowedAddonTypes}
                                                     className="mb-8"
                                                 />
                                             </>

@@ -35,6 +35,7 @@ import ContactEmailsProvider from '@proton/components/containers/contacts/Contac
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
+import { useAssistantFeatureEnabled } from '@proton/llm/lib';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -144,7 +145,7 @@ const MainContainer = () => {
 
     // We hide the assistant upsell for users on Mail and Calendar app without the assistant when the kill switch is enabled
     const hasAssistant = hasAIAssistant(subscription);
-    const assistantUpsellKillSwitch = useFlag('AIAssistantToggleKillSwitch');
+    const { killSwitch: assistantUpsellKillSwitch } = useAssistantFeatureEnabled();
     const hasAllProducts = hasAllProductsB2CPlan(subscription);
     const isInAllowedApps =
         hasAllProducts || appFromPathname === APPS.PROTONMAIL || appFromPathname === APPS.PROTONCALENDAR;
