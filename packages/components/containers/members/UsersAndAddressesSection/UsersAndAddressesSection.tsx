@@ -1,11 +1,11 @@
 import { MutableRefObject, useMemo, useState } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
 import { c, msgid } from 'ttag';
 
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
+import { useAssistantFeatureEnabled } from '@proton/llm/lib';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
 import { APP_NAMES, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -111,7 +111,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
     const api = useApi();
     const { call } = useEventManager();
-    const accessToAssistant = useFlag('ComposerAssistant');
+    const accessToAssistant = useAssistantFeatureEnabled();
 
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
     const hasSetupActiveOrganization =
@@ -133,7 +133,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const allowStorageConfiguration = !hasVpnOrPassB2BPlan;
     const allowVpnAccessConfiguration = !hasVpnOrPassB2BPlan;
     const allowPrivateMemberConfiguration = !hasVpnOrPassB2BPlan;
-    const allowAIAssistantConfiguration = accessToAssistant;
+    const allowAIAssistantConfiguration = accessToAssistant.enabled && !accessToAssistant.killSwitch;
 
     const showMultipleUserUploadButton = hasVpnOrPassB2BPlan;
     const showAddressesSection = !hasVpnOrPassB2BPlan;
