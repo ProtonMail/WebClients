@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, IconName, Tooltip, useModalState } from '@proton/components/components';
-import { useGetAddressKeys, useNotifications } from '@proton/components/hooks';
+import { useAddresses, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -49,6 +49,9 @@ export const TransactionReview = ({
     onSent,
     updateTxBuilder,
 }: Props) => {
+    const [addresses] = useAddresses();
+    // We use primaryAddress when user wants to use BvE but doesn't have any email set on the wallet account he is using
+    const primaryAddress = addresses?.[0];
     const [showMore, setShowMore] = useState(false);
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
@@ -95,6 +98,7 @@ export const TransactionReview = ({
                     message: message || undefined,
                     signingKeys,
                     encryptionKeys: [...senderEncryptionKeys, ...compact(recipients.map((r) => r.addressKey))],
+                    addressId: account.Addresses[0]?.ID ?? primaryAddress?.ID,
                 },
                 isUsingBitcoinViaEmail
             );
@@ -102,7 +106,7 @@ export const TransactionReview = ({
             onSent();
 
             createNotification({
-                text: c('Wallet send').t`Transaction was succesfully sent`,
+                text: c('Wallet send').t`Transaction was successfully sent`,
             });
         } catch (error) {
             createNotification({

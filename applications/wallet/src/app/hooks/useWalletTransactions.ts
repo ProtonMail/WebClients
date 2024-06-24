@@ -3,14 +3,9 @@ import { SetStateAction, useCallback, useEffect, useMemo, useRef, useState } fro
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import {
-    WasmApiClients,
-    WasmApiWalletAccount,
-    WasmApiWalletTransaction,
-    WasmTransactionDetails,
-} from '@proton/andromeda';
+import { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
 import generateUID from '@proton/atoms/generateUID';
-import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
+import { useAddressesKeys } from '@proton/components/hooks/useAddressesKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { PrivateKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -145,7 +140,7 @@ const addMissingHashToWalletTransactions = async (
     transactionDataByHashedTxId: TransactionDataByHashedTxId,
     userKey: DecryptedKey,
     hmacKey: CryptoKey,
-    getWalletAccountPrimaryAddressKeys: (account: WasmApiWalletAccount) => Promise<PrivateKeyReference[]>
+    allAddressKeys: PrivateKeyReference[]
 ) => {
     const cloned: TransactionDataByHashedTxId = { ...transactionDataByHashedTxId };
 
@@ -163,13 +158,11 @@ const addMissingHashToWalletTransactions = async (
         }
 
         try {
-            const accountPrimaryAddressKeys = await getWalletAccountPrimaryAddressKeys(account);
-
             // Decrypt txid
             const decryptedTransactionData = await decryptTransactionData(
                 walletTransactionToHash.Data,
                 userKey.privateKey,
-                accountPrimaryAddressKeys
+                allAddressKeys
             );
 
             // TODO: this can only occur if decryption fails. We need to better handle that
@@ -268,7 +261,7 @@ const fetchTransactions = async ({
     getTransactionsApiData,
     walletMap,
     walletKey,
-    getWalletAccountPrimaryAddressKeys,
+    allAddressKeys,
 }: {
     userKeys: DecryptedKey[];
     transactionDataByHashedTxId: TransactionDataByHashedTxId;
@@ -276,7 +269,7 @@ const fetchTransactions = async ({
     getTransactionsApiData: ReturnType<typeof useGetApiWalletTransactionData>;
     walletMap: WalletMap;
     walletKey: CryptoKey;
-    getWalletAccountPrimaryAddressKeys: (account: WasmApiWalletAccount) => Promise<PrivateKeyReference[]>;
+    allAddressKeys: PrivateKeyReference[];
 }) => {
     const hashedTxids = Object.keys(transactionDataByHashedTxId);
 
@@ -301,12 +294,10 @@ const fetchTransactions = async ({
             if (txNetworkData) {
                 const [decryptedLabel] = await decryptWalletData([transactionApiData.Label], walletKey).catch(() => []);
 
-                const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
-
                 const decryptedTransactionData = await decryptTransactionData(
                     transactionApiData,
                     primaryUserKey.privateKey,
-                    accountKeys
+                    allAddressKeys
                 );
 
                 transactionDataByHashedTxId[HashedTransactionID] = [
@@ -349,18 +340,11 @@ export const useWalletTransactions = ({
     const [loadingRecordInit, withLoadingRecordInit] = useLoading();
     const [loadingApiData, withLoadingApiData] = useLoading();
 
-    const getAddressesKeys = useGetAddressKeys();
+    const [addressesKeys] = useAddressesKeys();
 
-    const getWalletAccountPrimaryAddressKeys = useCallback(
-        (account: WasmApiWalletAccount) => {
-            return Promise.all(
-                account.Addresses.map((address) =>
-                    getAddressesKeys(address.ID).then(([primaryAddressKey]) => primaryAddressKey.privateKey)
-                )
-            );
-        },
-        [getAddressesKeys]
-    );
+    const allAddressKeys = useMemo(() => {
+        return addressesKeys?.flatMap((a) => a.keys.map((k) => k.privateKey)) || [];
+    }, [addressesKeys]);
 
     const fetchOrSetWalletTransactions = useCallback(async () => {
         if (!wallet || !userKeys) {
@@ -404,7 +388,7 @@ export const useWalletTransactions = ({
             getTransactionsApiData,
             walletMap,
             walletKey: WalletKey.DecryptedKey,
-            getWalletAccountPrimaryAddressKeys,
+            allAddressKeys,
         });
 
         guardSetTransactionData(transactionDataByHashedTxId);
@@ -422,7 +406,7 @@ export const useWalletTransactions = ({
             localTransactionDataByHashedTxId,
             primaryUserKey,
             hmacKey,
-            getWalletAccountPrimaryAddressKeys
+            allAddressKeys
         );
 
         const transactionsWithoutApiData = filterTxWithoutApiData(withMissingHashTransactions);
@@ -450,7 +434,7 @@ export const useWalletTransactions = ({
         getTransactionsApiData,
         clients,
         walletMap,
-        getWalletAccountPrimaryAddressKeys,
+        allAddressKeys,
         transactions,
         accountIDByDerivationPathByWalletID,
     ]);
@@ -486,11 +470,10 @@ export const useWalletTransactions = ({
                         encryptedLabel ?? ''
                     );
 
-                    const accountKeys = await getWalletAccountPrimaryAddressKeys(account);
                     const decryptedTransactionData = await decryptTransactionData(
                         updatedTx,
                         primaryUserKey.privateKey,
-                        accountKeys
+                        allAddressKeys
                     );
 
                     const hashedTxId = updatedTx.HashedTransactionID;
@@ -516,7 +499,7 @@ export const useWalletTransactions = ({
                 }
             }
         },
-        [userKeys, walletMap, wallet?.WalletKey, clients, getWalletAccountPrimaryAddressKeys, createNotification]
+        [userKeys, walletMap, wallet?.WalletKey, clients, allAddressKeys, createNotification]
     );
 
     useEffect(() => {
