@@ -18,7 +18,6 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { isProdEnv } from "./utils/config";
 
 (async function () {
     initializeLog();
@@ -52,9 +51,9 @@ import { isProdEnv } from "./utils/config";
     // Config initialization
     saveAppID();
 
-    if (!isProdEnv()) {
-        app.commandLine.appendSwitch("ignore-certificate-errors");
-    }
+    // We do not want to show certificates errors to users.
+    // Also, this can happen during development when running the server locally.
+    app.commandLine.appendSwitch("ignore-certificate-errors");
 
     // Move uninstaller on macOS
     moveUninstaller();
