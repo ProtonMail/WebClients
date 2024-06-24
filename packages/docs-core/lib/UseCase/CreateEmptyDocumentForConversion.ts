@@ -28,7 +28,11 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
         linkId: node.parentNodeId,
       }
 
-      const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, node.name)
+      const extension = node.mimeType === SupportedMimeTypes.docx ? 'docx' : 'md'
+      const nodeNameWithoutExtension = node.name.endsWith(`.${extension}`)
+        ? node.name.substring(0, node.name.indexOf(`.${extension}`))
+        : node.name
+      const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, newDocName)
 
       const documentMetaResult = await this.getDocumentMeta.execute({
