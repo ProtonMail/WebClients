@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { APPS, APP_NAMES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getHasPassB2BPlan, hasBundlePro2024 } from '@proton/shared/lib/helpers/subscription';
+import { getHasPassB2BPlan, hasBundlePro2024, hasPassBusiness } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -20,6 +20,7 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, canDis
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const hasPassB2BPlanWithEventLogging = getHasPassB2BPlan(subscription) || hasBundlePro2024(subscription);
+    const hasPassBusinessPlan = hasPassBusiness(subscription);
 
     return <const>{
         available: app === APPS.PROTONPASS,
@@ -47,6 +48,17 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, canDis
                 subsections: [
                     {
                         id: 'activity-log',
+                    },
+                ],
+            },
+            policies: <SectionConfig>{
+                text: c('Title').t`Policies`,
+                to: '/policies',
+                icon: 'checkmark-triple',
+                available: (hasOrganizationKey || hasOrganization) && isAdmin && hasPassBusinessPlan,
+                subsections: [
+                    {
+                        id: 'policies',
                     },
                 ],
             },
