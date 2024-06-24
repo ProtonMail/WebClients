@@ -1,4 +1,4 @@
-import { BrowserWindow } from "electron";
+import { BrowserWindow, screen } from "electron";
 import Store from "electron-store";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 
@@ -20,14 +20,21 @@ export const MINIMUM_HEIGHT = 300;
 const DEFAULT_WINDOW_BOUNDS = {
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT,
-    x: 0,
-    y: 0,
+    x: -1,
+    y: -1,
 } satisfies WindowBounds;
 
 const store = new Store<{ windowBounds: WindowBounds }>();
 
 export const getWindowBounds = () => {
     const windowBounds = store.get("windowBounds", DEFAULT_WINDOW_BOUNDS);
+
+    if (windowBounds.x === DEFAULT_WINDOW_BOUNDS.x || windowBounds.y === DEFAULT_WINDOW_BOUNDS.y) {
+        const currentDisplay = screen.getDisplayNearestPoint(screen.getCursorScreenPoint());
+        windowBounds.x = currentDisplay.workArea.width / 2 - windowBounds.width / 2;
+        windowBounds.y = currentDisplay.workArea.height / 2 - windowBounds.height / 2;
+    }
+
     return ensureWindowIsVisible(windowBounds);
 };
 
