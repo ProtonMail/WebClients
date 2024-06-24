@@ -17,12 +17,13 @@ export const clientReady = eq(AppStatus.READY);
 export const clientSessionLocked = eq(AppStatus.SESSION_LOCKED);
 export const clientStale = eq(AppStatus.IDLE);
 export const clientUnauthorized = eq(AppStatus.UNAUTHORIZED);
+export const clientMissingScope = eq(AppStatus.MISSING_SCOPE);
 
 export const clientBusy = oneOf(AppStatus.IDLE, AppStatus.AUTHORIZED, AppStatus.AUTHORIZING, AppStatus.BOOTING);
 export const clientBooted = oneOf(AppStatus.READY, AppStatus.OFFLINE);
 
 export const clientCanBoot = or(clientAuthorized, clientUnauthorized, clientErrored);
-export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked);
+export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked, clientMissingScope);
 export const clientNeedsSession = or(clientErrored, clientUnauthorized);
 export const clientStatusResolved = or(clientHasSession, clientNeedsSession);
 
