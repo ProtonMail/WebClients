@@ -95,7 +95,7 @@ export const SendersDataListItem = ({
 
 export const NoteDataListItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (tx: TransactionData) => void }) => {
     return (
-        <div className="w-full max-h-custom overflow-auto" style={{ '--max-h-custom': '8rem' }}>
+        <div className="w-full max-h-custom overflow-auto">
             <div className="flex flex-row items-center">
                 <span className="block color-hint text-rg">{c('Wallet transaction').t`Note`}</span>
                 {tx.apiData?.Label && (
@@ -113,7 +113,7 @@ export const NoteDataListItem = ({ tx, onClick }: TxDataListItemProps & { onClic
             </div>
             <div className="w-full flex">
                 {tx.apiData?.Label ? (
-                    <p className="my-0 mt-1 text-lg text-ellipsis">
+                    <p className="my-0 mt-1 text-lg">
                         {multilineStrToMultilineJsx(tx.apiData.Label, 'transaction-label')}
                     </p>
                 ) : (
