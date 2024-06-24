@@ -1,0 +1,27 @@
+diff --git a/packages/drive-store/store/_links/useLinksState.tsx b/packages/drive-store/store/_links/useLinksState.tsx
+index 3462807f0f..f1f5fce1ed 100644
+--- a/packages/drive-store/store/_links/useLinksState.tsx
++++ b/packages/drive-store/store/_links/useLinksState.tsx
+@@ -150,6 +150,13 @@ export function useLinksStateProvider() {
+         [state]
+     );
+ 
++    const removeLinkForDriveCompat = useCallback(
++        (shareId: string, linkId: string) => {
++            setState((state) => deleteLinks(state, shareId, [linkId]));
++        },
++        [state]
++    );
++
+     return {
+         setLinks,
+         lockLinks,
+@@ -163,6 +170,8 @@ export function useLinksStateProvider() {
+         getSharedWithMeByLink,
+         removeLinkForMigration,
+         removeLinkForSharedWithMe,
++        /** Should never be used outside of `drive-store`. */
++        removeLinkForDriveCompat,
+     };
+ }
+ 
