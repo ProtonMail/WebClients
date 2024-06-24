@@ -1,10 +1,14 @@
 ### Version 1.18.0
 
--   Add offline mode support on web app, enabled by default (can be disabled in settings)
--   Ask for password by default every time the app is opened (can be changed in settings)
+-   Add offline mode support on web app
+-   Allow locking pass with account password
+-   Enable password lock by default for all new logins
 -   Support username & email as separate fields for login items
--   Take into account username & email in data import/export while keeping backward compatibility with JSON/CSV/PGP exports
+-   Take into account username & email in importers & exporter
 -   Revamp vault picker UI
+-   Improve connectivity detection
+-   Improve generic CSV importer : all fields are now optional
+-   Support dashlane CSV import
 
 ### Version 1.17.5
 
