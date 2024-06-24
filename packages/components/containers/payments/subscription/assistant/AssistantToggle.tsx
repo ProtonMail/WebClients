@@ -12,7 +12,7 @@ import {
     useSubscription,
     useSubscriptionModal,
 } from '@proton/components';
-import { useAssistantFeatureEnabled } from '@proton/llm/lib';
+import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
