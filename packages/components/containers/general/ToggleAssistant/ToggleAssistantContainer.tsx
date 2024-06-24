@@ -8,7 +8,7 @@ import {
     useOrganization,
     useUserSettings,
 } from '@proton/components';
-import { useAssistantFeatureEnabled } from '@proton/llm/lib';
+import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';

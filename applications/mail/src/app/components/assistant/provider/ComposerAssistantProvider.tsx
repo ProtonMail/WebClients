@@ -2,7 +2,7 @@ import React, { ReactNode, RefObject, createContext, useContext, useMemo } from 
 
 import { useModalStateObject, useModalTwoPromise } from '@proton/components/components';
 import { AssistantIncompatibleBrowserModal, AssistantIncompatibleHardwareModal } from '@proton/components/containers';
-import useAssistantTelemetry, { INCOMPATIBILITY_TYPE } from '@proton/llm/lib/useAssistantTelemetry';
+import useAssistantTelemetry, { INCOMPATIBILITY_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
 
 interface Manager<TElement extends HTMLElement> {
     get: (composerID: string) => RefObject<TElement>;

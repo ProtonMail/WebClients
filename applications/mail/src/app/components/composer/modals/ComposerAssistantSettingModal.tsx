@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { RadioGroup } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
+import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
 import {
     useApi,
     useAssistantSubscriptionStatus,
@@ -16,7 +17,6 @@ import {
 import { ASSISTANT_TRIAL_TIME_DAYS } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
-import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
