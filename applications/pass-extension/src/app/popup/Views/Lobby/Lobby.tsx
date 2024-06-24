@@ -1,4 +1,4 @@
-import { type FC, useCallback } from 'react';
+import { type FC } from 'react';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
@@ -21,27 +21,17 @@ export const Lobby: FC = () => {
     const { state, logout } = usePopupContext();
     const errored = clientErrored(state.status);
 
-    const login = useRequestForkWithPermissions({ autoClose: true });
-    const handleRegister = useCallback(async () => login(ForkType.SIGNUP), []);
-
-    const handleLogin = () =>
-        errored
-            ? sendMessage(
-                  popupMessage({
-                      type: WorkerMessageType.AUTH_INIT,
-                      options: { retryable: false },
-                  })
-              )
-            : login();
+    const requestFork = useRequestForkWithPermissions({ autoClose: true });
 
     return (
         <LobbyLayout overlay>
             <LobbyContent
                 status={state.status}
-                onLogin={handleLogin}
+                onFork={requestFork}
+                onLogin={(options) => sendMessage(popupMessage({ type: WorkerMessageType.AUTH_INIT, options }))}
                 onLogout={logout}
                 onOffline={noop}
-                onRegister={handleRegister}
+                onRegister={() => requestFork(ForkType.SIGNUP)}
                 renderError={() => (
                     <PromptForReload
                         message={c('Warning')

@@ -10,7 +10,7 @@ import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent'
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { type RouteErrorState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { clientBusy, clientErrored } from '@proton/pass/lib/client';
+import { clientBusy } from '@proton/pass/lib/client';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -48,14 +48,12 @@ export const Lobby: FC = () => {
             <LobbyContent
                 error={error}
                 status={status}
-                onLogin={() => {
+                onLogin={(options) => {
                     if (error) history.replace({ ...history.location, state: null });
-
-                    return clientErrored(status)
-                        ? authService.init({ forceLock: true })
-                        : authService.requestFork({ host, app });
+                    return authService.init(options);
                 }}
                 onLogout={() => authService.logout({ soft: false })}
+                onFork={() => authService.requestFork({ host, app })}
                 onOffline={() => client.setStatus(AppStatus.PASSWORD_LOCKED)}
                 onRegister={() => authService.requestFork({ host, app, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
