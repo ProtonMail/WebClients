@@ -1,8 +1,11 @@
 ### Version 1.18.0
 
 -   Support username & email as separate fields for login items
--   Take into account username & email in data import/export while keeping backward compatibility with JSON/CSV/PGP exports
+-   Take into account username & email in importers & exporter
 -   Revamp vault picker UI
+-   Improve generic CSV importer : all fields are now optional
+-   Support dashlane CSV import
+-   Fix 2FA autofill edge-cases
 
 ### Version 1.17.5
 
