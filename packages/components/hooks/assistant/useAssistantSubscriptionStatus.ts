@@ -1,7 +1,7 @@
 import { addDays, fromUnixTime, getUnixTime, isAfter, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
-import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
+import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
 
 import { FeatureCode } from '../..';
 import useFeature from '../useFeature';

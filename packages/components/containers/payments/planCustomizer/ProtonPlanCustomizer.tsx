@@ -2,8 +2,8 @@ import { ComponentPropsWithoutRef, useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { SelectedPlan } from '@proton/components/payments/core/subscription/selected-plan';
-import { useAssistantFeatureEnabled } from '@proton/llm/lib';
 import {
     ADDON_NAMES,
     AddonKey,
@@ -58,6 +58,7 @@ interface AddonCustomizerProps {
     latestSubscription?: Subscription;
     supportedAddons: { [key: string]: boolean };
     showAddonDescriptions: boolean;
+    scribeAddonEnabled?: boolean;
 }
 
 const AddonCustomizer = ({
@@ -75,9 +76,8 @@ const AddonCustomizer = ({
     latestSubscription,
     supportedAddons,
     showAddonDescriptions,
+    scribeAddonEnabled,
 }: AddonCustomizerProps) => {
-    const scribeEnabled = useAssistantFeatureEnabled();
-
     const addon = plansMap[addonName];
 
     if (!addon) {
@@ -216,7 +216,7 @@ const AddonCustomizer = ({
         );
     }
 
-    if (isScribeAddon(addonNameKey) && scribeEnabled.enabled && !scribeEnabled.killSwitch) {
+    if (isScribeAddon(addonNameKey) && scribeAddonEnabled) {
         return (
             <AccountSizeCustomiser
                 key={`${addon.Name}-size`}
@@ -269,6 +269,7 @@ export const ProtonPlanCustomizer = ({
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
     const showAddonDescriptions = mode !== 'signup' && !forceHideDescriptions;
+    const scribeEnabled = useAssistantFeatureEnabled();
 
     const isAllowedAddon = useCallback(
         (addonName: ADDON_NAMES) => {
@@ -292,6 +293,7 @@ export const ProtonPlanCustomizer = ({
 
                 return (
                     <AddonCustomizer
+                        scribeAddonEnabled={scribeEnabled.enabled && !scribeEnabled.killSwitch}
                         addonName={addonName}
                         cycle={cycle}
                         currency={currency}
