@@ -23,6 +23,7 @@ export const SESSION_VERSION: AuthSessionVersion = 1;
 
 export type AuthSession = {
     AccessToken: string;
+    extraPassword?: boolean;
     keyPassword: string;
     LocalID?: number;
     lockMode: LockMode;
