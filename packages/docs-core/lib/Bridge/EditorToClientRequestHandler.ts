@@ -3,18 +3,21 @@ import {
   CommentInterface,
   CommentThreadInterface,
   EditorRequiresClientMethods,
+  InternalEventBusInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
 import { UserState } from '@lexical/yjs'
 import { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { ErrorInfo } from 'react'
+import { ApplicationEvent } from '../Application/ApplicationEvent'
 
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
   constructor(
     private editorFrame: HTMLIFrameElement,
     private readonly docOrchestrator: EditorOrchestratorInterface,
+    private readonly eventBus: InternalEventBusInterface,
   ) {}
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
@@ -97,5 +100,14 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     if (this.editorFrame) {
       this.editorFrame.style.setProperty('--print-min-height', `${size}px`)
     }
+  }
+
+  showGenericAlertModal(message: string): void {
+    this.eventBus.publish({
+      type: ApplicationEvent.GeneralUserDisplayableErrorOccurred,
+      payload: {
+        translatedError: message,
+      },
+    })
   }
 }

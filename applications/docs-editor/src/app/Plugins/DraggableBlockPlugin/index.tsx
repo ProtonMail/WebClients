@@ -13,6 +13,7 @@ import {
   DROP_COMMAND,
   LexicalEditor,
   LexicalNode,
+  PASTE_COMMAND,
 } from 'lexical'
 import { DragEvent as ReactDragEvent, TouchEvent, useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -21,6 +22,7 @@ import { Point } from '../../Utils/point'
 import { isHTMLElement } from '../../Utils/guard'
 import { Icon } from '@proton/components'
 import clsx from '@proton/utils/clsx'
+import { c } from 'ttag'
 
 import './index.scss'
 
@@ -28,7 +30,7 @@ const DRAGGABLE_BLOCK_MENU_CLASSNAME = 'draggable-block-menu'
 const DRAG_DATA_FORMAT = 'application/x-lexical-drag-block'
 let draggedNodeKey = ''
 const DRAGGABLE_ELEMENTS = ['TABLE']
-
+const PASTE_LIMIT_BYTES = 1_000_000
 const Downward = 1
 const Upward = -1
 const Indeterminate = 0
@@ -210,9 +212,8 @@ function hideTargetLine(targetLineElem: HTMLElement | null) {
   }
 }
 
-function useDraggableBlockMenu(editor: LexicalEditor): JSX.Element {
+function useDraggableBlockMenu(editor: LexicalEditor, showGenericAlertModal: (message: string) => void): JSX.Element {
   const anchorElem = editor.getRootElement()
-
   const menuRef = useRef<HTMLDivElement>(null)
   const targetLineRef = useRef<HTMLDivElement>(null)
   const [draggableBlockElem, setDraggableBlockElem] = useState<HTMLElement | null>(null)
@@ -366,6 +367,19 @@ function useDraggableBlockMenu(editor: LexicalEditor): JSX.Element {
       return true
     }
 
+    function onPaste(event: ClipboardEvent) {
+      const paste = event.clipboardData?.getData('Text') || ''
+      if (new Blob([paste]).size > PASTE_LIMIT_BYTES) {
+        showGenericAlertModal(
+          c('Info')
+            .t`The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.`,
+        )
+        event.preventDefault()
+        return true
+      }
+      return false
+    }
+
     return mergeRegister(
       editor.registerCommand(
         DRAGOVER_COMMAND,
@@ -385,6 +399,13 @@ function useDraggableBlockMenu(editor: LexicalEditor): JSX.Element {
         DROP_COMMAND,
         (event) => {
           return onDrop(event)
+        },
+        COMMAND_PRIORITY_HIGH,
+      ),
+      editor.registerCommand<ClipboardEvent>(
+        PASTE_COMMAND,
+        (event: ClipboardEvent) => {
+          return onPaste(event)
         },
         COMMAND_PRIORITY_HIGH,
       ),
@@ -508,7 +529,11 @@ function useDraggableBlockMenu(editor: LexicalEditor): JSX.Element {
   )
 }
 
-export default function DraggableBlockPlugin(): JSX.Element {
+export default function DraggableBlockPlugin({
+  showGenericAlertModal,
+}: {
+  showGenericAlertModal: (message: string) => void
+}): JSX.Element {
   const [editor] = useLexicalComposerContext()
-  return useDraggableBlockMenu(editor)
+  return useDraggableBlockMenu(editor, showGenericAlertModal)
 }
