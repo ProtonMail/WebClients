@@ -143,8 +143,7 @@ export default function initDownloadLinkFile(
             checkFileHash: options?.virusScan ? checkFileHash : undefined,
             transformBlockStream,
             checkManifestSignature,
-            onProgress: (bytes: number, blockIndexes) => {
-                log(`progress: download ${bytes} bytes ${blockIndexes ? `block: ${blockIndexes.join(', ')}` : ''}`);
+            onProgress: (bytes: number) => {
                 callbacks.onProgress?.([link.linkId], bytes);
             },
             onFinish: () => {
