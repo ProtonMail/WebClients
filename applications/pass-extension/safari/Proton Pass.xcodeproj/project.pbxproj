@@ -20,46 +20,6 @@
 		353AA4102BFA9AC70084B00C /* SharedUseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */; };
 		3570308B2BFE0F5000E283F4 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570308A2BFE0F5000E283F4 /* LoggedInView.swift */; };
 		3570308D2BFE0F6E00E283F4 /* LoggedInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */; };
-		357CEE422C04912500867A76 /* chunk.date-fns in Resources */ = {isa = PBXBuildFile; fileRef = 357CEDFE2C04912300867A76 /* chunk.date-fns */; };
-		357CEE432C04912500867A76 /* chunk.6504.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEDFF2C04912300867A76 /* chunk.6504.js */; };
-		357CEE442C04912500867A76 /* chunk.6851.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE002C04912300867A76 /* chunk.6851.js */; };
-		357CEE452C04912500867A76 /* onboarding.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE032C04912300867A76 /* onboarding.js */; };
-		357CEE462C04912500867A76 /* dropdown.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE052C04912300867A76 /* dropdown.html */; };
-		357CEE472C04912500867A76 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE062C04912300867A76 /* assets */; };
-		357CEE482C04912500867A76 /* orchestrator.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE072C04912300867A76 /* orchestrator.js */; };
-		357CEE492C04912500867A76 /* client.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE082C04912300867A76 /* client.js */; };
-		357CEE4A2C04912500867A76 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0B2C04912300867A76 /* popup.html */; };
-		357CEE4B2C04912500867A76 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0C2C04912300867A76 /* background.js */; };
-		357CEE4C2C04912500867A76 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0D2C04912300867A76 /* styles */; };
-		357CEE4D2C04912500867A76 /* dropdown.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0E2C04912300867A76 /* dropdown.js */; };
-		357CEE4E2C04912500867A76 /* chunk.7449.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE0F2C04912300867A76 /* chunk.7449.js */; };
-		357CEE4F2C04912500867A76 /* chunk.8916.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE102C04912300867A76 /* chunk.8916.js */; };
-		357CEE502C04912500867A76 /* chunk.3978.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE112C04912300867A76 /* chunk.3978.js */; };
-		357CEE512C04912500867A76 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE132C04912300867A76 /* manifest.json */; };
-		357CEE522C04912500867A76 /* settings.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE142C04912300867A76 /* settings.html */; };
-		357CEE532C04912500867A76 /* chunk.locales in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE152C04912300867A76 /* chunk.locales */; };
-		357CEE542C04912500867A76 /* chunk.1923.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE162C04912300867A76 /* chunk.1923.js */; };
-		357CEE552C04912500867A76 /* settings.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE1A2C04912400867A76 /* settings.js */; };
-		357CEE562C04912500867A76 /* notification.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE1B2C04912400867A76 /* notification.html */; };
-		357CEE572C04912500867A76 /* notification.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE1F2C04912400867A76 /* notification.js */; };
-		357CEE582C04912500867A76 /* 2430b21d6e7b99d5e8ea.module.wasm in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE202C04912400867A76 /* 2430b21d6e7b99d5e8ea.module.wasm */; };
-		357CEE592C04912500867A76 /* webauthn.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE212C04912400867A76 /* webauthn.js */; };
-		357CEE5A2C04912500867A76 /* chunk.1470.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE232C04912400867A76 /* chunk.1470.js */; };
-		357CEE5B2C04912500867A76 /* chunk.crypto-worker-api.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE242C04912400867A76 /* chunk.crypto-worker-api.js */; };
-		357CEE5C2C04912500867A76 /* chunk.1677.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE262C04912400867A76 /* chunk.1677.js */; };
-		357CEE5D2C04912500867A76 /* chunk.6659.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE292C04912400867A76 /* chunk.6659.js */; };
-		357CEE5E2C04912500867A76 /* chunk.6783.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE2B2C04912400867A76 /* chunk.6783.js */; };
-		357CEE5F2C04912500867A76 /* chunk.5664.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE2C2C04912400867A76 /* chunk.5664.js */; };
-		357CEE602C04912500867A76 /* chunk.5781.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE2E2C04912400867A76 /* chunk.5781.js */; };
-		357CEE612C04912500867A76 /* elements.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE302C04912400867A76 /* elements.js */; };
-		357CEE622C04912500867A76 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE312C04912400867A76 /* popup.js */; };
-		357CEE632C04912500867A76 /* chunk.2494.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE322C04912400867A76 /* chunk.2494.js */; };
-		357CEE642C04912500867A76 /* chunk.5908.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE352C04912400867A76 /* chunk.5908.js */; };
-		357CEE652C04912500867A76 /* onboarding.html in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE372C04912500867A76 /* onboarding.html */; };
-		357CEE662C04912500867A76 /* chunk.7143.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE3A2C04912500867A76 /* chunk.7143.js */; };
-		357CEE672C04912500867A76 /* chunk.crypto-worker.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE3C2C04912500867A76 /* chunk.crypto-worker.js */; };
-		357CEE682C04912500867A76 /* chunk.1147.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE3D2C04912500867A76 /* chunk.1147.js */; };
-		357CEE692C04912500867A76 /* chunk.crypto-worker-v6-canary.js in Resources */ = {isa = PBXBuildFile; fileRef = 357CEE402C04912500867A76 /* chunk.crypto-worker-v6-canary.js */; };
 		3587FB3A2BFF95F8006C170F /* SharedUseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */; };
 		3587FB3C2BFF9625006C170F /* UseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */; };
 		358A2BDF2BFC847B007C8D5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BDE2BFC847B007C8D5C /* MainView.swift */; };
@@ -130,75 +90,6 @@
 		353B23772BF7DA4200D77597 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 		3570308A2BFE0F5000E283F4 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewModel.swift; sourceTree = "<group>"; };
-		357CEDFD2C04912300867A76 /* chunk.5781.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5781.js.map; path = ../../dist/chunk.5781.js.map; sourceTree = "<group>"; };
-		357CEDFE2C04912300867A76 /* chunk.date-fns */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "chunk.date-fns"; path = "../../dist/chunk.date-fns"; sourceTree = "<group>"; };
-		357CEDFF2C04912300867A76 /* chunk.6504.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6504.js; path = ../../dist/chunk.6504.js; sourceTree = "<group>"; };
-		357CEE002C04912300867A76 /* chunk.6851.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6851.js; path = ../../dist/chunk.6851.js; sourceTree = "<group>"; };
-		357CEE012C04912300867A76 /* webauthn.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = webauthn.js.map; path = ../../dist/webauthn.js.map; sourceTree = "<group>"; };
-		357CEE022C04912300867A76 /* notification.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = notification.js.map; path = ../../dist/notification.js.map; sourceTree = "<group>"; };
-		357CEE032C04912300867A76 /* onboarding.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = onboarding.js; path = ../../dist/onboarding.js; sourceTree = "<group>"; };
-		357CEE042C04912300867A76 /* chunk.3978.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.3978.js.map; path = ../../dist/chunk.3978.js.map; sourceTree = "<group>"; };
-		357CEE052C04912300867A76 /* dropdown.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = dropdown.html; path = ../../dist/dropdown.html; sourceTree = "<group>"; };
-		357CEE062C04912300867A76 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../dist/assets; sourceTree = "<group>"; };
-		357CEE072C04912300867A76 /* orchestrator.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = orchestrator.js; path = ../../dist/orchestrator.js; sourceTree = "<group>"; };
-		357CEE082C04912300867A76 /* client.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = client.js; path = ../../dist/client.js; sourceTree = "<group>"; };
-		357CEE092C04912300867A76 /* chunk.crypto-worker-v6-canary.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker-v6-canary.js.map"; path = "../../dist/chunk.crypto-worker-v6-canary.js.map"; sourceTree = "<group>"; };
-		357CEE0A2C04912300867A76 /* chunk.6659.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6659.js.map; path = ../../dist/chunk.6659.js.map; sourceTree = "<group>"; };
-		357CEE0B2C04912300867A76 /* popup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = popup.html; path = ../../dist/popup.html; sourceTree = "<group>"; };
-		357CEE0C2C04912300867A76 /* background.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../dist/background.js; sourceTree = "<group>"; };
-		357CEE0D2C04912300867A76 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = ../../dist/styles; sourceTree = "<group>"; };
-		357CEE0E2C04912300867A76 /* dropdown.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = dropdown.js; path = ../../dist/dropdown.js; sourceTree = "<group>"; };
-		357CEE0F2C04912300867A76 /* chunk.7449.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.7449.js; path = ../../dist/chunk.7449.js; sourceTree = "<group>"; };
-		357CEE102C04912300867A76 /* chunk.8916.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.8916.js; path = ../../dist/chunk.8916.js; sourceTree = "<group>"; };
-		357CEE112C04912300867A76 /* chunk.3978.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.3978.js; path = ../../dist/chunk.3978.js; sourceTree = "<group>"; };
-		357CEE122C04912300867A76 /* popup.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = popup.js.map; path = ../../dist/popup.js.map; sourceTree = "<group>"; };
-		357CEE132C04912300867A76 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = ../../dist/manifest.json; sourceTree = "<group>"; };
-		357CEE142C04912300867A76 /* settings.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = settings.html; path = ../../dist/settings.html; sourceTree = "<group>"; };
-		357CEE152C04912300867A76 /* chunk.locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = chunk.locales; path = ../../dist/chunk.locales; sourceTree = "<group>"; };
-		357CEE162C04912300867A76 /* chunk.1923.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1923.js; path = ../../dist/chunk.1923.js; sourceTree = "<group>"; };
-		357CEE172C04912400867A76 /* orchestrator.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = orchestrator.js.map; path = ../../dist/orchestrator.js.map; sourceTree = "<group>"; };
-		357CEE182C04912400867A76 /* chunk.crypto-worker.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker.js.map"; path = "../../dist/chunk.crypto-worker.js.map"; sourceTree = "<group>"; };
-		357CEE192C04912400867A76 /* onboarding.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = onboarding.js.map; path = ../../dist/onboarding.js.map; sourceTree = "<group>"; };
-		357CEE1A2C04912400867A76 /* settings.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = settings.js; path = ../../dist/settings.js; sourceTree = "<group>"; };
-		357CEE1B2C04912400867A76 /* notification.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = notification.html; path = ../../dist/notification.html; sourceTree = "<group>"; };
-		357CEE1C2C04912400867A76 /* chunk.6851.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6851.js.map; path = ../../dist/chunk.6851.js.map; sourceTree = "<group>"; };
-		357CEE1D2C04912400867A76 /* chunk.1470.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1470.js.map; path = ../../dist/chunk.1470.js.map; sourceTree = "<group>"; };
-		357CEE1E2C04912400867A76 /* chunk.1677.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1677.js.map; path = ../../dist/chunk.1677.js.map; sourceTree = "<group>"; };
-		357CEE1F2C04912400867A76 /* notification.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = notification.js; path = ../../dist/notification.js; sourceTree = "<group>"; };
-		357CEE202C04912400867A76 /* 2430b21d6e7b99d5e8ea.module.wasm */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2430b21d6e7b99d5e8ea.module.wasm; path = ../../dist/2430b21d6e7b99d5e8ea.module.wasm; sourceTree = "<group>"; };
-		357CEE212C04912400867A76 /* webauthn.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = webauthn.js; path = ../../dist/webauthn.js; sourceTree = "<group>"; };
-		357CEE222C04912400867A76 /* chunk.7449.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.7449.js.map; path = ../../dist/chunk.7449.js.map; sourceTree = "<group>"; };
-		357CEE232C04912400867A76 /* chunk.1470.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1470.js; path = ../../dist/chunk.1470.js; sourceTree = "<group>"; };
-		357CEE242C04912400867A76 /* chunk.crypto-worker-api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker-api.js"; path = "../../dist/chunk.crypto-worker-api.js"; sourceTree = "<group>"; };
-		357CEE252C04912400867A76 /* chunk.1147.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1147.js.map; path = ../../dist/chunk.1147.js.map; sourceTree = "<group>"; };
-		357CEE262C04912400867A76 /* chunk.1677.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1677.js; path = ../../dist/chunk.1677.js; sourceTree = "<group>"; };
-		357CEE272C04912400867A76 /* chunk.6783.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6783.js.map; path = ../../dist/chunk.6783.js.map; sourceTree = "<group>"; };
-		357CEE282C04912400867A76 /* chunk.1923.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.1923.js.map; path = ../../dist/chunk.1923.js.map; sourceTree = "<group>"; };
-		357CEE292C04912400867A76 /* chunk.6659.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6659.js; path = ../../dist/chunk.6659.js; sourceTree = "<group>"; };
-		357CEE2A2C04912400867A76 /* client.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = client.js.map; path = ../../dist/client.js.map; sourceTree = "<group>"; };
-		357CEE2B2C04912400867A76 /* chunk.6783.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.6783.js; path = ../../dist/chunk.6783.js; sourceTree = "<group>"; };
-		357CEE2C2C04912400867A76 /* chunk.5664.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5664.js; path = ../../dist/chunk.5664.js; sourceTree = "<group>"; };
-		357CEE2D2C04912400867A76 /* chunk.crypto-worker-api.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "chunk.crypto-worker-api.js.map"; path = "../../dist/chunk.crypto-worker-api.js.map"; sourceTree = "<group>"; };
-		357CEE2E2C04912400867A76 /* chunk.5781.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5781.js; path = ../../dist/chunk.5781.js; sourceTree = "<group>"; };
-		357CEE2F2C04912400867A76 /* dropdown.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = dropdown.js.map; path = ../../dist/dropdown.js.map; sourceTree = "<group>"; };
-		357CEE302C04912400867A76 /* elements.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = elements.js; path = ../../dist/elements.js; sourceTree = "<group>"; };
-		357CEE312C04912400867A76 /* popup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../dist/popup.js; sourceTree = "<group>"; };
-		357CEE322C04912400867A76 /* chunk.2494.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.2494.js; path = ../../dist/chunk.2494.js; sourceTree = "<group>"; };
-		357CEE332C04912400867A76 /* settings.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = settings.js.map; path = ../../dist/settings.js.map; sourceTree = "<group>"; };
-		357CEE342C04912400867A76 /* elements.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = elements.js.map; path = ../../dist/elements.js.map; sourceTree = "<group>"; };
-		357CEE352C04912400867A76 /* chunk.5908.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.5908.js; path = ../../dist/chunk.5908.js; sourceTree = "<group>"; };
-		357CEE362C04912400867A76 /* background.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = background.js.map; path = ../../dist/background.js.map; sourceTree = "<group>"; };
-		357CEE372C04912500867A76 /* onboarding.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = onboarding.html; path = ../../dist/onboarding.html; sourceTree = "<group>"; };
-		357CEE382C04912500867A76 /* chunk.5664.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5664.js.map; path = ../../dist/chunk.5664.js.map; sourceTree = "<group>"; };
-		357CEE392C04912500867A76 /* chunk.6504.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.6504.js.map; path = ../../dist/chunk.6504.js.map; sourceTree = "<group>"; };
-		357CEE3A2C04912500867A76 /* chunk.7143.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.7143.js; path = ../../dist/chunk.7143.js; sourceTree = "<group>"; };
-		357CEE3B2C04912500867A76 /* chunk.7143.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.7143.js.map; path = ../../dist/chunk.7143.js.map; sourceTree = "<group>"; };
-		357CEE3C2C04912500867A76 /* chunk.crypto-worker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker.js"; path = "../../dist/chunk.crypto-worker.js"; sourceTree = "<group>"; };
-		357CEE3D2C04912500867A76 /* chunk.1147.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = chunk.1147.js; path = ../../dist/chunk.1147.js; sourceTree = "<group>"; };
-		357CEE3E2C04912500867A76 /* chunk.2494.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.2494.js.map; path = ../../dist/chunk.2494.js.map; sourceTree = "<group>"; };
-		357CEE3F2C04912500867A76 /* chunk.5908.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.5908.js.map; path = ../../dist/chunk.5908.js.map; sourceTree = "<group>"; };
-		357CEE402C04912500867A76 /* chunk.crypto-worker-v6-canary.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "chunk.crypto-worker-v6-canary.js"; path = "../../dist/chunk.crypto-worker-v6-canary.js"; sourceTree = "<group>"; };
-		357CEE412C04912500867A76 /* chunk.8916.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = chunk.8916.js.map; path = ../../dist/chunk.8916.js.map; sourceTree = "<group>"; };
 		3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
 		358A2BDE2BFC847B007C8D5C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		358A2BE02BFC848E007C8D5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -238,82 +129,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F5AFA6C2BF380E800C88A8E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				357CEE202C04912400867A76 /* 2430b21d6e7b99d5e8ea.module.wasm */,
-				357CEE062C04912300867A76 /* assets */,
-				357CEE0C2C04912300867A76 /* background.js */,
-				357CEE362C04912400867A76 /* background.js.map */,
-				357CEE3D2C04912500867A76 /* chunk.1147.js */,
-				357CEE252C04912400867A76 /* chunk.1147.js.map */,
-				357CEE232C04912400867A76 /* chunk.1470.js */,
-				357CEE1D2C04912400867A76 /* chunk.1470.js.map */,
-				357CEE262C04912400867A76 /* chunk.1677.js */,
-				357CEE1E2C04912400867A76 /* chunk.1677.js.map */,
-				357CEE162C04912300867A76 /* chunk.1923.js */,
-				357CEE282C04912400867A76 /* chunk.1923.js.map */,
-				357CEE322C04912400867A76 /* chunk.2494.js */,
-				357CEE3E2C04912500867A76 /* chunk.2494.js.map */,
-				357CEE112C04912300867A76 /* chunk.3978.js */,
-				357CEE042C04912300867A76 /* chunk.3978.js.map */,
-				357CEE2C2C04912400867A76 /* chunk.5664.js */,
-				357CEE382C04912500867A76 /* chunk.5664.js.map */,
-				357CEE2E2C04912400867A76 /* chunk.5781.js */,
-				357CEDFD2C04912300867A76 /* chunk.5781.js.map */,
-				357CEE352C04912400867A76 /* chunk.5908.js */,
-				357CEE3F2C04912500867A76 /* chunk.5908.js.map */,
-				357CEDFF2C04912300867A76 /* chunk.6504.js */,
-				357CEE392C04912500867A76 /* chunk.6504.js.map */,
-				357CEE292C04912400867A76 /* chunk.6659.js */,
-				357CEE0A2C04912300867A76 /* chunk.6659.js.map */,
-				357CEE2B2C04912400867A76 /* chunk.6783.js */,
-				357CEE272C04912400867A76 /* chunk.6783.js.map */,
-				357CEE002C04912300867A76 /* chunk.6851.js */,
-				357CEE1C2C04912400867A76 /* chunk.6851.js.map */,
-				357CEE3A2C04912500867A76 /* chunk.7143.js */,
-				357CEE3B2C04912500867A76 /* chunk.7143.js.map */,
-				357CEE0F2C04912300867A76 /* chunk.7449.js */,
-				357CEE222C04912400867A76 /* chunk.7449.js.map */,
-				357CEE102C04912300867A76 /* chunk.8916.js */,
-				357CEE412C04912500867A76 /* chunk.8916.js.map */,
-				357CEE242C04912400867A76 /* chunk.crypto-worker-api.js */,
-				357CEE2D2C04912400867A76 /* chunk.crypto-worker-api.js.map */,
-				357CEE402C04912500867A76 /* chunk.crypto-worker-v6-canary.js */,
-				357CEE092C04912300867A76 /* chunk.crypto-worker-v6-canary.js.map */,
-				357CEE3C2C04912500867A76 /* chunk.crypto-worker.js */,
-				357CEE182C04912400867A76 /* chunk.crypto-worker.js.map */,
-				357CEDFE2C04912300867A76 /* chunk.date-fns */,
-				357CEE152C04912300867A76 /* chunk.locales */,
-				357CEE082C04912300867A76 /* client.js */,
-				357CEE2A2C04912400867A76 /* client.js.map */,
-				357CEE052C04912300867A76 /* dropdown.html */,
-				357CEE0E2C04912300867A76 /* dropdown.js */,
-				357CEE2F2C04912400867A76 /* dropdown.js.map */,
-				357CEE302C04912400867A76 /* elements.js */,
-				357CEE342C04912400867A76 /* elements.js.map */,
-				357CEE132C04912300867A76 /* manifest.json */,
-				357CEE1B2C04912400867A76 /* notification.html */,
-				357CEE1F2C04912400867A76 /* notification.js */,
-				357CEE022C04912300867A76 /* notification.js.map */,
-				357CEE372C04912500867A76 /* onboarding.html */,
-				357CEE032C04912300867A76 /* onboarding.js */,
-				357CEE192C04912400867A76 /* onboarding.js.map */,
-				357CEE072C04912300867A76 /* orchestrator.js */,
-				357CEE172C04912400867A76 /* orchestrator.js.map */,
-				357CEE0B2C04912300867A76 /* popup.html */,
-				357CEE312C04912400867A76 /* popup.js */,
-				357CEE122C04912300867A76 /* popup.js.map */,
-				357CEE142C04912300867A76 /* settings.html */,
-				357CEE1A2C04912400867A76 /* settings.js */,
-				357CEE332C04912400867A76 /* settings.js.map */,
-				357CEE0D2C04912300867A76 /* styles */,
-				357CEE212C04912400867A76 /* webauthn.js */,
-				357CEE012C04912300867A76 /* webauthn.js.map */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		1FEA7CE82BE8E86900EF2ED2 = {
 			isa = PBXGroup;
 			children = (
@@ -354,7 +169,6 @@
 		1FEA7D122BE8E86A00EF2ED2 /* Safari Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1F5AFA6C2BF380E800C88A8E /* Resources */,
 				1FEA7D132BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift */,
 				1FEA7D152BE8E86A00EF2ED2 /* Info.plist */,
 				1FEA7D162BE8E86A00EF2ED2 /* Safari Extension.entitlements */,
@@ -540,46 +354,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				357CEE482C04912500867A76 /* orchestrator.js in Resources */,
-				357CEE602C04912500867A76 /* chunk.5781.js in Resources */,
-				357CEE5E2C04912500867A76 /* chunk.6783.js in Resources */,
-				357CEE662C04912500867A76 /* chunk.7143.js in Resources */,
-				357CEE692C04912500867A76 /* chunk.crypto-worker-v6-canary.js in Resources */,
-				357CEE5F2C04912500867A76 /* chunk.5664.js in Resources */,
-				357CEE622C04912500867A76 /* popup.js in Resources */,
-				357CEE542C04912500867A76 /* chunk.1923.js in Resources */,
-				357CEE432C04912500867A76 /* chunk.6504.js in Resources */,
-				357CEE422C04912500867A76 /* chunk.date-fns in Resources */,
-				357CEE592C04912500867A76 /* webauthn.js in Resources */,
-				357CEE4E2C04912500867A76 /* chunk.7449.js in Resources */,
-				357CEE4D2C04912500867A76 /* dropdown.js in Resources */,
-				357CEE532C04912500867A76 /* chunk.locales in Resources */,
-				357CEE492C04912500867A76 /* client.js in Resources */,
-				357CEE4C2C04912500867A76 /* styles in Resources */,
-				357CEE572C04912500867A76 /* notification.js in Resources */,
-				357CEE4F2C04912500867A76 /* chunk.8916.js in Resources */,
-				357CEE4B2C04912500867A76 /* background.js in Resources */,
-				357CEE5D2C04912500867A76 /* chunk.6659.js in Resources */,
-				357CEE552C04912500867A76 /* settings.js in Resources */,
-				357CEE5C2C04912500867A76 /* chunk.1677.js in Resources */,
-				357CEE632C04912500867A76 /* chunk.2494.js in Resources */,
-				357CEE652C04912500867A76 /* onboarding.html in Resources */,
-				357CEE612C04912500867A76 /* elements.js in Resources */,
-				357CEE4A2C04912500867A76 /* popup.html in Resources */,
-				357CEE562C04912500867A76 /* notification.html in Resources */,
-				357CEE682C04912500867A76 /* chunk.1147.js in Resources */,
-				357CEE582C04912500867A76 /* 2430b21d6e7b99d5e8ea.module.wasm in Resources */,
-				357CEE642C04912500867A76 /* chunk.5908.js in Resources */,
-				357CEE442C04912500867A76 /* chunk.6851.js in Resources */,
-				357CEE502C04912500867A76 /* chunk.3978.js in Resources */,
-				357CEE5A2C04912500867A76 /* chunk.1470.js in Resources */,
-				357CEE512C04912500867A76 /* manifest.json in Resources */,
-				357CEE522C04912500867A76 /* settings.html in Resources */,
-				357CEE472C04912500867A76 /* assets in Resources */,
-				357CEE5B2C04912500867A76 /* chunk.crypto-worker-api.js in Resources */,
-				357CEE452C04912500867A76 /* onboarding.js in Resources */,
-				357CEE672C04912500867A76 /* chunk.crypto-worker.js in Resources */,
-				357CEE462C04912500867A76 /* dropdown.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
