@@ -1,32 +1,28 @@
-import { useOrganization, useSubscription, useUser } from '@proton/components/hooks';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
+import { useSubscription, useUser } from '@proton/components/hooks';
+import { SelectedPlan } from '@proton/components/payments/core/subscription/selected-plan';
+import { Plan } from '@proton/shared/lib/interfaces';
 
 import { getAssistantDowngradeConfig, getAssistantUpsellConfig } from './assistantUpsellConfig';
 
 interface Props {
     upsellRef: string;
     downgradeRef?: string;
+    plans: Plan[];
 }
 
-const useAssistantUpsellConfig = ({ upsellRef, downgradeRef }: Props) => {
+const useAssistantUpsellConfig = ({ upsellRef, downgradeRef, plans }: Props) => {
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const [organization] = useOrganization();
-    const currentPlan = getPlan(subscription);
+    const latestSubscription = subscription?.UpcomingSubscription ?? subscription;
     const isOrgAdmin = user.isAdmin;
 
-    const assistantUpsellConfig = getAssistantUpsellConfig(
-        upsellRef,
-        user,
-        isOrgAdmin,
-        currentPlan,
-        subscription,
-        organization
-    );
+    const selectedPlan = SelectedPlan.createFromSubscription(latestSubscription, plans);
+
+    const assistantUpsellConfig = getAssistantUpsellConfig(upsellRef, user, isOrgAdmin, selectedPlan);
 
     let assistantDowngradeConfig = undefined;
     if (downgradeRef) {
-        assistantDowngradeConfig = getAssistantDowngradeConfig(downgradeRef, currentPlan);
+        assistantDowngradeConfig = getAssistantDowngradeConfig(downgradeRef, selectedPlan);
     }
 
     return {

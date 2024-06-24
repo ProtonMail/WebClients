@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES, VPN_PASS_PROMOTION_COUPONS } from '../constants';
 import {
+    MaxKeys,
     Plan,
     PlanIDs,
     PlansMap,
@@ -9,7 +10,7 @@ import {
     Pricing,
     Subscription,
     SubscriptionCheckResponse,
-    getPlanMaxIPs,
+    getMaxValue,
 } from '../interfaces';
 import { getPlanFromCheckout, isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './planIDs';
 import { INCLUDED_IP_PRICING, customCycles, getOverriddenPricePerCycle, getPricingPerMember } from './subscription';
@@ -24,21 +25,20 @@ export const getUserTitle = (users: number) => {
 };
 
 const getAddonQuantity = (addon: Plan, quantity: number) => {
+    let maxKey: MaxKeys | undefined;
     if (isDomainAddon(addon.Name)) {
-        return quantity * (addon.MaxDomains || 0);
+        maxKey = 'MaxDomains';
+    } else if (isMemberAddon(addon.Name)) {
+        maxKey = 'MaxMembers';
+    } else if (isIpAddon(addon.Name)) {
+        maxKey = 'MaxIPs';
+    } else if (isScribeAddon(addon.Name)) {
+        maxKey = 'MaxAI';
     }
-    if (isMemberAddon(addon.Name)) {
-        return quantity * (addon.MaxMembers || 0);
-    }
-    if (isIpAddon(addon.Name)) {
-        return quantity * getPlanMaxIPs(addon);
-    }
-    //TODO this might not be sufficient. Before the change it was:
-    // return quantity * (addon.MaxAI || 0);
-    if (isScribeAddon(addon.Name)) {
-        return quantity;
-    }
-    return 0;
+
+    const multiplier = maxKey ? getMaxValue(addon, maxKey) : 0;
+
+    return quantity * multiplier;
 };
 
 export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {

@@ -71,7 +71,7 @@ beforeEach(() => {
             MaxMembers: 10,
             MaxVPN: 10,
             MaxTier: 3,
-            MaxAI: 0,
+
             Services: 1,
             Features: 1,
             Quantity: 1,
