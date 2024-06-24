@@ -5,10 +5,10 @@ import {
     SettingsLayout,
     SettingsLayoutLeft,
     SettingsLayoutRight,
-    useFlag,
     useOrganization,
     useUserSettings,
 } from '@proton/components';
+import { useAssistantFeatureEnabled } from '@proton/llm/lib';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -19,7 +19,7 @@ import ToggleAssistantEnvironment from './ToggleAssistantEnvironment';
 const { OFF, UNSET, SERVER_ONLY } = AI_ASSISTANT_ACCESS;
 
 const ToggleAssistantContainer = () => {
-    const assistantFeatureEnabled = useFlag('ComposerAssistant');
+    const assistantFeatureEnabled = useAssistantFeatureEnabled();
     const [{ AIAssistantFlags }] = useUserSettings();
     const [organization] = useOrganization();
 
@@ -29,7 +29,7 @@ const ToggleAssistantContainer = () => {
         aiFlag = isVisionary ? OFF : SERVER_ONLY;
     }
 
-    if (!assistantFeatureEnabled) {
+    if (!assistantFeatureEnabled.enabled) {
         return null;
     }
 

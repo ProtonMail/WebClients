@@ -208,8 +208,12 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
     return PLANS.BUNDLE;
 };
 
-export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES) => {
-    return [
+export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    if (!planName) {
+        return false;
+    }
+
+    const b2bPlans: (PLANS | ADDON_NAMES)[] = [
         MAIL_PRO,
         MAIL_BUSINESS,
         DRIVE_PRO,
@@ -220,7 +224,9 @@ export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES) => {
         VPN_BUSINESS,
         PASS_PRO,
         PASS_BUSINESS,
-    ].includes(planName as any);
+    ];
+
+    return b2bPlans.includes(planName);
 };
 
 export const canCheckItemPaidChecklist = (subscription: Subscription | undefined) => {
@@ -322,13 +328,13 @@ export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs 
     }, {});
 };
 
-export function getPlanFromIds(planIDs: PlanIDs): PLANS {
+export function getPlanFromIds(planIDs: PlanIDs): PLANS | undefined {
     return Object.values(PLANS).find((key) => {
         // If the planIDs object has non-zero value for the plan, then it exists.
         // There can be at most 1 plan, and others are addons.
         const planNumber = planIDs[key as PLANS] ?? 0;
         return planNumber > 0;
-    }) as PLANS;
+    });
 }
 
 export const isTrial = (subscription: Subscription | undefined, plan?: PLANS): boolean => {
