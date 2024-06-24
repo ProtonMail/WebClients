@@ -203,7 +203,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
-                if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast: true });
+                if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
 
                 /* wipe the local DB cache and session data */
                 if (userID) deletePassDB(userID).catch(noop);
@@ -303,7 +303,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     client.current.setStatus(AppStatusFromLockMode[mode]);
                 });
 
-                if (broadcast) sw?.send({ type: 'locked', localID, mode, broadcast: true });
+                if (broadcast) sw?.send({ type: 'locked', localID, mode, broadcast });
 
                 if (client.current.state.booted) {
                     store.dispatch(stateDestroy());
@@ -345,9 +345,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     switch (lock.mode) {
                         case LockMode.PASSWORD:
                         case LockMode.SESSION:
-                            return sw?.send({ broadcast: true, localID, mode: lock.mode, type: 'locked' });
+                            return sw?.send({ broadcast, localID, mode: lock.mode, type: 'locked' });
                         case LockMode.NONE:
-                            return sw?.send({ broadcast: true, localID, mode: lock.mode, type: 'lock_deleted' });
+                            return sw?.send({ broadcast, localID, mode: lock.mode, type: 'lock_deleted' });
                     }
                 }
             },
@@ -355,7 +355,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onSessionRefresh: async (localID, data, broadcast) => {
                 logger.info('[AuthServiceProvider] Session tokens have been refreshed');
                 const persistedSession = await auth.config.getPersistedSession(localID);
-                if (broadcast) sw?.send({ type: 'refresh', localID, data, broadcast: true });
 
                 if (persistedSession) {
                     const { AccessToken, RefreshTime, RefreshToken } = data;
@@ -365,11 +364,20 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     persistedSession.AccessToken = AccessToken;
                     persistedSession.RefreshToken = RefreshToken;
                     persistedSession.RefreshTime = RefreshTime;
+
                     localStorage.setItem(getSessionKey(localID), JSON.stringify(persistedSession));
+                    if (broadcast) sw?.send({ type: 'session', localID, data, broadcast });
                 }
             },
 
-            onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
+            onSessionPersist: (encrypted) => {
+                localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted);
+
+                /** Broadcast the session update to other clients */
+                const localID = authStore.getLocalID();
+                const data = authStore.getSession();
+                sw?.send({ type: 'session', localID, data, broadcast: true });
+            },
 
             onSessionFailure: () => {
                 logger.info('[AuthServiceProvider] Session resume failure');
@@ -443,13 +451,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             }
         };
 
-        const handleRefresh: ServiceWorkerMessageHandler<'refresh'> = ({ localID, data }) => {
+        const handleSession: ServiceWorkerMessageHandler<'session'> = ({ localID, data }) => {
             if (authStore.hasSession(localID)) {
-                authStore.setAccessToken(data.AccessToken);
-                authStore.setRefreshToken(data.RefreshToken);
-                authStore.setUID(data.UID);
-                authStore.setRefreshTime(data.RefreshTime);
-                void authService.config.onSessionRefresh?.(localID, data, false);
+                logger.info(`[AuthServiceProvider] syncing session for localID[${localID}]`);
+                authStore.setSession(data);
             }
         };
 
@@ -457,7 +462,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         sw?.on('unauthorized', handleUnauthorized);
         sw?.on('locked', handleLocked);
         sw?.on('lock_deleted', handleLockDeleted);
-        sw?.on('refresh', handleRefresh);
+        sw?.on('session', handleSession);
 
         run().catch(noop);
 
@@ -465,7 +470,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             sw?.off('fork', handleFork);
             sw?.off('lock_deleted', handleLockDeleted);
             sw?.off('locked', handleLocked);
-            sw?.off('refresh', handleRefresh);
+            sw?.off('session', handleSession);
             sw?.off('unauthorized', handleUnauthorized);
         };
     }, []);
