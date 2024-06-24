@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { TextDecoder, TextEncoder } from 'util';
+import 'whatwg-fetch';
 
 // Getting ReferenceError: TextDecoder is not defined without
 global.TextEncoder = TextEncoder;
@@ -29,3 +30,26 @@ jest.mock('loglevel');
 // JSDom does not include webcrypto
 const crypto = require('crypto').webcrypto;
 global.crypto.subtle = crypto.subtle;
+
+expect.extend({
+    async toMatchResponse(received, expected) {
+        const compareProps = ['status', 'statusText', 'ok'];
+        const mismatchedProps = compareProps.filter((prop) => received[prop] !== expected[prop]);
+
+        const bodyReceived = await received.clone().text();
+        const bodyExpected = await expected.clone().text();
+        if (bodyExpected !== bodyReceived) mismatchedProps.push('body');
+
+        const headersReceived = JSON.stringify(received.headers);
+        const headersExpected = JSON.stringify(expected.headers);
+        if (headersExpected !== headersReceived) mismatchedProps.push('headers');
+
+        const pass = mismatchedProps.length === 0;
+
+        const message = pass
+            ? () => `expected Response not to match the received Response`
+            : () => `expected Response to match for properties: ${mismatchedProps.join(', ')}`;
+
+        return { message, pass };
+    },
+});

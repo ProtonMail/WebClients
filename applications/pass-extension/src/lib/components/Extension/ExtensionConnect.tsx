@@ -5,6 +5,7 @@ import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useEx
 import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
@@ -85,13 +86,13 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
         return () => ExtensionContext.get().port.onMessage.removeListener(onWorkerMessage);
     }, []);
 
-    useEffect(() => {
-        const onVisibilityChange = () => activityProbe[document.visibilityState === 'visible' ? 'start' : 'cancel']();
-        document.addEventListener('visibilitychange', onVisibilityChange);
-        onVisibilityChange();
-
-        return () => document.removeEventListener('visibilitychange', onVisibilityChange);
-    }, []);
+    useVisibleEffect(
+        (visible) => {
+            if (state.loggedIn && visible) activityProbe.start();
+            else activityProbe.cancel();
+        },
+        [state.loggedIn]
+    );
 
     const context = useMemo<ExtensionConnectContextValue>(
         () => ({

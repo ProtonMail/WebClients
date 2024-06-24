@@ -32,17 +32,8 @@ import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvide
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
-import {
-    CACHED_IMAGE_DEFAULT_MAX_AGE,
-    CACHED_IMAGE_FALLBACK_MAX_AGE,
-    getCache,
-    shouldRevalidate,
-    withMaxAgeHeaders,
-} from '@proton/pass/lib/api/cache';
 import { createApi } from '@proton/pass/lib/api/factory';
-import { createNetworkError } from '@proton/pass/lib/api/fetch-controller';
-import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
-import { API_BODYLESS_STATUS_CODES } from '@proton/pass/lib/api/utils';
+import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
@@ -54,22 +45,21 @@ import { selectExportData } from '@proton/pass/store/selectors/export';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import locales from './locales';
 
 import './app.scss';
 
-const history = createHashHistory();
-
 exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 exposePassCrypto(createPassCrypto());
 exposeApi(createApi({ config: PASS_CONFIG }));
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
+
+const history = createHashHistory();
+const imageProxy = createImageProxyHandler(api);
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
@@ -91,48 +81,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     getOfflineEnabled: async () => (await settings.resolve()).offlineEnabled ?? false,
 
     getDomainImage: async (domain, signal) => {
-        const res = await (async () => {
-            const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
-            const cache = await getCache();
-            const cachedResponse = await cache?.match(url).catch(noop);
-
-            if (cachedResponse && !shouldRevalidate(cachedResponse)) return cachedResponse;
-
-            return api<Response>({ url, output: 'raw', signal, sideEffects: false })
-                .then(async (res) => {
-                    if (res.ok) {
-                        /* max-age is set to 0 on image responses from BE: this is sub-optimal in
-                         * the context of the extension -> override the max-age header. */
-                        const response = new Response(
-                            API_BODYLESS_STATUS_CODES.includes(res.status) ? null : await res.blob(),
-                            {
-                                status: res.status,
-                                statusText: res.statusText,
-                                headers: withMaxAgeHeaders(res, CACHED_IMAGE_DEFAULT_MAX_AGE),
-                            }
-                        );
-
-                        cache?.put(url, response.clone()).catch(noop);
-                        return response;
-                    } else throw new Error();
-                })
-                .catch((err) => {
-                    if (getApiError(err).status === 422) {
-                        const res = err.response as Response;
-                        const response = new Response('Unprocessable Content', {
-                            status: res.status,
-                            statusText: res.statusText,
-                            headers: withMaxAgeHeaders(res, CACHED_IMAGE_FALLBACK_MAX_AGE),
-                        });
-
-                        void cache?.put(url, response.clone()).catch(noop);
-                        return response;
-                    }
-
-                    return createNetworkError(408);
-                });
-        })();
-
+        const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
+        const res = await imageProxy(url, signal);
         return imageResponsetoDataURL(res);
     },
 

@@ -229,7 +229,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
     );
 
     useEffect(() => {
-        if (visible) activityProbe.start();
+        if (visible && appState.loggedIn) activityProbe.start();
         else activityProbe.cancel();
     }, [visible]);
 
