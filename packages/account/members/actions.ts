@@ -128,7 +128,7 @@ export const editMember = ({
 };
 
 export const createMember = ({
-    member: model,
+    member: originalModel,
     verifiedDomains,
     keyTransparencyVerify,
     keyTransparencyCommit,
@@ -156,6 +156,12 @@ export const createMember = ({
             dispatch(organizationThunk()),
             dispatch(membersThunk()),
         ]);
+
+        const model = { ...originalModel };
+        // Force role to member in invitation creation since it can't be created as anything else
+        if (model.mode === CreateMemberMode.Invitation) {
+            model.role = MEMBER_ROLE.ORGANIZATION_MEMBER;
+        }
 
         const self = members.find((member) => Boolean(member.Self));
         if (
