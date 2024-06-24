@@ -58,11 +58,15 @@ export default function initDownload(
             const stream = controls.start();
             const size = await sizePromise.get().catch(() => undefined);
             await fileSaver
-                .saveAsFile(stream, {
-                    filename: name,
-                    mimeType: links.length === 1 ? links[0].mimeType : SupportedMimeTypes.zip,
-                    size,
-                })
+                .saveAsFile(
+                    stream,
+                    {
+                        filename: name,
+                        mimeType: links.length === 1 ? links[0].mimeType : SupportedMimeTypes.zip,
+                        size,
+                    },
+                    log
+                )
                 .catch((err) => {
                     callbacks.onError?.(err);
                     controls.cancel();
