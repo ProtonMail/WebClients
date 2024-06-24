@@ -4,12 +4,12 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
-import { authStore } from '@proton/pass/lib/auth/store';
 import { validateCurrentPassword } from '@proton/pass/lib/validation/auth';
 import { unlock } from '@proton/pass/store/actions';
 import { unlockRequest } from '@proton/pass/store/actions/requests';
@@ -23,6 +23,7 @@ type Props = { offlineEnabled?: boolean };
 export const PasswordUnlock: FC<Props> = ({ offlineEnabled }) => {
     const { createNotification } = useNotifications();
     const online = useConnectivity();
+    const authStore = useAuthStore();
     const history = useHistory();
     const passwordUnlock = useRequest(unlock, { initialRequestId: unlockRequest() });
     const disabled = !online && !offlineEnabled;
@@ -32,7 +33,7 @@ export const PasswordUnlock: FC<Props> = ({ offlineEnabled }) => {
         /** As booting offline will not trigger the AuthService::login
          * sequence we need to re-apply the redirection logic implemented
          * in the service's `onAuthorized` callback */
-        const localID = authStore.getLocalID();
+        const localID = authStore?.getLocalID();
         history.replace(getBasename(localID) ?? '/');
         passwordUnlock.dispatch({ mode: LockMode.PASSWORD, secret: password });
     }, []);

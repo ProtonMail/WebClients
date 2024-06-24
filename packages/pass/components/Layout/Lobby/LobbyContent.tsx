@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -64,6 +65,7 @@ export const LobbyContent: FC<Props> = ({
     const missingScope = clientMissingScope(status);
     const busy = clientBusy(status);
     const canSignOut = errored || locked || passwordLocked || missingScope;
+    const hasExtraPassword = Boolean(useAuthStore()?.getExtraPassword());
 
     useEffect(() => {
         setTimeoutError(false);
@@ -122,21 +124,22 @@ export const LobbyContent: FC<Props> = ({
             <div className="flex flex-column items-center gap-3">
                 <span className="pass-lobby--heading text-bold text-norm text-no-wrap flex flex-nowrap items-end justify-center user-select-none">
                     {locked || passwordLocked || missingScope
-                        ? c('lobby: Title').jt`Unlock ${brandNameJSX}`
-                        : c('lobby: Title').jt`Welcome to ${brandNameJSX}`}
+                        ? c('Title').jt`Unlock ${brandNameJSX}`
+                        : c('Title').jt`Welcome to ${brandNameJSX}`}
                 </span>
                 <span className="text-norm">
                     {(() => {
                         switch (status) {
                             case AppStatus.SESSION_LOCKED:
-                                return c('lobby: Info').jt`Enter your PIN code`;
+                                return c('Info').jt`Enter your PIN code`;
                             case AppStatus.PASSWORD_LOCKED:
-                                return c('lobby: Info')
-                                    .t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
+                                return hasExtraPassword
+                                    ? c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your extra password`
+                                    : c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with your ${BRAND_NAME} password`;
                             case AppStatus.MISSING_SCOPE:
-                                return c('lobby: Info').t`Enter your extra password`;
+                                return c('Info').t`Enter your extra password`;
                             default:
-                                return c('lobby: Info').jt`Sign in to your account`;
+                                return c('Info').jt`Sign in to your account`;
                         }
                     })()}
                 </span>
