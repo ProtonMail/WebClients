@@ -12,6 +12,7 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
     minimize: isProduction,
     minimizer: [
         new TerserPlugin({
+            minify: TerserPlugin.swcMinify,
             extractComments: false,
             parallel,
         }),
