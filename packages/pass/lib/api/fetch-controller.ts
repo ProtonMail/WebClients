@@ -28,6 +28,20 @@ export const getRequestIDHeaders = (init?: HeadersInit): [Record<string, string>
     return [Object.fromEntries(headers.entries()), requestId];
 };
 
+export const createAbortResponse = () =>
+    new Response('Aborted', {
+        status: 499,
+        statusText: 'Abort error',
+        headers: { 'Content-Type': 'text/plain' },
+    });
+
+export const createEmptyResponse = (status: number = 204) =>
+    new Response('Empty', {
+        status,
+        statusText: 'No content',
+        headers: { 'Content-Type': 'text/plain' },
+    });
+
 /** Service-worker network errors should conform to the
  * API error response format in order to conform to client
  * side error handlers. As our service-worker fetch handler
@@ -53,7 +67,10 @@ export const fetchControllerFactory = (config?: FetchControllerConfig) => {
         fetch: (req: Request, signal?: AbortSignal): Promise<Response> => {
             const request = new Request(req);
             request.headers.delete('X-Pass-Worker-RequestID');
-            return fetch(request, { signal });
+            return fetch(request, { signal }).catch((err) => {
+                if (err?.name === 'AbortError') return createAbortResponse();
+                throw err;
+            });
         },
 
         /** Registers an abortable fetch event handler. In order to cancel a
