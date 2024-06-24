@@ -89,7 +89,9 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         if (nextDownload.links.every(({ buffer }) => !!buffer)) {
             const buffer = nextDownload.links.flatMap(({ buffer }) => buffer);
             const stream = bufferToStream(buffer as Uint8Array[]);
-            void preventLeave(FileSaver.saveAsFile(stream, nextDownload.meta)).catch(logError);
+            void preventLeave(
+                FileSaver.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
+            ).catch(logError);
 
             queue.updateState(nextDownload.id, TransferState.Done);
             return;
