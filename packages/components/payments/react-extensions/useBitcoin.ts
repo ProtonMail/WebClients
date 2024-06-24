@@ -18,7 +18,7 @@ import {
 } from '../core';
 import { PaymentProcessorHook } from './interface';
 
-export const BITCOIN_POLLING_INTERVAL = 60000;
+export const BITCOIN_POLLING_INTERVAL = 10000;
 
 function pause() {
     return wait(BITCOIN_POLLING_INTERVAL);
