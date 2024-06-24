@@ -26,7 +26,6 @@ import {
     Member,
     MemberUnprivatizationState,
 } from '@proton/shared/lib/interfaces';
-import { parseInvitationData } from '@proton/shared/lib/keys/unprivatization';
 import {
     getIsDomainActive,
     getOrganizationKeyInfo,
@@ -430,16 +429,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 )}
                 {renderResendInviteModal && tmpMember && (
                     <ResendInvitePrompt
-                        email={(() => {
-                            try {
-                                const parsedInvitationData = parseInvitationData(
-                                    tmpMember.Unprivatization?.InvitationData || ''
-                                );
-                                return parsedInvitationData.Address;
-                            } catch {
-                                return tmpMember.Name;
-                            }
-                        })()}
+                        email={tmpMember.Unprivatization?.InvitationEmail || tmpMember.Name || ''}
                         onResend={() => handleResendMagicLinkInvite(tmpMember)}
                         {...resendInviteProps}
                     />

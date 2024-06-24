@@ -293,9 +293,11 @@ export const createMember = ({
                 createMemberConfig({
                     ...payload,
                     Private: 1,
-                    InvitationEmail: model.invitationEmail,
-                    InvitationData: invitationData,
-                    InvitationSignature: invitationSignature,
+                    Invitation: {
+                        Email: model.invitationEmail,
+                        Data: invitationData,
+                        Signature: invitationSignature,
+                    },
                 })
             ).then(({ Member }) => Member);
             return;
