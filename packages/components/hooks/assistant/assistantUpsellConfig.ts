@@ -1,12 +1,8 @@
 import { OpenCallbackProps, SUBSCRIPTION_STEPS } from '@proton/components/index';
+import { SelectedPlan } from '@proton/components/payments/core/subscription/selected-plan';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import {
-    OrganizationWithSettings,
-    SubscriptionModel,
-    SubscriptionPlan,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import { isScribeAddon, removeAddon } from '@proton/shared/lib/helpers/planIDs';
+import { UserModel } from '@proton/shared/lib/interfaces';
 
 const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
     cycle: currentCycle,
@@ -55,18 +51,19 @@ const paidSingleUserUpsellConfig = (
 const paidMultipleUserUpsellConfig = (
     upsellRef: string,
     addonName: ADDON_NAMES,
-    currentPlan?: SubscriptionPlan,
-    subscription?: SubscriptionModel,
-    organization?: OrganizationWithSettings
+    selectedPlan: SelectedPlan
 ): OpenCallbackProps => {
-    const cycles = getUpgradeCycles(currentPlan?.Cycle);
-    const { MaxMembers = 1, MaxAI = 0 } = organization || {};
-    const addonsValue = MaxAI ? MaxAI : MaxMembers;
+    const cycles = getUpgradeCycles(selectedPlan.cycle);
+
+    // if we already have scribe addons, then we will use the current number of scribes as starting addon number
+    // in the upsell
+    // if we don't, then we will use the number of members as starting number for scribe addons
+    const addonsValue = selectedPlan.getTotalScribes() || selectedPlan.getTotalMembers();
 
     return {
         mode: 'upsell-modal',
         planIDs: {
-            ...getPlanIDs(subscription),
+            ...selectedPlan.planIDs,
             [addonName]: addonsValue,
         },
         step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -123,22 +120,20 @@ export const getAssistantUpsellConfig = (
     upsellRef: string,
     user: UserModel,
     isOrgAdmin: boolean,
-    currentPlan?: SubscriptionPlan,
-    subscription?: SubscriptionModel,
-    organization?: OrganizationWithSettings
+    selectedPlan: SelectedPlan
 ): OpenCallbackProps | undefined => {
     if (user.isSubUser) {
         return undefined;
     }
 
-    if (isOrgAdmin && currentPlan) {
-        const addonName = paidUserAssistantAddonName(currentPlan.Name as PLANS);
-        return paidMultipleUserUpsellConfig(upsellRef, addonName, currentPlan, subscription, organization);
+    if (isOrgAdmin) {
+        const addonName = paidUserAssistantAddonName(selectedPlan.name);
+        return paidMultipleUserUpsellConfig(upsellRef, addonName, selectedPlan);
     }
 
-    if (user.isPaid && currentPlan) {
-        const addonName = paidUserAssistantAddonName(currentPlan.Name as PLANS);
-        return paidSingleUserUpsellConfig(upsellRef, currentPlan.Name as PLANS, addonName, currentPlan.Cycle);
+    if (user.isPaid) {
+        const addonName = paidUserAssistantAddonName(selectedPlan.name);
+        return paidSingleUserUpsellConfig(upsellRef, selectedPlan.name, addonName, selectedPlan.cycle);
     }
 
     // Return the free user config if the user is not paid and don't have member in its organization
@@ -147,20 +142,19 @@ export const getAssistantUpsellConfig = (
 
 export const getAssistantDowngradeConfig = (
     upsellRef: string,
-    currentPlan?: SubscriptionPlan
+    selectedPlan: SelectedPlan
 ): OpenCallbackProps | undefined => {
-    if (!currentPlan) {
-        return undefined;
-    }
-
     return {
         mode: 'upsell-modal',
-        planIDs: { [currentPlan.Name as PLANS]: 1 },
+        /**
+         * Removes only Scribe addons and keep all others
+         */
+        planIDs: removeAddon(selectedPlan.planIDs, isScribeAddon),
         step: SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: true,
-        cycle: currentPlan.Cycle,
-        maximumCycle: currentPlan.Cycle,
-        minimumCycle: currentPlan.Cycle,
+        cycle: selectedPlan.cycle,
+        maximumCycle: selectedPlan.cycle,
+        minimumCycle: selectedPlan.cycle,
         upsellRef,
         metrics: {
             source: 'upsells',

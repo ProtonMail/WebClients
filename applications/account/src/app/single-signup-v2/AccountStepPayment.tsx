@@ -10,14 +10,12 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import ProtonPlanCustomization, {
-    getHasPlanCustomizer,
-} from '@proton/components/containers/payments/ProtonPlanCustomizer';
 import {
     OnBillingAddressChange,
     WrappedTaxCountrySelector,
 } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
+import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import useHandler from '@proton/components/hooks/useHandler';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -328,7 +326,7 @@ const AccountStepPayment = ({
                         }
                         return (
                             <>
-                                <ProtonPlanCustomization
+                                <ProtonPlanCustomizer
                                     mode="signup"
                                     loading={false}
                                     currentPlan={currentPlan}

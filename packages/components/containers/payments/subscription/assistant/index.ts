@@ -2,3 +2,5 @@ export { default as AssistantIncompatibleBrowserModal } from './AssistantIncompa
 export { default as AssistantIncompatibleHardwareModal } from './AssistantIncompatibleHardwareModal';
 export { default as AssistantToggle } from './AssistantToggle';
 export { default as AssistantUpdateSubscriptionButton } from './AssistantUpdateSubscriptionButton';
+export * from './helpers';
+export { default as useScribePaymentsEnabled } from './useScribePaymentsEnabled';

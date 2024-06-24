@@ -36,7 +36,7 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.ASSISTANT_COMPOSER,
     });
-    const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef });
+    const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef, plans: plans?.plans ?? [] });
 
     if (loadingPlans || loadingUser || loadingOrg || loadingMember || loadingSubscription) {
         return <Loader />;

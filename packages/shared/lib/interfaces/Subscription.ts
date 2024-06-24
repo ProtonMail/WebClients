@@ -1,4 +1,5 @@
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
+import { isScribeAddon } from '../helpers/planIDs';
 import { Nullable } from './utils';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
@@ -31,8 +32,8 @@ export type MaxKeys =
     | 'MaxMembers'
     | 'MaxVPN'
     | 'MaxTier'
-    | 'MaxIPs'
-    | 'MaxAI';
+    | 'MaxIPs' // synthetic key, it does't exist in the API
+    | 'MaxAI'; // synthetic key, it does't exist in the API
 
 export type Quantity = number;
 
@@ -59,7 +60,6 @@ export interface Plan {
     MaxMembers: number;
     MaxVPN: number;
     MaxTier: number;
-    MaxAI: number;
     Services: number;
     Features: number;
     Quantity: Quantity;
@@ -91,6 +91,24 @@ export const getPlanMaxIPs = (plan: Plan) => {
     }
 
     return 0;
+};
+
+const getPlanMaxAIs = (plan: Plan) => {
+    return isScribeAddon(plan.Name) ? 1 : 0;
+};
+
+export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
+    let result: number;
+
+    if (key === 'MaxIPs') {
+        result = getPlanMaxIPs(plan);
+    } else if (key === 'MaxAI') {
+        result = getPlanMaxAIs(plan);
+    } else {
+        result = plan[key];
+    }
+
+    return result ?? 0;
 };
 
 export enum Renew {
