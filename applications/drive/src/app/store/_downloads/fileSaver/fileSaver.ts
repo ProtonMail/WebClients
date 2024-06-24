@@ -8,6 +8,7 @@ import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
+import { LogCallback } from '../interface';
 import { initDownloadSW, openDownloadStream } from './download';
 
 // FileSaver provides functionality to start download to file. This class does
@@ -18,10 +19,13 @@ import { initDownloadSW, openDownloadStream } from './download';
 class FileSaver {
     private useBlobFallback = false;
 
+    private swFailReason?: string;
+
     constructor() {
         initDownloadSW().catch((error) => {
             this.useBlobFallback = true;
             console.warn('Saving file will fallback to in-memory downloads:', error.message);
+            this.swFailReason = error.message;
         });
     }
 
@@ -37,10 +41,12 @@ class FileSaver {
     // Ideally, once we update to openpgpjs v5 with custom web workers, would
     // be great if we could merge this to the same worker (but note the
     // difference between web and service worker) to reduce data exchanges.
-    private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
+    private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
         if (this.useBlobFallback) {
-            return this.saveViaBuffer(stream, meta);
+            return this.saveViaBuffer(stream, meta, log);
         }
+
+        log('Saving via service worker');
 
         try {
             const abortController = new AbortController();
@@ -52,9 +58,13 @@ class FileSaver {
                 stream.pipeTo(saveStream, { preventCancel: true }).then(resolve).catch(reject);
             });
         } catch (err: any) {
+            log(`Save via download failed. Reason: ${err.message}`);
+
             if (!isTransferCancelError(err)) {
-                console.warn('Failed to save file via download, falling back to in-memory download:', err);
-                await this.saveViaBuffer(stream, meta);
+                const message = 'Failed to save file via download, falling back to in-memory download:';
+                console.warn(message, err);
+                log(message);
+                await this.saveViaBuffer(stream, meta, log);
             }
             throw err;
         }
@@ -62,11 +72,13 @@ class FileSaver {
 
     // saveViaBuffer reads the stream and downloads the file in one go.
     // eslint-disable-next-line class-methods-use-this
-    private async saveViaBuffer(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
+    private async saveViaBuffer(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+        log('Saving via buffer');
         try {
             const chunks = await streamToBuffer(stream);
             downloadFile(new Blob(chunks, { type: meta.mimeType }), meta.filename);
         } catch (err: any) {
+            log(`Save via buffer failed. Reason: ${err.message}`);
             if (!isTransferCancelError(err)) {
                 if (isValidationError(err)) {
                     throw err;
@@ -78,11 +90,17 @@ class FileSaver {
         }
     }
 
-    async saveAsFile(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
-        if (meta.size && meta.size < MEMORY_DOWNLOAD_LIMIT) {
-            return this.saveViaBuffer(stream, meta);
+    async saveAsFile(stream: ReadableStream<Uint8Array>, meta: TransferMeta, log: LogCallback) {
+        log(
+            `Saving file. meta size: ${meta.size}, memory limit: ${MEMORY_DOWNLOAD_LIMIT}, will use blob fallback: ${this.useBlobFallback}`
+        );
+        if (this.swFailReason) {
+            log(`Service worker fail reason: ${this.swFailReason}`);
         }
-        return this.saveViaDownload(stream, meta);
+        if (meta.size && meta.size < MEMORY_DOWNLOAD_LIMIT) {
+            return this.saveViaBuffer(stream, meta, log);
+        }
+        return this.saveViaDownload(stream, meta, log);
     }
 
     isFileTooBig(size: number) {
