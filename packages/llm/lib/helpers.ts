@@ -1,3 +1,4 @@
+import { GENERATION_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
 import { isURLProtonInternal } from '@proton/components/helpers/url';
 import { TransformCallback } from '@proton/llm/lib/actions';
 import { getAssistantModels } from '@proton/llm/lib/api';
@@ -21,8 +22,6 @@ import { isChromiumBased, isFirefox, isMobile } from '@proton/shared/lib/helpers
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { Api } from '@proton/shared/lib/interfaces';
 import window from '@proton/shared/lib/window';
-
-import { GENERATION_TYPE } from './useAssistantTelemetry';
 
 export const getAssistantHasCompatibleBrowser = () => {
     const isOnMobile = isMobile();

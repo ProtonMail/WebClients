@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { ERROR_TYPE } from '../useAssistantTelemetry';
+import { ERROR_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
 
 export enum AssistantErrorTypes {
     globalError,

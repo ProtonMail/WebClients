@@ -2,6 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import useAssistantTelemetry, {
+    ASSISTANT_TYPE,
+    ERROR_TYPE,
+} from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import {
     AssistantRunningAction,
@@ -25,7 +29,6 @@ import {
     LlmManager,
     LlmModel,
 } from '@proton/llm/lib/types';
-import useAssistantTelemetry, { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/llm/lib/useAssistantTelemetry';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';

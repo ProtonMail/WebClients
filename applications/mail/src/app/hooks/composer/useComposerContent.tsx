@@ -3,10 +3,10 @@ import { Dispatch, MutableRefObject, RefObject, SetStateAction, useEffect, useMe
 import { c } from 'ttag';
 
 import { EditorActions, EditorMetadata } from '@proton/components/components';
+import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useAddresses, useHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { OpenedAssistant, OpenedAssistantStatus } from '@proton/llm/lib/types';
-import useAssistantTelemetry from '@proton/llm/lib/useAssistantTelemetry';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';

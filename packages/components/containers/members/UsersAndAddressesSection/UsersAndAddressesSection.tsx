@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
-import { useAssistantFeatureEnabled } from '@proton/llm/lib';
+import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
 import { APP_NAMES, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
