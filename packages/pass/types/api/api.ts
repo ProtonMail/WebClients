@@ -64,8 +64,10 @@ export type ApiResponseMapper<T extends any = void, U extends string = string, M
     (response: T extends void ? ApiResponse<`${U}`, `${M}`> : T) => any
 >;
 
+export type ApiSessionEvent = 'inactive' | 'locked' | 'not-allowed' | 'missing-scope';
+
 export type ApiSubscriptionEvent =
     | { type: 'error'; error: string }
     | { type: 'network'; online: boolean }
     | { type: 'refresh'; data: RefreshSessionResponse & { RefreshTime: number } }
-    | { type: 'session'; status: 'inactive' | 'locked' | 'not-allowed'; error?: string };
+    | { type: 'session'; status: ApiSessionEvent; error?: string };
