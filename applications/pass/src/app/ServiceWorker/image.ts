@@ -53,7 +53,7 @@ export const handleImage = fetchController.register(async (event, signal) => {
 
                 cache?.put(url, response.clone()).catch(noop);
                 return response;
-            } else throw new Error();
+            } else return res;
         })
         .catch(() => createNetworkError(408));
 
