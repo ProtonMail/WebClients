@@ -6,6 +6,8 @@ import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
 import lockCreate from './auth/lock-create.saga';
 import lock from './auth/lock.saga';
+import passwordConfirm from './auth/password-confirm.saga';
+import passwordExtra from './auth/password-extra.saga';
 import signout from './auth/signout.saga';
 import unlock from './auth/unlock.saga';
 import boot from './client/boot.saga';
@@ -95,6 +97,8 @@ export function* workerRootSaga(options: RootSagaOptions) {
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
+            passwordConfirm,
+            passwordExtra,
             reportProblem,
             settings,
             shareAccessOptions,

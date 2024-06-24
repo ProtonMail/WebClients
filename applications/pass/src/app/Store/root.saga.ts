@@ -4,6 +4,8 @@ import aliasDetailsRequest from '@proton/pass/store/sagas/alias/alias-details-re
 import aliasOptionsRequest from '@proton/pass/store/sagas/alias/alias-options-request.saga';
 import lockCreate from '@proton/pass/store/sagas/auth/lock-create.saga';
 import lock from '@proton/pass/store/sagas/auth/lock.saga';
+import passwordConfirm from '@proton/pass/store/sagas/auth/password-confirm.saga';
+import passwordExtra from '@proton/pass/store/sagas/auth/password-extra.saga';
 import unlock from '@proton/pass/store/sagas/auth/unlock.saga';
 import boot from '@proton/pass/store/sagas/client/boot.saga';
 import cache from '@proton/pass/store/sagas/client/cache.saga';
@@ -117,6 +119,8 @@ export function* rootSaga(options: RootSagaOptions) {
             offlineResume,
             offlineToggle,
             organizationSettingsGet,
+            passwordConfirm,
+            passwordExtra,
             reportProblem,
             sentinelToggle,
             settings,
