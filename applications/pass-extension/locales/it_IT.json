@@ -801,9 +801,6 @@
       "Trashing item failed": [
         "Cancellazione dell'elemento non riuscita"
       ],
-      "Unable to boot": [
-        "Impossibile avviare"
-      ],
       "Unable to generate an OTP code for this item": [
         "Impossibile generare il codice OTP per questo elemento"
       ],
@@ -842,6 +839,9 @@
       ],
       "Vault name does not match": [
         "Il nome della cassaforte non corrisponde"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Si è verificato un problema durante l'avvio di ${ PASS_SHORT_APP_NAME }. Se il problema persiste, contatta il nostro servizio clienti per ricevere assistenza."
       ],
       "Wrong PIN code. Try again.": [
         "PIN errato. Riprova."
