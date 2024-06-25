@@ -21,6 +21,7 @@ const {
     RESUME_FALLBACK,
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
+    SOURCEMAPS,
     WEBPACK_DEV_PORT,
 } = require('./tools/env');
 
@@ -38,6 +39,7 @@ console.log(`ENV = ${ENV}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
 console.log(`MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
 console.log(`PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
+console.log(`SOURCEMAPS = ${SOURCEMAPS}`);
 console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
 
 if (ENV !== 'production') {
@@ -62,7 +64,7 @@ const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manif
 
 module.exports = {
     ...(production
-        ? { mode: 'production', devtool: 'source-map' }
+        ? { mode: 'production', devtool: SOURCEMAPS ? 'source-map' : undefined }
         : { mode: 'development', devtool: 'inline-source-map' }),
     entry: {
         background: {
