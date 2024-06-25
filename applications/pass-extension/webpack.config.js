@@ -12,15 +12,16 @@ const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('@proton/pac
 const fs = require('fs');
 
 const {
-    ENV,
     BUILD_TARGET,
-    HOT_MANIFEST_UPDATE,
-    RESUME_FALLBACK,
-    RUNTIME_RELOAD,
-    RUNTIME_RELOAD_PORT,
-    REDUX_DEVTOOLS_PORT,
-    WEBPACK_DEV_PORT,
     CLEAN_MANIFEST,
+    ENV,
+    HOT_MANIFEST_UPDATE,
+    MANIFEST_KEY,
+    REDUX_DEVTOOLS_PORT,
+    RESUME_FALLBACK,
+    RUNTIME_RELOAD_PORT,
+    RUNTIME_RELOAD,
+    WEBPACK_DEV_PORT,
 } = require('./tools/env');
 
 const SUPPORTED_TARGETS = ['chrome', 'firefox'];
@@ -30,9 +31,13 @@ if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
 }
 
 const config = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(export const |;)/gm, '');
+const manifestKeys = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
+const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? manifestKeys?.[MANIFEST_KEY] : null;
 
 console.log(`ENV = ${ENV}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
+console.log(`MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
+console.log(`PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
 console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
 
 if (ENV !== 'production') {
@@ -52,6 +57,7 @@ const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessi
 const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
 const manifest = `manifest-${BUILD_TARGET}.json`;
 const manifestPath = path.resolve(__dirname, manifest);
+
 const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version);
 
 module.exports = {
@@ -172,6 +178,8 @@ module.exports = {
                     transform(content) {
                         const data = content.toString('utf-8');
                         const manifest = JSON.parse(data);
+
+                        if (PUBLIC_KEY) manifest.key = PUBLIC_KEY;
 
                         /* add the appropriate CSP policies for the development build to connect
                          * to unsecure ws:// protocols without firefox trying to upgrade it to

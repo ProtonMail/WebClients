@@ -48,7 +48,6 @@
             "https://*.protontech.ch/*"
         ]
     },
-    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiZt8pKnvrDkvOuKzjfj1TtrPc0lwlUc/pvAOAoLmtQ9i5IdVisA7m4zqLKFONapyI3FWPsThpGRteYpLSgIf0LY8E2TGCHRDobYMLagS7OAbVySapvYCqj4LBQ7EOSYNVOEOUgyTAWqDB4udB6vgQXkRV6f2n2hAsAvrkutW1U4Unovg1zksp24bOTwyOxM5rJ6vbqGVzuhiblqaOpinmN+TQ53+8xCmVduWrQCMO3I+/hOPmw6S9nPMFj1Wsc+qIsNMCLT8kEGRGa51gw7ZK7TaYQ1MGB/O+lbUjcL5bjYYvcYXA7bL3Ol8vhSLN5yhhxox9w19O/+bwoyib4OAHQIDAQAB",
     "permissions": ["activeTab", "alarms", "scripting", "storage", "unlimitedStorage", "webRequest"],
     "host_permissions": ["https://*/*", "http://*/*"],
     "options_ui": {
