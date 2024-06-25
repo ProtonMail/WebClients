@@ -40,6 +40,7 @@ import ExpiredError from './ExpiredError';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
+import { stripQueryParams } from './jwt';
 
 enum ErrorType {
     Expired,
@@ -79,7 +80,7 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
         const init = async () => {
             const fragmentParams = location.hash.substring(1);
             const params = new URLSearchParams(fragmentParams);
-            const token = params.get('token');
+            const token = stripQueryParams(params.get('token'));
 
             if (!token) {
                 setError({ type: ErrorType.API });
