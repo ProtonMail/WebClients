@@ -4606,6 +4606,9 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "문서의 미리보기가 지원되지 않습니다. 확인하려면 문서를 직접 열어주세요."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "이전 버전이 ${ retentionLabel } 으로 유지됩니다"
       ],
@@ -4620,6 +4623,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "비공개 검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "문서의 공개 공유가 아직 지원되지 않습니다. 해당 문서에 초대할 수 있는지 소유자로 문의하십시오."
       ],
       "Queued": [
         "대기열에 추가됨"
@@ -4823,7 +4829,7 @@
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
-        "파일이 삭제되었거나, 이동되었거나 사용할 수 없게 되었을 수 있습니다. 파일 주인에게 연락을 시도해 보세요."
+        "파일이 삭제되었거나, 이동되었거나 사용할 수 없게 되었을 수 있습니다. 파일 소유자에게 연락을 시도해 보세요."
       ],
       "This item already exists in your library": [
         "이 항목은 이미 라이브러리에 존재합니다."
@@ -5045,7 +5051,7 @@
         "주"
       ],
       "What do you want to do?": [
-        "무엇을 하시겠습니까?"
+        "무엇을 시도하시겠습니까?"
       ],
       "What would you like to do?": [
         "무엇을 하시겠습니까?"
@@ -5608,7 +5614,7 @@
         "가져오기:"
       ],
       "Include message and file name in invite email": [
-        "초대 이메일에 메시지 및 파일 이름이 포함됩니다."
+        "초대 이메일에 메시지 및 파일 이름을 포함하기"
       ],
       "Keep both": [
         "둘 다 유지"
@@ -5641,10 +5647,10 @@
         "메인"
       ],
       "Make editor": [
-        "편집기 생성"
+        "편집자로 지정"
       ],
       "Make viewer": [
-        "뷰어 생성"
+        "뷰어로 지정"
       ],
       "Malware": [
         "멀웨어"
