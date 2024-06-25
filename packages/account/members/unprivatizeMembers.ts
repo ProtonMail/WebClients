@@ -5,8 +5,8 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api, Member, MemberUnprivatizationState, VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
-import { getSentryError, unprivatizeMember } from '@proton/shared/lib/keys';
+import { Api, Member, MemberReadyForUnprivatization, VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
+import { getMemberReadyForUnprivatization, getSentryError, unprivatizeMember } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
@@ -17,12 +17,10 @@ const ephemeralState = {
     ignore: new Set(),
 };
 
-export const getMembersToUnprivatize = (members?: Member[]) => {
+export const getMembersToUnprivatize = (members?: Member[]): MemberReadyForUnprivatization[] => {
     return (
-        members?.filter(
-            (member) =>
-                member.Unprivatization?.State === MemberUnprivatizationState.Ready &&
-                !ephemeralState.ignore.has(member.ID)
+        members?.filter((member): member is MemberReadyForUnprivatization =>
+            getMemberReadyForUnprivatization(member.Unprivatization)
         ) || []
     );
 };

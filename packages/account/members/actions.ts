@@ -127,6 +127,28 @@ export const editMember = ({
     };
 };
 
+const createAddressesForMember = async ({
+    api,
+    addresses,
+    member,
+}: {
+    member: Member;
+    api: Api;
+    addresses: { Local: string; Domain: string }[];
+}) => {
+    const memberAddresses: Address[] = [];
+    for (const { Local, Domain } of addresses) {
+        const { Address } = await api<{ Address: Address }>(
+            createMemberAddress(member.ID, {
+                Local,
+                Domain,
+            })
+        );
+        memberAddresses.push(Address);
+    }
+    return memberAddresses;
+};
+
 export const createMember = ({
     member: originalModel,
     verifiedDomains,
@@ -216,19 +238,29 @@ export const createMember = ({
             throw new InvalidAddressesError(invalidAddresses, invalidInvitationAddresses, validAddresses);
         }
 
-        if (!model.private) {
-            if (!organizationKey?.privateKey) {
-                throw new MemberCreationValidationError(
-                    c('Error').t`Organization key must be activated to create non-private users`
-                );
+        if (model.mode === CreateMemberMode.Password) {
+            if (!model.private) {
+                if (!organizationKey?.privateKey) {
+                    throw new MemberCreationValidationError(
+                        c('Error').t`Organization key must be activated to create non-private users`
+                    );
+                }
+            }
+
+            if (model.private) {
+                if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+                    if (getIsPasswordless(organizationKey?.Key)) {
+                        throw new MemberCreationValidationError(getPrivateAdminError());
+                    }
+                }
             }
         }
 
-        if (model.private) {
-            if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-                if (getIsPasswordless(organizationKey?.Key)) {
-                    throw new MemberCreationValidationError(getPrivateAdminError());
-                }
+        if (model.mode === CreateMemberMode.Invitation) {
+            if (!organizationKey?.privateKey) {
+                throw new MemberCreationValidationError(
+                    c('Error').t`Organization key must be activated to create invited users`
+                );
             }
         }
 
@@ -278,13 +310,13 @@ export const createMember = ({
 
         const payload = {
             Name: model.name || firstAddressParts.Local,
-            Private: +model.private,
             MaxSpace: +model.storage,
             MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
             MaxAI: model.numAI ? 1 : 0,
         };
 
         if (model.mode === CreateMemberMode.Invitation) {
+            organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
             if (!organizationKey?.privateKey) {
                 throw new MemberCreationValidationError(
                     c('Error').t`Organization key must be activated to create invited users`
@@ -295,17 +327,25 @@ export const createMember = ({
                 address: `${firstAddressParts.Local}@${firstAddressParts.Domain}`,
             });
             const invitationSignature = await getSignedInvitationData(organizationKey.privateKey, invitationData);
-            await api(
+            const Member = await api(
                 createMemberConfig({
                     ...payload,
-                    Private: 1,
                     Invitation: {
                         Email: model.invitationEmail,
                         Data: invitationData,
                         Signature: invitationSignature,
+                        PrivateIntent: model.private,
                     },
                 })
             ).then(({ Member }) => Member);
+
+            if (model.private) {
+                await createAddressesForMember({
+                    api,
+                    member: Member,
+                    addresses: model.addresses,
+                });
+            }
             return;
         }
 
@@ -314,21 +354,17 @@ export const createMember = ({
             credentials: { password: model.password },
             config: createMemberConfig({
                 ...payload,
+                Private: +model.private,
             }),
         }).then(({ Member }) => Member);
 
-        const memberAddresses: Address[] = [];
-        for (const { Local, Domain } of model.addresses) {
-            const { Address } = await api<{ Address: Address }>(
-                createMemberAddress(Member.ID, {
-                    Local,
-                    Domain,
-                })
-            );
-            memberAddresses.push(Address);
-        }
-        let memberWithKeys: Member | undefined;
+        const memberAddresses = await createAddressesForMember({
+            api,
+            member: Member,
+            addresses: model.addresses,
+        });
 
+        let memberWithKeys: Member | undefined;
         organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
         if (!model.private && organizationKey?.privateKey) {
             const result = await setupMemberKeys({
