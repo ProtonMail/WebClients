@@ -22,6 +22,7 @@ function ApplicationContainer() {
   const { search } = useLocation()
   const searchParams = new URLSearchParams(search)
   const [openAction, setOpenAction] = useState<DocumentAction | null>(null)
+  const [action, setAction] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
   const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
 
@@ -52,7 +53,7 @@ function ApplicationContainer() {
         mode,
         volumeId,
         linkId,
-      } satisfies DocumentAction)
+      })
     } else if (mode === 'create') {
       if (!parentLinkId) {
         return
@@ -62,7 +63,29 @@ function ApplicationContainer() {
         mode,
         volumeId,
         parentLinkId,
-      } satisfies DocumentAction)
+      })
+    }
+
+    if (mode === 'history') {
+      if (!linkId) {
+        return
+      }
+      setOpenAction({
+        mode,
+        volumeId,
+        linkId,
+      })
+    }
+
+    if (mode === 'download') {
+      if (!linkId) {
+        return
+      }
+      setOpenAction({
+        mode,
+        volumeId,
+        linkId,
+      })
     }
   })
 
@@ -120,6 +143,18 @@ function ApplicationContainer() {
         setIsCreatingNewDocument(false)
       })
     }
+
+    const shouldOpenHistory = openAction && openAction.mode === 'history'
+    if (shouldOpenHistory) {
+      setAction('history')
+      updateParameters(openAction.volumeId, openAction.linkId)
+    }
+
+    const shouldDownload = openAction && openAction.mode === 'download'
+    if (shouldDownload) {
+      setAction('download')
+      updateParameters(openAction.volumeId, openAction.linkId)
+    }
   }, [createNewDocInRoot, isAppReady, isCreatingNewDocument, openAction, updateParameters])
 
   const onConversionSuccess = useCallback(
@@ -136,7 +171,7 @@ function ApplicationContainer() {
 
   return (
     <ApplicationProvider application={application}>
-      <DocsLayout>
+      <DocsLayout action={action}>
         <Switch>
           <Route path={'*'}>
             <Content
