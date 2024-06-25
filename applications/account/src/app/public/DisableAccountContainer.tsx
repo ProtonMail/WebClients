@@ -15,6 +15,7 @@ import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
 import ExpiredError from './ExpiredError';
 import accountIllustration from './account-illustration.svg';
+import { stripQueryParams } from './jwt';
 
 const Footer = () => {
     return <PublicFooter center={false} includeDescription />;
@@ -33,7 +34,7 @@ const DisableAccount = () => {
     const handleError = useErrorHandler();
 
     useEffect(() => {
-        const jwt = location.hash.substring(1);
+        const jwt = stripQueryParams(location.hash.substring(1));
         const errorHandler = (error: any) => {
             const { code } = getApiError(error);
             if (code === API_CUSTOM_ERROR_CODES.JWT_EXPIRED) {
