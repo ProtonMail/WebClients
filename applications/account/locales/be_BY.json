@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Скасаваць"
-      ],
-      "Cancel add-on": [
-        "Скасаваць дадатак"
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Спампаваць узор CSV"
-      ],
-      "Download Desktop App": [
-        "Спампаваць настольную праграму"
       ],
       "Download ICS": [
         "Спампаваць ICS"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Пакінуць падпіску Plus"
       ],
-      "Keep the writing assistant": [
-        "Пакінуць памочніка ў напісанні"
-      ],
       "label emails as": [
         "пазначыць лісты як"
       ],
       "Later": [
         "Пазней"
+      ],
+      "Learn why this option is unavailable": [
+        "Даведацца чаму гэты параметр недаступны"
       ],
       "Leave": [
         "Выйсці"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Адкрыць у ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
@@ -1177,9 +1174,6 @@
       "What do I get?": [
         "Што я атрымаю?"
       ],
-      "Why can't the model run locally?": [
-        "Чаму нельга выканаць мадэль на маім камп'ютары?"
-      ],
       "Wipe": [
         "Сцерці"
       ],
@@ -1420,41 +1414,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice }/месяц"
-      ],
-      "${ price } /year": [
-        "${ price }/год"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Актыўна да ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Дадаць памочніка ў напісанні"
-      ],
-      "Add writing assistant to your plan": [
-        "Дадаць памочніка ў напісанні ў ваш тарыфны план"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Прызначыць яго канкрэтным карыстальнікам у ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Аўтаматычна падоўжыцца ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "Скасаваць дадатак памочніка ў напісанні"
-      ],
       "Customize plan": [
         "Наладзіць тарыфны план"
       ],
-      "from ${ price } /month": [
-        "ад ${ price }/месяц"
-      ],
       "New": [
         "Новае"
-      ],
-      "Renew subscription": [
-        "Падоўжыць падпісу"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў. ${ learnMore }"
@@ -4091,9 +4055,6 @@
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Немагчыма загрузіць рахункі. Паспрабуйце яшчэ раз пазней."
-      ],
       "Could not open created vault": [
         "Немагчыма адкрыць створанае сховішча"
       ],
@@ -4102,6 +4063,9 @@
       ],
       "Could not save preference": [
         "Немагчыма захаваць параметры"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Немагчыма загрузіць рахункі. Паспрабуйце яшчэ раз пазней."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
@@ -6233,6 +6197,17 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -7330,10 +7305,10 @@
         "Запрашэнне выдалена"
       ],
       "Invite for organization accepted": [
-        "Запрашэнне для араганізацы прынята"
+        "Запрашэнне для арганізацыі прынята"
       ],
       "Invite for organization created": [
-        "Запрашэнне для араганізацы створана"
+        "Запрашэнне для арганізацыі створана"
       ],
       "Invite for User deleted": [
         "Запрашэнне для карыстальніка выдалена"
@@ -7357,7 +7332,7 @@
         "Элемент аўтазапоўнены"
       ],
       "Item autofilled in vault": [
-        "Элемент атазапоўнены ў сховішчы"
+        "Элемент аўтазапоўнены ў сховішчы"
       ],
       "Item Changed Flags": [
         "Змененыя сцягі элемента"
@@ -7384,19 +7359,19 @@
         "Элемент прачытаны"
       ],
       "Item read in vault": [
-        "Элемент прачытанаы ў сховішчы"
+        "Элемент прачытаны ў сховішчы"
       ],
       "Item Trashed": [
         "Элемент перамешчаны ў сметніцу"
       ],
       "Item trashed in vault": [
-        "Элемент са сховішча перамешчаны ў сметніцу"
+        "Элемент са сховішча перашчаны ў сметніцу"
       ],
       "Item Untrashed": [
         "Элемент адноўлены са сметніцы"
       ],
       "Item Updated": [
-        "Элемент абноўлены."
+        "Элемент абноўлены"
       ],
       "Item updated in vault": [
         "Элемент абноўлены ў сховішчы"
@@ -8148,9 +8123,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Працэс праверкі адкрые новую ўкладку браўзера. Адключыце ўсе блакіроўшчыкі ўсплывальных вокнаў."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Дадатак памочнік у напісанні **не будзе падоўжаны**. Вы можаце працягваць карыстацца сэрвісам да **${ subscriptionRenewalDate }.**"
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "З дапамогай гэтых файлаў канфігурацыі можна выбраць сервер ${ VPN_APP_NAME } для падключэння пры выкарыстанні кліентаў VPN ад старонніх распрацоўшчыкаў або пры наладжванні падключэння па VPN на маршрутызатары."
       ],
@@ -8228,9 +8200,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Гэта праверка можа заняць да адной гадзіны. Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
-      ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Гэта скасуе папярэдняе запрашэнне і адправіць новае на **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
@@ -8679,6 +8648,18 @@
         "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
         "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ usedAI } з ${ maxAI } даступнай ліцэнзіі памочніка ў напісанні.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных карыстальніцкіх ліцэнзій і ${ usedAI } з ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных карыстальніцкіх ліцэнзій і ${ usedAI } з ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных карыстальніцкіх ліцэнзій і ${ usedAI } з ${ maxAI } даступных ліцэнзій памочніка ў напісанні."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступную ліцэнзію памочніка ў напісанні.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступных ліцэнзій памочніка ў напісанні.",
+        "У цяперашні час вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступнай карыстальніцкай ліцэнзіі і ${ maxAI } даступных ліцэнзій памочніка ў напісанні."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
@@ -8874,9 +8855,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Ваш браўзер не падтрымлівае памочніка ў напісанні. Спампуйце настольную праграму ${ MAIL_APP_NAME } або паспрабуйце запусціць яго на серверы ."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
       ],
@@ -8893,7 +8871,7 @@
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы ."
+        "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваша імпартаванне з ${ accounts } часова адкладзена.",
@@ -8942,17 +8920,6 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10650,9 +10617,6 @@
       "Upgrade your plan": [
         "Палепшыць тарыфны план"
       ],
-      "Users and addresses": [
-        "Карыстальнікі і адрасы"
-      ],
       "View guide": [
         "Паглядзець дапаможнік"
       ],
@@ -11519,7 +11483,7 @@
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
       "Generate emails with only a prompt": [
-        "Згенерыраваць лісты толькі з запытам"
+        "Генерыраваць лісты толькі з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -13146,7 +13110,7 @@
         "Ключ арганізацыі абноўлены"
       ],
       "Permission denied, administrator privileges have been restricted.": [
-        "У доступе адмоўлена, а прывілеі адміністратара абмежаваны."
+        "У доступе адмоўлена, а правы адміністратара абмежаваны."
       ],
       "Please ensure they have an enabled address and invite them separately later.": [
         "Пераканайцеся, што ў іх ёсць актыўны адрас, а потым запрасіце іх паасобку."
@@ -14167,7 +14131,7 @@
         "Дзеянні"
       ],
       "Drag to reorder": [
-        "Перацягвайце для ўпарадкоўвання"
+        "Перацягніце, каб змяніць парадак"
       ],
       "Labels": [
         "Меткі"
@@ -14987,7 +14951,7 @@
         "Пакінуць ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Забяспечвайце бяспеку сваёй каманды дзе б яны не былі з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
+        "Забяспечвайце бяспеку сваёй каманды дзе б яны не знаходзіліся з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
       ],
       "Learn more": [
         "Даведацца больш"
@@ -15041,7 +15005,7 @@
         "Адпраўляць лісты з далучэннямі"
       ],
       "Stay secure and connected anywhere": [
-        "Заставайцеся ў бяспецы і падключаным у любым месцы"
+        "Заставайцеся ў бяспецы і на сувязі ў любым месцы"
       ],
       "Subscription canceled": [
         "Падпіска скасавана"
@@ -15795,9 +15759,6 @@
       "Cancel subscription?": [
         "Скасаваць падпіску?"
       ],
-      "Cancel the writing assistant add-on?": [
-        "Скасаваць дадатак памочніка ў напісанні?"
-      ],
       "Card verification": [
         "Праверка карткі"
       ],
@@ -16088,9 +16049,6 @@
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
-      ],
-      "Enable writing assistant": [
-        "Уключыць памочніка ў напісанні"
       ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
@@ -16698,6 +16656,9 @@
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
       ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
+      ],
       "You have no open alerts": [
         "У вас няма адкрытых папярэджанняў"
       ],
@@ -17181,7 +17142,7 @@
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
       ],
       "Send invite link via email instead": [
-        "Замест гэтага адправіць запрашальную спасылку праз электронную пошту"
+        "Замест гэтага адпраўце запрашальную спасылку праз электронную пошту"
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Гэта створыць новы адрас ${ MAIL_APP_NAME }"
@@ -17200,9 +17161,6 @@
       "Administrators can't access the data of private users": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў"
       ],
-      "AI": [
-        "ШІ"
-      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Запрашэнне адпраўлена. Чаканне адказу ад запрошанага ўдзельніка"
       ],
@@ -17220,6 +17178,9 @@
       ],
       "SSO user provided by your identity provider": [
         "Карыстальнік SSO прадстаўляецца вашым пастаўшчыком пасведчанняў"
+      ],
+      "Writing assistant": [
+        "Памочнік у напісанні"
       ]
     },
     "Validation": {
