@@ -128,7 +128,7 @@ export function Editor({
               }}
             >
               <ContentEditable
-                className="DocumentEditor print:w-full print:max-w-full"
+                className="DocumentEditor w-full md:w-4/5 lg:w-1/2 print:w-full print:max-w-full"
                 style={{
                   fontFamily: DefaultFont.value,
                   gridRow: 1,
