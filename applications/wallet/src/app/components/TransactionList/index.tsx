@@ -4,7 +4,12 @@ import { add } from 'date-fns';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount, WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
+import {
+    WasmApiWalletAccount,
+    WasmApiWalletTransaction,
+    WasmSortOrder,
+    WasmTransactionDetails,
+} from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useUserKeys } from '@proton/components/hooks';
@@ -24,6 +29,7 @@ import { DecryptedTransactionData, TransactionData, useWalletTransactions } from
 import { getAccountTransactions, getThemeForWallet, getWalletTransactions } from '../../utils';
 import { DataColumn, DataList } from '../DataList';
 import { TransactionNoteModal } from '../TransactionNoteModal';
+import { UnknownSenderModal } from '../UnknownSenderModal';
 import {
     AmountDataListItem,
     ConfirmationTimeDataListItem,
@@ -55,6 +61,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
 
     const [transactions, setTransactions] = useState<WasmTransactionDetails[]>([]);
     const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
+    const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ transaction: TransactionData }>();
 
     const { currentPage, handleNext, handlePrev, handleGoFirst } = useLocalPagination();
     // page 0 should be displayed as 'Page 1'
@@ -67,9 +74,10 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                 transaction,
                 kind: 'transaction-data',
                 onClickEditNote: () => setNoteModalState({ transaction }),
+                onClickEditSender: () => setUnknownSenderModal({ transaction }),
             });
         },
-        [openDrawer, decryptedApiWalletsData, apiWalletData.Wallet.ID, setNoteModalState]
+        [openDrawer, decryptedApiWalletsData, apiWalletData.Wallet.ID, setNoteModalState, setUnknownSenderModal]
     );
 
     useEffect(() => {
@@ -103,7 +111,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         }
     }, [apiAccount?.ID, apiWalletData.Wallet.ID, currentPage, sortOrder, walletsChainData]);
 
-    const { transactionDetails, loadingRecordInit, loadingApiData, updateWalletTransaction } = useWalletTransactions({
+    const { transactionDetails, loadingRecordInit, loadingApiData, handleUpdatedTransaction } = useWalletTransactions({
         transactions,
         userKeys,
         wallet: apiWalletData,
@@ -121,6 +129,20 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
             return syncSingleWallet({ walletId: apiWalletData.Wallet.ID, manual: isManual });
         }
     }, [apiAccount, apiWalletData.Wallet.ID, syncSingleWallet, syncSingleWalletAccount]);
+
+    const handleTxUpdate = useCallback(
+        (tx: WasmApiWalletTransaction, oldTx: TransactionData) => {
+            void handleUpdatedTransaction(tx, oldTx).then((transaction) => {
+                noteModalState.onClose?.();
+                unknownSenderModal.onClose?.();
+
+                if (drawer?.data.kind === 'transaction-data' && transaction) {
+                    setDrawerData({ transaction });
+                }
+            });
+        },
+        [drawer?.data.kind, handleUpdatedTransaction, noteModalState, setDrawerData, unknownSenderModal]
+    );
 
     const transactionsTable = useMemo(() => {
         if (transactionDetails?.length) {
@@ -262,78 +284,79 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     ]);
 
     return (
-        <div className={clsx('flex flex-column grow', isNarrow && 'bg-weak rounded-xl mx-2')}>
-            <div
-                className={clsx(
-                    'flex flex-row px-4 items-center justify-space-between',
-                    isNarrow ? 'mt-6 mb-3 color-weak' : 'mt-10 mb-6'
-                )}
-            >
-                <h2 className={clsx('mr-4 text-semibold', isNarrow ? 'text-lg' : 'text-4xl')}>{c('Wallet transactions')
-                    .t`Transactions`}</h2>
+        <>
+            <div className={clsx('flex flex-column grow', isNarrow && 'bg-weak rounded-xl mx-2')}>
+                <div
+                    className={clsx(
+                        'flex flex-row px-4 items-center justify-space-between',
+                        isNarrow ? 'mt-6 mb-3 color-weak' : 'mt-10 mb-6'
+                    )}
+                >
+                    <h2 className={clsx('mr-4 text-semibold', isNarrow ? 'text-lg' : 'text-4xl')}>{c(
+                        'Wallet transactions'
+                    ).t`Transactions`}</h2>
 
-                <div className="flex flex-row">
-                    <CoolDownButton
-                        end={cooldownEndTime}
-                        start={cooldownStartTime}
-                        icon
-                        size={isNarrow ? 'small' : 'medium'}
-                        shape="ghost"
-                        color="weak"
-                        className="ml-2"
-                        buttonClassName="rounded-full bg-weak"
-                        disabled={isSyncingWalletData}
-                        onClick={() => handleClickSync()}
-                    >
-                        <Icon
-                            name="arrows-rotate"
-                            size={isNarrow ? 4 : 5}
-                            alt={c('Wallet transactions list').t`Sync`}
-                        />
-                    </CoolDownButton>
-                    <CoreButton
-                        icon
-                        size={isNarrow ? 'small' : 'medium'}
-                        shape="ghost"
-                        color="weak"
-                        className="ml-2 rounded-full bg-weak"
-                        disabled={!transactionDetails?.length || isSyncingWalletData}
-                        onClick={() =>
-                            setSortOrder((prev) =>
-                                prev === WasmSortOrder.Asc ? WasmSortOrder.Desc : WasmSortOrder.Asc
-                            )
-                        }
-                    >
-                        {sortOrder === WasmSortOrder.Asc ? (
+                    <div className="flex flex-row">
+                        <CoolDownButton
+                            end={cooldownEndTime}
+                            start={cooldownStartTime}
+                            icon
+                            size={isNarrow ? 'small' : 'medium'}
+                            shape="ghost"
+                            color="weak"
+                            className="ml-2"
+                            buttonClassName="rounded-full bg-weak"
+                            disabled={isSyncingWalletData}
+                            onClick={() => handleClickSync()}
+                        >
                             <Icon
-                                alt={c('Wallet transactions list').t`Descending order`}
-                                name="list-arrow-down"
+                                name="arrows-rotate"
                                 size={isNarrow ? 4 : 5}
+                                alt={c('Wallet transactions list').t`Sync`}
                             />
-                        ) : (
-                            <Icon
-                                alt={c('Wallet transactions list').t`Ascending order`}
-                                name="list-arrow-up"
-                                size={isNarrow ? 4 : 5}
-                            />
-                        )}
-                    </CoreButton>
+                        </CoolDownButton>
+                        <CoreButton
+                            icon
+                            size={isNarrow ? 'small' : 'medium'}
+                            shape="ghost"
+                            color="weak"
+                            className="ml-2 rounded-full bg-weak"
+                            disabled={!transactionDetails?.length || isSyncingWalletData}
+                            onClick={() =>
+                                setSortOrder((prev) =>
+                                    prev === WasmSortOrder.Asc ? WasmSortOrder.Desc : WasmSortOrder.Asc
+                                )
+                            }
+                        >
+                            {sortOrder === WasmSortOrder.Asc ? (
+                                <Icon
+                                    alt={c('Wallet transactions list').t`Descending order`}
+                                    name="list-arrow-down"
+                                    size={isNarrow ? 4 : 5}
+                                />
+                            ) : (
+                                <Icon
+                                    alt={c('Wallet transactions list').t`Ascending order`}
+                                    name="list-arrow-up"
+                                    size={isNarrow ? 4 : 5}
+                                />
+                            )}
+                        </CoreButton>
+                    </div>
                 </div>
+
+                <div className="flex flex-column w-full grow flex-nowrap grow">{transactionsTable}</div>
             </div>
 
-            <div className="flex flex-column w-full grow flex-nowrap grow">{transactionsTable}</div>
+            <TransactionNoteModal apiWalletData={apiWalletData} onUpdate={handleTxUpdate} {...noteModalState} />
 
-            <TransactionNoteModal
-                onUpdateLabel={(label, tx) => {
-                    void updateWalletTransaction(label, tx).then((transaction) => {
-                        noteModalState.onClose?.();
-                        if (drawer?.data.kind === 'transaction-data' && transaction) {
-                            setDrawerData({ transaction });
-                        }
-                    });
-                }}
-                {...noteModalState}
-            />
-        </div>
+            {unknownSenderModal.data && (
+                <UnknownSenderModal
+                    walletTransaction={unknownSenderModal.data.transaction}
+                    onUpdate={handleTxUpdate}
+                    {...unknownSenderModal}
+                />
+            )}
+        </>
     );
 };

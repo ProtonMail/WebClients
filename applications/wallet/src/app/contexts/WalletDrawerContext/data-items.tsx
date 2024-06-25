@@ -56,20 +56,39 @@ export const RecipientsDataListItem = ({ tx }: TxDataListItemProps) => {
     );
 };
 
-export const SendersDataListItem = ({ tx }: TxDataListItemProps) => {
+export const SendersDataListItem = ({
+    tx,
+    onClickEditSender,
+}: TxDataListItemProps & { onClickEditSender: () => void }) => {
     const { walletMap } = useBitcoinBlockchainContext();
     const senderName = getTransactionSenderHumanReadableName(tx, walletMap);
 
     return (
         <div className="w-full">
             <span className="block color-hint text-rg">{c('Wallet transaction').t`From`}</span>
-            <ul className="unstyled mt-1 text-lg">
-                <li className="flex flex-column my-1">
-                    <Tooltip title={senderName}>
-                        <span className="block w-full text-ellipsis">{senderName}</span>
+            <div className="flex flex-row items-center justify-space-between">
+                <ul className="unstyled mt-1 text-lg">
+                    <li className="flex flex-column my-1">
+                        <Tooltip title={senderName}>
+                            <span className="block w-full text-ellipsis">{senderName}</span>
+                        </Tooltip>
+                    </li>
+                </ul>
+
+                {tx.apiData?.Type && ['NotSend', 'ExternalSend', 'ExternalReceive'].includes(tx.apiData?.Type) && (
+                    <Tooltip title={c('Action').t`Edit`}>
+                        <CoreButton
+                            className="rounded-full bg-norm"
+                            icon
+                            shape="solid"
+                            data-testid="modal:edit"
+                            onClick={() => onClickEditSender()}
+                        >
+                            <Icon name="pen" alt={c('Action').t`Edit`} />
+                        </CoreButton>
                     </Tooltip>
-                </li>
-            </ul>
+                )}
+            </div>
         </div>
     );
 };
@@ -122,7 +141,9 @@ export const MessageDataListItem = ({ tx }: TxDataListItemProps) => {
     return (
         <div className="w-full">
             <span className="block color-hint text-rg">{c('Wallet transaction').t`Message`}</span>
-            <p className="my-0 mt-1 text-lg">{tx.apiData?.Body}</p>
+            <p className="my-0 mt-1 text-lg">
+                {multilineStrToMultilineJsx(tx.apiData?.Body ?? '', 'transaction-message')}
+            </p>
         </div>
     );
 };
