@@ -803,9 +803,6 @@
       "Trashing item failed": [
         "Kunne ikke flytte element til papirkurven"
       ],
-      "Unable to boot": [
-        "Kan ikke boote"
-      ],
       "Unable to generate an OTP code for this item": [
         "Kunne ikke generere en OTP-kode for dette element"
       ],
@@ -841,6 +838,9 @@
       ],
       "Vault name does not match": [
         "Boksens navn matcher ikke"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Vi stødte på et problem under opstart af ${ PASS_SHORT_APP_NAME }. Hvis problemet fortsætter, kontakt venligst vores kundesupport for hjælp."
       ],
       "Wrong password": [
         "Forkert adgangskode"

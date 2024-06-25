@@ -791,9 +791,6 @@
       "Trashing item failed": [
         "Не вдалося перемістити елемент у смітник"
       ],
-      "Unable to boot": [
-        "Не вдалося запустити"
-      ],
       "Unable to generate an OTP code for this item": [
         "Не вдалося створити код OTP для цього елемента"
       ],
@@ -826,6 +823,9 @@
       ],
       "Vault name does not match": [
         "Назва сховища не збігається"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Ми зіткнулися з проблемою під час запуску ${ PASS_SHORT_APP_NAME }. Якщо ця проблема продовжується, зверніться в нашу службу підтримки за допомогою."
       ],
       "Wrong password": [
         "Неправильний пароль"
