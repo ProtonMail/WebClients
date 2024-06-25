@@ -387,9 +387,6 @@
       "Download ${ attachmentName }": [
         "Descărcare atașament ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Descărcați aplicația pentru desktop"
-      ],
       "Download now": [
         "Descărcare"
       ],
@@ -839,6 +836,9 @@
       "Open composer": [
         "Deschidere editor mesaje"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Deschidere în ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -949,6 +949,9 @@
       ],
       "Reply securely": [
         "Răspuns în siguranță"
+      ],
+      "Report a good content": [
+        "Raportare conținut bun"
       ],
       "Report a problem": [
         "Raportare problemă"
@@ -1210,6 +1213,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Cheie de încredere",
+        "Chei de încredere",
+        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1522,29 +1530,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Rapid și sigur"
+      "Fast and secure. No logs are kept.": [
+        "Rapid și sigur. Nu se păstrează jurnale."
       ],
-      "Needs compatible hardware": [
-        "Necesită dispozitiv compatibil"
-      ],
-      "No logs": [
-        "Fără jurnale de înregistrări"
-      ],
-      "Requires one-time download": [
-        "Necesită o descărcare unică"
+      "Requires a one-time download and compatible hardware.": [
+        "Necesită o singură descărcare și dispozitiv fizic compatibil."
       ],
       "Run locally": [
         "Rulare locală"
       ],
       "Run on servers": [
         "Rulare pe servere."
-      ],
-      "Runs on all devices": [
-        "Rulează pe orice dispozitiv"
-      ],
-      "Runs on your device": [
-        "Rulare pe dispozitiv"
       ]
     },
     "Attached ics file error": {
@@ -4127,6 +4123,9 @@
       "The sending key is not valid": [
         "Cheia de trimitere nu este validă"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Sistemul este ocupat momentan. Mai încercați peste câteva minute."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Asistentul de scris nu poate continua cu solicitarea efectuată. Mai încercați o altă solicitare."
       ],
@@ -5613,6 +5612,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } despre asistentul de scriere al ${ BRAND_NAME }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "S-a găsit un folder",
         "S-au găsit ${ providerFoldersNumLocalized } foldere",
@@ -6174,8 +6176,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
       ],
-      "Free for 14 days": [
-        "Gratuit timp de 14 zile"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Gratuit pentru ${ ASSISTANT_TRIAL_TIME_DAYS } zile"
       ],
       "From": [
         "De la"
@@ -6312,9 +6314,6 @@
       ],
       "Learn more": [
         "Detalii"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Mai multe detalii despre ${ PrivacyLink }"
       ],
       "Left to Right": [
         "De la stânga la dreapta"
@@ -6481,6 +6480,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "Numai un singur asistent de scris poate fi deschis la un moment dat."
+      ],
       "Open shortcut cheat sheet": [
         "Deschidere listă combinații de taste"
       ],
@@ -6588,6 +6590,9 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Examinare documentelor nu este încă acceptată. Deschideți documentul pentru a-l vizualiza."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
@@ -6605,6 +6610,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Împiedicați divulgarea adresei e-mail către liste de mesagerie sau mesaje nedorite cu ${ maskMyEmailButton }."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Partajarea publică a documentelor nu este încă acceptată. Solicitați proprietarului să vă invite direct la document."
       ],
       "Recipient: ": [
         "Destinatar: "
@@ -7221,9 +7229,6 @@
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
-      "You can open only one writing assistant at a time": [
-        "Puteți deschide un singur asistent de scriere la un moment dat."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -7364,9 +7369,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Navigatorul web actual nu acceptă asistentul de scriere. Descărcați aplicația ${ MAIL_APP_NAME } pentru desktop sau încercați să-l rulați pe servere."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Navigatorul web actual nu acceptă asistentul de scriere. Încercați să îl rulați pe servere."
@@ -8353,9 +8355,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "confidențialitatea liderului din industrie ${ BRAND_NAME }"
-      ],
       "Add a gift code": [
         "Adăugare cod cadou"
       ],
@@ -10052,6 +10051,9 @@
       "A way to contact you": [
         "Modalitate de contactare"
       ],
+      "Describe what to change": [
+        "Descrieți ce să se schimbe"
+      ],
       "E.g., ": [
         "Ex.: "
       ],
@@ -10084,9 +10086,6 @@
       ],
       "Hint": [
         "Indiciu"
-      ],
-      "How do you want the selected text modified?": [
-        "Cum doriți să fie modificat textul selectat?"
       ],
       "Image URL": [
         "URL imagine"
@@ -11919,6 +11918,9 @@
       ],
       "Self-destruction set": [
         "Autodistrugere setată"
+      ],
+      "Thanks for the feedback!": [
+        "Mulțumim pentru informare!"
       ],
       "Undo in progress": [
         "Anulare în desfășurare"

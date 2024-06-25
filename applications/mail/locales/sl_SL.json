@@ -225,6 +225,9 @@
       "Close & discard": [
         "Zapri in zavrzi"
       ],
+      "Close AI refine suggestion": [
+        "Zapri dodatne predloge AI"
+      ],
       "Close composer": [
         "Zapri urejevalnik"
       ],
@@ -387,9 +390,6 @@
       "Download ${ attachmentName }": [
         "Prenesi priponko ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Prenesi namizno aplikacijo"
-      ],
       "Download now": [
         "Prenesi zdaj"
       ],
@@ -483,17 +483,29 @@
       "Forgot password?": [
         "Pozabljeno geslo?"
       ],
+      "Formalize": [
+        "Formalen ton besedila"
+      ],
       "Forward as attachment": [
         "Posreduj kot priponko"
       ],
+      "Generate text": [
+        "Ustvari besedilo"
+      ],
       "Get in touch": [
         "Oglasite se nam!"
+      ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "Pridobite ga lahko že za ${ addonPriceWithCurrency } /mesec"
       ],
       "Get SimpleLogin extension": [
         "Prenesi razširitev SimpleLogin"
       ],
       "Get started": [
         "Začnite"
+      ],
+      "Get the writing assistant": [
+        "Pridobite pomočnika pri pisanju"
       ],
       "Get verification code": [
         "Pridobi kodo za preverjanje"
@@ -654,6 +666,9 @@
       "Loading${ ellipsis }": [
         "Nalaganje ${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Prijateljski ton besedila"
+      ],
       "Manage folders": [
         "Upravljanje map"
       ],
@@ -716,6 +731,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Več informacij: ${ safeTitle }"
+      ],
+      "More refine actions": [
+        "Več dejanj"
       ],
       "More search options": [
         "Več možnosti iskanja"
@@ -822,6 +840,9 @@
       "Open composer": [
         "Odpri urejevalnik"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Odpri v ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Odpri krmarjenje"
       ],
@@ -866,6 +887,9 @@
       ],
       "Print": [
         "Natisni"
+      ],
+      "Proofread": [
+        "Preveri besedilo"
       ],
       "Quit": [
         "Zapusti"
@@ -966,11 +990,17 @@
       "Resume": [
         "Nadaljuj"
       ],
+      "Resume downloading": [
+        "Nadaljuj s prenašanjem"
+      ],
       "Retry": [
         "Poskusite znova"
       ],
       "Revert to original display": [
         "Povrni na prvotni prikaz"
+      ],
+      "Run on servers": [
+        "Se izvaja na strežnikih"
       ],
       "Save": [
         "Shrani"
@@ -980,6 +1010,9 @@
       ],
       "Schedule message": [
         "Načrtovanje sporočila"
+      ],
+      "Scroll to bottom": [
+        "Pomik na dno"
       ],
       "Search": [
         "Iskanje"
@@ -1060,7 +1093,7 @@
         "Nastavi čas poteka"
       ],
       "Set recovery phrase": [
-        "Nastavi stavek za obnovitev"
+        "Nastavi obnovitveno frazo"
       ],
       "Settings": [
         "Nastavitve"
@@ -1073,6 +1106,9 @@
       ],
       "Sharing options": [
         "Možnosti deljenja"
+      ],
+      "Shorten": [
+        "Skrajšaj besedilo"
       ],
       "Show": [
         "Pokaži"
@@ -1134,6 +1170,12 @@
       "Stay": [
         "Ostani"
       ],
+      "Stop downloading the writing assistant": [
+        "Ustavi prenašanje pomočnika pri pisanju"
+      ],
+      "Stop generating result": [
+        "Zaustavitev ustvarjanja besedila"
+      ],
       "Strikethrough": [
         "Prečrtano"
       ],
@@ -1172,6 +1214,12 @@
       ],
       "Trust": [
         "Zaupaj"
+      ],
+      "Trust key": [
+        "Zaupaj ključu",
+        "Zaupaj ključema",
+        "Zaupaj ključem",
+        "Zaupaj ključem"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -1225,7 +1273,7 @@
         "Posodobi datoteko za obnovitev"
       ],
       "Update recovery phrase": [
-        "Posodobi stavek za obnovitev"
+        "Posodobi obnovitveno frazo"
       ],
       "Upgrade": [
         "Nadgradi"
@@ -1256,6 +1304,9 @@
       ],
       "Use recovery code": [
         "Uporabi kodo za obnovitev"
+      ],
+      "Use this": [
+        "Uporabi"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Uporabite miško za spreminjanje velikosti pogleda. Če uporabljate tipkovnico, lahko uporabite puščici levo in desno za spreminjanje velikosti."
@@ -1322,6 +1373,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Brezplačno preskušanje namizne aplikacije poteče dne ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Your email writing assistant": [
+        "Vaš pomočnik pri pisanju e-pošte"
       ],
       "Zoom in": [
         "Povečaj"
@@ -1394,6 +1448,12 @@
       ],
       "${ price } per user": [
         "${ price } na uporabnika"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licenca za pomočnika pri pisanju",
+        "${ seats } licenci za pomočnika pri pisanju",
+        "${ seats } licence za pomočnika pri pisanju",
+        "${ seats } licenc za pomočnika pri pisanju"
       ],
       "${ users } user": [
         "${ users } uporabnik",
@@ -1473,7 +1533,7 @@
     },
     "Assistant option": {
       "Run on servers": [
-        "Zagon na strežnikih"
+        "Se izvaja na strežnikih"
       ]
     },
     "Attached ics file error": {
@@ -3737,6 +3797,9 @@
       "Draft could not be saved. Try again.": [
         "Osnutka ni bilo mogoče shraniti. Poskusite znova."
       ],
+      "Due to an error, text generation couldn’t be canceled": [
+        "Prišlo je do napake, generiranja besedila ni bilo mogoče preklicati."
+      ],
       "Email address disabled": [
         "E-poštni naslov je onemogočen"
       ],
@@ -3926,6 +3989,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Prosimo, vpišite ime, priimek ali prikazno ime."
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Izberite kategorijo in navedite, kaj je narobe z ustvarjenim besedilom"
+      ],
+      "Please try generating the text again": [
+        "Poskusite znova ustvariti besedilo"
+      ],
       "Port is required": [
         "Zahtevana so vrata"
       ],
@@ -3940,6 +4009,15 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Pridobljeni primarni ključ za uporabnika ${ BRAND_NAME } ni veljaven za pošiljanje sporočil"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "Napaka pri prenosu pomočnika pri pisanju. Poskusite znova."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "Pri nalaganju pomočnika pri pisanju v napravo je prišlo do težave. Poskusite znova."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Težava z odlaganjem podatkov, ki niso potrebni, ko pomočnik pri pisanju ni aktiven"
       ],
       "Process aborted": [
         "Proces je bil prekinjen"
@@ -4010,6 +4088,9 @@
       "Tab closed": [
         "Zavihek je zaprt"
       ],
+      "Thanks for the feedback!": [
+        "Hvala za vaše mnenje!"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Priponke ni bilo mogoče dešifrirati.\nČe posedujete ustrezni zasebni ključ, lahko datoteko še vedno\ndešifrirate s programom, kot je GnuPG.",
         "Nekaterih priponk ni bilo mogoče dešifrirati.\nČe posedujete ustrezni zasebni ključ, lahko datoteki še vedno\ndešifrirate s programom, kot je GnuPG.",
@@ -4045,6 +4126,12 @@
       ],
       "The sending key is not valid": [
         "Ključ za pošiljanje ni veljaven"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Sistem je trenutno obremenjen. Poskusite znova čez nekaj minut."
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "Pomočnik pri pisanju ne more izpolniti vaše zahteve. Poskusite z drugačnim vnosom."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "V vašem zunanjem računu je preveč map. Prilagodite uvoz in izbrišite nekaj map."
@@ -5844,6 +5931,9 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Okrepite prepoznavnost blagovne znamke vaše organizacije in ustvarite doslednejšo spletno izkušnjo za svoje uporabnike."
       ],
+      "Browser not supported": [
+        "Ta brskalnik ni podprt"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "S prehodom na brezplačni paket boste trajno izgubili te ugodnosti, tudi če v prihodnosti znova nadgradite."
       ],
@@ -5997,6 +6087,12 @@
       "Downloading paused": [
         "Prekinitev prenosa."
       ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "Prenos je začasno prekinjen: ${ progressDisplay } GB"
+      ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "Prenašanje pomočnika pri pisanju: ${ progressDisplay } GB"
+      ],
       "Draft": [
         "Osnutek"
       ],
@@ -6090,6 +6186,12 @@
       "Estimating time remaining...": [
         "Ocena preostalega časa ..."
       ],
+      "Expand selection": [
+        "Razširi izbrano besedilo"
+      ],
+      "Expand text": [
+        "Razširi besedilo"
+      ],
       "Expiration time": [
         "Čas poteka veljavnosti"
       ],
@@ -6134,6 +6236,9 @@
       ],
       "From": [
         "Od"
+      ],
+      "Generate text": [
+        "Ustvari besedilo"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Vsebuje ${ numAttachments } priponko (${ numAttachmentsSize })",
@@ -6213,11 +6318,17 @@
       "Include Spam/Trash.": [
         "Vključi neželeno pošto in smetnjak."
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "Vključite svoj vnos in odgovor ter nam tako pomagajte izboljšati natančnost."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "Vključno z ${ formattedTaxRate } % ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Podedovano od nadrejene mape"
+      ],
+      "Initializing…": [
+        "Zagon …"
       ],
       "Insert image": [
         "Vstavi sliko"
@@ -6263,6 +6374,9 @@
       ],
       "Left to Right": [
         "Z leve proti desni"
+      ],
+      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
+        "Zaupajte pomočniku pri pisanju, da vam pomaga pisati in odgovarjati na e-poštna sporočila in opazujte, kako raste vaša produktivnost."
       ],
       "Link type": [
         "Vrsta povezave"
@@ -6354,6 +6468,9 @@
       "Monthly ${ onDayString }": [
         "Mesečno ${ onDayString }"
       ],
+      "More refine actions": [
+        "Več dejanj"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poimenujte novo mapo in izberite, v kateri mapi naj se ustvari. Če ne izberete nadrejene mape, bo ta mapa ustvarjena kot mapa najvišje ravni."
       ],
@@ -6419,6 +6536,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Enega ali več vaših zaupanja vrednih ključev je njihov lastnik označil kot \"ogroženo\". Priporočamo, da tem ključem \"ne zaupate\"."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "Naenkrat je lahko odprt samo en pomočnik pri pisanju"
       ],
       "Open shortcut cheat sheet": [
         "Odpri seznam bližnjic"
@@ -6492,6 +6612,12 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Izberite, kateri e-poštni naslov ali naslove želite dodati v ${ groupName }."
       ],
+      "Please share what the issue is": [
+        "Zaupajte nam, v čem je težava"
+      ],
+      "Please share what you expected": [
+        "Zaupajte nam, kakšna so bila vaša pričakovanja"
+      ],
       "Please try again in a few moments": [
         "Poskusite znova čez nekaj trenutkov"
       ],
@@ -6522,6 +6648,9 @@
       "Preview for this file type is not supported": [
         "Predogled te vrste datotek ni podprt"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Predogled dokumentov še ni podprt. Za ogled dokumenta ga odprite."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena vključuje vse ustrezne popuste na ciklus in neiztečene kupone, shranjene na vašem računu."
       ],
@@ -6531,8 +6660,17 @@
       "Print email": [
         "Natisni sporočilo"
       ],
+      "Proofread selection": [
+        "Preveri izbrano besedilo"
+      ],
+      "Proofread text": [
+        "Preveri besedilo"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Preprečite, da bi vaš e-poštni naslov izvedeli poštni seznami ali pošiljatelji neželene pošte, s ${ maskMyEmailButton }."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Javna skupna raba dokumentov še ni podprta. Prosite lastnika, da vas neposredno povabi k dokumentu."
       ],
       "Recipient: ": [
         "Prejemnik: "
@@ -6639,6 +6777,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Nastavitev PGP vam omogoča pošiljanje šifriranih e-poštnih sporočil od konca do konca z ne-uporabnikom ${ BRAND_NAME }, ki uporablja združljivo storitev PGP."
       ],
+      "Shorten selection": [
+        "Skrajšaj izbrano besedilo"
+      ],
+      "Shorten text": [
+        "Skrajšaj besedilo"
+      ],
       "Show original message": [
         "Prikaži izvirno sporočilo"
       ],
@@ -6711,6 +6855,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "Začetna nastavitev lahko traja nekaj minut."
+      ],
       "The local database is being prepared": [
         "Lokalna podatkovna baza se pripravlja."
       ],
@@ -6737,6 +6884,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Postopek preverjanja bo odprl nov zavihek brskalnika. Pred tem onemogočite prepoved pojavnih oken."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "Prenos pomočnika pri pisanju se mora zaključiti, preden ga lahko uporabite."
       ],
       "Themes can give your inbox a new look.": [
         "Teme lahko dajo vašo pošti nov izgled."
@@ -6779,6 +6929,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "To povabilo je shranjeno v onemogočenem koledarju."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "Namenjen je kot pripomoček pri pisanju. Preverite točnost predlaganega besedila. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ta povezava vodi na spletno mesto, ki bi lahko poskušalo ukrasti vaše podatke, kot so gesla in podatki o plačilnih karticah."
@@ -6845,6 +6998,9 @@
       ],
       "This message will expire tomorrow at ${ value }": [
         "To sporočilo bo poteklo jutri ob ${ value }"
+      ],
+      "This only needs to be done once.": [
+        "To je potrebno storiti le enkrat."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Ta javni ključ se bo privzeto uporabil za šifriranje pošte, poslane na ta naslov."
@@ -7074,6 +7230,15 @@
       "Would you like to receive a new verification code?": [
         "Bi želeli prejeti novo kodo za preverjanje?"
       ],
+      "Writing assistant": [
+        "Pomočnik pri pisanju"
+      ],
+      "Writing assistant add-on": [
+        "Dodatek za pomočnika pri pisanju"
+      ],
+      "writing assistant iframe": [
+        "okno pomočnika pri pisanju"
+      ],
       "Yearly": [
         "Letno"
       ],
@@ -7236,6 +7401,9 @@
         "Izbrali ste **${ elementsCount } sporočila**.",
         "Izbrali ste **${ elementsCount } sporočila**."
       ],
+      "You selected some content:": [
+        "Izbrali ste nekaj vsebine:"
+      ],
       "You will lose access to Plus features on this date.": [
         "Dostop do funkcij Plus boste izgubili na ta datum."
       ],
@@ -7275,6 +7443,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Vaš račun bo posodobljen, ko bo plačilo potrjeno."
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Vaš brskalnik ne podpira pomočnika pri pisanju. Poskusite ga zagnati v strežnikih."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaši podatki so pripravljeni na uvoz iz računa ${ importedEmailAddressStrong } v račun ${ BRAND_NAME }."
       ],
@@ -7289,6 +7460,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Vaša strojna oprema ne podpira lokalnega delovanje pomočnika pri pisanju. Poskusite ga zagnati v strežnikih."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informacije so bile najdene ${ displayedDate }"
@@ -8080,10 +8254,10 @@
         "Možnosti naročnine"
       ],
       "Sync with system": [
-        "Sinhroniziraj s sistemom"
+        "Usklajeno s sistemom"
       ],
       "Synchronize with system": [
-        "Sinhroniziraj s sistemom."
+        "Usklajeno s sistemom."
       ],
       "System information": [
         "Podatki o sistemu"
@@ -9579,7 +9753,7 @@
         "Uporabite lastno domeno za naslov e-pošte, na primer ime@priimek.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Ne shranjujemo nobenih sejnih evidenc o tem, kaj počnete na spletu, in ne beležimo metapodatkov, ki bi lahko ogrozili vašo zasebnost."
+        "Ne shranjujemo nobenih sejnih dnevnikov o tem, kaj počnete na spletu, in ne beležimo metapodatkov, ki bi lahko ogrozili vašo zasebnost."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Zavezani smo k pomoči strankam, ki so podvržene zakonodaji HIPAA/HITECH, pri varovanju zaščitenih zdravstvenih informacij (PHI). Podpisani BAA so na voljo za vse kupce ${ BRAND_NAME } za poslovne subjekte."
@@ -9683,6 +9857,12 @@
       ],
       "Senders blocked": [
         "Pošiljatelji so blokirani"
+      ],
+      "The writing assistant is ready to use": [
+        "Pomočnik pri pisanju je pripravljen za uporabo"
+      ],
+      "Trial started": [
+        "Preizkusna doba se je začela"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9954,6 +10134,9 @@
       "A way to contact you": [
         "Način za stik z vami"
       ],
+      "Describe what to change": [
+        "Opišite, kaj naj se spremeni"
+      ],
       "E.g., ": [
         "Npr. "
       ],
@@ -10010,6 +10193,9 @@
       ],
       "Please insert link first": [
         "Najprej vstavite povezavo"
+      ],
+      "Please share what you expected": [
+        "Zaupajte nam, kakšna so bila vaša pričakovanja"
       ],
       "Search date, name, email address, or subject line": [
         "Iskanje datuma, imena, e-poštnega naslova ali zadeve sporočila"
@@ -11278,6 +11464,9 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Če ob izteku naročnine ${ planName } prekoračite omejitve brezplačnega načrta, ne boste mogli:"
       ],
+      "Learn more": [
+        "Več o tem"
+      ],
       "Learn more about our impact": [
         "Več o našem vplivu"
       ],
@@ -11333,10 +11522,10 @@
         "Čemu se odpoveste, ko prekličete ${ planName }"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na Drive. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 5 GB prostora za shranjevanje na Drive in do 1 GB prostora za shranjevanje pošte. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "Yearly free storage bonuses": [
         "Bonus prostor za shranjevanje"
@@ -11758,6 +11947,9 @@
       ],
       "Self-destruction set": [
         "Samouničenje je nastavljeno"
+      ],
+      "Thanks for the feedback!": [
+        "Hvala za vaše mnenje!"
       ],
       "Undo in progress": [
         "Razveljavljanje poteka"
@@ -12676,6 +12868,9 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
+      ],
+      "Your free trial has ended": [
+        "Brezplačno preizkusno obdobje se je izteklo"
       ]
     },
     "Title subscription": {

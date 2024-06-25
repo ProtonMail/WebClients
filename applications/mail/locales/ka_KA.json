@@ -364,9 +364,6 @@
       "Download ${ attachmentName }": [
         "${ attachmentName }-ის გადმოწერა"
       ],
-      "Download Desktop App": [
-        "გადმოწერეთ კომპიუტერის აპი"
-      ],
       "Download now": [
         "ახლა გადმოწერა"
       ],
@@ -815,6 +812,9 @@
       "Open composer": [
         "რედაქტორის გახსნა"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }-ში გახსნა"
+      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -925,6 +925,9 @@
       ],
       "Reply securely": [
         "უსაფრთხოდ პასუხი"
+      ],
+      "Report a good content": [
+        "ანგარიში კარგი შემცველობი შესახებ"
       ],
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
@@ -1186,6 +1189,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -1488,29 +1495,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "სწრაფი და დაცული"
+      "Fast and secure. No logs are kept.": [
+        "სწრაფი და უსაფრთხო. ჟურნალს არ ვინახავთ."
       ],
-      "Needs compatible hardware": [
-        "სჭირდება თავსებადი აპარატურა"
-      ],
-      "No logs": [
-        "ჟურნალის გარეშე"
-      ],
-      "Requires one-time download": [
-        "სჭირდება ერთჯერადი გადმოწერა"
+      "Requires a one-time download and compatible hardware.": [
+        "ესაჭიროება ერთჯერადი გადმოწერა და თავსებადი აპარატურა."
       ],
       "Run locally": [
         "ლოკალურად გაშვება"
       ],
       "Run on servers": [
         "გაშვება სერვერებზე"
-      ],
-      "Runs on all devices": [
-        "ეშვება ყველა მოწყობილობაზე"
-      ],
-      "Runs on your device": [
-        "ეშვება თქვენს მოწყობილობაზე"
       ]
     },
     "Attached ics file error": {
@@ -3352,6 +3347,12 @@
       "Set a recovery method to prevent losing access to your account.": [
         "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
       ],
+      "To continue to use the writing assistant, add it to your subscription.": [
+        "იმისათვის, რომ გააგრძელოთ წერის დამხმარის გამოყენება, დაამატეთ ის თქვენს გამოწერაში."
+      ],
+      "To continue to use the writing assistant, request access from your admin.": [
+        "იმისათვის, რომ გააგრძელოთ წერის დამხმარის გამოყენება, მოითხოვეთ წვდომა თქევნი ადმინისტრატორისგან."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
@@ -3933,6 +3934,9 @@
       "Please provide either a first name, a last name or a display name": [
         "შეიყვანეთ ან სახელი, ან გვარი, ან საჩვენებელი სახელი"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "აირჩიეთ კატეგორია და რა ეტაკა შექმნილ ტექსტს"
+      ],
       "Please try generating the text again": [
         "სცადეთ ტექსტის გენერაცია კიდევ ერთხელ"
       ],
@@ -3953,6 +3957,12 @@
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "წერის დამხმარის გადმოწერის პრობლემა. გთხოვთ, თავიდან სცადეთ."
+      ],
+      "Problem loading the writing assistant to your device. Please try again.": [
+        "თქვენი მოწყობილობისთვის წერის დამხმარის ჩატვირთვის პრობლემა. მოგვიანებით სცადეთ."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "იმ მონაცემების გამოტვირთვის შეცდომა, რომელიც საჭირო არაა, როცა წერის დამხმარე აქტიური არაა."
       ],
       "Process aborted": [
         "პროცესი გაჩერდა"
@@ -6024,8 +6034,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "მეტი ძებნის შედეგისთვის სცადეთ, თქვენი საკვანძო სიტყვა თქვენი ელფოსტის შეტყობინებებში მოძებნოთ."
       ],
-      "Free for 14 days": [
-        "უფასო 14 დღით"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "უფასო ${ ASSISTANT_TRIAL_TIME_DAYS } დღით"
       ],
       "From": [
         "გამომგზავნელი"
@@ -6107,6 +6117,9 @@
       "Include Spam/Trash.": [
         "სპამის/ნაგვის ყუთის ჩათვლა"
       ],
+      "Include your prompt and the response to help us improve accuracy.": [
+        "თქვენი კითხვაპასუხის ჩასმა, რომ სიზუსტის გაზრდაში დაგვეხმაროთ."
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
@@ -6157,9 +6170,6 @@
       ],
       "Learn more": [
         "მეტის ნახვა"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "გაიგეთ მეტი ${ PrivacyLink }-ის შესახებ"
       ],
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
@@ -6320,6 +6330,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "დროის ერთ მონაკვეთში, მხოლოდ, ერთი წერის დამხმარე შეიძლება იყოს აქტიური"
+      ],
       "Open shortcut cheat sheet": [
         "მალსახმობების ჩამონათვლის გახსნა"
       ],
@@ -6452,6 +6465,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "წაშლის ამ აპთან ასოცირებულ ყველა მონაცემს (გადმოწერილი შეტყობინებების ჩათვლით …)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "შეტყობინების ფიშინგად მონიშვნა გამოიწვევს ამ შეტყობინების ჩვენთვის გადმოგზავნას. ჩვენ გავაანალიზებთ მას და გავაუმჯობესებთ ჩვენს ფილტრებს. ეს ასევე ნიშნავს, რომ ჩვენ წვდომა გვექნება შეტყობინების სრულ შინაარსთან."
@@ -6649,6 +6665,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "გადამოწმების პროცესი ბრაუზერის ახალ ჩანართს გახსნის. გთხოვთ, გამორთოთ მხტუნარა ფანჯრებს მბლოკავები."
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "წერის დამხმარეს, სანამ გამოიყენებთ, გადმოწერის დასრულება სჭირდება."
       ],
       "Themes can give your inbox a new look.": [
         "თემებს შეუძლიათ თქვენს საფოსტო ყუთს ახალი იერი შესძინონ."
@@ -7040,9 +7059,6 @@
       ],
       "You can now return to the application to continue": [
         "ახლა გასაგრძელებლად შეგიძლიათ, აპლიკაციაზე დაბრუნდეთ"
-      ],
-      "You can open only one writing assistant at a time": [
-        "დროის ერთ მომენტში, მხოლოდ, ერთი წერის დამხმარის გახსნა შეგიძლიათ"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
@@ -8134,9 +8150,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME }-ის საუკეთესო კონფიდენციალობა"
-      ],
       "Add a gift code": [
         "ჩასვით სასაჩუქრე კოდი"
       ],
@@ -9777,6 +9790,9 @@
       "A way to contact you": [
         "თქვენთან დაკავშირების საშუალება"
       ],
+      "Describe what to change": [
+        "აღწერეთ, რა შეიცვალოს"
+      ],
       "E.g., ": [
         "მაგ. "
       ],
@@ -9809,9 +9825,6 @@
       ],
       "Hint": [
         "მინიშნება"
-      ],
-      "How do you want the selected text modified?": [
-        "როგორ გნებავთ მონიშნული ტექსტის შეცვლა?"
       ],
       "Image URL": [
         "გამოსახულების ბმული"
@@ -10976,6 +10989,12 @@
       "Add any new files": [
         "დაამატეთ ნებისმიერი ახალი ფაილები"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. ასევე დაკარგავთ ადრე თქვენზე მონიშენულ საცავის ბონუსებს."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. ასევე დაკარგავთ ადრე თქვენზე მონიშენულ საცავის ბონუსებს."
+      ],
       "All you need for your business": [
         "ყველაფერი, რაც თქვენი ბიზნესისთვის გჭირდებათ"
       ],
@@ -11020,6 +11039,9 @@
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
@@ -11455,6 +11477,9 @@
       ],
       "Self-destruction set": [
         "თვითგანადგურება დაყენებულია"
+      ],
+      "Thanks for the feedback!": [
+        "მადლობა გამოხმაურებისთვის!"
       ],
       "Undo in progress": [
         "მიმდინარეობს გაუქმება"

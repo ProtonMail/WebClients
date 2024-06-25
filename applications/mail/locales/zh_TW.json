@@ -358,9 +358,6 @@
       "Download ${ attachmentName }": [
         "下載 ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "下載桌面應用程式"
-      ],
       "Download now": [
         "现在下载"
       ],
@@ -802,6 +799,9 @@
       "Open composer": [
         "打開撰寫器"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "於 ${ DOCS_SHORT_APP_NAME } 開啟"
+      ],
       "Open navigation": [
         "開啟導覽"
       ],
@@ -957,6 +957,9 @@
       ],
       "Revert to original display": [
         "不要用暗黑模式顯示郵件"
+      ],
+      "Run on servers": [
+        "於伺服器執行"
       ],
       "Save": [
         "儲存"
@@ -1170,6 +1173,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -1467,23 +1473,14 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "快及安全"
+      "Fast and secure. No logs are kept.": [
+        "塊和安全。無紀錄被保存。"
       ],
-      "Needs compatible hardware": [
-        "須兼容裝置"
-      ],
-      "No logs": [
-        "無紀錄"
+      "Run locally": [
+        "本地化執行"
       ],
       "Run on servers": [
         "於伺服器執行"
-      ],
-      "Runs on all devices": [
-        "於所有裝置皆可使用"
-      ],
-      "Runs on your device": [
-        "於您的裝置執行"
       ]
     },
     "Attached ics file error": {
@@ -5776,6 +5773,9 @@
       "Downloading paused: ${ progressDisplay } GB": [
         "暫停下載: ${ progressDisplay } GB"
       ],
+      "Downloading the writing assistant: ${ progressDisplay } GB": [
+        "下載此撰寫工具:${ progressDisplay }GB"
+      ],
       "Draft": [
         "草稿"
       ],
@@ -5863,6 +5863,12 @@
       "Estimating time remaining...": [
         "正在估計尚餘時間..."
       ],
+      "Expand selection": [
+        "展開選項"
+      ],
+      "Expand text": [
+        "展開文字"
+      ],
       "Expiration time": [
         "有效期限"
       ],
@@ -5895,9 +5901,6 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
-      ],
-      "Free for 14 days": [
-        "免費體驗 14 天"
       ],
       "From": [
         "寄件人"
@@ -6030,9 +6033,6 @@
       ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "了解更多${ PrivacyLink }"
       ],
       "Left to Right": [
         "由左至右"
@@ -6261,6 +6261,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
+      ],
+      "Please share what the issue is": [
+        "請分享問題"
       ],
       "Please share what you expected": [
         "請分享您預期什麼"
@@ -8815,6 +8818,9 @@
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
+      "See team's availability": [
+        "查看團隊可用程度"
+      ],
       "Send & receive invitations": [
         "傳送並接收邀請"
       ],
@@ -8955,6 +8961,9 @@
       ],
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "開始使用安全加密電郵和行事曆。"
       ],
       "For next-level password management and identity protection.": [
         "用於下一個層級的密碼管理與身份保護。"
@@ -9555,6 +9564,9 @@
     "Placeholder": {
       "A way to contact you": [
         "您的聯絡方式"
+      ],
+      "Describe what to change": [
+        "說明須修正的什麼"
       ],
       "E.g., ": [
         "例如： "
@@ -10644,11 +10656,20 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME }與行事曆共享和使用性"
+      ],
       "${ dayDiff } day left": [
         "剩下${ dayDiff }天"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME }與版本歷史"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME }與自動郵件轉寄"
       ],
       "${ MaxCalendars } calendar per user": [
         "每位使用者${ MaxCalendars }個行事曆"
@@ -10659,6 +10680,9 @@
       "${ maxEmails } email address per user": [
         "${ maxEmails } 組電郵位址/每位使用者"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME }與${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } 可用空間 / 每位使用者"
       ],
@@ -10668,14 +10692,26 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 方案"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME }與惡意軟體和廣告阻擋"
+      ],
       "10 email addresses": [
         "10 個電子信箱"
+      ],
+      "20 email addresses per user": [
+        "每位使用者20組電郵位址"
+      ],
+      "25 calendars per user": [
+        "每位使用者25個行事曆"
       ],
       "6 users": [
         "6 位使用者"
       ],
       "Add any new files": [
         "新增任何檔案"
+      ],
+      "All you need for your business": [
+        "這是您公司只須要的"
       ],
       "Automatic email forwarding": [
         "自動郵件轉寄"
@@ -10689,11 +10725,20 @@
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
       ],
+      "Extra storage and users": [
+        "更多儲存和使用者"
+      ],
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
       ],
+      "Learn more": [
+        "了解更多"
+      ],
       "Learn more about our impact": [
         "了解更多我們的影響"
+      ],
+      "Make your business stand out": [
+        "使您的企業突出"
       ],
       "Manage your calendar": [
         "管理您的行事曆"
@@ -10704,8 +10749,14 @@
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
       ],
+      "Premium productivity features": [
+        "進階版生產力功能"
+      ],
       "Priority support": [
         "優先支援"
+      ],
+      "Productivity features": [
+        "生產力功能"
       ],
       "Read the story": [
         "已讀的訊息"
@@ -11058,6 +11109,9 @@
       ],
       "Self-destruction set": [
         "自毀設定"
+      ],
+      "Thanks for the feedback!": [
+        "感謝您的回饋意見！"
       ],
       "Undo in progress": [
         "復原進行中"
