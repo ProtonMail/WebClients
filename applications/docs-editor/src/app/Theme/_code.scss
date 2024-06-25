@@ -1,5 +1,9 @@
 .Lexical__code {
 	display: block;
+	font-size: 1em;
+	padding: 0.75rem;
+	border-radius: 0.25rem;
+	border: 1px solid var(--border-weak);
 }
 
 .Lexical__tokenComment {
