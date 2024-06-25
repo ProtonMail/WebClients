@@ -6312,6 +6312,14 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -6333,14 +6341,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -6570,7 +6570,7 @@
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
       "Generate emails with only a prompt": [
-        "Згенерыраваць лісты толькі з запытам"
+        "Генерыраваць лісты толькі з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -8613,47 +8613,6 @@
         "За ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ сховішча"
-      ],
-      "and 15 more premium features": [
-        "і яшчэ 15 прэміяльных функцый"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Папярэджанне ўцечкі даных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Настольная праграма"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
-      ],
-      "No ads or tracking": [
-        "Без рэкламы і праграм сачэння"
-      ],
-      "Short @pm.me email address": [
-        "Кароткі адрас электроннай пошты @pm.me"
-      ],
-      "Support our mission": [
-        "Падтрымайце нашу місію"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade your productivity": [
-        "Палепшыце сваю прадукцыйнасць"
-      ],
-      "We don't sell your data": [
-        "Мы не прадаём вашы даныя"
-      ],
-      "Your privacy is our mission": [
-        "Ваша прыватнасць з'яўляецца нашай місіяй"
-      ]
-    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Адзіная крыніца даходу ${ BRAND_NAME } - гэта падпіскі карыстальнікаў. Ваша падтрымка дазваляе нам заставацца незалежнымі і прасоўваць нашу місію па прыватнасці ў інтэрнэце, як неад'емнае права кожнага карыстальніка. Мы працягваем падтрымліваць актывістаў і арганізацыі, якія змагаюцца за прыватнасць і свабоду."
@@ -8845,7 +8804,7 @@
         "Запрошаныя ўдзельнікі будуць выдалены з вашай арганізацыі"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Забяспечвайце бяспеку сваёй каманды дзе б яны не былі з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
+        "Забяспечвайце бяспеку сваёй каманды дзе б яны не знаходзіліся з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
       ],
       "Learn more": [
         "Даведацца больш"
@@ -8893,7 +8852,7 @@
         "Адпраўляць лісты з далучэннямі"
       ],
       "Stay secure and connected anywhere": [
-        "Заставайцеся ў бяспецы і падключаным у любым месцы"
+        "Заставайцеся ў бяспецы і на сувязі ў любым месцы"
       ],
       "Support your compliance objectives": [
         "Падтрымка выканання вашых патрабаванняў"
@@ -8963,6 +8922,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "and 15 more premium features": [
+        "і яшчэ 15 прэміяльных функцый"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Аўтаматычная перасылка электроннай пошты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Папярэджанне ўцечкі даных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Дапамажыце нам захаваць інтэрнэт бяспечным і прыватным для кожнага. Палепшыце да платнага тарыфнага плана."
+      ],
+      "No ads or tracking": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Short @pm.me email address": [
+        "Кароткі адрас электроннай пошты @pm.me"
+      ],
+      "Support our mission": [
+        "Падтрымайце нашу місію"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade your productivity": [
+        "Палепшыце сваю прадукцыйнасць"
+      ],
+      "We don't sell your data": [
+        "Мы не прадаём вашы даныя"
+      ],
+      "Your privacy is our mission": [
+        "Ваша прыватнасць з'яўляецца нашай місіяй"
       ]
     },
     "Subscription renewal state": {

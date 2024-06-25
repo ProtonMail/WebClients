@@ -6107,6 +6107,14 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Account verwijderen"
@@ -6128,14 +6136,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -8216,47 +8216,6 @@
         "Voor ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB opslagruimte"
-      ],
-      "and 15 more premium features": [
-        "en 15 meer premium functies"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automatisch doorsturen van e-mail ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Datalek waarschuwingen ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Desktop-app"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
-      ],
-      "No ads or tracking": [
-        "Geen advertenties of tracking"
-      ],
-      "Short @pm.me email address": [
-        "Kort @pm.me e-mailadres"
-      ],
-      "Support our mission": [
-        "Steun onze missie"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade your productivity": [
-        "Upgrade uw productiviteit"
-      ],
-      "We don't sell your data": [
-        "Wij verkopen uw data niet"
-      ],
-      "Your privacy is our mission": [
-        "Uw privacy is onze missie"
-      ]
-    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } zijn enige bron van inkomsten is abonnementen van gebruikers. Uw steun stelt ons in staat om onafhankelijk te blijven, vooruitgang te boeken op onze missie om privacy de standaard van online te maken en doorgaan met het steunen van activisten en organisaties die strijden voor privacy en vrijheid."
@@ -8372,6 +8331,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Uw eigen korte @pm.me e-mailalias"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "and 15 more premium features": [
+        "en 15 meer premium functies"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automatisch doorsturen van e-mail ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Datalek waarschuwingen ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Help ons het internet veilig en privé te houden voor iedereen. Upgrade naar een betaald abonnement."
+      ],
+      "No ads or tracking": [
+        "Geen advertenties of tracking"
+      ],
+      "Short @pm.me email address": [
+        "Kort @pm.me e-mailadres"
+      ],
+      "Support our mission": [
+        "Steun onze missie"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade your productivity": [
+        "Upgrade uw productiviteit"
+      ],
+      "We don't sell your data": [
+        "Wij verkopen uw data niet"
+      ],
+      "Your privacy is our mission": [
+        "Uw privacy is onze missie"
       ]
     },
     "Subscription renewal state": {

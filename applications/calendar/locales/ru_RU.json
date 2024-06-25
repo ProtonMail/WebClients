@@ -6206,6 +6206,14 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -6227,14 +6235,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -8361,47 +8361,6 @@
         "Для ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 ГБ хранилища"
-      ],
-      "and 15 more premium features": [
-        "и еще 15 платных функций"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Автоматическая переадресация электронной почты ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Оповещения об утечках данных ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Приложение для настольных компьютеров"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
-      ],
-      "No ads or tracking": [
-        "Нет рекламы или отслеживания"
-      ],
-      "Short @pm.me email address": [
-        "Короткий адрес электронной почты @pm.me"
-      ],
-      "Support our mission": [
-        "Поддержите нашу миссию"
-      ],
-      "Upgrade": [
-        "Сменить тариф"
-      ],
-      "Upgrade your productivity": [
-        "Повысьте свою производительность"
-      ],
-      "We don't sell your data": [
-        "Мы не продаем ваши данные"
-      ],
-      "Your privacy is our mission": [
-        "Ваша приватность является нашей задачей"
-      ]
-    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "Единственным источником дохода ${ BRAND_NAME } являются подписки пользователей. Ваша поддержка позволяет нам оставаться независимыми, продвигать нашу миссию по обеспечению приватности по умолчанию в Интернете и продолжать поддерживать активистов и организации, борющиеся за неприкосновенность частной жизни и свободу."
@@ -8564,6 +8523,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Ваш собственный короткий псевдоним электронной почты @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
+      "and 15 more premium features": [
+        "и еще 15 платных функций"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Автоматическая переадресация электронной почты ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Оповещения об утечках данных ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Приложение для настольных компьютеров"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Помогите нам сохранить Интернет безопасным и приватным для всех. Улучшите до платного плана."
+      ],
+      "No ads or tracking": [
+        "Нет рекламы или отслеживания"
+      ],
+      "Short @pm.me email address": [
+        "Короткий адрес электронной почты @pm.me"
+      ],
+      "Support our mission": [
+        "Поддержите нашу миссию"
+      ],
+      "Upgrade": [
+        "Сменить тариф"
+      ],
+      "Upgrade your productivity": [
+        "Повысьте свою производительность"
+      ],
+      "We don't sell your data": [
+        "Мы не продаем ваши данные"
+      ],
+      "Your privacy is our mission": [
+        "Ваша приватность является нашей задачей"
       ]
     },
     "Subscription renewal state": {
