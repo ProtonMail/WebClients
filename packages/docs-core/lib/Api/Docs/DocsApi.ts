@@ -9,7 +9,6 @@ import {
   seedInitialCommit,
   squashCommit,
   lockDocument,
-  DocsApiErrorCode,
 } from '@proton/shared/lib/api/docs'
 import { CreateValetTokenResponse } from '../Types/CreateValetTokenResponse'
 import { DocumentMetaInterface } from '@proton/docs-shared'
@@ -122,8 +121,7 @@ export class DocsApi {
     } catch (error) {
       const errorCode = getApiError(error).code
       return ApiResult.fail({
-        /** @TODO Remove hardcoded code once new API is deployed which has the right error code */
-        code: errorCode > 0 ? errorCode : DocsApiErrorCode.CommitIdOutOfSync,
+        code: errorCode > 0 ? errorCode : 0,
         message: getErrorString(error) || 'Unknown error',
       })
     }
