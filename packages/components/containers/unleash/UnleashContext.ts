@@ -69,8 +69,7 @@ enum DriveFeatureFlag {
     // Download
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
-    // Upload
-    DriveWebOptimisticUploadEnabled = 'DriveWebOptimisticUploadEnabled',
+    // Docs
     DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',
     DocsAppSwitcher = 'DocsAppSwitcher',
