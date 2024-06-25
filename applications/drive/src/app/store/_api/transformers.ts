@@ -1,5 +1,6 @@
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
@@ -40,6 +41,8 @@ type LinkMetaWithShareURL = LinkMeta & {
 };
 
 export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: string): EncryptedLink {
+    const isDocument = link.Type === LinkType.FILE && isProtonDocument(link.MIMEType);
+
     return {
         linkId: link.LinkID,
         parentLinkId: link.ParentLinkID,
@@ -51,7 +54,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         name: link.Name,
         nameSignatureAddress: link.NameSignatureEmail,
         mimeType: link.MIMEType,
-        size: link.Size,
+        size: isDocument ? link.DocumentProperties?.Size || link.Size : link.Size,
         hash: link.Hash,
         activeRevision: link.FileProperties?.ActiveRevision
             ? {
