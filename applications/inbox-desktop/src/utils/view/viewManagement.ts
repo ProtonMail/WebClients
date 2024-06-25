@@ -1,16 +1,17 @@
 import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
 import { getSettings, saveSettings } from "../../store/settingsStore";
+import { updateDownloaded } from "../../update";
 import { getConfig } from "../config";
+import { CHANGE_VIEW_TARGET } from "../external/packages/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
+import { mainLogger, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
+import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
-import { macOSExitEvent, windowsExitEvent } from "./windowClose";
-import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
-import { mainLogger, viewLogger } from "../log";
-import { CHANGE_VIEW_TARGET } from "../external/packages/shared/lib/desktop/desktopTypes";
+import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
@@ -39,9 +40,19 @@ export const viewCreationAppStartup = (session: Session) => {
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
     setTimeout(() => showView("mail"), delay);
 
-    mainWindow.on("close", (ev) => {
-        macOSExitEvent(mainWindow!, ev);
-        windowsExitEvent(mainWindow!, ev);
+    mainWindow.on("close", (event) => {
+        // We don't want to prevent the close event if the update is downloaded
+        if (updateDownloaded) {
+            return;
+        }
+
+        event.preventDefault();
+
+        if (isMac) {
+            macOSExitEvent(mainWindow!);
+        } else {
+            windowsAndLinuxExitEvent(mainWindow!);
+        }
     });
 
     return mainWindow;
