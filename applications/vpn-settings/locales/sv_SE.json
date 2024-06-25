@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Öppna i ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -2102,7 +2105,7 @@
       "Code wrong or not valid anymore": [
         "Kod fel eller inte giltig längre"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Kunde inte ladda fakturor. Försök igen senare."
       ],
       "Domain not available, try again later": [
@@ -3985,9 +3988,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denna verifiering kan ta upp till en timme. Efter lyckad verifiering, ta inte bort TXT-posten eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
       ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Detta kommer avbryta den tidigare inbjudan och skicka en ny till **${ email }**."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
@@ -4008,6 +4008,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Detta kommer att ersätta ditt temporära lösenord. Du kommer att använda det för att komma åt ditt ${ BRAND_NAME }-konto i framtiden."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Detta kommer att skicka en ny inbjudan till **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Detta kommer att logga ut dig från alla aktiva sessioner och inaktivera 2-faktors autentisering."
@@ -8725,9 +8728,6 @@
       "Plans": [
         "Paket"
       ],
-      "Policies": [
-        "Policyer"
-      ],
       "Preview": [
         "Förhandsgranska"
       ],
@@ -9136,9 +9136,6 @@
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
       ],
-      "AI": [
-        "AI"
-      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Inbjudan skickad, inväntar svar från den inbjudna medlemmen"
       ],
@@ -9156,6 +9153,9 @@
       ],
       "SSO user provided by your identity provider": [
         "SSO-användare tillhandahållen av din identitetsleverantör"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ]
     },
     "Validation": {

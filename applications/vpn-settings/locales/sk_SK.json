@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Otvoriť v ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Otvoriť menu"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Poslať moje používateľské meno"
       ],
+      "Send new invite": [
+        "Odoslať novú pozvánku"
+      ],
       "Send reminder": [
         "Poslať pripomenutie"
       ],
@@ -598,6 +604,9 @@
       ],
       "Verify code again": [
         "Znovu overiť kód"
+      ],
+      "Verify domain": [
+        "Overiť doménu"
       ],
       "View": [
         "Zobraziť"
@@ -2124,7 +2133,7 @@
       "Code wrong or not valid anymore": [
         "Nesprávny alebo neplatný kód"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Nie je možné načítať faktúry. Skúste to neskôr, prosím."
       ],
       "Domain not available, try again later": [
@@ -2132,6 +2141,9 @@
       ],
       "Email address is invalid": [
         "Emailová adresa je neplatná"
+      ],
+      "Email address is not available": [
+        "Emailová adresa je nedostupná"
       ],
       "Email is not valid": [
         "Emailová adresa nie je platná"
@@ -2207,6 +2219,9 @@
       ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Na vytvorenie pozvaných používateľov musí byť aktivovaný kľúč organizácie"
       ],
       "Organization key must be activated to create non-private users": [
         "Na vytvorenie nesúkromných používateľov musí byť aktivovaný kľúč organizácie"
@@ -4047,6 +4062,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento užívateľ je aktuálne zodpovedný za platby vo vašej organizácii. Znížením úrovne tohto užívateľa sa stanete zodpovedným za platby vo vašej organizácii práve vy."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Toto overenie môže trvať až jednu hodinu. Po úspešnom overení neodstraňujte záznam TXT, pretože je potrebný na potvrdenie, že doménu naďalej vlastníte."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Týmto sa zruší vaše aktuálne platené predplatné a stratíte všetky nahromadené vernostné výhody."
       ],
@@ -4076,6 +4094,9 @@
       ],
       "to ${ product } Business": [
         "na ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Ak chcete povoliť doméne **${ domainName }** používať SAML SSO, musíte overiť jej vlastníctvo pridaním nasledujúceho záznamu DNS TXT do vašej domény v poskytovateľovi DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Pre zrušenie predplatného sa nám ozvite, prosím.\n"
@@ -4320,6 +4341,18 @@
         "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov.",
         "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupnej používateľskej licencie a ${ usedAI } z vašej ${ maxAI } dostupnej licencie asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašej ${ maxAI } dostupnej licencie asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupnej používateľskej licencie.",
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
@@ -4394,6 +4427,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Po prijatí pozvánky budete môcť používateľa povýšiť na správcu alebo ho urobiť súkromným."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
@@ -5311,11 +5347,17 @@
       "Delete": [
         "Odstrániť"
       ],
+      "Delete and revoke invite": [
+        "Vymazať a zrušiť pozvánku"
+      ],
       "Edit": [
         "Upraviť"
       ],
       "Remove": [
         "Odstrániť"
+      ],
+      "Resend invite link": [
+        "Znovu poslať pozývací odkaz"
       ],
       "Revoke sessions": [
         "Odhlásiť sa z relácií"
@@ -7001,6 +7043,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Predpoklad:** Na umožnenie poskytovania SCIM musí byť nakonfigurované overovanie SAML."
       ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Predpoklad:** ak chcete povoliť poskytovanie SCIM, musíte overiť vlastníctvo domény **${ domainName }**. Toto overenie môže trvať až jednu hodinu."
+      ],
       "Enter token into your identity provider": [
         "Zadajte token do vášho poskytovateľa identity"
       ],
@@ -8436,6 +8481,9 @@
       "Domain deleted": [
         "Doména bola odstránená"
       ],
+      "Invitation resent": [
+        "Pozvánka bola opätovne odoslaná"
+      ],
       "Sessions revoked": [
         "Relácia zrušená"
       ],
@@ -8530,6 +8578,9 @@
       ],
       "Email addresses": [
         "Emailové adresy"
+      ],
+      "Invitation email": [
+        "Pozývací email"
       ],
       "Name": [
         "Meno"
@@ -8958,9 +9009,6 @@
       "Plans": [
         "Plány"
       ],
-      "Policies": [
-        "Pravidlá"
-      ],
       "Preview": [
         "Náhľad"
       ],
@@ -9020,6 +9068,9 @@
       ],
       "Send email reminders?": [
         "Poslať pripomenutia emailom?"
+      ],
+      "Send new invite?": [
+        "Odoslať novú pozvánku?"
       ],
       "Set new password": [
         "Nastaviť nové heslo"
@@ -9300,6 +9351,94 @@
       ],
       "Primary admin": [
         "Hlavný správca"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresa"
+      ],
+      "Add multiple users": [
+        "Používať viacerých používateľov"
+      ],
+      "Add new user": [
+        "Pridať nového používateľa"
+      ],
+      "Admin": [
+        "Administrátor"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Na túto emailovú adresu bude odoslaná pozvánka."
+      ],
+      "Cancel": [
+        "Zrušiť"
+      ],
+      "Confirm password": [
+        "Potvrďte heslo"
+      ],
+      "Create password": [
+        "Vytvoriť heslo"
+      ],
+      "Create password instead": [
+        "Namiesto toho vytvoriť heslo"
+      ],
+      "Create user": [
+        "Vytvoriť používateľa"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Name": [
+        "Meno"
+      ],
+      "Optional": [
+        "Voliteľné"
+      ],
+      "Private": [
+        "Súkromné"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."
+      ],
+      "Send invite link via email instead": [
+        "Radšej poslať pozvánku cez email"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Týmto sa vytvorí nová ${ MAIL_APP_NAME } adresa."
+      ],
+      "User created": [
+        "Používateľ vytvorený"
+      ],
+      "VPN connections": [
+        "VPN pripojenia"
+      ],
+      "Writing assistant": [
+        "Asistent písania"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administrátori nemajú prístup k údajom súkromných používateľov"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Pozvánka odoslaná, čaká sa na odpoveď od pozvaného člena"
+      ],
+      "Invite sent": [
+        "Pozvánka odoslaná"
+      ],
+      "It's you": [
+        "Ste to vy"
+      ],
+      "Private": [
+        "Súkromné"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "SSO používateľ poskytnutý poskytovateľom identity"
+      ],
+      "Writing assistant": [
+        "Asistent písania"
       ]
     },
     "Validation": {

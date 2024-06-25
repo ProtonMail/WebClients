@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Åbn i ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
@@ -2112,8 +2115,8 @@
       "Code wrong or not valid anymore": [
         "Kode forkert eller ikke længere gyldig"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Fakturaer kunne ikke indlæses. Prøv venligst igen senere."
+      "Couldn't load invoices. Please try again later.": [
+        "Fakturaindlæsning mislykkedes. Prøv igen senere."
       ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
@@ -3984,9 +3987,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne bekræftelse kan tage op til en time. Efter en vellykket bekræftelse må du ikke fjerne TXT-posten, da den skal bruges til at bekræfte, at du fortsat ejer domænet."
       ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Dette vil annullere den tidligere invitation og sende en ny til **${ email }**."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil opsige dit nuværende betalte abonnement, og du vil miste alle de loyalitetsfordele, du har optjent."
       ],
@@ -4260,6 +4260,14 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Du bruger i øjeblikket ${ ipCount } af din ${ ipAddresses } tilgængelig dedikeret server.",
         "Du bruger i øjeblikket ${ ipCount } af dine ${ ipAddresses } tilgængelige dedikerede servere."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ${ usedAI } af din ${ maxAI } tilgængelige licens til skriveassistent.",
+        "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser og ${ usedAI } af dine ${ maxAI } tilgængelige skriveassistentlicenser."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ingen af din ${ maxAI } tilgængelige skriveassistentlicens.",
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ingen af din ${ maxAI } tilgængelige skriveassistentlicenser."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens.",
@@ -8768,9 +8776,6 @@
       "Plans": [
         "Abonnementer"
       ],
-      "Policies": [
-        "Retningslinjer"
-      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -9179,9 +9184,6 @@
       "Administrators can't access the data of private users": [
         "Administratorer kan ikke tilgå private brugeres data"
       ],
-      "AI": [
-        "AI"
-      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitation sendt, afventer svar fra det inviterede medlem"
       ],
@@ -9199,6 +9201,9 @@
       ],
       "SSO user provided by your identity provider": [
         "SSO-bruger leveret af din identitetsudbyder"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
       ]
     },
     "Validation": {

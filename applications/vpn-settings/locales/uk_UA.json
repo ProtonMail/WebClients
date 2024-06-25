@@ -320,6 +320,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Відкрити в ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Відкрити панель навігації"
       ],
@@ -2074,9 +2077,6 @@
       "Code wrong or not valid anymore": [
         "Код неправильний або недійсний"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Не вдалося завантажити рахунки. Повторіть спробу пізніше."
-      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
@@ -3760,11 +3760,17 @@
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Попередній перегляд документів поки що не підтримується. Будь ласка, відкрийте документ для його перегляду."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
       "Protected by Swiss privacy laws": [
         "Захищено швейцарським законодавством про приватність"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Загальний доступ до документів ще не підтримується. Попросіть власника запросити вас безпосередньо до документа."
       ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
@@ -8925,6 +8931,37 @@
       ],
       "Primary admin": [
         "Головний адміністратор"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } адреса"
+      ],
+      "Add multiple users": [
+        "Додати кількох користувачів"
+      ],
+      "Confirm password": [
+        "Підтвердити пароль"
+      ],
+      "Create password": [
+        "Створити пароль"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Повідомте користувачам їхні дані для входу."
+      ],
+      "VPN connections": [
+        "VPN-з'єднання"
+      ],
+      "Writing assistant": [
+        "Помічник з написання"
+      ]
+    },
+    "Users table: badge": {
+      "SSO user provided by your identity provider": [
+        "Користувач SSO, наданий вашим провайдером ідентифікації"
+      ],
+      "Writing assistant": [
+        "Помічник з написання"
       ]
     },
     "Validation": {

@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Deschidere în ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
       ],
+      "Send new invite": [
+        "Trimitere invitație nouă"
+      ],
       "Send reminder": [
         "Trimitere notificare"
       ],
@@ -598,6 +604,9 @@
       ],
       "Verify code again": [
         "Verificați codul din nou"
+      ],
+      "Verify domain": [
+        "Verificare domeniu"
       ],
       "View": [
         "Afișare"
@@ -2115,7 +2124,7 @@
       "Code wrong or not valid anymore": [
         "Cod greşit sau nu mai e valid."
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Nu s-au putut încărca facturile. Mai reîncercați."
       ],
       "Domain not available, try again later": [
@@ -2123,6 +2132,9 @@
       ],
       "Email address is invalid": [
         "Adresa de e-mail nu este validă."
+      ],
+      "Email address is not available": [
+        "Adresa de e-mail nu e disponibilă"
       ],
       "Email is not valid": [
         "E-mailul nu este valid"
@@ -2198,6 +2210,9 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
       ],
       "Organization key must be activated to create non-private users": [
         "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
@@ -3793,11 +3808,17 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Examinare documentelor nu este încă acceptată. Deschideți documentul pentru a-l vizualiza."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Partajarea publică a documentelor nu este încă acceptată. Solicitați proprietarului să vă invite direct la document."
       ],
       "read our two-factor authentication guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
@@ -4005,6 +4026,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Această verificare poate dura până la o oră. După confirmarea verificării, nu eliminați înregistrarea TXT, deoarece este necesară pentru a confirma că dețineți în continuare domeniul."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
       ],
@@ -4034,6 +4058,9 @@
       ],
       "to ${ product } Business": [
         "la ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Pentru a permite domeniului **${ domainName }** să utilizeze SAML SSO, trebuie să verificați calitatea de proprietar a acestuia adăugând următoarea înregistrare DNS TXT la domeniul propriu la furnizorul de DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Pentru a anula abonamentul, contactați-ne."
@@ -4277,6 +4304,16 @@
         "Momentan folosiți ${ ipCount } din ${ ipAddresses } servere dedicate disponibile.",
         "Momentan folosiți ${ ipCount } din ${ ipAddresses } de servere dedicate disponibile."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licență de utilizator disponibilă și ${ usedAI } din ${ maxAI } licență disponibilă pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licențe de utilizator disponibile și ${ usedAI } din ${ maxAI } licențe disponibile pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } de licențe de utilizator disponibile și ${ usedAI } din ${ maxAI } de licențe disponibile pentru asistentul de scriere."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licență de utilizator disponibilă și niciuna din ${ maxAI } licență disponibilă pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licențe de utilizator disponibile și niciuna dintre cele ${ maxAI } licențe disponibile pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } de licențe de utilizator disponibile și niciuna dintre cele ${ maxAI } de licențe disponibile pentru asistentul de scriere."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
         "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
@@ -4347,6 +4384,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceţi clic pe butonul de mai jos."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Veți putea promova utilizatorul ca administrator sau să-l faceți privat după ce a acceptat invitația."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
@@ -5081,6 +5121,9 @@
       "Create account": [
         "Creare cont"
       ],
+      "Don't have access to your 2FA?": [
+        "Nu aveți acces la A2F?"
+      ],
       "Forgot password?": [
         "Ați uitat parola?"
       ],
@@ -5260,11 +5303,17 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete and revoke invite": [
+        "Anulare și ștergere invitație"
+      ],
       "Edit": [
         "Editare"
       ],
       "Remove": [
         "Eliminare"
+      ],
+      "Resend invite link": [
+        "Retrimitere legătură web invitație"
       ],
       "Revoke sessions": [
         "Anulare sesiuni"
@@ -6943,6 +6992,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Cerință preliminară:** autentificarea SAML trebuie configurată pentru a activa furnizarea SCIM."
       ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Cerință preliminară:** pentru a activa furnizarea SCIM, trebuie să verificați calitatea de proprietar al domeniului **${ domainName }**. Această verificare poate dura până la o oră."
+      ],
       "Enter token into your identity provider": [
         "Introduceți codul de acces în furnizorul dvs. de identitate."
       ],
@@ -8341,6 +8393,9 @@
       "Domain deleted": [
         "Domeniu șters"
       ],
+      "Invitation resent": [
+        "Invitația a fost retrimisă."
+      ],
       "Sessions revoked": [
         "Sesiuni anulate"
       ],
@@ -8435,6 +8490,9 @@
       ],
       "Email addresses": [
         "Adrese de e-mail"
+      ],
+      "Invitation email": [
+        "E-mail de invitare"
       ],
       "Name": [
         "Nume"
@@ -8860,9 +8918,6 @@
       "Plans": [
         "Planuri"
       ],
-      "Policies": [
-        "Politici"
-      ],
       "Preview": [
         "Examinare"
       ],
@@ -8922,6 +8977,9 @@
       ],
       "Send email reminders?": [
         "Trimiteți notificări pe e-mail?"
+      ],
+      "Send new invite?": [
+        "Trimiteți o invitație nouă?"
       ],
       "Set new password": [
         "Setare parolă nouă"
@@ -9201,6 +9259,94 @@
       ],
       "Primary admin": [
         "Administrator principal"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "Adresa ${ BRAND_NAME }"
+      ],
+      "Add multiple users": [
+        "Adăugare utilizatori multipli"
+      ],
+      "Add new user": [
+        "Adăugare utilizator"
+      ],
+      "Admin": [
+        "Administrator"
+      ],
+      "An invitation will be sent to this email address.": [
+        "O invitație va fi trimisă la această adresă de e-mail."
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Confirm password": [
+        "Confirmare parolă"
+      ],
+      "Create password": [
+        "Creare parolă"
+      ],
+      "Create password instead": [
+        "Creați în schimb o parolă"
+      ],
+      "Create user": [
+        "Creare utilizator"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Optional": [
+        "Opțional"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
+      ],
+      "Send invite link via email instead": [
+        "Trimiteți în schimb legătura web de invitație prin e-mail"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Aceasta va crea o nouă adresă ${ MAIL_APP_NAME }."
+      ],
+      "User created": [
+        "Utilizator creat"
+      ],
+      "VPN connections": [
+        "Conexiuni VPN"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administratorii nu pot accesa datele utilizatorilor privați."
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Invitația s-a trimis. Se așteaptă răspunsul de la membrul invitat."
+      ],
+      "Invite sent": [
+        "Invitație trimisă"
+      ],
+      "It's you": [
+        "Sunt eu"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "SSO": [
+        "Autentificare unică (SSO)"
+      ],
+      "SSO user provided by your identity provider": [
+        "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
       ]
     },
     "Validation": {
