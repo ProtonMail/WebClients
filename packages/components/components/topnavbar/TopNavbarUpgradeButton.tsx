@@ -47,7 +47,7 @@ const useUpgradeButtonExpirationDate = () => {
         return expirationDate < now;
     }, [expirationDate]);
 
-    return { isExpired, setExpirationDate };
+    return { isExpired, setExpirationDate, loadingExpiration: expirationDateFeature.loading };
 };
 
 const TopNavbarUpgradeButton = ({ app }: Props) => {
@@ -56,7 +56,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const location = useLocation();
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
-    const { isExpired, setExpirationDate } = useUpgradeButtonExpirationDate();
+    const { isExpired, setExpirationDate, loadingExpiration } = useUpgradeButtonExpirationDate();
 
     const upgradePathname = getUpgradePath({ user, subscription, app: APP_NAME });
 
@@ -66,10 +66,15 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
         return (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname) && isExpired();
     }, [isExpired]);
 
-    const [displayUpgradeButton, setDisplayUpgradeButton] = useState(() => {
-        // We want to have metrics from where the user has clicked on the upgrade button
-        return check();
-    });
+    const [displayUpgradeButton, setDisplayUpgradeButton] = useState(false);
+
+    useEffect(() => {
+        if (loadingExpiration) {
+            return;
+        }
+
+        setDisplayUpgradeButton(check());
+    }, [loadingExpiration]);
 
     useEffect(() => {
         // we check every hour if cookie has expired
