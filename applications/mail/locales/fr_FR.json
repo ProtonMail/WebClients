@@ -384,9 +384,6 @@
       "Download ${ attachmentName }": [
         "Télécharger ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Télécharger l’application de bureau"
-      ],
       "Download now": [
         "Télécharger"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Ouvrir l'éditeur"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Ouvrir dans ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Ouvrir la navigation"
       ],
@@ -945,6 +945,9 @@
       ],
       "Reply securely": [
         "Répondre en toute sécurité"
+      ],
+      "Report a good content": [
+        "Signaler un contenu de qualité"
       ],
       "Report a problem": [
         "Signaler un bug"
@@ -1206,6 +1209,10 @@
       ],
       "Trust": [
         "Faire confiance"
+      ],
+      "Trust key": [
+        "Approuver la clé",
+        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1513,29 +1520,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Rapide et sécurisé"
+      "Fast and secure. No logs are kept.": [
+        "Rapide et sécurisé. Aucune trace de vos activités n'est conservée."
       ],
-      "Needs compatible hardware": [
-        "Un matériel compatible est nécessaire."
-      ],
-      "No logs": [
-        "Aucun journal"
-      ],
-      "Requires one-time download": [
-        "Nécessite un seul téléchargement."
+      "Requires a one-time download and compatible hardware.": [
+        "Nécessite un seul téléchargement et le matériel compatible."
       ],
       "Run locally": [
         "Exécuter sur cet appareil"
       ],
       "Run on servers": [
         "Exécuter sur les serveurs"
-      ],
-      "Runs on all devices": [
-        "Fonctionne sur tous les appareils"
-      ],
-      "Runs on your device": [
-        "Fonctionne sur votre appareil"
       ]
     },
     "Attached ics file error": {
@@ -3965,7 +3960,7 @@
         "Indiquez un prénom, un nom de famille ou un nom d'affichage."
       ],
       "Please select a category and what went wrong with the generated text": [
-        "Sélectionnez une catégorie et ce qui n'allait pas avec le texte généré"
+        "Sélectionnez une catégorie et ce qui n'a pas fonctionné avec le texte généré."
       ],
       "Please try generating the text again": [
         "Essayez à nouveau de générer du texte."
@@ -4062,7 +4057,7 @@
         "L'onglet est fermé."
       ],
       "Thanks for the feedback!": [
-        "Merci pour vos commentaires!"
+        "Merci pour les commentaires."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "La pièce jointe n'a pas pu être déchiffrée.\nSi vous avez la clé privée correspondante, vous aurez toujours la possibilité de déchiffrer le fichier avec un programme tel que GnuPG.",
@@ -4097,6 +4092,9 @@
       ],
       "The sending key is not valid": [
         "La clé d'envoi n'est pas valide."
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Le système est occupé pour le moment. Nous vous invitons à réessayer dans quelques minutes."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "L'assistant d'écriture ne peut pas traiter votre demande. Veuillez essayer un autre prompt."
@@ -5536,6 +5534,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } à propos de l'assistant d'écriture de ${ BRAND_NAME }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
         "${ providerFoldersNumLocalized } dossiers trouvés"
@@ -6070,8 +6071,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pour avoir plus de résultats, essayez de faire une recherche avec ce mot-clé dans le contenu de vos messages."
       ],
-      "Free for 14 days": [
-        "Gratuit pendant 14 jours"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Gratuit pendant ${ ASSISTANT_TRIAL_TIME_DAYS } jours"
       ],
       "From": [
         "De"
@@ -6207,14 +6208,11 @@
       "Learn more": [
         "En savoir plus"
       ],
-      "Learn more about ${ PrivacyLink }": [
-        "En savoir plus sur ${ PrivacyLink }"
-      ],
       "Left to Right": [
         "De gauche à droite"
       ],
       "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Permettez à l'assistant d'écriture de vous aider à rédiger et à répondre à vos e-mails et maximisez votre productivité."
+        "L'assistant d'écriture vous aide à rédiger et à répondre à vos e-mails et maximisez ainsi votre productivité."
       ],
       "Link type": [
         "Type de lien"
@@ -6375,6 +6373,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "Vous ne pouvez ouvrir qu'un seul assistant d'écriture à la fois."
+      ],
       "Open shortcut cheat sheet": [
         "Ouvrir l'aide-mémoire des raccourcis"
       ],
@@ -6449,7 +6450,7 @@
         "Veuillez indiquer le problème."
       ],
       "Please share what you expected": [
-        "Veuillez partager ce à quoi vous vous attendiez."
+        "Veuillez partager le résultat attendu."
       ],
       "Please try again in a few moments": [
         "Réessayez dans quelques instants."
@@ -7059,7 +7060,7 @@
         "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
       "Writing assistant": [
-        "Assistant à la rédaction"
+        "Assistant d'écriture"
       ],
       "Writing assistant add-on": [
         "Extension Assistant d'écriture"
@@ -7113,9 +7114,6 @@
       ],
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
-      ],
-      "You can open only one writing assistant at a time": [
-        "Vous ne pouvez ouvrir qu'un seul assistant d'écriture à la fois."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
@@ -7246,11 +7244,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Téléchargez l'application de bureau ${ MAIL_APP_NAME } ou tentez de l'exécuter depuis des serveurs."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs ."
+        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
@@ -7757,7 +7752,7 @@
         "Densité"
       ],
       "Did not follow instructions": [
-        "Les instructions n'ont pas été suivies"
+        "Les instructions n'ont pas été suivies."
       ],
       "Do you have any suggestions for our team?": [
         "Avez-vous des suggestions pour notre équipe ?"
@@ -7937,7 +7932,7 @@
         "Aucun label n'a été trouvé."
       ],
       "Not factually correct": [
-        "Les faits ne sont pas corrects"
+        "Les faits ne sont pas corrects."
       ],
       "Note": [
         "Note"
@@ -8227,9 +8222,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "La confidentialité de pointe de ${ BRAND_NAME }"
-      ],
       "Add a gift code": [
         "Ajouter un code-cadeau"
       ],
@@ -9040,7 +9032,7 @@
         "Sécurité des mots de passe"
       ],
       "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser les informations de connexion"
+        "Gestionnaire de mots de passe pour sécuriser les identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -9077,7 +9069,7 @@
         "Prise en charge des routeurs"
       ],
       "Save time emailing": [
-        "Gagner du temps lors de l'envoi de vos messages"
+        "Gagnez du temps lors de l'envoi de vos messages"
       ],
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
@@ -9183,7 +9175,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "User storage management": [
-        "Gestion de l'espace de stockage de l'utilisateur"
+        "Gestion de l'espace de stockage des utilisateurs"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
@@ -9897,6 +9889,9 @@
       "A way to contact you": [
         "Un moyen de vous contacter"
       ],
+      "Describe what to change": [
+        "Décrivez les modifications à apporter"
+      ],
       "E.g., ": [
         "Par exemple, "
       ],
@@ -9929,9 +9924,6 @@
       ],
       "Hint": [
         "Indice"
-      ],
-      "How do you want the selected text modified?": [
-        "Comment souhaitez-vous modifier le texte sélectionné ?"
       ],
       "Image URL": [
         "URL de l'image"
@@ -10012,7 +10004,7 @@
         "Pour"
       ],
       "Try “Announce upcoming events in a newsletter”": [
-        "Essayez \"Annoncer les prochains évènements dans une lettre d'information\""
+        "Essayez « Annoncer les prochains événements dans une newsletter »"
       ],
       "Try “Cancel my gym membership”": [
         "Essayez « Annuler mon abonnement à la salle de sport »"
@@ -11702,6 +11694,9 @@
       ],
       "Self-destruction set": [
         "L'autodestruction est programmée."
+      ],
+      "Thanks for the feedback!": [
+        "Merci pour vos commentaires !"
       ],
       "Undo in progress": [
         "Annulation en cours"

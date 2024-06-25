@@ -381,9 +381,6 @@
       "Download ${ attachmentName }": [
         "Ladda ner ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Ladda ner appen för stationär dator"
-      ],
       "Download now": [
         "Ladda ner nu"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Öppna redigeringsfönstret"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Öppna i ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -945,6 +945,9 @@
       ],
       "Reply securely": [
         "Svara säkert"
+      ],
+      "Report a good content": [
+        "Rapportera ett bra innehåll"
       ],
       "Report a problem": [
         "Rapportera ett problem"
@@ -1206,6 +1209,10 @@
       ],
       "Trust": [
         "Lita på"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1514,29 +1521,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Snabb och säker"
+      "Fast and secure. No logs are kept.": [
+        "Snabbt och säkert. Inga loggar förs."
       ],
-      "Needs compatible hardware": [
-        "Behöver kompatibel hårdvara"
-      ],
-      "No logs": [
-        "Inga loggar"
-      ],
-      "Requires one-time download": [
-        "Kräver engångsnedladdning"
+      "Requires a one-time download and compatible hardware.": [
+        "Kräver en engångsnedladdning och kompatibel hårdvara."
       ],
       "Run locally": [
         "Kör lokalt"
       ],
       "Run on servers": [
         "Kör på servrar"
-      ],
-      "Runs on all devices": [
-        "Körs på alla enheter"
-      ],
-      "Runs on your device": [
-        "Körs på din enhet"
       ]
     },
     "Attached ics file error": {
@@ -4095,6 +4090,9 @@
       "The sending key is not valid": [
         "Den skickande nyckeln är inte giltig"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Systemet är upptaget just nu. Försök igen om några minuter."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Skrivassistenten kan inte fortsätta med din förfrågan. Prova en annan prompt."
       ],
@@ -6081,8 +6079,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
       ],
-      "Free for 14 days": [
-        "Gratis i 14 dagar"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dagar"
       ],
       "From": [
         "Från"
@@ -6217,9 +6215,6 @@
       ],
       "Learn more": [
         "Lär dig mer"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Lär sig mer om ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Vänster till höger"
@@ -6385,6 +6380,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "Endast en skrivassistent kan vara öppen åt gången"
       ],
       "Open shortcut cheat sheet": [
         "Öppna bladet för genvägar"
@@ -7121,9 +7119,6 @@
       ],
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
-      ],
-      "You can open only one writing assistant at a time": [
-        "Du kan endast öppna en skrivassistent åt gången"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivera aviseringar för att få aviseringar när nya e-postmeddelanden kommer in i den här mappen."
@@ -8238,9 +8233,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME } branschledande integritet"
-      ],
       "Add a gift code": [
         "Lägg till en presentkod"
       ],
@@ -9904,6 +9896,9 @@
       "A way to contact you": [
         "Ett sätt att kontakta dig"
       ],
+      "Describe what to change": [
+        "Beskriv vad som ska ändras"
+      ],
       "E.g., ": [
         "T.ex., "
       ],
@@ -9936,9 +9931,6 @@
       ],
       "Hint": [
         "Ledtråd"
-      ],
-      "How do you want the selected text modified?": [
-        "Hur vill du att den markerade texten ändras?"
       ],
       "Image URL": [
         "Bild-URL"
@@ -11682,6 +11674,9 @@
       ],
       "Self-destruction set": [
         "Självförstörelse inställt"
+      ],
+      "Thanks for the feedback!": [
+        "Tack för feedbacken!"
       ],
       "Undo in progress": [
         "Ångra pågår"

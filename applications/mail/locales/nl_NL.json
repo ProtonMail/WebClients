@@ -372,9 +372,6 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } downloaden"
       ],
-      "Download Desktop App": [
-        "Desktop-app downloaden"
-      ],
       "Download now": [
         "Nu downloaden"
       ],
@@ -1186,6 +1183,10 @@
       "Trust": [
         "Vertrouwen"
       ],
+      "Trust key": [
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
+      ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
       ],
@@ -1483,12 +1484,6 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Snel en veilig"
-      ],
-      "No logs": [
-        "Geen logboeken"
-      ],
       "Run locally": [
         "Lokaal uitvoeren"
       ]
@@ -6019,9 +6014,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Probeer voor meer zoekresultaten op dit trefwoord te zoeken in de inhoud van uw e-mailberichten."
       ],
-      "Free for 14 days": [
-        "14 dagen gratis"
-      ],
       "From": [
         "Afzender"
       ],
@@ -6155,9 +6147,6 @@
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Leer meer over ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -7054,9 +7043,6 @@
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
-      "You can open only one writing assistant at a time": [
-        "U kunt slechts één schrijfassistent tegelijk openen"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
       ],
@@ -7185,9 +7171,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Uw browser ondersteunt de schrijfassistent niet. Download de ${ MAIL_APP_NAME } desktop-app of probeer het uit te voeren op servers."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Uw browser ondersteunt de schrijfassistent niet. Probeer het uit te voeren op servers."
@@ -8159,9 +8142,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME }'s toonaangevende privacy"
-      ],
       "Add a gift code": [
         "Voeg een geschenkcode toe"
       ],
@@ -11397,6 +11377,9 @@
       ],
       "Self-destruction set": [
         "Zelfvernietiging ingesteld"
+      ],
+      "Thanks for the feedback!": [
+        "Bedankt voor de feedback!"
       ],
       "Undo in progress": [
         "Bezig met ongedaan maken"

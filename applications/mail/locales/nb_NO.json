@@ -384,9 +384,6 @@
       "Download ${ attachmentName }": [
         "Last ned ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Last ned skrivebordsapp"
-      ],
       "Download now": [
         "Last ned nå"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Åpne skrivevinduet"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Åpne i ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -945,6 +945,9 @@
       ],
       "Reply securely": [
         "Svar sikkert"
+      ],
+      "Report a good content": [
+        "Rapportér et godt innhold"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -1206,6 +1209,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1513,29 +1520,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Rask og sikker"
+      "Fast and secure. No logs are kept.": [
+        "Raskt og sikkert. Det føres ingen logger."
       ],
-      "Needs compatible hardware": [
-        "Trenger kompatibel maskinvare"
-      ],
-      "No logs": [
-        "Ingen loggføring"
-      ],
-      "Requires one-time download": [
-        "Krever engangsnedlasting"
+      "Requires a one-time download and compatible hardware.": [
+        "Krever en engangs nedlasting og kompatibel maskinvare."
       ],
       "Run locally": [
         "Kjør lokalt"
       ],
       "Run on servers": [
         "Kjør på tjenere"
-      ],
-      "Runs on all devices": [
-        "Kjører på alle enheter"
-      ],
-      "Runs on your device": [
-        "Kjører på enheten din"
       ]
     },
     "Attached ics file error": {
@@ -4098,6 +4093,9 @@
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Systemet er travelt for øyeblikket. Vennligst prøv igjen om noen minutter."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Skriveassistenten kan ikke gå videre med forespørselen din. Prøv en annen ledetekst."
       ],
@@ -5536,6 +5534,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } om ${ BRAND_NAME }s skriveassistent"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe funnet",
         "${ providerFoldersNumLocalized } mapper funnet"
@@ -6070,8 +6071,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "For flere søkeresultater, prøv å søke etter dette nøkkelordet i innholdet til dine e-postmeldinger."
       ],
-      "Free for 14 days": [
-        "Gratis i 14 dager"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dager"
       ],
       "From": [
         "Fra"
@@ -6206,9 +6207,6 @@
       ],
       "Learn more": [
         "Lær mer"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Lær mer om ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Venstre til høyre"
@@ -6375,6 +6373,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "Bare én skriveassistent kan være åpen om gangen"
+      ],
       "Open shortcut cheat sheet": [
         "Åpne jukseark for snarveier"
       ],
@@ -6481,6 +6482,9 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning av denne filtypen er ikke støttet"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Forhåndsvisning av dokumenter støttes ikke enda. Åpne dokumentet for å se det."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gjeldende syklus-baserte rabatter og ikke-utløpte kuponger lagret på kontoen din."
       ],
@@ -6498,6 +6502,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Beskytt e-postadressen din fra å bli lekket til e-postlister eller utsendere av søppelpost med ${ maskMyEmailButton }."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Offentlig deling av dokumenter støttes ikke enda. Be eieren om å invitere deg direkte til dokumentet."
       ],
       "Recipient: ": [
         "Mottaker: "
@@ -7108,9 +7115,6 @@
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
       ],
-      "You can open only one writing assistant at a time": [
-        "Du kan bare åpne én skriveassistent om gangen"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -7239,9 +7243,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil bli oppdatert så snart betalingen er klarert."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Nettleseren din støtter ikke skriveassistenten. Last ned skrivebordsappen ${ MAIL_APP_NAME } eller prøv å kjøre den på tjenere."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Nettleseren din støtter ikke skriveassistenten. Prøv å kjøre den på tjenere."
@@ -8221,9 +8222,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME }s bransjeledende personvern"
-      ],
       "Add a gift code": [
         "Legg til gavekode"
       ],
@@ -9891,6 +9889,9 @@
       "A way to contact you": [
         "En måte å kontakte deg på"
       ],
+      "Describe what to change": [
+        "Beskriv hva som skal endres"
+      ],
       "E.g., ": [
         "F.eks. "
       ],
@@ -9923,9 +9924,6 @@
       ],
       "Hint": [
         "Hint"
-      ],
-      "How do you want the selected text modified?": [
-        "Hvordan vil du at den valgte teksten skal endres?"
       ],
       "Image URL": [
         "Bildenettadresse"
@@ -11696,6 +11694,9 @@
       ],
       "Self-destruction set": [
         "Selvdestruksjon angitt"
+      ],
+      "Thanks for the feedback!": [
+        "Takk for tilbakemeldingen!"
       ],
       "Undo in progress": [
         "Angre pågår"

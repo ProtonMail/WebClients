@@ -384,9 +384,6 @@
       "Download ${ attachmentName }": [
         "Scarica ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Scarica l'app per desktop"
-      ],
       "Download now": [
         "Scarica ora"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Apri il compositore"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Apri in ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -945,6 +945,9 @@
       ],
       "Reply securely": [
         "Rispondi in sicurezza"
+      ],
+      "Report a good content": [
+        "Segnala un buon contenuto"
       ],
       "Report a problem": [
         "Segnala un problema"
@@ -1206,6 +1209,10 @@
       ],
       "Trust": [
         "Considera attendibile"
+      ],
+      "Trust key": [
+        "Considera attendibile la chiave",
+        "Considera attendibili le chiavi"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -1513,29 +1520,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Veloce e sicuro"
+      "Fast and secure. No logs are kept.": [
+        "Veloce e sicuro. Senza la conservazione di log."
       ],
-      "Needs compatible hardware": [
-        "Richiede hardware compatibile"
-      ],
-      "No logs": [
-        "Nessun log"
-      ],
-      "Requires one-time download": [
-        "Richiede il download una tantum"
+      "Requires a one-time download and compatible hardware.": [
+        "Richiede un download una tantum e hardware compatibile."
       ],
       "Run locally": [
         "Eseguito localmente"
       ],
       "Run on servers": [
         "Eseguito su server"
-      ],
-      "Runs on all devices": [
-        "Funziona su tutti i dispositivi"
-      ],
-      "Runs on your device": [
-        "Funziona sul tuo dispositivo"
       ]
     },
     "Attached ics file error": {
@@ -4098,6 +4093,9 @@
       "The sending key is not valid": [
         "La chiave di invio non è valida"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Al momento il sistema è occupato. Riprova tra qualche minuto."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "L'assistente alla scrittura non può procedere con la richiesta. Prova a inserire una richiesta differente."
       ],
@@ -5536,6 +5534,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } sull'assistente alla scrittura di ${ BRAND_NAME }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } cartella trovata",
         "${ providerFoldersNumLocalized } cartelle trovate"
@@ -6070,8 +6071,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Per più risultati di ricerca, prova a cercare questa parola chiave nel contenuto dei tuoi messaggi email."
       ],
-      "Free for 14 days": [
-        "Gratis per 14 giorni"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Gratuito per ${ ASSISTANT_TRIAL_TIME_DAYS } giorni"
       ],
       "From": [
         "Da"
@@ -6206,9 +6207,6 @@
       ],
       "Learn more": [
         "Scopri di più"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Scopri di più su ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Da sinistra a destra"
@@ -6374,6 +6372,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "Puoi aprire un solo assistente alla scrittura per volta"
       ],
       "Open shortcut cheat sheet": [
         "Apri le istruzioni per le scorciatoie"
@@ -7114,9 +7115,6 @@
       "You can now return to the application to continue": [
         "Ora puoi tornare all'applicazione per continuare"
       ],
-      "You can open only one writing assistant at a time": [
-        "Puoi aprire un solo assistente alla scrittura per volta"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
@@ -7245,9 +7243,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Il tuo browser non supporta l'assistente alla scrittura. Scarica l'app desktop ${ MAIL_APP_NAME } o prova a eseguirla sui server."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Il tuo browser non supporta l'esecuzione locale dell'assistente alla scrittura. Prova a eseguirlo sui server."
@@ -8230,9 +8225,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "La privacy di ${ BRAND_NAME }, leader nel settore"
-      ],
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
@@ -9905,6 +9897,9 @@
       "A way to contact you": [
         "Un modo per contattarti"
       ],
+      "Describe what to change": [
+        "Descrivi cosa cambiare"
+      ],
       "E.g., ": [
         "Ad es "
       ],
@@ -9937,9 +9932,6 @@
       ],
       "Hint": [
         "Suggerimento"
-      ],
-      "How do you want the selected text modified?": [
-        "Come vuoi che venga modificato il testo selezionato?"
       ],
       "Image URL": [
         "URL dell'immagine"
@@ -11710,6 +11702,9 @@
       ],
       "Self-destruction set": [
         "Autodistruzione impostata"
+      ],
+      "Thanks for the feedback!": [
+        "Grazie per il feedback!"
       ],
       "Undo in progress": [
         "Annullamento in corso"
