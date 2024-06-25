@@ -358,9 +358,6 @@
       "Download ${ attachmentName }": [
         "下载 ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "下载桌面应用"
-      ],
       "Download now": [
         "立即下载"
       ],
@@ -787,6 +784,9 @@
       "Open composer": [
         "打开邮件编辑区"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "在 ${ DOCS_SHORT_APP_NAME } 中打开"
+      ],
       "Open navigation": [
         "打开导航栏"
       ],
@@ -1137,6 +1137,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任此密钥"
       ],
       "Trust public key": [
         "信任公钥"

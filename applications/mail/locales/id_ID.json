@@ -381,9 +381,6 @@
       "Download ${ attachmentName }": [
         "Unduh ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Unduh Aplikasi Desktop"
-      ],
       "Download now": [
         "Unduh sekarang"
       ],
@@ -831,6 +828,9 @@
       "Open composer": [
         "Buka komposer"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Buka di ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Buka navigasi"
       ],
@@ -941,6 +941,9 @@
       ],
       "Reply securely": [
         "Balas secara aman"
+      ],
+      "Report a good content": [
+        "Laporkan konten yang baik"
       ],
       "Report a problem": [
         "Laporkan masalah"
@@ -1202,6 +1205,9 @@
       ],
       "Trust": [
         "Percayai"
+      ],
+      "Trust key": [
+        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -1504,29 +1510,14 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Cepat dan aman"
-      ],
-      "Needs compatible hardware": [
-        "Memerlukan perangkat keras yang kompatibel"
-      ],
-      "No logs": [
-        "Tanpa log"
-      ],
-      "Requires one-time download": [
-        "Memerlukan unduhan sekali"
+      "Fast and secure. No logs are kept.": [
+        "Cepat dan aman. Tanpa log apa pun yang disimpan."
       ],
       "Run locally": [
         "Jalankan secara lokal"
       ],
       "Run on servers": [
         "Jalankan pada server"
-      ],
-      "Runs on all devices": [
-        "Bekerja pada semua perangkat"
-      ],
-      "Runs on your device": [
-        "Bekerja pada perangkat Anda"
       ]
     },
     "Attached ics file error": {
@@ -4069,6 +4060,9 @@
       "The sending key is not valid": [
         "Kunci pengiriman tidak valid"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Sistem sedang sibuk. Silakan coba lagi dalam beberapa menit."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Asisten penulisan tidak dapat memproses permintaan Anda. Silakan coba perintah yang berbeda."
       ],
@@ -5459,6 +5453,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } mengenai asisten penulisan ${ BRAND_NAME }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
@@ -5966,8 +5963,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Untuk hasil pencarian yang lebih banyak, cobalah untuk mencari kata kunci ini pada konten email Anda."
       ],
-      "Free for 14 days": [
-        "Gratis selama 14 hari"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Gratis untuk ${ ASSISTANT_TRIAL_TIME_DAYS } hari"
       ],
       "From": [
         "Dari"
@@ -6100,9 +6097,6 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Pelajari lebih lanjut mengenai ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Kiri ke Kanan"
@@ -6268,6 +6262,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "Hanya satu asisten penulisan yang dapat dibuka dalam satu waktu"
       ],
       "Open shortcut cheat sheet": [
         "Buka lembar contekan pintasan"
@@ -7001,9 +6998,6 @@
       "You can now return to the application to continue": [
         "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
       ],
-      "You can open only one writing assistant at a time": [
-        "Anda hanya dapat membuka satu asisten penulisan dalam satu waktu"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
@@ -7120,9 +7114,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Browser Anda tidak mendukung asisten penulisan. Unduh aplikasi desktop ${ MAIL_APP_NAME } atau cobalah untuk menjalankan fitur ini pada server."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Browser Anda tidak mendukung asisten penulisan. Cobalah untuk menjalankan fitur ini pada server."
@@ -8095,9 +8086,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "privasi ${ BRAND_NAME } yang terdepan dalam industri"
-      ],
       "Add a gift code": [
         "Tambah kode hadiah"
       ],
@@ -9736,6 +9724,9 @@
       "A way to contact you": [
         "Cara untuk menghubungi Anda"
       ],
+      "Describe what to change": [
+        "Jelaskan apa yang perlu untuk diubah"
+      ],
       "E.g., ": [
         "Misalnya "
       ],
@@ -9768,9 +9759,6 @@
       ],
       "Hint": [
         "Petunjuk"
-      ],
-      "How do you want the selected text modified?": [
-        "Perubahan seperti apa yang Anda inginkan kepada teks yang dipilih?"
       ],
       "Image URL": [
         "URL gambar"
@@ -11476,6 +11464,9 @@
       ],
       "Self-destruction set": [
         "Waktu penghapusan otomatis diatur"
+      ],
+      "Thanks for the feedback!": [
+        "Terima kasih atas masukannya!"
       ],
       "Undo in progress": [
         "Pengurungan sedang berlangsung"

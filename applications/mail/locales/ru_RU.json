@@ -387,9 +387,6 @@
       "Download ${ attachmentName }": [
         "Скачать ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Скачать приложение для компьютера"
-      ],
       "Download now": [
         "Загрузить"
       ],
@@ -834,6 +831,9 @@
       "Open composer": [
         "Открыть редактор писем"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Открыть в ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Открыть панель навигации"
       ],
@@ -1196,6 +1196,12 @@
       ],
       "Trust": [
         "Доверять"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -6103,9 +6109,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Для получения дополнительных результатов поиска попробуйте искать это ключевое слово в содержимом ваших электронных сообщений."
       ],
-      "Free for 14 days": [
-        "Бесплатно 14 дней"
-      ],
       "From": [
         "От"
       ],
@@ -6241,9 +6244,6 @@
       "Learn more": [
         "Узнать больше"
       ],
-      "Learn more about ${ PrivacyLink }": [
-        "Подробнее о ${ PrivacyLink }"
-      ],
       "Left to Right": [
         "Слева направо"
       ],
@@ -6336,6 +6336,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
+      ],
+      "More refine actions": [
+        "Более точные действия"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите её поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
@@ -9953,6 +9956,9 @@
       "Please insert link first": [
         "Пожалуйста, сначала вставьте ссылку"
       ],
+      "Please share what you expected": [
+        "Поделитесь тем, что вы ожидали"
+      ],
       "Search date, name, email address, or subject line": [
         "Поиск по дате, имени, адресу электронной почты или теме письма"
       ],
@@ -11542,6 +11548,9 @@
       ],
       "Self-destruction set": [
         "Самоуничтожение установлено"
+      ],
+      "Thanks for the feedback!": [
+        "Спасибо за отзыв!"
       ],
       "Undo in progress": [
         "Выполняется отмена"

@@ -417,7 +417,7 @@
         "संदेश सामग्री को बाहर निकालें"
       ],
       "Expand": [
-        "बढा़एं"
+        "विस्तृत करें"
       ],
       "Expand composer": [
         "कंपोजर का विस्तार करें"
@@ -768,6 +768,9 @@
       "Open composer": [
         "रचना-जगह खोलें"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } में खोलें"
+      ],
       "Open navigation": [
         "नेविगेशन खोलें"
       ],
@@ -1106,6 +1109,10 @@
       ],
       "Trust": [
         "भरोसा करें"
+      ],
+      "Trust key": [
+        "ट्रस्ट कुंजी",
+        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -7320,6 +7327,11 @@
         "आपका आयात शुरू हो रहा है"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "और जानें"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
@@ -8211,6 +8223,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 सहायता"
+      ],
       "Access advanced VPN features": [
         "एडवांस वीपीएन सुविधाएं एक्सेस करें"
       ],
@@ -8393,6 +8408,12 @@
       ]
     },
     "Payments": {
+      "Card number": [
+        "कार्ड नंबर"
+      ],
+      "MM/YY": [
+        "महीना/साल"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ price } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
@@ -9213,6 +9234,11 @@
         "आप असीमित लॉगिन और नोट्स, असीमित ide-my-email प्रकारांतर, 20 तिजोरी, साथ ही प्राथमिकता सहायता तक पहुंच खो देंगे।"
       ]
     },
+    "Subscription": {
+      "Billed monthly": [
+        "मासिक बिल"
+      ]
+    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
@@ -9283,6 +9309,9 @@
       "10 email addresses": [
         "10 ईमेल पते"
       ],
+      "6 users": [
+        "6 यूज़र"
+      ],
       "Automatic email forwarding": [
         "स्वचालित ईमेल फॉरवर्ड"
       ],
@@ -9291,6 +9320,9 @@
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
+      ],
+      "Learn more": [
+        "और जानें"
       ],
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
