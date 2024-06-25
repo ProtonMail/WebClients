@@ -6,18 +6,19 @@ import { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { baseUseSelector } from '@proton/redux-shared-store';
 
 import { useGetExchangeRate } from '../store/hooks';
+import { exchangeRateHooks } from '../store/hooks/useExchangeRate';
 import { selectExchangeRate } from '../store/slices';
 
 export const useWalletAccountExchangeRate = (walletAccount?: WasmApiWalletAccount) => {
     const getExchangeRate = useGetExchangeRate();
+    const [, loading] = exchangeRateHooks.useValue();
 
     const exchangeRateSimpleSelector = createSelector(
         selectExchangeRate,
         (result): [WasmApiExchangeRate | undefined, boolean] => {
-            const { error, value } = result;
+            const { value } = result;
 
             const rate = walletAccount?.FiatCurrency && value?.[walletAccount.FiatCurrency];
-            const loading = rate === undefined && error === undefined;
 
             return [rate, loading];
         }

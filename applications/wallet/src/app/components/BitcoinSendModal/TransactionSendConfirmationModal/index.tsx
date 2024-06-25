@@ -27,7 +27,6 @@ export const TransactionSendConfirmationModal = ({
             <div className="flex flex-column items-center">
                 <img src={walletSendingPlane} alt="" />
                 <h1 className={clsx('text-bold text-break text-2xl')}>{c('Wallet send').t`Money is on the way`}</h1>
-
                 <p className="text-center color-weak">{c('Wallet send')
                     .t`Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.`}</p>
 

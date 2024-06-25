@@ -137,25 +137,33 @@ export const AmountDataListItem = ({
     const [settings] = useUserWalletSettings();
     const value = tx.networkData.received - tx.networkData.sent;
 
+    const bitcoinUnit = settings.BitcoinUnit;
+
     return (
         <DataListItem
             align="end"
             label={
                 <div className={clsx('ml-auto flex flex-row flex-nowrap', loadingLabel && 'skeleton-loader')}>
-                    {exchangeRate ? (
-                        <Price unit={exchangeRate} satsAmount={value} />
+                    {loadingLabel ? (
+                        <Price unit={exchangeRate ?? bitcoinUnit} satsAmount={value} />
                     ) : (
                         <span>{c('Wallet transaction').t`Loading`}</span>
                     )}
                 </div>
             }
             bottomNode={
-                <div
-                    className={clsx('block ml-auto color-hint flex flex-row flex-nowrap', loading && 'skeleton-loader')}
-                >
-                    {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                    {getLabelByUnit(settings.BitcoinUnit)}
-                </div>
+                !loadingLabel &&
+                exchangeRate && (
+                    <div
+                        className={clsx(
+                            'block ml-auto color-hint flex flex-row flex-nowrap',
+                            loading && 'skeleton-loader'
+                        )}
+                    >
+                        {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                        {getLabelByUnit(settings.BitcoinUnit)}
+                    </div>
+                )
             }
         />
     );
