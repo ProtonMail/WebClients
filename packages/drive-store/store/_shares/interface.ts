@@ -172,6 +172,27 @@ export interface ShareInvitationEmailDetails {
     itemName?: string;
 }
 
+export interface ShareInvitationShare {
+    shareId: string;
+    volumeId: string;
+    passphrase: string;
+    shareKey: string;
+    creatorEmail: string;
+}
+
+export interface ShareInvitationLink {
+    linkId: string;
+    name: string;
+    mimeType: string;
+    isFile: boolean;
+}
+
+export interface ShareInvitationDetails {
+    invitation: ShareInvitation;
+    share: ShareInvitationShare;
+    link: ShareInvitationLink;
+}
+
 export interface ShareExternalInvitation {
     externalInvitationId: string;
     inviterEmail: string;
