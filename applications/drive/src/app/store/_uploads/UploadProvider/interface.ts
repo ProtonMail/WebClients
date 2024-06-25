@@ -21,6 +21,7 @@ interface LinkUpload {
     originalIsDraft?: boolean;
 
     isForPhotos?: boolean; // tell if the upload is for photos
+    isSharedWithMe?: boolean; // tell if the upload is in a shared with me folder
 }
 
 export interface FileUpload extends LinkUpload {

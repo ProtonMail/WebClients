@@ -77,7 +77,8 @@ export default function useUploadQueue(log: LogCallback) {
             shareId: string,
             parentId: string,
             list: UploadFileList,
-            isForPhotos: boolean = false
+            isForPhotos: boolean = false,
+            isSharedWithMe: boolean = false
         ): Promise<void> => {
             return new Promise((resolve, reject) => {
                 setQueue((queue) => {
@@ -95,7 +96,7 @@ export default function useUploadQueue(log: LogCallback) {
                             continue;
                         }
                         try {
-                            addItemToQueue(log, shareId, queueItem, item, isForPhotos);
+                            addItemToQueue(log, shareId, queueItem, item, isForPhotos, isSharedWithMe);
                         } catch (err: any) {
                             if ((err as Error).name === 'UploadConflictError') {
                                 conflictErrors.push(err);
@@ -307,7 +308,8 @@ export function addItemToQueue(
     shareId: string,
     newQueue: UploadQueue,
     item: UploadFileItem | UploadFolderItem,
-    isForPhotos: boolean = false
+    isForPhotos: boolean = false,
+    isSharedWithMe: boolean = false
 ) {
     const name = (item as UploadFileItem).file ? (item as UploadFileItem).file.name : (item as UploadFolderItem).folder;
     if (!name) {
@@ -328,6 +330,7 @@ export function addItemToQueue(
         state,
         startDate: new Date(),
         isForPhotos,
+        isSharedWithMe,
     };
     if ((item as UploadFileItem).file) {
         const fileItem = item as UploadFileItem;
