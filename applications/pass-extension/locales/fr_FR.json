@@ -801,9 +801,6 @@
       "Trashing item failed": [
         "La suppression de l'élément n'a pas abouti."
       ],
-      "Unable to boot": [
-        "Démarrage impossible"
-      ],
       "Unable to generate an OTP code for this item": [
         "Impossible de générer un mot de passe à usage unique (code OTP) pour cet élément."
       ],
@@ -842,6 +839,9 @@
       ],
       "Vault name does not match": [
         "Le nom du coffre-fort ne correspond pas."
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Nous avons rencontré un problème lors du démarrage de ${ PASS_SHORT_APP_NAME }. Si ce problème persiste, contactez le service client pour obtenir de l'aide."
       ],
       "Wrong PIN code. Try again.": [
         "Le code PIN n'est pas correct. Veuillez réessayer."
@@ -1081,7 +1081,7 @@
         "Suppression de « ${ payload.content.name } »"
       ],
       "Disabling auto-lock": [
-        "Désactiver le verrouillage automatique"
+        "Désactivation du verrouillage automatique"
       ],
       "Disabling auto-lock failed": [
         "La désactivation du verrouillage automatique n'a pas abouti."

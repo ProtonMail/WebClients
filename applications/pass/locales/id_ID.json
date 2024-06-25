@@ -800,9 +800,6 @@
       "Trashing item failed": [
         "Item gagal dibuang"
       ],
-      "Unable to boot": [
-        "Tidak dapat melangsungkan proses booting"
-      ],
       "Unable to generate an OTP code for this item": [
         "Kode OTP untuk item ini tidak dapat dibuat"
       ],
@@ -838,6 +835,9 @@
       ],
       "Vault name does not match": [
         "Nama brankas tidak sesuai"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Kami menemui masalah pada saat memulai ${ PASS_SHORT_APP_NAME }. Apabila masalah ini terus berlanjut, silakan hubungi layanan dukungan pelanggan kami untuk memperoleh bantuan."
       ],
       "Wrong password": [
         "Kata sandi salah"

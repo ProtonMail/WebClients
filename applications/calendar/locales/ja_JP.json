@@ -5720,6 +5720,14 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "アカウントを削除"
@@ -5741,14 +5749,6 @@
       ],
       "Switch plan": [
         "プランを変更"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -7590,17 +7590,6 @@
         "${ totalPrice } の場合"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB のストレージ"
-      ],
-      "Desktop app": [
-        "デスクトップアプリ"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ]
-    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME } の唯一の収益源はユーザーのサブスクリプションです。皆様のご支援により、私たちは独立性を維持し、プライバシーをオンラインのデフォルトにするという使命を前進させ、プライバシーと自由のために戦う活動家や組織を支援し続けることができます。"
@@ -7691,6 +7680,17 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB のストレージ"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
+      ],
+      "Upgrade": [
+        "アップグレード"
       ]
     },
     "Subscription renewal state": {

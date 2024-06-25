@@ -381,9 +381,6 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } 다운로드"
       ],
-      "Download Desktop App": [
-        "데스크톱 앱 다운로드"
-      ],
       "Download now": [
         "지금 다운로드"
       ],
@@ -831,6 +828,9 @@
       "Open composer": [
         "메시지 작성 열기"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }에서 열기"
+      ],
       "Open navigation": [
         "탐색 열기"
       ],
@@ -941,6 +941,9 @@
       ],
       "Reply securely": [
         "보안 회신"
+      ],
+      "Report a good content": [
+        "좋은 콘텐츠를 제안"
       ],
       "Report a problem": [
         "문제 신고"
@@ -1202,6 +1205,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -1504,29 +1510,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "빠르고 안전"
+      "Fast and secure. No logs are kept.": [
+        "안전하고 빠르게. 로그 없이."
       ],
-      "Needs compatible hardware": [
-        "호환되는 하드웨어 필요"
-      ],
-      "No logs": [
-        "노-로그"
-      ],
-      "Requires one-time download": [
-        "1회 다운로드 필요"
+      "Requires a one-time download and compatible hardware.": [
+        "1회 다운로드와 호환 가능한 기기가 필요합니다."
       ],
       "Run locally": [
         "로컬에서 실행"
       ],
       "Run on servers": [
         "서버에서 실행"
-      ],
-      "Runs on all devices": [
-        "모든 디바이스에서 실행"
-      ],
-      "Runs on your device": [
-        "내 기기에서 동작"
       ]
     },
     "Attached ics file error": {
@@ -4069,6 +4063,9 @@
       "The sending key is not valid": [
         "전송 키가 유효하지 않음"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "시스템이 현재 과부하 상태입니다. 몇 분 뒤 다시 시도하세요."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "글쓰기 도우미가 요청을 처리할 수 없습니다. 다른 프롬포트를 시도해 주세요."
       ],
@@ -5459,6 +5456,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ BRAND_NAME } 글쓰기 도우미에 관한 ${ PrivacyLink }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized }개 폴더 찾음"
       ],
@@ -5966,8 +5966,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "더 많은 검색 결과를 보려면 이메일 내용에서 이 단어를 검색해 보세요."
       ],
-      "Free for 14 days": [
-        "14일 무료"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "${ ASSISTANT_TRIAL_TIME_DAYS }일 무료 체험"
       ],
       "From": [
         "보낸 사람"
@@ -6100,9 +6100,6 @@
       ],
       "Learn more": [
         "더 알아보기"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "${ PrivacyLink }에 대해 더 알아보기"
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
@@ -6269,6 +6266,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "글쓰기 도우미는 하나의 창만 동시에 실행할 수 있습니다."
+      ],
       "Open shortcut cheat sheet": [
         "단축키 목록 보기"
       ],
@@ -6374,6 +6374,9 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "문서의 미리보기가 지원되지 않습니다. 확인하려면 문서를 직접 열어주세요."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
@@ -6391,6 +6394,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } 로 메일링 리스트나 스패머로 이메일이 유출되지 않도록 보호하세요."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "문서의 공개 공유가 아직 지원되지 않습니다. 해당 문서에 초대할 수 있는지 소유자로 문의하십시오."
       ],
       "Recipient: ": [
         "받는사람: "
@@ -6995,9 +7001,6 @@
       "You can now return to the application to continue": [
         "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
       ],
-      "You can open only one writing assistant at a time": [
-        "한 번에 하나의 글쓰기 도우미를 열어놓을 수 있습니다."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
@@ -7114,9 +7117,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "결제가 완료되면 계정이 업데이트될 것입니다."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "브라우저가 글쓰기 도우미를 지원하지 않습니다. ${ MAIL_APP_NAME } 데스크톱 앱을 다운로드 하거나 서버에서 실행해 보세요."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
@@ -8089,9 +8089,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME }의 업계 최대 수준 개인정보 보호"
-      ],
       "Add a gift code": [
         "기프트 코드 추가"
       ],
@@ -9730,6 +9727,9 @@
       "A way to contact you": [
         "사용자에게 연락할 방법"
       ],
+      "Describe what to change": [
+        "변경되고자 할 사항을 설명해 주세요"
+      ],
       "E.g., ": [
         "예, "
       ],
@@ -9762,9 +9762,6 @@
       ],
       "Hint": [
         "힌트"
-      ],
-      "How do you want the selected text modified?": [
-        "선택한 문장을 어떻게 수정했으면 하시나요?"
       ],
       "Image URL": [
         "이미지 URL"
@@ -11467,6 +11464,9 @@
       ],
       "Self-destruction set": [
         "자동 폭파 설정"
+      ],
+      "Thanks for the feedback!": [
+        "의견을 주셔서 감사합니다!"
       ],
       "Undo in progress": [
         "실행 취소 중"

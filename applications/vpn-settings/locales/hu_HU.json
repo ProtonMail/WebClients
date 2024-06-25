@@ -266,6 +266,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } beállításainak megnyitása"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Megnyitás ebben: ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Navigáció megnyitása"
       ],
@@ -6492,6 +6495,26 @@
       ],
       "Primary admin": [
         "Elsődleges adminisztrátor"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } cím"
+      ],
+      "Add multiple users": [
+        "Több felhasználó hozzáadása"
+      ],
+      "Confirm password": [
+        "Jelszó megerősítése"
+      ],
+      "Create password": [
+        "Jelszó létrehozása"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Ne felejtse el megosztani a felhasználóval belépési adatait."
+      ],
+      "VPN connections": [
+        "VPN kapcsolat"
       ]
     },
     "Validation": {

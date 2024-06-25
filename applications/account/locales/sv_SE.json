@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Avbryt"
-      ],
-      "Cancel add-on": [
-        "Avbryt utökning"
       ],
       "Cancel subscription": [
         "Avsluta prenumeration"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Ladda ner CSV-exempel"
-      ],
-      "Download Desktop App": [
-        "Ladda ner appen för stationär dator"
       ],
       "Download ICS": [
         "Ladda ner ICS"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Behåll min Plus-prenumeration"
       ],
-      "Keep the writing assistant": [
-        "Behåll skrivassistenten"
-      ],
       "label emails as": [
         "märk e-postmeddelanden som"
       ],
       "Later": [
         "Senare"
+      ],
+      "Learn why this option is unavailable": [
+        "Lär dig varför detta alternativ är inte tillgängligt"
       ],
       "Leave": [
         "Lämna"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Öppna i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -1177,9 +1174,6 @@
       "What do I get?": [
         "Vad får jag?"
       ],
-      "Why can't the model run locally?": [
-        "Varför kan inte modellen köras lokalt?"
-      ],
       "Wipe": [
         "Rensa"
       ],
@@ -1405,38 +1399,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice }/månad"
-      ],
-      "${ price } /year": [
-        "${ price }/år"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Aktiv till ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Lägg till skrivassistent"
-      ],
-      "Add writing assistant to your plan": [
-        "Lägg till skrivassistent till din paket"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Tilldela den till specifik användare i ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Förnyas automatiskt den ${ subscriptionRenewalDate }"
-      ],
       "Customize plan": [
         "Anpassa paket"
       ],
-      "from ${ price } /month": [
-        "från ${ price }/månad"
-      ],
       "New": [
         "Nytt"
-      ],
-      "Renew subscription": [
-        "Förnya prenumeration"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post ${ learnMore }."
@@ -4046,9 +4013,6 @@
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Kunde inte ladda fakturor. Försök igen senare."
-      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
       ],
@@ -4057,6 +4021,9 @@
       ],
       "Could not save preference": [
         "Kunde inte spara preferens"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Kunde inte ladda fakturor. Försök igen senare."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Avmarkera minst ${ calendarsToFixCount } kalender",
@@ -6154,6 +6121,17 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -7965,9 +7943,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifieringsprocessen öppnar en ny webbläsarflik. Inaktivera alla aktiva popup-blockerare."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Skrivassistenttillägget **kommer inte förnyas**. Du kan fortsätta att använda tjänsten fram till **${ subscriptionRenewalDate }**"
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Dessa konfigurationsfiler låter dig välja vilken ${ VPN_APP_NAME }-server du ansluter till när du använder en VPN-app från tredje part eller konfigurerar en VPN-anslutning på en router."
       ],
@@ -8046,9 +8021,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denna verifiering kan ta upp till en timme. Efter lyckad verifiering, ta inte bort TXT-posten eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
       ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Detta kommer avbryta den tidigare inbjudan och skicka en ny till **${ email }**."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
@@ -8081,6 +8053,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Detta kommer att ersätta ditt temporära lösenord. Du kommer att använda det för att komma åt ditt ${ BRAND_NAME }-konto i framtiden."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Detta kommer att skicka en ny inbjudan till **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
@@ -8736,17 +8711,6 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9983,6 +9947,9 @@
       "Spam": [
         "Skräppost"
       ],
+      "Spam and filters": [
+        "Skräppost och filter"
+      ],
       "Starred": [
         "Stjärnmärkt"
       ],
@@ -10423,9 +10390,6 @@
       "Upgrade your plan": [
         "Uppgradera ditt paket"
       ],
-      "Users and addresses": [
-        "Användare och adresser"
-      ],
       "View guide": [
         "Visa guide"
       ],
@@ -10554,6 +10518,14 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du har blivit inbjuden att prova ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "För företag"
+      ],
+      "For individuals": [
+        "För individer"
       ]
     },
     "mailtrial2024: Action": {
@@ -11172,6 +11144,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Dataintrångsövervakning (kommer snart)"
+      ],
+      "Dedicated account manager": [
+        "Dedikerad kontohanterare"
       ],
       "Dedicated servers and IP": [
         "Dedikerade servrar och IP"
@@ -13893,6 +13868,11 @@
         "Begär en demo"
       ]
     },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "GDPR-kompatibel"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Stäng"
@@ -15631,9 +15611,6 @@
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
-      "Enable writing assistant": [
-        "Aktivera skrivassistent"
-      ],
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
@@ -16243,6 +16220,9 @@
       "WireGuard configuration": [
         "WireGuard-konfiguration"
       ],
+      "Writing assistant": [
+        "Skrivassistent"
+      ],
       "You have no open alerts": [
         "Du har inga öppna varningar"
       ],
@@ -16743,9 +16723,6 @@
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
       ],
-      "AI": [
-        "AI"
-      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Inbjudan skickad, inväntar svar från den inbjudna medlemmen"
       ],
@@ -16763,6 +16740,9 @@
       ],
       "SSO user provided by your identity provider": [
         "SSO-användare tillhandahållen av din identitetsleverantör"
+      ],
+      "Writing assistant": [
+        "Skrivassistent"
       ]
     },
     "Validation": {

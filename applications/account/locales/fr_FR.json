@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Annuler"
-      ],
-      "Cancel add-on": [
-        "Annuler l'extension"
       ],
       "Cancel subscription": [
         "Annuler l'abonnement"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Télécharger un modèle CSV"
-      ],
-      "Download Desktop App": [
-        "Télécharger l’application de bureau"
       ],
       "Download ICS": [
         "Télécharger un fichier ICS"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Conserver mon abonnement à Plus"
       ],
-      "Keep the writing assistant": [
-        "Garder l'assistant d'écriture"
-      ],
       "label emails as": [
         "labelliser les messages comme"
       ],
       "Later": [
         "Plus tard"
+      ],
+      "Learn why this option is unavailable": [
+        "Découvrez pourquoi cette option n'est pas disponible."
       ],
       "Leave": [
         "Quitter"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Ouvrir dans ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -943,6 +940,9 @@
       "Send my username": [
         "Envoyer mon nom d'utilisateur"
       ],
+      "Send new invite": [
+        "Envoyer une nouvelle invitation"
+      ],
       "Send reminder": [
         "Envoyer un rappel"
       ],
@@ -1144,6 +1144,9 @@
       "Verify account": [
         "Vérifier le compte"
       ],
+      "Verify domain": [
+        "Vérifier le domaine"
+      ],
       "View": [
         "Afficher"
       ],
@@ -1170,9 +1173,6 @@
       ],
       "What do I get?": [
         "Votre abonnement comprend :"
-      ],
-      "Why can't the model run locally?": [
-        "Pourquoi est-ce que le modèle ne peut pas être exécuté sur mon appareil ?"
       ],
       "Wipe": [
         "Effacer"
@@ -1406,41 +1406,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice }/mois"
-      ],
-      "${ price } /year": [
-        "${ price }/an"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Actif jusqu'au ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Ajouter l'assistant d'écriture"
-      ],
-      "Add writing assistant to your plan": [
-        "Ajouter l'assistant d'écriture à votre abonnement"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "L'assigner à des utilisateurs spécifiques dans ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Se renouvelle automatiquement le ${ subscriptionRenewalDate }."
-      ],
-      "Cancel writing assistant add-on": [
-        "Annuler l'extension Assistant d'écriture"
-      ],
       "Customize plan": [
         "Personnaliser l'abonnement"
       ],
-      "from ${ price } /month": [
-        "à partir de ${ price }/mois"
-      ],
       "New": [
         "Nouveau"
-      ],
-      "Renew subscription": [
-        "Renouveler l’abonnement"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails. ${ learnMore }."
@@ -4057,9 +4027,6 @@
       "Contact signature not verified": [
         "La signature du contact n'a pas été vérifiée."
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Les factures n'ont pu être chargées. Veuillez réessayer plus tard."
-      ],
       "Could not open created vault": [
         "Le coffre-fort créé n'a pas pu être ouvert."
       ],
@@ -4068,6 +4035,9 @@
       ],
       "Could not save preference": [
         "La préférence n'a pas pu être enregistrée."
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Les factures n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
@@ -4085,6 +4055,9 @@
       ],
       "Email address is invalid": [
         "L'adresse e-mail n'est pas valide."
+      ],
+      "Email address is not available": [
+        "L'adresse e-mail n'est pas disponible."
       ],
       "Email address is required": [
         "L'adresse e-mail est nécessaire."
@@ -4239,6 +4212,9 @@
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
       ],
       "Organization key must be activated to create non-private users": [
         "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
@@ -6145,6 +6121,17 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -7165,6 +7152,12 @@
       "Internet connection restored.": [
         "La connexion internet est rétablie."
       ],
+      "Invitation link expired": [
+        "Le lien d'invitation est arrivé à expiration."
+      ],
+      "Invitation link used": [
+        "Le lien d'invitation a été utilisé."
+      ],
       "Invite Accepted": [
         "L'invitation a été acceptée."
       ],
@@ -7787,6 +7780,9 @@
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
+      "Set your password": [
+        "Définissez votre mot de passe"
+      ],
       "Setting up your organization": [
         "Configuration de votre organisation"
       ],
@@ -7977,9 +7973,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Le processus de vérification ouvrira un nouvel onglet du navigateur. Désactivez tout bloqueur de fenêtres pop-up actif."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "L'extension Assistant d'écriture **ne sera pas renouvelée**. Vous pouvez continuer à bénéficier de ce service jusqu'au **${ subscriptionRenewalDate }**."
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez quand vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
       ],
@@ -8010,6 +8003,12 @@
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
+      "This invitation link already used. Please sign in directly instead.": [
+        "Ce lien d'invitation a déjà été utilisé. Connectez-vous directement à la place."
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Ce lien d'invitation est arrivé à expiration. Contactez l'administrateur pour en demander l'accès."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Il s'agit d'une phrase de 12 mots que nous vous avons demandé de définir."
       ],
@@ -8018,6 +8017,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Il s'agit d’une clé de chiffrement que vous avez peut-être déjà enregistrée."
+      ],
+      "This is an invitation from:": [
+        "Il s'agit d'une invitation provenant de :"
       ],
       "This is the password you used before the password reset.": [
         "Il s'agit du mot de passe que vous avez utilisé avant la réinitialisation du mot de passe."
@@ -8045,6 +8047,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Cette vérification peut prendre jusqu'à une heure. Après une vérification réussie, ne supprimez pas l'enregistrement TXT car il est nécessaire pour confirmer que vous possédez toujours le domaine."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
@@ -8090,6 +8095,9 @@
       ],
       "to ${ product } Business": [
         "dans ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Pour autoriser le domaine **${ domainName }** à utiliser l'authentification unique (SSO) SAML, vous devez en vérifier la propriété en ajoutant l'enregistrement TXT suivant du DNS à votre domaine dans votre fournisseur DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Pour éviter toute perte de données, ne la supprimez que si vous avez une bonne connaissance de la situation ou si vous avez exporté une copie."
@@ -8467,7 +8475,7 @@
         "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
       "Writing assistant": [
-        "Assistant à la rédaction"
+        "Assistant d'écriture"
       ],
       "Writing assistant add-on": [
         "Extension Assistant d'écriture"
@@ -8487,6 +8495,14 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Nombre de serveurs dédiés que vous utilisez : ${ ipCount } sur ${ ipAddresses }.",
         "Nombre de serveurs dédiés que vous utilisez : ${ ipCount } sur ${ ipAddresses }."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Vous utilisez actuellement ${ usedMembers }/${ maxMembers } licence utilisateur disponible et ${ usedAI }/${ maxAI } licence d'assistant d'écriture disponible.",
+        "Vous utilisez actuellement ${ usedMembers } de vos ${ maxMembers }licences utilisateur disponibles et ${ usedAI } de vos ${ maxAI }licences d'assistant d'écriture disponibles."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Vous utilisez actuellement ${ usedMembers }/${ maxMembers } licence utilisateur disponible et aucune de vos ${ maxAI }licences d'assistant d'écriture disponibles.",
+        "Vous utilisez actuellement ${ usedMembers } de vos ${ maxMembers }licences utilisateur disponibles et aucune de vos ${ maxAI }licences d'assistant d'écriture disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }",
@@ -8610,6 +8626,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Vous devez quand même répondre aux invitations pour que la personne qui vous invite puisse voir votre réponse."
       ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Vous pourrez nommer l'utilisateur en tant qu'administrateur ou le rendre privé une fois qu'il aura accepté l'invitation."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Après la connexion, vous serez redirigé vers ${ destination }."
       ],
@@ -8670,11 +8689,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Votre compte sera mis à jour une fois le paiement effectué."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Téléchargez l'application de bureau ${ MAIL_APP_NAME } ou tentez de l'exécuter depuis des serveurs."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs ."
+        "Votre navigateur ne prend pas en charge l'assistant d'écriture. Essayez de l'exécuter sur des serveurs."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
@@ -8736,17 +8752,6 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
       ]
     },
     "Info - folder colouring feature": {
@@ -10432,9 +10437,6 @@
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
       ],
-      "Users and addresses": [
-        "Utilisateurs et adresses"
-      ],
       "View guide": [
         "Voir le guide"
       ],
@@ -10661,11 +10663,17 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete and revoke invite": [
+        "Supprimer et révoquer l'invitation"
+      ],
       "Edit": [
         "Modifier"
       ],
       "Remove": [
         "Retirer"
+      ],
+      "Resend invite link": [
+        "Envoyer à nouveau le lien d'invitation"
       ],
       "Revoke sessions": [
         "Révoquer les sessions"
@@ -11294,7 +11302,7 @@
         "Sécurité des mots de passe"
       ],
       "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser les informations de connexion"
+        "Gestionnaire de mots de passe pour sécuriser les identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -11331,7 +11339,7 @@
         "Prise en charge des routeurs"
       ],
       "Save time emailing": [
-        "Gagner du temps lors de l'envoi de vos messages"
+        "Gagnez du temps lors de l'envoi de vos messages"
       ],
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
@@ -11450,7 +11458,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "User storage management": [
-        "Gestion de l'espace de stockage de l'utilisateur"
+        "Gestion de l'espace de stockage des utilisateurs"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
@@ -13338,6 +13346,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Condition préalable :** l'authentification SAML doit être configurée pour activer l'allocation SCIM."
       ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Condition préalable :** Pour activer l'allocation SCIM, vous devez vérifier la propriété du domaine **${ domainName }**. Cette vérification peut prendre jusqu'à une heure."
+      ],
       "Enter token into your identity provider": [
         "Saisissez le jeton dans votre fournisseur d'identité."
       ],
@@ -15006,6 +15017,9 @@
       "Domain deleted": [
         "Le domaine a été supprimé."
       ],
+      "Invitation resent": [
+        "L'invitation a été envoyée à nouveau."
+      ],
       "Sessions revoked": [
         "Les sessions ont été révoquées."
       ],
@@ -15141,6 +15155,9 @@
       ],
       "Import": [
         "Importer"
+      ],
+      "Invitation email": [
+        "E-mail d’invitation"
       ],
       "List": [
         "Liste"
@@ -15385,9 +15402,6 @@
       ],
       "Cancel subscription?": [
         "Annuler l'abonnement ?"
-      ],
-      "Cancel the writing assistant add-on?": [
-        "Voulez-vous annuler l'extension Assistant d'écriture ?"
       ],
       "Card verification": [
         "Vérification de la carte"
@@ -15675,9 +15689,6 @@
       ],
       "Email subscriptions": [
         "Newsletters"
-      ],
-      "Enable writing assistant": [
-        "Activer l'assistant d'écriture"
       ],
       "Encryption and keys": [
         "Chiffrement et clés"
@@ -16074,6 +16085,9 @@
       "Send email reminders?": [
         "Envoyer un rappel par e-mail ?"
       ],
+      "Send new invite?": [
+        "Envoyer une nouvelle invitation ?"
+      ],
       "Session management": [
         "Gestionnaire de sessions"
       ],
@@ -16275,6 +16289,9 @@
       ],
       "WireGuard configuration": [
         "Configuration WireGuard"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
       ],
       "You have no open alerts": [
         "Vous n'avez aucune alerte en cours."
@@ -16708,6 +16725,94 @@
       ],
       "Primary admin": [
         "Administrateur principal"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "Adresse ${ BRAND_NAME }"
+      ],
+      "Add multiple users": [
+        "Ajouter plusieurs utilisateurs"
+      ],
+      "Add new user": [
+        "Ajouter un utilisateur"
+      ],
+      "Admin": [
+        "Administrateur"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Une invitation sera envoyée à cette adresse e-mail."
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Confirm password": [
+        "Confirmer le mot de passe"
+      ],
+      "Create password": [
+        "Créer un mot de passe"
+      ],
+      "Create password instead": [
+        "Créer un mot de passe à la place"
+      ],
+      "Create user": [
+        "Créer un utilisateur"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Optional": [
+        "Facultatif"
+      ],
+      "Private": [
+        "Privé"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Pensez à partager les informations de connexion avec l'utilisateur concerné."
+      ],
+      "Send invite link via email instead": [
+        "Envoyer le lien d'invitation par e-mail à la place"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Une nouvelle adresse ${ MAIL_APP_NAME } sera créée."
+      ],
+      "User created": [
+        "L'utilisateur a été créé."
+      ],
+      "VPN connections": [
+        "Connexions VPN"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés."
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "L'invitation a été envoyée. La réponse du membre invité est attendue."
+      ],
+      "Invite sent": [
+        "L'invitation a été envoyée."
+      ],
+      "It's you": [
+        "C'est vous"
+      ],
+      "Private": [
+        "Privé"
+      ],
+      "SSO": [
+        "Authentification unique (SSO)"
+      ],
+      "SSO user provided by your identity provider": [
+        "Authentification unique (SSO) de l'utilisateur fournie par votre fournisseur d'identité"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
       ]
     },
     "Validation": {

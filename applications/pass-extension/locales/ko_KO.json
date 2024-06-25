@@ -798,9 +798,6 @@
       "Trashing item failed": [
         "항목을 휴지통으로 이동하는데 실패"
       ],
-      "Unable to boot": [
-        "부팅할 수 없음"
-      ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
       ],
@@ -839,6 +836,9 @@
       ],
       "Vault name does not match": [
         "금고 이름이 맞지 않습니다."
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "${ PASS_SHORT_APP_NAME }를 시작하는 중에 문제가 발생했습니다. 이것이 계속된다면 고객 지원으로 문의해 주세요."
       ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
@@ -1348,6 +1348,9 @@
       ],
       "Please consider leaving a review.": [
         "리뷰 쓰는 것을 고려해 보세요."
+      ],
+      "Please do not close this window": [
+        "이 창을 닫지 마세요."
       ],
       "Please enter your current PIN code to continue": [
         "계속하려면 현재 PIN을 입력하세요."

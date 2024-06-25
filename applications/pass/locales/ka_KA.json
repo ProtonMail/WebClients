@@ -506,6 +506,9 @@
       "Get notified if your email, password or other personal data was leaked.": [
         "მიიღეთ შეტყობინება, თუ თქვენი ელფოსტა, პაროლი ან რამე თქვენ შესახებ გაიჟონება."
       ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "იქონიეთ თქვენი ინფორმაცია უფრო დაცული და კონფიდენციალური ამ სახელმძღვანელოებით და მინიშნებებით."
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "ჩვენი უკანასკნელი სიტყვა - AI-ზე დაშენებული უსაფრთხოების გადაწყვეტილება მომხმარებლები, რომლებსაც თავიანთი ანგარიშებისთვის გაძლიერებული უსაფრთხოება სჭირდებათ. ${ learnMoreLink }"
       ],
@@ -523,6 +526,9 @@
       ],
       "Your email addresses were leaked in at least 1 data breach.": [
         "თქვენი ელფოსტის მისამართები, სულ ცოტა, 1 მონაცემების გაჟონვაში გამოჩნდა."
+      ],
+      "Your personal info was leaked in a data breach of a third-party service.": [
+        "თქვენი პირადი ინფორმაცია გაიჟონა მესამე პირი სერვისის მონაცემების გაჟონვისას."
       ]
     },
     "Error": {
@@ -744,6 +750,9 @@
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ],
+      "Something went wrong. Please sign in again.": [
+        "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
+      ],
       "The file you are trying to import is empty": [
         "ფაილი, რომლის შემოტანასაც ცდილობთ, ცარიელია"
       ],
@@ -755,9 +764,6 @@
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
-      ],
-      "Unable to boot": [
-        "ჩატვირთვის შეცდომა"
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -1277,6 +1283,9 @@
       "password": [
         "პაროლი"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "პაროლით დაბლოკვა წამარტებით დარეგისტრირდა. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
@@ -1313,6 +1322,9 @@
       ],
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
+      ],
+      "Please do not close this window": [
+        "არ დახუროთ ეს ფანჯარა"
       ],
       "Please enter your current PIN code to continue": [
         "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
@@ -1522,6 +1534,12 @@
       ],
       "You will be notified of data breaches for this email address.": [
         "ამ ელფოსტის შეტყობინებისთვის მონაცემების გაჟონვისას გაფრთხილება მოგივათ."
+      ],
+      "You will no longer be notified of data breaches for these email addresses.": [
+        "ამ ელფოსტის მისამართებისთვის მონაცემების გაჟონვისას გაფრთხილება აღარ მოგივათ."
+      ],
+      "You will no longer be notified of data breaches for this email address.": [
+        "ამ ელფოსტის შეტყობინებისთვის მონაცემების გაჟონვისას გაფრთხილება აღარ მოგივათ."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "როცა ${ PASS_APP_NAME } არააქტიურობის გამო თვითდაიბლოკება, ეს PIN-კოდი შეგიძლიათ, მის განსაბლოკად გამოიყენოთ."
@@ -2002,6 +2020,9 @@
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
       ]
     },
     "lobby: Title": {
@@ -2586,6 +2607,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "ფსევდონიმის პრეფიქსი 40 სიმბოლოზე გრძელი ვერ იქნება"
+      ],
+      "This email address will no longer be monitored for data breaches.": [
+        "ეს ელფოსტის მისამართი მონაცემების გაჟონვებში მოხსენიებული აღარ იქნება."
       ],
       "Title is required": [
         "სათაური აუცილებელია"

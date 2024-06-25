@@ -798,9 +798,6 @@
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
       ],
-      "Unable to boot": [
-        "ჩატვირთვის შეცდომა"
-      ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
       ],
@@ -1308,6 +1305,9 @@
       "Password copied": [
         "პაროლი დაკოპირდა"
       ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "პაროლით დაბლოკვა წამარტებით დარეგისტრირდა. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
+      ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
@@ -1341,6 +1341,9 @@
       ],
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
+      ],
+      "Please do not close this window": [
+        "არ დახუროთ ეს ფანჯარა"
       ],
       "Please enter your current PIN code to continue": [
         "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
@@ -2057,6 +2060,9 @@
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
       ]
     },
     "lobby: Title": {

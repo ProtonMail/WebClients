@@ -390,9 +390,6 @@
       "Download ${ attachmentName }": [
         "Спампаваць ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Спампаваць настольную праграму"
-      ],
       "Download now": [
         "Спампаваць"
       ],
@@ -843,6 +840,9 @@
       "Open composer": [
         "Адкрыць рэдактар"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Адкрыць у ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
@@ -953,6 +953,9 @@
       ],
       "Reply securely": [
         "Бяспечны адказ"
+      ],
+      "Report a good content": [
+        "Паведаміць аб добрым змесціве"
       ],
       "Report a problem": [
         "Паведаміць аб праблеме"
@@ -1214,6 +1217,12 @@
       ],
       "Trust": [
         "Давяраць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1531,29 +1540,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Хуткі і бяспечны"
+      "Fast and secure. No logs are kept.": [
+        "Хуткі і бяспечны. Не пакідае журналаў."
       ],
-      "Needs compatible hardware": [
-        "Патрабуе сумяшчальнае абсталяванне"
-      ],
-      "No logs": [
-        "Без журналаў"
-      ],
-      "Requires one-time download": [
-        "Патрабуе аднаразовае спампоўванне"
+      "Requires a one-time download and compatible hardware.": [
+        "Патрабуе аднаразовае спампоўванне і сумяшчальнае абсталяванне."
       ],
       "Run locally": [
         "Выканаць лакальна"
       ],
       "Run on servers": [
         "Выканаць на серверах"
-      ],
-      "Runs on all devices": [
-        "Выканаць на ўсіх прыладах"
-      ],
-      "Runs on your device": [
-        "Выканаць на вашай прыладзе"
       ]
     },
     "Attached ics file error": {
@@ -3419,7 +3416,7 @@
         "Дадайце памочніка ў апісанні ў сваю падпіску, каб працягнуць карыстацца ім."
       ],
       "To continue to use the writing assistant, request access from your admin.": [
-        "Адпраўце запыт свайму адміністратару, каб працягнуць карыстацца памочнікам у напісанні."
+        "Адпраўце запыт на доступ свайму адміністратару, каб працягнуць карыстацца памочнікам у напісанні."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
@@ -4040,7 +4037,7 @@
         "Асноўны ключ, атрыманы для карыстальніка ${ BRAND_NAME }, несапраўдны для адпраўкі"
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "Праблема спампоўвання памочніка ў напісанні"
+        "Праблема спампоўвання памочніка ў напісанні. Паспрабуйце яшчэ раз."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
         "Праблема загрузкі памочніка ў напісанні на вашу прыладу. Паспрабуйце яшчэ раз."
@@ -4155,6 +4152,9 @@
       ],
       "The sending key is not valid": [
         "Несапраўдны ключ адпраўкі"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Сістэма занята ў дадзены момант. Паспрабуйце яшчэ раз праз некалькі хвілін."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Памочнік у напісанні не можа выканаць ваш запыт. Паспрабуйце змяніць яго."
@@ -5690,6 +5690,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } аб памочніку ў напісанні ${ BRAND_NAME }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "Знойдзена ${ providerFoldersNumLocalized } папка",
         "Знойдзены ${ providerFoldersNumLocalized } папкі",
@@ -6278,8 +6281,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Паспрабуйце пашукаць па гэтым ключавым слове ў змесціве вашых лістоў, каб атрымаць больш вынікаў пошуку."
       ],
-      "Free for 14 days": [
-        "Бясплатна на працягу 14 дзён"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Бясплатна на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён"
       ],
       "From": [
         "Ад"
@@ -6418,9 +6421,6 @@
       ],
       "Learn more": [
         "Даведацца больш"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Даведацца больш аб ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Злева направа"
@@ -6586,6 +6586,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "Толькі адзін памочнік у напісанні можа быць адкрыты адначасова для выкарыстання"
       ],
       "Open shortcut cheat sheet": [
         "Адкрыць спіс спалучэнняў клавіш"
@@ -7340,9 +7343,6 @@
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
       ],
-      "You can open only one writing assistant at a time": [
-        "Вы можаце адкрыць толькі аднаго памочніка ў напісанні"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
@@ -7496,9 +7496,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Ваш браўзер не падтрымлівае памочніка ў напісанні. Спампуйце настольную праграму ${ MAIL_APP_NAME } або паспрабуйце запусціць яго на серверы ."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
       ],
@@ -7518,7 +7515,7 @@
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы ."
+        "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
@@ -8491,9 +8488,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "вядучым сэрвісе ў галіне прыватнасці ${ BRAND_NAME }"
-      ],
       "Add a gift code": [
         "Дадаць падарункавы код"
       ],
@@ -9305,7 +9299,7 @@
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
       "Generate emails with only a prompt": [
-        "Згенерыраваць лісты толькі з запытам"
+        "Генерыраваць лісты толькі з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -10219,6 +10213,9 @@
       "A way to contact you": [
         "Спосаб сувязі з вамі"
       ],
+      "Describe what to change": [
+        "Апішыце, што змяніць"
+      ],
       "E.g., ": [
         "Напрыклад, "
       ],
@@ -10251,9 +10248,6 @@
       ],
       "Hint": [
         "Падказка"
-      ],
-      "How do you want the selected text modified?": [
-        "Як вы хочаце змяніць выбраны тэкст?"
       ],
       "Image URL": [
         "URL-адрас відарыса"
@@ -10334,7 +10328,7 @@
         "Каму"
       ],
       "Try “Announce upcoming events in a newsletter”": [
-        "Паспрабуйце \"Апавясціць пра надыходзячыя падзеі ў інфармацыйнай рассылцы\""
+        "Паспрабуйце \"Апавясціць аб надыходзячых падзеях у інфармацыйнай рассылцы\""
       ],
       "Try “Cancel my gym membership”": [
         "Паспрабуйце \"Скасаваць мой абанемент у спартыўную залю\""
@@ -11636,7 +11630,7 @@
         "Запрошаныя ўдзельнікі будуць выдалены з вашай арганізацыі"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Забяспечвайце бяспеку сваёй каманды дзе б яны не былі з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
+        "Забяспечвайце бяспеку сваёй каманды дзе б яны не знаходзіліся з дапамогай нашых праграм для браўзера, iOS, Android, Windows, Mac і Linux."
       ],
       "Learn more": [
         "Даведацца больш"
@@ -11684,7 +11678,7 @@
         "Адпраўляць лісты з далучэннямі"
       ],
       "Stay secure and connected anywhere": [
-        "Заставайцеся ў бяспецы і падключаным у любым месцы"
+        "Заставайцеся ў бяспецы і на сувязі ў любым месцы"
       ],
       "Support your compliance objectives": [
         "Падтрымка выканання вашых патрабаванняў"
@@ -12154,6 +12148,9 @@
       ],
       "Self-destruction set": [
         "Прызначана самазнішчэнне"
+      ],
+      "Thanks for the feedback!": [
+        "Дзякуй за водгук!"
       ],
       "Undo in progress": [
         "Выконваецца адрабленне"
@@ -13074,7 +13071,7 @@
         "Вашы скампраметаваныя звесткі"
       ],
       "Your free trial has ended": [
-        "Час пробнага перыяду завяршыўся."
+        "Час пробнага перыяду завяршыўся"
       ]
     },
     "Title subscription": {

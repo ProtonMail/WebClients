@@ -4919,7 +4919,7 @@
         "Voulez-vous mettre à jour cet événement ?"
       ],
       "Writing assistant": [
-        "Assistant à la rédaction"
+        "Assistant d'écriture"
       ],
       "Writing assistant add-on": [
         "Extension Assistant d'écriture"
@@ -6134,6 +6134,14 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -6154,14 +6162,6 @@
         "Conserver le compte"
       ],
       "Switch plan": [
-        "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
         "Changer d'abonnement"
       ]
     },
@@ -6407,7 +6407,7 @@
         "Sécurité des mots de passe"
       ],
       "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser les informations de connexion"
+        "Gestionnaire de mots de passe pour sécuriser les identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -6444,7 +6444,7 @@
         "Prise en charge des routeurs"
       ],
       "Save time emailing": [
-        "Gagner du temps lors de l'envoi de vos messages"
+        "Gagnez du temps lors de l'envoi de vos messages"
       ],
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
@@ -6550,7 +6550,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "User storage management": [
-        "Gestion de l'espace de stockage de l'utilisateur"
+        "Gestion de l'espace de stockage des utilisateurs"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
@@ -8285,47 +8285,6 @@
         "Pour ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Go d'espace de stockage"
-      ],
-      "and 15 more premium features": [
-        "et 15 fonctionnalités premium en plus"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Transfert automatique des messages ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Alertes de fuites de données ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Application de bureau"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
-      ],
-      "No ads or tracking": [
-        "Aucune publicité, aucun suivi"
-      ],
-      "Short @pm.me email address": [
-        "Adresses e-mail courtes @pm.me"
-      ],
-      "Support our mission": [
-        "Soutenez notre mission"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade your productivity": [
-        "Améliorez votre productivité"
-      ],
-      "We don't sell your data": [
-        "Nous ne vendons pas vos données"
-      ],
-      "Your privacy is our mission": [
-        "La protection de votre vie privée est notre priorité."
-      ]
-    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "La seule source de revenus de ${ BRAND_NAME } provient des abonnements des utilisateurs. Votre soutien nous permet de rester indépendants, de poursuivre notre mission visant à faire de la protection de la vie privée la règle absolue en ligne et de continuer à soutenir les militants et les organisations qui luttent pour la protection de la vie privée et la liberté."
@@ -8627,6 +8586,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "and 15 more premium features": [
+        "et 15 fonctionnalités premium en plus"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Transfert automatique des messages ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Alertes de fuites de données ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Aidez-nous à assurer la sécurité et à protéger la vie privée sur internet pour tout le monde. Passez à un abonnement payant."
+      ],
+      "No ads or tracking": [
+        "Aucune publicité, aucun suivi"
+      ],
+      "Short @pm.me email address": [
+        "Adresses e-mail courtes @pm.me"
+      ],
+      "Support our mission": [
+        "Soutenez notre mission"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade your productivity": [
+        "Améliorez votre productivité"
+      ],
+      "We don't sell your data": [
+        "Nous ne vendons pas vos données"
+      ],
+      "Your privacy is our mission": [
+        "La protection de votre vie privée est notre priorité."
       ]
     },
     "Subscription renewal state": {

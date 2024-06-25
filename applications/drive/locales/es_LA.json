@@ -3146,8 +3146,8 @@
     },
     "Failed": {
       "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } fallido",
-        "${ countOfFailedLinks } fallidos"
+        "${ countOfFailedLinks } error",
+        "${ countOfFailedLinks } errores"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -6923,7 +6923,7 @@
         "Gestión de sesiones de usuario"
       ],
       "User storage management": [
-        "Gestión de almacenamiento de usuario"
+        "Gestión del almacenamiento de los usuarios"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",

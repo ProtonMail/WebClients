@@ -361,9 +361,6 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } をダウンロード"
       ],
-      "Download Desktop App": [
-        "デスクトップアプリをダウンロード"
-      ],
       "Download now": [
         "今すぐダウンロード"
       ],
@@ -796,6 +793,9 @@
       "Open composer": [
         "作成画面を開く"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } で開く"
+      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -1155,6 +1155,9 @@
       ],
       "Trust": [
         "信頼する"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"

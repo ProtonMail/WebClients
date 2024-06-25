@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }에서 열기"
+      ],
       "Open navigation": [
         "탐색 열기"
       ],
@@ -601,6 +604,9 @@
       ],
       "Verify code again": [
         "코드를 다시 인증하세요"
+      ],
+      "Verify domain": [
+        "도메인 소유권 인증"
       ],
       "View": [
         "보기"
@@ -2100,8 +2106,8 @@
       "Code wrong or not valid anymore": [
         "틀렸거나 더 이상 유효하지 않는 코드"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "청구서 로드 실패. 다시 시도하십시오."
+      "Couldn't load invoices. Please try again later.": [
+        "청구서 불러오기를 실패했습니다. 다시 시도해 주세요."
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
@@ -3732,11 +3738,17 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "문서의 미리보기가 지원되지 않습니다. 확인하려면 문서를 직접 열어주세요."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "문서의 공개 공유가 아직 지원되지 않습니다. 해당 문서에 초대할 수 있는지 소유자로 문의하십시오."
       ],
       "read our two-factor authentication guide first": [
         "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
@@ -3936,6 +3948,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "인증 절차가 최대 한 시간 정도 소요될 수 있습니다. 인증에 성공하면, 등록한 도메인을 계소 소유하고 있는지에 대한 확인을 위해 TXT 레코드를 삭제하지 마십시오."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
       ],
@@ -3965,6 +3980,9 @@
       ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "SAML SSO에 사용하기 위해 **${ domainName }** 도메인을 허용하려면, 다음 DNS TXT 레코드를 사용자의 DNS 제공자 입력란에 추가하여 소유권 인증 절차를 밟아야 합니다."
       ],
       "To cancel your subscription, please reach out to us.": [
         "구독을 취소하려면, Proton에 연락하세요."
@@ -4268,6 +4286,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "초대를 수락하면 사용자를 관리자로 승격하거나 비공개로 만들 수 있습니다."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
@@ -4996,6 +5017,9 @@
       "Create account": [
         "계정 생성"
       ],
+      "Don't have access to your 2FA?": [
+        "사용자의 2단계 인증에 접근할 수 없습니까?"
+      ],
       "Forgot password?": [
         "비밀번호를 잊으셨나요?"
       ],
@@ -5173,11 +5197,17 @@
       "Delete": [
         "삭제"
       ],
+      "Delete and revoke invite": [
+        "초대장 삭제 및 취소"
+      ],
       "Edit": [
         "수정"
       ],
       "Remove": [
         "제거"
+      ],
+      "Resend invite link": [
+        "초대 링크 다시 보내기"
       ],
       "Revoke sessions": [
         "세션 비활성화"
@@ -8124,6 +8154,9 @@
       "Domain deleted": [
         "도메인 삭제됨"
       ],
+      "Invitation resent": [
+        "초대장을 보냈습니다."
+      ],
       "Sessions revoked": [
         "세션 취소됨"
       ],
@@ -8218,6 +8251,9 @@
       ],
       "Email addresses": [
         "이메일 주소"
+      ],
+      "Invitation email": [
+        "초대 이메일"
       ],
       "Name": [
         "이름"
@@ -8634,9 +8670,6 @@
       "Plans": [
         "요금제"
       ],
-      "Policies": [
-        "정책"
-      ],
       "Preview": [
         "미리 보기"
       ],
@@ -8696,6 +8729,9 @@
       ],
       "Send email reminders?": [
         "이메일 알리미를 전송할까요?"
+      ],
+      "Send new invite?": [
+        "새로운 초대 보내기?"
       ],
       "Set new password": [
         "새 비밀번호 설정"
@@ -8975,12 +9011,92 @@
         "기본 관리자"
       ]
     },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } 주소"
+      ],
+      "Add multiple users": [
+        "다중 사용자 추가"
+      ],
+      "Add new user": [
+        "새 사용자 추가"
+      ],
+      "Admin": [
+        "관리자"
+      ],
+      "An invitation will be sent to this email address.": [
+        "초대장이 이메일 주소로 전송됩니다."
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Confirm password": [
+        "비밀번호 확인"
+      ],
+      "Create password": [
+        "비밀번호 생성"
+      ],
+      "Create password instead": [
+        "대신 비밀번호 생성"
+      ],
+      "Create user": [
+        "사용자 생성"
+      ],
+      "Email": [
+        "이메일"
+      ],
+      "Name": [
+        "성명"
+      ],
+      "Optional": [
+        "선택 사항"
+      ],
+      "Private": [
+        "개인"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
+      ],
+      "Send invite link via email instead": [
+        "대신 이메일을 통해 초대 링크 보내기"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "이 작업은 새로운 ${ MAIL_APP_NAME } 주소를 생성합니다."
+      ],
+      "User created": [
+        "사용자를 생성했습니다."
+      ],
+      "VPN connections": [
+        "VPN 연결"
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
+      ]
+    },
     "Users table: badge": {
-      "AI": [
-        "AI"
+      "Administrators can't access the data of private users": [
+        "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "초대장을 전송했으며 초대된 사용자로부터의 응답을 대기 중입니다."
+      ],
+      "Invite sent": [
+        "초대장 전송됨"
+      ],
+      "It's you": [
+        "나"
+      ],
+      "Private": [
+        "개인"
       ],
       "SSO": [
         "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
       ]
     },
     "Validation": {

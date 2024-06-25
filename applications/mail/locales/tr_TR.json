@@ -384,9 +384,6 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } dosyasını indir"
       ],
-      "Download Desktop App": [
-        "Masaüstü uygulamasını indir"
-      ],
       "Download now": [
         "Şimdi indir"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Oluşturucuyu aç"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } uygulamasında aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -946,6 +946,9 @@
       "Reply securely": [
         "Güvenli yanıtla"
       ],
+      "Report a good content": [
+        "İyi bir içeriği bildirin"
+      ],
       "Report a problem": [
         "Sorun bildirin"
       ],
@@ -990,6 +993,9 @@
       ],
       "Revert to original display": [
         "Özgün görünüme geri dön"
+      ],
+      "Run on servers": [
+        "Sunucular üzerinden çalıştırın"
       ],
       "Save": [
         "Kaydet"
@@ -1203,6 +1209,10 @@
       ],
       "Trust": [
         "Güven"
+      ],
+      "Trust key": [
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1504,30 +1514,23 @@
         "${ BRAND_NAME } uygulamaları"
       ]
     },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Bu geri bildirimi göndererdiğinizde, istek ve yorumlarınız ${ BRAND_NAME } yönetim ekibi tarafından görülür."
+      ]
+    },
     "Assistant option": {
-      "Fast and secure": [
-        "Hızlı ve güvenli"
+      "Fast and secure. No logs are kept.": [
+        "Hızlı ve güvenli. Herhangi bir kayıt tutulmaz."
       ],
-      "Needs compatible hardware": [
-        "Uyumlu donanıma gerek duyar"
-      ],
-      "No logs": [
-        "Kayıt tutmaz"
-      ],
-      "Requires one-time download": [
-        "Bir kerelik indirmeniz gerekir"
+      "Requires a one-time download and compatible hardware.": [
+        "Tek seferlik indirme ve uyumlu donanım gerekir."
       ],
       "Run locally": [
         "Yerel olarak çalışır"
       ],
       "Run on servers": [
         "Sunucular üzerinde çalışır"
-      ],
-      "Runs on all devices": [
-        "Tüm aygıtlarda çalışır"
-      ],
-      "Runs on your device": [
-        "Aygıtınızda çalışır"
       ]
     },
     "Attached ics file error": {
@@ -3710,7 +3713,7 @@
         "Kimlik doğrulama sorunu."
       ],
       "Calendar limit reached": [
-        "Takvim sınırına ulaşıldı"
+        "Takvim sayısı sınırına ulaşıldı"
       ],
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
@@ -3993,7 +3996,7 @@
         "Herkese açık anahtara güvenilemedi"
       ],
       "re-activate the previous key": [
-        "önceki anahtarı yeniden kullanıma al"
+        "önceki anahtarı yeniden etkinleştir"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Yinelenen alıcı kaldırıldı: ${ recipents }",
@@ -4090,8 +4093,11 @@
       "The sending key is not valid": [
         "Gönderim anahtarı geçersiz"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Sistem şu anda meşgul. Lütfen birkaç dakika sonra yeniden deneyin."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
-        "Yazma yardımcısı sizin isteğiniz ile devam edemiyor. Lütfen farklı bir komut deneyin."
+        "Yazma yardımcısı isteğinizi yerine getiremiyor. Lütfen farklı bir istekte bulunun."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
@@ -5528,6 +5534,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ BRAND_NAME } yazma yardımcısı hakkında ${ PrivacyLink }"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } klasör bulundu",
         "${ providerFoldersNumLocalized } klasör bulundu"
@@ -6020,6 +6029,12 @@
       "Estimating time remaining...": [
         "Kalan süre öngörülüyor..."
       ],
+      "Expand selection": [
+        "Seçimi genişlet"
+      ],
+      "Expand text": [
+        "Metni genişlet"
+      ],
       "Expiration time": [
         "Geçerlilik süresi"
       ],
@@ -6056,8 +6071,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Daha fazla sonuç bulmak için e-posta iletilerinizin içeriğini bu sözcük ile aramayı deneyin."
       ],
-      "Free for 14 days": [
-        "14 gün boyunca ücretsiz."
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "${ ASSISTANT_TRIAL_TIME_DAYS } gün boyunca ücretsiz"
       ],
       "From": [
         "Kimden"
@@ -6192,9 +6207,6 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "${ PrivacyLink } ile ilgili ayrıntılı bilgi alın"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -6361,6 +6373,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "Aynı anda yalnızca bir yazma yardımcısı açık olabilir"
+      ],
       "Open shortcut cheat sheet": [
         "Kısayol rehberini aç"
       ],
@@ -6431,6 +6446,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
+      "Please share what the issue is": [
+        "Lütfen sorunun ne olduğunu paylaşın"
+      ],
       "Please share what you expected": [
         "Lütfen ne beklediğinizi paylaşın"
       ],
@@ -6464,6 +6482,9 @@
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Belgelerin ön izlenmesi henüz desteklenmiyor. Görüntülemek için lütfen belgeyi açın."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
@@ -6481,6 +6502,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta göndericilere sızmasından korunun."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Belgelerin herkese açık olarak paylaşılması henüz desteklenmiyor. Lütfen belge sahibinden sizi doğrudan belgeye davet etmesini isteyin."
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -6643,7 +6667,7 @@
         "Abonelik her ay otomatik olarak yenilenir."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
@@ -6832,7 +6856,7 @@
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden kullanıma almalısınız. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Bu e-posta listesinden ayrılmak için, bültenin göndericisi tarafından belirtilen ${ boldFrom } adresine şu bilgileri içeren bir e-posta gönderilecek:"
@@ -7220,6 +7244,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "Tarayıcınız yazma yardımcısını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
       ],
@@ -7234,6 +7261,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "Donanımınız yazma yardımcısının yerel olarak çalıştırılmasını desteklemiyor. Sunucular üzerinden çalıştırmayı deneyin."
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
@@ -7340,8 +7370,8 @@
         "Aşağıdaki parmak izlerine sahip birincil ortak anahtarlara güvenmek istiyor musunuz?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Bu e-posta adresi için güvenilen anahtarlarla adres doğrulama özelliğini açmışsınız,\nancak kullanımdaki herhangi bir şifreleme anahtarına güvenilmemiş.\nBu e-posta adresine ileti gönderebilmek için gönderimde kullanılacak bir anahtara güvenmeniz gerekir.",
-        "Bu e-posta adresleri için güvenilen anahtarlarla adres doğrulama özelliğini açmışsınız,\nancak kullanımdaki herhangi bir şifreleme anahtarına güvenilmemiş.\nBu e-posta adreslerine ileti gönderebilmek için gönderimde kullanılacak anahtarlara güvenmeniz gerekir."
+        "Bu e-posta adresi için güvenilen anahtarlarla adres doğrulama özelliğini açmışsınız,\nancak herhangi bir etkin şifreleme anahtarına güvenilmemiş.\nBu e-posta adresine ileti gönderebilmek için gönderimde kullanılacak bir anahtara güvenmeniz gerekir.",
+        "Bu e-posta adresleri için güvenilen anahtarlarla adres doğrulama özelliğini açmışsınız,\nancak herhangi bir etkin şifreleme anahtarına güvenilmemiş.\nBu e-posta adreslerine ileti gönderebilmek için gönderimde kullanılacak anahtarlara güvenmeniz gerekir."
       ]
     },
     "Key validation warning": {
@@ -8192,9 +8222,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME } ile sektör lideri gizlilik"
-      ],
       "Add a gift code": [
         "Bir hediye kodu ekleyin"
       ],
@@ -8292,7 +8319,7 @@
         "Davetinizi güncellemek için bu takvime bağlı adresi yeniden kullanıma alın."
       ],
       "Reactivate now": [
-        "Şimdi yenile"
+        "Yeniden etkinleştir"
       ],
       "Request an invite": [
         "Davet iste"
@@ -8334,28 +8361,28 @@
         "Bu nedir?"
       ],
       "You need to activate your calendar keys to add this event": [
-        "Bu etkinliği eklemek için takvim anahtarlarınızı kullanıma almalısınız"
+        "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmelisiniz"
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        "Bu daveti yanıtlamak için takvim anahtarlarınızı kullanıma almalısınız"
+        "Bu daveti yanıtlamak için takvim anahtarlarınızı etkinleştirmelisiniz"
       ],
       "You need to activate your calendar keys to manage this invitation": [
-        "Bu daveti yönetmek için takvim anahtarlarınızı kullanıma almalısınız"
+        "Bu daveti yönetmek için takvim anahtarlarınızı etkinleştirmelisiniz"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "Güncellenen etkinliği görmek için takvim anahtarlarınızı kullanıma almalısınız"
+        "Güncellenen etkinliği görmek için takvim anahtarlarınızı etkinleştirmelisiniz"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "Güncellenen daveti görmek için takvim anahtarlarınızı kullanıma almalısınız"
+        "Güncellenen daveti görmek için takvim anahtarlarınızı etkinleştirmelisiniz"
       ],
       "You need to reactivate your keys to manage this invitation": [
-        "Bu daveti yönetmek için anahtarlarınızı yeniden kullanıma almalısınız"
+        "Bu daveti yönetmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
       ],
       "You need to reactivate your keys to see the updated event": [
-        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden kullanıma almalısınız"
+        "Güncellenen etkinliği görmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
       ],
       "You need to reactivate your keys to see the updated invitation": [
-        "Güncellenen daveti görmek için anahtarlarınızı yeniden kullanıma almalısınız"
+        "Güncellenen daveti görmek için anahtarlarınızı yeniden etkinleştirmelisiniz"
       ]
     },
     "Link to calendar event": {
@@ -9365,7 +9392,7 @@
         "Bir kullanıcının depolama alanını artırın ya da yeniden ayarlayın"
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Şifrelenmiş bir takvim kullanarak planlarınızı kendiniz ve aileniz için gizli tutun"
+        "Şifrelenmiş bir takvim kullanarak kendinizin ve ailenizin planlarını gizli tutun"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "VPN sunucumuzla bağlantınız beklenmedik şekilde kesildiğinde tüm ağ bağlantılarını engelleyerek korunmanızı sağlar."
@@ -9786,6 +9813,9 @@
       "Card number": [
         "Kart numarası"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Şu anda otomatik abonelik yenilemesi kapalı. Aboneliği değiştirirseniz, otomatik yenileme yeniden açılır."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -9859,6 +9889,9 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
+      "Describe what to change": [
+        "Neyin değiştirileceğini açıklayın"
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
@@ -9891,9 +9924,6 @@
       ],
       "Hint": [
         "İpucu"
-      ],
-      "How do you want the selected text modified?": [
-        "Seçilmiş metnin nasıl düzeltilmesini istiyorsunuz?"
       ],
       "Image URL": [
         "Görsel adresi"
@@ -10241,7 +10271,7 @@
         "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
-        "Sentinel **kullanımda** ve hesabınızı koruyor."
+        "Sentinel **açık** ve hesabınızı koruyor."
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
@@ -11022,6 +11052,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } ve takvim paylaşımı"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } ile takvim paylaşımı ve uygunluk durumu"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } gün kaldı",
         "${ dayDiff } gün kaldı"
@@ -11029,11 +11062,20 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } ve dosyaların sürüm geçmişi"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } ile sürüm geçmişi"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } ve tüm ücretli üretkenlik özellikleri"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } iş verilerinizi güvende tutar ve herkese şifrelenmiş e-postalar göndermenizi sağlar."
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } ile otomatik e-posta iletme"
       ],
       "${ MaxCalendars } calendar per user": [
         "Her kullanıcı için ${ MaxCalendars } takvim",
@@ -11050,6 +11092,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ve sınırsız hide-my-email takma adı"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } ile ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "Her kullanıcı için ${ planMaxSpace } depolama alanı"
       ],
@@ -11061,6 +11106,12 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName }, tüm ${ BRAND_NAME } uygulamalarına ve ücretli özelliklere erişim sunarak ekibinize işlerinde daha üretken ve düzenli olmaları için gerekenleri sağlar."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } tarifesi, ekibinize gelen kutularını, programlarını ve diğer pek çok şeyi kontrol etmeleri için gerekenleri sunarak daha üretken ve düzenli olmalarını sağlar."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName }, daha üretken ve düzenli olmanızı sağlamak için, gelen kutunuzu, e-posta kimliğinizi ve diğer şeyleri kontrol etmenize yardımcı olarak temel konuların ötesine geçer."
@@ -11074,11 +11125,20 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName }, dosyalarınız ve fotoğraflarınız için ${ planMaxSpace } depolama alanı sunar. Ayrıca yıllık depolama alanı hediyeleri almaya da hak kazanırsınız."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } e-postalar, ek dosyalar, etkinlikler ve dosyalar için kullanıcı başına ${ planMaxSpace } depolama alanı sunar. Ayrıca yıllık depolama alanı hediyeleri almaya da hak kazanırsınız."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } e-postalar, ek dosyalar, etkinlikler, dosyalar ve parolalar için kullanıcı başına ${ planMaxSpace } depolama alanı sunar. Ayrıca yıllık depolama alanı hediyeleri almaya da hak kazanırsınız."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } programı"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } ve ${ vpnCountries } ülkedeki tüm yüksek hızlı sunuculara erişim"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } ile kötü amaçlı yazılım ve reklam engelleme"
       ],
       "10 email addresses": [
         "10 e-posta adresi"
@@ -11101,14 +11161,26 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğiniz sona erdikten sonra, yalnızca 5 GB Drive depolama alanı ve 1 GB Mail depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
       ],
+      "All you need for your business": [
+        "İşiniz için gerek duyduğunuz her şey"
+      ],
+      "Any custom email domains will be disabled": [
+        "Tüm özel e-posta etki alanları kullanımdan kaldırılacak"
+      ],
       "Automatic email forwarding": [
         "Otomatik e-posta iletme"
       ],
       "Back up photos from your devices": [
         "Aygıtlarınızdaki fotoğrafları yedekleyemezsiniz"
       ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Kendi etki alanınızı kullanan profesyonel e-posta adresleriyle güven ve marka bilinirliği sağlayın."
+      ],
       "Calendar sharing": [
         "Takvim paylaşımı"
+      ],
+      "Catch-all email address": [
+        "Tümünü yakalan e-posta adresi"
       ],
       "Comprehensive privacy and security": [
         "Kapsamlı gizlilik ve güvenlik"
@@ -11116,14 +11188,23 @@
       "Custom schedule send and snooze times": [
         "Özel zamanlanmış gönderim ve erteleme süreleri"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "Masaüstü uygulaması ve e-posta istemcisi desteği (IMAP ile)"
+      ],
       "Direct contribution to our mission": [
         "Amacımıza doğrudan katkıda bulunmak"
       ],
       "Early access to new apps and features": [
         "Yeni uygulama ve özelliklere erken erişim"
       ],
+      "Email productivity features": [
+        "E-posta üretkenliği özellikleri"
+      ],
       "Extra storage and bonuses": [
         "Ek depolama alanı ve hediyelerden yararlanamazsınız"
+      ],
+      "Extra storage and users": [
+        "Ek depolama alanı ve kullanıcılar"
       ],
       "Helping activists in Hong Kong": [
         "Hong Kong aktivistlerine yardımlarımız"
@@ -11140,14 +11221,29 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "${ planName } aboneliğiniz sona erdiğinde Free tarifesi sınırlarını aşarsanız şunları yapamazsınız:"
       ],
+      "Invited members will be removed from your organization": [
+        "Davet edilmiş üyeler kuruluşunuzdan kaldırılacaklar"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "İnternet, iOS, Android, Windows, Mac ve Linux uygulamalarımızla ekibinizi hareket halindeyken güvende tutun."
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
       "Learn more about our impact": [
         "Yarattığımız etki hakkında ayrıntılı bilgi alın"
+      ],
+      "Make your business stand out": [
+        "İşletmenizi öne çıkarın"
       ],
       "Manage your calendar": [
         "Takviminizi yönetemezsiniz"
       ],
       "Online privacy, for your whole family": [
         "Tüm aileniz için çevrim içi gizlilik"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Free tarifesinde kuruluşlar, ek kullanıcılar ve özel e-posta etki alanları bulunmaz. Özetle:"
       ],
       "Our fight against censorship in Russia": [
         "Rusya'da sansüre karşı mücadelemiz"
@@ -11161,14 +11257,26 @@
       "Priority support": [
         "Öncelikli destek"
       ],
+      "Productivity features": [
+        "Üretkenlik özellikleri"
+      ],
       "Read the story": [
         "Öykümüzü okuyun"
       ],
       "Receive new emails": [
         "Yeni e-postaları alamazsınız"
       ],
+      "See your colleagues’ availability": [
+        "İş arkadaşlarınızın uygunluğunu görün"
+      ],
       "Send emails with attachments": [
         "Ek dosyaları olan e-postalar gönderemezsiniz"
+      ],
+      "Stay secure and connected anywhere": [
+        "Her yerde güvende ve bağlantıda kalın"
+      ],
+      "Support your compliance objectives": [
+        "Uyumluluk gereksinimlerinizi karşılayın"
       ],
       "Sync files on devices": [
         "Aygıtlarınızdaki dosyaları eşitleyemezsiniz"
@@ -11185,6 +11293,15 @@
       "Unlimited folders, labels and filters": [
         "Sınırsız klasör, etiket ve süzgeç"
       ],
+      "Users won’t be able to manage their calendars": [
+        "Kullanıcılar takvimlerini yönetemeyecekler"
+      ],
+      "Users won’t be able to send emails": [
+        "Kullanıcılar e-posta gönderemeyecekler"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "Kullanıcılar aygıtlarındaki dosyaları eşitleyemeyecek"
+      ],
       "Version history": [
         "Sürüm geçmişi"
       ],
@@ -11197,6 +11314,9 @@
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 1 GB Mail depolama alanı ve 5 GB Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
       ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 1 GB Mail depolama alanı ve 5 GB' Drive depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Free tarifesinde ek kullanıcılar desteklenmediği için ekibinizin çalışmaları kesintiye uğrayacaktır."
+      ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } aboneliğinizi iptal ettiğinizde, yalnızca 5 GB Drive depolama alanı ve 1 GB Mail depolama alanı sunan ${ BRAND_NAME } Free tarifesine geçeceksiniz. Ayrıca daha önce verilen depolama alanı hediyelerinizi de kaybedeceksiniz."
       ],
@@ -11208,6 +11328,9 @@
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } aboneliğinizin ${ expiryDate } süresi daha var. Kalan süreye ait kredileri ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun. ${ learnMoreLink }"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "${ planName } tarifeniz yalnızca iş verilerinizi ve iletişimlerinizi güvende tutmaz. Uyumluluk gereksinimlerinizi karşılar, işletmenizi öne çıkarır ve ekibinizin bağlantıda kalmasını sağlar."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "${ planName } aboneliğiniz ${ expiryDate } tarihinde sona erecek. Bundan sonra ${ BRAND_NAME } Free tarifesine geçeceksiniz. Kullanımınız ücretsiz tarife sınırlarını aşarsa, ürün özelliklerine ve verilerinize erişiminiz kısıtlanabilir. ${ learnMoreLink }"
@@ -11568,6 +11691,9 @@
       ],
       "Self-destruction set": [
         "Kendini yok etme ayarlandı"
+      ],
+      "Thanks for the feedback!": [
+        "Geri bildiriminiz için teşekkürler!"
       ],
       "Undo in progress": [
         "Geri alınıyor"
@@ -12665,7 +12791,7 @@
         "Geçerlilik süresi AA/YY biçiminde değil"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden kullanıma alınamaz. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"

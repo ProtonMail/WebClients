@@ -384,9 +384,6 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } herunterladen"
       ],
-      "Download Desktop App": [
-        "Desktop-App herunterladen"
-      ],
       "Download now": [
         "Jetzt herunterladen"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Verfassen-Fenster öffnen"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "In ${ DOCS_SHORT_APP_NAME } öffnen"
+      ],
       "Open navigation": [
         "Navigation öffnen"
       ],
@@ -1207,6 +1207,10 @@
       "Trust": [
         "Vertrauen"
       ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
+      ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
@@ -1513,29 +1517,11 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Schnell und sicher"
-      ],
-      "Needs compatible hardware": [
-        "Benötigt kompatible Hardware"
-      ],
-      "No logs": [
-        "Keine Protokolle"
-      ],
-      "Requires one-time download": [
-        "Einmaliges herunterladen erforderlich"
-      ],
       "Run locally": [
         "Lokal ausführen"
       ],
       "Run on servers": [
         "Auf Servern ausführen"
-      ],
-      "Runs on all devices": [
-        "Funktioniert auf allen Geräten"
-      ],
-      "Runs on your device": [
-        "Läuft auf deinem Gerät"
       ]
     },
     "Attached ics file error": {
@@ -6070,9 +6056,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Um mehr Suchergebnisse zu erhalten, suche nach diesem Schlüsselwort im Inhalt deiner E-Mails."
       ],
-      "Free for 14 days": [
-        "Für 14 Tage kostenlos"
-      ],
       "From": [
         "Von"
       ],
@@ -6206,9 +6189,6 @@
       ],
       "Learn more": [
         "Mehr erfahren"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Mehr erfahren über ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Von links nach rechts"
@@ -7114,9 +7094,6 @@
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
       ],
-      "You can open only one writing assistant at a time": [
-        "Du kannst immer nur einen Schreibassistenten gleichzeitig öffnen."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
@@ -7245,9 +7222,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Dein Browser unterstützt den Schreibassistenten nicht. Lade dir die ${ MAIL_APP_NAME } Desktop-Version herunter oder versuche ihn auf Servern auszuführen."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Dein Browser unterstützt den Schreibassistenten nicht. Versuchen ihn auf Servern auszuführen."
@@ -8227,9 +8201,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME }s branchenführender Datenschutz"
-      ],
       "Add a gift code": [
         "Gutscheincode hinzufügen"
       ],
@@ -9821,6 +9792,9 @@
       "Card number": [
         "Kartennummer"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Aktuell ist die automatische Abonnement-Verlängerung deaktiviert. Falls du dein Abonnement jetzt änderst, wird die automatische Verlängerung wieder aktiviert."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -9926,9 +9900,6 @@
       ],
       "Hint": [
         "Hinweis"
-      ],
-      "How do you want the selected text modified?": [
-        "Wie möchtest du den ausgewählten Text angepasst haben?"
       ],
       "Image URL": [
         "Bild-URL"
@@ -11121,6 +11092,9 @@
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } mit Zugriff auf alle Hochgeschwindigkeitsserver in ${ vpnCountries } Ländern"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } mit Schadsoftware- und Werbeblocker"
+      ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
       ],
@@ -11142,14 +11116,23 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free zurückgestuft, das nur bis zu 5 GB Speicherplatz für Laufwerke und bis zu 1 GB für E-Mails bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
       ],
+      "All you need for your business": [
+        "Alles was du für dein Unternehmen brauchst"
+      ],
       "Automatic email forwarding": [
         "Automatische E-Mail-Weiterleitung"
       ],
       "Back up photos from your devices": [
         "Sichere Fotos von deinen Geräten"
       ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Schaffe Vertrauen und Wiedererkennungswert für deine Marke mit professionellen E-Mail-Adressen auf deiner eigenen Domain."
+      ],
       "Calendar sharing": [
         "Kalenderfreigabe"
+      ],
+      "Catch-all email address": [
+        "Catch-all-E-Mail-Adresse"
       ],
       "Comprehensive privacy and security": [
         "Umfassender Datenschutz und Sicherheit"
@@ -11612,6 +11595,9 @@
       ],
       "Self-destruction set": [
         "Selbstzerstörung gesetzt"
+      ],
+      "Thanks for the feedback!": [
+        "Danke für die Rückmeldung!"
       ],
       "Undo in progress": [
         "Widerrufen wird ausgeführt"

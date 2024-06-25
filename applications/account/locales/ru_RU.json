@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -388,9 +388,6 @@
       "Download CSV sample": [
         "Скачать образец файла CSV"
       ],
-      "Download Desktop App": [
-        "Скачать приложение для компьютера"
-      ],
       "Download ICS": [
         "Скачать ICS"
       ],
@@ -702,6 +699,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Открыть в ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Открыть панель навигации"
@@ -1375,18 +1375,6 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /месяц"
-      ],
-      "${ price } /year": [
-        "${ price } в год"
-      ],
-      "Add writing assistant to your plan": [
-        "Добавить помощника по написанию к вашему тарифу"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Автоматические обновляется ${ subscriptionRenewalDate }"
-      ],
       "Customize plan": [
         "Настроить тариф"
       ],
@@ -3975,9 +3963,6 @@
       "Contact signature not verified": [
         "Подпись контакта не подтверждена"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Не удалось загрузить счета-фактуры. Повторите попытку позже."
-      ],
       "Could not open created vault": [
         "Не могу открыть созданное хранилище"
       ],
@@ -6090,6 +6075,14 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -7696,6 +7689,9 @@
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
+      "Set your password": [
+        "Задайте пароль"
+      ],
       "Setting up your organization": [
         "Настройка вашей организации"
       ],
@@ -8589,14 +8585,6 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Ваша заявка в службу поддержки была закрыта. Благодарим вас за обращение в службу поддержки ${ BRAND_NAME }."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -10242,9 +10230,6 @@
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
-      "Users and addresses": [
-        "Пользователи и адреса"
-      ],
       "View guide": [
         "Посмотреть руководство"
       ],
@@ -10344,6 +10329,25 @@
       ],
       "Limited time offer": [
         "Limited time offer"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса"
+      ],
+      "Encrypted email and calendar to get you started": [
+        "Зашифрованная почта и календарь, чтобы начать работу"
+      ],
+      "Enhanced security and premium features for teams": [
+        "Повышенная безопасность и платные функции для команд"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Вас пригласили попробовать ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "Для частных лиц"
       ]
     },
     "mailtrial2024: Action": {
@@ -15238,9 +15242,6 @@
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
-      "Enable writing assistant": [
-        "Включить помощника по написанию текстов"
-      ],
       "Encryption and keys": [
         "Шифрование и ключи"
       ],
@@ -15820,6 +15821,9 @@
       "WireGuard configuration": [
         "Конфигурация WireGuard"
       ],
+      "Writing assistant": [
+        "Помощник по написанию"
+      ],
       "You have no open alerts": [
         "У вас нет открытых оповещений"
       ],
@@ -16239,6 +16243,34 @@
       ],
       "Primary admin": [
         "Основной администратор"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } адрес"
+      ],
+      "Add multiple users": [
+        "Добавление нескольких пользователей"
+      ],
+      "Confirm password": [
+        "Подтвердите пароль"
+      ],
+      "Create password": [
+        "Создать пароль"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Не забудьте сообщить им пользовательские данные для входа в систему."
+      ],
+      "VPN connections": [
+        "Подключения к VPN"
+      ],
+      "Writing assistant": [
+        "Помощник по написанию"
+      ]
+    },
+    "Users table: badge": {
+      "Writing assistant": [
+        "Помощник по написанию"
       ]
     },
     "Validation": {
