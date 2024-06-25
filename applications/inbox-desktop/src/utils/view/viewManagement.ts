@@ -1,6 +1,6 @@
 import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
 import { debounce } from "lodash";
-import { saveWindowBounds } from "../../store/boundsStore";
+import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { getConfig } from "../config";
@@ -45,6 +45,8 @@ export const viewCreationAppStartup = (session: Session) => {
     const debouncedUpdateWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
     mainWindow.on("move", debouncedUpdateWindowBounds);
     mainWindow.on("resize", debouncedUpdateWindowBounds);
+    mainWindow.on("maximize", debouncedUpdateWindowBounds);
+    mainWindow.on("unmaximize", debouncedUpdateWindowBounds);
 
     mainWindow.on("close", (event) => {
         // We don't want to prevent the close event if the update is downloaded
@@ -60,6 +62,10 @@ export const viewCreationAppStartup = (session: Session) => {
             windowsAndLinuxExitEvent(mainWindow!);
         }
     });
+
+    if (getWindowBounds().maximized) {
+        mainWindow.maximize();
+    }
 
     return mainWindow;
 };
