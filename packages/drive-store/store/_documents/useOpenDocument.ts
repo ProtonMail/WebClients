@@ -2,21 +2,18 @@ import { useAuthentication } from '@proton/components/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
+type DocumentActionMode = 'open' | 'convert' | 'history' | 'download';
+type DocumentActionModeCreate = 'create';
+
 export type DocumentAction =
     | {
-          mode: 'open';
+          mode: DocumentActionMode;
           linkId: string;
           volumeId: string;
-          parentLinkId?: never;
+          parentLinkId?: string;
       }
     | {
-          mode: 'convert';
-          linkId: string;
-          volumeId: string;
-          parentLinkId?: never;
-      }
-    | {
-          mode: 'create';
+          mode: DocumentActionModeCreate;
           parentLinkId: string;
           volumeId: string;
           linkId?: never;
