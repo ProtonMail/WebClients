@@ -794,6 +794,9 @@
       "Something went wrong": [
         "Ceva nu a funcționat corect."
       ],
+      "Something went wrong. Please sign in again.": [
+        "Ceva nu a funcționat bine. Reconectați-vă."
+      ],
       "The file you are trying to import is empty": [
         "Fișierul pe care încercați să îl importați este gol."
       ],
@@ -805,9 +808,6 @@
       ],
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
-      ],
-      "Unable to boot": [
-        "Nu se poate porni."
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -844,6 +844,9 @@
       ],
       "Vault name does not match": [
         "Numele seifului nu se potrivește."
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "A apărut o problemă la pornirea ${ PASS_SHORT_APP_NAME }. Dacă această problemă continuă, contactați asistența pentru clienți pentru ajutor."
       ],
       "Wrong password": [
         "Parolă greșită"
@@ -1435,6 +1438,9 @@
       ],
       "Please consider leaving a review.": [
         "Luați în considerare scrierea unei recenzii."
+      ],
+      "Please do not close this window": [
+        "Nu închideți această fereastră."
       ],
       "Please enter your current PIN code to continue": [
         "Introduceți codul PIN curent pentru a continua"

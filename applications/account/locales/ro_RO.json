@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Anulare"
-      ],
-      "Cancel add-on": [
-        "Anulare modul"
       ],
       "Cancel subscription": [
         "Anulare abonament"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Descărcare exemplu de CSV"
-      ],
-      "Download Desktop App": [
-        "Descărcați aplicația pentru desktop"
       ],
       "Download ICS": [
         "Descărcare ICS"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Păstrez abonamentul Plus"
       ],
-      "Keep the writing assistant": [
-        "Păstrare asistent de scriere"
-      ],
       "label emails as": [
         "etichetare mesaje ca"
       ],
       "Later": [
         "Mai târziu"
+      ],
+      "Learn why this option is unavailable": [
+        "Aflați de ce această opțiune nu este disponibilă"
       ],
       "Leave": [
         "Lăsați"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Deschidere în ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -943,6 +940,9 @@
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
       ],
+      "Send new invite": [
+        "Trimitere invitație nouă"
+      ],
       "Send reminder": [
         "Trimitere notificare"
       ],
@@ -1144,6 +1144,9 @@
       "Verify account": [
         "Verificare cont"
       ],
+      "Verify domain": [
+        "Verificare domeniu"
+      ],
       "View": [
         "Afișare"
       ],
@@ -1170,9 +1173,6 @@
       ],
       "What do I get?": [
         "Ce primesc?"
-      ],
-      "Why can't the model run locally?": [
-        "De ce nu poate rula modelul local?"
       ],
       "Wipe": [
         "Golire"
@@ -1410,41 +1410,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice }/lună"
-      ],
-      "${ price } /year": [
-        "${ price }/an"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Activ până la ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Adăugare asistent de scriere"
-      ],
-      "Add writing assistant to your plan": [
-        "Adăugare asistent de scriere la plan"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Asociați-l utilizatorilor specificați în ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Reînnoire automată la ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "Anulare modul asistent de scriere"
-      ],
       "Customize plan": [
         "Personalizare plan"
       ],
-      "from ${ price } /month": [
-        "de la ${ price }/lună"
-      ],
       "New": [
         "Nou"
-      ],
-      "Renew subscription": [
-        "Reînnoire abonament"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail. ${ learnMore }."
@@ -4071,9 +4041,6 @@
       "Contact signature not verified": [
         "Semnătura contactului nu a fost verificată"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Nu s-au putut încărca facturile. Mai reîncercați."
-      ],
       "Could not open created vault": [
         "Nu s-a putut deschide seiful creat."
       ],
@@ -4082,6 +4049,9 @@
       ],
       "Could not save preference": [
         "Preferințele nu s-au putut salva."
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Nu s-au putut încărca facturile. Mai reîncercați."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
@@ -4101,6 +4071,9 @@
       ],
       "Email address is invalid": [
         "Adresa de e-mail nu este validă."
+      ],
+      "Email address is not available": [
+        "Adresa de e-mail nu e disponibilă"
       ],
       "Email address is required": [
         "Adresa de e-mail este obligatorie"
@@ -4256,6 +4229,9 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Organization key must be activated to create invited users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori invitați."
       ],
       "Organization key must be activated to create non-private users": [
         "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
@@ -6183,6 +6159,17 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -7232,6 +7219,12 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "Invitation link expired": [
+        "Legătura web a invitației a expirat."
+      ],
+      "Invitation link used": [
+        "Legătură web a invitației a fost folosită."
+      ],
       "Invite Accepted": [
         "Invitație acceptată."
       ],
@@ -7708,6 +7701,9 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Examinare documentelor nu este încă acceptată. Deschideți documentul pentru a-l vizualiza."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
@@ -7725,6 +7721,9 @@
       ],
       "Public link invite": [
         "Legătură publică invitație"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Partajarea publică a documentelor nu este încă acceptată. Solicitați proprietarului să vă invite direct la document."
       ],
       "purchase additional storage": [
         "cumpărați spațiu suplimentar"
@@ -7854,6 +7853,9 @@
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
+      ],
+      "Set your password": [
+        "Setare parolă"
       ],
       "Setting up your organization": [
         "Setare organizație"
@@ -8046,9 +8048,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Procesul de verificare va deschide o nouă filă. Dezactivați orice modul de blocare ferestre flotante."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Modulul asistentului de scriere **nu se va reînnoi**. Puteți continua să vă bucurați de serviciu până la **${ subscriptionRenewalDate }**."
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Aceste fișiere de configurare vă permit să alegeți la care server ${ VPN_APP_NAME } vă conectați atunci când utilizați o aplicație VPN terță sau când configurați o conexiune VPN pe un ruter."
       ],
@@ -8079,6 +8078,12 @@
       "This file is too large to preview": [
         "Acest fișier este prea mare pentru a fi examinat."
       ],
+      "This invitation link already used. Please sign in directly instead.": [
+        "Această legătură web de invitare a fost deja folosită. În schimb, conectați-vă direct."
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Această legătură web de invitație a expirat. Contactați administratorul pentru a solicita accesul."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Aceasta este o frază de 12 cuvinte care vi s-a solicitat să o setați."
       ],
@@ -8087,6 +8092,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Acesta este o cheie de criptare pe care ați salvat-o anterior."
+      ],
+      "This is an invitation from:": [
+        "Aceasta este o invitație de la:"
       ],
       "This is the password you used before the password reset.": [
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
@@ -8114,6 +8122,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Această verificare poate dura până la o oră. După confirmarea verificării, nu eliminați înregistrarea TXT, deoarece este necesară pentru a confirma că dețineți în continuare domeniul."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
@@ -8159,6 +8170,9 @@
       ],
       "to ${ product } Business": [
         "la ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Pentru a permite domeniului **${ domainName }** să utilizeze SAML SSO, trebuie să verificați calitatea de proprietar a acestuia adăugând următoarea înregistrare DNS TXT la domeniul propriu la furnizorul de DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Pentru a evita pierderea de date, ștergeți-o numai dacă știți ce faceți sau dacă ați exportat o copie."
@@ -8558,6 +8572,16 @@
         "Momentan folosiți ${ ipCount } din ${ ipAddresses } servere dedicate disponibile.",
         "Momentan folosiți ${ ipCount } din ${ ipAddresses } de servere dedicate disponibile."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licență de utilizator disponibilă și ${ usedAI } din ${ maxAI } licență disponibilă pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licențe de utilizator disponibile și ${ usedAI } din ${ maxAI } licențe disponibile pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } de licențe de utilizator disponibile și ${ usedAI } din ${ maxAI } de licențe disponibile pentru asistentul de scriere."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licență de utilizator disponibilă și niciuna din ${ maxAI } licență disponibilă pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } licențe de utilizator disponibile și niciuna dintre cele ${ maxAI } licențe disponibile pentru asistentul de scriere.",
+        "În prezent utilizați ${ usedMembers } din ${ maxMembers } de licențe de utilizator disponibile și niciuna dintre cele ${ maxAI } de licențe disponibile pentru asistentul de scriere."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
         "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
@@ -8685,6 +8709,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Trebuie să răspundeți la invitații pentru ca gazda să vă vadă răspunsul."
       ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Veți putea promova utilizatorul ca administrator sau să-l faceți privat după ce a acceptat invitația."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
@@ -8744,9 +8771,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Navigatorul web actual nu acceptă asistentul de scriere. Descărcați aplicația ${ MAIL_APP_NAME } pentru desktop sau încercați să-l rulați pe servere."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Navigatorul web actual nu acceptă asistentul de scriere. Încercați să îl rulați pe servere."
@@ -8812,17 +8836,6 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10074,6 +10087,9 @@
       "Spam": [
         "Nedorite"
       ],
+      "Spam and filters": [
+        "Filtre și mesaje nedorite"
+      ],
       "Starred": [
         "Cu stea"
       ],
@@ -10421,6 +10437,9 @@
       "Create an alias": [
         "Creați un alias"
       ],
+      "Don't have access to your 2FA?": [
+        "Nu aveți acces la A2F?"
+      ],
       "Encryption and keys": [
         "Criptare și chei"
       ],
@@ -10510,9 +10529,6 @@
       ],
       "Upgrade your plan": [
         "Treceți la alt plan"
-      ],
-      "Users and addresses": [
-        "Utilizatori și adrese"
       ],
       "View guide": [
         "Consultare ghid"
@@ -10630,6 +10646,37 @@
         "Ofertă limitată"
       ]
     },
+    "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "Toate aplicațiile comerciale ${ BRAND_NAME } și funcțiile premium pentru a vă proteja întreaga afacere"
+      ],
+      "An encrypted email service that puts your privacy first": [
+        "Un serviciu de e-mail criptat care pune confidențialitatea pe primul loc"
+      ],
+      "Encrypted email and calendar to get you started": [
+        "E-mail și calendar criptat pentru a începe"
+      ],
+      "Encrypted solutions to protect your entire business": [
+        "Soluții criptate pentru a vă proteja întreaga afacere"
+      ],
+      "Enhanced security and premium features for teams": [
+        "Securitate sporită și beneficii exclusive pentru echipe"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Ofertă cu durată limitată: **Obțineți până la 35% reducere** la planurile anuale"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Vă invităm să încercați ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "Pentru firme"
+      ],
+      "For individuals": [
+        "Pentru persoane"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Obțineți oferta"
@@ -10717,11 +10764,17 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete and revoke invite": [
+        "Anulare și ștergere invitație"
+      ],
       "Edit": [
         "Editare"
       ],
       "Remove": [
         "Eliminare"
+      ],
+      "Resend invite link": [
+        "Retrimitere legătură web invitație"
       ],
       "Revoke sessions": [
         "Anulare sesiuni"
@@ -11200,6 +11253,9 @@
       "Advanced sharing security": [
         "Securitate avansată partajări"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Toate serviciile ${ BRAND_NAME }"
+      ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
@@ -11259,6 +11315,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitorizarea divulgării datelor (în curând)"
+      ],
+      "Dedicated account manager": [
+        "Manager dedicat al contului"
       ],
       "Dedicated servers and IP": [
         "Servere și IP dedicate"
@@ -11451,6 +11510,9 @@
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
+      ],
+      "Tailored to your needs": [
+        "Adaptat nevoilor personale"
       ],
       "Tor over VPN": [
         "Tor prin VPN"
@@ -12693,6 +12755,9 @@
       "Current plan": [
         "Plan actual"
       ],
+      "Customizable services for large teams.": [
+        "Servicii personalizabile pentru echipe mari."
+      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descărcați și instalați aplicațiile și extensiile relevante pentru a începe să utilizați ${ PASS_APP_NAME }"
       ],
@@ -13439,6 +13504,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Cerință preliminară:** autentificarea SAML trebuie configurată pentru a activa furnizarea SCIM."
       ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Cerință preliminară:** pentru a activa furnizarea SCIM, trebuie să verificați calitatea de proprietar al domeniului **${ domainName }**. Această verificare poate dura până la o oră."
+      ],
       "Enter token into your identity provider": [
         "Introduceți codul de acces în furnizorul dvs. de identitate."
       ],
@@ -13939,6 +14007,9 @@
       "Actions": [
         "Acțiuni"
       ],
+      "Drag to reorder": [
+        "Trageți pentru rearanjare"
+      ],
       "Labels": [
         "Etichete"
       ]
@@ -14020,6 +14091,16 @@
       ],
       "Verification": [
         "Verificare"
+      ]
+    },
+    "signup: Action": {
+      "Request a demo": [
+        "Solicitați o demonstrație"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "Conformare cu RGPD"
       ]
     },
     "specialoffer: Action": {
@@ -15129,6 +15210,9 @@
       "Domain deleted": [
         "Domeniu șters"
       ],
+      "Invitation resent": [
+        "Invitația a fost retrimisă."
+      ],
       "Sessions revoked": [
         "Sesiuni anulate"
       ],
@@ -15264,6 +15348,9 @@
       ],
       "Import": [
         "Importare"
+      ],
+      "Invitation email": [
+        "E-mail de invitare"
       ],
       "List": [
         "Lista"
@@ -15515,9 +15602,6 @@
       "Cancel subscription?": [
         "Anulare abonament?"
       ],
-      "Cancel the writing assistant add-on?": [
-        "Anulați modulul asistentului de scriere?"
-      ],
       "Card verification": [
         "Verificare card"
       ],
@@ -15768,6 +15852,9 @@
       "Edit organization identity": [
         "Editare identitate organizație"
       ],
+      "Edit profile": [
+        "Editare profil"
+      ],
       "Edit servers": [
         "Editare servere"
       ],
@@ -15803,9 +15890,6 @@
       ],
       "Email subscriptions": [
         "Abonamente pe e-mail"
-      ],
-      "Enable writing assistant": [
-        "Activare asistent de scriere"
       ],
       "Encryption and keys": [
         "Criptare și chei"
@@ -16201,6 +16285,9 @@
       "Send email reminders?": [
         "Trimiteți notificări pe e-mail?"
       ],
+      "Send new invite?": [
+        "Trimiteți o invitație nouă?"
+      ],
       "Session management": [
         "Gestionare sesiuni"
       ],
@@ -16403,6 +16490,9 @@
       ],
       "WireGuard configuration": [
         "Configurare WireGuard"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
       ],
       "You have no open alerts": [
         "Nu aveți alerte active"
@@ -16837,6 +16927,94 @@
       ],
       "Primary admin": [
         "Administrator principal"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "Adresa ${ BRAND_NAME }"
+      ],
+      "Add multiple users": [
+        "Adăugare utilizatori multipli"
+      ],
+      "Add new user": [
+        "Adăugare utilizator"
+      ],
+      "Admin": [
+        "Administrator"
+      ],
+      "An invitation will be sent to this email address.": [
+        "O invitație va fi trimisă la această adresă de e-mail."
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Confirm password": [
+        "Confirmare parolă"
+      ],
+      "Create password": [
+        "Creare parolă"
+      ],
+      "Create password instead": [
+        "Creați în schimb o parolă"
+      ],
+      "Create user": [
+        "Creare utilizator"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Optional": [
+        "Opțional"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
+      ],
+      "Send invite link via email instead": [
+        "Trimiteți în schimb legătura web de invitație prin e-mail"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Aceasta va crea o nouă adresă ${ MAIL_APP_NAME }."
+      ],
+      "User created": [
+        "Utilizator creat"
+      ],
+      "VPN connections": [
+        "Conexiuni VPN"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administratorii nu pot accesa datele utilizatorilor privați."
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Invitația s-a trimis. Se așteaptă răspunsul de la membrul invitat."
+      ],
+      "Invite sent": [
+        "Invitație trimisă"
+      ],
+      "It's you": [
+        "Sunt eu"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "SSO": [
+        "Autentificare unică (SSO)"
+      ],
+      "SSO user provided by your identity provider": [
+        "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
+      ],
+      "Writing assistant": [
+        "Asistent de scriere"
       ]
     },
     "Validation": {

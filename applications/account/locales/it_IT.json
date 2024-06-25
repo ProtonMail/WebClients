@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Annulla"
-      ],
-      "Cancel add-on": [
-        "Annulla componente aggiuntivo"
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Scarica un campione CSV"
-      ],
-      "Download Desktop App": [
-        "Scarica l'app per desktop"
       ],
       "Download ICS": [
         "Scarica il file ICS"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Mantieni il mio abbonamento Plus"
       ],
-      "Keep the writing assistant": [
-        "Mantieni l'assistente alla scrittura"
-      ],
       "label emails as": [
         "etichetta le email come"
       ],
       "Later": [
         "Più tardi"
+      ],
+      "Learn why this option is unavailable": [
+        "Scopri perché questa opzione non è disponibile"
       ],
       "Leave": [
         "Abbandona"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Apri in ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Apri navigazione"
@@ -1177,9 +1174,6 @@
       "What do I get?": [
         "Cosa ottengo?"
       ],
-      "Why can't the model run locally?": [
-        "Perché il modello non può essere eseguito localmente?"
-      ],
       "Wipe": [
         "Cancella"
       ],
@@ -1412,41 +1406,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } al mese"
-      ],
-      "${ price } /year": [
-        "${ price } all'anno"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Attivo fino al ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Aggiungi l'assistente alla scrittura"
-      ],
-      "Add writing assistant to your plan": [
-        "Aggiungi l'assistente alla scrittura al tuo piano"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Assegnalo a utenti specifici in ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Si rinnova automaticamente il ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "Annulla il componente aggiuntivo dell'assistente alla scrittura"
-      ],
       "Customize plan": [
         "Personalizza il piano"
       ],
-      "from ${ price } /month": [
-        "da ${ price } al mese"
-      ],
       "New": [
         "Novità"
-      ],
-      "Renew subscription": [
-        "Rinnova abbonamento"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email. ${ learnMore }."
@@ -4063,9 +4027,6 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Impossibile caricare le fatture. Riprova più tardi."
-      ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
       ],
@@ -4074,6 +4035,9 @@
       ],
       "Could not save preference": [
         "Impossibile salvare la preferenza"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Impossibile caricare le fatture. Riprova più tardi."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario",
@@ -6157,6 +6121,17 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
@@ -8001,9 +7976,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Il processo di verifica aprirà una nuova finestra del browser. Disabilita qualsiasi blocco pop-up."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Il componente aggiuntivo dell'assistente alla scrittura **non si rinnoverà**. Puoi continuare a usufruire del servizio fino al **${ subscriptionRenewalDate }.**"
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Questi file di configurazione ti consentono di scegliere a quale server ${ VPN_APP_NAME } ti connetti quando utilizzi un'app VPN di terze parti o se configuri una connessione VPN su un router."
       ],
@@ -8081,9 +8053,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Questa verifica può richiedere fino a un'ora. Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
-      ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Questa azione annullerà l'invito precedente e ne invierà uno nuovo a **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Questa azione annullerà il tuo attuale abbonamento a pagamento e perderai tutti i vantaggi fedeltà accumulati."
@@ -8530,6 +8499,14 @@
         "Stai utilizzando ${ ipCount } del tuo ${ ipAddresses } server dedicato disponibile.",
         "Stai utilizzando ${ ipCount } dei tuoi ${ ipAddresses } server dedicati disponibili."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Al momento stai utilizzando ${ usedMembers } della ${ maxMembers } licenza utente disponibile e ${ usedAI } della ${ maxAI } licenza disponibile per l'assistente alla scrittura.",
+        "Al momento stai utilizzando ${ usedMembers } delle ${ maxMembers } licenze utente disponibili e ${ usedAI } delle ${ maxAI } licenze disponibili per l'assistente alla scrittura."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Al momento stai utilizzando ${ usedMembers } della ${ maxMembers } licenza utente disponibile e nessuna della ${ maxAI } licenza disponibile per l'assistente alla scrittura.",
+        "Al momento stai utilizzando ${ usedMembers } della ${ maxMembers } licenza utente disponibile e nessuna delle ${ maxAI } licenze disponibili per l'assistente alla scrittura."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Attualmente stai utilizzando ${ usedMembers } delle tue ${ maxMembers } licenze utente disponibili.",
         "Attualmente stai utilizzando ${ usedMembers } delle tue ${ maxMembers } licenze utente disponibili."
@@ -8715,9 +8692,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Il tuo browser non supporta l'assistente alla scrittura. Scarica l'app desktop ${ MAIL_APP_NAME } o prova a eseguirla sui server."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Il tuo browser non supporta l'esecuzione locale dell'assistente alla scrittura. Prova a eseguirlo sui server."
       ],
@@ -8781,17 +8755,6 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10479,9 +10442,6 @@
       ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
-      ],
-      "Users and addresses": [
-        "Utenti e indirizzi"
       ],
       "View guide": [
         "Visualizza guida"
@@ -15473,9 +15433,6 @@
       "Cancel subscription?": [
         "Vuoi annullare l'abbonamento?"
       ],
-      "Cancel the writing assistant add-on?": [
-        "Vuoi annullare il componente aggiuntivo dell'assistente alla scrittura?"
-      ],
       "Card verification": [
         "Verifica della carta"
       ],
@@ -15762,9 +15719,6 @@
       ],
       "Email subscriptions": [
         "Newsletter"
-      ],
-      "Enable writing assistant": [
-        "Aggiungi l'assistente alla scrittura"
       ],
       "Encryption and keys": [
         "Crittografia e chiavi"
@@ -16366,6 +16320,9 @@
       "WireGuard configuration": [
         "Configurazione di WireGuard"
       ],
+      "Writing assistant": [
+        "Assistente alla scrittura"
+      ],
       "You have no open alerts": [
         "Non hai avvisi aperti"
       ],
@@ -16866,9 +16823,6 @@
       "Administrators can't access the data of private users": [
         "Gli amministratori non possono accedere ai dati degli utenti privati"
       ],
-      "AI": [
-        "IA"
-      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invito spedito, in attesa di risposta da parte del membro invitato"
       ],
@@ -16886,6 +16840,9 @@
       ],
       "SSO user provided by your identity provider": [
         "Utente SSO fornito dal tuo fornitore di identità"
+      ],
+      "Writing assistant": [
+        "Assistente alla scrittura"
       ]
     },
     "Validation": {

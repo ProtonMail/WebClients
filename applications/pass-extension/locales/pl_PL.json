@@ -93,7 +93,7 @@
         "Kontynuuj"
       ],
       "Continue offline": [
-        "Kontynuuj offline"
+        "Kontynuuj w trybie offline"
       ],
       "Continue without pinning": [
         "Kontynuuj bez przypinania"
@@ -807,9 +807,6 @@
       "Trashing item failed": [
         "Usunięcie elementu nie powiodło się"
       ],
-      "Unable to boot": [
-        "Nie można uruchomić"
-      ],
       "Unable to generate an OTP code for this item": [
         "Nie można wygenerować kodu uwierzytelniającego dla tego elementu"
       ],
@@ -849,11 +846,14 @@
       "Vault name does not match": [
         "Nazwy sejfów nie pasują do siebie"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Mamy problem z usługą ${ PASS_SHORT_APP_NAME }. Jeśli problem będzie się powtarzał, skontaktuj się z naszym wsparciem klienta."
+      ],
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "Jesteś obecnie offline. Wznów połączenie, aby odblokować ${ PASS_SHORT_APP_NAME }."
+        "Jesteś w trybie offline. Wznów połączenie, aby odblokować ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
@@ -948,7 +948,7 @@
         "${ n } elementów"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
-        "${ PASS_APP_NAME } będzie zawsze dostępne."
+        "${ PASS_APP_NAME } będzie zawsze dostępny"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
@@ -999,13 +999,13 @@
         "Dostęp został potwierdzony"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "Dostęp do ${ PASS_APP_NAME } będzie zawsze wymagał podania hasła ${ BRAND_NAME }."
+        "Dostęp do ${ PASS_APP_NAME } będzie wymagał hasła ${ BRAND_NAME }."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Dostęp do haseł z aplikacji mobilnej."
       ],
       "Add a username field": [
-        "Dodaj pole nazwa użytkownika"
+        "Dodaj pole nazwy użytkownika"
       ],
       "Admin": [
         "Administrator"
@@ -1068,7 +1068,7 @@
         "Wybierz zapisany klucz dostępu, aby zalogować się do ${ domain }"
       ],
       "Click here to add a field for a username.": [
-        "Kliknij tutaj, aby dodać pole nazwa użytkownika."
+        "Kliknij, aby dodać pole nazwy użytkownika."
       ],
       "Click the icon to open it anytime.": [
         "Kliknij ikonę, aby otworzyć."
@@ -1104,7 +1104,7 @@
         "Usuwanie \"${ payload.content.name }\""
       ],
       "Disabling auto-lock": [
-        "Wyłączenie automatycznej blokady"
+        "Wyłączanie automatycznej blokady"
       ],
       "Disabling auto-lock failed": [
         "Wyłączenie automatycznej blokady nie powiodło się"
@@ -1143,19 +1143,19 @@
         "Włącz ${ PASS_APP_NAME }, łącząc swoje konto ${ BRAND_NAME }"
       ],
       "Enable auto-locking to secure your data": [
-        "Włącz automatyczne blokowanie w celu zabezpieczenia danych"
+        "Włącz automatyczną blokadę, aby chronić dane"
       ],
       "Enabling offline mode...": [
         "Włączanie trybu offline..."
       ],
       "Enabling password auto-lock": [
-        "Włączanie automatycznej blokady hasła"
+        "Włączanie automatycznej blokady za pomocą hasła"
       ],
       "Enabling password lock failed": [
-        "Włączenie blokady hasłem nie powiodło się"
+        "Włączenie blokady za pomocą hasła nie powiodło się"
       ],
       "Enabling PIN auto-lock": [
-        "Włączanie automatycznej blokady PIN"
+        "Włączanie automatycznej blokady za pomocą kodu PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
@@ -1224,7 +1224,7 @@
         "Zaproszenie zostało usunięte"
       ],
       "Invite successfully resent": [
-        "Zaproszenie zostało wysłane"
+        "Zaproszenie zostało ponownie wysłane"
       ],
       "Invite successfully sent": [
         "Zaproszenie zostało wysłane"
@@ -1320,7 +1320,7 @@
         "Brak"
       ],
       "Offline mode could not be disabled at the moment": [
-        "Tryb offline nie może być obecnie wyłączony"
+        "Tryb offline nie może zostać wyłączony"
       ],
       "Offline mode could not be enabled at the moment": [
         "Tryb offline nie może zostać włączony"
@@ -1329,7 +1329,7 @@
         "Tryb offline został wyłączony"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Dostęp online do ${ PASS_APP_NAME } będzie wymagał podania kodu PIN w celu odblokowania sesji. Użytkownik zostanie wylogowany po 3 nieudanych próbach."
+        "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Użytkownik zostanie wylogowany po 3 nieudanych próbach."
       ],
       "Open the Extensions menu": [
         "Otwórz menu rozszerzenia"
@@ -1350,7 +1350,7 @@
         "Hasło zostało skopiowane"
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Hasło blokady zostało pomyślnie zarejestrowane. Użyj go, aby odblokować ${ PASS_APP_NAME }"
+        "Blokada za pomocą hasła została włączona. Użyj tego hasła, aby odblokować ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień zostaną automatycznie usunięte z historii.",
@@ -1374,28 +1374,31 @@
         "Przypinanie elementu..."
       ],
       "Please confirm your ${ BRAND_NAME } password": [
-        "Potwierdź swoje hasło ${ BRAND_NAME }"
+        "Potwierdź hasło ${ BRAND_NAME }"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Potwierdź hasło ${ BRAND_NAME }, aby automatycznie zablokować konto hasłem."
+        "Potwierdź hasło ${ BRAND_NAME }, aby włączyć blokadę."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Potwierdź hasło ${ BRAND_NAME }, aby wyrejestrować bieżącą blokadę."
+        "Potwierdź hasło ${ BRAND_NAME }, aby wyłączyć blokadę."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
         "Potwierdź hasło ${ BRAND_NAME }, aby zaktualizować czas automatycznej blokady."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Potwierdź kod PIN, aby wyrejestrować bieżącą blokadę."
+        "Potwierdź kod PIN, aby wyłączyć blokadę."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Potwierdź kod PIN, aby edytować ustawienia."
       ],
       "Please consider leaving a review.": [
         "Rozważ napisanie recenzji."
+      ],
+      "Please do not close this window": [
+        "Nie zamykaj tego okna"
       ],
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
@@ -1413,7 +1416,7 @@
         "Chroniony przez ${ PROTON_SENTINEL_LINK } — zaawansowany program ochrony konta"
       ],
       "Registering PIN lock failed": [
-        "Rejestracja blokady PIN nie powiodła się"
+        "Włączenie blokady za pomocą kodu PIN nie powiodła się"
       ],
       "Restoring items from trash": [
         "Przywracanie elementów z Kosza"
@@ -1760,7 +1763,7 @@
         "Utwórz zaszyfrowaną notatkę"
       ],
       "Create lock": [
-        "Utwórz blokadę"
+        "Włącz blokadę"
       ],
       "Create new vault": [
         "Utwórz nowy sejf"
@@ -1793,10 +1796,10 @@
         "E-mail"
       ],
       "Email (alias)": [
-        "E-mail (alias)"
+        "Adres e-mail (alias)"
       ],
       "Email (new alias)": [
-        "E-mail (nowy alias)"
+        "Adres e-mail (nowy alias)"
       ],
       "Email aliases": [
         "Aliasy"
@@ -2084,7 +2087,7 @@
         "Nazwa użytkownika"
       ],
       "Username/email": [
-        "Nazwa użytkownika/adres e-mail"
+        "Nazwa użytkownika / adres e-mail"
       ],
       "Vault ID": [
         "Identyfikator sejfu"
@@ -2119,7 +2122,7 @@
         "Zaloguj się"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }."
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -2198,7 +2201,7 @@
         "Wpisz przedrostek"
       ],
       "Enter email": [
-        "Podaj adres e-mail"
+        "Wpisz adres e-mail"
       ],
       "Enter email or username": [
         "Wpisz adres e-mail lub nazwę użytkownika"
@@ -2207,7 +2210,7 @@
         "Wpisz hasło"
       ],
       "Enter username": [
-        "Podaj nazwę użytkownika"
+        "Wpisz nazwę użytkownika"
       ],
       "Full Name": [
         "Właściciel karty"

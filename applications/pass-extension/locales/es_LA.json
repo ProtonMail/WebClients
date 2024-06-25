@@ -801,9 +801,6 @@
       "Trashing item failed": [
         "Error al eliminar el elemento"
       ],
-      "Unable to boot": [
-        "No se puede iniciar"
-      ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento"
       ],
@@ -842,6 +839,9 @@
       ],
       "Vault name does not match": [
         "El nombre de la bóveda no coincide"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacte a nuestro servicio de atención al cliente para obtener ayuda."
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intente de nuevo."

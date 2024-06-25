@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
-      "activate": [
-        "ota käyttöön"
-      ],
       "Activate": [
         "Ota käyttöön"
+      ],
+      "activate": [
+        "ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Peruuta"
-      ],
-      "Cancel add-on": [
-        "Peruuta lisäosa"
       ],
       "Cancel subscription": [
         "Peru tilaus"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Lataa CSV-näyte"
-      ],
-      "Download Desktop App": [
-        "Lataa työpöytäsovellus"
       ],
       "Download ICS": [
         "Lataa ICS-tiedosto"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Säilytä Plus-tilaukseni"
       ],
-      "Keep the writing assistant": [
-        "Pidä kirjoitusavustaja"
-      ],
       "label emails as": [
         "merkitse viestit tunnisteilla"
       ],
       "Later": [
         "Myöhemmin"
+      ],
+      "Learn why this option is unavailable": [
+        "Lue, miksei tämä vaihtoehto ole käytettävissä"
       ],
       "Leave": [
         "Poistu"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Avaa ${ DOCS_SHORT_APP_NAME }issa"
       ],
       "Open navigation": [
         "Avaa navigaatio"
@@ -943,6 +940,9 @@
       "Send my username": [
         "Lähetä käyttäjätunnukseni"
       ],
+      "Send new invite": [
+        "Lähetä uusi kutsu"
+      ],
       "Send reminder": [
         "Lähetä muistutus"
       ],
@@ -1144,6 +1144,9 @@
       "Verify account": [
         "Vahvista tili"
       ],
+      "Verify domain": [
+        "Vahvista verkkotunnus"
+      ],
       "View": [
         "Tarkastele"
       ],
@@ -1170,9 +1173,6 @@
       ],
       "What do I get?": [
         "Mitä saan?"
-      ],
-      "Why can't the model run locally?": [
-        "Miksei mallia voi suorittaa paikallisesti?"
       ],
       "Wipe": [
         "Tyhjennä"
@@ -1406,41 +1406,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice }/kuukausi"
-      ],
-      "${ price } /year": [
-        "${ price }/vuosi"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Aktiivinen ${ subscriptionRenewalDate } asti"
-      ],
-      "Add writing assistant": [
-        "Lisää kirjoitusavustaja"
-      ],
-      "Add writing assistant to your plan": [
-        "Lisää kirjoitusavustaja tilaukseesi"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Aseta se tietyille käyttäjille: ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Uusiutuu automaattisesti ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "Peruuta kirjoitusavustaja-lisäosa"
-      ],
       "Customize plan": [
         "Mukauta tilausta"
       ],
-      "from ${ price } /month": [
-        "alkaen ${ price }/kuukausi"
-      ],
       "New": [
         "Uusi"
-      ],
-      "Renew subscription": [
-        "Uudista tilaus"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan sähköpostejasi. ${ learnMore }."
@@ -4057,9 +4027,6 @@
       "Contact signature not verified": [
         "Yhteystiedon allekirjoitusta ei ole vahvistettu"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
-      ],
       "Could not open created vault": [
         "Luotua holvia ei voitu avata"
       ],
@@ -4068,6 +4035,9 @@
       ],
       "Could not save preference": [
         "Asetusta ei voitu tallentaa"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Poista vähintään ${ calendarsToFixCount } kalenterin valinta",
@@ -4085,6 +4055,9 @@
       ],
       "Email address is invalid": [
         "Sähköpostiosoite on virheellinen"
+      ],
+      "Email address is not available": [
+        "Sähköpostiosoite ei ole saatavilla"
       ],
       "Email address is required": [
         "Sähköpostiosoite vaaditaan"
@@ -4239,6 +4212,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisaation avaimen salausta ei ole purettu"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
       ],
       "Organization key must be activated to create non-private users": [
         "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
@@ -6145,6 +6121,17 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -7165,6 +7152,12 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "Invitation link expired": [
+        "Kutsulinkki on vanhentunut"
+      ],
+      "Invitation link used": [
+        "Kutsulinkki on käytetty"
+      ],
       "Invite Accepted": [
         "Kutsu hyväksyttiin"
       ],
@@ -7787,6 +7780,9 @@
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
+      "Set your password": [
+        "Aseta salasanasi"
+      ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
       ],
@@ -7974,9 +7970,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Vahvistusprosessi avaa uuden selaimen välilehden. Poista käytöstä kaikki aktiiviset ponnahdusikkunoiden estotoiminnot."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Kirjoitusavustaja-lisäosaa **ei uusita**. Voit jatkaa palvelun käyttöä **${ subscriptionRenewalDate }** asti."
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Näiden määritystiedostojen avulla voit valita mihin ${ VPN_APP_NAME } -palvelimeen yhteys muodostetaan kun käytetään muiden tahojen VPN-sovelluksia tai määritetään reitittimen VPN-asetuksia."
       ],
@@ -8007,6 +8000,12 @@
       "This file is too large to preview": [
         "Tämä tiedosto on liian suuri esikatseltavaksi"
       ],
+      "This invitation link already used. Please sign in directly instead.": [
+        "Kutsulinkki on jo käytetty. Kirjaudu suoraan sisään."
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Tämä kutsulinkki on vanhentunut. Ota yhteyttä ylläpitäjään ja pyydä pääsyä."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Tämä on 12-sanainen lauseke, joka sinua pyydettiin määrittämään."
       ],
@@ -8015,6 +8014,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Tämä on salausavain, jonka olet saattanut tallentaa aiemmin."
+      ],
+      "This is an invitation from:": [
+        "Tämän kutsun on lähettänyt:"
       ],
       "This is the password you used before the password reset.": [
         "Tämä on ennen salasanan uudelleenasetusta käyttämäsi salasana."
@@ -8042,6 +8044,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Tämä vahvistus voi kestää jopa tunnin. Älä poista TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sitä tarvitaan vahvistamaan, että omistat verkkotunnuksen myös jatkossa."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
@@ -8087,6 +8092,9 @@
       ],
       "to ${ product } Business": [
         "palveluun ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Jotta verkkotunnus **${ domainName }** voi käyttää SAML-kertakirjautumista, sinun on vahvistettava sen omistajuus lisäämällä seuraava DNS TXT -tietue verkkotunnukseesi DNS-palveluntarjoajassasi."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Välttääksesi tietojen menetyksen, poista se vain, jos tiedät mitä teet tai olet vienyt kopion."
@@ -8485,6 +8493,14 @@
         "Käytössäsi on tällä hetkellä ${ ipCount } tilauksesi ${ ipAddresses } omasta palvelimesta.",
         "Käytössäsi on tällä hetkellä ${ ipCount } tilauksesi ${ ipAddresses } omasta palvelimesta."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä ja ${ usedAI } / ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä.",
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä ja ${ usedAI } / ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä, etkä yhtäkään ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä.",
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä, etkä yhtäkään ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Käytössäsi on ${ usedMembers } käyttäjä lisenssiisi sisältyvästä ${ maxMembers } käyttäjästä.",
         "Käytössäsi on ${ usedMembers } käyttäjä lisenssiisi sisältyvästä ${ maxMembers } käyttäjästä."
@@ -8607,6 +8623,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Sinun on silti vastattava kutsuihin, jotta järjestäjä näkee vastauksesi."
       ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Voit ylentää käyttäjän ylläpitäjäksi tai tehdä hänestä yksityisen, kun hän on hyväksynyt kutsun."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
       ],
@@ -8666,9 +8685,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Selaimesi ei tue kirjoitusavustajaa. Lataa ${ MAIL_APP_NAME } -työpöytäsovellus tai kokeile sen suorittamista palvelimilla."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Selaimesi ei tue kirjoitusavustajaa. Kokeile sen suorittamista palvelimilla."
@@ -8733,17 +8749,6 @@
       ],
       "Zoom meeting": [
         "Zoom-tapaamista"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9295,6 +9300,9 @@
       ],
       "Auto show remote images": [
         "Näytä ulkoiset kuvat automaattisesti"
+      ],
+      "Auto-advance": [
+        "Siirry seuraavaan automaattisesti"
       ],
       "Auto-delete unwanted messages": [
         "Poista ei-toivotut viestit automaattisesti"
@@ -10333,6 +10341,9 @@
       "Create an alias": [
         "Luo alias"
       ],
+      "Don't have access to your 2FA?": [
+        "Eikö sinulla ole pääsyä 2FA:han?"
+      ],
       "Encryption and keys": [
         "Salaus ja avaimet"
       ],
@@ -10422,9 +10433,6 @@
       ],
       "Upgrade your plan": [
         "Päivitä tilauksesi"
-      ],
-      "Users and addresses": [
-        "Käyttäjät ja osoitteet"
       ],
       "View guide": [
         "Näytä opas"
@@ -10536,6 +10544,37 @@
         "Tarjous voimassa rajoitetun ajan"
       ]
     },
+    "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi"
+      ],
+      "An encrypted email service that puts your privacy first": [
+        "Salattu sähköpostipalvelu, joka asettaa yksityisyytesi etusijalle"
+      ],
+      "Encrypted email and calendar to get you started": [
+        "Salattu sähköposti ja kalenteri, joilla pääset alkuun"
+      ],
+      "Encrypted solutions to protect your entire business": [
+        "Salatut ratkaisut koko yrityksesi suojaamiseksi"
+      ],
+      "Enhanced security and premium features for teams": [
+        "Parannettu turvallisuus ja premium-ominaisuuksia tiimeille"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Rajoitetun ajan tarjous: **Saat jopa 35 % alennusta** vuosittaisista tilauksista"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Sinut on kutsuttu kokeilemaan ${ MAIL_APP_NAME }ia"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "Yrityksille"
+      ],
+      "For individuals": [
+        "Yksityisille"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Hanki tarjous"
@@ -10621,11 +10660,17 @@
       "Delete": [
         "Poista"
       ],
+      "Delete and revoke invite": [
+        "Poista ja mitätöi kutsu"
+      ],
       "Edit": [
         "Muokkaa"
       ],
       "Remove": [
         "Poista"
+      ],
+      "Resend invite link": [
+        "Lähetä kutsulinkki uudelleen"
       ],
       "Revoke sessions": [
         "Mitätöi istunnot"
@@ -11087,6 +11132,9 @@
       "Advanced sharing security": [
         "Edistynyt jakojen suojaus"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Kaikki ${ BRAND_NAME } -palvelut"
+      ],
       "Auto-delete Spam and Trash": [
         "Tyhjennä roskaposti ja roskakori automaattisesti"
       ],
@@ -11143,6 +11191,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Tietomurtovalvonta (tulossa pian)"
+      ],
+      "Dedicated account manager": [
+        "Oma tilinhoitaja"
       ],
       "Dedicated servers and IP": [
         "Omat palvelimet ja kiinteät IP-osoitteet"
@@ -11332,6 +11383,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Tailored to your needs": [
+        "Räätälöity tarpeisiisi"
       ],
       "Tor over VPN": [
         "Tor + VPN"
@@ -12540,6 +12594,9 @@
       ],
       "Current plan": [
         "Nykyinen tilaus"
+      ],
+      "Customizable services for large teams.": [
+        "Mukautettavat palvelut suurille ryhmille."
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Aloita ${ PASS_APP_NAME }ssin käyttäminen lataamalla ja asentamalla tarvitsemasi sovellukset ja laajennukset"
@@ -13770,6 +13827,9 @@
       "Actions": [
         "Toiminnot"
       ],
+      "Drag to reorder": [
+        "Järjestä uudelleen vetämällä"
+      ],
       "Labels": [
         "Tunnisteet"
       ]
@@ -13850,6 +13910,16 @@
       ],
       "Verification": [
         "Vahvistus"
+      ]
+    },
+    "signup: Action": {
+      "Request a demo": [
+        "Pyydä kokeilua"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "GDPR:n mukainen"
       ]
     },
     "specialoffer: Action": {
@@ -14374,6 +14444,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME }, sisältäen rajattomasti Hide-my-email-aliaksia"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } + ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } tallennustilaa/käyttäjä"
       ],
@@ -14381,7 +14454,7 @@
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja henkilöllisyytesi ovat turvassa."
+        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -14908,6 +14981,9 @@
       "Domain deleted": [
         "Verkkotunnus poistettiin"
       ],
+      "Invitation resent": [
+        "Kutsu on lähetetty uudelleen"
+      ],
       "Sessions revoked": [
         "Istunnot mitätöitiin"
       ],
@@ -15043,6 +15119,9 @@
       ],
       "Import": [
         "Tuonti"
+      ],
+      "Invitation email": [
+        "Kutsusähköposti"
       ],
       "List": [
         "Lista"
@@ -15287,9 +15366,6 @@
       ],
       "Cancel subscription?": [
         "Perutaanko tilaus?"
-      ],
-      "Cancel the writing assistant add-on?": [
-        "Peruuta kirjoitusavustaja-lisäosa?"
       ],
       "Card verification": [
         "Kortin vahvistus"
@@ -15577,9 +15653,6 @@
       ],
       "Email subscriptions": [
         "Sähköpostitilaukset"
-      ],
-      "Enable writing assistant": [
-        "Ota kirjoitusavustaja käyttöön"
       ],
       "Encryption and keys": [
         "Salaus ja avaimet"
@@ -15973,6 +16046,9 @@
       "Send email reminders?": [
         "Lähetetäänkö muistutuksia sähköpostitse?"
       ],
+      "Send new invite?": [
+        "Lähetä uusi kutsu?"
+      ],
       "Session management": [
         "Istuntojen hallinta"
       ],
@@ -16174,6 +16250,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard-määritykset"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ],
       "You have no open alerts": [
         "Avoimia hälytyksiä ei ole"
@@ -16607,6 +16686,94 @@
       ],
       "Primary admin": [
         "Ensisijainen ylläpitäjä"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } osoite"
+      ],
+      "Add multiple users": [
+        "Lisää useita käyttäjiä"
+      ],
+      "Add new user": [
+        "Lisää uusi käyttäjä"
+      ],
+      "Admin": [
+        "Ylläpitäjä"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Kutsu lähetetään tähän sähköpostiosoitteeseen."
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Confirm password": [
+        "Vahvista salasana"
+      ],
+      "Create password": [
+        "Luo salasana"
+      ],
+      "Create password instead": [
+        "Luo sen sijaan salasana"
+      ],
+      "Create user": [
+        "Luo käyttäjä"
+      ],
+      "Email": [
+        "Sähköposti"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "Optional": [
+        "Valinnainen"
+      ],
+      "Private": [
+        "Yksityinen"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
+      ],
+      "Send invite link via email instead": [
+        "Lähetä kutsulinkki sen sijaan sähköpostitse"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Tämä luo uuden ${ MAIL_APP_NAME } -osoitteen."
+      ],
+      "User created": [
+        "Käyttäjä luotiin"
+      ],
+      "VPN connections": [
+        "VPN-yhteydet"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Kutsu lähetetty, odotetaan kutsutun jäsenen vastausta"
+      ],
+      "Invite sent": [
+        "Kutsu lähetetty"
+      ],
+      "It's you": [
+        "Sinä"
+      ],
+      "Private": [
+        "Yksityinen"
+      ],
+      "SSO": [
+        "Kertakirjautuminen"
+      ],
+      "SSO user provided by your identity provider": [
+        "Identiteetinhallintasi SSO-käyttäjä"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Validation": {

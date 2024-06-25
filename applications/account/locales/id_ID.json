@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Batal"
-      ],
-      "Cancel add-on": [
-        "Batalkan pengaya"
       ],
       "Cancel subscription": [
         "Batalkan langganan"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Unduh sampel CSV"
-      ],
-      "Download Desktop App": [
-        "Unduh Aplikasi Desktop"
       ],
       "Download ICS": [
         "Unduh ICS"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Pertahankan langganan Plus saya"
       ],
-      "Keep the writing assistant": [
-        "Pertahankan asisten penulisan"
-      ],
       "label emails as": [
         "labeli email sebagai"
       ],
       "Later": [
         "Nanti"
+      ],
+      "Learn why this option is unavailable": [
+        "Pelajari mengapa pilihan ini tidak tersedia"
       ],
       "Leave": [
         "Tinggalkan"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Buka di ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -1147,6 +1144,9 @@
       "Verify account": [
         "Verifikasi akun"
       ],
+      "Verify domain": [
+        "Verifikasi domain"
+      ],
       "View": [
         "Lihat"
       ],
@@ -1173,9 +1173,6 @@
       ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
-      ],
-      "Why can't the model run locally?": [
-        "Mengapa model ini tidak dapat berjalan secara lokal?"
       ],
       "Wipe": [
         "Hapus"
@@ -1405,41 +1402,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /bulan"
-      ],
-      "${ price } /year": [
-        "${ price }/tahun"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Aktif hingga ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Tambah asisten penulisan"
-      ],
-      "Add writing assistant to your plan": [
-        "Tambah asisten penulisan ke dalam paket Anda"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Berikan akses terhadap fitur ini kepada pengguna yang spesifik di ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Diperbarui secara otomatis pada ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "Batalkan pengaya asisten penulisan"
-      ],
       "Customize plan": [
         "Sesuaikan paket"
       ],
-      "from ${ price } /month": [
-        "mulai dari ${ price }/bulan"
-      ],
       "New": [
         "Baru"
-      ],
-      "Renew subscription": [
-        "Perbarui langganan"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan memeriksa isi tulisan email Anda. ${ learnMore }"
@@ -4046,9 +4013,6 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Faktur tidak dapat dimuat. Silakan coba lagi nanti."
-      ],
       "Could not open created vault": [
         "Brankas yang dibuat tidak dapat dibuka"
       ],
@@ -4057,6 +4021,9 @@
       ],
       "Could not save preference": [
         "Tidak dapat menyimpan preferensi"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Faktur tidak dapat dimuat. Silakan coba lagi nanti."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
@@ -6116,6 +6083,17 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -7110,6 +7088,9 @@
       "Invitation link expired": [
         "Tautan undangan kedaluwarsa"
       ],
+      "Invitation link used": [
+        "Tautan undangan digunakan"
+      ],
       "Invite Accepted": [
         "Undangan Diterima"
       ],
@@ -7728,6 +7709,9 @@
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
+      "Set your password": [
+        "Tetapkan kata sandi Anda"
+      ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
       ],
@@ -7914,9 +7898,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Proses verifikasi akan membuka tab browser baru. Mohon nonaktifkan segala pemblokir pop-up yang aktif."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Pengaya asisten penulisan **tidak akan diperbarui**. Anda akan dapat tetap menikmati layanan ini hingga **${ subscriptionRenewalDate }.**"
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Berkas konfigurasi ini memungkinkan Anda untuk memilih server ${ VPN_APP_NAME } mana yang akan tersambung pada saat Anda menggunakan aplikasi VPN milik pihak ketiga atau menyiapkan koneksi VPN pada router."
       ],
@@ -7947,6 +7928,12 @@
       "This file is too large to preview": [
         "Berkas ini terlalu besar untuk dipratinjau"
       ],
+      "This invitation link already used. Please sign in directly instead.": [
+        "Tautan undangan ini telah digunakan. Silakan masuk secara langsung."
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Tautan undangan ini telah kedaluwarsa. Silakan hubungi administrator Anda untuk meminta akses."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Berikut ini adalah 12 kata yang telah ditentukan sebagai frasa pemulihan Anda."
       ],
@@ -7955,6 +7942,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Ini adalah kunci enkripsi yang telah Anda simpan sebelumnya."
+      ],
+      "This is an invitation from:": [
+        "Ini adalah undangan dari:"
       ],
       "This is the password you used before the password reset.": [
         "Berikut ini adalah kata sandi yang Anda gunakan sebelum kata sandi Anda diatur ulang."
@@ -7985,9 +7975,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Proses verifikasi ini dapat memakan waktu hingga satu jam. Setelah proses verifikasi berhasil, jangan hapus rekaman TXT ini karena rekaman ini akan dibutuhkan untuk mengonfirmasi bahwa Anda tetap merupakan pemilik dari domain yang bersangkutan."
-      ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Tindakan ini akan membatalkan undangan sebelumnya dan mengirimkan undangan baru kepada **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan menganulir seluruh manfaat loyalitas yang telah Anda peroleh."
@@ -8022,6 +8009,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Tindakan ini akan mengirimkan undangan baru ke **${ email }**."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
       ],
@@ -8033,6 +8023,9 @@
       ],
       "to ${ product } Business": [
         "ke ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Untuk memberikan izin penggunaan SAML SSO kepada domain **${ domainName }**, Anda harus memverifikasi kepemilikan domain ini dengan menambahkan rekaman TXT DNS berikut ke dalam domain Anda pada penyedia layanan DNS Anda."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda benar-benar paham akan risikonya atau apabila Anda telah mengekspor salinan kunci."
@@ -8430,6 +8423,12 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Anda sedang menggunakan ${ ipCount } dari ${ ipAddresses } server khusus yang Anda miliki."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Anda saat ini sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang tersedia serta ${ usedAI } dari ${ maxAI } lisensi asisten penulisan yang tersedia."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Anda saat ini sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang tersedia tanpa menggunakan satu pun dari ${ maxAI } lisensi asisten penulisan yang tersedia."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Anda sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang Anda miliki."
       ],
@@ -8610,9 +8609,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Browser Anda tidak mendukung asisten penulisan. Unduh aplikasi desktop ${ MAIL_APP_NAME } atau cobalah untuk menjalankan fitur ini pada server."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Browser Anda tidak mendukung asisten penulisan. Cobalah untuk menjalankan fitur ini pada server."
       ],
@@ -8675,17 +8671,6 @@
       ],
       "Zoom meeting": [
         "sesi meeting Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9227,7 +9212,7 @@
         "Aplikasi autentikator"
       ],
       "Auto show embedded images": [
-        "Tampilkan gambar tersemat secara otomatis"
+        "Tampilkan gambar yang tersemat secara otomatis"
       ],
       "Auto show remote images": [
         "Tampilkan gambar jarak jauh secara otomatis"
@@ -9925,6 +9910,9 @@
       "Spam": [
         "Spam"
       ],
+      "Spam and filters": [
+        "Spam dan filter"
+      ],
       "Starred": [
         "Dibintangi"
       ],
@@ -10359,9 +10347,6 @@
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
       ],
-      "Users and addresses": [
-        "Pengguna dan alamat"
-      ],
       "View guide": [
         "Lihat panduan"
       ],
@@ -10467,6 +10452,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "Seluruh aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi semua bisnis Anda"
+      ],
       "An encrypted email service that puts your privacy first": [
         "Layanan email terenkripsi yang mengutamakan privasi Anda"
       ],
@@ -10476,8 +10464,22 @@
       "Encrypted solutions to protect your entire business": [
         "Solusi terenkripsi untuk melindungi seluruh bisnis Anda"
       ],
+      "Enhanced security and premium features for teams": [
+        "Keamanan mutakhir dan fitur premium untuk tim"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Penawaran waktu terbatas: **Dapatkan potongan harga hingga 35%** untuk paket tahunan"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Anda telah diundang untuk mencoba ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "Untuk bisnis"
+      ],
+      "For individuals": [
+        "Untuk individu"
       ]
     },
     "mailtrial2024: Action": {
@@ -10563,11 +10565,17 @@
       "Delete": [
         "Hapus"
       ],
+      "Delete and revoke invite": [
+        "Hapus dan anulir undangan"
+      ],
       "Edit": [
         "Sunting"
       ],
       "Remove": [
         "Hapus"
+      ],
+      "Resend invite link": [
+        "Kirim ulang tautan undangan"
       ],
       "Revoke sessions": [
         "Cabut sesi"
@@ -11012,6 +11020,9 @@
       "Advanced sharing security": [
         "Keamanan berbagi berkas tingkat lanjut"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Seluruh layanan ${ BRAND_NAME }"
+      ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
       ],
@@ -11071,6 +11082,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Pemantauan kebocoran data (segera hadir)"
+      ],
+      "Dedicated account manager": [
+        "Pengelola akun khusus"
       ],
       "Dedicated servers and IP": [
         "Server dan alamat IP khusus"
@@ -11257,6 +11271,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
+      ],
+      "Tailored to your needs": [
+        "Disesuaikan untuk kebutuhan Anda"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -12453,6 +12470,9 @@
       ],
       "Current plan": [
         "Paket saat ini"
+      ],
+      "Customizable services for large teams.": [
+        "Layanan yang dapat disesuaikan untuk tim besar"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Unduh dan instal aplikasi dan ekstensi yang sesuai untuk mulai menggunakan ${ PASS_APP_NAME }"
@@ -13669,6 +13689,9 @@
       "Actions": [
         "Tindakan"
       ],
+      "Drag to reorder": [
+        "Seret untuk mengubah urutan"
+      ],
       "Labels": [
         "Label"
       ]
@@ -13753,6 +13776,11 @@
     "signup: Action": {
       "Request a demo": [
         "Minta demo"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "Patuh terhadap GDPR"
       ]
     },
     "specialoffer: Action": {
@@ -14817,6 +14845,9 @@
       "Domain deleted": [
         "Domain berhasil dihapus"
       ],
+      "Invitation resent": [
+        "Undangan dikirim ulang"
+      ],
       "Sessions revoked": [
         "Sesi berhasil dicabut"
       ],
@@ -14952,6 +14983,9 @@
       ],
       "Import": [
         "Impor"
+      ],
+      "Invitation email": [
+        "Email undangan"
       ],
       "List": [
         "Daftar"
@@ -15190,9 +15224,6 @@
       ],
       "Cancel subscription?": [
         "Batalkan langganan?"
-      ],
-      "Cancel the writing assistant add-on?": [
-        "Batalkan pengaya asisten penulisan?"
       ],
       "Card verification": [
         "Verifikasi kartu"
@@ -15440,6 +15471,9 @@
       "Edit organization identity": [
         "Edit identitas organisasi"
       ],
+      "Edit profile": [
+        "Sunting profil"
+      ],
       "Edit servers": [
         "Sunting server"
       ],
@@ -15475,9 +15509,6 @@
       ],
       "Email subscriptions": [
         "Langganan email"
-      ],
-      "Enable writing assistant": [
-        "Aktifkan asisten penulisan"
       ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
@@ -16076,6 +16107,9 @@
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
       ],
+      "Writing assistant": [
+        "Asisten penulisan"
+      ],
       "You have no open alerts": [
         "Anda tidak memiliki peringatan yang terbuka"
       ],
@@ -16513,8 +16547,41 @@
       "${ BRAND_NAME } address": [
         "Alamat ${ BRAND_NAME }"
       ],
+      "Add multiple users": [
+        "Tambahkan beberapa pengguna"
+      ],
+      "Add new user": [
+        "Tambahkan pengguna baru"
+      ],
+      "Admin": [
+        "Admin"
+      ],
       "An invitation will be sent to this email address.": [
         "Sebuah undangan akan dikirim ke alamat email ini."
+      ],
+      "Cancel": [
+        "Batalkan"
+      ],
+      "Confirm password": [
+        "Konfirmasi sandi"
+      ],
+      "Create password": [
+        "Buat kata sandi"
+      ],
+      "Create user": [
+        "Buat pengguna"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "Optional": [
+        "Opsional"
+      ],
+      "Private": [
+        "Pribadi"
       ],
       "Remember to share the user's sign in details with them.": [
         "Jangan lupa untuk membagikan rincian masuk ini kepada pengguna yang bersangkutan."
@@ -16524,6 +16591,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Tindakan ini akan membuat alamat ${ MAIL_APP_NAME } baru."
+      ],
+      "User created": [
+        "Pengguna dibuat"
       ],
       "VPN connections": [
         "Koneksi VPN"
@@ -16536,8 +16606,11 @@
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
       ],
-      "AI": [
-        "AI"
+      "Invite sent": [
+        "Undangan dikirim"
+      ],
+      "It's you": [
+        "Ini Anda"
       ],
       "Private": [
         "Privat"
@@ -16547,6 +16620,9 @@
       ],
       "SSO user provided by your identity provider": [
         "Pengguna SSO disediakan oleh penyedia identitas Anda"
+      ],
+      "Writing assistant": [
+        "Asisten penulisan"
       ]
     },
     "Validation": {

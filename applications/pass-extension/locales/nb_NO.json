@@ -801,9 +801,6 @@
       "Trashing item failed": [
         "Sletting av element til papirkurv mislyktes"
       ],
-      "Unable to boot": [
-        "Ikke i stand til å starte opp"
-      ],
       "Unable to generate an OTP code for this item": [
         "Ikke i stand tl å generere en OTP-kode for dette elementet."
       ],
@@ -842,6 +839,9 @@
       ],
       "Vault name does not match": [
         "Hvelvnavn samsvarer ikke"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Det oppstod et problem under oppstart av ${ PASS_SHORT_APP_NAME }. Hvis dette problemet vedvarer, kan du kontakte vår kundestøtte for å få hjelp."
       ],
       "Wrong PIN code. Try again.": [
         "Feil PIN-kode. Prøv igjen."

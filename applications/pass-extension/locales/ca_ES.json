@@ -423,7 +423,7 @@
         "Inicia la sessió"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Sessió iniciada amb ${ BRAND_NAME }"
+        "Inicia sessió amb ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Tanca la sessió"
@@ -450,7 +450,7 @@
         "Desbloqueja fora de línia amb contrasenya"
       ],
       "Unpin item": [
-        "Desancora l'element"
+        "No fixis l'element"
       ],
       "Update": [
         "Actualitza"
@@ -466,6 +466,9 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Upgrade now to share with more people": [
+        "Milloreu el pla ara per a compartir-ho amb més persones"
       ],
       "View app logs": [
         "Mostra els registres de l'aplicació"
@@ -484,6 +487,14 @@
       ],
       "Write us on Twitter": [
         "Escriviu-nos a Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Estalvieu amb intel·ligència. Aconseguiu un any de Pass Plus per només ${ relativePrice } al mes."
       ]
     },
     "bf2023: Label": {
@@ -519,6 +530,9 @@
         "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
         "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
       ],
+      "A checked box means the feature is disabled.": [
+        "Una casella marcada significa que la funció està desactivada."
+      ],
       "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
         "La supervisió del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
       ],
@@ -545,14 +559,30 @@
       "Authentication error": [
         "Error d'autenticació"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "L'autenticació ha fallat. Confirmeu la contrasenya de ${ BRAND_NAME } per a continuar amb l'exportació"
+      ],
       "Authentication failure: ${ message }": [
         "Error d'autenticació: ${ message }"
       ],
       "Cannot create alias (${ error }).": [
         "No es pot crear l'àlies (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Ara mateix no es pot enviar la invitació",
+        "Ara mateix no es poden enviar invitacions"
+      ],
+      "Cannot send invitations at the moment": [
+        "De moment, no es poden enviar invitacions"
+      ],
+      "Could not confirm this invite at the moment": [
+        "No s'ha pogut confirmar aquesta invitació en aquest moment"
+      ],
       "Could not leave vault.": [
         "No s'ha pogut deixar la cassa forta."
+      ],
+      "Could not load recommendations at the moment.": [
+        "No s'han pogut acarregar les recomanacions ara mateix"
       ],
       "Could not open created vault": [
         "No s'ha pogut obrir la caixa forta creada"
@@ -626,6 +656,9 @@
       ],
       "Failed to load item history": [
         "No s'ha pogut carregar l'historial d'elements"
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "No s'han pogut moure tots els elements de «${ payload.content.name }»"
       ],
       "Failed to move items": [
         "No s'ha pogut moure els elements."
@@ -739,13 +772,13 @@
         "No s'ha pogut restaurar l'element"
       ],
       "Restoring trashed items failed": [
-        "Ha fallat la restauració dels elements de la paperera"
+        "No s'ha pogut restaurar els elements de la paperera."
       ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
       ],
       "Signature verification failed": [
-        "Verificació de la signatura fallida"
+        "No s'ha pogut verificar la signatura."
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Algunes caixes fortes ja no són accessibles a causa d'un restabliment de contrasenya. Reactiveu les claus del vostre compte per recuperar-hi l'accés. ${ reactivateLink }"
@@ -767,9 +800,6 @@
       ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
-      ],
-      "Unable to boot": [
-        "No s'ha pogut iniciar"
       ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
@@ -810,11 +840,17 @@
       "Vault name does not match": [
         "El nom de la caixa forta no coincideix"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Hem trobat un problema en iniciar ${ PASS_SHORT_APP_NAME }. Si aquest problema continua, poseu-vos en contacte amb el nostre servei d'atenció al client per obtenir ajuda."
+      ],
       "Wrong PIN code. Try again.": [
         "Codi PIN incorrecte. Proveu de nou."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
       ]
     },
     "Error message": {
@@ -875,6 +911,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "S'ha descartat l'actualització de \"${ payload.item.data.metadata.name }\""
       ],
+      "${ count } invites successfully sent": [
+        "S'han enviat ${ count } invitacions"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
@@ -897,7 +936,7 @@
         "${ PASS_APP_NAME } només importarà inicis de sessió, notes i targetes de crèdit."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } l'avisarà tan bon punt s'autocompletin les contrasenyes generades."
+        "${ PASS_APP_NAME } us avisarà tan bon punt s'autocompletin les contrasenyes generades."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } us demanarà que deseu o actualitzeu les credencials."
@@ -924,6 +963,9 @@
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
       ],
@@ -945,11 +987,17 @@
       "Admin": [
         "Administrador"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
       ],
       "All breaches for this address were resolved": [
         "S'han resolt totes les infraccions d'aquesta adreça"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Tots els elements de «${ payload.content.name }» s'han mogut correctament"
       ],
       "All items successfully moved": [
         "S'han mogut tots els elements."
@@ -962,6 +1010,9 @@
       ],
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Esteu segur que voleu moure tots els elements de «${ fromVaultName }» a «${ toVaultName }»?"
       ],
       "Are you sure you want to move items to \"${ name }\" ?": [
         "N'esteu segur, de voler moure elements a \"${ name }\"?"
@@ -1005,6 +1056,9 @@
       "Close this window in order to use another passkey manager.": [
         "Tanqueu aquesta finestra per tal d'utilitzar un altre gestor de contrasenyes."
       ],
+      "Congratulations, your access has been confirmed": [
+        "S'ha confirmat el vostre accés"
+      ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
       ],
@@ -1022,6 +1076,9 @@
       ],
       "Deleted items will be moved here first": [
         "Els elements eliminats es mouran aquí primer"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "S'està suprimint «${ payload.content.name }»"
       ],
       "Disabling auto-lock": [
         "S'està desactivant el bloqueig automàtic"
@@ -1086,8 +1143,27 @@
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
       ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Seguiu aquests passos per a importar les dades amb un CSV genèric:"
+      ],
+      "For easy access to your passwords and more.": [
+        "Per a un accés fàcil a les contrasenyes i més."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "Per motius de seguretat, cal confirmar el vostre accés"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Per motius de seguretat, cal confirmar l'accés"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
+        "Les contrasenyes generades s'emmagatzemaran durant un període de: ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
+      ],
       "Generating alias...": [
         "S'està generant un àlies..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Aconseguiu àlies il·limitats, gaudiu de característiques exclusives i doneu-nos suport subscrivint-vos al Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Aquí trobareu tota la informació necessària per a començar."
@@ -1190,6 +1266,9 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
       "Moving an item to another vault will erase its history": [
         "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial"
       ],
@@ -1214,8 +1293,14 @@
       "Offline mode could not be disabled at the moment": [
         "El mode fora de línia no s'ha pogut desactivar en aquest moment"
       ],
+      "Offline mode could not be enabled at the moment": [
+        "El mode fora de línia no s'ha pogut activar en aquest moment."
+      ],
+      "Offline support successfully disabled": [
+        "S'ha desactivat el mode fora de línia"
+      ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se us tancarà la sessió després de 3 intents fallits."
+        "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió. Se us tancarà la sessió després de 3 intents que no han funcionat."
       ],
       "Open the Extensions menu": [
         "Obre el menú d'Extensions"
@@ -1238,6 +1323,10 @@
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana s'esborren automàticament de l'historial.",
+        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes s'esborren automàticament de l'historial."
+      ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
       ],
@@ -1259,6 +1348,9 @@
       "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
         "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per tal de bloquejar-la automàticament amb la vostra contrasenya"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
         "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per anul·lar el registre del vostre bloqueig actual."
       ],
@@ -1275,10 +1367,13 @@
         "Considereu deixar una ressenya."
       ],
       "Please do not close this window": [
-        "No tanqueu aquesta finestra"
+        "Si us plau, no tanqueu aquesta finestra"
       ],
       "Please enter your current PIN code to continue": [
         "Introduïu el codi PIN actual per a continuar."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Actualitzeu per a tenir accés anticipat a l'aplicació web ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
@@ -1313,8 +1408,17 @@
       "Select destination vault": [
         "Selecciona la caixa forta de destinació"
       ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Seleccioneu on voleu que es desi la/es caixa/es forta/es importada/es."
+      ],
       "Selected items permanently deleted": [
         "Els elements seleccionats s'han suprimit permanentment"
+      ],
+      "Selected items successfully moved to trash": [
+        "Els elements seleccionats s'han mogut correctament a la paperera"
+      ],
+      "Selected items successfully restored from trash": [
+        "Els elements seleccionats s'han restaurat correctament des de la paperera"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -1324,6 +1428,9 @@
       ],
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Compartiu els inicis de sessió, notes segures, amb un màxim de 10 persones"
       ],
       "Sign in or create an account to continue.": [
         "Inicieu sessió o creeu un compte per continuar."
@@ -1340,11 +1447,17 @@
       "Successfully synced all vaults": [
         "S'han sincronitzat totes les caixes fortes"
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Canvieu a una altra caixa forta o creeu un element en aquesta caixa forta"
+      ],
       "Syncing your vaults…": [
         "S'estan sincronitzant les vostres caixes fortes..."
       ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "La llista desplegable d'emplenament automàtic s'obrirà automàticament quan feu clic o quan us centreu en el camp."
       ],
       "The export will only contain vaults that you own.": [
         "L'exportació només contindrà les caixes fortes de la vostra propietat."
@@ -1374,6 +1487,12 @@
       "This version will be added to the history as the newest version.": [
         "Aquesta versió s'afegirà a l'historial com a versió més nova."
       ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Per migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, suprimiu el fitxer exportat."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Per revisar les dades importades, feu clic a la icona del Proton Pass de la barra d'eines del navegador."
+      ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
       ],
@@ -1390,7 +1509,7 @@
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
       ],
       "Unpinning item...": [
-        "Desancorant l'element..."
+        "S'està desfixant l'element..."
       ],
       "Update login": [
         "Actualitza l'inici de sessió"
@@ -1400,6 +1519,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
+      ],
+      "Use vaults to share this item with others.": [
+        "Utilitzeu les caixes fortes per a compartir aquest element amb altres."
       ],
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
@@ -1430,6 +1552,9 @@
       ],
       "You are about to create:": [
         "Esteu a punt de crear:"
+      ],
+      "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Ara podeu usar la contrasenya de ${ BRAND_NAME } per a accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Podeu emplenar automàticament les vostres credencials fent clic a la icona de ${ PASS_APP_NAME }."
@@ -1824,7 +1949,7 @@
         "Demana el desament automàtic"
       ],
       "Prompt for auto-save when generating passwords": [
-        "Sol·licitar el desament automàtic en generar contrasenyes"
+        "Sol·licita el desament automàtic en generar contrasenyes"
       ],
       "Rate us": [
         "Avalueu-nos"
@@ -1976,6 +2101,9 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Heu seleccionat ${ semiboldText } en aquesta caixa forta"
       ]
     },
     "Onboarding": {
@@ -2247,7 +2375,7 @@
         "Comparteix amb"
       ],
       "Stay safer online": [
-        "Estigui més segur en línia"
+        "Mantingueu-vos més segurs en línia"
       ],
       "Suggestions": [
         "Suggeriments"
@@ -2352,6 +2480,9 @@
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
       ],
+      "Could not send invitations to the following addresses :": [
+        "No s'han pogut enviar invitacions a les següents adreces:"
+      ],
       "Duplicate email addresses.": [
         "Duplicitat d'adreces de correu electrònic."
       ],
@@ -2361,6 +2492,9 @@
       "Encryption password is required": [
         "Es requereix una contrasenya de xifratge"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "La data de caducitat no té el format MM/AA"
+      ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
       ],
@@ -2369,6 +2503,9 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "No es permet convidar adreces de correu electrònic de fora de l'organització."
+      ],
+      "item was imported without custom fields": [
+        "L'element s'ha importat sense camps personalitzats"
       ],
       "Maximum length is ${ maxLength } character": [
         "La longitud màxima és d'${ maxLength } caràcter.",
@@ -2406,6 +2543,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "El fitxer d'exportació xifrat amb PGP requereix una contrasenya"
+      ],
+      "Please contact us for investigating the issue": [
+        "Contacteu amb nosaltres per a investigar el problema"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició d'àlies de correu electrònic."
@@ -2446,8 +2586,14 @@
       "You cannot create more vaults than your subscription allows.": [
         "No podeu crear més caixes fortes del que permet la vostra subscripció."
       ],
+      "You have reached the limit of members who can access this vault.": [
+        "Heu arribat al límit de membres que poden accedir a aquesta caixa forta."
+      ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Heu assolit el límit d'usuaris en aquesta caixa forta. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Heu arribat al límit de les caixes fortes que podeu tenir al vostre pla."
       ],
       "You have unsaved changes.": [
         "Teniu canvis per desar."

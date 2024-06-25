@@ -384,9 +384,6 @@
       "Download ${ attachmentName }": [
         "Lataa ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Lataa työpöytäsovellus"
-      ],
       "Download now": [
         "Lataa nyt"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Avaa viestin kirjoitus"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Avaa ${ DOCS_SHORT_APP_NAME }issa"
+      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -945,6 +945,9 @@
       ],
       "Reply securely": [
         "Vastaa turvallisesti"
+      ],
+      "Report a good content": [
+        "Ilmoita hyvästä sisällöstä"
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
@@ -1206,6 +1209,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1513,29 +1520,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Nopea ja turvallinen"
+      "Fast and secure. No logs are kept.": [
+        "Nopea ja turvallinen. Lokitietoja ei säilytetä."
       ],
-      "Needs compatible hardware": [
-        "Vaatii yhteensopivan laitteiston"
-      ],
-      "No logs": [
-        "Ei lokitietoja"
-      ],
-      "Requires one-time download": [
-        "Vaatii kertaluonteisen latauksen"
+      "Requires a one-time download and compatible hardware.": [
+        "Vaatii kertaluonteisen latauksen ja yhteensopivan laitteiston."
       ],
       "Run locally": [
         "Suorita paikallisesti"
       ],
       "Run on servers": [
         "Suorita palvelimilla"
-      ],
-      "Runs on all devices": [
-        "Toimii kaikilla laitteilla"
-      ],
-      "Runs on your device": [
-        "Toimii laitteellasi"
       ]
     },
     "Attached ics file error": {
@@ -4095,6 +4090,9 @@
       "The sending key is not valid": [
         "Lähetysavain ei kelpaa"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Järjestelmä on tällä hetkellä kiireinen. Yritä uudelleen muutaman minuutin kuluttua."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Kirjoitusavustaja ei voi käsitellä pyyntöäsi. Kokeile toista kehotetta."
       ],
@@ -5533,6 +5531,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } ${ BRAND_NAME } -kirjoitusavustajasta"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } kansio löytyi",
         "${ providerFoldersNumLocalized } kansiota löytyi"
@@ -6067,8 +6068,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
       ],
-      "Free for 14 days": [
-        "Ilmainen 14 päivän ajan"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Ilmainen ${ ASSISTANT_TRIAL_TIME_DAYS } päivän ajan"
       ],
       "From": [
         "Lähettäjä"
@@ -6203,9 +6204,6 @@
       ],
       "Learn more": [
         "Lue lisää"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Lue lisää: ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Vasemmalta oikealle"
@@ -6371,6 +6369,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "Vain yksi kirjoitusavustaja voi olla avoinna kerrallaan"
       ],
       "Open shortcut cheat sheet": [
         "Avaa pikanäppäinlista"
@@ -7111,9 +7112,6 @@
       "You can now return to the application to continue": [
         "Voit jatkaa palaamalla sovellukseen"
       ],
-      "You can open only one writing assistant at a time": [
-        "Voit avata vain yhden kirjoitusavustajan kerrallaan"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
       ],
@@ -7242,9 +7240,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Selaimesi ei tue kirjoitusavustajaa. Lataa ${ MAIL_APP_NAME } -työpöytäsovellus tai kokeile sen suorittamista palvelimilla."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Selaimesi ei tue kirjoitusavustajaa. Kokeile sen suorittamista palvelimilla."
@@ -9888,6 +9883,9 @@
       "A way to contact you": [
         "Tapa, jolla tavoitamme sinut"
       ],
+      "Describe what to change": [
+        "Kuvaile, mitä tulisi muuttaa"
+      ],
       "E.g., ": [
         "Esim. "
       ],
@@ -9920,9 +9918,6 @@
       ],
       "Hint": [
         "Vihje"
-      ],
-      "How do you want the selected text modified?": [
-        "Miten haluat muuttaa valittua tekstiä?"
       ],
       "Image URL": [
         "Kuvan URL"
@@ -10016,6 +10011,9 @@
       ],
       "Try “Write a cover letter for an internship”": [
         "Kokeile ”Kirjoita saatekirje harjoittelupaikkaa varten”"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "Kokeile \"Kirjoita jatkosähköposti asiakkaalle\""
       ],
       "Type a command…": [
         "Syötä komento…"
@@ -11088,6 +11086,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME }, sisältäen rajattomasti Hide-my-email-aliaksia"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } + ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } tallennustilaa/käyttäjä"
       ],
@@ -11095,7 +11096,7 @@
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja henkilöllisyytesi ovat turvassa."
+        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -11660,6 +11661,9 @@
       ],
       "Self-destruction set": [
         "Tuhoutuminen on asetettu"
+      ],
+      "Thanks for the feedback!": [
+        "Kiitos palautteesta!"
       ],
       "Undo in progress": [
         "Kumotaan"

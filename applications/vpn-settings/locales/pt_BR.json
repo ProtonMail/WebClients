@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Abrir em ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Abrir navegação"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Enviar meu nome de usuário"
       ],
+      "Send new invite": [
+        "Enviar um novo convite"
+      ],
       "Send reminder": [
         "Enviar lembrete"
       ],
@@ -598,6 +604,9 @@
       ],
       "Verify code again": [
         "Verificar código novamente"
+      ],
+      "Verify domain": [
+        "Verificar domínio"
       ],
       "View": [
         "Visualizar"
@@ -1983,6 +1992,9 @@
       "Are you sure you want to disable this address?": [
         "Você tem certeza de que deseja desativar este endereço?"
       ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Ao desativar esse endereço ${ address }, você não poderá enviar ou receber e-mails usando esse endereço e todos os produtos da ${ BRAND_NAME } serão desativados."
+      ],
       "Disable address": [
         "Desativar endereço"
       ],
@@ -2103,7 +2115,7 @@
       "Code wrong or not valid anymore": [
         "Código errado ou não é mais válido"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Não foi possível carregar faturas. Tente novamente mais tarde."
       ],
       "Domain not available, try again later": [
@@ -2111,6 +2123,9 @@
       ],
       "Email address is invalid": [
         "O endereço de e-mail não é válido."
+      ],
+      "Email address is not available": [
+        "O endereço de e-mail não está disponível."
       ],
       "Email is not valid": [
         "O e-mail não é válido."
@@ -2186,6 +2201,9 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
+      ],
+      "Organization key must be activated to create invited users": [
+        "A chave da organização deve ser ativada para criar usuários não convidados"
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar usuários não privados"
@@ -3758,11 +3776,17 @@
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Pré-visualização de documentos ainda não é suportada. Abra o documento para visualizá-lo."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "O compartilhamento público de documentos ainda não é suportado. Peça ao proprietário para convidá-lo diretamente para o documento."
       ],
       "read our two-factor authentication guide first": [
         "leia nosso guia de autenticação de dois fatores primeiro"
@@ -3966,6 +3990,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Essa verificação pode levar até uma hora. Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esta ação cancelará seu atual plano pago e você perderá todas as vantagens e benefícios acumulados"
       ],
@@ -3995,6 +4022,9 @@
       ],
       "to ${ product } Business": [
         "para ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Para permitir que o domínio **${ domainName }** use SAML SSO, você deve verificar a propriedade dele, adicionando o seguinte registro DNS TXT ao seu domínio no seu provedor DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Para cancelar sua assinatura, entre em contato conosco."
@@ -4191,6 +4221,9 @@
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Quando você cancela sua atual assinatura, o saldo da sua assinatura será devolvido como crédito de conta e você fará downgrade para o plano ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
       ],
@@ -4233,6 +4266,14 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Atualmente você está usando ${ ipCount } de ${ ipAddresses } do seu servidor dedicado disponível.",
         "Atualmente você está usando ${ ipCount } de ${ ipAddresses } dos seus servidores dedicados disponíveis."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Você está atualmente usando ${ usedMembers } da sua ${ maxMembers } licença de usuário disponível e ${ usedAI } da sua ${ maxAI } licença do assistente de escrita disponível.",
+        "Você está atualmente usando ${ usedMembers } das suas ${ maxMembers } licenças de usuário disponível e ${ usedAI } das suas ${ maxAI } licenças do assistente de escrita disponível."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Você está atualmente usando ${ usedMembers } da sua ${ maxMembers } licença de usuário disponível e nenhuma da sua ${ maxAI } licença do assistente de escrita disponível.",
+        "Você está atualmente usando ${ usedMembers } das suas ${ maxMembers } licenças de usuário disponível e nenhuma da sua ${ maxAI } licenças do assistente de escrita disponível."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Você está usando atualmente ${ usedMembers } de sua ${ maxMembers } licença de usuário disponível.",
@@ -4893,6 +4934,9 @@
       "Verification code": [
         "Código de verificação"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Sentimos muito em vê-lo partir. Explique por que você está partindo para nos ajudar a melhorar."
       ],
@@ -5027,6 +5071,9 @@
       ],
       "Create account": [
         "Criar conta"
+      ],
+      "Don't have access to your 2FA?": [
+        "Não tem acesso ao seu A2F?"
       ],
       "Forgot password?": [
         "Esqueceu sua senha?"
@@ -5203,11 +5250,17 @@
       "Delete": [
         "Excluir"
       ],
+      "Delete and revoke invite": [
+        "Excluir e revogar convite"
+      ],
       "Edit": [
         "Editar"
       ],
       "Remove": [
         "Remover"
+      ],
+      "Resend invite link": [
+        "Reenviar link de convite"
       ],
       "Revoke sessions": [
         "Revogar sessões"
@@ -5605,7 +5658,7 @@
         "Checagens regulares da segurança da sua conta. O alertaremos se você tiver senhas fracas ou reutilizadas que precisem ser atualizadas."
       ],
       "Reply to messages": [
-        "Responder mensagens"
+        "Responder a mensagens"
       ],
       "Require 2FA for organization": [
         "Requer A2F para a organização"
@@ -7796,6 +7849,9 @@
       "Back up photos from your devices": [
         "Faça backup de fotos de seus dispositivos"
       ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Gere confiança e reconhecimento da marca com endereços de e-mail profissionais no seu próprio domínio."
+      ],
       "Calendar sharing": [
         "Calendários compartilhados"
       ],
@@ -7910,8 +7966,14 @@
       "Send emails with attachments": [
         "Envie e-mails com anexos"
       ],
+      "Stay secure and connected anywhere": [
+        "Mantém seguro e conectado de qualquer lugar."
+      ],
       "Subscription canceled": [
         "Assinatura cancelada"
+      ],
+      "Support your compliance objectives": [
+        "Apoio aos seus objetivos de conformidade"
       ],
       "Sync files on devices": [
         "Sincronize arquivos nos dispositivos"
@@ -8171,6 +8233,9 @@
       "Domain deleted": [
         "Domínio excluído"
       ],
+      "Invitation resent": [
+        "Convite reenviado"
+      ],
       "Sessions revoked": [
         "Sessões revogadas"
       ],
@@ -8265,6 +8330,9 @@
       ],
       "Email addresses": [
         "Endereços de e-mail"
+      ],
+      "Invitation email": [
+        "E-mail de convite"
       ],
       "Name": [
         "Nome"
@@ -8687,9 +8755,6 @@
       "Plans": [
         "Planos"
       ],
-      "Policies": [
-        "Políticas"
-      ],
       "Preview": [
         "Pré-visualização"
       ],
@@ -8749,6 +8814,9 @@
       ],
       "Send email reminders?": [
         "Enviar lembretes por e-mail?"
+      ],
+      "Send new invite?": [
+        "Enviar um novo convite?"
       ],
       "Set new password": [
         "Definir nova senha"
@@ -9027,6 +9095,82 @@
       ],
       "Primary admin": [
         "Administrador principal"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "Endereços da ${ BRAND_NAME }"
+      ],
+      "Add multiple users": [
+        "Adicionar vários usuários"
+      ],
+      "Add new user": [
+        "Adicionar novo usuário"
+      ],
+      "Admin": [
+        "Administrador"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Um convite será enviado para este endereço de e-mail"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Confirm password": [
+        "Confirmar a senha"
+      ],
+      "Create password": [
+        "Criar senha"
+      ],
+      "Create user": [
+        "Criar usuário"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Private": [
+        "Privado"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
+      ],
+      "User created": [
+        "Usuário criado"
+      ],
+      "VPN connections": [
+        "Conexões VPN"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administradores não podem acessar os dados privados de usuários"
+      ],
+      "Invite sent": [
+        "Convite enviado"
+      ],
+      "It's you": [
+        "É você"
+      ],
+      "Private": [
+        "Privado"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "Usuário SSO fornecido pelo seu provedor de identidade"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ]
     },
     "Validation": {

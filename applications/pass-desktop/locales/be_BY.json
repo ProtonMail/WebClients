@@ -812,9 +812,6 @@
       "Trashing item failed": [
         "Збой перамяшчэння элемента ў сметніцу"
       ],
-      "Unable to boot": [
-        "Немагчыма загрузіць"
-      ],
       "Unable to generate an OTP code for this item": [
         "Немагчыма згенерыраваць код OTP для гэтага элемента"
       ],
@@ -850,6 +847,9 @@
       ],
       "Vault name does not match": [
         "Назва сховішча не супадае"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Узнікла праблема падчас запуску ${ PASS_SHORT_APP_NAME }. Звяжыцеся з нашай службай падтрымкі кліентаў, калі гэта праблема застанецца."
       ],
       "Wrong password": [
         "Няправільны пароль"
@@ -1535,7 +1535,7 @@
         "Прапанавана"
       ],
       "Switch to another vault or create an item in this vault": [
-        "Пераключыцца на іншае сховішча або стварыць элемент у гэтым сховішчы."
+        "Пераключыцеся на іншае сховішча або стварыце элемент у гэтым сховішчы."
       ],
       "Syncing your vaults…": [
         "Сінхранізацыя вашых сховішчаў..."
@@ -1891,7 +1891,7 @@
         "Імпартаванне"
       ],
       "Import passwords": [
-        "Імпартаванне пароляў"
+        "Імпартаваць паролі"
       ],
       "Imported from : ": [
         "Імпартавана з:"

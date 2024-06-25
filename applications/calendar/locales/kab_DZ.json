@@ -407,6 +407,9 @@
       "Not now": [
         "Mačči tura"
       ],
+      "Ok": [
+        "IH"
+      ],
       "OK": [
         "Ih"
       ],
@@ -4923,6 +4926,14 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Kkes amiḍan"
@@ -4941,14 +4952,6 @@
       ],
       "Switch plan": [
         "Beddel aɣawas"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {

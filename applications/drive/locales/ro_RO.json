@@ -822,6 +822,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
+      "Understood": [
+        "Am înțeles"
+      ],
       "Undo": [
         "Anulare"
       ],
@@ -4225,6 +4228,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Descărcare întreruptă din cauza conectării cu probleme; se va relua automat."
       ],
+      "Download was canceled": [
+        "Descărcarea a fost anulată."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
       ],
@@ -4233,6 +4239,9 @@
       ],
       "Downloading": [
         "Se descarcă"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Descărcarea fișierelor ${ DOCS_APP_NAME } din ${ DRIVE_APP_NAME } nu este acceptată în prezent – ​​acestea nu vor fi incluse în descărcare."
       ],
       "Downloading all encrypted files": [
         "Se descarcă toate fișierele criptate"
@@ -4686,6 +4695,9 @@
       "Please enter the password to decrypt and view content.": [
         "Introduceți parola pentru a decripta și vizualiza conținutul."
       ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Exportați-le direct din aplicația ${ DOCS_APP_NAME } dacă doriți să le descărcați."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Rețineți că adresele atribuite acestor grupuri NU vor fi șterse."
       ],
@@ -4748,6 +4760,9 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Examinare documentelor nu este încă acceptată. Deschideți documentul pentru a-l vizualiza."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Versiunile anterioare sunt păstrate timp de ${ retentionLabel }."
       ],
@@ -4762,6 +4777,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Căutarea privată este activată. Acum puteți închide acest dialog și căuta fișiere sau foldere."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Partajarea publică a documentelor nu este încă acceptată. Solicitați proprietarului să vă invite direct la document."
       ],
       "Queued": [
         "În așteptare"
@@ -5770,6 +5788,9 @@
       ],
       "Import to:": [
         "Importare în:"
+      ],
+      "Include message and file name in invite email": [
+        "Includere mesaj și nume fișier în e-mailul de invitație"
       ],
       "Keep both": [
         "Păstrare ambele"
@@ -7510,6 +7531,9 @@
       "External invitation removed from the share": [
         "Invitația externă a fost eliminată din partajare."
       ],
+      "External invitation's email was sent again": [
+        "Mesajul din e-mailul extern de invitare a fost retrimis."
+      ],
       "Failed to accept share invitation": [
         "Eșuare acceptare invitație partajată"
       ],
@@ -7544,6 +7568,9 @@
       ],
       "File removed": [
         "Fișierul a fost eliminat."
+      ],
+      "Invitation's email was sent again": [
+        "Mesajul de invitare a fost retrimis."
       ],
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
@@ -7864,6 +7891,9 @@
       ],
       "Last name": [
         "Nume de familie"
+      ],
+      "Message": [
+        "Mesaj"
       ],
       "Name": [
         "Nume"
@@ -9946,6 +9976,9 @@
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Descărcarea are un fișier ${ DOCS_APP_NAME }"
+      ],
       "Your exposed information": [
         "Informațiile expuse"
       ],
@@ -10017,6 +10050,9 @@
       ],
       "Load image": [
         "Încărcare imagine"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Mesajul și numele fișierului sunt stocate cu criptare cu acces zero atunci când sunt incluse în e-mail."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."

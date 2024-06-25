@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Annullér"
-      ],
-      "Cancel add-on": [
-        "Annuller tilføjelse"
       ],
       "Cancel subscription": [
         "Opsig abonnement"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "Hent CSV-eksempel"
-      ],
-      "Download Desktop App": [
-        "Hent skrivebordsappen"
       ],
       "Download ICS": [
         "Download ICS"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "Behold mit Plus-abonnement"
       ],
-      "Keep the writing assistant": [
-        "Behold skriveassistenten"
-      ],
       "label emails as": [
         "giv e-mails etiketten"
       ],
       "Later": [
         "Senere"
+      ],
+      "Learn why this option is unavailable": [
+        "Opdag, hvorfor dette tilvalg ikke er muligt"
       ],
       "Leave": [
         "Forlad"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Åbn i ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Åbn navigation"
@@ -1177,9 +1174,6 @@
       "What do I get?": [
         "Hvad får jeg?"
       ],
-      "Why can't the model run locally?": [
-        "Hvorfor kan modellen ikke køre lokalt?"
-      ],
       "Wipe": [
         "Ryd"
       ],
@@ -1412,41 +1406,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /måned"
-      ],
-      "${ price } /year": [
-        "${ price } /år"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Aktiv indtil ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Tilføj skriveassistent"
-      ],
-      "Add writing assistant to your plan": [
-        "Tilføj skriveassistent til dit abonnement"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Tildel det til specifikke brugere i ${ userAndAddressesButton }."
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Automatisk fornyelse d. ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "Annuller tilføjelse til skriveassistent"
-      ],
       "Customize plan": [
         "Tilpas abonnement"
       ],
-      "from ${ price } /month": [
-        "fra ${ price } /måned"
-      ],
       "New": [
         "Ny"
-      ],
-      "Renew subscription": [
-        "Forny abonnement"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails. ${ learnMore }."
@@ -4063,9 +4027,6 @@
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Fakturaer kunne ikke indlæses. Prøv venligst igen senere."
-      ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
       ],
@@ -4074,6 +4035,9 @@
       ],
       "Could not save preference": [
         "Kunne ikke gemme præference"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Fakturaindlæsning mislykkedes. Prøv igen senere."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fravælg mindst ${ calendarsToFixCount } kalender",
@@ -6157,6 +6121,17 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -7998,9 +7973,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Bekræftelsesprocessen åbner en ny browserfane. Deaktivér venligst alle aktive pop-up-blokkere."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Skriveassistent-tilføjelsen **bliver ikke fornyet**. Du kan fortsætte med at bruge tjenesten indtil **${ subscriptionRenewalDate }.**."
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Disse konfigurationsfiler lader dig vælge, hvilken ${ VPN_APP_NAME }-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller indstiller en VPN-forbindelse på en router."
       ],
@@ -8078,9 +8050,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne bekræftelse kan tage op til en time. Efter en vellykket bekræftelse må du ikke fjerne TXT-posten, da den skal bruges til at bekræfte, at du fortsat ejer domænet."
-      ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Dette vil annullere den tidligere invitation og sende en ny til **${ email }**."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil opsige dit nuværende betalte abonnement, og du vil miste alle de loyalitetsfordele, du har optjent."
@@ -8527,6 +8496,14 @@
         "Du bruger i øjeblikket ${ ipCount } af din ${ ipAddresses } tilgængelig dedikeret server.",
         "Du bruger i øjeblikket ${ ipCount } af dine ${ ipAddresses } tilgængelige dedikerede servere."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ${ usedAI } af din ${ maxAI } tilgængelige licens til skriveassistent.",
+        "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser og ${ usedAI } af dine ${ maxAI } tilgængelige skriveassistentlicenser."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ingen af din ${ maxAI } tilgængelige skriveassistentlicens.",
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens og ingen af din ${ maxAI } tilgængelige skriveassistentlicenser."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens.",
         "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser."
@@ -8712,9 +8689,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Din browser understøtter ikke skriveassistenten. Hent skrivebordsappen ${ MAIL_APP_NAME }, eller prøv at køre den på servere."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Din browser understøtter ikke skriveassistenten. Prøv at køre den på servere."
       ],
@@ -8778,17 +8752,6 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10473,9 +10436,6 @@
       ],
       "Upgrade your plan": [
         "Opgradér abonnement"
-      ],
-      "Users and addresses": [
-        "Brugere og adresser"
       ],
       "View guide": [
         "Se guide"
@@ -15443,9 +15403,6 @@
       "Cancel subscription?": [
         "Opsig abonnement?"
       ],
-      "Cancel the writing assistant add-on?": [
-        "Annuller skriveassistent-tilføjelsen?"
-      ],
       "Card verification": [
         "Kortbekræftelse"
       ],
@@ -15732,9 +15689,6 @@
       ],
       "Email subscriptions": [
         "E-mail-abonnementer"
-      ],
-      "Enable writing assistant": [
-        "Aktiver skriveassistent"
       ],
       "Encryption and keys": [
         "Kryptering og nøgler"
@@ -16336,6 +16290,9 @@
       "WireGuard configuration": [
         "WireGuard konfiguration"
       ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ],
       "You have no open alerts": [
         "Du har ingen åbne varsler"
       ],
@@ -16836,9 +16793,6 @@
       "Administrators can't access the data of private users": [
         "Administratorer kan ikke tilgå private brugeres data"
       ],
-      "AI": [
-        "AI"
-      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitation sendt, afventer svar fra det inviterede medlem"
       ],
@@ -16856,6 +16810,9 @@
       ],
       "SSO user provided by your identity provider": [
         "SSO-bruger leveret af din identitetsudbyder"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
       ]
     },
     "Validation": {

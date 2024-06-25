@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Открыть в ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Открыть панель навигации"
       ],
@@ -2073,9 +2076,6 @@
       ],
       "Code wrong or not valid anymore": [
         "Неверный или недействительный код"
-      ],
-      "Coudn't load invoices. Please try again later.": [
-        "Не удалось загрузить счета-фактуры. Повторите попытку позже."
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
@@ -8478,9 +8478,6 @@
       "Plans": [
         "Тарифы"
       ],
-      "Policies": [
-        "Политики"
-      ],
       "Preview": [
         "Предварительный просмотр"
       ],
@@ -8808,6 +8805,34 @@
       ],
       "Primary admin": [
         "Основной администратор"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } адрес"
+      ],
+      "Add multiple users": [
+        "Добавление нескольких пользователей"
+      ],
+      "Confirm password": [
+        "Подтвердите пароль"
+      ],
+      "Create password": [
+        "Создать пароль"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Не забудьте сообщить им пользовательские данные для входа в систему."
+      ],
+      "VPN connections": [
+        "Подключения к VPN"
+      ],
+      "Writing assistant": [
+        "Помощник по написанию"
+      ]
+    },
+    "Users table: badge": {
+      "Writing assistant": [
+        "Помощник по написанию"
       ]
     },
     "Validation": {

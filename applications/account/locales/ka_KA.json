@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -154,9 +154,6 @@
       ],
       "Cancel": [
         "გაუქმება"
-      ],
-      "Cancel add-on": [
-        "დამატების გაუქმება"
       ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
@@ -376,9 +373,6 @@
       ],
       "Download CSV sample": [
         "CSV მაგალითის გადმოწერა"
-      ],
-      "Download Desktop App": [
-        "გადმოწერეთ კომპიუტერის აპი"
       ],
       "Download ICS": [
         "ICS-ის გადმოწერა"
@@ -611,14 +605,14 @@
       "Keep my Plus subscription": [
         "ჩემი Plus გამოწერის შენარჩუნება"
       ],
-      "Keep the writing assistant": [
-        "წერის დამხმარის შენარჩუნება"
-      ],
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
       ],
       "Later": [
         "მოგვიანებით"
+      ],
+      "Learn why this option is unavailable": [
+        "ნახვა, რატომაა ეს პარამეტრი ხელმიუწვდომელი"
       ],
       "Leave": [
         "გასვლა"
@@ -694,6 +688,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }-ში გახსნა"
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
@@ -923,6 +920,9 @@
       "Send my username": [
         "ჩემი მომხმარებლის გაგზავნა"
       ],
+      "Send new invite": [
+        "ახალი მოწვევის გაგზავნა"
+      ],
       "Send reminder": [
         "შეხსენების გაგზავნა"
       ],
@@ -1124,6 +1124,9 @@
       "Verify account": [
         "ანგარიშის გადამოწმება"
       ],
+      "Verify domain": [
+        "დომენის გადამოწმება"
+      ],
       "View": [
         "ნახვა"
       ],
@@ -1150,9 +1153,6 @@
       ],
       "What do I get?": [
         "რას მივიღებ?"
-      ],
-      "Why can't the model run locally?": [
-        "რატომ არ შეუძლია მოდელს, ლოკალურად გაეშვას?"
       ],
       "Wipe": [
         "წაშლა"
@@ -1386,41 +1386,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /თვეში"
-      ],
-      "${ price } /year": [
-        "${ price } /წელიწადში"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "აქტიურია თარიღამდე ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "წერაში დამხმარის დამატება"
-      ],
-      "Add writing assistant to your plan": [
-        "დაამატეთ წერის დამხმარე თქვენს სატარიფო გეგმას"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "მიანიჭეთ ის სასურველ მომხმარებლებს ${ userAndAddressesButton }-ში"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "ავტომატურად განახლდება ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "წერაში დამხმარის დამატების გაუქმება"
-      ],
       "Customize plan": [
         "გეგმის მორგება"
       ],
-      "from ${ price } /month": [
-        "${ price }-დან თვეში"
-      ],
       "New": [
         "ახალი"
-      ],
-      "Renew subscription": [
-        "გამოწერის განახლება"
       ],
       "Trial expires on ${ formattedDate }": [
         "სატესტო ვერსიის ვადის ამოწურვის დროა ${ formattedDate }"
@@ -3225,6 +3195,12 @@
       "Delete address?": [
         "მისამართის წაშლა?"
       ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "თუ წაშლით, მისამართს ${ address } ვეღარც თქვენ გამოიყენებთ და ვეღარავინ სხვა."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "გაითვალისწინეთ, რომ თუ ამ მისამართს (${ address }) წაშლით, მისი სახელით ელფოსტების გაგზავნას და მიღებას ვეღარ შეძლებთ."
+      ],
       "You can only delete 1 address per year.": [
         "თქვენ წელიწადში, მხოლოდ, 1 მისამართის წაშლა შეგიძლიათ."
       ]
@@ -3254,6 +3230,9 @@
       ],
       "Delete domain?": [
         "წავშალო დომენი?"
+      ],
+      "Please note that if you delete this domain ${ domainName }, all the addresses associated with it will be disabled.": [
+        "დაიმახსოვრეთ, რომ თუ წაშლით დომენს ${ domainName }, მასზე მიბმული ყველა მისამართი გაითიშება."
       ]
     },
     "Delinquent modal title": {
@@ -3486,6 +3465,9 @@
       ]
     },
     "drive_signup_2023: Title": {
+      "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
+        "შექმენით უფასო ${ DRIVE_APP_NAME }-ის ანგარიში, რომ ამ ფაილთან უსაფრთხო წვდომა გქონდეთ"
+      ],
       "Free, encrypted, and secure cloud storage": [
         "უფასო, დაშიფრული და დაცული ღრუბლოვანი საცავი"
       ],
@@ -4019,9 +4001,6 @@
       "Contact signature not verified": [
         "კონტაქტის ხელმოწერა არ შემოწმებულა"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "ინვოისების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
-      ],
       "Could not open created vault": [
         "შექმნილი საცავის გახსნა შეუძლებელია"
       ],
@@ -4030,6 +4009,9 @@
       ],
       "Could not save preference": [
         "პარამეტრის შენახვა შეუძლებელია"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "ინვოისების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
@@ -4047,6 +4029,9 @@
       ],
       "Email address is invalid": [
         "ელფოსტის მისამართი არასწორია"
+      ],
+      "Email address is not available": [
+        "ელფოსტის მისამართი მიუწვდომელია"
       ],
       "Email address is required": [
         "ელფოსტის მისამართი აუცილებელია"
@@ -6098,6 +6083,17 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -6551,6 +6547,9 @@
       ],
       "Browser not supported": [
         "ბრაუზერი მხარდაუჭერელია"
+      ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "ნაგულისხმევად ორგანიზაციის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
@@ -7088,6 +7087,12 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
+      "Invitation link expired": [
+        "მოწვევის ბმულის ვადა ამოიწურა"
+      ],
+      "Invitation link used": [
+        "გამოყენებული მოწვევის ბმული"
+      ],
       "Invite Accepted": [
         "მოწვევა მიღებულია"
       ],
@@ -7184,6 +7189,9 @@
       ],
       "Just send them your personal referral link.": [
         "უბრალოდ, გაუგზავნეთ მოწვევის თქვენი პირადი ბმული."
+      ],
+      "Keep your info more secure and private with these guides and tips.": [
+        "იქონიეთ თქვენი ინფორმაცია უფრო დაცული და კონფიდენციალური ამ სახელმძღვანელოებით და მინიშნებებით."
       ],
       "Key deletion is irreversible!": [
         "გასაღების წაშლა შეუქცევადი პროცესია!"
@@ -7692,6 +7700,9 @@
       "Set recovery phrase": [
         "აღსადგენი ფრაზის დაყენება"
       ],
+      "Set your password": [
+        "დააყენეთ თქვენი პაროლი"
+      ],
       "Setting up your organization": [
         "ორგანიზაციის მორგება"
       ],
@@ -7909,6 +7920,9 @@
       "This is an encryption key you may have previously saved.": [
         "ეს დაშიფვრის გასაღებია, რომელიც ადრე შეინახეთ."
       ],
+      "This is an invitation from:": [
+        "ეს მოსაწვევი ვისგანაა:"
+      ],
       "This is the password you used before the password reset.": [
         "ეს პაროლია, რომელსაც მის შეცვლამდე იყენებდით."
       ],
@@ -7932,6 +7946,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "ეს მომხმარებელი, ამჟამად, პასუხისმგებელია თქვენი ორგანიზაციის გადასახადების გადახდაზე. მისი ჩამოქვეითებით, ორგანიზაციის გადახდებზე პასუხისმგებელი თქვენ გახდებით."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "ამ გადამოწმებას ერთ საათამდე შეიძლება, დასჭირდეს. წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "ეს გააუქმებს თქვენს მიმდინარე ფასიან გამოწერას და ყველა ერთგულების ნიშნად გადმოცემულ უპირატესობას დაკარგავთ."
@@ -7977,6 +7994,9 @@
       ],
       "to ${ product } Business": [
         "${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "იმისათვის, რომ ნება დართოთ დომენს **${ domainName }** SAML SSO გამოიყენოს. ჯერ უნდა დაამტკიცოთ, რომ ის თქვენ გეკუთვნით, შემდეგი DNS TXT ჩანაწერის დამატებით თქვენს DNS სერვისის მომწოდებელში."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "მონაცემების დაკარგვის თავიდან ასაცილებლად წაშალეთ, მხოლოდ, მაშინ, როცა ზუსტად იცით, რას აკეთებთ, ან გადმოწერილი გაქვთ მისი ასლი."
@@ -8587,17 +8607,6 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10170,6 +10179,9 @@
       "Create an alias": [
         "ფსევდონიმის შექმნა"
       ],
+      "Don't have access to your 2FA?": [
+        "არ გაქვთ წვდომა თქვენს 2FA-სთან?"
+      ],
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
       ],
@@ -10259,9 +10271,6 @@
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
-      ],
-      "Users and addresses": [
-        "მომხმარებლები და მისამართები"
       ],
       "View guide": [
         "სახელმძღვანელოს ნახვა"
@@ -10373,6 +10382,28 @@
         "დროში შეზღუდული შეთავაზება"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Encrypted email and calendar to get you started": [
+        "დაშიფრული ელფოსტა და კალენდარ დასაწყისისთვის"
+      ],
+      "Encrypted solutions to protect your entire business": [
+        "დაშიფრული გადაწყვეტილებები თქვენი ბიზნესის სრულად დასაცავად"
+      ],
+      "Enhanced security and premium features for teams": [
+        "გაუმჯობესებული უსაფრთხოება და ფასიანი ფუნქციები გუნდებისთვის"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "თქვენ მიგიწვიეს, სცადოთ ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "ბიზნესებისთვის"
+      ],
+      "For individuals": [
+        "ინდივიდუალური პირებისთვის"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "ფასდაკლების მიღება"
@@ -10458,11 +10489,17 @@
       "Delete": [
         "წაშლა"
       ],
+      "Delete and revoke invite": [
+        "მოწვევის წაშლა და გაუქმება"
+      ],
       "Edit": [
         "ჩასწორება"
       ],
       "Remove": [
         "წაშლა"
+      ],
+      "Resend invite link": [
+        "მოწვევის ბმულის თავიდან გაგზავნა"
       ],
       "Revoke sessions": [
         "სესიების გაუქმება"
@@ -10924,6 +10961,9 @@
       "Advanced sharing security": [
         "გაზიარების გაუმჯობესებული უსაფრთხოება"
       ],
+      "All ${ BRAND_NAME } services": [
+        "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
       ],
@@ -10983,6 +11023,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "მონაცემების გაჟონვის თვალყურის დევნება (მალე)"
+      ],
+      "Dedicated account manager": [
+        "გამოყოფილი ანგარიშის მმართველი"
       ],
       "Dedicated servers and IP": [
         "გამოყოფილი სერვერები და IP"
@@ -11169,6 +11212,9 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
+      ],
+      "Tailored to your needs": [
+        "მორგებული თქვენ საჭიროებებზე"
       ],
       "Tor over VPN": [
         "Tor VPN-ის ზემოდან"
@@ -12359,6 +12405,9 @@
       ],
       "Current plan": [
         "მიმდინარე ტარიფი"
+      ],
+      "Customizable services for large teams.": [
+        "მორგებადი სერვისები დიდი გუნდებისთვის."
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გამოყენების დასაწყებად გადმოწერეთ და დააყენეთ შესაბამისი აპები და გაფართოებები"
@@ -13611,6 +13660,16 @@
         "გადამოწმება"
       ]
     },
+    "signup: Action": {
+      "Request a demo": [
+        "მოითხოვეთ დემო"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "GDPR თავსებადი"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "დახურვა"
@@ -14152,6 +14211,12 @@
       "Add any new files": [
         "დაამატეთ ნებისმიერი ახალი ფაილები"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. ასევე დაკარგავთ ადრე თქვენზე მონიშენულ საცავის ბონუსებს."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. ასევე დაკარგავთ ადრე თქვენზე მონიშენულ საცავის ბონუსებს."
+      ],
       "All you need for your business": [
         "ყველაფერი, რაც თქვენი ბიზნესისთვის გჭირდებათ"
       ],
@@ -14208,6 +14273,9 @@
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
@@ -14593,6 +14661,9 @@
       "Domain deleted": [
         "დომენი წაიშალა"
       ],
+      "Invitation resent": [
+        "მოსაწვევი თავიდან გაიგზავნა"
+      ],
       "Sessions revoked": [
         "სესიები გაუქმებულია"
       ],
@@ -14728,6 +14799,9 @@
       ],
       "Import": [
         "შემოტანა"
+      ],
+      "Invitation email": [
+        "მოწვევის ელფოსტა"
       ],
       "List": [
         "სია"
@@ -14972,9 +15046,6 @@
       ],
       "Cancel subscription?": [
         "გავაუქმო ხელმოწერა?"
-      ],
-      "Cancel the writing assistant add-on?": [
-        "გავაუქმო წერაში დამხმარის დამატება?"
       ],
       "Card verification": [
         "ბარათის გადამოწმება"
@@ -15262,9 +15333,6 @@
       ],
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
-      ],
-      "Enable writing assistant": [
-        "წერაში დამხმარის ჩართვა"
       ],
       "Encryption and keys": [
         "შიფრაცია და გასაღებები"
@@ -15658,6 +15726,9 @@
       "Send email reminders?": [
         "გავაგზავნო ელფოსტის შეხსენებები?"
       ],
+      "Send new invite?": [
+        "გავაგზავნო ახალი მოწვევა?"
+      ],
       "Session management": [
         "სესიების მართვა"
       ],
@@ -15859,6 +15930,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard-ის მორგება"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
       ],
       "You have no open alerts": [
         "ღია განგაშები არ გაქვთ"
@@ -16288,6 +16362,91 @@
         "ძირითადი ადმინისტრატორი"
       ]
     },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } მისამართი"
+      ],
+      "Add multiple users": [
+        "ერთზე მეტი მომხმარებლის დამატება"
+      ],
+      "Add new user": [
+        "ახალი მომხმარებლის დამატება"
+      ],
+      "Admin": [
+        "ადმინისტრატორი"
+      ],
+      "An invitation will be sent to this email address.": [
+        "მოწვევა ამ ელფოსტის მისამართზე გაიგზავნება."
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Confirm password": [
+        "დაადასტურეთ პაროლი"
+      ],
+      "Create password": [
+        "პაროლის შექმნა"
+      ],
+      "Create password instead": [
+        "შექმენით პაროლი ამის მაგიერ"
+      ],
+      "Create user": [
+        "მომხმარებლის შექმნა"
+      ],
+      "Email": [
+        "ელფოსტა"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Optional": [
+        "არასავალდებულო"
+      ],
+      "Private": [
+        "პირადი"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."
+      ],
+      "Send invite link via email instead": [
+        "მოწვევის ბმულის ელფოსტით გაგზავნა"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "ეს შექმნის ახალ ${ MAIL_APP_NAME }-ის მისამართს."
+      ],
+      "User created": [
+        "მომხმარებელი შექმნილია"
+      ],
+      "VPN connections": [
+        "VPN შეერთებები"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
+      ],
+      "Invite sent": [
+        "მოსაწვევი გაგზავნილია"
+      ],
+      "It's you": [
+        "თქვენ"
+      ],
+      "Private": [
+        "პირადი"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "თქვენი იდენტიფიკატორების მომწოდებლის მიერ გამოყოფილი SSO მომხმარებელი"
+      ],
+      "Writing assistant": [
+        "წერაში დამხმარე"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
@@ -16405,6 +16564,9 @@
       ],
       "Includes ${ plan } (free for the first year!)": [
         "შეიცავს ${ plan } (უფასოა პირველი წლისთვის!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "${ plan } შეიცავს ჩვენს ფასიან პაროლების მენეჯერს, უფასოდ პირველი წლისთვის!"
       ],
       "Just ${ price }": [
         "სულ რაღაც ${ price }"

@@ -67,10 +67,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "취소"
-      ],
-      "Cancel add-on": [
-        "애드온 취소"
       ],
       "Cancel subscription": [
         "구독 취소"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "CSV 샘플 다운로드받기"
-      ],
-      "Download Desktop App": [
-        "데스크톱 앱 다운로드"
       ],
       "Download ICS": [
         "ICS 다운로드"
@@ -631,14 +625,14 @@
       "Keep my Plus subscription": [
         "나의 Plus 구독 유지"
       ],
-      "Keep the writing assistant": [
-        "글쓰기 도우미 유지"
-      ],
       "label emails as": [
         "다음으로 라벨 지정"
       ],
       "Later": [
         "나중에"
+      ],
+      "Learn why this option is unavailable": [
+        "이 옵션을 사용할 수 없는 이유를 알아보세요"
       ],
       "Leave": [
         "나가기"
@@ -714,6 +708,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME }에서 열기"
       ],
       "Open navigation": [
         "탐색 열기"
@@ -1147,6 +1144,9 @@
       "Verify account": [
         "계정 인증"
       ],
+      "Verify domain": [
+        "도메인 소유권 인증"
+      ],
       "View": [
         "보기"
       ],
@@ -1173,9 +1173,6 @@
       ],
       "What do I get?": [
         "무엇을 받게 되나요?"
-      ],
-      "Why can't the model run locally?": [
-        "왜 하드웨어상에서 모델링할 수 없나요?"
       ],
       "Wipe": [
         "지우기"
@@ -1394,6 +1391,9 @@
       "Faster, broader device compatibility": [
         "더 빠른, 더 다양한 기기 호환성"
       ],
+      "No data transmitted while using, requires one-time download": [
+        "사용 중 데이터 이동이 없으며, 1회 다운로드가 필요 합니다."
+      ],
       "Run locally": [
         "로컬에서 실행"
       ],
@@ -1402,41 +1402,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } / 개월"
-      ],
-      "${ price } /year": [
-        "${ price } /년"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "${ subscriptionRenewalDate }까지 활성화됨"
-      ],
-      "Add writing assistant": [
-        "글쓰기 도우미 추가"
-      ],
-      "Add writing assistant to your plan": [
-        "내 플랜에 글쓰기 도우미 추가"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "${ userAndAddressesButton }에 특정 사용자를 할당하십시오"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "${ subscriptionRenewalDate }에 자동으로 갱신됩니다."
-      ],
-      "Cancel writing assistant add-on": [
-        "글쓰기 도우미 애드온 취소"
-      ],
       "Customize plan": [
         "플랜 고급 설정"
       ],
-      "from ${ price } /month": [
-        "${ price } /월 부터"
-      ],
       "New": [
         "신규"
-      ],
-      "Renew subscription": [
-        "구독 갱신"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다. ${ learnMore }."
@@ -3488,6 +3458,9 @@
       ]
     },
     "drive_signup_2023: Feature": {
+      "${ totalStorageSize } of storage for free": [
+        "무료 ${ totalStorageSize } 저장 공간"
+      ],
       "End-to-end encrypted": [
         "종단간 암호화됨"
       ]
@@ -3504,8 +3477,17 @@
       ]
     },
     "drive_signup_2023: Title": {
+      "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
+        "안전하게 파일을 접근하려면 ${ DRIVE_APP_NAME } 계정을 무료로 생성하세요"
+      ],
+      "Free, encrypted, and secure cloud storage": [
+        "무료, 암호화된 안전한 클라우드 스토리지"
+      ],
       "Secure cloud storage and file sharing that protects your data": [
         "데이터를 보호하는 클라우드 스토리지와 파일 공유로 보호하세요."
+      ],
+      "You're invited to access a file in ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }내에 있는 파일 접근에 초대되었습니다."
       ]
     },
     "Duration": {
@@ -4031,9 +4013,6 @@
       "Contact signature not verified": [
         "연락처 서명이 인증되지 않았습니다."
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "청구서 로드 실패. 다시 시도하십시오."
-      ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
       ],
@@ -4042,6 +4021,9 @@
       ],
       "Could not save preference": [
         "기본 설정을 저장할 수 없습니다."
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "청구서 불러오기를 실패했습니다. 다시 시도해 주세요."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
@@ -6101,6 +6083,17 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -7566,6 +7559,9 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "문서의 미리보기가 지원되지 않습니다. 확인하려면 문서를 직접 열어주세요."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
@@ -7583,6 +7579,9 @@
       ],
       "Public link invite": [
         "공개 링크 초대"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "문서의 공개 공유가 아직 지원되지 않습니다. 해당 문서에 초대할 수 있는지 소유자로 문의하십시오."
       ],
       "purchase additional storage": [
         "추가 용량 구매"
@@ -7712,6 +7711,9 @@
       ],
       "Set recovery phrase": [
         "복구 키 설정"
+      ],
+      "Set your password": [
+        "비밀번호를 설정하세요"
       ],
       "Setting up your organization": [
         "조직을 설정하세요"
@@ -7896,9 +7898,6 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "인증 절차가 새 탭에서 열릴 것입니다. 활성화된 팝업 차단기를 비활성화 해주세요."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "글쓰기 도우미 애드온이 **갱신되지 않습니다.** 글쓰기 도우미 서비스를 **${ subscriptionRenewalDate }**까지 계속 누리실 수 있습니다."
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "이 구성 파일을 사용하면 타사 VPN 앱을 사용하거나 라우터에서 VPN 연결을 설정할 때 연결할 ${ VPN_APP_NAME } 서버를 선택할 수 있어요."
       ],
@@ -7929,6 +7928,12 @@
       "This file is too large to preview": [
         "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
+      "This invitation link already used. Please sign in directly instead.": [
+        "이 초대 링크는 이미 사용되었습니다. 대신 직접 로그인 해주세요."
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "이 초대 링크는 만료되었습니다. 관리자에게 접근이 가능한지 문의해 주세요."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "설정하라는 메시지가 표시된 12단어 키 입니다."
       ],
@@ -7937,6 +7942,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "잠정적으로 저장한 암호화 키일 수 있습니다."
+      ],
+      "This is an invitation from:": [
+        "다음 사음자의 초대입니다:"
       ],
       "This is the password you used before the password reset.": [
         "비밀번호를 재설정하기 전에 사용한 비밀번호입니다."
@@ -7964,6 +7972,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "인증 절차가 최대 한 시간 정도 소요될 수 있습니다. 인증에 성공하면, 등록한 도메인을 계소 소유하고 있는지에 대한 확인을 위해 TXT 레코드를 삭제하지 마십시오."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
@@ -8009,6 +8020,9 @@
       ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "SAML SSO에 사용하기 위해 **${ domainName }** 도메인을 허용하려면, 다음 DNS TXT 레코드를 사용자의 DNS 제공자 입력란에 추가하여 소유권 인증 절차를 밟아야 합니다."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "데이터 손실을 피할려면, 복사본을 가지고 있거나 지금 무엇을 하고 있는지 확실히 알고 지우십시오."
@@ -8523,6 +8537,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "여전히 호스트가 응답을 볼 수 있도록 초대 회신이 필요합니다."
       ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "초대를 수락하면 사용자를 관리자로 승격하거나 비공개로 만들 수 있습니다."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
       ],
@@ -8582,9 +8599,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "결제가 완료되면 계정이 업데이트될 것입니다."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "브라우저가 글쓰기 도우미를 지원하지 않습니다. ${ MAIL_APP_NAME } 데스크톱 앱을 다운로드 하거나 서버에서 실행해 보세요."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
@@ -8648,17 +8662,6 @@
       ],
       "Zoom meeting": [
         "Zoom 미팅"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키가 감지되었습니다. 자세한 정보를 위해 따로 업로드해주세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10248,6 +10251,9 @@
       "Create an alias": [
         "별칭 만들기"
       ],
+      "Don't have access to your 2FA?": [
+        "사용자의 2단계 인증에 접근할 수 없습니까?"
+      ],
       "Encryption and keys": [
         "암호화 및 키"
       ],
@@ -10337,9 +10343,6 @@
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
-      ],
-      "Users and addresses": [
-        "사용자 및 주소"
       ],
       "View guide": [
         "가이드 보기"
@@ -10446,6 +10449,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다"
+      ],
       "An encrypted email service that puts your privacy first": [
         "당신의 프라이버시를 최우선으로 하는 암호화된 이메일 서비스"
       ],
@@ -10463,6 +10469,14 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } 맛보기에 초대받았습니다"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "비즈니스용"
+      ],
+      "For individuals": [
+        "개인용"
       ]
     },
     "mailtrial2024: Action": {
@@ -10548,11 +10562,17 @@
       "Delete": [
         "삭제"
       ],
+      "Delete and revoke invite": [
+        "초대장 삭제 및 취소"
+      ],
       "Edit": [
         "수정"
       ],
       "Remove": [
         "제거"
+      ],
+      "Resend invite link": [
+        "초대 링크 다시 보내기"
       ],
       "Revoke sessions": [
         "세션 비활성화"
@@ -11060,6 +11080,9 @@
       "Data breach monitoring (coming soon)": [
         "데이터 유출 모니터링 (출시 예정)"
       ],
+      "Dedicated account manager": [
+        "전용 계정 관리자"
+      ],
       "Dedicated servers and IP": [
         "전용 서버 및 IP"
       ],
@@ -11245,6 +11268,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Tailored to your needs": [
+        "필요에 따라 조정"
       ],
       "Tor over VPN": [
         "VPN을 통한 Tor"
@@ -12462,6 +12488,9 @@
       ],
       "Current plan": [
         "현재 플랜"
+      ],
+      "Customizable services for large teams.": [
+        "더 큰 팀을 위한 커스텀 서비스"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }을 사용하려면 관련된 앱 또는 확장을 다운로드 및 설치해주세요"
@@ -13759,6 +13788,11 @@
         "인증"
       ]
     },
+    "signup: Action": {
+      "Request a demo": [
+        "데모 요청하기"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR compliant": [
         "GDPR 준수"
@@ -14823,6 +14857,9 @@
       "Domain deleted": [
         "도메인 삭제됨"
       ],
+      "Invitation resent": [
+        "초대장을 보냈습니다."
+      ],
       "Sessions revoked": [
         "세션 취소됨"
       ],
@@ -14958,6 +14995,9 @@
       ],
       "Import": [
         "불러오기"
+      ],
+      "Invitation email": [
+        "초대 이메일"
       ],
       "List": [
         "목록"
@@ -15193,9 +15233,6 @@
       ],
       "Cancel subscription?": [
         "구독을 취소하시겠어요?"
-      ],
-      "Cancel the writing assistant add-on?": [
-        "글쓰기 도우미 애드온을 취소할까요?"
       ],
       "Card verification": [
         "카드 확인"
@@ -15443,6 +15480,9 @@
       "Edit organization identity": [
         "조직 신원 편집하기"
       ],
+      "Edit profile": [
+        "프로필 편집"
+      ],
       "Edit servers": [
         "서버 편집"
       ],
@@ -15478,9 +15518,6 @@
       ],
       "Email subscriptions": [
         "이메일 구독"
-      ],
-      "Enable writing assistant": [
-        "글쓰기 도우미 활성화"
       ],
       "Encryption and keys": [
         "암호화 및 키"
@@ -15875,6 +15912,9 @@
       "Send email reminders?": [
         "이메일 알리미를 전송할까요?"
       ],
+      "Send new invite?": [
+        "새로운 초대 보내기?"
+      ],
       "Session management": [
         "세션 관리"
       ],
@@ -16075,6 +16115,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 설정"
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
       ],
       "You have no open alerts": [
         "진행 중인 알림 없음"
@@ -16509,12 +16552,92 @@
         "기본 관리자"
       ]
     },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } 주소"
+      ],
+      "Add multiple users": [
+        "다중 사용자 추가"
+      ],
+      "Add new user": [
+        "새 사용자 추가"
+      ],
+      "Admin": [
+        "관리자"
+      ],
+      "An invitation will be sent to this email address.": [
+        "초대장이 이메일 주소로 전송됩니다."
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Confirm password": [
+        "비밀번호 확인"
+      ],
+      "Create password": [
+        "비밀번호 생성"
+      ],
+      "Create password instead": [
+        "대신 비밀번호 생성"
+      ],
+      "Create user": [
+        "사용자 생성"
+      ],
+      "Email": [
+        "이메일"
+      ],
+      "Name": [
+        "성명"
+      ],
+      "Optional": [
+        "선택 사항"
+      ],
+      "Private": [
+        "개인"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."
+      ],
+      "Send invite link via email instead": [
+        "대신 이메일을 통해 초대 링크 보내기"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "이 작업은 새로운 ${ MAIL_APP_NAME } 주소를 생성합니다."
+      ],
+      "User created": [
+        "사용자를 생성했습니다."
+      ],
+      "VPN connections": [
+        "VPN 연결"
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
+      ]
+    },
     "Users table: badge": {
-      "AI": [
-        "AI"
+      "Administrators can't access the data of private users": [
+        "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "초대장을 전송했으며 초대된 사용자로부터의 응답을 대기 중입니다."
+      ],
+      "Invite sent": [
+        "초대장 전송됨"
+      ],
+      "It's you": [
+        "나"
+      ],
+      "Private": [
+        "개인"
       ],
       "SSO": [
         "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."
+      ],
+      "Writing assistant": [
+        "글쓰기 도우미"
       ]
     },
     "Validation": {

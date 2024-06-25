@@ -825,6 +825,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
       ],
+      "Understood": [
+        "Rozumiem"
+      ],
       "Undo": [
         "Vrátiť späť"
       ],
@@ -4297,6 +4300,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Sťahovanie pozastavené kvôli problému s pripojením; obnoví sa automaticky"
       ],
+      "Download was canceled": [
+        "Sťahovanie bolo zrušené"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stiahnite si svoju obľúbenú aplikáciu ešte dnes a vezmite súkromie do svojich rúk, nech ste kdekoľvek."
       ],
@@ -4305,6 +4311,9 @@
       ],
       "Downloading": [
         "Sťahovanie"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Sťahovanie ${ DOCS_APP_NAME } súborov z ${ DRIVE_APP_NAME } v súčasnosti nie je podporované — nebudú zahrnuté do sťahovania."
       ],
       "Downloading all encrypted files": [
         "Sťahovanie všetkých šifrovaných súborov"
@@ -4761,6 +4770,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Vložte heslo na dešifrovanie a zobrazenie obsahu, prosím."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Ak si ich chcete stiahnuť, exportujte ich priamo z aplikácie ${ DOCS_APP_NAME }, prosím."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Prosím, vezmite na vedomie, že adresy priradené k týmto skupinám NEBUDÚ vymazané."
@@ -5864,6 +5876,9 @@
       ],
       "Import to:": [
         "Importovať do:"
+      ],
+      "Include message and file name in invite email": [
+        "Zahrnúť správu a názov súboru do emailovej pozvánky"
       ],
       "Keep both": [
         "Ponechať oba"
@@ -7640,6 +7655,9 @@
       "External invitation removed from the share": [
         "Externá pozvánka odstránená zo zdieľania"
       ],
+      "External invitation's email was sent again": [
+        "Email s externou pozvánkou bol znova odoslaný"
+      ],
       "Failed to accept share invitation": [
         "Prijatie pozvania na zdieľanie zlyhalo"
       ],
@@ -7675,6 +7693,9 @@
       ],
       "File removed": [
         "Súbor bol odstránený"
+      ],
+      "Invitation's email was sent again": [
+        "Pozývací email bol opätovne odoslaný"
       ],
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
@@ -8000,6 +8021,9 @@
       ],
       "Last name": [
         "Priezvisko"
+      ],
+      "Message": [
+        "Správa"
       ],
       "Name": [
         "Meno"
@@ -10133,6 +10157,9 @@
       "Your changes are not synced yet": [
         "Vaše zmeny zatiaľ nie sú synchronizované"
       ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Váš súbor na stiahnutie obsahuje súbor ${ DOCS_APP_NAME }"
+      ],
       "Your exposed information": [
         "Vaše odhalené informácie"
       ],
@@ -10204,6 +10231,9 @@
       ],
       "Load image": [
         "Načítať obrázok"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Správa a názov súboru sú uložené so šifrovaním s nulovým prístupom, ak sú súčasťou emailu"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schému, ktorá sa použije pri podpisovaní, alebo šifrovanie užívateľa. Nezabudnite, že PGP/Inline vyžaduje správy vo formáte obyčajného textu"

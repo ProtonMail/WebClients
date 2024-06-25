@@ -4111,6 +4111,11 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -4120,11 +4125,6 @@
       ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -5001,17 +5001,6 @@
         "Samo se prijavite na svoj Apple App Store račun, zatim pritisnite ${ subscriptions }."
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB pohrane"
-      ],
-      "Desktop app": [
-        "Aplikacija za radnu površinu"
-      ],
-      "Upgrade": [
-        "Nadogradi"
-      ]
-    },
     "Subscription reminder": {
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } kalendar po korisniku",
@@ -5043,6 +5032,17 @@
       ],
       "Version history": [
         "Povijest verzija"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB pohrane"
+      ],
+      "Desktop app": [
+        "Aplikacija za radnu površinu"
+      ],
+      "Upgrade": [
+        "Nadogradi"
       ]
     },
     "Subscription renewal state": {
