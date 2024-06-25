@@ -801,9 +801,6 @@
       "Trashing item failed": [
         "Öge çöpe atılamadı"
       ],
-      "Unable to boot": [
-        "Başlatılamadı"
-      ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
       ],
@@ -842,6 +839,9 @@
       ],
       "Vault name does not match": [
         "Kasa adı aynı değil"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "${ PASS_SHORT_APP_NAME } başlatılırken bir sorun çıktı. Sorun sürerse yardım almak için müşteri desteği ekibimizle görüşün."
       ],
       "Wrong PIN code. Try again.": [
         "PIN kodu yanlış. Yeniden deneyin."
@@ -1365,6 +1365,9 @@
       ],
       "Please consider leaving a review.": [
         "Lütfen bir yorum yazmayı değerlendirin."
+      ],
+      "Please do not close this window": [
+        "Lütfen bu pencereyi kapatmayın"
       ],
       "Please enter your current PIN code to continue": [
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
