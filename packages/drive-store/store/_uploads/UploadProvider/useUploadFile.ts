@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components/hooks';
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import {
     queryCreateFile,
@@ -28,7 +27,6 @@ import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
 import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
-import { Features, measureExperimentalPerformance } from '../../../utils/telemetry';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveEventManager } from '../../_events';
@@ -46,7 +44,6 @@ import {
     UploadFileControls,
     VerificationData,
 } from '../interface';
-import { useDriveOptimisticUploadFeatureFlag } from '../useOptimisticUpload';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
 import { generateClientUid } from './uploadClientUid';
 import useUploadHelper from './useUploadHelper';
@@ -76,8 +73,6 @@ export default function useUploadFile() {
     const { findAvailableName, getLinkByName, findDuplicateContentHash, findHash } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
-    const isOptimisticUploadEnabled = useDriveOptimisticUploadFeatureFlag();
-    const api = useApi();
 
     const request = <T>(args: object, abortSignal?: AbortSignal) => {
         return debouncedRequest<T>(
@@ -318,67 +313,6 @@ export default function useUploadFile() {
             throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
         };
 
-        const createFileRevision = queuedFunction(
-            'create_file_revision',
-            async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
-                const volumeId = volumeState.findVolumeId(shareId);
-                if (!volumeId) {
-                    throw new Error('Trying to find missing volume');
-                }
-                const {
-                    filename: newName,
-                    hash,
-                    draftLinkId,
-                    clientUid,
-                    isDuplicatePhotos = false,
-                }: {
-                    filename: string;
-                    hash: string;
-                    clientUid?: string;
-                    draftLinkId?: string;
-                    isDuplicatePhotos?: boolean;
-                } = isForPhotos
-                    ? await findDuplicateContentHash(abortSignal, {
-                          file,
-                          volumeId,
-                          shareId,
-                          parentLinkId: parentId,
-                      })
-                    : await findAvailableName(abortSignal, { shareId, parentLinkId: parentId, filename: file.name });
-
-                checkSignal(abortSignal, file.name);
-                // Automatically replace file - previous draft was uploaded
-                // by the same client.
-                if (draftLinkId && clientUid) {
-                    log(`Automatically replacing draft link ID: ${draftLinkId}`);
-                    // Careful: uploading duplicate file has different name and
-                    // this newName has to be used, not file.name.
-                    // Example: upload A, then do it again with adding number
-                    // A (2) which will fail, then do it again to replace draft
-                    // with new upload - it needs to be A (2), not just A.
-                    return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
-                }
-
-                if (isDuplicatePhotos) {
-                    throw new TransferSkipped({
-                        message: c('Info').t`This item already exists in your library`,
-                    });
-                }
-
-                if (file.name === newName) {
-                    log(`Creating new file`);
-                    return createFile(abortSignal, file.name, mimeType, hash, keys);
-                }
-
-                return handleNameConflict(abortSignal, mimeType, keys, {
-                    filename: newName,
-                    hash,
-                    draftLinkId,
-                });
-            },
-            MAX_UPLOAD_BLOCKS_LOAD
-        );
-
         const createPhotosFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
@@ -482,22 +416,10 @@ export default function useUploadFile() {
         );
 
         const selectFileRevisionCreation = (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
-            // TODO [DRVWEB-3951]: Remove original function after complete rollout of 'DriveWebOptimisticUploadEnabled' feature flag
-            // The original function entangle both photos and files revision and is not optimistic
-            return measureExperimentalPerformance(
-                api,
-                Features.optimisticFileUploads,
-                isOptimisticUploadEnabled,
-                () => {
-                    return createFileRevision(abortSignal, mimeType, keys);
-                },
-                () => {
-                    if (isForPhotos) {
-                        return createPhotosFileRevision(abortSignal, mimeType, keys);
-                    }
-                    return createOptimisticFileRevision(abortSignal, mimeType, keys);
-                }
-            );
+            if (isForPhotos) {
+                return createPhotosFileRevision(abortSignal, mimeType, keys);
+            }
+            return createOptimisticFileRevision(abortSignal, mimeType, keys);
         };
 
         // If the upload was aborted but we already called finalize to commit
