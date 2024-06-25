@@ -84,16 +84,26 @@ export function CommentsPanelListComment({
   }
 
   const isAuthorCurrentUser = comment.author === username
-
   const canEdit = application.getRole().canEdit()
 
   const name = useMemo(() => {
     return comment.author.split('@')[0]
   }, [comment.author])
 
-  const canShowOptions = canEdit && !comment.isPlaceholder && !thread.isPlaceholder && !isDeleting && !isEditing
-
   const isThreadActive = thread.state === CommentThreadState.Active
+
+  const showEditButton = (!isFirstComment || isThreadActive) && isAuthorCurrentUser
+  const showResolveButton = isFirstComment && isThreadActive
+  const showReOpenButton = isFirstComment && !isThreadActive
+  const showDeleteButton = isAuthorCurrentUser
+
+  const canShowOptions =
+    canEdit &&
+    !comment.isPlaceholder &&
+    !thread.isPlaceholder &&
+    !isDeleting &&
+    !isEditing &&
+    (showEditButton || showResolveButton || showReOpenButton || showDeleteButton)
 
   const cancelEditing = useCallback(() => {
     setIsEditing(false)
@@ -135,7 +145,7 @@ export function CommentsPanelListComment({
               hasCaret={false}
             >
               <DropdownMenu>
-                {(!isFirstComment || isThreadActive) && (
+                {showEditButton && (
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
@@ -146,7 +156,7 @@ export function CommentsPanelListComment({
                     {c('Action').t`Edit`}
                   </DropdownMenuButton>
                 )}
-                {isFirstComment && isThreadActive && (
+                {showResolveButton && (
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
@@ -157,7 +167,7 @@ export function CommentsPanelListComment({
                     {c('Action').t`Resolve`}
                   </DropdownMenuButton>
                 )}
-                {isFirstComment && !isThreadActive && (
+                {showReOpenButton && (
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
@@ -167,13 +177,15 @@ export function CommentsPanelListComment({
                     {c('Action').t`Re-open`}
                   </DropdownMenuButton>
                 )}
-                <DropdownMenuButton
-                  className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
-                  onClick={isFirstComment ? deleteThread : deleteComment}
-                >
-                  <Icon name="trash" size={4.5} />
-                  {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
-                </DropdownMenuButton>
+                {showDeleteButton && (
+                  <DropdownMenuButton
+                    className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
+                    onClick={isFirstComment ? deleteThread : deleteComment}
+                  >
+                    <Icon name="trash" size={4.5} />
+                    {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
+                  </DropdownMenuButton>
+                )}
               </DropdownMenu>
             </SimpleDropdown>
           )}
