@@ -1,6 +1,7 @@
 import { c } from 'ttag'
 
 import { BasicModal, ModalStateProps, PrimaryButton, useModalTwoStatic } from '@proton/components'
+import { useState } from 'react'
 
 type Props = {
   title: string
@@ -14,24 +15,23 @@ export default function GenericAlertModal({
   open,
   ...modalProps
 }: Props & ModalStateProps) {
-  const handleCancel = () => {
-    onClose()
+  const [isOpen, setIsOpen] = useState(open)
+
+  const handleClose = () => {
+    setIsOpen(false)
+    if (typeof onClose !== 'undefined') {
+      onClose()
+    }
   }
 
   return (
     <BasicModal
       title={title}
-      isOpen={open === undefined ? true : open}
-      onClose={handleCancel}
+      isOpen={isOpen === undefined ? true : isOpen}
+      onClose={handleClose}
       footer={
         <>
-          <PrimaryButton
-            onClick={() => {
-              onClose()
-            }}
-          >
-            {c('Action').t`Ok`}
-          </PrimaryButton>
+          <PrimaryButton onClick={handleClose}>{c('Action').t`Ok`}</PrimaryButton>
         </>
       }
       {...modalProps}

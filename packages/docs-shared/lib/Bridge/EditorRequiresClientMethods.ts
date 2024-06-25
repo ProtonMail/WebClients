@@ -28,4 +28,5 @@ export interface EditorRequiresClientMethods {
 
   reportError(error: Error, errorInfo?: ErrorInfo): Promise<void>
   updateFrameSize(size: number): void
+  showGenericAlertModal(message: string): void
 }

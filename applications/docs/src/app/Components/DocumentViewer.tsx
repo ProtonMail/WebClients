@@ -165,7 +165,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
     (orchestrator: EditorOrchestratorInterface, editorFrame: HTMLIFrameElement) => {
       application.logger.info('Creating bridge from client to editor')
 
-      const clientToEditorBridge = new ClientToEditorBridge(editorFrame, orchestrator)
+      const clientToEditorBridge = new ClientToEditorBridge(editorFrame, orchestrator, application.eventBus)
 
       setBridge(clientToEditorBridge)
 
@@ -177,7 +177,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
         injectWithNewContent?.type,
       )
     },
-    [application.logger, injectWithNewContent?.data, injectWithNewContent?.type],
+    [application.logger, injectWithNewContent?.data, injectWithNewContent?.type, application.eventBus],
   )
 
   const onFrameReady = useCallback(
