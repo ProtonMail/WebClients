@@ -1,0 +1,437 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "de_DE"
+  },
+  "contexts": {
+    "Action": {
+      "Add comment": [
+        "Kommentar hinzufügen"
+      ],
+      "Add new table column": [
+        "Neue Tabellenspalte hinzufügen"
+      ],
+      "Add new table row": [
+        "Neue Tabellenzeile hinzufügen"
+      ],
+      "Apply": [
+        "Übernehmen"
+      ],
+      "Bold": [
+        "Fett"
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Center align": [
+        "Zentrieren"
+      ],
+      "Clear contents": [
+        "Inhalt löschen"
+      ],
+      "Clear formatting": [
+        "Formatierung entfernen"
+      ],
+      "Close": [
+        "Schließen"
+      ],
+      "Code block": [
+        "Codeblock"
+      ],
+      "Color": [
+        "Farbe"
+      ],
+      "Copy link": [
+        "Link kopieren"
+      ],
+      "Delete": [
+        "Löschen"
+      ],
+      "Delete column": [
+        "Spalte löschen"
+      ],
+      "Delete comment": [
+        "Kommentar löschen"
+      ],
+      "Delete row": [
+        "Zeile löschen"
+      ],
+      "Delete thread": [
+        "Unterhaltung löschen"
+      ],
+      "Duplicate": [
+        "Duplizieren"
+      ],
+      "Edit": [
+        "Bearbeiten"
+      ],
+      "Edit link": [
+        "Link bearbeiten"
+      ],
+      "Indent": [
+        "Einrücken"
+      ],
+      "Insert above": [
+        "Darüber einfügen"
+      ],
+      "Insert below": [
+        "Darunter einfügen"
+      ],
+      "Insert image": [
+        "Bild einfügen"
+      ],
+      "Insert left": [
+        "Links einfügen"
+      ],
+      "Insert right": [
+        "Rechts einfügen"
+      ],
+      "Insert table": [
+        "Tabelle einfügen"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Justify align": [
+        "Zentriert"
+      ],
+      "Left align": [
+        "Linksbündig"
+      ],
+      "Link": [
+        "Link"
+      ],
+      "Options": [
+        "Optionen"
+      ],
+      "Quote": [
+        "Zitieren"
+      ],
+      "Re-open": [
+        "Wiedereröffnen"
+      ],
+      "Redo": [
+        "Wiederholen"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
+      ],
+      "Remove link": [
+        "Link entfernen"
+      ],
+      "Reply": [
+        "Antworten"
+      ],
+      "Right align": [
+        "Rechtsbündig"
+      ],
+      "Save": [
+        "Speichern"
+      ],
+      "Strikethrough": [
+        "Durchstreichen"
+      ],
+      "Submit": [
+        "Senden"
+      ],
+      "Table options": [
+        "Tabellenoptionen"
+      ],
+      "Underline": [
+        "Unterstreichen"
+      ],
+      "Undo": [
+        "Rückgängig"
+      ]
+    },
+    "color": {
+      "apple": [
+        "Apfel"
+      ],
+      "azureish white": [
+        "Azurblaues Weiß"
+      ],
+      "black": [
+        "schwarz"
+      ],
+      "blanched almond": [
+        "blanchierte Mandel"
+      ],
+      "blue-gray": [
+        "Blaugrau"
+      ],
+      "caramel": [
+        "Karamell"
+      ],
+      "carrot": [
+        "Karotte"
+      ],
+      "cerise": [
+        "Kirschrot"
+      ],
+      "cinnabar": [
+        "Zinnoberrot"
+      ],
+      "cobalt": [
+        "Kobaltblau"
+      ],
+      "copper": [
+        "Kupfer"
+      ],
+      "cyan-blue azure": [
+        "Azurblau"
+      ],
+      "dandelion": [
+        "Löwenzahn"
+      ],
+      "dark cerulean": [
+        "Dunkelblau"
+      ],
+      "dark midnight blue": [
+        "Dunkles Mitternachtsblau"
+      ],
+      "dim gray": [
+        "Mattgrau"
+      ],
+      "enzian": [
+        "Enzian"
+      ],
+      "fern": [
+        "Farn"
+      ],
+      "field drab": [
+        "Braun"
+      ],
+      "forest": [
+        "Waldgrün"
+      ],
+      "gainsboro": [
+        "Gainsborograu"
+      ],
+      "japanese laurel": [
+        "Japanischer Lorbeer"
+      ],
+      "kiwi": [
+        "Kiwi"
+      ],
+      "lemon yellow": [
+        "Zitronengelb"
+      ],
+      "light carmine pink": [
+        "Helles Karminrosa"
+      ],
+      "light moss green": [
+        "Helles Moosgrün"
+      ],
+      "light red": [
+        "Hellrot"
+      ],
+      "maize": [
+        "Mais"
+      ],
+      "mughal green": [
+        "Dunkelgrün"
+      ],
+      "ocean": [
+        "Ozeanblau"
+      ],
+      "olive": [
+        "Olivgrün"
+      ],
+      "outer space": [
+        "Weltall"
+      ],
+      "pacific": [
+        "Pazifikblau"
+      ],
+      "palatinate blue": [
+        "Königsblau"
+      ],
+      "pale cerulean": [
+        "Himmelblau"
+      ],
+      "pastel gray": [
+        "Pastellgrau"
+      ],
+      "persian plum": [
+        "Kirschpflaume"
+      ],
+      "persian red": [
+        "Persisches Rot"
+      ],
+      "philippine gray": [
+        "Philippinisches Grau"
+      ],
+      "philippine silver": [
+        "Philippinisches Silber"
+      ],
+      "pickle": [
+        "Moosgrün"
+      ],
+      "pine": [
+        "Kiefernfarben"
+      ],
+      "pink": [
+        "Rosa"
+      ],
+      "pistachio": [
+        "Pistazie"
+      ],
+      "plum": [
+        "Pflaume"
+      ],
+      "purple": [
+        "Violett"
+      ],
+      "reef": [
+        "Koralle"
+      ],
+      "ruddy pink": [
+        "Altrosa"
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "satin sheen gold": [
+        "seidenglänzendes Gold"
+      ],
+      "slateblue": [
+        "Blaugrau"
+      ],
+      "soil": [
+        "Erdfarben"
+      ],
+      "strawberry": [
+        "Erdbeere"
+      ],
+      "vivid auburn": [
+        "Leuchtendes Rotbraun"
+      ],
+      "white": [
+        "Weiß"
+      ]
+    },
+    "Error": {
+      "Signature verification failed": [
+        "Signaturprüfung fehlgeschlagen"
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Aktualisiere die Seite oder versuche es später erneut."
+      ],
+      "Something went wrong": [
+        "Etwas ist schief gelaufen."
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme font": [
+        "Design-Schriftart"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groß"
+      ],
+      "Medium (recommended)": [
+        "Mittel (empfohlen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Sehr groß"
+      ],
+      "Very small": [
+        "Sehr klein"
+      ]
+    },
+    "Info": {
+      "${ allTypersExceptLast } and ${ lastTyper }": [
+        "${ allTypersExceptLast } und ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } schreibt...",
+        "${ usersTranslation } schreiben..."
+      ],
+      "Are you sure you want to delete this comment?": [
+        "Bist du sicher, dass du diesen Kommentar löschen möchtest?"
+      ],
+      "Are you sure you want to delete this thread?": [
+        "Möchtest du diese Unterhaltung wirklich löschen?"
+      ],
+      "Comments": [
+        "Kommentare"
+      ],
+      "Editing": [
+        "Bearbeitet"
+      ],
+      "Just now": [
+        "Jetzt gerade"
+      ],
+      "Loading": [
+        "Wird geladen"
+      ],
+      "No comments": [
+        "Keine Kommentare"
+      ],
+      "Something went wrong:": [
+        "Etwas ist schiefgelaufen:"
+      ],
+      "Viewing": [
+        "Schaut"
+      ],
+      "Waiting for editor initialization...": [
+        "Warte auf Initialisierung des Editors..."
+      ],
+      "You cannot undo this action.": [
+        "Diese Aktion kann nicht widerrufen werden."
+      ]
+    },
+    "Label": {
+      "Background colour": [
+        "Hintergrundfarbe"
+      ],
+      "Link text": [
+        "Text verlinken"
+      ],
+      "Link URL": [
+        "URL verlinken"
+      ],
+      "More options": [
+        "Weitere Optionen"
+      ],
+      "Text colour": [
+        "Schriftfarbe"
+      ]
+    },
+    "Placeholder": {
+      "Add a comment...": [
+        "Kommentar hinzufügen..."
+      ],
+      "Edit comment...": [
+        "Kommentar bearbeiten..."
+      ],
+      "Paste link": [
+        "Link einfügen"
+      ],
+      "Reply...": [
+        "Antworten..."
+      ],
+      "Text": [
+        "Text"
+      ]
+    },
+    "Title": {
+      "Delete comment": [
+        "Kommentar löschen"
+      ],
+      "Delete thread": [
+        "Unterhaltung löschen"
+      ]
+    }
+  }
+}
