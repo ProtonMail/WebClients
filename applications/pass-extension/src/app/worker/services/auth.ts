@@ -202,7 +202,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onNotification: (data) =>
-            store.dispatch(notification({ ...data, type: 'error', key: 'authservice', deduplicate: true })),
+            store.dispatch(notification({ ...data, type: 'error', key: data.key ?? 'authservice', deduplicate: true })),
 
         onSessionRefresh: withContext(async (ctx, localID, { AccessToken, RefreshToken, RefreshTime }) => {
             const persistedSession = await ctx.service.auth.config.getPersistedSession(localID);
