@@ -50,6 +50,7 @@ import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
 import { getSupportedStringValue } from '../icsSurgery/vcal';
 import { getIsRruleEqual } from '../recurrence/rruleEqual';
+import { stripAllTags } from '../sanitize';
 import { fromTriggerString, serialize } from '../vcal';
 import { getAllDayInfo, getHasModifiedDateTimes, getIsEquivalentAttendee, propertyToUTCDate } from '../vcalConverter';
 import {
@@ -707,11 +708,17 @@ export const getHasUpdatedInviteData = ({
     const hasUpdatedDateTimes = hasModifiedDateTimes ?? getHasModifiedDateTimes(newVevent, oldVevent);
 
     const keys: VcalComponentKeys[] = ['summary', 'description', 'location'];
-    const hasUpdatedTitleDescriptionOrLocation = keys.some(
-        (key) =>
-            getSupportedStringValue(newVevent[key] as VcalStringProperty) !==
-            getSupportedStringValue(oldVevent[key] as VcalStringProperty)
-    );
+    const hasUpdatedTitleDescriptionOrLocation = keys.some((key) => {
+        const newValue = getSupportedStringValue(newVevent[key] as VcalStringProperty);
+        const oldValue = getSupportedStringValue(oldVevent[key] as VcalStringProperty);
+
+        if (newValue && oldValue) {
+            return stripAllTags(newValue) !== stripAllTags(oldValue);
+        }
+
+        return newValue !== oldValue;
+    });
+
     const hasUpdatedRrule = hasModifiedRrule ?? !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
     return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
 };
