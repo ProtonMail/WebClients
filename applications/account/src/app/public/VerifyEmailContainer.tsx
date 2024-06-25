@@ -16,6 +16,7 @@ import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
 import ExpiredError from './ExpiredError';
 import accountIllustration from './account-illustration.svg';
+import { stripQueryParams } from './jwt';
 
 interface Props {
     onSubscribe: (jwt: string) => void;
@@ -38,7 +39,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
     const type = params.get('type');
 
     useEffect(() => {
-        const jwt = location.hash.substring(1);
+        const jwt = stripQueryParams(location.hash.substring(1));
 
         const promise = silentApi(postVerifyValidate({ JWT: jwt }))
             .then(() => {
