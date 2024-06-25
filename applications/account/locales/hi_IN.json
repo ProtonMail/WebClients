@@ -67,10 +67,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -645,6 +645,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } सेटिंग खोलें"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } में खोलें"
       ],
       "Open navigation": [
         "नेविगेशन खोलें"
@@ -1239,6 +1242,11 @@
         "${ BRAND_NAME } ऐप"
       ]
     },
+    "Assistant toggle": {
+      "Customize plan": [
+        "योजना अनुकूलित करें"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "खाली ICS फ़ाइल"
@@ -1744,6 +1752,9 @@
       ]
     },
     "Call Scheduled Confirmation": {
+      "Request sent": [
+        "अनुरोध भेजा गया"
+      ],
       "You can safely close this tab.": [
         "आप इस टैब को सुरक्षित रूप से बंद कर सकते हैं।"
       ]
@@ -2972,6 +2983,9 @@
       "Are you sure you want to delete this address?": [
         "क्या आप वाकई इस पते को मिटाना चाहते हैं?"
       ],
+      "Delete address": [
+        "पता मिटा दें"
+      ],
       "Delete address permanently?": [
         "पता स्थायी रूप से हटाएं?"
       ],
@@ -2998,6 +3012,9 @@
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "क्या आप वाकई इस डोमेन को हटाना चाहते हैं?"
+      ],
+      "Delete": [
+        "मिटा दें"
       ]
     },
     "Delinquent modal title": {
@@ -3500,9 +3517,6 @@
       ],
       "Contact signature not verified": [
         "संपर्क हस्ताक्षर सत्यापित नहीं"
-      ],
-      "Coudn't load invoices. Please try again later.": [
-        "रसीद लोड नहीं हो सकी। कृपया बाद में पुन: प्रयास करें।"
       ],
       "Could not open created vault": [
         "बनाए गए तिजोरी को खोल नहीं पा रहे"
@@ -5413,6 +5427,14 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -6291,7 +6313,13 @@
       "Internet connection restored.": [
         "इंटरनेट कनेक्शन बहाल"
       ],
+      "Invite Accepted": [
+        "न्योता माना गया"
+      ],
       "Invite rejected": [
+        "न्योता ठुकराया गया"
+      ],
+      "Invite Rejected": [
         "न्योता ठुकराया गया"
       ],
       "Invite successfully sent": [
@@ -6772,6 +6800,9 @@
       "Set recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश सेट करें"
       ],
+      "Set your password": [
+        "अपना पासवर्ड सेट करें"
+      ],
       "Setting up your organization": [
         "अपना संगठन स्थापित करना"
       ],
@@ -7184,6 +7215,9 @@
       "Users": [
         "यूज़र"
       ],
+      "Vault created": [
+        "तिजोरी बनाया गया"
+      ],
       "Verification can take a few minutes.": [
         "सत्यापन में कुछ मिनट लग सकते हैं।"
       ],
@@ -7560,14 +7594,6 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8765,7 +8791,7 @@
         "दो-पासवर्ड मोड"
       ],
       "Type": [
-        "टाइप"
+        "प्रकार"
       ],
       "Undo send": [
         "भेजें पूर्ववत करें"
@@ -9037,6 +9063,9 @@
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } लें"
       ],
+      "Help": [
+        "सहायता"
+      ],
       "Help translate": [
         "अनुवाद में मदद करें"
       ],
@@ -9100,9 +9129,6 @@
       "Upgrade your plan": [
         "अपना प्लान अपग्रेड करें"
       ],
-      "Users and addresses": [
-        "उपयोगकर्ता और ई-मेल पते"
-      ],
       "View guide": [
         "गाइड देखें"
       ],
@@ -9147,6 +9173,11 @@
         "आपका आयात शुरू हो रहा है"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "और जानें"
+      ]
+    },
     "Log preference": {
       "Enable advanced logs": [
         "उन्नत लॉग सक्षम करें"
@@ -9178,6 +9209,19 @@
         "सीमित समय ऑफर"
       ]
     },
+    "mail_signup_2024: Info": {
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "आपको ${ MAIL_APP_NAME } इस्तेमाल करने का न्योता मिला है"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "व्यवसायों के लिए"
+      ],
+      "For individuals": [
+        "व्यक्तिगत"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "10 email addresses": [
         "10 ईमेल पते"
@@ -9207,6 +9251,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "उपयोगकर्ता को सक्रिय करें"
+      ],
       "Change password": [
         "पासवर्ड परिवर्तित करें"
       ],
@@ -10250,6 +10297,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 सहायता"
+      ],
       "Access advanced VPN features": [
         "एडवांस वीपीएन सुविधाएं एक्सेस करें"
       ],
@@ -10756,6 +10806,9 @@
       ],
       "Upgrade": [
         "अपग्रेड करें"
+      ],
+      "Upgrade my plan": [
+        "मेरी योजना को अपग्रेड करें"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10773,6 +10826,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "चलिए बात करते हैं"
+      ],
       "Limited time offer": [
         "सीमित समय ऑफर"
       ],
@@ -10793,8 +10849,14 @@
       "Creating your account": [
         "आपका खाता बन रहा है"
       ],
+      "Current plan": [
+        "चालू प्लान"
+      ],
       "End-to-end encryption": [
         "शुरु-से-अंत तक एन्क्रिप्शन"
+      ],
+      "Free forever": [
+        "हमेशा मुफ्त"
       ],
       "per month": [
         "हर महीने"
@@ -10826,6 +10888,9 @@
       ]
     },
     "pass_signup_2023: title": {
+      "For businesses": [
+        "व्यवसायों के लिए"
+      ],
       "For individuals": [
         "अकेले लोगों के लिए"
       ]
@@ -10916,6 +10981,12 @@
       ]
     },
     "Payments": {
+      "Card number": [
+        "कार्ड नंबर"
+      ],
+      "MM/YY": [
+        "महीना/साल"
+      ],
       "Processing payment": [
         "भुगतान की प्रक्रिया जारी है"
       ],
@@ -11254,8 +11325,14 @@
       ]
     },
     "Role": {
+      "Admin": [
+        "एडमिन"
+      ],
       "Primary admin": [
         "प्राथमिक व्यवस्थापक"
+      ],
+      "User": [
+        "यूज़र"
       ]
     },
     "scim: Action": {
@@ -11517,6 +11594,11 @@
     "session_recovery:sign_out:link": {
       "Password reset": [
         "पासवर्ड रिसेट करें"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "उपलब्ध"
       ]
     },
     "Settings description": {
@@ -11930,6 +12012,11 @@
         "सार्वजनिक, बाहरी, या शेयर किए कैलेंडर जोड़े।"
       ]
     },
+    "Subscription": {
+      "Billed monthly": [
+        "मासिक बिल"
+      ]
+    },
     "Subscription attribute": {
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } विशेष सर्वर",
@@ -12044,6 +12131,9 @@
       "10 email addresses": [
         "10 ईमेल पते"
       ],
+      "6 users": [
+        "6 यूज़र"
+      ],
       "Automatic email forwarding": [
         "स्वचालित ईमेल फॉरवर्ड"
       ],
@@ -12064,6 +12154,9 @@
       ],
       "Keep ${ config.planName }": [
         "${ config.planName } रखे"
+      ],
+      "Learn more": [
+        "और जानें"
       ],
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
@@ -12835,6 +12928,9 @@
       "Delete version history?": [
         "संस्करण इतिहास मिटाएं?"
       ],
+      "Description": [
+        "विवरण"
+      ],
       "Details": [
         "विवरण"
       ],
@@ -12918,6 +13014,9 @@
       ],
       "Error": [
         "गड़बड़"
+      ],
+      "Event": [
+        "इवेंट"
       ],
       "Export": [
         "निर्यात"
@@ -13167,6 +13266,9 @@
       "Processing...": [
         "प्रोसेस हो रहा है..."
       ],
+      "Profile": [
+        "प्रोफाइल"
+      ],
       "Recommended": [
         "सलाह"
       ],
@@ -13383,6 +13485,9 @@
       ],
       "Upload your organization’s logo": [
         "अपना संगठन-चिन्ह अपलोड करें"
+      ],
+      "User": [
+        "यूज़र"
       ],
       "Users": [
         "यूज़र"
@@ -13814,6 +13919,52 @@
         "प्राथमिक व्यवस्थापक"
       ]
     },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } पता"
+      ],
+      "Add multiple users": [
+        "एकाधिक उपयोगकर्ता जोड़ें"
+      ],
+      "Add new user": [
+        "नया उपयोगकर्ता जोड़ें"
+      ],
+      "Admin": [
+        "एडमिन"
+      ],
+      "Cancel": [
+        "रद्द करें"
+      ],
+      "Confirm password": [
+        "पासवर्ड की पुष्टि करें"
+      ],
+      "Create password": [
+        "पासवर्ड बनाएं"
+      ],
+      "Create user": [
+        "उपयोगकर्ता बनाएं"
+      ],
+      "Email": [
+        "ईमेल"
+      ],
+      "Name": [
+        "नाम"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "उपयोगकर्ता की साइन इन जानकारी उनके साथ साझा करना ना भूलिए गा।"
+      ],
+      "User created": [
+        "उपयोगकर्ता बनाया गया"
+      ],
+      "VPN connections": [
+        "वीपीएन कनेक्शन"
+      ]
+    },
+    "Users table: badge": {
+      "Invite sent": [
+        "न्योता भेजा गया"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
         "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
@@ -13870,6 +14021,11 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
         "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed monthly": [
+        "मासिक बिल"
       ]
     },
     "vpn_2step: info": {

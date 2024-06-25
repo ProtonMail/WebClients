@@ -41,11 +41,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -581,8 +581,14 @@
       "OK": [
         "Ih"
       ],
+      "Ok": [
+        "IH"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ldi iɣewwaren n ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Ldi deg ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Ldi tunigin"
@@ -1151,11 +1157,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Isnasen n ${ BRAND_NAME }"
-      ]
-    },
-    "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /wayyur"
       ]
     },
     "Attached ics file error": {
@@ -4570,6 +4571,11 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -5499,6 +5505,9 @@
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
       ],
+      "Set your password": [
+        "Sbadu awal-ik uffir"
+      ],
       "Setting up your organization": [
         "Sbadu tkebbanit-ik"
       ],
@@ -5931,11 +5940,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
-      ]
-    },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -6756,6 +6760,9 @@
       "Link label": [
         "Tabzimt n useɣwen"
       ],
+      "Logo": [
+        "Alugu"
+      ],
       "Mail Server (IMAP)": [
         "Ameẓlu n yimayl (IMAP)"
       ],
@@ -7262,6 +7269,9 @@
       "Help translate": [
         "Ttekki di tsuqilt"
       ],
+      "here": [
+        "da"
+      ],
       "How to pay with Bitcoin?": [
         "Amek ara txellseḍ s Bitcoin?"
       ],
@@ -7312,9 +7322,6 @@
       ],
       "Upgrade your plan": [
         "Sali aɣawas-ik"
-      ],
-      "Users and addresses": [
-        "Iseqdacen d tansiwin"
       ],
       "View guide": [
         "Wali amnir"
@@ -7381,6 +7388,11 @@
     "mail_signup_2023: Info": {
       "Limited time offer": [
         "Talast n wakud yettwamudden"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Tettwanecdeḍ ad tɛerḍeḍ ${ MAIL_APP_NAME }"
       ]
     },
     "mailtrial2024: Deal details": {
@@ -8347,6 +8359,12 @@
       ],
       "Normal": [
         "Amagnu"
+      ],
+      "Off": [
+        "Yekfa"
+      ],
+      "On": [
+        "Yermed"
       ],
       "Permanent": [
         "Ameɣlal"
@@ -10298,6 +10316,9 @@
       "No recovery method": [
         "Ulac tarrayt n tririt"
       ],
+      "Open": [
+        "Ldi"
+      ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
       ],
@@ -10540,6 +10561,9 @@
       ],
       "Upgrade plan": [
         "Sali aɣawas"
+      ],
+      "User": [
+        "Aseqdac"
       ],
       "Users": [
         "Iseqdacen"
@@ -10863,6 +10887,26 @@
       ],
       "Primary admin": [
         "Anedbal agejdan"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } tansa"
+      ],
+      "Add multiple users": [
+        "Rnu aṭas n yiseqdacen"
+      ],
+      "Confirm password": [
+        "Sentem awal uffir"
+      ],
+      "Create password": [
+        "Rnu awal uffir"
+      ],
+      "Name": [
+        "Isem"
+      ],
+      "VPN connections": [
+        "Tuqqniwin VPN"
       ]
     },
     "Validation": {

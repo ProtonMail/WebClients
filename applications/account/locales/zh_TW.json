@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -154,9 +154,6 @@
       ],
       "Cancel": [
         "取消"
-      ],
-      "Cancel add-on": [
-        "Cancel 添加"
       ],
       "Cancel subscription": [
         "取消訂購授權"
@@ -370,9 +367,6 @@
       ],
       "Download CSV sample": [
         "下載 CSV 範本"
-      ],
-      "Download Desktop App": [
-        "下載桌面應用程式"
       ],
       "Download ICS": [
         "下載 ICS"
@@ -605,9 +599,6 @@
       "Keep my Plus subscription": [
         "保持進階版訂購授權"
       ],
-      "Keep the writing assistant": [
-        "保持撰寫工具"
-      ],
       "label emails as": [
         "將電郵加上標籤"
       ],
@@ -688,6 +679,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "於 ${ DOCS_SHORT_APP_NAME } 開啟"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -839,6 +833,9 @@
       "Revoke this invitation": [
         "撤銷此邀請"
       ],
+      "Run on servers": [
+        "於伺服器執行"
+      ],
       "Save": [
         "儲存"
       ],
@@ -913,6 +910,9 @@
       ],
       "Send my username": [
         "發送我的使用者名稱"
+      ],
+      "Send new invite": [
+        "寄送新邀請"
       ],
       "Send reminder": [
         "發送提醒"
@@ -1114,6 +1114,9 @@
       ],
       "Verify account": [
         "驗證帳號"
+      ],
+      "Verify domain": [
+        "驗證網域"
       ],
       "View": [
         "檢視"
@@ -1341,34 +1344,19 @@
       ]
     },
     "Assistant option": {
+      "Run locally": [
+        "本地化執行"
+      ],
       "Run on servers": [
         "於伺服器執行"
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /月"
-      ],
-      "${ price } /year": [
-        "${ price } 年"
-      ],
-      "Add writing assistant": [
-        "添加撰寫幫手"
-      ],
-      "Cancel writing assistant add-on": [
-        "取消撰寫幫手添加"
-      ],
       "Customize plan": [
         "客製化方案"
       ],
-      "from ${ price } /month": [
-        "從${ price }月"
-      ],
       "New": [
         "新版"
-      ],
-      "Renew subscription": [
-        "續訂"
       ],
       "Trial expires on ${ formattedDate }": [
         "適用將於${ formattedDate }過期"
@@ -1440,6 +1428,9 @@
       ],
       "Get the deal": [
         "取得優惠"
+      ],
+      "Save even more with a 12-month plan": [
+        "使用12月方案節省更多"
       ]
     },
     "bf2023: Deal details": {
@@ -3882,9 +3873,6 @@
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "無法載入發票。請稍後再試。"
-      ],
       "Could not open created vault": [
         "無法開啟被新增的保管庫"
       ],
@@ -3893,6 +3881,9 @@
       ],
       "Could not save preference": [
         "無法儲存偏好設定"
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "無法載入發票。請稍後再試。"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
@@ -3908,6 +3899,9 @@
       ],
       "Email address is invalid": [
         "電子郵件位址無效"
+      ],
+      "Email address is not available": [
+        "電子地址無法取得"
       ],
       "Email address is required": [
         "電郵位址為必填"
@@ -3956,6 +3950,9 @@
       ],
       "Impossible to rename the gateway": [
         "無法重新命名閘道器"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "檔案類型不正確。上傳 PNG 或 JPEG 類型的檔案。"
       ],
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
@@ -5928,6 +5925,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的密鑰。請將密鑰個別上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -6874,14 +6882,77 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "Invite Accepted": [
+        "已接受邀請"
+      ],
+      "Invite Created": [
+        "邀請已建立"
+      ],
+      "Invite deleted": [
+        "邀請已刪除"
+      ],
+      "Invite Deleted": [
+        "邀請已刪除"
+      ],
       "Invite rejected": [
         "邀請已婉拒"
+      ],
+      "Invite Rejected": [
+        "邀請已拒絕"
       ],
       "Invite successfully sent": [
         "邀請已成功傳送"
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的某些資料似乎已被加密和鎖定。"
+      ],
+      "Item Autofilled": [
+        "項目自動填滿"
+      ],
+      "Item autofilled in vault": [
+        "項目自動填滿保管庫項目"
+      ],
+      "Item Changed Flags": [
+        "項目已變更標籤"
+      ],
+      "Item Created": [
+        "項目已新增"
+      ],
+      "Item created in vault": [
+        "於保管庫項目以創建"
+      ],
+      "Item Deleted": [
+        "項目已刪除"
+      ],
+      "Item deleted in vault": [
+        "於保管庫項目已刪除"
+      ],
+      "Item flags changed in vault": [
+        "於保管庫項目標籤已刪除"
+      ],
+      "Item in vault untrashed": [
+        "於保管庫的項目取消刪除"
+      ],
+      "Item Read": [
+        "項目已讀"
+      ],
+      "Item read in vault": [
+        "於保管庫項目閱讀"
+      ],
+      "Item Trashed": [
+        "項目已刪除"
+      ],
+      "Item trashed in vault": [
+        "於保管庫項目已刪除"
+      ],
+      "Item Untrashed": [
+        "項目已取消刪除"
+      ],
+      "Item Updated": [
+        "物品已更新"
+      ],
+      "Item updated in vault": [
+        "於保管庫項目已更新"
       ],
       "it’s imperative": [
         "有件事尤為重要"
@@ -7035,6 +7106,12 @@
       ],
       "New": [
         "加入"
+      ],
+      "New User Invite Created": [
+        "新使用者已創建"
+      ],
+      "New User Invite Deleted": [
+        "新使用者已刪除"
       ],
       "No account keys exist": [
         "無帳號金鑰存在"
@@ -7396,6 +7473,9 @@
       "Set recovery phrase": [
         "設定還原短語"
       ],
+      "Set your password": [
+        "設定您的密碼"
+      ],
       "Setting up your organization": [
         "設定您的組織"
       ],
@@ -7404,6 +7484,12 @@
       ],
       "Settings updated": [
         "已更新設定"
+      ],
+      "Shared vault deleted": [
+        "共享保管庫已刪除"
+      ],
+      "Shared vault updated": [
+        "共享保管庫已更新"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "郵件列表裡顯示每一寄件者的圖像。如無可用圖像，則將顯示寄件者的姓名首字母。"
@@ -7753,6 +7839,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "由您的身分識別者產生的唯一 ID，形式通常是一個包含身分提供者名稱的 URL (範例：https://idp.example.com/XXXXX)。"
       ],
+      "Unknown event type": [
+        "未知的事件類型"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "除非您登出您的帳號或更改您的密碼，您的工作階段將保持使用。工作階段閒置 60 天後逾期。"
       ],
@@ -7827,6 +7916,18 @@
       ],
       "Users": [
         "使用者"
+      ],
+      "Vault created": [
+        "保管庫已創建"
+      ],
+      "Vault deleted": [
+        "保管庫已刪除"
+      ],
+      "Vault shared with email": [
+        "用電子郵件分享的保管庫"
+      ],
+      "Vault updated": [
+        "保管庫已更新"
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -8241,17 +8342,6 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的密鑰。請將密鑰個別上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9876,9 +9966,6 @@
       "Upgrade your plan": [
         "升級您的方案"
       ],
-      "Users and addresses": [
-        "使用者及電郵位址"
-      ],
       "View guide": [
         "查看指南"
       ],
@@ -9981,6 +10068,16 @@
       ],
       "Limited time offer": [
         "限時促銷"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "您已獲邀滿意體驗 ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "個人使用"
       ]
     },
     "mailtrial2024: Action": {
@@ -10722,6 +10819,9 @@
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
+      "See team's availability": [
+        "查看團隊可用程度"
+      ],
       "Send & receive invitations": [
         "傳送並接收邀請"
       ],
@@ -10889,6 +10989,9 @@
       ],
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "開始使用安全加密電郵和行事曆。"
       ],
       "For next-level password management and identity protection.": [
         "用於下一個層級的密碼管理與身份保護。"
@@ -13415,11 +13518,20 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME }與行事曆共享和使用性"
+      ],
       "${ dayDiff } day left": [
         "剩下${ dayDiff }天"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME }與版本歷史"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME }與自動郵件轉寄"
       ],
       "${ MaxCalendars } calendar per user": [
         "每位使用者${ MaxCalendars }個行事曆"
@@ -13430,6 +13542,9 @@
       "${ maxEmails } email address per user": [
         "${ maxEmails } 組電郵位址/每位使用者"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME }與${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } 可用空間 / 每位使用者"
       ],
@@ -13439,14 +13554,26 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 方案"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME }與惡意軟體和廣告阻擋"
+      ],
       "10 email addresses": [
         "10 個電子信箱"
+      ],
+      "20 email addresses per user": [
+        "每位使用者20組電郵位址"
+      ],
+      "25 calendars per user": [
+        "每位使用者25個行事曆"
       ],
       "6 users": [
         "6 位使用者"
       ],
       "Add any new files": [
         "新增任何檔案"
+      ],
+      "All you need for your business": [
+        "這是您公司只須要的"
       ],
       "Automatic email forwarding": [
         "自動郵件轉寄"
@@ -13469,6 +13596,9 @@
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
       ],
+      "Extra storage and users": [
+        "更多儲存和使用者"
+      ],
       "Have a question?": [
         "有問題嗎？"
       ],
@@ -13481,8 +13611,14 @@
       "Keep ${ config.planName }": [
         "保留 ${ config.planName }"
       ],
+      "Learn more": [
+        "了解更多"
+      ],
       "Learn more about our impact": [
         "了解更多我們的影響"
+      ],
+      "Make your business stand out": [
+        "使您的企業突出"
       ],
       "Manage your calendar": [
         "管理您的行事曆"
@@ -13493,8 +13629,14 @@
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
       ],
+      "Premium productivity features": [
+        "進階版生產力功能"
+      ],
       "Priority support": [
         "優先支援"
+      ],
+      "Productivity features": [
+        "生產力功能"
       ],
       "Reactivate": [
         "重新啟用"
@@ -14293,6 +14435,9 @@
       "Custom filters": [
         "自訂篩選器"
       ],
+      "Custom folders and labels": [
+        "自訂資料夾和標籤"
+      ],
       "Custom selection of users": [
         "自選使用者"
       ],
@@ -14365,6 +14510,9 @@
       "Delete version history?": [
         "刪除版本歷史紀錄？"
       ],
+      "Description": [
+        "描述說明"
+      ],
       "Details": [
         "詳細資訊"
       ],
@@ -14419,6 +14567,9 @@
       "Edit organization identity": [
         "編輯組織機構身分"
       ],
+      "Edit profile": [
+        "編輯個人資料"
+      ],
       "Edit servers": [
         "編輯伺服器"
       ],
@@ -14455,9 +14606,6 @@
       "Email subscriptions": [
         "電子報訂閱"
       ],
-      "Enable writing assistant": [
-        "啟用撰寫工具"
-      ],
       "Encryption and keys": [
         "加密和金鑰"
       ],
@@ -14475,6 +14623,9 @@
       ],
       "Error": [
         "錯誤"
+      ],
+      "Event": [
+        "行程"
       ],
       "Every member of the organization can access": [
         "團隊內的每個成員都能存取"
@@ -14613,6 +14764,9 @@
       ],
       "Invoices": [
         "繳款單"
+      ],
+      "IP": [
+        "IP"
       ],
       "Keep your inbox organized": [
         "保持收件匣井然有序"
@@ -14839,6 +14993,9 @@
       "Send email reminders?": [
         "傳送電郵提醒？"
       ],
+      "Send new invite?": [
+        "寄送新邀請?"
+      ],
       "Session management": [
         "工作階段管理"
       ],
@@ -14956,6 +15113,9 @@
       "This field cannot contain only spaces": [
         "此欄位不能只包含空白"
       ],
+      "Time": [
+        "時間"
+      ],
       "Time zone": [
         "時區"
       ],
@@ -14985,6 +15145,9 @@
       ],
       "Upload your organization’s logo": [
         "上傳您的組織標誌圖片檔案"
+      ],
+      "User": [
+        "使用者"
       ],
       "Users": [
         "使用者"
@@ -15033,6 +15196,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 組態"
+      ],
+      "Writing assistant": [
+        "撰寫幫手"
       ],
       "You have no open alerts": [
         "您無以開啟的警告"
@@ -15456,6 +15622,37 @@
       ],
       "Primary admin": [
         "主要系統管理員"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } 位址"
+      ],
+      "Add multiple users": [
+        "添加多位使用者"
+      ],
+      "Confirm password": [
+        "確認密碼"
+      ],
+      "Create password": [
+        "創建密碼"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "請記得與使用者分享其登入詳細資料。"
+      ],
+      "VPN connections": [
+        "VPN 連線"
+      ],
+      "Writing assistant": [
+        "撰寫幫手"
+      ]
+    },
+    "Users table: badge": {
+      "SSO user provided by your identity provider": [
+        "您身份提供者提供的單一登入使用者"
+      ],
+      "Writing assistant": [
+        "撰寫幫手"
       ]
     },
     "Validation": {

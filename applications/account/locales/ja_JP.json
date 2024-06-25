@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -368,9 +368,6 @@
       "Download CSV sample": [
         "CSV サンプルをダウンロード"
       ],
-      "Download Desktop App": [
-        "デスクトップアプリをダウンロード"
-      ],
       "Download ICS": [
         "ICSをダウンロード"
       ],
@@ -670,6 +667,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } で開く"
       ],
       "Open navigation": [
         "ナビゲーションを開く"
@@ -1323,11 +1323,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } アプリケーション"
-      ]
-    },
-    "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /月"
       ]
     },
     "Attached ics file error": {
@@ -3741,9 +3736,6 @@
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "請求書を読み込めませんでした。 後でもう一度試してください。"
-      ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
       ],
@@ -5781,6 +5773,17 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -7258,6 +7261,9 @@
       "Set recovery phrase": [
         "回復用フレーズを設定"
       ],
+      "Set your password": [
+        "パスワードを設定"
+      ],
       "Setting up your organization": [
         "組織の設定"
       ],
@@ -8088,17 +8094,6 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9722,9 +9717,6 @@
       "Upgrade your plan": [
         "プランをアップグレード"
       ],
-      "Users and addresses": [
-        "ユーザーとアドレス"
-      ],
       "View guide": [
         "ガイドを表示"
       ],
@@ -9803,6 +9795,16 @@
       ],
       "Limited time offer": [
         "期間限定の特別な特典"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } の試用に招待されました"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "個人向け"
       ]
     },
     "mailtrial2024: Action": {
@@ -15279,6 +15281,31 @@
       ],
       "Primary admin": [
         "管理責任者"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } アドレス"
+      ],
+      "Add multiple users": [
+        "複数のユーザーを追加する"
+      ],
+      "Confirm password": [
+        "パスワードの確認"
+      ],
+      "Create password": [
+        "パスワードを作成"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "ユーザーのサインイン情報を共有することを忘れないでください。"
+      ],
+      "VPN connections": [
+        "VPN 接続"
+      ]
+    },
+    "Users table: badge": {
+      "SSO user provided by your identity provider": [
+        "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
     "Validation": {

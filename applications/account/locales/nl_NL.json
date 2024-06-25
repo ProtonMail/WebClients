@@ -58,11 +58,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -378,9 +378,6 @@
       ],
       "Download CSV sample": [
         "CSV-voorbeeld downloaden"
-      ],
-      "Download Desktop App": [
-        "Desktop-app downloaden"
       ],
       "Download ICS": [
         "ICS downloaden"
@@ -1357,9 +1354,6 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /maand"
-      ],
       "New": [
         "Nieuw"
       ]
@@ -3928,9 +3922,6 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Kon facturen niet laden, probeer het later nog een keer."
-      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
       ],
@@ -6010,6 +6001,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -7544,6 +7546,9 @@
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
+      "Set your password": [
+        "Stel uw wachtwoord in"
+      ],
       "Setting up your organization": [
         "Uw organisatie wordt aangemaakt"
       ],
@@ -8361,9 +8366,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Uw browser ondersteunt de schrijfassistent niet. Download de ${ MAIL_APP_NAME } desktop-app of probeer het uit te voeren op servers."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Uw browser ondersteunt de schrijfassistent niet. Probeer het uit te voeren op servers."
       ],
@@ -8427,17 +8429,6 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10082,9 +10073,6 @@
       "Upgrade your plan": [
         "Upgrade uw abonnement"
       ],
-      "Users and addresses": [
-        "Gebruikers en adressen"
-      ],
       "View guide": [
         "Bekijk gids"
       ],
@@ -10193,6 +10181,16 @@
       ],
       "Limited time offer": [
         "Tijdelijke aanbieding"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "Voor particulieren"
       ]
     },
     "mailtrial2024: Action": {
@@ -15555,6 +15553,9 @@
       "WireGuard configuration": [
         "WireGuard configuratie"
       ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ],
       "You have no open alerts": [
         "U heeft geen open waarschuwingen"
       ],
@@ -15984,6 +15985,37 @@
       ],
       "Primary admin": [
         "Primaire administrator"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-adres"
+      ],
+      "Add multiple users": [
+        "Meerdere gebruikers toevoegen"
+      ],
+      "Confirm password": [
+        "Wachtwoord bevestigen"
+      ],
+      "Create password": [
+        "Wachtwoord aanmaken"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
+      ],
+      "VPN connections": [
+        "VPN-verbindingen"
+      ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ]
+    },
+    "Users table: badge": {
+      "SSO user provided by your identity provider": [
+        "SSO-gebruiker verstrekt door uw identiteitsprovider"
+      ],
+      "Writing assistant": [
+        "Schrijfassistent"
       ]
     },
     "Validation": {
