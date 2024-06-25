@@ -1,0 +1,460 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "pl_PL"
+  },
+  "contexts": {
+    "Action": {
+      "Add comment": [
+        "Dodaj komentarz"
+      ],
+      "Add new table column": [
+        "Dodaj nową kolumnę tabeli"
+      ],
+      "Add new table row": [
+        "Dodaj nowy wiersz tabeli"
+      ],
+      "Apply": [
+        "Zastosuj"
+      ],
+      "Bold": [
+        "Pogrubienie"
+      ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Center align": [
+        "Wyśrodkuj"
+      ],
+      "Clear contents": [
+        "Wyczyść zawartość"
+      ],
+      "Clear formatting": [
+        "Wyczyść formatowanie"
+      ],
+      "Click to open column menu": [
+        "Kliknij, aby otworzyć menu kolumny"
+      ],
+      "Click to open row menu": [
+        "Kliknij, aby otworzyć menu wiersza"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
+      "Code block": [
+        "Blok kodu"
+      ],
+      "Color": [
+        "Kolor"
+      ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Delete column": [
+        "Usuń kolumnę"
+      ],
+      "Delete comment": [
+        "Usuń komentarz "
+      ],
+      "Delete row": [
+        "Usuń wiersz"
+      ],
+      "Delete thread": [
+        "Usuń wątek"
+      ],
+      "Duplicate": [
+        "Duplikuj"
+      ],
+      "Edit": [
+        "Edytuj"
+      ],
+      "Edit link": [
+        "Edytuj link"
+      ],
+      "Fit table to page width": [
+        "Dopasuj tabelę do szerokości strony"
+      ],
+      "Indent": [
+        "Zwiększ wcięcie"
+      ],
+      "Insert above": [
+        "Wstaw powyżej"
+      ],
+      "Insert below": [
+        "Wstaw poniżej"
+      ],
+      "Insert image": [
+        "Wstaw obraz"
+      ],
+      "Insert left": [
+        "Wstaw z lewej"
+      ],
+      "Insert right": [
+        "Wstaw z prawej"
+      ],
+      "Insert table": [
+        "Wstaw tabelę"
+      ],
+      "Italic": [
+        "Kursywa"
+      ],
+      "Justify align": [
+        "Wyjustuj"
+      ],
+      "Left align": [
+        "Wyrównaj do lewej"
+      ],
+      "Link": [
+        "Link"
+      ],
+      "Options": [
+        "Opcje"
+      ],
+      "Outdent": [
+        "Zmniejsz wcięcie"
+      ],
+      "Quote": [
+        "Cytuj"
+      ],
+      "Re-open": [
+        "Otwórz ponownie"
+      ],
+      "Re-open thread": [
+        "Otwórz ponownie wątek"
+      ],
+      "Redo": [
+        "Powtórz"
+      ],
+      "Refresh the page": [
+        "Odśwież stronę"
+      ],
+      "Remove link": [
+        "Usuń link"
+      ],
+      "Reply": [
+        "Odpowiedz"
+      ],
+      "Resolve": [
+        "Rozwiąż"
+      ],
+      "Right align": [
+        "Wyrównaj do prawej"
+      ],
+      "Save": [
+        "Zapisz"
+      ],
+      "Show thread": [
+        "Pokaż wątek"
+      ],
+      "Strikethrough": [
+        "Przekreślenie"
+      ],
+      "Submit": [
+        "Wyślij"
+      ],
+      "Table options": [
+        "Opcje tabeli"
+      ],
+      "Underline": [
+        "Podkreślenie"
+      ],
+      "Undo": [
+        "Cofnij"
+      ]
+    },
+    "color": {
+      "apple": [
+        "jabłkowy"
+      ],
+      "azureish white": [
+        "lazurowa biel"
+      ],
+      "black": [
+        "czarny"
+      ],
+      "blanched almond": [
+        "migdał blanszowany"
+      ],
+      "blue-gray": [
+        "niebieskoszary"
+      ],
+      "caramel": [
+        "karmel"
+      ],
+      "carrot": [
+        "marchewkowy"
+      ],
+      "cerise": [
+        "wiśniowy"
+      ],
+      "cinnabar": [
+        "cynobrowy"
+      ],
+      "cobalt": [
+        "kobaltowy"
+      ],
+      "copper": [
+        "miedziany"
+      ],
+      "cyan-blue azure": [
+        "lazurowy"
+      ],
+      "dandelion": [
+        "mniszek lekarski"
+      ],
+      "dark cerulean": [
+        "ciemny cerulean"
+      ],
+      "dark midnight blue": [
+        "ciemny północny błękit"
+      ],
+      "dim gray": [
+        "ciemnoszary"
+      ],
+      "enzian": [
+        "atramentowy"
+      ],
+      "fern": [
+        "paprotkowy"
+      ],
+      "field drab": [
+        "oliwkowy brązowy"
+      ],
+      "forest": [
+        "leśny"
+      ],
+      "gainsboro": [
+        "jasnoszary"
+      ],
+      "japanese laurel": [
+        "laurowy"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "cytrynowożółty"
+      ],
+      "light carmine pink": [
+        "jasny karminowy róż"
+      ],
+      "light moss green": [
+        "jasna zieleń mchu"
+      ],
+      "light red": [
+        "jasnoczerwony"
+      ],
+      "maize": [
+        "kukurydziany"
+      ],
+      "mughal green": [
+        "ciemnozielony"
+      ],
+      "ocean": [
+        "morski"
+      ],
+      "olive": [
+        "oliwkowy"
+      ],
+      "outer space": [
+        "przestrzeń kosmiczna"
+      ],
+      "pacific": [
+        "pacyficzny"
+      ],
+      "palatinate blue": [
+        "błękit palatynowy"
+      ],
+      "pale cerulean": [
+        "jasny cerulean"
+      ],
+      "pastel gray": [
+        "pastelowa szarość"
+      ],
+      "persian plum": [
+        "perska śliwka"
+      ],
+      "persian red": [
+        "perska czerwień"
+      ],
+      "philippine gray": [
+        "filipińska szarość"
+      ],
+      "philippine silver": [
+        "filipińskie srebro"
+      ],
+      "pickle": [
+        "khaki"
+      ],
+      "pine": [
+        "sosnowy"
+      ],
+      "pink": [
+        "różowy"
+      ],
+      "pistachio": [
+        "pistacjowy"
+      ],
+      "plum": [
+        "śliwkowy"
+      ],
+      "purple": [
+        "fioletowy"
+      ],
+      "reef": [
+        "rafa koralowa"
+      ],
+      "ruddy pink": [
+        "rumiany róż"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "satynowy złoty połysk"
+      ],
+      "slateblue": [
+        "slateblue"
+      ],
+      "soil": [
+        "ziemisty"
+      ],
+      "strawberry": [
+        "truskawkowy"
+      ],
+      "vivid auburn": [
+        "żywy kasztanowy"
+      ],
+      "white": [
+        "biały"
+      ]
+    },
+    "Error": {
+      "Signature verification failed": [
+        "Weryfikacja podpisu nie powiodła się"
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Odśwież stronę lub spróbuj ponownie później."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Domyślny systemu"
+      ],
+      "Theme font": [
+        "Czcionka"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Duża"
+      ],
+      "Medium (recommended)": [
+        "Średnia (zalecana)"
+      ],
+      "Small": [
+        "Mała"
+      ],
+      "Very large": [
+        "Bardzo duża"
+      ],
+      "Very small": [
+        "Bardzo mała"
+      ]
+    },
+    "Info": {
+      "${ allTypersExceptLast } and ${ lastTyper }": [
+        "${ allTypersExceptLast } i ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } pisze...",
+        "${ usersTranslation } piszą...",
+        "${ usersTranslation } piszą...",
+        "${ usersTranslation } piszą..."
+      ],
+      "Are you sure you want to delete this comment?": [
+        "Czy na pewno chcesz usunąć ten komentarz?"
+      ],
+      "Are you sure you want to delete this thread?": [
+        "Czy na pewno chcesz usunąć ten wątek?"
+      ],
+      "Comments": [
+        "Komentarze"
+      ],
+      "Editing": [
+        "Edycja"
+      ],
+      "Just now": [
+        "Teraz"
+      ],
+      "Loading": [
+        "Ładowanie"
+      ],
+      "No comments": [
+        "Brak komentarzy"
+      ],
+      "Something went wrong:": [
+        "Coś poszło nie tak:"
+      ],
+      "Viewing": [
+        "Widok"
+      ],
+      "Waiting for editor initialization...": [
+        "Oczekiwanie na inicjalizację edytora..."
+      ],
+      "You cannot undo this action.": [
+        "Tej akcji nie można cofnąć."
+      ]
+    },
+    "Label": {
+      "Background colour": [
+        "Kolor tła"
+      ],
+      "Link text": [
+        "Tekst linku"
+      ],
+      "Link URL": [
+        "Adres URL linku"
+      ],
+      "More options": [
+        "Więcej opcji"
+      ],
+      "Text colour": [
+        "Kolor tekstu"
+      ]
+    },
+    "Placeholder": {
+      "Add a comment...": [
+        "Dodaj komentarz..."
+      ],
+      "Edit comment...": [
+        "Edytuj komentarz..."
+      ],
+      "Paste link": [
+        "Wklej link"
+      ],
+      "Reply...": [
+        "Odpowiedz..."
+      ],
+      "Text": [
+        "Tekst"
+      ]
+    },
+    "Title": {
+      "Delete comment": [
+        "Usuń komentarz"
+      ],
+      "Delete thread": [
+        "Usuń wątek"
+      ]
+    }
+  }
+}
