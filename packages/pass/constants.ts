@@ -45,6 +45,7 @@ export const ITEM_COUNT_RATING_PROMPT = 10;
 export const PASS_UPGRADE_PATH = 'pass/signup';
 export enum AccountPath {
     ACCOUNT_PASSWORD = 'pass/account-password',
+    ACCOUNT_PASSWORD_2FA = 'pass/account-password#two-fa',
     USERS = 'pass/users-addresses',
     POLICIES = 'pass/policies',
 }
