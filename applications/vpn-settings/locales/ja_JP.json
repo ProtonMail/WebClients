@@ -320,6 +320,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "${ DOCS_SHORT_APP_NAME } で開く"
+      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -1968,9 +1971,6 @@
       ],
       "Code wrong or not valid anymore": [
         "コードが間違っているか有効なコードではありません"
-      ],
-      "Coudn't load invoices. Please try again later.": [
-        "請求書を読み込めませんでした。 後でもう一度試してください。"
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
@@ -8255,6 +8255,31 @@
       ],
       "Primary admin": [
         "管理責任者"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } アドレス"
+      ],
+      "Add multiple users": [
+        "複数のユーザーを追加する"
+      ],
+      "Confirm password": [
+        "パスワードの確認"
+      ],
+      "Create password": [
+        "パスワードを作成"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "ユーザーのサインイン情報を共有することを忘れないでください。"
+      ],
+      "VPN connections": [
+        "VPN 接続"
+      ]
+    },
+    "Users table: badge": {
+      "SSO user provided by your identity provider": [
+        "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
     "Validation": {

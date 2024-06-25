@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Avaa ${ DOCS_SHORT_APP_NAME }issa"
+      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Lähetä käyttäjätunnukseni"
       ],
+      "Send new invite": [
+        "Lähetä uusi kutsu"
+      ],
       "Send reminder": [
         "Lähetä muistutus"
       ],
@@ -598,6 +604,9 @@
       ],
       "Verify code again": [
         "Vahvista koodi uudelleen"
+      ],
+      "Verify domain": [
+        "Vahvista verkkotunnus"
       ],
       "View": [
         "Tarkastele"
@@ -2106,7 +2115,7 @@
       "Code wrong or not valid anymore": [
         "Koodi on virheellinen tai erääntynyt"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
       ],
       "Domain not available, try again later": [
@@ -2114,6 +2123,9 @@
       ],
       "Email address is invalid": [
         "Sähköpostiosoite on virheellinen"
+      ],
+      "Email address is not available": [
+        "Sähköpostiosoite ei ole saatavilla"
       ],
       "Email is not valid": [
         "Virheellinen sähköpostiosoite"
@@ -2189,6 +2201,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisaation avaimen salausta ei ole purettu"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisaatioavain on aktivoitava kutsuttujen käyttäjien luomiseksi"
       ],
       "Organization key must be activated to create non-private users": [
         "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
@@ -3969,6 +3984,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Tämä vahvistus voi kestää jopa tunnin. Älä poista TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sitä tarvitaan vahvistamaan, että omistat verkkotunnuksen myös jatkossa."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
       ],
@@ -3998,6 +4016,9 @@
       ],
       "to ${ product } Business": [
         "palveluun ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Jotta verkkotunnus **${ domainName }** voi käyttää SAML-kertakirjautumista, sinun on vahvistettava sen omistajuus lisäämällä seuraava DNS TXT -tietue verkkotunnukseesi DNS-palveluntarjoajassasi."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Ole tilauksesi perumisesta yhteydessä asiakaspalveluumme."
@@ -4240,6 +4261,14 @@
         "Käytössäsi on tällä hetkellä ${ ipCount } tilauksesi ${ ipAddresses } omasta palvelimesta.",
         "Käytössäsi on tällä hetkellä ${ ipCount } tilauksesi ${ ipAddresses } omasta palvelimesta."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä ja ${ usedAI } / ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä.",
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä ja ${ usedAI } / ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä, etkä yhtäkään ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä.",
+        "Käytät tällä hetkellä ${ usedMembers } / ${ maxMembers } käytettävissä olevasta käyttäjälisenssistä, etkä yhtäkään ${ maxAI } käytettävissä olevasta kirjoitusavustajalisenssistä."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Käytössäsi on ${ usedMembers } käyttäjä lisenssiisi sisältyvästä ${ maxMembers } käyttäjästä.",
         "Käytössäsi on ${ usedMembers } käyttäjä lisenssiisi sisältyvästä ${ maxMembers } käyttäjästä."
@@ -4306,6 +4335,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Voit ylentää käyttäjän ylläpitäjäksi tai tehdä hänestä yksityisen, kun hän on hyväksynyt kutsun."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
@@ -5034,6 +5066,9 @@
       "Create account": [
         "Luo tili"
       ],
+      "Don't have access to your 2FA?": [
+        "Eikö sinulla ole pääsyä 2FA:han?"
+      ],
       "Forgot password?": [
         "Unohditko salasanasi?"
       ],
@@ -5212,11 +5247,17 @@
       "Delete": [
         "Poista"
       ],
+      "Delete and revoke invite": [
+        "Poista ja mitätöi kutsu"
+      ],
       "Edit": [
         "Muokkaa"
       ],
       "Remove": [
         "Poista"
+      ],
+      "Resend invite link": [
+        "Lähetä kutsulinkki uudelleen"
       ],
       "Revoke sessions": [
         "Mitätöi istunnot"
@@ -7718,6 +7759,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME }, sisältäen rajattomasti Hide-my-email-aliaksia"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } + ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } tallennustilaa/käyttäjä"
       ],
@@ -7725,7 +7769,7 @@
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja henkilöllisyytesi ovat turvassa."
+        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -8177,6 +8221,9 @@
       "Domain deleted": [
         "Verkkotunnus poistettiin"
       ],
+      "Invitation resent": [
+        "Kutsu on lähetetty uudelleen"
+      ],
       "Sessions revoked": [
         "Istunnot mitätöitiin"
       ],
@@ -8271,6 +8318,9 @@
       ],
       "Email addresses": [
         "Sähköpostiosoitteet"
+      ],
+      "Invitation email": [
+        "Kutsusähköposti"
       ],
       "Name": [
         "Nimi"
@@ -8693,9 +8743,6 @@
       "Plans": [
         "Tilaukset"
       ],
-      "Policies": [
-        "Käytännöt"
-      ],
       "Preview": [
         "Esikatselu"
       ],
@@ -8755,6 +8802,9 @@
       ],
       "Send email reminders?": [
         "Lähetetäänkö muistutuksia sähköpostitse?"
+      ],
+      "Send new invite?": [
+        "Lähetä uusi kutsu?"
       ],
       "Set new password": [
         "Aseta uusi salasana"
@@ -9033,6 +9083,94 @@
       ],
       "Primary admin": [
         "Ensisijainen ylläpitäjä"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } osoite"
+      ],
+      "Add multiple users": [
+        "Lisää useita käyttäjiä"
+      ],
+      "Add new user": [
+        "Lisää uusi käyttäjä"
+      ],
+      "Admin": [
+        "Ylläpitäjä"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Kutsu lähetetään tähän sähköpostiosoitteeseen."
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Confirm password": [
+        "Vahvista salasana"
+      ],
+      "Create password": [
+        "Luo salasana"
+      ],
+      "Create password instead": [
+        "Luo sen sijaan salasana"
+      ],
+      "Create user": [
+        "Luo käyttäjä"
+      ],
+      "Email": [
+        "Sähköposti"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "Optional": [
+        "Valinnainen"
+      ],
+      "Private": [
+        "Yksityinen"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
+      ],
+      "Send invite link via email instead": [
+        "Lähetä kutsulinkki sen sijaan sähköpostitse"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Tämä luo uuden ${ MAIL_APP_NAME } -osoitteen."
+      ],
+      "User created": [
+        "Käyttäjä luotiin"
+      ],
+      "VPN connections": [
+        "VPN-yhteydet"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Kutsu lähetetty, odotetaan kutsutun jäsenen vastausta"
+      ],
+      "Invite sent": [
+        "Kutsu lähetetty"
+      ],
+      "It's you": [
+        "Sinä"
+      ],
+      "Private": [
+        "Yksityinen"
+      ],
+      "SSO": [
+        "Kertakirjautuminen"
+      ],
+      "SSO user provided by your identity provider": [
+        "Identiteetinhallintasi SSO-käyttäjä"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Validation": {

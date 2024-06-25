@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Buka di ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Buka navigasi"
       ],
@@ -601,6 +604,9 @@
       ],
       "Verify code again": [
         "Verifikasi ulang kode"
+      ],
+      "Verify domain": [
+        "Verifikasi domain"
       ],
       "View": [
         "Lihat"
@@ -2100,7 +2106,7 @@
       "Code wrong or not valid anymore": [
         "Kode salah atau sudah tidak valid"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Faktur tidak dapat dimuat. Silakan coba lagi nanti."
       ],
       "Domain not available, try again later": [
@@ -3942,9 +3948,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Proses verifikasi ini dapat memakan waktu hingga satu jam. Setelah proses verifikasi berhasil, jangan hapus rekaman TXT ini karena rekaman ini akan dibutuhkan untuk mengonfirmasi bahwa Anda tetap merupakan pemilik dari domain yang bersangkutan."
       ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Tindakan ini akan membatalkan undangan sebelumnya dan mengirimkan undangan baru kepada **${ email }**."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan menganulir seluruh manfaat loyalitas yang telah Anda peroleh."
       ],
@@ -3966,6 +3969,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Tindakan ini akan mengirimkan undangan baru ke **${ email }**."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan autentikasi dua faktor."
       ],
@@ -3974,6 +3980,9 @@
       ],
       "to ${ product } Business": [
         "ke ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Untuk memberikan izin penggunaan SAML SSO kepada domain **${ domainName }**, Anda harus memverifikasi kepemilikan domain ini dengan menambahkan rekaman TXT DNS berikut ke dalam domain Anda pada penyedia layanan DNS Anda."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Untuk membatalkan langganan Anda, silakan menghubungi kami."
@@ -4214,6 +4223,12 @@
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Anda sedang menggunakan ${ ipCount } dari ${ ipAddresses } server khusus yang Anda miliki."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Anda saat ini sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang tersedia serta ${ usedAI } dari ${ maxAI } lisensi asisten penulisan yang tersedia."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Anda saat ini sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang tersedia tanpa menggunakan satu pun dari ${ maxAI } lisensi asisten penulisan yang tersedia."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Anda sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang Anda miliki."
@@ -5182,11 +5197,17 @@
       "Delete": [
         "Hapus"
       ],
+      "Delete and revoke invite": [
+        "Hapus dan anulir undangan"
+      ],
       "Edit": [
         "Sunting"
       ],
       "Remove": [
         "Hapus"
+      ],
+      "Resend invite link": [
+        "Kirim ulang tautan undangan"
       ],
       "Revoke sessions": [
         "Cabut sesi"
@@ -8118,6 +8139,9 @@
       "Domain deleted": [
         "Domain berhasil dihapus"
       ],
+      "Invitation resent": [
+        "Undangan dikirim ulang"
+      ],
       "Sessions revoked": [
         "Sesi berhasil dicabut"
       ],
@@ -8212,6 +8236,9 @@
       ],
       "Email addresses": [
         "Alamat email"
+      ],
+      "Invitation email": [
+        "Email undangan"
       ],
       "Name": [
         "Nama"
@@ -8631,9 +8658,6 @@
       "Plans": [
         "Paket"
       ],
-      "Policies": [
-        "Kebijakan"
-      ],
       "Preview": [
         "Pratinjau"
       ],
@@ -8979,8 +9003,41 @@
       "${ BRAND_NAME } address": [
         "Alamat ${ BRAND_NAME }"
       ],
+      "Add multiple users": [
+        "Tambahkan beberapa pengguna"
+      ],
+      "Add new user": [
+        "Tambahkan pengguna baru"
+      ],
+      "Admin": [
+        "Admin"
+      ],
       "An invitation will be sent to this email address.": [
         "Sebuah undangan akan dikirim ke alamat email ini."
+      ],
+      "Cancel": [
+        "Batalkan"
+      ],
+      "Confirm password": [
+        "Konfirmasi sandi"
+      ],
+      "Create password": [
+        "Buat kata sandi"
+      ],
+      "Create user": [
+        "Buat pengguna"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Name": [
+        "Nama"
+      ],
+      "Optional": [
+        "Opsional"
+      ],
+      "Private": [
+        "Pribadi"
       ],
       "Remember to share the user's sign in details with them.": [
         "Jangan lupa untuk membagikan rincian masuk ini kepada pengguna yang bersangkutan."
@@ -8990,6 +9047,9 @@
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Tindakan ini akan membuat alamat ${ MAIL_APP_NAME } baru."
+      ],
+      "User created": [
+        "Pengguna dibuat"
       ],
       "VPN connections": [
         "Koneksi VPN"
@@ -9002,8 +9062,11 @@
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
       ],
-      "AI": [
-        "AI"
+      "Invite sent": [
+        "Undangan dikirim"
+      ],
+      "It's you": [
+        "Ini Anda"
       ],
       "Private": [
         "Privat"
@@ -9013,6 +9076,9 @@
       ],
       "SSO user provided by your identity provider": [
         "Pengguna SSO disediakan oleh penyedia identitas Anda"
+      ],
+      "Writing assistant": [
+        "Asisten penulisan"
       ]
     },
     "Validation": {
