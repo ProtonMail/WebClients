@@ -791,6 +791,9 @@
       "Something went wrong": [
         "Κάτι πήγε στραβά"
       ],
+      "Something went wrong. Please sign in again.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε συνδεθείτε ξανά."
+      ],
       "The file you are trying to import is empty": [
         "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
       ],
@@ -802,9 +805,6 @@
       ],
       "Trashing item failed": [
         "Αποτυχία μετακίνησης στοιχείου στα Διαγραμμένα"
-      ],
-      "Unable to boot": [
-        "Δεν είναι δυνατή η εκκίνηση"
       ],
       "Unable to generate an OTP code for this item": [
         "Δεν είναι δυνατή η δημιουργία κωδικού OTP για αυτό το στοιχείο"
@@ -841,6 +841,9 @@
       ],
       "Vault name does not match": [
         "Το όνομα της κρύπτης δεν ταιριάζει"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Αντιμετωπίσαμε πρόβλημα κατά την εκκίνηση του ${ PASS_SHORT_APP_NAME }. Εάν αυτό το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη πελατών μας για βοήθεια."
       ],
       "Wrong password": [
         "Λανθασμένος κωδικός πρόσβασης"
@@ -1418,6 +1421,9 @@
       ],
       "Please consider leaving a review.": [
         "Παρακαλούμε εξετάστε το ενδεχόμενο να αφήσετε μια κριτική."
+      ],
+      "Please do not close this window": [
+        "Παρακαλούμε μην κλείσετε αυτό το παράθυρο"
       ],
       "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
