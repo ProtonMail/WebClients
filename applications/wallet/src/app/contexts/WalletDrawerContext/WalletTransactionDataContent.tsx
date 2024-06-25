@@ -25,9 +25,10 @@ import {
 interface Props {
     transaction: TransactionData;
     onClickEditNote: () => void;
+    onClickEditSender: () => void;
 }
 
-export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Props) => {
+export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onClickEditSender }: Props) => {
     const [showMore, setShowMore] = useState(false);
     const { network } = useBitcoinBlockchainContext();
     const exchangeRate = transaction.apiData?.ExchangeRate ?? undefined;
@@ -71,7 +72,12 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote }: Pr
                 <RecipientsDataListItem tx={transaction} />
 
                 <hr className="my-4" />
-                <SendersDataListItem tx={transaction} />
+                <SendersDataListItem
+                    tx={transaction}
+                    onClickEditSender={() => {
+                        onClickEditSender();
+                    }}
+                />
 
                 {transaction.apiData?.Body && (
                     <>

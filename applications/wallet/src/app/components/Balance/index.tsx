@@ -88,10 +88,17 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                         <Icon name={showBalance ? 'eye-slash' : 'eye'} size={6} onClick={() => toggleShowBalance()} />
                     </CoreButton>
                 </div>
-                <div className={clsx('text-lg color-hint', syncingData?.syncing && !totalBalance && 'skeleton-loader')}>
-                    {convertAmount(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                    {getLabelByUnit(settings.BitcoinUnit)}
-                </div>
+                {!loadingExchangeRate && exchangeRate && (
+                    <div
+                        className={clsx(
+                            'text-lg color-hint',
+                            syncingData?.syncing && !totalBalance && 'skeleton-loader'
+                        )}
+                    >
+                        {convertAmount(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                        {getLabelByUnit(settings.BitcoinUnit)}
+                    </div>
+                )}
             </div>
 
             {!isNarrow && (

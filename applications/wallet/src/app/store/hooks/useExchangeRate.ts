@@ -9,10 +9,10 @@ import { createHooks } from '@proton/redux-utilities';
 import { exchangeRateThunk, selectExchangeRate } from '../slices';
 import { getKeyAndTs } from '../slices/exchangeRate';
 
-const hooks = createHooks(exchangeRateThunk, selectExchangeRate);
+export const exchangeRateHooks = createHooks(exchangeRateThunk, selectExchangeRate);
 
 export const useGetExchangeRate = () => {
-    const get = hooks.useGet();
+    const get = exchangeRateHooks.useGet();
     return useCallback(
         async (fiat: WasmFiatCurrencySymbol, date?: Date) => {
             const results = await get({ thunkArg: [fiat, date] });
@@ -26,14 +26,14 @@ export const useGetExchangeRate = () => {
 
 export const useExchangeRate = (fiat: WasmFiatCurrencySymbol) => {
     const getExchangeRate = useGetExchangeRate();
+    const [, loading] = exchangeRateHooks.useValue();
 
     const exchangeRateSimpleSelector = createSelector(
         selectExchangeRate,
         (result): [WasmApiExchangeRate | undefined, boolean] => {
-            const { error, value } = result;
+            const { value } = result;
 
             const rate = value?.[fiat];
-            const loading = rate === undefined && error === undefined;
 
             return [rate, loading];
         }

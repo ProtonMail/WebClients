@@ -85,7 +85,11 @@ export const getTransactionSenderHumanReadableName = (transaction: TransactionDa
 
     // If there is a sender attached to the transaction, we display it
     if (transaction.apiData?.Sender) {
-        return transaction.apiData?.Sender;
+        if (typeof transaction.apiData?.Sender === 'string') {
+            return transaction.apiData?.Sender;
+        } else {
+            return `${transaction.apiData?.Sender.name} - ${transaction.apiData?.Sender.email}`;
+        }
     }
 
     // Fallback

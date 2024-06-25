@@ -12,6 +12,7 @@ export interface WalletTransactionDrawerData {
     kind: 'transaction-data';
     transaction: TransactionData;
     onClickEditNote: () => void;
+    onClickEditSender: () => void;
 }
 
 export interface WalletDiscoverDrawerData {

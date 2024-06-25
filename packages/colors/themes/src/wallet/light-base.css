@@ -25,7 +25,7 @@
     --background-invert: #191927;
 
     --interaction-norm: #767dff;
-    --interaction-norm-contrast: #191927;
+    --interaction-norm-contrast: var(--text-invert);
 
     --interaction-weak: #e2e2e2;
     --interaction-weak-contrast: #191927;
@@ -44,6 +44,10 @@
     --shadow-lifted-opacity: 0.4;
 
     --backdrop-norm: rgb(0 0 0 / 0.5);
+
+    --field-background-color: var(--background-weak);
+    --field-hover-background-color: var(--background-weak);
+    --field-disabled: var(--text-disabled);
 
     --font-weight-weak: 400;
     --font-weight-normal: 500;
