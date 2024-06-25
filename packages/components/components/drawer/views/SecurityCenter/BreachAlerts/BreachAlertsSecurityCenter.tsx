@@ -248,7 +248,7 @@ const BreachAlertsSecurityCenter = () => {
                                         className="color-success shrink-0 mt-0.5"
                                         alt=""
                                     />
-                                    <p className="m-0 color-hint text-left flex-1">{c('Title')
+                                    <p className="m-0 color-weak text-left flex-1 text-sm">{c('Title')
                                         .t`No breaches detected`}</p>
                                 </div>
                             ) : (
