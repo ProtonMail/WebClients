@@ -184,6 +184,7 @@ function ApplicationContainer() {
             />
           </Route>
         </Switch>
+        {driveCompat.modals}
       </DocsLayout>
     </ApplicationProvider>
   )

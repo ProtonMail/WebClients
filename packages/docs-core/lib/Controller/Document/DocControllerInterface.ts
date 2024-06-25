@@ -31,7 +31,7 @@ export interface DocControllerInterface {
   getVersionHistory(): NativeVersionHistory | undefined
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   initialize(): Promise<Result<DocLoadSuccessResult>>
-  openDocumentSharingModal(): Promise<void>
+  openDocumentSharingModal(): void
   renameDocument(newName: string): Promise<TranslatedResult<void>>
   showCommentsPanel(): void
   squashDocument(): Promise<void>
