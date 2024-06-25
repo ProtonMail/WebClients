@@ -16,6 +16,7 @@ import { useActions } from '../../store/_actions';
 import { useDebouncedRequest } from '../../store/_api';
 import { useLink } from '../../store/_links';
 import { encryptExtendedAttributes } from '../../store/_links/extendedAttributes';
+import useLinksState from '../../store/_links/useLinksState';
 import { useShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -25,7 +26,8 @@ import { DocumentKeys, DocumentManifest, DocumentNodeMeta, SignedData } from './
 export const useDocuments = () => {
     const debouncedRequest = useDebouncedRequest();
     const abortSignal = useAbortSignal([]);
-    const { getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
+    const { getLink, getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
+    const { removeLinkForDriveCompat } = useLinksState();
     const { getShareCreatorKeys } = useShare();
     const { renameLink } = useActions();
     const { getLocalID } = useAuthentication();
@@ -147,6 +149,12 @@ export const useDocuments = () => {
 
     const renameDocument = async ({ shareId, linkId }: LegacyNodeMeta, newName: string): Promise<void> => {
         await renameLink(abortSignal, shareId, linkId, newName);
+
+        // Remove the link from cache, as we don't currently handle events.
+        removeLinkForDriveCompat(shareId, linkId);
+
+        // Refetch it in the background to avoid waiting next time it is used.
+        void getLink(abortSignal, shareId, linkId);
     };
 
     const getDocumentUrl = ({ volumeId, linkId }: NodeMeta): URL => {
