@@ -1,6 +1,7 @@
 import { BrowserWindow, screen } from "electron";
 import Store from "electron-store";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
+import { mainLogger } from "../utils/log";
 
 interface WindowBounds {
     width: number;
@@ -43,5 +44,6 @@ export const saveWindowBounds = (window: BrowserWindow) => {
         ...window.getBounds(),
     } satisfies WindowBounds;
 
+    mainLogger.info("update window bounds", JSON.stringify(newBounds));
     store.set("windowBounds", newBounds);
 };
