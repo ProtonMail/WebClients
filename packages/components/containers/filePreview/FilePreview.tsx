@@ -118,6 +118,14 @@ export const FilePreviewContent = ({
             );
         }
 
+        if (mimeType && isProtonDocument(mimeType)) {
+            return (
+                <div className="file-preview-container">
+                    <UnsupportedPreview isDocument isPublic={isPublic} />
+                </div>
+            );
+        }
+
         if (
             !mimeType ||
             (!contents && !imgThumbnailUrl && !isSupportedText(mimeType)) ||
@@ -126,14 +134,6 @@ export const FilePreviewContent = ({
             return (
                 <div className="file-preview-container">
                     <UnsupportedPreview onDownload={onDownload} tooLarge={isPreviewTooLarge(mimeType, fileSize)} />
-                </div>
-            );
-        }
-
-        if (isProtonDocument(mimeType)) {
-            return (
-                <div className="file-preview-container">
-                    <UnsupportedPreview isDocument isPublic={isPublic} />
                 </div>
             );
         }
