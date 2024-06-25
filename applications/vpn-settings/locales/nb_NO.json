@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Åpne i ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Send mitt brukernavn"
       ],
+      "Send new invite": [
+        "Send ny invitasjon"
+      ],
       "Send reminder": [
         "Send påminnelse"
       ],
@@ -598,6 +604,9 @@
       ],
       "Verify code again": [
         "Verifiser kode igjen"
+      ],
+      "Verify domain": [
+        "Verifiser domene"
       ],
       "View": [
         "Vis"
@@ -2106,7 +2115,7 @@
       "Code wrong or not valid anymore": [
         "Koden er feil eller ikke gyldig lenger"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Kunne ikke laste inn fakturaer. Vennligst prøv igjen senere."
       ],
       "Domain not available, try again later": [
@@ -2114,6 +2123,9 @@
       ],
       "Email address is invalid": [
         "E-postadressen er ugyldig"
+      ],
+      "Email address is not available": [
+        "E-postadresse er ikke tilgjengelig"
       ],
       "Email is not valid": [
         "E-post er ikke gyldig"
@@ -2189,6 +2201,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Organisasjonsnøkkelen må aktiveres for å opprette inviterte brukere"
       ],
       "Organization key must be activated to create non-private users": [
         "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
@@ -3758,11 +3773,17 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning av denne filtypen er ikke støttet"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Forhåndsvisning av dokumenter støttes ikke enda. Åpne dokumentet for å se det."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gjeldende syklus-baserte rabatter og ikke-utløpte kuponger lagret på kontoen din."
       ],
       "Protected by Swiss privacy laws": [
         "Beskyttet av sveitsiske personvernlover"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Offentlig deling av dokumenter støttes ikke enda. Be eieren om å invitere deg direkte til dokumentet."
       ],
       "read our two-factor authentication guide first": [
         "les vår tofaktorautentiseringsguide først"
@@ -3966,6 +3987,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne brukeren er for øyeblikket ansvarlig for betalinger i organisasjonen din. Ved å degradere dette medlemmet, vil du bli ansvarlig for betalinger i organisasjonen din."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Denne verifiseringen kan ta opptil én time. Når bekreftelsen er fullført, må du ikke fjerne TXT-posten, siden det er nødvendig for å bekrefte at du fortsatt eier domenet."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil avbryte ditt gjeldende betalte abonnement og du vil miste eventuelle lojalitetsfordeler du har akkumulert."
       ],
@@ -3995,6 +4019,9 @@
       ],
       "to ${ product } Business": [
         "til ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Hvis du vil tillate at domenet **${ domainName }** bruker SAML SSO, må du bekrefte eierskapet av det ved å legge til følgende DNS TXT-post i domenet i DNS-leverandøren."
       ],
       "To cancel your subscription, please reach out to us.": [
         "For å avbryte abonnementet ditt, vennligst ta kontakt med oss."
@@ -4237,6 +4264,14 @@
         "Du bruker for øyeblikket ${ ipCount } tilgjengelig dedikert tjener ut av ${ ipAddresses }.",
         "Du bruker for øyeblikket ${ ipCount } tilgjengelige dedikerte tjenere ut av ${ ipAddresses }."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Du bruker for øyeblikket ${ usedMembers } av ${ maxMembers } tilgjengelige brukerlisens og ${ usedAI } av ${ maxAI } tilgjengelige skriveassistentlisens.",
+        "Du bruker for øyeblikket ${ usedMembers } av dine ${ maxMembers } tilgjengelige brukerlisenser og ${ usedAI } av dine ${ maxAI } tilgjengelige skriveassistentlisenser."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Du bruker for øyeblikket ${ usedMembers } av ${ maxMembers } tilgjengelige brukerlisens og ingen av ${ maxAI } tilgjengelige skriveassistentlisens.",
+        "Du bruker for øyeblikket ${ usedMembers } av dine ${ maxMembers } tilgjengelige brukerlisens og ingen av din ${ maxAI } tilgjengelige skriveassistentlisenser."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du bruker for øyeblikket ${ usedMembers } av ${ maxMembers } tilgjengelig brukerlisens.",
         "Du bruker for øyeblikket ${ usedMembers } ut av ${ maxMembers } tilgjengelige brukerlisenser."
@@ -4303,6 +4338,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, vennligst klikk knappen nedenfor."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Du vil kunne forfremme brukeren til administrator eller gjøre dem private når de har godtatt invitasjonen."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil bli videresendt til ${ destination } etter pålogging."
@@ -5215,11 +5253,17 @@
       "Delete": [
         "Slett"
       ],
+      "Delete and revoke invite": [
+        "Slett og tilbakekall invitasjon"
+      ],
       "Edit": [
         "Rediger"
       ],
       "Remove": [
         "Fjern"
+      ],
+      "Resend invite link": [
+        "Send invitasjonskobling på nytt"
       ],
       "Revoke sessions": [
         "Opphev økter"
@@ -6870,6 +6914,9 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Forutsetning:** SAML-autentisering må konfigureres for å aktivere SCIM-klargjøring."
       ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Forutsetning:** for å aktivere SCIM-klargjøring, må du bekrefte eierskapet til domenet **${ domainName }**. Denne verifiseringen kan ta opptil én time."
+      ],
       "Enter token into your identity provider": [
         "Skriv inn token i identitetsleverandøren din"
       ],
@@ -8234,6 +8281,9 @@
       "Domain deleted": [
         "Domene slettet"
       ],
+      "Invitation resent": [
+        "Invitasjon sendt på nytt"
+      ],
       "Sessions revoked": [
         "Øktene opphevet"
       ],
@@ -8328,6 +8378,9 @@
       ],
       "Email addresses": [
         "E-postadresser"
+      ],
+      "Invitation email": [
+        "E-postinvitasjon"
       ],
       "Name": [
         "Navn"
@@ -8747,9 +8800,6 @@
       "Plans": [
         "Planer"
       ],
-      "Policies": [
-        "Retningslinjer"
-      ],
       "Preview": [
         "Forhåndsvis"
       ],
@@ -8809,6 +8859,9 @@
       ],
       "Send email reminders?": [
         "Sende e-postpåminnelser?"
+      ],
+      "Send new invite?": [
+        "Sende ny invitasjon?"
       ],
       "Set new password": [
         "Angi nytt passord"
@@ -9087,6 +9140,94 @@
       ],
       "Primary admin": [
         "Primær administrator"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-adresse"
+      ],
+      "Add multiple users": [
+        "Legg til flere brukere"
+      ],
+      "Add new user": [
+        "Legg til ny bruker"
+      ],
+      "Admin": [
+        "Administrator"
+      ],
+      "An invitation will be sent to this email address.": [
+        "En invitasjon vil bli sendt til denne e-postadressen."
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Confirm password": [
+        "Bekreft passord"
+      ],
+      "Create password": [
+        "Opprett passord"
+      ],
+      "Create password instead": [
+        "Opprett passord i stedet"
+      ],
+      "Create user": [
+        "Opprett bruker"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Optional": [
+        "Valgfri"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Husk å dele brukerens påloggingsinformasjon med dem."
+      ],
+      "Send invite link via email instead": [
+        "Send invitasjonskobling via e-post i stedet"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Dette oppretter en ny ${ MAIL_APP_NAME }-adresse."
+      ],
+      "User created": [
+        "Bruker opprettet"
+      ],
+      "VPN connections": [
+        "VPN-tilkoblinger"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administratorer har ikke tilgang til dataene til private brukere"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Invitasjon sendt, venter på svar fra det inviterte medlemmet"
+      ],
+      "Invite sent": [
+        "Invitasjon sendt"
+      ],
+      "It's you": [
+        "Det er deg"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "SSO-bruker levert av identitetsleverandøren din"
+      ],
+      "Writing assistant": [
+        "Skriveassistent"
       ]
     },
     "Validation": {

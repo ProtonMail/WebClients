@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Ouvrir dans ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Ouvrir la navigation"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Envoyer mon nom d'utilisateur"
       ],
+      "Send new invite": [
+        "Envoyer une nouvelle invitation"
+      ],
       "Send reminder": [
         "Envoyer un rappel"
       ],
@@ -598,6 +604,9 @@
       ],
       "Verify code again": [
         "Vérifier à nouveau le code"
+      ],
+      "Verify domain": [
+        "Vérifier le domaine"
       ],
       "View": [
         "Afficher"
@@ -2106,14 +2115,17 @@
       "Code wrong or not valid anymore": [
         "Le code n'est pas correct ou n'est plus valide."
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Les factures n'ont pu être chargées. Veuillez réessayer plus tard."
+      "Couldn't load invoices. Please try again later.": [
+        "Les factures n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
       ],
       "Email address is invalid": [
         "L'adresse e-mail n'est pas valide."
+      ],
+      "Email address is not available": [
+        "L'adresse e-mail n'est pas disponible."
       ],
       "Email is not valid": [
         "L'adresse e-mail n'est pas valide."
@@ -2189,6 +2201,9 @@
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
+      ],
+      "Organization key must be activated to create invited users": [
+        "La clé de l'organisation doit être activée pour créer des utilisateurs invités."
       ],
       "Organization key must be activated to create non-private users": [
         "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
@@ -3969,6 +3984,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Cette vérification peut prendre jusqu'à une heure. Après une vérification réussie, ne supprimez pas l'enregistrement TXT car il est nécessaire pour confirmer que vous possédez toujours le domaine."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
       ],
@@ -3998,6 +4016,9 @@
       ],
       "to ${ product } Business": [
         "dans ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Pour autoriser le domaine **${ domainName }** à utiliser l'authentification unique (SSO) SAML, vous devez en vérifier la propriété en ajoutant l'enregistrement TXT suivant du DNS à votre domaine dans votre fournisseur DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Contactez-nous pour annuler votre abonnement."
@@ -4225,7 +4246,7 @@
         "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
       "Writing assistant": [
-        "Assistant à la rédaction"
+        "Assistant d'écriture"
       ],
       "Writing assistant add-on": [
         "Extension Assistant d'écriture"
@@ -4239,6 +4260,14 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Nombre de serveurs dédiés que vous utilisez : ${ ipCount } sur ${ ipAddresses }.",
         "Nombre de serveurs dédiés que vous utilisez : ${ ipCount } sur ${ ipAddresses }."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Vous utilisez actuellement ${ usedMembers }/${ maxMembers } licence utilisateur disponible et ${ usedAI }/${ maxAI } licence d'assistant d'écriture disponible.",
+        "Vous utilisez actuellement ${ usedMembers } de vos ${ maxMembers }licences utilisateur disponibles et ${ usedAI } de vos ${ maxAI }licences d'assistant d'écriture disponibles."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Vous utilisez actuellement ${ usedMembers }/${ maxMembers } licence utilisateur disponible et aucune de vos ${ maxAI }licences d'assistant d'écriture disponibles.",
+        "Vous utilisez actuellement ${ usedMembers } de vos ${ maxMembers }licences utilisateur disponibles et aucune de vos ${ maxAI }licences d'assistant d'écriture disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }",
@@ -4306,6 +4335,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Vous devez avoir une carte de paiement ou un compte bancaire lié à votre compte PayPal. Si ce n'est pas le cas, cliquez sur le lien ci-dessous."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Vous pourrez nommer l'utilisateur en tant qu'administrateur ou le rendre privé une fois qu'il aura accepté l'invitation."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Après la connexion, vous serez redirigé vers ${ destination }."
@@ -5215,11 +5247,17 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete and revoke invite": [
+        "Supprimer et révoquer l'invitation"
+      ],
       "Edit": [
         "Modifier"
       ],
       "Remove": [
         "Retirer"
+      ],
+      "Resend invite link": [
+        "Envoyer à nouveau le lien d'invitation"
       ],
       "Revoke sessions": [
         "Révoquer les sessions"
@@ -5589,7 +5627,7 @@
         "Sécurité des mots de passe"
       ],
       "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser les informations de connexion"
+        "Gestionnaire de mots de passe pour sécuriser les identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -5626,7 +5664,7 @@
         "Prise en charge des routeurs"
       ],
       "Save time emailing": [
-        "Gagner du temps lors de l'envoi de vos messages"
+        "Gagnez du temps lors de l'envoi de vos messages"
       ],
       "Schedule and snooze emails for any time": [
         "Planifier et mettre en attente les messages à tout moment"
@@ -5742,7 +5780,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "User storage management": [
-        "Gestion de l'espace de stockage de l'utilisateur"
+        "Gestion de l'espace de stockage des utilisateurs"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
@@ -6848,6 +6886,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Condition préalable :** l'authentification SAML doit être configurée pour activer l'allocation SCIM."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Condition préalable :** Pour activer l'allocation SCIM, vous devez vérifier la propriété du domaine **${ domainName }**. Cette vérification peut prendre jusqu'à une heure."
       ],
       "Enter token into your identity provider": [
         "Saisissez le jeton dans votre fournisseur d'identité."
@@ -8213,6 +8254,9 @@
       "Domain deleted": [
         "Le domaine a été supprimé."
       ],
+      "Invitation resent": [
+        "L'invitation a été envoyée à nouveau."
+      ],
       "Sessions revoked": [
         "Les sessions ont été révoquées."
       ],
@@ -8307,6 +8351,9 @@
       ],
       "Email addresses": [
         "Adresses e-mail"
+      ],
+      "Invitation email": [
+        "E-mail d’invitation"
       ],
       "Name": [
         "Nom"
@@ -8729,9 +8776,6 @@
       "Plans": [
         "Abonnements"
       ],
-      "Policies": [
-        "Politiques"
-      ],
       "Preview": [
         "Aperçu"
       ],
@@ -8791,6 +8835,9 @@
       ],
       "Send email reminders?": [
         "Envoyer un rappel par e-mail ?"
+      ],
+      "Send new invite?": [
+        "Envoyer une nouvelle invitation ?"
       ],
       "Set new password": [
         "Définir un nouveau mot de passe"
@@ -9069,6 +9116,94 @@
       ],
       "Primary admin": [
         "Administrateur principal"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "Adresse ${ BRAND_NAME }"
+      ],
+      "Add multiple users": [
+        "Ajouter plusieurs utilisateurs"
+      ],
+      "Add new user": [
+        "Ajouter un utilisateur"
+      ],
+      "Admin": [
+        "Administrateur"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Une invitation sera envoyée à cette adresse e-mail."
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Confirm password": [
+        "Confirmer le mot de passe"
+      ],
+      "Create password": [
+        "Créer un mot de passe"
+      ],
+      "Create password instead": [
+        "Créer un mot de passe à la place"
+      ],
+      "Create user": [
+        "Créer un utilisateur"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Optional": [
+        "Facultatif"
+      ],
+      "Private": [
+        "Privé"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Pensez à partager les informations de connexion avec l'utilisateur concerné."
+      ],
+      "Send invite link via email instead": [
+        "Envoyer le lien d'invitation par e-mail à la place"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Une nouvelle adresse ${ MAIL_APP_NAME } sera créée."
+      ],
+      "User created": [
+        "L'utilisateur a été créé."
+      ],
+      "VPN connections": [
+        "Connexions VPN"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés."
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "L'invitation a été envoyée. La réponse du membre invité est attendue."
+      ],
+      "Invite sent": [
+        "L'invitation a été envoyée."
+      ],
+      "It's you": [
+        "C'est vous"
+      ],
+      "Private": [
+        "Privé"
+      ],
+      "SSO": [
+        "Authentification unique (SSO)"
+      ],
+      "SSO user provided by your identity provider": [
+        "Authentification unique (SSO) de l'utilisateur fournie par votre fournisseur d'identité"
+      ],
+      "Writing assistant": [
+        "Assistant d'écriture"
       ]
     },
     "Validation": {
