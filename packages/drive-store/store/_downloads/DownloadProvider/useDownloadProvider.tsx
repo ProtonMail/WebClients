@@ -22,6 +22,7 @@ import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
 import { InitDownloadCallback, LinkDownload } from '../interface';
 import { UpdateFilter } from './interface';
+import useDownloadContainsDocument from './useDownloadContainsDocument';
 import useDownloadControl from './useDownloadControl';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadScanIssue from './useDownloadScanIssue';
@@ -43,6 +44,7 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         control.cancelDownloads
     );
     const { handleScanIssue } = useDownloadScanIssue(queue.updateWithData, control.cancelDownloads);
+    const { handleContainsDocument, containsDocumentModal } = useDownloadContainsDocument(control.cancelDownloads);
 
     /**
      * download should be considered as main entry point for download files
@@ -50,7 +52,7 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
      * same files are not currently already downloading, and it adds transfer
      * to the queue.
      */
-    const download = async (links: LinkDownload[], options?: { virusScan?: boolean }) => {
+    const download = async (links: LinkDownload[], options?: { virusScan?: boolean }): Promise<void> => {
         await queue.add(links, options).catch((err: any) => {
             if ((err as Error).name === 'DownloadUserError') {
                 createNotification({
@@ -87,7 +89,9 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         if (nextDownload.links.every(({ buffer }) => !!buffer)) {
             const buffer = nextDownload.links.flatMap(({ buffer }) => buffer);
             const stream = bufferToStream(buffer as Uint8Array[]);
-            void preventLeave(FileSaver.saveAsFile(stream, nextDownload.meta)).catch(logError);
+            void preventLeave(
+                FileSaver.saveAsFile(stream, nextDownload.meta, (message) => log(nextDownload.id, message))
+            ).catch(logError);
 
             queue.updateState(nextDownload.id, TransferState.Done);
             return;
@@ -141,6 +145,9 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
                 ) => {
                     log(nextDownload.id, `signature issue: ${JSON.stringify(signatureIssues)}`);
                     await handleSignatureIssue(abortSignal, nextDownload, link, signatureIssues);
+                },
+                onContainsDocument: async (abortSignal: AbortSignal) => {
+                    await handleContainsDocument(abortSignal, nextDownload);
                 },
             },
             (message: string) => log(nextDownload.id, message),
@@ -199,7 +206,12 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
         },
         updateWithData: queue.updateWithData,
         downloadDownloadLogs: downloadLogs,
-        downloadIsTooBigModal,
-        signatureIssueModal,
+        modals: (
+            <>
+                {downloadIsTooBigModal}
+                {signatureIssueModal}
+                {containsDocumentModal}
+            </>
+        ),
     };
 }

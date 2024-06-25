@@ -3,7 +3,11 @@ import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
-import { ShareExternalInvitationPayload, ShareInvitationPayload } from '@proton/shared/lib/interfaces/drive/invitation';
+import {
+    ShareExternalInvitationPayload,
+    ShareInvitationDetailsPayload,
+    ShareInvitationPayload,
+} from '@proton/shared/lib/interfaces/drive/invitation';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMemberPayload, ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
@@ -20,6 +24,7 @@ import type {
     Share,
     ShareExternalInvitation,
     ShareInvitation,
+    ShareInvitationDetails,
     ShareMembership,
     ShareURL,
     ShareWithKey,
@@ -315,5 +320,26 @@ export const shareExternalInvitationPayloadToShareExternalInvitation = (
         createTime: shareExternalInvitation.CreateTime,
         state: shareExternalInvitation.State,
         externalInvitationSignature: shareExternalInvitation.ExternalInvitationSignature,
+    };
+};
+
+export const shareInvitationDetailsPayloadToShareInvitationDetails = (
+    shareInvitationDetails: ShareInvitationDetailsPayload
+): ShareInvitationDetails => {
+    return {
+        invitation: shareInvitationPayloadToShareInvitation(shareInvitationDetails.Invitation),
+        share: {
+            shareId: shareInvitationDetails.Share.ShareID,
+            volumeId: shareInvitationDetails.Share.VolumeID,
+            passphrase: shareInvitationDetails.Share.Passphrase,
+            shareKey: shareInvitationDetails.Share.ShareKey,
+            creatorEmail: shareInvitationDetails.Share.CreatorEmail,
+        },
+        link: {
+            linkId: shareInvitationDetails.Link.LinkID,
+            name: shareInvitationDetails.Link.Name,
+            mimeType: shareInvitationDetails.Link.MIMEType,
+            isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
+        },
     };
 };
