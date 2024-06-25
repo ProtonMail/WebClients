@@ -5630,6 +5630,14 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Fiók törlése"
@@ -5651,14 +5659,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -7264,17 +7264,6 @@
         "Neki: ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 GB tárhely"
-      ],
-      "Desktop app": [
-        "Asztali alkalmazás"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } nap van hátra",
@@ -7320,6 +7309,17 @@
       ],
       "Version history": [
         "Verziótörténet"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "Desktop app": [
+        "Asztali alkalmazás"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
       ]
     },
     "Subscription renewal state": {

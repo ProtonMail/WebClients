@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -388,9 +388,6 @@
       "Download CSV sample": [
         "Завантажити зразок CSV"
       ],
-      "Download Desktop App": [
-        "Завантажити програму для комп'ютера"
-      ],
       "Download ICS": [
         "Завантажити ICS"
       ],
@@ -693,6 +690,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Відкрити в ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Відкрити панель навігації"
@@ -1370,11 +1370,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Програми ${ BRAND_NAME }"
-      ]
-    },
-    "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice }/місяць"
       ]
     },
     "Attached ics file error": {
@@ -3949,9 +3944,6 @@
       "Contact signature not verified": [
         "Підпис для контакту не перевірено"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Не вдалося завантажити рахунки. Повторіть спробу пізніше."
-      ],
       "Could not open created vault": [
         "Не вдалося відкрити створене сховище"
       ],
@@ -6076,6 +6068,17 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -7535,6 +7538,9 @@
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Попередній перегляд документів поки що не підтримується. Будь ласка, відкрийте документ для його перегляду."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
@@ -7552,6 +7558,9 @@
       ],
       "Public link invite": [
         "Запрошення загальнодоступним посиланням"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Загальний доступ до документів ще не підтримується. Попросіть власника запросити вас безпосередньо до документа."
       ],
       "purchase additional storage": [
         "придбати додатковий простір"
@@ -7675,6 +7684,9 @@
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
+      ],
+      "Set your password": [
+        "Встановіть свій пароль"
       ],
       "Setting up your organization": [
         "Налаштування вашої організації"
@@ -8572,17 +8584,6 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9817,6 +9818,9 @@
       "Spam": [
         "Спам"
       ],
+      "Spam and filters": [
+        "Спам і фільтри"
+      ],
       "Starred": [
         "Із зірочкою"
       ],
@@ -10236,9 +10240,6 @@
       "Upgrade your plan": [
         "Покращити тарифний план"
       ],
-      "Users and addresses": [
-        "Користувачі та адреси"
-      ],
       "View guide": [
         "Переглянути посібник"
       ],
@@ -10359,6 +10360,25 @@
       ],
       "Limited time offer": [
         "Обмежена пропозиція"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "Усі програми та преміальні функції ${ BRAND_NAME } для захисту вашого бізнесу"
+      ],
+      "Encrypted email and calendar to get you started": [
+        "Зашифрована пошта й календар для початку роботи"
+      ],
+      "Enhanced security and premium features for teams": [
+        "Покращена безпека та преміальні функції для команд"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Ви запрошені спробувати ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "Особистий"
       ]
     },
     "mailtrial2024: Action": {
@@ -13646,6 +13666,9 @@
       "Actions": [
         "Дії"
       ],
+      "Drag to reorder": [
+        "Перетягніть, щоб повторно замовити"
+      ],
       "Labels": [
         "Мітки"
       ]
@@ -15266,6 +15289,9 @@
       "Edit invoice details": [
         "Змінити подробиці рахунку"
       ],
+      "Edit profile": [
+        "Редагувати профіль"
+      ],
       "Edit servers": [
         "Редагувати сервери"
       ],
@@ -15878,6 +15904,9 @@
       "WireGuard configuration": [
         "Конфігурація WireGuard"
       ],
+      "Writing assistant": [
+        "Помічник з написання"
+      ],
       "You have no open alerts": [
         "У вас немає відкритих попереджень"
       ],
@@ -16309,6 +16338,37 @@
       ],
       "Primary admin": [
         "Головний адміністратор"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } адреса"
+      ],
+      "Add multiple users": [
+        "Додати кількох користувачів"
+      ],
+      "Confirm password": [
+        "Підтвердити пароль"
+      ],
+      "Create password": [
+        "Створити пароль"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Повідомте користувачам їхні дані для входу."
+      ],
+      "VPN connections": [
+        "VPN-з'єднання"
+      ],
+      "Writing assistant": [
+        "Помічник з написання"
+      ]
+    },
+    "Users table: badge": {
+      "SSO user provided by your identity provider": [
+        "Користувач SSO, наданий вашим провайдером ідентифікації"
+      ],
+      "Writing assistant": [
+        "Помічник з написання"
       ]
     },
     "Validation": {

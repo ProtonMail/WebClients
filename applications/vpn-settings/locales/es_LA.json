@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Abrir en ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Abrir navegación"
       ],
@@ -2112,7 +2115,7 @@
       "Code wrong or not valid anymore": [
         "Código incorrecto o inválido"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "No se pudieron cargar las facturas. Intente más tarde."
       ],
       "Domain not available, try again later": [
@@ -3984,9 +3987,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no borre el registro TXT ya que se necesita para confirmar que continúa siendo el propietario del dominio."
       ],
-      "This will cancel the previous invite and send a new one to **${ email }**.": [
-        "Esto cancelará la invitación anterior y enviará una nueva a **${ email }**."
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esto cancelará la suscripción de pago y perderás todas las ventajas de fidelidad acumuladas."
       ],
@@ -4260,6 +4260,14 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Actualmente está usando ${ ipCount } de ${ ipAddresses } servidor dedicado disponible.",
         "Actualmente está usando ${ ipCount } de ${ ipAddresses } servidores dedicados disponibles."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Actualmente está usando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible y ${ usedAI } de ${ maxAI } licencia de asistente de escritura disponible.",
+        "Actualmente está usando ${ usedMembers } de ${ maxMembers } licencias de usuario disponibles y ${ usedAI } de ${ maxAI } licencias de asistente de escritura disponibles."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Actualmente está usando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible y ninguna de ${ maxAI } licencia de asistente de escritura disponible.",
+        "Actualmente está usando ${ usedMembers } de ${ maxMembers } licencias de usuario disponibles y ninguna de ${ maxAI } licencias de asistente de escritura disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Actualmente está usando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible.",
@@ -5772,7 +5780,7 @@
         "Gestión de sesiones de usuario"
       ],
       "User storage management": [
-        "Gestión de almacenamiento de usuario"
+        "Gestión del almacenamiento de los usuarios"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
@@ -8768,9 +8776,6 @@
       "Plans": [
         "Planes"
       ],
-      "Policies": [
-        "Políticas"
-      ],
       "Preview": [
         "Vista previa"
       ],
@@ -9179,9 +9184,6 @@
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados"
       ],
-      "AI": [
-        "IA"
-      ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitación enviada, esperando la respuesta del miembro invitado"
       ],
@@ -9199,6 +9201,9 @@
       ],
       "SSO user provided by your identity provider": [
         "Usuario SSO proporcionado por el proveedor de identidad"
+      ],
+      "Writing assistant": [
+        "Asistente de escritura"
       ]
     },
     "Validation": {

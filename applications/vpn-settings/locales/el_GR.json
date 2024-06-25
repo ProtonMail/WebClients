@@ -329,6 +329,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Άνοιγμα σε ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Αποστολή του ονόματος χρήστη μου"
       ],
+      "Send new invite": [
+        "Αποστολή νέας πρόσκλησης"
+      ],
       "Send reminder": [
         "Αποστολή υπενθύμισης"
       ],
@@ -598,6 +604,9 @@
       ],
       "Verify code again": [
         "Επαλήθευση κωδικού ξανά"
+      ],
+      "Verify domain": [
+        "Επαλήθευση τομέα"
       ],
       "View": [
         "Προβολή"
@@ -2106,7 +2115,7 @@
       "Code wrong or not valid anymore": [
         "Κωδικός λανθασμένος ή μη έγκυρος πλέον"
       ],
-      "Coudn't load invoices. Please try again later.": [
+      "Couldn't load invoices. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
       "Domain not available, try again later": [
@@ -2114,6 +2123,9 @@
       ],
       "Email address is invalid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
+      "Email address is not available": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν είναι διαθέσιμη"
       ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
@@ -2189,6 +2201,9 @@
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία προσκεκλημένων χρηστών"
       ],
       "Organization key must be activated to create non-private users": [
         "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
@@ -3755,11 +3770,17 @@
       "Preview for this file type is not supported": [
         "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Η προεπισκόπηση εγγράφων δεν υποστηρίζεται ακόμη. Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη. Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
       ],
       "read our two-factor authentication guide first": [
         "διαβάστε πρώτα τον οδηγό μας ταυτοποίησης δύο παραγόντων"
@@ -3963,6 +3984,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μετά την επιτυχή επαλήθευση, μην καταργήσετε την εγγραφή TXT, καθώς είναι απαραίτητη για να επιβεβαιώσετε ότι εξακολουθείτε να είστε κάτοχος του τομέα."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Αυτό θα ακυρώσει την τρέχουσα συνδρομή επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συγκεντρώσει."
       ],
@@ -3992,6 +4016,9 @@
       ],
       "to ${ product } Business": [
         "στο ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Για να επιτρέψετε στον τομέα **${ domainName }** να χρησιμοποιεί SAML SSO, πρέπει να επαληθεύσετε την κατοχή του προσθέτοντας την ακόλουθη εγγραφή DNS TXT στον τομέα σας στην υπηρεσία παροχής DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Για να ακυρώσετε τη συνδρομή σας, επικοινωνήστε μαζί μας."
@@ -4234,6 +4261,14 @@
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμου αποκλειστικού διακομιστή.",
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμων αποκλειστικών διακομιστών."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } της διαθέσιμης άδειας βοηθού γραφής.",
+        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και ${ usedAI } από ${ maxAI } των διαθέσιμων άδειων βοηθού γραφής."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και καμία από τη ${ maxAI } διαθέσιμη άδεια βοηθού γραφής σας.",
+        "Αυτήν τη στιγμή χρησιμοποιείτε ${ usedMembers } από ${ maxMembers } της διαθέσιμης άδειας χρήσης και καμία από τις ${ maxAI } διαθέσιμες άδειες βοηθού γραφής σας."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τη ${ maxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
         "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τις ${ maxMembers } διαθέσιμες άδειες χρήσης χρηστών."
@@ -4300,6 +4335,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
+      ],
+      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
+        "Θα μπορείτε να προβιβάσετε τον χρήστη σε διαχειριστή ή να τον κάνετε ιδιωτικό μόλις αποδεχτεί την πρόσκληση."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
@@ -5028,6 +5066,9 @@
       "Create account": [
         "Δημιουργία λογαριασμού"
       ],
+      "Don't have access to your 2FA?": [
+        "Δεν έχετε πρόσβαση στο 2FA σας;"
+      ],
       "Forgot password?": [
         "Ξέχασα τον κωδικό πρόσβασης?"
       ],
@@ -5206,11 +5247,17 @@
       "Delete": [
         "Διαγραφή"
       ],
+      "Delete and revoke invite": [
+        "Διαγραφή και ανάκληση πρόσκλησης"
+      ],
       "Edit": [
         "Επεξεργασία"
       ],
       "Remove": [
         "Αφαίρεση"
+      ],
+      "Resend invite link": [
+        "Επανάληψη αποστολής συνδέσμου πρόσκλησης"
       ],
       "Revoke sessions": [
         "Ανάκληση Συνεδριών Σύνδεσης"
@@ -6560,6 +6607,9 @@
       "Card number": [
         "Αριθμός κάρτας"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Προς το παρόν, η αυτόματη ανανέωση της συνδρομής είναι απενεργοποιημένη. Εάν αλλάξετε τη συνδρομή τώρα, τότε η αυτόματη ανανέωση θα ενεργοποιηθεί ξανά."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -6836,6 +6886,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Προαπαιτούμενα:** Ο έλεγχος ταυτότητας SAML πρέπει να ρυθμιστεί ώστε να ενεργοποιεί την παροχή SCIM."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Προαπαιτούμενο:** για να ενεργοποιήσετε την παροχή SCIM, πρέπει να επαληθεύσετε την ιδιοκτησία του τομέα **${ domainName }**. Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα."
       ],
       "Enter token into your identity provider": [
         "Εισαγάγετε το διακριτικό στον πάροχο ταυτότητάς σας"
@@ -7672,6 +7725,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } συμπεριλαμβανομένης της κοινής χρήσης ημερολογίου"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } με κοινή χρήση ημερολογίου και διαθεσιμότητα"
+      ],
       "${ dayDiff } day left": [
         "${ dayDiff } ημέρα απομένει",
         "${ dayDiff } ημέρες απομένουν"
@@ -7679,11 +7735,20 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } συμπεριλαμβανομένου του ιστορικού εκδόσεων"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } με ιστορικό εκδόσεων"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } και όλα τα χαρακτηριστικά παραγωγικότητας υψηλής ποιότητας"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "Το ${ MAIL_APP_NAME } διατηρεί τα δεδομένα της επιχείρησής σας ασφαλή και σας επιτρέπει να στέλνετε κρυπτογραφημένα μηνύματα ηλεκτρονικού ταχυδρομείου σε οποιονδήποτε."
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } με αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } ημερολόγιο ανά χρήστη",
@@ -7700,6 +7765,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } συμπεριλαμβανομένων απεριόριστων hide-my-email ψευδώνυμων"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } με ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } αποθηκευτικός χώρος ανά χρήστη"
       ],
@@ -7711,6 +7779,12 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Το ${ planName } σάς παρέχει όλες τις εφαρμογές, όλες τις δυνατότητες, την πρώιμη πρόσβαση σε νέες κυκλοφορίες και όλα όσα χρειάζεστε για να έχετε τον έλεγχο των δεδομένων σας και της ασφάλειάς τους."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "Το ${ planName } δίνει στην ομάδα σας αυτό που χρειάζεται για να είναι πιο παραγωγική και οργανωμένη στην εργασία της με πρόσβαση σε όλες τις εφαρμογές ${ BRAND_NAME } και τις premium δυνατότητές τους."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "Το ${ planName } δίνει στην ομάδα σας αυτό που χρειάζεται για να είναι πιο παραγωγική, οργανωμένη και να έχει τον έλεγχο των εισερχομένων, του χρονοδιαγράμματος και άλλων."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "Το ${ planName } υπερβαίνει τα βασικά για να σας βοηθήσει να είστε πιο παραγωγικοί, οργανωμένοι και να ελέγχετε τα εισερχόμενά σας, την ταυτότητα ηλεκτρονικού ταχυδρομείου και πολλά άλλα."
@@ -7724,11 +7798,20 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } για τα αρχεία και τις φωτογραφίες σας. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, εκδηλώσεις και αρχεία. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "Το ${ planName } προσφέρει χώρο αποθήκευσης ${ planMaxSpace } ανά χρήστη για μηνύματα ηλεκτρονικού ταχυδρομείου, συνημμένα, συμβάντα, αρχεία και κωδικούς πρόσβασης. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } πρόγραμμα"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } με πρόσβαση σε όλους τους διακομιστές υψηλής ταχύτητας σε ${ vpnCountries } χώρες"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } με κακόβουλο λογισμικό και αποκλεισμό διαφημίσεων"
       ],
       "10 email addresses": [
         "10 διευθύνσεις ηλεκτρονικού ταχυδρομείου"
@@ -7754,11 +7837,17 @@
       "All you need for your business": [
         "Όλα όσα χρειάζεστε για την επιχείρησή σας"
       ],
+      "Any custom email domains will be disabled": [
+        "Τυχόν προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου θα απενεργοποιηθούν"
+      ],
       "Automatic email forwarding": [
         "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "Back up photos from your devices": [
         "Δημιουργία αντιγράφων ασφαλείας φωτογραφιών από τις συσκευές σας"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Δημιουργήστε εμπιστοσύνη και αναγνώριση επωνυμίας με επαγγελματικές διευθύνσεις ηλεκτρονικού ταχυδρομείου στον δικό σας τομέα."
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -7769,6 +7858,9 @@
       "Cancel subscription?": [
         "Ακύρωση συνδρομής;"
       ],
+      "Catch-all email address": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου Catch all"
+      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -7778,14 +7870,23 @@
       "Custom schedule send and snooze times": [
         "Προσαρμοσμένο πρόγραμμα χρόνου αποστολής και αναβολής"
       ],
+      "Desktop app and email client support (via IMAP)": [
+        "Υποστήριξη εφαρμογών επιφάνειας εργασίας και προγραμμάτων-πελατών ηλεκτρονικού ταχυδρομείου (μέσω IMAP)"
+      ],
       "Direct contribution to our mission": [
         "Άμεση συμβολή στην αποστολή μας"
       ],
       "Early access to new apps and features": [
         "Πρώιμη πρόσβαση σε νέες εφαρμογές και λειτουργίες"
       ],
+      "Email productivity features": [
+        "Δυνατότητες παραγωγικότητας ηλεκτρονικού ταχυδρομείου"
+      ],
       "Extra storage and bonuses": [
         "Επιπλέον αποθηκευτικός χώρος και μπόνους"
+      ],
+      "Extra storage and users": [
+        "Επιπλέον αποθηκευτικός χώρος και χρήστες"
       ],
       "Have a question?": [
         "Έχετε απορίες;"
@@ -7808,8 +7909,14 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Εάν υπερβείτε τα όρια του δωρεάν προγράμματος όταν λήξει η συνδρομή σας ${ planName }, δε θα μπορείτε να:"
       ],
+      "Invited members will be removed from your organization": [
+        "Τα προσκεκλημένα μέλη θα καταργηθούν από τον οργανισμό σας"
+      ],
       "Keep ${ config.planName }": [
         "Διατήρηση ${ config.planName }"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Διατηρήστε την ομάδα σας ασφαλή εν κινήσει με τις εφαρμογές μας για web, iOS, Android, Windows, Mac και Linux."
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -7817,11 +7924,17 @@
       "Learn more about our impact": [
         "Μάθετε περισσότερα για τον αντίκτυπό μας"
       ],
+      "Make your business stand out": [
+        "Κάντε την επιχείρησή σας να ξεχωρίζει"
+      ],
       "Manage your calendar": [
         "Διαχείριση του ημερολόγιού σας"
       ],
       "Online privacy, for your whole family": [
         "Online ιδιωτικότητα, για όλη την οικογένειά σας"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Οι οργανισμοί, οι πρόσθετοι χρήστες και οι προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου δεν υποστηρίζονται στο δωρεάν πρόγραμμα. Αυτό σημαίνει ότι:"
       ],
       "Our fight against censorship in Russia": [
         "Ο αγώνας μας ενάντια στη λογοκρισία στη Ρωσία"
@@ -7835,6 +7948,9 @@
       "Priority support": [
         "Υποστήριξη με προτεραιότητα"
       ],
+      "Productivity features": [
+        "Χαρακτηριστικά παραγωγικότητας"
+      ],
       "Reactivate": [
         "Επανενεργοποίηση"
       ],
@@ -7847,11 +7963,20 @@
       "Receive new emails": [
         "Λήψη νέων μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
+      "See your colleagues’ availability": [
+        "Δείτε τη διαθεσιμότητα των συναδέλφων σας"
+      ],
       "Send emails with attachments": [
         "Αποστολή μηνυμάτων ηλεκτρονικού ταχυδρομείου με συνημμένα"
       ],
+      "Stay secure and connected anywhere": [
+        "Παραμείνετε ασφαλείς και συνδεδεμένοι οπουδήποτε"
+      ],
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"
+      ],
+      "Support your compliance objectives": [
+        "Υποστηρίξτε τους στόχους συμμόρφωσης σας"
       ],
       "Sync files on devices": [
         "Συγχρονίσετε αρχεία σε συσκευές"
@@ -7868,6 +7993,15 @@
       "Unlimited folders, labels and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
+      "Users won’t be able to manage their calendars": [
+        "Οι χρήστες δε θα μπορούν να διαχειρίζονται τα ημερολόγιά τους"
+      ],
+      "Users won’t be able to send emails": [
+        "Οι χρήστες δεν θα μπορούν να στέλνουν μηνύματα ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "Οι χρήστες δε θα μπορούν να συγχρονίσουν αρχεία στις συσκευές τους"
+      ],
       "Version history": [
         "Ιστορικό εκδόσεων"
       ],
@@ -7879,6 +8013,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Δωρεάν, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 1 GB αποθηκευτικού χώρου Mail και έως 5 GB χώρου αποθήκευσης στο Drive. Η ομάδα σας θα αντιμετωπίσει διακοπές στην εργασία της, καθώς επιπλέον χρήστες δεν υποστηρίζονται στο δωρεάν πρόγραμμα."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Όταν ακυρώσετε το ${ planName }, θα υποβαθμιστείτε σε ${ BRAND_NAME } Free, το οποίο προσφέρει μόνο έως 5 GB χώρου αποθήκευσης στο Drive και έως 1 GB αποθηκευτικού χώρου στο Mail. Θα χάσετε επίσης τυχόν μπόνους αποθήκευσης που έχουν απονεμηθεί προηγουμένως."
@@ -7894,6 +8031,9 @@
       ],
       "Your ${ planName } has been canceled.": [
         "Το ${ planName } σας έχει ακυρωθεί."
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "Το ${ planName } πλάνο σας δε διατηρεί απλώς ασφαλή τα δεδομένα και τις επικοινωνίες της επιχείρησής σας. Υποστηρίζει τους στόχους συμμόρφωσης, κάνει την επιχείρησή σας να ξεχωρίζει και διατηρεί την ομάδα σας συνδεδεμένη."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "Η συνδρομή σας ${ planName } λήγει στις ${ expiryDate }. Μετά από αυτό, θα είστε στο ${ BRAND_NAME } Free πλάνο. Εάν η χρήση σας υπερβαίνει τα όρια του δωρεάν προγράμματος, ενδέχεται να αντιμετωπίσετε περιορισμένη πρόσβαση στις λειτουργίες του προϊόντος και στα δεδομένα σας. ${ learnMoreLink }"
@@ -8111,6 +8251,9 @@
       "Domain deleted": [
         "Ο τομέας διεγράφη"
       ],
+      "Invitation resent": [
+        "Η πρόσκληση στάλθηκε εκ νέου"
+      ],
       "Sessions revoked": [
         "Η συνεδρία ανακλήθηκε"
       ],
@@ -8205,6 +8348,9 @@
       ],
       "Email addresses": [
         "Διευθύνσεις Email"
+      ],
+      "Invitation email": [
+        "Μήνυμα πρόσκλησης"
       ],
       "Name": [
         "Όνομα"
@@ -8624,9 +8770,6 @@
       "Plans": [
         "Προγράμματα"
       ],
-      "Policies": [
-        "Πολιτικές"
-      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -8686,6 +8829,9 @@
       ],
       "Send email reminders?": [
         "Αποστολή υπενθυμίσεων μέσω email;"
+      ],
+      "Send new invite?": [
+        "Αποστολή νέας πρόσκλησης;"
       ],
       "Set new password": [
         "Ορίστε νέο κωδικό"
@@ -8964,6 +9110,94 @@
       ],
       "Primary admin": [
         "Κύριος διαχειριστής"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } διεύθυνση"
+      ],
+      "Add multiple users": [
+        "Προσθήκη πολλαπλών χρηστών"
+      ],
+      "Add new user": [
+        "Προσθήκη νέου χρήστη"
+      ],
+      "Admin": [
+        "Διαχειριστής"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Μια πρόσκληση θα σταλεί σε αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
+      ],
+      "Cancel": [
+        "Ακύρωση"
+      ],
+      "Confirm password": [
+        "Επιβεβαίωση κωδικού πρόσβασης"
+      ],
+      "Create password": [
+        "Δημιουργία κωδικού πρόσβασης"
+      ],
+      "Create password instead": [
+        "Δημιουργία κωδικού πρόσβασης"
+      ],
+      "Create user": [
+        "Δημιουργία χρήστη"
+      ],
+      "Email": [
+        "Ηλεκτρονικό ταχυδρομείο"
+      ],
+      "Name": [
+        "Όνομα"
+      ],
+      "Optional": [
+        "Προαιρετικό"
+      ],
+      "Private": [
+        "Ιδιωτικό"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
+      ],
+      "Send invite link via email instead": [
+        "Αποστολή συνδέσμου πρόσκλησης μέσω ηλεκτρονικού ταχυδρομείου"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Αυτό θα δημιουργήσει μια νέα διεύθυνση ${ MAIL_APP_NAME }."
+      ],
+      "User created": [
+        "Ο χρήστης δημιουργήθηκε"
+      ],
+      "VPN connections": [
+        "Συνδέσεις VPN"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
+      ]
+    },
+    "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Οι διαχειριστές δεν έχουν πρόσβαση στα δεδομένα ιδιωτικών χρηστών"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Η πρόσκληση στάλθηκε, εν αναμονή απάντησης από το προσκεκλημένο μέλος"
+      ],
+      "Invite sent": [
+        "Η πρόσκληση στάλθηκε"
+      ],
+      "It's you": [
+        "Είστε εσείς"
+      ],
+      "Private": [
+        "Ιδιωτικό"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "Χρήστης SSO που παρέχεται από τον πάροχο ταυτότητάς σας"
+      ],
+      "Writing assistant": [
+        "Βοηθός γραφής"
       ]
     },
     "Validation": {

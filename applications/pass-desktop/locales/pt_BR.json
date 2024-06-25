@@ -803,9 +803,6 @@
       "Trashing item failed": [
         "Erro ao mover item para a lixeira"
       ],
-      "Unable to boot": [
-        "Não foi possível iniciar"
-      ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
       ],
@@ -1000,6 +997,9 @@
       ],
       "Access successfully confirmed": [
         "Acesso confirmado com sucesso"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "O acesso do ${ PASS_APP_NAME } sempre exigirá sua senha da ${ BRAND_NAME }"
       ],
       "Add a username field": [
         "Adicionar um campo de nome de usuário"
@@ -1366,6 +1366,9 @@
       ],
       "password": [
         "senha"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Senha de bloqueio registrada. Use-a para desbloquear o ${ PASS_APP_NAME }"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "Senhas anteriores a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas são automaticamente excluídas do histórico.",

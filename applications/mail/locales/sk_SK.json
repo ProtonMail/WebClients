@@ -390,9 +390,6 @@
       "Download ${ attachmentName }": [
         "Stiahnuť ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Stiahnuť desktopové aplikácie"
-      ],
       "Download now": [
         "Stiahnuť teraz"
       ],
@@ -843,6 +840,9 @@
       "Open composer": [
         "Otvoriť editor"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Otvoriť v ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Otvoriť menu"
       ],
@@ -953,6 +953,9 @@
       ],
       "Reply securely": [
         "Bezpečná odpoveď"
+      ],
+      "Report a good content": [
+        "Nahlásiť dobrý obsah"
       ],
       "Report a problem": [
         "Nahlásiť problém"
@@ -1214,6 +1217,12 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1531,29 +1540,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Rýchlo a bezpečne"
+      "Fast and secure. No logs are kept.": [
+        "Rýchlo a bezpečne. Bez ukladania záznamov."
       ],
-      "Needs compatible hardware": [
-        "Vyžaduje kompatibilný hardvér"
-      ],
-      "No logs": [
-        "Žiadne záznamy"
-      ],
-      "Requires one-time download": [
-        "Vyžaduje jednorazové stiahnutie"
+      "Requires a one-time download and compatible hardware.": [
+        "Vyžaduje jednorazové stiahnutie a kompatibilný hardvér."
       ],
       "Run locally": [
         "Funguje lokálne"
       ],
       "Run on servers": [
         "Beží na serveroch"
-      ],
-      "Runs on all devices": [
-        "Funguje na všetkých zariadeniach"
-      ],
-      "Runs on your device": [
-        "Funguje na vašom zariadení"
       ]
     },
     "Attached ics file error": {
@@ -4156,6 +4153,9 @@
       "The sending key is not valid": [
         "Kľúč na odosielanie je neplatný"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Systém je momentálne zaneprázdnený. Skúste to znova o pár minút, prosím."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Asistent písania nemôže vyhovieť vašej žiadosti. Skúste prosím iné zadanie."
       ],
@@ -5690,6 +5690,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } o ${ BRAND_NAME } asistentovi písania"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } nájdená zložka",
         "${ providerFoldersNumLocalized } nájdené zložky",
@@ -6278,8 +6281,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pre viac výsledkov skúste toto kľúčové slovo vyhľadať v obsahu vašich emailových správ."
       ],
-      "Free for 14 days": [
-        "Zadarmo na 14 dní"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Free na ${ ASSISTANT_TRIAL_TIME_DAYS } dní"
       ],
       "From": [
         "Od"
@@ -6418,9 +6421,6 @@
       ],
       "Learn more": [
         "Zistiť viac"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Zistiť viac o ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Zľava Doprava"
@@ -6586,6 +6586,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "V jednom okamihu môže byť otvorený iba jeden asistent písania"
       ],
       "Open shortcut cheat sheet": [
         "Otvoriť zoznam skratiek"
@@ -7340,9 +7343,6 @@
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
-      "You can open only one writing assistant at a time": [
-        "V jednom okamihu môžete otvoriť len jedného asistenta písania"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
       ],
@@ -7495,9 +7495,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Váš účet bude aktualizovaný po zúčtovaní platby."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Váš prehliadač nepodporuje asistenta písania. Stiahnite si ${ MAIL_APP_NAME } desktopovú aplikáciu alebo ho skúste spustiť na serveroch."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Váš prehliadač nepodporuje asistenta písania. Skúste ho spustiť na serveroch."
@@ -8491,9 +8488,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "Špičková ochrana osobných údajov spoločnosti ${ BRAND_NAME }"
-      ],
       "Add a gift code": [
         "Vložiť darčekový kód"
       ],
@@ -10219,6 +10213,9 @@
       "A way to contact you": [
         "Spôsob, ako vás kontaktovať"
       ],
+      "Describe what to change": [
+        "Popíšte, čo zmeniť"
+      ],
       "E.g., ": [
         "Napr., "
       ],
@@ -10251,9 +10248,6 @@
       ],
       "Hint": [
         "Pomocník"
-      ],
-      "How do you want the selected text modified?": [
-        "Ako chcete upraviť vybraný text?"
       ],
       "Image URL": [
         "URL adresa obrázku"
@@ -12151,6 +12145,9 @@
       ],
       "Self-destruction set": [
         "Samodeštrukcia nastavená"
+      ],
+      "Thanks for the feedback!": [
+        "Ďakujeme za spätnú väzbu!"
       ],
       "Undo in progress": [
         "Prebieha zrušenie"

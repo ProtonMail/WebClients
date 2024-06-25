@@ -5287,6 +5287,11 @@
         "आपका आयात शुरू हो रहा है"
       ]
     },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "और जानें"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
@@ -5563,6 +5568,14 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "खाता हटा दो"
@@ -5584,14 +5597,6 @@
       ],
       "Switch plan": [
         "प्लान बदले"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -6186,6 +6191,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 सहायता"
+      ],
       "Access advanced VPN features": [
         "एडवांस वीपीएन सुविधाएं एक्सेस करें"
       ],
@@ -6517,6 +6525,12 @@
       ]
     },
     "Payments": {
+      "Card number": [
+        "कार्ड नंबर"
+      ],
+      "MM/YY": [
+        "महीना/साल"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ price } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
@@ -7167,6 +7181,11 @@
         "जानिए की कैसे एक निजी कैलेंडर लिंक लेते है।"
       ]
     },
+    "Subscription": {
+      "Billed monthly": [
+        "मासिक बिल"
+      ]
+    },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
         "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
@@ -7237,6 +7256,9 @@
       "10 email addresses": [
         "10 ईमेल पते"
       ],
+      "6 users": [
+        "6 यूज़र"
+      ],
       "Automatic email forwarding": [
         "स्वचालित ईमेल फॉरवर्ड"
       ],
@@ -7245,6 +7267,9 @@
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
+      ],
+      "Learn more": [
+        "और जानें"
       ],
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"

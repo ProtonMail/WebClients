@@ -358,9 +358,6 @@
       "Download ${ attachmentName }": [
         "${ attachmentName } letöltése"
       ],
-      "Download Desktop App": [
-        "Asztali alkalmazás letöltése"
-      ],
       "Download now": [
         "Letöltés most"
       ],
@@ -785,6 +782,9 @@
       "Open composer": [
         "Szerkesztő megnyitása"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Megnyitás ebben: ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Navigáció megnyitása"
       ],
@@ -1129,6 +1129,10 @@
       ],
       "Trust": [
         "Megbízható"
+      ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"

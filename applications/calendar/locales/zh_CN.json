@@ -5895,6 +5895,14 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "删除账户"
@@ -5916,14 +5924,6 @@
       ],
       "Switch plan": [
         "切换计划"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -7685,17 +7685,6 @@
         "订阅"
       ]
     },
-    "subscription reminder": {
-      "Desktop app": [
-        "桌面应用"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade your productivity": [
-        "提升你的工作效率"
-      ]
-    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "剩余 ${ dayDiff } 天"
@@ -7750,6 +7739,17 @@
       ],
       "Version history": [
         "版本历史"
+      ]
+    },
+    "subscription reminder": {
+      "Desktop app": [
+        "桌面应用"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade your productivity": [
+        "提升你的工作效率"
       ]
     },
     "Subscription renewal state": {

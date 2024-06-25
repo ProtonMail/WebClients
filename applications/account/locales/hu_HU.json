@@ -329,9 +329,6 @@
       "Download CSV sample": [
         "CSV minta letöltése"
       ],
-      "Download Desktop App": [
-        "Asztali alkalmazás letöltése"
-      ],
       "Download ICS": [
         "ICS letöltése"
       ],
@@ -595,6 +592,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } beállításainak megnyitása"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Megnyitás ebben: ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Navigáció megnyitása"
@@ -1141,11 +1141,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } alkalmazások"
-      ]
-    },
-    "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /hónap"
       ]
     },
     "Attached ics file error": {
@@ -5046,6 +5041,17 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ],
+      "Selected color:": [
+        "A kiválasztott szín:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -6252,6 +6258,9 @@
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
+      "Set your password": [
+        "Jelszó beállítása"
+      ],
       "Settings update failed": [
         "Beállítások módosítása sikertelen"
       ],
@@ -6944,17 +6953,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
-      ],
-      "Selected color:": [
-        "A kiválasztott szín:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8428,9 +8426,6 @@
       "Upgrade your plan": [
         "Váltson nagyobb csomagra"
       ],
-      "Users and addresses": [
-        "Felhasználók és címek"
-      ],
       "View guide": [
         "Útmutató megtekintése"
       ],
@@ -8507,6 +8502,16 @@
     "mail_signup_2023: Info": {
       "Limited time offer": [
         "Korlátozott idejű ajánlat"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Meghívás a ${ MAIL_APP_NAME } alkalmazás kipróbálására"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "Magánszemélyeknek"
       ]
     },
     "mailtrial2024: Action": {
@@ -12662,6 +12667,26 @@
       ],
       "Primary admin": [
         "Elsődleges adminisztrátor"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } cím"
+      ],
+      "Add multiple users": [
+        "Több felhasználó hozzáadása"
+      ],
+      "Confirm password": [
+        "Jelszó megerősítése"
+      ],
+      "Create password": [
+        "Jelszó létrehozása"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Ne felejtse el megosztani a felhasználóval belépési adatait."
+      ],
+      "VPN connections": [
+        "VPN kapcsolat"
       ]
     },
     "Validation": {

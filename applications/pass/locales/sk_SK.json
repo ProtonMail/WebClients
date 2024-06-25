@@ -809,9 +809,6 @@
       "Trashing item failed": [
         "Presun do koša zlyhal"
       ],
-      "Unable to boot": [
-        "Nie je možné spustiť"
-      ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
       ],
@@ -847,6 +844,9 @@
       ],
       "Vault name does not match": [
         "Názov trezoru sa nezhoduje"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Pri spúšťaní ${ PASS_SHORT_APP_NAME } sa vyskytla chyba. Ak bude tento problém pretrvávať, kontaktuje našu zákaznícku podporu, prosím."
       ],
       "Wrong password": [
         "Nesprávne heslo"

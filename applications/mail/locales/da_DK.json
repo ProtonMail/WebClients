@@ -384,9 +384,6 @@
       "Download ${ attachmentName }": [
         "Download ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Hent skrivebordsappen"
-      ],
       "Download now": [
         "Download nu"
       ],
@@ -835,6 +832,9 @@
       "Open composer": [
         "Åbn skriveværktøj"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Åbn i ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
@@ -945,6 +945,9 @@
       ],
       "Reply securely": [
         "Svar sikkert"
+      ],
+      "Report a good content": [
+        "Rapporter et godt indhold"
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -1206,6 +1209,10 @@
       ],
       "Trust": [
         "Hav tillid til"
+      ],
+      "Trust key": [
+        "Stol på nøgle",
+        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1513,29 +1520,17 @@
       ]
     },
     "Assistant option": {
-      "Fast and secure": [
-        "Hurtig og sikker"
+      "Fast and secure. No logs are kept.": [
+        "Hurtig og sikker. Ingen logføring."
       ],
-      "Needs compatible hardware": [
-        "Kræver kompatibel hardware"
-      ],
-      "No logs": [
-        "Ingen logfiler"
-      ],
-      "Requires one-time download": [
-        "Kræver engangs-download"
+      "Requires a one-time download and compatible hardware.": [
+        "Kræver en éngangsoverførsel og kompatibel hardware."
       ],
       "Run locally": [
         "Kør lokalt"
       ],
       "Run on servers": [
         "Kør på servere"
-      ],
-      "Runs on all devices": [
-        "Kører på alle enheder"
-      ],
-      "Runs on your device": [
-        "Kører på din enhed"
       ]
     },
     "Attached ics file error": {
@@ -4098,6 +4093,9 @@
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Systemet er optaget i øjeblikket. Prøv igen om et par minutter."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Skriveassistenten kan ikke gå videre med din anmodning. Prøv venligst en anden besked."
       ],
@@ -5536,6 +5534,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } om ${ BRAND_NAME }'s skriveassistent"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
         "${ providerFoldersNumLocalized } mapper fundet"
@@ -6070,8 +6071,8 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Hvis du ønsker flere søgeresultater, kan du prøve at søge efter dette nøgleord i indholdet af dine e-mails."
       ],
-      "Free for 14 days": [
-        "Gratis i 14 dage"
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dage"
       ],
       "From": [
         "Fra"
@@ -6206,9 +6207,6 @@
       ],
       "Learn more": [
         "Få mere at vide"
-      ],
-      "Learn more about ${ PrivacyLink }": [
-        "Lær mere om ${ PrivacyLink }"
       ],
       "Left to Right": [
         "Venstre mod højre"
@@ -6374,6 +6372,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
+      ],
+      "Only one writing assistant may be be open at a time": [
+        "Der kan kun være én aktiv skriveassistent ad gangen."
       ],
       "Open shortcut cheat sheet": [
         "Åbn snydeark med genveje"
@@ -7114,9 +7115,6 @@
       "You can now return to the application to continue": [
         "Du kan nu vende tilbage til applikationen for at fortsætte"
       ],
-      "You can open only one writing assistant at a time": [
-        "Du kan kun åbne én skriveassistent ad gangen"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
@@ -7245,9 +7243,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
-      ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Din browser understøtter ikke skriveassistenten. Hent skrivebordsappen ${ MAIL_APP_NAME }, eller prøv at køre den på servere."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Din browser understøtter ikke skriveassistenten. Prøv at køre den på servere."
@@ -8227,9 +8222,6 @@
       ]
     },
     "Link": {
-      "${ BRAND_NAME }'s industry-leading privacy": [
-        "${ BRAND_NAME }s brancheførende privatlivspolitik"
-      ],
       "Add a gift code": [
         "Tilføj en gavekode"
       ],
@@ -9897,6 +9889,9 @@
       "A way to contact you": [
         "En måde at kontakte dig på"
       ],
+      "Describe what to change": [
+        "Beskriv, hvad der skal ændres"
+      ],
       "E.g., ": [
         "F.eks., "
       ],
@@ -9929,9 +9924,6 @@
       ],
       "Hint": [
         "Tip"
-      ],
-      "How do you want the selected text modified?": [
-        "Hvordan vil du ændre den valgte tekst?"
       ],
       "Image URL": [
         "Billed-URL"
@@ -11702,6 +11694,9 @@
       ],
       "Self-destruction set": [
         "Selvdestruktion indstillet"
+      ],
+      "Thanks for the feedback!": [
+        "Tak for tilbagemeldingen!"
       ],
       "Undo in progress": [
         "Annullering i gang"

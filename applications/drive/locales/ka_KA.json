@@ -2535,6 +2535,9 @@
       "External invitations are temporarily disabled.": [
         "გარე მოსაწვევები დროებით გათიშულია."
       ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "გარე მოწვევები დროებით გამორთულია. მოგვიანებით სცადეთ"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "ფაილი \"${ item.name }\" ვერ აიტვირთა შეცდომის გამო: ${ error }"
       ],
@@ -4850,6 +4853,9 @@
       "There is nothing to see here": [
         "აქ არაფერია სანახავი"
       ],
+      "This action will delete the link and revoke access for all users.": [
+        "ეს ქმედება წაშლის ბმულს და გააუქმებს წვდომას ყველა მომხმარებლისთვის."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
       ],
@@ -5642,6 +5648,9 @@
       ],
       "Import to:": [
         "შემოტანა:"
+      ],
+      "Include message and file name in invite email": [
+        "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
       ],
       "Keep both": [
         "ორივეს შენარჩუნება"
@@ -7328,6 +7337,9 @@
       "External invitation removed from the share": [
         "ზიარიდან გარე მოსაწვევი წაშლილია"
       ],
+      "External invitation's email was sent again": [
+        "გარე მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
+      ],
       "Failed to accept share invitation": [
         "ზიარის მოსაწვევზე დათანხმება ჩავარდა"
       ],
@@ -7361,6 +7373,9 @@
       ],
       "File removed": [
         "ფაილი წაიშალა"
+      ],
+      "Invitation's email was sent again": [
+        "მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
       ],
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
@@ -8538,6 +8553,12 @@
       "Add any new files": [
         "დაამატეთ ნებისმიერი ახალი ფაილები"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. ასევე დაკარგავთ ადრე თქვენზე მონიშენულ საცავის ბონუსებს."
+      ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა თქვენი ${ planName }-ის გამოწერის ვადა ამოიწურება, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. ასევე დაკარგავთ ადრე თქვენზე მონიშენულ საცავის ბონუსებს."
+      ],
       "All you need for your business": [
         "ყველაფერი, რაც თქვენი ბიზნესისთვის გჭირდებათ"
       ],
@@ -8582,6 +8603,9 @@
       ],
       "Helping activists in Hong Kong": [
         "ვეხმარებით აქტვისტებს ჰონკ-კონგში"
+      ],
+      "How our customer support team got our VPN app directly into people's hands.": [
+        "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
@@ -9576,6 +9600,9 @@
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "თქვენს გადმოწერას ${ DOCS_APP_NAME } ფაილი აქვს"
       ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"

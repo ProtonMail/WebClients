@@ -69,6 +69,9 @@
       "Add note": [
         "नोट जोड़ें"
       ],
+      "Add people or groups to share": [
+        "साझा करने के लिए लोगों या समूहों को जोड़ें"
+      ],
       "Add phone number": [
         "फोन नंबर डालें"
       ],
@@ -97,7 +100,7 @@
         "रद्द करें"
       ],
       "Cancel all": [
-        "सब रद्द करो"
+        "सभी रद्द करें"
       ],
       "Cancel all downloads": [
         "सारे डाउनलोड रद्द करें"
@@ -160,7 +163,7 @@
         "संक्षिप्त करें"
       ],
       "Collapse folder": [
-        "फ़ोल्डर को संकुचित करें"
+        "कम"
       ],
       "Compose": [
         "लिखें"
@@ -246,7 +249,7 @@
         "स्थायी रूप से डिलीट करें"
       ],
       "Delete this version": [
-        "ये संस्करण मिटाएं"
+        "इस संस्करण को मिटाएं"
       ],
       "Delete version": [
         "संस्करण मिटाएं"
@@ -276,7 +279,7 @@
         "डाउनलोड (${ count })"
       ],
       "Download all": [
-        "सभी डाउनलोड"
+        "सब डाउनलोड करें"
       ],
       "Download anyway": [
         "फिर भी डाउनलोड करें"
@@ -288,7 +291,7 @@
         "लॉग डाउनलोड करें"
       ],
       "Drive Locked": [
-        "ड्राइव लॉक"
+        "ड्राइव लॉक है"
       ],
       "Edit": [
         "बदलें"
@@ -321,10 +324,10 @@
         "ड्राइव खोज चालू करें"
       ],
       "Expand": [
-        "बढा़एं"
+        "विस्तृत करें"
       ],
       "Expand folder": [
-        "फ़ोल्डर का विस्तार करें"
+        "ज़्यादा"
       ],
       "Export": [
         "निर्यात करें"
@@ -354,7 +357,7 @@
         "शुरू करें"
       ],
       "Get Started": [
-        "तो हो जाएं शुरू"
+        "शुरू करें"
       ],
       "Get verification code": [
         "सत्यापन कोड लें"
@@ -429,7 +432,7 @@
         "तस्वीर लोड करें"
       ],
       "Loading link": [
-        "लिंक लोड कर रहे"
+        "लिंक लोड हो रहा है"
       ],
       "Loading verification": [
         "सत्यापन लोड हो रहा है"
@@ -579,7 +582,7 @@
         "डिवाइस हटाएं"
       ],
       "Remove from this list": [
-        "इस सूची से निकालें"
+        "इस सूची से हटाएं"
       ],
       "Remove gift code": [
         "उपहार कोड हटाएं"
@@ -621,10 +624,10 @@
         "सब वापस शुरु करें"
       ],
       "Restart download": [
-        "डाउनलोड पुनः आरंभ करें"
+        "डाउनलोड फिर से शुरू करें"
       ],
       "Restart upload": [
-        "अपलोड पुनः आरंभ करें"
+        "अपलोड फिर से शुरू करें"
       ],
       "Restore": [
         "रिस्टोर करें"
@@ -633,16 +636,16 @@
         "कूड़ेदान से पुनर्स्थापित करें"
       ],
       "Restore this version": [
-        "ये संस्करण वापस लाएं"
+        "इस संस्करण को वापस लाएं"
       ],
       "Restore version": [
         "संस्करण वापस लाएं"
       ],
       "Resume all": [
-        "सब जारी रखें"
+        "सभी जारी रखें"
       ],
       "Resume download": [
-        "डाउनलोड फिर से शुरू करें"
+        "डाउनलोड जारी रखें"
       ],
       "Resume upload": [
         "अपलोड जारी रखें"
@@ -738,7 +741,7 @@
         "आयात शुरू करें"
       ],
       "Start recovering": [
-        "रिकवरी शुरू करें"
+        "पुनर्प्राप्ति शुरू करें"
       ],
       "Start setup": [
         "सेट करें"
@@ -782,6 +785,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "सेव करने की कोशिश वापस करें। सेव करने में असफल इस वजह से हुए: ${ saveError }"
       ],
+      "Understood": [
+        "समझ गया"
+      ],
       "Undo": [
         "अंडू करें"
       ],
@@ -816,7 +822,7 @@
         "फोल्डर अपलोड करें"
       ],
       "Upload photos": [
-        "फोटो अपलोड करें"
+        "तस्वीरें अपलोड करें"
       ],
       "Upload picture": [
         "तस्वीर अपलोड करें"
@@ -2181,6 +2187,9 @@
       "Alias options could not be resolved": [
         "नकली नाम के ऑप्शन रिज़ॉल्व ना हो सके"
       ],
+      "Already a member of this share": [
+        "आप इस साझकरण के पहले से ही सदस्य हैं"
+      ],
       "Amount above the maximum.": [
         "राशि अधिकत से ज्यादा है।"
       ],
@@ -2271,7 +2280,7 @@
         "फाइल को फोल्डर के साथ मिलाया नहीं जा सकता है"
       ],
       "File selection is already downloading": [
-        "फाइल सलेक्शन पहले से डाउनलोड हो रहा है"
+        "चयनित फ़ाइलें पहले से ही डाउनलोड हो रही हैं"
       ],
       "First name is too long": [
         "पहला नाम बहुत लंबा है"
@@ -2399,6 +2408,10 @@
       ],
       "Process aborted": [
         "प्रक्रिया निरस्त की गई"
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "डुप्लिकेट प्राप्तकर्ता को निकाला गया: ${ joinedInvitee }",
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "रिपोर्ट भेजने में असफल"
@@ -2719,7 +2732,7 @@
         "पहुंच अस्वीकृत"
       ],
       "Brace yourself till we get the error fixed.": [
-        "अपने आप को तब तक ब्रेस करें जब तक हम त्रुटि को ठीक नहीं कर लेते।"
+        "थोड़ा धीरज रखें, हम जल्द ही इस समस्या को ठीक कर देंगे।"
       ],
       "Error: ${ errorMessage }": [
         "त्रुटि: ${ errorMessage }"
@@ -2743,7 +2756,7 @@
         "कुछ गलत हो गया"
       ],
       "You may also refresh the page or try again later.": [
-        "आप पृष्ठ को ताज़ा भी कर सकते हैं या बाद में पुनः प्रयास कर सकते हैं।"
+        "आप पृष्ठ को रिफ्रेश भी कर सकते हैं या बाद में फिर से कोशिश कर सकते हैं।"
       ]
     },
     "Error notification": {
@@ -3479,10 +3492,10 @@
         "30-दिन की मनी-बैक गारंटी।"
       ],
       "A number will be added to the filename": [
-        "फ़ाइल नाम में एक नंबर जोड़ा जाएगा"
+        "फ़ाइल के नाम में एक संख्या जोड़ी जाएगी"
       ],
       "A number will be added to the folder name": [
-        "फ़ोल्डर नाम में एक नंबर जोड़ा जाएगा"
+        "फ़ोल्डर के नाम में एक संख्या जोड़ी जाएगी"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "एक ${ BRAND_NAME } खाता सत्यापित करने के लिए सिर्फ एक फोन नंबर इस्तेमाल हो सकता है"
@@ -3547,7 +3560,7 @@
         "इस लिंक वाला कोई भी आपकी फ़ाइल तक पहुंच सकता है।"
       ],
       "Anyone with this link can access your folder.": [
-        "इस लिंक वाला कोई भी व्यक्ति आपके फ़ोल्डर तक पहुंच सकता है।"
+        "इस लिंक वाला कोई भी आपके फ़ोल्डर तक पहुंच सकता है।"
       ],
       "Are you sure you want to discard your changes?": [
         "क्या आप वाकई अपने परिवर्तनों को छोड़ना चाहते हैं?"
@@ -3559,7 +3572,7 @@
         "क्या आप कूड़ेदान खाली करना चाहते हैं और सभी चीज़ों को हमेशा के लिए हटाना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete": [
-        "पक्का"
+        "क्या आप निश्चित हैं कि आप"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "क्या आप पक्का \"${ itemName }\" को कुड़े से हमेशा के लिए मिटाना चाहते हैं?"
@@ -3580,7 +3593,7 @@
         "आपके पिछले सदस्यता से बचा रकम"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "क्योंकि ${ DRIVE_APP_NAME } एंड-टू-एंड एन्क्रिप्टेड है, हम आपके लिए आपकी फ़ाइलों तक पहुंच या डिक्रिप्ट नहीं कर सकते हैं। पासवर्ड रीसेट के बाद अपनी ड्राइव को अनलॉक करने के लिए, आपके पास निम्नलिखित में से एक होना चाहिए:"
+        "क्योंकि ${ DRIVE_APP_NAME } एंड-टू-एंड एन्क्रिप्टेड है, हम आपकी फ़ाइलों तक नहीं पहुंच सकते हैं और ना ही उन्हें आपके लिए डिक्रिप्ट कर सकते हैं। पासवर्ड रीसेट करने के बाद अपनी ड्राइव को अनलॉक करने के लिए, आपके पास निम्न में से एक होना चाहिए:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "नए सत्यापन कोड का अनुरोध करने से पहले, अपना स्पैम फ़ोल्डर जांचें और जांचें कि ${ strong } सही पता है।"
@@ -3625,7 +3638,7 @@
         "एन्क्रिप्ट किया खोज डाटा साफ करें"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "ब्राउज़र डेटा साफ़ करने से इस डिवाइस पर खोज अनुक्रमणिका साफ़ हो जाएगी. खोज कार्यक्षमता का उपयोग करते समय सभी फाइलों को फिर से अनुक्रमित करने की आवश्यकता होगी।"
+        "ब्राउज़र डेटा साफ़ करने से इस डिवाइस पर खोज अनुक्रमणिका साफ़ हो जाएगा। खोज सुविधा का उपयोग करते समय सभी फ़ाइलों को फिर से अनुक्रमित करना होगा।"
       ],
       "Clears browser data related to the encrypted search.": [
         "एन्क्रिप्टेड खोज से संबंधित ब्राउज़र डेटा साफ़ करता है।"
@@ -3668,16 +3681,16 @@
         "सार्वजनिक लिंक बनाएं"
       ],
       "Create your first folder and start moving your files.": [
-        "अपना पहला फोल्डर बनाएं और अपनी फाइलों को मूव करना शुरू करें।"
+        "अपना पहला फ़ोल्डर बनाएं और अपनी फ़ाइलों को स्थानांतरित करना शुरू करें।"
       ],
       "Creating": [
         "बन रहा है"
       ],
       "Creating link to file": [
-        "फाइल के लिए लिंक तैयार हो रही है"
+        "फ़ाइल के लिए लिंक बनाया जा रहा है"
       ],
       "Creating link to folder": [
-        "फोल्डर के लिए लिंक तैयार हो रही है"
+        "फ़ोल्डर के लिए लिंक बनाया जा रहा है"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान सदस्यता से बचा क्रेडिट"
@@ -3689,7 +3702,7 @@
         "वर्तमान योजना"
       ],
       "Current version": [
-        "चालू संस्करण"
+        "वर्तमान संस्करण"
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
@@ -3722,6 +3735,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "डाउनग्रेड करने से सशुल्क ${ VPN_APP_NAME } सर्वर से कोई भी कनेक्शन समाप्त हो जाएगा।"
       ],
+      "Download": [
+        "डाउनलोड"
+      ],
       "Download ${ name } app": [
         "${ name } ऐप डाउनलोड करें"
       ],
@@ -3746,14 +3762,20 @@
       "Download paused due to connection issue; it will resume automatically": [
         "कनेक्शन समस्या के कारण डाउनलोड रुका हुआ है; यह स्वचालित रूप से फिर से शुरू हो जाएगा"
       ],
+      "Download was canceled": [
+        "डाउनलोड रद्द कर दिया गया था"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "आज ही अपना पसंदीदा ऐप डाउनलोड करें और आप जहां भी जाएं, अपने साथ गोपनीयता रखें।"
       ],
       "Downloaded": [
-        "डाउनलोड किया"
+        "डाउनलोड हो चुका है"
       ],
       "Downloading": [
         "डाउनलोड हो रहा है"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "${ DRIVE_APP_NAME } से ${ DOCS_APP_NAME } फ़ाइलें डाउनलोड करना अभी समर्थित नहीं है - ये आपके डाउनलोड में शामिल नहीं होंगे।"
       ],
       "Downloading all encrypted files": [
         "सभी एन्क्रिप्टेड फ़ाइलें डाउनलोड हो रही है"
@@ -3835,10 +3857,10 @@
         "असफल"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "सुरक्षित लिंक जनरेट नहीं किया जा सका. इसकी वजह है:${ error }"
+        "सुरक्षित लिंक बनाने में असफल। कारण: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "सुरक्षित लिंक जनरेट नहीं किया जा सका. कुछ समय बाद कोशिश करें"
+        "सुरक्षित लिंक बनाने में असफल। फिर से कोशिश करें"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "सुरक्षित लिंक खोलने में विफल | कारण है: ${ error }"
@@ -3852,14 +3874,17 @@
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "फाइल में हस्ताक्षर नहीं है। हम ${ fileName } अपलोड करने वालो की पहचान सत्यापित नहीं कर सके।"
       ],
+      "File scanning in Drive": [
+        "ड्राइव में फ़ाइल स्कैनिंग"
+      ],
       "File will not be updated": [
-        "फाइल अपडेट नहीं करी जाएगी"
+        "फ़ाइल अपडेट नहीं की जाएगी"
       ],
       "Files and folders that others shared with you will appear here": [
         "लोगों द्वारा आपके साथ साझा की गई फ़ाइलें और फ़ोल्डर यहां दिखाई देंगे"
       ],
       "Finalizing": [
-        "अंतिम रूप दिया जा रहा है"
+        "तैयार किया जा रहा है"
       ],
       "finance": [
         "वित्त"
@@ -3883,13 +3908,13 @@
         "सबसे बेहतर प्रदर्शन के लिए मेमरी पे भारी काम स्ट्रीम करने से बचे या अपने अपलोड को छोटे हिस्सो में बांट दें।"
       ],
       "from the version history?": [
-        "को संस्करण इतिहास से मिटाएं?"
+        "को स्थायी रूप से हटाना चाहते हैं संस्करण इतिहास से?"
       ],
       "Get the app to backup photos from your phone.": [
-        "फ़ोन से तस्वीरों को प्रतिकृति करने के लिए ऐप डाउनलोड करें।"
+        "अपने फ़ोन से तस्वीरों का बैकअप लेने के लिए ऐप डाउनलोड करें।"
       ],
       "Get the desktop app to sync files from your computer.": [
-        "अपने कंप्यूटर से फ़ाइलों को समकालिक करने के लिए डेस्कटॉप ऐप करे।"
+        "अपने कंप्यूटर से फ़ाइलों को सिंक करने के लिए डेस्कटॉप ऐप करें।"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "${ DRIVE_APP_NAME } के बारे में जानें और अपना 3 GB स्टोरेज बोनस अर्जित करें! आज ही कदम उठाएं।"
@@ -3977,7 +4002,7 @@
         "आमंत्रण लिंक कॉपी किया गया"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "ऐसा लगता है कि आपने हाल ही में ${ uploadName } अपलोड करने का प्रयास किया था। यदि अपलोड विफल हुआ, तो कृपया ${ replaceFile } | यदि अपलोड अभी भी प्रगति पर है, तो इसे बदलने से जारी अपलोड रद्द हो जाएगा।"
+        "ऐसा लगता है कि आपने हाल ही में ${ uploadName } को अपलोड करने की कोशिश की थी। अगर अपलोड विफल हो गया, तो कृपया ${ replaceFile } करें। अगर अपलोड अभी भी जारी है, तो इसे बदलने से चल रहा अपलोड रद्द हो जाएगा।"
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "कूड़ेदान में मौजूद चीज़ें तब तक यहीं रहेंगी जब तक आप उन्हें हमेशा के लिए नहीं हटा देते हैं"
@@ -4004,7 +4029,7 @@
         "बड़े आयात में कई दिन लग सकते हैं।"
       ],
       "Last week": [
-        "आखिरी हफ्ते"
+        "पिछले हफ्ते"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "जानें कैसे ${ staySaferOnlineLink }"
@@ -4068,7 +4093,7 @@
         "और"
       ],
       "Moving files": [
-        "फ़ाइलें ले जाइए जा रही है"
+        "फ़ाइलें ले जाई जा रही हैं"
       ],
       "My Links": [
         "मेरे लिंक"
@@ -4113,7 +4138,7 @@
         "मान्य URL नहीं है"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
-        "सभी फ़ाइलें स्थानांतरित नहीं की गईं. फ़ाइलों को फिर से अपलोड या डाउनलोड करने का प्रयास करें।"
+        "सभी फ़ाइलें स्थानांतरित नहीं की जा सकीं। फ़ाइलों को फिर से अपलोड या डाउनलोड करने की कोशिश करें।"
       ],
       "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
         "नोट: डाटा उन डिवाइसों पे भी मौजूद हो सकता है जहा आपने ${ DRIVE_APP_NAME } इंस्टॉल किया है।"
@@ -4137,17 +4162,23 @@
         "सिर्फ ${ MAX_CUSTOM_PASSWORD_LENGTH } वर्ण की अनुमति है",
         "सिर्फ ${ MAX_CUSTOM_PASSWORD_LENGTH } वर्ण की अनुमति है"
       ],
+      "Only the owner of the share will be able to invite you again.": [
+        "केवल साझा का मालिक ही आपको फिर से आमंत्रित कर सकते हैं।"
+      ],
       "Only the people with the link and the password can access this file.": [
-        "केवल लिंक वाले लोग और पासवर्ड इस फ़ाइल तक पहुंच सकते हैं।"
+        "केवल लिंक और पासवर्ड वाले लोग ही इस फ़ाइल तक पहुंच सकते हैं।"
       ],
       "Only the people with the link and the password can access this folder.": [
-        "केवल लिंक वाले लोग और पासवर्ड इस फ़ोल्डर तक पहुंच सकते हैं।"
+        "केवल लिंक और पासवर्ड वाले लोग ही इस फ़ोल्डर तक पहुंच सकते हैं।"
       ],
       "Or use the \"+ New\" button": [
         "या '+ नया' बटन का उपयोग करें"
       ],
       "Organization size": [
         "संगठन का साइज़"
+      ],
+      "Owner": [
+        "मालिक"
       ],
       "password": [
         "पासवर्ड"
@@ -4180,7 +4211,10 @@
         "सत्यापन टैब में कृपया अपना भुगतान सत्यापित करें।"
       ],
       "Please enter the password to decrypt and view content.": [
-        "डिक्रिप्ट करने और सामग्री देखने के लिए कृपया पासवर्ड दर्ज करें।"
+        "कन्टेन्ट को डिक्रिप्ट करने और देखने के लिए कृपया पासवर्ड दर्ज करें।"
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "अगर आप इन्हें डाउनलोड करना चाहते हैं, तो कृपया उन्हें सीधे ${ DOCS_APP_NAME } एप्लिकेशन से निर्यात करें।"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "कृपया ध्यान दें कि इस समूह को सौंपे गए पतों को हटाया नहीं जाएगा।"
@@ -4223,10 +4257,10 @@
         "कृपया प्रतीक्षा करें जब हम उन संपर्कों की तलाश करते हैं जिनमें निष्क्रिय कुंजी के साथ एन्क्रिप्ट किया गया डेटा होता है।"
       ],
       "Preparing link to file": [
-        "फाइल करने के लिए लिंक तैयार करना"
+        "फ़ाइल के लिए लिंक तैयार किया जा रहा है"
       ],
       "Preparing link to folder": [
-        "फोल्डर का लिंक तैयार किया जा रहा है"
+        "फ़ोल्डर के लिए लिंक तैयार किया जा रहा है"
       ],
       "Preview failed to be loaded": [
         "प्रिव्यू लोड करने में असफल"
@@ -4238,7 +4272,7 @@
         "पिछले संस्करण ${ retentionLabel } के लिए रखे जाते हैं।"
       ],
       "Previous versions are not saved": [
-        "पिछले संस्करण सेव नहीं होते"
+        "पिछले संस्करण सहेजे नहीं गए हैं"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "दाम में आपके खाते में सेव किए चक्र वाले छूट और खत्म-नहीं कूपन, जो लागू हो सकते है, शामिल है।"
@@ -4247,13 +4281,13 @@
         "मुख्य"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "निजी खोज सक्षम। अब आप इस डायलॉग को बंद कर सकते हैं और फाइलों और फ़ोल्डरों को खोज सकते हैं।"
+        "निजी खोज सक्षम। अब आप इस संभाषण को बंद कर सकते हैं और फ़ाइलों और फ़ोल्डरों को खोज सकते हैं।"
       ],
       "Queued": [
         "कतार में"
       ],
       "Ready to add some photos?": [
-        "क्या आप कुछ तस्वीरें छोड़ना चाहेंगे?"
+        "कुछ तस्वीरें जोड़ने के लिए तैयार हैं?"
       ],
       "recommended browser": [
         "अच्छे ब्राउज़र"
@@ -4269,6 +4303,9 @@
       ],
       "Report has been sent": [
         "रिपोर्ट भेजा गया"
+      ],
+      "Report link": [
+        "लिंक रिपोर्ट करें"
       ],
       "Request access, or switch to an account with access.": [
         "पहुंच का अनुरोध करें, या पहुंच वाले खाते पर स्विच करें।"
@@ -4290,6 +4327,9 @@
       ],
       "Retry now": [
         "पुन:प्रयास करें"
+      ],
+      "Scan issue": [
+        "समस्या स्कैन करें"
       ],
       "Search cannot be enabled in this browser": [
         "खोज इस ब्राउज़र में सक्षम नहीं कर सकते"
@@ -4317,7 +4357,7 @@
         "के लिए सभी मदें चुनें"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "अपलोड की गई फ़ाइल या फ़ोल्डर का चयन करें और उसका लिंक बनाएं।"
+        "अपलोड की गई फ़ाइल या फ़ोल्डर चुनें और उसका लिंक बनाएं।"
       ],
       "Select item": [
         "मद चुनें"
@@ -4353,7 +4393,7 @@
         "शेयर किया लिंक नहीं मिला"
       ],
       "Shared with me": [
-        "मेरे साथ साझा किया हुआ"
+        "मेरे साथ साझा किया गया"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
         "अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और अपने डेटा को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें और इसे सुरक्षित रूप से साझा करें।"
@@ -4374,13 +4414,13 @@
         "छोड़ा गया"
       ],
       "Some files failed to download. Try downloading the files again.": [
-        "कुछ फ़ाइलें डाउनलोड होने में विफल रहीं | फ़ाइलों को फिर से डाउनलोड करने का प्रयास करें।"
+        "कुछ फ़ाइलें डाउनलोड होने में विफल रहीं। फ़ाइलें फिर से डाउनलोड करने की कोशिश करें।"
       ],
       "Some files failed to upload. Try uploading the files again.": [
-        "कुछ फ़ाइलें अपलोड होने में विफल रहीं | फ़ाइलें फिर से अपलोड करने की कोशिश करें |"
+        "कुछ फ़ाइलें अपलोड होने में विफल रहीं। फ़ाइलें फिर से अपलोड करने की कोशिश करें।"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "आपकी कुछ फाइलें अब पहुंच योग्य नहीं हैं। अपनी फ़ाइलों तक पहुंच बहाल करें। ${ StartRecoveryButton }"
+        "अब आप अपनी कुछ फ़ाइलों तक नहीं पहुंच सकते। अपनी फ़ाइलों तक पहुंच पुनर्स्थापित करें। ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
         "कुछ गलत हो गया है, कृपया बाद में दोबारा प्रयास करें।"
@@ -4422,7 +4462,7 @@
         "सत्यापन प्रॉसेस एक नया ब्राउज़र टैब खोलेगा। कृपया कोई भी स्क्रीय पॉपअप ब्लॉकर अक्षम करें।"
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        "ऐसी फाइलें हैं जिन्हें अभी भी स्थानांतरित करने की आवश्यकता है। ट्रांसफर मैनेजर को बंद करने से सभी ऑपरेशन खत्म हो जाएंगे।"
+        "कुछ फ़ाइलें अभी भी स्थानांतरित की जानी बाकी हैं। स्थानांतरण प्रबंधक बंद करने से सभी कार्य समाप्त हो जाएंगे।"
       ],
       "There is nothing to see here": [
         "यहां देखने के लिए कुछ नहीं है"
@@ -4458,7 +4498,7 @@
         "यह लिंक स्थायी रूप से अक्षम कर दिया जाएगा। इस लिंक वाला कोई भी व्यक्ति आपकी फ़ाइल तक नहीं पहुंच पाएगा। फ़ाइल को फिर से साझा करने के लिए, आपको एक नए लिंक की आवश्यकता होगी।"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "यह लिंक स्थायी रूप से अक्षम कर दिया जाएगा। इस लिंक के साथ कोई भी आपके फ़ोल्डर तक पहुंचने में सक्षम नहीं होगा। फ़ोल्डर को दोबारा शुरू करने के लिए, आपको एक नया लिंक चाहिए।"
+        "यह लिंक स्थायी रूप से अक्षम कर दिया जाएगा। इस लिंक वाला कोई भी व्यक्ति आपकी फ़ोल्डर तक नहीं पहुंच पाएगा।। फ़ोल्डर को फिर से साझा करने के लिए, आपको एक नए लिंक की आवश्यकता होगी।"
       ],
       "This month": [
         "इस महीने"
@@ -4477,7 +4517,7 @@
         "यह मौजूदा फ़ोल्डर को फ़ाइल के साथ बदल देगा।"
       ],
       "This will upload a new version of the file": [
-        "ये फाइल का एक नया संस्करण अपलोड करेगा"
+        "ये फ़ाइल का एक नया संस्करण अपलोड करेगा"
       ],
       "This will upload a new version of the folder": [
         "यह फ़ोल्डर का एक नई संस्करण अपलोड करेगा"
@@ -4489,7 +4529,7 @@
         "खोज पूरा निजी करने के लिए ${ DRIVE_APP_NAME } को आपके फाइलों के नाम डिवाइस में रखने पड़ेगे।"
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "वास्तव में निजी खोज सक्षम करने के लिए, हमें आपकी फ़ाइलों को स्थानीय रूप से अनुक्रमणित करने की आवश्यकता है। आप अभी भी ${ DRIVE_APP_NAME } का सामान्य रूप से उपयोग कर सकते हैं - अनुक्रमण किए जाने पर हम आपको बताएंगे।"
+        "वास्तव में निजी खोज को चालू करने के लिए, हमें आपकी फ़ाइलों को स्थानीय रूप से अनुक्रमित करना होगा। आप अभी भी सामान्य रूप से ${ DRIVE_APP_NAME } का उपयोग कर सकते हैं - अनुक्रमण पूरा होने पर हम आपको सूचित करेंगे।"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "स्पैम और दुर्व्यवहार से लड़ने के लिए, कृपया सत्यापित करें कि आप इंसान हैं"
@@ -4525,13 +4565,13 @@
         "कुल VPN कनेक्शन"
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "फ़ाइल \"${ name }\" के लिए स्थानांतरण रद्द किया गया"
+        "\"${ name }\" फ़ाइल के लिए स्थानांतरण रद्द किया गया"
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "फ़ोल्डर \"${ name }\" के लिए स्थानांतरण रद्द किया गया"
+        "\"${ name }\" फ़ोल्डर के लिए स्थानांतरण रद्द किया गया"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "स्थानांतरण \"${ file.name }\" फ़ाइल के लिए छोड़ दिया गया"
+        "\"${ file.name }\" फ़ाइल के लिए स्थानांतरण छोड़ दिया गया"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "\"${ folderName }\" फ़ोल्डर के लिए स्थानांतरण छोड़ दिया गया"
@@ -4558,7 +4598,7 @@
         "अनजान गलती"
       ],
       "Unlock drive to recover files": [
-        "फ़ाइलों को पुनर्प्राप्त करने के लिए ड्राइव अनलॉक करें"
+        "फ़ाइलें पुनर्प्राप्त करने के लिए ड्राइव को अनलॉक करें"
       ],
       "Unsaved changes": [
         "सेव नहीं बदलाव"
@@ -4576,13 +4616,13 @@
         "स्टोरेज अपग्रेड करें"
       ],
       "Uploaded": [
-        "अपलोड किए गए"
+        "अपलोड हो चुका है"
       ],
       "Uploading": [
-        "अपलोड चालु"
+        "अपलोड हो रहा है"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        "एक बार में सैकड़ों फाइलों को अपलोड करना एक प्रदर्शन प्रभाव हो सकता है।"
+        "एक साथ सैकड़ों फ़ाइलें अपलोड करने से कार्यप्रदर्शन प्रभावित हो सकता है।"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "ये फॉर्म इस्तेमाल करें हमें अनुचित, गैर-कानूनी, या फिर खतरनाक शेयर किए गए फाइलों के बारे में सूचित करने के लिए। आप अभी रिपोर्ट करने जा रहे हैं:"
@@ -4600,16 +4640,16 @@
         "सत्यापन एक नया टैब खोलेगा, कृपया किसी भी पॉपअप ब्लॉकर्स को अक्षम करें। आपसे शुल्क नहीं लिया जाएगा। कार्ड को सत्यापित करने के लिए उपयोग की गई कोई भी राशि तुरंत वापस कर दी जाएगी।"
       ],
       "Version is deleted": [
-        "संस्करण मिटाया गया"
+        "संस्करण मिटा दिया गया है"
       ],
       "Version is restored": [
-        "संस्करण वापस लाया गया"
+        "संस्करण पुनःस्थापित किया गया"
       ],
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
       ],
       "Want to sync files faster?": [
-        "फ़ाइलों को तेज़ी से समकालिक करना चाहते हैं?"
+        "फ़ाइलों को तेज़ी से सिंक करना चाहते हैं?"
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "बहुत बढ़िया! आपका स्टोरेज अब 5GB हो गया!"
@@ -4669,7 +4709,7 @@
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे?"
       ],
       "Would you like to restore your files?": [
-        "क्या आप अपनी फ़ाइलों को पुनर्स्थापित करना चाहेंगे?"
+        "क्या आप अपनी फ़ाइलें पुनर्स्थापित करना चाहते हैं?"
       ],
       "Yes": [
         "हां"
@@ -4734,6 +4774,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
       ],
+      "You need access": [
+        "आपको पहुंच चाहिए"
+      ],
       "You will lose access to Plus features on this date.": [
         "आप इस तिथि पर प्लस सुविधाओं तक पहुंच खो देंगे।"
       ],
@@ -4774,7 +4817,7 @@
         "भुगतान क्लीयर होते ही आपका खाता अपडेट कर दिया जाएगा।"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "सेवा कर्मियों की अनुपलब्धता के कारण आपका वर्तमान ब्राउज़र बड़ी फ़ाइलों को डाउनलोड करने का समर्थन नहीं करता है। बड़ी फ़ाइलों को डाउनलोड करना फ्रीज हो सकता है या ब्राउज़र अनुत्तरदायी छोड़ सकता है। कृपया ${ recommendedBrowser } के नवीनतम संस्करणों का उपयोग करें और पुनः प्रयास करें।"
+        "आपके वर्तमान ब्राउज़र में सर्विस वर्कर्स की अनुपलब्धता के कारण बड़ी फ़ाइलों को डाउनलोड नहीं किया जा सकता। बड़ी फ़ाइलें डाउनलोड करना ब्राउज़र को फ्रीज कर सकता है या अनुत्तरदायी बना सकता है। कृपया ${ recommendedBrowser } के नवीनतम संस्करणों का इस्तामल करें और फिर से कोशिश करें।"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "आपका डाटा ${ importedEmailAddressStrong } से आपके ${ BRAND_NAME } खाते पे आयात करने के लिए तैयार है।"
@@ -4792,7 +4835,7 @@
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "पासवर्ड रीसेट के कारण आपकी फ़ाइलें अब पहुंच योग्य नहीं हैं। पहुंच प्राप्त करने के लिए पुरानी एन्क्रिप्शन कुंजी को फिर से अपलोड करें। ${ KeyReactivationButton }"
+        "पासवर्ड रीसेट होने के कारण अब आप अपनी फ़ाइलें नहीं देख सकते। दोबारा पहुंच प्राप्त करने के लिए पुरानी एन्क्रिप्शन कुंजी को फिर से अपलोड करें। ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "आपकी फाइलें एन्क्रिप्ट की जाएंगी और फिर सहेजी जाएंगी।"
@@ -4926,6 +4969,12 @@
       ],
       "Add to group": [
         "समूह में जोड़ें"
+      ],
+      "Anyone on the Internet with the link can view": [
+        "इंटरनेट पर कोई भी व्यक्ति जिसके पास यह लिंक है, वह देख सकता है"
+      ],
+      "Anyone with the link": [
+        "कोई भी व्यक्ति जिसके पास यह लिंक हो"
       ],
       "App password": [
         "ऐप का पासवर्ड"
@@ -5076,7 +5125,10 @@
         "डाउनलोड कर रहें ${ percentageValue }"
       ],
       "Duplicate found": [
-        "डुप्लीकेट मिला"
+        "डुप्लिकेट मिला"
+      ],
+      "Editor": [
+        "संपादक"
       ],
       "Email": [
         "ईमेल"
@@ -5107,6 +5159,9 @@
       ],
       "Enter device name": [
         "डिवाइस नाम डालें"
+      ],
+      "Erase this link and remove everyone with access": [
+        "इस लिंक को मिटा दें और सभी की पहुंच हटा दें"
       ],
       "Expiration (${ patternExpiration })": [
         "समाप्ति (${ patternExpiration })"
@@ -5172,13 +5227,13 @@
         "इधर आयात करें:"
       ],
       "Keep both": [
-        "दोनो रखें"
+        "दोनों रखें"
       ],
       "Keep both files": [
-        "दोनो फाइल रखें"
+        "दोनों फ़ाइलें रखें"
       ],
       "Keep both folders": [
-        "दोनो फोल्डर रखें"
+        "दोनों फ़ोल्डर रखें"
       ],
       "Label messages as": [
         "संदेशों को लेबल करें"
@@ -5200,6 +5255,12 @@
       ],
       "Main": [
         "मुख्‍य"
+      ],
+      "Make editor": [
+        "संपादक बनाएं"
+      ],
+      "Make viewer": [
+        "दर्शक बनाएं"
       ],
       "Malware": [
         "मालवेयर"
@@ -5247,7 +5308,7 @@
         "वैकल्पिक"
       ],
       "Other": [
-        "दूसरा"
+        "अन्य"
       ],
       "Password": [
         "पासवर्ड"
@@ -5268,7 +5329,7 @@
         "फोन नंबर"
       ],
       "Photo": [
-        "फोटो"
+        "तस्वीर"
       ],
       "Please provide full details to help us take appropriate action": [
         "उचित कार्रवाई करने में हमारी मदद के लिए कृपया पूरी जानकारी दें"
@@ -5291,14 +5352,20 @@
       "Public keys": [
         "सार्वजनिक चाबियां"
       ],
+      "Public link expiration date": [
+        "सार्वजनिक लिंक की समाप्ति तिथि"
+      ],
+      "Public link password": [
+        "सार्वजनिक लिंक पासवर्ड"
+      ],
       "Region": [
         "क्षेत्र"
       ],
       "Replace existing file": [
-        "मौजूदा फाइल के जगह रखें"
+        "मौजूदा फ़ाइल को बदलें"
       ],
       "Replace existing folder": [
-        "मौजूदा फोल्डर के जगह रखें"
+        "मौजूदा फ़ोल्डर को बदलें"
       ],
       "Reveal password": [
         "पासवर्ड प्रकट"
@@ -5312,8 +5379,20 @@
       "Set expiration date": [
         "खत्म होने की तारीख चुनें"
       ],
+      "Set link password": [
+        "लिंक के लिए पासवर्ड लगाएं"
+      ],
       "Set recovery method": [
         "रिकवरी तरीका सेट करें"
+      ],
+      "Share a file": [
+        "फ़ाइल साझा करें"
+      ],
+      "Shared by": [
+        "ने साझा किया"
+      ],
+      "Shared on": [
+        "को साझा किया"
       ],
       "Show indexing progress of Encrypted Search": [
         "एन्क्रिप्टेड खोज के सूचीकरण की प्रगति दिखाएं"
@@ -5339,6 +5418,9 @@
       "Stolen data": [
         "चोरी किया डाटा"
       ],
+      "Stop sharing": [
+        "साझाकरण बंद करें"
+      ],
       "Street address": [
         "राज्य / प्रांत की आवश्यकता है"
       ],
@@ -5354,6 +5436,9 @@
       "Theme": [
         "थीम"
       ],
+      "This file is potentially infected": [
+        "यह फ़ाइल संभावित रूप से संक्रमित है"
+      ],
       "This will permanently delete all files in your locked drive.": [
         "ये आपके लॉक की गई ड्राइव से सभी फाइलों को हमेशा के लिए मिटा देगा।"
       ],
@@ -5367,7 +5452,7 @@
         "टूलबार"
       ],
       "Type": [
-        "टाइप"
+        "प्रकार"
       ],
       "Unlock drive": [
         "ड्राइव अनलॉक करें"
@@ -5389,6 +5474,9 @@
       ],
       "Verification code": [
         "पुष्टि संख्या"
+      ],
+      "Viewer": [
+        "दर्शक"
       ],
       "What happened?": [
         "क्या हुआ?"
@@ -5478,13 +5566,16 @@
         "चालान भुगतान करें"
       ],
       "Photos": [
-        "फोटो"
+        "तस्वीरें"
       ],
       "Request an invite": [
         "निमंत्रण का अनुरोध"
       ],
       "Shared": [
         "साझा"
+      ],
+      "Shared with me": [
+        "मेरे साथ साझा किया गया"
       ],
       "stay safer online": [
         "ऑनलाइन सुरक्षित रहें"
@@ -5518,6 +5609,11 @@
       ],
       "Your import is starting": [
         "आपका आयात शुरू हो रहा है"
+      ]
+    },
+    "locked_state_storage_banner: info": {
+      "Learn more": [
+        "और जानें"
       ]
     },
     "Mail import summary": {
@@ -6417,6 +6513,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 सहायता"
+      ],
       "Access advanced VPN features": [
         "एडवांस वीपीएन सुविधाएं एक्सेस करें"
       ],
@@ -6524,8 +6623,20 @@
         "आपके चीज़ का ${ numberOfItems } लिंक मिटाया गया",
         "आपके चीज़ो के ${ numberOfItems } लिंक मिटाए गए"
       ],
+      "Access for the member removed": [
+        "सदस्य की पहुंच हटा दी गई है"
+      ],
+      "Access updated": [
+        "पहुंच अपडेट की गई"
+      ],
+      "Access updated and shared": [
+        "पहुंच अपडेट और साझा की गई।"
+      ],
       "All items will soon be permanently deleted from trash": [
         "सभी चीज़ जल्द ही कचरे से हमेशा के लिए मिटा दी जाएंगी"
+      ],
+      "An invitation has been sent": [
+        "आमंत्रण भेज दिया गया है"
       ],
       "Cannot load link": [
         "लिंक लोड नहीं हुआ"
@@ -6554,11 +6665,29 @@
       "Encrypted search activated": [
         "एन्क्रिप्ट किया खोज सक्रिय"
       ],
+      "External invitation removed from the share": [
+        "बाहरी आमंत्रण साझाकरण से हटा दिया गया है"
+      ],
+      "External invitation's email was sent again": [
+        "बाहरी आमंत्रण का ईमेल फिर से भेजा गया है"
+      ],
+      "Failed to accept share invitation": [
+        "साझाकरण आमंत्रण स्वीकार करने में असफल"
+      ],
+      "Failed to convert external invitation": [
+        "बाहरी आमंत्रण को रूपांतरित करने में असफल"
+      ],
       "Failed to download files: ${ err }": [
         "फाइलें डाउनलोड करने में असफल: ${ err }"
       ],
       "Failed to move, please try again": [
         "ले जाने में असफल, कृपया वापिस कोशिश करें"
+      ],
+      "Failed to open document": [
+        "दस्तावेज़ खोलने में असफल"
+      ],
+      "Failed to remove the file": [
+        "फ़ाइल हटाने में असफल"
       ],
       "Failed to upload files: ${ err }": [
         "फाइलें अपलोड करने में असफल: ${ err }"
@@ -6572,6 +6701,12 @@
       ],
       "File or folder is missing a name": [
         "फाइल या फोल्डर का कोई नाम नहीं है"
+      ],
+      "File removed": [
+        "फ़ाइल हटा दी गई"
+      ],
+      "Invitation's email was sent again": [
+        "आमंत्रण का ईमेल फिर से भेजा गया है"
       ],
       "Link copied to clipboard": [
         "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
@@ -6594,6 +6729,12 @@
       "Root folder failed to be loaded": [
         "रूट फोल्डर लोड करने में असफल"
       ],
+      "Share invitation accepted successfully": [
+        "साझा करने का आमंत्रण सफलतापूर्वक स्वीकार कर लिया गया है"
+      ],
+      "Stopping to share this item has failed": [
+        "इस चीज़ का साझाकरण बंद नहीं किया जा सका"
+      ],
       "Subfolder failed to be loaded": [
         "उप-फोल्डर लोड करनें में असफल"
       ],
@@ -6611,6 +6752,9 @@
       ],
       "Trash failed to be emptied": [
         "कचरा खाली नहीं किया जा सका"
+      ],
+      "You stopped sharing this item": [
+        "आपने इस चीज़ को साझा करना बंद कर दिया है"
       ],
       "Your old files will be deleted in 72 hours": [
         "आपकी पुरानी फाइलें 72 घंटों में मिटा दी जाएंगी"
@@ -6643,6 +6787,9 @@
       ]
     },
     "Onboarding Action": {
+      "Got it": [
+        "ठीक है"
+      ],
       "Next": [
         "अगला"
       ],
@@ -6651,8 +6798,20 @@
       ]
     },
     "Onboarding Info": {
+      "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
+        "${ DRIVE_APP_NAME } का उपयोग शुरू करें और हम आपके स्टोरेज को 5 GB तक बढ़ा देंगे!"
+      ],
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "ईमेल के माध्यम से अन्य लोगों को अपनी फ़ाइलों को देखने और संपादित करने के लिए आमंत्रित करें, या त्वरित पहुंच के लिए एक सार्वजनिक लिंक बनाएं।"
+      ],
       "Set a recovery method": [
         "रिकवरी तरीका सेट करें"
+      ],
+      "Share a file": [
+        "फ़ाइल साझा करें"
+      ],
+      "Share files with one click": [
+        "एक क्लिक में फ़ाइलें साझा करें"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "बस इसे अगले ${ expiresInDays } दिन में खत्म कर देना:",
@@ -6741,6 +6900,12 @@
       ]
     },
     "Payments": {
+      "Card number": [
+        "कार्ड नंबर"
+      ],
+      "MM/YY": [
+        "महीना/साल"
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "${ priceWithDiscount } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ price } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
       ]
@@ -6813,6 +6978,9 @@
       ],
       "Last name": [
         "अंतिम नाम"
+      ],
+      "Message": [
+        "संदेश"
       ],
       "Name": [
         "नाम"
@@ -7263,6 +7431,14 @@
         "अब आप आराम से डाटा सुरक्षित रखकर अपने ड्राइव फाइलों को खोज सकते हैं।"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "स्वीकृत"
+      ],
+      "Pending": [
+        "लंबित"
+      ]
+    },
     "Storage": {
       "Get more storage": [
         "अधिक स्टोरेज प्राप्त करें"
@@ -7310,6 +7486,11 @@
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "आप असीमित लॉगिन और नोट्स, असीमित ide-my-email प्रकारांतर, 20 तिजोरी, साथ ही प्राथमिकता सहायता तक पहुंच खो देंगे।"
+      ]
+    },
+    "Subscription": {
+      "Billed monthly": [
+        "मासिक बिल"
       ]
     },
     "Subscription attribute": {
@@ -7382,6 +7563,9 @@
       "10 email addresses": [
         "10 ईमेल पते"
       ],
+      "6 users": [
+        "6 यूज़र"
+      ],
       "Automatic email forwarding": [
         "स्वचालित ईमेल फॉरवर्ड"
       ],
@@ -7390,6 +7574,9 @@
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
+      ],
+      "Learn more": [
+        "और जानें"
       ],
       "Learn more about our impact": [
         "हमारे प्रभाव के बारे में अधिक जानें"
@@ -7513,6 +7700,9 @@
       ],
       "Recovery has started": [
         "रिकवरी शुरू हो गया"
+      ],
+      "Secure link copied": [
+        "सुरक्षित लिंक कॉपी हो गया"
       ],
       "The link to your file was successfully copied": [
         "आपके फाइल का लिंक सफलतापूर्वक कॉपी किया गया"
@@ -7713,6 +7903,9 @@
       "Are you sure you want to close the preview?": [
         "आप पक्का इस प्रीव्यू को बंद करना चाहते हैं?"
       ],
+      "Are you sure you want to leave this share?": [
+        "क्या आप इस साझाकरण को छोड़ना चाहते हैं?"
+      ],
       "Billing cycle": [
         "बिलिंग चक्र"
       ],
@@ -7902,7 +8095,7 @@
         "फाइल की जानकारी"
       ],
       "File recovery process": [
-        "फ़ाइल रिकवरी प्रक्रिया"
+        "फ़ाइल पुनर्प्राप्ति प्रक्रिया"
       ],
       "Folder details": [
         "फोल्डर की जानकारी"
@@ -7941,6 +8134,9 @@
       ],
       "Item details": [
         "चीज़ की जानकारी"
+      ],
+      "Last edited by": [
+        "द्वारा अंतिम संपादन किया गया"
       ],
       "Link confirmation": [
         "लिंक की पुष्टि"
@@ -8018,7 +8214,7 @@
         "फोन नंबर"
       ],
       "Photos": [
-        "फोटो"
+        "तस्वीरें"
       ],
       "Preview": [
         "प्रिव्यू करें"
@@ -8028,6 +8224,9 @@
       ],
       "Processing...": [
         "प्रोसेस हो रहा है..."
+      ],
+      "Public shared link status": [
+        "सार्वजनिक रूप से साझा किए गए लिंक की स्थिति"
       ],
       "Re-sign all contacts": [
         "सभी संपर्कों को फिर से साइन करें"
@@ -8095,14 +8294,20 @@
       "Settings": [
         "सेटिंग्स"
       ],
+      "Share ${ name }": [
+        "${ name } को साझा करें"
+      ],
       "Share via link": [
         "लिंक के माध्यम से साझा करें"
       ],
       "Shared": [
         "साझा"
       ],
+      "Shared with me": [
+        "मेरे साथ साझा किया गया"
+      ],
       "Show actions": [
-        "क्रियाएं दिखाएं"
+        "कार्रवाई दिखाएं"
       ],
       "Sign in and grant access": [
         "साइन इन करें और पहुंच प्रदान करें"
@@ -8117,7 +8322,7 @@
         "साइज़"
       ],
       "Sort files/folders": [
-        "फाइल / फ़ोल्डर्स सॉर्ट करे"
+        "फ़ाइलें/फ़ोल्डर क्रमबद्ध करें"
       ],
       "Start a new import": [
         "एक नया आयात शुरू करें"
@@ -8130,6 +8335,9 @@
       ],
       "Stop sharing with everyone?": [
         "सबके साथ शेयर करना बंद करें?"
+      ],
+      "Stop sharing?": [
+        "साझाकरण रोकें?"
       ],
       "Stop transfers?": [
         "ट्रांस्फर रोके?"
@@ -8168,7 +8376,7 @@
         "द्वारा डाली गई"
       ],
       "Uploading a large file or folder": [
-        "एक बड़ा फाइल या फोल्डर अपलोड हो रहा है"
+        "बड़ी फ़ाइल या फ़ोल्डर अपलोड करना"
       ],
       "Verification failed": [
         "सत्यापन असफल"
@@ -8180,7 +8388,7 @@
         "आपका भुगतान सत्यापित कर रहे..."
       ],
       "Version details": [
-        "संस्करण जानकारी"
+        "संस्करण विवरण"
       ],
       "Version history": [
         "संस्करण इतिहास"
@@ -8195,7 +8403,7 @@
         "आप क्या आयात करना चाहेंगे?"
       ],
       "You have inaccessible files": [
-        "आपके पास दुर्गम फ़ाइलें हैं"
+        "कुछ फ़ाइलों को खोला नहीं जा सकता"
       ],
       "You have no files to share": [
         "आपके पास शेयर करने को फाइल नहीं"
@@ -8203,8 +8411,14 @@
       "You have no folders yet": [
         "आपके पास अभी तक कोई फोल्डर नहीं"
       ],
+      "Your 3 GB bonus": [
+        "आपका 3 GB का बोनस"
+      ],
       "Your changes are not synced yet": [
         "आपके बदलाव अभी तक सिंक नहीं हुए"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "आपके डाउनलोड में एक ${ DOCS_APP_NAME } फ़ाइल है"
       ],
       "Your exposed information": [
         "आपकी उजागर जानकारी"
@@ -8272,6 +8486,9 @@
       "Load image": [
         "तस्वीर लोड करें"
       ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "ईमेल में शामिल होने पर संदेश और फ़ाइल का नाम ज़ीरो एक्सेस एन्क्रिप्शन के साथ संग्रहीत किए जाते हैं"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "उपयोगकर्ता को हस्ताक्षर या एन्क्रिप्ट करते समय उपयोग की जाने वाली PGP योजना का चयन करें। ध्यान दें कि PGP/Inline सादे पाठ संदेशों को बाध्य करता है"
       ],
@@ -8292,6 +8509,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "इस ईमेल पर एंड-टू-एंड एन्क्रिप्टेड ईमेल भेजने को सक्षम करने के लिए एक सार्वजनिक कुंजी अपलोड करें"
+      ],
+      "We have sent them an invite to access the item.": [
+        "हमने उन्हें आइटम तक पहुंचने के लिए एक आमंत्र भेजा है।"
       ],
       "You do not have any contacts to export": [
         "आपके पास निर्यात करने के लिए कोई संपर्क नहीं है"

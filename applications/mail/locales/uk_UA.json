@@ -387,9 +387,6 @@
       "Download ${ attachmentName }": [
         "Завантажити ${ attachmentName }"
       ],
-      "Download Desktop App": [
-        "Завантажити програму для комп'ютера"
-      ],
       "Download now": [
         "Завантажити"
       ],
@@ -822,6 +819,9 @@
       "Open composer": [
         "Відкрити редактор"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Відкрити в ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Відкрити панель навігації"
       ],
@@ -1172,6 +1172,12 @@
       ],
       "Trust": [
         "Довіряти"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -3919,6 +3925,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Введіть ім'я, прізвище або псевдонім"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Будь ласка, оберіть категорію і що не так з згенерованим текстом"
+      ],
       "Please try generating the text again": [
         "Спробуйте згенерувати текст ще раз"
       ],
@@ -6149,6 +6158,9 @@
       "From": [
         "Від"
       ],
+      "Generate text": [
+        "Створити текст"
+      ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
         "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
@@ -6545,6 +6557,9 @@
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Попередній перегляд документів поки що не підтримується. Будь ласка, відкрийте документ для його перегляду."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
@@ -6554,8 +6569,17 @@
       "Print email": [
         "Друкувати лист"
       ],
+      "Proofread selection": [
+        "Вибір коректури"
+      ],
+      "Proofread text": [
+        "Перевірити текст"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Захистіть свою електронну пошту від потрапляння до списків розсилки або спамерів за допомогою ${ maskMyEmailButton }."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Загальний доступ до документів ще не підтримується. Попросіть власника запросити вас безпосередньо до документа."
       ],
       "Recipient: ": [
         "Отримувач: "
@@ -10025,9 +10049,6 @@
       "Hint": [
         "Підказка"
       ],
-      "How do you want the selected text modified?": [
-        "Як ви хочете змінити вибраний текст?"
-      ],
       "Image URL": [
         "URL-адреса зображення"
       ],
@@ -11706,6 +11727,9 @@
       ],
       "Self-destruction set": [
         "Самознищення встановлено"
+      ],
+      "Thanks for the feedback!": [
+        "Дякуємо за відгук!"
       ],
       "Undo in progress": [
         "Скасовується"
