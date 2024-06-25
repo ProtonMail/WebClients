@@ -590,9 +590,6 @@
       "Trashing item failed": [
         "Đưa nội dung vào thùng rác thất bại"
       ],
-      "Unable to boot": [
-        "Không thể mở"
-      ],
       "Unable to generate an OTP code for this item": [
         "Không thể tạo mã OTP cho nội dung này"
       ],
@@ -628,6 +625,9 @@
       ],
       "Vault name does not match": [
         "Tên kho lưu trữ không khớp"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Có lỗi xảy ra khi khởi động ${ PASS_SHORT_APP_NAME }. Nếu vấn đề không được khắc phục, vui lòng liên hệ dịch vụ chăm sóc khách hàng để được trợ giúp."
       ],
       "Wrong password": [
         "Sai mật khẩu"
@@ -845,6 +845,9 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Vì lý do bảo mật, truy cập của bạn cần được xác nhận"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Các mật khẩu sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Nhận không giới hạn bí danh, tận hưởng các tính năng độc quyền, vầ hỗ trợ chúng tôi bằng việc đăng ký gói Pass Plus."
@@ -1694,6 +1697,9 @@
       "Full Name": [
         "Tên đầy đủ"
       ],
+      "MM/YY": [
+        "Tháng/Năm"
+      ],
       "Other": [
         "Khác"
       ],
@@ -1950,6 +1956,9 @@
       ],
       "Encryption password is required": [
         "Mật khẩu mã hóa là bắt buộc"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Ngày hết hạn không ở dạng Tháng / Năm"
       ],
       "Invalid alias prefix": [
         "Tiền tố bí danh không hợp lệ"
