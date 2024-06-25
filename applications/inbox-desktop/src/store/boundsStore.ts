@@ -4,6 +4,7 @@ import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 import { mainLogger } from "../utils/log";
 
 interface WindowBounds {
+    maximized: boolean;
     width: number;
     height: number;
     x: number;
@@ -19,6 +20,7 @@ export const MINIMUM_WIDTH = 900;
 export const MINIMUM_HEIGHT = 300;
 
 const DEFAULT_WINDOW_BOUNDS = {
+    maximized: false,
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT,
     x: -1,
@@ -36,12 +38,16 @@ export const getWindowBounds = () => {
         windowBounds.y = currentDisplay.workArea.height / 2 - windowBounds.height / 2;
     }
 
-    return ensureWindowIsVisible(windowBounds);
+    return {
+        ...windowBounds,
+        ...ensureWindowIsVisible(windowBounds),
+    };
 };
 
-export const saveWindowBounds = (window: BrowserWindow) => {
+export const saveWindowBounds = (browserWindow: BrowserWindow) => {
     const newBounds = {
-        ...window.getBounds(),
+        ...browserWindow.getBounds(),
+        maximized: browserWindow.isMaximized(),
     } satisfies WindowBounds;
 
     mainLogger.info("update window bounds", JSON.stringify(newBounds));
