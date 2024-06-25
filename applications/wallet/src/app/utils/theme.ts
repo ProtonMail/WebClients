@@ -18,6 +18,6 @@ export const getThemeByIndex = (index: number) => {
     return t[Math.max(index, 0) % t.length];
 };
 
-export const getThemeForWallet = (wallets: IWasmApiWalletData[], walletId?: string) => {
+export const getThemeForWallet = (wallets: IWasmApiWalletData[] = [], walletId?: string) => {
     return getThemeByIndex(wallets.findIndex((w) => w.Wallet.ID === walletId));
 };

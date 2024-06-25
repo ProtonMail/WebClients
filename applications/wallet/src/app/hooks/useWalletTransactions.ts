@@ -29,7 +29,7 @@ import { useBitcoinBlockchainContext } from '../contexts';
 import { useGetApiWalletTransactionData } from '../store/hooks';
 import { AccountIdByDerivationPathAndWalletId } from '../types';
 
-type DecryptedTransactionData = Omit<WasmApiWalletTransaction, 'ToList' | 'TransactionID'> & {
+export type DecryptedTransactionData = Omit<WasmApiWalletTransaction, 'ToList' | 'TransactionID'> & {
     ToList: Partial<Record<string, string>>;
     TransactionID: string | null;
 };

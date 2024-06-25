@@ -14,6 +14,7 @@ import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { convertAmount, getLabelByUnit } from '../../utils';
@@ -44,6 +45,7 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
         apiAccount ?? apiWalletData.WalletAccounts[0]
     );
 
+    const { isNarrow } = useResponsiveContainerContext();
     const { getSyncingData } = useBitcoinBlockchainContext();
 
     const syncingData = getSyncingData(apiWalletData.Wallet.ID, apiAccount?.ID);
@@ -63,7 +65,6 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
     return (
         <div className="wallet-balance flex flex-row flex-nowrap py-2 px-0 m-4 items-center">
             <div key={apiWalletData.Wallet.ID} ref={balanceRef} className="flex flex-column">
-                {/* Denimation */}
                 <div className="text-lg color-hint">
                     {apiAccount ? apiAccount.Label : c('Wallet dashboard').t`All accounts`}
                 </div>
@@ -92,28 +93,31 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                     {getLabelByUnit(settings.BitcoinUnit)}
                 </div>
             </div>
-            <div
-                className="h-custom grow max-w-custom grow ml-12"
-                style={{ '--h-custom': '3.5rem', '--max-w-custom': '35rem' }}
-            >
-                <Line
-                    id="line-chart"
-                    className="w-full h-full"
-                    options={lineChartOptions}
-                    data={{
-                        datasets: [
-                            {
-                                ...balanceEvolutionLineChartData,
-                                borderColor: lineColor,
-                                borderWidth: 2,
-                                tension: 0,
-                                pointRadius: 0,
-                            },
-                        ],
-                        labels: balanceEvolutionLineChartData.data.map(({ x }) => x),
-                    }}
-                />
-            </div>
+
+            {!isNarrow && (
+                <div
+                    className="h-custom grow max-w-custom grow ml-12"
+                    style={{ '--h-custom': '3.5rem', '--max-w-custom': '35rem' }}
+                >
+                    <Line
+                        id="line-chart"
+                        className="w-full h-full"
+                        options={lineChartOptions}
+                        data={{
+                            datasets: [
+                                {
+                                    ...balanceEvolutionLineChartData,
+                                    borderColor: lineColor,
+                                    borderWidth: 2,
+                                    tension: 0,
+                                    pointRadius: 0,
+                                },
+                            ],
+                            labels: balanceEvolutionLineChartData.data.map(({ x }) => x),
+                        }}
+                    />
+                </div>
+            )}
         </div>
     );
 };
