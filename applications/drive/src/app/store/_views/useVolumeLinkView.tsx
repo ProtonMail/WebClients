@@ -9,12 +9,14 @@ import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
 import { DecryptedLink, useLink } from '../_links';
 import { ShareInvitationDetails, useShareInvitation } from '../_shares';
+import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {
     const { getInvitationDetails, acceptInvitation, convertExternalInvitation } = useShareInvitation();
     const debouncedRequest = useDebouncedRequest();
     const { getLink } = useLink();
     const { createNotification } = useNotifications();
+    const volumeState = useVolumesState();
 
     const getInvitationLinkDetails = async (
         abortSignal: AbortSignal,
@@ -62,6 +64,7 @@ export const useVolumeLinkView = () => {
                     return error;
                 });
                 if (link?.shareId) {
+                    volumeState.setVolumeShareIds(volumeId, [link.shareId]);
                     return {
                         linkId: link.linkId,
                         shareId: link.shareId,
@@ -72,7 +75,7 @@ export const useVolumeLinkView = () => {
                 // This will happen if we can't find the invite and the file/folder does not exist
                 return;
             }
-
+            volumeState.setVolumeShareIds(volumeId, [invitationDetails.share.shareId]);
             const response = await acceptInvitation(abortSignal, invitationDetails);
             if (response?.Code === 1000) {
                 createNotification({
