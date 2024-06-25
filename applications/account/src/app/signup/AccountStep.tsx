@@ -1,10 +1,10 @@
-import { Fragment, KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import {
     Challenge,
     ChallengeError,
@@ -36,7 +36,6 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { getLocaleTermsURL } from '../content/helper';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
@@ -44,6 +43,7 @@ import { getAccountDetailsFromEmail } from '../single-signup-v2/accountDetails';
 import Loader from './Loader';
 import { getSignupApplication } from './helper';
 import { SignupType } from './interfaces';
+import { getTerms } from './terms';
 
 import './AccountStep.scss';
 
@@ -257,16 +257,6 @@ const AccountStep = ({
         return <ChallengeError />;
     }
 
-    const terms = (
-        <Fragment key="terms">
-            <br />
-            <Href href={getLocaleTermsURL()}>{
-                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
-                c('new_plans: signup').t`terms and conditions`
-            }</Href>
-        </Fragment>
-    );
-
     const signIn = (
         <Link key="signin" className="link link-focus text-nowrap" to={loginUrl}>
             {c('Link').t`Sign in`}
@@ -434,12 +424,7 @@ const AccountStep = ({
 
                     <hr className="my-4" />
 
-                    <div className="color-weak text-center text-sm px-0 md:px-7">
-                        {
-                            // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
-                            c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}`
-                        }
-                    </div>
+                    <div className="color-weak text-center text-sm px-0 md:px-7">{getTerms()}</div>
                 </form>
             </Content>
         </Main>
