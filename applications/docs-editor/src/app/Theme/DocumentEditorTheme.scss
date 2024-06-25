@@ -117,15 +117,6 @@
 	}
 }
 
-.Lexical__code {
-	font-size: 1em;
-	padding: 0.75rem;
-	border-radius: 0.25rem;
-	border: 1px solid var(--border-weak);
-	white-space: pre;
-	overflow-x: auto;
-}
-
 @for $i from 1 through 6 {
 	.Lexical__h#{$i} {
 		font-size: 1.75em - 0.125em * $i;
