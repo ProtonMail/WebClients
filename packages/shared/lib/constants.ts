@@ -1234,6 +1234,7 @@ export const OPENPGP =
 const PROTONPASS_EXTENSION_IDS = [
     'ghmbeldphafepmbegfdlkpapadhbakde' /* chromium production */,
     'hlaiofkbmjenhgeinjlmkafaipackfjh' /* chromium beta channel */,
+    'gcllgfdnfnllodcaambdaknbipemelie' /* edge production */,
     'me.proton.pass.catalyst.safari-extension (2SB5Z68H26)' /* safari extension */,
 ] as const;
 
