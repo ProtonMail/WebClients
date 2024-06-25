@@ -17,6 +17,7 @@ import { Button, Input, Modal, Select } from '../../atoms';
 import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
 import { WalletDeletionModal } from '../WalletDeletionModal';
+import { BitcoinViaEmailNote } from './BitcoinViaEmailNote';
 import { useWalletPreferences } from './useWalletPreferences';
 
 interface Props extends ModalOwnProps {
@@ -90,14 +91,20 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                     <div className="flex flex-column my-3">
                         <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>
 
-                        {wallet.WalletAccounts.map((walletAccount) => {
+                        <BitcoinViaEmailNote
+                            isActive={wallet.WalletAccounts.some((acc) => Boolean(acc.Addresses.length))}
+                        />
+
+                        {wallet.WalletAccounts.map((walletAccount, index) => {
                             return (
-                                <AccountPreferences
-                                    key={walletAccount.ID}
-                                    wallet={wallet}
-                                    walletAccount={walletAccount}
-                                    otherWallets={otherWallets}
-                                />
+                                <div key={index}>
+                                    <AccountPreferences
+                                        key={walletAccount.ID}
+                                        wallet={wallet}
+                                        walletAccount={walletAccount}
+                                        otherWallets={otherWallets}
+                                    />
+                                </div>
                             );
                         })}
                     </div>
