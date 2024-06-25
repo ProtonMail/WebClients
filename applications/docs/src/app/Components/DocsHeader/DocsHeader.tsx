@@ -10,8 +10,9 @@ import { Button } from '@proton/atoms'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { CommentsButton } from './CommentsButton'
 import { c } from 'ttag'
+import { DocumentAction } from '@proton/drive-store'
 
-const DocsHeader = () => {
+const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
 
   const [controller, setController] = useState<DocControllerInterface | null>(null)
@@ -26,7 +27,7 @@ const DocsHeader = () => {
 
   return (
     <div className="flex items-center px-4 py-2">
-      <DocumentTitleDropdown controller={controller} />
+      <DocumentTitleDropdown action={action} controller={controller} />
       <div className="w-2" />
       <ConnectionStatus />
       <div className="mr-auto" />
