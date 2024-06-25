@@ -1,4 +1,6 @@
 import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
+import { debounce } from "lodash";
+import { saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { getConfig } from "../config";
@@ -39,6 +41,10 @@ export const viewCreationAppStartup = (session: Session) => {
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
     setTimeout(() => showView("mail"), delay);
+
+    const debouncedUpdateWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
+    mainWindow.on("move", debouncedUpdateWindowBounds);
+    mainWindow.on("resize", debouncedUpdateWindowBounds);
 
     mainWindow.on("close", (event) => {
         // We don't want to prevent the close event if the update is downloaded
