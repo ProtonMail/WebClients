@@ -791,6 +791,9 @@
       "Something went wrong": [
         "Bir sorun çıktı"
       ],
+      "Something went wrong. Please sign in again.": [
+        "Bir sorun çıktı. Lütfen yeniden oturum açın."
+      ],
       "The file you are trying to import is empty": [
         "İçe aktarmak istediğiniz dosya boş"
       ],
@@ -802,9 +805,6 @@
       ],
       "Trashing item failed": [
         "Öge çöpe atılamadı"
-      ],
-      "Unable to boot": [
-        "Başlatılamadı"
       ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
@@ -841,6 +841,9 @@
       ],
       "Vault name does not match": [
         "Kasa adı aynı değil"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "${ PASS_SHORT_APP_NAME } başlatılırken bir sorun çıktı. Sorun sürerse yardım almak için müşteri desteği ekibimizle görüşün."
       ],
       "Wrong password": [
         "Parola yanlış"
@@ -1418,6 +1421,9 @@
       ],
       "Please consider leaving a review.": [
         "Lütfen bir yorum yazmayı değerlendirin."
+      ],
+      "Please do not close this window": [
+        "Lütfen bu pencereyi kapatmayın"
       ],
       "Please enter your current PIN code to continue": [
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
@@ -2401,7 +2407,7 @@
         "Verinizi içe aktarın"
       ],
       "Inactive 2FA": [
-        "Kullanılmayan iki adımlı doğrulama"
+        "Etkin olmayan iki adımlı doğrulama"
       ],
       "Install extension": [
         "Eklentiyi kur"
@@ -2446,7 +2452,7 @@
         "Katılmayan bir öge yok"
       ],
       "No inactive 2FAs": [
-        "Kullanılmayan iki adımlı doğrulama yok"
+        "Etkin olmayan iki adımlı doğrulama yok"
       ],
       "No insecure passwords": [
         "Güvenli olmayan bir parola yok"
