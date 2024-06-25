@@ -7,4 +7,5 @@ export enum NotificationKey {
     INACTIVE_SHARES = 'INACTIVE_SHARE',
     LOCK = 'LOCK',
     AUTH = 'AUTH',
+    ORG_MISSING_2FA = 'ORG_MISSING_2FA',
 }

@@ -487,8 +487,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                     if (event.status === 'not-allowed') {
                         config.onNotification?.({
-                            text: event.error ?? c('Error').t`Something went wrong`,
+                            text: '',
+                            key: NotificationKey.ORG_MISSING_2FA,
                             type: 'error',
+                            expiration: -1,
                         });
 
                         await authService.logout({ soft: true, broadcast: true });

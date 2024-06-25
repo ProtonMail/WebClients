@@ -18,6 +18,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { type RouteErrorState, getRouteError } from '@proton/pass/components/Navigation/routing';
+import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
 import { isOnline } from '@proton/pass/lib/api/utils';
@@ -96,6 +97,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const online = useConnectivityRef();
 
     const { createNotification } = useNotifications();
+    const enhance = useNotificationEnhancer();
     const { getCurrentLocation } = useNavigation();
 
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
@@ -370,11 +372,13 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onNotification: (notification) =>
-                createNotification({
-                    ...notification,
-                    key: notification.key ?? NotificationKey.AUTH,
-                    deduplicate: true,
-                }),
+                createNotification(
+                    enhance({
+                        ...notification,
+                        key: notification.key ?? NotificationKey.AUTH,
+                        deduplicate: true,
+                    })
+                ),
         });
 
         auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
