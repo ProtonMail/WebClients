@@ -70,7 +70,12 @@ describe('Offers', () => {
     describe('Offers display', () => {
         it('Should display upgrade button for free users', () => {
             renderWithProviders(<TopNavbarComponent />, {
-                preloadedState: { user: getModelState({ isFree: true } as any) },
+                preloadedState: {
+                    user: getModelState({ isFree: true } as any),
+                    features: {
+                        [FeatureCode.UpgradeButtonExpiration]: getModelState({ Value: 0 } as any),
+                    },
+                },
             });
 
             const link = screen.getByTestId('cta:upgrade-plan');
