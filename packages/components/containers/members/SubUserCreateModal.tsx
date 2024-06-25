@@ -437,21 +437,21 @@ const SubUserCreateModal = ({
                     </div>
                 )}
 
+                {allowPrivateMemberConfiguration && (
+                    <div className="flex items-center gap-2 mb-6">
+                        <Toggle
+                            id="private-toggle"
+                            checked={model.private}
+                            onChange={({ target }) => handleChange('private')(target.checked)}
+                        />
+                        <label className="text-semibold" htmlFor="private-toggle">
+                            {c('user_modal').t`Private`}
+                        </label>
+                    </div>
+                )}
+
                 {model.mode === CreateMemberMode.Password && (
                     <>
-                        {allowPrivateMemberConfiguration && (
-                            <div className="flex items-center gap-2 mb-6">
-                                <Toggle
-                                    id="private-toggle"
-                                    checked={model.private}
-                                    onChange={({ target }) => handleChange('private')(target.checked)}
-                                />
-                                <label className="text-semibold" htmlFor="private-toggle">
-                                    {c('user_modal').t`Private`}
-                                </label>
-                            </div>
-                        )}
-
                         <div className="flex items-center gap-2 mb-6">
                             <Toggle
                                 id="admin-toggle"
@@ -491,7 +491,7 @@ const SubUserCreateModal = ({
                 {model.mode !== CreateMemberMode.Password && (
                     <SubUserCreateHint className="mb-4">
                         {c('Info')
-                            .t`You will be able to promote the user to administrator or make them private once they've accepted the invitation.`}
+                            .t`You will be able to promote the user to administrator once they've accepted the invitation.`}
                     </SubUserCreateHint>
                 )}
             </ModalContent>

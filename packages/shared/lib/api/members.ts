@@ -66,8 +66,9 @@ interface UnprivatizationInvitation {
     Email: string;
     Data: string;
     Signature: string;
+    PrivateIntent: boolean;
 }
-interface InviteMemberPayload extends MemberPayload {
+interface InviteMemberPayload extends Omit<MemberPayload, 'Private'> {
     Invitation: UnprivatizationInvitation;
 }
 

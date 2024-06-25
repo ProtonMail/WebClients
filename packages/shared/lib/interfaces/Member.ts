@@ -44,32 +44,48 @@ export enum CreateMemberMode {
     Invitation,
 }
 
-export type MemberUnprivatization =
-    | {
-          State: Exclude<MemberUnprivatizationState, MemberUnprivatizationState.Ready>;
-          InvitationData: string;
-          InvitationSignature: string;
-          InvitationEmail: string;
-          PrivateKey: null;
-          ActivationToken: null;
-      }
-    | {
-          State: MemberUnprivatizationState.Ready;
-          InvitationData: string;
-          InvitationSignature: string;
-          InvitationEmail: string;
-          PrivateKey: string;
-          ActivationToken: string;
-      };
-
-export interface MemberUnprivatizationOutput {
+export interface PublicMemberUnprivatizationOutput {
     State: MemberUnprivatizationState;
     InvitationData: string;
     InvitationSignature: string;
+    InvitationEmail: string;
     AdminEmail: string;
     OrgKeyFingerprintSignature: string;
     OrgPublicKey: string;
+    PrivateIntent: false;
 }
+
+export type PrivateMemberUnprivatizationOutput = {
+    State: MemberUnprivatizationState;
+    InvitationData: null;
+    InvitationSignature: null;
+    InvitationEmail: string;
+    AdminEmail: string;
+    OrgKeyFingerprintSignature: null;
+    OrgPublicKey: null;
+    PrivateIntent: true;
+};
+export type MemberUnprivatizationOutput = PublicMemberUnprivatizationOutput | PrivateMemberUnprivatizationOutput;
+
+export type MemberUnprivatization = {
+    State: MemberUnprivatizationState;
+    PrivateKey: string | null;
+    ActivationToken: string | null;
+    PrivateIntent: boolean;
+    InvitationData: string | null;
+    InvitationSignature: string | null;
+    InvitationEmail: string | null;
+};
+
+export type MemberUnprivatizationReadyForUnprivatization = {
+    State: MemberUnprivatizationState.Ready;
+    PrivateKey: string;
+    ActivationToken: string;
+    PrivateIntent: false;
+    InvitationData: string;
+    InvitationSignature: string;
+    InvitationEmail: string;
+};
 
 export interface Member {
     ID: string;
@@ -94,6 +110,10 @@ export interface Member {
     TwoFactorRequiredTime: number;
     SSO: 1 | 0;
     Unprivatization: null | MemberUnprivatization;
+}
+
+export interface MemberReadyForUnprivatization extends Member {
+    Unprivatization: MemberUnprivatizationReadyForUnprivatization;
 }
 
 export type EnhancedMember = Member &
