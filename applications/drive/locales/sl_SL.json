@@ -733,7 +733,7 @@
         "Pošlji povratne informacije"
       ],
       "Set recovery phrase": [
-        "Nastavi stavek za obnovitev"
+        "Nastavi obnovitveno frazo"
       ],
       "Settings": [
         "Nastavitve"
@@ -841,7 +841,7 @@
         "Posodobi datoteko za obnovitev"
       ],
       "Update recovery phrase": [
-        "Posodobi stavek za obnovitev"
+        "Posodobi obnovitveno frazo"
       ],
       "Upgrade": [
         "Nadgradi"
@@ -959,6 +959,12 @@
       ],
       "${ price } per user": [
         "${ price } na uporabnika"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licenca za pomočnika pri pisanju",
+        "${ seats } licenci za pomočnika pri pisanju",
+        "${ seats } licence za pomočnika pri pisanju",
+        "${ seats } licenc za pomočnika pri pisanju"
       ],
       "${ users } user": [
         "${ users } uporabnik",
@@ -4819,6 +4825,9 @@
       "Preview for this file type is not supported": [
         "Predogled te vrste datotek ni podprt"
       ],
+      "Preview of documents is not yet supported. Please open the document to view it.": [
+        "Predogled dokumentov še ni podprt. Za ogled dokumenta ga odprite."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Prejšnje različice se hranijo za ${ retentionLabel }"
       ],
@@ -4833,6 +4842,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Omogočeno je zasebno iskanje. To pogovorno okno lahko zaprete in poiščete datoteke in mape."
+      ],
+      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
+        "Javna skupna raba dokumentov še ni podprta. Prosite lastnika, da vas neposredno povabi k dokumentu."
       ],
       "Queued": [
         "V vrsti"
@@ -5286,6 +5298,12 @@
       ],
       "Would you like to restore your files?": [
         "Ali želite obnoviti svoje datoteke?"
+      ],
+      "Writing assistant": [
+        "Pomočnik pri pisanju"
+      ],
+      "Writing assistant add-on": [
+        "Dodatek za pomočnika pri pisanju"
       ],
       "Yes": [
         "Da"
@@ -6044,7 +6062,7 @@
         "Možnosti naročnine"
       ],
       "Sync with system": [
-        "Sinhroniziraj s sistemom"
+        "Usklajeno s sistemom"
       ],
       "System information": [
         "Podatki o sistemu"
@@ -7380,7 +7398,7 @@
         "Uporabite lastno domeno za naslov e-pošte, na primer ime@priimek.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Ne shranjujemo nobenih sejnih evidenc o tem, kaj počnete na spletu, in ne beležimo metapodatkov, ki bi lahko ogrozili vašo zasebnost."
+        "Ne shranjujemo nobenih sejnih dnevnikov o tem, kaj počnete na spletu, in ne beležimo metapodatkov, ki bi lahko ogrozili vašo zasebnost."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Zavezani smo k pomoči strankam, ki so podvržene zakonodaji HIPAA/HITECH, pri varovanju zaščitenih zdravstvenih informacij (PHI). Podpisani BAA so na voljo za vse kupce ${ BRAND_NAME } za poslovne subjekte."
@@ -8974,6 +8992,9 @@
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Če ob izteku naročnine ${ planName } prekoračite omejitve brezplačnega načrta, ne boste mogli:"
       ],
+      "Learn more": [
+        "Več o tem"
+      ],
       "Learn more about our impact": [
         "Več o našem vplivu"
       ],
@@ -9029,10 +9050,10 @@
         "Čemu se odpoveste, ko prekličete ${ planName }"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na Drive. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 1 GB prostora za shranjevanje pošte in do 5 GB prostora za shranjevanje na disku. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
+        "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 5 GB prostora za shranjevanje na Drive in do 1 GB prostora za shranjevanje pošte. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "Yearly free storage bonuses": [
         "Bonus prostor za shranjevanje"

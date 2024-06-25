@@ -796,6 +796,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
       ],
+      "Understood": [
+        "理解"
+      ],
       "Undo": [
         "復原"
       ],
@@ -4040,6 +4043,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "由於連線問題，下載已暫停；將伺機自動恢復"
       ],
+      "Download was canceled": [
+        "下載已取消"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
       ],
@@ -6583,6 +6589,9 @@
       "Secure Core servers": [
         "Secure Core 伺服器"
       ],
+      "See team's availability": [
+        "查看團隊可用程度"
+      ],
       "Send & receive invitations": [
         "傳送並接收邀請"
       ],
@@ -6723,6 +6732,9 @@
       ],
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "開始使用安全加密電郵和行事曆。"
       ],
       "For next-level password management and identity protection.": [
         "用於下一個層級的密碼管理與身份保護。"
@@ -7486,6 +7498,9 @@
       ],
       "Last name": [
         "姓氏"
+      ],
+      "Message": [
+        "郵件"
       ],
       "Name": [
         "名稱"
@@ -8259,11 +8274,20 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME }與行事曆共享和使用性"
+      ],
       "${ dayDiff } day left": [
         "剩下${ dayDiff }天"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME }與版本歷史"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME }與自動郵件轉寄"
       ],
       "${ MaxCalendars } calendar per user": [
         "每位使用者${ MaxCalendars }個行事曆"
@@ -8274,6 +8298,9 @@
       "${ maxEmails } email address per user": [
         "${ maxEmails } 組電郵位址/每位使用者"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME }與${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } 可用空間 / 每位使用者"
       ],
@@ -8283,14 +8310,26 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 方案"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME }與惡意軟體和廣告阻擋"
+      ],
       "10 email addresses": [
         "10 個電子信箱"
+      ],
+      "20 email addresses per user": [
+        "每位使用者20組電郵位址"
+      ],
+      "25 calendars per user": [
+        "每位使用者25個行事曆"
       ],
       "6 users": [
         "6 位使用者"
       ],
       "Add any new files": [
         "新增任何檔案"
+      ],
+      "All you need for your business": [
+        "這是您公司只須要的"
       ],
       "Automatic email forwarding": [
         "自動郵件轉寄"
@@ -8304,11 +8343,20 @@
       "Early access to new apps and features": [
         "搶先體驗新應用程式與功能"
       ],
+      "Extra storage and users": [
+        "更多儲存和使用者"
+      ],
       "Helping activists in Hong Kong": [
         "支持於香港的行動"
       ],
+      "Learn more": [
+        "了解更多"
+      ],
       "Learn more about our impact": [
         "了解更多我們的影響"
+      ],
+      "Make your business stand out": [
+        "使您的企業突出"
       ],
       "Manage your calendar": [
         "管理您的行事曆"
@@ -8319,8 +8367,14 @@
       "Our fight against censorship in Russia": [
         "我們對抗俄羅斯審查"
       ],
+      "Premium productivity features": [
+        "進階版生產力功能"
+      ],
       "Priority support": [
         "優先支援"
+      ],
+      "Productivity features": [
+        "生產力功能"
       ],
       "Read the story": [
         "已讀的訊息"
