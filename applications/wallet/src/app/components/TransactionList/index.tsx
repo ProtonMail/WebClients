@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { add } from 'date-fns';
+import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount, WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
@@ -8,6 +9,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useUserKeys } from '@proton/components/hooks';
 import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-exchange.svg';
+import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton, SimplePaginator } from '../../atoms';
@@ -15,11 +17,12 @@ import { CoolDownButton } from '../../atoms/CoolDownButton';
 import { ITEMS_PER_PAGE } from '../../constants';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletDrawerContext } from '../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
-import { TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
+import { DecryptedTransactionData, TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
 import { getAccountTransactions, getThemeForWallet, getWalletTransactions } from '../../utils';
-import { DataList } from '../DataList';
+import { DataColumn, DataList } from '../DataList';
 import { TransactionNoteModal } from '../TransactionNoteModal';
 import {
     AmountDataListItem,
@@ -38,6 +41,8 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         useBitcoinBlockchainContext();
     const { openDrawer, drawer, setDrawerData } = useWalletDrawerContext();
     const [sortOrder, setSortOrder] = useState<WasmSortOrder>(WasmSortOrder.Desc);
+
+    const { isNarrow } = useResponsiveContainerContext();
 
     const syncingData = getSyncingData(apiWalletData.Wallet.ID, apiAccount?.ID);
     const isSyncingWalletData = syncingData?.syncing;
@@ -119,10 +124,59 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
 
     const transactionsTable = useMemo(() => {
         if (transactionDetails?.length) {
+            const columns: DataColumn<{
+                key: string;
+                networkData: WasmTransactionDetails;
+                apiData: DecryptedTransactionData | null;
+            }>[] = compact([
+                {
+                    id: 'confirmation',
+                    colSpan: '2fr',
+                    data: (row) => <ConfirmationTimeDataListItem loading={loadingRecordInit} tx={row} />,
+                },
+                {
+                    id: 'senderorrecipients',
+                    colSpan: '3fr',
+                    data: (row) => <SenderOrRecipientDataListItem loading={loadingApiData} tx={row} />,
+                },
+                !isNarrow
+                    ? {
+                          id: 'note',
+                          colSpan: '1fr',
+                          data: (row) => (
+                              <NoteDataListItem
+                                  loading={loadingApiData}
+                                  tx={row}
+                                  onClick={() => {
+                                      setNoteModalState({ transaction: row });
+                                  }}
+                              />
+                          ),
+                      }
+                    : null,
+                {
+                    id: 'amount',
+                    colSpan: 'minmax(7rem, 1fr)',
+                    data: (row) => (
+                        <AmountDataListItem
+                            loadingLabel={loadingApiData}
+                            loading={loadingRecordInit}
+                            tx={row}
+                            exchangeRate={row.apiData?.ExchangeRate ?? undefined}
+                        />
+                    ),
+                },
+            ]);
+
             return (
                 <>
-                    <div className="flex flex-column flex-nowrap mb-2 grow overflow-auto">
-                        <div className="relative flex flex-column mx-4 bg-weak rounded-xl">
+                    <div className="flex flex-column grow flex-nowrap mb-2 grow overflow-auto">
+                        <div
+                            className={clsx(
+                                'relative flex flex-column grow bg-weak rounded-xl',
+                                isNarrow ? '' : 'mx-4'
+                            )}
+                        >
                             <DataList
                                 onClickRow={(tx) => handleClickRow(tx)}
                                 canClickRow={(tx) => !!tx}
@@ -130,50 +184,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                                     ...tx,
                                     key: `${tx.networkData.txid}-${tx.networkData.received}-${tx.networkData.sent}`,
                                 }))}
-                                columns={[
-                                    {
-                                        id: 'confirmation',
-                                        className: 'w-custom no-shrink',
-                                        style: { '--w-custom': '15rem' },
-                                        data: (row) => (
-                                            <ConfirmationTimeDataListItem loading={loadingRecordInit} tx={row} />
-                                        ),
-                                    },
-                                    {
-                                        id: 'senderorrecipients',
-                                        className: 'grow',
-                                        data: (row) => (
-                                            <SenderOrRecipientDataListItem loading={loadingApiData} tx={row} />
-                                        ),
-                                    },
-                                    {
-                                        id: 'note',
-                                        className: 'w-custom no-shrink',
-                                        style: { '--w-custom': '10rem' },
-                                        data: (row) => (
-                                            <NoteDataListItem
-                                                loading={loadingApiData}
-                                                tx={row}
-                                                onClick={() => {
-                                                    setNoteModalState({ transaction: row });
-                                                }}
-                                            />
-                                        ),
-                                    },
-                                    {
-                                        id: 'amount',
-                                        className: 'w-custom no-shrink',
-                                        style: { '--w-custom': '8rem' },
-                                        data: (row) => (
-                                            <AmountDataListItem
-                                                loadingLabel={loadingApiData}
-                                                loading={loadingRecordInit}
-                                                tx={row}
-                                                exchangeRate={row.apiData?.ExchangeRate ?? undefined}
-                                            />
-                                        ),
-                                    },
-                                ]}
+                                columns={columns}
                             />
                         </div>
                     </div>
@@ -238,28 +249,35 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
     }, [
         transactionDetails,
         isSyncingWalletData,
+        isNarrow,
         displayedPageNumber,
         currentPage,
         handleNext,
         transactions,
         handlePrev,
-        handleClickRow,
         loadingRecordInit,
         loadingApiData,
         setNoteModalState,
+        handleClickRow,
     ]);
 
     return (
-        <>
-            <div className="flex flex-row mx-4 mb-6 mt-10 items-center justify-space-between">
-                <h2 className="mr-4 text-semibold">{c('Wallet transactions').t`Transactions`}</h2>
+        <div className={clsx('flex flex-column grow', isNarrow && 'bg-weak rounded-xl mx-2')}>
+            <div
+                className={clsx(
+                    'flex flex-row px-4 items-center justify-space-between',
+                    isNarrow ? 'mt-6 mb-3 color-weak' : 'mt-10 mb-6'
+                )}
+            >
+                <h2 className={clsx('mr-4 text-semibold', isNarrow ? 'text-lg' : 'text-4xl')}>{c('Wallet transactions')
+                    .t`Transactions`}</h2>
 
                 <div className="flex flex-row">
                     <CoolDownButton
                         end={cooldownEndTime}
                         start={cooldownStartTime}
                         icon
-                        size="medium"
+                        size={isNarrow ? 'small' : 'medium'}
                         shape="ghost"
                         color="weak"
                         className="ml-2"
@@ -267,11 +285,15 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                         disabled={isSyncingWalletData}
                         onClick={() => handleClickSync()}
                     >
-                        <Icon name="arrows-rotate" size={5} alt={c('Wallet transactions list').t`Sync`} />
+                        <Icon
+                            name="arrows-rotate"
+                            size={isNarrow ? 4 : 5}
+                            alt={c('Wallet transactions list').t`Sync`}
+                        />
                     </CoolDownButton>
                     <CoreButton
                         icon
-                        size="medium"
+                        size={isNarrow ? 'small' : 'medium'}
                         shape="ghost"
                         color="weak"
                         className="ml-2 rounded-full bg-weak"
@@ -286,20 +308,20 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                             <Icon
                                 alt={c('Wallet transactions list').t`Descending order`}
                                 name="list-arrow-down"
-                                size={5}
+                                size={isNarrow ? 4 : 5}
                             />
                         ) : (
                             <Icon
                                 alt={c('Wallet transactions list').t`Ascending order`}
                                 name="list-arrow-up"
-                                size={5}
+                                size={isNarrow ? 4 : 5}
                             />
                         )}
                     </CoreButton>
                 </div>
             </div>
 
-            <div className="flex flex-column flex-nowrap grow">{transactionsTable}</div>
+            <div className="flex flex-column w-full grow flex-nowrap grow">{transactionsTable}</div>
 
             <TransactionNoteModal
                 onUpdateLabel={(label, tx) => {
@@ -312,6 +334,6 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                 }}
                 {...noteModalState}
             />
-        </>
+        </div>
     );
 };

@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { WasmApiExchangeRate } from '@proton/andromeda';
@@ -12,6 +14,7 @@ import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import {
@@ -33,7 +36,8 @@ export interface TxDataWithExchangeRateListItemProps extends TxDataListItemProps
 }
 
 export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProps) => {
-    const now = new Date();
+    const { isNarrow } = useResponsiveContainerContext();
+    const now = useMemo(() => new Date(), []);
     const value = tx.networkData.received - tx.networkData.sent;
 
     const confirmedDate =
@@ -47,19 +51,15 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
                 value >= 0 ? (
                     <img
                         src={arrowReceiveSvg}
-                        alt="A green arrow going down, symbolising money entering wallet"
-                        className="mr-4"
+                        alt="A green arrow going down"
+                        className={clsx(isNarrow ? 'mr-2' : 'mr-4')}
                     />
                 ) : (
-                    <img
-                        src={arrowSendSvg}
-                        alt="A red arrow going down, symbolising money leaving wallet"
-                        className="mr-4"
-                    />
+                    <img src={arrowSendSvg} alt="A red arrow going down" className={clsx(isNarrow ? 'mr-2' : 'mr-4')} />
                 )
             }
             bottomNode={
-                <div className={clsx(loading && 'skeleton-loader')} style={{ height: '1.5rem' }}>
+                <div className={clsx(loading && 'skeleton-loader')}>
                     {confirmedDate ? (
                         <span className="color-hint block text-ellipsis">{confirmedDate}</span>
                     ) : (
@@ -91,12 +91,7 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
                     : c('Wallet transactions').ngettext(msgid`Sender`, `Senders`, tx.networkData.inputs.length)
             }
             bottomNode={
-                <div
-                    className={clsx('color-hint block text-ellipsis', loading && 'skeleton-loader')}
-                    style={{ height: '1.5rem' }}
-                >
-                    {name}
-                </div>
+                <div className={clsx('color-hint block text-ellipsis', loading && 'skeleton-loader')}>{name}</div>
             }
         />
     );
@@ -111,11 +106,11 @@ export const NoteDataListItem = ({
         <DataListItem
             label="Note"
             bottomNode={
-                <div className={clsx('flex items-center', loading && 'skeleton-loader')} style={{ height: '1.5rem' }}>
+                <div className={clsx('flex items-center', loading && 'skeleton-loader')}>
                     <CoreButton
                         shape="ghost"
                         color={tx.apiData?.Label ? 'weak' : 'norm'}
-                        className="p-0.5 color-hint block text-ellipsis"
+                        className="py-0.5 px-1 color-hint block text-ellipsis"
                         style={{
                             color: !tx.apiData?.Label && 'var(--interaction-norm)',
                             background: 'transparent',
@@ -146,7 +141,7 @@ export const AmountDataListItem = ({
         <DataListItem
             align="end"
             label={
-                <div className={clsx('ml-auto', loadingLabel && 'skeleton-loader')}>
+                <div className={clsx('ml-auto flex flex-row flex-nowrap', loadingLabel && 'skeleton-loader')}>
                     {exchangeRate ? (
                         <Price unit={exchangeRate} satsAmount={value} />
                     ) : (
@@ -156,8 +151,7 @@ export const AmountDataListItem = ({
             }
             bottomNode={
                 <div
-                    className={clsx('block ml-auto color-hint', loading && 'skeleton-loader')}
-                    style={{ height: '1.5rem' }}
+                    className={clsx('block ml-auto color-hint flex flex-row flex-nowrap', loading && 'skeleton-loader')}
                 >
                     {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                     {getLabelByUnit(settings.BitcoinUnit)}

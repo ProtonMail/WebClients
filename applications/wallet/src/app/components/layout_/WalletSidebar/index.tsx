@@ -59,7 +59,7 @@ const WalletSidebar = ({
             }
             version={<AppVersion />}
             showStorage={false}
-            className="bg-weak"
+            className="wallet-sidebar-overide bg-weak"
         >
             <SidebarNav className="flex">
                 <div className="outline-none flex flex-column justify-space-between grow max-h-full">

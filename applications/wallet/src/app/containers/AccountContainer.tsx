@@ -68,17 +68,17 @@ export const AccountContainer = () => {
 
     return (
         <>
-            <div className={clsx('flex flex-row w-full min-h-full flex-nowrap', theme)}>
+            <div className={clsx('flex flex-row flex-nowrap w-full min-h-full flex-nowrap', theme)}>
                 <div className="flex flex-column flex-1 p-8 pt-0 flex-nowrap grow">
-                    <div className="flex flex-row m-4 items-center">
-                        <h1 className="mr-4 text-semibold">{walletAccount.Label}</h1>
+                    <div className="flex flex-row flex-nowrap m-4 items-center">
+                        <h1 className="mr-4 text-semibold text-ellipsis">{walletAccount.Label}</h1>
 
                         <CoreButton
                             icon
                             size="medium"
                             shape="ghost"
                             color="weak"
-                            className="ml-2 rounded-full bg-weak"
+                            className="ml-2 rounded-full bg-weak no-shrink"
                             onClick={() => {
                                 setWalletPreferencesModalState(true);
                             }}

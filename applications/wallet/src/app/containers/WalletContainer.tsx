@@ -3,15 +3,14 @@ import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import generateUID from '@proton/atoms/generateUID';
 import { Icon, useModalState } from '@proton/components/components';
 import { useLoading } from '@proton/hooks/index';
 import clsx from '@proton/utils/clsx';
-import { encryptWalletDataWithWalletKey } from '@proton/wallet';
-import { getPassphraseLocalStorageKey } from '@proton/wallet';
+import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 
 import { CoreButton } from '../atoms';
+import { LayoutViewLoader } from '../atoms/LayoutViewLoader';
 import { Balance } from '../components/Balance';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
@@ -19,6 +18,7 @@ import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
+import { useResponsiveContainerContext } from '../contexts/ResponsiveContainerContext';
 import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
 import { getThemeForWallet } from '../utils';
 
@@ -27,6 +27,8 @@ export const WalletContainer = () => {
     const history = useHistory();
     const { openDrawer } = useWalletDrawerContext();
     const [loading, withLoading] = useLoading();
+
+    const { isNarrow } = useResponsiveContainerContext();
 
     // Used to reset bitcoin send modal at the end of the process
     const generateBitcoinSendKey = () => generateUID('bitcoin-send');
@@ -51,7 +53,7 @@ export const WalletContainer = () => {
     ];
 
     if (!decryptedApiWalletsData) {
-        return <CircleLoader />;
+        return <LayoutViewLoader />;
     }
 
     if (!wallet) {
@@ -86,18 +88,18 @@ export const WalletContainer = () => {
 
     return (
         <>
-            <div className={clsx('flex flex-row w-full min-h-full flex-nowrap', theme)}>
-                <div className="flex flex-column flex-1 p-8 pt-0 flex-nowrap grow">
+            <div className={clsx('flex flex-row flex-nowrap w-full min-h-full flex-nowrap', theme)}>
+                <div className={clsx('flex flex-column flex-1 pt-0 flex-nowrap grow', isNarrow ? 'p-1' : 'p-8')}>
                     <div className="flex flex-row justify-space-between m-4 items-center">
-                        <div className="flex flex-row items-center">
-                            <h1 className="mr-4 text-semibold">{wallet.Wallet.Name}</h1>
+                        <div className="flex flex-row flex-nowrap items-center">
+                            <h1 className="mr-4 text-semibold text-ellipsis">{wallet.Wallet.Name}</h1>
 
                             <CoreButton
                                 icon
                                 size="medium"
                                 shape="ghost"
                                 color="weak"
-                                className="ml-2 rounded-full bg-weak"
+                                className="ml-2 mr-6 rounded-full bg-weak no-shrink"
                                 disabled={loading}
                                 onClick={() => {
                                     setWalletPreferencesModalState(true);
@@ -141,7 +143,7 @@ export const WalletContainer = () => {
                         isOpen={needPassphrase}
                         onClose={history.goBack}
                         onConfirmPassphrase={(passphrase) => {
-                            withLoading(loadWalletWithPassphrase(passphrase));
+                            void withLoading(loadWalletWithPassphrase(passphrase));
                         }}
                     />
 
