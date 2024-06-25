@@ -6134,6 +6134,14 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Poista tili"
@@ -6155,14 +6163,6 @@
       ],
       "Switch plan": [
         "Vaihda tilausta"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -8282,47 +8282,6 @@
         "Käyttöjärjestelmä: ${ totalPrice }"
       ]
     },
-    "subscription reminder": {
-      "15 GB storage": [
-        "15 Gt tallennustilaa"
-      ],
-      "and 15 more premium features": [
-        "sekä 15 muuta premium-ominaisuutta"
-      ],
-      "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
-      ],
-      "Data breach alerts ${ strongArgument }": [
-        "Tietomurtohälytykset ${ strongArgument }"
-      ],
-      "Desktop app": [
-        "Työpöytäsovellus"
-      ],
-      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
-      ],
-      "No ads or tracking": [
-        "Ei mainoksia eikä seurantaa"
-      ],
-      "Short @pm.me email address": [
-        "Lyhyt @pm.me-sähköpostiosoite"
-      ],
-      "Support our mission": [
-        "Tue tehtäväämme"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade your productivity": [
-        "Tehosta tuottavuuttasi"
-      ],
-      "We don't sell your data": [
-        "Emme myy tietojasi"
-      ],
-      "Your privacy is our mission": [
-        "Yksityisyytesi on tehtävämme"
-      ]
-    },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
         "${ BRAND_NAME }in ainoa tulonlähde ovat käyttäjien tilaukset. Tukesi avulla voimme säilyttää itsenäisyytemme, edistää tavoitettamme tehdä yksityisyydestä oletusarvoista verkossa, ja lisäksi se auttaa meitä jatkossakin tukemaan yksityisyyden ja vapauden puolesta taistelevia aktivisteja ja organisaatioita."
@@ -8370,6 +8329,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME }, sisältäen rajattomasti Hide-my-email-aliaksia"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } + ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } tallennustilaa/käyttäjä"
       ],
@@ -8377,7 +8339,7 @@
         "Yhteensä ${ planMaxSpace } tallennustilaa"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja henkilöllisyytesi ovat turvassa."
+        "${ planName } antaa sinulle pääsyn kaikkiin sovelluksiin ja premium-ominaisuuksiin. Yksityisyys on otettu huomioon, joten voit jatkaa tietäen, että tietosi ja identiteettisi ovat turvassa."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
@@ -8594,6 +8556,47 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ]
+    },
+    "subscription reminder": {
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "and 15 more premium features": [
+        "sekä 15 muuta premium-ominaisuutta"
+      ],
+      "Automatic email forwarding ${ strongText }": [
+        "Automaattinen sähköpostiohjaus ${ strongText }"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Tietomurtohälytykset ${ strongArgument }"
+      ],
+      "Desktop app": [
+        "Työpöytäsovellus"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "Auta meitä pitämään Internet kaikille turvallisena. Päivitä maksulliseen tilaukseen."
+      ],
+      "No ads or tracking": [
+        "Ei mainoksia eikä seurantaa"
+      ],
+      "Short @pm.me email address": [
+        "Lyhyt @pm.me-sähköpostiosoite"
+      ],
+      "Support our mission": [
+        "Tue tehtäväämme"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade your productivity": [
+        "Tehosta tuottavuuttasi"
+      ],
+      "We don't sell your data": [
+        "Emme myy tietojasi"
+      ],
+      "Your privacy is our mission": [
+        "Yksityisyytesi on tehtävämme"
       ]
     },
     "Subscription renewal state": {
