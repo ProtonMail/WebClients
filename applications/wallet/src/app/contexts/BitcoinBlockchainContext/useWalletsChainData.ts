@@ -146,7 +146,11 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
             const canSync =
                 !metadata ||
                 (!metadata.syncing &&
-                    isBefore(metadata.lastSyncing, sub(new Date(), { seconds: SYNCING_MINIMUM_COOLDOWN_MINUTES })));
+                    (!metadata.lastSyncing ||
+                        isBefore(
+                            metadata.lastSyncing,
+                            sub(new Date(), { seconds: SYNCING_MINIMUM_COOLDOWN_MINUTES })
+                        )));
 
             const account = walletsChainDataRef.current?.[walletId]?.accounts[accountId];
 
