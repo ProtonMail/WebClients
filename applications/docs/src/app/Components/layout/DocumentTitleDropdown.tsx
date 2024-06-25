@@ -16,8 +16,15 @@ import { c } from 'ttag'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg'
+import { DocumentAction } from '@proton/drive-store'
 
-const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterface | null }) => {
+const DocumentTitleDropdown = ({
+  controller,
+  action,
+}: {
+  controller: DocControllerInterface | null
+  action?: DocumentAction['mode']
+}) => {
   const application = useApplication()
 
   const [title, setTitle] = useState<string>('Loading document title...')
@@ -72,10 +79,22 @@ const DocumentTitleDropdown = ({ controller }: { controller: DocControllerInterf
 
     setTitle(controller.getSureDocument().name)
 
+    if (action === 'history') {
+      showHistoryModal({
+        versionHistory: controller.getVersionHistory(),
+      })
+    }
+
+    if (action === 'download') {
+      controller.initialize().then(() => {
+        void controller.exportAndDownload('docx')
+      })
+    }
+
     return controller.addChangeObserver((doc) => {
       setTitle(doc.name)
     })
-  }, [controller])
+  }, [controller, action])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
 
