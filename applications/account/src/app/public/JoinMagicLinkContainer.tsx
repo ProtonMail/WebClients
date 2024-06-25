@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Href } from '@proton/atoms/Href';
 import { Icon, InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
 import { GenericError, OnLoginCallback } from '@proton/components/containers';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
@@ -27,15 +28,16 @@ import {
     getMinPasswordLengthMessage,
     passwordLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, Api, MemberUnprivatizationOutput, Organization, User } from '@proton/shared/lib/interfaces';
 import {
     ParsedUnprivatizationData,
     parseUnprivatizationData,
     setupKeysWithUnprivatization,
-    validateInvitationDataValues,
     validateUnprivatizationData,
 } from '@proton/shared/lib/keys/unprivatization';
 
+import { getTerms } from '../signup/terms';
 import ExpiredError from './ExpiredError';
 import Header from './Header';
 import Layout from './Layout';
@@ -68,7 +70,6 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
         organization: Organization;
         authApi: Api;
         addresses: Address[];
-        unprivatizationData: MemberUnprivatizationOutput;
         parsedUnprivatizationData: ParsedUnprivatizationData;
     } | null>(null);
     const [loading, setLoading] = useState(true);
@@ -104,19 +105,13 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
                 await validateUnprivatizationData({
                     api: authApi,
                     verifyOutboundPublicKeys,
-                    unprivatizationData,
                     parsedUnprivatizationData,
-                });
-                await validateInvitationDataValues({
-                    api: authApi,
                     addresses,
-                    invitationData: parsedUnprivatizationData.invitationData,
                 });
                 dataRef.current = {
                     user,
                     organization,
                     addresses,
-                    unprivatizationData,
                     parsedUnprivatizationData,
                     authApi,
                 };
@@ -215,12 +210,27 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
     }
 
     const data = dataRef.current;
-    const adminEmail = data?.unprivatizationData.AdminEmail;
-    const username = data?.addresses?.[0]?.Email;
-    const organizationName = data?.organization.Name;
+    const { adminEmail, username, organizationName, type } = (() => {
+        if (!data) {
+            return {
+                type: 'public' as const,
+                adminEmail: '',
+                username: '',
+                organizationName: '',
+            };
+        }
+
+        const { addresses, parsedUnprivatizationData, organization } = data;
+        return {
+            type: parsedUnprivatizationData.type,
+            adminEmail: parsedUnprivatizationData.payload.unprivatizationData.AdminEmail,
+            username: addresses?.[0]?.Email || '',
+            organizationName: organization.Name,
+        };
+    })();
 
     const user = (
-        <div className="flex items-start w-full text-left rounded relative">
+        <div className="flex items-center w-full text-left rounded relative">
             <span
                 className="flex rounded w-custom h-custom bg-weak"
                 style={{
@@ -232,26 +242,23 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
                     <Icon name="user" />
                 </span>
             </span>
-            <div className="account-button-content mx-3 flex-1 mt-custom" style={{ '--mt-custom': `-0.25em` }}>
-                <div className="text-left">
-                    <div className="text-break text-semibold">{adminEmail}</div>
-                    {organizationName && <div className="text-break text-sm">{organizationName}</div>}
-                </div>
+            <div className="mx-3 flex-1 mt-custom" style={{ '--mt-custom': `-0.25em` }}>
+                <div className="text-left text-break text-semibold">{adminEmail}</div>
             </div>
         </div>
     );
 
     return (
-        <Layout>
+        <Layout hasDecoration={true}>
             <Main>
                 <div>
+                    {organizationName && <Header title={organizationName} className="text-break-all" />}
                     <div className="color-weak mb-2">{c('Info').t`This is an invitation from:`}</div>
                     {user}
                     <div className="mt-6 mb-6">
                         <hr />
                     </div>
                 </div>
-                <Header title={c('Info').t`Set your password`} />
                 <form
                     name="loginForm"
                     onSubmit={(event) => {
@@ -299,9 +306,22 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
                         onValue={setConfirmNewPassword}
                         rootClassName="mt-2"
                     />
+
+                    {type === 'public' && (
+                        <div className="mt-4 py-2 px-3 border border-weak rounded flex flex-nowrap">
+                            <Icon name="info-circle" className="mr-2 mt-0.5 shrink-0" />
+                            <div>
+                                {c('Info')
+                                    .t`Your administrator configured your account as non-private and will have access to your account and your data.`}{' '}
+                                <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link')
+                                    .t`Learn more`}</Href>
+                            </div>
+                        </div>
+                    )}
                     <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-4">
                         {c('Action').t`Continue`}
                     </Button>
+                    <div className="color-weak text-sm text-center mt-4">{getTerms()}</div>
                 </form>
             </Main>
         </Layout>

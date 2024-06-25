@@ -13,10 +13,14 @@ import {
     Address,
     Api,
     KeyTransparencyActivation,
-    Member,
     MemberInvitationData,
+    MemberReadyForUnprivatization,
+    MemberUnprivatization,
     MemberUnprivatizationOutput,
+    MemberUnprivatizationReadyForUnprivatization,
     MemberUnprivatizationState,
+    PrivateMemberUnprivatizationOutput,
+    PublicMemberUnprivatizationOutput,
     Unwrap,
     User,
     VerifyOutboundPublicKeys,
@@ -138,59 +142,6 @@ export const validateInvitationData = async ({
     return result;
 };
 
-export const parseUnprivatizationData = async ({
-    unprivatizationData: { OrgPublicKey, InvitationData },
-}: {
-    unprivatizationData: MemberUnprivatizationOutput;
-}) => {
-    const orgPublicKey = await CryptoProxy.importPublicKey({ armoredKey: OrgPublicKey });
-    const invitationData = parseInvitationData(InvitationData);
-    return {
-        orgPublicKey,
-        invitationData,
-    };
-};
-export type ParsedUnprivatizationData = Unwrap<ReturnType<typeof parseUnprivatizationData>>;
-
-export const validateUnprivatizationData = async ({
-    api,
-    verifyOutboundPublicKeys,
-    unprivatizationData: { InvitationData, OrgKeyFingerprintSignature, InvitationSignature, State, AdminEmail },
-    parsedUnprivatizationData: { orgPublicKey },
-}: {
-    unprivatizationData: MemberUnprivatizationOutput;
-    api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    parsedUnprivatizationData: ParsedUnprivatizationData;
-}) => {
-    if (State !== MemberUnprivatizationState.Pending) {
-        throw new Error('Invalid member state');
-    }
-
-    const verifiedPublicKeysResult = await getVerifiedPublicKeys({
-        api,
-        verifyOutboundPublicKeys,
-        email: AdminEmail,
-    }).catch(noop);
-    if (!verifiedPublicKeysResult) {
-        throw new Error('Unable to fetch public keys of admin');
-    }
-
-    const verifiedPublicKeys = verifiedPublicKeysResult.map(({ publicKey }) => publicKey);
-
-    await validateOrganizationKeySignature({
-        organizationKey: orgPublicKey,
-        armoredSignature: OrgKeyFingerprintSignature,
-        verificationKeys: verifiedPublicKeys,
-    });
-
-    await validateInvitationData({
-        textData: InvitationData,
-        armoredSignature: InvitationSignature,
-        verificationKeys: [orgPublicKey],
-    });
-};
-
 export const validateInvitationDataValues = async ({
     addresses,
     invitationData,
@@ -213,12 +164,99 @@ export const validateInvitationDataValues = async ({
     }
 };
 
+export const parseUnprivatizationData = async ({
+    unprivatizationData,
+}: {
+    unprivatizationData: MemberUnprivatizationOutput;
+}): Promise<
+    | { type: 'private'; payload: { unprivatizationData: PrivateMemberUnprivatizationOutput } }
+    | {
+          type: 'public';
+          payload: {
+              orgPublicKey: PublicKeyReference;
+              invitationData: MemberInvitationData;
+              unprivatizationData: PublicMemberUnprivatizationOutput;
+          };
+      }
+> => {
+    if (unprivatizationData.PrivateIntent) {
+        return {
+            type: 'private',
+            payload: {
+                unprivatizationData,
+            },
+        };
+    }
+    const { OrgPublicKey, InvitationData } = unprivatizationData;
+    const orgPublicKey = await CryptoProxy.importPublicKey({ armoredKey: OrgPublicKey });
+    const invitationData = parseInvitationData(InvitationData);
+    return {
+        type: 'public',
+        payload: {
+            orgPublicKey,
+            invitationData,
+            unprivatizationData,
+        },
+    };
+};
+export type ParsedUnprivatizationData = Unwrap<ReturnType<typeof parseUnprivatizationData>>;
+
+export const validateUnprivatizationData = async ({
+    api,
+    verifyOutboundPublicKeys,
+    parsedUnprivatizationData,
+    addresses,
+}: {
+    api: Api;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    parsedUnprivatizationData: ParsedUnprivatizationData;
+    addresses: Address[];
+}) => {
+    if (parsedUnprivatizationData.type === 'private') {
+        return;
+    }
+
+    const {
+        orgPublicKey,
+        unprivatizationData: { AdminEmail, InvitationData, InvitationSignature, OrgKeyFingerprintSignature },
+        invitationData,
+    } = parsedUnprivatizationData.payload;
+    const verifiedPublicKeysResult = await getVerifiedPublicKeys({
+        api,
+        verifyOutboundPublicKeys,
+        email: AdminEmail,
+    }).catch(noop);
+    if (!verifiedPublicKeysResult) {
+        throw new Error('Unable to fetch public keys of admin');
+    }
+
+    const verifiedPublicKeys = verifiedPublicKeysResult.map(({ publicKey }) => publicKey);
+
+    await validateOrganizationKeySignature({
+        organizationKey: orgPublicKey,
+        armoredSignature: OrgKeyFingerprintSignature,
+        verificationKeys: verifiedPublicKeys,
+    });
+
+    await validateInvitationData({
+        textData: InvitationData,
+        armoredSignature: InvitationSignature,
+        verificationKeys: [orgPublicKey],
+    });
+
+    await validateInvitationDataValues({
+        api,
+        addresses,
+        invitationData,
+    });
+};
+
 export const setupKeysWithUnprivatization = async ({
     user,
     addresses,
     api,
     password,
-    parsedUnprivatizationData: { orgPublicKey },
+    parsedUnprivatizationData,
     ktActivation,
 }: {
     user: User;
@@ -242,33 +280,53 @@ export const setupKeysWithUnprivatization = async ({
         throw new Error('Missing keys payload');
     }
 
-    const primaryUserKey = privateKeys.userKey;
-    const addressKeys = privateKeys.addressKeys.map(({ privateKey }) => privateKey);
-    const token = generateActivationToken();
-    const orgActivationToken = await getEncryptedOrganizationActivationToken({
-        token,
-        encryptionKeys: [orgPublicKey],
-        signingKeys: addressKeys,
-    });
-    const orgPrimaryUserKeyArmored = await CryptoProxy.exportPrivateKey({
-        privateKey: primaryUserKey,
-        passphrase: token,
-    });
+    const product = 'generic';
 
-    await srpVerify({
-        api,
-        credentials: { password },
-        config: setupKeys(
-            {
-                KeySalt: salt,
-                PrimaryKey: userKeyPayload,
-                AddressKeys: addressKeysPayload,
-                OrgActivationToken: orgActivationToken,
-                OrgPrimaryUserKey: orgPrimaryUserKeyArmored,
-            },
-            'generic'
-        ),
-    });
+    if (parsedUnprivatizationData.type === 'public') {
+        const { orgPublicKey } = parsedUnprivatizationData.payload;
+        const token = generateActivationToken();
+        const primaryUserKey = privateKeys.userKey;
+        const addressKeys = privateKeys.addressKeys.map(({ privateKey }) => privateKey);
+        const orgActivationToken = await getEncryptedOrganizationActivationToken({
+            token,
+            encryptionKeys: [orgPublicKey],
+            signingKeys: addressKeys,
+        });
+        const orgPrimaryUserKeyArmored = await CryptoProxy.exportPrivateKey({
+            privateKey: primaryUserKey,
+            passphrase: token,
+        });
+
+        await srpVerify({
+            api,
+            credentials: { password },
+            config: setupKeys(
+                {
+                    KeySalt: salt,
+                    PrimaryKey: userKeyPayload,
+                    AddressKeys: addressKeysPayload,
+                    OrgActivationToken: orgActivationToken,
+                    OrgPrimaryUserKey: orgPrimaryUserKeyArmored,
+                },
+                product
+            ),
+        });
+    } else if (parsedUnprivatizationData.type === 'private') {
+        await srpVerify({
+            api,
+            credentials: { password },
+            config: setupKeys(
+                {
+                    KeySalt: salt,
+                    PrimaryKey: userKeyPayload,
+                    AddressKeys: addressKeysPayload,
+                },
+                product
+            ),
+        });
+    } else {
+        throw new Error('Unknown type');
+    }
 
     await onSKLPublishSuccess();
 
@@ -311,6 +369,19 @@ export interface UnprivatizeMemberResult {
     AddressKeys: UnprivatizeMemberAddressKeyDto[];
 }
 
+export const getMemberReadyForUnprivatization = (
+    unprivatizationData: MemberUnprivatization | null
+): unprivatizationData is MemberUnprivatizationReadyForUnprivatization => {
+    return Boolean(
+        unprivatizationData?.State === MemberUnprivatizationState.Ready &&
+            !unprivatizationData.PrivateIntent &&
+            unprivatizationData.InvitationData &&
+            unprivatizationData.InvitationSignature &&
+            unprivatizationData.ActivationToken &&
+            unprivatizationData.PrivateKey
+    );
+};
+
 export const unprivatizeMember = async ({
     verifyOutboundPublicKeys,
     api,
@@ -319,15 +390,15 @@ export const unprivatizeMember = async ({
     organizationKey,
 }: {
     api: Api;
-    member: Member;
+    member: MemberReadyForUnprivatization;
     memberAddresses: Address[];
     organizationKey?: PrivateKeyReference;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
 }): Promise<UnprivatizeMemberResult> => {
-    const unprivatizationData = member.Unprivatization;
-    if (unprivatizationData?.State !== MemberUnprivatizationState.Ready || !organizationKey) {
+    if (!organizationKey) {
         throw new Error('Invalid requirements');
     }
+    const unprivatizationData = member.Unprivatization;
     const { InvitationData, InvitationSignature, ActivationToken, PrivateKey } = unprivatizationData;
     await validateInvitationData({
         textData: InvitationData,
