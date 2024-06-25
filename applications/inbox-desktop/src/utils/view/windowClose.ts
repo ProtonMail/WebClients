@@ -20,12 +20,15 @@ export const macOSExitEvent = (window: BrowserWindow) => {
 
 export const windowsAndLinuxExitEvent = (window: BrowserWindow) => {
     window.hide();
-    saveWindowBounds(window);
 
     // Close the application if all windows are closed
     if (!window.isVisible()) {
-        mainLogger.info("close, window not visible on Windows");
-        window.destroy();
+        mainLogger.info("close, window not visible on Windows or Linux");
+
+        if (!window.isDestroyed()) {
+            window.destroy();
+        }
+
         app.quit();
     }
 };
