@@ -29,9 +29,6 @@
       ]
     },
     "Error": {
-      "Coudn't load invoices. Please try again later.": [
-        "Couldn't load invoices. Please try again later."
-      ],
       "Please upload a square file": [
         "Please upload a square logo"
       ],
@@ -70,6 +67,9 @@
       "A recovery file lets you unlock and view your data after an account reset": [
         "A recovery file lets you unlock and view your data after account recovery"
       ],
+      "All Events ": [
+        "All Events"
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder."
       ],
@@ -107,9 +107,6 @@
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue."
       ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }**."
-      ],
       "Tor": [
         "Tor"
       ],
@@ -125,6 +122,11 @@
     "Link": {
       "Paypal without credit card": [
         "PayPal without credit card"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business"
       ]
     },
     "Metadata title": {
@@ -164,6 +166,9 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour."
+      ],
       "Enter token into your identity provider": [
         "Enter the token into your identity provider"
       ]

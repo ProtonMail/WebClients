@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -174,9 +174,6 @@
       ],
       "Cancel": [
         "Abbrechen"
-      ],
-      "Cancel add-on": [
-        "Add-on kündigen"
       ],
       "Cancel subscription": [
         "Abonnement kündigen"
@@ -396,9 +393,6 @@
       ],
       "Download CSV sample": [
         "CSV-Beispiel herunterladen"
-      ],
-      "Download Desktop App": [
-        "Desktop-App herunterladen"
       ],
       "Download ICS": [
         "ICS herunterladen"
@@ -631,9 +625,6 @@
       "Keep my Plus subscription": [
         "Plus-Abonnement behalten"
       ],
-      "Keep the writing assistant": [
-        "Behalte den Schreibassistenten"
-      ],
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
       ],
@@ -714,6 +705,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "In ${ DOCS_SHORT_APP_NAME } öffnen"
       ],
       "Open navigation": [
         "Navigation öffnen"
@@ -943,6 +937,9 @@
       "Send my username": [
         "Meinen Benutzernamen senden"
       ],
+      "Send new invite": [
+        "Neue Einladung versenden"
+      ],
       "Send reminder": [
         "Erinnerung senden"
       ],
@@ -1144,6 +1141,9 @@
       "Verify account": [
         "Konto verifizieren"
       ],
+      "Verify domain": [
+        "Domain verifizieren"
+      ],
       "View": [
         "Anzeigen"
       ],
@@ -1170,9 +1170,6 @@
       ],
       "What do I get?": [
         "Was bekomme ich dafür?"
-      ],
-      "Why can't the model run locally?": [
-        "Warum kann das Modell nicht lokal ausgeführt werden?"
       ],
       "Wipe": [
         "Löschen"
@@ -1403,41 +1400,11 @@
       ]
     },
     "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice }/Monat"
-      ],
-      "${ price } /year": [
-        "${ price } pro Jahr"
-      ],
-      "Active until ${ subscriptionRenewalDate }": [
-        "Aktiv bis zum ${ subscriptionRenewalDate }"
-      ],
-      "Add writing assistant": [
-        "Schreibassistent hinzufügen"
-      ],
-      "Add writing assistant to your plan": [
-        "Schreibassistent zu deinem Abonnement hinzufügen"
-      ],
-      "Assign it to specific users in ${ userAndAddressesButton }": [
-        "Weise ihn bestimmten Benutzern zu in ${ userAndAddressesButton }"
-      ],
-      "Automatically renews on ${ subscriptionRenewalDate }": [
-        "Verlängert sich automatisch am ${ subscriptionRenewalDate }"
-      ],
-      "Cancel writing assistant add-on": [
-        "Schreibassistent-Add-on kündigen"
-      ],
       "Customize plan": [
         "Abonnement anpassen"
       ],
-      "from ${ price } /month": [
-        "ab ${ price } / Monat"
-      ],
       "New": [
         "Neu"
-      ],
-      "Renew subscription": [
-        "Abonnement verlängern"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen. ${ learnMore }."
@@ -4054,9 +4021,6 @@
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
       ],
-      "Coudn't load invoices. Please try again later.": [
-        "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
-      ],
       "Could not open created vault": [
         "Erstellter Tresor konnte nicht geöffnet werden."
       ],
@@ -4065,6 +4029,9 @@
       ],
       "Could not save preference": [
         "Einstellung konnte nicht gespeichert werden."
+      ],
+      "Couldn't load invoices. Please try again later.": [
+        "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender abwählen",
@@ -6142,6 +6109,17 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -7190,14 +7168,23 @@
       "Item Autofilled": [
         "Eintrag automatisch ausgefüllt"
       ],
+      "Item Created": [
+        "Eintrag erstellt"
+      ],
       "Item Deleted": [
         "Eintrag gelöscht"
+      ],
+      "Item deleted in vault": [
+        "Eintrag in Tresor gelöscht"
       ],
       "Item in vault untrashed": [
         "Eintrag in Tresor wiederhergestellt"
       ],
       "Item Read": [
         "Eintrag angesehen"
+      ],
+      "Item read in vault": [
+        "Eintrag in Tresor angesehen"
       ],
       "Item Trashed": [
         "Eintrag in den Papierkorb gelegt"
@@ -7748,6 +7735,9 @@
       "Set recovery phrase": [
         "Wiederherstellungsphrase festlegen"
       ],
+      "Set your password": [
+        "Passwort festlegen"
+      ],
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
       ],
@@ -7925,9 +7915,6 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
-      ],
-      "The writing assistant add-on **will not renew**. You can continue to enjoy the service until **${ subscriptionRenewalDate }.**": [
-        "Das Schreibassistent-Add-on **wird nicht verlängert**. Du kannst den Dienst weiterhin bis zum **${ subscriptionRenewalDate }** nutzen."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Mit diesen Konfigurationsdateien kannst du festlegen, mit welchem ${ VPN_APP_NAME }-Server du dich verbinden möchtest, wenn du eine VPN-App eines Drittanbieters verwendest oder eine VPN-Verbindung auf einem Router einrichtest."
@@ -8610,9 +8597,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
-      "Your browser doesn't support the writing assistant. Download the ${ MAIL_APP_NAME } desktop app or try running it on servers.": [
-        "Dein Browser unterstützt den Schreibassistenten nicht. Lade dir die ${ MAIL_APP_NAME } Desktop-Version herunter oder versuche ihn auf Servern auszuführen."
-      ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Dein Browser unterstützt den Schreibassistenten nicht. Versuchen ihn auf Servern auszuführen."
       ],
@@ -8676,17 +8660,6 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10366,9 +10339,6 @@
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
       ],
-      "Users and addresses": [
-        "Benutzer und E-Mail-Adressen"
-      ],
       "View guide": [
         "Anleitung anzeigen"
       ],
@@ -10479,6 +10449,28 @@
         "Zeitlich begrenztes Angebot"
       ]
     },
+    "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "Alle ${ BRAND_NAME } Premiumfunktionen und Gewerbeapps, um dein gesamtes Unternehmen zu schützen"
+      ],
+      "Encrypted email and calendar to get you started": [
+        "Verschlüsselter Kalender und E-Mails, um loszulegen"
+      ],
+      "Enhanced security and premium features for teams": [
+        "Erweiterte Sicherheits- und Premiumfunktionen für Teams"
+      ],
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For businesses": [
+        "Für Unternehmen"
+      ],
+      "For individuals": [
+        "Für Privatpersonen"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Jetzt zugreifen"
@@ -10564,11 +10556,17 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete and revoke invite": [
+        "Einladung löschen und widerrufen"
+      ],
       "Edit": [
         "Ändern"
       ],
       "Remove": [
         "Entfernen"
+      ],
+      "Resend invite link": [
+        "Einladungslink erneut senden"
       ],
       "Revoke sessions": [
         "Sitzungen widerrufen"
@@ -11030,6 +11028,9 @@
       "Advanced sharing security": [
         "Erweiterte Sicherheit beim Teilen"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Alle ${ BRAND_NAME }-Dienste"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
       ],
@@ -11089,6 +11090,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Überwachung von Datenlecks (Demnächst verfügbar)"
+      ],
+      "Dedicated account manager": [
+        "Dedizierter Account Manager"
       ],
       "Dedicated servers and IP": [
         "Dedizierte Server und IP"
@@ -11278,6 +11282,9 @@
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
+      ],
+      "Tailored to your needs": [
+        "Auf deine Bedürfnisse zugeschnitten"
       ],
       "Tor over VPN": [
         "Tor über VPN"
@@ -12800,6 +12807,9 @@
       "Card number": [
         "Kartennummer"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Aktuell ist die automatische Abonnement-Verlängerung deaktiviert. Falls du dein Abonnement jetzt änderst, wird die automatische Verlängerung wieder aktiviert."
+      ],
       "CVC": [
         "CVC"
       ],
@@ -13795,6 +13805,11 @@
         "Verifikation"
       ]
     },
+    "signup: Action": {
+      "Request a demo": [
+        "Demo anfordern"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Schließen"
@@ -14341,6 +14356,9 @@
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } mit Zugriff auf alle Hochgeschwindigkeitsserver in ${ vpnCountries } Ländern"
       ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } mit Schadsoftware- und Werbeblocker"
+      ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
       ],
@@ -14362,11 +14380,17 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Nachdem dein ${ planName }-Abonnement abgelaufen ist, wirst du auf ${ BRAND_NAME } Free zurückgestuft, das nur bis zu 5 GB Speicherplatz für Laufwerke und bis zu 1 GB für E-Mails bietet. Du verlierst auch alle zuvor gewährten Speicherboni."
       ],
+      "All you need for your business": [
+        "Alles was du für dein Unternehmen brauchst"
+      ],
       "Automatic email forwarding": [
         "Automatische E-Mail-Weiterleitung"
       ],
       "Back up photos from your devices": [
         "Sichere Fotos von deinen Geräten"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Schaffe Vertrauen und Wiedererkennungswert für deine Marke mit professionellen E-Mail-Adressen auf deiner eigenen Domain."
       ],
       "Calendar sharing": [
         "Kalenderfreigabe"
@@ -14376,6 +14400,9 @@
       ],
       "Cancel subscription?": [
         "Abonnement kündigen?"
+      ],
+      "Catch-all email address": [
+        "Catch-all-E-Mail-Adresse"
       ],
       "Close": [
         "Schließen"
@@ -14794,6 +14821,9 @@
       "Domain deleted": [
         "Domain gelöscht"
       ],
+      "Invitation resent": [
+        "Einladung erneut gesendet"
+      ],
       "Sessions revoked": [
         "Sitzungen zurückgenommen"
       ],
@@ -14929,6 +14959,9 @@
       ],
       "Import": [
         "Importieren"
+      ],
+      "Invitation email": [
+        "Einladungs-E-Mail"
       ],
       "List": [
         "Liste"
@@ -15173,9 +15206,6 @@
       ],
       "Cancel subscription?": [
         "Abonnement kündigen?"
-      ],
-      "Cancel the writing assistant add-on?": [
-        "Schreibassistent-Add-on kündigen?"
       ],
       "Card verification": [
         "Kartenprüfung"
@@ -15464,9 +15494,6 @@
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
-      "Enable writing assistant": [
-        "Schreibassistent aktivieren"
-      ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
@@ -15739,6 +15766,9 @@
       "PayPal verification failed": [
         "PayPal-Verifizierung fehlgeschlagen"
       ],
+      "Personalise your e-mail footer": [
+        "Personalisiere deine E-Mail-Fußzeile"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -15858,6 +15888,9 @@
       ],
       "Send email reminders?": [
         "Erinnerungs-E-Mails senden?"
+      ],
+      "Send new invite?": [
+        "Neue Einladung versenden?"
       ],
       "Session management": [
         "Sitzungsverwaltung"
@@ -16060,6 +16093,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
       ],
       "You have no open alerts": [
         "Du hast keine offenen Warnungen"
@@ -16493,6 +16529,85 @@
       ],
       "Primary admin": [
         "Hauptadministrator"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } Adresse"
+      ],
+      "Add multiple users": [
+        "Füge mehrere Benutzer hinzu"
+      ],
+      "Add new user": [
+        "Neuen Benutzer hinzufügen"
+      ],
+      "Admin": [
+        "Admin"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Eine Einladung wird an diese E-Mail-Adresse gesendet."
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Confirm password": [
+        "Passwort bestätigen"
+      ],
+      "Create password": [
+        "Passwort erstellen"
+      ],
+      "Create password instead": [
+        "Stattdessen Passwort erstellen"
+      ],
+      "Create user": [
+        "Benutzer erstellen"
+      ],
+      "Email": [
+        "E‐Mail‐Adresse"
+      ],
+      "Name": [
+        "Name"
+      ],
+      "Optional": [
+        "Optional"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
+      ],
+      "Send invite link via email instead": [
+        "Einladungslink stattdessen via E-Mail senden"
+      ],
+      "User created": [
+        "Benutzer erstellt"
+      ],
+      "VPN connections": [
+        "VPN-Verbindungen"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
+      ]
+    },
+    "Users table: badge": {
+      "Invite sent": [
+        "Einladung gesendet"
+      ],
+      "It's you": [
+        "Das bist du"
+      ],
+      "Private": [
+        "Privat"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "SSO-Benutzer, der von deinem Identitätsanbieter bereitgestellt wird"
+      ],
+      "Writing assistant": [
+        "Schreibassistent"
       ]
     },
     "Validation": {

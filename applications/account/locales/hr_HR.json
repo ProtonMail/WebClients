@@ -13,11 +13,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -474,6 +474,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvori ${ CALENDAR_APP_NAME } postavke"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Otvori u ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Otvori navigaciju"
@@ -5677,9 +5680,6 @@
       "Upgrade your plan": [
         "Nadogradite vaš plan"
       ],
-      "Users and addresses": [
-        "Korisnici i adrese"
-      ],
       "View guide": [
         "Pregledaj upute"
       ],
@@ -5709,6 +5709,11 @@
       ],
       "Enable authentication logs": [
         "Omogući autentikacijske zapise"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "Za pojedince"
       ]
     },
     "mailtrial2024: Action": {
@@ -8371,6 +8376,17 @@
       ],
       "Primary admin": [
         "Glavni Admin"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresa"
+      ],
+      "Confirm password": [
+        "Potvrdi lozinku"
+      ],
+      "VPN connections": [
+        "VPN veza"
       ]
     },
     "Validation": {

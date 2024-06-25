@@ -52,11 +52,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -372,9 +372,6 @@
       ],
       "Download CSV sample": [
         "Transferir a amostra CSV"
-      ],
-      "Download Desktop App": [
-        "Transferir a aplicação para desktop"
       ],
       "Download ICS": [
         "Transferir ICS"
@@ -1328,11 +1325,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicações ${ BRAND_NAME }"
-      ]
-    },
-    "Assistant toggle": {
-      "${ localPrice } /month": [
-        "${ localPrice } /mês"
       ]
     },
     "Attached ics file error": {
@@ -5757,6 +5749,17 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi enviada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -7105,7 +7108,7 @@
         "A integração SCIM foi desativada."
       ],
       "SCIM token active": [
-        "O token SCIM é ativo."
+        "Token SCIM ativo"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Garanta a sua Conta ${ BRAND_NAME }"
@@ -7142,6 +7145,9 @@
       ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
+      ],
+      "Set your password": [
+        "Defina a sua palavra-passe"
       ],
       "Setting up your organization": [
         "A configurar a sua organização"
@@ -7313,7 +7319,7 @@
         "Isto pode demorar algum tempo. Não feche esta página nem se desligue da internet."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Esta funcionalidade atrasa o envio do correio, dando-lhe a oportunidade de cancelar o envio durante o período de tempo selecionado."
+        "Esse recurso atrasa o envio dos seus e-mails, dando-lhe a oportunidade de desfazer o envio durante o período selecionado."
       ],
       "This file is too large to preview": [
         "Este ficheiro é demasiado grande para pré-visualizar"
@@ -7508,7 +7514,7 @@
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Atualize para o plano ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[bundleProPlan] } para ter acesso a ${ PROTON_SENTINEL_NAME }."
+        "Atualize para o plano ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[bundleProPlan] } para ter acesso ao ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -7945,17 +7951,6 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi enviada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9550,9 +9545,6 @@
       "Upgrade your plan": [
         "Atualize o seu plano"
       ],
-      "Users and addresses": [
-        "Utilizadores e endereços"
-      ],
       "View guide": [
         "Ver guia"
       ],
@@ -9637,6 +9629,16 @@
     "mail_signup_2023: Info": {
       "Limited time offer": [
         "Oferta por tempo limitado"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "You’ve been invited to try ${ MAIL_APP_NAME }": [
+        "Foi convidado a experimentar ${ MAIL_APP_NAME }"
+      ]
+    },
+    "mail_signup_2024: title": {
+      "For individuals": [
+        "Para indivíduos"
       ]
     },
     "mailtrial2024: Action": {
@@ -11624,7 +11626,7 @@
         "MM/AA"
       ],
       "Processing payment": [
-        "Processamento do pagamento"
+        "A processar pagamento"
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
@@ -12951,7 +12953,7 @@
         "Saiba mais sobre o nosso impacto"
       ],
       "Manage your calendar": [
-        "Gerencie o seu calendário"
+        "Gerir o seu calendário"
       ],
       "Online privacy, for your whole family": [
         "Privacidade online, para toda a sua família"
@@ -12984,7 +12986,7 @@
         "Pastas, etiquetas e filtros ilimitados"
       ],
       "Version history": [
-        "Histórico das versões"
+        "Histórico de versões"
       ],
       "Watch the interview": [
         "Assistir à entrevista"
@@ -14859,6 +14861,26 @@
       ],
       "Primary admin": [
         "Administrador principal"
+      ]
+    },
+    "user_modal": {
+      "${ BRAND_NAME } address": [
+        "${ BRAND_NAME } endereço"
+      ],
+      "Add multiple users": [
+        "Adicionar vários utilizadores"
+      ],
+      "Confirm password": [
+        "Confirmar a palavra-passe"
+      ],
+      "Create password": [
+        "Criar a palavra-passe"
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
+      ],
+      "VPN connections": [
+        "Ligações VPN"
       ]
     },
     "Validation": {
