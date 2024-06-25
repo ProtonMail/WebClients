@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { PrivateAppContainer, PrivateMainArea, useToggle } from '@proton/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
+import { LayoutViewLoader } from '../../atoms/LayoutViewLoader';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { getThemeForWallet } from '../../utils';
@@ -17,7 +17,7 @@ interface Props {
 
 export const PrivateWalletLayout = ({ children }: Props) => {
     const { walletId } = useParams<{ walletId?: string }>();
-    const { decryptedApiWalletsData = [], loadingApiWalletsData } = useBitcoinBlockchainContext();
+    const { decryptedApiWalletsData, loadingApiWalletsData } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
 
@@ -50,9 +50,7 @@ export const PrivateWalletLayout = ({ children }: Props) => {
         >
             <PrivateMainArea data-testid="wallet-view:events-area" drawerSidebar>
                 {!decryptedApiWalletsData || loadingApiWalletsData ? (
-                    <div className="m-auto">
-                        <CircleLoader size="large" className="color-primary" />
-                    </div>
+                    <LayoutViewLoader />
                 ) : (
                     <div className="overflow-auto flex grow">
                         <div className="w-full max-w-custom mx-auto grow" style={{ '--max-w-custom': '80rem' }}>
