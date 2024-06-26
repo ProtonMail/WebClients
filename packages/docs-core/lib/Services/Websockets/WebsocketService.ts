@@ -192,8 +192,6 @@ export class WebsocketService implements WebsocketServiceInterface {
 
         return result
       },
-
-      getLatestCommitId: options.commitId,
     }
 
     const connection = new WebsocketConnection(callbacks, this.logger)
