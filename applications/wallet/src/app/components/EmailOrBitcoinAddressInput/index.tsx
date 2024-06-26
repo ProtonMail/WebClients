@@ -27,6 +27,7 @@ import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '
 import clsx from '@proton/utils/clsx';
 
 import { CoreButton, Input, InputProps } from '../../atoms';
+import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
 import { getThemeByIndex, isValidBitcoinAddress } from '../../utils';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
@@ -335,7 +336,7 @@ export const EmailOrBitcoinAddressInput = ({
                         autoFocus
                         value={input}
                         disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || disabled}
-                        data-protonpass-ignore
+                        {...PASSWORD_MANAGER_IGNORE_PROPS}
                         onValue={(value: string) => {
                             handleInputChange(value.trimStart());
                             onChange?.(value);
