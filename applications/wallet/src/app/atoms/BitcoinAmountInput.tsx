@@ -5,7 +5,7 @@ import type { InputProps } from '@proton/atoms/Input/Input';
 import { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 
 import { COMPUTE_BITCOIN_UNIT } from '../constants';
-import { convertAmount, getDecimalStepByUnit } from '../utils';
+import { convertAmount, getDecimalStepByUnit, getPrecision } from '../utils';
 import { CoreInput } from './Input';
 
 interface Props extends InputFieldOwnProps, InputProps {
@@ -36,7 +36,7 @@ export const BitcoinAmountInput = ({
         onValueChange?.(convertAmount(safeAmount, unit, COMPUTE_BITCOIN_UNIT));
     };
 
-    const fValue = convertAmount(value, COMPUTE_BITCOIN_UNIT, unit);
+    const fValue = convertAmount(value, COMPUTE_BITCOIN_UNIT, unit).toFixed(getPrecision(unit));
     const constrainedMin = Math.max(0, Number(min));
 
     return (
