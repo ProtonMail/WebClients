@@ -3,7 +3,7 @@ import type { ItemKey, ItemKeyResponse, VaultKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-type OpenVaultKeyProcessParams = {
+type OpenItemKeyProcessParams = {
     encryptedItemKey: ItemKeyResponse;
     vaultKey: VaultKey;
 };
@@ -11,7 +11,7 @@ type OpenVaultKeyProcessParams = {
 export const openItemKey = async ({
     encryptedItemKey: { Key, KeyRotation },
     vaultKey,
-}: OpenVaultKeyProcessParams): Promise<ItemKey> => {
+}: OpenItemKeyProcessParams): Promise<ItemKey> => {
     const data = base64StringToUint8Array(Key);
     const itemKey = await decryptData(vaultKey.key, data, PassEncryptionTag.ItemKey);
 
