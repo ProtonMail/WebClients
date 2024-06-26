@@ -8,7 +8,7 @@ interface Props {
 }
 
 const format = ({ State, AmountCharged = 0, AmountDue = 0 }: Invoice) => {
-    return State === INVOICE_STATE.UNPAID ? AmountDue : AmountCharged;
+    return State === INVOICE_STATE.UNPAID || State === INVOICE_STATE.BILLED ? AmountDue : AmountCharged;
 };
 
 const InvoiceAmount = ({ invoice }: Props) => {

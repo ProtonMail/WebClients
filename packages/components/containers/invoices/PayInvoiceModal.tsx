@@ -14,7 +14,7 @@ import { ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { EllipsisLoader, Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
-import { useApiResult, useEventManager, useNotifications, useSubscription } from '../../hooks';
+import { useApiResult, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { getInvoicePaymentsVersion } from './helpers';
@@ -45,6 +45,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         []
     );
     const [subscription] = useSubscription();
+    const [user] = useUser();
     const hasSomeVpnPlan = getHasSomeVpnPlan(subscription);
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
@@ -57,6 +58,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const paymentFacade = usePaymentFacade({
         amount,
         currency,
+        billingPlatform: subscription?.BillingPlatform,
+        chargebeeUserExists: user.ChargebeeUserExists,
         // the override is required for the on-session migration.
         chargebeeEnabled: invoice.IsExternal ? ChargebeeEnabled.CHARGEBEE_FORCED : ChargebeeEnabled.INHOUSE_FORCED,
         onChargeable: (operations) => {
