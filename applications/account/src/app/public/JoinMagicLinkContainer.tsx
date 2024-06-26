@@ -20,6 +20,7 @@ import { queryMemberUnprivatizationInfo } from '@proton/shared/lib/api/members';
 import { getOrganization, getOrganizationLogo, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { getUser } from '@proton/shared/lib/api/user';
 import { ProductParam } from '@proton/shared/lib/apps/product';
+import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
@@ -208,7 +209,8 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
             productParam,
         });
         if (result.to === AuthStep.DONE) {
-            await onLogin(result.session);
+            const subscribedToApp = toApp || getToAppFromSubscribed(user);
+            await onLogin({ ...result.session, ...(subscribedToApp ? { appIntent: { app: subscribedToApp } } : {}) });
         }
     };
 
