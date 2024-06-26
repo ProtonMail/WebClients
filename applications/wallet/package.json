@@ -22,6 +22,7 @@
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
+        "@moonpay/moonpay-react": "^1.7.1",
         "@openpgp/web-stream-tools": "^0.0.13",
         "@proton/andromeda": "workspace:packages/wasm/andromeda",
         "@proton/components": "workspace:packages/components",
@@ -33,6 +34,7 @@
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
         "@proton/wallet": "workspace:packages/wallet",
+        "@ramp-network/ramp-instant-sdk": "^4.0.5",
         "@types/react": "^18.2.48",
         "@types/react-dom": "^18.2.18",
         "@types/react-router-dom": "^5.3.3",

@@ -20,12 +20,21 @@ export function setPanicHook(): void;
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 /**
 */
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmSortOrder {
+  Asc = 0,
+  Desc = 1,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
 }
 /**
 */
@@ -34,20 +43,6 @@ export enum WasmPaymentLinkKind {
   BitcoinURI = 1,
   LightningURI = 2,
   UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
-export enum WasmWalletTransactionFlag {
-  Suspicious = 0,
-  Private = 1,
 }
 /**
 */
@@ -71,21 +66,34 @@ export enum WasmNetwork {
 }
 /**
 */
-export enum WasmSortOrder {
-  Asc = 0,
-  Desc = 1,
+export enum WasmWalletTransactionFlag {
+  Suspicious = 0,
+  Private = 1,
 }
 /**
 */
-export enum WasmKeychainKind {
+export enum WasmScriptType {
+  Legacy = 1,
+  NestedSegwit = 2,
+  NativeSegwit = 3,
+  Taproot = 4,
+}
 /**
-* External keychain, used for deriving recipient addresses.
 */
-  External = 0,
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
 /**
-* Internal keychain, used for deriving change addresses.
 */
-  Internal = 1,
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 /**
 */
@@ -99,14 +107,6 @@ export enum WasmLanguage {
   Japanese = 6,
   Korean = 7,
   Spanish = 8,
-}
-/**
-*/
-export enum WasmScriptType {
-  Legacy = 1,
-  NestedSegwit = 2,
-  NativeSegwit = 3,
-  Taproot = 4,
 }
 /**
 */
@@ -297,19 +297,6 @@ export interface WasmUserSettings {
     TwoFactorAmountThreshold: number | null;
 }
 
-export interface WasmAddressInfo {
-    index: number;
-    address: string;
-    keychain: WasmKeychainKind;
-}
-
-export interface WasmPagination {
-    skip: number;
-    take: number;
-}
-
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
-
 export interface WasmTxOut {
     value: number;
     script_pubkey: WasmScript;
@@ -333,6 +320,19 @@ export interface WasmTransactionTime {
     confirmation_time: number | null;
     last_seen: number | null;
 }
+
+export interface WasmAddressInfo {
+    index: number;
+    address: string;
+    keychain: WasmKeychainKind;
+}
+
+export interface WasmPagination {
+    skip: number;
+    take: number;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 /**
 */
@@ -960,6 +960,11 @@ export class WasmPaymentGatewayClient {
 * @returns {Promise<string>}
 */
   signUrl(url: string, provider: WasmGatewayProvider): Promise<string>;
+/**
+* @param {WasmGatewayProvider} provider
+* @returns {Promise<string>}
+*/
+  getPublicApiKey(provider: WasmGatewayProvider): Promise<string>;
 }
 /**
 */

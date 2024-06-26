@@ -22,9 +22,17 @@ interface Props {
     disabled?: boolean;
     onClickSend: () => void;
     onClickReceive: () => void;
+    onClickBuy: () => void;
 }
 
-export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSend, onClickReceive }: Props) => {
+export const MetricsAndCtas = ({
+    apiAccount,
+    apiWalletData,
+    disabled,
+    onClickSend,
+    onClickReceive,
+    onClickBuy,
+}: Props) => {
     const account = apiAccount ?? apiWalletData.WalletAccounts[0];
     const localDisabled = !account || disabled;
     const { isNarrow } = useResponsiveContainerContext();
@@ -128,7 +136,7 @@ export const MetricsAndCtas = ({ apiAccount, apiWalletData, disabled, onClickSen
             >
                 <CtaButton onClick={() => onClickSend()}>{c('Wallet dashboard').t`Send`}</CtaButton>
                 <CtaButton onClick={() => onClickReceive()}>{c('Wallet dashboard').t`Receive`}</CtaButton>
-                <CtaButton>{c('Wallet dashboard').t`Buy`}</CtaButton>
+                <CtaButton onClick={() => onClickBuy()}>{c('Wallet dashboard').t`Buy`}</CtaButton>
             </div>
         </div>
     );

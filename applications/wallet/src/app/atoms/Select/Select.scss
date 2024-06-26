@@ -1,5 +1,14 @@
 .wallet-select {
-	&:hover {
+	&.bordered {
+		outline: 1px solid var(--interaction-weak-major-1);
+
+		&:hover:not(.disabled) {
+			z-index: 1;
+			outline: 2px solid var(--interaction-weak-major-1);
+		}
+	}
+
+	&:hover:not(.disabled) {
 		z-index: 1;
 		outline: 1px solid var(--interaction-weak-major-1);
 	}
@@ -26,6 +35,11 @@
 	.field-two-input-container {
 		color: var(--text-norm);
 		font-size: 16px;
+	}
+
+	&.disabled * {
+		cursor: default;
+		color: var(--text-hint);
 	}
 }
 

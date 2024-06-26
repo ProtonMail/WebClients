@@ -28,6 +28,7 @@ interface Props<S extends string, T extends { Symbol: S; Name: string }> {
     placeholder?: string;
 
     dense?: boolean;
+    containerClassName?: string;
 }
 
 export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: string }>({
@@ -41,6 +42,7 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
     label,
     placeholder,
     dense,
+    containerClassName,
 }: Props<S, T>) => {
     const [selectedCurrency, setSelectedCurrency] = useState<S | undefined>(value);
 
@@ -109,6 +111,7 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
             hint={hint}
             data-testid="currency-selector"
             disabled={disabled}
+            containerClassName={containerClassName}
             renderSelected={(selected) => {
                 const option = onlyOptions.find((o) => getSerialisedOption(o) === selected);
                 return dense ? (

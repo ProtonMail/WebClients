@@ -10,6 +10,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../atoms';
 import { Balance } from '../components/Balance';
+import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
 import { PassphraseInputModal } from '../components/PassphraseInputModal';
@@ -27,7 +28,12 @@ export const AccountContainer = () => {
     const generateBitcoinSendKey = () => generateUID('bitcoin-send');
     const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
 
+    // Used to reset bitcoin buy modal at the end of the process
+    const generateBitcoinBuyKey = () => generateUID('bitcoin-buy');
+    const [bitcoinBuyKey, setBitcoinBuyKey] = useState(generateBitcoinSendKey());
+
     const [walletSendModal, setWalletSendModal] = useModalState();
+    const [walletBuyModal, setWalletBuyModal] = useModalState();
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
 
@@ -104,9 +110,21 @@ export const AccountContainer = () => {
                         onClickReceive={() => {
                             openDrawer({ account: walletAccount, kind: 'wallet-receive', theme });
                         }}
+                        onClickBuy={() => {
+                            setWalletBuyModal(true);
+                        }}
                     />
 
-                    <TransactionList apiWalletData={wallet} apiAccount={walletAccount} />
+                    <TransactionList
+                        apiWalletData={wallet}
+                        apiAccount={walletAccount}
+                        onClickReceive={() => {
+                            openDrawer({ account: walletAccount, kind: 'wallet-receive', theme });
+                        }}
+                        onClickBuy={() => {
+                            setWalletBuyModal(true);
+                        }}
+                    />
 
                     <PassphraseInputModal
                         wallet={wallet}
@@ -119,16 +137,27 @@ export const AccountContainer = () => {
                     />
 
                     {!isSyncingChainData && (
-                        <BitcoinSendModal
-                            key={bitcoinSendKey}
-                            wallet={wallet}
-                            account={walletAccount}
-                            theme={theme}
-                            modal={walletSendModal}
-                            onDone={() => {
-                                setBitcoinSendKey(generateBitcoinSendKey());
-                            }}
-                        />
+                        <>
+                            <BitcoinSendModal
+                                key={bitcoinSendKey}
+                                wallet={wallet}
+                                account={walletAccount}
+                                theme={theme}
+                                modal={walletSendModal}
+                                onDone={() => {
+                                    setBitcoinSendKey(generateBitcoinSendKey());
+                                }}
+                            />
+
+                            <BitcoinBuyModal
+                                key={bitcoinBuyKey}
+                                modal={walletBuyModal}
+                                account={walletAccount}
+                                onDone={() => {
+                                    setBitcoinBuyKey(generateBitcoinBuyKey());
+                                }}
+                            />
+                        </>
                     )}
                 </div>
             </div>

@@ -12,6 +12,7 @@ import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@p
 import { CoreButton } from '../atoms';
 import { LayoutViewLoader } from '../atoms/LayoutViewLoader';
 import { Balance } from '../components/Balance';
+import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
 import { PassphraseInputModal } from '../components/PassphraseInputModal';
@@ -34,9 +35,14 @@ export const WalletContainer = () => {
     const generateBitcoinSendKey = () => generateUID('bitcoin-send');
     const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
 
+    // Used to reset bitcoin buy modal at the end of the process
+    const generateBitcoinBuyKey = () => generateUID('bitcoin-buy');
+    const [bitcoinBuyKey, setBitcoinBuyKey] = useState(generateBitcoinSendKey());
+
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
     const [walletSendModal, setWalletSendModal] = useModalState();
+    const [walletBuyModal, setWalletBuyModal] = useModalState();
 
     const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
 
@@ -134,9 +140,20 @@ export const WalletContainer = () => {
                         onClickReceive={() => {
                             openDrawer({ account: firstAccount, kind: 'wallet-receive', theme });
                         }}
+                        onClickBuy={() => {
+                            setWalletBuyModal(true);
+                        }}
                     />
 
-                    <TransactionList apiWalletData={wallet} />
+                    <TransactionList
+                        apiWalletData={wallet}
+                        onClickReceive={() => {
+                            openDrawer({ account: firstAccount, kind: 'wallet-receive', theme });
+                        }}
+                        onClickBuy={() => {
+                            setWalletBuyModal(true);
+                        }}
+                    />
 
                     <PassphraseInputModal
                         wallet={wallet}
@@ -157,16 +174,27 @@ export const WalletContainer = () => {
                 </div>
             </div>
             {firstAccount && (
-                <BitcoinSendModal
-                    key={bitcoinSendKey}
-                    wallet={wallet}
-                    account={firstAccount}
-                    theme={theme}
-                    modal={walletSendModal}
-                    onDone={() => {
-                        setBitcoinSendKey(generateBitcoinSendKey());
-                    }}
-                />
+                <>
+                    <BitcoinSendModal
+                        key={bitcoinSendKey}
+                        wallet={wallet}
+                        account={firstAccount}
+                        theme={theme}
+                        modal={walletSendModal}
+                        onDone={() => {
+                            setBitcoinSendKey(generateBitcoinSendKey());
+                        }}
+                    />
+
+                    <BitcoinBuyModal
+                        key={bitcoinBuyKey}
+                        modal={walletBuyModal}
+                        account={firstAccount}
+                        onDone={() => {
+                            setBitcoinBuyKey(generateBitcoinBuyKey());
+                        }}
+                    />
+                </>
             )}
         </>
     );

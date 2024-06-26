@@ -16,6 +16,8 @@ import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { EmailIntegrationInput } from './EmailIntegrationInput';
 import { useAccountPreferences } from './useAccountPreferences';
 
+import './AccountPreferences.scss';
+
 interface Props {
     wallet: IWasmApiWalletData;
     walletAccount: WasmApiWalletAccount;
