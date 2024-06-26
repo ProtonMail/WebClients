@@ -165,6 +165,7 @@ export async function showView(viewID: VIEW_TARGET, targetURL: string = "") {
         mainWindow!.title = windowTitle;
 
         if (url && !isSameURL(url, await getViewURL(viewID))) {
+            viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
             viewLogger(viewID).info("showView loading", url);
             await loadURL(viewID, "about:blank");
             const loadPromise = loadURL(viewID, url);
