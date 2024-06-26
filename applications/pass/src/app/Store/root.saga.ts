@@ -37,6 +37,7 @@ import itemHistory from '@proton/pass/store/sagas/items/item-history.saga';
 import itemMove from '@proton/pass/store/sagas/items/item-move.saga';
 import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
+import secureLinkSagas from '@proton/pass/store/sagas/items/item-secure-link.sagas';
 import itemTrash from '@proton/pass/store/sagas/items/item-trash.saga';
 import itemUnpin from '@proton/pass/store/sagas/items/item-unpin.saga';
 import itemSetFlags from '@proton/pass/store/sagas/items/item.set-flags.saga';
@@ -72,6 +73,7 @@ import { type RootSagaOptions } from '@proton/pass/store/types';
 export function* rootSaga(options: RootSagaOptions) {
     yield all(
         [
+            ...secureLinkSagas,
             aliasDetailsRequest,
             aliasOptionsRequest,
             boot,

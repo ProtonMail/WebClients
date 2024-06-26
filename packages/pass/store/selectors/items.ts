@@ -37,6 +37,7 @@ import type {
     ItemType,
     Maybe,
     MaybeNull,
+    SecureLink,
     SelectedItem,
 } from '@proton/pass/types';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
@@ -57,6 +58,7 @@ export const selectItemsState = (state: State) => state.items.byShareId;
 export const selectOptimisticIds = (state: State) => state.items.byOptimisticId;
 export const selectIsOptimisticId = (id: string) => createSelector(selectOptimisticIds, (ids) => id in ids);
 export const selectItemDrafts = (state: State) => state.items.drafts;
+export const selectSecureLinks = (state: State) => state.items.secureLinks;
 export const selectNonFailedItems = createSelector(selectItemsState, asIfNotFailed);
 export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
@@ -289,3 +291,17 @@ export const selectPasskeys = (payload: PasskeyQueryPayload) =>
                   )
             : [];
     });
+
+export const selectItemsWithSecureLink = createSelector(
+    [selectAllItems, selectSecureLinks],
+    (items, secureLinks): ItemRevision[] =>
+        items.reduce<ItemRevision[]>((acc, item) => {
+            if (secureLinks[item.shareId]?.[item.itemId]?.length) acc.push(item);
+            return acc;
+        }, [])
+);
+
+export const selectOptimisticItemsWithSecureLink = selectOptimisticItemsFactory(selectItemsWithSecureLink);
+
+export const selectItemSecureLinks = (shareId: string, itemId: string) =>
+    createSelector(selectSecureLinks, (secureLinks): Maybe<SecureLink[]> => secureLinks[shareId]?.[itemId]);

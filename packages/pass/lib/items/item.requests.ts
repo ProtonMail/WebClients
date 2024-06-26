@@ -377,22 +377,23 @@ export const getSecureLink = async (
         })
     ).Key!;
 
-    const { encryptedItemKey, encryptedLinkKey, secureLinkKey } = await PassCrypto.createSecureLink({
-        shareId,
-        latestItemKey,
-    });
+    const linkData = await PassCrypto.createSecureLink({ shareId, latestItemKey });
+    const { encryptedItemKey, encryptedLinkKey, secureLinkKey } = linkData;
+
+    const data: PublicLinkCreateRequest = {
+        Revision: revision,
+        EncryptedItemKey: uint8ArrayToBase64String(encryptedItemKey),
+        EncryptedLinkKey: uint8ArrayToBase64String(encryptedLinkKey),
+        ExpirationTime: options.expirationTime,
+        LinkKeyShareKeyRotation: latestItemKey.KeyRotation,
+    };
+
+    if (options.maxReadCount !== null) data.MaxReadCount = options.maxReadCount;
 
     const { PublicLink } = await api({
         url: `pass/v1/share/${shareId}/item/${itemId}/public_link`,
         method: 'post',
-        data: {
-            Revision: revision,
-            EncryptedItemKey: uint8ArrayToBase64String(encryptedItemKey),
-            EncryptedLinkKey: uint8ArrayToBase64String(encryptedLinkKey),
-            ExpirationTime: options.expirationTime,
-            MaxReadCount: options.maxReadCount,
-            LinkKeyShareKeyRotation: latestItemKey.KeyRotation,
-        } satisfies PublicLinkCreateRequest,
+        data,
     });
 
     if (!PublicLink) throw new Error();
@@ -445,8 +446,8 @@ export const getSecureLinks = async (): Promise<MaybeNull<SecureLink[]>> => {
                 active: secureLink.Active,
                 linkId: secureLink.LinkID,
                 expirationDate: secureLink.ExpirationTime!,
-                readCount: secureLink.ReadCount,
-                maxReadCount: secureLink.MaxReadCount,
+                readCount: secureLink.ReadCount ?? null,
+                maxReadCount: secureLink.MaxReadCount ?? null,
                 shareId: secureLink.ShareID!,
                 itemId: secureLink.ItemID!,
                 secureLink: buildSecureLink(secureLink.LinkURL!, linkKey),

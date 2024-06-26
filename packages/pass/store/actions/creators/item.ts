@@ -7,9 +7,13 @@ import { type ActionCallback, withCallback } from '@proton/pass/store/actions/en
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
+    itemCreateSecureLinkRequest,
+    itemDeleteSecureLinkRequest,
+    itemGetSecureLinksRequest,
     itemPinRequest,
     itemRevisionsRequest,
     itemUnpinRequest,
+    itemViewSecureLinkRequest,
     itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
     itemsBulkRestoreRequest,
@@ -23,6 +27,7 @@ import {
     withRequestProgress,
     withRequestSuccess,
 } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
     BatchItemRevisionIDs,
     BatchItemRevisions,
@@ -32,9 +37,17 @@ import type {
     ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
+    Maybe,
+    MaybeNull,
+    SecureLink,
+    SecureLinkCreationDTO,
+    SecureLinkDeleteDTO,
+    SecureLinkItem,
+    SecureLinkQuery,
     SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
@@ -524,3 +537,60 @@ export const itemHistoryFailure = createAction(
         })({ payload: {}, error })
     )
 );
+
+export const itemGetSecureLinks = requestActionsFactory<void, MaybeNull<SecureLink[]>>('item::secure-link::get')({
+    requestId: itemGetSecureLinksRequest,
+});
+
+export const itemCreateSecureLink = requestActionsFactory<SecureLinkCreationDTO, SecureLink>(
+    'item::secure-link::create'
+)({
+    requestId: ({ shareId, itemId }) => itemCreateSecureLinkRequest(shareId, itemId),
+    success: { config: { data: true } },
+});
+
+export const itemViewSecureLink = requestActionsFactory<SecureLinkQuery, Maybe<SecureLinkItem>>(
+    'item::secure-link::view'
+)({
+    requestId: ({ token }) => itemViewSecureLinkRequest(token),
+    success: { config: { data: true } },
+    failure: {
+        config: { data: true },
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Secure link could not be opened.`,
+                error,
+            })({ payload: { error: getErrorMessage(error) } }),
+    },
+});
+
+export const itemRemoveSecureLink = requestActionsFactory<SecureLinkDeleteDTO, SecureLinkDeleteDTO>(
+    'item::secure-link::remove'
+)({
+    requestId: ({ shareId, itemId }) => itemDeleteSecureLinkRequest(shareId, itemId),
+    intent: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Removing secure link...`,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`The secure link has been removed`,
+            })({ payload }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error')
+                    .t`There was an error while removing the secure link. Please try again in a few minutes.`,
+                error,
+            })({ payload: null }),
+    },
+});

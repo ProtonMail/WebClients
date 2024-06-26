@@ -1,21 +1,28 @@
 import { type EndpointOptions } from './enhancers/endpoint';
 
+const withItemKey = (base: string) => (shareId: string, itemId: string) => `${base}::${shareId}::${itemId}`;
+const withKey = (base: string) => (key: string) => `${base}::${key}`;
+
 export const bootRequest = () => 'worker::boot';
 export const syncRequest = () => 'worker::sync';
-export const channelRequest = (channelId: string) => `worker::channel::${channelId}`;
+export const channelRequest = withKey(`worker::channel`);
 export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::wakeup-${endpoint}-${tabId}`;
 export const offlineToggleRequest = () => `offline::toggle`;
 export const offlineResumeRequest = () => `offline::resume`;
 
-export const itemPinRequest = (shareId: string, itemId: string) => `item::pin::${shareId}::${itemId}`;
-export const itemUnpinRequest = (shareId: string, itemId: string) => `item::unpin::${shareId}::${itemId}`;
-export const itemRevisionsRequest = (shareId: string, itemId: string) => `item::revisions::${shareId}::${itemId}`;
+export const itemPinRequest = withItemKey(`item::pin`);
+export const itemUnpinRequest = withItemKey(`item::unpin`);
+export const itemRevisionsRequest = withItemKey(`item::revisions`);
 export const itemsImportRequest = () => `items::import`;
 export const itemsBulkMoveRequest = () => `items::bulk::move`;
 export const itemsBulkTrashRequest = () => `items::bulk::trash`;
 export const itemsBulkDeleteRequest = () => `items::bulk::delete`;
 export const itemsBulkRestoreRequest = () => `items::bulk::restore`;
-export const itemUpdateFlagsRequest = (shareId: string, itemId: string) => `item::flags::update${shareId + itemId}`;
+export const itemUpdateFlagsRequest = withItemKey(`item::flags::update`);
+export const itemCreateSecureLinkRequest = withItemKey(`item::secure-link::create`);
+export const itemViewSecureLinkRequest = withKey('item::secure-link::view');
+export const itemDeleteSecureLinkRequest = withItemKey('item::secure-link::delete');
+export const itemGetSecureLinksRequest = () => 'item::secure-link::get';
 
 export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;
 export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;
@@ -64,7 +71,7 @@ export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;
 export const breachesRequest = () => `monitor::breaches`;
 export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
 export const customBreachRequest = (addressId: string) => `monitor::breaches::custom::${addressId}`;
-export const aliasBreachRequest = (shareId: string, itemId: string) => `monitor::breaches::alias::${shareId + itemId}`;
+export const aliasBreachRequest = withItemKey(`monitor::breaches::alias`);
 
 export const addCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
 export const verifyCustomAddressRequest = (addressId: string) => `monitor::verify::custom::${addressId}`;
