@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Href } from '@proton/atoms/Href';
 import { Icon, InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
 import { GenericError, OnLoginCallback } from '@proton/components/containers';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
@@ -18,7 +17,7 @@ import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryMemberUnprivatizationInfo } from '@proton/shared/lib/api/members';
-import { getOrganization } from '@proton/shared/lib/api/organization';
+import { getOrganization, getOrganizationLogo, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { getUser } from '@proton/shared/lib/api/user';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
@@ -28,8 +27,14 @@ import {
     getMinPasswordLengthMessage,
     passwordLengthValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, Api, MemberUnprivatizationOutput, Organization, User } from '@proton/shared/lib/interfaces';
+import {
+    Address,
+    Api,
+    MemberUnprivatizationOutput,
+    Organization,
+    OrganizationSettings,
+    User,
+} from '@proton/shared/lib/interfaces';
 import {
     ParsedUnprivatizationData,
     parseUnprivatizationData,
@@ -68,6 +73,7 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
     const dataRef = useRef<{
         user: User;
         organization: Organization;
+        organizationLogoUrl: string | null;
         authApi: Api;
         addresses: Address[];
         parsedUnprivatizationData: ParsedUnprivatizationData;
@@ -95,9 +101,20 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
             const authApi = getAuthAPI(UID, AccessToken, silentApi);
 
             const prepareData = async () => {
-                const [user, organization, addresses, unprivatizationData] = await Promise.all([
+                const [user, organization, organizationLogoUrl, addresses, unprivatizationData] = await Promise.all([
                     authApi<{ User: User }>(getUser()).then(({ User }) => User),
                     authApi<{ Organization: Organization }>(getOrganization()).then(({ Organization }) => Organization),
+                    authApi<OrganizationSettings>(getOrganizationSettings())
+                        .then(async ({ LogoID }): Promise<null | string> => {
+                            if (!LogoID) {
+                                return null;
+                            }
+                            const result = await authApi<Blob>({ ...getOrganizationLogo(LogoID), output: 'blob' });
+                            return URL.createObjectURL(result);
+                        })
+                        .catch(() => {
+                            return null;
+                        }),
                     getAllAddresses(authApi),
                     authApi<MemberUnprivatizationOutput>(queryMemberUnprivatizationInfo()),
                 ]);
@@ -111,6 +128,7 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
                 dataRef.current = {
                     user,
                     organization,
+                    organizationLogoUrl,
                     addresses,
                     parsedUnprivatizationData,
                     authApi,
@@ -135,6 +153,15 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
             .finally(() => {
                 setLoading(false);
             });
+    }, []);
+
+    useEffect(() => {
+        return () => {
+            const organizationLogoUrl = dataRef.current?.organizationLogoUrl;
+            if (organizationLogoUrl) {
+                URL.revokeObjectURL(organizationLogoUrl);
+            }
+        };
     }, []);
 
     const handleSetup = async () => {
@@ -210,7 +237,12 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
     }
 
     const data = dataRef.current;
-    const { adminEmail, username, organizationName, type } = (() => {
+    const { adminEmail, username, organizationName } = ((): {
+        type: 'public' | 'private';
+        adminEmail: string;
+        username: string;
+        organizationName: string;
+    } => {
         if (!data) {
             return {
                 type: 'public' as const,
@@ -229,19 +261,24 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
         };
     })();
 
+    const organizationLogoUrl = data?.organizationLogoUrl;
     const user = (
         <div className="flex items-center w-full text-left rounded relative">
-            <span
-                className="flex rounded w-custom h-custom bg-weak"
+            <div
+                className="flex rounded ratio-square overflow-hidden w-custom shrink-0 grow-0 relative  w-custom h-custom bg-weak"
                 style={{
                     '--w-custom': '2.25rem',
                     '--h-custom': '2.25rem',
                 }}
             >
-                <span className="m-auto text-semibold" aria-hidden="true">
-                    <Icon name="user" />
-                </span>
-            </span>
+                {organizationLogoUrl ? (
+                    <img src={organizationLogoUrl} alt="" className="object-cover w-full h-full" />
+                ) : (
+                    <span className="m-auto text-semibold" aria-hidden="true">
+                        <Icon name="user" />
+                    </span>
+                )}
+            </div>
             <div className="mx-3 flex-1 mt-custom" style={{ '--mt-custom': `-0.25em` }}>
                 <div className="text-left text-break text-semibold">{adminEmail}</div>
             </div>
@@ -307,17 +344,6 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
                         rootClassName="mt-2"
                     />
 
-                    {type === 'public' && (
-                        <div className="mt-4 py-2 px-3 border border-weak rounded flex flex-nowrap">
-                            <Icon name="info-circle" className="mr-2 mt-0.5 shrink-0" />
-                            <div>
-                                {c('Info')
-                                    .t`Your administrator configured your account as non-private and will have access to your account and your data.`}{' '}
-                                <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link')
-                                    .t`Learn more`}</Href>
-                            </div>
-                        </div>
-                    )}
                     <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-4">
                         {c('Action').t`Continue`}
                     </Button>
