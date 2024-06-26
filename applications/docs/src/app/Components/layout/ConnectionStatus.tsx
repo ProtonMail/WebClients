@@ -1,5 +1,5 @@
 import { Icon } from '@proton/components'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   WebsocketConnectionEvent,
   WebsocketConnectionEventPayloads,
@@ -10,6 +10,14 @@ import { mergeRegister } from '@lexical/utils'
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { useGenericAlertModal } from '../Modals/GenericAlert'
+import CloudIcon from '../../Icons/CloudIcon'
+import ArrowsRotate from '../../Icons/ArrowsRotate'
+
+/**
+ * Number of ms a "Saving..." status should be shown at minimum, to prevent fast-paced/jarring switching
+ * from Saving to Saved and back.
+ */
+const MINIMUM_DURATION_SAVING_MUST_BE_SHOWN = 1000
 
 export const ConnectionStatus = () => {
   const application = useApplication()
@@ -18,6 +26,10 @@ export const ConnectionStatus = () => {
   const [hasConcerningMessages, setHasConcerningMessages] = useState(false)
   const [hasErroredMessages, setHasErroredMessages] = useState(false)
   const [genericAlertModal, showGenericAlertModal] = useGenericAlertModal()
+  const [saving, setSaving] = useState(false)
+  const [saved, setSaved] = useState(false)
+  const [saveStartTime, setSaveStartTime] = useState(0)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     return mergeRegister(
@@ -48,8 +60,24 @@ export const ConnectionStatus = () => {
         },
         WebsocketConnectionEvent.AckStatusChange,
       ),
+      application.eventBus.addEventCallback(() => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current)
+        }
+        setSaving(true)
+        setSaved(false)
+        setSaveStartTime(Date.now())
+      }, WebsocketConnectionEvent.Saving),
+      application.eventBus.addEventCallback(() => {
+        const elapsedTime = Date.now() - saveStartTime
+        const remainingTime = Math.max(0, MINIMUM_DURATION_SAVING_MUST_BE_SHOWN - elapsedTime)
+        timeoutRef.current = setTimeout(() => {
+          setSaving(false)
+          setSaved(true)
+        }, remainingTime)
+      }, WebsocketConnectionEvent.Saved),
     )
-  }, [application.eventBus])
+  }, [application.eventBus, saveStartTime])
 
   const showConcernedSyncAlert = useCallback(() => {
     showGenericAlertModal({
@@ -100,19 +128,31 @@ export const ConnectionStatus = () => {
     <div className="flex select-none items-center gap-3">
       {content && (
         <>
-          <div className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-xs text-[--text-weak]">
+          <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
             {content}
           </div>
           {isNotConnected && (
-            <div className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-xs text-[--text-weak]">
+            <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
               {c('Info').t`Recent edits may not be displayed`}
             </div>
           )}
         </>
       )}
+      {saving && (
+        <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
+          <ArrowsRotate className="h-3.5 w-3.5 fill-current animate-spin" />
+          {c('Info').t`Saving...`}
+        </div>
+      )}
+      {saved && (
+        <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
+          <CloudIcon className="h-4 w-4 fill-current" />
+          {c('Info').t`Saved`}
+        </div>
+      )}
       {hasConcerningMessages && (
         <button
-          className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-xs text-[--text-weak]"
+          className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]"
           onClick={showConcernedSyncAlert}
         >
           {c('Info').t`Some edits are taking longer to sync`}
@@ -120,7 +160,7 @@ export const ConnectionStatus = () => {
       )}
       {hasErroredMessages && (
         <button
-          className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-xs text-[--text-weak]"
+          className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]"
           onClick={showErroredSyncAlert}
         >
           {c('Info').t`Some edits failed to sync`}

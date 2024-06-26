@@ -7,17 +7,18 @@ import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { WebsocketService } from './WebsocketService'
 import { BroadcastSource, InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
-import { DocumentUpdateBuffer } from './Buffer/DocumentUpdateBuffer'
 import { Result } from '../../Domain/Result/Result'
 import { EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import { DocumentConnectionRecord } from './DocumentConnectionRecord'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
+import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 
 describe('WebsocketService', () => {
   let service: WebsocketService
   let eventBus: InternalEventBusInterface
   let encryptMessage: EncryptMessage
-  let buffer: DocumentUpdateBuffer
+  let debouncer: UpdateDebouncer
   let connection: WebsocketConnectionInterface
   let record: DocumentConnectionRecord
 
@@ -52,16 +53,17 @@ describe('WebsocketService', () => {
       broadcastMessage: jest.fn(),
     } as unknown as WebsocketConnectionInterface
 
-    buffer = {
+    debouncer = {
       addUpdate: jest.fn(),
-    } as unknown as DocumentUpdateBuffer
+      getMode: jest.fn(),
+    } as unknown as UpdateDebouncer
 
     record = {
       connection,
       keys: {
         userOwnAddress: 'foo',
       } as DocumentKeys,
-      buffer,
+      debouncer: debouncer,
       document: {} as NodeMeta,
     }
 
@@ -78,7 +80,7 @@ describe('WebsocketService', () => {
     it('should add to buffer', async () => {
       await service.sendDocumentUpdateMessage({} as NodeMeta, new Uint8Array())
 
-      expect(buffer.addUpdate).toHaveBeenCalled()
+      expect(debouncer.addUpdate).toHaveBeenCalled()
     })
   })
 
@@ -86,13 +88,13 @@ describe('WebsocketService', () => {
     it('should encrypt updates', async () => {
       const encryptMock = (service.encryptMessage = jest.fn())
 
-      await service.handleDocumentUpdateBufferFlush({} as NodeMeta, new Uint8Array())
+      await service.handleDocumentUpdateDebouncerFlush({} as NodeMeta, new Uint8Array())
 
       expect(encryptMock).toHaveBeenCalled()
     })
 
     it('should broadcast message', async () => {
-      await service.handleDocumentUpdateBufferFlush({} as NodeMeta, new Uint8Array())
+      await service.handleDocumentUpdateDebouncerFlush({} as NodeMeta, new Uint8Array())
 
       expect(connection.broadcastMessage).toHaveBeenCalled()
     })
@@ -100,7 +102,7 @@ describe('WebsocketService', () => {
     it('should add message to ack ledger', async () => {
       service.ledger.messagePosted = jest.fn()
 
-      await service.handleDocumentUpdateBufferFlush({} as NodeMeta, new Uint8Array())
+      await service.handleDocumentUpdateDebouncerFlush({} as NodeMeta, new Uint8Array())
 
       expect(service.ledger.messagePosted).toHaveBeenCalled()
     })
@@ -134,7 +136,7 @@ describe('WebsocketService', () => {
 
       service.createConnection({ linkId: '123' } as NodeMeta, {} as DocumentKeys, { commitId: () => undefined })
 
-      buffer = service.getConnectionRecord('123')!.buffer
+      debouncer = service.getConnectionRecord('123')!.debouncer
     })
 
     it('should not prevent leaving if no unsaved changes', async () => {
@@ -146,7 +148,7 @@ describe('WebsocketService', () => {
     })
 
     it('should prevent leaving if unsaved changes', async () => {
-      buffer.addUpdate(new Uint8Array())
+      debouncer.addUpdate(new Uint8Array())
 
       const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
 
@@ -156,15 +158,15 @@ describe('WebsocketService', () => {
     })
 
     it('should immediately flush a buffer that has pending changes', async () => {
-      buffer.flush = jest.fn()
+      debouncer.flush = jest.fn()
 
-      buffer.addUpdate(new Uint8Array())
+      debouncer.addUpdate(new Uint8Array())
 
       const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
 
       service.handleWindowUnload(event)
 
-      expect(buffer.flush).toHaveBeenCalled()
+      expect(debouncer.flush).toHaveBeenCalled()
     })
   })
 
@@ -176,17 +178,17 @@ describe('WebsocketService', () => {
 
       service.createConnection({ linkId: '123' } as NodeMeta, {} as DocumentKeys, { commitId: () => undefined })
 
-      buffer = service.getConnectionRecord('123')!.buffer
+      debouncer = service.getConnectionRecord('123')!.debouncer
     })
 
     it('should immediately flush a buffer that has pending changes', async () => {
-      buffer.flush = jest.fn()
+      debouncer.flush = jest.fn()
 
-      buffer.addUpdate(new Uint8Array())
+      debouncer.addUpdate(new Uint8Array())
 
       service.flushPendingUpdates()
 
-      expect(buffer.flush).toHaveBeenCalled()
+      expect(debouncer.flush).toHaveBeenCalled()
     })
   })
 
@@ -205,7 +207,7 @@ describe('WebsocketService', () => {
     })
 
     it('should ignore sending ClientIsBroadcastingItsPresenceState event if not in realtime mode', async () => {
-      Object.defineProperty(buffer, 'isBufferEnabled', { value: true })
+      debouncer.getMode = jest.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
 
       await service.sendEventMessage(
         {} as NodeMeta,
@@ -218,7 +220,7 @@ describe('WebsocketService', () => {
     })
 
     it('should ignore sending ClientHasSentACommentMessage event if not in realtime mode', async () => {
-      Object.defineProperty(buffer, 'isBufferEnabled', { value: true })
+      debouncer.getMode = jest.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
 
       await service.sendEventMessage(
         {} as NodeMeta,
@@ -231,7 +233,7 @@ describe('WebsocketService', () => {
     })
 
     it('should send ClientIsBroadcastingItsPresenceState event if in realtime mode', async () => {
-      Object.defineProperty(buffer, 'isBufferEnabled', { value: false })
+      Object.defineProperty(debouncer, 'isBufferEnabled', { value: false })
 
       await service.sendEventMessage(
         {} as NodeMeta,
