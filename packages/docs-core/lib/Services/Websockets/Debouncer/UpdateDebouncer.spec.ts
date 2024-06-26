@@ -16,11 +16,31 @@ describe('UpdateDebouncer', () => {
       } as unknown as LoggerInterface,
       onEvent,
     )
+
+    debouncer.isReadyToFlush = true
   })
 
   afterEach(() => {
     debouncer.destroy()
     jest.clearAllMocks()
+  })
+
+  describe('markAsReadyToFlush', () => {
+    it('should set isReadyToFlush to true', () => {
+      debouncer.isReadyToFlush = false
+
+      debouncer.markAsReadyToFlush()
+
+      expect(debouncer.isReadyToFlush).toBe(true)
+    })
+
+    it('should flush', () => {
+      debouncer.flush = jest.fn()
+
+      debouncer.markAsReadyToFlush()
+
+      expect(debouncer.flush).toHaveBeenCalledTimes(1)
+    })
   })
 
   describe('addUpdate', () => {
@@ -109,6 +129,16 @@ describe('UpdateDebouncer', () => {
 
   describe('flush', () => {
     it('should do nothing if buffer is empty', () => {
+      debouncer.flush()
+
+      expect(onEvent).not.toHaveBeenCalled()
+    })
+
+    it('should abort if not ready to flush', () => {
+      debouncer.isReadyToFlush = false
+      debouncer.addUpdate(new Uint8Array())
+
+      onEvent = jest.fn()
       debouncer.flush()
 
       expect(onEvent).not.toHaveBeenCalled()
