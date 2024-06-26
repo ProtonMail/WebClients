@@ -545,6 +545,7 @@ const SubscriptionContainer = ({
         selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
         billingAddress: model.taxBillingAddress,
         billingPlatform: subscription?.BillingPlatform,
+        chargebeeUserExists: user.ChargebeeUserExists,
         onChargeable: (operations, { sourceType, paymentProcessorType }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {

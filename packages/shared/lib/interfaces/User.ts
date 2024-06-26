@@ -36,6 +36,11 @@ export enum ChargebeeEnabled {
     CHARGEBEE_FORCED = 2,
 }
 
+export enum ChargebeeUserExists {
+    NO = 0,
+    YES = 1,
+}
+
 export enum UserLockedFlags {
     BASE_STORAGE_EXCEEDED = 1,
     DRIVE_STORAGE_EXCEEDED = 2,
@@ -99,6 +104,8 @@ export interface User {
     } | null;
     ChargebeeUser: ChargebeeEnabled;
     LockedFlags?: number;
+    Billed?: boolean;
+    ChargebeeUserExists?: ChargebeeUserExists;
 }
 
 export interface UserModel extends User {
