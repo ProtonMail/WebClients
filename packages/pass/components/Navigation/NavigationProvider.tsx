@@ -2,6 +2,8 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useMemo } from 'react';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 
+import { type Location } from 'history';
+
 import type { ItemFilters, Maybe, MaybeNull, SelectedItem } from '@proton/pass/types';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 
@@ -52,7 +54,7 @@ export type NavigationContextValue = {
     /** Joins the current location search parameters to the provided path */
     preserveSearch: (path: string) => string;
     /** Resolves the current location */
-    getCurrentLocation: () => string;
+    getCurrentLocation: () => Location;
 };
 
 const NavigationContext = createContext<MaybeNull<NavigationContextValue>>(null);
@@ -130,7 +132,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
             selectItem,
             setFilters,
             preserveSearch: (path) => path + history.location.search,
-            getCurrentLocation: () => history.createHref(history.location),
+            getCurrentLocation: () => ({ ...history.location }),
         }),
         [
             location.search /* indirectly matches filter changes */,
