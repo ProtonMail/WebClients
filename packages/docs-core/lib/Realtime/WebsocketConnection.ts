@@ -45,6 +45,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private reconnectTimeout: NodeJS.Timeout | undefined = undefined
   private destroyed = false
 
+  private didReceiveReadyMessageFromRTS = false
+
   constructor(
     private callbacks: WebsocketCallbacks,
     private logger: LoggerInterface,
@@ -167,18 +169,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       this.logger.info(
         `Websocket connection opened; readyState: ${this.socket?.readyState} bufferAmount: ${this.socket?.bufferedAmount}`,
       )
-      this.heartbeat()
-      this.state.didOpen()
 
-      /**
-       * There is an issue with the current RTS where it needs to do some config before it's ready to receive messages,
-       * even though the connection is opened immediately.
-       *
-       * In the future it will send us a message once it's ready (DRVDOC-559). For now, we do an arbitrary timeout.
-       */
-      setTimeout(() => {
-        this.callbacks.onOpen()
-      }, 50)
+      this.heartbeat()
+
+      this.state.didOpen()
     }
 
     this.socket.onmessage = async (event) => {
@@ -221,6 +215,10 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     }
   }
 
+  markAsReadyToAcceptMessages() {
+    this.didReceiveReadyMessageFromRTS = true
+  }
+
   private logDisconnectMetric(reason: ConnectionCloseReason): void {
     if (
       [
@@ -253,6 +251,11 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   }
 
   async broadcastMessage(data: Uint8Array): Promise<void> {
+    if (!this.didReceiveReadyMessageFromRTS) {
+      this.logger.error('Cannot send message, RTS is not ready to accept messages')
+      return
+    }
+
     if (!this.socket || this.socket.readyState !== WebSocket.OPEN || !this.state.isConnected) {
       this.logger.error('Cannot send message, socket is not open')
       return
