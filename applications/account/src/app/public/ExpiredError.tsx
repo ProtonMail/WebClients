@@ -61,7 +61,7 @@ const getTexts = (type: Props['type']) => {
     if (type === 'magic-link-used') {
         return {
             title: c('Info').t`Invitation link used`,
-            description: c('Info').t`This invitation link already used. Please sign in directly instead.`,
+            description: c('Info').t`This invitation link is already used. Please sign in directly instead.`,
         };
     }
     return {
