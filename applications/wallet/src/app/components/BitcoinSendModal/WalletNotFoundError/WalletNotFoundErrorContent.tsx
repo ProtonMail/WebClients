@@ -9,11 +9,12 @@ import { Button } from '../../../atoms';
 import './WalletNotFoundErrorDropdown.scss';
 
 interface Props {
-    email: String;
+    email: string;
     dense?: boolean;
+    onSendInvite: (email: string) => void;
 }
 
-export const WalletNotFoundErrorContent = ({ email, dense }: Props) => {
+export const WalletNotFoundErrorContent = ({ email, dense, onSendInvite }: Props) => {
     return (
         <div className="flex flex-column p-6">
             <div className={clsx('flex items-center', dense ? 'flex-row flex-nowrap mb-6' : 'flex-column')}>
@@ -38,8 +39,15 @@ export const WalletNotFoundErrorContent = ({ email, dense }: Props) => {
                     .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`}
             </p>
 
-            <Button color="norm" shape="solid" className={clsx(dense ? 'mt-6' : 'mt-12')} fullWidth>{c('Bitcoin send')
-                .t`Send invite email`}</Button>
+            <Button
+                color="norm"
+                shape="solid"
+                className={clsx(dense ? 'mt-6' : 'mt-12')}
+                fullWidth
+                onClick={() => {
+                    onSendInvite(email);
+                }}
+            >{c('Bitcoin send').t`Send invite email`}</Button>
         </div>
     );
 };

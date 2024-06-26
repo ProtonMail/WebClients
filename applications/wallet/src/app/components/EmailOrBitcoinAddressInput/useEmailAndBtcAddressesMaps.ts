@@ -20,6 +20,15 @@ interface Props {
 export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipientEmailMap = {} }: Props = {}) => {
     const [btcAddressMap, setBtcAddressMap] = useState<BtcAddressMap>(initBtcAddressMap);
     const [recipientEmailMap, setRecipientEmailMap] = useState<RecipientEmailMap>(initRecipientEmailMap);
+    const [recipientsEmailWithSentInvite, setRecipientsEmailWithSentInvite] = useState<Set<string>>(new Set());
+
+    const hasSentInvite = (email: string) => {
+        return recipientsEmailWithSentInvite.has(email);
+    };
+
+    const addRecipientWithSentInvite = (email: string) => {
+        setRecipientsEmailWithSentInvite((p) => p.add(email));
+    };
 
     const exists = (recipient: Recipient) => {
         return Boolean(recipientEmailMap[recipient.Address]);
@@ -51,5 +60,15 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
         setBtcAddressMap((prev) => omit(prev, recipientToRemove?.btcAddress.value ?? ''));
     };
 
-    return { recipientEmailMap, btcAddressMap, addValidRecipient, addInvalidRecipient, removeRecipient, exists };
+    return {
+        recipientEmailMap,
+        btcAddressMap,
+        addValidRecipient,
+        addInvalidRecipient,
+        removeRecipient,
+        exists,
+
+        hasSentInvite,
+        addRecipientWithSentInvite,
+    };
 };

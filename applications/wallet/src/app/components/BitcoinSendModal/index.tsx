@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
-import { ModalOwnProps, useModalState } from '@proton/components/components';
+import { ModalOwnProps, useModalState, useModalStateWithData } from '@proton/components/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -13,6 +12,8 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
 import { SubTheme, getAccountWithChainDataFromManyWallets } from '../../utils';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { InviteModal } from '../InviteModal';
+import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import { ModalHeaderWithStepper, Steps } from '../ModalHeaderWithStepper';
 import { AmountInput } from './AmountInput';
 import { useOnChainFeesSelector } from './OnchainTransactionBuilderFooter/OnchainTransactionAdvancedOptions/useOnChainFeesSelector';
@@ -47,6 +48,8 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
     const [unit, setUnit] = useState<WasmBitcoinUnit | WasmApiExchangeRate>('BTC');
     const recipientHelpers = useEmailAndBtcAddressesMaps();
     const [sendConfirmModal, setSendConfirmModal] = useModalState();
+    const [inviteModal, setInviteModal] = useModalState();
+    const [sentInviteConfirmModal, setSentInviteConfirmModal] = useModalStateWithData<{ email: string }>();
 
     const { walletsChainData } = useBitcoinBlockchainContext();
 
@@ -143,8 +146,34 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                     sendConfirmModal.onClose?.();
                     onDone?.();
                 }}
-                onClickInviteAFriend={noop}
+                onClickInviteAFriend={() => {
+                    sendConfirmModal.onClose();
+                    setInviteModal(true);
+                }}
             />
+
+            <InviteModal
+                {...inviteModal}
+                onInviteSent={(email) => {
+                    inviteModal.onClose();
+                    setSentInviteConfirmModal({ email });
+                }}
+                onClose={() => {
+                    inviteModal.onClose();
+                    setSendConfirmModal(true);
+                }}
+            />
+
+            {sentInviteConfirmModal.data && (
+                <InviteSentConfirmModal
+                    {...sentInviteConfirmModal}
+                    email={sentInviteConfirmModal.data.email}
+                    onClose={() => {
+                        sentInviteConfirmModal.onClose();
+                        setSendConfirmModal(true);
+                    }}
+                />
+            )}
         </>
     );
 };
