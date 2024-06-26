@@ -239,7 +239,7 @@ const DocumentTitleDropdown = ({
               }}
             >
               <Icon name="printer" className="color-weak mr-2" />
-              {c('Action').t`Print as PDF`}
+              {c('Action').t`Print`}
             </DropdownMenuButton>
           )}
         </DropdownMenu>
