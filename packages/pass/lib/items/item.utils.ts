@@ -18,6 +18,7 @@ import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import chunk from '@proton/utils/chunk';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
@@ -161,3 +162,5 @@ export const intoSafeLoginItem = (item: ItemRevision<'login'>): SafeLoginItem =>
     shareId: item.shareId,
     url: item.data.content.urls?.[0],
 });
+
+export const buildSecureLink = (url: string, linkKey: Uint8Array) => `${url}#${uint8ArrayToBase64String(linkKey)}`;
