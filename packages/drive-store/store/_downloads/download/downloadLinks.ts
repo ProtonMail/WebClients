@@ -1,10 +1,12 @@
-import { sendErrorReport } from '../../../utils/errorHandling';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
+
 import {
     DownloadCallbacks,
     DownloadStreamControls,
     GetChildrenCallback,
     LinkDownload,
     LogCallback,
+    OnContainsDocumentCallback,
     OnInitCallback,
     OnProgressCallback,
     OnSignatureIssueCallback,
@@ -27,7 +29,11 @@ export default function initDownloadLinks(
     const folderLoaders: Map<String, FolderTreeLoader> = new Map();
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
-
+    const cancel = () => {
+        Array.from(folderLoaders.values()).forEach((folderLoader) => folderLoader.cancel());
+        archiveGenerator.cancel();
+        concurrentIterator.cancel();
+    };
     const start = () => {
         // To get link into progresses right away so potentially loader can be displayed.
         callbacks.onProgress?.(
@@ -42,18 +48,24 @@ export default function initDownloadLinks(
             callbacks.getChildren,
             callbacks.onInit,
             callbacks.onSignatureIssue,
-            callbacks.onProgress
-        );
-        const linksIterator = iterateAllLinks(links, folderLoaders);
+            callbacks.onProgress,
+            callbacks.onContainsDocument
+        ).catch((err: Error) => {
+            log(`initDownloadLinks => loadTotalSize failed: ${err}`);
+            callbacks.onError?.(err);
+            cancel();
+        });
+        const linksIterator = iterateAllLinks(links, folderLoaders, callbacks.onContainsDocument);
         const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks, log, options);
         archiveGenerator
             .writeLinks(linksWithStreamsIterator)
             .then(() => {
                 callbacks.onFinish?.();
             })
-            .catch((err) => {
+            .catch((err: Error) => {
+                log(`initDownloadLinks => archiveGenerator failed: ${err}`);
                 callbacks.onError?.(err);
-                archiveGenerator.cancel();
+                cancel();
             });
         return archiveGenerator.stream;
     };
@@ -62,11 +74,7 @@ export default function initDownloadLinks(
         start,
         pause: () => concurrentIterator.pause(),
         resume: () => concurrentIterator.resume(),
-        cancel: () => {
-            Array.from(folderLoaders.values()).forEach((folderLoader) => folderLoader.cancel());
-            archiveGenerator.cancel();
-            concurrentIterator.cancel();
-        },
+        cancel,
     };
 }
 
@@ -77,38 +85,50 @@ function loadTotalSize(
     getChildren: GetChildrenCallback,
     onInit?: OnInitCallback,
     onSignatureIssue?: OnSignatureIssueCallback,
-    onProgress?: OnProgressCallback
+    onProgress?: OnProgressCallback,
+    onContainsDocument?: OnContainsDocumentCallback
 ) {
     const sizePromises = links.map(async (link) => {
+        // Proton Documents are skipped, so let's set them as 0 size
+        if (isProtonDocument(link.mimeType)) {
+            return { size: 0, linkSizes: { [link.linkId]: 0 } };
+        }
+
         if (link.isFile) {
             return { size: link.size, linkSizes: Object.fromEntries([[link.linkId, link.size]]) };
         }
         const folderLoader = new FolderTreeLoader(link, log);
         folderLoaders.set(link.shareId + link.linkId, folderLoader);
-        const result = await folderLoader.load(getChildren, onSignatureIssue, onProgress);
+        const result = await folderLoader.load(getChildren, onSignatureIssue, onProgress, onContainsDocument);
         result.linkSizes[link.linkId] = result.size;
         return result;
     });
 
-    Promise.all(sizePromises)
-        .then((results) => {
-            const size = results.reduce((total, { size }) => total + size, 0);
-            const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
-            onInit?.(size, linkSizes);
-        })
-        .catch(sendErrorReport);
+    return Promise.all(sizePromises).then((results) => {
+        const size = results.reduce((total, { size }) => total + size, 0);
+        const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
+        onInit?.(size, linkSizes);
+    });
 }
 
 async function* iterateAllLinks(
     links: LinkDownload[],
-    folderLoaders: Map<String, FolderTreeLoader>
+    folderLoaders: Map<String, FolderTreeLoader>,
+    onContainsDocument?: OnContainsDocumentCallback
 ): AsyncGenerator<NestedLinkDownload> {
     for (const link of links) {
+        // If this is removed, remove it in `loadTotalSize` as well.
+        if (isProtonDocument(link.mimeType)) {
+            await onContainsDocument?.(new AbortController().signal);
+            continue;
+        }
+
         yield {
             parentLinkIds: [],
             parentPath: [],
             ...link,
         };
+
         if (!link.isFile) {
             const f = folderLoaders.get(link.shareId + link.linkId) as FolderTreeLoader;
             for await (const childLink of f.iterateAllChildren()) {
