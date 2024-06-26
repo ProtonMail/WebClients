@@ -31,12 +31,19 @@ export class UpdateDebouncer {
   singlePlayerIdleTimeout: NodeJS.Timeout | null = null
   private mode: DocumentDebounceMode = DocumentDebounceMode.SinglePlayer
   currentBufferSize = 0
+  isReadyToFlush = false
 
   constructor(
     public readonly document: NodeMeta,
     private logger: LoggerInterface,
     private onEvent: (event: UpdateDebouncerEventPayload) => void,
   ) {}
+
+  public markAsReadyToFlush(): void {
+    this.isReadyToFlush = true
+
+    this.flush()
+  }
 
   destroy(): void {
     if (this.realtimeStreamingInterval) {
@@ -117,6 +124,12 @@ export class UpdateDebouncer {
 
   public flush(): void {
     if (this.buffer.length === 0) {
+      return
+    }
+
+    if (!this.isReadyToFlush) {
+      this.logger.info(`Not yet ready to flush.`)
+
       return
     }
 
