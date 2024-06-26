@@ -83,6 +83,7 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
                     getQuotes: mockedValue?.payment_gateway?.getQuotes ?? vi.fn(),
                     createOnRampCheckout: mockedValue?.payment_gateway?.createOnRampCheckout ?? vi.fn(),
                     signUrl: mockedValue?.payment_gateway?.signUrl ?? vi.fn(),
+                    getPublicApiKey: mockedValue?.payment_gateway?.getPublicApiKey ?? vi.fn(),
                 }),
                 invite: freeable({
                     checkInviteStatus: mockedValue?.invite?.checkInviteStatus ?? vi.fn(),

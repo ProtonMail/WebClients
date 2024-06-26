@@ -7,8 +7,8 @@ import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
 import { IWasmApiWalletData, signData, useWalletApiClients, verifySignedData } from '@proton/wallet';
 
 import { POOL_FILLING_THRESHOLD } from '../../constants/email-integration';
-import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
 import { WalletWithChainData } from '../../types';
+import { useComputeNextAddressToReceive } from '../../utils/hooks/useComputeNextIndexToReceive';
 
 export const useBitcoinAddressPool = ({
     decryptedApiWalletsData,
@@ -19,8 +19,8 @@ export const useBitcoinAddressPool = ({
 }) => {
     const api = useWalletApiClients();
 
-    const getBitcoinAddressHighestIndex = useGetBitcoinAddressHighestIndex();
     const getAddressKeys = useGetAddressKeys();
+    const computeNextIndexToReceive = useComputeNextAddressToReceive(walletsChainData);
     const [isLoading, setIsLoading] = useState(false);
 
     const fillBitcoinAddressPoolForAccount = useCallback(
@@ -38,11 +38,7 @@ export const useBitcoinAddressPool = ({
 
             const [primaryAddressKey] = await getAddressKeys(walletAccountAddress.ID);
 
-            const highestApiIndex = await getBitcoinAddressHighestIndex(walletId, walletAccountId);
-
-            // TODO: interact with useWalletsChainData to do sync
-            const highestNetworkIndexValue = await wasmAccount.account.getLastUnusedAddressIndex();
-            let highestIndex = Math.max(highestApiIndex, highestNetworkIndexValue ?? 0);
+            let nextIndexToUse = await computeNextIndexToReceive(walletAccount);
 
             const unusedBitcoinAddresses = await api.bitcoin_address
                 .getBitcoinAddresses(walletId, walletAccountId)
@@ -66,11 +62,10 @@ export const useBitcoinAddressPool = ({
                 const payload = new WasmApiBitcoinAddressesCreationPayload();
 
                 for (let i = 1; i <= addressesToCreate; i++) {
-                    highestIndex = highestIndex + 1;
-
                     try {
-                        const addressData = await computeAddressDataFromIndex(highestIndex);
+                        const addressData = await computeAddressDataFromIndex(nextIndexToUse);
                         payload.push(addressData);
+                        nextIndexToUse = nextIndexToUse + 1;
                     } catch (e) {
                         console.error('Could not create bitcoin address creation payload', e);
                     }
@@ -103,10 +98,16 @@ export const useBitcoinAddressPool = ({
 
             for (const addressToUpdate of compact(addressesWithOutdatedSignature)) {
                 try {
-                    const localHighestIndex = addressToUpdate?.Data.BitcoinAddressIndex ?? highestIndex + 1;
-
-                    const addressData = await computeAddressDataFromIndex(localHighestIndex);
-                    highestIndex = localHighestIndex;
+                    // eslint-disable-next-line @typescript-eslint/no-loop-func
+                    const addressData = await (async () => {
+                        if (addressToUpdate?.Data.BitcoinAddressIndex) {
+                            return computeAddressDataFromIndex(addressToUpdate.Data.BitcoinAddressIndex);
+                        } else {
+                            const addressData = await computeAddressDataFromIndex(nextIndexToUse);
+                            nextIndexToUse++;
+                            return addressData;
+                        }
+                    })();
 
                     await api.bitcoin_address.updateBitcoinAddress(
                         walletId,
@@ -119,7 +120,7 @@ export const useBitcoinAddressPool = ({
                 }
             }
         },
-        [api, getAddressKeys, getBitcoinAddressHighestIndex]
+        [computeNextIndexToReceive, getAddressKeys]
     );
 
     const fillBitcoinAddressPools = useCallback(

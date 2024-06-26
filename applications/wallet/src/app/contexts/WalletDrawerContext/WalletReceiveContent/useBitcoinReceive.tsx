@@ -4,8 +4,8 @@ import { WasmApiWalletAccount, WasmPaymentLink } from '@proton/andromeda';
 import useLoading from '@proton/hooks/useLoading';
 
 import { BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING } from '../../../constants';
-import { useGetBitcoinAddressHighestIndex } from '../../../store/hooks/useBitcoinAddressHighestIndex';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
+import { useComputeNextAddressToReceive } from '../../../utils/hooks/useComputeNextIndexToReceive';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
 
 export interface UseBitcoinReceiveHelper {
@@ -39,23 +39,18 @@ export const useBitcoinReceive = (isOpen: boolean, account: WasmApiWalletAccount
     const [amount, setAmount] = useState(0);
     const [shouldShowAmountInput, setShouldShowAmountInput] = useState(false);
 
-    const getBitcoinAddressHighestIndex = useGetBitcoinAddressHighestIndex();
+    const computeNextIndexToReceive = useComputeNextAddressToReceive(walletsChainData);
 
     useEffect(() => {
-        const wasmAccount = getAccountWithChainDataFromManyWallets(walletsChainData, account.WalletID, account.ID);
-
         const getIndex = async () => {
-            const apiHighestIndex = await getBitcoinAddressHighestIndex(account.WalletID, account.ID);
-            const clientHighestIndex = await wasmAccount?.account.getLastUnusedAddressIndex();
-
-            const nextIndex = Math.max(clientHighestIndex ?? 0, apiHighestIndex) + 1;
+            const nextIndex = await computeNextIndexToReceive(account);
 
             initialIndex.current = nextIndex;
             setIndex(nextIndex);
         };
 
         void withLoadingPaymentLink(getIndex());
-    }, [account.ID, account.WalletID, getBitcoinAddressHighestIndex, walletsChainData, withLoadingPaymentLink]);
+    }, [account, computeNextIndexToReceive, withLoadingPaymentLink]);
 
     useEffect(() => {
         if (!isOpen) {

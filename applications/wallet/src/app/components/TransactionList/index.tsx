@@ -40,9 +40,11 @@ import {
 interface Props {
     apiWalletData: IWasmApiWalletData;
     apiAccount?: WasmApiWalletAccount;
+    onClickReceive: () => void;
+    onClickBuy: () => void;
 }
 
-export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
+export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onClickBuy }: Props) => {
     const { walletsChainData, decryptedApiWalletsData, syncSingleWallet, syncSingleWalletAccount, getSyncingData } =
         useBitcoinBlockchainContext();
     const { openDrawer, drawer, setDrawerData } = useWalletDrawerContext();
@@ -250,6 +252,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                 </div>
                 <div className="flex flex-row justify-center mt-6 ui-standard">
                     <Button
+                        onClick={() => onClickReceive()}
                         shape="ghost"
                         color="norm"
                         className="text-lg w-custom mx-1"
@@ -259,6 +262,7 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
                         {c('Wallet transaction').t`Receive`}
                     </Button>
                     <Button
+                        onClick={() => onClickBuy()}
                         shape="solid"
                         className="button-darker text-lg w-custom mx-1"
                         style={{ '--w-custom': '7.5rem' }}
@@ -281,6 +285,8 @@ export const TransactionList = ({ apiWalletData, apiAccount }: Props) => {
         loadingApiData,
         setNoteModalState,
         handleClickRow,
+        onClickReceive,
+        onClickBuy,
     ]);
 
     return (
