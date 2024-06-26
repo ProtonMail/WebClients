@@ -137,7 +137,7 @@ async function updateLocalID(urlString: string) {
     }
 
     const url = new URL(urlString);
-    url.pathname = `/u/${currentLocalID}`;
+    url.pathname = `/u/${currentLocalID}${url.pathname}`;
 
     mainLogger.warn("Rewriting URL to include local id", url.toString());
     return url.toString();
