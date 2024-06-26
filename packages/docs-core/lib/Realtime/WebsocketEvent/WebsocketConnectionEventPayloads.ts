@@ -30,4 +30,6 @@ export type WebsocketConnectionEventPayloads = {
   [WebsocketConnectionEvent.AckStatusChange]: {
     ledger: AckLedgerInterface
   }
+  [WebsocketConnectionEvent.Saving]: BaseWebsocketPayload
+  [WebsocketConnectionEvent.Saved]: BaseWebsocketPayload
 }

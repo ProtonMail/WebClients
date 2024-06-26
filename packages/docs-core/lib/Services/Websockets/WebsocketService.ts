@@ -29,12 +29,12 @@ import {
   ServerMessageWithEvents,
   ServerMessageWithDocumentUpdates,
   CreateClientMessageWithDocumentUpdates,
+  ServerMessageWithMessageAcks,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { DocumentConnectionRecord } from './DocumentConnectionRecord'
-import { DocumentUpdateBuffer } from './Buffer/DocumentUpdateBuffer'
 import { GenerateUUID } from '../../Util/GenerateUuid'
 import { AckLedger } from './AckLedger/AckLedger'
 import { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
@@ -42,6 +42,9 @@ import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { ApiResult } from '../../Domain/Result/ApiResult'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
+import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
+import { DocumentDebounceMode } from './Debouncer/DocumentDebounceMode'
 
 type LinkID = string
 
@@ -76,9 +79,9 @@ export class WebsocketService implements WebsocketServiceInterface {
   handleWindowUnload = (event: BeforeUnloadEvent): void => {
     const connections = Object.values(this.connections)
 
-    for (const { buffer } of connections) {
-      if (buffer.hasPendingUpdates()) {
-        buffer.flush()
+    for (const { debouncer } of connections) {
+      if (debouncer.hasPendingUpdates()) {
+        debouncer.flush()
         event.preventDefault()
       }
     }
@@ -87,9 +90,9 @@ export class WebsocketService implements WebsocketServiceInterface {
   flushPendingUpdates(): void {
     const connections = Object.values(this.connections)
 
-    for (const { buffer } of connections) {
-      if (buffer.hasPendingUpdates()) {
-        buffer.flush()
+    for (const { debouncer } of connections) {
+      if (debouncer.hasPendingUpdates()) {
+        debouncer.flush()
       }
     }
   }
@@ -98,8 +101,8 @@ export class WebsocketService implements WebsocketServiceInterface {
     window.removeEventListener('beforeunload', this.handleWindowUnload)
     this.ledger.destroy()
 
-    for (const { buffer } of Object.values(this.connections)) {
-      buffer.destroy()
+    for (const { debouncer } of Object.values(this.connections)) {
+      debouncer.destroy()
     }
   }
 
@@ -201,15 +204,24 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     const connection = new WebsocketConnection(callbacks, this.logger)
 
-    const buffer = new DocumentUpdateBuffer(document, this.logger, (mergedUpdate) => {
-      void this.handleDocumentUpdateBufferFlush(document, mergedUpdate)
+    const debouncer = new UpdateDebouncer(document, this.logger, (event) => {
+      if (event.type === UpdateDebouncerEventType.DidFlush) {
+        void this.handleDocumentUpdateDebouncerFlush(document, event.mergedUpdate)
+      } else if (event.type === UpdateDebouncerEventType.WillFlush) {
+        this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Saving]>({
+          type: WebsocketConnectionEvent.Saving,
+          payload: {
+            document,
+          },
+        })
+      }
     })
 
     this.connections[document.linkId] = {
       document,
       connection,
       keys,
-      buffer,
+      debouncer,
     }
 
     this.stressTestorCache.lastKeys = keys
@@ -270,7 +282,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     await record.connection.connect()
   }
 
-  async handleDocumentUpdateBufferFlush(document: NodeMeta, mergedUpdate: Uint8Array): Promise<void> {
+  async handleDocumentUpdateDebouncerFlush(document: NodeMeta, mergedUpdate: Uint8Array): Promise<void> {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -316,9 +328,9 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    const { buffer } = record
+    const { debouncer } = record
 
-    buffer.addUpdate(rawContent)
+    debouncer.addUpdate(rawContent)
   }
 
   async sendEventMessage(
@@ -332,15 +344,15 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    const { keys, connection, buffer } = record
+    const { keys, connection, debouncer } = record
 
-    if (buffer.isBufferEnabled) {
-      const eventsThatShouldNotBeSentIfNotInRealtimeMode: EventTypeEnum[] = [
+    if (debouncer.getMode() === DocumentDebounceMode.SinglePlayer) {
+      const eventsThatShouldNotBeSentIfInSinglePlayerMode: EventTypeEnum[] = [
         EventTypeEnum.ClientIsBroadcastingItsPresenceState,
         EventTypeEnum.ClientHasSentACommentMessage,
       ]
 
-      if (eventsThatShouldNotBeSentIfNotInRealtimeMode.includes(type)) {
+      if (eventsThatShouldNotBeSentIfInSinglePlayerMode.includes(type)) {
         this.logger.info('Not in real time mode. Not sending event:', EventTypeEnum[type])
         return
       }
@@ -424,10 +436,21 @@ export class WebsocketService implements WebsocketServiceInterface {
     } else if (type.hasEvents()) {
       await this.handleIncomingEventsMessage(record, message.eventsMessage)
     } else if (type.isMessageAck()) {
-      this.ledger.messageAcknowledgementReceived(message.acksMessage)
+      await this.handleAckMessage(record, message.acksMessage)
     } else {
       throw new Error('Unknown message type')
     }
+  }
+
+  async handleAckMessage(record: DocumentConnectionRecord, message: ServerMessageWithMessageAcks): Promise<void> {
+    this.ledger.messageAcknowledgementReceived(message)
+
+    this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Saved]>({
+      type: WebsocketConnectionEvent.Saved,
+      payload: {
+        document: record.document,
+      },
+    })
   }
 
   async handleIncomingDocumentUpdatesMessage(
@@ -442,11 +465,11 @@ export class WebsocketService implements WebsocketServiceInterface {
       `Received ${message.updates.documentUpdates.length} document updates with ids ${message.updates.documentUpdates.map((u) => u.uuid)}`,
     )
 
-    const { keys, buffer, document } = record
+    const { keys, debouncer, document } = record
 
     for (const update of message.updates.documentUpdates) {
       if (update.authorAddress !== keys.userOwnAddress) {
-        this.switchToRealtimeMode(buffer, 'receiving DU from other user')
+        this.switchToRealtimeMode(debouncer, 'receiving DU from other user')
       }
 
       const decryptionResult = await this._decryptMessage.execute({
@@ -473,19 +496,19 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
   }
 
-  switchToRealtimeMode(buffer: DocumentUpdateBuffer, reason: string): void {
-    if (!buffer.isBufferEnabled) {
+  switchToRealtimeMode(debouncer: UpdateDebouncer, reason: string): void {
+    if (debouncer.getMode() === DocumentDebounceMode.Realtime) {
       return
     }
 
     this.logger.info('Switching to realtime mode due to', reason)
 
-    buffer.flush()
-    buffer.setBufferEnabled(false)
+    debouncer.flush()
+    debouncer.setMode(DocumentDebounceMode.Realtime)
   }
 
   async handleIncomingEventsMessage(record: DocumentConnectionRecord, message: ServerMessageWithEvents): Promise<void> {
-    const { keys, buffer, document } = record
+    const { keys, debouncer, document } = record
 
     const processedMessages: ProcessedIncomingRealtimeEventMessage[] = []
 
@@ -496,7 +519,7 @@ export class WebsocketService implements WebsocketServiceInterface {
 
     for (const event of message.events) {
       if (eventsThatTakeUsIntoRealtimeMode.includes(event.type)) {
-        this.switchToRealtimeMode(buffer, `receiving event ${EventTypeEnum[event.type]}`)
+        this.switchToRealtimeMode(debouncer, `receiving event ${EventTypeEnum[event.type]}`)
       }
 
       const type = EventType.create(event.type)
