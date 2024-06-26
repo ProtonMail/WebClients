@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 
-import { TransferLog, TransferType } from './interface';
+import { APP_VERSION } from '../../config';
+import { TransferInitializationLog, TransferLog, TransferType } from './interface';
 
 export default function useTransferLog(transferType: TransferType) {
-    const logs = useRef([] as TransferLog[]);
+    const logs = useRef<(TransferInitializationLog | TransferLog)[]>([]);
 
     const log = (id: string, message: string, time = new Date()) => {
         logs.current.push({
@@ -13,6 +14,14 @@ export default function useTransferLog(transferType: TransferType) {
             message,
         });
     };
+
+    if (logs.current.length === 0) {
+        logs.current.push({
+            transferType,
+            time: new Date(),
+            message: `Transfer logging initialized. App version: ${APP_VERSION}`,
+        });
+    }
 
     const getLogs = () => {
         // Convert logs into string of one log object per line.

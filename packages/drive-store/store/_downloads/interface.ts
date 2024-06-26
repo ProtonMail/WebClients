@@ -48,9 +48,12 @@ export type DownloadEventCallbacks = {
     // The transfer is cancelled.
     onError?: OnErrorCallback;
     // Called when network error happened.
-    // The transfer is paused and it awaits for instructuion to continue.
+    // The transfer is paused and it awaits for instruction to continue.
     onNetworkError?: OnErrorCallback;
     onScanIssue?: OnScanIssueCallback;
+    // Called when a document is encountered.
+    // The transfer is skipped.
+    onContainsDocument?: OnContainsDocumentCallback;
     // Called when the whole transfer is finished.
     onFinish?: () => void;
 };
@@ -68,7 +71,7 @@ export type OnInitCallback = (
     size: number,
     // linkSizes is map of link ID to its size.
     // Currently we collect only sizes of top level items, that
-    // is exluding the whole tree of the folder item.
+    // is excluding the whole tree of the folder item.
     linkSizes: { [linkId: string]: number }
 ) => void;
 export type OnProgressCallback = (
@@ -84,6 +87,7 @@ export type OnSignatureIssueCallback = (
     signatureIssues: SignatureIssues
 ) => Promise<void>;
 export type OnScanIssueCallback = (abortSignal: AbortSignal, err: any, response?: ScanResultItem) => Promise<void>;
+export type OnContainsDocumentCallback = (abortSignal: AbortSignal) => Promise<void>;
 export type OnErrorCallback = (err: Error) => void;
 
 export type ChildrenLinkMeta = Pick<

@@ -24,10 +24,17 @@ function useNavigate() {
     };
 
     const navigateToLink = useCallback(
-        (shareId: string, linkId: string, isFile: boolean) => {
-            pushToHistory(`/${shareId}/${toLinkURLType(isFile)}/${linkId}?r=${location.pathname}`);
+        (shareId: string, linkId: string, isFile: boolean, rPath?: string) => {
+            pushToHistory(`/${shareId}/${toLinkURLType(isFile)}/${linkId}?r=${rPath || location.pathname}`);
         },
         [history, location.pathname]
+    );
+
+    const redirectToLink = useCallback(
+        (shareId: string, linkId: string, isFile: boolean) => {
+            history.replace(`/${shareId}/${toLinkURLType(isFile)}/${linkId}`);
+        },
+        [history]
     );
 
     const navigateToRoot = useCallback(() => {
@@ -86,6 +93,7 @@ function useNavigate() {
         removeListener,
         navigateToDevices,
         navigateToSharedWithMe,
+        redirectToLink,
     };
 }
 

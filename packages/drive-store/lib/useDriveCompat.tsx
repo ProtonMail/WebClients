@@ -1,6 +1,9 @@
+import { ReactNode } from 'react';
+
 import { PublicKeyReference } from '@proton/crypto/lib';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
+import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
 import { useOpenDocument } from '../store/_documents';
 import { DocumentKeys, DocumentManifest, DocumentNodeMeta, SignedData, useDocuments } from './_documents';
@@ -55,9 +58,9 @@ export interface DriveCompat {
     getDocumentUrl: (meta: NodeMeta) => URL;
 
     /**
-     * Opens a document's sharing modal. Right now, it will open a new tab inside Drive.
+     * Opens a document's sharing modal.
      */
-    openDocumentSharingModal: (meta: NodeMeta) => Promise<void>;
+    openDocumentSharingModal: (meta: NodeMeta) => void;
 
     /**
      * Generates and signs the manifest for a given document.
@@ -87,6 +90,11 @@ export interface DriveCompat {
      * Temporary utility function, subject to change :)
      */
     getMyFilesNodeMeta: () => Promise<NodeMeta>;
+
+    /**
+     * Modals that should be included in the DOM tree.
+     */
+    modals: ReactNode;
 }
 
 export const useDriveCompat = (): DriveCompat => {
@@ -99,12 +107,13 @@ export const useDriveCompat = (): DriveCompat => {
         getDocumentUrl,
         signDocumentManifest,
         signDocumentData,
-        openDocumentSharingModal,
     } = useDocuments();
     const { getNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
+
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const openDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open' });
 
@@ -120,8 +129,10 @@ export const useDriveCompat = (): DriveCompat => {
         openDocument,
         signDocumentManifest: withResolve(signDocumentManifest),
         signDocumentData: withResolve(signDocumentData),
-        openDocumentSharingModal: withResolve(openDocumentSharingModal),
+        openDocumentSharingModal: withResolve(showLinkSharingModal),
         getMyFilesNodeMeta,
         getVerificationKey,
+        // This should be changed to a fragment if more modals are added
+        modals: linkSharingModal,
     };
 };

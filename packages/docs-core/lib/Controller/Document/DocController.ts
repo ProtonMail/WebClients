@@ -691,8 +691,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
-  public async openDocumentSharingModal(): Promise<void> {
-    await this.driveCompat.openDocumentSharingModal(this.nodeMeta)
+  public openDocumentSharingModal(): void {
+    this.driveCompat.openDocumentSharingModal(this.nodeMeta)
   }
 
   private async handleRealtimeServerEvent(events: ProcessedIncomingRealtimeEventMessage[]) {
