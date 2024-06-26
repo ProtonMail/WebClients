@@ -17,7 +17,7 @@ import { useConnectivityRef } from '@proton/pass/components/Core/ConnectivityPro
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { type RouteErrorState, getRouteError } from '@proton/pass/components/Navigation/routing';
+import { type RouteErrorState, getBootRedirectPath, getRouteError } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { api } from '@proton/pass/lib/api/api';
@@ -101,7 +101,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const { getCurrentLocation } = useNavigation();
 
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
-    const redirectPath = useRef(stripLocalBasenameFromPathname(getCurrentLocation()));
+    const redirectPath = useRef(getBootRedirectPath(getCurrentLocation()));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
 
     const authService = useMemo(() => {
