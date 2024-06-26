@@ -1,12 +1,13 @@
 import { CommentThreadInterface } from '@proton/docs-shared'
 import { CommentsPanelListThread } from './CommentsPanelListThread'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useCommentsContext } from './CommentsContext'
 import debounce from '@proton/utils/debounce'
 import { usePopper, usePopperAnchor } from '@proton/components'
-import SpeechBubbleNumberIcon from '../../Icons/SpeechBubbleNumberIcon'
+import SpeechBubbleDotsIcon from '../../Icons/SpeechBubbleDotsIcon'
 import { c } from 'ttag'
+import useCombinedRefs from '@proton/hooks/useCombinedRefs'
 
 const RecalculateThreadPositionsEvent = 'RecalculateThreadPositions'
 const dispatchRecalculateEvent = () => {
@@ -15,7 +16,8 @@ const dispatchRecalculateEvent = () => {
 const SixtyFPSToMS = 1000 / 60
 
 function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
-  const { anchorRef, isOpen, toggle } = usePopperAnchor<HTMLButtonElement>()
+  const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
+  const popoverRef = useRef<HTMLDivElement | null>(null)
   const { floating, position } = usePopper({
     isOpen,
     originalPlacement: 'left-start',
@@ -26,11 +28,29 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
     },
   })
 
+  const combinedRef = useCombinedRefs<HTMLDivElement>(popoverRef, floating)
+
+  useEffect(() => {
+    const handleClickOutside = ({ target }: MouseEvent) => {
+      const targetNode = target as HTMLElement
+      if (popoverRef.current?.contains(targetNode) || anchorRef.current?.contains(targetNode)) {
+        return
+      }
+      close()
+    }
+
+    document.addEventListener('click', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [close])
+
   return (
     <>
-      <button ref={anchorRef} onClick={toggle}>
+      <button className="border-weak rounded border p-2" ref={anchorRef} onClick={toggle}>
         <div className="sr-only">{c('Action').t`Show thread`}</div>
-        <SpeechBubbleNumberIcon className="h-6 w-6" />
+        <SpeechBubbleDotsIcon className="h-4 w-4" />
       </button>
       {isOpen && (
         <div
@@ -41,7 +61,7 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
             transform: `translate3d(${position.left}px, ${position.top}px, 0)`,
             width: 'var(--comments-width)',
           }}
-          ref={floating}
+          ref={combinedRef}
         >
           <CommentsPanelListThread thread={thread} />
         </div>
@@ -158,7 +178,7 @@ function ContextualThread({
         left: isViewportLarge ? '50%' : '',
         right: isViewportLarge ? '' : 0,
         transition: 'transform 50ms, opacity 75ms',
-        width: isViewportLarge ? 'calc(100% - 2rem)' : '1.5rem',
+        width: isViewportLarge ? 'calc(100% - 2rem)' : 'auto',
         opacity: 0,
         '--initial-position': `${position}px`,
         '--final-position': undefined,
