@@ -10,7 +10,7 @@ import { setBackgroundColorForSelection } from './TableUtils/setBackgroundColorF
 import { setColorForSelection } from './TableUtils/setColorForSelection'
 import { duplicateSelectedColumn } from './TableUtils/duplicateSelectedColumn'
 import { duplicateRow } from './TableUtils/duplicateRow'
-import { clearCellsInTableSelection } from './TableUtils/clearCellsInTableSelection'
+import { $clearCellsInTableSelection } from './TableUtils/clearCellsInTableSelection'
 import { deleteColumnAtSelection } from './TableUtils/deleteColumnAtSelection'
 import { deleteRowAtSelection } from './TableUtils/deleteRowAtSelection'
 import { insertNewColumnAtSelection } from './TableUtils/insertNewColumnAtSelection'
@@ -299,7 +299,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              clearCellsInTableSelection(editor)
+              editor.update(() => $clearCellsInTableSelection(), {
+                onUpdate: () => editor.focus(),
+              })
             }}
           >
             <Icon name="cross" />
@@ -411,7 +413,9 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
           <DropdownMenuButton
             className={menuButtonClassName}
             onClick={() => {
-              clearCellsInTableSelection(editor)
+              editor.update(() => $clearCellsInTableSelection(), {
+                onUpdate: () => editor.focus(),
+              })
             }}
           >
             <Icon name="cross" size={4.5} />

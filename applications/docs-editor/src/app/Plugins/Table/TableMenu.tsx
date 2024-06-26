@@ -14,8 +14,8 @@ import { $getSelection, $isRangeSelection, COMMAND_PRIORITY_EDITOR, SELECTION_CH
 import { $generateJSONFromSelectedNodes, $generateNodesFromSerializedNodes } from '@lexical/clipboard'
 import { useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
-import { toggleTableHeaderColumn } from './TableUtils/toggleTableHeaderColumn'
-import { toggleTableHeaderRow } from './TableUtils/toggleTableHeaderRow'
+import { $toggleTableHeaderColumn } from './TableUtils/toggleTableHeaderColumn'
+import { $toggleTableHeaderRow } from './TableUtils/toggleTableHeaderRow'
 import { isCellHeaderColumn } from './TableUtils/isCellHeaderColumn'
 import { isCellHeaderRow } from './TableUtils/isCellHeaderRow'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
@@ -235,10 +235,12 @@ export function TableMenu() {
           <DropdownMenuButton
             className="flex items-center gap-2.5 text-sm"
             onClick={() => {
-              if (!tableNode) {
-                return
-              }
-              toggleTableHeaderRow(editor, tableNode)
+              editor.update(() => {
+                if (!tableNode) {
+                  return
+                }
+                $toggleTableHeaderRow(tableNode)
+              })
             }}
           >
             <Icon name="palette" />
@@ -248,10 +250,12 @@ export function TableMenu() {
           <DropdownMenuButton
             className="flex items-center gap-2.5 text-sm"
             onClick={() => {
-              if (!tableNode) {
-                return
-              }
-              toggleTableHeaderColumn(editor, tableNode)
+              editor.update(() => {
+                if (!tableNode) {
+                  return
+                }
+                $toggleTableHeaderColumn(tableNode)
+              })
             }}
           >
             <Icon name="palette" />
