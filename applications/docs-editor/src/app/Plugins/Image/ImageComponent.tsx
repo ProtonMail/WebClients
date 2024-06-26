@@ -23,6 +23,9 @@ import {
 } from 'lexical'
 
 import { $isImageNode } from './ImageNode'
+import { useCombinedRefs } from '@proton/hooks'
+import ImageResizer from './ImageResizer'
+import { getEditorDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 
 const imageCache = new Set()
 
@@ -50,6 +53,7 @@ function LazyImage({
   width,
   height,
   maxWidth,
+  editor,
 }: {
   altText: string
   className: string | null
@@ -58,18 +62,45 @@ function LazyImage({
   maxWidth: number | null
   src: string
   width: 'inherit' | number
+  editor: LexicalEditor
 }): JSX.Element {
+  const [imgWidth, setImgWidth] = useState<number | 'inherit'>(width)
+  const [imgHeight, setImgHeight] = useState<number | 'inherit'>(height)
+
+  useEffect(() => {
+    setImgWidth(width)
+    setImgHeight(height)
+  }, [width, height])
+
   useSuspenseImage(src)
+
   return (
     <img
       className={className || undefined}
       src={src}
       alt={altText}
-      ref={imageRef}
+      ref={useCombinedRefs(imageRef, (image) => {
+        const editorDimensions = getEditorDimensionsWithoutPadding(editor)
+        if (image && editorDimensions) {
+          const naturalWidth = image.naturalWidth
+          if (image.style.width === 'inherit') {
+            if (naturalWidth > editorDimensions.width) {
+              setImgWidth(editorDimensions.width)
+            } else {
+              setImgWidth(naturalWidth)
+            }
+          }
+          if (image.style.height === 'inherit') {
+            if (naturalWidth < editorDimensions.width) {
+              setImgHeight(image.naturalHeight)
+            }
+          }
+        }
+      })}
       style={{
-        height,
+        height: imgHeight === 'inherit' ? 'inherit' : `${imgHeight}px`,
         maxWidth: maxWidth ? `${maxWidth}px` : '100%',
-        width,
+        width: imgWidth === 'inherit' ? 'inherit' : `${imgWidth}px`,
       }}
       draggable="false"
     />
@@ -97,6 +128,7 @@ export default function ImageComponent({
   width: 'inherit' | number
   captionsEnabled: boolean
 }): JSX.Element {
+  const [isResizing, setIsResizing] = useState(false)
   const imageRef = useRef<null | HTMLImageElement>(null)
   const buttonRef = useRef<HTMLButtonElement | null>(null)
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
@@ -201,7 +233,8 @@ export default function ImageComponent({
     const unregister = mergeRegister(
       editor.registerUpdateListener(({ editorState }) => {
         if (isMounted) {
-          setSelection(editorState.read(() => $getSelection()))
+          const selection = editorState.read(() => $getSelection())
+          setSelection(selection)
         }
       }),
       editor.registerCommand(
@@ -242,23 +275,47 @@ export default function ImageComponent({
     }
   }, [clearSelection, editor, isSelected, nodeKey, onDelete, onEnter, onEscape, onClick, onRightClick, setSelected])
 
-  const draggable = isSelected && $isNodeSelection(selection)
-  const isFocused = isSelected
+  const draggable = isSelected && $isNodeSelection(selection) && !isResizing
+  const isFocused = isSelected || isResizing
+
+  const onResizeEnd = (nextWidth: 'inherit' | number, nextHeight: 'inherit' | number) => {
+    // Delay hiding the resize bars for click case
+    setTimeout(() => {
+      setIsResizing(false)
+    }, 200)
+
+    editor.update(() => {
+      const node = $getNodeByKey(nodeKey)
+      if ($isImageNode(node)) {
+        node.setWidthAndHeight(nextWidth, nextHeight)
+      }
+    })
+  }
+
+  const onResizeStart = () => {
+    setIsResizing(true)
+  }
 
   return (
     <Suspense fallback={null}>
       <>
         <div draggable={draggable}>
           <LazyImage
-            className={isFocused ? `focused ${$isNodeSelection(selection) ? 'draggable' : ''}` : null}
+            className={
+              isFocused ? `focused ${$isNodeSelection(selection) ? 'cursor-grab active:cursor-grabbing' : ''}` : null
+            }
             src={src}
             altText={altText}
             imageRef={imageRef}
             width={width}
             height={height}
             maxWidth={maxWidth}
+            editor={editor}
           />
         </div>
+        {isFocused && (
+          <ImageResizer editor={editor} imageRef={imageRef} onResizeStart={onResizeStart} onResizeEnd={onResizeEnd} />
+        )}
       </>
     </Suspense>
   )
