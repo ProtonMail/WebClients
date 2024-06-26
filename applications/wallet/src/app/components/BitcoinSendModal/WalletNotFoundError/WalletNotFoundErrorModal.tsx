@@ -4,13 +4,14 @@ import { Modal } from '../../../atoms';
 import { WalletNotFoundErrorContent } from './WalletNotFoundErrorContent';
 
 interface Props extends ModalOwnProps {
-    email: String;
+    email: string;
+    onSendInvite: (email: string) => void;
 }
 
-export const WalletNotFoundErrorModal = ({ email, ...rest }: Props) => {
+export const WalletNotFoundErrorModal = ({ email, onSendInvite, ...rest }: Props) => {
     return (
         <Modal className="wallet-not-found-dropdown" {...rest}>
-            <WalletNotFoundErrorContent email={email} />
+            <WalletNotFoundErrorContent onSendInvite={onSendInvite} email={email} />
         </Modal>
     );
 };

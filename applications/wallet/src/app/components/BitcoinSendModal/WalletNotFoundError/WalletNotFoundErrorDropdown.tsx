@@ -7,22 +7,37 @@ import { WalletNotFoundErrorContent } from './WalletNotFoundErrorContent';
 import './WalletNotFoundErrorDropdown.scss';
 
 interface Props {
-    email: String;
+    email: string;
+    hasSentInvite: boolean;
+    onSendInvite: (email: string) => void;
 }
 
-export const WalletNotFoundErrorDropdown = ({ email }: Props) => {
+export const WalletNotFoundErrorDropdown = ({ email, hasSentInvite, onSendInvite }: Props) => {
     const { anchorRef, isOpen, close, open } = usePopperAnchor<HTMLButtonElement>();
 
     return (
         <>
             <button
                 ref={anchorRef}
-                onClick={open}
+                onClick={() => {
+                    if (!hasSentInvite) {
+                        open();
+                    }
+                }}
                 className="ml-1 items-center flex-nowrap flex flex-row color-primary no-shrink"
             >
-                <span className="block no-shrink">{c('Bitcoin send').t`No wallet found`}</span>
-                <div className="no-shrink ml-1 flex">
-                    <Icon name="exclamation-circle" />
+                <div className="no-shrink flex items-center px-2">
+                    {hasSentInvite ? (
+                        <>
+                            <span className="block no-shrink mr-1">{c('Bitcoin send').t`Invitation sent`}</span>
+                            <Icon name="paper-plane" />
+                        </>
+                    ) : (
+                        <>
+                            <Icon name="exclamation-circle" />
+                            <span className="block no-shrink ml-1">{c('Bitcoin send').t`No wallet found`}</span>
+                        </>
+                    )}
                 </div>
             </button>
             <Dropdown
@@ -36,7 +51,7 @@ export const WalletNotFoundErrorDropdown = ({ email }: Props) => {
                 }}
                 contentProps={{ className: 'wallet-not-found-dropdown' }}
             >
-                <WalletNotFoundErrorContent email={email} dense />
+                <WalletNotFoundErrorContent onSendInvite={onSendInvite} email={email} dense />
             </Dropdown>
         </>
     );
