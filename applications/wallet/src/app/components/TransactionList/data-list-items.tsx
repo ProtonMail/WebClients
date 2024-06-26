@@ -160,8 +160,10 @@ export const AmountDataListItem = ({
                             loading && 'skeleton-loader'
                         )}
                     >
-                        {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                        {getLabelByUnit(settings.BitcoinUnit)}
+                        <span className={clsx('text-ellipsis')}>
+                            {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                            {getLabelByUnit(settings.BitcoinUnit)}
+                        </span>
                     </div>
                 )
             }
