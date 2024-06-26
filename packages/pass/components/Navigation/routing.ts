@@ -1,10 +1,11 @@
 import { createBrowserHistory } from 'history';
+import { type Location } from 'history';
 
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { ItemFilters, ItemType, MaybeNull } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
-import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
+import { getLocalIDPath, stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 
@@ -47,7 +48,7 @@ export const getNewItemRoute = (type: ItemType) => getLocalPath(`item/new/${type
 export const getTrashRoute = () => getLocalPath('trash');
 export const getOnboardingRoute = () => getLocalPath('onboarding');
 
-const INITIAL_FILTERS: ItemFilters = { search: '', sort: 'recent', type: '*', selectedShareId: null };
+export const INITIAL_FILTERS: ItemFilters = { search: '', sort: 'recent', type: '*', selectedShareId: null };
 
 export const decodeFilters = (encodedFilters: MaybeNull<string>): ItemFilters =>
     partialMerge(
@@ -75,3 +76,24 @@ export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
 };
 
 export const getRouteError = (search: string) => new URLSearchParams(search).get('error');
+
+export const getBootRedirectPath = (bootLocation: Location) => {
+    const searchParams = new URLSearchParams(bootLocation.search);
+
+    const redirectPath = (() => {
+        if (searchParams.get('filters') !== null) {
+            return bootLocation.pathname;
+        }
+
+        const [, shareId, itemId] = bootLocation.pathname.match('share/([^/]+)(/item/([^/]+))?') || [];
+        if (shareId || itemId) {
+            const filters = partialMerge(INITIAL_FILTERS, { selectedShareId: shareId });
+            searchParams.set('filters', encodeFilters(filters));
+            return `${bootLocation.pathname}?${searchParams.toString()}`;
+        }
+
+        return bootLocation.pathname;
+    })();
+
+    return stripLocalBasenameFromPathname(redirectPath);
+};
