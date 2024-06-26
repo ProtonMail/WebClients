@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useRef } from 'react';
 
+import { BilledUserModal, isBilledUser } from '@proton/components/payments/client-extensions/billed-user';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
@@ -9,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../../components';
-import { useOrganization, usePlans, useSubscription } from '../../../hooks';
+import { useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import InAppPurchaseModal from './InAppPurchaseModal';
@@ -71,6 +72,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const [organization, loadingOrganization] = useOrganization();
     const redirectToAccountApp = useRedirectToAccountApp();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
+    const [user] = useUser();
 
     const loading = loadingSubscription || loadingPlans || loadingOrganization;
 
@@ -81,6 +83,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     if (organization && subscription && render && subscriptionProps.current) {
         if (isManagedExternally(subscription)) {
             subscriptionModal = <InAppPurchaseModal subscription={subscription} {...modalState} />;
+        } else if (isBilledUser(user)) {
+            subscriptionModal = <BilledUserModal user={user} {...modalState} />;
         } else {
             const {
                 hasClose,

@@ -9,7 +9,7 @@ const TYPES = {
     [INVOICE_STATE.UNPAID]: 'error',
     [INVOICE_STATE.PAID]: 'success',
     [INVOICE_STATE.VOID]: 'default',
-    [INVOICE_STATE.BILLED]: 'default',
+    [INVOICE_STATE.BILLED]: 'error',
     [INVOICE_STATE.WRITEOFF]: 'default',
 } as const;
 
@@ -22,7 +22,7 @@ const getStatesI18N = (invoiceState: INVOICE_STATE) => {
         case INVOICE_STATE.VOID:
             return c('Invoice state display as badge').t`Void`;
         case INVOICE_STATE.BILLED:
-            return c('Invoice state display as badge').t`Billed`;
+            return c('Invoice state display as badge').t`Processing`;
         case INVOICE_STATE.WRITEOFF:
             return c('Invoice state display as badge').t`Gifted`;
         default:

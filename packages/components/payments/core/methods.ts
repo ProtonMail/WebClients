@@ -8,7 +8,7 @@ import {
     PLANS,
 } from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import { Api, BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 
 import { isExpired as getIsExpired } from './cardDetails';
 import { PAYMENT_METHOD_TYPES } from './constants';
@@ -76,7 +76,8 @@ export class PaymentMethods {
         private _flow: PaymentMethodFlows,
         private _selectedPlanName: PLANS | ADDON_NAMES | undefined,
         public enableChargebeeB2B: boolean,
-        public billingPlatform: BillingPlatform | undefined
+        public billingPlatform: BillingPlatform | undefined,
+        public chargebeeUserExists: ChargebeeUserExists | undefined
     ) {
         this._statusExtended = extendStatus(paymentMethodStatus);
     }
@@ -225,7 +226,7 @@ export class PaymentMethods {
             !isInvoice &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
-            (this.chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED || this.isOnSessionMigration()) &&
+            (this.chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED || this.isBitcoinOnSessionMigration()) &&
             !this.isChargebeeBitcoinAvailable()
         );
     }
@@ -247,9 +248,16 @@ export class PaymentMethods {
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             isEnabledFlow &&
             !isB2BPlan &&
-            !this.isOnSessionMigration();
+            !this.isBitcoinOnSessionMigration();
 
         return bitcoinAvailable;
+    }
+
+    private isBitcoinOnSessionMigration() {
+        return (
+            this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED &&
+            this.chargebeeUserExists === ChargebeeUserExists.NO
+        );
     }
 
     private isCardAvailable(): boolean {
@@ -362,7 +370,8 @@ export async function initializePaymentMethods(
     paymentsApi: PaymentsApi,
     selectedPlanName: PLANS | ADDON_NAMES | undefined,
     enableChargebeeB2B: boolean,
-    billingPlatform?: BillingPlatform
+    billingPlatform?: BillingPlatform,
+    chargebeeUserExists?: ChargebeeUserExists
 ) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
@@ -410,6 +419,7 @@ export async function initializePaymentMethods(
         flow,
         selectedPlanName,
         enableChargebeeB2B,
-        billingPlatform
+        billingPlatform,
+        chargebeeUserExists
     );
 }

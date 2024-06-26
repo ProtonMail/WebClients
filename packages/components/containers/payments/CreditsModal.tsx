@@ -71,6 +71,7 @@ const CreditsModal = (props: ModalProps) => {
         amount: debouncedAmount,
         currency,
         billingPlatform: subscription?.BillingPlatform,
+        chargebeeUserExists: user.ChargebeeUserExists,
         chargebeeEnabled: onSessionMigrationChargebeeStatus(user, subscription),
         onChargeable: (operations) => {
             const run = async () => {
