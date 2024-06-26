@@ -9,7 +9,7 @@ import { createContextMenu } from "../menus/menuContext";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
-import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL } from "../urls/urlTests";
+import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
 import { mainLogger, viewLogger } from "../log";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
@@ -136,7 +136,7 @@ async function updateLocalID(urlString: string) {
         return urlString;
     }
 
-    const url = new URL(urlString);
+    const url = new URL(trimLocalID(urlString));
     url.pathname = `/u/${currentLocalID}${url.pathname}`;
 
     mainLogger.warn("Rewriting URL to include local id", url.toString());

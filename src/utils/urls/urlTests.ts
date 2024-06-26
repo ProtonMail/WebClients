@@ -23,6 +23,12 @@ export const getLocalID = (url?: string) => {
     }
 };
 
+export const trimLocalID = (urlString: string) => {
+    const url = new URL(urlString);
+    url.pathname = url.pathname.replace(/^\/u\/\d+\/?/, "");
+    return url.toString();
+};
+
 export const isCalendar = (urlString: string) => {
     try {
         const configURL = getConfig().url;
