@@ -5,7 +5,7 @@ import { WasmTxBuilder } from '@proton/andromeda';
 import { useModalStateWithData } from '@proton/components/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
-import { useApi } from '@proton/components/hooks';
+import { useApi, useNotifications } from '@proton/components/hooks';
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
@@ -20,6 +20,7 @@ import { useBitcoinNetwork } from '../../store/hooks';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import { RecipientDetailsModal } from './RecipientDetailsModal';
 import { WalletNotFoundErrorDropdown } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
 import { WalletNotFoundErrorModal } from './WalletNotFoundError/WalletNotFoundErrorModal';
@@ -32,12 +33,22 @@ interface Props {
 }
 
 export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsConfirm, updateTxBuilder }: Props) => {
-    const { recipientEmailMap, addValidRecipient, addInvalidRecipient, removeRecipient, exists } = recipientHelpers;
+    const {
+        recipientEmailMap,
+        addValidRecipient,
+        addInvalidRecipient,
+        removeRecipient,
+        exists,
+        addRecipientWithSentInvite,
+        hasSentInvite,
+    } = recipientHelpers;
 
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { contactEmails, contactEmailsMap } = useContactEmailsCache();
     const [loadingBitcoinAddressLookup, withLoadingBitcoinAddressLookup] = useLoading();
     const [walletNotFoundModal, setWalletNotFoundModal] = useModalStateWithData<{ email: string }>();
+    const { createNotification } = useNotifications();
+    const [inviteSentConfirmModal, setInviteSentConfirmModal] = useModalStateWithData<{ email: string }>();
     const [recipientDetailsModal, setRecipientDetailsModal] = useModalStateWithData<{
         recipient: Recipient;
         btcAddress: string;
@@ -55,6 +66,20 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
         if (!exists(recipientOrBitcoinAddress)) {
             addValidRecipient(recipientOrBitcoinAddress, btcAddress, addressKey);
             updateTxBuilder((txBuilder) => txBuilder.addRecipient(btcAddress));
+        }
+    };
+
+    const handleSendInvite = async (email: string) => {
+        try {
+            await walletApi.invite.sendEmailIntegrationInvite(email);
+
+            walletNotFoundModal.onClose();
+            setInviteSentConfirmModal({ email });
+
+            addRecipientWithSentInvite(email);
+            createNotification({ text: c('Bitcoin send').t`Invitation sent to the recipient` });
+        } catch {
+            createNotification({ text: c('Bitcoin send').t`Could not send invitation to the recipient` });
         }
     };
 
@@ -124,7 +149,19 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                         safeAddRecipient(recipientOrBitcoinAddress, btcAddress, firstAddressKey);
                     }
                 } catch {
-                    setWalletNotFoundModal({ email: recipientOrBitcoinAddress.Address });
+                    const hasRecipientSentInvite =
+                        hasSentInvite(recipientOrBitcoinAddress.Address) ||
+                        (await walletApi.invite
+                            .checkInviteStatus(recipientOrBitcoinAddress.Address)
+                            .then(() => false)
+                            .catch(() => true));
+
+                    if (hasRecipientSentInvite) {
+                        addRecipientWithSentInvite(recipientOrBitcoinAddress.Address);
+                    } else {
+                        setWalletNotFoundModal({ email: recipientOrBitcoinAddress.Address });
+                    }
+
                     addInvalidRecipient(
                         recipientOrBitcoinAddress,
                         c('Wallet send').t`Could not find address linked to this email`
@@ -165,7 +202,14 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     network={network}
                     loading={loadingBitcoinAddressLookup}
                     fetchedEmailListItemRightNode={({ email, error }) =>
-                        error ? <WalletNotFoundErrorDropdown email={email} /> : null
+                        error ? (
+                            <WalletNotFoundErrorDropdown
+                                // hasSentInvite={hasSentInvite(email)}
+                                hasSentInvite
+                                email={email}
+                                onSendInvite={handleSendInvite}
+                            />
+                        ) : null
                     }
                     onClickRecipient={(recipient, btcAddress, index) => {
                         if (btcAddress.value) {
@@ -199,7 +243,15 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
             )}
 
             {walletNotFoundModal.data && (
-                <WalletNotFoundErrorModal email={walletNotFoundModal.data.email} {...walletNotFoundModal} />
+                <WalletNotFoundErrorModal
+                    onSendInvite={handleSendInvite}
+                    email={walletNotFoundModal.data.email}
+                    {...walletNotFoundModal}
+                />
+            )}
+
+            {inviteSentConfirmModal.data && (
+                <InviteSentConfirmModal email={inviteSentConfirmModal.data.email} {...inviteSentConfirmModal} />
             )}
         </>
     );
