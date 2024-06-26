@@ -1,14 +1,17 @@
+import type { CreateSecureLinkData } from '@proton/pass/lib/crypto/processes';
 import type {
     InviteAcceptRequest,
     InviteCreateRequest,
     ItemCreateRequest,
     ItemKeyResponse,
+    ItemLatestKeyResponse,
     ItemMoveSingleToShareRequest,
     ItemRevisionContentsResponse,
     ItemUpdateRequest,
     KeyRotationKeyPair,
     NewUserInviteCreateRequest,
     NewUserInvitePromoteRequest,
+    PublicLinkGetContentResponse,
     ShareGetResponse,
     ShareKeyResponse,
     VaultCreateRequest,
@@ -83,6 +86,16 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         invitedAddressId: string;
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
+    }) => Promise<Uint8Array>;
+    createSecureLink: (data: {
+        shareId: string;
+        latestItemKey: ItemLatestKeyResponse;
+    }) => Promise<CreateSecureLinkData>;
+    openSecureLink: (data: { linkKey: string; publicLinkContent: PublicLinkGetContentResponse }) => Promise<Uint8Array>;
+    openLinkKey: (data: {
+        encryptedLinkKey: string;
+        linkKeyShareKeyRotation: number;
+        shareId: string;
     }) => Promise<Uint8Array>;
 }
 

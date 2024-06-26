@@ -1,11 +1,12 @@
 import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '@proton/pass/types';
 
 export enum PassEncryptionTag {
-    Cache = 'cache' /* web-only usage */,
-    Offline = 'offline',
+    Cache = 'cache' /* Local cache */,
+    Offline = 'offline' /* Offline components */,
     ItemContent = 'itemcontent',
     ItemKey = 'itemkey',
     VaultContent = 'vaultcontent',
+    LinkKey = 'linkkey',
 }
 
 export enum PassSignatureContext {
