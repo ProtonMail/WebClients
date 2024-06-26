@@ -145,9 +145,9 @@ export const AmountDataListItem = ({
             label={
                 <div className={clsx('ml-auto flex flex-row flex-nowrap', loadingLabel && 'skeleton-loader')}>
                     {loadingLabel ? (
-                        <Price unit={exchangeRate ?? bitcoinUnit} satsAmount={value} />
-                    ) : (
                         <span>{c('Wallet transaction').t`Loading`}</span>
+                    ) : (
+                        <Price unit={exchangeRate ?? bitcoinUnit} satsAmount={value} />
                     )}
                 </div>
             }
