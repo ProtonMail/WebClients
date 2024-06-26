@@ -18,7 +18,9 @@ export const getUserOrganization = async (): Promise<MaybeNull<Organization>> =>
 export const getOrganizationSettings = async (): Promise<OrganizationGetResponse> =>
     (await api({ url: 'pass/v1/organization', method: 'get' })).Organization!;
 
-export const setOrganizationSettings = async (settings: OrganizationSettings): Promise<OrganizationGetResponse> =>
+export const setOrganizationSettings = async (
+    settings: Partial<OrganizationSettings>
+): Promise<OrganizationGetResponse> =>
     (
         await api({
             url: 'pass/v1/organization/settings',
