@@ -25,7 +25,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Doc, Transaction, UndoManager, YEvent } from 'yjs'
 
-import { InitialEditorStateType } from '@lexical/react/LexicalComposer'
+import { FileToDocPendingConversion } from '@proton/docs-shared'
+import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
+import { sendErrorMessage } from '../../Utils/errorMessage'
 
 export type CursorsContainerRef = React.MutableRefObject<HTMLElement | null>
 
@@ -41,7 +43,7 @@ export function useYjsCollaboration(
   shouldBootstrap: boolean,
   onCollabReady: () => void,
   cursorsContainerRef?: CursorsContainerRef,
-  initialEditorState?: InitialEditorStateType,
+  injectWithNewContent?: FileToDocPendingConversion,
   excludedProperties?: ExcludedProperties,
   awarenessData?: object,
 ): [JSX.Element, Binding] {
@@ -84,6 +86,7 @@ export function useYjsCollaboration(
 
     // This updates the local editor state when we recieve updates from other clients
     root.getSharedType().observeDeep(onYjsTreeChanges)
+
     const removeListener = editor.registerUpdateListener(
       ({ prevEditorState, editorState, dirtyLeaves, dirtyElements, normalizedNodes, tags }) => {
         if (tags.has('skip-collab') === false) {
@@ -100,10 +103,14 @@ export function useYjsCollaboration(
         }
       },
     )
+
     window.addEventListener('resize', onWindowResize)
 
     if (!didPostReadyEvent.current) {
       onCollabReady()
+      if (root.isEmpty() && root._xmlText.length === 0 && injectWithNewContent) {
+        $importDataIntoEditor(editor, injectWithNewContent.data, injectWithNewContent.type).catch(sendErrorMessage)
+      }
       didPostReadyEvent.current = true
     }
 
@@ -120,7 +127,7 @@ export function useYjsCollaboration(
     docMap,
     editor,
     id,
-    initialEditorState,
+    injectWithNewContent,
     name,
     provider,
     shouldBootstrap,

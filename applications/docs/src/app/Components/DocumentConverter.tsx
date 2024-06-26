@@ -24,7 +24,7 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props)
   const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
-    withLoading(
+    void withLoading(
       getNodeContents(lookup)
         .then(({ contents, node }) => {
           setError(null)
@@ -37,7 +37,7 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props)
           setNode(null)
         }),
     )
-  }, [lookup, getNodeContents])
+  }, [lookup, getNodeContents, withLoading])
 
   const performConversion = useCallback(async () => {
     if (isConverting || conversionResult) {
@@ -46,10 +46,12 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props)
 
     if (contents && node) {
       setIsConverting(true)
+
       const result = await application.createEmptyDocumentForConversionUseCase.execute({
         node,
         contents,
       })
+
       setConversionResult(result)
 
       setIsConverting(false)

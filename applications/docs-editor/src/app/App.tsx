@@ -282,13 +282,15 @@ export function App({ nonInteractiveMode = false }: Props) {
     const removeListener = editorRef.current.registerUpdateListener(updateFrameSize)
     window.addEventListener('resize', updateFrameSize)
     window.addEventListener('beforeprint', updateFrameSize)
+
     updateFrameSize()
+
     return () => {
       removeListener()
       window.removeEventListener('resize', updateFrameSize)
       window.removeEventListener('beforeprint', updateFrameSize)
     }
-  }, [editorRef.current, bridge])
+  }, [bridge])
 
   if (!initialConfig || !docState) {
     return (
