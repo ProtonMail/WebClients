@@ -1,6 +1,6 @@
-import { BrowserView, BrowserWindow, Input, Rectangle, Session, WebContents, app } from "electron";
+import { BrowserView, BrowserWindow, Input, Session, WebContents, app } from "electron";
 import { debounce } from "lodash";
-import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
+import { WindowBounds, getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { getConfig } from "../config";
@@ -128,12 +128,13 @@ const createBrowserWindow = (session: Session) => {
     return mainWindow;
 };
 
-const adjustBoundsForWindows = (bounds: Rectangle) => {
+const adjustBoundsForWindows = (bounds: WindowBounds) => {
     if (isWindows || isLinux) {
         const windowWidth = isWindows ? 16 : 0;
         const windowHeight = isWindows ? 32 : 24;
 
         return {
+            ...bounds,
             x: bounds.x,
             y: bounds.y,
             width: bounds.width - windowWidth,
@@ -175,8 +176,9 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
 
     const internalShowView = async (windowTitle: string) => {
         const view = browserViewMap[viewID]!;
-        const bounds = adjustBoundsForWindows(mainWindow!.getBounds());
+        const bounds = adjustBoundsForWindows(getWindowBounds());
         view.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
+        view.webContents.setZoomFactor(bounds.zoom);
 
         if (viewID === currentViewID) {
             viewLogger(viewID).info("showView loading in current view", url);
@@ -336,39 +338,51 @@ export function getWebContentsViewName(webContents: WebContents): ViewID | null 
 }
 
 // Based on Firefox zoom factor list
-const ZOOM_FACTOR_LIST = [0.3, 0.5, 0.67, 0.8, 0.9, 1.0, 1.1, 1.2, 1.33, 1.5, 1.7, 2.0, 2.4, 3.0, 4.0, 5.0] as const;
+export const ZOOM_FACTOR_LIST = [
+    0.3, 0.5, 0.67, 0.8, 0.9, 1.0, 1.1, 1.2, 1.33, 1.5, 1.7, 2.0, 2.4, 3.0, 4.0, 5.0,
+] as const;
 export type ZoomFactor = (typeof ZOOM_FACTOR_LIST)[number];
-const DEFAULT_ZOOM_FACTOR: ZoomFactor = 1.0;
+export const DEFAULT_ZOOM_FACTOR: ZoomFactor = 1.0;
 
-export function resetZoom() {
-    mainLogger.info("reset zoom factor to", DEFAULT_ZOOM_FACTOR);
-
-    for (const view of Object.values(browserViewMap)) {
-        view?.webContents.setZoomFactor(DEFAULT_ZOOM_FACTOR);
-    }
-}
-
-export function updateZoom(direction: "in" | "out") {
+export function getZoom() {
     const currentView = browserViewMap[currentViewID];
 
     if (!currentView) {
-        return;
+        return DEFAULT_ZOOM_FACTOR;
     }
 
-    let zoomFactorIndex = ZOOM_FACTOR_LIST.indexOf(currentView.webContents.getZoomFactor() as ZoomFactor);
+    const zoomFactor = currentView.webContents.getZoomFactor() as ZoomFactor;
 
-    if (zoomFactorIndex === -1) {
-        zoomFactorIndex = ZOOM_FACTOR_LIST.indexOf(DEFAULT_ZOOM_FACTOR);
+    if (ZOOM_FACTOR_LIST.includes(zoomFactor)) {
+        return zoomFactor;
     }
+
+    return DEFAULT_ZOOM_FACTOR;
+}
+
+export function setZoom(zoomFactor: ZoomFactor) {
+    mainLogger.info("set zoom factor to", zoomFactor);
+
+    for (const view of Object.values(browserViewMap)) {
+        view?.webContents.setZoomFactor(zoomFactor);
+    }
+
+    if (mainWindow) {
+        saveWindowBounds(mainWindow);
+    }
+}
+
+export function resetZoom() {
+    setZoom(DEFAULT_ZOOM_FACTOR);
+}
+
+export function updateZoom(direction: "in" | "out") {
+    const zoomFactorIndex = ZOOM_FACTOR_LIST.indexOf(getZoom());
 
     const nextZoomFactor =
         direction === "in"
             ? ZOOM_FACTOR_LIST[Math.min(ZOOM_FACTOR_LIST.length - 1, zoomFactorIndex + 1)]
             : ZOOM_FACTOR_LIST[Math.max(0, zoomFactorIndex - 1)];
 
-    mainLogger.info("set zoom factor to", nextZoomFactor);
-
-    for (const view of Object.values(browserViewMap)) {
-        view?.webContents.setZoomFactor(nextZoomFactor);
-    }
+    setZoom(nextZoomFactor);
 }

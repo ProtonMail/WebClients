@@ -2,8 +2,10 @@ import { BrowserWindow, screen } from "electron";
 import Store from "electron-store";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 import { mainLogger } from "../utils/log";
+import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor, getZoom } from "../utils/view/viewManagement";
 
 export interface WindowBounds {
+    zoom: ZoomFactor;
     maximized: boolean;
     width: number;
     height: number;
@@ -20,6 +22,7 @@ export const MINIMUM_WIDTH = 900;
 export const MINIMUM_HEIGHT = 300;
 
 const DEFAULT_WINDOW_BOUNDS = {
+    zoom: DEFAULT_ZOOM_FACTOR,
     maximized: false,
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT,
@@ -29,7 +32,7 @@ const DEFAULT_WINDOW_BOUNDS = {
 
 const store = new Store<{ windowBounds: WindowBounds }>();
 
-export const getWindowBounds = () => {
+export const getWindowBounds = (): WindowBounds => {
     const windowBounds = store.get("windowBounds", DEFAULT_WINDOW_BOUNDS);
 
     if (windowBounds.x === DEFAULT_WINDOW_BOUNDS.x || windowBounds.y === DEFAULT_WINDOW_BOUNDS.y) {
@@ -41,6 +44,7 @@ export const getWindowBounds = () => {
     return {
         ...windowBounds,
         ...ensureWindowIsVisible(windowBounds),
+        zoom: ZOOM_FACTOR_LIST.includes(windowBounds.zoom) ? windowBounds.zoom : DEFAULT_ZOOM_FACTOR,
     };
 };
 
@@ -48,6 +52,7 @@ export const saveWindowBounds = (browserWindow: BrowserWindow) => {
     const newBounds = {
         ...browserWindow.getBounds(),
         maximized: browserWindow.isMaximized(),
+        zoom: getZoom(),
     } satisfies WindowBounds;
 
     mainLogger.info("update window bounds", JSON.stringify(newBounds));
