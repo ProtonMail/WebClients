@@ -10,7 +10,7 @@ import {
     WasmPaymentMethod,
     WasmQuote,
 } from '@proton/andromeda';
-import { DropdownSizeUnit, Icon, IconName, useDebounceInput } from '@proton/components/components';
+import { DropdownSizeUnit, Icon, IconName, useDebounceInput, useModalState } from '@proton/components/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -25,6 +25,7 @@ import { useCountriesByProvider } from '../../../store/hooks/useCountriesByProvi
 import { useFiatCurrenciesByProvider } from '../../../store/hooks/useFiatCurrenciesByProvider';
 import { useGetQuotesByProvider } from '../../../store/hooks/useQuotesByProvider';
 import { GetQuotesArgs } from '../../../store/slices/quotesByProvider';
+import { DisclaimerModal } from './DisclaimerModal';
 
 import './Amount.scss';
 
@@ -96,10 +97,15 @@ const DEFAULT_AMOUNT = 100;
 export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: Props) => {
     const [selectedCountry, setSelectedCountry] = useState<WasmApiCountry>(inputCountry);
     const [selectedCurrency, setSelectedCurrency] = useState<string | undefined>(preselectedQuote?.FiatCurrencySymbol);
-    const [selectedPaymentProvider, setSelectedPaymentProvider] = useState<WasmGatewayProvider | undefined>(preselectedQuote?.provider);
-    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<WasmPaymentMethod | undefined>(preselectedQuote?.PaymentMethod);
+    const [selectedPaymentProvider, setSelectedPaymentProvider] = useState<WasmGatewayProvider | undefined>(
+        preselectedQuote?.provider
+    );
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<WasmPaymentMethod | undefined>(
+        preselectedQuote?.PaymentMethod
+    );
     const { createNotification } = useNotifications();
     const [loadingQuotes, withLoadingQuotes] = useLoading();
+    const [disclaimerModal, setDisclaimerModal] = useModalState();
 
     const [sortedQuotes, setSortedQuotes] = useState<QuoteWithProvider[]>([]);
     const [recommendedQuote = undefined] = sortedQuotes;
@@ -214,205 +220,220 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
         selectedQuote && (Number(selectedQuote.FiatAmount) / Number(selectedQuote.BitcoinAmount)).toFixed(2);
 
     return (
-        <div className="flex flex-column max-w-full justify-center items-center">
-            <h2 className="text-center mb-4 text-semibold">{c('bitcoin buy').t`Buy bitcoin`}</h2>
+        <>
+            <div className="flex flex-column max-w-full justify-center items-center">
+                <h2 className="text-center mb-4 text-semibold">{c('bitcoin buy').t`Amount`}</h2>
 
-            <div className="w-full">
-                <div className="flex flex-row mb-4">
-                    <CountrySelect
-                        noLabel
-                        value={{ countryCode: selectedCountry.Code, countryName: selectedCountry.Name }}
-                        onSelectCountry={(code) => {
-                            const country = allCountries.find((country) => country.Code === code);
-                            if (country) {
-                                setSelectedCountry(country);
-                            }
-                        }}
-                        disabled={loadingCountries || loadingQuotes}
-                        options={allCountryOptions}
-                        as={(props: CoreSearchableSelectProps<string>) => (
-                            <SearchableSelect
-                                bordered
-                                label={c('bitcoin buy').t`Your location`}
-                                placeholder={c('bitcoin buy').t`Choose a country`}
-                                {...props}
-                            />
-                        )}
-                    />
-
-                    {/* maybe put US state selector here */}
-                </div>
-
-                <div className="amount-inputs rounded-xl">
-                    <Input
-                        label="You pay"
-                        value={amount}
-                        type="number"
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                            setAmount(Number(e.target.value));
-                        }}
-                        disabled={loadingQuotes}
-                        suffix={
-                            <div className="flex grow items-center flex-row flex-nowrap">
-                                <CurrencySelect
-                                    dense
-                                    containerClassName="currency-select-dense"
-                                    value={selectedCurrency as string}
-                                    disabled={loadingCurrencies}
-                                    options={allCurrencies}
-                                    onSelect={(currency) => {
-                                        setSelectedCurrency(currency.Symbol as WasmFiatCurrencySymbol);
-                                    }}
+                <div className="w-full">
+                    <div className="flex flex-row mb-4">
+                        <CountrySelect
+                            noLabel
+                            value={{ countryCode: selectedCountry.Code, countryName: selectedCountry.Name }}
+                            onSelectCountry={(code) => {
+                                const country = allCountries.find((country) => country.Code === code);
+                                if (country) {
+                                    setSelectedCountry(country);
+                                }
+                            }}
+                            disabled={loadingCountries || loadingQuotes}
+                            options={allCountryOptions}
+                            as={(props: CoreSearchableSelectProps<string>) => (
+                                <SearchableSelect
+                                    bordered
+                                    label={c('bitcoin buy').t`Your location`}
+                                    placeholder={c('bitcoin buy').t`Choose a country`}
+                                    {...props}
                                 />
-                            </div>
-                        }
-                    />
-                    <hr className="m-0 border" />
-                    <Input
-                        label="You receive"
-                        readOnly
-                        value={selectedQuote?.BitcoinAmount}
-                        disabled={loadingQuotes}
-                        suffix={
-                            <div className="flex grow items-center flex-row flex-nowrap">
-                                {isRecommendedQuoteSelected && (
-                                    <span className="color-primary mt-1 mr-2 block shrink-0 text-sm">{c('bitcoin buy')
-                                        .t`Recommended`}</span>
-                                )}
+                            )}
+                        />
 
-                                <div>
-                                    <Select
-                                        value={selectedPaymentProvider}
-                                        onChange={(event) => {
-                                            setSelectedPaymentProvider(event.value);
+                        {/* maybe put US state selector here */}
+                    </div>
+
+                    <div className="amount-inputs rounded-xl">
+                        <Input
+                            label="You pay"
+                            value={amount}
+                            type="number"
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                                setAmount(Number(e.target.value));
+                            }}
+                            disabled={loadingQuotes}
+                            suffix={
+                                <div className="flex grow items-center flex-row flex-nowrap">
+                                    <CurrencySelect
+                                        dense
+                                        containerClassName="currency-select-dense"
+                                        value={selectedCurrency as string}
+                                        disabled={loadingCurrencies}
+                                        options={allCurrencies}
+                                        onSelect={(currency) => {
+                                            setSelectedCurrency(currency.Symbol as WasmFiatCurrencySymbol);
                                         }}
-                                        size={{
-                                            width: DropdownSizeUnit.Dynamic,
-                                            maxWidth: DropdownSizeUnit.Viewport,
-                                        }}
-                                        containerClassName="provider-select-dense"
-                                        disabled={!availableProviders.length || loadingQuotes}
-                                        renderSelected={(provider) => {
-                                            if (!provider) {
-                                                return null;
-                                            }
+                                    />
+                                </div>
+                            }
+                        />
+                        <hr className="m-0 border" />
+                        <Input
+                            label="You receive"
+                            readOnly
+                            value={selectedQuote?.BitcoinAmount}
+                            disabled={loadingQuotes}
+                            suffix={
+                                <div className="flex grow items-center flex-row flex-nowrap">
+                                    {isRecommendedQuoteSelected && (
+                                        <span className="color-primary mt-1 mr-2 block shrink-0 text-sm">{c(
+                                            'bitcoin buy'
+                                        ).t`Recommended`}</span>
+                                    )}
 
-                                            const content = getContentForProvider(provider);
+                                    <div>
+                                        <Select
+                                            value={selectedPaymentProvider}
+                                            onChange={(event) => {
+                                                setSelectedPaymentProvider(event.value);
+                                            }}
+                                            size={{
+                                                width: DropdownSizeUnit.Dynamic,
+                                                maxWidth: DropdownSizeUnit.Viewport,
+                                            }}
+                                            containerClassName="provider-select-dense"
+                                            disabled={!availableProviders.length || loadingQuotes}
+                                            renderSelected={(provider) => {
+                                                if (!provider) {
+                                                    return null;
+                                                }
 
-                                            if (!content) {
-                                                return null;
-                                            }
-
-                                            return (
-                                                <div className="flex flex-row items-center">
-                                                    <img
-                                                        src={content.assetSrc}
-                                                        style={{ width: '1.25rem' }}
-                                                        alt=""
-                                                        className="mr-2"
-                                                    />
-                                                    <span className="text-sm">{content.title}</span>
-                                                </div>
-                                            );
-                                        }}
-                                        options={compact(
-                                            availableProviders.map((provider) => {
                                                 const content = getContentForProvider(provider);
 
                                                 if (!content) {
                                                     return null;
                                                 }
 
-                                                return {
-                                                    value: provider,
-                                                    label: provider,
-                                                    id: provider,
-                                                    children: (
-                                                        <div className="flex flex-row items-center">
-                                                            <div
-                                                                className="p-2 mr-2 flex rounded-full bg-weak border-norm"
-                                                                style={{ width: '2rem', height: '2rem' }}
-                                                            >
-                                                                <img src={content.assetSrc} alt="" />
+                                                return (
+                                                    <div className="flex flex-row items-center">
+                                                        <img
+                                                            src={content.assetSrc}
+                                                            style={{ width: '1.25rem' }}
+                                                            alt=""
+                                                            className="mr-2"
+                                                        />
+                                                        <span className="text-sm">{content.title}</span>
+                                                    </div>
+                                                );
+                                            }}
+                                            options={compact(
+                                                availableProviders.map((provider) => {
+                                                    const content = getContentForProvider(provider);
+
+                                                    if (!content) {
+                                                        return null;
+                                                    }
+
+                                                    return {
+                                                        value: provider,
+                                                        label: provider,
+                                                        id: provider,
+                                                        children: (
+                                                            <div className="flex flex-row items-center">
+                                                                <div
+                                                                    className="p-2 mr-2 flex rounded-full bg-weak border-norm"
+                                                                    style={{ width: '2rem', height: '2rem' }}
+                                                                >
+                                                                    <img src={content.assetSrc} alt="" />
+                                                                </div>
+                                                                <span>{content.title}</span>
                                                             </div>
-                                                            <span>{content.title}</span>
-                                                        </div>
-                                                    ),
-                                                };
-                                            })
-                                        )}
-                                    />
+                                                        ),
+                                                    };
+                                                })
+                                            )}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                    />
+                            }
+                        />
+                    </div>
                 </div>
-            </div>
 
-            <div className="color-hint text-sm my-5">
-                {expectedBitcoinRate &&
-                    c('bitcoin buy')
-                        .t`1 BTC ≈ ${expectedBitcoinRate} ${selectedQuote.FiatCurrencySymbol} (Includes fee)`}
-            </div>
+                <div className="color-hint text-sm my-5">
+                    {expectedBitcoinRate &&
+                        c('bitcoin buy')
+                            .t`1 BTC ≈ ${expectedBitcoinRate} ${selectedQuote.FiatCurrencySymbol} (Includes fee)`}
+                </div>
 
-            <Select
-                bordered
-                prefix={(() => {
-                    if (!selectedPaymentMethod) {
-                        return undefined;
-                    }
-
-                    const content = getContentForPaymentMethod(selectedPaymentMethod);
-
-                    if (!content) {
-                        return undefined;
-                    }
-
-                    return (
-                        <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-5">
-                            <Icon size={4} name={content.icon} className="color-weak" />
-                        </div>
-                    );
-                })()}
-                label={c('bitcoin buy').t`Pay with`}
-                disabled={!selectedPaymentProvider || loadingQuotes}
-                value={selectedPaymentMethod}
-                onChange={(e) => {
-                    setSelectedPaymentMethod(e.value);
-                }}
-                options={compact(
-                    availablePaymentMethods.map((paymentMethod) => {
-                        const content = getContentForPaymentMethod(paymentMethod);
-                        if (!content) {
-                            return null;
+                <Select
+                    bordered
+                    prefix={(() => {
+                        if (!selectedPaymentMethod) {
+                            return undefined;
                         }
 
-                        return {
-                            value: paymentMethod,
-                            id: paymentMethod,
-                            label: content.text,
-                        };
-                    })
-                )}
-            />
+                        const content = getContentForPaymentMethod(selectedPaymentMethod);
 
-            <div className="w-full px-8  my-5">
-                <Button
-                    fullWidth
-                    shadow
-                    shape="solid"
-                    color="norm"
-                    disabled={!selectedQuote || loadingQuotes}
-                    onClick={() => {
+                        if (!content) {
+                            return undefined;
+                        }
+
+                        return (
+                            <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-5">
+                                <Icon size={4} name={content.icon} className="color-weak" />
+                            </div>
+                        );
+                    })()}
+                    label={c('bitcoin buy').t`Pay with`}
+                    disabled={!selectedPaymentProvider || loadingQuotes}
+                    value={selectedPaymentMethod}
+                    onChange={(e) => {
+                        setSelectedPaymentMethod(e.value);
+                    }}
+                    options={compact(
+                        availablePaymentMethods.map((paymentMethod) => {
+                            const content = getContentForPaymentMethod(paymentMethod);
+                            if (!content) {
+                                return null;
+                            }
+
+                            return {
+                                value: paymentMethod,
+                                id: paymentMethod,
+                                label: content.text,
+                            };
+                        })
+                    )}
+                />
+
+                <div className="w-full px-8  my-5">
+                    <Button
+                        fullWidth
+                        shadow
+                        shape="solid"
+                        color="norm"
+                        disabled={!selectedQuote || loadingQuotes}
+                        onClick={() => {
+                            setDisclaimerModal(true);
+                        }}
+                    >{c('bitcoin buy').t`Buy with`}</Button>
+                </div>
+
+                <div className="color-hint text-sm">{c('bitcoin buy')
+                    .t`${BRAND_NAME} suggests the best provider based on your input and current market prices.`}</div>
+            </div>
+
+            {selectedPaymentProvider && (
+                <DisclaimerModal
+                    provider={selectedPaymentProvider}
+                    onConfirm={() => {
                         if (selectedQuote) {
                             onConfirm(selectedQuote);
                         }
-                    }}
-                >{c('bitcoin buy').t`Buy with`}</Button>
-            </div>
 
-            <div className="color-hint text-sm">{c('bitcoin buy')
-                .t`${BRAND_NAME} suggests the best provider based on your input and current market prices.`}</div>
-        </div>
+                        disclaimerModal.onClose();
+                    }}
+                    {...disclaimerModal}
+                />
+            )}
+        </>
     );
 };

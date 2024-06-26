@@ -81,14 +81,9 @@
 		background-color: var(--background-weak);
 	}
 
-	.dropdown-item-button {
-		&:hover {
-			background-color: var(--interaction-weak-major-1) !important;
-		}
-	}
-
-	.dropdown-item--is-selected {
-		background-color: var(--interaction-weak-major-2) !important;
+	.dropdown-content::before,
+	.dropdown-content::after {
+		background-color: var(--background-weak);
 	}
 }
 

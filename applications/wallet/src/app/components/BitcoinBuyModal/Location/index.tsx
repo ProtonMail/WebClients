@@ -22,9 +22,9 @@ export const Location = ({ onConfirm }: Props) => {
 
     return (
         <div className="flex flex-column max-w-full justify-center items-center">
-            <h2 className="text-center text-semibold">{c('bitcoin buy').t`Where are you located?`}</h2>
+            <h2 className="text-center text-semibold">{c('bitcoin buy').t`Location`}</h2>
 
-            <p className="text-center mb-8 px-6 color-weak text-sm">{c('bitcoin buy')
+            <p className="text-center mb-8 px-6 color-weak">{c('bitcoin buy')
                 .t`Based on your location, we recommend the best provider and payment method for you.`}</p>
 
             <div className="mb-8 w-full">
