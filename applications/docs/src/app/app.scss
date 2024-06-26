@@ -49,6 +49,19 @@ body {
 	display: none;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 @media (max-width: 42.5em) {
 	.user-dropdown-button {
 		padding: 0;
