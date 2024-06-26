@@ -33,25 +33,12 @@ describe('WebsocketConnection', () => {
     })
   })
 
-  it('should correctly format url without commit id', () => {
+  it('should correctly format url', () => {
     const expectedResult = 'wss://docs-rts.darwin.proton.black/websockets/?token=123'
 
     const result = connection.buildConnectionUrl({
       serverUrl: 'wss://docs-rts.darwin.proton.black/websockets',
       token: '123',
-      commitId: undefined,
-    })
-
-    expect(result).toEqual(expectedResult)
-  })
-
-  it('should correctly format url with commit id', () => {
-    const expectedResult = 'wss://docs-rts.darwin.proton.black/websockets/?token=123&commitId=456'
-
-    const result = connection.buildConnectionUrl({
-      serverUrl: 'wss://docs-rts.darwin.proton.black/websockets',
-      token: '123',
-      commitId: '456',
     })
 
     expect(result).toEqual(expectedResult)
