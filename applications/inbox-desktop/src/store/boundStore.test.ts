@@ -35,6 +35,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
 
             expect(getWindowBounds()).toEqual({
@@ -62,6 +63,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
 
             expect(getWindowBounds()).toEqual({
@@ -89,6 +91,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
 
             expect(getWindowBounds()).toEqual({
@@ -116,6 +119,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
 
             expect(getWindowBounds()).toEqual({
