@@ -1,0 +1,56 @@
+.DocumentEditor .image-resizer {
+	display: block;
+	inline-size: 7px;
+	block-size: 7px;
+	position: absolute;
+	background-color: var(--primary);
+	border: 1px solid white;
+
+	&-n {
+		inset-block-start: -6px;
+		inset-inline-start: 48%;
+		cursor: n-resize;
+	}
+
+	&-ne {
+		inset-block-start: -6px;
+		inset-inline-end: -6px;
+		cursor: ne-resize;
+	}
+
+	&-e {
+		inset-block-end: 48%;
+		inset-inline-end: -6px;
+		cursor: e-resize;
+	}
+
+	&-se {
+		inset-block-end: -2px;
+		inset-inline-end: -6px;
+		cursor: nwse-resize;
+	}
+
+	&-s {
+		inset-block-end: -2px;
+		inset-inline-start: 48%;
+		cursor: s-resize;
+	}
+
+	&-sw {
+		inset-block-end: -2px;
+		inset-inline-start: -6px;
+		cursor: sw-resize;
+	}
+
+	&-w {
+		inset-block-end: 48%;
+		inset-inline-start: -6px;
+		cursor: w-resize;
+	}
+
+	&-nw {
+		inset-block-start: -6px;
+		inset-inline-start: -6px;
+		cursor: nw-resize;
+	}
+}
