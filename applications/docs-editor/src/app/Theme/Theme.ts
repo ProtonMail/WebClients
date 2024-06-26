@@ -51,7 +51,7 @@ const DocumentEditorTheme: EditorThemeClasses = {
     h5: 'Lexical__h5',
     h6: 'Lexical__h6',
   },
-  image: 'editor-image',
+  image: 'Lexical__image',
   link: 'Lexical__link',
   list: {
     listitem: 'Lexical__listItem',
