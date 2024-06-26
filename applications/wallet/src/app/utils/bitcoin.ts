@@ -121,3 +121,18 @@ export const getBitcoinUnitOptions: () => { unit: WasmBitcoinUnit; label: string
     { unit: 'MBTC', label: getLabelByUnit('MBTC') },
     { unit: 'SATS', label: getLabelByUnit('SATS') },
 ];
+
+export const getPrecision = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
+    if (typeof unit === 'object') {
+        return Math.log10(unit.Cents);
+    }
+
+    switch (unit) {
+        case 'BTC':
+            return 8;
+        case 'MBTC':
+            return 5;
+        case 'SATS':
+            return 0;
+    }
+};

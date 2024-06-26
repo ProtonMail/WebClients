@@ -81,18 +81,20 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                         style={{ fontSize: '3.75rem' }}
                         value={value}
                         readOnly={!onAmountChange}
-                        prefix={exchangeRate?.FiatCurrency}
+                        prefix={exchangeRate?.FiatCurrency ?? settings.BitcoinUnit}
                     />
                 </div>
 
-                <div className="no-shrink">
-                    <CurrencySelect
-                        dense
-                        options={currencies ?? []}
-                        value={exchangeRate?.FiatCurrency}
-                        onSelect={(u) => handleChange(u)}
-                    />
-                </div>
+                {exchangeRate && (
+                    <div className="no-shrink">
+                        <CurrencySelect
+                            dense
+                            options={currencies ?? []}
+                            value={exchangeRate?.FiatCurrency}
+                            onSelect={(u) => handleChange(u)}
+                        />
+                    </div>
+                )}
             </div>
 
             {!!exchangeRate && (
