@@ -40,6 +40,7 @@ import itemHistory from './items/item-history.saga';
 import itemMove from './items/item-move.saga';
 import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
+import secureLinkSagas from './items/item-secure-link.sagas';
 import itemTrash from './items/item-trash.saga';
 import itemUnpin from './items/item-unpin.saga';
 import itemSetFlags from './items/item.set-flags.saga';
@@ -62,6 +63,7 @@ import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 export function* workerRootSaga(options: RootSagaOptions) {
     yield all(
         [
+            ...secureLinkSagas,
             aliasDetailsRequest,
             aliasOptionsRequest,
             boot,
