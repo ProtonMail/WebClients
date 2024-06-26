@@ -5,7 +5,6 @@ import { ApiResult } from '../Domain/Result/ApiResult'
 
 export type WebsocketCallbacks = {
   onClose: (reason: ConnectionCloseReason) => void
-  onOpen: () => void
   onFailToGetToken: (errorCode: DocsApiErrorCode) => void
   onFailToConnect(reason: ConnectionCloseReason): void
   onEncryptionError(error: string): void

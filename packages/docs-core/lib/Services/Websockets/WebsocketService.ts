@@ -149,12 +149,6 @@ export class WebsocketService implements WebsocketServiceInterface {
         }
       },
 
-      onOpen: () => {
-        if (!options.isStressTestor) {
-          this.onDocumentConnectionOpened(document)
-        }
-      },
-
       onMessage: (message) => {
         if (!options.isStressTestor) {
           void this.handleConnectionMessage(document, message)
@@ -230,15 +224,19 @@ export class WebsocketService implements WebsocketServiceInterface {
     return connection
   }
 
-  onDocumentConnectionOpened(document: NodeMeta): void {
+  onDocumentConnectionReadyToBroadcast(record: DocumentConnectionRecord): void {
+    record.connection.markAsReadyToAcceptMessages()
+
+    record.debouncer.markAsReadyToFlush()
+
     this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connected]>({
       type: WebsocketConnectionEvent.Connected,
       payload: {
-        document: document,
+        document: record.document,
       },
     })
 
-    this.retryAllFailedDocumentUpdates(document)
+    this.retryAllFailedDocumentUpdates(record.document)
   }
 
   retryAllFailedDocumentUpdates(document: NodeMeta): void {
@@ -527,10 +525,12 @@ export class WebsocketService implements WebsocketServiceInterface {
       this.logger.info('Handling event from RTS:', EventTypeEnum[event.type])
 
       switch (type.value) {
-        case EventTypeEnum.ServerIsReadyToAcceptClientMessages:
         case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:
         case EventTypeEnum.ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream:
+          break
+        case EventTypeEnum.ServerIsReadyToAcceptClientMessages:
+          this.onDocumentConnectionReadyToBroadcast(record)
           break
         case EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState:
         case EventTypeEnum.ServerIsRequestingClientToBroadcastItsState:
