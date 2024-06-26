@@ -508,7 +508,7 @@ function useDraggableBlockMenu(editor: LexicalEditor, showGenericAlertModal: (me
       <div
         className={clsx(
           DRAGGABLE_BLOCK_MENU_CLASSNAME,
-          'absolute left-0 top-0 flex items-center justify-center rounded py-0.5 hover:bg-[--background-weak]',
+          'absolute left-0 top-0 flex items-center justify-center rounded py-0.5 opacity-0 hover:bg-[--background-weak]',
         )}
         style={{
           transition: 'opacity 0.2s',
