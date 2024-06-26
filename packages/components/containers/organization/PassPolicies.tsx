@@ -1,123 +1,90 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Info, Toggle } from '@proton/components/components';
 import { useErrorHandler } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import { BitField, OrganizationGetResponse } from '@proton/pass/types';
-import { partialMerge } from '@proton/pass/utils/object/merge';
+import { BitField, type Maybe, OrganizationGetResponse } from '@proton/pass/types';
+import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
-import {
-    SettingsLayout,
-    SettingsLayoutLeft,
-    SettingsLayoutRight,
-    SettingsParagraph,
-    SettingsSection,
-} from '../account';
+import { SettingsParagraph, SettingsSection } from '../account';
+import { GenericError } from '../error';
 
-const INITIAL_STATE: OrganizationGetResponse = {
-    CanUpdate: false,
-    Settings: {
-        ExportMode: 0,
-        ForceLockSeconds: 0,
-        ShareMode: 0,
+const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
+    {
+        setting: 'ShareMode',
+        label: c('Label').t`Disable sharing outside the organization`,
+        tooltip: c('Info')
+            .t`If this option is turned on, organization members will only be able to share vaults within the organization`,
     },
-};
+    {
+        setting: 'ExportMode',
+        label: c('Label').t`Disable data export for organization members`,
+        tooltip: c('Info')
+            .t`By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data`,
+    },
+];
 
 const PassPolicies = () => {
-    const {
-        organization: { get, set },
-    } = usePassBridge();
-    const [organizationSettings, setOrganizationSettings] = useState<OrganizationGetResponse>(INITIAL_STATE);
-    const [loading, withLoading] = useLoading();
+    const { organization } = usePassBridge();
+    const [loading, withLoading] = useLoading(true);
     const handleError = useErrorHandler();
 
+    const policies = getPolicies();
+    const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
+
+    const touched = useRef<keyof OrganizationSettings>();
+    const didLoad = useRef(false);
+
     useEffect(() => {
-        const fetchOrganizationSettings = async () => {
-            try {
-                const settings = await get();
+        const fetchOrganizationSettings = () =>
+            organization.settings.get().then((settings) => {
                 setOrganizationSettings(settings);
-            } catch (error) {
-                handleError(error);
-            }
-        };
-        withLoading(fetchOrganizationSettings()).catch(noop);
+                didLoad.current = true;
+            });
+
+        withLoading(fetchOrganizationSettings()).catch(handleError);
     }, []);
 
-    const handleSharingToggle = async (checked: boolean) => {
-        try {
-            const value = checked ? BitField.ACTIVE : BitField.DISABLED;
-            await withLoading(set('ShareMode', value));
-            setOrganizationSettings((prev) => {
-                return partialMerge(prev, { Settings: { ShareMode: value } });
-            });
-        } catch (error) {
-            handleError(error);
-        }
-    };
-
-    const handleExportToggle = async (checked: boolean) => {
-        try {
-            const value = checked ? BitField.ACTIVE : BitField.DISABLED;
-            await withLoading(set('ExportMode', value));
-            setOrganizationSettings((prev) => {
-                return partialMerge(prev, { Settings: { ExportMode: value } });
-            });
-        } catch (error) {
-            handleError(error);
-        }
+    const handleToggle = async (checked: boolean, setting: keyof OrganizationSettings) => {
+        touched.current = setting;
+        const value = checked ? BitField.ACTIVE : BitField.DISABLED;
+        withLoading(organization.settings.set(setting, value).then(setOrganizationSettings)).catch(handleError);
     };
 
     return (
-        <SettingsSection>
-            <SettingsParagraph>
-                {c('Info').t`You can define the policies of ${PASS_APP_NAME} for the organization members.`}
-            </SettingsParagraph>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="sharing-toggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Disable sharing outside the organization.`}</span>
-                        <Info
-                            title={c('Info')
-                                .t`If this option is turned on, organization members will only be able to share vaults within the organization`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        checked={organizationSettings?.Settings?.ShareMode === BitField.ACTIVE}
-                        id="sharing-toggle"
-                        onChange={({ target }) => handleSharingToggle(target.checked)}
-                        disabled={loading || !organizationSettings.CanUpdate}
-                        loading={loading}
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="export-toggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Disable data export for organization members`}</span>
-                        <Info
-                            title={c('Info')
-                                .t`By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        checked={organizationSettings?.Settings?.ExportMode === BitField.ACTIVE}
-                        id="export-toggle"
-                        onChange={({ target }) => handleExportToggle(target.checked)}
-                        disabled={loading || !organizationSettings.CanUpdate}
-                        loading={loading}
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-        </SettingsSection>
+        <>
+            <SettingsSection>
+                <SettingsParagraph>
+                    {c('Info').t`You can define the policies of ${PASS_APP_NAME} for the organization members.`}
+                </SettingsParagraph>
+                <ul className="unstyled relative">
+                    {organizationSettings &&
+                        policies.map(({ setting, label, tooltip }) => (
+                            <li key={setting} className="mb-4 flex items-center flex-nowrap gap-4">
+                                <Toggle
+                                    checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
+                                    id={`${setting}-toggle`}
+                                    onChange={({ target }) => handleToggle(target.checked, setting)}
+                                    disabled={loading || !organizationSettings.CanUpdate}
+                                    loading={touched.current === setting && loading}
+                                />
+                                <label htmlFor={`${setting}-toggle`}>
+                                    <span className="mr-1">{label}</span>
+                                    {tooltip && <Info title={tooltip} />}
+                                </label>
+                            </li>
+                        ))}
+                </ul>
+            </SettingsSection>
+
+            {!didLoad.current && loading && <CircleLoader />}
+            {!loading && !organizationSettings && <GenericError className="mt-16" />}
+        </>
     );
 };
 
