@@ -19,7 +19,6 @@ import { and, truthy } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { partialMerge } from '@proton/pass/utils/object/merge';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -55,13 +54,12 @@ export const createPassBridge = (api: Api): PassBridge => {
                         const shares = (await Promise.all(encryptedShares.map(unary(parseShareResponse)))).filter(
                             truthy
                         );
+
                         const candidates = shares
                             .filter(and(isActiveVault, isWritableVault, isOwnVault))
                             .sort(sortOn('createTime', 'ASC'));
 
-                        const defaultVault = first(candidates);
-
-                        return defaultVault;
+                        return first(candidates);
                     }),
                     async createDefaultVault() {
                         // In case a default vault has been created in the meantime
@@ -113,14 +111,9 @@ export const createPassBridge = (api: Api): PassBridge => {
                     }),
                 },
                 organization: {
-                    get: getOrganizationSettings,
-                    set: async (key, value) => {
-                        const settings = await getOrganizationSettings();
-
-                        if (!settings.Settings) throw new Error('You are not in an organization');
-                        if (!settings.CanUpdate) throw new Error('You do not have permission to update these settings');
-
-                        return setOrganizationSettings(partialMerge(settings.Settings, { [key]: value }));
+                    settings: {
+                        get: getOrganizationSettings,
+                        set: (key, value) => setOrganizationSettings({ [key]: value }),
                     },
                 },
             };

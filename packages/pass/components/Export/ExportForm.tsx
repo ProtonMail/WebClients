@@ -19,7 +19,7 @@ type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boole
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
     const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
-    const org = useOrganization();
+    const org = useOrganization({ sync: true });
     const orgExportDisabled = !org?.b2bAdmin && org?.settings.ExportMode === BitField.ACTIVE;
 
     const warnings = useMemo(

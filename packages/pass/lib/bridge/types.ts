@@ -56,13 +56,15 @@ export interface PassBridge {
         getAllByShareId: MaxAgeMemoizedFn<(shareId: string) => Promise<PassBridgeAliasItem[]>>;
     };
     organization: {
-        /** Get organization settings for Pass */
-        get: () => Promise<OrganizationGetResponse>;
-        /** Update an organization setting for Pass */
-        set: <K extends keyof OrganizationSettings>(
-            setting: K,
-            value: OrganizationSettings[K]
-        ) => Promise<OrganizationGetResponse>;
+        settings: {
+            /** Get organization settings for Pass */
+            get: () => Promise<OrganizationGetResponse>;
+            /** Update an organization setting for Pass */
+            set: <K extends keyof OrganizationSettings>(
+                setting: K,
+                value: OrganizationSettings[K]
+            ) => Promise<OrganizationGetResponse>;
+        };
     };
 }
 
