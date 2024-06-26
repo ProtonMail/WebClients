@@ -53,7 +53,7 @@ export const createContentScriptContext = (options: {
                 },
             }),
             iframe: createIFrameService(options.elements),
-            webauthn: createWebAuthNService(),
+            webauthn: BUILD_TARGET !== 'safari' ? createWebAuthNService() : undefined,
         },
 
         destroy: options.destroy,
