@@ -1,27 +1,185 @@
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import CorePrice, { Props as PriceOwnProps } from '@proton/components/components/price/Price';
+import '@proton/components/components/price/Price.scss';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import clsx from '@proton/utils/clsx';
 
 import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { convertAmount } from '../../utils';
 
+type ClassNamesProps = {
+    [group in string]?: string;
+};
+
+const formatterByCurrency: Map<string, Intl.NumberFormat> = new Map();
+
 interface Props extends Omit<PriceOwnProps, 'children' | 'currency' | 'divisor'> {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
     satsAmount: number;
+    className?: string;
+    amountClassName?: string;
+    currencyClassName?: string;
+    classNames?: ClassNamesProps;
+    'data-testid'?: string;
 }
 
 export { CorePrice };
 
-export const Price = ({ unit, satsAmount, ...props }: Props) => {
-    const converted = convertAmount(satsAmount, COMPUTE_BITCOIN_UNIT, unit);
+const tryNumberFormat = (currency: string, minimumFractionDigits: number): Intl.NumberFormat => {
+    const commonParams = {
+        style: 'currency',
+        currencyDisplay: 'symbol',
+    };
+
+    try {
+        return new Intl.NumberFormat(dateLocale.code, {
+            currency: currency,
+            minimumFractionDigits: minimumFractionDigits,
+            ...commonParams,
+        });
+    } catch (err) {
+        return new Intl.NumberFormat(dateLocale.code, {
+            currency: 'USD',
+            minimumFractionDigits: 2,
+            ...commonParams,
+        });
+    }
+};
+
+export const Price = ({
+    unit,
+    satsAmount,
+    className,
+    amountClassName,
+    currencyClassName,
+    classNames,
+    wrapperClassName = 'shrink-0 inline-flex items-baseline',
+    large,
+    ...props
+}: Props) => {
+    if (typeof unit === 'object') {
+        const time = unit.ExchangeRateTime;
+        const amount = convertAmount(satsAmount, COMPUTE_BITCOIN_UNIT, unit);
+        const currency = unit.FiatCurrency;
+        const formatter =
+            formatterByCurrency.get(unit.FiatCurrency) ?? tryNumberFormat(unit.FiatCurrency, Math.log10(unit.Cents));
+        if (!formatterByCurrency.has(unit.FiatCurrency)) {
+            formatterByCurrency.set(unit.FiatCurrency, formatter);
+        }
+
+        return (
+            <span
+                className={clsx(['price', wrapperClassName, large && 'price--large', classNames?.price, className])}
+                data-currency={currency}
+                key={`${time}-${satsAmount}-${satsAmount}-${currency}`}
+                data-testid={props?.['data-testid']}
+            >
+                {formatter
+                    .formatToParts(amount)
+                    .filter(({ type }) =>
+                        ['minusSign', 'currency', 'integer', 'group', 'decimal', 'fraction', 'literal'].includes(type)
+                    )
+                    .map(({ type, value }) => {
+                        switch (type) {
+                            case 'minusSign':
+                                return (
+                                    <span
+                                        key={`${time}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx([amountClassName, classNames?.minusSign])}
+                                    >
+                                        {value}
+                                    </span>
+                                );
+                            case 'currency':
+                                return (
+                                    <span
+                                        key={`${time}-${satsAmount}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx(['currency', currencyClassName, classNames?.currency])}
+                                    >
+                                        {value}
+                                    </span>
+                                );
+                            case 'integer':
+                                return (
+                                    <span
+                                        key={`${time}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx([
+                                            'amount',
+                                            'amount--large',
+                                            amountClassName,
+                                            classNames?.integer,
+                                        ])}
+                                    >
+                                        {value}
+                                    </span>
+                                );
+                            case 'group':
+                                return (
+                                    <span
+                                        key={`${time}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx([amountClassName, classNames?.group])}
+                                    >
+                                        {value}
+                                    </span>
+                                );
+                            case 'decimal':
+                                return (
+                                    <span
+                                        key={`${time}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx(['decimal', amountClassName, classNames?.decimal])}
+                                    >
+                                        {value}
+                                    </span>
+                                );
+                            case 'fraction':
+                                return (
+                                    <span
+                                        key={`${time}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx(['decimal', amountClassName, classNames?.fraction])}
+                                    >
+                                        {value}
+                                    </span>
+                                );
+                            case 'literal':
+                                return (
+                                    <span
+                                        key={`${time}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx(['text-pre', classNames?.literal])}
+                                    >
+                                        {value}
+                                    </span>
+                                );
+                            default:
+                                return value;
+                        }
+                    })}
+            </span>
+        );
+    }
+
+    const amount = convertAmount(satsAmount, COMPUTE_BITCOIN_UNIT, unit).toString();
+    const currency = unit.toString();
 
     return (
-        <CorePrice
-            key={`price-${converted}`}
-            divisor={1}
-            currency={typeof unit === 'object' ? unit.FiatCurrency : unit}
-            {...props}
+        <span
+            className={clsx(['price', wrapperClassName, large && 'price--large', classNames?.price])}
+            data-currency={currency}
         >
-            {converted.toString()}
-        </CorePrice>
+            <span
+                key={`${satsAmount}-${currency}-amount`}
+                className={clsx(['amount', 'amount--large', classNames?.integer])}
+            >
+                {amount}
+            </span>
+            <span key={`${satsAmount}-${currency}-literal`} className={clsx(['text-pre', classNames?.literal])}>
+                {' '}
+            </span>
+            <span
+                key={`${satsAmount}-${currency}-currency`}
+                className={clsx(['currency', currencyClassName, classNames?.currency])}
+            >
+                {currency}
+            </span>
+        </span>
     );
 };

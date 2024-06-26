@@ -66,7 +66,7 @@ HTMLCanvasElement.prototype.getContext = vi.fn();
 
 vi.mock('@proton/shared/lib/i18n/dateFnLocales', () => ({
     __esModule: true,
-    enUSLocale: undefined,
+    enUSLocale: { code: 'en-US' },
 }));
 
 vi.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({

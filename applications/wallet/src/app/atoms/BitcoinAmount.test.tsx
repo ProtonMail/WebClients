@@ -29,7 +29,7 @@ describe('BitcoinAmount', () => {
     });
 
     describe('when fiat is provided', () => {
-        it('should display fiat converion', () => {
+        it('should display fiat conversion', () => {
             const { container } = render(
                 <BitcoinAmount bitcoin={500100} unit={{ value: 'BTC' }} exchangeRate={{ value: exchangeRate }} />
             );
