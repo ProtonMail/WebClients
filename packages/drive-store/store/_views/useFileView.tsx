@@ -2,11 +2,12 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { SHARE_MEMBER_PERMISSIONS, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { isVideo } from '@proton/shared/lib/helpers/mimetype';
+import { isProtonDocument, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { isIgnoredError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
+import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
 import usePublicDownload from '../_downloads/usePublicDownload';
 import { DecryptedLink, useLink } from '../_links';
@@ -20,6 +21,7 @@ import { SortParams } from './utils/useSorting';
  */
 export default function useFileView(shareId: string, linkId: string, useNavigation = false, revisionId?: string) {
     const { downloadStream, getPreviewThumbnail } = useDownload();
+    const { downloadDocument } = useDocumentActions();
     const { getSharePermissions } = useDirectSharingInfo();
     // permissions load will be during the withLoading process, but we prefer to set owner by default,
     // so even if it's wrong permissions, BE will prevent any unauthorized actions
@@ -55,7 +57,17 @@ export default function useFileView(shareId: string, linkId: string, useNavigati
         link,
         contents,
         contentsMimeType,
-        downloadFile,
+        downloadFile: async () => {
+            if (isProtonDocument(contentsMimeType || link?.mimeType || '')) {
+                await downloadDocument({
+                    shareId,
+                    linkId,
+                });
+                return;
+            }
+
+            await downloadFile();
+        },
     };
 }
 

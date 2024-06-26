@@ -21,6 +21,7 @@ import {
     isTransferRetry,
     isTransferSkipError,
 } from '../../../utils/transfer';
+import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadFileItem, UploadFileList } from '../interface';
@@ -41,6 +42,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
+    const { isSharedWithMe: getIsSharedWithMe } = useDirectSharingInfo();
 
     const metrics = useUploadMetrics(user.isPaid);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
@@ -58,14 +60,18 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
 
     const [fileThresholdModal, showFileThresholdModal] = useFileThresholdModal();
 
-    const checkHasEnoughSpace = async (files: UploadFileList) => {
+    const getTotalFileList = (files: UploadFileList) => {
         const totalFileListSize = files.reduce((sum, item) => sum + ((item as UploadFileItem).file?.size || 0), 0);
+        return totalFileListSize;
+    };
+
+    const checkHasEnoughSpace = async (totalFileListSize: number) => {
         const remaining = control.calculateRemainingUploadBytes();
         await call(); // Process events to get updated UsedSpace.
         const user = await getUser();
         const space = getAppSpace(getSpace(user), APPS.PROTONDRIVE);
         const hasEnoughSpace = space.maxSpace > space.usedSpace + remaining + totalFileListSize;
-        return { hasEnoughSpace, total: totalFileListSize };
+        return hasEnoughSpace;
     };
 
     const showNotEnoughSpaceNotification = (total: number) => {
@@ -88,7 +94,10 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
         list: UploadFileList,
         isForPhotos: boolean = false
     ) => {
-        const { hasEnoughSpace, total } = await checkHasEnoughSpace(list);
+        const total = getTotalFileList(list);
+        // We check if item is upload into a shared with me share as we don't check for space on external volumes
+        const isSharedWithMe = await getIsSharedWithMe(new AbortController().signal, shareId);
+        const hasEnoughSpace = isSharedWithMe || (await checkHasEnoughSpace(total));
         if (!hasEnoughSpace) {
             showNotEnoughSpaceNotification(total);
             return;
@@ -116,7 +125,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             });
         }
 
-        await queue.add(shareId, parentId, list, isForPhotos).catch((err: any) => {
+        await queue.add(shareId, parentId, list, isForPhotos, isSharedWithMe).catch((err: any) => {
             const errors = Array.isArray(err) ? err : [err];
             errors.forEach((err) => {
                 if ((err as Error).name === 'UploadUserError' || (err as Error).name === 'UploadConflictError') {
@@ -138,9 +147,11 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
     const restartUploads = useCallback(
         async (idOrFilter: UpdateFilter) => {
             const uploadFileList = queue.fileUploads
-                .filter(convertFilterToFunction(idOrFilter))
-                .map(({ file }) => ({ path: [], file }));
-            const { hasEnoughSpace, total } = await checkHasEnoughSpace(uploadFileList);
+                // TODO: We ignore shared with me items from list as they are not part of user storage
+                .filter((item) => !item.isSharedWithMe && convertFilterToFunction(idOrFilter))
+                .map(({ file, isSharedWithMe }) => ({ path: [], file, isSharedWithMe }));
+            const total = getTotalFileList(uploadFileList);
+            const hasEnoughSpace = await checkHasEnoughSpace(total);
             if (!hasEnoughSpace) {
                 showNotEnoughSpaceNotification(total);
                 return;

@@ -25,6 +25,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         inviteProtonUser,
         inviteExternalUser,
         resendInvitationEmail,
+        resendExternalInvitationEmail,
         listInvitations,
         listExternalInvitations,
         deleteInvitation,
@@ -304,7 +305,15 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         const shareId = await getShareId(abortSignal);
 
         await resendInvitationEmail(abortSignal, { shareId, invitationId });
-        createNotification({ type: 'info', text: c('Notification').t`Invitation email was sent again` });
+        createNotification({ type: 'info', text: c('Notification').t`Invitation's email was sent again` });
+    };
+
+    const resendExternalInvitation = async (externalInvitationId: string) => {
+        const abortSignal = new AbortController().signal;
+        const shareId = await getShareId(abortSignal);
+
+        await resendExternalInvitationEmail(abortSignal, { shareId, externalInvitationId });
+        createNotification({ type: 'info', text: c('Notification').t`External invitation's email was sent again` });
     };
 
     const removeExternalInvitation = async (externalInvitationId: string) => {
@@ -360,6 +369,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
         addNewMember,
         addNewMembers,
         resendInvitation,
+        resendExternalInvitation,
         updateMemberPermissions,
         updateInvitePermissions,
         updateExternalInvitePermissions,

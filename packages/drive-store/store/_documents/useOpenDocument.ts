@@ -2,18 +2,15 @@ import { useAuthentication } from '@proton/components/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
-type DocumentActionMode = 'open' | 'convert' | 'history' | 'download';
-type DocumentActionModeCreate = 'create';
-
 export type DocumentAction =
     | {
-          mode: DocumentActionMode;
+          mode: 'open' | 'convert' | 'download' | 'history';
           linkId: string;
           volumeId: string;
-          parentLinkId?: string;
+          parentLinkId?: never;
       }
     | {
-          mode: DocumentActionModeCreate;
+          mode: 'create';
           parentLinkId: string;
           volumeId: string;
           linkId?: never;
@@ -40,7 +37,7 @@ export const useOpenDocument = () => {
             url.searchParams.append('parentLinkId', parentLinkId);
         }
 
-        window.open(url);
+        window.open(url, '_blank');
     };
 
     return {
