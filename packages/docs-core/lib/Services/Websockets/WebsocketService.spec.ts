@@ -51,11 +51,13 @@ describe('WebsocketService', () => {
 
     connection = {
       broadcastMessage: jest.fn(),
+      markAsReadyToAcceptMessages: jest.fn(),
     } as unknown as WebsocketConnectionInterface
 
     debouncer = {
       addUpdate: jest.fn(),
       getMode: jest.fn(),
+      markAsReadyToFlush: jest.fn(),
     } as unknown as UpdateDebouncer
 
     record = {
@@ -112,7 +114,31 @@ describe('WebsocketService', () => {
     it('should retry failed messages', async () => {
       service.retryAllFailedDocumentUpdates = jest.fn()
 
-      service.onDocumentConnectionOpened({ linkId: '123' } as NodeMeta)
+      service.onDocumentConnectionReadyToBroadcast(record)
+
+      expect(service.retryAllFailedDocumentUpdates).toHaveBeenCalled()
+    })
+  })
+
+  describe('onDocumentConnectionReadyToBroadcast', () => {
+    it('should mark connection as ready to broadcast', async () => {
+      service.onDocumentConnectionReadyToBroadcast(record)
+
+      expect(connection.markAsReadyToAcceptMessages).toHaveBeenCalled()
+    })
+
+    it('should mark debouncer as ready to flush', () => {
+      debouncer.markAsReadyToFlush = jest.fn()
+
+      service.onDocumentConnectionReadyToBroadcast(record)
+
+      expect(debouncer.markAsReadyToFlush).toHaveBeenCalled()
+    })
+
+    it('should retry failed document updates', () => {
+      service.retryAllFailedDocumentUpdates = jest.fn()
+
+      service.onDocumentConnectionReadyToBroadcast(record)
 
       expect(service.retryAllFailedDocumentUpdates).toHaveBeenCalled()
     })
@@ -322,6 +348,16 @@ describe('WebsocketService', () => {
       await service.handleIncomingEventsMessage(record, events)
 
       expect(switchToRealtimeMode).not.toHaveBeenCalled()
+    })
+
+    it('should markAsReadyToAcceptMessages on ServerIsReadyToAcceptClientMessages', async () => {
+      const events = {
+        events: [{ type: EventTypeEnum.ServerIsReadyToAcceptClientMessages }],
+      } as unknown as ServerMessageWithEvents
+
+      await service.handleIncomingEventsMessage(record, events)
+
+      expect(connection.markAsReadyToAcceptMessages).toHaveBeenCalled()
     })
   })
 
