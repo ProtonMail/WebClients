@@ -1,5 +1,4 @@
 import {
-  InsertTableCommandPayloadHeaders,
   TableNode,
   $createTableNode,
   $createTableRowNode,
@@ -7,11 +6,15 @@ import {
   $createTableCellNode,
 } from '@lexical/table'
 import { $createParagraphNode, $createTextNode, $getEditor } from 'lexical'
+import { InsertTableCommandPayload } from './InsertTableCommand'
 
 export function $createTableNodeWithDimensions(
   rowCount: number,
   columnCount: number,
-  includeHeaders: InsertTableCommandPayloadHeaders = true,
+  includeHeaders: InsertTableCommandPayload['includeHeaders'] = {
+    rows: true,
+    columns: false,
+  },
   fullWidth = true,
 ): TableNode {
   const editor = $getEditor()
