@@ -37,6 +37,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -56,6 +57,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -74,6 +76,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -91,6 +94,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -120,6 +124,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -137,6 +142,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -154,6 +160,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -173,6 +180,7 @@ describe('getNewMethods()', () => {
                 flow,
                 undefined,
                 true,
+                undefined,
                 undefined
             );
 
@@ -191,6 +199,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -208,6 +217,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -225,6 +235,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -244,6 +255,7 @@ describe('getNewMethods()', () => {
                 flow,
                 undefined,
                 true,
+                undefined,
                 undefined
             );
 
@@ -262,6 +274,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -284,6 +297,7 @@ describe('getNewMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -353,6 +367,7 @@ describe('getUsedMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -421,6 +436,7 @@ describe('getAvailablePaymentMethods()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -495,6 +511,7 @@ describe('getLastUsedMethod()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
@@ -584,6 +601,7 @@ describe('getSavedMethodById()', () => {
             'subscription',
             undefined,
             true,
+            undefined,
             undefined
         );
 
