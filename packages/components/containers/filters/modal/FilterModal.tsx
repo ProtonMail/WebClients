@@ -325,7 +325,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                 {...rest}
                 onClose={handleClose}
             >
-                <ModalTwoHeader title={title} />
+                <ModalTwoHeader title={title} closeButtonProps={{ disabled: loading }} />
                 <ModalTwoContent>
                     <HeaderFilterModal
                         model={model}
