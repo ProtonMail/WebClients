@@ -2,7 +2,7 @@ import { app, Menu, shell, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
-import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/viewManagement";
+import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
 import { areDevToolsAvailable } from "../view/windowHelpers";
 import { isProdEnv } from "../config";
 
@@ -111,9 +111,9 @@ export const setApplicationMenu = () => {
                     },
                 },
                 { type: "separator" },
-                { role: "resetZoom" },
-                { role: "zoomIn" },
-                { role: "zoomOut" },
+                { label: c("App menu").t`Actual Size`, accelerator: "CmdOrCtrl+0", click: resetZoom },
+                { label: c("App menu").t`Zoom In`, accelerator: "CmdOrCtrl+Plus", click: () => updateZoom("in") },
+                { label: c("App menu").t`Zoom Out`, accelerator: "CmdOrCtrl+-", click: () => updateZoom("out") },
                 { type: "separator" },
                 { role: "togglefullscreen" },
             ],

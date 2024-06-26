@@ -334,3 +334,41 @@ export function getWebContentsViewName(webContents: WebContents): ViewID | null 
 
     return null;
 }
+
+// Based on Firefox zoom factor list
+const ZOOM_FACTOR_LIST = [0.3, 0.5, 0.67, 0.8, 0.9, 1.0, 1.1, 1.2, 1.33, 1.5, 1.7, 2.0, 2.4, 3.0, 4.0, 5.0] as const;
+export type ZoomFactor = (typeof ZOOM_FACTOR_LIST)[number];
+const DEFAULT_ZOOM_FACTOR: ZoomFactor = 1.0;
+
+export function resetZoom() {
+    mainLogger.info("reset zoom factor to", DEFAULT_ZOOM_FACTOR);
+
+    for (const view of Object.values(browserViewMap)) {
+        view?.webContents.setZoomFactor(DEFAULT_ZOOM_FACTOR);
+    }
+}
+
+export function updateZoom(direction: "in" | "out") {
+    const currentView = browserViewMap[currentViewID];
+
+    if (!currentView) {
+        return;
+    }
+
+    let zoomFactorIndex = ZOOM_FACTOR_LIST.indexOf(currentView.webContents.getZoomFactor() as ZoomFactor);
+
+    if (zoomFactorIndex === -1) {
+        zoomFactorIndex = ZOOM_FACTOR_LIST.indexOf(DEFAULT_ZOOM_FACTOR);
+    }
+
+    const nextZoomFactor =
+        direction === "in"
+            ? ZOOM_FACTOR_LIST[Math.min(ZOOM_FACTOR_LIST.length - 1, zoomFactorIndex + 1)]
+            : ZOOM_FACTOR_LIST[Math.max(0, zoomFactorIndex - 1)];
+
+    mainLogger.info("set zoom factor to", nextZoomFactor);
+
+    for (const view of Object.values(browserViewMap)) {
+        view?.webContents.setZoomFactor(nextZoomFactor);
+    }
+}
