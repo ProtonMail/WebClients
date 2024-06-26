@@ -76,13 +76,16 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   }, [application.eventBus, showGenericAlertModal])
 
   useEffect(() => {
-    return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>((payload) => {
-      showGenericAlertModal({
-        title: payload.translatedErrorTitle || c('Title').t`An error occurred`,
-        translatedMessage: payload.translatedError,
-        onClose: payload.onClose,
-      })
-    }, ApplicationEvent.GeneralUserDisplayableErrorOccurred)
+    return application.eventBus.addEventCallback<GeneralUserDisplayableErrorOccurredPayload>(
+      (payload: GeneralUserDisplayableErrorOccurredPayload) => {
+        showGenericAlertModal({
+          title: payload.translatedErrorTitle || c('Title').t`An error occurred`,
+          translatedMessage: payload.translatedError,
+          onClose: payload.onClose,
+        })
+      },
+      ApplicationEvent.GeneralUserDisplayableErrorOccurred,
+    )
   }, [application.eventBus, showGenericAlertModal])
 
   useEffect(() => {

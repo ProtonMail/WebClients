@@ -24,7 +24,6 @@ import Toolbar from './Toolbar/Toolbar'
 import { CollaborationPlugin } from './Plugins/Collaboration/CollaborationPlugin'
 import ImagesPlugin from './Plugins/Image/ImagePlugin'
 import TypingBotPlugin from './Plugins/TypingBot/TypingBotPlugin'
-import SeedInitialContentPlugin from './Plugins/Collaboration/SeedInitialContent'
 import { EditorReadonlyPlugin } from './Plugins/EditorReadonlyPlugin'
 import TableCellResizerPlugin from './Plugins/TableCellResizer'
 import { LinkInfoPlugin } from './Plugins/Link/LinkInfoPlugin'
@@ -145,7 +144,6 @@ export function Editor({
         <MarkdownShortcutPlugin transformers={MarkdownTransformers} />
         <ListPlugin />
         <CheckListPlugin />
-        {injectWithNewContent && <SeedInitialContentPlugin docState={docState} content={injectWithNewContent} />}
         <TablePlugin hasCellBackgroundColor hasTabHandler />
         <TableCellResizerPlugin />
         <TabIndentationPlugin />
@@ -157,6 +155,7 @@ export function Editor({
           providerFactory={yjsWebsockProvider!}
           shouldBootstrap={ShouldBootstrap}
           onCollabReady={onEditorReadyToReceiveUpdates}
+          injectWithNewContent={injectWithNewContent}
         />
         <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />
