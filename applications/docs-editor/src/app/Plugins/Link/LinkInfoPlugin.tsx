@@ -14,7 +14,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { getSelectedNode } from '../../Utils/getSelectedNode'
 import { LinkInfoViewer } from './LinkInfoViewer'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { mergeRegister } from '@lexical/utils'
+import { $findMatchingParent, mergeRegister } from '@lexical/utils'
 import { LinkInfoEditor } from './LinkInfoEditor'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 
@@ -59,7 +59,7 @@ export function LinkInfoPlugin({ openLink }: { openLink: (url: string) => void }
     const isAnchorSameAsFocus = anchorNode === focusNode
 
     const node = getSelectedNode(selection)
-    const parent = node.getParent()
+    const parent = $findMatchingParent(node, $isLinkNode)
 
     if ($isLinkNode(node) && isAnchorSameAsFocus) {
       setLinkNode(node)
