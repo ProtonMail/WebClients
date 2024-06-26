@@ -713,6 +713,9 @@ export const getHasUpdatedInviteData = ({
         const oldValue = getSupportedStringValue(oldVevent[key] as VcalStringProperty);
 
         if (newValue && oldValue) {
+            // Sanitize to better diff detection
+            // `oldvalue` is the original event value so it can contain HTML tags
+            // `newValue` is supposed to be already sanitized
             return stripAllTags(newValue) !== stripAllTags(oldValue);
         }
 
