@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { noop } from 'lodash';
+import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
 import { ModalOwnProps, useModalState } from '@proton/components/components';
@@ -12,8 +13,8 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
 import { SubTheme, getAccountWithChainDataFromManyWallets } from '../../utils';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import { ModalHeaderWithStepper, Steps } from '../ModalHeaderWithStepper';
 import { AmountInput } from './AmountInput';
-import { ModalHeader, StepKey } from './ModalHeader';
 import { useOnChainFeesSelector } from './OnchainTransactionBuilderFooter/OnchainTransactionAdvancedOptions/useOnChainFeesSelector';
 import { RecipientsSelection } from './RecipientsSelection';
 import { TransactionReview } from './TransactionReview';
@@ -26,6 +27,20 @@ interface Props {
     modal: ModalOwnProps;
     onDone?: () => void;
 }
+
+enum StepKey {
+    RecipientsSelection = 'RecipientsSelection',
+    AmountInput = 'AmountInput',
+    ReviewTransaction = 'ReviewTransaction',
+    Send = 'Send',
+}
+
+const getSteps = (): Steps<StepKey> => [
+    { key: StepKey.RecipientsSelection, label: c('bitcoin buy').t`Recipients` },
+    { key: StepKey.AmountInput, label: c('bitcoin buy').t`Amount` },
+    { key: StepKey.ReviewTransaction, label: c('bitcoin buy').t`Review` },
+    { key: StepKey.Send, label: c('bitcoin buy').t`Send` },
+];
 
 export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Props) => {
     const [stepKey, setStepKey] = useState<StepKey>(StepKey.RecipientsSelection);
@@ -61,7 +76,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
         <>
             <FullscreenModal
                 header={
-                    <ModalHeader
+                    <ModalHeaderWithStepper
                         onClose={() => {
                             modal.onClose?.();
                             onDone?.();
@@ -70,6 +85,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                             setStepKey(key);
                         }}
                         currentStep={stepKey}
+                        steps={getSteps()}
                     />
                 }
                 {...modal}

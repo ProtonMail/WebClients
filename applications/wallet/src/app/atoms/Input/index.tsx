@@ -14,13 +14,19 @@ export type InputProps<E extends ElementType = typeof CoreInput> = Omit<
     containerClassName?: string;
     containerStyle?: CSSProperties;
     label: string;
+    bordered?: boolean;
 };
 
 export const Input = forwardRef(
-    ({ containerClassName, containerStyle, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
+    ({ containerClassName, containerStyle, bordered, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
         return (
             <div
-                className={clsx('wallet-input bg-weak py-5 px-6 rounded-xl color-norm w-full', containerClassName)}
+                className={clsx(
+                    'wallet-input bg-weak py-5 px-6 rounded-xl color-norm w-full',
+                    containerClassName,
+                    bordered && 'bordered',
+                    props.disabled && 'disabled'
+                )}
                 style={containerStyle}
             >
                 <CoreInput

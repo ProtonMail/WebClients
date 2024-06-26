@@ -1,0 +1,47 @@
+.amount-inputs {
+	border: 1px solid var(--interaction-weak-major-1);
+
+	&:hover > hr {
+		visibility: hidden;
+	}
+}
+
+.currency-select-dense {
+	&#{&} {
+		padding-block: 0.5rem;
+		padding-inline: 1.2rem 0.8rem;
+
+		border-radius: 3rem;
+		background: var(--interaction-weak-minor-1);
+
+		&:hover {
+			outline: 1px solid var(--interaction-weak-major-1);
+		}
+
+		&:active {
+			outline: 1px solid var(--interaction-weak-major-2);
+		}
+
+		&:focus-within {
+			outline: none;
+		}
+	}
+}
+
+.provider-select-dense {
+	&#{&} {
+		padding: 0.5rem;
+
+		&:hover {
+			outline: 1px solid var(--interaction-weak-major-1);
+		}
+
+		&:active {
+			outline: 1px solid var(--interaction-weak-major-2);
+		}
+
+		&:focus-within {
+			outline: none;
+		}
+	}
+}

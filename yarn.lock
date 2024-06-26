@@ -5006,6 +5006,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@moonpay/moonpay-react@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "@moonpay/moonpay-react@npm:1.7.1"
+  peerDependencies:
+    react: ">=16"
+  checksum: 10c0/b0060d9979089a492bdebf2efcb5cccb04b85e89213fbff840f141f55a20fcc933a60949ed03af3a56823cf961ac85564c588c5758f189770fcacdb33c59fad5
+  languageName: node
+  linkType: hard
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -7520,6 +7529,15 @@ __metadata:
   bin:
     create-timezone-data: bin/create-timezone-data
   checksum: 10c0/80eb3ab8df1931670610d46d6f26bd0cdbd3b49ccee444f06e9f5c1f294c5cc8e7a9804870b24797274a652a6467685192b30a7ad011c3e9ab9044e63b659ef0
+  languageName: node
+  linkType: hard
+
+"@ramp-network/ramp-instant-sdk@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "@ramp-network/ramp-instant-sdk@npm:4.0.5"
+  dependencies:
+    body-scroll-lock: "npm:^3.1.5"
+  checksum: 10c0/0cf548dc56f5fcf5240de78f569e20c99305948b2b1cccf8b363cab816bf1d722c03e84ee7f9c0f5ae13976f5a0d30d8835edb6fef71f2e4ca6dd9a16cdb8506
   languageName: node
   linkType: hard
 
@@ -15196,6 +15214,13 @@ __metadata:
     type-is: "npm:~1.6.18"
     unpipe: "npm:1.0.0"
   checksum: 10c0/06f1438fff388a2e2354c96aa3ea8147b79bfcb1262dfcc2aae68ec13723d01d5781680657b74e9f83c808266d5baf52804032fbde2b7382b89bd8cdb273ace9
+  languageName: node
+  linkType: hard
+
+"body-scroll-lock@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "body-scroll-lock@npm:3.1.5"
+  checksum: 10c0/657c948d64ffe17d2c89958f57c2c636203cf5216e3ba33ad76604bf1b5144fd8f4b5d832d09105f8782d5b8bc96f38780331ec55f3af5f27694dff38a0cc9d7
   languageName: node
   linkType: hard
 
@@ -33804,6 +33829,7 @@ __metadata:
   resolution: "proton-wallet@workspace:applications/wallet"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
+    "@moonpay/moonpay-react": "npm:^1.7.1"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
     "@proton/andromeda": "workspace:packages/wasm/andromeda"
     "@proton/components": "workspace:packages/components"
@@ -33817,6 +33843,7 @@ __metadata:
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
     "@proton/wallet": "workspace:packages/wallet"
+    "@ramp-network/ramp-instant-sdk": "npm:^4.0.5"
     "@testing-library/jest-dom": "npm:^6.1.5"
     "@testing-library/react": "npm:^14.1.2"
     "@testing-library/react-hooks": "npm:^8.0.1"
