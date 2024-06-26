@@ -10,6 +10,5 @@ export type WebsocketCallbacks = {
   onEncryptionError(error: string): void
   onConnecting: () => void
   onMessage: (message: Uint8Array) => void
-  getLatestCommitId: () => string | undefined
   getUrlAndToken: () => Promise<ApiResult<RealtimeUrlAndToken>>
 }
