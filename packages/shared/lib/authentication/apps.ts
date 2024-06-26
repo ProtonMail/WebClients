@@ -95,3 +95,18 @@ export const getToApp = (toApp: APP_NAMES | undefined, user: User) => {
     }
     return DEFAULT_APP;
 };
+
+export const getToAppFromSubscribed = (user: User) => {
+    const list = [
+        { bit: PRODUCT_BIT.MAIL, app: APPS.PROTONMAIL },
+        { bit: PRODUCT_BIT.DRIVE, app: APPS.PROTONDRIVE },
+        { bit: PRODUCT_BIT.VPN | PRODUCT_BIT.PASS, app: APPS.PROTONVPN_SETTINGS }, // VPN + Pass Bundle
+        { bit: PRODUCT_BIT.PASS, app: APPS.PROTONPASS },
+        { bit: PRODUCT_BIT.VPN, app: APPS.PROTONVPN_SETTINGS },
+    ];
+    return list.find(({ bit }) => {
+        if (user.Subscribed === bit) {
+            return true;
+        }
+    })?.app;
+};
