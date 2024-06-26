@@ -1,5 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
+import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type {
     AliasAndItemCreateRequest,
     BatchItemRevisionIDs,
@@ -18,15 +19,22 @@ import type {
     ItemType,
     ItemUpdateFlagsRequest,
     Maybe,
+    MaybeNull,
+    PublicLinkCreateRequest,
+    SecureLink,
+    SecureLinkItem,
+    SecureLinkOptions,
+    SecureLinkQuery,
 } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import identity from '@proton/utils/identity';
 
-import { serializeItemContent } from './item-proto.transformer';
+import { decodeItemContent, protobufToItem, serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
-import { batchByShareId, intoRevisionID } from './item.utils';
+import { batchByShareId, buildSecureLink, intoRevisionID } from './item.utils';
 
 /* Item creation API request for all items
  * except for alias items */
@@ -355,4 +363,99 @@ export const getItemRevisions = async (
             signal,
         })
     ).Revisions!;
+};
+
+/* Share Item Secure Link */
+export const getSecureLink = async (
+    { shareId, itemId, revision }: ItemRevision,
+    options: SecureLinkOptions
+): Promise<SecureLink> => {
+    const latestItemKey = (
+        await api({
+            url: `pass/v1/share/${shareId}/item/${itemId}/key/latest`,
+            method: 'get',
+        })
+    ).Key!;
+
+    const { encryptedItemKey, encryptedLinkKey, secureLinkKey } = await PassCrypto.createSecureLink({
+        shareId,
+        latestItemKey,
+    });
+
+    const { PublicLink } = await api({
+        url: `pass/v1/share/${shareId}/item/${itemId}/public_link`,
+        method: 'post',
+        data: {
+            Revision: revision,
+            EncryptedItemKey: uint8ArrayToBase64String(encryptedItemKey),
+            EncryptedLinkKey: uint8ArrayToBase64String(encryptedLinkKey),
+            ExpirationTime: options.expirationTime,
+            MaxReadCount: options.maxReadCount,
+            LinkKeyShareKeyRotation: latestItemKey.KeyRotation,
+        } satisfies PublicLinkCreateRequest,
+    });
+
+    if (!PublicLink) throw new Error();
+
+    return {
+        shareId,
+        itemId,
+        secureLink: buildSecureLink(PublicLink.Url!, secureLinkKey),
+        active: true,
+        expirationDate: PublicLink.ExpirationTime!,
+        readCount: 0,
+        maxReadCount: options.maxReadCount!,
+        linkId: PublicLink.PublicLinkID!,
+    };
+};
+
+export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promise<Maybe<SecureLinkItem>> => {
+    try {
+        const { PublicLinkContent } = await api({
+            url: `pass/v1/public_link/content/${token}`,
+            method: 'get',
+        });
+
+        const decryptedContents = await PassCrypto.openSecureLink({ linkKey, publicLinkContent: PublicLinkContent! });
+
+        return {
+            item: obfuscateItem(protobufToItem(decodeItemContent(decryptedContents)))!,
+            expirationDate: PublicLinkContent?.ExpirationTime!,
+        };
+    } catch (err) {
+        logger.error(`[SecureLink] there was an error opening secure link [${token}]`, err);
+        throw err;
+    }
+};
+
+export const getSecureLinks = async (): Promise<MaybeNull<SecureLink[]>> => {
+    const { PublicLinks } = await api({ url: 'pass/v1/public_link', method: 'get' });
+
+    if (!PublicLinks) return null;
+
+    return Promise.all(
+        PublicLinks.map(async (secureLink) => {
+            const linkKey = await PassCrypto.openLinkKey({
+                encryptedLinkKey: secureLink.EncryptedLinkKey!,
+                linkKeyShareKeyRotation: secureLink.LinkKeyShareKeyRotation!,
+                shareId: secureLink.ShareID!,
+            });
+
+            return {
+                active: secureLink.Active,
+                linkId: secureLink.LinkID,
+                expirationDate: secureLink.ExpirationTime!,
+                readCount: secureLink.ReadCount,
+                maxReadCount: secureLink.MaxReadCount,
+                shareId: secureLink.ShareID!,
+                itemId: secureLink.ItemID!,
+                secureLink: buildSecureLink(secureLink.LinkURL!, linkKey),
+            };
+        })
+    );
+};
+
+export const removeSecureLink = async (linkId: string): Promise<string> => {
+    await api({ url: `pass/v1/public_link/${linkId}`, method: 'delete' });
+    return linkId;
 };
