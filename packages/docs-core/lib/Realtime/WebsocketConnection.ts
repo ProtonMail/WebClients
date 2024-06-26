@@ -97,11 +97,9 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     this.socket?.close()
   }
 
-  buildConnectionUrl(params: { serverUrl: string; token: string; commitId: string | undefined }): string {
-    let url = `${DebugConnection.enabled ? DebugConnection.url : params.serverUrl}/?token=${params.token}`
-    if (params.commitId) {
-      url += `&commitId=${params.commitId}`
-    }
+  buildConnectionUrl(params: { serverUrl: string; token: string }): string {
+    const url = `${DebugConnection.enabled ? DebugConnection.url : params.serverUrl}/?token=${params.token}`
+
     return url
   }
 
@@ -155,7 +153,6 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
     const connectionUrl = this.buildConnectionUrl({
       serverUrl: url,
       token,
-      commitId: this.callbacks.getLatestCommitId(),
     })
 
     this.logger.info('Opening websocket connection')
