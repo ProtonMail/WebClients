@@ -1,16 +1,16 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, IconName, Tooltip, useModalState } from '@proton/components/components';
+import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components/components';
 import { useAddresses, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { BitcoinAmount, Button, CoreButton, CoreInput, Modal } from '../../../atoms';
+import { BitcoinAmount, Button, CoreButton, CoreInput } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { Price } from '../../../atoms/Price';
 import { COMPUTE_BITCOIN_UNIT } from '../../../constants';
@@ -18,10 +18,10 @@ import { usePsbt } from '../../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
 import { convertAmount, getLabelByUnit, isExchangeRate } from '../../../utils';
-import { useAsyncValue } from '../../../utils/hooks/useAsyncValue';
 import { EmailListItem } from '../../EmailOrBitcoinAddressInput';
 import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
-import { useFeesInput } from './useFeesInput';
+import { TextAreaModal } from '../../TextAreaModal';
+import { FeesModal } from './FeesModal';
 
 import './TransactionReview.scss';
 
@@ -52,20 +52,19 @@ export const TransactionReview = ({
     const [addresses] = useAddresses();
     // We use primaryAddress when user wants to use BvE but doesn't have any email set on the wallet account he is using
     const primaryAddress = addresses?.[0];
-    const [showMore, setShowMore] = useState(false);
     const txBuilderRecipients = txBuilder.getRecipients();
     const { createNotification } = useNotifications();
     const [settings] = useUserWalletSettings();
     const [feesModal, setFeesModal] = useModalState();
-    const { getFeesByBlockTarget } = useFeesInput(txBuilder);
     const [loadingSend, withLoadingSend] = useLoading();
 
     const getAddressKeys = useGetAddressKeys();
 
     const [message, setMessage] = useState('');
     const [noteToSelf, setNoteToSelf] = useState('');
+    const [textAreaModal, setTextAreaModal] = useModalStateWithData<{ kind: 'message' | 'note' }>();
 
-    const { createDraftPsbt, psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder }, true);
+    const { psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder }, true);
 
     const totalFees = Number(psbt?.total_fees ?? 0);
     const totalSentAmount = txBuilderRecipients.reduce((acc, r) => {
@@ -119,30 +118,6 @@ export const TransactionReview = ({
         }
     };
 
-    const getTransactionFeesAtFeeRate = async (feeRate: number) => {
-        const updatedTxBuilder = await txBuilder.setFeeRate(BigInt(feeRate));
-        const psbt = await createDraftPsbt(updatedTxBuilder);
-        return Number(psbt?.total_fees ?? 0);
-    };
-
-    const getFeeOption = async (
-        icon: IconName,
-        text: string,
-        blockTarget: number
-    ): Promise<[IconName, string, number, number]> => {
-        const feeRate = getFeesByBlockTarget(blockTarget);
-        return [icon, text, feeRate, await getTransactionFeesAtFeeRate(feeRate)];
-    };
-
-    const feeOptions = useAsyncValue<[IconName, string, number, number][]>(
-        Promise.all([
-            getFeeOption('chevron-up', c('Wallet send').t`High priority`, 2),
-            getFeeOption('minus', c('Wallet send').t`Median priority`, 5),
-            getFeeOption('chevron-down', c('Wallet send').t`Low priority`, 10),
-        ]),
-        []
-    );
-
     return (
         <>
             {loadingSend && (
@@ -161,18 +136,6 @@ export const TransactionReview = ({
                 <div className="my-10">
                     <div className="flex flex-row items-center">
                         <span className="block color-hint">{c('Wallet send').t`You are sending`}</span>
-
-                        {!showMore && (
-                            <CoreButton
-                                size="small"
-                                shape="ghost"
-                                color="norm"
-                                className="block ml-2"
-                                onClick={() => setShowMore(true)}
-                            >
-                                {c('Wallet send').t`View details`}
-                            </CoreButton>
-                        )}
                     </div>
 
                     <div>
@@ -272,57 +235,7 @@ export const TransactionReview = ({
                             </div>
                         )}
 
-                        <Modal
-                            {...feesModal}
-                            className="fees-selection-modal"
-                            header={
-                                <div className="flex flex-row justify-space-between px-6 items-center mt-4">
-                                    <h1 className="text-lg text-semibold">{c('Wallet send').t`Network fees`}</h1>
-
-                                    <Tooltip title={c('Action').t`Close`}>
-                                        <Button
-                                            className="shrink-0 rounded-full bg-norm"
-                                            icon
-                                            size="small"
-                                            shape="ghost"
-                                            data-testid="modal:close"
-                                            onClick={feesModal.onClose}
-                                        >
-                                            <Icon
-                                                className="modal-close-icon"
-                                                name="cross-big"
-                                                alt={c('Action').t`Close`}
-                                            />
-                                        </Button>
-                                    </Tooltip>
-                                </div>
-                            }
-                        >
-                            <div className="flex flex-column">
-                                {feeOptions.map(([iconName, text, feeRate, feesAtFeeRate]) => (
-                                    <button
-                                        key={feeRate}
-                                        onClick={() => {
-                                            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(feeRate)));
-                                            feesModal.onClose?.();
-                                        }}
-                                        className="fees-selection-button unstyled flex flex-row p-4 items-center"
-                                    >
-                                        <Icon name={iconName} />
-                                        <div className="mx-4">{text}</div>
-                                        <div className="flex flex-column items-end ml-auto">
-                                            <BitcoinAmount
-                                                bitcoin={feesAtFeeRate}
-                                                unit={{ value: settings.BitcoinUnit }}
-                                                exchangeRate={isExchangeRate(unit) ? { value: unit } : undefined}
-                                                firstClassName="text-right"
-                                                secondClassName="text-right"
-                                            />
-                                        </div>
-                                    </button>
-                                ))}
-                            </div>
-                        </Modal>
+                        <FeesModal unit={unit} txBuilder={txBuilder} updateTxBuilder={updateTxBuilder} {...feesModal} />
                     </div>
 
                     <hr className="my-2" />
@@ -348,16 +261,17 @@ export const TransactionReview = ({
                         <CoreInput
                             bigger
                             dense
+                            className="rounded-xl bg-norm"
                             inputClassName="rounded-full pl-2"
-                            className="rounded-xl"
                             placeholder={c('Wallet send').t`Add Message to recipient`}
                             value={message}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => setMessage(e.target.value)}
+                            onClick={() => setTextAreaModal({ kind: 'message' })}
+                            style={{ cursor: 'pointer' }}
                             prefix={
                                 <div
                                     className="rounded-full bg-norm flex"
                                     style={{
-                                        background: 'var(--interaction-weak-major-2)',
+                                        background: 'var(--interaction-weak-minor-2)',
                                         width: '2rem',
                                         height: '2rem',
                                     }}
@@ -374,14 +288,15 @@ export const TransactionReview = ({
                         bigger
                         dense
                         inputClassName="pl-2"
-                        className="rounded-xl"
+                        className="rounded-xl bg-norm"
                         placeholder={c('Wallet send').t`Add private note to myself`}
                         value={noteToSelf}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => setNoteToSelf(e.target.value)}
+                        onClick={() => setTextAreaModal({ kind: 'note' })}
+                        style={{ cursor: 'pointer' }}
                         prefix={
                             <div
                                 className="rounded-full bg-norm flex"
-                                style={{ background: 'var(--interaction-weak-major-2)', width: '2rem', height: '2rem' }}
+                                style={{ background: 'var(--interaction-weak-minor-2)', width: '2rem', height: '2rem' }}
                             >
                                 <Icon name="note" className="m-auto" />
                             </div>
@@ -399,6 +314,33 @@ export const TransactionReview = ({
                     }}
                 >{c('Wallet send').t`Send`}</Button>
             </div>
+
+            {textAreaModal.data && (
+                <TextAreaModal
+                    {...(textAreaModal.data.kind === 'note'
+                        ? {
+                              title: 'Write a private note to yourself',
+                              inputLabel: 'Note to self',
+                              buttonText: 'Confirm',
+                              value: noteToSelf,
+                              onSubmit: (value) => {
+                                  setNoteToSelf(value);
+                                  textAreaModal.onClose();
+                              },
+                          }
+                        : {
+                              title: 'Write a message to your recipient(s)',
+                              inputLabel: 'Message to recipient(s)',
+                              buttonText: 'Confirm',
+                              value: message,
+                              onSubmit: (value) => {
+                                  setMessage(value);
+                                  textAreaModal.onClose();
+                              },
+                          })}
+                    {...textAreaModal}
+                />
+            )}
         </>
     );
 };
