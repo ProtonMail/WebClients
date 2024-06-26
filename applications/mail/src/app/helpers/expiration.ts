@@ -70,6 +70,12 @@ export const getExpiresIn = (message?: Partial<MessageWithOptionalBody>): Date |
         return undefined;
     }
 
+    // Exclude expiration set by the user (includes filter)
+    // A frozen expiration is set by the sender, not the user/filter
+    if (message?.Flags && !isFrozenExpiration(message)) {
+        return undefined;
+    }
+
     const currentDate = new Date();
     const expirationDate = fromUnixTime(message.ExpirationTime);
     const receiveDate = fromUnixTime(message.Time);
