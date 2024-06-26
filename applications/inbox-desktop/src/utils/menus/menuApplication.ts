@@ -64,7 +64,7 @@ export const setApplicationMenu = () => {
                 { role: "cut" },
                 { role: "copy" },
                 { role: "paste" },
-                { role: "pasteAndMatchStyle", accelerator: isMac ? "Cmd+Shift+V" : "Ctrl+Shift+V" },
+                { role: "pasteAndMatchStyle", accelerator: "CmdOrCtrl+Shift+V" },
                 { role: "selectAll" },
                 {
                     label: c("App menu").t`Check spelling while typing`,
@@ -82,7 +82,7 @@ export const setApplicationMenu = () => {
             submenu: [
                 {
                     label: c("App menu").t`Reload`,
-                    accelerator: isMac ? "Cmd+R" : "Ctrl+R",
+                    accelerator: "CmdOrCtrl+R",
                     click: () => {
                         const mainWindow = getMainWindow();
                         if (mainWindow) {
@@ -97,7 +97,7 @@ export const setApplicationMenu = () => {
                 },
                 {
                     label: c("App menu").t`Force Reload`,
-                    accelerator: isMac ? "Cmd+Shift+R" : "Ctrl+Shift+R",
+                    accelerator: "CmdOrCtrl+Shift+R",
                     click: () => {
                         const mainWindow = getMainWindow();
                         if (mainWindow) {
