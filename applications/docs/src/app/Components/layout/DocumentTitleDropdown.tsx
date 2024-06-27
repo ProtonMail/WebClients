@@ -27,7 +27,7 @@ const DocumentTitleDropdown = ({
 }) => {
   const application = useApplication()
 
-  const [title, setTitle] = useState<string>('Loading document title...')
+  const [title, setTitle] = useState<string | undefined>()
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
@@ -86,7 +86,7 @@ const DocumentTitleDropdown = ({
     }
 
     if (action === 'download') {
-      controller.initialize().then(() => {
+      void controller.initialize().then(() => {
         void controller.exportAndDownload('docx')
       })
     }
@@ -94,9 +94,13 @@ const DocumentTitleDropdown = ({
     return controller.addChangeObserver((doc) => {
       setTitle(doc.name)
     })
-  }, [controller, action])
+  }, [controller, action, showHistoryModal])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
+
+  if (!title) {
+    return
+  }
 
   return (
     <>
