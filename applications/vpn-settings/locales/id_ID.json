@@ -3684,6 +3684,9 @@
       "Please add an email address for the user on row": [
         "Silakan tambahkan alamat email pengguna pada baris berikut"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Silakan mina pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Silakan autentikasi kartu Anda pada tab verifikasi."
       ],
@@ -3704,6 +3707,9 @@
       ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
+      ],
+      "Please open the document to view it.": [
+        "Silakan buka dokumen ini untuk melihat isinya."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Silakan coba lagi dengan menggunakan metode pembayaran lainnya, atau hubungi bank Anda."
@@ -3735,8 +3741,8 @@
       "Preview for this file type is not supported": [
         "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Pratinjau dokumen saat ini belum didukung. Silakan buka dokumen ini untuk melihat isi dokumen."
+      "Preview of documents is not yet supported.": [
+        "Pratinjau dokumen bleum didukung."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
@@ -3744,8 +3750,8 @@
       "Protected by Swiss privacy laws": [
         "Dilindungi oleh undang-undang privasi Swiss"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Pembagian dokumen secara publik saat ini belum didukung. Silakan minta pemilik dokumen untuk mengundang Anda secara langsung ke berkas dokumen."
+      "Public sharing of documents is not yet supported.": [
+        "Pembagian dokumen secara publik belum didukung."
       ],
       "read our two-factor authentication guide first": [
         "baca panduan autentikasi dua faktor kami terlebih dahulu"
@@ -4293,9 +4299,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Anda akan dapat mempromosikan pengguna ini menjadi administrator atau menjadikan mereka privat setelah mereka menerima undangan ini."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
       ],
@@ -4416,14 +4419,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Tertagih"
-      ],
       "Gifted": [
         "Dihadiahkan"
       ],
       "Paid": [
         "Lunas"
+      ],
+      "Processing": [
+        "Diproses"
       ],
       "Unpaid": [
         "Belum lunas"
@@ -6538,8 +6541,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Mengerti"
+      ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "Payment Processing": [
+        "Pembayaran Sedang Diproses"
       ],
       "Processing payment": [
         "Memproses pembayaran"
@@ -6555,6 +6564,9 @@
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Kami sedang memproses pembayaran Anda untuk faktur yang tertagih. Silakan tunggu hingga pembayaran selesai sebelum membuat perubahan pada paket Anda atau memperbarui rincian pembayaran Anda. Terima kasih atas kesabaran Anda."
       ]
     },
     "Payments.Error": {
@@ -9024,6 +9036,9 @@
       "Create password": [
         "Buat kata sandi"
       ],
+      "Create password instead": [
+        "Buat kata sandi saja"
+      ],
       "Create user": [
         "Buat pengguna"
       ],
@@ -9061,6 +9076,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Undangan terkirim, menunggu balasan dari anggota yang diundang"
       ],
       "Invite sent": [
         "Undangan dikirim"

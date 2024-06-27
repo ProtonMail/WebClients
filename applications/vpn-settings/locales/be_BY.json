@@ -3789,6 +3789,9 @@
         "Дадайце адрасы электроннай пошты для карыстальнікаў у радкі",
         "Дадайце адрасы электроннай пошты для карыстальнікаў у радкі"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Прайдзіце аўтэнтыфікацыю са сваёй карткай на ўкладцы праверкі."
       ],
@@ -3809,6 +3812,9 @@
       ],
       "please open a support ticket": [
         "адкрыйце запыт для службы падтрымкі"
+      ],
+      "Please open the document to view it.": [
+        "Адкрыйце дакумент, каб паглядзець яго."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Паспрабуйце яшчэ раз, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі вашага банка."
@@ -3840,8 +3846,8 @@
       "Preview for this file type is not supported": [
         "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Папярэдні прагляд дакументаў пакуль не падтрымліваецца. Адкрыйце дакумент, каб паглядзець яго."
+      "Preview of documents is not yet supported.": [
+        "Папярэдні прагляд дакументаў пакуль не падтрымліваецца."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
@@ -3849,8 +3855,8 @@
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Публічнае абагульванне дакументаў пакуль не падтрымліваецца. Папрасіце ўладальніка наўпрост запрасіць вас у дакумент."
+      "Public sharing of documents is not yet supported.": [
+        "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
       "read our two-factor authentication guide first": [
         "спачатку прачытайце наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
@@ -4085,6 +4091,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Гэта заменіць ваш часовы пароль. Вы будзеце выкарыстоўваць яго для доступу да свайго ўліковага запісу ${ BRAND_NAME } у будучыні."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Новае запрашэнне будзе адпраўлена на адрас **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Гэта прывядзе да выхаду з любога актыўнага сеанса і адключэння двухфактарнай аўтэнтыфікацыі."
@@ -4428,8 +4437,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal. Калі вы гэтага яшчэ не зрабілі, націсніце на кнопку ніжэй."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "У вас будзе магчымасць падвысіць карыстальніка да адміністратара або зрабіць яго прыватным, як толькі ён прыме запрашэнне."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "У вас будзе магчымасць павысіць карыстальніка да адміністратара, як толькі ён прыме запрашэнне."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
@@ -4551,14 +4560,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Рахунак выстаўлены"
-      ],
       "Gifted": [
         "Падораны"
       ],
       "Paid": [
         "Аплачана"
+      ],
+      "Processing": [
+        "Апрацоўваецца"
       ],
       "Unpaid": [
         "Неаплачана"
@@ -6763,8 +6772,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Зразумела"
+      ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "Payment Processing": [
+        "Апрацоўка плацяжу"
       ],
       "Processing payment": [
         "Апрацоўка плацяжу"
@@ -6780,6 +6795,9 @@
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Мы апрацоўваем ваш плацеж за выстаўлены рахунак. Перад тым, як уносіць змены ў свой тарыфны план або абнаўляць рэквізіты плацяжу, дачакайцеся завяршэння плацяжу. Дзякуй за цярпенне."
       ]
     },
     "Payments.Error": {
@@ -9432,13 +9450,13 @@
         "Гэта вы"
       ],
       "Private": [
-        "Прыватнае"
+        "Прыватны"
       ],
       "SSO": [
         "SSO"
       ],
       "SSO user provided by your identity provider": [
-        "Карыстальнік SSO прадстаўляецца вашым пастаўшчыком пасведчанняў"
+        "Карыстальнік SSO, які забяспечаны вашым пастаўшчыком пасведчанняў"
       ],
       "Writing assistant": [
         "Памочнік у напісанні"

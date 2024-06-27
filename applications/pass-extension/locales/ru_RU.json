@@ -41,6 +41,21 @@
       "Back": [
         "Назад"
       ],
+      "Bulk delete items from trash": [
+        "Множественное удаление элементов из корзины"
+      ],
+      "Bulk move items to another vault": [
+        "Множественное перемещение элементов в другое хранилище"
+      ],
+      "Bulk move items to trash": [
+        "Множественное перемещение элементов в корзину"
+      ],
+      "Bulk restore items from trash": [
+        "Множественное восстановление элементов из корзины"
+      ],
+      "Bulk select items": [
+        "Множественный выбор элементов"
+      ],
       "Cancel": [
         "Отменить"
       ],
@@ -76,6 +91,9 @@
       ],
       "Continue": [
         "Продолжить"
+      ],
+      "Continue offline": [
+        "Продолжить оффлайн"
       ],
       "Continue without pinning": [
         "Продолжить без закрепления"
@@ -167,6 +185,9 @@
       "Done": [
         "Готово"
       ],
+      "Download this CSV template": [
+        "Скачайте этот шаблон CSV"
+      ],
       "Edit": [
         "Изменить"
       ],
@@ -178,6 +199,9 @@
       ],
       "Export": [
         "Экспорт"
+      ],
+      "Feedback & Help": [
+        "Обратная связь и помощь"
       ],
       "Fill password": [
         "Заполнить пароль"
@@ -211,6 +235,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Как использовать ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Импортировать"
@@ -350,8 +377,14 @@
       "Save": [
         "Сохранить"
       ],
+      "Save passkey": [
+        "Сохранить passkey"
+      ],
       "Saving": [
         "Сохранение"
+      ],
+      "Saving passkey...": [
+        "Сохранение passkey..."
       ],
       "See all": [
         "Посмотреть все"
@@ -379,6 +412,9 @@
       ],
       "Show": [
         "Показать"
+      ],
+      "Show advanced options": [
+        "Показать дополнительные параметры"
       ],
       "Sign back in": [
         "Войти обратно"
@@ -410,6 +446,9 @@
       "Try again": [
         "Попробовать снова"
       ],
+      "Unlock offline with password": [
+        "Разблокировать паролем офлайн"
+      ],
       "Unpin item": [
         "Открепить элемент"
       ],
@@ -431,8 +470,17 @@
       "Upgrade now to share with more people": [
         "Улучшите тарифы сейчас, чтобы поделиться с большим количеством людей"
       ],
+      "View app logs": [
+        "Просмотр журналов приложений"
+      ],
       "View history": [
         "Посмотреть историю"
+      ],
+      "View item history": [
+        "Просмотр историю элементов"
+      ],
+      "View older history": [
+        "Просмотреть более раннюю историю"
       ],
       "Write us on Reddit": [
         "Написать нам в Reddit"
@@ -473,6 +521,12 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } другое имя пользователя использует тот же пароль",
+        "${ total } других имен пользователей используют тот же пароль",
+        "${ total } других имен пользователей используют тот же пароль",
+        "${ total } других имен пользователей используют тот же пароль"
+      ],
       "A checked box means the feature is disabled.": [
         "Установленный флажок означает, что функция отключена."
       ],
@@ -487,6 +541,9 @@
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Разблокируйте расширенные функции безопасности и подробные журналы для защиты вашего присутствия в Интернете."
       ]
     },
     "Error": {
@@ -508,6 +565,12 @@
       "Cannot create alias (${ error }).": [
         "Не могу создать псевдоним (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Невозможно отправить приглашение в данный момент",
+        "Невозможно отправить приглашения в данный момент",
+        "Невозможно отправить приглашения в данный момент",
+        "Невозможно отправить приглашения в данный момент"
+      ],
       "Cannot send invitations at the moment": [
         "Не могу отправлять приглашения в данный момент"
       ],
@@ -516,6 +579,9 @@
       ],
       "Could not leave vault.": [
         "Не удалось покинуть хранилище."
+      ],
+      "Could not load recommendations at the moment.": [
+        "В данный момент не удается загрузить рекомендации."
       ],
       "Could not open created vault": [
         "Не могу открыть созданное хранилище"
@@ -528,6 +594,9 @@
       ],
       "Could not resolve share members": [
         "Не удалось сопоставить членов общего доступа"
+      ],
+      "Could not validate addresses at the moment.": [
+        "Не удалось проверить адреса в данный момент."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "В файле CSV отсутствуют ожидаемые заголовки: ${ missingHeaders }"
@@ -585,6 +654,9 @@
       ],
       "Failed to load breaches for this email alias": [
         "Не удалось загрузить утечки для этого псевдонима электронной почты"
+      ],
+      "Failed to load item history": [
+        "Не удалось загрузить историю элементов"
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
@@ -673,11 +745,14 @@
       "Moving item failed": [
         "Ошибка при перемещении элемента"
       ],
+      "Network error": [
+        "Ошибка сети"
+      ],
       "Passphrase is incorrect": [
         "Неверная парольная фраза"
       ],
       "PIN codes do not match": [
-        "Пин-коды не совпадают"
+        "PIN-коды не совпадают"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Пожалуйста, предоставьте ${ PASS_APP_NAME } необходимые разрешения для расширения, чтобы продолжить"
@@ -745,6 +820,9 @@
       "Unknown passkey": [
         "Неизвестный PassKey"
       ],
+      "Unlock failure": [
+        "Ошибка разблокировки"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Неподдерживаемый формат файла ${ PASS_APP_NAME }"
       ],
@@ -763,8 +841,14 @@
       "Vault name does not match": [
         "Название хранилища не совпадает"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Мы столкнулись с проблемой при запуске ${ PASS_SHORT_APP_NAME }. Если проблема сохранится, обратитесь за помощью в нашу службу поддержки клиентов."
+      ],
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
+      ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "В настоящее время вы не в сети. Возобновите подключение, чтобы разблокировать ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
@@ -840,6 +924,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } приглашения успешно отправлены"
+      ],
       "${ memberCount } member": [
         "${ memberCount } член",
         "${ memberCount } члена",
@@ -858,20 +945,32 @@
         "${ n } элементов",
         "${ n } элементов"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } всегда будет доступно"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
       ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } подскажет вам, как только сгенерированные пароли будут автоматически заполнены."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } предложит вам сохранить или обновить учетные данные."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } предложит аутентификацию с помощью сохраненных passkey"
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
         "${ PASS_APP_NAME } предложит создать псевдоним электронной почты в формах регистрации."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } будет предлагать создавать надежные пароли в формах регистрации."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } предложит сохранить passkey."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } успешно отключен"
@@ -891,8 +990,14 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
       ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Passkey для \"${ username }\" будет сохранен и доступен на устройствах, где установлен ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Доступ успешно подтверждён"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Для доступа к ${ PASS_APP_NAME } всегда потребуется ваш пароль ${ BRAND_NAME }."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
@@ -930,6 +1035,12 @@
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Вы уверены, что хотите переместить все элементы из \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
       ],
+      "Are you sure you want to move items to \"${ name }\" ?": [
+        "Вы уверены, что хотите переместить элементы в \"${ name }\" ?"
+      ],
+      "Are you sure you want to move the item to \"${ name }\" ?": [
+        "Вы уверены, что хотите переместить элемент в \"${ name }\" ?"
+      ],
       "Auto-lock successfully disabled.": [
         "Автоблокировка успешно отключена."
       ],
@@ -951,11 +1062,20 @@
       "Can view items in this vault.": [
         "Может просматривать элементы в этом хранилище."
       ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Выберите сохраненный passkey для входа в ${ domain }"
+      ],
       "Click here to add a field for a username.": [
         "Нажмите здесь, чтобы добавить поле для имени пользователя."
       ],
       "Click the icon to open it anytime.": [
         "Нажмите на значок, чтобы открыть его в любое время."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Закройте это окно, чтобы использовать ключ безопасности или другой passkey"
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Закройте это окно для того, чтобы использовать другой менеджер паролей."
       ],
       "Congratulations, your access has been confirmed": [
         "Congratulations, your access has been confirmed"
@@ -965,6 +1085,9 @@
       ],
       "Creating alias...": [
         "Создание псевдонима..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV предлагает удобный формат для просмотра данных. Однако из-за его простоты некоторые данные не будут включены (пользовательские поля, ключи доступа...). Для полного экспорта мы рекомендуем использовать другой формат."
       ],
       "Current version": [
         "Текущая версия"
@@ -977,6 +1100,15 @@
       ],
       "Deleting \"${ payload.content.name }\"": [
         "Удаление \"${ payload.content.name }\""
+      ],
+      "Disabling auto-lock": [
+        "Отключение автоматической блокировки"
+      ],
+      "Disabling auto-lock failed": [
+        "Не удалось отключить автоматическую блокировку"
+      ],
+      "Disabling offline mode...": [
+        "Отключение режима офлайн ..."
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Откройте видео ${ PASS_APP_NAME } на YouTube"
@@ -1008,6 +1140,21 @@
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Включите ${ PASS_APP_NAME }, подключив вашу учетную запись ${ BRAND_NAME }"
       ],
+      "Enable auto-locking to secure your data": [
+        "Включите автоматическую блокировку для защиты ваших данных"
+      ],
+      "Enabling offline mode...": [
+        "Включение режима офлайн..."
+      ],
+      "Enabling password auto-lock": [
+        "Включение автоматической блокировки паролем"
+      ],
+      "Enabling password lock failed": [
+        "Включение блокировки паролем не удалось"
+      ],
+      "Enabling PIN auto-lock": [
+        "Включение автоматической блокировки PIN-кодом"
+      ],
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
       ],
@@ -1028,6 +1175,12 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "По причинам безопасности, ваш доступ должен быть подтверждён"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недели.",
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель.",
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель.",
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель."
       ],
       "Generating alias...": [
         "Генерация псевдонима..."
@@ -1149,6 +1302,9 @@
       "Moving items": [
         "Перемещение элементов"
       ],
+      "Moving items to another vault will erase their history": [
+        "Перемещение элементов в другое хранилище удалит их историю"
+      ],
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
       ],
@@ -1161,11 +1317,17 @@
       "None": [
         "Ничего"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "Режим офлайн не может быть отключен в данный момент"
+      ],
       "Offline mode could not be enabled at the moment": [
         "Включение офлайнового режима в данный момент невозможно"
       ],
       "Offline support successfully disabled": [
         "Поддержка офлайновой поддержки успешно отключена"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код, чтобы разблокировать ваш сеанс. Вы выйдете из системы после 3 неудачных попыток."
       ],
       "Open the Extensions menu": [
         "Откройте меню Расширения"
@@ -1179,8 +1341,20 @@
       "Pass Plus trial": [
         "Пробная версия Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Вход с passkey"
+      ],
       "Password copied": [
         "Пароль скопирован"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Блокировка паролем успешно выполнена. Используйте его для разблокировки ${ PASS_APP_NAME }"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недели, автоматически удаляются из истории.",
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории."
       ],
       "Pending access to the shared data": [
         "Pending access to the shared data"
@@ -1197,14 +1371,32 @@
       "Pinning item...": [
         "Закрепление элемента..."
       ],
+      "Please confirm your ${ BRAND_NAME } password": [
+        "Подтвердите ваш пароль ${ BRAND_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } для автоматической блокировки вашим паролем."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } для отмены выполнения вашей текущей блокировки."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } для обновления времени автоматической блокировки."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Подтвердите PIN-код, чтобы отменить выполнение вашей текущей блокировки."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Пожалуйста, подтвердите ваш PIN-код, чтобы изменить эту настройку."
       ],
       "Please consider leaving a review.": [
         "Пожалуйста, подумайте о том, чтобы оставить отзыв."
+      ],
+      "Please do not close this window": [
+        "Пожалуйста, не закрывайте это окно."
       ],
       "Please enter your current PIN code to continue": [
         "Пожалуйста, введите свой текущий PIN-код для продолжения"
@@ -1221,6 +1413,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
       ],
+      "Registering PIN lock failed": [
+        "Выполнение блокировки PIN-кодом не удалась"
+      ],
       "Restoring items from trash": [
         "Восстановление элементов из Корзины"
       ],
@@ -1229,6 +1424,15 @@
       ],
       "Save login": [
         "Сохранить логин"
+      ],
+      "Save passkey": [
+        "Сохранить passkey"
+      ],
+      "Select an existing login item to update.": [
+        "Выберите существующий элемент имени пользователя для обновления."
+      ],
+      "Select an existing login or create a new one.": [
+        "Выберите существующее имя пользователя или создайте новое."
       ],
       "Select destination vault": [
         "Выберите целевое хранилище:"
@@ -1284,6 +1488,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Выпадающий список автозаполнения будет автоматически открываться при нажатии или наведении курсора на поле."
       ],
+      "The export will only contain vaults that you own.": [
+        "Экспорт будет содержать только те хранилища, которые принадлежат вам."
+      ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Экспортированный файл будет зашифрован с помощью PGP и требует надежной парольной фразы."
       ],
@@ -1308,6 +1515,9 @@
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
       ],
+      "This version will be added to the history as the newest version.": [
+        "Эта версия будет добавлена в историю как новейшая версия."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Чтобы перенести данные из другого менеджера паролей, перейдите в менеджер паролей, экспортируйте свои данные, а затем загрузите их в ${ PASS_APP_NAME }. После того как данные будут импортированы, удалите экспортированный файл."
       ],
@@ -1319,6 +1529,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Разблокируйте ${ PASS_APP_NAME } с вашим PIN-кодом для доступа к вашим passkey"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Разблокируйте ${ PASS_APP_NAME } с помощью своего PIN-кода, чтобы сохранить этот passkey."
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
@@ -1391,6 +1607,9 @@
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы достигли лимита на количество псевдонимов, которые можно создать. Создавайте неограниченное количество псевдонимов, улучшив свою подписку."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Вы достигли предела количества кредитных карт, которые вы можете создать. Создайте неограниченное количество кредитных карт при улучшении подписки."
       ],
       "You have reached the limit of vaults you can create.": [
         "Вы достигли предельного количества сейфов, которое вам можно создать."
@@ -1487,8 +1706,11 @@
       "Application logs": [
         "Журналы приложения"
       ],
+      "Authenticate with passkeys": [
+        "Аутентифицироваться с паролем"
+      ],
       "Auto-lock after": [
-        "Автоблокировка через"
+        "Автоматическая блокировка через"
       ],
       "Autofill": [
         "Автозаполнение"
@@ -1537,6 +1759,9 @@
       ],
       "Create an encrypted note": [
         "Создать зашифрованную заметку"
+      ],
+      "Create lock": [
+        "Создать блокировку"
       ],
       "Create new vault": [
         "Создать новое хранилище"
@@ -1597,6 +1822,9 @@
       ],
       "General": [
         "Общие"
+      ],
+      "Generic CSV": [
+        "Общий CSV"
       ],
       "Grant": [
         "Предоставить"
@@ -1661,6 +1889,15 @@
       "Logins": [
         "Имена пользователей"
       ],
+      "Make all admins": [
+        "Сделать всех администраторами"
+      ],
+      "Make all editors": [
+        "Сделать всех редакторами"
+      ],
+      "Make all viewers": [
+        "Заставьте всех зрителями"
+      ],
       "Members": [
         "Участники"
       ],
@@ -1715,6 +1952,9 @@
       "Passkey": [
         "Ключ доступа"
       ],
+      "Passkeys": [
+        "Ключи доступа"
+      ],
       "Passphrase": [
         "Кодовая фраза"
       ],
@@ -1730,6 +1970,9 @@
       "Pause list": [
         "Список приостановки"
       ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON с PGP-шифрованием (рекомендуется)"
+      ],
       "PIN": [
         "PIN"
       ],
@@ -1741,6 +1984,9 @@
       ],
       "Prompt for auto-save": [
         "Предлагать автосохранение"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Запрашивать автоматическое сохранение при генерации паролей"
       ],
       "Rate us": [
         "Оцените нас"
@@ -1756,6 +2002,9 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Save passkeys": [
+        "Сохранить passkeys"
       ],
       "Security": [
         "Безопасность"
@@ -1776,7 +2025,7 @@
         "Выбрано"
       ],
       "Session locking": [
-        "Блокировка сеанса"
+        "Сеанс блокируется"
       ],
       "Settings": [
         "Настройки"
@@ -1872,6 +2121,9 @@
       ],
       "Sign in to your account": [
         "Войдите в свой аккаунт"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
       ]
     },
     "lobby: Title": {
@@ -1888,6 +2140,9 @@
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Вы выбрали ${ semiboldText } в этом хранилище"
       ]
     },
     "Onboarding": {
@@ -2037,6 +2292,9 @@
       "Create PIN code": [
         "Создать PIN-код"
       ],
+      "Created": [
+        "Создан"
+      ],
       "Current version": [
         "Текущая версия"
       ],
@@ -2114,6 +2372,9 @@
       ],
       "Move items?": [
         "Переместить элементы?"
+      ],
+      "No items selected": [
+        "Элементы не выбраны"
       ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
@@ -2251,11 +2512,20 @@
       "An error occured while exporting your data": [
         "При экспорте ваших данных произошла ошибка"
       ],
+      "At least one email address is required": [
+        "Требуется хотя бы один адрес электронной почты"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Не удалось получить почтовые ящики для этого псевдонима в данный момент"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Не могу создать хранилище \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Не удалось отправить приглашения на следующие адреса:"
+      ],
+      "Duplicate email addresses.": [
+        "Дублирование адресов электронной почты."
       ],
       "Empty note": [
         "Пустая заметка"
@@ -2268,6 +2538,9 @@
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
+      ],
+      "Invalid email addresses.": [
+        "Недействительные адреса электронной почты."
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Приглашение адресов электронной почты из вне организации запрещено."
@@ -2301,6 +2574,9 @@
       ],
       "No password manager selected": [
         "Не выбран менеджер паролей"
+      ],
+      "No results": [
+        "Нет результатов"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"

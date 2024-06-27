@@ -69,6 +69,9 @@
       "Add note": [
         "Añadir nota"
       ],
+      "Add people or groups to share": [
+        "Añadir personas o grupos para compartir"
+      ],
       "Add phone number": [
         "Añadir número telefónico"
       ],
@@ -102,6 +105,9 @@
       ],
       "Cancel all uploads": [
         "Cancelar todas las cargas"
+      ],
+      "Cancel download": [
+        "Cancelar descarga"
       ],
       "Cancel subscription": [
         "Cancelar suscripción"
@@ -159,6 +165,12 @@
       ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
+      ],
+      "Copy invite link": [
+        "Copiar enlace de invitación"
+      ],
+      "Copy link": [
+        "Copiar enlace"
       ],
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
@@ -399,8 +411,8 @@
       "Previous month": [
         "Mes anterior"
       ],
-      "Print as PDF": [
-        "Imprimir como PDF"
+      "Print": [
+        "Imprimir"
       ],
       "Quit": [
         "Salir"
@@ -422,6 +434,9 @@
       ],
       "Remove": [
         "Borrar"
+      ],
+      "Remove access": [
+        "Borrar el acceso"
       ],
       "Remove bonuses": [
         "Borrar los beneficios"
@@ -450,6 +465,9 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Resend invite": [
+        "Reenviar la invitación"
+      ],
       "Reset to default": [
         "Restablecer valores por defecto"
       ],
@@ -458,6 +476,9 @@
       ],
       "Save": [
         "Guardar"
+      ],
+      "Save changes": [
+        "Guardar los cambios"
       ],
       "Search countries": [
         "Buscar países"
@@ -498,6 +519,9 @@
       "Stay": [
         "Permanecer"
       ],
+      "Stop sharing": [
+        "Dejar de compartir"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -512,6 +536,9 @@
       ],
       "Try another method": [
         "Intente otro método"
+      ],
+      "Understood": [
+        "Entendido"
       ],
       "Undo": [
         "Deshacer"
@@ -2086,6 +2113,9 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
+      "Account does not exist": [
+        "La cuenta no existe"
+      ],
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
       ],
@@ -2100,6 +2130,9 @@
       ],
       "Aliases could not be loaded": [
         "No se pudo cargar el alias"
+      ],
+      "Already a member of this share": [
+        "Ya se ha compartido con este miembro"
       ],
       "Amount above the maximum.": [
         "Cantidad superior al máximo."
@@ -2177,6 +2210,18 @@
       ],
       "Error: Update Too Large": [
         "Error: actualización demasiado grande"
+      ],
+      "External accounts are not supported yet": [
+        "Las cuentas externas aún no son admitidas."
+      ],
+      "External invitations are not available yet.": [
+        "Las invitaciones externas aún no están disponibles."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Las invitaciones externas están desactivadas temporalmente."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Las invitaciones externas están desactivadas temporalmente. Inténtelo más tarde."
       ],
       "Failed to rename document. Please try again later.": [
         "Error al renombrar el documento. Inténtelo de nuevo más tarde."
@@ -2326,6 +2371,10 @@
       "Process aborted": [
         "Proceso abortado"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Invitado duplicado borrado: ${ joinedInvitee }",
+        "Invitados duplicados borrados: ${ joinedInvitee }"
+      ],
       "Request timed out": [
         "Tiempo de espera agotado"
       ],
@@ -2365,6 +2414,9 @@
       "Tab closed": [
         "Pestaña cerrada"
       ],
+      "The address might be misspelled": [
+        "La dirección podría estar mal escrita"
+      ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
       ],
@@ -2373,6 +2425,12 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "El nombre de la carpeta es demasiado largo. Elija un nombre diferente."
+      ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "La invitación aún no se puede completar. Inténtelo más tarde."
+      ],
+      "The invitation doesn't exist anymore": [
+        "La invitación ya no existe"
       ],
       "The label name is invalid. Please choose a different name.": [
         "El nombre de la etiqueta no es válido. Elija un nombre diferente."
@@ -2448,6 +2506,9 @@
       ],
       "Username must end with a letter or digit": [
         "El nombre de usuario debe terminar con una letra o dígito"
+      ],
+      "Validation error": [
+        "Error de validación"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puede enviar un correo a más de ${ maxContacts } destinatario.",
@@ -3395,6 +3456,12 @@
       "and": [
         "y"
       ],
+      "Anyone with this link can access your file.": [
+        "Cualquiera que tenga este enlace puede acceder al archivo."
+      ],
+      "Anyone with this link can access your folder.": [
+        "Cualquiera que tenga este enlace puede acceder a la carpeta."
+      ],
       "Are you sure you want to discard your import?": [
         "¿Está seguro de que quiere descartar su importación?"
       ],
@@ -3480,6 +3547,15 @@
       "Create in": [
         "Crear en"
       ],
+      "Create public link": [
+        "Crear enlace público"
+      ],
+      "Creating link to file": [
+        "Creando enlace al archivo"
+      ],
+      "Creating link to folder": [
+        "Creando enlace a la carpeta"
+      ],
       "Creating new document...": [
         "Creando el documento..."
       ],
@@ -3514,7 +3590,7 @@
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
       ],
       "Downgrade": [
-        "Bajar"
+        "Pasar a un plan inferior"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
@@ -3522,8 +3598,14 @@
       "Download of ${ downloadFileName } will be aborted": [
         "La descarga de ${ downloadFileName } será abortada"
       ],
+      "Download was canceled": [
+        "Descarga cancelada"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descargue hoy la aplicación favorita y lleve la privacidad con usted dondequiera que vaya."
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "La descarga de archivos de ${ DOCS_APP_NAME } desde ${ DRIVE_APP_NAME } no está admitida actualmente y no se incluirán en la descarga."
       ],
       "Drop file here to upload": [
         "Suelte los archivos aquí para cargarlos"
@@ -3578,6 +3660,15 @@
       ],
       "Failed to connect: ${ disconnectReasonMessage }": [
         "Error al conectar. ${ disconnectReasonMessage }"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Error al generar un enlace seguro. Motivo: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Error al generar un enlace seguro. Inténtelo de nuevo más tarde."
+      ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        "Error al abrir el enlace seguro. El motivo es: ${ error }"
       ],
       "Failing signatures will be re-signed by you": [
         "Las firmas con errores serán firmadas nuevamente por usted."
@@ -3673,6 +3764,9 @@
       "Internet connection restored.": [
         "Conexión a internet restaurada."
       ],
+      "Invite link copied": [
+        "Enlace de la invitación copiado"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente ha intentado cargar ${ uploadName }. Si no se pudo cargar, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
       ],
@@ -3715,6 +3809,9 @@
       "Loading document...": [
         "Cargando el documento..."
       ],
+      "Loading link": [
+        "Cargando enlace"
+      ],
       "Loading...": [
         "Cargando..."
       ],
@@ -3723,6 +3820,10 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
+        "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
       ],
       "Medium Priority": [
         "Prioridad media"
@@ -3772,14 +3873,30 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracter está permitido",
+        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres están permitidos"
+      ],
+      "Only the people with the link and the password can access this file.": [
+        "Solo las personas con el enlace y la contraseña pueden acceder a este archivo."
+      ],
+      "Only the people with the link and the password can access this folder.": [
+        "Solo las personas con el enlace y la contraseña pueden acceder a esta carpeta."
+      ],
       "Organization size": [
         "Tamaño de la organización"
+      ],
+      "Owner": [
+        "Propietario"
       ],
       "password": [
         "contraseña"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y las leyes de privacidad suizas."
+      ],
+      "People with access": [
+        "Personas con acceso"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline solo es compatible con el formato de Texto Plano."
@@ -3795,6 +3912,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporte una copia de sus cambios actuales desde el menú principal y vuelva a cargar la página."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Expórtelos directamente desde la aplicación de ${ DOCS_APP_NAME } si desea descargarlos."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tome en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -3836,6 +3956,12 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
       ],
+      "Preparing link to file": [
+        "Preparando enlace al archivo"
+      ],
+      "Preparing link to folder": [
+        "Preparando enlace a la carpeta"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en la cuenta."
       ],
@@ -3857,6 +3983,12 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
+      "Saved": [
+        "Guardado"
+      ],
+      "Saving...": [
+        "Guardando..."
+      ],
       "Select a service provider to start": [
         "Seleccione un proveedor de servicios para comenzar"
       ],
@@ -3877,6 +4009,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Los ajustes de PGP le permite enviar correos electrónicos cifrados de extremo a extremo a un usuario que no sea de ${ BRAND_NAME } y que use un servicio compatible con PGP."
+      ],
+      "Share via link settings": [
+        "Ajustes de compartir vía enlace"
+      ],
+      "Shareable link for ${ boldNameText }": [
+        "Enlace compartible para ${ boldNameText }"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No se pudo validar la firma por problemas de red. Intente de nuevo más tarde."
@@ -3949,6 +4087,15 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que quiere visitar o no lo abra."
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Este enlace se creó con una versión anterior de Drive y no se puede modificar. Elimine este enlace y cree uno nuevo para cambiar los ajustes."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder al archivo. Para volver a compartir el archivo, necesitará un enlace nuevo."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a la carpeta. Para volver a compartir la carpeta, necesitará un enlace nuevo."
       ],
       "This message will be presented again later": [
         "Este mensaje se mostrará de nuevo más tarde"
@@ -4089,6 +4236,9 @@
       "Writing assistant add-on": [
         "Complemento del asistente de escritura"
       ],
+      "you": [
+        "usted"
+      ],
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
       ],
@@ -4150,6 +4300,9 @@
       ],
       "You will lose access to Plus servers and features on this date.": [
         "Perderá el acceso a los servidores y funciones de Plus en esta fecha."
+      ],
+      "You will lose all unsaved changes.": [
+        "Perderá todos los cambios sin guardar."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar el pago."
@@ -4321,6 +4474,12 @@
       "Add to group": [
         "Añadir al grupo"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Cualquiera en internet que tenga el enlace puede ver"
+      ],
+      "Anyone with the link": [
+        "Cualquiera con enlace"
+      ],
       "App password": [
         "Contraseña de la aplicación"
       ],
@@ -4438,6 +4597,9 @@
       "e.g., Amazon, eBay, Etsy": [
         "p. ej., Amazon, eBay, Mercado Libre"
       ],
+      "Editor": [
+        "Editor"
+      ],
       "Email": [
         "Correo"
       ],
@@ -4464,6 +4626,9 @@
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Eliminar este enlace y quitar a todos con acceso"
       ],
       "Expiration (${ patternExpiration })": [
         "Expiración (${ patternExpiration })"
@@ -4510,6 +4675,9 @@
       "Import to:": [
         "Importar a:"
       ],
+      "Include message and file name in invite email": [
+        "Incluir el mensaje y nombre del archivo en el correo de invitación"
+      ],
       "Keep both": [
         "Mantener ambos"
       ],
@@ -4533,6 +4701,12 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
+      ],
+      "Make editor": [
+        "Dar permisos para editar"
+      ],
+      "Make viewer": [
+        "Dar permisos para ver"
       ],
       "Manage categories": [
         "Gestionar categorías"
@@ -4594,8 +4768,17 @@
       "Proration": [
         "Prorrateo"
       ],
+      "Protect with password": [
+        "Proteger con contraseña"
+      ],
       "Public keys": [
         "Claves públicas"
+      ],
+      "Public link expiration date": [
+        "Fecha de expiración del enlace público"
+      ],
+      "Public link password": [
+        "Contraseña del enlace público"
       ],
       "Region": [
         "Estado"
@@ -4612,6 +4795,12 @@
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
       ],
+      "Set expiration date": [
+        "Fijar fecha de expiración"
+      ],
+      "Set link password": [
+        "Establecer contraseña de enlace"
+      ],
       "Sign emails": [
         "Firmar correos electrónicos"
       ],
@@ -4623,6 +4812,9 @@
       ],
       "Start date": [
         "Fecha inicial"
+      ],
+      "Stop sharing": [
+        "Dejar de compartir"
       ],
       "Street address": [
         "Dirección de calle"
@@ -4653,6 +4845,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Viewer": [
+        "Lector"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -6058,6 +6253,15 @@
       "${ reason } has been enabled": [
         "Se ha activado ${ reason }."
       ],
+      "Access for the member removed": [
+        "Acceso para el miembro borrado"
+      ],
+      "Access updated": [
+        "Acceso actualizado"
+      ],
+      "Access updated and shared": [
+        "Acceso actualizado y compartido"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Todos los elementos serán eliminados permanentemente de la papelera"
       ],
@@ -6085,6 +6289,12 @@
       "Device renamed": [
         "Dispositivo renombrado"
       ],
+      "External invitation removed from the share": [
+        "La invitación externa fue borrada de los elementos compartidos."
+      ],
+      "External invitation's email was sent again": [
+        "Se envió nuevamente el correo de invitación externa."
+      ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
       ],
@@ -6101,6 +6311,9 @@
       "File or folder is missing a name": [
         "Falta el nombre del archivo o carpeta"
       ],
+      "Invitation's email was sent again": [
+        "Se envió nuevamente el correo de invitación."
+      ],
       "Link copied to clipboard": [
         "El enlace fue copiado al portapapeles"
       ],
@@ -6116,11 +6329,23 @@
       "The link to \"${ name }\" was deleted": [
         "El enlace a \"${ name }\" fue eliminado"
       ],
+      "The link to your item failed to be deleted": [
+        "Error al eliminar el enlace al elemento"
+      ],
+      "The link to your item was deleted": [
+        "El enlace al elemento fue eliminado"
+      ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
       "You stopped sharing this item": [
         "Ha dejado de compartir este elemento"
+      ],
+      "Your settings failed to be saved": [
+        "Error al guardar sus ajustes"
+      ],
+      "Your settings have been changed successfully": [
+        "Los ajustes se han cambiado."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -6206,8 +6431,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Procesando el pago"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puede cancelarla en cualquier momento."
@@ -6220,6 +6451,9 @@
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estamos procesando el pago de la factura. Espere hasta que se complete el pago antes de realizar cambios en su plan o actualizar sus detalles de pago. Gracias por su paciencia."
       ]
     },
     "Payments.Error": {
@@ -6276,6 +6510,9 @@
       "A way to contact you": [
         "Una forma de contactarle"
       ],
+      "Choose password": [
+        "Elegir una contraseña"
+      ],
       "E.g., ": [
         "Ej., "
       ],
@@ -6296,6 +6533,9 @@
       ],
       "Last name": [
         "Apellido"
+      ],
+      "Message": [
+        "Mensaje"
       ],
       "Name": [
         "Nombre"
@@ -6326,6 +6566,9 @@
       ],
       "Select state": [
         "Seleccionar estado"
+      ],
+      "Set date": [
+        "Establecer fecha"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Comparta lo que cree que podría mejorar ${ BRAND_NAME }"
@@ -6862,6 +7105,14 @@
         "Estamos cancelando la suscripción. Espere."
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Aceptada"
+      ],
+      "Pending": [
+        "Pendiente"
+      ]
+    },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
         "Seguir en ${ currentPlanName }"
@@ -7123,6 +7374,12 @@
       "Preferences saved": [
         "Preferencias guardadas"
       ],
+      "Secure link copied": [
+        "Enlace seguro copiado"
+      ],
+      "The link to your file was successfully copied": [
+        "El enlace al archivo se copió correctamente"
+      ],
       "Undo in progress": [
         "Deshacer en curso"
       ],
@@ -7230,6 +7487,34 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 horas",
+        "${ hoursInt },5 horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
       ]
     },
     "Title": {
@@ -7340,6 +7625,9 @@
       "Data recovery": [
         "Recuperación de datos"
       ],
+      "Date": [
+        "Fecha"
+      ],
       "Day theme": [
         "Tema de día"
       ],
@@ -7362,6 +7650,12 @@
       ],
       "Details": [
         "Detalles"
+      ],
+      "Discard": [
+        "Descartar"
+      ],
+      "Discard changes?": [
+        "¿Descartar cambios?"
       ],
       "Document verification failed": [
         "Error de verificación de documento"
@@ -7457,6 +7751,9 @@
       "Link confirmation": [
         "Confirmación de enlace"
       ],
+      "Manage secure link": [
+        "Gestionar enlace seguro"
+      ],
       "Merge contacts": [
         "Combinar contactos"
       ],
@@ -7514,6 +7811,9 @@
       "Photos": [
         "Fotos"
       ],
+      "Privacy settings": [
+        "Ajustes de privacidad"
+      ],
       "Processing...": [
         "Procesando..."
       ],
@@ -7553,8 +7853,20 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
+      "Select link expiration date": [
+        "Seleccione la fecha de expiración del enlace"
+      ],
+      "Select link expiration time": [
+        "Seleccione la hora de expiración del enlace"
+      ],
       "Settings": [
         "Ajustes"
+      ],
+      "Share ${ name }": [
+        "Compartir ${ name }"
+      ],
+      "Share via link": [
+        "Compartir con un enlace"
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
@@ -7579,6 +7891,9 @@
       ],
       "Stop sharing": [
         "Dejar de compartir"
+      ],
+      "Stop sharing with everyone?": [
+        "¿Dejar de compartir con todos?"
       ],
       "Stop sharing?": [
         "¿Dejar de compartir?"
@@ -7615,6 +7930,9 @@
       ],
       "Your document cannot be loaded": [
         "Su documento no se puede cargar"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Su descarga tiene un archivo de ${ DOCS_APP_NAME }"
       ],
       "Your exposed information": [
         "Sus datos expuestos"
@@ -7679,8 +7997,14 @@
       "Load image": [
         "Cargar imagen"
       ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "El mensaje y nombre del archivo se almacenan con cifrado de acceso cero cuando se incluyen en el correo"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione un esquema PGP para firmar o cifrar a un usuario. Tome en cuenta que PGP/Inline obliga a mensajes de texto plano"
+      ],
+      "Shared end-to-end encrypted": [
+        "Compartido con cifrado de extremo a extremo"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las subcarpetas del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }"
@@ -7699,6 +8023,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Cargue una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Hemos enviado una invitación para acceder al elemento."
       ],
       "You do not have any contacts to export": [
         "No tiene ningún contacto para exportar"

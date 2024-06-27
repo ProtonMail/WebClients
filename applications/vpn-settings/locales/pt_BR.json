@@ -3776,17 +3776,14 @@
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Pré-visualização de documentos ainda não é suportada. Abra o documento para visualizá-lo."
+      "Preview of documents is not yet supported.": [
+        "A pré-visualização dos documentos ainda não são suportados."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
       ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "O compartilhamento público de documentos ainda não é suportado. Peça ao proprietário para convidá-lo diretamente para o documento."
       ],
       "read our two-factor authentication guide first": [
         "leia nosso guia de autenticação de dois fatores primeiro"
@@ -4462,14 +4459,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Faturado"
-      ],
       "Gifted": [
         "Oferecido"
       ],
       "Paid": [
         "Pago"
+      ],
+      "Processing": [
+        "Processando"
       ],
       "Unpaid": [
         "Não pago"
@@ -6634,8 +6631,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendi"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processando pagamento"
       ],
       "Processing payment": [
         "Processando pagamento"

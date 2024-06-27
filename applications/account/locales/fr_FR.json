@@ -7558,6 +7558,9 @@
         "Ajoutez une adresse e-mail pour l'utilisateur choisi.",
         "Ajoutez des adresses e-mail pour les utilisateurs choisis."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Veuillez demander au propriétaire de vous inviter directement au document."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Authentifiez votre carte dans l'onglet de vérification."
       ],
@@ -7587,6 +7590,9 @@
       ],
       "please open a support ticket": [
         "ouvrez un ticket de support"
+      ],
+      "Please open the document to view it.": [
+        "Veuillez ouvrir le document pour le visualiser."
       ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
@@ -7627,8 +7633,8 @@
       "Preview for this file type is not supported": [
         "La prévisualisation de ce type de fichier n'est pas prise en charge."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "L'aperçu de documents n'est pas encore pris en charge. Veuillez ouvrir le document pour l'afficher."
+      "Preview of documents is not yet supported.": [
+        "L'aperçu des documents n'est pas encore pris en charge."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
@@ -7648,8 +7654,8 @@
       "Public link invite": [
         "Lien d'invitation public"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Le partage public de documents n'est pas encore pris en charge. Contactez le propriétaire pour qu'il vous invite directement à accéder au document."
+      "Public sharing of documents is not yet supported.": [
+        "Le partage public de documents n'est pas encore pris en charge."
       ],
       "purchase additional storage": [
         "acheter de l'espace de stockage supplémentaire"
@@ -7779,9 +7785,6 @@
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
-      ],
-      "Set your password": [
-        "Définissez votre mot de passe"
       ],
       "Setting up your organization": [
         "Configuration de votre organisation"
@@ -8003,9 +8006,6 @@
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Ce lien d'invitation a déjà été utilisé. Connectez-vous directement à la place."
-      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Ce lien d'invitation est arrivé à expiration. Contactez l'administrateur pour en demander l'accès."
       ],
@@ -8083,6 +8083,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Cela remplacera votre mot de passe temporaire. Vous l'utiliserez pour accéder à votre compte ${ BRAND_NAME }."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Ceci enverra une nouvelle invitation à **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
@@ -8626,8 +8629,8 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Vous devez quand même répondre aux invitations pour que la personne qui vous invite puisse voir votre réponse."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Vous pourrez nommer l'utilisateur en tant qu'administrateur ou le rendre privé une fois qu'il aura accepté l'invitation."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Vous pourrez promouvoir l'utilisateur au rang d'administrateur une fois qu'il aura accepté l'invitation."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Après la connexion, vous serez redirigé vers ${ destination }."
@@ -8834,14 +8837,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Facturée"
-      ],
       "Gifted": [
         "Offert"
       ],
       "Paid": [
         "Payée"
+      ],
+      "Processing": [
+        "Traitement"
       ],
       "Unpaid": [
         "Non payée"
@@ -9532,8 +9535,8 @@
       "Disable data export for organization members": [
         "Désactiver l'exportation des données pour les membres de l'organisation"
       ],
-      "Disable sharing outside the organization.": [
-        "Désactivez le partage en dehors de l'organisation."
+      "Disable sharing outside the organization": [
+        "Désactiver le partage en dehors de l'organisation"
       ],
       "Display name": [
         "Nom d'affichage"
@@ -12926,8 +12929,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Je l'ai"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Traitement des payements"
       ],
       "Processing payment": [
         "Traitement du paiement"
@@ -12943,6 +12952,9 @@
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Nous traitons votre paiement pour la facture facturée. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {

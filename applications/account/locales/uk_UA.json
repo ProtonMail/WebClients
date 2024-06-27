@@ -1372,6 +1372,11 @@
         "Програми ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Customize plan": [
+        "Налаштувати тарифний план"
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Порожній файл ICS"
@@ -3170,11 +3175,20 @@
       "Are you sure you want to delete this address?": [
         "Ви дійсно хочете видалити цю адресу?"
       ],
+      "Delete address": [
+        "Видалити адресу"
+      ],
       "Delete address permanently?": [
         "Видалити адресу остаточно?"
       ],
       "Delete address?": [
         "Видалити адресу?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Після видалення цю адресу ${ address } більше не зможе використати ніхто інший."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Зверніть увагу, якщо ви видалите цю адресу ${ address }, ви більше не зможете надсилати чи отримувати листи з цією адресою."
       ],
       "You can only delete 1 address per year.": [
         "Ви можете видаляти лише 1 адресу на рік."
@@ -3199,6 +3213,12 @@
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "Ви дійсно хочете видалити цей домен?"
+      ],
+      "Delete": [
+        "Видалити"
+      ],
+      "Delete domain?": [
+        "Видалити домен?"
       ]
     },
     "Delinquent modal title": {
@@ -6410,6 +6430,9 @@
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
       ],
+      "All Events ": [
+        "Усі події "
+      ],
       "All keys successfully reactivated": [
         "Усі ключі успішно повторно активовано"
       ],
@@ -7145,6 +7168,15 @@
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
       ],
+      "Invite Created": [
+        "Запрошення створено"
+      ],
+      "Invite deleted": [
+        "Запрошення видалено"
+      ],
+      "Invite Deleted": [
+        "Запрошення видалено"
+      ],
       "Invite rejected": [
         "Запрошення відхилено"
       ],
@@ -7538,9 +7570,6 @@
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Попередній перегляд документів поки що не підтримується. Будь ласка, відкрийте документ для його перегляду."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
@@ -7558,9 +7587,6 @@
       ],
       "Public link invite": [
         "Запрошення загальнодоступним посиланням"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Загальний доступ до документів ще не підтримується. Попросіть власника запросити вас безпосередньо до документа."
       ],
       "purchase additional storage": [
         "придбати додатковий простір"
@@ -7684,9 +7710,6 @@
       ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
-      ],
-      "Set your password": [
-        "Встановіть свій пароль"
       ],
       "Setting up your organization": [
         "Налаштування вашої організації"
@@ -8146,6 +8169,15 @@
       ],
       "Users": [
         "Користувачі"
+      ],
+      "Vault Created": [
+        "Сховище створено"
+      ],
+      "Vault Deleted": [
+        "Сховище видалено"
+      ],
+      "Vault Updated": [
+        "Сховище оновлено"
       ],
       "Verification can take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
@@ -8665,9 +8697,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Рахунок виставлено"
-      ],
       "Gifted": [
         "Подаровано"
       ],
@@ -9361,9 +9390,6 @@
       ],
       "Disable animations": [
         "Вимкнути анімацію"
-      ],
-      "Disable sharing outside the organization.": [
-        "Вимкнути спільний доступ за межами організації."
       ],
       "Display name": [
         "Ім'я"
@@ -10174,6 +10200,9 @@
       "Get ${ VPN_APP_NAME }": [
         "Отримати ${ VPN_APP_NAME }"
       ],
+      "Help": [
+        "Допомога"
+      ],
       "Help translate": [
         "Допоможіть з перекладом"
       ],
@@ -10759,6 +10788,9 @@
       "Calendar": [
         "Календар"
       ],
+      "Documents": [
+        "Документи"
+      ],
       "Inbox": [
         "Вхідні"
       ],
@@ -11023,6 +11055,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Відстеження витоків даних (скоро з'явиться)"
+      ],
+      "Dedicated account manager": [
+        "Призначений менеджер облікового запису"
       ],
       "Dedicated servers and IP": [
         "Виділені сервери та IP-адреси"
@@ -12839,6 +12874,9 @@
       "Email address": [
         "Адреса е-пошти"
       ],
+      "Email or IP": [
+        "Електронна пошта або IP-адреса"
+      ],
       "End date": [
         "Дата завершення"
       ],
@@ -14306,6 +14344,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "6 users": [
+        "6 користувачів"
+      ],
       "Automatic email forwarding": [
         "Автоматичне пересилання пошти"
       ],
@@ -14339,6 +14380,9 @@
       "Keep ${ config.planName }": [
         "Залишити ${ config.planName }"
       ],
+      "Learn more": [
+        "Докладніше"
+      ],
       "Learn more about our impact": [
         "Дізнайтеся більше про результати нашої діяльності"
       ],
@@ -14350,6 +14394,9 @@
       ],
       "Priority support": [
         "Пріоритетна підтримка"
+      ],
+      "Reactivate": [
+        "Повторна активація"
       ],
       "Read the story": [
         "Прочитати історію"
@@ -15238,6 +15285,9 @@
       "Delete version history?": [
         "Видалити історію версій?"
       ],
+      "Description": [
+        "Опис"
+      ],
       "Details": [
         "Подробиці"
       ],
@@ -15345,6 +15395,9 @@
       ],
       "Error": [
         "Помилка"
+      ],
+      "Event": [
+        "Подія"
       ],
       "Every member of the organization can access": [
         "Кожен учасник організації може отримати доступ до"
@@ -15487,6 +15540,9 @@
       "Invoices": [
         "Рахунки"
       ],
+      "IP": [
+        "IP-адреса"
+      ],
       "Keep your inbox organized": [
         "Упорядкуйте свою поштову скриньку"
       ],
@@ -15595,6 +15651,9 @@
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Налаштуйте нижній колонтитул листа"
+      ],
       "Phone": [
         "Телефон"
       ],
@@ -15609,6 +15668,9 @@
       ],
       "Processing...": [
         "Триває обробка..."
+      ],
+      "Profile": [
+        "Профіль"
       ],
       "Recommended": [
         "Рекомендовано"
@@ -15826,6 +15888,9 @@
       "This field cannot contain only spaces": [
         "Це поле не може містити лише пробіли"
       ],
+      "Time": [
+        "Час"
+      ],
       "Time zone": [
         "Часовий пояс"
       ],
@@ -15855,6 +15920,9 @@
       ],
       "Upload your organization’s logo": [
         "Вивантажте логотип вашої організації"
+      ],
+      "User": [
+        "Користувач"
       ],
       "Users": [
         "Користувачі"
@@ -16347,11 +16415,32 @@
       "Add multiple users": [
         "Додати кількох користувачів"
       ],
+      "Admin": [
+        "Адміністратор"
+      ],
+      "Cancel": [
+        "Скасувати"
+      ],
       "Confirm password": [
         "Підтвердити пароль"
       ],
       "Create password": [
         "Створити пароль"
+      ],
+      "Create user": [
+        "Створити користувача"
+      ],
+      "Email": [
+        "Пошта"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Optional": [
+        "Необов'язково"
+      ],
+      "Private": [
+        "Приватно"
       ],
       "Remember to share the user's sign in details with them.": [
         "Повідомте користувачам їхні дані для входу."
@@ -16364,6 +16453,15 @@
       ]
     },
     "Users table: badge": {
+      "Invite sent": [
+        "Запрошення надіслано"
+      ],
+      "Private": [
+        "Приватно"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "Користувач SSO, наданий вашим провайдером ідентифікації"
       ],

@@ -704,7 +704,7 @@
         "Aceptar"
       ],
       "Ok": [
-        "OK"
+        "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -1270,7 +1270,7 @@
         "Editar"
       ],
       "Edit address": [
-        "Editar dirección"
+        "Editar la dirección"
       ],
       "Enable": [
         "Activar"
@@ -1811,12 +1811,12 @@
         "Rechazado"
       ],
       "Invite sent": [
-        "La invitación ha sido enviada."
+        "Se ha enviado la invitación."
       ]
     },
     "Calendar link purpose update success message": {
       "Label added": [
-        "La etiqueta ha sido añadida."
+        "Se ha añadido la etiqueta."
       ],
       "Label deleted": [
         "La etiqueta ha sido eliminada."
@@ -1973,7 +1973,7 @@
     },
     "Call Scheduled Confirmation": {
       "Request sent": [
-        "La solicitud ha sido enviada."
+        "Se ha enviado la solicitud."
       ],
       "We'll get back to you with more information as soon as we can.": [
         "Nos comunicaremos contigo con más información tan pronto como podamos."
@@ -3679,7 +3679,7 @@
         "Añadir una regla de reenvío"
       ],
       "Back": [
-        "Regresar"
+        "Volver"
       ],
       "Cancel": [
         "Cancelar"
@@ -5547,7 +5547,7 @@
         "Descarga la ${ strongText } en Android o iOS"
       ],
       "Get the App": [
-        "Descargue la aplicación"
+        "Descarga la aplicación"
       ],
       "privacy features": [
         "funciones de privacidad"
@@ -6581,7 +6581,7 @@
         "Antes de que puedas enviar y recibir mensajes desde tus direcciones nuevas, necesitas crear las claves de cifrado para ellas."
       ],
       "Beta": [
-        "Beta"
+        "Versión beta"
       ],
       "Billed at ${ price }": [
         "Al precio de ${ price }"
@@ -6837,7 +6837,7 @@
         "Editar enlace"
       ],
       "email": [
-        "correo"
+        "correo electrónico"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -7220,7 +7220,7 @@
         "El elemento en la caja fuerte ha sido restaurado."
       ],
       "Item Read": [
-        "Elemento leído"
+        "El elemento ha sido leído."
       ],
       "Item read in vault": [
         "El elemento en la caja fuerte ha sido leído."
@@ -7313,7 +7313,7 @@
         "Tipo de enlace"
       ],
       "Live chat": [
-        "chat en directo"
+        "Chat en directo"
       ],
       "Loaded content is being protected by our proxy when tracker protection is activated.": [
         "Nuestro proxy protege el contenido cargado cuando el bloqueo de rastreadores está activo."
@@ -7558,6 +7558,9 @@
         "Añade una dirección de correo para el usuario seleccionado.",
         "Añade direcciones de correo para los usuarios seleccionados."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Pregunta al propietario que te invite directamente al documento."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
       ],
@@ -7587,6 +7590,9 @@
       ],
       "please open a support ticket": [
         "abre un tiquete de soporte."
+      ],
+      "Please open the document to view it.": [
+        "Abre el documento para verlo."
       ],
       "Please select the folders you would like to import:": [
         "Selecciona las carpetas que te gustaría importar:"
@@ -7627,8 +7633,8 @@
       "Preview for this file type is not supported": [
         "No se admite la vista previa para este tipo de archivo."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "La previsualización de documentos aún no está disponible. Abre el documento para verlo."
+      "Preview of documents is not yet supported.": [
+        "La previsualización de documentos aún no está admitida."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
@@ -7648,8 +7654,8 @@
       "Public link invite": [
         "Enlace de invitación público"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "El intercambio público de documentos aún no está disponible. Pregunta al propietario que te invite directamente al documento."
+      "Public sharing of documents is not yet supported.": [
+        "El intercambio público de documentos aún no está admitido."
       ],
       "purchase additional storage": [
         "comprar almacenamiento adicional"
@@ -7779,9 +7785,6 @@
       ],
       "Set recovery phrase": [
         "Configurar una frase de recuperación"
-      ],
-      "Set your password": [
-        "Establece tu contraseña"
       ],
       "Setting up your organization": [
         "Configurando tu organización"
@@ -8003,9 +8006,6 @@
       "This file is too large to preview": [
         "Este archivo es demasiado grande para previsualizarlo."
       ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Este enlace de invitación ya fue usado. Inicia sesión directamente en su lugar."
-      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Este enlace de invitación ha expirado. Contacta con tu administrador para solicitar acceso."
       ],
@@ -8083,6 +8083,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Esto reemplazará tu contraseña temporal. La utilizarás para acceder a tu cuenta de ${ BRAND_NAME } en el futuro."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Esto enviará una nueva invitación a **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
@@ -8626,8 +8629,8 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Todavía tienes que responder a las invitaciones para que el anfitrión vea tu respuesta."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Podrás promover al usuario como administrador o convertirlo en privado una vez que haya aceptado la invitación."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Podrás promover al usuario como administrador una vez que haya aceptado la invitación."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Te redirigiremos a ${ destination } después de iniciar sesión."
@@ -8834,14 +8837,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Facturada"
-      ],
       "Gifted": [
         "Regalado"
       ],
       "Paid": [
         "Pagada"
+      ],
+      "Processing": [
+        "Procesando"
       ],
       "Unpaid": [
         "No pagada"
@@ -9532,8 +9535,8 @@
       "Disable data export for organization members": [
         "Desactivar la exportación de datos para los miembros de la organización"
       ],
-      "Disable sharing outside the organization.": [
-        "Desactivar el intercambio fuera de la organización."
+      "Disable sharing outside the organization": [
+        "Desactivar el intercambio fuera de la organización"
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -10225,7 +10228,7 @@
     },
     "Label to  inform a feature is only available on Beta": {
       "Beta": [
-        "Beta"
+        "Versión beta"
       ]
     },
     "Label to change composer mode": {
@@ -10580,7 +10583,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Conseguir la oferta"
+        "Aprovéchate de la oferta"
       ],
       "Special Offer": [
         "Oferta especial"
@@ -12277,7 +12280,7 @@
         "Permanente"
       ],
       "Plain text": [
-        "Texto plano"
+        "Texto sin formato"
       ],
       "Receive from all": [
         "Recibir de todos"
@@ -12926,8 +12929,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Procesando el pago"
       ],
       "Processing payment": [
         "Procesando el pago"
@@ -15142,7 +15151,7 @@
         "Editar"
       ],
       "Email": [
-        "Correo"
+        "Correo electrónico"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -16020,7 +16029,7 @@
         "¿Eliminar el inicio de sesión único de tu organización?"
       ],
       "Remove user?": [
-        "¿Eliminar usuario?"
+        "¿Borrar el usuario?"
       ],
       "Rename the gateway": [
         "Cambiar el nombre de la puerta de enlace"
