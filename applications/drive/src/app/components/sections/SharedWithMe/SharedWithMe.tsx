@@ -10,6 +10,7 @@ import useNavigate from '../../../hooks/drive/useNavigate';
 import { EncryptedLink, LinkShareUrl, useSharedWithMeView, useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, {
     BrowserItemId,
     Cells,
@@ -74,7 +75,7 @@ const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, head
 type SharedWithMeSortFields = Extract<SortField, SortField.name | SortField.sharedBy | SortField.sharedOn>;
 const SORT_FIELDS: SharedWithMeSortFields[] = [SortField.name, SortField.sharedBy, SortField.sharedOn];
 
-const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
+const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const { navigateToLink } = useNavigate();
@@ -83,7 +84,7 @@ const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
-    const isDocsEnabled = useDriveDocsFeatureFlag();
+    const { canUseDocs } = useDriveDocsFeatureFlag();
 
     const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
 
@@ -103,17 +104,25 @@ const SharedWithMe = ({ shareId, sharedWithMeView }: Props) => {
             }
             document.getSelection()?.removeAllRanges();
 
-            if (isDocsEnabled && isProtonDocument(item.mimeType)) {
-                void openDocument({
-                    linkId: item.id,
-                    shareId: item.rootShareId,
-                });
+            if (isProtonDocument(item.mimeType)) {
+                void canUseDocs(item.rootShareId)
+                    .then((canUse) => {
+                        if (!canUse) {
+                            return;
+                        }
+
+                        return openDocument({
+                            linkId: item.id,
+                            shareId: item.rootShareId,
+                        });
+                    })
+                    .catch(sendErrorReport);
                 return;
             }
 
             navigateToLink(item.rootShareId, item.id, item.isFile);
         },
-        [navigateToLink, shareId, browserItems]
+        [navigateToLink, browserItems]
     );
 
     const handleItemRender = (item: SharedWithMeItem) => {

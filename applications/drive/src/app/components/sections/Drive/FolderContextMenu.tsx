@@ -64,7 +64,7 @@ export function FolderContextMenu({
     const ShareFileButtonComponent = isSharingInviteAvailable ? ShareFileButton : ShareFileButtonLEGACY;
 
     const { createDocument } = useDocumentActions();
-    const isDocsEnabled = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     // All actions in this context menu needs editor permissions
     if (!isEditor) {

@@ -46,7 +46,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
     } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const { createDocument } = useDocumentActions();
-    const isDocsEnabled = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     return (
         <>
