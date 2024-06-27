@@ -113,7 +113,7 @@ export const useAttachments = ({
             const filename = pendingUpload.file.name;
             dispatch(
                 addAttachment({
-                    ID: upload.attachment.ID || '',
+                    ID: upload?.attachment.ID || '',
                     attachment: { data, verified: 1, filename, signatures: [] },
                 })
             );
