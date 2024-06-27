@@ -1,0 +1,874 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FEA7CF52BE8E86900EF2ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7CF42BE8E86900EF2ED2 /* AppDelegate.swift */; };
+		1FEA7D062BE8E86900EF2ED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FEA7D052BE8E86900EF2ED2 /* Assets.xcassets */; };
+		1FEA7D0F2BE8E86A00EF2ED2 /* Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1FEA7D142BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA7D132BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift */; };
+		3515DC6F2BFF869A00AD699A /* LoadPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515DC6C2BFF869400AD699A /* LoadPlugin.swift */; };
+		353534422BF8CB0D0003BE4B /* LoggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353534412BF8CB0D0003BE4B /* LoggedOutView.swift */; };
+		353534462BF8CB7A0003BE4B /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353534452BF8CB7A0003BE4B /* LogoView.swift */; };
+		353534752BF8E6870003BE4B /* MacPlugin.bundle in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 353534712BF8E6680003BE4B /* MacPlugin.bundle */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		353534812BF8E7290003BE4B /* MacPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3535347E2BF8E7290003BE4B /* MacPlugin.swift */; };
+		353534832BF8E7710003BE4B /* LoggedOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353534822BF8E7710003BE4B /* LoggedOutViewModel.swift */; };
+		353AA4102BFA9AC70084B00C /* SharedUseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */; };
+		3570308B2BFE0F5000E283F4 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570308A2BFE0F5000E283F4 /* LoggedInView.swift */; };
+		3570308D2BFE0F6E00E283F4 /* LoggedInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */; };
+		3587FB3A2BFF95F8006C170F /* SharedUseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */; };
+		3587FB3C2BFF9625006C170F /* UseCaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */; };
+		358A2BDF2BFC847B007C8D5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BDE2BFC847B007C8D5C /* MainView.swift */; };
+		358A2BE12BFC848E007C8D5C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BE02BFC848E007C8D5C /* MainViewModel.swift */; };
+		358A2BE32BFC86E9007C8D5C /* SharedToolingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */; };
+		358A2BE42BFC8727007C8D5C /* SharedToolingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */; };
+		358AB4932BFF67080008A7EC /* RetryableErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4922BFF67080008A7EC /* RetryableErrorView.swift */; };
+		358AB4962BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4952BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift */; };
+		358AB4982BFF85150008A7EC /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4972BFF85150008A7EC /* Plugin.swift */; };
+		358AB4992BFF85180008A7EC /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4972BFF85150008A7EC /* Plugin.swift */; };
+		35F4EC4E2BF7DDC90086D497 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC4D2BF7DDC90086D497 /* Factory */; };
+		35F4EC512BF7DE4F0086D497 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC502BF7DE4F0086D497 /* Shared */; };
+		35F4EC532BF7DE540086D497 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC522BF7DE540086D497 /* Factory */; };
+		35F4EC552BF7DE570086D497 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC542BF7DE570086D497 /* Shared */; };
+		35F4EC582BF7EA5A0086D497 /* ProtonPassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FEA7D102BE8E86A00EF2ED2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FEA7CE92BE8E86900EF2ED2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FEA7D0D2BE8E86A00EF2ED2;
+			remoteInfo = "Proton Pass Extension";
+		};
+		353534762BF8E6870003BE4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FEA7CE92BE8E86900EF2ED2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 353534702BF8E6680003BE4B;
+			remoteInfo = MacPlugin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1FEA7D1C2BE8E86A00EF2ED2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				353534752BF8E6870003BE4B /* MacPlugin.bundle in Embed Foundation Extensions */,
+				1FEA7D0F2BE8E86A00EF2ED2 /* Safari Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1FEA7CF12BE8E86900EF2ED2 /* Proton Pass for Safari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proton Pass for Safari.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FEA7CF42BE8E86900EF2ED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1FEA7D052BE8E86900EF2ED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FEA7D072BE8E86900EF2ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FEA7D092BE8E86900EF2ED2 /* Proton Pass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proton Pass.entitlements"; sourceTree = "<group>"; };
+		1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FEA7D132BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		1FEA7D152BE8E86A00EF2ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FEA7D162BE8E86A00EF2ED2 /* Safari Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Safari Extension.entitlements"; sourceTree = "<group>"; };
+		3515DC6C2BFF869400AD699A /* LoadPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPlugin.swift; sourceTree = "<group>"; };
+		353534412BF8CB0D0003BE4B /* LoggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutView.swift; sourceTree = "<group>"; };
+		353534452BF8CB7A0003BE4B /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		353534712BF8E6680003BE4B /* MacPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		353534792BF8E6BD0003BE4B /* MacPlugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacPlugin-Bridging-Header.h"; sourceTree = "<group>"; };
+		3535347E2BF8E7290003BE4B /* MacPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPlugin.swift; sourceTree = "<group>"; };
+		353534822BF8E7710003BE4B /* LoggedOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewModel.swift; sourceTree = "<group>"; };
+		353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUseCaseContainer.swift; sourceTree = "<group>"; };
+		353B23772BF7DA4200D77597 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
+		3570308A2BFE0F5000E283F4 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
+		3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewModel.swift; sourceTree = "<group>"; };
+		3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
+		358A2BDE2BFC847B007C8D5C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		358A2BE02BFC848E007C8D5C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedToolingContainer.swift; sourceTree = "<group>"; };
+		358AB4922BFF67080008A7EC /* RetryableErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryableErrorView.swift; sourceTree = "<group>"; };
+		358AB4952BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackEmbededModifier.swift; sourceTree = "<group>"; };
+		358AB4972BFF85150008A7EC /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
+		35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtonPassApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FEA7CEE2BE8E86900EF2ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35F4EC4E2BF7DDC90086D497 /* Factory in Frameworks */,
+				35F4EC512BF7DE4F0086D497 /* Shared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FEA7D0B2BE8E86A00EF2ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35F4EC532BF7DE540086D497 /* Factory in Frameworks */,
+				35F4EC552BF7DE570086D497 /* Shared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3535346E2BF8E6680003BE4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FEA7CE82BE8E86900EF2ED2 = {
+			isa = PBXGroup;
+			children = (
+				1FEA7CF32BE8E86900EF2ED2 /* Proton Pass */,
+				1FEA7D122BE8E86A00EF2ED2 /* Safari Extension */,
+				353534782BF8E6AA0003BE4B /* MacPlugin */,
+				353B23772BF7DA4200D77597 /* Shared */,
+				1FEA7CF22BE8E86900EF2ED2 /* Products */,
+				35F4EC4F2BF7DE4F0086D497 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1FEA7CF22BE8E86900EF2ED2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FEA7CF12BE8E86900EF2ED2 /* Proton Pass for Safari.app */,
+				1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */,
+				353534712BF8E6680003BE4B /* MacPlugin.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FEA7CF32BE8E86900EF2ED2 /* Proton Pass */ = {
+			isa = PBXGroup;
+			children = (
+				1FEA7CF42BE8E86900EF2ED2 /* AppDelegate.swift */,
+				35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */,
+				1FEA7D052BE8E86900EF2ED2 /* Assets.xcassets */,
+				1FEA7D072BE8E86900EF2ED2 /* Info.plist */,
+				1FEA7D092BE8E86900EF2ED2 /* Proton Pass.entitlements */,
+				353AA40E2BFA9AAF0084B00C /* DI */,
+				35F4EC562BF7EA1E0086D497 /* Screens */,
+				358AB4942BFF7D0A0008A7EC /* Utils */,
+			);
+			path = "Proton Pass";
+			sourceTree = "<group>";
+		};
+		1FEA7D122BE8E86A00EF2ED2 /* Safari Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1FEA7D132BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift */,
+				1FEA7D152BE8E86A00EF2ED2 /* Info.plist */,
+				1FEA7D162BE8E86A00EF2ED2 /* Safari Extension.entitlements */,
+			);
+			path = "Safari Extension";
+			sourceTree = "<group>";
+		};
+		353534782BF8E6AA0003BE4B /* MacPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				358AB4972BFF85150008A7EC /* Plugin.swift */,
+				3515DC6C2BFF869400AD699A /* LoadPlugin.swift */,
+				353534792BF8E6BD0003BE4B /* MacPlugin-Bridging-Header.h */,
+				3535347E2BF8E7290003BE4B /* MacPlugin.swift */,
+			);
+			path = MacPlugin;
+			sourceTree = "<group>";
+		};
+		353AA40E2BFA9AAF0084B00C /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				358A2BE22BFC86E9007C8D5C /* SharedToolingContainer.swift */,
+				353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */,
+				3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		358AB4942BFF7D0A0008A7EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				358AB4952BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		35F4EC4F2BF7DE4F0086D497 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35F4EC562BF7EA1E0086D497 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3570308A2BFE0F5000E283F4 /* LoggedInView.swift */,
+				3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */,
+				353534412BF8CB0D0003BE4B /* LoggedOutView.swift */,
+				353534822BF8E7710003BE4B /* LoggedOutViewModel.swift */,
+				353534452BF8CB7A0003BE4B /* LogoView.swift */,
+				358A2BDE2BFC847B007C8D5C /* MainView.swift */,
+				358A2BE02BFC848E007C8D5C /* MainViewModel.swift */,
+				358AB4922BFF67080008A7EC /* RetryableErrorView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FEA7CF02BE8E86900EF2ED2 /* Proton Pass for Safari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FEA7D1D2BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass for Safari" */;
+			buildPhases = (
+				1FEA7CED2BE8E86900EF2ED2 /* Sources */,
+				1FEA7CEE2BE8E86900EF2ED2 /* Frameworks */,
+				1FEA7CEF2BE8E86900EF2ED2 /* Resources */,
+				1FEA7D1C2BE8E86A00EF2ED2 /* Embed Foundation Extensions */,
+				357E7DD62BFF2AFC00BDF2B8 /* SwiftLint */,
+				357E7DD72BFF2B2400BDF2B8 /* SwiftFormat */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FEA7D112BE8E86A00EF2ED2 /* PBXTargetDependency */,
+				353534772BF8E6870003BE4B /* PBXTargetDependency */,
+			);
+			name = "Proton Pass for Safari";
+			packageProductDependencies = (
+				35F4EC4D2BF7DDC90086D497 /* Factory */,
+				35F4EC502BF7DE4F0086D497 /* Shared */,
+			);
+			productName = "Proton Pass";
+			productReference = 1FEA7CF12BE8E86900EF2ED2 /* Proton Pass for Safari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FEA7D0D2BE8E86A00EF2ED2 /* Safari Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FEA7D192BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Safari Extension" */;
+			buildPhases = (
+				1FEA7D0A2BE8E86A00EF2ED2 /* Sources */,
+				1FEA7D0B2BE8E86A00EF2ED2 /* Frameworks */,
+				1FEA7D0C2BE8E86A00EF2ED2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Safari Extension";
+			packageProductDependencies = (
+				35F4EC522BF7DE540086D497 /* Factory */,
+				35F4EC542BF7DE570086D497 /* Shared */,
+			);
+			productName = "Proton Pass Extension";
+			productReference = 1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		353534702BF8E6680003BE4B /* MacPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 353534742BF8E6680003BE4B /* Build configuration list for PBXNativeTarget "MacPlugin" */;
+			buildPhases = (
+				3535346D2BF8E6680003BE4B /* Sources */,
+				3535346E2BF8E6680003BE4B /* Frameworks */,
+				3535346F2BF8E6680003BE4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacPlugin;
+			packageProductDependencies = (
+			);
+			productName = MacPlugin;
+			productReference = 353534712BF8E6680003BE4B /* MacPlugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FEA7CE92BE8E86900EF2ED2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					1FEA7CF02BE8E86900EF2ED2 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					1FEA7D0D2BE8E86A00EF2ED2 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					353534702BF8E6680003BE4B = {
+						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
+					};
+				};
+			};
+			buildConfigurationList = 1FEA7CEC2BE8E86900EF2ED2 /* Build configuration list for PBXProject "Proton Pass" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FEA7CE82BE8E86900EF2ED2;
+			packageReferences = (
+				35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */,
+			);
+			productRefGroup = 1FEA7CF22BE8E86900EF2ED2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FEA7CF02BE8E86900EF2ED2 /* Proton Pass for Safari */,
+				1FEA7D0D2BE8E86A00EF2ED2 /* Safari Extension */,
+				353534702BF8E6680003BE4B /* MacPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FEA7CEF2BE8E86900EF2ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FEA7D062BE8E86900EF2ED2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FEA7D0C2BE8E86A00EF2ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3535346F2BF8E6680003BE4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		357E7DD62BFF2AFC00BDF2B8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "tools/swiftlint.sh\n";
+		};
+		357E7DD72BFF2B2400BDF2B8 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "tools/swiftformat.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FEA7CED2BE8E86900EF2ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				358A2BE32BFC86E9007C8D5C /* SharedToolingContainer.swift in Sources */,
+				353534832BF8E7710003BE4B /* LoggedOutViewModel.swift in Sources */,
+				358AB4992BFF85180008A7EC /* Plugin.swift in Sources */,
+				358A2BDF2BFC847B007C8D5C /* MainView.swift in Sources */,
+				35F4EC582BF7EA5A0086D497 /* ProtonPassApp.swift in Sources */,
+				353534462BF8CB7A0003BE4B /* LogoView.swift in Sources */,
+				3570308B2BFE0F5000E283F4 /* LoggedInView.swift in Sources */,
+				353534422BF8CB0D0003BE4B /* LoggedOutView.swift in Sources */,
+				3570308D2BFE0F6E00E283F4 /* LoggedInViewModel.swift in Sources */,
+				3515DC6F2BFF869A00AD699A /* LoadPlugin.swift in Sources */,
+				358AB4962BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift in Sources */,
+				353AA4102BFA9AC70084B00C /* SharedUseCaseContainer.swift in Sources */,
+				1FEA7CF52BE8E86900EF2ED2 /* AppDelegate.swift in Sources */,
+				3587FB3C2BFF9625006C170F /* UseCaseContainer.swift in Sources */,
+				358A2BE12BFC848E007C8D5C /* MainViewModel.swift in Sources */,
+				358AB4932BFF67080008A7EC /* RetryableErrorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FEA7D0A2BE8E86A00EF2ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				358A2BE42BFC8727007C8D5C /* SharedToolingContainer.swift in Sources */,
+				3587FB3A2BFF95F8006C170F /* SharedUseCaseContainer.swift in Sources */,
+				1FEA7D142BE8E86A00EF2ED2 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3535346D2BF8E6680003BE4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				358AB4982BFF85150008A7EC /* Plugin.swift in Sources */,
+				353534812BF8E7290003BE4B /* MacPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FEA7D112BE8E86A00EF2ED2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FEA7D0D2BE8E86A00EF2ED2 /* Safari Extension */;
+			targetProxy = 1FEA7D102BE8E86A00EF2ED2 /* PBXContainerItemProxy */;
+		};
+		353534772BF8E6870003BE4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = maccatalyst;
+			target = 353534702BF8E6680003BE4B /* MacPlugin */;
+			targetProxy = 353534762BF8E6870003BE4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1FEA7D172BE8E86A00EF2ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1FEA7D182BE8E86A00EF2ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		1FEA7D1A2BE8E86A00EF2ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Safari Extension/Safari Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.17.2;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.safari-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		1FEA7D1B2BE8E86A00EF2ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Safari Extension/Safari Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.17.2;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.safari-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		1FEA7D1E2BE8E86A00EF2ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Proton Pass/Proton Pass.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Proton Pass/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass for Safari";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.17.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.catalyst;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		1FEA7D1F2BE8E86A00EF2ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Proton Pass/Proton Pass.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Proton Pass/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass for Safari";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.17.3;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.catalyst;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		353534722BF8E6680003BE4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.17.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.mac-plugin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MacPlugin/MacPlugin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		353534732BF8E6680003BE4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 2SB5Z68H26;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.17.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.proton.pass.catalyst.mac-plugin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MacPlugin/MacPlugin-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FEA7CEC2BE8E86900EF2ED2 /* Build configuration list for PBXProject "Proton Pass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FEA7D172BE8E86A00EF2ED2 /* Debug */,
+				1FEA7D182BE8E86A00EF2ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FEA7D192BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Safari Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FEA7D1A2BE8E86A00EF2ED2 /* Debug */,
+				1FEA7D1B2BE8E86A00EF2ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FEA7D1D2BE8E86A00EF2ED2 /* Build configuration list for PBXNativeTarget "Proton Pass for Safari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FEA7D1E2BE8E86A00EF2ED2 /* Debug */,
+				1FEA7D1F2BE8E86A00EF2ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		353534742BF8E6680003BE4B /* Build configuration list for PBXNativeTarget "MacPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				353534722BF8E6680003BE4B /* Debug */,
+				353534732BF8E6680003BE4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		35F4EC4D2BF7DDC90086D497 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		35F4EC502BF7DE4F0086D497 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
+		35F4EC522BF7DE540086D497 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		35F4EC542BF7DE570086D497 /* Shared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Shared;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1FEA7CE92BE8E86900EF2ED2 /* Project object */;
+}

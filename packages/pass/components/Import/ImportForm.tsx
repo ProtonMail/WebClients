@@ -112,7 +112,9 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                                         href="https://pass.proton.me/assets/protonpass-import.csv"
                                         download="protonpass-import.csv"
                                     >
-                                        {c('Action').t`Download this CSV template`}
+                                        {BUILD_TARGET === 'safari'
+                                            ? c('Action').t`Right click and download this CSV`
+                                            : c('Action').t`Download this CSV template`}
                                     </Href>
                                 </li>
                                 <li>{c('Info').t`Fill in the CSV with your data`}</li>

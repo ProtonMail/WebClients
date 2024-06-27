@@ -1,7 +1,9 @@
 import * as config from 'proton-pass-extension/app/config';
 import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
+import 'proton-pass-extension/lib/utils/polyfills';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
+
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import sentry from '@proton/shared/lib/helpers/sentry';
@@ -11,7 +13,7 @@ import WorkerMessageBroker from './channel';
 import { EXTENSION_KEY } from './constants';
 import { createWorkerContext } from './context';
 
-if (BUILD_TARGET === 'chrome') {
+if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
     /* FIXME: create a custom webpack plugin to automatically register
      * chunks loaded through `importScripts` for the chromium build
      * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10*/
@@ -33,7 +35,7 @@ if (BUILD_TARGET === 'chrome') {
 
 WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
 
-if (ENV === 'development') {
+if (BUILD_TARGET !== 'safari' && ENV === 'development') {
     createDevReloader(async () => {
         const tabs = await browser.tabs.query({});
         const csUnloads = tabs
@@ -67,7 +69,9 @@ browser.runtime.onMessageExternal.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onMessage.addListener(WorkerMessageBroker.onMessage);
 browser.runtime.onStartup.addListener(context.service.activation.onStartup);
 browser.runtime.onInstalled.addListener(context.service.activation.onInstall);
-browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
+if (BUILD_TARGET !== 'safari') {
+    browser.runtime.onUpdateAvailable.addListener(context.service.activation.onUpdateAvailable);
+}
 
 if (BUILD_TARGET === 'firefox' && ENV === 'production') {
     /* Block direct access to certain `web_accessible_resources`

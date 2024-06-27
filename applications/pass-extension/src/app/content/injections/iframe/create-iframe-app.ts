@@ -104,7 +104,7 @@ export const createIFrameApp = <A>({
                 ensureLoaded()
                     .then(() => {
                         const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
-                        iframe.contentWindow?.postMessage(secureMessage, iframe.src);
+                        iframe.contentWindow?.postMessage(secureMessage, src);
                     })
                     .catch(noop)
             )

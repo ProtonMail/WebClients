@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { downloadFileWithSafariFix } from '@proton/pass/lib/export/downloadFilesWithSafariFix';
 import { type Maybe } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -17,19 +18,13 @@ const downloadLogs = (logs: string[]) => {
     const file = new File(
         logs.map((line) => `${line}\n`),
         `${PASS_APP_NAME}_logs_${Date.now()}`,
-        { type: 'text/plain' }
+        {
+            // Safari extensions require 'application/octet-stream' to trigger a download
+            type: BUILD_TARGET === 'safari' ? 'application/octet-stream' : 'text/plain',
+        }
     );
 
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(file);
-
-    link.href = url;
-    link.download = file.name;
-    document.body.appendChild(link);
-    link.click();
-
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    downloadFileWithSafariFix(file);
 };
 
 export const ApplicationLogs: FC<Props> = ({ opened, style }) => {

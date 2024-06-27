@@ -25,7 +25,7 @@ const {
     WEBPACK_DEV_PORT,
 } = require('./tools/env');
 
-const SUPPORTED_TARGETS = ['chrome', 'firefox'];
+const SUPPORTED_TARGETS = ['chrome', 'firefox', 'safari'];
 
 if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
     throw new Error(`Build target "${BUILD_TARGET}" is not supported`);
@@ -77,7 +77,7 @@ module.exports = {
              * a service-worker is that you have to register any imported script
              * during the service worker's oninstall phase (`/worker/index.ts`)
              * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10  */
-            chunkLoading: BUILD_TARGET === 'chrome' ? 'import-scripts' : 'jsonp',
+            chunkLoading: BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari' ? 'import-scripts' : 'jsonp',
         },
         client: './src/app/content/client.ts',
         dropdown: nonAccessibleWebResource('./src/app/content/injections/apps/dropdown/index.tsx'),
@@ -87,7 +87,8 @@ module.exports = {
         orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
         popup: './src/app/popup/index.tsx',
         settings: './src/app/pages/settings/index.tsx',
-        webauthn: './src/app/content/webauthn.ts',
+        /* Passkey handling not available in Safari */
+        ...(BUILD_TARGET !== 'safari' ? { webauthn: './src/app/content/webauthn.ts' } : {}),
         /* FF account communication fallback */
         ...(BUILD_TARGET === 'firefox' ? { account: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
     },
@@ -203,6 +204,7 @@ module.exports = {
                                     ];
                                     break;
                                 case 'chrome':
+                                case 'safari':
                                     manifest.externally_connectable.matches = [
                                         'https://account.proton.me/*',
                                         'https://pass.proton.me/*',

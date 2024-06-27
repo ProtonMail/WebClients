@@ -78,6 +78,7 @@ export enum WorkerMessageType {
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
+    FETCH_DOMAINIMAGE = 'FETCH_DOMAINIMAGE',
     FORM_ENTRY_COMMIT = 'FORM_ENTRY_COMMIT',
     FORM_ENTRY_REQUEST = 'FORM_ENTRY_REQUEST',
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
@@ -144,6 +145,7 @@ export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string 
 export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportOptions>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
+export type FetchDomainImageMessage = WithPayload<WorkerMessageType.FETCH_DOMAINIMAGE, { url: string }>;
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
 export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, FormSubmitPayload>;
@@ -208,6 +210,7 @@ export type WorkerMessage =
     | ExportRequestMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
+    | FetchDomainImageMessage
     | FormEntryCommitMessage
     | FormEntryRequestMessage
     | FormEntryStageMessage
@@ -270,6 +273,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_SELECT]: FormCredentials;
     [WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG]: { config: GeneratePasswordConfig };
     [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
+    [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
