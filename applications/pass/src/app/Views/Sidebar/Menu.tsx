@@ -11,6 +11,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
 import { OnboardingButton } from '@proton/pass/components/Menu/B2B/OnboardingButton';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
+import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -35,6 +36,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const authService = useAuthService();
     const onboarding = useOnboarding();
     const org = useOrganization();
+    const secureLinkEnabled = useFeatureFlag(PassFeature.PassPublicLinkV1);
     const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
 
     const menu = useMenuItems({ onAction: onToggle });
@@ -72,6 +74,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-4">
+                {secureLinkEnabled && <SecureLinkButton />}
                 {canLock && (
                     <DropdownMenuButton
                         onClick={() => authService.lock(lockMode, { broadcast: true, soft: false })}
@@ -81,13 +84,10 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         className="rounded"
                     />
                 )}
-
                 {onboarding.enabled && <OnboardingButton />}
                 {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
-
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
                 {monitorEnabled && <MonitorButton />}
-
                 <Submenu
                     icon="bolt"
                     label={c('Action').t`Advanced`}
@@ -95,7 +95,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
-
                 <Submenu
                     icon="bug"
                     label={c('Action').t`Feedback`}
@@ -103,7 +102,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
-
                 <Submenu
                     icon="mobile"
                     label={c('Action').t`Get mobile apps`}
@@ -111,9 +109,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
-
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-
                 <div className="flex items-center justify-space-between shrink-0 flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
                     <span className={clsx('flex items-center flex-nowrap', isPaidPlan(passPlan) && 'ui-orange')}>
                         <Icon name="star" className="mr-3 shrink-0" color="var(--interaction-norm)" />
