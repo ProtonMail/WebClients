@@ -1,5 +1,5 @@
 import { Icon } from '@proton/components'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   WebsocketConnectionEvent,
   WebsocketConnectionEventPayloads,
@@ -9,9 +9,12 @@ import { useApplication } from '../../Containers/ApplicationProvider'
 import { mergeRegister } from '@lexical/utils'
 import { ConnectionCloseReason } from '@proton/docs-proto'
 import { c } from 'ttag'
-import { useGenericAlertModal } from '../Modals/GenericAlert'
 import CloudIcon from '../../Icons/CloudIcon'
+import CloudSlashIcon from '../../Icons/CloudSlashIcon'
 import ArrowsRotate from '../../Icons/ArrowsRotate'
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import Pill from '../Pill'
+import PopoverPill from '../PopoverPill'
 
 /**
  * Number of ms a "Saving..." status should be shown at minimum, to prevent fast-paced/jarring switching
@@ -25,7 +28,6 @@ export const ConnectionStatus = () => {
   const [disconnectReason, setDisconnectReason] = useState<ConnectionCloseReason>()
   const [hasConcerningMessages, setHasConcerningMessages] = useState(false)
   const [hasErroredMessages, setHasErroredMessages] = useState(false)
-  const [genericAlertModal, showGenericAlertModal] = useGenericAlertModal()
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [saveStartTime, setSaveStartTime] = useState(0)
@@ -79,94 +81,99 @@ export const ConnectionStatus = () => {
     )
   }, [application.eventBus, saveStartTime])
 
-  const showConcernedSyncAlert = useCallback(() => {
-    showGenericAlertModal({
-      title: c('Title').t`Some edits are taking longer to sync`,
-      translatedMessage: c('Info')
-        .t`Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.`,
-    })
-  }, [showGenericAlertModal])
-
-  const showErroredSyncAlert = useCallback(() => {
-    showGenericAlertModal({
-      title: c('Title').t`Some edits failed to sync`,
-      translatedMessage: c('Info')
-        .t`Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.`,
-    })
-  }, [showGenericAlertModal])
-
   const disconnectReasonMessage = disconnectReason ? disconnectReason?.props.message : ''
 
-  let content = null
-  if (status === WebsocketConnectionEvent.Connecting) {
-    content = (
-      <>
-        <Icon name="arrow-rotate-right" className="animate-spin" />
-        {c('Info').t`Connecting...`}
-      </>
-    )
-  } else if (status === WebsocketConnectionEvent.Disconnected) {
-    content = (
-      <>
-        <Icon name="exclamation-circle" />
-        {c('Info').t`Disconnected: ${disconnectReasonMessage}`}
-      </>
-    )
-  } else if (status === WebsocketConnectionEvent.FailedToConnect) {
-    content = (
-      <>
-        <Icon name="exclamation-circle" />
-        {c('Info').t`Failed to connect: ${disconnectReasonMessage}`}
-      </>
-    )
+  let connectionPill = null
+  switch (status) {
+    case WebsocketConnectionEvent.Connecting:
+      {
+        connectionPill = (
+          <Pill>
+            <Icon name="arrow-rotate-right" className="animate-spin" />
+            {c('Info').t`Connecting...`}
+          </Pill>
+        )
+      }
+      break
+    case WebsocketConnectionEvent.FailedToConnect:
+    case WebsocketConnectionEvent.Disconnected:
+      connectionPill = (
+        <PopoverPill
+          title={
+            <div className="flex gap-2">
+              <CloudSlashIcon className="h-6 w-6 fill-current" />
+              <span>{c('Title').t`Offline`}</span>
+            </div>
+          }
+          content={
+            <>
+              <div>{c('Info')
+                .t`Looks like you're offline. Document can not be edited while you are offline. Please check your device's connectivity.`}</div>
+              {disconnectReasonMessage && <div className="pt-4">{disconnectReasonMessage}</div>}
+            </>
+          }
+        >
+          <CloudSlashIcon className="h-4 w-4 fill-current" />
+          {c('Info').t`Offline`}
+        </PopoverPill>
+      )
+      break
   }
-
-  const isNotConnected =
-    status === WebsocketConnectionEvent.FailedToConnect || status === WebsocketConnectionEvent.Disconnected
 
   return (
     <div className="flex select-none items-center gap-3">
-      {content && (
-        <>
-          <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
-            {content}
-          </div>
-          {isNotConnected && (
-            <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
-              {c('Info').t`Recent edits may not be displayed`}
-            </div>
-          )}
-        </>
-      )}
+      {connectionPill}
       {saving && (
-        <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
-          <ArrowsRotate className="h-3.5 w-3.5 fill-current animate-spin" />
+        <PopoverPill
+          title={
+            <div className="flex gap-2">
+              <ArrowsRotate className="h-6 w-6 animate-spin fill-current" />
+              <span>{c('Info').t`Saving`}</span>
+            </div>
+          }
+          content={
+            <>
+              <div>{c('Info').t`Your changes are being synced to Drive. Please do not close the web page.`}</div>
+              {hasConcerningMessages && (
+                <div className="pt-4">{c('Info')
+                  .t`Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.`}</div>
+              )}
+            </>
+          }
+        >
+          <ArrowsRotate className="h-3.5 w-3.5 animate-spin fill-current" />
           {c('Info').t`Saving...`}
-        </div>
+        </PopoverPill>
       )}
       {saved && (
-        <div className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]">
-          <CloudIcon className="h-4 w-4 fill-current" />
-          {c('Info').t`Saved`}
-        </div>
-      )}
-      {hasConcerningMessages && (
-        <button
-          className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]"
-          onClick={showConcernedSyncAlert}
+        <PopoverPill
+          title={
+            <div className="flex gap-2">
+              <CloudIcon className="h-6 w-6 fill-current" />
+              <span>{c('Info').t`All changes saved to Drive`}</span>
+            </div>
+          }
+          content={c('Info').t`Every change you make is automatically and securely saved to Drive.`}
         >
-          {c('Info').t`Some edits are taking longer to sync`}
-        </button>
+          <CloudIcon className="h-4 w-4 fill-current" />
+          {c('Info').t`Saved in ${DRIVE_APP_NAME}`}
+        </PopoverPill>
       )}
       {hasErroredMessages && (
-        <button
-          className="flex items-center gap-1 rounded-lg bg-weak px-2 py-1 text-xs text-[--text-weak]"
-          onClick={showErroredSyncAlert}
+        <PopoverPill
+          title={
+            <div className="flex gap-2">
+              <Icon name="exclamation-circle" className="h-6 w-6 fill-current" />
+              <span>{c('Title').t`Error Syncing`}</span>
+            </div>
+          }
+          content={c('Info')
+            .t`Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.`}
         >
-          {c('Info').t`Some edits failed to sync`}
-        </button>
+          <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
+          {c('Info').t`Error Syncing`}
+        </PopoverPill>
       )}
-      {genericAlertModal}
     </div>
   )
 }
