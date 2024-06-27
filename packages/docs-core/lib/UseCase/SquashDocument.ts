@@ -14,7 +14,6 @@ import { DocsApi } from '../Api/Docs/DocsApi'
 import { EncryptMessage } from './EncryptMessage'
 import { DocumentKeys } from '@proton/drive-store'
 import { DocumentMetaInterface } from '@proton/docs-shared'
-import { GenerateManifestSignature } from './GenerateManifestSignature'
 import { DecryptCommit } from './DecryptCommit'
 import metrics from '@proton/metrics'
 import { UpdatePair, SquashAlgorithm, SquashResult } from './SquashAlgorithm'
@@ -43,7 +42,6 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     private encryptMessage: EncryptMessage,
     private decryptCommit: DecryptCommit,
     private verifyCommit: VerifyCommit,
-    private generateManifest: GenerateManifestSignature,
     private squashAlgoritm: SquashAlgorithm,
   ) {}
 
@@ -78,7 +76,7 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       }
     }
 
-    const squashCommitResult = await this.squashTheCommit(docMeta, decryptedCommit, squashLock, keys)
+    const squashCommitResult = await this.squashTheCommit(decryptedCommit, squashLock, keys)
     if (squashCommitResult.isFailed()) {
       return Result.fail(squashCommitResult.getError())
     }
@@ -94,18 +92,10 @@ export class SquashDocument implements UseCaseInterface<boolean> {
   }
 
   async squashTheCommit(
-    document: DocumentMetaInterface,
     decryptedCommit: DecryptedCommit,
     squashLock: SquashLock,
     keys: DocumentKeys,
   ): Promise<Result<SquashCommit>> {
-    const manifestResult = await this.generateManifest.execute(document, squashLock.commit)
-    if (manifestResult.isFailed()) {
-      return Result.fail(manifestResult.getError())
-    }
-
-    const { manifestSignature, signatureAddress, encSignature, contentHash } = manifestResult.getValue()
-
     const updatePairs: UpdatePair[] = decryptedCommit.updates.map((update, index) => ({
       encrypted: squashLock.commit.updates.documentUpdates[index],
       decrypted: update,
@@ -141,10 +131,6 @@ export class SquashDocument implements UseCaseInterface<boolean> {
       lockId: squashLock.lockId,
       commitId: squashLock.commitId,
       commit,
-      manifestSignature,
-      signatureAddress,
-      encSignature,
-      contentHash,
     })
 
     return Result.ok(squashCommit)

@@ -3,7 +3,6 @@ import { queryCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { CreateDocumentResult } from '@proton/shared/lib/interfaces/drive/documents';
-import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 import {
     encryptName,
     generateContentKeys,
@@ -21,7 +20,7 @@ import { useShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { LegacyNodeMeta, NodeMeta } from '../interface';
-import { DocumentKeys, DocumentManifest, DocumentNodeMeta, SignedData } from './interface';
+import { DocumentKeys, DocumentNodeMeta } from './interface';
 
 export const useDocuments = () => {
     const debouncedRequest = useDebouncedRequest();
@@ -167,45 +166,10 @@ export const useDocuments = () => {
         return url;
     };
 
-    const signDocumentData = async ({ shareId }: LegacyNodeMeta, data: Uint8Array): Promise<SignedData> => {
-        const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
-
-        const { BlockHash } = await generateContentHash(data);
-        const signature = await sign(data, addressKey);
-
-        return {
-            data,
-            hash: BlockHash,
-            signature,
-            signatureAddress: address.Email,
-        };
-    };
-
-    /**
-     * Content passed assumes documents are only one block.
-     */
-    const signDocumentManifest = async (
-        { shareId }: LegacyNodeMeta,
-        content: Uint8Array
-    ): Promise<DocumentManifest> => {
-        const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
-
-        const manifest = await generateContentHash(content);
-        const manifestSignature = await sign(manifest.BlockHash, addressKey);
-
-        return {
-            manifest: manifest.BlockHash,
-            manifestSignature,
-            signatureAddress: address.Email,
-        };
-    };
-
     return {
         createDocumentNode,
         getDocumentKeys,
         renameDocument,
         getDocumentUrl,
-        signDocumentManifest,
-        signDocumentData,
     };
 };
