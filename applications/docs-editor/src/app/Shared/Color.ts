@@ -1,13 +1,19 @@
-const CommonColorOptions = Object.entries({
-  Grey: '92, 89, 88',
-  Purple: '109, 74, 255',
-  Orange: '230, 99, 0',
-  Yellow: '255, 153, 0',
-  Green: '30, 168, 133',
-  Blue: '35, 158, 206',
-  Red: '220, 50, 81',
-  Pink: '249, 124, 161',
-})
+import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors'
+import tinycolor from 'tinycolor2'
 
-export const PredefinedTextColorOptions = [['Default', '12, 12, 20']].concat(CommonColorOptions)
-export const PredefinedHighlightColorOptions = [['Default', '255, 255, 255']].concat(CommonColorOptions)
+export const TextColors = [
+  '#0C0C14',
+  '#5C5958',
+  '#6D4AFF',
+  ACCENT_COLORS_MAP.pacific.color,
+  ACCENT_COLORS_MAP.carrot.color,
+  ACCENT_COLORS_MAP.olive.color,
+  ACCENT_COLORS_MAP.reef.color,
+  '#DC3251',
+  ACCENT_COLORS_MAP.pink.color,
+  ACCENT_COLORS_MAP.sahara.color,
+]
+
+export const BackgroundColors = ([null] as (string | null)[]).concat(
+  TextColors.map((color) => tinycolor(color).setAlpha(0.15).toRgbString()),
+)
