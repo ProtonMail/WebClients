@@ -2,7 +2,6 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
-import { CheckListPlugin } from '@lexical/react/LexicalCheckListPlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
 import { useCallback, useMemo } from 'react'
 import { Provider } from '@lexical/yjs'
@@ -38,6 +37,7 @@ import { DocumentInteractionMode } from './DocumentInteractionMode'
 import { TablePlugin } from './Plugins/Table/TablePlugin'
 import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
+import { CheckListPlugin } from './Plugins/CheckListPlugin'
 
 const TypingBotEnabled = false
 
