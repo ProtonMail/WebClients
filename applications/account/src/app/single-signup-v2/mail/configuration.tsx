@@ -306,11 +306,6 @@ export const getMailConfiguration = ({
             </>
         ),
         CustomStep,
-        cycles: (() => {
-            if (audience === Audience.B2B) {
-                return [CYCLE.MONTHLY, CYCLE.YEARLY];
-            }
-            return [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS];
-        })(),
+        cycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
     };
 };
