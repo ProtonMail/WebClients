@@ -1,5 +1,5 @@
 const CloudIcon = ({ className }: { className?: string }) => (
-  <svg width="16" height="16" viewBox="0 0 16 16" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 16 16" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
