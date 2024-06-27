@@ -285,7 +285,7 @@ const handleKeyUpgrade = async ({
 };
 
 export const getUnlockError = () => {
-    const error: any = new Error(c('Error').t`Incorrect mailbox password. Please try again.`);
+    const error: any = new Error(c('Error').t`Incorrect second password. Please try again.`);
     error.name = 'PasswordError';
     error.trace = false;
     return error;
