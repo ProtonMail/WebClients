@@ -4610,6 +4610,9 @@
       "Photos have been successfully recovered.": [
         "Les photos ont été récupérées."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Veuillez demander au propriétaire de vous inviter directement au document."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Authentifiez votre carte dans l'onglet de vérification."
       ],
@@ -4633,6 +4636,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
+      ],
+      "Please open the document to view it.": [
+        "Veuillez ouvrir le document pour le visualiser."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indiquez un nom et une adresse e-mail pour créer un groupe."
@@ -4683,8 +4689,8 @@
       "Preview for this file type is not supported": [
         "La prévisualisation de ce type de fichier n'est pas prise en charge."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "L'aperçu de documents n'est pas encore pris en charge. Veuillez ouvrir le document pour l'afficher."
+      "Preview of documents is not yet supported.": [
+        "L'aperçu des documents n'est pas encore pris en charge."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Les versions précédentes sont conservées pendant ${ retentionLabel }."
@@ -4701,8 +4707,8 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "La recherche privée est activée. Vous pouvez fermer cette fenêtre et rechercher des fichiers et dossiers."
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Le partage public de documents n'est pas encore pris en charge. Contactez le propriétaire pour qu'il vous invite directement à accéder au document."
+      "Public sharing of documents is not yet supported.": [
+        "Le partage public de documents n'est pas encore pris en charge."
       ],
       "Queued": [
         "En file d'attente"
@@ -7656,8 +7662,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Je l'ai"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Traitement des payements"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Le code cadeau est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
@@ -7670,6 +7682,9 @@
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Nous traitons votre paiement pour la facture facturée. Veuillez attendre que le paiement soit effectué avant de modifier votre plan ou de mettre à jour vos informations de paiement. Merci pour votre patience."
       ]
     },
     "Payments.Error": {

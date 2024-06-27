@@ -4610,6 +4610,9 @@
       "Photos have been successfully recovered.": [
         "Bildene er gjenopprettet."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Be eieren om å invitere deg direkte til dokumentet."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Vennligst autentiser kortet ditt i verifiseringsfanen."
       ],
@@ -4633,6 +4636,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vennligst vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ creditsRemaining } kreditter igjen."
+      ],
+      "Please open the document to view it.": [
+        "Vennligst åpne dokumentet for å se det."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Vennligst oppgi et navn og en e-postadresse for å opprette en gruppe."
@@ -4683,8 +4689,8 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning av denne filtypen er ikke støttet"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Forhåndsvisning av dokumenter støttes ikke enda. Åpne dokumentet for å se det."
+      "Preview of documents is not yet supported.": [
+        "Forhåndsvisning av dokumenter støttes ikke enda."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Tidligere versjoner beholdes for ${ retentionLabel }"
@@ -4701,8 +4707,8 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat søk aktivert. Du kan nå lukke denne dialogen og søke etter filer og mapper."
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Offentlig deling av dokumenter støttes ikke enda. Be eieren om å invitere deg direkte til dokumentet."
+      "Public sharing of documents is not yet supported.": [
+        "Offentlig deling av dokumenter støttes enda ikke."
       ],
       "Queued": [
         "I kø"
@@ -7713,8 +7719,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Har det"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Payment Processing": [
+        "Behandler innbetaling"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Da vil den automatisk bli fornyet til ${ price } for ${ months } måneder. Du kan avbryte når som helst."
@@ -7727,6 +7739,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Vi behandler innbetalingen på fakturaen for øyeblikket. Vennligst ikke oppdater plan eller betalingsmetode før transaksjonen er ferdig behandlet. Takk."
       ]
     },
     "Payments.Error": {
