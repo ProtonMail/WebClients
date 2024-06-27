@@ -6,6 +6,7 @@ import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryption
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding'
+import metrics from '@proton/metrics'
 
 export class EncryptComment implements UseCaseInterface<string> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
@@ -22,6 +23,10 @@ export class EncryptComment implements UseCaseInterface<string> {
     )
 
     if (encrypted.isFailed()) {
+      metrics.docs_comments_error_total.increment({
+        reason: 'encryption_error',
+      })
+
       return Result.fail(encrypted.getError())
     }
 
