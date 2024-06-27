@@ -223,6 +223,8 @@ export class WebsocketService implements WebsocketServiceInterface {
   }
 
   onDocumentConnectionReadyToBroadcast(record: DocumentConnectionRecord): void {
+    this.logger.info('Received ready to broadcast message from RTS')
+
     record.connection.markAsReadyToAcceptMessages()
 
     record.debouncer.markAsReadyToFlush()
