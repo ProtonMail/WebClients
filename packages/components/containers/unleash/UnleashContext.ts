@@ -25,6 +25,7 @@ enum AccountFlag {
     MagicLink = 'MagicLink',
     PersistedState = 'PersistedState',
     AIAssistantToggleKillSwitch = 'AIAssistantToggleKillSwitch',
+    AIAssistantAddonSignup = 'AIAssistantAddonSignup',
     MailTrialOffer = 'MailTrialOffer',
     DriveTrialOffer = 'DriveTrialOffer',
     MaintenanceImporter = 'MaintenanceImporter',
