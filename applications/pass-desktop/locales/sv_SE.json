@@ -394,6 +394,9 @@
       "Set access level": [
         "Ställ in åtkomstnivå"
       ],
+      "Setup 2FA": [
+        "Ställ in 2FA"
+      ],
       "Share": [
         "Dela"
       ],
@@ -829,6 +832,9 @@
       ],
       "Vault name does not match": [
         "Valvnamn matchar inte"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Vi stötte på ett problem när vi startade ${ PASS_SHORT_APP_NAME }. Om problemet kvarstår, kontakta vår kundsupport för hjälp."
       ],
       "Wrong password": [
         "Fel lösenord"
@@ -1633,6 +1639,9 @@
       ],
       "You're invited to a vault.": [
         "Du är inbjuden till ett valv."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Ditt konto är begränsat eftersom din organisation har tvingat tvåfaktorsautentisering. Aktivera tvåfaktorsautentisering i dina kontoinställningar eller kontakta din administratör."
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
