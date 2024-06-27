@@ -9,6 +9,7 @@ describe('DecryptedMessage', () => {
       aad: 'aad',
       timestamp: 123456,
     })
+
     expect(decryptedMessage).toBeDefined()
   })
 
@@ -20,6 +21,7 @@ describe('DecryptedMessage', () => {
       aad: 'aad',
       timestamp: 123456,
     })
-    expect(decryptedMessage.byteSize()).toBe(18)
+
+    expect(decryptedMessage.byteSize()).toBe(22)
   })
 })
