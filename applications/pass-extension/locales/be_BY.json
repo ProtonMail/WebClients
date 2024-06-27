@@ -401,6 +401,9 @@
       "Set access level": [
         "Задаць узровень доступу"
       ],
+      "Setup 2FA": [
+        "Наладжванне 2ФА"
+      ],
       "Share": [
         "Абагуліць"
       ],
@@ -1634,6 +1637,9 @@
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблакіраваны"
       ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Ваш уліковы запіс абмежаваны па той прычыне, што ў вашай арганізацыі прысутнічае прымусовая двухфактарная аўтэнтыфікацыя. Уключыце двухфактарную аўтэнтыфікацыю ў наладах уліковага запісу або звяжыцеся са сваім адміністратарам."
+      ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ]
@@ -1652,7 +1658,7 @@
         "${ config.options.wordCount } слоў"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
-        "Назіранне ${ PASS_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
