@@ -67,53 +67,74 @@ async function checkForValidUpdates() {
         return;
     }
 
-    const latest = ((): ReleaseInfo | undefined => {
-        if (local.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS) {
-            const latest_early = availableVersions.Releases.find(
-                (r: ReleaseInfo) =>
-                    r.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS || r.CategoryName === RELEASE_CATEGORIES.STABLE,
-            );
-            if (latest_early) {
-                return latest_early;
-            }
-        }
+    const newUpdate = getNewUpdate(local, availableVersions);
 
-        return availableVersions.Releases.find((r: ReleaseInfo) => r.CategoryName === RELEASE_CATEGORIES.STABLE);
-    })();
-
-    if (!latest) {
-        updateLogger.warn(`Check update: failed to find latest versions for "${local.CategoryName}"`);
+    if (!newUpdate) {
         return;
     }
 
-    if (!isANewerThanB(latest.Version, local.Version)) {
-        updateLogger.info("Skipping update: no newer version avaiable, local:", local, "latest:", latest);
-        return;
-    }
+    updateLogger.info("New valid update found! new:", newUpdate, "local:", local);
 
-    if (local.RolloutProportion > latest.RolloutProportion) {
-        updateLogger.info(
-            "Skipping update: a newer version is available",
-            latest,
-            `but rollout is low, local:${local.RolloutProportion * 100}%`,
-        );
-        return;
-    }
-
-    updateLogger.info("New valid update found! Latest:", latest, "local:", local);
-
-    validUpdate.Version = latest.Version;
-    validUpdate.CategoryName = latest.CategoryName;
-    validUpdate.RolloutProportion = latest.RolloutProportion;
+    validUpdate.Version = newUpdate.Version;
+    validUpdate.CategoryName = newUpdate.CategoryName;
+    validUpdate.RolloutProportion = newUpdate.RolloutProportion;
 
     updateElectronApp({
         updateSource: {
             type: UpdateSourceType.StaticStorage,
-            baseUrl: `https://github.com/${pkg.config.githubUser}/${pkg.config.githubRepo}/releases/download/${latest.Version}`,
+            baseUrl: `https://proton.me/download/mail/${platform}/${newUpdate.Version}/`,
         },
         updateInterval: "5 min", // minimal
         logger: updateLogger,
     });
+}
+
+function getNewUpdate(local: ReleaseInfo, unorderedAvailableVersions: ReleaseList): ReleaseInfo | undefined {
+    const availableVersions = {
+        Releases: unorderedAvailableVersions.Releases.sort((a: ReleaseInfo, b: ReleaseInfo) =>
+            Math.sign(semver(b.Version) - semver(a.Version)),
+        ),
+    };
+
+    return ((): ReleaseInfo | undefined =>
+        availableVersions.Releases.find((r: ReleaseInfo) => {
+            if (local.CategoryName === RELEASE_CATEGORIES.STABLE && r.CategoryName !== RELEASE_CATEGORIES.STABLE) {
+                return false;
+            }
+
+            if (
+                local.CategoryName === RELEASE_CATEGORIES.EARLY_ACCESS &&
+                r.CategoryName !== RELEASE_CATEGORIES.STABLE &&
+                r.CategoryName !== RELEASE_CATEGORIES.EARLY_ACCESS
+            ) {
+                return false;
+            }
+
+            if (
+                local.CategoryName === RELEASE_CATEGORIES.ALPHA &&
+                r.CategoryName !== RELEASE_CATEGORIES.STABLE &&
+                r.CategoryName !== RELEASE_CATEGORIES.EARLY_ACCESS &&
+                r.CategoryName !== RELEASE_CATEGORIES.ALPHA
+            ) {
+                return false;
+            }
+
+            if (!isANewerThanB(r.Version, local.Version)) {
+                updateLogger.info("Skipping update: no newer version avaiable, local:", local, "latest:", r);
+                return false;
+            }
+
+            if (local.RolloutProportion > r.RolloutProportion) {
+                updateLogger.info(
+                    "Skipping update: a newer version is available",
+                    r,
+                    `but rollout is low, local:${local.RolloutProportion * 100}%`,
+                );
+                return false;
+            }
+
+            return true;
+        }))();
 }
 
 function getVersionURL(platform: DESKTOP_PLATFORMS) {
@@ -131,15 +152,12 @@ function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<ReleaseList 
         .fetch(getVersionURL(platform), { cache: "no-cache" })
         .then((r) => r.json())
         .then((data) => releaseListSchema.parse(data))
-        .then((unsortedVersions) => {
-            return {
-                Releases: unsortedVersions.Releases.sort((a: ReleaseInfo, b: ReleaseInfo) =>
-                    Math.sign(semver(b.Version) - semver(a.Version)),
-                ),
-            };
-        })
         .catch((e) => {
             updateLogger.warn("Check update: failed to get available versions:", e);
             return undefined;
         });
 }
+
+export const getNewUpdateTestOnly = getNewUpdate;
+export const releaseListSchemaTestOnly = releaseListSchema;
+export const releaseInfoSchemaTestOnly = releaseInfoSchema;

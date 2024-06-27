@@ -55,8 +55,17 @@ export const getSettings = (): SettingsStore => {
 };
 
 export function setReleaseCategory(targetEnv: Environment | undefined) {
-    settingsLogger.info("Updating release cathegory", targetEnv);
+    settingsLogger.info("Updating release category", targetEnv);
     const settings = getSettings();
-    settings.releaseCategory = targetEnv ? RELEASE_CATEGORIES.EARLY_ACCESS : RELEASE_CATEGORIES.STABLE;
+    switch (targetEnv) {
+        case "alpha":
+            settings.releaseCategory = RELEASE_CATEGORIES.ALPHA;
+            break;
+        case "beta":
+            settings.releaseCategory = RELEASE_CATEGORIES.EARLY_ACCESS;
+            break;
+        default:
+            settings.releaseCategory = RELEASE_CATEGORIES.STABLE;
+    }
     saveSettings(settings);
 }
