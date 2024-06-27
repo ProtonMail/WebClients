@@ -47,7 +47,7 @@ const PasswordsSection = () => {
     const [skipInfoStep, setSkipInfoStep] = useState(false);
 
     const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
-    const passwordLabel = isOnePasswordMode ? c('Title').t`Password` : c('Title').t`Login password`;
+    const passwordLabel = isOnePasswordMode ? c('Title').t`Password` : c('Title').t`Main password`;
     const passwordButtonLabel = isOnePasswordMode ? c('Title').t`Change password` : c('Title').t`Change login password`;
     const changePasswordMode = isOnePasswordMode
         ? MODES.CHANGE_ONE_PASSWORD_MODE
@@ -173,7 +173,7 @@ const PasswordsSection = () => {
                                     <Info
                                         url={getKnowledgeBaseUrl('/single-password')}
                                         title={c('Info')
-                                            .t`Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)`}
+                                            .t`Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)`}
                                     />
                                 </label>
                             </SettingsLayoutLeft>
@@ -194,7 +194,7 @@ const PasswordsSection = () => {
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
                                     <label htmlFor="passwordModeToggle" className="text-semibold">
-                                        <span className="mr-2">{c('Label').t`Mailbox password`}</span>
+                                        <span className="mr-2">{c('Label').t`Second password`}</span>
                                         <Info url={getKnowledgeBaseUrl('/single-password')} />
                                     </label>
                                 </SettingsLayoutLeft>
@@ -202,7 +202,7 @@ const PasswordsSection = () => {
                                     <Button
                                         onClick={() => handleChangePassword(MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE)}
                                     >
-                                        {c('Action').t`Change mailbox password`}
+                                        {c('Action').t`Change second password`}
                                     </Button>
                                 </SettingsLayoutRight>
                             </SettingsLayout>

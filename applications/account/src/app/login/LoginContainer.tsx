@@ -348,7 +348,7 @@ const LoginContainer = ({
             {step === AuthStep.UNLOCK && cache && (
                 <>
                     {render({
-                        title: c('Title').t`Unlock your mailbox`,
+                        title: c('Title').t`Unlock your data`,
                         onBack: handleBackStep,
                         content: (
                             <UnlockForm
