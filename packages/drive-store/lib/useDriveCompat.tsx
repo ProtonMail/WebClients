@@ -5,7 +5,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
-import { useOpenDocument } from '../store/_documents';
+import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
 import { DocumentKeys, DocumentManifest, DocumentNodeMeta, SignedData, useDocuments } from './_documents';
 import { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
@@ -13,6 +13,16 @@ import { useMyFiles, useResolveShareId } from './_shares';
 import { NodeMeta } from './interface';
 
 export interface DriveCompat {
+    /**
+     * Whether or not Docs is enabled. Only uses feature flags, not context aware.
+     */
+    isDocsEnabled: boolean;
+
+    /**
+     * Gets whether or not Docs can be used, with awareness of the context.
+     */
+    canUseDocs: (meta: NodeMeta) => Promise<boolean>;
+
     /**
      * Gets a node, either from cache or fetched.
      */
@@ -112,12 +122,15 @@ export const useDriveCompat = (): DriveCompat => {
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
+    const { isDocsEnabled, canUseDocs } = useDriveDocsFeatureFlag();
 
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const openDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open' });
 
     return {
+        isDocsEnabled,
+        canUseDocs: withResolve(({ shareId }) => canUseDocs(shareId)),
         createDocumentNode: withResolve(createDocumentNode),
         getDocumentKeys: withResolve(getDocumentKeys),
         getNode: withResolve(getNode),

@@ -6,7 +6,7 @@ import { useDriveDocsFeatureFlag } from './useDriveDocsFeatureFlag';
 
 export const useOpenInDocs = (link: DecryptedLink | undefined) => {
     const { openDocument, convertDocument } = useDocumentActions();
-    const isDocsEnabled = useDriveDocsFeatureFlag();
+    const { isDocsEnabled } = useDriveDocsFeatureFlag();
 
     const mimeType = link?.mimeType || '';
 
