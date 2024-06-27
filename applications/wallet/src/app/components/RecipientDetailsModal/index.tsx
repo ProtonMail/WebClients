@@ -24,25 +24,25 @@ export const RecipientDetailsModal = ({ recipient, btcAddress, index, ...modalPr
     return (
         <Modal {...modalProps}>
             <div className="flex flex-column items-center">
+                <div
+                    className={clsx(
+                        'rounded-full w-custom h-custom mb-4 flex items-center justify-center text-xl text-semibold no-shrink',
+                        getThemeByIndex(index)
+                    )}
+                    style={{
+                        '--h-custom': '3.5rem',
+                        '--w-custom': '3.5rem',
+                        background: 'var(--interaction-norm-minor-1)',
+                        color: 'var(--interaction-norm)',
+                    }}
+                >
+                    {getInitials(recipient.Name || recipient.Address)}
+                </div>
+
                 {isOnlyBtcAddress ? (
                     <div>{c('Recipient details').t`External recipient`}</div>
                 ) : (
                     <>
-                        <div
-                            className={clsx(
-                                'rounded-full w-custom h-custom mb-4 flex items-center justify-center text-xl text-semibold no-shrink',
-                                getThemeByIndex(index)
-                            )}
-                            style={{
-                                '--h-custom': '3.5rem',
-                                '--w-custom': '3.5rem',
-                                background: 'var(--interaction-norm-minor-1)',
-                                color: 'var(--interaction-norm)',
-                            }}
-                        >
-                            {getInitials(recipient.Name || recipient.Address)}
-                        </div>
-
                         <h1 className="text-semibold text-break text-xl mb-2">{recipient.Name}</h1>
 
                         {recipient.Name !== recipient.Address && (
@@ -53,7 +53,7 @@ export const RecipientDetailsModal = ({ recipient, btcAddress, index, ...modalPr
 
                 <div className="flex flex-column items-start mt-12 mb-6">
                     <div className="text-xl color-hint mb-1">{c('Recipient details').t`BTC address`}</div>
-                    <div className="text-xl text-break">{btcAddress}</div>
+                    <div className="text-lg text-break">{btcAddress}</div>
                 </div>
 
                 <div className="w-full px-8">

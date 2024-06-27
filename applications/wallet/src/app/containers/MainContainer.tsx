@@ -13,6 +13,7 @@ import { WalletContainer } from './WalletContainer';
 
 const MainContainer = () => {
     const { viewportWidth } = useActiveBreakpoint();
+
     return (
         <ErrorBoundary component={<StandardErrorPage big />}>
             <QuickSettingsRemindersProvider>

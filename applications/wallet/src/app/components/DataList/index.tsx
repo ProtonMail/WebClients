@@ -51,7 +51,7 @@ export const DataList = <I extends { key: string }>({ columns, rows, canClickRow
 
     return (
         <div
-            className="datagrid-container h-full w-full py-2"
+            className="datagrid-container w-full py-2"
             style={{
                 gridTemplateColumns: columns.map(({ colSpan }) => colSpan).join(' '),
             }}
