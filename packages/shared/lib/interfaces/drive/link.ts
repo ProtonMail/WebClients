@@ -51,6 +51,10 @@ interface FolderProperties {
     NodeHashKey: string;
 }
 
+interface DocumentProperties {
+    Size: number;
+}
+
 interface DriveLink {
     LinkID: string;
     ParentLinkID: string;
@@ -78,6 +82,7 @@ interface DriveLink {
     Permissions: number;
     FileProperties: FileProperties | null;
     FolderProperties: FolderProperties | null;
+    DocumentProperties: DocumentProperties | null;
     Shared: number;
     UrlsExpired: boolean;
     ShareIDs: string[];
