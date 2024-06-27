@@ -69,6 +69,9 @@
       "Add note": [
         "Добавить заметку"
       ],
+      "Add people or groups to share": [
+        "Добавьте людей или группы для использования общего ресурса"
+      ],
       "Add phone number": [
         "Добавить номер телефона"
       ],
@@ -104,6 +107,9 @@
       ],
       "Cancel all uploads": [
         "Отменить все загрузки"
+      ],
+      "Cancel download": [
+        "Отменить скачивание"
       ],
       "Cancel subscription": [
         "Отменить подписку"
@@ -161,6 +167,12 @@
       ],
       "Copy email to clipboard": [
         "Скопировать адрес электронной почты в буфер обмена"
+      ],
+      "Copy invite link": [
+        "Скопировать ссылку-приглашение"
+      ],
+      "Copy link": [
+        "Копировать ссылку"
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
@@ -396,6 +408,9 @@
       "Previous month": [
         "Предыдущий месяц"
       ],
+      "Print": [
+        "Печать"
+      ],
       "Quit": [
         "Выход"
       ],
@@ -416,6 +431,9 @@
       ],
       "Remove": [
         "Удалить"
+      ],
+      "Remove access": [
+        "Отменить доступ"
       ],
       "Remove bonuses": [
         "Удалить бонусы"
@@ -444,6 +462,9 @@
       "Resend code": [
         "Повторно отправить код"
       ],
+      "Resend invite": [
+        "Отправить приглашение повторно"
+      ],
       "Reset to default": [
         "Сбросить к умолчанию"
       ],
@@ -452,6 +473,9 @@
       ],
       "Save": [
         "Сохранить"
+      ],
+      "Save changes": [
+        "Сохранить изменения"
       ],
       "Search countries": [
         "Поиск стран"
@@ -491,6 +515,9 @@
       ],
       "Stay": [
         "Остаться"
+      ],
+      "Stop sharing": [
+        "Закрыть доступ"
       ],
       "Submit": [
         "Отправить"
@@ -2045,6 +2072,9 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
+      "Account does not exist": [
+        "Аккаунт не существует"
+      ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
@@ -2059,6 +2089,9 @@
       ],
       "Aliases could not be loaded": [
         "Псевдонимы не могут быть загружены"
+      ],
+      "Already a member of this share": [
+        "Уже участник этого общего ресурса"
       ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
@@ -2138,6 +2171,15 @@
       "Error decrypting a computer": [
         "Ошибка расшифровки компьютера"
       ],
+      "Error: Update Too Large": [
+        "Ошибка: Обновление слишком велико"
+      ],
+      "External accounts are not supported yet": [
+        "Внешние аккаунты пока не поддерживаются"
+      ],
+      "External invitations are not available yet.": [
+        "Внешние приглашения пока недоступны."
+      ],
       "File \"${ name }\" is already downloading": [
         "Файл \"${ name }\" уже скачивается"
       ],
@@ -2194,6 +2236,9 @@
       ],
       "Invalid verification code": [
         "Неверный код подтверждения"
+      ],
+      "It looks like the text document you're trying to paste exceeds the allowed limit.": [
+        "Похоже, что текстовый документ, который вы пытаетесь вставить, превышает допустимый предел."
       ],
       "Item content cannot exceed 40KB": [
         "Содержимое элемента не может превышать 40 Кбайт"
@@ -2288,6 +2333,12 @@
       "Process aborted": [
         "Процесс прерван"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Удален повторяющийся приглашенный: ${ joinedInvitee }",
+        "Удалены повторяющиеся приглашенные: ${ joinedInvitee }",
+        "Удалены повторяющиеся приглашенные: ${ joinedInvitee }",
+        "Удалены повторяющиеся приглашенные: ${ joinedInvitee }"
+      ],
       "Request timed out": [
         "Время запроса истекло"
       ],
@@ -2326,6 +2377,9 @@
       ],
       "Tab closed": [
         "Вкладка закрыта"
+      ],
+      "The address might be misspelled": [
+        "Возможно, адрес указан неверно"
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
@@ -2407,6 +2461,9 @@
       ],
       "Username must end with a letter or digit": [
         "Имя пользователя должно заканчиваться буквой или цифрой"
+      ],
+      "Validation error": [
+        "Ошибка проверки"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Нельзя отправить письмо более чем ${ maxContacts } получателю",
@@ -3420,6 +3477,12 @@
       "and": [
         "и"
       ],
+      "Anyone with this link can access your file.": [
+        "Доступ к файлу разрешен всем, у кого есть ссылка."
+      ],
+      "Anyone with this link can access your folder.": [
+        "Доступ к вашей папке разрешен всем, у кого есть эта ссылка."
+      ],
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
@@ -3506,6 +3569,15 @@
       ],
       "Create in": [
         "Создать в"
+      ],
+      "Create public link": [
+        "Создать публичную ссылку"
+      ],
+      "Creating link to file": [
+        "Создание ссылки на файл"
+      ],
+      "Creating link to folder": [
+        "Создание ссылки на папку"
       ],
       "Creating new document...": [
         "Создание нового документа..."
@@ -3605,6 +3677,15 @@
       ],
       "Failed to connect: ${ disconnectReasonMessage }": [
         "Не удалось подключиться: ${ disconnectReasonMessage }"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Не удалось сгенерировать защищенную ссылку. Причина: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Не удалось сгенерировать защищенную ссылку. Повторите попытку позже"
+      ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        "Не удалось открыть защищенную ссылку. Причина: ${ error }"
       ],
       "Failing signatures will be re-signed by you": [
         "Неудавшиеся подписи будут вами переподписаны"
@@ -3744,6 +3825,9 @@
       "Loading document...": [
         "Загрузка документа..."
       ],
+      "Loading link": [
+        "Загрузка ссылки"
+      ],
       "Loading...": [
         "Загрузка..."
       ],
@@ -3752,6 +3836,12 @@
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символа",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символов",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символов"
       ],
       "Medium Priority": [
         "Средний приоритет"
@@ -3798,14 +3888,32 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Разрешен только ${ MAX_CUSTOM_PASSWORD_LENGTH } символ",
+        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символа",
+        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов",
+        "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов"
+      ],
+      "Only the people with the link and the password can access this file.": [
+        "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
+      ],
+      "Only the people with the link and the password can access this folder.": [
+        "Только люди со ссылкой и паролем могут получить доступ к этой папке."
+      ],
       "Organization size": [
         "Размер организации"
+      ],
+      "Owner": [
+        "Владелец"
       ],
       "password": [
         "пароль"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежи защищены шифрованием TLS и швейцарскими законами о частной жизни."
+      ],
+      "People with access": [
+        "Люди с доступом"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline совместим только с форматом «простой текст»."
@@ -3818,6 +3926,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Пожалуйста, подтвердите платёж во вкладке проверки."
+      ],
+      "Please export a copy of your current changes from the main menu and reload the page.": [
+        "Пожалуйста, экспортируйте копию текущих изменений из главного меню и перезагрузите страницу."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этим группам, НЕ будут удалены."
@@ -3861,6 +3972,12 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Пожалуйста, подождите, пока мы ищем контакты с данными, зашифрованными неактивным ключом."
       ],
+      "Preparing link to file": [
+        "Подготовка ссылки на файл"
+      ],
+      "Preparing link to folder": [
+        "Подготовка ссылки на папку"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
       ],
@@ -3869,6 +3986,9 @@
       ],
       "Recent edits may not be displayed": [
         "Последние изменения могут не отображаться"
+      ],
+      "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
+        "Последние изменения в документе сохранить не удалось. Для обеспечения безопасности данных редактирование временно отключено. Скачайте копию вашего документа из главного меню. После этого обновите страницу, чтобы снова подключиться."
       ],
       "recommended browser": [
         "рекомендуемый браузер"
@@ -3900,6 +4020,12 @@
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Настройка PGP позволяет отправлять электронную почту со сквозным шифрованием пользователю не-${ BRAND_NAME } сервиса, который использует службу, совместимую с PGP."
       ],
+      "Share via link settings": [
+        "Поделиться через настройки ссылки"
+      ],
+      "Shareable link for ${ boldNameText }": [
+        "Доступная для обмена ссылка для ${ boldNameText }"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Подпись не может быть подтверждена из-за сетевой ошибки, повторите попытку позже."
       ],
@@ -3908,6 +4034,15 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
+      ],
+      "Some edits are taking longer to sync": [
+        "Некоторые правки требуют больше времени для синхронизации"
+      ],
+      "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
+        "Некоторые правки синхронизируются дольше, чем ожидалось. Это может быть связано с проблемами в сети. Пока что вы можете продолжать редактирование. Если проблема сохранится, мы покажем более подробное сообщение об ошибке."
+      ],
+      "Some edits failed to sync": [
+        "Некоторые правки не удалось синхронизировать"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
@@ -3962,6 +4097,15 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "Эта ссылка будет навсегда отключена. Никто с этой ссылкой не сможет получить доступ к вашему файлу. Чтобы повторно поделиться файлом вам потребуется новая ссылка."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Эта ссылка будет навсегда отключена. Никто с этой ссылкой не сможет получить доступ к вашей папке. Чтобы повторно поделиться папкой, вам потребуется новая ссылка."
       ],
       "This message will be presented again later": [
         "Это сообщение будет представлено снова позже"
@@ -4104,6 +4248,9 @@
       "Writing assistant add-on": [
         "Расширение для помощника по написанию"
       ],
+      "you": [
+        "вы"
+      ],
       "You already have a free account": [
         "У вас уже есть бесплатная учётная запись"
       ],
@@ -4169,6 +4316,9 @@
       ],
       "You will lose access to Plus servers and features on this date.": [
         "В этот день вы потеряете доступ к серверам и функциям Plus."
+      ],
+      "You will lose all unsaved changes.": [
+        "Вы потеряете все несохраненные изменения."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
@@ -4330,6 +4480,9 @@
       "Add to group": [
         "Добавить в группу"
       ],
+      "Anyone with the link": [
+        "Любой, у кого есть ссылка"
+      ],
       "App password": [
         "Пароль приложения"
       ],
@@ -4447,6 +4600,9 @@
       "e.g., Amazon, eBay, Etsy": [
         "например, Amazon, eBay, Etsy"
       ],
+      "Editor": [
+        "Редактор"
+      ],
       "Email": [
         "Электронная почта"
       ],
@@ -4473,6 +4629,9 @@
       ],
       "Encrypt emails": [
         "Шифровать письма"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Стереть эту ссылку и удалить всех, кто имеет к ней доступ"
       ],
       "Expiration (${ patternExpiration })": [
         "Срок действия (${ patternExpiration })"
@@ -4543,6 +4702,12 @@
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
       ],
+      "Make editor": [
+        "Сделать редактором"
+      ],
+      "Make viewer": [
+        "Сделать зрителем"
+      ],
       "Manage categories": [
         "Управлять категориями"
       ],
@@ -4600,6 +4765,9 @@
       "Proration": [
         "Пропорциональное распределение"
       ],
+      "Protect with password": [
+        "Защитить паролем"
+      ],
       "Public keys": [
         "Открытые ключи"
       ],
@@ -4618,6 +4786,12 @@
       "Security code (${ codeName })": [
         "Код безопасности (${ codeName })"
       ],
+      "Set expiration date": [
+        "Задать срок действия"
+      ],
+      "Set link password": [
+        "Установка пароля ссылки"
+      ],
       "Sign emails": [
         "Подписать письма"
       ],
@@ -4629,6 +4803,9 @@
       ],
       "Start date": [
         "Дата начала"
+      ],
+      "Stop sharing": [
+        "Прекратить доступ"
       ],
       "Street address": [
         "Адрес"
@@ -4659,6 +4836,9 @@
       ],
       "Verification code": [
         "Код подтверждения"
+      ],
+      "Viewer": [
+        "Читатель"
       ],
       "What happened?": [
         "Что случилось?"
@@ -6016,6 +6196,9 @@
       "${ reason } has been enabled": [
         "${ reason } был включен"
       ],
+      "Access updated": [
+        "Доступ обновлен"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Все элементы скоро будут окончательно удалены из корзины"
       ],
@@ -6043,6 +6226,9 @@
       "Device renamed": [
         "Устройство переименовано"
       ],
+      "External invitation's email was sent again": [
+        "Электронное письмо с внешним приглашением было отправлено еще раз"
+      ],
       "Failed to download files: ${ err }": [
         "Не удалось скачать файлы: ${ err }"
       ],
@@ -6061,6 +6247,9 @@
       "File or folder is missing a name": [
         "У папки или файла отсутствует имя"
       ],
+      "Invitation's email was sent again": [
+        "Электронное письмо с приглашением было отправлено снова"
+      ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
@@ -6076,8 +6265,20 @@
       "The link to \"${ name }\" was deleted": [
         "Ссылка на \"${ name }\" была удалена"
       ],
+      "The link to your item failed to be deleted": [
+        "Не удалось удалить ссылку на ваш элемент"
+      ],
+      "The link to your item was deleted": [
+        "Ссылка на ваш элемент удалена"
+      ],
       "Trash failed to be emptied": [
         "Не удалось очистить корзину"
+      ],
+      "Your settings failed to be saved": [
+        "Не удалось сохранить настройки"
+      ],
+      "Your settings have been changed successfully": [
+        "Ваши настройки были успешно изменены"
       ]
     },
     "Oauth instructions": {
@@ -6215,6 +6416,9 @@
       "A way to contact you": [
         "Способ связаться с вами"
       ],
+      "Choose password": [
+        "Выбрать пароль"
+      ],
       "E.g., ": [
         "Например, "
       ],
@@ -6259,6 +6463,9 @@
       ],
       "Select a reason": [
         "Выберите причину"
+      ],
+      "Set date": [
+        "Установить дату"
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
@@ -6756,6 +6963,14 @@
         "Пригласите друзей в ${ BRAND_NAME }"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Принято"
+      ],
+      "Pending": [
+        "В ожидании"
+      ]
+    },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
         "Сохранить ${ currentPlanName }"
@@ -7023,6 +7238,12 @@
       "Preferences saved": [
         "Настройки сохранены"
       ],
+      "Secure link copied": [
+        "Защищенная ссылка скопирована"
+      ],
+      "The link to your file was successfully copied": [
+        "Ссылка на файл была успешно скопирована"
+      ],
       "Undo in progress": [
         "Выполняется отмена"
       ],
@@ -7130,6 +7351,46 @@
       ],
       "vCard field": [
         "Поле vCard-файла"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч"
+      ],
+      "${ minutes } min": [
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часов",
+        "${ hoursInt }.5 часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минута"
       ]
     },
     "Title": {
@@ -7244,6 +7505,9 @@
       "Data recovery": [
         "Восстановление данных"
       ],
+      "Date": [
+        "Дата"
+      ],
       "Day theme": [
         "Дневная тема"
       ],
@@ -7270,6 +7534,12 @@
       ],
       "Details": [
         "Информация"
+      ],
+      "Discard": [
+        "Сбросить"
+      ],
+      "Discard changes?": [
+        "Сбросить изменения?"
       ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
@@ -7364,6 +7634,9 @@
       "Link confirmation": [
         "Подтверждение ссылки"
       ],
+      "Manage secure link": [
+        "Управление безопасной ссылкой"
+      ],
       "Merge contacts": [
         "Объединение контактов"
       ],
@@ -7421,6 +7694,9 @@
       "Photos": [
         "Фото"
       ],
+      "Privacy settings": [
+        "Настройки конфиденциальности"
+      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -7460,8 +7736,20 @@
       "Select contact group": [
         "Выбор группы контактов"
       ],
+      "Select link expiration date": [
+        "Выберите дату окончания действия ссылки"
+      ],
+      "Select link expiration time": [
+        "Выберите время окончания действия ссылки"
+      ],
       "Settings": [
         "Настройки"
+      ],
+      "Share ${ name }": [
+        "Общий ресурс ${ name }"
+      ],
+      "Share via link": [
+        "Поделиться с помощью ссылки"
       ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
@@ -7472,6 +7760,12 @@
       "Sign out": [
         "Выйти"
       ],
+      "Some edits are taking longer to sync": [
+        "Некоторые правки требуют больше времени для синхронизации"
+      ],
+      "Some edits failed to sync": [
+        "Некоторые правки не удалось синхронизировать"
+      ],
       "Start a new import": [
         "Начать новый импорт"
       ],
@@ -7480,6 +7774,9 @@
       ],
       "Stop sharing": [
         "Закрыть доступ"
+      ],
+      "Stop sharing with everyone?": [
+        "Закрыть доступ всем?"
       ],
       "Summary": [
         "Сводка"
@@ -7510,6 +7807,9 @@
       ],
       "Your account is protected": [
         "Ваш аккаунт защищён"
+      ],
+      "Your document cannot be loaded": [
+        "Не удается загрузить ваш документ"
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
@@ -7576,6 +7876,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
+      ],
+      "Shared end-to-end encrypted": [
+        "Общий доступ со сквозным шифрованием"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Системные подпапки будут отображаться как отдельные папки в ${ MAIL_APP_NAME }"

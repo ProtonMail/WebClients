@@ -69,6 +69,9 @@
       "Add note": [
         "Not ekle"
       ],
+      "Add people or groups to share": [
+        "Paylaşılacak kişi veya grupları ekleyin"
+      ],
       "Add phone number": [
         "Telefon numarası ekle"
       ],
@@ -102,6 +105,9 @@
       ],
       "Cancel all uploads": [
         "Tüm yüklemeleri iptal et"
+      ],
+      "Cancel download": [
+        "İndirmeyi iptal et"
       ],
       "Cancel subscription": [
         "Aboneliği iptal et"
@@ -159,6 +165,12 @@
       ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
+      ],
+      "Copy invite link": [
+        "Davet bağlantısını kopyala"
+      ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
@@ -396,8 +408,8 @@
       "Previous month": [
         "Önceki ay"
       ],
-      "Print as PDF": [
-        "PDF olarak yazdır"
+      "Print": [
+        "Yazdır"
       ],
       "Quit": [
         "Çıkış"
@@ -419,6 +431,9 @@
       ],
       "Remove": [
         "Kaldır"
+      ],
+      "Remove access": [
+        "Erişimi kaldır"
       ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
@@ -447,6 +462,9 @@
       "Resend code": [
         "Kodu yeniden gönder"
       ],
+      "Resend invite": [
+        "Daveti yeniden gönder"
+      ],
       "Reset to default": [
         "Varsayılana sıfırla"
       ],
@@ -455,6 +473,9 @@
       ],
       "Save": [
         "Kaydet"
+      ],
+      "Save changes": [
+        "Değişiklikleri kaydet"
       ],
       "Search countries": [
         "Ülke ara"
@@ -495,6 +516,9 @@
       "Stay": [
         "Kal"
       ],
+      "Stop sharing": [
+        "Paylaşımdan kaldır"
+      ],
       "Submit": [
         "Gönder"
       ],
@@ -509,6 +533,9 @@
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
+      ],
+      "Understood": [
+        "Anladım"
       ],
       "Undo": [
         "Geri al"
@@ -2083,6 +2110,9 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
+      "Account does not exist": [
+        "Hesap bulunamadı"
+      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
@@ -2097,6 +2127,9 @@
       ],
       "Aliases could not be loaded": [
         "Takma adlar yüklenemedi"
+      ],
+      "Already a member of this share": [
+        "Zaten bu paylaşımın bir üyesi"
       ],
       "Amount above the maximum.": [
         "Tutar en fazla miktarın üstünde."
@@ -2174,6 +2207,18 @@
       ],
       "Error: Update Too Large": [
         "Hata: Güncelleme çok büyük"
+      ],
+      "External accounts are not supported yet": [
+        "Dış hesaplar henüz desteklenmiyor"
+      ],
+      "External invitations are not available yet.": [
+        "Dış davetler henüz yapılamıyor."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Dış davetler geçici olarak yapılamıyor."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Dış davetler geçici olarak yapılamıyor. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Failed to rename document. Please try again later.": [
         "Belge yeniden adlandırılamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -2323,6 +2368,10 @@
       "Process aborted": [
         "İşlem iptal edildi"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Yinelenen davetli silindi: ${ joinedInvitee }",
+        "Yinelenen davetliler silindi: ${ joinedInvitee }"
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
@@ -2362,6 +2411,9 @@
       "Tab closed": [
         "Sekme kapatıldı"
       ],
+      "The address might be misspelled": [
+        "Adres yanlış yazılmış olabilir"
+      ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
@@ -2370,6 +2422,12 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
+      ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "Davet henüz tamamlanamadı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "The invitation doesn't exist anymore": [
+        "Davet artık yok"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Etiket adı geçersiz. Lütfen farklı bir ad seçin."
@@ -2445,6 +2503,9 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "Validation error": [
+        "Doğrulama sorunu"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
@@ -3392,6 +3453,12 @@
       "and": [
         "ve"
       ],
+      "Anyone with this link can access your file.": [
+        "Bu bağlantıya sahip olan herkes dosyanıza erişebilir."
+      ],
+      "Anyone with this link can access your folder.": [
+        "Bu bağlantıya sahip olan herkes klasörünüze erişebilir."
+      ],
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
@@ -3477,6 +3544,15 @@
       "Create in": [
         "Şuraya ekle"
       ],
+      "Create public link": [
+        "Herkese açık bağlantı ekle"
+      ],
+      "Creating link to file": [
+        "Dosya bağlantısı oluşturuluyor"
+      ],
+      "Creating link to folder": [
+        "Klasör bağlantısı oluşturuluyor"
+      ],
       "Creating new document...": [
         "Yeni belge oluşturuluyor..."
       ],
@@ -3519,8 +3595,14 @@
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
       ],
+      "Download was canceled": [
+        "İndirme iptal edildi"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "${ DRIVE_APP_NAME } üzerinden ${ DOCS_APP_NAME } dosyalarının indirilmesi şu anda desteklenmiyor. Bu dosyalar indirme işleminize katılmayacak."
       ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
@@ -3575,6 +3657,15 @@
       ],
       "Failed to connect: ${ disconnectReasonMessage }": [
         "Bağlantı kurulamadı: ${ disconnectReasonMessage }"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Güvenli bir bağlantı oluşturulamadı. Nedeni: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Güvenli bir bağlantı oluşturulamadı. Bir süre sonra yeniden deneyin"
+      ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        "Güvenli bağlantı açılamadı. Nedeni: ${ error }"
       ],
       "Failing signatures will be re-signed by you": [
         "İmzalanmamış değişiklikler sizin tarafınızdan yeniden imzalanacak"
@@ -3670,6 +3761,9 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
+      "Invite link copied": [
+        "Davet bağlantısı kopyalandı"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Yakın zamanda ${ uploadName } dosyasını yüklemeyi denemişsiniz gibi görünüyor. Yüklenemediyse, lütfen ${ replaceFile }in. Yükleme hala sürüyorsa, dosyanın değiştirilmesi süren yükleme işlemini iptal eder."
       ],
@@ -3712,6 +3806,9 @@
       "Loading document...": [
         "Belge yükleniyor..."
       ],
+      "Loading link": [
+        "Bağlantı yükleniyor"
+      ],
       "Loading...": [
         "Yükleniyor..."
       ],
@@ -3720,6 +3817,10 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
+        "En fazla ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
       "Medium Priority": [
         "Orta öncelik"
@@ -3769,14 +3870,30 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir",
+        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
+      ],
+      "Only the people with the link and the password can access this file.": [
+        "Bu dosyaya yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
+      ],
+      "Only the people with the link and the password can access this folder.": [
+        "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
+      ],
       "Organization size": [
         "Kuruluş boyutu"
+      ],
+      "Owner": [
+        "Sahibi"
       ],
       "password": [
         "parola"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+      ],
+      "People with access": [
+        "Erişimi olan kişiler"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/ınline yalnızca düz metin biçimi ile uyumludur."
@@ -3792,6 +3909,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Lütfen yaptığınız değişikliklerin kopyasını ana menüden dışa aktarın ve sayfayı yeniden yükleyin."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Bunları indirmek isterseniz lütfen doğrudan ${ DOCS_APP_NAME } uygulamasından dışa aktarın."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
@@ -3832,6 +3952,12 @@
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen etkin olmayan anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
+      ],
+      "Preparing link to file": [
+        "Dosya bağlantısı hazırlanıyor"
+      ],
+      "Preparing link to folder": [
+        "Klasör bağlantısı hazırlanıyor"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
@@ -3874,6 +4000,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
+      ],
+      "Share via link settings": [
+        "Bağlantı ayarları ile paylaş"
+      ],
+      "Shareable link for ${ boldNameText }": [
+        "${ boldNameText } için paylaşılabilir bağlantı"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Ağ sorunu nedeniyle imza doğrulanamadı. Lütfen bir süre sonra yeniden deneyin."
@@ -3946,6 +4078,15 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "Bu bağlantı kalıcı olarak kullanım dışı bırakılmış. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Bu bağlantı kalıcı olarak kullanım dışı bırakılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
       ],
       "This message will be presented again later": [
         "Bu ileti daha sonra yeniden görüntülenecek"
@@ -4086,6 +4227,9 @@
       "Writing assistant add-on": [
         "Yazma yardımcısı eklentisi"
       ],
+      "you": [
+        "siz"
+      ],
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
       ],
@@ -4147,6 +4291,9 @@
       ],
       "You will lose access to Plus servers and features on this date.": [
         "Bu tarihte Plus sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
+      ],
+      "You will lose all unsaved changes.": [
+        "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
@@ -4315,6 +4462,12 @@
       "Add to group": [
         "Gruba ekle"
       ],
+      "Anyone on the Internet with the link can view": [
+        "İnternet üzerinden bağlantıyı bilen herkes görüntüleyebilir"
+      ],
+      "Anyone with the link": [
+        "Bağlantıya sahip olan herkes"
+      ],
       "App password": [
         "Uygulama parolası"
       ],
@@ -4432,6 +4585,9 @@
       "e.g., Amazon, eBay, Etsy": [
         "örneğin, Amazon, eBay, Etsy"
       ],
+      "Editor": [
+        "Düzenleyici"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -4458,6 +4614,9 @@
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Bu bağlantıyı silin ve erişimi olan herkesi kaldırın."
       ],
       "Expiration (${ patternExpiration })": [
         "Geçerlilik süresi (${ patternExpiration })"
@@ -4504,6 +4663,9 @@
       "Import to:": [
         "Şunun içine aktar:"
       ],
+      "Include message and file name in invite email": [
+        "Davet e-postasına bir ileti ve dosya adı eklensin"
+      ],
       "Keep both": [
         "İkisi de tutulsun"
       ],
@@ -4527,6 +4689,12 @@
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
+      ],
+      "Make editor": [
+        "Düzenleyici yap"
+      ],
+      "Make viewer": [
+        "Görüntüleyici yap"
       ],
       "Manage categories": [
         "Kategori yönetimi"
@@ -4588,8 +4756,17 @@
       "Proration": [
         "Hesap bakiyesi"
       ],
+      "Protect with password": [
+        "Parola ile korunsun"
+      ],
       "Public keys": [
         "Herkese açık anahtarlar"
+      ],
+      "Public link expiration date": [
+        "Herkese açık bağlantının geçerlilik sonu tarihi"
+      ],
+      "Public link password": [
+        "Herkese açık bağlantı parolası"
       ],
       "Region": [
         "Bölge"
@@ -4606,6 +4783,12 @@
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
       ],
+      "Set expiration date": [
+        "Geçerlilik süresi olsun"
+      ],
+      "Set link password": [
+        "Bağlantı parolası ayarla"
+      ],
       "Sign emails": [
         "E-postaları imzala"
       ],
@@ -4617,6 +4800,9 @@
       ],
       "Start date": [
         "Başlangıç tarihi"
+      ],
+      "Stop sharing": [
+        "Paylaşmayı durdur"
       ],
       "Street address": [
         "Sokak adresi"
@@ -4647,6 +4833,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Viewer": [
+        "Görüntüleyici"
       ],
       "What happened?": [
         "Ne oldu?"
@@ -5995,6 +6184,15 @@
       "${ reason } has been enabled": [
         "${ reason } özelliği açıldı"
       ],
+      "Access for the member removed": [
+        "Üyenin erişimi kaldırıldı"
+      ],
+      "Access updated": [
+        "Erişim güncellendi"
+      ],
+      "Access updated and shared": [
+        "Erişim güncellendi ve paylaşıldı"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
@@ -6022,6 +6220,12 @@
       "Device renamed": [
         "Aygıt yeniden adlandırıldı"
       ],
+      "External invitation removed from the share": [
+        "Paylaşımdan dış davet kaldırıldı"
+      ],
+      "External invitation's email was sent again": [
+        "Dış davet e-postası yeniden gönderildi"
+      ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
       ],
@@ -6038,6 +6242,9 @@
       "File or folder is missing a name": [
         "Dosya ya da klasörün adı eksik"
       ],
+      "Invitation's email was sent again": [
+        "Davet e-postası yeniden gönderildi"
+      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -6053,11 +6260,23 @@
       "The link to \"${ name }\" was deleted": [
         "\"${ name }\" bağlantısı silindi"
       ],
+      "The link to your item failed to be deleted": [
+        "Öge bağlantınız silinemedi"
+      ],
+      "The link to your item was deleted": [
+        "Öge bağlantınız silindi"
+      ],
       "Trash failed to be emptied": [
         "Çöp kutusu boşaltılamadı"
       ],
       "You stopped sharing this item": [
         "Bu ögeyi paylaşmayı durdurdunuz"
+      ],
+      "Your settings failed to be saved": [
+        "Ayarlarınız kaydedilemedi"
+      ],
+      "Your settings have been changed successfully": [
+        "Ayarlarınız değiştirildi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -6213,6 +6432,9 @@
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
       ],
+      "Choose password": [
+        "Parola seçin"
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
@@ -6233,6 +6455,9 @@
       ],
       "Last name": [
         "Soyad"
+      ],
+      "Message": [
+        "İleti"
       ],
       "Name": [
         "Ad"
@@ -6263,6 +6488,9 @@
       ],
       "Select state": [
         "İl seçin"
+      ],
+      "Set date": [
+        "Tarihi ayarla"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
@@ -6799,6 +7027,14 @@
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Kabul edildi"
+      ],
+      "Pending": [
+        "Bekliyor"
+      ]
+    },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
         "${ currentPlanName } tarifesinde kal"
@@ -7060,6 +7296,12 @@
       "Preferences saved": [
         "Ayarlar kaydedildi"
       ],
+      "Secure link copied": [
+        "Güvenli bağlantı kopyalandı"
+      ],
+      "The link to your file was successfully copied": [
+        "Dosya bağlantınız kopyalandı"
+      ],
       "Undo in progress": [
         "Geri alınıyor"
       ],
@@ -7167,6 +7409,34 @@
       ],
       "vCard field": [
         "vCard alanı"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } s",
+        "${ hours } s"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 s",
+        "${ hoursInt }.5 s"
+      ],
+      "${ minutes } min": [
+        "${ minutes } dk",
+        "${ minutes } dk"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 saat",
+        "${ hoursInt }.5 saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
       ]
     },
     "Title": {
@@ -7277,6 +7547,9 @@
       "Data recovery": [
         "Veri kurtarma"
       ],
+      "Date": [
+        "Tarih"
+      ],
       "Day theme": [
         "Gündüz teması"
       ],
@@ -7299,6 +7572,12 @@
       ],
       "Details": [
         "Ayrıntılar"
+      ],
+      "Discard": [
+        "Yok say"
+      ],
+      "Discard changes?": [
+        "Değişiklikler silinsin mi?"
       ],
       "Document verification failed": [
         "Belge doğrulanamadı"
@@ -7394,6 +7673,9 @@
       "Link confirmation": [
         "Bağlantı onayı"
       ],
+      "Manage secure link": [
+        "Güvenli bağlantıyı yönet"
+      ],
       "Merge contacts": [
         "Kişileri birleştir"
       ],
@@ -7451,6 +7733,9 @@
       "Photos": [
         "Fotoğraflar"
       ],
+      "Privacy settings": [
+        "Gizlilik ayarları"
+      ],
       "Processing...": [
         "İşleniyor..."
       ],
@@ -7490,8 +7775,20 @@
       "Select contact group": [
         "Kişi grubunu seç"
       ],
+      "Select link expiration date": [
+        "Bağlantının geçerlilik sonu tarihini seçin"
+      ],
+      "Select link expiration time": [
+        "Bağlantının geçerlilik sonu saatini seçin"
+      ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Share ${ name }": [
+        "${ name } paylaş"
+      ],
+      "Share via link": [
+        "Bağlantı ile paylaş"
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
@@ -7516,6 +7813,9 @@
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
+      ],
+      "Stop sharing with everyone?": [
+        "Herkes ile paylaşımdan kaldırılsın mı?"
       ],
       "Stop sharing?": [
         "Paylaşmayı durdur?"
@@ -7552,6 +7852,9 @@
       ],
       "Your document cannot be loaded": [
         "Belgeniz yüklenemedi"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "İndirdiğiniz dosyada bir ${ DOCS_APP_NAME } dosyası bulunuyor"
       ],
       "Your exposed information": [
         "Açığa çıkmış bilgileriniz"
@@ -7616,8 +7919,14 @@
       "Load image": [
         "Görsel yükle"
       ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "E-postaya eklendiğinde, ileti ve dosya adı sıfır erişimli şifreleme ile kaydedilir"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
+      ],
+      "Shared end-to-end encrypted": [
+        "Uçtan uca şifrelenmiş olarak paylaşıldı"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
@@ -7636,6 +7945,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
+      ],
+      "We have sent them an invite to access the item.": [
+        "Dosyaya erişebilmeleri için bir davetiye gönderdik."
       ],
       "You do not have any contacts to export": [
         "Dışa aktarılacak bir kişi kaydınız yok"
