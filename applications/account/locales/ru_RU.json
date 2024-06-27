@@ -211,6 +211,12 @@
       "Clear all formatting": [
         "Удалить форматирование"
       ],
+      "Clear filter": [
+        "Сбросить фильтр"
+      ],
+      "Clear filters": [
+        "Очистить фильтры"
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -625,6 +631,9 @@
       "Later": [
         "Позже"
       ],
+      "Learn why this option is unavailable": [
+        "Узнайте, почему эта опция недоступна"
+      ],
       "Leave": [
         "Оставить"
       ],
@@ -778,6 +787,9 @@
       "Remove gift code": [
         "Удалить подарочный код"
       ],
+      "Remove single sign-on": [
+        "Удалить единый вход"
+      ],
       "Remove this label": [
         "Удалить этот ярлык"
       ],
@@ -925,6 +937,9 @@
       "Send my username": [
         "Отправить мое имя пользователя"
       ],
+      "Send new invite": [
+        "Отправить новое приглашение"
+      ],
       "Send reminder": [
         "Отправить напоминание"
       ],
@@ -1011,6 +1026,9 @@
       ],
       "Stay": [
         "Остаться"
+      ],
+      "Stop using single sign-on": [
+        "Прекратить использовать единый вход"
       ],
       "Strikethrough": [
         "Зачеркивание"
@@ -1122,6 +1140,9 @@
       ],
       "Verify account": [
         "Подтвердить аккаунт"
+      ],
+      "Verify domain": [
+        "Проверить домен"
       ],
       "View": [
         "Посмотреть"
@@ -1347,6 +1368,9 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Просматривайте веб-страницы в приватном режиме и блокируйте рекламу"
+      ],
+      "Create and collaborate on documents securely": [
+        "Создавайте документы и работайте над ними в защищенном режиме"
       ],
       "Keep your schedule private": [
         "Сохраняйте конфиденциальность своего расписания"
@@ -3972,6 +3996,9 @@
       "Could not save preference": [
         "Не удалось сохранить предпочтение"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "Не удалось загрузить счета-фактуры. Повторите попытку позже."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
@@ -3992,6 +4019,9 @@
       ],
       "Email address is invalid": [
         "Недопустимый адрес электронной почты"
+      ],
+      "Email address is not available": [
+        "Адрес электронной почты недоступен"
       ],
       "Email address is required": [
         "Нужно указать адрес электронной почты"
@@ -4148,6 +4178,9 @@
       ],
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ключ организации должен быть активирован для создания приглашенных пользователей"
       ],
       "Password is required": [
         "Нужно ввести пароль"
@@ -5712,6 +5745,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Добавьте эту запись к вашему домену в панели управления регистратора доменных имен"
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "Найдено ${ items.length } предложение, используйте клавиатуру для навигации.",
         "Найдено ${ items.length } предложения, используйте клавиатуру для навигации.",
@@ -6410,6 +6446,9 @@
         "Всё (${ totalFoldersCount } ярлыка)",
         "Все (${ totalFoldersCount } ярлыков)",
         "Всё (${ totalFoldersCount } ярлыков)"
+      ],
+      "All Events ": [
+        "Все события"
       ],
       "All keys successfully reactivated": [
         "Все ключи успешно реактивированы"
@@ -7146,7 +7185,37 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
+      "Invitation link expired": [
+        "Ссылка для приглашения устарела"
+      ],
+      "Invitation link used": [
+        "Ссылка для приглашения использована"
+      ],
+      "Invite Accepted": [
+        "Приглашение принято"
+      ],
+      "Invite Created": [
+        "Приглашение создано"
+      ],
+      "Invite deleted": [
+        "Приглашение удалено"
+      ],
+      "Invite Deleted": [
+        "Приглашение удалено"
+      ],
+      "Invite for organization accepted": [
+        "Приглашение для организации принято"
+      ],
+      "Invite for organization created": [
+        "Создано приглашение для организации"
+      ],
+      "Invite for User deleted": [
+        "Приглашение Пользователя удалено"
+      ],
       "Invite rejected": [
+        "Приглашение отклонено"
+      ],
+      "Invite Rejected": [
         "Приглашение отклонено"
       ],
       "Invite successfully sent": [
@@ -7157,6 +7226,54 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
+      ],
+      "Item Autofilled": [
+        "Элемент автоматически заполнен"
+      ],
+      "Item autofilled in vault": [
+        "Элемент автоматически заполнен в хранилище"
+      ],
+      "Item Changed Flags": [
+        "Элемент изменил флажки"
+      ],
+      "Item Created": [
+        "Элемент создан"
+      ],
+      "Item created in vault": [
+        "Элемент создан в хранилище"
+      ],
+      "Item Deleted": [
+        "Элемент удален"
+      ],
+      "Item deleted in vault": [
+        "Элемент удален в хранилище"
+      ],
+      "Item flags changed in vault": [
+        "Флажки предметов изменены в хранилище"
+      ],
+      "Item in vault untrashed": [
+        "Элемент из хранилища перемещен из корзины"
+      ],
+      "Item Read": [
+        "Элемент прочитан"
+      ],
+      "Item read in vault": [
+        "Элемент прочитан в хранилище"
+      ],
+      "Item Trashed": [
+        "Элемент помещен в корзину"
+      ],
+      "Item trashed in vault": [
+        "Элемент в хранилище помещен в корзину"
+      ],
+      "Item Untrashed": [
+        "Элемент извлечен из корзины"
+      ],
+      "Item Updated": [
+        "Элемент обновлен"
+      ],
+      "Item updated in vault": [
+        "Элемент обновлен в хранилище"
       ],
       "it’s imperative": [
         "это обязательно"
@@ -7193,6 +7310,9 @@
       ],
       "Lean more about gateways": [
         "Узнайте больше о шлюзах"
+      ],
+      "Lean more about single sign-on": [
+        "Узнайте больше о едином входе"
       ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Узнайте как ${ staySaferOnlineLink }"
@@ -7313,6 +7433,12 @@
       ],
       "New": [
         "Новый"
+      ],
+      "New User Invite Created": [
+        "Приглашение нового пользователя создано"
+      ],
+      "New User Invite Deleted": [
+        "Приглашение новому пользователю удалено"
       ],
       "No account keys exist": [
         "Нет ключей аккаунта"
@@ -7689,9 +7815,6 @@
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
-      "Set your password": [
-        "Задайте пароль"
-      ],
       "Setting up your organization": [
         "Настройка вашей организации"
       ],
@@ -7700,6 +7823,21 @@
       ],
       "Settings updated": [
         "Настройки обновлены"
+      ],
+      "Share Created": [
+        "Общий ресурс создан"
+      ],
+      "Share Deleted": [
+        "Общий ресурс удален"
+      ],
+      "Share Updated": [
+        "Общий ресурс обновлен"
+      ],
+      "Shared vault deleted": [
+        "Общее хранилище удалено"
+      ],
+      "Shared vault updated": [
+        "Общее хранилище обновлено"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Показать изображение каждого отправителя в списке сообщений. Инициалы отправителя будут показаны, если фотография недоступна."
@@ -7736,6 +7874,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF уточняет, кому разрешено отправлять электронные письма на ваш домен. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Пользователи SSO (предоставленные вашим поставщиком личных данных) будут удалены"
       ],
       "Stay tuned for future promotions.": [
         "Следите за будущими акциями."
@@ -7899,6 +8040,9 @@
       "This file is too large to preview": [
         "Этот файл слишком большой для предпросмотра"
       ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Срок действия приглашения истек. Свяжитесь с администратором для запроса доступа."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Это фраза из 12 слов, которую вам было предложено задать."
       ],
@@ -7907,6 +8051,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Это ключ шифрования, который вы могли сохранить ранее."
+      ],
+      "This is an invitation from:": [
+        "Это приглашение от:"
       ],
       "This is the password you used before the password reset.": [
         "Это пароль, который вы использовали до сброса пароля."
@@ -7934,6 +8081,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Проверка может занять до одного часа. После успешной проверки не удаляйте запись TXT, так как она необходима для подтверждения того, что вы продолжаете владеть доменом."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Это отменит вашу текущую платную подписку и вы потеряете все льготы по лояльности, которые вы накопили."
@@ -7968,6 +8118,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Это заменит ваш временный пароль. Вы будете использовать его для доступа к вашему аккаунту в ${ BRAND_NAME } в будущем."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Это отправит новое приглашение на **${ email }**."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "В результате вы выйдете из всех аккаунтов, в которые вы на данный момент вошли."
       ],
@@ -7979,6 +8132,9 @@
       ],
       "to ${ product } Business": [
         "на ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Чтобы разрешить домену **${ domainName }** использовать SAML SSO, вы должны подтвердить право собственности на него, добавив следующую запись DNS TXT к вашему домену у провайдера DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Чтобы избежать потери данных, удаляйте его только в том случае, если вы знаете, что делаете, или экспортировали копию."
@@ -8073,6 +8229,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Уникальный идентификатор, генерируемый поставщиком идентификационных данных, обычно в виде URL, содержащего название поставщика идентификационных данных (например, https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Неизвестный тип события"
+      ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пока вы не выйдете из своей учётной записи либо не измените свой пароль, ваша сессия остаётся активной. Срок действия сессий истекает после 60 дней бездействия."
       ],
@@ -8148,11 +8307,35 @@
       "User activated": [
         "Пользователь активирован"
       ],
+      "User invited to organization": [
+        "Пользователь приглашен в организацию"
+      ],
       "username": [
         "имя пользователя"
       ],
       "Users": [
         "Пользователи"
+      ],
+      "Vault created": [
+        "Хранилище создано"
+      ],
+      "Vault Created": [
+        "Хранилище создано"
+      ],
+      "Vault deleted": [
+        "Хранилище удалено"
+      ],
+      "Vault Deleted": [
+        "Хранилище удалено"
+      ],
+      "Vault shared with email": [
+        "Общий доступ к хранилищу с помощью электронной почты"
+      ],
+      "Vault updated": [
+        "Хранилище обновлено"
+      ],
+      "Vault Updated": [
+        "Хранилище обновлено"
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -8280,6 +8463,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Если отключено, то предотвращает загрузку изображений на вашем устройстве без вашего ведома."
       ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "При включении SAML для ${ appName } у поставщика личных данных вам может быть предложено использовать URL обратного вызова (ACS) и ID эмитента. Просто скопируйте и вставьте приведенные ниже данные в поля поставщика личных данных."
+      ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Если уведомления включены, мы будем отправлять оповещения на ваш резервный адрес электронной почты, если в вашем аккаунте ${ MAIL_APP_NAME } появятся новые сообщения."
       ],
@@ -8342,6 +8528,18 @@
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензии помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензии помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Сейчас вы используете ${ usedMembers } из вашей ${ maxMembers } доступной пользовательской лицензии.",
@@ -8663,9 +8861,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Счет выставлен"
-      ],
       "Gifted": [
         "Подарено"
       ],
@@ -9111,6 +9306,9 @@
       "Apply filter to existing emails": [
         "Применить фильтр к существующим сообщениям"
       ],
+      "Assertion Consumer Service URL": [
+        "URL службы подтверждения потребителя"
+      ],
       "Attach public key": [
         "Присоединить публичный ключ"
       ],
@@ -9353,9 +9551,6 @@
       ],
       "Disable data export for organization members": [
         "Отключить экспорт данных для участников организации"
-      ],
-      "Disable sharing outside the organization.": [
-        "Отключить совместное использование вне организации."
       ],
       "Display name": [
         "Отображаемое имя"
@@ -9732,6 +9927,9 @@
       "Protection mode": [
         "Режим защиты"
       ],
+      "Public certificate (X.509)": [
+        "Публичный сертификат (X.509)"
+      ],
       "Read": [
         "Прочитанные"
       ],
@@ -9749,6 +9947,9 @@
       ],
       "Repeat password": [
         "Повторите пароль"
+      ],
+      "Reply (ACS) URL": [
+        "URL ответа (ACS)"
       ],
       "Require 2FA for administrators": [
         "Требовать 2ФА для администраторов"
@@ -9792,6 +9993,12 @@
       "Signature": [
         "Подпись"
       ],
+      "Single sign-on entity ID": [
+        "ID единого входа"
+      ],
+      "Single sign-on URL": [
+        "URL единого входа"
+      ],
       "SMTP port": [
         "SMTP-порт"
       ],
@@ -9806,6 +10013,9 @@
       ],
       "Spam": [
         "Спам"
+      ],
+      "Spam and filters": [
+        "Спам и фильтры"
       ],
       "Starred": [
         "Отмеченные *"
@@ -10140,6 +10350,9 @@
       "Create an alias": [
         "Создать псевдоним"
       ],
+      "Don't have access to your 2FA?": [
+        "У вас нет доступа к двухфакторной аутентификации?"
+      ],
       "Encryption and keys": [
         "Шифрование и ключи"
       ],
@@ -10335,17 +10548,29 @@
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса"
       ],
+      "An encrypted email service that puts your privacy first": [
+        "Зашифрованная почтовая служба, которая ставит вашу частную жизнь на первое место"
+      ],
       "Encrypted email and calendar to get you started": [
         "Зашифрованная почта и календарь, чтобы начать работу"
       ],
+      "Encrypted solutions to protect your entire business": [
+        "Зашифрованные продукты для защиты всего вашего бизнеса"
+      ],
       "Enhanced security and premium features for teams": [
         "Повышенная безопасность и платные функции для команд"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Предложение ограничено по времени: **Получите скидку до 35%** на годовые тарифы"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вас пригласили попробовать ${ MAIL_APP_NAME }"
       ]
     },
     "mail_signup_2024: title": {
+      "For businesses": [
+        "Для предприятий"
+      ],
       "For individuals": [
         "Для частных лиц"
       ]
@@ -10439,11 +10664,17 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete and revoke invite": [
+        "Удалить и отозвать приглашение"
+      ],
       "Edit": [
         "Изменить"
       ],
       "Remove": [
         "Удалить"
+      ],
+      "Resend invite link": [
+        "Отправить приглашение повторно"
       ],
       "Revoke sessions": [
         "Прервать сессии"
@@ -10939,6 +11170,9 @@
       "Advanced sharing security": [
         "Дополнительная безопасность совместного доступа"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Все службы ${ BRAND_NAME }"
+      ],
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
       ],
@@ -10995,6 +11229,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Отслеживание утечек данных (скоро появится)"
+      ],
+      "Dedicated account manager": [
+        "Выделенный менеджер по работе с аккаунтом"
       ],
       "Dedicated servers and IP": [
         "Выделенные серверы и адреса IP"
@@ -11181,6 +11418,9 @@
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
+      ],
+      "Tailored to your needs": [
+        "Подстраивается под ваши потребности"
       ],
       "Tor over VPN": [
         "Tor через VPN"
@@ -12388,6 +12628,9 @@
       "Current plan": [
         "Текущий тариф"
       ],
+      "Customizable services for large teams.": [
+        "Настраиваемые службы для больших команд."
+      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Скачайте и установите соответствующие приложения и расширения, чтобы начать использовать ${ PASS_APP_NAME }"
       ],
@@ -12803,6 +13046,9 @@
       "Email address": [
         "Адрес электронной почты"
       ],
+      "Email or IP": [
+        "адрес электронной почты или IP"
+      ],
       "End date": [
         "Дата окончания"
       ],
@@ -13105,6 +13351,9 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Пререквизиты:** чтобы включить предоставление SCIM, необходимо подтвердить право собственности на домен **${ domainName }**. Эта проверка может занять до одного часа."
+      ],
       "For security reasons, the token is hidden": [
         "Токен скрыт по соображениям безопасности"
       ],
@@ -13148,8 +13397,14 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Кредит-нота"
+      ],
       "Currency conversion": [
         "Конвертация валюты"
+      ],
+      "Invoice": [
+        "Счет-фактура"
       ]
     },
     "Select search results": {
@@ -13514,6 +13769,9 @@
       "Actions": [
         "Действия"
       ],
+      "Drag to reorder": [
+        "Перетащите, чтобы изменить порядок"
+      ],
       "Labels": [
         "Ярлыки"
       ]
@@ -13596,6 +13854,16 @@
       ],
       "Verification": [
         "Подтверждение"
+      ]
+    },
+    "signup: Action": {
+      "Request a demo": [
+        "Получить демо-версию"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "Соответствие GDPR"
       ]
     },
     "specialoffer: Action": {
@@ -14568,6 +14836,9 @@
       "Domain deleted": [
         "Домен удалён"
       ],
+      "Invitation resent": [
+        "Приглашение отправлено повторно"
+      ],
       "Sessions revoked": [
         "Сессии прерваны"
       ],
@@ -14703,6 +14974,9 @@
       ],
       "Import": [
         "Импорт"
+      ],
+      "Invitation email": [
+        "Электронное письмо-приглашение"
       ],
       "List": [
         "Список"
@@ -15152,6 +15426,9 @@
       "Delete version history?": [
         "Очистить историю версий?"
       ],
+      "Description": [
+        "Описание"
+      ],
       "Details": [
         "Информация"
       ],
@@ -15206,6 +15483,9 @@
       "Edit organization identity": [
         "Изменить личные данные организации"
       ],
+      "Edit profile": [
+        "Изменить профиль"
+      ],
       "Edit servers": [
         "Изменить серверы"
       ],
@@ -15245,6 +15525,9 @@
       "Encryption and keys": [
         "Шифрование и ключи"
       ],
+      "Enter endpoints into your identity provider": [
+        "Введите конечные точки в провайдер личных данных"
+      ],
       "Enter SAML metadata": [
         "Ввод метаданных SAML"
       ],
@@ -15256,6 +15539,9 @@
       ],
       "Error": [
         "Ошибка"
+      ],
+      "Event": [
+        "Событие"
       ],
       "Every member of the organization can access": [
         "Каждый член организации может получить доступ"
@@ -15400,6 +15686,9 @@
       ],
       "Invoices": [
         "Счета"
+      ],
+      "IP": [
+        "IP"
       ],
       "Keep your inbox organized": [
         "Поддерживайте порядок в папке \"Входящие\""
@@ -15623,6 +15912,9 @@
       "Send email reminders?": [
         "Отправить напоминания по почте?"
       ],
+      "Send new invite?": [
+        "Отправить новое приглашение?"
+      ],
       "Session management": [
         "Управление сеансами"
       ],
@@ -15743,6 +16035,9 @@
       "This field cannot contain only spaces": [
         "Это поле не может содержать только пробелы"
       ],
+      "Time": [
+        "Время"
+      ],
       "Time zone": [
         "Часовой пояс"
       ],
@@ -15772,6 +16067,9 @@
       ],
       "Upload your organization’s logo": [
         "Загрузите логотип вашей организации"
+      ],
+      "User": [
+        "Пользователь"
       ],
       "Users": [
         "Пользователи"
@@ -15986,6 +16284,9 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
       ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скопируйте и вставьте этот адрес URL в поле ID субъекта вашего провайдера личных данных"
+      ],
       "Customize import to reduce the number of folders": [
         "Настройте импорт, чтобы уменьшить количество папок"
       ],
@@ -16013,6 +16314,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Включение расширенного журналирования записывает IP-адрес каждого события в журнале безопасности."
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
+      ],
       "Feature in early access": [
         "Функция раннего доступа"
       ],
@@ -16021,6 +16325,9 @@
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Группировать сообщения из одной цепочки в папке Входящие или отображать их отдельно."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Открытый ключ поставщика личных данных для подписи утверждений аутентификации. Получите хэш сертификата от поставщика личных данных."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
@@ -16108,6 +16415,9 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Обычно это адрес URL, содержащий имя поставщика личных данных."
       ],
       "Verified email address": [
         "Подтверждённый адрес эл. почты"
@@ -16252,14 +16562,53 @@
       "Add multiple users": [
         "Добавление нескольких пользователей"
       ],
+      "Add new user": [
+        "Добавить нового пользователя"
+      ],
+      "Admin": [
+        "Администратор"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Приглашение будет отправлено на этот адрес электронной почты."
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
       "Confirm password": [
         "Подтвердите пароль"
       ],
       "Create password": [
         "Создать пароль"
       ],
+      "Create password instead": [
+        "Вместо этого создать пароль"
+      ],
+      "Create user": [
+        "Создать пользователя"
+      ],
+      "Email": [
+        "Электронная почта"
+      ],
+      "Name": [
+        "Имя"
+      ],
+      "Optional": [
+        "Необязательно"
+      ],
+      "Private": [
+        "Частный"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
+      ],
+      "Send invite link via email instead": [
+        "Вместо этого отправить ссылку на приглашение по электронной почте"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Это создаст новый ${ MAIL_APP_NAME } адрес."
+      ],
+      "User created": [
+        "Пользователь создан"
       ],
       "VPN connections": [
         "Подключения к VPN"
@@ -16269,6 +16618,27 @@
       ]
     },
     "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Администраторы не могут получить доступ к данным частных пользователей"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Приглашение отправлено, ожидается ответ от приглашенного участника"
+      ],
+      "Invite sent": [
+        "Приглашение отправлено"
+      ],
+      "It's you": [
+        "Это вы"
+      ],
+      "Private": [
+        "Частный"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "Пользователь SSO, предоставленный поставщиком ваших личных данных"
+      ],
       "Writing assistant": [
         "Помощник по написанию"
       ]

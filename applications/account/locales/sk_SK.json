@@ -7745,9 +7745,6 @@
       "Preview for this file type is not supported": [
         "Ukážka tohto typu súboru nie je podporovaná"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Náhľad do dokumentov zatiaľ nie je podporovaný. Pre zobrazenie dokumentu ho otvorte, prosím."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
       ],
@@ -7765,9 +7762,6 @@
       ],
       "Public link invite": [
         "Pozvánka na verejný odkaz"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Verejné zdieľanie dokumentov zatiaľ nie je podporované. Požiadajte, prosím, vlastníka, aby vás k dokumentu pozval priamo."
       ],
       "purchase additional storage": [
         "zakúpiť rozšírenie úložiska"
@@ -7897,9 +7891,6 @@
       ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
-      ],
-      "Set your password": [
-        "Nastavte si heslo"
       ],
       "Setting up your organization": [
         "Nastavovanie organizácie"
@@ -8126,9 +8117,6 @@
       "This file is too large to preview": [
         "Tento súbor je príliš veľký na zobrazenie náhľadu"
       ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Tento pozývací odkaz už bol použitý. Namiesto toho sa prihláste priamo."
-      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Platnosť tohto pozývacieho odkazu vypršala. Ak chcete požiadať o prístup, obráťte sa na svojho správcu, prosím."
       ],
@@ -8206,6 +8194,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Týmto sa nahradí vaše dočasné heslo. V budúcnosti ho použite pre prístup k vášmu účtu ${ BRAND_NAME }."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Týmto sa odošle nová pozvánka na adresu **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
@@ -8762,9 +8753,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Aby hostiteľ videl vašu odpoveď, na pozvánky musíte stále odpovedať."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Po prijatí pozvánky budete môcť používateľa povýšiť na správcu alebo ho urobiť súkromným."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
       ],
@@ -8976,9 +8964,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Zaúčtované"
-      ],
       "Gifted": [
         "Darované"
       ],
@@ -9678,9 +9663,6 @@
       ],
       "Disable data export for organization members": [
         "Zakázať export údajov členom organizácie"
-      ],
-      "Disable sharing outside the organization.": [
-        "Zakázať zdieľanie mimo organizácie."
       ],
       "Display name": [
         "Zobrazované meno"
