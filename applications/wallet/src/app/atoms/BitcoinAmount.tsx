@@ -3,8 +3,8 @@ import { ReactNode, useMemo } from 'react';
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
+import { DEFAULT_DISPLAY_BITCOIN_UNIT } from '@proton/wallet';
 
-import { DEFAULT_DISPLAY_BITCOIN_UNIT } from '../constants';
 import { getLabelByUnit, satsToBitcoin, satsToMBitcoin } from '../utils';
 import { Price } from './Price';
 

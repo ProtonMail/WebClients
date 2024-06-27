@@ -1,4 +1,4 @@
-import { WasmBitcoinUnit, WasmScriptType } from '@proton/andromeda';
+import { WasmBitcoinUnit, WasmScriptType, WasmWordCount } from '@proton/andromeda';
 
 export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;
@@ -44,3 +44,13 @@ export const MAX_BLOCK_TARGET = 25;
 export const AVERAGE_TIMEGAP_BETWEEN_BLOCKS = 10;
 
 export const BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING = 10;
+
+export const wordCountToNumber: Record<WasmWordCount, number> = {
+    [WasmWordCount.Words12]: 12,
+    [WasmWordCount.Words15]: 15,
+    [WasmWordCount.Words18]: 18,
+    [WasmWordCount.Words21]: 21,
+    [WasmWordCount.Words24]: 24,
+};
+
+export const FIRST_INDEX = 0;
