@@ -93,12 +93,6 @@
 	inset-inline: auto 0;
 }
 
-.Lexical__listItemUnchecked:focus::before,
-.Lexical__listItemChecked:focus::before {
-	box-shadow: 0 0 0 2px #a6cdfe;
-	border-radius: 2px;
-}
-
 .Lexical__listItemUnchecked::before {
 	border: 1px solid #999;
 	border-radius: 2px;
