@@ -280,7 +280,7 @@ const ChangePasswordModal = ({
                 description: (
                     <div className="mb-4">
                         {c('Info')
-                            .t`Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.`}
+                            .t`Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.`}
                     </div>
                 ),
                 labels: {
@@ -335,8 +335,8 @@ const ChangePasswordModal = ({
             return {
                 title: c('Title').t`Switch to two-password mode`,
                 labels: {
-                    newPassword: c('Label').t`New mailbox password`,
-                    confirmPassword: c('Label').t`Confirm mailbox password`,
+                    newPassword: c('Label').t`New second password`,
+                    confirmPassword: c('Label').t`Confirm second password`,
                 },
                 async onSubmit() {
                     if (!onFormSubmit()) {
@@ -478,7 +478,7 @@ const ChangePasswordModal = ({
                 description: (
                     <div className="mb-4">
                         {c('Info')
-                            .t`${MAIL_APP_NAME} can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.`}
+                            .t`${MAIL_APP_NAME} can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.`}
                     </div>
                 ),
                 onSubmit,
@@ -494,10 +494,10 @@ const ChangePasswordModal = ({
 
         if (mode === MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE) {
             return {
-                title: c('Title').t`Change mailbox password`,
+                title: c('Title').t`Change second password`,
                 labels: {
-                    newPassword: c('Label').t`New mailbox password`,
-                    confirmPassword: c('Label').t`Confirm mailbox password`,
+                    newPassword: c('Label').t`New second password`,
+                    confirmPassword: c('Label').t`Confirm second password`,
                 },
                 onSubmit,
             };

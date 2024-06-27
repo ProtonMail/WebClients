@@ -48,7 +48,7 @@ const UnlockForm = ({
                 as={PasswordInputTwo}
                 id="mailboxPassword"
                 bigger
-                label={c('Label').t`Mailbox password`}
+                label={c('Label').t`Second password`}
                 error={validator([requiredValidator(keyPassword)])}
                 disableChange={loading}
                 autoFocus
