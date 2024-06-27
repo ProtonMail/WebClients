@@ -20,7 +20,6 @@ import { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { GetCommitData } from '../../UseCase/GetCommitData'
 import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
-import { GenerateManifestSignature } from '../../UseCase/GenerateManifestSignature'
 import { EncryptionContext } from '../../Services/Encryption/EncryptionContext'
 import { VerifyCommit } from '../../UseCase/VerifyCommit'
 import { DecryptCommit } from '../../UseCase/DecryptCommit'
@@ -101,13 +100,8 @@ export class AppDependencies extends DependencyContainer {
         this.get<EncryptMessage>(App_TYPES.EncryptMessage),
         this.get<DecryptCommit>(App_TYPES.DecryptCommit),
         this.get<VerifyCommit>(App_TYPES.VerifyCommit),
-        this.get<GenerateManifestSignature>(App_TYPES.GenerateManifestSignature),
         this.get<SquashAlgorithm>(App_TYPES.SquashAlgorithm),
       )
-    })
-
-    this.bind(App_TYPES.GenerateManifestSignature, () => {
-      return new GenerateManifestSignature(driveCompat)
     })
 
     this.bind(App_TYPES.GetCommitData, () => {

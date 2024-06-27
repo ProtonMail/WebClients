@@ -5,7 +5,7 @@ export function GetCommitDULimit() {
   if (isDevOrBlack()) {
     return 100
   } else {
-    return 50_000
+    return 2_500
   }
 }
 

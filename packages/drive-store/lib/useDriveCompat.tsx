@@ -6,7 +6,7 @@ import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
-import { DocumentKeys, DocumentManifest, DocumentNodeMeta, SignedData, useDocuments } from './_documents';
+import { DocumentKeys, DocumentNodeMeta, useDocuments } from './_documents';
 import { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
 import { useMyFiles, useResolveShareId } from './_shares';
@@ -73,18 +73,6 @@ export interface DriveCompat {
     openDocumentSharingModal: (meta: NodeMeta) => void;
 
     /**
-     * Generates and signs the manifest for a given document.
-     *
-     * Assumes document is only one-block, passed in the `content` argument.
-     */
-    signDocumentManifest: (meta: NodeMeta, content: Uint8Array) => Promise<DocumentManifest>;
-
-    /**
-     * Generates and signs arbitrary data for a document.
-     */
-    signDocumentData: (meta: NodeMeta, data: Uint8Array) => Promise<SignedData>;
-
-    /**
      * Opens a document in a new window.
      */
     openDocument: (meta: NodeMeta) => void;
@@ -110,14 +98,7 @@ export interface DriveCompat {
 export const useDriveCompat = (): DriveCompat => {
     const { withResolve } = useResolveShareId();
 
-    const {
-        createDocumentNode,
-        getDocumentKeys,
-        renameDocument,
-        getDocumentUrl,
-        signDocumentManifest,
-        signDocumentData,
-    } = useDocuments();
+    const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl } = useDocuments();
     const { getNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
@@ -140,8 +121,6 @@ export const useDriveCompat = (): DriveCompat => {
         renameDocument: withResolve(renameDocument),
         getDocumentUrl,
         openDocument,
-        signDocumentManifest: withResolve(signDocumentManifest),
-        signDocumentData: withResolve(signDocumentData),
         openDocumentSharingModal: withResolve(showLinkSharingModal),
         getMyFilesNodeMeta,
         getVerificationKey,
