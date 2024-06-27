@@ -33,6 +33,11 @@ interface Props {
     showColor?: boolean;
 
     /**
+     * Display plus sign for positive amount
+     */
+    withPositiveSign?: boolean;
+
+    /**
      * Additionnal info to display
      */
     info?: ReactNode;
@@ -52,9 +57,11 @@ export const BitcoinAmount = ({
     showExplicitSign,
     showColor,
 
+    withPositiveSign,
+
     info,
 }: Props) => {
-    const colorClassName = bitcoin < 0 ? 'color-danger' : 'color-success';
+    const signClassName = bitcoin < 0 ? 'color-danger' : 'color-success';
 
     const amount = useMemo(() => {
         switch (unit?.value) {
@@ -83,7 +90,7 @@ export const BitcoinAmount = ({
                     className={clsx(
                         'block mb-1',
                         firstClassName,
-                        showColor && colorClassName,
+                        showColor && signClassName,
                         unit?.loading === undefined && 'skeleton-loader'
                     )}
                 >
@@ -105,7 +112,6 @@ export const BitcoinAmount = ({
                             secondClassName,
                             exchangeRate.loading && 'skeleton-loader'
                         )}
-                        prefix={sign}
                         unit={exchangeRate.value ?? DEFAULT_DISPLAY_BITCOIN_UNIT}
                         satsAmount={bitcoin}
                     />
@@ -118,13 +124,9 @@ export const BitcoinAmount = ({
         <>
             <Price
                 data-testid="first-content"
-                className={clsx(
-                    'block mb-1',
-                    firstClassName,
-                    showColor && colorClassName,
-                    exchangeRate?.loading && 'skeleton-loader'
-                )}
-                prefix={sign}
+                className={clsx('block mb-1', firstClassName, exchangeRate?.loading && 'skeleton-loader')}
+                signClassName={showColor ? signClassName : ''}
+                withPositiveSign={withPositiveSign}
                 unit={exchangeRate?.value ?? DEFAULT_DISPLAY_BITCOIN_UNIT}
                 satsAmount={bitcoin}
             />

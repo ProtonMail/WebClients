@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
+import { CSSProperties, useMemo } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { WasmApiExchangeRate } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
@@ -21,6 +21,7 @@ import {
     convertAmount,
     getFormattedPeriodSinceConfirmation,
     getLabelByUnit,
+    getTransactionMessage,
     getTransactionRecipientsHumanReadableName,
     getTransactionSenderHumanReadableName,
 } from '../../utils';
@@ -44,6 +45,9 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
         tx.networkData.time.confirmation_time &&
         getFormattedPeriodSinceConfirmation(now, new Date(tx.networkData.time.confirmation_time * SECOND));
 
+    const imgClassName = clsx('no-shrink', isNarrow ? 'mr-2' : 'mr-4');
+    const imgStyle: CSSProperties = isNarrow ? { width: '1.5rem' } : { width: '2rem' };
+
     return (
         <DataListItem
             label={value >= 0 ? 'Received' : 'Sent'}
@@ -52,10 +56,11 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
                     <img
                         src={arrowReceiveSvg}
                         alt="A green arrow going down"
-                        className={clsx(isNarrow ? 'mr-2' : 'mr-4')}
+                        className={imgClassName}
+                        style={imgStyle}
                     />
                 ) : (
-                    <img src={arrowSendSvg} alt="A red arrow going down" className={clsx(isNarrow ? 'mr-2' : 'mr-4')} />
+                    <img src={arrowSendSvg} alt="A red arrow going down" className={imgClassName} style={imgStyle} />
                 )
             }
             bottomNode={
@@ -63,9 +68,9 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
                     {confirmedDate ? (
                         <span className="color-hint block text-ellipsis">{confirmedDate}</span>
                     ) : (
-                        <div className="flex flex-row items-center color-primary">
-                            <CircleLoader />
-                            <div className="ml-2">{c('Wallet transaction').t`In progress`}</div>
+                        <div className="flex flex-row flex-nowrap items-center color-primary">
+                            <CircleLoader className="no-shrink" />
+                            <div className="ml-2 text-ellipsis">{c('Wallet transaction').t`In progress`}</div>
                         </div>
                     )}
                 </div>
@@ -83,15 +88,17 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
         ? getTransactionRecipientsHumanReadableName(tx, walletMap, addresses)[0] ?? tx.networkData.outputs[0]?.address
         : getTransactionSenderHumanReadableName(tx, walletMap);
 
+    const message = getTransactionMessage(tx);
+
     return (
         <DataListItem
-            label={
-                isSent
-                    ? c('Wallet transactions').ngettext(msgid`Recipient`, `Recipients`, tx.networkData.outputs.length)
-                    : c('Wallet transactions').ngettext(msgid`Sender`, `Senders`, tx.networkData.inputs.length)
-            }
+            label={<div className={clsx('block text-ellipsis', loading && 'skeleton-loader')}>{name}</div>}
             bottomNode={
-                <div className={clsx('color-hint block text-ellipsis', loading && 'skeleton-loader')}>{name}</div>
+                message && (
+                    <div className={clsx('color-hint block text-ellipsis', loading && 'skeleton-loader')}>
+                        {message}
+                    </div>
+                )
             }
         />
     );
@@ -110,7 +117,7 @@ export const NoteDataListItem = ({
                     <CoreButton
                         shape="ghost"
                         color={tx.apiData?.Label ? 'weak' : 'norm'}
-                        className="py-0.5 px-1 color-hint block text-ellipsis"
+                        className="py-0.5 px-0 color-hint block text-ellipsis"
                         style={{
                             color: !tx.apiData?.Label && 'var(--interaction-norm)',
                             background: 'transparent',
@@ -147,7 +154,12 @@ export const AmountDataListItem = ({
                     {loadingLabel ? (
                         <span>{c('Wallet transaction').t`Loading`}</span>
                     ) : (
-                        <Price unit={exchangeRate ?? bitcoinUnit} satsAmount={value} />
+                        <Price
+                            unit={exchangeRate ?? bitcoinUnit}
+                            satsAmount={value}
+                            withPositiveSign
+                            signClassName={value < 0 ? 'color-danger' : 'color-success'}
+                        />
                     )}
                 </div>
             }

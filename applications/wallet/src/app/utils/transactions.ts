@@ -1,15 +1,17 @@
 import { format } from 'date-fns';
-import { intervalToDuration } from 'date-fns';
+import { isSameWeek, isToday } from 'date-fns';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmTransactionDetails, WasmTransactionTime, WasmTxOut } from '@proton/andromeda';
 import { SECOND } from '@proton/shared/lib/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
 import { WalletMap } from '@proton/wallet';
 
 import { TransactionData } from '../hooks/useWalletTransactions';
 import { isSelfAddress } from './email';
+import { multilineStrToOnelineJsx } from './string';
 
 const toMsTimestamp = (ts: number | BigInt) => {
     return Number(ts) * SECOND;
@@ -44,30 +46,20 @@ export const confirmationTimeToHumanReadable = (confirmation?: WasmTransactionTi
 };
 
 export const getFormattedPeriodSinceConfirmation = (now: Date, confirmation: Date) => {
+    const options = { locale: dateLocale };
     if (!confirmation) {
         return;
     }
 
-    const confirmationInterval: Interval | undefined = { start: confirmation, end: now };
-    const confirmedSince = intervalToDuration(confirmationInterval);
-
-    if (confirmedSince.days) {
-        return format(confirmation, 'MMM d, y, HH:mm');
+    if (isToday(confirmation)) {
+        return format(confirmation, 'p', options);
     }
 
-    const periods = compact([
-        confirmedSince.hours && `${confirmedSince.hours} hours`,
-        confirmedSince.minutes && `${confirmedSince.minutes} minutes`,
-        confirmedSince.seconds && `${confirmedSince.seconds} seconds`,
-    ]);
+    if (isSameWeek(confirmation, now, options)) {
+        return format(confirmation, 'EEEE, p', options);
+    }
 
-    return periods.reduce((acc, cur, index) => {
-        if (!acc) {
-            return cur;
-        }
-
-        return index < periods.length ? `${acc}, ${cur}` : `${acc} and ${cur} ago`;
-    }, '');
+    return format(confirmation, 'MMM d, y, p', options);
 };
 
 export const getTransactionSenderHumanReadableName = (transaction: TransactionData, walletMap: WalletMap) => {
@@ -134,4 +126,13 @@ export const getTransactionRecipientsHumanReadableName = (
     );
 
     return humanReadableOutputs;
+};
+
+export const getTransactionMessage = (transaction: TransactionData) => {
+    // If transaction was sent using the current wallet account, we display the Wallet - WalletAccount as sender
+    if (transaction.apiData?.Body) {
+        return multilineStrToOnelineJsx(transaction.apiData?.Body ?? '', 'transaction-message');
+    }
+
+    return null;
 };
