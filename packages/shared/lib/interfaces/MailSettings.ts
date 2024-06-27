@@ -24,6 +24,7 @@ import {
     SIGN,
     SPAM_ACTION,
     STICKY_LABELS,
+    SWIPE_ACTION,
     UNREAD_FAVICON,
     VIEW_LAYOUT,
     VIEW_MODE,
@@ -51,8 +52,8 @@ export interface MailSettings {
     ShowMoved: number;
     ViewMode: VIEW_MODE;
     ViewLayout: VIEW_LAYOUT;
-    SwipeLeft: number;
-    SwipeRight: number;
+    SwipeLeft: SWIPE_ACTION; // default 3
+    SwipeRight: SWIPE_ACTION; // default 0
     PageSize: MAIL_PAGE_SIZE;
     HideEmbeddedImages: SHOW_IMAGES;
     HideRemoteImages: SHOW_IMAGES;
