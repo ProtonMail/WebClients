@@ -97,7 +97,7 @@ function ApplicationContainer() {
   }, [application, isAppReady])
 
   const createNewDocInRoot = useCallback(async () => {
-    const date = format(new Date(), 'yyyy-MM-dd HH:mm:ss')
+    const date = format(new Date(), 'yyyy-MM-dd HH.mm.ss')
     const name = c('Title').t`Untitled document ${date}`
 
     const root =
