@@ -3,6 +3,7 @@ import { FormEvent, ReactNode, RefObject, useEffect, useMemo, useRef, useState }
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
@@ -267,6 +268,7 @@ const SubscriptionContainer = ({
     const [loadingGift, withLoadingGift] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
     const chargebeeContext = useChargebeeContext();
+    const scribeEnabled = useAssistantFeatureEnabled();
 
     const [audience, setAudience] = useState(() => {
         if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
@@ -967,6 +969,7 @@ const SubscriptionContainer = ({
                                         {hasPlanCustomizer && currentPlan && (
                                             <>
                                                 <ProtonPlanCustomizer
+                                                    scribeEnabled={scribeEnabled.enabled && !scribeEnabled.killSwitch}
                                                     loading={blockAccountSizeSelector}
                                                     currency={model.currency}
                                                     cycle={model.cycle}
