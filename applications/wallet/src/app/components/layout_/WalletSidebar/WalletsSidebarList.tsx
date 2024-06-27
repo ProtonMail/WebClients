@@ -125,7 +125,7 @@ export const WalletsSidebarList = ({
     return (
         <SidebarListItem className="shrink overflow-auto">
             <div
-                className="flex flex-nowrap justify-space-between items-center w-full relative color-hint"
+                className="flex flex-nowrap justify-space-between items-center w-full relative"
                 style={{ fontWeight: 'var(--font-weight-weak)' }}
             >
                 <div className="text-ellipsis" title={'Wallet'}>

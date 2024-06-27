@@ -111,12 +111,7 @@ export const WalletContainer = () => {
                                     setWalletPreferencesModalState(true);
                                 }}
                             >
-                                <Icon
-                                    alt={c('Wallet container').t`Edit`}
-                                    name="pen-square"
-                                    className="color-hint"
-                                    size={5}
-                                />
+                                <Icon alt={c('Wallet container').t`Edit`} name="cog-drawer" size={5} />
                             </CoreButton>
                         </div>
 
