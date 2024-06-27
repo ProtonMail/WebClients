@@ -8,3 +8,5 @@ export { default as ShowMovedToggle } from './ShowMovedToggle';
 export { default as AlmostAllMailToggle } from './AlmostAllMailToggle';
 export { default as RequestLinkConfirmationToggle } from './RequestLinkConfirmationToggle';
 export { default as DelaySendSecondsSelect } from './DelaySendSecondsSelect';
+export { default as SpamActionSelect } from './SpamActionSelect';
+export { default as SwipeActionSelect } from './SwipeActionSelect';

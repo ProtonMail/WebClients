@@ -144,6 +144,14 @@ export enum SPAM_ACTION {
     SpamAndUnsub = 1,
 }
 
+export enum SWIPE_ACTION {
+    Trash = 0,
+    Spam = 1,
+    Star = 2,
+    Archive = 3,
+    MarkAsRead = 4,
+}
+
 export enum MAIL_PAGE_SIZE {
     FIFTY = 50,
     ONE_HUNDRED = 100,
