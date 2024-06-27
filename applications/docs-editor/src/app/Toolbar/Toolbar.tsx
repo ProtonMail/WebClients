@@ -738,7 +738,7 @@ export default function DocumentEditorToolbar({
                     key={type}
                     className={clsx(
                       'flex items-center gap-2 text-left text-sm',
-                      type === listType && 'bg-[--primary-minor-2] font-bold',
+                      type === listType && 'active font-bold',
                     )}
                     onClick={onClick}
                     disabled={!isEditable}
@@ -905,7 +905,7 @@ export default function DocumentEditorToolbar({
                     key={type}
                     className={clsx(
                       'flex items-center gap-2 text-left text-sm',
-                      type === listType && 'bg-[--primary-minor-2] font-bold',
+                      type === listType && 'active font-bold',
                     )}
                     onClick={onClick}
                     disabled={!isEditable}
