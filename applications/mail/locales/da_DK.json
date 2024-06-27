@@ -1210,10 +1210,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -6409,6 +6405,9 @@
       "Please add at least one recipient.": [
         "Angiv mindst én modtager."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Bed ejeren om at invitere dig direkte til dokumentet."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Bekræft dit kort i verifikationsfanen."
       ],
@@ -6429,6 +6428,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bemærk at når du klikker på Bekræft-knappen vil din konto have ${ creditsRemaining } kreditter tilbage."
+      ],
+      "Please open the document to view it.": [
+        "Åbn venligst dokumentet for at se det."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Angiv et navn og en e-mailadresse for at oprette en gruppe."
@@ -6482,8 +6484,8 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Forhåndsvisning af dokumenter understøttes ikke endnu. Åbn dokumentet for at se det."
+      "Preview of documents is not yet supported.": [
+        "Smugkig af dokumenter understøttes ikke endnu."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
@@ -6503,8 +6505,8 @@
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ maskMyEmailButton }."
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Offentlig deling af dokumenter understøttes ikke endnu. Bed ejeren om at invitere dig direkte til dokumentet."
+      "Public sharing of documents is not yet supported.": [
+        "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
       "Recipient: ": [
         "Modtager: "
@@ -9819,8 +9821,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Forstået"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Payment Processing": [
+        "Betalingsbehandling"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den særlige rabatpris på ${ priceWithDiscount } gælder for den første ${ months }. Kuponen er gyldig til ${ couponRedemptions } forlængelser. Derefter vil den automatisk blive fornyet til ${ price } i ${ months } måneder. Du kan annullere når som helst."
@@ -9833,6 +9841,9 @@
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Vi er ved at behandle din betaling for den fremsendte faktura. Vent venligst, indtil betalingen er gennemført, før du foretager ændringer i dit abonnement eller opdaterer dine betalingsoplysninger. Tak for din tålmodighed."
       ]
     },
     "Payments.Error": {

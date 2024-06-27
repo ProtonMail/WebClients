@@ -1190,10 +1190,6 @@
       "Trust": [
         "ნდობა"
       ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
-      ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
       ],
@@ -4068,6 +4064,9 @@
       "The sending key is not valid": [
         "გაგზავნის გასაღები არასწორია"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "სისტემა ამჟამად დაკავებულია. მოგვიანებით, რამდენიმე წუთში სცადეთ."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
@@ -5502,6 +5501,9 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
+      ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } ${ BRAND_NAME }-ის წერის დამხმარის შესახებ"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე",
@@ -7182,6 +7184,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "გადახდის შემდეგ თქვენი ანგარიში განახლდება."
+      ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "თქვენს ბრაუზერს წერის დამხმარის მხარდაჭერა არ გააჩნია. სცადეთ, ის სერვერებზე გაუშვათ."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
@@ -9387,6 +9392,9 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "შეინახეთ კონტაქტების ისეთი დეტალები, როგორიცაა ტელეფონის ნომერი, მისამართი, დაბადების დღე და პირადი შენიშვნები, უსაფრთხოდ. ნულოვანი წვდომით დაშიფვრა უზრუნველყოფს, რომ მათზე წვდომა ${ BRAND_NAME }-საც კი არ ჰქონდეს."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "იხილეთ შეხვედრის წევრების წვდომადობა და დაზოგეთ შეხვედრები დაგეგმვის დრო"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "გაუგზავნეთ ელფოსტა დიდ ჯგუფებს სწრაფად და ადვილად ჯგუფების გამოყენებით. შექმენით იმდენი ჯგუფი, რამდენიც გნებავთ (100 კონტაქტი თითოეულში)"
