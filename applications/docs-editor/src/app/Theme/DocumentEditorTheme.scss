@@ -3,8 +3,10 @@
 @import 'code';
 
 .DocumentEditor {
-	min-block-size: 80vh;
+	min-block-size: 100%;
 	padding: 2rem;
+	padding-block-end: 20vh;
+	block-size: max-content;
 	background: white;
 	color: black;
 
