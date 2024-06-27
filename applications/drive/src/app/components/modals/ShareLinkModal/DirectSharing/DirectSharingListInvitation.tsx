@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getInitials } from '@proton/shared/lib/helpers/string';
@@ -42,7 +44,7 @@ export const DirectSharingListInvitation = ({
 
     const copyShareInviteLinkUrl = useCallback(() => {
         textToClipboard(
-            `${window.location.origin}/${volumeId}/${linkId}?invitation=${invitationId}&email=${contactEmail}`
+            getAppHref(`/${volumeId}/${linkId}?invitation=${invitationId}&email=${contactEmail}`, APPS.PROTONDRIVE)
         );
         createNotification({
             text: c('Info').t`Invite link copied`,
