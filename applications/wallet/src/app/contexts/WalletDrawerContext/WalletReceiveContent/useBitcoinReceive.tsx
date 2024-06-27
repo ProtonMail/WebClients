@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { WasmApiWalletAccount, WasmPaymentLink } from '@proton/andromeda';
 import useLoading from '@proton/hooks/useLoading';
+import { BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING } from '@proton/wallet';
 
-import { BITCOIN_ADDRESS_INDEX_GAP_BEFORE_WARNING } from '../../../constants';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
 import { useComputeNextAddressToReceive } from '../../../utils/hooks/useComputeNextIndexToReceive';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';

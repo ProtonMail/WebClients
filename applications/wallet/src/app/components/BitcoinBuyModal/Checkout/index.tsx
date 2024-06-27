@@ -8,9 +8,8 @@ import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip } from '@proton/components/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import { useWalletApi } from '@proton/wallet';
+import { DEFAULT_DISPLAY_BITCOIN_UNIT, useWalletApi } from '@proton/wallet';
 
-import { DEFAULT_DISPLAY_BITCOIN_UNIT } from '../../../constants';
 import { useGatewaysPublicApiKeys } from '../../../store/hooks/useGatewaysPublicApiKeys';
 import { bitcoinToSats } from '../../../utils';
 import { QuoteWithProvider } from '../Amount';

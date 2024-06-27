@@ -11,12 +11,11 @@ import useLoading from '@proton/hooks/useLoading';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { useWalletApiClients, verifySignedData } from '@proton/wallet';
+import { useBitcoinNetwork, useWalletApiClients, verifySignedData } from '@proton/wallet';
+import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-integration';
 
 import { Button } from '../../atoms';
-import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
-import { useBitcoinNetwork } from '../../store/hooks';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';

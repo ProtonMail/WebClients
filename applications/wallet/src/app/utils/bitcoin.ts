@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { WasmAddress, WasmApiExchangeRate, WasmBitcoinUnit, WasmNetwork, WasmScriptType } from '@proton/andromeda';
+import { BITCOIN, COMPUTE_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '@proton/wallet';
 
 import { fiatToSats, satsToFiat } from '.';
-import { BITCOIN, COMPUTE_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '../constants';
 
 export const bitcoinToSats = (btc: number) => {
     return btc * BITCOIN;

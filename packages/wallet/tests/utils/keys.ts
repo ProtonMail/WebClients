@@ -5,6 +5,9 @@ import { getDecryptedAddressKey } from '@proton/shared/lib/keys';
 
 import { addressPgpPrvKey } from '../fixtures/keys';
 
+// passphrase is `testtest`·
+const addressKey = { ID: '0000000001', PrivateKey: addressPgpPrvKey, Primary: 1, Flags: 0 } as AddressKey;
+
 const address: Address = {
     ID: '0000001',
     CatchAll: true,
@@ -12,7 +15,7 @@ const address: Address = {
     DomainID: '0000000001',
     Email: 'test@proton.test',
     HasKeys: 1,
-    Keys: [],
+    Keys: [addressKey],
     SignedKeyList: { Data: '', Signature: '', MinEpochID: 0, MaxEpochID: 1 },
     Order: 0,
     Priority: 0,
@@ -29,12 +32,7 @@ const address: Address = {
 export const getAddressKey = async () => {
     const passphrase = 'testtest';
 
-    const keys: DecryptedAddressKey[] = [
-        await getDecryptedAddressKey(
-            { ID: '0000000001', PrivateKey: addressPgpPrvKey, Primary: 1, Flags: 0 } as AddressKey,
-            passphrase
-        ),
-    ];
+    const keys: DecryptedAddressKey[] = [await getDecryptedAddressKey(addressKey, passphrase)];
 
     return { address, keys };
 };
