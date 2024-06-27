@@ -3840,17 +3840,11 @@
       "Preview for this file type is not supported": [
         "Ukážka tohto typu súboru nie je podporovaná"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Náhľad do dokumentov zatiaľ nie je podporovaný. Pre zobrazenie dokumentu ho otvorte, prosím."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
       ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Verejné zdieľanie dokumentov zatiaľ nie je podporované. Požiadajte, prosím, vlastníka, aby vás k dokumentu pozval priamo."
       ],
       "read our two-factor authentication guide first": [
         "aby ste si najprv prečítali nášho sprievodcu dvojstupňovým overovaním"
@@ -4085,6 +4079,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Týmto sa nahradí vaše dočasné heslo. V budúcnosti ho použite pre prístup k vášmu účtu ${ BRAND_NAME }."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Týmto sa odošle nová pozvánka na adresu **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Toto vás odhlási zo všetkých aktívnych relácií a vypne dvojstupňové overenie."
@@ -4428,9 +4425,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Po prijatí pozvánky budete môcť používateľa povýšiť na správcu alebo ho urobiť súkromným."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
       ],
@@ -4551,9 +4545,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Zaúčtované"
-      ],
       "Gifted": [
         "Darované"
       ],

@@ -3808,17 +3808,11 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Examinare documentelor nu este încă acceptată. Deschideți documentul pentru a-l vizualiza."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Partajarea publică a documentelor nu este încă acceptată. Solicitați proprietarului să vă invite direct la document."
       ],
       "read our two-factor authentication guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
@@ -4049,6 +4043,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Aceasta vă va înlocui parola temporară. O veți folosi pentru a vă accesa contul ${ BRAND_NAME } în viitor."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Aceasta va trimite o invitație nouă către **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Aceasta vă va deconecta de la orice sesiune activă și va dezactiva autentificarea cu doi factori."
@@ -4385,9 +4382,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceţi clic pe butonul de mai jos."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Veți putea promova utilizatorul ca administrator sau să-l faceți privat după ce a acceptat invitația."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
@@ -4508,9 +4502,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Facturată"
-      ],
       "Gifted": [
         "Dăruit"
       ],
