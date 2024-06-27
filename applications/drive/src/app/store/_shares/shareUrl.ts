@@ -1,3 +1,5 @@
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -40,6 +42,6 @@ export const getSharedLink = (sharedURL?: {
 
     const url = sharedURL.publicUrl
         ? replaceLocalURL(sharedURL.publicUrl)
-        : `${window.location.origin}/urls/${sharedURL.token}`;
+        : getAppHref(`/urls/${sharedURL.token}`, APPS.PROTONDRIVE);
     return `${url}${generatedPassword !== '' ? `#${generatedPassword}` : ''}`;
 };
