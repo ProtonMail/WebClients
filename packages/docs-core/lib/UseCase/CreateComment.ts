@@ -7,6 +7,7 @@ import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { Result } from '../Domain/Result/Result'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { DocsApi } from '../Api/Docs/DocsApi'
+import metrics from '@proton/metrics'
 
 /**
  * Creates and encrypts a new comment in a thread with the API.
@@ -60,6 +61,10 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       null,
     )
     if (result.isFailed()) {
+      metrics.docs_comments_error_total.increment({
+        reason: 'server_error',
+      })
+
       dto.commentsState.deleteComment({ commentID: localComment.id, threadID: dto.threadID })
       return Result.fail(result.getError())
     }
