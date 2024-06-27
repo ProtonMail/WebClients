@@ -58,12 +58,14 @@ export class LoadThreads implements UseCaseInterface<void> {
       }),
     )
 
+    const successfulComments = comments.filter((result) => !result.isFailed())
+
     const localThread = new CommentThread(
       commentThreadDto.CommentThreadID,
       new ServerTime(commentThreadDto.CreateTime),
       new ServerTime(commentThreadDto.ModifyTime),
       commentThreadDto.Mark,
-      comments.map((result) => result.getValue()),
+      successfulComments.map((result) => result.getValue()),
       false,
       commentThreadDto.State,
     )
