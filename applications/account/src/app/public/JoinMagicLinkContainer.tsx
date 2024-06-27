@@ -10,7 +10,7 @@ import useKTActivation from '@proton/components/containers/keyTransparency/useKT
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { AuthStep } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
-import { useApi, useErrorHandler } from '@proton/components/hooks';
+import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { authJwt } from '@proton/shared/lib/api/auth';
@@ -21,7 +21,7 @@ import { getOrganization, getOrganizationLogo, getOrganizationSettings } from '@
 import { getUser } from '@proton/shared/lib/api/user';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppFromSubscribed } from '@proton/shared/lib/authentication/apps';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
     confirmPasswordValidator,
@@ -58,12 +58,13 @@ enum ErrorType {
 
 interface Props {
     onLogin: OnLoginCallback;
+    onUsed: () => void;
     productParam: ProductParam;
     toAppName?: string;
     toApp?: APP_NAMES;
 }
 
-const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
+const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props) => {
     const api = useApi();
     const silentApi = getSilentApi(api);
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
@@ -83,6 +84,7 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
     const [submitting, withSubmitting] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
+    const { createNotification } = useNotifications();
 
     useEffect(() => {
         const init = async () => {
@@ -141,9 +143,13 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
 
         init()
             .catch((error) => {
-                const { code } = getApiError(error);
+                const { code, message } = getApiError(error);
                 if (code === API_CUSTOM_ERROR_CODES.JWT_EXPIRED) {
                     setError({ type: ErrorType.Expired });
+                } else if (code === API_CUSTOM_ERROR_CODES.JWT_REDIRECT_LOGIN) {
+                    createNotification({ type: 'info', text: message });
+                    onUsed();
+                    setError({ type: ErrorType.Used });
                 } else if (code === API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
                     setError({ type: ErrorType.Used });
                 } else {
@@ -305,7 +311,18 @@ const JoinMagicLinkContainer = ({ onLogin, toApp, productParam }: Props) => {
                         if (!onFormSubmit()) {
                             return;
                         }
-                        withSubmitting(handleSetup()).catch(handleError);
+                        withSubmitting(handleSetup()).catch((error) => {
+                            const { status } = getApiError(error);
+                            // Session expired.
+                            if (status === HTTP_STATUS_CODE.UNAUTHORIZED) {
+                                createNotification({
+                                    type: 'error',
+                                    text: c('Error').t`Session expired. Please refresh the page.`,
+                                });
+                                return;
+                            }
+                            handleError(error);
+                        });
                     }}
                     method="post"
                 >
