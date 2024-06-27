@@ -473,10 +473,10 @@
       "Not now": [
         "Tidak sekarang"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -7155,8 +7155,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Mengerti"
+      ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "Payment Processing": [
+        "Pembayaran Sedang Diproses"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Voucer berlaku untuk pembaruan ${ couponRedemptions }. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
@@ -7169,6 +7175,9 @@
       ],
       "Timeout exceeded": [
         "Batas waktu terlampaui"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Kami sedang memproses pembayaran Anda untuk faktur yang tertagih. Silakan tunggu hingga pembayaran selesai sebelum membuat perubahan pada paket Anda atau memperbarui rincian pembayaran Anda. Terima kasih atas kesabaran Anda."
       ]
     },
     "Payments.Error": {

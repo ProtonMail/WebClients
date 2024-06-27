@@ -3719,6 +3719,9 @@
         "Tilføj venligst en e-mailadresse til brugeren på række",
         "Tilføj venligst e-mailadresser til brugerne på rækker"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Bed ejeren om at invitere dig direkte til dokumentet."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Bekræft dit kort i verifikationsfanen."
       ],
@@ -3739,6 +3742,9 @@
       ],
       "please open a support ticket": [
         "åbn venligst en support-sag"
+      ],
+      "Please open the document to view it.": [
+        "Åbn venligst dokumentet for at se det."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
@@ -3770,8 +3776,8 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Forhåndsvisning af dokumenter understøttes ikke endnu. Åbn dokumentet for at se det."
+      "Preview of documents is not yet supported.": [
+        "Smugkig af dokumenter understøttes ikke endnu."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
@@ -3779,8 +3785,8 @@
       "Protected by Swiss privacy laws": [
         "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Offentlig deling af dokumenter understøttes ikke endnu. Bed ejeren om at invitere dig direkte til dokumentet."
+      "Public sharing of documents is not yet supported.": [
+        "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
       "read our two-factor authentication guide first": [
         "læser vores to-faktor-godkendelsesguide først"
@@ -4007,6 +4013,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dette vil erstatte din midlertidige adgangskode. Du vil bruge den til at tilgå din ${ BRAND_NAME } konto i fremtiden."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Dette vil sende en ny invitation til **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge dig ud af alle aktive sessioner og deaktivere to-faktor-godkendelse."
@@ -4336,8 +4345,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Du vil kunne gøre brugeren til administrator eller gøre til privatperson, når de har accepteret invitationen."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Du vil kunne gøre brugeren til administrator, når han/hun har accepteret invitationen."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
@@ -4459,14 +4468,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Faktureret"
-      ],
       "Gifted": [
         "Gave"
       ],
       "Paid": [
         "Betalt"
+      ],
+      "Processing": [
+        "Behandler"
       ],
       "Unpaid": [
         "Ubetalt"
@@ -6613,8 +6622,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Forstået"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Payment Processing": [
+        "Betalingsbehandling"
       ],
       "Processing payment": [
         "Behandler betaling"
@@ -6630,6 +6645,9 @@
       ],
       "Timeout exceeded": [
         "Timeout overskredet"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Vi er ved at behandle din betaling for den fremsendte faktura. Vent venligst, indtil betalingen er gennemført, før du foretager ændringer i dit abonnement eller opdaterer dine betalingsoplysninger. Tak for din tålmodighed."
       ]
     },
     "Payments.Error": {

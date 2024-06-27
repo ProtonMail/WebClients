@@ -380,6 +380,9 @@
       "Remove gift code": [
         "Удалить подарочный код"
       ],
+      "Remove single sign-on": [
+        "Удалить единый вход"
+      ],
       "Rename": [
         "Переименовать"
       ],
@@ -470,6 +473,9 @@
       "Send my username": [
         "Отправить мое имя пользователя"
       ],
+      "Send new invite": [
+        "Отправить новое приглашение"
+      ],
       "Send reminder": [
         "Отправить напоминание"
       ],
@@ -517,6 +523,9 @@
       ],
       "Start live chat": [
         "Начать онлайн чат"
+      ],
+      "Stop using single sign-on": [
+        "Прекратить использовать единый вход"
       ],
       "Submit": [
         "Отправить"
@@ -595,6 +604,9 @@
       ],
       "Verify code again": [
         "Подтвердить код еще раз"
+      ],
+      "Verify domain": [
+        "Проверить домен"
       ],
       "View": [
         "Посмотреть"
@@ -726,6 +738,9 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Просматривайте веб-страницы в приватном режиме и блокируйте рекламу"
+      ],
+      "Create and collaborate on documents securely": [
+        "Создавайте документы и работайте над ними в защищенном режиме"
       ],
       "Keep your schedule private": [
         "Сохраняйте конфиденциальность своего расписания"
@@ -2077,11 +2092,17 @@
       "Code wrong or not valid anymore": [
         "Неверный или недействительный код"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "Не удалось загрузить счета-фактуры. Повторите попытку позже."
+      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
       "Email address is invalid": [
         "Недопустимый адрес электронной почты"
+      ],
+      "Email address is not available": [
+        "Адрес электронной почты недоступен"
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -2157,6 +2178,9 @@
       ],
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Ключ организации должен быть активирован для создания приглашенных пользователей"
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
@@ -2939,6 +2963,11 @@
         "Служба поддержки"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Добавьте эту запись к вашему домену в панели управления регистратора доменных имен"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Эл. почта"
@@ -3545,6 +3574,9 @@
       "Lean more about gateways": [
         "Узнайте больше о шлюзах"
       ],
+      "Lean more about single sign-on": [
+        "Узнайте больше о едином входе"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как войти в ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
@@ -3845,6 +3877,9 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF уточняет, кому разрешено отправлять электронные письма на ваш домен. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
       ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Пользователи SSO (предоставленные вашим поставщиком личных данных) будут удалены"
+      ],
       "Step ${ step }": [
         "Шаг ${ step }",
         "Шага ${ step }",
@@ -3956,6 +3991,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Проверка может занять до одного часа. После успешной проверки не удаляйте запись TXT, так как она необходима для подтверждения того, что вы продолжаете владеть доменом."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Это отменит вашу текущую платную подписку и вы потеряете все льготы по лояльности, которые вы накопили."
       ],
@@ -3977,6 +4015,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Это заменит ваш временный пароль. Вы будете использовать его для доступа к вашему аккаунту в ${ BRAND_NAME } в будущем."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Это отправит новое приглашение на **${ email }**."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
       ],
@@ -3985,6 +4026,9 @@
       ],
       "to ${ product } Business": [
         "на ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Чтобы разрешить домену **${ domainName }** использовать SAML SSO, вы должны подтвердить право собственности на него, добавив следующую запись DNS TXT к вашему домену у провайдера DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Чтобы отменить вашу подписку, пожалуйста, свяжитесь с нами."
@@ -4175,6 +4219,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Мы отправим код сброса на номер телефона, который вы указали для восстановления аккаунта."
       ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "При включении SAML для ${ appName } у поставщика личных данных вам может быть предложено использовать URL обратного вызова (ACS) и ID эмитента. Просто скопируйте и вставьте приведенные ниже данные в поля поставщика личных данных."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
       ],
@@ -4219,6 +4266,18 @@
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензии помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензии помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Сейчас вы используете ${ usedMembers } из вашей ${ maxMembers } доступной пользовательской лицензии.",
@@ -4401,9 +4460,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Счет выставлен"
-      ],
       "Gifted": [
         "Подарено"
       ],
@@ -4509,6 +4565,9 @@
       ],
       "Amount due": [
         "К оплате"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL службы подтверждения потребителя"
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
@@ -4804,6 +4863,9 @@
       "Proration": [
         "Пропорциональное распределение"
       ],
+      "Public certificate (X.509)": [
+        "Публичный сертификат (X.509)"
+      ],
       "Recovery email address": [
         "Резервный адрес электронной почты"
       ],
@@ -4812,6 +4874,9 @@
       ],
       "Recovery phrase": [
         "Фраза для восстановления"
+      ],
+      "Reply (ACS) URL": [
+        "URL ответа (ACS)"
       ],
       "Require 2FA for administrators": [
         "Требовать 2ФА для администраторов"
@@ -4824,6 +4889,12 @@
       ],
       "Security code (${ codeName })": [
         "Код безопасности (${ codeName })"
+      ],
+      "Single sign-on entity ID": [
+        "ID единого входа"
+      ],
+      "Single sign-on URL": [
+        "URL единого входа"
       ],
       "Start date": [
         "Дата начала"
@@ -4988,6 +5059,9 @@
       "Create account": [
         "Создать аккаунт"
       ],
+      "Don't have access to your 2FA?": [
+        "У вас нет доступа к двухфакторной аутентификации?"
+      ],
       "Forgot password?": [
         "Забыли пароль?"
       ],
@@ -5147,11 +5221,17 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete and revoke invite": [
+        "Удалить и отозвать приглашение"
+      ],
       "Edit": [
         "Изменить"
       ],
       "Remove": [
         "Удалить"
+      ],
+      "Resend invite link": [
+        "Отправить приглашение повторно"
       ],
       "Revoke sessions": [
         "Прервать сессии"
@@ -6778,6 +6858,9 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Пререквизиты:** чтобы включить предоставление SCIM, необходимо подтвердить право собственности на домен **${ domainName }**. Эта проверка может занять до одного часа."
+      ],
       "For security reasons, the token is hidden": [
         "Токен скрыт по соображениям безопасности"
       ],
@@ -6810,8 +6893,14 @@
       ]
     },
     "Select invoice document": {
+      "Credit note": [
+        "Кредит-нота"
+      ],
       "Currency conversion": [
         "Конвертация валюты"
+      ],
+      "Invoice": [
+        "Счет-фактура"
       ]
     },
     "Select search results": {
@@ -7962,6 +8051,9 @@
       "Domain deleted": [
         "Домен удалён"
       ],
+      "Invitation resent": [
+        "Приглашение отправлено повторно"
+      ],
       "Sessions revoked": [
         "Сессии прерваны"
       ],
@@ -8056,6 +8148,9 @@
       ],
       "Email addresses": [
         "Адреса электронной почты"
+      ],
+      "Invitation email": [
+        "Электронное письмо-приглашение"
       ],
       "Name": [
         "Имя"
@@ -8358,6 +8453,9 @@
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
+      "Enter endpoints into your identity provider": [
+        "Введите конечные точки в провайдер личных данных"
+      ],
       "Enter SAML metadata": [
         "Ввод метаданных SAML"
       ],
@@ -8537,6 +8635,9 @@
       ],
       "Send email reminders?": [
         "Отправить напоминания по почте?"
+      ],
+      "Send new invite?": [
+        "Отправить новое приглашение?"
       ],
       "Set new password": [
         "Установите новый пароль"
@@ -8730,8 +8831,17 @@
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Скопируйте и вставьте этот URL в поле URL ACS (Assertion Consumer Service) вашего поставщика идентификационных данных."
       ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скопируйте и вставьте этот адрес URL в поле ID субъекта вашего провайдера личных данных"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL конечной точки поставщика личных данных (например, https://idp.primer.com/sso/saml)."
+      ],
       "Feature in early access": [
         "Функция раннего доступа"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Открытый ключ поставщика личных данных для подписи утверждений аутентификации. Получите хэш сертификата от поставщика личных данных."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
@@ -8756,6 +8866,9 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Пользователи будут видеть ваш логотип вместо значка ${ BRAND_NAME } при входе в наши веб-приложения."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Обычно это адрес URL, содержащий имя поставщика личных данных."
       ],
       "Verified email address": [
         "Подтверждённый адрес эл. почты"
@@ -8814,14 +8927,53 @@
       "Add multiple users": [
         "Добавление нескольких пользователей"
       ],
+      "Add new user": [
+        "Добавить нового пользователя"
+      ],
+      "Admin": [
+        "Администратор"
+      ],
+      "An invitation will be sent to this email address.": [
+        "Приглашение будет отправлено на этот адрес электронной почты."
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
       "Confirm password": [
         "Подтвердите пароль"
       ],
       "Create password": [
         "Создать пароль"
       ],
+      "Create password instead": [
+        "Вместо этого создать пароль"
+      ],
+      "Create user": [
+        "Создать пользователя"
+      ],
+      "Email": [
+        "Электронная почта"
+      ],
+      "Name": [
+        "Имя"
+      ],
+      "Optional": [
+        "Необязательно"
+      ],
+      "Private": [
+        "Частный"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
+      ],
+      "Send invite link via email instead": [
+        "Вместо этого отправить ссылку на приглашение по электронной почте"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Это создаст новый ${ MAIL_APP_NAME } адрес."
+      ],
+      "User created": [
+        "Пользователь создан"
       ],
       "VPN connections": [
         "Подключения к VPN"
@@ -8831,6 +8983,27 @@
       ]
     },
     "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Администраторы не могут получить доступ к данным частных пользователей"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Приглашение отправлено, ожидается ответ от приглашенного участника"
+      ],
+      "Invite sent": [
+        "Приглашение отправлено"
+      ],
+      "It's you": [
+        "Это вы"
+      ],
+      "Private": [
+        "Частный"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "SSO user provided by your identity provider": [
+        "Пользователь SSO, предоставленный поставщиком ваших личных данных"
+      ],
       "Writing assistant": [
         "Помощник по написанию"
       ]

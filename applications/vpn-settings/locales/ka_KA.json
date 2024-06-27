@@ -2199,6 +2199,9 @@
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
       ],
+      "Organization key must be activated to create invited users": [
+        "მოწვეული მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
+      ],
       "Organization key must be activated to create non-private users": [
         "არაკონფიდენციალური მომხმარებლების შესაქმნელად, ორგანიზაციის გასაღები აუცილებლად გააქტივებული უნდა იყოს"
       ],
@@ -3969,6 +3972,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "ეს თქვენს დროებით პაროლს ჩაანაცვლებს. შეგიძლიათ გამოიყენოთ მომავალში ${ BRAND_NAME }-ზე წვდომისთვის."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "ეს გააგზავნის ახალ მოწვევას ელფოსტაზე **${ email }**."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "ამის გაკეთებით ყველა აქტიური სესიიდან გამოხვალთ და 2FA გაითიშება."
       ],
@@ -4389,9 +4395,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "ანგარიში გაგზავნილია"
-      ],
       "Gifted": [
         "ნაჩუქარია"
       ],
@@ -6024,6 +6027,9 @@
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "შეინახეთ კონტაქტების ისეთი დეტალები, როგორიცაა ტელეფონის ნომერი, მისამართი, დაბადების დღე და პირადი შენიშვნები, უსაფრთხოდ. ნულოვანი წვდომით დაშიფვრა უზრუნველყოფს, რომ მათზე წვდომა ${ BRAND_NAME }-საც კი არ ჰქონდეს."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "იხილეთ შეხვედრის წევრების წვდომადობა და დაზოგეთ შეხვედრები დაგეგმვის დრო"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "გაუგზავნეთ ელფოსტა დიდ ჯგუფებს სწრაფად და ადვილად ჯგუფების გამოყენებით. შექმენით იმდენი ჯგუფი, რამდენიც გნებავთ (100 კონტაქტი თითოეულში)"
@@ -8939,6 +8945,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "მოსაწვევი გაგზავნილია. ველოდები პასუხს მოწვეული წევრისგან"
       ],
       "Invite sent": [
         "მოსაწვევი გაგზავნილია"

@@ -1210,10 +1210,6 @@
       "Trust": [
         "Lita på"
       ],
-      "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
-      ],
       "Trust public key": [
         "Lita på offentlig nyckel"
       ],
@@ -6417,6 +6413,9 @@
       "Please add at least one recipient.": [
         "Lägg till minst en mottagare."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Be ägaren att direkt bjuda in dig till dokumentet."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentisera ditt kort på verifieringsfliken."
       ],
@@ -6437,6 +6436,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Observera att när du klickar på knappen ”Bekräfta” kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
+      ],
+      "Please open the document to view it.": [
+        "Öppna dokumentet för att visa det."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Ange ett namn och en e-postadress för att skapa en grupp."
@@ -6490,8 +6492,8 @@
       "Preview for this file type is not supported": [
         "Förhandsgranskning för denna filtyp stöds inte"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Förhandsgranskning av dokument stöds inte ännu. Öppna dokumentet för att visa det."
+      "Preview of documents is not yet supported.": [
+        "Förhandsgranskning av dokument stöds inte ännu."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
@@ -6511,8 +6513,8 @@
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Skydda din e-post från att läcka ut till e-postlistor eller skräppostare med ${ maskMyEmailButton }."
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Offentlig delning av dokument stöds ännu inte. Be ägaren att bjuda in dig direkt till dokumentet."
+      "Public sharing of documents is not yet supported.": [
+        "Offentlig delning av dokument stöds ännu inte."
       ],
       "Recipient: ": [
         "Mottagare: "
@@ -9829,8 +9831,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Jag förstår"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Payment Processing": [
+        "Betalning behandlas"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Det speciellt rabatterade priset på ${ priceWithDiscount } är giltigt de första ${ months }. Sedan kommer det förnyas automatiskt med ${ price } för ${ months }. Du kan avbryta när som helst."
@@ -9840,6 +9848,9 @@
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Vi behandlar din betalning för den fakturerade fakturan. Vänta tills betalningen är slutförd innan du gör ändringar i ditt paket eller uppdaterar dina betalningsuppgifter. Tack för ditt tålamod."
       ]
     },
     "Payments.Error": {

@@ -3349,7 +3349,7 @@
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
       ],
       "Downgrade": [
-        "Bajar"
+        "Pasar a un plan inferior"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
@@ -3719,6 +3719,9 @@
         "Añada una dirección de correo para el usuario en la fila.",
         "Añada direcciones de correo para los usuarios en las filas."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Pregunte al propietario que le invite directamente al documento."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentique la tarjeta en la pestaña de verificación."
       ],
@@ -3739,6 +3742,9 @@
       ],
       "please open a support ticket": [
         "abra un tiquete de soporte"
+      ],
+      "Please open the document to view it.": [
+        "Abra el documento para verlo."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con el banco."
@@ -3770,8 +3776,8 @@
       "Preview for this file type is not supported": [
         "La vista previa para este tipo de archivo no está soportada"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "La previsualización de documentos aún no está disponible. Abra el documento para verlo."
+      "Preview of documents is not yet supported.": [
+        "La previsualización de documentos aún no está admitida."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en la cuenta."
@@ -3779,8 +3785,8 @@
       "Protected by Swiss privacy laws": [
         "Protegido por las leyes de privacidad de Suiza"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "El intercambio público de documentos aún no está disponible. Pregunte al propietario que le invite directamente al documento."
+      "Public sharing of documents is not yet supported.": [
+        "El intercambio público de documentos aún no está admitido."
       ],
       "read our two-factor authentication guide first": [
         "leer primero nuestra guía de autenticación de dos factores"
@@ -4007,6 +4013,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Esto reemplazará la contraseña temporal. La usará para acceder a la cuenta de ${ BRAND_NAME } en el futuro."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Esto enviará una invitación nueva a **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Esto cerrará la sesión de cualquier sesión activa y desactivará la autenticación de dos factores."
@@ -4336,8 +4345,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada a la cuenta de PayPal. Si la cuenta de PayPal no lo tiene, haga clic en el botón de abajo."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Podrá promover al usuario como administrador o convertirlo en privado una vez que haya aceptado la invitación."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Podrá promover al usuario como administrador una vez que haya aceptado la invitación."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Le redirigiremos a ${ destination } después de iniciar sesión."
@@ -4459,14 +4468,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Facturada"
-      ],
       "Gifted": [
         "Regalía"
       ],
       "Paid": [
         "Pagada"
+      ],
+      "Processing": [
+        "Procesando"
       ],
       "Unpaid": [
         "No pagada"
@@ -6613,8 +6622,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Procesando el pago"
       ],
       "Processing payment": [
         "Procesando el pago"
@@ -6630,6 +6645,9 @@
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estamos procesando el pago de la factura. Espere hasta que se complete el pago antes de realizar cambios en su plan o actualizar sus detalles de pago. Gracias por su paciencia."
       ]
     },
     "Payments.Error": {

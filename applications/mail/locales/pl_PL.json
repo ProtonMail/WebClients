@@ -1218,12 +1218,6 @@
       "Trust": [
         "Zaufaj"
       ],
-      "Trust key": [
-        "Zaufaj kluczowi",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom",
-        "Zaufaj kluczom"
-      ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
@@ -6612,6 +6606,9 @@
       "Please add at least one recipient.": [
         "Wpisz co najmniej jednego odbiorcę."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Poproś właściciela o bezpośrednie udostępnienie dokumentu."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Potwierdź kartę w nowej karcie."
       ],
@@ -6632,6 +6629,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
+      ],
+      "Please open the document to view it.": [
+        "Otwórz dokument, aby go zobaczyć."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Wpisz nazwę i adres e-mail, aby utworzyć grupę."
@@ -6687,8 +6687,8 @@
       "Preview for this file type is not supported": [
         "Podgląd dla tego typu pliku nie jest obsługiwany"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Podgląd dokumentów nie jest obsługiwany. Otwórz dokument, aby go zobaczyć."
+      "Preview of documents is not yet supported.": [
+        "Podgląd dokumentu nie jest obsługiwany."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena obejmuje wszystkie mające zastosowanie zniżki i kupony zapisane na Twoim koncie."
@@ -6708,8 +6708,8 @@
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą ${ maskMyEmailButton }."
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Publiczne udostępnianie dokumentów nie jest obsługiwane. Poproś właściciela o bezpośrednie zaproszenie do dokumentu."
+      "Public sharing of documents is not yet supported.": [
+        "Publiczne udostępnianie dokumentu nie jest obsługiwane."
       ],
       "Recipient: ": [
         "Odbiorca: "
@@ -10129,8 +10129,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ok"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Przetwarzanie płatności"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
