@@ -5,14 +5,17 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
+import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
+import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
-import { useDeobfuscatedValue } from '../../../hooks/useDeobfuscatedValue';
-import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
+import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
+import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 
 export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
-    const note = useDeobfuscatedValue(itemViewProps.revision.data.metadata.note);
+    const { revision } = itemViewProps;
+    const { shareId, itemId } = revision;
+
+    const note = useDeobfuscatedValue(revision.data.metadata.note);
     const copyToClipboard = useCopyToClipboard();
 
     return (
@@ -29,7 +32,7 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
                               shape="solid"
                               size="medium"
                               onClick={() => copyToClipboard(note)}
-                              disabled={itemViewProps.revision.optimistic}
+                              disabled={revision.optimistic}
                               title={c('Action').t`Copy to clipboard`}
                           >
                               <Icon name="squares" alt={c('Action').t`Copy to clipboard`} size={5} />
@@ -39,7 +42,8 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
             }
             {...itemViewProps}
         >
-            <NoteContent revision={itemViewProps.revision} />
+            <SecureLinkCardList shareId={shareId} itemId={itemId} />
+            <NoteContent revision={revision} />
         </ItemViewPanel>
     );
 };

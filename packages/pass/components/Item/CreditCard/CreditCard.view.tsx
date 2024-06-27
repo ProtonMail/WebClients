@@ -6,6 +6,7 @@ import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/Credi
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
+import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 
 export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) => {
@@ -15,6 +16,7 @@ export const CreditCardView: FC<ItemViewProps<'creditCard'>> = (itemViewProps) =
 
     return (
         <ItemViewPanel type="creditCard" {...itemViewProps}>
+            <SecureLinkCardList shareId={shareId} itemId={itemId} />
             <CreditCardContent revision={revision} />
             <ItemHistoryStats createTime={createTime} modifyTime={modifyTime} handleHistoryClick={handleHistoryClick} />
             <MoreInfoDropdown
