@@ -8,6 +8,7 @@ import { Href } from '@proton/atoms/Href';
 import { Info, Price } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
+import { useAssistantAddonEnabledSignup } from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import {
@@ -95,6 +96,7 @@ const AccountStepPayment = ({
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
+    const scribeEnabled = useAssistantAddonEnabledSignup();
 
     const measurePay = (
         type: TelemetryPayType,
@@ -327,6 +329,7 @@ const AccountStepPayment = ({
                         return (
                             <>
                                 <ProtonPlanCustomizer
+                                    scribeEnabled={scribeEnabled}
                                     mode="signup"
                                     loading={false}
                                     currentPlan={currentPlan}

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components/components/icon';
 import { Price } from '@proton/components/components/price';
+import { useAssistantAddonEnabledSignup } from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import {
     Alert3ds,
     CurrencySelector,
@@ -88,6 +89,7 @@ const PaymentStep = ({
     const hasSomeVpnPlan = getIsVpnPlan(plan?.Name);
 
     const chargebeeContext = useChargebeeContext();
+    const scribeEnabled = useAssistantAddonEnabledSignup();
 
     const paymentFacade = usePaymentFacade({
         checkResult: subscriptionData.checkResult,
@@ -264,6 +266,7 @@ const PaymentStep = ({
                                 planIDs={subscriptionData.planIDs}
                                 onChangePlanIDs={onChangePlanIDs}
                                 className="pb-7 mb-8"
+                                scribeEnabled={scribeEnabled}
                             />
                         );
                     })()}
