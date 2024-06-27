@@ -54,6 +54,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handlePinClick,
     handleRestoreClick,
     handleRetryClick,
+    handleSecureLinkClick,
     handleToggleFlagsClick,
 }) => {
     const { shareId, itemId, data, optimistic, failed } = revision;
@@ -63,6 +64,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
+    const secureLinkEnabled = useFeatureFlag(PassFeature.PassPublicLinkV1);
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const historyEnabled = useFeatureFlag(PassFeature.PassItemHistoryV1);
@@ -70,7 +72,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const monitored = isMonitored(revision);
 
     const hasMultipleVaults = vaults.length > 1;
-    const { shareRoleId, shared } = vault;
+    const { shareRoleId, shared, owner } = vault;
     const showVaultTag = hasMultipleVaults || shared;
     const readOnly = shareRoleId === ShareRole.READ;
     const sharedReadOnly = shared && readOnly;
@@ -157,44 +159,42 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             ...actions,
 
-                            sharingEnabled && !shared && (
-                                <Button
-                                    key="share-item-button"
-                                    icon
-                                    pill
-                                    color="weak"
-                                    shape="solid"
-                                    size="medium"
-                                    title={c('Action').t`Share`}
-                                    disabled={optimistic || readOnly}
-                                    onClick={
-                                        plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
-                                            ? () =>
-                                                  spotlight.setUpselling({
-                                                      type: 'pass-plus',
-                                                      upsellRef: UpsellRef.LIMIT_SHARING,
-                                                  })
-                                            : handleInviteClick
-                                    }
-                                >
-                                    <Icon name="users-plus" alt={c('Action').t`Share`} size={5} />
-                                </Button>
-                            ),
-
-                            shared && (
-                                <Button
-                                    key="manage-item-button"
-                                    icon
-                                    pill
-                                    color="weak"
-                                    shape="solid"
-                                    size="medium"
-                                    title={c('Action').t`See members`}
-                                    onClick={handleManageClick}
-                                >
-                                    <Icon name="users-plus" alt={c('Action').t`See members`} size={5} />
-                                </Button>
-                            ),
+                            <QuickActionsDropdown key="share-item-button" color="weak" shape="solid" icon="users-plus">
+                                {secureLinkEnabled && type !== 'alias' && (
+                                    <DropdownMenuButton
+                                        onClick={handleSecureLinkClick}
+                                        title={c('Action').t`Share secure link`}
+                                        label={c('Action').t`Via secure link`}
+                                        icon="link"
+                                        disabled={!owner}
+                                    />
+                                )}
+                                {sharingEnabled && !shared && (
+                                    <DropdownMenuButton
+                                        onClick={
+                                            plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
+                                                ? () =>
+                                                      spotlight.setUpselling({
+                                                          type: 'pass-plus',
+                                                          upsellRef: UpsellRef.LIMIT_SHARING,
+                                                      })
+                                                : handleInviteClick
+                                        }
+                                        title={c('Action').t`Share`}
+                                        label={c('Action').t`Entire vault`}
+                                        icon="folder-plus"
+                                        disabled={optimistic || readOnly}
+                                    />
+                                )}
+                                {shared && (
+                                    <DropdownMenuButton
+                                        onClick={handleManageClick}
+                                        title={c('Action').t`See members`}
+                                        label={c('Action').t`See members`}
+                                        icon="users"
+                                    />
+                                )}
+                            </QuickActionsDropdown>,
 
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
