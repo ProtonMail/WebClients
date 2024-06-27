@@ -632,7 +632,7 @@
         "Més tard"
       ],
       "Learn why this option is unavailable": [
-        "Esbrineu per què aquesta opció no està disponible"
+        "Descobriu per què aquesta opció no està disponible"
       ],
       "Leave": [
         "Surt"
@@ -4037,7 +4037,7 @@
         "No s'ha pogut desar la preferència."
       ],
       "Couldn't load invoices. Please try again later.": [
-        "No s'han pogut carregar les factures. Si us plau, intenteu-ho més tard."
+        "No s'han pogut carregar les factures. Torneu a provar més tard."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
@@ -4214,7 +4214,7 @@
         "La clau de l'organització no està desxifrada"
       ],
       "Organization key must be activated to create invited users": [
-        "La clau d'organització s'ha d'activar per crear usuaris convidats"
+        "S'ha d'activar la clau de l'organització per a crear usuaris convidats"
       ],
       "Organization key must be activated to create non-private users": [
         "S'ha d'activar la clau d'organització per a crear usuaris no privats"
@@ -7546,6 +7546,9 @@
         "Afegiu una adreça de correu electrònic per a l'usuari seleccionat",
         "Afegiu adreces de correu electrònic per als usuaris seleccionats"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Demaneu al propietari que us convidi directament al document."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentiqueu la vostra targeta a la pestanya de verificació."
       ],
@@ -7575,6 +7578,9 @@
       ],
       "please open a support ticket": [
         "obriu un tiquet de suport"
+      ],
+      "Please open the document to view it.": [
+        "Obriu el document per visualitzar-lo."
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
@@ -7615,8 +7621,8 @@
       "Preview for this file type is not supported": [
         "La previsualització d'aquest tipus de fitxers no és compatible."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Encara no s'admet la previsualització dels documents. Obriu el document per a visualitzar-lo."
+      "Preview of documents is not yet supported.": [
+        "La previsualització de documents encara no està suportada."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
@@ -7636,8 +7642,8 @@
       "Public link invite": [
         "Enllaç públic d'invitació"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Encara no s'admet l'intercanvi públic de documents. Demaneu al propietari que us convidi directament al document."
+      "Public sharing of documents is not yet supported.": [
+        "L'intercanvi públic de documents encara no està suportat."
       ],
       "purchase additional storage": [
         "comprar emmagatzematge addicional"
@@ -7767,9 +7773,6 @@
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
-      ],
-      "Set your password": [
-        "Establiu la vostra contrasenya"
       ],
       "Setting up your organization": [
         "S'està configurant la vostra organització."
@@ -7982,9 +7985,6 @@
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Aquest enllaç d'invitació ja s'ha utilitzat. Si us plau, inicieu la sessió directament."
-      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Aquest enllaç d'invitació ha caducat. Si us plau, poseu-vos en contacte amb el vostre administrador per sol·licitar accés."
       ],
@@ -8028,7 +8028,7 @@
         "Actualment, aquest usuari és responsable dels pagaments de la vostra organització. Degradant aquest membre, sereu responsable dels pagaments de la vostra organització."
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Aquesta verificació pot trigar fins a una hora. Després de la verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
+        "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Això cancel·larà la vostra subscripció de pagament actual i perdreu els beneficis de fidelitat que heu acumulat."
@@ -8062,6 +8062,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Això enviarà una nova invitació a **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
@@ -8476,12 +8479,12 @@
         "Esteu utilitzant ${ ipCount } de ${ ipAddresses } servidors dedicats disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari dels disponibles i ${ usedAI } de la vostra ${ maxAI } llicència disponible d'assistent d'escriptura.",
-        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari dels disponibles i ${ usedAI } de les vostres ${ maxAI } llicències disponibles d'assistent d'escriptura."
+        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari disponibles i ${ usedAI } de les vostres ${ maxAI } llicències d'assistent d'escriptura disponibles.",
+        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari disponibles i ${ usedAI } de les vostres ${ maxAI } llicències d'assistent d'escriptura disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari dels disponibles i cap de les vostres ${ maxAI } llicències disponibles d'assistent d'escriptura.",
-        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari dels disponibles i cap de les vostres ${ maxAI } llicències d'assistent d'escriptura."
+        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari disponibles i cap de les vostres ${ maxAI } llicències d'assistent d'escriptura disponibles.",
+        "Actualment, esteu utilitzant ${ usedMembers } de les vostres ${ maxMembers } llicències d'usuari disponibles i cap de les vostres ${ maxAI } llicències d'assistent d'escriptura disponibles."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Actualment, esteu utilitzant ${ usedMembers } d' ${ maxMembers } llicència d'usuari disponible.",
@@ -8605,9 +8608,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Encara heu de respondre a les invitacions perquè l'amfitrió vegi la vostra resposta."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Podreu promocionar l'usuari a administrador o fer-lo privat un cop hagi acceptat la invitació."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
       ],
@@ -8684,7 +8684,7 @@
         "Es xifraran els fitxers i després es desaran."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "El vostre maquinari no permet executar l'assistent d'escriptura localment. Proveu d'executar-lo en servidors."
+        "El vostre maquinari no permet executar l'assistent d'escriptura localment. Proveu d'executar-lo als servidors."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "La vostra importació de ${ accounts } s'ha retardat temporalment.",
@@ -8813,9 +8813,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Facturat"
-      ],
       "Gifted": [
         "Regalat"
       ],
@@ -9510,9 +9507,6 @@
       ],
       "Disable data export for organization members": [
         "Desactiva l'exportació de dades per als membres de l'organització"
-      ],
-      "Disable sharing outside the organization.": [
-        "Desactiva la compartició fora de l'organització."
       ],
       "Display name": [
         "Nom a mostrar"
@@ -14393,7 +14387,7 @@
         "${ CALENDAR_APP_NAME } inclòs l'ús compartit del calendari"
       ],
       "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
-        "${ CALENDAR_APP_NAME } amb calendari compartit i disponibilitat"
+        "${ CALENDAR_APP_NAME } amb compartició de calendari i disponibilitat"
       ],
       "${ dayDiff } day left": [
         "Queda ${ dayDiff } dia.",
@@ -14403,7 +14397,7 @@
         "${ DRIVE_APP_NAME } inclòs l'historial de versions"
       ],
       "${ DRIVE_APP_NAME } with version history": [
-        "${ DRIVE_APP_NAME } amb l'historial de versions"
+        "${ DRIVE_APP_NAME } amb historial de versions"
       ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } i totes les funcions de productivitat prèmium"
@@ -14448,10 +14442,10 @@
         "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
       ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
-        "${ planName } dona a l'equip tot el necessari per a ser més productius i organitzats en la seva feina, amb accés a totes les aplicacions ${ BRAND_NAME } i les seves funcions prèmium."
+        "${ planName } dona al vostre equip el que necessita per a ser més productiu i organitzat en la seva feina, amb accés a totes les aplicacions de ${ BRAND_NAME } i les seves característiques prèmium."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
-        "${ planName } dona a l'equip tot el necessari per a ser més productius, organitzats i controlar la safata d'entrada, l'agenda i molt més."
+        "${ planName } dona al vostre equip el que necessita per a ser més productiu, organitzat i amb el control de la safata d'entrada, l'agenda i molt més."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } va més enllà de l'essencial per a ajudar-vos a tenir una major productivitat, capacitat d'organització i el control de la vostra safata d'entrada, la vostra identitat de correu electrònic i molt més."
@@ -14499,7 +14493,7 @@
         "Un cop caduqui la vostra subscripció a ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Un cop caduqui la vostra subscripció a ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge al Mail i fins a 5 GB d'emmagatzematge al Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no compte amb usuaris addicionals."
+        "Un cop caduqui la vostra subscripció a ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no és compatible amb usuaris addicionals."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Un cop caduqui la vostra subscripció a ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
@@ -14586,7 +14580,7 @@
         "Segueix amb ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Mantingueu l'equip segur amb les nostres aplicacions per a web, iOS, Android, Windows, Mac i Linux."
+        "Mantingueu el vostre equip segur en qualsevol lloc amb les nostres aplicacions per a web, iOS, Android, Windows, Mac i Linux."
       ],
       "Learn more": [
         "Saber-ne més"
@@ -14685,7 +14679,7 @@
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge al Mail i fins a 5 GB d'emmagatzematge al Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no compte amb usuaris addicionals."
+        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no és compatible amb usuaris addicionals."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
@@ -14703,7 +14697,7 @@
         "S'ha cancel·lat el vostre ${ planName }."
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "El pla ${ planName } no només manté segures les vostres dades i les comunicacions de la vostra empresa. Dona suport als vostres objectius de compliment, destaca el vostre negoci i manté el vostre equip connectat."
+        "El pla ${ planName } no només manté segures les dades i comunicacions de la vostra empresa. Dona suport als vostres objectius de compliment, destaca el vostre negoci i manté el vostre equip connectat."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "La vostra subscripció a ${ planName } finalitza el ${ expiryDate }. Després d'això, estareu al pla Free de ${ BRAND_NAME }. Si el vostre ús supera els límits del pla Free, és possible que tingueu accés restringit a les característiques dels productes i a les vostres dades. ${ learnMoreLink }"

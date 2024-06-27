@@ -7701,9 +7701,6 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Examinare documentelor nu este încă acceptată. Deschideți documentul pentru a-l vizualiza."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
@@ -7721,9 +7718,6 @@
       ],
       "Public link invite": [
         "Legătură publică invitație"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Partajarea publică a documentelor nu este încă acceptată. Solicitați proprietarului să vă invite direct la document."
       ],
       "purchase additional storage": [
         "cumpărați spațiu suplimentar"
@@ -7853,9 +7847,6 @@
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
-      ],
-      "Set your password": [
-        "Setare parolă"
       ],
       "Setting up your organization": [
         "Setare organizație"
@@ -8078,9 +8069,6 @@
       "This file is too large to preview": [
         "Acest fișier este prea mare pentru a fi examinat."
       ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Această legătură web de invitare a fost deja folosită. În schimb, conectați-vă direct."
-      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Această legătură web de invitație a expirat. Contactați administratorul pentru a solicita accesul."
       ],
@@ -8158,6 +8146,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Aceasta vă va înlocui parola temporară. O veți folosi pentru a vă accesa contul ${ BRAND_NAME } în viitor."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Aceasta va trimite o invitație nouă către **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
@@ -8709,9 +8700,6 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Trebuie să răspundeți la invitații pentru ca gazda să vă vadă răspunsul."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Veți putea promova utilizatorul ca administrator sau să-l faceți privat după ce a acceptat invitația."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
@@ -8920,9 +8908,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Facturată"
-      ],
       "Gifted": [
         "Dăruit"
       ],
@@ -9621,9 +9606,6 @@
       ],
       "Disable data export for organization members": [
         "Dezactivare exportare date pentru membrii organizației"
-      ],
-      "Disable sharing outside the organization.": [
-        "Dezactivare partajare în afara organizației."
       ],
       "Display name": [
         "Nume afișat"
