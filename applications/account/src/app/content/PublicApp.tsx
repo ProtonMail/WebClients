@@ -669,6 +669,13 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                             productParam={productParam}
                                                             toAppName={toAppName}
                                                             toApp={maybePreAppIntent}
+                                                            onUsed={() => {
+                                                                history.replace(
+                                                                    (activeSessions || []).length >= 1
+                                                                        ? SSO_PATHS.SWITCH
+                                                                        : paths.login
+                                                                );
+                                                            }}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
