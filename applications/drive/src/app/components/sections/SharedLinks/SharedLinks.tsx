@@ -9,6 +9,7 @@ import useNavigate from '../../../hooks/drive/useNavigate';
 import { EncryptedLink, LinkShareUrl, useSharedLinksView, useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, {
     BrowserItemId,
     Cells,
@@ -98,7 +99,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
-    const isDocsEnabled = useDriveDocsFeatureFlag();
+    const { canUseDocs } = useDriveDocsFeatureFlag();
 
     const { layout, items, sortParams, setSorting, isLoading } = sharedLinksView;
 
@@ -118,17 +119,25 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
             }
             document.getSelection()?.removeAllRanges();
 
-            if (isDocsEnabled && isProtonDocument(item.mimeType)) {
-                void openDocument({
-                    linkId: item.id,
-                    shareId: item.rootShareId,
-                });
+            if (isProtonDocument(item.mimeType)) {
+                void canUseDocs(item.rootShareId)
+                    .then((canUse) => {
+                        if (!canUse) {
+                            return;
+                        }
+
+                        return openDocument({
+                            linkId: item.id,
+                            shareId: item.rootShareId,
+                        });
+                    })
+                    .catch(sendErrorReport);
                 return;
             }
 
             navigateToLink(item.rootShareId, item.id, item.isFile);
         },
-        [navigateToLink, shareId, browserItems]
+        [navigateToLink, browserItems]
     );
 
     const handleItemRender = (item: SharedLinkItem) => {
