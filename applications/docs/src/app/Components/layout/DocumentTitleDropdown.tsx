@@ -17,6 +17,7 @@ import { useApplication } from '../../Containers/ApplicationProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg'
 import { DocumentAction } from '@proton/drive-store'
+import { AutoGrowingInput } from '../AutoGrowingInput'
 
 const DocumentTitleDropdown = ({
   controller,
@@ -31,24 +32,35 @@ const DocumentTitleDropdown = ({
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
 
+  const [isRenaming, setIsRenaming] = useState(false)
+  const [renameInputValue, setRenameInputValue] = useState(title)
+  useEffect(() => {
+    setRenameInputValue(title)
+  }, [title])
+
   useAppTitle(title)
 
-  const onRename = useCallback(() => {
+  const confirmRename = useCallback(() => {
     if (!controller) {
       throw new Error('Primary controller not found')
     }
-    const oldName = controller.getSureDocument().name
-    const newName = window.prompt('Enter new document name')
+    const oldName = title
+    const newName = renameInputValue?.trim()
     if (newName) {
-      void controller.renameDocument(newName).then((result) => {
-        if (result.isFailed()) {
-          PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
-          setTitle(oldName)
-        }
-      })
+      setIsRenaming(false)
+      if (oldName !== newName) {
+        void controller.renameDocument(newName).then((result) => {
+          if (result.isFailed()) {
+            PostApplicationError(application.eventBus, { translatedError: result.getTranslatedError() })
+            setTitle(oldName)
+          }
+        })
+      }
       setTitle(newName)
+    } else {
+      setIsRenaming(false)
     }
-  }, [application.eventBus, controller])
+  }, [application.eventBus, controller, renameInputValue, title])
 
   const onDuplicate = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -97,6 +109,35 @@ const DocumentTitleDropdown = ({
   }, [controller, action, showHistoryModal])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
+
+  const focusInputOnMount = useCallback((input: HTMLInputElement | null) => {
+    if (input) {
+      input.focus()
+    }
+  }, [])
+
+  if (isRenaming) {
+    return (
+      <div className="flex items-center px-1.5">
+        <img className="pointer-events-none mr-0.5 h-5 w-5" src={documentIcon} alt="" aria-hidden="true" />
+        <AutoGrowingInput
+          className="text-sm"
+          inputClassName="px-1 py-1.5"
+          ref={focusInputOnMount}
+          value={renameInputValue}
+          onValue={setRenameInputValue}
+          onKeyDown={({ key }) => {
+            if (key === 'Escape') {
+              setIsRenaming(false)
+            } else if (key === 'Enter') {
+              confirmRename()
+            }
+          }}
+          onBlur={confirmRename}
+        />
+      </div>
+    )
+  }
 
   if (!title) {
     return
@@ -149,7 +190,7 @@ const DocumentTitleDropdown = ({
           {controller?.role.isAdmin() && (
             <DropdownMenuButton
               className="flex items-center text-left"
-              onClick={onRename}
+              onClick={() => setIsRenaming((renaming) => !renaming)}
               data-testid="dropdown-rename"
             >
               <Icon name="pencil" className="color-weak mr-2" />
