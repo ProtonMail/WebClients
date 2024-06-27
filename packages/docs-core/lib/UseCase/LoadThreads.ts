@@ -5,14 +5,14 @@ import { CommentThread } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { CommentsApi } from '../Api/Comments/CommentsApi'
+import { DocsApi } from '../Api/Docs/DocsApi'
 
 /**
  * Updates the local comment state by loading and decrypting all threads from the API for the document.
  */
 export class LoadThreads implements UseCaseInterface<void> {
   constructor(
-    private api: CommentsApi,
+    private api: DocsApi,
     private decryptComment: DecryptComment,
   ) {}
 

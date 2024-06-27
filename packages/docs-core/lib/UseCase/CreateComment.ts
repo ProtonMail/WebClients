@@ -4,16 +4,16 @@ import { CommentInterface, ServerTime } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { CommentsApi } from '../Api/Comments/CommentsApi'
 import { Result } from '../Domain/Result/Result'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import { DocsApi } from '../Api/Docs/DocsApi'
 
 /**
  * Creates and encrypts a new comment in a thread with the API.
  */
 export class CreateComment implements UseCaseInterface<CommentInterface> {
   constructor(
-    private api: CommentsApi,
+    private api: DocsApi,
     private encryptComment: EncryptComment,
   ) {}
 

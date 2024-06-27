@@ -11,7 +11,6 @@ import {
   CommentMarkNodeChangeData,
   BroadcastSource,
 } from '@proton/docs-shared'
-import { CommentsApi } from '../../Api/Comments/CommentsApi'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { LoggerInterface } from '@proton/utils/logs'
 import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
@@ -26,6 +25,7 @@ import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterfa
 import { DocControllerEvent, DocControllerEventPayloads } from '../../Controller/Document/DocControllerEvent'
 import metrics from '@proton/metrics'
 import { EventTypeEnum } from '@proton/docs-proto'
+import { DocsApi } from '../../Api/Docs/DocsApi'
 
 export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
@@ -43,7 +43,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     private readonly keys: DocumentKeys,
     private readonly websocketService: WebsocketServiceInterface,
     public userDisplayName: string,
-    private api: CommentsApi,
+    private api: DocsApi,
     private _encryptComment: EncryptComment,
     private _createThread: CreateThread,
     private _createComment: CreateComment,

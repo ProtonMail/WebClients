@@ -14,14 +14,14 @@ import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { CommentsApi } from '../Api/Comments/CommentsApi'
+import { DocsApi } from '../Api/Docs/DocsApi'
 
 /**
  * Creates a new comment thread with the API, supplying and encrypting an initial comment.
  */
 export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
   constructor(
-    private api: CommentsApi,
+    private api: DocsApi,
     private encryptComment: EncryptComment,
     private decryptComment: DecryptComment,
     private eventBus: InternalEventBusInterface,

@@ -3,7 +3,6 @@ import { UserService } from '../User/UserService'
 import { DocController } from '../../Controller/Document/DocController'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { InternalEventBusInterface, CommentServiceInterface } from '@proton/docs-shared'
-import { CommentsApi } from '../../Api/Comments/CommentsApi'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
@@ -23,6 +22,7 @@ import { CommentService } from '../Comments/CommentService'
 import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { LoadCommit } from '../../UseCase/LoadCommit'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import { DocsApi } from '../../Api/Docs/DocsApi'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void
@@ -39,7 +39,7 @@ export class DocLoader implements DocLoaderInterface {
     private userService: UserService,
     private websocketSerivce: WebsocketServiceInterface,
     private driveCompat: DriveCompat,
-    private commentsApi: CommentsApi,
+    private docsApi: DocsApi,
     private squashDoc: SquashDocument,
     private createInitialCommit: SeedInitialCommit,
     private loadDocument: LoadDocument,
@@ -97,7 +97,7 @@ export class DocLoader implements DocLoaderInterface {
       entitlements.keys,
       this.websocketSerivce,
       username,
-      this.commentsApi,
+      this.docsApi,
       this.encryptComment,
       this.createThread,
       this.createComment,
