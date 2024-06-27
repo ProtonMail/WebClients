@@ -76,7 +76,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
 
     if ([CommentsMessageType.AddThread, CommentsMessageType.AddComment].includes(type)) {
       metrics.docs_comments_total.increment({
-        type: CommentsMessageType.AddThread ? 'comment' : 'reply',
+        type: CommentsMessageType.AddThread === type ? 'comment' : 'reply',
       })
     }
   }
