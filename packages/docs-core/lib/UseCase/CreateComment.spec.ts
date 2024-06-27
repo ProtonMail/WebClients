@@ -4,8 +4,8 @@ import { Comment } from '../Models'
 import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { CommentsApi } from '../Api/Comments/CommentsApi'
 import { CreateComment } from './CreateComment'
+import { DocsApi } from '../Api/Docs/DocsApi'
 
 jest.mock('../Util/GenerateUuid', () => ({
   GenerateUUID: jest.fn(),
@@ -40,7 +40,7 @@ describe('CreateComment', () => {
 
   beforeEach(() => {
     createComment = new CreateComment(
-      mockCommentsApi as unknown as CommentsApi,
+      mockCommentsApi as unknown as DocsApi,
       mockEncryptComment as unknown as EncryptComment,
     )
     ;(GenerateUUID as jest.Mock).mockReturnValue('uuid')

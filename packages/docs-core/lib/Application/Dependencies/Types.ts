@@ -2,7 +2,6 @@ export const App_TYPES = {
   // Services
   DocsApi: Symbol.for('DocsApi'),
   HttpService: Symbol.for('HttpService'),
-  CommentsApi: Symbol.for('CommentsApi'),
   DocLoader: Symbol.for('DocOrchestrator'),
   UserService: Symbol.for('UserService'),
   Logger: Symbol.for('Logger'),
