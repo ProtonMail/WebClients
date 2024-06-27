@@ -88,6 +88,8 @@ const result = (env: any): Configuration => {
                 inject: 'body',
             })
         );
+
+        config.experiments = { syncWebAssembly: true, asyncWebAssembly: true };
     });
 };
 

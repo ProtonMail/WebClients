@@ -27,7 +27,7 @@ import {
  * Note:
  * - For now we create a new wallet for any user without one. Later a field will be introduced by the API so that we can filter only user that never had a wallet
  */
-export const useWalletAutoCreate = () => {
+export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPilot?: boolean } = {}) => {
     const getUserKeys = useGetUserKeys();
     const getBitcoinNetwork = useGetBitcoinNetwork();
     const getUserWalletSettings = useGetUserWalletSettings();
@@ -132,12 +132,12 @@ export const useWalletAutoCreate = () => {
 
     const shouldCreateWallet = async () => {
         const wallets = await walletApi.wallet.getWallets();
-        return !!wallets[0].length;
+        return !wallets[0].length;
     };
 
     useEffect(() => {
         const run = async () => {
-            if (await shouldCreateWallet()) {
+            if (higherLevelPilot && (await shouldCreateWallet())) {
                 await autoCreateWallet();
             }
         };
