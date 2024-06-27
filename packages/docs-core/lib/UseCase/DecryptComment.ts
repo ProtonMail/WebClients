@@ -10,6 +10,7 @@ import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
 import { CommentResponseDto } from '../Api/Docs/Types'
+import metrics from '@proton/metrics'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
@@ -22,6 +23,10 @@ export class DecryptComment implements UseCaseInterface<Comment> {
     )
 
     if (decrypted.isFailed()) {
+      metrics.docs_comments_error_total.increment({
+        reason: 'encryption_error',
+      })
+
       return Result.fail(decrypted.getError())
     }
 
