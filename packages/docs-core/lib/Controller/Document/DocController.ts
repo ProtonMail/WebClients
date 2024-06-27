@@ -24,7 +24,7 @@ import {
   DocumentRole,
   assertUnreachableAndLog,
 } from '@proton/docs-shared'
-import { EventType, EventTypeEnum, ConnectionCloseReason, RTSConfig } from '@proton/docs-proto'
+import { EventType, EventTypeEnum, ConnectionCloseReason } from '@proton/docs-proto'
 import { LoadDocument } from '../../UseCase/LoadDocument'
 import { DecryptedCommit } from '../../Models/DecryptedCommit'
 import { DocControllerInterface } from './DocControllerInterface'
@@ -51,6 +51,7 @@ import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { format } from 'date-fns'
+import { DocSizeTracker } from './SizeTracker'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -69,6 +70,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   private initialSyncTimer: NodeJS.Timeout | null = null
   private initialConnectionTimer: NodeJS.Timeout | null = null
   isExperiencingErroredSync = false
+  isLockedDueToSizeContraint = false
   realtimeConnectionReady = false
   docsServerConnectionReady = false
   didAlreadyReceiveEditorReadyEvent = false
@@ -76,6 +78,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   readonly updatesReceivedWhileEditorInvokerWasNotReady: (DecryptedMessage | ProcessedIncomingRealtimeEventMessage)[] =
     []
   websocketStatus: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
+  sizeTracker: DocSizeTracker = new DocSizeTracker()
 
   public readonly username: string
 
@@ -370,6 +373,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (
       this.doesUserHaveEditingPermissions() &&
       !this.isExperiencingErroredSync &&
+      !this.isLockedDueToSizeContraint &&
       this.websocketStatus === 'connected'
     ) {
       this.logger.info('Changing editing locked to false')
@@ -460,6 +464,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return
     }
 
+    this.sizeTracker.resetWithSize(decryptedCommit.byteSize)
+
     this.lastCommitIdReceivedFromRtsOrApi = decryptedCommit.commitId
 
     this.sendInitialCommitToEditor()
@@ -509,27 +515,34 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
+  handleAttemptingToBroadcastUpdateThatIsTooLarge(): void {
+    void this.websocketService.flushPendingUpdates()
+
+    this.logger.error(new Error('Update Too Large'))
+
+    this.isLockedDueToSizeContraint = true
+
+    this.reloadEditingLockedState()
+
+    PostApplicationError(this.eventBus, {
+      translatedErrorTitle: c('Error').t`Update Too Large`,
+      translatedError: c('Error')
+        .t`The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.`,
+    })
+  }
+
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
     if (!this.entitlements) {
       throw new Error('Attempting to propagate update before entitlements are initialized')
     }
 
     if (message.type.wrapper === 'du') {
-      if (message.content.byteLength > RTSConfig.MAX_DU_SIZE) {
-        void this.websocketService.flushPendingUpdates()
-        this.logger.error(new Error('Error: Update Too Large'))
-        PostApplicationError(this.eventBus, {
-          translatedErrorTitle: c('Error').t`Error: Update Too Large`,
-          translatedError: c('Error')
-            .t`It looks like the text document you're trying to paste exceeds the allowed limit.`,
-          onClose: () => {
-            this.logger.debug('Reloading document due to DU being too large')
-            window.location.reload()
-          },
-        })
-        return
+      if (!this.sizeTracker.canPostUpdateOfSize(message.content.byteLength)) {
+        this.handleAttemptingToBroadcastUpdateThatIsTooLarge()
+      } else {
+        this.sizeTracker.incrementSize(message.content.byteLength)
+        void this.websocketService.sendDocumentUpdateMessage(this.nodeMeta, message.content, debugSource)
       }
-      void this.websocketService.sendDocumentUpdateMessage(this.nodeMeta, message.content, debugSource)
     } else if (message.type.wrapper === 'events') {
       void this.websocketService.sendEventMessage(this.nodeMeta, message.content, message.type.eventType, debugSource)
     } else {
@@ -692,7 +705,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public openDocumentSharingModal(): void {
-    this.driveCompat.openDocumentSharingModal(this.nodeMeta)
+    void this.driveCompat.openDocumentSharingModal(this.nodeMeta)
   }
 
   private async handleRealtimeServerEvent(events: ProcessedIncomingRealtimeEventMessage[]) {
@@ -753,6 +766,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
       return
     }
+
+    this.sizeTracker.incrementSize(message.byteSize())
 
     void this.editorInvoker.receiveMessage({
       type: { wrapper: 'du' },
