@@ -25,6 +25,7 @@ import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { DocControllerEvent } from './DocControllerEvent'
+import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../../Models/Constants'
 
 describe('DocController', () => {
   let controller: DocController
@@ -203,6 +204,18 @@ describe('DocController', () => {
     })
   })
 
+  describe('handleDocumentUpdatesMessage', () => {
+    it('should increment size tracker size', async () => {
+      controller.sizeTracker.incrementSize = jest.fn()
+
+      await controller.handleDocumentUpdatesMessage({
+        byteSize: jest.fn().mockReturnValue(25),
+      } as unknown as DecryptedMessage)
+
+      expect(controller.sizeTracker.incrementSize).toHaveBeenCalledWith(25)
+    })
+  })
+
   describe('handleRealtimeConnectionReady', () => {
     it('should show editor', () => {
       controller.didAlreadyReceiveEditorReadyEvent = true
@@ -233,6 +246,14 @@ describe('DocController', () => {
 
     it('should lock if websocket status is connecting', () => {
       controller.websocketStatus = 'connecting'
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should lock if size constraint reached', () => {
+      controller.isLockedDueToSizeContraint = true
 
       controller.reloadEditingLockedState()
 
@@ -396,7 +417,7 @@ describe('DocController', () => {
   })
 
   describe('editorRequestsPropagationOfUpdate', () => {
-    it('Should propagate update', () => {
+    it('should propagate update', () => {
       void controller.editorRequestsPropagationOfUpdate(
         {
           type: {
@@ -409,26 +430,77 @@ describe('DocController', () => {
         'mock' as BroadcastSource,
       )
 
-      // @ts-ignore: accessing private property
       expect(controller.websocketService.sendDocumentUpdateMessage).toHaveBeenCalled()
     })
 
-    it('Should not propagate update if message is above MAX_DU_SIZE', () => {
+    it('should increment size tracker size', () => {
+      controller.sizeTracker.incrementSize = jest.fn()
+
       void controller.editorRequestsPropagationOfUpdate(
         {
           type: {
             wrapper: 'du',
           },
           content: {
-            byteLength: 123123123,
+            byteLength: 123,
           },
         } as RtsMessagePayload,
         'mock' as BroadcastSource,
       )
-      // @ts-ignore: accessing private property
+
+      expect(controller.sizeTracker.incrementSize).toHaveBeenCalledWith(123)
+    })
+
+    it('should refuse propagation of update if the update is larger than the max update size', () => {
+      controller.handleAttemptingToBroadcastUpdateThatIsTooLarge = jest.fn()
+
+      void controller.editorRequestsPropagationOfUpdate(
+        {
+          type: {
+            wrapper: 'du',
+          },
+          content: {
+            byteLength: MAX_UPDATE_SIZE + 1,
+          },
+        } as RtsMessagePayload,
+        'mock' as BroadcastSource,
+      )
+
+      expect(controller.handleAttemptingToBroadcastUpdateThatIsTooLarge).toHaveBeenCalled()
       expect(controller.websocketService.sendDocumentUpdateMessage).not.toHaveBeenCalled()
-      // @ts-ignore: accessing private property
-      expect(controller.websocketService.flushPendingUpdates).toHaveBeenCalled()
+    })
+
+    it('should refuse propagation of update if the update would exceed total document size', () => {
+      controller.sizeTracker.resetWithSize(MAX_DOC_SIZE - 1)
+
+      controller.handleAttemptingToBroadcastUpdateThatIsTooLarge = jest.fn()
+
+      void controller.editorRequestsPropagationOfUpdate(
+        {
+          type: {
+            wrapper: 'du',
+          },
+          content: {
+            byteLength: 2,
+          },
+        } as RtsMessagePayload,
+        'mock' as BroadcastSource,
+      )
+
+      expect(controller.handleAttemptingToBroadcastUpdateThatIsTooLarge).toHaveBeenCalled()
+      expect(controller.websocketService.sendDocumentUpdateMessage).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('handleAttemptingToBroadcastUpdateThatIsTooLarge', () => {
+    it('should lock editing', () => {
+      controller.reloadEditingLockedState = jest.fn()
+
+      controller.handleAttemptingToBroadcastUpdateThatIsTooLarge()
+
+      expect(controller.isLockedDueToSizeContraint).toBe(true)
+
+      expect(controller.reloadEditingLockedState).toHaveBeenCalled()
     })
   })
 })
