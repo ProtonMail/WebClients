@@ -1,14 +1,10 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/components/hooks';
-
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { isErrorDueToNameConflict } from '../../../utils/isErrorDueToNameConflict';
-import { Features, measureExperimentalPerformance } from '../../../utils/telemetry';
 import { useLinkActions, useLinksActions } from '../../_links';
 import { TransferConflictStrategy, UploadFolderControls } from '../interface';
-import { useDriveOptimisticUploadFeatureFlag } from '../useOptimisticUpload';
 import { ConflictStrategyHandler } from './interface';
 import useUploadHelper from './useUploadHelper';
 
@@ -25,8 +21,6 @@ export default function useUploadFolder() {
     const { createFolder } = useLinkActions();
     const { deleteChildrenLinks } = useLinksActions();
     const { findAvailableName, getLinkByName } = useUploadHelper();
-    const isOptimisticUploadEnabled = useDriveOptimisticUploadFeatureFlag();
-    const api = useApi();
 
     const createEmptyFolder = async (
         abortSignal: AbortSignal,
@@ -120,53 +114,6 @@ export default function useUploadFolder() {
         throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
     };
 
-    const prepareFolder = (
-        abortSignal: AbortSignal,
-        shareId: string,
-        parentId: string,
-        folderName: string,
-        modificationTime: Date | undefined,
-        getFolderConflictStrategy: ConflictStrategyHandler,
-        log: LogCallback
-    ): Promise<Folder> => {
-        const lowercaseName = folderName.toLowerCase();
-
-        return queuedFunction(`upload_empty_folder:${lowercaseName}`, async () => {
-            const {
-                filename: newName,
-                draftLinkId,
-                clientUid,
-            } = await findAvailableName(abortSignal, { shareId, parentLinkId: parentId, filename: folderName });
-            checkSignal(abortSignal, folderName);
-            // Automatically replace file - previous draft was uploaded
-            // by the same client.
-            if (draftLinkId && clientUid) {
-                log(`Automatically replacing draft`);
-                return replaceDraft(abortSignal, shareId, parentId, draftLinkId, newName, modificationTime);
-            }
-            if (folderName === newName) {
-                log(`Creating new folder`);
-                return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
-            }
-
-            return handleNameConflict(
-                abortSignal,
-                {
-                    shareId,
-                    parentId,
-                    folderName,
-                    modificationTime,
-                    getFolderConflictStrategy,
-                    log,
-                },
-                {
-                    filename: newName,
-                    draftLinkId,
-                }
-            );
-        })();
-    };
-
     const prepareFolderOptimistically = (
         abortSignal: AbortSignal,
         shareId: string,
@@ -233,31 +180,14 @@ export default function useUploadFolder() {
         const abortController = new AbortController();
         return {
             start: () => {
-                // TODO [DRVWEB-3951]: Remove original function after complete rollout of 'DriveWebOptimisticUploadEnabled' feature flag
-                return measureExperimentalPerformance(
-                    api,
-                    Features.optimisticFolderUploads,
-                    isOptimisticUploadEnabled,
-                    () =>
-                        prepareFolder(
-                            abortController.signal,
-                            shareId,
-                            parentId,
-                            folderName,
-                            modificationTime,
-                            getFolderConflictStrategy,
-                            log
-                        ),
-                    () =>
-                        prepareFolderOptimistically(
-                            abortController.signal,
-                            shareId,
-                            parentId,
-                            folderName,
-                            modificationTime,
-                            getFolderConflictStrategy,
-                            log
-                        )
+                return prepareFolderOptimistically(
+                    abortController.signal,
+                    shareId,
+                    parentId,
+                    folderName,
+                    modificationTime,
+                    getFolderConflictStrategy,
+                    log
                 );
             },
             cancel: () => {
