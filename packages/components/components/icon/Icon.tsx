@@ -226,6 +226,7 @@ export type IconName =
     | 'list-bullets'
     | 'list-numbers'
     | 'lock'
+    | 'lock-check'
     | 'lock-check-filled'
     | 'lock-exclamation-filled'
     | 'lock-filled'
