@@ -51,10 +51,7 @@ function AlignmentMenuOptions({
   return AlignmentOptions.map(({ align, icon, name, onClick }) => (
     <DropdownMenuButton
       key={align}
-      className={clsx(
-        'flex items-center gap-2 text-left text-sm',
-        align === elementFormat && 'bg-[--primary-minor-2] font-bold',
-      )}
+      className={clsx('flex items-center gap-2 text-left text-sm', align === elementFormat && 'active font-bold')}
       onClick={() => onClick(activeEditor)}
       disabled={!isEditable}
     >
