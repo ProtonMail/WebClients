@@ -3,10 +3,16 @@ import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
 
 export class DecryptedCommit {
+  public readonly byteSize: number
+
   constructor(
     public commitId: string,
     public updates: DecryptedMessage[],
-  ) {}
+  ) {
+    this.byteSize = updates.reduce((acc, update) => acc + update.byteSize(), 0)
+
+    Object.freeze(this)
+  }
 
   numberOfUpdates(): number {
     return this.updates.length
