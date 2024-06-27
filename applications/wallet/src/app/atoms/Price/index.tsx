@@ -162,12 +162,12 @@ export const Price = ({
 
     return (
         <span
-            className={clsx(['price', wrapperClassName, large && 'price--large', classNames?.price])}
+            className={clsx(['price', wrapperClassName, large && 'price--large', classNames?.price, className])}
             data-currency={currency}
         >
             <span
                 key={`${satsAmount}-${currency}-amount`}
-                className={clsx(['amount', 'amount--large', classNames?.integer])}
+                className={clsx(['amount', 'amount--large', amountClassName, classNames?.integer])}
             >
                 {amount}
             </span>
