@@ -1931,11 +1931,20 @@
       "Are you sure you want to delete this address?": [
         "Ви дійсно хочете видалити цю адресу?"
       ],
+      "Delete address": [
+        "Видалити адресу"
+      ],
       "Delete address permanently?": [
         "Видалити адресу остаточно?"
       ],
       "Delete address?": [
         "Видалити адресу?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Після видалення цю адресу ${ address } більше не зможе використати ніхто інший."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Зверніть увагу, якщо ви видалите цю адресу ${ address }, ви більше не зможете надсилати чи отримувати листи з цією адресою."
       ],
       "You can only delete 1 address per year.": [
         "Ви можете видаляти лише 1 адресу на рік."
@@ -1952,6 +1961,12 @@
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "Ви дійсно хочете видалити цей домен?"
+      ],
+      "Delete": [
+        "Видалити"
+      ],
+      "Delete domain?": [
+        "Видалити домен?"
       ]
     },
     "Delinquent modal title": {
@@ -3760,17 +3775,11 @@
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Попередній перегляд документів поки що не підтримується. Будь ласка, відкрийте документ для його перегляду."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
       ],
       "Protected by Swiss privacy laws": [
         "Захищено швейцарським законодавством про приватність"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Загальний доступ до документів ще не підтримується. Попросіть власника запросити вас безпосередньо до документа."
       ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
@@ -4427,9 +4436,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Рахунок виставлено"
-      ],
       "Gifted": [
         "Подаровано"
       ],
@@ -5033,6 +5039,9 @@
       ],
       "Forgot username?": [
         "Забули ім'я користувача?"
+      ],
+      "Help": [
+        "Допомога"
       ],
       "Help translate": [
         "Допоможіть з перекладом"
@@ -7797,6 +7806,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "6 users": [
+        "6 користувачів"
+      ],
       "Automatic email forwarding": [
         "Автоматичне пересилання пошти"
       ],
@@ -7830,6 +7842,9 @@
       "Keep ${ config.planName }": [
         "Залишити ${ config.planName }"
       ],
+      "Learn more": [
+        "Докладніше"
+      ],
       "Learn more about our impact": [
         "Дізнайтеся більше про результати нашої діяльності"
       ],
@@ -7841,6 +7856,9 @@
       ],
       "Priority support": [
         "Пріоритетна підтримка"
+      ],
+      "Reactivate": [
+        "Повторна активація"
       ],
       "Read the story": [
         "Прочитати історію"
@@ -8940,11 +8958,32 @@
       "Add multiple users": [
         "Додати кількох користувачів"
       ],
+      "Admin": [
+        "Адміністратор"
+      ],
+      "Cancel": [
+        "Скасувати"
+      ],
       "Confirm password": [
         "Підтвердити пароль"
       ],
       "Create password": [
         "Створити пароль"
+      ],
+      "Create user": [
+        "Створити користувача"
+      ],
+      "Email": [
+        "Пошта"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Optional": [
+        "Необов'язково"
+      ],
+      "Private": [
+        "Приватно"
       ],
       "Remember to share the user's sign in details with them.": [
         "Повідомте користувачам їхні дані для входу."
@@ -8957,6 +8996,15 @@
       ]
     },
     "Users table: badge": {
+      "Invite sent": [
+        "Запрошення надіслано"
+      ],
+      "Private": [
+        "Приватно"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "Користувач SSO, наданий вашим провайдером ідентифікації"
       ],

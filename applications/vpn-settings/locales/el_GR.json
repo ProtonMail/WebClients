@@ -3770,17 +3770,11 @@
       "Preview for this file type is not supported": [
         "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Η προεπισκόπηση εγγράφων δεν υποστηρίζεται ακόμη. Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη. Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
       ],
       "read our two-factor authentication guide first": [
         "διαβάστε πρώτα τον οδηγό μας ταυτοποίησης δύο παραγόντων"
@@ -4007,6 +4001,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Αυτό θα αντικαταστήσει τον προσωρινό κωδικό πρόσβασης σας. Στο εξής θα τον χρησιμοποιείτε για την πρόσβαση στον λογαριασμό σας στο ${ BRAND_NAME }."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Αυτό θα στείλει μια νέα πρόσκληση στο **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Αυτό θα σας βγάλει εκτός κάθε ενεργής συνεδρίας και θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων."
@@ -4336,9 +4333,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Θα μπορείτε να προβιβάσετε τον χρήστη σε διαχειριστή ή να τον κάνετε ιδιωτικό μόλις αποδεχτεί την πρόσκληση."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
       ],
@@ -4459,9 +4453,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Χρεωμένο"
-      ],
       "Gifted": [
         "Δωρίστηκε"
       ],

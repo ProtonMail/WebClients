@@ -3783,6 +3783,9 @@
         "Wpisz adresy e-mail użytkowników w wierszach",
         "Wpisz adresy e-mail użytkowników w wierszach"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Poproś właściciela o bezpośrednie udostępnienie dokumentu."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Potwierdź kartę w nowej karcie."
       ],
@@ -3803,6 +3806,9 @@
       ],
       "please open a support ticket": [
         "wyślij zgłoszenie"
+      ],
+      "Please open the document to view it.": [
+        "Otwórz dokument, aby go zobaczyć."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Użyj innej metody płatności lub skontaktuj się ze swoim bankiem."
@@ -3834,8 +3840,8 @@
       "Preview for this file type is not supported": [
         "Podgląd dla tego typu pliku nie jest obsługiwany"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Podgląd dokumentów nie jest obsługiwany. Otwórz dokument, aby go zobaczyć."
+      "Preview of documents is not yet supported.": [
+        "Podgląd dokumentu nie jest obsługiwany."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena obejmuje wszystkie mające zastosowanie zniżki i kupony zapisane na Twoim koncie."
@@ -3843,8 +3849,8 @@
       "Protected by Swiss privacy laws": [
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Publiczne udostępnianie dokumentów nie jest obsługiwane. Poproś właściciela o bezpośrednie zaproszenie do dokumentu."
+      "Public sharing of documents is not yet supported.": [
+        "Publiczne udostępnianie dokumentu nie jest obsługiwane."
       ],
       "read our two-factor authentication guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
@@ -4527,14 +4533,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Wystawiona"
-      ],
       "Gifted": [
         "Podarunek"
       ],
       "Paid": [
         "Opłacona"
+      ],
+      "Processing": [
+        "Przetwarzanie"
       ],
       "Unpaid": [
         "Nieopłacona"
@@ -6739,8 +6745,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ok"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Przetwarzanie płatności"
       ],
       "Processing payment": [
         "Przetwarzanie płatności"

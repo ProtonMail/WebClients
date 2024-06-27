@@ -3738,17 +3738,11 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "문서의 미리보기가 지원되지 않습니다. 확인하려면 문서를 직접 열어주세요."
-      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "문서의 공개 공유가 아직 지원되지 않습니다. 해당 문서에 초대할 수 있는지 소유자로 문의하십시오."
       ],
       "read our two-factor authentication guide first": [
         "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
@@ -4287,9 +4281,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "초대를 수락하면 사용자를 관리자로 승격하거나 비공개로 만들 수 있습니다."
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
       ],
@@ -4410,9 +4401,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "청구됨"
-      ],
       "Gifted": [
         "선물됨"
       ],
@@ -9005,7 +8993,7 @@
         "관리자"
       ],
       "Member": [
-        "멤버"
+        "구성원"
       ],
       "Primary admin": [
         "기본 관리자"
@@ -9279,7 +9267,7 @@
         "DNS 구성에 문제를 감지했습니다. 아래 설명과 리코드가 일치한지 확인하십시오. 문제가 지속될시, DKIM 전환 로그아웃이 필요합니다."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "비공개 멤버에 이메일 주소를 추가하기 전에 조직 키를 ${ activateLink }해야 합니다."
+        "비공개 구성원에 이메일 주소를 추가하기 전에 조직 키를 ${ activateLink }해야 합니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"

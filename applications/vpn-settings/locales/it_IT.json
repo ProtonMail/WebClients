@@ -3722,6 +3722,9 @@
         "Si prega di aggiungere un indirizzo email per l'utente nella riga",
         "Aggiungi gli indirizzi email per gli utenti nelle righe"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Chiedi al proprietario di invitarti direttamente al documento."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Verifica la carta nella scheda di verifica."
       ],
@@ -3742,6 +3745,9 @@
       ],
       "please open a support ticket": [
         "apri un ticket per il supporto"
+      ],
+      "Please open the document to view it.": [
+        "Apri il documento per visualizzarlo."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Riprova utilizzando un altro metodo di pagamento oppure contatta PayPal per assistenza."
@@ -3773,8 +3779,8 @@
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "L'anteprima dei documenti non è ancora supportata. Apri il documento per visualizzarlo."
+      "Preview of documents is not yet supported.": [
+        "L'anteprima dei documenti non è ancora supportata."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
@@ -3782,8 +3788,8 @@
       "Protected by Swiss privacy laws": [
         "Protezione dalle leggi svizzere sulla privacy"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "La condivisione pubblica dei documenti non è ancora supportata. Chiedi al proprietario di invitarti direttamente al documento."
+      "Public sharing of documents is not yet supported.": [
+        "La condivisione pubblica dei documenti non è ancora supportata."
       ],
       "read our two-factor authentication guide first": [
         "leggere la nostra guida sull'autenticazione a due fattori"
@@ -4010,6 +4016,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Questo sostituirà la tua password temporanea. La userai per accedere al tuo account ${ BRAND_NAME } in futuro."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Questa azione invierà un nuovo invito a **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Questo ti disconnetterà da tutte le sessioni attive e disabiliterà l'autenticazione a 2 fattori."
@@ -4339,8 +4348,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Sarai in grado di promuovere l'utente ad amministratore o renderlo privato una volta che avrà accettato l'invito."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Sarai in grado di promuovere l'utente ad amministratore una volta che avrà accettato l'invito."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
@@ -4462,9 +4471,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Addebitato"
-      ],
       "Gifted": [
         "Regalato"
       ],
