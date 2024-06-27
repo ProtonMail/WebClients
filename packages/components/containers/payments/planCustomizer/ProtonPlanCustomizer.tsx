@@ -2,7 +2,6 @@ import { ComponentPropsWithoutRef, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { SelectedPlan } from '@proton/components/payments/core/subscription/selected-plan';
 import {
     ADDON_NAMES,
@@ -248,6 +247,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription;
     allowedAddonTypes?: AddonGuard[];
+    scribeEnabled: boolean;
 }
 
 export const ProtonPlanCustomizer = ({
@@ -265,11 +265,11 @@ export const ProtonPlanCustomizer = ({
     showUsersTooltip,
     latestSubscription,
     allowedAddonTypes,
+    scribeEnabled,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
     const showAddonDescriptions = mode !== 'signup' && !forceHideDescriptions;
-    const scribeEnabled = useAssistantFeatureEnabled();
 
     const isAllowedAddon = useCallback(
         (addonName: ADDON_NAMES) => {
@@ -293,7 +293,7 @@ export const ProtonPlanCustomizer = ({
 
                 return (
                     <AddonCustomizer
-                        scribeAddonEnabled={scribeEnabled.enabled && !scribeEnabled.killSwitch}
+                        scribeAddonEnabled={scribeEnabled}
                         addonName={addonName}
                         cycle={cycle}
                         currency={currency}
