@@ -155,7 +155,7 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
             }>[] = compact([
                 {
                     id: 'confirmation',
-                    colSpan: '2fr',
+                    colSpan: 'minmax(10rem, 2fr)',
                     data: (row) => <ConfirmationTimeDataListItem loading={loadingRecordInit} tx={row} />,
                 },
                 {

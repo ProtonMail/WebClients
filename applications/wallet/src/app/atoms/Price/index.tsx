@@ -16,7 +16,9 @@ const formatterByCurrency: Map<string, Intl.NumberFormat> = new Map();
 interface Props extends Omit<PriceOwnProps, 'children' | 'currency' | 'divisor'> {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
     satsAmount: number;
+    withPositiveSign?: boolean;
     className?: string;
+    signClassName?: string;
     amountClassName?: string;
     currencyClassName?: string;
     classNames?: ClassNamesProps;
@@ -33,12 +35,14 @@ const tryNumberFormat = (currency: string, minimumFractionDigits: number): Intl.
 
     try {
         return new Intl.NumberFormat(dateLocale.code, {
+            signDisplay: 'exceptZero',
             currency: currency,
             minimumFractionDigits: minimumFractionDigits,
             ...commonParams,
         });
     } catch (err) {
         return new Intl.NumberFormat(dateLocale.code, {
+            signDisplay: 'exceptZero',
             currency: 'USD',
             minimumFractionDigits: 2,
             ...commonParams,
@@ -49,7 +53,9 @@ const tryNumberFormat = (currency: string, minimumFractionDigits: number): Intl.
 export const Price = ({
     unit,
     satsAmount,
+    withPositiveSign = false,
     className,
+    signClassName,
     amountClassName,
     currencyClassName,
     classNames,
@@ -77,17 +83,47 @@ export const Price = ({
                 {formatter
                     .formatToParts(amount)
                     .filter(({ type }) =>
-                        ['minusSign', 'currency', 'integer', 'group', 'decimal', 'fraction', 'literal'].includes(type)
+                        [
+                            'plusSign',
+                            'minusSign',
+                            'currency',
+                            'integer',
+                            'group',
+                            'decimal',
+                            'fraction',
+                            'literal',
+                        ].includes(type)
                     )
                     .map(({ type, value }) => {
                         switch (type) {
+                            case 'plusSign':
+                                return withPositiveSign ? (
+                                    <span
+                                        key={`${time}-${satsAmount}-${currency}-${type}`}
+                                        className={clsx([
+                                            'text-pre',
+                                            signClassName,
+                                            amountClassName,
+                                            classNames?.plusSign,
+                                        ])}
+                                    >
+                                        {value}{' '}
+                                    </span>
+                                ) : (
+                                    <span></span>
+                                );
                             case 'minusSign':
                                 return (
                                     <span
                                         key={`${time}-${satsAmount}-${currency}-${type}`}
-                                        className={clsx([amountClassName, classNames?.minusSign])}
+                                        className={clsx([
+                                            'text-pre',
+                                            signClassName,
+                                            amountClassName,
+                                            classNames?.minusSign,
+                                        ])}
                                     >
-                                        {value}
+                                        {value}{' '}
                                     </span>
                                 );
                             case 'currency':
