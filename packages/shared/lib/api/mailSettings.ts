@@ -6,6 +6,7 @@ import {
     MAIL_PAGE_SIZE,
     PM_SIGNATURE_REFERRAL,
     SPAM_ACTION,
+    SWIPE_ACTION,
 } from '../mail/mailSettings';
 
 export const getMailSettings = () => ({
@@ -239,4 +240,16 @@ export const updateAutoDelete = (AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AN
     url: 'mail/v4/settings/auto-delete-spam-and-trash-days',
     method: 'put',
     data: { Days: AutoDeleteSpamAndTrashDays },
+});
+
+export const updateSwipeLeft = (SwipeLeft: SWIPE_ACTION) => ({
+    url: 'mail/v4/settings/swipeleft',
+    method: 'put',
+    data: { SwipeLeft },
+});
+
+export const updateSwipeRight = (SwipeRight: SWIPE_ACTION) => ({
+    url: 'mail/v4/settings/swiperight',
+    method: 'put',
+    data: { SwipeRight },
 });
