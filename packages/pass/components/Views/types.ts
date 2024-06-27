@@ -24,12 +24,14 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handlePinClick: () => void;
     handleRestoreClick: () => void;
     handleRetryClick: () => void;
+    handleSecureLinkClick: () => void;
     handleToggleFlagsClick: () => void;
 };
 
 export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {
-    revision: ItemRevision<T>;
     diff?: ItemDiff<T>;
+    revision: ItemRevision<T>;
+    secureLinkItem?: boolean;
 } & Partial<Extra>;
 
 export type ItemEditViewProps<T extends ItemType = ItemType> = {
