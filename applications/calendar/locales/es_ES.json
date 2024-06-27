@@ -476,10 +476,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
+        "Aceptar"
+      ],
+      "Ok": [
         "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4373,7 +4373,7 @@
         "Editar dirección de correo electrónico"
       ],
       "email": [
-        "correo"
+        "correo electrónico"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
@@ -5843,7 +5843,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Conseguir la oferta"
+        "Aprovéchate de la oferta"
       ],
       "Special Offer": [
         "Oferta especial"
@@ -7293,8 +7293,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Procesando el pago"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -7560,7 +7566,7 @@
         "Todos tus aliases"
       ],
       "Create alias": [
-        "Crear alias"
+        "Crear un alias"
       ],
       "Create an alias": [
         "Crear un alias"
@@ -7600,7 +7606,7 @@
     },
     "Security Center - Action": {
       "View logs": [
-        "Ver registros"
+        "Ver los registros"
       ]
     },
     "Security Center - Info": {
