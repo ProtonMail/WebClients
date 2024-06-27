@@ -640,7 +640,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Decrypted node not loaded when creating new document')
     }
 
-    const date = format(new Date(), 'yyyy-MM-dd HH:mm:ss')
+    const date = format(new Date(), 'yyyy-MM-dd HH.mm.ss')
     // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
     const baseTitle = c('Title').t`Untitled document ${date}`
     const newName = `${baseTitle}`
