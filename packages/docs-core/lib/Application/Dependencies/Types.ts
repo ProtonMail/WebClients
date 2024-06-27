@@ -12,7 +12,6 @@ export const App_TYPES = {
 
   // Use cases
   SquashDocument: Symbol.for('SquashDocument'),
-  GenerateManifestSignature: Symbol.for('GenerateManifestSignature'),
   CreateInitialCommit: Symbol.for('CreateInitialCommit'),
   EncryptMessage: Symbol.for('EncryptMessage'),
   DecryptMessage: Symbol.for('DecryptMessage'),
