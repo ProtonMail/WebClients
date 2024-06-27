@@ -111,7 +111,6 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                         }}
                     />
 
-                    <hr className="my-4" />
                     <DateDataItem tx={transaction} />
 
                     <hr className="my-4" />
