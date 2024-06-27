@@ -23,6 +23,7 @@ import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
+import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -44,6 +45,7 @@ const MainSwitch: FC = () => {
     const client = useClient();
     const offline = clientOffline(client.state.status);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
+
     const { state: expanded, toggle } = useToggle();
 
     const connectivityBar = useConnectivityBar((online) => ({
@@ -92,6 +94,7 @@ const MainSwitch: FC = () => {
                                             />
                                             <Route path={`${route.match.path}/monitor`} component={Monitor} />
                                             <Route exact path={`${route.match.path}/settings`} component={Settings} />
+                                            <Route path={`${route.match.path}/secure-links`} component={SecureLinks} />
                                             <Route>
                                                 {(subRoute) => (
                                                     <>

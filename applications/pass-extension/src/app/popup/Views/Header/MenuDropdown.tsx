@@ -72,6 +72,7 @@ export const MenuDropdown: FC = () => {
     const user = useSelector(selectUser);
     const canLock = useSelector(selectLockEnabled);
 
+    const secureLinkEnabled = useFeatureFlag(PassFeature.PassPublicLinkV1);
     const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
     const [notifyMonitor, setNotifyMonitor] = useState(false);
     const notify = notifyMonitor;
@@ -223,6 +224,15 @@ export const MenuDropdown: FC = () => {
                                 </Collapsible>
                             )}
                         />
+
+                        {secureLinkEnabled && (
+                            <DropdownMenuButton
+                                onClick={() => onLink(getPassWebUrl(API_URL, 'secure-links'))}
+                                label={c('Action').t`Secure links`}
+                                icon="link"
+                                className="pt-1.5 pb-1.5"
+                            />
+                        )}
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
