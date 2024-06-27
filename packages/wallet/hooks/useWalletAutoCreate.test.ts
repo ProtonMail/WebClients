@@ -3,6 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { WasmApiBitcoinAddressesCreationPayload, WasmDerivationPath } from '@proton/andromeda';
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import {
     mockUseAuthentication,
@@ -64,6 +65,12 @@ describe('useWalletAutoCreate', () => {
     });
 
     beforeEach(async () => {
+        mockedGetWallets.mockClear();
+        mockedCreateWallet.mockClear();
+        mockedCreateWalletAccount.mockClear();
+        mockedAddEmailAddress.mockClear();
+        mockedAddBitcoinAddress.mockClear();
+
         mockUseWalletApiClients(mocked);
         mockUseGetBitcoinNetwork();
         mockUseGetUserKeys(await getUserKeys());
@@ -82,6 +89,25 @@ describe('useWalletAutoCreate', () => {
             await waitFor(() => expect(mockedGetWallets).toHaveBeenCalled());
             expect(mockedGetWallets).toHaveBeenCalledWith();
 
+            // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
+            await wait(100);
+
+            expect(mockedCreateWallet).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('when higher level pilot is false', () => {
+        beforeEach(() => {
+            mockedGetWallets.mockResolvedValue([[]]);
+        });
+
+        it('should not autocreate wallet', async () => {
+            renderHook(() => useWalletAutoCreate({ higherLevelPilot: false }));
+
+            // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
+            await wait(100);
+
+            expect(mockedGetWallets).not.toHaveBeenCalled();
             expect(mockedCreateWallet).not.toHaveBeenCalled();
         });
     });

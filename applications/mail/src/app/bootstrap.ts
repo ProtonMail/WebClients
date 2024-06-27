@@ -9,6 +9,7 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { WasmProtonWalletApiClient } from '@proton/andromeda';
 import { createCalendarModelEventManager } from '@proton/calendar';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
@@ -63,8 +64,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
+        const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin, config.API_URL);
+
         const user = sessionResult.session?.User;
-        extendStore({ config, api, authentication, unleashClient, history });
+        extendStore({ config, api, authentication, unleashClient, history, walletApi });
 
         await unleashPromise;
         let persistedState = await getDecryptedPersistedState<Partial<MailState>>({

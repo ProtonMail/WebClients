@@ -17,6 +17,7 @@ import {
 
 import { setPanicHook } from '@proton/andromeda';
 import {
+    ApiProvider,
     AuthenticationProvider,
     DelinquentContainer,
     ErrorBoundary,
@@ -107,33 +108,32 @@ const App = () => {
                 return (
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
-                            <ExtendedApiProvider
-                                api={extraThunkArguments.api}
-                                walletApi={extraThunkArguments.walletApi}
-                            >
-                                <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                                    <Router history={extraThunkArguments.history}>
-                                        <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                            <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                <StandardPrivateApp
-                                                    hasReadableMemberKeyActivation
-                                                    hasMemberKeyMigration
-                                                    hasPrivateMemberKeyGeneration
-                                                    loader={loader}
-                                                >
-                                                    <BitcoinBlockchainContextProvider>
-                                                        <WalletSetupModalContextProvider>
-                                                            <WalletDrawerContextProvider>
-                                                                <state.MainContainer />
-                                                            </WalletDrawerContextProvider>
-                                                        </WalletSetupModalContextProvider>
-                                                    </BitcoinBlockchainContextProvider>
-                                                </StandardPrivateApp>
-                                            </ErrorBoundary>
-                                        </EventManagerProvider>
-                                    </Router>
-                                </FlagProvider>
-                            </ExtendedApiProvider>
+                            <ApiProvider api={extraThunkArguments.api}>
+                                <ExtendedApiProvider walletApi={extraThunkArguments.walletApi}>
+                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                        <Router history={extraThunkArguments.history}>
+                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    <StandardPrivateApp
+                                                        hasReadableMemberKeyActivation
+                                                        hasMemberKeyMigration
+                                                        hasPrivateMemberKeyGeneration
+                                                        loader={loader}
+                                                    >
+                                                        <BitcoinBlockchainContextProvider>
+                                                            <WalletSetupModalContextProvider>
+                                                                <WalletDrawerContextProvider>
+                                                                    <state.MainContainer />
+                                                                </WalletDrawerContextProvider>
+                                                            </WalletSetupModalContextProvider>
+                                                        </BitcoinBlockchainContextProvider>
+                                                    </StandardPrivateApp>
+                                                </ErrorBoundary>
+                                            </EventManagerProvider>
+                                        </Router>
+                                    </FlagProvider>
+                                </ExtendedApiProvider>
+                            </ApiProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
                 );
