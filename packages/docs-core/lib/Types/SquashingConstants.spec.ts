@@ -27,6 +27,6 @@ describe('SquashingConstants', () => {
   it('should return prod value', () => {
     setHost('docs.proton.me')
 
-    expect(GetCommitDULimit()).toBe(2_500)
+    expect(GetCommitDULimit()).toBe(500)
   })
 })
