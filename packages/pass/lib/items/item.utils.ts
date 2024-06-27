@@ -2,20 +2,24 @@ import { c } from 'ttag';
 
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import type { Draft } from '@proton/pass/store/reducers';
-import type {
-    ItemRevision,
-    ItemRevisionID,
-    ItemSortFilter,
-    ItemType,
-    LoginItem,
-    MaybeNull,
-    SafeLoginItem,
-    SelectedItem,
-    UniqueItem,
+import {
+    ContentFormatVersion,
+    type ItemRevision,
+    type ItemRevisionID,
+    type ItemSortFilter,
+    ItemState,
+    type ItemType,
+    type LoginItem,
+    type MaybeNull,
+    type SafeLoginItem,
+    type SecureLinkItem,
+    type SelectedItem,
+    type UniqueItem,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -164,3 +168,26 @@ export const intoSafeLoginItem = (item: ItemRevision<'login'>): SafeLoginItem =>
 });
 
 export const buildSecureLink = (url: string, linkKey: Uint8Array) => `${url}#${uint8ArrayToBase64String(linkKey)}`;
+
+/** Transforms a `SecureLinkItem` into a mocked `ItemRevision` for UI
+ * consumption. It's used to make SecureLinkItems compatible with components
+ * that expect `ItemRevision` objects. Only used for UI rendering purposes */
+export const intoSecureLinkItemRevision = ({ item }: SecureLinkItem): ItemRevision => {
+    const now = getEpoch();
+
+    return {
+        aliasEmail: null,
+        contentFormatVersion: ContentFormatVersion.Item,
+        createTime: now,
+        data: item,
+        flags: 0,
+        itemId: uniqueId(),
+        lastUseTime: null,
+        modifyTime: now,
+        pinned: false,
+        revision: 0,
+        revisionTime: now,
+        shareId: '',
+        state: ItemState.Active,
+    };
+};
