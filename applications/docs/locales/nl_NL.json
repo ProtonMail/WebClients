@@ -60,6 +60,9 @@
       "Add note": [
         "Notitie toevoegen"
       ],
+      "Add people or groups to share": [
+        "Voeg personen of groepen toe om te delen"
+      ],
       "Add phone number": [
         "Telefoonnummer toevoegen"
       ],
@@ -93,6 +96,9 @@
       ],
       "Cancel all uploads": [
         "Alle uploads annuleren"
+      ],
+      "Cancel download": [
+        "Download annuleren"
       ],
       "Cancel subscription": [
         "Abonnement opzeggen"
@@ -150,6 +156,12 @@
       ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
+      ],
+      "Copy invite link": [
+        "Uitnodigingslink kopiëren"
+      ],
+      "Copy link": [
+        "Link kopiëren"
       ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
@@ -375,6 +387,9 @@
       "Previous month": [
         "Vorige maand"
       ],
+      "Print": [
+        "Afdrukken"
+      ],
       "Quit": [
         "Afsluiten"
       ],
@@ -395,6 +410,9 @@
       ],
       "Remove": [
         "Verwijderen"
+      ],
+      "Remove access": [
+        "Toegang verwijderen"
       ],
       "Remove bonuses": [
         "Verwijder bonussen"
@@ -423,6 +441,9 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Resend invite": [
+        "Uitnodiging opnieuw verzenden"
+      ],
       "Reset to default": [
         "Terugzetten naar standaard"
       ],
@@ -431,6 +452,9 @@
       ],
       "Save": [
         "Opslaan"
+      ],
+      "Save changes": [
+        "Wijzigingen opslaan"
       ],
       "Search countries": [
         "Zoek landen"
@@ -470,6 +494,9 @@
       ],
       "Stay": [
         "Blijf"
+      ],
+      "Stop sharing": [
+        "Delen stoppen"
       ],
       "Submit": [
         "Versturen"
@@ -2052,6 +2079,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "Account does not exist": [
+        "Account bestaat niet"
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -2066,6 +2096,9 @@
       ],
       "Aliases could not be loaded": [
         "Aliassen konden niet worden geladen."
+      ],
+      "Already a member of this share": [
+        "Al lid van deze share"
       ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
@@ -2134,6 +2167,9 @@
       ],
       "Error decrypting a computer": [
         "Fout bij het ontsleutelen van een computer"
+      ],
+      "External accounts are not supported yet": [
+        "Externe accounts worden nog niet ondersteund"
       ],
       "File \"${ name }\" is already downloading": [
         "Bestand \"${ name }\" wordt reeds gedownload"
@@ -2277,6 +2313,10 @@
       "Process aborted": [
         "Proces afgebroken"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Dubbele genodigden verwijderd: ${ joinedInvitee }",
+        "Dubbele genodigden verwijderd: ${ joinedInvitee }"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
@@ -2315,6 +2355,9 @@
       ],
       "Tab closed": [
         "Tab gesloten"
+      ],
+      "The address might be misspelled": [
+        "Het adres is mogelijk verkeerd gespeld"
       ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
@@ -2396,6 +2439,9 @@
       ],
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
+      "Validation error": [
+        "Validatiefout"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -3343,6 +3389,12 @@
       "and": [
         "en"
       ],
+      "Anyone with this link can access your file.": [
+        "Iedereen met deze link heeft toegang tot dit bestand."
+      ],
+      "Anyone with this link can access your folder.": [
+        "Iedereen met deze link heeft toegang tot deze map."
+      ],
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
@@ -3424,6 +3476,15 @@
       ],
       "Create in": [
         "Maak in"
+      ],
+      "Create public link": [
+        "Maak een publieke link"
+      ],
+      "Creating link to file": [
+        "Link naar bestand maken"
+      ],
+      "Creating link to folder": [
+        "Link naar map maken"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -3508,6 +3569,15 @@
       ],
       "Expired": [
         "Verlopen"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "Genereren van beveiligde koppeling mislukt. De reden is: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "Genereren van beveiligde koppeling mislukt. Probeer het later opnieuw"
+      ],
+      "Failed to open a secure link. The reason is: ${ error }": [
+        "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
@@ -3600,6 +3670,9 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
+      "Invite link copied": [
+        "Link met uitnodiging gekopieerd"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Het lijkt erop dat u recent heeft geprobeerd ${ uploadName } te uploaden. Als de upload mislukt is, ${ replaceFile }. Als de upload nog bezig is, zal het vervangen van het bestand de huidige upload annuleren."
       ],
@@ -3639,6 +3712,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
+      "Loading link": [
+        "Koppeling laden"
+      ],
       "Loading...": [
         "Laden..."
       ],
@@ -3647,6 +3723,10 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
+        "Maximum ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakters"
       ],
       "Medium Priority": [
         "Middelmatige prioriteit"
@@ -3693,14 +3773,30 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } teken toegelaten",
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
+      ],
+      "Only the people with the link and the password can access this file.": [
+        "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
+      ],
+      "Only the people with the link and the password can access this folder.": [
+        "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
+      ],
       "Organization size": [
         "Grootte van de organisatie"
+      ],
+      "Owner": [
+        "Eigenaar"
       ],
       "password": [
         "wachtwoord"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
+      ],
+      "People with access": [
+        "Personen met toegang"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline is enkel compatibel met Plain Text-formaat."
@@ -3754,6 +3850,12 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
       ],
+      "Preparing link to file": [
+        "Link naar bestand wordt voorbereid"
+      ],
+      "Preparing link to folder": [
+        "Link naar map wordt voorbereid"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
@@ -3789,6 +3891,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Met het instellen van PGP kunt u versleutelde e-mails verzenden met een niet-${ BRAND_NAME } gebruiker die een PGP compatibele dienst gebruikt."
+      ],
+      "Share via link settings": [
+        "Deel via linkinstellingen"
+      ],
+      "Shareable link for ${ boldNameText }": [
+        "Deelbare koppeling voor ${ boldNameText }"
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Handtekening kan niet gecontroleerd worden door een netwerkfout, probeer het later opnieuw."
@@ -3846,6 +3954,15 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Deze koppeling is gemaakt met een oude versie van Drive en kan niet worden aangepast. Verwijder deze link en creeër een nieuwe om de instellingen te wijzigen."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw bestand. Om het bestand opnieuw in te stellen heeft u een nieuwe link nodig."
+      ],
+      "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
+        "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw map. Om de map opnieuw in te delen heeft u een nieuwe link nodig."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
@@ -3983,6 +4100,9 @@
       "Writing assistant add-on": [
         "Schrijfassistent add-on"
       ],
+      "you": [
+        "u"
+      ],
       "You already have a free account": [
         "U heeft al een gratis account"
       ],
@@ -4044,6 +4164,9 @@
       ],
       "You will lose access to Plus servers and features on this date.": [
         "U zult toegang verliezen tot Plus-servers en -functies op deze datum."
+      ],
+      "You will lose all unsaved changes.": [
+        "U zal alle wijzigingen kwijtraken."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -4207,6 +4330,12 @@
       "Add to group": [
         "Toevoegen aan groep"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Iedereen op het Internet kan het met deze link bekijken"
+      ],
+      "Anyone with the link": [
+        "Iedereen met de link"
+      ],
       "App password": [
         "App-wachtwoord"
       ],
@@ -4324,6 +4453,9 @@
       "e.g., Amazon, eBay, Etsy": [
         "bv. Amazon, eBay, Etsy"
       ],
+      "Editor": [
+        "Bewerker"
+      ],
       "Email": [
         "E-mailadres"
       ],
@@ -4350,6 +4482,9 @@
       ],
       "Encrypt emails": [
         "E-mails versleutelen"
+      ],
+      "Erase this link and remove everyone with access": [
+        "Wis deze link en verwijder iedereen met toegang"
       ],
       "Expiration (${ patternExpiration })": [
         "Verloopdatum (${ patternExpiration })"
@@ -4420,6 +4555,12 @@
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
+      "Make editor": [
+        "Maak de persoon een bewerker"
+      ],
+      "Make viewer": [
+        "Maak de persoon een kijker"
+      ],
       "Manage categories": [
         "Beheer categorieën"
       ],
@@ -4477,8 +4618,14 @@
       "Proration": [
         "Verrekening"
       ],
+      "Protect with password": [
+        "Met wachtwoord beschermen"
+      ],
       "Public keys": [
         "Openbare sleutels"
+      ],
+      "Public link password": [
+        "Wachtwoord voor openbare link"
       ],
       "Region": [
         "Regio/Provincie"
@@ -4495,6 +4642,12 @@
       "Security code (${ codeName })": [
         "Beveiligingscode (${ codeName })"
       ],
+      "Set expiration date": [
+        "Vervaldatum instellen"
+      ],
+      "Set link password": [
+        "Wachtwoord voor link instellen"
+      ],
       "Sign emails": [
         "E-mails ondertekenen"
       ],
@@ -4506,6 +4659,9 @@
       ],
       "Start date": [
         "Begindatum"
+      ],
+      "Stop sharing": [
+        "Delen stoppen"
       ],
       "Street address": [
         "Adres"
@@ -4536,6 +4692,9 @@
       ],
       "Verification code": [
         "Verificatiecode"
+      ],
+      "Viewer": [
+        "Kijker"
       ],
       "What happened?": [
         "Wat is er gebeurd?"
@@ -5851,6 +6010,15 @@
       "${ reason } has been enabled": [
         "${ reason } is aangezet"
       ],
+      "Access for the member removed": [
+        "Toegang voor het lid verwijderd"
+      ],
+      "Access updated": [
+        "Toegang bijgewerkt."
+      ],
+      "Access updated and shared": [
+        "Toegang bijgewerkt en gedeeld"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
       ],
@@ -5909,11 +6077,23 @@
       "The link to \"${ name }\" was deleted": [
         "De link naar \"${ name }\" werd verwijderd"
       ],
+      "The link to your item failed to be deleted": [
+        "De link naar uw item kon niet worden verwijderd"
+      ],
+      "The link to your item was deleted": [
+        "De link naar uw item werd verwijderd"
+      ],
       "Trash failed to be emptied": [
         "Prullenbak legen mislukt"
       ],
       "You stopped sharing this item": [
         "U bent gestopt met dit item te delen"
+      ],
+      "Your settings failed to be saved": [
+        "Uw instellingen konden niet worden bewaard"
+      ],
+      "Your settings have been changed successfully": [
+        "Uw instellingen zijn succesvol gewijzigd."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -6063,6 +6243,9 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
+      "Choose password": [
+        "Kies wachtwoord"
+      ],
       "E.g., ": [
         "Bijv., "
       ],
@@ -6113,6 +6296,9 @@
       ],
       "Select state": [
         "Selecteer provincie"
+      ],
+      "Set date": [
+        "Datum instellen"
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
@@ -6649,6 +6835,11 @@
         "Uw abonnement wordt geannuleerd, even geduld"
       ]
     },
+    "Status": {
+      "Accepted": [
+        "Geaccepteerd"
+      ]
+    },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
         "${ currentPlanName } behouden"
@@ -6910,6 +7101,12 @@
       "Preferences saved": [
         "Voorkeuren opgeslagen"
       ],
+      "Secure link copied": [
+        "Veilige link gekopieerd"
+      ],
+      "The link to your file was successfully copied": [
+        "De link naar uw bestand is gekopieerd."
+      ],
       "Undo in progress": [
         "Bezig met ongedaan maken"
       ],
@@ -7017,6 +7214,34 @@
       ],
       "vCard field": [
         "vCard-veld"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ]
     },
     "Title": {
@@ -7127,6 +7352,9 @@
       "Data recovery": [
         "Dataherstel"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Day theme": [
         "Dag thema"
       ],
@@ -7149,6 +7377,12 @@
       ],
       "Details": [
         "Details"
+      ],
+      "Discard": [
+        "Weggooien"
+      ],
+      "Discard changes?": [
+        "Wijzigingen annuleren?"
       ],
       "Downgrade account": [
         "Account downgraden"
@@ -7241,6 +7475,9 @@
       "Link confirmation": [
         "Link bevestigen"
       ],
+      "Manage secure link": [
+        "Beveiligde link beheren"
+      ],
       "Merge contacts": [
         "Contacten samenvoegen"
       ],
@@ -7298,6 +7535,9 @@
       "Photos": [
         "Foto's"
       ],
+      "Privacy settings": [
+        "Privacyinstellingen"
+      ],
       "Processing...": [
         "Wordt verwerkt..."
       ],
@@ -7337,8 +7577,20 @@
       "Select contact group": [
         "Contactgroep selecteren"
       ],
+      "Select link expiration date": [
+        "Selecteer vervaldatum link"
+      ],
+      "Select link expiration time": [
+        "Selecteer vervaltijd link"
+      ],
       "Settings": [
         "Instellingen"
+      ],
+      "Share ${ name }": [
+        "Deel ${ name }"
+      ],
+      "Share via link": [
+        "Deel via link"
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
@@ -7357,6 +7609,9 @@
       ],
       "Stop sharing": [
         "Delen stoppen"
+      ],
+      "Stop sharing with everyone?": [
+        "Stop het delen met iedereen?"
       ],
       "Stop sharing?": [
         "Delen stoppen?"
@@ -7456,6 +7711,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
+      ],
+      "Shared end-to-end encrypted": [
+        "End-to-end versleuteld gedeeld"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
