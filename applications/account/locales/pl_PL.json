@@ -7694,6 +7694,9 @@
         "Wpisz adresy e-mail użytkowników w wierszach",
         "Wpisz adresy e-mail użytkowników w wierszach"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Poproś właściciela o bezpośrednie udostępnienie dokumentu."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Potwierdź kartę w nowej karcie."
       ],
@@ -7723,6 +7726,9 @@
       ],
       "please open a support ticket": [
         "wyślij zgłoszenie"
+      ],
+      "Please open the document to view it.": [
+        "Otwórz dokument, aby go zobaczyć."
       ],
       "Please select the folders you would like to import:": [
         "Wybierz foldery, które chcesz zaimportować:"
@@ -7763,8 +7769,8 @@
       "Preview for this file type is not supported": [
         "Podgląd dla tego typu pliku nie jest obsługiwany"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Podgląd dokumentów nie jest obsługiwany. Otwórz dokument, aby go zobaczyć."
+      "Preview of documents is not yet supported.": [
+        "Podgląd dokumentu nie jest obsługiwany."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena obejmuje wszystkie mające zastosowanie zniżki i kupony zapisane na Twoim koncie."
@@ -7784,8 +7790,8 @@
       "Public link invite": [
         "Publiczny link zaproszenia"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Publiczne udostępnianie dokumentów nie jest obsługiwane. Poproś właściciela o bezpośrednie zaproszenie do dokumentu."
+      "Public sharing of documents is not yet supported.": [
+        "Publiczne udostępnianie dokumentu nie jest obsługiwane."
       ],
       "purchase additional storage": [
         "kupić dodatkową przestrzeń dyskową"
@@ -7915,9 +7921,6 @@
       ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
-      ],
-      "Set your password": [
-        "Ustaw hasło"
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -8143,9 +8146,6 @@
       ],
       "This file is too large to preview": [
         "Plik jest zbyt duży do podglądu"
-      ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Zaproszenie zostało wykorzystane. Zaloguj się na konto."
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Zaproszenie wygasło. Skontaktuj się z administratorem, aby uzyskać dostęp."
@@ -8982,14 +8982,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Wystawiona"
-      ],
       "Gifted": [
         "Podarunek"
       ],
       "Paid": [
         "Opłacona"
+      ],
+      "Processing": [
+        "Przetwarzanie"
       ],
       "Unpaid": [
         "Nieopłacona"
@@ -9685,8 +9685,8 @@
       "Disable data export for organization members": [
         "Wyłącz eksportowanie danych dla użytkowników organizacji"
       ],
-      "Disable sharing outside the organization.": [
-        "Wyłącz udostępnianie poza organizację."
+      "Disable sharing outside the organization": [
+        "Wyłącz udostępnianie poza organizację"
       ],
       "Display name": [
         "Nazwa wyświetlana"
@@ -13161,8 +13161,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ok"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Przetwarzanie płatności"
       ],
       "Processing payment": [
         "Przetwarzanie płatności"
