@@ -17,74 +17,8 @@ import { insertNewColumnAtSelection } from './TableUtils/insertNewColumnAtSelect
 import { insertNewRowAtSelection } from './TableUtils/insertNewRowAtSelection'
 import { selectColumn } from './TableUtils/selectColumn'
 import { selectRow } from './TableUtils/selectRow'
-import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors'
-import tinycolor from 'tinycolor2'
-
-function TableCellColorMenu({
-  onTextColor,
-  onBackgroundColor,
-}: {
-  onTextColor: (color: string) => void
-  onBackgroundColor: (color: string | null) => void
-}) {
-  const colors = [
-    '#0C0C14',
-    '#5C5958',
-    '#6D4AFF',
-    ACCENT_COLORS_MAP.pacific.color,
-    ACCENT_COLORS_MAP.carrot.color,
-    ACCENT_COLORS_MAP.olive.color,
-    ACCENT_COLORS_MAP.reef.color,
-    '#DC3251',
-    ACCENT_COLORS_MAP.pink.color,
-    ACCENT_COLORS_MAP.sahara.color,
-  ]
-
-  return (
-    <div
-      className="flex-column max-w-custom flex gap-4 px-4 py-3 text-sm leading-none"
-      style={{
-        '--max-w-custom': '15rem',
-      }}
-    >
-      <div>{c('Label').t`Text colour`}</div>
-      <div className="flex items-center gap-3">
-        {colors.map((color) => (
-          // eslint-disable-next-line jsx-a11y/control-has-associated-label
-          <button
-            className="border-weak flex h-8 w-8 items-center justify-center rounded-full border text-base hover:brightness-75"
-            style={{
-              color: color,
-            }}
-            onClick={() => onTextColor(color)}
-          >
-            <div aria-hidden="true">A</div>
-          </button>
-        ))}
-      </div>
-      <div>{c('Label').t`Background colour`}</div>
-      <div className="flex items-center gap-3">
-        {colors.map((color, index) => {
-          const colorWithOpacity = index === 0 ? null : tinycolor(color).setAlpha(0.15).toRgbString()
-
-          // eslint-disable-next-line jsx-a11y/control-has-associated-label
-          return (
-            <button
-              className="text-norm flex h-8 w-8 items-center justify-center rounded-full border text-base hover:brightness-75"
-              style={{
-                backgroundColor: colorWithOpacity,
-                borderColor: index === 0 ? 'var(--border-weak)' : colorWithOpacity,
-              }}
-              onClick={() => onBackgroundColor(colorWithOpacity)}
-            >
-              <div aria-hidden="true">A</div>
-            </button>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
+import { FontColorMenu } from '../../Components/ColorMenu'
+import { TextColors, BackgroundColors } from '../../Shared/Color'
 
 export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
@@ -251,11 +185,13 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
             hasCaret={false}
           >
-            <TableCellColorMenu
-              onTextColor={(color) => {
+            <FontColorMenu
+              textColors={TextColors}
+              onTextColorChange={(color) => {
                 setColorForSelection(editor, color)
               }}
-              onBackgroundColor={(color) => {
+              backgroundColors={BackgroundColors}
+              onBackgroundColorChange={(color) => {
                 setBackgroundColorForSelection(editor, color)
               }}
             />
@@ -365,11 +301,13 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }
             hasCaret={false}
           >
-            <TableCellColorMenu
-              onTextColor={(color) => {
+            <FontColorMenu
+              textColors={TextColors}
+              onTextColorChange={(color) => {
                 setColorForSelection(editor, color)
               }}
-              onBackgroundColor={(color) => {
+              backgroundColors={BackgroundColors}
+              onBackgroundColorChange={(color) => {
                 setBackgroundColorForSelection(editor, color)
               }}
             />
