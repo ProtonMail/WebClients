@@ -18,4 +18,8 @@ export class DecryptedMessage {
     this.aad = dto.aad
     this.timestamp = dto.timestamp
   }
+
+  byteSize(): number {
+    return this.content.byteLength + this.signature.byteLength + this.authorAddress.length + this.aad.length
+  }
 }
