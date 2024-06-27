@@ -20,8 +20,8 @@ import { formatExpirationDateMMYY } from '@proton/pass/lib/validation/credit-car
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
-export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = (itemViewProps) => {
-    const { data: item } = itemViewProps.revision;
+export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = ({ secureLinkItem, revision }) => {
+    const { data: item } = revision;
 
     const {
         metadata: { note },
@@ -29,12 +29,13 @@ export const CreditCardContent: FC<ItemContentProps<'creditCard'>> = (itemViewPr
     } = useDeobfuscatedItem(item);
 
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const upsell = isFreePlan && !secureLinkItem;
 
     return (
         <>
             <FieldsetCluster mode="read" as="div">
                 <ValueControl clickToCopy icon="user" label={c('Label').t`Name on card`} value={cardholderName} />
-                {isFreePlan ? (
+                {upsell ? (
                     <UpgradeControl
                         icon="credit-card"
                         label={c('Label').t`Card number`}
