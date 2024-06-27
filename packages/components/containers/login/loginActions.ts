@@ -402,7 +402,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
         }
     }
 
-    // Special case for the admin panel, return early since it can not get key salts.
+    // Special case for the admin panel (or sso login), return early since it can not get key salts or should setup keys.
     if (ignoreUnlock) {
         return finalizeLogin({ cache, loginPassword });
     }
