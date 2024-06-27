@@ -9,7 +9,6 @@ import { UserService } from '../../Services/User/UserService'
 import { InternalEventBus, InternalEventBusInterface } from '@proton/docs-shared'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { Api, UserModel } from '@proton/shared/lib/interfaces'
-import { CommentsApi } from '../../Api/Comments/CommentsApi'
 import { EncryptionService } from '../../Services/Encryption/EncryptionService'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { DecryptComment } from '../../UseCase/DecryptComment'
@@ -172,7 +171,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<UserService>(App_TYPES.UserService),
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         driveCompat,
-        this.get<CommentsApi>(App_TYPES.CommentsApi),
+        this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<SquashDocument>(App_TYPES.SquashDocument),
         this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
         this.get<LoadDocument>(App_TYPES.LoadDocument),
@@ -205,20 +204,13 @@ export class AppDependencies extends DependencyContainer {
       return new UserService(user)
     })
 
-    this.bind(App_TYPES.CommentsApi, () => {
-      return new CommentsApi(api)
-    })
-
     this.bind(App_TYPES.CreateComment, () => {
-      return new CreateComment(
-        this.get<CommentsApi>(App_TYPES.CommentsApi),
-        this.get<EncryptComment>(App_TYPES.EncryptComment),
-      )
+      return new CreateComment(this.get<DocsApi>(App_TYPES.DocsApi), this.get<EncryptComment>(App_TYPES.EncryptComment))
     })
 
     this.bind(App_TYPES.CreateThread, () => {
       return new CreateThread(
-        this.get<CommentsApi>(App_TYPES.CommentsApi),
+        this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<EncryptComment>(App_TYPES.EncryptComment),
         this.get<DecryptComment>(App_TYPES.DecryptComment),
         this.get<InternalEventBusInterface>(App_TYPES.EventBus),
@@ -226,10 +218,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.LoadThreads, () => {
-      return new LoadThreads(
-        this.get<CommentsApi>(App_TYPES.CommentsApi),
-        this.get<DecryptComment>(App_TYPES.DecryptComment),
-      )
+      return new LoadThreads(this.get<DocsApi>(App_TYPES.DocsApi), this.get<DecryptComment>(App_TYPES.DecryptComment))
     })
 
     this.bind(App_TYPES.HandleRealtimeCommentsEvent, () => {

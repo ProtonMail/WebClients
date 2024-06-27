@@ -5,11 +5,11 @@ import { Result } from '../Domain/Result/Result'
 import { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { DocumentKeys } from '@proton/drive-store'
 import { GetAssociatedEncryptionDataForComment } from './GetAdditionalEncryptionData'
-import { CommentResponseDto } from '../Api/Comments/Types'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
+import { CommentResponseDto } from '../Api/Docs/Types'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}

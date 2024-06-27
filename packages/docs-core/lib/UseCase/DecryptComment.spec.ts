@@ -1,9 +1,9 @@
-import { CommentResponseDto } from './../Api/Comments/Types'
 import { DocumentKeys } from '@proton/drive-store'
 import { DecryptComment } from './DecryptComment'
 import { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Result } from '../Domain/Result/Result'
+import { CommentResponseDto } from '../Api/Docs/Types'
 
 describe('DecryptComment', () => {
   let decryptComment: DecryptComment
