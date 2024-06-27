@@ -9,13 +9,13 @@ import { Icon, Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
 import { ButtonLike, CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
-import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK, COMPUTE_BITCOIN_UNIT } from '../../constants';
+import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants';
 import { TransactionData } from '../../hooks/useWalletTransactions';
-import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import {
     convertAmountStr,
     getFormattedPeriodSinceConfirmation,

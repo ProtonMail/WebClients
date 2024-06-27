@@ -2,11 +2,17 @@ import { useCallback, useState } from 'react';
 
 import { compact } from 'lodash';
 
-import { WasmApiBitcoinAddressesCreationPayload, WasmApiWalletAccount } from '@proton/andromeda';
+import { WasmApiWalletAccount } from '@proton/andromeda';
 import { useGetAddressKeys } from '@proton/components/hooks/useAddressesKeys';
-import { IWasmApiWalletData, signData, useWalletApiClients, verifySignedData } from '@proton/wallet';
+import {
+    IWasmApiWalletData,
+    POOL_FILLING_THRESHOLD,
+    generateBitcoinAddressesPayloadForPoolFilling,
+    signData,
+    useWalletApiClients,
+    verifySignedData,
+} from '@proton/wallet';
 
-import { POOL_FILLING_THRESHOLD } from '../../constants/email-integration';
 import { WalletWithChainData } from '../../types';
 import { useComputeNextAddressToReceive } from '../../utils/hooks/useComputeNextIndexToReceive';
 
@@ -58,21 +64,17 @@ export const useBitcoinAddressPool = ({
             // Create missing addresses
             const addressesToCreate = Math.max(0, POOL_FILLING_THRESHOLD - unusedBitcoinAddresses.length);
 
-            if (addressesToCreate > 0) {
-                const payload = new WasmApiBitcoinAddressesCreationPayload();
+            // Fill bitcoin address pool
+            const addressesPoolPayload = await generateBitcoinAddressesPayloadForPoolFilling({
+                addressesToCreate,
+                startIndex: nextIndexToUse,
+                wasmAccount: wasmAccount.account,
+                addressKey: primaryAddressKey,
+            });
 
-                for (let i = 1; i <= addressesToCreate; i++) {
-                    try {
-                        const addressData = await computeAddressDataFromIndex(nextIndexToUse);
-                        payload.push(addressData);
-                        nextIndexToUse = nextIndexToUse + 1;
-                    } catch (e) {
-                        console.error('Could not create bitcoin address creation payload', e);
-                    }
-                }
-
+            if (addressesPoolPayload) {
                 try {
-                    await api.bitcoin_address.addBitcoinAddress(walletId, walletAccountId, payload);
+                    await api.bitcoin_address.addBitcoinAddress(walletId, walletAccountId, addressesPoolPayload);
                 } catch (e) {
                     console.error('Could not add new bitcoin addresses', e);
                 }

@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
+import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
-import { COMPUTE_BITCOIN_UNIT } from '../constants';
 import { useFiatCurrencies, useGetExchangeRate } from '../store/hooks';
-import { useUserWalletSettings } from '../store/hooks/useUserWalletSettings';
 import { convertAmountStr, getLabelByUnit } from '../utils';
 import { BitcoinAmountInput } from './BitcoinAmountInput';
 import { CoreButton } from './Button';

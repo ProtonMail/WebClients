@@ -17,6 +17,7 @@ import useLoading from '@proton/hooks/useLoading';
 import {
     IWasmApiWalletData,
     encryptWalletDataWithWalletKey,
+    getDefaultWalletAccountName,
     useWalletApiClients,
     walletAccountCreation,
 } from '@proton/wallet';
@@ -26,7 +27,6 @@ import { BASE_INDEX_OPTIONS, DEFAULT_INDEX, PURPOSE_BY_SCRIPT_TYPE, SCRIPT_TYPES
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { SubTheme, getLabelByScriptType, isUndefined } from '../../utils';
-import { getDefaultWalletAccountName } from '../../utils/wallet';
 
 export interface WalletAccountCreationModalOwnProps {
     apiWalletData: IWasmApiWalletData;

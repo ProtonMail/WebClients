@@ -1,9 +1,8 @@
 import { WasmNetwork } from '@proton/andromeda';
-import { apiWalletsData } from '@proton/wallet';
+import { apiWalletsData, getFeesEstimationMap, mockedWalletChainDataByWalletId } from '@proton/wallet';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import * as useBitcoinBlockchainContextModule from '../../contexts/BitcoinBlockchainContext';
-import { getFeesEstimationMap, mockedWalletChainDataByWalletId } from '../fixtures';
 
 export const mockUseBitcoinBlockchainContext = (
     mockedValue?: Partial<ReturnType<typeof useBitcoinBlockchainContextModule.useBitcoinBlockchainContext>>
