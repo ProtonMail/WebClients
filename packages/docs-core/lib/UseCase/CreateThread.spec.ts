@@ -6,8 +6,8 @@ import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { CommentsApi } from '../Api/Comments/CommentsApi'
 import { CreateThread } from './CreateThread'
+import { DocsApi } from '../Api/Docs/DocsApi'
 
 jest.mock('../Util/GenerateUuid', () => ({
   GenerateUUID: jest.fn(),
@@ -59,7 +59,7 @@ describe('CreateThread', () => {
 
   beforeEach(() => {
     createThread = new CreateThread(
-      mockCommentsApi as unknown as CommentsApi,
+      mockCommentsApi as unknown as DocsApi,
       mockEncryptComment as unknown as EncryptComment,
       mockDecryptComment as unknown as DecryptComment,
       mockEventBus as unknown as InternalEventBusInterface,
