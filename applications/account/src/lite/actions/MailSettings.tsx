@@ -13,6 +13,7 @@ import {
     RequestLinkConfirmationToggle,
     SenderImagesToggle,
     ShowMovedToggle,
+    SwipeActionSelect,
     ViewModeToggle,
     useAddresses,
     useApi,
@@ -26,12 +27,15 @@ import {
     updateAutoDelete,
     updateNextMessageOnMove,
     updateStickyLabels,
+    updateSwipeLeft,
+    updateSwipeRight,
     updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
 import {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     DEFAULT_MAILSETTINGS,
     STICKY_LABELS,
+    SWIPE_ACTION,
     VIEW_MODE,
 } from '@proton/shared/lib/mail/mailSettings';
 
@@ -54,6 +58,8 @@ const MailSettings = ({ layout }: { layout: (children: ReactNode, props?: any) =
     const { call } = useEventManager();
     const [loadingAutoDeleteSpamAndTrashDays, withLoadingAutoDeleteSpamAndTrashDays] = useLoading();
     const [loadingViewMode, withLoadingViewMode] = useLoading();
+    const [loadingSwipeLeft, withLoadingSwipeLeft] = useLoading();
+    const [loadingSwipeRight, withLoadingSwipeRight] = useLoading();
     const [loadingNextMessageOnMoveToggle, withLoadingNextMessageOnMoveToggle] = useLoading();
     const [
         {
@@ -61,6 +67,8 @@ const MailSettings = ({ layout }: { layout: (children: ReactNode, props?: any) =
             AlmostAllMail,
             ConfirmLink,
             DelaySendSeconds,
+            SwipeLeft,
+            SwipeRight,
             ViewMode,
             HideEmbeddedImages,
             HideRemoteImages,
@@ -79,6 +87,18 @@ const MailSettings = ({ layout }: { layout: (children: ReactNode, props?: any) =
             await api(updateStickyLabels(STICKY_LABELS.DISABLED));
         }
         await api(updateViewMode(mode));
+        await call();
+        notifyPreferenceSaved();
+    };
+
+    const handleChangeSwipeLeft = async (swipeAction: SWIPE_ACTION) => {
+        await api(updateSwipeLeft(swipeAction));
+        await call();
+        notifyPreferenceSaved();
+    };
+
+    const handleChangeSwipeRight = async (swipeAction: SWIPE_ACTION) => {
+        await api(updateSwipeRight(swipeAction));
         await call();
         notifyPreferenceSaved();
     };
@@ -179,6 +199,34 @@ const MailSettings = ({ layout }: { layout: (children: ReactNode, props?: any) =
                         >{c('Label').t`Undo send`}</MobileSectionLabel>
                         <div>
                             <DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />
+                        </div>
+                    </MobileSectionRow>
+                    <MobileSectionRow>
+                        <MobileSectionLabel htmlFor="swipeLeftAction">{c('Label')
+                            .t`Swipe left action`}</MobileSectionLabel>
+                        <div>
+                            <SwipeActionSelect
+                                id="swipeLeftAction"
+                                value={SwipeLeft}
+                                onChange={(swipeAction: SWIPE_ACTION) =>
+                                    withLoadingSwipeLeft(handleChangeSwipeLeft(swipeAction))
+                                }
+                                loading={loadingSwipeLeft}
+                            />
+                        </div>
+                    </MobileSectionRow>
+                    <MobileSectionRow>
+                        <MobileSectionLabel htmlFor="swipeRightAction">{c('Label')
+                            .t`Swipe right action`}</MobileSectionLabel>
+                        <div>
+                            <SwipeActionSelect
+                                id="swipeRightAction"
+                                value={SwipeRight}
+                                onChange={(swipeAction: SWIPE_ACTION) =>
+                                    withLoadingSwipeRight(handleChangeSwipeRight(swipeAction))
+                                }
+                                loading={loadingSwipeRight}
+                            />
                         </div>
                     </MobileSectionRow>
                     <MobileSectionRow>
