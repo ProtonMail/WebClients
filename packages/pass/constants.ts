@@ -83,3 +83,5 @@ export const MAX_LOCAL_STORAGE_SIZE = 5 * 1024 * 1024; /* 5MB */
 export const MAX_LOG_STORAGE_RATIO = 0.2; /* 20% of available storage space */
 export const MAX_LOG_STORAGE_LINES = 2_000;
 export const AVERAGE_BYTES_PER_LOG_LINE = 100;
+export const SAFARI_MESSAGE_KEY = 'application.id';
+export const SAFARI_URL_SCHEME = 'proton-pass:';

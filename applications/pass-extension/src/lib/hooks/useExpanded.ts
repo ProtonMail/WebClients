@@ -7,10 +7,21 @@ export const useExpanded = () => {
     const [expanded, setExpanded] = useState(false);
 
     useEffect(() => {
-        browser.tabs
-            .getCurrent()
-            .then((tab) => setExpanded(tab !== undefined))
-            .catch(noop);
+        (async () => {
+            const currentTab = await browser.tabs.getCurrent();
+            /**
+             * In Chromium-based browsers, currentTab returns `undefined`
+             * when called from the extension popup. In Safari, it returns
+             * the tab shown under the extension popup instead.
+             *
+             * Both will report back the ://extension-id/popup.html when opened
+             * as a separate window or tab, which is what we're checking here.
+             */
+            const isExtensionPopupTab = Boolean(
+                currentTab.url?.toLowerCase().startsWith(`${window.location.origin}/popup.html`)
+            );
+            setExpanded(isExtensionPopupTab);
+        })().catch(noop);
     }, []);
 
     useEffect(() => {

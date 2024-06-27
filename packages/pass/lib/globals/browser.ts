@@ -4,7 +4,7 @@
  * could cause unexpected behavior or security issues. By hiding these globals,
  * we ensure that the extension's messaging system is only accessed through the
  * provided APIs, and not directly through the devtools console or other means */
-import browser from 'webextension-polyfill';
+import browser, { type Browser } from 'webextension-polyfill';
 
 import { logger } from '@proton/pass/utils/logger';
 
@@ -24,7 +24,9 @@ export const disableBrowserProxyTrap = () => (context.allowProxy = false);
  * wrap the proxy initialization in a setTimeout function, which
  * delays the initialization until the next tick after our apps load.
  * ⚠️ Make sure Sentry is always initialized on app boot. */
-export default (() => {
+export default ((): Browser => {
+    if (BUILD_TARGET === 'safari') return self.browser;
+
     const polyfill = browser;
 
     setTimeout(

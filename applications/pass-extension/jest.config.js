@@ -12,4 +12,8 @@ module.exports = {
     moduleNameMapper: {
         'proton-pass-extension/(.*)$': ['<rootDir>/src/__mocks__/$1', '<rootDir>/src/$1'],
     },
+    globals: {
+        BUILD_TARGET: 'test',
+        ENV: 'test',
+    },
 };

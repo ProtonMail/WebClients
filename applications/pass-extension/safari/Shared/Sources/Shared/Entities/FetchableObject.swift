@@ -1,0 +1,78 @@
+//
+// FetchableObject.swift
+// Proton Pass - Created on 23/05/2024.
+// Copyright (c) 2024 Proton Technologies AG
+//
+// This file is part of Proton Pass.
+//
+// Proton Pass is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Proton Pass is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Proton Pass. If not, see https://www.gnu.org/licenses/.
+//
+
+import Foundation
+
+public enum FetchableObject<T: Sendable & Equatable>: Sendable, Equatable {
+    case fetching
+    case fetched(T)
+    case error(any Error)
+}
+
+public extension FetchableObject {
+    var isFetching: Bool {
+        if case .fetching = self {
+            return true
+        }
+        return false
+    }
+
+    var isFetched: Bool {
+        if case .fetched = self {
+            return true
+        }
+        return false
+    }
+
+    var fetchedObject: T? {
+        if case let .fetched(object) = self {
+            return object
+        }
+        return nil
+    }
+
+    var isError: Bool {
+        if case .error = self {
+            return true
+        }
+        return false
+    }
+
+    var error: (any Error)? {
+        if case let .error(error) = self {
+            return error
+        }
+        return nil
+    }
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        switch (lhs, rhs) {
+        case (.fetching, .fetching):
+            true
+        case let (.fetched(lValue), .fetched(rValue)):
+            lValue == rValue
+        case let (.error(lError), .error(rError)):
+            lError.localizedDescription == rError.localizedDescription
+        default:
+            false
+        }
+    }
+}
