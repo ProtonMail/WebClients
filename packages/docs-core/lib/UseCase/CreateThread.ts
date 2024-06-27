@@ -15,6 +15,7 @@ import { EncryptComment } from './EncryptComment'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { DocsApi } from '../Api/Docs/DocsApi'
+import metrics from '@proton/metrics'
 
 /**
  * Creates a new comment thread with the API, supplying and encrypting an initial comment.
@@ -68,6 +69,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
 
     const onFail = () => {
       dto.commentsState.deleteThread(localThread.id)
+
       this.eventBus.publish<CommentMarkNodeChangeData>({
         type: CommentsEvent.RemoveMarkNode,
         payload: {
@@ -87,7 +89,12 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
     const result = await this.api.createThread(dto.lookup.volumeId, dto.lookup.linkId, markID, encryptedCommentContent)
 
     if (result.isFailed()) {
+      metrics.docs_comments_error_total.increment({
+        reason: 'server_error',
+      })
+
       onFail()
+
       return Result.fail(result.getError())
     }
 
