@@ -7561,6 +7561,9 @@
         "Si prega di aggiungere un indirizzo email per l'utente nella riga",
         "Aggiungi gli indirizzi email per gli utenti nelle righe"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Chiedi al proprietario di invitarti direttamente al documento."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Verifica la carta nella scheda di verifica."
       ],
@@ -7590,6 +7593,9 @@
       ],
       "please open a support ticket": [
         "apri un ticket per il supporto"
+      ],
+      "Please open the document to view it.": [
+        "Apri il documento per visualizzarlo."
       ],
       "Please select the folders you would like to import:": [
         "Seleziona le cartelle che vuoi importare:"
@@ -7630,8 +7636,8 @@
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "L'anteprima dei documenti non è ancora supportata. Apri il documento per visualizzarlo."
+      "Preview of documents is not yet supported.": [
+        "L'anteprima dei documenti non è ancora supportata."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
@@ -7651,8 +7657,8 @@
       "Public link invite": [
         "Link di invito pubblico"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "La condivisione pubblica dei documenti non è ancora supportata. Chiedi al proprietario di invitarti direttamente al documento."
+      "Public sharing of documents is not yet supported.": [
+        "La condivisione pubblica dei documenti non è ancora supportata."
       ],
       "purchase additional storage": [
         "comprare dello spazio di archiviazione aggiuntivo"
@@ -7782,9 +7788,6 @@
       ],
       "Set recovery phrase": [
         "Imposta una frase di recupero"
-      ],
-      "Set your password": [
-        "Scegli la tua password"
       ],
       "Setting up your organization": [
         "Configurazione della tua organizzazione in corso..."
@@ -8006,9 +8009,6 @@
       "This file is too large to preview": [
         "Questo file è troppo grande per l'anteprima"
       ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Questo link di invito è già stato utilizzato. Effettua invece l'accesso diretto."
-      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Questo link di invito è scaduto. Contatta l'amministratore per richiedere l'accesso."
       ],
@@ -8086,6 +8086,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Questo sostituirà la tua password temporanea. La userai per accedere al tuo account ${ BRAND_NAME } in futuro."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Questa azione invierà un nuovo invito a **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
@@ -8629,8 +8632,8 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Devi ancora rispondere agli inviti per consentire all'organizzatore di vedere la tua risposta."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Sarai in grado di promuovere l'utente ad amministratore o renderlo privato una volta che avrà accettato l'invito."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Sarai in grado di promuovere l'utente ad amministratore una volta che avrà accettato l'invito."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
@@ -8837,9 +8840,6 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Addebitato"
-      ],
       "Gifted": [
         "Regalato"
       ],
@@ -9534,9 +9534,6 @@
       ],
       "Disable data export for organization members": [
         "Disabilita l'esportazione dei dati per i membri dell'organizzazione"
-      ],
-      "Disable sharing outside the organization.": [
-        "Disabilita la condivisione all'esterno dell'organizzazione."
       ],
       "Display name": [
         "Nome visualizzato"

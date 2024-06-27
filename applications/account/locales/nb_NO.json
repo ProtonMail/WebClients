@@ -7561,6 +7561,9 @@
         "Vennligst legg til en e-postadresse for brukeren på rad",
         "Vennligst legg til e-postadresser for brukerne på radene"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Be eieren om å invitere deg direkte til dokumentet."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Vennligst autentiser kortet ditt i verifiseringsfanen."
       ],
@@ -7590,6 +7593,9 @@
       ],
       "please open a support ticket": [
         "vennligst åpne en støtteforespørsel"
+      ],
+      "Please open the document to view it.": [
+        "Vennligst åpne dokumentet for å se det."
       ],
       "Please select the folders you would like to import:": [
         "Vennligst velg hvilke mapper du ønsker å importere:"
@@ -7630,8 +7636,8 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning av denne filtypen er ikke støttet"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Forhåndsvisning av dokumenter støttes ikke enda. Åpne dokumentet for å se det."
+      "Preview of documents is not yet supported.": [
+        "Forhåndsvisning av dokumenter støttes ikke enda."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prisen inkluderer alle gjeldende syklus-baserte rabatter og ikke-utløpte kuponger lagret på kontoen din."
@@ -7651,8 +7657,8 @@
       "Public link invite": [
         "Offentlig kobling til invitasjon"
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Offentlig deling av dokumenter støttes ikke enda. Be eieren om å invitere deg direkte til dokumentet."
+      "Public sharing of documents is not yet supported.": [
+        "Offentlig deling av dokumenter støttes enda ikke."
       ],
       "purchase additional storage": [
         "kjøpe ekstra lagringsplass"
@@ -7782,9 +7788,6 @@
       ],
       "Set recovery phrase": [
         "Sett gjenopprettingsfrase"
-      ],
-      "Set your password": [
-        "Angi passordet ditt"
       ],
       "Setting up your organization": [
         "Setter opp organisasjonen din"
@@ -8006,9 +8009,6 @@
       "This file is too large to preview": [
         "Denne filen er for stor til å forhåndsvises"
       ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Denne invitasjonskoblingen er allerede brukt. Vennligst logg på direkte istedenfor."
-      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Denne invitasjonskoblingen er utløpt. Kontakt administratoren for å be om tilgang."
       ],
@@ -8086,6 +8086,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dette vil erstatte ditt midlertidige passord. Du vil bruke det for å tilgang til din ${ BRAND_NAME }-konto i fremtiden."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Dette vil sende en ny invitasjon til **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
@@ -8629,8 +8632,8 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Du trenger fremdeles å svare på invitasjoner for at verten skal se responsen din."
       ],
-      "You will be able to promote the user to administrator or make them private once they've accepted the invitation.": [
-        "Du vil kunne forfremme brukeren til administrator eller gjøre dem private når de har godtatt invitasjonen."
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Du vil kunne forfremme brukeren til administrator når vedkommende har godtatt invitasjonen."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil bli videresendt til ${ destination } etter pålogging."
@@ -8837,14 +8840,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Fakturert"
-      ],
       "Gifted": [
         "Gitt i gave"
       ],
       "Paid": [
         "Betalt"
+      ],
+      "Processing": [
+        "Behandler"
       ],
       "Unpaid": [
         "Ubetalt"
@@ -9535,8 +9538,8 @@
       "Disable data export for organization members": [
         "Deaktiver dataeksport for organisasjonsmedlemmer"
       ],
-      "Disable sharing outside the organization.": [
-        "Deaktiver deling utenfor organisasjonen."
+      "Disable sharing outside the organization": [
+        "Deaktiver deling utenfor organisasjonen"
       ],
       "Display name": [
         "Visningsnavn"
@@ -12953,8 +12956,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Har det"
+      ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Payment Processing": [
+        "Behandler innbetaling"
       ],
       "Processing payment": [
         "Behandler betaling"
@@ -12970,6 +12979,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Vi behandler innbetalingen på fakturaen for øyeblikket. Vennligst ikke oppdater plan eller betalingsmetode før transaksjonen er ferdig behandlet. Takk."
       ]
     },
     "Payments.Error": {

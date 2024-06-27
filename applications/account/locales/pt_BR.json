@@ -7612,8 +7612,8 @@
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Pré-visualização de documentos ainda não é suportada. Abra o documento para visualizá-lo."
+      "Preview of documents is not yet supported.": [
+        "A pré-visualização dos documentos ainda não são suportados."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
@@ -7632,9 +7632,6 @@
       ],
       "Public link invite": [
         "Link de convite público"
-      ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "O compartilhamento público de documentos ainda não é suportado. Peça ao proprietário para convidá-lo diretamente para o documento."
       ],
       "purchase additional storage": [
         "comprar armazenamento adicional"
@@ -7764,9 +7761,6 @@
       ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
-      ],
-      "Set your password": [
-        "Defina sua senha"
       ],
       "Setting up your organization": [
         "Configurando a sua organização"
@@ -7987,9 +7981,6 @@
       ],
       "This file is too large to preview": [
         "Este arquivo é muito grande para visualizar"
-      ],
-      "This invitation link already used. Please sign in directly instead.": [
-        "Esse link de convite já foi usado. Inicie a sessão diretamente em vez disso."
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Esse link de convite expirou. Contate seu administrador para solicitar acesso."
@@ -8813,14 +8804,14 @@
       ]
     },
     "Invoice state display as badge": {
-      "Billed": [
-        "Faturado"
-      ],
       "Gifted": [
         "Oferecido"
       ],
       "Paid": [
         "Pago"
+      ],
+      "Processing": [
+        "Processando"
       ],
       "Unpaid": [
         "Não pago"
@@ -9511,8 +9502,8 @@
       "Disable data export for organization members": [
         "Desativar exportação de dados para membros da organização"
       ],
-      "Disable sharing outside the organization.": [
-        "Desativar compartilhamento de fora da organização"
+      "Disable sharing outside the organization": [
+        "Desativar compartilhamento fora da organização"
       ],
       "Display name": [
         "Nome de exibição"
@@ -12935,8 +12926,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendi"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processando pagamento"
       ],
       "Processing payment": [
         "Processando pagamento"
