@@ -16,6 +16,7 @@ import {
 } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import { sendErrorReport } from '../../../utils/errorHandling';
 import FileBrowser, {
     Cells,
     GridHeader,
@@ -98,7 +99,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
-    const isDocsEnabled = useDriveDocsFeatureFlag();
+    const { canUseDocs } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const { isSharingInviteAvailable, isDirectSharingDisabled } = useDriveSharingFlags();
     const { showOnboarding, onWasShown: onSharingOnboardingWasShown } = useNewFeatureOnboarding({
@@ -163,11 +164,19 @@ function Drive({ activeFolder, folderView }: Props) {
             }
             document.getSelection()?.removeAllRanges();
 
-            if (isDocsEnabled && isProtonDocument(item.mimeType)) {
-                void openDocument({
-                    linkId: id,
-                    shareId,
-                });
+            if (isProtonDocument(item.mimeType)) {
+                void canUseDocs(shareId)
+                    .then((canUse) => {
+                        if (!canUse) {
+                            return;
+                        }
+
+                        return openDocument({
+                            linkId: id,
+                            shareId,
+                        });
+                    })
+                    .catch(sendErrorReport);
                 return;
             }
 
