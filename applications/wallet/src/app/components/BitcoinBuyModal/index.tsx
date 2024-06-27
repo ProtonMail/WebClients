@@ -32,7 +32,7 @@ enum StepKey {
 const getSteps = (): Steps<StepKey> => [
     { key: StepKey.Location, label: c('bitcoin buy').t`Location` },
     { key: StepKey.Amount, label: c('bitcoin buy').t`Amount` },
-    { key: StepKey.Payment, label: c('bitcoin buy').t`Payment` },
+    { key: StepKey.Payment, label: c('bitcoin buy').t`Onramp` },
 ];
 
 export const BitcoinBuyModal = ({ account, modal, onDone }: Props) => {

@@ -130,20 +130,29 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
 
 export const DateDataItem = ({ tx }: TxDataListItemProps) => {
     const now = useMemo(() => new Date(), []);
-    const confirmedDate =
-        tx.networkData.time.confirmation_time &&
-        getFormattedPeriodSinceConfirmation(now, new Date(tx.networkData.time.confirmation_time * SECOND));
+
+    if (!tx.networkData.time.confirmation_time) {
+        return null;
+    }
+
+    const confirmedDate = getFormattedPeriodSinceConfirmation(
+        now,
+        new Date(tx.networkData.time.confirmation_time * SECOND)
+    );
 
     return (
-        <div className="flex flex-row items-center w-full">
-            <div className="flex flex-column items-start grow mr-4">
-                <span className="block color-hint text-rg">{c('Wallet transaction').t`Date`}</span>
+        <>
+            <hr className="my-4" />
+            <div className="flex flex-row items-center w-full">
+                <div className="flex flex-column items-start grow mr-4">
+                    <span className="block color-hint text-rg">{c('Wallet transaction').t`Date`}</span>
 
-                <Tooltip title={confirmedDate}>
-                    <span className="block w-full text-lg my-1 text-ellipsis">{confirmedDate}</span>
-                </Tooltip>
+                    <Tooltip title={confirmedDate}>
+                        <span className="block w-full text-lg my-1 text-ellipsis">{confirmedDate}</span>
+                    </Tooltip>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
@@ -153,12 +162,12 @@ export const StatusDataItem = ({ tx }: TxDataListItemProps) => {
     return (
         <div className="flex flex-row items-center w-full">
             <div className="flex flex-column items-start grow mr-4">
-                <span className="block color-hint text-rg">{c('Wallet transaction').t`Date`}</span>
+                <span className="block color-hint text-rg">{c('Wallet transaction').t`Status`}</span>
 
                 <span
                     className={clsx(
                         'block w-full text-lg my-1 text-ellipsis',
-                        isConfirmed ? 'color-success' : 'color-danger'
+                        isConfirmed ? 'color-success' : 'color-primary'
                     )}
                 >
                     {isConfirmed ? c('Wallet transaction').t`Confirmed` : c('Wallet transaction').t`In progress`}
