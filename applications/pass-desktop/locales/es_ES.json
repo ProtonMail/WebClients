@@ -389,13 +389,16 @@
         "Ver los miembros"
       ],
       "Send invite": [
-        "Enviar invitación"
+        "Enviar una invitación"
       ],
       "Send us a message": [
         "Envíanos un mensaje"
       ],
       "Set access level": [
         "Configurar el nivel de acceso"
+      ],
+      "Setup 2FA": [
+        "Configurar 2FA"
       ],
       "Share": [
         "Compartir"
@@ -1128,7 +1131,7 @@
         "Editor"
       ],
       "email": [
-        "correo"
+        "correo electrónico"
       ],
       "Email address successfully deleted from monitoring": [
         "La dirección de correo electrónico ha sido eliminada del monitoreo."
@@ -1595,7 +1598,7 @@
         "Se ha enviado el código de verificación."
       ],
       "Viewer": [
-        "Visualizador"
+        "Lector"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
@@ -1651,6 +1654,9 @@
       ],
       "You're invited to a vault.": [
         "Se te ha invitado a una caja fuerte."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Tu cuenta está restringida porque tu organización ha aplicado la autenticación de dos factores. Activa la autenticación de dos factores en los ajustes de tu cuenta o contacta con tu administrador."
       ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
@@ -1823,7 +1829,7 @@
         "Nombre del campo"
       ],
       "File format": [
-        "Formato de archivo"
+        "Formato del archivo"
       ],
       "Forwards to": [
         "Reenvía a"
