@@ -8,7 +8,7 @@ import type { ExtensionContextType } from 'proton-pass-extension/lib/context/ext
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState } from '@proton/pass/types';
+import type { AppState, Maybe } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 
 export type WorkerStateChangeHandler = (state: AppState) => void;
@@ -29,7 +29,7 @@ export interface ContentScriptContext {
         detector: DetectorService;
         formManager: FormManager;
         iframe: IFrameService;
-        webauthn: WebAuthNService;
+        webauthn: Maybe<WebAuthNService>;
     };
     scriptId: string;
     destroy: (options: { reason: string; recycle?: boolean }) => void;

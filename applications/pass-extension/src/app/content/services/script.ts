@@ -45,7 +45,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             DOMCleanUp(elements);
             context.service.formManager.destroy();
             context.service.iframe.destroy();
-            context.service.webauthn.destroy();
+            context.service.webauthn?.destroy();
 
             ExtensionContext.read()?.destroy();
         },
@@ -106,7 +106,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
          * the webauthn interceptors in the main-world on `document_start` we
          * need to avoid missing on events of the MessageBridge */
         context.service.iframe.init();
-        context.service.webauthn.init();
+        context.service.webauthn?.init();
 
         const res = await sendMessage(
             contentScriptMessage({

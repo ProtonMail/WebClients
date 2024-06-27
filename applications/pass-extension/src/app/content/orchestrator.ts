@@ -6,6 +6,8 @@
  * content-script when the frame becomes hidden, we can free up resources
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
+import 'proton-pass-extension/lib/utils/polyfills';
+
 import { createActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';

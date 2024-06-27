@@ -1,5 +1,7 @@
 /* development | production | test */
 const ENV = process.env.NODE_ENV || 'development';
+/* chrome | firefox | safari */
+const BUILD_TARGET = process.env.BUILD_TARGET || 'chrome';
 const DEVELOPMENT = ENV === 'development';
 const PRODUCTION = ENV === 'production';
 
@@ -25,7 +27,7 @@ module.exports = {
         ['@babel/preset-react', { development: !PRODUCTION, runtime: 'automatic' }],
     ],
     plugins: [
-        DEVELOPMENT && require.resolve('react-refresh/babel'),
+        BUILD_TARGET !== 'safari' && DEVELOPMENT && require.resolve('react-refresh/babel'),
         PRODUCTION && [require.resolve('babel-plugin-transform-react-remove-prop-types'), { removeImport: true }],
     ].filter(Boolean),
 };

@@ -1,0 +1,89 @@
+PROJECT = "Proton Pass.xcodeproj"
+BUILD_PATH = "build"
+ENV["FASTLANE_ITC_TEAM_NAME"] = "Proton AG"
+ENV["FASTLANE_APP_IDENTIFIER"] = "me.proton.pass.catalyst"
+
+desc "Load App Store Connect API Key information to use in subsequent lanes"
+lane :load_asc_api_key do
+    app_store_connect_api_key(
+      key_id: ENV["ASC_KEY_ID"],
+      issuer_id: ENV["ASC_ISSUER_ID"],
+      key_content: ENV["ASC_KEY"]
+    )
+end
+
+desc "Bump version number, optionally ask for input if version number not provided as argument"
+lane :bump_version_number do |options|
+  # Check if version number was passed as an argument
+  version_number = options[:version_number]
+
+  # If version number was not provided, prompt the user to enter it
+  if version_number.nil?
+    version_number = UI.input("Enter version number in semver format: ")
+  end
+
+  increment_version_number_in_xcodeproj(version_number: version_number)
+end
+
+desc "Bump build number, optionally ask for input if build number not provided as argument"
+lane :bump_build_number do |options|
+  # Check if version number was passed as an argument
+  build_number = options[:build_number]
+
+  # If build number was not provided, prompt the user to enter it
+  if build.nil?
+    build_number = UI.input("Enter build number: ")
+  end
+
+  increment_build_number_in_xcodeproj(build_number: "#{build_number}")
+end
+
+desc "Get latest TestFlight build number and bump build number by one"
+lane :automatically_bump_build_number do
+  load_asc_api_key
+  api_key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
+
+  # Get latest build number from TestFlight
+  latest_build_number = latest_testflight_build_number(api_key: api_key, platform: "osx")
+  new_build_number = latest_build_number + 1
+
+  UI.message("Bumping to build number #{new_build_number}")
+  increment_build_number_in_xcodeproj(build_number: "#{new_build_number}")
+end
+
+desc "Build and upload to App Store Connect then post a message to Slack"
+lane :build_and_upload do
+  load_asc_api_key
+  api_key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
+
+  version_number = get_version_number(xcodeproj: PROJECT, target: "Proton Pass for Safari")
+  build_number = get_build_number(xcodeproj: PROJECT)
+  build_name = "#{version_number} (#{build_number})"
+  output_directory = "#{BUILD_PATH}/#{build_name}"
+
+  UI.success("⚒️  Making build #{build_name}")
+
+  # Make the build
+  build_mac_app(
+        project: PROJECT,
+        scheme: "Proton Pass",
+        configuration: "Release",
+        clean: true,
+        output_directory: output_directory,
+        export_method: "app-store",
+	      use_system_scm: true
+    )
+
+  # Upload the build to TestFlight
+  output_directory = "#{BUILD_PATH}/#{build_name}"
+  pkg_path = output_directory + "/Proton Pass for Safari.pkg"
+  upload_to_testflight(
+      api_key: api_key,
+      skip_submission: true,
+      skip_waiting_for_build_processing: true,
+      pkg: pkg_path)
+  
+  # Post message to Slack
+  env = ENV["BUILD_ENV"]
+  sh "../tools/new_build_slack_message.sh \":safari: #{build_name} (#{env})\""
+end
