@@ -156,7 +156,12 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
       throw new Error('Thread not found')
     }
 
-    const encryptedContent = (await this._encryptComment.execute(content, thread.markID, this.keys)).getValue()
+    const encryptionResult = await this._encryptComment.execute(content, thread.markID, this.keys)
+    if (encryptionResult.isFailed()) {
+      return false
+    }
+
+    const encryptedContent = encryptionResult.getValue()
 
     const result = await this.api.editComment(
       this.document.volumeId,
