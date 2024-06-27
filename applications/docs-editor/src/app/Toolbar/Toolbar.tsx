@@ -61,11 +61,12 @@ import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/componen
 import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
 import { sendErrorMessage } from '../Utils/errorMessage'
 import TableIcon from '../Icons/TableIcon'
-import { PredefinedTextColorOptions, PredefinedHighlightColorOptions } from '../Shared/Color'
 import { useActiveBreakpoint } from '@proton/components'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
 import { DocumentInteractionMode } from '../DocumentInteractionMode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/InsertTableCommand'
+import { FontColorMenu } from '../Components/ColorMenu'
+import { BackgroundColors, TextColors } from '../Shared/Color'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -680,59 +681,12 @@ export default function DocumentEditorToolbar({
               disabled={!isEditable}
               contentProps={DropdownContentProps}
             >
-              <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Text colour`}</div>
-              <DropdownMenu>
-                {PredefinedTextColorOptions.map(([name, color]) => {
-                  const rgbColor = `rgb(${color})`
-                  return (
-                    <DropdownMenuButton
-                      key={name}
-                      className={'flex items-center gap-2 text-left text-sm'}
-                      onClick={() => {
-                        applyStyleText({ color: rgbColor })
-                      }}
-                      disabled={!isEditable}
-                    >
-                      <div className="border-weak flex items-center justify-center rounded border p-1">
-                        <Icon
-                          name="text-bold"
-                          size={4}
-                          style={{
-                            fill: rgbColor,
-                          }}
-                        />
-                      </div>
-                      {name}
-                    </DropdownMenuButton>
-                  )
-                })}
-              </DropdownMenu>
-              <div className="color-weak select-none px-3 py-2 text-sm">{c('Label').t`Background colour`}</div>
-              <DropdownMenu>
-                {PredefinedHighlightColorOptions.map(([name, color]) => {
-                  const rgbColor = `rgba(${color}, 0.15)`
-                  return (
-                    <DropdownMenuButton
-                      key={name}
-                      className={'flex items-center gap-2 text-left text-sm'}
-                      onClick={() => {
-                        applyStyleText({ 'background-color': rgbColor })
-                      }}
-                      disabled={!isEditable}
-                    >
-                      <div
-                        className="border-weak flex items-center justify-center rounded border p-1"
-                        style={{
-                          backgroundColor: rgbColor,
-                        }}
-                      >
-                        <Icon name="text-bold" size={4} />
-                      </div>
-                      {name}
-                    </DropdownMenuButton>
-                  )
-                })}
-              </DropdownMenu>
+              <FontColorMenu
+                textColors={TextColors}
+                onTextColorChange={(color) => applyStyleText({ color })}
+                backgroundColors={BackgroundColors}
+                onBackgroundColorChange={(color) => applyStyleText({ 'background-color': color || '' })}
+              />
             </SimpleDropdown>
             <ToolbarSeparator />
           </>
