@@ -10,6 +10,7 @@ import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { useTheme } from '../../../containers/themes';
 import ToolbarDropdown, { ToolbarDropdownAction } from './ToolbarDropdown';
@@ -72,6 +73,10 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef, className, userSettings }: Pr
             void import(`@emoji-mart/data/i18n/${localeCode}.json`)
                 .then((i18n) => {
                     setPickerTranslations(i18n);
+                })
+                .catch(() => {
+                    // if file is not present, nothing more to do, added catch to remove error from logs
+                    noop();
                 })
                 .finally(() => {
                     setPickerTranslationsLoading(false);
