@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { isUndefined } from 'lodash';
 import { c } from 'ttag';
 
@@ -5,6 +7,7 @@ import { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
 import { Icon, Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
+import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonLike, CoreButton } from '../../atoms';
@@ -16,6 +19,7 @@ import { TransactionData } from '../../hooks/useWalletTransactions';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import {
     convertAmount,
+    getFormattedPeriodSinceConfirmation,
     getLabelByUnit,
     getTransactionRecipientHumanReadableName,
     getTransactionSenderHumanReadableName,
@@ -23,31 +27,64 @@ import {
 import { multilineStrToMultilineJsx } from '../../utils/string';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
-export const RecipientsDataListItem = ({ tx }: TxDataListItemProps) => {
+export const RecipientsDataItem = ({
+    tx,
+    onClick,
+}: TxDataListItemProps & { onClick: (email: string, btcAddress: string, index: number) => void }) => {
+    const exchangeRate = tx.apiData?.ExchangeRate;
     const isSentTx = tx.networkData.sent > tx.networkData.received;
     const [addresses] = useAddresses();
+    const [settings] = useUserWalletSettings();
+
     const { walletMap } = useBitcoinBlockchainContext();
 
     return (
         <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`To`}</span>
-            <ul className="unstyled mt-1 text-lg">
+            <ul className="unstyled my-1 text-lg flex gap-3">
                 {tx.networkData.outputs
                     .filter((o) => !isSentTx || !o.is_mine)
                     .map((output, index) => {
                         const recipient = getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses);
 
                         return (
-                            <li key={index} className="flex flex-column my-1">
-                                {recipient && (
-                                    <Tooltip title={recipient}>
-                                        <span className="block w-full text-ellipsis">{recipient}</span>
-                                    </Tooltip>
-                                )}
+                            <li key={index} className="flex flex-row items-center my-1">
+                                <button
+                                    className="flex flex-row flex-nowrap items-center w-full"
+                                    onClick={() => onClick(recipient, output.address, index)}
+                                >
+                                    <div className="flex flex-column items-start grow mr-2">
+                                        <span className="block color-weak">{c('Wallet transaction').t`To`}</span>
 
-                                <Tooltip title={output.address}>
-                                    <span className="block w-full text-ellipsis color-weak">{output.address}</span>
-                                </Tooltip>
+                                        <Tooltip title={recipient}>
+                                            <span className="block w-full text-ellipsis">{recipient}</span>
+                                        </Tooltip>
+                                    </div>
+
+                                    <div className="no-shrink text-sm">
+                                        <div className={clsx('ml-auto flex flex-row flex-nowrap justify-end')}>
+                                            <Price
+                                                unit={exchangeRate ?? settings.BitcoinUnit}
+                                                satsAmount={output.value}
+                                            />
+                                        </div>
+                                        {exchangeRate && (
+                                            <div
+                                                className={clsx(
+                                                    'block ml-auto color-hint flex flex-row flex-nowrap justify-end'
+                                                )}
+                                            >
+                                                {convertAmount(
+                                                    output.value,
+                                                    COMPUTE_BITCOIN_UNIT,
+                                                    settings.BitcoinUnit
+                                                )}{' '}
+                                                {getLabelByUnit(settings.BitcoinUnit)}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <Icon className="ml-2 no-shrink" name="chevron-right" />
+                                </button>
                             </li>
                         );
                     })}
@@ -56,48 +93,86 @@ export const RecipientsDataListItem = ({ tx }: TxDataListItemProps) => {
     );
 };
 
-export const SendersDataListItem = ({
-    tx,
-    onClickEditSender,
-}: TxDataListItemProps & { onClickEditSender: () => void }) => {
+export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps & { onClickEditSender: () => void }) => {
     const { walletMap } = useBitcoinBlockchainContext();
     const senderName = getTransactionSenderHumanReadableName(tx, walletMap);
 
     return (
-        <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`From`}</span>
-            <div className="flex flex-row items-center justify-space-between">
-                <ul className="unstyled mt-1 text-lg">
+        <div className="flex flex-row flex-nowrap items-center w-full">
+            <div className="flex flex-column items-start grow mr-4">
+                <span className="block color-hint text-rg">{c('Wallet transaction').t`From`}</span>
+
+                <ul className="unstyled my-1 text-lg w-full">
                     <li className="flex flex-column my-1">
                         <Tooltip title={senderName}>
                             <span className="block w-full text-ellipsis">{senderName}</span>
                         </Tooltip>
                     </li>
                 </ul>
+            </div>
 
-                {tx.apiData?.Type && ['NotSend', 'ExternalSend', 'ExternalReceive'].includes(tx.apiData?.Type) && (
-                    <Tooltip title={c('Action').t`Edit`}>
-                        <CoreButton
-                            className="rounded-full bg-norm"
-                            icon
-                            shape="solid"
-                            data-testid="modal:edit"
-                            onClick={() => onClickEditSender()}
-                        >
-                            <Icon name="pen" alt={c('Action').t`Edit`} />
-                        </CoreButton>
-                    </Tooltip>
-                )}
+            {tx.apiData?.Type && ['NotSend', 'ExternalSend', 'ExternalReceive'].includes(tx.apiData?.Type) && (
+                <Tooltip title={c('Action').t`Edit`}>
+                    <CoreButton
+                        className="rounded-full bg-norm"
+                        icon
+                        shape="solid"
+                        data-testid="modal:edit"
+                        onClick={() => onClickEditSender()}
+                    >
+                        <Icon name="pen" alt={c('Action').t`Edit`} />
+                    </CoreButton>
+                </Tooltip>
+            )}
+        </div>
+    );
+};
+
+export const DateDataItem = ({ tx }: TxDataListItemProps) => {
+    const now = useMemo(() => new Date(), []);
+    const confirmedDate =
+        tx.networkData.time.confirmation_time &&
+        getFormattedPeriodSinceConfirmation(now, new Date(tx.networkData.time.confirmation_time * SECOND));
+
+    return (
+        <div className="flex flex-row items-center w-full">
+            <div className="flex flex-column items-start grow mr-4">
+                <span className="block color-hint text-rg">{c('Wallet transaction').t`Date`}</span>
+
+                <Tooltip title={confirmedDate}>
+                    <span className="block w-full text-lg my-1 text-ellipsis">{confirmedDate}</span>
+                </Tooltip>
             </div>
         </div>
     );
 };
 
-export const NoteDataListItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (tx: TransactionData) => void }) => {
+export const StatusDataItem = ({ tx }: TxDataListItemProps) => {
+    const isConfirmed = !!tx.networkData.time.confirmation_time;
+
+    return (
+        <div className="flex flex-row items-center w-full">
+            <div className="flex flex-column items-start grow mr-4">
+                <span className="block color-hint text-rg">{c('Wallet transaction').t`Date`}</span>
+
+                <span
+                    className={clsx(
+                        'block w-full text-lg my-1 text-ellipsis',
+                        isConfirmed ? 'color-success' : 'color-danger'
+                    )}
+                >
+                    {isConfirmed ? c('Wallet transaction').t`Confirmed` : c('Wallet transaction').t`In progress`}
+                </span>
+            </div>
+        </div>
+    );
+};
+
+export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (tx: TransactionData) => void }) => {
     return (
         <div className="w-full max-h-custom overflow-auto">
             <div className="flex flex-row items-center">
-                <span className="block color-hint text-rg">{c('Wallet transaction').t`Note`}</span>
+                <span className="block color-hint text-rg">{c('Wallet transaction').t`Private note to myself`}</span>
                 {tx.apiData?.Label && (
                     <CoreButton
                         size="small"
@@ -119,17 +194,18 @@ export const NoteDataListItem = ({ tx, onClick }: TxDataListItemProps & { onClic
                 ) : (
                     <CoreButton
                         shape="ghost"
-                        className="p-0.5"
                         style={{
                             color: 'var(--interaction-norm)',
                             background: 'transparent',
                         }}
+                        className="px-0 flex items-center"
                         onClick={(e) => {
                             e.stopPropagation();
                             onClick(tx);
                         }}
                     >
-                        {c('Wallet transaction').t`+ Add`}
+                        <Icon name="plus-circle" className="mr-1" />
+                        {c('Wallet transaction').t`Add note`}
                     </CoreButton>
                 )}
             </div>
@@ -137,7 +213,7 @@ export const NoteDataListItem = ({ tx, onClick }: TxDataListItemProps & { onClic
     );
 };
 
-export const MessageDataListItem = ({ tx }: TxDataListItemProps) => {
+export const MessageDataItem = ({ tx }: TxDataListItemProps) => {
     return (
         <div className="w-full">
             <span className="block color-hint text-rg">{c('Wallet transaction').t`Message`}</span>
@@ -148,7 +224,7 @@ export const MessageDataListItem = ({ tx }: TxDataListItemProps) => {
     );
 };
 
-export const AmountDataListItem = ({
+export const AmountDataItem = ({
     exchangeRate,
     amount,
     label = c('Wallet transaction').t`Amount`,
@@ -177,7 +253,7 @@ export const AmountDataListItem = ({
     );
 };
 
-export const LinkToBlockchainItem = ({ tx, network }: TxDataListItemProps & { network?: WasmNetwork }) => {
+export const LinkToBlockchainDataItem = ({ tx, network }: TxDataListItemProps & { network?: WasmNetwork }) => {
     const url = !isUndefined(network) && BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK[network];
     if (!url) {
         return null;

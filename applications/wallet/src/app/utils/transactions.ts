@@ -111,7 +111,7 @@ export const getTransactionRecipientHumanReadableName = (
         return isSelfAddress(address, addresses ?? []) ? c('Wallet transaction').t`${address} (me)` : address;
     }
 
-    return null;
+    return output.address;
 };
 
 export const getTransactionRecipientsHumanReadableName = (

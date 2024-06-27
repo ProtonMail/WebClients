@@ -21,7 +21,7 @@ import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
-import { RecipientDetailsModal } from './RecipientDetailsModal';
+import { RecipientDetailsModal } from '../RecipientDetailsModal';
 import { WalletNotFoundErrorDropdown } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
 import { WalletNotFoundErrorModal } from './WalletNotFoundError/WalletNotFoundErrorModal';
 
