@@ -4756,6 +4756,9 @@
       "Photos have been successfully recovered.": [
         "Zdjęcia zostały odzyskane."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Poproś właściciela o bezpośrednie udostępnienie dokumentu."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Potwierdź kartę w nowej karcie."
       ],
@@ -4779,6 +4782,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
+      ],
+      "Please open the document to view it.": [
+        "Otwórz dokument, aby go zobaczyć."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Wpisz nazwę i adres e-mail, aby utworzyć grupę."
@@ -4831,8 +4837,8 @@
       "Preview for this file type is not supported": [
         "Podgląd dla tego typu pliku nie jest obsługiwany"
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "Podgląd dokumentów nie jest obsługiwany. Otwórz dokument, aby go zobaczyć."
+      "Preview of documents is not yet supported.": [
+        "Podgląd dokumentu nie jest obsługiwany."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Poprzednie wersje zostaną zachowane przez ${ retentionLabel }"
@@ -4849,8 +4855,8 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Prywatne wyszukiwanie zostało włączone. Możesz zamknąć okno i szukać plików oraz folderów."
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "Publiczne udostępnianie dokumentów nie jest obsługiwane. Poproś właściciela o bezpośrednie zaproszenie do dokumentu."
+      "Public sharing of documents is not yet supported.": [
+        "Publiczne udostępnianie dokumentu nie jest obsługiwane."
       ],
       "Queued": [
         "W kolejce"
@@ -7964,8 +7970,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ok"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Przetwarzanie płatności"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."

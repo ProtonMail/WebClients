@@ -541,7 +541,7 @@
         "Aceptar"
       ],
       "Ok": [
-        "OK"
+        "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -4193,7 +4193,7 @@
         "Editar dirección de correo electrónico"
       ],
       "email": [
-        "correo"
+        "correo electrónico"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "El alojamiento de correo electrónico para 10 nombres de dominio de correo personalizados se incluye de forma gratuita. Se puede añadir dominios adicionales por ${ price }."
@@ -4610,6 +4610,9 @@
       "Photos have been successfully recovered.": [
         "Las fotos han sido recuperadas."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Pregunta al propietario que te invite directamente al documento."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
       ],
@@ -4633,6 +4636,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
+      ],
+      "Please open the document to view it.": [
+        "Abre el documento para verlo."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indica un nombre y una dirección de correo para crear un grupo."
@@ -4683,8 +4689,8 @@
       "Preview for this file type is not supported": [
         "No se admite la vista previa para este tipo de archivo."
       ],
-      "Preview of documents is not yet supported. Please open the document to view it.": [
-        "La previsualización de documentos aún no está disponible. Abre el documento para verlo."
+      "Preview of documents is not yet supported.": [
+        "La previsualización de documentos aún no está admitida."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Las versiones anteriores son conservadas durante ${ retentionLabel }."
@@ -4701,8 +4707,8 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Búsqueda privada activada. Puedes cerrar esta ventana y buscar archivos y carpetas."
       ],
-      "Public sharing of documents is not yet supported. Please ask the owner to directly invite you to the document.": [
-        "El intercambio público de documentos aún no está disponible. Pregunta al propietario que te invite directamente al documento."
+      "Public sharing of documents is not yet supported.": [
+        "El intercambio público de documentos aún no está admitido."
       ],
       "Queued": [
         "En espera"
@@ -6158,7 +6164,7 @@
     },
     "mailtrial2024: Action": {
       "Get the deal": [
-        "Conseguir la oferta"
+        "Aprovéchate de la oferta"
       ],
       "Special Offer": [
         "Oferta especial"
@@ -7445,7 +7451,7 @@
         "Falta el nombre del archivo o carpeta"
       ],
       "File removed": [
-        "El archivo ha sido borrado."
+        "Se ha borrado el archivo."
       ],
       "Invitation's email was sent again": [
         "Se ha enviado nuevamente el correo de invitación."
@@ -7659,8 +7665,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Procesando el pago"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -7913,7 +7925,7 @@
         "Todos tus aliases"
       ],
       "Create alias": [
-        "Crear alias"
+        "Crear un alias"
       ],
       "Create an alias": [
         "Crear un alias"
@@ -7953,7 +7965,7 @@
     },
     "Security Center - Action": {
       "View logs": [
-        "Ver registros"
+        "Ver los registros"
       ]
     },
     "Security Center - Info": {
