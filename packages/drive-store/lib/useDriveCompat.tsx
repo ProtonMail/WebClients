@@ -14,6 +14,11 @@ import { NodeMeta } from './interface';
 
 export interface DriveCompat {
     /**
+     * Whether or not Docs is enabled. Only uses feature flags, not context aware.
+     */
+    isDocsEnabled: boolean;
+
+    /**
      * Gets whether or not Docs can be used, with awareness of the context.
      */
     canUseDocs: (meta: NodeMeta) => Promise<boolean>;
@@ -117,13 +122,14 @@ export const useDriveCompat = (): DriveCompat => {
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
     const { getVerificationKey } = useDriveCrypto();
-    const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled, canUseDocs } = useDriveDocsFeatureFlag();
 
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
     const openDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open' });
 
     return {
+        isDocsEnabled,
         canUseDocs: withResolve(({ shareId }) => canUseDocs(shareId)),
         createDocumentNode: withResolve(createDocumentNode),
         getDocumentKeys: withResolve(getDocumentKeys),
