@@ -2,7 +2,6 @@ import { Result } from '../Domain/Result/Result'
 import { DocsApi } from '../Api/Docs/DocsApi'
 import { DecryptCommit } from './DecryptCommit'
 import { EncryptMessage } from './EncryptMessage'
-import { GenerateManifestSignature } from './GenerateManifestSignature'
 import { SquashAlgorithm } from './SquashAlgorithm'
 import { SquashDocument, SquashDocumentDTO } from './SquashDocument'
 import { VerifyCommit } from './VerifyCommit'
@@ -27,7 +26,6 @@ describe('SquashDocument', () => {
   let docsApi: DocsApi
   let decryptCommit: DecryptCommit
   let verifyCommit: VerifyCommit
-  let generateManifest: GenerateManifestSignature
   let squashAlgorithm: SquashAlgorithm
   let encryptMessage: EncryptMessage
 
@@ -56,10 +54,6 @@ describe('SquashDocument', () => {
       execute: jest.fn().mockReturnValue(Result.ok(true)),
     } as unknown as VerifyCommit
 
-    generateManifest = {
-      execute: jest.fn().mockReturnValue(Result.ok({})),
-    } as unknown as GenerateManifestSignature
-
     encryptMessage = {
       execute: jest.fn().mockReturnValue(Result.ok({})),
     } as unknown as EncryptMessage
@@ -73,14 +67,7 @@ describe('SquashDocument', () => {
       ),
     } as unknown as SquashAlgorithm
 
-    usecase = new SquashDocument(
-      docsApi,
-      encryptMessage,
-      decryptCommit,
-      verifyCommit,
-      generateManifest,
-      squashAlgorithm,
-    )
+    usecase = new SquashDocument(docsApi, encryptMessage, decryptCommit, verifyCommit, squashAlgorithm)
   })
 
   afterEach(() => {
