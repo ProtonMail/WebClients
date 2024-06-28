@@ -120,9 +120,9 @@ export const getTransactionRecipientsHumanReadableName = (
     addresses: Address[] = []
 ) => {
     const humanReadableOutputs = compact(
-        transaction.networkData.outputs.map((o) =>
-            getTransactionRecipientHumanReadableName(transaction, o, walletMap, addresses)
-        )
+        transaction.networkData.outputs
+            .filter((o) => !o.is_mine)
+            .map((o) => getTransactionRecipientHumanReadableName(transaction, o, walletMap, addresses))
     );
 
     return humanReadableOutputs;

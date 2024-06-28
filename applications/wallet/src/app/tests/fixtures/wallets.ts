@@ -81,7 +81,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
             [apiWalletAccountOneB.ID]: {
                 account: getMockedWasmAccount({
@@ -99,7 +99,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
         },
     },
@@ -122,7 +122,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
             [apiWalletAccountTwoB.ID]: {
                 account: getMockedWasmAccount({
@@ -140,7 +140,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
         },
     },
@@ -163,7 +163,7 @@ export const walletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
         },
     },
@@ -204,7 +204,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
             [apiWalletAccountOneB.ID]: {
                 account: getMockedWasmAccount({
@@ -222,7 +222,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
         },
     },
@@ -257,7 +257,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
             [apiWalletAccountTwoB.ID]: {
                 account: getMockedWasmAccount({
@@ -275,7 +275,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
         },
     },
@@ -310,7 +310,7 @@ export const mockedWalletChainDataByWalletId: WalletChainDataByWalletId = {
                     getUtxos: vi.fn(async () => freeable({ 0: [] })),
                 }),
                 scriptType: 2,
-                derivationPath: "m/84'/1'/0'",
+                derivationPath: "84'/1'/0'",
             },
         },
     },

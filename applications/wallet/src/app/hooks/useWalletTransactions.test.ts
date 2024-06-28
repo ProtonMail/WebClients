@@ -40,7 +40,7 @@ const networkTransactions: WasmTransactionDetails[] = [
             last_seen: 1680613078,
         },
         txid: 'f2a58482f18a7cf245d1c588bca29ee417ee535559edd18132f15470c8377981',
-        account_derivation_path: "m/84'/1'/0'",
+        account_derivation_path: "84'/1'/0'",
     },
     {
         inputs: [],
@@ -54,7 +54,7 @@ const networkTransactions: WasmTransactionDetails[] = [
             last_seen: 1712235111,
         },
         txid: '68fcbc9ea42f00aae70ca047dd87363f6c3b2026e4e286a16119cabd9363661b',
-        account_derivation_path: "m/84'/1'/0'",
+        account_derivation_path: "84'/1'/0'",
     },
     {
         inputs: [],
@@ -68,7 +68,7 @@ const networkTransactions: WasmTransactionDetails[] = [
             last_seen: 1712232720,
         },
         txid: '5df718baf0ff146cb572d9f347881226c0d85bfc590c90c4044b847db85a20db',
-        account_derivation_path: "m/84'/1'/0'",
+        account_derivation_path: "84'/1'/0'",
     },
 ];
 
@@ -273,7 +273,7 @@ describe('useWalletTransactions', () => {
                     ID: '001',
                     Label: 'Test account',
                     WalletID: '01',
-                    DerivationPath: "m/84'/1'/0'",
+                    DerivationPath: "84'/1'/0'",
                     ScriptType: WasmScriptType.NativeSegwit,
                     FiatCurrency: 'USD',
                     // match address defined in getAddressKey utils
@@ -338,7 +338,7 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
         mockUseBitcoinBlockchainContext({
             decryptedApiWalletsData: [wallet],
             walletMap: buildMapFromWallets([wallet]),
-            accountIDByDerivationPathByWalletID: { [wallet.Wallet.ID]: { ["m/84'/1'/0'"]: '001' } },
+            accountIDByDerivationPathByWalletID: { [wallet.Wallet.ID]: { ["84'/1'/0'"]: '001' } },
         });
 
         mockedGetApiWalletTransactionData.mockResolvedValue(apiTransactions.map((t) => ({ Data: t, free: noop })));

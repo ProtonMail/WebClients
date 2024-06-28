@@ -109,7 +109,9 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
                 <ul className="unstyled my-1 text-lg w-full">
                     <li className="flex flex-column my-1">
                         <Tooltip title={senderName}>
-                            <span className="block w-full text-ellipsis">{senderName}</span>
+                            <span className="block w-full text-ellipsis">
+                                {senderName} {tx.apiData?.Type}
+                            </span>
                         </Tooltip>
                     </li>
                 </ul>

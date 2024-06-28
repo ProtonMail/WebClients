@@ -90,9 +90,22 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
 
     const message = getTransactionMessage(tx);
 
+    const senderOrRecipientName = <span className="color-weak">{name}</span>;
+
     return (
         <DataListItem
-            label={<div className={clsx('block text-ellipsis', loading && 'skeleton-loader')}>{name}</div>}
+            label={
+                <div className={clsx('block text-ellipsis', loading && 'skeleton-loader')}>
+                    <span>
+                        {
+                            // transalators: example translation -> To: bob@proton.me / From: alice@proton.me
+                            isSent
+                                ? c('Wallet transaction').jt`To: ${senderOrRecipientName}`
+                                : c('Wallet transaction').jt`From: ${senderOrRecipientName}`
+                        }
+                    </span>
+                </div>
+            }
             bottomNode={
                 message && (
                     <div className={clsx('color-hint block text-ellipsis', loading && 'skeleton-loader')}>

@@ -143,7 +143,7 @@ export const apiWalletAccountOneA: WasmApiWalletAccount = {
     WalletID: '0',
     Label: 'Account 1',
     ScriptType: WasmScriptType.NativeSegwit,
-    DerivationPath: "m/84'/0'/0'",
+    DerivationPath: "84'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
 };
@@ -153,7 +153,7 @@ export const apiWalletAccountOneB: WasmApiWalletAccount = {
     WalletID: '0',
     Label: 'Account 2',
     ScriptType: WasmScriptType.Taproot,
-    DerivationPath: "m/86'/0'/0'",
+    DerivationPath: "86'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
 };
@@ -163,7 +163,7 @@ export const apiWalletAccountTwoA: WasmApiWalletAccount = {
     WalletID: '1',
     Label: 'Main account',
     ScriptType: WasmScriptType.NestedSegwit,
-    DerivationPath: "m/49'/0'/0'",
+    DerivationPath: "49'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
 };
@@ -173,7 +173,7 @@ export const apiWalletAccountTwoB: WasmApiWalletAccount = {
     WalletID: '1',
     Label: 'Electrum account',
     ScriptType: WasmScriptType.NativeSegwit,
-    DerivationPath: "m/84'/0'/0'",
+    DerivationPath: "84'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
 };
@@ -183,7 +183,7 @@ export const apiWalletAccountThree: WasmApiWalletAccount = {
     WalletID: '2',
     Label: 'Electrum account',
     ScriptType: WasmScriptType.NativeSegwit,
-    DerivationPath: "m/84'/0'/0'",
+    DerivationPath: "84'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
 };

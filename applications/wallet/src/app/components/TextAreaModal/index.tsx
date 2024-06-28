@@ -21,7 +21,14 @@ export const TextAreaModal = ({ title, buttonText, inputLabel, value: baseValue,
 
     return (
         <Modal title={title} {...modalProps}>
-            <Input as={TextAreaTwo} rows={3} label={inputLabel} value={value} onValue={(v: string) => setValue(v)} />
+            <Input
+                autoFocus
+                as={TextAreaTwo}
+                rows={3}
+                label={inputLabel}
+                value={value}
+                onValue={(v: string) => setValue(v)}
+            />
 
             <Button color="norm" shape="solid" className="mt-6" fullWidth onClick={() => onSubmit(value)}>
                 {buttonText}
