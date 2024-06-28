@@ -194,15 +194,18 @@ export class DocsApi {
     }
   }
 
-  async createThread(
-    volumeId: string,
-    linkId: string,
-    markId: string,
-    encryptedMainCommentContent: string,
-  ): Promise<Result<CreateThreadResponse>> {
+  async createThread(dto: {
+    volumeId: string
+    linkId: string
+    markId: string
+    encryptedMainCommentContent: string
+    authorEmail: string
+  }): Promise<Result<CreateThreadResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
+
+    const { volumeId, linkId, markId, encryptedMainCommentContent, authorEmail } = dto
 
     try {
       this.inflight++
@@ -210,6 +213,7 @@ export class DocsApi {
         createThreadInDocument(volumeId, linkId, {
           Mark: markId,
           Comment: { Content: encryptedMainCommentContent },
+          AuthorEmail: authorEmail,
         }),
       )
       return Result.ok(response)
@@ -252,16 +256,19 @@ export class DocsApi {
     }
   }
 
-  async addCommentToThread(
-    volumeId: string,
-    linkId: string,
-    threadId: string,
-    encryptedContent: string,
-    parentCommentId: string | null,
-  ): Promise<Result<AddCommentToThreadResponse>> {
+  async addCommentToThread(dto: {
+    volumeId: string
+    linkId: string
+    threadId: string
+    encryptedContent: string
+    parentCommentId: string | null
+    authorEmail: string
+  }): Promise<Result<AddCommentToThreadResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
+
+    const { volumeId, linkId, threadId, encryptedContent, parentCommentId, authorEmail } = dto
 
     try {
       this.inflight++
@@ -269,6 +276,7 @@ export class DocsApi {
         addCommentToThreadInDocument(volumeId, linkId, threadId, {
           Content: encryptedContent,
           ParentCommentId: parentCommentId,
+          AuthorEmail: authorEmail,
         }),
       )
       return Result.ok(response)
@@ -279,22 +287,26 @@ export class DocsApi {
     }
   }
 
-  async editComment(
-    volumeId: string,
-    linkId: string,
-    threadId: string,
-    commentId: string,
-    encryptedContent: string,
-  ): Promise<Result<EditCommentResponse>> {
+  async editComment(dto: {
+    volumeId: string
+    linkId: string
+    threadId: string
+    commentId: string
+    encryptedContent: string
+    authorEmail: string
+  }): Promise<Result<EditCommentResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
+
+    const { volumeId, linkId, threadId, commentId, encryptedContent, authorEmail } = dto
 
     try {
       this.inflight++
       const response = await this.protonApi(
         editCommentInThreadInDocument(volumeId, linkId, threadId, commentId, {
           Content: encryptedContent,
+          AuthorEmail: authorEmail,
         }),
       )
       return Result.ok(response)

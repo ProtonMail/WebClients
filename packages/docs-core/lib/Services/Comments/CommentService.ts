@@ -33,7 +33,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   public readonly liveComments: LiveComments = new LiveComments(
     this.websocketService,
     this.document,
-    this.userDisplayName,
+    this.keys.userOwnAddress,
     this.eventBus,
     this.logger,
   )
@@ -42,7 +42,6 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     private readonly document: NodeMeta,
     private readonly keys: DocumentKeys,
     private readonly websocketService: WebsocketServiceInterface,
-    public userDisplayName: string,
     private api: DocsApi,
     private _encryptComment: EncryptComment,
     private _createThread: CreateThread,
@@ -54,6 +53,10 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   ) {
     this.localCommentsState = new LocalCommentsState(eventBus)
     eventBus.addEventHandler(this, DocControllerEvent.RealtimeCommentMessageReceived)
+  }
+
+  get userDisplayName(): string {
+    return this.keys.userOwnAddress
   }
 
   public initialize(): void {
@@ -82,7 +85,7 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
   }
 
   public getTypersExcludingSelf(threadId: string): string[] {
-    return this.liveComments.getTypingUsers(threadId).filter((user) => user !== this.userDisplayName)
+    return this.liveComments.getTypingUsers(threadId).filter((user) => user !== this.keys.userOwnAddress)
   }
 
   public beganTypingInThread(threadID: string): void {
@@ -112,7 +115,6 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
       text: commentContent,
       keys: this.keys,
       lookup: this.document,
-      userDisplayName: this.userDisplayName,
       commentsState: this.localCommentsState,
     })
 
@@ -134,7 +136,6 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
       threadID,
       keys: this.keys,
       lookup: this.document,
-      userDisplayName: this.userDisplayName,
       commentsState: this.localCommentsState,
     })
 
@@ -163,13 +164,14 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
 
     const encryptedContent = encryptionResult.getValue()
 
-    const result = await this.api.editComment(
-      this.document.volumeId,
-      this.document.linkId,
-      threadID,
-      commentID,
-      encryptedContent,
-    )
+    const result = await this.api.editComment({
+      volumeId: this.document.volumeId,
+      linkId: this.document.linkId,
+      threadId: threadID,
+      commentId: commentID,
+      encryptedContent: encryptedContent,
+      authorEmail: this.keys.userOwnAddress,
+    })
     if (result.isFailed()) {
       return false
     }

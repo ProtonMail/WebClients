@@ -6,6 +6,7 @@ import { ServerTime } from '@proton/docs-shared'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { DocsApi } from '../Api/Docs/DocsApi'
+import { LoggerInterface } from '@proton/utils/logs'
 
 /**
  * Updates the local comment state by loading and decrypting all threads from the API for the document.
@@ -14,6 +15,7 @@ export class LoadThreads implements UseCaseInterface<void> {
   constructor(
     private api: DocsApi,
     private decryptComment: DecryptComment,
+    private logger: LoggerInterface,
   ) {}
 
   async execute(dto: {
@@ -57,6 +59,11 @@ export class LoadThreads implements UseCaseInterface<void> {
         return result
       }),
     )
+
+    const failedComments = comments.filter((result) => result.isFailed())
+    for (const failed of failedComments) {
+      this.logger.error(failed.getError())
+    }
 
     const successfulComments = comments.filter((result) => !result.isFailed())
 

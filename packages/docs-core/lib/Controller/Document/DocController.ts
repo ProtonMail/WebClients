@@ -2,7 +2,6 @@ import { utf8ArrayToString } from '@proton/crypto/lib/utils'
 import { c } from 'ttag'
 import { LoggerInterface } from '@proton/utils/logs'
 import { SquashDocument } from '../../UseCase/SquashDocument'
-import { UserService } from '../../Services/User/UserService'
 import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
@@ -80,11 +79,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   websocketStatus: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
   sizeTracker: DocSizeTracker = new DocSizeTracker()
 
-  public readonly username: string
+  public userAddress?: string
 
   constructor(
     private readonly nodeMeta: NodeMeta,
-    userService: UserService,
     private driveCompat: DriveCompat,
     private _squashDocument: SquashDocument,
     private _createInitialCommit: SeedInitialCommit,
@@ -98,8 +96,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     readonly eventBus: InternalEventBusInterface,
     private logger: LoggerInterface,
   ) {
-    this.username = userService.user.Email || userService.getUserId()
-
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connected)
@@ -278,6 +274,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     this.entitlements = entitlements
     this.docMeta = meta
+    this.userAddress = this.entitlements.keys.userOwnAddress
 
     const connection = this.websocketService.createConnection(this.nodeMeta, entitlements.keys, {
       commitId: () => this.commitId ?? lastCommitId,

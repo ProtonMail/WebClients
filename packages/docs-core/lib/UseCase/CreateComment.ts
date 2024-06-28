@@ -22,7 +22,6 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
     text: string
     threadID: string
     lookup: NodeMeta
-    userDisplayName: string
     keys: DocumentKeys
     commentsState: LocalCommentsState
   }): Promise<Result<CommentInterface>> {
@@ -37,7 +36,7 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
       ServerTime.now(),
       dto.text,
       null,
-      dto.userDisplayName,
+      dto.keys.userOwnAddress,
       [],
       true,
     )
@@ -53,13 +52,14 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
 
     const encryptedValue = encryptionResult.getValue()
 
-    const result = await this.api.addCommentToThread(
-      dto.lookup.volumeId,
-      dto.lookup.linkId,
-      dto.threadID,
-      encryptedValue,
-      null,
-    )
+    const result = await this.api.addCommentToThread({
+      volumeId: dto.lookup.volumeId,
+      linkId: dto.lookup.linkId,
+      threadId: dto.threadID,
+      encryptedContent: encryptedValue,
+      parentCommentId: null,
+      authorEmail: dto.keys.userOwnAddress,
+    })
     if (result.isFailed()) {
       metrics.docs_comments_error_total.increment({
         reason: 'server_error',
@@ -71,13 +71,18 @@ export class CreateComment implements UseCaseInterface<CommentInterface> {
 
     const { Comment: commentFromResponse } = result.getValue()
 
+    const emailToUse = commentFromResponse.AuthorEmail || commentFromResponse.Author
+    if (!emailToUse) {
+      return Result.fail('No author email or author address found in comment')
+    }
+
     const comment = new Comment(
       commentFromResponse.CommentID,
       new ServerTime(commentFromResponse.CreateTime),
       new ServerTime(commentFromResponse.ModifyTime),
       dto.text,
       commentFromResponse.ParentCommentID,
-      commentFromResponse.Author,
+      emailToUse,
       [],
       false,
     )

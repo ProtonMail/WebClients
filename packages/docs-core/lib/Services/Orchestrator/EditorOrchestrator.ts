@@ -23,7 +23,11 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
   ) {}
 
   get username(): string {
-    return this.docs.username
+    if (!this.docs.userAddress) {
+      throw new Error('User address not yet available')
+    }
+
+    return this.docs.userAddress
   }
 
   get docMeta(): DocumentMetaInterface {
