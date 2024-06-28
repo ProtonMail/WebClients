@@ -12,6 +12,7 @@ import {
   LexicalDocProvider,
   YDocMap,
   DocStateInterface,
+  getAccentColorForUsername,
 } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
@@ -95,12 +96,16 @@ export function Editor({
     [clientInvoker],
   )
 
+  const color = useMemo(() => {
+    return getAccentColorForUsername(username)
+  }, [username])
+
   return (
     <CollaborationContext.Provider
       value={{
         yjsDocMap: docMap,
         name: username,
-        color: `hsl(${Math.floor(Math.random() * 360)}, 100%, 30%)`,
+        color,
         clientID: 0,
         isCollabActive: false,
       }}
