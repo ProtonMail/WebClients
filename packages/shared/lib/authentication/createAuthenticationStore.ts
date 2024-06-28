@@ -215,7 +215,7 @@ const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, 
             return basename;
         },
         get ready(): boolean {
-            return Boolean(initialAuthData.UID && initialUID);
+            return Boolean(initialAuthData.UID && initialUID && getClientKey());
         },
     };
 };
