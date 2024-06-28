@@ -7,6 +7,7 @@ import {
   DocumentMetaInterface,
   BroadcastSource,
   DocumentRole,
+  DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
 import { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
@@ -21,6 +22,10 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     private readonly comments: CommentServiceInterface,
     private readonly docs: DocControllerInterface,
   ) {}
+
+  exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
+    return this.docs.exportAndDownload(format)
+  }
 
   get username(): string {
     if (!this.docs.userAddress) {

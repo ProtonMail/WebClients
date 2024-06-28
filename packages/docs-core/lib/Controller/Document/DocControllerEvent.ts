@@ -2,6 +2,8 @@ export enum DocControllerEvent {
   RealtimeCommentMessageReceived = 'RealtimeCommentMessageReceived',
   SquashVerificationObjectionDecisionRequired = 'SquashVerificationObjectionDecisionRequired',
   UnableToResolveCommitIdConflict = 'UnableToResolveCommitIdConflict',
+  DidLoadInitialEditorContent = 'DidLoadInitialEditorContent',
+  DidLoadDocumentTitle = 'DidLoadDocumentTitle',
 }
 
 export type DocControllerEventPayloads = {
@@ -10,4 +12,6 @@ export type DocControllerEventPayloads = {
   }
   [DocControllerEvent.SquashVerificationObjectionDecisionRequired]: {}
   [DocControllerEvent.UnableToResolveCommitIdConflict]: {}
+  [DocControllerEvent.DidLoadInitialEditorContent]: {}
+  [DocControllerEvent.DidLoadDocumentTitle]: { title: string }
 }
