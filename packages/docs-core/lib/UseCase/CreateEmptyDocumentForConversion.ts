@@ -1,4 +1,4 @@
-import { DecryptedNode, DriveCompat } from '@proton/drive-store'
+import { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
 import { FileToDocConversionResult } from '../Types/FileToDocConversionResult'
 import { GetDocumentMeta } from './GetDocumentMeta'
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
@@ -23,14 +23,16 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
     contents: Uint8Array
   }): Promise<Result<FileToDocConversionResult>> {
     try {
-      const parentMeta = {
-        volumeId: node.volumeId,
-        linkId: node.parentNodeId,
-      }
+      const parentMeta: NodeMeta = node.parentNodeId
+        ? {
+            volumeId: node.volumeId,
+            linkId: node.parentNodeId,
+          }
+        : await this.driveCompat.getMyFilesNodeMeta()
 
       const extension = node.mimeType === SupportedMimeTypes.docx ? 'docx' : 'md'
       const nodeNameWithoutExtension = node.name.endsWith(`.${extension}`)
-        ? node.name.substring(0, node.name.indexOf(`.${extension}`))
+        ? node.name.substring(0, node.name.lastIndexOf(`.${extension}`))
         : node.name
       const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, newDocName)

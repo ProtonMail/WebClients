@@ -50,8 +50,8 @@ import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
-import { format } from 'date-fns'
 import { DocSizeTracker } from './SizeTracker'
+import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -626,7 +626,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Editor invoker not initialized')
     }
 
-    const newName = `${this.docMeta.name} (copy ${new Date().toLocaleString()})`
+    const date = getPlatformFriendlyDateForFileName()
+    const newName = `${this.docMeta.name} (copy ${date})`
     const state = await this.editorInvoker.getDocumentState()
     const result = await this._duplicateDocument.execute(newName, this.nodeMeta, state)
 
@@ -653,7 +654,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Decrypted node not loaded when creating new document')
     }
 
-    const date = format(new Date(), 'yyyy-MM-dd HH.mm.ss')
+    const date = getPlatformFriendlyDateForFileName()
     // translator: Default title for a new Proton Document (example: Untitled document 2024-04-23)
     const baseTitle = c('Title').t`Untitled document ${date}`
     const newName = `${baseTitle}`
@@ -686,6 +687,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     try {
       if (!this.decryptedNode) {
         throw new Error('Decrypted node not loaded when renaming document')
+      }
+
+      if (!this.decryptedNode.parentNodeId) {
+        throw new Error('Cannot rename document')
       }
 
       const name = await this.driveCompat.findAvailableNodeName(

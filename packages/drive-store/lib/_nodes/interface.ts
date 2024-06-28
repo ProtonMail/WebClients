@@ -6,7 +6,13 @@ import { DecryptedLink } from '../../store';
 export type DecryptedNode = {
     volumeId: string;
     nodeId: DecryptedLink['linkId'];
-    parentNodeId: DecryptedLink['parentLinkId'];
+    /**
+     * A node may not always have a parent.
+     *
+     * For example, when direct sharing a node, the invitee
+     * does not have access to the parent.
+     */
+    parentNodeId?: DecryptedLink['parentLinkId'];
     name: DecryptedLink['name'];
     hash: DecryptedLink['hash'];
     createTime: DecryptedLink['createTime'];
