@@ -6,6 +6,10 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { AccountWithChainData, WalletChainDataByWalletId, WalletWithChainData } from '../types';
 
+export const removeMasterPrefix = (derivationPath: string) => {
+    return derivationPath.replace(/m\//, '');
+};
+
 export const getAccountBalance = async (account?: AccountWithChainData) => {
     const balance = await account?.account.getBalance();
 

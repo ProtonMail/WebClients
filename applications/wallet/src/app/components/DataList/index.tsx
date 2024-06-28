@@ -17,8 +17,8 @@ interface DataListItemProps {
 export const DataListItem = ({ leftIcon, label, bottomNode, align = 'start' }: DataListItemProps) => {
     const { isNarrow } = useResponsiveContainerContext();
     return (
-        <div className={clsx('datagrid-cell')}>
-            <div className="flex flex-row flex-nowrap w-full">
+        <div className="datagrid-cell h-full">
+            <div className="flex flex-row items-center flex-nowrap w-full">
                 {leftIcon && typeof leftIcon === 'string' ? <Icon name={leftIcon as IconName} /> : leftIcon}
                 <div className="grow">
                     <div className={clsx('flex flex-column w-full', `items-${align}`)}>
@@ -71,7 +71,7 @@ export const DataList = <I extends { key: string }>({ columns, rows, canClickRow
                             return (
                                 <div
                                     key={`col-${id}-row-${row.key}`}
-                                    className={clsx(className, 'overflow-hidden')}
+                                    className={clsx(className, 'overflow-hidden h-full')}
                                     style={{ ...style, gridColumn: colIndex + 1 }}
                                 >
                                     {data(row)}

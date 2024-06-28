@@ -68,7 +68,7 @@ const wallet = {
             WalletID: '01',
             Label: 'Account 1',
             ScriptType: WasmScriptType.NativeSegwit,
-            DerivationPath: "m/84'/1'/0'",
+            DerivationPath: "84'/1'/0'",
             Addresses: [{ ID: '0000001', Email: 'pro@proton.black' }],
             FiatCurrency: 'USD' as WasmFiatCurrencySymbol,
         },
@@ -238,7 +238,7 @@ describe('useBitcoinAddressPool', () => {
         wasmAccount = new WasmAccount(
             wasmWallet,
             WasmScriptType.NativeSegwit,
-            WasmDerivationPath.fromString("m/84'/1'/0'")
+            WasmDerivationPath.fromString("84'/1'/0'")
         );
 
         baseArgs = {
@@ -249,7 +249,7 @@ describe('useBitcoinAddressPool', () => {
                     accounts: {
                         '001': {
                             account: wasmAccount,
-                            derivationPath: "m/84'/1'/0'",
+                            derivationPath: "84'/1'/0'",
                             scriptType: 2,
                         },
                     },
