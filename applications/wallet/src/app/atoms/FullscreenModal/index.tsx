@@ -41,10 +41,7 @@ export const FullscreenModal = ({
                         'pb-6 px-3 modal-two-content flex flex-column items-center justify-center grow overflow-auto py-8'
                     )}
                 >
-                    <div
-                        className="flex flex-column py-auto max-h-full w-full max-w-custom overflow-auto p-2 grow my-auto"
-                        style={{ '--max-w-custom': '31rem' }}
-                    >
+                    <div className="flex flex-column py-auto max-h-full w-full overflow-auto p-2 grow my-auto">
                         {children}
                     </div>
                 </div>

@@ -1,24 +1,29 @@
 import { useState } from 'react';
 
 import { MoonPayProvider } from '@moonpay/moonpay-react';
+import { first } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiCountry, WasmApiWalletAccount } from '@proton/andromeda';
+import { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import { ModalOwnProps } from '@proton/components/components';
+import { IWasmApiWalletData } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useGatewaysPublicApiKeys } from '../../store/hooks/useGatewaysPublicApiKeys';
-import { getAccountWithChainDataFromManyWallets } from '../../utils';
+import { getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
 import { useComputeNextAddressToReceive } from '../../utils/hooks/useComputeNextIndexToReceive';
+import { toWalletAccountSelectorOptions } from '../../utils/wallet';
 import { ModalHeaderWithStepper, Steps } from '../ModalHeaderWithStepper';
+import { WalletAccountSelector } from '../WalletAccountSelector';
 import { Amount, QuoteWithProvider } from './Amount';
 import { Checkout } from './Checkout';
 import { Location } from './Location';
 
 interface Props {
-    account: WasmApiWalletAccount;
+    wallet: IWasmApiWalletData;
+    account?: WasmApiWalletAccount;
     modal: ModalOwnProps;
     onDone?: () => void;
 }
@@ -35,31 +40,57 @@ const getSteps = (): Steps<StepKey> => [
     { key: StepKey.Payment, label: c('bitcoin buy').t`Onramp` },
 ];
 
-export const BitcoinBuyModal = ({ account, modal, onDone }: Props) => {
+export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
     const [stepKey, setStepKey] = useState<StepKey>(StepKey.Location);
     const [country, setCountry] = useState<WasmApiCountry>();
     const [quote, setQuote] = useState<QuoteWithProvider>();
 
     const [apikeys] = useGatewaysPublicApiKeys();
 
-    const { walletsChainData } = useBitcoinBlockchainContext();
-    const wasmAccount = getAccountWithChainDataFromManyWallets(walletsChainData, account?.WalletID, account?.ID);
+    const defaultWalletAccount = first(wallet.WalletAccounts);
+    const [selectedWalletAccount, setSelectedWalletAccount] = useState<[WasmApiWallet, WasmApiWalletAccount?]>([
+        wallet.Wallet,
+        account ?? defaultWalletAccount,
+    ]);
+
+    const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
+    const wasmAccount = getAccountWithChainDataFromManyWallets(
+        walletsChainData,
+        account?.WalletID,
+        selectedWalletAccount[1]?.ID
+    );
 
     const computeNextIndexToReceive = useComputeNextAddressToReceive(walletsChainData);
 
     const btcAddress = useAsyncValue(
         (async () => {
-            const index = await computeNextIndexToReceive(account);
-            const address = await wasmAccount?.account.getAddress(index);
+            if (isWalletAccountSet(selectedWalletAccount)) {
+                const index = await computeNextIndexToReceive(selectedWalletAccount[1]);
+                const address = await wasmAccount?.account.getAddress(index);
 
-            return address?.address;
+                return address?.address;
+            } else {
+                return null;
+            }
         })(),
         null
     );
 
-    if (!apikeys) {
+    if (!apikeys || !isWalletAccountSet(selectedWalletAccount)) {
         return null;
     }
+
+    const walletAccountSelector = (
+        <div className="mb-8 mr-4">
+            <WalletAccountSelector
+                value={selectedWalletAccount}
+                onSelect={(selected) => {
+                    setSelectedWalletAccount(selected);
+                }}
+                options={toWalletAccountSelectorOptions(decryptedApiWalletsData ?? [])}
+            />
+        </div>
+    );
 
     return (
         <MoonPayProvider apiKey={apikeys.moonpay}>
@@ -79,38 +110,56 @@ export const BitcoinBuyModal = ({ account, modal, onDone }: Props) => {
                 }
                 {...modal}
             >
-                {stepKey === StepKey.Location && (
-                    <Location
-                        onConfirm={(country) => {
-                            setCountry(country);
-                            setStepKey(StepKey.Amount);
-                        }}
-                    />
-                )}
+                <div className="flex flex-row justify-space-between">
+                    {stepKey === StepKey.Location && (
+                        <>
+                            {walletAccountSelector}
 
-                {stepKey === StepKey.Amount && country && (
-                    <Amount
-                        country={country}
-                        preselectedQuote={quote}
-                        onConfirm={(quote) => {
-                            setQuote(quote);
-                            setStepKey(StepKey.Payment);
-                        }}
-                    />
-                )}
+                            <Location
+                                onConfirm={(country) => {
+                                    setCountry(country);
+                                    setStepKey(StepKey.Amount);
+                                }}
+                            />
 
-                {stepKey === StepKey.Payment && quote && btcAddress && (
-                    <Checkout
-                        quote={quote}
-                        btcAddress={btcAddress}
-                        onDone={() => {
-                            onDone?.();
-                        }}
-                        onBack={() => {
-                            setStepKey(StepKey.Amount);
-                        }}
-                    />
-                )}
+                            {/* Dumb div to equilibrate flexbox */}
+                            <div />
+                        </>
+                    )}
+
+                    {stepKey === StepKey.Amount && country && (
+                        <>
+                            {walletAccountSelector}
+
+                            <Amount
+                                country={country}
+                                preselectedQuote={quote}
+                                onConfirm={(quote) => {
+                                    setQuote(quote);
+                                    setStepKey(StepKey.Payment);
+                                }}
+                            />
+
+                            {/* Dumb div to equilibrate flexbox */}
+                            <div />
+                        </>
+                    )}
+
+                    {stepKey === StepKey.Payment && quote && btcAddress && (
+                        <Checkout
+                            quote={quote}
+                            btcAddress={btcAddress}
+                            onDone={() => {
+                                onDone?.();
+                            }}
+                            onBack={() => {
+                                setStepKey(StepKey.Amount);
+                            }}
+                        />
+                    )}
+
+                    {[StepKey.Location, StepKey.Amount].includes(stepKey) && !account && <div />}
+                </div>
             </FullscreenModal>
         </MoonPayProvider>
     );

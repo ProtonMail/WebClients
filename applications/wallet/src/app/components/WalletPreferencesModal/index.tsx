@@ -14,10 +14,10 @@ import {
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal, Select } from '../../atoms';
+import { BitcoinViaEmailNote } from '../../atoms/BitcoinViaEmailNote';
 import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
 import { WalletDeletionModal } from '../WalletDeletionModal';
-import { BitcoinViaEmailNote } from './BitcoinViaEmailNote';
 import { useWalletPreferences } from './useWalletPreferences';
 
 interface Props extends ModalOwnProps {

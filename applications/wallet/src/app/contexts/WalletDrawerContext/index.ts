@@ -22,7 +22,8 @@ export interface WalletDiscoverDrawerData {
 
 export interface WalletReceiveDrawerData {
     kind: 'wallet-receive';
-    account: WasmApiWalletAccount;
+    wallet: IWasmApiWalletData;
+    account?: WasmApiWalletAccount;
 }
 
 export type WalletDrawerContentData = WalletTransactionDrawerData | WalletDiscoverDrawerData | WalletReceiveDrawerData;
