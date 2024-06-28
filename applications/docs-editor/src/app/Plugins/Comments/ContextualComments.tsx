@@ -44,7 +44,7 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
     return () => {
       document.removeEventListener('click', handleClickOutside)
     }
-  }, [close])
+  }, [anchorRef, close])
 
   return (
     <>
@@ -222,17 +222,6 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
   >([])
 
   const [isViewportLarge, setIsViewportLarge] = useState(() => window.innerWidth >= ViewportWidthThreshold)
-  useEffect(() => {
-    const listener = debounce(() => {
-      setIsViewportLarge(window.innerWidth >= ViewportWidthThreshold)
-    }, SixtyFPSToMS)
-
-    window.addEventListener('resize', listener)
-
-    return () => {
-      window.removeEventListener('resize', listener)
-    }
-  }, [])
 
   const getThreadPositions = useCallback(() => {
     const container = editor.getRootElement()?.parentElement
@@ -276,6 +265,19 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
 
   useEffect(() => {
     debouncedGetThreadPositions()
+  }, [debouncedGetThreadPositions])
+
+  useEffect(() => {
+    const listener = debounce(() => {
+      setIsViewportLarge(window.innerWidth >= ViewportWidthThreshold)
+      debouncedGetThreadPositions()
+    }, SixtyFPSToMS)
+
+    window.addEventListener('resize', listener)
+
+    return () => {
+      window.removeEventListener('resize', listener)
+    }
   }, [debouncedGetThreadPositions])
 
   useEffect(() => {
