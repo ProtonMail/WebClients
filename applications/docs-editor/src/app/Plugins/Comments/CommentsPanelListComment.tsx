@@ -16,9 +16,9 @@ import { c } from 'ttag'
 import { UserAvatar } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
-import { useCollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import { useApplication } from '../../ApplicationProvider'
 import { CommentViewer } from './CommentViewer'
+import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 
 export function CommentsPanelListComment({
   comment,
@@ -33,7 +33,7 @@ export function CommentsPanelListComment({
 }): JSX.Element {
   const application = useApplication()
 
-  const { color } = useCollaborationContext()
+  const awarenessStates = useLatestAwarenessStates(application)
   const { username, controller, removeMarkNode } = useCommentsContext()
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
@@ -90,6 +90,8 @@ export function CommentsPanelListComment({
     return comment.author.split('@')[0]
   }, [comment.author])
 
+  const color = awarenessStates.find((state) => state.name === comment.author)?.color
+
   const isThreadActive = thread.state === CommentThreadState.Active
 
   const showEditButton = (!isFirstComment || isThreadActive) && isAuthorCurrentUser
@@ -114,11 +116,7 @@ export function CommentsPanelListComment({
       {confirmModal}
       <li className={clsx('group/comment mb-3 text-sm', comment.isPlaceholder || isDeleting ? 'opacity-50' : '')}>
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
-          <UserAvatar
-            name={comment.author}
-            color={isAuthorCurrentUser ? { hsl: color } : undefined}
-            className="mr-1 flex-shrink-0"
-          />
+          <UserAvatar name={comment.author} color={color ? { hsl: color } : undefined} className="mr-1 flex-shrink-0" />
           <div className="mr-auto flex flex-col overflow-hidden">
             <span className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold capitalize">
               {name}

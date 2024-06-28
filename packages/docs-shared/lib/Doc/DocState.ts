@@ -135,7 +135,8 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.awareness.removeDuplicateClients()
 
     const states = this.awareness.getStates()
-    this.callbacks.handleAwarenessStateUpdate(Array.from(states.values()))
+    const statesArray = Array.from(states.values())
+    this.callbacks.handleAwarenessStateUpdate(statesArray)
 
     const latestClientIds = this.awareness.getClientIds()
     const noChangeInClientIds =
