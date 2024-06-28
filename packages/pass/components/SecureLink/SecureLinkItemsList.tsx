@@ -16,6 +16,8 @@ import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectOptimisticItemsWithSecureLink } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 
+import { SecureLinkQuickActions } from './SecureLinkQuickActions';
+
 export const SecureLinkItemsList: FC = () => {
     const { navigate } = useNavigation();
     const listRef = useRef<List>(null);
@@ -37,12 +39,11 @@ export const SecureLinkItemsList: FC = () => {
     return items.length > 0 ? (
         <>
             <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto justify-space-between">
-                <div className="flex flex-1 gap-1 shrink-0 flex-nowrap">
+                <div className="flex flex-1 gap-1 shrink-0 flex-nowrap justify-space-between">
                     <DropdownButton
                         color="weak"
                         shape="solid"
                         size="small"
-                        title={c('Action').t`Shared links`}
                         className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
                     >
                         <Icon name="link" className="shrink-0" />
@@ -50,6 +51,7 @@ export const SecureLinkItemsList: FC = () => {
                             {c('Action').t`Shared links`} ({items.length})
                         </span>
                     </DropdownButton>
+                    <SecureLinkQuickActions />
                 </div>
             </div>
             <VirtualList
