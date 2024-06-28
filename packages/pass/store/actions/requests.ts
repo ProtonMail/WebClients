@@ -22,6 +22,7 @@ export const itemUpdateFlagsRequest = withItemKey(`item::flags::update`);
 export const itemCreateSecureLinkRequest = withItemKey(`item::secure-link::create`);
 export const itemViewSecureLinkRequest = withKey('item::secure-link::view');
 export const itemDeleteSecureLinkRequest = withItemKey('item::secure-link::delete');
+export const removeInactiveLinksRequest = () => 'item::secure-link::remove_inactive';
 export const itemGetSecureLinksRequest = () => 'item::secure-link::get';
 
 export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;

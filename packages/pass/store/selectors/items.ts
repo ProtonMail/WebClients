@@ -308,3 +308,14 @@ export const selectItemSecureLinks = (shareId: string, itemId: string) =>
     createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
         (secureLinks[shareId]?.[itemId] ?? []).slice().sort(sortOn('active', 'DESC'))
     );
+
+export const selectInactiveSecureLinkCount = createSelector(selectSecureLinks, (byShareId): number =>
+    Object.values(byShareId).reduce<number>(
+        (count, byItemId) =>
+            count +
+            Object.values(byItemId)
+                .flat()
+                .filter((link) => !link.active).length,
+        0
+    )
+);
