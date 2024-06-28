@@ -138,8 +138,12 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
     };
 
     const shouldCreateWallet = async () => {
-        const organization = await getOrganization();
-        const isUserCompatible = user.isFree || organization?.MaxMembers === 1;
+        let isUserCompatible = user.isFree;
+
+        if (!isUserCompatible) {
+            const organization = await getOrganization();
+            isUserCompatible = organization?.MaxMembers === 1;
+        }
 
         if (!higherLevelPilot || !isUserCompatible) {
             return false;
