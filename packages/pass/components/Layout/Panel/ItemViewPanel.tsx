@@ -171,7 +171,6 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                       })
                                                 : handleSecureLinkClick
                                         }
-                                        title={c('Action').t`Share secure link`}
                                         label={c('Action').t`Via secure link`}
                                         icon="link"
                                         disabled={!owner}

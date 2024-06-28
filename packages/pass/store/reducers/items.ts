@@ -426,8 +426,6 @@ const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (st
         if (!action.payload) return {};
 
         return action.payload.reduce<IndexedByShareIdAndItemId<SecureLink[]>>((acc, link) => {
-            if (!link.active) return acc;
-
             const { shareId, itemId } = link;
             const secureLink = acc[shareId]?.[itemId];
 

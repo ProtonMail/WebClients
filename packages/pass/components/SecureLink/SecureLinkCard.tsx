@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,14 +10,17 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { getViewCountString } from '@proton/pass/lib/i18n/helpers';
 import { itemRemoveSecureLink } from '@proton/pass/store/actions';
 import { itemDeleteSecureLinkRequest } from '@proton/pass/store/actions/requests';
 import type { SecureLink } from '@proton/pass/types';
 import { timeRemaining } from '@proton/pass/utils/time/format';
+import clsx from '@proton/utils/clsx';
 
 type Props = SecureLink & { onClick: () => void };
 
 export const SecureLinkCard: FC<Props> = ({
+    active,
     expirationDate,
     itemId,
     linkId,
@@ -34,28 +37,37 @@ export const SecureLinkCard: FC<Props> = ({
 
     const onCopy = () => createNotification({ text: c('Info').t`Copied to clipboard` });
     const onRemove = () => dispatch({ itemId, shareId, linkId });
+    const remaining = useMemo(() => timeRemaining(expirationDate), [expirationDate]);
 
     return (
         <>
-            <Card type="primary" className="mb-4 cursor-pointer" onClick={onClick}>
+            <Card
+                type="primary"
+                className={clsx('mb-2 cursor-pointer rounded-xl', !active && 'bg-weak')}
+                onClick={onClick}
+            >
                 <div className="flex flex-nowrap items-center justify-space-between">
                     <IconBox
                         mode="icon"
-                        size={5}
+                        size={3}
                         pill={false}
-                        style={{ backgroundColor: 'var(--interaction-weak-major-1)' }}
+                        style={{ backgroundColor: `var(--interaction-weak${active ? '-major-1' : ''})` }}
                     >
-                        <Icon name="link" size={4} className="absolute inset-center" />
+                        <Icon name={active ? 'link' : 'link-slash'} size={3} className="absolute inset-center" />
                     </IconBox>
 
                     <div className="flex-1 px-4">
                         <b>{c('Label').t`Shared link`}</b>
-                        <div className="color-weak">
-                            Expires in {timeRemaining(expirationDate)} · {readCount} view
+                        <div className="color-weak text-sm">
+                            {c('Info').t`Expires in ${remaining}`}
+                            {' · '}
+                            {getViewCountString(readCount)}
                         </div>
                     </div>
                     <div>
-                        <Copy value={secureLink} shape="ghost" className="color-weak" onCopy={onCopy} pill />
+                        {active && (
+                            <Copy value={secureLink} shape="ghost" className="color-weak" onCopy={onCopy} pill />
+                        )}
                         <QuickActionsDropdown color="weak" shape="ghost" className="color-weak">
                             <DropdownMenuButton
                                 onClick={(e) => {
