@@ -29,6 +29,7 @@ import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'
 import { ContextualComments } from './ContextualComments'
+import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 
 export default function CommentPlugin({
   controller,
@@ -44,6 +45,8 @@ export default function CommentPlugin({
   const activeThreads = useMemo(() => {
     return threads.filter((thread) => thread.state === CommentThreadState.Active)
   }, [threads])
+
+  const awarenessStates = useLatestAwarenessStates(application)
 
   useEffect(() => {
     controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
@@ -336,6 +339,7 @@ export default function CommentPlugin({
         markNodeMap,
         threadToFocus,
         setThreadToFocus,
+        awarenessStates,
       }}
     >
       {showCommentInput &&

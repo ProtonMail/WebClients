@@ -18,7 +18,6 @@ import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useApplication } from '../../ApplicationProvider'
 import { CommentViewer } from './CommentViewer'
-import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 
 export function CommentsPanelListComment({
   comment,
@@ -33,8 +32,7 @@ export function CommentsPanelListComment({
 }): JSX.Element {
   const application = useApplication()
 
-  const awarenessStates = useLatestAwarenessStates(application)
-  const { username, controller, removeMarkNode } = useCommentsContext()
+  const { username, controller, removeMarkNode, awarenessStates } = useCommentsContext()
 
   const [confirmModal, showConfirmModal] = useConfirmActionModal()
 
