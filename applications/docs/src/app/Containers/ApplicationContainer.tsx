@@ -11,9 +11,10 @@ import { DocumentConverter } from '../Components/DocumentConverter'
 import { useDriveCompat, DocumentAction, DriveCompat } from '@proton/drive-store'
 import { FileToDocConversionResult } from '@proton/docs-core'
 import { FileToDocPendingConversion } from '@proton/docs-shared'
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { format } from 'date-fns'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
 
 function ApplicationContainer() {
   const api = useApi()
@@ -40,6 +41,13 @@ function ApplicationContainer() {
     const parentLinkId = searchParams.get('parentLinkId')
     const volumeId = searchParams.get('volumeId')
     const linkId = searchParams.get('linkId')
+
+    const hasRequiredParametersToLoadOrCreateADocument = volumeId && mode && (linkId || parentLinkId)
+
+    if (!hasRequiredParametersToLoadOrCreateADocument && !driveCompat.isDocsEnabled) {
+      window.location.assign(getAppHref('/', APPS.PROTONDRIVE))
+      return
+    }
 
     if (!volumeId || !mode) {
       return
