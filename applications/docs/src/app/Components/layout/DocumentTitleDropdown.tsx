@@ -18,6 +18,9 @@ import { CircleLoader } from '@proton/atoms/CircleLoader'
 import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg'
 import { DocumentAction } from '@proton/drive-store'
 import { AutoGrowingInput } from '../AutoGrowingInput'
+import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { getStaticURL } from '@proton/shared/lib/helpers/url'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
 
 const DocumentTitleDropdown = ({
   controller,
@@ -219,6 +222,18 @@ const DocumentTitleDropdown = ({
           </DropdownMenuButton>
 
           {controller && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => {
+                void controller.printAsPDF()
+              }}
+            >
+              <Icon name="printer" className="color-weak mr-2" />
+              {c('Action').t`Print`}
+            </DropdownMenuButton>
+          )}
+
+          {controller && (
             <SimpleDropdown
               as={DropdownMenuButton}
               className="flex items-center text-left"
@@ -276,17 +291,46 @@ const DocumentTitleDropdown = ({
             </SimpleDropdown>
           )}
 
-          {controller && (
-            <DropdownMenuButton
-              className="flex items-center text-left"
-              onClick={() => {
-                void controller.printAsPDF()
-              }}
+          <hr className="my-1 min-h-px" />
+
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={() => {
+              window.open(getStaticURL('/support'), '_blank')
+            }}
+          >
+            <Icon name="info-circle" className="color-weak mr-2" />
+            {c('Action').t`Help`}
+          </DropdownMenuButton>
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={() => {
+              window.open(getAppHref('/', APPS.PROTONDRIVE), '_blank')
+            }}
+          >
+            <Icon name="brand-proton-drive" className="color-weak mr-2" />
+            {c('Action').t`Open ${DRIVE_APP_NAME}`}
+          </DropdownMenuButton>
+
+          <hr className="mt-1 min-h-px" />
+
+          <div
+            className="color-weak px-4 py-2"
+            style={{
+              background: 'var(--primary-minor-2)',
+            }}
+          >
+            <Icon name="lock-check" className="color-weak mr-2 align-middle" />
+            <span className="align-middle">{c('Info').t`End to end encrypted.`} </span>
+            <a
+              data-connection-popover
+              className="align-middle underline hover:underline"
+              href="https://proton.me/security/end-to-end-encryption"
+              target="_blank"
             >
-              <Icon name="printer" className="color-weak mr-2" />
-              {c('Action').t`Print`}
-            </DropdownMenuButton>
-          )}
+              {c('Info').t`Learn more`}
+            </a>
+          </div>
         </DropdownMenu>
       </Dropdown>
 
