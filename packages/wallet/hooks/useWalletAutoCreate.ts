@@ -18,6 +18,9 @@ import {
     getDefaultWalletName,
 } from '../utils';
 
+// Flag to tell the API the wallet was autocreated
+const WALLET_AUTOCREATE_FLAG = 1;
+
 /**
  * Utility hook creating a wallet if user don't have any
  *
@@ -77,7 +80,8 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
                 walletKeySignature,
                 encryptedMnemonic,
                 fingerprint,
-                undefined
+                undefined,
+                WALLET_AUTOCREATE_FLAG
             )
             .then(async ({ Wallet }) => {
                 const derivationPathParts = [purposeByScriptType[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
@@ -137,7 +141,6 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
         const organization = await getOrganization();
         const isUserCompatible = user.isFree || organization?.MaxMembers === 1;
 
-        console.log({ higherLevelPilot, isUserCompatible });
         if (!higherLevelPilot || !isUserCompatible) {
             return false;
         }
