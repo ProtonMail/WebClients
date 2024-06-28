@@ -24,6 +24,7 @@ import { verticalPopperPlacements } from '@proton/components/components/popper/u
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -226,11 +227,9 @@ export const MenuDropdown: FC = () => {
                         />
 
                         {secureLinkEnabled && (
-                            <DropdownMenuButton
-                                onClick={() => onLink(getPassWebUrl(API_URL, 'secure-links'))}
-                                label={c('Action').t`Secure links`}
-                                icon="link"
+                            <SecureLinkButton
                                 className="pt-1.5 pb-1.5"
+                                onClick={() => onLink(getPassWebUrl(API_URL, 'secure-links'))}
                             />
                         )}
 
