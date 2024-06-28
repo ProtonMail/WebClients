@@ -1,6 +1,7 @@
 import { Icon } from '@proton/components'
 import { useEffect, useRef, useState } from 'react'
 import {
+  ParticipantTrackerEvent,
   WebsocketConnectionEvent,
   WebsocketConnectionEventPayloads,
   WebsocketConnectionEventStatusChange,
@@ -30,6 +31,7 @@ export const ConnectionStatus = () => {
   const [hasErroredMessages, setHasErroredMessages] = useState(false)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
+  const [isUserLimitReached, setIsUserLimitReached] = useState(false)
   const [saveStartTime, setSaveStartTime] = useState(0)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -38,9 +40,11 @@ export const ConnectionStatus = () => {
       application.eventBus.addEventCallback(() => {
         setStatus(WebsocketConnectionEvent.Connected)
       }, WebsocketConnectionEvent.Connected),
+
       application.eventBus.addEventCallback(() => {
         setStatus(WebsocketConnectionEvent.Connecting)
       }, WebsocketConnectionEvent.Connecting),
+
       application.eventBus.addEventCallback(
         (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]) => {
           setStatus(WebsocketConnectionEvent.Disconnected)
@@ -48,6 +52,7 @@ export const ConnectionStatus = () => {
         },
         WebsocketConnectionEvent.Disconnected,
       ),
+
       application.eventBus.addEventCallback(
         (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]) => {
           setStatus(WebsocketConnectionEvent.FailedToConnect)
@@ -55,6 +60,7 @@ export const ConnectionStatus = () => {
         },
         WebsocketConnectionEvent.FailedToConnect,
       ),
+
       application.eventBus.addEventCallback(
         (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange]) => {
           setHasConcerningMessages(payload.ledger.hasConcerningMessages())
@@ -62,6 +68,7 @@ export const ConnectionStatus = () => {
         },
         WebsocketConnectionEvent.AckStatusChange,
       ),
+
       application.eventBus.addEventCallback(() => {
         if (timeoutRef.current) {
           clearTimeout(timeoutRef.current)
@@ -70,6 +77,7 @@ export const ConnectionStatus = () => {
         setSaved(false)
         setSaveStartTime(Date.now())
       }, WebsocketConnectionEvent.Saving),
+
       application.eventBus.addEventCallback(() => {
         const elapsedTime = Date.now() - saveStartTime
         const remainingTime = Math.max(0, MINIMUM_DURATION_SAVING_MUST_BE_SHOWN - elapsedTime)
@@ -78,6 +86,14 @@ export const ConnectionStatus = () => {
           setSaved(true)
         }, remainingTime)
       }, WebsocketConnectionEvent.Saved),
+
+      application.eventBus.addEventCallback(() => {
+        setIsUserLimitReached(true)
+      }, ParticipantTrackerEvent.DocumentLimitBreached),
+
+      application.eventBus.addEventCallback(() => {
+        setIsUserLimitReached(false)
+      }, ParticipantTrackerEvent.DocumentLimitUnbreached),
     )
   }, [application.eventBus, saveStartTime])
 
@@ -172,6 +188,20 @@ export const ConnectionStatus = () => {
         >
           <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
           {c('Info').t`Error Syncing`}
+        </PopoverPill>
+      )}
+      {isUserLimitReached && (
+        <PopoverPill
+          title={
+            <div className="flex gap-2">
+              <Icon name="exclamation-circle" className="h-6 w-6 fill-current" />
+              <span>{c('Title').t`Busy`}</span>
+            </div>
+          }
+          content={c('Info').t`This document has lots of activity. Some features may be temporarily unavailable.`}
+        >
+          <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
+          {c('Info').t`Document is busy`}
         </PopoverPill>
       )}
     </div>
