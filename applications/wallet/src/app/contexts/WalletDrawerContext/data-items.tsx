@@ -51,7 +51,7 @@ export const RecipientsDataItem = ({
                         const recipient = getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses);
 
                         return (
-                            <li key={index} className="flex flex-row items-center my-1">
+                            <li key={index} className="flex flex-row w-full items-center my-1">
                                 <button
                                     className="flex flex-row flex-nowrap items-center w-full"
                                     onClick={() => onClick(recipient, output.address, index)}
@@ -60,7 +60,7 @@ export const RecipientsDataItem = ({
                                         <span className="block color-weak">{c('Wallet transaction').t`To`}</span>
 
                                         <Tooltip title={recipient}>
-                                            <span className="block w-full text-ellipsis">{recipient}</span>
+                                            <span className="block text-ellipsis">{recipient}</span>
                                         </Tooltip>
                                     </div>
 
