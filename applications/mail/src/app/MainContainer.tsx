@@ -9,8 +9,6 @@ import {
     useConfig,
     useFeatures,
     useFlag,
-    useOrganization,
-    useUser,
 } from '@proton/components';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
@@ -29,8 +27,6 @@ import { MailContentRefProvider } from './hooks/useClickMailContent';
 
 const MainContainer: FunctionComponent = () => {
     const breakpoints = useActiveBreakpoint();
-    const [user] = useUser();
-    const [organization] = useOrganization();
     const { APP_NAME } = useConfig();
     const mailContentRef = useRef<HTMLDivElement>(null);
     const { getFeature } = useFeatures([
@@ -45,7 +41,7 @@ const MainContainer: FunctionComponent = () => {
 
     const { feature: featureSw, loading: loadingSw } = getFeature(FeatureCode.MailServiceWorker);
 
-    const shouldAutoSetupWallet = useFlag('WalletAutoSetup') && (user.isFree || organization?.MaxMembers === 1);
+    const shouldAutoSetupWallet = useFlag('WalletAutoSetup');
     useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet });
 
     // Service Worker registration
