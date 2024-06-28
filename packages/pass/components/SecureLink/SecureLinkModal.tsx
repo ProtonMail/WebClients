@@ -37,7 +37,7 @@ export const SecureLinkModal: FC<SecureLinkModalProps> = ({ itemId, shareId, ite
             <ModalTwoHeader
                 title={c('Action').t`Share secure link`}
                 subline={
-                    <div className="flex flex-nowrap items-center gap-2">
+                    <div className="flex flex-nowrap items-center gap-2 mt-1 mb-4">
                         <SafeItemIcon item={item} size={2.5} pill={false} />
                         <span className="text-ellipsis">
                             {heading} · {subheading}

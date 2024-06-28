@@ -446,7 +446,7 @@ export const getSecureLinks = async (): Promise<MaybeNull<SecureLink[]>> => {
                 active: secureLink.Active,
                 linkId: secureLink.LinkID,
                 expirationDate: secureLink.ExpirationTime!,
-                readCount: secureLink.ReadCount ?? null,
+                readCount: secureLink.ReadCount ?? 0,
                 maxReadCount: secureLink.MaxReadCount ?? null,
                 shareId: secureLink.ShareID!,
                 itemId: secureLink.ItemID!,
