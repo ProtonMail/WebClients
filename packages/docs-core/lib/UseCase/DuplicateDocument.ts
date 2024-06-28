@@ -18,10 +18,12 @@ export class DuplicateDocument implements UseCaseInterface<DocumentNodeMeta> {
     try {
       const node = await this.driveCompat.getNode(lookup)
 
-      const parentMeta = {
-        volumeId: lookup.volumeId,
-        linkId: node.parentNodeId,
-      }
+      const parentMeta: NodeMeta = node.parentNodeId
+        ? {
+            volumeId: node.volumeId,
+            linkId: node.parentNodeId,
+          }
+        : await this.driveCompat.getMyFilesNodeMeta()
 
       const name = await this.driveCompat.findAvailableNodeName(parentMeta, newName)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name)

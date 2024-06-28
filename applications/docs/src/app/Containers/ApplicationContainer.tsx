@@ -13,8 +13,8 @@ import { FileToDocConversionResult } from '@proton/docs-core'
 import { FileToDocPendingConversion } from '@proton/docs-shared'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import { format } from 'date-fns'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 
 function ApplicationContainer() {
   const api = useApi()
@@ -105,7 +105,7 @@ function ApplicationContainer() {
   }, [application, isAppReady])
 
   const createNewDocInRoot = useCallback(async () => {
-    const date = format(new Date(), 'yyyy-MM-dd HH.mm.ss')
+    const date = getPlatformFriendlyDateForFileName()
     const name = c('Title').t`Untitled document ${date}`
 
     const root =

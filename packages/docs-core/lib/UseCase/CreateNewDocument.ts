@@ -19,10 +19,13 @@ export class CreateNewDocument implements UseCaseInterface<DocumentNodeMeta> {
     siblingNode: DecryptedNode,
   ): Promise<Result<DocumentNodeMeta>> {
     try {
-      const parentMeta: NodeMeta = {
-        volumeId: siblingMeta.volumeId,
-        linkId: siblingNode.parentNodeId,
-      }
+      const parentMeta: NodeMeta = siblingNode.parentNodeId
+        ? {
+            volumeId: siblingMeta.volumeId,
+            linkId: siblingNode.parentNodeId,
+          }
+        : await this.driveCompat.getMyFilesNodeMeta()
+
       const name = await this.driveCompat.findAvailableNodeName(parentMeta, desiredName)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name)
 
