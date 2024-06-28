@@ -524,18 +524,17 @@ export default function DocumentEditorToolbar({
 
   return (
     <div
-      className="border-weak bg-norm flex flex-nowrap items-center justify-around gap-1.5 overflow-auto border-y px-3 py-1.5 print:hidden"
+      className="bg-norm z-1 flex flex-nowrap items-center gap-1.5 print:hidden"
       style={{
         gridColumn: '1 / 3',
         gridRow: '1',
         scrollbarWidth: 'thin',
-        justifyContent: viewportWidth['<=medium'] ? 'space-between' : '',
       }}
     >
       <div
-        className="flex max-w-max flex-nowrap items-center gap-1.5"
+        className="flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
         style={{
-          marginLeft: !viewportWidth['<=medium'] ? 'auto' : '',
+          boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)',
         }}
       >
         {showUndoRedoInToolbar && (
@@ -985,43 +984,43 @@ export default function DocumentEditorToolbar({
             </DropdownMenuButton>
           </DropdownMenu>
         </SimpleDropdown>
-      </div>
-      <SimpleDropdown
-        as={Button}
-        shape="solid"
-        type="button"
-        className="color-norm ml-auto flex gap-2 py-2"
-        style={{
-          border: '0',
-        }}
-        caretClassName="-ml-1"
-        content={<>{isEditable ? <Icon name="pencil" /> : <Icon name="eye" />}</>}
-        hasCaret={!viewportWidth['<=small']}
-        contentProps={DropdownContentProps}
-      >
-        <DropdownMenu>
-          {hasEditAccess && (
+        <SimpleDropdown
+          as={Button}
+          shape="solid"
+          type="button"
+          className="color-norm ml-auto flex gap-2 py-2"
+          style={{
+            border: '0',
+          }}
+          caretClassName="-ml-1"
+          content={<>{isEditable ? <Icon name="pencil" /> : <Icon name="eye" />}</>}
+          hasCaret={!viewportWidth['<=small']}
+          contentProps={DropdownContentProps}
+        >
+          <DropdownMenu>
+            {hasEditAccess && (
+              <DropdownMenuButton
+                className="flex items-center gap-2 text-left text-sm"
+                onClick={() => {
+                  onInteractionModeChange('edit')
+                }}
+              >
+                <Icon name="pencil" size={4.5} />
+                {c('Info').t`Editing`}
+              </DropdownMenuButton>
+            )}
             <DropdownMenuButton
               className="flex items-center gap-2 text-left text-sm"
               onClick={() => {
-                onInteractionModeChange('edit')
+                onInteractionModeChange('view')
               }}
             >
-              <Icon name="pencil" size={4.5} />
-              {c('Info').t`Editing`}
+              <Icon name="eye" size={4.5} />
+              {c('Info').t`Viewing`}
             </DropdownMenuButton>
-          )}
-          <DropdownMenuButton
-            className="flex items-center gap-2 text-left text-sm"
-            onClick={() => {
-              onInteractionModeChange('view')
-            }}
-          >
-            <Icon name="eye" size={4.5} />
-            {c('Info').t`Viewing`}
-          </DropdownMenuButton>
-        </DropdownMenu>
-      </SimpleDropdown>
+          </DropdownMenu>
+        </SimpleDropdown>
+      </div>
     </div>
   )
 }
