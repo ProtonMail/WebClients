@@ -1,5 +1,7 @@
 import { useMemo, forwardRef, ForwardedRef, ComponentPropsWithoutRef } from 'react'
 import clsx from '@proton/utils/clsx'
+import tinycolor from 'tinycolor2'
+import { getAccentColorForUsername } from './getAccentColorForUsername'
 
 function parseHueFromHSLstring(hsl: string): number | undefined {
   const NumberRegex = /(\d+)/
@@ -45,7 +47,7 @@ export const UserAvatar = forwardRef(function UserAvatar(
       return cachedHue
     }
 
-    const hue = Math.floor(Math.random() * 360)
+    const hue = tinycolor(getAccentColorForUsername(name)).toHsl().h
     UserAvatarHueCache.set(name, hue)
     return hue
   }, [color, name])
@@ -61,31 +63,22 @@ export const UserAvatar = forwardRef(function UserAvatar(
         'h-custom w-custom relative flex items-center justify-center overflow-hidden rounded-lg',
         className,
       )}
-      style={{
-        backgroundColor: `hsl(${hue}, 100%, 90%)`,
-        color: `hsl(${hue}, 100%, 10%)`,
-        userSelect: 'none',
-        '--h-custom': '1.75rem',
-        '--w-custom': '1.75rem',
-      }}
+      style={
+        {
+          fontSize: '0.75rem',
+          lineHeight: '1.333',
+          fontWeight: 600,
+          backgroundColor: `hsl(${hue}, 100%, 90%)`,
+          color: `hsl(${hue}, 100%, 10%)`,
+          userSelect: 'none',
+          borderRadius: '0.5rem',
+          '--h-custom': '1.75rem',
+          '--w-custom': '1.75rem',
+        } as React.CSSProperties
+      }
       {...rest}
     >
-      <div
-        style={{
-          zIndex: 1,
-        }}
-      >
-        {letter}
-      </div>
-      <div
-        className="absolute h-full w-full rounded"
-        style={{
-          bottom: '16.5%',
-          left: '16.5%',
-          zIndex: 0,
-          backgroundColor: `hsl(${hue}, 80%, 80%)`,
-        }}
-      />
+      {letter}
     </div>
   )
 })
