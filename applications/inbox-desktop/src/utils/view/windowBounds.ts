@@ -1,8 +1,7 @@
 import { Rectangle, screen } from "electron";
 
 export const ensureWindowIsVisible = (bounds: Rectangle) => {
-    const nearestDisplay = screen.getDisplayMatching(bounds) || screen.getPrimaryDisplay();
-    const { workArea } = nearestDisplay;
+    const { workArea } = screen.getDisplayMatching(bounds) || screen.getPrimaryDisplay();
 
     // Ensure the window is not larger than the work area
     const safeWidth = Math.min(bounds.width, workArea.width);
