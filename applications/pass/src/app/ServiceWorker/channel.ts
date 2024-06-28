@@ -1,7 +1,7 @@
 import type { Action } from 'redux';
 
-import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { MaybePromise } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -23,7 +23,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'fork'; userID: string }
         | { type: 'lock_deleted'; mode: LockMode }
         | { type: 'locked'; mode: LockMode }
-        | { type: 'refresh'; data: RefreshSessionData }
+        | { type: 'session'; data: Partial<AuthSession> }
         | { type: 'unauthorized' }
     );
 
