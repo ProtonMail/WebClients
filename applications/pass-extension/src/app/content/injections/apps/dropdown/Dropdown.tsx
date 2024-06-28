@@ -69,7 +69,7 @@ export const Dropdown: FC = () => {
                                     <div className="flex items-center gap-3 mb-3">
                                         <ListItemIcon icon={PassIconStatus.LOCKED_DROPDOWN} />
                                         <div className="flex-1">
-                                            <span className="block text-ellipsis">{c('Title')
+                                            <span className="block text-ellipsis">{c('Label')
                                                 .t`Unlock ${PASS_APP_NAME}`}</span>
                                             <span className={clsx('block color-weak text-sm text-ellipsis')}>{c('Info')
                                                 .t`Enter your PIN code`}</span>
