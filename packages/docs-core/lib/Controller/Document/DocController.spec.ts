@@ -273,6 +273,24 @@ describe('DocController', () => {
 
       expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(false)
     })
+
+    it('should lock if participation limit reached and user is not owner', () => {
+      controller.doesUserOwnDocument = jest.fn().mockReturnValue(false)
+      controller.participantTracker.isParticipantLimitReached = jest.fn().mockReturnValue(true)
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should not lock if participation limit reached and user is owner', () => {
+      controller.doesUserOwnDocument = jest.fn().mockReturnValue(true)
+      controller.participantTracker.isParticipantLimitReached = jest.fn().mockReturnValue(true)
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
   })
 
   describe('websocket lifecycle', () => {
