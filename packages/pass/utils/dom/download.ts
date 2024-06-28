@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import { logger } from '@proton/pass/utils/logger';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-/** Safari browser extensions don't properly support the HTML download attribute nor createObjectURL */
-export const downloadFileWithSafariFix = (file: File) => {
+/** Safari browser extensions don't properly support the
+ * HTML download attribute or `createObjectURL` */
+export const download = (file: File) => {
     if (BUILD_TARGET === 'safari') {
         const reader = new FileReader();
         reader.readAsDataURL(file);
