@@ -9,6 +9,7 @@ import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 
 export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
+  const textContentRef = useRef('')
   const { controller, setThreadToFocus } = useCommentsContext()
 
   const boxRef = useRef<HTMLDivElement>(null)
@@ -36,7 +37,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
         if (range !== null && boxElem !== null && parentContainer) {
           const parentScrollTop = parentContainer.scrollTop
 
-          const editorRect = rootElement!.getBoundingClientRect()
+          const editorRect = rootElement.getBoundingClientRect()
           const parentRect = parentContainer.getBoundingClientRect()
 
           const { top } = range.getBoundingClientRect()
@@ -84,12 +85,33 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
   }, [editor, selectionState.container, updateLocation])
 
   useEffect(() => {
+    const clickOutsideHandler = (event: MouseEvent) => {
+      if (!boxRef.current) {
+        return
+      }
+      if (boxRef.current.contains(event.target as Node)) {
+        return
+      }
+      if (textContentRef.current.length === 0) {
+        cancelAddComment()
+      }
+      event.preventDefault()
+      event.stopPropagation()
+      if (confirm(c('Confirm').t`Discard comment?`)) {
+        cancelAddComment()
+      }
+    }
+
+    document.addEventListener('pointerdown', clickOutsideHandler)
+
     window.addEventListener('resize', updateLocation)
 
     return () => {
+      document.removeEventListener('pointerdown', clickOutsideHandler)
+
       window.removeEventListener('resize', updateLocation)
     }
-  }, [updateLocation])
+  }, [cancelAddComment, updateLocation])
 
   const onSubmit = useCallback(
     (content: string) => {
@@ -119,6 +141,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
         placeholder={c('Placeholder').t`Add a comment...`}
         onSubmit={onSubmit}
         onCancel={cancelAddComment}
+        onTextContentChange={(textContent) => (textContentRef.current = textContent)}
         buttons={(canSubmit, submitComment) => (
           <ToolbarButton
             className="bg-primary rounded-full p-1"
