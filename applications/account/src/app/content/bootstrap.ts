@@ -98,6 +98,16 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(userSettingsThunk({ cache: 'no-cache' })).catch(noop);
         }
 
+        if (persistedState?.state?.user?.value && !user) {
+            // Force fetching user in background in case it is persisted.
+            // We need to keep the user fresh, because the payments migration relies on the user being up-to-date,
+            // and the event loop isn't always enough in this particular case.
+            // Probably, this workaround can be disabled after the payments migration is fully completed,
+            // e.g. no payments code rely on the user being up-to-date. The condition might be softer,
+            // please check with the payments team.
+            dispatch(userThunk({ cache: 'no-cache' })).catch(noop);
+        }
+
         await unleashPromise;
         await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
