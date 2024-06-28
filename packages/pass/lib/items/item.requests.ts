@@ -19,7 +19,6 @@ import type {
     ItemType,
     ItemUpdateFlagsRequest,
     Maybe,
-    MaybeNull,
     PublicLinkCreateRequest,
     SecureLink,
     SecureLinkItem,
@@ -410,13 +409,9 @@ export const getSecureLink = async (
     };
 };
 
-export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promise<Maybe<SecureLinkItem>> => {
+export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promise<SecureLinkItem> => {
     try {
-        const { PublicLinkContent } = await api({
-            url: `pass/v1/public_link/content/${token}`,
-            method: 'get',
-        });
-
+        const { PublicLinkContent } = await api({ url: `pass/v1/public_link/content/${token}`, method: 'get' });
         const decryptedContents = await PassCrypto.openSecureLink({ linkKey, publicLinkContent: PublicLinkContent! });
 
         return {
@@ -429,10 +424,10 @@ export const openSecureLink = async ({ token, linkKey }: SecureLinkQuery): Promi
     }
 };
 
-export const getSecureLinks = async (): Promise<MaybeNull<SecureLink[]>> => {
+export const getSecureLinks = async (): Promise<SecureLink[]> => {
     const { PublicLinks } = await api({ url: 'pass/v1/public_link', method: 'get' });
 
-    if (!PublicLinks) return null;
+    if (!PublicLinks) return [];
 
     return Promise.all(
         PublicLinks.map(async (secureLink) => {
@@ -460,3 +455,5 @@ export const removeSecureLink = async (linkId: string): Promise<string> => {
     await api({ url: `pass/v1/public_link/${linkId}`, method: 'delete' });
     return linkId;
 };
+
+export const removeInactiveSecureLinks = () => api({ url: 'pass/v1/public_link/inactive', method: 'delete' });

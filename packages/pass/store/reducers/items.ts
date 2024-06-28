@@ -32,6 +32,7 @@ import {
     itemMoveIntent,
     itemMoveSuccess,
     itemPinSuccess,
+    itemRemoveInactiveSecureLinks,
     itemRemoveSecureLink,
     itemRestoreFailure,
     itemRestoreIntent,
@@ -422,9 +423,7 @@ const draftsReducer: Reducer<Draft[]> = (state = [], action) => {
 };
 
 const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (state = {}, action) => {
-    if (itemGetSecureLinks.success.match(action)) {
-        if (!action.payload) return {};
-
+    if (or(itemGetSecureLinks.success.match, itemRemoveInactiveSecureLinks.success.match)(action)) {
         return action.payload.reduce<IndexedByShareIdAndItemId<SecureLink[]>>((acc, link) => {
             const { shareId, itemId } = link;
             const secureLink = acc[shareId]?.[itemId];
