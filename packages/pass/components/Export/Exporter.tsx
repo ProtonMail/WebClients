@@ -7,10 +7,10 @@ import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
-import { downloadFileWithSafariFix } from '@proton/pass/lib/export/downloadFilesWithSafariFix';
 import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import type { MaybePromise } from '@proton/pass/types';
+import { download } from '@proton/pass/utils/dom/download';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -48,8 +48,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                     onAbort: () => throwError({ name: 'AuthConfirmAbortError' }),
                 });
 
-                const file = await exportData(values);
-                downloadFileWithSafariFix(file);
+                download(await exportData(values));
 
                 form.resetForm({ values: { ...form.values, passphrase: '' } });
                 void form.validateForm();
