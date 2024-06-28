@@ -41,8 +41,12 @@ export const RecipientsDataItem = ({
     return (
         <div className="w-full">
             <ul className="unstyled my-1 text-lg flex gap-3">
+                {/*
+                 * On receive, filter will remove all addresses that do not belong to user.
+                 * On send, filter will remove all addresses that belong to user. Current limitation is, when sending to itself, it will show empty To
+                 */}
                 {tx.networkData.outputs
-                    .filter((o) => !isSentTx || !o.is_mine)
+                    .filter((o) => (isSentTx && !o.is_mine) || (!isSentTx && o.is_mine))
                     .map((output, index) => {
                         const recipient = getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses);
 
