@@ -8,8 +8,9 @@ import { useChargebeeContext } from '@proton/components/payments/client-extensio
 import {
     Autopay,
     PAYMENT_METHOD_TYPES,
+    PaymentMethodCardDetails,
     isV5PaymentToken,
-    onSessionMigrationPaymentsVersion,
+    paymentMethodPaymentsVersion,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
@@ -33,7 +34,7 @@ import RenewToggle, { useRenewToggle } from './RenewToggle';
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card?: CardModel;
     renewState?: Autopay;
-    paymentMethodId?: string;
+    paymentMethod?: PaymentMethodCardDetails;
     onMethodAdded?: () => void;
     enableRenewToggle?: boolean;
 }
@@ -41,7 +42,7 @@ interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
 const EditCardModal = ({
     card: existingCard,
     renewState,
-    paymentMethodId,
+    paymentMethod,
     onMethodAdded,
     enableRenewToggle = true,
     ...rest
@@ -107,6 +108,7 @@ const EditCardModal = ({
         },
     });
 
+    const paymentMethodId = paymentMethod?.ID;
     const process = async () => {
         try {
             await paymentFacade.selectedProcessor?.processPaymentToken();
@@ -182,7 +184,7 @@ const EditCardModal = ({
                                         {
                                             Autopay: result,
                                         },
-                                        onSessionMigrationPaymentsVersion(user, subscription)
+                                        paymentMethodPaymentsVersion(paymentMethod)
                                     )
                                 );
 
