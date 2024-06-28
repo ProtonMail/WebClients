@@ -101,7 +101,7 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                     )}
 
                     {drawerData.data.kind === 'wallet-receive' && (
-                        <WalletReceiveContent account={drawerData.data.account} />
+                        <WalletReceiveContent wallet={drawerData.data.wallet} account={drawerData.data.account} />
                     )}
                 </Drawer>
             )}

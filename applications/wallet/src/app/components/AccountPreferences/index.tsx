@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    usePopperAnchor,
-} from '@proton/components/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import Icon from '@proton/components/components/icon/Icon';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Input } from '../../atoms';

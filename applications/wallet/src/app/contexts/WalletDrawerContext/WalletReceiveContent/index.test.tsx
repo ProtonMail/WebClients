@@ -51,7 +51,7 @@ describe('WalletReceiveContent', () => {
                 paymentLink: undefined,
             });
 
-            render(<WalletReceiveContent account={testAccount} />);
+            render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
         });
 
         it('should display a loader', () => {
@@ -79,7 +79,7 @@ describe('WalletReceiveContent', () => {
                 loadingPaymentLink: true,
             });
 
-            render(<WalletReceiveContent account={testAccount} />);
+            render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
         });
 
         it('should display a loader', () => {
@@ -102,7 +102,7 @@ describe('WalletReceiveContent', () => {
 
     describe('when user clicks on `Add amount`', () => {
         it('should call `showAmountInput`', async () => {
-            render(<WalletReceiveContent account={testAccount} />);
+            render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
 
             const button = screen.getByTestId('show-amount-input-button');
             await fireEvent.click(button);
@@ -119,7 +119,7 @@ describe('WalletReceiveContent', () => {
                 shouldShowAmountInput: true,
             });
 
-            render(<WalletReceiveContent account={testAccount} />);
+            render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
         });
 
         it('display amount input', async () => {
@@ -150,7 +150,7 @@ describe('WalletReceiveContent', () => {
                 paymentLink: bitcoinURI,
             });
 
-            render(<WalletReceiveContent account={testAccount} />);
+            render(<WalletReceiveContent wallet={testWallet} account={testAccount} />);
         });
 
         it('should display QRCode containing serialized payment info', () => {

@@ -189,7 +189,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
 
     return (
         <>
-            <div className="flex flex-column max-w-full justify-center">
+            <div className="relative flex flex-column max-w-full justify-center">
                 <h2 className="text-center mb-8 text-semibold">{c('Wallet send')
                     .t`Who are you sending Bitcoin to?`}</h2>
 

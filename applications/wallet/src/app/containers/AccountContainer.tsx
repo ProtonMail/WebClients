@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -20,17 +20,24 @@ import { useBitcoinBlockchainContext } from '../contexts';
 import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
 import { getThemeForWallet } from '../utils';
 
+// Used to reset bitcoin buy modal at the end of the process
+const generateBitcoinBuyKey = () => generateUID(`bitcoin-buy`);
+
+// Used to reset bitcoin send modal at the end of the process
+const generateBitcoinSendKey = () => generateUID(`bitcoin-send`);
+
 export const AccountContainer = () => {
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
     const history = useHistory();
 
-    // Used to reset bitcoin send modal at the end of the process
-    const generateBitcoinSendKey = () => generateUID('bitcoin-send');
     const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
 
-    // Used to reset bitcoin buy modal at the end of the process
-    const generateBitcoinBuyKey = () => generateUID('bitcoin-buy');
-    const [bitcoinBuyKey, setBitcoinBuyKey] = useState(generateBitcoinSendKey());
+    const [bitcoinBuyKey, setBitcoinBuyKey] = useState(generateBitcoinBuyKey());
+
+    useEffect(() => {
+        setBitcoinSendKey(generateBitcoinSendKey());
+        setBitcoinBuyKey(generateBitcoinBuyKey());
+    }, [walletId, accountId]);
 
     const [walletSendModal, setWalletSendModal] = useModalState();
     const [walletBuyModal, setWalletBuyModal] = useModalState();
@@ -103,7 +110,7 @@ export const AccountContainer = () => {
                         disabled={isSyncingChainData}
                         onClickSend={() => setWalletSendModal(true)}
                         onClickReceive={() => {
-                            openDrawer({ account: walletAccount, kind: 'wallet-receive', theme });
+                            openDrawer({ kind: 'wallet-receive', account: walletAccount, wallet, theme });
                         }}
                         onClickBuy={() => {
                             setWalletBuyModal(true);
@@ -114,7 +121,7 @@ export const AccountContainer = () => {
                         apiWalletData={wallet}
                         apiAccount={walletAccount}
                         onClickReceive={() => {
-                            openDrawer({ account: walletAccount, kind: 'wallet-receive', theme });
+                            openDrawer({ kind: 'wallet-receive', account: walletAccount, wallet, theme });
                         }}
                         onClickBuy={() => {
                             setWalletBuyModal(true);
@@ -146,6 +153,7 @@ export const AccountContainer = () => {
 
                             <BitcoinBuyModal
                                 key={bitcoinBuyKey}
+                                wallet={wallet}
                                 modal={walletBuyModal}
                                 account={walletAccount}
                                 onDone={() => {
