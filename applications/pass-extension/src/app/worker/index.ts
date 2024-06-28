@@ -20,7 +20,12 @@ if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
     const globalScope = self as any as ServiceWorkerGlobalScope;
 
     const localeChunks = Object.keys(config.LOCALES).map((locale: string) => `chunk.locales/${locale}-json.js`);
-    const cryptoChunks = ['chunk.crypto-worker-api.js'];
+
+    const cryptoChunks = [
+        'chunk.crypto-worker-api.js',
+        'chunk.node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs.js',
+    ];
+
     const chunks = localeChunks.concat(cryptoChunks);
 
     globalScope.oninstall = async () => {

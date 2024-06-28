@@ -2,14 +2,21 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type Lock, type LockCreateDTO, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
+import type { ExtraPasswordDTO, PasswordConfirmDTO } from '@proton/pass/lib/auth/password';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { lockCreateRequest, unlockRequest } from '@proton/pass/store/actions/requests';
+import {
+    extraPasswordToggleRequest,
+    lockCreateRequest,
+    passwordConfirmRequest,
+    unlockRequest,
+} from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ClientEndpoint } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -110,5 +117,52 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
                 })(),
                 error,
             })({ payload: null, error }),
+    },
+});
+
+export const passwordConfirm = requestActionsFactory<PasswordConfirmDTO, boolean>('auth::password::confirm')({
+    requestId: passwordConfirmRequest,
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: getErrorMessage(error),
+                error: null,
+            })({ payload }),
+    },
+});
+
+export const extraPasswordToggle = requestActionsFactory<ExtraPasswordDTO, boolean>('auth::extra-password::toggle')({
+    requestId: extraPasswordToggleRequest,
+    intent: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: payload.enabled
+                    ? c('Info').t`Registering extra password...`
+                    : c('Info').t`Removing extra password...`,
+            })({ payload }),
+    },
+    success: {
+        prepare: (enabled) =>
+            pipe(
+                withCache,
+                withSettings,
+                withNotification({
+                    type: 'success',
+                    text: enabled
+                        ? c('Info').t`Extra password successfuly created`
+                        : c('Info').t`Extra password successfuly removed`,
+                })
+            )({ payload: enabled }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: getErrorMessage(error),
+                error: null,
+            })({ payload }),
     },
 });

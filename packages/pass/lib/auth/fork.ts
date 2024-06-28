@@ -63,6 +63,7 @@ export const requestFork = ({
 };
 
 export type ConsumeForkParameters = ReturnType<typeof getConsumeForkParameters>;
+export type ConsumeForkOptions = { api: Api; apiUrl?: string; payload: ConsumeForkPayload };
 export type ConsumeForkPayload =
     | {
           mode: 'sso';
@@ -81,8 +82,6 @@ export type ConsumeForkPayload =
            * when consuming a "secure" extension fork */
       };
 
-export type ConsumeForkOptions = { api: Api; apiUrl?: string; payload: ConsumeForkPayload };
-
 /**
  * If `keyPassword` is not provided to `ConsumeForkOptions`, it will attempt to recover it from
  * the `Payload` property of the `PullForkResponse`. `keyPassword` will always be omitted when
@@ -90,7 +89,7 @@ export type ConsumeForkOptions = { api: Api; apiUrl?: string; payload: ConsumeFo
  * extension messaging where `keyPassword` can safely be passed.
  * ⚠️ Only validates the fork state in SSO mode.
  */
-export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSession> => {
+export const consumeFork = async (options: ConsumeForkOptions): Promise<{ session: AuthSession; Scopes: string[] }> => {
     const { payload, apiUrl, api } = options;
 
     const validFork =
@@ -103,7 +102,8 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
     const pullForkParams = pullForkSession(payload.selector);
     pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
 
-    const { UID, RefreshToken, LocalID, Payload } = await api<PullForkResponse>(pullForkParams);
+    const { UID, RefreshToken, LocalID, Payload, Scopes } = await api<PullForkResponse>(pullForkParams);
+
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
@@ -135,7 +135,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
                   }
               })();
 
-    return {
+    const session: AuthSession = {
         ...data,
         AccessToken: refresh.AccessToken,
         LocalID,
@@ -144,6 +144,8 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
         UID,
         UserID: User.ID,
     };
+
+    return { session, Scopes };
 };
 
 export enum AccountForkResponse {
