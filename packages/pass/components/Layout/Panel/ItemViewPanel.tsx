@@ -162,11 +162,24 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                             <QuickActionsDropdown key="share-item-button" color="weak" shape="solid" icon="users-plus">
                                 {secureLinkEnabled && type !== 'alias' && (
                                     <DropdownMenuButton
-                                        onClick={handleSecureLinkClick}
+                                        onClick={
+                                            plan === UserPassPlan.FREE
+                                                ? () =>
+                                                      spotlight.setUpselling({
+                                                          type: 'pass-plus',
+                                                          upsellRef: UpsellRef.FREE_TRIAL,
+                                                      })
+                                                : handleSecureLinkClick
+                                        }
                                         title={c('Action').t`Share secure link`}
                                         label={c('Action').t`Via secure link`}
                                         icon="link"
                                         disabled={!owner}
+                                        extra={
+                                            plan === UserPassPlan.FREE && (
+                                                <Icon name="upgrade" size={3} color="var(--primary)" />
+                                            )
+                                        }
                                     />
                                 )}
                                 {sharingEnabled && !shared && (

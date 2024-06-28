@@ -15,6 +15,7 @@ import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/Secure
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
@@ -42,7 +43,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
-    const { filters, matchTrash } = useNavigation();
+    const { navigate, filters, matchTrash } = useNavigation();
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
@@ -74,7 +75,14 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-4">
-                {secureLinkEnabled && <SecureLinkButton />}
+                {secureLinkEnabled && (
+                    <SecureLinkButton
+                        className="rounded"
+                        activeClassName="color-primary bg-weak"
+                        parentClassName="mx-3"
+                        onClick={() => navigate(getLocalPath('secure-links'))}
+                    />
+                )}
                 {canLock && (
                     <DropdownMenuButton
                         onClick={() => authService.lock(lockMode, { broadcast: true, soft: false })}
