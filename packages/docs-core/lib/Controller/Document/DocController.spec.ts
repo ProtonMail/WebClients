@@ -1,6 +1,5 @@
 import { DriveCompat, NodeMeta } from '@proton/drive-store'
 import { DocController } from './DocController'
-import { UserService } from '../../Services/User/UserService'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
 import { LoadDocument } from '../../UseCase/LoadDocument'
@@ -33,9 +32,6 @@ describe('DocController', () => {
   beforeEach(() => {
     controller = new DocController(
       {} as NodeMeta,
-      {
-        user: { Email: 'foo@bar.com' },
-      } as jest.Mocked<UserService>,
       {} as jest.Mocked<DriveCompat>,
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<SeedInitialCommit>,
