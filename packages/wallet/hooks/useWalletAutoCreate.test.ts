@@ -156,7 +156,8 @@ describe('useWalletAutoCreate', () => {
                 expect.any(String),
                 expect.any(String),
                 expect.any(String),
-                undefined
+                undefined,
+                1
             );
 
             await waitFor(() => expect(mockedCreateWalletAccount).toHaveBeenCalled());
