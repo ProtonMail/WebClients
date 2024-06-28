@@ -2,6 +2,5 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "types": ["webpack-env", "jest", "@webgpu/types"]
-    },
-    "exclude": ["@proton/wallet/tests"]
+    }
 }
