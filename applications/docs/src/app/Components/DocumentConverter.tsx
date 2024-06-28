@@ -74,7 +74,7 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props)
 
   if (isConversionFailed || isConverting || contents === null || node === null || isLoading) {
     return (
-      <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+      <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         {(isConverting || isLoading) && <CircleLoader size="large" />}
         <div className="text-center">
           {isConversionFailed &&
