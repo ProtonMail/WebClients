@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { WasmAccount, WasmDerivationPath, WasmMnemonic, WasmWallet, WasmWordCount } from '@proton/andromeda';
 import { useGetAddresses } from '@proton/components/hooks/useAddresses';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useGetOrganization } from '@proton/components/hooks/useOrganization';
 import { useUser } from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
@@ -30,8 +31,10 @@ import {
 export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPilot?: boolean } = {}) => {
     const getUserKeys = useGetUserKeys();
     const getBitcoinNetwork = useGetBitcoinNetwork();
+    const getOrganization = useGetOrganization();
     const getUserWalletSettings = useGetUserWalletSettings();
     const getAddresses = useGetAddresses();
+
     const [user] = useUser();
     const authentication = useAuthentication();
 
@@ -77,21 +80,21 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
                 undefined
             )
             .then(async ({ Wallet }) => {
-                const derivationPath = WasmDerivationPath.fromParts(
-                    purposeByScriptType[DEFAULT_SCRIPT_TYPE],
-                    network,
-                    FIRST_INDEX
-                );
+                const derivationPathParts = [purposeByScriptType[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
 
                 try {
                     const account = await walletApi.wallet.createWalletAccount(
                         Wallet.ID,
-                        derivationPath,
+                        WasmDerivationPath.fromParts(...derivationPathParts),
                         encryptedFirstAccountLabel,
                         DEFAULT_SCRIPT_TYPE
                     );
 
-                    const wasmAccount = new WasmAccount(wasmWallet, DEFAULT_SCRIPT_TYPE, derivationPath);
+                    const wasmAccount = new WasmAccount(
+                        wasmWallet,
+                        DEFAULT_SCRIPT_TYPE,
+                        WasmDerivationPath.fromParts(...derivationPathParts)
+                    );
 
                     await walletApi.wallet.updateWalletAccountFiatCurrency(
                         Wallet.ID,
@@ -131,13 +134,21 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
     };
 
     const shouldCreateWallet = async () => {
+        const organization = await getOrganization();
+        const isUserCompatible = user.isFree || organization?.MaxMembers === 1;
+
+        console.log({ higherLevelPilot, isUserCompatible });
+        if (!higherLevelPilot || !isUserCompatible) {
+            return false;
+        }
+
         const wallets = await walletApi.wallet.getWallets();
         return !wallets[0].length;
     };
 
     useEffect(() => {
         const run = async () => {
-            if (higherLevelPilot && (await shouldCreateWallet())) {
+            if (await shouldCreateWallet()) {
                 await autoCreateWallet();
             }
         };
