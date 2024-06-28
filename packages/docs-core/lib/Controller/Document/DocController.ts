@@ -51,6 +51,7 @@ import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { DocSizeTracker } from './SizeTracker'
 import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
+import { DocParticipantTracker } from './DocParticipantTracker'
 
 const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
@@ -80,6 +81,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   sizeTracker: DocSizeTracker = new DocSizeTracker()
 
   public userAddress?: string
+  readonly participantTracker = new DocParticipantTracker(this.eventBus)
 
   constructor(
     private readonly nodeMeta: NodeMeta,
@@ -367,6 +369,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return
     }
 
+    if (this.participantTracker.isParticipantLimitReached() && !this.doesUserOwnDocument()) {
+      this.logger.info('Max users. Changing editing locked to true')
+      void this.editorInvoker.changeLockedState(true)
+
+      return
+    }
+
     if (
       this.doesUserHaveEditingPermissions() &&
       !this.isExperiencingErroredSync &&
@@ -387,6 +396,14 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     return this.entitlements.role.canEdit()
+  }
+
+  doesUserOwnDocument(): boolean {
+    if (!this.entitlements) {
+      return false
+    }
+
+    return this.entitlements.role.isAdmin()
   }
 
   get commitId(): string | undefined {
@@ -778,6 +795,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
+    this.participantTracker.updateParticipantsFromUserStates(states)
+
+    this.reloadEditingLockedState()
+
     this.eventBus.publish<DocsAwarenessStateChangeData>({
       type: DocAwarenessEvent.AwarenessStateChange,
       payload: {
