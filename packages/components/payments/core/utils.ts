@@ -2,7 +2,7 @@ import { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { BillingPlatform, ChargebeeEnabled, Subscription, User } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from './constants';
-import { TokenPaymentMethod, V5PaymentToken } from './interface';
+import { MethodStorage, SavedPaymentMethod, TokenPaymentMethod, V5PaymentToken } from './interface';
 
 export const toV5PaymentToken = (PaymentToken: string): V5PaymentToken => {
     return {
@@ -56,4 +56,8 @@ export function onSessionMigrationChargebeeStatus(
 
 export function onSessionMigrationPaymentsVersion(user: User, subscription: Subscription | undefined): PaymentsVersion {
     return onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.INHOUSE_FORCED ? 'v4' : 'v5';
+}
+
+export function paymentMethodPaymentsVersion(method?: SavedPaymentMethod): PaymentsVersion {
+    return method?.External === MethodStorage.EXTERNAL ? 'v5' : 'v4';
 }
