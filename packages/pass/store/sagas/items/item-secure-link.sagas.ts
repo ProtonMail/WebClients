@@ -1,9 +1,16 @@
 import { select } from 'redux-saga/effects';
 
-import { getSecureLink, getSecureLinks, openSecureLink, removeSecureLink } from '@proton/pass/lib/items/item.requests';
+import {
+    getSecureLink,
+    getSecureLinks,
+    openSecureLink,
+    removeInactiveSecureLinks,
+    removeSecureLink,
+} from '@proton/pass/lib/items/item.requests';
 import {
     itemCreateSecureLink,
     itemGetSecureLinks,
+    itemRemoveInactiveSecureLinks,
     itemRemoveSecureLink,
     itemViewSecureLink,
 } from '@proton/pass/store/actions';
@@ -40,4 +47,12 @@ const secureLinksGet = createRequestSaga({
     call: getSecureLinks,
 });
 
-export default [secureLinkCreate, secureLinkRemove, secureLinkOpen, secureLinksGet];
+const secureLinksRemoveInactive = createRequestSaga({
+    actions: itemRemoveInactiveSecureLinks,
+    call: async () => {
+        await removeInactiveSecureLinks();
+        return getSecureLinks();
+    },
+});
+
+export default [secureLinkCreate, secureLinkRemove, secureLinkOpen, secureLinksGet, secureLinksRemoveInactive];

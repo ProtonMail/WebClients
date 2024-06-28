@@ -18,6 +18,7 @@ import {
     itemsBulkMoveRequest,
     itemsBulkRestoreRequest,
     itemsBulkTrashRequest,
+    removeInactiveLinksRequest,
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
@@ -37,8 +38,6 @@ import type {
     ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
-    Maybe,
-    MaybeNull,
     SecureLink,
     SecureLinkCreationDTO,
     SecureLinkDeleteDTO,
@@ -538,7 +537,7 @@ export const itemHistoryFailure = createAction(
     )
 );
 
-export const itemGetSecureLinks = requestActionsFactory<void, MaybeNull<SecureLink[]>>('item::secure-link::get')({
+export const itemGetSecureLinks = requestActionsFactory<void, SecureLink[]>('item::secure-link::get')({
     requestId: itemGetSecureLinksRequest,
 });
 
@@ -549,9 +548,7 @@ export const itemCreateSecureLink = requestActionsFactory<SecureLinkCreationDTO,
     success: { config: { data: true } },
 });
 
-export const itemViewSecureLink = requestActionsFactory<SecureLinkQuery, Maybe<SecureLinkItem>>(
-    'item::secure-link::view'
-)({
+export const itemViewSecureLink = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('item::secure-link::view')({
     requestId: ({ token }) => itemViewSecureLinkRequest(token),
     success: { config: { data: true } },
     failure: {
@@ -590,6 +587,35 @@ export const itemRemoveSecureLink = requestActionsFactory<SecureLinkDeleteDTO, S
                 type: 'error',
                 text: c('Error')
                     .t`There was an error while removing the secure link. Please try again in a few minutes.`,
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const itemRemoveInactiveSecureLinks = requestActionsFactory<void, SecureLink[]>(
+    'item::secure-links::remove::inactive'
+)({
+    requestId: removeInactiveLinksRequest,
+    intent: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Removing all inactive secure links...`,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`All inactive secure links were removed`,
+            })({ payload }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Inactive secure links could not be removed.`,
                 error,
             })({ payload: null }),
     },
