@@ -8,6 +8,7 @@ import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import {
     mockUseAuthentication,
     mockUseGetAddresses,
+    mockUseGetOrganization,
     mockUseGetUserKeys,
     mockUseUser,
 } from '@proton/testing/lib/vitest';
@@ -76,6 +77,7 @@ describe('useWalletAutoCreate', () => {
         mockUseGetUserKeys(await getUserKeys());
         mockUseGetUserWalletSettings();
         mockUseUser();
+        mockUseGetOrganization();
         mockUseAuthentication({ getPassword: vi.fn(() => 'testtest') });
 
         addressWithKey = await getAddressKey();
@@ -103,6 +105,24 @@ describe('useWalletAutoCreate', () => {
 
         it('should not autocreate wallet', async () => {
             renderHook(() => useWalletAutoCreate({ higherLevelPilot: false }));
+
+            // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
+            await wait(100);
+
+            expect(mockedGetWallets).not.toHaveBeenCalled();
+            expect(mockedCreateWallet).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('when user is not free and is part of org with > 1 max member', () => {
+        beforeEach(() => {
+            mockedGetWallets.mockResolvedValue([[]]);
+            mockUseUser([{ isFree: false }]);
+            mockUseGetOrganization({ MaxMembers: 3 });
+        });
+
+        it('should not autocreate wallet', async () => {
+            renderHook(() => useWalletAutoCreate());
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
