@@ -10,7 +10,12 @@ import {
   usePopperAnchor,
 } from '@proton/components'
 import { useCallback, useEffect, useState } from 'react'
-import { DocControllerInterface, PostApplicationError } from '@proton/docs-core'
+import {
+  DocControllerEvent,
+  DocControllerEventPayloads,
+  DocControllerInterface,
+  PostApplicationError,
+} from '@proton/docs-core'
 import { useHistoryViewerModal } from '../HistoryViewer'
 import { c } from 'ttag'
 import { useApplication } from '../../Containers/ApplicationProvider'
@@ -83,6 +88,12 @@ const DocumentTitleDropdown = ({
     [controller],
   )
 
+  useEffect(() => {
+    return application.eventBus.addEventCallback<DocControllerEventPayloads['DidLoadDocumentTitle']>((payload) => {
+      setTitle(payload.title)
+    }, DocControllerEvent.DidLoadDocumentTitle)
+  }, [application.eventBus])
+
   const onNewDocument = useCallback(() => {
     void controller?.createNewDocument()
   }, [controller])
@@ -99,16 +110,6 @@ const DocumentTitleDropdown = ({
         versionHistory: controller.getVersionHistory(),
       })
     }
-
-    if (action === 'download') {
-      void controller.initialize().then(() => {
-        void controller.exportAndDownload('docx')
-      })
-    }
-
-    return controller.addChangeObserver((doc) => {
-      setTitle(doc.name)
-    })
   }, [controller, action, showHistoryModal])
 
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
