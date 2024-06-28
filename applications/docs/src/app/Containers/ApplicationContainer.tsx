@@ -17,6 +17,8 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 
 function ApplicationContainer() {
+  import('../tailwind.scss')
+
   const api = useApi()
   const [user] = useUser()
   const driveCompat = useDriveCompat()
@@ -213,7 +215,7 @@ function Content({
 }) {
   if (isCreatingNewDocument) {
     return (
-      <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+      <div className="flex-column flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
         <div className="text-center">{c('Info').t`Creating new document...`}</div>
       </div>
