@@ -108,7 +108,7 @@ const getNameFromPlan = (plan?: PLANS) => {
     if ([PLANS.MAIL_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS].includes(plan)) {
         return 'Professional';
     }
-    if ([PLANS.MAIL, PLANS.VPN, PLANS.PASS_PLUS, PLANS.DRIVE, PLANS.VPN_PASS_BUNDLE].includes(plan)) {
+    if ([PLANS.MAIL, PLANS.VPN, PLANS.VPN2024, PLANS.PASS_PLUS, PLANS.DRIVE, PLANS.VPN_PASS_BUNDLE].includes(plan)) {
         return 'Plus';
     }
 };
