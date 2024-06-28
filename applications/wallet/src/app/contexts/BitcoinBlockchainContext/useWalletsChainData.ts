@@ -21,6 +21,7 @@ import {
     AccountIdByDerivationPathAndWalletId,
     WalletChainDataByWalletId,
 } from '../../types';
+import { removeMasterPrefix } from '../../utils';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
 
@@ -255,7 +256,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 ...acc,
                 [walletId]: Object.entries(walletChainData?.accounts ?? {}).reduce(
                     (acc, [accountId, accountData]) =>
-                        accountData ? { ...acc, [accountData.derivationPath]: accountId } : acc,
+                        accountData ? { ...acc, [removeMasterPrefix(accountData.derivationPath)]: accountId } : acc,
                     {}
                 ),
             }),

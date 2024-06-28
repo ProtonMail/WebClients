@@ -18,13 +18,13 @@ const accounts = {
         accounts: {
             '8': {
                 account: expect.any(WasmAccount),
-                derivationPath: "m/84'/0'/0'",
+                derivationPath: "84'/0'/0'",
                 key: 'wallet-sync-1',
                 scriptType: 3,
             },
             '9': {
                 account: expect.any(WasmAccount),
-                derivationPath: "m/86'/0'/0'",
+                derivationPath: "86'/0'/0'",
                 key: 'wallet-sync-2',
                 scriptType: 4,
             },
@@ -35,13 +35,13 @@ const accounts = {
         accounts: {
             '10': {
                 account: expect.any(WasmAccount),
-                derivationPath: "m/49'/0'/0'",
+                derivationPath: "49'/0'/0'",
                 key: 'wallet-sync-3',
                 scriptType: 2,
             },
             '11': {
                 account: expect.any(WasmAccount),
-                derivationPath: "m/84'/0'/0'",
+                derivationPath: "84'/0'/0'",
                 key: 'wallet-sync-4',
                 scriptType: 3,
             },
@@ -52,7 +52,7 @@ const accounts = {
         accounts: {
             '12': {
                 account: expect.any(WasmAccount),
-                derivationPath: "m/84'/0'/0'",
+                derivationPath: "84'/0'/0'",
                 key: 'wallet-sync-5',
                 scriptType: 3,
             },
