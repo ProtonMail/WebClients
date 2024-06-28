@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { first } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiFiatCurrency, WasmApiWalletAccount } from '@proton/andromeda';
@@ -8,29 +9,38 @@ import Href from '@proton/atoms/Href/Href';
 import Copy from '@proton/components/components/button/Copy';
 import QRCode from '@proton/components/components/image/QRCode';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import walletSendSvg from '@proton/styles/assets/img/illustrations/wallet-send.svg';
+import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, CoreButton, CoreButtonLike } from '../../../atoms';
+import { Button, CoreButton, Select } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import { BitcoinViaEmailNote } from '../../../atoms/BitcoinViaEmailNote';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
-import { Tip } from '../../../atoms/Tip';
+import { WalletAccountItem } from '../../../components/WalletAccountSelector';
 import { useWalletAccountExchangeRate } from '../../../hooks/useWalletAccountExchangeRate';
 import { useFiatCurrencies, useGetExchangeRate } from '../../../store/hooks';
 import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
+import { getAccountWithChainDataFromManyWallets } from '../../../utils';
+import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 interface Props {
-    account: WasmApiWalletAccount;
+    wallet: IWasmApiWalletData;
+    account?: WasmApiWalletAccount;
 }
 
-export const WalletReceiveContent = ({ account }: Props) => {
-    const [defaultExchangeRate] = useWalletAccountExchangeRate(account);
+export const WalletReceiveContent = ({ wallet, account }: Props) => {
+    const defaultAccount = first(wallet.WalletAccounts);
+
+    const [selectedAccount, setSelectedAccount] = useState(account ?? defaultAccount);
+    const [defaultExchangeRate] = useWalletAccountExchangeRate(selectedAccount);
+
     const [settings] = useUserWalletSettings();
     const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
     const getExchangeRate = useGetExchangeRate();
     const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
     const [isOpen, setOpen] = useState(false);
+
+    const { walletsChainData } = useBitcoinBlockchainContext();
 
     const [currencies] = useFiatCurrencies();
 
@@ -52,7 +62,7 @@ export const WalletReceiveContent = ({ account }: Props) => {
 
         showAmountInput,
         handleChangeAmount,
-    } = useBitcoinReceive(isOpen, account);
+    } = useBitcoinReceive(isOpen, selectedAccount);
 
     const handleChange = async (currency?: WasmApiFiatCurrency) => {
         if (currency) {
@@ -76,15 +86,12 @@ export const WalletReceiveContent = ({ account }: Props) => {
                 </div>
             </div>
 
-            <Tip
-                className={'mb-3'}
-                image={walletSendSvg}
-                text={c('Wallet Receive').t`Other ${WALLET_APP_NAME} users can send Bitcoin to your email.`}
-                action={
-                    <CoreButtonLike shape="underline" className="unstyled p-0 font-semibold">{c('Wallet Receive')
-                        .t`Discover Bitcoin Via Email`}</CoreButtonLike>
-                }
-            />
+            {selectedAccount && (
+                <BitcoinViaEmailNote
+                    isActive={!!selectedAccount?.Addresses.length}
+                    email={selectedAccount?.Addresses?.[0]?.Email}
+                />
+            )}
 
             <div className="flex flex-column items-center">
                 {/* Payment info data */}
@@ -94,12 +101,47 @@ export const WalletReceiveContent = ({ account }: Props) => {
                         const paymentLinkUri = paymentLink.toUri();
 
                         return (
-                            <div className="bg-weak rounded-xl p-6 flex flex-column items-center">
-                                <div className="w-custom" style={{ '--w-custom': '12.5rem' }}>
+                            <div
+                                className="bg-weak rounded-xl flex flex-column items-center w-full"
+                                style={{ padding: '2px' }}
+                            >
+                                {/* We only display selector when account was not provided */}
+                                {!account && (
+                                    <Select
+                                        className="w-full"
+                                        renderSelected={() => selectedAccount?.Label}
+                                        value={selectedAccount?.ID}
+                                        onChange={(e) => {
+                                            const walletAccount = wallet.WalletAccounts.find((w) => w.ID === e.value);
+                                            if (walletAccount) {
+                                                setSelectedAccount(walletAccount);
+                                            }
+                                        }}
+                                        label={c('Wallet Receive').t`Receive to`}
+                                        options={wallet.WalletAccounts.map((w) => ({
+                                            id: w.ID,
+                                            label: w.Label,
+                                            value: w.ID,
+                                            children: (
+                                                <WalletAccountItem
+                                                    withIcon={false}
+                                                    walletAccount={w}
+                                                    accountChainData={getAccountWithChainDataFromManyWallets(
+                                                        walletsChainData,
+                                                        w.WalletID,
+                                                        w.ID
+                                                    )}
+                                                />
+                                            ),
+                                        }))}
+                                    />
+                                )}
+
+                                <div className="w-custom pt-6 px-6" style={{ '--w-custom': '12.5rem' }}>
                                     <QRCode data-testid="serialized-payment-info-qrcode" value={paymentLinkString} />
                                 </div>
 
-                                <div className="flex flex-row flex-nowrap items-center mt-4 px-5">
+                                <div className="flex flex-row flex-nowrap items-center mt-4 px-6">
                                     <div>
                                         <Tooltip title={paymentLinkString}>
                                             <Href href={paymentLinkUri} className="color-norm">
@@ -118,7 +160,7 @@ export const WalletReceiveContent = ({ account }: Props) => {
                                     />
                                 </div>
 
-                                <div className="flex flex-row flex-nowrap items-center mt-4">
+                                <div className="flex flex-row flex-nowrap items-center mt-4 px-6 pb-6">
                                     {!shouldShowAmountInput ? (
                                         <CoreButton
                                             data-testid="show-amount-input-button"

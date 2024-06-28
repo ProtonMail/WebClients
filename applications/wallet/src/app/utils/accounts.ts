@@ -1,6 +1,6 @@
 import { pick } from 'lodash';
 
-import { WasmApiWalletAccount, WasmPagination, WasmSortOrder } from '@proton/andromeda';
+import { WasmApiWallet, WasmApiWalletAccount, WasmPagination, WasmSortOrder } from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -113,4 +113,10 @@ export const getWalletTransactions = async (
     return (
         (await walletsChainData[walletId]?.wallet.getTransactions(pagination, sort))?.[0].map(({ Data }) => Data) ?? []
     );
+};
+
+export const isWalletAccountSet = (
+    value: [WasmApiWallet, WasmApiWalletAccount?]
+): value is [WasmApiWallet, WasmApiWalletAccount] => {
+    return !!value[1];
 };

@@ -74,9 +74,6 @@ export const WalletContainer = () => {
 
     const theme = getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID);
 
-    // TODO: add account selector instead of that
-    const firstAccount = wallet.WalletAccounts[0];
-
     const isSyncingChainData = isSyncing(wallet.Wallet.ID);
 
     const loadWalletWithPassphrase = async (passphrase: string) => {
@@ -133,7 +130,7 @@ export const WalletContainer = () => {
                         disabled={isSyncingChainData}
                         onClickSend={() => setWalletSendModal(true)}
                         onClickReceive={() => {
-                            openDrawer({ account: firstAccount, kind: 'wallet-receive', theme });
+                            openDrawer({ kind: 'wallet-receive', wallet, theme });
                         }}
                         onClickBuy={() => {
                             setWalletBuyModal(true);
@@ -143,7 +140,7 @@ export const WalletContainer = () => {
                     <TransactionList
                         apiWalletData={wallet}
                         onClickReceive={() => {
-                            openDrawer({ account: firstAccount, kind: 'wallet-receive', theme });
+                            openDrawer({ kind: 'wallet-receive', wallet, theme });
                         }}
                         onClickBuy={() => {
                             setWalletBuyModal(true);
@@ -168,29 +165,25 @@ export const WalletContainer = () => {
                     )}
                 </div>
             </div>
-            {firstAccount && (
-                <>
-                    <BitcoinSendModal
-                        key={bitcoinSendKey}
-                        wallet={wallet}
-                        account={firstAccount}
-                        theme={theme}
-                        modal={walletSendModal}
-                        onDone={() => {
-                            setBitcoinSendKey(generateBitcoinSendKey());
-                        }}
-                    />
 
-                    <BitcoinBuyModal
-                        key={bitcoinBuyKey}
-                        modal={walletBuyModal}
-                        account={firstAccount}
-                        onDone={() => {
-                            setBitcoinBuyKey(generateBitcoinBuyKey());
-                        }}
-                    />
-                </>
-            )}
+            <BitcoinSendModal
+                key={bitcoinSendKey}
+                wallet={wallet}
+                theme={theme}
+                modal={walletSendModal}
+                onDone={() => {
+                    setBitcoinSendKey(generateBitcoinSendKey());
+                }}
+            />
+
+            <BitcoinBuyModal
+                wallet={wallet}
+                key={bitcoinBuyKey}
+                modal={walletBuyModal}
+                onDone={() => {
+                    setBitcoinBuyKey(generateBitcoinBuyKey());
+                }}
+            />
         </>
     );
 };

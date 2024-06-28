@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import { WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 export const getDefaultWalletName = (imported: boolean, wallets: IWasmApiWalletData[], index = 0): string => {
@@ -27,3 +27,6 @@ export const getDefaultWalletAccountName = (walletAccounts: WasmApiWalletAccount
 
     return label;
 };
+
+export const toWalletAccountSelectorOptions = (wallets: IWasmApiWalletData[]) =>
+    wallets?.map((wallet) => [wallet.Wallet, wallet.WalletAccounts] as [WasmApiWallet, WasmApiWalletAccount[]]) ?? [];

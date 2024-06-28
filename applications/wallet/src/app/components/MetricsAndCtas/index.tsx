@@ -4,6 +4,7 @@ import { sub } from 'date-fns';
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
+import { Tooltip } from '@proton/components/components';
 import { SECOND } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
@@ -15,6 +16,7 @@ import { CorePrice } from '../../atoms/Price';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useGetExchangeRate } from '../../store/hooks';
+import { useBalance } from '../Balance/useBalance';
 
 interface Props {
     apiWalletData: IWasmApiWalletData;
@@ -36,6 +38,8 @@ export const MetricsAndCtas = ({
     const account = apiAccount ?? apiWalletData.WalletAccounts[0];
     const localDisabled = !account || disabled;
     const { isNarrow } = useResponsiveContainerContext();
+
+    const { totalBalance } = useBalance(apiWalletData, apiAccount);
 
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
 
@@ -63,18 +67,20 @@ export const MetricsAndCtas = ({
         }
     }, [account?.FiatCurrency, exchangeRate, getExchangeRate, loadingExchangeRate]);
 
+    const canSend = totalBalance > 0;
     const commonProps = {
         className: 'text-lg w-custom mx-1 rounded-full grow',
         style: { '--w-custom': isNarrow ? '5rem' : '7.5rem' },
-        disabled: localDisabled,
+        disabled: localDisabled || !canSend,
     };
 
-    const CtaButton = (props: { children: ReactNode; onClick?: () => void }) =>
-        isNarrow ? (
+    const CtaButton = (props: { children: ReactNode; onClick?: () => void; disabled?: boolean }) => {
+        return isNarrow ? (
             <CoreButton shape="ghost" color="weak" {...commonProps} {...props} />
         ) : (
             <Button shape="solid" color="norm" {...commonProps} {...props} />
         );
+    };
 
     return (
         <div
@@ -134,9 +140,18 @@ export const MetricsAndCtas = ({
                 )}
                 style={isNarrow ? {} : { '--max-w-custom': '30rem' }}
             >
-                <CtaButton onClick={() => onClickSend()}>{c('Wallet dashboard').t`Send`}</CtaButton>
-                <CtaButton onClick={() => onClickReceive()}>{c('Wallet dashboard').t`Receive`}</CtaButton>
-                <CtaButton onClick={() => onClickBuy()}>{c('Wallet dashboard').t`Buy`}</CtaButton>
+                <Tooltip title={c('wallet dashboard').t`You need to have a positive balance to send bitcoins`}>
+                    <div className="flex grow">
+                        <CtaButton disabled={localDisabled || !canSend} onClick={() => onClickSend()}>{c(
+                            'Wallet dashboard'
+                        ).t`Send`}</CtaButton>
+                    </div>
+                </Tooltip>
+
+                <CtaButton disabled={localDisabled} onClick={() => onClickReceive()}>{c('Wallet dashboard')
+                    .t`Receive`}</CtaButton>
+                <CtaButton disabled={localDisabled} onClick={() => onClickBuy()}>{c('Wallet dashboard')
+                    .t`Buy`}</CtaButton>
             </div>
         </div>
     );
