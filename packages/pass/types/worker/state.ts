@@ -14,6 +14,7 @@ export enum AppStatus {
     READY = 'READY' /* app is authorized and has booted */,
     SESSION_LOCKED = 'SESSION_LOCKED' /* session is locked back-end side */,
     UNAUTHORIZED = 'UNAUTHORIZED' /* app is pending login */,
+    MISSING_SCOPE = 'MISSING_SCOPE' /* app needs extra password */,
 }
 
 export type AppState = {

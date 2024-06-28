@@ -9,6 +9,7 @@ import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { usePinUnlock } from '@proton/pass/components/Lock/PinUnlockProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
+import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { EXTENSION_BUILD } from '@proton/pass/lib/client';
@@ -51,7 +52,7 @@ export const LockSettings: FC = () => {
     });
 
     const handleLockModeSwitch = async (mode: LockMode) => {
-        const ttl = lockTTL ?? 900;
+        const ttl = lockTTL ?? DEFAULT_LOCK_TTL;
         /** If the current lock mode is a session lock - always
          * ask for the current PIN in order to delete the lock */
         const current = await new Promise<Maybe<{ secret: string }>>(async (resolve) => {
@@ -68,12 +69,11 @@ export const LockSettings: FC = () => {
                     });
                 case LockMode.PASSWORD:
                     return confirmPassword({
+                        message: c('Info').t`Please confirm your password in order to unregister your current lock.`,
                         onSubmit: async (secret) => {
                             await unlock({ mode: lockMode, secret });
                             resolve({ secret });
                         },
-                        message: c('Info')
-                            .t`Please confirm your ${BRAND_NAME} password in order to unregister your current lock.`,
                     });
 
                 default:
@@ -102,8 +102,7 @@ export const LockSettings: FC = () => {
             case LockMode.PASSWORD:
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode, secret, ttl, current }),
-                    message: c('Info')
-                        .t`Please confirm your ${BRAND_NAME} password in order to auto-lock with your password.`,
+                    message: c('Info').t`Please confirm your password in order to auto-lock with your password.`,
                 });
 
             case LockMode.NONE:
@@ -122,8 +121,7 @@ export const LockSettings: FC = () => {
             case LockMode.PASSWORD:
                 return confirmPassword({
                     onSubmit: (secret) => createLock.dispatch({ mode: lockMode, secret, ttl }),
-                    message: c('Info')
-                        .t`Please confirm your ${BRAND_NAME} password in order to update the auto-lock time.`,
+                    message: c('Info').t`Please confirm your password in order to update the auto-lock time.`,
                 });
         }
     };

@@ -1,9 +1,10 @@
 import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
 import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { type Maybe, PassEncryptionTag } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];
 
@@ -104,8 +105,8 @@ export const getOfflineComponents = async (loginPassword: string): Promise<Offli
     const offlineSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
 
     const offlineKD = await getOfflineKeyDerivation(loginPassword, offlineSalt).catch((error) => {
-        captureMessage('Offline: Argon2 error', { level: 'error', extra: { error, context: OFFLINE_ARGON2_PARAMS } });
-        throw error;
+        logger.warn(`[Argon2] Offline derivation error`, error);
+        throw new PassCryptoError('Argon2 failure');
     });
 
     return {

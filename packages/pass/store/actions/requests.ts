@@ -27,6 +27,8 @@ export const trashRestoreRequest = () => `trash::restore`;
 
 export const unlockRequest = () => `auth::unlock`;
 export const lockCreateRequest = () => `auth::lock::create`;
+export const passwordConfirmRequest = () => `auth::password::confirm`;
+export const extraPasswordToggleRequest = () => `auth::extra-password::toggle`;
 
 export const settingsEditRequest = (group: string) => `settings::edit::${group}`;
 

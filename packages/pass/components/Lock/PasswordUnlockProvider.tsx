@@ -1,27 +1,34 @@
 import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { type UseAsyncModalHandle, useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors';
 
-import { PasswordUnlockModal } from './PasswordUnlockModal';
+import { PasswordModal, type PasswordModalProps } from './PasswordModal';
 
-type PasswordConfirmState = { message: string };
-type PasswordUnlockContextValue = UseAsyncModalHandle<string, PasswordConfirmState>;
-
+type PasswordUnlockContextValue = UseAsyncModalHandle<string, PasswordModalProps>;
 const PasswordUnlockContext = createContext<PasswordUnlockContextValue>(async () => {});
 
 export const PasswordUnlockProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { handler, abort, resolver, state } = useAsyncModalHandles<string, PasswordConfirmState>({
-        getInitialModalState: () => ({ message: c('Info').t`Please confirm your ${BRAND_NAME} password` }),
+    const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
+
+    const { handler, abort, resolver, state, key } = useAsyncModalHandles<string, PasswordModalProps>({
+        getInitialModalState: () => ({
+            message: c('Info').t`Please confirm your password`,
+            submitLabel: c('Action').t`Authenticate`,
+            title: c('Title').t`Enter your password`,
+            type: 'current-password',
+            label: hasExtraPassword ? c('Label').t`Extra password` : c('Label').t`Password`,
+        }),
     });
 
     return (
         <PasswordUnlockContext.Provider value={handler}>
             {children}
-            <PasswordUnlockModal onSubmit={resolver} onClose={abort} {...state} />
+            <PasswordModal onSubmit={resolver} onClose={abort} {...state} key={key} />
         </PasswordUnlockContext.Provider>
     );
 };

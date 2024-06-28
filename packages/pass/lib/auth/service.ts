@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/components/containers';
+import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
-import { getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
+import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
+import { EXTENSION_BUILD } from '@proton/pass/lib/client';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -13,13 +16,12 @@ import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { queryUnlock } from '@proton/shared/lib/api/user';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { srpAuth } from '@proton/shared/lib/srp';
+import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
 
 import {
@@ -32,10 +34,19 @@ import {
 import { checkSessionLock } from './lock/session/lock.requests';
 import type { Lock, LockAdapter, LockCreateDTO } from './lock/types';
 import { LockMode } from './lock/types';
-import type { ResumeSessionResult } from './session';
+import {
+    PasswordVerification,
+    getPasswordVerification,
+    registerExtraPassword,
+    removeExtraPassword,
+    verifyExtraPassword,
+    verifyOfflinePassword,
+    verifyPassword,
+} from './password';
 import {
     type AuthSession,
     type EncryptedAuthSession,
+    type ResumeSessionResult,
     encryptPersistedSessionWithKey,
     getPersistedSessionKey,
     isValidSession,
@@ -117,6 +128,8 @@ export interface AuthServiceConfig {
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
     /** Implement how you want to handle notifications emitted from the service */
     onNotification?: (notification: CreateNotificationOptions) => void;
+    /** Triggered when extra password is required */
+    onMissingScope?: () => void;
 }
 
 export const createAuthService = (config: AuthServiceConfig) => {
@@ -185,6 +198,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     }
                 }
             } catch (err) {
+                const { code } = getApiError(err);
+                if (code === PassErrorCode.MISSING_SCOPE) return false;
+
                 logger.warn(`[AuthService] Logging in session failed`, err);
                 config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.`, type: 'error' });
                 await config?.onSessionFailure?.({ forceLock: true, retryable: true });
@@ -217,10 +233,28 @@ export const createAuthService = (config: AuthServiceConfig) => {
         consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<boolean> => {
             try {
                 config.onAuthorize?.();
-                const session = await consumeFork({ api, payload, apiUrl });
+                const { session, Scopes } = await consumeFork({ api, payload, apiUrl });
+                const validScope = Scopes.includes('pass');
+
+                if (!validScope) {
+                    /** If the scope is invalid then the user must unlock with his
+                     * pass extra password in order to continue the login sequence.
+                     * Clear any offline components provided by account as they will
+                     * need to be recomputed against the extra password */
+                    delete session.offlineConfig;
+                    delete session.offlineKD;
+                }
+
                 await config.onForkConsumed?.(session, payload.state);
 
-                const loggedIn = await authService.login(session);
+                const loggedIn = validScope && (await authService.login(session));
+
+                if (!validScope) {
+                    authStore.setSession(session);
+                    authStore.setExtraPassword(true);
+                    config.onMissingScope?.();
+                }
+
                 const locked = authStore.getLocked();
 
                 /** Persist the session only on successful login. If the forked session is
@@ -398,7 +432,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         authStore.setSession(persistedSession);
                         await api.reset();
                         const { session } = await resumeSession(persistedSession, localID, config);
-                        logger.info(`[AuthService] Session successfuly resumed`);
+                        logger.info(`[AuthService] Session successfully resumed`);
 
                         return await authService.login(session, options);
                     } catch (error: unknown) {
@@ -432,32 +466,69 @@ export const createAuthService = (config: AuthServiceConfig) => {
          * In `srp` mode, we will verify the user's password through SRP
          * (two-password mode not supported yet). If the user has an offline
          * config, we compare the `offlineKD` with the derived argon2 hash */
-        confirmPassword: async (loginPassword: string): Promise<boolean> => {
+        confirmPassword: async (password: string, mode?: PasswordVerification): Promise<boolean> => {
             try {
-                const offlineKD = authStore.getOfflineKD();
-                const offlineConfig = authStore.getOfflineConfig();
+                await loadCryptoWorker();
 
-                if (!(offlineKD && offlineConfig)) {
-                    await srpAuth({
-                        api,
-                        credentials: { password: loginPassword },
-                        config: { ...queryUnlock(), silence: true },
-                    });
+                switch (mode ?? getPasswordVerification(authStore)) {
+                    case PasswordVerification.LOCAL: {
+                        const offlineConfig = authStore.getOfflineConfig()!;
+                        const offlineVerifier = authStore.getOfflineVerifier()!;
+                        return await verifyOfflinePassword(password, { offlineConfig, offlineVerifier });
+                    }
 
-                    return true;
+                    case PasswordVerification.EXTRA_PASSWORD: {
+                        await verifyExtraPassword({ password });
+
+                        const { offlineConfig, offlineKD } = await getOfflineComponents(password);
+
+                        authStore.setOfflineConfig(offlineConfig);
+                        authStore.setOfflineKD(offlineKD);
+                        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+
+                        /** Online extra password verification will happen on
+                         * first login after a successful fork. At this point
+                         * we can enable the password lock automatically. */
+                        if (!EXTENSION_BUILD && authStore.getLockMode() === LockMode.NONE) {
+                            authStore.setLockMode(LockMode.PASSWORD);
+                            authStore.setLockTTL(DEFAULT_LOCK_TTL);
+                        }
+
+                        await authService.persistSession({ regenerateClientKey: true });
+
+                        return true;
+                    }
+
+                    case PasswordVerification.SRP: {
+                        return await verifyPassword({ password });
+                    }
                 }
-
-                const offlineKDVerify = await getOfflineKeyDerivation(
-                    loginPassword,
-                    stringToUint8Array(offlineConfig.salt),
-                    offlineConfig.params
-                );
-
-                return uint8ArrayToString(offlineKDVerify) === offlineKD;
             } catch (error) {
                 logger.warn(`[AuthService] failed password confirmation (${getErrorMessage(error)})`);
                 return false;
             }
+        },
+
+        registerExtraPassword: async (password: string): Promise<boolean> => {
+            /** Compute the offline components in order to update the auth store on successful
+             * extra password registration : this will affect any password locks or offline mode
+             * setting. Users will now have to unlock the client with the extra password */
+            const { offlineConfig, offlineKD } = await getOfflineComponents(password);
+            await registerExtraPassword({ password });
+
+            authStore.setExtraPassword(true);
+            authStore.setOfflineConfig(offlineConfig);
+            authStore.setOfflineKD(offlineKD);
+            authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+
+            await authService.persistSession();
+            return true;
+        },
+
+        removeExtraPassword: async (password: string) => {
+            await verifyExtraPassword({ password });
+            await removeExtraPassword();
+            await authService.logout({ soft: true, broadcast: true });
         },
     };
 
@@ -495,6 +566,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                         await authService.logout({ soft: true, broadcast: true });
                     }
+
+                    if (event.status === 'missing-scope') config.onMissingScope?.();
 
                     break;
                 }
