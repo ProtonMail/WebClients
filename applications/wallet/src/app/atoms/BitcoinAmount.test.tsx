@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { exchangeRate } from '@proton/wallet';
+import { exchangeRate } from '@proton/wallet/tests';
 
 import { BitcoinAmount } from './BitcoinAmount';
 

@@ -16,7 +16,7 @@ import { CryptoProxy } from '@proton/crypto/lib';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
-import { expectSignedBy, getAddressKey, getMockedApi, mockUseWalletApiClients } from '@proton/wallet';
+import { expectSignedBy, getAddressKey, getMockedApi, mockUseWalletApiClients } from '@proton/wallet/tests';
 
 import { useBitcoinAddressPool } from '.';
 import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';

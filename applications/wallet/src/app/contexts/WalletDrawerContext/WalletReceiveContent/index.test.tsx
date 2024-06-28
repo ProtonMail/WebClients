@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
-import { apiWalletsData, mockUseUserWalletSettings } from '@proton/wallet';
+import { apiWalletsData, mockUseUserWalletSettings } from '@proton/wallet/tests';
 
 import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../../tests';

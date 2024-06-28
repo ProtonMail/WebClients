@@ -15,14 +15,8 @@ import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
-import {
-    IWasmApiWalletData,
-    getAddressKey,
-    getMockedApi,
-    getSymmetricKey,
-    getUserKeys,
-    mockUseWalletApiClients,
-} from '@proton/wallet';
+import { IWasmApiWalletData, getSymmetricKey } from '@proton/wallet';
+import { getAddressKey, getMockedApi, getUserKeys, mockUseWalletApiClients } from '@proton/wallet/tests';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { useGetApiWalletTransactionData } from '../store/hooks';
