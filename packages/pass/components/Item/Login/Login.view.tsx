@@ -22,8 +22,9 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
 
     return (
         <ItemViewPanel type="login" {...itemViewProps}>
-            <SecureLinkCardList shareId={shareId} itemId={itemId} />
             {monitorEnabled && isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
+
+            <SecureLinkCardList shareId={shareId} itemId={itemId} />
 
             <LoginContent revision={revision} />
 
