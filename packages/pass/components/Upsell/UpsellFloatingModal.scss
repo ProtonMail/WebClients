@@ -1,0 +1,18 @@
+.pass-upsell-floating-modal {
+	&--header {
+		background-color: #1b1340;
+	}
+
+	&--content {
+		background-color: var(--primary-contrast);
+	}
+
+	&--label {
+		background-color: #eef8f5;
+		color: var(--signal-success);
+	}
+
+	&--button {
+		color: var(--primary-contrast) !important;
+	}
+}
