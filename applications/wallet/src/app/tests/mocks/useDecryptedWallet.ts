@@ -1,5 +1,5 @@
-import { apiWalletsData } from '@proton/wallet';
 import * as useDecryptedApiWalletsDataModule from '@proton/wallet/hooks/useDecryptedApiWalletsData';
+import { apiWalletsData } from '@proton/wallet/tests';
 
 export const mockUseDecryptedWallets = (
     mockedValue?: Partial<ReturnType<typeof useDecryptedApiWalletsDataModule.useDecryptedApiWalletsData>>
