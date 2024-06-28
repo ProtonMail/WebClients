@@ -69,8 +69,10 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
             return;
         }
 
-        await walletApi.wallet
-            .createWallet(
+        const derivationPathParts = [purposeByScriptType[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
+
+        try {
+            const { Wallet } = await walletApi.wallet.createWallet(
                 encryptedName,
                 false,
                 WalletType.OnChain,
@@ -82,59 +84,51 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
                 fingerprint,
                 undefined,
                 WALLET_AUTOCREATE_FLAG
-            )
-            .then(async ({ Wallet }) => {
-                const derivationPathParts = [purposeByScriptType[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
+            );
 
-                try {
-                    const account = await walletApi.wallet.createWalletAccount(
-                        Wallet.ID,
-                        WasmDerivationPath.fromParts(...derivationPathParts),
-                        encryptedFirstAccountLabel,
-                        DEFAULT_SCRIPT_TYPE
-                    );
+            const account = await walletApi.wallet.createWalletAccount(
+                Wallet.ID,
+                WasmDerivationPath.fromParts(...derivationPathParts),
+                encryptedFirstAccountLabel,
+                DEFAULT_SCRIPT_TYPE
+            );
 
-                    const wasmAccount = new WasmAccount(
-                        wasmWallet,
-                        DEFAULT_SCRIPT_TYPE,
-                        WasmDerivationPath.fromParts(...derivationPathParts)
-                    );
+            const wasmAccount = new WasmAccount(
+                wasmWallet,
+                DEFAULT_SCRIPT_TYPE,
+                WasmDerivationPath.fromParts(...derivationPathParts)
+            );
 
-                    await walletApi.wallet.updateWalletAccountFiatCurrency(
-                        Wallet.ID,
-                        account.Data.ID,
-                        userWalletSettings.FiatCurrency
-                    );
+            await walletApi.wallet.updateWalletAccountFiatCurrency(
+                Wallet.ID,
+                account.Data.ID,
+                userWalletSettings.FiatCurrency
+            );
 
-                    const [primaryAddress] = addresses;
-                    const [primaryAddressKey] = await getDecryptedAddressKeysHelper(
-                        primaryAddress.Keys,
-                        user,
-                        userKeys,
-                        authentication.getPassword()
-                    );
+            const [primaryAddress] = addresses;
+            const [primaryAddressKey] = await getDecryptedAddressKeysHelper(
+                primaryAddress.Keys,
+                user,
+                userKeys,
+                authentication.getPassword()
+            );
 
-                    await walletApi.wallet.addEmailAddress(Wallet.ID, account.Data.ID, primaryAddress.ID);
+            await walletApi.wallet.addEmailAddress(Wallet.ID, account.Data.ID, primaryAddress.ID);
 
-                    // Fill bitcoin address pool
-                    const addressesPoolPayload = await generateBitcoinAddressesPayloadForPoolFilling({
-                        addressesToCreate: POOL_FILLING_THRESHOLD,
-                        startIndex: FIRST_INDEX,
-                        wasmAccount,
-                        addressKey: primaryAddressKey,
-                    });
-
-                    if (addressesPoolPayload?.[0]?.length) {
-                        await walletApi.bitcoin_address.addBitcoinAddress(
-                            Wallet.ID,
-                            account.Data.ID,
-                            addressesPoolPayload
-                        );
-                    }
-                } catch (e) {
-                    console.error('Could not autocreate wallet from Mail', e);
-                }
+            // Fill bitcoin address pool
+            const addressesPoolPayload = await generateBitcoinAddressesPayloadForPoolFilling({
+                addressesToCreate: POOL_FILLING_THRESHOLD,
+                startIndex: FIRST_INDEX,
+                wasmAccount,
+                addressKey: primaryAddressKey,
             });
+
+            if (addressesPoolPayload?.[0]?.length) {
+                await walletApi.bitcoin_address.addBitcoinAddress(Wallet.ID, account.Data.ID, addressesPoolPayload);
+            }
+        } catch (e) {
+            console.error('Could not autocreate wallet from Mail', e);
+        }
     };
 
     const shouldCreateWallet = async () => {
