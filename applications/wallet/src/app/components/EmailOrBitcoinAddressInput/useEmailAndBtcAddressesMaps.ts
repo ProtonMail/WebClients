@@ -22,7 +22,7 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
     const [recipientEmailMap, setRecipientEmailMap] = useState<RecipientEmailMap>(initRecipientEmailMap);
     const [recipientsEmailWithSentInvite, setRecipientsEmailWithSentInvite] = useState<Set<string>>(new Set());
 
-    const hasSentInvite = (email: string) => {
+    const checkHasSentInvite = (email: string) => {
         return recipientsEmailWithSentInvite.has(email);
     };
 
@@ -68,7 +68,7 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
         removeRecipient,
         exists,
 
-        hasSentInvite,
+        checkHasSentInvite,
         addRecipientWithSentInvite,
     };
 };

@@ -40,7 +40,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
         removeRecipient,
         exists,
         addRecipientWithSentInvite,
-        hasSentInvite,
+        checkHasSentInvite,
     } = recipientHelpers;
 
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
@@ -150,7 +150,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     }
                 } catch {
                     const hasRecipientSentInvite =
-                        hasSentInvite(recipientOrBitcoinAddress.Address) ||
+                        checkHasSentInvite(recipientOrBitcoinAddress.Address) ||
                         (await walletApi.invite
                             .checkInviteStatus(recipientOrBitcoinAddress.Address)
                             .then(() => false)
@@ -204,8 +204,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     fetchedEmailListItemRightNode={({ email, error }) =>
                         error ? (
                             <WalletNotFoundErrorDropdown
-                                // hasSentInvite={hasSentInvite(email)}
-                                hasSentInvite
+                                hasSentInvite={checkHasSentInvite(email)}
                                 email={email}
                                 onSendInvite={handleSendInvite}
                             />
