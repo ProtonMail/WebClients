@@ -186,9 +186,6 @@ export default function CommentPlugin({
           if (!hasAnchorKey) {
             setActiveAnchorKey(null)
           }
-          if (!tags.has('collaboration') && $isRangeSelection(selection)) {
-            setShowCommentInput(false)
-          }
         })
       }),
       editor.registerCommand(
