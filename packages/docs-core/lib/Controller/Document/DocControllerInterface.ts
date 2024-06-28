@@ -14,7 +14,7 @@ import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import { Result } from '../../Domain/Result/Result'
 
 export interface DocControllerInterface {
-  username: string
+  userAddress?: string
   role: DocumentRole
 
   addChangeObserver(observer: DocChangeObserver): () => void
