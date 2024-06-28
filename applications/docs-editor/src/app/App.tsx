@@ -14,6 +14,8 @@ import {
   RtsMessagePayload,
   YDocMap,
   DocumentRoleType,
+  DocAwarenessEvent,
+  DocsAwarenessStateChangeData,
 } from '@proton/docs-shared'
 import { Doc as YDoc } from 'yjs'
 import { Icons } from '@proton/components'
@@ -225,11 +227,18 @@ export function App({ nonInteractiveMode = false }: Props) {
           .catch((e: Error) => {
             void bridge.getClientInvoker().reportError(e)
           })
+
+        application.eventBus.publish<DocsAwarenessStateChangeData>({
+          type: DocAwarenessEvent.AwarenessStateChange,
+          payload: {
+            states,
+          },
+        })
       },
     })
 
     return newDocState
-  }, [bridge])
+  }, [application.eventBus, bridge])
 
   useEffect(() => {
     if (docState) {
