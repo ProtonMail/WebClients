@@ -20,7 +20,8 @@ export const epochToRelativeDate = (epoch: number) => {
         : epochToDateTime(epoch);
 };
 
-export const timeRemaining = (epoch: number) => {
+type TimeRemaining = { label: string; isExpired: boolean };
+export const timeRemaining = (epoch: number): TimeRemaining => {
     const start = Date.now();
     const end = new Date(epochToMs(epoch));
 
@@ -28,15 +29,20 @@ export const timeRemaining = (epoch: number) => {
 
     if (days) {
         if (hours >= 23) days++;
-        return c('Label').ngettext(msgid`${days} day`, `${days} days`, days);
+        return { label: c('Label').ngettext(msgid`${days} day`, `${days} days`, days), isExpired: false };
     }
 
     if (hours) {
         if (minutes >= 59) hours++;
-        return c('Label').ngettext(msgid`${hours} hour`, `${hours} hours`, hours);
+        return { label: c('Label').ngettext(msgid`${hours} hour`, `${hours} hours`, hours), isExpired: false };
     }
 
-    if (minutes) return c('Label').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes);
+    if (minutes) {
+        return {
+            label: c('Label').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes),
+            isExpired: false,
+        };
+    }
 
-    return c('Label').t`Expired link`;
+    return { label: c('Label').t`Expired link`, isExpired: true };
 };
