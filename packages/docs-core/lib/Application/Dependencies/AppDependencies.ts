@@ -5,7 +5,6 @@ import { DocsApi } from '../../Api/Docs/DocsApi'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { DocLoader } from '../../Services/DocumentLoader/DocLoader'
-import { UserService } from '../../Services/User/UserService'
 import { InternalEventBus, InternalEventBusInterface } from '@proton/docs-shared'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
 import { Api, UserModel } from '@proton/shared/lib/interfaces'
@@ -162,7 +161,6 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.DocLoader, () => {
       return new DocLoader(
-        this.get<UserService>(App_TYPES.UserService),
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         driveCompat,
         this.get<DocsApi>(App_TYPES.DocsApi),
@@ -194,10 +192,6 @@ export class AppDependencies extends DependencyContainer {
       )
     })
 
-    this.bind(App_TYPES.UserService, () => {
-      return new UserService(user)
-    })
-
     this.bind(App_TYPES.CreateComment, () => {
       return new CreateComment(this.get<DocsApi>(App_TYPES.DocsApi), this.get<EncryptComment>(App_TYPES.EncryptComment))
     })
@@ -212,7 +206,11 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.LoadThreads, () => {
-      return new LoadThreads(this.get<DocsApi>(App_TYPES.DocsApi), this.get<DecryptComment>(App_TYPES.DecryptComment))
+      return new LoadThreads(
+        this.get<DocsApi>(App_TYPES.DocsApi),
+        this.get<DecryptComment>(App_TYPES.DecryptComment),
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
     })
 
     this.bind(App_TYPES.HandleRealtimeCommentsEvent, () => {
