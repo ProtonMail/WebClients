@@ -17,6 +17,7 @@ describe('DecryptComment', () => {
     ModifyTime: 0,
     Content: 'string',
     Author: 'string',
+    AuthorEmail: 'string',
     ParentCommentID: 'string',
     Comments: comments,
   }

@@ -5,7 +5,9 @@ export type CommentResponseDto = {
   CreateTime: number
   ModifyTime: number
   Content: string
-  Author: string
+  /** @deprecated Use AuthorEmail instead if available */
+  Author: string | undefined
+  AuthorEmail: string | undefined
   ParentCommentID: string | null
   Comments: CommentResponseDto[]
 }

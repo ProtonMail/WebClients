@@ -1,5 +1,4 @@
 import { LoggerInterface } from '@proton/utils/logs'
-import { UserService } from '../User/UserService'
 import { DocController } from '../../Controller/Document/DocController'
 import { SquashDocument } from '../../UseCase/SquashDocument'
 import { InternalEventBusInterface, CommentServiceInterface } from '@proton/docs-shared'
@@ -36,7 +35,6 @@ export class DocLoader implements DocLoaderInterface {
   private readonly statusObservers: StatusObserver[] = []
 
   constructor(
-    private userService: UserService,
     private websocketSerivce: WebsocketServiceInterface,
     private driveCompat: DriveCompat,
     private docsApi: DocsApi,
@@ -64,7 +62,6 @@ export class DocLoader implements DocLoaderInterface {
 
     this.docController = new DocController(
       lookup,
-      this.userService,
       this.driveCompat,
       this.squashDoc,
       this.createInitialCommit,
@@ -90,13 +87,10 @@ export class DocLoader implements DocLoaderInterface {
 
     const { entitlements } = result.getValue()
 
-    const username = this.userService.user.Email || this.userService.getUserId()
-
     this.commentsController = new CommentService(
       lookup,
       entitlements.keys,
       this.websocketSerivce,
-      username,
       this.docsApi,
       this.encryptComment,
       this.createThread,

@@ -16,9 +16,14 @@ export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}
 
   async execute(dto: CommentResponseDto, markId: string, keys: DocumentKeys): Promise<Result<Comment>> {
+    const emailToUse = dto.AuthorEmail || dto.Author
+    if (!emailToUse) {
+      return Result.fail('No author email or author address found in comment')
+    }
+
     const decrypted = await this.encryption.decryptData(
       base64StringToUint8Array(dto.Content),
-      GetAssociatedEncryptionDataForComment({ authorAddress: dto.Author, markId }),
+      GetAssociatedEncryptionDataForComment({ authorAddress: emailToUse, markId }),
       keys.documentContentKey,
     )
 
@@ -30,7 +35,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
       return Result.fail(decrypted.getError())
     }
 
-    const verificationKey = await this.encryption.getVerificationKey(dto.Author)
+    const verificationKey = await this.encryption.getVerificationKey(emailToUse)
 
     if (verificationKey.isFailed()) {
       return Result.fail(verificationKey.getError())
@@ -39,7 +44,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
     const verifyResult = await this.encryption.verifyData(
       decrypted.getValue().content,
       decrypted.getValue().signature,
-      GetAssociatedEncryptionDataForComment({ authorAddress: dto.Author, markId }),
+      GetAssociatedEncryptionDataForComment({ authorAddress: emailToUse, markId }),
       verificationKey.getValue(),
     )
 
@@ -60,7 +65,7 @@ export class DecryptComment implements UseCaseInterface<Comment> {
         new ServerTime(dto.ModifyTime),
         utf8ArrayToString(decrypted.getValue().content),
         dto.ParentCommentID,
-        dto.Author,
+        emailToUse,
         [],
         false,
       ),
