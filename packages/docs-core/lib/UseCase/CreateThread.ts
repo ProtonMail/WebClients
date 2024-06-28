@@ -31,7 +31,6 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
   async execute(dto: {
     text: string
     lookup: NodeMeta
-    userDisplayName: string
     keys: DocumentKeys
     commentsState: LocalCommentsState
   }): Promise<Result<CommentThreadInterface>> {
@@ -43,7 +42,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       ServerTime.now(),
       dto.text,
       null,
-      dto.userDisplayName,
+      dto.keys.userOwnAddress,
       [],
       false,
     )
@@ -86,7 +85,13 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
 
     const encryptedCommentContent = commentEncryptionResult.getValue()
 
-    const result = await this.api.createThread(dto.lookup.volumeId, dto.lookup.linkId, markID, encryptedCommentContent)
+    const result = await this.api.createThread({
+      volumeId: dto.lookup.volumeId,
+      linkId: dto.lookup.linkId,
+      markId: markID,
+      encryptedMainCommentContent: encryptedCommentContent,
+      authorEmail: dto.keys.userOwnAddress,
+    })
 
     if (result.isFailed()) {
       metrics.docs_comments_error_total.increment({

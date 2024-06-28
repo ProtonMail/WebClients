@@ -3,7 +3,6 @@ export const App_TYPES = {
   DocsApi: Symbol.for('DocsApi'),
   HttpService: Symbol.for('HttpService'),
   DocLoader: Symbol.for('DocOrchestrator'),
-  UserService: Symbol.for('UserService'),
   Logger: Symbol.for('Logger'),
   EventBus: Symbol.for('EventBus'),
   WebsocketService: Symbol.for('WebsocketService'),

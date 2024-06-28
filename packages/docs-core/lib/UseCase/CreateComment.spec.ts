@@ -13,11 +13,11 @@ jest.mock('../Util/GenerateUuid', () => ({
 
 const mockEncryptComment = {
   execute: jest.fn(),
-}
+} as unknown as jest.Mocked<EncryptComment>
 
 const mockCommentsApi = {
   addCommentToThread: jest.fn(),
-}
+} as unknown as jest.Mocked<DocsApi>
 
 const mockCommentsState = {
   findThreadById: jest.fn(),
@@ -34,7 +34,9 @@ describe('CreateComment', () => {
     threadID: 'thread-id',
     lookup: { volumeId: 'volume-id', linkId: 'link-id' } as NodeMeta,
     userDisplayName: 'User',
-    keys: {} as DocumentKeys,
+    keys: {
+      userOwnAddress: 'foo@bar.com',
+    } as DocumentKeys,
     commentsState: mockCommentsState as unknown as LocalCommentsState,
   }
 
@@ -49,20 +51,25 @@ describe('CreateComment', () => {
   it('should call encryptComment, api.addCommentToThread, and decryptComment in order', async () => {
     mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' })
     mockEncryptComment.execute.mockResolvedValue(Result.ok('encrypted-comment'))
-    mockCommentsApi.addCommentToThread.mockResolvedValue(Result.ok({ Comment: 'encrypted-response-comment' }))
+    mockCommentsApi.addCommentToThread.mockResolvedValue(
+      Result.ok({ Comment: { text: 'encrypted-response-comment' } as never, Code: 1000 }),
+    )
 
     await createComment.execute(dto)
 
     expect(mockCommentsState.findThreadById).toHaveBeenCalledWith('thread-id')
     expect(mockCommentsState.addComment).toHaveBeenCalledWith(expect.any(Comment), 'thread-id')
-    expect(mockEncryptComment.execute).toHaveBeenCalledWith('Test comment', 'mark-id', {})
-    expect(mockCommentsApi.addCommentToThread).toHaveBeenCalledWith(
-      'volume-id',
-      'link-id',
-      'thread-id',
-      'encrypted-comment',
-      null,
-    )
+    expect(mockEncryptComment.execute).toHaveBeenCalledWith('Test comment', 'mark-id', {
+      userOwnAddress: 'foo@bar.com',
+    })
+    expect(mockCommentsApi.addCommentToThread).toHaveBeenCalledWith({
+      volumeId: 'volume-id',
+      linkId: 'link-id',
+      threadId: 'thread-id',
+      encryptedContent: 'encrypted-comment',
+      parentCommentId: null,
+      authorEmail: 'foo@bar.com',
+    })
     expect(mockCommentsState.replacePlaceholderComment).toHaveBeenCalled()
   })
 
