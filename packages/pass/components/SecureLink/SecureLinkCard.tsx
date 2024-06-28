@@ -25,6 +25,7 @@ export const SecureLinkCard: FC<Props> = ({
     itemId,
     linkId,
     readCount,
+    maxReadCount,
     secureLink,
     shareId,
     onClick,
@@ -39,30 +40,38 @@ export const SecureLinkCard: FC<Props> = ({
     const onRemove = () => dispatch({ itemId, shareId, linkId });
     const remaining = useMemo(() => timeRemaining(expirationDate), [expirationDate]);
 
+    const views = useMemo(
+        () => (readCount === maxReadCount ? c('Label').t`Max views reached` : getViewCountString(readCount)),
+        [maxReadCount, readCount, active]
+    );
+
     return (
         <>
             <Card
                 type="primary"
-                className={clsx('mb-2 cursor-pointer rounded-xl')}
+                className={clsx('mb-2 cursor-pointer rounded-xl ui-violet')}
                 onClick={onClick}
-                style={{ backgroundColor: `var(--interaction-${active ? 'norm-minor-2' : 'weak'})` }}
+                style={{
+                    '--card-background': '#202038',
+                    backgroundColor: `var(${active ? '--card-background' : '--primary-minor-2'})`,
+                }}
             >
                 <div className="flex flex-nowrap items-center justify-space-between">
                     <IconBox
                         mode="icon"
                         size={3}
                         pill={false}
-                        style={{ backgroundColor: `var(--interaction-${active ? 'norm-minor-1' : 'weak-major-1'})` }}
+                        style={{ backgroundColor: `var(${active ? '--interaction-weak' : '--primary-minor-1'})` }}
                     >
                         <Icon name={active ? 'link' : 'link-slash'} size={3} className="absolute inset-center" />
                     </IconBox>
 
                     <div className="flex-1 px-4">
-                        <b>{c('Label').t`Shared link`}</b>
+                        <b>{active ? c('Label').t`Shared link` : c('Label').t`Expired link`}</b>
                         <div className="color-weak text-sm">
-                            {c('Info').t`Expires in ${remaining}`}
+                            {remaining.isExpired ? remaining.label : c('Info').t`Expires in ${remaining.label}`}
                             {' · '}
-                            {getViewCountString(readCount)}
+                            {views}
                         </div>
                     </div>
                     <div>

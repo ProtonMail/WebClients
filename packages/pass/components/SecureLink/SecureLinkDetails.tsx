@@ -32,7 +32,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ secureLink, maxReadCount, ex
         const cards: SecureLinkCard[] = [
             {
                 title: c('Info').t`Expires in`,
-                subtitle: timeRemaining(expirationDate),
+                subtitle: timeRemaining(expirationDate).label,
                 icon: 'clock',
             },
         ];
