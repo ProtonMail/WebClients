@@ -1,6 +1,6 @@
 import { type FC, useMemo, useRef, useState } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { type IconName, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
@@ -8,6 +8,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
+import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
 import type { SecureLink } from '@proton/pass/types';
 import { timeRemaining } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
@@ -39,7 +40,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ secureLink, maxReadCount, ex
         if (maxReadCount !== null) {
             cards.push({
                 title: c('Info').t`Can be viewed`,
-                subtitle: c('Info').ngettext(msgid`${maxReadCount} time`, `${maxReadCount} times`, maxReadCount),
+                subtitle: getOccurrenceString(maxReadCount),
                 icon: 'eye',
             });
         }
