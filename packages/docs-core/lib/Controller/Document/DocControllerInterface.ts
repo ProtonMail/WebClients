@@ -1,7 +1,6 @@
 import {
   BroadcastSource,
   ClientRequiresEditorMethods,
-  DocChangeObserver,
   DocumentMetaInterface,
   RtsMessagePayload,
   DataTypesThatDocumentCanBeExportedAs,
@@ -17,7 +16,6 @@ export interface DocControllerInterface {
   userAddress?: string
   role: DocumentRole
 
-  addChangeObserver(observer: DocChangeObserver): () => void
   createInitialCommit(): Promise<void>
   createNewDocument(): Promise<void>
   debugGetUnrestrictedSharingUrl(): Promise<string>

@@ -7,6 +7,7 @@ import {
   DocumentMetaInterface,
   BroadcastSource,
   DocumentRole,
+  DataTypesThatDocumentCanBeExportedAs,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
@@ -14,6 +15,7 @@ export interface EditorOrchestratorInterface {
   docMeta: DocumentMetaInterface
   role: DocumentRole
 
+  exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
 
