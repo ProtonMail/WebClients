@@ -2,9 +2,10 @@
 import { SSO_URL } from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import store from 'proton-pass-extension/app/worker/store';
+import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { c } from 'ttag';
 
-import { SAFARI_MESSAGE_KEY, SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
+import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
@@ -29,7 +30,6 @@ import {
 } from '@proton/pass/store/actions';
 import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
@@ -67,14 +67,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
 
-            if (BUILD_TARGET === 'safari') {
-                void browser.runtime.sendNativeMessage(
-                    SAFARI_MESSAGE_KEY,
-                    JSON.stringify({
-                        environment: getSecondLevelDomain(SSO_URL),
-                    })
-                );
-            }
+            if (BUILD_TARGET === 'safari') void sendSafariMessage({ environment: getSecondLevelDomain(SSO_URL) });
 
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
@@ -105,13 +98,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             void ctx.service.storage.local.removeItem('forceLock');
             setSentryUID(authStore.getUID());
 
-            if (BUILD_TARGET === 'safari') {
-                void pipe(
-                    () => ({ credentials: authStore.getSession() }),
-                    JSON.stringify,
-                    (msg) => browser.runtime.sendNativeMessage(SAFARI_MESSAGE_KEY, msg)
-                )();
-            }
+            if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: authStore.getSession() });
         }),
 
         onUnauthorized: withContext((ctx, _) => {
@@ -137,14 +124,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
 
-            if (BUILD_TARGET === 'safari') {
-                void browser.runtime.sendNativeMessage(
-                    SAFARI_MESSAGE_KEY,
-                    JSON.stringify({
-                        credentials: null,
-                    })
-                );
-            }
+            if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: null });
         }),
 
         onSessionInvalid: withContext(async (ctx, error, _data) => {
@@ -233,18 +213,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             store.dispatch(notification({ ...data, type: 'error', key: data.key ?? 'authservice', deduplicate: true })),
 
         onSessionRefresh: withContext(async (ctx, localID, { AccessToken, RefreshToken, RefreshTime }) => {
-            if (BUILD_TARGET === 'safari') {
-                void browser.runtime.sendNativeMessage(
-                    SAFARI_MESSAGE_KEY,
-                    JSON.stringify({
-                        refreshCredentials: { AccessToken, RefreshToken, RefreshTime },
-                    })
-                );
-            }
-
             const persistedSession = await ctx.service.auth.config.getPersistedSession(localID);
 
             if (persistedSession) {
+                if (BUILD_TARGET === 'safari') {
+                    const refreshCredentials = { AccessToken, RefreshToken, RefreshTime };
+                    void sendSafariMessage({ refreshCredentials });
+                }
+
                 /* update the persisted session tokens without re-encrypting the
                  * session blob as session refresh may happen before a full login
                  * with a partially hydrated authentication store. */

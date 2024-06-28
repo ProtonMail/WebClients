@@ -6,8 +6,8 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { downloadFileWithSafariFix } from '@proton/pass/lib/export/downloadFilesWithSafariFix';
 import { type Maybe } from '@proton/pass/types';
+import { download } from '@proton/pass/utils/dom/download';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -24,7 +24,7 @@ const downloadLogs = (logs: string[]) => {
         }
     );
 
-    downloadFileWithSafariFix(file);
+    download(file);
 };
 
 export const ApplicationLogs: FC<Props> = ({ opened, style }) => {
