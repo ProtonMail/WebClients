@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
+import { WithFeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { PasswordModal, type PasswordModalProps } from '@proton/pass/components/Lock/PasswordModal';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
@@ -12,6 +13,7 @@ import { validateNewExtraPassword } from '@proton/pass/lib/validation/auth';
 import { extraPasswordToggle } from '@proton/pass/store/actions';
 import { extraPasswordToggleRequest } from '@proton/pass/store/actions/requests';
 import { selectExtraPasswordEnabled } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -26,7 +28,7 @@ const getInitialModalState = (): PasswordModalProps => ({
         .t`Caution: You won’t be able to access your ${PASS_APP_NAME} account if you lose this password.`,
 });
 
-export const ExtraPassword: FC = () => {
+const ExtraPasswordSetting: FC = () => {
     const confirmPassword = usePasswordUnlock();
     const toggle = useRequest(extraPasswordToggle, { initialRequestId: extraPasswordToggleRequest() });
     const enabled = useSelector(selectExtraPasswordEnabled);
@@ -74,3 +76,5 @@ export const ExtraPassword: FC = () => {
         </SettingsPanel>
     );
 };
+
+export const ExtraPassword = WithFeatureFlag(ExtraPasswordSetting, PassFeature.PassAccessKeyV1);
