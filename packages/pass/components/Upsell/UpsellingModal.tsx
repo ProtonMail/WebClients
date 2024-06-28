@@ -93,7 +93,7 @@ export const UpsellingModal: FC<Props> = ({
                 ...(extraActions?.(props) ?? []),
             ]}
         >
-            <div className="flex flex-column items-center w-full gap-5 m-auto">
+            <div className="flex flex-column items-center w-full gap-4 m-auto">
                 <img src={image} className="w-3/5 " alt="user onboarding graphic" />
                 <h4 className="text-bold">{title}</h4>
                 {description && <p className="m-2 text-md">{description}</p>}
