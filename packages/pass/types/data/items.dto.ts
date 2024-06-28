@@ -86,7 +86,7 @@ export type SecureLinkQuery = { token: string; linkKey: string };
 export type SecureLink = UniqueItem & {
     active: boolean;
     expirationDate: number;
-    readCount: MaybeNull<number>;
+    readCount: number;
     maxReadCount: MaybeNull<number>;
     linkId: string;
     secureLink: string;
