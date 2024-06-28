@@ -24,7 +24,7 @@ const mockCommentsState = {
   addComment: jest.fn(),
   deleteComment: jest.fn(),
   replacePlaceholderComment: jest.fn(),
-}
+} as unknown as jest.Mocked<LocalCommentsState>
 
 describe('CreateComment', () => {
   let createComment: CreateComment
@@ -37,7 +37,7 @@ describe('CreateComment', () => {
     keys: {
       userOwnAddress: 'foo@bar.com',
     } as DocumentKeys,
-    commentsState: mockCommentsState as unknown as LocalCommentsState,
+    commentsState: mockCommentsState,
   }
 
   beforeEach(() => {
@@ -49,10 +49,10 @@ describe('CreateComment', () => {
   })
 
   it('should call encryptComment, api.addCommentToThread, and decryptComment in order', async () => {
-    mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' })
+    mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' } as never)
     mockEncryptComment.execute.mockResolvedValue(Result.ok('encrypted-comment'))
     mockCommentsApi.addCommentToThread.mockResolvedValue(
-      Result.ok({ Comment: { text: 'encrypted-response-comment' } as never, Code: 1000 }),
+      Result.ok({ Comment: { text: 'encrypted-response-comment', AuthorEmail: 'foo@bar.com' } as never, Code: 1000 }),
     )
 
     await createComment.execute(dto)
@@ -74,7 +74,7 @@ describe('CreateComment', () => {
   })
 
   it('should delete comment if encryption fails', async () => {
-    mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' })
+    mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' } as never)
     mockEncryptComment.execute.mockResolvedValue(Result.fail('encryption error'))
 
     const result = await createComment.execute(dto)
@@ -84,7 +84,7 @@ describe('CreateComment', () => {
   })
 
   it('should delete comment if api call fails', async () => {
-    mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' })
+    mockCommentsState.findThreadById.mockReturnValue({ markID: 'mark-id' } as never)
     mockEncryptComment.execute.mockResolvedValue(Result.ok('encrypted-comment'))
     mockCommentsApi.addCommentToThread.mockResolvedValue(Result.fail('api error'))
 
