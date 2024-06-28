@@ -45,6 +45,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
+import { sortOn } from '@proton/pass/utils/fp/sort';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -304,4 +305,6 @@ export const selectItemsWithSecureLink = createSelector(
 export const selectOptimisticItemsWithSecureLink = selectOptimisticItemsFactory(selectItemsWithSecureLink);
 
 export const selectItemSecureLinks = (shareId: string, itemId: string) =>
-    createSelector(selectSecureLinks, (secureLinks): Maybe<SecureLink[]> => secureLinks[shareId]?.[itemId]);
+    createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
+        (secureLinks[shareId]?.[itemId] ?? []).slice().sort(sortOn('active', 'DESC'))
+    );
