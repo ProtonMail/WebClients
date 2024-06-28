@@ -1,6 +1,7 @@
 import { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { createContext, useContext } from 'react'
 import type { NodeKey } from 'lexical'
+import { UserState } from '@lexical/yjs'
 
 type CommentsContextValue = {
   username: string
@@ -11,6 +12,7 @@ type CommentsContextValue = {
   markNodeMap: Map<string, Set<NodeKey>>
   threadToFocus: string | null
   setThreadToFocus: (id: string | null) => void
+  awarenessStates: UserState[]
 }
 
 const CommentsContext = createContext<CommentsContextValue | null>(null)
