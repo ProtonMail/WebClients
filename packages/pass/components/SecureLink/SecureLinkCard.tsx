@@ -43,15 +43,16 @@ export const SecureLinkCard: FC<Props> = ({
         <>
             <Card
                 type="primary"
-                className={clsx('mb-2 cursor-pointer rounded-xl', !active && 'bg-weak')}
+                className={clsx('mb-2 cursor-pointer rounded-xl')}
                 onClick={onClick}
+                style={{ backgroundColor: `var(--interaction-${active ? 'norm-minor-2' : 'weak'})` }}
             >
                 <div className="flex flex-nowrap items-center justify-space-between">
                     <IconBox
                         mode="icon"
                         size={3}
                         pill={false}
-                        style={{ backgroundColor: `var(--interaction-weak${active ? '-major-1' : ''})` }}
+                        style={{ backgroundColor: `var(--interaction-${active ? 'norm-minor-1' : 'weak-major-1'})` }}
                     >
                         <Icon name={active ? 'link' : 'link-slash'} size={3} className="absolute inset-center" />
                     </IconBox>
