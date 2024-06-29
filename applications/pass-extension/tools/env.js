@@ -18,10 +18,10 @@ const CLEAN_MANIFEST = parseEnvVar('CLEAN_MANIFEST', false, parseBool);
 const ENV = parseEnvVar('NODE_ENV', 'development', String);
 const MANIFEST_KEY = parseEnvVar('MANIFEST_KEY', BUILD_TARGET === 'chrome' ? 'chrome:production' : '', String);
 const REDUX_DEVTOOLS_PORT = parseEnvVar('REDUX_DEVTOOLS_PORT', 8000, parseInt);
+const RELEASE = parseEnvVar('RELEASE', false, parseBool);
 const RESUME_FALLBACK = parseEnvVar('RESUME_FALLBACK', false, parseBool);
 const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, parseBool);
 const RUNTIME_RELOAD_PORT = parseEnvVar('RUNTIME_RELOAD_PORT', 8089, parseInt);
-const SOURCEMAPS = parseEnvVar('SOURCEMAPS', false, parseBool);
 const WEBPACK_DEV_PORT = parseEnvVar('WEBPACK_DEV_PORT', 8090, Number);
 
 const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, parseBool);
@@ -33,9 +33,9 @@ module.exports = {
     HOT_MANIFEST_UPDATE,
     MANIFEST_KEY,
     REDUX_DEVTOOLS_PORT,
+    RELEASE,
     RESUME_FALLBACK,
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
-    SOURCEMAPS,
     WEBPACK_DEV_PORT,
 };

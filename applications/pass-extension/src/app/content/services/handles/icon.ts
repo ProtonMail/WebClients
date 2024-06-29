@@ -12,11 +12,10 @@ import {
 } from 'proton-pass-extension/app/content/injections/icon';
 import type { FieldHandle, FieldIconHandle } from 'proton-pass-extension/app/content/types';
 
-import { clientErrored, clientSessionLocked, clientStale, clientUnauthorized } from '@proton/pass/lib/client';
+import { clientDisabled, clientLocked } from '@proton/pass/lib/client';
 import type { AppStatus } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
-import { or } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
@@ -31,8 +30,8 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
 
     const setStatus = (status: AppStatus) => {
         const iconUrl = (() => {
-            if (clientSessionLocked(status)) return LOCKED_ICON_SRC;
-            if (or(clientUnauthorized, clientErrored, clientStale)(status)) return DISABLED_ICON_SRC;
+            if (clientLocked(status)) return LOCKED_ICON_SRC;
+            if (clientDisabled(status)) return DISABLED_ICON_SRC;
             return ACTIVE_ICON_SRC;
         })();
 
