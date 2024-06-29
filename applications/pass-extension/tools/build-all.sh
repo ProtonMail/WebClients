@@ -17,7 +17,7 @@ function on_enter {
 function on_leave {
     rm -rf "${OUTDIR:-}/*"
     for arg in "$@"; do
-        printf "\t✅ $ARTEFACTSDIR/%s\n" "$arg"
+        printf "\t✅ %s\n" "$arg"
     done
 }
 
@@ -29,36 +29,49 @@ function set_manifest_key {
 function build_chromium_black {
     on_enter "Chromium (Black)"
     BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build:dev >/dev/null
-    cp -r "./dist" "$ARTEFACTSDIR/black-$BUILD_ID-chrome"
-    cp -r "./dist" "$ARTEFACTSDIR/black-$BUILD_ID-edge"
 
-    set_manifest_key "$ARTEFACTSDIR/black-$BUILD_ID-chrome/manifest.json" "chrome:production"
-    set_manifest_key "$ARTEFACTSDIR/black-$BUILD_ID-edge/manifest.json" "edge:production"
+    cd dist
 
-    on_leave "black-$BUILD_ID-chrome" "black-$BUILD_ID-edge"
+    # QA Black Chrome Build
+    set_manifest_key "./manifest.json" "chrome:production"
+    zip -rqX "$ARTEFACTSDIR/chrome/$BUILD_ID.black.zip" "."
+
+    # QA Black Edge Build
+    set_manifest_key "./manifest.json" "edge:production"
+    zip -rqX "$ARTEFACTSDIR/edge/$BUILD_ID.black.zip" "."
+
+    on_leave "chrome/$BUILD_ID.black.zip" "edge/$BUILD_ID.black.zip"
 }
 
 function build_chromium_prod {
     on_enter "Chromium (Prod)"
-    BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build >/dev/null
-    cp -r "./dist" "$ARTEFACTSDIR/$BUILD_ID-chrome"
-    cp -r "./dist" "$ARTEFACTSDIR/$BUILD_ID-edge"
 
-    set_manifest_key "$ARTEFACTSDIR/$BUILD_ID-chrome/manifest.json" "chrome:production"
-    set_manifest_key "$ARTEFACTSDIR/$BUILD_ID-edge/manifest.json" "edge:production"
+    # store versions should not have a `key` in the manifest
+    RELEASE=true BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build >/dev/null
 
     cd dist
-    # store versions should not have a `key` in the manifest
-    zip -rqX "$ARTEFACTSDIR/$BUILD_ID-chromium.zip" "."
 
-    on_leave "$BUILD_ID-chromium.zip" "$BUILD_ID-chrome" "$BUILD_ID-edge"
+    # Chromium store version for release
+    zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-chromium.zip" "."
+
+    # QA Production Chrome build
+    set_manifest_key "./manifest.json" "chrome:production"
+    zip -rqX "$ARTEFACTSDIR/chrome/$BUILD_ID.zip" "."
+
+    # QA Production Edge build
+    set_manifest_key "./manifest.json" "edge:production"
+    zip -rqX "$ARTEFACTSDIR/edge/$BUILD_ID.zip" "."
+
+    on_leave "release/$BUILD_ID-chromium.zip" "chrome/$BUILD_ID.zip" "edge/$BUILD_ID.zip"
 }
 
 function build_firefox_black {
     on_enter "Firefox (Black)"
     BUILD_TARGET=firefox yarn run build:dev >/dev/null
-    cp -r "./dist" "$ARTEFACTSDIR/black-$BUILD_ID-FF"
-    on_leave "black-$BUILD_ID-FF"
+    cd dist
+    zip -rqX "$ARTEFACTSDIR/firefox/$BUILD_ID.black.zip" "."
+
+    on_leave "firefox/$BUILD_ID.black.zip"
 }
 
 function build_firefox_prod {
@@ -67,6 +80,7 @@ function build_firefox_prod {
     # Preserve config.ts because the `yarn` postinstall script will overwrite it
     cp src/app/config.ts src/app/config.ff-release.ts
     cd ../../
+
     zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip" \
         "applications/pass-extension" \
         "packages" \
@@ -84,36 +98,39 @@ function build_firefox_prod {
         -x "applications/pass-extension/*.md" \
         -x ".yarn/install-state.gz" \
         -x ".yarn/cache/*"
+
     cd "$PASSDIR"
     zip -uqX "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
-    mv "$OUTDIR/$BUILD_ID-FF-sources.zip" "$ARTEFACTSDIR"
-    on_leave "$BUILD_ID-FF-sources.zip"
+    mv "$OUTDIR/$BUILD_ID-FF-sources.zip" "$ARTEFACTSDIR/release"
+    on_leave "release/$BUILD_ID-FF-sources.zip"
 
     on_enter "Firefox (Prod)"
     mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
     cd "$OUTDIR/$BUILD_ID-FF-sources"
-    unzip -q "$ARTEFACTSDIR/$BUILD_ID-FF-sources.zip"
+    unzip -q "$ARTEFACTSDIR/release/$BUILD_ID-FF-sources.zip"
     yarn install --no-immutable >/dev/null
     cd applications/pass-extension
-    yarn run build:ff >/dev/null
+    RELEASE=true yarn run build:ff >/dev/null
+
     cd dist
-    zip -rqX "$ARTEFACTSDIR/$BUILD_ID-FF.zip" "."
-    on_leave "$BUILD_ID-FF.zip"
+    zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-FF.zip" "."
+    on_leave "release/$BUILD_ID-FF.zip"
 }
 
 function build_safari_prod {
     on_enter "Safari (Prod)"
-    yarn run build:safari > /dev/null
+    RELEASE=true yarn run build:safari >/dev/null
     cd dist
-    zip -rqX "$ARTEFACTSDIR/$BUILD_ID-safari.zip" "."
-    on_leave "$BUILD_ID-safari.zip"
+    zip -rqX "$ARTEFACTSDIR/safari/$BUILD_ID.zip" "."
+    on_leave "safari/$BUILD_ID.zip"
 }
 
 function build_safari_black {
     on_enter "Safari (Black)"
-    BUILD_TARGET=safari yarn run build:dev > /dev/null
-    cp -r "./dist" "$ARTEFACTSDIR/black-$BUILD_ID-safari"
-    on_leave "black-$BUILD_ID-safari"
+    BUILD_TARGET=safari yarn run build:dev >/dev/null
+    cd dist
+    zip -rqX "$ARTEFACTSDIR/safari/$BUILD_ID.black.zip" "."
+    on_leave "safari/$BUILD_ID.black.zip"
 }
 
 # Print debug vars
@@ -137,11 +154,18 @@ fi
 
 # Set up clean artefacts location
 rm -rf "${ARTEFACTSDIR:-}" && mkdir -p "$ARTEFACTSDIR"
+mkdir -p "$ARTEFACTSDIR/chrome"
+mkdir -p "$ARTEFACTSDIR/edge"
+mkdir -p "$ARTEFACTSDIR/firefox"
+mkdir -p "$ARTEFACTSDIR/safari"
+mkdir -p "$ARTEFACTSDIR/release"
 
 # Execute individual builds
-build_chromium_prod
-build_firefox_prod
-build_safari_prod
-build_chromium_black
 build_firefox_black
+build_firefox_prod
+
+build_safari_prod
 build_safari_black
+
+build_chromium_prod
+build_chromium_black
