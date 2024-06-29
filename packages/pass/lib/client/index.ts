@@ -26,6 +26,8 @@ export const clientCanBoot = or(clientAuthorized, clientUnauthorized, clientErro
 export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked, clientMissingScope);
 export const clientNeedsSession = or(clientErrored, clientUnauthorized);
 export const clientStatusResolved = or(clientHasSession, clientNeedsSession);
+export const clientDisabled = or(clientUnauthorized, clientErrored, clientStale);
+export const clientLocked = or(clientSessionLocked, clientPasswordLocked, clientMissingScope);
 
 export const isTaggedBuild = (config: PassConfig) => ENV === 'production' && config.BRANCH.startsWith('proton-pass@');
 export const EXTENSION_BUILD = ['chrome', 'firefox', 'safari'].includes(BUILD_TARGET);

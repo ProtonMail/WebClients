@@ -29,20 +29,11 @@ import { createApi } from '@proton/pass/lib/api/factory';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import {
-    clientBooted,
-    clientErrored,
-    clientReady,
-    clientSessionLocked,
-    clientStale,
-    clientStatusResolved,
-    clientUnauthorized,
-} from '@proton/pass/lib/client';
+import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import createStore from '@proton/shared/lib/helpers/store';
@@ -107,8 +98,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
             context.status = status;
 
             void setPopupIcon({
-                disabled: or(clientUnauthorized, clientErrored, clientStale)(status),
-                locked: clientSessionLocked(status),
+                disabled: clientDisabled(status),
+                locked: clientLocked(status),
             });
 
             WorkerMessageBroker.ports.broadcast(
