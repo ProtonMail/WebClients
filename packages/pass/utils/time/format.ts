@@ -25,6 +25,8 @@ export const timeRemaining = (epoch: number): TimeRemaining => {
     const start = Date.now();
     const end = new Date(epochToMs(epoch));
 
+    if (start > end.getTime()) return { label: c('Label').t`Expired link`, isExpired: true };
+
     let { days = 0, hours = 0, minutes = 0 } = intervalToDuration({ start, end });
 
     if (days) {
@@ -37,12 +39,8 @@ export const timeRemaining = (epoch: number): TimeRemaining => {
         return { label: c('Label').ngettext(msgid`${hours} hour`, `${hours} hours`, hours), isExpired: false };
     }
 
-    if (minutes) {
-        return {
-            label: c('Label').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes),
-            isExpired: false,
-        };
-    }
-
-    return { label: c('Label').t`Expired link`, isExpired: true };
+    return {
+        label: c('Label').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes),
+        isExpired: false,
+    };
 };
