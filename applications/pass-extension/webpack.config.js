@@ -18,10 +18,10 @@ const {
     HOT_MANIFEST_UPDATE,
     MANIFEST_KEY,
     REDUX_DEVTOOLS_PORT,
+    RELEASE,
     RESUME_FALLBACK,
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
-    SOURCEMAPS,
     WEBPACK_DEV_PORT,
 } = require('./tools/env');
 
@@ -37,10 +37,10 @@ const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? MANIFEST_KEYS?.[MANIFEST_KEY] : n
 const ARGON2_CHUNK_NAME = 'node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs';
 
 console.log(`ENV = ${ENV}`);
+console.log(`RELEASE = ${RELEASE}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
 console.log(`MANIFEST_KEY = ${MANIFEST_KEY || 'none'}`);
 console.log(`PUBLIC_KEY = ${PUBLIC_KEY || 'none'}`);
-console.log(`SOURCEMAPS = ${SOURCEMAPS}`);
 console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
 
 if (ENV !== 'production') {
@@ -65,7 +65,7 @@ const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manif
 
 module.exports = {
     ...(production
-        ? { mode: 'production', devtool: SOURCEMAPS ? 'source-map' : undefined }
+        ? { mode: 'production', devtool: 'source-map' }
         : { mode: 'development', devtool: 'inline-source-map' }),
     entry: {
         background: {
