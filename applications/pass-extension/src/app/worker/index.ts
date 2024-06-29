@@ -3,7 +3,6 @@ import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
 import 'proton-pass-extension/lib/utils/polyfills';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import sentry from '@proton/shared/lib/helpers/sentry';
@@ -20,11 +19,7 @@ if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
     const globalScope = self as any as ServiceWorkerGlobalScope;
 
     const localeChunks = Object.keys(config.LOCALES).map((locale: string) => `chunk.locales/${locale}-json.js`);
-
-    const cryptoChunks = [
-        'chunk.crypto-worker-api.js',
-        'chunk.node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs.js',
-    ];
+    const cryptoChunks = ['chunk.crypto-worker-api.js', 'chunk.crypto-argon2.js'];
 
     const chunks = localeChunks.concat(cryptoChunks);
 
