@@ -28,7 +28,7 @@ import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/Secure
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
@@ -64,7 +64,7 @@ export const MenuDropdown: FC = () => {
     const { onLink, onboardingAcknowledge, onboardingCheck } = usePassCore();
     const { lock, logout, ready, expanded } = usePopupContext();
     const { API_URL } = usePassConfig();
-    const { filters, matchTrash } = useNavigation();
+    const { navigate, filters, matchTrash } = useNavigation();
     const { selectedShareId } = filters;
 
     const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
@@ -229,7 +229,7 @@ export const MenuDropdown: FC = () => {
                         {secureLinkEnabled && (
                             <SecureLinkButton
                                 className="pt-1.5 pb-1.5"
-                                onClick={() => onLink(getPassWebUrl(API_URL, 'secure-links'))}
+                                onClick={withClose(() => navigate(getLocalPath('secure-links')))}
                             />
                         )}
 

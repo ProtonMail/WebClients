@@ -1,5 +1,5 @@
 import { type FC, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupStateEffects';
 
@@ -15,11 +15,50 @@ import { Autoselect } from '@proton/pass/components/Navigation/Autoselect';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
+import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 
 import { Header } from './Header/Header';
 
 import './Main.scss';
+
+const MainSwitch: FC = () => {
+    const sub = (basePath: string, path: string) => `${basePath}/${path}`;
+
+    return (
+        <Route path="*">
+            {({ match }) => (
+                <main
+                    key="main"
+                    id="main"
+                    className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
+                    style={{ '--anime-delay': '50ms' }}
+                >
+                    <Header />
+                    <div id="pass-layout" className="flex items-center justify-center flex-nowrap w-full h-full">
+                        {match && (
+                            <Switch>
+                                <Route path={sub(match.path, 'secure-links')} component={SecureLinks} />
+                                <Route>
+                                    {(subRoute) => (
+                                        <>
+                                            <SubSidebar>
+                                                <ItemsList />
+                                            </SubSidebar>
+                                            <Content>
+                                                <ItemSwitch fallback={Autoselect} {...subRoute} />
+                                            </Content>
+                                        </>
+                                    )}
+                                </Route>
+                            </Switch>
+                        )}
+                    </div>
+                </main>
+            )}
+        </Route>
+    );
+};
 
 export const Main: FC = () => {
     usePopupStateEffects();
@@ -36,27 +75,7 @@ export const Main: FC = () => {
                         <InviteProvider>
                             <PasswordProvider>
                                 <SpotlightProvider>
-                                    <main
-                                        key="main"
-                                        id="main"
-                                        className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
-                                        style={{ '--anime-delay': '50ms' }}
-                                    >
-                                        <Header />
-                                        <div
-                                            id="pass-layout"
-                                            className="flex items-center justify-center flex-nowrap w-full h-full"
-                                        >
-                                            <SubSidebar>
-                                                <ItemsList />
-                                            </SubSidebar>
-                                            <Content>
-                                                <Route>
-                                                    {(subRoute) => <ItemSwitch fallback={Autoselect} {...subRoute} />}
-                                                </Route>
-                                            </Content>
-                                        </div>
-                                    </main>
+                                    <MainSwitch />
                                 </SpotlightProvider>
                             </PasswordProvider>
                         </InviteProvider>
