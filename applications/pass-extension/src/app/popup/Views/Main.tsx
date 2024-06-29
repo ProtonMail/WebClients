@@ -26,7 +26,7 @@ const MainSwitch: FC = () => {
     const sub = (basePath: string, path: string) => `${basePath}/${path}`;
 
     return (
-        <Route path="*">
+        <Route>
             {({ match }) => (
                 <main
                     key="main"
