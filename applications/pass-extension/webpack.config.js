@@ -31,9 +31,10 @@ if (!SUPPORTED_TARGETS.includes(BUILD_TARGET)) {
     throw new Error(`Build target "${BUILD_TARGET}" is not supported`);
 }
 
-const config = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(export const |;)/gm, '');
-const manifestKeys = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
-const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? manifestKeys?.[MANIFEST_KEY] : null;
+const CONFIG = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(export const |;)/gm, '');
+const MANIFEST_KEYS = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
+const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? MANIFEST_KEYS?.[MANIFEST_KEY] : null;
+const ARGON2_CHUNK_NAME = 'node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs';
 
 console.log(`ENV = ${ENV}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
@@ -51,15 +52,15 @@ if (ENV !== 'production') {
     console.log(`WEBPACK_DEV_PORT = ${WEBPACK_DEV_PORT}`);
 }
 
-console.log(config);
+console.log(CONFIG);
 
 const production = ENV === 'production';
-
-const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
-const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
+const importScripts = BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari';
 const manifest = `manifest-${BUILD_TARGET}.json`;
 const manifestPath = path.resolve(__dirname, manifest);
 
+const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
+const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
 const getManifestVersion = () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version);
 
 module.exports = {
@@ -77,7 +78,7 @@ module.exports = {
              * a service-worker is that you have to register any imported script
              * during the service worker's oninstall phase (`/worker/index.ts`)
              * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10  */
-            chunkLoading: BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari' ? 'import-scripts' : 'jsonp',
+            chunkLoading: importScripts ? 'import-scripts' : 'jsonp',
         },
         client: './src/app/content/client.ts',
         dropdown: nonAccessibleWebResource('./src/app/content/injections/apps/dropdown/index.tsx'),
@@ -112,6 +113,7 @@ module.exports = {
         runtimeChunk: false,
         splitChunks: false,
         usedExports: true,
+        chunkIds: 'named',
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts'],
@@ -140,11 +142,19 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        /* webpack can sometimes prefix chunks with an `_`
-        which is disallowed in an extension's file. Force chunks
-        to be prefixed correctly. This is mostly due to the presence
-        of lazy loaded files in asmcrypto.js */
-        chunkFilename: 'chunk.[name].js',
+
+        /** Some chunks need to be predictable in order for
+         * importScripts to work properly in the context of
+         * chromium builds (eg crypto lazy loaded modules) */
+        chunkFilename: ({ chunk: { name, id } }) => {
+            if (name === null) {
+                if (id === ARGON2_CHUNK_NAME) return 'chunk.crypto-argon2.js';
+                if (/pass-rust-core/.test(id)) return 'chunk.pass-core.[contenthash:8].js';
+                return 'chunk.[contenthash:8].js';
+            }
+
+            return 'chunk.[name].js';
+        },
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         assetModuleFilename: 'assets/[hash][ext][query]',
