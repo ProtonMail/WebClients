@@ -2,11 +2,12 @@ import type { PropsWithChildren } from 'react';
 import { type FC, type ReactElement } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components';
+import { DropdownSizeUnit, Icon } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
@@ -72,9 +73,10 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const monitored = isMonitored(revision);
 
     const hasMultipleVaults = vaults.length > 1;
-    const { shareRoleId, shared, owner } = vault;
+    const { shareRoleId, shared, owner, targetMembers } = vault;
     const showVaultTag = hasMultipleVaults || shared;
     const readOnly = shareRoleId === ShareRole.READ;
+    const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
     const sharedReadOnly = shared && readOnly;
     const spotlight = useSpotlight();
 
@@ -159,7 +161,20 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             ...actions,
 
-                            <QuickActionsDropdown key="share-item-button" color="weak" shape="solid" icon="users-plus">
+                            <QuickActionsDropdown
+                                key="share-item-button"
+                                color="weak"
+                                shape="solid"
+                                icon="users-plus"
+                                menuClassName="flex flex-column gap-2"
+                                dropdownHeader={c('Label').t`Share`}
+                                dropdownSize={{
+                                    height: DropdownSizeUnit.Dynamic,
+                                    width: DropdownSizeUnit.Dynamic,
+                                    maxHeight: DropdownSizeUnit.Viewport,
+                                    maxWidth: DropdownSizeUnit.Viewport,
+                                }}
+                            >
                                 {secureLinkEnabled && type !== 'alias' && (
                                     <DropdownMenuButton
                                         onClick={
@@ -171,13 +186,16 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                       })
                                                 : handleSecureLinkClick
                                         }
-                                        label={c('Action').t`Via secure link`}
+                                        label={
+                                            <DropdownMenuLabel
+                                                title={c('Action').t`Via secure link`}
+                                                subtitle={c('Label').t`Generate a secure link for this item`}
+                                            />
+                                        }
                                         icon="link"
-                                        disabled={!owner}
+                                        disabled={optimistic || !isOwnerOrAdmin}
                                         extra={
-                                            plan === UserPassPlan.FREE && (
-                                                <Icon name="upgrade" size={3} color="var(--primary)" />
-                                            )
+                                            plan === UserPassPlan.FREE && <Icon name="upgrade" color="var(--primary)" />
                                         }
                                     />
                                 )}
@@ -193,7 +211,12 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                                 : handleInviteClick
                                         }
                                         title={c('Action').t`Share`}
-                                        label={c('Action').t`Entire vault`}
+                                        label={
+                                            <DropdownMenuLabel
+                                                title={c('Action').t`Entire vault`}
+                                                subtitle={c('Label').t`Share this vault or create a new vault`}
+                                            />
+                                        }
                                         icon="folder-plus"
                                         disabled={optimistic || readOnly}
                                     />
@@ -202,8 +225,17 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     <DropdownMenuButton
                                         onClick={handleManageClick}
                                         title={c('Action').t`See members`}
-                                        label={c('Action').t`See members`}
                                         icon="users"
+                                        label={
+                                            <DropdownMenuLabel
+                                                title={c('Action').t`Manage vault access`}
+                                                subtitle={c('Label').ngettext(
+                                                    msgid`The item's vault is currently shared with ${targetMembers} person`,
+                                                    `The item's vault is currently shared with ${targetMembers} people`,
+                                                    targetMembers
+                                                )}
+                                            />
+                                        }
                                     />
                                 )}
                             </QuickActionsDropdown>,
