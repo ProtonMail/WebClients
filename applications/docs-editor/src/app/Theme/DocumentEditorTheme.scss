@@ -41,11 +41,26 @@
 }
 
 .Lexical__quote {
+	position: relative;
+
+	--gap: 0.75rem;
+	--quote-indicator-size: 3px;
+
 	margin: 0;
-	padding-block: 0.5rem;
-	padding-inline: 1rem;
-	border-inline-start: 4px solid var(--border-weak);
+	padding-inline: calc(var(--gap) + var(--quote-indicator-size));
 	quotes: none !important;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		inline-size: var(--quote-indicator-size);
+		block-size: 100%;
+		display: block;
+		background-color: var(--text-hint);
+		border-radius: 100px;
+	}
 }
 
 .Lexical__textBold {
