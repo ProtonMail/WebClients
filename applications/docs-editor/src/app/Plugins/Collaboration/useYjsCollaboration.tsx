@@ -20,8 +20,7 @@ import {
   REDO_COMMAND,
   UNDO_COMMAND,
 } from 'lexical'
-import * as React from 'react'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Doc, Transaction, UndoManager, YEvent } from 'yjs'
 
@@ -48,7 +47,7 @@ export function useYjsCollaboration(
   awarenessData?: object,
 ): [JSX.Element, Binding] {
   const [doc] = useState(() => docMap.get(id))
-  const didPostReadyEvent = React.useRef(false)
+  const didPostReadyEvent = useRef(false)
 
   const binding = useMemo(
     () => createBinding(editor, provider, id, doc, docMap, excludedProperties),
@@ -230,7 +229,7 @@ export function useYjsHistory(editor: LexicalEditor, binding: Binding): () => vo
   }, [undoManager])
 
   // Exposing undo and redo states
-  React.useEffect(() => {
+  useEffect(() => {
     const updateUndoRedoStates = () => {
       editor.dispatchCommand(CAN_UNDO_COMMAND, undoManager.undoStack.length > 0)
       editor.dispatchCommand(CAN_REDO_COMMAND, undoManager.redoStack.length > 0)
