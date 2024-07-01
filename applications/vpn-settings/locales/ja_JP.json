@@ -62,9 +62,6 @@
       "Change keys": [
         "鍵を変更"
       ],
-      "Change mailbox password": [
-        "メールボックスのパスワードを変更"
-      ],
       "Change password": [
         "パスワードを変更"
       ],
@@ -2011,9 +2008,6 @@
       "Incorrect login credentials. Please try again.": [
         "無効なログイン情報です。再度お試しください。"
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "無効な受信トレイのパスワードです。再度お試しください。"
-      ],
       "Incorrect password": [
         "パスワードが正しくありません"
       ],
@@ -2845,9 +2839,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 低画質のプレビュー"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
-      ],
       "${ n } address": [
         "${ n } 件のアドレス"
       ],
@@ -3109,10 +3100,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }アプリの外観をカスタマイズ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -3838,12 +3829,6 @@
       "Two-factor authentication enabled": [
         "2 要素認証が有効になりました"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "2 パスワードモードでは、アカウントへのログイン用とメールボックスの復号用の 2 つのパスワードを使用します。(高度な機能)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "2 パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。2 パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "このアカウントに回復手段は設定されていません。"
       ],
@@ -4347,9 +4332,6 @@
       "Confirm login password": [
         "ログインパスワードの確認"
       ],
-      "Confirm mailbox password": [
-        "メールボックスのパスワードの確認"
-      ],
       "Confirm new password": [
         "新しいパスワードの確認"
       ],
@@ -4455,9 +4437,6 @@
       "Logo": [
         "ロゴ"
       ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
-      ],
       "Main": [
         "メイン"
       ],
@@ -4493,9 +4472,6 @@
       ],
       "New login password": [
         "新しいログインパスワード"
-      ],
-      "New mailbox password": [
-        "新しいメールボックスのパスワード"
       ],
       "New organization password": [
         "新しい組織のパスワード"
@@ -6006,6 +5982,9 @@
       "Current plan": [
         "現在のプラン"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "**${ username }** の表示名を入力します。 これは、ユーザーの権限を変更したり、ユーザーとデータを共有したりするときに表示されます。"
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "月額 **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム パスワード マネージャーにアクセスできるようになります。"
       ],
@@ -6024,6 +6003,9 @@
       "Includes:": [
         "含まれるもの:"
       ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を起動しています"
+      ],
       "per month": [
         "月あたり"
       ],
@@ -6038,6 +6020,12 @@
       ],
       "Preparing your Recovery Kit": [
         "リカバリーキットの準備"
+      ],
+      "Setting up your organization": [
+        "組織の設定"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } にログインしています"
       ],
       "Updating your account": [
         "アカウントの更新"
@@ -7646,9 +7634,6 @@
       "Change login password": [
         "ログインパスワードを変更"
       ],
-      "Change mailbox password": [
-        "メールボックスのパスワードの変更"
-      ],
       "Change organization name": [
         "組織名を変更"
       ],
@@ -7859,9 +7844,6 @@
       "Invoices": [
         "請求書"
       ],
-      "Login password": [
-        "ログインパスワード"
-      ],
       "Multi-user support": [
         "複数ユーザー対応"
       ],
@@ -8056,9 +8038,6 @@
       ],
       "Type": [
         "種類"
-      ],
-      "Unlock your mailbox": [
-        "メールボックスのロック解除"
       ],
       "Upgrade your network protection with dedicated servers": [
         "専用サーバーでネットワークの保護を強化する"

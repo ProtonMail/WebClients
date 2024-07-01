@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Muuta avaimia"
       ],
-      "Change mailbox password": [
-        "Vaihda postilaatikon salasana"
-      ],
       "Change other email subscriptions": [
         "Muuta muita sähköpostitilauksia"
       ],
       "Change password": [
         "Vaihda salasana"
+      ],
+      "Change second password": [
+        "Vaihda toinen salasana"
       ],
       "Chat with us": [
         "Keskustele kanssamme"
@@ -4113,11 +4113,11 @@
       "Incorrect login credentials. Please try again.": [
         "Virheelliset kirjautumistiedot. Yritä uudelleen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Virheellinen postilaatikon salasana. Yritä uudelleen."
-      ],
       "Incorrect password": [
         "Virheellinen salasana"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Väärä toine salasana. Yritä uudelleen."
       ],
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
@@ -4313,6 +4313,9 @@
       ],
       "Require at least one condition": [
         "Lisää ainakin yksi ehto"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Istunto on vanhentunut. Päivitä sivu."
       ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
@@ -6121,17 +6124,6 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -6189,8 +6181,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } haluaa jakaa dataa kanssasi sovelluksessa ${ PASS_APP_NAME }"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että postilaatikon salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että toisen salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
       ],
       "${ n } address": [
         "${ n } osoite",
@@ -7558,6 +7550,9 @@
         "Lisää sähköpostiosoite rivillä olevalle käyttäjälle",
         "Lisää sähköpostiosoitteet riveillä oleville käyttäjille"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Pyydä omistajaa kutsumaan sinut suoraan dokumenttiin."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Vahvista korttisi vahvistusvälilehdellä."
       ],
@@ -7587,6 +7582,9 @@
       ],
       "please open a support ticket": [
         "avaa tukipyyntö"
+      ],
+      "Please open the document to view it.": [
+        "Avaa dokumentti tarkastellaksesi sitä."
       ],
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
@@ -7627,6 +7625,9 @@
       "Preview for this file type is not supported": [
         "Tämän tiedostotyypin esikatselua ei tueta"
       ],
+      "Preview of documents is not yet supported.": [
+        "Dokumenttien esikatselua ei vielä tueta."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
       ],
@@ -7644,6 +7645,9 @@
       ],
       "Public link invite": [
         "Kutsu julkisella linkillä"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Dokumenttien julkista jakamista ei vielä tueta."
       ],
       "purchase additional storage": [
         "osta lisää tallennustilaa"
@@ -7994,6 +7998,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Tämä kutsulinkki on vanhentunut. Ota yhteyttä ylläpitäjään ja pyydä pääsyä."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Kutsulinkki on jo käytetty. Kirjaudu suoraan sisään."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Tämä on 12-sanainen lauseke, joka sinua pyydettiin määrittämään."
       ],
@@ -8068,6 +8075,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Tämä korvaa väliaikaisen salasanasi ja jatkossa käytät tätä ${ BRAND_NAME }-tilillesi kirjautumiseen."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Tämä lähettää uuden kutsun osoitteeseen **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
@@ -8162,11 +8172,11 @@
       "Two-factor authentication enabled": [
         "Kaksivaiheinen tunnistautuminen otettiin käyttöön"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen postilaatikkosi salauksen purkuun. (Edistynyt)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen tietojesi salauksen purkuun. (Edistynyt)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Kahden salasanan tila käyttää erillisiä salasanoja kirjautumiseen ja postilaatikon salauksen purkuun. Tämä tarjoaa pienen suojausedun joissakin tilanteissa, mutta useimmille käyttäjille suosittelemme yhden salasanan tilaa. Vaihda kahden salasanan tilaan, asettamalla kirjautumisen salasana ja sitten postilaatikon salasana."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Kahden salasanan tila käyttää erillisiä salasanoja kirjautumiseen ja tietojen salauksen purkamiseen. Tämä tarjoaa pienen turvallisuusedun joissain tilanteissa, mutta suosittelemme yhden salasanan tilaa useimmille käyttäjille. Vaihtaaksesi kahden salasanan tilaan, aseta ensin kirjautumissalasana ja sitten toinen salasana."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Palautustiedoston allekirjoitusta ei voitu vahvistaa. Ota yhteyttä tukeen."
@@ -8611,6 +8621,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Sinun on silti vastattava kutsuihin, jotta järjestäjä näkee vastauksesi."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Voit ylentää käyttäjän ylläpitäjäksi, kun hän on hyväksynyt kutsun."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
       ],
@@ -8736,6 +8749,17 @@
         "Zoom-tapaamista"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Tämän ollessa käytössä, alikansiot perivät yläkansioidensa värin."
@@ -8821,6 +8845,9 @@
       ],
       "Paid": [
         "Maksettu"
+      ],
+      "Processing": [
+        "Käsitellään"
       ],
       "Unpaid": [
         "Maksamaton"
@@ -9307,9 +9334,6 @@
       "Awarded": [
         "Palkittu"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Laskutusosoite"
       ],
@@ -9406,9 +9430,6 @@
       "Confirm login password": [
         "Vahvista kirjautumisen salasana"
       ],
-      "Confirm mailbox password": [
-        "Vahvista postilaatikon salasana"
-      ],
       "Confirm new password": [
         "Vahvista uusi salasana"
       ],
@@ -9417,6 +9438,9 @@
       ],
       "Confirm password": [
         "Vahvista salasana"
+      ],
+      "Confirm second password": [
+        "Vahvista toinen salasana"
       ],
       "Contacts": [
         "Yhteystiedot"
@@ -9510,6 +9534,9 @@
       ],
       "Disable data export for organization members": [
         "Poista tietojen vienti käytöstä organisaation jäseniltä"
+      ],
+      "Disable sharing outside the organization": [
+        "Poista organisaation ulkopuolinen jakaminen käytöstä"
       ],
       "Display name": [
         "Näyttönimi"
@@ -9706,9 +9733,6 @@
       "Mail settings": [
         "Mail-asetukset"
       ],
-      "Mailbox password": [
-        "Postilaatikon salasana"
-      ],
       "Main": [
         "Pää"
       ],
@@ -9766,9 +9790,6 @@
       "New login password": [
         "Uusi kirjautumisen salasana"
       ],
-      "New mailbox password": [
-        "Uusi postilaatikon salasana"
-      ],
       "New organization identity": [
         "Uusi organisaation identiteetti"
       ],
@@ -9777,6 +9798,9 @@
       ],
       "New password": [
         "Uusi salasana"
+      ],
+      "New second password": [
+        "Uusi toinen salasana"
       ],
       "No filter": [
         "Ei suodatusta"
@@ -9919,6 +9943,9 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Second password": [
+        "Toinen salasana"
+      ],
       "Security code (${ codeName })": [
         "Turvakoodi (${ codeName })"
       ],
@@ -9999,6 +10026,12 @@
       ],
       "Subscription options": [
         "Tilausvaihtoehdot"
+      ],
+      "Swipe left action": [
+        "Pyyhkäise vasemmalle -toiminto"
+      ],
+      "Swipe right action": [
+        "Pyyhkäise oikealle -toiminto"
       ],
       "Synchronize with system": [
         "Seuraa järjestelmää"
@@ -12186,6 +12219,9 @@
       "Add to existing group": [
         "Lisää olemassa olevaan ryhmään"
       ],
+      "Archive": [
+        "Arkistoi"
+      ],
       "Ask each time": [
         "Kysy aina"
       ],
@@ -12224,6 +12260,9 @@
       ],
       "Left to Right": [
         "Vasemmalta oikealle"
+      ],
+      "Mark as read": [
+        "Merkitse luetuksi"
       ],
       "My reason isn't listed": [
         "Syytäni ei ole listattu"
@@ -12282,11 +12321,20 @@
       "Setup incomplete": [
         "Määritys ei ole valmis"
       ],
+      "Spam": [
+        "Roskapostia"
+      ],
       "Standard server configs": [
         "Vakiopalvelinten määritykset"
       ],
+      "Star": [
+        "Merkitse tähdellä"
+      ],
       "The whole organization": [
         "Koko organisaatio"
+      ],
+      "Trash": [
+        "Poista"
       ]
     },
     "Option delay send seconds": {
@@ -12899,8 +12947,14 @@
       "CVC": [
         "Turvakoodi"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Payment Processing": [
+        "Maksua käsitellään"
       ],
       "Processing payment": [
         "Käsitellään maksua"
@@ -15358,9 +15412,6 @@
       "Change login password": [
         "Vaihda kirjautumisen salasana"
       ],
-      "Change mailbox password": [
-        "Vaihda postilaatikon salasana"
-      ],
       "Change organization name": [
         "Muuta organisaation nimeä"
       ],
@@ -15372,6 +15423,9 @@
       ],
       "Change role": [
         "Muuta roolia"
+      ],
+      "Change second password": [
+        "Vaihda toinen salasana"
       ],
       "Choose an account": [
         "Valitse tili"
@@ -15691,15 +15745,6 @@
       "Folders and labels": [
         "Kansiot ja tunnisteet"
       ],
-      "For Linux": [
-        "Linuxille"
-      ],
-      "For macOS": [
-        "MacOS:lle"
-      ],
-      "For Windows": [
-        "Windowsille"
-      ],
       "Forgot recovery method": [
         "Unohtunut palautustapa"
       ],
@@ -15818,8 +15863,8 @@
       "Link confirmation": [
         "Linkin vahvistus"
       ],
-      "Login password": [
-        "Kirjautumisen salasana"
+      "Main password": [
+        "Pääsalasana"
       ],
       "Messages": [
         "Viestit"
@@ -16167,8 +16212,8 @@
       "Type": [
         "Tyyppi"
       ],
-      "Unlock your mailbox": [
-        "Avaa postilaatikkosi"
+      "Unlock your data": [
+        "Avaa tietojesi lukitus"
       ],
       "Upgrade plan": [
         "Päivitä tilaus"

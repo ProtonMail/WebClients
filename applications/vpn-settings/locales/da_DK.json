@@ -62,11 +62,11 @@
       "Change keys": [
         "Skift nøgler"
       ],
-      "Change mailbox password": [
-        "Skift postkasseadgangskode"
-      ],
       "Change password": [
         "Skift adgangskode"
+      ],
+      "Change second password": [
+        "Ændr anden adgangskode"
       ],
       "Chat with us": [
         "Chat med os"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen."
-      ],
       "Incorrect password": [
         "Forkert adgangskode"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
       ],
       "Incorrect username": [
         "Forkert brugernavn"
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav opløsning"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan også benyttes med én enkelt adgangskode, der erstatter både log ind- og postkasseadgangskoden. Skift til enkeltadgangskodetilstand ved at angive den ønskede enkelte adgangskode, og tryk Gem."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } kan også bruges med en enkelt adgangskode, som erstatter både login og den anden adgangskode. Skift til enkeltadgangskode ved at indtaste den enkeltadgangskode, du vil bruge, og klik på Gem."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -4080,11 +4080,11 @@
       "Two-factor authentication enabled": [
         "To-faktor-godkendelse aktiveret"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "To-adgangskodetilstand kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere din postkasse. (Avanceret)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Tilstanden med to adgangskoder kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere dine data. (Avanceret)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "To-adgangskodetilstand benytter separate adgangskoder til indlogning og postkassedekryptering. Dette giver en lille sikkerhedsfordel i visse situationer, men brug af en-adgangskodetilstand anbefales til de fleste brugere. Angiv først én adgangskode til indlogning og dernæst én til postkassen for at skifte til to-adgangskodtilstand."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Tilstanden med to adgangskoder bruger separate adgangskoder til login og dekryptering af data. I nogle situationer giver det en mindre sikkerhedsfordel, dog anbefaler vi én adgangskodetilstand til de fleste brugere. Skift til to-adgangskodetilstand ved først at indstille en login-adgangskode og derefter en anden adgangskode."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Desværre er der ingen gendannelsesmetode gemt for denne konto."
@@ -4640,9 +4640,6 @@
       "Confirm login password": [
         "Bekræft adgangskode til login"
       ],
-      "Confirm mailbox password": [
-        "Bekræft postkasseadgangskode"
-      ],
       "Confirm new password": [
         "Bekræft ny adgangskode"
       ],
@@ -4651,6 +4648,9 @@
       ],
       "Confirm password": [
         "Bekræft adgangskode"
+      ],
+      "Confirm second password": [
+        "Bekræft anden adgangskode"
       ],
       "Copy": [
         "Kopiér"
@@ -4751,9 +4751,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
       "Main": [
         "Hjem"
       ],
@@ -4790,9 +4787,6 @@
       "New login password": [
         "Ny login-adgangskode"
       ],
-      "New mailbox password": [
-        "Ny postkasseadgangskode"
-      ],
       "New organization identity": [
         "Ny organisationsidentitet"
       ],
@@ -4801,6 +4795,9 @@
       ],
       "New password": [
         "Ny adgangskode"
+      ],
+      "New second password": [
+        "Ny anden adgangskode"
       ],
       "No filter": [
         "Intet filter"
@@ -4894,6 +4891,9 @@
       ],
       "Reveal password": [
         "Vis adgangskode"
+      ],
+      "Second password": [
+        "Anden adgangskode"
       ],
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
@@ -6449,6 +6449,9 @@
       "Current plan": [
         "Nuværende abonnent"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Indtast et visnings navn for **${ username }**. Dette er, hvad dine brugere vil se, når du ændrer deres tilladelser eller dele data med dem."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
       ],
@@ -6466,6 +6469,9 @@
       ],
       "Includes:": [
         "Inkluderer:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Starter ${ PASS_APP_NAME }"
       ],
       "per month": [
         "pr. måned"
@@ -6491,6 +6497,12 @@
       ],
       "Secure vault sharing": [
         "Sikker deling af boks"
+      ],
+      "Setting up your organization": [
+        "Konfigurerer din organisation"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Logger ind på ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Opdaterer din konto"
@@ -8509,9 +8521,6 @@
       "Change login password": [
         "Skift login-adgangskode"
       ],
-      "Change mailbox password": [
-        "Skift postkasseadgangskode"
-      ],
       "Change organization name": [
         "Skift organisationsnavn"
       ],
@@ -8523,6 +8532,9 @@
       ],
       "Change role": [
         "Skift rolle"
+      ],
+      "Change second password": [
+        "Ændr anden adgangskode"
       ],
       "Close": [
         "Luk"
@@ -8731,8 +8743,8 @@
       "Invoices": [
         "Fakturaer"
       ],
-      "Login password": [
-        "Login-adgangskode"
+      "Main password": [
+        "Hovedadgangskode"
       ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"
@@ -8933,8 +8945,8 @@
       "Type": [
         "Type"
       ],
-      "Unlock your mailbox": [
-        "Lås din postkasse op"
+      "Unlock your data": [
+        "Lås dine data op"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Opgradér din netværksbeskyttelse med dedikerede servere"

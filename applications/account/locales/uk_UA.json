@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -184,9 +184,6 @@
       "Change keys": [
         "Змінити ключі"
       ],
-      "Change mailbox password": [
-        "Змінити пароль поштової скриньки"
-      ],
       "Change other email subscriptions": [
         "Змінити інші підписки е-поштою"
       ],
@@ -210,6 +207,12 @@
       ],
       "Clear all formatting": [
         "Очистити форматування"
+      ],
+      "Clear filter": [
+        "Очистити фільтр"
+      ],
+      "Clear filters": [
+        "Очистити фільтри"
       ],
       "Close": [
         "Закрити"
@@ -424,6 +427,12 @@
       "Edit name": [
         "Змінити назву"
       ],
+      "Edit organization identity": [
+        "Редагувати ідентифікатор організації"
+      ],
+      "Edit organization name": [
+        "Редагувати назву організації"
+      ],
       "Edit password": [
         "Редагувати пароль"
       ],
@@ -483,6 +492,9 @@
       ],
       "Forgot password?": [
         "Забули пароль?"
+      ],
+      "Forgot recovery method?": [
+        "Забули спосіб відновлення?"
       ],
       "Generate": [
         "Згенерувати"
@@ -615,6 +627,9 @@
       ],
       "Later": [
         "Пізніше"
+      ],
+      "Learn why this option is unavailable": [
+        "Дізнайтеся, чому ця опція є недоступна"
       ],
       "Leave": [
         "Залишити"
@@ -919,6 +934,9 @@
       "Send my username": [
         "Надіслати моє ім'я користувача"
       ],
+      "Send new invite": [
+        "Надіслати нове запрошення"
+      ],
       "Send reminder": [
         "Надіслати нагадування"
       ],
@@ -1119,6 +1137,9 @@
       ],
       "Verify account": [
         "Підтвердити обліковий запис"
+      ],
+      "Verify domain": [
+        "Підтвердити домен"
       ],
       "View": [
         "Переглянути"
@@ -3973,6 +3994,9 @@
       "Could not save preference": [
         "Не вдалося зберегти налаштування"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "Не вдалося завантажити рахунки-фактури. Будь ласка, спробуйте ще раз пізніше."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
@@ -3993,6 +4017,9 @@
       ],
       "Email address is invalid": [
         "Недійсна адреса е-пошти"
+      ],
+      "Email address is not available": [
+        "Електронна адреса є недоступною."
       ],
       "Email address is required": [
         "Адреса е-пошти обов'язкова"
@@ -4047,9 +4074,6 @@
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Неправильний пароль поштової скриньки. Спробуйте знову."
       ],
       "Incorrect password": [
         "Неправильний пароль"
@@ -4149,6 +4173,9 @@
       ],
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Необхідно активувати ключ організації, щоб створити запрошених користувачів"
       ],
       "Organization key must be activated to create non-private users": [
         "Щоб створити неприватних користувачів, необхідно активувати ключ організації"
@@ -6088,17 +6115,6 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ],
-      "Selected color:": [
-        "Вибраний колір:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -6159,9 +6175,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } хоче надати вам спільний доступ до даних у ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
       ],
       "${ n } address": [
         "${ n } адреса",
@@ -6613,6 +6626,9 @@
       "Browser not supported": [
         "Браузер не підтримується"
       ],
+      "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
+        "За замовчуванням учасники організації можуть експортувати лише сховища, власниками яких вони є. Якщо цей параметр увімкнено, вони не зможуть експортувати жодних даних"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
       ],
@@ -7036,8 +7052,14 @@
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Якщо це пов'язано зі скиданням старого пароля, ви можете запобігти повторному показу повідомлення"
       ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "Якщо цей параметр увімкнено, учасники організації зможуть ділитися сховищами лише в межах організації"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Якщо ви ввійшли в інший обліковий запис, можливо, ви зможете ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
@@ -7168,6 +7190,15 @@
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
       ],
+      "Invitation link expired": [
+        "Термін дії посилання для запрошення закінчився"
+      ],
+      "Invitation link used": [
+        "Посилання на запрошення використано"
+      ],
+      "Invite Accepted": [
+        "Запрошення Прийнято"
+      ],
       "Invite Created": [
         "Запрошення створено"
       ],
@@ -7177,8 +7208,20 @@
       "Invite Deleted": [
         "Запрошення видалено"
       ],
+      "Invite for organization accepted": [
+        "Запрошення для організації прийнято"
+      ],
+      "Invite for organization created": [
+        "Запрошення до організації створено"
+      ],
+      "Invite for User deleted": [
+        "Запрошення для Користувача видалено"
+      ],
       "Invite rejected": [
         "Запрошення відхилено"
+      ],
+      "Invite Rejected": [
+        "Запрошення Відхилено"
       ],
       "Invite successfully sent": [
         "Запрошення успішно надіслано",
@@ -7188,6 +7231,54 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "Здається, деякі з ваших даних зашифровано та заблоковано."
+      ],
+      "Item Autofilled": [
+        "Елемент Автоматично Заповнений"
+      ],
+      "Item autofilled in vault": [
+        "Елемент автоматично заповнений у сховищі"
+      ],
+      "Item Changed Flags": [
+        "Елемент Змінив Прапорці"
+      ],
+      "Item Created": [
+        "Елемент Створено"
+      ],
+      "Item created in vault": [
+        "Елемент створений у сховищі"
+      ],
+      "Item Deleted": [
+        "Елемент Видалено"
+      ],
+      "Item deleted in vault": [
+        "Елемент видалено зі сховища"
+      ],
+      "Item flags changed in vault": [
+        "Прапори предметів/предмету змінено в сховищі"
+      ],
+      "Item in vault untrashed": [
+        "Елемент забрано зі смітника сховища"
+      ],
+      "Item Read": [
+        "Елемент Прочитаний"
+      ],
+      "Item read in vault": [
+        "Пункт прочитаний у сховищі"
+      ],
+      "Item Trashed": [
+        "Елемент Переміщено до Смітника"
+      ],
+      "Item trashed in vault": [
+        "Елемент переміщено до сховища"
+      ],
+      "Item Untrashed": [
+        "Елемент Переміщено зі Смітника"
+      ],
+      "Item Updated": [
+        "Елемент Оновлено"
+      ],
+      "Item updated in vault": [
+        "Елемент оновлено в сховищі"
       ],
       "it’s imperative": [
         "це обов'язково"
@@ -7348,6 +7439,12 @@
       "New": [
         "Нове"
       ],
+      "New User Invite Created": [
+        "Створено Запрошення для Нового Користувача"
+      ],
+      "New User Invite Deleted": [
+        "Запрошення для Нового Користувача Видалено"
+      ],
       "No account keys exist": [
         "Немає ключів облікового запису"
       ],
@@ -7471,6 +7568,9 @@
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Пароль має містити ${ MIN_PASSWORD_LENGTH } символів або більше."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
       ],
@@ -7530,6 +7630,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Зверніть увагу, що натискаючи кнопку Підтвердити, на вашому рахунку залишиться ${ creditsRemaining }."
+      ],
+      "please open a support ticket": [
+        "будь ласка, відкрийте заявку служби підтримки"
       ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"
@@ -7675,6 +7778,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
       ],
+      "SCIM integration disabled": [
+        "Інтеграція SCIM вимкнена"
+      ],
+      "SCIM token active": [
+        "Токен SCIM активний"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Захистіть свій обліковий запис ${ BRAND_NAME }"
       ],
@@ -7719,6 +7828,21 @@
       ],
       "Settings updated": [
         "Налаштування оновлено"
+      ],
+      "Share Created": [
+        "Поділитися створеним"
+      ],
+      "Share Deleted": [
+        "Поділитися вилученим"
+      ],
+      "Share Updated": [
+        "Поділитися оновленим"
+      ],
+      "Shared vault deleted": [
+        "Спільне сховище видалено"
+      ],
+      "Shared vault updated": [
+        "Спільне сховище оновлено"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Показувати зображення відправників у списку повідомлень. Якщо фото недоступне, показуватимуться ініціали відправника."
@@ -7921,6 +8045,9 @@
       "This file is too large to preview": [
         "Цей файл завеликий для перегляду"
       ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Термін дії цього посилання для запрошення закінчився. Будь ласка, зверніться до свого адміністратора, щоб отримати доступ."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Це фраза з 12 слів, яку ви просили встановити."
       ],
@@ -7929,6 +8056,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Це ключ шифрування, який ви могли раніше зберегти."
+      ],
+      "This is an invitation from:": [
+        "Це запрошення є від:"
       ],
       "This is the password you used before the password reset.": [
         "Це пароль, яким ви користувалися перед скиданням пароля."
@@ -7942,6 +8072,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Це повідомлення не надійде до служби підтримки, якщо у вас виникли проблеми з нашим сервісом або вам потрібні подальші дії з нашого боку ${ supportLink }."
+      ],
       "This promotion link has expired.": [
         "Термін дії посилання на пропозицію завершився."
       ],
@@ -7953,6 +8086,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Ця перевірка може тривати до однієї години. Після успішної перевірки не видаляйте даний TXT запис, оскільки він потрібен для підтвердження того, що ви продовжуєте володіти даним доменом."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
@@ -7978,11 +8114,17 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ця дія остаточно видалить ваш обліковий запис та всі пов'язані з ним дані. Ви не зможете відновити цей обліковий запис."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Це видалить будь-які увімкнені методи 2FA."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Це призведе до вилучення SSO для ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Це замінить ваш тимчасовий пароль. Ви будете використовувати його для доступу до свого облікового запису ${ BRAND_NAME } у майбутньому."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Це надішле нове запрошення до **${ email }**."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ви вийдете з усіх облікових записів, до яких наразі увійшли."
@@ -7995,6 +8137,9 @@
       ],
       "to ${ product } Business": [
         "у ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Щоб дозволити домену **${ domainName }** використовувати SAML SSO, ви повинні підтвердити право власності на нього, додавши наступний DNS TXT запис до свого домену у вашого DNS постачальника."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Щоб уникнути втрати даних, видаляйте його лише якщо впевнені у своїх діях або експортували копію."
@@ -8074,12 +8219,6 @@
       "Two-factor authentication enabled": [
         "Двоетапна перевірка увімкнена"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Двопарольний режим потребує два паролі: перший для входу в обліковий запис, а другий для розшифрування поштової скриньки."
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Двопарольний режим використовує окремі паролі для входу та розшифрування поштової скриньки. Це забезпечує додатковий рівень захисту в деяких ситуаціях. Однак, для більшості користувачів ми рекомендуємо використовувати однопарольний режим. Щоб перемкнутися на двопарольний режим, встановіть спочатку пароль входу, а потім пароль поштової скриньки."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Неможливо перевірити підпис файлу відновлення. Зверніться до служби підтримки."
       ],
@@ -8088,6 +8227,9 @@
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальний ідентифікатор, згенерований вашим провайдером ідентифікації, зазвичай у вигляді URL-адреси, що містить ім'я провайдера (наприклад, https://idp.example.com/XXXXX)."
+      ],
+      "Unknown event type": [
+        "Невідомий тип події"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Доки ви не вийдете зі свого облікового запису чи не зміните пароль, ваш сеанс залишатиметься активним. Термін дії сеансів завершується через 60 днів неактивності."
@@ -8164,17 +8306,32 @@
       "User activated": [
         "Користувач активований"
       ],
+      "User invited to organization": [
+        "Користувач запрошений до організації"
+      ],
       "username": [
         "ім'я користувача"
       ],
       "Users": [
         "Користувачі"
       ],
+      "Vault created": [
+        "Сховище створено"
+      ],
       "Vault Created": [
         "Сховище створено"
       ],
+      "Vault deleted": [
+        "Сховище видалено"
+      ],
       "Vault Deleted": [
         "Сховище видалено"
+      ],
+      "Vault shared with email": [
+        "Сховище поширено за допомогою електронної пошти"
+      ],
+      "Vault updated": [
+        "Сховище оновлено"
       ],
       "Vault Updated": [
         "Сховище оновлено"
@@ -8314,6 +8471,12 @@
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Якщо вони передплатять тарифний план, ви отримаєте кредити, які можна використати для передплати."
       ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Коли ви скасуєте поточну платну підписку, залишок вашої підписки буде повернено як кредит облікового запису і вас буде переведено на ${ BRAND_NAME } ${ PLANS.FREE } план."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Якщо ви скасуєте підписку, ваша підписка не буде поновлена, але ви все одно зможете користуватися перевагами плану до кінця періоду підписки. Після цього ви перейдете до ${ BRAND_NAME } безоплатного плану."
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Натискаючи на посилання, ви отримуватимете запит із URL-адресою вебсторінки для підтвердження перш ніж вона відкриється."
       ],
@@ -8391,6 +8554,9 @@
       ],
       "You can close the tab or browser in the meantime.": [
         "Ви можете закрити вкладку або браузер."
+      ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "Ви можете визначити політику ${ PASS_APP_NAME } для членів організації."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
@@ -8521,6 +8687,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення."
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
+        "Ви не зможете відновити заблоковані дані за допомогою ваших завантажених файлів відновлення. Це також вимкне відновлення довіреного пристрою."
+      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }."
       ],
@@ -8616,6 +8785,17 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ],
+      "Selected color:": [
+        "Вибраний колір:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9172,6 +9352,9 @@
       "Auto show remote images": [
         "Автопоказ зовнішніх зображень"
       ],
+      "Auto-advance": [
+        "Автоматичне просування"
+      ],
       "Auto-delete unwanted messages": [
         "Автовидалення небажаних повідомлень"
       ],
@@ -9292,9 +9475,6 @@
       "Confirm login password": [
         "Підтвердити пароль входу"
       ],
-      "Confirm mailbox password": [
-        "Підтвердити пароль поштової скриньки"
-      ],
       "Confirm new password": [
         "Підтвердити новий пароль"
       ],
@@ -9343,6 +9523,9 @@
       "Current email": [
         "Поточна адреса електронної пошти"
       ],
+      "Current organization identity": [
+        "Тотожність поточної організації"
+      ],
       "Daily email notifications": [
         "Щоденні сповіщення електронною поштою"
       ],
@@ -9390,6 +9573,12 @@
       ],
       "Disable animations": [
         "Вимкнути анімацію"
+      ],
+      "Disable data export for organization members": [
+        "Вимкнути експорт даних для учасників організації"
+      ],
+      "Disable sharing outside the organization": [
+        "Вимкнути спільний доступ за межами організації"
       ],
       "Display name": [
         "Ім'я"
@@ -9583,8 +9772,8 @@
       "Mail Server (IMAP)": [
         "Поштовий сервер (IMAP)"
       ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
+      "Mail settings": [
+        "Налаштування пошти"
       ],
       "Main": [
         "Головна"
@@ -9643,8 +9832,8 @@
       "New login password": [
         "Новий пароль входу"
       ],
-      "New mailbox password": [
-        "Новий пароль поштової скриньки"
+      "New organization identity": [
+        "Тотожність нової організації"
       ],
       "New organization password": [
         "Новий пароль організації"
@@ -9690,6 +9879,9 @@
       ],
       "Or": [
         "Або"
+      ],
+      "Organization identity": [
+        "Тотожність нової організації"
       ],
       "Organization name": [
         "Назва організації"
@@ -10146,11 +10338,17 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Журнал активності"
+      ],
       "Add a gift code": [
         "Додати подарунковий код"
       ],
       "Add gift code": [
         "Додати подарунковий код"
+      ],
+      "Add to your subscription": [
+        "Додати до вашої підписки"
       ],
       "Apps and extensions": [
         "Програми й розширення"
@@ -10773,6 +10971,9 @@
       "Back to calendar": [
         "Назад до календаря"
       ],
+      "Back to documents": [
+        "Повернутись до документів"
+      ],
       "Back to files": [
         "Назад до файлів"
       ],
@@ -10995,6 +11196,9 @@
       ],
       "Advanced sharing security": [
         "Розширені можливості спільного доступу"
+      ],
+      "All ${ BRAND_NAME } services": [
+        "Усі ${ BRAND_NAME } сервіси"
       ],
       "Auto-delete Spam and Trash": [
         "Автоматичне видалення спаму та смітника"
@@ -11244,6 +11448,9 @@
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
+      ],
+      "Tailored to your needs": [
+        "З урахуванням ваших потреб"
       ],
       "Tor over VPN": [
         "Tor через VPN"
@@ -11831,6 +12038,9 @@
       ],
       "Invalid code": [
         "Недійсний код"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Невірний ввід. Відшукайте адресу електронної пошти або IP-адресу"
       ],
       "IP Address copied to clipboard": [
         "IP-адресу скопійовано до буфера обміну"
@@ -13898,6 +14108,11 @@
         "Покращити"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Покращити"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } місяць",
@@ -14690,6 +14905,15 @@
       "Verification successful": [
         "Перевірка пройшла успішно"
       ],
+      "Writing assistant disabled": [
+        "Помічника із запису вимкнено"
+      ],
+      "Writing assistant enabled": [
+        "Помічника із запису ввімкнено"
+      ],
+      "Writing assistant setting updated": [
+        "Налаштування помічника з запису оновлено"
+      ],
       "You have successfully canceled your subscription.": [
         "Ви успішно скасували передплату."
       ],
@@ -15105,9 +15329,6 @@
       "Change login password": [
         "Змінити пароль входу"
       ],
-      "Change mailbox password": [
-        "Змінити пароль поштової скриньки"
-      ],
       "Change organization name": [
         "Змінити назву організації"
       ],
@@ -15209,6 +15430,9 @@
       ],
       "Custom filters": [
         "Власні фільтри"
+      ],
+      "Custom folders and labels": [
+        "Користувацькі папки та мітки"
       ],
       "Custom selection of users": [
         "Власний вибір користувачів"
@@ -15339,6 +15563,9 @@
       "Edit invoice details": [
         "Змінити подробиці рахунку"
       ],
+      "Edit organization identity": [
+        "Редагувати тотожність організації"
+      ],
       "Edit profile": [
         "Редагувати профіль"
       ],
@@ -15446,6 +15673,9 @@
       ],
       "For Windows": [
         "Для Windows"
+      ],
+      "Forgot recovery method": [
+        "Забули спосіб відновлення"
       ],
       "Forward and auto-reply": [
         "Пересилання та автовідповідь"
@@ -15564,9 +15794,6 @@
       "Link confirmation": [
         "Підтвердження посилання"
       ],
-      "Login password": [
-        "Пароль входу"
-      ],
       "Messages": [
         "Повідомлення"
       ],
@@ -15651,11 +15878,11 @@
       "PayPal verification failed": [
         "Не вдалося пройти перевірку PayPal"
       ],
-      "Personalise your e-mail footer": [
-        "Налаштуйте нижній колонтитул листа"
-      ],
       "Phone": [
         "Телефон"
+      ],
+      "Policies": [
+        "Політики"
       ],
       "Preview": [
         "Попередній перегляд"
@@ -15771,6 +15998,9 @@
       "Send email reminders?": [
         "Надіслати нагадування поштою?"
       ],
+      "Send new invite?": [
+        "Надіслати нове запрошення?"
+      ],
       "Session management": [
         "Керування сеансами"
       ],
@@ -15840,6 +16070,9 @@
       "Sort labels alphabetically": [
         "Сортувати мітки за алфавітом"
       ],
+      "Spam filters": [
+        "Фільтри спаму"
+      ],
       "Spam, block, and allow lists": [
         "Спам, блокування та списки дозволених"
       ],
@@ -15908,9 +16141,6 @@
       ],
       "Type": [
         "Тип"
-      ],
-      "Unlock your mailbox": [
-        "Розблокуйте поштову скриньку"
       ],
       "Upgrade plan": [
         "Оновити тарифний план"
@@ -16241,6 +16471,9 @@
       ],
       "This address has been disabled": [
         "Цю адресу було вимкнено"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Цю адресу електронної пошти буде показано всім членам організації під час виконання операцій з управлінням обліковим записом."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Ця функція затримує надсилання ваших листів, дозволяючи скасувати надсилання протягом вказаного проміжку часу."

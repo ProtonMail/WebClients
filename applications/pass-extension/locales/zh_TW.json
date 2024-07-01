@@ -1273,6 +1273,9 @@
       "Your ${ PASS_APP_NAME } session is locked": [
         "您的${ PASS_APP_NAME }作業階段以鎖定"
       ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "您的帳號受限，因為您的組織已強制雙重認證。請在您的帳號設定中啟用雙重認證，又或者聯絡您的管理員。"
+      ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
       ]
@@ -1723,22 +1726,6 @@
         "您將要創建"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "輸入個人識別數字代碼"
-      ],
-      "Sign in to your account": [
-        "登入您的帳戶"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "解鎖${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "歡迎使用 ${ brandNameJSX }"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } 個項目"
@@ -2028,9 +2015,6 @@
       ],
       "Trash empty": [
         "垃圾桶已清空"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "解鎖 ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "有可用更新"

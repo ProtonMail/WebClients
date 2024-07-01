@@ -788,6 +788,9 @@
       "Something went wrong": [
         "Něco se pokazilo"
       ],
+      "Something went wrong. Please sign in again.": [
+        "Něco se pokazilo. Přihlaste se prosím znovu."
+      ],
       "The file you are trying to import is empty": [
         "Soubor, který se snažíte importovat, je prázdný"
       ],
@@ -835,6 +838,9 @@
       ],
       "Vault name does not match": [
         "Název trezoru neodpovídá"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Při spouštění ${ PASS_SHORT_APP_NAME } jsme narazili na problém. Pokud tento problém přetrvává, kontaktujte prosím naši zákaznickou podporu."
       ],
       "Wrong password": [
         "Nesprávné heslo"
@@ -1137,6 +1143,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
       ],
+      "Enter your PIN code": [
+        "Zadejte PIN kód"
+      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
@@ -1368,9 +1377,6 @@
       "Please check your spam folder or try resending the code.": [
         "Zkontrolujte prosím složku se spamem nebo zkuste kód odeslat znovu."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Prosím potvrďte vaše heslo ${ BRAND_NAME }"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potvrďte prosím své heslo ${ BRAND_NAME }, abyste mohli povolit režim offline."
       ],
@@ -1382,6 +1388,9 @@
       ],
       "Please consider leaving a review.": [
         "Zvažte prosím zanechání hodnocení."
+      ],
+      "Please do not close this window": [
+        "Nezavírejte prosím toto okno"
       ],
       "Please enter your current PIN code to continue": [
         "Pro pokračování zadejte svůj aktuální PIN kód"
@@ -1400,6 +1409,9 @@
       ],
       "Reconnect": [
         "Znovu připojit"
+      ],
+      "Reconnecting": [
+        "Obnovování připojení"
       ],
       "Registering PIN lock failed": [
         "Registrace zamykání PIN kódem selhala"
@@ -1607,6 +1619,9 @@
       ],
       "You're invited to a vault.": [
         "Jste pozváni do trezoru."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Váš účet je omezen, protože Vaše organizace zavedla dvoufázové ověření. Povolte prosím dvoufázové ověření v nastavení účtu nebo kontaktujte správce."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
@@ -1934,6 +1949,9 @@
       "PIN": [
         "PIN"
       ],
+      "PIN code": [
+        "PIN kód"
+      ],
       "Prefix": [
         "Předpona"
       ],
@@ -2067,22 +2085,6 @@
       ],
       "stay safer online": [
         "zůstaňte v bezpečí online"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Zadejte PIN kód"
-      ],
-      "Sign in to your account": [
-        "Přihlaste se ke svému účtu"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Odemknout ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Vítejte v ${ brandNameJSX }"
       ]
     },
     "Log preference": {
@@ -2681,6 +2683,9 @@
       ],
       "Title is required": [
         "Název je povinný"
+      ],
+      "Too many attempts": [
+        "Příliš mnoho pokusů"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Převést vlastnictví tohoto trezoru na ${ email }?"

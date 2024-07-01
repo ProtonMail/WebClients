@@ -62,9 +62,6 @@
       "Change keys": [
         "變更金鑰"
       ],
-      "Change mailbox password": [
-        "變更郵箱密碼"
-      ],
       "Change password": [
         "變更密碼"
       ],
@@ -2095,9 +2092,6 @@
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "郵箱密碼不正確。請再試一次."
-      ],
       "Incorrect password": [
         "密碼錯誤"
       ],
@@ -2932,9 +2926,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }：低解析度預覽"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和信箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
-      ],
       "${ n } address": [
         "${ n } 個電郵位址"
       ],
@@ -3190,10 +3181,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -3919,12 +3910,6 @@
       "Two-factor authentication enabled": [
         "兩步驟驗證已啟用"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的信箱 (進階)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "雙重密碼模式即是使用者使用不同的密碼作登入和解密信箱。在某些情況下，這可能稍微提高安全性，但我們建議大部份使用者使用單一密碼模式。如要切換為雙重密碼模式，請首先設定登入密碼，然後設定信箱密碼。"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很遺憾，此帳號未有儲存任何復原方法。"
       ],
@@ -4435,9 +4420,6 @@
       "Confirm login password": [
         "確認登入密碼"
       ],
-      "Confirm mailbox password": [
-        "確認信箱密碼"
-      ],
       "Confirm new password": [
         "確認新密碼"
       ],
@@ -4546,9 +4528,6 @@
       "Logo": [
         "標誌"
       ],
-      "Mailbox password": [
-        "信箱密碼"
-      ],
       "Main": [
         "主要"
       ],
@@ -4584,9 +4563,6 @@
       ],
       "New login password": [
         "新的登入密碼"
-      ],
-      "New mailbox password": [
-        "新的信箱密碼"
       ],
       "New organization identity": [
         "新組織機構身分"
@@ -6159,6 +6135,9 @@
       "Includes:": [
         "包含:"
       ],
+      "Launching ${ PASS_APP_NAME }": [
+        "切換至 ${ PASS_APP_NAME }"
+      ],
       "per month": [
         "每月"
       ],
@@ -6182,6 +6161,12 @@
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Setting up your organization": [
+        "設定您的組織"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "登入至${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "更新您的帳號"
@@ -7806,9 +7791,6 @@
       "Change login password": [
         "更改登入密碼"
       ],
-      "Change mailbox password": [
-        "更改郵箱密碼"
-      ],
       "Change organization name": [
         "變更組織名稱"
       ],
@@ -8025,9 +8007,6 @@
       "Invoices": [
         "繳款單"
       ],
-      "Login password": [
-        "登入密碼"
-      ],
       "Multi-user support": [
         "多使用者支援"
       ],
@@ -8225,9 +8204,6 @@
       ],
       "Type": [
         "類型"
-      ],
-      "Unlock your mailbox": [
-        "解除鎖定您的信箱"
       ],
       "Upgrade your network protection with dedicated servers": [
         "透過專用伺服器提升您的網路保護"

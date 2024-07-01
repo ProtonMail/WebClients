@@ -374,6 +374,9 @@
       "Retry": [
         "Повторить"
       ],
+      "Right click and download this CSV": [
+        "Щелкните правой кнопкой мыши и загрузите этот CSV"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -400,6 +403,9 @@
       ],
       "Set access level": [
         "Установить уровень доступа"
+      ],
+      "Setup 2FA": [
+        "Настроить двухфакторную аутентификацию"
       ],
       "Share": [
         "Поделиться"
@@ -505,6 +511,11 @@
     "bf2023: Title": {
       "Black Friday offer": [
         "Предложение Черная пятница"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -706,6 +717,9 @@
       "File could not be parsed": [
         "Файл не может быть обработан"
       ],
+      "File could not be read": [
+        "Файл не может быть прочитан"
+      ],
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
       ],
@@ -843,6 +857,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Мы столкнулись с проблемой при запуске ${ PASS_SHORT_APP_NAME }. Если проблема сохранится, обратитесь за помощью в нашу службу поддержки клиентов."
+      ],
+      "Wrong password": [
+        "Неверный пароль"
       ],
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
@@ -1047,6 +1064,9 @@
       "Autosaved on ${ payload.domain }": [
         "Автосохранено ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Прежде чем экспортировать данные в этом формате, откройте настройки Safari -> вкладку \"Общие\" -> отключите опцию \"Открывать безопасные файлы после загрузки\". Это предотвратит неправильное извлечение Safari экспортированного файла."
+      ],
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
       ],
@@ -1118,6 +1138,9 @@
       ],
       "Drop to import": [
         "Импортировать"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "В связи с ограничением расширений браузера Safari после экспорта данных в расширении файла будет отсутствовать \".pgp\". После экспорта переименуйте файл, изменив его расширение на .pgp (например, file.pgp)."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Легко импортируйте ваше существующие пароли в ${ PASS_APP_NAME }."
@@ -1371,20 +1394,8 @@
       "Pinning item...": [
         "Закрепление элемента..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Подтвердите ваш пароль ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Подтвердите ваш пароль ${ BRAND_NAME } для автоматической блокировки вашим паролем."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Подтвердите ваш пароль ${ BRAND_NAME } для отмены выполнения вашей текущей блокировки."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Подтвердите ваш пароль ${ BRAND_NAME } для обновления времени автоматической блокировки."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Подтвердите PIN-код, чтобы отменить выполнение вашей текущей блокировки."
@@ -1628,6 +1639,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблокирован"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Доступ к Вашему аккаунту ограничен, так как ваша организация ввела двухфакторную аутентификацию. Пожалуйста, включите двухфакторную аутентификацию в настройках Вашего аккаунта или свяжитесь с администратором."
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
@@ -2115,25 +2129,6 @@
         "Вы собираетесь создать"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Введите свой PIN-код"
-      ],
-      "Sign in to your account": [
-        "Войдите в свой аккаунт"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Разблокировать ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Добро пожаловать в ${ brandNameJSX }"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } элемент",
@@ -2435,9 +2430,6 @@
       ],
       "Trash empty": [
         "Корзина пуста"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Разблокировать ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Доступно обновление"

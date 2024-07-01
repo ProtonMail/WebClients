@@ -62,9 +62,6 @@
       "Change keys": [
         "Wijzig sleutels"
       ],
-      "Change mailbox password": [
-        "Mailboxwachtwoord wijzigen"
-      ],
       "Change password": [
         "Wachtwoord wijzigen"
       ],
@@ -2100,9 +2097,6 @@
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
-      ],
       "Incorrect password": [
         "Ongeldig wachtwoord"
       ],
@@ -2946,9 +2940,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
-      ],
       "${ n } address": [
         "${ n } adres",
         "${ n } adressen"
@@ -3226,11 +3217,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -3969,12 +3960,6 @@
       "Two-factor authentication enabled": [
         "Tweestapsverificatie ingeschakeld"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Twee-wachtwoordmodus vereist twee wachtwoorden: één om in te loggen op uw account en één om uw mailbox te decoderen. (Geavanceerd)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Twee-wachtwoordsmodus maakt gebruik van verschillende wachtwoorden voor het inloggen en de ontsleuteling van de mailbox. Dit biedt in sommige gevallen een klein veiligheidsvoordeel maar wij raden één-wachtwoordsmodus aan voor de meeste gebruikers. Om over te schakel naar twee-wachtwoordsmodus, stelt u eerst een inlogwachtwoord in en daarna een mailboxwachtwoord."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
       ],
@@ -4504,9 +4489,6 @@
       "Confirm login password": [
         "Bevestig inlogwachtwoord"
       ],
-      "Confirm mailbox password": [
-        "Bevestig mailbox-wachtwoord"
-      ],
       "Confirm new password": [
         "Bevestig nieuw wachtwoord"
       ],
@@ -4612,9 +4594,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
       "Main": [
         "Primair"
       ],
@@ -4650,9 +4629,6 @@
       ],
       "New login password": [
         "Nieuw inlogwachtwoord"
-      ],
-      "New mailbox password": [
-        "Nieuw mailbox-wachtwoord"
       ],
       "New organization password": [
         "Nieuw organisatiewachtwoord"
@@ -6256,6 +6232,9 @@
       "Current plan": [
         "Huidig abonnement"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Voer een weergavenaam in voor **${ username }**. Dit is wat uw gebruikers zullen zien wanneer u hun rechten wijzigt of gegevens met hen deelt."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Voor slechts **${ relativePrice } per maand** extra krijgt u toegang tot ${ BRAND_NAME }'s premium wachtwoord manager!"
       ],
@@ -6273,6 +6252,9 @@
       ],
       "Includes:": [
         "Omvat:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } opstarten"
       ],
       "per month": [
         "maandelijks"
@@ -6298,6 +6280,12 @@
       ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
+      ],
+      "Setting up your organization": [
+        "Uw organisatie wordt aangemaakt"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Inloggen bij ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Uw account wordt bijgewerkt"
@@ -8094,9 +8082,6 @@
       "Change login password": [
         "Inlogwachtwoord wijzigen"
       ],
-      "Change mailbox password": [
-        "Mailbox-wachtwoord wijzigen"
-      ],
       "Change organization name": [
         "Organisatienaam wijzigen"
       ],
@@ -8310,9 +8295,6 @@
       "Invoices": [
         "Facturen"
       ],
-      "Login password": [
-        "Inlogwachtwoord"
-      ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
       ],
@@ -8508,9 +8490,6 @@
       ],
       "Type": [
         "Soort"
-      ],
-      "Unlock your mailbox": [
-        "Ontgrendel uw mailbox"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Upgrade uw netwerkbescherming met toegewijde servers"

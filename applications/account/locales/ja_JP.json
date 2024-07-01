@@ -47,11 +47,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -163,9 +163,6 @@
       ],
       "Change keys": [
         "鍵を変更"
-      ],
-      "Change mailbox password": [
-        "メールボックスのパスワードを変更"
       ],
       "Change other email subscriptions": [
         "ほかのメールサブスクリプションに変更"
@@ -3814,9 +3811,6 @@
       "Incorrect login credentials. Please try again.": [
         "無効なログイン情報です。再度お試しください。"
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "無効な受信トレイのパスワードです。再度お試しください。"
-      ],
       "Incorrect password": [
         "パスワードが正しくありません"
       ],
@@ -5773,17 +5767,6 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ],
-      "Selected color:": [
-        "選択した色:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -5838,9 +5821,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } は ${ PASS_APP_NAME } であなたとデータを共有したいと考えています"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
       ],
       "${ n } address": [
         "${ n } 件のアドレス"
@@ -7606,12 +7586,6 @@
       "Two-factor authentication enabled": [
         "2 要素認証が有効になりました"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "2 パスワードモードでは、アカウントへのログイン用とメールボックスの復号用の 2 つのパスワードを使用します。(高度な機能)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "2 パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。2 パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "回復用ファイルの署名の検証ができませんでした。サポートにお問い合わせください。"
       ],
@@ -8091,6 +8065,17 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Selected color:": [
+        "選択した色:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8647,9 +8632,6 @@
       "Awarded": [
         "進呈"
       ],
-      "Beta": [
-        "ベータ"
-      ],
       "Billing address": [
         "ご請求先住所"
       ],
@@ -8746,9 +8728,6 @@
       "Confirm login password": [
         "ログインパスワードの確認"
       ],
-      "Confirm mailbox password": [
-        "メールボックスのパスワードの確認"
-      ],
       "Confirm new password": [
         "新しいパスワードの確認"
       ],
@@ -8844,6 +8823,9 @@
       ],
       "Disable animations": [
         "アニメーションを無効にする"
+      ],
+      "Disable sharing outside the organization": [
+        "組織外との共有を無効にする"
       ],
       "Display name": [
         "表示名"
@@ -9037,9 +9019,6 @@
       "Mail Server (IMAP)": [
         "メールサーバー (IMAP)"
       ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
-      ],
       "Main": [
         "メイン"
       ],
@@ -9096,9 +9075,6 @@
       ],
       "New login password": [
         "新しいログインパスワード"
-      ],
-      "New mailbox password": [
-        "新しいメールボックスのパスワード"
       ],
       "New organization password": [
         "新しい組織のパスワード"
@@ -14025,9 +14001,6 @@
       "Change login password": [
         "ログインパスワードを変更"
       ],
-      "Change mailbox password": [
-        "メールボックスのパスワードの変更"
-      ],
       "Change organization name": [
         "組織名を変更"
       ],
@@ -14340,15 +14313,6 @@
       "Folders and labels": [
         "フォルダーとラベル"
       ],
-      "For Linux": [
-        "Linuxの場合"
-      ],
-      "For macOS": [
-        "macOSの場合"
-      ],
-      "For Windows": [
-        "Windowsの場合"
-      ],
       "Forward and auto-reply": [
         "転送と自動返信"
       ],
@@ -14459,9 +14423,6 @@
       ],
       "Link confirmation": [
         "リンクの確認"
-      ],
-      "Login password": [
-        "ログインパスワード"
       ],
       "Messages": [
         "メッセージ"
@@ -14789,9 +14750,6 @@
       ],
       "Type": [
         "種類"
-      ],
-      "Unlock your mailbox": [
-        "メールボックスのロック解除"
       ],
       "Upgrade plan": [
         "プランをアップグレード"

@@ -815,6 +815,9 @@
       "Vault name does not match": [
         "Kluisnaam komt niet overeen"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Er is een probleem opgetreden tijdens het starten van ${ PASS_SHORT_APP_NAME }. Als dit probleem zich blijft voordoen, neem contact op met onze klantenservice voor hulp."
+      ],
       "Wrong password": [
         "Fout wachtwoord"
       ],
@@ -1068,6 +1071,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your PIN code": [
+        "Voer uw pincode in"
       ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
@@ -1515,6 +1521,9 @@
       ],
       "You're invited to a vault.": [
         "U bent uitgenodigd tot een kluis."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Uw account is beperkt omdat uw organisatie tweestapsverificatie heeft afgedwongen. Om het te ontgrendelen, meldt u zich aan via internet op en schakelt u tweestapsverificatie in uw accountinstellingen in of neem contact op met uw beheerder."
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
@@ -1969,22 +1978,6 @@
       ],
       "stay safer online": [
         "blijf veilig online"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Voer uw pincode in"
-      ],
-      "Sign in to your account": [
-        "Inloggen bij uw account"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Ontgrendel ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Welkom bij ${ brandNameJSX }"
       ]
     },
     "Log preference": {

@@ -62,9 +62,6 @@
       "Change keys": [
         "कुंजियाँ बदलें"
       ],
-      "Change mailbox password": [
-        "मेलबॉक्स पासवर्ड बदलें"
-      ],
       "Change password": [
         "पासवर्ड बदलें"
       ],
@@ -1900,9 +1897,6 @@
       "Incorrect login credentials. Please try again.": [
         "गलत लॉगिन क्रेडेंशियल। कृपया पुन: प्रयास करें |"
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "गलत मेलबॉक्स पासवर्ड। कृपया पुन: प्रयास करें |"
-      ],
       "Incorrect password": [
         "गलत पासवर्ड"
       ],
@@ -2639,9 +2633,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: कम-क्वालिटी का प्रिव्यू"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } को सिर्फ एक पासवर्ड से भी इस्तेमाल कर सकते है जो आपके लॉग इन और मेलबॉक्स पासवर्ड की जगह ले लेगा। एक पासवर्ड मोड पे जाने के लिए, पासवर्ड डाले जो आप इस्तेमाल करना चाहते है और सेव दबाएं।"
       ],
       "${ n } address": [
         "${ n } पता",
@@ -3477,12 +3468,6 @@
       "Two-factor authentication enabled": [
         "दो-कारक प्रमाणीकरण सक्षम"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "दो-पासवर्ड मोड में दो पासवर्ड चाहिए: पहला अपने खाते पे साइनइन करने के लिए और दूसरा अपना मेलबॉक्स डिक्रिप्ट करने के लिए। (एडवांस)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "दो-पासवर्ड मोड में लॉगइन और मेलबॉक्स डिक्रिप्शन के लिए अलग-अलग पासवर्ड इस्तेमाल होते है। ये कुछ हालत में सुरक्षा का मामूली फायदा देता है, फिर भी हम ज़्यादातर यूज़रों को एक-पासवर्ड मोड इस्तेमाल करने की सलाह देते है। दो-पासवर्ड मोड इस्तेमाल करने के लिए पहले एक लॉगइन पासवर्ड सेट करें और फिर एक मेलबॉक्स पासवर्ड सेट करें।"
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "दुर्भाग्य से इस खाते के लिए कोई पुनर्प्राप्ति विधि सहेजी नहीं गई है।"
       ],
@@ -3942,9 +3927,6 @@
       "Confirm login password": [
         "लॉगिन पासवर्ड की पुष्टि करें"
       ],
-      "Confirm mailbox password": [
-        "मेलबॉक्स पासवर्ड की पुष्टि करें"
-      ],
       "Confirm new password": [
         "नए पासवर्ड की पुष्टि करें"
       ],
@@ -4041,9 +4023,6 @@
       "Logo": [
         "चिन्ह"
       ],
-      "Mailbox password": [
-        "मेलबॉक्स पासवर्ड"
-      ],
       "Main": [
         "मुख्‍य"
       ],
@@ -4070,9 +4049,6 @@
       ],
       "New login password": [
         "नया लॉगिन पासवर्ड"
-      ],
-      "New mailbox password": [
-        "नया मेलबॉक्स पासवर्ड"
       ],
       "New organization password": [
         "नया संगठन पासवर्ड"
@@ -4227,6 +4203,11 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "आपके पास अपने ${ MAIL_APP_NAME } खाते से खरीदा जो डोमेन है वो जोड़ें।"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "कृपया निम्नलिखित TXT रिकॉर्ड जोड़ें। नोट: DNS रिकॉर्ड को अपडेट होने में कई घंटे लग सकते हैं।"
       ]
     },
     "Label for new member": {
@@ -5389,6 +5370,9 @@
       ],
       "Secure vault sharing": [
         "सुरक्षित वॉल्ट साझाकरण"
+      ],
+      "Setting up your organization": [
+        "अपना संगठन स्थापित करना"
       ],
       "Verifying your payment": [
         "आपका भुगतान सत्यापित कर रहे"
@@ -6712,9 +6696,6 @@
       "Change login password": [
         "लॉगिन पासवर्ड बदलें"
       ],
-      "Change mailbox password": [
-        "मेलबॉक्स पासवर्ड बदलें"
-      ],
       "Change organization name": [
         "संगठन का नाम बदलें"
       ],
@@ -6885,9 +6866,6 @@
       ],
       "Invoices": [
         "रसीद"
-      ],
-      "Login password": [
-        "लॉग इन पासवर्ड"
       ],
       "Multi-user support": [
         "बहु-उपयोगकर्ता समर्थन"
@@ -7063,9 +7041,6 @@
       ],
       "Type": [
         "प्रकार"
-      ],
-      "Unlock your mailbox": [
-        "अपना मेलबॉक्स अनलॉक करें"
       ],
       "Upload CSV file to create multiple accounts": [
         "एक से अधिक खाते बनाने के लिए CSV फ़ाइल अपलोड करें"

@@ -396,6 +396,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Abrir ${ DRIVE_APP_NAME }"
+      ],
       "Pay": [
         "Pagar"
       ],
@@ -2110,6 +2113,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
+      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
+        "Ocurrió un error de integridad de datos y los cambios recientes no se pueden guardar. Actualice la página."
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -2208,9 +2214,6 @@
       "Error decrypting a computer": [
         "Error al descifrar la computadora"
       ],
-      "Error: Update Too Large": [
-        "Error: actualización demasiado grande"
-      ],
       "External accounts are not supported yet": [
         "Las cuentas externas aún no son admitidas."
       ],
@@ -2282,9 +2285,6 @@
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
-      ],
-      "It looks like the text document you're trying to paste exceeds the allowed limit.": [
-        "Parece que el documento de texto que intenta pegar excede el límite permitido."
       ],
       "Item content cannot exceed 40KB": [
         "El contenido del elemento no puede exceder de 40 KB"
@@ -2438,6 +2438,9 @@
       "The label name is too long. Please choose a different name.": [
         "El nombre de la etiqueta es demasiado largo. Elija un nombre diferente."
       ],
+      "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
+        "La última actualización realizada al documento es demasiado grande o excede el tamaño límite del documento. Se desactivó temporalmente la edición. Sus cambios no se guardarán. Exporte una copia de su documento y recargue la página."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que se puede añadir es de ${ price }"
       ],
@@ -2497,6 +2500,9 @@
       ],
       "Unknown payment token status": [
         "Estado del token de pago desconocido"
+      ],
+      "Update Too Large": [
+        "La actualización es demasiado grande."
       ],
       "Upload for this folder is temporarily disabled": [
         "La carga para esta carpeta está desactivada temporalmente."
@@ -3440,6 +3446,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All changes saved to Drive": [
+        "Todos los cambios fueron guardados en Drive."
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos los contactos serán importados, hasta un límite de ${ MAX_CONTACTS_PER_USER }",
         "Todos los contactos serán importados, hasta un límite de ${ MAX_CONTACTS_PER_USER }"
@@ -3580,11 +3589,11 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Esta carpeta fue cargada de forma segura por ${ emailAddress }."
       ],
-      "Disconnected: ${ disconnectReasonMessage }": [
-        "Sin conexión: ${ disconnectReasonMessage }"
-      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Document is busy": [
+        "El documento está ocupado."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
@@ -3634,6 +3643,9 @@
       "Emails are automatically signed": [
         "Los correos son firmados automáticamente"
       ],
+      "End to end encrypted.": [
+        "Cifrado de extremo a extremo."
+      ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de la aplicación de autenticación"
       ],
@@ -3655,11 +3667,14 @@
       "Error loading document${ errorDetail }": [
         "Error al cargar el documento: ${ errorDetail }"
       ],
+      "Error Syncing": [
+        "Error al sincronizar"
+      ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "Cada cambio que realice se guarda con seguridad automáticamente en Drive."
+      ],
       "Expired": [
         "Expirado"
-      ],
-      "Failed to connect: ${ disconnectReasonMessage }": [
-        "Error al conectar. ${ disconnectReasonMessage }"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Error al generar un enlace seguro. Motivo: ${ error }"
@@ -3815,6 +3830,9 @@
       "Loading...": [
         "Cargando..."
       ],
+      "Looks like you're offline. Document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Parece que no tiene conexión. El documento no puede editarse mientras no haya conexión. Compruebe la conectividad de su dispositivo."
+      ],
       "Low Priority": [
         "Prioridad baja"
       ],
@@ -3869,6 +3887,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
+      ],
+      "Offline": [
+        "Sin conexión"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
@@ -3968,9 +3989,6 @@
       "Primary": [
         "Principal"
       ],
-      "Recent edits may not be displayed": [
-        "Puede que no se muestren las ediciones recientes"
-      ],
       "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
         "No se pudieron guardar las ediciones recientes de su documento. Para garantizar la seguridad de los datos, la edición está desactivada temporalmente. Descargue una copia de su documento desde el menú principal. Una vez hecho esto, actualice la página para volver a conectarse."
       ],
@@ -3983,8 +4001,11 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
-      "Saved": [
-        "Guardado"
+      "Saved in ${ DRIVE_APP_NAME }": [
+        "Guardado en ${ DRIVE_APP_NAME }"
+      ],
+      "Saving": [
+        "Guardando"
       ],
       "Saving...": [
         "Guardando..."
@@ -4025,14 +4046,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
-      "Some edits are taking longer to sync": [
-        "Algunas ediciones están tardando más de lo esperado en sincronizarse"
-      ],
       "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
         "Algunas ediciones están tardando más de lo esperado en sincronizarse. Esto puede deberse a problemas de red. Puede continuar editando por ahora. Si el problema persiste, mostraremos un mensaje de error más fuerte."
-      ],
-      "Some edits failed to sync": [
-        "Error al sincronizar algunas ediciones"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envíe un depósito usando la siguiente dirección o escanee el código QR. El depósito aparecerá en la cuenta después de la confirmación."
@@ -4075,6 +4090,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para poder enviar a esta dirección, el dueño debe primero activar la dirección."
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "Este documento tiene mucha actividad. Algunas funciones pueden no estar disponibles temporalmente."
       ],
       "This item already exists in your library": [
         "Este elemento ya existe en su librería"
@@ -4330,6 +4348,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "La cuenta se actualizará una vez que el pago se haya completado."
+      ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "Sus cambios se están sincronizando en Drive. No cierre la página web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "El navegador actual no admite la descarga de archivos grandes debido a la falta de disponibilidad de trabajadores de servicio. La descarga de archivos grandes puede bloquearse o dejar que el navegador no responda. Use las últimas versiones de ${ recommendedBrowser } e intente de nuevo."
@@ -7565,6 +7586,9 @@
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria"
       ],
+      "Busy": [
+        "Ocupado"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar suscripción de ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -7717,6 +7741,9 @@
       "Error": [
         "Error"
       ],
+      "Error Syncing": [
+        "Error al sincronizar"
+      ],
       "Exporting contacts": [
         "Exportando contactos"
       ],
@@ -7780,6 +7807,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "Offline": [
+        "Sin conexión"
       ],
       "Open actions dropdown": [
         "Abrir menú de acciones"
@@ -7877,12 +7907,6 @@
       "Sign out": [
         "Cerrar sesión"
       ],
-      "Some edits are taking longer to sync": [
-        "Algunas ediciones están tardando más de lo esperado en sincronizarse"
-      ],
-      "Some edits failed to sync": [
-        "Error al sincronizar algunas ediciones"
-      ],
       "Start a new import": [
         "Iniciar una importación nueva"
       ],
@@ -7903,6 +7927,9 @@
       ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contactos"
+      ],
+      "Untitled document ${ date }": [
+        "Documento sin título ${ date }"
       ],
       "Uploading a large file or folder": [
         "Cargando un archivo grande o carpeta"

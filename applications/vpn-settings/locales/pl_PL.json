@@ -62,11 +62,11 @@
       "Change keys": [
         "Zmień klucze"
       ],
-      "Change mailbox password": [
-        "Zmień hasło skrzynki pocztowej"
-      ],
       "Change password": [
         "Zmień hasło"
+      ],
+      "Change second password": [
+        "Zmień drugie hasło"
       ],
       "Chat with us": [
         "Czat z nami"
@@ -2172,11 +2172,11 @@
       "Incorrect login credentials. Please try again.": [
         "Dane logowania są nieprawidłowe. Spróbuj ponownie."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Hasło skrzynki pocztowej jest nieprawidłowe. Spróbuj ponownie."
-      ],
       "Incorrect password": [
         "Hasło jest nieprawidłowe"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Drugie hasło jest nieprawidłowe. Spróbuj ponownie."
       ],
       "Incorrect username": [
         "Nazwa użytkownika jest nieprawidłowa"
@@ -3045,9 +3045,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: podgląd w niskiej rozdzielczości"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
-      ],
       "${ n } address": [
         "${ n } adres",
         "${ n } adresy",
@@ -3351,11 +3348,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -3850,7 +3847,7 @@
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
       ],
       "Public sharing of documents is not yet supported.": [
-        "Publiczne udostępnianie dokumentu nie jest obsługiwane."
+        "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
       "read our two-factor authentication guide first": [
         "wcześniejsze zapoznanie się z naszym przewodnikiem"
@@ -4083,6 +4080,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "To hasło zastąpi tymczasowe hasło i pozwoli Ci uzyskać dostęp do konta ${ BRAND_NAME }."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Nowe zaproszenie zostanie wysłane na adres **${ email }**."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
       ],
@@ -4145,12 +4145,6 @@
       ],
       "Two-factor authentication enabled": [
         "Uwierzytelnianie dwustopniowe zostało włączone"
-      ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania skrzynki pocztowej. (Opcja zaawansowana)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Tryb podwójnego hasła umożliwia oddzielenie haseł logowania i odszyfrowywania skrzynki pocztowej. W określonych sytuacjach zwiększa to nieznacznie bezpieczeństwo. Dla większości użytkowników wystarczający jest tryb pojedynczego hasła. Aby przełączyć się do trybu podwójnego hasła, wpisz hasło logowania, a następnie hasło szyfrowania."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Brak zapisanych metod odzyskiwania dla tego konta."
@@ -4711,9 +4705,6 @@
       "Confirm login password": [
         "Potwierdź hasło logowania"
       ],
-      "Confirm mailbox password": [
-        "Potwierdź hasło skrzynki pocztowej"
-      ],
       "Confirm new password": [
         "Potwierdź nowe hasło"
       ],
@@ -4722,6 +4713,9 @@
       ],
       "Confirm password": [
         "Potwierdź hasło"
+      ],
+      "Confirm second password": [
+        "Potwierdź drugie hasło"
       ],
       "Copy": [
         "Kopiuj"
@@ -4822,9 +4816,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Hasło skrzynki pocztowej"
-      ],
       "Main": [
         "Główny"
       ],
@@ -4861,9 +4852,6 @@
       "New login password": [
         "Nowe hasło logowania"
       ],
-      "New mailbox password": [
-        "Nowe hasło skrzynki pocztowej"
-      ],
       "New organization identity": [
         "Nowa tożsamość organizacji"
       ],
@@ -4872,6 +4860,9 @@
       ],
       "New password": [
         "Nowe hasło"
+      ],
+      "New second password": [
+        "Nowe drugie hasło"
       ],
       "No filter": [
         "Brak filtrów"
@@ -4965,6 +4956,9 @@
       ],
       "Reveal password": [
         "Pokaż hasło"
+      ],
+      "Second password": [
+        "Drugie hasło"
       ],
       "Security code (${ codeName })": [
         "Kod zabezpieczający (${ codeName })"
@@ -6570,6 +6564,9 @@
       "Current plan": [
         "Obecny plan"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Wpisz nazwę wyświetlaną dla **${ username }**. Tę nazwę będą widzieć użytkownicy, gdy zmienisz ich uprawnienia lub udostępnisz im dane."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menadżera haseł ${ BRAND_NAME } w wersji premium!"
       ],
@@ -6587,6 +6584,9 @@
       ],
       "Includes:": [
         "Zawiera:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Uruchamianie ${ PASS_APP_NAME }"
       ],
       "per month": [
         "miesięcznie"
@@ -6614,6 +6614,12 @@
       ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
+      ],
+      "Setting up your organization": [
+        "Konfiguracja organizacji"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Logowanie do ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Aktualizowanie konta"
@@ -8128,7 +8134,7 @@
         "Zachowaj plan ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Zadbaj o bezpieczeństwo swojego zespołu w podróży dzięki naszym aplikacjom internetowym, dla systemów iOS, Android, Windows, Mac i Linux."
+        "Zadbaj o bezpieczeństwo swojego zespołu w podróży dzięki naszym aplikacjom internetowym dla systemów iOS, Android, Windows, Mac i Linux."
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -8176,7 +8182,7 @@
         "Odbierania nowych wiadomości"
       ],
       "See your colleagues’ availability": [
-        "Sprawdzanie dostępności zespołu"
+        "Sprawdzanie dostępności współpracowników"
       ],
       "Send emails with attachments": [
         "Wysyłania wiadomości z załącznikami"
@@ -8697,9 +8703,6 @@
       "Change login password": [
         "Zmień hasło logowania"
       ],
-      "Change mailbox password": [
-        "Zmień hasło skrzynki pocztowej"
-      ],
       "Change organization name": [
         "Zmień nazwę organizacji"
       ],
@@ -8711,6 +8714,9 @@
       ],
       "Change role": [
         "Zmień rolę"
+      ],
+      "Change second password": [
+        "Zmień drugie hasło"
       ],
       "Close": [
         "Zamknij"
@@ -8925,8 +8931,8 @@
       "Invoices": [
         "Faktury"
       ],
-      "Login password": [
-        "Hasło logowania"
+      "Main password": [
+        "Główne hasło"
       ],
       "Multi-user support": [
         "Obsługa wielu użytkowników"
@@ -9129,8 +9135,8 @@
       "Type": [
         "Typ"
       ],
-      "Unlock your mailbox": [
-        "Odblokuj swoją skrzynkę pocztową"
+      "Unlock your data": [
+        "Odblokuj dane"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Ulepsz ochronę sieci za pomocą dedykowanych serwerów"

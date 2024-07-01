@@ -332,7 +332,15 @@
         "blanc"
       ]
     },
+    "Confirm": {
+      "Discard comment?": [
+        "Abandonner le commentaire ?"
+      ]
+    },
     "Error": {
+      "Request timed out": [
+        "La requête a expiré."
+      ],
       "Signature verification failed": [
         "La signature n'a pas pu être vérifiée."
       ]
@@ -390,6 +398,9 @@
       "Editing": [
         "Modification"
       ],
+      "Internet connection lost": [
+        "La connexion internet est perdue."
+      ],
       "Just now": [
         "À l'instant"
       ],
@@ -398,6 +409,12 @@
       ],
       "No comments": [
         "Aucun commentaire"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
+      ],
+      "Session timed out": [
+        "La session a expiré."
       ],
       "Something went wrong:": [
         "Une erreur s’est produite :"

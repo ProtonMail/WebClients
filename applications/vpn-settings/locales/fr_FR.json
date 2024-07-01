@@ -62,11 +62,11 @@
       "Change keys": [
         "Changer les clés"
       ],
-      "Change mailbox password": [
-        "Changer le mot de passe de messagerie"
-      ],
       "Change password": [
         "Changer le mot de passe"
+      ],
+      "Change second password": [
+        "Changer le second mot de passe"
       ],
       "Chat with us": [
         "Discutez avec nous"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Les identifiants de connexion ne sont pas corrects, nous vous invitons à réessayer."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Le mot de passe de la messagerie n'est pas correct. Veuillez réessayer."
-      ],
       "Incorrect password": [
         "Le mot de passe n'est pas correct."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
       ],
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName } : aperçu en basse résolution"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boite de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et le second mot de passe. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -4080,11 +4080,11 @@
       "Two-factor authentication enabled": [
         "L'authentification à deux facteurs est activée."
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer votre boite aux lettres (avancé)."
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Le mode à deux mots de passe nécessite un mot de passe pour se connecter à votre compte et un autre pour déchiffrer vos données (avancé)."
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Avec l'option deux mots de passe, vous utilisez un mot de passe pour vous connecter à votre compte et un autre mot de passe pour déchiffrer votre messagerie. Cela représente une petite sécurité supplémentaire dans certains cas, mais nous recommandons d'utiliser un seul mot de passe, cela convient pour la majorité des utilisateurs. Pour utiliser deux mots de passe, définissez d'abord un mot de passe de connexion à votre compte, puis choisissez un mot de passe pour votre messagerie."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Le mode à deux mots de passe utilise des mots de passe distincts pour la connexion à votre compte et pour le déchiffrement de vvos données. Ce mode fournit un léger avantage en terme de sécurité dans certains cas, cependant, nous recommandons le mode mot de passe unique pour la plupart des utilisateurs. Pour activer le mode à deux mots de passe, choisissez dans un premier temps un mot de passe de connexion à votre compte, puis choisissez un second mot de passe."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
@@ -4640,9 +4640,6 @@
       "Confirm login password": [
         "Confirmer le mot de passe de connexion"
       ],
-      "Confirm mailbox password": [
-        "Confirmer le mot de passe de messagerie"
-      ],
       "Confirm new password": [
         "Confirmer le nouveau mot de passe"
       ],
@@ -4651,6 +4648,9 @@
       ],
       "Confirm password": [
         "Confirmer le mot de passe"
+      ],
+      "Confirm second password": [
+        "Confirmer le second mot de passe"
       ],
       "Copy": [
         "Copier"
@@ -4751,9 +4751,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Mot de passe de la messagerie"
-      ],
       "Main": [
         "Principale"
       ],
@@ -4790,9 +4787,6 @@
       "New login password": [
         "Nouveau mot de passe de connexion"
       ],
-      "New mailbox password": [
-        "Nouveau mot de passe de messagerie"
-      ],
       "New organization identity": [
         "Nouvelle identité de l'organisation"
       ],
@@ -4801,6 +4795,9 @@
       ],
       "New password": [
         "Nouveau mot de passe"
+      ],
+      "New second password": [
+        "Nouveau second mot de passe"
       ],
       "No filter": [
         "Aucun filtre"
@@ -4894,6 +4891,9 @@
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Second password": [
+        "Second mot de passe"
       ],
       "Security code (${ codeName })": [
         "Code de sécurité (${ codeName })"
@@ -6449,6 +6449,9 @@
       "Current plan": [
         "Abonnement actuel"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Entrez un nom d'affichage pour **${ username }**. C'est ce que vos utilisateurs verront lorsque vous modifierez leurs permissions ou partagerez des données avec eux."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
       ],
@@ -6466,6 +6469,9 @@
       ],
       "Includes:": [
         "Comprend :"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Lancement de ${ PASS_APP_NAME }"
       ],
       "per month": [
         "par mois"
@@ -6491,6 +6497,12 @@
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Setting up your organization": [
+        "Configuration de votre organisation"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Connexion à ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Mise à jour de votre compte"
@@ -6629,7 +6641,7 @@
         "MM/AA"
       ],
       "Payment Processing": [
-        "Traitement des payements"
+        "Traitement des paiements"
       ],
       "Processing payment": [
         "Traitement du paiement"
@@ -8509,9 +8521,6 @@
       "Change login password": [
         "Changer le mot de passe de connexion"
       ],
-      "Change mailbox password": [
-        "Changer le mot de passe de messagerie"
-      ],
       "Change organization name": [
         "Changer le nom de l'organisation"
       ],
@@ -8523,6 +8532,9 @@
       ],
       "Change role": [
         "Modifier le rôle"
+      ],
+      "Change second password": [
+        "Changer le mot de passe du compte"
       ],
       "Close": [
         "Fermer"
@@ -8731,8 +8743,8 @@
       "Invoices": [
         "Factures"
       ],
-      "Login password": [
-        "Mot de passe de connexion"
+      "Main password": [
+        "Mot de passe principal"
       ],
       "Multi-user support": [
         "Prise en charge du multi-utilisateur"
@@ -8933,8 +8945,8 @@
       "Type": [
         "Type"
       ],
-      "Unlock your mailbox": [
-        "Déverrouillez votre messagerie"
+      "Unlock your data": [
+        "Débloquez vos données"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Améliorez la protection de votre réseau avec des serveurs dédiés"

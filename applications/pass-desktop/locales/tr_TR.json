@@ -376,6 +376,9 @@
       "Retry": [
         "Yeniden dene"
       ],
+      "Right click and download this CSV": [
+        "Sağ tıklayın ve bu CSV dosyasını indirin"
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -396,6 +399,12 @@
       ],
       "Set access level": [
         "Erişim düzeyini ayarla"
+      ],
+      "Set extra password": [
+        "Ek parolayı ayarla"
+      ],
+      "Setup 2FA": [
+        "İki adımlı doğrulama kur"
       ],
       "Share": [
         "Paylaş"
@@ -721,6 +730,9 @@
       ],
       "File could not be parsed": [
         "Dosya işlenemedi"
+      ],
+      "File could not be read": [
+        "Dosya okunamadı"
       ],
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
@@ -1058,6 +1070,9 @@
       "Auto-lock successfully disabled.": [
         "Otomatik kilitleme kapatıldı."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
+      ],
       "Breaches detected": [
         "Veriler ele geçirilmiş"
       ],
@@ -1124,6 +1139,9 @@
       "Drop to import": [
         "İçe aktarmak için bırakın"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Safari tarayıcı eklentilerindeki bir sınırlama nedeniyle, verileri dışa aktardıktan sonra \".pgp\" dosya uzantısı eksik kalır. Lütfen dışa aktardıktan sonra dosyayı yeniden adlandırın ve .pgp uzantısını ekleyin (örnek: dosya.pgp)."
+      ],
       "Editor": [
         "Düzenleyici"
       ],
@@ -1162,6 +1180,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your PIN code": [
+        "PIN kodunuzu yazın"
       ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
@@ -1395,23 +1416,11 @@
       "Please check your spam folder or try resending the code.": [
         "Lütfen istenmeyen klasörünüzü denetleyin ya da kodu yeniden göndermeyi deneyin."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Lütfen ${ BRAND_NAME } parolanızı onaylayın"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Parolanızla otomatik kilitleme için lütfen ${ BRAND_NAME } parolanızı yazın"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Çevrim dışı kipi kullanıma almak için lütfen ${ BRAND_NAME } parolanızı onaylayın"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Geçerli kilidin kaydını kaldırmak için ${ BRAND_NAME } parolanızı yazın."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Otomatik kilitleme süresini güncellemek için lütfen ${ BRAND_NAME } parolanızı yazın."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın."
@@ -1652,6 +1661,9 @@
       "You're invited to a vault.": [
         "Bir kasaya davet edildiniz."
       ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Kuruluşunuz iki adımlı doğrulama kullanılmasını zorunlu kıldığından hesabınız kısıtlandı. Lütfen hesap ayarlarınızdan iki adımlı doğrulamayı açın ya da yöneticinizle görüşün."
+      ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
@@ -1818,6 +1830,9 @@
       ],
       "Export": [
         "Dışa aktar"
+      ],
+      "Extra password": [
+        "Ek parola"
       ],
       "Field name": [
         "Alan adı"
@@ -1987,6 +2002,9 @@
       "Prefix": [
         "Ön ek"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "${ PASS_APP_NAME } uygulamasını ek parola ile koruyun"
+      ],
       "Rate us": [
         "Bizi değerlendirin"
       ],
@@ -2117,25 +2135,6 @@
       ],
       "stay safer online": [
         "çevrim içi ortamda daha güvende kalın"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "PIN kodunuzu yazın"
-      ],
-      "Sign in to your account": [
-        "Hesabınızda oturum açın"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } kilidini aç"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } uygulamasına hoş geldiniz"
       ]
     },
     "Log preference": {
@@ -2331,6 +2330,9 @@
       "Breaches detected for": [
         "Şunun verileri ele geçirilmiş"
       ],
+      "Confirm extra password": [
+        "Ek parolayı onayla"
+      ],
       "Confirm PIN code": [
         "PIN kodu onayı"
       ],
@@ -2493,6 +2495,9 @@
       "Remove email address?": [
         "E-posta adresi kaldırılsın mı?"
       ],
+      "Remove extra password": [
+        "Ek parolayı kaldır"
+      ],
       "Resolved breaches": [
         "Çözümlenmiş verileri ele geçirme olayları"
       ],
@@ -2517,6 +2522,9 @@
       ],
       "Set access level": [
         "Erişim düzeyini ayarla"
+      ],
+      "Set extra password": [
+        "Ek parolayı ayarla"
       ],
       "Set up 2FA for better security": [
         "Daha iyi güvenlik için iki adımlı doğrulamayı açın"
@@ -2545,6 +2553,9 @@
       "Trash empty": [
         "Çöp kutusu boş"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } kilidini aç"
+      ],
       "Update available": [
         "Güncelleme yayınlanmış"
       ],
@@ -2565,6 +2576,9 @@
       ],
       "Weak passwords": [
         "Zayıf parolalar"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX } uygulamasına hoş geldiniz"
       ],
       "What is an alias?": [
         "Takma ad nedir?"

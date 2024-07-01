@@ -332,7 +332,15 @@
         "blanco"
       ]
     },
+    "Confirm": {
+      "Discard comment?": [
+        "¿Descartar el comentario?"
+      ]
+    },
     "Error": {
+      "Request timed out": [
+        "Tiempo de espera agotado"
+      ],
       "Signature verification failed": [
         "Error en la verificación de la firma"
       ]
@@ -390,6 +398,9 @@
       "Editing": [
         "Editar"
       ],
+      "Internet connection lost": [
+        "Sin conexión a Internet"
+      ],
       "Just now": [
         "Justo ahora"
       ],
@@ -398,6 +409,12 @@
       ],
       "No comments": [
         "Sin comentarios"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "No hay conexión con los servidores. Intente de nuevo en unos minutos."
+      ],
+      "Session timed out": [
+        "Sesión agotada"
       ],
       "Something went wrong:": [
         "Hubo un problema:"
