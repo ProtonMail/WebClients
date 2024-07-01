@@ -247,8 +247,8 @@ describe('Provider cards process testing', () => {
         expect(productButtons).toHaveLength(3);
         fireEvent.click(productButtons[1]);
 
-        // SKip instructions and expect to see calendar modal
-        fireEvent.click(screen.getByTestId('Instruction:continue'));
+        // Skip instructions and expect to see calendar modal
+        fireEvent.click(screen.getByTestId('Instruction:defaultCalendarInstructions'));
     });
 
     it('Should click on every product in the imap modal', async () => {
