@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Schlüssel ändern"
       ],
-      "Change mailbox password": [
-        "Postfach-Passwort ändern"
-      ],
       "Change other email subscriptions": [
         "Andere E-Mail-Abonnements ändern"
       ],
       "Change password": [
         "Passwort ändern"
+      ],
+      "Change second password": [
+        "Zusätzliches Passwort ändern"
       ],
       "Chat with us": [
         "Chatte mit uns"
@@ -4050,6 +4050,9 @@
       "Email address is invalid": [
         "E-Mail-Adresse ist ungültig"
       ],
+      "Email address is not available": [
+        "E-Mail-Adresse ist nicht verfügbar"
+      ],
       "Email address is required": [
         "E-Mail-Adresse ist erforderlich"
       ],
@@ -4104,11 +4107,11 @@
       "Incorrect login credentials. Please try again.": [
         "Ungültige Anmeldedaten. Bitte versuche es erneut."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
-      ],
       "Incorrect password": [
         "Ungültiges Passwort"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches weiteres Passwort. Bitte versuche es erneut."
       ],
       "Incorrect username": [
         "Falscher Benutzername"
@@ -6109,17 +6112,6 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6176,9 +6168,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen."
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Mailbox-Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
       ],
       "${ n } address": [
         "${ n } Adresse",
@@ -7152,6 +7141,9 @@
       "Invite Deleted": [
         "Einladung gelöscht"
       ],
+      "Invite for User deleted": [
+        "Einladung für Benutzer gelöscht"
+      ],
       "Invite rejected": [
         "Einladung abgelehnt"
       ],
@@ -8099,12 +8091,6 @@
       "Two-factor authentication enabled": [
         "Zwei-Faktor-Authentifizierung aktiviert"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Der Modus mit zwei Passwörtern erfordert zwei Passwörter: eines zum Anmelden in deinem Konto und eines zum Entschlüsseln deines Postfachs. (Erweitert)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Der Zwei-Passwörter-Modus verwendet getrennte Passwörter für die Anmeldung und die Entschlüsselung des Postfachs. Dies bietet in einigen Situationen einen kleinen Sicherheitsvorteil, wir empfehlen jedoch den Ein-Passwort-Modus für die meisten Benutzer. Um in den Zwei-Passwörter-Modus zu wechseln, legst du zuerst ein Anmeldepasswort und dann ein Postfachpasswort fest."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Signatur der Wiederherstellungsdatei konnte nicht bestätigt werden. Bitte kontaktiere den Support."
       ],
@@ -8201,7 +8187,13 @@
       "Vault created": [
         "Tresor angelegt"
       ],
+      "Vault Created": [
+        "Tresor angelegt"
+      ],
       "Vault deleted": [
+        "Tresor gelöscht"
+      ],
+      "Vault Deleted": [
         "Tresor gelöscht"
       ],
       "Vault shared with email": [
@@ -8656,6 +8648,17 @@
         "Zoom-Meeting"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Wenn aktiviert, übernehmen Unterordner die Farbe des übergeordneten Ordners."
@@ -8741,6 +8744,9 @@
       ],
       "Paid": [
         "Bezahlt"
+      ],
+      "Processing": [
+        "In Bearbeitung"
       ],
       "Unpaid": [
         "Unbezahlt"
@@ -9323,9 +9329,6 @@
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
       ],
-      "Confirm mailbox password": [
-        "Postfach-Passwort bestätigen"
-      ],
       "Confirm new password": [
         "Neues Passwort bestätigen"
       ],
@@ -9334,6 +9337,9 @@
       ],
       "Confirm password": [
         "Passwort bestätigen"
+      ],
+      "Confirm second password": [
+        "Zusätzliches Passwort bestätigen"
       ],
       "Contacts": [
         "Kontakte"
@@ -9427,6 +9433,9 @@
       ],
       "Disable data export for organization members": [
         "Datenexport für Organisationsmitglieder deaktivieren"
+      ],
+      "Disable sharing outside the organization": [
+        "Freigabe außerhalb des Unternehmens deaktivieren"
       ],
       "Display name": [
         "Anzeigename"
@@ -9623,9 +9632,6 @@
       "Mail settings": [
         "E-Mail-Einstellungen"
       ],
-      "Mailbox password": [
-        "Postfach-Passwort"
-      ],
       "Main": [
         "Hauptebene"
       ],
@@ -9683,9 +9689,6 @@
       "New login password": [
         "Neues Anmeldepasswort"
       ],
-      "New mailbox password": [
-        "Neues Postfachpasswort"
-      ],
       "New organization identity": [
         "Neue Organisationsidentität"
       ],
@@ -9694,6 +9697,9 @@
       ],
       "New password": [
         "Neues Passwort"
+      ],
+      "New second password": [
+        "Neues zusätzliches Passwort"
       ],
       "No filter": [
         "Kein Filter"
@@ -9835,6 +9841,9 @@
       ],
       "Reveal password": [
         "Passwort anzeigen"
+      ],
+      "Second password": [
+        "Zusätzliches Passwort"
       ],
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
@@ -12091,6 +12100,9 @@
       "Add to existing group": [
         "Zu bestehender Gruppe hinzufügen"
       ],
+      "Archive": [
+        "Archiv"
+      ],
       "Ask each time": [
         "Jedes Mal nachfragen"
       ],
@@ -12129,6 +12141,9 @@
       ],
       "Left to Right": [
         "Von links nach rechts"
+      ],
+      "Mark as read": [
+        "Als gelesen markieren"
       ],
       "My reason isn't listed": [
         "Mein Grund ist nicht aufgeführt"
@@ -12187,11 +12202,17 @@
       "Setup incomplete": [
         "Einrichtung unvollständig"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
       ],
       "The whole organization": [
         "Die gesamte Organisation"
+      ],
+      "Trash": [
+        "Papierkorb"
       ]
     },
     "Option delay send seconds": {
@@ -12800,6 +12821,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "Got it": [
+        "Verstanden"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -15207,9 +15231,6 @@
       "Change login password": [
         "Anmeldepasswort ändern"
       ],
-      "Change mailbox password": [
-        "Postfach-Passwort ändern"
-      ],
       "Change organization name": [
         "Namen der Organisation ändern"
       ],
@@ -15667,8 +15688,8 @@
       "Link confirmation": [
         "Linkbestätigung"
       ],
-      "Login password": [
-        "Anmeldepasswort"
+      "Main password": [
+        "Primäres Passwort"
       ],
       "Messages": [
         "Nachrichten"
@@ -15753,9 +15774,6 @@
       ],
       "PayPal verification failed": [
         "PayPal-Verifizierung fehlgeschlagen"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalisiere deine E-Mail-Fußzeile"
       ],
       "Phone": [
         "Telefon"
@@ -16018,9 +16036,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unlock your mailbox": [
-        "Entsperre dein Postfach"
       ],
       "Upgrade plan": [
         "Abonnement upgraden"

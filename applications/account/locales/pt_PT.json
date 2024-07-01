@@ -52,11 +52,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -169,14 +169,14 @@
       "Change keys": [
         "Alterar chaves"
       ],
-      "Change mailbox password": [
-        "Alterar a palavra-passe da caixa de correio"
-      ],
       "Change other email subscriptions": [
         "Alterar outras subscrições de e-mail"
       ],
       "Change password": [
         "Alterar a palavra-passe"
+      ],
+      "Change second password": [
+        "Alterar a segunda palavra-passe"
       ],
       "Chat with us": [
         "Converse connosco"
@@ -195,6 +195,9 @@
       ],
       "Clear all formatting": [
         "Limpar toda a formatação"
+      ],
+      "Clear filter": [
+        "Limpar o filtro"
       ],
       "Close": [
         "Fechar"
@@ -829,6 +832,9 @@
       "Revoke this invitation": [
         "Revogar este convite"
       ],
+      "Run on servers": [
+        "Executar em servidores"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -903,6 +909,9 @@
       ],
       "Send my username": [
         "Enviar o meu nome de utilizador"
+      ],
+      "Send new invite": [
+        "Enviar um novo convite"
       ],
       "Send reminder": [
         "Enviar um lembrete"
@@ -1325,6 +1334,16 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicações ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Run locally": [
+        "Executar localmente"
+      ]
+    },
+    "Assistant toggle": {
+      "New": [
+        "Novo"
       ]
     },
     "Attached ics file error": {
@@ -3032,6 +3051,9 @@
       ],
       "Delete address?": [
         "Eliminar o endereço?"
+      ],
+      "You can only delete 1 address per year.": [
+        "Só é possível eliminar 1 endereço por ano."
       ]
     },
     "Delete calendar section description": {
@@ -3741,6 +3763,9 @@
       "Email address is invalid": [
         "O endereço de email é inválido"
       ],
+      "Email address is not available": [
+        "O endereço de e-mail não se encontra disponível."
+      ],
       "Email address is required": [
         "O endereço de e-mail é obrigatório."
       ],
@@ -3791,9 +3816,6 @@
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenciais de início de sessão incorretas. Tente novamente."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Palavra-passe da caixa de correio incorreta. Tente novamente."
       ],
       "Incorrect password": [
         "Palavra-passe incorreta"
@@ -5749,17 +5771,6 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi enviada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -5810,9 +5821,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer partilhar dados consigo em ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } também pode ser utilizado com uma palavra-passe única que substitui a palavra-passe de início de sessão e da caixa de correio. Para mudar para o modo de palavra-passe única, introduza a palavra-passe única que pretende utilizar e clique em Guardar."
       ],
       "${ n } address": [
         "${ n } endereço",
@@ -6022,6 +6030,9 @@
       "All (${ totalFoldersCount } label)": [
         "Tudo (${ totalFoldersCount } etiqueta)",
         "Tudo (${ totalFoldersCount } etiquetas)"
+      ],
+      "All Events ": [
+        "Todos os eventos "
       ],
       "All keys successfully reactivated": [
         "Todas as chaves foram reativadas."
@@ -6647,7 +6658,13 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Invite Accepted": [
+        "O convite foi aceite."
+      ],
       "Invite rejected": [
+        "O convite foi rejeitado."
+      ],
+      "Invite Rejected": [
         "O convite foi rejeitado."
       ],
       "Invite successfully sent": [
@@ -6656,6 +6673,9 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que alguns dos seus dados estão encriptados e bloqueados."
+      ],
+      "Item Created": [
+        "O item foi criado."
       ],
       "it’s imperative": [
         "é obrigatório"
@@ -7465,17 +7485,14 @@
       "Two-factor authentication enabled": [
         "Autenticação de dois fatores ativada"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "O modo de duas palavras-passe requer duas palavras-passe: uma para iniciar sessão na sua conta e outra para desencriptar a sua caixa de correio. (Avançado)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "O modo de duas palavras-passe utiliza palavras-passe separadas para início de sessão e desencriptação da caixa de correio. Isto proporciona uma pequena vantagem de segurança em algumas situações, mas recomendamos o modo de uma palavra-passe para a maioria dos utilizadores. Para mudar para o modo de duas palavras-passe, defina primeiro uma palavra-passe de início de sessão e, em seguida, uma palavra-passe para a caixa de correio."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Não foi possível verificar a assinatura do ficheiro de recuperação. Por favor, contacte o suporte."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
+      ],
+      "Unknown event type": [
+        "Categoria de evento desconhecida"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "A não ser que termine a sessão ou altere a palavra-passe da conta, a sessão permanecerá ativa. As sessões expiram após 60 dias de inatividade."
@@ -7710,6 +7727,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Gostaria de receber um novo código de verificação?"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ],
       "Yearly": [
         "Anualmente"
@@ -7950,6 +7970,17 @@
         "Reunião no Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Envie-as individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi enviada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando ativado, as sub-pastas herdam a cor da pasta principal."
@@ -8024,6 +8055,9 @@
       ],
       "Paid": [
         "Paga"
+      ],
+      "Processing": [
+        "A processar"
       ],
       "Unpaid": [
         "Por pagar"
@@ -8487,7 +8521,7 @@
         "Premiado"
       ],
       "Beta": [
-        "Beta"
+        "Versão Beta"
       ],
       "Billing address": [
         "Endereço de faturação"
@@ -8585,9 +8619,6 @@
       "Confirm login password": [
         "Confirme a nova palavra-passe"
       ],
-      "Confirm mailbox password": [
-        "Confirme a palavra-passe da caixa de correio"
-      ],
       "Confirm new password": [
         "Confirmar a nova palavra-passe"
       ],
@@ -8596,6 +8627,9 @@
       ],
       "Confirm password": [
         "Confirmar a palavra-passe"
+      ],
+      "Confirm second password": [
+        "Confirmar a segunda palavra-passe"
       ],
       "Contacts": [
         "Contactos"
@@ -8876,9 +8910,6 @@
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
       ],
-      "Mailbox password": [
-        "Palavra-passe da caixa de correio"
-      ],
       "Main": [
         "Principal"
       ],
@@ -8927,9 +8958,6 @@
       "New login password": [
         "Nova palavra-passe de início"
       ],
-      "New mailbox password": [
-        "Nova palavra-passe da caixa de correio"
-      ],
       "New organization identity": [
         "Nova identidade da organização"
       ],
@@ -8938,6 +8966,9 @@
       ],
       "New password": [
         "Nova palavra-passe"
+      ],
+      "New second password": [
+        "Nova segunda palavra-passe"
       ],
       "No filter": [
         "Sem filtro"
@@ -9071,6 +9102,9 @@
       "Reveal password": [
         "Mostrar a palavra-passe"
       ],
+      "Second password": [
+        "Segunda palavra-passe"
+      ],
       "Security code (${ codeName })": [
         "Código de segurança (${ codeName })"
       ],
@@ -9121,6 +9155,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Spam and filters": [
+        "Spam i filtros"
       ],
       "Starred": [
         "Com estrela"
@@ -9760,6 +9797,9 @@
       "Create a new ${ appName } account": [
         "Criar uma conta do ${ appName }"
       ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Encontre o seu nome de utilizador da conta ${ BRAND_NAME }"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Redefina-o aqui utilizando um código de recuperação, e-mail ou SMS e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
       ],
@@ -10172,6 +10212,9 @@
       "Advanced sharing security": [
         "Segurança avançada de partilha"
       ],
+      "All ${ BRAND_NAME } services": [
+        "Todos os serviços da ${ BRAND_NAME }"
+      ],
       "Auto-delete Spam and Trash": [
         "Eliminação automática das pastas Spam e Lixeira"
       ],
@@ -10274,6 +10317,9 @@
       "GDPR data processing agreement": [
         "Acordo de tratamento de dados do RGPD"
       ],
+      "Group management (coming soon)": [
+        "Gerenciamento de grupo (em breve)"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -10336,6 +10382,9 @@
         "Proteja ${ n } dispositivo ao mesmo tempo",
         "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
+      "Require 2FA for organization": [
+        "Exigir 2FA para a organização"
+      ],
       "Router support": [
         "Suporte para router"
       ],
@@ -10367,6 +10416,9 @@
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
       ],
+      "SSO integration (coming soon)": [
+        "Integração SSO (em breve)"
+      ],
       "Start protecting your organization": [
         "Comece a proteger a sua organização"
       ],
@@ -10375,6 +10427,9 @@
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
+      ],
+      "Tailored to your needs": [
+        "Personalizado de acordo com as suas necessidades"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -11094,6 +11149,9 @@
       "Add to existing group": [
         "Adicionar a um grupo existente"
       ],
+      "Archive": [
+        "Arquivar"
+      ],
       "Ask each time": [
         "Sempre perguntar"
       ],
@@ -11135,6 +11193,9 @@
       ],
       "Left to Right": [
         "Da esquerda para a direita"
+      ],
+      "Mark as read": [
+        "Marcar como lido"
       ],
       "My reason isn't listed": [
         "O motivo não está na lista"
@@ -11193,14 +11254,23 @@
       "Setup incomplete": [
         "A configuração está incompleta."
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Standard server configs": [
         "Definições padrão do servidor"
+      ],
+      "Star": [
+        "Marcar com estrela"
       ],
       "TCP": [
         "TCP"
       ],
       "The whole organization": [
         "Toda a organização"
+      ],
+      "Trash": [
+        "Lixeira"
       ],
       "UDP": [
         "UDP"
@@ -11616,8 +11686,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processamento do pagamento"
       ],
       "Processing payment": [
         "A processar pagamento"
@@ -11700,6 +11776,9 @@
       ],
       "Email address": [
         "Endereço de e-mail"
+      ],
+      "Email or IP": [
+        "E-mail ou IP"
       ],
       "End date": [
         "Data de término"
@@ -12564,6 +12643,11 @@
         "Actualizar"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Melhorar"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mês",
@@ -12869,6 +12953,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
@@ -12942,6 +13031,9 @@
       ],
       "Keep ${ config.planName }": [
         "Manter ${ config.planName }"
+      ],
+      "Learn more": [
+        "Mais informação"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
@@ -13243,6 +13335,9 @@
       "Domain deleted": [
         "Domínio eliminado"
       ],
+      "Invitation resent": [
+        "O convite foi reenviado."
+      ],
       "Sessions revoked": [
         "Sessões revogadas"
       ],
@@ -13378,6 +13473,9 @@
       ],
       "Import": [
         "Importar"
+      ],
+      "Invitation email": [
+        "E-mail do convite"
       ],
       "List": [
         "Lista"
@@ -13635,9 +13733,6 @@
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
       ],
-      "Change mailbox password": [
-        "Alterar a palavra-passe da caixa de correio"
-      ],
       "Change organization name": [
         "Alterar nome da organização"
       ],
@@ -13649,6 +13744,9 @@
       ],
       "Change role": [
         "Alterar a função"
+      ],
+      "Change second password": [
+        "Alterar a segunda palavra-passe"
       ],
       "Choose an account": [
         "Escolha uma conta"
@@ -13811,6 +13909,9 @@
       "Delete version history?": [
         "Eliminar o histórico de versões?"
       ],
+      "Description": [
+        "Descrição"
+      ],
       "Details": [
         "Detalhes"
       ],
@@ -13865,6 +13966,9 @@
       "Edit organization identity": [
         "Editar a identidade da organização"
       ],
+      "Edit profile": [
+        "Editar o perfil"
+      ],
       "Edit servers": [
         "Editar servidores"
       ],
@@ -13915,6 +14019,9 @@
       ],
       "Error": [
         "Erro"
+      ],
+      "Event": [
+        "Evento"
       ],
       "Every member of the organization can access": [
         "Todos os membros da organização podem aceder"
@@ -14053,6 +14160,9 @@
       "Invoices": [
         "Faturas"
       ],
+      "IP": [
+        "IP"
+      ],
       "Keep your inbox organized": [
         "Mantenha a sua caixa de entrada organizada"
       ],
@@ -14073,9 +14183,6 @@
       ],
       "Link confirmation": [
         "Confirmação de hiperligação"
-      ],
-      "Login password": [
-        "Palavra-passe de início de sessão"
       ],
       "Messages": [
         "Mensagens"
@@ -14158,8 +14265,14 @@
       "PayPal verification failed": [
         "Erro na verificação PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personalize o rodapé do seu e-mail"
+      ],
       "Phone": [
         "Telefone"
+      ],
+      "Policies": [
+        "Políticas"
       ],
       "Preview": [
         "Pré-visualização"
@@ -14172,6 +14285,9 @@
       ],
       "Processing...": [
         "A processar..."
+      ],
+      "Profile": [
+        "Perfil"
       ],
       "Recommended": [
         "Recomendado"
@@ -14269,6 +14385,9 @@
       "Send email reminders?": [
         "Enviar lembretes por e-mail?"
       ],
+      "Send new invite?": [
+        "Enviar um novo convite?"
+      ],
       "Session management": [
         "Gestão da sessão"
       ],
@@ -14338,6 +14457,9 @@
       "Sort labels alphabetically": [
         "Ordenar etiquetas alfabeticamente"
       ],
+      "Spam filters": [
+        "Filtros de spam"
+      ],
       "Spam, block, and allow lists": [
         "Listas de endereços permitidos, bloqueados e spam"
       ],
@@ -14380,6 +14502,9 @@
       "This field cannot contain only spaces": [
         "Este campo não pode conter apenas espaços"
       ],
+      "Time": [
+        "Hora"
+      ],
       "Time zone": [
         "Fuso horário"
       ],
@@ -14398,14 +14523,14 @@
       "Type": [
         "Tipo"
       ],
-      "Unlock your mailbox": [
-        "Desbloqueie a sua caixa de correio"
-      ],
       "Upgrade plan": [
         "Atualizar o plano"
       ],
       "Upload CSV file to create multiple accounts": [
         "Envie um ficheiro CSV para criar múltiplas contas."
+      ],
+      "User": [
+        "Utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -14454,6 +14579,9 @@
       ],
       "WireGuard configuration": [
         "Configuração WireGuard"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ],
       "You have no open alerts": [
         "Não há alertas abertos."
@@ -14864,17 +14992,58 @@
       "Add multiple users": [
         "Adicionar vários utilizadores"
       ],
+      "Add new user": [
+        "Adicionar um utilizador"
+      ],
+      "Admin": [
+        "Administrador"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
       "Confirm password": [
         "Confirmar a palavra-passe"
       ],
       "Create password": [
         "Criar a palavra-passe"
       ],
+      "Create user": [
+        "Criar um utilizador"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Private": [
+        "Privado"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
       ],
       "VPN connections": [
         "Ligações VPN"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ]
+    },
+    "Users table: badge": {
+      "Invite sent": [
+        "O convite foi enviado."
+      ],
+      "Private": [
+        "Privado"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ]
     },
     "Validation": {
