@@ -11,7 +11,7 @@ import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/paymen
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt } from '../../components';
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
 import { PaymentTokenResult } from '../../payments/core/interface';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
@@ -125,6 +125,7 @@ type PaypalV5Props = ModalProps & {
 
 export const PayPalV5Modal = ({ onClose, onMethodAdded, ...rest }: PaypalV5Props) => {
     const { createNotification } = useNotifications();
+    const [user] = useUser();
 
     const paymentFacade = usePaymentFacade({
         amount: PAYMENT_AUTHORIZATION_AMOUNT,
@@ -143,6 +144,7 @@ export const PayPalV5Modal = ({ onClose, onMethodAdded, ...rest }: PaypalV5Props
                 }
             }
         },
+        user,
     });
 
     return (
