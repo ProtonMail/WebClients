@@ -13,7 +13,6 @@ import { calendarSettingsReducer, calendarsReducer, holidaysDirectoryReducer } f
 import { filtersReducer, incomingAddressForwardingsReducer, outgoingAddressForwardingsReducer } from '@proton/mail';
 import { sharedPersistReducer, sharedReducers } from '@proton/redux-shared-store';
 import { selectPersistModel } from '@proton/redux-utilities';
-import { walletReducers } from '@proton/wallet';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,
@@ -29,7 +28,6 @@ export const rootReducer = combineReducers({
     ...holidaysDirectoryReducer,
     ...samlReducer,
     ...allowAddressDeletionReducer,
-    ...walletReducers,
     inactiveKeys: inactiveKeysReducer,
 });
 

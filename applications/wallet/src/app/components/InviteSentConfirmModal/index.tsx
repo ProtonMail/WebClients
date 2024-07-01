@@ -6,7 +6,7 @@ import walletSendingPlane from '@proton/styles/assets/img/illustrations/wallet-s
 
 import { Button, Modal } from '../../atoms';
 
-export interface InviteSentConfirmModalOwnProps {
+interface InviteSentConfirmModalOwnProps {
     email: string;
 }
 

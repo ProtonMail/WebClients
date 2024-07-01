@@ -19,9 +19,9 @@ import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import { ModalHeaderWithStepper, Steps } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
 import { AmountInput } from './AmountInput';
-import { useOnChainFeesSelector } from './OnchainTransactionBuilderFooter/OnchainTransactionAdvancedOptions/useOnChainFeesSelector';
 import { RecipientsSelection } from './RecipientsSelection';
 import { TransactionReview } from './TransactionReview';
+import { useFeesInput } from './TransactionReview/useFeesInput';
 import { TransactionSendConfirmationModal } from './TransactionSendConfirmationModal';
 
 interface Props {
@@ -74,8 +74,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
         (recipient) => recipient?.recipient.Address && validateEmailAddress(recipient?.recipient.Address)
     );
 
-    // TODO: use this later with fee selector, for now it only set default fees for 5th next block
-    useOnChainFeesSelector(txBuilder, updateTxBuilder);
+    const { getFeesByBlockTarget } = useFeesInput(txBuilder, updateTxBuilder);
 
     useEffect(() => {
         if (wasmAccount?.account) {
@@ -163,6 +162,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                                 updateTxBuilder={updateTxBuilder}
                                 btcAddressMap={recipientHelpers.btcAddressMap}
                                 onBack={() => setStepKey(StepKey.AmountInput)}
+                                getFeesByBlockTarget={getFeesByBlockTarget}
                                 onSent={() => {
                                     setStepKey(StepKey.Send);
                                     modal.onClose?.();

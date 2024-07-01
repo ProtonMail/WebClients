@@ -16,7 +16,7 @@ import { useAddresses, useNotifications, useUserKeys } from '@proton/components/
 import useLoading from '@proton/hooks/useLoading';
 import { WalletType, encryptWalletData, useWalletApiClients, walletCreation } from '@proton/wallet';
 
-import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, purposeByScriptType } from '../../constants';
+import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, PURPOSE_BY_SCRIPT_TYPE } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useFiatCurrencies, useWalletDispatch } from '../../store/hooks';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
@@ -153,7 +153,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             )
             .then(async ({ Wallet, WalletKey, WalletSettings }): Promise<void> => {
                 const derivationPath = WasmDerivationPath.fromParts(
-                    purposeByScriptType[DEFAULT_SCRIPT_TYPE],
+                    PURPOSE_BY_SCRIPT_TYPE[DEFAULT_SCRIPT_TYPE],
                     network,
                     FIRST_ACCOUNT_INDEX
                 );

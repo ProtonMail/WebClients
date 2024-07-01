@@ -11,7 +11,6 @@ import { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
 import { useUserWalletSettings } from '../../../../store/hooks/useUserWalletSettings';
 import { isExchangeRate } from '../../../../utils';
 import { useAsyncValue } from '../../../../utils/hooks/useAsyncValue';
-import { useFeesInput } from '../useFeesInput';
 
 import './FeesModal.scss';
 
@@ -19,11 +18,11 @@ interface Props extends ModalOwnProps {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
     txBuilder: WasmTxBuilder;
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
+    getFeesByBlockTarget: (blockTarget: number) => number;
 }
 
-export const FeesModal = ({ unit, txBuilder, updateTxBuilder, ...modalProps }: Props) => {
+export const FeesModal = ({ unit, txBuilder, updateTxBuilder, getFeesByBlockTarget, ...modalProps }: Props) => {
     const [settings] = useUserWalletSettings();
-    const { getFeesByBlockTarget } = useFeesInput(txBuilder);
     const { createDraftPsbt } = usePsbt({ txBuilder });
 
     const getTransactionFeesAtFeeRate = async (feeRate: number) => {

@@ -36,6 +36,7 @@ interface Props {
     onBack: () => void;
     onSent: () => void;
     onBackToEditRecipients: () => void;
+    getFeesByBlockTarget: (blockTarget: number) => number;
 }
 
 export const TransactionReview = ({
@@ -48,6 +49,7 @@ export const TransactionReview = ({
     onBackToEditRecipients,
     onSent,
     updateTxBuilder,
+    getFeesByBlockTarget,
 }: Props) => {
     const [addresses] = useAddresses();
     // We use primaryAddress when user wants to use BvE but doesn't have any email set on the wallet account he is using
@@ -235,7 +237,13 @@ export const TransactionReview = ({
                             </Tooltip>
                         </CoreButton>
 
-                        <FeesModal unit={unit} txBuilder={txBuilder} updateTxBuilder={updateTxBuilder} {...feesModal} />
+                        <FeesModal
+                            unit={unit}
+                            txBuilder={txBuilder}
+                            updateTxBuilder={updateTxBuilder}
+                            getFeesByBlockTarget={getFeesByBlockTarget}
+                            {...feesModal}
+                        />
                     </div>
 
                     <hr className="my-2" />

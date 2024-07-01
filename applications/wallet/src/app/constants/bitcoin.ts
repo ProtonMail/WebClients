@@ -4,8 +4,6 @@ export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;
 export const mBITCOIN = BITCOIN / 1000;
 
-export const CENTS_IN_ONE_DOLLAR = 100;
-
 export const DEFAULT_INDEX = 0;
 
 /**
@@ -22,6 +20,8 @@ export const DEFAULT_FIAT_CURRENCY = 'USD';
 export const DEFAULT_ACCOUNT_LABEL = 'Primary Account';
 export const DEFAULT_SCRIPT_TYPE = WasmScriptType.NativeSegwit;
 
+export const BASE_INDEX_OPTIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'custom'];
+
 export const SCRIPT_TYPES = [
     WasmScriptType.Legacy,
     WasmScriptType.NestedSegwit,
@@ -29,7 +29,7 @@ export const SCRIPT_TYPES = [
     WasmScriptType.Taproot,
 ];
 
-export const purposeByScriptType: Record<WasmScriptType, number> = {
+export const PURPOSE_BY_SCRIPT_TYPE: Record<WasmScriptType, number> = {
     [WasmScriptType.Legacy]: 44,
     [WasmScriptType.NestedSegwit]: 48,
     [WasmScriptType.NativeSegwit]: 84,
