@@ -1,5 +1,4 @@
 import useKeyPress from '@proton/components/hooks/useKeyPress';
-import { DESKTOP_BUILD } from '@proton/pass/lib/client';
 import noop from '@proton/utils/noop';
 
 export const useNewItemShortcut = DESKTOP_BUILD

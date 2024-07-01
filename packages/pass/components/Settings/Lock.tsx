@@ -12,7 +12,6 @@ import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import { EXTENSION_BUILD } from '@proton/pass/lib/client';
 import { lockCreateIntent } from '@proton/pass/store/actions';
 import { lockCreateRequest } from '@proton/pass/store/actions/requests';
 import { selectLockMode, selectLockTTL, selectUserSettings } from '@proton/pass/store/selectors';
