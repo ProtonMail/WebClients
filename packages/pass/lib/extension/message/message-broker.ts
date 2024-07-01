@@ -145,6 +145,14 @@ export const createMessageBroker = (options: {
         });
 
         port.onDisconnect.addListener(({ name }) => {
+            /** Handle port disconnection and potential BFCache-related errors.
+             * Chrome 123+ introduced changes to extension messaging with BFCache.
+             * These changes may trigger runtime errors, but they're generally
+             * safe to ignore as we're already handling page lifecycle events in
+             * the content script. We explicitly access chrome.runtime.lastError
+             * to prevent unhandled error logs.
+             * see: https://developer.chrome.com/blog/bfcache-extension-messaging-changes */
+            void chrome.runtime.lastError;
             ports.delete(name);
             options.onDisconnect(name);
         });
