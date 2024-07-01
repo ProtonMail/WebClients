@@ -116,22 +116,6 @@ function build_firefox_prod {
     on_leave "release/$BUILD_ID-FF.zip"
 }
 
-function build_safari_prod {
-    on_enter "Safari (Prod)"
-    RELEASE=true yarn run build:extension:safari >/dev/null
-    cd dist
-    zip -rqX "$ARTEFACTSDIR/safari/$BUILD_ID.zip" "."
-    on_leave "safari/$BUILD_ID.zip"
-}
-
-function build_safari_black {
-    on_enter "Safari (Black)"
-    BUILD_TARGET=safari yarn run build:extension:dev >/dev/null
-    cd dist
-    zip -rqX "$ARTEFACTSDIR/safari/$BUILD_ID.black.zip" "."
-    on_leave "safari/$BUILD_ID.black.zip"
-}
-
 # Print debug vars
 echo "Building for all platforms... This may take a while."
 printf "\tNode\t%s (%s)\n" "$(node --version)" "$(which node)"
@@ -162,9 +146,6 @@ mkdir -p "$ARTEFACTSDIR/release"
 # Execute individual builds
 build_firefox_black
 build_firefox_prod
-
-build_safari_prod
-build_safari_black
 
 build_chromium_prod
 build_chromium_black
