@@ -27,6 +27,7 @@ import ReminderSectionPlan from './ReminderSectionPlan';
 import ReminderSectionStorage from './ReminderSectionStorage';
 import ReminderSectionTestimonials from './ReminderSectionTestimonials';
 import { getReminderPageConfig } from './reminderPageConfig';
+import useCancellationTelemetry from './useCancellationTelemetry';
 
 interface Props {
     app: APP_NAMES;
@@ -36,6 +37,8 @@ export const CancellationReminderSection = ({ app }: Props) => {
     const [user] = useUser();
     const [{ paid }] = useVPNServersCount();
     const { b2bAccess, b2cAccess, redirectToDashboard, subscription, setStartedCancellation } = useCancellationFlow();
+    const { sendCancelPageKeepPlanReport, sendCancelPageConfirmCancelReport } = useCancellationTelemetry();
+
     const isChargeBeeUser = onSessionMigrationChargebeeStatus(user, subscription) === ChargebeeEnabled.CHARGEBEE_FORCED;
     const newCancellationPolicy = useFlag('ExtendCancellationProcess') && isChargeBeeUser;
 
@@ -87,6 +90,9 @@ export const CancellationReminderSection = ({ app }: Props) => {
                         <div className="flex gap-2 border-bottom mb-6 pb-6">
                             <ButtonLike
                                 as={SettingsLink}
+                                onClick={() => {
+                                    sendCancelPageKeepPlanReport();
+                                }}
                                 path="/dashboard"
                                 shape="solid"
                                 color="norm"
@@ -107,6 +113,7 @@ export const CancellationReminderSection = ({ app }: Props) => {
                             shape="underline"
                             className="color-weak py-0"
                             onClick={() => {
+                                sendCancelPageConfirmCancelReport();
                                 setCancelModalOpen(true);
                             }}
                         >{c('Subscription reminder').t`I still want to cancel`}</Button>
