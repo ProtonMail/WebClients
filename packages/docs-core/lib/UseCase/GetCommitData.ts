@@ -1,7 +1,7 @@
 import { NodeMeta } from '@proton/drive-store'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 import { Commit } from '@proton/docs-proto'
 
 export class GetCommitData implements UseCaseInterface<Commit> {
