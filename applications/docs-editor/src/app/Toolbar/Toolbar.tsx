@@ -29,9 +29,11 @@ import {
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
+  COMMAND_PRIORITY_NORMAL,
   ElementFormatType,
   FORMAT_TEXT_COMMAND,
   INDENT_CONTENT_COMMAND,
+  KEY_MODIFIER_COMMAND,
   OUTDENT_CONTENT_COMMAND,
   REDO_COMMAND,
   SELECTION_CHANGE_COMMAND,
@@ -67,6 +69,7 @@ import { DocumentInteractionMode } from '../DocumentInteractionMode'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/InsertTableCommand'
 import { FontColorMenu } from '../Components/ColorMenu'
 import { BackgroundColors, TextColors } from '../Shared/Color'
+import { isMac } from '@proton/shared/lib/helpers/browser'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -360,6 +363,19 @@ export default function DocumentEditorToolbar({
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
+      activeEditor.registerCommand(
+        KEY_MODIFIER_COMMAND,
+        (event) => {
+          const { key, ctrlKey, metaKey } = event
+          const hasModifier = isMac() ? metaKey : ctrlKey
+          if (key === 'k' && hasModifier) {
+            event.preventDefault()
+            return activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
+          }
+          return false
+        },
+        COMMAND_PRIORITY_NORMAL,
+      ),
     )
   }, [$updateToolbar, activeEditor])
 
@@ -519,7 +535,14 @@ export default function DocumentEditorToolbar({
   const showInsertOptionsInToolbar = viewportMoreThanLarge
 
   const DropdownContentProps = {
-    onClosed: () => focusEditor(),
+    onClosed: () => {
+      const activeElement = document.activeElement
+      const rootElementParent = editor.getRootElement()?.parentElement
+      if (!rootElementParent || rootElementParent.contains(activeElement)) {
+        return
+      }
+      focusEditor()
+    },
   }
 
   return (
