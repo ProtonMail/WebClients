@@ -47,10 +47,10 @@ export const useVolumeLinkView = () => {
                 volumeId,
                 linkId,
             }).catch(async (error) => {
-                if (error.data.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                if (error.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
                     return undefined;
                 }
-                return error;
+                throw error;
             });
 
             if (!invitationDetails) {
@@ -58,7 +58,7 @@ export const useVolumeLinkView = () => {
                     volumeId,
                     linkId,
                 }).catch((error) => {
-                    if (error.data.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
+                    if (error.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
                         return undefined;
                     }
                     return error;
