@@ -87,9 +87,14 @@ enum MailFeatureFlag {
     ComposerAssistant = 'ComposerAssistant',
 }
 
+enum AdminFeatureFlag {
+    UserSecurityModal = 'UserSecurityModal',
+}
+
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
     | `${CalendarFeatureFlag}`
     | `${DriveFeatureFlag}`
-    | `${MailFeatureFlag}`;
+    | `${MailFeatureFlag}`
+    | `${AdminFeatureFlag}`;
