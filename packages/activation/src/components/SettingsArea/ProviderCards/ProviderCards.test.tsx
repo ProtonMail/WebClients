@@ -107,26 +107,27 @@ jest.mock('@proton/components/hooks/useCalendars', () => () => [
     false,
 ]);
 
-const server = setupServer();
+const server = setupServer(
+    http.get('/core/v4/features', () => {
+        return HttpResponse.json({}, { headers });
+    }),
+    http.get('/importer/v1/mail/importers/authinfo', () => {
+        return HttpResponse.json({}, { headers });
+    }),
+    http.get('/core/v4/system/config', () => {
+        return HttpResponse.json({}, { headers });
+    }),
+    http.get('/calendar/v1', () => {
+        return HttpResponse.json({}, { headers });
+    })
+);
 
 beforeAll(() => {
     server.listen();
-    server.use(
-        http.get('/core/v4/features', () => {
-            return HttpResponse.json({}, { headers });
-        }),
-        http.get('/importer/v1/mail/importers/authinfo', () => {
-            return HttpResponse.json({}, { headers });
-        }),
-        http.get('/core/v4/system/config', () => {
-            return HttpResponse.json({}, { headers });
-        }),
-        http.get('/calendar/v1', () => {
-            return HttpResponse.json({}, { headers });
-        })
-    );
 });
-afterEach(() => server.resetHandlers());
+afterEach(() => {
+    server.resetHandlers();
+});
 afterAll(() => {
     server.close();
 });
@@ -247,8 +248,7 @@ describe('Provider cards process testing', () => {
         expect(productButtons).toHaveLength(3);
         fireEvent.click(productButtons[1]);
 
-        // Skip instructions and expect to see calendar modal
-        fireEvent.click(screen.getByTestId('Instruction:defaultCalendarInstructions'));
+        await waitFor(() => screen.getByTestId('Instruction:defaultCalendarInstructions'));
     });
 
     it('Should click on every product in the imap modal', async () => {
