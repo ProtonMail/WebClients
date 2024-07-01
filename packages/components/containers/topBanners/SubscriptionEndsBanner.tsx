@@ -4,6 +4,7 @@ import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 
 import { SettingsLink, Time } from '../../components';
 import { useConfig, useSubscription } from '../../hooks';
+import { REACTIVATE_SOURCE } from '../payments/subscription';
 import { subscriptionExpires } from '../payments/subscription/helpers';
 import TopBanner from './TopBanner';
 
@@ -31,7 +32,7 @@ const SubscriptionEndsBanner = () => {
             data-testid="reactivate-link"
             key="reactivate-subscription"
             className="color-inherit"
-            path="/dashboard#your-subscriptions"
+            path={`/dashboard?source=${REACTIVATE_SOURCE.banners}#your-subscriptions`}
         >{c('Link').t`Reactivate now`}</SettingsLink>
     );
 

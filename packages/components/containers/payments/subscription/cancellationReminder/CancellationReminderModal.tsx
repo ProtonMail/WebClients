@@ -20,6 +20,7 @@ import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/c
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
 
+import { REACTIVATE_SOURCE } from '../cancellationFlow';
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
 import { ReminderFlag, markRemindersAsSeen } from './cancellationReminderHelper';
 
@@ -72,7 +73,7 @@ const CancellationReminderModal = (props: ModalProps) => {
             <ModalTwoFooter>
                 <ButtonLike
                     as={SettingsLink}
-                    path="/dashboard#your-subscriptions"
+                    path={`/dashboard?source=${REACTIVATE_SOURCE.reminderModal}#your-subscriptions`}
                     target="_blank"
                     fullWidth
                     color="norm"

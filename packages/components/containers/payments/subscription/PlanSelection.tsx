@@ -55,6 +55,7 @@ import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import { useCancellationFlow } from './cancellationFlow';
+import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import { getBundleProPlanToUse, getVPNPlanToUse } from './helpers/payment';
 
@@ -219,6 +220,7 @@ const PlanSelection = ({
     const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
 
     const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
+    const { sendStartCancellationPricingReport } = useCancellationTelemetry();
 
     const alreadyHasMaxCycle = hasMaximumCycle(subscription);
 
@@ -395,6 +397,7 @@ const PlanSelection = ({
                 onSelect={(planName) => {
                     // Mail plus users selecting free plan are redirected to the cancellation reminder flow
                     if (planName === PLANS.FREE && (b2bAccess || b2cAccess)) {
+                        sendStartCancellationPricingReport();
                         redirectToCancellationFlow();
                         return;
                     }
