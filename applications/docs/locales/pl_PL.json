@@ -2229,9 +2229,6 @@
       "Error decrypting a computer": [
         "Wystąpił błąd podczas odszyfrowywania urządzenia"
       ],
-      "Error: Update Too Large": [
-        "Błąd: Aktualizacja jest zbyt duża"
-      ],
       "External accounts are not supported yet": [
         "Zewnętrzne konta nie są obsługiwane"
       ],
@@ -2303,9 +2300,6 @@
       ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
-      ],
-      "It looks like the text document you're trying to paste exceeds the allowed limit.": [
-        "Dokument tekstowy, który próbujesz wkleić, przekracza dozwolony limit znaków."
       ],
       "Item content cannot exceed 40KB": [
         "Rozmiar elementu nie może przekraczać 40kb"
@@ -2528,6 +2522,9 @@
       ],
       "Unknown payment token status": [
         "Token statusu płatności jest nieznany"
+      ],
+      "Update Too Large": [
+        "Aktualziacja jest zbyt duża"
       ],
       "Upload for this folder is temporarily disabled": [
         "Przesyłanie tego folderu jest tymczasowo wyłączone"
@@ -3685,9 +3682,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Podpis cyfrowy został zweryfikowany. Folder został bezpiecznie przesłany przez adres ${ emailAddress }."
       ],
-      "Disconnected: ${ disconnectReasonMessage }": [
-        "Rozłączono: ${ disconnectReasonMessage }"
-      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -3762,9 +3756,6 @@
       ],
       "Expired": [
         "Wygasła"
-      ],
-      "Failed to connect: ${ disconnectReasonMessage }": [
-        "Nie udało się połączyć: ${ disconnectReasonMessage }"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Nie udało się wygenerować bezpiecznego linku. Powodem jest: ${ error }"
@@ -4081,9 +4072,6 @@
       "Primary": [
         "Główny"
       ],
-      "Recent edits may not be displayed": [
-        "Ostatnie zmiany mogą nie zostać wyświetlone"
-      ],
       "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
         "Nie można zapisać ostatnich zmian w dokumencie. Aby zapewnić bezpieczeństwo danych, możliwość edytowania jest tymczasowo wyłączona. Pobierz kopię dokumentu z menu głównego. Następnie odśwież stronę, aby połączyć się ponownie."
       ],
@@ -4096,8 +4084,11 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
-      "Saved": [
-        "Zapisano"
+      "Saved in ${ DRIVE_APP_NAME }": [
+        "Zapisano w ${ DRIVE_APP_NAME }"
+      ],
+      "Saving": [
+        "Zapisywanie"
       ],
       "Saving...": [
         "Zapisywanie..."
@@ -4138,14 +4129,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
-      "Some edits are taking longer to sync": [
-        "Synchronizacja niektórych zmian trwa dłużej"
-      ],
       "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
         "Synchronizacja niektórych zmian trwa dłużej. Może to być spowodowane problemami z siecią. Możesz kontynuować edytowanie. Jeśli problem będzie się powtarzał, poinformujemy Cię o tym."
-      ],
-      "Some edits failed to sync": [
-        "Nie udało zsynchronizować niektórych zmian"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
@@ -6505,7 +6490,7 @@
         "Plik lub folder nie posiada nazwy"
       ],
       "Invitation's email was sent again": [
-        "Zaproszenie zostało wysłane"
+        "Zaproszenie zostało ponownie wysłane"
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
@@ -8141,12 +8126,6 @@
       ],
       "Sign out": [
         "Wyloguj"
-      ],
-      "Some edits are taking longer to sync": [
-        "Synchronizacja niektórych zmian trwa dłużej"
-      ],
-      "Some edits failed to sync": [
-        "Nie udało zsynchronizować niektórych zmian"
       ],
       "Start a new import": [
         "Rozpocznij nowy import"

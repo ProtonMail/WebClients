@@ -3571,9 +3571,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Dieser Ordner wurde von ${ emailAddress } sicher hochgeladen."
       ],
-      "Disconnected: ${ disconnectReasonMessage }": [
-        "Verbindung getrennt: ${ disconnectReasonMessage }"
-      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
@@ -3645,9 +3642,6 @@
       ],
       "Expired": [
         "Abgelaufen"
-      ],
-      "Failed to connect: ${ disconnectReasonMessage }": [
-        "Verbindung nicht möglich: ${ disconnectReasonMessage }"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Sicherer Link konnte nicht generiert werden. Grund: ${ error }"
@@ -3858,6 +3852,9 @@
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
+      "Offline": [
+        "Offline"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
@@ -3952,9 +3949,6 @@
       ],
       "Primary": [
         "Primär"
-      ],
-      "Recent edits may not be displayed": [
-        "Kürzliche Änderungen werden möglicherweise nicht angezeigt"
       ],
       "recommended browser": [
         "empfohlenen Browsers"
@@ -6256,6 +6250,9 @@
       "External invitation removed from the share": [
         "Externe Einladung von der Freigabe entfernt."
       ],
+      "External invitation's email was sent again": [
+        "Externe Einladungs-E-Mail wurde erneut gesendet"
+      ],
       "Failed to download files: ${ err }": [
         "Download der Dateien fehlgeschlagen: ${ err }"
       ],
@@ -6391,6 +6388,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "Got it": [
+        "Verstanden"
       ],
       "MM/YY": [
         "MM/JJ"
