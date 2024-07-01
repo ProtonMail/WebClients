@@ -10,8 +10,6 @@ export interface MailImportFields {
     importCategoriesDestination: MailImportDestinationFolder;
 }
 
-export const SYSTEM_FOLDERS = Object.values(MailImportDestinationFolder) as string[];
-
 export const FOLDER_ICONS = {
     [MailImportDestinationFolder.INBOX]: 'inbox',
     [MailImportDestinationFolder.ALL_DRAFTS]: 'file-lines',

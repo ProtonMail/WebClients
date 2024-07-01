@@ -48,7 +48,6 @@ export interface LaunchImportPayload {
     [ImportType.MAIL]?: MailImporterPayload;
     [ImportType.CALENDAR]?: CalendarImporterPayload;
     [ImportType.CONTACTS]?: ContactsImporterPayload;
-    // [ImportType.DRIVE]?: DriveImporterPayload;
 }
 
 /* Token */
@@ -126,13 +125,6 @@ export enum IMPORT_ERROR {
     TOO_LARGE = 2024,
 }
 
-//TODO complete this once backend is more stable
-export enum SYNC_ERROR {
-    MISSING_PRODUCT = 2000,
-    WRONG_PRODUCT = 2001,
-    AUTH_ERROR = 2501,
-}
-
 interface ImportedFolder {
     SourceFolder: string;
     DestinationFolder?: MailImportDestinationFolder;
@@ -191,10 +183,6 @@ export interface ImportedCalendar {
 
 export interface ContactsImporterPayload {}
 
-/* Drive Specific */
-
-export interface DriveImporterPayload {}
-
 /* Imports and Reports from Server */
 
 interface ImporterActiveProps {
@@ -222,38 +210,6 @@ export interface Importer {
     Sasl: AuthenticationMethod;
     AllowSelfSigned: boolean;
     Email: string; // Soon to be deprecated
-}
-
-enum ImportReportStatus {
-    UNSENT = 0,
-    SENT = 1,
-}
-
-interface ImportSummary {
-    State: ApiImporterState;
-    TotalSize: number;
-    RollbackState?: ApiReportRollbackState;
-}
-
-export interface ImportReportAggregated {
-    ID: string;
-    Account: string;
-    Provider: number;
-    State: ImportReportStatus;
-    TokenID: string;
-    CreateTime: number;
-    EndTime: number;
-    Summary: {
-        Mail?: ImportSummary & {
-            NumMessages: number;
-        };
-        Calendar?: ImportSummary & {
-            NumEvents: number;
-        };
-        Contacts?: ImportSummary & {
-            NumContacts: number;
-        };
-    };
 }
 
 export interface ImportReport {

@@ -97,7 +97,7 @@ export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | 
     </ConfigProvider>
 );
 
-export const getStoreWrapper = (preloadedState?: any) => {
+const getStoreWrapper = (preloadedState?: any) => {
     const store = setupStore({
         preloadedState: {
             user: getModelState({ UsedSpace: 10, MaxSpace: 100 } as UserModel),
