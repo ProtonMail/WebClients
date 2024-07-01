@@ -23,8 +23,8 @@ export const clientBusy = oneOf(AppStatus.IDLE, AppStatus.AUTHORIZED, AppStatus.
 export const clientBooted = oneOf(AppStatus.READY, AppStatus.OFFLINE);
 
 export const clientCanBoot = or(clientAuthorized, clientUnauthorized, clientErrored);
-export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked, clientMissingScope);
-export const clientNeedsSession = or(clientErrored, clientUnauthorized);
+export const clientHasSession = or(clientBooted, clientSessionLocked, clientPasswordLocked);
+export const clientNeedsSession = or(clientErrored, clientUnauthorized, clientMissingScope);
 export const clientStatusResolved = or(clientHasSession, clientNeedsSession);
 export const clientDisabled = or(clientUnauthorized, clientErrored, clientStale);
 export const clientLocked = or(clientSessionLocked, clientPasswordLocked, clientMissingScope);
