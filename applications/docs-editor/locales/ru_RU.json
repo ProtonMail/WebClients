@@ -137,6 +137,9 @@
       "Reply": [
         "Ответить"
       ],
+      "Resolve": [
+        "Решить"
+      ],
       "Right align": [
         "Сравнить по правому краю"
       ],
@@ -330,6 +333,9 @@
       ]
     },
     "Error": {
+      "Request timed out": [
+        "Время запроса истекло"
+      ],
       "Signature verification failed": [
         "Проверка подписи не удалась"
       ]
@@ -371,11 +377,26 @@
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } и ${ lastTyper }"
       ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } печатает...",
+        "${ usersTranslation } печатают...",
+        "${ usersTranslation } печатают...",
+        "${ usersTranslation } печатают..."
+      ],
+      "Are you sure you want to delete this comment?": [
+        "Вы уверены, что хотите удалить этот комментарий?"
+      ],
       "Are you sure you want to delete this thread?": [
         "Вы уверены, что хотите удалить эту тему?"
       ],
+      "Comments": [
+        "Комментарии"
+      ],
       "Editing": [
         "Изменение"
+      ],
+      "Internet connection lost": [
+        "Подключение к Интернету потеряно"
       ],
       "Just now": [
         "Только что"
@@ -385,6 +406,12 @@
       ],
       "No comments": [
         "Без комментариев"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Серверы недоступны. Попробуйте снова через несколько минут"
+      ],
+      "Session timed out": [
+        "Время сеанса истекло"
       ],
       "Something went wrong:": [
         "Что-то пошло не так:"
