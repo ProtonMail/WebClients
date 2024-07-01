@@ -4152,8 +4152,8 @@
       "Username must end with a letter or digit": [
         "Brukernavn må ende med en bokstav eller ett tall"
       ],
-      "Wrong mailbox password": [
-        "Feil postbokspassord"
+      "Wrong second password": [
+        "Feil andre passord"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
@@ -9822,13 +9822,13 @@
         "CVC"
       ],
       "Got it": [
-        "Har det"
+        "Forstått"
       ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
       "Payment Processing": [
-        "Behandler innbetaling"
+        "Betalingsbehandling"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Da vil den automatisk bli fornyet til ${ price } for ${ months } måneder. Du kan avbryte når som helst."
@@ -9843,7 +9843,7 @@
         "Tidsavbrudd overskredet"
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandler innbetalingen på fakturaen for øyeblikket. Vennligst ikke oppdater plan eller betalingsmetode før transaksjonen er ferdig behandlet. Takk."
+        "Vi behandler betalingen din for den fakturerte fakturaen. Vent til betalingen er fullført før du gjør endringer i planen din eller oppdaterer betalingsinformasjonen din. Takk for tålmodigheten."
       ]
     },
     "Payments.Error": {

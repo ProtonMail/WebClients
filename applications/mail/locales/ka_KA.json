@@ -4067,6 +4067,9 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "სისტემა ამჟამად დაკავებულია. მოგვიანებით, რამდენიმე წუთში სცადეთ."
       ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "წერის დამხმარეს თქვენი მოთხოვნის დამუშავება არ შეუძლია. სცადეთ სხვა რამ."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "თქვენს გარე ანგარიშზე, მეტისმეტად, ბევრი საქაღალდეა. გთხოვთ, ხელით მიუთითოთ შემოსატანი საქაღალდეები."
       ],
@@ -4123,9 +4126,6 @@
       ],
       "Username must end with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
-      ],
-      "Wrong mailbox password": [
-        "საფოსტო ყუთის არასწორი პაროლი"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
@@ -7271,6 +7271,11 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "კომპრომეტირებულია"
@@ -9734,6 +9739,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "გავიგე"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -11157,6 +11165,9 @@
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
       ],
       "No ads or tracking": [
         "რეკლამისა და ტრეკინგის გარეშე"
