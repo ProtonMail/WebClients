@@ -4610,6 +4610,9 @@
       "Photos have been successfully recovered.": [
         "Kuvat on palautettu."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Pyydä omistajaa kutsumaan sinut suoraan dokumenttiin."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Vahvista korttisi vahvistusvälilehdellä."
       ],
@@ -4633,6 +4636,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
+      ],
+      "Please open the document to view it.": [
+        "Avaa dokumentti tarkastellaksesi sitä."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
@@ -4683,6 +4689,9 @@
       "Preview for this file type is not supported": [
         "Tämän tiedostotyypin esikatselua ei tueta"
       ],
+      "Preview of documents is not yet supported.": [
+        "Dokumenttien esikatselua ei vielä tueta."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Aiemmat versiot säilytetään ${ retentionLabel }"
       ],
@@ -4697,6 +4706,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Yksityinen haku otettiin käyttöön. Voit nyt sulkea tämän ilmoituksen ja aloittaa tiedostojen ja kansioiden etsinnän."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Dokumenttien julkista jakamista ei vielä tueta."
       ],
       "Queued": [
         "Jonossa"
@@ -7647,8 +7659,14 @@
       "CVC": [
         "Turvakoodi"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Payment Processing": [
+        "Maksua käsitellään"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
