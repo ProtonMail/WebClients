@@ -121,9 +121,10 @@ interface Props {
     onSelect: (selected: [WasmApiWallet, WasmApiWalletAccount]) => void;
     checkIsValid?: ValidAccountChecker;
     options: [WasmApiWallet, WasmApiWalletAccount[]][];
+    disabled?: boolean;
 }
 
-export const WalletAccountSelector = ({ value, options, checkIsValid, onSelect }: Props) => {
+export const WalletAccountSelector = ({ value, options, disabled, checkIsValid, onSelect }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { walletsChainData } = useBitcoinBlockchainContext();
 
@@ -142,6 +143,7 @@ export const WalletAccountSelector = ({ value, options, checkIsValid, onSelect }
                 onClick={toggle}
                 className="border rounded-xl bg-weak py-5"
                 style={{ width: '16rem' }}
+                disabled={disabled}
             >
                 <div className="flex flex-column">
                     <div className="flex flex-row w-full justify-space-between items-center mb-3">
