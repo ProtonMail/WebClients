@@ -112,11 +112,11 @@ describe('WebsocketService', () => {
 
   describe('onDocumentConnectionOpened', () => {
     it('should retry failed messages', async () => {
-      service.retryAllFailedDocumentUpdates = jest.fn()
+      service.retryFailedDocumentUpdatesForDoc = jest.fn()
 
       service.onDocumentConnectionReadyToBroadcast(record)
 
-      expect(service.retryAllFailedDocumentUpdates).toHaveBeenCalled()
+      expect(service.retryFailedDocumentUpdatesForDoc).toHaveBeenCalled()
     })
   })
 
@@ -136,11 +136,11 @@ describe('WebsocketService', () => {
     })
 
     it('should retry failed document updates', () => {
-      service.retryAllFailedDocumentUpdates = jest.fn()
+      service.retryFailedDocumentUpdatesForDoc = jest.fn()
 
       service.onDocumentConnectionReadyToBroadcast(record)
 
-      expect(service.retryAllFailedDocumentUpdates).toHaveBeenCalled()
+      expect(service.retryFailedDocumentUpdatesForDoc).toHaveBeenCalled()
     })
   })
 
@@ -148,7 +148,7 @@ describe('WebsocketService', () => {
     it('should get ledger unacknowledged updates', async () => {
       service.ledger.getUnacknowledgedUpdates = jest.fn().mockReturnValue([])
 
-      service.retryAllFailedDocumentUpdates({ linkId: '123' } as NodeMeta)
+      service.retryFailedDocumentUpdatesForDoc({ linkId: '123' } as NodeMeta)
 
       expect(service.ledger.getUnacknowledgedUpdates).toHaveBeenCalled()
     })
@@ -193,6 +193,16 @@ describe('WebsocketService', () => {
       service.handleWindowUnload(event)
 
       expect(debouncer.flush).toHaveBeenCalled()
+    })
+
+    it('should prevent leaving if unacked changes', async () => {
+      const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
+
+      service.ledger.hasConcerningMessages = jest.fn().mockReturnValue(true)
+
+      service.handleWindowUnload(event)
+
+      expect(event.preventDefault).toHaveBeenCalled()
     })
   })
 
