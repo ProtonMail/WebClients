@@ -393,6 +393,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasını aç"
+      ],
       "Pay": [
         "Öde"
       ],
@@ -2107,6 +2110,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
+      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
+        "Bir veri bütünlüğü sorunu çıktı ve son değişiklikler kaydedilemedi. Lütfen sayfayı yenileyin."
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -2205,9 +2211,6 @@
       "Error decrypting a computer": [
         "Bir bilgisayarın şifresi çözülürken sorun çıktı"
       ],
-      "Error: Update Too Large": [
-        "Hata: Güncelleme çok büyük"
-      ],
       "External accounts are not supported yet": [
         "Dış hesaplar henüz desteklenmiyor"
       ],
@@ -2279,9 +2282,6 @@
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
-      ],
-      "It looks like the text document you're trying to paste exceeds the allowed limit.": [
-        "Yapıştırmaya çalıştığınız metin belgesi izin verilen sınırı aşıyor gibi görünüyor."
       ],
       "Item content cannot exceed 40KB": [
         "Öge içeriği 40KB boyutundan büyük olamaz"
@@ -2435,6 +2435,9 @@
       "The label name is too long. Please choose a different name.": [
         "Etiket adı çok uzun. Lütfen farklı bir ad seçin."
       ],
+      "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
+        "Belgede yaptığınız son güncelleme ya çok büyük ya da toplam belge boyutu sınırını aşıyor. Düzenleme geçici olarak kapatıldı. Değişiklikleriniz kaydedilmeyecek. Lütfen belgenizin bir kopyasını dışa aktarıp sayfayı yeniden yükleyin."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Eklenebilecek en az kredi tutarı: ${ price }"
       ],
@@ -2494,6 +2497,9 @@
       ],
       "Unknown payment token status": [
         "Ödeme kodu durumu bilinmiyor"
+      ],
+      "Update Too Large": [
+        "Güncelleme çok büyük"
       ],
       "Upload for this folder is temporarily disabled": [
         "Bu klasöre yüklemeler geçici olarak yapılamıyor"
@@ -3437,6 +3443,9 @@
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
       ],
+      "All changes saved to Drive": [
+        "Tüm değişiklikler Drive üzerine kaydedildi"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak",
         "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak"
@@ -3577,11 +3586,11 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
-      "Disconnected: ${ disconnectReasonMessage }": [
-        "Bağlantı kesildi: ${ disconnectReasonMessage }"
-      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
+      ],
+      "Document is busy": [
+        "Doküman meşgul"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
@@ -3631,6 +3640,9 @@
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
+      "End to end encrypted.": [
+        "Uçtan uca şifrelenmiş."
+      ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
       ],
@@ -3652,11 +3664,14 @@
       "Error loading document${ errorDetail }": [
         "Belge yüklenirken sorun çıktı ${ errorDetail }"
       ],
+      "Error Syncing": [
+        "Eşitleme sorunu"
+      ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "Yaptığınız değişiklikler otomatik ve güvenli olarak Drive üzerine kaydedilir."
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
-      ],
-      "Failed to connect: ${ disconnectReasonMessage }": [
-        "Bağlantı kurulamadı: ${ disconnectReasonMessage }"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Güvenli bir bağlantı oluşturulamadı. Nedeni: ${ error }"
@@ -3812,6 +3827,9 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Looks like you're offline. Document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Çevrim dışı görünüyorsunuz. Belge çevrim dışı olarak düzenlenemez. Lütfen aygıtınızın bağlantısını denetleyin."
+      ],
       "Low Priority": [
         "Düşük Öncelik"
       ],
@@ -3866,6 +3884,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Kuruluşunuza ayrılmış sunucu sayısı"
+      ],
+      "Offline": [
+        "Çevrim dışı"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
@@ -3965,9 +3986,6 @@
       "Primary": [
         "Birincil"
       ],
-      "Recent edits may not be displayed": [
-        "Son değişiklikler görüntülenemeyebilir"
-      ],
       "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
         "Belgenizde yapılan son değişiklikler kaydedilemedi. Veri güvenliğini sağlamak için düzenleme geçici olarak kapatıldı. Lütfen ana menüden belgenizin bir kopyasını indirin. Bundan sonra, yeniden bağlanmak için sayfayı yenileyin."
       ],
@@ -3979,6 +3997,15 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
+      ],
+      "Saved in ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } üzerine kaydedildi"
+      ],
+      "Saving": [
+        "Kaydediliyor"
+      ],
+      "Saving...": [
+        "Kaydediliyor..."
       ],
       "Select a service provider to start": [
         "Başlamak için bir hizmet sağlayıcı seçin"
@@ -4016,14 +4043,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
-      "Some edits are taking longer to sync": [
-        "Bazı değişikliklerin eşitlenmesi beklendiğinden uzun sürüyor"
-      ],
       "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
         "Bazı değişikliklerin eşitlenmesi beklendiğinden uzun sürüyor. Bu durum, ağ sorunlarından kaynaklanıyor olabilir. Şimdilik düzenlemeyi sürdürebilirsiniz. Sorun sürerse, daha ayrıntılı bir hata iletisi görüntüleyeceğiz."
-      ],
-      "Some edits failed to sync": [
-        "Bazı değişiklikler eşitlenemedi"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
@@ -4066,6 +4087,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "Bu dokümanın çok fazla sayıda etkileşimi bulunmakta. Bazı özellikler geçici olarak devre dışı bırakılmış olabilir."
       ],
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
@@ -4321,6 +4345,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
+      ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "Değişiklikleriniz Drive ile eşitleniyor. Lütfen sayfayı kapatmayın."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Hizmet işlemleri kullanılamadığından kullandığınız tarayıcı büyük dosyaların indirilmesini desteklemiyor. Büyük dosyaları indirmek tarayıcının donmasına ya da yanıt vermemesine neden olabilir. Lütfen güncel ${ recommendedBrowser } sürümünü kullanarak yeniden deneyin."
@@ -6362,8 +6389,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "Payment Processing": [
+        "Ödeme işleniyor"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -6376,6 +6409,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
       ]
     },
     "Payments.Error": {
@@ -7487,6 +7523,9 @@
       "Browser might run out of memory": [
         "Bellek tarayıcı için yetersiz olabilir"
       ],
+      "Busy": [
+        "Meşgul"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
@@ -7639,6 +7678,9 @@
       "Error": [
         "Hata"
       ],
+      "Error Syncing": [
+        "Eşitleme sorunu"
+      ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
       ],
@@ -7702,6 +7744,9 @@
       ],
       "Notes": [
         "Notlar"
+      ],
+      "Offline": [
+        "Çevrim dışı"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
@@ -7799,12 +7844,6 @@
       "Sign out": [
         "Oturumu kapat"
       ],
-      "Some edits are taking longer to sync": [
-        "Bazı değişikliklerin eşitlenmesi beklendiğinden uzun sürüyor"
-      ],
-      "Some edits failed to sync": [
-        "Bazı değişiklikler eşitlenemedi"
-      ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
       ],
@@ -7825,6 +7864,9 @@
       ],
       "Unlock contacts groups": [
         "Kişi gruplarının kilidini açın"
+      ],
+      "Untitled document ${ date }": [
+        "Adlandırılmamış belge ${ date }"
       ],
       "Uploading a large file or folder": [
         "Büyük bir dosya ya da klasör yükleniyor"

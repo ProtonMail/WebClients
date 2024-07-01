@@ -2205,9 +2205,6 @@
       "Error decrypting a computer": [
         "Erro ao descriptografar o computador"
       ],
-      "Error: Update Too Large": [
-        "Erro: Atualização muito grande."
-      ],
       "External accounts are not supported yet": [
         "Contas externas não são suportadas ainda."
       ],
@@ -3580,9 +3577,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Assinatura digital verificada. Essa pasta foi enviada seguramente por ${ emailAddress }."
       ],
-      "Disconnected: ${ disconnectReasonMessage }": [
-        "Desconectado: ${ disconnectReasonMessage }"
-      ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
@@ -3605,7 +3599,7 @@
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
       "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
-        "O download de arquivos de ${ DOCS_APP_NAME } do ${ DRIVE_APP_NAME } atualmente não é suportado e não serão incluídos no download."
+        "O download de arquivos ${ DOCS_APP_NAME } do ${ DRIVE_APP_NAME } atualmente não é suportado - eles não serão incluídos no download."
       ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
@@ -3651,9 +3645,6 @@
       ],
       "Expired": [
         "Expirado"
-      ],
-      "Failed to connect: ${ disconnectReasonMessage }": [
-        "Falha ao conectar: ${ disconnectReasonMessage }"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Erro ao gerar um link seguro. O motivo é: ${ error }"
@@ -3858,6 +3849,9 @@
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
+      "Offline": [
+        "Off-line"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
@@ -3962,8 +3956,11 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
-      "Saved": [
-        "Salvo"
+      "Saved in ${ DRIVE_APP_NAME }": [
+        "Salvo no ${ DRIVE_APP_NAME }"
+      ],
+      "Saving": [
+        "Salvando"
       ],
       "Saving...": [
         "Salvando..."
@@ -4366,7 +4363,7 @@
     },
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
-        "Assistente com tecnologia de IA para ajudar você a criar melhores e-mails de maneira rápida e sem esforço."
+        "Assistente com tecnologia de IA para ajudar você a criar e-mails melhores, com rapidez e facilidade."
       ]
     },
     "Item": {
@@ -4643,7 +4640,7 @@
         "Importar para:"
       ],
       "Include message and file name in invite email": [
-        "Incluir mensagem e nome do arquivo no e-mail do convite."
+        "Incluir mensagem e nome do arquivo no e-mail de convite."
       ],
       "Keep both": [
         "Manter ambos"
@@ -5467,7 +5464,7 @@
         "Faturamento centralizado"
       ],
       "Collaborate and share large files": [
-        "Colaboração em equipe e compartilhe grandes arquivos"
+        "Colabore e compartilhe arquivos grandes"
       ],
       "Contact groups": [
         "Grupos de contatos"
@@ -5613,7 +5610,7 @@
         "Proteja ${ n } dispositivos por vez"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Checagens regulares da segurança da sua conta. O alertaremos se você tiver senhas fracas ou reutilizadas que precisem ser atualizadas."
+        "Checagens regulares da segurança da sua conta. Alertamos você caso você tenha senhas fracas ou reutilizadas que precisem ser atualizadas."
       ],
       "Reply to messages": [
         "Responder a mensagens"
@@ -5738,7 +5735,7 @@
         "Compartilhar cofre (até ${ n } pessoa)"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
-        "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertá-lo imediatamente se encontrarmos alguma coisa."
+        "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
       ]
     },
     "new_plans: feature info": {
@@ -5792,7 +5789,7 @@
         "Acesso antecipado a novos aplicativos e recursos"
       ],
       "Encrypted email and calendar to get you started.": [
-        "E-mail criptografado e calendário para você começar."
+        "E-mail e calendário criptografados para você começar."
       ],
       "Enhanced security and premium features for teams.": [
         "Segurança melhorada e recursos premium para equipes."
@@ -5997,7 +5994,7 @@
         "Proteja sua família de sites perigosos e acesse nossos servidores VPN de alta velocidade para assistir seus conteúdos favoritos"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Proteja seu endereço de e-mail verdadeiro de ser revelado ou vazado usando aliases (um endereço de e-mail gerado aleatoriamente, que redireciona e-mails para a sua caixa de entrada principal)."
+        "Proteja seu endereço de e-mail real de ser revelado ou vazado usando aliases (um endereço de e-mail gerado aleatoriamente, que encaminha e-mails para a sua caixa de entrada principal)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Fornece o mais alto nível de proteção segurança de conta e suporte especializado"
@@ -6419,7 +6416,7 @@
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. O cupom é valido por ${ couponRedemptions } renovações. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
-        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months }. Você pode cancelar a qualquer momento."
+        "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro ${ months }. Em seguida, será renovado automaticamente pelo preço de ${ price } por ${ months } meses. Você pode cancelar a qualquer momento."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, será renovado automaticamente pelo preço de ${ price } todo mês. Você pode cancelar a qualquer momento."
@@ -7076,7 +7073,7 @@
     },
     "Status": {
       "Accepted": [
-        "Aceitado"
+        "Aceito"
       ],
       "Pending": [
         "Pendente"
@@ -7683,6 +7680,9 @@
       "Error": [
         "Erro"
       ],
+      "Error Syncing": [
+        "Erro ao sincronizar"
+      ],
       "Exporting contacts": [
         "Exportando contatos"
       ],
@@ -7746,6 +7746,9 @@
       ],
       "Notes": [
         "Notas"
+      ],
+      "Offline": [
+        "Off-line"
       ],
       "Open actions dropdown": [
         "Abrir menu de ações"
@@ -7982,7 +7985,7 @@
         "Carregue uma chave pública para permitir o envio de e-mails criptografados de ponta a ponta para este e-mail"
       ],
       "We have sent them an invite to access the item.": [
-        "Nós os enviamos um convite para acessar o item."
+        "Enviamos um convite para acessar o item."
       ],
       "You do not have any contacts to export": [
         "Você não possui nenhum contato para exportar"
