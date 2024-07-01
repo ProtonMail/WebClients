@@ -37,7 +37,6 @@ enum AccountFlag {
     ChargebeeFreeToPaidB2B = 'ChargebeeFreeToPaidB2B',
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
-    ScimTenantCreation = 'ScimTenantCreation',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     LightLabellingFeatureModal = 'LightLabellingFeatureModal',

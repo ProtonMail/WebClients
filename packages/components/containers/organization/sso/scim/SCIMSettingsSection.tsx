@@ -23,7 +23,6 @@ import {
     SettingsSectionWide,
 } from '../../../account';
 import { SubSettingsSection } from '../../../layout';
-import useFlag from '../../../unleash/useFlag';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 import DisableSCIMModal from './DisableSCIMModal';
 import RegenerateSCIMConfirmModal from './RegenerateSCIMConfirmModal';
@@ -51,7 +50,6 @@ const PreReq = ({ data, action }: { data: ReactNode; action: ReactNode }) => {
 
 const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasSsoConfig, scimInfo }: Props) => {
     const api = useApi();
-    const isScimEnabled = useFlag('ScimTenantCreation');
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
     const { createNotification } = useNotifications();
 
@@ -60,10 +58,6 @@ const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasS
     const [disableSCIMModalProps, setDisableSCIMModalOpen, renderDisableSCIMModal] = useModalState();
     const [localSCIMConfiguration, setLocalSCIMConfiguration] = useState<SCIMConfiguration>();
     const [loadingSCIM, withLoadingSCIM] = useLoading();
-
-    if (!isScimEnabled) {
-        return null;
-    }
 
     return (
         <>
