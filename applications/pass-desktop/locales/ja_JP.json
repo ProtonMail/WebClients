@@ -1067,6 +1067,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
+      "Enter your PIN code": [
+        "PINコードの入力"
+      ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
@@ -1946,22 +1949,6 @@
     "Link": {
       "Learn more": [
         "詳細"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "PINコードの入力"
-      ],
-      "Sign in to your account": [
-        "アカウントにサインインする"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } のロックを解除します"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } へようこそ"
       ]
     },
     "Log preference": {

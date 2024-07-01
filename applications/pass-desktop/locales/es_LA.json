@@ -376,6 +376,9 @@
       "Retry": [
         "Reintentar"
       ],
+      "Right click and download this CSV": [
+        "Haga clic derecho y descargue este archivo CSV."
+      ],
       "Save": [
         "Guardar"
       ],
@@ -396,6 +399,9 @@
       ],
       "Set access level": [
         "Configurar nivel de acceso"
+      ],
+      "Set extra password": [
+        "Configurar la contraseña adicional"
       ],
       "Setup 2FA": [
         "Configurar 2FA"
@@ -724,6 +730,9 @@
       ],
       "File could not be parsed": [
         "No se pudo analizar el archivo"
+      ],
+      "File could not be read": [
+        "No se pudo leer el archivo"
       ],
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado"
@@ -1061,6 +1070,9 @@
       "Auto-lock successfully disabled.": [
         "Bloqueo automático desactivado con éxito."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Antes de exportar tus datos con este formato, abra y desactive Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
+      ],
       "Breaches detected": [
         "Vulneraciones detectadas"
       ],
@@ -1087,6 +1099,9 @@
       ],
       "Click here to add a field for a username.": [
         "Haga clic aquí para añadir un campo para el nombre de usuario."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Confirme su contraseña adicional para proceder con la eliminación."
       ],
       "Congratulations, your access has been confirmed": [
         "Felicitaciones, se ha confirmado su acceso"
@@ -1127,6 +1142,9 @@
       "Drop to import": [
         "Suelte aquí para importar"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Debido a una limitación de las extensiones en el navegador Safari, perderá la extensión de archivo «*.pgp» después de exportar los datos. Cambie el nombre del archivo para incluir la extensión «*.pgp» (p. ej. archivo.pgp) después de exportarlo."
+      ],
       "Editor": [
         "Editor"
       ],
@@ -1165,6 +1183,18 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ingrese el código de verificación. Digite ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Ingrese su contraseña adicional"
+      ],
+      "Enter your PIN code": [
+        "Ingrese el código PIN"
+      ],
+      "Extra password successfuly created": [
+        " Se creó la contraseña adicional."
+      ],
+      "Extra password successfuly removed": [
+        "Se eliminó la contraseña adicional."
       ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
@@ -1398,23 +1428,23 @@
       "Please check your spam folder or try resending the code.": [
         "Compruebe la carpeta de spam o intente reenviar el código."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Confirme su contraseña de ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Confirme su contraseña de ${ BRAND_NAME } para bloquear automáticamente con su contraseña."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirme la contraseña de ${ BRAND_NAME } para activar el modo sin conexión."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme la contraseña de ${ BRAND_NAME } para exportar los datos de ${ PASS_APP_NAME }"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirme su contraseña de ${ BRAND_NAME } para cancelar el registro de su bloqueo actual."
+      "Please confirm your password": [
+        "Confirme su contraseña"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Confirme su contraseña de ${ BRAND_NAME } para actualizar el tiempo del bloqueo automático."
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Confirme su contraseña para bloquear automáticamente con su contraseña."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Confirme su contraseña para cancelar el registro de su bloqueo actual."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Confirme su contraseña para actualizar el tiempo del bloqueo automático."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Confirme el código PIN para cancelar el registro del bloqueo actual."
@@ -1449,8 +1479,14 @@
       "Reconnecting": [
         "Reconectando"
       ],
+      "Registering extra password...": [
+        "Registrando la contraseña adicional..."
+      ],
       "Registering PIN lock failed": [
         "Error al registrar el bloqueo por código PIN"
+      ],
+      "Removing extra password...": [
+        "Eliminando la contraseña adicional..."
       ],
       "Restoring items from trash": [
         "Restaurando los elementos de la papelera"
@@ -1488,6 +1524,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Comparta sus inicios de sesión y notas con hasta 10 personas"
       ],
+      "Sign in to your account": [
+        "Iniciar sesión en su cuenta"
+      ],
       "Signing you in": [
         "Iniciando sesión"
       ],
@@ -1523,6 +1562,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de su contraseña de ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no pudo importarse:",
@@ -1560,6 +1602,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Alias de hide-my-email ilimitados"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña adicional"
       ],
       "Unpinning item...": [
         "Desfijando elemento..."
@@ -1636,6 +1684,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ha alcanzado el número máximo de ${ maxLength } caracteres."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Se cerrará la sesión y tendrá que volver a iniciarla en todos los dispositivos."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "Se le notificará las vulneraciones de datos para estas direcciones de correo electrónico."
@@ -1825,6 +1876,9 @@
       "Export": [
         "Exportar"
       ],
+      "Extra password": [
+        "Contraseña adicional"
+      ],
       "Field name": [
         "Nombre del campo"
       ],
@@ -1993,6 +2047,9 @@
       "Prefix": [
         "Prefijo"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Proteja ${ PASS_APP_NAME } con una contraseña adicional"
+      ],
       "Rate us": [
         "Evalúenos"
       ],
@@ -2123,25 +2180,6 @@
       ],
       "stay safer online": [
         "mantener su seguridad en línea"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Ingrese el código PIN"
-      ],
-      "Sign in to your account": [
-        "Iniciar sesión en la cuenta"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Bienvenido a ${ brandNameJSX }"
       ]
     },
     "Log preference": {
@@ -2337,6 +2375,9 @@
       "Breaches detected for": [
         "Vulneraciones detectadas para"
       ],
+      "Confirm extra password": [
+        "Confirmar la contraseña adicional"
+      ],
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
@@ -2499,6 +2540,9 @@
       "Remove email address?": [
         "¿Borrar la dirección de correo electrónico?"
       ],
+      "Remove extra password": [
+        "Eliminar la contraseña adicional"
+      ],
       "Resolved breaches": [
         "Vulneraciones resueltas"
       ],
@@ -2523,6 +2567,9 @@
       ],
       "Set access level": [
         "Configurar el nivel de acceso"
+      ],
+      "Set extra password": [
+        "Configurar la contraseña adicional"
       ],
       "Set up 2FA for better security": [
         "Configure 2FA para una mejor seguridad"
@@ -2551,6 +2598,9 @@
       "Trash empty": [
         "Papelera vacía"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
+      ],
       "Update available": [
         "Actualización disponible"
       ],
@@ -2571,6 +2621,9 @@
       ],
       "Weak passwords": [
         "Contraseñas poco seguras"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Le damos la bienvenida a ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "¿Qué es un alias?"
@@ -2639,6 +2692,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Precaución: No podrá acceder a su cuenta de ${ PASS_APP_NAME } si pierde esta contraseña."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "No se pudo crear la bóveda \"${ vaultName }\""
       ],
@@ -2659,6 +2715,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA"
+      ],
+      "Extra password cannot be empty": [
+        "La contraseña adicional no puede estar vacía"
+      ],
+      "Extra password should have at least 8 characters": [
+        "La contraseña adicional debe tener al menos 8 caracteres"
       ],
       "Failed to load breaches.": [
         "Error al cargar vulneraciones."
@@ -2715,6 +2777,9 @@
       "Passphrase is required": [
         "Frase de contraseña requerida"
       ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden"
+      ],
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña"
       ],
@@ -2726,6 +2791,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verifique la dirección de correo para poder compartir la bóveda."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Al eliminar la contraseña adicional, se cerrará la sesión en todos sus dispositivos y terminarán todas las sesiones activas."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."

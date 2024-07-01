@@ -1189,6 +1189,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
       ],
+      "Enter your PIN code": [
+        "Wpisz kod PIN"
+      ],
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
       ],
@@ -1429,23 +1432,11 @@
       "Please check your spam folder or try resending the code.": [
         "Sprawdź folder Spam lub wyślij ponownie kod."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Potwierdź hasło ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Potwierdź hasło ${ BRAND_NAME }, aby włączyć blokadę."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potwierdź hasło ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Potwierdź hasło ${ BRAND_NAME }, aby wyłączyć blokadę."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Potwierdź hasło ${ BRAND_NAME }, aby zaktualizować czas automatycznej blokady."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Potwierdź kod PIN, aby wyłączyć blokadę."
@@ -2161,25 +2152,6 @@
       ],
       "stay safer online": [
         "zachować bezpieczeństwo online"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Wpisz kod PIN"
-      ],
-      "Sign in to your account": [
-        "Zaloguj się"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Odblokuj ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Witaj w ${ brandNameJSX }"
       ]
     },
     "Log preference": {
