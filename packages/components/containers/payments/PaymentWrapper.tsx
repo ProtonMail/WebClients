@@ -44,6 +44,7 @@ const PaymentWrapper = ({
     bitcoinChargebee,
     isChargebeeEnabled,
     onMethod,
+    user,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -86,6 +87,7 @@ const PaymentWrapper = ({
             bitcoinInhouse={bitcoinInhouse}
             bitcoinChargebee={bitcoinChargebee}
             isChargebeeEnabled={isChargebeeEnabled}
+            user={user}
         />
     );
 };

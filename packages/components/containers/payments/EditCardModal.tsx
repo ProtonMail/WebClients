@@ -106,6 +106,7 @@ const EditCardModal = ({
                 }
             }).catch(noop);
         },
+        user,
     });
 
     const paymentMethodId = paymentMethod?.ID;

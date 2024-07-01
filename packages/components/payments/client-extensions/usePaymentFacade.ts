@@ -11,6 +11,7 @@ import {
     ChargebeeEnabled,
     ChargebeeUserExists,
     Currency,
+    User,
     isTaxInclusive,
 } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -100,6 +101,7 @@ type PaymentFacadeProps = {
     billingAddress?: BillingAddress;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
+    user?: User;
 };
 
 /**
@@ -127,6 +129,7 @@ export const usePaymentFacade = ({
     billingAddress,
     billingPlatform,
     chargebeeUserExists,
+    user,
 }: PaymentFacadeProps) => {
     const bitcoinChargebeeEnabled = useFlag('ChargebeeBitcoinFrontend');
 
@@ -352,5 +355,6 @@ export const usePaymentFacade = ({
         paymentComponentLoaded: reportPaymentLoad,
         telemetry,
         themeCode,
+        user,
     };
 };
