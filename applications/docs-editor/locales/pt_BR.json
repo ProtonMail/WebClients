@@ -327,6 +327,9 @@
       ]
     },
     "Error": {
+      "Request timed out": [
+        "A solicitação expirou"
+      ],
       "Signature verification failed": [
         "Erro na verificação da assinatura"
       ]
@@ -384,6 +387,9 @@
       "Editing": [
         "Editar"
       ],
+      "Internet connection lost": [
+        "Perda de conexão com a internet"
+      ],
       "Just now": [
         "Agora mesmo"
       ],
@@ -392,6 +398,12 @@
       ],
       "No comments": [
         "Nenhum comentário"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
+      ],
+      "Session timed out": [
+        "Sessão expirada"
       ],
       "Something went wrong:": [
         "Algo deu errado:"
