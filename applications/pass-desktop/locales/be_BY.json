@@ -376,6 +376,9 @@
       "Retry": [
         "Паўтарыць"
       ],
+      "Right click and download this CSV": [
+        "Націсніце правую кнопку і спампуйце гэты CSV"
+      ],
       "Save": [
         "Захаваць"
       ],
@@ -396,6 +399,9 @@
       ],
       "Set access level": [
         "Задаць узровень доступу"
+      ],
+      "Set extra password": [
+        "Задаць дадатковы пароль"
       ],
       "Setup 2FA": [
         "Наладжванне 2ФА"
@@ -731,6 +737,9 @@
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
       ],
+      "File could not be read": [
+        "Не атрымалася прачытаць файл"
+      ],
       "File does not match expected format": [
         "Файл не адпавядае фармату, які чакаўся"
       ],
@@ -861,7 +870,7 @@
         "Няправільны PIN-код. Паспрабуйце яшчэ раз."
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "У цяперашні момант вы па-за сеткай. Аднавіце падключэнне, каб разблакіраваць ${ PASS_SHORT_APP_NAME }."
+        "У цяперашні момант вы па-за сеткай. Узнавіце падключэнне, каб разблакіраваць ${ PASS_SHORT_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
@@ -1087,6 +1096,9 @@
       "Auto-lock successfully disabled.": [
         "Аўтаблакіроўка паспяхова адключана."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Адкрыйце налады Safari -> укладка \"Агульныя (General)\" -> адключыце параметр \"Бяспечна адкрываць файлы пасля спампоўвання (Open safe files after downloading)\" перад тым, як экспартаваць свае даныя ў гэты фармат."
+      ],
       "Breaches detected": [
         "Выяўлены парушэнні"
       ],
@@ -1113,6 +1125,9 @@
       ],
       "Click here to add a field for a username.": [
         "Націсніце тут, каб дадаць поле для імя карыстальніка."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
       ],
       "Congratulations, your access has been confirmed": [
         "Віншуем! Вы паспяхова пацвердзілі свой доступ"
@@ -1153,6 +1168,9 @@
       "Drop to import": [
         "Перацягніце для імпартавання"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Па прычыне абмежавання пашырэнняў браўзера Safari, пасля экспартавання даных будзе адсутнічаць пашырэнне файла \".pgp\". Змяніце назву файла, каб яно ўключала пашырэнне .pgp пасля экспартавання (напрыклад, file.pgp)"
+      ],
       "Editor": [
         "Рэдактар​​"
       ],
@@ -1191,6 +1209,18 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Увядзіце ваш дадатковы пароль"
+      ],
+      "Enter your PIN code": [
+        "Увядзіце свой PIN-код."
+      ],
+      "Extra password successfuly created": [
+        "Дадатковы пароль паспяхова створаны"
+      ],
+      "Extra password successfuly removed": [
+        "Дадатковы пароль паспяхова выдалены"
       ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
@@ -1432,23 +1462,23 @@
       "Please check your spam folder or try resending the code.": [
         "Праверце папку са спамам або паспрабуйце адправіць код паўторна."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Пацвердзіце свой пароль ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Пацвердзіце свой пароль ${ BRAND_NAME } для аўтаблакіроўкі з дапамогай вашага пароля."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Пацвердзіце свой пароль ${ BRAND_NAME }, каб скасаваць рэгістрацыю бягучай блакіроўкі."
+      "Please confirm your password": [
+        "Пацвердзіце свой пароль"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Пацвердзіце пароль ${ BRAND_NAME }, каб абнавіць час аўтаматычнага блакіравання."
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Пацвердзіце свой пароль для аўтаблакіроўкі з дапамогай вашага пароля."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Пацвердзіце свой пароль, каб скасаваць рэгістрацыю бягучай блакіроўкі."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Пацвердзіце пароль, каб абнавіць час аўтаматычнага блакіравання."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Пацвердзіце свой PIN-код, каб скасаваць рэгістрацыю бягучай блакіроўкі."
@@ -1483,8 +1513,14 @@
       "Reconnecting": [
         "Перападключэнне"
       ],
+      "Registering extra password...": [
+        "Рэгістрацыя дадатковага пароля..."
+      ],
       "Registering PIN lock failed": [
         "Збой рэгістрацыі блакіроўкі PIN"
+      ],
+      "Removing extra password...": [
+        "Выдаленне дадатковага пароля..."
       ],
       "Restoring items from trash": [
         "Аднаўленне элементаў са сметніцы"
@@ -1522,6 +1558,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Дзяліцеся сваімі запісамі ўваходу і бяспечнымі нататкамі (да 10 карыстальнікаў)"
       ],
+      "Sign in to your account": [
+        "Увайдзіце ў свой уліковы запіс"
+      ],
       "Signing you in": [
         "Адбываецца ўваход…"
       ],
@@ -1557,6 +1596,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Дадатковы пароль спатрэбіцца для выкарыстання ${ PASS_APP_NAME }. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
@@ -1596,6 +1638,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў Hide-my-email"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай пароля ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай дадатковага пароля"
       ],
       "Unpinning item...": [
         "Адмацаванне элемента..."
@@ -1674,6 +1722,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы дасягнулі максімальнай даўжыні. Дазволена сімвалаў: ${ maxLength }."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "На ўсіх вашых іншых прыладах сеанс будзе завершаны і вам неабходна будзе аўтарызавацца паўторна."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "Вы будзеце атрымліваць апавяшчэнні аб уцечцы даных для гэтых адрасоў электроннай пошты."
@@ -1869,6 +1920,9 @@
       "Export": [
         "Экспартаванне"
       ],
+      "Extra password": [
+        "Дадатковы пароль"
+      ],
       "Field name": [
         "Назва поля"
       ],
@@ -2037,6 +2091,9 @@
       "Prefix": [
         "Прэфікс"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
+      ],
       "Rate us": [
         "Ацаніце нас"
       ],
@@ -2167,25 +2224,6 @@
       ],
       "stay safer online": [
         "застацца абароненым у інтэрнэце"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Увядзіце свой PIN-код."
-      ],
-      "Sign in to your account": [
-        "Увайдзіце ў свой уліковы запіс"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай пароля ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Разблакіраваць ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Вітаем у ${ brandNameJSX }"
       ]
     },
     "Log preference": {
@@ -2385,6 +2423,9 @@
       "Breaches detected for": [
         "Выяўлены парушэнні для"
       ],
+      "Confirm extra password": [
+        "Пацвярджэнне дадатковага пароля"
+      ],
       "Confirm PIN code": [
         "Пацвердзіць PIN-код"
       ],
@@ -2547,6 +2588,9 @@
       "Remove email address?": [
         "Выдаліць адрас электроннай пошты?"
       ],
+      "Remove extra password": [
+        "Выдаленне дадатковага пароля"
+      ],
       "Resolved breaches": [
         "Вырашаныя парушэнні"
       ],
@@ -2573,6 +2617,9 @@
       ],
       "Set access level": [
         "Задаць узровень доступу"
+      ],
+      "Set extra password": [
+        "Заданне дадатковага пароля"
       ],
       "Set up 2FA for better security": [
         "Наладзьце 2ФА для лепшай бяспекі"
@@ -2601,6 +2648,9 @@
       "Trash empty": [
         "Сметніца пустая"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Разблакіроўка ${ brandNameJSX }"
+      ],
       "Update available": [
         "Даступна абнаўленне"
       ],
@@ -2621,6 +2671,9 @@
       ],
       "Weak passwords": [
         "Ненадзейныя паролі"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Вітаем у ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Што такое псеўданім?"
@@ -2689,6 +2742,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Асцярожна: вы не зможаце атрымаць доступ да свайго ўліковага запісу ${ PASS_APP_NAME }, калі згубіце гэты пароль."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Немагчыма стварыць сховішча \"${ vaultName }\""
       ],
@@ -2709,6 +2765,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
+      ],
+      "Extra password cannot be empty": [
+        "Дадатковы пароль не можа быць пустым"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Дадатковы пароль павінен мець прынамсі 8 сімвалаў"
       ],
       "Failed to load breaches.": [
         "Не ўдалося загрузіць парушэнні."
@@ -2767,6 +2829,9 @@
       "Passphrase is required": [
         "Патрабуецца парольная фраза"
       ],
+      "Passwords do not match": [
+        "Паролі не супадаюць"
+      ],
       "PGP encrypted export file requires passphrase": [
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
@@ -2778,6 +2843,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Праверце свой адрас электроннай пошты, каб карыстацца абагуленым сховішчам."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Выдаленне вашага дадатковага пароля прывядзе да выхаду з усіх прылад і завершыць усе актыўныя сеансы."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
