@@ -166,11 +166,12 @@ module.exports = {
             BUILD_TARGET: JSON.stringify(BUILD_TARGET),
             DESKTOP_BUILD: false,
             ENV: JSON.stringify(ENV),
+            EXTENSION_BUILD: true,
             OFFLINE_SUPPORTED: false,
-            REDUX_DEVTOOLS_PORT: REDUX_DEVTOOLS_PORT,
-            RESUME_FALLBACK: RESUME_FALLBACK,
-            RUNTIME_RELOAD_PORT: RUNTIME_RELOAD_PORT,
-            RUNTIME_RELOAD: RUNTIME_RELOAD,
+            REDUX_DEVTOOLS_PORT,
+            RESUME_FALLBACK,
+            RUNTIME_RELOAD_PORT,
+            RUNTIME_RELOAD,
             VERSION:
                 ENV === 'production'
                     ? getManifestVersion()

@@ -16,7 +16,6 @@ import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { EXTENSION_BUILD } from '@proton/pass/lib/client';
 import { isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
