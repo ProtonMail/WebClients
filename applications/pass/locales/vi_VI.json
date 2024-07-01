@@ -837,6 +837,9 @@
       "Enabling PIN auto-lock": [
         "Bật tự động khóa bằng mã PIN"
       ],
+      "Enter your PIN code": [
+        "Nhập mã PIN của bạn"
+      ],
       "Fill in the CSV with your data": [
         "Điền vào tệp CSV bằng dữ liệu của bạn"
       ],
@@ -996,20 +999,8 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để tự động khóa bằng mật khẩu."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } để bật chê độ ngoại tuyến"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để hủy đăng ký phương thức khóa hiện tại."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để cập nhật thời gian tự động khóa."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại."
@@ -1602,25 +1593,6 @@
     "Link": {
       "Learn more": [
         "Tìm hiểu thêm"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Nhập mã PIN của bạn"
-      ],
-      "Sign in to your account": [
-        "Đăng nhập vào tài khoản của bạn"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME } của bạn."
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Mở khóa ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Chào mừng tới ${ brandNameJSX }"
       ]
     },
     "Message": {

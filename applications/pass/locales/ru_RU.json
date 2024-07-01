@@ -373,6 +373,9 @@
       "Retry": [
         "Повторить"
       ],
+      "Right click and download this CSV": [
+        "Щелкните правой кнопкой мыши и загрузите этот CSV"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -393,6 +396,9 @@
       ],
       "Set access level": [
         "Установить уровень доступа"
+      ],
+      "Setup 2FA": [
+        "Настроить двухфакторную аутентификацию"
       ],
       "Share": [
         "Поделиться"
@@ -489,6 +495,11 @@
     "bf2023: Title": {
       "Black Friday offer": [
         "Предложение Черная пятница"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Приложение для настольных компьютеров ${ MAIL_APP_NAME }"
       ]
     },
     "Button": {
@@ -719,6 +730,9 @@
       ],
       "File could not be parsed": [
         "Файл не может быть обработан"
+      ],
+      "File could not be read": [
+        "Файл не может быть прочитан"
       ],
       "File does not match expected format": [
         "Файл не соответствует ожидаемому формату"
@@ -1051,6 +1065,9 @@
       "Auto-lock successfully disabled.": [
         "Автоблокировка успешно отключена."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Прежде чем экспортировать данные в этом формате, откройте настройки Safari -> вкладку \"Общие\" -> отключите опцию \"Открывать безопасные файлы после загрузки\". Это предотвратит неправильное извлечение Safari экспортированного файла."
+      ],
       "Breaches detected": [
         "Обнаружены утечки"
       ],
@@ -1117,6 +1134,9 @@
       "Drop to import": [
         "Импортировать"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "В связи с ограничением расширений браузера Safari после экспорта данных в расширении файла будет отсутствовать \".pgp\". После экспорта переименуйте файл, изменив его расширение на .pgp (например, file.pgp)."
+      ],
       "Editor": [
         "Редактор"
       ],
@@ -1155,6 +1175,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
+      ],
+      "Enter your PIN code": [
+        "Введите свой PIN-код"
       ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
@@ -1390,23 +1413,11 @@
       "Please check your spam folder or try resending the code.": [
         "Проверьте папку Спам или попробуйте повторно отправить код."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Подтвердите ваш пароль ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Подтвердите ваш пароль ${ BRAND_NAME } для автоматической блокировки вашим паролем."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Подтвердите ваш пароль ${ BRAND_NAME } чтобы включить офлайновый режим"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Подтвердите ваш пароль ${ BRAND_NAME } для отмены выполнения вашей текущей блокировки."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Подтвердите ваш пароль ${ BRAND_NAME } для обновления времени автоматической блокировки."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Подтвердите PIN-код, чтобы отменить выполнение вашей текущей блокировки."
@@ -1647,6 +1658,9 @@
       ],
       "You're invited to a vault.": [
         "You're invited to a vault."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Доступ к Вашему аккаунту ограничен, так как ваша организация ввела двухфакторную аутентификацию. Пожалуйста, включите двухфакторную аутентификацию в настройках Вашего аккаунта или свяжитесь с администратором."
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
@@ -2121,25 +2135,6 @@
         "будьте в большей безопасности в Интернете"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Введите свой PIN-код"
-      ],
-      "Sign in to your account": [
-        "Войдите в свой аккаунт"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Разблокировать ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Добро пожаловать в ${ brandNameJSX }"
-      ]
-    },
     "Log preference": {
       "Enable ${ reason }": [
         "Включите ${ reason }"
@@ -2291,6 +2286,20 @@
       ],
       "Write your note": [
         "Напишите свою заметку"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружены другие потенциальные утечки ${ name } и ${ remainingCount }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра подробностей. ${ link }"
       ]
     },
     "Success": {
