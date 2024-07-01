@@ -52,6 +52,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         isDeleting,
         isCreating,
         isShareUrlLoading,
+        isShareUrlEnabled,
     } = useShareURLView(rootShareId, linkId);
 
     const {
@@ -171,6 +172,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                                   havePublicSharedLink: !!sharedLink,
                                                   confirmationMessage,
                                                   modificationDisabled: !hasGeneratedPasswordIncluded,
+                                                  isShareUrlEnabled,
                                               })
                                           }
                                           data-testid="share-modal-settings"
@@ -218,15 +220,19 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 onResendExternalInvitationEmail={resendExternalInvitation}
                             />
                         </ModalTwoContent>
-                        <hr className="mb-0.5" />
-                        <ModalTwoFooter>
-                            <PublicSharing
-                                createSharedLink={createSharedLink}
-                                isLoading={isShareWithAnyoneLoading}
-                                publicSharedLink={sharedLink}
-                                deleteSharedLink={handleDeleteLink}
-                            />
-                        </ModalTwoFooter>
+                        {!isShareUrlEnabled ? (
+                            <>
+                                <hr className="mb-0.5" />
+                                <ModalTwoFooter>
+                                    <PublicSharing
+                                        createSharedLink={createSharedLink}
+                                        isLoading={isShareWithAnyoneLoading}
+                                        publicSharedLink={sharedLink}
+                                        deleteSharedLink={handleDeleteLink}
+                                    />
+                                </ModalTwoFooter>
+                            </>
+                        ) : null}
                     </>
                 ) : (
                     <>
