@@ -1,7 +1,7 @@
 import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, createPromiseMapCache, getValidModel } from '@proton/redux-utilities';
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';

@@ -1,0 +1,37 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "globalEnv": ["APPLICATION", "CI_COMMIT_TAG"],
+    "globalPassThroughEnv": [
+        "http_proxy",
+        "https_proxy",
+        "no_proxy",
+        "HTTP_PROXY",
+        "HTTPS_PROXY",
+        "NO_PROXY",
+        "WEBPACK_PARALLELISM",
+        "CI_COMMIT_SHA",
+        "CI_COMMIT_REF_NAME"
+    ],
+    "tasks": {
+        "@proton/i18n#build": {},
+        "build:web": {
+            "outputs": ["dist/**", "webapp-bundle.tar.gz"]
+        },
+        "test:ci": {},
+        "test:coverage": {
+            "outputs": ["coverage/**"]
+        },
+        "lint": {},
+        "i18n:validate": {},
+        "i18n:extract:web": {
+            "dependsOn": ["@proton/i18n#build", "build:web"],
+            "outputs": ["po/**"]
+        },
+        "i18n:validate:context:web": {},
+        "check-types": {},
+        "dev": {
+            "cache": false,
+            "persistent": true
+        }
+    }
+}

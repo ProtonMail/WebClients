@@ -3,6 +3,8 @@ module.exports = {
     testRegex: 'lib/.*\\.test\\.ts$',
     clearMocks: true,
     collectCoverage: false,
+    coverageReporters: ['text-summary', 'json'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     transform: {
         '.*': 'ts-jest',
     },

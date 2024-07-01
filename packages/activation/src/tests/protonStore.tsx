@@ -4,7 +4,7 @@ import { addressesReducer, userReducer } from '@proton/account';
 import { calendarsReducer } from '@proton/calendar';
 import { featuresReducer } from '@proton/features';
 import { categoriesReducer, importerConfigReducer, mailSettingsReducer } from '@proton/mail';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 export const extraThunkArguments = {} as ProtonThunkArguments;
 

@@ -2,7 +2,6 @@ import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { CryptoWorkerOptions } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import clamp from '@proton/utils/clamp';
 
-
 export const getCryptoWorkerOptions = (
     appName: APP_NAMES,
     openpgpConfigOptions: NonNullable<CryptoWorkerOptions['openpgpConfigOptions']>
@@ -12,7 +11,7 @@ export const getCryptoWorkerOptions = (
     if (appName === APPS.PROTONACCOUNT || appName === APPS.PROTONVPN_SETTINGS) {
         return {
             poolSize: clamp(navigator.hardwareConcurrency, 1, 2),
-            openpgpConfigOptions
+            openpgpConfigOptions,
         };
     }
 

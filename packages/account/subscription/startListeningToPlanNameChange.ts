@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { SharedStartListening } from '@proton/redux-shared-store-types';
 
 import { OrganizationState, selectOrganization } from '../organization';
 

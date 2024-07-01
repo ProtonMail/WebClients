@@ -71,7 +71,7 @@ async function* errorIterator(source = 'src', options = { isVerbose: false }) {
     const files = ext
         ? [source]
         : sync(path.join(source, '**', '*.{js,jsx,ts,tsx}'), {
-              ignore: [path.join(source, 'node_modules', '**')],
+              ignore: [path.join(source, 'node_modules', '**'), path.join(source, 'dist', '**')],
           });
 
     for (const file of files) {

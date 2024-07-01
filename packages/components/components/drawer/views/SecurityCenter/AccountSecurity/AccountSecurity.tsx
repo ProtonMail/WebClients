@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useFlag } from '@proton/components/containers';
 import { useApi } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
-import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
+import { baseUseSelector } from '@proton/react-redux-store';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 
 import { sendSecurityCenterReport } from '../securityCenterTelemetry';

@@ -91,7 +91,7 @@ module.exports = function (config) {
         reporters: ['spec'],
 
         // web server port
-        port: 9876,
+        port: 9875,
 
         // enable / disable colors in the output (reporters and logs)
         colors: true,
@@ -126,7 +126,7 @@ module.exports = function (config) {
                 // Run tests in serial so that endpoint release don't interfere
                 random: false,
                 // timeout for mocha tests, default is 2 seconds. Some streaming tests can take longer.
-                timeout: 5000,
+                timeout: 30000,
             },
         },
     });

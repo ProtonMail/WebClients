@@ -1,6 +1,6 @@
 import { selectUser, selectUserSettings } from '@proton/account';
 import { selectFeatures } from '@proton/features';
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getPrimaryRecoverySecret } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';

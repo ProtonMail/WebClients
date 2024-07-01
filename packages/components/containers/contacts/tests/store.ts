@@ -1,7 +1,8 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { calendarsReducer } from '@proton/calendar';
-import { type ProtonThunkArguments, sharedReducers } from '@proton/redux-shared-store';
+import { sharedReducers } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 export const extraThunkArguments = {} as ProtonThunkArguments;

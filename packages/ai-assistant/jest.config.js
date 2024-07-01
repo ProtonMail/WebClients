@@ -18,6 +18,6 @@ module.exports = {
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
     },
-    reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
-    coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageReporters: ['text-summary', 'json'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
 };

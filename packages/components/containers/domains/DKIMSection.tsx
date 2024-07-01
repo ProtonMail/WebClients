@@ -1,20 +1,21 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
-import { DKIM_STATE } from '@proton/shared/lib/interfaces';
+import { DKIM_STATE, Domain } from '@proton/shared/lib/interfaces';
 
 import { Alert, Copy, Table, TableBody, TableCell, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
-const DKIMSection = ({ domain }) => {
+interface Props {
+    domain: Partial<Domain>;
+}
+
+const DKIMSection = ({ domain }: Props) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
-    const {
-        DKIM: { Config, State },
-    } = domain;
+    const { Config, State } = domain?.DKIM || { Config: [], State: DKIM_STATE.DKIM_STATE_DEFAULT };
 
     return (
         <>
@@ -87,10 +88,6 @@ const DKIMSection = ({ domain }) => {
             </Alert>
         </>
     );
-};
-
-DKIMSection.propTypes = {
-    domain: PropTypes.object.isRequired,
 };
 
 export default DKIMSection;

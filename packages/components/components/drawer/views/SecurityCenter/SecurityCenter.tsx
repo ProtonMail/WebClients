@@ -1,4 +1,4 @@
-import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
+import { baseUseSelector } from '@proton/react-redux-store';
 
 import { DrawerAppScrollContainer } from '../shared';
 import AccountSecurity from './AccountSecurity/AccountSecurity';

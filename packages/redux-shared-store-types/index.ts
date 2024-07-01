@@ -1,4 +1,4 @@
-import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
+import type { Action, ThunkDispatch, TypedStartListening } from '@reduxjs/toolkit';
 import type { History } from 'history';
 import type { UnleashClient } from 'unleash-proxy-client';
 
@@ -17,3 +17,9 @@ export interface ProtonThunkArguments {
 }
 
 export type ProtonDispatch<T> = ThunkDispatch<T, ProtonThunkArguments, Action>;
+
+export type SharedStartListening<RequiredState> = TypedStartListening<
+    RequiredState,
+    ProtonDispatch<any>,
+    ProtonThunkArguments
+>;

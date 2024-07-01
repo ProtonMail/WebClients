@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { ModelState, UserSettingsState, getInitialModelState } from '@proton/account';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getDirectoryCalendars } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';

@@ -28,7 +28,7 @@ function set_manifest_key {
 
 function build_chromium_black {
     on_enter "Chromium (Black)"
-    BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build:dev >/dev/null
+    BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build:extension:dev >/dev/null
 
     cd dist
 
@@ -47,7 +47,7 @@ function build_chromium_prod {
     on_enter "Chromium (Prod)"
 
     # store versions should not have a `key` in the manifest
-    RELEASE=true BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build >/dev/null
+    RELEASE=true BUILD_TARGET=chrome MANIFEST_KEY="" yarn run build:extension >/dev/null
 
     cd dist
 
@@ -67,7 +67,7 @@ function build_chromium_prod {
 
 function build_firefox_black {
     on_enter "Firefox (Black)"
-    BUILD_TARGET=firefox yarn run build:dev >/dev/null
+    BUILD_TARGET=firefox yarn run build:extension:dev >/dev/null
     cd dist
     zip -rqX "$ARTEFACTSDIR/firefox/$BUILD_ID.black.zip" "."
 
@@ -110,8 +110,7 @@ function build_firefox_prod {
     unzip -q "$ARTEFACTSDIR/release/$BUILD_ID-FF-sources.zip"
     yarn install --no-immutable >/dev/null
     cd applications/pass-extension
-    RELEASE=true yarn run build:ff >/dev/null
-
+    RELEASE=true yarn run build:extension:ff >/dev/null
     cd dist
     zip -rqX "$ARTEFACTSDIR/release/$BUILD_ID-FF.zip" "."
     on_leave "release/$BUILD_ID-FF.zip"
@@ -119,7 +118,7 @@ function build_firefox_prod {
 
 function build_safari_prod {
     on_enter "Safari (Prod)"
-    RELEASE=true yarn run build:safari >/dev/null
+    RELEASE=true yarn run build:extension:safari >/dev/null
     cd dist
     zip -rqX "$ARTEFACTSDIR/safari/$BUILD_ID.zip" "."
     on_leave "safari/$BUILD_ID.zip"
@@ -127,7 +126,7 @@ function build_safari_prod {
 
 function build_safari_black {
     on_enter "Safari (Black)"
-    BUILD_TARGET=safari yarn run build:dev >/dev/null
+    BUILD_TARGET=safari yarn run build:extension:dev >/dev/null
     cd dist
     zip -rqX "$ARTEFACTSDIR/safari/$BUILD_ID.black.zip" "."
     on_leave "safari/$BUILD_ID.black.zip"
