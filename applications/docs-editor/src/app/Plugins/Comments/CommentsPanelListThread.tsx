@@ -102,7 +102,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
         ))}
       </ul>
       {canShowReplyBox && (
-        <div className="my-3 hidden px-3.5 group-focus-within/thread:block">
+        <div className="my-3 hidden px-3.5 group-focus-within/thread:block group-has-[.options-open]/thread:block">
           <CommentsComposer
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Reply...`}
