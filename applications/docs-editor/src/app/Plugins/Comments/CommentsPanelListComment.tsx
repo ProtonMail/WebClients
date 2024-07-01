@@ -40,6 +40,8 @@ export function CommentsPanelListComment({
 
   const [isEditing, setIsEditing] = useState(false)
 
+  const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false)
+
   const deleteThread = async () => {
     showConfirmModal({
       title: c('Title').t`Delete thread`,
@@ -112,7 +114,13 @@ export function CommentsPanelListComment({
   return (
     <>
       {confirmModal}
-      <li className={clsx('group/comment mb-3 text-sm', comment.isPlaceholder || isDeleting ? 'opacity-50' : '')}>
+      <li
+        className={clsx(
+          'group/comment mb-3 text-sm',
+          comment.isPlaceholder || isDeleting ? 'opacity-50' : '',
+          isOptionsMenuOpen && 'options-open',
+        )}
+      >
         <div className="mb-1.5 flex flex-nowrap items-center gap-1.5">
           <UserAvatar name={comment.author} color={color ? { hsl: color } : undefined} className="mr-1 flex-shrink-0" />
           <div className="mr-auto flex flex-col overflow-hidden">
@@ -139,6 +147,7 @@ export function CommentsPanelListComment({
               )}
               content={<Icon size={4.5} name="three-dots-vertical" alt={c('Label').t`More options`} />}
               hasCaret={false}
+              onToggle={setIsOptionsMenuOpen}
             >
               <DropdownMenu>
                 {showEditButton && (
