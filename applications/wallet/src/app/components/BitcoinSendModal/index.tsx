@@ -112,22 +112,22 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                 className="relative"
             >
                 <div className="flex flex-row justify-space-between">
-                    {stepKey === StepKey.RecipientsSelection && (
-                        <>
-                            <div className="mb-8 mr-4">
-                                <WalletAccountSelector
-                                    value={selectedWalletAccount}
-                                    onSelect={(selected) => {
-                                        setSelectedWalletAccount(selected);
-                                    }}
-                                    options={toWalletAccountSelectorOptions(decryptedApiWalletsData ?? [])}
-                                    checkIsValid={async (w, a, accountChainData) => {
-                                        const balance = await getAccountBalance(accountChainData);
-                                        return balance > 0;
-                                    }}
-                                />
-                            </div>
+                    <div className="mb-8 mr-4">
+                        <WalletAccountSelector
+                            value={selectedWalletAccount}
+                            onSelect={(selected) => {
+                                setSelectedWalletAccount(selected);
+                            }}
+                            options={toWalletAccountSelectorOptions(decryptedApiWalletsData ?? [])}
+                            checkIsValid={async (w, a, accountChainData) => {
+                                const balance = await getAccountBalance(accountChainData);
+                                return balance > 0;
+                            }}
+                        />
+                    </div>
 
+                    <div className="w-full mx-auto" style={{ maxWidth: '31rem' }}>
+                        {stepKey === StepKey.RecipientsSelection && (
                             <RecipientsSelection
                                 txBuilder={txBuilder}
                                 updateTxBuilder={updateTxBuilder}
@@ -136,45 +136,45 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                                     setStepKey(StepKey.AmountInput);
                                 }}
                             />
+                        )}
 
-                            {/* Dumb div to equilibrate flex-box */}
-                            <div />
-                        </>
-                    )}
+                        {stepKey === StepKey.AmountInput && wasmAccount?.account && (
+                            <AmountInput
+                                apiAccount={selectedWalletAccount[1]}
+                                account={wasmAccount}
+                                txBuilder={txBuilder}
+                                updateTxBuilder={updateTxBuilder}
+                                btcAddressMap={recipientHelpers.btcAddressMap}
+                                onBack={() => setStepKey(StepKey.RecipientsSelection)}
+                                onReview={(unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
+                                    setUnit(unit);
+                                    setStepKey(StepKey.ReviewTransaction);
+                                }}
+                            />
+                        )}
 
-                    {stepKey === StepKey.AmountInput && wasmAccount?.account && (
-                        <AmountInput
-                            apiAccount={selectedWalletAccount[1]}
-                            account={wasmAccount}
-                            txBuilder={txBuilder}
-                            updateTxBuilder={updateTxBuilder}
-                            btcAddressMap={recipientHelpers.btcAddressMap}
-                            onBack={() => setStepKey(StepKey.RecipientsSelection)}
-                            onReview={(unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
-                                setUnit(unit);
-                                setStepKey(StepKey.ReviewTransaction);
-                            }}
-                        />
-                    )}
+                        {stepKey === StepKey.ReviewTransaction && (
+                            <TransactionReview
+                                isUsingBitcoinViaEmail={isUsingBitcoinViaEmail}
+                                wallet={wallet}
+                                account={selectedWalletAccount[1]}
+                                unit={unit}
+                                txBuilder={txBuilder}
+                                updateTxBuilder={updateTxBuilder}
+                                btcAddressMap={recipientHelpers.btcAddressMap}
+                                onBack={() => setStepKey(StepKey.AmountInput)}
+                                onSent={() => {
+                                    setStepKey(StepKey.Send);
+                                    modal.onClose?.();
+                                    setSendConfirmModal(true);
+                                }}
+                                onBackToEditRecipients={() => setStepKey(StepKey.RecipientsSelection)}
+                            />
+                        )}
+                    </div>
 
-                    {stepKey === StepKey.ReviewTransaction && (
-                        <TransactionReview
-                            isUsingBitcoinViaEmail={isUsingBitcoinViaEmail}
-                            wallet={wallet}
-                            account={selectedWalletAccount[1]}
-                            unit={unit}
-                            txBuilder={txBuilder}
-                            updateTxBuilder={updateTxBuilder}
-                            btcAddressMap={recipientHelpers.btcAddressMap}
-                            onBack={() => setStepKey(StepKey.AmountInput)}
-                            onSent={() => {
-                                setStepKey(StepKey.Send);
-                                modal.onClose?.();
-                                setSendConfirmModal(true);
-                            }}
-                            onBackToEditRecipients={() => setStepKey(StepKey.RecipientsSelection)}
-                        />
-                    )}
+                    {/* Dumb div to equilibrate flex-box */}
+                    <div />
                 </div>
             </FullscreenModal>
 

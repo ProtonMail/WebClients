@@ -31,13 +31,13 @@ interface Props {
 enum StepKey {
     Location = 'Location',
     Amount = 'Amount',
-    Payment = 'Payment',
+    Onramp = 'Onramp',
 }
 
 const getSteps = (): Steps<StepKey> => [
     { key: StepKey.Location, label: c('bitcoin buy').t`Location` },
     { key: StepKey.Amount, label: c('bitcoin buy').t`Amount` },
-    { key: StepKey.Payment, label: c('bitcoin buy').t`Onramp` },
+    { key: StepKey.Onramp, label: c('bitcoin buy').t`Onramp` },
 ];
 
 export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
@@ -80,18 +80,6 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
         return null;
     }
 
-    const walletAccountSelector = (
-        <div className="mb-8 mr-4">
-            <WalletAccountSelector
-                value={selectedWalletAccount}
-                onSelect={(selected) => {
-                    setSelectedWalletAccount(selected);
-                }}
-                options={toWalletAccountSelectorOptions(decryptedApiWalletsData ?? [])}
-            />
-        </div>
-    );
-
     return (
         <MoonPayProvider apiKey={apikeys.moonpay}>
             <FullscreenModal
@@ -111,54 +99,54 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
                 {...modal}
             >
                 <div className="flex flex-row justify-space-between">
-                    {stepKey === StepKey.Location && (
-                        <>
-                            {walletAccountSelector}
+                    <div className="mb-8 mr-4">
+                        <WalletAccountSelector
+                            disabled={stepKey === StepKey.Onramp}
+                            value={selectedWalletAccount}
+                            onSelect={(selected) => {
+                                setSelectedWalletAccount(selected);
+                            }}
+                            options={toWalletAccountSelectorOptions(decryptedApiWalletsData ?? [])}
+                        />
+                    </div>
 
+                    <div className="w-full mx-auto" style={{ maxWidth: '31rem' }}>
+                        {stepKey === StepKey.Location && (
                             <Location
                                 onConfirm={(country) => {
                                     setCountry(country);
                                     setStepKey(StepKey.Amount);
                                 }}
                             />
+                        )}
 
-                            {/* Dumb div to equilibrate flexbox */}
-                            <div />
-                        </>
-                    )}
-
-                    {stepKey === StepKey.Amount && country && (
-                        <>
-                            {walletAccountSelector}
-
+                        {stepKey === StepKey.Amount && country && (
                             <Amount
                                 country={country}
                                 preselectedQuote={quote}
                                 onConfirm={(quote) => {
                                     setQuote(quote);
-                                    setStepKey(StepKey.Payment);
+                                    setStepKey(StepKey.Onramp);
                                 }}
                             />
+                        )}
 
-                            {/* Dumb div to equilibrate flexbox */}
-                            <div />
-                        </>
-                    )}
+                        {stepKey === StepKey.Onramp && quote && btcAddress && (
+                            <Checkout
+                                quote={quote}
+                                btcAddress={btcAddress}
+                                onDone={() => {
+                                    onDone?.();
+                                }}
+                                onBack={() => {
+                                    setStepKey(StepKey.Amount);
+                                }}
+                            />
+                        )}
+                    </div>
 
-                    {stepKey === StepKey.Payment && quote && btcAddress && (
-                        <Checkout
-                            quote={quote}
-                            btcAddress={btcAddress}
-                            onDone={() => {
-                                onDone?.();
-                            }}
-                            onBack={() => {
-                                setStepKey(StepKey.Amount);
-                            }}
-                        />
-                    )}
-
-                    {[StepKey.Location, StepKey.Amount].includes(stepKey) && !account && <div />}
+                    {/* Dumb div to equilibrate flexbox */}
+                    <div />
                 </div>
             </FullscreenModal>
         </MoonPayProvider>
