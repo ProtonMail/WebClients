@@ -51,6 +51,8 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
     willReloadDueToTagMismatch.current = false
 
     onFrameReady(iframe)
+
+    iframe.contentWindow?.focus()
   }, [iframe, onFrameReady])
 
   useEffect(() => {
