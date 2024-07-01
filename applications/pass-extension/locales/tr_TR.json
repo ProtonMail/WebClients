@@ -374,6 +374,9 @@
       "Retry": [
         "Yeniden dene"
       ],
+      "Right click and download this CSV": [
+        "Sağ tıklayın ve bu CSV dosyasını indirin"
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -400,6 +403,12 @@
       ],
       "Set access level": [
         "Erişim düzeyini ayarla"
+      ],
+      "Set extra password": [
+        "Ek parolayı ayarla"
+      ],
+      "Setup 2FA": [
+        "İki adımlı doğrulama kur"
       ],
       "Share": [
         "Paylaş"
@@ -705,6 +714,9 @@
       "File could not be parsed": [
         "Dosya işlenemedi"
       ],
+      "File could not be read": [
+        "Dosya okunamadı"
+      ],
       "File does not match expected format": [
         "Dosya beklenen biçimde değil"
       ],
@@ -842,6 +854,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME } başlatılırken bir sorun çıktı. Sorun sürerse yardım almak için müşteri desteği ekibimizle görüşün."
+      ],
+      "Wrong password": [
+        "Parola yanlış"
       ],
       "Wrong PIN code. Try again.": [
         "PIN kodu yanlış. Yeniden deneyin."
@@ -1026,6 +1041,9 @@
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain } üzerinden otomatik olarak kaydedildi"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
+      ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
@@ -1097,6 +1115,9 @@
       ],
       "Drop to import": [
         "İçe aktarmak için bırakın"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Safari tarayıcı eklentilerindeki bir sınırlama nedeniyle, verileri dışa aktardıktan sonra \".pgp\" dosya uzantısı eksik kalır. Lütfen dışa aktardıktan sonra dosyayı yeniden adlandırın ve .pgp uzantısını ekleyin (örnek: dosya.pgp)."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
@@ -1342,20 +1363,8 @@
       "Pinning item...": [
         "Öge sabitleniyor..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Lütfen ${ BRAND_NAME } parolanızı onaylayın"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Parolanızla otomatik kilitleme için lütfen ${ BRAND_NAME } parolanızı yazın"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Geçerli kilidin kaydını kaldırmak için ${ BRAND_NAME } parolanızı yazın."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Otomatik kilitleme süresini güncellemek için lütfen ${ BRAND_NAME } parolanızı yazın."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın."
@@ -1596,6 +1605,9 @@
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } oturumunuz kilitlendi"
       ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Kuruluşunuz iki adımlı doğrulama kullanılmasını zorunlu kıldığından hesabınız kısıtlandı. Lütfen hesap ayarlarınızdan iki adımlı doğrulamayı açın ya da yöneticinizle görüşün."
+      ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ]
@@ -1774,6 +1786,9 @@
       "Export": [
         "Dışa aktar"
       ],
+      "Extra password": [
+        "Ek parola"
+      ],
       "Field name": [
         "Alan adı"
       ],
@@ -1951,6 +1966,9 @@
       "Prompt for auto-save when generating passwords": [
         "Parola oluştururken otomatik kaydetme sorulsun"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "${ PASS_APP_NAME } uygulamasını ek parola ile koruyun"
+      ],
       "Rate us": [
         "Bizi değerlendirin"
       ],
@@ -2076,25 +2094,6 @@
       ],
       "You are about to create": [
         "Şunu oluşturmak üzeresiniz"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "PIN kodunuzu yazın"
-      ],
-      "Sign in to your account": [
-        "Hesabınızda oturum açın"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } kilidini aç"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } uygulamasına hoş geldiniz"
       ]
     },
     "Message": {
@@ -2242,6 +2241,9 @@
       "Auto-lock update": [
         "Ootmatik kilitleme güncellemesi"
       ],
+      "Confirm extra password": [
+        "Ek parolayı onayla"
+      ],
       "Confirm PIN code": [
         "PIN kodu onayı"
       ],
@@ -2356,6 +2358,9 @@
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
       ],
+      "Remove extra password": [
+        "Ek parolayı kaldır"
+      ],
       "Restore this version?": [
         "Bu sürüm geri yüklensin mi?"
       ],
@@ -2367,6 +2372,9 @@
       ],
       "Set access level": [
         "Erişim düzeyini ayarla"
+      ],
+      "Set extra password": [
+        "Ek parolayı ayarla"
       ],
       "Set up 2FA for more security": [
         "Güvenliği artırmak için iki adımlı doğrulamayı açın"
@@ -2395,8 +2403,8 @@
       "Trash empty": [
         "Çöp kutusu boş"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } kilidini aç"
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } kilidini aç"
       ],
       "Update available": [
         "Güncelleme yayınlanmış"
@@ -2415,6 +2423,9 @@
       ],
       "Weak password": [
         "Parola zayıf"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX } uygulamasına hoş geldiniz"
       ],
       "Welcome to your new password manager!": [
         "Yeni parola yöneticinize hoş geldiniz!"

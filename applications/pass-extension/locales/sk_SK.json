@@ -849,6 +849,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Pri spúšťaní ${ PASS_SHORT_APP_NAME } sa vyskytla chyba. Ak bude tento problém pretrvávať, kontaktuje našu zákaznícku podporu, prosím."
       ],
+      "Wrong password": [
+        "Nesprávne heslo"
+      ],
       "Wrong PIN code. Try again.": [
         "Nesprávny PIN. Skúste to znova."
       ],
@@ -1376,20 +1379,8 @@
       "Pinning item...": [
         "Pripínanie položky..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Potvrďte vaše ${ BRAND_NAME } heslo"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre automatické uzamknutie pomocou vášho hesla."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre zruenie vášho aktuálneho zámku."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre aktualizáciu času automatického uzamknutia."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Potvrďte, prosím, svoj PIN kód pre zrušenie registrácie aktuálneho zámku."
@@ -2120,25 +2111,6 @@
         "Chystáte sa vytvoriť"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Zadajte PIN kód"
-      ],
-      "Sign in to your account": [
-        "Prihláste sa do svojho účtu"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Odomknúť ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Víta vás ${ brandNameJSX }"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } položka",
@@ -2440,9 +2412,6 @@
       ],
       "Trash empty": [
         "Kôš je prázdny"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Odomknúť ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "K dispozícii je aktualizácia"
