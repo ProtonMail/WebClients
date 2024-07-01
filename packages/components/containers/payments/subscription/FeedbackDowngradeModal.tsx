@@ -25,6 +25,7 @@ import {
     useFormErrors,
 } from '../../../components';
 import { useConfig } from '../../../hooks';
+import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 
 interface ReasonOption {
     title: string;
@@ -82,6 +83,8 @@ const FeedbackDowngradeModal = ({
     const { APP_NAME } = useConfig();
 
     const { isPaid } = user;
+
+    const { sendFeedbackModalCancelReport, sendFeedbackModalSubmitReport } = useCancellationTelemetry();
 
     const isVpnApp =
         APP_NAME === APPS.PROTONVPN_SETTINGS || getAppFromPathnameSafe(location.pathname) === APPS.PROTONVPN_SETTINGS;
@@ -237,12 +240,14 @@ const FeedbackDowngradeModal = ({
             ReasonDetails: shouldSendReasonDetails ? model.ReasonDetails : '',
         };
 
+        sendFeedbackModalSubmitReport();
         onResolve(data);
         onClose?.();
     };
 
     const handleKeepSubscription = () => {
         onResolve({ status: 'kept' });
+        sendFeedbackModalCancelReport();
         onClose?.();
     };
 
