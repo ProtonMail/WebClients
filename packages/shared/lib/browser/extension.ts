@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import getRandomString from '@proton/utils/getRandomString';
 import lastItem from '@proton/utils/lastItem';
 
@@ -37,20 +39,16 @@ const isValidExtensionResponse = <R = any>(response: any): response is Extension
 type SendMessageResult = { ok: boolean; response: ExtensionMessageResponse };
 
 const sendMessage = async (extensionId: string, message: any): Promise<SendMessageResult> => {
-    const onError = (err?: any): SendMessageResult => ({
+    const onError = (error?: string): SendMessageResult => ({
         ok: false,
         response: {
             type: 'error',
-            error: err?.message ?? err ?? '',
+            error: error ?? c('Warning').t`Please check that the extension is properly installed and enabled`,
         },
     });
 
     const onResponse = (response: unknown): SendMessageResult => {
-        if (browserAPI.runtime.lastError) {
-            return onError(browserAPI.runtime.lastError);
-        }
-
-        if (response === undefined) {
+        if (browserAPI.runtime.lastError || response === undefined) {
             return onError();
         }
 
@@ -59,7 +57,7 @@ const sendMessage = async (extensionId: string, message: any): Promise<SendMessa
                 ok: true,
                 response: {
                     type: 'error',
-                    error: 'Bad format',
+                    error: c('Warning').t`Please update the extension to its latest version`,
                 },
             };
         }
@@ -69,7 +67,7 @@ const sendMessage = async (extensionId: string, message: any): Promise<SendMessa
 
     return new Promise<unknown>((resolve) => browserAPI.runtime.sendMessage(extensionId, message, resolve))
         .then(onResponse)
-        .catch(onError);
+        .catch(() => onError());
 };
 
 /** When dealing with extensions residing in multiple stores, it's essential to handle
