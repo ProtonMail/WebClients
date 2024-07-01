@@ -1,2 +1,2 @@
 export * from './BilledUserModal';
-export * from './utils';
+export * from './BilledUserInlineMessage';

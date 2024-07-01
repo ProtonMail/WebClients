@@ -571,6 +571,7 @@ const SubscriptionContainer = ({
             return promise.catch(noop);
         },
         flow: 'subscription',
+        user,
     });
 
     const check = async (

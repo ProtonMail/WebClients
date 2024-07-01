@@ -1,10 +1,10 @@
 import { ReactNode, createContext, useContext, useRef } from 'react';
 
-import { BilledUserModal, isBilledUser } from '@proton/components/payments/client-extensions/billed-user';
+import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
-import { Nullable } from '@proton/shared/lib/interfaces';
+import { Nullable, isBilledUser } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';

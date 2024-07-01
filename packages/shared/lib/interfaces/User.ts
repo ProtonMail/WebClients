@@ -108,6 +108,14 @@ export interface User {
     ChargebeeUserExists?: ChargebeeUserExists;
 }
 
+export function isBilledUser(user: User | undefined): boolean {
+    if (!user) {
+        return false;
+    }
+
+    return !!user.Billed;
+}
+
 export interface UserModel extends User {
     isAdmin: boolean;
     isMember: boolean;
