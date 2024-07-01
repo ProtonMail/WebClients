@@ -56,10 +56,6 @@ interface APICalendar {
     Description: string;
 }
 
-export enum Separator {
-    Empty = '/',
-}
-
 export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwitchThunkExtra>(
     `${OAUTH_ACTION_PREFIX}/createImporter`,
     async (props, thunkAPI) => {
