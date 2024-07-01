@@ -3,7 +3,7 @@ import Store from "electron-store";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 import { mainLogger } from "../utils/log";
 
-interface WindowBounds {
+export interface WindowBounds {
     maximized: boolean;
     width: number;
     height: number;
