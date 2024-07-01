@@ -37,6 +37,7 @@ interface Props {
     modificationDisabled: boolean;
     confirmationMessage: string;
     havePublicSharedLink: boolean;
+    isShareUrlEnabled: boolean;
 }
 
 const SharingSettingsModal = ({
@@ -48,6 +49,7 @@ const SharingSettingsModal = ({
     modificationDisabled,
     confirmationMessage,
     havePublicSharedLink,
+    isShareUrlEnabled,
     ...modalProps
 }: Props & ModalProps) => {
     const [password, setPassword] = useState(customPassword);
@@ -122,99 +124,104 @@ const SharingSettingsModal = ({
             >
                 <ModalTwoHeader title={c('Title').t`Settings`} />
                 <ModalTwoContent>
-                    {havePublicSharedLink && modificationDisabled && (
-                        <Alert type="warning">
-                            {c('Info')
-                                .t`This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.`}
-                        </Alert>
-                    )}
-                    <div
-                        className="flex flex-column justify-space-between gap-2  md:items-center md:gap-0 md:flex-row md:h-custom md:items-center "
-                        style={{ '--h-custom': '2.25rem' }}
-                        data-testid="sharing-modal-settings-expirationSection"
-                    >
-                        <Label
-                            htmlFor="expirationDateInputId"
-                            className={clsx(
-                                'flex flex-column p-0 text-semibold',
-                                !havePublicSharedLink && 'opacity-30'
+                    {!isShareUrlEnabled ? (
+                        <>
+                            {havePublicSharedLink && modificationDisabled && (
+                                <Alert type="warning">
+                                    {c('Info')
+                                        .t`This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.`}
+                                </Alert>
                             )}
-                        >
-                            {c('Label').t`Set expiration date`}
-                            <span className="color-weak text-normal">{c('Label').t`Public link expiration date`}</span>
-                        </Label>
-                        <div className="flex items-center justify-space-between gap-2 ">
-                            <ExpirationTimeDatePicker
-                                className="w-custom max-w-custom"
-                                containerProps={{
-                                    style: { '--w-custom': '12.5rem', '--max-w-custom': '12.5rem' },
-                                }}
-                                id="expirationDateInputId"
-                                disabled={!expirationEnabled}
-                                allowTime={false}
-                                expiration={expiration}
-                                handleExpirationChange={setExpiration}
-                                placeholder={c('Placeholder').t`Set date`}
-                                data-testid="expiration-data-input"
-                            />
-                            <Toggle
-                                disabled={!havePublicSharedLink}
-                                id="toggleExpiration"
-                                checked={expirationEnabled}
-                                onChange={toggleExpiration}
-                            />
-                        </div>
-                    </div>
-                    <div
-                        className="mt-5 flex  flex-column justify-space-between gap-2 md:flex-row md:gap-0 md:items-center md:h-custom w-auto md:flex-nowrap md:items-center"
-                        style={{ '--h-custom': '2.25rem' }}
-                        data-testid="sharing-modal-settings-passwordSection"
-                    >
-                        <Label
-                            className={clsx(
-                                'flex flex-column p-0 text-semibold',
-                                !havePublicSharedLink && 'opacity-30'
-                            )}
-                            htmlFor="sharing-modal-password"
-                        >
-                            {c('Label').t`Set link password`}
-                            <span className="color-weak text-normal">{c('Label').t`Public link password`}</span>
-                        </Label>
-                        <div className="flex items-center justify-space-between gap-2 md:flex-nowrap">
-                            <InputFieldTwo
-                                disabled={!passwordEnabled}
-                                dense
-                                className="items-center"
-                                rootClassName="flex items-center justify-end pr-0 w-custom"
-                                rootStyle={{ '--w-custom': '12.5rem' }}
-                                id="sharing-modal-password"
-                                as={PasswordInputTwo}
-                                data-testid="password-input"
-                                label={false}
-                                autoComplete="new-password"
-                                value={password}
-                                onInput={(e: ChangeEvent<HTMLInputElement>) => {
-                                    setPassword(e.target.value);
-                                }}
-                                error={
-                                    isPasswordInvalid &&
-                                    c('Info').ngettext(
-                                        msgid`Max ${MAX_SHARED_URL_PASSWORD_LENGTH} character`,
-                                        `Max ${MAX_SHARED_URL_PASSWORD_LENGTH} characters`,
-                                        MAX_SHARED_URL_PASSWORD_LENGTH
-                                    )
-                                }
-                                placeholder={c('Placeholder').t`Choose password`}
-                            />
-                            <Toggle
-                                id="togglePassword"
-                                disabled={!havePublicSharedLink}
-                                checked={passwordEnabled}
-                                onChange={togglePasswordEnabled}
-                            />
-                        </div>
-                    </div>
-                    <hr className="my-5" />
+                            <div
+                                className="flex flex-column justify-space-between gap-2  md:items-center md:gap-0 md:flex-row md:h-custom md:items-center "
+                                style={{ '--h-custom': '2.25rem' }}
+                                data-testid="sharing-modal-settings-expirationSection"
+                            >
+                                <Label
+                                    htmlFor="expirationDateInputId"
+                                    className={clsx(
+                                        'flex flex-column p-0 text-semibold',
+                                        !havePublicSharedLink && 'opacity-30'
+                                    )}
+                                >
+                                    {c('Label').t`Set expiration date`}
+                                    <span className="color-weak text-normal">{c('Label')
+                                        .t`Public link expiration date`}</span>
+                                </Label>
+                                <div className="flex items-center justify-space-between gap-2 ">
+                                    <ExpirationTimeDatePicker
+                                        className="w-custom max-w-custom"
+                                        containerProps={{
+                                            style: { '--w-custom': '12.5rem', '--max-w-custom': '12.5rem' },
+                                        }}
+                                        id="expirationDateInputId"
+                                        disabled={!expirationEnabled}
+                                        allowTime={false}
+                                        expiration={expiration}
+                                        handleExpirationChange={setExpiration}
+                                        placeholder={c('Placeholder').t`Set date`}
+                                        data-testid="expiration-data-input"
+                                    />
+                                    <Toggle
+                                        disabled={!havePublicSharedLink}
+                                        id="toggleExpiration"
+                                        checked={expirationEnabled}
+                                        onChange={toggleExpiration}
+                                    />
+                                </div>
+                            </div>
+                            <div
+                                className="mt-5 flex  flex-column justify-space-between gap-2 md:flex-row md:gap-0 md:items-center md:h-custom w-auto md:flex-nowrap md:items-center"
+                                style={{ '--h-custom': '2.25rem' }}
+                                data-testid="sharing-modal-settings-passwordSection"
+                            >
+                                <Label
+                                    className={clsx(
+                                        'flex flex-column p-0 text-semibold',
+                                        !havePublicSharedLink && 'opacity-30'
+                                    )}
+                                    htmlFor="sharing-modal-password"
+                                >
+                                    {c('Label').t`Set link password`}
+                                    <span className="color-weak text-normal">{c('Label').t`Public link password`}</span>
+                                </Label>
+                                <div className="flex items-center justify-space-between gap-2 md:flex-nowrap">
+                                    <InputFieldTwo
+                                        disabled={!passwordEnabled}
+                                        dense
+                                        className="items-center"
+                                        rootClassName="flex items-center justify-end pr-0 w-custom"
+                                        rootStyle={{ '--w-custom': '12.5rem' }}
+                                        id="sharing-modal-password"
+                                        as={PasswordInputTwo}
+                                        data-testid="password-input"
+                                        label={false}
+                                        autoComplete="new-password"
+                                        value={password}
+                                        onInput={(e: ChangeEvent<HTMLInputElement>) => {
+                                            setPassword(e.target.value);
+                                        }}
+                                        error={
+                                            isPasswordInvalid &&
+                                            c('Info').ngettext(
+                                                msgid`Max ${MAX_SHARED_URL_PASSWORD_LENGTH} character`,
+                                                `Max ${MAX_SHARED_URL_PASSWORD_LENGTH} characters`,
+                                                MAX_SHARED_URL_PASSWORD_LENGTH
+                                            )
+                                        }
+                                        placeholder={c('Placeholder').t`Choose password`}
+                                    />
+                                    <Toggle
+                                        id="togglePassword"
+                                        disabled={!havePublicSharedLink}
+                                        checked={passwordEnabled}
+                                        onChange={togglePasswordEnabled}
+                                    />
+                                </div>
+                            </div>
+                            <hr className="my-5" />
+                        </>
+                    ) : null}
                     <div
                         className="flex flex-nowrap justify-space-between items-center"
                         data-testid="share-modal-settings-deleteShareSection"
