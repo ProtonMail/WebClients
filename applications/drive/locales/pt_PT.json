@@ -798,6 +798,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente guardar novamente. Erro ao guardar devido a: ${ saveError }"
       ],
+      "Understood": [
+        "Entendido"
+      ],
       "Undo": [
         "Desfazer"
       ],
@@ -4908,6 +4911,9 @@
       "Would you like to restore your files?": [
         "Deseja restaurar os seus ficheiros?"
       ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ],
       "Yes": [
         "Sim"
       ],
@@ -5578,6 +5584,9 @@
       ],
       "Set recovery method": [
         "Definir um método de recuperação"
+      ],
+      "Share a file": [
+        "Partilhar um ficheiro"
       ],
       "Shared by": [
         "Partilhado por"
@@ -6288,6 +6297,9 @@
       "GDPR data processing agreement": [
         "Acordo de tratamento de dados do RGPD"
       ],
+      "Group management (coming soon)": [
+        "Gerenciamento de grupo (em breve)"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -6344,6 +6356,9 @@
         "Proteja ${ n } dispositivo ao mesmo tempo",
         "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
+      "Require 2FA for organization": [
+        "Exigir 2FA para a organização"
+      ],
       "Router support": [
         "Suporte para router"
       ],
@@ -6370,6 +6385,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integração SSO (em breve)"
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
@@ -6995,6 +7013,9 @@
       "Set a recovery method": [
         "Definir um método de recuperação"
       ],
+      "Share a file": [
+        "Partilhar um ficheiro"
+      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Basta concluir os seguintes passos dentro de ${ expiresInDays } dia:",
         "Basta concluir os seguintes passos dentro de ${ expiresInDays } dias:"
@@ -7081,8 +7102,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processamento do pagamento"
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
@@ -7628,6 +7655,11 @@
         "Actualizar"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Melhorar"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mês",
@@ -7874,6 +7906,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
@@ -7929,6 +7966,9 @@
       ],
       "Extra storage and bonuses": [
         "Armazenamento adicional e bónus"
+      ],
+      "Learn more": [
+        "Mais informação"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
