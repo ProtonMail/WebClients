@@ -25,6 +25,17 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
+// We mock @proton/wallet & @proton/andromeda to avoid wasm call in tests since Jest don't support wasm for now
+jest.mock('@proton/wallet', () => ({
+    __esModule: true,
+    walletReducers: {},
+}));
+
+jest.mock('@proton/andromeda', () => ({
+    __esModule: true,
+    WasmProtonWalletApiClient: jest.fn(),
+}));
+
 // Globally mocked @proton/components modules
 jest.mock('@proton/components/hooks/useEventManager.ts', () => {
     const subscribe = jest.fn();
