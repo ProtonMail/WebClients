@@ -67,8 +67,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   private docMeta!: DocumentMetaInterface
   private initialCommit?: DecryptedCommit
   lastCommitIdReceivedFromRtsOrApi?: string
-  private initialSyncTimer: NodeJS.Timeout | null = null
-  private initialConnectionTimer: NodeJS.Timeout | null = null
+  private initialSyncTimer: ReturnType<typeof setTimeout> | null = null
+  private initialConnectionTimer: ReturnType<typeof setTimeout> | null = null
   isExperiencingErroredSync = false
   isLockedDueToSizeContraint = false
   realtimeConnectionReady = false
