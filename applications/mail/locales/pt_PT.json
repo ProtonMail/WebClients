@@ -847,6 +847,9 @@
       "Print": [
         "Imprimir"
       ],
+      "Proofread": [
+        "Rever"
+      ],
       "Quit": [
         "Sair"
       ],
@@ -955,6 +958,9 @@
       "Revert to original display": [
         "Regressar ao ecrã original"
       ],
+      "Run on servers": [
+        "Executar em servidores"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -1056,6 +1062,9 @@
       ],
       "Sharing options": [
         "Opções de partilha"
+      ],
+      "Shorten": [
+        "Encurtar"
       ],
       "Show": [
         "Mostrar"
@@ -1447,6 +1456,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicações ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant option": {
+      "Run locally": [
+        "Executar localmente"
       ]
     },
     "Attached ics file error": {
@@ -3938,9 +3952,6 @@
       "Username must end with a letter or digit": [
         "O nome de utilizador deve acabar com uma letra ou algarismo"
       ],
-      "Wrong mailbox password": [
-        "Palavra-passe da caixa de correio errada"
-      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatários."
@@ -4848,6 +4859,9 @@
       ],
       "Report an issue": [
         "Reportar um problema"
+      ],
+      "Resume downloading": [
+        "Retomar a transferência"
       ],
       "Search": [
         "Pesquisar"
@@ -5773,6 +5787,12 @@
       "Estimating time remaining...": [
         "A estimar o tempo restante..."
       ],
+      "Expand selection": [
+        "Expandir a seleção"
+      ],
+      "Expand text": [
+        "Expandir o texto"
+      ],
       "Expiration time": [
         "Data de validade"
       ],
@@ -5811,6 +5831,9 @@
       ],
       "From": [
         "De"
+      ],
+      "Generate text": [
+        "Gerar texto"
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Tem ${ numAttachments } anexo (${ numAttachmentsSize })",
@@ -5888,6 +5911,9 @@
       ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
+      ],
+      "Initializing…": [
+        "A inicializar…"
       ],
       "Insert image": [
         "Inserir imagem"
@@ -6196,6 +6222,12 @@
       "Print email": [
         "Imprimir o e-mail"
       ],
+      "Proofread selection": [
+        "Rever a seleção"
+      ],
+      "Proofread text": [
+        "Rever o texto"
+      ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Evite que o seu e-mail seja incluído em listas de e-mail ou apropriado por spammers com ${ maskMyEmailButton }."
       ],
@@ -6297,6 +6329,12 @@
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A configuração do PGP permite o envio de e-mails encriptados de ponta a ponta com um utilizador não${ BRAND_NAME } que utilize um serviço compatível com PGP."
+      ],
+      "Shorten selection": [
+        "Encurtar a seleção"
+      ],
+      "Shorten text": [
+        "Abreviar o texto"
       ],
       "Show original message": [
         "Mostrar mensagem original"
@@ -6720,6 +6758,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Gostaria de receber um novo código de verificação?"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ],
       "Yearly": [
         "Anualmente"
@@ -8562,6 +8603,9 @@
       "GDPR data processing agreement": [
         "Acordo de tratamento de dados do RGPD"
       ],
+      "Group management (coming soon)": [
+        "Gerenciamento de grupo (em breve)"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -8618,6 +8662,9 @@
         "Proteja ${ n } dispositivo ao mesmo tempo",
         "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
+      "Require 2FA for organization": [
+        "Exigir 2FA para a organização"
+      ],
       "Router support": [
         "Suporte para router"
       ],
@@ -8644,6 +8691,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integração SSO (em breve)"
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
@@ -9236,8 +9286,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processamento do pagamento"
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
@@ -9302,6 +9358,9 @@
       ],
       "First name": [
         "Primeiro nome"
+      ],
+      "Generating...": [
+        "A gerar..."
       ],
       "Gift code": [
         "Código de oferta"
@@ -9377,6 +9436,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "To": [
+        "Para"
       ],
       "Type a command…": [
         "Introduza um comando…"
@@ -10015,6 +10077,11 @@
         "Actualizar"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Melhorar"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mês",
@@ -10281,6 +10348,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
@@ -10336,6 +10408,9 @@
       ],
       "Extra storage and bonuses": [
         "Armazenamento adicional e bónus"
+      ],
+      "Learn more": [
+        "Mais informação"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"

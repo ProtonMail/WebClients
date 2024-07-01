@@ -4123,8 +4123,8 @@
       "Username must end with a letter or digit": [
         "사용자 이름은 문자로 시작하여야 합니다."
       ],
-      "Wrong mailbox password": [
-        "잘못된 메일함 비밀번호"
+      "Wrong second password": [
+        "이중 비밀번호가 옳지 않습니다."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
@@ -6299,6 +6299,9 @@
       "Please add at least one recipient.": [
         "최소한 한명의 수신자를 추가해주세요."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "해당 문서에 초대하려면 소유자에게 연락하세요."
+      ],
       "Please authenticate your card in the verification tab.": [
         "인증 탭에서 카드를 인증해 주세요."
       ],
@@ -6319,6 +6322,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
+      ],
+      "Please open the document to view it.": [
+        "문서를 확인하려면 열어주세요."
       ],
       "Please provide a name and an email address for creating a group.": [
         "그룹을 생성하기 위해서 이름과 이메일 주소를 입력해주세요."
@@ -6371,6 +6377,9 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
+      "Preview of documents is not yet supported.": [
+        "문서의 미리 보기가 지원되지 않습니다."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
@@ -6388,6 +6397,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } 로 메일링 리스트나 스패머로 이메일이 유출되지 않도록 보호하세요."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
       "Recipient: ": [
         "받는사람: "
@@ -9648,8 +9660,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "확인"
+      ],
       "MM/YY": [
         "MM/YY (월/년)"
+      ],
+      "Payment Processing": [
+        "결제 처리중"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."

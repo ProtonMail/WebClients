@@ -4114,9 +4114,6 @@
       "Username must end with a letter or digit": [
         "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ],
-      "Wrong mailbox password": [
-        "Неправильний пароль поштової скриньки"
-      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачу",
         "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
@@ -6241,6 +6238,9 @@
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
+      ],
+      "Initializing…": [
+        "Ініціалізація..."
       ],
       "Insert image": [
         "Вставити зображення"
@@ -10873,6 +10873,11 @@
       "Go to subscription plans": [
         "Перейти до тарифних планів"
       ],
+      "Upgrade": [
+        "Покращити"
+      ]
+    },
+    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Покращити"
       ]
