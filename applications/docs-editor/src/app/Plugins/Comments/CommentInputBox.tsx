@@ -37,13 +37,11 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
         if (range !== null && boxElem !== null && parentContainer) {
           const parentScrollTop = parentContainer.scrollTop
 
-          const editorRect = rootElement.getBoundingClientRect()
           const parentRect = parentContainer.getBoundingClientRect()
 
           const { top } = range.getBoundingClientRect()
           const selectionRects = createRectsFromDOMRange(editor, range)
-          boxElem.style.left = `${editorRect.right + 10}px`
-          boxElem.style.top = `${top + parentScrollTop - parentRect.top}px`
+          boxElem.style.setProperty('--y', `${top + parentScrollTop - parentRect.top}px`)
 
           const selectionRectsLength = selectionRects.length
           const { container } = selectionState
@@ -92,8 +90,9 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
       if (boxRef.current.contains(event.target as Node)) {
         return
       }
-      if (textContentRef.current.length === 0) {
+      if (!textContentRef.current) {
         cancelAddComment()
+        return
       }
       event.preventDefault()
       event.stopPropagation()
@@ -125,33 +124,49 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
           })
           .catch(sendErrorMessage)
         selectionRef.current = null
+        textContentRef.current = ''
+        cancelAddComment()
       }
     },
-    [controller, setThreadToFocus],
+    [cancelAddComment, controller, setThreadToFocus],
   )
 
   return (
     <div
-      className="bg-norm border-norm absolute left-0 top-0 z-10 w-[250px] rounded border text-sm shadow-lg"
-      ref={boxRef}
+      className="relative print:hidden"
+      style={{
+        gridArea: '1 / 1',
+        width: 'var(--comments-width)',
+        justifySelf: 'end',
+      }}
     >
-      <CommentsComposer
-        autoFocus
-        className="py-1.5"
-        placeholder={c('Placeholder').t`Add a comment...`}
-        onSubmit={onSubmit}
-        onCancel={cancelAddComment}
-        onTextContentChange={(textContent) => (textContentRef.current = textContent)}
-        buttons={(canSubmit, submitComment) => (
-          <ToolbarButton
-            className="bg-primary rounded-full p-1"
-            title={c('Action').t`Add comment`}
-            icon={<Icon name="arrow-up" size={3.5} />}
-            disabled={!canSubmit}
-            onClick={submitComment}
-          />
-        )}
-      />
+      <div
+        className="bg-norm shadow-lifted border-norm absolute left-1/2 top-0 rounded border text-sm"
+        style={{
+          width: 'calc(100% - 2rem)',
+          '--y': 0,
+          transform: `translate3d(-50%, var(--y), 0)`,
+        }}
+        ref={boxRef}
+      >
+        <CommentsComposer
+          autoFocus
+          className="px-2.5 py-2"
+          placeholder={c('Placeholder').t`Add a comment...`}
+          onSubmit={onSubmit}
+          onCancel={cancelAddComment}
+          onTextContentChange={(textContent) => (textContentRef.current = textContent)}
+          buttons={(canSubmit, submitComment) => (
+            <ToolbarButton
+              className="bg-primary rounded-full p-1"
+              title={c('Action').t`Add comment`}
+              icon={<Icon name="arrow-up" size={3.5} />}
+              disabled={!canSubmit}
+              onClick={submitComment}
+            />
+          )}
+        />
+      </div>
     </div>
   )
 }
