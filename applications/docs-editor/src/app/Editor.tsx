@@ -39,6 +39,7 @@ import { TablePlugin } from './Plugins/Table/TablePlugin'
 import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
+import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
 
 const TypingBotEnabled = false
 
@@ -167,6 +168,7 @@ export function Editor({
         <CommentPlugin controller={clientInvoker} username={username} />
         <ImagesPlugin />
         {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={!editingLocked} />}
+        <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
         {!nonInteractiveMode && <DraggableBlockPlugin showGenericAlertModal={showGenericAlertModal} />}
