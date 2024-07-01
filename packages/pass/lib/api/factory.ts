@@ -143,7 +143,7 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
                 const offline = getIsOfflineError(e) || networkError;
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
-                const sessionInactive = e.name === 'InactiveSession';
+                const sessionInactive = e.name === 'InactiveSession' || code === PassErrorCode.SRP_ERROR;
 
                 state.set('appVersionBad', e.name === 'AppVersionBadError');
                 state.set('sessionInactive', sessionInactive);
