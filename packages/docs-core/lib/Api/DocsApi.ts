@@ -1,5 +1,5 @@
-import { CreateDocumentResponse } from '../Types/CreateDocumentResponse'
-import { GetDocumentMetaResponse } from '../Types/GetDocumentMetaResponse'
+import { CreateDocumentResponse } from './Types/CreateDocumentResponse'
+import { GetDocumentMetaResponse } from './Types/GetDocumentMetaResponse'
 import { Api } from '@proton/shared/lib/interfaces'
 import {
   createDocument,
@@ -19,25 +19,23 @@ import {
   resolveThreadInDocument,
   unresolveThreadInDocument,
 } from '@proton/shared/lib/api/docs'
-import { CreateValetTokenResponse } from '../Types/CreateValetTokenResponse'
+import { CreateValetTokenResponse } from './Types/CreateValetTokenResponse'
 import { DocumentMetaInterface } from '@proton/docs-shared'
 import { Commit, SquashCommit } from '@proton/docs-proto'
 import { NodeMeta } from '@proton/drive-store'
-import { getErrorString } from '../../Util/GetErrorString'
-import { Result } from '../../Domain/Result/Result'
-import { ApiResult } from '../../Domain/Result/ApiResult'
+import { getErrorString } from '../Util/GetErrorString'
+import { Result } from '../Domain/Result/Result'
+import { ApiResult } from '../Domain/Result/ApiResult'
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
-import {
-  GetAllThreadIDsResponse,
-  CreateThreadResponse,
-  GetCommentThreadResponse,
-  DeleteThreadResponse,
-  AddCommentToThreadResponse,
-  EditCommentResponse,
-  DeleteCommentResponse,
-  ResolveThreadResponse,
-  UnresolveThreadResponse,
-} from './Types'
+import { AddCommentToThreadResponse } from './Types/AddCommentToThreadResponse'
+import { CreateThreadResponse } from './Types/CreateThreadResponse'
+import { DeleteCommentResponse } from './Types/DeleteCommentResponse'
+import { DeleteThreadResponse } from './Types/DeleteThreadResponse'
+import { EditCommentResponse } from './Types/EditCommentResponse'
+import { GetAllThreadIDsResponse } from './Types/GetAllThreadIDsResponse'
+import { GetCommentThreadResponse } from './Types/GetCommentThreadResponse'
+import { ResolveThreadResponse } from './Types/ResolveThreadResponse'
+import { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
 
 export class DocsApi {
   constructor(private protonApi: Api) {
@@ -212,8 +210,7 @@ export class DocsApi {
       const response = await this.protonApi(
         createThreadInDocument(volumeId, linkId, {
           Mark: markId,
-          Comment: { Content: encryptedMainCommentContent },
-          AuthorEmail: authorEmail,
+          Comment: { Content: encryptedMainCommentContent, AuthorEmail: authorEmail },
         }),
       )
       return Result.ok(response)

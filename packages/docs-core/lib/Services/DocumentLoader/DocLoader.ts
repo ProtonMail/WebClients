@@ -21,7 +21,7 @@ import { CommentService } from '../Comments/CommentService'
 import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { LoadCommit } from '../../UseCase/LoadCommit'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
-import { DocsApi } from '../../Api/Docs/DocsApi'
+import { DocsApi } from '../../Api/DocsApi'
 
 export type StatusObserver = {
   onSuccess: (orchestrator: EditorOrchestratorInterface) => void

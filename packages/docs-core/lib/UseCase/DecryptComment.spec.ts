@@ -3,7 +3,7 @@ import { DecryptComment } from './DecryptComment'
 import { EncryptionService } from '../Services/Encryption/EncryptionService'
 import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Result } from '../Domain/Result/Result'
-import { CommentResponseDto } from '../Api/Docs/Types'
+import { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 
 describe('DecryptComment', () => {
   let decryptComment: DecryptComment

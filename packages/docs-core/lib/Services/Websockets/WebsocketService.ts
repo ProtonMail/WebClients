@@ -13,7 +13,7 @@ import {
   ProcessedIncomingRealtimeEventMessage,
   assertUnreachableAndLog,
 } from '@proton/docs-shared'
-import { GetRealtimeUrlAndToken } from '../../Api/Docs/CreateRealtimeValetToken'
+import { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
 import { WebsocketServiceInterface } from './WebsocketServiceInterface'
 import metrics from '@proton/metrics'
 import {
