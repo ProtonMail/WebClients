@@ -458,11 +458,11 @@
       "Not now": [
         "Agora não"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -4776,6 +4776,9 @@
       "Would you like to update this event?": [
         "Deseja atualizar este evento?"
       ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ],
       "Yearly": [
         "Anualmente"
       ],
@@ -6160,6 +6163,9 @@
       "GDPR data processing agreement": [
         "Acordo de tratamento de dados do RGPD"
       ],
+      "Group management (coming soon)": [
+        "Gerenciamento de grupo (em breve)"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -6216,6 +6222,9 @@
         "Proteja ${ n } dispositivo ao mesmo tempo",
         "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
+      "Require 2FA for organization": [
+        "Exigir 2FA para a organização"
+      ],
       "Router support": [
         "Suporte para router"
       ],
@@ -6242,6 +6251,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integração SSO (em breve)"
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
@@ -6948,8 +6960,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processamento do pagamento"
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
@@ -7558,6 +7576,11 @@
         "Actualizar"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Melhorar"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mês",
@@ -7800,6 +7823,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
@@ -7855,6 +7883,9 @@
       ],
       "Extra storage and bonuses": [
         "Armazenamento adicional e bónus"
+      ],
+      "Learn more": [
+        "Mais informação"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"

@@ -482,11 +482,11 @@
       "Not now": [
         "Nyní ne"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -7557,11 +7557,20 @@
       "Card number": [
         "Číslo karty"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "V současné době je automatické obnovení předplatného deaktivováno. Pokud nyní předplatné změníte, bude automatické obnovení opět povoleno."
+      ],
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Rozumím"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Zpracování platby"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
@@ -7574,6 +7583,9 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Zpracováváme vaši platbu za vyúčtovanou fakturu. Před provedením změn v tarifu nebo aktualizací platebních údajů vyčkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ]
     },
     "Payments.Error": {
@@ -8620,6 +8632,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } včetně sdílení kalendáře"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } se sdílením kalendáře a dostupností"
+      ],
       "${ dayDiff } day left": [
         "Zbývá ${ dayDiff } den",
         "Zbývají ${ dayDiff } dny",
@@ -8629,6 +8644,9 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } včetně historie verzí"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } s historií verzí"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } a všechny prémiové funkce produktivity"
       ],
@@ -8637,6 +8655,9 @@
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchovává vaše firemní data v bezpečí a umožňuje posílat šifrované e-maily komukoli."
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } s automatickým přesměrováním e-mailů"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } kalendář na uživatele",
@@ -8659,6 +8680,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } včetně neomezeného počtu aliasů Hide-my-email"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } s ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } úložiště na uživatele"
       ],
@@ -8670,6 +8694,9 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } poskytne vašemu týmu vše, co potřebuje k vyšší produktivitě a organizaci práce, a to díky přístupu ke všem aplikacím ${ BRAND_NAME } a jejich prémiovým funkcím."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "${ planName } poskytne vašemu týmu vše, co potřebuje, aby byl produktivnější, organizovanější a měl pod kontrolou svou poštu, plánování a další věci."
@@ -8686,11 +8713,20 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } nabízí ${ planMaxSpace } úložiště pro vaše soubory a fotografie. Máte také nárok na roční bonusy k úložišti."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro uživatelské e-maily, přílohy, události a soubory. Také máte nárok na roční bonusový prostor na úložišti."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro uživatelské e-maily, přílohy, události, soubory a hesla. Také máte nárok na roční bonusový prostor na úložišti."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } s přístupem ke všem vysokorychlostním serverům v(e) ${ vpnCountries } zemích"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } s blokováním malware a reklamy"
       ],
       "10 email addresses": [
         "10 e-mailových adres"
@@ -8715,6 +8751,9 @@
       ],
       "All you need for your business": [
         "Vše co potřebujete pro vaše podnikání"
+      ],
+      "Any custom email domains will be disabled": [
+        "Jakékoli vlastní e-mailové domény budou deaktivovány"
       ],
       "Automatic email forwarding": [
         "Automatické přesměrování e-mailů"
@@ -8752,6 +8791,9 @@
       "Extra storage and bonuses": [
         "Úložný prostor a bonusy navíc"
       ],
+      "Extra storage and users": [
+        "Úložný prostor a uživatelé navíc"
+      ],
       "Helping activists in Hong Kong": [
         "Pomoc aktivistům v Hong Kongu"
       ],
@@ -8766,6 +8808,9 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Pokud po vypršení platnosti předplatného ${ planName } překročíte limity bezplatného tarifu, nebudete moci:"
+      ],
+      "Invited members will be removed from your organization": [
+        "Pozvaní členové budou odebráni z vaší organizace"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Zabezpečte svůj tým na cestách pomocí našich aplikací pro web, iOS, Android, Windows, Mac a Linux."
@@ -8785,6 +8830,9 @@
       "Online privacy, for your whole family": [
         "Online soukromí pro celou vaši rodinu"
       ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Organizace, další uživatelé a vlastní e-mailové domény nejsou v bezplatném plánu podporovány. To znamená, že:"
+      ],
       "Our fight against censorship in Russia": [
         "Náš boj proti cenzuře v Rusku"
       ],
@@ -8796,6 +8844,9 @@
       ],
       "Priority support": [
         "Prioritní podpora"
+      ],
+      "Productivity features": [
+        "Funkce produktivity"
       ],
       "Read the story": [
         "Přečíst příběh"
@@ -8830,6 +8881,15 @@
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
       ],
+      "Users won’t be able to manage their calendars": [
+        "Uživatelé nebudou moci spravovat své kalendáře"
+      ],
+      "Users won’t be able to send emails": [
+        "Uživatelé nebudou moci odesílat e-maily"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "Uživatelé nebudou moci synchronizovat soubory na svých zařízeních"
+      ],
       "Version history": [
         "Historie verzí"
       ],
@@ -8841,6 +8901,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Když zrušíte ${ planName }, bude vám snížen účet na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
