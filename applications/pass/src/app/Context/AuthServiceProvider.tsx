@@ -49,6 +49,7 @@ import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessi
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -374,9 +375,13 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onSessionPersist: (encrypted) => {
                 localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted);
 
-                /** Broadcast the session update to other clients */
+                /** Broadcast the session update to other tabs :
+                 * Sensitive components from the encrypted session blob are not synced.
+                 * Changes to security features (e.g., pin lock, password lock) should be
+                 * recomputed via explicit user action rather than auto-synced */
                 const localID = authStore.getLocalID();
-                const data = authStore.getSession();
+                const data = omit(authStore.getSession(), ['keyPassword', 'sessionLockToken', 'offlineKD']);
+
                 sw?.send({ type: 'session', localID, data, broadcast: true });
             },
 
