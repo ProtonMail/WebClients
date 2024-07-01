@@ -1,16 +1,21 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Domain } from '@proton/shared/lib/interfaces';
 
 import { Alert, Copy, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
-const VerifySection = ({ domain }) => {
+interface Props {
+    domain: Partial<Domain>;
+}
+
+const VerifySection = ({ domain }: Props) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`Verification code copied to clipboard` });
-    const domainName = domain.DomainName;
+    const domainName = domain?.DomainName || '';
+    const verifyCode = domain?.VerifyCode || '';
     const kbLink = <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`here`}</Href>;
     return (
         <>
@@ -50,14 +55,9 @@ const VerifySection = ({ domain }) => {
                             <code key="txt">TXT</code>,
                             <code key="at">@</code>,
                             <div className="flex flex-nowrap items-center" key="value">
-                                <Copy
-                                    onCopy={handleCopy}
-                                    size="small"
-                                    className="shrink-0 mr-2"
-                                    value={domain.VerifyCode}
-                                />{' '}
-                                <code className="text-ellipsis lh-rg" title={domain.VerifyCode}>
-                                    {domain.VerifyCode}
+                                <Copy onCopy={handleCopy} size="small" className="shrink-0 mr-2" value={verifyCode} />{' '}
+                                <code className="text-ellipsis lh-rg" title={verifyCode}>
+                                    {verifyCode}
                                 </code>
                             </div>,
                         ]}
@@ -66,10 +66,6 @@ const VerifySection = ({ domain }) => {
             </Table>
         </>
     );
-};
-
-VerifySection.propTypes = {
-    domain: PropTypes.object.isRequired,
 };
 
 export default VerifySection;

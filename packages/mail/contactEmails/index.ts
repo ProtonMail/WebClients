@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, serverEvent, getInitialModelState } from '@proton/account';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store/interface';
+import { ModelState, getInitialModelState, serverEvent } from '@proton/account';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryContactEmails } from '@proton/shared/lib/api/contacts';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';

@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from './interface';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+
 import { sharedReducers } from './sharedReducers';
 
 export const extraThunkArguments = {} as ProtonThunkArguments;

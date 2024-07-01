@@ -6,7 +6,7 @@
         "lint": "eslint ."
     },
     "dependencies": {
-        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "@proton/eslint-config-proton": "workspace:^",
         "abortcontroller-polyfill": "^1.7.5",
         "core-js": "^3.37.1",
         "regenerator-runtime": "^0.14.1",

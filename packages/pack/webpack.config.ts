@@ -104,14 +104,6 @@ const getConfig = (env: any): Configuration => {
             },
             crossOriginLoading: 'anonymous',
         },
-        cache: {
-            type: 'filesystem',
-            cacheDirectory: path.resolve('./node_modules/.cache/webpack'),
-            buildDependencies: {
-                defaultWebpack: ['webpack/lib/'],
-                config: [__filename],
-            },
-        },
         module: {
             strictExportPresence: true, // Make missing exports an error instead of warning
             rules: [...getJsLoaders(options), ...getCssLoaders(options), ...getAssetsLoaders()],

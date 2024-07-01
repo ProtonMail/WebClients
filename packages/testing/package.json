@@ -12,11 +12,12 @@
         "@proton/account": "workspace:^",
         "@proton/calendar": "workspace:^",
         "@proton/mail": "workspace:^",
-        "@proton/shared": "workspace:packages/shared"
+        "@proton/shared": "workspace:^"
     },
     "devDependencies": {
         "@jackfranklin/test-data-bot": "^2.1.0",
         "cross-fetch": "^4.0.0",
+        "eslint": "^8.57.0",
         "msw": "^2.3.0"
     }
 }

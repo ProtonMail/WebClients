@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@lexical/yjs": "0.16.0",
-    "@proton/docs-proto": "workspace:packages/docs-proto",
+    "@proton/docs-proto": "workspace:^",
     "google-protobuf": "^3.21.2",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.15"

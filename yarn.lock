@@ -186,20 +186,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4, @babel/code-frame@npm:^7.12.13, @babel/code-frame@npm:^7.16.0, @babel/code-frame@npm:^7.16.7, @babel/code-frame@npm:^7.22.13, @babel/code-frame@npm:^7.24.6, @babel/code-frame@npm:^7.5.5, @babel/code-frame@npm:^7.8.3":
-  version: 7.24.6
-  resolution: "@babel/code-frame@npm:7.24.6"
+"@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4, @babel/code-frame@npm:^7.12.13, @babel/code-frame@npm:^7.16.0, @babel/code-frame@npm:^7.16.7, @babel/code-frame@npm:^7.22.13, @babel/code-frame@npm:^7.24.7, @babel/code-frame@npm:^7.5.5, @babel/code-frame@npm:^7.8.3":
+  version: 7.24.7
+  resolution: "@babel/code-frame@npm:7.24.7"
   dependencies:
-    "@babel/highlight": "npm:^7.24.6"
+    "@babel/highlight": "npm:^7.24.7"
     picocolors: "npm:^1.0.0"
-  checksum: 10c0/c93c6d1763530f415218c31d07359364397f19b70026abdff766164c21ed352a931cf07f3102c5fb9e04792de319e332d68bcb1f7debef601a02197f90f9ba24
+  checksum: 10c0/ab0af539473a9f5aeaac7047e377cb4f4edd255a81d84a76058595f8540784cc3fbe8acf73f1e073981104562490aabfb23008cd66dc677a456a4ed5390fdde6
   languageName: node
   linkType: hard
 
-"@babel/compat-data@npm:^7.20.5, @babel/compat-data@npm:^7.22.6, @babel/compat-data@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/compat-data@npm:7.24.6"
-  checksum: 10c0/f50abbd4008eb2a5d12139c578809cebbeaeb8e660fb12d546eb2e7c2108ae1836ab8339184a5f5ce0e95bf81bb91e18edce86b387c59db937b01693ec0bc774
+"@babel/compat-data@npm:^7.20.5, @babel/compat-data@npm:^7.22.6, @babel/compat-data@npm:^7.24.6, @babel/compat-data@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/compat-data@npm:7.24.7"
+  checksum: 10c0/dcd93a5632b04536498fbe2be5af1057f635fd7f7090483d8e797878559037e5130b26862ceb359acbae93ed27e076d395ddb4663db6b28a665756ffd02d324f
   languageName: node
   linkType: hard
 
@@ -227,26 +227,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.24.4, @babel/core@npm:^7.24.6, @babel/core@npm:^7.7.5":
-  version: 7.24.6
-  resolution: "@babel/core@npm:7.24.6"
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.23.9, @babel/core@npm:^7.24.4, @babel/core@npm:^7.24.6, @babel/core@npm:^7.7.5":
+  version: 7.24.7
+  resolution: "@babel/core@npm:7.24.7"
   dependencies:
     "@ampproject/remapping": "npm:^2.2.0"
-    "@babel/code-frame": "npm:^7.24.6"
-    "@babel/generator": "npm:^7.24.6"
-    "@babel/helper-compilation-targets": "npm:^7.24.6"
-    "@babel/helper-module-transforms": "npm:^7.24.6"
-    "@babel/helpers": "npm:^7.24.6"
-    "@babel/parser": "npm:^7.24.6"
-    "@babel/template": "npm:^7.24.6"
-    "@babel/traverse": "npm:^7.24.6"
-    "@babel/types": "npm:^7.24.6"
+    "@babel/code-frame": "npm:^7.24.7"
+    "@babel/generator": "npm:^7.24.7"
+    "@babel/helper-compilation-targets": "npm:^7.24.7"
+    "@babel/helper-module-transforms": "npm:^7.24.7"
+    "@babel/helpers": "npm:^7.24.7"
+    "@babel/parser": "npm:^7.24.7"
+    "@babel/template": "npm:^7.24.7"
+    "@babel/traverse": "npm:^7.24.7"
+    "@babel/types": "npm:^7.24.7"
     convert-source-map: "npm:^2.0.0"
     debug: "npm:^4.1.0"
     gensync: "npm:^1.0.0-beta.2"
     json5: "npm:^2.2.3"
     semver: "npm:^6.3.1"
-  checksum: 10c0/e0762a8daef7f417494d555929418cfacd6848c7fc3310ec00e6dd8cecac20b7f590e760bfc9365d2af07874a3f5599832f9c9ff7f1a9d126a168f77ba67945a
+  checksum: 10c0/4004ba454d3c20a46ea66264e06c15b82e9f6bdc35f88819907d24620da70dbf896abac1cb4cc4b6bb8642969e45f4d808497c9054a1388a386cf8c12e9b9e0d
   languageName: node
   linkType: hard
 
@@ -261,15 +261,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/generator@npm:^7.12.11, @babel/generator@npm:^7.12.5, @babel/generator@npm:^7.23.0, @babel/generator@npm:^7.24.6, @babel/generator@npm:^7.7.2":
-  version: 7.24.6
-  resolution: "@babel/generator@npm:7.24.6"
+"@babel/generator@npm:^7.12.11, @babel/generator@npm:^7.12.5, @babel/generator@npm:^7.23.0, @babel/generator@npm:^7.24.7, @babel/generator@npm:^7.7.2":
+  version: 7.24.7
+  resolution: "@babel/generator@npm:7.24.7"
   dependencies:
-    "@babel/types": "npm:^7.24.6"
+    "@babel/types": "npm:^7.24.7"
     "@jridgewell/gen-mapping": "npm:^0.3.5"
     "@jridgewell/trace-mapping": "npm:^0.3.25"
     jsesc: "npm:^2.5.1"
-  checksum: 10c0/8d71a17b386536582354afba53cc784396458a88cc9f05f0c6de0ec99475f6f539943b3566b2e733820c4928236952473831765e483c25d68cc007a6e604d782
+  checksum: 10c0/06b1f3350baf527a3309e50ffd7065f7aee04dd06e1e7db794ddfde7fe9d81f28df64edd587173f8f9295496a7ddb74b9a185d4bf4de7bb619e6d4ec45c8fd35
   languageName: node
   linkType: hard
 
@@ -291,16 +291,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-compilation-targets@npm:^7.13.0, @babel/helper-compilation-targets@npm:^7.20.7, @babel/helper-compilation-targets@npm:^7.22.6, @babel/helper-compilation-targets@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-compilation-targets@npm:7.24.6"
+"@babel/helper-compilation-targets@npm:^7.13.0, @babel/helper-compilation-targets@npm:^7.20.7, @babel/helper-compilation-targets@npm:^7.22.6, @babel/helper-compilation-targets@npm:^7.24.6, @babel/helper-compilation-targets@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-compilation-targets@npm:7.24.7"
   dependencies:
-    "@babel/compat-data": "npm:^7.24.6"
-    "@babel/helper-validator-option": "npm:^7.24.6"
+    "@babel/compat-data": "npm:^7.24.7"
+    "@babel/helper-validator-option": "npm:^7.24.7"
     browserslist: "npm:^4.22.2"
     lru-cache: "npm:^5.1.1"
     semver: "npm:^6.3.1"
-  checksum: 10c0/4d41150086959f5f4d72d27bae29204192e943537ecb71df1711d1f5d8791358a44f3a5882ed3c8238ba0c874b0b55213af43767e14771765f13b8d15b262432
+  checksum: 10c0/1d580a9bcacefe65e6bf02ba1dafd7ab278269fef45b5e281d8354d95c53031e019890464e7f9351898c01502dd2e633184eb0bcda49ed2ecd538675ce310f51
   languageName: node
   linkType: hard
 
@@ -369,29 +369,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-environment-visitor@npm:^7.22.20, @babel/helper-environment-visitor@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-environment-visitor@npm:7.24.6"
-  checksum: 10c0/fdcd18ac505ed71f40c05cc992b648a4495b0aa5310a774492a0f74d8dcf3579691102f516561a651d3de6c3a44fe64bfb3049d11c14c5857634ef1823ea409a
+"@babel/helper-environment-visitor@npm:^7.22.20, @babel/helper-environment-visitor@npm:^7.24.6, @babel/helper-environment-visitor@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-environment-visitor@npm:7.24.7"
+  dependencies:
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/36ece78882b5960e2d26abf13cf15ff5689bf7c325b10a2895a74a499e712de0d305f8d78bb382dd3c05cfba7e47ec98fe28aab5674243e0625cd38438dd0b2d
   languageName: node
   linkType: hard
 
-"@babel/helper-function-name@npm:^7.23.0, @babel/helper-function-name@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-function-name@npm:7.24.6"
+"@babel/helper-function-name@npm:^7.23.0, @babel/helper-function-name@npm:^7.24.6, @babel/helper-function-name@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-function-name@npm:7.24.7"
   dependencies:
-    "@babel/template": "npm:^7.24.6"
-    "@babel/types": "npm:^7.24.6"
-  checksum: 10c0/5ba2f8db789b3f5a2b2239300a217aa212e303cd7bfad9c8b90563807f49215e8c679e8f8f177b6aaca2038038e29bc702b83839e1f7b4896d79c44a75cac97a
+    "@babel/template": "npm:^7.24.7"
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/e5e41e6cf86bd0f8bf272cbb6e7c5ee0f3e9660414174435a46653efba4f2479ce03ce04abff2aa2ef9359cf057c79c06cb7b134a565ad9c0e8a50dcdc3b43c4
   languageName: node
   linkType: hard
 
-"@babel/helper-hoist-variables@npm:^7.22.5, @babel/helper-hoist-variables@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-hoist-variables@npm:7.24.6"
+"@babel/helper-hoist-variables@npm:^7.22.5, @babel/helper-hoist-variables@npm:^7.24.6, @babel/helper-hoist-variables@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-hoist-variables@npm:7.24.7"
   dependencies:
-    "@babel/types": "npm:^7.24.6"
-  checksum: 10c0/e10ec6b864aaa419ec4934f5fcb5d0cfcc9d0657584a1b6c3c42ada949d44ca6bffcdab433a90ada4396c747e551cca31ba0e565ea005ab3f50964e3817bf6cf
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/19ee37563bbd1219f9d98991ad0e9abef77803ee5945fd85aa7aa62a67c69efca9a801696a1b58dda27f211e878b3327789e6fd2a6f6c725ccefe36774b5ce95
   languageName: node
   linkType: hard
 
@@ -404,27 +406,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-module-imports@npm:^7.10.4, @babel/helper-module-imports@npm:^7.12.13, @babel/helper-module-imports@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-module-imports@npm:7.24.6"
+"@babel/helper-module-imports@npm:^7.10.4, @babel/helper-module-imports@npm:^7.12.13, @babel/helper-module-imports@npm:^7.24.6, @babel/helper-module-imports@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-module-imports@npm:7.24.7"
   dependencies:
-    "@babel/types": "npm:^7.24.6"
-  checksum: 10c0/e0db3fbfcd963d138f0792ff626f940a576fcf212d02b8fe6478dccf3421bd1c2a76f8e69c7450c049985e7b63b30be309a24eeeb6ad7c2137a31b676a095a84
+    "@babel/traverse": "npm:^7.24.7"
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/97c57db6c3eeaea31564286e328a9fb52b0313c5cfcc7eee4bc226aebcf0418ea5b6fe78673c0e4a774512ec6c86e309d0f326e99d2b37bfc16a25a032498af0
   languageName: node
   linkType: hard
 
-"@babel/helper-module-transforms@npm:^7.12.1, @babel/helper-module-transforms@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-module-transforms@npm:7.24.6"
+"@babel/helper-module-transforms@npm:^7.12.1, @babel/helper-module-transforms@npm:^7.24.6, @babel/helper-module-transforms@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-module-transforms@npm:7.24.7"
   dependencies:
-    "@babel/helper-environment-visitor": "npm:^7.24.6"
-    "@babel/helper-module-imports": "npm:^7.24.6"
-    "@babel/helper-simple-access": "npm:^7.24.6"
-    "@babel/helper-split-export-declaration": "npm:^7.24.6"
-    "@babel/helper-validator-identifier": "npm:^7.24.6"
+    "@babel/helper-environment-visitor": "npm:^7.24.7"
+    "@babel/helper-module-imports": "npm:^7.24.7"
+    "@babel/helper-simple-access": "npm:^7.24.7"
+    "@babel/helper-split-export-declaration": "npm:^7.24.7"
+    "@babel/helper-validator-identifier": "npm:^7.24.7"
   peerDependencies:
     "@babel/core": ^7.0.0
-  checksum: 10c0/9e2e3d0ddb397b36b9e8c7d94e175a36be8cb888ef370cefef2cdfd53ae1f87d567b268bd90ed9a6c706485a8de3da19cac577657613e9cd17210b91cbdfb00b
+  checksum: 10c0/4f311755fcc3b4cbdb689386309cdb349cf0575a938f0b9ab5d678e1a81bbb265aa34ad93174838245f2ac7ff6d5ddbd0104638a75e4e961958ed514355687b6
   languageName: node
   linkType: hard
 
@@ -477,12 +480,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-simple-access@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-simple-access@npm:7.24.6"
+"@babel/helper-simple-access@npm:^7.24.6, @babel/helper-simple-access@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-simple-access@npm:7.24.7"
   dependencies:
-    "@babel/types": "npm:^7.24.6"
-  checksum: 10c0/b17e404dd6c9787fc7d558aea5222471a77e29596705f0d10b4c2a58b9d71ff7eae915094204848cc1af99b771553caa69337a768b9abdd82b54a0050ba83eb9
+    "@babel/traverse": "npm:^7.24.7"
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/7230e419d59a85f93153415100a5faff23c133d7442c19e0cd070da1784d13cd29096ee6c5a5761065c44e8164f9f80e3a518c41a0256df39e38f7ad6744fed7
   languageName: node
   linkType: hard
 
@@ -495,33 +499,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-split-export-declaration@npm:^7.18.6, @babel/helper-split-export-declaration@npm:^7.22.6, @babel/helper-split-export-declaration@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-split-export-declaration@npm:7.24.6"
+"@babel/helper-split-export-declaration@npm:^7.18.6, @babel/helper-split-export-declaration@npm:^7.22.6, @babel/helper-split-export-declaration@npm:^7.24.6, @babel/helper-split-export-declaration@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-split-export-declaration@npm:7.24.7"
   dependencies:
-    "@babel/types": "npm:^7.24.6"
-  checksum: 10c0/53a5dd8691fdffc89cc7fcf5aed0ad1d8bc39796a5782a3d170dcbf249eb5c15cc8a290e8d09615711d18798ad04a7d0694ab5195d35fa651abbc1b9c885d6a8
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/0254577d7086bf09b01bbde98f731d4fcf4b7c3fa9634fdb87929801307c1f6202a1352e3faa5492450fa8da4420542d44de604daf540704ff349594a78184f6
   languageName: node
   linkType: hard
 
-"@babel/helper-string-parser@npm:^7.24.1, @babel/helper-string-parser@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-string-parser@npm:7.24.6"
-  checksum: 10c0/95115bf676e92c4e99166395649108d97447e6cabef1fabaec8cdbc53a43f27b5df2268ff6534439d405bc1bd06685b163eb3b470455bd49f69159dada414145
+"@babel/helper-string-parser@npm:^7.24.1, @babel/helper-string-parser@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-string-parser@npm:7.24.7"
+  checksum: 10c0/47840c7004e735f3dc93939c77b099bb41a64bf3dda0cae62f60e6f74a5ff80b63e9b7cf77b5ec25a324516381fc994e1f62f922533236a8e3a6af57decb5e1e
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-identifier@npm:^7.16.7, @babel/helper-validator-identifier@npm:^7.24.5, @babel/helper-validator-identifier@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-validator-identifier@npm:7.24.6"
-  checksum: 10c0/d29d2e3fca66c31867a009014169b93f7bc21c8fc1dd7d0b9d85d7a4000670526ff2222d966febb75a6e12f9859a31d1e75b558984e28ecb69651314dd0a6fd1
+"@babel/helper-validator-identifier@npm:^7.16.7, @babel/helper-validator-identifier@npm:^7.24.5, @babel/helper-validator-identifier@npm:^7.24.6, @babel/helper-validator-identifier@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-validator-identifier@npm:7.24.7"
+  checksum: 10c0/87ad608694c9477814093ed5b5c080c2e06d44cb1924ae8320474a74415241223cc2a725eea2640dd783ff1e3390e5f95eede978bc540e870053152e58f1d651
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-option@npm:^7.18.6, @babel/helper-validator-option@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helper-validator-option@npm:7.24.6"
-  checksum: 10c0/787268dff5cf77f3b704454b96ab7b58aa4f43b2808247e51859a103a1c28a9c252100f830433f4b37a73f4a61ba745bbeef4cdccbab48c1e9adf037f4ca3491
+"@babel/helper-validator-option@npm:^7.18.6, @babel/helper-validator-option@npm:^7.24.6, @babel/helper-validator-option@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helper-validator-option@npm:7.24.7"
+  checksum: 10c0/21aea2b7bc5cc8ddfb828741d5c8116a84cbc35b4a3184ec53124f08e09746f1f67a6f9217850188995ca86059a7942e36d8965a6730784901def777b7e8a436
   languageName: node
   linkType: hard
 
@@ -536,34 +540,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helpers@npm:^7.12.5, @babel/helpers@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/helpers@npm:7.24.6"
+"@babel/helpers@npm:^7.12.5, @babel/helpers@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/helpers@npm:7.24.7"
   dependencies:
-    "@babel/template": "npm:^7.24.6"
-    "@babel/types": "npm:^7.24.6"
-  checksum: 10c0/e5b5c0919fd6fa56ae11c15a72962d8de0ac19db524849554af28cf08ac32f9ae5aee49a43146eb150f54418cefb8e890fa2b2f33d029434dc7777dbcdfd5bac
+    "@babel/template": "npm:^7.24.7"
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/aa8e230f6668773e17e141dbcab63e935c514b4b0bf1fed04d2eaefda17df68e16b61a56573f7f1d4d1e605ce6cc162b5f7e9fdf159fde1fd9b77c920ae47d27
   languageName: node
   linkType: hard
 
-"@babel/highlight@npm:^7.10.4, @babel/highlight@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/highlight@npm:7.24.6"
+"@babel/highlight@npm:^7.10.4, @babel/highlight@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/highlight@npm:7.24.7"
   dependencies:
-    "@babel/helper-validator-identifier": "npm:^7.24.6"
+    "@babel/helper-validator-identifier": "npm:^7.24.7"
     chalk: "npm:^2.4.2"
     js-tokens: "npm:^4.0.0"
     picocolors: "npm:^1.0.0"
-  checksum: 10c0/5bbc31695e5d44e97feb267f7aaf4c52908560d184ffeb2e2e57aae058d40125592931883889413e19def3326895ddb41ff45e090fa90b459d8c294b4ffc238c
+  checksum: 10c0/674334c571d2bb9d1c89bdd87566383f59231e16bcdcf5bb7835babdf03c9ae585ca0887a7b25bdf78f303984af028df52831c7989fecebb5101cc132da9393a
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.11, @babel/parser@npm:^7.12.7, @babel/parser@npm:^7.14.3, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.5, @babel/parser@npm:^7.21.8, @babel/parser@npm:^7.22.5, @babel/parser@npm:^7.23.0, @babel/parser@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/parser@npm:7.24.6"
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.11, @babel/parser@npm:^7.12.7, @babel/parser@npm:^7.14.3, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.5, @babel/parser@npm:^7.21.8, @babel/parser@npm:^7.22.5, @babel/parser@npm:^7.23.0, @babel/parser@npm:^7.23.9, @babel/parser@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/parser@npm:7.24.7"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: 10c0/cbef70923078a20fe163b03f4a6482be65ed99d409a57f3091a23ce3a575ee75716c30e7ea9f40b692ac5660f34055f4cbeb66a354fad15a6cf1fca35c3496c5
+  checksum: 10c0/8b244756872185a1c6f14b979b3535e682ff08cb5a2a5fd97cc36c017c7ef431ba76439e95e419d43000c5b07720495b00cf29a7f0d9a483643d08802b58819b
   languageName: node
   linkType: hard
 
@@ -1901,14 +1905,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/template@npm:7, @babel/template@npm:^7.10.4, @babel/template@npm:^7.12.7, @babel/template@npm:^7.24.6, @babel/template@npm:^7.3.3":
-  version: 7.24.6
-  resolution: "@babel/template@npm:7.24.6"
+"@babel/template@npm:7, @babel/template@npm:^7.10.4, @babel/template@npm:^7.12.7, @babel/template@npm:^7.24.6, @babel/template@npm:^7.24.7, @babel/template@npm:^7.3.3":
+  version: 7.24.7
+  resolution: "@babel/template@npm:7.24.7"
   dependencies:
-    "@babel/code-frame": "npm:^7.24.6"
-    "@babel/parser": "npm:^7.24.6"
-    "@babel/types": "npm:^7.24.6"
-  checksum: 10c0/a4d5805770de908b445f7cdcebfcb6eaa07b1ec9c7b78fd3f375a911b1522c249bddae6b96bc4aac24247cc603e3e6cffcf2fe50b4c929dfeb22de289b517525
+    "@babel/code-frame": "npm:^7.24.7"
+    "@babel/parser": "npm:^7.24.7"
+    "@babel/types": "npm:^7.24.7"
+  checksum: 10c0/95b0b3ee80fcef685b7f4426f5713a855ea2cd5ac4da829b213f8fb5afe48a2a14683c2ea04d446dbc7f711c33c5cd4a965ef34dcbe5bc387c9e966b67877ae3
   languageName: node
   linkType: hard
 
@@ -1930,21 +1934,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.1.6, @babel/traverse@npm:^7.12.11, @babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.14.2, @babel/traverse@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/traverse@npm:7.24.6"
+"@babel/traverse@npm:^7.1.6, @babel/traverse@npm:^7.12.11, @babel/traverse@npm:^7.12.9, @babel/traverse@npm:^7.13.0, @babel/traverse@npm:^7.14.2, @babel/traverse@npm:^7.24.7":
+  version: 7.24.7
+  resolution: "@babel/traverse@npm:7.24.7"
   dependencies:
-    "@babel/code-frame": "npm:^7.24.6"
-    "@babel/generator": "npm:^7.24.6"
-    "@babel/helper-environment-visitor": "npm:^7.24.6"
-    "@babel/helper-function-name": "npm:^7.24.6"
-    "@babel/helper-hoist-variables": "npm:^7.24.6"
-    "@babel/helper-split-export-declaration": "npm:^7.24.6"
-    "@babel/parser": "npm:^7.24.6"
-    "@babel/types": "npm:^7.24.6"
+    "@babel/code-frame": "npm:^7.24.7"
+    "@babel/generator": "npm:^7.24.7"
+    "@babel/helper-environment-visitor": "npm:^7.24.7"
+    "@babel/helper-function-name": "npm:^7.24.7"
+    "@babel/helper-hoist-variables": "npm:^7.24.7"
+    "@babel/helper-split-export-declaration": "npm:^7.24.7"
+    "@babel/parser": "npm:^7.24.7"
+    "@babel/types": "npm:^7.24.7"
     debug: "npm:^4.3.1"
     globals: "npm:^11.1.0"
-  checksum: 10c0/39027d5fc7a241c6b71bb5872c2bdcec53743cd7ef3c151bbe6fd7cf874d15f4bc09e5d7e19e2f534b0eb2c115f5368553885fa4253aa1bc9441c6e5bf9efdaf
+  checksum: 10c0/a5135e589c3f1972b8877805f50a084a04865ccb1d68e5e1f3b94a8841b3485da4142e33413d8fd76bc0e6444531d3adf1f59f359c11ffac452b743d835068ab
   languageName: node
   linkType: hard
 
@@ -1969,14 +1973,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.12.11, @babel/types@npm:^7.12.6, @babel/types@npm:^7.12.7, @babel/types@npm:^7.17.0, @babel/types@npm:^7.2.0, @babel/types@npm:^7.23.0, @babel/types@npm:^7.24.6, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
-  version: 7.24.6
-  resolution: "@babel/types@npm:7.24.6"
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.12.11, @babel/types@npm:^7.12.6, @babel/types@npm:^7.12.7, @babel/types@npm:^7.17.0, @babel/types@npm:^7.2.0, @babel/types@npm:^7.23.0, @babel/types@npm:^7.24.6, @babel/types@npm:^7.24.7, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
+  version: 7.24.7
+  resolution: "@babel/types@npm:7.24.7"
   dependencies:
-    "@babel/helper-string-parser": "npm:^7.24.6"
-    "@babel/helper-validator-identifier": "npm:^7.24.6"
+    "@babel/helper-string-parser": "npm:^7.24.7"
+    "@babel/helper-validator-identifier": "npm:^7.24.7"
     to-fast-properties: "npm:^2.0.0"
-  checksum: 10c0/1d94d92d97ef49030ad7f9e14cfccfeb70b1706dabcaa69037e659ec9d2c3178fb005d2088cce40d88dfc1306153d9157fe038a79ea2be92e5e6b99a59ef80cc
+  checksum: 10c0/d9ecbfc3eb2b05fb1e6eeea546836ac30d990f395ef3fe3f75ced777a222c3cfc4489492f72e0ce3d9a5a28860a1ce5f81e66b88cf5088909068b3ff4fab72c1
   languageName: node
   linkType: hard
 
@@ -6446,7 +6450,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -6461,17 +6472,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/activation@workspace:packages/activation":
+"@proton/activation@workspace:^, @proton/activation@workspace:packages/activation":
   version: 0.0.0-use.local
   resolution: "@proton/activation@workspace:packages/activation"
   dependencies:
-    "@proton/atoms": "workspace:packages/atoms"
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/utils": "workspace:packages/utils"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/dom": "npm:^10.1.0"
     "@testing-library/jest-dom": "npm:^6.4.5"
@@ -6507,8 +6519,8 @@ __metadata:
   resolution: "@proton/ai-assistant@workspace:packages/ai-assistant"
   dependencies:
     "@mlc-ai/web-llm": "npm:0.2.32"
-    "@proton/llm": "workspace:packages/llm"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/llm": "workspace:^"
+    "@proton/shared": "workspace:^"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     typescript: "npm:^5.4.5"
@@ -6525,13 +6537,13 @@ __metadata:
     "@babel/core": "npm:^7.24.6"
     "@babel/preset-react": "npm:^7.24.6"
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@storybook/addon-actions": "npm:^6.5.16"
     "@storybook/addon-essentials": "npm:^6.5.16"
     "@storybook/addon-links": "npm:^6.5.16"
@@ -6571,7 +6583,7 @@ __metadata:
   resolution: "@proton/calendar@workspace:packages/calendar"
   dependencies:
     "@proton/account": "workspace:^"
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -6586,12 +6598,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/chargebee@workspace:packages/chargebee":
+"@proton/chargebee@workspace:^, @proton/chargebee@workspace:packages/chargebee":
   version: 0.0.0-use.local
   resolution: "@proton/chargebee@workspace:packages/chargebee"
   dependencies:
     "@fullhuman/postcss-purgecss": "npm:^6.0.0"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/styles": "workspace:^"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     postcss: "npm:^8.4.38"
@@ -6608,7 +6620,6 @@ __metadata:
   resolution: "@proton/colors@workspace:packages/colors"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:^"
     "@types/css-tree": "npm:^2.3.7"
     "@types/jest": "npm:^29.5.12"
     "@types/node": "npm:^20.12.13"
@@ -6627,7 +6638,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/components@workspace:packages/components":
+"@proton/components@workspace:^, @proton/components@workspace:packages/components":
   version: 0.0.0-use.local
   resolution: "@proton/components@workspace:packages/components"
   dependencies:
@@ -6642,17 +6653,20 @@ __metadata:
     "@noble/ed25519": "npm:1.7.3"
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
-    "@proton/chargebee": "workspace:packages/chargebee"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/chargebee": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
     "@proton/features": "workspace:^"
-    "@proton/i18n": "workspace:packages/i18n"
+    "@proton/i18n": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/metrics": "workspace:packages/metrics"
+    "@proton/metrics": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/sieve": "workspace:packages/sieve"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/sieve": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6723,22 +6737,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/cross-storage@workspace:packages/cross-storage":
+"@proton/cross-storage@workspace:^, @proton/cross-storage@workspace:packages/cross-storage":
   version: 0.0.0-use.local
   resolution: "@proton/cross-storage@workspace:packages/cross-storage"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/shared": "workspace:^"
     eslint: "npm:^8.57.0"
     typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
 
-"@proton/crypto@workspace:packages/crypto":
+"@proton/crypto@workspace:^, @proton/crypto@workspace:packages/crypto":
   version: 0.0.0-use.local
   resolution: "@proton/crypto@workspace:packages/crypto"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     "@types/chai": "npm:^4.3.16"
     "@types/chai-as-promised": "npm:^7.1.8"
     chai: "npm:^5.1.1"
@@ -6764,19 +6778,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/docs-core@workspace:packages/docs-core":
+"@proton/docs-core@workspace:^, @proton/docs-core@workspace:packages/docs-core":
   version: 0.0.0-use.local
   resolution: "@proton/docs-core@workspace:packages/docs-core"
   dependencies:
     "@lexical/yjs": "npm:0.16.0"
-    "@proton/components": "workspace:packages/components"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/docs-proto": "workspace:packages/docs-proto"
-    "@proton/docs-shared": "workspace:packages/docs-shared"
-    "@proton/drive-store": "workspace:packages/drive-store"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/docs-proto": "workspace:^"
+    "@proton/docs-shared": "workspace:^"
+    "@proton/drive-store": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/shared": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^14.3.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6804,7 +6818,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/docs-proto@workspace:packages/docs-proto":
+"@proton/docs-proto@workspace:^, @proton/docs-proto@workspace:packages/docs-proto":
   version: 0.0.0-use.local
   resolution: "@proton/docs-proto@workspace:packages/docs-proto"
   dependencies:
@@ -6822,12 +6836,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/docs-shared@workspace:packages/docs-shared":
+"@proton/docs-shared@workspace:^, @proton/docs-shared@workspace:packages/docs-shared":
   version: 0.0.0-use.local
   resolution: "@proton/docs-shared@workspace:packages/docs-shared"
   dependencies:
     "@lexical/yjs": "npm:0.16.0"
-    "@proton/docs-proto": "workspace:packages/docs-proto"
+    "@proton/docs-proto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@types/google-protobuf": "npm:^3.15.12"
@@ -6845,19 +6859,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/drive-store@workspace:packages/drive-store":
+"@proton/drive-store@workspace:^, @proton/drive-store@workspace:packages/drive-store":
   version: 0.0.0-use.local
   resolution: "@proton/drive-store@workspace:packages/drive-store"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@noble/hashes": "npm:^1.4.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
-    "@proton/components": "workspace:packages/components"
-    "@proton/crypto": "workspace:packages/crypto"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6885,16 +6899,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/encrypted-search@workspace:packages/encrypted-search":
+"@proton/encrypted-search@workspace:^, @proton/encrypted-search@workspace:packages/encrypted-search":
   version: 0.0.0-use.local
   resolution: "@proton/encrypted-search@workspace:packages/encrypted-search"
   dependencies:
-    "@proton/components": "workspace:packages/components"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/utils": "workspace:packages/utils"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@types/jasmine": "npm:^5.1.4"
     eslint: "npm:^8.57.0"
     eslint-plugin-jasmine: "npm:^4.1.3"
@@ -6927,7 +6941,7 @@ __metadata:
     eslint-config-prettier: "npm:^9.1.0"
     eslint-import-resolver-alias: "npm:^1.1.2"
     eslint-import-resolver-typescript: "npm:^3.6.1"
-    eslint-plugin-custom-rules: "workspace:packages/eslint-plugin-custom-rules"
+    eslint-plugin-custom-rules: "workspace:^"
     eslint-plugin-es: "npm:^4.1.0"
     eslint-plugin-import: "npm:^2.29.1"
     eslint-plugin-jsx-a11y: "npm:^6.8.0"
@@ -6951,7 +6965,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/hooks@workspace:packages/hooks":
+"@proton/hooks@workspace:^, @proton/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@proton/hooks@workspace:packages/hooks"
   dependencies:
@@ -6968,7 +6982,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/i18n@workspace:packages/i18n":
+"@proton/i18n@workspace:^, @proton/i18n@workspace:packages/i18n":
   version: 0.0.0-use.local
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
@@ -6985,16 +6999,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/key-transparency@workspace:packages/key-transparency":
+"@proton/key-transparency@workspace:^, @proton/key-transparency@workspace:packages/key-transparency":
   version: 0.0.0-use.local
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
   dependencies:
     "@noble/ed25519": "npm:1.7.3"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/shared": "workspace:^"
     "@types/jasmine": "npm:^5.1.4"
     "@types/pkijs": "npm:0.0.14"
     eslint: "npm:^8.57.0"
@@ -7013,7 +7027,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/llm@workspace:packages/llm":
+"@proton/llm@workspace:^, @proton/llm@workspace:packages/llm":
   version: 0.0.0-use.local
   resolution: "@proton/llm@workspace:packages/llm"
   dependencies:
@@ -7021,8 +7035,8 @@ __metadata:
     "@babel/preset-env": "npm:^7.24.6"
     "@jest/globals": "npm:^29.7.0"
     "@mlc-ai/web-llm": "npm:0.2.32"
-    "@proton/components": "workspace:packages/components"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/components": "workspace:^"
+    "@proton/shared": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@types/jest": "npm:^29.5.12"
@@ -7043,7 +7057,8 @@ __metadata:
   resolution: "@proton/mail@workspace:packages/mail"
   dependencies:
     "@proton/account": "workspace:^"
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -7058,12 +7073,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/metrics@workspace:packages/metrics":
+"@proton/metrics@workspace:^, @proton/metrics@workspace:packages/metrics":
   version: 0.0.0-use.local
   resolution: "@proton/metrics@workspace:packages/metrics"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/shared": "workspace:^"
     "@types/node": "npm:^20.12.13"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
@@ -7076,7 +7091,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/pack@workspace:packages/pack":
+"@proton/pack@workspace:^, @proton/pack@workspace:packages/pack":
   version: 0.0.0-use.local
   resolution: "@proton/pack@workspace:packages/pack"
   dependencies:
@@ -7096,6 +7111,7 @@ __metadata:
     "@babel/runtime": "npm:^7.24.6"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.13"
     "@sentry/webpack-plugin": "npm:^1.21.0"
+    "@swc/core": "npm:^1.6.5"
     "@types/webpack": "npm:^5.28.5"
     autoprefixer: "npm:^10.4.19"
     babel-loader: "npm:^9.1.3"
@@ -7141,21 +7157,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/pass@workspace:packages/pass":
+"@proton/pass@workspace:^, @proton/pass@workspace:packages/pass":
   version: 0.0.0-use.local
   resolution: "@proton/pass@workspace:packages/pass"
   dependencies:
     "@protobuf-ts/plugin": "npm:^2.9.4"
     "@proton/atoms": "workspace:^"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/key-transparency": "workspace:packages/key-transparency"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/srp": "workspace:packages/srp"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/key-transparency": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@protontech/pass-rust-core": "npm:^0.7.12"
     "@reduxjs/toolkit": "npm:^2.2.5"
@@ -7194,11 +7210,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/polyfill@workspace:packages/polyfill":
+"@proton/polyfill@workspace:^, @proton/polyfill@workspace:packages/polyfill":
   version: 0.0.0-use.local
   resolution: "@proton/polyfill@workspace:packages/polyfill"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     abortcontroller-polyfill: "npm:^1.7.5"
     core-js: "npm:^3.37.1"
     eslint: "npm:^8.57.0"
@@ -7219,18 +7235,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/recovery-kit@workspace:packages/recovery-kit":
+"@proton/react-redux-store@workspace:^, @proton/react-redux-store@workspace:packages/react-redux-store":
+  version: 0.0.0-use.local
+  resolution: "@proton/react-redux-store@workspace:packages/react-redux-store"
+  dependencies:
+    react: "npm:^18.3.1"
+    react-redux: "npm:^9.1.2"
+  languageName: unknown
+  linkType: soft
+
+"@proton/recovery-kit@workspace:^, @proton/recovery-kit@workspace:packages/recovery-kit":
   version: 0.0.0-use.local
   resolution: "@proton/recovery-kit@workspace:packages/recovery-kit"
   dependencies:
     "@pdfme/common": "npm:^3.4.0"
     "@pdfme/generator": "npm:^3.4.0"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/utils": "workspace:packages/utils"
+    "@proton/utils": "workspace:^"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
     ts-jest: "npm:^29.1.4"
     typescript: "npm:^5.4.5"
+  languageName: unknown
+  linkType: soft
+
+"@proton/redux-shared-store-types@workspace:^, @proton/redux-shared-store-types@workspace:packages/redux-shared-store-types":
+  version: 0.0.0-use.local
+  resolution: "@proton/redux-shared-store-types@workspace:packages/redux-shared-store-types"
+  dependencies:
+    "@proton/shared": "workspace:^"
+    "@reduxjs/toolkit": "npm:^2.2.5"
+    "@types/history": "npm:^4.7.11"
+    react: "npm:^18.3.1"
+    react-redux: "npm:^9.1.2"
+    unleash-proxy-client: "npm:^3.4.0"
   languageName: unknown
   linkType: soft
 
@@ -7241,6 +7279,8 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/mail": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
@@ -7253,7 +7293,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
-    "@proton/redux-shared-store": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -7275,11 +7315,11 @@ __metadata:
     "@babel/plugin-transform-runtime": "npm:^7.24.6"
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@proton/colors": "workspace:^"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/srp": "workspace:packages/srp"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/srp": "workspace:^"
+    "@proton/styles": "workspace:^"
     "@protontech/bip39": "npm:^1.0.2"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
@@ -7288,6 +7328,7 @@ __metadata:
     "@sentry/browser": "npm:^7.116.0"
     "@types/dompurify": "npm:^3.0.5"
     "@types/jasmine": "npm:^5.1.4"
+    "@types/karma-junit-reporter": "npm:^2"
     "@types/node": "npm:^20.12.13"
     "@types/papaparse": "npm:^5.3.14"
     "@types/ua-parser-js": "npm:^0.7.39"
@@ -7306,6 +7347,7 @@ __metadata:
     karma: "npm:^6.4.3"
     karma-chrome-launcher: "npm:^3.2.0"
     karma-jasmine: "npm:^5.1.0"
+    karma-junit-reporter: "npm:^2.0.1"
     karma-spec-reporter: "npm:^0.0.36"
     karma-webpack: "npm:^5.0.1"
     lodash: "npm:^4.17.21"
@@ -7322,7 +7364,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/sieve@workspace:packages/sieve":
+"@proton/sieve@workspace:^, @proton/sieve@workspace:packages/sieve":
   version: 0.0.0-use.local
   resolution: "@proton/sieve@workspace:packages/sieve"
   dependencies:
@@ -7333,7 +7375,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/srp@workspace:packages/srp":
+"@proton/srp@workspace:^, @proton/srp@workspace:packages/srp":
   version: 0.0.0-use.local
   resolution: "@proton/srp@workspace:packages/srp"
   dependencies:
@@ -7341,8 +7383,8 @@ __metadata:
     "@babel/preset-typescript": "npm:^7.24.6"
     "@babel/register": "npm:^7.24.6"
     "@openpgp/noble-hashes": "npm:^1.3.3"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
     bcryptjs: "npm:^2.4.3"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
@@ -7352,7 +7394,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/stylelint-config-proton@workspace:packages/stylelint-config-proton":
+"@proton/stylelint-config-proton@workspace:^, @proton/stylelint-config-proton@workspace:packages/stylelint-config-proton":
   version: 0.0.0-use.local
   resolution: "@proton/stylelint-config-proton@workspace:packages/stylelint-config-proton"
   dependencies:
@@ -7379,7 +7421,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/testing@workspace:packages/testing":
+"@proton/testing@workspace:^, @proton/testing@workspace:packages/testing":
   version: 0.0.0-use.local
   resolution: "@proton/testing@workspace:packages/testing"
   dependencies:
@@ -7387,8 +7429,9 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/shared": "workspace:^"
     cross-fetch: "npm:^4.0.0"
+    eslint: "npm:^8.57.0"
     msw: "npm:^2.3.0"
   languageName: unknown
   linkType: soft
@@ -7405,7 +7448,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/utils@workspace:packages/utils":
+"@proton/utils@workspace:^, @proton/utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@proton/utils@workspace:packages/utils"
   dependencies:
@@ -9508,12 +9551,144 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/core-darwin-arm64@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-darwin-arm64@npm:1.6.5"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@swc/core-darwin-x64@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-darwin-x64@npm:1.6.5"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm-gnueabihf@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.6.5"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-gnu@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.6.5"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-arm64-musl@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-linux-arm64-musl@npm:1.6.5"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-gnu@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-linux-x64-gnu@npm:1.6.5"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@swc/core-linux-x64-musl@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-linux-x64-musl@npm:1.6.5"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-arm64-msvc@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.6.5"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-ia32-msvc@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.6.5"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"@swc/core-win32-x64-msvc@npm:1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core-win32-x64-msvc@npm:1.6.5"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@swc/core@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "@swc/core@npm:1.6.5"
+  dependencies:
+    "@swc/core-darwin-arm64": "npm:1.6.5"
+    "@swc/core-darwin-x64": "npm:1.6.5"
+    "@swc/core-linux-arm-gnueabihf": "npm:1.6.5"
+    "@swc/core-linux-arm64-gnu": "npm:1.6.5"
+    "@swc/core-linux-arm64-musl": "npm:1.6.5"
+    "@swc/core-linux-x64-gnu": "npm:1.6.5"
+    "@swc/core-linux-x64-musl": "npm:1.6.5"
+    "@swc/core-win32-arm64-msvc": "npm:1.6.5"
+    "@swc/core-win32-ia32-msvc": "npm:1.6.5"
+    "@swc/core-win32-x64-msvc": "npm:1.6.5"
+    "@swc/counter": "npm:^0.1.3"
+    "@swc/types": "npm:^0.1.9"
+  peerDependencies:
+    "@swc/helpers": "*"
+  dependenciesMeta:
+    "@swc/core-darwin-arm64":
+      optional: true
+    "@swc/core-darwin-x64":
+      optional: true
+    "@swc/core-linux-arm-gnueabihf":
+      optional: true
+    "@swc/core-linux-arm64-gnu":
+      optional: true
+    "@swc/core-linux-arm64-musl":
+      optional: true
+    "@swc/core-linux-x64-gnu":
+      optional: true
+    "@swc/core-linux-x64-musl":
+      optional: true
+    "@swc/core-win32-arm64-msvc":
+      optional: true
+    "@swc/core-win32-ia32-msvc":
+      optional: true
+    "@swc/core-win32-x64-msvc":
+      optional: true
+  peerDependenciesMeta:
+    "@swc/helpers":
+      optional: true
+  checksum: 10c0/4fba746667d71641ea8db256561cb47e996f03c091ad62aff6856487f14dffa333eee086d514564ee7c79f657ffc6360a37b06ea136dad08a2aaa8d538681197
+  languageName: node
+  linkType: hard
+
+"@swc/counter@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "@swc/counter@npm:0.1.3"
+  checksum: 10c0/8424f60f6bf8694cfd2a9bca45845bce29f26105cda8cf19cdb9fd3e78dc6338699e4db77a89ae449260bafa1cc6bec307e81e7fb96dbf7dcfce0eea55151356
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:^0.4.2":
   version: 0.4.14
   resolution: "@swc/helpers@npm:0.4.14"
   dependencies:
     tslib: "npm:^2.4.0"
   checksum: 10c0/a8bd2e291fca73aa35ff316fb1aa9fb9554856518c8bf64ab5a355fb587d79d04d67f95033012fcdc94f507d22484871d95dc72efdd9ff13cc5d0ac68dfba999
+  languageName: node
+  linkType: hard
+
+"@swc/types@npm:^0.1.9":
+  version: 0.1.9
+  resolution: "@swc/types@npm:0.1.9"
+  dependencies:
+    "@swc/counter": "npm:^0.1.3"
+  checksum: 10c0/e47db2a06189f100696837ac3d56feaf67e8e68541b236c2de497e066689230f5cbb538fc0ca77c04739ae7653c20a2d79c7ab57ecf7506e2d008cb5e523f724
   languageName: node
   linkType: hard
 
@@ -10613,6 +10788,25 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 10c0/6bf5337bc447b706bb5b4431d37686aa2ea6d07cfd6f79cc31de80170d6ff9b1c7384a9c0ccbc45b3f512bae9e9f75c2e12109806a15331dc94e8a8db6dbb4ac
+  languageName: node
+  linkType: hard
+
+"@types/karma-junit-reporter@npm:^2":
+  version: 2.0.4
+  resolution: "@types/karma-junit-reporter@npm:2.0.4"
+  dependencies:
+    "@types/karma": "npm:*"
+  checksum: 10c0/d55e3231d825b1b133f8195f6c0fc0ae9c7f8f98bca0f8c6ef7bbc18421b9215faabbfea6357a522e5fe50cb7700b5b7a9ea3520e36b7bae3fe5a4330109b73b
+  languageName: node
+  linkType: hard
+
+"@types/karma@npm:*":
+  version: 6.3.8
+  resolution: "@types/karma@npm:6.3.8"
+  dependencies:
+    "@types/node": "npm:*"
+    log4js: "npm:^6.4.1"
+  checksum: 10c0/31b556008e545a6c022c213339a06adf84adb0df80c12bd82b119e99ed51b58db60ae7824401a2a5be2e888d2bee5bda75058f0af96e368f0ba9de3f2df620c7
   languageName: node
   linkType: hard
 
@@ -12826,6 +13020,15 @@ __metadata:
   bin:
     appdmg: bin/appdmg.js
   conditions: os=darwin
+  languageName: node
+  linkType: hard
+
+"append-transform@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "append-transform@npm:2.0.0"
+  dependencies:
+    default-require-extensions: "npm:^3.0.0"
+  checksum: 10c0/f1505e4f4597f4eb7b3df8da898e431fc25d6cdc6c78d01c700a4fab38d835e7cbac693eade8df7b0a0944dc52a35f92b1771e440af59f1b1f8a1dadaba7d17b
   languageName: node
   linkType: hard
 
@@ -15449,6 +15652,18 @@ __metadata:
   version: 2.3.0
   resolution: "cachedir@npm:2.3.0"
   checksum: 10c0/8380a4a4aa824b20cbc246c38ae2b3379a865f52ea1f31f7b057d07545ea1ab27f93c4323d4bd1bd398991489f18a226880c3166b19ecbf49a77b18c519d075a
+  languageName: node
+  linkType: hard
+
+"caching-transform@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "caching-transform@npm:4.0.0"
+  dependencies:
+    hasha: "npm:^5.0.0"
+    make-dir: "npm:^3.0.0"
+    package-hash: "npm:^4.0.0"
+    write-file-atomic: "npm:^3.0.0"
+  checksum: 10c0/7b33669dadfad292636578087a1aa7bcf9fbd60d6cbc67e8f288e3667397193c00bdac35bb84d34bd44fa9209405791fd3ab101c2126109e6eaaef1b899da759
   languageName: node
   linkType: hard
 
@@ -18081,6 +18296,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"default-require-extensions@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "default-require-extensions@npm:3.0.1"
+  dependencies:
+    strip-bom: "npm:^4.0.0"
+  checksum: 10c0/5ca376cb527d9474336ad76dd302d06367a7163379dda26558258de26f85861e696d0b7bb19ee3c6b8456bb7c95cdc0e4e4d45c2aa487e61b2d3b60d80c10648
+  languageName: node
+  linkType: hard
+
 "defaults@npm:^1.0.3":
   version: 1.0.3
   resolution: "defaults@npm:1.0.3"
@@ -19462,7 +19686,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es6-error@npm:^4.1.1":
+"es6-error@npm:^4.0.1, es6-error@npm:^4.1.1":
   version: 4.1.1
   resolution: "es6-error@npm:4.1.1"
   checksum: 10c0/357663fb1e845c047d548c3d30f86e005db71e122678f4184ced0693f634688c3f3ef2d7de7d4af732f734de01f528b05954e270f06aa7d133679fb9fe6600ef
@@ -20069,7 +20293,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules":
+"eslint-plugin-custom-rules@workspace:^, eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules":
   version: 0.0.0-use.local
   resolution: "eslint-plugin-custom-rules@workspace:packages/eslint-plugin-custom-rules"
   languageName: unknown
@@ -21497,7 +21721,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.3.1":
+"find-cache-dir@npm:^3.2.0, find-cache-dir@npm:^3.3.1":
   version: 3.3.2
   resolution: "find-cache-dir@npm:3.3.2"
   dependencies:
@@ -23385,7 +23609,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hasha@npm:5.2.2":
+"hasha@npm:5.2.2, hasha@npm:^5.0.0":
   version: 5.2.2
   resolution: "hasha@npm:5.2.2"
   dependencies:
@@ -25534,6 +25758,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"istanbul-lib-hook@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "istanbul-lib-hook@npm:3.0.0"
+  dependencies:
+    append-transform: "npm:^2.0.0"
+  checksum: 10c0/0029bdbc4ae82c2a5a0b48a2f4ba074de72601a5d27505493c9be83d4c7952039ad787d2f6d1321710b75a05059c4335a0eb7c8857ca82e7e6d19f8d88d03b46
+  languageName: node
+  linkType: hard
+
 "istanbul-lib-instrument@npm:^5.0.4":
   version: 5.1.0
   resolution: "istanbul-lib-instrument@npm:5.1.0"
@@ -25547,16 +25780,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"istanbul-lib-instrument@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "istanbul-lib-instrument@npm:6.0.0"
+"istanbul-lib-instrument@npm:^6.0.0, istanbul-lib-instrument@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "istanbul-lib-instrument@npm:6.0.2"
   dependencies:
-    "@babel/core": "npm:^7.12.3"
-    "@babel/parser": "npm:^7.14.7"
-    "@istanbuljs/schema": "npm:^0.1.2"
+    "@babel/core": "npm:^7.23.9"
+    "@babel/parser": "npm:^7.23.9"
+    "@istanbuljs/schema": "npm:^0.1.3"
     istanbul-lib-coverage: "npm:^3.2.0"
     semver: "npm:^7.5.4"
-  checksum: 10c0/ee86777f3692f95c3ae35c5cbc9aa979b551241da2de1284f75c507a2bdef948cc56ca90214c3bb47b5dc2ebe748610eb4f7c4d39b304f24a933bcd0867a05e8
+  checksum: 10c0/405c6ac037bf8c7ee7495980b0cd5544b2c53078c10534d0c9ceeb92a9ea7dcf8510f58ccfce31336458a8fa6ccef27b570bbb602abaa8c1650f5496a807477c
+  languageName: node
+  linkType: hard
+
+"istanbul-lib-processinfo@npm:^2.0.2":
+  version: 2.0.3
+  resolution: "istanbul-lib-processinfo@npm:2.0.3"
+  dependencies:
+    archy: "npm:^1.0.0"
+    cross-spawn: "npm:^7.0.3"
+    istanbul-lib-coverage: "npm:^3.2.0"
+    p-map: "npm:^3.0.0"
+    rimraf: "npm:^3.0.0"
+    uuid: "npm:^8.3.2"
+  checksum: 10c0/ffd0f9b1c8e266e980580f83e65397caeace3958e4b4326b4479dcb0e41a450698387b96b4d4823e63b7c4a403f72e6e30d9e788ddcf153edb422a9d6f64a998
   languageName: node
   linkType: hard
 
@@ -26773,6 +27020,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"karma-junit-reporter@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "karma-junit-reporter@npm:2.0.1"
+  dependencies:
+    path-is-absolute: "npm:^1.0.0"
+    xmlbuilder: "npm:12.0.0"
+  peerDependencies:
+    karma: ">=0.9"
+  checksum: 10c0/ab243908a950ee67cc03fff53cedf0be32cfd05e544af3115cfccae850688b49d62a060aafc244763fac75f67bf1454312430bc5269ff17afba671dd010191b9
+  languageName: node
+  linkType: hard
+
 "karma-spec-reporter@npm:^0.0.36":
   version: 0.0.36
   resolution: "karma-spec-reporter@npm:0.0.36"
@@ -27482,6 +27741,13 @@ __metadata:
   version: 4.2.0
   resolution: "lodash.defaults@npm:4.2.0"
   checksum: 10c0/d5b77aeb702caa69b17be1358faece33a84497bcca814897383c58b28a2f8dfc381b1d9edbec239f8b425126a3bbe4916223da2a576bb0411c2cefd67df80707
+  languageName: node
+  linkType: hard
+
+"lodash.flattendeep@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.flattendeep@npm:4.4.0"
+  checksum: 10c0/83cb80754b921fb4ed2c222b91a82b2524f3bdc60c3ae91e00688bd4bf1bcc28b8a2cc250e11fdc1b6da3a2de09e57008e13f15a209cafdd4f9163d047f97544
   languageName: node
   linkType: hard
 
@@ -29544,6 +29810,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-preload@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "node-preload@npm:0.2.1"
+  dependencies:
+    process-on-spawn: "npm:^1.0.0"
+  checksum: 10c0/7ae3def896626701e2a27b0c8119e0234089db4317b8c16bb8c44bee9abb82c0e38d57e6317d480970f5a2510e44185af81d3ea85be1a78311701f66f912e9e4
+  languageName: node
+  linkType: hard
+
 "node-releases@npm:^2.0.14":
   version: 2.0.14
   resolution: "node-releases@npm:2.0.14"
@@ -29867,6 +30142,43 @@ __metadata:
   version: 2.2.7
   resolution: "nwsapi@npm:2.2.7"
   checksum: 10c0/44be198adae99208487a1c886c0a3712264f7bbafa44368ad96c003512fed2753d4e22890ca1e6edb2690c3456a169f2a3c33bfacde1905cf3bf01c7722464db
+  languageName: node
+  linkType: hard
+
+"nyc@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "nyc@npm:17.0.0"
+  dependencies:
+    "@istanbuljs/load-nyc-config": "npm:^1.0.0"
+    "@istanbuljs/schema": "npm:^0.1.2"
+    caching-transform: "npm:^4.0.0"
+    convert-source-map: "npm:^1.7.0"
+    decamelize: "npm:^1.2.0"
+    find-cache-dir: "npm:^3.2.0"
+    find-up: "npm:^4.1.0"
+    foreground-child: "npm:^2.0.0"
+    get-package-type: "npm:^0.1.0"
+    glob: "npm:^7.1.6"
+    istanbul-lib-coverage: "npm:^3.0.0"
+    istanbul-lib-hook: "npm:^3.0.0"
+    istanbul-lib-instrument: "npm:^6.0.2"
+    istanbul-lib-processinfo: "npm:^2.0.2"
+    istanbul-lib-report: "npm:^3.0.0"
+    istanbul-lib-source-maps: "npm:^4.0.0"
+    istanbul-reports: "npm:^3.0.2"
+    make-dir: "npm:^3.0.0"
+    node-preload: "npm:^0.2.1"
+    p-map: "npm:^3.0.0"
+    process-on-spawn: "npm:^1.0.0"
+    resolve-from: "npm:^5.0.0"
+    rimraf: "npm:^3.0.0"
+    signal-exit: "npm:^3.0.2"
+    spawn-wrap: "npm:^2.0.0"
+    test-exclude: "npm:^6.0.0"
+    yargs: "npm:^15.0.2"
+  bin:
+    nyc: bin/nyc.js
+  checksum: 10c0/d77033c42ce3fa8159ab1fa547332ce374aafcb46f48d1c15fd515f3c1b9b6d29335147229abd3d8251e78fad7961f2c8cfae3530cda32845f652ab0c81f53ad
   languageName: node
   linkType: hard
 
@@ -30676,6 +30988,18 @@ __metadata:
     ip: "npm:^1.1.8"
     netmask: "npm:^2.0.2"
   checksum: 10c0/a5ac1bf1f33f667a1c85fd61744672d9364534a1bb68a676ef920091b735ed8a10fc2b57385909e34822a2147b10a898dd79139b07dae0dbd568561d5c40a81b
+  languageName: node
+  linkType: hard
+
+"package-hash@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "package-hash@npm:4.0.0"
+  dependencies:
+    graceful-fs: "npm:^4.1.15"
+    hasha: "npm:^5.0.0"
+    lodash.flattendeep: "npm:^4.4.0"
+    release-zalgo: "npm:^1.0.0"
+  checksum: 10c0/2108b685fd5b2a32323aeed5caf2afef8c5fcf680527b09c7e2eaa05cf04b09a7c586860319097fc589ad028a3d94b2da68e8ab1935249aa95e8162ffd622729
   languageName: node
   linkType: hard
 
@@ -32539,25 +32863,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proton-account@workspace:applications/account":
+"proton-account@workspace:^, proton-account@workspace:applications/account":
   version: 0.0.0-use.local
   resolution: "proton-account@workspace:applications/account"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
     "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
+    "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/metrics": "workspace:packages/metrics"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/recovery-kit": "workspace:packages/recovery-kit"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/pass": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-polymorphic-types": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/recovery-kit": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/user-event": "npm:^14.5.2"
@@ -32579,7 +32915,6 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
-    ts-node: "npm:^10.9.2"
     ttag: "npm:^1.8.7"
     typescript: "npm:^5.4.5"
   languageName: unknown
@@ -32590,14 +32925,20 @@ __metadata:
   resolution: "proton-admin@workspace:applications/admin"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@testing-library/dom": "npm:^10.1.0"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -32628,16 +32969,27 @@ __metadata:
   resolution: "proton-calendar@workspace:applications/calendar"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/calendar": "workspace:^"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/encrypted-search": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@protontech/interval-tree": "npm:^1.0.0"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
@@ -32687,12 +33039,20 @@ __metadata:
     "@lexical/table": "npm:0.16.0"
     "@lexical/utils": "npm:0.16.0"
     "@lexical/yjs": "npm:0.16.0"
-    "@proton/components": "workspace:packages/components"
-    "@proton/docs-shared": "workspace:packages/docs-shared"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/docs-core": "workspace:^"
+    "@proton/docs-shared": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/shared": "workspace:packages/shared"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
@@ -32730,16 +33090,28 @@ __metadata:
   resolution: "proton-docs@workspace:applications/docs"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/docs-core": "workspace:packages/docs-core"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/docs-core": "workspace:^"
+    "@proton/docs-proto": "workspace:^"
+    "@proton/docs-shared": "workspace:^"
+    "@proton/drive-store": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
     "@types/jest": "npm:^29.5.12"
     "@types/react": "npm:^18.3.3"
@@ -32783,16 +33155,28 @@ __metadata:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@noble/hashes": "npm:^1.4.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/encrypted-search": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/srp": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.4.5"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -32833,7 +33217,7 @@ __metadata:
   resolution: "proton-e2e@workspace:tests"
   dependencies:
     "@playwright/test": "npm:^1.44.1"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     "@types/chance": "npm:^1.1.6"
     "@types/nodemailer": "npm:^6.4.15"
     chance: "npm:^1.1.11"
@@ -32867,20 +33251,30 @@ __metadata:
   dependencies:
     "@babel/plugin-transform-runtime": "npm:^7.24.6"
     "@proton/account": "workspace:^"
+    "@proton/activation": "workspace:^"
+    "@proton/atoms": "workspace:^"
     "@proton/calendar": "workspace:^"
-    "@proton/components": "workspace:packages/components"
-    "@proton/cross-storage": "workspace:packages/cross-storage"
-    "@proton/crypto": "workspace:packages/crypto"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/llm": "workspace:packages/llm"
+    "@proton/components": "workspace:^"
+    "@proton/cross-storage": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/encrypted-search": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/features": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/llm": "workspace:^"
     "@proton/mail": "workspace:^"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/srp": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.10.1"
     "@reduxjs/toolkit": "npm:^2.2.5"
@@ -32947,9 +33341,9 @@ __metadata:
     "@electron-forge/plugin-webpack": "npm:^7.4.0"
     "@electron-forge/shared-types": "npm:^7.4.0"
     "@electron/fuses": "npm:^1.8.0"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.4"
     cross-env: "npm:^7.0.3"
     electron: "npm:^29.4.2"
@@ -32970,9 +33364,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-pass-extension@workspace:applications/pass-extension"
   dependencies:
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/pass": "workspace:packages/pass"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/pass": "workspace:^"
     "@redux-devtools/remote": "npm:^0.9.3"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/webextension-polyfill": "npm:^0.10.7"
@@ -32996,10 +33390,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-pass@workspace:applications/pass"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/pass": "workspace:packages/pass"
+    "@proton/atoms": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/pass": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
+    "@proton/utils": "workspace:^"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.0"
     jest: "npm:^29.7.0"
@@ -33015,7 +33416,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-preview-sandbox@workspace:applications/preview-sandbox"
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     browserslist-to-esbuild: "npm:^2.1.1"
     cross-env: "npm:^7.0.3"
     docx-preview: "npm:^0.3.2"
@@ -33031,11 +33432,11 @@ __metadata:
   resolution: "proton-storybook@workspace:applications/storybook"
   dependencies:
     "@babel/core": "npm:^7.24.6"
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
     "@storybook/addon-actions": "npm:^6.5.16"
     "@storybook/addon-essentials": "npm:^6.5.16"
     "@storybook/addon-links": "npm:^6.5.16"
@@ -33068,11 +33469,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-verify@workspace:applications/verify"
   dependencies:
-    "@proton/components": "workspace:packages/components"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/testing": "workspace:packages/testing"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-router-dom": "npm:^5.3.3"
@@ -33094,14 +33499,22 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "proton-vpn-settings@workspace:applications/vpn-settings"
   dependencies:
-    "@proton/components": "workspace:packages/components"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/i18n": "workspace:packages/i18n"
-    "@proton/metrics": "workspace:packages/metrics"
-    "@proton/pack": "workspace:packages/pack"
-    "@proton/polyfill": "workspace:packages/polyfill"
-    "@proton/shared": "workspace:packages/shared"
-    "@proton/styles": "workspace:packages/styles"
+    "@proton/account": "workspace:^"
+    "@proton/atoms": "workspace:^"
+    "@proton/calendar": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/hooks": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/metrics": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/polyfill": "workspace:^"
+    "@proton/react-redux-store": "workspace:^"
+    "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-shared-store-types": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@proton/utils": "workspace:^"
     "@types/react": "npm:^18.3.3"
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-router-dom": "npm:^5.3.3"
@@ -33109,7 +33522,7 @@ __metadata:
     eslint: "npm:^8.57.0"
     lodash.template: "npm:^4.5.0"
     prettier: "npm:^3.2.5"
-    proton-account: "workspace:applications/account"
+    proton-account: "workspace:^"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-router-dom: "npm:^5.3.4"
@@ -35197,6 +35610,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"release-zalgo@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "release-zalgo@npm:1.0.0"
+  dependencies:
+    es6-error: "npm:^4.0.1"
+  checksum: 10c0/9e161feb073f9e3aa714bb077d67592c34ee578f5b9cff8e2d492423fe2002d5b1e6d11ffcd5c564b9a0ee9435f25569567b658a82b9af931e7ac1313925628a
+  languageName: node
+  linkType: hard
+
 "remark-external-links@npm:^8.0.0":
   version: 8.0.0
   resolution: "remark-external-links@npm:8.0.0"
@@ -35915,17 +36337,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/stylelint-config-proton": "workspace:^"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
     "@types/jest-when": "npm:^3.5.5"
     husky: "npm:^9.0.11"
     is-ci: "npm:^3.0.1"
     lint-staged: "npm:^15.2.5"
+    nyc: "npm:^17.0.0"
     prettier: "npm:^3.2.5"
     sort-package-json: "npm:^2.10.0"
     stylelint-config-standard-scss: "npm:^10.0.0"
     stylelint-use-logical-spec: "npm:^5.0.1"
+    turbo: "npm:^2.0.5"
     typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
@@ -37150,6 +37574,20 @@ __metadata:
   version: 1.1.5
   resolution: "space-separated-tokens@npm:1.1.5"
   checksum: 10c0/3ee0a6905f89e1ffdfe474124b1ade9fe97276a377a0b01350bc079b6ec566eb5b219e26064cc5b7f3899c05bde51ffbc9154290b96eaf82916a1e2c2c13ead9
+  languageName: node
+  linkType: hard
+
+"spawn-wrap@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "spawn-wrap@npm:2.0.0"
+  dependencies:
+    foreground-child: "npm:^2.0.0"
+    is-windows: "npm:^1.0.2"
+    make-dir: "npm:^3.0.0"
+    rimraf: "npm:^3.0.0"
+    signal-exit: "npm:^3.0.2"
+    which: "npm:^2.0.1"
+  checksum: 10c0/0d30001391eedbd588722be74506d3e60582557e754fe3deb3f84f2c84ddca0d72d8132f16502cf312bacb8952cc7abe833d6f45b4e80c8baea3fa56c5554d3d
   languageName: node
   linkType: hard
 
@@ -39367,6 +39805,77 @@ __metadata:
   languageName: node
   linkType: hard
 
+"turbo-darwin-64@npm:2.0.5":
+  version: 2.0.5
+  resolution: "turbo-darwin-64@npm:2.0.5"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"turbo-darwin-arm64@npm:2.0.5":
+  version: 2.0.5
+  resolution: "turbo-darwin-arm64@npm:2.0.5"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"turbo-linux-64@npm:2.0.5":
+  version: 2.0.5
+  resolution: "turbo-linux-64@npm:2.0.5"
+  conditions: os=linux & cpu=x64
+  languageName: node
+  linkType: hard
+
+"turbo-linux-arm64@npm:2.0.5":
+  version: 2.0.5
+  resolution: "turbo-linux-arm64@npm:2.0.5"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"turbo-windows-64@npm:2.0.5":
+  version: 2.0.5
+  resolution: "turbo-windows-64@npm:2.0.5"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"turbo-windows-arm64@npm:2.0.5":
+  version: 2.0.5
+  resolution: "turbo-windows-arm64@npm:2.0.5"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"turbo@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "turbo@npm:2.0.5"
+  dependencies:
+    turbo-darwin-64: "npm:2.0.5"
+    turbo-darwin-arm64: "npm:2.0.5"
+    turbo-linux-64: "npm:2.0.5"
+    turbo-linux-arm64: "npm:2.0.5"
+    turbo-windows-64: "npm:2.0.5"
+    turbo-windows-arm64: "npm:2.0.5"
+  dependenciesMeta:
+    turbo-darwin-64:
+      optional: true
+    turbo-darwin-arm64:
+      optional: true
+    turbo-linux-64:
+      optional: true
+    turbo-linux-arm64:
+      optional: true
+    turbo-windows-64:
+      optional: true
+    turbo-windows-arm64:
+      optional: true
+  bin:
+    turbo: bin/turbo
+  checksum: 10c0/f6590b90d9de060c2c522415e0a63a4ddec750fff892e334dde7f7c726f6e07a7605fdab424ce3c31ed09420cefa9c0f34e2fbd6774d3890c1302b4eb94b3650
+  languageName: node
+  linkType: hard
+
 "turndown@npm:^7.2.0":
   version: 7.2.0
   resolution: "turndown@npm:7.2.0"
@@ -40607,7 +41116,7 @@ __metadata:
   dependencies:
     "@manypkg/find-root": "npm:^2.2.1"
     "@manypkg/get-packages": "npm:^2.2.1"
-    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/eslint-config-proton": "workspace:^"
     chalk: "npm:^5.3.0"
     commander: "npm:^12.1.0"
     execa: "npm:^5.1.1"
@@ -42067,6 +42576,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"xmlbuilder@npm:12.0.0":
+  version: 12.0.0
+  resolution: "xmlbuilder@npm:12.0.0"
+  checksum: 10c0/9d166aef70a4264f8650b5fcf11a29cd811ca6bbd63b830389ffb496ac253ade30f67f3cf22250468f374a2dbf84ed6f7a183b4623953d906e20057349e74f12
+  languageName: node
+  linkType: hard
+
 "xmlbuilder@npm:^15.1.1":
   version: 15.1.1
   resolution: "xmlbuilder@npm:15.1.1"
@@ -42227,7 +42743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:^15.4.1":
+"yargs@npm:^15.0.2, yargs@npm:^15.4.1":
   version: 15.4.1
   resolution: "yargs@npm:15.4.1"
   dependencies:
