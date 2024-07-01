@@ -85,6 +85,11 @@ export class WebsocketService implements WebsocketServiceInterface {
         event.preventDefault()
       }
     }
+
+    if (this.ledger.hasConcerningMessages() || this.ledger.hasErroredMessages()) {
+      this.retryAllFailedDocumentUpdates()
+      event.preventDefault()
+    }
   }
 
   flushPendingUpdates(): void {
@@ -236,10 +241,18 @@ export class WebsocketService implements WebsocketServiceInterface {
       },
     })
 
-    this.retryAllFailedDocumentUpdates(record.document)
+    this.retryFailedDocumentUpdatesForDoc(record.document)
   }
 
-  retryAllFailedDocumentUpdates(document: NodeMeta): void {
+  retryAllFailedDocumentUpdates(): void {
+    this.logger.info('Retrying all failed document updates')
+
+    for (const record of Object.values(this.connections)) {
+      this.retryFailedDocumentUpdatesForDoc(record.document)
+    }
+  }
+
+  retryFailedDocumentUpdatesForDoc(document: NodeMeta): void {
     const record = this.getConnectionRecord(document.linkId)
     if (!record) {
       throw new Error('Connection not found')
@@ -442,7 +455,6 @@ export class WebsocketService implements WebsocketServiceInterface {
 
   async handleAckMessage(record: DocumentConnectionRecord, message: ServerMessageWithMessageAcks): Promise<void> {
     this.ledger.messageAcknowledgementReceived(message)
-
     this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Saved]>({
       type: WebsocketConnectionEvent.Saved,
       payload: {
