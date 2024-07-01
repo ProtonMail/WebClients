@@ -89,6 +89,7 @@ const CreditsModal = (props: ModalProps) => {
             return promise;
         },
         flow: 'credit',
+        user,
     });
 
     useEffect(() => {

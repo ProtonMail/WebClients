@@ -178,6 +178,7 @@ describe('Payment', () => {
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
+                user={undefined}
             />
         );
     });
@@ -210,6 +211,7 @@ describe('Payment', () => {
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
+                user={undefined}
             />
         );
 
@@ -246,6 +248,7 @@ describe('Payment', () => {
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
+                user={undefined}
             />
         );
 
@@ -318,6 +321,7 @@ describe('Payment', () => {
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
+                user={undefined}
             />
         );
 
@@ -385,6 +389,7 @@ describe('Payment', () => {
                 hasSomeVpnPlan={false}
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
+                user={undefined}
             />
         );
 

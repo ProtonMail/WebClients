@@ -74,6 +74,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             });
         },
         flow: 'invoice',
+        user,
     });
 
     const process = async (processor?: PaymentProcessorHook) =>
