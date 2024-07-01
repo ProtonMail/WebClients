@@ -1,3 +1,4 @@
+/* stylelint-disable */
 @import '~@proton/styles/scss/proton-docs';
 
 @tailwind base;
@@ -37,4 +38,19 @@ body {
 
 .content-container > .content.flex.flex-column {
 	background: var(--background-weak);
+}
+
+@media print {
+	// prevent cursors and names/email to be printed
+	body .Lexical__cursorsContainer {
+		display: none;
+	}
+
+	::-webkit-scrollbar {
+		display: none !important;
+	}
+
+	* {
+		scrollbar-width: none !important;
+	}
 }

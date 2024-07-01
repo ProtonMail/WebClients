@@ -11,7 +11,6 @@
 
 input[type='number'] {
 	appearance: textfield;
-	appearance: textfield;
 
 	&::-webkit-inner-spin-button,
 	&::-webkit-outer-spin-button {
@@ -95,6 +94,11 @@ input[type='number'] {
 		border: none !important;
 		background: none !important;
 		position: static !important;
+		scrollbar-width: none;
+	}
+
+	body:has(#editor-frame) *::-webkit-scrollbar {
+		display: none;
 	}
 
 	body *:not(:has(#editor-frame)) {
@@ -112,5 +116,10 @@ input[type='number'] {
 		min-block-size: var(--print-min-height, 100vh) !important;
 		display: block !important;
 		position: absolute !important;
+		scrollbar-width: none;
+	}
+
+	#editor-frame#editor-frame#editor-frame::-webkit-scrollbar {
+		display: none;
 	}
 }
