@@ -62,11 +62,11 @@
       "Change keys": [
         "Змяніць ключы"
       ],
-      "Change mailbox password": [
-        "Змяніць пароль паштовай скрыні"
-      ],
       "Change password": [
         "Змяніць пароль"
+      ],
+      "Change second password": [
+        "Змяніць другі пароль"
       ],
       "Chat with us": [
         "Чат з намі"
@@ -2178,11 +2178,11 @@
       "Incorrect login credentials. Please try again.": [
         "Няправільныя ўліковыя даныя для ўваходу. Паспрабуйце яшчэ раз."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Няправільны пароль паштовай скрыні. Паспрабуйце яшчэ раз."
-      ],
       "Incorrect password": [
         "Няправільны пароль"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Няправільны другі пароль. Паспрабуйце яшчэ раз."
       ],
       "Incorrect username": [
         "Няправільнае імя карыстальніка"
@@ -3051,8 +3051,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме адзінага пароля, які замяняе сабой пароль ад уваходу і паштовай скрыні. Для пераключэння ў рэжым адзінага пароля ўвядзіце пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме адзінага пароля, які замяняе сабой пароль ад уваходу і другі пароль. Для пераключэння ў рэжым адзінага пароля ўвядзіце пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
       "${ n } address": [
         "${ n } адрас",
@@ -3357,11 +3357,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -4158,11 +4158,11 @@
       "Two-factor authentication enabled": [
         "Двухфактарная аўтэнтыфікацыя ўключана"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашай паштовай скрыні (дадатковая функцыя бяспекі)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашых даных (дадатковая функцыя бяспекі)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Рэжым двух пароляў прадугледжвае выкарыстанне асобных пароляў для ўваходу і расшыфроўкі паштовай скрыні. Гэта дае магчымасць забяспечыць дадатковы ўзровень абароны ў некаторых сітуацыях. Разам з тым для большасці карыстальнікаў мы рэкамендуем выкарыстоўваць рэжым аднаго пароля. Для пераключэння ў рэжым двух пароляў спачатку задайце пароль для ўваходу, а потым пароль для паштовай скрыні."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "У рэжыме двайнога пароля выкарыстоўваюцца асобныя паролі для ўваходу ў сістэму і для расшыфроўкі даных. Гэта дае нязначныя перавагі для бяспекі ў некаторых сітуацыях. Аднак для большасці карыстальнікаў мы раім рэжым адзінага пароля. Каб пераключыцца на рэжым двух пароляў, спачатку задайце пароль для ўваходу, а потым другі пароль."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
@@ -4738,9 +4738,6 @@
       "Confirm login password": [
         "Пацвердзіць пароль уваходу"
       ],
-      "Confirm mailbox password": [
-        "Пацвердзіць пароль паштовай скрыні"
-      ],
       "Confirm new password": [
         "Пацвердзіць новы пароль"
       ],
@@ -4749,6 +4746,9 @@
       ],
       "Confirm password": [
         "Пацвердзіце пароль"
+      ],
+      "Confirm second password": [
+        "Пацвердзіце другі пароль"
       ],
       "Copy": [
         "Капіяваць"
@@ -4849,9 +4849,6 @@
       "Logo": [
         "Лагатып"
       ],
-      "Mailbox password": [
-        "Пароль паштовай скрыні"
-      ],
       "Main": [
         "Галоўная"
       ],
@@ -4888,9 +4885,6 @@
       "New login password": [
         "Новы пароль уваходу"
       ],
-      "New mailbox password": [
-        "Новы пароль паштовай скрыні"
-      ],
       "New organization identity": [
         "Новая ідэнтычнасць арганізацыі"
       ],
@@ -4899,6 +4893,9 @@
       ],
       "New password": [
         "Новы пароль"
+      ],
+      "New second password": [
+        "Новы другі пароль"
       ],
       "No filter": [
         "Не фільтраваць"
@@ -4992,6 +4989,9 @@
       ],
       "Reveal password": [
         "Паказаць пароль"
+      ],
+      "Second password": [
+        "Другі пароль"
       ],
       "Security code (${ codeName })": [
         "Код бяспекі (${ codeName })"
@@ -6597,6 +6597,9 @@
       "Current plan": [
         "Бягучы тарыфны план"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Увядзіце бачнае імя для **${ username }**. Гэту назву будуць бачыць вашы карыстальнікі, калі вы зменіце іх дазволы або абагуліце даныя з імі."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Усяго за **${ relativePrice } дадатковай платы ў месяц** вы атрымаеце доступ да прэміяльнага менеджара пароляў ${ BRAND_NAME }!"
       ],
@@ -6614,6 +6617,9 @@
       ],
       "Includes:": [
         "Уключае:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Запуск ${ PASS_APP_NAME }"
       ],
       "per month": [
         "у месяц"
@@ -6641,6 +6647,12 @@
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
+      ],
+      "Setting up your organization": [
+        "Наладжванне вашай арганізацыі"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Уваход у ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Абнаўленне вашага ўліковага запісу"
@@ -8739,9 +8751,6 @@
       "Change login password": [
         "Змяніць пароль уваходу"
       ],
-      "Change mailbox password": [
-        "Змяніць пароль паштовай скрыні"
-      ],
       "Change organization name": [
         "Змяніць назву арганізацыі"
       ],
@@ -8753,6 +8762,9 @@
       ],
       "Change role": [
         "Змяніць ролю"
+      ],
+      "Change second password": [
+        "Змяніць другі пароль"
       ],
       "Close": [
         "Закрыць"
@@ -8967,8 +8979,8 @@
       "Invoices": [
         "Рахункі"
       ],
-      "Login password": [
-        "Пароль уваходу"
+      "Main password": [
+        "Галоўны пароль"
       ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
@@ -9171,8 +9183,8 @@
       "Type": [
         "Тып"
       ],
-      "Unlock your mailbox": [
-        "Разблакіруйце вашу паштовую скрыню"
+      "Unlock your data": [
+        "Разблакіраваць вашы даныя"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Палепшыце сваю сеткавую абарону з вылучанымі серверамі"

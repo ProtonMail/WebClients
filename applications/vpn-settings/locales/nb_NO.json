@@ -62,11 +62,11 @@
       "Change keys": [
         "Endre nøkler"
       ],
-      "Change mailbox password": [
-        "Endre postbokspassord"
-      ],
       "Change password": [
         "Endre passord"
+      ],
+      "Change second password": [
+        "Endre andre passord"
       ],
       "Chat with us": [
         "Snakk med oss"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Feil påloggingsinformasjon. Vennligst prøv på nytt."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Feil postbokspassord. Vennligst prøv på nytt."
-      ],
       "Incorrect password": [
         "Feil passord"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Feil andre passord. Vennligst prøv på nytt."
       ],
       "Incorrect username": [
         "Uriktig brukernavn"
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav oppløsning"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og postbokspassordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og det andre passordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpass utseendet og følelsen av ${ BRAND_NAME }-applikasjonene."
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -4083,11 +4083,11 @@
       "Two-factor authentication enabled": [
         "Tofaktorautentisering aktivert"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "To-passordmodus krever to passord: et for å logge på kontoen din og et for å dekryptere postboksen din (avansert)."
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "To-passordmodus krever to passord: et for å logge på kontoen din og et for å dekryptere dataene dine (avansert)."
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "To-passord-modus gjør bruk av separate passord for innlogging og postboksdekryptering. Dette gir en mindre sikkerhetsfordel i noen situasjoner, men vi anbefaler en-passord-modus for fleste brukere. For å bytte til to-passord-modus, først angi et innloggingpassord og deretter angi et postbokspassord."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "To-passord-modus gjør bruk av separate passord for innlogging og datadekryptering. Dette gir en mindre sikkerhetsfordel i noen situasjoner, men vi anbefaler en-passord-modus for fleste brukere. For å bytte til to-passord-modus, først angi et innloggingpassord og deretter angi et andre passord."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Dessverre er det ingen gjenopprettingsmetode lagret for denne kontoen."
@@ -4643,9 +4643,6 @@
       "Confirm login password": [
         "Bekreft påloggingspassord"
       ],
-      "Confirm mailbox password": [
-        "Bekreft postbokspassord"
-      ],
       "Confirm new password": [
         "Bekreft nytt passord"
       ],
@@ -4654,6 +4651,9 @@
       ],
       "Confirm password": [
         "Bekreft passord"
+      ],
+      "Confirm second password": [
+        "Bekreft andre passord"
       ],
       "Copy": [
         "Kopier"
@@ -4754,9 +4754,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Postbokspassord"
-      ],
       "Main": [
         "Hoved"
       ],
@@ -4793,9 +4790,6 @@
       "New login password": [
         "Nytt påloggingspassord"
       ],
-      "New mailbox password": [
-        "Nytt postbokspassord"
-      ],
       "New organization identity": [
         "Ny organisasjonsidentitet"
       ],
@@ -4804,6 +4798,9 @@
       ],
       "New password": [
         "Nytt passord"
+      ],
+      "New second password": [
+        "Nytt andre passord"
       ],
       "No filter": [
         "Ingen filter"
@@ -4897,6 +4894,9 @@
       ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Second password": [
+        "Andre passord"
       ],
       "Security code (${ codeName })": [
         "Sikkerhetskode (${ codeName })"
@@ -6476,6 +6476,9 @@
       "Current plan": [
         "Gjeldende plan"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Angi et visningsnavn for **${ username }**. Dette er hva brukerne vil se når du endrer tillatelsene deres eller deler data med dem."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "For bare **${ relativePrice } mer per måned**, får du tilgang til ${ BRAND_NAME }s premium passordbehandler!"
       ],
@@ -6493,6 +6496,9 @@
       ],
       "Includes:": [
         "Inkluderer:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Starter ${ PASS_APP_NAME }"
       ],
       "per month": [
         "per måned"
@@ -6518,6 +6524,12 @@
       ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
+      ],
+      "Setting up your organization": [
+        "Setter opp organisasjonen din"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Logger på ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Oppdaterer kontoen din"
@@ -6650,13 +6662,13 @@
         "CVC"
       ],
       "Got it": [
-        "Har det"
+        "Forstått"
       ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
       "Payment Processing": [
-        "Behandler innbetaling"
+        "Betalingsbehandling"
       ],
       "Processing payment": [
         "Behandler betaling"
@@ -6674,7 +6686,7 @@
         "Tidsavbrudd overskredet"
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandler innbetalingen på fakturaen for øyeblikket. Vennligst ikke oppdater plan eller betalingsmetode før transaksjonen er ferdig behandlet. Takk."
+        "Vi behandler betalingen din for den fakturerte fakturaen. Vent til betalingen er fullført før du gjør endringer i planen din eller oppdaterer betalingsinformasjonen din. Takk for tålmodigheten."
       ]
     },
     "Payments.Error": {
@@ -8533,9 +8545,6 @@
       "Change login password": [
         "Endre påloggingspassord"
       ],
-      "Change mailbox password": [
-        "Endre postbokspassord"
-      ],
       "Change organization name": [
         "Endre organisasjonsnavn"
       ],
@@ -8547,6 +8556,9 @@
       ],
       "Change role": [
         "Endre rolle"
+      ],
+      "Change second password": [
+        "Endre andre passord"
       ],
       "Close": [
         "Lukk"
@@ -8755,8 +8767,8 @@
       "Invoices": [
         "Fakturaer"
       ],
-      "Login password": [
-        "Påloggingspassord"
+      "Main password": [
+        "Hovedpassord"
       ],
       "Multi-user support": [
         "Flerbruker støtte"
@@ -8957,8 +8969,8 @@
       "Type": [
         "Type"
       ],
-      "Unlock your mailbox": [
-        "Lås opp postkassen din"
+      "Unlock your data": [
+        "Lås opp dataene dine"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Oppgrader nettverksbeskyttelsen med dedikerte tjenere"

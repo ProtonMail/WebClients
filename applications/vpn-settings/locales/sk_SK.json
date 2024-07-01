@@ -62,9 +62,6 @@
       "Change keys": [
         "Zmeniť kľúče"
       ],
-      "Change mailbox password": [
-        "Zmeniť heslo k poštovej schránke"
-      ],
       "Change password": [
         "Zmeniť heslo"
       ],
@@ -2178,9 +2175,6 @@
       "Incorrect login credentials. Please try again.": [
         "Nesprávne prihlasovacie údaje. Skúste to prosím znova."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Nesprávne heslo k poštovej schránke. Skúste to znova, prosím."
-      ],
       "Incorrect password": [
         "Nesprávne heslo"
       ],
@@ -3051,9 +3045,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhľad v nízkom rozlíšení"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahrádza prihlasovacie heslo aj heslo k poštovej schránke. Na prepnutie do režimu jedného hesla prosím zadajte jedno spoločné heslo, ktoré chcete použiť, a kliknite Uložiť."
-      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
@@ -3357,11 +3348,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -4146,12 +4137,6 @@
       "Two-factor authentication enabled": [
         "Dvojstupňové overenie zapnuté"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Režim s dvomi heslami vyžaduje dve heslá: jedno na prihlásenie k vášmu účtu a druhé na dešifrovanie vašej poštovej schránky. (Pokročilé)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Režim s dvomi heslami využíva na prihlásenie a dešifrovanie poštovej schránky dve samostatné heslá. V určitých prípadoch to zvyšuje bezpečnosť, pre väčšinu používateľov ale odporúčame režim jedného hesla. Ak chcete prepnúť na režim s dvomi heslami, zadajte najskôr svoje prihlasovacie heslo a potom heslo k poštovej schránke."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Pre tento účet, bohužiaľ, nie je uložená žiadna metóda obnovy."
       ],
@@ -4720,9 +4705,6 @@
       "Confirm login password": [
         "Potvrďte prihlasovacie heslo"
       ],
-      "Confirm mailbox password": [
-        "Potvrďte heslo k poštovej schránke"
-      ],
       "Confirm new password": [
         "Potvrďte nové heslo"
       ],
@@ -4831,9 +4813,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Heslo k poštovej schránke"
-      ],
       "Main": [
         "Hlavné"
       ],
@@ -4869,9 +4848,6 @@
       ],
       "New login password": [
         "Nové prihlasovacie heslo"
-      ],
-      "New mailbox password": [
-        "Nové heslo k poštovej schránke"
       ],
       "New organization identity": [
         "Nová identita organizácie"
@@ -6579,6 +6555,9 @@
       "Current plan": [
         "Súčasný plán"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Zadajte zobrazované meno pre **${ username }**. Toto uvidia vaši používatelia, keď zmeníte ich oprávnenia alebo s nimi budete zdieľať údaje."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovému správcovi hesiel ${ BRAND_NAME }!"
       ],
@@ -6596,6 +6575,9 @@
       ],
       "Includes:": [
         "Obsahuje:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Spúšťanie ${ PASS_APP_NAME }"
       ],
       "per month": [
         "mesačne"
@@ -6623,6 +6605,12 @@
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
+      ],
+      "Setting up your organization": [
+        "Nastavovanie organizácie"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Prihlásenie do ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Aktualizácia vášho účtu"
@@ -8709,9 +8697,6 @@
       "Change login password": [
         "Zmeniť prihlasovacie heslo"
       ],
-      "Change mailbox password": [
-        "Zmeniť heslo k poštovej schránke"
-      ],
       "Change organization name": [
         "Zmeniť názov organizácie"
       ],
@@ -8937,9 +8922,6 @@
       "Invoices": [
         "Faktúry"
       ],
-      "Login password": [
-        "Prihlasovacie heslo"
-      ],
       "Multi-user support": [
         "Podpora pre viac uživateľov"
       ],
@@ -9140,9 +9122,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unlock your mailbox": [
-        "Odomknúť vašu poštovú schránku"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšite ochranu vašej siete pomocou dedikovaných serverov"

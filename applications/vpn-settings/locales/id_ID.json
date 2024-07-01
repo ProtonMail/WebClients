@@ -62,11 +62,11 @@
       "Change keys": [
         "Ubah kunci"
       ],
-      "Change mailbox password": [
-        "Ubah kata sandi kotak surat"
-      ],
       "Change password": [
         "Ubah kata sandi"
+      ],
+      "Change second password": [
+        "Ubah kata sandi kedua"
       ],
       "Chat with us": [
         "Mengobrol dengan kami"
@@ -108,7 +108,7 @@
         "Salin alamat"
       ],
       "Copy key to the clipboard": [
-        "Salin ke papan klip"
+        "Salin kunci ke papan klip"
       ],
       "Copy version number to clipboard": [
         "Salin nomor versi ke papan klip"
@@ -2151,11 +2151,11 @@
       "Incorrect login credentials. Please try again.": [
         "Kredensial masuk salah. Silakan coba lagi."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Kata sandi kotak surat salah. Silakan coba lagi."
-      ],
       "Incorrect password": [
         "Kata sandi salah"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Kata sandi kedua salah. Silakan coba lagi."
       ],
       "Incorrect username": [
         "Nama pengguna salah"
@@ -2997,8 +2997,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pratinjau resolusi rendah"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak surat Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } juga dapat digunakan dengan kata sandi tunggal, yang akan menggantikan baik kata sandi masuk maupun kata sandi kedua. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang ingin Anda gunakan dan klik Simpan."
       ],
       "${ n } address": [
         "${ n } alamat"
@@ -3115,7 +3115,7 @@
         "Pengguna yang terdampak terdapat pada baris"
       ],
       "All your changes will be lost.": [
-        "Seluruh perubahan yang belum Anda simpan akan hilang."
+        "Seluruh perubahan yang Anda buat akan hilang."
       ],
       "Allocated": [
         "Dialokasikan"
@@ -3264,11 +3264,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -4041,11 +4041,11 @@
       "Two-factor authentication enabled": [
         "Autentikasi dua faktor diaktifkan"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Mode kata sandi ganda mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi isi kotak surat Anda. (Fitur lanjutan)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Mode kata sandi ganda mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi data Anda. (Fitur lanjutan)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Mode kata sandi ganda menggunakan kata sandi yang terpisah untuk masuk ke akun dan mendekripsi isi kotak surat. Hal ini dapat memberikan lapisan keamanan tambahan pada situasi tertentu, namun kami tidak menyarankan fitur ini bagi sebagian besar pengguna. Untuk beralih ke mode kata sandi ganda, tentukan kata sandi akun dan tentukan kata sandi kotak pesan setelahnya."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Mode kata sandi ganda menggunakan kata sandi yang terpisah untuk memproses entri masuk dan mendekripsi data. Hal ini memberikan sedikit keamanan tambahan pada situasi tertentu, namun kami menyarankan penggunaan mode kata sandi tunggal untuk pengguna awam pada umumnya. Untuk beralih ke mode kata sandi ganda, atur kata sandi masuk terlebih dahulu dan kemudian tentukan kata sandi kedua."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
@@ -4210,7 +4210,7 @@
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+        "Apakah Anda ingin menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
       ],
       "Would you like to receive a new verification code?": [
         "Apakah Anda ingin menerima kode verifikasi baru?"
@@ -4298,6 +4298,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
+      ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Anda akan dapat mempromosikan pengguna ini menjadi administrator setelah mereka menerima undangan ini."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
@@ -4588,9 +4591,6 @@
       "Confirm login password": [
         "Konfirmasi kata sandi untuk masuk"
       ],
-      "Confirm mailbox password": [
-        "Konfirmasi kata sandi kotak surat"
-      ],
       "Confirm new password": [
         "Konfirmasi kata sandi baru"
       ],
@@ -4699,9 +4699,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Kata sandi kotak surat"
-      ],
       "Main": [
         "Utama"
       ],
@@ -4738,9 +4735,6 @@
       "New login password": [
         "Kata sandi masuk baru"
       ],
-      "New mailbox password": [
-        "Kata sandi kotak surat baru"
-      ],
       "New organization identity": [
         "Identitas organisasi baru"
       ],
@@ -4749,6 +4743,9 @@
       ],
       "New password": [
         "Kata sandi baru"
+      ],
+      "New second password": [
+        "Kata sandi kedua baru"
       ],
       "No filter": [
         "Tidak ada filter"
@@ -5948,7 +5945,7 @@
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Memastikan seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif ataupun salah ketik sekalipun, akan tetap dapat Anda terima"
+        "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Keluarkan pengguna dari sesi mereka secara paksa apabila kredensial pengguna mereka telah dipercayai bocor"
@@ -6369,6 +6366,9 @@
       "Current plan": [
         "Paket saat ini"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Masukkan nama tampilan untuk **${ username }**. Nama ini adalah nama yang akan dilihat oleh pengguna Anda ketika Anda mengubah perizinan atau berbagi data dengan mereka."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Hanya dengan **${ relativePrice } lagi per bulan**, Anda mendapat akses pengatur sandi premium ${ BRAND_NAME }!"
       ],
@@ -6386,6 +6386,9 @@
       ],
       "Includes:": [
         "Meliputi:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Meluncurkan ${ PASS_APP_NAME }"
       ],
       "per month": [
         "per bulan"
@@ -6410,6 +6413,12 @@
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Setting up your organization": [
+        "Menyiapkan organisasi Anda"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Memasukkan diri Anda ke ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Memperbarui akun Anda"
@@ -8388,9 +8397,6 @@
       "Change login password": [
         "Ubah kata sandi masuk"
       ],
-      "Change mailbox password": [
-        "Ubah kata sandi kotak surat"
-      ],
       "Change organization name": [
         "Ubah nama organisasi"
       ],
@@ -8402,6 +8408,9 @@
       ],
       "Change role": [
         "Ubah peran"
+      ],
+      "Change second password": [
+        "Ubah kata sandi kedua"
       ],
       "Close": [
         "Tutup"
@@ -8607,8 +8616,8 @@
       "Invoices": [
         "Faktur"
       ],
-      "Login password": [
-        "Kata sandi masuk"
+      "Main password": [
+        "Kata sandi utama"
       ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
@@ -8808,8 +8817,8 @@
       "Type": [
         "Tipe"
       ],
-      "Unlock your mailbox": [
-        "Buka kunci kotak surat Anda"
+      "Unlock your data": [
+        "Buka kunci data Anda"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Tingkatkan perlindungan jaringan Anda ndengan server terdedikasi"
