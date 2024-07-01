@@ -62,11 +62,11 @@
       "Change keys": [
         "Ändra nycklar"
       ],
-      "Change mailbox password": [
-        "Ändra lösenord för brevlådan"
-      ],
       "Change password": [
         "Ändra lösenord"
+      ],
+      "Change second password": [
+        "Ändra andra lösenord"
       ],
       "Chat with us": [
         "Chatta med oss"
@@ -1942,6 +1942,9 @@
       "Delete address?": [
         "Ta bort adress?"
       ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "När den har tagits bort kan denna adress ${ address } inte användas igen av någon annan."
+      ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
         "Observera att om du tar bort denna adress ${ address }, kommer du inte längre att kunna skicka eller ta emot e-post med denna adress."
       ],
@@ -1984,6 +1987,9 @@
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
         "Är du säker du vill inaktivera denna adress?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Genom att inaktivera denna adress ${ address } kommer du inte längre att kunna skicka eller ta emot e-postmeddelanden med denna adress och alla länkade ${ BRAND_NAME }-produkter kommer att inaktiveras."
       ],
       "Disable address": [
         "Inaktivera adress"
@@ -2150,11 +2156,11 @@
       "Incorrect login credentials. Please try again.": [
         "Felaktiga inloggningsuppgifter. Försök igen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Felaktigt lösenord för brevlådan. Försök igen."
-      ],
       "Incorrect password": [
         "Felaktigt lösenord"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ],
       "Incorrect username": [
         "Felaktigt användarnamn"
@@ -3016,9 +3022,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: lågupplöst förhandsgranskning"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggnings- och brevlådans lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på “Spara“."
-      ],
       "${ n } address": [
         "${ n } adress",
         "${ n } adresser"
@@ -3296,11 +3299,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -4081,12 +4084,6 @@
       "Two-factor authentication enabled": [
         "Tvåfaktorsautentisering aktiverad"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Två-lösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera din brevlåda. (Avancerat)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Två-lösenordsläge använder separata lösenord för inloggning och dekryptering av brevlåda. Detta ger en mindre säkerhetsfördel i vissa situationer, men vi rekommenderar ett lösenordsläge för de flesta användare. För att växla till två-lösenordsläge, ställ först in ett inloggningslösenord och sedan ett lösenord för brevlådan."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
@@ -4561,6 +4558,9 @@
       "Amount due": [
         "Att betala"
       ],
+      "Assertion Consumer Service URL": [
+        "URL för tjänsten Assertion Consumer Service"
+      ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
@@ -4624,9 +4624,6 @@
       "Confirm login password": [
         "Bekräfta inloggningslösenord"
       ],
-      "Confirm mailbox password": [
-        "Bekräfta lösenordet för brevlådan"
-      ],
       "Confirm new password": [
         "Bekräfta nytt lösenord"
       ],
@@ -4635,6 +4632,9 @@
       ],
       "Confirm password": [
         "Bekräfta lösenord"
+      ],
+      "Confirm second password": [
+        "Bekräfta andra lösenord"
       ],
       "Copy": [
         "Kopiera"
@@ -4735,9 +4735,6 @@
       "Logo": [
         "Logga"
       ],
-      "Mailbox password": [
-        "Lösenord för brevlåda"
-      ],
       "Main": [
         "Huvud"
       ],
@@ -4774,9 +4771,6 @@
       "New login password": [
         "Nytt inloggningslösenord"
       ],
-      "New mailbox password": [
-        "Nytt lösenord för brevlådan"
-      ],
       "New organization identity": [
         "Ny organisationsidentitet"
       ],
@@ -4785,6 +4779,9 @@
       ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "New second password": [
+        "Nytt andra lösenord"
       ],
       "No filter": [
         "Inget filter"
@@ -4878,6 +4875,9 @@
       ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Second password": [
+        "Andra lösenord"
       ],
       "Security code (${ codeName })": [
         "Säkerhetskod (${ codeName })"
@@ -6445,6 +6445,9 @@
       "Current plan": [
         "Nuvarande paket"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Ange ett visningsnamn för **${ username }**. Detta är vad dina användare kommer se när du ändrar deras behörigheter eller delar data med dem."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
       ],
@@ -6462,6 +6465,9 @@
       ],
       "Includes:": [
         "Inkluderar:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Lanserar ${ PASS_APP_NAME }"
       ],
       "per month": [
         "per månad"
@@ -6487,6 +6493,12 @@
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
+      ],
+      "Setting up your organization": [
+        "Ställer in din organisation"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Loggar in på ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Uppdaterar ditt konto"
@@ -8458,9 +8470,6 @@
       "Change login password": [
         "Ändra lösenord för inloggning"
       ],
-      "Change mailbox password": [
-        "Ändra lösenord för brevlådan"
-      ],
       "Change organization name": [
         "Ändra organisationsnamn"
       ],
@@ -8472,6 +8481,9 @@
       ],
       "Change role": [
         "Ändra roll"
+      ],
+      "Change second password": [
+        "Ändra andra lösenord"
       ],
       "Close": [
         "Stäng"
@@ -8680,8 +8692,8 @@
       "Invoices": [
         "Fakturor"
       ],
-      "Login password": [
-        "Inloggningslösenord"
+      "Main password": [
+        "Huvudlösenord"
       ],
       "Multi-user support": [
         "Stöd för flera användare"
@@ -8882,8 +8894,8 @@
       "Type": [
         "Typ"
       ],
-      "Unlock your mailbox": [
-        "Lås upp din brevlåda"
+      "Unlock your data": [
+        "Lås upp din data"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Uppgradera ditt nätverksskydd med dedikerade servrar"

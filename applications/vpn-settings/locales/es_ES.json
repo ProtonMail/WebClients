@@ -62,11 +62,11 @@
       "Change keys": [
         "Cambiar las claves"
       ],
-      "Change mailbox password": [
-        "Cambiar contraseña del buzón"
-      ],
       "Change password": [
         "Cambiar contraseña"
+      ],
+      "Change second password": [
+        "Cambiar la segunda contraseña"
       ],
       "Chat with us": [
         "Chatea con nosotros"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Credenciales de inicio de sesión incorrectas. Inténtalo de nuevo."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Contraseña de buzón incorrecta. Inténtalo de nuevo."
-      ],
       "Incorrect password": [
         "Contraseña incorrecta"
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtalo de nuevo."
       ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista previa de baja resolución"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Se puede también utilizar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "Se puede también utilizar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la segunda contraseña. Para cambiar al modo de contraseña única, ingresa la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
       "${ n } address": [
         "${ n } dirección",
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -4080,11 +4080,11 @@
       "Two-factor authentication enabled": [
         "Autenticación de dos factores activada"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "El modo de doble contraseña requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tu buzón. (Avanzado)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tus datos. (Avanzado)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "El modo de doble contraseña utiliza contraseñas separadas para el inicio de sesión y el descifrado del buzón. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero define una contraseña de inicio de sesión y luego una contraseña del buzón."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado de los datos. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero define una contraseña de inicio de sesión y luego una segunda contraseña."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Lamentablemente no hay ningún método de recuperación configurado para esta cuenta."
@@ -4640,9 +4640,6 @@
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
       ],
-      "Confirm mailbox password": [
-        "Confirmar contraseña del buzón"
-      ],
       "Confirm new password": [
         "Confirmar nueva contraseña"
       ],
@@ -4651,6 +4648,9 @@
       ],
       "Confirm password": [
         "Confirmar contraseña"
+      ],
+      "Confirm second password": [
+        "Confirmar la segunda contraseña"
       ],
       "Copy": [
         "Copiar"
@@ -4751,9 +4751,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Contraseña del buzón"
-      ],
       "Main": [
         "Principal"
       ],
@@ -4790,9 +4787,6 @@
       "New login password": [
         "Nueva contraseña de inicio de sesión"
       ],
-      "New mailbox password": [
-        "Nueva contraseña del buzón"
-      ],
       "New organization identity": [
         "Nueva identidad de la organización"
       ],
@@ -4801,6 +4795,9 @@
       ],
       "New password": [
         "Nueva contraseña"
+      ],
+      "New second password": [
+        "Nueva segunda contraseña"
       ],
       "No filter": [
         "Sin filtro"
@@ -4894,6 +4891,9 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Second password": [
+        "Segunda contraseña"
       ],
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
@@ -6449,6 +6449,9 @@
       "Current plan": [
         "Plan actual"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Ingresa un nombre a mostrar para **${ username }**. Esto es lo que verán tus usuarios cuando cambies sus permisos o compartas información con ellos."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "¡Por solo **${ relativePrice } más al mes**, podrás acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
       ],
@@ -6466,6 +6469,9 @@
       ],
       "Includes:": [
         "Incluye:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Iniciando ${ PASS_APP_NAME }"
       ],
       "per month": [
         "por mes"
@@ -6491,6 +6497,12 @@
       ],
       "Secure vault sharing": [
         "Compartición segura de cajas fuertes"
+      ],
+      "Setting up your organization": [
+        "Configurando tu organización"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Iniciando sesión en ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Actualizando tu cuenta"
@@ -6645,6 +6657,9 @@
       ],
       "Timeout exceeded": [
         "Se ha superado el tiempo de espera."
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
       ]
     },
     "Payments.Error": {
@@ -8506,9 +8521,6 @@
       "Change login password": [
         "Cambiar contraseña de inicio de sesión"
       ],
-      "Change mailbox password": [
-        "Cambiar contraseña del buzón"
-      ],
       "Change organization name": [
         "Cambiar nombre de la organización"
       ],
@@ -8520,6 +8532,9 @@
       ],
       "Change role": [
         "Cambiar rol"
+      ],
+      "Change second password": [
+        "Cambiar la segunda contraseña"
       ],
       "Close": [
         "Cerrar"
@@ -8728,8 +8743,8 @@
       "Invoices": [
         "Facturas"
       ],
-      "Login password": [
-        "Contraseña de inicio de sesión"
+      "Main password": [
+        "Contraseña principal"
       ],
       "Multi-user support": [
         "Soporte multiusuario"
@@ -8930,8 +8945,8 @@
       "Type": [
         "Tipo"
       ],
-      "Unlock your mailbox": [
-        "Desbloquea tu buzón de correo"
+      "Unlock your data": [
+        "Desbloquea tus datos"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Mejora la protección de tu red con servidores dedicados"

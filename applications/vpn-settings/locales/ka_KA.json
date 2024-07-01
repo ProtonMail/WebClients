@@ -62,9 +62,6 @@
       "Change keys": [
         "გასაღებების შეცვლა"
       ],
-      "Change mailbox password": [
-        "საფოსტო ყუთის პაროლის შეცვლა"
-      ],
       "Change password": [
         "პაროლის შეცვლა"
       ],
@@ -2157,9 +2154,6 @@
       "Incorrect login credentials. Please try again.": [
         "არასწორი შესვლის პარამეტრები. თავიდან სცადეთ."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "საფოსტო ყუთის არასწორი პაროლი. თავიდან სცადეთ."
-      ],
       "Incorrect password": [
         "არასწორი პაროლი"
       ],
@@ -3003,9 +2997,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: დაბალი გაფართოების მინიატურა"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და საფოსტო ყუთის პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
-      ],
       "${ n } address": [
         "${ n } მისამართი",
         "${ n } მისამართი"
@@ -3110,6 +3101,9 @@
       "Add server (${ availableAddedCount } available)": [
         "სერვერის დამატება (ხელმისაწვდომია ${ availableAddedCount })",
         "სერვერის დამატება (ხელმისაწვდომია ${ availableAddedCount })"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "დაამატეთ თქვენი სახელი და ლოგო, რომ თქვენი ორგანიზაციისთვის უფრო მორგებული გარემო შეიქმნათ."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } რაუტერი სერვერის დამატება",
@@ -3280,11 +3274,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -4038,12 +4032,6 @@
       "Two-factor authentication enabled": [
         "2FA ჩართულია"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი საფოსტო ყუთის გასაშიფრად. (დამატებით)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "ორპაროლიანი რეჟიმი იყენებს სხვადასხვა პაროლებს შესასვლელად და საფოსტო ყუთის გასაშიფრად. ეს ქმედება უსაფრთხოების უმნიშვნელო გაუმჯობესებაა, მაგრამ მომხმარებლების უმრავლესობას ჩვენ მაინც ერთპაროლიან რეჟმს ვურჩევთ. ორპაროლიან რეჟიმზე გადასართავად ჯერ დააყენეთ შესვლის პაროლი, მერე კი საფოსტო ყუთის."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "ამ ანგარიშისთვის აღდგენის მეთოდი დაყენებული არაა."
       ],
@@ -4394,12 +4382,20 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "ნაჩუქარია"
       ],
       "Paid": [
         "გადახდილია"
+      ],
+      "Processing": [
+        "დამუშავება"
       ],
       "Unpaid": [
         "გადაუხდელი"
@@ -4564,9 +4560,6 @@
       "Confirm login password": [
         "დაადასტურეთ შესვლის პაროლი"
       ],
-      "Confirm mailbox password": [
-        "დაადასტურეთ საფოსტო ყუთის პაროლი"
-      ],
       "Confirm new password": [
         "დაადასტურეთ ახალი პაროლი"
       ],
@@ -4675,9 +4668,6 @@
       "Logo": [
         "ლოგო"
       ],
-      "Mailbox password": [
-        "საფოსტო ყუთის პაროლი"
-      ],
       "Main": [
         "მთავარი"
       ],
@@ -4713,9 +4703,6 @@
       ],
       "New login password": [
         "ახალი შესვლის პაროლი"
-      ],
-      "New mailbox password": [
-        "საფოსტო ყუთის ახალი პაროლი"
       ],
       "New organization identity": [
         "ახალი ორგანიზაციის იდენტიფიკატორი"
@@ -4818,6 +4805,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Second password": [
+        "მეორე პაროლი"
       ],
       "Security code (${ codeName })": [
         "უსაფრთხოების კოდი (${ codeName })"
@@ -6355,6 +6345,9 @@
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "შეიყვანეთ საჩვენებლი სახელი **${ username }**-სთვის. ეს ისაა, რასაც თქვენი მომხმარებლები დაინახავენ, როცა თქვენ მათ წვდომებს შეცვლით, ან მონაცემებს გაუზიარებთ."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან პაროლების მმართველთან!"
       ],
@@ -6372,6 +6365,9 @@
       ],
       "Includes:": [
         "შეიცავს:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გაშვება"
       ],
       "per month": [
         "თვეში"
@@ -6397,6 +6393,12 @@
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
+      ],
+      "Setting up your organization": [
+        "ორგანიზაციის მორგება"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ში შესვლა"
       ],
       "Updating your account": [
         "თქვენი ანგარიშის განახლება"
@@ -6524,6 +6526,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "Got it": [
+        "გავიგე"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -6790,6 +6795,9 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**წინასწარი მოთხოვნები:** SCIM გაშლისთვის SAML ავთენტიკაცია აუცილებლად ჩართული უნდა იყოს."
+      ],
       "Enter token into your identity provider": [
         "შეიყვანეთ კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
@@ -6826,6 +6834,14 @@
       ],
       "SCIM automatic provisioning": [
         "SCIM ავტომატური მუშაობისთვის მომზადება"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "SCIM კონექტორის API-ის გასაღები, რომელზეც IdP გაშლის აგენტი SCIM მონაცემებს გააგზავნის"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "SCIM კონექტორის URL, რომელზეც IdP გაშლის აგენტი SCIM მონაცემებს გააგზავნის"
       ]
     },
     "Select file": {
@@ -7838,6 +7854,9 @@
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
       "No ads or tracking": [
         "რეკლამისა და ტრეკინგის გარეშე"
       ],
@@ -8259,9 +8278,6 @@
       "Change login password": [
         "შესვლის პაროლის შეცვლა"
       ],
-      "Change mailbox password": [
-        "საფოსტო ყუთის პაროლის შეცვლა"
-      ],
       "Change organization name": [
         "ორგანიზაციის სახელის ჩასწორება"
       ],
@@ -8481,8 +8497,8 @@
       "Invoices": [
         "ინვოისები"
       ],
-      "Login password": [
-        "მომხმარებლის პაროლი"
+      "Main password": [
+        "მთავარი პაროლი"
       ],
       "Multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -8683,8 +8699,8 @@
       "Type": [
         "ტიპი"
       ],
-      "Unlock your mailbox": [
-        "განბლოკეთ თქვენი საფოსტო ყუთი"
+      "Unlock your data": [
+        "თქვენი მონაცემების განბლოკვა"
       ],
       "Upgrade your network protection with dedicated servers": [
         "ასწიეთ თქვენი ქსელის დაცვის დონე გამოყოფილი სერვერებით"

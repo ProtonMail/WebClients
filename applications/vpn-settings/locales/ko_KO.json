@@ -62,9 +62,6 @@
       "Change keys": [
         "키 변경"
       ],
-      "Change mailbox password": [
-        "메일함 비밀번호 변경"
-      ],
       "Change password": [
         "비밀번호 변경"
       ],
@@ -2151,9 +2148,6 @@
       "Incorrect login credentials. Please try again.": [
         "이메일 (사용자 이름) 또는 비밀번호가 잘못되었습니다. 다시 시도하세요."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "잘못된 메일함 암호입니다. 다시 시도해 주세요."
-      ],
       "Incorrect password": [
         "잘못된 비밀번호입니다"
       ],
@@ -2997,9 +2991,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 저화질 미리보기"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
-      ],
       "${ n } address": [
         "${ n } 주소"
       ],
@@ -3264,10 +3255,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -3687,6 +3678,9 @@
       "Please add an email address for the user on row": [
         "행에 있는 사용자의 이메일 주소를 추가해 주세요"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "해당 문서에 초대하려면 소유자에게 연락하세요."
+      ],
       "Please authenticate your card in the verification tab.": [
         "인증 탭에서 카드를 인증해 주세요."
       ],
@@ -3707,6 +3701,9 @@
       ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
+      ],
+      "Please open the document to view it.": [
+        "문서를 확인하려면 열어주세요."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "다른 결제 수단을 사용하거나, 은행에 연락하세요."
@@ -3738,11 +3735,17 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
+      "Preview of documents is not yet supported.": [
+        "문서의 미리 보기가 지원되지 않습니다."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
       ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
       "read our two-factor authentication guide first": [
         "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
@@ -3966,6 +3969,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "임시 비밀번호를 대체하게 됩니다. 추후 ${ BRAND_NAME } 계정에 접근하는데 사용할 수 있습니다."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "이 초대가 **${ email }**(으)로 전송됩니다."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "이는 활성 세션에서 로그아웃하고 2단계 인증을 비활성화하게 됩니다."
       ],
@@ -4028,12 +4034,6 @@
       ],
       "Two-factor authentication enabled": [
         "2단계 인증이 활성화되었습니다."
-      ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "이중 비밀번호 방식은 두 개의 비밀번호가 필요합니다. 하나는 계정에 로그인 하는 경우에, 다른 하나는 메일함을 여는 데 필요합니다. (고급 설정)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "이중 암호 모드는 로그인 및 사서함 암호 해독에 별도의 암호를 사용합니다. 일부 상황에서는 약간의 보안 이점이 있지만 대부분의 사용자에게는 단일 암호 모드를 권장합니다. 이중 암호 모드로 전환하려면 먼저 로그인 암호를 설정한 다음 메일함 암호를 설정하십시오."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "이 계정에는 저장된 복구 방법이 없습니다."
@@ -4567,9 +4567,6 @@
       "Confirm login password": [
         "로그인 비밀번호 확인"
       ],
-      "Confirm mailbox password": [
-        "메일함 비밀번호 확인"
-      ],
       "Confirm new password": [
         "새 비밀번호 확인"
       ],
@@ -4678,9 +4675,6 @@
       "Logo": [
         "로고"
       ],
-      "Mailbox password": [
-        "메일함 비밀번호"
-      ],
       "Main": [
         "메인"
       ],
@@ -4716,9 +4710,6 @@
       ],
       "New login password": [
         "새 로그인 비밀번호"
-      ],
-      "New mailbox password": [
-        "새 메일함 비밀번호"
       ],
       "New organization identity": [
         "새로운 조직 신원"
@@ -6375,6 +6366,9 @@
       "Current plan": [
         "현재 플랜"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "**${ username }**의 표시 이름을 입력하세요. 이 이름은 사용자가 권한을 변경하거나 데이터를 공유할 때 확인 가능합니다."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
       ],
@@ -6392,6 +6386,9 @@
       ],
       "Includes:": [
         "포함:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 실행 중"
       ],
       "per month": [
         "매월"
@@ -6416,6 +6413,12 @@
       ],
       "Secure vault sharing": [
         "안전한 금고 공유"
+      ],
+      "Setting up your organization": [
+        "조직을 설정하세요"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }로 로그인 중"
       ],
       "Updating your account": [
         "계정 업데이트 중"
@@ -6547,8 +6550,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "확인"
+      ],
       "MM/YY": [
         "MM/YY (월/년)"
+      ],
+      "Payment Processing": [
+        "결제 처리중"
       ],
       "Processing payment": [
         "결제 처리 중"
@@ -8376,9 +8385,6 @@
       "Change login password": [
         "로그인 비밀번호 변경"
       ],
-      "Change mailbox password": [
-        "메일함 비밀번호 변경"
-      ],
       "Change organization name": [
         "조직 이름 변경"
       ],
@@ -8595,9 +8601,6 @@
       "Invoices": [
         "청구서"
       ],
-      "Login password": [
-        "로그인 비밀번호"
-      ],
       "Multi-user support": [
         "다중 사용자 지원"
       ],
@@ -8795,9 +8798,6 @@
       ],
       "Type": [
         "유형"
-      ],
-      "Unlock your mailbox": [
-        "메일 확인"
       ],
       "Upgrade your network protection with dedicated servers": [
         "전용 서버로 네트워크 보호를 업그레이드하세요"
