@@ -13,7 +13,7 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import { useNotifications } from '@proton/components/hooks';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
-import { useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
+import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -96,6 +96,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const history = useHistory<MaybeNull<RouteErrorState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
+    const checkConnectivity = useCheckConnectivity();
 
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
@@ -410,7 +411,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const run = async () => {
             if (matchConsumeFork) {
                 return authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
-            } else return authService.init({ forceLock: true });
+            } else {
+                await checkConnectivity?.();
+                return authService.init({ forceLock: true });
+            }
         };
 
         /** If a fork for the same UserID has been consumed in another tab - clear

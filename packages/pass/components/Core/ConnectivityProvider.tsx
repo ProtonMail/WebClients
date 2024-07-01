@@ -1,12 +1,13 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import type { BottomBarProps } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';
 import { useNavigatorOnline } from '@proton/pass/hooks/useNavigatorOnline';
-import type { ApiSubscriptionEvent } from '@proton/pass/types';
+import type { ApiSubscriptionEvent, MaybeNull } from '@proton/pass/types';
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
@@ -18,7 +19,12 @@ type Props = {
     subscribe?: PubSub<ApiSubscriptionEvent>['subscribe'];
 };
 
-const ConnectivityContext = createContext<boolean>(true);
+type ConnectivityState = {
+    online: boolean;
+    check: () => Promise<void>;
+};
+
+const ConnectivityContext = createContext<MaybeNull<ConnectivityState>>(null);
 
 export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, onPing, subscribe }) => {
     const { getApiState } = usePassCore();
@@ -27,13 +33,14 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
     const online = apiOnline && navigatorOnline;
 
     const checkApiOnline = useCallback(
-        () =>
+        asyncLock(() =>
             Promise.resolve(onPing?.())
                 .catch(noop)
                 .finally(async () => {
                     const apiState = await getApiState?.();
                     setApiOnline(apiState?.online ?? navigator.onLine);
-                }),
+                })
+        ),
         []
     );
 
@@ -62,10 +69,13 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
         }
     }, [online]);
 
-    return <ConnectivityContext.Provider value={online}>{children}</ConnectivityContext.Provider>;
+    const ctx = useMemo(() => ({ check: checkApiOnline, online }), [online]);
+
+    return <ConnectivityContext.Provider value={ctx}>{children}</ConnectivityContext.Provider>;
 };
 
-export const useConnectivity = () => useContext(ConnectivityContext);
+export const useConnectivity = () => useContext(ConnectivityContext)?.online ?? true;
+export const useCheckConnectivity = () => useContext(ConnectivityContext)?.check;
 
 export const useConnectivityRef = () => {
     const online = useConnectivity();
