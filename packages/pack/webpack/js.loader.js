@@ -1,5 +1,8 @@
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('./helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./constants');
+const path = require('path');
+
+const coreJsVersion = require('core-js/package.json').version;
 
 const UNSUPPORTED_JS_LOADER = [
     {
@@ -10,14 +13,14 @@ const UNSUPPORTED_JS_LOADER = [
             compact: true,
             presets: [
                 [
-                    require.resolve('@babel/preset-env'),
+                    require('@babel/preset-env').default,
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.27' },
+                        corejs: { version: coreJsVersion },
                     },
                 ],
-                [require.resolve('@babel/preset-typescript')],
+                [require('@babel/preset-typescript').default],
             ],
             plugins: [],
         },
@@ -28,7 +31,7 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
     const babelReactRefresh = hasReactRefresh ? [require.resolve('react-refresh/babel')] : [];
     const babelPluginsDev = [...babelReactRefresh];
     const babelPluginsProd = [
-        [require.resolve('babel-plugin-transform-react-remove-prop-types'), { removeImport: true }],
+        [require('babel-plugin-transform-react-remove-prop-types').default, { removeImport: true }],
     ];
 
     return {
@@ -41,16 +44,16 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
             configFile: false,
             presets: [
                 [
-                    require.resolve('@babel/preset-env'),
+                    require('@babel/preset-env').default,
                     {
                         targets: browserslist,
                         useBuiltIns: 'entry',
-                        corejs: { version: '3.27' },
+                        corejs: { version: coreJsVersion },
                         exclude: ['transform-typeof-symbol'], // Exclude transforms that make all code slower
                     },
                 ],
                 [
-                    require.resolve('@babel/preset-react'),
+                    require('@babel/preset-react').default,
                     {
                         // Adds component stack to warning messages
                         // Adds __self attribute to JSX which React will use for some warnings
@@ -58,16 +61,20 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
                         runtime: 'automatic',
                     },
                 ],
-                [require.resolve('@babel/preset-typescript')],
+                [require('@babel/preset-typescript').default],
             ],
             plugins: [
-                require.resolve('@babel/plugin-syntax-dynamic-import'),
-                require.resolve('@babel/plugin-proposal-object-rest-spread'),
-                require.resolve('@babel/plugin-proposal-nullish-coalescing-operator'),
-                require.resolve('@babel/plugin-proposal-optional-chaining'),
-                require.resolve('@babel/plugin-proposal-class-properties'),
-                require.resolve('@babel/plugin-proposal-private-methods'),
-                require.resolve('@babel/plugin-transform-runtime'),
+                require('@babel/plugin-transform-class-properties').default,
+                [
+                    require('@babel/plugin-transform-runtime').default,
+                    {
+                        corejs: false,
+                        version: require('@babel/runtime/package.json').version,
+                        regenerator: true,
+                        useESModules: true,
+                        absoluteRuntime: path.dirname(require.resolve('@babel/runtime/package.json')),
+                    },
+                ],
                 ...(isProduction ? babelPluginsProd : babelPluginsDev),
             ],
         },
