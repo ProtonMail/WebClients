@@ -5,6 +5,13 @@
 .calendar-dayeventcell,
 .calendar-eventcell {
 	--opacity: 1;
+
+	font-size: rem(12);
+	line-height: rem(14);
+
+	&-title {
+		padding-block: em(2);
+	}
 }
 
 .calendar-dayeventcell-inner,
@@ -19,10 +26,12 @@
 	border-radius: var(--border-radius-sm);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
-	line-height: em(18);
 	cursor: pointer;
 	opacity: var(--opacity);
-	transition: all 0.1s ease-out, opacity 0.5s ease-out, background-color 0.15s ease-in-out;
+	transition:
+		all 0.1s ease-out,
+		opacity 0.5s ease-out,
+		background-color 0.15s ease-in-out;
 	animation: loadingEvent 1s easing(ease-in-quint) infinite alternate;
 
 	& > * {
@@ -223,14 +232,17 @@
 	}
 
 	&--sm &-title {
-		font-size: em(13);
+		padding-block-start: 0;
+		font-size: rem(13);
 	}
 
 	&--xs &-title {
-		font-size: em(12);
+		padding-block-start: 0;
+		font-size: rem(12);
 	}
 
 	&--2xs &-title {
-		font-size: em(10);
+		padding-block-start: 0;
+		font-size: rem(9.6); // design value
 	}
 }
