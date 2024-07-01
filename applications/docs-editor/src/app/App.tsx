@@ -281,25 +281,29 @@ export function App({ nonInteractiveMode = false }: Props) {
       return
     }
 
-    const updateFrameSize = debounce(() => {
+    const updateFrameSize = () => {
       const element = editorRef.current?.getRootElement()
       if (element) {
         void bridge.getClientInvoker().updateFrameSize(element.scrollHeight)
       }
+    }
+
+    const updateFrameSizeDebounced = debounce(() => {
+      updateFrameSize()
     }, 1_000)
 
-    const removeListener = editorRef.current.registerUpdateListener(updateFrameSize)
-    window.addEventListener('resize', updateFrameSize)
+    const removeListener = editorRef.current.registerUpdateListener(updateFrameSizeDebounced)
+    window.addEventListener('resize', updateFrameSizeDebounced)
     window.addEventListener('beforeprint', updateFrameSize)
 
     updateFrameSize()
 
     return () => {
       removeListener()
-      window.removeEventListener('resize', updateFrameSize)
+      window.removeEventListener('resize', updateFrameSizeDebounced)
       window.removeEventListener('beforeprint', updateFrameSize)
     }
-  }, [bridge])
+  }, [bridge, editorRef?.current])
 
   if (!initialConfig || !docState) {
     return (
