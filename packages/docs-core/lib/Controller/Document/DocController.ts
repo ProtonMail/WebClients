@@ -6,7 +6,6 @@ import { DuplicateDocument } from '../../UseCase/DuplicateDocument'
 import { CreateNewDocument } from '../../UseCase/CreateNewDocument'
 import { DecryptedNode, DriveCompat, NodeMeta } from '@proton/drive-store'
 import {
-  DocChangeObserver,
   InternalEventBusInterface,
   ClientRequiresEditorMethods,
   RtsMessagePayload,
@@ -62,7 +61,6 @@ const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
 export class DocController implements DocControllerInterface, InternalEventHandlerInterface {
   entitlements: DocumentEntitlements | null = null
   private decryptedNode?: DecryptedNode
-  private changeObservers: DocChangeObserver[] = []
   editorInvoker?: ClientRequiresEditorMethods
   private docMeta!: DocumentMetaInterface
   private initialCommit?: DecryptedCommit
@@ -221,7 +219,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     this.logger.info('Editor is ready to receive invocations')
 
-    this.sendInitialCommitToEditor()
+    await this.sendInitialCommitToEditor()
 
     this.showEditorIfAllConnectionsReady()
 
@@ -245,14 +243,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       }
 
       this.updatesReceivedWhileEditorInvokerWasNotReady.length = 0
-    }
-  }
-
-  public addChangeObserver(observer: DocChangeObserver): () => void {
-    this.changeObservers.push(observer)
-
-    return () => {
-      this.changeObservers = this.changeObservers.filter((o) => o !== observer)
     }
   }
 
@@ -298,7 +288,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       const decryptedCommit = decryptResult.getValue()
       this.logger.info(`Downloaded and decrypted commit with ${decryptedCommit?.numberOfUpdates()} updates`)
 
-      this.setInitialCommit(decryptedCommit)
+      void this.setInitialCommit(decryptedCommit)
     }
 
     this.handleDocsServerConnectionReady()
@@ -319,7 +309,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   beginInitialSyncTimer(): void {
     this.initialSyncTimer = setTimeout(() => {
-      this.logger.warn('Initial sync with RTS timed out')
+      this.logger.warn('Client did not receive ServerHasMoreOrLessGivenTheClientEverythingItHas event in time')
       this.handleRealtimeConnectionReady()
     }, MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT)
   }
@@ -336,6 +326,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     this.realtimeConnectionReady = true
     this.showEditorIfAllConnectionsReady()
+
+    this.eventBus.publish({
+      type: DocControllerEvent.DidLoadInitialEditorContent,
+      payload: undefined,
+    })
   }
 
   private handleDocsServerConnectionReady(): void {
@@ -464,14 +459,14 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       `Reownloaded and decrypted commit id ${decryptedCommit.commitId} with ${decryptedCommit?.numberOfUpdates()} updates`,
     )
 
-    this.setInitialCommit(decryptedCommit)
+    void this.setInitialCommit(decryptedCommit)
 
     void this.websocketService.reconnectToDocumentWithoutDelay(this.nodeMeta)
 
     this.isRefetchingStaleCommit = false
   }
 
-  setInitialCommit(decryptedCommit: DecryptedCommit | undefined): void {
+  async setInitialCommit(decryptedCommit: DecryptedCommit | undefined): Promise<void> {
     this.initialCommit = decryptedCommit
 
     if (!decryptedCommit) {
@@ -482,7 +477,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     this.lastCommitIdReceivedFromRtsOrApi = decryptedCommit.commitId
 
-    this.sendInitialCommitToEditor()
+    await this.sendInitialCommitToEditor()
 
     if (decryptedCommit.needsSquash()) {
       this.logger.info('Document needs squash')
@@ -491,13 +486,13 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
-  sendInitialCommitToEditor(): void {
+  async sendInitialCommitToEditor(): Promise<void> {
     if (this.docMeta && this.initialCommit && this.editorInvoker) {
       const squashedContent = this.initialCommit.squashedRepresentation()
 
       this.logger.info(`Sending initial commit to editor with size ${squashedContent.byteLength} bytes`)
 
-      void this.editorInvoker.receiveMessage({
+      await this.editorInvoker.receiveMessage({
         type: { wrapper: 'du' },
         content: squashedContent,
         origin: DocUpdateOrigin.InitialLoad,
@@ -523,7 +518,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.decryptedNode = await this.driveCompat.getNode(this.nodeMeta)
       const newDoc = this.docMeta.copyWithNewValues({ name: this.decryptedNode.name })
       this.docMeta = newDoc
-      this.changeObservers.forEach((observer) => observer(newDoc))
+
+      this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
+        type: DocControllerEvent.DidLoadDocumentTitle,
+        payload: { title: newDoc.name },
+      })
     } catch (error) {
       this.logger.error('Failed to get decrypted link', String(error))
     }
@@ -807,7 +806,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     })
   }
 
-  showCommentsPanel() {
+  showCommentsPanel(): void {
     if (!this.editorInvoker) {
       return
     }
@@ -815,15 +814,17 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     void this.editorInvoker.showCommentsPanel()
   }
 
-  async exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs) {
-    if (!this.editorInvoker) {
-      throw new Error('Editor invoker not initialized')
+  async exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
+    if (!this.editorInvoker || !this.decryptedNode) {
+      throw new Error(`Attepting to export document before editor invoker or decrypted node is initialized`)
     }
 
-    void this._exportAndDownload.execute(this.editorInvoker, this.getSureDocument(), format)
+    const data = await this.editorInvoker.exportData(format)
+
+    void this._exportAndDownload.execute(data, this.decryptedNode?.name, format)
   }
 
-  async printAsPDF() {
+  async printAsPDF(): Promise<void> {
     if (!this.editorInvoker) {
       throw new Error('Editor invoker not initialized')
     }

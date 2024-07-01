@@ -1,20 +1,14 @@
-import {
-  ClientRequiresEditorMethods,
-  DocumentMetaInterface,
-  DataTypesThatDocumentCanBeExportedAs,
-  DocumentExportMimeTypes,
-} from '@proton/docs-shared'
+import { DataTypesThatDocumentCanBeExportedAs, DocumentExportMimeTypes } from '@proton/docs-shared'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 
 export class ExportAndDownload implements UseCaseInterface<void> {
   async execute(
-    editorInvoker: ClientRequiresEditorMethods,
-    documentMeta: DocumentMetaInterface,
+    data: Uint8Array | Blob,
+    docName: string,
     format: DataTypesThatDocumentCanBeExportedAs,
   ): Promise<Result<void>> {
-    const data = await editorInvoker.exportData(format)
-    const name = `${documentMeta.name}.${format}`
+    const name = `${docName}.${format}`
     const mimeType = DocumentExportMimeTypes[format]
     const blob = new Blob([data], {
       type: mimeType,
