@@ -38,20 +38,47 @@
             />
         </g>
 
-        <g id="mime-sm-proton-doc" clip-path="path('M0 0h16v16H0z')">
-            <path
-                fill="#34B8EE"
-                d="M16 2.733v10.534c0 1.2-.78 2.226-1.86 2.586a2.7 2.7 0 0 1-.873.147H2.733c-.306 0-.6-.053-.88-.147-.04-.013-.086-.033-.126-.046a1 1 0 0 1-.12-.054c-.06-.026-.12-.06-.18-.086a3 3 0 0 1-.227-.134q-.032-.02-.053-.04A2.73 2.73 0 0 1 0 13.267V2.733C0 1.813.453 1 1.147.507c.02-.014.033-.027.053-.04a2.5 2.5 0 0 1 .407-.22c.04-.02.08-.034.12-.054.04-.013.08-.033.126-.046.28-.094.574-.147.88-.147h10.534c.306 0 .6.053.873.14a2.73 2.73 0 0 1 1.853 2.5v.087z"
-            />
-            <path
-                fill="#fff"
-                fill-rule="evenodd"
-                d="M2.913 7.18c0-.373.3-.673.674-.673h2.846c.374 0 .674.3.674.673s-.3.673-.674.673H3.587a.67.67 0 0 1-.674-.673M2.913 9.793c0-.373.3-.673.674-.673h4.7c.373 0 .673.3.673.673s-.3.674-.673.674h-4.7a.67.67 0 0 1-.674-.674M2.913 12.413c0-.373.3-.673.674-.673h4.7c.373 0 .673.3.673.673s-.3.674-.673.674h-4.7a.67.67 0 0 1-.674-.674"
-                clip-rule="evenodd"
-            />
-            <path fill="#85D4F5" d="M12.06 0H8.127v3.933h3.933z" />
-            <path fill="#D6F1FC" d="M16 2.647v1.286h-3.933V0h1.206c.307 0 .6.053.874.14A2.73 2.73 0 0 1 16 2.64z" />
-            <path fill="#85D4F5" d="M16 3.933h-3.933v3.934H16z" />
+        <g id="mime-sm-proton-doc" clip-path="url(#mime-sm-proton-doc-clip-path)">
+            <mask
+                id="mime-sm-proton-doc-mask"
+                width="16"
+                height="16"
+                x="0"
+                y="0"
+                maskUnits="userSpaceOnUse"
+                style="mask-type: luminance"
+            >
+                <path fill="#fff" d="M16 0H0v16h16V0Z" />
+            </mask>
+            <g mask="url(#mime-sm-proton-doc-mask)">
+                <path
+                    fill="url(#mime-sm-proton-doc-gradient)"
+                    d="M13.333 0H2.667A2.667 2.667 0 0 0 0 2.667v10.666A2.667 2.667 0 0 0 2.667 16h10.666A2.667 2.667 0 0 0 16 13.333V2.667A2.667 2.667 0 0 0 13.333 0Z"
+                />
+                <path fill="#85D4F5" d="M12 0H8v4h4V0Z" />
+                <path fill="#D6F1FC" d="M12 0h1.333A2.667 2.667 0 0 1 16 2.667V4h-4V0Z" />
+                <path fill="#85D4F5" d="M16 4h-4v4h4V4Z" />
+                <path
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    d="M8.667 12.667a.667.667 0 0 1-.667.666H3.333a.667.667 0 1 1 0-1.333H8c.368 0 .667.299.667.667ZM6.667 10a.667.667 0 0 1-.667.667H3.333a.667.667 0 0 1 0-1.334H6c.368 0 .667.299.667.667Z"
+                    clip-rule="evenodd"
+                />
+            </g>
+            <radialGradient
+                id="mime-sm-proton-doc-gradient"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientTransform="rotate(-53.15 18.634 10.704) scale(18.8804)"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop stop-color="#6D4AFF" />
+                <stop offset="1" stop-color="#34B8EE" />
+            </radialGradient>
+            <clipPath id="mime-sm-proton-doc-clip-path">
+                <path fill="#fff" d="M0 0h16v16H0z" />
+            </clipPath>
         </g>
 
         <g id="mime-sm-folder">
@@ -292,20 +319,47 @@
             />
         </g>
 
-        <g id="mime-md-proton-doc" clip-path="path(M0 0h24v24H0z)">
-            <path
-                fill="#34B8EE"
-                d="M24 4.1v15.8c0 1.8-1.17 3.34-2.79 3.88-.421.144-.864.219-1.31.22H4.1c-.46 0-.9-.08-1.32-.22-.06-.02-.13-.05-.19-.07a2 2 0 0 1-.18-.08c-.09-.04-.18-.09-.27-.13a5 5 0 0 1-.34-.2.5.5 0 0 1-.08-.06A4.1 4.1 0 0 1 0 19.9V4.1C0 2.72.68 1.5 1.72.76c.03-.02.05-.04.08-.06a3.8 3.8 0 0 1 .61-.33c.06-.03.12-.05.18-.08.06-.02.12-.05.19-.07A4.1 4.1 0 0 1 4.1 0h15.8c.46 0 .9.08 1.31.21a4.095 4.095 0 0 1 2.78 3.75v.13z"
-            />
-            <path
-                fill="#fff"
-                fill-rule="evenodd"
-                d="M4.37 10.77c0-.56.45-1.01 1.01-1.01h4.27c.56 0 1.01.45 1.01 1.01s-.45 1.01-1.01 1.01H5.38a1.005 1.005 0 0 1-1.01-1.01m0 3.92c0-.56.45-1.01 1.01-1.01h7.05c.56 0 1.01.45 1.01 1.01 0 .559-.45 1.01-1.01 1.01H5.38a1.005 1.005 0 0 1-1.01-1.01m0 3.93c0-.56.45-1.01 1.01-1.01h7.05c.56 0 1.01.45 1.01 1.01 0 .559-.45 1.01-1.01 1.01H5.38a1.005 1.005 0 0 1-1.01-1.01"
-                clip-rule="evenodd"
-            />
-            <path fill="#85D4F5" d="M18.09 0h-5.9v5.9h5.9z" />
-            <path fill="#D6F1FC" d="M24 3.97V5.9h-5.9V0h1.81c.46 0 .9.08 1.31.21A4.095 4.095 0 0 1 24 3.96z" />
-            <path fill="#85D4F5" d="M24 5.9h-5.9v5.9H24z" />
+        <g id="mime-md-proton-doc" clip-path="url(#mime-md-proton-doc-clip-path)">
+            <mask
+                id="mime-md-proton-doc-mask"
+                width="24"
+                height="24"
+                x="0"
+                y="0"
+                maskUnits="userSpaceOnUse"
+                style="mask-type: luminance"
+            >
+                <path fill="#fff" d="M24 0H0v24h24V0Z" />
+            </mask>
+            <g mask="url(#mime-md-proton-doc-mask)">
+                <path
+                    fill="url(#mime-md-proton-doc-gradient)"
+                    d="M20 0H4a4 4 0 0 0-4 4v16a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4Z"
+                />
+                <path fill="#85D4F5" d="M18 0h-6v6h6V0Z" />
+                <path fill="#D6F1FC" d="M18 0h2a4 4 0 0 1 4 4v2h-6V0Z" />
+                <path fill="#85D4F5" d="M24 6h-6v6h6V6Z" />
+                <path
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    d="M13 19a1 1 0 0 1-1 1H5a1 1 0 1 1 0-2h7a1 1 0 0 1 1 1ZM10 15a1 1 0 0 1-1 1H5a1 1 0 1 1 0-2h4a1 1 0 0 1 1 1Z"
+                    clip-rule="evenodd"
+                />
+            </g>
+            <radialGradient
+                id="mime-md-proton-doc-gradient"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientTransform="rotate(-53.15 27.95 16.055) scale(28.3206)"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop stop-color="#6D4AFF" />
+                <stop offset="1" stop-color="#34B8EE" />
+            </radialGradient>
+            <clipPath id="mime-md-proton-doc-clip-path">
+                <path fill="#fff" d="M0 0h24v24H0z" />
+            </clipPath>
         </g>
 
         <g id="mime-md-folder">
@@ -619,35 +673,31 @@
             />
         </g>
 
-        <g id="mime-lg-proton-doc">
+        <g id="mime-lg-proton-doc" clip-path="url(#mime-lg-proton-doc-clip-path)">
+            <rect width="40" height="48.09" x="4" fill="url(#mime-lg-proton-doc-gradient)" rx="7" />
+            <path fill="#85D4F5" d="M32 0H20v12h12V0Z" />
+            <path fill="#D6F1FC" d="M37 0h-5v12h12V7a7 7 0 0 0-7-7Z" />
+            <path fill="#85D4F5" d="M44 12H32v12h12V12Z" />
             <path
-                d="M3.24219 7.24891C3.24219 3.24545 6.48763 0 10.4911 0H24.1888C26.0567 0 27.8525 0.72102 29.2017 2.01272L37.0062 9.48433C38.4345 10.8517 39.2422 12.7432 39.2422 14.7205V34.7511C39.2422 38.7546 35.9967 42 31.9933 42H10.4911C6.48763 42 3.24219 38.7546 3.24219 34.7511V7.24891Z"
-                fill="#34B8EE"
-            />
-            <path d="M28.9229 0.0410156H18.6172V10.3467H28.9229V0.0410156Z" fill="#85D4F5" />
-            <path
-                d="M39.2471 6.97551V10.3467H28.9414V0.0410156H32.103C32.9065 0.0410156 33.675 0.180754 34.3912 0.407828C37.151 1.33359 39.1597 3.91874 39.2471 6.95805V6.97551Z"
-                fill="#D6F1FC"
-            />
-            <path d="M39.2471 10.3477H28.9414V20.6533H39.2471V10.3477Z" fill="#85D4F5" />
-            <path
+                fill="#fff"
                 fill-rule="evenodd"
+                d="M28 38a2 2 0 0 1-2 2H12a2 2 0 1 1 0-4h14a2 2 0 0 1 2 2ZM22 30a2 2 0 0 1-2 2h-8a2 2 0 1 1 0-4h8a2 2 0 0 1 2 2Z"
                 clip-rule="evenodd"
-                d="M9.35938 20.4107C9.35938 19.4325 10.1454 18.6465 11.1236 18.6465H18.5821C19.5602 18.6465 20.3463 19.4325 20.3463 20.4107C20.3463 21.3888 19.5602 22.1749 18.5821 22.1749H11.1236C10.1454 22.1749 9.35938 21.3888 9.35938 20.4107Z"
-                fill="white"
             />
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M9.35938 27.2603C9.35938 26.2821 10.1454 25.4961 11.1236 25.4961H23.438C24.4161 25.4961 25.2022 26.2821 25.2022 27.2603C25.2022 28.2385 24.4161 29.0245 23.438 29.0245H11.1236C10.1454 29.0245 9.35938 28.2385 9.35938 27.2603Z"
-                fill="white"
-            />
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M9.35938 34.1255C9.35938 33.1474 10.1454 32.3613 11.1236 32.3613H23.438C24.4161 32.3613 25.2022 33.1474 25.2022 34.1255C25.2022 35.1037 24.4161 35.8897 23.438 35.8897H11.1236C10.1454 35.8897 9.35938 35.1037 9.35938 34.1255Z"
-                fill="white"
-            />
+            <radialGradient
+                id="mime-lg-proton-doc-gradient"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientTransform="rotate(-58.062 52.592 27.735) scale(53.5104 50.0563)"
+                gradientUnits="userSpaceOnUse"
+            >
+                <stop stop-color="#6D4AFF" />
+                <stop offset="1" stop-color="#34B8EE" />
+            </radialGradient>
+            <clipPath id="mime-lg-proton-doc-clip-path">
+                <path fill="#fff" d="M0 0h48v48H0z" />
+            </clipPath>
         </g>
 
         <g id="mime-lg-folder">
