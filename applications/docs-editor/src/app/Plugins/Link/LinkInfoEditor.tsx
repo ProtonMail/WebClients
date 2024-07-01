@@ -77,38 +77,38 @@ export function LinkInfoEditor({
   }, [editor, linkNode, linkTextNode])
 
   const handleSubmission = useCallback(() => {
-    editor.update(
-      () => {
-        const selection = $getSelection()
-        if (!$isRangeSelection(selection)) {
+    editor.update(() => {
+      const selection = $getSelection()
+      if (!$isRangeSelection(selection)) {
+        return
+      }
+
+      const sanitizedURL = sanitizeUrl(url)
+
+      const isSelectionCollapsed = selection.isCollapsed()
+      if (isSelectionCollapsed && !!url && !linkNode) {
+        if (!sanitizedURL) {
           return
         }
+        const linkNode = $createLinkNode(sanitizedURL)
+        const textNode = $createTextNode(text || url)
+        linkNode.append(textNode)
+        $insertNodes([linkNode])
+        linkNode.selectEnd()
+        return
+      }
 
-        const isSelectionCollapsed = selection.isCollapsed()
-        if (isSelectionCollapsed && !!url && !linkNode) {
-          const sanitizedURL = sanitizeUrl(url)
-          const linkNode = $createLinkNode(sanitizedURL)
-          const textNode = $createTextNode(text || url)
-          linkNode.append(textNode)
-          $insertNodes([linkNode])
-          linkNode.selectEnd()
-          return
-        }
+      if (!sanitizedURL) {
+        return
+      }
 
-        if (url !== '') {
-          editor.dispatchCommand(TOGGLE_LINK_COMMAND, sanitizeUrl(url))
-        }
+      editor.dispatchCommand(TOGGLE_LINK_COMMAND, sanitizedURL || null)
 
-        if (linkTextNode !== null && text !== '') {
-          linkTextNode.setTextContent(text)
-        }
-      },
-      {
-        onUpdate: () => {
-          setIsEditingLink(false)
-        },
-      },
-    )
+      if (linkTextNode !== null && text !== '') {
+        linkTextNode.setTextContent(text)
+      }
+    })
+    setIsEditingLink(false)
   }, [editor, linkNode, linkTextNode, setIsEditingLink, text, url])
 
   const linkNodeDOM = useMemo(() => {
@@ -191,6 +191,7 @@ export function LinkInfoEditor({
         left: position.left,
       }}
     >
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
       <form
         className="flex flex-col gap-2 py-1"
         onSubmit={(event) => {
@@ -230,7 +231,7 @@ export function LinkInfoEditor({
         </div>
         <div className="flex items-center justify-end gap-1.5">
           <Button shape="ghost" onClick={cancelLinkEdit}>{c('Action').t`Cancel`}</Button>
-          <Button type="submit">{c('Action').t`Apply`}</Button>
+          <Button onClick={handleSubmission}>{c('Action').t`Apply`}</Button>
         </div>
       </form>
     </div>,
