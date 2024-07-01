@@ -33,7 +33,7 @@
         "Hai dimenticato la password?"
       ],
       "Get verification code": [
-        "Ottieni il codice di verifica"
+        "Invia il codice di verifica"
       ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
@@ -45,7 +45,7 @@
         "Richiedi nuovo codice"
       ],
       "Resend code": [
-        "Reinvia codice"
+        "Reinvia il codice"
       ],
       "Search countries": [
         "Cerca tra i paesi"
@@ -846,10 +846,10 @@
     },
     "Error": {
       "Email is not valid": [
-        "Email non valida"
+        "Indirizzo email non valido"
       ],
       "Enter 6 digits": [
-        "Inserisci 6 cifre"
+        "Inserisci il codice a 6 cifre"
       ],
       "Incorrect username": [
         "Username non corretto"
@@ -873,7 +873,7 @@
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
       "This field is required": [
-        "Questo campo è obbligatorio"
+        "Campo necessario"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
@@ -961,7 +961,7 @@
     },
     "Info": {
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -994,7 +994,7 @@
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
@@ -1015,7 +1015,7 @@
         "Sessione scaduta"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, verifica di essere umano."
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Invieremo un nuovo codice di verifica a ${ strong }"
@@ -1039,10 +1039,10 @@
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
       ],
       "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ]
     },
     "Label": {
@@ -1050,7 +1050,7 @@
         "App di autenticazione"
       ],
       "Code is 6 digits without spaces": [
-        "Il codice è di 6 cifre senza spazi"
+        "Codice a 6 cifre senza spazi"
       ],
       "Email address": [
         "Indirizzo email"
