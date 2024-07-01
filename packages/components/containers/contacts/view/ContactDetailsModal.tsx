@@ -3,15 +3,24 @@ import { useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { APPS } from '@proton/shared/lib/constants';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { Icon, Loader, Tooltip } from '../../../components';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components/modalTwo';
-import { useAddresses, useContactGroups, useMailSettings, useNotifications, useUserKeys } from '../../../hooks';
+import {
+    useAddresses,
+    useConfig,
+    useContactGroups,
+    useMailSettings,
+    useNotifications,
+    useUserKeys,
+} from '../../../hooks';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
@@ -63,6 +72,8 @@ const ContactDetailsModal = ({
     const modalRef = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
 
+    const { APP_NAME } = useConfig();
+
     const { modal: linkModal } = useLinkHandler(modalRef, mailSettings, { onMailTo });
 
     const {
@@ -79,7 +90,14 @@ const ContactDetailsModal = ({
             const link = (event.target as Element).closest('a');
             const src = link?.getAttribute('href');
             if (src?.startsWith('mailto:')) {
-                onClose?.();
+                if (APP_NAME === APPS.PROTONMAIL) {
+                    onClose?.();
+                } else {
+                    textToClipboard(src?.replace('mailto:', ''));
+                    createNotification({
+                        text: c('Success').t`Email address copied to clipboard`,
+                    });
+                }
             }
         };
 
@@ -163,10 +181,7 @@ const ContactDetailsModal = ({
                 ]}
             />
             <ModalTwoContent>
-                <ErrorBoundary
-                    key={contactID}
-                    component={<GenericError className="pt-7 view-column-detail flex-1" />}
-                >
+                <ErrorBoundary key={contactID} component={<GenericError className="pt-7 view-column-detail flex-1" />}>
                     <div ref={modalRef}>
                         {isLoading ? (
                             <Loader />
