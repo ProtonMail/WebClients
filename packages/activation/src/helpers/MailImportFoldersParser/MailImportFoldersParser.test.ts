@@ -240,4 +240,102 @@ describe('MailFolderMapping', () => {
             expect(labelsMappingC['p/c/cc/ccc/cccc/ccccc'].protonPath).toEqual(['p-c-cc-ccc/cccc/ccccc']);
         });
     });
+
+    const baseObj = {
+        Separator: '/',
+        Size: 0,
+        Flags: [],
+    };
+
+    const funkyApiFolders1: ApiMailImporterFolder[] = [
+        {
+            ...baseObj,
+            Source: 'Inbox',
+            Hierarchy: ['Inbox'],
+        },
+        {
+            ...baseObj,
+            Source: 'Inbox/Dry Eye',
+            Hierarchy: ['Inbox', 'Dry Eye'],
+        },
+        {
+            ...baseObj,
+            Source: 'Inbox/Dry Eye/Allergy Study',
+            Hierarchy: ['Inbox', 'Dry Eye', 'Allergy Study'],
+        },
+        {
+            ...baseObj,
+            Source: 'Inbox/Dry Eye/Allergy Study/Allergan - 10077X-001',
+            Hierarchy: ['Inbox', 'Dry Eye', 'Allergy Study', 'Allergan - 10077X-001'],
+        },
+        {
+            ...baseObj,
+            Source: 'Inbox/Dry Eye/Allergy Study/Allergan - 10077X-001/Allergan - Clinphone',
+            Hierarchy: ['Inbox', 'Dry Eye/Allergy Study/Allergan - 10077X-001/Allergan - Clinphone'],
+        },
+    ];
+
+    const funkyApiFolders2: ApiMailImporterFolder[] = [
+        {
+            ...baseObj,
+            Source: 'Inbox',
+            Hierarchy: ['Inbox'],
+        },
+        {
+            ...baseObj,
+            Source: 'marco',
+            Hierarchy: ['marco'],
+        },
+        {
+            ...baseObj,
+            Source: 'marco/marco',
+            Hierarchy: ['marco', 'marco'],
+        },
+        {
+            ...baseObj,
+            Source: 'marco/marco/curriculum',
+            Hierarchy: ['marco', 'marco', 'curriculum'],
+        },
+        {
+            ...baseObj,
+            Source: 'marco/marco/marco/curriculum',
+            Hierarchy: ['marco', 'marco', 'marco/curriculum'],
+        },
+        {
+            ...baseObj,
+            Source: 'marco/marco/marco-cv',
+            Hierarchy: ['marco', 'marco', 'marco-cv'],
+        },
+        {
+            ...baseObj,
+            Source: 'polo',
+            Hierarchy: ['polo'],
+        },
+        {
+            ...baseObj,
+            Source: 'polo/polo',
+            Hierarchy: ['polo', 'polo'],
+        },
+    ];
+
+    // The folders tested here have a separator in their name or caused issue for the parser
+    describe('Funky folders', () => {
+        it('Should handle folders containing the separator', () => {
+            const funkyFolderA = getMappingTestHelper(new MailImportFoldersParser(funkyApiFolders1, false).folders);
+            // The following folder contains the separator in its name and they should not be considered as folders thanks to the hierarchy in the response
+            const folderA = funkyFolderA['Inbox/Dry Eye/Allergy Study/Allergan - 10077X-001/Allergan - Clinphone'];
+            expect(folderA.folderChildIDS).toStrictEqual([]);
+            expect(folderA.folderParentID).toStrictEqual('Inbox');
+            expect(folderA.providerPath.length).toBe(2);
+            expect(folderA.protonPath.length).toBe(1);
+
+            const funkyFolderB = getMappingTestHelper(new MailImportFoldersParser(funkyApiFolders2, false).folders);
+            // The following folder is child of marco/marco and contains the separator in its last node, it should be considered as a child of marco/marco
+            const folderB = funkyFolderB['marco/marco/marco/curriculum'];
+            expect(folderB.folderParentID).toStrictEqual('marco/marco');
+            expect(folderB.providerPath.length).toBe(3);
+            expect(folderB.protonPath.length).toBe(3);
+            expect(folderB.protonPath[folderB.protonPath.length - 1]).toStrictEqual('marco/curriculum');
+        });
+    });
 });
