@@ -23,14 +23,6 @@ export type LocalDesktopVersion = {
 export let updateDownloaded = false;
 export let cachedLatestVersion: DesktopVersion | null = null;
 
-autoUpdater.on("update-downloaded", () => {
-    updateDownloaded = true;
-});
-
-autoUpdater.on("before-quit-for-update", () => {
-    updateDownloaded = true;
-});
-
 /**
  * Checks the available version immediately and repeat check every
  * `updateInverval`. If there is a valid (channel, rollout) version to update
@@ -38,6 +30,14 @@ autoUpdater.on("before-quit-for-update", () => {
  */
 export function initializeUpdateChecks() {
     updateLogger.info("Initialization of update checks.");
+
+    autoUpdater.on("update-downloaded", () => {
+        updateDownloaded = true;
+    });
+
+    autoUpdater.on("before-quit-for-update", () => {
+        updateDownloaded = true;
+    });
 
     const ses = session.fromPartition("persist:update", { cache: false });
     ses.setCertificateVerifyProc(verifyDownloadCertificate);
