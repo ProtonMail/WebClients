@@ -7,6 +7,7 @@ export enum TelemetryMeasurementGroups {
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
+    accountCancellation = 'account.web.cancellation',
     /** Not only calendar scope because party crasher on mail and drawer */
     calendarInvite = 'any.web.calendar_invite',
     changelogOpened = 'any.changelog_opened',
@@ -87,6 +88,20 @@ export enum TelemetryAccountSignupEvents {
     signupFinish = 'fe.signup_finish',
 }
 
+export enum TelemtryAccountCancellationEvents {
+    startCancellationSection = 'start_cancellation_section',
+    startCancellationPricing = 'start_cancellation_pricing',
+    cancelPageKeepPlan = 'cancel_page_keep_plan',
+    cancelPageConfirmCancel = 'cancel_page_confirm_cancel',
+    cancelModalKeepPlan = 'cancel_modal_keep_plan',
+    cancelModalConfirmCancel = 'cancel_modal_confirm_cancel',
+    feedbackModalSubmit = 'feedback_modal_submit',
+    feedbackModalCancel = 'feedback_modal_cancel',
+    resubscribeModalResubcribe = 'resubscribe_modal_resubscribe',
+    resubscribeModalClose = 'resubscribe_modal_close',
+    dashboardReactivate = 'dashboard_reactivate',
+}
+
 export enum TelemetryAccountOrganizationLogoUploadEvents {
     processStart = 'process_start',
     processSuccess = 'process_success',
@@ -159,6 +174,7 @@ export type TelemetryEvents =
     | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
+    | TelemtryAccountCancellationEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailSelectAllEvents

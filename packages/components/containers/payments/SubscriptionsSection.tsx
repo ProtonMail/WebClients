@@ -35,6 +35,7 @@ import { default as Badge, BadgeType } from '../../components/badge/Badge';
 import { useApi, useEventManager, usePlans, useSubscription, useUser } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import { useCancellationTelemetry } from './subscription/cancellationFlow';
 import { subscriptionExpires } from './subscription/helpers';
 
 export const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
@@ -48,6 +49,10 @@ const SubscriptionsSection = () => {
     const eventManager = useEventManager();
     const [reactivating, withReactivating] = useLoading();
     const [user] = useUser();
+
+    const { sendDashboardReactivateReport } = useCancellationTelemetry();
+    const searchParams = new URLSearchParams(location.search);
+    const reactivationSource = searchParams.get('source');
 
     if (!current || !plans || loadingSubscription || loadingPlans) {
         return <Loader />;
@@ -67,6 +72,8 @@ const SubscriptionsSection = () => {
             text: c('Action subscription').t`Reactivate`,
             loading: reactivating,
             onClick: () => {
+                sendDashboardReactivateReport(reactivationSource || 'default');
+
                 withReactivating(async () => {
                     await api(
                         changeRenewState(
