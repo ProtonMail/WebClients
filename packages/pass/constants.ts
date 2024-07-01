@@ -1,3 +1,6 @@
+import type { FeatureFlagState } from './store/reducers';
+import { PassFeature } from './types/api/features';
+
 /** Invalidate local cache for users whose state version is older
  * than the minimum state version specified by these constants */
 export const MIN_CACHE_VERSION = '1.10.0';
@@ -87,3 +90,22 @@ export const MAX_LOG_STORAGE_LINES = 2_000;
 export const AVERAGE_BYTES_PER_LOG_LINE = 100;
 export const SAFARI_MESSAGE_KEY = 'application.id';
 export const SAFARI_URL_SCHEME = 'proton-pass:';
+
+/** Default feature flag states : These values are used as a
+ * fallback if the feature flag endpoint is unavailable.
+ * FIXME: Remove feature flags that are permanently enabled */
+export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
+    [PassFeature.PassEnableDesktopAutoUpdate]: false,
+    [PassFeature.PassEnableOrganizationExport]: true,
+    [PassFeature.PassEnableOrganizationSharing]: true,
+    [PassFeature.PassItemHistoryV1]: true,
+    [PassFeature.PassMonitor]: true,
+    [PassFeature.PassPinningV1]: true,
+    [PassFeature.PassRemovePrimaryVault]: true,
+    [PassFeature.PassSharingNewUsers]: true,
+    [PassFeature.PassSharingV1]: true,
+    [PassFeature.PassUsernameSplit]: false,
+    [PassFeature.PassWebInternalAlpha]: false,
+    [PassFeature.PassWebOfflineMode]: false,
+    [PassFeature.PassAccessKeyV1]: false,
+};
