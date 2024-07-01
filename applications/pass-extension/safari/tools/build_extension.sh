@@ -2,8 +2,8 @@
 
 if [ "$BUILD_ENV" == "Black" ]; then
     echo "Building for black"
-    yarn build:dev 
+    BUILD_TARGET=safari yarn build:extension:dev
 else
     echo "Building for prod"
-    yarn build
+    BUILD_TARGET=safari RELEASE=true yarn build:extension
 fi

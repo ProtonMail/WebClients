@@ -8,7 +8,6 @@
         "build:extension:dev": "cross-env NODE_ENV=development BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'yarn clean && yarn run config:dev && yarn build:extension:helper'",
         "build:extension:ff": "cross-env RELEASE=true NODE_ENV=production BUILD_TARGET=firefox CLEAN_MANIFEST=true sh -c 'cat ./src/app/config.ff-release.ts > ./src/app/config.ts && yarn run build:extension:helper'",
         "build:extension:helper": "NODE_ENV=production webpack --config webpack.config.js && ./tools/release.sh ./dist",
-        "build:extension:safari": "cross-env BUILD_TARGET=safari CLEAN_MANIFEST=true sh -c 'yarn run config && yarn run build:extension'",
         "check-types": "tsc",
         "check-types:watch": "tsc --watch",
         "clean": "rm -rf ./dist/",
