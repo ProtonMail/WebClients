@@ -12,11 +12,12 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
     minimize: isProduction,
     minimizer: [
         new TerserPlugin({
+            parallel,
             minify: TerserPlugin.swcMinify,
             extractComments: false,
-            parallel,
         }),
         new CssMinimizerPlugin({
+            parallel,
             minimizerOptions: {
                 preset: [
                     'default',
