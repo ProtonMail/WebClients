@@ -7,7 +7,7 @@ import identity from '@proton/utils/identity';
 
 import type { RequestFlow, RequestIntent, RequestSuccess } from './flow';
 
-type RequestFlowSaga<T extends RequestFlow<any, any, void>, P extends any[] = []> = {
+export type RequestFlowSaga<T extends RequestFlow<any, any, void>, P extends any[] = []> = {
     actions: T;
     call: (
         payload: RequestIntent<T>,

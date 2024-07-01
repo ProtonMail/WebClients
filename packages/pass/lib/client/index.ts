@@ -30,5 +30,3 @@ export const clientDisabled = or(clientUnauthorized, clientErrored, clientStale)
 export const clientLocked = or(clientSessionLocked, clientPasswordLocked, clientMissingScope);
 
 export const isTaggedBuild = (config: PassConfig) => ENV === 'production' && config.BRANCH.startsWith('proton-pass@');
-export const EXTENSION_BUILD = ['chrome', 'firefox', 'safari'].includes(BUILD_TARGET);
-export const DESKTOP_BUILD = ['darwin', 'linux', 'win32'].includes(BUILD_TARGET);

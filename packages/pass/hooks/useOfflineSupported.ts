@@ -1,5 +1,4 @@
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { EXTENSION_BUILD } from '@proton/pass/lib/client';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 export const useOfflineSupported = () => {
