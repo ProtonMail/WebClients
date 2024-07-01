@@ -7,7 +7,7 @@ import { EncryptComment } from './EncryptComment'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { CreateThread } from './CreateThread'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 
 jest.mock('../Util/GenerateUuid', () => ({
   GenerateUUID: jest.fn(),
