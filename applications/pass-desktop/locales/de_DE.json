@@ -1142,6 +1142,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
       ],
+      "Enter your PIN code": [
+        "PIN-Code eingeben"
+      ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
@@ -1371,17 +1374,11 @@
       "Please check your spam folder or try resending the code.": [
         "Bitte überprüfe deinen Spam-Ordner oder fordere den Code erneut an."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Bitte bestätige dein ${ BRAND_NAME }-Passwort."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um den Offline-Modus zu aktivieren."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um die aktuelle Sperre aufzuheben."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben."
@@ -1615,6 +1612,9 @@
       ],
       "You're invited to a vault.": [
         "Du wurdest zu einem Tresor eingeladen."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Dein Konto ist eingeschränkt, weil deine Organisation die Zwei-Faktor-Authentifizierung erzwungen hat. Bitte aktiviere die Zwei-Faktor-Authentifizierung in deinen Kontoeinstellungen oder kontaktiere deinen Administrator."
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
@@ -2081,25 +2081,6 @@
       ],
       "stay safer online": [
         "online sicherer wird"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "PIN-Code eingeben"
-      ],
-      "Sign in to your account": [
-        "Mit deinem Konto anmelden"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } entsperren"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Willkommen bei ${ brandNameJSX }"
       ]
     },
     "Log preference": {
