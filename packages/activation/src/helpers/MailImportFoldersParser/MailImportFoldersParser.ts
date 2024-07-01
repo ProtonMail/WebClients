@@ -105,7 +105,7 @@ class MailImportFoldersParser {
         systemFolderSourcesInList.forEach((systemFolderSource) => {
             const systemFolderIndex = finalSort.findIndex((f) => f.Source === systemFolderSource);
             const childSources = finalSort.reduce<string[]>((acc, folder) => {
-                const path = this.getProviderPath(folder.Source, folder.Separator);
+                const path = this.getProviderPath(folder, folder.Separator);
 
                 if (path.length > 1 && path[0] === finalSort[systemFolderIndex].Source) {
                     acc.push(folder.Source);
@@ -127,11 +127,17 @@ class MailImportFoldersParser {
         return finalSort;
     };
 
-    private getProviderPath = (folderSource: ApiMailImporterFolder['Source'] = '', separator = '/') => {
+    private getProviderPath = (folder: ApiMailImporterFolder, separator = '/') => {
+        // Outlook imports contains the hierarchy in the folder object to determine the path
+        // If the hierarchy is present, we use it instead of creating the path from the source
+        if (folder.Hierarchy) {
+            return folder.Hierarchy;
+        }
         /**
          * We determine a path based on the provided folder source and separator
          * Example: 'p/c/cc' will become ['p', 'c', 'cc']
          */
+        const folderSource = folder.Source || '';
         let pathBasedOnSeparator = (() => {
             if (separator !== '/') {
                 return folderSource.split(separator);
@@ -207,12 +213,8 @@ class MailImportFoldersParser {
         return verifiedPath;
     };
 
-    private getProtonPath = (
-        folderSource: ApiMailImporterFolder['Source'] = '',
-        separator = '/',
-        isLabelMapping: boolean
-    ) => {
-        let path = this.getProviderPath(folderSource, separator);
+    private getProtonPath = (folder: ApiMailImporterFolder, isLabelMapping: boolean) => {
+        let path = this.getProviderPath(folder, folder.Separator);
         const parentSystemFolder =
             path.length > 1 &&
             DESTINATION_FOLDERS.find((destFolder) => destFolder.toLocaleLowerCase() === path[0].toLocaleLowerCase());
@@ -231,10 +233,10 @@ class MailImportFoldersParser {
         }
 
         const [first, second, ...third] = path;
-        return [first, second, third.join(separator)];
+        return [first, second, third.join(folder.Separator)];
     };
 
-    private getFolderChildIds = (index: number): string[] => {
+    private getFolderChildIds = (index: number, providerPath: string[]): string[] => {
         const folder = this.providerFolders[index];
 
         /**
@@ -245,12 +247,24 @@ class MailImportFoldersParser {
          */
         return this.providerFolders
             .map((item) => {
-                if (
+                const isItemProbableChild =
                     item.Source.startsWith(folder.Source) &&
-                    item.Source.charAt(folder.Source.length) === folder.Separator
-                ) {
-                    return item;
+                    item.Source.charAt(folder.Source.length) === folder.Separator;
+
+                if (!isItemProbableChild) {
+                    return false;
                 }
+
+                // There are cases where another folder could contain the same source name
+                if (item.Hierarchy) {
+                    // We test if the last item of the current folder provider path is contained in the tested item hierarchy
+                    const latestItem = providerPath[providerPath.length - 1];
+                    if (!item.Hierarchy.includes(latestItem)) {
+                        return false;
+                    }
+                }
+
+                return item;
             })
             .filter(isTruthy)
             .map((item) => item.Source);
@@ -264,7 +278,7 @@ class MailImportFoldersParser {
          * We must return the whole parent path and not just the parent id, this is why we do the slice
          * It can either be undefined or a string
          */
-        const folderProviderPath = this.getProviderPath(folder.Source, folder.Separator);
+        const folderProviderPath = this.getProviderPath(folder, folder.Separator);
         return folderProviderPath.slice(0, folderProviderPath.length - 1).join(folder.Separator) || undefined;
     };
 
@@ -274,14 +288,14 @@ class MailImportFoldersParser {
         const result = this.providerFolders
             .filter((folder) => !!folder.Source)
             .map((folder, index) => {
-                const isRootFolder = this.getProviderPath(folder.Source, folder.Separator).length === 1;
+                const isRootFolder = this.getProviderPath(folder, folder.Separator).length === 1;
 
                 if (isRootFolder) {
                     // Generate a random color
                     memoizedRootFolderColor = getRandomAccentColor();
                 }
 
-                const providerPath = this.getProviderPath(folder.Source, folder.Separator);
+                const providerPath = this.getProviderPath(folder, folder.Separator);
 
                 // System subfolders need to have root parent with a destination.
                 const isSystemFolderChild = this.providerFolders.some((item) => {
@@ -296,9 +310,9 @@ class MailImportFoldersParser {
                     color: memoizedRootFolderColor,
                     systemFolder: folder.DestinationFolder,
                     isSystemFolderChild: isSystemFolderChild,
-                    folderChildIDS: this.getFolderChildIds(index),
+                    folderChildIDS: this.getFolderChildIds(index, providerPath),
                     folderParentID: this.getParentFolderId(index),
-                    protonPath: this.getProtonPath(folder.Source, folder.Separator, isLabelMapping),
+                    protonPath: this.getProtonPath(folder, isLabelMapping),
                     separator: folder.Separator,
                     size: folder.Size || 0,
                 };
