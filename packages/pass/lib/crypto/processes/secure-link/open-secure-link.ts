@@ -1,6 +1,6 @@
 import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { base64StringToUint8Array, decodeBase64URL, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 type OpenSecureLinkParams = { encryptedItemKey: string; content: string; linkKey: string };
 
@@ -9,7 +9,7 @@ export const openSecureLink = async ({
     content,
     linkKey,
 }: OpenSecureLinkParams): Promise<Uint8Array> => {
-    const secureLinkKey = await getSymmetricKey(base64StringToUint8Array(linkKey));
+    const secureLinkKey = await getSymmetricKey(stringToUint8Array(decodeBase64URL(linkKey)));
 
     const itemKey = await decryptData(
         secureLinkKey,
