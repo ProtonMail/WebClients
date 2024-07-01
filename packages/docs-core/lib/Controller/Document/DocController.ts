@@ -52,7 +52,13 @@ import { DocSizeTracker } from './SizeTracker'
 import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
 import { DocParticipantTracker } from './DocParticipantTracker'
 
-const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1_000
+/**
+ * @TODO DRVDOC-802
+ * This should be an upper bound we should not expect to hit, because we expect the RTS to tell us it has given us all updates
+ * in a timely manner. However, due to DRVDOC-802, this event is not currently received, so we have lowered this value to something
+ * nominal as a temporary workaround.
+ */
+const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 100
 const MAX_MS_TO_WAIT_FOR_RTS_CONNECTION_BEFORE_DISPLAYING_EDITOR = 3_000
 
 /**
