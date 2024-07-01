@@ -44,6 +44,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
         });
 
@@ -72,6 +73,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
         });
 
@@ -100,6 +102,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
         });
 
@@ -128,6 +131,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 500,
                 maximized: false,
+                zoom: 1,
             });
         });
     });
@@ -145,6 +149,7 @@ describe("boundStore", () => {
                 width: 1000,
                 height: 100,
                 maximized: true,
+                zoom: 1,
             });
         });
     });
