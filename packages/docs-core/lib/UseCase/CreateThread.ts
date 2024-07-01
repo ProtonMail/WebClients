@@ -14,7 +14,7 @@ import { GenerateUUID } from '../Util/GenerateUuid'
 import { EncryptComment } from './EncryptComment'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 import metrics from '@proton/metrics'
 
 /**

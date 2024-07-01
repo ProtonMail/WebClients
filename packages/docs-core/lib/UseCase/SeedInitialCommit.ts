@@ -1,7 +1,7 @@
 import { CommitVersion, DocumentUpdateVersion, CreateDocumentUpdate, CreateCommit } from '@proton/docs-proto'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 import { EncryptMessage } from './EncryptMessage'
 import { DocumentKeys } from '@proton/drive-store'
 import { DocumentMetaInterface } from '@proton/docs-shared'
