@@ -84,7 +84,7 @@ const LoginTOTPForm = ({ onSubmit }: Props) => {
                 <>
                     <hr className="my-4" />
                     <div className="text-center">
-                        <Href href={getKnowledgeBaseUrl('/lost-two-factor-authentication-2fa')}>
+                        <Href href={getKnowledgeBaseUrl('/lost-two-factor-authentication-2fa?ref=account-web-signin')}>
                             {c('Link').t`Don't have access to your 2FA?`}
                         </Href>
                     </div>
