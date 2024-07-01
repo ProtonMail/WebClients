@@ -840,6 +840,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME }를 시작하는 중에 문제가 발생했습니다. 이것이 계속된다면 고객 지원으로 문의해 주세요."
       ],
+      "Wrong password": [
+        "잘못된 비밀번호입니다"
+      ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
       ],
@@ -1325,20 +1328,8 @@
       "Pinning item...": [
         "항목 고정 중..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "${ BRAND_NAME } 비밀번호를 확인해주세요"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "비밀번호를 사용하는 자동 잠금을 위해 ${ BRAND_NAME } 비밀번호를 확인해 주세요."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "지금의 잠금을 등록 해제하기 위해 ${ BRAND_NAME } 비밀번호를 확인해 주세요."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "자동 잠금 시간을 업데이트하기 위해 ${ BRAND_NAME } 비밀번호를 확인해 주세요."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "지금의 잠금을 등록 해제하려면 PIN 코드로 인증해주세요."
@@ -1576,6 +1567,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } 세션이 잠겼습니다."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "사용자의 조직이 2단계 인증을 활성화하여 계정이 제한됩니다. 계정 설정에서 2단계 인증을 활성화 하거나 사용자의 관리자에게 문의하십시오."
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
@@ -2057,25 +2051,6 @@
         "생성하려고 하는 주소:"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "PIN 코드를 입력하세요"
-      ],
-      "Sign in to your account": [
-        "계정에 로그인하세요"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } 잠금 해제"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX }에 오신 것을 환영합니다."
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count }개 항목"
@@ -2371,9 +2346,6 @@
       ],
       "Trash empty": [
         "휴지통이 비어있음"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 잠금 해제"
       ],
       "Update available": [
         "사용 가능한 업데이트가 있습니다"

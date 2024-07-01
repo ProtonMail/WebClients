@@ -62,11 +62,11 @@
       "Change keys": [
         "Canvia les claus"
       ],
-      "Change mailbox password": [
-        "Canviar contrasenya de la bústia de correu"
-      ],
       "Change password": [
         "Canvia la contrasenya"
+      ],
+      "Change second password": [
+        "Canvia la segona contrasenya"
       ],
       "Chat with us": [
         "Xategeu amb nosaltres"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Contrasenya de bústia incorrecta. Torneu a provar-ho."
-      ],
       "Incorrect password": [
         "Contrasenya incorrecta"
+      ],
+      "Incorrect second password. Please try again.": [
+        "La contrasenya no és correcta. Torneu-ho a intentar."
       ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
@@ -3007,8 +3007,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista prèvia de baixa resolució"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la de correu electrònic. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la segona contrasenya. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
       "${ n } address": [
         "${ n } adreça",
@@ -3284,11 +3284,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -4004,7 +4004,7 @@
         "a ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Per permetre que el domini **${ domainName }** utilitzi SAML SSO, heu de verificar-ne la propietat afegint el següent registre DNS TXT al vostre domini al vostre proveïdor de DNS."
+        "Per a permetre que el domini **${ domainName }** utilitzi SAML SSO, heu de verificar-ne la propietat afegint el següent registre DNS TXT al vostre domini en el vostre proveïdor de DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Per a cancel·lar la vostra subscripció, contacteu amb nosaltres."
@@ -4057,11 +4057,11 @@
       "Two-factor authentication enabled": [
         "S'ha activat l'autenticació de dos factors"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al vostre compte i una altra per a desxifrar la vostra bústia de correu. (Avançat)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al vostre compte i una altra per a desxifrar les vostres dades. (Avançat)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar la bústia de correu. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una per a la bústia de correu."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar les dades. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una segona contrasenya."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
@@ -4322,6 +4322,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal. Si el vostre compte de PayPal no en té, cliqueu el botó de sota."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Podreu promocionar l'usuari a administrador un cop hagi acceptat la invitació."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
       ],
@@ -4447,6 +4450,9 @@
       ],
       "Paid": [
         "Pagat"
+      ],
+      "Processing": [
+        "En procés"
       ],
       "Unpaid": [
         "Pendent de pagament"
@@ -4611,9 +4617,6 @@
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
       ],
-      "Confirm mailbox password": [
-        "Confirma la contrasenya de la bústia de correu"
-      ],
       "Confirm new password": [
         "Confirmi la nova contrasenya"
       ],
@@ -4622,6 +4625,9 @@
       ],
       "Confirm password": [
         "Confirmeu la contrasenya"
+      ],
+      "Confirm second password": [
+        "Confirmeu la segona contrasenya"
       ],
       "Copy": [
         "Copia"
@@ -4722,9 +4728,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
       "Main": [
         "Principal"
       ],
@@ -4761,9 +4764,6 @@
       "New login password": [
         "Nova contrasenya d'inici de sessió"
       ],
-      "New mailbox password": [
-        "Nova contrasenya de la bústia"
-      ],
       "New organization identity": [
         "Nova identitat de l'organització"
       ],
@@ -4772,6 +4772,9 @@
       ],
       "New password": [
         "Contrasenya nova"
+      ],
+      "New second password": [
+        "Nova segona contrasenya"
       ],
       "No filter": [
         "Sense filtre"
@@ -4865,6 +4868,9 @@
       ],
       "Reveal password": [
         "Mostra la contrasenya"
+      ],
+      "Second password": [
+        "Segona contrasenya"
       ],
       "Security code (${ codeName })": [
         "Codi de seguretat (${ codeName })"
@@ -6420,6 +6426,9 @@
       "Current plan": [
         "Pla actual"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Indiqueu un nom a mostrar per a **${ username }**. Aquest és el que els vostres usuaris veuran quan canvieu els seus permisos o compartiu dades amb ells."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Per només **${ relativePrice } mensuals** més, tindreu accés al gestor de contrasenyes prèmium de ${ BRAND_NAME }."
       ],
@@ -6437,6 +6446,9 @@
       ],
       "Includes:": [
         "Inclou:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "S'està llançant ${ PASS_APP_NAME }"
       ],
       "per month": [
         "per mes"
@@ -6462,6 +6474,12 @@
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
+      ],
+      "Setting up your organization": [
+        "S'està configurant la vostra organització."
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "S'està iniciant la sessió a ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "S'està actualitzant el compte"
@@ -6593,8 +6611,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entesos"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processament de pagaments"
       ],
       "Processing payment": [
         "S'està processant el pagament."
@@ -6610,6 +6634,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estem tramitant el pagament de la factura. Espereu que el pagament s'hagi completat abans de fer canvis al pla o actualitzar les dades del pagament. Gràcies per la vostra paciència."
       ]
     },
     "Payments.Error": {
@@ -8471,9 +8498,6 @@
       "Change login password": [
         "Canviar contrasenya d'inici de sessió"
       ],
-      "Change mailbox password": [
-        "Canviar contrasenya de la bústia de correu"
-      ],
       "Change organization name": [
         "Canviar nom de l'organització"
       ],
@@ -8485,6 +8509,9 @@
       ],
       "Change role": [
         "Canvia privilegis"
+      ],
+      "Change second password": [
+        "Canvia la segona contrasenya"
       ],
       "Close": [
         "Tanca"
@@ -8693,8 +8720,8 @@
       "Invoices": [
         "Factures"
       ],
-      "Login password": [
-        "Contrasenya d'inici"
+      "Main password": [
+        "Contrasenya principal"
       ],
       "Multi-user support": [
         "Suport multi-usuari"
@@ -8895,8 +8922,8 @@
       "Type": [
         "Tipus"
       ],
-      "Unlock your mailbox": [
-        "Desbloquegeu la vostra bústia de correu"
+      "Unlock your data": [
+        "Desbloqueu les vostres dades"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Milloreu la vostra protecció de xarxa amb servidors dedicats"

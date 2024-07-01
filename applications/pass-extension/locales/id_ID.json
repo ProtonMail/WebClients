@@ -374,6 +374,9 @@
       "Retry": [
         "Coba lagi"
       ],
+      "Right click and download this CSV": [
+        "Klik kanan dan unduh CSV ini"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -702,6 +705,9 @@
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
       ],
+      "File could not be read": [
+        "Berkas tidak dapat dibaca"
+      ],
       "File does not match expected format": [
         "Berkas tidak cocok dengan format yang diharapkan"
       ],
@@ -839,6 +845,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Kami menemui masalah pada saat memulai ${ PASS_SHORT_APP_NAME }. Apabila masalah ini terus berlanjut, silakan hubungi layanan dukungan pelanggan kami untuk memperoleh bantuan."
+      ],
+      "Wrong password": [
+        "Kata sandi salah"
       ],
       "Wrong PIN code. Try again.": [
         "Kode PIN salah. Coba lagi."
@@ -1013,6 +1022,9 @@
       "Autosaved on ${ payload.domain }": [
         "Tersimpan secara otomatis pada ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Sebelum mengekspor data Anda dengan format ini, silakan buka pengaturan Safari -> tab \"Umum\" -> nonaktifkan pilihan \"Buka berkas aman setelah mengunduh\". Hal ini akan mencegah Safari untuk secara tidak sengaja mengekstrak berkas yang diekspor."
+      ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
       ],
@@ -1042,6 +1054,9 @@
       ],
       "Close this window in order to use another passkey manager.": [
         "Tutup jendela ini untuk menggunakan pengelola passkey lainnya."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Konfirmasi kata sandi tambahan Anda untuk melanjutkan penghapusan kata sandi ini."
       ],
       "Congratulations, your access has been confirmed": [
         "Selamat, akses Anda telah dikonfirmasi"
@@ -1085,6 +1100,9 @@
       "Drop to import": [
         "Lepaskan untuk mengimpor"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Karena batasan pada ekstensi browser Safari, data yang diekspor tidak akan mengandung ekstensi \".pgp\". Silakan ubah nama berkas yang bersangkutan untuk menyertakan ekstensi .pgp (mis. file.pgp) setelah mengekspor."
+      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Impor kata sandi Anda secara mudah ke ${ PASS_APP_NAME }."
       ],
@@ -1123,6 +1141,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Masukkan kata sandi tambahan Anda"
       ],
       "Enter your PIN code": [
         "Masukkan kode PIN Anda"
@@ -1325,20 +1346,11 @@
       "Pinning item...": [
         "Menyematkan item..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengunci aplikasi secara otomatis dengan kata sandi Anda."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk menonaktifkan kunci Anda saat ini."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk memperbarui waktu penguncian otomatis."
+      "Please confirm your password": [
+        "Silakan konfirmasi kata sandi Anda"
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Silakan konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
@@ -1367,8 +1379,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Dilindungi oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
       ],
+      "Registering extra password...": [
+        "Mendaftarkan kata sandi tambahan..."
+      ],
       "Registering PIN lock failed": [
         "Pendaftaran kunci PIN gagal"
+      ],
+      "Removing extra password...": [
+        "Menghapus kata sandi tambahan..."
       ],
       "Restoring items from trash": [
         "Memulihkan item dari sampah"
@@ -1418,6 +1436,9 @@
       "Sign in or create an account to continue.": [
         "Silakan masuk atau buat akun untuk melanjutkan."
       ],
+      "Sign in to your account": [
+        "Masuk ke akun Anda"
+      ],
       "Signing you in": [
         "Memasukkan Anda ke akun"
       ],
@@ -1447,6 +1468,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Berkas yang diekspor akan dienkripsi menggunakan PGP dan memerlukan frasa sandi yang aman."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Kata sandi tambahan akan dibutuhkan untuk dapat menggunakan ${ PASS_APP_NAME }. Kata sandi ini berfungsi sebagai kata sandi pelengkap untuk melindungi kata sandi ${ BRAND_NAME } Anda."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
@@ -1486,6 +1510,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk menyimpan passkey ini"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi tambahan Anda"
       ],
       "Unlock it with your PIN to access the settings": [
         "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
@@ -1565,6 +1595,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Anda akan dikeluarkan dari akun dan perlu untuk masuk kembali pada seluruh perangkat lainnya yang Anda miliki."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Anda akan menggunakan PIN ini untuk membuka ${ PASS_APP_NAME } setelah aplikasi terkunci secara otomatis akibat tidak digunakan dalam jangka waktu tertentu."
       ],
@@ -1576,6 +1609,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesi ${ PASS_APP_NAME } Anda terkunci"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Akun Anda dibatasi karena organisasi Anda telah mewajibkan penggunaan autentikasi dua faktor. Silakan aktifkan autentikasi dua faktor dalam Pengaturan Akun Anda atau hubungi administrator Anda."
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
@@ -1930,6 +1966,9 @@
       "Prompt for auto-save when generating passwords": [
         "Tanyakan apakah kata sandi yang dihasilkan akan disimpan secara otomatis"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Lindungi ${ PASS_APP_NAME } dengan kata sandi tambahan"
+      ],
       "Rate us": [
         "Beri kami nilai"
       ],
@@ -2055,25 +2094,6 @@
       ],
       "You are about to create": [
         "Anda akan membuat"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Masukkan kode PIN Anda"
-      ],
-      "Sign in to your account": [
-        "Masuk ke akun Anda"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Dapatkan ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Selamat datang di ${ brandNameJSX }"
       ]
     },
     "Message": {
@@ -2372,8 +2392,8 @@
       "Trash empty": [
         "Sampah kosong"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Buka kunci ${ PASS_APP_NAME }"
+      "Unlock ${ brandNameJSX }": [
+        "Dapatkan ${ brandNameJSX }"
       ],
       "Update available": [
         "Pembaruan tersedia"
@@ -2392,6 +2412,9 @@
       ],
       "Weak password": [
         "Kata sandi lemah"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Selamat datang di ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Selamat datang di pengelola kata sandi Anda yang baru!"
@@ -2453,6 +2476,9 @@
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Peringatan: Anda tidak akan dapat mengakses akun ${ PASS_APP_NAME } Anda apabila Anda kehilangan kata sandi ini."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Brankas \"${ vaultName }\" tidak dapat dibuat"

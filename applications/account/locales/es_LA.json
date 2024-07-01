@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Cambiar las claves"
       ],
-      "Change mailbox password": [
-        "Cambiar contraseña del buzón"
-      ],
       "Change other email subscriptions": [
         "Cambiar otras suscripciones de correo"
       ],
       "Change password": [
         "Cambiar contraseña"
+      ],
+      "Change second password": [
+        "Cambiar la segunda contraseña"
       ],
       "Chat with us": [
         "Chatee con nosotros"
@@ -4113,11 +4113,11 @@
       "Incorrect login credentials. Please try again.": [
         "Credenciales de acceso incorrectas. Intente de nuevo."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Contraseña del buzón incorrecta. Intente de nuevo."
-      ],
       "Incorrect password": [
         "Contraseña incorrecta"
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segunda contraseña no es correcta. Inténtelo de nuevo."
       ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
@@ -4313,6 +4313,9 @@
       ],
       "Require at least one condition": [
         "Requiere al menos una condición"
+      ],
+      "Session expired. Please refresh the page.": [
+        "La sesión ha expirado. Actualice la página."
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -6121,17 +6124,6 @@
         "Parte del contenido del calendario es incompatible y no será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
@@ -6189,8 +6181,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quiere compartir información con usted en ${ PASS_APP_NAME }"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } puede también usarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que quiere usar y haga clic en guardar."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } también puede usarse con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la segunda contraseña. Para cambiar al modo de contraseña única, ingrese la contraseña única que quiere usar y haga clic en Guardar."
       ],
       "${ n } address": [
         "${ n } dirección",
@@ -8183,11 +8175,11 @@
       "Two-factor authentication enabled": [
         "Autenticación de dos factores activada"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión y otra para descifrar el buzón. (Avanzado)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión en su cuenta y otra para descifrar sus datos. (Avanzado)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado del buzón. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero defina una contraseña de inicio de sesión y luego una contraseña del buzón."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado de los datos. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero defina una contraseña de inicio de sesión y luego una segunda contraseña."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No se pudo verificar la firma del archivo de recuperación. Contacte con soporte."
@@ -8758,6 +8750,17 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9433,9 +9436,6 @@
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
       ],
-      "Confirm mailbox password": [
-        "Confirmar contraseña del buzón"
-      ],
       "Confirm new password": [
         "Confirmar contraseña nueva"
       ],
@@ -9444,6 +9444,9 @@
       ],
       "Confirm password": [
         "Confirmar contraseña"
+      ],
+      "Confirm second password": [
+        "Confirmar la segunda contraseña"
       ],
       "Contacts": [
         "Contactos"
@@ -9736,9 +9739,6 @@
       "Mail settings": [
         "Ajustes de correo electrónico"
       ],
-      "Mailbox password": [
-        "Contraseña del buzón"
-      ],
       "Main": [
         "Principal"
       ],
@@ -9796,9 +9796,6 @@
       "New login password": [
         "Contraseña nueva de inicio de sesión"
       ],
-      "New mailbox password": [
-        "Contraseña nueva del buzón"
-      ],
       "New organization identity": [
         "Nueva identidad de la organización"
       ],
@@ -9807,6 +9804,9 @@
       ],
       "New password": [
         "Contraseña nueva"
+      ],
+      "New second password": [
+        "Nueva segunda contraseña"
       ],
       "No filter": [
         "Sin filtro"
@@ -9949,6 +9949,9 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
+      "Second password": [
+        "Segunda contraseña"
+      ],
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
       ],
@@ -10029,6 +10032,12 @@
       ],
       "Subscription options": [
         "Opciones de suscripción"
+      ],
+      "Swipe left action": [
+        "Acción de deslizamiento a la izquierda"
+      ],
+      "Swipe right action": [
+        "Acción de deslizamiento a la derecha"
       ],
       "Synchronize with system": [
         "Sincronizar con el sistema"
@@ -12219,6 +12228,9 @@
       "Add to existing group": [
         "Añadir al grupo existente"
       ],
+      "Archive": [
+        "Archivar"
+      ],
       "Ask each time": [
         "Preguntar cada vez"
       ],
@@ -12257,6 +12269,9 @@
       ],
       "Left to Right": [
         "Izquierda a derecha"
+      ],
+      "Mark as read": [
+        "Marcar como leído"
       ],
       "My reason isn't listed": [
         "Mi motivo no está listado"
@@ -12315,11 +12330,20 @@
       "Setup incomplete": [
         "La configuración está incompleta."
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Standard server configs": [
         "Ajustes estándar del servidor"
       ],
+      "Star": [
+        "Destacar"
+      ],
       "The whole organization": [
         "Toda la organización"
+      ],
+      "Trash": [
+        "Enviar a papelera"
       ]
     },
     "Option delay send seconds": {
@@ -15430,9 +15454,6 @@
       "Change login password": [
         "Cambiar contraseña de inicio de sesión"
       ],
-      "Change mailbox password": [
-        "Cambiar contraseña del buzón"
-      ],
       "Change organization name": [
         "Cambiar nombre de la organización"
       ],
@@ -15444,6 +15465,9 @@
       ],
       "Change role": [
         "Cambiar rol"
+      ],
+      "Change second password": [
+        "Cambiar la segunda contraseña"
       ],
       "Choose an account": [
         "Seleccionar una cuenta"
@@ -15890,8 +15914,8 @@
       "Link confirmation": [
         "Confirmación de enlace"
       ],
-      "Login password": [
-        "Contraseña de inicio de sesión"
+      "Main password": [
+        "Contraseña principal"
       ],
       "Messages": [
         "Mensajes"
@@ -16242,8 +16266,8 @@
       "Type": [
         "Tipo"
       ],
-      "Unlock your mailbox": [
-        "Desbloquee el buzón"
+      "Unlock your data": [
+        "Desbloquee sus datos"
       ],
       "Upgrade plan": [
         "Actualizar plan"

@@ -222,6 +222,9 @@
       "Download anyway": [
         "Toch downloaden"
       ],
+      "Duplicate": [
+        "Dupliceer"
+      ],
       "Edit": [
         "Bewerken"
       ],
@@ -278,6 +281,9 @@
       ],
       "Hide advanced PGP settings": [
         "Geavanceerde PGP-instellingen verbergen"
+      ],
+      "History": [
+        "Geschiedenis"
       ],
       "Image could not be loaded with tracker protection.": [
         "Afbeelding kan niet worden geladen met trackerbeveiliging."
@@ -342,6 +348,9 @@
       "Mark for deletion": [
         "Markeren voor verwijderen"
       ],
+      "Markdown (.md)": [
+        "Markdown (.md)"
+      ],
       "Merge": [
         "Samenvoegen"
       ],
@@ -380,6 +389,9 @@
       ],
       "Pay ${ price } now": [
         "Betaal nu ${ price }"
+      ],
+      "Plain Text (.txt)": [
+        "Platte Tekst (.txt)"
       ],
       "Preview contact": [
         "Contact tonen"
@@ -569,6 +581,9 @@
       ],
       "View invoice": [
         "Factuur bekijken"
+      ],
+      "Web page (.html)": [
+        "Webpagina (.html)"
       ],
       "What do I get?": [
         "Wat krijg ik?"
@@ -2106,6 +2121,12 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Bedrag onder minimum (${ minimumAmount })."
       ],
+      "An error occurred while attempting to duplicate the document. Please try again.": [
+        "Er is een fout opgetreden tijdens het dupliceren van het document. Probeer het opnieuw."
+      ],
+      "An error occurred while creating a new document. Please try again.": [
+        "Er is een fout opgetreden tijdens het aanmaken van een nieuw document. Probeer het opnieuw."
+      ],
       "An error occurred while loading alias options": [
         "Er is een fout opgetreden tijdens het laden van de alias opties"
       ],
@@ -2170,6 +2191,9 @@
       ],
       "External accounts are not supported yet": [
         "Externe accounts worden nog niet ondersteund"
+      ],
+      "Failed to rename document. Please try again later.": [
+        "Hernoemen van document mislukt. Probeer het later opnieuw."
       ],
       "File \"${ name }\" is already downloading": [
         "Bestand \"${ name }\" wordt reeds gedownload"
@@ -3455,6 +3479,9 @@
       "Contact unassigned to group ${ contactGroupName }": [
         "Contact verwijderd uit groep ${ contactGroupName }"
       ],
+      "Converting document...": [
+        "Document converteren..."
+      ],
       "Copy the link to clipboard": [
         "Link kopiëren naar klembord"
       ],
@@ -3485,6 +3512,9 @@
       ],
       "Creating link to folder": [
         "Link naar map maken"
+      ],
+      "Creating new document...": [
+        "Nieuw document wordt aangemaakt..."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -3567,6 +3597,12 @@
       "Enter your own password (as organization admin).": [
         "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Fout bij het converteren van document: ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Fout bij laden document${ errorDetail }"
+      ],
       "Expired": [
         "Verlopen"
       ],
@@ -3578,6 +3614,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
+      ],
+      "Failing signatures will be re-signed by you": [
+        "Mislukte handtekeningen zullen opnieuw worden ondertekend door jou."
       ],
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
@@ -3712,6 +3751,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
+      "Loading document...": [
+        "Document wordt geladen..."
+      ],
       "Loading link": [
         "Koppeling laden"
       ],
@@ -3748,6 +3790,9 @@
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Geen document meegegeven in URL. Keer terug naar ${ DRIVE_APP_NAME } en selecteer een document."
       ],
       "No email address": [
         "Geen e-mailadres"
@@ -3810,6 +3855,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
       ],
+      "Please export a copy of your current changes from the main menu and reload the page.": [
+        "Exporteer een kopie van de huidige wijzigingen vanuit het hoofdmenu en laad de pagina opnieuw."
+      ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
       ],
@@ -3862,6 +3910,9 @@
       "Primary": [
         "Primair"
       ],
+      "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
+        "Recente bewerkingen van uw document konden niet worden opgeslagen. Bewerken is tijdelijk uitgeschakeld om gegevensbeveiliging te waarborgen. Download een kopie van uw document vanuit het hoofdmenu. Vernieuw hierna de pagina om opnieuw verbinding te maken."
+      ],
       "recommended browser": [
         "aanbevolen browser"
       ],
@@ -3907,6 +3958,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
+      "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
+        "Sommige bewerkingen duren langer om te synchroniseren dan verwacht. Dit kan te wijten zijn aan netwerkproblemen. Je kan ondertussen blijven bewerken. Als het probleem aanhoudt, tonen we een sterkere foutmelding."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
@@ -3927,6 +3981,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
+      ],
+      "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
+        "De auteur van bewerkingen in het document kon niet worden geverifieerd. Wil je dit document markeren als geverifieerd? Je kan kiezen om te negeren en later te beslissen."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
@@ -3963,6 +4020,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw map. Om de map opnieuw in te delen heeft u een nieuwe link nodig."
+      ],
+      "This message will be presented again later": [
+        "Dit bericht zal later opnieuw worden gepresentered"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
@@ -4563,6 +4623,9 @@
       ],
       "Manage categories": [
         "Beheer categorieën"
+      ],
+      "Mark as verified": [
+        "Markeer als geverifieerd"
       ],
       "Move to Archive": [
         "Verplaats naar Archief"
@@ -7384,6 +7447,9 @@
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
+      "Document verification failed": [
+        "Documentverificatie mislukt"
+      ],
       "Downgrade account": [
         "Account downgraden"
       ],
@@ -7645,6 +7711,9 @@
       ],
       "Your account is protected": [
         "Uw account is beschermd"
+      ],
+      "Your document cannot be loaded": [
+        "Jouw document kan niet worden geladen"
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"

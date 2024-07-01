@@ -4152,8 +4152,8 @@
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
       ],
-      "Wrong mailbox password": [
-        "Posta kutusu parolası yanlış"
+      "Wrong second password": [
+        "İkinci parola yanlış"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
@@ -6405,6 +6405,9 @@
       "Please add at least one recipient.": [
         "Lütfen en az bir alıcı ekleyin."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Belgenin sahibinden size davet göndermesini isteyin."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
       ],
@@ -6425,6 +6428,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
+      ],
+      "Please open the document to view it.": [
+        "Görüntülemek için lütfen belgeyi açın."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
@@ -6478,6 +6484,9 @@
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
+      "Preview of documents is not yet supported.": [
+        "Henüz belgeleri ön izleme özelliği yok."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
@@ -6495,6 +6504,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta göndericilere sızmasından korunun."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
       "Recipient: ": [
         "Alıcı: "
@@ -9809,8 +9821,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "Payment Processing": [
+        "Ödeme işleniyor"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -9823,6 +9841,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
       ]
     },
     "Payments.Error": {

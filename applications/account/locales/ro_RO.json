@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -183,9 +183,6 @@
       ],
       "Change keys": [
         "Modificare cheie"
-      ],
-      "Change mailbox password": [
-        "Schimbare parolă mesaje"
       ],
       "Change other email subscriptions": [
         "Modificare alte abonamente pe e-mail"
@@ -4129,9 +4126,6 @@
       "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Parolă mesaje incorectă. Reîncercați."
-      ],
       "Incorrect password": [
         "Parolă incorectă"
       ],
@@ -6159,17 +6153,6 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -6228,9 +6211,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola mesajelor. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
       "${ n } address": [
         "${ n } adresă",
@@ -8243,12 +8223,6 @@
       "Two-factor authentication enabled": [
         "Autentificare cu doi factori activată"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta mesajele. (Avansați)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Modul cu două parole folosește parole separate pentru conectare și pentru decriptarea mesajelor. Aceasta furnizează un beneficiu minor de securitate în unele situații. Totuși recomandăm parola unică la majoritatea utilizatorilor. Pentru a comuta la modul cu două parole, mai întâi creați o parolă de conectare și apoi una pentru mesaje."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nu se poate verifica semnătura fișierului de recuperare. Contactați serviciul de asistență."
       ],
@@ -8824,6 +8798,17 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9403,9 +9388,6 @@
       "Awarded": [
         "Acreditat"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Adresă de facturare"
       ],
@@ -9501,9 +9483,6 @@
       ],
       "Confirm login password": [
         "Confirmare parolă conectare"
-      ],
-      "Confirm mailbox password": [
-        "Confirmare parolă mesaje"
       ],
       "Confirm new password": [
         "Confirmare parola nouă"
@@ -9606,6 +9585,9 @@
       ],
       "Disable data export for organization members": [
         "Dezactivare exportare date pentru membrii organizației"
+      ],
+      "Disable sharing outside the organization": [
+        "Dezactivare partajare în afara organizației"
       ],
       "Display name": [
         "Nume afișat"
@@ -9802,9 +9784,6 @@
       "Mail settings": [
         "Setări e-mail"
       ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
       "Main": [
         "Principală"
       ],
@@ -9861,9 +9840,6 @@
       ],
       "New login password": [
         "Parola nouă de conectare"
-      ],
-      "New mailbox password": [
-        "Parola nouă mesaje"
       ],
       "New organization identity": [
         "Identitate nouă organizație"
@@ -15596,9 +15572,6 @@
       "Change login password": [
         "Schimbare parolă conectare"
       ],
-      "Change mailbox password": [
-        "Schimbare parolă mesaje"
-      ],
       "Change organization name": [
         "Schimbare nume organizație"
       ],
@@ -15932,15 +15905,6 @@
       "Folders and labels": [
         "Foldere și etichete"
       ],
-      "For Linux": [
-        "Pentru Linux"
-      ],
-      "For macOS": [
-        "Pentru macOS"
-      ],
-      "For Windows": [
-        "Pentru Windows"
-      ],
       "Forgot recovery method": [
         "Ați uitat metoda de recuperare"
       ],
@@ -16059,9 +16023,6 @@
       ],
       "Link confirmation": [
         "Legătură de confirmare"
-      ],
-      "Login password": [
-        "Parolă conectare"
       ],
       "Messages": [
         "Mesaje"
@@ -16409,9 +16370,6 @@
       ],
       "Type": [
         "Tip"
-      ],
-      "Unlock your mailbox": [
-        "Deblocare mesaje"
       ],
       "Upgrade plan": [
         "Modificare plan"

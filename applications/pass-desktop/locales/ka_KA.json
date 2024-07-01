@@ -377,6 +377,9 @@
       "Set access level": [
         "წვდომის დონის დაყენება"
       ],
+      "Setup 2FA": [
+        "2FA-ის მორგება"
+      ],
       "Share": [
         "გაზიარება"
       ],
@@ -960,6 +963,9 @@
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME }-სთან წვდომას ყოველთვის დასჭირდება ${ BRAND_NAME }-ის პაროლი."
+      ],
       "Add a username field": [
         "მომხმარებლის სახელის ველის დამატება"
       ],
@@ -1109,6 +1115,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
+      ],
+      "Enter your PIN code": [
+        "შეიყვანეთ თქვენი PIN კოდი"
       ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
@@ -1338,9 +1347,6 @@
       ],
       "Please check your spam folder or try resending the code.": [
         "შეამოწმეთ თქვენი სპამის საქაღალდე, ან სცადეთ,, კოდი თავიდან გააგზავნოთ"
-      ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "დაადასტურეთ თქვენი ${ BRAND_NAME }-ის პაროლი"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ქსელის გარეშე მუშაობის რეჟიმის ჩასართავად"
@@ -1583,6 +1589,9 @@
       ],
       "You're invited to a vault.": [
         "მიწვეული ხართ საცავში."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "თქვენი ანგარიში შეზღუდულია, რადგან ახლა 2FA მოთხოვნილი თქვენი ორგანიზაციის მიერ. ჩართეთ 2FA თქვენი ანგარიშის მორგების ფანჯარაში ან დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
       "Your files will be encrypted and then saved": [
         "თქვენი ფაილები ჯერ დაიშიფრება და, მხოლოდ, შემდეგ შეინახება"
@@ -2049,25 +2058,6 @@
       ],
       "stay safer online": [
         "იყავით უსაფრთხოდ ინტერნეტში"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "შეიყვანეთ თქვენი PIN კოდი"
-      ],
-      "Sign in to your account": [
-        "შედით თქვენს ანგარიშში"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "განბლოკეთ ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
       ]
     },
     "Log preference": {

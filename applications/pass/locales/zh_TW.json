@@ -881,6 +881,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
+      "Enter your PIN code": [
+        "輸入個人識別數字代碼"
+      ],
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
       ],
@@ -1210,6 +1213,9 @@
       ],
       "You're invited to a vault.": [
         "您已被邀請至保管庫。"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "您的帳號受限，因為您的組織已強制雙重認證。請在您的帳號設定中啟用雙重認證，又或者聯絡您的管理員。"
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
@@ -1643,22 +1649,6 @@
       ],
       "stay safer online": [
         "保持在線安全"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "輸入個人識別數字代碼"
-      ],
-      "Sign in to your account": [
-        "登入您的帳戶"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "解鎖${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "歡迎使用 ${ brandNameJSX }"
       ]
     },
     "Log preference": {

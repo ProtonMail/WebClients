@@ -41,11 +41,11 @@
       "${ BRAND_NAME } shop": [
         "Taḥanut ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -154,9 +154,6 @@
       ],
       "Change keys": [
         "Beddel isura"
-      ],
-      "Change mailbox password": [
-        "Snifel awal uffir n tnaka n yimayl"
       ],
       "Change other email subscriptions": [
         "Beddel ijerriden-nniḍen s yimayl"
@@ -3056,9 +3053,6 @@
       "Incorrect login credentials. Please try again.": [
         "Talɣut n usesteb mačči d tameɣtut. Ɛreḍ tikkelt-nniḍen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Awal uffir n tirawt d arameɣtu. Ttxil-k·m ɛreḍ tikkelt-nniḍen."
-      ],
       "Incorrect password": [
         "Awal uffir dirrit"
       ],
@@ -4571,11 +4565,6 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -4611,9 +4600,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: taskant s ucegger adday"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } yezmer daɣen ad yettwaseqdec s yiwen kan n wawal uffir ara yemselsin win n tuqqna d win n tnaka urmas. Akken ad tuɣaleḍ ar uskar n yiwen n wawal uffir, sekcem awal uffir i tebɣid ad tesqedceḍ sakin sit ɣef Sekles."
       ],
       "${ n } address": [
         "${ n } tansa",
@@ -5674,12 +5660,6 @@
       "Two-factor authentication enabled": [
         "Asesteb s snat n tarrayin yermed"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Askar n sin wawalen uffiren yesra sin wawalen uffiren: yiwen i unekcum ɣer umiḍan-ik·im, wayeḍ i tukksa n uwgelhen i tbewwaḍt-ik·im n yimayl. (Leqqayen)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Askar s sin n wawalen uffiren isseqdac awalen uffiren yemgaraden i tuqqna ar umiḍan-ik akked uwgelhen n tnaka-ik n urmas. Askar-agi yettmuddu tagnit fessusen seg idis n tɣellist, acu kan, ad nwelleh ɣef useqdec n uskar s yiwen n wawal uffir i tuget n iseqdacen. Akken ad tremdeḍ askar s sin n wawalen uffiren, fren awal uffir n tuqqna ar umiḍan-ik akked wawal uffir n uwgelhen i tnaka-ik n urmas sakin sit ɣef Sekles."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Nesḥassef, ulac akk tarrayt n tririt yettuskelsen i umiḍan-a."
       ],
@@ -5937,6 +5917,11 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
+      ]
+    },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -6502,9 +6487,6 @@
       "Confirm login password": [
         "Sentem awal uffir n tuqqna"
       ],
-      "Confirm mailbox password": [
-        "Sentem awal uffir n tnaka n yimayl"
-      ],
       "Confirm new password": [
         "Sentem awal uffir amaynut"
       ],
@@ -6760,9 +6742,6 @@
       "Mail Server (IMAP)": [
         "Ameẓlu n yimayl (IMAP)"
       ],
-      "Mailbox password": [
-        "Awal uffir n tnaka n yimayl"
-      ],
       "Main": [
         "Agejdan"
       ],
@@ -6798,9 +6777,6 @@
       ],
       "New login password": [
         "Awal uffir n tuqqna amaynut"
-      ],
-      "New mailbox password": [
-        "Awal uffir n tnaka n yimayl amaynut"
       ],
       "New organization password": [
         "Awal uffir n tuddsa amaynut"
@@ -9923,9 +9899,6 @@
       "Change login password": [
         "Snifel awal uffir n tuqqna"
       ],
-      "Change mailbox password": [
-        "Snifel awal uffir n tnaka n yimayl"
-      ],
       "Change organization name": [
         "Beddel isem n tuddsa"
       ],
@@ -10277,9 +10250,6 @@
       "Link confirmation": [
         "Aseɣwen n usentem"
       ],
-      "Login password": [
-        "Awal uffir n tuqqna"
-      ],
       "Messages": [
         "Iznan"
       ],
@@ -10549,9 +10519,6 @@
       ],
       "Type": [
         "Anaw"
-      ],
-      "Unlock your mailbox": [
-        "Kkes asekker i tbewwaḍt-ik·im n ymayl"
       ],
       "Upgrade plan": [
         "Sali aɣawas"

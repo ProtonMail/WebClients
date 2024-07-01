@@ -376,6 +376,9 @@
       "Retry": [
         "Prøv igen"
       ],
+      "Right click and download this CSV": [
+        "Højreklik og hent denne CSV"
+      ],
       "Save": [
         "Gem"
       ],
@@ -396,6 +399,9 @@
       ],
       "Set access level": [
         "Angiv adgangsniveau"
+      ],
+      "Set extra password": [
+        "Indstil ekstra adgangskode"
       ],
       "Setup 2FA": [
         "Indstil 2FA"
@@ -724,6 +730,9 @@
       ],
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
+      ],
+      "File could not be read": [
+        "Filen kunne ikke læses"
       ],
       "File does not match expected format": [
         "Fil svarer ikke til det forventede format"
@@ -1061,6 +1070,9 @@
       "Auto-lock successfully disabled.": [
         "Autolås er blevet deaktiveret."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Før eksport af dine data i dette format, bør du gå ind i Safari- indstillingerne -> fanen \"Generelt\" -> slå indstillingen \"Åbn sikre filer efter overførsel\" fra. Dette vil forhindre Safari i at udpakke den eksporterede fil forkert."
+      ],
       "Breaches detected": [
         "Databrud registreret"
       ],
@@ -1087,6 +1099,9 @@
       ],
       "Click here to add a field for a username.": [
         "Klik her for at tilføje et felt til brugernavn."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Bekræft din ekstra adgangskode for at fortsætte med at fjerne den."
       ],
       "Congratulations, your access has been confirmed": [
         "Tillykke, din adgang er blevet bekræftet"
@@ -1127,6 +1142,9 @@
       "Drop to import": [
         "Slip for at importere"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Pga. en begrænsning i Safari-browserudvidelser mangler filtypen \".pgp\" efter eksport af data. Omdøb venligst filen, så den indeholder .pgp-udvidelsen (f.eks. fil.pgp) efter eksport."
+      ],
       "Editor": [
         "Redaktør"
       ],
@@ -1165,6 +1183,18 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Indtast verifikationskode. Ciffer ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Indtast din ekstra adgangskode"
+      ],
+      "Enter your PIN code": [
+        "Indtast din pinkode"
+      ],
+      "Extra password successfuly created": [
+        "Ekstra adgangskode oprettet med succes"
+      ],
+      "Extra password successfuly removed": [
+        "Ekstra adgangskode fjernet med succes"
       ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
@@ -1398,23 +1428,23 @@
       "Please check your spam folder or try resending the code.": [
         "Tjek din spam-mappe, eller prøv at sende koden igen."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Bekræft venligst din ${ BRAND_NAME }-adgangskode"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Bekræft venligst din ${ BRAND_NAME }-adgangskode for at autolåse med din adgangskode."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at aktivere offline-tilstand"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Bekræft venligst din ${ BRAND_NAME }-adgangskode for at afregistrere din nuværende lås."
+      "Please confirm your password": [
+        "Bekræft venligst din adgangskode"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Bekræft venligst din ${ BRAND_NAME }-adgangskode for at opdatere den automatiske låsetid."
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Bekræft venligst din adgangskode for at autolåse med din adgangskode."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Bekræft venligst din adgangskode for at afregistrere din nuværende lås."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Bekræft venligst din adgangskode for at opdatere autolåsetiden."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bekræft venligst din pinkode for at afregistrere din nuværende lås."
@@ -1449,8 +1479,14 @@
       "Reconnecting": [
         "Genforbinder"
       ],
+      "Registering extra password...": [
+        "Registrerer ekstra adgangskode..."
+      ],
       "Registering PIN lock failed": [
         "Registrering af PIN-lås mislykkedes"
+      ],
+      "Removing extra password...": [
+        "Fjerner ekstra adgangskode..."
       ],
       "Restoring items from trash": [
         "Gendanner elementer fra papirkurven"
@@ -1488,6 +1524,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Del dine logins og sikre noter med op til 10 personer"
       ],
+      "Sign in to your account": [
+        "Log ind på din konto"
+      ],
       "Signing you in": [
         "Logger dig ind"
       ],
@@ -1523,6 +1562,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -1560,6 +1602,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænsede hide-my-email-aliasser"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Lås op for ${ PASS_SHORT_APP_NAME } med din adgangskode til ${ BRAND_NAME }."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Lås op for ${ PASS_SHORT_APP_NAME } med din ekstra adgangskode"
       ],
       "Unpinning item...": [
         "Frigør element..."
@@ -1636,6 +1684,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nået den maksimalt tilladte længde på ${ maxLength } tegn."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Du bliver logget ud og skal logge ind igen på alle dine andre enheder."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "Du vil blive underrettet om databrud for disse e-mailadresser."
@@ -1825,6 +1876,9 @@
       "Export": [
         "Eksportér"
       ],
+      "Extra password": [
+        "Ekstra adgangskode"
+      ],
       "Field name": [
         "Feltnavn"
       ],
@@ -1993,6 +2047,9 @@
       "Prefix": [
         "Præfiks"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Beskyt ${ PASS_APP_NAME } med en ekstra adgangskode"
+      ],
       "Rate us": [
         "Bedøm os"
       ],
@@ -2123,25 +2180,6 @@
       ],
       "stay safer online": [
         "bliv mere sikker online"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Indtast din pinkode"
-      ],
-      "Sign in to your account": [
-        "Log ind på din konto"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Lås ${ PASS_SHORT_APP_NAME } op med din adgangskode til ${ BRAND_NAME }."
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Lås op for ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Velkommen til ${ brandNameJSX }"
       ]
     },
     "Log preference": {
@@ -2337,6 +2375,9 @@
       "Breaches detected for": [
         "Databrud registreret for"
       ],
+      "Confirm extra password": [
+        "Bekræft ekstra adgangskode"
+      ],
       "Confirm PIN code": [
         "Bekræft pinkode"
       ],
@@ -2499,6 +2540,9 @@
       "Remove email address?": [
         "Fjern e-mailadresse?"
       ],
+      "Remove extra password": [
+        "Fjern ekstra adgangskode"
+      ],
       "Resolved breaches": [
         "Løste databrud"
       ],
@@ -2523,6 +2567,9 @@
       ],
       "Set access level": [
         "Angiv adgangsniveau"
+      ],
+      "Set extra password": [
+        "Indstil ekstra adgangskode"
       ],
       "Set up 2FA for better security": [
         "Indstil 2FA for bedre sikkerhed"
@@ -2551,6 +2598,9 @@
       "Trash empty": [
         "Papirkurv tom"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Lås op for ${ brandNameJSX }"
+      ],
       "Update available": [
         "Opdatering tilgængelig"
       ],
@@ -2571,6 +2621,9 @@
       ],
       "Weak passwords": [
         "Svage adgangskoder"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Velkommen til ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Hvad er et alias?"
@@ -2639,6 +2692,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postkasser for dette alias lige nu"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Forsigtig: Du vil ikke kunne tilgå din ${ PASS_APP_NAME }-konto, hvis du mister denne adgangskode."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke oprette boksen \"${ vaultName }\""
       ],
@@ -2659,6 +2715,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Udløbsdatoen er ikke i formatet MM/ÅÅ"
+      ],
+      "Extra password cannot be empty": [
+        "Ekstra adgangskode kan ikke være tom"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Ekstra adgangskode skal have mindst 8 tegn"
       ],
       "Failed to load breaches.": [
         "Kunne ikke indlæse databrud."
@@ -2715,6 +2777,9 @@
       "Passphrase is required": [
         "Adgangssætning er påkrævet"
       ],
+      "Passwords do not match": [
+        "Adgangskoder matcher ikke"
+      ],
       "PGP encrypted export file requires passphrase": [
         "PGP-krypteret eksportfil kræver adgangssætning"
       ],
@@ -2726,6 +2791,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Bekræft din e-mailadresse for at bruge deling af bokse."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "At fjerne din ekstra adgangskode vil logge dig ud af alle enheder og lukke alle aktive sessioner."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."

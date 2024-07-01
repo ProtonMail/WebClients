@@ -1161,6 +1161,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "Zadajte overovací kód. Číslice ${ digit }."
       ],
+      "Enter your PIN code": [
+        "Zadajte PIN kód"
+      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
       ],
@@ -1395,23 +1398,11 @@
       "Please check your spam folder or try resending the code.": [
         "Skontrolujte priečinok so spamom alebo skúste kód poslať znova."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Potvrďte vaše ${ BRAND_NAME } heslo"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre automatické uzamknutie pomocou vášho hesla."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Potvrďte svoje ${ BRAND_NAME } heslo na povolenie offline režimu"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre zruenie vášho aktuálneho zámku."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Potvrďte, prosím, vaše ${ BRAND_NAME } heslo pre aktualizáciu času automatického uzamknutia."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Potvrďte, prosím, svoj PIN kód pre zrušenie registrácie aktuálneho zámku."
@@ -2124,25 +2115,6 @@
       ],
       "stay safer online": [
         "zostať bezpečnejší online"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Zadajte PIN kód"
-      ],
-      "Sign in to your account": [
-        "Prihláste sa do svojho účtu"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Odomknúť ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Víta vás ${ brandNameJSX }"
       ]
     },
     "Log preference": {

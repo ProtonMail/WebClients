@@ -62,9 +62,6 @@
       "Change keys": [
         "Modificare cheie"
       ],
-      "Change mailbox password": [
-        "Schimbare parolă mesaje"
-      ],
       "Change password": [
         "Schimbare parolă"
       ],
@@ -2169,9 +2166,6 @@
       "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Parolă mesaje incorectă. Reîncercați."
-      ],
       "Incorrect password": [
         "Parolă incorectă"
       ],
@@ -3033,9 +3027,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pictogramă cu rezoluție mică"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola mesajelor. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
-      ],
       "${ n } address": [
         "${ n } adresă",
         "${ n } adrese",
@@ -3326,11 +3317,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -4110,12 +4101,6 @@
       "Two-factor authentication enabled": [
         "Autentificare cu doi factori activată"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta mesajele. (Avansați)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Modul cu două parole folosește parole separate pentru conectare și pentru decriptarea mesajelor. Aceasta furnizează un beneficiu minor de securitate în unele situații. Totuși recomandăm parola unică la majoritatea utilizatorilor. Pentru a comuta la modul cu două parole, mai întâi creați o parolă de conectare și apoi una pentru mesaje."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
       ],
@@ -4674,9 +4659,6 @@
       "Confirm login password": [
         "Confirmare parolă conectare"
       ],
-      "Confirm mailbox password": [
-        "Confirmare parolă mesaje"
-      ],
       "Confirm new password": [
         "Confirmare parola nouă"
       ],
@@ -4785,9 +4767,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
       "Main": [
         "Principală"
       ],
@@ -4823,9 +4802,6 @@
       ],
       "New login password": [
         "Parola nouă de conectare"
-      ],
-      "New mailbox password": [
-        "Parola nouă mesaje"
       ],
       "New organization identity": [
         "Identitate nouă organizație"
@@ -6532,6 +6508,9 @@
       "Current plan": [
         "Plan actual"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Introduceți un nume de afișat pentru **${ username }**. Aceasta este ceea ce vor vedea utilizatorii când le schimbați permisiunile sau le partajați date."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
       ],
@@ -6549,6 +6528,9 @@
       ],
       "Includes:": [
         "Include:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Se lansează ${ PASS_APP_NAME }"
       ],
       "per month": [
         "pe lună"
@@ -6575,6 +6557,12 @@
       ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
+      ],
+      "Setting up your organization": [
+        "Setare organizație"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Se conectează la ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Se actualizează contul"
@@ -8621,9 +8609,6 @@
       "Change login password": [
         "Schimbare parolă conectare"
       ],
-      "Change mailbox password": [
-        "Schimbare parolă mesaje"
-      ],
       "Change organization name": [
         "Schimbare nume organizație"
       ],
@@ -8846,9 +8831,6 @@
       "Invoices": [
         "Facturi"
       ],
-      "Login password": [
-        "Parolă conectare"
-      ],
       "Multi-user support": [
         "Suport utilizatori multipli"
       ],
@@ -9048,9 +9030,6 @@
       ],
       "Type": [
         "Tip"
-      ],
-      "Unlock your mailbox": [
-        "Deblocare mesaje"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Îmbunătățiți-vă protecția rețelei cu servere dedicate"

@@ -67,10 +67,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } दुकान"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -183,9 +183,6 @@
       ],
       "Change keys": [
         "कुंजियाँ बदलें"
-      ],
-      "Change mailbox password": [
-        "मेलबॉक्स पासवर्ड बदलें"
       ],
       "Change other email subscriptions": [
         "अन्य ईमेल सदस्यताएँ बदलें"
@@ -3589,9 +3586,6 @@
       "Incorrect login credentials. Please try again.": [
         "गलत लॉगिन क्रेडेंशियल। कृपया पुन: प्रयास करें |"
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "गलत मेलबॉक्स पासवर्ड। कृपया पुन: प्रयास करें |"
-      ],
       "Incorrect password": [
         "गलत पासवर्ड"
       ],
@@ -5427,14 +5421,6 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -5488,9 +5474,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } आपके साथ ${ PASS_APP_NAME } में डेटा साझा करना चाहता है"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } को सिर्फ एक पासवर्ड से भी इस्तेमाल कर सकते है जो आपके लॉग इन और मेलबॉक्स पासवर्ड की जगह ले लेगा। एक पासवर्ड मोड पे जाने के लिए, पासवर्ड डाले जो आप इस्तेमाल करना चाहते है और सेव दबाएं।"
       ],
       "${ n } address": [
         "${ n } पता",
@@ -7119,12 +7102,6 @@
       "Two-factor authentication enabled": [
         "दो-कारक प्रमाणीकरण सक्षम"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "दो-पासवर्ड मोड में दो पासवर्ड चाहिए: पहला अपने खाते पे साइनइन करने के लिए और दूसरा अपना मेलबॉक्स डिक्रिप्ट करने के लिए। (एडवांस)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "दो-पासवर्ड मोड में लॉगइन और मेलबॉक्स डिक्रिप्शन के लिए अलग-अलग पासवर्ड इस्तेमाल होते है। ये कुछ हालत में सुरक्षा का मामूली फायदा देता है, फिर भी हम ज़्यादातर यूज़रों को एक-पासवर्ड मोड इस्तेमाल करने की सलाह देते है। दो-पासवर्ड मोड इस्तेमाल करने के लिए पहले एक लॉगइन पासवर्ड सेट करें और फिर एक मेलबॉक्स पासवर्ड सेट करें।"
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "पुनर्प्राप्ति फ़ाइल हस्ताक्षर सत्यापित करने में असमर्थ। कृपया समर्थन से संपर्क करें।"
       ],
@@ -7591,6 +7568,14 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8115,9 +8100,6 @@
       "Awarded": [
         "इनाम"
       ],
-      "Beta": [
-        "बीटा"
-      ],
       "Billing address": [
         "बिलिंग पता"
       ],
@@ -8213,9 +8195,6 @@
       ],
       "Confirm login password": [
         "लॉगिन पासवर्ड की पुष्टि करें"
-      ],
-      "Confirm mailbox password": [
-        "मेलबॉक्स पासवर्ड की पुष्टि करें"
       ],
       "Confirm new password": [
         "नए पासवर्ड की पुष्टि करें"
@@ -8496,9 +8475,6 @@
       "Mail Server (IMAP)": [
         "मेल सर्वर (IMAP)"
       ],
-      "Mailbox password": [
-        "मेलबॉक्स पासवर्ड"
-      ],
       "Main": [
         "मुख्‍य"
       ],
@@ -8546,9 +8522,6 @@
       ],
       "New login password": [
         "नया लॉगिन पासवर्ड"
-      ],
-      "New mailbox password": [
-        "नया मेलबॉक्स पासवर्ड"
       ],
       "New organization password": [
         "नया संगठन पासवर्ड"
@@ -8878,6 +8851,11 @@
     "Label for default event settings": {
       "Duration": [
         "अवधि"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "कृपया निम्नलिखित TXT रिकॉर्ड जोड़ें। नोट: DNS रिकॉर्ड को अपडेट होने में कई घंटे लग सकते हैं।"
       ]
     },
     "Label for new member": {
@@ -12767,9 +12745,6 @@
       "Change login password": [
         "लॉगिन पासवर्ड बदलें"
       ],
-      "Change mailbox password": [
-        "मेलबॉक्स पासवर्ड बदलें"
-      ],
       "Change organization name": [
         "संगठन का नाम बदलें"
       ],
@@ -13043,15 +13018,6 @@
       "Folders and labels": [
         "फ़ोल्डर्स और लेबल"
       ],
-      "For Linux": [
-        "Linux के लिए"
-      ],
-      "For macOS": [
-        "macOS के लिए"
-      ],
-      "For Windows": [
-        "Windows के लिए"
-      ],
       "Forward and auto-reply": [
         "फॉरवर्ड और स्वचालित-उत्तर"
       ],
@@ -13160,9 +13126,6 @@
       ],
       "Link confirmation": [
         "लिंक की पुष्टि"
-      ],
-      "Login password": [
-        "लॉग इन पासवर्ड"
       ],
       "Messages": [
         "संदेश"
@@ -13467,9 +13430,6 @@
       ],
       "Type": [
         "प्रकार"
-      ],
-      "Unlock your mailbox": [
-        "अपना मेलबॉक्स अनलॉक करें"
       ],
       "Upgrade plan": [
         "योजना अपग्रेड करें"

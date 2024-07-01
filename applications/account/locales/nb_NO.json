@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Endre nøkler"
       ],
-      "Change mailbox password": [
-        "Endre postbokspassord"
-      ],
       "Change other email subscriptions": [
         "Endre andre e-postabonnementer"
       ],
       "Change password": [
         "Endre passord"
+      ],
+      "Change second password": [
+        "Endre andre passord"
       ],
       "Chat with us": [
         "Snakk med oss"
@@ -4113,11 +4113,11 @@
       "Incorrect login credentials. Please try again.": [
         "Feil påloggingsinformasjon. Vennligst prøv på nytt."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Feil postbokspassord. Vennligst prøv på nytt."
-      ],
       "Incorrect password": [
         "Feil passord"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Feil andre passord. Vennligst prøv på nytt."
       ],
       "Incorrect username": [
         "Uriktig brukernavn"
@@ -4313,6 +4313,9 @@
       ],
       "Require at least one condition": [
         "Krever minst en betingelse"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Økten er utløpt. Vennligst last inn siden på nytt."
       ],
       "Signature not verified": [
         "Signatur ikke bekreftet"
@@ -6121,17 +6124,6 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -6189,8 +6181,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker å dele data med deg i ${ PASS_APP_NAME }"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og postbokspassordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og det andre passordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -8012,6 +8004,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Denne invitasjonskoblingen er utløpt. Kontakt administratoren for å be om tilgang."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Denne invitasjonskoblingen er allerede brukt. Vennligst logg på direkte istedenfor."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en frase på 12 ord som du ble bedt om å angi."
       ],
@@ -8183,11 +8178,11 @@
       "Two-factor authentication enabled": [
         "Tofaktorautentisering aktivert"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "To-passordmodus krever to passord: et for å logge på kontoen din og et for å dekryptere postboksen din (avansert)."
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "To-passordmodus krever to passord: et for å logge på kontoen din og et for å dekryptere dataene dine (avansert)."
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "To-passord-modus gjør bruk av separate passord for innlogging og postboksdekryptering. Dette gir en mindre sikkerhetsfordel i noen situasjoner, men vi anbefaler en-passord-modus for fleste brukere. For å bytte til to-passord-modus, først angi et innloggingpassord og deretter angi et postbokspassord."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "To-passord-modus gjør bruk av separate passord for innlogging og datadekryptering. Dette gir en mindre sikkerhetsfordel i noen situasjoner, men vi anbefaler en-passord-modus for fleste brukere. For å bytte til to-passord-modus, først angi et innloggingpassord og deretter angi et andre passord."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ikke i stand til å verifisere gjenopprettingsfilsignatur. Vennligst kontakt kundestøtte."
@@ -8758,6 +8753,17 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9433,9 +9439,6 @@
       "Confirm login password": [
         "Bekreft påloggingspassord"
       ],
-      "Confirm mailbox password": [
-        "Bekreft postbokspassord"
-      ],
       "Confirm new password": [
         "Bekreft nytt passord"
       ],
@@ -9444,6 +9447,9 @@
       ],
       "Confirm password": [
         "Bekreft passord"
+      ],
+      "Confirm second password": [
+        "Bekreft andre passord"
       ],
       "Contacts": [
         "Kontakter"
@@ -9736,9 +9742,6 @@
       "Mail settings": [
         "Innstillinger for e-post"
       ],
-      "Mailbox password": [
-        "Postbokspassord"
-      ],
       "Main": [
         "Hoved"
       ],
@@ -9796,9 +9799,6 @@
       "New login password": [
         "Nytt påloggingspassord"
       ],
-      "New mailbox password": [
-        "Nytt postbokspassord"
-      ],
       "New organization identity": [
         "Ny organisasjonsidentitet"
       ],
@@ -9807,6 +9807,9 @@
       ],
       "New password": [
         "Nytt passord"
+      ],
+      "New second password": [
+        "Nytt andre passord"
       ],
       "No filter": [
         "Ingen filter"
@@ -9949,6 +9952,9 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Second password": [
+        "Andre passord"
+      ],
       "Security code (${ codeName })": [
         "Sikkerhetskode (${ codeName })"
       ],
@@ -10029,6 +10035,12 @@
       ],
       "Subscription options": [
         "Abonnementalternativer"
+      ],
+      "Swipe left action": [
+        "Sveip til venstre handling"
+      ],
+      "Swipe right action": [
+        "Sveip til høyre handling"
       ],
       "Synchronize with system": [
         "Synkroniser med system"
@@ -12225,6 +12237,9 @@
       "Android": [
         "Android"
       ],
+      "Archive": [
+        "Arkiv"
+      ],
       "Ask each time": [
         "Spør hver gang"
       ],
@@ -12272,6 +12287,9 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "Mark as read": [
+        "Marker som lest"
       ],
       "My reason isn't listed": [
         "Min årsak er ikke listet"
@@ -12330,14 +12348,23 @@
       "Setup incomplete": [
         "Oppsettet ikke fullført"
       ],
+      "Spam": [
+        "Søppelpost"
+      ],
       "Standard server configs": [
         "Standard tjenerkonfigurasjon"
+      ],
+      "Star": [
+        "Stjernemerk"
       ],
       "TCP": [
         "TCP"
       ],
       "The whole organization": [
         "Hele organisasjonen"
+      ],
+      "Trash": [
+        "Papirkurv"
       ],
       "UDP": [
         "UDP"
@@ -12957,13 +12984,13 @@
         "CVC"
       ],
       "Got it": [
-        "Har det"
+        "Forstått"
       ],
       "MM/YY": [
         "MM/ÅÅ"
       ],
       "Payment Processing": [
-        "Behandler innbetaling"
+        "Betalingsbehandling"
       ],
       "Processing payment": [
         "Behandler betaling"
@@ -12981,7 +13008,7 @@
         "Tidsavbrudd overskredet"
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
-        "Vi behandler innbetalingen på fakturaen for øyeblikket. Vennligst ikke oppdater plan eller betalingsmetode før transaksjonen er ferdig behandlet. Takk."
+        "Vi behandler betalingen din for den fakturerte fakturaen. Vent til betalingen er fullført før du gjør endringer i planen din eller oppdaterer betalingsinformasjonen din. Takk for tålmodigheten."
       ]
     },
     "Payments.Error": {
@@ -15451,9 +15478,6 @@
       "Change login password": [
         "Endre påloggingspassord"
       ],
-      "Change mailbox password": [
-        "Endre postbokspassord"
-      ],
       "Change organization name": [
         "Endre organisasjonsnavn"
       ],
@@ -15465,6 +15489,9 @@
       ],
       "Change role": [
         "Endre rolle"
+      ],
+      "Change second password": [
+        "Endre andre passord"
       ],
       "Choose an account": [
         "Velg en konto"
@@ -15911,8 +15938,8 @@
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
-      "Login password": [
-        "Påloggingspassord"
+      "Main password": [
+        "Hovedpassord"
       ],
       "Messages": [
         "Meldinger"
@@ -16263,8 +16290,8 @@
       "Type": [
         "Type"
       ],
-      "Unlock your mailbox": [
-        "Lås opp postkassen din"
+      "Unlock your data": [
+        "Lås opp dataene dine"
       ],
       "Upgrade plan": [
         "Oppgrader plan"

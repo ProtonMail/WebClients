@@ -50,9 +50,6 @@
       "Change": [
         "تغییر"
       ],
-      "Change mailbox password": [
-        "تغییر گذرواژه نامه‌دان"
-      ],
       "Change password": [
         "تغییر گذرواژه"
       ],
@@ -1569,9 +1566,6 @@
       "Incorrect login credentials. Please try again.": [
         "اطلاعات ورود به سیستم نادرست است. لطفا دوباره تلاش کنید."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "رمزعبور صندوق پیام نادرست است. لطفا دوباره امتحان کنید."
-      ],
       "Incorrect password": [
         "گذرواژه نادرست است"
       ],
@@ -1941,9 +1935,6 @@
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } اگر ادامه دهید تمام داده های رمزگذاری شده موجود در حساب خود را از دست میدهید."
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "همچنین میتوان از ${ MAIL_APP_NAME } با یک رمزعبور واحد که جایگزین رمزهای عبور حساب و صندوق نامه میشود استفاده کرد. برای تغییر به حالت رمزعبور واحد، رمزعبور واحدی که مایلید از آن استفاده کنید را وارد کرده و روی دکمه ذخیره کلیک کنید."
       ],
       "${ n } address": [
         "${ n } نشانی",
@@ -2412,9 +2403,6 @@
       "Two-factor authentication enabled": [
         "تایید هویت دو مرحله‌ای فعال است"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "حالت دو گذرواژه از گذرواژه‌های عبور جداگانه برای رمزگشایی ورود به سیستم و نامه‌دان استفاده می‌کند. این در برخی شرایط یک مزیت امنیتی جزئی فراهم می‌کند، با این حال حالت تک گذرواژه را برای اکثر کاربران پیشنهاد می‌کنیم. برای تغییر حالت دو گذرواژه، ابتدا یک گذرواژه ورود به سیستم تنظیم کنید و سپس یک گذرواژه نامه‌دان تنظیم کنید."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "متاسفانه هیچ روش بازیابی برای این حساب ذخیره نشده است."
       ],
@@ -2699,9 +2687,6 @@
       "Confirm login password": [
         "تایید گذرواژه"
       ],
-      "Confirm mailbox password": [
-        "تایید گذرواژه نامه‌دان"
-      ],
       "Confirm new password": [
         "تایید گذرواژه جدید"
       ],
@@ -2789,9 +2774,6 @@
       "Level for NetShield blocker filtering": [
         "سطح فیلتر کردن مسدود کننده NetShield"
       ],
-      "Mailbox password": [
-        "گذرواژه نامه‌دان"
-      ],
       "Main": [
         "اصلی"
       ],
@@ -2806,9 +2788,6 @@
       ],
       "New login password": [
         "گذرواژه ورود جدید"
-      ],
-      "New mailbox password": [
-        "گذرواژه جدید نامه‌دان"
       ],
       "New organization password": [
         "گذرواژه سازمانی جدید"
@@ -4306,9 +4285,6 @@
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
       ],
-      "Change mailbox password": [
-        "تغییر گذرواژه نامه‌دان"
-      ],
       "Change organization name": [
         "تغییر نام سازمان"
       ],
@@ -4432,9 +4408,6 @@
       "Invoices": [
         "صورت‌حساب‌ها"
       ],
-      "Login password": [
-        "گذرواژه ورود"
-      ],
       "Multi-user support": [
         "پشتیبانی چند کاربره"
       ],
@@ -4557,9 +4530,6 @@
       ],
       "Type": [
         "نوع"
-      ],
-      "Unlock your mailbox": [
-        "نامه‌دان خود را باز کنید"
       ],
       "Users and addresses": [
         "کاربران و نشانی‌ها"

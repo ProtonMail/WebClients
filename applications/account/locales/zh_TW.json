@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -163,9 +163,6 @@
       ],
       "Change keys": [
         "變更金鑰"
-      ],
-      "Change mailbox password": [
-        "變更郵箱密碼"
       ],
       "Change other email subscriptions": [
         "變更其它電子報訂閱"
@@ -3957,9 +3954,6 @@
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "郵箱密碼不正確。請再試一次."
-      ],
       "Incorrect password": [
         "密碼錯誤"
       ],
@@ -5925,17 +5919,6 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的密鑰。請將密鑰個別上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -5987,9 +5970,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }希望與您使用${ PASS_APP_NAME }共享檔案"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和信箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
       "${ n } address": [
         "${ n } 個電郵位址"
@@ -7821,12 +7801,6 @@
       "Two-factor authentication enabled": [
         "兩步驟驗證已啟用"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的信箱 (進階)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "雙重密碼模式即是使用者使用不同的密碼作登入和解密信箱。在某些情況下，這可能稍微提高安全性，但我們建議大部份使用者使用單一密碼模式。如要切換為雙重密碼模式，請首先設定登入密碼，然後設定信箱密碼。"
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "無法驗證復原檔案的簽章。請聯絡我們。"
       ],
@@ -8339,6 +8313,17 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的密鑰。請將密鑰個別上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8875,9 +8860,6 @@
       "Awarded": [
         "獲得獎勵"
       ],
-      "Beta": [
-        "測試版"
-      ],
       "Billing address": [
         "帳單位址"
       ],
@@ -8973,9 +8955,6 @@
       ],
       "Confirm login password": [
         "確認登入密碼"
-      ],
-      "Confirm mailbox password": [
-        "確認信箱密碼"
       ],
       "Confirm new password": [
         "確認新密碼"
@@ -9271,9 +9250,6 @@
       "Mail settings": [
         "郵件設定"
       ],
-      "Mailbox password": [
-        "信箱密碼"
-      ],
       "Main": [
         "主要"
       ],
@@ -9330,9 +9306,6 @@
       ],
       "New login password": [
         "新的登入密碼"
-      ],
-      "New mailbox password": [
-        "新的信箱密碼"
       ],
       "New organization identity": [
         "新組織機構身分"
@@ -14327,9 +14300,6 @@
       "Change login password": [
         "更改登入密碼"
       ],
-      "Change mailbox password": [
-        "更改郵箱密碼"
-      ],
       "Change organization name": [
         "變更組織名稱"
       ],
@@ -14657,15 +14627,6 @@
       "Folders and labels": [
         "資料夾和標籤"
       ],
-      "For Linux": [
-        "適用於 Linux"
-      ],
-      "For macOS": [
-        "適用於 macOS"
-      ],
-      "For Windows": [
-        "適用於 Windows"
-      ],
       "Forgot recovery method": [
         "忘記復原方法"
       ],
@@ -14782,9 +14743,6 @@
       ],
       "Link confirmation": [
         "外部連結確認"
-      ],
-      "Login password": [
-        "登入密碼"
       ],
       "Messages": [
         "訊息"
@@ -15127,9 +15085,6 @@
       ],
       "Type": [
         "類型"
-      ],
-      "Unlock your mailbox": [
-        "解除鎖定您的信箱"
       ],
       "Upgrade plan": [
         "升級方案"

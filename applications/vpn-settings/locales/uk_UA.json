@@ -62,9 +62,6 @@
       "Change keys": [
         "Змінити ключі"
       ],
-      "Change mailbox password": [
-        "Змінити пароль поштової скриньки"
-      ],
       "Change password": [
         "Змінити пароль"
       ],
@@ -194,6 +191,12 @@
       "Edit name": [
         "Змінити назву"
       ],
+      "Edit organization identity": [
+        "Редагувати ідентифікатор організації"
+      ],
+      "Edit organization name": [
+        "Редагувати назву організації"
+      ],
       "Edit password": [
         "Редагувати пароль"
       ],
@@ -229,6 +232,9 @@
       ],
       "Forgot password?": [
         "Забули пароль?"
+      ],
+      "Forgot recovery method?": [
+        "Забули спосіб відновлення?"
       ],
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
@@ -464,6 +470,9 @@
       "Send my username": [
         "Надіслати моє ім'я користувача"
       ],
+      "Send new invite": [
+        "Надіслати нове запрошення"
+      ],
       "Send reminder": [
         "Надіслати нагадування"
       ],
@@ -592,6 +601,9 @@
       ],
       "Verify code again": [
         "Перевірити код знову"
+      ],
+      "Verify domain": [
+        "Підтвердити домен"
       ],
       "View": [
         "Переглянути"
@@ -2092,11 +2104,17 @@
       "Code wrong or not valid anymore": [
         "Код неправильний або недійсний"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "Не вдалося завантажити рахунки-фактури. Будь ласка, спробуйте ще раз пізніше."
+      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
       "Email address is invalid": [
         "Недійсна адреса е-пошти"
+      ],
+      "Email address is not available": [
+        "Електронна адреса є недоступною."
       ],
       "Email is not valid": [
         "Е-пошта недійсна"
@@ -2130,9 +2148,6 @@
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Неправильний пароль поштової скриньки. Спробуйте знову."
       ],
       "Incorrect password": [
         "Неправильний пароль"
@@ -2172,6 +2187,9 @@
       ],
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Необхідно активувати ключ організації, щоб створити запрошених користувачів"
       ],
       "Organization key must be activated to create non-private users": [
         "Щоб створити неприватних користувачів, необхідно активувати ключ організації"
@@ -2995,9 +3013,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: попередній перегляд низької роздільності"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
-      ],
       "${ n } address": [
         "${ n } адреса",
         "${ n } адреси",
@@ -3301,11 +3316,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -3492,6 +3507,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Якщо ви ввійшли в інший обліковий запис, можливо, ви зможете ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
@@ -3700,6 +3718,9 @@
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "Пароль має містити ${ MIN_PASSWORD_LENGTH } символів або більше."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Платежі та приватність захищені TLS-шифруванням та швейцарським законодавством."
       ],
@@ -3744,6 +3765,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Зверніть увагу, що натискаючи кнопку Підтвердити, на вашому рахунку залишиться ${ creditsRemaining }."
+      ],
+      "please open a support ticket": [
+        "будь ласка, відкрийте заявку служби підтримки"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Повторіть спробу, скориставшись іншим способом оплати, або зверніться до свого банку."
@@ -3828,6 +3852,12 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
+      ],
+      "SCIM integration disabled": [
+        "Інтеграція SCIM вимкнена"
+      ],
+      "SCIM token active": [
+        "Токен SCIM активний"
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Захистіть свій обліковий запис ${ BRAND_NAME }"
@@ -3979,8 +4009,14 @@
       "This file is too large to preview": [
         "Цей файл завеликий для перегляду"
       ],
+      "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
+        "Це повідомлення не надійде до служби підтримки, якщо у вас виникли проблеми з нашим сервісом або вам потрібні подальші дії з нашого боку ${ supportLink }."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Ця перевірка може тривати до однієї години. Після успішної перевірки не видаляйте даний TXT запис, оскільки він потрібен для підтвердження того, що ви продовжуєте володіти даним доменом."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
@@ -3994,11 +4030,17 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ця дія остаточно видалить ваш обліковий запис та всі пов'язані з ним дані. Ви не зможете відновити цей обліковий запис."
       ],
+      "This will remove any enabled 2FA methods.": [
+        "Це видалить будь-які увімкнені методи 2FA."
+      ],
       "This will remove SSO for ${ boldDomainName }.": [
         "Це призведе до вилучення SSO для ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Це замінить ваш тимчасовий пароль. Ви будете використовувати його для доступу до свого облікового запису ${ BRAND_NAME } у майбутньому."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Це надішле нове запрошення до **${ email }**."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
@@ -4008,6 +4050,9 @@
       ],
       "to ${ product } Business": [
         "у ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Щоб дозволити домену **${ domainName }** використовувати SAML SSO, ви повинні підтвердити право власності на нього, додавши наступний DNS TXT запис до свого домену у вашого DNS постачальника."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Щоб скасувати передплату, зв'яжіться з нами."
@@ -4059,12 +4104,6 @@
       ],
       "Two-factor authentication enabled": [
         "Двоетапна перевірка увімкнена"
-      ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Двопарольний режим потребує два паролі: перший для входу в обліковий запис, а другий для розшифрування поштової скриньки."
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Двопарольний режим використовує окремі паролі для входу та розшифрування поштової скриньки. Це забезпечує додатковий рівень захисту в деяких ситуаціях. Однак, для більшості користувачів ми рекомендуємо використовувати однопарольний режим. Щоб перемкнутися на двопарольний режим, встановіть спочатку пароль входу, а потім пароль поштової скриньки."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для цього облікового запису не збережено спосіб відновлення."
@@ -4200,6 +4239,12 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Увімкнувши SAML для ${ appName } у свого провайдера ідентифікації, ви можете отримати запит на використання URL-адреси для зворотного виклику (ACS) та ID видавця. Просто скопіюйте і вставте наведені нижче дані в поля вашого провайдера ідентифікації."
+      ],
+      "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
+        "Коли ви скасуєте поточну платну підписку, залишок вашої підписки буде повернено як кредит облікового запису і вас буде переведено на ${ BRAND_NAME } ${ PLANS.FREE } план."
+      ],
+      "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Якщо ви скасуєте підписку, ваша підписка не буде поновлена, але ви все одно зможете користуватися перевагами плану до кінця періоду підписки. Після цього ви перейдете до ${ BRAND_NAME } безоплатного плану."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
@@ -4611,9 +4656,6 @@
       "Confirm login password": [
         "Підтвердити пароль входу"
       ],
-      "Confirm mailbox password": [
-        "Підтвердити пароль поштової скриньки"
-      ],
       "Confirm new password": [
         "Підтвердити новий пароль"
       ],
@@ -4646,6 +4688,9 @@
       ],
       "Current email": [
         "Поточна адреса електронної пошти"
+      ],
+      "Current organization identity": [
+        "Тотожність поточної організації"
       ],
       "Default language": [
         "Мова"
@@ -4719,9 +4764,6 @@
       "Logo": [
         "Логотип"
       ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
       "Main": [
         "Головна"
       ],
@@ -4758,8 +4800,8 @@
       "New login password": [
         "Новий пароль входу"
       ],
-      "New mailbox password": [
-        "Новий пароль поштової скриньки"
+      "New organization identity": [
+        "Тотожність нової організації"
       ],
       "New organization password": [
         "Новий пароль організації"
@@ -4787,6 +4829,9 @@
       ],
       "Optional": [
         "Необов'язково"
+      ],
+      "Organization identity": [
+        "Тотожність нової організації"
       ],
       "Organization name": [
         "Назва організації"
@@ -5015,6 +5060,9 @@
       ],
       "Add gift code": [
         "Додати подарунковий код"
+      ],
+      "Add to your subscription": [
+        "Додати до вашої підписки"
       ],
       "clearing your browser cache": [
         "очищення кешу браузера"
@@ -6428,6 +6476,9 @@
       "Current plan": [
         "Поточний план"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Введіть ім'я для показу **${ username }**. Це те, що побачать ваші користувачі, коли ви зміните їхні дозволи або надасте їм доступ до даних."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до преміального менеджера паролів ${ BRAND_NAME }!"
       ],
@@ -6445,6 +6496,9 @@
       ],
       "Includes:": [
         "Включає:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Запуск ${ PASS_APP_NAME }"
       ],
       "per month": [
         "на місяць"
@@ -6472,6 +6526,12 @@
       ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
+      ],
+      "Setting up your organization": [
+        "Налаштування вашої організації"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Вхід у ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Оновлення облікового запису"
@@ -7410,6 +7470,11 @@
         "Покращити"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Покращити"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } місяць",
@@ -8328,9 +8393,6 @@
       "Change login password": [
         "Змінити пароль входу"
       ],
-      "Change mailbox password": [
-        "Змінити пароль поштової скриньки"
-      ],
       "Change organization name": [
         "Змінити назву організації"
       ],
@@ -8472,6 +8534,9 @@
       "Edit invoice details": [
         "Змінити подробиці рахунку"
       ],
+      "Edit organization identity": [
+        "Редагувати тотожність організації"
+      ],
       "Edit servers": [
         "Редагувати сервери"
       ],
@@ -8520,6 +8585,9 @@
       "Find email or username": [
         "Знайти е-пошту чи ім'я користувача"
       ],
+      "Forgot recovery method": [
+        "Забули спосіб відновлення"
+      ],
       "Gateways": [
         "Мережеві шлюзи"
       ],
@@ -8549,9 +8617,6 @@
       ],
       "Invoices": [
         "Рахунки"
-      ],
-      "Login password": [
-        "Пароль входу"
       ],
       "Multi-user support": [
         "Підтримка декількох користувачів"
@@ -8673,6 +8738,9 @@
       "Send email reminders?": [
         "Надіслати нагадування поштою?"
       ],
+      "Send new invite?": [
+        "Надіслати нове запрошення?"
+      ],
       "Set new password": [
         "Встановити новий пароль"
       ],
@@ -8750,9 +8818,6 @@
       ],
       "Type": [
         "Тип"
-      ],
-      "Unlock your mailbox": [
-        "Розблокуйте поштову скриньку"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Вдоскональте рівень захисту мережі за допомогою виділених серверів"
@@ -8894,6 +8959,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Цю адресу електронної пошти буде показано всім членам організації під час виконання операцій з управлінням обліковим записом."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "У вебверсіях наших програм користувачі бачитимуть ваш логотип замість піктограми ${ BRAND_NAME }."

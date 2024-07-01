@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -183,9 +183,6 @@
       ],
       "Change keys": [
         "Spremeni ključe"
-      ],
-      "Change mailbox password": [
-        "Spremeni geslo poštnega nabiralnika"
       ],
       "Change other email subscriptions": [
         "Spremenite druge naročnine na e-pošto"
@@ -4112,9 +4109,6 @@
       "Incorrect login credentials. Please try again.": [
         "Napačne poverilnice za prijavo. Poskusite znova."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Napačno geslo nabiralnika. Poskusite znova."
-      ],
       "Incorrect password": [
         "Napačno geslo"
       ],
@@ -6161,17 +6155,6 @@
         "Del vsebine koledarja ni podprt in ne bo uvožen."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ključ ${ fingerprint } je že bil naložen."
-      ],
-      "Selected color:": [
-        "Izberi barvo:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } potrebuje vaše dovoljenje za ${ enableDesktopNotifications }."
@@ -6232,9 +6215,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } želi deliti podatke z vami v ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } lahko uporabljate tudi z enim samim geslom, ki nadomesti tako prijavno geslo kot tudi geslo za nabiralnik. Če želite uporabljati način enega samega gesla, vnesite želeno eno geslo in kliknite Shrani."
       ],
       "${ n } address": [
         "${ n } naslov",
@@ -8156,12 +8136,6 @@
       "Two-factor authentication enabled": [
         "Dvojno preverjanje pristnosti je omogočeno"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Način z dvema gesloma zahteva dve gesli: eno za prijavo v vaš račun in eno za dešifriranje poštnega predala. (Napredno)."
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Način z dvema gesloma uporablja ločeni gesli za prijavo in dešifriranje poštnega predala. To zagotavlja manjšo varnostno prednost v nekaterih situacijah, vendar večini uporabnikov priporočamo način z enim geslom. Za preklop na način z dvema gesloma najprej nastavite prijavno geslo, nato pa nastavite geslo za poštni predal."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ni mogoče preveriti podpisa datoteke za obnovitev. Prosim, obrnite se na podporo."
       ],
@@ -8704,6 +8678,17 @@
       ],
       "Zoom meeting": [
         "Srečanje Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Zaznali smo dodatne podvojene ključe. Prosimo, da jih naložite posamično za več informacij."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ključ ${ fingerprint } je že bil naložen."
+      ],
+      "Selected color:": [
+        "Izberi barvo:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9284,9 +9269,6 @@
       "Awarded": [
         "Podeljeno."
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Naslov za izstavitev računa"
       ],
@@ -9382,9 +9364,6 @@
       ],
       "Confirm login password": [
         "Potrdi geslo za prijavo"
-      ],
-      "Confirm mailbox password": [
-        "Potrdi geslo nabiralnika"
       ],
       "Confirm new password": [
         "Potrdite novo geslo"
@@ -9484,6 +9463,9 @@
       ],
       "Disable animations": [
         "Onemogoči animacije"
+      ],
+      "Disable sharing outside the organization": [
+        "Onemogočite skupno rabo izven organizacije"
       ],
       "Display name": [
         "Prikazno ime"
@@ -9680,9 +9662,6 @@
       "Mail settings": [
         "Nastavitve e-pošte"
       ],
-      "Mailbox password": [
-        "Geslo e-poštnega nabiralnika"
-      ],
       "Main": [
         "Glavno"
       ],
@@ -9739,9 +9718,6 @@
       ],
       "New login password": [
         "Novo geslo za prijavo"
-      ],
-      "New mailbox password": [
-        "Novo geslo nabiralnika"
       ],
       "New organization identity": [
         "Nova identiteta organizacije"
@@ -15358,9 +15334,6 @@
       "Change login password": [
         "Spremenite geslo za prijavo"
       ],
-      "Change mailbox password": [
-        "Spremeni geslo poštnega nabiralnika"
-      ],
       "Change organization name": [
         "Spreminjanje imena organizacije"
       ],
@@ -15697,15 +15670,6 @@
       "Folders and labels": [
         "Mape in oznake"
       ],
-      "For Linux": [
-        "Za GNU/Linux"
-      ],
-      "For macOS": [
-        "Za macOS"
-      ],
-      "For Windows": [
-        "Za Windows"
-      ],
       "Forgot recovery method": [
         "Pozabljen način obnovitve"
       ],
@@ -15826,9 +15790,6 @@
       "Link confirmation": [
         "Potrditvena povezava"
       ],
-      "Login password": [
-        "Geslo za prijavo"
-      ],
       "Messages": [
         "Sporočila"
       ],
@@ -15912,9 +15873,6 @@
       ],
       "PayPal verification failed": [
         "Preverjanje plačila s PayPal ni uspelo"
-      ],
-      "Personalise your e-mail footer": [
-        "Nastavite podpis po meri"
       ],
       "Phone": [
         "Telefon"
@@ -16179,9 +16137,6 @@
       ],
       "Type": [
         "Vrsta"
-      ],
-      "Unlock your mailbox": [
-        "Odklenite svoj poštni predal."
       ],
       "Upgrade plan": [
         "Nadgradnja paketa"

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Anahtarları değiştir"
       ],
-      "Change mailbox password": [
-        "Posta kutusu parolasını değiştir"
-      ],
       "Change other email subscriptions": [
         "Diğer e-posta aboneliklerini değiştir"
       ],
       "Change password": [
         "Parolayı değiştir"
+      ],
+      "Change second password": [
+        "İkinci parolayı değiştir"
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
@@ -4113,11 +4113,11 @@
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
-      ],
       "Incorrect password": [
         "Parola geçersiz"
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
       ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
@@ -4313,6 +4313,9 @@
       ],
       "Require at least one condition": [
         "En az bir koşul olmalıdır"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Oturumun geçerlilik süresi dolmuş. Lütfen sayfayı yenileyin."
       ],
       "Signature not verified": [
         "İmza doğrulanamadı"
@@ -6121,17 +6124,6 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -6189,8 +6181,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
       "${ n } address": [
         "${ n } adres",
@@ -7558,6 +7550,9 @@
         "Lütfen satırdaki kullanıcının e-posta adresini yazın",
         "Lütfen satırlardaki kullanıcıların e-posta adreslerini yazın"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Belgenin sahibinden size davet göndermesini isteyin."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
       ],
@@ -7587,6 +7582,9 @@
       ],
       "please open a support ticket": [
         "lütfen bir destek kaydı açın"
+      ],
+      "Please open the document to view it.": [
+        "Görüntülemek için lütfen belgeyi açın."
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
@@ -7627,6 +7625,9 @@
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
+      "Preview of documents is not yet supported.": [
+        "Henüz belgeleri ön izleme özelliği yok."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
@@ -7644,6 +7645,9 @@
       ],
       "Public link invite": [
         "Herkese açık davet bağlantısı"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
       "purchase additional storage": [
         "ek depolama alanı satın alın"
@@ -7994,6 +7998,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Bu davet bağlantısının geçerlilik süresi dolmuş. Erişim isteğinde bulunmak için lütfen yöneticinizle görüşün."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Bu davet bağlantısı zaten kullanılmış. Lütfen bunun yerine doğrudan oturum açın."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ayarlanmanız istenen bu ifade 12 sözcükten oluşur."
       ],
@@ -8068,6 +8075,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Bu bilgi, geçici parolanızın yerini alır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
+      ],
+      "This will send a new invite to **${ email }**.": [
+        "Bu işlem, **${ email }** adresine yeni bir davet gönderir."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
@@ -8162,11 +8172,11 @@
       "Two-factor authentication enabled": [
         "İki adımlı doğrulama açıldı"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri verilerinizin şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola kipi açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola kipini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "İki parola kipi açıldığında, oturum açmak ve verilerin şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola kipini açmak için önce bir oturum açma parolası ve ardından bir ikinci parola belirleyin."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kurtarma dosyası imzası doğrulanamadı. Lütfen destek ekibi ile görüşün."
@@ -8611,6 +8621,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Düzenleyicinin yanıtınızı görebilmesi için yine de davetleri yanıtlamanız gerekir."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Davetinizi kabul ettikten sonra kullanıcı rolünü yönetici olarak değiştirebilirsiniz."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Oturum açtıktan sonra ${ destination } sayfasına yönlendirileceksiniz."
       ],
@@ -8736,6 +8749,17 @@
         "Zoom toplantısı"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Açıldığında alt klasörler üst klasörün rengini alır."
@@ -8821,6 +8845,9 @@
       ],
       "Paid": [
         "Ödenmiş"
+      ],
+      "Processing": [
+        "İşleniyor"
       ],
       "Unpaid": [
         "Ödenmemiş"
@@ -9406,9 +9433,6 @@
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
       ],
-      "Confirm mailbox password": [
-        "Posta kutusu parolası onayı"
-      ],
       "Confirm new password": [
         "Yeni parola onayı"
       ],
@@ -9417,6 +9441,9 @@
       ],
       "Confirm password": [
         "Parolayı onayla"
+      ],
+      "Confirm second password": [
+        "İkinci parola onayı"
       ],
       "Contacts": [
         "Kişiler"
@@ -9510,6 +9537,9 @@
       ],
       "Disable data export for organization members": [
         "Kuruluş üyelerinin verileri dışa aktarmasını kapat"
+      ],
+      "Disable sharing outside the organization": [
+        "Kuruluş dışına paylaşımı kapat"
       ],
       "Display name": [
         "Görüntülenecek ad"
@@ -9706,9 +9736,6 @@
       "Mail settings": [
         "Mail ayarları"
       ],
-      "Mailbox password": [
-        "Posta kutusu parolası"
-      ],
       "Main": [
         "Ana"
       ],
@@ -9766,9 +9793,6 @@
       "New login password": [
         "Yeni oturum açma parolası"
       ],
-      "New mailbox password": [
-        "Yeni posta kutusu parolası"
-      ],
       "New organization identity": [
         "Yeni kuruluş kimliği"
       ],
@@ -9777,6 +9801,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "New second password": [
+        "Yeni ikinci parola"
       ],
       "No filter": [
         "Süzgeç yok"
@@ -9919,6 +9946,9 @@
       "Reveal password": [
         "Parolayı göster"
       ],
+      "Second password": [
+        "İkinci parola"
+      ],
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
       ],
@@ -9999,6 +10029,12 @@
       ],
       "Subscription options": [
         "Abonelik seçenekleri"
+      ],
+      "Swipe left action": [
+        "Sola kaydırma işlemi"
+      ],
+      "Swipe right action": [
+        "Sağa kaydırma işlemi"
       ],
       "Synchronize with system": [
         "Sistem ile aynı"
@@ -12189,6 +12225,9 @@
       "Add to existing group": [
         "Var olan gruba ekle"
       ],
+      "Archive": [
+        "Arşivle"
+      ],
       "Ask each time": [
         "Her defasında sorulsun"
       ],
@@ -12227,6 +12266,9 @@
       ],
       "Left to Right": [
         "Soldan sağa"
+      ],
+      "Mark as read": [
+        "Okunmuş olarak işaretle"
       ],
       "My reason isn't listed": [
         "Gerekçem listede yok"
@@ -12285,11 +12327,20 @@
       "Setup incomplete": [
         "Kurulum tamamlanmamış"
       ],
+      "Spam": [
+        "İstenmeyenlere taşı"
+      ],
       "Standard server configs": [
         "Standart sunucu yapılandırmaları"
       ],
+      "Star": [
+        "Yıldız koy"
+      ],
       "The whole organization": [
         "Tüm kuruluş"
+      ],
+      "Trash": [
+        "Çöpe at"
       ]
     },
     "Option delay send seconds": {
@@ -12902,8 +12953,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "Payment Processing": [
+        "Ödeme işleniyor"
       ],
       "Processing payment": [
         "Ödeme işleniyor"
@@ -12919,6 +12976,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
       ]
     },
     "Payments.Error": {
@@ -15388,9 +15448,6 @@
       "Change login password": [
         "Oturum açma parolasını değiştir"
       ],
-      "Change mailbox password": [
-        "Posta kutusu parolasını değiştir"
-      ],
       "Change organization name": [
         "Kuruluş adını değiştir"
       ],
@@ -15402,6 +15459,9 @@
       ],
       "Change role": [
         "Rolü değiştir"
+      ],
+      "Change second password": [
+        "İkinci parolayı değiştir"
       ],
       "Choose an account": [
         "Bir hesap seçin"
@@ -15848,8 +15908,8 @@
       "Link confirmation": [
         "Bağlantı onayı"
       ],
-      "Login password": [
-        "Oturum açma parolası"
+      "Main password": [
+        "Ana parola"
       ],
       "Messages": [
         "İletiler"
@@ -16197,8 +16257,8 @@
       "Type": [
         "Tür"
       ],
-      "Unlock your mailbox": [
-        "Posta kutunuzun kilidini açın"
+      "Unlock your data": [
+        "Verilerinizin kilidini açın"
       ],
       "Upgrade plan": [
         "Tarifeyi yükselt"
