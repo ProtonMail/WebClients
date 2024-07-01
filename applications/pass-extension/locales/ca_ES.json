@@ -374,6 +374,9 @@
       "Retry": [
         "Reintenta"
       ],
+      "Right click and download this CSV": [
+        "Feu clic dret i baixeu aquest CSV"
+      ],
       "Save": [
         "Desa"
       ],
@@ -400,6 +403,12 @@
       ],
       "Set access level": [
         "Estableix el nivell d`accés"
+      ],
+      "Set extra password": [
+        "Estableixi la contrasenya addicional"
+      ],
+      "Setup 2FA": [
+        "Configura l'A2F"
       ],
       "Share": [
         "Compartir"
@@ -705,6 +714,9 @@
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer"
       ],
+      "File could not be read": [
+        "No s'ha pogut llegir el fitxer."
+      ],
       "File does not match expected format": [
         "El fitxer no coincideix amb el format esperat"
       ],
@@ -842,6 +854,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hem trobat un problema en iniciar ${ PASS_SHORT_APP_NAME }. Si aquest problema continua, poseu-vos en contacte amb el nostre servei d'atenció al client per obtenir ajuda."
+      ],
+      "Wrong password": [
+        "La contrasenya no es correcta."
       ],
       "Wrong PIN code. Try again.": [
         "Codi PIN incorrecte. Proveu de nou."
@@ -1026,6 +1041,9 @@
       "Autosaved on ${ payload.domain }": [
         "S'ha desat automàticament en ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Abans d'exportar les vostres dades en aquest format, obreu i desactiveu l'opció següent: Paràmetres de Safari -> General -> Obrir els fitxers segurs després de la descàrrega. Això evitarà que Safari extraguí el fitxer exportat de manera incorrecta."
+      ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrat"
       ],
@@ -1055,6 +1073,9 @@
       ],
       "Close this window in order to use another passkey manager.": [
         "Tanqueu aquesta finestra per tal d'utilitzar un altre gestor de contrasenyes."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Confirmeu la vostra contrasenya addicional per procedir a la seva eliminació."
       ],
       "Congratulations, your access has been confirmed": [
         "S'ha confirmat el vostre accés"
@@ -1098,6 +1119,9 @@
       "Drop to import": [
         "Arrossegueu aquí per a importar"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "A causa d'una limitació de les extensions del navegador Safari, després d'exportar les dades faltarà l'extensió del fitxer \".pgp\". Reanomeneu el fitxer per a incloure l'extensió .pgp (p. ex. fitxer.pgp) després d'exportar."
+      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importeu fàcilment les vostres contrasenyes existents a ${ PASS_APP_NAME }."
       ],
@@ -1137,8 +1161,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
+      "Enter your extra password": [
+        "Introduïu la vostra contrasenya addicional"
+      ],
       "Enter your PIN code": [
         "Introduïu el codi PIN"
+      ],
+      "Extra password successfuly created": [
+        "S'ha creat la contrasenya addicional."
+      ],
+      "Extra password successfuly removed": [
+        "S'ha esborrat la contrasenya addicional."
       ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
@@ -1179,7 +1212,7 @@
         "S'han importat ${ payload.total } elements"
       ],
       "Imported on ${ date }": [
-        "Importat ${ date }"
+        "Importat el ${ date }"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Per a obtenir la millor experiència de ${ PASS_APP_NAME }, doneu els permisos d'extensió necessaris"
@@ -1342,20 +1375,20 @@
       "Pinning item...": [
         "Ancorant l'element..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Confirmeu la vostra contrasenya de ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per tal de bloquejar-la automàticament amb la vostra contrasenya"
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per anul·lar el registre del vostre bloqueig actual."
+      "Please confirm your password": [
+        "Confirmeu la vostra contrasenya"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Confirmeu la vostra contrasenya de ${ BRAND_NAME } per actualitzar l'hora del bloqueig automàtic."
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Confirmeu la vostra contrasenya per tal de bloquejar automàticament amb la vostra contrasenya."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Confirmeu la vostra contrasenya per desregistrar el vostre bloqueig."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Confirmeu la vostra contrasenya per actualitzar l'hora del bloqueig automàtic."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Confirmeu el vostre codi PIN per tal d'anul·lar el registre del vostre bloqueig actual."
@@ -1372,6 +1405,9 @@
       "Please enter your current PIN code to continue": [
         "Introduïu el codi PIN actual per a continuar."
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Introduïu la vostra contrasenya extra per començar a utilitzar ${ PASS_SHORT_APP_NAME }."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Actualitzeu per a tenir accés anticipat a l'aplicació web ${ PASS_APP_NAME }"
       ],
@@ -1384,8 +1420,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
       ],
+      "Registering extra password...": [
+        "Registrant la contrasenya addicional..."
+      ],
       "Registering PIN lock failed": [
         "No s'ha pogut registrar el bloqueig del PIN"
+      ],
+      "Removing extra password...": [
+        "Esborrant la contrasenya addicional..."
       ],
       "Restoring items from trash": [
         "S'estan restaurant els elements de la paperera"
@@ -1435,6 +1477,9 @@
       "Sign in or create an account to continue.": [
         "Inicieu sessió o creeu un compte per continuar."
       ],
+      "Sign in to your account": [
+        "Inicieu sessió al vostre compte"
+      ],
       "Signing you in": [
         "S'està iniciant la sessió"
       ],
@@ -1464,6 +1509,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "El fitxer exportat es xifrarà amb PGP i requereix una contrasenya forta."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "No s'ha pogut importar ${ result.ignored.length } element:",
@@ -1504,6 +1552,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per desar aquesta clau d'accés"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya de ${ BRAND_NAME }."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya addicional."
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
@@ -1584,6 +1638,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Se us tancarà la sessió i haureu de tornar a iniciar sessió en tots els vostres altres dispositius."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Utilitzareu aquest PIN per a desbloquejar ${ PASS_APP_NAME } un cop es bloquegi automàticament després d'un període d'inactivitat."
       ],
@@ -1595,6 +1652,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "La vostra sessió de ${ PASS_APP_NAME } està bloquejada"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "El vostre compte està restringit perquè la vostra organització ha forçat l'autenticació de dos factors. Activeu l'autenticació de dos factors a la configuració del vostre compte o contacteu amb el vostre administrador."
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
@@ -1774,6 +1834,9 @@
       "Export": [
         "Exporta"
       ],
+      "Extra password": [
+        "Contrasenya addicional"
+      ],
       "Field name": [
         "Nom del camp"
       ],
@@ -1951,6 +2014,9 @@
       "Prompt for auto-save when generating passwords": [
         "Sol·licita el desament automàtic en generar contrasenyes"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Protegiu ${ PASS_APP_NAME } amb una contrasenya addicional."
+      ],
       "Rate us": [
         "Avalueu-nos"
       ],
@@ -2032,6 +2098,9 @@
       "Type": [
         "Tipus"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloqueja ${ PASS_APP_NAME }"
+      ],
       "Unnamed Credit Card": [
         "Targeta de crèdit sense nom"
       ],
@@ -2076,25 +2145,6 @@
       ],
       "You are about to create": [
         "Esteu a punt de crear"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Introduïu el codi PIN"
-      ],
-      "Sign in to your account": [
-        "Inicieu sessió al vostre compte"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Desbloqueja ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Us donem la benvinguda a ${ brandNameJSX }"
       ]
     },
     "Message": {
@@ -2242,6 +2292,9 @@
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
       ],
+      "Confirm extra password": [
+        "Confirmeu la contrasenya addicional"
+      ],
       "Confirm PIN code": [
         "Confirmeu el codi PIN"
       ],
@@ -2297,7 +2350,7 @@
         "Importació - ${ date }"
       ],
       "Import to vault(s)": [
-        "Importa a les caixes fortes"
+        "Importa a la(es) caixa(es) forta(es)"
       ],
       "Last autofill": [
         "Darrer emplenament automàtic"
@@ -2356,6 +2409,9 @@
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
       ],
+      "Remove extra password": [
+        "Esborra la contrasenya addicional"
+      ],
       "Restore this version?": [
         "Vol restaurar aquesta versió?"
       ],
@@ -2367,6 +2423,9 @@
       ],
       "Set access level": [
         "Estableix el nivell d`accés"
+      ],
+      "Set extra password": [
+        "Estableixi la contrasenya addicional"
       ],
       "Set up 2FA for more security": [
         "Configureu A2F per a més seguretat"
@@ -2395,8 +2454,8 @@
       "Trash empty": [
         "La paperera està buida."
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Desbloqueja ${ PASS_APP_NAME }"
+      "Unlock ${ brandNameJSX }": [
+        "Desbloqueja ${ brandNameJSX }"
       ],
       "Update available": [
         "Hi ha una actualització disponible"
@@ -2416,6 +2475,9 @@
       "Weak password": [
         "Contrasenya feble"
       ],
+      "Welcome to ${ brandNameJSX }": [
+        "Us donem la benvinguda a ${ brandNameJSX }"
+      ],
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
       ],
@@ -2423,7 +2485,7 @@
         "Per què ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
-        "La vostra caixa forta està buida"
+        "La caixa forta està buida"
       ],
       "Your welcome gift": [
         "El vostre regal de benvinguda"
@@ -2477,6 +2539,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "No es poden recuperar les bústies d'aquest àlies ara mateix"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Precaució: no podreu accedir al vostre compte ${ PASS_APP_NAME } si perdeu aquesta contrasenya."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
       ],
@@ -2494,6 +2559,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "La data de caducitat no té el format MM/AA"
+      ],
+      "Extra password cannot be empty": [
+        "La contrasenya addicional no pot ser buida."
+      ],
+      "Extra password should have at least 8 characters": [
+        "La contrasenya addicional ha de tenir com a mínim 8 caràcters."
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
@@ -2541,6 +2612,9 @@
       "Passphrase is required": [
         "La contrasenya és obligatòria"
       ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen."
+      ],
       "PGP encrypted export file requires passphrase": [
         "El fitxer d'exportació xifrat amb PGP requereix una contrasenya"
       ],
@@ -2552,6 +2626,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició de caixa forta."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Eliminar la vostra contrasenya extra us desconnectarà de tots els dispositius i finalitzarà totes les sessions actives."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."

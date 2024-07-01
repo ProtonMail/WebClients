@@ -846,6 +846,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "A apărut o problemă la pornirea ${ PASS_SHORT_APP_NAME }. Dacă această problemă continuă, contactați asistența pentru clienți pentru ajutor."
       ],
+      "Wrong password": [
+        "Parolă greșită"
+      ],
       "Wrong PIN code. Try again.": [
         "Cod PIN greșit. Reîncercați."
       ],
@@ -1359,20 +1362,8 @@
       "Pinning item...": [
         "Se fixează articolul..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Confirmați parola ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Confirmați parola ${ BRAND_NAME } pentru a bloca automat cu parolă."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirmați parola ${ BRAND_NAME } pentru a anula blocarea curentă."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Confirmați parola ${ BRAND_NAME } pentru a actualiza timpul de autoblocare."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Confirmați codul PIN pentru a anula blocarea curentă."
@@ -1614,6 +1605,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesiunea ${ PASS_APP_NAME } este blocată."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Contul este restricționat deoarece organizația a impus autentificarea cu doi factori. Activați autentificarea cu doi factori în setările contului sau contactați administratorul."
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
@@ -2099,25 +2093,6 @@
         "Sunteți pe cale să creați"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Introduceți codul PIN"
-      ],
-      "Sign in to your account": [
-        "Conectare la cont"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Deblocați ${ PASS_SHORT_APP_NAME } cu parola ${ BRAND_NAME }."
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Deblocare ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Bun venit la ${ brandNameJSX }"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } element",
@@ -2417,9 +2392,6 @@
       ],
       "Trash empty": [
         "Gunoiul este gol"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Deblocare ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Actualizare disponibilă"

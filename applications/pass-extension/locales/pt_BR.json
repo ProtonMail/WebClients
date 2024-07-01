@@ -401,6 +401,9 @@
       "Set access level": [
         "Definir nível de acesso"
       ],
+      "Set extra password": [
+        "Configurar senha adicional"
+      ],
       "Setup 2FA": [
         "Configurar A2F"
       ],
@@ -843,6 +846,9 @@
       "Vault name does not match": [
         "O nome do cofre não corresponde"
       ],
+      "Wrong password": [
+        "Senha incorreta"
+      ],
       "Wrong PIN code. Try again.": [
         "Código PIN errado. Tente novamente."
       ],
@@ -1137,8 +1143,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "Digite o código de verificação. Insira ${ digit }."
       ],
+      "Enter your extra password": [
+        "Digite sua senha adicional"
+      ],
       "Enter your PIN code": [
         "Digite seu código PIN"
+      ],
+      "Extra password successfuly created": [
+        "Senha adicional criada com sucesso"
+      ],
+      "Extra password successfuly removed": [
+        "Senha adicional removida com sucesso"
       ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
@@ -1342,20 +1357,20 @@
       "Pinning item...": [
         "Fixando item..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Confirme sua senha da ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Confirme sua senha da ${ BRAND_NAME } para bloquear automáticamente com a sua senha."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirme sua senha da ${ BRAND_NAME } para cancelar o registro do seu bloqueio atual."
+      "Please confirm your password": [
+        "Confirme sua senha"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Confirme sua senha da ${ BRAND_NAME } para atualizar o tempo do bloqueio automático."
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Confirme sua senha para bloquear automaticamente com a sua senha."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Confirme sua senha para cancelar o registro do seu bloqueio atual."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Confirme sua senha para atualizar o tempo do bloqueio automático."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Confirme seu código PIN para cancelar o bloqueio atual."
@@ -1384,8 +1399,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
       ],
+      "Registering extra password...": [
+        "Registrando senha adicional..."
+      ],
       "Registering PIN lock failed": [
         "Erro ao registrar o bloqueio por PIN"
+      ],
+      "Removing extra password...": [
+        "Removendo senha adicional..."
       ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"
@@ -1435,6 +1456,9 @@
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
       ],
+      "Sign in to your account": [
+        "Iniciar sessão em sua conta"
+      ],
       "Signing you in": [
         "Iniciando sessão"
       ],
@@ -1464,6 +1488,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "O arquivo exportado será criptografado usando PGP e exigirá uma senha forte."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "A senha extra será necessária para utilizar o ${ PASS_APP_NAME }. Serve como uma senha adicional sobre sua senha da ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",
@@ -1504,6 +1531,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para salvar esta chave de acesso"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha adicional"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie com seu código PIN para acessar as configurações"
@@ -1777,6 +1810,9 @@
       "Export": [
         "Exportar"
       ],
+      "Extra password": [
+        "Senha adicional"
+      ],
       "Field name": [
         "Nome do campo"
       ],
@@ -1957,6 +1993,9 @@
       "Prompt for auto-save when generating passwords": [
         "Sugerir salvamento automático ao gerar senhas"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Proteja o ${ PASS_APP_NAME } com uma senha adicional"
+      ],
       "Rate us": [
         "Avalie-nos"
       ],
@@ -2038,6 +2077,9 @@
       "Type": [
         "Tipo"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloquear ${ PASS_APP_NAME }"
+      ],
       "Unnamed Credit Card": [
         "Cartão de crédito sem nome"
       ],
@@ -2082,25 +2124,6 @@
       ],
       "You are about to create": [
         "Você está prestes a criar"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Digite seu código PIN"
-      ],
-      "Sign in to your account": [
-        "Iniciar sessão em sua conta"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Boas-vindas ao ${ brandNameJSX }"
       ]
     },
     "Message": {
@@ -2248,6 +2271,9 @@
       "Auto-lock update": [
         "Atualização de bloqueio automático"
       ],
+      "Confirm extra password": [
+        "Confirmar senha adicional"
+      ],
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
@@ -2362,6 +2388,9 @@
       "Pinned (${ items.length })": [
         "Fixado(${ items.length })"
       ],
+      "Remove extra password": [
+        "Remover senha adicional"
+      ],
       "Restore this version?": [
         "Restaurar essa versão?"
       ],
@@ -2373,6 +2402,9 @@
       ],
       "Set access level": [
         "Definir nível de acesso"
+      ],
+      "Set extra password": [
+        "Configurar senha adicional"
       ],
       "Set up 2FA for more security": [
         "Configure A2F para mais segurança"
@@ -2401,8 +2433,8 @@
       "Trash empty": [
         "Lixeira vazia"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Desbloquear ${ PASS_APP_NAME }"
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
       ],
       "Update available": [
         "Atualização disponível"
@@ -2421,6 +2453,9 @@
       ],
       "Weak password": [
         "Senha fraca"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Boas-vindas ao ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Bem-vindo ao seu novo gerenciador de senhas!"
@@ -2483,6 +2518,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Não é possível recuperar caixas de correio para este alias no momento"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Cuidado: você não poderá acessar sua conta do ${ PASS_APP_NAME } se você perder essa senha."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Não foi possível criar o cofre \"${ vaultName }\""
       ],
@@ -2500,6 +2538,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "A data de expiração não está no formato MM/AA"
+      ],
+      "Extra password cannot be empty": [
+        "A senha adicional não pode estar vazia"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Senha adicional deve ter pelo menos 8 caracteres"
       ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."
@@ -2546,6 +2590,9 @@
       ],
       "Passphrase is required": [
         "Frase secreta é obrigatória"
+      ],
+      "Passwords do not match": [
+        "Senhas não correspondem"
       ],
       "PGP encrypted export file requires passphrase": [
         "O arquivo de exportação criptografado com PGP requer uma frase secreta"
