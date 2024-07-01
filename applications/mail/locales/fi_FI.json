@@ -4149,8 +4149,8 @@
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
-      "Wrong mailbox password": [
-        "Väärä postilaatikon salasana"
+      "Wrong second password": [
+        "Väärä toinen salasana"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
@@ -6402,6 +6402,9 @@
       "Please add at least one recipient.": [
         "Lisää ainakin yksi vastaanottaja."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Pyydä omistajaa kutsumaan sinut suoraan dokumenttiin."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Vahvista korttisi vahvistusvälilehdellä."
       ],
@@ -6422,6 +6425,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
+      ],
+      "Please open the document to view it.": [
+        "Avaa dokumentti tarkastellaksesi sitä."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
@@ -6475,6 +6481,9 @@
       "Preview for this file type is not supported": [
         "Tämän tiedostotyypin esikatselua ei tueta"
       ],
+      "Preview of documents is not yet supported.": [
+        "Dokumenttien esikatselua ei vielä tueta."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
       ],
@@ -6492,6 +6501,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Suojaa sähköpostiosoitettasi vuodoilta postituslistoille tai roskapostittajille ${ maskMyEmailButton }."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Dokumenttien julkista jakamista ei vielä tueta."
       ],
       "Recipient: ": [
         "Vastaanottaja: "
@@ -9803,8 +9815,14 @@
       "CVC": [
         "Turvakoodi"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Payment Processing": [
+        "Maksua käsitellään"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisten ${ months } kuukauden ajan. Etukoodi kattaa ${ couponRedemptions } uudistusta, jonka jälkeen tilaus jatkuu automaattisesti ${ months } ${ price } kuukausihintaan. Voit lopetta sen milloin tahansa."
