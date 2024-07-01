@@ -1,4 +1,4 @@
-export type FreeableEntity<T> = T & { free: (...args: any[]) => any };
+type FreeableEntity<T> = T & { free: (...args: any[]) => any };
 
 /**
  * Used to bypass typecheck as Wasm classes come with a free() method

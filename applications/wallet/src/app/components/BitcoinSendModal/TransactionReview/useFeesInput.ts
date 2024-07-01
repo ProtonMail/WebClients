@@ -1,7 +1,8 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { WasmTxBuilder } from '@proton/andromeda';
 
+import { DEFAULT_TARGET_BLOCK } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';
 
 type BlockTarget = number;
@@ -21,7 +22,10 @@ const findNearestBlockTargetFeeRate = (blockEstimate: number, blockEstimationKey
     return (nearestAbove ?? nearestBelow)?.[1] ?? blockEstimationKeys[1][1];
 };
 
-export const useFeesInput = (txBuilder: WasmTxBuilder) => {
+export const useFeesInput = (
+    txBuilder: WasmTxBuilder,
+    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => void
+) => {
     const { feesEstimation: contextFeesEstimation } = useBitcoinBlockchainContext();
 
     const feesEstimations = useMemo(() => {
@@ -39,6 +43,14 @@ export const useFeesInput = (txBuilder: WasmTxBuilder) => {
     };
 
     const feeRate = Number(txBuilder.getFeeRate() ?? 1);
+
+    useEffect(() => {
+        const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesEstimations);
+
+        if (defaultFeeRate && !txBuilder.getFeeRate()) {
+            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(feeRate))));
+        }
+    }, [feeRate, feesEstimations, txBuilder, updateTxBuilder]);
 
     return {
         feeRate,

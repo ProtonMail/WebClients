@@ -62,5 +62,3 @@ export const PrivateWalletLayout = ({ children }: Props) => {
         </PrivateAppContainer>
     );
 };
-
-export const withLayout = (component: ReactNode) => <PrivateWalletLayout>{component}</PrivateWalletLayout>;

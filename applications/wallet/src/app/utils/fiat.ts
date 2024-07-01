@@ -4,12 +4,8 @@ import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 
 import { bitcoinToSats, satsToBitcoin } from '.';
 
-export const bitcoinToFiat = (bitcoin: number, exchangeRate: WasmApiExchangeRate) => {
+const bitcoinToFiat = (bitcoin: number, exchangeRate: WasmApiExchangeRate) => {
     return round(bitcoin * (exchangeRate.ExchangeRate / exchangeRate.Cents), Math.log10(exchangeRate.Cents));
-};
-
-export const fiatToBitcoin = (fiat: number, exchangeRate: WasmApiExchangeRate) => {
-    return fiat / (exchangeRate.ExchangeRate / exchangeRate.Cents);
 };
 
 export const satsToFiat = (sats: number, exchangeRate: WasmApiExchangeRate) => {

@@ -15,6 +15,7 @@ import {
 } from '@proton/wallet';
 
 import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
+import { BASE_INDEX_OPTIONS, DEFAULT_INDEX, PURPOSE_BY_SCRIPT_TYPE, SCRIPT_TYPES } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { SubTheme, getLabelByScriptType, isUndefined } from '../../utils';
@@ -26,23 +27,6 @@ export interface WalletAccountCreationModalOwnProps {
 }
 
 type Props = ModalOwnProps & WalletAccountCreationModalOwnProps;
-
-const DEFAULT_INDEX = 0;
-const baseIndexOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'custom'];
-
-const SCRIPT_TYPES: WasmScriptType[] = [
-    WasmScriptType.Legacy,
-    WasmScriptType.NestedSegwit,
-    WasmScriptType.NativeSegwit,
-    WasmScriptType.Taproot,
-];
-
-const purposeByScriptType: Record<WasmScriptType, number> = {
-    [WasmScriptType.Legacy]: 44,
-    [WasmScriptType.NestedSegwit]: 49,
-    [WasmScriptType.NativeSegwit]: 84,
-    [WasmScriptType.Taproot]: 86,
-};
 
 export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps }: Props) => {
     // TODO use different default if 0 is already added
@@ -96,7 +80,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
             return;
         }
 
-        const derivationPath = WasmDerivationPath.fromParts(purposeByScriptType[selectedScriptType], network, index);
+        const derivationPath = WasmDerivationPath.fromParts(PURPOSE_BY_SCRIPT_TYPE[selectedScriptType], network, index);
 
         const { Wallet, WalletKey } = apiWalletData;
 
@@ -184,12 +168,12 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                 }
                                 id="account-index-selector"
                                 aria-describedby="label-account-index"
-                                value={baseIndexOptions.includes(selectedIndex) ? selectedIndex : 'custom'}
+                                value={BASE_INDEX_OPTIONS.includes(selectedIndex) ? selectedIndex : 'custom'}
                                 disabled={loading}
                                 onChange={(event) => {
                                     setSelectedIndex(event.value);
                                 }}
-                                options={baseIndexOptions.map((index) => ({
+                                options={BASE_INDEX_OPTIONS.map((index) => ({
                                     label: index.toString(),
                                     value: index,
                                     id: index.toString(),
