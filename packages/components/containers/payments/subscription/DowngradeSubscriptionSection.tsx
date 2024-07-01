@@ -8,11 +8,13 @@ import noop from '@proton/utils/noop';
 import { SettingsParagraph, SettingsSection } from '../../account';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { useCancellationFlow } from './cancellationFlow';
+import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 
 const DowngradeSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const [submitting, withSubmitting] = useLoading();
 
     const { redirectToCancellationFlow, b2cAccess, b2bAccess } = useCancellationFlow();
+    const { sendStartCancellationSectionReport } = useCancellationTelemetry();
     const { cancelSubscription, cancelSubscriptionModals, loadingCancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
@@ -20,6 +22,7 @@ const DowngradeSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const handleCancelClick = () => {
         if (b2bAccess || b2cAccess) {
             redirectToCancellationFlow();
+            sendStartCancellationSectionReport();
         } else {
             void withSubmitting(cancelSubscription().catch(noop));
         }

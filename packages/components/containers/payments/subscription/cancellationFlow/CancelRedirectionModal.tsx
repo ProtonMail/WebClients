@@ -5,12 +5,15 @@ import { ButtonLike } from '@proton/atoms/Button';
 import { ModalProps, Prompt, SettingsLink } from '@proton/components/components';
 import { PLANS } from '@proton/shared/lib/constants';
 
+import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';
+
 interface Props extends ModalProps {
     plan: PLANS;
     planName: string;
 }
 
 const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
+    const { sendResubscribeModalResubcribeReport, sendResubscribeModalCloseReport } = useCancellationTelemetry();
     const isCancellationExtended = useFlag('ExtendCancellationProcess');
 
     const ResubscribeButton = () => {
@@ -19,12 +22,19 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
         }
 
         const path = isCancellationExtended
-            ? '/dashboard#your-subscriptions'
+            ? `/dashboard?source=${REACTIVATE_SOURCE.cancellationFlow}#your-subscriptions`
             : `/dashboard/upgrade?plan=${plan}&target=compare`;
 
         return (
-            <ButtonLike as={SettingsLink} fullWidth path={path} color="norm">{c('Subscription reminder')
-                .t`Reactivate`}</ButtonLike>
+            <ButtonLike
+                as={SettingsLink}
+                onClick={() => {
+                    sendResubscribeModalResubcribeReport();
+                }}
+                fullWidth
+                path={path}
+                color="norm"
+            >{c('Subscription reminder').t`Reactivate`}</ButtonLike>
         );
     };
 
@@ -40,7 +50,13 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
             data-testid="cancellation-reminder-redirection"
             buttons={[
                 <ResubscribeButton />,
-                <ButtonLike as={SettingsLink} path="/dashboard">{c('Subscription reminder').t`Close`}</ButtonLike>,
+                <ButtonLike
+                    as={SettingsLink}
+                    onClick={() => {
+                        sendResubscribeModalCloseReport();
+                    }}
+                    path="/dashboard"
+                >{c('Subscription reminder').t`Close`}</ButtonLike>,
             ]}
         >
             <p>{text}</p>
