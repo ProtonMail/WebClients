@@ -152,7 +152,7 @@ export const createMessageBroker = (options: {
              * the content script. We explicitly access chrome.runtime.lastError
              * to prevent unhandled error logs.
              * see: https://developer.chrome.com/blog/bfcache-extension-messaging-changes */
-            void chrome.runtime.lastError;
+            void browser.runtime.lastError;
             ports.delete(name);
             options.onDisconnect(name);
         });
