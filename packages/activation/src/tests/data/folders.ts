@@ -1,44 +1,5 @@
 import { FolderMapItem } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
 
-export const systemFolders = [
-    {
-        id: 'INBOX',
-        providerPath: ['INBOX'],
-        checked: true,
-        color: '#DB60D6',
-        systemFolder: 'Inbox',
-        isSystemFolderChild: false,
-        folderChildIDS: [],
-        protonPath: ['INBOX'],
-        separator: '/',
-        size: 0,
-    },
-    {
-        id: 'Sent',
-        providerPath: ['Sent'],
-        checked: true,
-        color: '#0A77A6',
-        systemFolder: 'Sent',
-        isSystemFolderChild: false,
-        folderChildIDS: [],
-        protonPath: ['Sent'],
-        separator: '/',
-        size: 1545215,
-    },
-    {
-        id: 'Drafts',
-        providerPath: ['Drafts'],
-        checked: true,
-        color: '#C44800',
-        systemFolder: 'Drafts',
-        isSystemFolderChild: false,
-        folderChildIDS: [],
-        protonPath: ['Drafts'],
-        separator: '/',
-        size: 0,
-    },
-];
-
 export const folderWithChildren: FolderMapItem[] = [
     {
         id: 'parent folder',
