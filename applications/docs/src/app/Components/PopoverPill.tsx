@@ -33,11 +33,13 @@ const PopoverPill = ({
   title,
   content,
   footer,
+  onToggle,
 }: {
   children: React.ReactNode
   title: React.ReactNode
   content: React.ReactNode
   footer?: React.ReactNode
+  onToggle?: (isOpen: boolean) => void
 }) => {
   const { anchorRef, position, floating, toggle, isOpen } = usePopover()
   const containerRef = useRef<HTMLDivElement>(null)
@@ -63,6 +65,10 @@ const PopoverPill = ({
     const isHovered = getIsHovered()
     const isNotTheActivePopover = isAnyPopoverFocused() && !isFocused
     const shouldBeOpen = isFocused || (isHovered && !isNotTheActivePopover)
+
+    if (onToggle && shouldBeOpen !== undefined) {
+      onToggle(shouldBeOpen)
+    }
 
     if (!shouldBeOpen && isOpen) {
       const timeout = setTimeout(() => {
