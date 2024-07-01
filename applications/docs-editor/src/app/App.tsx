@@ -20,8 +20,6 @@ import {
 import { Doc as YDoc } from 'yjs'
 import { Icons } from '@proton/components'
 import { ApplicationProvider } from './ApplicationProvider'
-import { CircleLoader } from '@proton/atoms/CircleLoader'
-import { c } from 'ttag'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
@@ -306,12 +304,7 @@ export function App({ nonInteractiveMode = false }: Props) {
   }, [bridge, editorRef?.current])
 
   if (!initialConfig || !docState) {
-    return (
-      <div className="bg-norm flex h-full w-full flex-col items-center justify-center gap-4">
-        <CircleLoader size="large" />
-        {c('Info').t`Waiting for editor initialization...`}
-      </div>
-    )
+    return null
   }
 
   return (

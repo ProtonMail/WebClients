@@ -1,5 +1,5 @@
 import { Icon } from '@proton/components'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   ParticipantTrackerEvent,
   WebsocketConnectionEvent,
@@ -23,6 +23,19 @@ import PopoverPill from '../PopoverPill'
  */
 const MINIMUM_DURATION_SAVING_MUST_BE_SHOWN = 1000
 
+/**
+ * @TODO DRVDOC-842
+ * In the near future, retrying unacked messages should be handled seamlessly by the service with exponential backoff.
+ * Until then, we're going to manually retry all failed document updates when the user hovers on or clicks the error pill.
+ */
+const MIN_TIME_TO_WAIT_BETWEEN_RETRIES = 15_000
+
+/**
+ * How long to wait before we should show "Connecting..." (or Opening...).
+ * We don't want to show it immediately in case we get a connection pretty fast and can avoid extraneous spinners.
+ */
+const DURATION_BEFORE_CONNECTING_STATUS_SHOWN = 1_000
+
 export const ConnectionStatus = () => {
   const application = useApplication()
   const [status, setStatus] = useState<WebsocketConnectionEventStatusChange>()
@@ -33,22 +46,48 @@ export const ConnectionStatus = () => {
   const [saved, setSaved] = useState(false)
   const [isUserLimitReached, setIsUserLimitReached] = useState(false)
   const [saveStartTime, setSaveStartTime] = useState(0)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const [lastSaveRetryTime, setLastSaveRetryTime] = useState(0)
+  const [shouldShowConnecting, setShouldShowConnecting] = useState(false)
+
+  const savingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const connectingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const onErrorPillToggle = useCallback(
+    (isOpen: boolean) => {
+      if (isOpen && Date.now() - lastSaveRetryTime > MIN_TIME_TO_WAIT_BETWEEN_RETRIES) {
+        setLastSaveRetryTime(Date.now())
+        application.websocketService.retryAllFailedDocumentUpdates()
+      }
+    },
+    [application, lastSaveRetryTime],
+  )
 
   useEffect(() => {
     return mergeRegister(
       application.eventBus.addEventCallback(() => {
         setStatus(WebsocketConnectionEvent.Connected)
+        if (connectingTimeoutRef.current) {
+          clearTimeout(connectingTimeoutRef.current)
+        }
+        setShouldShowConnecting(false)
       }, WebsocketConnectionEvent.Connected),
 
       application.eventBus.addEventCallback(() => {
         setStatus(WebsocketConnectionEvent.Connecting)
+        if (connectingTimeoutRef.current) {
+          clearTimeout(connectingTimeoutRef.current)
+        }
+        connectingTimeoutRef.current = setTimeout(() => {
+          setShouldShowConnecting(true)
+        }, DURATION_BEFORE_CONNECTING_STATUS_SHOWN)
       }, WebsocketConnectionEvent.Connecting),
 
       application.eventBus.addEventCallback(
         (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]) => {
           setStatus(WebsocketConnectionEvent.Disconnected)
           setDisconnectReason(payload.serverReason)
+          setSaving(false)
+          setSaved(false)
         },
         WebsocketConnectionEvent.Disconnected,
       ),
@@ -57,6 +96,8 @@ export const ConnectionStatus = () => {
         (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]) => {
           setStatus(WebsocketConnectionEvent.FailedToConnect)
           setDisconnectReason(payload.serverReason)
+          setSaving(false)
+          setSaved(false)
         },
         WebsocketConnectionEvent.FailedToConnect,
       ),
@@ -64,14 +105,20 @@ export const ConnectionStatus = () => {
       application.eventBus.addEventCallback(
         (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange]) => {
           setHasConcerningMessages(payload.ledger.hasConcerningMessages())
-          setHasErroredMessages(payload.ledger.hasErroredMessages())
+
+          const hasErrored = payload.ledger.hasErroredMessages()
+          setHasErroredMessages(hasErrored)
+
+          if (hasErrored) {
+            setSaving(false)
+          }
         },
         WebsocketConnectionEvent.AckStatusChange,
       ),
 
       application.eventBus.addEventCallback(() => {
-        if (timeoutRef.current) {
-          clearTimeout(timeoutRef.current)
+        if (savingTimeoutRef.current) {
+          clearTimeout(savingTimeoutRef.current)
         }
         setSaving(true)
         setSaved(false)
@@ -81,7 +128,7 @@ export const ConnectionStatus = () => {
       application.eventBus.addEventCallback(() => {
         const elapsedTime = Date.now() - saveStartTime
         const remainingTime = Math.max(0, MINIMUM_DURATION_SAVING_MUST_BE_SHOWN - elapsedTime)
-        timeoutRef.current = setTimeout(() => {
+        savingTimeoutRef.current = setTimeout(() => {
           setSaving(false)
           setSaved(true)
         }, remainingTime)
@@ -103,12 +150,14 @@ export const ConnectionStatus = () => {
   switch (status) {
     case WebsocketConnectionEvent.Connecting:
       {
-        connectionPill = (
-          <Pill>
-            <Icon name="arrow-rotate-right" className="animate-spin" />
-            {c('Info').t`Connecting...`}
-          </Pill>
-        )
+        if (shouldShowConnecting) {
+          connectionPill = (
+            <Pill>
+              <Icon name="arrow-rotate-right" className="animate-spin" />
+              {c('Info').t`Opening...`}
+            </Pill>
+          )
+        }
       }
       break
     case WebsocketConnectionEvent.FailedToConnect:
@@ -124,8 +173,10 @@ export const ConnectionStatus = () => {
           content={
             <>
               <div>{c('Info')
-                .t`Looks like you're offline. Document can not be edited while you are offline. Please check your device's connectivity.`}</div>
-              {disconnectReasonMessage && <div className="pt-4">{disconnectReasonMessage}</div>}
+                .t`Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.`}</div>
+              {disconnectReasonMessage && (
+                <div className="pt-4">Disconnection error code: {disconnectReasonMessage}</div>
+              )}
             </>
           }
         >
@@ -151,8 +202,7 @@ export const ConnectionStatus = () => {
             <>
               <div>{c('Info').t`Your changes are being synced to Drive. Please do not close the web page.`}</div>
               {hasConcerningMessages && (
-                <div className="pt-4">{c('Info')
-                  .t`Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.`}</div>
+                <div className="pt-4">{c('Info').t`Some edits are taking longer to sync than expected.`}</div>
               )}
             </>
           }
@@ -184,7 +234,8 @@ export const ConnectionStatus = () => {
             </div>
           }
           content={c('Info')
-            .t`Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.`}
+            .t`Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.`}
+          onToggle={onErrorPillToggle}
         >
           <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
           {c('Info').t`Error Syncing`}
@@ -195,13 +246,13 @@ export const ConnectionStatus = () => {
           title={
             <div className="flex gap-2">
               <Icon name="exclamation-circle" className="h-6 w-6 fill-current" />
-              <span>{c('Title').t`Busy`}</span>
+              <span>{c('Title').t`Limited availability`}</span>
             </div>
           }
           content={c('Info').t`This document has lots of activity. Some features may be temporarily unavailable.`}
         >
           <Icon name="exclamation-circle" className="h-4 w-4 fill-current" />
-          {c('Info').t`Document is busy`}
+          {c('Info').t`Limited availability`}
         </PopoverPill>
       )}
     </div>

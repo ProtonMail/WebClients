@@ -27,7 +27,6 @@ import TypingBotPlugin from './Plugins/TypingBot/TypingBotPlugin'
 import { EditorReadonlyPlugin } from './Plugins/EditorReadonlyPlugin'
 import TableCellResizerPlugin from './Plugins/TableCellResizer'
 import { LinkInfoPlugin } from './Plugins/Link/LinkInfoPlugin'
-import { CircleLoader } from '@proton/atoms/CircleLoader'
 import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 import { DefaultFont } from './Shared/Fonts'
 import { LexicalEditor } from 'lexical'
@@ -112,9 +111,7 @@ export function Editor({
       }}
     >
       {hidden && (
-        <div className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4">
-          <CircleLoader size="large" />
-        </div>
+        <div className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"></div>
       )}
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
         {!nonInteractiveMode && (
