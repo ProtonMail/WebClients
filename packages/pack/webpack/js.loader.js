@@ -1,6 +1,5 @@
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('./helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./constants');
-const path = require('path');
 
 const UNSUPPORTED_JS_LOADER = [
     {
@@ -11,14 +10,14 @@ const UNSUPPORTED_JS_LOADER = [
             compact: true,
             presets: [
                 [
-                    require('@babel/preset-env').default,
+                    require.resolve('@babel/preset-env'),
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
-                        corejs: { version: 3 },
+                        corejs: { version: '3.27' },
                     },
                 ],
-                [require('@babel/preset-typescript').default],
+                [require.resolve('@babel/preset-typescript')],
             ],
             plugins: [],
         },
@@ -29,7 +28,7 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
     const babelReactRefresh = hasReactRefresh ? [require.resolve('react-refresh/babel')] : [];
     const babelPluginsDev = [...babelReactRefresh];
     const babelPluginsProd = [
-        [require('babel-plugin-transform-react-remove-prop-types').default, { removeImport: true }],
+        [require.resolve('babel-plugin-transform-react-remove-prop-types'), { removeImport: true }],
     ];
 
     return {
@@ -42,16 +41,16 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
             configFile: false,
             presets: [
                 [
-                    require('@babel/preset-env').default,
+                    require.resolve('@babel/preset-env'),
                     {
                         targets: browserslist,
                         useBuiltIns: 'entry',
-                        corejs: { version: 3 },
+                        corejs: { version: '3.27' },
                         exclude: ['transform-typeof-symbol'], // Exclude transforms that make all code slower
                     },
                 ],
                 [
-                    require('@babel/preset-react').default,
+                    require.resolve('@babel/preset-react'),
                     {
                         // Adds component stack to warning messages
                         // Adds __self attribute to JSX which React will use for some warnings
@@ -59,19 +58,16 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
                         runtime: 'automatic',
                     },
                 ],
-                [require('@babel/preset-typescript').default],
+                [require.resolve('@babel/preset-typescript')],
             ],
             plugins: [
-                [
-                    require('@babel/plugin-transform-runtime').default,
-                    {
-                        corejs: false,
-                        version: require('@babel/runtime/package.json').version,
-                        regenerator: true,
-                        useESModules: true,
-                        absoluteRuntime: path.dirname(require.resolve('@babel/runtime/package.json')),
-                    },
-                ],
+                require.resolve('@babel/plugin-syntax-dynamic-import'),
+                require.resolve('@babel/plugin-proposal-object-rest-spread'),
+                require.resolve('@babel/plugin-proposal-nullish-coalescing-operator'),
+                require.resolve('@babel/plugin-proposal-optional-chaining'),
+                require.resolve('@babel/plugin-proposal-class-properties'),
+                require.resolve('@babel/plugin-proposal-private-methods'),
+                require.resolve('@babel/plugin-transform-runtime'),
                 ...(isProduction ? babelPluginsProd : babelPluginsDev),
             ],
         },
