@@ -62,11 +62,11 @@
       "Change keys": [
         "Alterar chaves"
       ],
-      "Change mailbox password": [
-        "Alterar a palavra-passe da caixa de correio"
-      ],
       "Change password": [
         "Alterar a palavra-passe"
+      ],
+      "Change second password": [
+        "Alterar a segunda palavra-passe"
       ],
       "Chat with us": [
         "Converse connosco"
@@ -463,6 +463,9 @@
       ],
       "Send my username": [
         "Enviar o meu nome de utilizador"
+      ],
+      "Send new invite": [
+        "Enviar um novo convite"
       ],
       "Send reminder": [
         "Enviar um lembrete"
@@ -1836,6 +1839,9 @@
       ],
       "Delete address?": [
         "Eliminar o endereço?"
+      ],
+      "You can only delete 1 address per year.": [
+        "Só é possível eliminar 1 endereço por ano."
       ]
     },
     "Delete domain prompt": {
@@ -1964,6 +1970,9 @@
       "Email address is invalid": [
         "O endereço de email é inválido"
       ],
+      "Email address is not available": [
+        "O endereço de e-mail não se encontra disponível."
+      ],
       "Email is not valid": [
         "O e-mail não é válido."
       ],
@@ -1993,9 +2002,6 @@
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenciais de início de sessão incorretas. Tente novamente."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Palavra-passe da caixa de correio incorreta. Tente novamente."
       ],
       "Incorrect password": [
         "Palavra-passe incorreta"
@@ -2814,9 +2820,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pré-visualização de baixa resolução"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } também pode ser utilizado com uma palavra-passe única que substitui a palavra-passe de início de sessão e da caixa de correio. Para mudar para o modo de palavra-passe única, introduza a palavra-passe única que pretende utilizar e clique em Guardar."
-      ],
       "${ n } address": [
         "${ n } endereço",
         "${ n } endereços"
@@ -3048,11 +3051,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -3698,12 +3701,6 @@
       "Two-factor authentication enabled": [
         "Autenticação de dois fatores ativada"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "O modo de duas palavras-passe requer duas palavras-passe: uma para iniciar sessão na sua conta e outra para desencriptar a sua caixa de correio. (Avançado)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "O modo de duas palavras-passe utiliza palavras-passe separadas para início de sessão e desencriptação da caixa de correio. Isto proporciona uma pequena vantagem de segurança em algumas situações, mas recomendamos o modo de uma palavra-passe para a maioria dos utilizadores. Para mudar para o modo de duas palavras-passe, defina primeiro uma palavra-passe de início de sessão e, em seguida, uma palavra-passe para a caixa de correio."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
       ],
@@ -3853,6 +3850,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Gostaria de receber um novo código de verificação?"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
@@ -4037,6 +4037,9 @@
       "Paid": [
         "Paga"
       ],
+      "Processing": [
+        "A processar"
+      ],
       "Unpaid": [
         "Por pagar"
       ],
@@ -4197,9 +4200,6 @@
       "Confirm login password": [
         "Confirme a nova palavra-passe"
       ],
-      "Confirm mailbox password": [
-        "Confirme a palavra-passe da caixa de correio"
-      ],
       "Confirm new password": [
         "Confirmar a nova palavra-passe"
       ],
@@ -4208,6 +4208,9 @@
       ],
       "Confirm password": [
         "Confirmar a palavra-passe"
+      ],
+      "Confirm second password": [
+        "Confirmar a segunda palavra-passe"
       ],
       "Copy": [
         "Copiar"
@@ -4305,9 +4308,6 @@
       "Logo": [
         "Logótipo"
       ],
-      "Mailbox password": [
-        "Palavra-passe da caixa de correio"
-      ],
       "Main": [
         "Principal"
       ],
@@ -4335,9 +4335,6 @@
       "New login password": [
         "Nova palavra-passe de início"
       ],
-      "New mailbox password": [
-        "Nova palavra-passe da caixa de correio"
-      ],
       "New organization identity": [
         "Nova identidade da organização"
       ],
@@ -4346,6 +4343,9 @@
       ],
       "New password": [
         "Nova palavra-passe"
+      ],
+      "New second password": [
+        "Nova segunda palavra-passe"
       ],
       "No filter": [
         "Sem filtro"
@@ -4430,6 +4430,9 @@
       ],
       "Reveal password": [
         "Mostrar a palavra-passe"
+      ],
+      "Second password": [
+        "Segunda palavra-passe"
       ],
       "Security code (${ codeName })": [
         "Código de segurança (${ codeName })"
@@ -4779,6 +4782,9 @@
       "Create a new ${ appName } account": [
         "Criar uma conta do ${ appName }"
       ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Encontre o seu nome de utilizador da conta ${ BRAND_NAME }"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Redefina-o aqui utilizando um código de recuperação, e-mail ou SMS e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
       ],
@@ -5052,6 +5058,9 @@
       "GDPR data processing agreement": [
         "Acordo de tratamento de dados do RGPD"
       ],
+      "Group management (coming soon)": [
+        "Gerenciamento de grupo (em breve)"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -5114,6 +5123,9 @@
         "Proteja ${ n } dispositivo ao mesmo tempo",
         "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
+      "Require 2FA for organization": [
+        "Exigir 2FA para a organização"
+      ],
       "Router support": [
         "Suporte para router"
       ],
@@ -5144,6 +5156,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integração SSO (em breve)"
       ],
       "Start protecting your organization": [
         "Comece a proteger a sua organização"
@@ -5763,6 +5778,9 @@
       "Includes:": [
         "Incluí:"
       ],
+      "Launching ${ PASS_APP_NAME }": [
+        "A iniciar ${ PASS_APP_NAME }"
+      ],
       "per month": [
         "por mês"
       ],
@@ -5780,6 +5798,12 @@
       ],
       "Secure vault sharing": [
         "Partilha segura de cofre"
+      ],
+      "Setting up your organization": [
+        "A configurar a sua organização"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Inicio de sessão no ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "A atualizar a sua conta"
@@ -5837,8 +5861,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entendido"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processamento do pagamento"
       ],
       "Processing payment": [
         "A processar pagamento"
@@ -6493,6 +6523,11 @@
         "Actualizar"
       ]
     },
+    "specialoffer: Link only for Free users": {
+      "Upgrade": [
+        "Melhorar"
+      ]
+    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mês",
@@ -6760,6 +6795,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "Por ${ totalPrice }"
+      ]
+    },
     "Subscription reminder": {
       "${ dayDiff } day left": [
         "${ dayDiff } dia restante",
@@ -6833,6 +6873,9 @@
       ],
       "Keep ${ config.planName }": [
         "Manter ${ config.planName }"
+      ],
+      "Learn more": [
+        "Mais informação"
       ],
       "Learn more about our impact": [
         "Saiba mais sobre o nosso impacto"
@@ -7068,6 +7111,9 @@
       "Domain deleted": [
         "Domínio eliminado"
       ],
+      "Invitation resent": [
+        "O convite foi reenviado."
+      ],
       "Sessions revoked": [
         "Sessões revogadas"
       ],
@@ -7162,6 +7208,9 @@
       ],
       "Email addresses": [
         "Endereços de e-mail"
+      ],
+      "Invitation email": [
+        "E-mail do convite"
       ],
       "Name": [
         "Nome"
@@ -7299,9 +7348,6 @@
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
       ],
-      "Change mailbox password": [
-        "Alterar a palavra-passe da caixa de correio"
-      ],
       "Change organization name": [
         "Alterar nome da organização"
       ],
@@ -7313,6 +7359,9 @@
       ],
       "Change role": [
         "Alterar a função"
+      ],
+      "Change second password": [
+        "Alterar a segunda palavra-passe"
       ],
       "Close": [
         "Fechar"
@@ -7515,9 +7564,6 @@
       "Invoices": [
         "Faturas"
       ],
-      "Login password": [
-        "Palavra-passe de início de sessão"
-      ],
       "Multi-user support": [
         "Suporte a múltiplos utilizadores"
       ],
@@ -7635,6 +7681,9 @@
       "Send email reminders?": [
         "Enviar lembretes por e-mail?"
       ],
+      "Send new invite?": [
+        "Enviar um novo convite?"
+      ],
       "Set new password": [
         "Definir nova palavra-passe"
       ],
@@ -7706,9 +7755,6 @@
       ],
       "Type": [
         "Tipo"
-      ],
-      "Unlock your mailbox": [
-        "Desbloqueie a sua caixa de correio"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Faça \"upgrade\" à sua proteção da rede com servidores dedicados"
@@ -7885,17 +7931,58 @@
       "Add multiple users": [
         "Adicionar vários utilizadores"
       ],
+      "Add new user": [
+        "Adicionar um utilizador"
+      ],
+      "Admin": [
+        "Administrador"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
       "Confirm password": [
         "Confirmar a palavra-passe"
       ],
       "Create password": [
         "Criar a palavra-passe"
       ],
+      "Create user": [
+        "Criar um utilizador"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Name": [
+        "Nome"
+      ],
+      "Optional": [
+        "Opcional"
+      ],
+      "Private": [
+        "Privado"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
       ],
       "VPN connections": [
         "Ligações VPN"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
+      ]
+    },
+    "Users table: badge": {
+      "Invite sent": [
+        "O convite foi enviado."
+      ],
+      "Private": [
+        "Privado"
+      ],
+      "SSO": [
+        "SSO"
+      ],
+      "Writing assistant": [
+        "Assistente de escrita"
       ]
     },
     "Validation": {

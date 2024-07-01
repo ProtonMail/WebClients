@@ -4123,8 +4123,8 @@
       "Username must end with a letter or digit": [
         "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
-      "Wrong mailbox password": [
-        "Kata sandi kotak surat salah"
+      "Wrong second password": [
+        "Kata sandi kedua salah"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
@@ -5571,7 +5571,7 @@
         "Semua kalender Anda dinonaktifkan."
       ],
       "All your changes will be lost.": [
-        "Seluruh perubahan yang belum Anda simpan akan hilang."
+        "Seluruh perubahan yang Anda buat akan hilang."
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
@@ -5610,7 +5610,7 @@
         "Apakah Anda yakin ingin menghapu semua pesan yang ditandai dengan label ini?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Apakah Anda yakin untuk menghapus folder ini?"
+        "Apakah Anda yakin ingin menghapus folder ini?"
       ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
@@ -5703,13 +5703,13 @@
         "Memeriksa kontak ${ progress } dari ${ max }..."
       ],
       "Clear app data": [
-        "Bersihkan data aplikasi"
+        "Hapus data aplikasi"
       ],
       "Clear browser data": [
         "Hapus data browser"
       ],
       "Clear data": [
-        "Bersihkan data"
+        "Hapus data"
       ],
       "Clear selection": [
         "Hapus pilihan"
@@ -6945,7 +6945,7 @@
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
+        "Apakah Anda ingin menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
       ],
       "Would you like to receive a new verification code?": [
         "Apakah Anda ingin menerima kode verifikasi baru?"
@@ -9223,7 +9223,7 @@
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Memastikan seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif ataupun salah ketik sekalipun, akan tetap dapat Anda terima"
+        "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Keluarkan pengguna dari sesi mereka secara paksa apabila kredensial pengguna mereka telah dipercayai bocor"

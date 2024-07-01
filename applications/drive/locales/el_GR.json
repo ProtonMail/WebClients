@@ -4610,6 +4610,9 @@
       "Photos have been successfully recovered.": [
         "Οι φωτογραφίες έχουν ανακτηθεί με επιτυχία."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
       ],
@@ -4633,6 +4636,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
+      ],
+      "Please open the document to view it.": [
+        "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Παρακαλούμε δώστε ένα όνομα και μια διεύθυνση ηλεκτρονικού ταχυδρομείου για τη δημιουργία μιας ομάδας."
@@ -4683,6 +4689,9 @@
       "Preview for this file type is not supported": [
         "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
+      "Preview of documents is not yet supported.": [
+        "Η προεπισκόπηση εγγράφων δεν υποστηρίζεται ακόμη."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Οι προηγούμενες εκδόσεις διατηρούνται για ${ retentionLabel }"
       ],
@@ -4697,6 +4706,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Η ιδιωτική αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
       "Queued": [
         "Σε αναμονή"
@@ -7650,8 +7662,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "Payment Processing": [
+        "Επεξεργασία Πληρωμής"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ months }. Το κουπόνι ισχύει για ανανεώσεις ${ couponRedemptions }. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ price } για ${ months } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
@@ -7664,6 +7682,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Επεξεργαζόμαστε την πληρωμή σας για το τιμολογημένο τιμολόγιο. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή προτού κάνετε αλλαγές στο πρόγραμμά σας ή ενημερώσετε τα στοιχεία πληρωμής σας. Σας ευχαριστούμε για την υπομονή σας."
       ]
     },
     "Payments.Error": {

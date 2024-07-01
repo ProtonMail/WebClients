@@ -394,6 +394,9 @@
       "Set access level": [
         "Definir nível de acesso"
       ],
+      "Set extra password": [
+        "Configurar senha adicional"
+      ],
       "Setup 2FA": [
         "Configurar A2F"
       ],
@@ -1132,6 +1135,18 @@
       "Enter verification code. Digit ${ digit }.": [
         "Digite o código de verificação. Insira ${ digit }."
       ],
+      "Enter your extra password": [
+        "Digite sua senha adicional"
+      ],
+      "Enter your PIN code": [
+        "Digite seu código PIN"
+      ],
+      "Extra password successfuly created": [
+        "Senha adicional criada com sucesso"
+      ],
+      "Extra password successfuly removed": [
+        "Senha adicional removida com sucesso"
+      ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
       ],
@@ -1358,23 +1373,23 @@
       "Please check your spam folder or try resending the code.": [
         "Por favor, verifique sua pasta de spam ou tente reenviar o código."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Confirme sua senha da ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Confirme sua senha da ${ BRAND_NAME } para bloquear automáticamente com a sua senha."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Confirme sua senha da ${ BRAND_NAME } para ativar o modo off-line"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirme sua senha da ${ BRAND_NAME } para cancelar o registro do seu bloqueio atual."
+      "Please confirm your password": [
+        "Confirme sua senha"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Confirme sua senha da ${ BRAND_NAME } para atualizar o tempo do bloqueio automático."
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Confirme sua senha para bloquear automaticamente com a sua senha."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Confirme sua senha para cancelar o registro do seu bloqueio atual."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Confirme sua senha para atualizar o tempo do bloqueio automático."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Confirme seu código PIN para cancelar o bloqueio atual."
@@ -1409,8 +1424,14 @@
       "Reconnecting": [
         "Reconectando"
       ],
+      "Registering extra password...": [
+        "Registrando senha adicional..."
+      ],
       "Registering PIN lock failed": [
         "Erro ao registrar o bloqueio por PIN"
+      ],
+      "Removing extra password...": [
+        "Removendo senha adicional..."
       ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"
@@ -1448,6 +1469,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Compartilhe seus logins, notas seguras, com até 10 pessoas"
       ],
+      "Sign in to your account": [
+        "Iniciar sessão em sua conta"
+      ],
       "Signing you in": [
         "Iniciando sessão"
       ],
@@ -1480,6 +1504,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "A senha extra será necessária para utilizar o ${ PASS_APP_NAME }. Serve como uma senha adicional sobre sua senha da ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",
@@ -1517,6 +1544,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha adicional"
       ],
       "Unpinning item...": [
         "Desafiando item..."
@@ -1782,6 +1815,9 @@
       "Export": [
         "Exportar"
       ],
+      "Extra password": [
+        "Senha adicional"
+      ],
       "Field name": [
         "Nome do campo"
       ],
@@ -1953,6 +1989,9 @@
       "Prefix": [
         "Prefixo"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Proteja o ${ PASS_APP_NAME } com uma senha adicional"
+      ],
       "Rate us": [
         "Avalie-nos"
       ],
@@ -2083,25 +2122,6 @@
       ],
       "stay safer online": [
         "fique seguro on-line"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Digite seu código PIN"
-      ],
-      "Sign in to your account": [
-        "Iniciar sessão em sua conta"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloqueie o ${ PASS_SHORT_APP_NAME } com sua senha da ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Boas-vindas ao ${ brandNameJSX }"
       ]
     },
     "Log preference": {
@@ -2297,6 +2317,9 @@
       "Breaches detected for": [
         "Violações detectadas para"
       ],
+      "Confirm extra password": [
+        "Confirmar senha adicional"
+      ],
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
@@ -2459,6 +2482,9 @@
       "Remove email address?": [
         "Remover endereço de e-mail?"
       ],
+      "Remove extra password": [
+        "Remover senha adicional"
+      ],
       "Resolved breaches": [
         "Violações resolvidas"
       ],
@@ -2483,6 +2509,9 @@
       ],
       "Set access level": [
         "Definir nível de acesso"
+      ],
+      "Set extra password": [
+        "Configurar senha adicional"
       ],
       "Set up 2FA for better security": [
         "Configure A2F para melhor segurança"
@@ -2511,6 +2540,9 @@
       "Trash empty": [
         "Lixeira vazia"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
+      ],
       "Update available": [
         "Atualização disponível"
       ],
@@ -2531,6 +2563,9 @@
       ],
       "Weak passwords": [
         "Senhas fracas"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Boas-vindas ao ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "O que é um alias?"
@@ -2599,6 +2634,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Não é possível recuperar caixas de correio para este alias no momento"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Cuidado: você não poderá acessar sua conta do ${ PASS_APP_NAME } se você perder essa senha."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Não foi possível criar o cofre \"${ vaultName }\""
       ],
@@ -2619,6 +2657,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "A data de expiração não está no formato MM/AA"
+      ],
+      "Extra password cannot be empty": [
+        "A senha adicional não pode estar vazia"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Senha adicional deve ter pelo menos 8 caracteres"
       ],
       "Failed to load breaches.": [
         "Falha ao carregar violações."
@@ -2674,6 +2718,9 @@
       ],
       "Passphrase is required": [
         "Frase secreta é obrigatória"
+      ],
+      "Passwords do not match": [
+        "Senhas não correspondem"
       ],
       "PGP encrypted export file requires passphrase": [
         "O arquivo de exportação criptografado com PGP requer uma frase secreta"

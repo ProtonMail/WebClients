@@ -220,6 +220,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hoe exporteer ik mijn gegevens van ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to update ${ PASS_APP_NAME } on Linux": [
+        "Hoe ${ PASS_APP_NAME } updaten op Linux"
+      ],
       "Import": [
         "Importeren"
       ],
@@ -815,6 +818,9 @@
       "Vault name does not match": [
         "Kluisnaam komt niet overeen"
       ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Er is een probleem opgetreden tijdens het starten van ${ PASS_SHORT_APP_NAME }. Als dit probleem zich blijft voordoen, neem contact op met onze klantenservice voor hulp."
+      ],
       "Wrong password": [
         "Fout wachtwoord"
       ],
@@ -1094,6 +1100,9 @@
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
       ],
+      "Enter your PIN code": [
+        "Voer uw pincode in"
+      ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
       ],
@@ -1265,6 +1274,9 @@
       "Never": [
         "Nooit"
       ],
+      "New version ${ latestVersion } is available.": [
+        "Nieuwe versie ${ latestVersion } is beschikbaar."
+      ],
       "No breaches detected": [
         "Geen inbreuken gedetecteerd"
       ],
@@ -1403,6 +1415,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Bedankt, het probleem werd gemeld"
+      ],
+      "The changelog can be found ${ changelogLink }.": [
+        "De changelog kan gevonden worden ${ changelogLink }."
       ],
       "The export will only contain vaults that you own.": [
         "De export zal alleen kluizen bevatten die u heeft."
@@ -1543,6 +1558,9 @@
       ],
       "You're invited to a vault.": [
         "U bent uitgenodigd tot een kluis."
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Uw account is beperkt omdat uw organisatie tweestapsverificatie heeft afgedwongen. Om het te ontgrendelen, meldt u zich aan via internet op en schakelt u tweestapsverificatie in uw accountinstellingen in of neem contact op met uw beheerder."
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
@@ -1997,22 +2015,6 @@
       ],
       "stay safer online": [
         "blijf veilig online"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Voer uw pincode in"
-      ],
-      "Sign in to your account": [
-        "Inloggen bij uw account"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Ontgrendel ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Welkom bij ${ brandNameJSX }"
       ]
     },
     "Log preference": {

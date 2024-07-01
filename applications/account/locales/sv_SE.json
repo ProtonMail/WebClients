@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Ändra nycklar"
       ],
-      "Change mailbox password": [
-        "Ändra lösenord för brevlådan"
-      ],
       "Change other email subscriptions": [
         "Ändra andra e-postprenumerationer"
       ],
       "Change password": [
         "Ändra lösenord"
+      ],
+      "Change second password": [
+        "Ändra andra lösenord"
       ],
       "Chat with us": [
         "Chatta med oss"
@@ -3210,6 +3210,9 @@
       "Delete address?": [
         "Ta bort adress?"
       ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "När den har tagits bort kan denna adress ${ address } inte användas igen av någon annan."
+      ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
         "Observera att om du tar bort denna adress ${ address }, kommer du inte längre att kunna skicka eller ta emot e-post med denna adress."
       ],
@@ -3353,6 +3356,9 @@
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
         "Är du säker du vill inaktivera denna adress?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Genom att inaktivera denna adress ${ address } kommer du inte längre att kunna skicka eller ta emot e-postmeddelanden med denna adress och alla länkade ${ BRAND_NAME }-produkter kommer att inaktiveras."
       ],
       "Disable address": [
         "Inaktivera adress"
@@ -4099,11 +4105,11 @@
       "Incorrect login credentials. Please try again.": [
         "Felaktiga inloggningsuppgifter. Försök igen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Felaktigt lösenord för brevlådan. Försök igen."
-      ],
       "Incorrect password": [
         "Felaktigt lösenord"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Felaktigt andra lösenord. Försök igen."
       ],
       "Incorrect username": [
         "Felaktigt användarnamn"
@@ -4299,6 +4305,9 @@
       ],
       "Require at least one condition": [
         "Kräver minst ett villkor"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Session löpt ut. Uppdatera sidan."
       ],
       "Signature not verified": [
         "Signatur inte verifierad"
@@ -6121,17 +6130,6 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
@@ -6188,9 +6186,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vill dela data med dig i ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggnings- och brevlådans lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på “Spara“."
       ],
       "${ n } address": [
         "${ n } adress",
@@ -7804,6 +7799,9 @@
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för företagsanvändare med anpassade domäner."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
       ],
@@ -7979,6 +7977,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Denna inbjudningslänk har löpt ut. Kontakta din administratör för att begära åtkomst."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Denna inbjudningslänk har redan använts. Logga in direkt istället."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Detta är en fras på 12 ord som du blev ombedd att ställa in."
       ],
@@ -8149,12 +8150,6 @@
       ],
       "Two-factor authentication enabled": [
         "Tvåfaktorsautentisering aktiverad"
-      ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Två-lösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera din brevlåda. (Avancerat)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Två-lösenordsläge använder separata lösenord för inloggning och dekryptering av brevlåda. Detta ger en mindre säkerhetsfördel i vissa situationer, men vi rekommenderar ett lösenordsläge för de flesta användare. För att växla till två-lösenordsläge, ställ först in ett inloggningslösenord och sedan ett lösenord för brevlådan."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Det gick inte att verifiera återställningsfilens signatur. Kontakta support."
@@ -8713,6 +8708,17 @@
         "Zoom-möte"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "När det är aktiverat ärver undermappar färgen på den överordnade mappen."
@@ -9245,6 +9251,9 @@
       "Apply filter to existing emails": [
         "Tillämpa filter till all befintlig e-post"
       ],
+      "Assertion Consumer Service URL": [
+        "URL för tjänsten Assertion Consumer Service"
+      ],
       "Attach public key": [
         "Bifoga offentlig nyckel"
       ],
@@ -9383,9 +9392,6 @@
       "Confirm login password": [
         "Bekräfta inloggningslösenord"
       ],
-      "Confirm mailbox password": [
-        "Bekräfta lösenordet för brevlådan"
-      ],
       "Confirm new password": [
         "Bekräfta nytt lösenord"
       ],
@@ -9394,6 +9400,9 @@
       ],
       "Confirm password": [
         "Bekräfta lösenord"
+      ],
+      "Confirm second password": [
+        "Bekräfta andra lösenord"
       ],
       "Contacts": [
         "Kontakter"
@@ -9686,9 +9695,6 @@
       "Mail settings": [
         "Mail-inställningar"
       ],
-      "Mailbox password": [
-        "Lösenord för brevlåda"
-      ],
       "Main": [
         "Huvud"
       ],
@@ -9746,9 +9752,6 @@
       "New login password": [
         "Nytt inloggningslösenord"
       ],
-      "New mailbox password": [
-        "Nytt lösenord för brevlådan"
-      ],
       "New organization identity": [
         "Ny organisationsidentitet"
       ],
@@ -9757,6 +9760,9 @@
       ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "New second password": [
+        "Nytt andra lösenord"
       ],
       "No filter": [
         "Inget filter"
@@ -9899,6 +9905,9 @@
       "Reveal password": [
         "Visa lösenord"
       ],
+      "Second password": [
+        "Andra lösenord"
+      ],
       "Security code (${ codeName })": [
         "Säkerhetskod (${ codeName })"
       ],
@@ -9976,6 +9985,12 @@
       ],
       "Subscription options": [
         "Prenumerationsalternativ"
+      ],
+      "Swipe left action": [
+        "Svepåtgärd för vänster"
+      ],
+      "Swipe right action": [
+        "Svepåtgärd för höger"
       ],
       "Synchronize with system": [
         "Synkronisera med system"
@@ -12163,6 +12178,9 @@
       "Android": [
         "Android"
       ],
+      "Archive": [
+        "Arkivera"
+      ],
       "Ask each time": [
         "Fråga varje gång"
       ],
@@ -12210,6 +12228,9 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "Mark as read": [
+        "Markera som läst"
       ],
       "My reason isn't listed": [
         "Min anledning är inte listad"
@@ -12268,14 +12289,23 @@
       "Setup incomplete": [
         "Inställning ofullständig"
       ],
+      "Spam": [
+        "Skräppost"
+      ],
       "Standard server configs": [
         "Konfiguration för standardserver "
+      ],
+      "Star": [
+        "Stjärnmärk"
       ],
       "TCP": [
         "TCP"
       ],
       "The whole organization": [
         "Hela organisationen"
+      ],
+      "Trash": [
+        "Lägg i papperskorg"
       ],
       "UDP": [
         "UDP"
@@ -15348,9 +15378,6 @@
       "Change login password": [
         "Ändra lösenord för inloggning"
       ],
-      "Change mailbox password": [
-        "Ändra lösenord för brevlådan"
-      ],
       "Change organization name": [
         "Ändra organisationsnamn"
       ],
@@ -15362,6 +15389,9 @@
       ],
       "Change role": [
         "Ändra roll"
+      ],
+      "Change second password": [
+        "Ändra andra lösenord"
       ],
       "Choose an account": [
         "Välj ett konto"
@@ -15811,8 +15841,8 @@
       "Link confirmation": [
         "Länkbekräftelse"
       ],
-      "Login password": [
-        "Inloggningslösenord"
+      "Main password": [
+        "Huvudlösenord"
       ],
       "Messages": [
         "Meddelanden"
@@ -16166,8 +16196,8 @@
       "Type": [
         "Typ"
       ],
-      "Unlock your mailbox": [
-        "Lås upp din brevlåda"
+      "Unlock your data": [
+        "Lås upp din data"
       ],
       "Upgrade plan": [
         "Uppgradera paket"

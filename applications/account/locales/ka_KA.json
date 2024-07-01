@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -163,9 +163,6 @@
       ],
       "Change keys": [
         "გასაღებების შეცვლა"
-      ],
-      "Change mailbox password": [
-        "საფოსტო ყუთის პაროლის შეცვლა"
       ],
       "Change other email subscriptions": [
         "ელფოსტის სხვა გამოწერების შეცვლა"
@@ -4087,9 +4084,6 @@
       "Incorrect login credentials. Please try again.": [
         "არასწორი შესვლის პარამეტრები. თავიდან სცადეთ."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "საფოსტო ყუთის არასწორი პაროლი. თავიდან სცადეთ."
-      ],
       "Incorrect password": [
         "არასწორი პაროლი"
       ],
@@ -6086,17 +6080,6 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -6150,9 +6133,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }-ს უნდა, მონაცემები გაგიზიაროთ ${ PASS_APP_NAME }-ში"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და საფოსტო ყუთის პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
       ],
       "${ n } address": [
         "${ n } მისამართი",
@@ -6343,6 +6323,9 @@
       "Add server (${ availableAddedCount } available)": [
         "სერვერის დამატება (ხელმისაწვდომია ${ availableAddedCount })",
         "სერვერის დამატება (ხელმისაწვდომია ${ availableAddedCount })"
+      ],
+      "Add your name and logo to create a more personalized experience for your organization.": [
+        "დაამატეთ თქვენი სახელი და ლოგო, რომ თქვენი ორგანიზაციისთვის უფრო მორგებული გარემო შეიქმნათ."
       ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount } რაუტერი სერვერის დამატება",
@@ -8079,12 +8062,6 @@
       "Two-factor authentication enabled": [
         "2FA ჩართულია"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი საფოსტო ყუთის გასაშიფრად. (დამატებით)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "ორპაროლიანი რეჟიმი იყენებს სხვადასხვა პაროლებს შესასვლელად და საფოსტო ყუთის გასაშიფრად. ეს ქმედება უსაფრთხოების უმნიშვნელო გაუმჯობესებაა, მაგრამ მომხმარებლების უმრავლესობას ჩვენ მაინც ერთპაროლიან რეჟმს ვურჩევთ. ორპაროლიან რეჟიმზე გადასართავად ჯერ დააყენეთ შესვლის პაროლი, მერე კი საფოსტო ყუთის."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "ფაილის ხელმოწერის შემოწმების შეცდომა. დაუკავშირდით მხარდაჭერის გუნდს."
       ],
@@ -8402,6 +8379,9 @@
       "You can close the tab or browser in the meantime.": [
         "ამასობაში შეგიძლიათ, ბრაუზერის ჩანართი დახუროთ."
       ],
+      "You can define the policies of ${ PASS_APP_NAME } for the organization members.": [
+        "შეგიძლიათ განსაზღვროთ ${ PASS_APP_NAME }-ის პოლიტიკები ორგანიზაციის წევრებისთვის."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
       ],
@@ -8615,6 +8595,17 @@
         "Zoom-ის შეხვედრა"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "თუ ჩართულია, ქვესაქაღალდეები მშობელი საქაღალდის ფერს მემკვიდრეობით მიიღებენ."
@@ -8676,6 +8667,11 @@
         "მხოლოდ დათვალიერებისათვის"
       ]
     },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "ხელოვნურ ინტელექტზე დაფუძნებული ასისტენტი, რომელიც დაგეხმარებათ, ადვილად და პრობლემები გარეშე შექმნათ უკეთესი ელფოსტები."
+      ]
+    },
     "Input label": {
       "Access": [
         "წვდომა"
@@ -8695,6 +8691,9 @@
       ],
       "Paid": [
         "გადახდილია"
+      ],
+      "Processing": [
+        "დამუშავება"
       ],
       "Unpaid": [
         "გადაუხდელი"
@@ -9265,9 +9264,6 @@
       "Confirm login password": [
         "დაადასტურეთ შესვლის პაროლი"
       ],
-      "Confirm mailbox password": [
-        "დაადასტურეთ საფოსტო ყუთის პაროლი"
-      ],
       "Confirm new password": [
         "დაადასტურეთ ახალი პაროლი"
       ],
@@ -9369,6 +9365,9 @@
       ],
       "Disable data export for organization members": [
         "მონაცემების გატანის გათიშვა ორგანიზაციის წევრებისთვის"
+      ],
+      "Disable sharing outside the organization": [
+        "გაზიარებით გათიშვა ორგანიზაციის გარეთ"
       ],
       "Display name": [
         "საჩვენებელი სახელი"
@@ -9565,9 +9564,6 @@
       "Mail settings": [
         "ელფოსტის მორგება"
       ],
-      "Mailbox password": [
-        "საფოსტო ყუთის პაროლი"
-      ],
       "Main": [
         "მთავარი"
       ],
@@ -9624,9 +9620,6 @@
       ],
       "New login password": [
         "ახალი შესვლის პაროლი"
-      ],
-      "New mailbox password": [
-        "საფოსტო ყუთის ახალი პაროლი"
       ],
       "New organization identity": [
         "ახალი ორგანიზაციის იდენტიფიკატორი"
@@ -9777,6 +9770,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Second password": [
+        "მეორე პაროლი"
       ],
       "Security code (${ codeName })": [
         "უსაფრთხოების კოდი (${ codeName })"
@@ -12030,6 +12026,9 @@
       "Add to existing group": [
         "არსებულ ჯგუფში ჩამატება"
       ],
+      "Archive": [
+        "არქივი"
+      ],
       "Ask each time": [
         "ყოველ ჯერზე კითხვა"
       ],
@@ -12068,6 +12067,9 @@
       ],
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
+      ],
+      "Mark as read": [
+        "წაკითხულად მონიშვნა"
       ],
       "My reason isn't listed": [
         "ჩემი მიზეზი სიაში არაა"
@@ -12126,11 +12128,20 @@
       "Setup incomplete": [
         "დაყენება არასრულია"
       ],
+      "Spam": [
+        "სპამი"
+      ],
       "Standard server configs": [
         "სერვერის სტანდარტული კონფიგურაციები"
       ],
+      "Star": [
+        "ვარსკვლავი"
+      ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
+      ],
+      "Trash": [
+        "ნაგვის ყუთი"
       ]
     },
     "Option delay send seconds": {
@@ -12737,6 +12748,9 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "გავიგე"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
@@ -13148,6 +13162,9 @@
       ]
     },
     "scim: Info": {
+      "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
+        "**წინასწარი მოთხოვნები:** SCIM გაშლისთვის SAML ავთენტიკაცია აუცილებლად ჩართული უნდა იყოს."
+      ],
       "Enter token into your identity provider": [
         "შეიყვანეთ კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
@@ -13184,6 +13201,14 @@
       ],
       "SCIM automatic provisioning": [
         "SCIM ავტომატური მუშაობისთვის მომზადება"
+      ]
+    },
+    "scim: Tooltip": {
+      "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "SCIM კონექტორის API-ის გასაღები, რომელზეც IdP გაშლის აგენტი SCIM მონაცემებს გააგზავნის"
+      ],
+      "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
+        "SCIM კონექტორის URL, რომელზეც IdP გაშლის აგენტი SCIM მონაცემებს გააგზავნის"
       ]
     },
     "Select file": {
@@ -14411,6 +14436,9 @@
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "დაგვეხმარეთ, ინტერნეტი უსაფრთხო და კონფიდენციალურ ადგილად შევინარჩუნოთ. გადადით ფასიან სატარიფო გეგმაზე."
+      ],
       "No ads or tracking": [
         "რეკლამისა და ტრეკინგის გარეშე"
       ],
@@ -15068,9 +15096,6 @@
       "Change login password": [
         "შესვლის პაროლის შეცვლა"
       ],
-      "Change mailbox password": [
-        "საფოსტო ყუთის პაროლის შეცვლა"
-      ],
       "Change organization name": [
         "ორგანიზაციის სახელის ჩასწორება"
       ],
@@ -15528,8 +15553,8 @@
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
-      "Login password": [
-        "მომხმარებლის პაროლი"
+      "Main password": [
+        "მთავარი პაროლი"
       ],
       "Messages": [
         "შეტყობინებები"
@@ -15877,8 +15902,8 @@
       "Type": [
         "ტიპი"
       ],
-      "Unlock your mailbox": [
-        "განბლოკეთ თქვენი საფოსტო ყუთი"
+      "Unlock your data": [
+        "თქვენი მონაცემების განბლოკვა"
       ],
       "Upgrade plan": [
         "ტარიფის გაუმჯობესება"

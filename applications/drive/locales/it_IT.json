@@ -376,7 +376,7 @@
         "Inizia ora"
       ],
       "Get verification code": [
-        "Ottieni il codice di verifica"
+        "Invia il codice di verifica"
       ],
       "Go to Drive": [
         "Vai su Drive"
@@ -640,7 +640,7 @@
         "Richiedi nuovo codice"
       ],
       "Resend code": [
-        "Reinvia codice"
+        "Reinvia il codice"
       ],
       "Resend invite": [
         "Rispedisci l'invito"
@@ -2535,10 +2535,10 @@
         "L'indirizzo email è obbligatorio"
       ],
       "Email is not valid": [
-        "Email non valida"
+        "Indirizzo email non valido"
       ],
       "Enter 6 digits": [
-        "Inserisci 6 cifre"
+        "Inserisci il codice a 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
@@ -2816,7 +2816,7 @@
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
       "This field is required": [
-        "Questo campo è obbligatorio"
+        "Campo necessario"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
@@ -3876,7 +3876,7 @@
         "Verrà aggiunto un numero al nome della cartella"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
@@ -4338,7 +4338,7 @@
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Se disponi di uno di questi, passa alle impostazioni dell'account ${ BRAND_NAME } per iniziare il processo di sblocco."
@@ -4968,7 +4968,7 @@
         "Per abilitare la ricerca veramente privata, dobbiamo indicizzare i tuoi file localmente. Puoi comunque utilizzare ${ DRIVE_APP_NAME } normalmente: ti faremo sapere al termine dell'indicizzazione."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, verifica di essere umano."
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
         "Per proteggerti, ${ DRIVE_APP_NAME } può scansionare i file e bloccare quelli dannosi. Dovresti comunque scaricare i file solamente dalle persone di cui ti fidi."
@@ -5292,7 +5292,7 @@
         "Il tuo indirizzo email è stato reso pubblico:"
       ],
       "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "I tuoi file non sono più accessibili a causa di una reimpostazione della password. Carica nuovamente la vecchia chiave di crittografia per recuperare l'accesso. ${ KeyReactivationButton }"
@@ -5316,7 +5316,7 @@
         "La tua password è stata resa pubblica:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "L'abbonamento è limitato a 10 versioni per un massimo di 7 giorni."
@@ -5536,7 +5536,7 @@
         "Città"
       ],
       "Code is 6 digits without spaces": [
-        "Il codice è di 6 cifre senza spazi"
+        "Codice a 6 cifre senza spazi"
       ],
       "Colors": [
         "Colori"
@@ -6523,7 +6523,7 @@
         "Ottieni ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "Ottieni ${ planName }"
+        "Ottieni il piano ${ planName }"
       ],
       "Keep ${ plan }": [
         "Mantieni ${ plan }"
@@ -7718,8 +7718,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ho capito"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Elaborazione del pagamento"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -7732,6 +7738,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
       ]
     },
     "Payments.Error": {

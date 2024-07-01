@@ -62,11 +62,11 @@
       "Change keys": [
         "Schlüssel ändern"
       ],
-      "Change mailbox password": [
-        "Postfach-Passwort ändern"
-      ],
       "Change password": [
         "Passwort ändern"
+      ],
+      "Change second password": [
+        "Zusätzliches Passwort ändern"
       ],
       "Chat with us": [
         "Chatte mit uns"
@@ -2124,6 +2124,9 @@
       "Email address is invalid": [
         "E-Mail-Adresse ist ungültig"
       ],
+      "Email address is not available": [
+        "E-Mail-Adresse ist nicht verfügbar"
+      ],
       "Email is not valid": [
         "E-Mail-Adresse ungültig"
       ],
@@ -2157,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Ungültige Anmeldedaten. Bitte versuche es erneut."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
-      ],
       "Incorrect password": [
         "Ungültiges Passwort"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Falsches weiteres Passwort. Bitte versuche es erneut."
       ],
       "Incorrect username": [
         "Falscher Benutzername"
@@ -3009,9 +3012,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: Vorschau in niedriger Auflösung"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Mailbox-Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
-      ],
       "${ n } address": [
         "${ n } Adresse",
         "${ n } Adressen"
@@ -3289,11 +3289,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -4056,12 +4056,6 @@
       "Two-factor authentication enabled": [
         "Zwei-Faktor-Authentifizierung aktiviert"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Der Modus mit zwei Passwörtern erfordert zwei Passwörter: eines zum Anmelden in deinem Konto und eines zum Entschlüsseln deines Postfachs. (Erweitert)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Der Zwei-Passwörter-Modus verwendet getrennte Passwörter für die Anmeldung und die Entschlüsselung des Postfachs. Dies bietet in einigen Situationen einen kleinen Sicherheitsvorteil, wir empfehlen jedoch den Ein-Passwort-Modus für die meisten Benutzer. Um in den Zwei-Passwörter-Modus zu wechseln, legst du zuerst ein Anmeldepasswort und dann ein Postfachpasswort fest."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
       ],
@@ -4439,6 +4433,9 @@
       "Paid": [
         "Bezahlt"
       ],
+      "Processing": [
+        "In Bearbeitung"
+      ],
       "Unpaid": [
         "Unbezahlt"
       ],
@@ -4602,9 +4599,6 @@
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
       ],
-      "Confirm mailbox password": [
-        "Postfach-Passwort bestätigen"
-      ],
       "Confirm new password": [
         "Neues Passwort bestätigen"
       ],
@@ -4613,6 +4607,9 @@
       ],
       "Confirm password": [
         "Passwort bestätigen"
+      ],
+      "Confirm second password": [
+        "Zusätzliches Passwort bestätigen"
       ],
       "Copy": [
         "Kopieren"
@@ -4713,9 +4710,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Postfach-Passwort"
-      ],
       "Main": [
         "Hauptebene"
       ],
@@ -4752,9 +4746,6 @@
       "New login password": [
         "Neues Anmeldepasswort"
       ],
-      "New mailbox password": [
-        "Neues Postfachpasswort"
-      ],
       "New organization identity": [
         "Neue Organisationsidentität"
       ],
@@ -4763,6 +4754,9 @@
       ],
       "New password": [
         "Neues Passwort"
+      ],
+      "New second password": [
+        "Neues zusätzliches Passwort"
       ],
       "No filter": [
         "Kein Filter"
@@ -4856,6 +4850,9 @@
       ],
       "Reveal password": [
         "Passwort anzeigen"
+      ],
+      "Second password": [
+        "Zusätzliches Passwort"
       ],
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
@@ -6408,6 +6405,9 @@
       "Current plan": [
         "Aktuelles Abonnement"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Gib einen Anzeigenamen für **${ username }** ein. Dies ist der Name, den deine Benutzer sehen werden, wenn du ihre Berechtigungen änderst oder Daten mit ihnen teilst."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium Passwortmanager!"
       ],
@@ -6425,6 +6425,9 @@
       ],
       "Includes:": [
         "Enthält:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } wird gestartet"
       ],
       "per month": [
         "pro Monat"
@@ -6450,6 +6453,12 @@
       ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
+      ],
+      "Setting up your organization": [
+        "Deine Organisation wird eingerichtet"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Anmelden bei ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Dein Konto wird aktualisiert"
@@ -6580,6 +6589,9 @@
       ],
       "CVC": [
         "CVC"
+      ],
+      "Got it": [
+        "Verstanden"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -8381,9 +8393,6 @@
       "Change login password": [
         "Anmeldepasswort ändern"
       ],
-      "Change mailbox password": [
-        "Postfach-Passwort ändern"
-      ],
       "Change organization name": [
         "Namen der Organisation ändern"
       ],
@@ -8603,8 +8612,8 @@
       "Invoices": [
         "Rechnungen"
       ],
-      "Login password": [
-        "Anmeldepasswort"
+      "Main password": [
+        "Primäres Passwort"
       ],
       "Multi-user support": [
         "Mehrbenutzerunterstützung"
@@ -8804,9 +8813,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unlock your mailbox": [
-        "Entsperre dein Postfach"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Verbessere den Schutz deines Netzwerks mit dedizierten Servern"

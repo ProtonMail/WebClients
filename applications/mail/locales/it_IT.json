@@ -502,7 +502,7 @@
         "Ottieni l'assistente alla scrittura"
       ],
       "Get verification code": [
-        "Ottieni il codice di verifica"
+        "Invia il codice di verifica"
       ],
       "Go to label": [
         "Vai all'etichetta"
@@ -968,7 +968,7 @@
         "Richiedi nuovo codice"
       ],
       "Resend code": [
-        "Reinvia codice"
+        "Reinvia il codice"
       ],
       "Reset": [
         "Reimposta"
@@ -3781,13 +3781,13 @@
         "L'indirizzo email è obbligatorio"
       ],
       "Email is not valid": [
-        "Email non valida"
+        "Indirizzo email non valido"
       ],
       "Empty condition": [
         "Condizione vuota"
       ],
       "Enter 6 digits": [
-        "Inserisci 6 cifre"
+        "Inserisci il codice a 6 cifre"
       ],
       "Enter a password": [
         "Inserisci la password"
@@ -4108,7 +4108,7 @@
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
       "This field is required": [
-        "Questo campo è obbligatorio"
+        "Campo necessario"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
@@ -4152,8 +4152,8 @@
       "Username must end with a letter or digit": [
         "Il nome utente deve terminare con una lettera o un numero/"
       ],
-      "Wrong mailbox password": [
-        "Password della casella di posta errata"
+      "Wrong second password": [
+        "Seconda password errata"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
@@ -5611,7 +5611,7 @@
         "Garanzia di rimborso entro 30 giorni"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Verrà inviata una richiesta di disiscrizione dalla mailing list al mittente della newsletter, verrà elaborata automaticamente."
@@ -6102,7 +6102,7 @@
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -6849,7 +6849,7 @@
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, verifica di essere umano."
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -7259,7 +7259,7 @@
         "Il tuo indirizzo email è stato reso pubblico:"
       ],
       "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -7290,7 +7290,7 @@
         "La tua password è stata resa pubblica:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ]
     },
     "info": {
@@ -7709,7 +7709,7 @@
         "Ripulito"
       ],
       "Code is 6 digits without spaces": [
-        "Il codice è di 6 cifre senza spazi"
+        "Codice a 6 cifre senza spazi"
       ],
       "Colors": [
         "Colori"
@@ -8783,7 +8783,7 @@
         "Ottieni ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "Ottieni ${ planName }"
+        "Ottieni il piano ${ planName }"
       ],
       "Keep ${ plan }": [
         "Mantieni ${ plan }"
@@ -9829,8 +9829,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ho capito"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Elaborazione del pagamento"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -9843,6 +9849,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
       ]
     },
     "Payments.Error": {

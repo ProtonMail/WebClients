@@ -840,6 +840,9 @@
       "Vault name does not match": [
         "Ime trezorja se ne ujema"
       ],
+      "Wrong password": [
+        "Napačno geslo"
+      ],
       "Wrong PIN code. Try again.": [
         "Napačna koda PIN. Poskusi ponovno."
       ],
@@ -2027,22 +2030,6 @@
         "Ustvarili boste"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Vnesi svojo PIN kodo."
-      ],
-      "Sign in to your account": [
-        "Vpišite se v svoj račun"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Odkleni ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Dobrodošli v ${ brandNameJSX }"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } predmet",
@@ -2341,9 +2328,6 @@
       ],
       "Trash empty": [
         "Smetnjak je prazen"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Odkleni ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Na voljo je nadgradnja!"

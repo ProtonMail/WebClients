@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -184,9 +184,6 @@
       "Change keys": [
         "Změnit klíče"
       ],
-      "Change mailbox password": [
-        "Změnit heslo poštovní schránky"
-      ],
       "Change other email subscriptions": [
         "Změnit ostatní e-mailové předplatné"
       ],
@@ -210,6 +207,12 @@
       ],
       "Clear all formatting": [
         "Vymazat veškeré formátování"
+      ],
+      "Clear filter": [
+        "Vyčistit filtr"
+      ],
+      "Clear filters": [
+        "Vyčistit filtry"
       ],
       "Close": [
         "Zavřít"
@@ -624,6 +627,9 @@
       ],
       "Later": [
         "Později"
+      ],
+      "Learn why this option is unavailable": [
+        "Zjistěte, proč tato možnost není dostupná"
       ],
       "Leave": [
         "Opustit"
@@ -4109,9 +4115,6 @@
       "Incorrect login credentials. Please try again.": [
         "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
-      ],
       "Incorrect password": [
         "Nesprávné heslo"
       ],
@@ -6158,17 +6161,6 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6229,9 +6221,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } chce s vámi sdílet data v ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } lze také použít s jedním heslem, což nahrazuje heslo pro přihlášení a poštovní schránku. Pro přechod do režimu jedno hesla, prosím zadejte Vaše \"jednotné heslo\", které chcete použít a klikněte Uložit."
       ],
       "${ n } address": [
         "${ n } adresa",
@@ -6765,7 +6754,7 @@
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "Vytvořte a spravujte podúčty a přiřaďte jim e-mailové adresy na vlastní doméně."
+        "Vytvořte a spravujte podřízené účty a přiřaďte jim e-mailové adresy na vlastní doméně."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Vytvořte e-mailové adresy pro ostatní lidi, spravujte ${ MAIL_APP_NAME } pro firmu, školu nebo skupinu. Začněte přidáním názvu Vaší organizace a vlastní domény (např. @vasefirma.cz). "
@@ -7577,6 +7566,9 @@
         "Přidejte prosím e-mailové adresy uživatelů na řádcích",
         "Přidejte prosím e-mailové adresy uživatelů na řádcích"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Prosím, požádejte vlastníka, aby vás přímo pozval k dokumentu."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Na kartě ověření ověřte pravost své karty."
       ],
@@ -7606,6 +7598,9 @@
       ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
+      ],
+      "Please open the document to view it.": [
+        "Prosím, otevřete dokument pro jeho zobrazení."
       ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
@@ -7646,6 +7641,9 @@
       "Preview for this file type is not supported": [
         "Náhled tohoto typu souboru není podporován"
       ],
+      "Preview of documents is not yet supported.": [
+        "Náhled dokumentů ještě není podporován."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
       ],
@@ -7663,6 +7661,9 @@
       ],
       "Public link invite": [
         "Pozvánka na veřejný odkaz"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Veřejné sdílení dokumentů ještě není podporováno."
       ],
       "purchase additional storage": [
         "nákup dalšího úložiště"
@@ -8072,6 +8073,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Toto nahradí vaše dočasné heslo. V budoucnu jej použijete pro přístup k vašemu ${ BRAND_NAME } Účtu."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Tímto odešlete novou pozvánku na adresu **${ email }**."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Toto vás odhlásí od všech aktuálně přihlášených účtů."
       ],
@@ -8083,6 +8087,9 @@
       ],
       "to ${ product } Business": [
         "do ${ product } Business"
+      ],
+      "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Chcete-li povolit doméně **${ domainName }** používat SAML SSO, musíte ověřit její vlastnictví přidáním následujícího záznamu DNS TXT k doméně u poskytovatele DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
@@ -8161,12 +8168,6 @@
       ],
       "Two-factor authentication enabled": [
         "Dvoufázové ověřování zapnuto"
-      ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Režim dvou hesel vyžaduje jedno heslo pro přihlášení k vašemu účtu a druhé heslo k dešifrování vaší e-mailové schránky. (Pokročilé)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Režim dvou hesel využívá dvě samostatná hesla pro přihlášení a dešifrování e-mailové schránky. V určitých situacích to zvyšuje bezpečnost, nicméně pro většinu uživatelů je vhodné používat režim jednoho hesla. Chcete-li přepnout do režimu dvou hesel, nejprve zadejte své přihlašovací heslo, a poté heslo k e-mailové schránce."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nelze ověřit podpis souboru pro obnovení. Kontaktujte podporu."
@@ -8588,6 +8589,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Aby host viděl vaši odpověď, musíte stále odpovídat na pozvánky."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Uživatele budete moci povýšit na správce, jakmile přijme pozvání."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
@@ -8713,6 +8717,17 @@
       ],
       "Zoom meeting": [
         "setkání na Zoomu"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9394,9 +9409,6 @@
       "Confirm login password": [
         "Potvrdit nové přihlašovací heslo"
       ],
-      "Confirm mailbox password": [
-        "Potvrdit heslo k poštovní schránce"
-      ],
       "Confirm new password": [
         "Potvrdit nové heslo"
       ],
@@ -9498,6 +9510,9 @@
       ],
       "Disable data export for organization members": [
         "Deaktivovat export dat pro členy organizace"
+      ],
+      "Disable sharing outside the organization": [
+        "Zakázat sdílení mimo organizaci"
       ],
       "Display name": [
         "Zobrazované jméno"
@@ -9694,9 +9709,6 @@
       "Mail settings": [
         "Nastavení Mail"
       ],
-      "Mailbox password": [
-        "Heslo k poštovní schránce"
-      ],
       "Main": [
         "Hlavní"
       ],
@@ -9753,9 +9765,6 @@
       ],
       "New login password": [
         "Nové přihlašovací heslo"
-      ],
-      "New mailbox password": [
-        "Nové heslo k poštovní schránce"
       ],
       "New organization identity": [
         "Nová identita organizace"
@@ -10304,6 +10313,9 @@
       ],
       "Create an alias": [
         "Vytvořit alias"
+      ],
+      "Don't have access to your 2FA?": [
+        "Nemáte přístup ke svému 2FA?"
       ],
       "Encryption and keys": [
         "Šifrování a klíče"
@@ -11184,6 +11196,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Monitorování narušení bezpečnosti dat (již brzy)"
+      ],
+      "Dedicated account manager": [
+        "Dedikovaný správce účtu"
       ],
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
@@ -12323,6 +12338,9 @@
       "Setup incomplete": [
         "Nastavení nebylo dokončeno"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Standard server configs": [
         "Konfigurace standardního serveru"
       ],
@@ -12948,11 +12966,20 @@
       "Card number": [
         "Číslo karty"
       ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "V současné době je automatické obnovení předplatného deaktivováno. Pokud nyní předplatné změníte, bude automatické obnovení opět povoleno."
+      ],
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Rozumím"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Zpracování platby"
       ],
       "Processing payment": [
         "Zpracovávání platby"
@@ -12968,6 +12995,9 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Zpracováváme vaši platbu za vyúčtovanou fakturu. Před provedením změn v tarifu nebo aktualizací platebních údajů vyčkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ]
     },
     "Payments.Error": {
@@ -14493,6 +14523,9 @@
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } včetně sdílení kalendáře"
       ],
+      "${ CALENDAR_APP_NAME } with calendar sharing and availability": [
+        "${ CALENDAR_APP_NAME } se sdílením kalendáře a dostupností"
+      ],
       "${ dayDiff } day left": [
         "Zbývá ${ dayDiff } den",
         "Zbývají ${ dayDiff } dny",
@@ -14502,6 +14535,9 @@
       "${ DRIVE_APP_NAME } including version history": [
         "${ DRIVE_APP_NAME } včetně historie verzí"
       ],
+      "${ DRIVE_APP_NAME } with version history": [
+        "${ DRIVE_APP_NAME } s historií verzí"
+      ],
       "${ MAIL_APP_NAME } and all premium productivity features": [
         "${ MAIL_APP_NAME } a všechny prémiové funkce produktivity"
       ],
@@ -14510,6 +14546,9 @@
       ],
       "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
         "${ MAIL_APP_NAME } uchovává vaše firemní data v bezpečí a umožňuje posílat šifrované e-maily komukoli."
+      ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } s automatickým přesměrováním e-mailů"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } kalendář na uživatele",
@@ -14532,6 +14571,9 @@
       "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } včetně neomezeného počtu aliasů Hide-my-email"
       ],
+      "${ PASS_APP_NAME } with ${ DARK_WEB_MONITORING_NAME }": [
+        "${ PASS_APP_NAME } s ${ DARK_WEB_MONITORING_NAME }"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } úložiště na uživatele"
       ],
@@ -14543,6 +14585,9 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všechny aplikace, všechny funkce, předběžný přístup k novým verzím a vše, co potřebujete, abyste měli svá data a jejich zabezpečení pod kontrolou."
+      ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } poskytne vašemu týmu vše, co potřebuje k vyšší produktivitě a organizaci práce, a to díky přístupu ke všem aplikacím ${ BRAND_NAME } a jejich prémiovým funkcím."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "${ planName } poskytne vašemu týmu vše, co potřebuje, aby byl produktivnější, organizovanější a měl pod kontrolou svou poštu, plánování a další věci."
@@ -14559,11 +14604,20 @@
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } nabízí ${ planMaxSpace } úložiště pro vaše soubory a fotografie. Máte také nárok na roční bonusy k úložišti."
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro uživatelské e-maily, přílohy, události a soubory. Také máte nárok na roční bonusový prostor na úložišti."
+      ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
+        "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro uživatelské e-maily, přílohy, události, soubory a hesla. Také máte nárok na roční bonusový prostor na úložišti."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "Program ${ PROTON_SENTINEL_NAME }"
       ],
       "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
         "${ VPN_APP_NAME } s přístupem ke všem vysokorychlostním serverům v(e) ${ vpnCountries } zemích"
+      ],
+      "${ VPN_APP_NAME } with malware and ad-blocking": [
+        "${ VPN_APP_NAME } s blokováním malware a reklamy"
       ],
       "10 email addresses": [
         "10 e-mailových adres"
@@ -14588,6 +14642,9 @@
       ],
       "All you need for your business": [
         "Vše co potřebujete pro vaše podnikání"
+      ],
+      "Any custom email domains will be disabled": [
+        "Jakékoli vlastní e-mailové domény budou deaktivovány"
       ],
       "Automatic email forwarding": [
         "Automatické přesměrování e-mailů"
@@ -14634,6 +14691,9 @@
       "Extra storage and bonuses": [
         "Úložný prostor a bonusy navíc"
       ],
+      "Extra storage and users": [
+        "Úložný prostor a uživatelé navíc"
+      ],
       "Have a question?": [
         "Máte dotaz?"
       ],
@@ -14654,6 +14714,9 @@
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
         "Pokud po vypršení platnosti předplatného ${ planName } překročíte limity bezplatného tarifu, nebudete moci:"
+      ],
+      "Invited members will be removed from your organization": [
+        "Pozvaní členové budou odebráni z vaší organizace"
       ],
       "Keep ${ config.planName }": [
         "Ponechat ${ config.planName }"
@@ -14676,6 +14739,9 @@
       "Online privacy, for your whole family": [
         "Online soukromí pro celou vaši rodinu"
       ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "Organizace, další uživatelé a vlastní e-mailové domény nejsou v bezplatném plánu podporovány. To znamená, že:"
+      ],
       "Our fight against censorship in Russia": [
         "Náš boj proti cenzuře v Rusku"
       ],
@@ -14687,6 +14753,9 @@
       ],
       "Priority support": [
         "Prioritní podpora"
+      ],
+      "Productivity features": [
+        "Funkce produktivity"
       ],
       "Reactivate": [
         "Znovu aktivovat"
@@ -14730,6 +14799,15 @@
       "Unlimited folders, labels and filters": [
         "Neomezený počet složek, štítků a filtrů"
       ],
+      "Users won’t be able to manage their calendars": [
+        "Uživatelé nebudou moci spravovat své kalendáře"
+      ],
+      "Users won’t be able to send emails": [
+        "Uživatelé nebudou moci odesílat e-maily"
+      ],
+      "Users won’t be able to sync files on their devices": [
+        "Uživatelé nebudou moci synchronizovat soubory na svých zařízeních"
+      ],
       "Version history": [
         "Historie verzí"
       ],
@@ -14741,6 +14819,9 @@
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 1 GB prostoru Mail a maximálně 5 GB prostoru Drive. Přijdete také o všechny dříve udělené bonusy k úložišti."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Když zrušíte ${ planName }, bude vám snížen účet na ${ BRAND_NAME } Free, který nabízí až 1 GB úložiště Mail a až 5 GB úložiště Drive. Váš tým bude mít výpadky v práci, protože další uživatelé nejsou v bezplatném tarifu podporováni."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Když zrušíte ${ planName }, budete váš účet snížen na ${ BRAND_NAME } Free, který nabízí maximálně 5 GB prostoru Drive a maximálně 1 GB prostoru Mail. Přijdete také o všechny dříve udělené bonusy k úložišti."
@@ -15455,9 +15536,6 @@
       "Change login password": [
         "Změnit přihlašovací heslo"
       ],
-      "Change mailbox password": [
-        "Změnit heslo poštovní schránky"
-      ],
       "Change organization name": [
         "Změnit název organizace"
       ],
@@ -15638,6 +15716,9 @@
       "Delete version history?": [
         "Smazat historii verzí?"
       ],
+      "Description": [
+        "Popis"
+      ],
       "Details": [
         "Podrobnosti"
       ],
@@ -15692,6 +15773,9 @@
       "Edit organization identity": [
         "Upravit identitu organizace"
       ],
+      "Edit profile": [
+        "Upravit profil"
+      ],
       "Edit servers": [
         "Upravit servery"
       ],
@@ -15745,6 +15829,9 @@
       ],
       "Error": [
         "Chyba"
+      ],
+      "Event": [
+        "Událost"
       ],
       "Every member of the organization can access": [
         "Každý člen organizace má přístup k"
@@ -15890,6 +15977,9 @@
       "Invoices": [
         "Faktury"
       ],
+      "IP": [
+        "IP"
+      ],
       "Keep your inbox organized": [
         "Mějte pořádek ve své doručené poště"
       ],
@@ -15911,8 +16001,8 @@
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
-      "Login password": [
-        "Přihlašovací heslo"
+      "Main password": [
+        "Hlavní heslo"
       ],
       "Messages": [
         "Zprávy"
@@ -16238,6 +16328,9 @@
       "This field cannot contain only spaces": [
         "Toto pole nesmí obsahovat pouze mezery"
       ],
+      "Time": [
+        "Čas"
+      ],
       "Time zone": [
         "Časové pásmo"
       ],
@@ -16256,8 +16349,8 @@
       "Type": [
         "Typ"
       ],
-      "Unlock your mailbox": [
-        "Odemknout Vaši poštovní schránku"
+      "Unlock your data": [
+        "Odemknout Vaše data"
       ],
       "Upgrade plan": [
         "Navýšit tarif"
@@ -16267,6 +16360,9 @@
       ],
       "Upload your organization’s logo": [
         "Nahrajte logo své organizace"
+      ],
+      "User": [
+        "Uživatel"
       ],
       "Users": [
         "Uživatelé"

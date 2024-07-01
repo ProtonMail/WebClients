@@ -736,6 +736,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Có lỗi xảy ra khi khởi động ${ PASS_SHORT_APP_NAME }. Nếu vấn đề không được khắc phục, vui lòng liên hệ dịch vụ chăm sóc khách hàng để được trợ giúp."
       ],
+      "Wrong password": [
+        "Sai mật khẩu"
+      ],
       "Wrong PIN code. Try again.": [
         "Sai mã PIN. Hãy thử lại."
       ],
@@ -1160,18 +1163,6 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công mã PIN. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để tự động khóa bằng mật khẩu."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để hủy đăng ký phương thức khóa hiện tại."
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Vui lòng xác nhận mật khẩu ${ BRAND_NAME } của bạn để cập nhật thời gian tự động khóa."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Vui lòng xác nhận mã PIN của bạn để hủy đăng ký phương thức khóa hiện tại."
@@ -1842,25 +1833,6 @@
         "Bạn đang chuẩn bị tạo"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Nhập mã PIN của bạn"
-      ],
-      "Sign in to your account": [
-        "Đăng nhập vào tài khoản của bạn"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME } của bạn."
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Mở khóa ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Chào mừng tới ${ brandNameJSX }"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } nội dung"
@@ -2138,9 +2110,6 @@
       ],
       "Trash empty": [
         "Thùng rác trống"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Mở khóa ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Có bản cập nhật"

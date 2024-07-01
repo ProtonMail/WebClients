@@ -370,6 +370,9 @@
       "Retry": [
         "Försök igen"
       ],
+      "Right click and download this CSV": [
+        "Högerklicka och ladda ner denna CSV"
+      ],
       "Save": [
         "Spara"
       ],
@@ -390,6 +393,9 @@
       ],
       "Set access level": [
         "Ställ in åtkomstnivå"
+      ],
+      "Set extra password": [
+        "Ställ in extra lösenord"
       ],
       "Setup 2FA": [
         "Ställ in 2FA"
@@ -713,6 +719,9 @@
       "File could not be parsed": [
         "Fil kunde inte analyseras"
       ],
+      "File could not be read": [
+        "Fil kunde inte läsas"
+      ],
       "File does not match expected format": [
         "Fil matchar inte förväntat format"
       ],
@@ -1021,6 +1030,9 @@
       "Auto-lock successfully disabled.": [
         "Automatisk låsning inaktiverat."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Innan du exporterar dina data med detta format, öppna Safari-inställningar -> fliken ”Allmänt” -> inaktivera alternativet ”Öppna säkra filer efter nedladdning”. Detta kommer att förhindra att Safari extraherar den exporterade filen felaktigt."
+      ],
       "Breaches detected": [
         "Intrång upptäckta"
       ],
@@ -1047,6 +1059,9 @@
       ],
       "Click here to add a field for a username.": [
         "Klicka här för att lägga till ett fält för ett användarnamn."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Bekräfta ditt extra lösenord för att fortsätta med att ta bort det."
       ],
       "Congratulations, your access has been confirmed": [
         "Grattis, din åtkomst har bekräftats"
@@ -1125,6 +1140,18 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ange verifieringskod. Siffra ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Ange ditt extra lösenord"
+      ],
+      "Enter your PIN code": [
+        "Ange din PIN-kod"
+      ],
+      "Extra password successfuly created": [
+        "Extra lösenord skapat"
+      ],
+      "Extra password successfuly removed": [
+        "Extra lösenord borttaget"
       ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
@@ -1349,23 +1376,17 @@
       "Please check your spam folder or try resending the code.": [
         "Kontrollera din skräppostmapp eller försök att skicka koden igen."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Bekräfta ditt ${ BRAND_NAME }-lösenord"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att låsa automatiskt med ditt lösenord."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att aktivera offlineläge"
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bekräfta ditt ${ BRAND_NAME }-lösenord för att exportera din ${ PASS_APP_NAME }-data"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att avregistrera ditt nuvarande lås."
+      "Please confirm your password": [
+        "Bekräfta ditt lösenord"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Bekräfta ditt ${ BRAND_NAME }-lösenord för att uppdatera tiden för automatisk låsning."
+      "Please confirm your password in order to unregister your current lock.": [
+        "Bekräfta ditt lösenord för att avregistrera ditt nuvarande lås."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bekräfta din PIN-kod för att avregistrera ditt nuvarande lås."
@@ -1400,8 +1421,14 @@
       "Reconnecting": [
         "Återansluter"
       ],
+      "Registering extra password...": [
+        "Registrerar extra lösenord …"
+      ],
       "Registering PIN lock failed": [
         "Registrering av PIN-lås misslyckades"
+      ],
+      "Removing extra password...": [
+        "Tar bort extra lösenord …"
       ],
       "Restoring items from trash": [
         "Återställer objekt från papperskorg"
@@ -1439,6 +1466,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
       ],
+      "Sign in to your account": [
+        "Logga in på ditt konto"
+      ],
       "Signing you in": [
         "Loggar in dig"
       ],
@@ -1471,6 +1501,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Det extra lösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
@@ -1508,6 +1541,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Obegränsat antal Hide-my-email-alias"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt extra lösenord"
       ],
       "Unpinning item...": [
         "Lossar objekt..."
@@ -1584,6 +1623,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du har nått den högsta tillåtna längden på ${ maxLength } tecken."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Du kommer bli utloggad och måste logga in igen på alla dina andra enheter."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "Du kommer att aviseras om dataintrång för dessa e-postadresser."
@@ -1770,6 +1812,9 @@
       "Export": [
         "Exportera"
       ],
+      "Extra password": [
+        "Extra lösenord"
+      ],
       "Field name": [
         "Fältnamn"
       ],
@@ -1941,6 +1986,9 @@
       "Prefix": [
         "Prefix"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Skydda ${ PASS_APP_NAME } med ett extra lösenord"
+      ],
       "Rate us": [
         "Betygsätt oss"
       ],
@@ -2071,25 +2119,6 @@
       ],
       "stay safer online": [
         "var säkrare online"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Ange din PIN-kod"
-      ],
-      "Sign in to your account": [
-        "Logga in på ditt konto"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Lås upp ${ PASS_SHORT_APP_NAME } med ditt ${ BRAND_NAME }-lösenord"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Lås upp ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Välkommen till ${ brandNameJSX }"
       ]
     },
     "Log preference": {
@@ -2285,6 +2314,9 @@
       "Breaches detected for": [
         "Intrång upptäckta för"
       ],
+      "Confirm extra password": [
+        "Bekräfta extra lösenord"
+      ],
       "Confirm PIN code": [
         "Bekräfta PIN-kod"
       ],
@@ -2447,6 +2479,9 @@
       "Remove email address?": [
         "Ta bort e-postadress?"
       ],
+      "Remove extra password": [
+        "Ta bort extra lösenord"
+      ],
       "Resolved breaches": [
         "Lösta intrång"
       ],
@@ -2471,6 +2506,9 @@
       ],
       "Set access level": [
         "Ställ in åtkomstnivå"
+      ],
+      "Set extra password": [
+        "Ställ in extra lösenord"
       ],
       "Set up 2FA for better security": [
         "Ställ in 2FA för bättre säkerhet"
@@ -2499,6 +2537,9 @@
       "Trash empty": [
         "Papperskorg tom"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Lås upp ${ brandNameJSX }"
+      ],
       "Update available": [
         "Uppdatering tillgänglig"
       ],
@@ -2519,6 +2560,9 @@
       ],
       "Weak passwords": [
         "Svaga lösenord"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Välkommen till ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Vad är ett alias?"
@@ -2587,6 +2631,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan inte hämta brevlådor för detta alias just nu"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Varning: Du kommer inte att kunna komma åt ditt ${ PASS_APP_NAME }-konto om du tappar bort detta lösenord."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunde inte skapa valv “${ vaultName }“"
       ],
@@ -2607,6 +2654,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Utgångsdatum är inte i formatet MM/ÅÅ"
+      ],
+      "Extra password cannot be empty": [
+        "Extra lösenord kan inte vara tomt"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Extra lösenord bör ha minst 8 tecken"
       ],
       "Failed to load breaches.": [
         "Misslyckades att ladda intrång."
@@ -2663,6 +2716,9 @@
       "Passphrase is required": [
         "Lösenfras är obligatoriskt"
       ],
+      "Passwords do not match": [
+        "Lösenorden matchar inte"
+      ],
       "PGP encrypted export file requires passphrase": [
         "PGP-krypterad exportfil kräver lösenfras"
       ],
@@ -2674,6 +2730,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verifiera din e-postadress för att använda valvdelning"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Att bort ditt extra lösenord kommer logga ut dig från alla enheter och avsluta alla aktiva sessioner."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."

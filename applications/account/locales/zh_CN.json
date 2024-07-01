@@ -38,11 +38,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -154,9 +154,6 @@
       ],
       "Change keys": [
         "更改密码"
-      ],
-      "Change mailbox password": [
-        "更改邮箱密码"
       ],
       "Change other email subscriptions": [
         "更改其他邮件订阅"
@@ -3554,9 +3551,6 @@
       "Incorrect login credentials. Please try again.": [
         "登录凭据不正确，请重试。"
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "邮箱密码错误，请重试。"
-      ],
       "Incorrect password": [
         "密码错误"
       ],
@@ -5288,17 +5282,6 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
@@ -5350,9 +5333,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } 想要与您分享 ${ PASS_APP_NAME }中的数据"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 也允许只用一个密码代替登录和邮箱密码。输入您要使用的密码并点击保存即可转为单密码模式。"
       ],
       "${ n } address": [
         "${ n } 个地址"
@@ -6977,12 +6957,6 @@
       "Two-factor authentication enabled": [
         "双重验证已开启"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "双密码模式下登录账户和解密邮箱需要分别设置密码。（高级功能）"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "双密码模式下登录和解密邮箱需要两套密码，某些情况下这样能略微提高安全性，但我们建议大部分用户使用单密码。若要开启双密码模式，请先设置一个登录密码，再设置一个邮箱密码。"
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "无法验证恢复文件签名，请联系支持人员。"
       ],
@@ -7441,6 +7415,17 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "您的支持工单已关闭。感谢您联系 ${ BRAND_NAME } 支持。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
       ]
     },
     "Info - folder colouring feature": {
@@ -7949,9 +7934,6 @@
       "Awarded": [
         "已奖励"
       ],
-      "Beta": [
-        "测试版"
-      ],
       "Billing address": [
         "账单地址"
       ],
@@ -8047,9 +8029,6 @@
       ],
       "Confirm login password": [
         "确认登录密码"
-      ],
-      "Confirm mailbox password": [
-        "确认邮箱密码"
       ],
       "Confirm new password": [
         "确认新密码"
@@ -8330,9 +8309,6 @@
       "Mail Server (IMAP)": [
         "邮件服务器 (IMAP)"
       ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
       "Main": [
         "主要"
       ],
@@ -8380,9 +8356,6 @@
       ],
       "New login password": [
         "新登录密码"
-      ],
-      "New mailbox password": [
-        "新邮箱密码"
       ],
       "New organization password": [
         "新机构密码"
@@ -8710,6 +8683,11 @@
       ],
       "Notifications": [
         "通知"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "请添加下列 TXT 记录。注意： DNS 记录更新可能需要若干小时。"
       ]
     },
     "Label for new member": {
@@ -12534,9 +12512,6 @@
       "Change login password": [
         "更改登录密码"
       ],
-      "Change mailbox password": [
-        "更改邮箱密码"
-      ],
       "Change organization name": [
         "更改机构名称"
       ],
@@ -12915,9 +12890,6 @@
       "Link confirmation": [
         "确认打开链接"
       ],
-      "Login password": [
-        "登录密码"
-      ],
       "Messages": [
         "邮件"
       ],
@@ -13220,9 +13192,6 @@
       ],
       "Type": [
         "类型"
-      ],
-      "Unlock your mailbox": [
-        "解锁您的邮箱"
       ],
       "Upgrade plan": [
         "升级账户"

@@ -62,11 +62,11 @@
       "Change keys": [
         "Αλλαγή κλειδιών"
       ],
-      "Change mailbox password": [
-        "Αλλαγή κωδικού γραμματοκιβωτίου"
-      ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Change second password": [
+        "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Incorrect password": [
         "Λανθασμένος κωδικός πρόσβασης"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
       ],
       "${ n } address": [
         "${ n } διεύθυνση",
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -3719,6 +3719,9 @@
         "Παρακαλούμε προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου για το χρήστη στη σειρά",
         "Παρακαλούμε προσθέστε διευθύνσεις ηλεκτρονικού ταχυδρομείου για τους χρήστες στις σειρές"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
       ],
@@ -3739,6 +3742,9 @@
       ],
       "please open a support ticket": [
         "παρακαλούμε ανοίξτε ένα εισιτήριο υποστήριξης"
+      ],
+      "Please open the document to view it.": [
+        "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Δοκιμάστε ξανά χρησιμοποιώντας διαφορετικό τρόπο πληρωμής ή επικοινωνήστε με την τράπεζά σας."
@@ -3770,11 +3776,17 @@
       "Preview for this file type is not supported": [
         "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
+      "Preview of documents is not yet supported.": [
+        "Η προεπισκόπηση εγγράφων δεν υποστηρίζεται ακόμη."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
       ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
       "read our two-factor authentication guide first": [
         "διαβάστε πρώτα τον οδηγό μας ταυτοποίησης δύο παραγόντων"
@@ -4068,11 +4080,11 @@
       "Two-factor authentication enabled": [
         "Ο έλεγχος ταυτότητας δύο παραγόντων ενεργοποιήθηκε"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Η λειτουργία δύο κωδικών πρόσβασης απαιτεί δύο κωδικούς πρόσβασης: έναν για να συνδεθείτε στον λογαριασμό σας και έναν για να αποκρυπτογραφήσετε το γραμματοκιβώτιό σας. (Για προχωρημένους)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Η λειτουργία δύο κωδικών πρόσβασης απαιτεί δύο κωδικούς πρόσβασης: έναν για να συνδεθείτε στον λογαριασμό σας και έναν για να αποκρυπτογραφήσετε τα δεδομένα σας. (Για προχωρημένους)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για την αποκρυπτογράφηση σύνδεσης και αποκωδικοποίησης. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να επιλέξτε τις ρυθμίσεις δύο κωδικών πρόσβασης, εισαγάγετε τον κωδικό σύνδεσης (login password) και έπειτα τον κωδικό θυρίδας (mailbox password)."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για σύνδεση και αποκρυπτογράφηση δεδομένων. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να μεταβείτε σε λειτουργία δύο κωδικών πρόσβασης, ορίστε πρώτα έναν κωδικό πρόσβασης σύνδεσης και, στη συνέχεια, ορίστε έναν δεύτερο κωδικό πρόσβασης."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
@@ -4333,6 +4345,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Πρέπει να έχετε μια πιστωτική κάρτα ή έναν τραπεζικό λογαριασμό συνδεδεμένο με το λογαριασμό σας στο PayPal. Εάν αυτό δεν υπάρχει στον λογαριασμό σας PayPal, παρακαλούμε πιέστε το παρακάτω κουμπί."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Θα μπορείτε να προβιβάσετε τον χρήστη σε διαχειριστή μόλις αποδεχτεί την πρόσκληση."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
       ],
@@ -4458,6 +4473,9 @@
       ],
       "Paid": [
         "Πληρωμένο"
+      ],
+      "Processing": [
+        "Επεξεργασία"
       ],
       "Unpaid": [
         "Απλήρωτο"
@@ -4622,9 +4640,6 @@
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
       ],
-      "Confirm mailbox password": [
-        "Επιβεβαίωση Κωδικού θυρίδας"
-      ],
       "Confirm new password": [
         "Επιβεβαίωση νέου κωδικού"
       ],
@@ -4633,6 +4648,9 @@
       ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
+      ],
+      "Confirm second password": [
+        "Επιβεβαίωση δεύτερου κωδικού πρόσβασης"
       ],
       "Copy": [
         "Αντιγραφή"
@@ -4733,9 +4751,6 @@
       "Logo": [
         "Λογότυπο"
       ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
       "Main": [
         "Κύριο"
       ],
@@ -4772,9 +4787,6 @@
       "New login password": [
         "Νέος κωδικός σύνδεσης"
       ],
-      "New mailbox password": [
-        "Νέος Κωδικός Θυρίδας"
-      ],
       "New organization identity": [
         "Ταυτότητα νέου οργανισμού"
       ],
@@ -4783,6 +4795,9 @@
       ],
       "New password": [
         "Νέος κωδικός"
+      ],
+      "New second password": [
+        "Νέος δεύτερος κωδικός πρόσβασης"
       ],
       "No filter": [
         "Χωρίς φίλτρο"
@@ -4876,6 +4891,9 @@
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
+      ],
+      "Second password": [
+        "Δεύτερος κωδικός πρόσβασης"
       ],
       "Security code (${ codeName })": [
         "Κωδικός ασφαλείας (${ codeName })"
@@ -6431,6 +6449,9 @@
       "Current plan": [
         "Τρέχον πλάνο"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Εισαγάγετε ένα εμφανιζόμενο όνομα για το **${ username }**. Αυτό θα βλέπουν οι χρήστες σας όταν αλλάζετε τα δικαιώματά τους ή μοιράζεστε δεδομένα μαζί τους."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
       ],
@@ -6448,6 +6469,9 @@
       ],
       "Includes:": [
         "Περιλαμβάνει:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Εκκίνηση του ${ PASS_APP_NAME }"
       ],
       "per month": [
         "ανά μήνα"
@@ -6473,6 +6497,12 @@
       ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
+      ],
+      "Setting up your organization": [
+        "Ρύθμιση του οργανισμού σας"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Σύνδεση στο ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Πραγματοποιείται ενημέρωση του λογαριασμού σας"
@@ -6604,8 +6634,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "Payment Processing": [
+        "Επεξεργασία Πληρωμής"
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
@@ -6621,6 +6657,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Επεξεργαζόμαστε την πληρωμή σας για το τιμολογημένο τιμολόγιο. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή προτού κάνετε αλλαγές στο πρόγραμμά σας ή ενημερώσετε τα στοιχεία πληρωμής σας. Σας ευχαριστούμε για την υπομονή σας."
       ]
     },
     "Payments.Error": {
@@ -8476,9 +8515,6 @@
       "Change login password": [
         "Αλλαγή κωδικού σύνδεσης"
       ],
-      "Change mailbox password": [
-        "Αλλαγή κωδικού θυρίδας"
-      ],
       "Change organization name": [
         "Αλλαγή ονόματος οργανισμού"
       ],
@@ -8490,6 +8526,9 @@
       ],
       "Change role": [
         "Αλλαγή ρόλου"
+      ],
+      "Change second password": [
+        "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
       "Close": [
         "Κλείσιμο"
@@ -8698,8 +8737,8 @@
       "Invoices": [
         "Τιμολόγια"
       ],
-      "Login password": [
-        "Κωδικός σύνδεσης"
+      "Main password": [
+        "Κύριος κωδικός πρόσβασης"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
@@ -8900,8 +8939,8 @@
       "Type": [
         "Τύπος"
       ],
-      "Unlock your mailbox": [
-        "Ξεκλειδώστε τη θυρίδα σας"
+      "Unlock your data": [
+        "Ξεκλειδώστε τα δεδομένα σας"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Αναβαθμίστε την προστασία του δικτύου σας με αποκλειστικούς διακομιστές"

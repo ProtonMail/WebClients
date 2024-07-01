@@ -831,6 +831,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Ми зіткнулися з проблемою під час запуску ${ PASS_SHORT_APP_NAME }. Якщо ця проблема продовжується, зверніться в нашу службу підтримки за допомогою."
       ],
+      "Wrong password": [
+        "Неправильний пароль"
+      ],
       "Wrong PIN code. Try again.": [
         "Неправильний PIN-код. Спробуйте ще раз."
       ],
@@ -1547,6 +1550,9 @@
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблоковано"
       ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Доступ до вашого облікового запису обмежено, оскільки ваша організація запровадила двоетапну перевірку. Увімкніть двоетапну перевірку в налаштуваннях облікового запису або зверніться до свого адміністратора."
+      ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
       ]
@@ -2018,22 +2024,6 @@
         "Ви збираєтеся створити"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Введіть PIN-код"
-      ],
-      "Sign in to your account": [
-        "Увійдіть у свій обліковий запис"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Розблокувати ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Ласкаво просимо до ${ brandNameJSX }"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } елемент",
@@ -2329,9 +2319,6 @@
       ],
       "Trash empty": [
         "Смітник порожній"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Розблокувати ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Доступне оновлення"
