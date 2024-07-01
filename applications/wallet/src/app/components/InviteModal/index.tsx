@@ -11,7 +11,7 @@ import { useWalletApiClients } from '@proton/wallet';
 import { Button, Input, Modal } from '../../atoms';
 import { APP_NAME } from '../../config';
 
-export interface InviteModalOwnProps {
+interface InviteModalOwnProps {
     onInviteSent: (email: string) => void;
 }
 

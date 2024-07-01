@@ -1,9 +1,8 @@
-import { format } from 'date-fns';
-import { isSameWeek, isToday } from 'date-fns';
+import { format, isSameWeek, isToday } from 'date-fns';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmTransactionDetails, WasmTransactionTime, WasmTxOut } from '@proton/andromeda';
+import { WasmTransactionDetails, WasmTxOut } from '@proton/andromeda';
 import { SECOND } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -27,22 +26,6 @@ export const transactionTime = (transaction: WasmTransactionDetails) => {
     }
 
     return new Date().getTime();
-};
-
-export const sortTransactionsByTime = (transactions: WasmTransactionDetails[]) => {
-    return [...transactions].sort((txA, txB) => transactionTime(txB) - transactionTime(txA));
-};
-
-export const confirmationTimeToHumanReadable = (confirmation?: WasmTransactionTime | null): string => {
-    if (confirmation?.confirmation_time) {
-        return format(new Date(Number(confirmation.confirmation_time) * 1000), 'dd MMM yyyy, hh:mm');
-    }
-
-    if (confirmation?.last_seen) {
-        return format(new Date(Number(confirmation.last_seen) * 1000), 'dd MMM yyyy, hh:mm');
-    }
-
-    return '-';
 };
 
 export const getFormattedPeriodSinceConfirmation = (now: Date, confirmation: Date) => {

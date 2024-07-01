@@ -2,15 +2,7 @@ import { c } from 'ttag';
 
 import { Props as OptionProps } from '@proton/components/components/option/Option';
 
-export const BITCOIN_CURRENCY = {
-    ID: 'bitcoin',
-    Name: 'Bitcoin',
-    Symbol: 'BTC',
-    Sign: '₿',
-    Cents: 1,
-};
-
-export type CurrencyOption<S extends string, T extends { Symbol: S; Name: string }> = T & {
+type CurrencyOption<S extends string, T extends { Symbol: S; Name: string }> = T & {
     type: 'option';
 };
 
@@ -19,7 +11,7 @@ interface DividerOption {
     text: string;
 }
 
-export type Option<S extends string, T extends { Symbol: S; Name: string }> = CurrencyOption<S, T> | DividerOption;
+type Option<S extends string, T extends { Symbol: S; Name: string }> = CurrencyOption<S, T> | DividerOption;
 
 export const getIsCurrencyOption = <S extends string, T extends { Symbol: S; Name: string }>(
     option: Option<S, T>

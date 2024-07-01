@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 import { Button, Modal } from '../../../atoms';
 import { SubTheme } from '../../../utils';
 
-export interface TransactionSendConfirmationModalOwnProps {
+interface TransactionSendConfirmationModalOwnProps {
     theme?: SubTheme;
     onClickDone: () => void;
     onClickInviteAFriend: () => void;

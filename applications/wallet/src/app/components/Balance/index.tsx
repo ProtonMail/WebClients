@@ -22,7 +22,7 @@ import { useBalance } from './useBalance';
 
 import './Balance.scss';
 
-export const lineChartOptions: ChartOptions<'line'> = {
+const lineChartOptions: ChartOptions<'line'> = {
     maintainAspectRatio: false,
     scales: {
         x: { display: false },

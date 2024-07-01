@@ -1,5 +1,5 @@
 .sidebar-wallet-link-container:has([aria-current='page'].navigation-link) {
-	border-left: 4px solid var(--interaction-norm);
+	border-inline-start: 4px solid var(--interaction-norm);
 
 	.navigation-link {
 		background: var(--background-weak);
