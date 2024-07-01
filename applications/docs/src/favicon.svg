@@ -1,9 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-	<g>
-		<path d="M240 41v158c0 18-11.7 33.4-27.9 38.8-4.1 1.4-8.5 2.2-13.1 2.2H41c-4.6 0-9-.8-13.2-2.2-.6-.2-1.3-.5-1.9-.7s-1.2-.5-1.8-.8c-.9-.4-1.8-.9-2.7-1.3-1.2-.6-2.3-1.3-3.4-2-.3-.2-.6-.4-.8-.6C6.8 225 0 212.8 0 199V41C0 27.2 6.8 15 17.2 7.6c.3-.2.5-.4.8-.6 1.1-.7 2.2-1.4 3.4-2 .9-.5 1.8-.9 2.7-1.3.6-.3 1.2-.5 1.8-.8.6-.2 1.2-.5 1.9-.7C32 .8 36.4 0 41 0h158c4.6 0 9 .8 13.1 2.1 15.8 5.3 27.3 20.1 27.8 37.5v1.3Z" fill="#34b8ee" stroke-width="0" />
-		<path d="M43.7 107.7c0-5.6 4.5-10.1 10.1-10.1h42.7c5.6 0 10.1 4.5 10.1 10.1s-4.5 10.1-10.1 10.1H53.8c-5.6 0-10.1-4.5-10.1-10.1M43.7 146.9c0-5.6 4.5-10.1 10.1-10.1h70.5c5.6 0 10.1 4.5 10.1 10.1s-4.5 10.1-10.1 10.1H53.8c-5.6 0-10.1-4.5-10.1-10.1M43.7 186.2c0-5.6 4.5-10.1 10.1-10.1h70.5c5.6 0 10.1 4.5 10.1 10.1s-4.5 10.1-10.1 10.1H53.8c-5.6 0-10.1-4.5-10.1-10.1" fill="#fff" fill-rule="evenodd" stroke-width="0" />
-		<path d="M121.9 0h59v59h-59z" stroke-width="0" fill="#85d4f5" />
-		<path d="M240 39.7V59h-59V0h18.1c4.6 0 9 .8 13.1 2.1C228 7.4 239.5 22.2 240 39.6Z" stroke-width="0" fill="#d6f1fc" />
-		<path d="M181 59h59v59h-59z" stroke-width="0" fill="#85d4f5" />
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
+	<g clip-path="url(#a)">
+		<mask id="b" width="48" height="48" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:luminance">
+			<path fill="#fff" d="M48 0H0v48h48z" />
+		</mask>
+		<g mask="url(#b)">
+			<path fill="url(#c)" d="M40 0H8a8 8 0 0 0-8 8v32a8 8 0 0 0 8 8h32a8 8 0 0 0 8-8V8a8 8 0 0 0-8-8" />
+			<path fill="#85D4F5" d="M36 0H24v12h12z" />
+			<path fill="#D6F1FC" d="M36 0h4a8 8 0 0 1 8 8v4H36z" />
+			<path fill="#85D4F5" d="M48 12H36v12h12z" />
+			<path fill="#fff" fill-rule="evenodd" d="M26 38a2 2 0 0 1-2 2H10a2 2 0 1 1 0-4h14a2 2 0 0 1 2 2M20 30a2 2 0 0 1-2 2h-8a2 2 0 1 1 0-4h8a2 2 0 0 1 2 2" clip-rule="evenodd" />
+		</g>
 	</g>
+	<defs>
+		<radialGradient id="c" cx="0" cy="0" r="1" gradientTransform="rotate(-53.15 55.901 32.11)scale(56.6412)" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#6D4AFF" />
+			<stop offset="1" stop-color="#34B8EE" />
+		</radialGradient>
+		<clipPath id="a">
+			<path fill="#fff" d="M0 0h48v48H0z" />
+		</clipPath>
+	</defs>
 </svg>
