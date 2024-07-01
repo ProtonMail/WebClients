@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Αλλαγή κλειδιών"
       ],
-      "Change mailbox password": [
-        "Αλλαγή κωδικού γραμματοκιβωτίου"
-      ],
       "Change other email subscriptions": [
         "Αλλαγή άλλων συνδρομών email"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
+      ],
+      "Change second password": [
+        "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
       "Chat with us": [
         "Επικοινωνήστε μαζί μας"
@@ -4113,11 +4113,11 @@
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Incorrect password": [
         "Λανθασμένος κωδικός πρόσβασης"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
       ],
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
@@ -4313,6 +4313,9 @@
       ],
       "Require at least one condition": [
         "Απαιτείται τουλάχιστον μία συνθήκη"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Η συνεδρία έληξε. Παρακαλούμε ανανεώστε τη σελίδα."
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
@@ -6121,17 +6124,6 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -6189,8 +6181,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
       ],
       "${ n } address": [
         "${ n } διεύθυνση",
@@ -7558,6 +7550,9 @@
         "Παρακαλούμε προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου για το χρήστη στη σειρά",
         "Παρακαλούμε προσθέστε διευθύνσεις ηλεκτρονικού ταχυδρομείου για τους χρήστες στις σειρές"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Παρακαλούμε ζητήστε από τον ιδιοκτήτη να σας προσκαλέσει απευθείας στο έγγραφο."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
       ],
@@ -7587,6 +7582,9 @@
       ],
       "please open a support ticket": [
         "παρακαλούμε ανοίξτε ένα εισιτήριο υποστήριξης"
+      ],
+      "Please open the document to view it.": [
+        "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
       ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
@@ -7627,6 +7625,9 @@
       "Preview for this file type is not supported": [
         "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
+      "Preview of documents is not yet supported.": [
+        "Η προεπισκόπηση εγγράφων δεν υποστηρίζεται ακόμη."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
       ],
@@ -7644,6 +7645,9 @@
       ],
       "Public link invite": [
         "Πρόσκληση δημόσιου σύνδεσμου"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
       "purchase additional storage": [
         "αγοράσετε πρόσθετο χώρου αποθήκευσης"
@@ -7994,6 +7998,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Αυτή η σύνδεση πρόσκλησης έχει λήξει. Παρακαλούμε επικοινωνήστε με το διαχειριστή σας για να ζητήσετε πρόσβαση."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Αυτός ο σύνδεσμος πρόσκλησης έχει ήδη χρησιμοποιηθεί. Παρακαλούμε συνδεθείτε απευθείας."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Αυτή είναι μια 12-λεκτη φράση που σας είχε ζητηθεί να ορίσετε."
       ],
@@ -8165,11 +8172,11 @@
       "Two-factor authentication enabled": [
         "Ο έλεγχος ταυτότητας δύο παραγόντων ενεργοποιήθηκε"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Η λειτουργία δύο κωδικών πρόσβασης απαιτεί δύο κωδικούς πρόσβασης: έναν για να συνδεθείτε στον λογαριασμό σας και έναν για να αποκρυπτογραφήσετε το γραμματοκιβώτιό σας. (Για προχωρημένους)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Η λειτουργία δύο κωδικών πρόσβασης απαιτεί δύο κωδικούς πρόσβασης: έναν για να συνδεθείτε στον λογαριασμό σας και έναν για να αποκρυπτογραφήσετε τα δεδομένα σας. (Για προχωρημένους)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για την αποκρυπτογράφηση σύνδεσης και αποκωδικοποίησης. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να επιλέξτε τις ρυθμίσεις δύο κωδικών πρόσβασης, εισαγάγετε τον κωδικό σύνδεσης (login password) και έπειτα τον κωδικό θυρίδας (mailbox password)."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για σύνδεση και αποκρυπτογράφηση δεδομένων. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να μεταβείτε σε λειτουργία δύο κωδικών πρόσβασης, ορίστε πρώτα έναν κωδικό πρόσβασης σύνδεσης και, στη συνέχεια, ορίστε έναν δεύτερο κωδικό πρόσβασης."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Αδυναμία επαλήθευσης υπογραφής αρχείου ανάκτησης. Παρακαλούμε επικοινωνήστε με την υποστήριξη."
@@ -8614,6 +8621,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Χρειάζεται ακόμα να απαντήσετε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Θα μπορείτε να προβιβάσετε τον χρήστη σε διαχειριστή μόλις αποδεχτεί την πρόσκληση."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
       ],
@@ -8739,6 +8749,17 @@
         "Συνάντηση Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Όταν είναι ενεργό, οι υποφάκελοι κληρονομούν το χρώμα του γονικού φακέλου."
@@ -8824,6 +8845,9 @@
       ],
       "Paid": [
         "Πληρωμένο"
+      ],
+      "Processing": [
+        "Επεξεργασία"
       ],
       "Unpaid": [
         "Απλήρωτο"
@@ -9310,9 +9334,6 @@
       "Awarded": [
         "Βραβευμένα"
       ],
-      "Beta": [
-        "Beta (Δοκιμαστική)"
-      ],
       "Billing address": [
         "Διεύθυνση χρέωσης"
       ],
@@ -9409,9 +9430,6 @@
       "Confirm login password": [
         "Επιβεβαίωση κωδικού σύνδεσης"
       ],
-      "Confirm mailbox password": [
-        "Επιβεβαίωση Κωδικού θυρίδας"
-      ],
       "Confirm new password": [
         "Επιβεβαίωση νέου κωδικού"
       ],
@@ -9420,6 +9438,9 @@
       ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
+      ],
+      "Confirm second password": [
+        "Επιβεβαίωση δεύτερου κωδικού πρόσβασης"
       ],
       "Contacts": [
         "Επαφές"
@@ -9513,6 +9534,9 @@
       ],
       "Disable data export for organization members": [
         "Απενεργοποίηση εξαγωγής δεδομένων για μέλη του οργανισμού"
+      ],
+      "Disable sharing outside the organization": [
+        "Απενεργοποίηση κοινής χρήσης εκτός του οργανισμού"
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -9709,9 +9733,6 @@
       "Mail settings": [
         "Ρυθμίσεις Mail"
       ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
       "Main": [
         "Κύριο"
       ],
@@ -9769,9 +9790,6 @@
       "New login password": [
         "Νέος κωδικός σύνδεσης"
       ],
-      "New mailbox password": [
-        "Νέος Κωδικός Θυρίδας"
-      ],
       "New organization identity": [
         "Ταυτότητα νέου οργανισμού"
       ],
@@ -9780,6 +9798,9 @@
       ],
       "New password": [
         "Νέος κωδικός"
+      ],
+      "New second password": [
+        "Νέος δεύτερος κωδικός πρόσβασης"
       ],
       "No filter": [
         "Χωρίς φίλτρο"
@@ -9922,6 +9943,9 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Second password": [
+        "Δεύτερος κωδικός πρόσβασης"
+      ],
       "Security code (${ codeName })": [
         "Κωδικός ασφαλείας (${ codeName })"
       ],
@@ -10002,6 +10026,12 @@
       ],
       "Subscription options": [
         "Επιλογές συνδρομής"
+      ],
+      "Swipe left action": [
+        "Ενέργεια σάρωσης προς τα αριστερά"
+      ],
+      "Swipe right action": [
+        "Ενέργεια σάρωσης προς τα δεξιά"
       ],
       "Synchronize with system": [
         "Συγχρονισμός με το σύστημα"
@@ -12192,6 +12222,9 @@
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
       ],
+      "Archive": [
+        "Αρχειοθετημένα"
+      ],
       "Ask each time": [
         "Ερώτηση κάθε φορά"
       ],
@@ -12230,6 +12263,9 @@
       ],
       "Left to Right": [
         "Αριστερά προς Δεξιά"
+      ],
+      "Mark as read": [
+        "Σήμανση ως διαβασμένο"
       ],
       "My reason isn't listed": [
         "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
@@ -12288,11 +12324,20 @@
       "Setup incomplete": [
         "Η ρύθμιση δεν είναι ολοκληρωμένη"
       ],
+      "Spam": [
+        "Ανεπιθύμητα"
+      ],
       "Standard server configs": [
         "Ρυθμίσεις τυπικού διακομιστή"
       ],
+      "Star": [
+        "Αστέρι"
+      ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
+      ],
+      "Trash": [
+        "Διαγραμμένα"
       ]
     },
     "Option delay send seconds": {
@@ -12905,8 +12950,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "Payment Processing": [
+        "Επεξεργασία Πληρωμής"
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
@@ -12922,6 +12973,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Επεξεργαζόμαστε την πληρωμή σας για το τιμολογημένο τιμολόγιο. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή προτού κάνετε αλλαγές στο πρόγραμμά σας ή ενημερώσετε τα στοιχεία πληρωμής σας. Σας ευχαριστούμε για την υπομονή σας."
       ]
     },
     "Payments.Error": {
@@ -15388,9 +15442,6 @@
       "Change login password": [
         "Αλλαγή κωδικού σύνδεσης"
       ],
-      "Change mailbox password": [
-        "Αλλαγή κωδικού θυρίδας"
-      ],
       "Change organization name": [
         "Αλλαγή ονόματος οργανισμού"
       ],
@@ -15402,6 +15453,9 @@
       ],
       "Change role": [
         "Αλλαγή ρόλου"
+      ],
+      "Change second password": [
+        "Αλλαγή δεύτερου κωδικού πρόσβασης"
       ],
       "Choose an account": [
         "Επιλέξτε ένα λογαριασμό"
@@ -15721,15 +15775,6 @@
       "Folders and labels": [
         "Φάκελοι και ετικέτες"
       ],
-      "For Linux": [
-        "Για Linux"
-      ],
-      "For macOS": [
-        "Για macOS"
-      ],
-      "For Windows": [
-        "Για Windows"
-      ],
       "Forgot recovery method": [
         "Ξεχάσατε τη μέθοδο ανάκτησης"
       ],
@@ -15848,8 +15893,8 @@
       "Link confirmation": [
         "Επιβεβαίωση συνδέσμου"
       ],
-      "Login password": [
-        "Κωδικός σύνδεσης"
+      "Main password": [
+        "Κύριος κωδικός πρόσβασης"
       ],
       "Messages": [
         "Μηνύματα"
@@ -16197,8 +16242,8 @@
       "Type": [
         "Τύπος"
       ],
-      "Unlock your mailbox": [
-        "Ξεκλειδώστε τη θυρίδα σας"
+      "Unlock your data": [
+        "Ξεκλειδώστε τα δεδομένα σας"
       ],
       "Upgrade plan": [
         "Αναβάθμιση προγράμματος"
