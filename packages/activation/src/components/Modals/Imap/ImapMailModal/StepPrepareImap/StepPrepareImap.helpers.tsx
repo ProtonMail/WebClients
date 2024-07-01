@@ -86,12 +86,16 @@ export const formatPrepareStepPayload = ({
                 } else if (folder.systemFolder) {
                     result = folder.systemFolder;
                 } else if (folder.protonPath.length < MAX_FOLDERS_DEPTH || folder.separator !== '/') {
-                    result = folder.protonPath.join(folder.separator);
+                    result = folder.protonPath
+                        // Folder name could contain '/' in the name, this is considered as node separator in the API
+                        .map((item) => item.replaceAll('/', '\\/'))
+                        .join(folder.separator);
                 }
                 // Here separator is '/'
                 else {
-                    const itemsWithoutLast = folder.protonPath.slice(0, -1);
-                    const escapedLastItem = (folder.protonPath.slice(-1).pop() || '').split('/').join('\\/');
+                    const cleanedPath = folder.protonPath.map((item) => item.replaceAll('/', '\\/'));
+                    const itemsWithoutLast = cleanedPath.slice(0, -1);
+                    const escapedLastItem = cleanedPath.slice(-1).pop() || '';
                     result = [...itemsWithoutLast, escapedLastItem].join('/');
                 }
                 return { FolderPath: result };
