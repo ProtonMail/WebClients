@@ -9,8 +9,8 @@ import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { Comment } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding'
-import { CommentResponseDto } from '../Api/Docs/Types'
 import metrics from '@proton/metrics'
+import { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 
 export class DecryptComment implements UseCaseInterface<Comment> {
   constructor(private encryption: EncryptionService<EncryptionContext.PersistentComment>) {}

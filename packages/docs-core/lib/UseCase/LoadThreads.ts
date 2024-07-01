@@ -5,7 +5,7 @@ import { CommentThread } from '../Models'
 import { ServerTime } from '@proton/docs-shared'
 import { DecryptComment } from './DecryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 import { LoggerInterface } from '@proton/utils/logs'
 
 /**

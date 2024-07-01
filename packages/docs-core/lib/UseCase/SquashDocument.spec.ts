@@ -1,5 +1,5 @@
 import { Result } from '../Domain/Result/Result'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 import { DecryptCommit } from './DecryptCommit'
 import { EncryptMessage } from './EncryptMessage'
 import { SquashAlgorithm } from './SquashAlgorithm'

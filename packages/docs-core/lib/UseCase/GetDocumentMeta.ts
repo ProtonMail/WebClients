@@ -1,6 +1,6 @@
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 
 import { DocumentMetaInterface } from '@proton/docs-shared'
 import { DocumentMeta } from '../Models/DocumentMeta'

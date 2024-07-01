@@ -25,7 +25,7 @@ import { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterfa
 import { DocControllerEvent, DocControllerEventPayloads } from '../../Controller/Document/DocControllerEvent'
 import metrics from '@proton/metrics'
 import { EventTypeEnum } from '@proton/docs-proto'
-import { DocsApi } from '../../Api/Docs/DocsApi'
+import { DocsApi } from '../../Api/DocsApi'
 
 export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
