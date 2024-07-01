@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import updateObject from '@proton/shared/lib/helpers/updateObject';

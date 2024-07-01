@@ -2,7 +2,9 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: './jest.env.js',
-    transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto|pmcrypto-v6-canary|bip39)/)'],
+    transformIgnorePatterns: [
+        'node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto|pmcrypto-v6-canary|bip39)/)',
+    ],
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
     },
@@ -11,9 +13,9 @@ module.exports = {
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
     },
-    reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
+    coverageReporters: ['text-summary', 'json'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     collectCoverageFrom: ['**/*.tsx', '!**/*.stories.tsx'],
-    coverageReporters: ['text', 'lcov', 'cobertura'],
     coverageThreshold: {
         global: {
             branches: 66,

@@ -2,7 +2,6 @@ import { createBrowserHistory } from 'history';
 import { History } from 'history';
 import { EVENTS, UnleashClient } from 'unleash-proxy-client';
 
-import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { createCustomFetch, getUnleashConfig } from '@proton/components/containers/unleash/UnleashFlagProvider';
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
@@ -54,6 +53,8 @@ import {
 } from '@proton/shared/lib/keys';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
+
+import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
 
 export * from './action';
 

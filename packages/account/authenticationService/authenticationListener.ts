@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { handleLogout } from '@proton/shared/lib/authentication/logout';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

@@ -1,6 +1,6 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getAllowAddressDeletion } from '@proton/shared/lib/api/addresses';
 

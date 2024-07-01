@@ -16,6 +16,6 @@ module.exports = {
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.(md)$': '<rootDir>/src/__mocks__/mdMock.ts',
     },
-    reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
-    coverageReporters: ['text', 'lcov', 'cobertura'],
+    coverageReporters: ['text-summary', 'json'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
 };

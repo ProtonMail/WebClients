@@ -18,7 +18,7 @@
         "pmcrypto-v6-canary": "npm:@protontech/pmcrypto@^8.0.0-canary.3.patch.0"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "@proton/eslint-config-proton": "workspace:^",
         "@types/chai": "^4.3.16",
         "@types/chai-as-promised": "^7.1.8",
         "chai": "^5.1.1",

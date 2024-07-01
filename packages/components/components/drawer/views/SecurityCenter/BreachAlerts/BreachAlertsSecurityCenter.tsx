@@ -19,8 +19,7 @@ import { BREACH_STATE, FetchedBreaches, SampleBreach } from '@proton/components/
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
 import { useApi, useErrorHandler, useNotifications, useUser, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
-import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
-import { baseUseDispatch } from '@proton/redux-shared-store/sharedContext';
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';

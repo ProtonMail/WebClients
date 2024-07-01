@@ -3,7 +3,7 @@ module.exports = {
     clearMocks: true,
     testEnvironment: 'jsdom',
     collectCoverageFrom: ['*.ts', '!index.ts'],
-    coverageReporters: ['text', 'lcov', 'cobertura'],
+    reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
     coverageThreshold: {
         global: {
             branches: 100,

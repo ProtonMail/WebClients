@@ -1,7 +1,7 @@
 import { PayloadAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
 import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api/organization';
 import { APPS } from '@proton/shared/lib/constants';

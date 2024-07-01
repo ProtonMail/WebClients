@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';

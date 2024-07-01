@@ -7,7 +7,7 @@ import {
 } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType, createPromiseMapCache } from '@proton/redux-utilities';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';

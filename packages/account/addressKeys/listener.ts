@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

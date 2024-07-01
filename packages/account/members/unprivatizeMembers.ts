@@ -1,7 +1,7 @@
 import { UnknownAction } from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';

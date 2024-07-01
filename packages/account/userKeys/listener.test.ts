@@ -3,7 +3,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';

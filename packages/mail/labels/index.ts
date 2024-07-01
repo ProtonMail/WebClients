@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, serverEvent, getInitialModelState } from '@proton/account';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store/interface';
+import { ModelState, getInitialModelState, serverEvent } from '@proton/account';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';

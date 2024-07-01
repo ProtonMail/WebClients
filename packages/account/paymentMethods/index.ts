@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { SavedPaymentMethod } from '@proton/components/payments/core';
-import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';

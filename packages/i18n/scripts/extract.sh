@@ -14,21 +14,10 @@ getFileList() {
   rm -rf webpack:/*/webpack | true
   rm -rf webpack:/*/locales | true
 
-  # can't use the iregex flag,
-  # it doesn't work on PopOS 20.04 (wtf) and on MacOS as the find utility
-  # is too old. -> can't even run find --version
-  find * \
-    -type f \
-    -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx"
-  # -not -path does not work
+  grep -Ril "from 'ttag'" .
 }
 
 getDistDirectory() {
-  # inside the CI we have the dist directory available
-  if [ -n "$CI_COMMIT_REF_NAME" ] && [ -s dist ]; then
-    return 0;
-  fi
-
   if [ -s "dist" ]; then
     echo "extract from dist bundle local"
     return 0
@@ -41,8 +30,8 @@ getDistDirectory() {
     mkdir dist
     tar xzf webapp-bundle.tar.gz -C dist
   else
-    echo "we create the bundle"
-    yarn run build
+    echo "bundle must be built first"
+    exit 1
   fi
 }
 
@@ -53,13 +42,8 @@ function main {
   appName="$(jq -r .name package.json)"
 
   if [ ! -d "/tmp/sourcemapper" ]; then
-    git clone \
-      --quiet \
-      --single-branch \
-      --depth 1 \
-      https://github.com/dhoko/sourcemapper.git "/tmp/sourcemapper";
-  else
-    echo "we have a cache for the sourcemapper"
+    echo "missing source mapper, run ./build.sh"
+    exit 1
   fi;
 
   getDistDirectory
@@ -69,12 +53,12 @@ function main {
     echo "[Parsing] $file";
     if [[ "$OSTYPE" = "darwin"* ]]; then
       if [[ "$(uname -m)" == 'arm64'  ]]; then
-        /tmp/sourcemapper/bin/isourcemapper-arm --input "$file" --output 'i18n-js' &
+        /tmp/sourcemapper/bin/isourcemapper-arm --input "$file" --output 'i18n-js' &> /dev/null &
       else
-        /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &
+        /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &> /dev/null &
       fi
     else
-      /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &
+      /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &> /dev/null &
     fi
   done;
 
@@ -97,7 +81,7 @@ function main {
     sed -i 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
   fi
 
-  rm -rf "./i18n-js";
+  #rm -rf "./i18n-js";
 }
 
 main "$1";

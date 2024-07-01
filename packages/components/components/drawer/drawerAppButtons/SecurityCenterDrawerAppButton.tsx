@@ -4,7 +4,7 @@ import { ThemeColor } from '@proton/colors/types';
 import DrawerAppButton, { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import { useFlag } from '@proton/components/containers';
 import { useDrawer } from '@proton/components/hooks';
-import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
+import { baseUseSelector } from '@proton/react-redux-store';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Optional } from '@proton/shared/lib/interfaces';
 

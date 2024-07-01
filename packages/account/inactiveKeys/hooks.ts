@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { baseUseSelector } from '@proton/redux-shared-store/sharedContext';
+import { baseUseSelector } from '@proton/react-redux-store';
 import { KeyReactivationRequest } from '@proton/shared/lib/keys';
 import { getAllKeysReactivationRequests } from '@proton/shared/lib/keys/getInactiveKeys';
 
