@@ -14,6 +14,7 @@ import {
 } from '@proton/components/components';
 
 import { ConfirmationModal } from './interface';
+import useCancellationTelemetry from './useCancellationTelemetry';
 
 interface Props extends ModalProps, ConfirmationModal {
     ctaText: string;
@@ -28,6 +29,8 @@ const CancelConfirmationModal = ({
     cancelSubscription,
     ...modalProps
 }: Props) => {
+    const { sendCancelModalKeepPlanReport, sendCancelModalConfirmCancelReport } = useCancellationTelemetry();
+
     return (
         <ModalTwo {...modalProps} data-testid="cancellation-reminder-confirmation">
             <ModalTwoHeader title={c('Subscription reminder').t`Cancel subscription?`} />
@@ -43,10 +46,18 @@ const CancelConfirmationModal = ({
                 </StripedList>
             </ModalTwoContent>
             <ModalTwoFooter className="flex justify-space-between">
-                <Button onClick={cancelSubscription} shape="outline">{c('Subscription reminder')
-                    .t`Cancel subscription`}</Button>
+                <Button
+                    shape="outline"
+                    onClick={() => {
+                        sendCancelModalConfirmCancelReport();
+                        cancelSubscription();
+                    }}
+                >{c('Subscription reminder').t`Cancel subscription`}</Button>
                 <ButtonLike
                     as={SettingsLink}
+                    onClick={() => {
+                        sendCancelModalKeepPlanReport();
+                    }}
                     path="/dashboard"
                     shape="solid"
                     color="norm"
