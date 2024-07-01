@@ -23,16 +23,17 @@ import {
 import { EditorFrame } from './EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
-import { NodeMeta } from '@proton/drive-store'
+import { DocumentAction, NodeMeta } from '@proton/drive-store'
 import { c } from 'ttag'
 import { useGenericAlertModal } from './Modals/GenericAlert'
 
 type Props = {
   lookup: NodeMeta
   injectWithNewContent?: FileToDocPendingConversion
+  action: DocumentAction['mode'] | undefined
 }
 
-export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
+export function DocumentViewer({ lookup, injectWithNewContent, action }: Props) {
   const application = useApplication()
 
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
@@ -45,9 +46,17 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
   const [docOrchestrator, setDocOrchestrator] = useState<EditorOrchestratorInterface | null>(null)
   const [bridge, setBridge] = useState<ClientToEditorBridge | null>(null)
   const [initializing, setInitializing] = useState(false)
-  const [readyToShowDebugMenu, setReadyToShowDebugMenu] = useState(false)
+  const [ready, setReady] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [didLoadTitle, setDidLoadTitle] = useState(false)
+  const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
   const debug = useDebug()
+
+  useEffect(() => {
+    if (action === 'download' && didLoadTitle && didLoadEditorContent && docOrchestrator) {
+      void docOrchestrator.exportAndDownload('docx')
+    }
+  }, [action, docOrchestrator, didLoadTitle, didLoadEditorContent])
 
   useEffect(() => {
     if (!bridge) {
@@ -58,6 +67,18 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
       void bridge.editorInvoker.handleCommentsChange()
     }, CommentsEvent.CommentsChanged)
   }, [application.eventBus, bridge])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback(() => {
+      setDidLoadTitle(true)
+    }, DocControllerEvent.DidLoadDocumentTitle)
+  }, [application.eventBus])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback(() => {
+      setDidLoadEditorContent(true)
+    }, DocControllerEvent.DidLoadInitialEditorContent)
+  }, [application.eventBus])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
@@ -202,7 +223,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
     const observer = application.docLoader.addStatusObserver({
       onSuccess: (orchestrator) => {
         setDocOrchestrator(orchestrator)
-        setReadyToShowDebugMenu(true)
+        setReady(true)
 
         if (editorFrame) {
           createBridge(orchestrator, editorFrame)
@@ -227,7 +248,7 @@ export function DocumentViewer({ lookup, injectWithNewContent }: Props) {
 
   return (
     <div className="relative h-full w-full">
-      {readyToShowDebugMenu && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
+      {ready && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
 
       {!docOrchestrator && (
         <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">

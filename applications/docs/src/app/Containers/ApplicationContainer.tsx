@@ -188,6 +188,7 @@ function ApplicationContainer() {
             <Content
               onConversionSuccess={onConversionSuccess}
               openAction={openAction}
+              actionMode={action}
               isCreatingNewDocument={isCreatingNewDocument}
               injectWithNewContent={contentToInject}
               getNodeContents={driveCompat.getNodeContents}
@@ -203,11 +204,13 @@ function ApplicationContainer() {
 function Content({
   isCreatingNewDocument,
   openAction,
+  actionMode,
   onConversionSuccess,
   injectWithNewContent,
   getNodeContents,
 }: {
   openAction: DocumentAction | null
+  actionMode: DocumentAction['mode'] | undefined
   isCreatingNewDocument: boolean
   onConversionSuccess: (result: FileToDocConversionResult) => void
   injectWithNewContent?: FileToDocPendingConversion
@@ -238,7 +241,7 @@ function Content({
     return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={lookup} />
   }
 
-  return <DocumentViewer injectWithNewContent={injectWithNewContent} lookup={lookup} />
+  return <DocumentViewer injectWithNewContent={injectWithNewContent} lookup={lookup} action={actionMode} />
 }
 
 export default ApplicationContainer
