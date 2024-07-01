@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Cambia chiavi"
       ],
-      "Change mailbox password": [
-        "Cambia la password della casella di posta"
-      ],
       "Change other email subscriptions": [
         "Cambia altre iscrizioni email"
       ],
       "Change password": [
         "Cambia la password"
+      ],
+      "Change second password": [
+        "Cambia la seconda password"
       ],
       "Chat with us": [
         "Chatta con noi"
@@ -548,7 +548,7 @@
         "Approfitta dell'offerta"
       ],
       "Get verification code": [
-        "Ottieni il codice di verifica"
+        "Invia il codice di verifica"
       ],
       "Go to label": [
         "Vai all'etichetta"
@@ -818,7 +818,7 @@
         "Richiede un indirizzo email di recupero verificato"
       ],
       "Resend code": [
-        "Reinvia codice"
+        "Reinvia il codice"
       ],
       "Reset credentials": [
         "Ripristina credenziali"
@@ -4063,13 +4063,13 @@
         "L'indirizzo email è obbligatorio"
       ],
       "Email is not valid": [
-        "Email non valida"
+        "Indirizzo email non valido"
       ],
       "Empty condition": [
         "Condizione vuota"
       ],
       "Enter 6 digits": [
-        "Inserisci 6 cifre"
+        "Inserisci il codice a 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
@@ -4111,13 +4111,13 @@
         "Tipo di file errato. Carica un file in formato PNG o JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Per favore riprova."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Per favore riprova."
+        "Credenziali errate. Riprova."
       ],
       "Incorrect password": [
         "Password errata"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Password secondaria errata. Riprova."
       ],
       "Incorrect username": [
         "Username non corretto"
@@ -4314,6 +4314,9 @@
       "Require at least one condition": [
         "Richiede almeno una condizione"
       ],
+      "Session expired. Please refresh the page.": [
+        "Sessione scaduta. Aggiorna la pagina."
+      ],
       "Signature not verified": [
         "Firma non verificata"
       ],
@@ -4393,7 +4396,7 @@
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
       "This field is required": [
-        "Questo campo è obbligatorio"
+        "Campo necessario"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
@@ -6121,17 +6124,6 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
@@ -6189,8 +6181,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vuole condividere dei dati con te su ${ PASS_APP_NAME }"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } può anche essere usato con una singola password, la quale sostituisce sia la password di accesso sia quella della casella di posta. Per passare alla modalità a singola password, inserisci la password che desideri e clicca su Salva."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } può anche essere usato con una singola password che sostituisce sia la password di accesso che la seconda password. Per passare alla modalità a singola password, inserisci la password che desideri e clicca su Salva."
       ],
       "${ n } address": [
         "${ n } indirizzo",
@@ -6316,7 +6308,7 @@
         "Un nome che ti aiuta a identificare dove viene usato, in modo che potrai revocarlo o estenderlo in futuro."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
         "Un file di recupero ti consente di sbloccare e visualizzare i tuoi dati dopo il recupero dell'account"
@@ -7032,7 +7024,7 @@
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Se hai un dominio personalizzato con ${ MAIL_APP_NAME }, puoi impostare un indirizzo email catch-all per ricevere i messaggi inviati al tuo dominio ma a un indirizzo email non valido (ad es. a causa di errori di battitura)."
@@ -8012,6 +8004,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Questo link di invito è scaduto. Contatta l'amministratore per richiedere l'accesso."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Questo link di invito è già stato usato. Effettua l'accesso direttamente."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Questa è una frase di 12 parole che ti è stato chiesto di impostare."
       ],
@@ -8133,7 +8128,7 @@
         "Per essere sicuri che tu non perda dati importanti, ${ DRIVE_APP_NAME } salva le vecchie versioni dei tuoi file mentre tu e i tuoi collaboratori effettuate delle modifiche. Seleziona per quanto tempo ${ BRAND_NAME } deve mantenere le versioni precedenti."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, verifica di essere umano."
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -8183,11 +8178,11 @@
       "Two-factor authentication enabled": [
         "Autenticazione a due fattori attivata"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "La modalità a doppia password richiede due password: una per accedere al tuo account e un'altra per decrittografare la tua casella di posta. (Avanzato)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "La modalità a due password richiede due password: una per accedere al tuo account e una per decrittografare i tuoi dati. (Avanzato)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "La modalità a doppia password utilizza due password separate per l'accesso e per la decrittografia della casella di posta. Questo fornisce un minimo vantaggio in termini di sicurezza in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, imposta prima una password di accesso e poi una per la casella di posta."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "La modalità a due password utilizza due password separate per l'accesso e la decrittografia dei dati. Questo fornisce un piccolo vantaggio di protezione in alcune situazioni, tuttavia è consigliabile la modalità a una sola password per la maggior parte degli utenti. Per passare alla modalità a due password, imposta prima la password di accesso e poi imposta la seconda."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Impossibile verificare la firma del file di recupero. Contatta l'assistenza."
@@ -8705,7 +8700,7 @@
         "Il tuo metodo di recupero dei dati è impostato"
       ],
       "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -8739,7 +8734,7 @@
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "L'abbonamento è limitato a 10 versioni per un massimo di 7 giorni."
@@ -8758,6 +8753,17 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8845,6 +8851,9 @@
       ],
       "Paid": [
         "Pagato"
+      ],
+      "Processing": [
+        "Elaborazione"
       ],
       "Unpaid": [
         "Non pagato"
@@ -9392,7 +9401,7 @@
         "Codice"
       ],
       "Code is 6 digits without spaces": [
-        "Il codice è di 6 cifre senza spazi"
+        "Codice a 6 cifre senza spazi"
       ],
       "Collect usage diagnostics": [
         "Raccogli la diagnostica di utilizzo"
@@ -9430,9 +9439,6 @@
       "Confirm login password": [
         "Conferma la password di accesso"
       ],
-      "Confirm mailbox password": [
-        "Conferma la password della casella di posta"
-      ],
       "Confirm new password": [
         "Conferma la nuova password"
       ],
@@ -9441,6 +9447,9 @@
       ],
       "Confirm password": [
         "Conferma la password"
+      ],
+      "Confirm second password": [
+        "Conferma la seconda password"
       ],
       "Contacts": [
         "Contatti"
@@ -9534,6 +9543,9 @@
       ],
       "Disable data export for organization members": [
         "Disabilita l'esportazione dei dati per i membri dell'organizzazione"
+      ],
+      "Disable sharing outside the organization": [
+        "Disabilita la condivisione all'esterno dell'organizzazione"
       ],
       "Display name": [
         "Nome visualizzato"
@@ -9730,9 +9742,6 @@
       "Mail settings": [
         "Impostazioni Mail"
       ],
-      "Mailbox password": [
-        "Password della casella di posta"
-      ],
       "Main": [
         "Principale"
       ],
@@ -9790,9 +9799,6 @@
       "New login password": [
         "Nuova password di accesso"
       ],
-      "New mailbox password": [
-        "Nuova password della casella di posta"
-      ],
       "New organization identity": [
         "Nuova identità dell'organizzazione"
       ],
@@ -9801,6 +9807,9 @@
       ],
       "New password": [
         "Nuova password"
+      ],
+      "New second password": [
+        "Nuova seconda password"
       ],
       "No filter": [
         "Nessun filtro"
@@ -9943,6 +9952,9 @@
       "Reveal password": [
         "Mostra la password"
       ],
+      "Second password": [
+        "Seconda password"
+      ],
       "Security code (${ codeName })": [
         "Codice di sicurezza (${ codeName })"
       ],
@@ -10023,6 +10035,12 @@
       ],
       "Subscription options": [
         "Opzioni di abbonamento"
+      ],
+      "Swipe left action": [
+        "Azione di scorrimento verso sinistra"
+      ],
+      "Swipe right action": [
+        "Azione di scorrimento verso destra"
       ],
       "Synchronize with system": [
         "Sincronizza con il sistema"
@@ -11024,7 +11042,7 @@
         "Ottieni ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "Ottieni ${ planName }"
+        "Ottieni il piano ${ planName }"
       ],
       "Keep ${ plan }": [
         "Mantieni ${ plan }"
@@ -12222,6 +12240,9 @@
       "Android": [
         "Android"
       ],
+      "Archive": [
+        "Sposta nell'archivio"
+      ],
       "Ask each time": [
         "Chiedi ogni volta"
       ],
@@ -12269,6 +12290,9 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "Mark as read": [
+        "Segna come letta"
       ],
       "My reason isn't listed": [
         "Il motivo non è elencato"
@@ -12327,14 +12351,23 @@
       "Setup incomplete": [
         "Configurazione incompleta"
       ],
+      "Spam": [
+        "Sposta in spam"
+      ],
       "Standard server configs": [
         "Configurazioni dei server standard"
+      ],
+      "Star": [
+        "Segna come importante"
       ],
       "TCP": [
         "TCP"
       ],
       "The whole organization": [
         "Tutta l'organizzazione"
+      ],
+      "Trash": [
+        "Sposta nel cestino"
       ],
       "UDP": [
         "UDP"
@@ -12953,8 +12986,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ho capito"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Elaborazione del pagamento"
       ],
       "Processing payment": [
         "Elaborazione pagamento"
@@ -12970,6 +13009,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
       ]
     },
     "Payments.Error": {
@@ -15442,9 +15484,6 @@
       "Change login password": [
         "Cambia la password di accesso"
       ],
-      "Change mailbox password": [
-        "Cambia la password della casella di posta"
-      ],
       "Change organization name": [
         "Cambia nome organizzazione"
       ],
@@ -15456,6 +15495,9 @@
       ],
       "Change role": [
         "Modifica privilegi"
+      ],
+      "Change second password": [
+        "Cambia la seconda password"
       ],
       "Choose an account": [
         "Scegli un account"
@@ -15902,8 +15944,8 @@
       "Link confirmation": [
         "Conferma il link"
       ],
-      "Login password": [
-        "Password di accesso"
+      "Main password": [
+        "Password principale"
       ],
       "Messages": [
         "Messaggi"
@@ -16254,8 +16296,8 @@
       "Type": [
         "Tipo"
       ],
-      "Unlock your mailbox": [
-        "Sblocca la tua casella di posta"
+      "Unlock your data": [
+        "Sblocca i tuoi data"
       ],
       "Upgrade plan": [
         "Effettua l'upgrade"

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Skift nøgler"
       ],
-      "Change mailbox password": [
-        "Skift postkasseadgangskode"
-      ],
       "Change other email subscriptions": [
         "Skift andre e-mail-abonnementer"
       ],
       "Change password": [
         "Skift adgangskode"
+      ],
+      "Change second password": [
+        "Ændr anden adgangskode"
       ],
       "Chat with us": [
         "Chat med os"
@@ -4113,11 +4113,11 @@
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen."
-      ],
       "Incorrect password": [
         "Forkert adgangskode"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Forkert anden adgangskode. Prøv igen."
       ],
       "Incorrect username": [
         "Forkert brugernavn"
@@ -4313,6 +4313,9 @@
       ],
       "Require at least one condition": [
         "Kræver mindst en betingelse"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Sessionen er udløbet. Opdater venligst siden."
       ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
@@ -6121,17 +6124,6 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -6189,8 +6181,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker at dele data med dig i ${ PASS_APP_NAME }"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } kan også benyttes med én enkelt adgangskode, der erstatter både log ind- og postkasseadgangskoden. Skift til enkeltadgangskodetilstand ved at angive den ønskede enkelte adgangskode, og tryk Gem."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } kan også bruges med en enkelt adgangskode, som erstatter både login og den anden adgangskode. Skift til enkeltadgangskode ved at indtaste den enkeltadgangskode, du vil bruge, og klik på Gem."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -8009,6 +8001,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Dette invitationslink er udløbet. Kontakt din administrator for at anmode om adgang."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Dette invitationslink er allerede anvendt. Log ind direkte i stedet."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en 12-ords sætning, som du blev bedt om at indstille."
       ],
@@ -8180,11 +8175,11 @@
       "Two-factor authentication enabled": [
         "To-faktor-godkendelse aktiveret"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "To-adgangskodetilstand kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere din postkasse. (Avanceret)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Tilstanden med to adgangskoder kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere dine data. (Avanceret)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "To-adgangskodetilstand benytter separate adgangskoder til indlogning og postkassedekryptering. Dette giver en lille sikkerhedsfordel i visse situationer, men brug af en-adgangskodetilstand anbefales til de fleste brugere. Angiv først én adgangskode til indlogning og dernæst én til postkassen for at skifte til to-adgangskodtilstand."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Tilstanden med to adgangskoder bruger separate adgangskoder til login og dekryptering af data. I nogle situationer giver det en mindre sikkerhedsfordel, dog anbefaler vi én adgangskodetilstand til de fleste brugere. Skift til to-adgangskodetilstand ved først at indstille en login-adgangskode og derefter en anden adgangskode."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan ikke verificere signaturen for gendannelsesfilen. Kontakt venligst support."
@@ -8755,6 +8750,17 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9430,9 +9436,6 @@
       "Confirm login password": [
         "Bekræft adgangskode til login"
       ],
-      "Confirm mailbox password": [
-        "Bekræft postkasseadgangskode"
-      ],
       "Confirm new password": [
         "Bekræft ny adgangskode"
       ],
@@ -9441,6 +9444,9 @@
       ],
       "Confirm password": [
         "Bekræft adgangskode"
+      ],
+      "Confirm second password": [
+        "Bekræft anden adgangskode"
       ],
       "Contacts": [
         "Kontakter"
@@ -9733,9 +9739,6 @@
       "Mail settings": [
         "Mail-indstillinger"
       ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
       "Main": [
         "Hjem"
       ],
@@ -9793,9 +9796,6 @@
       "New login password": [
         "Ny login-adgangskode"
       ],
-      "New mailbox password": [
-        "Ny postkasseadgangskode"
-      ],
       "New organization identity": [
         "Ny organisationsidentitet"
       ],
@@ -9804,6 +9804,9 @@
       ],
       "New password": [
         "Ny adgangskode"
+      ],
+      "New second password": [
+        "Ny anden adgangskode"
       ],
       "No filter": [
         "Intet filter"
@@ -9946,6 +9949,9 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Second password": [
+        "Anden adgangskode"
+      ],
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
       ],
@@ -10026,6 +10032,12 @@
       ],
       "Subscription options": [
         "Abonnementsmuligheder"
+      ],
+      "Swipe left action": [
+        "Stryg til venstre-handling"
+      ],
+      "Swipe right action": [
+        "Stryg til højre-handling"
       ],
       "Synchronize with system": [
         "Synkroniser med system"
@@ -12216,6 +12228,9 @@
       "Add to existing group": [
         "Føj til eksisterende gruppe"
       ],
+      "Archive": [
+        "Arkiv"
+      ],
       "Ask each time": [
         "Spørg hver gang"
       ],
@@ -12254,6 +12269,9 @@
       ],
       "Left to Right": [
         "Venstre mod højre"
+      ],
+      "Mark as read": [
+        "Markér som læst"
       ],
       "My reason isn't listed": [
         "Min grund er ikke angivet"
@@ -12312,11 +12330,20 @@
       "Setup incomplete": [
         "Opsætning ikke fuldført"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Standard server configs": [
         "Standard serverkonfigurer"
       ],
+      "Star": [
+        "Stjerne"
+      ],
       "The whole organization": [
         "Hele organisationen"
+      ],
+      "Trash": [
+        "Papirkurv"
       ]
     },
     "Option delay send seconds": {
@@ -15427,9 +15454,6 @@
       "Change login password": [
         "Skift login-adgangskode"
       ],
-      "Change mailbox password": [
-        "Skift postkasseadgangskode"
-      ],
       "Change organization name": [
         "Skift organisationsnavn"
       ],
@@ -15441,6 +15465,9 @@
       ],
       "Change role": [
         "Skift rolle"
+      ],
+      "Change second password": [
+        "Ændr anden adgangskode"
       ],
       "Choose an account": [
         "Vælg en konto"
@@ -15887,8 +15914,8 @@
       "Link confirmation": [
         "Linkbekræftelse"
       ],
-      "Login password": [
-        "Login-adgangskode"
+      "Main password": [
+        "Hovedadgangskode"
       ],
       "Messages": [
         "Beskeder"
@@ -16239,8 +16266,8 @@
       "Type": [
         "Type"
       ],
-      "Unlock your mailbox": [
-        "Lås din postkasse op"
+      "Unlock your data": [
+        "Lås dine data op"
       ],
       "Upgrade plan": [
         "Opgradér abonnement"

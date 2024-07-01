@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Canvia les claus"
       ],
-      "Change mailbox password": [
-        "Canviar contrasenya de la bústia de correu"
-      ],
       "Change other email subscriptions": [
         "Canviar altres subscripcions de correu electrònic"
       ],
       "Change password": [
         "Canvia la contrasenya"
+      ],
+      "Change second password": [
+        "Canvia la segona contrasenya"
       ],
       "Chat with us": [
         "Xategeu amb nosaltres"
@@ -4113,11 +4113,11 @@
       "Incorrect login credentials. Please try again.": [
         "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Contrasenya de bústia incorrecta. Torneu a provar-ho."
-      ],
       "Incorrect password": [
         "Contrasenya incorrecta"
+      ],
+      "Incorrect second password. Please try again.": [
+        "La contrasenya no és correcta. Torneu-ho a intentar."
       ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
@@ -4313,6 +4313,9 @@
       ],
       "Require at least one condition": [
         "Requereix al menys una condició"
+      ],
+      "Session expired. Please refresh the page.": [
+        "La sessió ha caducat. Actualitzeu la pàgina."
       ],
       "Signature not verified": [
         "Signatura no verificada"
@@ -6118,17 +6121,6 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -6183,8 +6175,8 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vol compartir dades amb vós a ${ PASS_APP_NAME }"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la de correu electrònic. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la segona contrasenya. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
       "${ n } address": [
         "${ n } adreça",
@@ -7817,13 +7809,13 @@
         "S'ha esborrat l'inici de sessió únic."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "L'enviament SMTP permet que serveis o dispositius de tercers enviïn correu electrònic a través de ${ MAIL_APP_NAME } per a les adreces de dominis personalitzats. Aquesta funció només està disponible per a ${ BRAND_NAME } per als usuaris empresarials amb dominis personalitzats."
+        "La tramesa SMTP permet que serveis o dispositius de tercers enviïn correu electrònic a través de ${ MAIL_APP_NAME } per a les adreces de domini personalitzat. Aquesta funció només està disponible per a ${ BRAND_NAME } per als usuaris empresarials amb dominis personalitzats."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per a utilitzar aquesta característica, comenceu generant un testimoni."
+        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzat. Per a utilitzar aquesta característica, comenceu generant un testimoni."
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
@@ -7986,7 +7978,10 @@
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
-        "Aquest enllaç d'invitació ha caducat. Si us plau, poseu-vos en contacte amb el vostre administrador per sol·licitar accés."
+        "Aquest enllaç d'invitació ha caducat. Poseu-vos en contacte amb el vostre administrador per a sol·licitar l'accés."
+      ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Aquest enllaç d'invitació ja s'ha utilitzat. Inicieu la sessió directament."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Això és una frase de 12 paraules que se't va demanar definir."
@@ -8079,7 +8074,7 @@
         "a ${ product } Business"
       ],
       "To allow the domain **${ domainName }** to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Per permetre que el domini **${ domainName }** utilitzi SAML SSO, heu de verificar-ne la propietat afegint el següent registre DNS TXT al vostre domini al vostre proveïdor de DNS."
+        "Per a permetre que el domini **${ domainName }** utilitzi SAML SSO, heu de verificar-ne la propietat afegint el següent registre DNS TXT al vostre domini en el vostre proveïdor de DNS."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Per evitar la pèrdua de dades, elimineu-ho només si sabeu el que esteu fent o n'heu exportat una còpia."
@@ -8159,11 +8154,11 @@
       "Two-factor authentication enabled": [
         "S'ha activat l'autenticació de dos factors"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al vostre compte i una altra per a desxifrar la vostra bústia de correu. (Avançat)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al vostre compte i una altra per a desxifrar les vostres dades. (Avançat)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar la bústia de correu. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una per a la bústia de correu."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar les dades. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una segona contrasenya."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No es pot verificar la signatura del fitxer de recuperació. Poseu-vos en contacte amb atenció al client."
@@ -8608,6 +8603,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Encara heu de respondre a les invitacions perquè l'amfitrió vegi la vostra resposta."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Podreu promocionar l'usuari a administrador un cop hagi acceptat la invitació."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
       ],
@@ -8733,6 +8731,17 @@
         "reunió de Zoom"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Si s'activa, les subcarpetes hereten el color de la carpeta principal."
@@ -8818,6 +8827,9 @@
       ],
       "Paid": [
         "Pagat"
+      ],
+      "Processing": [
+        "En procés"
       ],
       "Unpaid": [
         "Pendent de pagament"
@@ -9403,9 +9415,6 @@
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
       ],
-      "Confirm mailbox password": [
-        "Confirma la contrasenya de la bústia de correu"
-      ],
       "Confirm new password": [
         "Confirmi la nova contrasenya"
       ],
@@ -9414,6 +9423,9 @@
       ],
       "Confirm password": [
         "Confirmeu la contrasenya"
+      ],
+      "Confirm second password": [
+        "Confirmeu la segona contrasenya"
       ],
       "Contacts": [
         "Contactes"
@@ -9507,6 +9519,9 @@
       ],
       "Disable data export for organization members": [
         "Desactiva l'exportació de dades per als membres de l'organització"
+      ],
+      "Disable sharing outside the organization": [
+        "Desactiva la compartició fora de l'organització"
       ],
       "Display name": [
         "Nom a mostrar"
@@ -9703,9 +9718,6 @@
       "Mail settings": [
         "Preferències de correu electrònic"
       ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
       "Main": [
         "Principal"
       ],
@@ -9763,9 +9775,6 @@
       "New login password": [
         "Nova contrasenya d'inici de sessió"
       ],
-      "New mailbox password": [
-        "Nova contrasenya de la bústia"
-      ],
       "New organization identity": [
         "Nova identitat de l'organització"
       ],
@@ -9774,6 +9783,9 @@
       ],
       "New password": [
         "Contrasenya nova"
+      ],
+      "New second password": [
+        "Nova segona contrasenya"
       ],
       "No filter": [
         "Sense filtre"
@@ -9916,6 +9928,9 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Second password": [
+        "Segona contrasenya"
+      ],
       "Security code (${ codeName })": [
         "Codi de seguretat (${ codeName })"
       ],
@@ -9996,6 +10011,12 @@
       ],
       "Subscription options": [
         "Opcions de subscripció"
+      ],
+      "Swipe left action": [
+        "Acció de lliscar cap a l'esquerra"
+      ],
+      "Swipe right action": [
+        "Acció de lliscar cap a la dreta"
       ],
       "Synchronize with system": [
         "Sincronitza amb el sistema"
@@ -12186,6 +12207,9 @@
       "Add to existing group": [
         "Afegeix a un grup existent"
       ],
+      "Archive": [
+        "Arxiva"
+      ],
       "Ask each time": [
         "Pregunta cada vegada"
       ],
@@ -12224,6 +12248,9 @@
       ],
       "Left to Right": [
         "Esquerra a dreta"
+      ],
+      "Mark as read": [
+        "Marca com a llegit"
       ],
       "My reason isn't listed": [
         "La meva raó no apareix"
@@ -12282,11 +12309,20 @@
       "Setup incomplete": [
         "La configuració és incompleta."
       ],
+      "Spam": [
+        "Correu brossa"
+      ],
       "Standard server configs": [
         "Configuracions estàndard de servidor"
       ],
+      "Star": [
+        "Destacat"
+      ],
       "The whole organization": [
         "Tota l'organització"
+      ],
+      "Trash": [
+        "Paperera"
       ]
     },
     "Option delay send seconds": {
@@ -12899,8 +12935,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Entesos"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Processament de pagaments"
       ],
       "Processing payment": [
         "S'està processant el pagament."
@@ -12916,6 +12958,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Estem tramitant el pagament de la factura. Espereu que el pagament s'hagi completat abans de fer canvis al pla o actualitzar les dades del pagament. Gràcies per la vostra paciència."
       ]
     },
     "Payments.Error": {
@@ -15388,9 +15433,6 @@
       "Change login password": [
         "Canviar contrasenya d'inici de sessió"
       ],
-      "Change mailbox password": [
-        "Canviar contrasenya de la bústia de correu"
-      ],
       "Change organization name": [
         "Canviar nom de l'organització"
       ],
@@ -15402,6 +15444,9 @@
       ],
       "Change role": [
         "Canvia privilegis"
+      ],
+      "Change second password": [
+        "Canvia la segona contrasenya"
       ],
       "Choose an account": [
         "Tria un compte"
@@ -15848,8 +15893,8 @@
       "Link confirmation": [
         "Confirmació d'enllaç"
       ],
-      "Login password": [
-        "Contrasenya d'inici"
+      "Main password": [
+        "Contrasenya principal"
       ],
       "Messages": [
         "Missatges"
@@ -16200,8 +16245,8 @@
       "Type": [
         "Tipus"
       ],
-      "Unlock your mailbox": [
-        "Desbloquegeu la vostra bústia de correu"
+      "Unlock your data": [
+        "Desbloqueu les vostres dades"
       ],
       "Upgrade plan": [
         "Millora el pla"

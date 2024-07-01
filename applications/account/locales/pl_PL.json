@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -184,14 +184,14 @@
       "Change keys": [
         "Zmień klucze"
       ],
-      "Change mailbox password": [
-        "Zmień hasło skrzynki pocztowej"
-      ],
       "Change other email subscriptions": [
         "Zmień ustawienia innych list mailingowych"
       ],
       "Change password": [
         "Zmień hasło"
+      ],
+      "Change second password": [
+        "Zmień drugie hasło"
       ],
       "Chat with us": [
         "Czat z nami"
@@ -4139,11 +4139,11 @@
       "Incorrect login credentials. Please try again.": [
         "Dane logowania są nieprawidłowe. Spróbuj ponownie."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Hasło skrzynki pocztowej jest nieprawidłowe. Spróbuj ponownie."
-      ],
       "Incorrect password": [
         "Hasło jest nieprawidłowe"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Drugie hasło jest nieprawidłowe. Spróbuj ponownie."
       ],
       "Incorrect username": [
         "Nazwa użytkownika jest nieprawidłowa"
@@ -4345,6 +4345,9 @@
       ],
       "Require at least one condition": [
         "Co najmniej jeden warunek jest wymagany"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Sesja wygasła. Odśwież stronę."
       ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
@@ -6191,17 +6194,6 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -6262,9 +6254,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Użytkownik ${ inviterEmailJSX } zaprasza Cię do ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
       ],
       "${ n } address": [
         "${ n } adres",
@@ -7791,7 +7780,7 @@
         "Publiczny link zaproszenia"
       ],
       "Public sharing of documents is not yet supported.": [
-        "Publiczne udostępnianie dokumentu nie jest obsługiwane."
+        "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
       "purchase additional storage": [
         "kupić dodatkową przestrzeń dyskową"
@@ -7963,9 +7952,6 @@
       ],
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
@@ -8225,6 +8211,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "To hasło zastąpi tymczasowe hasło i pozwoli Ci uzyskać dostęp do konta ${ BRAND_NAME }."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Nowe zaproszenie zostanie wysłane na adres **${ email }**."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Ta czynność spowoduje wylogowanie ze wszystkich kont."
       ],
@@ -8317,12 +8306,6 @@
       ],
       "Two-factor authentication enabled": [
         "Uwierzytelnianie dwustopniowe zostało włączone"
-      ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania skrzynki pocztowej. (Opcja zaawansowana)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Tryb podwójnego hasła umożliwia oddzielenie haseł logowania i odszyfrowywania skrzynki pocztowej. W określonych sytuacjach zwiększa to nieznacznie bezpieczeństwo. Dla większości użytkowników wystarczający jest tryb pojedynczego hasła. Aby przełączyć się do trybu podwójnego hasła, wpisz hasło logowania, a następnie hasło szyfrowania."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie można zweryfikować podpisu pliku odzyskiwania. Skontaktuj się ze wsparciem technicznym."
@@ -8896,6 +8879,17 @@
       ],
       "Zoom meeting": [
         "spotkanie na Zoom"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9481,9 +9475,6 @@
       "Awarded": [
         "Przyznano"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Adres rozliczeniowy"
       ],
@@ -9580,9 +9571,6 @@
       "Confirm login password": [
         "Potwierdź hasło logowania"
       ],
-      "Confirm mailbox password": [
-        "Potwierdź hasło skrzynki pocztowej"
-      ],
       "Confirm new password": [
         "Potwierdź nowe hasło"
       ],
@@ -9591,6 +9579,9 @@
       ],
       "Confirm password": [
         "Potwierdź hasło"
+      ],
+      "Confirm second password": [
+        "Potwierdź drugie hasło"
       ],
       "Contacts": [
         "Kontakty"
@@ -9883,9 +9874,6 @@
       "Mail settings": [
         "Ustawienia poczty"
       ],
-      "Mailbox password": [
-        "Hasło skrzynki pocztowej"
-      ],
       "Main": [
         "Główny"
       ],
@@ -9943,9 +9931,6 @@
       "New login password": [
         "Nowe hasło logowania"
       ],
-      "New mailbox password": [
-        "Nowe hasło skrzynki pocztowej"
-      ],
       "New organization identity": [
         "Nowa tożsamość organizacji"
       ],
@@ -9954,6 +9939,9 @@
       ],
       "New password": [
         "Nowe hasło"
+      ],
+      "New second password": [
+        "Nowe drugie hasło"
       ],
       "No filter": [
         "Brak filtrów"
@@ -10095,6 +10083,9 @@
       ],
       "Reveal password": [
         "Pokaż hasło"
+      ],
+      "Second password": [
+        "Drugie hasło"
       ],
       "Security code (${ codeName })": [
         "Kod zabezpieczający (${ codeName })"
@@ -12440,6 +12431,9 @@
       "Add to existing group": [
         "Dodaj do istniejącej grupy"
       ],
+      "Archive": [
+        "Archiwizuj"
+      ],
       "Ask each time": [
         "Pytaj za każdym razem"
       ],
@@ -12478,6 +12472,9 @@
       ],
       "Left to Right": [
         "Od lewej do prawej"
+      ],
+      "Mark as read": [
+        "Oznacz jako przeczytane"
       ],
       "My reason isn't listed": [
         "Inna, niewymieniona wyżej przyczyna"
@@ -12536,11 +12533,20 @@
       "Setup incomplete": [
         "Konfiguracja niekompletna"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Standard server configs": [
         "Konfiguracje standardowego serwera"
       ],
+      "Star": [
+        "Oznacz gwiazdką"
+      ],
       "The whole organization": [
         "Cała organizacja"
+      ],
+      "Trash": [
+        "Przenieś do Kosza"
       ]
     },
     "Option delay send seconds": {
@@ -14921,7 +14927,7 @@
         "Zachowaj plan ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Zadbaj o bezpieczeństwo swojego zespołu w podróży dzięki naszym aplikacjom internetowym, dla systemów iOS, Android, Windows, Mac i Linux."
+        "Zadbaj o bezpieczeństwo swojego zespołu w podróży dzięki naszym aplikacjom internetowym dla systemów iOS, Android, Windows, Mac i Linux."
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -14969,7 +14975,7 @@
         "Odbierania nowych wiadomości"
       ],
       "See your colleagues’ availability": [
-        "Sprawdzanie dostępności zespołu"
+        "Sprawdzanie dostępności współpracowników"
       ],
       "Send emails with attachments": [
         "Wysyłania wiadomości z załącznikami"
@@ -15738,9 +15744,6 @@
       "Change login password": [
         "Zmień hasło logowania"
       ],
-      "Change mailbox password": [
-        "Zmień hasło skrzynki pocztowej"
-      ],
       "Change organization name": [
         "Zmień nazwę organizacji"
       ],
@@ -15752,6 +15755,9 @@
       ],
       "Change role": [
         "Zmień rolę"
+      ],
+      "Change second password": [
+        "Zmień drugie hasło"
       ],
       "Choose an account": [
         "Wybierz konto"
@@ -16077,15 +16083,6 @@
       "Folders and labels": [
         "Foldery i etykiety"
       ],
-      "For Linux": [
-        "Linux"
-      ],
-      "For macOS": [
-        "macOS"
-      ],
-      "For Windows": [
-        "Windows"
-      ],
       "Forgot recovery method": [
         "Przypomnij metodę odzyskiwania"
       ],
@@ -16206,8 +16203,8 @@
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
-      "Login password": [
-        "Hasło logowania"
+      "Main password": [
+        "Główne hasło"
       ],
       "Messages": [
         "Wiadomości"
@@ -16292,9 +16289,6 @@
       ],
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
-      ],
-      "Personalise your e-mail footer": [
-        "Spersonalizuj stopkę"
       ],
       "Phone": [
         "Telefon"
@@ -16560,8 +16554,8 @@
       "Type": [
         "Typ"
       ],
-      "Unlock your mailbox": [
-        "Odblokuj swoją skrzynkę pocztową"
+      "Unlock your data": [
+        "Odblokuj dane"
       ],
       "Upgrade plan": [
         "Ulepsz plan"

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -183,9 +183,6 @@
       ],
       "Change keys": [
         "Zmeniť kľúče"
-      ],
-      "Change mailbox password": [
-        "Zmeniť heslo k poštovej schránke"
       ],
       "Change other email subscriptions": [
         "Zmeniť ostatné emailové odbery"
@@ -4145,9 +4142,6 @@
       "Incorrect login credentials. Please try again.": [
         "Nesprávne prihlasovacie údaje. Skúste to prosím znova."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Nesprávne heslo k poštovej schránke. Skúste to znova, prosím."
-      ],
       "Incorrect password": [
         "Nesprávne heslo"
       ],
@@ -6197,17 +6191,6 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6268,9 +6251,6 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahrádza prihlasovacie heslo aj heslo k poštovej schránke. Na prepnutie do režimu jedného hesla prosím zadajte jedno spoločné heslo, ktoré chcete použiť, a kliknite Uložiť."
       ],
       "${ n } address": [
         "${ n } adresa",
@@ -8291,12 +8271,6 @@
       "Two-factor authentication enabled": [
         "Dvojstupňové overenie zapnuté"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Režim s dvomi heslami vyžaduje dve heslá: jedno na prihlásenie k vášmu účtu a druhé na dešifrovanie vašej poštovej schránky. (Pokročilé)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Režim s dvomi heslami využíva na prihlásenie a dešifrovanie poštovej schránky dve samostatné heslá. V určitých prípadoch to zvyšuje bezpečnosť, pre väčšinu používateľov ale odporúčame režim jedného hesla. Ak chcete prepnúť na režim s dvomi heslami, zadajte najskôr svoje prihlasovacie heslo a potom heslo k poštovej schránke."
-      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie je možné overiť podpis súboru pre obnovenie. Kontaktujte podporu."
       ],
@@ -8880,6 +8854,17 @@
         "Zoom míting"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Ak je táto možnosť povolená, podpriečinky zdedia farbu nadradených priečinkov."
@@ -9460,9 +9445,6 @@
       "Awarded": [
         "Ocenený"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing address": [
         "Fakturačná adresa"
       ],
@@ -9558,9 +9540,6 @@
       ],
       "Confirm login password": [
         "Potvrďte prihlasovacie heslo"
-      ],
-      "Confirm mailbox password": [
-        "Potvrďte heslo k poštovej schránke"
       ],
       "Confirm new password": [
         "Potvrďte nové heslo"
@@ -9663,6 +9642,9 @@
       ],
       "Disable data export for organization members": [
         "Zakázať export údajov členom organizácie"
+      ],
+      "Disable sharing outside the organization": [
+        "Zakázať zdieľanie mimo organizácie"
       ],
       "Display name": [
         "Zobrazované meno"
@@ -9859,9 +9841,6 @@
       "Mail settings": [
         "Nastavenia emailu"
       ],
-      "Mailbox password": [
-        "Heslo k poštovej schránke"
-      ],
       "Main": [
         "Hlavné"
       ],
@@ -9918,9 +9897,6 @@
       ],
       "New login password": [
         "Nové prihlasovacie heslo"
-      ],
-      "New mailbox password": [
-        "Nové heslo k poštovej schránke"
       ],
       "New organization identity": [
         "Nová identita organizácie"
@@ -15717,9 +15693,6 @@
       "Change login password": [
         "Zmeniť prihlasovacie heslo"
       ],
-      "Change mailbox password": [
-        "Zmeniť heslo k poštovej schránke"
-      ],
       "Change organization name": [
         "Zmeniť názov organizácie"
       ],
@@ -16056,15 +16029,6 @@
       "Folders and labels": [
         "Priečinky a štítky"
       ],
-      "For Linux": [
-        "Pre Linux"
-      ],
-      "For macOS": [
-        "Pre macOS"
-      ],
-      "For Windows": [
-        "Pre Windows"
-      ],
       "Forgot recovery method": [
         "Zabudnutá metóda obnovenia"
       ],
@@ -16184,9 +16148,6 @@
       ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
-      ],
-      "Login password": [
-        "Prihlasovacie heslo"
       ],
       "Messages": [
         "Správy"
@@ -16535,9 +16496,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unlock your mailbox": [
-        "Odomknúť vašu poštovú schránku"
       ],
       "Upgrade plan": [
         "Navýšit tarif"
