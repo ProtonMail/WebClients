@@ -62,11 +62,11 @@
       "Change keys": [
         "Anahtarları değiştir"
       ],
-      "Change mailbox password": [
-        "Posta kutusu parolasını değiştir"
-      ],
       "Change password": [
         "Parolayı değiştir"
+      ],
+      "Change second password": [
+        "İkinci parolayı değiştir"
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
-      ],
       "Incorrect password": [
         "Parola geçersiz"
+      ],
+      "Incorrect second password. Please try again.": [
+        "İkinci parola yanlış. Lütfen yeniden deneyin."
       ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: düşük çözünürlüklü ön izleme"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
       "${ n } address": [
         "${ n } adres",
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -3719,6 +3719,9 @@
         "Lütfen satırdaki kullanıcının e-posta adresini yazın",
         "Lütfen satırlardaki kullanıcıların e-posta adreslerini yazın"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Belgenin sahibinden size davet göndermesini isteyin."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
       ],
@@ -3739,6 +3742,9 @@
       ],
       "please open a support ticket": [
         "lütfen bir destek kaydı açın"
+      ],
+      "Please open the document to view it.": [
+        "Görüntülemek için lütfen belgeyi açın."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
@@ -3770,11 +3776,17 @@
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
+      "Preview of documents is not yet supported.": [
+        "Henüz belgeleri ön izleme özelliği yok."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
       "read our two-factor authentication guide first": [
         "önce iki adımlı doğrulama rehberimizi okuyun"
@@ -4002,6 +4014,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Bu bilgi, geçici parolanızın yerini alır. Gelecekte ${ BRAND_NAME } hesabınıza erişmek için bunu kullanacaksınız."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Bu işlem, **${ email }** adresine yeni bir davet gönderir."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Bu seçenek, tüm etkin oturumlarınızdan çıkılmasını ve iki adımlı kimlik doğrulamasının kapatılmasını sağlar."
       ],
@@ -4065,11 +4080,11 @@
       "Two-factor authentication enabled": [
         "İki adımlı doğrulama açıldı"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri verilerinizin şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola kipi açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola kipini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "İki parola kipi açıldığında, oturum açmak ve verilerin şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola kipini açmak için önce bir oturum açma parolası ve ardından bir ikinci parola belirleyin."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
@@ -4330,6 +4345,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Davetinizi kabul ettikten sonra kullanıcı rolünü yönetici olarak değiştirebilirsiniz."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Oturum açtıktan sonra ${ destination } sayfasına yönlendirileceksiniz."
       ],
@@ -4455,6 +4473,9 @@
       ],
       "Paid": [
         "Ödenmiş"
+      ],
+      "Processing": [
+        "İşleniyor"
       ],
       "Unpaid": [
         "Ödenmemiş"
@@ -4619,9 +4640,6 @@
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
       ],
-      "Confirm mailbox password": [
-        "Posta kutusu parolası onayı"
-      ],
       "Confirm new password": [
         "Yeni parola onayı"
       ],
@@ -4630,6 +4648,9 @@
       ],
       "Confirm password": [
         "Parolayı onayla"
+      ],
+      "Confirm second password": [
+        "İkinci parola onayı"
       ],
       "Copy": [
         "Kopyala"
@@ -4730,9 +4751,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Posta kutusu parolası"
-      ],
       "Main": [
         "Ana"
       ],
@@ -4769,9 +4787,6 @@
       "New login password": [
         "Yeni oturum açma parolası"
       ],
-      "New mailbox password": [
-        "Yeni posta kutusu parolası"
-      ],
       "New organization identity": [
         "Yeni kuruluş kimliği"
       ],
@@ -4780,6 +4795,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "New second password": [
+        "Yeni ikinci parola"
       ],
       "No filter": [
         "Süzgeç yok"
@@ -4873,6 +4891,9 @@
       ],
       "Reveal password": [
         "Parolayı göster"
+      ],
+      "Second password": [
+        "İkinci parola"
       ],
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
@@ -6428,6 +6449,9 @@
       "Current plan": [
         "Geçerli tarife"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "**${ username }** için görüntülenecek adı yazın. Bu ad, izinlerini değiştirdiğinizde ya da onlarla veri paylaştığınızda kullanıcılarınıza görüntülenir."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } parola yöneticisine erişebilirsiniz!"
       ],
@@ -6445,6 +6469,9 @@
       ],
       "Includes:": [
         "İçindekiler:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulaması başlatılıyor"
       ],
       "per month": [
         "aylık"
@@ -6470,6 +6497,12 @@
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Setting up your organization": [
+        "Kuruluşunuz ayarlanıyor"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasında oturum açılıyor"
       ],
       "Updating your account": [
         "Hesabınız güncelleniyor"
@@ -6601,8 +6634,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "Payment Processing": [
+        "Ödeme işleniyor"
       ],
       "Processing payment": [
         "Ödeme işleniyor"
@@ -6618,6 +6657,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
       ]
     },
     "Payments.Error": {
@@ -8476,9 +8518,6 @@
       "Change login password": [
         "Oturum açma parolasını değiştir"
       ],
-      "Change mailbox password": [
-        "Posta kutusu parolasını değiştir"
-      ],
       "Change organization name": [
         "Kuruluş adını değiştir"
       ],
@@ -8490,6 +8529,9 @@
       ],
       "Change role": [
         "Rolü değiştir"
+      ],
+      "Change second password": [
+        "İkinci parolayı değiştir"
       ],
       "Close": [
         "Kapat"
@@ -8698,8 +8740,8 @@
       "Invoices": [
         "Faturalar"
       ],
-      "Login password": [
-        "Oturum açma parolası"
+      "Main password": [
+        "Ana parola"
       ],
       "Multi-user support": [
         "Çok kullanıcı desteği"
@@ -8900,8 +8942,8 @@
       "Type": [
         "Tür"
       ],
-      "Unlock your mailbox": [
-        "Posta kutunuzun kilidini açın"
+      "Unlock your data": [
+        "Verilerinizin kilidini açın"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Size ayrılmış sunucular ile ağ korumanızı yükseltin"

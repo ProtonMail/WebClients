@@ -62,11 +62,11 @@
       "Change keys": [
         "Muuta avaimia"
       ],
-      "Change mailbox password": [
-        "Vaihda postilaatikon salasana"
-      ],
       "Change password": [
         "Vaihda salasana"
+      ],
+      "Change second password": [
+        "Vaihda toinen salasana"
       ],
       "Chat with us": [
         "Keskustele kanssamme"
@@ -2160,11 +2160,11 @@
       "Incorrect login credentials. Please try again.": [
         "Virheelliset kirjautumistiedot. Yritä uudelleen."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Virheellinen postilaatikon salasana. Yritä uudelleen."
-      ],
       "Incorrect password": [
         "Virheellinen salasana"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Väärä toine salasana. Yritä uudelleen."
       ],
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: matalatarkkuuksinen esikatselu"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että postilaatikon salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että toisen salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
       ],
       "${ n } address": [
         "${ n } osoite",
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -3719,6 +3719,9 @@
         "Lisää sähköpostiosoite rivillä olevalle käyttäjälle",
         "Lisää sähköpostiosoitteet riveillä oleville käyttäjille"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Pyydä omistajaa kutsumaan sinut suoraan dokumenttiin."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Vahvista korttisi vahvistusvälilehdellä."
       ],
@@ -3739,6 +3742,9 @@
       ],
       "please open a support ticket": [
         "avaa tukipyyntö"
+      ],
+      "Please open the document to view it.": [
+        "Avaa dokumentti tarkastellaksesi sitä."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
@@ -3770,11 +3776,17 @@
       "Preview for this file type is not supported": [
         "Tämän tiedostotyypin esikatselua ei tueta"
       ],
+      "Preview of documents is not yet supported.": [
+        "Dokumenttien esikatselua ei vielä tueta."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Dokumenttien julkista jakamista ei vielä tueta."
       ],
       "read our two-factor authentication guide first": [
         "luet ensin oppaamme kaksivaiheiseen todennukseen"
@@ -4002,6 +4014,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Tämä korvaa väliaikaisen salasanasi ja jatkossa käytät tätä ${ BRAND_NAME }-tilillesi kirjautumiseen."
       ],
+      "This will send a new invite to **${ email }**.": [
+        "Tämä lähettää uuden kutsun osoitteeseen **${ email }**."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tämä kirjaa ulos kaikki aktiiviset istuntosi ja poistaa kaksivaiheisen todennuksen käytöstä."
       ],
@@ -4065,11 +4080,11 @@
       "Two-factor authentication enabled": [
         "Kaksivaiheinen tunnistautuminen otettiin käyttöön"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen postilaatikkosi salauksen purkuun. (Edistynyt)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen tietojesi salauksen purkuun. (Edistynyt)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Kahden salasanan tila käyttää erillisiä salasanoja kirjautumiseen ja postilaatikon salauksen purkuun. Tämä tarjoaa pienen suojausedun joissakin tilanteissa, mutta useimmille käyttäjille suosittelemme yhden salasanan tilaa. Vaihda kahden salasanan tilaan, asettamalla kirjautumisen salasana ja sitten postilaatikon salasana."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Kahden salasanan tila käyttää erillisiä salasanoja kirjautumiseen ja tietojen salauksen purkamiseen. Tämä tarjoaa pienen turvallisuusedun joissain tilanteissa, mutta suosittelemme yhden salasanan tilaa useimmille käyttäjille. Vaihtaaksesi kahden salasanan tilaan, aseta ensin kirjautumissalasana ja sitten toinen salasana."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Valitettavasti tilille ei ole määritetty palautustapoja."
@@ -4330,6 +4345,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Voit ylentää käyttäjän ylläpitäjäksi, kun hän on hyväksynyt kutsun."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
       ],
@@ -4455,6 +4473,9 @@
       ],
       "Paid": [
         "Maksettu"
+      ],
+      "Processing": [
+        "Käsitellään"
       ],
       "Unpaid": [
         "Maksamaton"
@@ -4619,9 +4640,6 @@
       "Confirm login password": [
         "Vahvista kirjautumisen salasana"
       ],
-      "Confirm mailbox password": [
-        "Vahvista postilaatikon salasana"
-      ],
       "Confirm new password": [
         "Vahvista uusi salasana"
       ],
@@ -4630,6 +4648,9 @@
       ],
       "Confirm password": [
         "Vahvista salasana"
+      ],
+      "Confirm second password": [
+        "Vahvista toinen salasana"
       ],
       "Copy": [
         "Kopioi"
@@ -4730,9 +4751,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Postilaatikon salasana"
-      ],
       "Main": [
         "Pää"
       ],
@@ -4769,9 +4787,6 @@
       "New login password": [
         "Uusi kirjautumisen salasana"
       ],
-      "New mailbox password": [
-        "Uusi postilaatikon salasana"
-      ],
       "New organization identity": [
         "Uusi organisaation identiteetti"
       ],
@@ -4780,6 +4795,9 @@
       ],
       "New password": [
         "Uusi salasana"
+      ],
+      "New second password": [
+        "Uusi toinen salasana"
       ],
       "No filter": [
         "Ei suodatusta"
@@ -4873,6 +4891,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Second password": [
+        "Toinen salasana"
       ],
       "Security code (${ codeName })": [
         "Turvakoodi (${ codeName })"
@@ -6425,6 +6446,9 @@
       "Current plan": [
         "Nykyinen tilaus"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Anna käyttäjälle **${ username }** näyttönimi. Käyttäjät näkevät sen, kun muutat heidän oikeuksiaan tai jaat tietoja heidän kanssaan."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
       ],
@@ -6442,6 +6466,9 @@
       ],
       "Includes:": [
         "Sisältää:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Käynnistetään ${ PASS_APP_NAME }"
       ],
       "per month": [
         "kuukaudessa"
@@ -6467,6 +6494,12 @@
       ],
       "Secure vault sharing": [
         "Turvallinen holvien jako"
+      ],
+      "Setting up your organization": [
+        "Määritetään organisaatiotasi"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Kirjaudutaan ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Tiliäsi päivitetään"
@@ -6598,8 +6631,14 @@
       "CVC": [
         "Turvakoodi"
       ],
+      "Got it": [
+        "Selvä"
+      ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Payment Processing": [
+        "Maksua käsitellään"
       ],
       "Processing payment": [
         "Käsitellään maksua"
@@ -8446,9 +8485,6 @@
       "Change login password": [
         "Vaihda kirjautumisen salasana"
       ],
-      "Change mailbox password": [
-        "Vaihda postilaatikon salasana"
-      ],
       "Change organization name": [
         "Muuta organisaation nimeä"
       ],
@@ -8460,6 +8496,9 @@
       ],
       "Change role": [
         "Muuta roolia"
+      ],
+      "Change second password": [
+        "Vaihda toinen salasana"
       ],
       "Close": [
         "Sulje"
@@ -8668,8 +8707,8 @@
       "Invoices": [
         "Laskut"
       ],
-      "Login password": [
-        "Kirjautumisen salasana"
+      "Main password": [
+        "Pääsalasana"
       ],
       "Multi-user support": [
         "Usean käyttäjän tuki"
@@ -8870,8 +8909,8 @@
       "Type": [
         "Tyyppi"
       ],
-      "Unlock your mailbox": [
-        "Avaa postilaatikkosi"
+      "Unlock your data": [
+        "Avaa tietojesi lukitus"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Paranna verkkosi suojausta omilla palvelimilla"

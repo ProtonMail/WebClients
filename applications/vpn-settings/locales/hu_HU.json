@@ -53,9 +53,6 @@
       "Change": [
         "Módosítás"
       ],
-      "Change mailbox password": [
-        "E-mail titkosítási jelszó módosítása"
-      ],
       "Change password": [
         "Jelszó módosítása"
       ],
@@ -1824,9 +1821,6 @@
       "Incorrect login credentials. Please try again.": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
-      ],
       "Incorrect password": [
         "Hibás jelszó"
       ],
@@ -2472,9 +2466,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: alacsony felbontású előnézet"
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "A ${ MAIL_APP_NAME } egy-jelszavas módban is használható, amely leváltja a külön bejelentkezési és e-mail titkosítási jelszavakat. Egy-jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
       ],
       "${ n } address": [
         "${ n } cím",
@@ -3195,12 +3186,6 @@
       "Two-factor authentication enabled": [
         "Kétlépcsős hitelesítés bekapcsolva"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "A kétjelszavas mód két jelszó megadását kívánja meg: egy jelszó a belépéshez és egy másik a postafiók visszafejtéséhez. (Haladó)"
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "A kétjelszavas mód különválasztja a bejelentkezési jelszót és a levelek titkosításához használt jelszót. Ez egy kis biztonsági előnnyel járhat bizonyos esetekben, de általában inkább az egy jelszavas módot javasoljuk a legtöbb felhasználónak. A kétjelszavas módra váltáshoz, először adja meg a bejelentkezési jelszót és aztán pedig az e-mail titkosítási jelszót."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sajnos, nincs helyreállítási módszer beállítva ehhez a fiókhoz."
       ],
@@ -3607,9 +3592,6 @@
       "Confirm login password": [
         "Bejelentkezési jelszó megerősítése"
       ],
-      "Confirm mailbox password": [
-        "E-mail titkosítási jelszó megerősítése"
-      ],
       "Confirm new password": [
         "Új jelszó megerősítése"
       ],
@@ -3703,9 +3685,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield blokkoló szűrési szintje"
       ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
       "Main": [
         "Elsődleges"
       ],
@@ -3729,9 +3708,6 @@
       ],
       "New login password": [
         "Új bejelentkezési jelszó"
-      ],
-      "New mailbox password": [
-        "Új e-mail titkosítási jelszó"
       ],
       "New organization password": [
         "Új szervezeti jelszó"
@@ -6025,9 +6001,6 @@
       "Change login password": [
         "Bejelentkezési jelszó megváltoztatása"
       ],
-      "Change mailbox password": [
-        "E-mail titkosítási jelszó megváltoztatása"
-      ],
       "Change organization name": [
         "Szervezet nevének megváltoztatása"
       ],
@@ -6180,9 +6153,6 @@
       ],
       "Invoices": [
         "Számlák"
-      ],
-      "Login password": [
-        "Bejelentkezési jelszó"
       ],
       "Multi-user support": [
         "Többfelhasználós lehetőség"
@@ -6351,9 +6321,6 @@
       ],
       "Type": [
         "Típus"
-      ],
-      "Unlock your mailbox": [
-        "E-mail fiók feloldása"
       ],
       "Upload CSV file to create multiple accounts": [
         "CSV fájl feltöltése több fiók létrehozásához"

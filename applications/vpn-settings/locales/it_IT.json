@@ -62,11 +62,11 @@
       "Change keys": [
         "Cambia chiavi"
       ],
-      "Change mailbox password": [
-        "Cambia la password della casella di posta"
-      ],
       "Change password": [
         "Cambia la password"
+      ],
+      "Change second password": [
+        "Cambia la seconda password"
       ],
       "Chat with us": [
         "Chatta con noi"
@@ -264,7 +264,7 @@
         "Approfitta dell'offerta"
       ],
       "Get verification code": [
-        "Ottieni il codice di verifica"
+        "Invia il codice di verifica"
       ],
       "Got it": [
         "Ho capito"
@@ -399,7 +399,7 @@
         "Richiedi nuovo codice"
       ],
       "Resend code": [
-        "Reinvia codice"
+        "Reinvia il codice"
       ],
       "Reset credentials": [
         "Ripristina credenziali"
@@ -2128,10 +2128,10 @@
         "L'indirizzo email non è disponibile"
       ],
       "Email is not valid": [
-        "Email non valida"
+        "Indirizzo email non valido"
       ],
       "Enter 6 digits": [
-        "Inserisci 6 cifre"
+        "Inserisci il codice a 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
@@ -2158,13 +2158,13 @@
         "Tipo di file errato. Carica un file in formato PNG o JPEG."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Per favore riprova."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Per favore riprova."
+        "Credenziali errate. Riprova."
       ],
       "Incorrect password": [
         "Password errata"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Password secondaria errata. Riprova."
       ],
       "Incorrect username": [
         "Username non corretto"
@@ -2296,7 +2296,7 @@
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
       "This field is required": [
-        "Questo campo è obbligatorio"
+        "Campo necessario"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
@@ -3015,8 +3015,8 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: anteprima a bassa risoluzione"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } può anche essere usato con una singola password, la quale sostituisce sia la password di accesso sia quella della casella di posta. Per passare alla modalità a singola password, inserisci la password che desideri e clicca su Salva."
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } può anche essere usato con una singola password che sostituisce sia la password di accesso che la seconda password. Per passare alla modalità a singola password, inserisci la password che desideri e clicca su Salva."
       ],
       "${ n } address": [
         "${ n } indirizzo",
@@ -3090,7 +3090,7 @@
         "Un nome che ti aiuta a identificare dove viene usato, in modo che potrai revocarlo o estenderlo in futuro."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
@@ -3295,11 +3295,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizza l'aspetto delle applicazioni di ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -3493,7 +3493,7 @@
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Se hai un dominio personalizzato con ${ MAIL_APP_NAME }, puoi impostare un indirizzo email catch-all per ricevere i messaggi inviati al tuo dominio ma a un indirizzo email non valido (ad es. a causa di errori di battitura)."
@@ -4045,7 +4045,7 @@
         "per continuare su ${ product }"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, verifica di essere umano."
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per rimanere informato sugli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre mailing list e ${ blogLink } occasionalmente."
@@ -4083,11 +4083,11 @@
       "Two-factor authentication enabled": [
         "Autenticazione a due fattori attivata"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "La modalità a doppia password richiede due password: una per accedere al tuo account e un'altra per decrittografare la tua casella di posta. (Avanzato)"
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "La modalità a due password richiede due password: una per accedere al tuo account e una per decrittografare i tuoi dati. (Avanzato)"
       ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "La modalità a doppia password utilizza due password separate per l'accesso e per la decrittografia della casella di posta. Questo fornisce un minimo vantaggio in termini di sicurezza in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, imposta prima una password di accesso e poi una per la casella di posta."
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "La modalità a due password utilizza due password separate per l'accesso e la decrittografia dei dati. Questo fornisce un piccolo vantaggio di protezione in alcune situazioni, tuttavia è consigliabile la modalità a una sola password per la maggior parte degli utenti. Per passare alla modalità a due password, imposta prima la password di accesso e poi imposta la seconda."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
@@ -4394,7 +4394,7 @@
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
       ],
       "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -4415,7 +4415,7 @@
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
@@ -4476,6 +4476,9 @@
       ],
       "Paid": [
         "Pagato"
+      ],
+      "Processing": [
+        "Elaborazione"
       ],
       "Unpaid": [
         "Non pagato"
@@ -4629,7 +4632,7 @@
         "Codice"
       ],
       "Code is 6 digits without spaces": [
-        "Il codice è di 6 cifre senza spazi"
+        "Codice a 6 cifre senza spazi"
       ],
       "Config to connect to ${ serverName }": [
         "Configurazione per connettersi a ${ serverName }"
@@ -4640,9 +4643,6 @@
       "Confirm login password": [
         "Conferma la password di accesso"
       ],
-      "Confirm mailbox password": [
-        "Conferma la password della casella di posta"
-      ],
       "Confirm new password": [
         "Conferma la nuova password"
       ],
@@ -4651,6 +4651,9 @@
       ],
       "Confirm password": [
         "Conferma la password"
+      ],
+      "Confirm second password": [
+        "Conferma la seconda password"
       ],
       "Copy": [
         "Copia"
@@ -4751,9 +4754,6 @@
       "Logo": [
         "Logo"
       ],
-      "Mailbox password": [
-        "Password della casella di posta"
-      ],
       "Main": [
         "Principale"
       ],
@@ -4790,9 +4790,6 @@
       "New login password": [
         "Nuova password di accesso"
       ],
-      "New mailbox password": [
-        "Nuova password della casella di posta"
-      ],
       "New organization identity": [
         "Nuova identità dell'organizzazione"
       ],
@@ -4801,6 +4798,9 @@
       ],
       "New password": [
         "Nuova password"
+      ],
+      "New second password": [
+        "Nuova seconda password"
       ],
       "No filter": [
         "Nessun filtro"
@@ -4894,6 +4894,9 @@
       ],
       "Reveal password": [
         "Mostra la password"
+      ],
+      "Second password": [
+        "Seconda password"
       ],
       "Security code (${ codeName })": [
         "Codice di sicurezza (${ codeName })"
@@ -5367,7 +5370,7 @@
         "Ottieni ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "Ottieni ${ planName }"
+        "Ottieni il piano ${ planName }"
       ],
       "Keep ${ plan }": [
         "Mantieni ${ plan }"
@@ -6476,6 +6479,9 @@
       "Current plan": [
         "Piano attuale"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Inserisci un nome per **${ username }**. Verrà mostrato ai tuoi utenti quando cambi le loro autorizzazioni o condividi dati con loro."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al gestore di password premium di ${ BRAND_NAME }!"
       ],
@@ -6493,6 +6499,9 @@
       ],
       "Includes:": [
         "Include:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Lanciando ${ PASS_APP_NAME }"
       ],
       "per month": [
         "al mese"
@@ -6518,6 +6527,12 @@
       ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
+      ],
+      "Setting up your organization": [
+        "Configurazione dell'organizzazione in corso"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Accesso a ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Aggiornamento del tuo account"
@@ -6649,8 +6664,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ho capito"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Elaborazione del pagamento"
       ],
       "Processing payment": [
         "Elaborazione pagamento"
@@ -6666,6 +6687,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
       ]
     },
     "Payments.Error": {
@@ -8527,9 +8551,6 @@
       "Change login password": [
         "Cambia la password di accesso"
       ],
-      "Change mailbox password": [
-        "Cambia la password della casella di posta"
-      ],
       "Change organization name": [
         "Cambia nome organizzazione"
       ],
@@ -8541,6 +8562,9 @@
       ],
       "Change role": [
         "Modifica privilegi"
+      ],
+      "Change second password": [
+        "Cambia la seconda password"
       ],
       "Close": [
         "Chiudi"
@@ -8749,8 +8773,8 @@
       "Invoices": [
         "Fatture"
       ],
-      "Login password": [
-        "Password di accesso"
+      "Main password": [
+        "Password principale"
       ],
       "Multi-user support": [
         "Supporto multi-utente"
@@ -8951,8 +8975,8 @@
       "Type": [
         "Tipo"
       ],
-      "Unlock your mailbox": [
-        "Sblocca la tua casella di posta"
+      "Unlock your data": [
+        "Sblocca i tuoi data"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Aggiorna la protezione della tua rete con server dedicati"

@@ -62,9 +62,6 @@
       "Change keys": [
         "Spremeni ključe"
       ],
-      "Change mailbox password": [
-        "Spremeni geslo poštnega nabiralnika"
-      ],
       "Change password": [
         "Spremeni geslo"
       ],
@@ -2178,9 +2175,6 @@
       "Incorrect login credentials. Please try again.": [
         "Napačne poverilnice za prijavo. Poskusite znova."
       ],
-      "Incorrect mailbox password. Please try again.": [
-        "Napačno geslo nabiralnika. Poskusite znova."
-      ],
       "Incorrect password": [
         "Napačno geslo"
       ],
@@ -3051,9 +3045,6 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: predogled nizke ločljivosti"
       ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } lahko uporabljate tudi z enim samim geslom, ki nadomesti tako prijavno geslo kot tudi geslo za nabiralnik. Če želite uporabljati način enega samega gesla, vnesite želeno eno geslo in kliknite Shrani."
-      ],
       "${ n } address": [
         "${ n } naslov",
         "${ n } naslova",
@@ -3357,11 +3348,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenski strežniki"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -4137,12 +4128,6 @@
       "Two-factor authentication enabled": [
         "Dvojno preverjanje pristnosti je omogočeno"
       ],
-      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Način z dvema gesloma zahteva dve gesli: eno za prijavo v vaš račun in eno za dešifriranje poštnega predala. (Napredno)."
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Način z dvema gesloma uporablja ločeni gesli za prijavo in dešifriranje poštnega predala. To zagotavlja manjšo varnostno prednost v nekaterih situacijah, vendar večini uporabnikov priporočamo način z enim geslom. Za preklop na način z dvema gesloma najprej nastavite prijavno geslo, nato pa nastavite geslo za poštni predal."
-      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Na žalost ni shranjenega načina za obnovitev tega računa."
       ],
@@ -4694,9 +4679,6 @@
       "Confirm login password": [
         "Potrdi geslo za prijavo"
       ],
-      "Confirm mailbox password": [
-        "Potrdi geslo nabiralnika"
-      ],
       "Confirm new password": [
         "Potrdite novo geslo"
       ],
@@ -4805,9 +4787,6 @@
       "Logo": [
         "Logotip"
       ],
-      "Mailbox password": [
-        "Geslo e-poštnega nabiralnika"
-      ],
       "Main": [
         "Glavno"
       ],
@@ -4843,9 +4822,6 @@
       ],
       "New login password": [
         "Novo geslo za prijavo"
-      ],
-      "New mailbox password": [
-        "Novo geslo nabiralnika"
       ],
       "New organization identity": [
         "Nova identiteta organizacije"
@@ -6538,6 +6514,9 @@
       "Current plan": [
         "Trenutni paket"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Vnesite prikazno ime za **${ username }**. To bodo videli vaši uporabniki, ko spremenite njihova dovoljenja ali delite podatke z njimi."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Za samo **${ relativePrice } na mesec** več dobite dostop do vrhunskega upravitelja gesel ${ BRAND_NAME }!"
       ],
@@ -6555,6 +6534,9 @@
       ],
       "Includes:": [
         "Vključuje:"
+      ],
+      "Launching ${ PASS_APP_NAME }": [
+        "Zaganjanje ${ PASS_APP_NAME }"
       ],
       "per month": [
         "na mesec"
@@ -6582,6 +6564,12 @@
       ],
       "Secure vault sharing": [
         "Varna in zanesljiva skupna raba"
+      ],
+      "Setting up your organization": [
+        "Nastavljam vašo organizacijo"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Prijava na ${ PASS_APP_NAME }"
       ],
       "Updating your account": [
         "Posodabljanje vašega računa"
@@ -8558,9 +8546,6 @@
       "Change login password": [
         "Spremenite geslo za prijavo"
       ],
-      "Change mailbox password": [
-        "Spremeni geslo poštnega nabiralnika"
-      ],
       "Change organization name": [
         "Spreminjanje imena organizacije"
       ],
@@ -8786,9 +8771,6 @@
       "Invoices": [
         "Izdani računi"
       ],
-      "Login password": [
-        "Geslo za prijavo"
-      ],
       "Multi-user support": [
         "Podpora za več uporabnikov"
       ],
@@ -8989,9 +8971,6 @@
       ],
       "Type": [
         "Vrsta"
-      ],
-      "Unlock your mailbox": [
-        "Odklenite svoj poštni predal."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Nadgradite zaščito omrežja z namenskimi strežniki"
