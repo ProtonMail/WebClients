@@ -280,7 +280,7 @@
         "Mettiti in contatto"
       ],
       "Get verification code": [
-        "Ottieni il codice di verifica"
+        "Invia il codice di verifica"
       ],
       "Go to label": [
         "Vai all'etichetta"
@@ -393,6 +393,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Apri ${ DRIVE_APP_NAME }"
+      ],
       "Pay": [
         "Paga"
       ],
@@ -460,7 +463,7 @@
         "Richiedi nuovo codice"
       ],
       "Resend code": [
-        "Reinvia codice"
+        "Reinvia il codice"
       ],
       "Resend invite": [
         "Rispedisci l'invito"
@@ -2107,6 +2110,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
+      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
+        "Si è verificato un errore di integrità dei dati e le modifiche recenti non possono essere salvate. Aggiorna la pagina."
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -2194,19 +2200,16 @@
         "L'indirizzo email è obbligatorio"
       ],
       "Email is not valid": [
-        "Email non valida"
+        "Indirizzo email non valido"
       ],
       "Enter 6 digits": [
-        "Inserisci 6 cifre"
+        "Inserisci il codice a 6 cifre"
       ],
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
       "Error decrypting a computer": [
         "Errore durante la decriptografia di un computer"
-      ],
-      "Error: Update Too Large": [
-        "Errore: aggiornamento troppo grande"
       ],
       "External accounts are not supported yet": [
         "Gli account esterni non sono ancora supportati"
@@ -2279,9 +2282,6 @@
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
-      ],
-      "It looks like the text document you're trying to paste exceeds the allowed limit.": [
-        "Sembra che il documento di testo che stai tentando di incollare superi il limite consentito."
       ],
       "Item content cannot exceed 40KB": [
         "Il contenuto dell'elemento non può superare i 40 Kb"
@@ -2435,6 +2435,9 @@
       "The label name is too long. Please choose a different name.": [
         "Il nome dell'etichetta è troppo lungo. Scegli un nome diverso."
       ],
+      "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
+        "L'ultimo aggiornamento apportato al documento è troppo grande o supererebbe il limite di dimensione totale del documento. La funzionalità di modifica è stata temporaneamente disabilitata. Le modifiche effettuate non verranno salvate. Esporta una copia del documento e ricarica la pagina."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "L'importo minimo di credito che può essere aggiunto è di ${ price }"
       ],
@@ -2469,7 +2472,7 @@
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
       "This field is required": [
-        "Questo campo è obbligatorio"
+        "Campo necessario"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
@@ -2494,6 +2497,9 @@
       ],
       "Unknown payment token status": [
         "Stato del token di pagamento sconosciuto"
+      ],
+      "Update Too Large": [
+        "Aggiornamento troppo grande"
       ],
       "Upload for this folder is temporarily disabled": [
         "Il caricamento per questa cartella è temporaneamente disabilitato"
@@ -3409,7 +3415,7 @@
         "Verrà aggiunto un numero al nome della cartella"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
+        "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
@@ -3436,6 +3442,9 @@
       "All (${ totalFoldersCount } label)": [
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
+      ],
+      "All changes saved to Drive": [
+        "Tutte le modifiche sono state salvate su Drive"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
@@ -3577,11 +3586,11 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digitale verificata. Questa cartella è stata caricata in modo sicuro da ${ emailAddress }."
       ],
-      "Disconnected: ${ disconnectReasonMessage }": [
-        "Disconnesso: ${ disconnectReasonMessage }"
-      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Document is busy": [
+        "Il documento è occupato"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
@@ -3631,6 +3640,9 @@
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
       ],
+      "End to end encrypted.": [
+        "Con crittografia end-to-end."
+      ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione"
       ],
@@ -3652,11 +3664,14 @@
       "Error loading document${ errorDetail }": [
         "Impossibile caricare il documento${ errorDetail }"
       ],
+      "Error Syncing": [
+        "Errore nella sincronizzazione"
+      ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "Ogni modifica apportata viene salvata automaticamente e in modo sicuro su Drive."
+      ],
       "Expired": [
         "Scaduto"
-      ],
-      "Failed to connect: ${ disconnectReasonMessage }": [
-        "Impossibile connettersi: ${ disconnectReasonMessage }"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Generazione di un link sicuro non riuscita. Il motivo è: ${ error }"
@@ -3713,7 +3728,7 @@
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
+        "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -3812,6 +3827,9 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "Looks like you're offline. Document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Sembra che tu sia offline. Il documento non può essere modificato mentre sei offline. Controlla la connettività del tuo dispositivo."
+      ],
       "Low Priority": [
         "Priorità bassa"
       ],
@@ -3866,6 +3884,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
@@ -3965,9 +3986,6 @@
       "Primary": [
         "Principale"
       ],
-      "Recent edits may not be displayed": [
-        "Le modifiche recenti potrebbero non essere visualizzate"
-      ],
       "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
         "Non è stato possibile salvare le modifiche più recenti apportate al documento. Per garantire la sicurezza dei dati, la modifica è stata temporaneamente disabilitata. Scarica una copia del documento dal menu principale. Dopo averlo fatto, aggiorna la pagina per riconnetterti."
       ],
@@ -3979,6 +3997,15 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
+      ],
+      "Saved in ${ DRIVE_APP_NAME }": [
+        "Salvato in ${ DRIVE_APP_NAME }"
+      ],
+      "Saving": [
+        "Salvataggio"
+      ],
+      "Saving...": [
+        "Salvataggio..."
       ],
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
@@ -4016,14 +4043,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
-      "Some edits are taking longer to sync": [
-        "La sincronizzazione di alcune modifiche sta richiedendo più tempo del solito"
-      ],
       "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
         "La sincronizzazione di alcune modifiche sta richiedendo più tempo del solito. Potrebbe essere dovuto a problemi di rete. Per il momento puoi continuare a modificare. Se il problema persiste, verrà visualizzato un nuovo messaggio di errore."
-      ],
-      "Some edits failed to sync": [
-        "La sincronizzazione di alcune modifiche non è riuscita"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Invia un deposito utilizzando il seguente indirizzo, oppure scansionando il codice QR fornito. Il tuo deposito verrà correttamente accreditato una volta confermato."
@@ -4066,6 +4087,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "Questo documento contiene molte attività. Alcune funzionalità potrebbero essere temporaneamente non disponibili."
       ],
       "This item already exists in your library": [
         "Questo elemento è già presente nella tua libreria"
@@ -4111,7 +4135,7 @@
         "Per completare il pagamento, per favore invia ${ btcAmountBold } all'indirizzo sottostante."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Per contrastare spam e abusi, verifica di essere umano."
+        "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
@@ -4322,6 +4346,9 @@
       "Your account will be updated once the payment is cleared.": [
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
       ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "Sincronizzazione delle modifiche con Drive. Non chiudere la pagina web."
+      ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Il tuo browser attuale non supporta il download di file di grandi dimensioni a causa dell'indisponibilità degli operatori del servizio. Il download di file di grandi dimensioni potrebbe bloccarsi o lasciare che il browser non risponda. Utilizza le versioni più recenti di un ${ recommendedBrowser } e riprova."
       ],
@@ -4335,7 +4362,7 @@
         "Il tuo indirizzo email è stato reso pubblico:"
       ],
       "Your email will only be used for this one-time verification.": [
-        "La tua email sarà utilizzata solo per questa verifica una tantum."
+        "Questo indirizzo email verrà utilizzato esclusivamente per questa unica verifica."
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -4353,7 +4380,7 @@
         "La tua password è stata resa pubblica:"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
+        "Questo numero di telefono verrà utilizzato esclusivamente per questa unica verifica."
       ]
     },
     "info": {
@@ -4541,7 +4568,7 @@
         "Città"
       ],
       "Code is 6 digits without spaces": [
-        "Il codice è di 6 cifre senza spazi"
+        "Codice a 6 cifre senza spazi"
       ],
       "Colors": [
         "Colori"
@@ -5349,7 +5376,7 @@
         "Ottieni ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "Ottieni ${ planName }"
+        "Ottieni il piano ${ planName }"
       ],
       "Keep ${ plan }": [
         "Mantieni ${ plan }"
@@ -6418,8 +6445,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Ho capito"
+      ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Payment Processing": [
+        "Elaborazione del pagamento"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -6432,6 +6465,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
       ]
     },
     "Payments.Error": {
@@ -7543,6 +7579,9 @@
       "Browser might run out of memory": [
         "Il browser potrebbe esaurire la memoria"
       ],
+      "Busy": [
+        "Occupato"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annulla l'abbonamento a ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -7695,6 +7734,9 @@
       "Error": [
         "Errore"
       ],
+      "Error Syncing": [
+        "Errore nella sincronizzazione"
+      ],
       "Exporting contacts": [
         "Esportazione contatti"
       ],
@@ -7758,6 +7800,9 @@
       ],
       "Notes": [
         "Note"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Open actions dropdown": [
         "Apri menu delle azioni"
@@ -7855,12 +7900,6 @@
       "Sign out": [
         "Esci dall'account"
       ],
-      "Some edits are taking longer to sync": [
-        "La sincronizzazione di alcune modifiche sta richiedendo più tempo del solito"
-      ],
-      "Some edits failed to sync": [
-        "La sincronizzazione di alcune modifiche non è riuscita"
-      ],
       "Start a new import": [
         "Avvia una nuova importazione"
       ],
@@ -7881,6 +7920,9 @@
       ],
       "Unlock contacts groups": [
         "Sblocca i gruppi di contatti"
+      ],
+      "Untitled document ${ date }": [
+        "Documento senza titolo ${ date }"
       ],
       "Uploading a large file or folder": [
         "File di grandi dimensioni o cartella in caricamento."
