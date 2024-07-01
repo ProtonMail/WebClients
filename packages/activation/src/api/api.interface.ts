@@ -48,6 +48,7 @@ export interface ApiMailImporterFolder {
     /** The hierarchy delimiter in the Source field */
     Separator: string;
     Size: number;
+    Hierarchy?: string[];
     /**
      * TODO
      * Flags seem to deliver inconsistent results between
