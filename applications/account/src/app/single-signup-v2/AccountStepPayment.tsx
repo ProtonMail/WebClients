@@ -20,6 +20,7 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import useHandler from '@proton/components/hooks/useHandler';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
     ExtendedTokenPayment,
@@ -37,7 +38,7 @@ import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Api, VPNServersCountData, isTaxInclusive } from '@proton/shared/lib/interfaces';
+import { Api, VPNServersCountData, isBilledUser, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -148,6 +149,8 @@ const AccountStepPayment = ({
 
     const flow: PaymentMethodFlows = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
 
+    const user = model.session?.user;
+
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
@@ -157,9 +160,10 @@ const AccountStepPayment = ({
         paymentMethods: model.session?.paymentMethods,
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         api: normalApi,
-        chargebeeEnabled: model.session?.user.ChargebeeUser,
+        chargebeeEnabled: user?.ChargebeeUser,
         theme: publicTheme,
         billingAddress: model.subscriptionData.billingAddress,
+        user,
         onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
@@ -202,6 +206,17 @@ const AccountStepPayment = ({
             }
         },
     });
+
+    const debouncedHandlePlanIDs = useHandler(
+        (planIDs) => {
+            handleOptimistic({ planIDs });
+        },
+        { debounce: 200 }
+    );
+
+    if (isBilledUser(user)) {
+        return <BilledUserInlineMessage />;
+    }
 
     const termsAndConditions = (
         <Href className="color-weak" key="terms" href={getLocaleTermsURL()}>
@@ -284,13 +299,6 @@ const AccountStepPayment = ({
 
         withLoadingSignup(run()).catch(noop);
     };
-
-    const debouncedHandlePlanIDs = useHandler(
-        (planIDs) => {
-            handleOptimistic({ planIDs });
-        },
-        { debounce: 200 }
-    );
 
     const isB2BPlan = getIsB2BAudienceFromPlan(options.plan.Name);
 

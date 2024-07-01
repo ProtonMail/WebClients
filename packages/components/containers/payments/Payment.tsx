@@ -3,6 +3,7 @@ import { ReactNode, Ref, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
+import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import {
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
@@ -18,7 +19,7 @@ import { CardFieldStatus } from '@proton/components/payments/react-extensions/us
 import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { APPS, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, Currency, User, isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
@@ -64,6 +65,7 @@ export interface Props {
     chargebeeCard: ChargebeeCardProcessorHook;
     chargebeePaypal: ChargebeePaypalProcessorHook;
     hasSomeVpnPlan: boolean;
+    user: User | undefined;
 }
 
 export interface NoApiProps extends Props {
@@ -120,11 +122,14 @@ export const PaymentsNoApi = ({
     bitcoinInhouse,
     bitcoinChargebee,
     isChargebeeEnabled,
+    user,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
-    const showBitcoinMethod =
+    const isBitcoinMethod =
         method === PAYMENT_METHOD_TYPES.BITCOIN || method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+    const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
+    const showBitcoinPlaceholder = isBitcoinMethod && isBilledUser(user);
 
     useEffect(() => {
         paymentComponentLoaded();
@@ -258,6 +263,7 @@ export const PaymentsNoApi = ({
                             )}
                         </>
                     )}
+                    {showBitcoinPlaceholder && <BilledUserInlineMessage />}
                     {showPaypalView && (
                         <PayPalView
                             method={method}

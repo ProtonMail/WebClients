@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
-import { User } from '@proton/shared/lib/interfaces';
+import { User, isBilledUser } from '@proton/shared/lib/interfaces';
 
-import { isBilledUser } from './utils';
+import { billedUserWarning } from './billedUserWarning';
 
 interface Props extends ModalProps {
-    user: User;
+    user: User | undefined;
 }
 
 export const BilledUserModal = ({ user, ...rest }: Props) => {
@@ -25,10 +25,7 @@ export const BilledUserModal = ({ user, ...rest }: Props) => {
         <ModalTwo size="large" {...rest}>
             <ModalTwoHeader title={c('Payments').t`Payment Processing`}></ModalTwoHeader>
             <ModalTwoContent>
-                <p>
-                    {c('Payments')
-                        .t`We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.`}
-                </p>
+                <p>{billedUserWarning}</p>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button className="mx-auto" color="norm" onClick={rest.onClose} data-testid="BilledUserModal/onClose">
