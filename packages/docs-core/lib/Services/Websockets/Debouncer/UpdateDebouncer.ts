@@ -27,8 +27,8 @@ type UpdateDebouncerEventPayload =
  */
 export class UpdateDebouncer {
   readonly buffer: Uint8Array[] = []
-  realtimeStreamingInterval: NodeJS.Timeout | null = null
-  singlePlayerIdleTimeout: NodeJS.Timeout | null = null
+  realtimeStreamingInterval: ReturnType<typeof setInterval> | null = null
+  singlePlayerIdleTimeout: ReturnType<typeof setTimeout> | null = null
   private mode: DocumentDebounceMode = DocumentDebounceMode.SinglePlayer
   currentBufferSize = 0
   isReadyToFlush = false

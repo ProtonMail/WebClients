@@ -41,8 +41,8 @@ export const getWebSocketServerURL = () => {
 export class WebsocketConnection implements WebsocketConnectionInterface {
   private socket?: WebSocket
   readonly state: WebsocketStateInterface = new WebsocketState()
-  private pingTimeout: NodeJS.Timeout | undefined = undefined
-  private reconnectTimeout: NodeJS.Timeout | undefined = undefined
+  private pingTimeout: ReturnType<typeof setTimeout> | undefined = undefined
+  private reconnectTimeout: ReturnType<typeof setTimeout> | undefined = undefined
   private destroyed = false
 
   private didReceiveReadyMessageFromRTS = false
@@ -86,7 +86,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
   destroy(): void {
     this.destroyed = true
-    clearInterval(this.pingTimeout)
+    clearTimeout(this.pingTimeout)
     clearTimeout(this.reconnectTimeout)
     window.removeEventListener('offline', this.handleOfflineConnectionEvent)
     window.removeEventListener('online', this.handleOnlineConnectionEvent)
