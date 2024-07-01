@@ -6,7 +6,7 @@ import { EncryptComment } from './EncryptComment'
 import { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import { Result } from '../Domain/Result/Result'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { DocsApi } from '../Api/Docs/DocsApi'
+import { DocsApi } from '../Api/DocsApi'
 import metrics from '@proton/metrics'
 
 /**
