@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { MouseEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -103,7 +103,8 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
         cleanInvitees();
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: MouseEvent) => {
+        e.preventDefault();
         await addNewMembers({
             invitees,
             permissions: selectedPermissions,
