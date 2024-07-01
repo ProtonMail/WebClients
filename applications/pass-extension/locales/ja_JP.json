@@ -822,6 +822,9 @@
       "Vault name does not match": [
         "保管庫名が一致しません"
       ],
+      "Wrong password": [
+        "パスワードが正しくありません"
+      ],
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
       ],
@@ -1952,22 +1955,6 @@
         "作成されるメールアドレス"
       ]
     },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "PINコードの入力"
-      ],
-      "Sign in to your account": [
-        "アカウントにサインインする"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } のロックを解除します"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } へようこそ"
-      ]
-    },
     "Message": {
       "${ count } item": [
         "${ count } 件のアイテム"
@@ -2257,9 +2244,6 @@
       ],
       "Trash empty": [
         "ごみ箱は空です"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }のロックを解除します"
       ],
       "Update available": [
         "更新あり"

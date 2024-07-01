@@ -374,6 +374,9 @@
       "Retry": [
         "Reintentar"
       ],
+      "Right click and download this CSV": [
+        "Haz clic derecho y descarga este archivo CSV."
+      ],
       "Save": [
         "Guardar"
       ],
@@ -400,6 +403,9 @@
       ],
       "Set access level": [
         "Configurar el nivel de acceso"
+      ],
+      "Set extra password": [
+        "Configurar la contraseña adicional"
       ],
       "Setup 2FA": [
         "Configurar 2FA"
@@ -708,6 +714,9 @@
       "File could not be parsed": [
         "No se ha podido analizar el archivo."
       ],
+      "File could not be read": [
+        "No se ha podido leer el archivo"
+      ],
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado."
       ],
@@ -845,6 +854,9 @@
       ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacta a nuestro servicio de atención al cliente para obtener ayuda."
+      ],
+      "Wrong password": [
+        "La contraseña no es correcta."
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intenta de nuevo."
@@ -1029,6 +1041,9 @@
       "Autosaved on ${ payload.domain }": [
         "Guardado automáticamente en ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Antes de exportar tus datos con este formato, abre y desactiva Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
+      ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
       ],
@@ -1058,6 +1073,9 @@
       ],
       "Close this window in order to use another passkey manager.": [
         "Cierra esta ventana para usar otro gestor de claves de acceso."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Confirma tu contraseña adicional para proceder con la eliminación."
       ],
       "Congratulations, your access has been confirmed": [
         "Felicitaciones. Se ha confirmado tu acceso."
@@ -1101,6 +1119,9 @@
       "Drop to import": [
         "Suelta aquí para importar"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Debido a una limitación de las extensiones en el navegador Safari, perderás la extensión de archivo «*.pgp» después de exportar los datos. Cambia el nombre del archivo para incluir la extensión «*.pgp» (p. ej. archivo.pgp) después de exportarlo."
+      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importa fácilmente tus contraseñas existentes a ${ PASS_APP_NAME }."
       ],
@@ -1140,8 +1161,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "Introduce el código de verificación. Dígito ${ digit }."
       ],
+      "Enter your extra password": [
+        "Ingresa tu contraseña adicional."
+      ],
       "Enter your PIN code": [
         "Introduce tu código PIN"
+      ],
+      "Extra password successfuly created": [
+        "Se ha creado la contraseña adicional."
+      ],
+      "Extra password successfuly removed": [
+        "Se ha borrado la contraseña adicional."
       ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
@@ -1345,20 +1375,20 @@
       "Pinning item...": [
         "Anclando el elemento..."
       ],
-      "Please confirm your ${ BRAND_NAME } password": [
-        "Confirma tu contraseña de ${ BRAND_NAME }"
-      ],
-      "Please confirm your ${ BRAND_NAME } password in order to auto-lock with your password.": [
-        "Confirma tu contraseña de ${ BRAND_NAME } para bloquear automáticamente con tu contraseña."
-      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirma tu contraseña de ${ BRAND_NAME } para exportar tus datos de ${ PASS_APP_NAME }."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to unregister your current lock.": [
-        "Confirma tu contraseña de ${ BRAND_NAME } para cancelar el registro de tu bloqueo actual."
+      "Please confirm your password": [
+        "Confirma tu contraseña"
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to update the auto-lock time.": [
-        "Confirma tu contraseña de ${ BRAND_NAME } para actualizar el tiempo del bloqueo automático."
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Confirma tu contraseña para bloquear automáticamente con tu contraseña."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Confirma tu contraseña para cancelar el registro de tu bloqueo actual."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Confirma tu contraseña para actualizar el tiempo del bloqueo automático."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Confirma el código PIN para cancelar el registro del bloqueo actual."
@@ -1375,6 +1405,9 @@
       "Please enter your current PIN code to continue": [
         "Introduce tu código PIN actual para continuar."
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Ingresa tu contraseña adicional para empezar a usar ${ PASS_SHORT_APP_NAME }."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Mejora tu plan para obtener un acceso anticipado a la aplicación web de ${ PASS_APP_NAME }."
       ],
@@ -1387,8 +1420,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
       ],
+      "Registering extra password...": [
+        "Registrando la contraseña adicional..."
+      ],
       "Registering PIN lock failed": [
         "Error al registrar el bloqueo por código PIN"
+      ],
+      "Removing extra password...": [
+        "Borrando la contraseña adicional..."
       ],
       "Restoring items from trash": [
         "Restaurando un grupo de elementos"
@@ -1438,6 +1477,9 @@
       "Sign in or create an account to continue.": [
         "Inicia sesión o crea una cuenta para continuar."
       ],
+      "Sign in to your account": [
+        "Iniciar sesión en tu cuenta"
+      ],
       "Signing you in": [
         "Iniciando sesión"
       ],
@@ -1467,6 +1509,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "El archivo de exportación está cifrado mediante PGP y requiere una frase de contraseña segura."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de tu contraseña de ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no ha podido importarse:",
@@ -1507,6 +1552,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Desbloquea ${ PASS_APP_NAME } con tu código PIN para guardar esta clave de acceso."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña adicional."
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloquéala con tu PIN para acceder a los ajustes"
@@ -1586,6 +1637,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Has alcanzado el número máximo de ${ maxLength } caracteres."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Se cerrará la sesión y tendrás que volver a iniciarla en todos los dispositivos."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Utilizarás este PIN para desbloquear ${ PASS_APP_NAME } automáticamente una vez pase el tiempo de inactividad."
@@ -1780,6 +1834,9 @@
       "Export": [
         "Exportar"
       ],
+      "Extra password": [
+        "Contraseña adicional"
+      ],
       "Field name": [
         "Nombre del campo"
       ],
@@ -1957,6 +2014,9 @@
       "Prompt for auto-save when generating passwords": [
         "Solicitar el guardado automático al generar contraseñas"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Protege ${ PASS_APP_NAME } con una contraseña adicional."
+      ],
       "Rate us": [
         "Evalúanos"
       ],
@@ -2038,6 +2098,9 @@
       "Type": [
         "Tipo"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloquear ${ PASS_APP_NAME }"
+      ],
       "Unnamed Credit Card": [
         "Tarjeta de crédito sin nombre"
       ],
@@ -2082,25 +2145,6 @@
       ],
       "You are about to create": [
         "Estás a punto de crear"
-      ]
-    },
-    "lobby: Info": {
-      "Enter your PIN code": [
-        "Introduce tu código PIN."
-      ],
-      "Sign in to your account": [
-        "Iniciar sesión en tu cuenta"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloquea ${ PASS_SHORT_APP_NAME } con tu contraseña de ${ BRAND_NAME }"
-      ]
-    },
-    "lobby: Title": {
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Te damos la bienvenida a ${ brandNameJSX }"
       ]
     },
     "Message": {
@@ -2248,6 +2292,9 @@
       "Auto-lock update": [
         "Actualización de bloqueo automático"
       ],
+      "Confirm extra password": [
+        "Confirmar la contraseña adicional"
+      ],
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
@@ -2362,6 +2409,9 @@
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
       ],
+      "Remove extra password": [
+        "Borrar la contraseña adicional"
+      ],
       "Restore this version?": [
         "¿Restaurar esta versión?"
       ],
@@ -2373,6 +2423,9 @@
       ],
       "Set access level": [
         "Configurar el nivel de acceso"
+      ],
+      "Set extra password": [
+        "Configurar la contraseña adicional"
       ],
       "Set up 2FA for more security": [
         "Configura la 2FA para más seguridad"
@@ -2401,8 +2454,8 @@
       "Trash empty": [
         "Papelera vacía"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Desbloquear ${ PASS_APP_NAME }"
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
       ],
       "Update available": [
         "Actualización disponible"
@@ -2421,6 +2474,9 @@
       ],
       "Weak password": [
         "Contraseña poco segura"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Te damos la bienvenida a ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "¡Te damos la bienvenida a tu nuevo gestor de contraseñas!"
@@ -2483,6 +2539,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento."
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Precaución: No podrás acceder a tu cuenta de ${ PASS_APP_NAME } si pierdes esta contraseña."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "No se ha podido crear la caja fuerte \"${ vaultName }\"."
       ],
@@ -2500,6 +2559,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA."
+      ],
+      "Extra password cannot be empty": [
+        "La contraseña adicional no puede estar vacía."
+      ],
+      "Extra password should have at least 8 characters": [
+        "La contraseña adicional debe tener al menos 8 caracteres."
       ],
       "Invalid alias prefix": [
         "Prefijo del alias no válido"
@@ -2547,6 +2612,9 @@
       "Passphrase is required": [
         "Frase de contraseña requerida"
       ],
+      "Passwords do not match": [
+        "Las contraseñas no coinciden."
+      ],
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña."
       ],
@@ -2558,6 +2626,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verifica tu dirección de correo electrónico para poder utilizar el intercambio de caja fuerte."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Al borrar la contraseña adicional, se cerrará la sesión en todos tus dispositivos y terminarán todas las sesiones activas."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."
