@@ -208,32 +208,32 @@ export const TransactionReview = ({
                 </div>
 
                 <div className="flex flex-column w-full mb-7">
-                    <div className="flex flex-column items-start">
-                        <div className="flex flex-row w-full items-center justify-space-between">
+                    <div className="flex flex-row w-full items-center justify-space-between">
+                        <div className="flex flex-column items-start">
                             <div className="color-weak">{c('Wallet transaction').t`Network fees`}</div>
-                            <Button
-                                className="ml-4 rounded-full"
-                                size="small"
-                                icon
-                                shape="solid"
-                                color="weak"
-                                onClick={() => {
-                                    setFeesModal(true);
-                                }}
-                            >
-                                <Tooltip title={c('Wallet send').t`Edit`}>
-                                    <Icon name="pencil" alt={c('Wallet send').t`Edit`} />
-                                </Tooltip>
-                            </Button>
+
+                            <div className="mb-0.5">{unit && <Price satsAmount={totalFees} unit={unit} />}</div>
+
+                            {isExchangeRate(unit) && (
+                                <div className="color-hint">
+                                    <Price satsAmount={totalFees} unit={settings.BitcoinUnit} />
+                                </div>
+                            )}
                         </div>
 
-                        <div className="mb-0.5">{unit && <Price satsAmount={totalFees} unit={unit} />}</div>
-
-                        {isExchangeRate(unit) && (
-                            <div className="color-hint">
-                                <Price satsAmount={totalFees} unit={settings.BitcoinUnit} />
-                            </div>
-                        )}
+                        <CoreButton
+                            className="ml-4 rounded-full"
+                            icon
+                            shape="solid"
+                            color="weak"
+                            onClick={() => {
+                                setFeesModal(true);
+                            }}
+                        >
+                            <Tooltip title={c('Wallet send').t`Edit`}>
+                                <Icon name="pencil" alt={c('Wallet send').t`Edit`} />
+                            </Tooltip>
+                        </CoreButton>
 
                         <FeesModal unit={unit} txBuilder={txBuilder} updateTxBuilder={updateTxBuilder} {...feesModal} />
                     </div>
