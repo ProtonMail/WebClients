@@ -164,6 +164,7 @@ module.exports = {
         new webpack.EnvironmentPlugin({ NODE_ENV: ENV }),
         new webpack.DefinePlugin({
             BUILD_TARGET: JSON.stringify(BUILD_TARGET),
+            DESKTOP_BUILD: false,
             ENV: JSON.stringify(ENV),
             OFFLINE_SUPPORTED: false,
             REDUX_DEVTOOLS_PORT: REDUX_DEVTOOLS_PORT,
