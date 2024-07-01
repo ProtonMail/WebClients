@@ -243,8 +243,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     });
 
     const handleAccountFork = withContext<MessageHandlerCallback<WorkerMessageType.ACCOUNT_FORK>>(
-        async ({ getState, service, status }, { payload }) => {
-            if (getState().loggedIn) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
+        async ({ service, status }, { payload }) => {
+            if (authStore.hasSession()) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
 
             try {
                 await authService.consumeFork({ mode: 'secure', ...payload }, `${SSO_URL}/api`);
