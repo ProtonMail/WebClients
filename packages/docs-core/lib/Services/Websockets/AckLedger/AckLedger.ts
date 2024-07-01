@@ -20,7 +20,7 @@ export class AckLedger implements AckLedgerInterface {
   concerningMessages: Set<string> = new Set()
   erroredMessages: Set<string> = new Set()
   private avgTimeToReceiveAck = 0.0
-  private checkerTimer: NodeJS.Timeout | undefined
+  private checkerTimer: ReturnType<typeof setInterval> | undefined
 
   constructor(
     private logger: LoggerInterface,
