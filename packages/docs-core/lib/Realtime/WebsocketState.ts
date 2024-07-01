@@ -18,7 +18,7 @@ export interface WebsocketStateInterface {
 export class WebsocketState implements WebsocketStateInterface {
   private attempts = 0
   private connected: boolean = false
-  private resetTimeout: NodeJS.Timeout | null = null
+  private resetTimeout: ReturnType<typeof setTimeout> | null = null
 
   didOpen() {
     this.connected = true

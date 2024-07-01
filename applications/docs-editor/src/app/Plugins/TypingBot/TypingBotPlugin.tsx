@@ -16,7 +16,7 @@ export default function TypingBotPlugin({
   delayBetweenAdditions = 300,
 }: Props): JSX.Element | null {
   const [editor] = useLexicalComposerContext()
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const insertTextInDocument = useCallback(() => {
     editor.update(() => {
