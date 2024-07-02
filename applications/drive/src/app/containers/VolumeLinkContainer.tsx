@@ -30,10 +30,11 @@ export const VolumeLinkContainer: FC<RouteComponentProps<{ volumeId: string; lin
         })
             .then((linkInfo) => {
                 if (linkInfo && isProtonDocument(linkInfo?.mimeType)) {
-                    // Open document will open in a new window, so let's navigate the tab to Shared with me
-                    navigateToSharedWithMe();
-
-                    return openDocument({ shareId: linkInfo.shareId, linkId: linkInfo.linkId });
+                    return openDocument({
+                        shareId: linkInfo.shareId,
+                        linkId: linkInfo.linkId,
+                        openBehavior: 'redirect',
+                    });
                 } else if (linkInfo?.shareId) {
                     navigateToLink(linkInfo.shareId, linkInfo.linkId, linkInfo.isFile, '/shared-with-me');
                 } else {

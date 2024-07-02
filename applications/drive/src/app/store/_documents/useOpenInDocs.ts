@@ -19,9 +19,12 @@ export const useOpenInDocs = (link: DecryptedLink | undefined) => {
 
     const showOpenInDocs = isDocsEnabled && (isDocument || isConvertibleDocument);
 
-    const openInDocsAction = async (doc: { shareId: string; linkId: string }) => {
+    const openInDocsAction = async (
+        doc: { shareId: string; linkId: string },
+        openBehavior: 'tab' | 'redirect' = 'tab'
+    ) => {
         if (isDocument) {
-            await openDocument(doc);
+            await openDocument({ ...doc, openBehavior });
         } else if (isConvertibleDocument) {
             await convertDocument(doc);
         }

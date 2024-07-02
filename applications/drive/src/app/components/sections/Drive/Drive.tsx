@@ -174,6 +174,7 @@ function Drive({ activeFolder, folderView }: Props) {
                         return openDocument({
                             linkId: id,
                             shareId,
+                            openBehavior: 'tab',
                         });
                     })
                     .catch(sendErrorReport);
