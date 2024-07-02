@@ -96,6 +96,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('showGenericAlertModal', [message])
   }
 
+  async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {
+    return this.invokeClientMethod('fetchExternalImageAsBase64', [url])
+  }
+
   public handleReplyFromClient(message: ClientToEditorReplyMessage): void {
     const pendingMessage = this.pendingMessages.find((m) => m.messageId === message.messageId)
     if (pendingMessage) {

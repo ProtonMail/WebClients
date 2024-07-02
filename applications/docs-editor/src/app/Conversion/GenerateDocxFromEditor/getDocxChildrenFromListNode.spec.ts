@@ -4,6 +4,7 @@ import { TextNode, $getRoot } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { getDocxChildrenFromListNode } from './getDocxChildrenFromListNode'
 import { Paragraph } from 'docx'
+import { DocxExportContext } from './Context'
 
 function jsonify(obj: any) {
   return JSON.parse(JSON.stringify(obj))
@@ -34,9 +35,11 @@ describe('getDocxChildrenFromListNode', () => {
     onError: console.error,
   })
 
-  it('should get items from flat list', () => {
+  it('should get items from flat list', async () => {
     editor.update(
       () => {
+        $getRoot().clear()
+
         const bulletList = new ListNode('bullet', 1)
 
         const bulletListItem1 = new ListItemNode()
@@ -62,32 +65,39 @@ describe('getDocxChildrenFromListNode', () => {
         numberedList.append(numberListItem2)
 
         $getRoot().append(numberedList)
-
-        const bulletChildren = getDocxChildrenFromListNode(bulletList)
-
-        expect(bulletChildren).toHaveLength(2)
-        expect(getListItemProperties(bulletChildren[0]).level).toBe(0)
-        expect(getListItemProperties(bulletChildren[0]).numberingId).toBe(1)
-        expect(getListItemProperties(bulletChildren[1]).level).toBe(0)
-        expect(getListItemProperties(bulletChildren[1]).numberingId).toBe(1)
-
-        const numberedChildren = getDocxChildrenFromListNode(numberedList)
-
-        expect(numberedChildren).toHaveLength(2)
-        expect(getListItemProperties(numberedChildren[0]).level).toBe(0)
-        expect(getListItemProperties(numberedChildren[0]).numberingId).toBe('{numbering-0}')
-        expect(getListItemProperties(numberedChildren[1]).level).toBe(0)
-        expect(getListItemProperties(numberedChildren[1]).numberingId).toBe('{numbering-0}')
-
-        $getRoot().clear()
       },
       { discrete: true },
     )
+
+    const state = editor.getEditorState()
+    const context: DocxExportContext = { state, fetchExternalImageAsBase64: jest.fn() }
+
+    const children = state.read(() => $getRoot().getChildren())
+    const bulletList = children[0] as ListNode
+    const numberedList = children[1] as ListNode
+
+    const bulletChildren = await getDocxChildrenFromListNode(bulletList, context)
+
+    expect(bulletChildren).toHaveLength(2)
+    expect(getListItemProperties(bulletChildren[0]).level).toBe(0)
+    expect(getListItemProperties(bulletChildren[0]).numberingId).toBe(1)
+    expect(getListItemProperties(bulletChildren[1]).level).toBe(0)
+    expect(getListItemProperties(bulletChildren[1]).numberingId).toBe(1)
+
+    const numberedChildren = await getDocxChildrenFromListNode(numberedList, context)
+
+    expect(numberedChildren).toHaveLength(2)
+    expect(getListItemProperties(numberedChildren[0]).level).toBe(0)
+    expect(getListItemProperties(numberedChildren[0]).numberingId).toBe('{numbering-0}')
+    expect(getListItemProperties(numberedChildren[1]).level).toBe(0)
+    expect(getListItemProperties(numberedChildren[1]).numberingId).toBe('{numbering-0}')
   })
 
-  it('should get items from nested list, with correct numbering id', () => {
+  it('should get items from nested list, with correct numbering id', async () => {
     editor.update(
       () => {
+        $getRoot().clear()
+
         const bulletList = new ListNode('bullet', 1)
 
         const bulletListItem1 = new ListItemNode()
@@ -105,13 +115,6 @@ describe('getDocxChildrenFromListNode', () => {
 
         $getRoot().append(bulletList)
 
-        const children = getDocxChildrenFromListNode(bulletList)
-
-        expect(children).toHaveLength(3)
-        expect(getListItemProperties(children[0]).level).toBe(0)
-        expect(getListItemProperties(children[1]).level).toBe(1)
-        expect(getListItemProperties(children[2]).level).toBe(0)
-
         const numberedList = new ListNode('number', 1)
 
         const numberListItem1 = new ListItemNode()
@@ -128,20 +131,32 @@ describe('getDocxChildrenFromListNode', () => {
         numberedList.append(numberListItem2)
 
         $getRoot().append(numberedList)
-
-        const numberedChildren = getDocxChildrenFromListNode(numberedList)
-
-        expect(numberedChildren).toHaveLength(3)
-        expect(getListItemProperties(numberedChildren[0]).level).toBe(0)
-        expect(getListItemProperties(numberedChildren[0]).numberingId).toBe('{numbering-0}')
-        expect(getListItemProperties(numberedChildren[1]).level).toBe(1)
-        expect(getListItemProperties(numberedChildren[1]).numberingId).toBe('{numbering-1}')
-        expect(getListItemProperties(numberedChildren[2]).level).toBe(0)
-        expect(getListItemProperties(numberedChildren[2]).numberingId).toBe('{numbering-0}')
-
-        $getRoot().clear()
       },
       { discrete: true },
     )
+
+    const state = editor.getEditorState()
+    const context: DocxExportContext = { state, fetchExternalImageAsBase64: jest.fn() }
+
+    const children = state.read(() => $getRoot().getChildren())
+    const bulletList = children[0] as ListNode
+    const numberedList = children[1] as ListNode
+
+    const bulletChildren = await getDocxChildrenFromListNode(bulletList, context)
+
+    expect(bulletChildren).toHaveLength(3)
+    expect(getListItemProperties(bulletChildren[0]).level).toBe(0)
+    expect(getListItemProperties(bulletChildren[1]).level).toBe(1)
+    expect(getListItemProperties(bulletChildren[2]).level).toBe(0)
+
+    const numberedChildren = await getDocxChildrenFromListNode(numberedList, context)
+
+    expect(numberedChildren).toHaveLength(3)
+    expect(getListItemProperties(numberedChildren[0]).level).toBe(0)
+    expect(getListItemProperties(numberedChildren[0]).numberingId).toBe('{numbering-0}')
+    expect(getListItemProperties(numberedChildren[1]).level).toBe(1)
+    expect(getListItemProperties(numberedChildren[1]).numberingId).toBe('{numbering-1}')
+    expect(getListItemProperties(numberedChildren[2]).level).toBe(0)
+    expect(getListItemProperties(numberedChildren[2]).numberingId).toBe('{numbering-0}')
   })
 })

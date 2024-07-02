@@ -1,9 +1,10 @@
-import { ParagraphNode, TextNode } from 'lexical'
+import { $getRoot, CLEAR_EDITOR_COMMAND, ParagraphNode, TextNode } from 'lexical'
 import { LinkNode } from '@lexical/link'
 import { getDocxChildrenFromElementNode } from './getDocxChildrenFromElementNode'
 import { ExternalHyperlink, TextRun } from 'docx'
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
+import { DocxExportContext } from './Context'
 
 describe('getDocxChildrenFromElementNode', () => {
   const editor = createHeadlessEditor({
@@ -14,7 +15,9 @@ describe('getDocxChildrenFromElementNode', () => {
     onError: console.error,
   })
 
-  it('should get text runs and external hyperlinks', () => {
+  it('should get text runs and external hyperlinks', async () => {
+    editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined)
+
     editor.update(
       () => {
         const paragraphNode = new ParagraphNode()
@@ -24,14 +27,20 @@ describe('getDocxChildrenFromElementNode', () => {
         paragraphNode.append(textNode)
         linkNode.append(textNode2)
         paragraphNode.append(linkNode)
-
-        const children = getDocxChildrenFromElementNode(paragraphNode)
-
-        expect(children).toHaveLength(2)
-        expect(children[0]).toBeInstanceOf(TextRun)
-        expect(children[1]).toBeInstanceOf(ExternalHyperlink)
+        $getRoot().append(paragraphNode)
       },
       { discrete: true },
     )
+
+    const state = editor.getEditorState()
+    const context: DocxExportContext = { state, fetchExternalImageAsBase64: jest.fn() }
+
+    const paragraphNode = state.read(() => $getRoot().getFirstChildOrThrow<ParagraphNode>())
+
+    const children = await getDocxChildrenFromElementNode(paragraphNode, context)
+
+    expect(children).toHaveLength(2)
+    expect(children[0]).toBeInstanceOf(TextRun)
+    expect(children[1]).toBeInstanceOf(ExternalHyperlink)
   })
 })

@@ -26,6 +26,7 @@ import { $isImageNode } from './ImageNode'
 import { useCombinedRefs } from '@proton/hooks'
 import ImageResizer from './ImageResizer'
 import { getEditorDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
+import { CircleLoader } from '@proton/atoms'
 
 const imageCache = new Set()
 
@@ -297,26 +298,41 @@ export default function ImageComponent({
   }
 
   return (
-    <Suspense fallback={null}>
-      <>
-        <div draggable={draggable}>
-          <LazyImage
-            className={
-              isFocused ? `focused ${$isNodeSelection(selection) ? 'cursor-grab active:cursor-grabbing' : ''}` : null
-            }
-            src={src}
-            altText={altText}
-            imageRef={imageRef}
-            width={width}
-            height={height}
-            maxWidth={maxWidth}
-            editor={editor}
+    <Suspense
+      fallback={
+        <div
+          className="flex items-center justify-center"
+          style={{
+            width,
+            height,
+          }}
+        >
+          <CircleLoader
+            style={{
+              width: '15%',
+              height: '15%',
+            }}
           />
         </div>
-        {isFocused && (
-          <ImageResizer editor={editor} imageRef={imageRef} onResizeStart={onResizeStart} onResizeEnd={onResizeEnd} />
-        )}
-      </>
+      }
+    >
+      <div draggable={draggable}>
+        <LazyImage
+          className={
+            isFocused ? `focused ${$isNodeSelection(selection) ? 'cursor-grab active:cursor-grabbing' : ''}` : null
+          }
+          src={src}
+          altText={altText}
+          imageRef={imageRef}
+          width={width}
+          height={height}
+          maxWidth={maxWidth}
+          editor={editor}
+        />
+      </div>
+      {isFocused && (
+        <ImageResizer editor={editor} imageRef={imageRef} onResizeStart={onResizeStart} onResizeEnd={onResizeEnd} />
+      )}
     </Suspense>
   )
 }
