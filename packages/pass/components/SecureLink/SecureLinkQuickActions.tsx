@@ -24,7 +24,11 @@ export const SecureLinkQuickActions: FC = () => {
                 loading={loading}
                 disabled={inactiveLinkCount === 0 || loading}
                 onClick={() => dispatch()}
-                label={c('Action').t`Remove all expired links`}
+                label={
+                    inactiveLinkCount
+                        ? c('Action').t`Remove all expired links (${inactiveLinkCount})`
+                        : c('Action').t`No expired links`
+                }
                 ellipsis
                 icon="trash"
                 size="small"
