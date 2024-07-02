@@ -2,7 +2,7 @@ import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
+import { getSupportedAddons, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 
 import {
     ADDON_NAMES,
@@ -36,7 +36,7 @@ import { hasBit } from './bitset';
 const { PLAN, ADDON } = PLAN_TYPES;
 
 const {
-    NEW_VISIONARY,
+    VISIONARY,
     MAIL,
     MAIL_PRO,
     MAIL_BUSINESS,
@@ -66,9 +66,9 @@ const {
     MEMBER_SCRIBE_VPN,
     MEMBER_SCRIBE_VPN2024,
     MEMBER_SCRIBE_VPN_PASS_BUNDLE,
+    MEMBER_SCRIBE_MAIL_PRO,
     MEMBER_SCRIBE_BUNDLE_PRO,
     MEMBER_SCRIBE_BUNDLE_PRO_2024,
-    MEMBER_SCRIBE_MAIL_PRO,
     MEMBER_SCRIBE_PASS_PRO,
     MEMBER_SCRIBE_VPN_BIZ,
     MEMBER_SCRIBE_PASS_BIZ,
@@ -111,7 +111,10 @@ export const hasSomePlan = (subscription: MaybeFreeSubscription, planName: PLANS
     return (subscription?.Plans || []).some(({ Name }) => Name === planName);
 };
 
-export const hasSomeAddOn = (subscription: MaybeFreeSubscription, addonName: ADDON_NAMES | ADDON_NAMES[]) => {
+export const hasSomeAddonOrPlan = (
+    subscription: MaybeFreeSubscription,
+    addonName: ADDON_NAMES | PLANS | (ADDON_NAMES | PLANS)[]
+) => {
     if (isFreeSubscription(subscription)) {
         return false;
     }
@@ -141,7 +144,7 @@ export const isManagedExternally = (
     return subscription.External === External.Android || subscription.External === External.iOS;
 };
 
-export const hasNewVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, NEW_VISIONARY);
+export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
 export const hasVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
 export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN2024);
 export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
@@ -166,7 +169,7 @@ export const hasAnyBundlePro = (subscription: MaybeFreeSubscription) =>
     hasBundlePro(subscription) || hasBundlePro2024(subscription);
 
 export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
-    hasSomeAddOn(subscription, [
+    hasSomeAddonOrPlan(subscription, [
         MEMBER_SCRIBE_MAILPLUS,
         MEMBER_SCRIBE_MAIL_BUSINESS,
         MEMBER_SCRIBE_DRIVEPLUS,
@@ -175,9 +178,9 @@ export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
         MEMBER_SCRIBE_VPN,
         MEMBER_SCRIBE_VPN2024,
         MEMBER_SCRIBE_VPN_PASS_BUNDLE,
+        MEMBER_SCRIBE_MAIL_PRO,
         MEMBER_SCRIBE_BUNDLE_PRO,
         MEMBER_SCRIBE_BUNDLE_PRO_2024,
-        MEMBER_SCRIBE_MAIL_PRO,
         MEMBER_SCRIBE_PASS_PRO,
         MEMBER_SCRIBE_VPN_BIZ,
         MEMBER_SCRIBE_PASS_BIZ,
@@ -185,8 +188,13 @@ export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
         MEMBER_SCRIBE_FAMILY,
     ]);
 
+export const PLANS_WITH_AI_INCLUDED = [VISIONARY];
+
+export const hasPlanWithAIAssistantIncluded = (subscription: MaybeFreeSubscription) =>
+    hasSomeAddonOrPlan(subscription, PLANS_WITH_AI_INCLUDED);
+
 export const hasAllProductsB2CPlan = (subscription: MaybeFreeSubscription) =>
-    hasFamily(subscription) || hasBundle(subscription) || hasNewVisionary(subscription);
+    hasFamily(subscription) || hasBundle(subscription) || hasVisionary(subscription);
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
     if (hasFree(subscription)) {
@@ -508,7 +516,7 @@ export interface AggregatedPricing {
 function isMultiUserPersonalPlan(plan: Plan) {
     // even though Family and Visionary plans can have up to 6 users in the org,
     // for the price displaying purposes we count it as 1 member.
-    return plan.Name === PLANS.FAMILY || plan.Name === PLANS.NEW_VISIONARY;
+    return plan.Name === PLANS.FAMILY || plan.Name === PLANS.VISIONARY;
 }
 
 function getPlanMembers(plan: Plan, quantity: number): number {
@@ -781,7 +789,7 @@ export const getVPNDedicatedIPs = (subscription: Subscription | undefined) => {
     }
 
     return (subscription as Subscription).Plans.reduce(
-        (acc, { Name, Quantity }) => acc + (Name.startsWith('1ip') ? Quantity : 0),
+        (acc, { Name, Quantity }) => acc + (isIpAddon(Name) ? Quantity : 0),
         IPS_INCLUDED_IN_PLAN[planName] || 0 // 1 IP is included in the Business plan
     );
 };
@@ -814,7 +822,7 @@ export const hasNewCancellablePlan = (subscription: Subscription | undefined, us
         hasMail,
         hasBundle,
         hasFamily,
-        hasNewVisionary,
+        hasVisionary,
         hasDrive,
         hasMailPro,
         hasMailBusiness,

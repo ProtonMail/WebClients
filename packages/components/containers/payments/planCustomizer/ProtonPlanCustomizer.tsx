@@ -126,19 +126,28 @@ const AddonCustomizer = ({
         </Price>
     );
 
-    const getDisplayMin = () => {
+    const displayMin = (() => {
         if (addonMaxKey === 'MaxIPs' || hasVpnBusiness(latestSubscription)) {
             return getVPNDedicatedIPs(latestSubscription);
         }
 
+        const usedAiAddons = organization?.UsedAI ?? 0;
         if (addonMaxKey === 'MaxAI') {
-            return organization?.UsedAI || 0;
+            return usedAiAddons;
         }
 
-        return min / divider;
-    };
+        const result = min / divider;
+        if (addonMaxKey === 'MaxMembers') {
+            // If user has used AI addons, then we can't set less members than AI addons.
+            // Because the number of users can't be lower than the number of AI addons.
+            // Note: this is valid only if we don't have customizable plans with included AI addons.
+            // For example, if we introduce at some point a B2B plan that includes AI seats without the addon
+            // then this section should be refactored.
+            return Math.max(result, usedAiAddons);
+        }
 
-    const displayMin = getDisplayMin();
+        return result;
+    })();
 
     if (isScribeAddon(addonNameKey)) {
         // We get the amount of add-ons starting with the members, this is used for the GPT add-ons

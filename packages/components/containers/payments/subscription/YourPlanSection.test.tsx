@@ -17,6 +17,7 @@ import {
 } from '@proton/components/hooks';
 import { APPS, ORGANIZATION_STATE, PLANS } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { getTestPlans } from '@proton/testing/data';
 
 import YourPlanSection from './YourPlanSection';
 import {
@@ -24,7 +25,6 @@ import {
     calendars,
     organization,
     pendingInvite,
-    plans,
     subscriptionBundle,
     subscriptionBusiness,
     user,
@@ -42,7 +42,7 @@ mockUseUser.mockReturnValue([user, false]);
 
 jest.mock('@proton/components/hooks/usePlans');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
-mockUsePlans.mockReturnValue([{ plans, freePlan: FREE_PLAN }, false]);
+mockUsePlans.mockReturnValue([{ plans: getTestPlans(), freePlan: FREE_PLAN }, false]);
 
 jest.mock('@proton/components/hooks/useAddresses');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;

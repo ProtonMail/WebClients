@@ -99,6 +99,7 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
             const response = await api({
                 ...sendAssistantRequest({ prompt, stopStrings }),
                 output: 'stream',
+                silence: true,
             });
             const reader = response.getReader();
 

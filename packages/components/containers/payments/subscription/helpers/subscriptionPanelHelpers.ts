@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { ORGANIZATION_STATE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, ORGANIZATION_STATE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
 import { Address, Organization, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -80,12 +80,26 @@ const getServersText = (subscription?: SubscriptionModel) => {
     );
 };
 
-const getMaxVPNDevices = () => {
+const getMaxVPNDevicesText = () => {
     const maxVpn = 10;
     return c('Subscription attribute').ngettext(
         msgid`High-speed VPN on ${maxVpn} device`,
         `High-speed VPN on ${maxVpn} devices`,
         maxVpn
+    );
+};
+
+const getWritingAssistantText = (organization?: Organization) => {
+    const maxAi = organization?.MaxAI ?? 0;
+
+    if (maxAi === 0) {
+        return null;
+    }
+
+    return c('Subscription attribute').ngettext(
+        msgid`${BRAND_NAME} Scribe writing assistant for ${maxAi} user`,
+        `${BRAND_NAME} Scribe writing assistant for ${maxAi} users`,
+        maxAi
     );
 };
 
@@ -122,6 +136,7 @@ export const getSubscriptionPanelText = (
         calendarText: getCalendarText(user, MaxMembers),
         vpnText: getVPNText(user, MaxMembers),
         serverText: getServersText(subscription),
-        maxVPNDevices: getMaxVPNDevices(),
+        maxVPNDevicesText: getMaxVPNDevicesText(),
+        writingAssistantText: getWritingAssistantText(organization),
     };
 };

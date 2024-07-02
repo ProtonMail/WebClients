@@ -15,7 +15,7 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
     hasLifetime,
-    hasSomeAddOn,
+    hasSomeAddonOrPlan,
     isManagedExternally,
     isTrial,
     isTrialExpired,
@@ -584,10 +584,10 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = pick(PLANS_MAP, [PLANS.VPN_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
 
         const expected: AggregatedPricing = {
-            defaultMonthlyPrice: 8084,
+            defaultMonthlyPrice: 8091,
             defaultMonthlyPriceWithoutAddons: 1798,
             all: {
-                '1': 8084,
+                '1': 8091,
                 '3': 0,
                 '12': 75492,
                 '15': 0,
@@ -597,7 +597,7 @@ describe('getPricingFromPlanIDs', () => {
             },
             membersNumber: 9,
             members: {
-                '1': 8084,
+                '1': 8091,
                 '3': 0,
                 '12': 75492,
                 '15': 0,
@@ -906,7 +906,7 @@ describe('hasSomeAddOn', () => {
             Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
         };
 
-        const result = hasSomeAddOn(subscription, ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS);
+        const result = hasSomeAddonOrPlan(subscription, ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS);
         expect(result).toEqual(true);
     });
 
@@ -916,7 +916,10 @@ describe('hasSomeAddOn', () => {
             Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
         };
 
-        const result = hasSomeAddOn(subscription, [ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, ADDON_NAMES.MEMBER_DRIVE_PRO]);
+        const result = hasSomeAddonOrPlan(subscription, [
+            ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS,
+            ADDON_NAMES.MEMBER_DRIVE_PRO,
+        ]);
         expect(result).toEqual(true);
     });
 
@@ -926,7 +929,7 @@ describe('hasSomeAddOn', () => {
             Plans: [...subscription.Plans, { ...defaultPlan, Name: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, Quantity: 1 }],
         };
 
-        const result = hasSomeAddOn(subscription, [ADDON_NAMES.MEMBER_DRIVE_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
+        const result = hasSomeAddonOrPlan(subscription, [ADDON_NAMES.MEMBER_DRIVE_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
         expect(result).toEqual(false);
     });
 });

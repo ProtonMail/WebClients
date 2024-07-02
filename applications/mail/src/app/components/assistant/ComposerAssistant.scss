@@ -17,7 +17,7 @@
 
 		// need to push the composer content when collapsed
 		+ .composer-body-container .editor-wrapper {
-			margin-block-start: 4.2em; // move it from good size (includes room for status)
+			margin-block-start: 5em; // move it from good size (includes room for status and 2 lines error messages)
 		}
 
 		&--expanded {
@@ -31,8 +31,8 @@
 		}
 
 		+ .composer-body-container .editor-textarea {
-			margin-block-start: 4.9em; // move it from good size (includes room for status)
-			block-size: calc(100% - 4.9em);
+			margin-block-start: 5.5em; // move it from good size (includes room for status and 2 lines error messages)
+			block-size: calc(100% - 5.5em);
 		}
 
 		&:has(.composer-assistant-hint:empty) + .composer-body-container .editor-textarea {

@@ -22,7 +22,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { getHasVpnB2BPlan, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { CreateMemberMode, Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
@@ -120,7 +120,7 @@ const SubUserCreateModal = ({
 
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
-    const isVisionary = hasNewVisionary(subscription);
+    const isVisionary = hasVisionary(subscription);
 
     const [step, setStep] = useState<Step>(Step.SINGLE);
 

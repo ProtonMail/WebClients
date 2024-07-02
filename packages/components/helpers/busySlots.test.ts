@@ -37,7 +37,7 @@ describe('isUserEligibleForBusySlots', () => {
 
     it('should return true if the user has a visionary organisation', () => {
         const organisation = {
-            PlanName: PLANS.NEW_VISIONARY,
+            PlanName: PLANS.VISIONARY,
         } as Organization;
 
         const result = isUserEligibleForBusySlots(organisation);

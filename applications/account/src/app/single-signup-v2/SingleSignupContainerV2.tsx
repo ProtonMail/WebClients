@@ -263,7 +263,7 @@ const SingleSignupContainerV2 = ({
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         const searchParams = new URLSearchParams(location.search);
         if (!visionarySignupEnabled) {
-            if (searchParams.get('plan') === PLANS.NEW_VISIONARY) {
+            if (searchParams.get('plan') === PLANS.VISIONARY) {
                 searchParams.delete('plan');
             }
         }
@@ -382,7 +382,7 @@ const SingleSignupContainerV2 = ({
                 mode: signupParameters.mode,
                 isPaidPassVPNBundle: !!planIDs[PLANS.VPN_PASS_BUNDLE],
                 isPaidPass: [
-                    PLANS.NEW_VISIONARY,
+                    PLANS.VISIONARY,
                     PLANS.FAMILY,
                     PLANS.BUNDLE,
                     PLANS.BUNDLE_PRO,
@@ -535,7 +535,7 @@ const SingleSignupContainerV2 = ({
                 setUnlockModal(true);
                 return;
             }
-            if (PLANS.NEW_VISIONARY === upsell.plan.Name) {
+            if (PLANS.VISIONARY === upsell.plan.Name) {
                 setVisionaryModal(true);
                 return;
             }
@@ -1165,7 +1165,7 @@ const SingleSignupContainerV2 = ({
             {renderVisionaryModal && (
                 <VisionaryUpsellModal
                     {...visionaryModalProps}
-                    plan={model.plansMap[PLANS.NEW_VISIONARY]?.Title || ''}
+                    plan={model.plansMap[PLANS.VISIONARY]?.Title || ''}
                     appName={productAppName}
                     onUpgrade={async () => {
                         visionaryModalProps.onClose();
