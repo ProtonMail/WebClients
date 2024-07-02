@@ -48,9 +48,9 @@ function ThreadPopoverButton({ thread }: { thread: CommentThreadInterface }) {
 
   return (
     <>
-      <button className="border-weak rounded border p-2" ref={anchorRef} onClick={toggle}>
+      <button className="bg-norm border-weak rounded border p-2" ref={anchorRef} onClick={toggle}>
         <div className="sr-only">{c('Action').t`Show thread`}</div>
-        <SpeechBubbleDotsIcon className="h-4 w-4" />
+        <SpeechBubbleDotsIcon className="min-h-4 min-w-4" />
       </button>
       {isOpen && (
         <div
@@ -175,14 +175,16 @@ function ContextualThread({
       style={{
         position: 'absolute',
         top: 0,
-        left: isViewportLarge ? '50%' : '',
-        right: isViewportLarge ? '' : 0,
+        left: isViewportLarge ? '50%' : undefined,
+        right: isViewportLarge ? undefined : 0,
         transition: 'transform 50ms, opacity 75ms',
         width: isViewportLarge ? 'calc(100% - 2rem)' : 'auto',
         opacity: 0,
         '--initial-position': `${position}px`,
         '--final-position': undefined,
-        transform: `translate3d(-50%, var(--final-position, var(--initial-position)), 0)`,
+        '--translate-x': isViewportLarge ? '-50%' : undefined,
+        transform: `translate3d(var(--translate-x, 0), var(--final-position, var(--initial-position)), 0)`,
+        pointerEvents: 'auto',
       }}
     >
       {isViewportLarge ? <CommentsPanelListThread thread={thread} /> : <ThreadPopoverButton thread={thread} />}
@@ -304,12 +306,12 @@ export function ContextualComments({ activeThreads }: { activeThreads: CommentTh
   return (
     <div
       ref={setContainer}
-      className="relative print:hidden"
+      className="pointer-events-none relative print:hidden"
       style={{
         gridRow: 1,
         gridColumn: 1,
         justifySelf: 'end',
-        width: 'var(--comments-width)',
+        width: isViewportLarge ? 'var(--comments-width)' : 'max-content',
       }}
     >
       {threadsSortedByPosition.map((thread) => {
