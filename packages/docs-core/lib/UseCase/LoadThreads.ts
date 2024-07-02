@@ -1,3 +1,4 @@
+import metrics from '@proton/metrics'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
 import { DocumentKeys, NodeMeta } from '@proton/drive-store'
@@ -25,6 +26,10 @@ export class LoadThreads implements UseCaseInterface<void> {
   }): Promise<Result<void>> {
     const result = await this.api.getAllThreadIDs(dto.lookup.volumeId, dto.lookup.linkId)
     if (result.isFailed()) {
+      metrics.docs_comments_download_error_total.increment({
+        reason: 'server_error',
+      })
+
       return Result.fail(result.getError())
     }
 
@@ -49,6 +54,10 @@ export class LoadThreads implements UseCaseInterface<void> {
   }): Promise<Result<void>> {
     const thread = await this.api.getThread(dto.lookup.volumeId, dto.lookup.linkId, dto.threadID)
     if (thread.isFailed()) {
+      metrics.docs_comments_download_error_total.increment({
+        reason: 'server_error',
+      })
+
       return Result.fail(thread.getError())
     }
 
