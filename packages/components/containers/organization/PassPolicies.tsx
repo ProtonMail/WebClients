@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Info, Toggle } from '@proton/components/components';
+import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
 import { useErrorHandler } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
@@ -12,7 +13,13 @@ import { BitField, type Maybe } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { SettingsParagraph, SettingsSection } from '../account';
+import {
+    SettingsLayout,
+    SettingsLayoutLeft,
+    SettingsLayoutRight,
+    SettingsParagraph,
+    SettingsSection,
+} from '../account';
 import { GenericError } from '../error';
 
 const getPolicies = (): { setting: keyof OrganizationSettings; label: string; tooltip: string }[] => [
@@ -57,30 +64,58 @@ const PassPolicies = () => {
         withLoading(organization.settings.set(setting, value).then(setOrganizationSettings)).catch(handleError);
     };
 
+    const handleLockChange = async (ttl: number) => {
+        touched.current = 'ForceLockSeconds';
+        withLoading(organization.settings.set('ForceLockSeconds', ttl).then(setOrganizationSettings)).catch(
+            handleError
+        );
+    };
+
     return (
         <>
             <SettingsSection>
                 <SettingsParagraph>
                     {c('Info').t`You can define the policies of ${PASS_APP_NAME} for the organization members.`}
                 </SettingsParagraph>
-                <ul className="unstyled relative">
-                    {organizationSettings &&
-                        policies.map(({ setting, label, tooltip }) => (
-                            <li key={setting} className="mb-4 flex items-center flex-nowrap gap-4">
-                                <Toggle
-                                    checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
-                                    id={`${setting}-toggle`}
-                                    onChange={({ target }) => handleToggle(target.checked, setting)}
-                                    disabled={loading || !organizationSettings.CanUpdate}
-                                    loading={touched.current === setting && loading}
-                                />
-                                <label htmlFor={`${setting}-toggle`}>
-                                    <span className="mr-1">{label}</span>
-                                    {tooltip && <Info title={tooltip} />}
+                {organizationSettings && (
+                    <>
+                        <ul className="unstyled relative">
+                            {policies.map(({ setting, label, tooltip }) => (
+                                <li key={setting} className="mb-4 flex items-center flex-nowrap gap-4">
+                                    <Toggle
+                                        checked={organizationSettings.Settings?.[setting] === BitField.ACTIVE}
+                                        id={`${setting}-toggle`}
+                                        onChange={({ target }) => handleToggle(target.checked, setting)}
+                                        disabled={loading || !organizationSettings.CanUpdate}
+                                        loading={touched.current === setting && loading}
+                                    />
+                                    <label htmlFor={`${setting}-toggle`}>
+                                        <span className="mr-1">{label}</span>
+                                        {tooltip && <Info title={tooltip} />}
+                                    </label>
+                                </li>
+                            ))}
+                        </ul>
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label className="text-semibold" htmlFor="pass-lock-select" id="label-pass-lock-select">
+                                    <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
+                                    <Info
+                                        title={c('Info')
+                                            .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
+                                    />
                                 </label>
-                            </li>
-                        ))}
-                </ul>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight>
+                                <PassLockSelector
+                                    value={organizationSettings?.Settings?.ForceLockSeconds}
+                                    disabled={loading || !organizationSettings.CanUpdate}
+                                    onChange={handleLockChange}
+                                />
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
+                    </>
+                )}
             </SettingsSection>
 
             {!didLoad.current && loading && <CircleLoader />}
