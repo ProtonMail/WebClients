@@ -5,6 +5,7 @@ import {
   DropdownMenuButton,
   DropdownSizeUnit,
   Icon,
+  MimeIcon,
   SimpleDropdown,
   useAppTitle,
   usePopperAnchor,
@@ -20,7 +21,6 @@ import { useHistoryViewerModal } from '../HistoryViewer'
 import { c } from 'ttag'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
-import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg'
 import { DocumentAction } from '@proton/drive-store'
 import { AutoGrowingInput } from '../AutoGrowingInput'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
@@ -123,7 +123,7 @@ const DocumentTitleDropdown = ({
   if (isRenaming) {
     return (
       <div className="flex items-center px-1.5">
-        <img className="pointer-events-none mr-0.5 h-5 w-5" src={documentIcon} alt="" aria-hidden="true" />
+        <MimeIcon name="proton-doc" size={5} className="mr-0.5" />
         <AutoGrowingInput
           className="text-sm"
           inputClassName="px-1 py-1.5"
@@ -162,7 +162,7 @@ const DocumentTitleDropdown = ({
         }}
         data-testid="document-name-dropdown"
       >
-        <img className="pointer-events-none mr-2 h-5 w-5" src={documentIcon} alt="" aria-hidden="true" />
+        <MimeIcon name="proton-doc" size={5} className="mr-2" />
         <span className="text-ellipsis text-sm">{title}</span>
       </DropdownButton>
       <Dropdown
