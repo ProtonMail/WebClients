@@ -103,7 +103,7 @@ export class DocLoader implements DocLoaderInterface {
 
     this.commentsController.initialize()
 
-    this.orchestrator = new EditorOrchestrator(this.commentsController, this.docController)
+    this.orchestrator = new EditorOrchestrator(this.commentsController, this.docController, this.docsApi)
 
     this.statusObservers.forEach((observer) => {
       if (this.orchestrator) {

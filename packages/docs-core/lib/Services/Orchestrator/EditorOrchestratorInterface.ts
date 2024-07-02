@@ -34,4 +34,6 @@ export interface EditorOrchestratorInterface {
   markThreadAsRead(id: string): Promise<void>
 
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
+
+  fetchExternalImageAsBase64(url: string): Promise<string | undefined>
 }
