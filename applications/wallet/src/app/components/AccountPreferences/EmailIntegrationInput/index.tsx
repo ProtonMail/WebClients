@@ -55,6 +55,8 @@ export const EmailIntegrationInput = ({
         [emailIntegrationModal, linkedEmail, onAddAddress, onReplaceAddress]
     );
 
+    const canCreateAddress = !user.isSubUser;
+
     return (
         <>
             <div className="px-6 py-5">
@@ -83,7 +85,7 @@ export const EmailIntegrationInput = ({
                 onAddressSelect={(address) => {
                     handleAddressSelection(address.ID);
                 }}
-                canCreateAddress={!user.isSubUser}
+                canCreateAddress={canCreateAddress}
                 onAddressCreation={() => {
                     if (members?.length) {
                         setEmailCreationModal(true);
@@ -95,13 +97,15 @@ export const EmailIntegrationInput = ({
                 {...emailIntegrationModal}
             />
 
-            <EmailAddressCreationModal
-                onAddressCreated={(address) => {
-                    emailCreationModal.onClose();
-                    handleAddressSelection(address.ID);
-                }}
-                {...emailCreationModal}
-            />
+            {canCreateAddress && (
+                <EmailAddressCreationModal
+                    onAddressCreated={(address) => {
+                        emailCreationModal.onClose();
+                        handleAddressSelection(address.ID);
+                    }}
+                    {...emailCreationModal}
+                />
+            )}
 
             <WalletUpgradeModal
                 title={c('Wallet upgrade').t`Unlock more email addresses`}
