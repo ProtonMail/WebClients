@@ -12,6 +12,7 @@ export const useDriveDocsFeatureFlag = () => {
 
     const disabled = useFlag('DriveDocsDisabled');
     const active = useFlag('DriveDocs');
+    const isDocsCreationWarningModalEnabled = useFlag('DriveDocsCreationWarningModal');
 
     const isDocsEnabled = !disabled && active;
 
@@ -46,5 +47,10 @@ export const useDriveDocsFeatureFlag = () => {
          * they themselves aren't part of the rollout yet.
          */
         canUseDocs,
+
+        /*
+         *   Warning Modal when creating doc for the first time (temporary for launch)
+         */
+        isDocsCreationWarningModalEnabled,
     };
 };
