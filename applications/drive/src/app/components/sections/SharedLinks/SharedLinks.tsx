@@ -129,6 +129,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                         return openDocument({
                             linkId: item.id,
                             shareId: item.rootShareId,
+                            openBehavior: 'tab',
                         });
                     })
                     .catch(sendErrorReport);
