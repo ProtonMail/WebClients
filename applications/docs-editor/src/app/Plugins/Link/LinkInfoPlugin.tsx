@@ -73,8 +73,6 @@ export function LinkInfoPlugin({ openLink }: { openLink: (url: string) => void }
     } else {
       setLinkTextNode(null)
     }
-
-    setIsEditingLink(false)
   }, [])
 
   useEffect(() => {
@@ -87,8 +85,11 @@ export function LinkInfoPlugin({ openLink }: { openLink: (url: string) => void }
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
-      editor.registerUpdateListener(() => {
-        editor.getEditorState().read(getLinkInfo)
+      editor.registerUpdateListener(({ editorState, tags }) => {
+        editorState.read(getLinkInfo)
+        if (tags.has('collaboration') === false) {
+          setIsEditingLink(false)
+        }
       }),
       editor.registerCommand(
         EDIT_LINK_COMMAND,
