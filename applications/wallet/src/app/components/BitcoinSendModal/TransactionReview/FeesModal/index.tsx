@@ -18,7 +18,7 @@ interface Props extends ModalOwnProps {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
     txBuilder: WasmTxBuilder;
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
-    getFeesByBlockTarget: (blockTarget: number) => number;
+    getFeesByBlockTarget: (blockTarget: number) => number | undefined;
 }
 
 export const FeesModal = ({ unit, txBuilder, updateTxBuilder, getFeesByBlockTarget, ...modalProps }: Props) => {
@@ -36,7 +36,7 @@ export const FeesModal = ({ unit, txBuilder, updateTxBuilder, getFeesByBlockTarg
         text: string,
         blockTarget: number
     ): Promise<[IconName, string, number, number]> => {
-        const feeRate = getFeesByBlockTarget(blockTarget);
+        const feeRate = getFeesByBlockTarget(blockTarget) ?? 0;
         //  expected to be non-deterministic since input selection during PSBT creation is random
         return [icon, text, feeRate, await getTransactionFeesAtFeeRate(feeRate)];
     };
