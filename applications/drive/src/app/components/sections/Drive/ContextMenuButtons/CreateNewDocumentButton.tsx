@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { NewFeatureTag } from '@proton/components/components';
-import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg';
+import { MimeIcon, NewFeatureTag } from '@proton/components/components';
 
 import { ContextMenuButton } from '../../ContextMenu';
 
@@ -14,7 +13,7 @@ const CreateNewDocumentButton = ({ close, action }: Props) => {
     return (
         <ContextMenuButton
             testId="context-menu-new-document"
-            icon={<img className="mr-2 pointer-events-none" src={documentIcon} alt="" aria-hidden="true" />}
+            icon={<MimeIcon name="proton-doc" className="mr-2" />}
             name={c('Action').t`New document`}
             action={action}
             close={close}
