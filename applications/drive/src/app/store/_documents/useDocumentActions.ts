@@ -38,12 +38,23 @@ export const useDocumentActions = () => {
         return volumeId;
     };
 
-    const openDocument = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
-        openDocumentWindow({
-            mode: 'open',
-            volumeId: await findVolume(shareId),
-            linkId,
-        });
+    const openDocument = async ({
+        shareId,
+        linkId,
+        openBehavior = 'tab',
+    }: {
+        shareId: string;
+        linkId: string;
+        openBehavior: 'tab' | 'redirect';
+    }) => {
+        openDocumentWindow(
+            {
+                mode: 'open',
+                volumeId: await findVolume(shareId),
+                linkId,
+            },
+            openBehavior
+        );
     };
 
     const createDocument = async ({ shareId, parentLinkId }: { shareId: string; parentLinkId: string }) => {

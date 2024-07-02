@@ -24,7 +24,10 @@ export const useOpenDocument = () => {
      *
      * In the Drive application, this should not be used directly, prefer `useDocumentActions`.
      */
-    const openDocumentWindow = ({ volumeId, linkId, parentLinkId, mode }: DocumentAction) => {
+    const openDocumentWindow = (
+        { volumeId, linkId, parentLinkId, mode }: DocumentAction,
+        openBehavior: 'tab' | 'redirect' = 'tab'
+    ) => {
         const href = getAppHref(`/doc`, APPS.PROTONDOCS, getLocalID());
         const url = new URL(href);
 
@@ -37,7 +40,11 @@ export const useOpenDocument = () => {
             url.searchParams.append('parentLinkId', parentLinkId);
         }
 
-        window.open(url, '_blank');
+        if (openBehavior === 'redirect') {
+            window.location.assign(url);
+        } else {
+            window.open(url, '_blank');
+        }
     };
 
     return {
