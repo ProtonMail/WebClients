@@ -1,4 +1,4 @@
-import { Api, UserModel } from '@proton/shared/lib/interfaces'
+import { Api } from '@proton/shared/lib/interfaces'
 import { App_TYPES } from './Dependencies/Types'
 import { AppDependencies } from './Dependencies/AppDependencies'
 import { CreateEmptyDocumentForConversion } from '../UseCase/CreateEmptyDocumentForConversion'
@@ -9,13 +9,14 @@ import type { DriveCompat } from '@proton/drive-store'
 import { ApplicationInterface } from './ApplicationInterface'
 import { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import { LoggerInterface } from '@proton/utils/logs'
+import { ImageProxyParams } from '../Api/Types/ImageProxyParams'
 
 export class Application implements ApplicationInterface {
-  private readonly deps = new AppDependencies(this.protonApi, this.user, this.driveCompat)
+  private readonly deps = new AppDependencies(this.protonApi, this.imageProxyParams, this.driveCompat)
 
   constructor(
     private protonApi: Api,
-    private user: UserModel,
+    private imageProxyParams: ImageProxyParams,
     private driveCompat: DriveCompat,
   ) {}
 

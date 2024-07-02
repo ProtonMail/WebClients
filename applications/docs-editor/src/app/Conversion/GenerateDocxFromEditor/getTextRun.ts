@@ -1,4 +1,4 @@
-import { ElementNode, TextNode } from 'lexical'
+import { EditorState, ElementNode, TextNode } from 'lexical'
 import { TextRun } from 'docx'
 import tinycolor from 'tinycolor2'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
@@ -9,38 +9,40 @@ function pixelsToPoints(pixels: number) {
   return pixels * 0.75
 }
 
-export function getTextRun(node: TextNode, parentNode: ElementNode) {
-  const style = node.getStyle()
-  DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.cssText = style
+export function getTextRun(node: TextNode, parentNode: ElementNode, state: EditorState) {
+  return state.read(() => {
+    const style = node.getStyle()
+    DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.cssText = style
 
-  const color = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.color
-  const backgroundColor = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.backgroundColor
+    const color = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.color
+    const backgroundColor = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.backgroundColor
 
-  const fontSizeFromStyle = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.fontSize
-  const fontSizeInPx = fontSizeFromStyle ? parseFloat(fontSizeFromStyle) : rootFontSize()
-  const fontSizeInPt = pixelsToPoints(fontSizeInPx)
+    const fontSizeFromStyle = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.fontSize
+    const fontSizeInPx = fontSizeFromStyle ? parseFloat(fontSizeFromStyle) : rootFontSize()
+    const fontSizeInPt = pixelsToPoints(fontSizeInPx)
 
-  const text = node.getTextContent()
-  const bold = node.hasFormat('bold')
-  const italics = node.hasFormat('italic')
-  const underline = node.hasFormat('underline')
-  const strike = node.hasFormat('strikethrough')
-  const subScript = node.hasFormat('subscript')
-  const superScript = node.hasFormat('superscript')
+    const text = node.getTextContent()
+    const bold = node.hasFormat('bold')
+    const italics = node.hasFormat('italic')
+    const underline = node.hasFormat('underline')
+    const strike = node.hasFormat('strikethrough')
+    const subScript = node.hasFormat('subscript')
+    const superScript = node.hasFormat('superscript')
 
-  return new TextRun({
-    text,
-    bold,
-    italics,
-    underline: {
-      type: underline ? 'single' : 'none',
-    },
-    strike,
-    subScript,
-    superScript,
-    color: color ? tinycolor(color).toHex() : undefined,
-    shading: backgroundColor ? { type: 'clear', fill: tinycolor(backgroundColor).toHex() } : undefined,
-    size: `${fontSizeInPt}pt`,
-    style: $isLinkNode(parentNode) ? 'Hyperlink' : undefined,
+    return new TextRun({
+      text,
+      bold,
+      italics,
+      underline: {
+        type: underline ? 'single' : 'none',
+      },
+      strike,
+      subScript,
+      superScript,
+      color: color ? tinycolor(color).toHex() : undefined,
+      shading: backgroundColor ? { type: 'clear', fill: tinycolor(backgroundColor).toHex() } : undefined,
+      size: `${fontSizeInPt}pt`,
+      style: $isLinkNode(parentNode) ? 'Hyperlink' : undefined,
+    })
   })
 }

@@ -2,27 +2,30 @@ import { $isElementNode } from 'lexical'
 import { Table, TableCell, TableRow } from 'docx'
 import { $isTableCellNode, $isTableRowNode, TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { TopLevelChildren, getTopLevelChildrenFromElementNode } from './getTopLevelChildrenFromElementNode'
+import { DocxExportContext } from './Context'
 
-function getChildrenFromCellNode(node: TableCellNode): TopLevelChildren[] {
+async function getChildrenFromCellNode(node: TableCellNode, context: DocxExportContext): Promise<TopLevelChildren[]> {
   const children: TopLevelChildren[] = []
 
-  for (const child of node.getChildren()) {
+  const nodeChildren = context.state.read(() => node.getChildren())
+  for (const child of nodeChildren) {
     if ($isElementNode(child)) {
-      children.push(getTopLevelChildrenFromElementNode(child))
+      children.push(await getTopLevelChildrenFromElementNode(child, context))
     }
   }
 
   return children
 }
 
-function getCellsFromTableRow(node: TableRowNode): TableCell[] {
+async function getCellsFromTableRow(node: TableRowNode, context: DocxExportContext): Promise<TableCell[]> {
   const cells: TableCell[] = []
 
-  for (const child of node.getChildren()) {
+  const nodeChildren = context.state.read(() => node.getChildren())
+  for (const child of nodeChildren) {
     if (!$isTableCellNode(child)) {
       continue
     }
-    const children = getChildrenFromCellNode(child)
+    const children = await getChildrenFromCellNode(child, context)
     cells.push(
       new TableCell({
         children: children.flat(),
@@ -33,14 +36,15 @@ function getCellsFromTableRow(node: TableRowNode): TableCell[] {
   return cells
 }
 
-export function getChildrenFromTableNode(node: TableNode): Table {
+export async function getChildrenFromTableNode(node: TableNode, context: DocxExportContext): Promise<Table> {
   const rows: TableRow[] = []
 
-  for (const child of node.getChildren()) {
+  const nodeChildren = context.state.read(() => node.getChildren())
+  for (const child of nodeChildren) {
     if (!$isTableRowNode(child)) {
       continue
     }
-    const cells = getCellsFromTableRow(child)
+    const cells = await getCellsFromTableRow(child, context)
     rows.push(
       new TableRow({
         children: cells,

@@ -10,10 +10,14 @@ import { generateHTMLFromEditor } from './GenerateHTMLFromEditor'
 import { generateDocxFromEditor } from './GenerateDocxFromEditor/GenerateDocxFromEditor'
 import { Packer } from 'docx'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
+import { DocxExportContext } from './GenerateDocxFromEditor/Context'
 
 export async function exportDataFromEditorState(
   editorState: SerializedEditorState,
   format: DataTypesThatDocumentCanBeExportedAs,
+  callbacks: {
+    fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
+  },
 ): Promise<Uint8Array | Blob> {
   const editor = createHeadlessEditor({
     editable: false,
@@ -56,7 +60,7 @@ export async function exportDataFromEditorState(
   }
 
   if (format === 'docx') {
-    const docx = generateDocxFromEditor(editor)
+    const docx = await generateDocxFromEditor(editor, callbacks)
     const buffer = await Packer.toBlob(docx)
     return buffer
   }
