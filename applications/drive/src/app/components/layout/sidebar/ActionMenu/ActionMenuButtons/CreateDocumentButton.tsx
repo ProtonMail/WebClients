@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { DropdownMenuButton, NewFeatureTag } from '@proton/components';
-import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg';
+import { DropdownMenuButton, MimeIcon, NewFeatureTag } from '@proton/components';
 
 interface Props {
     onClick: () => void;
@@ -15,7 +14,7 @@ const CreateDocumentButton = ({ onClick }: Props) => {
             data-testid="dropdown-create-document"
         >
             <span className="flex items-center">
-                <img className="mr-2 pointer-events-none" src={documentIcon} alt="" aria-hidden="true" />
+                <MimeIcon name="proton-doc" className="mr-2" />
                 {
                     // translator: Action button in sidebar dropdown to create a new Proton Document
                     c('Action').t`New document`
