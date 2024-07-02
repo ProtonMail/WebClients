@@ -16,7 +16,9 @@ enum CommonFeatureFlag {
     ABTestInboxUpsellStep = 'ABTestInboxUpsellStep',
     ABTestSubscriptionReminder = 'ABTestSubscriptionReminder',
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
+    InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
+    InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     InboxFreeUserRotatingButtonStyles = 'InboxFreeUserRotatingButtonStyles',
 }
@@ -37,8 +39,6 @@ enum AccountFlag {
     ChargebeeFreeToPaidB2B = 'ChargebeeFreeToPaidB2B',
     BreachesAccountDashboard = 'BreachesAccountDashboard',
     AddressDeletion = 'AddressDeletion',
-    InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
-    InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     LightLabellingFeatureModal = 'LightLabellingFeatureModal',
     NewCancellationFlow = 'NewCancellationFlow',
     DisableLoginPageBugReport = 'DisableLoginPageBugReport',
