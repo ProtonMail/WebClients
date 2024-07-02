@@ -195,13 +195,14 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
 
 export async function loadURL(viewID: ViewID, url: string) {
     const view = browserViewMap[viewID]!;
+    const viewURL = await getViewURL(viewID);
 
-    if (isSameURL(await getViewURL(viewID), url)) {
+    if (isSameURL(viewURL, url)) {
         viewLogger(viewID).info("loadURL already in given url", url);
         return;
     }
 
-    viewLogger(viewID).info("loadURL loading", url);
+    viewLogger(viewID).info("loadURL from", viewURL, "to", url);
 
     if (view.webContents.isLoadingMainFrame()) {
         view.webContents.stop();
