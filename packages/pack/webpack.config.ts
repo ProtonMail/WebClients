@@ -16,7 +16,9 @@ const getConfig = (env: any): Configuration => {
     const isProduction = process.env.NODE_ENV === 'production';
     const isRelease = !!process.env.CI_COMMIT_TAG;
 
-    const assetsFolder = 'assets';
+    // This folder is separate from the assets folder because they are special assets which get served through
+    // a long-term storage
+    const assetsFolder = 'assets/static';
 
     const defaultBrowsersList = isProduction
         ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
