@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,6 +8,7 @@ type Props = {
     ttl?: number;
     disabled?: boolean;
     onChange: (ttl: number) => void;
+    label?: ReactNode;
 };
 
 const getSessionLockTTLOptions = () => [
@@ -20,10 +21,10 @@ const getSessionLockTTLOptions = () => [
     { title: c('Label').t`1 hour`, value: 3600 },
 ];
 
-export const LockTTLField: FC<Props> = ({ ttl, disabled, onChange }) => (
+export const LockTTLField: FC<Props> = ({ ttl, disabled, onChange, label }) => (
     <InputFieldTwo
         as={SelectTwo<number>}
-        label={c('Label').t`Auto-lock after`}
+        label={label}
         disabled={disabled}
         placeholder={c('Label').t`15 minutes`}
         onValue={onChange}
