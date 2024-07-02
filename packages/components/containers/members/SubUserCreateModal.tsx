@@ -302,7 +302,7 @@ const SubUserCreateModal = ({
     );
     const protonAddressLabel = (
         <span>
-            {c('user_modal').t`${BRAND_NAME} address`} {protonAddressInfo}
+            {c('user_modal').t`New ${BRAND_NAME} email address`} {protonAddressInfo}
         </span>
     );
 
@@ -397,7 +397,7 @@ const SubUserCreateModal = ({
                                 emailValidator(model.invitationEmail),
                             ])}
                             onValue={handleChange('invitationEmail')}
-                            label={c('user_modal').t`Email`}
+                            label={c('user_modal').t`Invitation email`}
                             assistiveText={
                                 <>
                                     {c('user_modal').t`An invitation will be sent to this email address.`}&nbsp;
