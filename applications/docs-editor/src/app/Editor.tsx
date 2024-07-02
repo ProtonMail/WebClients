@@ -39,7 +39,6 @@ import DraggableBlockPlugin from './Plugins/DraggableBlockPlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
 import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
-import { LinkValidationTransform } from './Plugins/Link/LinkValidationTransform'
 
 const TypingBotEnabled = false
 
@@ -153,7 +152,6 @@ export function Editor({
         <TabIndentationPlugin />
         <LinkPlugin />
         {!nonInteractiveMode && <LinkInfoPlugin openLink={openLink} />}
-        {!nonInteractiveMode && <LinkValidationTransform />}
         <TypingBotPlugin enabled={TypingBotEnabled} position={'beginning'} />
         <CollaborationPlugin
           id={documentId}
