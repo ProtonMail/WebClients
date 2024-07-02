@@ -373,6 +373,9 @@
       "Retry": [
         "Reîncercare"
       ],
+      "Right click and download this CSV": [
+        "Faceți clic dreapta și descărcați acest fișier CSV"
+      ],
       "Save": [
         "Salvare"
       ],
@@ -393,6 +396,9 @@
       ],
       "Set access level": [
         "Setare nivel de acces"
+      ],
+      "Setup 2FA": [
+        "Setare A2F"
       ],
       "Share": [
         "Partajare"
@@ -722,6 +728,9 @@
       "File could not be parsed": [
         "Fișierul nu a putut fi analizat."
       ],
+      "File could not be read": [
+        "Fișierul nu a putut fi citit."
+      ],
       "File does not match expected format": [
         "Fișierul nu are formatul așteptat."
       ],
@@ -1043,6 +1052,9 @@
       "Auto-lock successfully disabled.": [
         "Blocarea automată s-a dezactivat."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Înainte de a vă exporta datele cu acest format, accesați Setări Safari -> fila „General” -> dezactivați opțiunea „Deschidere fișiere sigure după descărcare”. Acest lucru va împiedica Safari să extragă incorect fișierul exportat."
+      ],
       "Breaches detected": [
         "Divulgări detectate"
       ],
@@ -1108,6 +1120,9 @@
       ],
       "Drop to import": [
         "Plasare pentru importare"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Din cauza unei limitări a extensiilor navigatorului web Safari, după exportarea datelor, va lipsi extensia „.pgp” din numele fișierului. Redenumiți fișierul pentru a include extensia .pgp (de exemplu, fișier.pgp) după exportare."
       ],
       "Editor": [
         "Editor"
