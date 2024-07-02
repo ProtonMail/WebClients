@@ -36,7 +36,7 @@ interface Props {
     onBack: () => void;
     onSent: () => void;
     onBackToEditRecipients: () => void;
-    getFeesByBlockTarget: (blockTarget: number) => number;
+    getFeesByBlockTarget: (blockTarget: number) => number | undefined;
 }
 
 export const TransactionReview = ({

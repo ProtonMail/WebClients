@@ -10,7 +10,10 @@ type FeeRate = number;
 
 export type FeeRateByBlockTarget = [BlockTarget, FeeRate];
 
-const findNearestBlockTargetFeeRate = (blockEstimate: number, blockEstimationKeys: [number, number][]) => {
+const findNearestBlockTargetFeeRate = (
+    blockEstimate: number,
+    blockEstimationKeys: [number, number][]
+): number | undefined => {
     const nearestAbove = blockEstimationKeys.find(([block]) => {
         return block >= blockEstimate;
     });
@@ -19,7 +22,9 @@ const findNearestBlockTargetFeeRate = (blockEstimate: number, blockEstimationKey
         return block <= blockEstimate;
     });
 
-    return (nearestAbove ?? nearestBelow)?.[1] ?? blockEstimationKeys[1][1];
+    const [first] = blockEstimationKeys;
+
+    return (nearestAbove ?? nearestBelow ?? first)?.[1];
 };
 
 export const useFeesInput = (
