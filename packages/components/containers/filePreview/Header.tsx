@@ -118,9 +118,9 @@ const Header = ({
                             c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
                         }
                         onClick={onOpenInDocs}
-                        shape="solid"
+                        shape="outline"
                         className="mr-4 flex items-center"
-                        color="norm"
+                        color="weak"
                         data-testid="file-preview:actions:open-in-docs"
                     >
                         <img className="mr-2 pointer-events-none" src={documentIcon} alt="" aria-hidden="true" />
