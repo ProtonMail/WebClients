@@ -77,6 +77,8 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
                 }
 
                 if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
+                    if (code === PassErrorCode.SESSION_ERROR) throw InactiveSessionError();
+
                     try {
                         state.set('refreshing', true);
                         await refreshHandler(response);
