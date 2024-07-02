@@ -195,15 +195,27 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             }
             return false;
         } catch (e: any) {
+            let errorMessage;
+            if (e.message === 'Caching failed') {
+                errorMessage = c('Error')
+                    .t`Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.`;
+                addGlobalError(errorMessage, ERROR_TYPE.CACHING_FAILED);
+                sendAssistantErrorReport({
+                    assistantType: ASSISTANT_TYPE.LOCAL,
+                    errorType: ERROR_TYPE.CACHING_FAILED,
+                });
+            } else {
+                errorMessage = c('Error').t`Problem downloading the writing assistant. Please try again.`;
+                addGlobalError(errorMessage, ERROR_TYPE.DOWNLOAD_FAIL);
+                sendAssistantErrorReport({
+                    assistantType: ASSISTANT_TYPE.LOCAL,
+                    errorType: ERROR_TYPE.DOWNLOAD_FAIL,
+                });
+            }
+
             traceInitiativeError('assistant', e);
             console.error(e);
-            const errorMessage = c('Error').t`Problem downloading the writing assistant. Please try again.`;
-            addGlobalError(errorMessage, ERROR_TYPE.DOWNLOAD_FAIL);
             setIsModelDownloading(false);
-            sendAssistantErrorReport({
-                assistantType: ASSISTANT_TYPE.LOCAL,
-                errorType: ERROR_TYPE.DOWNLOAD_FAIL,
-            });
             throw new Error(errorMessage);
         }
     };

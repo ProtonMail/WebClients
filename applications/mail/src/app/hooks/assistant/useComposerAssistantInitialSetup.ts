@@ -6,8 +6,9 @@ import { FeatureCode } from '@proton/features';
 interface Props {
     onToggleAssistant: () => void;
     canShowAssistant: boolean;
+    disableAssistantButton: boolean;
 }
-const useComposerAssistantInitialSetup = ({ onToggleAssistant, canShowAssistant }: Props) => {
+const useComposerAssistantInitialSetup = ({ onToggleAssistant, canShowAssistant, disableAssistantButton }: Props) => {
     const [isAssistantInitialSetup, setIsAssistantInitialSetup] = useState(false);
 
     // Feature flag that we use to open the assistant automatically the first time the user opens the composer
@@ -21,7 +22,7 @@ const useComposerAssistantInitialSetup = ({ onToggleAssistant, canShowAssistant 
     );
 
     useEffect(() => {
-        const canOpenAssistantOnSetup = showComposerSpotlight && canShowAssistant;
+        const canOpenAssistantOnSetup = showComposerSpotlight && canShowAssistant && !disableAssistantButton;
         if (canOpenAssistantOnSetup) {
             setIsAssistantInitialSetup(true);
             onToggleAssistant();

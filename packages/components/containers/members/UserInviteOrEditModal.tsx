@@ -7,7 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
 import { GIGA, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
@@ -51,7 +51,7 @@ const UserInviteOrEditModal = ({
     const isEditing = !!member?.ID;
 
     const [subscription] = useSubscription();
-    const isVisionary = hasNewVisionary(subscription);
+    const isVisionary = hasVisionary(subscription);
 
     const initialModel = useMemo(
         () => ({

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms/index';
-import { ModalProps, Prompt, useApi, useEventManager } from '@proton/components/index';
+import { ModalProps, Prompt, useApi, useEventManager, useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -20,6 +20,7 @@ interface Props {
  * We need to remove desktop app mentions from this modal for the release, and put them back once we have a fix
  */
 const AssistantIncompatibleBrowserModal = ({ modalProps, onReject, onResolve }: Props) => {
+    const { createNotification } = useNotifications();
     const { onClose } = modalProps;
     // const goToSettings = useSettingsLink();
     const [loading, withLoading] = useLoading();
@@ -33,6 +34,7 @@ const AssistantIncompatibleBrowserModal = ({ modalProps, onReject, onResolve }: 
 
     const handleUpdateSetting = async () => {
         await withLoading(api(updateAIAssistant(AI_ASSISTANT_ACCESS.SERVER_ONLY)));
+        createNotification({ text: c('Success').t`Writing assistant setting updated` });
         await call();
         onResolve?.();
         onClose?.();

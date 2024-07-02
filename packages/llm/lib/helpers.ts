@@ -34,10 +34,6 @@ export const getAssistantHasCompatibleHardware = async () => {
     return compatibility;
 };
 
-export const getCanShowAssistant = (assistantFeatureAvailable?: boolean) => {
-    return !!assistantFeatureAvailable;
-};
-
 export const getGenerationType = (action: Action) => {
     switch (action.type) {
         case 'writeFullEmail':

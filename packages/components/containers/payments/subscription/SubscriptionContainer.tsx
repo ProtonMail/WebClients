@@ -40,7 +40,7 @@ import {
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     getPlanNameFromIDs,
-    hasNewVisionary,
+    hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
@@ -95,7 +95,7 @@ import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import { NoPaymentRequiredNote } from './NoPaymentRequiredNote';
-import { NewVisionaryWarningModal, NewVisionaryWarningModalOwnProps } from './PlanLossWarningModal';
+import { VisionaryWarningModal, VisionaryWarningModalOwnProps } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
 import { RenewalEnableNote } from './RenewalEnableNote';
 import SubscriptionCycleSelector, { SubscriptionCheckoutCycleItem } from './SubscriptionCycleSelector';
@@ -251,8 +251,7 @@ const SubscriptionContainer = ({
     const [user] = useUser();
     const { call } = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
-    const [visionaryWarningModal, showNewVisionaryWarningModal] =
-        useModalTwoPromise<NewVisionaryWarningModalOwnProps>();
+    const [visionaryWarningModal, showVisionaryWarningModal] = useModalTwoPromise<VisionaryWarningModalOwnProps>();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const { createNotification } = useNotifications();
     const plansMap = toMap(plans, 'Name');
@@ -428,8 +427,8 @@ const SubscriptionContainer = ({
         const newPlanName = Object.keys(planIDs).find((planName) =>
             plans.find((plan) => plan.Type === PLAN_TYPES.PLAN && plan.Name === planName)
         );
-        if (hasNewVisionary(subscription) && PLANS.NEW_VISIONARY !== newPlanName) {
-            await showNewVisionaryWarningModal({ type: !newPlanName ? 'downgrade' : 'switch' });
+        if (hasVisionary(subscription) && PLANS.VISIONARY !== newPlanName) {
+            await showVisionaryWarningModal({ type: !newPlanName ? 'downgrade' : 'switch' });
         }
     };
 
@@ -970,7 +969,9 @@ const SubscriptionContainer = ({
                                         {hasPlanCustomizer && currentPlan && (
                                             <>
                                                 <ProtonPlanCustomizer
-                                                    scribeEnabled={scribeEnabled.enabled && !scribeEnabled.killSwitch}
+                                                    scribeEnabled={
+                                                        scribeEnabled.paymentsEnabled && !scribeEnabled.killSwitch
+                                                    }
                                                     loading={blockAccountSizeSelector}
                                                     currency={model.currency}
                                                     cycle={model.cycle}
@@ -1115,7 +1116,7 @@ const SubscriptionContainer = ({
     return (
         <>
             {visionaryWarningModal((props) => {
-                return <NewVisionaryWarningModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
+                return <VisionaryWarningModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
             })}
             {calendarDowngradeModal((props) => {
                 return (

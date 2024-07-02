@@ -14,7 +14,7 @@ import {
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
+import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -134,7 +134,7 @@ export const getThemeFromLocation = (location: Location, searchParams: URLSearch
         };
     }
     const hasBFCoupon = getHas2023OfferCoupon(searchParams.get('coupon')?.toUpperCase());
-    const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.NEW_VISIONARY;
+    const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
     if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary)) {
         return { themeType: ThemeTypes.Carbon, className: '' };
     }
@@ -197,7 +197,7 @@ export const getPlanIDsFromParams = (
 
     if (signupParameters.domains !== undefined) {
         const domainsAddon = plans.find(
-            ({ Name }) => Name.startsWith('1domain') && supportedAddons[Name as keyof typeof supportedAddons]
+            ({ Name }) => isDomainAddon(Name) && supportedAddons[Name as keyof typeof supportedAddons]
         );
         const amount = signupParameters.domains - plan.MaxDomains;
         if (domainsAddon && amount > 0) {
@@ -207,7 +207,7 @@ export const getPlanIDsFromParams = (
 
     if (signupParameters.ips !== undefined) {
         const ipsAddon = plans.find(
-            ({ Name }) => Name.startsWith('1ip') && supportedAddons[Name as keyof typeof supportedAddons]
+            ({ Name }) => isIpAddon(Name) && supportedAddons[Name as keyof typeof supportedAddons]
         );
         const amount = signupParameters.ips - (getPlanMaxIPs(plan) + (ipsAddon?.Quantity || 0));
         if (ipsAddon && amount > 0) {
