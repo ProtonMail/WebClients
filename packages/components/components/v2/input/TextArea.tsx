@@ -26,6 +26,7 @@ const TextAreaTwo = (props: TextAreaTwoProps, ref: Ref<HTMLTextAreaElement>) => 
         minRows = 1,
         autoGrow = false,
         unstyled,
+        value,
         ...rest
     } = props;
 
@@ -41,12 +42,13 @@ const TextAreaTwo = (props: TextAreaTwoProps, ref: Ref<HTMLTextAreaElement>) => 
         if (textAreaRef.current) {
             updateTextArea?.(textAreaRef.current);
         }
-    }, [updateTextArea]);
+    }, [updateTextArea, value]);
 
     return (
         <textarea
             aria-invalid={!!error}
             {...rest}
+            value={value}
             ref={useCombinedRefs(textAreaRef, ref)}
             onChange={(e) => {
                 if (disableChange) {
