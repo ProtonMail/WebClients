@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { createSelector } from '@reduxjs/toolkit';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
-import { baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseSelector } from '@proton/react-redux-store';
 
 import { useGetExchangeRate } from '../store/hooks';
 import { exchangeRateHooks } from '../store/hooks/useExchangeRate';
