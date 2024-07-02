@@ -468,7 +468,7 @@ const Step1 = ({
                         );
                     }
 
-                    if (options.plan?.Name === PLANS.NEW_VISIONARY) {
+                    if (options.plan?.Name === PLANS.VISIONARY) {
                         const textLaunchOffer = c('mail_signup_2023: Info').t`Limited time offer`;
                         return wrap('hourglass', textLaunchOffer);
                     }

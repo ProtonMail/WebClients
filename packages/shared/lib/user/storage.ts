@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { APPS, APP_NAMES, PLANS } from '../constants';
-import { getHasMailB2BPlan, hasNewVisionary } from '../helpers/subscription';
+import { getHasMailB2BPlan, hasVisionary } from '../helpers/subscription';
 import type { Subscription, User, UserModel } from '../interfaces';
 
 export const getHasStorageSplit = (user: User) => {
@@ -98,7 +98,7 @@ export const getCanAddStorage = ({ user, subscription }: { user: UserModel; subs
     if (!user.canPay) {
         return false;
     }
-    if (hasNewVisionary(subscription) || getHasMailB2BPlan(subscription)) {
+    if (hasVisionary(subscription) || getHasMailB2BPlan(subscription)) {
         return false;
     }
     return true;

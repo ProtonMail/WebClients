@@ -438,9 +438,9 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getNewVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }): ShortPlan => {
+export const getVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }): ShortPlan => {
     return {
-        plan: PLANS.NEW_VISIONARY,
+        plan: PLANS.VISIONARY,
         title: plan.Title,
         label: '',
         description: '',
@@ -622,8 +622,8 @@ export const getShortPlan = (
         case PLANS.BUNDLE_PRO:
         case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan(planData);
-        case PLANS.NEW_VISIONARY:
-            return getNewVisionaryPlan({ plan: planData, freePlan });
+        case PLANS.VISIONARY:
+            return getVisionaryPlan({ plan: planData, freePlan });
         case PLANS.FAMILY:
             return getFamilyPlan({ plan: planData, serversCount: vpnServers, freePlan });
         case PLANS.VPN_PRO:

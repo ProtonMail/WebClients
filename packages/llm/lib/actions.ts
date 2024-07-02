@@ -443,6 +443,7 @@ export class GpuLlmManager implements LlmManager {
         let downloadPromiseResolve: (value: boolean | PromiseLike<boolean>) => void;
         let downloadPromiseReject: (reason?: any) => void;
         let pingIframeTimeout: ReturnType<typeof setTimeout> | undefined;
+        const modelVariant = assistantConfig.model_list[0].model_id;
 
         const handleReceived = async (event: MessageEvent) => {
             if (!isAssistantPostMessage(event)) {
@@ -472,14 +473,36 @@ export class GpuLlmManager implements LlmManager {
 
                         if (appCaches) {
                             const destinationCache = appCaches[cacheId as CacheId];
-                            const promise = storeInCache(downloadResult, cacheUrl, destinationCache, expectedMd5);
+                            const promise = storeInCache(downloadResult, cacheUrl, destinationCache, expectedMd5).catch(
+                                (e) => {
+                                    // Reject the download promise in case the caching fails
+                                    // This usually happens when user is on private mode, where there is a caching limit
+                                    console.error(e);
+                                    this.status = 'error';
+                                    void this.chat?.unload?.();
+                                    const error = new Error('Caching failed');
+                                    downloadPromiseReject(error);
+                                }
+                            );
                             promises.push(promise);
 
                             // Resolve the promise when receiving the last file
                             if (terminate) {
                                 this.status = 'unloaded';
                                 await Promise.all(promises);
-                                downloadPromiseResolve(true);
+
+                                // The quota exceeded error is not always triggered time when the user is on private mode.
+                                // So before resolving the promise, we're checking that all needed files are cached
+                                // In case they're not, we need to show an error
+                                const { needsAdditionalDownload } = await getCachedFiles(modelVariant, assistantConfig);
+                                if (needsAdditionalDownload) {
+                                    const error = new Error('Caching failed');
+                                    console.error(error);
+                                    this.status = 'error';
+                                    downloadPromiseReject(error);
+                                } else {
+                                    downloadPromiseResolve(true);
+                                }
                             }
                         }
                     }
@@ -509,7 +532,6 @@ export class GpuLlmManager implements LlmManager {
             downloadPromiseReject = reject;
             try {
                 // Search for files already present in the cache, download the ones that are not downloaded yet
-                const modelVariant = assistantConfig.model_list[0].model_id;
                 const {
                     filesAlreadyDownloaded,
                     needsAdditionalDownload,

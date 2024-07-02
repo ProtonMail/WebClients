@@ -15,7 +15,7 @@ import {
     hasCancellablePlan,
     hasMigrationDiscount,
     hasNewCancellablePlan,
-    hasNewVisionary,
+    hasVisionary,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
@@ -49,7 +49,7 @@ import FeedbackDowngradeModal, {
 } from '../FeedbackDowngradeModal';
 import HighlightPlanDowngradeModal, { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
 import InAppPurchaseModal from '../InAppPurchaseModal';
-import { DiscountWarningModal, NewVisionaryWarningModal } from '../PlanLossWarningModal';
+import { DiscountWarningModal, VisionaryWarningModal } from '../PlanLossWarningModal';
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 import { CancelSubscriptionResult } from './types';
 
@@ -102,7 +102,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         FeedbackDowngradeResult
     >();
     const [discountWarningModal, showDiscountWarningModal] = useModalTwoPromise();
-    const [newVisionaryWarningModal, showNewVisionaryWarningModal] = useModalTwoPromise();
+    const [visionaryWarningModal, showVisionaryWarningModal] = useModalTwoPromise();
     const [inAppPurchaseModal, showInAppPurchaseModal] = useModalTwoPromise();
     const [highlightPlanDowngradeModal, showHighlightPlanDowngradeModal] =
         useModalTwoPromise<HighlightPlanDowngradeModalOwnProps>();
@@ -159,9 +159,9 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 inAppPurchaseModal((props) => {
                     return <InAppPurchaseModal {...props} subscription={subscription} onClose={props.onReject} />;
                 })}
-            {newVisionaryWarningModal((props) => {
+            {visionaryWarningModal((props) => {
                 return (
-                    <NewVisionaryWarningModal
+                    <VisionaryWarningModal
                         {...props}
                         type="downgrade"
                         onConfirm={props.onResolve}
@@ -253,8 +253,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             await showDiscountWarningModal();
         }
 
-        if (hasNewVisionary(subscription)) {
-            await showNewVisionaryWarningModal();
+        if (hasVisionary(subscription)) {
+            await showVisionaryWarningModal();
         }
 
         if (isManagedExternally(subscription)) {

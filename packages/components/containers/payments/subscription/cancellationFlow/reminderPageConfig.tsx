@@ -41,7 +41,7 @@ export const getReminderPageConfig = ({
         return getFamilyConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
     }
 
-    if (plan.Name === PLANS.NEW_VISIONARY) {
+    if (plan.Name === PLANS.VISIONARY) {
         return getVisionaryConfig(subscription, plan, vpnCountriesCount, newCancellationPolicy);
     }
 

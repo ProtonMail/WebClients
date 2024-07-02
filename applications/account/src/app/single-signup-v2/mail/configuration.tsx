@@ -82,7 +82,7 @@ export const getPlanTitle = (plan: Plan | undefined) => {
     if (!plan) {
         return;
     }
-    if (plan.Name === PLANS.NEW_VISIONARY) {
+    if (plan.Name === PLANS.VISIONARY) {
         return c('mail_signup_2023: Info').t`Become a Visionary and be part of ${BRAND_NAME}'s story`;
     }
 };

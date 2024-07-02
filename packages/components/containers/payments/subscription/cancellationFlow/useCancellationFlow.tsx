@@ -11,7 +11,7 @@ import {
     hasMail,
     hasMailBusiness,
     hasMailPro,
-    hasNewVisionary,
+    hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
@@ -50,7 +50,7 @@ const useCancellationFlow = () => {
             hasMail(subscription) ||
             hasBundle(subscription) ||
             hasFamily(subscription) ||
-            hasNewVisionary(subscription) ||
+            hasVisionary(subscription) ||
             hasDrive(subscription)
         ) {
             return true;

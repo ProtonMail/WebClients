@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 
-import { FeatureFlag } from '@proton/components/containers';
 import { useUserSettings } from '@proton/components/hooks';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
@@ -12,15 +11,14 @@ import { AssistantContext } from '../useAssistant';
 
 export interface AssistantProviderProps {
     children: ReactNode;
-    assistantFeature: FeatureFlag;
 }
 
-const AssistantProvider = ({ children, assistantFeature }: AssistantProviderProps) => {
+const AssistantProvider = ({ children }: AssistantProviderProps) => {
     const [userSettings] = useUserSettings();
     const assistantMode = userSettings.AIAssistantFlags;
     const isAssistantLocal = assistantMode === AI_ASSISTANT_ACCESS.CLIENT_ONLY;
 
-    const commonState = useAssistantCommons({ assistantFeature });
+    const commonState = useAssistantCommons();
     const openedAssistantsState = useOpenedAssistants({ cleanSpecificErrors: commonState.cleanSpecificErrors });
     const assistantServerState = useAssistantServer({ commonState, openedAssistantsState });
     const assistantLocalState = useAssistantLocal({ commonState, openedAssistantsState, active: isAssistantLocal });

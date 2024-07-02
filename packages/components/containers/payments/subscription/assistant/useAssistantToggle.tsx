@@ -1,8 +1,4 @@
-import { useEffect, useState } from 'react';
-
 import { useOrganization, usePlans, useSubscription, useUser } from '@proton/components/hooks';
-import { checkHardwareForAssistant } from '@proton/shared/lib/assistant';
-import { GpuAssessmentResult } from '@proton/shared/lib/assistant/checkHardwareForAssistant';
 import { ADDON_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { isScribeAddon } from '@proton/shared/lib/helpers/planIDs';
 import { hasAIAssistant } from '@proton/shared/lib/helpers/subscription';
@@ -24,18 +20,7 @@ const useAssistantToggle = () => {
         return null;
     }).filter(Boolean);
 
-    const [hasHardwareForModel, setHasHardware] = useState<GpuAssessmentResult | undefined>(undefined);
-
-    const loading = userLoading || plansLoading || subscriptionLoading || hasHardwareForModel === undefined;
-
-    useEffect(() => {
-        const checkHasHardware = async () => {
-            const value = await checkHardwareForAssistant();
-            setHasHardware(value);
-        };
-
-        void checkHasHardware();
-    }, []);
+    const loading = userLoading || plansLoading || subscriptionLoading;
 
     const getMinimalAssistantPrice = () => {
         if (!addonPlan) {
@@ -49,7 +34,6 @@ const useAssistantToggle = () => {
     return {
         loading,
         addonPlan,
-        hasHardwareForModel,
         currentAddonSubscription,
         isOrgAdmin,
         isRenewalEnabled: subscription?.Renew === Renew.Enabled,
