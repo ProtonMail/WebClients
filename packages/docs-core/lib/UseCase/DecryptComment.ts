@@ -28,8 +28,8 @@ export class DecryptComment implements UseCaseInterface<Comment> {
     )
 
     if (decrypted.isFailed()) {
-      metrics.docs_comments_error_total.increment({
-        reason: 'encryption_error',
+      metrics.docs_comments_download_error_total.increment({
+        reason: 'decryption_error',
       })
 
       return Result.fail(decrypted.getError())

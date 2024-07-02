@@ -6,11 +6,13 @@
  */
 
 /**
- * Number of comments failed to be uploaded to server
+ * Drive decryption issues
  */
-export interface HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson {
+export interface HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson {
   Labels: {
-    reason: "network_error" | "server_error" | "encryption_error" | "unknown";
+    entity: "share" | "node";
+    shareType: "own" | "device" | "photo" | "shared" | "shared_public";
+    fromBefore2024: "yes" | "no" | "unknown";
   };
   Value: number;
 }
