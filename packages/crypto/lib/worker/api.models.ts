@@ -264,8 +264,9 @@ export interface KeyReference {
     }[];
 }
 export interface PublicKeyReference extends KeyReference {}
-export interface PrivateKeyReference extends KeyReference {
-    isPrivate: () => true;
+export interface PrivateKeyReference extends PublicKeyReference {
+    /** Dummy field needed to distinguish a PrivateKeyReference from  a PublicKeyReference, as they are otherwise seen as equivalent by TS */
+    readonly _dummyType: 'private';
 }
 
 export interface ComputeHashStreamOptions {
