@@ -11,8 +11,8 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getViewCountString } from '@proton/pass/lib/i18n/helpers';
-import { itemRemoveSecureLink } from '@proton/pass/store/actions';
-import { itemDeleteSecureLinkRequest } from '@proton/pass/store/actions/requests';
+import { secureLinkRemove } from '@proton/pass/store/actions';
+import { secureLinkRemoveRequest } from '@proton/pass/store/actions/requests';
 import type { SecureLink } from '@proton/pass/types';
 import { timeRemaining } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
@@ -33,8 +33,8 @@ export const SecureLinkCard: FC<Props> = ({
     const { createNotification } = useNotifications();
     const [openRemoveModal, setOpenRemoveModal] = useState(false);
 
-    const initialRequestId = itemDeleteSecureLinkRequest(shareId, itemId);
-    const { dispatch } = useRequest(itemRemoveSecureLink, { initialRequestId });
+    const initialRequestId = secureLinkRemoveRequest(shareId, itemId);
+    const { dispatch } = useRequest(secureLinkRemove, { initialRequestId });
 
     const onCopy = () => createNotification({ text: c('Info').t`Copied to clipboard` });
     const onRemove = () => dispatch({ itemId, shareId, linkId });

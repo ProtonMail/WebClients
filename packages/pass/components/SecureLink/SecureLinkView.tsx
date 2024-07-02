@@ -7,9 +7,9 @@ import warningIcon from '@proton/pass/assets/secure-link/secure-link-warning.svg
 import { ItemContentView } from '@proton/pass/components/Item/Containers/ItemContentView';
 import { DateBadge } from '@proton/pass/components/Layout/Badge/DateBadge';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
-import { intoSecureLinkItemRevision } from '@proton/pass/lib/items/item.utils';
-import { itemViewSecureLink } from '@proton/pass/store/actions';
-import { itemViewSecureLinkRequest } from '@proton/pass/store/actions/requests';
+import { intoSecureLinkItemRevision } from '@proton/pass/lib/secure-links/secure-links.utils';
+import { secureLinkOpen } from '@proton/pass/store/actions';
+import { secureLinkOpenRequest } from '@proton/pass/store/actions/requests';
 import type { Maybe, MaybeNull, SecureLinkItem } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -21,8 +21,8 @@ const SecureLinkView: FC = () => {
     const [response, setResponse] = useState<Maybe<SecureLinkItem>>();
     const [error, setError] = useState<MaybeNull<string>>(null);
 
-    const { dispatch, loading } = useRequest(itemViewSecureLink, {
-        initialRequestId: itemViewSecureLinkRequest(token),
+    const { dispatch, loading } = useRequest(secureLinkOpen, {
+        initialRequestId: secureLinkOpenRequest(token),
         onFailure: ({ data }) => setError(data.error),
         onStart: () => setError(null),
         onSuccess: ({ data }) => setResponse(data),

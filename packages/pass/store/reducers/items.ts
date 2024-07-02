@@ -15,7 +15,6 @@ import {
     itemBulkMoveProgress,
     itemBulkRestoreProgress,
     itemBulkTrashProgress,
-    itemCreateSecureLink,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -27,13 +26,10 @@ import {
     itemEditFailure,
     itemEditIntent,
     itemEditSuccess,
-    itemGetSecureLinks,
     itemMoveFailure,
     itemMoveIntent,
     itemMoveSuccess,
     itemPinSuccess,
-    itemRemoveInactiveSecureLinks,
-    itemRemoveSecureLink,
     itemRestoreFailure,
     itemRestoreIntent,
     itemRestoreSuccess,
@@ -46,6 +42,10 @@ import {
     itemsUsedSync,
     resolveAddressMonitor,
     restoreTrashProgress,
+    secureLinkCreate,
+    secureLinkRemove,
+    secureLinksGet,
+    secureLinksRemoveInactive,
     setItemFlags,
     shareDeleteSync,
     shareLeaveSuccess,
@@ -423,7 +423,7 @@ const draftsReducer: Reducer<Draft[]> = (state = [], action) => {
 };
 
 const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (state = {}, action) => {
-    if (or(itemGetSecureLinks.success.match, itemRemoveInactiveSecureLinks.success.match)(action)) {
+    if (or(secureLinksGet.success.match, secureLinksRemoveInactive.success.match)(action)) {
         return action.payload.reduce<IndexedByShareIdAndItemId<SecureLink[]>>((acc, link) => {
             const { shareId, itemId } = link;
             const secureLink = acc[shareId]?.[itemId];
@@ -435,7 +435,7 @@ const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (st
         }, {});
     }
 
-    if (itemCreateSecureLink.success.match(action)) {
+    if (secureLinkCreate.success.match(action)) {
         const secureLink = action.payload;
         const { shareId, itemId } = secureLink;
         const links = state?.[shareId]?.[itemId] ?? [];
@@ -443,7 +443,7 @@ const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (st
         return partialMerge(state, { [shareId]: { [itemId]: links.concat(secureLink) } });
     }
 
-    if (itemRemoveSecureLink.success.match(action)) {
+    if (secureLinkRemove.success.match(action)) {
         const { shareId, itemId, linkId } = action.payload;
         const links = state[shareId][itemId].filter((link) => link.linkId !== linkId);
 
