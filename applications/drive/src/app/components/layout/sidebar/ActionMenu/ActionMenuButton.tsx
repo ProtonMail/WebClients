@@ -1,15 +1,18 @@
-import { PropsWithChildren, useMemo } from 'react';
+import { PropsWithChildren, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import {
     Dropdown,
     DropdownMenu,
     DropdownSizeUnit,
     Icon,
+    Prompt,
     SidebarPrimaryButton,
     usePopperAnchor,
 } from '@proton/components';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
@@ -24,6 +27,8 @@ interface Props {
     disabled?: boolean;
     className?: string;
 }
+
+const WARNING_MODAL_FLAG = 'DriveDocsCreationWarningModal';
 
 // We put all input in the parent components because we need input to be present in the DOM
 // even when the dropdown is closed
@@ -46,7 +51,14 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
     } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
     const { createDocument } = useDocumentActions();
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
+    const { isDocsEnabled, isDocsCreationWarningModalEnabled } = useDriveDocsFeatureFlag();
+    const [open, setOpen] = useState(false);
+    const onDocsCreationClick = () => {
+        void createDocument({
+            shareId: activeFolder.shareId,
+            parentLinkId: activeFolder.linkId,
+        });
+    };
 
     return (
         <>
@@ -79,15 +91,39 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     {isDocsEnabled && (
                         <CreateDocumentButton
                             onClick={() => {
-                                void createDocument({
-                                    shareId: activeFolder.shareId,
-                                    parentLinkId: activeFolder.linkId,
-                                });
+                                if (
+                                    localStorage.getItem(WARNING_MODAL_FLAG) == null &&
+                                    isDocsCreationWarningModalEnabled
+                                ) {
+                                    localStorage.setItem(WARNING_MODAL_FLAG, 'true');
+                                    setOpen(true);
+                                } else {
+                                    onDocsCreationClick();
+                                }
                             }}
                         />
                     )}
                 </DropdownMenu>
             </Dropdown>
+            <Prompt
+                title={c('Title').t`Docs is a new feature in ${DRIVE_APP_NAME}`}
+                open={open}
+                onClose={() => setOpen(false)}
+                buttons={
+                    <Button
+                        color="norm"
+                        onClick={() => {
+                            onDocsCreationClick();
+                            setOpen(false);
+                        }}
+                    >{c('Action').t`Create Document`}</Button>
+                }
+            >
+                <p>
+                    {c('Info')
+                        .t`The new Documents feature requires the latest version of ${DRIVE_APP_NAME}. Please update your apps on mobile and desktop for a seamless experience.`}
+                </p>
+            </Prompt>
         </>
     );
 };
