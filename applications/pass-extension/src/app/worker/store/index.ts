@@ -11,7 +11,8 @@ import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/l
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddleware } from '@proton/pass/store/request/middleware';
-import { workerRootSaga } from '@proton/pass/store/sagas';
+import { rootSagaFactory } from '@proton/pass/store/sagas';
+import { EXTENSION_SAGAS } from '@proton/pass/store/sagas/extension';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -144,6 +145,6 @@ const options: RootSagaOptions = {
     onSettingsUpdated: withContext((ctx, update) => ctx.service.settings.sync(update)),
 };
 
-sagaMiddleware.run(workerRootSaga.bind(null, options));
+sagaMiddleware.run(rootSagaFactory(EXTENSION_SAGAS).bind(null, options));
 
 export default store;

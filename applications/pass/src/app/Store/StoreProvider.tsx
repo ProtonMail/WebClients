@@ -21,7 +21,8 @@ import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/clien
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
-import { workerRootSaga } from '@proton/pass/store/sagas';
+import { rootSagaFactory } from '@proton/pass/store/sagas';
+import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
 import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -47,7 +48,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         const runner = sagaMiddleware.run(
-            workerRootSaga.bind(null, {
+            rootSagaFactory(WEB_SAGAS).bind(null, {
                 endpoint: 'web',
 
                 getAppState: () => client.current.state,
