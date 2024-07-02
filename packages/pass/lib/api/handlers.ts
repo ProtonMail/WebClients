@@ -32,9 +32,11 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
         } = options ?? {};
 
         const next = async (attempts: number, maxAttempts?: number): Promise<any> => {
-            if (state.get('sessionInactive')) throw InactiveSessionError();
-            if (state.get('appVersionBad')) throw AppVersionBadError();
-            if (state.get('sessionLocked')) throw LockedSessionError();
+            if (!options.unauth) {
+                if (state.get('sessionInactive')) throw InactiveSessionError();
+                if (state.get('sessionLocked')) throw LockedSessionError();
+                if (state.get('appVersionBad')) throw AppVersionBadError();
+            }
 
             try {
                 /** Check if the request was queued and possibly aborted :
@@ -75,6 +77,8 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
                 }
 
                 if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
+                    if (code === PassErrorCode.SESSION_ERROR) throw InactiveSessionError();
+
                     try {
                         state.set('refreshing', true);
                         await refreshHandler(response);
