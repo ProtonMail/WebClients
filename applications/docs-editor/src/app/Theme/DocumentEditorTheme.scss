@@ -38,6 +38,7 @@
 
 .Lexical__paragraph {
 	margin: 0;
+	font-size: 0.75em;
 }
 
 .Lexical__quote {
@@ -134,14 +135,39 @@
 	}
 }
 
+.Lexical__h1,
+.Lexical__h2,
+.Lexical__h3 {
+	font-weight: bold;
+}
+
+.Lexical__h1 {
+	font-size: 1.625em;
+}
+
+.Lexical__h2 {
+	font-size: 1.25em;
+}
+
+.Lexical__h3 {
+	font-size: 1em;
+}
+
+.Lexical__h4,
+.Lexical__h5,
+.Lexical__h6 {
+	font-size: 0.875em;
+}
+
+%heading {
+	&:not(:first-child) {
+		margin-block-start: 1.25rem;
+	}
+}
+
 @for $i from 1 through 6 {
 	.Lexical__h#{$i} {
-		font-size: 1.75em - 0.125em * $i;
-		font-weight: bold;
-
-		&:not(:first-child) {
-			margin-block-start: 1.25rem;
-		}
+		@extend %heading;
 	}
 }
 
