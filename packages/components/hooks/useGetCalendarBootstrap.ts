@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { getFullCalendar } from '@proton/shared/lib/api/calendars';
 import createCache from '@proton/shared/lib/helpers/cache';
+import { CalendarBootstrap } from '@proton/shared/lib/interfaces/calendar';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
 import useApi from './useApi';
@@ -10,13 +11,13 @@ import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const KEY = 'CALENDAR_BOOTSTRAP';
 
-export const useGetCalendarBootstrap = () => {
+export const useGetCalendarBootstrap = (): ((id: string) => Promise<CalendarBootstrap>) => {
     const api = useApi();
     const cache = useCache();
     const miss = useCallback(
         (calendarID: string) => {
             if (!calendarID) {
-                return Promise.resolve();
+                return Promise.reject(new Error('Missing calendar ID'));
             }
             return api(getFullCalendar(calendarID));
         },

@@ -706,7 +706,7 @@ export function useLinkInner(
             if (!downloadInfo.downloadUrl || !downloadInfo.downloadToken) {
                 return;
             }
-            return await loadThumbnailUrl(downloadInfo.downloadUrl, downloadInfo.downloadToken);
+            return loadThumbnailUrl(downloadInfo.downloadUrl, downloadInfo.downloadToken);
         }
     };
 
