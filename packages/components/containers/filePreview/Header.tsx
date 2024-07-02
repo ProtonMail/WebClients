@@ -7,11 +7,10 @@ import { useLoading } from '@proton/hooks';
 import { DOCS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
-import documentIcon from '@proton/styles/assets/img/drive/file-document-proton.svg';
 import clsx from '@proton/utils/clsx';
 
 import { TimeIntl, useActiveBreakpoint } from '../../';
-import { FileIcon, FileNameDisplay, Icon } from '../../components';
+import { FileIcon, FileNameDisplay, Icon, MimeIcon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,
@@ -123,7 +122,7 @@ const Header = ({
                         color="weak"
                         data-testid="file-preview:actions:open-in-docs"
                     >
-                        <img className="mr-2 pointer-events-none" src={documentIcon} alt="" aria-hidden="true" />
+                        <MimeIcon name="proton-doc" className="mr-2" />
                         {
                             // translator: Open in Docs
                             c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
