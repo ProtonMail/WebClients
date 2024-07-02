@@ -697,11 +697,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Reload": [
         "रिलोड"
@@ -1360,14 +1360,6 @@
         "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
@@ -1389,6 +1381,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
     },
     "bf2023: Offers": {
@@ -9517,23 +9517,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free जारी रखें"
@@ -9561,6 +9544,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -12736,10 +12736,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [

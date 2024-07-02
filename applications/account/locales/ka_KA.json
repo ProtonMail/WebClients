@@ -170,6 +170,9 @@
       "Change password": [
         "პაროლის შეცვლა"
       ],
+      "Change second password": [
+        "მეორე პაროლის შეცვლა"
+      ],
       "Chat with us": [
         "დაგველაპარაკეთ"
       ],
@@ -740,10 +743,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Reload": [
@@ -1524,14 +1527,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1553,6 +1548,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -4087,6 +4090,9 @@
       "Incorrect password": [
         "არასწორი პაროლი"
       ],
+      "Incorrect second password. Please try again.": [
+        "არასწორი მეორე პაროლი. თავიდან სცადეთ."
+      ],
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
       ],
@@ -4282,6 +4288,9 @@
       "Require at least one condition": [
         "საჭიროებს სულ ცოტაერთ პირობას"
       ],
+      "Session expired. Please refresh the page.": [
+        "სესიის ვადა ამოიწურა. განაახლეთ გვერდი."
+      ],
       "Signature not verified": [
         "ხელმოწერა არ შემოწმებულა"
       ],
@@ -4317,6 +4326,9 @@
       ],
       "The email addresses do not match": [
         "ელფოსტის მისამართები არ ემთხვევა"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "ეს ფაილი მეისმეტად დიდია. მაქსიმალური ზომაა ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The folder name is invalid. Please choose a different name.": [
         "საქაღალდის სახელი არასწორია. აირჩიეთ სხვა სახელი."
@@ -5010,6 +5022,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
@@ -6134,6 +6149,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }-ს უნდა, მონაცემები გაგიზიაროთ ${ PASS_APP_NAME }-ში"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და მეორე პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
+      ],
       "${ n } address": [
         "${ n } მისამართი",
         "${ n } მისამართი"
@@ -6674,11 +6692,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -6951,6 +6969,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "თუ სადმე შესული დაგრჩებათ, შეგიძლიათ, ასევე, ${ signedInPasswordResetLink }"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "თუ გჯერათ, რომ ეს შეცდომაა, დაგვიკავშირდით ${ contactLink }."
@@ -7470,6 +7491,9 @@
         "დაამატეთ ელფოსტის მისამართი მომხმარებელს მწკრივზე",
         "დაამატეთ ელფოსტის მისამართი მომხმარებელს მწკრივზე"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "სთხოვეთ მფლობელს, პირდაპირ მოგიწვიოთ დოკუმენტზე."
+      ],
       "Please authenticate your card in the verification tab.": [
         "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
       ],
@@ -7499,6 +7523,9 @@
       ],
       "please open a support ticket": [
         "გახსენით მხარდაჭერის ბილეთი"
+      ],
+      "Please open the document to view it.": [
+        "გახსენით დოკუმენტი, რომ ნახოთ ის."
       ],
       "Please select the folders you would like to import:": [
         "აირჩიეთ შემოსატანი საქაღალდეები:"
@@ -7539,6 +7566,9 @@
       "Preview for this file type is not supported": [
         "ფაილის ამ ტიპისთვის მინიატურის შექმნა მხარდაჭერილი არაა"
       ],
+      "Preview of documents is not yet supported.": [
+        "დოკუმენტების მინიატურა ჯერ მხარდაჭერილი არაა."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
       ],
@@ -7556,6 +7586,9 @@
       ],
       "Public link invite": [
         "მოწვევის საჯარო ბმული"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
       "purchase additional storage": [
         "დამატებითი საცავის შეძენა"
@@ -7893,6 +7926,12 @@
       ],
       "This file is too large to preview": [
         "მინიატურისთვის ეს ფაილი მეტისმეტად დიდია"
+      ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "მოსაწვევი ბმულის ვადა ამოიწურა. დაუკავშირდით თქვენს ადმინსტრატორს, რომ წვდომა მოითხოვოთ."
+      ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "ეს მოსაწვევის ბმული უკვე იქნა გამოყენებული. პირდაპირ შედით."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "12-სიტყვიანი ფრაზა, რომლის შეყვანაც გთხოვეთ."
@@ -9273,6 +9312,9 @@
       "Confirm password": [
         "პაროლის დადასტურება"
       ],
+      "Confirm second password": [
+        "დაადასტურეთ მეორე პაროლი"
+      ],
       "Contacts": [
         "კონტაქტები"
       ],
@@ -9630,6 +9672,9 @@
       "New password": [
         "ახალი პაროლი"
       ],
+      "New second password": [
+        "ახალი მეორე პაროლი"
+      ],
       "No filter": [
         "ფილტრის გარეშე"
       ],
@@ -9854,6 +9899,12 @@
       ],
       "Subscription options": [
         "გამოწერის პარამეტრები"
+      ],
+      "Swipe left action": [
+        "მარცხნივ გასმის ქმედება"
+      ],
+      "Swipe right action": [
+        "მარჯვნივ გასმის ქმედება"
       ],
       "Synchronize with system": [
         "სისტემასთან სინქრონიზაცია"
@@ -10379,6 +10430,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
+        "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ"
+      ],
       "An encrypted email service that puts your privacy first": [
         "დაშიფრული ელფოსტის სერვისი, რომელიც თქვენ კონფიდენციალობას პირველ ადგილას აყენებს"
       ],
@@ -10818,23 +10872,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -10862,6 +10899,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -11345,6 +11399,9 @@
       ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "${ BRAND_NAME }-ის ყველა აპი და მათი ფასიანი ფუნქციები"
+      ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
@@ -12753,6 +12810,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "Payment Processing": [
+        "გადახდის დამუშავება"
       ],
       "Processing payment": [
         "გადახდის დამუშავება"
@@ -14227,6 +14287,9 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } წვდომით ჩქაროსნულ სერვერებთან ${ vpnCountries } ქვეყანაში"
+      ],
       "${ VPN_APP_NAME } with malware and ad-blocking": [
         "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
       ],
@@ -14262,6 +14325,9 @@
       ],
       "Back up photos from your devices": [
         "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "ააგეთ ნდობა და ბრენდის ცნობადობა პროფესიონალური ელფოსტის მისამართებით თქვენი საკუთარი დომენით."
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -15087,10 +15153,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -15107,6 +15173,9 @@
       ],
       "Change role": [
         "როლის შეცვლა"
+      ],
+      "Change second password": [
+        "მეორე პაროლის შეცვლა"
       ],
       "Choose an account": [
         "აირჩიეთ ანგარიში"

@@ -3522,9 +3522,6 @@
       "Close this screen to exit.": [
         "Cierre esta pantalla para salir."
       ],
-      "Connecting...": [
-        "Conectando..."
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
@@ -3591,9 +3588,6 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
-      ],
-      "Document is busy": [
-        "El documento está ocupado."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
@@ -3809,6 +3803,9 @@
       "Learn more": [
         "Más información"
       ],
+      "Limited availability": [
+        "Disponibilidad limitada"
+      ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
@@ -3830,7 +3827,7 @@
       "Loading...": [
         "Cargando..."
       ],
-      "Looks like you're offline. Document can not be edited while you are offline. Please check your device's connectivity.": [
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Parece que no tiene conexión. El documento no puede editarse mientras no haya conexión. Compruebe la conectividad de su dispositivo."
       ],
       "Low Priority": [
@@ -3903,6 +3900,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Solo las personas con el enlace y la contraseña pueden acceder a esta carpeta."
+      ],
+      "Opening...": [
+        "Abriendo..."
       ],
       "Organization size": [
         "Tamaño de la organización"
@@ -3989,9 +3989,6 @@
       "Primary": [
         "Principal"
       ],
-      "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
-        "No se pudieron guardar las ediciones recientes de su documento. Para garantizar la seguridad de los datos, la edición está desactivada temporalmente. Descargue una copia de su documento desde el menú principal. Una vez hecho esto, actualice la página para volver a conectarse."
-      ],
       "recommended browser": [
         "navegador recomendado"
       ],
@@ -4046,8 +4043,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
-      "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
-        "Algunas ediciones están tardando más de lo esperado en sincronizarse. Esto puede deberse a problemas de red. Puede continuar editando por ahora. Si el problema persiste, mostraremos un mensaje de error más fuerte."
+      "Some edits are taking longer to sync than expected.": [
+        "Algunas ediciones están tardando en sincronizarse más de lo esperado."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envíe un depósito usando la siguiente dirección o escanee el código QR. El depósito aparecerá en la cuenta después de la confirmación."
@@ -4351,6 +4348,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Sus cambios se están sincronizando en Drive. No cierre la página web."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "Error al sincronizar sus cambios. Drive intentará guardar los cambios automáticamente. No cierre la página web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "El navegador actual no admite la descarga de archivos grandes debido a la falta de disponibilidad de trabajadores de servicio. La descarga de archivos grandes puede bloquearse o dejar que el navegador no responda. Use las últimas versiones de ${ recommendedBrowser } e intente de nuevo."
@@ -7586,9 +7586,6 @@
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria"
       ],
-      "Busy": [
-        "Ocupado"
-      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar suscripción de ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -7774,6 +7771,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
+      ],
+      "Limited availability": [
+        "Disponibilidad limitada"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
