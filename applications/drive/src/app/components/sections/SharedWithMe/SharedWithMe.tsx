@@ -114,6 +114,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
                         return openDocument({
                             linkId: item.id,
                             shareId: item.rootShareId,
+                            openBehavior: 'tab',
                         });
                     })
                     .catch(sendErrorReport);
