@@ -118,7 +118,6 @@ const YourPlanSection = ({ app }: Props) => {
                     user={user}
                     addresses={addresses}
                     vpnServers={serversCount}
-                    openSubscriptionModal={openSubscriptionModal}
                 />
 
                 {/* Usage for plans with >1 Members */}

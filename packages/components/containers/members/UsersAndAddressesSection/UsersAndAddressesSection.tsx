@@ -16,7 +16,7 @@ import {
     getHasPassB2BPlan,
     getHasVpnOrPassB2BPlan,
     hasFamily,
-    hasNewVisionary,
+    hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
@@ -141,7 +141,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const { MaxAI = 0, UsedAI = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
 
-    const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
+    const canInviteProtonUsers = hasVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
 
     const cleanOption = {
@@ -305,7 +305,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
 
     const handleAddUser = () => {
         // Visionary can either create a sub user or invite existing users
-        if (hasNewVisionary(subscription) || hasFamily(subscription)) {
+        if (hasVisionary(subscription) || hasFamily(subscription)) {
             setInviteOrCreateUserModalOpen(true);
             return;
         }

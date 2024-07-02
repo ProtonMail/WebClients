@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms/index';
+import { useNotifications } from '@proton/components/hooks';
 import { ModalProps, Prompt, useApi, useEventManager } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const AssistantIncompatibleHardwareModal = ({ modalProps, onReject, onResolve }: Props) => {
+    const { createNotification } = useNotifications();
     const { onClose } = modalProps;
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
@@ -21,6 +23,7 @@ const AssistantIncompatibleHardwareModal = ({ modalProps, onReject, onResolve }:
 
     const handleUpdateSetting = async () => {
         await withLoading(api(updateAIAssistant(AI_ASSISTANT_ACCESS.SERVER_ONLY)));
+        createNotification({ text: c('Success').t`Writing assistant setting updated` });
         await call();
         onResolve?.();
         onClose?.();
@@ -43,7 +46,7 @@ const AssistantIncompatibleHardwareModal = ({ modalProps, onReject, onResolve }:
             buttons={[
                 <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
                     .t`Run on servers`}</Button>,
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+                <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...modalProps}
             onClose={handleClose}

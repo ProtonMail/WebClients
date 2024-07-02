@@ -65,7 +65,7 @@ export interface ShortPlan {
         | PLANS.MAIL_PRO
         | PLANS.MAIL_BUSINESS
         | PLANS.VPN
-        | PLANS.NEW_VISIONARY
+        | PLANS.VISIONARY
         | PLANS.FAMILY
         | PLANS.VPN_PRO
         | PLANS.VPN_BUSINESS;

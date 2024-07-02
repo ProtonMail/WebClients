@@ -216,7 +216,7 @@ const getUpsell = ({
                 // If the user is on a plus plan, and selects bundle, visionary, or family -> let it pass through
                 if (
                     (options.cycle === CYCLE.YEARLY &&
-                        (hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE, PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
+                        (hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ||
                             (hasMonthlyCycle && hasSelectedPlan(planParameters.plan, [currentPlan.Name])))) ||
                     isValidPassBundleFromPass ||
                     isValidPassBundleFromVPN1 ||
@@ -253,7 +253,7 @@ const getUpsell = ({
             if (currentPlan.Name === PLANS.BUNDLE) {
                 if (
                     options.cycle === CYCLE.YEARLY &&
-                    (hasSelectedPlan(planParameters.plan, [PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
+                    (hasSelectedPlan(planParameters.plan, [PLANS.VISIONARY, PLANS.FAMILY]) ||
                         (hasMonthlyCycle && hasSelectedPlan(planParameters.plan, [currentPlan.Name])))
                 ) {
                     return {
@@ -268,7 +268,7 @@ const getUpsell = ({
                     };
                 }
 
-                const plan = getSafePlan(plansMap, PLANS.NEW_VISIONARY);
+                const plan = getSafePlan(plansMap, PLANS.VISIONARY);
                 return {
                     ...defaultValue,
                     plan,
@@ -284,7 +284,7 @@ const getUpsell = ({
             }
 
             if (currentPlan.Name === PLANS.FAMILY) {
-                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.NEW_VISIONARY])) {
+                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.VISIONARY])) {
                     return {
                         ...defaultValue,
                         plan: planParameters.plan,
@@ -299,7 +299,7 @@ const getUpsell = ({
 
                 const plan = hasMonthlyCycle
                     ? getSafePlan(plansMap, currentPlan.Name)
-                    : getSafePlan(plansMap, PLANS.NEW_VISIONARY);
+                    : getSafePlan(plansMap, PLANS.VISIONARY);
                 return {
                     ...defaultValue,
                     plan,
@@ -327,13 +327,9 @@ const getUpsell = ({
             } else {
                 if (
                     getHasAnyPlusPlan(currentPlan.Name) &&
-                    ![
-                        PLANS.BUNDLE,
-                        PLANS.FAMILY,
-                        PLANS.BUNDLE_PRO,
-                        PLANS.BUNDLE_PRO_2024,
-                        PLANS.NEW_VISIONARY,
-                    ].includes(planParameters.plan.Name as any)
+                    ![PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
+                        planParameters.plan.Name as any
+                    )
                 ) {
                     return {
                         ...defaultValue,
@@ -344,7 +340,7 @@ const getUpsell = ({
 
                 if (
                     getHasBusinessUpsell(currentPlan.Name) &&
-                    ![PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(
+                    ![PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
                         planParameters.plan.Name as any
                     )
                 ) {
@@ -399,7 +395,7 @@ const hasAccess = ({
         if (audience === Audience.B2B) {
             return [
                 PLANS.PASS_BUSINESS,
-                PLANS.NEW_VISIONARY,
+                PLANS.VISIONARY,
                 PLANS.FAMILY,
                 PLANS.BUNDLE_PRO,
                 PLANS.BUNDLE_PRO_2024,
@@ -550,25 +546,25 @@ export const getUserInfo = async ({
     }
 
     if (state.access && state.payable && planParameters.defined && currentPlan) {
-        if (currentPlan.Name !== PLANS.NEW_VISIONARY && planParameters.plan.Name === PLANS.NEW_VISIONARY) {
+        if (currentPlan.Name !== PLANS.VISIONARY && planParameters.plan.Name === PLANS.VISIONARY) {
             state.access = false;
         } else if (
             getHasAnyPlusPlan(currentPlan.Name) &&
-            [PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(
+            [PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
                 planParameters.plan.Name as any
             )
         ) {
             state.access = false;
         } else if (
             currentPlan.Name === PLANS.BUNDLE &&
-            [PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(
+            [PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
                 planParameters.plan.Name as any
             )
         ) {
             state.access = false;
         } else if (
             currentPlan.Name === PLANS.FAMILY &&
-            [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+            [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(planParameters.plan.Name as any)
         ) {
             state.access = false;
         }

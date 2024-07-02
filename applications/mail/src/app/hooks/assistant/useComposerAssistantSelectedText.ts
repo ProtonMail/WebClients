@@ -90,7 +90,8 @@ const useComposerAssistantSelectedText = ({
     }, [inputSelectedText]);
 
     const handleCloseRefinePopover = () => {
-        setSelectedText('');
+        // Make a real clear selection on the UI so that we re-trigger the selection change and set selected text to ""
+        document.getSelection()?.removeAllRanges();
         setDisplayRefinePopover(false);
     };
 

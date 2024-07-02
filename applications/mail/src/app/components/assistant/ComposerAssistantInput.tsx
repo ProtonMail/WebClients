@@ -3,6 +3,8 @@ import { KeyboardEvent, MouseEvent, MutableRefObject, useEffect, useMemo, useRef
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Href } from '@proton/atoms/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import {
     ComposerAssistantTrialEndedUpsellModal,
     Dropdown,
@@ -31,6 +33,7 @@ import {
 } from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import clsx from '@proton/utils/clsx';
@@ -400,9 +403,10 @@ const ComposerAssistantInput = ({
 
     /** Show refine actions when
      *  - Not generating a result
-     *  - Not downloading the model
+     *  - Not downloading the model (or pausing it)
      *  - Not loading the model on the GPU
      *  - Some text is selected or present in the editor or generated text present in the assistant (canUseRefineActions)
+     *  - The assistant has no error
      */
     const canShowRefineButtons =
         !isGeneratingResult &&
@@ -410,7 +414,8 @@ const ComposerAssistantInput = ({
         !isModelLoadingOnGPU &&
         !downloadPaused &&
         canUseRefineActions &&
-        !hasDownloadError;
+        !hasDownloadError &&
+        !error;
 
     useEffect(() => {
         assistantInputRefManager.input.set(assistantID, inputRef);
@@ -648,19 +653,24 @@ const ComposerAssistantInput = ({
                     id="composer-assistant-hint"
                 >
                     {hasAssistantError && (
-                        <div className="flex flex-col mt-1">
-                            <ErrorZone className="w-full">{error.error}</ErrorZone>
+                        <ErrorZone className="w-full">
+                            <span className="mr-1">{error.error}</span>
                             {error?.errorType === ERROR_TYPE.GENERATION_HARMFUL && (
-                                <Button
-                                    shape="underline"
-                                    size="small"
-                                    className="color-danger"
+                                <InlineLinkButton
+                                    className="color-inherit inline-block"
                                     onClick={() => falsePositiveFeedback.openModal(true)}
                                 >
                                     {c('Action').t`Report an issue`}
-                                </Button>
+                                </InlineLinkButton>
                             )}
-                        </div>
+                            {error?.errorType === ERROR_TYPE.CACHING_FAILED && (
+                                <Href
+                                    href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant#system-requirements')}
+                                    className="color-inherit inline-block"
+                                    key="composer-assistant-learn-more-result-caching"
+                                >{c('Link').t`Learn more`}</Href>
+                            )}
+                        </ErrorZone>
                     )}
                     {showDownloadState && (
                         <>

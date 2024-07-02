@@ -37,7 +37,7 @@ export const getVisionaryConfig = (
     vpnCountries: number,
     newCancellationPolicy?: boolean
 ): PlanConfig => {
-    const currentPlan = PLANS.NEW_VISIONARY;
+    const currentPlan = PLANS.VISIONARY;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'TB', fraction: 0 });
 

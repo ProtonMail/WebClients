@@ -1,6 +1,7 @@
 import { APPS, COUPON_CODES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { getTestPlans } from '@proton/testing/data';
 
 import {
     drivePlusUpsell,
@@ -8,7 +9,6 @@ import {
     mailPlusUpsell,
     mailProfessionalUpsell,
     passPlusUpsell,
-    plans,
     subscription,
     subscriptionBundle,
     trialMailPlusUpsell,
@@ -29,7 +29,7 @@ describe('resolveUpsellsToDisplay', () => {
             app: APPS.PROTONMAIL,
             currency: 'EUR',
             subscription,
-            plans,
+            plans: getTestPlans(),
             freePlan: FREE_PLAN,
             serversCount: {
                 paid: {
