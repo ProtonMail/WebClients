@@ -110,4 +110,8 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
       },
     })
   }
+
+  async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {
+    return this.docOrchestrator.fetchExternalImageAsBase64(url)
+  }
 }

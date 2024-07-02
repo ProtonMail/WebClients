@@ -12,6 +12,7 @@ import {
 import { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
 import { UserState } from '@lexical/yjs'
+import { DocsApi } from '../../Api/DocsApi'
 
 /**
  * Exposes a unified interface for interacting with a document to the editor bridge,
@@ -21,6 +22,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
   constructor(
     private readonly comments: CommentServiceInterface,
     private readonly docs: DocControllerInterface,
+    private readonly docsApi: DocsApi,
   ) {}
 
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void> {
@@ -101,5 +103,15 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
 
   handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
     return this.docs.handleAwarenessStateUpdate(states)
+  }
+
+  async fetchExternalImageAsBase64(url: string): Promise<string | undefined> {
+    const result = await this.docsApi.fetchExternalImageAsBase64(url)
+
+    if (result.isFailed()) {
+      return undefined
+    }
+
+    return result.getValue()
   }
 }

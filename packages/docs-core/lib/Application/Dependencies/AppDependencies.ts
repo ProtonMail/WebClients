@@ -7,7 +7,7 @@ import { EncryptMessage } from '../../UseCase/EncryptMessage'
 import { DocLoader } from '../../Services/DocumentLoader/DocLoader'
 import { InternalEventBus, InternalEventBusInterface } from '@proton/docs-shared'
 import { DecryptMessage } from '../../UseCase/DecryptMessage'
-import { Api, UserModel } from '@proton/shared/lib/interfaces'
+import { Api } from '@proton/shared/lib/interfaces'
 import { EncryptionService } from '../../Services/Encryption/EncryptionService'
 import { EncryptComment } from '../../UseCase/EncryptComment'
 import { DecryptComment } from '../../UseCase/DecryptComment'
@@ -32,9 +32,10 @@ import { WebsocketService } from '../../Services/Websockets/WebsocketService'
 import { VerifyMessages } from '../../UseCase/VerifyMessages'
 import { LoadCommit } from '../../UseCase/LoadCommit'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import { ImageProxyParams } from '../../Api/Types/ImageProxyParams'
 
 export class AppDependencies extends DependencyContainer {
-  constructor(api: Api, user: UserModel, driveCompat: DriveCompat) {
+  constructor(api: Api, imageProxyParams: ImageProxyParams, driveCompat: DriveCompat) {
     super()
 
     this.bind(App_TYPES.Logger, () => {
@@ -66,7 +67,7 @@ export class AppDependencies extends DependencyContainer {
     })
 
     this.bind(App_TYPES.DocsApi, () => {
-      return new DocsApi(api)
+      return new DocsApi(api, imageProxyParams)
     })
 
     this.bind(App_TYPES.EncryptMessage, () => {
