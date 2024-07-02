@@ -2,28 +2,34 @@ import { $nodesOfType } from 'lexical'
 import { Paragraph } from 'docx'
 import { $isListItemNode, $isListNode, ListNode } from '@lexical/list'
 import { getDocxChildrenFromElementNode } from './getDocxChildrenFromElementNode'
+import { DocxExportContext } from './Context'
 
-export function getDocxChildrenFromListNode(node: ListNode): Paragraph[] {
+export async function getDocxChildrenFromListNode(node: ListNode, context: DocxExportContext): Promise<Paragraph[]> {
   const paragraphs: Paragraph[] = []
 
+  const state = context.state
+
   let instance = 0
-  if (node.getListType() === 'number') {
-    const allListNodes = $nodesOfType(ListNode)
+  const listType = state.read(() => node.getListType())
+  if (listType === 'number') {
+    const allListNodes = state.read(() => $nodesOfType(ListNode))
     instance = allListNodes.filter((listNode) => listNode.getListType() === 'number').indexOf(node)
   }
 
-  for (const child of node.getChildren()) {
+  const nodeChildren = state.read(() => node.getChildren())
+  for (const child of nodeChildren) {
     if (!$isListItemNode(child)) {
       continue
     }
-    if (child.getChildrenSize() === 1 && $isListNode(child.getFirstChild())) {
-      const nestedList = getDocxChildrenFromListNode(child.getFirstChildOrThrow())
+    const childChildrenSize = state.read(() => child.getChildrenSize())
+    const childFirstChild = state.read(() => child.getFirstChild())
+    if (childChildrenSize === 1 && $isListNode(childFirstChild)) {
+      const nestedList = await getDocxChildrenFromListNode(childFirstChild, context)
       paragraphs.push(...nestedList)
       continue
     }
-    const children = getDocxChildrenFromElementNode(child)
-    const listType = node.getListType()
-    const level = child.getIndent()
+    const children = await getDocxChildrenFromElementNode(child, context)
+    const level = state.read(() => child.getIndent())
     paragraphs.push(
       new Paragraph({
         children,

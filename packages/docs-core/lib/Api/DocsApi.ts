@@ -36,9 +36,14 @@ import { GetAllThreadIDsResponse } from './Types/GetAllThreadIDsResponse'
 import { GetCommentThreadResponse } from './Types/GetCommentThreadResponse'
 import { ResolveThreadResponse } from './Types/ResolveThreadResponse'
 import { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
+import { forgeImageURL } from '@proton/shared/lib/helpers/image'
+import { ImageProxyParams } from './Types/ImageProxyParams'
 
 export class DocsApi {
-  constructor(private protonApi: Api) {
+  constructor(
+    private protonApi: Api,
+    private imageProxyParams: ImageProxyParams,
+  ) {
     window.addEventListener('beforeunload', this.handleWindowUnload)
   }
 
@@ -360,6 +365,38 @@ export class DocsApi {
       this.inflight++
       const response = await this.protonApi(unresolveThreadInDocument(volumeId, linkId, threadId))
       return Result.ok(response)
+    } catch (error) {
+      return Result.fail(getErrorString(error) || 'Unknown error')
+    } finally {
+      this.inflight--
+    }
+  }
+
+  async fetchExternalImageAsBase64(url: string): Promise<Result<string>> {
+    try {
+      this.inflight++
+      const forgedImageURL = forgeImageURL({
+        url,
+        origin: window.location.origin,
+        apiUrl: this.imageProxyParams.apiUrl,
+        uid: this.imageProxyParams.uid,
+      })
+      const response = await fetch(forgedImageURL)
+      const blob = await response.blob()
+      if (!blob.type.startsWith('image/')) {
+        return Result.fail('Not an image')
+      }
+      const reader = new FileReader()
+      const base64 = await new Promise<string>((resolve) => {
+        reader.onload = () => {
+          resolve(reader.result as string)
+        }
+        reader.readAsDataURL(blob)
+      })
+      if (typeof base64 !== 'string') {
+        return Result.fail('Failed to convert image to base64')
+      }
+      return Result.ok(base64)
     } catch (error) {
       return Result.fail(getErrorString(error) || 'Unknown error')
     } finally {

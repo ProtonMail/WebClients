@@ -195,7 +195,9 @@ export function App({ nonInteractiveMode = false }: Props) {
 
         async exportData(format): Promise<Uint8Array | Blob> {
           const editorState = generateEditorStatefromYDoc(newDocState.getDoc())
-          return exportDataFromEditorState(editorState, format)
+          return exportDataFromEditorState(editorState, format, {
+            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+          })
         },
 
         async printAsPDF(): Promise<void> {
