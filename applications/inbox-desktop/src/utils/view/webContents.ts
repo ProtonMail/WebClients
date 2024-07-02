@@ -5,6 +5,7 @@ import {
     isAccountSwitch,
     isAccoutLite,
     isCalendar,
+    isHome,
     isHostAllowed,
     isMail,
     isUpgradeURL,
@@ -16,6 +17,7 @@ import {
     getCurrentView,
     getMailView,
     getWebContentsViewName,
+    resetHiddenViews,
     showView,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
@@ -45,6 +47,10 @@ export function handleWebContents(contents: WebContents) {
 
         if (isAccountSwitch(url)) {
             resetBadge();
+        }
+
+        if (isHome(url)) {
+            resetHiddenViews({ toHomepage: true });
         }
 
         // This is used to redirect users to the external browser for internal upgrade modals

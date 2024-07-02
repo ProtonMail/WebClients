@@ -84,6 +84,10 @@ const isMailHome = (urlString: string) => {
     }
 };
 
+export const isHome = (urlString: string) => {
+    return isMailHome(urlString) || isCalendarHome(urlString);
+};
+
 export const isAccount = (urlString: string) => {
     try {
         const configURL = getConfig().url;
