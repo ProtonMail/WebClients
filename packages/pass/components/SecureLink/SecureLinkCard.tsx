@@ -38,11 +38,19 @@ export const SecureLinkCard: FC<Props> = ({
 
     const onCopy = () => createNotification({ text: c('Info').t`Copied to clipboard` });
     const onRemove = () => dispatch({ itemId, shareId, linkId });
-    const remaining = useMemo(() => timeRemaining(expirationDate), [expirationDate]);
+
+    const remaining = useMemo(
+        () =>
+            timeRemaining(expirationDate, {
+                format: (remainingTime) => c('Info').t`Expires in ${remainingTime}`,
+                expiredLabel: c('Label').t`Expired link`,
+            }),
+        [expirationDate]
+    );
 
     const views = useMemo(
         () => (readCount === maxReadCount ? c('Label').t`Max views reached` : getViewCountString(readCount)),
-        [maxReadCount, readCount, active]
+        [maxReadCount, readCount]
     );
 
     return (
@@ -69,7 +77,7 @@ export const SecureLinkCard: FC<Props> = ({
                     <div className="flex-1 px-4">
                         <b>{active ? c('Label').t`Shared link` : c('Label').t`Expired link`}</b>
                         <div className="color-weak text-sm">
-                            {remaining.isExpired ? remaining.label : c('Info').t`Expires in ${remaining.label}`}
+                            {remaining}
                             {' · '}
                             {views}
                         </div>
