@@ -179,7 +179,7 @@ const DocumentTitleDropdown = ({
         }}
       >
         <DropdownMenu className="text-sm">
-          {controller?.role.isAdmin() && (
+          {controller?.role.canEdit() && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
