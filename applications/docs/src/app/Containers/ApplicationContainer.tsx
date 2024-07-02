@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Application } from '@proton/docs-core'
-import { useApi, useUser } from '@proton/components/hooks'
+import { useApi, useAuthentication, useConfig } from '@proton/components/hooks'
 import { DocsLayout } from '../Components'
 import { Route, Switch, useLocation } from 'react-router-dom'
 import ApplicationProvider from './ApplicationProvider'
@@ -20,8 +20,10 @@ function ApplicationContainer() {
   import('../tailwind.scss')
 
   const api = useApi()
-  const [user] = useUser()
   const driveCompat = useDriveCompat()
+
+  const { API_URL } = useConfig()
+  const { UID } = useAuthentication()
 
   const { search } = useLocation()
   const searchParams = new URLSearchParams(search)
@@ -31,7 +33,14 @@ function ApplicationContainer() {
   const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
 
   const application = useMemo(() => {
-    return new Application(api, user, driveCompat)
+    return new Application(
+      api,
+      {
+        apiUrl: API_URL,
+        uid: UID,
+      },
+      driveCompat,
+    )
     // Ensure only one application instance is created
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

@@ -1,6 +1,7 @@
 import { $getRoot, $isElementNode, LexicalEditor } from 'lexical'
 import { AlignmentType, Document, ILevelsOptions, LevelFormat, SectionType, convertInchesToTwip } from 'docx'
 import { getTopLevelChildrenFromElementNode } from './getTopLevelChildrenFromElementNode'
+import { DocxExportContext } from './Context'
 
 export const DummyElementUsedToConvertTextNodeCSSTextToComputedStyles = document.createElement('span')
 
@@ -24,21 +25,31 @@ const NumberingLevelsConfig: ILevelsOptions[] = Array.from({ length: 5 }, (_, i)
   },
 }))
 
-export function generateDocxFromEditor(editor: LexicalEditor): Document {
+export async function generateDocxFromEditor(
+  editor: LexicalEditor,
+  callbacks: {
+    fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
+  },
+): Promise<Document> {
   const state = editor.getEditorState()
 
-  const children = state.read(() => {
-    const children = []
+  const context: DocxExportContext = {
+    state,
+    fetchExternalImageAsBase64: callbacks.fetchExternalImageAsBase64,
+  }
 
+  const topLevelChildren: ReturnType<typeof getTopLevelChildrenFromElementNode>[] = []
+
+  state.read(() => {
     const root = $getRoot()
     for (const child of root.getChildren()) {
       if ($isElementNode(child)) {
-        children.push(getTopLevelChildrenFromElementNode(child))
+        topLevelChildren.push(getTopLevelChildrenFromElementNode(child, context))
       }
     }
-
-    return children
   })
+
+  const children = await Promise.all(topLevelChildren)
 
   const document = new Document({
     sections: [

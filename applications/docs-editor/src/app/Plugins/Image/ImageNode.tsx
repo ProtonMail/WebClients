@@ -197,6 +197,14 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
     return this.__altText
   }
 
+  getWidth(): 'inherit' | number {
+    return this.__width
+  }
+
+  getHeight(): 'inherit' | number {
+    return this.__height
+  }
+
   decorate(): JSX.Element {
     return (
       <Suspense fallback={null}>
