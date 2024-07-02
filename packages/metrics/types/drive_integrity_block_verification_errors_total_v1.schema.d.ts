@@ -6,11 +6,13 @@
  */
 
 /**
- * Number of comments failed to be uploaded to server
+ * Drive verification issues
  */
-export interface HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson {
+export interface HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson {
   Labels: {
-    reason: "network_error" | "server_error" | "encryption_error" | "unknown";
+    shareType: "own" | "device" | "photo" | "shared";
+    retryHelped: "yes" | "no";
+    fileSize: "2**10" | "2**20" | "2**22" | "2**25" | "2**30" | "xxxxl";
   };
   Value: number;
 }
