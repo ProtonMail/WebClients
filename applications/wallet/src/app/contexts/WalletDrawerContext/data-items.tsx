@@ -60,7 +60,7 @@ export const RecipientsDataItem = ({
                                         <span className="block color-weak">{c('Wallet transaction').t`To`}</span>
 
                                         <Tooltip title={recipient}>
-                                            <span className="block text-ellipsis">{recipient}</span>
+                                            <span className="block text-left w-full text-ellipsis">{recipient}</span>
                                         </Tooltip>
                                     </div>
 
