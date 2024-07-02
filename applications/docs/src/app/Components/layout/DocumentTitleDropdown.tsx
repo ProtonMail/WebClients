@@ -173,8 +173,43 @@ const DocumentTitleDropdown = ({
           width: DropdownSizeUnit.Static,
         }}
         originalPlacement="bottom-start"
+        className="py-0"
+        contentProps={{
+          className: 'after:h-0',
+        }}
       >
         <DropdownMenu className="text-sm">
+          {controller?.role.isAdmin() && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => setIsRenaming((renaming) => !renaming)}
+              data-testid="dropdown-rename"
+            >
+              <Icon name="pencil" className="color-weak mr-2" />
+              {c('Action').t`Rename document`}
+            </DropdownMenuButton>
+          )}
+
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={onNewDocument}
+            data-testid="dropdown-new-document"
+          >
+            <Icon name="file" className="color-weak mr-2" />
+            {c('Action').t`New document`}
+          </DropdownMenuButton>
+
+          <DropdownMenuButton
+            disabled={isDuplicating}
+            className="flex items-center text-left"
+            onClick={onDuplicate}
+            data-testid="dropdown-duplicate"
+          >
+            <Icon name="squares" className="color-weak mr-2" />
+            {c('Action').t`Make a copy`}
+            {isDuplicating && <CircleLoader size="small" className="ml-auto" />}
+          </DropdownMenuButton>
+
           <DropdownMenuButton
             className="flex items-center text-left"
             onClick={() => {
@@ -188,39 +223,10 @@ const DocumentTitleDropdown = ({
             data-testid="dropdown-versioning"
           >
             <Icon name="clock-rotate-left" className="color-weak mr-2" />
-            {c('Action').t`History`}
+            {c('Action').t`See version history`}
           </DropdownMenuButton>
 
-          {controller?.role.isAdmin() && (
-            <DropdownMenuButton
-              className="flex items-center text-left"
-              onClick={() => setIsRenaming((renaming) => !renaming)}
-              data-testid="dropdown-rename"
-            >
-              <Icon name="pencil" className="color-weak mr-2" />
-              {c('Action').t`Rename`}
-            </DropdownMenuButton>
-          )}
-
-          <DropdownMenuButton
-            disabled={isDuplicating}
-            className="flex items-center text-left"
-            onClick={onDuplicate}
-            data-testid="dropdown-duplicate"
-          >
-            <Icon name="squares" className="color-weak mr-2" />
-            {c('Action').t`Duplicate`}
-            {isDuplicating && <CircleLoader size="small" className="ml-auto" />}
-          </DropdownMenuButton>
-
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            onClick={onNewDocument}
-            data-testid="dropdown-new-document"
-          >
-            <Icon name="folder-plus" className="color-weak mr-2" />
-            {c('Action').t`New document`}
-          </DropdownMenuButton>
+          <hr className="my-1 min-h-px" />
 
           {controller && (
             <DropdownMenuButton
