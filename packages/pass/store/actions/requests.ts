@@ -19,17 +19,18 @@ export const itemsBulkTrashRequest = () => `items::bulk::trash`;
 export const itemsBulkDeleteRequest = () => `items::bulk::delete`;
 export const itemsBulkRestoreRequest = () => `items::bulk::restore`;
 export const itemUpdateFlagsRequest = withItemKey(`item::flags::update`);
-export const itemCreateSecureLinkRequest = withItemKey(`item::secure-link::create`);
-export const itemViewSecureLinkRequest = withKey('item::secure-link::view');
-export const itemDeleteSecureLinkRequest = withItemKey('item::secure-link::delete');
-export const removeInactiveLinksRequest = () => 'item::secure-link::remove_inactive';
-export const itemGetSecureLinksRequest = () => 'item::secure-link::get';
 
-export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;
-export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;
-export const vaultDeleteRequest = (shareId: string) => `vault::delete::${shareId}`;
-export const vaultMoveAllItemsRequest = (shareId: string) => `vault::move::all::items::${shareId}`;
-export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transfer:owner::${userShareId}`;
+export const secureLinkCreateRequest = withItemKey(`secure-link::create`);
+export const secureLinkOpenRequest = withKey('secure-link::open');
+export const secureLinkRemoveRequest = withItemKey('secure-link::remove');
+export const secureLinksRemoveInactiveRequest = () => 'secure-links::remove::inactive';
+export const secureLinksGetRequest = () => 'secure-links::get';
+
+export const vaultCreateRequest = withKey(`vault::create`);
+export const vaultEditRequest = withKey(`vault::edit`);
+export const vaultDeleteRequest = withKey(`vault::delete`);
+export const vaultMoveAllItemsRequest = withKey(`vault::move::all::items`);
+export const vaultTransferOwnerRequest = withKey(`vault::transfer:owner`);
 export const trashEmptyRequest = () => `trash::empty`;
 export const trashRestoreRequest = () => `trash::restore`;
 
@@ -38,47 +39,46 @@ export const lockCreateRequest = () => `auth::lock::create`;
 export const passwordConfirmRequest = () => `auth::password::confirm`;
 export const extraPasswordToggleRequest = () => `auth::extra-password::toggle`;
 
-export const settingsEditRequest = (group: string) => `settings::edit::${group}`;
+export const settingsEditRequest = withKey(`settings::edit`);
 
-export const aliasOptionsRequest = (shareId: string) => `alias::options::${shareId}`;
-export const aliasDetailsRequest = (aliasEmail: string) => `alias::details::${aliasEmail}`;
+export const aliasOptionsRequest = withKey(`alias::options`);
+export const aliasDetailsRequest = withKey(`alias::details`);
 
-export const shareRemoveMemberRequest = (userShareId: string) => `share::members::remove::${userShareId}`;
-export const shareEditMemberRoleRequest = (userShareId: string) => `share::members::edit-role::${userShareId}`;
-export const shareLeaveRequest = (shareId: string) => `share::leave::${shareId}`;
-export const shareAccessOptionsRequest = (shareId: string) => `share::access-options::${shareId}`;
+export const shareRemoveMemberRequest = withKey(`share::members::remove`);
+export const shareEditMemberRoleRequest = withKey(`share::members::edit-role`);
+export const shareLeaveRequest = withKey(`share::leave`);
+export const shareAccessOptionsRequest = withKey(`share::access-options`);
 
-export const inviteCreateRequest = (requestId: string) => `invite::create::${requestId}`;
-export const inviteResendRequest = (inviteId: string) => `invite::resend::${inviteId}`;
-export const inviteAcceptRequest = (token: string) => `invite::accept::${token}`;
-export const inviteRejectRequest = (token: string) => `invite::reject::${token}`;
-export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${inviteId}`;
-export const inviteRecommendationsRequest = (requestId: string) => `invite::recommendations::${requestId}`;
-export const inviteAddressesValidateRequest = (requestId: string) => `invite::addresses::validate::${requestId}`;
+export const inviteCreateRequest = withKey(`invite::create`);
+export const inviteResendRequest = withKey(`invite::resend`);
+export const inviteAcceptRequest = withKey(`invite::accept`);
+export const inviteRejectRequest = withKey(`invite::reject`);
+export const inviteRemoveRequest = withKey(`invite::remove`);
+export const inviteRecommendationsRequest = withKey(`invite::recommendations`);
+export const inviteAddressesValidateRequest = withKey(`invite::addresses::validate`);
 
-export const newUserInvitePromoteRequest = (newUserInviteId: string) => `new-user-invite::promote::${newUserInviteId}`;
-export const newUserInviteRemoveRequest = (newUserInviteId: string) => `new-user-invite::remove::${newUserInviteId}`;
+export const newUserInvitePromoteRequest = withKey(`new-user-invite::promote`);
+export const newUserInviteRemoveRequest = withKey(`new-user-invite::remove`);
 
-export const userAccessRequest = (userId: string) => `user::access::${userId}`;
-export const userFeaturesRequest = (userId: string) => `user::features::${userId}`;
-export const userSettingsRequest = (userId: string) => `user::settings::${userId}`;
+export const userAccessRequest = withKey(`user::access`);
+export const userFeaturesRequest = withKey(`user::features`);
+export const userSettingsRequest = withKey(`user::settings`);
 
-export const reportBugRequest = (id: string) => `report::bug::${id}`;
+export const reportBugRequest = withKey(`report::bug`);
 
 export const organizationSettingsRequest = () => `organization::settings::get`;
-
 export const sentinelToggleRequest = () => `monitor::sentinel::toggle`;
 
 export const breachesRequest = () => `monitor::breaches`;
-export const protonBreachRequest = (addressId: string) => `monitor::breaches::proton::${addressId}`;
-export const customBreachRequest = (addressId: string) => `monitor::breaches::custom::${addressId}`;
+export const protonBreachRequest = withKey(`monitor::breaches::proton`);
+export const customBreachRequest = withKey(`monitor::breaches::custom`);
 export const aliasBreachRequest = withItemKey(`monitor::breaches::alias`);
 
-export const addCustomAddressRequest = (email: string) => `monitor::add::custom::${email}`;
-export const verifyCustomAddressRequest = (addressId: string) => `monitor::verify::custom::${addressId}`;
-export const deleteCustomAddressRequest = (email: string) => `monitor::delete::custom::${email}`;
-export const resendCustomAddressCodeRequest = (addressId: string) => `monitor::verify::custom::resend::${addressId}`;
+export const addCustomAddressRequest = withKey(`monitor::add::custom`);
+export const verifyCustomAddressRequest = withKey(`monitor::verify::custom`);
+export const deleteCustomAddressRequest = withKey(`monitor::delete::custom`);
+export const resendCustomAddressCodeRequest = withKey(`monitor::verify::custom::resend`);
 
 export const toggleMonitorRequest = () => `monitor::global::toggle`;
-export const toggleAddressMonitorRequest = (addressId: string) => `monitor::toggle::address::${addressId}`;
-export const resolveAddressMonitorRequest = (addressId: string) => `monitor::resolve::address::${addressId}`;
+export const toggleAddressMonitorRequest = withKey(`monitor::toggle::address`);
+export const resolveAddressMonitorRequest = withKey(`monitor::resolve::address`);

@@ -14,8 +14,8 @@ import {
     getUserAccessIntent,
     getUserFeaturesIntent,
     getUserSettings,
-    itemGetSecureLinks,
     passwordHistoryGarbageCollect,
+    secureLinksGet,
     startEventPolling,
     stateDestroy,
     stopEventPolling,
@@ -66,7 +66,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         if (online) {
             yield put(startEventPolling());
             yield put(withRevalidate(getBreaches.intent()));
-            yield put(withRevalidate(itemGetSecureLinks.intent()));
+            yield put(withRevalidate(secureLinksGet.intent()));
 
             if (fromCache) {
                 yield put(withRevalidate(getUserFeaturesIntent(userID)));
