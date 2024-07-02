@@ -13,9 +13,9 @@ import type { SecureLink } from '@proton/pass/types';
 import { timeRemaining } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
-type SecureLinkCard = { title: string; subtitle: string; icon: IconName };
+type SecureLinkCard = { title: string; subtitle: string; icon: IconName; className?: string };
 
-export const SecureLinkDetails: FC<SecureLink> = ({ secureLink, maxReadCount, expirationDate }) => {
+export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCount, maxReadCount, expirationDate }) => {
     const { writeToClipboard } = usePassCore();
     const { createNotification } = useNotifications();
     const [linkCopied, setLinkCopied] = useState(false);
@@ -32,7 +32,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ secureLink, maxReadCount, ex
         const cards: SecureLinkCard[] = [
             {
                 title: c('Info').t`Expires in`,
-                subtitle: timeRemaining(expirationDate).label,
+                subtitle: timeRemaining(expirationDate),
                 icon: 'clock',
             },
         ];
@@ -46,22 +46,23 @@ export const SecureLinkDetails: FC<SecureLink> = ({ secureLink, maxReadCount, ex
         }
 
         return cards;
-    }, [maxReadCount, expirationDate]);
+    }, [readCount, maxReadCount, expirationDate]);
 
     return (
         <>
             <ModalTwoContent>
                 <section className="flex flex-nowrap align-center gap-3 mb-5">
                     {optionCards.map(({ title, subtitle, icon }) => (
-                        <Card type="primary" className="flex-1" key={title}>
+                        <Card type="primary" className="flex justify-center flex-1" key={title}>
                             <CardContent
                                 className="text-rg"
                                 title={title}
-                                titleClassname="color-weak"
+                                titleClassname="color-weak text-sm"
                                 subtitle={subtitle}
-                                subtitleClassname="text-bold mt-1"
+                                subtitleClassname={clsx('text-bold mt-1', !active && 'color-weak')}
                                 icon={icon}
                                 iconProps={{ size: 6, className: 'color-primary' }}
+                                ellipsis
                             />
                         </Card>
                     ))}
