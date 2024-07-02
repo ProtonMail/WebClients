@@ -247,12 +247,19 @@ export async function reloadHiddenViews() {
     await Promise.all(loadPromises);
 }
 
-export async function resetHiddenViews() {
+export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
+    const config = getConfig();
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
-            viewLogger(viewID as ViewID).info("reset");
-            loadPromises.push(loadURL(viewID as ViewID, "about:blank"));
+            if (toHomepage) {
+                const homepageURL = await updateLocalID(config.url[viewID as ViewID]);
+                viewLogger(viewID as ViewID).info("reset to home page", homepageURL);
+                loadPromises.push(loadURL(viewID as ViewID, homepageURL));
+            } else {
+                viewLogger(viewID as ViewID).info("reset to blank");
+                loadPromises.push(loadURL(viewID as ViewID, "about:blank"));
+            }
         }
     }
     await Promise.all(loadPromises);
