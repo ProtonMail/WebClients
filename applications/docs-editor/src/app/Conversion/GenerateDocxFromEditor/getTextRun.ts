@@ -4,6 +4,7 @@ import tinycolor from 'tinycolor2'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import { $isLinkNode } from '@lexical/link'
 import { DummyElementUsedToConvertTextNodeCSSTextToComputedStyles } from './GenerateDocxFromEditor'
+import { DEFAULT_FONT_FACE } from '@proton/components/components/editor/constants'
 
 function pixelsToPoints(pixels: number) {
   return pixels * 0.75
@@ -16,6 +17,9 @@ export function getTextRun(node: TextNode, parentNode: ElementNode, state: Edito
 
     const color = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.color
     const backgroundColor = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.backgroundColor
+
+    const fontFamilyFromStyle = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.fontFamily
+    const fontFamily = fontFamilyFromStyle ? fontFamilyFromStyle : DEFAULT_FONT_FACE
 
     const fontSizeFromStyle = DummyElementUsedToConvertTextNodeCSSTextToComputedStyles.style.fontSize
     const fontSizeInPx = fontSizeFromStyle ? parseFloat(fontSizeFromStyle) : rootFontSize()
@@ -43,6 +47,7 @@ export function getTextRun(node: TextNode, parentNode: ElementNode, state: Edito
       shading: backgroundColor ? { type: 'clear', fill: tinycolor(backgroundColor).toHex() } : undefined,
       size: `${fontSizeInPt}pt`,
       style: $isLinkNode(parentNode) ? 'Hyperlink' : undefined,
+      font: fontFamily,
     })
   })
 }

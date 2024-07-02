@@ -4,6 +4,7 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { LinkNode } from '@lexical/link'
 import { $getRoot, ParagraphNode, TextNode } from 'lexical'
 import { AllNodes } from '../../AllNodes'
+import { DEFAULT_FONT_FACE, FONT_FACES } from '@proton/components/components/editor/constants'
 
 jest.mock('docx', () => ({
   ...jest.requireActual('docx'),
@@ -109,6 +110,43 @@ describe('getTextRun', () => {
     const textNode = state.read(() => paragraphNode.getFirstChildOrThrow<TextNode>())
     const result = getTextRun(textNode, paragraphNode, state)
     expect(result.size).toBe('15pt')
+  })
+
+  it('should have font family if explicitly set', () => {
+    editor.update(
+      () => {
+        $getRoot().clear()
+        const paragraphNode = new ParagraphNode()
+        const textNode = new TextNode('text content')
+        textNode.setStyle(`font-family: ${FONT_FACES.MONOSPACE.value};`)
+        paragraphNode.append(textNode)
+        $getRoot().append(paragraphNode)
+      },
+      { discrete: true },
+    )
+    const state = editor.getEditorState()
+    const paragraphNode = state.read(() => $getRoot().getFirstChildOrThrow<ParagraphNode>())
+    const textNode = state.read(() => paragraphNode.getFirstChildOrThrow<TextNode>())
+    const result = getTextRun(textNode, paragraphNode, state)
+    expect(result.font).toBe(FONT_FACES.MONOSPACE.value)
+  })
+
+  it('should have default font family if not explicitly set', () => {
+    editor.update(
+      () => {
+        $getRoot().clear()
+        const paragraphNode = new ParagraphNode()
+        const textNode = new TextNode('text content')
+        paragraphNode.append(textNode)
+        $getRoot().append(paragraphNode)
+      },
+      { discrete: true },
+    )
+    const state = editor.getEditorState()
+    const paragraphNode = state.read(() => $getRoot().getFirstChildOrThrow<ParagraphNode>())
+    const textNode = state.read(() => paragraphNode.getFirstChildOrThrow<TextNode>())
+    const result = getTextRun(textNode, paragraphNode, state)
+    expect(result.font).toBe(DEFAULT_FONT_FACE)
   })
 
   it('should have link style if parent node is link', () => {
