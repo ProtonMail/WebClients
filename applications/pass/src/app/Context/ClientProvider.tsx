@@ -72,7 +72,7 @@ export const ClientProvider: FC<PropsWithChildren> = ({ children }) => {
                 };
             }, [state])}
         >
-            <ConnectivityProvider subscribe={api.subscribe} onPing={() => api(ping())}>
+            <ConnectivityProvider subscribe={api.subscribe} onPing={() => api({ ...ping(), unauth: true })}>
                 {children}
             </ConnectivityProvider>
         </ClientContext.Provider>
