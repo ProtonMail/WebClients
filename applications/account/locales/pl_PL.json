@@ -763,10 +763,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -1558,14 +1558,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1587,6 +1579,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6849,11 +6849,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -9475,6 +9475,9 @@
       "Awarded": [
         "Przyznano"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Adres rozliczeniowy"
       ],
@@ -10167,6 +10170,12 @@
       ],
       "Subscription options": [
         "Opcje subskrypcji"
+      ],
+      "Swipe left action": [
+        "Przesuń w lewo"
+      ],
+      "Swipe right action": [
+        "Przesuń w prawo"
       ],
       "Synchronize with system": [
         "Domyślny systemu"
@@ -11156,23 +11165,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11200,6 +11192,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -15735,10 +15744,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -16082,6 +16091,15 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
+      ],
+      "For Linux": [
+        "Dla systemu Linux"
+      ],
+      "For macOS": [
+        "Dla systemu macOS"
+      ],
+      "For Windows": [
+        "Dla systemu Windows"
       ],
       "Forgot recovery method": [
         "Przypomnij metodę odzyskiwania"

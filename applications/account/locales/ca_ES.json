@@ -763,11 +763,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1550,14 +1550,6 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1579,6 +1571,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5774,6 +5774,9 @@
       ]
     },
     "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Afegiu aquest registre al domini, al panell de control del registrador de noms de domini"
+      ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
         "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
@@ -6127,6 +6130,9 @@
       ],
       "${ boldName } will be set as default calendar.": [
         "${ boldName } s'establirà com a calendari per defecte."
+      ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } i haureu de crear-los manualment per tornar-los a afegir a l'organització"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
@@ -6623,6 +6629,9 @@
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això habilitarà SAML per a tota l'organització."
+      ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
       ],
@@ -6721,11 +6730,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -6919,7 +6928,7 @@
         "No s'han pogut trobar els registres."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Ràpid i concentrat. Correu electrònic i calendari directament al teu escriptori."
+        "Ràpid i concentrat. Correu electrònic i calendari directament a l'escriptori."
       ],
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
@@ -7904,6 +7913,9 @@
       ],
       "The calendar will be removed from your account.": [
         "El calendari s'esborrarà del vostre compte."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Se suprimiran les credencials del vostre proveïdor d'identitat."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "El web fosc és una part amagada d'Internet on es pot comprar i vendre informació personal robada, com ara les identitats."
@@ -10984,23 +10996,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11028,6 +11023,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -15424,10 +15436,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -16518,6 +16530,9 @@
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupeu correus electrònics a la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
       ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu el resum del certificat del proveïdor d'identitat."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
@@ -16601,6 +16616,9 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Els usuaris veuran el vostre logo en comptes de la icona de ${ BRAND_NAME } quan iniciïn sessió a les nostres aplicacions web."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Normalment un URL que conté el nom del proveïdor d'identitat dins"
       ],
       "Verified email address": [
         "Adreça de correu electrònic verificada"
