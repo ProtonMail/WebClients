@@ -17,7 +17,7 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
  * order to be able to verify the user password locally without an
  * SRP flow. Booting offline should rely on this lock adapter */
 export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
-    const { authStore, getPersistedSession, onSessionPersist } = auth.config;
+    const { authStore, api, getPersistedSession, onSessionPersist } = auth.config;
 
     /** Persist the `unlockRetryCount` without re-encrypting
      * the authentication session blob */
@@ -112,6 +112,11 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
          * happens before we boot the application state (hydrate.saga) */
         unlock: async (secret) => {
             const retryCount = authStore.getUnlockRetryCount() + 1;
+
+            /** API may have been flagged as sessionLocked before
+             * booting offline - as such reset the api state to
+             * avoid failing subsequent requests. */
+            await api.reset();
 
             try {
                 await loadCryptoWorker().catch(() => {
