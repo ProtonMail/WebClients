@@ -4581,6 +4581,9 @@
       "Photos have been successfully recovered.": [
         "ფოტოების აღდგენა წარმატებით დასრულდა."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "სთხოვეთ მფლობელს, პირდაპირ მოგიწვიოთ დოკუმენტზე."
+      ],
       "Please authenticate your card in the verification tab.": [
         "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
       ],
@@ -4601,6 +4604,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
+      ],
+      "Please open the document to view it.": [
+        "გახსენით დოკუმენტი, რომ ნახოთ ის."
       ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
@@ -4651,6 +4657,9 @@
       "Preview for this file type is not supported": [
         "ფაილის ამ ტიპისთვის მინიატურის შექმნა მხარდაჭერილი არაა"
       ],
+      "Preview of documents is not yet supported.": [
+        "დოკუმენტების მინიატურა ჯერ მხარდაჭერილი არაა."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "წინა ვერსიები ინახება ${ retentionLabel }"
       ],
@@ -4665,6 +4674,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "პირადი ძებნა ჩართულია. ახლა შეგიძლიათ, დახუროთ ეს ფანჯარა და მოძებნოთ ფაილები და საქაღალდეები."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
       "Queued": [
         "რიგშია"
@@ -6858,6 +6870,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "${ BRAND_NAME }-ის ყველა აპი და მათი ფასიანი ფუნქციები"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
       ],
@@ -7593,6 +7608,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "Payment Processing": [
+        "გადახდის დამუშავება"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
@@ -8546,6 +8564,9 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } წვდომით ჩქაროსნულ სერვერებთან ${ vpnCountries } ქვეყანაში"
+      ],
       "${ VPN_APP_NAME } with malware and ad-blocking": [
         "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
       ],
@@ -8581,6 +8602,9 @@
       ],
       "Back up photos from your devices": [
         "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "ააგეთ ნდობა და ბრენდის ცნობადობა პროფესიონალური ელფოსტის მისამართებით თქვენი საკუთარი დომენით."
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -9689,6 +9713,9 @@
       ],
       "Load image": [
         "გამოსახულების ჩატვირთვა"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "შეტყოვინების და ფაილის სახელი ნულოვანი წვდომის დაშიფვრით ინახება, როცა მას ამ ელფოსტაში ჩასვამთ"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "აირჩიეთ PGP-ის სქემა, რომელიც გამოყენებული იქნება ხელმოწერისა და შიფრაციისთვის. გაითვალისწინეთ, რომ PGP/Inline-ით ფორმატირებულ ელფოსტებს ვერ გააგზავნით"

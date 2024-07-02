@@ -4127,6 +4127,9 @@
       "Username must end with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
+      "Wrong second password": [
+        "არასწორი მეორე პაროლი"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
         "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
@@ -6368,6 +6371,9 @@
       "Please add at least one recipient.": [
         "დაამატეთ ერთი მიმღები მაინც."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "სთხოვეთ მფლობელს, პირდაპირ მოგიწვიოთ დოკუმენტზე."
+      ],
       "Please authenticate your card in the verification tab.": [
         "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
       ],
@@ -6388,6 +6394,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
+      ],
+      "Please open the document to view it.": [
+        "გახსენით დოკუმენტი, რომ ნახოთ ის."
       ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
@@ -6441,6 +6450,9 @@
       "Preview for this file type is not supported": [
         "ფაილის ამ ტიპისთვის მინიატურის შექმნა მხარდაჭერილი არაა"
       ],
+      "Preview of documents is not yet supported.": [
+        "დოკუმენტების მინიატურა ჯერ მხარდაჭერილი არაა."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
       ],
@@ -6458,6 +6470,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "დაიცავით თქვენი ელფოსტა გაჟონვისგან და სპამერებისგან ${ maskMyEmailButton }-ით."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
       "Recipient: ": [
         "მიმღები: "
@@ -6710,6 +6725,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "ეს მოსაწვევი შენახულია გამორთულ კალენდარში."
+      ],
+      "This is intended as a writing aid. Check suggested text for accuracy. ${ learnMoreResult }": [
+        "ეს განკუთვნილია წერაში დახმარებისთვის. შეამოწმეთ შემოთავაზებული ტექსტი სისწორეზე. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
@@ -9155,6 +9173,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "${ BRAND_NAME }-ის ყველა აპი და მათი ფასიანი ფუნქციები"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
       ],
@@ -9744,6 +9765,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "Payment Processing": [
+        "გადახდის დამუშავება"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
@@ -10987,6 +11011,9 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } წვდომით ჩქაროსნულ სერვერებთან ${ vpnCountries } ქვეყანაში"
+      ],
       "${ VPN_APP_NAME } with malware and ad-blocking": [
         "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
       ],
@@ -11022,6 +11049,9 @@
       ],
       "Back up photos from your devices": [
         "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "ააგეთ ნდობა და ბრენდის ცნობადობა პროფესიონალური ელფოსტის მისამართებით თქვენი საკუთარი დომენით."
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"

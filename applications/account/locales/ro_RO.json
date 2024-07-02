@@ -190,6 +190,9 @@
       "Change password": [
         "Schimbare parolă"
       ],
+      "Change second password": [
+        "Modificare parolă secundară"
+      ],
       "Chat with us": [
         "Conversați cu noi"
       ],
@@ -760,11 +763,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reload": [
         "Reîncărcare"
@@ -1551,14 +1554,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1580,6 +1575,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4129,6 +4132,9 @@
       "Incorrect password": [
         "Parolă incorectă"
       ],
+      "Incorrect second password. Please try again.": [
+        "Parolă secundară incorectă. Încercați din nou."
+      ],
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
@@ -4326,6 +4332,9 @@
       ],
       "Require at least one condition": [
         "Necesită cel puțin o condiție"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Sesiune expirată. Împrospătați pagina."
       ],
       "Signature not verified": [
         "Semnătură neverificată"
@@ -6212,6 +6221,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
+      ],
       "${ n } address": [
         "${ n } adresă",
         "${ n } adrese",
@@ -6782,11 +6794,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7612,6 +7624,9 @@
         "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile",
         "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Solicitați proprietarului să vă invite direct la document."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentificați cardul în fila de verificare."
       ],
@@ -7641,6 +7656,9 @@
       ],
       "please open a support ticket": [
         "deschideți un tichet de asistență"
+      ],
+      "Please open the document to view it.": [
+        "Deschideți documentul pentru a-l vedea."
       ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
@@ -7681,6 +7699,9 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Preview of documents is not yet supported.": [
+        "Examinarea documentelor nu este încă implementată."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
@@ -7698,6 +7719,9 @@
       ],
       "Public link invite": [
         "Legătură publică invitație"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Partajarea publică a documentelor nu este încă implementată."
       ],
       "purchase additional storage": [
         "cumpărați spațiu suplimentar"
@@ -8052,6 +8076,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Această legătură web de invitație a expirat. Contactați administratorul pentru a solicita accesul."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Această legătură web de invitare a fost deja folosită. În schimb, conectați-vă direct."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Aceasta este o frază de 12 cuvinte care vi s-a solicitat să o setați."
       ],
@@ -8222,6 +8249,12 @@
       ],
       "Two-factor authentication enabled": [
         "Autentificare cu doi factori activată"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta datele. (Avansat)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Modul cu două parole folosește parole separate pentru conectare și pentru decriptarea datelor. Aceasta furnizează un beneficiu minor de securitate în unele situații. Totuși recomandăm parola unică la majoritatea utilizatorilor. Pentru a comuta la modul cu două parole, mai întâi creați o parolă de conectare și apoi una secundară."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nu se poate verifica semnătura fișierului de recuperare. Contactați serviciul de asistență."
@@ -8674,6 +8707,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Trebuie să răspundeți la invitații pentru ca gazda să vă vadă răspunsul."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Veți putea promova utilizatorul ca administrator după ce a acceptat invitația."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
@@ -8898,6 +8934,9 @@
       ],
       "Paid": [
         "Plătită"
+      ],
+      "Processing": [
+        "Se procesează"
       ],
       "Unpaid": [
         "Neplătită"
@@ -9388,6 +9427,9 @@
       "Awarded": [
         "Acreditat"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Adresă de facturare"
       ],
@@ -9492,6 +9534,9 @@
       ],
       "Confirm password": [
         "Confirmare parolă"
+      ],
+      "Confirm second password": [
+        "Confirmare parolă secundară"
       ],
       "Contacts": [
         "Contacte"
@@ -9850,6 +9895,9 @@
       "New password": [
         "Parola nouă"
       ],
+      "New second password": [
+        "Parola secundară nouă"
+      ],
       "No filter": [
         "Fără filtru"
       ],
@@ -9991,6 +10039,9 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Second password": [
+        "Parola secundară"
+      ],
       "Security code (${ codeName })": [
         "Cod de securitate (${ codeName })"
       ],
@@ -10071,6 +10122,12 @@
       ],
       "Subscription options": [
         "Opțiuni abonament"
+      ],
+      "Swipe left action": [
+        "Acțiune glisare la stânga"
+      ],
+      "Swipe right action": [
+        "Acțiune glisare la dreapta"
       ],
       "Synchronize with system": [
         "Sincronizare cu sistemul"
@@ -11052,23 +11109,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11096,6 +11136,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -12304,6 +12361,9 @@
       "Android": [
         "Android"
       ],
+      "Archive": [
+        "Arhivă"
+      ],
       "Ask each time": [
         "Întrebare de fiecare dată"
       ],
@@ -12351,6 +12411,9 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "Mark as read": [
+        "Marcare ca citit"
       ],
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
@@ -12409,14 +12472,23 @@
       "Setup incomplete": [
         "Setare incompletă"
       ],
+      "Spam": [
+        "Nedorite"
+      ],
       "Standard server configs": [
         "Configurări standard de server"
+      ],
+      "Star": [
+        "Cu stea"
       ],
       "TCP": [
         "TCP"
       ],
       "The whole organization": [
         "Întreaga organizație"
+      ],
+      "Trash": [
+        "Gunoi"
       ],
       "UDP": [
         "UDP"
@@ -13039,8 +13111,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Am înțeles"
+      ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "Payment Processing": [
+        "Se procesează plata"
       ],
       "Processing payment": [
         "Se procesează plata"
@@ -13056,6 +13134,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
       ]
     },
     "Payments.Error": {
@@ -15563,10 +15644,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -15583,6 +15664,9 @@
       ],
       "Change role": [
         "Schimbare rol"
+      ],
+      "Change second password": [
+        "Modificare parolă secundară"
       ],
       "Choose an account": [
         "Alegeţi un cont"
@@ -15905,6 +15989,15 @@
       "Folders and labels": [
         "Foldere și etichete"
       ],
+      "For Linux": [
+        "Pentru Linux"
+      ],
+      "For macOS": [
+        "Pentru macOS"
+      ],
+      "For Windows": [
+        "Pentru Windows"
+      ],
       "Forgot recovery method": [
         "Ați uitat metoda de recuperare"
       ],
@@ -16023,6 +16116,9 @@
       ],
       "Link confirmation": [
         "Legătură de confirmare"
+      ],
+      "Main password": [
+        "Parola principală"
       ],
       "Messages": [
         "Mesaje"
@@ -16370,6 +16466,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Unlock your data": [
+        "Deblocași-vă datele"
       ],
       "Upgrade plan": [
         "Modificare plan"

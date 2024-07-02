@@ -644,11 +644,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reload": [
         "Újratöltés"
@@ -8800,20 +8800,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -8841,6 +8827,20 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11616,10 +11616,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [

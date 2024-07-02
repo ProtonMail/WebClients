@@ -199,6 +199,9 @@
       "Clear filter": [
         "Limpar o filtro"
       ],
+      "Clear filters": [
+        "Limpar os filtros"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -733,11 +736,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1110,6 +1113,9 @@
       ],
       "Verify account": [
         "Verificar conta"
+      ],
+      "Verify domain": [
+        "Verificar o domínio"
       ],
       "View": [
         "Ver"
@@ -6310,11 +6316,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -6676,6 +6682,12 @@
       ],
       "Item Created": [
         "O item foi criado."
+      ],
+      "Item Deleted": [
+        "O item foi eliminado."
+      ],
+      "Item Updated": [
+        "O item foi atualizado."
       ],
       "it’s imperative": [
         "é obrigatório"
@@ -7175,6 +7187,15 @@
       "Settings updated": [
         "As definições foram atualizadas."
       ],
+      "Share Created": [
+        "A partilha foi criada."
+      ],
+      "Share Deleted": [
+        "A partilha foi eliminada."
+      ],
+      "Share Updated": [
+        "A partilha foi atualizada."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma fotografia não estiver disponível."
       ],
@@ -7568,6 +7589,15 @@
       ],
       "Users": [
         "Utilizadores"
+      ],
+      "Vault created": [
+        "O cofre foi criado."
+      ],
+      "Vault deleted": [
+        "O cofre foi eliminado."
+      ],
+      "Vault updated": [
+        "O cofre foi atualizado."
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -8499,6 +8529,9 @@
       "Auto show remote images": [
         "Mostrar imagens remotas automaticamente"
       ],
+      "Auto-advance": [
+        "Avanço automático"
+      ],
       "Auto-delete unwanted messages": [
         "Eliminar as mensagens indesejadas automaticamente"
       ],
@@ -8909,6 +8942,9 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
+      ],
+      "Mail settings": [
+        "Configurações do Mail"
       ],
       "Main": [
         "Principal"
@@ -10070,23 +10106,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10114,6 +10133,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -13724,11 +13760,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -15024,6 +15060,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
+      ],
+      "User created": [
+        "O utilizador foi criado."
       ],
       "VPN connections": [
         "Ligações VPN"
