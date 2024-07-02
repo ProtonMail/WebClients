@@ -3,7 +3,7 @@ import CalendarSelect from '@proton/components/components/calendarSelect/Calenda
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { useLoading } from '@proton/hooks';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarMember, EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { getIsAvailableCalendar } from '../../../helpers/event';
 import { getInitialMemberModel, getOrganizerAndSelfAddressModel } from '../eventForm/state';
@@ -81,7 +81,7 @@ const CreateEventCalendarSelect = ({
         } = await getCalendarBootstrap(newId);
         const addresses = await getAddresses();
 
-        const [Member = {}] = Members;
+        const [Member = { ID: '', Email: '' } as CalendarMember] = Members;
         const memberEmail = Member.Email;
         const address = addresses.find(({ Email }) => Email === memberEmail);
         if (!memberEmail || !address) {

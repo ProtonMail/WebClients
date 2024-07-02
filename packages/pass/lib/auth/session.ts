@@ -166,7 +166,7 @@ export const resumeSession = async (
             session: mergeSessionTokens({ ...session, ...decryptedBlob }, authStore),
         };
     } catch (error: unknown) {
-        if (onSessionInvalid) return await onSessionInvalid(error, { localID, invalidSession: persistedSession });
+        if (onSessionInvalid) return onSessionInvalid(error, { localID, invalidSession: persistedSession });
         else throw error;
     }
 };
