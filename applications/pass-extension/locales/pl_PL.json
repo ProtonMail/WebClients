@@ -110,10 +110,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -373,6 +373,9 @@
       ],
       "Retry": [
         "Spróbuj ponownie"
+      ],
+      "Right click and download this CSV": [
+        "Kliknij prawym przyciskiem myszy i pobierz ten plik CSV"
       ],
       "Save": [
         "Zapisz"
@@ -713,6 +716,9 @@
       ],
       "File could not be parsed": [
         "Plik nie mógł zostać przetworzony"
+      ],
+      "File could not be read": [
+        "Nie można odczytać pliku"
       ],
       "File does not match expected format": [
         "Format pliku jest nieprawidłowy"
@@ -1055,6 +1061,9 @@
       "Autosaved on ${ payload.domain }": [
         "Zapisano na ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Przed eksportem danych w tym formacie należy otworzyć ustawienia Safari -> zakładka „Ogólne” -> wyłączyć opcję „Otwieraj bezpieczne pliki po pobraniu”. Zapobiegnie to nieprawidłowemu wyodrębnieniu wyeksportowanego pliku przez przeglądarkę Safari."
+      ],
       "Built in 2FA authenticator": [
         "Wbudowana aplikacja uwierzytelniająca"
       ],
@@ -1126,6 +1135,9 @@
       ],
       "Drop to import": [
         "Upuść, aby zaimportować"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Ze względu na ograniczenia rozszerzeń przeglądarki Safari, po wyeksportowaniu danych w pliku będzie brakować rozszerzenia „.pgp”. Po wyeksportowaniu zmień nazwę pliku, tak aby zawierał rozszerzenie .pgp (np. plik.pgp)."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Łatwe importowanie haseł do ${ PASS_APP_NAME }."
