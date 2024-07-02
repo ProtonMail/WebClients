@@ -15,5 +15,5 @@ export const TextColors = [
 ]
 
 export const BackgroundColors = ([null] as (string | null)[]).concat(
-  TextColors.map((color) => tinycolor(color).setAlpha(0.15).toRgbString()),
+  TextColors.slice(1).map((color) => tinycolor(color).setAlpha(0.15).toRgbString()),
 )
