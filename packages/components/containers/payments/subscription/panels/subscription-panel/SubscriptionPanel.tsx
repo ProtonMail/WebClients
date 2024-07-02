@@ -1,12 +1,8 @@
-import { ReactNode } from 'react';
-
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
 import {
     APPS,
     APP_NAMES,
-    BRAND_NAME,
     CYCLE,
     DRIVE_SHORT_APP_NAME,
     FREE_VPN_CONNECTIONS,
@@ -16,13 +12,10 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
-    getHasPassB2BPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
-    getIsCustomCycle,
     getIsPassB2BPlan,
     getPrimaryPlan,
-    hasMaximumCycle,
     hasPassPlus,
     hasVPN,
     hasVPNPassBundle,
@@ -44,8 +37,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../../components';
-import { PlanCardFeatureDefinition } from '../../features/interface';
+import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../../../components';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -58,149 +50,15 @@ import {
     getLoginsAndNotes,
     getVaultSharing,
     getVaults,
-} from '../../features/pass';
-import { getVPNConnectionsFeature } from '../../features/vpn';
-import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
-import SubscriptionPanelManageUserButton from '../SubscriptionPanelManageUserButton';
-import { SUBSCRIPTION_STEPS } from '../constants';
-import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
-import Panel from './Panel';
-
-interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
-    status?: PlanCardFeatureDefinition['status'];
-    included?: PlanCardFeatureDefinition['included'];
-    actionElement?: ReactNode;
-    dataTestId?: string;
-}
-
-interface SubscriptionListProps {
-    items: Item[];
-}
-
-const SubscriptionItems = ({ items }: SubscriptionListProps) => {
-    return (
-        <>
-            {items.map(
-                ({
-                    icon = 'checkmark',
-                    text,
-                    included = true,
-                    status = 'available',
-                    tooltip,
-                    actionElement,
-                    dataTestId,
-                }) => {
-                    if (!included) {
-                        return null;
-                    }
-
-                    const key = typeof text === 'string' ? text : `${tooltip}-${icon}-${included}-${status}`;
-
-                    return (
-                        <StripedItem
-                            key={key}
-                            className={clsx(status === 'coming-soon' && 'color-weak')}
-                            left={<Icon className={clsx(included && 'color-success')} size={5} name={icon} />}
-                        >
-                            <div className="flex justify-space-between items-baseline" data-testid={dataTestId}>
-                                <span>{text}</span>
-                                {actionElement}
-                            </div>
-                        </StripedItem>
-                    );
-                }
-            )}
-        </>
-    );
-};
-
-const ActionButtons = ({
-    user,
-    subscription,
-    openSubscriptionModal,
-}: {
-    user: UserModel;
-    subscription?: SubscriptionModel;
-    openSubscriptionModal: OpenSubscriptionModalCallback;
-}) => {
-    /**
-     * Since all the components here are used in the same context, we can use the same metrics source for all of them.
-     */
-    const metrics = {
-        source: 'plans',
-    } as const;
-
-    const handleCustomizeSubscription = () => {
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disablePlanSelection: true,
-            metrics,
-        });
-    };
-    const handleExplorePlans = () => {
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-            metrics,
-        });
-    };
-    const handleEditPayment = () =>
-        openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disablePlanSelection: true,
-            metrics,
-        });
-
-    const hasPassB2B = getHasPassB2BPlan(subscription);
-
-    const showEditBillingDetails =
-        user.isPaid &&
-        user.canPay &&
-        !hasMaximumCycle(subscription) &&
-        !hasPassB2B &&
-        !getIsCustomCycle(subscription) &&
-        !hasVPNPassBundle(subscription);
-    const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
-    const showExploreOtherPlans = user.canPay;
-
-    return (
-        <>
-            {
-                // translator: Edit billing cycle is a button when you want to edit the billing details of your current plan, in the dashboard.
-                showEditBillingDetails ? (
-                    <Button
-                        onClick={handleEditPayment}
-                        className="mb-2"
-                        size="large"
-                        color="weak"
-                        fullWidth
-                        data-testid="edit-billing-details"
-                    >{c('Action').t`Edit billing cycle`}</Button>
-                ) : null
-            }
-            {showCustomizePlan ? (
-                <Button
-                    onClick={handleCustomizeSubscription}
-                    className="mb-2"
-                    color="weak"
-                    size="large"
-                    shape="outline"
-                    data-testid="customize-plan"
-                    fullWidth
-                >{c('Action').t`Customize plan`}</Button>
-            ) : null}
-            {showExploreOtherPlans ? (
-                <Button
-                    onClick={handleExplorePlans}
-                    size="large"
-                    shape={user.isPaid ? 'ghost' : 'outline'}
-                    color={user.isPaid ? 'norm' : 'weak'}
-                    fullWidth
-                    data-testid="explore-other-plan"
-                >{c('Action').t`Explore other ${BRAND_NAME} plans`}</Button>
-            ) : null}
-        </>
-    );
-};
+} from '../../../features/pass';
+import { getVPNConnectionsFeature } from '../../../features/vpn';
+import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
+import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
+import Panel from '../Panel';
+import { ActionButtons } from './ActionButtons';
+import { GetMoreButton } from './GetMoreButton';
+import { Item } from './Item';
+import { SubscriptionItems } from './SubscriptionItems';
 
 interface Props {
     app: APP_NAMES;
@@ -210,19 +68,9 @@ interface Props {
     organization?: Organization;
     vpnServers: VPNServersCountData;
     addresses?: Address[];
-    openSubscriptionModal: OpenSubscriptionModalCallback;
 }
 
-const SubscriptionPanel = ({
-    app,
-    currency,
-    vpnServers,
-    subscription,
-    organization,
-    user,
-    addresses,
-    openSubscriptionModal,
-}: Props) => {
+const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organization, user, addresses }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
     const isPassB2bPlan = getIsPassB2BPlan(primaryPlan?.Name);
@@ -237,6 +85,7 @@ const SubscriptionPanel = ({
         UsedSpace = space.usedSpace,
         MaxSpace = space.maxSpace,
         MaxMembers = 1,
+        MaxAI = 0,
     } = organization || {};
 
     if (!user.canPay) {
@@ -291,14 +140,22 @@ const SubscriptionPanel = ({
         );
     };
 
-    const { addressText, domainsText, userText, calendarText, vpnText, serverText, maxVPNDevices } =
-        getSubscriptionPanelText(user, organization, addresses, subscription);
+    const {
+        addressText,
+        domainsText,
+        userText,
+        calendarText,
+        vpnText,
+        serverText,
+        maxVPNDevicesText,
+        writingAssistantText,
+    } = getSubscriptionPanelText(user, organization, addresses, subscription);
 
     const getVpnPlusItems = (): Item[] => {
         return [
             {
                 icon: 'brand-proton-vpn',
-                text: maxVPNDevices,
+                text: maxVPNDevicesText,
             },
             {
                 icon: 'shield',
@@ -377,46 +234,24 @@ const SubscriptionPanel = ({
     };
 
     const getVpnB2B = () => {
-        const getMoreButton = (
-            <Button
-                color="norm"
-                shape="outline"
-                size="small"
-                className="px-2"
-                data-testid="get-more-btn"
-                onClick={() =>
-                    openSubscriptionModal({
-                        step: SUBSCRIPTION_STEPS.CHECKOUT,
-                        disablePlanSelection: true,
-                        metrics: {
-                            /**
-                             * The `vpn` in `vpn-get-more` is unimportant.
-                             * The intention is to observe the user journey, not the specific plan the journey is for.
-                             * However changing this would require a new metric schema version.
-                             */
-                            source: 'vpn-get-more',
-                        },
-                    })
-                }
-            >
-                {
-                    // translator: "Get more" means "Upgrade my business plan to get more user, more dedicated servers, etc"
-                    c('Action').t`Get more`
-                }
-            </Button>
-        );
+        /**
+         * The `vpn` in `vpn-get-more` is unimportant.
+         * The intention is to observe the user journey, not the specific plan the journey is for.
+         * However changing this would require a new metric schema version.
+         */
+        const getMoreButtonVpnUpsell = <GetMoreButton metricsSource="vpn-get-more" />;
 
         const items: Item[] = [
             {
                 icon: 'users' as IconName,
                 text: userText,
-                actionElement: getMoreButton,
+                actionElement: getMoreButtonVpnUpsell,
                 dataTestId: 'users',
             },
             {
                 icon: 'servers',
                 text: serverText,
-                actionElement: hasVpnBusiness(subscription) ? getMoreButton : null,
+                actionElement: hasVpnBusiness(subscription) ? getMoreButtonVpnUpsell : null,
                 dataTestId: 'servers',
             },
         ].filter(isTruthy) as Item[];
@@ -454,6 +289,12 @@ const SubscriptionPanel = ({
                 icon: 'brand-proton-vpn',
                 text: vpnText,
             },
+            !!MaxAI &&
+                !!writingAssistantText && {
+                    icon: 'pen-sparks',
+                    text: writingAssistantText,
+                    actionElement: <GetMoreButton metricsSource="upsells" />,
+                },
         ];
 
         return (
@@ -521,9 +362,7 @@ const SubscriptionPanel = ({
                 return getDefault();
             })()}
             <SubscriptionPanelManageUserButton />
-            {showActionButtons ? (
-                <ActionButtons user={user} subscription={subscription} openSubscriptionModal={openSubscriptionModal} />
-            ) : null}
+            {showActionButtons ? <ActionButtons user={user} subscription={subscription} /> : null}
         </Panel>
     );
 };

@@ -6,13 +6,13 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Prompt, PromptProps } from '../../../components';
 
-export type NewVisionaryWarningModalOwnProps = { type: 'downgrade' | 'switch' | 'delete' };
+export type VisionaryWarningModalOwnProps = { type: 'downgrade' | 'switch' | 'delete' };
 
-interface Props extends Omit<PromptProps, 'children' | 'title' | 'buttons'>, NewVisionaryWarningModalOwnProps {
+interface Props extends Omit<PromptProps, 'children' | 'title' | 'buttons'>, VisionaryWarningModalOwnProps {
     onConfirm: () => void;
 }
 
-export const NewVisionaryWarningModal = ({ onConfirm, type, ...rest }: Props) => {
+export const VisionaryWarningModal = ({ onConfirm, type, ...rest }: Props) => {
     const visionary = 'Visionary';
     const plan = 'visionary';
     return (

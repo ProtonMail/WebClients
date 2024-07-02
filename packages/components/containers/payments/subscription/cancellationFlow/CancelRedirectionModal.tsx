@@ -17,7 +17,7 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     const isCancellationExtended = useFlag('ExtendCancellationProcess');
 
     const ResubscribeButton = () => {
-        if (plan === PLANS.NEW_VISIONARY && !isCancellationExtended) {
+        if (plan === PLANS.VISIONARY && !isCancellationExtended) {
             return null;
         }
 
@@ -39,7 +39,7 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     };
 
     const text =
-        plan === PLANS.NEW_VISIONARY
+        plan === PLANS.VISIONARY
             ? c('Subscription reminder').t`Your ${planName} has been canceled.`
             : c('Subscription reminder').t`Reactivate to restore access to ${planName} features.`;
 

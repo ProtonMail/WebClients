@@ -220,7 +220,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
         activeSubscriptionSameCoupon;
 
     const isVisionaryDowngrade =
-        activeSubscriptionPlan?.Name === PLANS.NEW_VISIONARY && !!maybePlanName && plan !== PLANS.NEW_VISIONARY;
+        activeSubscriptionPlan?.Name === PLANS.VISIONARY && !!maybePlanName && plan !== PLANS.VISIONARY;
 
     if (takingSameOffer || isBundleDowngrade || isFamilyDowngrade || isVisionaryDowngrade) {
         return <PromotionAlreadyApplied />;
@@ -298,7 +298,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                                     if (data.type === 'success') {
                                         if (
                                             // Ignore visionary since it doesn't require a BF coupon
-                                            !data.model.planIDs[PLANS.NEW_VISIONARY] &&
+                                            !data.model.planIDs[PLANS.VISIONARY] &&
                                             // Tried to apply the BF coupon, but the API responded without it.
                                             getHas2023OfferCoupon(coupon?.toUpperCase()) &&
                                             !getHas2023OfferCoupon(data.result.Coupon?.Code)

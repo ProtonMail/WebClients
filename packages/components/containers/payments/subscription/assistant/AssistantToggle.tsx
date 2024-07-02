@@ -14,7 +14,7 @@ import {
 } from '@proton/components';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -26,9 +26,9 @@ const AssistantToggle = () => {
     const [plans] = usePlans();
 
     const composerAssistantEnabled = useAssistantFeatureEnabled();
-    const hasVisionary = hasNewVisionary(subscription);
+    const planWithAIAssistantIncluded = hasPlanWithAIAssistantIncluded(subscription);
 
-    const { hasBoughtPlan, loading, hasHardwareForModel } = useAssistantToggle();
+    const { hasBoughtPlan, loading } = useAssistantToggle();
     const { trialStatus, trialEndDate } = useAssistantSubscriptionStatus();
     const formattedDate = format(trialEndDate || new Date(), 'PP');
 
@@ -46,7 +46,7 @@ const AssistantToggle = () => {
     }
 
     // Visionary users have the add-on for free, we hide this section if that's the case
-    if (loading || !hasHardwareForModel || !assistantUpsellConfig || hasVisionary) {
+    if (loading || !assistantUpsellConfig || planWithAIAssistantIncluded) {
         return null;
     }
 

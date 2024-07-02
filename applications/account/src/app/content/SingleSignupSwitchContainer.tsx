@@ -55,7 +55,7 @@ const SingleSignupSwitchContainer = ({
         maybePreAppIntent === APPS.PROTONPASS ||
         [SSO_PATHS.MAIL_SIGNUP_B2B, SSO_PATHS.CALENDAR_SIGNUP_B2B].includes(location.pathname as any) ||
         searchParams.get('mode') === 'sps' ||
-        searchParams.get('plan') === PLANS.NEW_VISIONARY ||
+        searchParams.get('plan') === PLANS.VISIONARY ||
         singleSignupEnabled;
 
     if (renderSingleSignup) {

@@ -80,16 +80,18 @@ export type SupportedAddons = Partial<Record<ADDON_NAMES, boolean>>;
 export function getSupportedB2CAddons(planIDs: PlanIDs): SupportedAddons {
     const supported: SupportedAddons = {};
 
+    // Re-enable the scribe addons when/if B2C plans trully support them
+
     if (planIDs[MAIL]) {
-        supported[ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS] = true;
+        // supported[ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS] = true;
     }
 
     if (planIDs[DRIVE]) {
-        supported[ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS] = true;
+        // supported[ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS] = true;
     }
 
     if (planIDs[BUNDLE]) {
-        supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE] = true;
+        // supported[ADDON_NAMES.MEMBER_SCRIBE_BUNDLE] = true;
     }
 
     return supported;
@@ -291,27 +293,19 @@ export const switchPlan = ({
                     }
                 }
 
-                let scribeAddons = 0;
-                for (const addonName of Object.values(ADDON_NAMES)) {
-                    if (isScribeAddon(addonName)) {
-                        scribeAddons += planIDs[addonName] ?? 0;
-                    }
-                }
-
                 newPlanIDs[addon] = Math.max(
                     memberAddonsWithEnoughSpace,
                     memberAddonsWithEnoughAddresses,
                     memberAddonsWithEnoughVPNConnections,
                     memberAddonsWithEnoughMembers,
                     memberAddonsWithEnoughCalendars,
-                    memberAddons,
-                    scribeAddons
+                    memberAddons
                 );
             }
         }
 
         // Transfer domain addons
-        if (addon.startsWith('1domain') && plan && organization) {
+        if (isDomainAddon(addon) && plan && organization) {
             const domainAddon = plans.find(({ Name }) => Name === addon);
             const diffDomains = (organization.UsedDomains || 0) - plan.MaxDomains;
 

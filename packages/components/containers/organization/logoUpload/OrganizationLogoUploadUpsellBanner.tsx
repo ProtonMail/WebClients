@@ -25,7 +25,7 @@ export const OrganizationLogoUploadUpsellBanner = ({
 
     const currentPlan = organization.PlanName;
 
-    const isVisionary = currentPlan === PLANS.NEW_VISIONARY;
+    const isVisionary = currentPlan === PLANS.VISIONARY;
 
     const upgradePlanMapping: { [key in PLANS]?: PLANS } = {
         [PLANS.MAIL_PRO]: bundleProPlan,

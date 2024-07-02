@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasMigrationDiscount, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import { Loader } from '../../components';
 import { useModalState } from '../../components/modalTwo';
 import { useAddresses, useConfig, useSubscription } from '../../hooks';
-import { DiscountWarningModal, NewVisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
+import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';
 import MozillaInfoPanel from './MozillaInfoPanel';
 import SettingsParagraph from './SettingsParagraph';
@@ -53,7 +53,7 @@ const DeleteSection = () => {
                     type="delete"
                     {...migrationDiscountModalProps}
                     onConfirm={() => {
-                        if (hasNewVisionary(subscription)) {
+                        if (hasVisionary(subscription)) {
                             setVisionaryLossModal(true);
                             return;
                         }
@@ -62,7 +62,7 @@ const DeleteSection = () => {
                 />
             )}
             {renderVisionaryLossModal && (
-                <NewVisionaryWarningModal
+                <VisionaryWarningModal
                     type="delete"
                     {...visionaryLossModalProps}
                     onConfirm={() => {
@@ -84,7 +84,7 @@ const DeleteSection = () => {
                         setMigrationDiscountModal(true);
                         return;
                     }
-                    if (hasNewVisionary(subscription)) {
+                    if (hasVisionary(subscription)) {
                         setVisionaryLossModal(true);
                         return;
                     }
