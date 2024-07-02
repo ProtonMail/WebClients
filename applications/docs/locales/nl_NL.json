@@ -384,6 +384,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Open ${ DRIVE_APP_NAME }"
+      ],
       "Pay": [
         "Betalen"
       ],
@@ -3470,9 +3473,6 @@
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
       ],
-      "Connecting...": [
-        "Verbinden..."
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contact toegekend aan groep ${ contactGroupName }"
       ],
@@ -3616,7 +3616,7 @@
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
       "Failing signatures will be re-signed by you": [
-        "Mislukte handtekeningen zullen opnieuw worden ondertekend door jou."
+        "Mislukte handtekeningen zullen opnieuw worden ondertekend door u."
       ],
       "File \"${ name }\" was deleted during download": [
         "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
@@ -3910,9 +3910,6 @@
       "Primary": [
         "Primair"
       ],
-      "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
-        "Recente bewerkingen van uw document konden niet worden opgeslagen. Bewerken is tijdelijk uitgeschakeld om gegevensbeveiliging te waarborgen. Download een kopie van uw document vanuit het hoofdmenu. Vernieuw hierna de pagina om opnieuw verbinding te maken."
-      ],
       "recommended browser": [
         "aanbevolen browser"
       ],
@@ -3958,9 +3955,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
-      "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
-        "Sommige bewerkingen duren langer om te synchroniseren dan verwacht. Dit kan te wijten zijn aan netwerkproblemen. Je kan ondertussen blijven bewerken. Als het probleem aanhoudt, tonen we een sterkere foutmelding."
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
@@ -3983,7 +3977,7 @@
         "De applicatie moet uw contacten lokaal decoderen voordat ze kunnen worden geëxporteerd. Aan het einde van het proces zal een VCF-bestand worden gegenereerd en kan u het downloaden."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
-        "De auteur van bewerkingen in het document kon niet worden geverifieerd. Wil je dit document markeren als geverifieerd? Je kan kiezen om te negeren en later te beslissen."
+        "De auteur van bewerkingen in het document kon niet worden geverifieerd. Wilt u dit document markeren als geverifieerd? U kan kiezen om te negeren en later te beslissen."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
@@ -4022,7 +4016,7 @@
         "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw map. Om de map opnieuw in te delen heeft u een nieuwe link nodig."
       ],
       "This message will be presented again later": [
-        "Dit bericht zal later opnieuw worden gepresentered"
+        "Dit bericht zal later opnieuw worden gepresenteerd"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
@@ -7713,7 +7707,7 @@
         "Uw account is beschermd"
       ],
       "Your document cannot be loaded": [
-        "Jouw document kan niet worden geladen"
+        "Uw document kan niet worden geladen"
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"

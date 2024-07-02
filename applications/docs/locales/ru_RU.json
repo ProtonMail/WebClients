@@ -399,6 +399,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Открыть настройки ${ CALENDAR_APP_NAME }"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Открыть ${ DRIVE_APP_NAME }"
+      ],
       "Pay": [
         "Оплатить"
       ],
@@ -3628,9 +3631,6 @@
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
       ],
-      "Connecting...": [
-        "Подключение..."
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Контакт назначен группе ${ contactGroupName }"
       ],
@@ -3937,9 +3937,6 @@
       "Loading...": [
         "Загрузка..."
       ],
-      "Looks like you're offline. Document can not be edited while you are offline. Please check your device's connectivity.": [
-        "Похоже, вы не в сети. Документ не может быть отредактирован, пока вы находитесь офлайн. Проверьте подключение вашего устройства."
-      ],
       "Low Priority": [
         "Низкий приоритет"
       ],
@@ -4102,9 +4099,6 @@
       "Primary": [
         "Основной"
       ],
-      "Recent edits to your document could not be saved. To ensure data safety, editing is temporarily disabled. Please download a copy of your document from the main menu. After you have done so, refresh the page to reconnect.": [
-        "Последние изменения в документе сохранить не удалось. Для обеспечения безопасности данных редактирование временно отключено. Скачайте копию вашего документа из главного меню. После этого обновите страницу, чтобы снова подключиться."
-      ],
       "recommended browser": [
         "рекомендуемый браузер"
       ],
@@ -4158,9 +4152,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
-      ],
-      "Some edits are taking longer to sync than expected. This may be due to network issues. You may continue editing for now. If the issue persists, we'll show a stronger error message.": [
-        "Некоторые правки синхронизируются дольше, чем ожидалось. Это может быть связано с проблемами в сети. Пока что вы можете продолжать редактирование. Если проблема сохранится, мы покажем более подробное сообщение об ошибке."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
