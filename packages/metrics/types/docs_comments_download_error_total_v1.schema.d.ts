@@ -6,11 +6,11 @@
  */
 
 /**
- * Number of comments failed to be uploaded to server
+ * Number of downloaded comments failed
  */
-export interface HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson {
+export interface HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson {
   Labels: {
-    reason: "network_error" | "server_error" | "encryption_error" | "unknown";
+    reason: "network_error" | "server_error" | "decryption_error" | "unknown";
   };
   Value: number;
 }
