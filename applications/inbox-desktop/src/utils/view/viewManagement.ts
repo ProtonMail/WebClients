@@ -28,6 +28,7 @@ const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
     account: undefined,
 };
 
+const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
 let mainWindow: undefined | BrowserWindow = undefined;
 
 export const viewCreationAppStartup = (session: Session) => {
@@ -253,7 +254,7 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
-            if (toHomepage) {
+            if (PRELOADED_VIEWS.includes(viewID as ViewID) && toHomepage) {
                 const homepageURL = await updateLocalID(config.url[viewID as ViewID]);
                 viewLogger(viewID as ViewID).info("reset to home page", homepageURL);
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
