@@ -65,6 +65,9 @@
       "Change password": [
         "პაროლის შეცვლა"
       ],
+      "Change second password": [
+        "მეორე პაროლის შეცვლა"
+      ],
       "Chat with us": [
         "დაგველაპარაკეთ"
       ],
@@ -2157,6 +2160,9 @@
       "Incorrect password": [
         "არასწორი პაროლი"
       ],
+      "Incorrect second password. Please try again.": [
+        "არასწორი მეორე პაროლი. თავიდან სცადეთ."
+      ],
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
       ],
@@ -2270,6 +2276,9 @@
       ],
       "The email addresses do not match": [
         "ელფოსტის მისამართები არ ემთხვევა"
+      ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "ეს ფაილი მეისმეტად დიდია. მაქსიმალური ზომაა ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
@@ -2544,6 +2553,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
+      ],
+      "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
+        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
@@ -2996,6 +3008,9 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: დაბალი გაფართოების მინიატურა"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და მეორე პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
       ],
       "${ n } address": [
         "${ n } მისამართი",
@@ -3462,6 +3477,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "თუ სადმე შესული დაგრჩებათ, შეგიძლიათ, ასევე, ${ signedInPasswordResetLink }"
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "თუ გჯერათ, რომ ეს შეცდომაა, დაგვიკავშირდით ${ contactLink }."
       ],
@@ -3686,6 +3704,9 @@
         "დაამატეთ ელფოსტის მისამართი მომხმარებელს მწკრივზე",
         "დაამატეთ ელფოსტის მისამართი მომხმარებელს მწკრივზე"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "სთხოვეთ მფლობელს, პირდაპირ მოგიწვიოთ დოკუმენტზე."
+      ],
       "Please authenticate your card in the verification tab.": [
         "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
       ],
@@ -3706,6 +3727,9 @@
       ],
       "please open a support ticket": [
         "გახსენით მხარდაჭერის ბილეთი"
+      ],
+      "Please open the document to view it.": [
+        "გახსენით დოკუმენტი, რომ ნახოთ ის."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით თქვენს ბანკს."
@@ -3737,11 +3761,17 @@
       "Preview for this file type is not supported": [
         "ფაილის ამ ტიპისთვის მინიატურის შექმნა მხარდაჭერილი არაა"
       ],
+      "Preview of documents is not yet supported.": [
+        "დოკუმენტების მინიატურა ჯერ მხარდაჭერილი არაა."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
       ],
       "Protected by Swiss privacy laws": [
         "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
       "read our two-factor authentication guide first": [
         "გთხოვთ, ჯერ თვალი გადაავლოთ ჩვენს 2FA-ის დოკუმენტაციას"
@@ -4569,6 +4599,9 @@
       "Confirm password": [
         "პაროლის დადასტურება"
       ],
+      "Confirm second password": [
+        "დაადასტურეთ მეორე პაროლი"
+      ],
       "Copy": [
         "კოპირება"
       ],
@@ -4712,6 +4745,9 @@
       ],
       "New password": [
         "ახალი პაროლი"
+      ],
+      "New second password": [
+        "ახალი მეორე პაროლი"
       ],
       "No filter": [
         "ფილტრის გარეშე"
@@ -5748,6 +5784,9 @@
       "All ${ BRAND_NAME } apps and their premium features": [
         "${ BRAND_NAME }-ის ყველა აპი და მათი ფასიანი ფუნქციები"
       ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ."
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
       ],
@@ -6532,6 +6571,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "Payment Processing": [
+        "გადახდის დამუშავება"
       ],
       "Processing payment": [
         "გადახდის დამუშავება"
@@ -7645,6 +7687,9 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
+      "${ VPN_APP_NAME } with access to all high-speed servers in ${ vpnCountries } countries": [
+        "${ VPN_APP_NAME } წვდომით ჩქაროსნულ სერვერებთან ${ vpnCountries } ქვეყანაში"
+      ],
       "${ VPN_APP_NAME } with malware and ad-blocking": [
         "${ VPN_APP_NAME } მავნე პროგრამებისა და რეკლამების დაბლოკვით"
       ],
@@ -7680,6 +7725,9 @@
       ],
       "Back up photos from your devices": [
         "დაამარქაფეთ სურათები თქვენ მოწყობილობებიდან"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "ააგეთ ნდობა და ბრენდის ცნობადობა პროფესიონალური ელფოსტის მისამართებით თქვენი საკუთარი დომენით."
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -8289,6 +8337,9 @@
       ],
       "Change role": [
         "როლის შეცვლა"
+      ],
+      "Change second password": [
+        "მეორე პაროლის შეცვლა"
       ],
       "Close": [
         "დახურვა"
