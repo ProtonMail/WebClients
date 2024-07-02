@@ -44,9 +44,9 @@ const config: OfferConfig = {
         },
         {
             ref: 'eoy_23_mail_free-modal-v12',
-            dealName: PLAN_NAMES[PLANS.NEW_VISIONARY],
+            dealName: PLAN_NAMES[PLANS.VISIONARY],
             planIDs: {
-                [PLANS.NEW_VISIONARY]: 1,
+                [PLANS.VISIONARY]: 1,
             },
             cycle: CYCLE.YEARLY,
             couponCode: COUPON_CODES.END_OF_YEAR_2023,

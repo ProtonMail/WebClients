@@ -67,7 +67,7 @@ const MainContainer: FunctionComponent = () => {
     }, [featureSw, loadingSw]);
 
     return (
-        <AssistantProvider assistantFeature={'ComposerAssistant'}>
+        <AssistantProvider>
             <QuickSettingsRemindersProvider>
                 <DrawerThemeInjector />
                 <EncryptedSearchProvider>

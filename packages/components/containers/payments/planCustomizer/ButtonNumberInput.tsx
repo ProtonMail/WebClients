@@ -41,8 +41,10 @@ export const ButtonNumberInput = ({
 
         if (tmpValue > max) {
             setTmpValue(max);
+            onChange?.(max);
         } else if (tmpValue < min) {
             setTmpValue(min);
+            onChange?.(min);
         }
     }, [min, max, tmpValue]);
 

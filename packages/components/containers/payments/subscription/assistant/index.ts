@@ -3,4 +3,5 @@ export { default as AssistantIncompatibleHardwareModal } from './AssistantIncomp
 export { default as AssistantToggle } from './AssistantToggle';
 export { default as AssistantUpdateSubscriptionButton } from './AssistantUpdateSubscriptionButton';
 export * from './helpers';
+export * from './useIsOrganizationBeforeBackfill';
 export { default as useScribePaymentsEnabled } from './useScribePaymentsEnabled';

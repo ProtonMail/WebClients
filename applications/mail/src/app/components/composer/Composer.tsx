@@ -232,10 +232,18 @@ const Composer = (
         }
     };
 
+    /**
+     * ATM we don't have a queue mechanism in the assistant in local mode.
+     * In that case we want to disable it if another composer has the assistant opened.
+     * However, we still want to be able to close it by clicking on the button.
+     */
+    const disableAssistantButton = openedAssistants.length > 0 && !isAssistantOpenedInComposer;
+
     // Hook used to open the assistant automatically the first time the user opens the composer
     const { isAssistantInitialSetup } = useComposerAssistantInitialSetup({
         onToggleAssistant: handleToggleAssistant,
         canShowAssistant,
+        disableAssistantButton,
     });
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
@@ -316,13 +324,6 @@ const Composer = (
         }
         setSelectedText('');
     };
-
-    /**
-     * ATM we don't have a queue mechanism in the assistant in local mode.
-     * In that case we want to disable it if another composer has the assistant opened.
-     * However, we still want to be able to close it by clicking on the button.
-     */
-    const disableAssistantButton = openedAssistants.length > 0 && !isAssistantOpenedInComposer;
 
     return (
         <div

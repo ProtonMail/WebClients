@@ -38,7 +38,7 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
      */
     const isPlanAllowed =
         user.isFree ||
-        [PLANS.MAIL, PLANS.BUNDLE, PLANS.FAMILY, PLANS.NEW_VISIONARY].some((plan) =>
+        [PLANS.MAIL, PLANS.BUNDLE, PLANS.FAMILY, PLANS.VISIONARY].some((plan) =>
             subscription?.Plans?.some(({ Name }) => Name === plan)
         );
     const hasCustomDomains = organization && organization?.UsedDomains > 0;

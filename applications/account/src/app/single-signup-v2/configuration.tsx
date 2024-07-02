@@ -14,11 +14,11 @@ import {
     getMailBusinessPlan,
     getMailPlan,
     getMailProPlan,
-    getNewVisionaryPlan,
     getPassBusinessSignupPlan,
     getPassEssentialsSignupPlan,
     getPassPlan,
     getVPNPlan,
+    getVisionaryPlan,
 } from '@proton/components/containers/payments/features/plan';
 import {
     getAllPlatforms,
@@ -150,8 +150,8 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.NEW_VISIONARY) {
-        const shortPlan = getNewVisionaryPlan({ plan, freePlan });
+    if (plan && plan?.Name === PLANS.VISIONARY) {
+        const shortPlan = getVisionaryPlan({ plan, freePlan });
         return {
             logo: (
                 <div>
