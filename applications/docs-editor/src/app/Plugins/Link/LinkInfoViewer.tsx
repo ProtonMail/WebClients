@@ -10,6 +10,7 @@ import { createPortal } from 'react-dom'
 import { c } from 'ttag'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 
 type Props = {
   linkNode: LinkNode
@@ -30,7 +31,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
     let linkUrl = ''
     let isAutoLink = false
     editor.getEditorState().read(() => {
-      linkUrl = linkNode.getURL()
+      linkUrl = sanitizeUrl(linkNode.getURL()) || ''
       isAutoLink = $isAutoLinkNode(linkNode)
     })
     return [linkUrl, isAutoLink]
