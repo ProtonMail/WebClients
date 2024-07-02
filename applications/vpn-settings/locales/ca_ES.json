@@ -2980,6 +2980,11 @@
         "Contacteu amb nosaltres"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Afegiu aquest registre al domini, al panell de control del registrador de noms de domini"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Correu electrònic"
@@ -2994,6 +2999,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
+      ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } i haureu de crear-los manualment per tornar-los a afegir a l'organització"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
@@ -3231,6 +3239,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configureu l'autenticació SAML per a l'organització a través d'un proveïdor d'identitat (IdP). Això habilitarà SAML per a tota l'organització."
       ],
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configureu l'autenticació SAML per a la vostra organització mitjançant un proveïdor d'identitat com Okta, Microsoft Azure o Google Identity Platform. Això habilitarà SAML per a tota l'organització."
@@ -3909,6 +3920,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Se suprimiran les credencials del vostre proveïdor d'identitat."
       ],
       "The following address is invalid.": [
         "La següent adreça no és vàlida.",
@@ -9045,6 +9059,9 @@
       "Feature in early access": [
         "Característica en accés anticipat"
       ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu el resum del certificat del proveïdor d'identitat."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
@@ -9065,6 +9082,9 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Els usuaris veuran el vostre logo en comptes de la icona de ${ BRAND_NAME } quan iniciïn sessió a les nostres aplicacions web."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Normalment un URL que conté el nom del proveïdor d'identitat dins"
       ],
       "Verified email address": [
         "Adreça de correu electrònic verificada"

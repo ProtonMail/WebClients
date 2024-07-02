@@ -396,6 +396,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Abrir ${ DRIVE_APP_NAME }"
+      ],
       "Pay": [
         "Pagar"
       ],
@@ -3437,6 +3440,9 @@
         "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
       ],
+      "All changes saved to Drive": [
+        "Todas as alterações foram salvas no Drive"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
@@ -3509,9 +3515,6 @@
       ],
       "Close this screen to exit.": [
         "Feche esta tela para sair."
-      ],
-      "Connecting...": [
-        "Conectando..."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contato associado ao grupo ${ contactGroupName }"
@@ -3628,6 +3631,9 @@
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
       ],
+      "End to end encrypted.": [
+        "Criptografado de ponta a ponta."
+      ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo autenticador"
       ],
@@ -3642,6 +3648,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
+      ],
+      "Error Syncing": [
+        "Erro ao sincronizar"
       ],
       "Expired": [
         "Expirado"
@@ -3776,6 +3785,9 @@
       "Learn more": [
         "Saiba mais"
       ],
+      "Limited availability": [
+        "Disponibilidade limitada"
+      ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
@@ -3864,6 +3876,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Apenas as pessoas com o link e a senha podem acessar esta pasta."
+      ],
+      "Opening...": [
+        "Abrindo..."
       ],
       "Organization size": [
         "Tamanho da organização"
@@ -7623,6 +7638,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Document verification failed": [
+        "Erro na verificação do documento"
+      ],
       "Downgrade account": [
         "Fazer downgrade da conta"
       ],
@@ -7713,6 +7731,9 @@
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
+      ],
+      "Limited availability": [
+        "Disponibilidade limitada"
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"
@@ -7866,6 +7887,9 @@
       ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contato"
+      ],
+      "Untitled document ${ date }": [
+        "Documento sem título ${ date }"
       ],
       "Uploading a large file or folder": [
         "Carregar um arquivo ou pasta grande"

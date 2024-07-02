@@ -65,6 +65,9 @@
       "Change password": [
         "Schimbare parolă"
       ],
+      "Change second password": [
+        "Modificare parolă secundară"
+      ],
       "Chat with us": [
         "Conversați cu noi"
       ],
@@ -2169,6 +2172,9 @@
       "Incorrect password": [
         "Parolă incorectă"
       ],
+      "Incorrect second password. Please try again.": [
+        "Parolă secundară incorectă. Încercați din nou."
+      ],
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
@@ -3027,6 +3033,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pictogramă cu rezoluție mică"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
+      ],
       "${ n } address": [
         "${ n } adresă",
         "${ n } adrese",
@@ -3748,6 +3757,9 @@
         "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile",
         "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Solicitați proprietarului să vă invite direct la document."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentificați cardul în fila de verificare."
       ],
@@ -3768,6 +3780,9 @@
       ],
       "please open a support ticket": [
         "deschideți un tichet de asistență"
+      ],
+      "Please open the document to view it.": [
+        "Deschideți documentul pentru a-l vedea."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
@@ -3799,11 +3814,17 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Preview of documents is not yet supported.": [
+        "Examinarea documentelor nu este încă implementată."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
       ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Partajarea publică a documentelor nu este încă implementată."
       ],
       "read our two-factor authentication guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
@@ -4101,6 +4122,12 @@
       "Two-factor authentication enabled": [
         "Autentificare cu doi factori activată"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta datele. (Avansat)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Modul cu două parole folosește parole separate pentru conectare și pentru decriptarea datelor. Aceasta furnizează un beneficiu minor de securitate în unele situații. Totuși recomandăm parola unică la majoritatea utilizatorilor. Pentru a comuta la modul cu două parole, mai întâi creați o parolă de conectare și apoi una secundară."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
       ],
@@ -4367,6 +4394,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceţi clic pe butonul de mai jos."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Veți putea promova utilizatorul ca administrator după ce a acceptat invitația."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
@@ -4492,6 +4522,9 @@
       ],
       "Paid": [
         "Plătită"
+      ],
+      "Processing": [
+        "Se procesează"
       ],
       "Unpaid": [
         "Neplătită"
@@ -4668,6 +4701,9 @@
       "Confirm password": [
         "Confirmare parolă"
       ],
+      "Confirm second password": [
+        "Confirmare parolă secundară"
+      ],
       "Copy": [
         "Copiere"
       ],
@@ -4812,6 +4848,9 @@
       "New password": [
         "Parola nouă"
       ],
+      "New second password": [
+        "Parola secundară nouă"
+      ],
       "No filter": [
         "Fără filtru"
       ],
@@ -4904,6 +4943,9 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Second password": [
+        "Parola secundară"
       ],
       "Security code (${ codeName })": [
         "Cod de securitate (${ codeName })"
@@ -6694,8 +6736,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Am înțeles"
+      ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "Payment Processing": [
+        "Se procesează plata"
       ],
       "Processing payment": [
         "Se procesează plata"
@@ -6711,6 +6759,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
       ]
     },
     "Payments.Error": {
@@ -8621,6 +8672,9 @@
       "Change role": [
         "Schimbare rol"
       ],
+      "Change second password": [
+        "Modificare parolă secundară"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -8831,6 +8885,9 @@
       "Invoices": [
         "Facturi"
       ],
+      "Main password": [
+        "Parola principală"
+      ],
       "Multi-user support": [
         "Suport utilizatori multipli"
       ],
@@ -9030,6 +9087,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Unlock your data": [
+        "Deblocași-vă datele"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Îmbunătățiți-vă protecția rețelei cu servere dedicate"

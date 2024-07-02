@@ -7425,8 +7425,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Am înțeles"
+      ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "Payment Processing": [
+        "Se procesează plata"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
@@ -7439,6 +7445,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
       ]
     },
     "Payments.Error": {
