@@ -10,6 +10,7 @@ import Histogram from './lib/Histogram';
 import MetricsBase from './lib/MetricsBase';
 import IMetricsRequestService from './lib/types/IMetricsRequestService';
 import { HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson } from './types/docs_aborted_squashes_total_v1.schema';
+import { HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson } from './types/docs_comments_download_error_total_v1.schema';
 import { HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson } from './types/docs_comments_error_total_v1.schema';
 import { HttpsProtonMeDocsCommentsTotalV1SchemaJson } from './types/docs_comments_total_v1.schema';
 import { HttpsProtonMeDocsDocumentUpdatesAckErrorTotalV1SchemaJson } from './types/docs_document_updates_ack_error_total_v1.schema';
@@ -24,6 +25,13 @@ import { HttpsProtonMeDocsSquashesLatencyHistogramV1SchemaJson } from './types/d
 import { HttpsProtonMeDocsSquashesTotalV1SchemaJson } from './types/docs_squashes_total_v1.schema';
 import { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './types/docs_time_load_document_histogram_v1.schema';
 import { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
+import { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from './types/drive_download_erroring_users_total_v1.schema';
+import { HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson } from './types/drive_download_errors_total_v1.schema';
+import { HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson } from './types/drive_download_success_rate_total_v1.schema';
+import { HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_block_verification_errors_total_v1.schema';
+import { HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson } from './types/drive_integrity_decryption_errors_total_v1.schema';
+import { HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson } from './types/drive_integrity_erroring_users_total_v1.schema';
+import { HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_verification_errors_total_v1.schema';
 import { HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson } from './types/drive_sync_erroring_users_total_v1.schema';
 import { HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson } from './types/drive_sync_errors_total_v1.schema';
 import { HttpsProtonMeDriveSyncEventUpdatesTotalV1SchemaJson } from './types/drive_sync_event_updates_total_v1.schema';
@@ -96,6 +104,8 @@ import { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_
 class Metrics extends MetricsBase {
     public docs_aborted_squashes_total: Counter<HttpsProtonMeDocsAbortedSquashesTotalV1SchemaJson>;
 
+    public docs_comments_download_error_total: Counter<HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson>;
+
     public docs_comments_error_total: Counter<HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson>;
 
     public docs_comments_total: Counter<HttpsProtonMeDocsCommentsTotalV1SchemaJson>;
@@ -123,6 +133,20 @@ class Metrics extends MetricsBase {
     public docs_time_load_document_histogram: Histogram<HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson>;
 
     public docs_users_success_rate_total: Counter<HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson>;
+
+    public drive_download_erroring_users_total: Counter<HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson>;
+
+    public drive_download_errors_total: Counter<HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson>;
+
+    public drive_download_success_rate_total: Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>;
+
+    public drive_integrity_block_verification_errors_total: Counter<HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson>;
+
+    public drive_integrity_decryption_errors_total: Counter<HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson>;
+
+    public drive_integrity_erroring_users_total: Counter<HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson>;
+
+    public drive_integrity_verification_errors_total: Counter<HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson>;
 
     public drive_sync_erroring_users_total: Counter<HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson>;
 
@@ -268,6 +292,11 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.docs_comments_download_error_total = new Counter<HttpsProtonMeDocsCommentsDownloadErrorTotalV1SchemaJson>(
+            { name: 'docs_comments_download_error_total', version: 1 },
+            this.requestService
+        );
+
         this.docs_comments_error_total = new Counter<HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson>(
             { name: 'docs_comments_error_total', version: 1 },
             this.requestService
@@ -344,6 +373,46 @@ class Metrics extends MetricsBase {
             { name: 'docs_users_success_rate_total', version: 1 },
             this.requestService
         );
+
+        this.drive_download_erroring_users_total =
+            new Counter<HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson>(
+                { name: 'drive_download_erroring_users_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_download_errors_total = new Counter<HttpsProtonMeDriveDownloadErrorsTotalV1SchemaJson>(
+            { name: 'drive_download_errors_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_download_success_rate_total = new Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>(
+            { name: 'drive_download_success_rate_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_integrity_block_verification_errors_total =
+            new Counter<HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson>(
+                { name: 'drive_integrity_block_verification_errors_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_integrity_decryption_errors_total =
+            new Counter<HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson>(
+                { name: 'drive_integrity_decryption_errors_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_integrity_erroring_users_total =
+            new Counter<HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson>(
+                { name: 'drive_integrity_erroring_users_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_integrity_verification_errors_total =
+            new Counter<HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson>(
+                { name: 'drive_integrity_verification_errors_total', version: 1 },
+                this.requestService
+            );
 
         this.drive_sync_erroring_users_total = new Counter<HttpsProtonMeDriveSyncErroringUsersTotalV1SchemaJson>(
             { name: 'drive_sync_erroring_users_total', version: 1 },

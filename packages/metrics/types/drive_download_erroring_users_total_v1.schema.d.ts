@@ -6,11 +6,12 @@
  */
 
 /**
- * Number of comments failed to be uploaded to server
+ * Measures how many users experienced download error in the past 10 minutes
  */
-export interface HttpsProtonMeDocsCommentsErrorTotalV1SchemaJson {
+export interface HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson {
   Labels: {
-    reason: "network_error" | "server_error" | "encryption_error" | "unknown";
+    plan: "free" | "paid";
+    shareType: "own" | "device" | "photo" | "shared" | "shared_public";
   };
   Value: number;
 }
