@@ -7,18 +7,18 @@ import { type ActionCallback, withCallback } from '@proton/pass/store/actions/en
 import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
-    itemCreateSecureLinkRequest,
-    itemDeleteSecureLinkRequest,
-    itemGetSecureLinksRequest,
     itemPinRequest,
     itemRevisionsRequest,
     itemUnpinRequest,
-    itemViewSecureLinkRequest,
     itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
     itemsBulkRestoreRequest,
     itemsBulkTrashRequest,
-    removeInactiveLinksRequest,
+    secureLinkCreateRequest,
+    secureLinkOpenRequest,
+    secureLinkRemoveRequest,
+    secureLinksGetRequest,
+    secureLinksRemoveInactiveRequest,
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
@@ -537,19 +537,17 @@ export const itemHistoryFailure = createAction(
     )
 );
 
-export const itemGetSecureLinks = requestActionsFactory<void, SecureLink[]>('item::secure-link::get')({
-    requestId: itemGetSecureLinksRequest,
+export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-link::get')({
+    requestId: secureLinksGetRequest,
 });
 
-export const itemCreateSecureLink = requestActionsFactory<SecureLinkCreationDTO, SecureLink>(
-    'item::secure-link::create'
-)({
-    requestId: ({ shareId, itemId }) => itemCreateSecureLinkRequest(shareId, itemId),
+export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
+    requestId: ({ shareId, itemId }) => secureLinkCreateRequest(shareId, itemId),
     success: { config: { data: true } },
 });
 
-export const itemViewSecureLink = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('item::secure-link::view')({
-    requestId: ({ token }) => itemViewSecureLinkRequest(token),
+export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('secure-link::open')({
+    requestId: ({ token }) => secureLinkOpenRequest(token),
     success: { config: { data: true } },
     failure: {
         config: { data: true },
@@ -562,10 +560,8 @@ export const itemViewSecureLink = requestActionsFactory<SecureLinkQuery, SecureL
     },
 });
 
-export const itemRemoveSecureLink = requestActionsFactory<SecureLinkDeleteDTO, SecureLinkDeleteDTO>(
-    'item::secure-link::remove'
-)({
-    requestId: ({ shareId, itemId }) => itemDeleteSecureLinkRequest(shareId, itemId),
+export const secureLinkRemove = requestActionsFactory<SecureLinkDeleteDTO, SecureLinkDeleteDTO>('secure-link::remove')({
+    requestId: ({ shareId, itemId }) => secureLinkRemoveRequest(shareId, itemId),
     intent: {
         prepare: (payload) =>
             withNotification({
@@ -592,10 +588,8 @@ export const itemRemoveSecureLink = requestActionsFactory<SecureLinkDeleteDTO, S
     },
 });
 
-export const itemRemoveInactiveSecureLinks = requestActionsFactory<void, SecureLink[]>(
-    'item::secure-links::remove::inactive'
-)({
-    requestId: removeInactiveLinksRequest,
+export const secureLinksRemoveInactive = requestActionsFactory<void, SecureLink[]>('secure-links::remove::inactive')({
+    requestId: secureLinksRemoveInactiveRequest,
     intent: {
         prepare: (payload) =>
             withNotification({
