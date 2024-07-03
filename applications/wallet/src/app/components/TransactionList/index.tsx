@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { add } from 'date-fns';
+import { add, isBefore } from 'date-fns';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
@@ -11,14 +11,14 @@ import {
     WasmTransactionDetails,
 } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, useModalStateWithData } from '@proton/components/components';
+import { Icon, Tooltip, useModalStateWithData } from '@proton/components/components';
 import { useUserKeys } from '@proton/components/hooks';
+import { SECOND } from '@proton/shared/lib/constants';
 import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-exchange.svg';
 import clsx from '@proton/utils/clsx';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton, SimplePaginator } from '../../atoms';
-import { CoolDownButton } from '../../atoms/CoolDownButton';
 import { ITEMS_PER_PAGE } from '../../constants';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -54,10 +54,8 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
 
     const syncingData = getSyncingData(apiWalletData.Wallet.ID, apiAccount?.ID);
     const isSyncingWalletData = syncingData?.syncing;
-    const cooldownStartTime = syncingData?.lastSyncing ? new Date(syncingData?.lastSyncing) : undefined;
-    const cooldownEndTime = cooldownStartTime
-        ? add(cooldownStartTime, { minutes: SYNCING_MINIMUM_COOLDOWN_MINUTES })
-        : undefined;
+
+    const [isCoolingDown, setIsCoolingDown] = useState(false);
 
     const [userKeys] = useUserKeys();
 
@@ -81,6 +79,20 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
         },
         [openDrawer, decryptedApiWalletsData, apiWalletData.Wallet.ID, setNoteModalState, setUnknownSenderModal]
     );
+
+    useEffect(() => {
+        const cooldownStartTime = syncingData?.lastSyncing && new Date(syncingData?.lastSyncing);
+        const cooldownEndTime = cooldownStartTime
+            ? add(cooldownStartTime, { minutes: SYNCING_MINIMUM_COOLDOWN_MINUTES })
+            : undefined;
+
+        const timeout = setInterval(() => {
+            const localIsCoolingDown = cooldownEndTime ? isBefore(new Date(), cooldownEndTime) : false;
+            setIsCoolingDown(localIsCoolingDown);
+        }, 1 * SECOND);
+
+        return () => clearInterval(timeout);
+    }, [syncingData?.lastSyncing]);
 
     useEffect(() => {
         handleGoFirst();
@@ -303,24 +315,36 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
                     ).t`Transactions`}</h2>
 
                     <div className="flex flex-row">
-                        <CoolDownButton
-                            end={cooldownEndTime}
-                            start={cooldownStartTime}
-                            icon
-                            size={isNarrow ? 'small' : 'medium'}
-                            shape="ghost"
-                            color="weak"
-                            className="ml-2"
-                            buttonClassName="rounded-full bg-weak"
-                            disabled={isSyncingWalletData}
-                            onClick={() => handleClickSync()}
+                        <Tooltip
+                            title={(() => {
+                                if (isSyncingWalletData) {
+                                    return c('Wallet transactions list').t`Syncing is already in progress`;
+                                } else if (isCoolingDown) {
+                                    return c('Wallet transactions list')
+                                        .t`You need to wait 1 minute between each sync`;
+                                } else {
+                                    return undefined;
+                                }
+                            })()}
                         >
-                            <Icon
-                                name="arrows-rotate"
-                                size={isNarrow ? 4 : 5}
-                                alt={c('Wallet transactions list').t`Sync`}
-                            />
-                        </CoolDownButton>
+                            <div>
+                                <CoreButton
+                                    icon
+                                    size={isNarrow ? 'small' : 'medium'}
+                                    shape="ghost"
+                                    color="weak"
+                                    className="ml-2 rounded-full bg-weak"
+                                    disabled={isSyncingWalletData || isCoolingDown}
+                                    onClick={() => handleClickSync()}
+                                >
+                                    <Icon
+                                        name="arrows-rotate"
+                                        size={isNarrow ? 4 : 5}
+                                        alt={c('Wallet transactions list').t`Sync`}
+                                    />
+                                </CoreButton>
+                            </div>
+                        </Tooltip>
                         <CoreButton
                             icon
                             size={isNarrow ? 'small' : 'medium'}
