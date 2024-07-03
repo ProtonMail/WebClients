@@ -50,7 +50,7 @@ import { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import { DocSizeTracker } from './SizeTracker'
 import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
-import { DocParticipantTracker } from './DocParticipantTracker'
+import { DocParticipantTracker, ParticipantTrackerEvent } from './DocParticipantTracker'
 
 /**
  * @TODO DRVDOC-802
@@ -110,6 +110,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     eventBus.addEventHandler(this, WebsocketConnectionEvent.EventMessage)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.AckStatusChange)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync)
+    eventBus.addEventHandler(this, ParticipantTrackerEvent.DocumentLimitBreached)
+    eventBus.addEventHandler(this, ParticipantTrackerEvent.DocumentLimitUnbreached)
   }
 
   public get role(): DocumentRole {
@@ -118,6 +120,14 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     return this.entitlements.role
+  }
+
+  handleParticipationLimitReachedEvent(): void {
+    this.reloadEditingLockedState()
+  }
+
+  handleParticipationLimitUnreachedEvent(): void {
+    this.reloadEditingLockedState()
   }
 
   handleWebsocketConnectingEvent(): void {
@@ -801,8 +811,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   async handleAwarenessStateUpdate(states: UserState[]): Promise<void> {
     this.participantTracker.updateParticipantsFromUserStates(states)
-
-    this.reloadEditingLockedState()
 
     this.eventBus.publish<DocsAwarenessStateChangeData>({
       type: DocAwarenessEvent.AwarenessStateChange,
