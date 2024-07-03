@@ -211,31 +211,34 @@ export function App({ nonInteractiveMode = false }: Props) {
   )
 
   const createInitialDocState = useCallback(() => {
-    const newDocState = new DocState({
-      docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => {
-        bridge
-          .getClientInvoker()
-          .editorRequestsPropagationOfUpdate(message, debugSource)
-          .catch((e: Error) => {
-            void bridge.getClientInvoker().reportError(e)
-          })
-      },
-      handleAwarenessStateUpdate: (states) => {
-        bridge
-          .getClientInvoker()
-          .handleAwarenessStateUpdate(states)
-          .catch((e: Error) => {
-            void bridge.getClientInvoker().reportError(e)
-          })
+    const newDocState = new DocState(
+      {
+        docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => {
+          bridge
+            .getClientInvoker()
+            .editorRequestsPropagationOfUpdate(message, debugSource)
+            .catch((e: Error) => {
+              void bridge.getClientInvoker().reportError(e)
+            })
+        },
+        handleAwarenessStateUpdate: (states) => {
+          bridge
+            .getClientInvoker()
+            .handleAwarenessStateUpdate(states)
+            .catch((e: Error) => {
+              void bridge.getClientInvoker().reportError(e)
+            })
 
-        application.eventBus.publish<DocsAwarenessStateChangeData>({
-          type: DocAwarenessEvent.AwarenessStateChange,
-          payload: {
-            states,
-          },
-        })
+          application.eventBus.publish<DocsAwarenessStateChangeData>({
+            type: DocAwarenessEvent.AwarenessStateChange,
+            payload: {
+              states,
+            },
+          })
+        },
       },
-    })
+      application.logger,
+    )
 
     return newDocState
   }, [application.eventBus, bridge])
