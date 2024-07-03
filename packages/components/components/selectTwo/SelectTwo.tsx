@@ -41,6 +41,7 @@ export interface Props<V> extends SelectProps<V> {
      * example of usage: when there's only one option
      */
     noDropdownCaret?: boolean;
+    dropdownClassName?: string;
 }
 
 const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport } as const;
@@ -64,6 +65,7 @@ const SelectTwo = <V extends any>({
     getSearchableValue,
     renderSelected,
     noDropdownCaret,
+    dropdownClassName,
     ...rest
 }: Props<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -211,7 +213,11 @@ const SelectTwo = <V extends any>({
                 size={size}
                 originalPlacement={originalPlacement}
                 disableDefaultArrowNavigation
-                className={clsx(['select-dropdown', allowOptionToggling && 'select-dropdown--togglable'])}
+                className={clsx([
+                    'select-dropdown',
+                    dropdownClassName,
+                    allowOptionToggling && 'select-dropdown--togglable',
+                ])}
             >
                 <SelectOptions selected={selectedIndexes} onKeyDown={handleKeydown} onChange={handleChange}>
                     {children}
