@@ -164,14 +164,11 @@ export const LobbyContent: FC<Props> = ({
 
                         case AppStatus.SESSION_LOCKED:
                             return (
-                                <div>
-                                    <PinUnlock
-                                        onLoading={setUnlocking}
-                                        onOffline={onOffline}
-                                        offlineEnabled={offlineEnabled}
-                                    />
-                                    {unlocking && <CircleLoader size="small" className="mt-4" />}
-                                </div>
+                                <PinUnlock
+                                    onLoading={setUnlocking}
+                                    onOffline={onOffline}
+                                    offlineEnabled={offlineEnabled}
+                                />
                             );
 
                         case AppStatus.PASSWORD_LOCKED:
