@@ -716,7 +716,7 @@ export const getHasUpdatedInviteData = ({
             // Sanitize to better diff detection
             // `oldvalue` is the original event value so it can contain HTML tags
             // `newValue` is supposed to be already sanitized
-            return stripAllTags(newValue) !== stripAllTags(oldValue);
+            return stripAllTags(newValue).trim() !== stripAllTags(oldValue).trim();
         }
 
         return newValue !== oldValue;
