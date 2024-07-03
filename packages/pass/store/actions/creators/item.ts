@@ -544,6 +544,14 @@ export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-
 export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
     requestId: ({ shareId, itemId }) => secureLinkCreateRequest(shareId, itemId),
     success: { config: { data: true } },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Secure link could not be created.`,
+                error,
+            })({ payload: { error: getErrorMessage(error) } }),
+    },
 });
 
 export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('secure-link::open')({
