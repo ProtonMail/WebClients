@@ -27,8 +27,7 @@ export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ className, t
         <div
             className={clsx(
                 'fixed bottom-custom right-custom rounded-xl overflow-hidden',
-                !showModal && 'hidden',
-                className
+                showModal ? className : 'hidden'
             )}
             style={{ '--bottom-custom': '2rem', '--right-custom': '2rem' }}
         >
