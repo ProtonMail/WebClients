@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getIsAddressExternal } from '@proton/shared/lib/helpers/address';
+import { unescape } from '@proton/shared/lib/sanitize/escape';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
@@ -712,14 +713,13 @@ export const getHasUpdatedInviteData = ({
         const newValue = getSupportedStringValue(newVevent[key] as VcalStringProperty);
         const oldValue = getSupportedStringValue(oldVevent[key] as VcalStringProperty);
 
-        if (newValue && oldValue) {
-            // Sanitize to better diff detection
-            // `oldvalue` is the original event value so it can contain HTML tags
-            // `newValue` is supposed to be already sanitized
-            return stripAllTags(newValue).trim() !== stripAllTags(oldValue).trim();
-        }
-
-        return newValue !== oldValue;
+        // Sanitize to better diff detection, and unescape characters
+        // `oldvalue` is the original event value, so it can contain HTML tags
+        // `newValue` is supposed to be already sanitized
+        // Always doing the computation because sometimes the new values is undefined, but not the old one
+        const cleanedNewValue = stripAllTags(unescape(newValue || '')).trim();
+        const cleanedOldValue = stripAllTags(unescape(oldValue || '')).trim();
+        return cleanedNewValue !== cleanedOldValue;
     });
 
     const hasUpdatedRrule = hasModifiedRrule ?? !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
