@@ -5,7 +5,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 
-import { convertAmountStr } from '../../utils';
+import { convertAmount, convertAmountStr } from '../../utils';
 
 type ClassNamesProps = {
     [group in string]?: string;
