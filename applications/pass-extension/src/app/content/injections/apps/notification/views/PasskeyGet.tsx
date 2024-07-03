@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/message';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
@@ -14,24 +14,19 @@ import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
-import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import type { SanitizedPublicKeyRequest, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_GET }>;
 
-const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
+const PasskeyGetView: FC<Props> = ({ domain, request, token, passkeys }) => {
     const { onTelemetry } = usePassCore();
     const { postMessage, close } = useIFrameContext();
     const { createNotification } = useNotifications();
-
-    const [passkeys, setPasskeys] = useMountedState<MaybeNull<SelectedPasskey[]>>(null);
-    const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyRequest, [request]);
 
     const authenticate = (passkey: SelectedPasskey) => {
         sendMessage
@@ -69,24 +64,10 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
     };
 
     useEffect(() => {
-        const run = async () => {
-            const response = await sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.PASSKEY_QUERY,
-                    payload: { domain, credentialIds: (publicKey.allowCredentials ?? []).map(prop('id')) },
-                })
-            );
-
-            setPasskeys(response.type === 'success' ? response.passkeys : []);
-            onTelemetry(TelemetryEventName.PasskeysSuggestionsDisplay, {}, {});
-        };
-
-        run().catch(close);
+        onTelemetry(TelemetryEventName.PasskeysSuggestionsDisplay, {}, {});
     }, [token]);
 
-    if (!passkeys) return null;
-
-    return (passkeys?.length ?? 0) > 0 ? (
+    return (
         <Scroll>
             {passkeys.map((passkey, idx) => (
                 <ListItem
@@ -100,14 +81,6 @@ const PasskeyGetView: FC<Props> = ({ domain, request, token }) => {
                 />
             ))}
         </Scroll>
-    ) : (
-        <Card className="flex flex-auto text-sm" type="primary">
-            <div className="flex flex-column justify-center items-center gap-2 mb-2">
-                <Icon name="pass-passkey" size={6} />
-                <span className="text-center block max-w-2/3">{c('Warning')
-                    .t`No passkeys found. Save your passkeys in ${PASS_APP_NAME} to sign-in to ${domain}.`}</span>
-            </div>
-        </Card>
     );
 };
 
