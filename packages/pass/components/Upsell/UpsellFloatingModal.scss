@@ -1,0 +1,18 @@
+.pass-upsell-floating-modal {
+	&--header {
+		background-color: var(--upsell-modal-background-color);
+	}
+
+	&--content {
+		background-color: var(--primary-contrast);
+	}
+
+	&--label {
+		background-color: var(--upsell-modal-badge-background-color);
+		color: var(--upsell-modal-badge-color);
+	}
+
+	&--button {
+		color: var(--primary-contrast) !important;
+	}
+}

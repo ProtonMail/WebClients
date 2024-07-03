@@ -42,6 +42,10 @@ import {
     itemsUsedSync,
     resolveAddressMonitor,
     restoreTrashProgress,
+    secureLinkCreate,
+    secureLinkRemove,
+    secureLinksGet,
+    secureLinksRemoveInactive,
     setItemFlags,
     shareDeleteSync,
     shareLeaveSuccess,
@@ -55,8 +59,16 @@ import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/enhancers
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
-import type { IndexedByShareIdAndItemId, ItemType, RequiredProps } from '@proton/pass/types';
-import { ContentFormatVersion, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
+import {
+    ContentFormatVersion,
+    type IndexedByShareIdAndItemId,
+    type ItemRevision,
+    ItemState,
+    type ItemType,
+    type RequiredProps,
+    type SecureLink,
+    type UniqueItem,
+} from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -410,6 +422,37 @@ const draftsReducer: Reducer<Draft[]> = (state = [], action) => {
     return state;
 };
 
+const secureLinksReducer: Reducer<IndexedByShareIdAndItemId<SecureLink[]>> = (state = {}, action) => {
+    if (or(secureLinksGet.success.match, secureLinksRemoveInactive.success.match)(action)) {
+        return action.payload.reduce<IndexedByShareIdAndItemId<SecureLink[]>>((acc, link) => {
+            const { shareId, itemId } = link;
+            const secureLink = acc[shareId]?.[itemId];
+
+            if (!secureLink) acc[shareId] = { ...(acc[shareId] ?? {}), [itemId]: [link] };
+            else secureLink.push(link);
+
+            return acc;
+        }, {});
+    }
+
+    if (secureLinkCreate.success.match(action)) {
+        const secureLink = action.payload;
+        const { shareId, itemId } = secureLink;
+        const links = state?.[shareId]?.[itemId] ?? [];
+
+        return partialMerge(state, { [shareId]: { [itemId]: links.concat(secureLink) } });
+    }
+
+    if (secureLinkRemove.success.match(action)) {
+        const { shareId, itemId, linkId } = action.payload;
+        const links = state[shareId][itemId].filter((link) => link.linkId !== linkId);
+
+        return partialMerge(state, { [shareId]: { [itemId]: links } });
+    }
+
+    return state;
+};
+
 export type ItemsState = {
     byShareId: WrappedOptimisticState<ItemsByShareId>;
     byOptimisticId: ItemsByOptimisticId;
@@ -420,4 +463,5 @@ export default combineOptimisticReducers({
     byShareId: withOptimisticItemsByShareId.reducer,
     byOptimisticId: itemsByOptimisticId,
     drafts: draftsReducer,
+    secureLinks: secureLinksReducer,
 });

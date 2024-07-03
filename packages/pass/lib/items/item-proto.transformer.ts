@@ -49,7 +49,7 @@ const protobufToCreditCardContent = (creditCard: ItemCreditCard): UnsafeItem<'cr
     expirationDate: creditCard.expirationDate,
 });
 
-const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
+export const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
     const { platformSpecific, metadata, content: itemContent } = item;
 
     const base = {

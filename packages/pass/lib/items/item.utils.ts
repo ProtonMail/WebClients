@@ -2,16 +2,16 @@ import { c } from 'ttag';
 
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import type { Draft } from '@proton/pass/store/reducers';
-import type {
-    ItemRevision,
-    ItemRevisionID,
-    ItemSortFilter,
-    ItemType,
-    LoginItem,
-    MaybeNull,
-    SafeLoginItem,
-    SelectedItem,
-    UniqueItem,
+import {
+    type ItemRevision,
+    type ItemRevisionID,
+    type ItemSortFilter,
+    type ItemType,
+    type LoginItem,
+    type MaybeNull,
+    type SafeLoginItem,
+    type SelectedItem,
+    type UniqueItem,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';

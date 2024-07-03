@@ -1,7 +1,7 @@
 import { type FC, type MouseEvent, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
@@ -13,6 +13,7 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -83,13 +84,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
 
             <MoreInfoDropdown
                 info={[
-                    {
-                        label: c('Label').t`Modified`,
-                        values: [
-                            c('Info').ngettext(msgid`${modifiedCount} time`, `${modifiedCount} times`, modifiedCount),
-                            epochToDateTime(modifyTime),
-                        ],
-                    },
+                    { label: c('Label').t`Modified`, values: [getOccurrenceString(modifiedCount)] },
                     { label: c('Label').t`Created`, values: [epochToDateTime(createTime)] },
                 ]}
             />

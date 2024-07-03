@@ -12,10 +12,11 @@ import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/components/Navigation/routing';
+import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';
 import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
-import { getItemActionId } from '@proton/pass/lib/items/item.utils';
+import { getItemActionId, getItemKey } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreationDismiss,
     itemCreationIntent,
@@ -51,6 +52,7 @@ export const ItemView: FC = () => {
     const dispatch = useDispatch();
     const { shareId, itemId } = useParams<SelectedItem>();
     const [inviteOpen, setInviteOpen] = useState(false);
+    const [openSecureLinkModal, setOpenSecureLinkModal] = useState(false);
 
     const optimisticItemId = getItemActionId({ itemId, shareId });
     const optimisticResolved = useSelector(selectIsOptimisticId(itemId));
@@ -83,6 +85,7 @@ export const ItemView: FC = () => {
     const handleRestore = () => itemActions.restore(item);
     const handleDelete = () => itemActions.delete(item);
     const handleInviteClick = () => setInviteOpen(true);
+    const handleSecureLink = () => setOpenSecureLinkModal(true);
     const handleVaultManage = () => inviteContext.manageAccess(shareId);
 
     const handleCreateSharedVault = () => {
@@ -133,6 +136,7 @@ export const ItemView: FC = () => {
                 handlePinClick={handlePinClick}
                 handleRestoreClick={handleRestore}
                 handleRetryClick={handleRetry}
+                handleSecureLinkClick={handleSecureLink}
                 handleToggleFlagsClick={handleToggleFlags}
             />
 
@@ -146,6 +150,16 @@ export const ItemView: FC = () => {
                 handleShareVaultClick={handleShareVaultClick}
                 handleCreateSharedVaultClick={handleCreateSharedVault}
             />
+
+            {openSecureLinkModal && (
+                <SecureLinkModal
+                    key={getItemKey(item)}
+                    shareId={shareId}
+                    itemId={itemId}
+                    onClose={() => setOpenSecureLinkModal(false)}
+                    open
+                />
+            )}
         </>
     );
 };

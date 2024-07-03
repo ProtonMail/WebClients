@@ -14,6 +14,11 @@ import {
     itemsBulkMoveRequest,
     itemsBulkRestoreRequest,
     itemsBulkTrashRequest,
+    secureLinkCreateRequest,
+    secureLinkOpenRequest,
+    secureLinkRemoveRequest,
+    secureLinksGetRequest,
+    secureLinksRemoveInactiveRequest,
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
@@ -23,6 +28,7 @@ import {
     withRequestProgress,
     withRequestSuccess,
 } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
     BatchItemRevisionIDs,
     BatchItemRevisions,
@@ -32,9 +38,15 @@ import type {
     ItemRevision,
     ItemRevisionsIntent,
     ItemRevisionsSuccess,
+    SecureLink,
+    SecureLinkCreationDTO,
+    SecureLinkDeleteDTO,
+    SecureLinkItem,
+    SecureLinkQuery,
     SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
@@ -524,3 +536,81 @@ export const itemHistoryFailure = createAction(
         })({ payload: {}, error })
     )
 );
+
+export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-link::get')({
+    requestId: secureLinksGetRequest,
+});
+
+export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
+    requestId: ({ shareId, itemId }) => secureLinkCreateRequest(shareId, itemId),
+    success: { config: { data: true } },
+});
+
+export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('secure-link::open')({
+    requestId: ({ token }) => secureLinkOpenRequest(token),
+    success: { config: { data: true } },
+    failure: {
+        config: { data: true },
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Secure link could not be opened.`,
+                error,
+            })({ payload: { error: getErrorMessage(error) } }),
+    },
+});
+
+export const secureLinkRemove = requestActionsFactory<SecureLinkDeleteDTO, SecureLinkDeleteDTO>('secure-link::remove')({
+    requestId: ({ shareId, itemId }) => secureLinkRemoveRequest(shareId, itemId),
+    intent: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Removing secure link...`,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`The secure link has been removed`,
+            })({ payload }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error')
+                    .t`There was an error while removing the secure link. Please try again in a few minutes.`,
+                error,
+            })({ payload: null }),
+    },
+});
+
+export const secureLinksRemoveInactive = requestActionsFactory<void, SecureLink[]>('secure-links::remove::inactive')({
+    requestId: secureLinksRemoveInactiveRequest,
+    intent: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Removing all inactive secure links...`,
+            })({ payload }),
+    },
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`All inactive secure links were removed`,
+            })({ payload }),
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Inactive secure links could not be removed.`,
+                error,
+            })({ payload: null }),
+    },
+});

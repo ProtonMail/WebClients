@@ -2,7 +2,6 @@ import { put, select } from 'redux-saga/effects';
 
 import { decryptCache } from '@proton/pass/lib/cache/decrypt';
 import { getCacheKey } from '@proton/pass/lib/cache/keys';
-import { DESKTOP_BUILD } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getOrganization } from '@proton/pass/lib/organization/organization.requests';
 import { sanitizeBetaSetting } from '@proton/pass/lib/settings/beta';

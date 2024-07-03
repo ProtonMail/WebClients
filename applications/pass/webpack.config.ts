@@ -32,7 +32,9 @@ const result = (env: any): webpack.Configuration => {
     config.plugins?.push(
         new webpack.DefinePlugin({
             BUILD_TARGET: JSON.stringify('web'),
+            DESKTOP_BUILD: false,
             ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),
+            EXTENSION_BUILD: false,
             OFFLINE_SUPPORTED: true,
         })
     );

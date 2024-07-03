@@ -379,6 +379,33 @@ export const createPassCrypto = (): PassCryptoWorker => {
             });
         },
 
+        async createSecureLink({ shareId, latestItemKey }) {
+            assertHydrated(context);
+
+            const vaultKey = getShareManager(shareId).getVaultKey(latestItemKey.KeyRotation);
+            const itemKey = await processes.openItemKey({ encryptedItemKey: latestItemKey, vaultKey });
+            return processes.createSecureLink({ itemKey, vaultKey });
+        },
+
+        async openSecureLink({ linkKey, publicLinkContent }) {
+            if (!publicLinkContent.ItemKey || !publicLinkContent.Contents) {
+                throw new Error('Missing data when retrieving secure link content');
+            }
+
+            return processes.openSecureLink({
+                encryptedItemKey: publicLinkContent.ItemKey,
+                content: publicLinkContent.Contents,
+                linkKey,
+            });
+        },
+
+        async openLinkKey({ encryptedLinkKey, linkKeyShareKeyRotation, shareId }) {
+            assertHydrated(context);
+
+            const vaultKey = getShareManager(shareId).getVaultKey(linkKeyShareKeyRotation);
+            return processes.openLinkKey({ encryptedLinkKey, shareKey: vaultKey.key });
+        },
+
         serialize: () => ({
             shareManagers: [...context.shareManagers.entries()].map(([shareId, shareManager]) => [
                 shareId,

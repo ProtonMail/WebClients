@@ -62,7 +62,7 @@ export const getMockState = (): State => {
     const mockState = rootReducer(undefined, { type: '__TEST_INIT__' });
     mockState.shares['test-share-id'] = mockShare;
     mockState.items.byShareId[mockShareId] = { [mockItemId]: getMockItem() };
-    mockState.user.features = { PassUsernameSplit: true };
+    mockState.user.features = { PassUsernameSplit: true, PassPublicLinkV1: true };
 
     /* clone deep to avoid referential equalities
      * with regards to selector memoisation in tests */
