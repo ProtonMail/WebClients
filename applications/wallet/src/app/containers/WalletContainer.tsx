@@ -9,7 +9,7 @@ import { useLoading } from '@proton/hooks/index';
 import clsx from '@proton/utils/clsx';
 import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 
-import { CoreButton } from '../atoms';
+import { Button, CoreButton } from '../atoms';
 import { LayoutViewLoader } from '../atoms/LayoutViewLoader';
 import { Balance } from '../components/Balance';
 import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
@@ -112,13 +112,22 @@ export const WalletContainer = () => {
                             </CoreButton>
                         </div>
 
-                        <CoreButton
-                            shape="underline"
+                        <Button
+                            size="small"
+                            shape="ghost"
                             color="norm"
+                            className="my-2"
                             onClick={() => {
                                 openDrawer({ kind: 'discover', wallet, theme });
                             }}
-                        >{c('Wallet header').t`Secure your wallet`}</CoreButton>
+                        >
+                            {c('Wallet header').t`Secure your wallet`}
+                            <Icon
+                                alt={c('Wallet header').t`Secure your wallet`}
+                                name="chevron-right"
+                                className="ml-2"
+                            />
+                        </Button>
                     </div>
 
                     {/* Balance */}
