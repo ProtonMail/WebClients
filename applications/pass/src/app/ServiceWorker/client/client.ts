@@ -81,7 +81,7 @@ export const createServiceWorkerClient = (clientID: string): ServiceWorkerClient
         },
 
         send: (data, transfer) => {
-            const message: WithOrigin<ServiceWorkerMessage> = { ...data, origin };
+            const message: WithOrigin<ServiceWorkerMessage> = { ...data, origin: clientID };
             navigator.serviceWorker.controller?.postMessage(message, { transfer });
         },
 
