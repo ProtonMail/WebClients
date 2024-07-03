@@ -20,6 +20,7 @@ import { isCellHeaderColumn } from './TableUtils/isCellHeaderColumn'
 import { isCellHeaderRow } from './TableUtils/isCellHeaderRow'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import debounce from '@proton/utils/debounce'
+import { getNodeLatestSafe } from '../../Utils/getNodeLatestSafe'
 
 type MenuPosition = {
   x: number
@@ -113,7 +114,11 @@ export function TableMenu() {
 
     return editor.registerUpdateListener(({ editorState }) => {
       editorState.read(() => {
-        const table = tableNode.getLatest()
+        const table = getNodeLatestSafe(tableNode)
+        if (!table) {
+          setTableNode(null)
+          return
+        }
         const rows = table.getChildren<TableRowNode>()
         let tableHasHeaderRow = false
         let tableHasHeaderColumn = false
