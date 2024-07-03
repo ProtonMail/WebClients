@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
+import { DropdownSizeUnit } from '@proton/components/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -109,6 +110,10 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                     void onChangeFiatCurrency(value.Symbol);
                 }}
                 options={currencies ?? []}
+                size={{
+                    width: DropdownSizeUnit.Anchor,
+                    maxWidth: DropdownSizeUnit.Viewport,
+                }}
             />
 
             <hr className="my-0" />

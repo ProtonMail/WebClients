@@ -50,7 +50,7 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
         };
 
         void run();
-    }, [btcAddress, quote.FiatAmount, quote.FiatCurrencySymbol, quote.PaymentMethod, quote.provider, walletApi]);
+    }, [btcAddress, quote, quote.FiatAmount, quote.FiatCurrencySymbol, quote.PaymentMethod, quote.provider, walletApi]);
 
     const [rampInstanceSdk, checkoutContent] = useMemo(() => {
         if (quote.provider === 'MoonPay') {
@@ -61,7 +61,7 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
                         // data
                         baseCurrencyCode={quote.FiatCurrencySymbol.toLowerCase()}
                         baseCurrencyAmount={quote.FiatAmount}
-                        // walletAddress={btcAddress}
+                        walletAddress={btcAddress}
                         defaultCurrencyCode={DEFAULT_DISPLAY_BITCOIN_UNIT.toLowerCase()}
                         // style
                         variant="overlay"

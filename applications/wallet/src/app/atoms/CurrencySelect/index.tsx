@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import generateUID from '@proton/atoms/generateUID';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { DropdownSize, DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 
 import { SearchableSelect } from '../Select';
@@ -29,6 +29,7 @@ interface Props<S extends string, T extends { Symbol: S; Name: string }> {
 
     dense?: boolean;
     containerClassName?: string;
+    size?: DropdownSize;
 }
 
 export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: string }>({
@@ -43,6 +44,7 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
     placeholder,
     dense,
     containerClassName,
+    size,
 }: Props<S, T>) => {
     const [selectedCurrency, setSelectedCurrency] = useState<S | undefined>(value);
 
@@ -123,10 +125,7 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
                     </div>
                 );
             }}
-            size={{
-                width: DropdownSizeUnit.Dynamic,
-                maxWidth: DropdownSizeUnit.Viewport,
-            }}
+            size={size ?? { width: DropdownSizeUnit.Static, maxWidth: DropdownSizeUnit.Viewport }}
         >
             {optionsComponents}
         </SearchableSelect>

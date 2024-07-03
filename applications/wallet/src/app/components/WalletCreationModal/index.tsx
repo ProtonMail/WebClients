@@ -8,6 +8,7 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
+    DropdownSizeUnit,
     Icon,
     ModalOwnProps,
     PasswordInputTwo,
@@ -99,6 +100,10 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                                 setSelectedCurrency(value.Symbol);
                             }}
                             options={currencies ?? []}
+                            size={{
+                                width: DropdownSizeUnit.Anchor,
+                                maxWidth: DropdownSizeUnit.Viewport,
+                            }}
                         />
                     </div>
                 </div>
