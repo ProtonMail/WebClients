@@ -18,7 +18,12 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { AccountWithChainData } from '../../types';
-import { convertAmount, getAccountBalance, getAccountWithChainDataFromManyWallets, getLabelByUnit } from '../../utils';
+import {
+    convertAmountStr,
+    getAccountBalance,
+    getAccountWithChainDataFromManyWallets,
+    getLabelByUnit,
+} from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
 
 type ValidAccountChecker = (
@@ -47,7 +52,7 @@ const WalletAccountBalance = ({ walletAccount, balance }: { walletAccount: WasmA
             </div>
             {(loadingExchangeRate || exchangeRate) && (
                 <div className={clsx('block ml-auto color-hint flex flex-row flex-nowrap justify-end')}>
-                    {convertAmount(balance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    {convertAmountStr(balance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                     {getLabelByUnit(settings.BitcoinUnit)}
                 </div>
             )}

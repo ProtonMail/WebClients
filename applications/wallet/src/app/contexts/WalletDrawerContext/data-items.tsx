@@ -13,12 +13,11 @@ import clsx from '@proton/utils/clsx';
 import { ButtonLike, CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
-import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants';
-import { COMPUTE_BITCOIN_UNIT } from '../../constants';
+import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK, COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import {
-    convertAmount,
+    convertAmountStr,
     getFormattedPeriodSinceConfirmation,
     getLabelByUnit,
     getTransactionRecipientHumanReadableName,
@@ -77,7 +76,7 @@ export const RecipientsDataItem = ({
                                                     'block ml-auto color-hint flex flex-row flex-nowrap justify-end'
                                                 )}
                                             >
-                                                {convertAmount(
+                                                {convertAmountStr(
                                                     output.value,
                                                     COMPUTE_BITCOIN_UNIT,
                                                     settings.BitcoinUnit
@@ -260,7 +259,7 @@ export const AmountDataItem = ({
             </div>
             {exchangeRate && (
                 <div className="color-weak">
-                    {convertAmount(amount ?? 0, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    {convertAmountStr(amount ?? 0, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                     {getLabelByUnit(settings.BitcoinUnit)}
                 </div>
             )}

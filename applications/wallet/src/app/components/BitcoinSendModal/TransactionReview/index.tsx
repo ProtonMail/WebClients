@@ -17,7 +17,7 @@ import { COMPUTE_BITCOIN_UNIT } from '../../../constants';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
-import { convertAmount, getLabelByUnit, isExchangeRate } from '../../../utils';
+import { convertAmountStr, getLabelByUnit, isExchangeRate } from '../../../utils';
 import { EmailListItem } from '../../EmailOrBitcoinAddressInput';
 import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { TextAreaModal } from '../../TextAreaModal';
@@ -153,7 +153,7 @@ export const TransactionReview = ({
                     </div>
                     {isExchangeRate(unit) && (
                         <span className="block color-weak">
-                            {convertAmount(totalSentAmount, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                            {convertAmountStr(totalSentAmount, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                             {getLabelByUnit(settings.BitcoinUnit)}
                         </span>
                     )}

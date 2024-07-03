@@ -17,7 +17,7 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
-import { convertAmount, getLabelByUnit } from '../../utils';
+import { convertAmountStr, getLabelByUnit } from '../../utils';
 import { useBalance } from './useBalance';
 
 import './Balance.scss';
@@ -95,7 +95,7 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                             syncingData?.syncing && !totalBalance && 'skeleton-loader'
                         )}
                     >
-                        {convertAmount(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                        {convertAmountStr(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                         {getLabelByUnit(settings.BitcoinUnit)}
                     </div>
                 )}
