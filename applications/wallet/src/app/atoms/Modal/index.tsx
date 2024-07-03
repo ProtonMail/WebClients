@@ -11,7 +11,7 @@ interface Props extends ModalOwnProps {
     title?: string;
     titleClassName?: string;
     header?: ReactNode;
-    subline?: string;
+    subline?: string | JSX.Element;
     className?: string;
     key?: string;
     hasClose?: boolean;
@@ -33,7 +33,7 @@ export const Modal = ({
                 <ModalTwoHeader
                     title={title}
                     titleClassName={clsx('text-4xl mx-auto text-center', titleClassName)}
-                    subline={subline && <p className="text-center mx-12">{subline}</p>}
+                    subline={subline && <p className="text-center">{subline}</p>}
                     closeButtonProps={{ shape: 'solid', className: 'shrink-0 rounded-full bg-norm' }}
                     hasClose={hasClose}
                 />

@@ -3,10 +3,17 @@ import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
-import { Icon, Info, ModalOwnProps } from '@proton/components/components';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Icon,
+    Info,
+    ModalOwnProps,
+} from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import {
     IWasmApiWalletData,
     encryptWalletDataWithWalletKey,
@@ -37,7 +44,6 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
     const [selectedIndex, setSelectedIndex] = useState<string | number>(DEFAULT_INDEX);
     const [inputIndex, setInputIndex] = useState<number>(DEFAULT_INDEX);
 
-    const [showAdvancedSettings, setShowAdvancedSettings] = useState(false);
     const [loading, withLoading] = useLoading();
     const { network } = useBitcoinBlockchainContext();
     const { createNotification } = useNotifications();
@@ -109,8 +115,15 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
 
     return (
         <Modal
-            title={c('Wallet Account').t`Add account`}
-            subline={`Accounts in an on-chain Bitcoin wallet help distinguish various purposes, enhancing privacy and organization. \nYou can add accounts you want to monitor transactions and balances to see them in the ${WALLET_APP_NAME}.`}
+            title={c('Wallet Account').t`Add wallet account`}
+            subline={
+                <div className="flex flex-columns items-center gap-2">
+                    <p className="my-0">{c('Wallet Account')
+                        .t`Create multiple wallet accounts to separate your financial activities for better privacy and organization.`}</p>
+                    <p className="my-0">{c('Wallet Account')
+                        .t`If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.`}</p>
+                </div>
+            }
             enableCloseWhenClickOutside
             className={theme}
             {...modalProps}
@@ -128,94 +141,107 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                 />
             </div>
 
-            {showAdvancedSettings ? (
-                <>
-                    <div className="flex flex-row mt-4">
-                        <Select
-                            label={
-                                <div className="flex flex-row">
-                                    <span className="block mr-1">{c('Wallet Account').t`Script Type`}</span>
-                                    <Info
-                                        title={c('Wallet Account')
-                                            .t`Script type used in account. This will have an impact on account derivation path.`}
-                                    />
-                                </div>
-                            }
-                            id="account-script-type-selector"
-                            aria-describedby="label-account-script-type"
-                            value={selectedScriptType}
-                            disabled={loading}
-                            onChange={(event) => {
-                                setSelectedScriptType(event.value);
-                            }}
-                            options={SCRIPT_TYPES.map((opt) => ({
-                                label: getLabelByScriptType(opt as WasmScriptType),
-                                value: opt,
-                                id: opt.toString(),
-                            }))}
-                        />
-                    </div>
+            <Collapsible className="my-6">
+                <CollapsibleHeader
+                    suffix={
+                        <CollapsibleHeaderIconButton>
+                            <Icon name="chevron-down" />
+                        </CollapsibleHeaderIconButton>
+                    }
+                >{c('Wallet account').t`View advanced settings`}</CollapsibleHeader>
+                <CollapsibleContent>
+                    <div className="flex flex-column items-center">
+                        <h3 className="text-center mt-6 mb-2 text-semibold">{c('Wallet account').t`Address Type`}</h3>
+                        <p className="mt-2 mb-6 color-weak text-center">{c('Wallet account')
+                            .t`We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.`}</p>
 
-                    <div className="flex flex-row mt-2">
-                        <div className="grow">
-                            {/* TODO: filter out already added accounts */}
+                        <div className="flex flex-row mt-4 w-full">
                             <Select
                                 label={
                                     <div className="flex flex-row">
-                                        <span className="block mr-1">{c('Wallet Account').t`Index`}</span>
-                                        <Info title={c('Wallet Account').t`Index of the account to add`} />
+                                        <span className="block mr-1">{c('Wallet Account').t`Script Type`}</span>
+                                        <Info
+                                            title={c('Wallet Account')
+                                                .t`Script type used in account. This will have an impact on account derivation path.`}
+                                        />
                                     </div>
                                 }
-                                id="account-index-selector"
-                                aria-describedby="label-account-index"
-                                value={BASE_INDEX_OPTIONS.includes(selectedIndex) ? selectedIndex : 'custom'}
+                                id="account-script-type-selector"
+                                aria-describedby="label-account-script-type"
+                                value={selectedScriptType}
                                 disabled={loading}
                                 onChange={(event) => {
-                                    setSelectedIndex(event.value);
+                                    setSelectedScriptType(event.value);
                                 }}
-                                options={BASE_INDEX_OPTIONS.map((index) => ({
-                                    label: index.toString(),
-                                    value: index,
-                                    id: index.toString(),
-                                    disabled: indexesByScriptType[selectedScriptType]?.has(Number(index)),
+                                options={SCRIPT_TYPES.map((opt) => ({
+                                    label: getLabelByScriptType(opt as WasmScriptType),
+                                    value: opt,
+                                    id: opt.toString(),
                                 }))}
                             />
                         </div>
 
-                        {!Number.isInteger(selectedIndex) && (
-                            <div className="ml-2">
-                                <Input
-                                    label={c('Wallet Account').t`Custom account index`}
-                                    id="custom-account-index-input"
-                                    placeholder={c('Wallet Account').t`Custom index`}
-                                    value={inputIndex}
-                                    min={0}
-                                    type="number"
-                                    disabled={loading}
-                                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                                        setInputIndex(Number(event.target.value));
-                                    }}
-                                    error={
-                                        indexesByScriptType[selectedScriptType]?.has(inputIndex) &&
-                                        c('Wallet account').t`This account is already created`
+                        <CoreButton className="my-3 mr-auto" shape="underline" color="norm">{c('Wallet account')
+                            .t`Learn more`}</CoreButton>
+                    </div>
+
+                    <div className="flex flex-column items-center">
+                        <h3 className="text-center mt-6 mb-2 text-semibold">{c('Wallet account').t`Account Index`}</h3>
+                        <p className="mt-2 mb-6 color-weak text-center">{c('Wallet account')
+                            .t`We default to the next unused index. You can change this to recover or to skip a previous account.`}</p>
+
+                        <div className="flex flex-row mt-2 w-full">
+                            <div className="grow">
+                                <Select
+                                    label={
+                                        <div className="flex flex-row">
+                                            <span className="block mr-1">{c('Wallet Account').t`Index`}</span>
+                                            <Info title={c('Wallet Account').t`Index of the account to add`} />
+                                        </div>
                                     }
+                                    id="account-index-selector"
+                                    aria-describedby="label-account-index"
+                                    value={BASE_INDEX_OPTIONS.includes(selectedIndex) ? selectedIndex : 'custom'}
+                                    disabled={loading}
+                                    onChange={(event) => {
+                                        setSelectedIndex(event.value);
+                                    }}
+                                    options={BASE_INDEX_OPTIONS.map((index) => ({
+                                        label: index.toString(),
+                                        value: index,
+                                        id: index.toString(),
+                                        disabled: indexesByScriptType[selectedScriptType]?.has(Number(index)),
+                                    }))}
                                 />
                             </div>
-                        )}
+
+                            {!Number.isInteger(selectedIndex) && (
+                                <div className="ml-2">
+                                    <Input
+                                        label={c('Wallet Account').t`Custom account index`}
+                                        id="custom-account-index-input"
+                                        placeholder={c('Wallet Account').t`Custom index`}
+                                        value={inputIndex}
+                                        min={0}
+                                        type="number"
+                                        disabled={loading}
+                                        onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                                            setInputIndex(Number(event.target.value));
+                                        }}
+                                        error={
+                                            indexesByScriptType[selectedScriptType]?.has(inputIndex) &&
+                                            c('Wallet account').t`This account is already created`
+                                        }
+                                    />
+                                </div>
+                            )}
+                        </div>
+
+                        <CoreButton className="my-3 mr-auto" shape="underline" color="norm">{c('Wallet account')
+                            .t`Learn more`}</CoreButton>
                     </div>
-                </>
-            ) : (
-                <div>
-                    <CoreButton
-                        shape="ghost"
-                        size="small"
-                        className="color-hint mt-4"
-                        onClick={() => setShowAdvancedSettings(true)}
-                    >
-                        {c('Wallet transaction').t`View advanced settings`} <Icon name="chevron-down" size={3} />
-                    </CoreButton>
-                </div>
-            )}
+                </CollapsibleContent>
+            </Collapsible>
 
             <div className="mt-4 flex flex-col">
                 <Button
