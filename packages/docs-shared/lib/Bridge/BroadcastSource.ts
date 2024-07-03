@@ -5,7 +5,8 @@ export enum BroadcastSource {
   AwarenessWebSocketOpen = 'AwarenessWebSocketOpen',
   AwarenessUpdateHandler = 'AwarenessUpdateHandler',
   HandleDocBeingUpdatedByLexical = 'HandleDocBeingUpdatedByLexical',
-  DocPresenceState = 'DocPresenceState',
+  ExternalCallerRequestingUsToBroadcastOurState = 'ExternalCallerRequestingUsToBroadcastOurState',
   DocumentBufferFlush = 'DocumentBufferFlush',
   RetryingMessagesAfterReconnect = 'RetryingMessagesAfterReconnect',
+  AwarenessInterval = 'AwarenessInterval',
 }
