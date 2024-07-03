@@ -136,8 +136,8 @@
 	&::before {
 		content: '';
 		position: absolute;
-		inset-block: em(-6);
-		inset-inline: em(-6) em(-12);
+		inset-block: em(-6) em(-12);
+		inset-inline: em(-12);
 		z-index: 1;
 	}
 
