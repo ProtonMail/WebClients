@@ -1,7 +1,6 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update";
-import { getConfig } from "../utils/config";
 import {
     IPCInboxClientUpdateMessage,
     IPCInboxGetInfoMessage,
@@ -73,7 +72,7 @@ export const handleIPCCalls = () => {
                 showEndOfTrial();
                 break;
             case "changeView":
-                showView(payload, getConfig().url[payload]);
+                showView(payload);
                 break;
             case "showNotification":
                 showNotification(payload);
