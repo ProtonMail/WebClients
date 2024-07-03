@@ -1,4 +1,4 @@
-const TEN_MINUTES_IN_MILLISECONDS = 10 * 60 * 1000;
+const FIVE_MINUTES_IN_MILLISECONDS = 5 * 60 * 1000;
 
 export enum AvailabilityTypes {
     SENTRY = 'SENTRY',
@@ -16,17 +16,17 @@ export class Availability {
 
     static interval: ReturnType<typeof setInterval>;
 
-    static init = (report: (status: AvailabilityReport) => void, interval: number = TEN_MINUTES_IN_MILLISECONDS) => {
+    static init = (report: (status: AvailabilityReport) => void, interval: number = FIVE_MINUTES_IN_MILLISECONDS) => {
         this.clear();
         this.interval = setInterval(() => {
             const sentry = this.status.get(AvailabilityTypes.SENTRY);
             const error = this.status.get(AvailabilityTypes.ERROR);
             const critical = this.status.get(AvailabilityTypes.CRITICAL);
             report({
-                [AvailabilityTypes.SENTRY]: sentry !== undefined && Date.now() - sentry > TEN_MINUTES_IN_MILLISECONDS,
-                [AvailabilityTypes.ERROR]: error !== undefined && Date.now() - error > TEN_MINUTES_IN_MILLISECONDS,
+                [AvailabilityTypes.SENTRY]: sentry !== undefined && Date.now() - sentry > FIVE_MINUTES_IN_MILLISECONDS,
+                [AvailabilityTypes.ERROR]: error !== undefined && Date.now() - error > FIVE_MINUTES_IN_MILLISECONDS,
                 [AvailabilityTypes.CRITICAL]:
-                    critical !== undefined && Date.now() - critical > TEN_MINUTES_IN_MILLISECONDS,
+                    critical !== undefined && Date.now() - critical > FIVE_MINUTES_IN_MILLISECONDS,
             });
         }, interval);
     };
