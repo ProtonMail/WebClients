@@ -41,7 +41,7 @@ import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectExportData } from '@proton/pass/store/selectors/export';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -52,8 +52,8 @@ import noop from '@proton/utils/noop';
 import { AppGuard } from './AppGuard';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientProvider } from './Context/ClientProvider';
-import type { ServiceWorkerContextValue } from './ServiceWorker/ServiceWorkerProvider';
-import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
+import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/client/ServiceWorkerProvider';
+import type { ServiceWorkerClient } from './ServiceWorker/client/client';
 import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
 import locales from './locales';
@@ -63,7 +63,7 @@ exposePassCrypto(createPassCrypto());
 exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
 sentry({ config: PASS_CONFIG });
 
-export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): PassCoreProviderProps => {
+export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps => {
     const cache = new Map<string, Maybe<string>>();
 
     return {
@@ -129,7 +129,7 @@ export const App = () => (
     <ServiceWorkerProvider>
         <ServiceWorkerContext.Consumer>
             {(sw) => (
-                <PassCoreProvider {...getPassCoreProps(sw)}>
+                <PassCoreProvider {...getPassCoreProps(sw?.client)}>
                     <CompatibilityCheck>
                         <Icons />
                         <ThemeProvider />
