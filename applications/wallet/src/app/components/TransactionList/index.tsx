@@ -60,6 +60,9 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
     const [userKeys] = useUserKeys();
 
     const [transactions, setTransactions] = useState<WasmTransactionDetails[]>([]);
+    // transactions length can be ITEMS_PER_PAGE + 1 if there is another page after current one. We want to cut displayed transactions to ITEMS_PER_PAGE
+    const slicedTransactions = useMemo(() => transactions.slice(0, ITEMS_PER_PAGE), [transactions]);
+
     const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
     const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ transaction: TransactionData }>();
 
@@ -99,34 +102,42 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
     }, [apiWalletData?.Wallet.ID, apiAccount?.ID, handleGoFirst]);
 
     useEffect(() => {
-        if (apiWalletData?.Wallet.ID) {
-            if (apiAccount?.ID) {
-                void getAccountTransactions(
-                    walletsChainData,
-                    apiWalletData.Wallet.ID,
-                    apiAccount.ID,
-                    { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE },
-                    sortOrder
-                ).then((txs) => {
-                    setTransactions(txs);
-                });
+        // We take one more item than page size to check if we should allow user to go on next page
+        const pagination = { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE + 1 };
+        const abortController = new AbortController();
+
+        const run = async () => {
+            if (apiWalletData?.Wallet.ID) {
+                const transactions = await (() => {
+                    if (apiAccount?.ID) {
+                        return getAccountTransactions(
+                            walletsChainData,
+                            apiWalletData.Wallet.ID,
+                            apiAccount.ID,
+                            pagination,
+                            sortOrder
+                        );
+                    } else {
+                        return getWalletTransactions(walletsChainData, apiWalletData.Wallet.ID, pagination, sortOrder);
+                    }
+                })();
+
+                if (!abortController.signal.aborted) {
+                    setTransactions(transactions);
+                }
             } else {
-                void getWalletTransactions(
-                    walletsChainData,
-                    apiWalletData.Wallet.ID,
-                    { skip: currentPage * ITEMS_PER_PAGE, take: ITEMS_PER_PAGE },
-                    sortOrder
-                ).then((txs) => {
-                    setTransactions(txs);
-                });
+                setTransactions([]);
             }
-        } else {
-            setTransactions([]);
-        }
+        };
+
+        void run();
+        return () => {
+            abortController.abort();
+        };
     }, [apiAccount?.ID, apiWalletData.Wallet.ID, currentPage, sortOrder, walletsChainData]);
 
     const { transactionDetails, loadingRecordInit, loadingApiData, handleUpdatedTransaction } = useWalletTransactions({
-        transactions,
+        transactions: slicedTransactions,
         userKeys,
         wallet: apiWalletData,
     });
@@ -159,6 +170,10 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
     );
 
     const transactionsTable = useMemo(() => {
+        const canGoNext = (transactions?.length ?? 0) > ITEMS_PER_PAGE;
+        // We display pagination if we aren't on the first page anymore OR if there are transaction
+        const shouldDisplayPaginator = currentPage > 0 || canGoNext;
+
         if (transactionDetails?.length) {
             const columns: DataColumn<{
                 key: string;
@@ -225,17 +240,21 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
                         </div>
                     </div>
 
-                    <div className="flex flex-row mt-auto shrink-0 justify-end items-center pr-4">
-                        <span className="block mr-4">{c('Wallet Transaction List')
-                            .t`Page ${displayedPageNumber}`}</span>
-
-                        <SimplePaginator
-                            canGoPrev={currentPage > 0}
-                            onNext={handleNext}
-                            canGoNext={!!transactions && transactions.length >= ITEMS_PER_PAGE}
-                            onPrev={handlePrev}
-                        />
-                    </div>
+                    {shouldDisplayPaginator && (
+                        <div className="flex flex-row mt-auto shrink-0 justify-end items-center pr-4">
+                            <>
+                                <span className="block mr-4">{c('Wallet Transaction List')
+                                    .t`Page ${displayedPageNumber}`}</span>
+                                <SimplePaginator
+                                    canGoPrev={currentPage > 0}
+                                    onNext={handleNext}
+                                    canGoNext={canGoNext}
+                                    onPrev={handlePrev}
+                                    disabled={loadingApiData || (isSyncingWalletData ?? false)}
+                                />
+                            </>
+                        </div>
+                    )}
                 </>
             );
         }

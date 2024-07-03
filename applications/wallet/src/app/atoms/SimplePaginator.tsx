@@ -8,14 +8,15 @@ interface Props {
     onNext: () => void;
     canGoPrev: boolean;
     onPrev: () => void;
+    disabled: boolean;
 }
 
-export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev }: Props) => {
+export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled = false }: Props) => {
     return (
         <div className="flex flex-row">
             <Button
                 onClick={() => onPrev()}
-                disabled={!canGoPrev}
+                disabled={!canGoPrev || disabled}
                 icon
                 title={c('Pagination').t`Previous`}
                 size="small"
@@ -25,7 +26,7 @@ export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev }: Props)
             </Button>
             <Button
                 onClick={() => onNext()}
-                disabled={!canGoNext}
+                disabled={!canGoNext || disabled}
                 icon
                 title={c('Pagination').t`Next`}
                 size="small"
