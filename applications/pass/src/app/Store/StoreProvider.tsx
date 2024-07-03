@@ -2,6 +2,10 @@ import { type FC, type PropsWithChildren, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider';
+import { useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
+import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
+import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -28,9 +32,6 @@ import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import noop from '@proton/utils/noop';
 
-import { useAuthService } from '../Context/AuthServiceProvider';
-import { useClientRef } from '../Context/ClientProvider';
-import { type ServiceWorkerMessageHandler, useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { sagaMiddleware, store } from './store';
 
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -106,7 +107,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
             })
         );
 
-        const handleAction: ServiceWorkerMessageHandler<'action'> = ({ action, localID }) => {
+        const handleAction: ServiceWorkerClientMessageHandler<'action'> = ({ action, localID }) => {
             if (clientBooted(client.current.state.status) && authStore.hasSession(localID)) store.dispatch(action);
         };
 
