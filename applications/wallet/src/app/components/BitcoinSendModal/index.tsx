@@ -6,13 +6,12 @@ import { c } from 'ttag';
 import { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount, WasmBitcoinUnit } from '@proton/andromeda';
 import { ModalOwnProps, useModalState, useModalStateWithData } from '@proton/components/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData, toWalletAccountSelectorOptions } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
 import { SubTheme, getAccountBalance, getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
-import { toWalletAccountSelectorOptions } from '../../utils/wallet';
 import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteModal } from '../InviteModal';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
