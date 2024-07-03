@@ -61,12 +61,14 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
             {passkey && <PasskeyContentModal passkey={passkey} onClose={() => setPasskey(null)} open size="small" />}
 
             <FieldsetCluster mode="read" as="div">
-                <ValueControl
-                    clickToCopy
-                    icon={relatedAlias ? 'alias' : iconWithFeatureFlag}
-                    label={relatedAlias ? c('Label').t`Email (alias)` : labelWithFeatureFlag}
-                    value={emailDisplay}
-                />
+                {(emailDisplay || !usernameDisplay) && (
+                    <ValueControl
+                        clickToCopy
+                        icon={relatedAlias ? 'alias' : iconWithFeatureFlag}
+                        label={relatedAlias ? c('Label').t`Email (alias)` : labelWithFeatureFlag}
+                        value={emailDisplay}
+                    />
+                )}
 
                 {usernameDisplay && (
                     <ValueControl clickToCopy icon="user" label={c('Label').t`Username`} value={usernameDisplay} />
