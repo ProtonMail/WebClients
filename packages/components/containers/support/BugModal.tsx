@@ -73,6 +73,7 @@ const getMailOptions = (): OptionItem[] => {
         { type: 'option', value: 'Calendar problem', title: c('Bug category').t`Calendar problem` },
         { type: 'option', value: 'Contacts problem', title: c('Bug category').t`Contacts problem` },
         { type: 'option', value: 'Drive problem', title: c('Bug category').t`Drive problem` },
+        { type: 'option', value: 'Docs problem', title: c('Bug category').t`Docs problem` },
         { type: 'option', value: 'Mail problem', title: c('Bug category').t`Mail problem` },
         { type: 'option', value: 'VPN problem', title: c('Bug category').t`VPN problem`, clientType: CLIENT_TYPES.VPN },
         { type: 'option', value: 'Pass problem', title: c('Bug category').t`Pass problem` },
