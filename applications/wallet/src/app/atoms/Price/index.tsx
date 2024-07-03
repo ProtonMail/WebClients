@@ -5,7 +5,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { COMPUTE_BITCOIN_UNIT } from '../../constants';
-import { convertAmount } from '../../utils';
+import { convertAmount, convertAmountStr } from '../../utils';
 
 type ClassNamesProps = {
     [group in string]?: string;
@@ -193,7 +193,7 @@ export const Price = ({
         );
     }
 
-    const amount = convertAmount(satsAmount, COMPUTE_BITCOIN_UNIT, unit).toString();
+    const amount = convertAmountStr(satsAmount, COMPUTE_BITCOIN_UNIT, unit);
     const currency = unit.toString();
 
     return (
