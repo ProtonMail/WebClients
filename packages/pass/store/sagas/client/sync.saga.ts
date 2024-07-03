@@ -3,6 +3,7 @@ import { call, put, race, select, take } from 'redux-saga/effects';
 import {
     getUserAccessIntent,
     getUserFeaturesIntent,
+    secureLinksGet,
     startEventPolling,
     stateDestroy,
     stopEventPolling,
@@ -31,6 +32,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
         yield put(withRevalidate(getUserAccessIntent(user.ID)));
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
         yield put(withRevalidate(getOrganizationSettingsIntent()));
+        yield put(withRevalidate(secureLinksGet.intent()));
 
         yield put(syncSuccess(yield call(synchronize, payload.type)));
     } catch (e: unknown) {
