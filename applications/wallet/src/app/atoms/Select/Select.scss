@@ -69,4 +69,24 @@
 			}
 		}
 	}
+
+	.dropdown-content {
+		.dropdown-item {
+			margin: 0 0.5rem;
+			border-radius: 0.5rem;
+			overflow: hidden;
+
+			.dropdown-item-button:hover {
+				background-color: var(--interaction-weak-minor-2);
+			}
+
+			&--is-selected,
+			&--is-selected:active,
+			&--is-selected:focus,
+			&--is-selected:hover {
+				color: var(--text-norm);
+				background-color: var(--interaction-weak-major-1);
+			}
+		}
+	}
 }

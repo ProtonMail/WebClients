@@ -34,9 +34,9 @@ export const Select = <V extends unknown>({ options, bordered, containerClassNam
             {prefix}
             <InputField<typeof SelectTwo<V>>
                 as={SelectTwo}
+                dropdownClassName="wallet-select-dropdown"
                 assistContainerClassName="empty:hidden"
                 labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
-                inputContainerClassName="mt-1"
                 originalPlacement="bottom"
                 unstyled
                 {...props}
@@ -76,10 +76,9 @@ export const SearchableSelect = <V extends unknown>({
         >
             <InputField
                 as={CoreSearchableSelect<V>}
-                dropdownClassName={'wallet-select-dropdown'}
+                dropdownClassName="wallet-select-dropdown"
                 assistContainerClassName="empty:hidden"
                 labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
-                inputContainerClassName="mt-1"
                 originalPlacement="bottom"
                 unstyled
                 {...props}

@@ -54,20 +54,20 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
     ]);
 
     const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
-    const wasmAccount = getAccountWithChainDataFromManyWallets(
-        walletsChainData,
-        account?.WalletID,
-        selectedWalletAccount[1]?.ID
-    );
 
     const computeNextIndexToReceive = useComputeNextAddressToReceive(walletsChainData);
 
     const btcAddress = useAsyncValue(
         (async () => {
             if (isWalletAccountSet(selectedWalletAccount)) {
+                const wasmAccount = getAccountWithChainDataFromManyWallets(
+                    walletsChainData,
+                    selectedWalletAccount[1]?.WalletID,
+                    selectedWalletAccount[1]?.ID
+                );
+
                 const index = await computeNextIndexToReceive(selectedWalletAccount[1]);
                 const address = await wasmAccount?.account.getAddress(index);
-
                 return address?.address;
             } else {
                 return null;

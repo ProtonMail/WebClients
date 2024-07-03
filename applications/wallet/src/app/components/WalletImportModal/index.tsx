@@ -8,6 +8,7 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
+    DropdownSizeUnit,
     Icon,
     ModalOwnProps,
     PasswordInputTwo,
@@ -109,6 +110,10 @@ export const WalletImportModal = ({
                                 setSelectedCurrency(value.Symbol);
                             }}
                             options={currencies ?? []}
+                            size={{
+                                width: DropdownSizeUnit.Anchor,
+                                maxWidth: DropdownSizeUnit.Viewport,
+                            }}
                         />
                     </div>
                 </div>

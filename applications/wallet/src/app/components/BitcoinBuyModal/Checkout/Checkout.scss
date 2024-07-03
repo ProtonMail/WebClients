@@ -20,17 +20,10 @@
 	}
 
 	&-iframe {
-		block-size: 100%;
-		max-block-size: 66rem;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		inline-size: 100%;
-		max-inline-size: 45rem;
-
-		border-radius: 20px;
-
-		-ms-overflow-style: none !important;
-		scrollbar-width: none !important;
-		&::-webkit-scrollbar {
-			display: none !important;
-		}
+		block-size: 100%;
 	}
 }
