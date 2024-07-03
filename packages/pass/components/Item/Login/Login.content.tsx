@@ -26,10 +26,10 @@ import { PassFeature } from '@proton/pass/types/api/features';
 
 import { PasskeyContentModal } from '../Passkey/Passkey.modal';
 
-export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem }) => {
+export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem = false }) => {
     const { data: item, shareId, itemId } = revision;
     const [passkey, setPasskey] = useState<MaybeNull<SanitizedPasskey>>(null);
-    const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
+    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit) || secureLinkItem;
 
     const {
         metadata: { note },
@@ -40,9 +40,9 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
     const passwordStrength = usePasswordStrength(password);
-    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername });
-    const iconWithFeatureFlag = usernameSplitEnabled ? 'envelope' : 'user';
-    const labelWithFeatureFlag = usernameSplitEnabled ? c('Label').t`Email` : c('Label').t`Username`;
+    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername }, usernameSplit);
+    const iconWithFeatureFlag = usernameSplit ? 'envelope' : 'user';
+    const labelWithFeatureFlag = usernameSplit ? c('Label').t`Email` : c('Label').t`Username`;
 
     return (
         <>
