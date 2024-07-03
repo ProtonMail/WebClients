@@ -1,2 +1,5 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow:
+Sitemap: https://proton.me/sitemap.xml
+Host: proton.me
