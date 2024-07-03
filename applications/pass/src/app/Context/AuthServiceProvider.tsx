@@ -3,8 +3,8 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef } fr
 import { flushSync } from 'react-dom';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
-import type { ServiceWorkerMessageHandler } from 'proton-pass-web/app/ServiceWorker/ServiceWorkerProvider';
-import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/ServiceWorkerProvider';
+import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
+import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { store } from 'proton-pass-web/app/Store/store';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
@@ -433,18 +433,18 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
          * the auth store and reload the page silently to avoid maintaing a stale
          * local session alive. This edge-case can happen when the pass web-app is
          * opened on new a localID which may trigger a re-auth for the same UserID. */
-        const handleFork: ServiceWorkerMessageHandler<'fork'> = ({ userID, localID }) => {
+        const handleFork: ServiceWorkerClientMessageHandler<'fork'> = ({ userID, localID }) => {
             if (authStore.getUserID() === userID) {
                 authStore.clear();
                 window.location.href = `/u/${localID}?error=fork`;
             }
         };
 
-        const handleUnauthorized: ServiceWorkerMessageHandler<'unauthorized'> = ({ localID }) => {
+        const handleUnauthorized: ServiceWorkerClientMessageHandler<'unauthorized'> = ({ localID }) => {
             if (authStore.hasSession(localID)) authService.logout({ soft: true, broadcast: false }).catch(noop);
         };
 
-        const handleLocked: ServiceWorkerMessageHandler<'locked'> = ({ localID, mode }) => {
+        const handleLocked: ServiceWorkerClientMessageHandler<'locked'> = ({ localID, mode }) => {
             const { status } = client.current.state;
 
             if (authStore.hasSession(localID)) {
@@ -453,7 +453,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             }
         };
 
-        const handleLockDeleted: ServiceWorkerMessageHandler<'lock_deleted'> = ({ localID }) => {
+        const handleLockDeleted: ServiceWorkerClientMessageHandler<'lock_deleted'> = ({ localID }) => {
             const locked = authStore.getLocked();
 
             if (authStore.hasSession(localID)) {
@@ -467,7 +467,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             }
         };
 
-        const handleSession: ServiceWorkerMessageHandler<'session'> = ({ localID, data }) => {
+        const handleSession: ServiceWorkerClientMessageHandler<'session'> = ({ localID, data }) => {
             if (authStore.hasSession(localID)) {
                 logger.info(`[AuthServiceProvider] syncing session for localID[${localID}]`);
                 authStore.setSession(data);
