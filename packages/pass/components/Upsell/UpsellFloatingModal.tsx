@@ -13,18 +13,23 @@ import clsx from '@proton/utils/clsx';
 import './UpsellFloatingModal.scss';
 
 type UpsellFloatingModalProps = {
+    className?: string;
     title: string;
     subtitle?: string;
     badgeText?: string;
 };
 
-export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ title, subtitle, badgeText }) => {
+export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ className, title, subtitle, badgeText }) => {
     const { onLink } = usePassCore();
     const [showModal, setShowModal] = useState(true);
 
     return (
         <div
-            className={clsx('fixed bottom-custom right-custom rounded-xl overflow-hidden', !showModal && 'hidden')}
+            className={clsx(
+                'fixed bottom-custom right-custom rounded-xl overflow-hidden',
+                !showModal && 'hidden',
+                className
+            )}
             style={{ '--bottom-custom': '2rem', '--right-custom': '2rem' }}
         >
             <div className="w-custom" style={{ '--w-custom': '20rem' }}>
