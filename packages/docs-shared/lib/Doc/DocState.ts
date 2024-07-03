@@ -1,3 +1,4 @@
+import { LoggerInterface } from '@proton/utils/logs'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { Observable } from 'lib0/observable'
 import { Doc } from 'yjs'
@@ -18,6 +19,9 @@ export enum DocUpdateOrigin {
   InitialLoad = 'InitialLoad',
 }
 
+/** How often to check if a presence broadcast is needed */
+export const PRESENCE_UPDATE_REPEAT_INTERVAL = 350
+
 export class DocState extends Observable<string> implements DocStateInterface {
   public readonly doc: Doc
   public readonly awareness: DocsAwareness
@@ -28,7 +32,13 @@ export class DocState extends Observable<string> implements DocStateInterface {
   private isEditorReady = false
   private messageQueue: RtsMessagePayload[] = []
 
-  constructor(readonly callbacks: DocStateCallbacks) {
+  broadcastPresenceInterval: ReturnType<typeof setInterval>
+  needsPresenceBroadcast?: BroadcastSource = undefined
+
+  constructor(
+    readonly callbacks: DocStateCallbacks,
+    private logger: LoggerInterface,
+  ) {
     super()
 
     this.doc = new Doc()
@@ -38,6 +48,13 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.awareness.on('update', this.handleAwarenessUpdateOrChange)
     this.awareness.on('change', this.handleAwarenessUpdateOrChange)
 
+    this.broadcastPresenceInterval = setInterval(() => {
+      if (this.needsPresenceBroadcast != undefined) {
+        this.needsPresenceBroadcast = undefined
+        this.broadcastCurrentAwarenessState(BroadcastSource.AwarenessInterval)
+      }
+    }, PRESENCE_UPDATE_REPEAT_INTERVAL)
+
     window.addEventListener('unload', this.handleWindowUnloadEvent)
   }
 
@@ -46,6 +63,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.awareness.off('update', this.handleAwarenessUpdateOrChange)
     this.awareness.off('change', this.handleAwarenessUpdateOrChange)
     window.removeEventListener('unload', this.handleWindowUnloadEvent)
+    clearInterval(this.broadcastPresenceInterval)
     if (this.resyncInterval) {
       clearInterval(this.resyncInterval)
     }
@@ -68,7 +86,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
     void this.callbacks.docStateRequestsPropagationOfUpdate(message, BroadcastSource.AwarenessWebSocketOpen)
 
-    this.broadcastCurrentAwarenessState(BroadcastSource.AwarenessWebSocketOpen)
+    this.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.AwarenessWebSocketOpen)
   }
 
   public performClosingCeremony(): void {
@@ -129,21 +147,32 @@ export class DocState extends Observable<string> implements DocStateInterface {
    * Based on the yjs source code, an `update` event is triggered regardless of whether during an event the result
    * resulted in a change, and a `change` event is triggered only when the result of the event resulted in a change.
    */
-  handleAwarenessUpdateOrChange = (_changes: unknown, origin: unknown) => {
+  handleAwarenessUpdateOrChange = (
+    changes: { added: number[]; updated: number[]; removed: number[] },
+    origin: unknown,
+  ) => {
     const isYjsRefreshingOwnStateToKeepCurrentClientLookingAlive = origin === 'local'
 
     this.awareness.removeDuplicateClients()
 
     const states = this.awareness.getStates()
     const statesArray = Array.from(states.values())
+
     this.callbacks.handleAwarenessStateUpdate(statesArray)
 
+    if (changes.added.length === 0 && changes.removed.length === 0 && !changes.updated.includes(this.doc.clientID)) {
+      this.logger.debug('Not broadcasting our awareness state because was not our state that was changed')
+      return
+    }
+
     const latestClientIds = this.awareness.getClientIds()
+
     const noChangeInClientIds =
       latestClientIds.length === this.lastEmittedClients?.length &&
       latestClientIds.every((clientId) => this.lastEmittedClients?.includes(clientId))
 
     const myState = states.get(this.doc.clientID)
+
     const noChangeInState =
       this.lastEmittedMyState && JSON.stringify(myState) === JSON.stringify(this.lastEmittedMyState)
 
@@ -154,7 +183,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.lastEmittedMyState = myState
     this.lastEmittedClients = latestClientIds
 
-    this.broadcastCurrentAwarenessState(BroadcastSource.AwarenessUpdateHandler)
+    this.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.AwarenessUpdateHandler)
   }
 
   handleDocBeingUpdatedByLexical = (update: Uint8Array, origin: any) => {
@@ -182,6 +211,19 @@ export class DocState extends Observable<string> implements DocStateInterface {
     }
   }
 
+  setNeedsBroadcastCurrentAwarenessState(source: BroadcastSource): void {
+    const sourcesThatShouldBypassDebouncing = [BroadcastSource.ExternalCallerRequestingUsToBroadcastOurState]
+
+    if (sourcesThatShouldBypassDebouncing.includes(source)) {
+      this.broadcastCurrentAwarenessState(source)
+    } else {
+      if (this.needsPresenceBroadcast !== source) {
+        this.logger.debug(`Setting needs presence broadcast from source ${BroadcastSource[source]}`)
+      }
+      this.needsPresenceBroadcast = source
+    }
+  }
+
   broadcastCurrentAwarenessState(source: BroadcastSource): void {
     const message: RtsMessagePayload = {
       type: { wrapper: 'events', eventType: EventTypeEnum.ClientIsBroadcastingItsPresenceState },
@@ -193,6 +235,6 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
   /** Invoked externally when a caller wants us to broadcast our state */
   broadcastPresenceState() {
-    this.broadcastCurrentAwarenessState(BroadcastSource.DocPresenceState)
+    this.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.ExternalCallerRequestingUsToBroadcastOurState)
   }
 }
