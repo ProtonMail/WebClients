@@ -1,0 +1,10 @@
+.incrementable-input {
+	&::before {
+		z-index: 0;
+		position: absolute;
+		content: '';
+		inline-size: calc(100% - 40px);
+		block-size: 100%;
+		background-color: var(--background-weak);
+	}
+}

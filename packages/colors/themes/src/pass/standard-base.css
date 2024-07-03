@@ -1,35 +1,35 @@
 :root,
 .ui-standard {
-    --primary: #7777F8;
-    --primary-contrast: #191927;
+    --primary: #7777f8;
 
-    --signal-danger: #F08FA4;
-    --signal-warning: #FFB84D;
-    --signal-success: #4AB89A;
-    --signal-info: #4AC0FF;
+    --signal-danger: #f08fa4;
+    --signal-warning: #ffb84d;
+    --signal-success: #4ab89a;
 
-    --text-norm: #D1D1D4;
-    --text-weak: #8C8C93;
-    --text-hint: #50505B;
-    --text-disabled: #50505B;
+    --signal-info: #4ac0ff;
+
+    --text-norm: #d1d1d4;
+    --text-weak: #8c8c93;
+    --text-hint: #50505b;
+    --text-disabled: #50505b;
     --text-invert: #191927;
 
     --field-norm: rgb(255 255 255 / 0.04);
-    --field-disabled: #4C4C65;
+    --field-disabled: #4c4c65;
 
     --optional-field-placeholder-color: var(--text-weak);
 
-    --border-norm: #2B2B38;
+    --border-norm: #2b2b38;
     --border-weak: rgb(255 255 255 / 0.4);
 
     --background-norm: #191927;
-    --background-weak: #1F1F31;
-    --background-strong: #13131D;
+    --background-weak: #1f1f31;
+    --background-strong: #13131d;
     --background-invert: white;
 
-    --interaction-norm: #9292F9;
+    --interaction-norm: #9292f9;
     --interaction-norm-contrast: #191927;
-    --interaction-norm-minor-1: #302D45;
+    --interaction-norm-minor-1: #302d45;
 
     --interaction-weak: #282848;
     --interaction-weak-major-1: #32306c;
@@ -48,17 +48,11 @@
     --focus-outline: var(--interaction-norm-major-2);
     --focus-ring: var(--interaction-norm-minor-1);
 
-    --search-field-focus-background: #0E0E0E;
-
-    .button-solid-weak {
-        --button-default-text-color: var(--interaction-norm);
-        --button-hover-text-color: var(--interaction-norm);
-        --button-active-text-color: var(--interaction-norm);
-    }
+    --search-field-focus-background: #0e0e0e;
 }
 
 /* Safari tints */
-@supports (-webkit-hyphens:none) {
+@supports (-webkit-hyphens: none) {
     :root,
     .ui-standard {
         --optional-selection-background-color: rgba(119, 119, 248, 0.99);

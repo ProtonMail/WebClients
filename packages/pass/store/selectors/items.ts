@@ -37,6 +37,7 @@ import type {
     ItemType,
     Maybe,
     MaybeNull,
+    SecureLink,
     SelectedItem,
 } from '@proton/pass/types';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
@@ -44,6 +45,7 @@ import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
+import { sortOn } from '@proton/pass/utils/fp/sort';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -57,6 +59,7 @@ export const selectItemsState = (state: State) => state.items.byShareId;
 export const selectOptimisticIds = (state: State) => state.items.byOptimisticId;
 export const selectIsOptimisticId = (id: string) => createSelector(selectOptimisticIds, (ids) => id in ids);
 export const selectItemDrafts = (state: State) => state.items.drafts;
+export const selectSecureLinks = (state: State) => state.items.secureLinks;
 export const selectNonFailedItems = createSelector(selectItemsState, asIfNotFailed);
 export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
@@ -289,3 +292,30 @@ export const selectPasskeys = (payload: PasskeyQueryPayload) =>
                   )
             : [];
     });
+
+export const selectItemsWithSecureLink = createSelector(
+    [selectAllItems, selectSecureLinks],
+    (items, secureLinks): ItemRevision[] =>
+        items.reduce<ItemRevision[]>((acc, item) => {
+            if (secureLinks[item.shareId]?.[item.itemId]?.length) acc.push(item);
+            return acc;
+        }, [])
+);
+
+export const selectOptimisticItemsWithSecureLink = selectOptimisticItemsFactory(selectItemsWithSecureLink);
+
+export const selectItemSecureLinks = (shareId: string, itemId: string) =>
+    createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
+        (secureLinks[shareId]?.[itemId] ?? []).slice().sort(sortOn('active', 'DESC'))
+    );
+
+export const selectInactiveSecureLinkCount = createSelector(selectSecureLinks, (byShareId): number =>
+    Object.values(byShareId).reduce<number>(
+        (count, byItemId) =>
+            count +
+            Object.values(byItemId)
+                .flat()
+                .filter((link) => !link.active).length,
+        0
+    )
+);

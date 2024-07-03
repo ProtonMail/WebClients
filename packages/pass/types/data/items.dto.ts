@@ -1,13 +1,10 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, UniqueItem } from '@proton/pass/types';
 
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
 import type { IndexedByShareIdAndItemId, Item, ItemRevision } from './items';
 
-type AliasMailbox = {
-    id: number;
-    email: string;
-};
+type AliasMailbox = { id: number; email: string };
 
 export type AliasCreationDTO = {
     mailboxes: AliasMailbox[];
@@ -78,4 +75,19 @@ export type ItemRevisionsSuccess = {
     revisions: ItemRevision[];
     since: MaybeNull<string>;
     total: number;
+};
+
+export type SecureLinkItem = { item: Item; expirationDate: number; readCount?: number };
+export type SecureLinkOptions = { expirationTime: number; maxReadCount: MaybeNull<number> };
+export type SecureLinkCreationDTO = UniqueItem & SecureLinkOptions;
+export type SecureLinkDeleteDTO = UniqueItem & { linkId: string };
+export type SecureLinkQuery = { token: string; linkKey: string };
+
+export type SecureLink = UniqueItem & {
+    active: boolean;
+    expirationDate: number;
+    readCount: number;
+    maxReadCount: MaybeNull<number>;
+    linkId: string;
+    secureLink: string;
 };

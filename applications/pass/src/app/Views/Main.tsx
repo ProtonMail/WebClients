@@ -14,15 +14,12 @@ import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityPro
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
-import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
-import { Content } from '@proton/pass/components/Layout/Section/Content';
+import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
-import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
-import { Autoselect } from '@proton/pass/components/Navigation/Autoselect';
-import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
+import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -44,6 +41,7 @@ const MainSwitch: FC = () => {
     const client = useClient();
     const offline = clientOffline(client.state.status);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
+
     const { state: expanded, toggle } = useToggle();
 
     const connectivityBar = useConnectivityBar((online) => ({
@@ -92,18 +90,8 @@ const MainSwitch: FC = () => {
                                             />
                                             <Route path={`${route.match.path}/monitor`} component={Monitor} />
                                             <Route exact path={`${route.match.path}/settings`} component={Settings} />
-                                            <Route>
-                                                {(subRoute) => (
-                                                    <>
-                                                        <SubSidebar>
-                                                            <ItemsList />
-                                                        </SubSidebar>
-                                                        <Content>
-                                                            <ItemSwitch fallback={Autoselect} {...subRoute} />
-                                                        </Content>
-                                                    </>
-                                                )}
-                                            </Route>
+                                            <Route path={`${route.match.path}/secure-links`} component={SecureLinks} />
+                                            <Route component={Items} />
                                         </Switch>
                                     )}
                                 </div>

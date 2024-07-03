@@ -1,14 +1,16 @@
 import { type FC } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import { ItemReport } from '@proton/pass/components/Monitor/Item/ItemReport';
+import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { PassFeature } from '@proton/pass/types/api/features';
 
@@ -22,6 +24,8 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
         <ItemViewPanel type="login" {...itemViewProps}>
             {monitorEnabled && isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
 
+            <SecureLinkCardList shareId={shareId} itemId={itemId} />
+
             <LoginContent revision={revision} />
 
             <ItemHistoryStats
@@ -33,22 +37,9 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
 
             <MoreInfoDropdown
                 info={[
-                    {
-                        label: c('Label').t`Modified`,
-                        values: [
-                            c('Info').ngettext(msgid`${modifiedCount} time`, `${modifiedCount} times`, modifiedCount),
-                        ],
-                    },
-                    {
-                        label: c('Label').t`Item ID`,
-                        // translator: label for item identification number
-                        values: [itemId],
-                    },
-                    {
-                        label: c('Label').t`Vault ID`,
-                        // translator: label for vault identification number
-                        values: [shareId],
-                    },
+                    { label: c('Label').t`Modified`, values: [getOccurrenceString(modifiedCount)] },
+                    { label: c('Label').t`Item ID`, values: [itemId] },
+                    { label: c('Label').t`Vault ID`, values: [shareId] },
                 ]}
             />
         </ItemViewPanel>

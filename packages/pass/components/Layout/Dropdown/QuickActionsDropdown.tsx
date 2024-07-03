@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button';
 import { Button } from '@proton/atoms/Button';
 import { NotificationDot } from '@proton/atoms/NotificationDot';
+import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import {
     Dropdown,
     DropdownMenu,
@@ -20,6 +21,9 @@ export type QuickActionsDropdownProps = {
     className?: string;
     color?: 'weak' | 'norm';
     disabled?: boolean;
+    dropdownClassname?: string;
+    dropdownHeader?: string;
+    dropdownSize?: DropdownSize;
     icon?: IconName;
     iconSize?: IconSize;
     menuClassName?: string;
@@ -37,6 +41,9 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
     className,
     color,
     disabled,
+    dropdownClassname,
+    dropdownHeader,
+    dropdownSize,
     icon = 'three-dots-vertical',
     iconSize = 5,
     menuClassName,
@@ -78,7 +85,10 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
                 onClose={close}
                 originalPlacement={originalPlacement}
                 offset={offset}
+                contentProps={{ className: dropdownClassname }}
+                size={dropdownSize}
             >
+                {dropdownHeader && <div className="text-bold px-4 my-2">{dropdownHeader}</div>}
                 <DropdownMenu className={menuClassName}>{children}</DropdownMenu>
             </Dropdown>
         </>

@@ -14,7 +14,7 @@ import type { UpsellType } from './UpsellingModal';
 type Props = { upsellType: UpsellType };
 type UpsellFeature = { key: UpsellFeatureName; className: string; icon: IconName; label: string | string[] };
 
-export type UpsellFeatureName = 'aliases' | '2FA' | 'logins' | 'sentinel';
+export type UpsellFeatureName = 'aliases' | '2FA' | 'logins' | 'sentinel' | 'secure-links';
 
 const PROTON_SENTINEL_LINK = (
     <a href={PASS_SENTINEL_LINK} target="_blank" key="sentinel-link">
@@ -48,6 +48,12 @@ const getFeatures = (): UpsellFeature[] => [
         label:
             // translator: full sentence is Protected by Proton Sentinel, our advanced account protection program
             c('Info').jt`Protected by ${PROTON_SENTINEL_LINK}, our advanced account protection program`,
+    },
+    {
+        key: 'secure-links',
+        className: 'ui-violet',
+        icon: 'link',
+        label: c('Info').jt`Easily share your data with friends using secure links`,
     },
 ];
 

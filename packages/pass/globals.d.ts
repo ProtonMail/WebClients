@@ -1,5 +1,7 @@
 declare const BUILD_TARGET: string;
+declare const DESKTOP_BUILD: boolean;
 declare const ENV: string;
+declare const EXTENSION_BUILD: boolean;
 declare const OFFLINE_SUPPORTED: boolean;
 declare const REDUX_DEVTOOLS_PORT: number;
 declare const RESUME_FALLBACK: boolean;

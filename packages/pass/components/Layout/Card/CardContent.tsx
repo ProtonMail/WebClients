@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { Icon, type IconName } from '@proton/components/index';
+import { Icon, type IconName, type IconProps } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 import './CardContent.scss';
@@ -10,6 +10,7 @@ export type CardContentProps = {
     className?: string;
     ellipsis?: boolean;
     icon?: IconName | (() => ReactNode);
+    iconProps?: Partial<IconProps>;
     subtitle?: ReactNode;
     subtitleClassname?: string;
     title: ReactNode;
@@ -19,15 +20,16 @@ export type CardContentProps = {
 export const CardContent: FC<CardContentProps> = ({
     actions,
     className,
-    icon,
     ellipsis,
+    icon,
+    iconProps,
     subtitle,
     subtitleClassname,
     title,
     titleClassname,
 }) => (
     <div className={clsx('pass-card--content flex items-center flex-nowrap w-full gap-4 text-sm', className)}>
-        {typeof icon === 'function' ? icon() : icon && <Icon name={icon} size={5} />}
+        {typeof icon === 'function' ? icon() : icon && <Icon name={icon} size={5} {...iconProps} />}
         <div className="flex flex-column flex-nowrap justify-start w-full text-left">
             <span className={clsx('pass-card-content--title', ellipsis && 'text-ellipsis', titleClassname)}>
                 {title}
