@@ -42,6 +42,7 @@ const FORM_ID = 'new-login';
 export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel, onSubmit }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
+    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit);
 
     const { domain, subdomain } = url ?? {};
     const { search } = useLocation();
@@ -49,8 +50,6 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
     const { ParentPortal, openPortal } = usePortal();
 
     const searchParams = new URLSearchParams(search);
-
-    const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const maybeUrl = subdomain ?? domain ?? '';
@@ -77,7 +76,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
 
     const form = useFormik<NewLoginItemFormValues>({
         initialValues,
-        initialErrors: validateLoginForm({ values: initialValues, shouldValidateEmail: usernameSplitEnabled }),
+        initialErrors: validateLoginForm({ values: initialValues, shouldValidateEmail: usernameSplit }),
         onSubmit: ({
             name,
             note,
@@ -166,7 +165,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                 extraData,
             });
         },
-        validate: (values) => validateLoginForm({ values, shouldValidateEmail: usernameSplitEnabled }),
+        validate: (values) => validateLoginForm({ values, shouldValidateEmail: usernameSplit }),
         validateOnBlur: true,
     });
 

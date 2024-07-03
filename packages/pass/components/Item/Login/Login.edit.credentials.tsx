@@ -35,7 +35,7 @@ type Props = {
 
 export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     const { onboardingCheck } = usePassCore();
-    const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
+    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit);
     const passwordContext = usePasswordContext();
     const { search } = useLocation();
     const history = useHistory();
@@ -51,8 +51,8 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
 
     const { acknowledge } = useSpotlight();
 
-    const iconWithFeatureFlag = usernameSplitEnabled ? 'envelope' : 'user';
-    const labelWithFeatureFlag = usernameSplitEnabled ? c('Label').t`Email` : c('Label').t`Username`;
+    const iconWithFeatureFlag = usernameSplit ? 'envelope' : 'user';
+    const labelWithFeatureFlag = usernameSplit ? c('Label').t`Email` : c('Label').t`Username`;
 
     const handleAddUsernameClick = () => {
         setUsernameExpanded(true);
@@ -60,15 +60,13 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     };
 
     useEffect(() => {
-        (async () => usernameSplitEnabled && (await onboardingCheck?.(OnboardingMessage.USERNAME_TOOLTIP)))()
+        (async () => usernameSplit && (await onboardingCheck?.(OnboardingMessage.USERNAME_TOOLTIP)))()
             .then((show) => setShowUsernameOnboarding(Boolean(show)))
             .catch(noop);
-    }, [usernameSplitEnabled]);
+    }, [usernameSplit]);
 
     useEffect(() => {
-        if (form.values.itemUsername.length > 0) {
-            setItemHasUsername(true);
-        }
+        if (form.values.itemUsername.length > 0) setItemHasUsername(true);
 
         return () => {
             if (!isNew) return;
@@ -87,7 +85,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     return labelWithFeatureFlag;
                 })()}
                 placeholder={
-                    usernameSplitEnabled ? c('Placeholder').t`Enter email` : c('Placeholder').t`Enter email or username`
+                    usernameSplit ? c('Placeholder').t`Enter email` : c('Placeholder').t`Enter email or username`
                 }
                 component={TextField}
                 itemType="login"
@@ -98,7 +96,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                             size={5}
                             className="mt-2"
                         />
-                        {usernameSplitEnabled && !showUsername && (
+                        {usernameSplit && !showUsername && (
                             <Spotlight
                                 content={
                                     <>
