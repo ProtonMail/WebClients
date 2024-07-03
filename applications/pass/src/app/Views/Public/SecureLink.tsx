@@ -19,6 +19,7 @@ export const SecureLink: FC = () => (
             <SecureLinkView />
         </Suspense>
         <UpsellFloatingModal
+            className="hidden sm:block"
             badgeText={c('Label').t`Free forever`}
             title={c('Label').t`Open-source password manager for effortless protection.`}
             subtitle={c('Label')
