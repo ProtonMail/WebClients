@@ -12,7 +12,6 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, ButtonLike, Modal } from '../../atoms';
 import { SubTheme } from '../../utils';
-import { ImportantNotice } from './ImportantNotice';
 
 export interface WalletBackupModalOwnProps {
     apiWalletData: IWasmApiWalletData;
@@ -28,11 +27,11 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
 
     return (
         <Modal
-            title={viewMnemonic ? c('Wallet setup').t`Wallet seed phrase` : c('Wallet setup').t`Your keys, your coins.`}
+            size="small"
+            title={viewMnemonic ? c('Wallet setup').t`Wallet seed phrase` : undefined}
             subline={
                 viewMnemonic
-                    ? c('Wallet setup')
-                          .t`Use this secret recovery phrase to recover your wallet if you lose access to your account.`
+                    ? c('Wallet setup').t`You can use the seed phrase to import your wallet on any wallet app.`
                     : undefined
             }
             className={theme}
@@ -62,11 +61,6 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
                         })}
                     </div>
 
-                    <ImportantNotice
-                        text={c('Wallet setup')
-                            .t`Store your seed phrase securely; without it, ${BRAND_NAME} cannot recover your funds.`}
-                    />
-
                     <Button
                         className="block w-4/5 mx-auto mt-6"
                         shape="solid"
@@ -77,10 +71,13 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
                     </Button>
                 </div>
             ) : (
-                <div className="flex flex-column">
-                    <img src={accessKey} alt="" />
+                <div className="flex flex-column items-center">
+                    <img className="my-3" src={accessKey} alt="" />
 
-                    <p className="color-weak text-center mx-12">
+                    <h1 className={'text-bold text-break text-2xl mt-3'}>{c('Wallet setup')
+                        .t`Your keys, your coins.`}</h1>
+
+                    <p className="color-weak text-center text-sm my-4">
                         <span className="block my-2">{c('Wallet setup')
                             .t`Wallet seed phrases encode the private key that controls your digital assets.`}</span>
                         <span className="block my-2">{c('Wallet setup')
@@ -89,23 +86,21 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
                             .t`Never give them to anyone else. ${BRAND_NAME} will never ask for them. Write them down carefully and hide it in a safe place.`}</span>
                     </p>
 
-                    <Button
-                        className="block w-4/5 mx-auto mb-2"
-                        shape="solid"
-                        color="norm"
-                        onClick={() => setViewMnemonic(true)}
-                    >
-                        {c('Wallet setup').t`View wallet seed phrase`}
-                    </Button>
+                    <div className="flex flex-column w-full px-2 items-center mt-4 gap-2">
+                        <Button fullWidth shape="solid" color="norm" onClick={() => setViewMnemonic(true)}>
+                            {c('Wallet setup').t`View wallet seed phrase`}
+                        </Button>
 
-                    <ButtonLike
-                        as={Href}
-                        href={getKnowledgeBaseUrl('/proton-wallet-seed-phrase')}
-                        target="_blank"
-                        className="block w-4/5 mx-auto text-semibold"
-                        shape="ghost"
-                        color="weak"
-                    >{c('Wallet setup').t`Learn more`}</ButtonLike>
+                        <ButtonLike
+                            as={Href}
+                            fullWidth
+                            href={getKnowledgeBaseUrl('/proton-wallet-seed-phrase')}
+                            target="_blank"
+                            className="text-semibold"
+                            shape="underline"
+                            color="weak"
+                        >{c('Wallet setup').t`Learn more`}</ButtonLike>
+                    </div>
                 </div>
             )}
         </Modal>
