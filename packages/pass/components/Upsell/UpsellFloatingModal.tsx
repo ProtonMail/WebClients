@@ -27,8 +27,7 @@ export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ className, t
         <div
             className={clsx(
                 'fixed bottom-custom right-custom rounded-xl overflow-hidden',
-                !showModal && 'hidden',
-                className
+                showModal ? className : 'hidden'
             )}
             style={{ '--bottom-custom': '2rem', '--right-custom': '2rem' }}
         >
@@ -38,7 +37,10 @@ export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ className, t
                         closeButtonProps={{ pill: true, icon: true }}
                         className="absolute top-custom right-custom"
                         style={{ '--top-custom': '1rem', '--right-custom': '1rem' }}
-                        onClick={() => setShowModal(false)}
+                        onClick={() => {
+                            console.log(123);
+                            setShowModal(false);
+                        }}
                     />
                     <PassLogo
                         width={300}
