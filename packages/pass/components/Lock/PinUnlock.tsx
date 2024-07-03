@@ -3,6 +3,7 @@ import { type FC, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { useNotifications } from '@proton/components/index';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
@@ -56,7 +57,7 @@ export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) =
     });
 
     return (
-        <>
+        <div>
             <PinCodeInput
                 key={key}
                 className="mb-5"
@@ -67,11 +68,13 @@ export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) =
                 value={value}
             />
 
-            {!online && offlineEnabled && (
+            {!online && offlineEnabled && !sessionUnlock.loading && (
                 <Button pill shape="ghost" color="norm" className="w-full mt-3" onClick={onOffline}>
                     {c('Action').t`Unlock offline with password`}
                 </Button>
             )}
-        </>
+
+            {sessionUnlock.loading && <CircleLoader size="small" className="mt-4" />}
+        </div>
     );
 };
