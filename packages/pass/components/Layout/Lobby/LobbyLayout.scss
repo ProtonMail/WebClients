@@ -14,4 +14,10 @@
 	&--content {
 		-webkit-app-region: no-drag;
 	}
+
+	&--logo {
+		&-hidden {
+			display: none;
+		}
+	}
 }

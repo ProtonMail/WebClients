@@ -17,7 +17,12 @@ import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/component
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { type RouteErrorState, getBootRedirectPath, getRouteError } from '@proton/pass/components/Navigation/routing';
+import {
+    type RouteErrorState,
+    getBootRedirectPath,
+    getRouteError,
+    isUnauthorizedPath,
+} from '@proton/pass/components/Navigation/routing';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -273,7 +278,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 window.location.replace(url);
             },
 
-            onSessionEmpty: async () => {
+            onSessionEmpty: () => {
                 history.replace('/');
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
             },
@@ -410,6 +415,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     useEffect(() => {
+        if (isUnauthorizedPath(getCurrentLocation())) return;
+
         const { key, selector, state, payloadVersion } = getConsumeForkParameters();
         const localState = sessionStorage.getItem(getStateKey(state));
 

@@ -1,5 +1,4 @@
-import { createBrowserHistory } from 'history';
-import { type Location } from 'history';
+import { type Location, createBrowserHistory } from 'history';
 
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -12,6 +11,10 @@ import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 export type ItemNewRouteParams = { type: ItemType };
 export type ItemRouteOptions = { trashed?: boolean; prefix?: string };
 export type RouteErrorState = { error?: string };
+
+export enum UnauthorizedRoutes {
+    SecureLink = '/secure-link/:token',
+}
 
 export const history = createBrowserHistory();
 
@@ -97,3 +100,21 @@ export const getBootRedirectPath = (bootLocation: Location) => {
 
     return stripLocalBasenameFromPathname(redirectPath);
 };
+const extractPathWithoutFragment = (path: string): string => {
+    const indexOfHash = path.indexOf('#');
+    return indexOfHash === -1 ? path : path.substring(0, indexOfHash);
+};
+
+const pathMatchesRoute = (path: string, routeTemplate: string): boolean => {
+    const cleanedPath = extractPathWithoutFragment(path);
+    const templateParts = routeTemplate.split('/');
+    const pathParts = cleanedPath.split('/');
+
+    return (
+        templateParts.length === pathParts.length &&
+        templateParts.every((part, i) => part.startsWith(':') || part === pathParts[i])
+    );
+};
+
+export const isUnauthorizedPath = ({ pathname }: Location): boolean =>
+    Object.values(UnauthorizedRoutes).some((route) => pathMatchesRoute(pathname, route));

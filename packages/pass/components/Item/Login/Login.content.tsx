@@ -26,7 +26,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 
 import { PasskeyContentModal } from '../Passkey/Passkey.modal';
 
-export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
+export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem }) => {
     const { data: item, shareId, itemId } = revision;
     const [passkey, setPasskey] = useState<MaybeNull<SanitizedPasskey>>(null);
     const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
@@ -38,7 +38,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
     } = useDeobfuscatedItem(item);
 
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
-    const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
+    const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
     const passwordStrength = usePasswordStrength(password);
     const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername });
     const iconWithFeatureFlag = usernameSplitEnabled ? 'envelope' : 'user';
@@ -46,17 +46,18 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
 
     return (
         <>
-            {(passkeys ?? []).map((passkey) => (
-                <FieldsetCluster mode="read" key={passkey.keyId} className="pass-fieldset-cluster--standout">
-                    <ValueControl
-                        icon={'pass-passkey'}
-                        label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
-                        value={passkey.userName}
-                        onClick={() => setPasskey(passkey)}
-                        actions={[<Icon className="mt-3" name="chevron-right" size={3} />]}
-                    />
-                </FieldsetCluster>
-            ))}
+            {!secureLinkItem &&
+                (passkeys ?? []).map((passkey) => (
+                    <FieldsetCluster mode="read" key={passkey.keyId} className="pass-fieldset-cluster--standout">
+                        <ValueControl
+                            icon={'pass-passkey'}
+                            label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
+                            value={passkey.userName}
+                            onClick={() => setPasskey(passkey)}
+                            actions={[<Icon className="mt-3" name="chevron-right" size={3} />]}
+                        />
+                    </FieldsetCluster>
+                ))}
 
             {passkey && <PasskeyContentModal passkey={passkey} onClose={() => setPasskey(null)} open size="small" />}
 

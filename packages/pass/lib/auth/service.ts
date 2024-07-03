@@ -5,7 +5,6 @@ import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import { getOfflineComponents, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import { EXTENSION_BUILD } from '@proton/pass/lib/client';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';

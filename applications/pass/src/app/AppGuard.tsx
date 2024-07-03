@@ -14,8 +14,8 @@ import { offlineResume } from '@proton/pass/store/actions';
 import noop from '@proton/utils/noop';
 
 import { useAuthService } from './Context/AuthServiceProvider';
-import { Lobby } from './Views/Lobby';
 import { Main } from './Views/Main';
+import { PublicSwitch } from './Views/Public/PublicSwitch';
 
 export const AppGuard: FC = () => {
     const dispatch = useDispatch();
@@ -45,7 +45,7 @@ export const AppGuard: FC = () => {
                         </PasswordUnlockProvider>
                     </LockProbeProvider>
                 ) : (
-                    <Lobby />
+                    <PublicSwitch />
                 )
             }
         />

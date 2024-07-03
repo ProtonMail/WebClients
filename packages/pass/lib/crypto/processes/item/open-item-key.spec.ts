@@ -7,10 +7,10 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { openItemKey } from './open-item-key';
 
 describe('openItemKey crypto process', () => {
-    const key = generateKey();
-    const itemKey = generateKey();
-
     test('should decrypt item key accordingly', async () => {
+        const key = generateKey();
+        const itemKey = generateKey();
+
         const vaultKey: VaultKey = {
             key: await getSymmetricKey(key),
             raw: key,

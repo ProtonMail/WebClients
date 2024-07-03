@@ -24,10 +24,11 @@ import { verticalPopperPlacements } from '@proton/components/components/popper/u
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { SecureLinkButton } from '@proton/pass/components/Menu/SecureLink/SecureLinkButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getPassWebUrl } from '@proton/pass/components/Navigation/routing';
+import { getLocalPath, getPassWebUrl } from '@proton/pass/components/Navigation/routing';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
@@ -63,7 +64,7 @@ export const MenuDropdown: FC = () => {
     const { onLink, onboardingAcknowledge, onboardingCheck } = usePassCore();
     const { lock, logout, ready, expanded } = usePopupContext();
     const { API_URL } = usePassConfig();
-    const { filters, matchTrash } = useNavigation();
+    const { navigate, filters, matchTrash } = useNavigation();
     const { selectedShareId } = filters;
 
     const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
@@ -72,6 +73,7 @@ export const MenuDropdown: FC = () => {
     const user = useSelector(selectUser);
     const canLock = useSelector(selectLockEnabled);
 
+    const secureLinkEnabled = useFeatureFlag(PassFeature.PassPublicLinkV1);
     const monitorEnabled = useFeatureFlag(PassFeature.PassMonitor);
     const [notifyMonitor, setNotifyMonitor] = useState(false);
     const notify = notifyMonitor;
@@ -223,6 +225,13 @@ export const MenuDropdown: FC = () => {
                                 </Collapsible>
                             )}
                         />
+
+                        {secureLinkEnabled && (
+                            <SecureLinkButton
+                                className="pt-1.5 pb-1.5"
+                                onClick={withClose(() => navigate(getLocalPath('secure-links')))}
+                            />
+                        )}
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 

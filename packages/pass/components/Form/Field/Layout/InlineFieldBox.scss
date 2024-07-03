@@ -1,0 +1,12 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-inline-field-box {
+	display: grid;
+	grid-template-columns: 1fr em(140);
+	align-items: center;
+
+	& + & {
+		// siblings
+		margin-block-start: 1rem;
+	}
+}

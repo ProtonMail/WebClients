@@ -17,7 +17,8 @@ a {
 }
 
 .button-solid-norm,
-.button-solid-weak {
+.button-solid-weak,
+.button-solid-success {
 	align-items: center;
 	display: flex;
 	justify-content: center;
@@ -62,4 +63,10 @@ a {
 	--button-default-text-color: var(--interaction-norm-major-1);
 	--button-hover-text-color: var(--interaction-norm-major-2);
 	--button-active-text-color: var(--interaction-norm-major-3);
+}
+
+.button-solid-weak {
+	--button-default-text-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+	--button-active-text-color: var(--interaction-norm);
 }
