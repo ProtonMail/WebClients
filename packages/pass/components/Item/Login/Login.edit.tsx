@@ -44,17 +44,15 @@ const FORM_ID = 'edit-login';
 export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
+    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit);
+
     const { domain, subdomain } = url ?? {};
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
+    const { itemEmail, itemUsername } = content;
 
-    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({
-        itemEmail: content.itemEmail,
-        itemUsername: content.itemUsername,
-    });
-
-    const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
+    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername }, usernameSplit);
 
     const initialValues: EditLoginItemFormValues = {
         aliasPrefix: '',
@@ -157,7 +155,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 shareId,
             });
         },
-        validate: (values) => validateLoginForm({ values, shouldValidateEmail: usernameSplitEnabled }),
+        validate: (values) => validateLoginForm({ values, shouldValidateEmail: usernameSplit }),
         validateOnChange: true,
         validateOnMount: true,
     });
