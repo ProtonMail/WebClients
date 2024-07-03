@@ -11,6 +11,7 @@ import {
     Item as ProtobufItem,
     ItemAlias as ProtobufItemAlias,
     ItemCreditCard as ProtobufItemCreditCard,
+    ItemIdentity as ProtobufItemIdentity,
     ItemLogin as ProtobufItemLogin,
     ItemNote as ProtobufItemNote,
 } from './item-v1';
@@ -23,6 +24,7 @@ export {
     ProtobufItem,
     ProtobufItemAlias,
     ProtobufItemCreditCard,
+    ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
     Vault,

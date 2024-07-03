@@ -51,6 +51,7 @@ const itemMatchers: ItemMatchFuncMap = {
     note: matchesNoteItem,
     alias: matchesAliasItem,
     creditCard: matchesCreditCardItem,
+    identity: () => () => false, // FIXME
 };
 
 export const matchItem: ItemMatchFunc = <T extends ItemType>(item: ItemRevision<T>) =>
