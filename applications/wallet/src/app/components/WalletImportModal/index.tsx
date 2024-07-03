@@ -75,11 +75,19 @@ export const WalletImportModal = ({
     return (
         <>
             <Modal title={c('Wallet setup').t`Import wallet`} className={theme} {...modalProps}>
-                <div className="flex flex-column">
+                <div className="flex flex-column mt-6">
                     {!isFirstCreation && (
                         <div className="mb-4">
                             <Input
-                                label={c('Wallet setup').t`Wallet name`}
+                                prefix={
+                                    <div
+                                        className="rounded-full flex p-3 mr-4"
+                                        style={{ background: 'var(--interaction-norm-minor-2)' }}
+                                    >
+                                        <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>
+                                    </div>
+                                }
+                                label={c('Wallet setup').t`Name`}
                                 id="wallet-name-input"
                                 placeholder={c('Wallet setup').t`Give a name to this wallet`}
                                 value={walletName}
@@ -105,7 +113,7 @@ export const WalletImportModal = ({
                     </div>
                 </div>
 
-                <div className="flex flex-column my-3">
+                <div className="flex flex-column mb-3">
                     <Input
                         as={TextAreaTwo}
                         rows={3}
