@@ -69,7 +69,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
                 </section>
 
                 <Card type="primary" onClick={copyLink} className="cursor-pointer">
-                    <div className={clsx(['user-select-none text-bold text-ellipsis', linkCopied && 'text-selected'])}>
+                    <div className={clsx(['user-select-none text-bold text-ellipsis', linkCopied && 'bg-primary'])}>
                         {secureLink}
                     </div>
                 </Card>

@@ -1,6 +1,6 @@
 .pass-upsell-floating-modal {
 	&--header {
-		background-color: #1b1340;
+		background-color: var(--upsell-modal-background-color);
 	}
 
 	&--content {
@@ -8,8 +8,8 @@
 	}
 
 	&--label {
-		background-color: #eef8f5;
-		color: var(--signal-success);
+		background-color: var(--upsell-modal-badge-background-color);
+		color: var(--upsell-modal-badge-color);
 	}
 
 	&--button {
