@@ -1,9 +1,11 @@
+import { type ServiceWorkerMessage } from 'proton-pass-web/app/ServiceWorker/types';
+import { COMMIT } from 'proton-pass-web/app/config';
+
 import { cleanCache, clearCache } from '@proton/pass/lib/api/cache';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import { COMMIT } from '../config';
-import { type ServiceWorkerMessage, ServiceWorkerMessageBroker } from './channel';
+import { ServiceWorkerMessageBroker } from './channel';
 import { fetchController } from './fetch-controller';
 import { handleImage, matchImageRoute } from './image';
 import { cacheOfflineAssets, handleAsset, handleIndex, matchAssetRoute, matchNavigate } from './offline';
