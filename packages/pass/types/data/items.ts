@@ -6,6 +6,7 @@ import type {
     Metadata,
     ProtobufItemAlias,
     ProtobufItemCreditCard,
+    ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
 } from '@proton/pass/types/protobuf';
@@ -39,6 +40,7 @@ export type ItemContent<T extends ItemType> = {
     note: ProtobufItemNote;
     login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'password' | 'totpUri'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
+    identity: ProtobufItemIdentity;
 }[T];
 
 export type UnsafeItemContent<T extends ItemType = ItemType> = Deobfuscate<ItemContent<T>>;

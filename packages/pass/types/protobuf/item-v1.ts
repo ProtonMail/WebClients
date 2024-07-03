@@ -160,6 +160,194 @@ export interface ItemCreditCard {
     pin: string;
 }
 /**
+ * @generated from protobuf message proton_pass_item_v1.ItemIdentity
+ */
+export interface ItemIdentity {
+    /**
+     * Personal details
+     * Shown
+     *
+     * @generated from protobuf field: string full_name = 1;
+     */
+    fullName: string;
+    /**
+     * @generated from protobuf field: string email = 2;
+     */
+    email: string;
+    /**
+     * @generated from protobuf field: string phone_number = 3;
+     */
+    phoneNumber: string;
+    /**
+     * Additional
+     *
+     * @generated from protobuf field: string first_name = 4;
+     */
+    firstName: string;
+    /**
+     * @generated from protobuf field: string middle_name = 5;
+     */
+    middleName: string;
+    /**
+     * @generated from protobuf field: string last_name = 6;
+     */
+    lastName: string;
+    /**
+     * @generated from protobuf field: string birthdate = 7;
+     */
+    birthdate: string;
+    /**
+     * @generated from protobuf field: string gender = 8;
+     */
+    gender: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField extra_personal_details = 9;
+     */
+    extraPersonalDetails: ExtraField[];
+    /**
+     * Address details
+     * Shown
+     *
+     * @generated from protobuf field: string organization = 10;
+     */
+    organization: string;
+    /**
+     * @generated from protobuf field: string street_address = 11;
+     */
+    streetAddress: string;
+    /**
+     * @generated from protobuf field: string zip_or_postal_code = 12;
+     */
+    zipOrPostalCode: string;
+    /**
+     * @generated from protobuf field: string city = 13;
+     */
+    city: string;
+    /**
+     * @generated from protobuf field: string state_or_province = 14;
+     */
+    stateOrProvince: string;
+    /**
+     * @generated from protobuf field: string country_or_region = 15;
+     */
+    countryOrRegion: string;
+    /**
+     * Additional
+     *
+     * @generated from protobuf field: string floor = 16;
+     */
+    floor: string;
+    /**
+     * @generated from protobuf field: string county = 17;
+     */
+    county: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField extra_address_details = 18;
+     */
+    extraAddressDetails: ExtraField[];
+    /**
+     * Contact details
+     * Shown
+     *
+     * @generated from protobuf field: string social_security_number = 19;
+     */
+    socialSecurityNumber: string;
+    /**
+     * @generated from protobuf field: string passport_number = 20;
+     */
+    passportNumber: string;
+    /**
+     * @generated from protobuf field: string license_number = 21;
+     */
+    licenseNumber: string;
+    /**
+     * @generated from protobuf field: string website = 22;
+     */
+    website: string;
+    /**
+     * @generated from protobuf field: string x_handle = 23;
+     */
+    xHandle: string;
+    /**
+     * @generated from protobuf field: string second_phone_number = 24;
+     */
+    secondPhoneNumber: string;
+    /**
+     * Additional
+     *
+     * @generated from protobuf field: string linkedin = 25;
+     */
+    linkedin: string;
+    /**
+     * @generated from protobuf field: string reddit = 26;
+     */
+    reddit: string;
+    /**
+     * @generated from protobuf field: string facebook = 27;
+     */
+    facebook: string;
+    /**
+     * @generated from protobuf field: string yahoo = 28;
+     */
+    yahoo: string;
+    /**
+     * @generated from protobuf field: string instagram = 29;
+     */
+    instagram: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField extra_contact_details = 30;
+     */
+    extraContactDetails: ExtraField[];
+    /**
+     * Work details
+     * Shown
+     *
+     * @generated from protobuf field: string company = 31;
+     */
+    company: string;
+    /**
+     * @generated from protobuf field: string job_title = 32;
+     */
+    jobTitle: string;
+    /**
+     * Additional
+     *
+     * @generated from protobuf field: string personal_website = 33;
+     */
+    personalWebsite: string;
+    /**
+     * @generated from protobuf field: string work_phone_number = 34;
+     */
+    workPhoneNumber: string;
+    /**
+     * @generated from protobuf field: string work_email = 35;
+     */
+    workEmail: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField extra_work_details = 36;
+     */
+    extraWorkDetails: ExtraField[];
+    /**
+     * Extra sections
+     *
+     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraIdentitySection extra_sections = 37;
+     */
+    extraSections: ExtraIdentitySection[];
+}
+/**
+ * @generated from protobuf message proton_pass_item_v1.ExtraIdentitySection
+ */
+export interface ExtraIdentitySection {
+    /**
+     * @generated from protobuf field: string section_name = 1;
+     */
+    sectionName: string;
+    /**
+     * @generated from protobuf field: repeated proton_pass_item_v1.ExtraField section_fields = 2;
+     */
+    sectionFields: ExtraField[];
+}
+/**
  * Client extras
  *
  * @generated from protobuf message proton_pass_item_v1.AllowedAndroidApp
@@ -314,6 +502,13 @@ export interface Content {
                * @generated from protobuf field: proton_pass_item_v1.ItemCreditCard credit_card = 5;
                */
               creditCard: ItemCreditCard;
+          }
+        | {
+              oneofKind: 'identity';
+              /**
+               * @generated from protobuf field: proton_pass_item_v1.ItemIdentity identity = 6;
+               */
+              identity: ItemIdentity;
           }
         | {
               oneofKind: undefined;
@@ -815,6 +1010,437 @@ class ItemCreditCard$Type extends MessageType<ItemCreditCard> {
  * @generated MessageType for protobuf message proton_pass_item_v1.ItemCreditCard
  */
 export const ItemCreditCard = new ItemCreditCard$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ItemIdentity$Type extends MessageType<ItemIdentity> {
+    constructor() {
+        super('proton_pass_item_v1.ItemIdentity', [
+            { no: 1, name: 'full_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: 'email', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: 'phone_number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: 'first_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 5, name: 'middle_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 6, name: 'last_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 7, name: 'birthdate', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 8, name: 'gender', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            {
+                no: 9,
+                name: 'extra_personal_details',
+                kind: 'message',
+                repeat: 1 /*RepeatType.PACKED*/,
+                T: () => ExtraField,
+            },
+            { no: 10, name: 'organization', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 11, name: 'street_address', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 12, name: 'zip_or_postal_code', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 13, name: 'city', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 14, name: 'state_or_province', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 15, name: 'country_or_region', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 16, name: 'floor', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 17, name: 'county', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            {
+                no: 18,
+                name: 'extra_address_details',
+                kind: 'message',
+                repeat: 1 /*RepeatType.PACKED*/,
+                T: () => ExtraField,
+            },
+            { no: 19, name: 'social_security_number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 20, name: 'passport_number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 21, name: 'license_number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 22, name: 'website', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 23, name: 'x_handle', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 24, name: 'second_phone_number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 25, name: 'linkedin', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 26, name: 'reddit', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 27, name: 'facebook', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 28, name: 'yahoo', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 29, name: 'instagram', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            {
+                no: 30,
+                name: 'extra_contact_details',
+                kind: 'message',
+                repeat: 1 /*RepeatType.PACKED*/,
+                T: () => ExtraField,
+            },
+            { no: 31, name: 'company', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 32, name: 'job_title', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 33, name: 'personal_website', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 34, name: 'work_phone_number', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 35, name: 'work_email', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            {
+                no: 36,
+                name: 'extra_work_details',
+                kind: 'message',
+                repeat: 1 /*RepeatType.PACKED*/,
+                T: () => ExtraField,
+            },
+            {
+                no: 37,
+                name: 'extra_sections',
+                kind: 'message',
+                repeat: 1 /*RepeatType.PACKED*/,
+                T: () => ExtraIdentitySection,
+            },
+        ]);
+    }
+    create(value?: PartialMessage<ItemIdentity>): ItemIdentity {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        message.fullName = '';
+        message.email = '';
+        message.phoneNumber = '';
+        message.firstName = '';
+        message.middleName = '';
+        message.lastName = '';
+        message.birthdate = '';
+        message.gender = '';
+        message.extraPersonalDetails = [];
+        message.organization = '';
+        message.streetAddress = '';
+        message.zipOrPostalCode = '';
+        message.city = '';
+        message.stateOrProvince = '';
+        message.countryOrRegion = '';
+        message.floor = '';
+        message.county = '';
+        message.extraAddressDetails = [];
+        message.socialSecurityNumber = '';
+        message.passportNumber = '';
+        message.licenseNumber = '';
+        message.website = '';
+        message.xHandle = '';
+        message.secondPhoneNumber = '';
+        message.linkedin = '';
+        message.reddit = '';
+        message.facebook = '';
+        message.yahoo = '';
+        message.instagram = '';
+        message.extraContactDetails = [];
+        message.company = '';
+        message.jobTitle = '';
+        message.personalWebsite = '';
+        message.workPhoneNumber = '';
+        message.workEmail = '';
+        message.extraWorkDetails = [];
+        message.extraSections = [];
+        if (value !== undefined) reflectionMergePartial<ItemIdentity>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: ItemIdentity
+    ): ItemIdentity {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string full_name */ 1:
+                    message.fullName = reader.string();
+                    break;
+                case /* string email */ 2:
+                    message.email = reader.string();
+                    break;
+                case /* string phone_number */ 3:
+                    message.phoneNumber = reader.string();
+                    break;
+                case /* string first_name */ 4:
+                    message.firstName = reader.string();
+                    break;
+                case /* string middle_name */ 5:
+                    message.middleName = reader.string();
+                    break;
+                case /* string last_name */ 6:
+                    message.lastName = reader.string();
+                    break;
+                case /* string birthdate */ 7:
+                    message.birthdate = reader.string();
+                    break;
+                case /* string gender */ 8:
+                    message.gender = reader.string();
+                    break;
+                case /* repeated proton_pass_item_v1.ExtraField extra_personal_details */ 9:
+                    message.extraPersonalDetails.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* string organization */ 10:
+                    message.organization = reader.string();
+                    break;
+                case /* string street_address */ 11:
+                    message.streetAddress = reader.string();
+                    break;
+                case /* string zip_or_postal_code */ 12:
+                    message.zipOrPostalCode = reader.string();
+                    break;
+                case /* string city */ 13:
+                    message.city = reader.string();
+                    break;
+                case /* string state_or_province */ 14:
+                    message.stateOrProvince = reader.string();
+                    break;
+                case /* string country_or_region */ 15:
+                    message.countryOrRegion = reader.string();
+                    break;
+                case /* string floor */ 16:
+                    message.floor = reader.string();
+                    break;
+                case /* string county */ 17:
+                    message.county = reader.string();
+                    break;
+                case /* repeated proton_pass_item_v1.ExtraField extra_address_details */ 18:
+                    message.extraAddressDetails.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* string social_security_number */ 19:
+                    message.socialSecurityNumber = reader.string();
+                    break;
+                case /* string passport_number */ 20:
+                    message.passportNumber = reader.string();
+                    break;
+                case /* string license_number */ 21:
+                    message.licenseNumber = reader.string();
+                    break;
+                case /* string website */ 22:
+                    message.website = reader.string();
+                    break;
+                case /* string x_handle */ 23:
+                    message.xHandle = reader.string();
+                    break;
+                case /* string second_phone_number */ 24:
+                    message.secondPhoneNumber = reader.string();
+                    break;
+                case /* string linkedin */ 25:
+                    message.linkedin = reader.string();
+                    break;
+                case /* string reddit */ 26:
+                    message.reddit = reader.string();
+                    break;
+                case /* string facebook */ 27:
+                    message.facebook = reader.string();
+                    break;
+                case /* string yahoo */ 28:
+                    message.yahoo = reader.string();
+                    break;
+                case /* string instagram */ 29:
+                    message.instagram = reader.string();
+                    break;
+                case /* repeated proton_pass_item_v1.ExtraField extra_contact_details */ 30:
+                    message.extraContactDetails.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* string company */ 31:
+                    message.company = reader.string();
+                    break;
+                case /* string job_title */ 32:
+                    message.jobTitle = reader.string();
+                    break;
+                case /* string personal_website */ 33:
+                    message.personalWebsite = reader.string();
+                    break;
+                case /* string work_phone_number */ 34:
+                    message.workPhoneNumber = reader.string();
+                    break;
+                case /* string work_email */ 35:
+                    message.workEmail = reader.string();
+                    break;
+                case /* repeated proton_pass_item_v1.ExtraField extra_work_details */ 36:
+                    message.extraWorkDetails.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                case /* repeated proton_pass_item_v1.ExtraIdentitySection extra_sections */ 37:
+                    message.extraSections.push(
+                        ExtraIdentitySection.internalBinaryRead(reader, reader.uint32(), options)
+                    );
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: ItemIdentity, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string full_name = 1; */
+        if (message.fullName !== '') writer.tag(1, WireType.LengthDelimited).string(message.fullName);
+        /* string email = 2; */
+        if (message.email !== '') writer.tag(2, WireType.LengthDelimited).string(message.email);
+        /* string phone_number = 3; */
+        if (message.phoneNumber !== '') writer.tag(3, WireType.LengthDelimited).string(message.phoneNumber);
+        /* string first_name = 4; */
+        if (message.firstName !== '') writer.tag(4, WireType.LengthDelimited).string(message.firstName);
+        /* string middle_name = 5; */
+        if (message.middleName !== '') writer.tag(5, WireType.LengthDelimited).string(message.middleName);
+        /* string last_name = 6; */
+        if (message.lastName !== '') writer.tag(6, WireType.LengthDelimited).string(message.lastName);
+        /* string birthdate = 7; */
+        if (message.birthdate !== '') writer.tag(7, WireType.LengthDelimited).string(message.birthdate);
+        /* string gender = 8; */
+        if (message.gender !== '') writer.tag(8, WireType.LengthDelimited).string(message.gender);
+        /* repeated proton_pass_item_v1.ExtraField extra_personal_details = 9; */
+        for (let i = 0; i < message.extraPersonalDetails.length; i++)
+            ExtraField.internalBinaryWrite(
+                message.extraPersonalDetails[i],
+                writer.tag(9, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* string organization = 10; */
+        if (message.organization !== '') writer.tag(10, WireType.LengthDelimited).string(message.organization);
+        /* string street_address = 11; */
+        if (message.streetAddress !== '') writer.tag(11, WireType.LengthDelimited).string(message.streetAddress);
+        /* string zip_or_postal_code = 12; */
+        if (message.zipOrPostalCode !== '') writer.tag(12, WireType.LengthDelimited).string(message.zipOrPostalCode);
+        /* string city = 13; */
+        if (message.city !== '') writer.tag(13, WireType.LengthDelimited).string(message.city);
+        /* string state_or_province = 14; */
+        if (message.stateOrProvince !== '') writer.tag(14, WireType.LengthDelimited).string(message.stateOrProvince);
+        /* string country_or_region = 15; */
+        if (message.countryOrRegion !== '') writer.tag(15, WireType.LengthDelimited).string(message.countryOrRegion);
+        /* string floor = 16; */
+        if (message.floor !== '') writer.tag(16, WireType.LengthDelimited).string(message.floor);
+        /* string county = 17; */
+        if (message.county !== '') writer.tag(17, WireType.LengthDelimited).string(message.county);
+        /* repeated proton_pass_item_v1.ExtraField extra_address_details = 18; */
+        for (let i = 0; i < message.extraAddressDetails.length; i++)
+            ExtraField.internalBinaryWrite(
+                message.extraAddressDetails[i],
+                writer.tag(18, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* string social_security_number = 19; */
+        if (message.socialSecurityNumber !== '')
+            writer.tag(19, WireType.LengthDelimited).string(message.socialSecurityNumber);
+        /* string passport_number = 20; */
+        if (message.passportNumber !== '') writer.tag(20, WireType.LengthDelimited).string(message.passportNumber);
+        /* string license_number = 21; */
+        if (message.licenseNumber !== '') writer.tag(21, WireType.LengthDelimited).string(message.licenseNumber);
+        /* string website = 22; */
+        if (message.website !== '') writer.tag(22, WireType.LengthDelimited).string(message.website);
+        /* string x_handle = 23; */
+        if (message.xHandle !== '') writer.tag(23, WireType.LengthDelimited).string(message.xHandle);
+        /* string second_phone_number = 24; */
+        if (message.secondPhoneNumber !== '')
+            writer.tag(24, WireType.LengthDelimited).string(message.secondPhoneNumber);
+        /* string linkedin = 25; */
+        if (message.linkedin !== '') writer.tag(25, WireType.LengthDelimited).string(message.linkedin);
+        /* string reddit = 26; */
+        if (message.reddit !== '') writer.tag(26, WireType.LengthDelimited).string(message.reddit);
+        /* string facebook = 27; */
+        if (message.facebook !== '') writer.tag(27, WireType.LengthDelimited).string(message.facebook);
+        /* string yahoo = 28; */
+        if (message.yahoo !== '') writer.tag(28, WireType.LengthDelimited).string(message.yahoo);
+        /* string instagram = 29; */
+        if (message.instagram !== '') writer.tag(29, WireType.LengthDelimited).string(message.instagram);
+        /* repeated proton_pass_item_v1.ExtraField extra_contact_details = 30; */
+        for (let i = 0; i < message.extraContactDetails.length; i++)
+            ExtraField.internalBinaryWrite(
+                message.extraContactDetails[i],
+                writer.tag(30, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* string company = 31; */
+        if (message.company !== '') writer.tag(31, WireType.LengthDelimited).string(message.company);
+        /* string job_title = 32; */
+        if (message.jobTitle !== '') writer.tag(32, WireType.LengthDelimited).string(message.jobTitle);
+        /* string personal_website = 33; */
+        if (message.personalWebsite !== '') writer.tag(33, WireType.LengthDelimited).string(message.personalWebsite);
+        /* string work_phone_number = 34; */
+        if (message.workPhoneNumber !== '') writer.tag(34, WireType.LengthDelimited).string(message.workPhoneNumber);
+        /* string work_email = 35; */
+        if (message.workEmail !== '') writer.tag(35, WireType.LengthDelimited).string(message.workEmail);
+        /* repeated proton_pass_item_v1.ExtraField extra_work_details = 36; */
+        for (let i = 0; i < message.extraWorkDetails.length; i++)
+            ExtraField.internalBinaryWrite(
+                message.extraWorkDetails[i],
+                writer.tag(36, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* repeated proton_pass_item_v1.ExtraIdentitySection extra_sections = 37; */
+        for (let i = 0; i < message.extraSections.length; i++)
+            ExtraIdentitySection.internalBinaryWrite(
+                message.extraSections[i],
+                writer.tag(37, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.ItemIdentity
+ */
+export const ItemIdentity = new ItemIdentity$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ExtraIdentitySection$Type extends MessageType<ExtraIdentitySection> {
+    constructor() {
+        super('proton_pass_item_v1.ExtraIdentitySection', [
+            { no: 1, name: 'section_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: 'section_fields', kind: 'message', repeat: 1 /*RepeatType.PACKED*/, T: () => ExtraField },
+        ]);
+    }
+    create(value?: PartialMessage<ExtraIdentitySection>): ExtraIdentitySection {
+        const message = globalThis.Object.create(this.messagePrototype!);
+        message.sectionName = '';
+        message.sectionFields = [];
+        if (value !== undefined) reflectionMergePartial<ExtraIdentitySection>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(
+        reader: IBinaryReader,
+        length: number,
+        options: BinaryReadOptions,
+        target?: ExtraIdentitySection
+    ): ExtraIdentitySection {
+        let message = target ?? this.create(),
+            end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string section_name */ 1:
+                    message.sectionName = reader.string();
+                    break;
+                case /* repeated proton_pass_item_v1.ExtraField section_fields */ 2:
+                    message.sectionFields.push(ExtraField.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === 'throw')
+                        throw new globalThis.Error(
+                            `Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`
+                        );
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(
+        message: ExtraIdentitySection,
+        writer: IBinaryWriter,
+        options: BinaryWriteOptions
+    ): IBinaryWriter {
+        /* string section_name = 1; */
+        if (message.sectionName !== '') writer.tag(1, WireType.LengthDelimited).string(message.sectionName);
+        /* repeated proton_pass_item_v1.ExtraField section_fields = 2; */
+        for (let i = 0; i < message.sectionFields.length; i++)
+            ExtraField.internalBinaryWrite(
+                message.sectionFields[i],
+                writer.tag(2, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        let u = options.writeUnknownFields;
+        if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message proton_pass_item_v1.ExtraIdentitySection
+ */
+export const ExtraIdentitySection = new ExtraIdentitySection$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class AllowedAndroidApp$Type extends MessageType<AllowedAndroidApp> {
     constructor() {
@@ -1341,6 +1967,7 @@ class Content$Type extends MessageType<Content> {
             { no: 3, name: 'login', kind: 'message', oneof: 'content', T: () => ItemLogin },
             { no: 4, name: 'alias', kind: 'message', oneof: 'content', T: () => ItemAlias },
             { no: 5, name: 'credit_card', kind: 'message', oneof: 'content', T: () => ItemCreditCard },
+            { no: 6, name: 'identity', kind: 'message', oneof: 'content', T: () => ItemIdentity },
         ]);
     }
     create(value?: PartialMessage<Content>): Content {
@@ -1399,6 +2026,17 @@ class Content$Type extends MessageType<Content> {
                         ),
                     };
                     break;
+                case /* proton_pass_item_v1.ItemIdentity identity */ 6:
+                    message.content = {
+                        oneofKind: 'identity',
+                        identity: ItemIdentity.internalBinaryRead(
+                            reader,
+                            reader.uint32(),
+                            options,
+                            (message.content as any).identity
+                        ),
+                    };
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -1439,6 +2077,13 @@ class Content$Type extends MessageType<Content> {
             ItemCreditCard.internalBinaryWrite(
                 message.content.creditCard,
                 writer.tag(5, WireType.LengthDelimited).fork(),
+                options
+            ).join();
+        /* proton_pass_item_v1.ItemIdentity identity = 6; */
+        if (message.content.oneofKind === 'identity')
+            ItemIdentity.internalBinaryWrite(
+                message.content.identity,
+                writer.tag(6, WireType.LengthDelimited).fork(),
                 options
             ).join();
         let u = options.writeUnknownFields;
