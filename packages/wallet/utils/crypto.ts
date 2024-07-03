@@ -1,11 +1,6 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto/lib';
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import {
-    base64StringToUint8Array,
-    stringToUint8Array,
-    uint8ArrayToBase64String,
-    uint8ArrayToString,
-} from '@proton/shared/lib/helpers/encoding';
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -19,6 +14,9 @@ export enum WalletSignatureContextEnum {
 }
 
 export type WalletSignatureContext = `${WalletSignatureContextEnum}`;
+
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
 
 export const getSymmetricKey = async (key: Uint8Array): Promise<CryptoKey> => {
     // https://github.com/vercel/edge-runtime/issues/813
@@ -211,9 +209,9 @@ export const hmac = async (hmacKey: CryptoKey, data: string) => {
 export const encryptWalletDataWithWalletKey = async (dataToEncrypt: string[], key: CryptoKey): Promise<string[]> => {
     const encryptedData = await Promise.all(
         dataToEncrypt.map(async (data) => {
-            const binaryMnemonic = stringToUint8Array(data);
+            const binaryData = encoder.encode(data);
 
-            const encryptedMnemonic = await encryptData(key, binaryMnemonic);
+            const encryptedMnemonic = await encryptData(key, binaryData);
             return uint8ArrayToBase64String(encryptedMnemonic);
         })
     );
@@ -261,7 +259,7 @@ export const decryptWalletData = async (dataToDecrypt: (string | null)[], wallet
                 const decodedEncryptedMnemonic = base64StringToUint8Array(data);
 
                 const decryptedBinaryMnemonic = await decryptData(walletKey, decodedEncryptedMnemonic);
-                return uint8ArrayToString(decryptedBinaryMnemonic);
+                return decoder.decode(decryptedBinaryMnemonic);
             } catch (e) {
                 return null;
             }
