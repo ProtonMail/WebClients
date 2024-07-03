@@ -1,12 +1,8 @@
-import { useState } from 'react';
-
-import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components/components';
-import { useAddresses, useGetAddressKeys, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -14,7 +10,6 @@ import { BitcoinAmount, Button, CoreButton, CoreInput } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { Price } from '../../../atoms/Price';
 import { COMPUTE_BITCOIN_UNIT } from '../../../constants';
-import { usePsbt } from '../../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
 import { convertAmountStr, getLabelByUnit, isExchangeRate } from '../../../utils';
@@ -22,6 +17,7 @@ import { EmailListItem } from '../../EmailOrBitcoinAddressInput';
 import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { TextAreaModal } from '../../TextAreaModal';
 import { FeesModal } from './FeesModal';
+import { useTransactionReview } from './useTransactionReview';
 
 import './TransactionReview.scss';
 
@@ -51,74 +47,31 @@ export const TransactionReview = ({
     updateTxBuilder,
     getFeesByBlockTarget,
 }: Props) => {
-    const [addresses] = useAddresses();
-    // We use primaryAddress when user wants to use BvE but doesn't have any email set on the wallet account he is using
-    const primaryAddress = addresses?.[0];
-    const txBuilderRecipients = txBuilder.getRecipients();
-    const { createNotification } = useNotifications();
     const [settings] = useUserWalletSettings();
     const [feesModal, setFeesModal] = useModalState();
     const [loadingSend, withLoadingSend] = useLoading();
 
-    const getAddressKeys = useGetAddressKeys();
-
-    const [message, setMessage] = useState('');
-    const [noteToSelf, setNoteToSelf] = useState('');
     const [textAreaModal, setTextAreaModal] = useModalStateWithData<{ kind: 'message' | 'note' }>();
 
-    const { psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder }, true);
-
-    const totalFees = Number(psbt?.total_fees ?? 0);
-    const totalSentAmount = txBuilderRecipients.reduce((acc, r) => {
-        return acc + Number(r[2]);
-    }, 0);
-
-    const totalAmount = totalFees + totalSentAmount;
-
-    // Typeguard, no recipient should be undefined here
-    const recipients = compact(txBuilder.getRecipients().map((r) => btcAddressMap[r[1]]));
-
-    const handleSendTransaction = async () => {
-        try {
-            const accountPrimaryAddressesKeys = await Promise.all(
-                account.Addresses.map(async ({ ID }) => {
-                    const [primaryAddressKey] = await getAddressKeys(ID);
-                    return primaryAddressKey;
-                })
-            );
-
-            const signingKeys = accountPrimaryAddressesKeys.map((k) => k.privateKey);
-            const senderEncryptionKeys = accountPrimaryAddressesKeys.map((k) => k.publicKey);
-
-            await signAndBroadcastPsbt(
-                {
-                    apiAccount: account,
-                    apiWalletData: wallet,
-                    exchangeRateId: isExchangeRate(unit) ? unit?.ID : undefined,
-                    noteToSelf: noteToSelf || undefined,
-                    message: message || undefined,
-                    signingKeys,
-                    encryptionKeys: [...senderEncryptionKeys, ...compact(recipients.map((r) => r.addressKey))],
-                    addressId: account.Addresses[0]?.ID ?? primaryAddress?.ID,
-                },
-                isUsingBitcoinViaEmail
-            );
-
-            onSent();
-
-            createNotification({
-                text: c('Wallet send').t`Transaction was successfully sent`,
-            });
-        } catch (error) {
-            createNotification({
-                type: 'error',
-                text:
-                    typeof error === 'object' && error && 'message' in error
-                        ? (error.message as string)
-                        : c('Wallet send').t`The transaction could not be sent. Please try again later`,
-            });
-        }
-    };
+    const {
+        message,
+        noteToSelf,
+        setMessage,
+        setNoteToSelf,
+        senderAddress,
+        totalSentAmount,
+        totalFees,
+        totalAmount,
+        handleSendTransaction,
+    } = useTransactionReview({
+        isUsingBitcoinViaEmail,
+        wallet,
+        account,
+        unit,
+        txBuilder,
+        btcAddressMap,
+        onSent,
+    });
 
     return (
         <>
@@ -266,28 +219,42 @@ export const TransactionReview = ({
                 {/* Message/Note */}
                 {isUsingBitcoinViaEmail && (
                     <div className="mt-2">
-                        <CoreInput
-                            bigger
-                            dense
-                            className="rounded-xl bg-norm"
-                            inputClassName="rounded-full pl-2"
-                            placeholder={c('Wallet send').t`Add Message to recipient`}
-                            value={message}
-                            onClick={() => setTextAreaModal({ kind: 'message' })}
-                            style={{ cursor: 'pointer' }}
-                            prefix={
-                                <div
-                                    className="rounded-full bg-norm flex"
-                                    style={{
-                                        background: 'var(--interaction-weak-minor-2)',
-                                        width: '2rem',
-                                        height: '2rem',
-                                    }}
-                                >
-                                    <Icon name="speech-bubble" className="m-auto" />
-                                </div>
-                            }
-                        />
+                        <Tooltip
+                            title={(() => {
+                                if (!senderAddress) {
+                                    return c('Wallet send')
+                                        .t`You cannot send a message to the recipient because you don't have any address setup on your account`;
+                                }
+
+                                return null;
+                            })()}
+                        >
+                            <div>
+                                <CoreInput
+                                    bigger
+                                    dense
+                                    disabled={!senderAddress}
+                                    className="rounded-xl bg-norm"
+                                    inputClassName="rounded-full pl-2"
+                                    placeholder={c('Wallet send').t`Add Message to recipient`}
+                                    value={message}
+                                    onClick={() => setTextAreaModal({ kind: 'message' })}
+                                    style={{ cursor: 'pointer' }}
+                                    prefix={
+                                        <div
+                                            className="rounded-full bg-norm flex"
+                                            style={{
+                                                background: 'var(--interaction-weak-minor-2)',
+                                                width: '2rem',
+                                                height: '2rem',
+                                            }}
+                                        >
+                                            <Icon name="speech-bubble" className="m-auto" />
+                                        </div>
+                                    }
+                                />
+                            </div>
+                        </Tooltip>
                     </div>
                 )}
 
