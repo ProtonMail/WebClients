@@ -13,7 +13,8 @@ import type {
   SerializedLexicalNode,
   Spread,
 } from 'lexical'
-import { $applyNodeReplacement, DecoratorNode, createEditor } from 'lexical'
+import { $applyNodeReplacement, $getEditor, DecoratorNode, createEditor } from 'lexical'
+import { getEditorDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 
 const ImageComponent = React.lazy(() => import('./ImageComponent'))
 
@@ -29,14 +30,25 @@ export interface ImagePayload {
   captionsEnabled?: boolean
 }
 
-function convertImageElement(domNode: Node): null | DOMConversionOutput {
+function $convertImageElement(domNode: Node): null | DOMConversionOutput {
   const img = domNode as HTMLImageElement
   if (img.src.startsWith('file:///')) {
     return null
   }
   const { alt: altText, src, width, height } = img
+  const aspectRatio = width && height ? width / height : 1
+  let finalWidth = width
+  let finalHeight = height
+  const editorDimensions = getEditorDimensionsWithoutPadding($getEditor())
+  if (editorDimensions) {
+    const editorWidth = editorDimensions.width
+    if (width >= editorWidth) {
+      finalWidth = editorWidth
+      finalHeight = finalWidth / aspectRatio
+    }
+  }
   // eslint-disable-next-line @typescript-eslint/no-use-before-define
-  const node = $createImageNode({ altText, height, src, width })
+  const node = $createImageNode({ src, altText, width: finalWidth, height: finalHeight })
   return { node }
 }
 
@@ -120,7 +132,7 @@ export class ImageNode extends DecoratorNode<JSX.Element> {
   static importDOM(): DOMConversionMap | null {
     return {
       img: () => ({
-        conversion: convertImageElement,
+        conversion: $convertImageElement,
         priority: 0,
       }),
     }
