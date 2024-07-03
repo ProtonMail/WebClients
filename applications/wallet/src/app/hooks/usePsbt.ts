@@ -18,11 +18,13 @@ interface BroadcastData
         Pick<{ apiWalletData?: IWasmApiWalletData; apiAccount?: WasmApiWalletAccount }, 'apiAccount' | 'apiWalletData'>
     > {
     noteToSelf?: string;
-    message?: string;
     exchangeRateId?: string;
-    signingKeys: PrivateKeyReference[];
-    encryptionKeys: PublicKeyReference[];
-    addressId?: string;
+    message?: {
+        content: string;
+        signingKeys: PrivateKeyReference[];
+        encryptionKeys: PublicKeyReference[];
+        senderAddressId: string;
+    };
 }
 
 const getNowTimestamp = (): string => {
@@ -69,19 +71,13 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
         }
     }, [createDraftPsbt, shouldCreatePsbt]);
 
-    const signAndBroadcastPsbt = (
-        {
-            apiWalletData: wallet,
-            apiAccount: account,
-            exchangeRateId,
-            noteToSelf,
-            message,
-            signingKeys,
-            encryptionKeys,
-            addressId,
-        }: BroadcastData,
-        isUsingBitcoinViaEmail: boolean
-    ) => {
+    const signAndBroadcastPsbt = ({
+        apiWalletData: wallet,
+        apiAccount: account,
+        exchangeRateId,
+        noteToSelf,
+        message,
+    }: BroadcastData) => {
         return withLoadingBroadcast(async () => {
             const wasmAccount = getAccountWithChainDataFromManyWallets(
                 walletsChainData,
@@ -100,7 +96,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
             });
 
             const encryptedData = message
-                ? await encryptPgp(message, encryptionKeys, signingKeys).catch(() => null)
+                ? await encryptPgp(message.content, message.encryptionKeys, message.signingKeys).catch(() => null)
                 : null;
 
             const [encryptedNoteToSelf] = noteToSelf
@@ -121,9 +117,9 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                               }
                             : { key: 'TransactionTime', value: getNowTimestamp() },
                     },
-                    isUsingBitcoinViaEmail
+                    message
                         ? {
-                              address_id: addressId ?? null,
+                              address_id: message.senderAddressId,
                               subject: null,
                               body: encryptedData,
                           }
