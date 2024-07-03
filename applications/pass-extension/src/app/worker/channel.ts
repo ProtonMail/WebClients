@@ -33,7 +33,6 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ONBOARDING_ACK,
         WorkerMessageType.ONBOARDING_REQUEST,
         WorkerMessageType.OTP_CODE_GENERATE,
-        WorkerMessageType.PASSKEY_QUERY,
         WorkerMessageType.POPUP_INIT,
     ],
     onError: withContext((ctx, err) => {
