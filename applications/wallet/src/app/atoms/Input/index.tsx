@@ -18,17 +18,21 @@ export type InputProps<E extends ElementType = typeof CoreInput> = Omit<
 };
 
 export const Input = forwardRef(
-    ({ containerClassName, containerStyle, bordered, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
+    (
+        { containerClassName, containerStyle, bordered, prefix, ...props }: InputProps,
+        ref: ForwardedRef<HTMLInputElement>
+    ) => {
         return (
             <div
                 className={clsx(
-                    'wallet-input bg-weak py-5 px-6 rounded-xl color-norm w-full',
+                    'wallet-input flex flex-row flex-nowrap items-center bg-weak py-5 px-4 rounded-xl color-norm w-full',
                     containerClassName,
                     bordered && 'bordered',
                     props.disabled && 'disabled'
                 )}
                 style={containerStyle}
             >
+                {prefix}
                 <CoreInput
                     ref={ref}
                     autoComplete="off"

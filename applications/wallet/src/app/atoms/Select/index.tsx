@@ -25,7 +25,7 @@ export const Select = <V extends unknown>({ options, bordered, containerClassNam
     return (
         <div
             className={clsx(
-                'wallet-select flex flex-row items-center flex-nowrap bg-weak py-5 px-6 rounded-xl color-norm w-full',
+                'wallet-select flex flex-row items-center flex-nowrap bg-weak py-5 px-4 rounded-xl color-norm w-full',
                 bordered && 'bordered',
                 props.disabled && 'disabled',
                 containerClassName
@@ -68,7 +68,7 @@ export const SearchableSelect = <V extends unknown>({
     return (
         <div
             className={clsx(
-                'wallet-select wallet-select-dropdown-button bg-weak py-5 px-6 rounded-xl color-norm w-full',
+                'wallet-select wallet-select-dropdown-button bg-weak py-5 px-4 rounded-xl color-norm w-full',
                 bordered && 'bordered',
                 props.disabled && 'disabled',
                 containerClassName
