@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import { ModalOwnProps } from '@proton/components/components';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData, toWalletAccountSelectorOptions } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -14,7 +14,6 @@ import { useGatewaysPublicApiKeys } from '../../store/hooks/useGatewaysPublicApi
 import { getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
 import { useComputeNextAddressToReceive } from '../../utils/hooks/useComputeNextIndexToReceive';
-import { toWalletAccountSelectorOptions } from '../../utils/wallet';
 import { ModalHeaderWithStepper, Steps } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
 import { Amount, QuoteWithProvider } from './Amount';

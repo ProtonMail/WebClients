@@ -18,7 +18,7 @@ import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 
 import { WalletType, useGetUserWalletSettings, useWalletApiClients } from '..';
-import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, FIRST_INDEX, purposeByScriptType } from '../constants/bitcoin';
+import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, FIRST_INDEX, PURPOSE_BY_SCRIPT_TYPE } from '../constants/bitcoin';
 import { useGetBitcoinNetwork } from '../store/hooks/useBitcoinNetwork';
 import {
     POOL_FILLING_THRESHOLD,
@@ -28,7 +28,7 @@ import {
 } from '../utils';
 
 // Flag to tell the API the wallet was autocreated
-const WALLET_AUTOCREATE_FLAG = 1;
+const WALLET_AUTOCREATE_FLAG = true;
 
 /**
  * Utility hook creating a wallet if user don't have any
@@ -142,7 +142,7 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
         const wasmWallet = new WasmWallet(network, mnemonic, '');
         const fingerprint = wasmWallet.getFingerprint();
 
-        const derivationPathParts = [purposeByScriptType[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
+        const derivationPathParts = [PURPOSE_BY_SCRIPT_TYPE[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
 
         try {
             const { Wallet } = await walletApi.wallet.createWallet(

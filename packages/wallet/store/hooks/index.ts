@@ -1,4 +1,4 @@
-import { baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store';
+import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 
 export * from './useApiWalletsData';
 export * from './useBitcoinNetwork';
