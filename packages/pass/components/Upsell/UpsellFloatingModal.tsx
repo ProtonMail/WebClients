@@ -37,10 +37,7 @@ export const UpsellFloatingModal: FC<UpsellFloatingModalProps> = ({ className, t
                         closeButtonProps={{ pill: true, icon: true }}
                         className="absolute top-custom right-custom"
                         style={{ '--top-custom': '1rem', '--right-custom': '1rem' }}
-                        onClick={() => {
-                            console.log(123);
-                            setShowModal(false);
-                        }}
+                        onClick={() => setShowModal(false)}
                     />
                     <PassLogo
                         width={300}
