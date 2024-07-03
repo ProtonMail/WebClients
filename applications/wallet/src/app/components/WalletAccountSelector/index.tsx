@@ -151,8 +151,8 @@ export const WalletAccountSelector = ({ value, options, disabled, checkIsValid, 
                 disabled={disabled}
             >
                 <div className="flex flex-column">
-                    <div className="flex flex-row w-full justify-space-between items-center mb-3">
-                        <div className="text-semibold">{wallet.Name}</div>
+                    <div className="flex flex-row flex-nowrap w-full justify-space-between items-center mb-3">
+                        <div className="text-semibold text-ellipsis">{wallet.Name}</div>
                         <div>
                             <Icon name={isOpen ? 'chevron-up' : 'chevron-down'} />
                         </div>
