@@ -82,11 +82,6 @@
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
   --search-field-focus-background: #0e0e0e;
-  .button-solid-weak {
-    --button-default-text-color: var(--interaction-norm);
-    --button-hover-text-color: var(--interaction-norm);
-    --button-active-text-color: var(--interaction-norm);
-  }
 }
 @supports (-webkit-hyphens: none) {
   :root,
