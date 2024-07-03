@@ -53,7 +53,7 @@ export const useFeesInput = (
         const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesEstimations);
 
         if (defaultFeeRate && !txBuilder.getFeeRate()) {
-            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(feeRate))));
+            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(defaultFeeRate))));
         }
     }, [feeRate, feesEstimations, txBuilder, updateTxBuilder]);
 
