@@ -14,7 +14,7 @@ import { RecipientDetailsModal, RecipientDetailsModalOwnProps } from '../../comp
 import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
-import { convertAmount, getLabelByUnit } from '../../utils';
+import { convertAmountStr, getLabelByUnit } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import {
     AmountDataItem,
@@ -90,7 +90,7 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                         </div>
                         {exchangeRate && (
                             <div className="text-lg color-hint">
-                                {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                                {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                                 {getLabelByUnit(settings.BitcoinUnit)}
                             </div>
                         )}

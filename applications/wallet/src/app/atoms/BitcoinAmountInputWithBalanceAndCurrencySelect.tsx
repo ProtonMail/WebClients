@@ -5,7 +5,7 @@ import { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
 import { COMPUTE_BITCOIN_UNIT } from '../constants';
 import { useFiatCurrencies, useGetExchangeRate } from '../store/hooks';
 import { useUserWalletSettings } from '../store/hooks/useUserWalletSettings';
-import { convertAmount, getLabelByUnit } from '../utils';
+import { convertAmountStr, getLabelByUnit } from '../utils';
 import { BitcoinAmountInput } from './BitcoinAmountInput';
 import { CoreButton } from './Button';
 import { CurrencySelect } from './CurrencySelect';
@@ -99,7 +99,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
 
             {!!exchangeRate && (
                 <span className="block color-weak">
-                    {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                    {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                     {getLabelByUnit(settings.BitcoinUnit)}
                 </span>
             )}

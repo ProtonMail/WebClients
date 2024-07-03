@@ -46,11 +46,31 @@ export const roundFloat = (value: number, decimals = 8) => {
     return Math.round(value * factor) / factor;
 };
 
+export const getPrecision = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
+    if (typeof unit === 'object') {
+        return Math.log10(unit.Cents);
+    }
+
+    switch (unit) {
+        case 'BTC':
+            return 8;
+        case 'MBTC':
+            return 5;
+        case 'SATS':
+            return 0;
+    }
+};
+
+/**
+ * Convert and round amount to correct precision, for amount display we should prefer convertAmountStr to avoid weird numeric format
+ */
 export const convertAmount = (
     value: number,
     from: WasmBitcoinUnit | WasmApiExchangeRate,
     to: WasmBitcoinUnit | WasmApiExchangeRate
 ): number => {
+    const precision = getPrecision(to);
+
     if (typeof from === 'object' && 'FiatCurrency' in from) {
         const sats = fiatToSats(value, from);
         return convertAmount(sats, COMPUTE_BITCOIN_UNIT, to);
@@ -67,29 +87,35 @@ export const convertAmount = (
                 case 'BTC':
                     return roundFloat(value);
                 case 'MBTC':
-                    return roundFloat(value * (BITCOIN / mBITCOIN), 5);
+                    return roundFloat(value * (BITCOIN / mBITCOIN), precision);
                 case 'SATS':
-                    return roundFloat(value * (BITCOIN / SATOSHI), 0);
+                    return roundFloat(value * (BITCOIN / SATOSHI), precision);
             }
         case 'MBTC':
             switch (to) {
                 case 'BTC':
                     return roundFloat(value / (BITCOIN / mBITCOIN));
                 case 'MBTC':
-                    return roundFloat(value, 5);
+                    return roundFloat(value, precision);
                 case 'SATS':
-                    return roundFloat(value * (mBITCOIN / SATOSHI), 0);
+                    return roundFloat(value * (mBITCOIN / SATOSHI), precision);
             }
         case 'SATS':
             switch (to) {
                 case 'BTC':
                     return roundFloat(value / (BITCOIN / SATOSHI));
                 case 'MBTC':
-                    return roundFloat(value / (mBITCOIN / SATOSHI), 5);
+                    return roundFloat(value / (mBITCOIN / SATOSHI), precision);
                 case 'SATS':
-                    return roundFloat(value, 0);
+                    return roundFloat(value, precision);
             }
     }
+};
+
+export const convertAmountStr = (...args: Parameters<typeof convertAmount>) => {
+    const [, , to] = args;
+    const precision = getPrecision(to);
+    return convertAmount(...args).toFixed(precision);
 };
 
 export const getDecimalStepByUnit = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
@@ -121,18 +147,3 @@ export const getBitcoinUnitOptions: () => { unit: WasmBitcoinUnit; label: string
     { unit: 'MBTC', label: getLabelByUnit('MBTC') },
     { unit: 'SATS', label: getLabelByUnit('SATS') },
 ];
-
-export const getPrecision = (unit: WasmBitcoinUnit | WasmApiExchangeRate) => {
-    if (typeof unit === 'object') {
-        return Math.log10(unit.Cents);
-    }
-
-    switch (unit) {
-        case 'BTC':
-            return 8;
-        case 'MBTC':
-            return 5;
-        case 'SATS':
-            return 0;
-    }
-};

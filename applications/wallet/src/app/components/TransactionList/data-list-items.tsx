@@ -18,7 +18,7 @@ import { useResponsiveContainerContext } from '../../contexts/ResponsiveContaine
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import {
-    convertAmount,
+    convertAmountStr,
     getFormattedPeriodSinceConfirmation,
     getLabelByUnit,
     getTransactionMessage,
@@ -186,7 +186,7 @@ export const AmountDataListItem = ({
                         )}
                     >
                         <span className={clsx('text-ellipsis')}>
-                            {convertAmount(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
                             {getLabelByUnit(settings.BitcoinUnit)}
                         </span>
                     </div>
