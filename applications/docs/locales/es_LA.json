@@ -231,9 +231,6 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
-      "Duplicate": [
-        "Duplicar"
-      ],
       "Edit": [
         "Editar"
       ],
@@ -291,9 +288,6 @@
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
       ],
-      "History": [
-        "Historial"
-      ],
       "Image could not be loaded with tracker protection.": [
         "No se pudo cargar la imagen con la protección de rastreo."
       ],
@@ -344,6 +338,9 @@
       ],
       "Loading verification": [
         "Cargando verificación"
+      ],
+      "Make a copy": [
+        "Hacer una copia"
       ],
       "Manage folders": [
         "Gestionar carpetas"
@@ -447,8 +444,8 @@
       "Remove gift code": [
         "Borrar el código de regalo"
       ],
-      "Rename": [
-        "Renombrar"
+      "Rename document": [
+        "Renombrar el documento"
       ],
       "Replace file": [
         "Reemplazar archivo"
@@ -488,6 +485,9 @@
       ],
       "See how": [
         "Ver cómo"
+      ],
+      "See version history": [
+        "Ver historial de versiones"
       ],
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
@@ -823,6 +823,9 @@
       ],
       "Custom domain problem": [
         "Problema de dominio personalizado"
+      ],
+      "Docs problem": [
+        "Problema de Docs"
       ],
       "Drive problem": [
         "Problema de Drive"
@@ -4350,7 +4353,7 @@
         "Sus cambios se están sincronizando en Drive. No cierre la página web."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "Error al sincronizar sus cambios. Drive intentará guardar los cambios automáticamente. No cierre la página web."
+        "Error al sincronizar los cambios. Drive intentará guardar los cambios automáticamente. No cierre la página web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "El navegador actual no admite la descarga de archivos grandes debido a la falta de disponibilidad de trabajadores de servicio. La descarga de archivos grandes puede bloquearse o dejar que el navegador no responda. Use las últimas versiones de ${ recommendedBrowser } e intente de nuevo."

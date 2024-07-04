@@ -237,9 +237,6 @@
       "Download anyway": [
         "Все равно скачать"
       ],
-      "Duplicate": [
-        "Дублировать"
-      ],
       "Edit": [
         "Изменить"
       ],
@@ -297,9 +294,6 @@
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
       ],
-      "History": [
-        "История"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Некоторые изображения не могут быть загружены при включённой защите от отслеживания."
       ],
@@ -350,6 +344,9 @@
       ],
       "Loading verification": [
         "Загружается проверка"
+      ],
+      "Make a copy": [
+        "Сделать копию"
       ],
       "Manage folders": [
         "Управление папками"
@@ -450,8 +447,8 @@
       "Remove gift code": [
         "Удалить подарочный код"
       ],
-      "Rename": [
-        "Переименовать"
+      "Rename document": [
+        "Переименовать документ"
       ],
       "Replace file": [
         "Заменить файл"
@@ -491,6 +488,9 @@
       ],
       "See how": [
         "Посмотреть, как"
+      ],
+      "See version history": [
+        "Просмотреть историю версий"
       ],
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
@@ -3936,6 +3936,9 @@
       ],
       "Loading...": [
         "Загрузка..."
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Похоже, вы не в сети. Документ не может быть отредактирован, пока вы находитесь офлайн. Проверьте подключение вашего устройства."
       ],
       "Low Priority": [
         "Низкий приоритет"
