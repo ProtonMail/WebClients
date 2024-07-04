@@ -18,7 +18,7 @@ const UserAndAddressesSectionIntro = () => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
 
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     const selfMember = members?.find((member) => member.Self);
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
@@ -53,7 +53,13 @@ const UserAndAddressesSectionIntro = () => {
         const MoreLicenseButton = () => {
             if (user.canPay && selfMember?.Subscriber === MEMBER_SUBSCRIBER.PAYER) {
                 return (
-                    <Button shape="outline" color="norm" size="small" onClick={handleGetMoreLicense}>
+                    <Button
+                        shape="outline"
+                        color="norm"
+                        size="small"
+                        disabled={loadingSubscriptionModal}
+                        onClick={handleGetMoreLicense}
+                    >
                         {c('Action').t`Get more licenses`}
                     </Button>
                 );
