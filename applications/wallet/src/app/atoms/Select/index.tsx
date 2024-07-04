@@ -96,3 +96,17 @@ export const SearchableSelect = <V extends unknown>({
         </div>
     );
 };
+
+interface SelectOptionProps {
+    label: string;
+    description?: string;
+}
+
+export const SelectOption = ({ label, description }: SelectOptionProps) => {
+    return (
+        <>
+            <span className="block">{label}</span>
+            {!!description && <span className="text-sm color-weak">{description}</span>}
+        </>
+    );
+};

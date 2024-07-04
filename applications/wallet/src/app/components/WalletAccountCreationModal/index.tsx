@@ -26,10 +26,10 @@ import {
     walletAccountCreation,
 } from '@proton/wallet';
 
-import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
+import { Button, CoreButton, Input, Modal, Select, SelectOption } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { SubTheme, getLabelByScriptType, isUndefined } from '../../utils';
+import { SubTheme, getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
 
 export interface WalletAccountCreationModalOwnProps {
     apiWalletData: IWasmApiWalletData;
@@ -159,15 +159,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
 
                         <div className="flex flex-row mt-4 w-full">
                             <Select
-                                label={
-                                    <div className="flex flex-row">
-                                        <span className="block mr-1">{c('Wallet Account').t`Script Type`}</span>
-                                        <Info
-                                            title={c('Wallet Account')
-                                                .t`Script type used in account. This will have an impact on account derivation path.`}
-                                        />
-                                    </div>
-                                }
+                                label={c('Wallet Account').t`Address type`}
                                 id="account-script-type-selector"
                                 aria-describedby="label-account-script-type"
                                 value={selectedScriptType}
@@ -179,7 +171,14 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                     label: getLabelByScriptType(opt as WasmScriptType),
                                     value: opt,
                                     id: opt.toString(),
+                                    children: (
+                                        <SelectOption
+                                            label={getLabelByScriptType(opt as WasmScriptType)}
+                                            description={getDescriptionByScriptType(opt as WasmScriptType)}
+                                        />
+                                    ),
                                 }))}
+                                renderSelected={(selected) => getLabelByScriptType(selected as WasmScriptType)}
                             />
                         </div>
 

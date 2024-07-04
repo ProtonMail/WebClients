@@ -13,7 +13,7 @@ import {
 } from '@proton/components/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, Input, Modal, Select } from '../../atoms';
+import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
 import { BitcoinViaEmailNote } from '../../atoms/BitcoinViaEmailNote';
 import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
@@ -84,7 +84,12 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                                 label: option.label,
                                 value: option.unit,
                                 id: option.unit,
+                                children: <SelectOption label={option.label} />,
                             }))}
+                            renderSelected={(selected) => {
+                                const option = getBitcoinUnitOptions().find((option) => option.unit === selected);
+                                return option ? option.label : null;
+                            }}
                         />
                     </div>
 
