@@ -1,6 +1,5 @@
 import { ForwardedRef, Fragment, forwardRef } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import NewBadge from '@proton/components/components/newBadge/NewBadge';
@@ -14,6 +13,7 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
+import { useFlag } from '../unleash';
 import ProductLink from './ProductLink';
 
 interface AppsDropdownProps {
@@ -27,8 +27,9 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         const { APP_NAME } = useConfig();
 
         const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
+        const canAccessWallet = useFlag('Wallet');
 
-        const availableApps = getAvailableApps({ user });
+        const availableApps = getAvailableApps({ user, canAccessWallet });
 
         if (availableApps.length <= 1) {
             return null;

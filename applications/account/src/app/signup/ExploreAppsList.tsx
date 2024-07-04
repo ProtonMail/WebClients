@@ -17,8 +17,16 @@ interface App {
     bit: PRODUCT_BIT;
 }
 
-export const getExploreApps = ({ subscribed, user }: { subscribed?: User['Subscribed']; user: User | undefined }) => {
-    const availableApps = getAvailableApps({ user });
+export const getExploreApps = ({
+    subscribed,
+    user,
+    canAccessWallet,
+}: {
+    subscribed?: User['Subscribed'];
+    user: User | undefined;
+    canAccessWallet: boolean;
+}) => {
+    const availableApps = getAvailableApps({ user, canAccessWallet });
     return [
         {
             name: APPS.PROTONMAIL,
