@@ -3976,6 +3976,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } kullanıcısı için alınan birincil anahtar, gönderim için geçerli değil"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Yazma yardımcısı indirilirken bir sorun oluştu. Güvenli kipi kullanıyorsanız normal gezinme tipine geçmeyi deneyin veya yazma yardımcısını sunucu üzerinde çalıştırın."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Yazma yardımcısı indirilirken sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -11711,6 +11714,9 @@
       ],
       "Verification successful": [
         "Doğrulandı"
+      ],
+      "Writing assistant setting updated": [
+        "Yazma yardımcısı ayarları güncellendi"
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."

@@ -214,6 +214,9 @@
       "Close & discard": [
         "Sluit & verwijder"
       ],
+      "Close AI refine suggestion": [
+        "Sluit de AI verfijningssuggestie"
+      ],
       "Close composer": [
         "Opstelvenster sluiten"
       ],
@@ -646,6 +649,9 @@
       "Loading${ ellipsis }": [
         "Laden${ ellipsis }"
       ],
+      "Make it friendly": [
+        "Hou het vriendelijk"
+      ],
       "Manage folders": [
         "Mappen beheren"
       ],
@@ -928,6 +934,9 @@
       "Reply securely": [
         "Veilig beantwoorden"
       ],
+      "Report a good content": [
+        "Meld een goede inhoud"
+      ],
       "Report a problem": [
         "Meld een probleem"
       ],
@@ -1081,6 +1090,9 @@
       "Sharing options": [
         "Opties voor delen"
       ],
+      "Shorten": [
+        "Shorten"
+      ],
       "Show": [
         "Tonen"
       ],
@@ -1140,6 +1152,9 @@
       ],
       "Stay": [
         "Blijf"
+      ],
+      "Stop downloading the writing assistant": [
+        "Stop met downloaden van de schrijfassistent"
       ],
       "Stop generating result": [
         "Stoppen met genereren resultaat"
@@ -3925,6 +3940,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Primaire sleutel opgehaald voor ${ BRAND_NAME } gebruiker is niet geldig voor verzenden"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Probleem bij het downloaden van de schrijfassistent. Als je privémodus gebruikt, probeer dan de normale browsing modus of draai de schrijfassistent op de servers."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Probleem bij het downloaden van de schrijfassistent. Probeer het opnieuw."
       ],
@@ -4038,6 +4056,9 @@
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Het systeem is momenteel drukbezet. Probeer het over enkele minuten opnieuw."
+      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "De schrijfassistent kan niet verder gaan met uw verzoek. Probeer een ander verzoek."
       ],
@@ -4097,6 +4118,9 @@
       ],
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
+      ],
+      "Wrong second password": [
+        "Foutief tweede wachtwoord"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
@@ -5473,6 +5497,9 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
+      "${ PrivacyLink } about ${ BRAND_NAME }'s writing assistant": [
+        "${ PrivacyLink } over ${ BRAND_NAME }'s schrijfassistent."
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } map gevonden",
         "${ providerFoldersNumLocalized } mappen gevonden"
@@ -6007,6 +6034,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Probeer voor meer zoekresultaten op dit trefwoord te zoeken in de inhoud van uw e-mailberichten."
       ],
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "Beschikbaar voor ${ ASSISTANT_TRIAL_TIME_DAYS } dagen."
+      ],
       "From": [
         "Afzender"
       ],
@@ -6306,6 +6336,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "Slechts één schrijfassistent kan tegelijk geopend zijn."
+      ],
       "Open shortcut cheat sheet": [
         "Open de shortcut voor cheat sheet"
       ],
@@ -6339,6 +6372,9 @@
       "Please add at least one recipient.": [
         "Vul minstens één ontvanger in."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Vraag aan de eigenaar om je rechtstreeks uit te nodigen voor het document."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
       ],
@@ -6359,6 +6395,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
+      ],
+      "Please open the document to view it.": [
+        "Open het document om het te bekijken, alstublieft."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
@@ -6412,6 +6451,9 @@
       "Preview for this file type is not supported": [
         "Voorbeeld wordt niet ondersteund voor dit bestandstype"
       ],
+      "Preview of documents is not yet supported.": [
+        "Voorbeelden van documenten is nog niet ondersteund."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
@@ -6429,6 +6471,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Voorkom dat uw e-mailadres gelekt wordt naar nieuwsbrieven of spammers met ${ maskMyEmailButton }."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Publiek delen van documenten is nog niet ondersteund."
       ],
       "Recipient: ": [
         "Ontvanger: "
@@ -6988,6 +7033,9 @@
       ],
       "Writing assistant add-on": [
         "Schrijfassistent add-on"
+      ],
+      "writing assistant iframe": [
+        "schrijfassistent iframe"
       ],
       "Yearly": [
         "Jaarlijks"
