@@ -4,10 +4,10 @@ import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -29,6 +29,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
     const isActive = useRouteMatch(getLocalPath('secure-links'));
     const spotlight = useSpotlight();
     const passPlan = useSelector(selectPassPlan);
+    const free = passPlan === UserPassPlan.FREE;
 
     return (
         <DropdownMenuButton
@@ -36,7 +37,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
             className={clsx(className, isActive && activeClassName)}
             label={c('Action').t`Secure links`}
             onClick={
-                passPlan === UserPassPlan.FREE
+                free
                     ? () =>
                           spotlight.setUpselling({
                               type: 'pass-plus',
@@ -45,9 +46,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
                     : onClick
             }
             parentClassName={parentClassName}
-            extra={
-                passPlan === UserPassPlan.FREE && <Icon name="upgrade" size={4} style={{ color: 'var(--primary)' }} />
-            }
+            extra={free && <PassPlusPromotionButton />}
         />
     );
 };
