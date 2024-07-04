@@ -289,11 +289,11 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
                 icon: 'brand-proton-vpn',
                 text: vpnText,
             },
-            !!MaxAI &&
+            MaxAI > 0 &&
                 !!writingAssistantText && {
                     icon: 'pen-sparks',
                     text: writingAssistantText,
-                    actionElement: <GetMoreButton metricsSource="upsells" />,
+                    actionElement: MaxAI !== MaxMembers && <GetMoreButton metricsSource="upsells" />,
                 },
         ];
 
