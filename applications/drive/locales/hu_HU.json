@@ -191,6 +191,9 @@
       "Create a new contact group": [
         "Új névjegy csoport létrehozása"
       ],
+      "Create Document": [
+        "Dokumentum létrehozása"
+      ],
       "Create link": [
         "Hivatkozás létrehozása"
       ],
@@ -4368,6 +4371,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
+      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
+        "Az új Dokumentumok funkcióhoz a ${ DRIVE_APP_NAME } legújabb verziójára van szükség."
+      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "A cím tulajdonosa letiltotta a végpontok közötti titkosítást. Ahhoz, hogy titkosított e-maileket tudjon küldeni erre a címre, a tulajdonosnak újra engedélyeznie kell a végponttól-végpontig titkosítást."
       ],
@@ -6430,6 +6436,9 @@
     "Payments": {
       "Billing Country": [
         "Számlázási ország"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét működni fog."
       ]
     },
     "Payments.Error": {
@@ -7534,6 +7543,9 @@
       ],
       "Discard changes?": [
         "Módosítások elvetése?"
+      ],
+      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
+        "A Docs egy új funkció a ${ DRIVE_APP_NAME }-ban"
       ],
       "Downgrade account": [
         "Váltás kisebb csomagra"
