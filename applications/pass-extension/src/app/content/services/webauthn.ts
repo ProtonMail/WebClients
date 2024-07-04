@@ -103,27 +103,26 @@ export const createWebAuthNService = () => {
                             })
                                 .then(async () => {
                                     const publicKey = JSON.parse(request) as SanitizedPublicKeyRequest;
+                                    const credentialIds = (publicKey.allowCredentials ?? []).map(prop('id'));
 
-                                    const passkeys = await sendMessage.on(
+                                    await sendMessage.on(
                                         contentScriptMessage({
                                             type: WorkerMessageType.PASSKEY_QUERY,
-                                            payload: {
-                                                domain,
-                                                credentialIds: (publicKey.allowCredentials ?? []).map(prop('id')),
-                                            },
+                                            payload: { domain, credentialIds },
                                         }),
-                                        (response) => (response.type === 'success' ? response.passkeys : [])
+                                        (response) => {
+                                            const passkeys = response.type === 'success' ? response.passkeys : [];
+                                            if (!passkeys.length) return abort(true);
+
+                                            return ctx?.service.iframe.attachNotification()?.open({
+                                                action: NotificationAction.PASSKEY_GET,
+                                                domain,
+                                                request,
+                                                token,
+                                                passkeys,
+                                            });
+                                        }
                                     );
-
-                                    if (!passkeys.length) throw new Error();
-
-                                    ctx?.service.iframe.attachNotification()?.open({
-                                        action: NotificationAction.PASSKEY_GET,
-                                        domain,
-                                        request,
-                                        token,
-                                        passkeys,
-                                    });
                                 })
                                 .catch(() => abort(true));
                         }
