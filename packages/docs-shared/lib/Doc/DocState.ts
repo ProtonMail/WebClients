@@ -20,7 +20,7 @@ export enum DocUpdateOrigin {
 }
 
 /** How often to check if a presence broadcast is needed */
-export const PRESENCE_UPDATE_REPEAT_INTERVAL = 350
+export const PRESENCE_UPDATE_REPEAT_INTERVAL = 75
 
 export class DocState extends Observable<string> implements DocStateInterface {
   public readonly doc: Doc

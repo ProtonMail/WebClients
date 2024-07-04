@@ -30,6 +30,7 @@ import {
   ServerMessageWithDocumentUpdates,
   CreateClientMessageWithDocumentUpdates,
   ServerMessageWithMessageAcks,
+  ConnectionCloseReason,
 } from '@proton/docs-proto'
 import { c } from 'ttag'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
@@ -624,7 +625,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
-    void record.connection.disconnect()
+    void record.connection.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
   }
 
   public createStressTestConnections(count: number): void {
