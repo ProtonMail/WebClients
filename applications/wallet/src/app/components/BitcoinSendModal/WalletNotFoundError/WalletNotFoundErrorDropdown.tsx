@@ -24,18 +24,18 @@ export const WalletNotFoundErrorDropdown = ({ email, hasSentInvite, onSendInvite
                         open();
                     }
                 }}
-                className="ml-1 items-center flex-nowrap flex flex-row color-primary no-shrink"
+                className="ml-1 items-center flex-nowrap flex flex-row color-primary shrink-0"
             >
-                <div className="no-shrink flex items-center px-2">
+                <div className="shrink-0 flex items-center px-2">
                     {hasSentInvite ? (
                         <>
-                            <span className="block no-shrink mr-1">{c('Bitcoin send').t`Invitation sent`}</span>
+                            <span className="block shrink-0 mr-1">{c('Bitcoin send').t`Invitation sent`}</span>
                             <Icon name="paper-plane" />
                         </>
                     ) : (
                         <>
                             <Icon name="exclamation-circle" />
-                            <span className="block no-shrink ml-1">{c('Bitcoin send').t`No wallet found`}</span>
+                            <span className="block shrink-0 ml-1">{c('Bitcoin send').t`No wallet found`}</span>
                         </>
                     )}
                 </div>

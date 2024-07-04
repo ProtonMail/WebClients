@@ -26,7 +26,7 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                     <img src={warningSignSrc} alt={c('Wallet deletion').t`Warning:'`} />
                 </div>
                 <h1 className="text-4xl text-bold mx-auto text-center">{c('Wallet deletion')
-                    .t`Confirm to delete '${wallet.Wallet.Name}'`}</h1>
+                    .t`Confirm to delete "${wallet.Wallet.Name}"`}</h1>
 
                 <p className="color-weak text-center mx-12">
                     <span className="block my-2">{c('Wallet setup')

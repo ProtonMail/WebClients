@@ -94,7 +94,7 @@ export const MetricsAndCtas = ({
                 style={{ flexGrow: '1', '--max-w-custom': '50rem' }}
             >
                 <div className="mr-3">
-                    <img src={btcSvg} alt="Bitcoin logo" />
+                    <img src={btcSvg} alt={c('Info').t`Bitcoin`} />
                 </div>
 
                 <div className="flex flex-row justify-space-between gap-3">

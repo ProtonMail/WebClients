@@ -1,7 +1,5 @@
 .fees-selection-button {
-	&:hover {
-		background: var(--interaction-weak);
-	}
+	--button-hover-background-color: var(--interaction-weak);
 }
 
 .fees-selection-modal {

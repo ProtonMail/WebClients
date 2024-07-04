@@ -84,7 +84,7 @@ export const EmailListItem = ({
                 <>
                     <div
                         className={clsx(
-                            'rounded-full w-custom h-custom mr-4 flex items-center justify-center text-lg text-semibold no-shrink',
+                            'rounded-full w-custom h-custom mr-4 flex items-center justify-center text-lg text-semibold shrink-0',
                             getThemeByIndex(index)
                         )}
                         style={{
@@ -283,7 +283,7 @@ export const EmailOrBitcoinAddressInput = ({
                                             <CoreButton
                                                 shape="ghost"
                                                 color="weak"
-                                                className="mr-1 no-shrink rounded-full"
+                                                className="mr-1 shrink-0 rounded-full"
                                                 size="small"
                                                 icon
                                                 onClick={() => onRemoveRecipient(recipient)}

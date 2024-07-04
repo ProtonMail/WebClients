@@ -195,7 +195,7 @@ export const AmountInput = ({
                                     <CoreButton
                                         shape="ghost"
                                         color="weak"
-                                        className="mr-1 no-shrink rounded-full"
+                                        className="mr-1 shrink-0 rounded-full"
                                         size="small"
                                         icon
                                         onClick={() => updateTxBuilder((txBuilder) => txBuilder.removeRecipient(index))}
@@ -208,7 +208,7 @@ export const AmountInput = ({
                             }
                             rightNode={
                                 txBuilder.getRecipients().length > 1 ? (
-                                    <div className="w-custom mr-1 no-shrink" style={{ '--w-custom': '7.5rem' }}>
+                                    <div className="w-custom mr-1 shrink-0" style={{ '--w-custom': '7.5rem' }}>
                                         <BitcoinAmountInput
                                             unit={exchangeRate ?? settings.BitcoinUnit}
                                             value={Number(amount)}

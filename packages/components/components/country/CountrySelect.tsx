@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { ReactNode, useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -59,7 +59,7 @@ interface Props {
     /**
      * Whether selector should have a label or not
      */
-    noLabel?: boolean;
+    label?: ReactNode | null;
 }
 
 const CountrySelect = ({
@@ -71,7 +71,7 @@ const CountrySelect = ({
     error,
     hint,
     disabled,
-    noLabel,
+    label = c('Label').t`Country`,
     as = SearchableSelect<string>,
 }: Props) => {
     const [selectedCountryOption, setSelectedCountryOption] = useState<CountryOption | undefined>(
@@ -137,7 +137,7 @@ const CountrySelect = ({
             id="countrySelect"
             as={as}
             placeholder={c('Placeholder').t`Please select a country`}
-            label={!noLabel && c('Label').t`Country`}
+            label={label}
             value={selectedCountryOption?.countryCode}
             onChange={handleSelectOption}
             search={countryFilterFunction}

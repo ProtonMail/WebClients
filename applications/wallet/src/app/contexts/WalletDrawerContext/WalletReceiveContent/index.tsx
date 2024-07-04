@@ -101,10 +101,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         const paymentLinkUri = paymentLink.toUri();
 
                         return (
-                            <div
-                                className="bg-weak rounded-xl flex flex-column items-center w-full"
-                                style={{ padding: '2px' }}
-                            >
+                            <div className="bg-weak rounded-xl flex flex-column items-center w-full p-0.5">
                                 {/* We only display selector when account was not provided */}
                                 {!account && (
                                     <Select
@@ -154,7 +151,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
 
                                     <Copy
                                         value={paymentLinkString}
-                                        className="flex items-start flex-nowrap gap-2 no-shrink ml-1"
+                                        className="flex items-start flex-nowrap gap-2 shrink-0 ml-1"
                                         shape="ghost"
                                         color="weak"
                                     />

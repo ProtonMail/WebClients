@@ -18,7 +18,7 @@ export const WalletNotFoundErrorContent = ({ email, dense, onSendInvite }: Props
     return (
         <div className="flex flex-column p-6">
             <div className={clsx('flex items-center', dense ? 'flex-row flex-nowrap mb-6' : 'flex-column')}>
-                <div className={clsx('no-shrink', dense ? 'mr-4' : 'mb-4')}>
+                <div className={clsx('shrink-0', dense ? 'mr-4' : 'mb-4')}>
                     <img
                         src={walletNotFoundImg}
                         alt={c('Wallet send')

@@ -17,8 +17,8 @@ export const InviteSentConfirmModal = ({ email, ...modalProps }: Props) => {
         <Modal {...modalProps}>
             <div className="flex flex-column">
                 <div className="flex items-center flex-column">
-                    <div className="no-shrink mb-4">
-                        <img src={walletSendingPlane} alt={''} />
+                    <div className="shrink-0 mb-4">
+                        <img src={walletSendingPlane} alt="" />
                     </div>
                     <div className="flex flex-column items-center">
                         <span className="block text-4xl text-semibold text-center">{c('Wallet invite')

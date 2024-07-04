@@ -227,7 +227,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                 <div className="w-full">
                     <div className="flex flex-row mb-4">
                         <CountrySelect
-                            noLabel
+                            label={null}
                             value={{ countryCode: selectedCountry.Code, countryName: selectedCountry.Name }}
                             onSelectCountry={(code) => {
                                 const country = allCountries.find((country) => country.Code === code);
@@ -246,8 +246,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                 />
                             )}
                         />
-
-                        {/* maybe put US state selector here */}
                     </div>
 
                     <div className="amount-inputs rounded-xl">

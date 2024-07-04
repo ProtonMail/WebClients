@@ -91,12 +91,12 @@ export const AccountContainer = () => {
                             size="medium"
                             shape="ghost"
                             color="weak"
-                            className="ml-2 rounded-full bg-weak no-shrink"
+                            className="ml-2 rounded-full bg-weak shrink-0"
                             onClick={() => {
                                 setWalletPreferencesModalState(true);
                             }}
                         >
-                            <Icon alt={c('Account container').t`Edit`} name="cog-drawer" size={5} />
+                            <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
                         </CoreButton>
                     </div>
 
