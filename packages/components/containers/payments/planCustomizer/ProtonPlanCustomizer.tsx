@@ -52,7 +52,6 @@ interface AddonCustomizerProps {
     currentPlan: Plan;
     organization?: Organization;
     loading?: boolean;
-    mode?: CustomiserMode;
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription;
     supportedAddons: { [key: string]: boolean };
@@ -70,7 +69,6 @@ const AddonCustomizer = ({
     currentPlan,
     organization,
     loading,
-    mode,
     showUsersTooltip,
     latestSubscription,
     supportedAddons,
@@ -208,7 +206,7 @@ const AddonCustomizer = ({
         );
     }
 
-    if (isDomainAddon(addonNameKey) && mode !== 'signup') {
+    if (isDomainAddon(addonNameKey)) {
         return (
             <AdditionalOptionsCustomiser
                 key={`${addon.Name}-options`}
@@ -324,7 +322,6 @@ export const ProtonPlanCustomizer = ({
                         currentPlan={currentPlan}
                         organization={organization}
                         loading={loading}
-                        mode={mode}
                         showUsersTooltip={showUsersTooltip}
                         latestSubscription={latestSubscription}
                         supportedAddons={supportedAddons}
