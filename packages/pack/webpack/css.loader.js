@@ -34,9 +34,6 @@ module.exports = ({ browserslist, logical }) => {
             },
         },
         {
-            loader: require.resolve('resolve-url-loader'),
-        },
-        {
             loader: require.resolve('sass-loader'),
         },
     ].filter(Boolean);
