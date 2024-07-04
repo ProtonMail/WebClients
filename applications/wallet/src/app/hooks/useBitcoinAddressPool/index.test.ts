@@ -117,6 +117,7 @@ zUszcwqfo8xsUcVcV2oHinjJ6rndMIQkP8hsnkk2FaY=
         InvoiceDefaultDescription: null,
         InvoiceExpirationTime: 0,
         MaxChannelOpeningFee: 0,
+        ShowWalletRecovery: false,
     },
     IsNotDecryptable: false,
 };
