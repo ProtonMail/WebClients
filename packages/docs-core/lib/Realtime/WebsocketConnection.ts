@@ -20,7 +20,7 @@ const HeartbeatEnabled: false = false
 /**
  * We will automatically close the connection if the document's visibility state goes to hidden and this amount of time elapses.
  */
-export const TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY = 60_000
+export const TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES = 60_000 * 60
 
 export const DebugConnection = {
   enabled: isLocalEnvironment() && false,
@@ -64,7 +64,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       this.closeConnectionDueToGoingAwayTimer = setTimeout(() => {
         this.logger.info('Closing connection due to user being away for too long')
         this.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
-      }, TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY)
+      }, TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES)
     }
   }
 
