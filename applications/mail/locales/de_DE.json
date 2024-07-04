@@ -3967,6 +3967,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Der für den Benutzer ${ BRAND_NAME } abgerufene Primärschlüssel ist für den Versand nicht gültig."
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Problem beim Herunterladen des Schreibassistenten. Wenn du den privaten Modus verwendest, versuche es mit dem normalen Browser-Modus oder führe den Schreibassistenten auf Servern aus."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Fehler beim Herunterladen des Schreibassistenten. Bitte versuche es erneut."
       ],
@@ -4079,6 +4082,9 @@
       ],
       "The sending key is not valid": [
         "Der Sendeschlüssel ist ungültig"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Das System ist im Moment beschäftigt. Bitte versuche es in ein paar Minuten erneut."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Der Schreibassistent kann deine Anfrage nicht bearbeiten. Bitte versuche eine andere Eingabeaufforderung."
@@ -6351,6 +6357,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
+      "Only one writing assistant may be be open at a time": [
+        "Es kann nur ein Schreibassistent gleichzeitig geöffnet sein"
+      ],
       "Open shortcut cheat sheet": [
         "Spickzettel für Tastaturkürzel öffnen"
       ],
@@ -6384,6 +6393,9 @@
       "Please add at least one recipient.": [
         "Bitte füge mindestens einen Empfänger hinzu."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Bitte den Eigentümer, dich direkt zu dem Dokument einzuladen."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Bitte authentifiziere deine Karte im Verifikationstab."
       ],
@@ -6404,6 +6416,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
+      ],
+      "Please open the document to view it.": [
+        "Bitte öffne das Dokument, um es anzusehen."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."
@@ -6457,6 +6472,9 @@
       "Preview for this file type is not supported": [
         "Die Vorschau wird für diesen Dateityp nicht unterstützt."
       ],
+      "Preview of documents is not yet supported.": [
+        "Die Vorschau von Dokumenten wird noch nicht unterstützt."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
@@ -6474,6 +6492,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "Schütze deine E-Mails mit ${ maskMyEmailButton } davor, an Mailinglisten oder Spammer weitergegeben zu werden."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
       ],
       "Recipient: ": [
         "Empfänger: "
@@ -11597,6 +11618,9 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
+      ],
+      "Writing assistant setting updated": [
+        "Einstellung des Schreibassistenten aktualisiert"
       ],
       "You have successfully canceled your subscription.": [
         "Du hast dein Abonnement erfolgreich gekündigt."
