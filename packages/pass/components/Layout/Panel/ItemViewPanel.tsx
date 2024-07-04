@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DropdownSizeUnit, Icon } from '@proton/components';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { DropdownMenuLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuLabel';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -62,6 +63,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const { name } = data.metadata;
     const trashed = isTrashed(revision);
     const pinned = isPinned(revision);
+    const online = useConnectivity();
 
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
@@ -169,6 +171,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 icon="users-plus"
                                 menuClassName="flex flex-column gap-2"
                                 dropdownHeader={c('Label').t`Share`}
+                                disabled={!online}
                                 dropdownSize={{
                                     height: DropdownSizeUnit.Dynamic,
                                     width: DropdownSizeUnit.Dynamic,
