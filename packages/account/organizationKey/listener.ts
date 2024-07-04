@@ -2,6 +2,7 @@ import type { Action } from '@reduxjs/toolkit';
 
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import { getIsAddressConfirmed, getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -31,7 +32,7 @@ export const organizationKeysListener = (startListening: SharedStartListening<Or
             );
         },
         effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(organizationKeyThunk({ cache: 'no-cache' }));
+            await listenerApi.dispatch(organizationKeyThunk({ cache: CacheType.None }));
         },
     });
 

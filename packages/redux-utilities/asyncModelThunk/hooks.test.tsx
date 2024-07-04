@@ -12,6 +12,7 @@ interface ModelState<T> {
     error: any;
     meta: {
         fetchedAt: number;
+        fetchedEphemeral: boolean | undefined;
     };
 }
 
@@ -30,14 +31,14 @@ describe('hooks', () => {
             error: undefined,
             meta: {
                 fetchedAt: 0,
+                fetchedEphemeral: undefined,
             },
         };
 
         const thunkActionCreator = createAsyncModelThunk<T, StoreState<T>, undefined>('myState/fetch', {
             miss,
             previous: (store) => {
-                const value = selectState(store.getState()).value;
-                return value ? Promise.resolve(value) : undefined;
+                return selectState(store.getState());
             },
         });
 

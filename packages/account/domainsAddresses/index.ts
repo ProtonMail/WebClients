@@ -2,11 +2,16 @@ import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createPromiseMapCache, getValidModel } from '@proton/redux-utilities';
+import {
+    CacheType,
+    cacheHelper,
+    createPromiseMapStore,
+    getFetchedAt,
+    getFetchedEphemeral,
+} from '@proton/redux-utilities';
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { defaultExpiry, getFetchedAt, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 import type { Api, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
@@ -46,14 +51,15 @@ const slice = createSlice({
             state[action.payload.id] = {
                 value: action.payload.value,
                 error: undefined,
-                meta: { fetchedAt: getFetchedAt() },
+                meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
             };
         },
         rejected: (state, action: PayloadAction<{ id: string; value: any }>) => {
+            const oldState = state[action.payload.id];
             state[action.payload.id] = {
-                value: state[action.payload.id]?.value,
+                value: oldState?.value,
                 error: action.payload,
-                meta: { fetchedAt: getFetchedAt() },
+                meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: oldState?.meta?.fetchedEphemeral },
             };
         },
     },
@@ -80,7 +86,7 @@ type SliceState = DomainAddressesState[typeof name];
 
 export const selectDomainAddresses = (state: DomainAddressesState) => state.domainAddresses;
 
-const promiseCache = createPromiseMapCache<DomainAddress[]>();
+const promiseStore = createPromiseMapStore<DomainAddress[]>();
 
 export const domainAddressesThunk = ({
     domainID,
@@ -91,11 +97,7 @@ export const domainAddressesThunk = ({
 }): ThunkAction<Promise<DomainAddress[]>, DomainAddressesState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const oldValue = selectDomainAddresses(getState())?.[domainID || ''];
-            return getValidModel({
-                value: oldValue?.value,
-                cache: cache ?? (isNotStale(oldValue?.meta?.fetchedAt, defaultExpiry) ? 'stale' : undefined),
-            });
+            return selectDomainAddresses(getState())?.[domainID || ''];
         };
         const cb = async () => {
             try {
@@ -108,7 +110,7 @@ export const domainAddressesThunk = ({
                 throw error;
             }
         };
-        return promiseCache(domainID, select, cb);
+        return cacheHelper({ store: promiseStore, key: domainID, select, cb, cache });
     };
 };
 

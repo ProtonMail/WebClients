@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -88,7 +89,7 @@ export const addressKeysListener = (startListening: SharedStartListening<Address
             }
             await Promise.all(
                 changedAddresses.map((address) =>
-                    listenerApi.dispatch(addressKeysThunk({ addressID: address.ID, cache: 'no-cache' }))
+                    listenerApi.dispatch(addressKeysThunk({ addressID: address.ID, cache: CacheType.None }))
                 )
             );
         },

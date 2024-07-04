@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { useGetAddressKeys, useGetAddresses, useGetCalendars } from '@proton/components';
+import { CacheType } from '@proton/redux-utilities';
 
 import { getSilentApi } from '../../../api/helpers/customConfig';
 import getHasSharedCalendars from '../../../calendar/sharing/getHasSharedCalendars';
@@ -66,7 +67,7 @@ export const process = async ({
     }
 
     // Refresh the calendar model to be able to get the new flags since it's not updated through the event manager
-    await getCalendars({ cache: 'no-cache' });
+    await getCalendars({ cache: CacheType.None });
 
     return hasSharedCalendars;
 };

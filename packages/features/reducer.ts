@@ -1,11 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
-import type { CacheType } from '@proton/redux-utilities';
+import { CacheType, getFetchedAt, getFetchedEphemeral, isNotStale } from '@proton/redux-utilities';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { HOUR } from '@proton/shared/lib/constants';
-import { getFetchedAt, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 import type { Api } from '@proton/shared/lib/interfaces';
 import unique from '@proton/utils/unique';
 
@@ -13,7 +12,7 @@ import type { Feature, FeatureCode } from './interface';
 
 interface FeatureState {
     value: Feature;
-    meta: { fetchedAt: number };
+    meta: { fetchedAt: number; fetchedEphemeral: boolean | undefined };
 }
 
 type FeaturesState = { [key in FeatureCode]?: FeatureState };
@@ -74,10 +73,13 @@ export const isValidFeature = (
     featureState: FeatureState | undefined,
     cache?: CacheType
 ): featureState is FeatureState => {
-    if (cache === 'no-cache') {
+    if (cache === CacheType.None) {
         return false;
     }
-    if (featureState?.value !== undefined && (cache === 'stale' || isNotStale(featureState.meta.fetchedAt, HOUR * 2))) {
+    if (
+        featureState?.value !== undefined &&
+        (cache === CacheType.Stale || isNotStale(featureState.meta.fetchedAt, HOUR * 2))
+    ) {
         return true;
     }
     return false;
@@ -113,13 +115,14 @@ export const fetchFeatures = <T extends FeatureCode>(
                 Features: Feature[];
             }>(getFeatures(codesToFetch)).then(({ Features }) => {
                 const fetchedAt = getFetchedAt();
+                const fetchedEphemeral = getFetchedEphemeral();
                 const result = Features.reduce<FeaturesState>(
                     (acc, Feature) => {
-                        acc[Feature.Code as FeatureCode] = { value: Feature, meta: { fetchedAt } };
+                        acc[Feature.Code as FeatureCode] = { value: Feature, meta: { fetchedAt, fetchedEphemeral } };
                         return acc;
                     },
                     codesToFetch.reduce<FeaturesState>((acc, code) => {
-                        acc[code] = { value: defaultFeature, meta: { fetchedAt } };
+                        acc[code] = { value: defaultFeature, meta: { fetchedAt, fetchedEphemeral } };
                         return acc;
                     }, {})
                 );
@@ -178,7 +181,10 @@ export const updateFeature = (
             dispatch(
                 featuresReducer.actions['update/fulfilled']({
                     code,
-                    feature: { value: Feature, meta: { fetchedAt: getFetchedAt() } },
+                    feature: {
+                        value: Feature,
+                        meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
+                    },
                 })
             );
             return value;

@@ -2,9 +2,14 @@ import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createPromiseCache, previousSelector } from '@proton/redux-utilities';
+import {
+    cacheHelper,
+    createPromiseStore,
+    getFetchedAt,
+    getFetchedEphemeral,
+    previousSelector,
+} from '@proton/redux-utilities';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
-import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
@@ -34,6 +39,7 @@ const slice = createSlice({
             state.value = action.payload;
             state.error = undefined;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
         rejected: (state, action) => {
             state.error = action.payload;
@@ -42,7 +48,7 @@ const slice = createSlice({
     },
 });
 
-const promiseCache = createPromiseCache<Model>();
+const promiseStore = createPromiseStore<Model>();
 const previous = previousSelector(selectPlans);
 
 const thunk = (): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
@@ -71,7 +77,7 @@ const thunk = (): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, 
                 throw error;
             }
         };
-        return promiseCache(select, cb);
+        return cacheHelper({ store: promiseStore, select, cb });
     };
 };
 
