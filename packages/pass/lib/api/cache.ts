@@ -66,7 +66,7 @@ export const cleanCache = async () => {
             )
         ).filter(truthy);
 
-        logger.info(`[CacheProxy] Removing ${staleKeys.length} stale cache entrie(s)`);
+        logger.debug(`[HttpCache] Removing ${staleKeys.length} stale cache entrie(s)`);
         await Promise.all(staleKeys.map((req) => cache?.delete(req).catch(noop)));
     } catch {}
 };
