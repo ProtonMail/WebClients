@@ -13,6 +13,7 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
+import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import {
     getHasVpnB2BPlan,
     getHasVpnOrPassB2BPlan,
@@ -54,7 +55,7 @@ export const getAccountAppRoutes = ({
     isNewCancellationFlowExtended: boolean;
     assistantKillSwitch: boolean;
 }) => {
-    const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
+    const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
 
     //Used to determine if a user is on a family plan
@@ -165,7 +166,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Recovery`,
                 to: '/recovery',
                 icon: 'key',
-                available: isPrivate && !isSSOUser,
+                available: getIsRecoveryAvailable(user),
                 notification: recoveryNotification,
                 subsections: [
                     {
