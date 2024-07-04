@@ -109,6 +109,9 @@
       "Copy and close": [
         "Kopier og lukk"
       ],
+      "Copy link": [
+        "Kopier kobling"
+      ],
       "Copy to clipboard": [
         "Kopier til utklippstavlen"
       ],
@@ -298,10 +301,10 @@
       "Move to another vault": [
         "Flytt til annet hvelv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytt til papirkurven"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytt til papirkurven"
       ],
       "Multiple select": [
@@ -340,11 +343,17 @@
       "Reject invitation": [
         "Avslå invitasjon"
       ],
+      "Reload": [
+        "Last inn på nytt"
+      ],
       "Remove": [
         "Fjern"
       ],
       "Remove access": [
         "Fjern tilgang"
+      ],
+      "Remove link": [
+        "Fjern kobling"
       ],
       "Remove member": [
         "Fjern medlem"
@@ -441,6 +450,9 @@
       ],
       "Try again.": [
         "Prøv igjen."
+      ],
+      "Try for free": [
+        "Prøv gratis"
       ],
       "Unlock offline with password": [
         "Lås opp frakoblet modus med passord"
@@ -948,10 +960,6 @@
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } gang",
-        "${ modifiedCount } ganger"
       ],
       "${ n } item": [
         "${ n } element",
@@ -1776,6 +1784,9 @@
       "Confirm vault name": [
         "Bekreft hvelvnavn"
       ],
+      "Copy": [
+        "Kopier"
+      ],
       "Create a credit card": [
         "Opprett et kredittkort"
       ],
@@ -1835,6 +1846,9 @@
       ],
       "Expiration date": [
         "Utløpsdato"
+      ],
+      "Expired": [
+        "Utløpt"
       ],
       "Export": [
         "Eksporter"
@@ -2746,8 +2760,14 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-kryptert eksportfil krever passfrase."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Vennligst kontroller at utvidelsen er riktig installert og aktivert"
+      ],
       "Please contact us for investigating the issue": [
         "Vennligst kontakt oss for å undersøke problemet."
+      ],
+      "Please update the extension to its latest version": [
+        "Vennligst oppdater utvidelsen til siste versjon"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."
