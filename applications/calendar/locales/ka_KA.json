@@ -4579,6 +4579,9 @@
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "სხვა მომხმარებლები თქვენს ორგანიზაციაში დაინახავენ თქვენს დაკავებულ სლოტებს. მოვლენის დეტალები გაზიარებული არ იქნება."
+      ],
       "password": [
         "პაროლი"
       ],
@@ -6827,6 +6830,9 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent-ის მსგავსი ფაილების გასაზიარებელი პროტოკოლების მხარდაჭერა"
       ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "ატვირთეთ თქვენი კომპანიის ლოგო, რომ მოირგოთ, რას დაინახავენ თქვენი გუნდები ${ BRAND_NAME }-ს ვებ-აპებში"
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "გამოიყენეთ თქვენი ელფოსტის დომენები, მაგ: you@yourname.com"
       ],
@@ -7545,6 +7551,9 @@
       ]
     },
     "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან. ${ learnMoreLink }"
+      ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "ჩვენი უკანასკნელი სიტყვა - AI-ზე დაშენებული უსაფრთხოების გადაწყვეტილება მომხმარებლები, რომლებსაც თავიანთი ანგარიშებისთვის გაძლიერებული უსაფრთხოება სჭირდებათ. ${ learnMoreLink }"
       ],
@@ -7887,6 +7896,11 @@
         "თქვენი ონლაინ კონფიდენციალობა"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -8227,6 +8241,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } თქვენი კომპანიის მონაცემებს უსაფრთხოთ ინარჩუნებს და საშუალებას გაძლევთ, დაშიფრული ელფოსტები აგზავნოთ."
+      ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME } ავტომატური ელფოსტის გადაგზავნით"
       ],
@@ -8335,8 +8352,17 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "როგორ შევუბრუნეთ ხელი, როცა ${ BRAND_NAME } აგრესიული ცენზურის კამპანიის სამიზნე იყო."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა ჰონკ-კონგში საფრთხის ქვეშ იყო."
+      ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "შეინარჩუნეთ თქვენი გუნდი უსაფრთხოდ პირდაპირ მუშაობისას ჩვენი აპებით ვებისთვის, iOS-სთვის, Android-სთვის, Windows-სთვის, Mac-სთვის და Linux-სთვის."
       ],
       "Learn more": [
         "გაიგეთ მეტი"
