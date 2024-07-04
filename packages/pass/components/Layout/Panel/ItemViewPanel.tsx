@@ -75,6 +75,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared, owner, targetMembers } = vault;
     const showVaultTag = hasMultipleVaults || shared;
+    const free = plan === UserPassPlan.FREE;
     const readOnly = shareRoleId === ShareRole.READ;
     const isOwnerOrAdmin = owner || shareRoleId === ShareRole.ADMIN;
     const sharedReadOnly = shared && readOnly;
@@ -172,13 +173,13 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     height: DropdownSizeUnit.Dynamic,
                                     width: DropdownSizeUnit.Dynamic,
                                     maxHeight: DropdownSizeUnit.Viewport,
-                                    maxWidth: DropdownSizeUnit.Viewport,
+                                    maxWidth: '20rem',
                                 }}
                             >
                                 {secureLinkEnabled && type !== 'alias' && (
                                     <DropdownMenuButton
                                         onClick={
-                                            plan === UserPassPlan.FREE
+                                            free
                                                 ? () =>
                                                       spotlight.setUpselling({
                                                           type: 'pass-plus',
@@ -194,13 +195,13 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         }
                                         icon="link"
                                         disabled={optimistic || !isOwnerOrAdmin}
-                                        extra={plan === UserPassPlan.FREE && <PassPlusPromotionButton />}
+                                        extra={free && <PassPlusPromotionButton className="ml-2 button-xs" />}
                                     />
                                 )}
                                 {sharingEnabled && !shared && (
                                     <DropdownMenuButton
                                         onClick={
-                                            plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
+                                            free && isVaultMemberLimitReached(vault)
                                                 ? () =>
                                                       spotlight.setUpselling({
                                                           type: 'pass-plus',
