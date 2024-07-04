@@ -1,5 +1,6 @@
 import { CSSProperties, PropsWithChildren, useRef } from 'react';
 
+import { Scroll } from '@proton/atoms/Scroll';
 import { useHotkeys } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -57,7 +58,9 @@ export const Drawer = ({
                 style={{ ...style, transform: open ? undefined : 'translateX(100%)', transitionDuration: '300ms' }}
             >
                 <DrawerHeader title={title} onClose={() => onClose?.()} bg={bg} />
-                <div className="overflow-auto pb-3 px-6">{children}</div>
+                <Scroll>
+                    <div className="pb-3 px-6">{children}</div>
+                </Scroll>
             </div>
         </>
     );
