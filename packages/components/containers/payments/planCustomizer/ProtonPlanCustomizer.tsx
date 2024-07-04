@@ -127,6 +127,15 @@ const AddonCustomizer = ({
     );
 
     const displayMin = (() => {
+        // Minimum is 0 for the AI assistant addon .
+        // If seats are already assigned, they will be removed at the end of the
+        // billing cycle.
+        // Crucial for multi-account plans that do not have multi users enabled.
+        // This is currently the only way for them to unassign their own seat
+        if (isScribeAddon(addonNameKey)) {
+            return 0;
+        }
+
         if (addonMaxKey === 'MaxIPs' || hasVpnBusiness(latestSubscription)) {
             return getVPNDedicatedIPs(latestSubscription);
         }
