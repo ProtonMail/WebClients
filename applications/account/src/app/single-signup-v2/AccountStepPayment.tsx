@@ -53,6 +53,7 @@ import { Measure, OptimisticOptions, SignupModelV2 } from './interface';
 import { TelemetryPayType, getPaymentMethod } from './measure';
 
 export interface AccountStepPaymentRef {
+    process: () => void;
     validate: () => Promise<boolean>;
     scrollIntoView: () => void;
 }
@@ -135,15 +136,6 @@ const AccountStepPayment = ({
         return true;
     };
 
-    useImperativeHandle(accountStepPaymentRef, () => ({
-        validate: async () => {
-            return validatePayment();
-        },
-        scrollIntoView: () => {
-            setTimeout(() => formRef.current?.scrollIntoView({ behavior: 'smooth' }), 0);
-        },
-    }));
-
     const chargebeeContext = useChargebeeContext();
 
     const isAuthenticated = !!model.session?.UID;
@@ -206,29 +198,6 @@ const AccountStepPayment = ({
                 });
             }
         },
-    });
-
-    if (isBilledUser(user)) {
-        return <BilledUserInlineMessage />;
-    }
-
-    const termsAndConditions = (
-        <Href className="color-weak" key="terms" href={getLocaleTermsURL()}>
-            {
-                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
-                c('new_plans: signup').t`terms and conditions`
-            }
-        </Href>
-    );
-
-    const summaryPlan = getSummaryPlan({ plan: selectedPlan, vpnServersCountData, freePlan: model.freePlan });
-
-    const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
-    const currentCheckout = getCheckout({
-        // If there is a coupon code, ignore the optimistc results from options since they don't contain the correct discount.
-        planIDs: hasCouponCode ? model.subscriptionData.planIDs : options.planIDs,
-        plansMap: model.plansMap,
-        checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
     });
 
     const process = (processor: PaymentProcessorHook | undefined) => {
@@ -294,9 +263,46 @@ const AccountStepPayment = ({
         withLoadingSignup(run()).catch(noop);
     };
 
+    const handleProcess = () => {
+        return process(paymentFacade.selectedProcessor);
+    };
+
+    useImperativeHandle(accountStepPaymentRef, () => ({
+        process: handleProcess,
+        validate: async () => {
+            return validatePayment();
+        },
+        scrollIntoView: () => {
+            setTimeout(() => formRef.current?.scrollIntoView({ behavior: 'smooth' }), 0);
+        },
+    }));
+
+    if (isBilledUser(user)) {
+        return <BilledUserInlineMessage />;
+    }
+
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
 
     const hasSomeVpnPlan = getIsVpnPlan(selectedPlan.Name);
+
+    const summaryPlan = getSummaryPlan({ plan: selectedPlan, vpnServersCountData, freePlan: model.freePlan });
+
+    const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
+    const currentCheckout = getCheckout({
+        // If there is a coupon code, ignore the optimistc results from options since they don't contain the correct discount.
+        planIDs: hasCouponCode ? model.subscriptionData.planIDs : options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
+    });
+
+    const termsAndConditions = (
+        <Href className="color-weak" key="terms" href={getLocaleTermsURL()}>
+            {
+                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
+                c('new_plans: signup').t`terms and conditions`
+            }
+        </Href>
+    );
 
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
@@ -315,8 +321,7 @@ const AccountStepPayment = ({
                     name="payment-form"
                     onSubmit={(event) => {
                         event.preventDefault();
-
-                        process(paymentFacade.selectedProcessor);
+                        handleProcess();
                     }}
                     method="post"
                 >
