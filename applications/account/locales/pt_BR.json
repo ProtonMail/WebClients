@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Mais tarde"
       ],
-      "Learn why this option is unavailable": [
-        "Saiba porque essa opção está indisponível"
-      ],
       "Leave": [
         "Sair"
       ],
@@ -700,11 +697,11 @@
       "No, thanks": [
         "Não, obrigado"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Revogar esse convite"
-      ],
-      "Run on servers": [
-        "Executar nos servidores"
       ],
       "Save": [
         "Salvar"
@@ -1547,6 +1541,14 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1568,14 +1570,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1701,6 +1695,9 @@
       ],
       "Custom domain problem": [
         "Problema com domínio personalizado"
+      ],
+      "Docs problem": [
+        "Problema no Docs"
       ],
       "Drive problem": [
         "Problemas no Drive"
@@ -5640,9 +5637,6 @@
       "Folders": [
         "Pastas"
       ],
-      "Hardware not compatible": [
-        "Hardware não compatível"
-      ],
       "IP address": [
         "Endereço IP"
       ],
@@ -6596,9 +6590,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Aumente a identidade de marca da sua organização e crie uma experiência on-line mais consistente para os seus usuários."
       ],
-      "Browser not supported": [
-        "Navegador não suportado"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Por padrão, membros da organização só podem exportar cofres dos quais são os proprietários. Se essa opção for ativada, eles não poderão exportar nenhum dado"
       ],
@@ -6739,11 +6730,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -7805,6 +7796,9 @@
       "Single sign-on removed": [
         "Autenticação única removida"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem e-mails por meio do ${ MAIL_APP_NAME } para seus endereços de domínio personalizados. Este recurso está disponível apenas para usuários ${ BRAND_NAME } for Business com domínios personalizados."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de uso, os domínios personalizados que gostaria de usar e os números de e-mail previstos por hora e por dia."
       ],
@@ -8663,9 +8657,6 @@
       "Your account will be updated once the payment is cleared.": [
         "A sua conta será atualizada assim que o pagamento for aprovado."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "O seu navegador não suporta o assistente de escrita. Tente executar nos servidores."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
@@ -8677,9 +8668,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "O seu hardware não suporta a execução do assistente de escrita localmente. Tente executar nos servidores."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Sua importação de ${ accounts } está temporariamente atrasada.",
@@ -10008,6 +9996,12 @@
       ],
       "Subscription options": [
         "Opções de assinatura"
+      ],
+      "Swipe left action": [
+        "Ação de deslizar para a esquerda"
+      ],
+      "Swipe right action": [
+        "Ação de deslizar para a direita"
       ],
       "Synchronize with system": [
         "Sincronizar com o sistema"
@@ -13866,6 +13860,9 @@
       "Actions": [
         "Ações"
       ],
+      "Drag to reorder": [
+        "Arrastar para reordenar"
+      ],
       "Labels": [
         "Marcadores"
       ]
@@ -15400,11 +15397,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -16731,9 +16728,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Endereços da ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Adicionar vários usuários"
       ],
@@ -16760,6 +16754,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Invitation email": [
+        "E-mail de convite"
       ],
       "Name": [
         "Nome"
@@ -17010,6 +17007,9 @@
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
+      ],
+      "Please update the extension to its latest version": [
+        "Atualize a extensão para sua versão mais recente"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."

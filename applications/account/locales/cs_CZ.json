@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -628,9 +628,6 @@
       "Later": [
         "Později"
       ],
-      "Learn why this option is unavailable": [
-        "Zjistěte, proč tato možnost není dostupná"
-      ],
       "Leave": [
         "Opustit"
       ],
@@ -697,11 +694,11 @@
       "No, thanks": [
         "Ne, děkuji"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -760,11 +757,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -859,9 +856,6 @@
       "Revoke this invitation": [
         "Zrušit tuto pozvánku"
       ],
-      "Run on servers": [
-        "Spustit na serverech"
-      ],
       "Save": [
         "Uložit"
       ],
@@ -936,6 +930,9 @@
       ],
       "Send my username": [
         "Poslat mé uživatelské jméno"
+      ],
+      "Send new invite": [
+        "Odeslat novou pozvánku"
       ],
       "Send reminder": [
         "Poslat připomenutí"
@@ -1137,6 +1134,9 @@
       ],
       "Verify account": [
         "Ověřit účet"
+      ],
+      "Verify domain": [
+        "Ověřte doménu"
       ],
       "View": [
         "Zobrazit"
@@ -1546,6 +1546,14 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1567,14 +1575,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5661,9 +5661,6 @@
       "Folders": [
         "Složky"
       ],
-      "Hardware not compatible": [
-        "Hardware není kompatibilní"
-      ],
       "IP address": [
         "IP adresa"
       ],
@@ -6489,6 +6486,9 @@
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
       ],
+      "All Events ": [
+        "Všechny Události"
+      ],
       "All keys successfully reactivated": [
         "Všechny klíče byly úspěšně znovu aktivovány"
       ],
@@ -6666,9 +6666,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zlepšete identitu značky své organizace a vytvořte konzistentnější online prostředí pro své uživatele."
       ],
-      "Browser not supported": [
-        "Prohlížeč není podporován"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Ve výchozím stavu mohou členové organizace exportovat pouze ty trezory, jejichž jsou vlastníky. Pokud je tato možnost zapnutá, nebudou moci exportovat žádná data"
       ],
@@ -6813,11 +6810,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -7233,7 +7230,22 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "Invite Accepted": [
+        "Pozvánka přijata"
+      ],
+      "Invite Created": [
+        "Pozvánka Vytvořena"
+      ],
+      "Invite deleted": [
+        "Pozvánka smazána"
+      ],
+      "Invite Deleted": [
+        "Pozvánka Smazána"
+      ],
       "Invite rejected": [
+        "Pozvánka odmítnuta"
+      ],
+      "Invite Rejected": [
         "Pozvánka odmítnuta"
       ],
       "Invite successfully sent": [
@@ -7244,6 +7256,24 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
+      ],
+      "Item Created": [
+        "Položka vytvořena"
+      ],
+      "Item Deleted": [
+        "Položka odstraněna"
+      ],
+      "Item Read": [
+        "Položka přečtena"
+      ],
+      "Item Trashed": [
+        "Položka přesunuta do koše"
+      ],
+      "Item Untrashed": [
+        "Položka přesunuta z koše"
+      ],
+      "Item Updated": [
+        "Položka aktualizována"
       ],
       "it’s imperative": [
         "je to nezbytně nutné"
@@ -7803,6 +7833,15 @@
       "Settings updated": [
         "Nastavení aktualizováno"
       ],
+      "Share Created": [
+        "Sdílet Vytvořené"
+      ],
+      "Share Deleted": [
+        "Sdílet Smazané"
+      ],
+      "Share Updated": [
+        "Sdílet Aktualizované"
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zobrazení obrázku každého odesílatele v seznamu zpráv. Pokud není k dispozici fotka, zobrazí se iniciály odesílatele."
       ],
@@ -8259,6 +8298,24 @@
       "Users": [
         "Uživatelé"
       ],
+      "Vault created": [
+        "Trezor vytvořen"
+      ],
+      "Vault Created": [
+        "Trezor Vytvořen"
+      ],
+      "Vault deleted": [
+        "Trezor smazán"
+      ],
+      "Vault Deleted": [
+        "Trezor Smazán"
+      ],
+      "Vault updated": [
+        "Trezor aktualizován"
+      ],
+      "Vault Updated": [
+        "Trezor Aktualizován"
+      ],
       "Verification can take a few minutes.": [
         "Ověřování může trvat několik minut."
       ],
@@ -8652,9 +8709,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Jakmile bude platba zrušena, váš účet bude aktualizován."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Váš prohlížeč nepodporuje asistenta psaní. Zkuste jej spustit na serverech."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
@@ -8666,9 +8720,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Váš hardware nepodporuje lokální spuštění asistenta psaní. Zkuste jej spustit na serverech."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Váš import z ${ accounts } je dočasně opožděn.",
@@ -8819,6 +8870,9 @@
       ],
       "Paid": [
         "Zaplaceno"
+      ],
+      "Processing": [
+        "Zpracovává se"
       ],
       "Unpaid": [
         "Nezaplaceno"
@@ -9288,6 +9342,9 @@
       ],
       "Auto show remote images": [
         "Automaticky zobrazovat externí obrázky"
+      ],
+      "Auto-advance": [
+        "Automatické pokračování"
       ],
       "Auto-delete unwanted messages": [
         "Automaticky mazat nechtěné zprávy"
@@ -9916,6 +9973,9 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Second password": [
+        "Druhé heslo"
+      ],
       "Security code (${ codeName })": [
         "Kód zabezpečení (${ codeName })"
       ],
@@ -9970,6 +10030,9 @@
       "Spam": [
         "Spam"
       ],
+      "Spam and filters": [
+        "Spam a filtry"
+      ],
       "Starred": [
         "S hvězdičkou"
       ],
@@ -9993,6 +10056,9 @@
       ],
       "Subscription options": [
         "Možnosti předplatného"
+      ],
+      "Swipe left action": [
+        "Přejetí doleva"
       ],
       "Synchronize with system": [
         "Synchronizovat se systémem"
@@ -10275,6 +10341,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Protokol o činnosti"
+      ],
       "Add a gift code": [
         "Přidat dárkový kód"
       ],
@@ -10544,6 +10613,9 @@
       ]
     },
     "mail_signup_2024: title": {
+      "For businesses": [
+        "Pro firmy"
+      ],
       "For individuals": [
         "Pro jednotlivce"
       ]
@@ -12233,6 +12305,9 @@
       "Android": [
         "Android"
       ],
+      "Archive": [
+        "Archivovat"
+      ],
       "Ask each time": [
         "Vždy se ptát"
       ],
@@ -12280,6 +12355,9 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "Mark as read": [
+        "Označit jako přečtené"
       ],
       "My reason isn't listed": [
         "Můj důvod není na seznamu"
@@ -12344,11 +12422,17 @@
       "Standard server configs": [
         "Konfigurace standardního serveru"
       ],
+      "Star": [
+        "Označit hvězdičkou"
+      ],
       "TCP": [
         "TCP"
       ],
       "The whole organization": [
         "Celá organizace"
+      ],
+      "Trash": [
+        "Koš"
       ],
       "UDP": [
         "UDP"
@@ -13089,6 +13173,9 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Email or IP": [
+        "E-mail nebo IP"
       ],
       "End date": [
         "Datum ukončení"
@@ -13917,6 +14004,9 @@
       "Actions": [
         "Akce"
       ],
+      "Drag to reorder": [
+        "Přeskupte tažením"
+      ],
       "Labels": [
         "Štítky"
       ]
@@ -13999,6 +14089,16 @@
       ],
       "Verification": [
         "Ověření"
+      ]
+    },
+    "signup: Action": {
+      "Request a demo": [
+        "Požádat o demo"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "V souladu s GDPR"
       ]
     },
     "specialoffer: Action": {
@@ -15268,6 +15368,9 @@
       "Import": [
         "Importovat"
       ],
+      "Invitation email": [
+        "E-mail pozvánky:"
+      ],
       "List": [
         "Seznam"
       ],
@@ -15527,10 +15630,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -16208,6 +16311,9 @@
       "Send email reminders?": [
         "Poslat připomenutí e-mailem?"
       ],
+      "Send new invite?": [
+        "Odeslat novou pozvánku?"
+      ],
       "Session management": [
         "Správce relací"
       ],
@@ -16852,11 +16958,17 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adresa"
-      ],
       "Add multiple users": [
         "Přidat více uživatelů"
+      ],
+      "Add new user": [
+        "Přidat nového uživatele"
+      ],
+      "Admin": [
+        "Administrátor"
+      ],
+      "Cancel": [
+        "Zrušit"
       ],
       "Confirm password": [
         "Potvrzení hesla"
@@ -16864,8 +16976,29 @@
       "Create password": [
         "Vytvořit heslo"
       ],
+      "Create user": [
+        "Vytvořit uživatele"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Invitation email": [
+        "E-mail pozvánky"
+      ],
+      "Name": [
+        "Název"
+      ],
+      "Optional": [
+        "Volitelné"
+      ],
+      "Private": [
+        "Soukromý"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
+      ],
+      "User created": [
+        "Uživatel vytvořen"
       ],
       "VPN connections": [
         "VPN připojení"
@@ -16875,6 +17008,18 @@
       ]
     },
     "Users table: badge": {
+      "Invite sent": [
+        "Pozvánka odeslána"
+      ],
+      "It's you": [
+        "To jsi ty"
+      ],
+      "Private": [
+        "Soukromý"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "SSO uživatel poskytnutý poskytovatelem identity"
       ],
