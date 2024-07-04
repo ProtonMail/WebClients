@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Senare"
       ],
-      "Learn why this option is unavailable": [
-        "Lär dig varför detta alternativ är inte tillgängligt"
-      ],
       "Leave": [
         "Lämna"
       ],
@@ -700,11 +697,11 @@
       "No, thanks": [
         "Nej tack"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Återkalla denna inbjudan"
-      ],
-      "Run on servers": [
-        "Kör på servrar"
       ],
       "Save": [
         "Spara"
@@ -1546,6 +1540,14 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1567,14 +1569,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1700,6 +1694,9 @@
       ],
       "Custom domain problem": [
         "Problem med anpassad domän"
+      ],
+      "Docs problem": [
+        "Docs-problem"
       ],
       "Drive problem": [
         "Problem med Drive"
@@ -5640,9 +5637,6 @@
       "Folders": [
         "Mappar"
       ],
-      "Hardware not compatible": [
-        "Hårdvara inte kompatibel"
-      ],
       "IP address": [
         "IP-adress"
       ],
@@ -6593,9 +6587,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Förstärk din organisations varumärkesidentitet och skapa en mer konsekvent upplevelse online för dina användare."
       ],
-      "Browser not supported": [
-        "Webbläsare stöds inte"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Som standard kan organisationsmedlemmar endast exportera valv där de är ägare. Om detta alternativ är påslaget kommer de inte att kunna exportera någon data"
       ],
@@ -6736,11 +6727,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -8649,9 +8640,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ditt konto kommer att uppdateras när betalningen är klargjord."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Din webbläsare stöder inte skrivassistenten. Prova köra den på servrar."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
@@ -8663,9 +8651,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Din hårdvara stöder inte att köra skrivassistenten lokalt. Prova köra den på servrar."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Din import från ${ accounts } är tillfälligt fördröjd.",
@@ -15390,10 +15375,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -16721,9 +16706,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME }-adress"
-      ],
       "Add multiple users": [
         "Lägg till flera användare"
       ],
@@ -16754,8 +16736,14 @@
       "Email": [
         "E-post"
       ],
+      "Invitation email": [
+        "E-postinbjudan"
+      ],
       "Name": [
         "Namn"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Ny ${ BRAND_NAME } e-postadress"
       ],
       "Optional": [
         "Valfritt"
@@ -17007,8 +16995,14 @@
       "Please add at least one recipient.": [
         "Lägg till minst en mottagare."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Kontrollera att utökningen är korrekt installerat och aktiverat"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observera att genom att välja denna betalningsmetod kan ditt konto inte uppgraderas omedelbart. Vi kommer att uppdatera ditt konto när betalningen har gått igenom."
+      ],
+      "Please update the extension to its latest version": [
+        "Uppdatera utökningen till den senaste versionen"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Senere"
       ],
-      "Learn why this option is unavailable": [
-        "Opdag, hvorfor dette tilvalg ikke er muligt"
-      ],
       "Leave": [
         "Forlad"
       ],
@@ -700,10 +697,10 @@
       "No, thanks": [
         "Nej tak"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Tilbagetræk denne invitation"
-      ],
-      "Run on servers": [
-        "Kør på servere"
       ],
       "Save": [
         "Gem"
@@ -1550,6 +1544,14 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1571,14 +1573,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1704,6 +1698,9 @@
       ],
       "Custom domain problem": [
         "Brugerdomæne-problem"
+      ],
+      "Docs problem": [
+        "Docs-problem"
       ],
       "Drive problem": [
         "Drive-problem"
@@ -5640,9 +5637,6 @@
       "Folders": [
         "Mapper"
       ],
-      "Hardware not compatible": [
-        "Hardware ikke kompatibel"
-      ],
       "IP address": [
         "IP-adresse"
       ],
@@ -6587,9 +6581,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
       ],
-      "Browser not supported": [
-        "Browser understøttes ikke"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Som standard kan organisationsmedlemmer kun eksportere bokse, hvor de er ejere. Hvis denne tilvalg er slået til, kan de ikke eksportere nogen data."
       ],
@@ -6730,11 +6721,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -8687,9 +8678,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Din browser understøtter ikke skriveassistenten. Prøv at køre den på servere."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
@@ -8701,9 +8689,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Din hardware understøtter ikke at køre skriveassistenten lokalt. Prøv at køre den på en server."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Din import fra ${ accounts } er midlertidigt forsinket.",
@@ -14352,6 +14337,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } bruger",
+        "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } brugere"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikeret server",
         "${ ipAddresses } dedikerede servere"
@@ -15445,11 +15434,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -16767,9 +16756,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adresse"
-      ],
       "Add multiple users": [
         "Tilføj flere brugere"
       ],
@@ -16800,8 +16786,14 @@
       "Email": [
         "E-mail"
       ],
+      "Invitation email": [
+        "Invitationsmail"
+      ],
       "Name": [
         "Navn"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Ny ${ BRAND_NAME } e-mailadresse"
       ],
       "Optional": [
         "Valgfri"
@@ -17030,8 +17022,14 @@
       "Please add at least one recipient.": [
         "Angiv mindst én modtager."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Tjek venligst, om udvidelsen er korrekt installeret og aktiveret"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
+      ],
+      "Please update the extension to its latest version": [
+        "Opdater venligst udvidelsen til den nyeste version"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
