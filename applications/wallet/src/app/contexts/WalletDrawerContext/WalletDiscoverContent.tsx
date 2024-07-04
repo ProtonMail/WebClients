@@ -66,7 +66,7 @@ export const WalletDiscoverContent = ({ wallet }: Props) => {
     const { open } = useWalletSetupModalContext();
 
     return (
-        <div className="block overflow-auto">
+        <div className="block">
             <div className="block h-full">
                 <div className="flex flex-column flex-nowrap mb-10">
                     <div className="text-3xl text-semibold mb-6">{c('Wallet discover')

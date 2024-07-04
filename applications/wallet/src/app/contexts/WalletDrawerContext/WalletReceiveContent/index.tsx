@@ -73,7 +73,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
     };
 
     return (
-        <div className="block overflow-auto">
+        <div className="block">
             <div className="flex flex-column">
                 <h3 className="text-4xl text-bold mx-auto text-center">{c('Receive bitcoin')
                     .t`Your bitcoin address`}</h3>
