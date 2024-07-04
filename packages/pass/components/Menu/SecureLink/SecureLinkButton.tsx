@@ -29,6 +29,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
     const isActive = useRouteMatch(getLocalPath('secure-links'));
     const spotlight = useSpotlight();
     const passPlan = useSelector(selectPassPlan);
+    const free = passPlan === UserPassPlan.FREE;
 
     return (
         <DropdownMenuButton
@@ -36,7 +37,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
             className={clsx(className, isActive && activeClassName)}
             label={c('Action').t`Secure links`}
             onClick={
-                passPlan === UserPassPlan.FREE
+                free
                     ? () =>
                           spotlight.setUpselling({
                               type: 'pass-plus',
@@ -45,7 +46,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
                     : onClick
             }
             parentClassName={parentClassName}
-            extra={passPlan === UserPassPlan.FREE && <PassPlusPromotionButton />}
+            extra={free && <PassPlusPromotionButton />}
         />
     );
 };
