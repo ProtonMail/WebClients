@@ -109,7 +109,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     ] = useModalState();
 
     const getScheduleCall = useGetScheduleCall();
-    const docsEnabled = useFlag('DocsAppSwitcher');
 
     const sessionRecoveryState = useSessionRecoveryState();
     const sessionRecoveryInitiated =
@@ -410,7 +409,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                     {(() => {
                         if (viewportWidth['<=small'] && hasAppLinks) {
-                            const availableApps = getAvailableApps({ user, docsEnabled });
+                            const availableApps = getAvailableApps({ user });
                             if (availableApps.length <= 1) {
                                 return null;
                             }

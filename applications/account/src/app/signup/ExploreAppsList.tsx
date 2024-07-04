@@ -17,16 +17,8 @@ interface App {
     bit: PRODUCT_BIT;
 }
 
-export const getExploreApps = ({
-    subscribed,
-    user,
-    docsEnabled,
-}: {
-    subscribed?: User['Subscribed'];
-    user: User | undefined;
-    docsEnabled: boolean;
-}) => {
-    const availableApps = getAvailableApps({ user, docsEnabled });
+export const getExploreApps = ({ subscribed, user }: { subscribed?: User['Subscribed']; user: User | undefined }) => {
+    const availableApps = getAvailableApps({ user });
     return [
         {
             name: APPS.PROTONMAIL,
@@ -63,17 +55,6 @@ export const getExploreApps = ({
                 return c('app-switcher').t`Protect your passwords and identity`;
             },
         },
-        ...(docsEnabled
-            ? [
-                  {
-                      name: APPS.PROTONDOCS,
-                      bit: PRODUCT_BIT.DOCS,
-                      description: () => {
-                          return c('app-switcher').t`Create and collaborate on documents securely`;
-                      },
-                  },
-              ]
-            : []),
     ]
         .sort((a, b) => {
             if (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) {

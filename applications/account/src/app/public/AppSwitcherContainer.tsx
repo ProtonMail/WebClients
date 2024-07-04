@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { DropdownMenu, Icon, SimpleDropdown } from '@proton/components/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { type OnLoginCallback, type OnLoginCallbackArguments, useFlag } from '@proton/components/containers';
+import { type OnLoginCallback, type OnLoginCallbackArguments } from '@proton/components/containers';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import ExploreAppsList, { getExploreApps } from '../signup/ExploreAppsList';
@@ -25,8 +25,6 @@ interface Props {
 const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const session = state.session;
     const { User, Organization } = session;
-
-    const docsEnabled = useFlag('DocsAppSwitcher');
 
     const subscribed = User.Subscribed;
 
@@ -57,7 +55,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                 <Content>
                     <ExploreAppsList
                         subscription={{ subscribed, plan: Organization?.PlanName }}
-                        apps={getExploreApps({ subscribed, user: User, docsEnabled })}
+                        apps={getExploreApps({ subscribed, user: User })}
                         onExplore={async (app) => {
                             await onLogin({
                                 ...session,
