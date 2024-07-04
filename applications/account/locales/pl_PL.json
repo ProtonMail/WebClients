@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Później"
       ],
-      "Learn why this option is unavailable": [
-        "Dowiedz się, dlaczego ta opcja jest niedostępna"
-      ],
       "Leave": [
         "Opuść"
       ],
@@ -700,11 +697,11 @@
       "No, thanks": [
         "Nie, dziękuję"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -763,10 +760,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Unieważnij zaproszenie"
-      ],
-      "Run on servers": [
-        "Uruchom na serwerach"
       ],
       "Save": [
         "Zapisz"
@@ -1558,6 +1552,14 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1579,14 +1581,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1712,6 +1706,9 @@
       ],
       "Custom domain problem": [
         "Problem z niestandardową domeną"
+      ],
+      "Docs problem": [
+        "Problem z dokumentami Docs"
       ],
       "Drive problem": [
         "Problem z dyskiem"
@@ -5694,9 +5691,6 @@
       "Folders": [
         "Foldery"
       ],
-      "Hardware not compatible": [
-        "Twój sprzęt nie jest obsługiwany"
-      ],
       "IP address": [
         "Adres IP"
       ],
@@ -6702,9 +6696,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zwiększ rozpoznawalność marki."
       ],
-      "Browser not supported": [
-        "Przeglądarka nie jest obsługiwana"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Domyślnie użytkownicy organizacji mogą eksportować tylko swoje sejfy. Po włączeniu tej opcji, użytkownicy nie będą mogli eksportować żadnych danych"
       ],
@@ -6849,11 +6840,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -7953,6 +7944,9 @@
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
       ],
@@ -8135,6 +8129,9 @@
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Zaproszenie wygasło. Skontaktuj się z administratorem, aby uzyskać dostęp."
+      ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Zaproszenie zostało wykorzystane. Zaloguj się na konto."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "To jest hasło odzyskiwania składające się z 12 słów, które ustawiano."
@@ -8814,9 +8811,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Twoja przeglądarka nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
       ],
@@ -8828,9 +8822,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Twój sprzęt nie obsługuje lokalnego asystenta pisania. Uruchom go na serwerach."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Proces importowania z konta ${ accounts } jest tymczasowo opóźniony.",
@@ -12543,7 +12534,7 @@
         "Konfiguracja niekompletna"
       ],
       "Spam": [
-        "Spam"
+        "Przenieś do Spamu"
       ],
       "Standard server configs": [
         "Konfiguracje standardowego serwera"
@@ -14800,6 +14791,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
       ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "Plan ${ planName } zwiększa zespołowi produktywność i zorganizowanie oraz zapewnia dostęp do wszystkich aplikacji ${ BRAND_NAME } i ich funkcji premium."
+      ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "Plan ${ planName } zwiększa zespołowi produktywność, zorganizowanie i zapewnia kontrolę nad skrzynką odbiorczą oraz harmonogramem."
       ],
@@ -15744,10 +15738,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -16307,6 +16301,9 @@
       ],
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
+      ],
+      "Personalise your e-mail footer": [
+        "Spersonalizuj stopkę"
       ],
       "Phone": [
         "Telefon"
@@ -17075,9 +17072,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adres"
-      ],
       "Add multiple users": [
         "Dodaj wiele użytkowników"
       ],
@@ -17110,6 +17104,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Nowy adres e-mail ${ BRAND_NAME }"
       ],
       "Optional": [
         "Opcjonalnie"

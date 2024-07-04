@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Después"
       ],
-      "Learn why this option is unavailable": [
-        "Más información de por qué esta opción no está disponible"
-      ],
       "Leave": [
         "Salir"
       ],
@@ -700,10 +697,10 @@
       "No, thanks": [
         "No, gracias"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "refresque la página"
-      ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "refresh the page": [
+        "refresque la página"
       ],
       "Reload": [
         "Recargar"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Cancelar esta invitación"
-      ],
-      "Run on servers": [
-        "Ejecutar en los servidores"
       ],
       "Save": [
         "Guardar"
@@ -1550,6 +1544,14 @@
         "Seleccione la oferta de fin de año"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1571,14 +1573,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1704,6 +1698,9 @@
       ],
       "Custom domain problem": [
         "Problema de dominio personalizado"
+      ],
+      "Docs problem": [
+        "Problema de Docs"
       ],
       "Drive problem": [
         "Problema de Drive"
@@ -5640,9 +5637,6 @@
       "Folders": [
         "Carpetas"
       ],
-      "Hardware not compatible": [
-        "Hardware no compatible"
-      ],
       "IP address": [
         "Dirección IP"
       ],
@@ -6587,9 +6581,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Impulse la identidad de marca de su organización y cree una experiencia en línea más consistente para sus usuarios."
       ],
-      "Browser not supported": [
-        "El navegador no es compatible."
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Por defecto, los miembros de la organización solo pueden exportar bóvedas donde sean propietarios. Si esta opción está activada, no podrán exportar ningún dato."
       ],
@@ -6730,11 +6721,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para activar un control de acceso más preciso."
@@ -8687,9 +8678,6 @@
       "Your account will be updated once the payment is cleared.": [
         "La cuenta se actualizará una vez que el pago se haya completado."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "El navegador no admite el asistente de escritura. Intente ejecutarlo en los servidores."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a la cuenta de ${ BRAND_NAME }."
       ],
@@ -8701,9 +8689,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "El hardware no admite ejecutar el asistente de escritura. Intente ejecutarlo en los servidores."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "La importación desde ${ accounts } está retrasada temporalmente.",
@@ -14352,6 +14337,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuario",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuarios"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -15445,10 +15434,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -16767,9 +16756,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Dirección de ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Añadir varios usuarios"
       ],
@@ -16800,8 +16786,14 @@
       "Email": [
         "Correo"
       ],
+      "Invitation email": [
+        "Correo de invitación"
+      ],
       "Name": [
         "Nombre"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Nueva dirección de correo de ${ BRAND_NAME }"
       ],
       "Optional": [
         "Opcional"
@@ -17030,8 +17022,14 @@
       "Please add at least one recipient.": [
         "Añada al menos un destinatario."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Compruebe que la extensión está instalada y activada correctamente"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tome en cuenta que al elegir este método de pago la cuenta no será mejorada inmediatamente. Actualizaremos la cuenta una vez que el pago se haya completado."
+      ],
+      "Please update the extension to its latest version": [
+        "Actualice la extensión a la última versión"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
