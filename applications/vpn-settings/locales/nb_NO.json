@@ -9173,9 +9173,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME }-adresse"
-      ],
       "Add multiple users": [
         "Legg til flere brukere"
       ],
@@ -9206,8 +9203,14 @@
       "Email": [
         "E-post"
       ],
+      "Invitation email": [
+        "E-postinvitasjon"
+      ],
       "Name": [
         "Navn"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Ny ${ BRAND_NAME }-epostadresse"
       ],
       "Optional": [
         "Valgfri"

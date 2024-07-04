@@ -9149,9 +9149,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Dirección de ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Añadir varios usuarios"
       ],
@@ -9182,8 +9179,14 @@
       "Email": [
         "Correo electrónico"
       ],
+      "Invitation email": [
+        "Correo de invitación"
+      ],
       "Name": [
         "Nombre"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Nueva dirección de correo electrónico de ${ BRAND_NAME }"
       ],
       "Optional": [
         "Opcional"

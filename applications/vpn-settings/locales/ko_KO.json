@@ -65,6 +65,9 @@
       "Change password": [
         "비밀번호 변경"
       ],
+      "Change second password": [
+        "이중 비밀번호 변경"
+      ],
       "Chat with us": [
         "채팅으로 문의하기"
       ],
@@ -2151,6 +2154,9 @@
       "Incorrect password": [
         "잘못된 비밀번호입니다"
       ],
+      "Incorrect second password. Please try again.": [
+        "이중 비밀번호가 알맞지 않습니다. 다시 시도하세요."
+      ],
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
@@ -2990,6 +2996,9 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 저화질 미리보기"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
       ],
       "${ n } address": [
         "${ n } 주소"
@@ -4035,6 +4044,12 @@
       "Two-factor authentication enabled": [
         "2단계 인증이 활성화되었습니다."
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "이중 비밀번호 방식은 두 개의 비밀번호가 필요합니다. 하나는 계정에 로그인 하는 경우에, 다른 하나는 데이터를 여는 데 필요합니다. (고급 설정)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "이중 암호 모드는 로그인 및 사서함 암호 해독에 별도의 암호를 사용합니다. 일부 상황에서는 약간의 보안 이점이 있지만 대부분의 사용자에게는 단일 암호 모드를 권장합니다. 이중 암호 모드로 전환하려면 먼저 로그인 암호를 설정한 다음 메일함 암호를 설정하십시오."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "이 계정에는 저장된 복구 방법이 없습니다."
       ],
@@ -4281,6 +4296,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "초대를 수락하면 사용자를 관리자로 승격할 수 있습니다."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
       ],
@@ -4406,6 +4424,9 @@
       ],
       "Paid": [
         "결제 완료"
+      ],
+      "Processing": [
+        "처리 중"
       ],
       "Unpaid": [
         "결제되지 않음"
@@ -4576,6 +4597,9 @@
       "Confirm password": [
         "비밀번호 확인"
       ],
+      "Confirm second password": [
+        "이중 비밀번호 확인"
+      ],
       "Copy": [
         "복사"
       ],
@@ -4720,6 +4744,9 @@
       "New password": [
         "새 비밀번호"
       ],
+      "New second password": [
+        "새로운 이중 비밀번호"
+      ],
       "No filter": [
         "필터 없음"
       ],
@@ -4812,6 +4839,9 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Second password": [
+        "이중 비밀번호"
       ],
       "Security code (${ codeName })": [
         "보안 코드 (${ codeName })"
@@ -6573,6 +6603,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "현재 청구서에 대한 결제를 진행 중입니다. 사용자의 플랜이 변경되거나 결제 상세 정보가 업데이트되기 전까지 잠시 기다려주세요. 깊은 이해에 감사드립니다."
       ]
     },
     "Payments.Error": {
@@ -6826,6 +6859,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**설정 필요:** SCIM 프로비저닝을 사용하려면 SAML 인증이 구성되어 있어야 합니다."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**설정 필요:** SCIM 프로비저닝을 활성화하려면, 도메인 **${ domainName }**에 대한 소유권 인증이 필요합니다. 이 인증 절차는 한 시간 정도 소요될 수 있습니다."
       ],
       "Enter token into your identity provider": [
         "사용자의 신원 제공자로 이 토큰을 입력하십시오"
@@ -7542,6 +7578,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ maxAi }명 사용자를 위한 ${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses }개 전용 서버"
       ],
@@ -8397,6 +8436,9 @@
       "Change role": [
         "역할 변경"
       ],
+      "Change second password": [
+        "이중 비밀번호 변경"
+      ],
       "Close": [
         "닫기"
       ],
@@ -8601,6 +8643,9 @@
       "Invoices": [
         "청구서"
       ],
+      "Main password": [
+        "기본 비밀번호"
+      ],
       "Multi-user support": [
         "다중 사용자 지원"
       ],
@@ -8798,6 +8843,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "Unlock your data": [
+        "데이터 잠금 해제"
       ],
       "Upgrade your network protection with dedicated servers": [
         "전용 서버로 네트워크 보호를 업그레이드하세요"
@@ -9000,9 +9048,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } 주소"
-      ],
       "Add multiple users": [
         "다중 사용자 추가"
       ],
@@ -9033,8 +9078,14 @@
       "Email": [
         "이메일"
       ],
+      "Invitation email": [
+        "초대 이메일"
+      ],
       "Name": [
         "성명"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "새로운 ${ BRAND_NAME } 이메일 주소"
       ],
       "Optional": [
         "선택 사항"

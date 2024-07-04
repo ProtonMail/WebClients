@@ -956,6 +956,9 @@
       "Custom domain problem": [
         "Problem med anpassad domän"
       ],
+      "Docs problem": [
+        "Docs-problem"
+      ],
       "Drive problem": [
         "Problem med Drive"
       ],
@@ -9113,9 +9116,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME }-adress"
-      ],
       "Add multiple users": [
         "Lägg till flera användare"
       ],
@@ -9146,8 +9146,14 @@
       "Email": [
         "E-post"
       ],
+      "Invitation email": [
+        "E-postinbjudan"
+      ],
       "Name": [
         "Namn"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Ny ${ BRAND_NAME } e-postadress"
       ],
       "Optional": [
         "Valfritt"
