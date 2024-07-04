@@ -53,7 +53,7 @@ const getFeatures = (): UpsellFeature[] => [
         key: 'secure-links',
         className: 'ui-violet',
         icon: 'link',
-        label: c('Info').jt`Easily share your data with friends using secure links`,
+        label: c('Info').jt`Secure links`,
     },
 ];
 

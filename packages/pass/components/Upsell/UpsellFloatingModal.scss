@@ -14,5 +14,10 @@
 
 	&--button {
 		color: var(--primary-contrast) !important;
+		background-color: var(--upsell-modal-button-color);
+
+		&:hover {
+			background-color: var(--primary)
+		}
 	}
 }
