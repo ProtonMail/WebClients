@@ -109,6 +109,9 @@
       "Copy and close": [
         "Copiar y cerrar"
       ],
+      "Copy link": [
+        "Copiar enlace"
+      ],
       "Copy to clipboard": [
         "Copiar al portapapeles"
       ],
@@ -187,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Activar el monitoreo de la Dark Web"
       ],
+      "Entire vault": [
+        "Bóveda completa"
+      ],
       "Exclude from monitoring": [
         "Excluir del monitoreo"
       ],
@@ -208,8 +214,17 @@
       "Generate password": [
         "Generar contraseña"
       ],
+      "Generate secure link": [
+        "Generar un enlace seguro"
+      ],
       "Generated passwords": [
         "Contraseñas generadas"
+      ],
+      "Generating secure link...": [
+        "Generando un enlace seguro..."
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Obtener ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Descargar aplicaciones móviles"
@@ -262,6 +277,12 @@
       "Leave vault": [
         "Dejar la bóveda"
       ],
+      "Link copied to clipboard": [
+        "Enlace copiado al portapapeles"
+      ],
+      "Link expires after": [
+        "El enlace expira después de"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Bloquear ${ PASS_APP_NAME }"
       ],
@@ -277,11 +298,17 @@
       "Manage access": [
         "Gestionar acceso"
       ],
+      "Manage vault access": [
+        "Gestionar el acceso a la bóveda"
+      ],
       "Manually sync your data": [
         "Sincronizar los datos manualmente"
       ],
       "Mark as resolved": [
         "Marcar como resuelto"
+      ],
+      "Maximum views": [
+        "Vistas máximas"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -301,14 +328,17 @@
       "Move to another vault": [
         "Mover a otra bóveda"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mover a la papelera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mover a la papelera"
       ],
       "Multiple select": [
         "Selección múltiple"
+      ],
+      "No expired links": [
+        "No hay enlaces expirados"
       ],
       "OK": [
         "OK"
@@ -343,11 +373,20 @@
       "Reject invitation": [
         "Rechazar invitación"
       ],
+      "Reload": [
+        "Recargar"
+      ],
       "Remove": [
         "Borrar"
       ],
       "Remove access": [
         "Borrar el acceso"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Eliminar todos los enlaces expirados (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Borrar el enlace"
       ],
       "Remove member": [
         "Quitar este miembro"
@@ -370,6 +409,9 @@
       "Restore item": [
         "Restaurar elemento"
       ],
+      "Restrict number of views": [
+        "Restringir el número de vistas"
+      ],
       "Resume monitoring": [
         "Reanudar el monitoreo"
       ],
@@ -384,6 +426,9 @@
       ],
       "Saving": [
         "Guardando"
+      ],
+      "Secure links": [
+        "Enlaces seguros"
       ],
       "See all": [
         "Ver todo"
@@ -409,11 +454,17 @@
       "Share": [
         "Compartir"
       ],
+      "Share secure link": [
+        "Compartir enlace seguro"
+      ],
       "Share this vault": [
         "Compartir esta bóveda"
       ],
       "Share vault": [
         "Compartir bóveda"
+      ],
+      "Shared links": [
+        "Enlaces compartidos"
       ],
       "Show": [
         "Mostrar"
@@ -426,6 +477,9 @@
       ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguien compartió un elemento con usted en ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar elementos de la bóveda"
@@ -444,6 +498,9 @@
       ],
       "Try again.": [
         "Intente nuevamente."
+      ],
+      "Try for free": [
+        "Probarlo gratis"
       ],
       "Unlock offline with password": [
         "Desbloquear el modo sin conexión con contraseña"
@@ -465,6 +522,9 @@
       ],
       "Verify": [
         "Verificar"
+      ],
+      "Via secure link": [
+        "Vía enlace seguro"
       ],
       "View details": [
         "Mostrar los detalles"
@@ -743,6 +803,9 @@
       "Importing items failed": [
         "Error al importar elementos"
       ],
+      "Inactive secure links could not be removed.": [
+        "No se pudieron eliminar los enlaces seguros inactivos."
+      ],
       "Invalid password manager": [
         "Contraseña del gestor inválida"
       ],
@@ -791,6 +854,12 @@
       "Restoring trashed items failed": [
         "Error al restaurar los elementos de la papelera"
       ],
+      "Secure link could not be created.": [
+        "No se pudo crear el enlace seguro."
+      ],
+      "Secure link could not be opened.": [
+        "No se pudo abrir el enlace seguro."
+      ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
       ],
@@ -812,11 +881,17 @@
       "The session has expired. Please sign in again.": [
         "La sesión ha expirado. Inicie sesión de nuevo."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Hubo un error al eliminar el enlace seguro. Intente de nuevo en unos minutos."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiados intentos erróneos. Inicie sesión de nuevo."
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
+      ],
+      "Try reaching out to the link owner.": [
+        "Intente comunicarse con el propietario del enlace."
       ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento"
@@ -973,13 +1048,17 @@
       "${ count } invites successfully sent": [
         "${ count } invitaciones enviadas"
       ],
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } veces"
+      ],
+      "${ count } view": [
+        "${ count } vista",
+        "${ count } vistas"
+      ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } vez",
-        "${ modifiedCount } veces"
       ],
       "${ n } item": [
         "${ n } elemento",
@@ -1043,6 +1122,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Todas las vulneraciones actuales serán marcadas como resueltas. Se le notificará en caso de futuras vulneraciones de datos."
       ],
+      "All inactive secure links were removed": [
+        "Todos los enlaces seguros inactivos fueron eliminados"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" fueron movidos."
       ],
@@ -1067,6 +1149,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "¿Está seguro de que quiere mover el elemento a «${ name }»?"
       ],
+      "Are you sure you want to remove the link?": [
+        "¿En verdad desea eliminar el enlace?"
+      ],
       "Auto-lock successfully disabled.": [
         "Bloqueo automático desactivado con éxito."
       ],
@@ -1081,6 +1166,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
+      ],
+      "Can be viewed": [
+        "Puede ser visto"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
@@ -1145,6 +1233,9 @@
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
         "Debido a una limitación de las extensiones en el navegador Safari, perderá la extensión de archivo «*.pgp» después de exportar los datos. Cambie el nombre del archivo para incluir la extensión «*.pgp» (p. ej. archivo.pgp) después de exportarlo."
       ],
+      "Easily share your data with friends using secure links": [
+        "Comparta fácilmente sus datos con sus amistades usando enlaces seguros"
+      ],
       "Editor": [
         "Editor"
       ],
@@ -1189,6 +1280,12 @@
       ],
       "Enter your PIN code": [
         "Ingrese el código PIN"
+      ],
+      "Expires in": [
+        "Expira en"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Expira en ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         " Se creó la contraseña adicional."
@@ -1485,8 +1582,14 @@
       "Registering PIN lock failed": [
         "Error al registrar el bloqueo por código PIN"
       ],
+      "Removing all inactive secure links...": [
+        "Eliminando todos los enlaces seguros..."
+      ],
       "Removing extra password...": [
         "Eliminando la contraseña adicional..."
+      ],
+      "Removing secure link...": [
+        "Eliminando el enlace seguro..."
       ],
       "Restoring items from trash": [
         "Restaurando los elementos de la papelera"
@@ -1569,6 +1672,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no pudo importarse:",
         "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
+      ],
+      "The secure link has been removed": [
+        "El enlace seguro fue eliminado"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
@@ -1725,6 +1831,18 @@
         "${ config.options.wordCount } palabra",
         "${ config.options.wordCount } palabras"
       ],
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versión de ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1741,14 +1859,23 @@
       "10 minutes": [
         "10 minutos"
       ],
+      "14 days": [
+        "14 días"
+      ],
       "15 minutes": [
         "15 minutos"
+      ],
+      "24 hours": [
+        "24 horas"
       ],
       "2FA secret key (TOTP)": [
         "Clave secreta 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 días"
       ],
       "30 minutes": [
         "30 minutos"
@@ -1758,6 +1885,9 @@
       ],
       "5 minutes": [
         "5 minutos"
+      ],
+      "7 days": [
+        "7 días"
       ],
       "A-Z": [
         "A-Z"
@@ -1812,6 +1942,9 @@
       ],
       "Confirm vault name": [
         "Confirmar nombre de la bóveda"
+      ],
+      "Copy": [
+        "Copiar"
       ],
       "Create a credit card": [
         "Crear una tarjeta de crédito"
@@ -1873,6 +2006,12 @@
       "Expiration date": [
         "Fecha de expiración"
       ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expired link": [
+        "Enlace expirado"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -1888,8 +2027,14 @@
       "Forwards to": [
         "Reenvía a"
       ],
+      "Free forever": [
+        "Gratis para siempre"
+      ],
       "General": [
         "General"
+      ],
+      "Generate a secure link for this item": [
+        "Genere un enlace seguro para este elemento"
       ],
       "Generic CSV": [
         "CSV genérico"
@@ -1969,6 +2114,9 @@
       "Make all viewers": [
         "Promover a todos como lectores"
       ],
+      "Max views reached": [
+        "Visualizaciones máximas alcanzadas"
+      ],
       "Members": [
         "Miembros"
       ],
@@ -2020,6 +2168,9 @@
       "Oldest to newest": [
         "De más antiguo a más reciente"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Gestor de contraseñas de código abierto para una protección sencilla."
+      ],
       "Organization": [
         "Organización"
       ],
@@ -2056,6 +2207,9 @@
       "Recent": [
         "Reciente"
       ],
+      "Remove link": [
+        "Eliminar enlace"
+      ],
       "Report a problem": [
         "Reportar un problema"
       ],
@@ -2064,6 +2218,9 @@
       ],
       "Reveal password": [
         "Mostrar contraseña"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Almacene, comparta e inicie sesión en sus cuentas con seguridad con ${ PASS_APP_NAME }, usando cifrado de extremo a extremo confiado por millones."
       ],
       "Security": [
         "Seguridad"
@@ -2086,6 +2243,15 @@
       "Session locking": [
         "Bloqueo de sesión"
       ],
+      "Share": [
+        "Compartir"
+      ],
+      "Share this vault or create a new vault": [
+        "Comparta esta bóveda o cree una"
+      ],
+      "Shared link": [
+        "Enlace compartido"
+      ],
       "Show website favicons": [
         "Mostrar faviconos de sitios web"
       ],
@@ -2106,6 +2272,16 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "La bóveda del elemento se comparte con ${ targetMembers } persona",
+        "La bóveda del elemento se comparte con ${ targetMembers } personas"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL copiada al portapapeles"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Este elemento seguirá accesible hasta ${ remaining }"
       ],
       "Title": [
         "Título"
@@ -2510,6 +2686,9 @@
       "No reused passwords": [
         "No hay contraseñas reusadas."
       ],
+      "No shared secure links": [
+        "No hay enlaces seguros compartidos"
+      ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para usted"
       ],
@@ -2542,6 +2721,9 @@
       ],
       "Remove extra password": [
         "Eliminar la contraseña adicional"
+      ],
+      "Remove secure link?": [
+        "¿Eliminar el enlace seguro?"
       ],
       "Resolved breaches": [
         "Vulneraciones resueltas"
@@ -2783,8 +2965,14 @@
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Compruebe que la extensión está instalada y activada correctamente"
+      ],
       "Please contact us for investigating the issue": [
         "Contacte con nosotros para investigar el problema"
+      ],
+      "Please update the extension to its latest version": [
+        "Actualice la extensión a la última versión"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique la dirección de correo para poder usar alias de correo."

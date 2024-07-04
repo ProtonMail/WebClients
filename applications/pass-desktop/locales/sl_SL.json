@@ -106,6 +106,9 @@
       "Copy and close": [
         "Kopiraj in zapri"
       ],
+      "Copy link": [
+        "Kopiraj povezavo"
+      ],
       "Copy to clipboard": [
         "Kopiraj v odložišče"
       ],
@@ -298,10 +301,10 @@
       "Move to another vault": [
         "Premakni se v drug trezor"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Premakni v smetnjak"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Premakni v smetnjak"
       ],
       "Multiple select": [
@@ -339,6 +342,9 @@
       ],
       "Reject invitation": [
         "Zavrni povabilo"
+      ],
+      "Reload": [
+        "Osveži"
       ],
       "Remove": [
         "Odstrani"
@@ -394,6 +400,9 @@
       "Set access level": [
         "Nastavite raven dostopa"
       ],
+      "Set extra password": [
+        "Nastavite dodatno geslo"
+      ],
       "Share": [
         "Deli"
       ],
@@ -432,6 +441,9 @@
       ],
       "Try again.": [
         "Poskusite ponovno."
+      ],
+      "Try for free": [
+        "Preizkusite brezplačno"
       ],
       "Unpin item": [
         "Odpni predmet"
@@ -970,12 +982,6 @@
         "${ memberCount } člani",
         "${ memberCount } članov"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }-krat",
-        "${ modifiedCount }-krat",
-        "${ modifiedCount }-krat",
-        "${ modifiedCount }-krat"
-      ],
       "${ n } item": [
         "${ n } predmet",
         "${ n } predmeti",
@@ -1137,6 +1143,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Vnesite potrditveno kodo. Števka ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Vnesite dodatno geslo"
       ],
       "Enter your PIN code": [
         "Vnesi svojo PIN kodo."
@@ -1441,6 +1450,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Delite svoje prijave, varne zapiske z do 10 osebami"
       ],
+      "Sign in to your account": [
+        "Vpišite se v svoj račun"
+      ],
       "Signing you in": [
         "Vpisujem vas"
       ],
@@ -1722,6 +1734,9 @@
       "Confirm vault name": [
         "Potrdite ime trezorja"
       ],
+      "Copy": [
+        "Kopiraj"
+      ],
       "Create a credit card": [
         "Ustvarite plačilno kartico"
       ],
@@ -1772,6 +1787,9 @@
       ],
       "Expiration date": [
         "Datum poteka"
+      ],
+      "Expired": [
+        "Poteklo"
       ],
       "Export": [
         "Izvozi"
@@ -2267,6 +2285,9 @@
       "Breaches detected for": [
         "Zaznane kršitve za"
       ],
+      "Confirm extra password": [
+        "Potrdite dodatno geslo"
+      ],
       "Confirm PIN code": [
         "Potrdi PIN kodo"
       ],
@@ -2456,6 +2477,9 @@
       "Set access level": [
         "Nastavite raven dostopa"
       ],
+      "Set extra password": [
+        "Nastavite dodatno geslo"
+      ],
       "Set up 2FA for better security": [
         "Nastavite 2FA za večjo varnost"
       ],
@@ -2483,6 +2507,9 @@
       "Trash empty": [
         "Smetnjak je prazen"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Odkleni ${ brandNameJSX }"
+      ],
       "Update available": [
         "Na voljo je nadgradnja!"
       ],
@@ -2503,6 +2530,9 @@
       ],
       "Weak passwords": [
         "Šibka gesla"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Dobrodošli v ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"
@@ -2592,6 +2622,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Datum poteka ni v obliki MM/LL"
       ],
+      "Extra password cannot be empty": [
+        "Dodatno geslo ne more biti prazno"
+      ],
       "Failed to load breaches.": [
         "Nalaganje kršitev ni uspelo."
       ],
@@ -2648,6 +2681,9 @@
       ],
       "Passphrase is required": [
         "Zahtevano je geslo"
+      ],
+      "Passwords do not match": [
+        "Gesli se ne ujemata"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP šifrirana izvozna datoteka zahteva geslo"

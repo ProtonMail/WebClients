@@ -109,6 +109,9 @@
       "Copy and close": [
         "Kopieren und schließen"
       ],
+      "Copy link": [
+        "Link kopieren"
+      ],
       "Copy to clipboard": [
         "In die Zwischenablage kopieren"
       ],
@@ -301,11 +304,11 @@
       "Move to another vault": [
         "In einen anderen Tresor verschieben"
       ],
-      "Move to Trash": [
-        "In Papierkorb verschieben"
-      ],
       "Move to trash": [
         "In den Papierkorb verschieben"
+      ],
+      "Move to Trash": [
+        "In Papierkorb verschieben"
       ],
       "Multiple select": [
         "Mehrfachauswahl"
@@ -343,11 +346,17 @@
       "Reject invitation": [
         "Einladung ablehnen"
       ],
+      "Reload": [
+        "Neu laden"
+      ],
       "Remove": [
         "Entfernen"
       ],
       "Remove access": [
         "Zugriff entfernen"
+      ],
+      "Remove link": [
+        "Link entfernen"
       ],
       "Remove member": [
         "Mitglied entfernen"
@@ -397,6 +406,9 @@
       "Set access level": [
         "Zugriffsstufe festlegen"
       ],
+      "Set extra password": [
+        "Zusätzliches Passwort festlegen"
+      ],
       "Share": [
         "Teilen"
       ],
@@ -435,6 +447,9 @@
       ],
       "Try again.": [
         "Bitte versuche es erneut."
+      ],
+      "Try for free": [
+        "Kostenlos ausprobieren"
       ],
       "Unlock offline with password": [
         "Offline mit Passwort entsperren"
@@ -962,10 +977,6 @@
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } Mal",
-        "${ modifiedCount } Mal"
-      ],
       "${ n } item": [
         "${ n } Eintrag",
         "${ n } Einträge"
@@ -1141,6 +1152,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Gib dein zusätzliches Passwort ein."
       ],
       "Enter your PIN code": [
         "PIN-Code eingeben"
@@ -1446,6 +1460,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Teile deine Logins und sichere Notizen mit bis zu 10 Personen."
       ],
+      "Sign in to your account": [
+        "Mit deinem Konto anmelden"
+      ],
       "Signing you in": [
         "Du wirst angemeldet"
       ],
@@ -1518,6 +1535,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte Hide-my-email-Aliasse"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
@@ -1720,6 +1740,9 @@
       "Confirm vault name": [
         "Tresorname bestätigen"
       ],
+      "Copy": [
+        "Kopieren"
+      ],
       "Create a credit card": [
         "Kreditkarte erfassen"
       ],
@@ -1779,6 +1802,9 @@
       ],
       "Expiration date": [
         "Ablaufdatum"
+      ],
+      "Expired": [
+        "Abgelaufen"
       ],
       "Export": [
         "Exportieren"
@@ -2276,6 +2302,9 @@
       "Breaches detected for": [
         "Datenlecks entdeckt für"
       ],
+      "Confirm extra password": [
+        "Zusätzliches Passwort bestätigen"
+      ],
       "Confirm PIN code": [
         "PIN-Code bestätigen"
       ],
@@ -2438,6 +2467,9 @@
       "Remove email address?": [
         "E-Mail-Adresse entfernen?"
       ],
+      "Remove extra password": [
+        "Zusätzliches Passwort entfernen"
+      ],
       "Resolved breaches": [
         "Gelöste Datenlecks"
       ],
@@ -2462,6 +2494,9 @@
       ],
       "Set access level": [
         "Zugriffsstufe festlegen"
+      ],
+      "Set extra password": [
+        "Zusätzliches Passwort festlegen"
       ],
       "Set up 2FA for better security": [
         "Richte 2FA für bessere Sicherheit ein"
@@ -2490,6 +2525,9 @@
       "Trash empty": [
         "Papierkorb leer"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } entsperren"
+      ],
       "Update available": [
         "Update verfügbar"
       ],
@@ -2510,6 +2548,9 @@
       ],
       "Weak passwords": [
         "Schwache Passwörter"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Willkommen bei ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"
@@ -2599,6 +2640,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Ablaufdatum ist nicht im Format MM/JJ."
       ],
+      "Extra password cannot be empty": [
+        "Das zusätzliche Passwort darf nicht leer sein."
+      ],
       "Failed to load breaches.": [
         "Fehler beim Laden der Datenlecks."
       ],
@@ -2653,6 +2697,9 @@
       ],
       "Passphrase is required": [
         "Passphrase ist erforderlich"
+      ],
+      "Passwords do not match": [
+        "Die Passwörter stimmen nicht überein"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-verschlüsselte Exportdatei erfordert Passphrase"
