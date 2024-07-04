@@ -55,7 +55,7 @@ export const EmailIntegrationInput = ({
         [emailIntegrationModal, linkedEmail, onAddAddress, onReplaceAddress]
     );
 
-    const canCreateAddress = !user.isSubUser;
+    const canCreateAddress = user.isAdmin;
 
     return (
         <>
