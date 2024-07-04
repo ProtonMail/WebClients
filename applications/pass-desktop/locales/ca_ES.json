@@ -109,6 +109,9 @@
       "Copy and close": [
         "Copia i tanca"
       ],
+      "Copy link": [
+        "Copia l'enllaç"
+      ],
       "Copy to clipboard": [
         "Copia al porta-retalls"
       ],
@@ -301,10 +304,10 @@
       "Move to another vault": [
         "Mou a una altra caixa forta"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Mou a la paperera"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Mou a la paperera"
       ],
       "Multiple select": [
@@ -343,11 +346,17 @@
       "Reject invitation": [
         "Rebutja la invitació"
       ],
+      "Reload": [
+        "Recarrega"
+      ],
       "Remove": [
         "Esborra"
       ],
       "Remove access": [
         "Esborra l'accés"
+      ],
+      "Remove link": [
+        "Esborra l'enllaç"
       ],
       "Remove member": [
         "Esborra el membre"
@@ -444,6 +453,9 @@
       ],
       "Try again.": [
         "Torni-ho a intentar."
+      ],
+      "Try for free": [
+        "Proveu-lo gratuïtament"
       ],
       "Unlock offline with password": [
         "Desbloqueja fora de línia amb contrasenya"
@@ -883,7 +895,7 @@
     },
     "Feature": {
       "Dark Web Monitoring": [
-        "Supervisió del web fosc"
+        "Monitoratge de la web fosca"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrat"
@@ -976,10 +988,6 @@
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } vegada",
-        "${ modifiedCount } vegades"
       ],
       "${ n } item": [
         "${ n } element",
@@ -1813,6 +1821,9 @@
       "Confirm vault name": [
         "Confirma el nom de la caixa forta"
       ],
+      "Copy": [
+        "Copia"
+      ],
       "Create a credit card": [
         "Crea una targeta de crèdit"
       ],
@@ -1872,6 +1883,9 @@
       ],
       "Expiration date": [
         "Data de caducitat"
+      ],
+      "Expired": [
+        "Caducat"
       ],
       "Export": [
         "Exporta"
@@ -2406,7 +2420,7 @@
         "Correus electrònics personalitzats"
       ],
       "Dark Web Monitoring": [
-        "Supervisió del web fosc"
+        "Monitoratge de la web fosca"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Voleu eliminar la caixa forta \"${ vaultName }\"?"

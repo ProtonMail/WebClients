@@ -3949,6 +3949,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } 사용자를 불러오기 위한 기본 키가 전송에 유효하지 않습니다"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "글쓰기 도우미 다운로드 중 문제가 발생했습니다. 비공개 모드를 사용 중이라면, 일반 브라우징 모드로 전환하거나 서버로 글쓰기 도우미를 사용해 보세요."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "글쓰기 도우미 다운로드 중 문제 발생. 다시 시도하세요."
       ],
@@ -9680,6 +9683,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "현재 청구서에 대한 결제를 진행 중입니다. 사용자의 플랜이 변경되거나 결제 상세 정보가 업데이트되기 전까지 잠시 기다려주세요. 깊은 이해에 감사드립니다."
       ]
     },
     "Payments.Error": {
@@ -11482,6 +11488,9 @@
       ],
       "Verification successful": [
         "인증 성공"
+      ],
+      "Writing assistant setting updated": [
+        "글쓰기 도우미 설정이 업데이트 되었습니다."
       ],
       "You have successfully canceled your subscription.": [
         "구독을 성공적으로 취소하셨습니다."

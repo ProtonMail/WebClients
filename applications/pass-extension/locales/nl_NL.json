@@ -101,6 +101,9 @@
       "Copy and close": [
         "Kopiëren en sluiten"
       ],
+      "Copy link": [
+        "Link kopiëren"
+      ],
       "Copy to clipboard": [
         "Kopieer naar klembord"
       ],
@@ -352,6 +355,9 @@
       ],
       "Remove access": [
         "Toegang verwijderen"
+      ],
+      "Remove link": [
+        "Link verwijderen"
       ],
       "Remove member": [
         "Lid verwijderen"
@@ -906,10 +912,6 @@
         "${ memberCount } lid",
         "${ memberCount } leden"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } keer",
-        "${ modifiedCount } keer"
-      ],
       "${ n } item": [
         "${ n } item",
         "${ n } items"
@@ -1357,6 +1359,9 @@
       "Sign in or create an account to continue.": [
         "Log in of maak een account aan om verder te gaan."
       ],
+      "Sign in to your account": [
+        "Inloggen bij uw account"
+      ],
       "Signing you in": [
         "U wordt ingelogd"
       ],
@@ -1636,6 +1641,9 @@
       "Confirm vault name": [
         "Bevestig naam van kluis"
       ],
+      "Copy": [
+        "Kopiëren"
+      ],
       "Create a credit card": [
         "Kredietkaart aanmaken"
       ],
@@ -1686,6 +1694,9 @@
       ],
       "Expiration date": [
         "Vervaldatum"
+      ],
+      "Expired": [
+        "Verlopen"
       ],
       "Export": [
         "Exporteren"
@@ -1944,6 +1955,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Ontgrendel ${ PASS_APP_NAME }"
       ],
       "Unnamed Credit Card": [
         "Naamloze kredietkaart"
@@ -2280,6 +2294,9 @@
       "Trash empty": [
         "Prullenbak leeg"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Ontgrendel ${ brandNameJSX }"
+      ],
       "Update available": [
         "Update beschikbaar"
       ],
@@ -2297,6 +2314,9 @@
       ],
       "Weak password": [
         "Zwak wachtwoord"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Welkom bij ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Welkom bij uw nieuwe wachtwoordbeheerder!"
@@ -2422,6 +2442,9 @@
       ],
       "Passphrase is required": [
         "Wachtzin is vereist"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-versleuteld exportbestand vereist wachtzin"

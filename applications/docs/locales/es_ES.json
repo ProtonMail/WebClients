@@ -231,9 +231,6 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
-      "Duplicate": [
-        "Duplicar"
-      ],
       "Edit": [
         "Editar"
       ],
@@ -291,9 +288,6 @@
       "Hide advanced PGP settings": [
         "Ocultar configuración PGP avanzada"
       ],
-      "History": [
-        "Historial"
-      ],
       "Image could not be loaded with tracker protection.": [
         "No se ha podido cargar la imagen con la protección contra el rastreo."
       ],
@@ -344,6 +338,9 @@
       ],
       "Loading verification": [
         "Cargando verificación"
+      ],
+      "Make a copy": [
+        "Hacer una copia"
       ],
       "Manage folders": [
         "Administrar carpetas"
@@ -444,8 +441,8 @@
       "Remove gift code": [
         "Eliminar código de regalo"
       ],
-      "Rename": [
-        "Renombrar"
+      "Rename document": [
+        "Cambiar el nombre del documento"
       ],
       "Replace file": [
         "Reemplazar archivo"
@@ -485,6 +482,9 @@
       ],
       "See how": [
         "Ver cómo"
+      ],
+      "See version history": [
+        "Ver historial de versiones"
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
@@ -3800,6 +3800,9 @@
       "Learn more": [
         "Más información"
       ],
+      "Limited availability": [
+        "Disponibilidad limitada"
+      ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
@@ -3820,6 +3823,9 @@
       ],
       "Loading...": [
         "Cargando..."
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Parece que no tienes conexión. El documento no puede editarse mientras no haya conexión. Comprueba la conectividad de tu dispositivo."
       ],
       "Low Priority": [
         "Prioridad baja"
@@ -3891,6 +3897,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Solo las personas con el enlace y la contraseña tienen acceso a esta carpeta."
+      ],
+      "Opening...": [
+        "Abriendo..."
       ],
       "Organization size": [
         "Tamaño de la organización"
@@ -4030,6 +4039,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
+      ],
+      "Some edits are taking longer to sync than expected.": [
+        "Algunas ediciones están tardando en sincronizarse más de lo esperado."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito utilizando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
@@ -4333,6 +4345,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Tus cambios se están sincronizando en Drive. No cierra la página web."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "Error al sincronizar los cambios. Drive intentará guardar los cambios automáticamente. No cierra la página web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Tu navegador actual no admite la descarga de archivos grandes por no disponer de trabajos de servicio. La descarga de archivos grandes puede inmovilizar o dejar sin respuesta al navegador. Usa la última versión de ${ recommendedBrowser } e inténtalo de nuevo."
@@ -7696,6 +7711,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Limited availability": [
+        "Disponibilidad limitada"
       ],
       "Link confirmation": [
         "Confirmación de enlace"

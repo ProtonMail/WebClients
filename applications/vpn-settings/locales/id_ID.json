@@ -4600,6 +4600,9 @@
       "Confirm password": [
         "Konfirmasi kata sandi"
       ],
+      "Confirm second password": [
+        "Konfirmasi kata sandi kedua"
+      ],
       "Copy": [
         "Salin"
       ],
@@ -4839,6 +4842,9 @@
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
+      ],
+      "Second password": [
+        "Kata sandi kedua"
       ],
       "Security code (${ codeName })": [
         "Kode keamanan (${ codeName })"
@@ -9021,9 +9027,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Alamat ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Tambahkan beberapa pengguna"
       ],
@@ -9053,6 +9056,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Invitation email": [
+        "Email undangan"
       ],
       "Name": [
         "Nama"

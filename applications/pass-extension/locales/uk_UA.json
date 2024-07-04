@@ -101,6 +101,9 @@
       "Copy and close": [
         "Скопіювати та закрити"
       ],
+      "Copy link": [
+        "Копіювати посилання"
+      ],
       "Copy to clipboard": [
         "Скопіювати до буферу обміну"
       ],
@@ -352,6 +355,9 @@
       ],
       "Remove access": [
         "Вилучити доступ"
+      ],
+      "Remove link": [
+        "Вилучити посилання"
       ],
       "Remove member": [
         "Вилучити учасника"
@@ -920,12 +926,6 @@
         "${ memberCount } учасників",
         "${ memberCount } учасників"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } раз",
-        "${ modifiedCount } разів",
-        "${ modifiedCount } рази",
-        "${ modifiedCount } рази"
-      ],
       "${ n } item": [
         "${ n } елемент",
         "Елементів: ${ n }",
@@ -1108,6 +1108,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введіть код підтвердження. Цифри ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Уведіть ваш додатковий пароль"
       ],
       "Enter your PIN code": [
         "Введіть PIN-код"
@@ -1384,6 +1387,9 @@
       ],
       "Sign in or create an account to continue.": [
         "Увійдіть або створіть обліковий запис, щоб продовжити."
+      ],
+      "Sign in to your account": [
+        "Увійдіть у свій обліковий запис"
       ],
       "Signing you in": [
         "Виконується вхід"
@@ -1672,6 +1678,9 @@
       "Confirm vault name": [
         "Підтвердити назву сховища"
       ],
+      "Copy": [
+        "Копіювати"
+      ],
       "Create a credit card": [
         "Створити кредитну картку"
       ],
@@ -1722,6 +1731,9 @@
       ],
       "Expiration date": [
         "Термін дії"
+      ],
+      "Expired": [
+        "Термін дії завершився"
       ],
       "Export": [
         "Експорт"
@@ -1980,6 +1992,9 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Розблокувати ${ PASS_APP_NAME }"
       ],
       "Unnamed Credit Card": [
         "Неназвана кредитна картка"
@@ -2320,6 +2335,9 @@
       "Trash empty": [
         "Смітник порожній"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Розблокувати ${ brandNameJSX }"
+      ],
       "Update available": [
         "Доступне оновлення"
       ],
@@ -2337,6 +2355,9 @@
       ],
       "Weak password": [
         "Слабкий пароль"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Ласкаво просимо до ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Ласкаво просимо до нового менеджера паролів!"
@@ -2417,6 +2438,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Дата закінчення терміну придатності не у форматі ММ/РР"
       ],
+      "Extra password cannot be empty": [
+        "Додатковий пароль не може бути порожнім"
+      ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
       ],
@@ -2464,6 +2488,9 @@
       ],
       "Passphrase is required": [
         "Парольна фраза обов'язкова"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
       ],
       "PGP encrypted export file requires passphrase": [
         "Зашифрований файл експорту PGP вимагає парольної фрази"

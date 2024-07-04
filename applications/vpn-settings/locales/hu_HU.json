@@ -4875,6 +4875,9 @@
     "Payments": {
       "Billing Country": [
         "Számlázási ország"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét működni fog."
       ]
     },
     "Payments.Error": {
@@ -6462,9 +6465,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } cím"
-      ],
       "Add multiple users": [
         "Több felhasználó hozzáadása"
       ],

@@ -222,6 +222,9 @@
       "Create and copy alias": [
         "Utwórz i skopiuj alias"
       ],
+      "Create Document": [
+        "Utwórz dokument"
+      ],
       "Create link": [
         "Utwórz link"
       ],
@@ -523,7 +526,7 @@
         "Przenieś do Kosza"
       ],
       "New": [
-        "Nowy"
+        "Nowość"
       ],
       "New document": [
         "Nowy dokument"
@@ -1157,6 +1160,9 @@
       ],
       "Custom domain problem": [
         "Problem z niestandardową domeną"
+      ],
+      "Docs problem": [
+        "Problem z dokumentami Docs"
       ],
       "Drive problem": [
         "Problem z dyskiem"
@@ -5034,6 +5040,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
+      ],
+      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
+        "Nowa funkcja dokumentów wymaga najnowszej wersji aplikacji ${ DRIVE_APP_NAME }. Zaktualizuj aplikacje mobilne i desktopowe."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
@@ -9032,6 +9041,9 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "Plan ${ planName } zawiera wszystkie aplikacje, wszystkie funkcje, wcześniejszy dostęp do nowych wersji i wszystko, czego potrzebujesz, aby mieć kontrolę nad swoimi danymi i ich bezpieczeństwem."
       ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "Plan ${ planName } zwiększa zespołowi produktywność i zorganizowanie oraz zapewnia dostęp do wszystkich aplikacji ${ BRAND_NAME } i ich funkcji premium."
+      ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
         "Plan ${ planName } zwiększa zespołowi produktywność, zorganizowanie i zapewnia kontrolę nad skrzynką odbiorczą oraz harmonogramem."
       ],
@@ -9790,6 +9802,9 @@
       ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
+      ],
+      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
+        "Dokumenty Docs to nowa funkcja w ${ DRIVE_APP_NAME }"
       ],
       "Downgrade account": [
         "Obniż plan"

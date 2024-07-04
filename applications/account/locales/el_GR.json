@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Αργότερα"
       ],
-      "Learn why this option is unavailable": [
-        "Μάθετε γιατί αυτή η επιλογή δεν είναι διαθέσιμη"
-      ],
       "Leave": [
         "Αποχώρηση"
       ],
@@ -700,11 +697,11 @@
       "No, thanks": [
         "Όχι, ευχαριστώ"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Reload": [
         "Ανανέωση"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Ανάκληση αυτής της πρόσκλησης"
-      ],
-      "Run on servers": [
-        "Εκτέλεση σε διακομιστές"
       ],
       "Save": [
         "Αποθήκευση"
@@ -1550,6 +1544,14 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1571,14 +1573,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -5640,9 +5634,6 @@
       "Folders": [
         "Φάκελοι"
       ],
-      "Hardware not compatible": [
-        "Το υλικό δεν είναι συμβατό"
-      ],
       "IP address": [
         "Διεύθυνση IP"
       ],
@@ -6587,9 +6578,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Ενισχύστε την ταυτότητα επωνυμίας του οργανισμού σας και δημιουργήστε μια πιο συνεπή εμπειρία στο διαδίκτυο για τους χρήστες σας."
       ],
-      "Browser not supported": [
-        "Το πρόγραμμα περιήγησης δεν υποστηρίζεται"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Από προεπιλογή, τα μέλη του οργανισμού μπορούν να εξάγουν θυρίδες αποθήκευσης μόνο όπου είναι οι κάτοχοι. Εάν αυτή η επιλογή είναι ενεργοποιημένη, δε θα μπορούν να εξάγουν δεδομένα"
       ],
@@ -6730,11 +6718,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -8684,9 +8672,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Το πρόγραμμα περιήγησής σας δεν υποστηρίζει τον βοηθό γραφής. Δοκιμάστε να το εκτελέσετε σε διακομιστές."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
       ],
@@ -8698,9 +8683,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Το υλικό σας δεν υποστηρίζει την εκτέλεση του βοηθού γραφής τοπικά. Δοκιμάστε να το εκτελέσετε σε διακομιστές."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Η εισαγωγή σας από ${ accounts } καθυστερεί προσωρινά.",
@@ -15436,10 +15418,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -16755,9 +16737,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } διεύθυνση"
-      ],
       "Add multiple users": [
         "Προσθήκη πολλαπλών χρηστών"
       ],
@@ -16788,8 +16767,14 @@
       "Email": [
         "Ηλεκτρονικό ταχυδρομείο"
       ],
+      "Invitation email": [
+        "Μήνυμα πρόσκλησης"
+      ],
       "Name": [
         "Όνομα"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Νέα ${ BRAND_NAME } διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Optional": [
         "Προαιρετικό"
@@ -17018,8 +17003,14 @@
       "Please add at least one recipient.": [
         "Παρακαλούμε προσθέστε τουλάχιστον έναν παραλήπτη."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Παρακαλούμε ελέγξτε ότι η επέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
+      ],
+      "Please update the extension to its latest version": [
+        "Παρακαλούμε ενημερώστε την επέκταση στην πιο πρόσφατη έκδοσή της"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."

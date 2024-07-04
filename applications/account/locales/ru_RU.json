@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Позже"
       ],
-      "Learn why this option is unavailable": [
-        "Узнайте, почему эта опция недоступна"
-      ],
       "Leave": [
         "Оставить"
       ],
@@ -700,10 +697,10 @@
       "No, thanks": [
         "Нет, спасибо"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Отозвать это приглашение"
-      ],
-      "Run on servers": [
-        "Выполнять на серверах"
       ],
       "Save": [
         "Сохранить"
@@ -1558,6 +1552,14 @@
         "Выберите Новогоднее предложение"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1579,14 +1581,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5700,9 +5694,6 @@
       "Folders": [
         "Папки"
       ],
-      "Hardware not compatible": [
-        "Оборудование несовместимо"
-      ],
       "IP address": [
         "IP-адрес"
       ],
@@ -6711,9 +6702,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
       ],
-      "Browser not supported": [
-        "Браузер не поддерживается"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "По умолчанию члены организации могут экспортировать только те хранилища, владельцами которых они являются. Если этот параметр включен, они не смогут экспортировать никакие данные"
       ],
@@ -6858,11 +6846,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -8850,9 +8838,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Ваше оборудование не поддерживает работу помощника по написанию. Попробуйте запустить его на серверах."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт ${ BRAND_NAME }."
       ],
@@ -8864,9 +8849,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Ваше оборудование не поддерживает работу помощника по написанию локально. Попробуйте запустить его на серверах."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваш импорт из ${ accounts } временно отложен.",
@@ -15792,10 +15774,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -17123,9 +17105,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } адрес"
-      ],
       "Add multiple users": [
         "Добавление нескольких пользователей"
       ],
@@ -17155,6 +17134,9 @@
       ],
       "Email": [
         "Электронная почта"
+      ],
+      "Invitation email": [
+        "Электронное письмо-приглашение"
       ],
       "Name": [
         "Имя"

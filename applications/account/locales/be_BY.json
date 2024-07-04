@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Пазней"
       ],
-      "Learn why this option is unavailable": [
-        "Даведацца чаму гэты параметр недаступны"
-      ],
       "Leave": [
         "Выйсці"
       ],
@@ -700,10 +697,10 @@
       "No, thanks": [
         "Не, дзякуй"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Адклікаць гэта запрашэнне"
-      ],
-      "Run on servers": [
-        "Выканаць на серверах"
       ],
       "Save": [
         "Захаваць"
@@ -1558,6 +1552,14 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1579,14 +1581,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1718,6 +1712,9 @@
       ],
       "Custom domain problem": [
         "Праблема з карыстальніцкім даменам"
+      ],
+      "Docs problem": [
+        "Праблема з Docs"
       ],
       "Drive problem": [
         "Праблема з Дыскам"
@@ -5700,9 +5697,6 @@
       "Folders": [
         "Папкі"
       ],
-      "Hardware not compatible": [
-        "Несумяшчальнае абсталяванне"
-      ],
       "IP address": [
         "IP-адрас"
       ],
@@ -6711,9 +6705,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
-      "Browser not supported": [
-        "Браўзер не падтрымліваецца"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Прадвызначана, удзельнікі арганізацыі могуць экспартаваць толькі тыя сховішчы, якімі яны валодаюць. Калі гэты параметр уключаны, то магчымасці экспартаваць даныя ў іх не будзе."
       ],
@@ -6858,11 +6849,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8404,7 +8395,7 @@
         "Выкарыстоўвайце менеджар пароляў для генерацыі і бяспечнага захоўвання сваіх пароляў, што дае гарантыю іх надзейнасці і лёгкага ўваходу."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        "Выкарыстоўвайце лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
+        "Выкарыстоўваць лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
         "Выкарыстоўвайце розныя тыпы адрасоў электроннай пошты і псеўданімы, якія прапануе ${ BRAND_NAME }."
@@ -8853,9 +8844,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
@@ -8867,9 +8855,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Ваша імпартаванне з ${ accounts } часова адкладзена.",
@@ -14662,6 +14647,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальніка",
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальнікаў",
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальнікаў",
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальнікаў"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } вылучаны сервер",
         "${ ipAddresses } вылучаныя серверы",
@@ -15801,10 +15792,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -17135,9 +17126,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Адрас ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Дадаць некалькі карыстальнікаў"
       ],
@@ -17168,8 +17156,14 @@
       "Email": [
         "Электронная пошта"
       ],
+      "Invitation email": [
+        "Электронны ліст запрашэння"
+      ],
       "Name": [
         "Імя"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Новы адрас электроннай пошты ${ BRAND_NAME }"
       ],
       "Optional": [
         "Неабавязкова"
@@ -17416,8 +17410,14 @@
       "Please add at least one recipient.": [
         "Дадайце прынамсі аднаго атрымальніка."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Пераканайцеся, што пашырэнне правільна ўсталявана і ўключана"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Звярніце ўвагу, што выбраўшы гэты спосаб аплаты ваш уліковы запіс не будзе палепшаны неадкладна. Мы абновім яго толькі пасля пацвярджэння аплаты."
+      ],
+      "Please update the extension to its latest version": [
+        "Абнавіце пашырэнне да апошняй версіі"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."

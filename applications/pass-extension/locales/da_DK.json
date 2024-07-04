@@ -104,6 +104,9 @@
       "Copy and close": [
         "Kopiér og luk"
       ],
+      "Copy link": [
+        "Kopiér link"
+      ],
       "Copy to clipboard": [
         "Kopiér til udklipsholder"
       ],
@@ -194,6 +197,9 @@
       "Edit vault": [
         "Redigér boks"
       ],
+      "Entire vault": [
+        "Hele boksen"
+      ],
       "Exclude from monitoring": [
         "Undtag fra monitorering"
       ],
@@ -215,8 +221,14 @@
       "Generate password": [
         "Generér adgangskode"
       ],
+      "Generate secure link": [
+        "Generer sikkert link"
+      ],
       "Generated passwords": [
         "Genererede adgangskoder"
+      ],
+      "Generating secure link...": [
+        "Generer sikkert link..."
       ],
       "Get mobile apps": [
         "Hent mobilapps"
@@ -266,6 +278,12 @@
       "Leave vault": [
         "Forlad boks"
       ],
+      "Link copied to clipboard": [
+        "Link kopieret til udklipsholder"
+      ],
+      "Link expires after": [
+        "Linket udløber efter"
+      ],
       "Lock extension": [
         "Lås udvidelse"
       ],
@@ -281,8 +299,14 @@
       "Manage access": [
         "Administrer adgang"
       ],
+      "Manage vault access": [
+        "Håndter adgang til boksen"
+      ],
       "Manually sync your data": [
         "Synkronisér data manuelt"
+      ],
+      "Maximum views": [
+        "Maks. visninger"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
@@ -310,6 +334,9 @@
       ],
       "Multiple select": [
         "Markér flere"
+      ],
+      "No expired links": [
+        "Ingen udløbne links"
       ],
       "Not now": [
         "Ikke nu"
@@ -356,6 +383,12 @@
       "Remove access": [
         "Fjern adgang"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Fjern alle udløbne links (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Fjern link"
+      ],
       "Remove member": [
         "Fjern medlem"
       ],
@@ -370,6 +403,9 @@
       ],
       "Restore item": [
         "Gendan element"
+      ],
+      "Restrict number of views": [
+        "Begræns antallet af visninger"
       ],
       "Retry": [
         "Prøv igen"
@@ -388,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Gemmer adgangsnøgle..."
+      ],
+      "Secure links": [
+        "Sikre links"
       ],
       "See all": [
         "Se alle"
@@ -413,11 +452,17 @@
       "Share": [
         "Del"
       ],
+      "Share secure link": [
+        "Del sikkert link"
+      ],
       "Share this vault": [
         "Del denne boks"
       ],
       "Share vault": [
         "Del boks"
+      ],
+      "Shared links": [
+        "Delt link"
       ],
       "Show": [
         "Vis"
@@ -478,6 +523,9 @@
       ],
       "Upgrade now to share with more people": [
         "Opgradér nu for at dele med flere"
+      ],
+      "Via secure link": [
+        "Via sikkert link"
       ],
       "View app logs": [
         "Se app-logs"
@@ -726,6 +774,9 @@
       "Importing items failed": [
         "Import af elementer mislykkedes"
       ],
+      "Inactive secure links could not be removed.": [
+        "Inaktive sikre links kunne ikke fjernes."
+      ],
       "Invalid password manager": [
         "Ugyldig adgangskodeadministrator"
       ],
@@ -786,6 +837,12 @@
       "Restoring trashed items failed": [
         "Gendannelse af elementer i papirkurven mislykkedes"
       ],
+      "Secure link could not be created.": [
+        "Sikkert link kunne ikke oprettes."
+      ],
+      "Secure link could not be opened.": [
+        "Sikkert link kunne ikke åbnes."
+      ],
       "Settings update failed": [
         "Ændring af indstillinger mislykkedes"
       ],
@@ -806,6 +863,9 @@
       ],
       "The URL is in the list": [
         "URL'en er i listen"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Der opstod en fejl under fjernelse af det sikre link. Prøv igen om et par minutter."
       ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøg. Log venligst ind igen."
@@ -929,13 +989,17 @@
       "${ count } invites successfully sent": [
         "${ count } invitationer sendt"
       ],
+      "${ count } time": [
+        "${ count } gang",
+        "${ count } gange"
+      ],
+      "${ count } view": [
+        "${ count } visning",
+        "${ count } visninger"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } gang",
-        "${ modifiedCount } gange"
       ],
       "${ n } item": [
         "${ n } element",
@@ -1011,6 +1075,9 @@
       "All breaches for this address were resolved": [
         "Alle databrud for denne adresse blev håndteret"
       ],
+      "All inactive secure links were removed": [
+        "Alle inaktive sikre links blev fjernet"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" blev flyttet"
       ],
@@ -1035,6 +1102,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Er du sikker på, at du vil flytte elementet til \"${ name }\" ?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Er du sikker på at du vil fjerne linket?"
+      ],
       "Auto-lock successfully disabled.": [
         "Autolås er blevet deaktiveret."
       ],
@@ -1046,6 +1116,9 @@
       ],
       "Built in 2FA authenticator": [
         "Indbygget 2FA-godkendelse"
+      ],
+      "Can be viewed": [
+        "Kan blive set"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan oprette, redigere, slette og eksportere elementer i denne boks."
@@ -1125,6 +1198,9 @@
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
       ],
+      "Easily share your data with friends using secure links": [
+        "Del nemt dine data med venner ved hjælp af sikre links"
+      ],
       "Editor": [
         "Redaktør"
       ],
@@ -1166,6 +1242,12 @@
       ],
       "Enter your PIN code": [
         "Indtast din pinkode"
+      ],
+      "Expires in": [
+        "Udløber om"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Udløber om ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Ekstra adgangskode oprettet med succes"
@@ -1426,8 +1508,14 @@
       "Registering PIN lock failed": [
         "Registrering af PIN-lås mislykkedes"
       ],
+      "Removing all inactive secure links...": [
+        "Fjerner alle inaktive sikre links..."
+      ],
       "Removing extra password...": [
         "Fjerner ekstra adgangskode..."
+      ],
+      "Removing secure link...": [
+        "Fjerner sikkert link..."
       ],
       "Restoring items from trash": [
         "Gendanner elementer fra papirkurven"
@@ -1516,6 +1604,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kunne ikke importeres:"
+      ],
+      "The secure link has been removed": [
+        "Det sikre link er blevet fjernet"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten, du forsøger at indsætte, er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
@@ -1669,6 +1760,18 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dage"
+      ],
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minutter"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
@@ -1684,14 +1787,23 @@
       "10 minutes": [
         "10 minutter"
       ],
+      "14 days": [
+        "14 dage"
+      ],
       "15 minutes": [
         "15 minutter"
+      ],
+      "24 hours": [
+        "24 timer"
       ],
       "2FA secret key (TOTP)": [
         "2FA hemmelig nøgle (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
+      ],
+      "30 days": [
+        "30 dage"
       ],
       "30 minutes": [
         "30 minutter"
@@ -1701,6 +1813,9 @@
       ],
       "5 minutes": [
         "5 minutter"
+      ],
+      "7 days": [
+        "7 dage"
       ],
       "A-Z": [
         "A-Z"
@@ -1771,6 +1886,9 @@
       "Confirm vault name": [
         "Bekræft boks-navn"
       ],
+      "Copy": [
+        "Kopiér"
+      ],
       "Create a credit card": [
         "Opret et betalingskort"
       ],
@@ -1831,6 +1949,12 @@
       "Expiration date": [
         "Udløbsdato"
       ],
+      "Expired": [
+        "Udløbet"
+      ],
+      "Expired link": [
+        "Udløbet link"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -1848,6 +1972,9 @@
       ],
       "General": [
         "Generelt"
+      ],
+      "Generate a secure link for this item": [
+        "Generer et sikkert link til dette element"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -1923,6 +2050,9 @@
       ],
       "Make all viewers": [
         "Gør alle til seere"
+      ],
+      "Max views reached": [
+        "Maks. antal visninger nået"
       ],
       "Members": [
         "Medlemmer"
@@ -2023,6 +2153,9 @@
       "Recent": [
         "Seneste"
       ],
+      "Remove link": [
+        "Fjern link"
+      ],
       "Report a problem": [
         "Anmeld et problem"
       ],
@@ -2059,6 +2192,15 @@
       "Settings": [
         "Indstillinger"
       ],
+      "Share": [
+        "Del"
+      ],
+      "Share this vault or create a new vault": [
+        "Del denne boks, eller opret en ny boks"
+      ],
+      "Shared link": [
+        "Delt link"
+      ],
       "Show website favicons": [
         "Vis websteders favicon"
       ],
@@ -2076,6 +2218,13 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Elementets boks er i øjeblikket delt med ${ targetMembers } brugere.",
+        "Elementets boks er i øjeblikket delt med ${ targetMembers } brugere."
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL'en blev kopieret til udklipsholderen"
       ],
       "Title": [
         "Titel"
@@ -2388,6 +2537,9 @@
       "No items selected": [
         "Ingen elementer valgt"
       ],
+      "No shared secure links": [
+        "Ingen sikre links delt"
+      ],
       "Our welcome gift to you": [
         "Vores velkomstgave til dig"
       ],
@@ -2411,6 +2563,9 @@
       ],
       "Remove extra password": [
         "Fjern ekstra adgangskode"
+      ],
+      "Remove secure link?": [
+        "Fjern sikkert link?"
       ],
       "Restore this version?": [
         "Gendan denne version?"

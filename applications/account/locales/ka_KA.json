@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -611,9 +611,6 @@
       "Later": [
         "მოგვიანებით"
       ],
-      "Learn why this option is unavailable": [
-        "ნახვა, რატომაა ეს პარამეტრი ხელმიუწვდომელი"
-      ],
       "Leave": [
         "გასვლა"
       ],
@@ -680,10 +677,10 @@
       "No, thanks": [
         "არა, მადლობა"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -743,10 +740,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Reload": [
@@ -841,9 +838,6 @@
       ],
       "Revoke this invitation": [
         "ამ მოსაწვევის გაუქმება"
-      ],
-      "Run on servers": [
-        "გაშვება სერვერებზე"
       ],
       "Save": [
         "შენახვა"
@@ -1527,6 +1521,14 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1548,14 +1550,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -4330,6 +4324,9 @@
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ეს ფაილი მეისმეტად დიდია. მაქსიმალური ზომაა ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "ფაილი მეტისმეტად პატარაა. მინიმალური ზომაა ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+      ],
       "The folder name is invalid. Please choose a different name.": [
         "საქაღალდის სახელი არასწორია. აირჩიეთ სხვა სახელი."
       ],
@@ -5611,9 +5608,6 @@
       "Folders": [
         "საქაღალდეები"
       ],
-      "Hardware not compatible": [
-        "აპარატურა თავსებადი არაა"
-      ],
       "IP address": [
         "IP მისამართი"
       ],
@@ -6549,9 +6543,6 @@
       "Blocks senders from seeing if and when you opened a message.": [
         "გამომგზავნის დაბლოკვა დაინახოს, თუ და როდის გახსენით შეტყობინება."
       ],
-      "Browser not supported": [
-        "ბრაუზერი მხარდაუჭერელია"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "ნაგულისხმევად ორგანიზაციის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
       ],
@@ -6692,11 +6683,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -6930,6 +6921,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "მიიღწეთ წვდომა ${ BRAND_NAME }-ის ანგარიშის შექმნით და მოსაწვევის დათანხმებით."
+      ],
+      "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
+        "მიიღეთ გაფრთხილება, თუ თქვენმა პაროლმა ან სხვა პირადმა მონაცემებმა გაჟონა. ${ learnMoreLinkNoBreach }"
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "კოდს გასაგები აღწერა მიანიჭეთ. მაგალითად, სერვსის სახელი, სადაც მის გამოყენებას აპირებთ და აირჩიეთ თქვენი აქტიური მორგებული დომენური მისამართი. ამ კოდით ელფოსტის გაგზავნას, მხოლოდ, ის მისამართი შეძლებს."
@@ -7434,6 +7428,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "თქვენს ორგანიზაციას სხვა ადმინისტრატორებიც გყავს. თქვენ მათთვის ახალი პაროლის გადაცემაზე პასუხისმგებელი ბრძანდებით."
       ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "სხვა მომხმარებლები თქვენს ორგანიზაციაში დაინახავენ თქვენს დაკავებულ სლოტებს. მოვლენის დეტალები გაზიარებული არ იქნება."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "აღდგენის ფაილი მოძველებულია; ფაილებთან გარანტირებული წვდომისთვის განაახლეთ ის"
       ],
@@ -7824,6 +7821,9 @@
       ],
       "Support for 1 custom email domain": [
         "1 ხელით მითითებული დომენის მხარდაჭერა"
+      ],
+      "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
+        "მომხმარებლის დომენების და არა-${ BRAND_NAME }-ის ელფოსტის მისამართების მონიტორინგის მხარდაჭერა მალე გვექნება."
       ],
       "support team": [
         "მხარდაჭერის გუნდი"
@@ -8515,6 +8515,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "მასპინძლისთვის დასანახად თქვენ მაინც მოგიწევთ მოსაწვევებზე პასუხი."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "მომხმარებლისთვის ადმინისტრატორის უფლებების მინიჭება მაშინვე შეგეძლებათ, როცა ისინი მოსაწვევს დაეთანხმებიან."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "შესვლის შემდეგ ${ destination }-ზე გადაგამისამართებთ."
       ],
@@ -8571,9 +8574,6 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "გადახდის შემდეგ თქვენი ანგარიში განახლდება."
-      ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "თქვენს ბრაუზერს წერის დამხმარის მხარდაჭერა არ გააჩნია. სცადეთ, ის სერვერებზე გაუშვათ."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
@@ -8788,6 +8788,9 @@
       ],
       "Key successfully generated.": [
         "გასაღების გენერაცია წარმატებულია."
+      ],
+      "This will generate a new key, which will be used to encrypt future emails, among other data.": [
+        "ეს დააგენერირებს ახალ გასაღებს, რომელიც მომავალში ელფოსტასთან ერთად სხვა მონაცემების დასაშიფრად იქნება გამოყენებული."
       ]
     },
     "Key state badge": {
@@ -11739,6 +11742,9 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent-ის მსგავსი ფაილების გასაზიარებელი პროტოკოლების მხარდაჭერა"
       ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "ატვირთეთ თქვენი კომპანიის ლოგო, რომ მოირგოთ, რას დაინახავენ თქვენი გუნდები ${ BRAND_NAME }-ს ვებ-აპებში"
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "გამოიყენეთ თქვენი ელფოსტის დომენები, მაგ: you@yourname.com"
       ],
@@ -12303,6 +12309,9 @@
       ],
       "Square image of at least 128 pixels": [
         "ოთხკუთხედი გამოსახულება 128 პიქსელით მაინც"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."
       ]
     },
     "OS compatibility": {
@@ -13239,6 +13248,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-ის საბაზისო URL და კოდი წაიშლება."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "იმისათვის, რომ თავიდან ჩართოთ სინქრონიზაცია თქვენი იდენტიფიკაციის მომწოდებლისთვის, SCIM-თან ინტეგრაცია თავიდან უნდა დაასრულოთ."
       ]
     },
     "scim: Label": {
@@ -13848,6 +13860,11 @@
         "თქვენი ონლაინ კონფიდენციალობა"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -14141,6 +14158,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე ${ maxAi } მომხმარებლისთვის",
+        "${ BRAND_NAME } Scribe წერის დამხმარე ${ maxAi } მომხმარებლისთვის"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } გამოყოფილი სერვერი",
         "${ ipAddresses } გამოყოფილი სერვერი"
@@ -14256,6 +14277,9 @@
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } თქვენი კომპანიის მონაცემებს უსაფრთხოთ ინარჩუნებს და საშუალებას გაძლევთ, დაშიფრული ელფოსტები აგზავნოთ."
       ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME } ავტომატური ელფოსტის გადაგზავნით"
@@ -14377,6 +14401,12 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "როგორ შევუბრუნეთ ხელი, როცა ${ BRAND_NAME } აგრესიული ცენზურის კამპანიის სამიზნე იყო."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა ჰონკ-კონგში საფრთხის ქვეშ იყო."
+      ],
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
       ],
@@ -14385,6 +14415,9 @@
       ],
       "Keep ${ config.planName }": [
         "${ config.planName }-ის დატოვება"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "შეინარჩუნეთ თქვენი გუნდი უსაფრთხოდ პირდაპირ მუშაობისას ჩვენი აპებით ვებისთვის, iOS-სთვის, Android-სთვის, Windows-სთვის, Mac-სთვის და Linux-სთვის."
       ],
       "Learn more": [
         "გაიგეთ მეტი"
@@ -15153,10 +15186,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -16328,6 +16361,9 @@
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "გამოიყენეთ თქვენი ბრაუზერის ნაგულისხმევი პანელები. ჩვეულებრივი, ისინი უფრო დიდი და ადვილად გამოსაყენებელია"
       ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."
+      ],
       "Usually an URL that contains the identity provider's name within": [
         "ჩვეულებრივ ბმული, რომელიც იდენტიფიკატორის მომწოდებლის სახელს შეიცავს"
       ],
@@ -16466,9 +16502,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } მისამართი"
-      ],
       "Add multiple users": [
         "ერთზე მეტი მომხმარებლის დამატება"
       ],
@@ -16499,8 +16532,14 @@
       "Email": [
         "ელფოსტა"
       ],
+      "Invitation email": [
+        "მოწვევის ელფოსტა"
+      ],
       "Name": [
         "სახელი"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "ახალი ${ BRAND_NAME }-ის ელფოსტის მისამართი"
       ],
       "Optional": [
         "არასავალდებულო"
@@ -16729,8 +16768,14 @@
       "Please add at least one recipient.": [
         "დაამატეთ ერთი მიმღები მაინც."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "შეამოწმეთ, არის თუ არა გაფართოება სწორად დაყენებული დ ჩართული"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "გაითვალისწინეთ, რომ გადახდის ამ მეთოდის არჩევით თქვენი ანგარიშის სატარიფო გეგმის მომენტალური შეცვლა შეუძლებელია. ტარიფი, მხოლოდ, გადახდის დასრულების შემდეგ შეიცვლება."
+      ],
+      "Please update the extension to its latest version": [
+        "განაახლეთ ეს გაფართოება უახლეს ვერსიამდე"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."

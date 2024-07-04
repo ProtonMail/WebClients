@@ -109,6 +109,9 @@
       "Copy and close": [
         "Скапіяваць і закрыць"
       ],
+      "Copy link": [
+        "Капіяваць спасылку"
+      ],
       "Copy to clipboard": [
         "Скапіяваць у буфер абмену"
       ],
@@ -187,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Уключыць Dark Web Monitoring"
       ],
+      "Entire vault": [
+        "Усё сховішча"
+      ],
       "Exclude from monitoring": [
         "Выключыць з назірання"
       ],
@@ -208,8 +214,17 @@
       "Generate password": [
         "Згенерыраваць пароль"
       ],
+      "Generate secure link": [
+        "Згенерыраваць бяспечнаю спасылку"
+      ],
       "Generated passwords": [
         "Згенерыраваныя паролі"
+      ],
+      "Generating secure link...": [
+        "Генерацыя бяспечнай спасылкі..."
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Атрымаць ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Атрымаць мабільныя праграмы"
@@ -259,6 +274,12 @@
       "Leave vault": [
         "Выйсці са сховішча"
       ],
+      "Link copied to clipboard": [
+        "Спасылка скапіявана ў буфер абмену"
+      ],
+      "Link expires after": [
+        "Спасылка міне праз"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Заблакіраваць ${ PASS_APP_NAME }"
       ],
@@ -274,11 +295,17 @@
       "Manage access": [
         "Кіраваць доступам"
       ],
+      "Manage vault access": [
+        "Кіраванне доступам да сховішча"
+      ],
       "Manually sync your data": [
         "Сінхранізацыя даных уручную"
       ],
       "Mark as resolved": [
         "Пазначыць як вырашанае"
+      ],
+      "Maximum views": [
+        "Максімум праглядаў"
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
@@ -298,14 +325,17 @@
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
       ],
-      "Move to Trash": [
-        "Перамясціць у Сметніцу"
-      ],
       "Move to trash": [
         "Перамясціць у сметніцу"
       ],
+      "Move to Trash": [
+        "Перамясціць у Сметніцу"
+      ],
       "Multiple select": [
         "Выбар некалькіх элементаў"
+      ],
+      "No expired links": [
+        "Пратэрмінаваныя спасылкі адсутнічаюць"
       ],
       "OK": [
         "Добра"
@@ -340,11 +370,20 @@
       "Reject invitation": [
         "Адхіліць запрашэнне"
       ],
+      "Reload": [
+        "Перазагрузіць"
+      ],
       "Remove": [
         "Выдаліць"
       ],
       "Remove access": [
         "Выдаліць доступ"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Выдаліць ўсе пратэрмінаваныя спасылкі (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Выдаліць спасылку"
       ],
       "Remove member": [
         "Выдаліць удзельніка"
@@ -367,6 +406,9 @@
       "Restore item": [
         "Аднавіць элемент"
       ],
+      "Restrict number of views": [
+        "Абмежаваць колькасць праглядаў"
+      ],
       "Resume monitoring": [
         "Узнавіць назіранне"
       ],
@@ -381,6 +423,9 @@
       ],
       "Saving": [
         "Захаванне"
+      ],
+      "Secure links": [
+        "Бяспечныя спасылкі"
       ],
       "See all": [
         "Праглядзець усе"
@@ -406,11 +451,17 @@
       "Share": [
         "Абагуліць"
       ],
+      "Share secure link": [
+        "Абагуліць бяспечную спасылку"
+      ],
       "Share this vault": [
         "Абагуліць гэта сховішча"
       ],
       "Share vault": [
         "Абагуліць сховішча"
+      ],
+      "Shared links": [
+        "Абагуленыя спасылкі"
       ],
       "Show": [
         "Паказаць"
@@ -423,6 +474,9 @@
       ],
       "Sign out": [
         "Выйсці з уліковага запісу"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Нехта абагуліў элемент вамі ў ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Сартаваць элементы сховішча"
@@ -441,6 +495,9 @@
       ],
       "Try again.": [
         "Паспрабаваць яшчэ раз."
+      ],
+      "Try for free": [
+        "Паспрабуйце бясплатна"
       ],
       "Unlock offline with password": [
         "Разблакіраваць па-за сеткай з паролем"
@@ -462,6 +519,9 @@
       ],
       "Verify": [
         "Праверка"
+      ],
+      "Via secure link": [
+        "Праз бяспечную спасылку"
       ],
       "View details": [
         "Паглядзець падрабязнасці"
@@ -507,7 +567,7 @@
     },
     "Button": {
       "More info": [
-        "Больш інфармацыі"
+        "Падрабязней"
       ]
     },
     "Collapsible tooltip": {
@@ -746,6 +806,9 @@
       "Importing items failed": [
         "Збой імпартавання элементаў"
       ],
+      "Inactive secure links could not be removed.": [
+        "Не атрымалася выдаліць неактыўныя бяспечныя спасылкі."
+      ],
       "Invalid password manager": [
         "Памылковы менеджар пароляў"
       ],
@@ -794,6 +857,12 @@
       "Restoring trashed items failed": [
         "Не ўдалося аднавіць выдаленыя элементы"
       ],
+      "Secure link could not be created.": [
+        "Не атрымалася стварыць бяспечную спасылку."
+      ],
+      "Secure link could not be opened.": [
+        "Не атрымалася адкрыць бяспечную спасылку."
+      ],
       "Settings update failed": [
         "Збой абнаўлення налад"
       ],
@@ -815,11 +884,17 @@
       "The session has expired. Please sign in again.": [
         "Час сеансу пратэрмінаваны. Увайдзіце яшчэ раз."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Адбылася памылка падчас выдалення бяспечнай спасылкі. Паспрабуйце яшчэ раз праз некалькі хвілін."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Занадта шмат няўдалых спроб. Увайдзіце яшчэ раз."
       ],
       "Trashing item failed": [
         "Збой перамяшчэння элемента ў сметніцу"
+      ],
+      "Try reaching out to the link owner.": [
+        "Паспрабуйце звярнуцца да ўладальніка спасылкі."
       ],
       "Unable to generate an OTP code for this item": [
         "Немагчыма згенерыраваць код OTP для гэтага элемента"
@@ -963,17 +1038,23 @@
       "${ count } invites successfully sent": [
         "Паспяхова адпраўлена наступная колькасць запрашэнняў: ${ count }"
       ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разы",
+        "${ count } разоў",
+        "${ count } разоў"
+      ],
+      "${ count } view": [
+        "${ count } прагляд",
+        "${ count } прагляды",
+        "${ count } праглядаў",
+        "${ count } праглядаў"
+      ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
         "${ memberCount } удзельнікі",
         "${ memberCount } удзельнікаў",
         "${ memberCount } удзельнікаў"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } раз",
-        "${ modifiedCount } разы",
-        "${ modifiedCount } разоў",
-        "${ modifiedCount } разоў"
       ],
       "${ n } item": [
         "${ n } элемент",
@@ -1041,6 +1122,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Усе бягучыя парушэнні будуць пазначаны як вырашаныя. Вы будзеце апавешчаны ў выпадку, калі адбудзецца ўцечка даных."
       ],
+      "All inactive secure links were removed": [
+        "Усе неактыўныя бяспечныя спасылкі былі выдалены"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усе элементы з \"${ payload.content.name }\" паспяхова перамешчаны"
       ],
@@ -1065,6 +1149,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Вы ўпэўнены, што хочаце перамясціць элемент у \"${ name }\"?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Вы сапраўды хочаце выдаліць спасылку?"
+      ],
       "Auto-lock successfully disabled.": [
         "Аўтаблакіроўка паспяхова адключана."
       ],
@@ -1079,6 +1166,9 @@
       ],
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Can be viewed": [
+        "Могуць праглядаць"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
@@ -1143,6 +1233,9 @@
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
         "Па прычыне абмежавання пашырэнняў браўзера Safari, пасля экспартавання даных будзе адсутнічаць пашырэнне файла \".pgp\". Змяніце назву файла, каб яно ўключала пашырэнне .pgp пасля экспартавання (напрыклад, file.pgp)"
       ],
+      "Easily share your data with friends using secure links": [
+        "Лёгкае абагульванне вашых даных з сябрамі з дапамогай бяспечных спасылак"
+      ],
       "Editor": [
         "Рэдактар​​"
       ],
@@ -1187,6 +1280,12 @@
       ],
       "Enter your PIN code": [
         "Увядзіце свой PIN-код."
+      ],
+      "Expires in": [
+        "Дзейнічае да"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Дзейнічаюць да ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Дадатковы пароль паспяхова створаны"
@@ -1485,8 +1584,14 @@
       "Registering PIN lock failed": [
         "Збой рэгістрацыі блакіроўкі PIN"
       ],
+      "Removing all inactive secure links...": [
+        "Выдаленне ўсіх неактыўных спасылак..."
+      ],
       "Removing extra password...": [
         "Выдаленне дадатковага пароля..."
+      ],
+      "Removing secure link...": [
+        "Выдаленне бяспечнай спасылкі..."
       ],
       "Restoring items from trash": [
         "Аднаўленне элементаў са сметніцы"
@@ -1568,6 +1673,9 @@
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:"
+      ],
+      "The secure link has been removed": [
+        "Бяспечная спасылка выдалена"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
@@ -1730,6 +1838,24 @@
         "${ config.options.wordCount } слоў",
         "${ config.options.wordCount } слоў"
       ],
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дзён"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзін"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвілін"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1748,14 +1874,23 @@
       "10 minutes": [
         "10 хвілін"
       ],
+      "14 days": [
+        "14 дзён"
+      ],
       "15 minutes": [
         "15 хвілін"
+      ],
+      "24 hours": [
+        "24 гадзіны"
       ],
       "2FA secret key (TOTP)": [
         "Сакрэтны ключ 2ФА (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Токен 2ФА (TOTP)"
+      ],
+      "30 days": [
+        "30 дзён"
       ],
       "30 minutes": [
         "30 хвілін"
@@ -1765,6 +1900,9 @@
       ],
       "5 minutes": [
         "5 хвілін"
+      ],
+      "7 days": [
+        "7 дзён"
       ],
       "A-Z": [
         "А-Я"
@@ -1819,6 +1957,9 @@
       ],
       "Confirm vault name": [
         "Пацвярджэнне назвы сховішча"
+      ],
+      "Copy": [
+        "Капіяваць"
       ],
       "Create a credit card": [
         "Стварыць крэдытную картку"
@@ -1880,6 +2021,12 @@
       "Expiration date": [
         "Тэрмін дзеяння"
       ],
+      "Expired": [
+        "Пратэрмінавана"
+      ],
+      "Expired link": [
+        "Пратэрмінаваная спасылка"
+      ],
       "Export": [
         "Экспартаванне"
       ],
@@ -1895,8 +2042,14 @@
       "Forwards to": [
         "Пераслаць на"
       ],
+      "Free forever": [
+        "Бясплатна назаўсёды"
+      ],
       "General": [
         "Агульныя"
+      ],
+      "Generate a secure link for this item": [
+        "Згенерыраваць бяспечную спасылку для гэтага элемента"
       ],
       "Generic CSV": [
         "Агульны CSV"
@@ -1976,6 +2129,9 @@
       "Make all viewers": [
         "Даць усім правы прагляду"
       ],
+      "Max views reached": [
+        "Дасягнута максімальная колькасць праглядаў"
+      ],
       "Members": [
         "Удзельнікі"
       ],
@@ -2027,6 +2183,9 @@
       "Oldest to newest": [
         "Ад самых старых да самых новых"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Менеджар пароляў з адкрытым зыходным кодам для абароны без намаганняў."
+      ],
       "Organization": [
         "Арганізацыя"
       ],
@@ -2063,6 +2222,9 @@
       "Recent": [
         "Нядаўнія"
       ],
+      "Remove link": [
+        "Выдаліць спасылку"
+      ],
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
@@ -2071,6 +2233,9 @@
       ],
       "Reveal password": [
         "Паказаць пароль"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Бяспечнае захоўванне, абагульванне і аўтаматычны ўваход у ваш уліковы запіс з ${ PASS_APP_NAME }, выкарыстоўваючы скразное шыфраванне, якому давяраюць мільёны людзей."
       ],
       "Security": [
         "Бяспека"
@@ -2093,6 +2258,15 @@
       "Session locking": [
         "Блакіроўка сеанса"
       ],
+      "Share": [
+        "Абагуліць"
+      ],
+      "Share this vault or create a new vault": [
+        "Абагуліць гэтае сховішча або стварыць новае сховішча"
+      ],
+      "Shared link": [
+        "Абагуленая спасылка"
+      ],
       "Show website favicons": [
         "Паказваць піктаграмы вэб-сайтаў"
       ],
@@ -2113,6 +2287,18 @@
       ],
       "Text": [
         "Тэкст"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобай",
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі",
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі",
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL-адрас скапіяваны ў буфер абмену"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Гэты элемент будзе заставацца даступным да ${ remaining }"
       ],
       "Title": [
         "Назва"
@@ -2521,6 +2707,9 @@
       "No reused passwords": [
         "Паўторна выкарыстаныя паролі адсутнічаюць"
       ],
+      "No shared secure links": [
+        "Няма абагуленых бяспечных спасылак"
+      ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"
       ],
@@ -2553,6 +2742,9 @@
       ],
       "Remove extra password": [
         "Выдаленне дадатковага пароля"
+      ],
+      "Remove secure link?": [
+        "Выдаліць бяспечную спасылку?"
       ],
       "Resolved breaches": [
         "Вырашаныя парушэнні"
@@ -2798,8 +2990,14 @@
       "PGP encrypted export file requires passphrase": [
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Пераканайцеся, што пашырэнне правільна ўсталявана і ўключана"
+      ],
       "Please contact us for investigating the issue": [
         "Звяжыцеся з намі для даследавання праблемы"
+      ],
+      "Please update the extension to its latest version": [
+        "Абнавіце пашырэнне да апошняй версіі"
       ],
       "Please verify your email address in order to use email aliases": [
         "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."

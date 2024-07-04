@@ -9143,9 +9143,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } διεύθυνση"
-      ],
       "Add multiple users": [
         "Προσθήκη πολλαπλών χρηστών"
       ],
@@ -9176,8 +9173,14 @@
       "Email": [
         "Ηλεκτρονικό ταχυδρομείο"
       ],
+      "Invitation email": [
+        "Μήνυμα πρόσκλησης"
+      ],
       "Name": [
         "Όνομα"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Νέα ${ BRAND_NAME } διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Optional": [
         "Προαιρετικό"

@@ -86,6 +86,9 @@
       "Copy and close": [
         "コピーして閉じる"
       ],
+      "Copy link": [
+        "リンクをコピー"
+      ],
       "Copy to clipboard": [
         "クリップボードにコピー"
       ],
@@ -275,10 +278,10 @@
       "Move to another vault": [
         "別の保管庫に移動"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ごみ箱に移動"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ごみ箱に移動"
       ],
       "Multiple select": [
@@ -316,6 +319,9 @@
       ],
       "Reject invitation": [
         "招待を拒否する"
+      ],
+      "Reload": [
+        "再読み込み"
       ],
       "Remove": [
         "削除"
@@ -371,6 +377,9 @@
       "Set access level": [
         "アクセスレベルの設定"
       ],
+      "Set extra password": [
+        "追加のパスワードを設定する"
+      ],
       "Share": [
         "共有"
       ],
@@ -409,6 +418,9 @@
       ],
       "Try again.": [
         "もう一度やり直してください。"
+      ],
+      "Try for free": [
+        "無料で試す"
       ],
       "Unpin item": [
         "アイテムの固定解除"
@@ -908,9 +920,6 @@
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } 回"
-      ],
       "${ n } item": [
         "${ n } アイテム"
       ],
@@ -1352,6 +1361,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "ログイン情報や安全なメモを最大 10 人と共有"
       ],
+      "Sign in to your account": [
+        "アカウントにサインインする"
+      ],
       "Signing you in": [
         "サインインする"
       ],
@@ -1609,6 +1621,9 @@
       "Confirm vault name": [
         "保管庫名を確認する"
       ],
+      "Copy": [
+        "コピー"
+      ],
       "Create a credit card": [
         "クレジットカード情報を作成"
       ],
@@ -1656,6 +1671,9 @@
       ],
       "Expiration date": [
         "有効期限"
+      ],
+      "Expired": [
+        "有効期限切れ"
       ],
       "Export": [
         "エクスポート"
@@ -2308,6 +2326,9 @@
       "Set access level": [
         "アクセスレベルの設定"
       ],
+      "Set extra password": [
+        "追加のパスワードを設定する"
+      ],
       "Set up 2FA for better security": [
         "2要素認証を設定するとより安全になります"
       ],
@@ -2335,6 +2356,9 @@
       "Trash empty": [
         "ごみ箱は空です"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } のロックを解除します"
+      ],
       "Update available": [
         "更新あり"
       ],
@@ -2355,6 +2379,9 @@
       ],
       "Weak passwords": [
         "弱いパスワード"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX } へようこそ"
       ],
       "What is an alias?": [
         "エイリアスとは？"
@@ -2494,6 +2521,9 @@
       ],
       "Passphrase is required": [
         "パスフレーズが必要です"
+      ],
+      "Passwords do not match": [
+        "パスワードが一致しません"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP暗号化エクスポートファイルにはパスフレーズが必要です。"

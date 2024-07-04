@@ -67,10 +67,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -189,6 +189,9 @@
       ],
       "Change password": [
         "비밀번호 변경"
+      ],
+      "Change second password": [
+        "이중 비밀번호 변경"
       ],
       "Chat with us": [
         "채팅으로 문의하기"
@@ -628,9 +631,6 @@
       "Later": [
         "나중에"
       ],
-      "Learn why this option is unavailable": [
-        "이 옵션을 사용할 수 없는 이유를 알아보세요"
-      ],
       "Leave": [
         "나가기"
       ],
@@ -697,10 +697,10 @@
       "No, thanks": [
         "아니요, 괜찮아요"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -760,11 +760,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Reload": [
         "새로고침"
@@ -858,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "초대 무효화"
-      ],
-      "Run on servers": [
-        "서버에서 실행"
       ],
       "Save": [
         "저장"
@@ -1543,6 +1540,14 @@
         "연말 할인 선택"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1564,14 +1569,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -4097,6 +4094,9 @@
       "Incorrect password": [
         "잘못된 비밀번호입니다"
       ],
+      "Incorrect second password. Please try again.": [
+        "이중 비밀번호가 알맞지 않습니다. 다시 시도하세요."
+      ],
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
@@ -4288,6 +4288,9 @@
       ],
       "Require at least one condition": [
         "하나 이상 조건 필요"
+      ],
+      "Session expired. Please refresh the page.": [
+        "세션 만료됨. 페이지를 새로고침하세요."
       ],
       "Signature not verified": [
         "인증되지 않은 서명입니다."
@@ -5601,9 +5604,6 @@
       "Folders": [
         "폴더"
       ],
-      "Hardware not compatible": [
-        "하드웨어가 호환되지 않음"
-      ],
       "IP address": [
         "IP 주소"
       ],
@@ -6132,6 +6132,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }이(가) ${ PASS_APP_NAME }에서 사용자와 데이터 공유를 요청했습니다."
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
+      ],
       "${ n } address": [
         "${ n } 주소"
       ],
@@ -6513,9 +6516,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "조직의 브랜드 아이덴티티를 증진하고 사용자를 위한 더욱 일관된 온라인 경험을 창출하십시오."
       ],
-      "Browser not supported": [
-        "지원하지 않는 브라우저"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "기본적으로 조직의 구성원은 자신이 소유자인 금고만 내보낼 수 있습니다. 이 설정이 켜져 있으면 데이터를 내보낼 수 없습니다."
       ],
@@ -6654,10 +6654,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7914,6 +7914,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "이 초대 링크는 만료되었습니다. 관리자에게 접근이 가능한지 문의해 주세요."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "이 초대 링크는 이미 사용되었습니다. 대신 직접 로그인 해주세요."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "설정하라는 메시지가 표시된 12단어 키 입니다."
       ],
@@ -8084,6 +8087,12 @@
       ],
       "Two-factor authentication enabled": [
         "2단계 인증이 활성화되었습니다."
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "이중 비밀번호 방식은 두 개의 비밀번호가 필요합니다. 하나는 계정에 로그인 하는 경우에, 다른 하나는 데이터를 여는 데 필요합니다. (고급 설정)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "이중 암호 모드는 로그인 및 사서함 암호 해독에 별도의 암호를 사용합니다. 일부 상황에서는 약간의 보안 이점이 있지만 대부분의 사용자에게는 단일 암호 모드를 권장합니다. 이중 암호 모드로 전환하려면 먼저 로그인 암호를 설정한 다음 메일함 암호를 설정하십시오."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "복구 파일의 서명을 검증할 수 없습니다. 고객지원으로 문의해 주십시오."
@@ -8514,6 +8523,9 @@
       "You still need to reply to invitations for the host to see your response.": [
         "여전히 호스트가 응답을 볼 수 있도록 초대 회신이 필요합니다."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "초대를 수락하면 사용자를 관리자로 승격할 수 있습니다."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
       ],
@@ -8574,9 +8586,6 @@
       "Your account will be updated once the payment is cleared.": [
         "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "브라우저가 글쓰기 도우미를 지원하지 않습니다. 서버에서 실행해 보세요."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
@@ -8588,9 +8597,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "파일이 암호화된 후 저장됩니다"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "하드웨어가 글쓰기 도우미를 로컬에서 실행하는 것을 지원하지 않습니다. 서버에서 실행해 보세요."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "${ accounts } 의 가져오기 작업이 일시적으로 지연되었습니다."
@@ -8732,6 +8738,9 @@
       ],
       "Paid": [
         "결제 완료"
+      ],
+      "Processing": [
+        "처리 중"
       ],
       "Unpaid": [
         "결제되지 않음"
@@ -9214,6 +9223,9 @@
       "Awarded": [
         "지급 완료"
       ],
+      "Beta": [
+        "베타"
+      ],
       "Billing address": [
         "청구지 주소"
       ],
@@ -9318,6 +9330,9 @@
       ],
       "Confirm password": [
         "비밀번호 확인"
+      ],
+      "Confirm second password": [
+        "이중 비밀번호 확인"
       ],
       "Contacts": [
         "연락처"
@@ -9676,6 +9691,9 @@
       "New password": [
         "새 비밀번호"
       ],
+      "New second password": [
+        "새로운 이중 비밀번호"
+      ],
       "No filter": [
         "필터 없음"
       ],
@@ -9817,6 +9835,9 @@
       "Reveal password": [
         "비밀번호 표시"
       ],
+      "Second password": [
+        "이중 비밀번호"
+      ],
       "Security code (${ codeName })": [
         "보안 코드 (${ codeName })"
       ],
@@ -9897,6 +9918,12 @@
       ],
       "Subscription options": [
         "구독 옵션"
+      ],
+      "Swipe left action": [
+        "좌측으로 쓸어넘기기 동작"
+      ],
+      "Swipe right action": [
+        "우측으로 쓸어넘기기 동작"
       ],
       "Synchronize with system": [
         "시스템과 동기화"
@@ -12056,6 +12083,9 @@
       "Android": [
         "Android"
       ],
+      "Archive": [
+        "보관 편지함"
+      ],
       "Ask each time": [
         "항상 묻기"
       ],
@@ -12103,6 +12133,9 @@
       ],
       "macOS": [
         "macOS"
+      ],
+      "Mark as read": [
+        "읽음으로 표시"
       ],
       "My reason isn't listed": [
         "기타 사유"
@@ -12161,14 +12194,23 @@
       "Setup incomplete": [
         "설치가 완료되지 않음"
       ],
+      "Spam": [
+        "스팸함"
+      ],
       "Standard server configs": [
         "기본 서버 구성"
+      ],
+      "Star": [
+        "별표 표시됨"
       ],
       "TCP": [
         "TCP"
       ],
       "The whole organization": [
         "전체 조직"
+      ],
+      "Trash": [
+        "휴지통"
       ],
       "UDP": [
         "UDP"
@@ -12806,6 +12848,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "현재 청구서에 대한 결제를 진행 중입니다. 사용자의 플랜이 변경되거나 결제 상세 정보가 업데이트되기 전까지 잠시 기다려주세요. 깊은 이해에 감사드립니다."
       ]
     },
     "Payments.Error": {
@@ -13205,6 +13250,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**설정 필요:** SCIM 프로비저닝을 사용하려면 SAML 인증이 구성되어 있어야 합니다."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**설정 필요:** SCIM 프로비저닝을 활성화하려면, 도메인 **${ domainName }**에 대한 소유권 인증이 필요합니다. 이 인증 절차는 한 시간 정도 소요될 수 있습니다."
       ],
       "Enter token into your identity provider": [
         "사용자의 신원 제공자로 이 토큰을 입력하십시오"
@@ -14149,6 +14197,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ maxAi }명 사용자를 위한 ${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses }개 전용 서버"
       ],
@@ -15213,11 +15264,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -15233,6 +15284,9 @@
       ],
       "Change role": [
         "역할 변경"
+      ],
+      "Change second password": [
+        "이중 비밀번호 변경"
       ],
       "Choose an account": [
         "계정 선택"
@@ -15549,6 +15603,15 @@
       "Folders and labels": [
         "폴더와 라벨"
       ],
+      "For Linux": [
+        "Linux용"
+      ],
+      "For macOS": [
+        "macOS용"
+      ],
+      "For Windows": [
+        "Windows용"
+      ],
       "Forgot recovery method": [
         "복구 방법을 잊었습니다"
       ],
@@ -15665,6 +15728,9 @@
       ],
       "Link confirmation": [
         "링크 확인"
+      ],
+      "Main password": [
+        "기본 비밀번호"
       ],
       "Messages": [
         "메시지"
@@ -16010,6 +16076,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "Unlock your data": [
+        "데이터 잠금 해제"
       ],
       "Upgrade plan": [
         "플랜 업그레이드"
@@ -16508,9 +16577,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } 주소"
-      ],
       "Add multiple users": [
         "다중 사용자 추가"
       ],
@@ -16541,8 +16607,14 @@
       "Email": [
         "이메일"
       ],
+      "Invitation email": [
+        "초대 이메일"
+      ],
       "Name": [
         "성명"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "새로운 ${ BRAND_NAME } 이메일 주소"
       ],
       "Optional": [
         "선택 사항"
@@ -16785,8 +16857,14 @@
       "Please add at least one recipient.": [
         "최소한 한 명의 수신자를 추가해주세요."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "확장 프로그램이 설치되고 활성 상태인지 확인하세요."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "이 결제 방법을 선택하면 사용자의 계정을 금방 업그레이드 할 수 없다는 점을 유념하세요. 저희는 결제 수단이 초기화될 때 사용자의 계정을 1회 업데이트 할 것입니다."
+      ],
+      "Please update the extension to its latest version": [
+        "최신 버전의 확장 프로그램으로 업데이트하세요."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."

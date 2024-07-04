@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -697,11 +697,11 @@
       "No, thanks": [
         "Nein, danke"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Reload": [
         "Neu laden"
@@ -858,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Diese Einladung widerrufen"
-      ],
-      "Run on servers": [
-        "Auf Servern ausführen"
       ],
       "Save": [
         "Speichern"
@@ -1544,6 +1541,14 @@
         "Wähle dein Jahresendangebot"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1565,14 +1570,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -5628,9 +5625,6 @@
       "Folders": [
         "Ordner"
       ],
-      "Hardware not compatible": [
-        "Hardware ist nicht kompatibel."
-      ],
       "IP address": [
         "IP-Adresse"
       ],
@@ -6572,9 +6566,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
       ],
-      "Browser not supported": [
-        "Browser nicht unterstützt"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Standardmäßig können Organisationsmitglieder nur Tresore exportieren, deren Eigentümer sie sind. Wenn diese Option aktiviert ist, können sie keine Daten exportieren."
       ],
@@ -6715,11 +6706,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -7505,6 +7496,9 @@
         "Bitte füge eine E-Mail-Adresse für den Benutzer in der folgenden Zeile hinzu:",
         "Bitte füge E-Mail-Adressen für die Benutzer in den folgenden Zeilen hinzu:"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Bitte den Eigentümer, dich direkt zu dem Dokument einzuladen."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Bitte authentifiziere deine Karte im Verifikationstab."
       ],
@@ -7534,6 +7528,9 @@
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
+      ],
+      "Please open the document to view it.": [
+        "Bitte öffne das Dokument, um es anzusehen."
       ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
@@ -7574,6 +7571,9 @@
       "Preview for this file type is not supported": [
         "Die Vorschau wird für diesen Dateityp nicht unterstützt."
       ],
+      "Preview of documents is not yet supported.": [
+        "Die Vorschau von Dokumenten wird noch nicht unterstützt."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
@@ -7591,6 +7591,9 @@
       ],
       "Public link invite": [
         "Öffentlicher Einladungslink"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
       ],
       "purchase additional storage": [
         "zusätzlichen Speicher kaufen"
@@ -8583,9 +8586,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Dein Browser unterstützt den Schreibassistenten nicht. Versuchen ihn auf Servern auszuführen."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
       ],
@@ -8597,9 +8597,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Deine Hardware unterstützt die lokale Ausführung des Schreibassistenten nicht. Versuchen ihn auf Servern auszuführen."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Dein Import von ${ accounts } verzögert sich vorübergehend.",
@@ -15222,11 +15219,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-all address": [
-        "Catch-all-Weiterleitungsadresse"
-      ],
       "Catch-All address": [
         "Catch-all-Adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -16535,9 +16532,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } Adresse"
-      ],
       "Add multiple users": [
         "Füge mehrere Benutzer hinzu"
       ],
@@ -16567,6 +16561,9 @@
       ],
       "Email": [
         "E‐Mail‐Adresse"
+      ],
+      "Invitation email": [
+        "Einladungs-E-Mail"
       ],
       "Name": [
         "Name"

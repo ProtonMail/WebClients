@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Mai târziu"
       ],
-      "Learn why this option is unavailable": [
-        "Aflați de ce această opțiune nu este disponibilă"
-      ],
       "Leave": [
         "Lăsați"
       ],
@@ -700,10 +697,10 @@
       "No, thanks": [
         "Nu, mulțumesc"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reload": [
         "Reîncărcare"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Refuzare această invitație"
-      ],
-      "Run on servers": [
-        "Rulare pe servere"
       ],
       "Save": [
         "Salvare"
@@ -1554,6 +1548,14 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1575,14 +1577,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5670,9 +5664,6 @@
       "Folders": [
         "Foldere"
       ],
-      "Hardware not compatible": [
-        "Dispozitiv necompatibil"
-      ],
       "IP address": [
         "Adresa IP"
       ],
@@ -6649,9 +6640,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
-      "Browser not supported": [
-        "Navigator web neacceptat"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "În mod implicit, membrii organizației pot exporta doar seifurile care le aparțin. Dacă această opțiune este activată, aceștia nu vor putea exporta date."
       ],
@@ -6794,11 +6782,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -8770,9 +8758,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Navigatorul web actual nu acceptă asistentul de scriere. Încercați să îl rulați pe servere."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
@@ -8784,9 +8769,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Dispozitivul actual nu acceptă rularea asistentului de scriere la nivel local. Încercați să îl rulați pe servere."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "Importarea din ${ accounts } este temporar întârziată.",
@@ -14531,6 +14513,11 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizator",
+        "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizatori",
+        "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } de utilizatori"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server dedicat",
         "${ ipAddresses } servere dedicate",
@@ -15644,10 +15631,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -16969,9 +16956,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Adresa ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Adăugare utilizatori multipli"
       ],
@@ -17002,8 +16986,14 @@
       "Email": [
         "E-mail"
       ],
+      "Invitation email": [
+        "E-mail de invitare"
+      ],
       "Name": [
         "Nume"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Adresă nouă de e-mail ${ BRAND_NAME }"
       ],
       "Optional": [
         "Opțional"
@@ -17264,8 +17254,14 @@
       "Please add at least one recipient.": [
         "Adăugați cel puțin un destinatar."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Verificați dacă extensia este instalată și activată corect."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
+      ],
+      "Please update the extension to its latest version": [
+        "Actualizați extensia la ultima versiune."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -631,9 +631,6 @@
       "Later": [
         "Più tardi"
       ],
-      "Learn why this option is unavailable": [
-        "Scopri perché questa opzione non è disponibile"
-      ],
       "Leave": [
         "Abbandona"
       ],
@@ -700,11 +697,11 @@
       "No, thanks": [
         "No, grazie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -763,11 +760,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -861,9 +858,6 @@
       ],
       "Revoke this invitation": [
         "Revoca questo invito"
-      ],
-      "Run on servers": [
-        "Eseguito su server"
       ],
       "Save": [
         "Salva"
@@ -1550,6 +1544,14 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1571,14 +1573,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1704,6 +1698,9 @@
       ],
       "Custom domain problem": [
         "Problema con un dominio personalizzato"
+      ],
+      "Docs problem": [
+        "Problema con Docs"
       ],
       "Drive problem": [
         "Problema con Drive"
@@ -5640,9 +5637,6 @@
       "Folders": [
         "Cartelle"
       ],
-      "Hardware not compatible": [
-        "Hardware non compatibile"
-      ],
       "IP address": [
         "Indirizzo IP"
       ],
@@ -6587,9 +6581,6 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Rafforza l'identità della tua organizzazione e crea un'esperienza online più coerente per i tuoi utenti."
       ],
-      "Browser not supported": [
-        "Browser non supportato"
-      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Per impostazione predefinita, i membri dell'organizzazione possono esportare solo le casseforti di cui sono i proprietari. Se questa opzione è attivata, non potranno esportare alcun dato."
       ],
@@ -6730,11 +6721,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -8690,9 +8681,6 @@
       "Your account will be updated once the payment is cleared.": [
         "Il tuo account verrà aggiornato una volta che il pagamento sarà completato."
       ],
-      "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "Il tuo browser non supporta l'esecuzione locale dell'assistente alla scrittura. Prova a eseguirlo sui server."
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
       ],
@@ -8704,9 +8692,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
-      ],
-      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "Il tuo hardware non supporta l'esecuzione locale dell'assistente alla scrittura. Prova a eseguirlo sui server."
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "L'importazione dagli account ${ accounts } è temporaneamente rinviato.",
@@ -14382,6 +14367,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe per ${ maxAi } utente",
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe per ${ maxAi } utenti"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server dedicato",
         "${ ipAddresses } server dedicati"
@@ -15475,11 +15464,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-all address": [
-        "Indirizzi Catch-all"
-      ],
       "Catch-All address": [
         "Indirizzi catch-all"
+      ],
+      "Catch-all address": [
+        "Indirizzi Catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -16797,9 +16786,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Indirizzo ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Aggiungi più di un utente"
       ],
@@ -16830,8 +16816,14 @@
       "Email": [
         "Email"
       ],
+      "Invitation email": [
+        "Email di invito"
+      ],
       "Name": [
         "Nome"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Nuovo indirizzo email ${ BRAND_NAME }"
       ],
       "Optional": [
         "Facoltativo"
@@ -17068,8 +17060,14 @@
       "Please add at least one recipient.": [
         "Inserisci almeno un destinatario."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Verifica che l'estensione sia installata e abilitata correttamente"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."
+      ],
+      "Please update the extension to its latest version": [
+        "Aggiorna l'estensione alla versione più recente"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."

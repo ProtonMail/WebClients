@@ -220,6 +220,9 @@
       "Create and copy alias": [
         "Crea i copia un àlies"
       ],
+      "Create Document": [
+        "Crea un document"
+      ],
       "Create link": [
         "Crear enllaç"
       ],
@@ -4178,7 +4181,7 @@
         "Arrossegueu el fitxer aquí per carregar-lo."
       ],
       "Drop files here": [
-        "Deixa aquí els arxius"
+        "Deixeu anar els fitxers aquí"
       ],
       "Drop to import": [
         "Arrossegueu aquí per a importar"
@@ -4887,6 +4890,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "El següent pot haver estat manipulat: ${ items }. Obriu-ho només si hi confieu."
+      ],
+      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
+        "La nova característica Documents requereix la darrera versió de ${ DRIVE_APP_NAME }. Actualitzeu les aplicacions al mòbil i a l'escriptori per a una experiència perfecta."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
@@ -9393,6 +9399,9 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
+      ],
+      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
+        "Docs és una característica nova per al ${ DRIVE_APP_NAME }"
       ],
       "Downgrade account": [
         "Passa a un pla inferior"
