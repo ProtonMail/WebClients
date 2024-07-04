@@ -110,6 +110,7 @@ const apiWalletSettingsOne: WasmApiWalletSettings = {
     InvoiceDefaultDescription: '',
     InvoiceExpirationTime: 3600,
     MaxChannelOpeningFee: 5000,
+    ShowWalletRecovery: false,
 };
 
 const apiWalletSettingsTwo: WasmApiWalletSettings = {
@@ -118,6 +119,7 @@ const apiWalletSettingsTwo: WasmApiWalletSettings = {
     InvoiceDefaultDescription: '',
     InvoiceExpirationTime: 3600,
     MaxChannelOpeningFee: 5000,
+    ShowWalletRecovery: false,
 };
 
 const apiWalletSettingsThree: WasmApiWalletSettings = {
@@ -126,6 +128,7 @@ const apiWalletSettingsThree: WasmApiWalletSettings = {
     InvoiceDefaultDescription: '',
     InvoiceExpirationTime: 3600,
     MaxChannelOpeningFee: 5000,
+    ShowWalletRecovery: false,
 };
 
 export const apiWalletUserSettings: UserWalletSettings = {
@@ -263,4 +266,7 @@ export const userWalletSettings: WasmUserSettings = {
     FiatCurrency: 'USD',
     HideEmptyUsedAddresses: 0,
     TwoFactorAmountThreshold: null,
+    ReceiveEmailIntegrationNotification: null,
+    ReceiveInviterNotification: null,
+    WalletCreated: null,
 };

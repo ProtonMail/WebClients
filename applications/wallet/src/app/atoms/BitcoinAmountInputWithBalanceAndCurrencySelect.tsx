@@ -35,6 +35,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     const [settings] = useUserWalletSettings();
     const getExchangeRate = useGetExchangeRate();
 
+
     const handleChange = async (currency?: WasmApiFiatCurrency) => {
         if (currency) {
             const exchangeRate = await getExchangeRate(currency.Symbol);

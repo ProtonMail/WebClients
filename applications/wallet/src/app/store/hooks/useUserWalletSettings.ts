@@ -13,6 +13,9 @@ const DEFAULT_STATE: WasmUserSettings = {
     FiatCurrency: DEFAULT_FIAT_CURRENCY,
     HideEmptyUsedAddresses: 0,
     TwoFactorAmountThreshold: null,
+    ReceiveEmailIntegrationNotification: null,
+    ReceiveInviterNotification: null,
+    WalletCreated: null,
 };
 
 export const useUserWalletSettings = (): [WasmUserSettings, boolean] => {
