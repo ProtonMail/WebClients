@@ -6,6 +6,7 @@ export const getModelState = <T>(value: T | undefined, error = undefined): Model
         error,
         meta: {
             fetchedAt: Date.now(),
+            fetchedEphemeral: true,
         },
     };
 };

@@ -103,7 +103,7 @@ describe('SubscriptionsSection', () => {
 
     const defaultPlansState = {
         ...getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
-        meta: { fetchedAt: Date.now() },
+        meta: { fetchedAt: Date.now(), fetchedEphemeral: true },
     };
 
     it('should return MozillaInfoPanel if isManagedByMozilla is true', () => {

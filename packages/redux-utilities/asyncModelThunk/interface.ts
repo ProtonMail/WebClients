@@ -5,10 +5,16 @@ export type ReducerValue<Returned> = {
     error: SerializedError | undefined;
     meta: {
         fetchedAt: number;
+        // If this state was fetched during the lifetime of this app. It's pruned for the persisted state.
+        fetchedEphemeral: boolean | undefined;
     };
 };
 
-export type CacheType = 'no-cache' | 'stale';
+export enum CacheType {
+    None,
+    Stale,
+    StaleRefetch,
+}
 
 export type ThunkOptions<T> = {
     cache?: CacheType;

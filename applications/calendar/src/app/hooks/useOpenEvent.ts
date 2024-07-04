@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { getUnixTime } from 'date-fns';
 
 import { useApi, useGetCalendars } from '@proton/components';
+import { CacheType } from '@proton/redux-utilities';
 import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
 import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
@@ -63,7 +64,7 @@ export const useOpenEvent = () => {
                     ...updateMember(calendarID, memberID, { Display: 1 }),
                     silence: true,
                 }).catch(() => {});
-                await getCalendars({ cache: 'no-cache' });
+                await getCalendars({ cache: CacheType.None });
             }
             try {
                 const result = await api<{ Event: CalendarEvent }>({

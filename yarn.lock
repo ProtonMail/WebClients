@@ -6777,6 +6777,7 @@ __metadata:
   resolution: "@proton/features@workspace:packages/features"
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.2.5"
   languageName: unknown
