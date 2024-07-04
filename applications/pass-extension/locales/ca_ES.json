@@ -99,10 +99,13 @@
         "Continua sense fixar"
       ],
       "Copy & fill in": [
-        "Copia i ompliu"
+        "Copia i omple"
       ],
       "Copy and close": [
         "Copia i tanca"
+      ],
+      "Copy link": [
+        "Copia l'enllaç"
       ],
       "Copy to clipboard": [
         "Copia al porta-retalls"
@@ -355,6 +358,9 @@
       ],
       "Remove access": [
         "Esborra l'accés"
+      ],
+      "Remove link": [
+        "Esborra l'enllaç"
       ],
       "Remove member": [
         "Esborra el membre"
@@ -932,10 +938,6 @@
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } vegada",
-        "${ modifiedCount } vegades"
       ],
       "${ n } item": [
         "${ n } element",
@@ -1771,6 +1773,9 @@
       "Confirm vault name": [
         "Confirma el nom de la caixa forta"
       ],
+      "Copy": [
+        "Copia"
+      ],
       "Create a credit card": [
         "Crea una targeta de crèdit"
       ],
@@ -1830,6 +1835,9 @@
       ],
       "Expiration date": [
         "Data de caducitat"
+      ],
+      "Expired": [
+        "Caducat"
       ],
       "Export": [
         "Exporta"

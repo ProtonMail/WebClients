@@ -109,6 +109,9 @@
       "Copy and close": [
         "Kopyala ve kapat"
       ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
+      ],
       "Copy to clipboard": [
         "Panoya kopyala"
       ],
@@ -301,10 +304,10 @@
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Çöpe at"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Çöpe at"
       ],
       "Multiple select": [
@@ -343,11 +346,17 @@
       "Reject invitation": [
         "Daveti reddet"
       ],
+      "Reload": [
+        "Yenile"
+      ],
       "Remove": [
         "Kaldır"
       ],
       "Remove access": [
         "Erişimi kaldır"
+      ],
+      "Remove link": [
+        "Bağlantıyı kaldır"
       ],
       "Remove member": [
         "Üyeyi kaldır"
@@ -444,6 +453,9 @@
       ],
       "Try again.": [
         "Yeniden deneyin."
+      ],
+      "Try for free": [
+        "Ücretsiz deneyin"
       ],
       "Unlock offline with password": [
         "Parola ile çevrim dışı kilidi aç"
@@ -977,10 +989,6 @@
         "${ memberCount } üye",
         "${ memberCount } üye"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } kez",
-        "${ modifiedCount } kez"
-      ],
       "${ n } item": [
         "${ n } öge",
         "${ n } öge"
@@ -1180,6 +1188,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Ek parolanızı yazın"
       ],
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
@@ -1494,6 +1505,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
       ],
+      "Sign in to your account": [
+        "Hesabınızda oturum açın"
+      ],
       "Signing you in": [
         "Oturumunuz açılıyor"
       ],
@@ -1566,6 +1580,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
       ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
@@ -1768,6 +1785,9 @@
       "Confirm vault name": [
         "Kasa adı onayı"
       ],
+      "Copy": [
+        "Kopyala"
+      ],
       "Create a credit card": [
         "Kredi kartı ekle"
       ],
@@ -1827,6 +1847,9 @@
       ],
       "Expiration date": [
         "Son kullanma tarihi"
+      ],
+      "Expired": [
+        "Geçerlilik süresi dolmuş"
       ],
       "Export": [
         "Dışa aktar"
@@ -2668,6 +2691,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"
       ],
+      "Extra password cannot be empty": [
+        "Ek parola boş olamaz"
+      ],
       "Failed to load breaches.": [
         "Verilerin ele geçirilmesi olayları yüklenemedi."
       ],
@@ -2722,6 +2748,9 @@
       ],
       "Passphrase is required": [
         "Parola ifadesinin yazılması zorunludur"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"

@@ -3635,6 +3635,9 @@
         "Voeg een e-mailadres toe voor de gebruiker op de rij",
         "Voeg e-mailadressen toe voor de gebruikers op de rijen"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Vraag aan de eigenaar om je rechtstreeks uit te nodigen voor het document."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
       ],
@@ -3652,6 +3655,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
+      ],
+      "Please open the document to view it.": [
+        "Open het document om het te bekijken, alstublieft."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
@@ -3683,11 +3689,17 @@
       "Preview for this file type is not supported": [
         "Voorbeeld wordt niet ondersteund voor dit bestandstype"
       ],
+      "Preview of documents is not yet supported.": [
+        "Voorbeelden van documenten is nog niet ondersteund."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Publiek delen van documenten is nog niet ondersteund."
       ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
@@ -8689,9 +8701,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME }-adres"
-      ],
       "Add multiple users": [
         "Meerdere gebruikers toevoegen"
       ],

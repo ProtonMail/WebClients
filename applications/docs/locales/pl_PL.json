@@ -237,9 +237,6 @@
       "Download anyway": [
         "Pobierz mimo to"
       ],
-      "Duplicate": [
-        "Duplikuj"
-      ],
       "Edit": [
         "Edytuj"
       ],
@@ -297,9 +294,6 @@
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
       ],
-      "History": [
-        "Historia"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Obraz nie mógł zostać załadowany z ochroną przed śledzeniem."
       ],
@@ -350,6 +344,9 @@
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
+      ],
+      "Make a copy": [
+        "Utwórz kopię"
       ],
       "Manage folders": [
         "Zarządzaj folderami"
@@ -450,8 +447,8 @@
       "Remove gift code": [
         "Usuń kod podarunkowy"
       ],
-      "Rename": [
-        "Zmień nazwę"
+      "Rename document": [
+        "Zmień nazwę dokumentu"
       ],
       "Replace file": [
         "Zastąp plik"
@@ -491,6 +488,9 @@
       ],
       "See how": [
         "Zobacz jak"
+      ],
+      "See version history": [
+        "Zobacz historię wersji"
       ],
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
@@ -836,6 +836,9 @@
       ],
       "Custom domain problem": [
         "Problem z niestandardową domeną"
+      ],
+      "Docs problem": [
+        "Problem z dokumentami Docs"
       ],
       "Drive problem": [
         "Problem z dyskiem"
@@ -2129,6 +2132,9 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
+      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
+        "Wystąpił błąd integralności danych. Ostatnie zmiany nie mogą zostać zapisane. Odśwież stronę."
       ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
@@ -3545,7 +3551,7 @@
         "Wszystkie (${ totalFoldersCount } etykiety)"
       ],
       "All changes saved to Drive": [
-        "Wszystkie zmiany zostaną zapisane na dysku"
+        "Wszystkie zmiany zostały zapisane na dysku"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Zostanie zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakt",
@@ -3767,7 +3773,7 @@
         "Błąd synchronizacji"
       ],
       "Every change you make is automatically and securely saved to Drive.": [
-        "Każda wprowadzona przez Ciebie zmiana jest automatycznie i bezpiecznie zapisywana na dysku."
+        "Każda zmiana jest automatycznie i bezpiecznie zapisywana na dysku."
       ],
       "Expired": [
         "Wygasła"
@@ -3907,6 +3913,9 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
+      "Limited availability": [
+        "Ograniczona dostępność"
+      ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
@@ -3927,6 +3936,9 @@
       ],
       "Loading...": [
         "Ładowanie..."
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Wygląda na to, że jesteś w trybie offline. Dokumentu nie można edytować w trybie offline. Sprawdź połączenie swojego urządzenia."
       ],
       "Low Priority": [
         "Niski priorytet"
@@ -4002,6 +4014,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Tylko posiadacz linku i hasła ma dostęp do folderu."
+      ],
+      "Opening...": [
+        "Otwieranie..."
       ],
       "Organization size": [
         "Rozmiar ogranizacji"
@@ -4144,6 +4159,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
+      "Some edits are taking longer to sync than expected.": [
+        "Synchronizacja niektórych zmian trwa dłużej."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
@@ -4182,6 +4200,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "Dokument był edytowany wiele razy. Niektóre funkcje mogą być i tymczasowo niedostępne."
       ],
       "This item already exists in your library": [
         "Ten element już istnieje"
@@ -4445,7 +4466,10 @@
         "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
-        "Twoje zmiany są synchronizowane z dyskiem. Proszę, nie zamykaj strony internetowej."
+        "Zmiany są synchronizowane z dyskiem. Nie zamykaj strony internetowej."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "Synchronizacja zmian nie powiodła się. Dysk spróbuje automatycznie zapisać zmiany. Nie zamykaj strony internetowej."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Twoja obecna przeglądarka nie obsługuje pobierania dużych plików z powodu niedostępności mechanizmu Service Workers. Pobieranie dużych plików może spowodować zawieszenie przeglądarki lub brak reakcji na jej działanie. Użyj najnowszych wersji ${ recommendedBrowser } i spróbuj ponownie."
@@ -8016,6 +8040,9 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
+      "Limited availability": [
+        "Ograniczona dostępność"
+      ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
@@ -8168,6 +8195,9 @@
       ],
       "Unlock contacts groups": [
         "Odblokuj grupy kontaktów"
+      ],
+      "Untitled document ${ date }": [
+        "Dokument bez nazwy ${ date }"
       ],
       "Uploading a large file or folder": [
         "Przesyłanie większego pliku lub folderu"

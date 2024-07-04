@@ -3713,6 +3713,9 @@
         "Bitte füge eine E-Mail-Adresse für den Benutzer in der folgenden Zeile hinzu:",
         "Bitte füge E-Mail-Adressen für die Benutzer in den folgenden Zeilen hinzu:"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Bitte den Eigentümer, dich direkt zu dem Dokument einzuladen."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Bitte authentifiziere deine Karte im Verifikationstab."
       ],
@@ -3733,6 +3736,9 @@
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"
+      ],
+      "Please open the document to view it.": [
+        "Bitte öffne das Dokument, um es anzusehen."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Bitte versuche es mit einer anderen Zahlungsmethode erneut oder kontaktiere deine Bank."
@@ -3764,11 +3770,17 @@
       "Preview for this file type is not supported": [
         "Die Vorschau wird für diesen Dateityp nicht unterstützt."
       ],
+      "Preview of documents is not yet supported.": [
+        "Die Vorschau von Dokumenten wird noch nicht unterstützt."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
       ],
       "Protected by Swiss privacy laws": [
         "Geschützt durch Schweizer Datenschutzgesetze"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
       ],
       "read our two-factor authentication guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
@@ -9015,9 +9027,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } Adresse"
-      ],
       "Add multiple users": [
         "Füge mehrere Benutzer hinzu"
       ],
@@ -9047,6 +9056,9 @@
       ],
       "Email": [
         "E‐Mail‐Adresse"
+      ],
+      "Invitation email": [
+        "Einladungs-E-Mail"
       ],
       "Name": [
         "Name"

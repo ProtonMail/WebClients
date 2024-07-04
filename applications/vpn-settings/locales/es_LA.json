@@ -960,6 +960,9 @@
       "Custom domain problem": [
         "Problema de dominio personalizado"
       ],
+      "Docs problem": [
+        "Problema de Docs"
+      ],
       "Drive problem": [
         "Problema de Drive"
       ],
@@ -7655,6 +7658,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuario",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuarios"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -9149,9 +9156,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Dirección de ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Añadir varios usuarios"
       ],
@@ -9182,8 +9186,14 @@
       "Email": [
         "Correo"
       ],
+      "Invitation email": [
+        "Correo de invitación"
+      ],
       "Name": [
         "Nombre"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Nueva dirección de correo de ${ BRAND_NAME }"
       ],
       "Optional": [
         "Opcional"

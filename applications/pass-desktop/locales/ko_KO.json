@@ -109,6 +109,9 @@
       "Copy and close": [
         "복사 및 닫기"
       ],
+      "Copy link": [
+        "링크 복사"
+      ],
       "Copy to clipboard": [
         "클립보드로 복사"
       ],
@@ -301,10 +304,10 @@
       "Move to another vault": [
         "다른 금고로 이동"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "휴지통으로 이동"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "휴지통으로 이동"
       ],
       "Multiple select": [
@@ -343,11 +346,17 @@
       "Reject invitation": [
         "초대 거절"
       ],
+      "Reload": [
+        "새로고침"
+      ],
       "Remove": [
         "삭제"
       ],
       "Remove access": [
         "접근 제거"
+      ],
+      "Remove link": [
+        "링크 삭제"
       ],
       "Remove member": [
         "구성원 추방"
@@ -376,6 +385,9 @@
       "Retry": [
         "재시도"
       ],
+      "Right click and download this CSV": [
+        "우측을 클릭하여 CSV 파일을 다운로드 합니다."
+      ],
       "Save": [
         "저장"
       ],
@@ -396,6 +408,12 @@
       ],
       "Set access level": [
         "접근 수준 설정"
+      ],
+      "Set extra password": [
+        "추가 비밀번호 설정"
+      ],
+      "Setup 2FA": [
+        "2단계 인증 설정"
       ],
       "Share": [
         "공유"
@@ -435,6 +453,9 @@
       ],
       "Try again.": [
         "다시 시도하세요."
+      ],
+      "Try for free": [
+        "무료 체험하기"
       ],
       "Unlock offline with password": [
         "비밀번호로 오프라인 잠금 해제"
@@ -719,6 +740,9 @@
       "File could not be parsed": [
         "파일을 분석할 수 없음."
       ],
+      "File could not be read": [
+        "파일을 읽을 수 없습니다."
+      ],
       "File does not match expected format": [
         "파일이 형식과 일치되지 않습니다."
       ],
@@ -955,9 +979,6 @@
       "${ memberCount } member": [
         "${ memberCount }명 회원"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } 회"
-      ],
       "${ n } item": [
         "${ n }개 항목"
       ],
@@ -1045,6 +1066,9 @@
       "Auto-lock successfully disabled.": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "이 포맷으로 데이터를 내보내기 전에, Safari 설정-> \"일반\" 탭 ->\" 다운로드 후 '안전한' 파일 열기\"를 비활성화해주세요. 이 설정으로 Safari가 내보낸 파일을 잘못 추출하는 것을 방지할 수 있습니다."
+      ],
       "Breaches detected": [
         "침해 사례 감지됨"
       ],
@@ -1071,6 +1095,9 @@
       ],
       "Click here to add a field for a username.": [
         "사용자 이름에 대한 입력란을 추가하려면 여기를 탭하세요."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "삭제를 하려면 추가 비밀번호를 확인하십시오."
       ],
       "Congratulations, your access has been confirmed": [
         "축하합니다! 접근이 수락되었습니다."
@@ -1111,6 +1138,9 @@
       "Drop to import": [
         "드래그해서 불러오기"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Safari 브라우저 확장 제한으로 인해, 데이터를 내보낸 후 파일 확장자 \".pgp\"가 누락됩니다. 내보낸 후 .pgp 확장자(예: file.pgp)를 포함하도록 파일 이름을 변경하세요."
+      ],
       "Editor": [
         "편집자"
       ],
@@ -1150,8 +1180,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
       ],
+      "Enter your extra password": [
+        "추가 비밀번호 입력"
+      ],
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
+      ],
+      "Extra password successfuly created": [
+        "추가 비밀번호를 설정했습니다."
+      ],
+      "Extra password successfuly removed": [
+        "추가 비밀번호를 삭제했습니다."
       ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
@@ -1387,6 +1426,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
       ],
+      "Please confirm your password": [
+        "비밀번호를 확인하세요"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "비밀번호를 사용하는 자동 잠금을 위해 비밀번호를 확인해 주세요."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "지금의 잠금을 등록 해제하기 위해 비밀번호를 확인해 주세요."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "자동 잠금 시간을 업데이트하기 위해 비밀번호를 확인해 주세요."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "지금의 잠금을 등록 해제하려면 PIN 코드로 인증해주세요."
       ],
@@ -1420,8 +1471,14 @@
       "Reconnecting": [
         "재연결중"
       ],
+      "Registering extra password...": [
+        "추가 비밀번호 설정 중..."
+      ],
       "Registering PIN lock failed": [
         "PIN 잠금 설정 실패"
+      ],
+      "Removing extra password...": [
+        "추가 비밀번호 삭제 중..."
       ],
       "Restoring items from trash": [
         "휴지통에서 항목 복구 중"
@@ -1459,6 +1516,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "최대 10명 까지 로그인을 공유하고, 메모를 보호하세요."
       ],
+      "Sign in to your account": [
+        "계정에 로그인하세요"
+      ],
       "Signing you in": [
         "로그인 중"
       ],
@@ -1495,6 +1555,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME }를 사용할 때 추가 비밀번호가 요구됩니다. 사용자의 ${ BRAND_NAME } 비밀번호의 추가적인 비밀번호가 됩니다."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
       ],
@@ -1530,6 +1593,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "추가 비밀번호로 ${ PASS_SHORT_APP_NAME } 잠금 해제"
       ],
       "Unpinning item...": [
         "항목 고정 해제 중..."
@@ -1605,6 +1674,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "${ maxLength } 문자의 최대 허용 길이에 도달했습니다."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "사용자가 로그아웃되고 다른 모든 장치에서 다시 로그인해야 합니다."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "이 이메일 주소에 대한 데이터 침해 알림을 받게 됩니다."
@@ -1728,6 +1800,9 @@
       "Confirm vault name": [
         "금고 이름 확인"
       ],
+      "Copy": [
+        "복사"
+      ],
       "Create a credit card": [
         "신용 카드 생성"
       ],
@@ -1788,8 +1863,14 @@
       "Expiration date": [
         "만료 시간"
       ],
+      "Expired": [
+        "만료됨"
+      ],
       "Export": [
         "내보내기"
+      ],
+      "Extra password": [
+        "추가 비밀번호"
       ],
       "Field name": [
         "필드 이름"
@@ -1958,6 +2039,9 @@
       ],
       "Prefix": [
         "접두어"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "추가 비밀번호로 ${ PASS_APP_NAME } 보호"
       ],
       "Rate us": [
         "평가해 주세요"
@@ -2282,6 +2366,9 @@
       "Breaches detected for": [
         "침해 사례가 다음에서 감지됨:"
       ],
+      "Confirm extra password": [
+        "추가 비밀번호 확인"
+      ],
       "Confirm PIN code": [
         "PIN 코드 확인"
       ],
@@ -2444,6 +2531,9 @@
       "Remove email address?": [
         "이메일 주소를 삭제하시겠습니까?"
       ],
+      "Remove extra password": [
+        "추가 비밀번호 지우기"
+      ],
       "Resolved breaches": [
         "해결된 유출"
       ],
@@ -2467,6 +2557,9 @@
       ],
       "Set access level": [
         "접근 수준 설정"
+      ],
+      "Set extra password": [
+        "추가 비밀번호 설정"
       ],
       "Set up 2FA for better security": [
         "더 나은 보안을 위해 2단계 인증 설정"
@@ -2495,6 +2588,9 @@
       "Trash empty": [
         "휴지통이 비어있음"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } 잠금 해제"
+      ],
       "Update available": [
         "사용 가능한 업데이트가 있습니다"
       ],
@@ -2515,6 +2611,9 @@
       ],
       "Weak passwords": [
         "약한 비밀번호"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX }에 오신 것을 환영합니다."
       ],
       "What is an alias?": [
         "별칭이란?"
@@ -2583,6 +2682,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "지금은 이 별칭의 편지함을 불러올 수 없습니다."
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "주의: 이 비밀번호를 분실하면 ${ PASS_APP_NAME } 계정에 접근할 수 없게 됩니다."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"
       ],
@@ -2603,6 +2705,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
+      ],
+      "Extra password cannot be empty": [
+        "추가 비밀번호는 비워둘 수 없습니다."
+      ],
+      "Extra password should have at least 8 characters": [
+        "추가 비밀번호는 최소 8글자여야합니다."
       ],
       "Failed to load breaches.": [
         "침해를 불러오지 못했습니다."
@@ -2658,17 +2766,29 @@
       "Passphrase is required": [
         "비밀번호가 필요합니다."
       ],
+      "Passwords do not match": [
+        "비밀번호가 일치하지 않습니다"
+      ],
       "PGP encrypted export file requires passphrase": [
         "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "확장 프로그램이 설치되고 활성 상태인지 확인하세요."
+      ],
       "Please contact us for investigating the issue": [
         "문제 조사를 위해 연락을 부탁드립니다."
+      ],
+      "Please update the extension to its latest version": [
+        "최신 버전의 확장 프로그램으로 업데이트하세요."
       ],
       "Please verify your email address in order to use email aliases": [
         "이메일 별칭을 사용하려면 이메일 주소를 인증해 주세요."
       ],
       "Please verify your email address in order to use vault sharing": [
         "금고 공유를 사용하려면 이메일 주소를 인증해 주세요."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "추가 비밀번호를 삭제하면 모든 활성 세션이 종료되고 모든 디바이스에서 로그아웃 처리됩니다."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."

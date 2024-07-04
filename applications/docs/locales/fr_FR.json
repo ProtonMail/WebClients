@@ -231,9 +231,6 @@
       "Download anyway": [
         "Télécharger quand même"
       ],
-      "Duplicate": [
-        "Dupliquer"
-      ],
       "Edit": [
         "Modifier"
       ],
@@ -291,9 +288,6 @@
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
-      "History": [
-        "Historique"
-      ],
       "Image could not be loaded with tracker protection.": [
         "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
       ],
@@ -344,6 +338,9 @@
       ],
       "Loading verification": [
         "Vérification du transfert"
+      ],
+      "Make a copy": [
+        "Faire une copie"
       ],
       "Manage folders": [
         "Gérer les dossiers"
@@ -444,8 +441,8 @@
       "Remove gift code": [
         "Retirer le code-cadeau"
       ],
-      "Rename": [
-        "Renommer"
+      "Rename document": [
+        "Renommer le document"
       ],
       "Replace file": [
         "Remplacer le fichier"
@@ -485,6 +482,9 @@
       ],
       "See how": [
         "Voir comment faire"
+      ],
+      "See version history": [
+        "Afficher l'historique des versions"
       ],
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
@@ -820,6 +820,9 @@
       ],
       "Custom domain problem": [
         "Problème avec les domaines personnalisés"
+      ],
+      "Docs problem": [
+        "Problème de Docs"
       ],
       "Drive problem": [
         "Problème avec Proton Drive"
@@ -3800,6 +3803,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Limited availability": [
+        "Disponibilité limitée"
+      ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
       ],
@@ -3820,6 +3826,9 @@
       ],
       "Loading...": [
         "Chargement en cours"
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Il semble que vous soyez hors ligne. Le document ne peut pas être modifié lorsque vous êtes hors ligne. Veuillez vérifier la connectivité de votre appareil."
       ],
       "Low Priority": [
         "Priorité basse"
@@ -3891,6 +3900,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
+      ],
+      "Opening...": [
+        "Ouverture..."
       ],
       "Organization size": [
         "Taille de l’organisation"
@@ -4030,6 +4042,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
+      ],
+      "Some edits are taking longer to sync than expected.": [
+        "La synchronisation de certaines modifications prend plus de temps que prévu."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
@@ -4333,6 +4348,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Vos changements ont été synchronisés dans Drive. Veuillez ne pas fermer cette page web."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "La synchronisation n'a pas abouti. Drive tentera d'enregistrer automatiquement les modifications. Veuillez ne pas fermer cette page web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des prestataires de services. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Utilisez la dernière version d'un ${ recommendedBrowser } et essayez à nouveau."
@@ -7693,6 +7711,9 @@
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Limited availability": [
+        "Disponibilité limitée"
       ],
       "Link confirmation": [
         "Confirmation du lien"
