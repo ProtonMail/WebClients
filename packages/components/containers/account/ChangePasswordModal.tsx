@@ -16,6 +16,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { Address } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
@@ -127,9 +128,7 @@ const ChangePasswordModal = ({
         onClose?.();
     };
 
-    const [User] = useUser();
-
-    const { isSubUser, Name, Email } = User;
+    const [user] = useUser();
 
     const [inputs, setInputs] = useState<Inputs>({
         oldPassword: '',
@@ -191,7 +190,7 @@ const ChangePasswordModal = ({
                 authentication,
                 keyPassword,
                 clearKeyPassword,
-                User,
+                User: user,
             });
         } catch (e: any) {
             // If persisting the password fails for some reason.
@@ -202,10 +201,10 @@ const ChangePasswordModal = ({
 
     const getModalProperties = (mode: MODES): ModalProperties => {
         if ([MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE, MODES.CHANGE_ONE_PASSWORD_MODE].includes(mode)) {
-            if (isSubUser) {
+            if (user.isSubUser) {
                 const userName = (
                     <b key="user" className="text-break">
-                        {Name} ({Email})
+                        {user.Name} ({user.Email})
                     </b>
                 );
                 return {
@@ -565,8 +564,7 @@ const ChangePasswordModal = ({
                     {c('Info')
                         .t`${BRAND_NAME}'s encryption technology means that nobody can access your password - not even us.`}
                 </div>
-
-                {signedInRecoveryFlow ? null : (
+                {getIsRecoveryAvailable(user) && !signedInRecoveryFlow ? (
                     <div className="mb-4">
                         {
                             // translator: Make sure you add a recovery method so that you can get back into your account if you forget your password.
@@ -574,7 +572,7 @@ const ChangePasswordModal = ({
                                 .jt`Make sure you ${addARecoveryMethod} so that you can get back into your account if you forget your password.`
                         }
                     </div>
-                )}
+                ) : null}
 
                 {disable2FA ? (
                     <div className="mb-4">{c('Info').t`This will remove any enabled 2FA methods.`}</div>
