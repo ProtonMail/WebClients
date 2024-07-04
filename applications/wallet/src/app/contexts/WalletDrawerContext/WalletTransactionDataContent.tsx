@@ -82,76 +82,91 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                                 {getLabelByUnit(settings.BitcoinUnit)}
                             </div>
                         )}
+                        <div className="color-hint block text-ellipsis">
+                            {isSender ? c('Wallet transaction').t`You sent` : c('Wallet transaction').t`You received`}
+                        </div>
                     </div>
 
-                    <RecipientsDataItem
-                        tx={transaction}
-                        onClick={(email, btcAddress, index) =>
-                            setRecipientDetailsModal({ recipient: { Address: email, Name: email }, btcAddress, index })
-                        }
-                    />
-
-                    <hr className="my-4" />
-                    <SendersDataItem
-                        tx={transaction}
-                        onClickEditSender={() => {
-                            onClickEditSender();
-                        }}
-                    />
-
-                    <DateDataItem tx={transaction} />
-
-                    <hr className="my-4" />
-                    <StatusDataItem tx={transaction} />
-
-                    {transaction.apiData?.Body && (
-                        <>
-                            <hr className="my-4" />
-                            <MessageDataItem tx={transaction} />
-                        </>
-                    )}
-
-                    <hr className="my-4" />
-
-                    <NoteDataItem
-                        tx={transaction}
-                        onClick={() => {
-                            onClickEditNote();
-                        }}
-                    />
-                    <hr className="my-4" />
-
-                    {showMore ? (
-                        <>
-                            <AmountDataItem
-                                amount={transaction.networkData.fee}
-                                label={c('Wallet transaction').t`Network fee`}
-                                exchangeRate={exchangeRate}
+                    <div className="flex flex-row flex-nowrap items-center my-1">
+                        <div className="text-semibold">
+                            <Price
+                                unit={exchangeRate ?? settings.BitcoinUnit}
+                                className="h1 text-semibold"
+                                wrapperClassName="contrast"
+                                satsAmount={value}
                             />
-
-                            <hr className="my-4" />
-
-                            <AmountDataItem
-                                amount={(transaction.networkData.fee ?? 0) + value}
-                                label={c('Wallet transaction').t`Total (sent amount + fee)`}
-                                exchangeRate={exchangeRate}
-                            />
-
-                            <LinkToBlockchainDataItem tx={transaction} network={network} />
-                        </>
-                    ) : (
-                        <div>
-                            <CoreButton
-                                shape="ghost"
-                                size="small"
-                                className="color-hint"
-                                onClick={() => setShowMore(true)}
-                            >
-                                {c('Wallet transaction').t`View more`} <Icon name="chevron-down" size={3} />
-                            </CoreButton>
+                        </div>
+                    </div>
+                    {exchangeRate && (
+                        <div className="text-lg color-hint">
+                            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                            {getLabelByUnit(settings.BitcoinUnit)}
                         </div>
                     )}
                 </div>
+
+                <RecipientsDataItem
+                    tx={transaction}
+                    onClick={(email, btcAddress, index) =>
+                        setRecipientDetailsModal({ recipient: { Address: email, Name: email }, btcAddress, index })
+                    }
+                />
+
+                <hr className="my-4" />
+                <SendersDataItem
+                    tx={transaction}
+                    onClickEditSender={() => {
+                        onClickEditSender();
+                    }}
+                />
+
+                <DateDataItem tx={transaction} />
+
+                <hr className="my-4" />
+                <StatusDataItem tx={transaction} />
+
+                {transaction.apiData?.Body && (
+                    <>
+                        <hr className="my-4" />
+                        <MessageDataItem tx={transaction} />
+                    </>
+                )}
+
+                <hr className="my-4" />
+
+                <NoteDataItem
+                    tx={transaction}
+                    onClick={() => {
+                        onClickEditNote();
+                    }}
+                />
+                <hr className="my-4" />
+
+                {showMore ? (
+                    <>
+                        <AmountDataItem
+                            amount={transaction.networkData.fee}
+                            label={c('Wallet transaction').t`Network fee`}
+                            exchangeRate={exchangeRate}
+                        />
+
+                        <hr className="my-4" />
+
+                        <AmountDataItem
+                            amount={(transaction.networkData.fee ?? 0) + value}
+                            label={c('Wallet transaction').t`Total (sent amount + fee)`}
+                            exchangeRate={exchangeRate}
+                        />
+
+                        <LinkToBlockchainDataItem tx={transaction} network={network} />
+                    </>
+                ) : (
+                    <div>
+                        <CoreButton shape="ghost" size="small" className="color-hint" onClick={() => setShowMore(true)}>
+                            {c('Wallet transaction').t`View more`} <Icon name="chevron-down" size={3} />
+                        </CoreButton>
+                    </div>
+                )}
             </Scroll>
 
             {recipientDetailsModal.data && (
