@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
@@ -19,7 +21,7 @@ export const DrawerHeader = ({ title, bg, onClose }: Props) => {
                     icon
                     className={clsx('rounded-full border-none', bg === 'bg-norm' ? 'bg-weak' : 'bg-norm')}
                 >
-                    <Icon name="cross" className="color-hint" size={5} />
+                    <Icon name="cross" alt={c('Action').t`Close`} className="color-hint" size={5} />
                 </CoreButton>
             </div>
         </div>

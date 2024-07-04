@@ -6,7 +6,6 @@ import { Scroll } from '@proton/atoms/Scroll';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
-import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
@@ -57,19 +56,9 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                     <div className="flex flex-column mb-10">
                         <div className="flex flex-row items-center">
                             {isSender ? (
-                                <img
-                                    src={arrowSendSvg}
-                                    alt="A red arrow going up"
-                                    className="mr-3"
-                                    style={{ width: '1.4rem' }}
-                                />
+                                <img src={arrowSendSvg} alt="" className="mr-3" style={{ width: '1.4rem' }} />
                             ) : (
-                                <img
-                                    src={arrowReceiveSvg}
-                                    alt="A green arrow going down"
-                                    className="mr-2"
-                                    style={{ width: '1.4rem' }}
-                                />
+                                <img src={arrowReceiveSvg} alt="" className="mr-2" style={{ width: '1.4rem' }} />
                             )}
                             <div className="color-hint block text-ellipsis">
                                 {isSender
@@ -79,7 +68,7 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                         </div>
 
                         <div className="flex flex-row flex-nowrap items-center my-1">
-                            <div className={clsx('text-semibold')}>
+                            <div className="text-semibold">
                                 <Price
                                     unit={exchangeRate ?? settings.BitcoinUnit}
                                     className="h1 text-semibold"

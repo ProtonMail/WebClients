@@ -86,7 +86,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                 </div>
 
                 {exchangeRate && (
-                    <div className="no-shrink">
+                    <div className="shrink-0">
                         <CurrencySelect
                             dense
                             options={currencies ?? []}

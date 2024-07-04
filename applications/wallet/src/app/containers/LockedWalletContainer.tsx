@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Alert, Icon, useModalState } from '@proton/components/components';
-import clsx from '@proton/utils/clsx';
 
 import { CoreButton } from '../atoms';
 import { WalletDeletionModal } from '../components/WalletDeletionModal';
@@ -38,7 +37,7 @@ export const LockedWalletContainer = () => {
 
     return (
         <>
-            <div className={clsx('flex flex-row w-full min-h-full flex-nowrap')}>
+            <div className="flex flex-row w-full min-h-full flex-nowrap">
                 <div className="flex flex-column flex-1 p-8 pt-0 flex-nowrap grow">
                     <div className="flex flex-row m-4 items-center">
                         <h1 className="mr-4 text-semibold">{wallet.Wallet.Name}</h1>
@@ -53,7 +52,7 @@ export const LockedWalletContainer = () => {
                                 setWalletDeletionModalState(true);
                             }}
                         >
-                            <Icon name="pass-trash" className="color-hint" size={5} />
+                            <Icon name="pass-trash" className="color-hint" alt={c('Action').t`Delete`} size={5} />
                         </CoreButton>
                     </div>
 

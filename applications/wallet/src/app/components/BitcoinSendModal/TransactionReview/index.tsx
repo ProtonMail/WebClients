@@ -144,7 +144,7 @@ export const TransactionReview = ({
                                 rightNode={
                                     txBuilder.getRecipients().length > 1 ? (
                                         <div
-                                            className="w-custom flex flex-column items-end mr-1 no-shrink"
+                                            className="w-custom flex flex-column items-end mr-1 shrink-0"
                                             style={{ '--w-custom': '7.5rem' }}
                                         >
                                             <BitcoinAmount
@@ -185,8 +185,8 @@ export const TransactionReview = ({
                                 setFeesModal(true);
                             }}
                         >
-                            <Tooltip title={c('Wallet send').t`Edit`}>
-                                <Icon name="pencil" alt={c('Wallet send').t`Edit`} />
+                            <Tooltip title={c('Action').t`Edit`}>
+                                <Icon name="pencil" alt={c('Action').t`Edit`} />
                             </Tooltip>
                         </CoreButton>
 

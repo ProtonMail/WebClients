@@ -35,7 +35,7 @@ export const Location = ({ onConfirm }: Props) => {
                             setCountry(country);
                         }
                     }}
-                    noLabel
+                    label={null}
                     disabled={loadingCountries}
                     options={allCountryOptions}
                     as={(props: CoreSearchableSelectProps<string>) => (

@@ -18,7 +18,7 @@ export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled
                 onClick={() => onPrev()}
                 disabled={!canGoPrev || disabled}
                 icon
-                title={c('Pagination').t`Previous`}
+                title={c('Action').t`Previous`}
                 size="small"
                 className="mx-1"
             >
@@ -28,7 +28,7 @@ export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled
                 onClick={() => onNext()}
                 disabled={!canGoNext || disabled}
                 icon
-                title={c('Pagination').t`Next`}
+                title={c('Action').t`Next`}
                 size="small"
                 className="mx-1"
             >

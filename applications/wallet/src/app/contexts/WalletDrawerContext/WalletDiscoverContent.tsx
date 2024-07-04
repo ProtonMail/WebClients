@@ -43,7 +43,7 @@ const DiscoverPreview = () => {
     return (
         <div className="flex flex-row flex-nowrap">
             <div
-                className="w-custom h-custom bg-danger no-shrink mr-4"
+                className="w-custom h-custom bg-danger shrink-0 mr-4"
                 style={{ '--w-custom': '6rem', '--h-custom': '6rem', borderRadius: '24px' }}
             ></div>
 

@@ -45,7 +45,7 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
         tx.networkData.time.confirmation_time &&
         getFormattedPeriodSinceConfirmation(now, new Date(tx.networkData.time.confirmation_time * SECOND));
 
-    const imgClassName = clsx('no-shrink', isNarrow ? 'mr-2' : 'mr-4');
+    const imgClassName = clsx('shrink-0', isNarrow ? 'mr-2' : 'mr-4');
     const imgStyle: CSSProperties = isNarrow ? { width: '1.5rem' } : { width: '2rem' };
 
     return (
@@ -53,14 +53,9 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
             label={value >= 0 ? 'Received' : 'Sent'}
             leftIcon={
                 value >= 0 ? (
-                    <img
-                        src={arrowReceiveSvg}
-                        alt="A green arrow going down"
-                        className={imgClassName}
-                        style={imgStyle}
-                    />
+                    <img src={arrowReceiveSvg} alt="" className={imgClassName} style={imgStyle} />
                 ) : (
-                    <img src={arrowSendSvg} alt="A red arrow going down" className={imgClassName} style={imgStyle} />
+                    <img src={arrowSendSvg} alt="" className={imgClassName} style={imgStyle} />
                 )
             }
             bottomNode={
@@ -69,7 +64,7 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
                         <span className="color-hint block text-ellipsis">{confirmedDate}</span>
                     ) : (
                         <div className="flex flex-row flex-nowrap items-center color-primary">
-                            <CircleLoader className="no-shrink" />
+                            <CircleLoader className="shrink-0" />
                             <div className="ml-2 text-ellipsis">{c('Wallet transaction').t`In progress`}</div>
                         </div>
                     )}
