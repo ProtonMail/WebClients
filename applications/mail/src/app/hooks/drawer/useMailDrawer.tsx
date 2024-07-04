@@ -16,7 +16,7 @@ const useMailDrawer = () => {
     const [user] = useUser();
     const [organization] = useOrganization();
     // TODO: add UserSettings."WalletAccess" condition once available
-    const canAccessWallet = useFlag('WalletAccess') && (user.isFree || organization?.MaxMembers === 1);
+    const canAccessWallet = useFlag('Wallet') && (user.isFree || organization?.MaxMembers === 1);
 
     const drawerSidebarButtons = [
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
