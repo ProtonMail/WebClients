@@ -84,8 +84,13 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                         />
                     </div>
 
-                    <CoreButton shape="ghost" className="ml-2">
-                        <Icon name={showBalance ? 'eye-slash' : 'eye'} size={6} onClick={() => toggleShowBalance()} />
+                    <CoreButton shape="ghost" className="ml-2" aria-pressed={showBalance}>
+                        <Icon
+                            name={showBalance ? 'eye-slash' : 'eye'}
+                            alt={c('Action').t`Show balance`}
+                            size={6}
+                            onClick={() => toggleShowBalance()}
+                        />
                     </CoreButton>
                 </div>
                 {!loadingExchangeRate && exchangeRate && (

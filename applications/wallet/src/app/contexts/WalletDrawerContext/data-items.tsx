@@ -63,7 +63,7 @@ export const RecipientsDataItem = ({
                                         </Tooltip>
                                     </div>
 
-                                    <div className="no-shrink text-sm">
+                                    <div className="shrink-0 text-sm">
                                         <div className={clsx('ml-auto flex flex-row flex-nowrap justify-end')}>
                                             <Price
                                                 unit={exchangeRate ?? settings.BitcoinUnit}
@@ -86,7 +86,7 @@ export const RecipientsDataItem = ({
                                         )}
                                     </div>
 
-                                    <Icon className="ml-2 no-shrink" name="chevron-right" />
+                                    <Icon className="ml-2 shrink-0" name="chevron-right" />
                                 </button>
                             </li>
                         );
@@ -196,7 +196,12 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
                         onClick={() => onClick(tx)}
                         icon
                     >
-                        <Icon size={3} name="pen-square" className="color-hint" />
+                        <Icon
+                            size={3}
+                            name="pen-square"
+                            className="color-hint"
+                            alt={c('Action').t`Edit a private note to myself`}
+                        />
                     </CoreButton>
                 )}
             </div>
@@ -253,7 +258,7 @@ export const AmountDataItem = ({
         <div className="w-full">
             <span className="block color-hint text-rg">{label}</span>
             <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
-                <div className={clsx('text-semibold')}>
+                <div className="text-semibold">
                     <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={amount ?? 0} />
                 </div>
             </div>

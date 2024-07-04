@@ -29,14 +29,6 @@
 	}
 }
 
-.grow {
-	flex-grow: 1;
-}
-
-.no-shrink {
-	flex-shrink: 0;
-}
-
 @keyframes skeleton-loading {
 	0% {
 		background-color: var(--interaction-norm-minor-1);

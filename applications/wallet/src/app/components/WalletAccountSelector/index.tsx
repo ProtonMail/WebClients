@@ -37,7 +37,7 @@ const WalletAccountBalance = ({ walletAccount, balance }: { walletAccount: WasmA
     const [settings] = useUserWalletSettings();
 
     return (
-        <div className="no-shrink">
+        <div className="shrink-0">
             <div
                 className={clsx(
                     'ml-auto flex flex-row flex-nowrap justify-end',
@@ -78,7 +78,7 @@ export const WalletAccountItem = ({
     return (
         <div className="flex flex-row w-full flex-nowrap justify-space-between items-center text-sm">
             <div className="flex flex-row flex-nowrap items-center">
-                {withIcon && <Icon name={'brand-bitcoin'} className="mr-1 no-shrink" />}
+                {withIcon && <Icon name={'brand-bitcoin'} className="mr-1 shrink-0" />}
                 <div style={{ whiteSpace: 'nowrap' }} className="overflow-hidden text-ellipsis">
                     {walletAccount.Label}
                 </div>
@@ -146,8 +146,8 @@ export const WalletAccountSelector = ({ value, options, disabled, checkIsValid, 
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
-                className="border rounded-xl bg-weak py-5"
-                style={{ width: '16rem' }}
+                className="border rounded-xl bg-weak py-5 w-custom"
+                style={{ '--w-custom': '16rem' }}
                 disabled={disabled}
             >
                 <div className="flex flex-column">

@@ -95,8 +95,8 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
                 </div>
             ) : null}
 
-            <video ref={videoRef} autoPlay playsInline className="w-custom" style={{ '--w-custom': '100%' }} />
-            <canvas ref={canvasRef} style={{ display: 'none' }} />
+            <video ref={videoRef} autoPlay playsInline className="w-full" />
+            <canvas ref={canvasRef} className="hidden" />
         </div>
     );
 };

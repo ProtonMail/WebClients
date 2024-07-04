@@ -43,7 +43,7 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
                 isActive ? 'bg-success' : 'bg-danger'
             )}
         >
-            <div className="no-shrink">
+            <div className="shrink-0">
                 <img src={walletSendingSimplePlane} alt="" />
             </div>
             <div className="flex flex-column mx-4">
@@ -53,7 +53,7 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
                         .t`Learn more`}</CoreButtonLike>
                 </div>
             </div>
-            <div className="ml-auto no-shrink">
+            <div className="ml-auto shrink-0">
                 <CoreButton
                     icon
                     shape="ghost"

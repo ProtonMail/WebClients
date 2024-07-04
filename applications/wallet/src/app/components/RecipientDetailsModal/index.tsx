@@ -26,7 +26,7 @@ export const RecipientDetailsModal = ({ recipient, btcAddress, index, ...modalPr
             <div className="flex flex-column items-center">
                 <div
                     className={clsx(
-                        'rounded-full w-custom h-custom mb-4 flex items-center justify-center text-xl text-semibold no-shrink',
+                        'rounded-full w-custom h-custom mb-4 flex items-center justify-center text-xl text-semibold shrink-0',
                         getThemeByIndex(index)
                     )}
                     style={{

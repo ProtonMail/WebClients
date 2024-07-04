@@ -102,13 +102,13 @@ export const WalletContainer = () => {
                                 size="medium"
                                 shape="ghost"
                                 color="weak"
-                                className="ml-2 mr-6 rounded-full bg-weak no-shrink"
+                                className="ml-2 mr-6 rounded-full bg-weak shrink-0"
                                 disabled={loading}
                                 onClick={() => {
                                     setWalletPreferencesModalState(true);
                                 }}
                             >
-                                <Icon alt={c('Wallet container').t`Edit`} name="cog-drawer" size={5} />
+                                <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
                             </CoreButton>
                         </div>
 
@@ -122,11 +122,7 @@ export const WalletContainer = () => {
                             }}
                         >
                             {c('Wallet header').t`Secure your wallet`}
-                            <Icon
-                                alt={c('Wallet header').t`Secure your wallet`}
-                                name="chevron-right"
-                                className="ml-2"
-                            />
+                            <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
                         </Button>
                     </div>
 
