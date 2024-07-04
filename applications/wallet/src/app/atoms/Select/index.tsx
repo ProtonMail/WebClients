@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { MutableRefObject, ReactNode, useRef } from 'react';
 
 import Option from '@proton/components/components/option/Option';
 import CoreSearchableSelect, {
@@ -22,6 +22,8 @@ type Props<V> = Omit<
 };
 
 export const Select = <V extends unknown>({ options, bordered, containerClassName, prefix, ...props }: Props<V>) => {
+    const selectRef = useRef<HTMLDivElement>(null);
+
     return (
         <div
             className={clsx(
@@ -30,6 +32,7 @@ export const Select = <V extends unknown>({ options, bordered, containerClassNam
                 props.disabled && 'disabled',
                 containerClassName
             )}
+            ref={selectRef}
         >
             {prefix}
             <InputField<typeof SelectTwo<V>>
@@ -39,6 +42,7 @@ export const Select = <V extends unknown>({ options, bordered, containerClassNam
                 labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
                 originalPlacement="bottom"
                 unstyled
+                anchorRef={selectRef as MutableRefObject<any>}
                 {...props}
             >
                 {options.map((opt) => (
@@ -58,6 +62,7 @@ type SearchableSelectProps<V> = CoreSearchableSelectProps<V> & {
     hint?: string;
     bordered?: boolean;
     containerClassName?: string;
+    anchorRef?: MutableRefObject<HTMLButtonElement | null>;
 };
 
 export const SearchableSelect = <V extends unknown>({
@@ -65,6 +70,8 @@ export const SearchableSelect = <V extends unknown>({
     containerClassName,
     ...props
 }: SearchableSelectProps<V>) => {
+    const selectRef = useRef<HTMLDivElement>(null);
+
     return (
         <div
             className={clsx(
@@ -73,6 +80,7 @@ export const SearchableSelect = <V extends unknown>({
                 props.disabled && 'disabled',
                 containerClassName
             )}
+            ref={selectRef}
         >
             <InputField
                 as={CoreSearchableSelect<V>}
@@ -80,7 +88,9 @@ export const SearchableSelect = <V extends unknown>({
                 assistContainerClassName="empty:hidden"
                 labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
                 originalPlacement="bottom"
+                availablePlacements={['bottom']}
                 unstyled
+                anchorRef={selectRef as MutableRefObject<any>}
                 {...props}
             />
         </div>
