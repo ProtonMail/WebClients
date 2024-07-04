@@ -109,6 +109,9 @@
       "Copy and close": [
         "Kopírovať a zatvoriť"
       ],
+      "Copy link": [
+        "Kopírovať odkaz"
+      ],
       "Copy to clipboard": [
         "Skopírovať do schránky"
       ],
@@ -301,10 +304,10 @@
       "Move to another vault": [
         "Presunúť do iného trezoru"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Presunúť do koša"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Presunúť do koša"
       ],
       "Multiple select": [
@@ -343,11 +346,17 @@
       "Reject invitation": [
         "Odmietnuť pozvánku"
       ],
+      "Reload": [
+        "Obnoviť"
+      ],
       "Remove": [
         "Vymazať"
       ],
       "Remove access": [
         "Odstrániť prístup"
+      ],
+      "Remove link": [
+        "Odstrániť odkaz"
       ],
       "Remove member": [
         "Odstániť člena"
@@ -397,6 +406,9 @@
       "Set access level": [
         "Nastaviť úroveň prístupu"
       ],
+      "Set extra password": [
+        "Nastaviť dodatočné heslo"
+      ],
       "Share": [
         "Zdieľať"
       ],
@@ -435,6 +447,9 @@
       ],
       "Try again.": [
         "Skúsiť znova."
+      ],
+      "Try for free": [
+        "Vyskúšať zdarma"
       ],
       "Unlock offline with password": [
         "Odomknúť offline pomocou hesla"
@@ -985,12 +1000,6 @@
         "${ memberCount } členov",
         "${ memberCount } členov"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }-krát",
-        "${ modifiedCount } -krát",
-        "${ modifiedCount } -krát",
-        "${ modifiedCount } krát"
-      ],
       "${ n } item": [
         "${ n } položka",
         "${ n } položky",
@@ -1188,6 +1197,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadajte overovací kód. Číslice ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Zadajte vaše dodatočné heslo"
       ],
       "Enter your PIN code": [
         "Zadajte PIN kód"
@@ -1510,6 +1522,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Zdieľajte vaše prihlasovacie údaje, zabezpečené poznámky až s 10 ľuďmi"
       ],
+      "Sign in to your account": [
+        "Prihláste sa do svojho účtu"
+      ],
       "Signing you in": [
         "Prihlasujeme vás"
       ],
@@ -1584,6 +1599,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
       ],
       "Unpinning item...": [
         "Odopínanie položky..."
@@ -1791,6 +1809,9 @@
       "Confirm vault name": [
         "Potvrdiť názov trezoru"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
       "Create a credit card": [
         "Vytvoriť platobnú kartu"
       ],
@@ -1850,6 +1871,9 @@
       ],
       "Expiration date": [
         "Koniec platnosti "
+      ],
+      "Expired": [
+        "Vypršal"
       ],
       "Export": [
         "Export"
@@ -2351,6 +2375,9 @@
       "Breaches detected for": [
         "Bol zistený únik"
       ],
+      "Confirm extra password": [
+        "Potvrďte dodatočné heslo"
+      ],
       "Confirm PIN code": [
         "Potvrdiť PIN kód"
       ],
@@ -2513,6 +2540,9 @@
       "Remove email address?": [
         "Odstrániť všetky adresy?"
       ],
+      "Remove extra password": [
+        "Odstrániť dodatočné heslo"
+      ],
       "Resolved breaches": [
         "Vyriešené úniky"
       ],
@@ -2539,6 +2569,9 @@
       ],
       "Set access level": [
         "Nastavte úroveň prístupu"
+      ],
+      "Set extra password": [
+        "Nastaviť dodatočné heslo"
       ],
       "Set up 2FA for better security": [
         "Nastavte 2FA pre lepšiu bezpečnosť"
@@ -2567,6 +2600,9 @@
       "Trash empty": [
         "Kôš je prázdny"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Odomknúť ${ brandNameJSX }"
+      ],
       "Update available": [
         "K dispozícii je aktualizácia"
       ],
@@ -2587,6 +2623,9 @@
       ],
       "Weak passwords": [
         "Slabé heslá"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Víta vás ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Čo je alias?"
@@ -2676,6 +2715,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"
       ],
+      "Extra password cannot be empty": [
+        "Dodatočné heslo nemôže byť prázdne"
+      ],
       "Failed to load breaches.": [
         "Načítanie únikov zlyhalo."
       ],
@@ -2732,6 +2774,9 @@
       ],
       "Passphrase is required": [
         "Prístupová fáza je povinná"
+      ],
+      "Passwords do not match": [
+        "Heslá sa nezhodujú"
       ],
       "PGP encrypted export file requires passphrase": [
         "Šifrovaný exportný súbor PGP vyžaduje prístupovú frázu"

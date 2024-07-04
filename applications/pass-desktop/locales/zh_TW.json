@@ -68,6 +68,9 @@
       "Copy and close": [
         "複製並關閉"
       ],
+      "Copy link": [
+        "複製連結"
+      ],
       "Copy to clipboard": [
         "複製到剪貼板"
       ],
@@ -257,10 +260,10 @@
       "Move to another vault": [
         "移動到另一個保管庫"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "移至垃圾桶"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "移至垃圾桶"
       ],
       "OK": [
@@ -295,6 +298,9 @@
       ],
       "Reject invitation": [
         "婉拒邀請"
+      ],
+      "Reload": [
+        "重新載入"
       ],
       "Remove": [
         "移除"
@@ -388,6 +394,9 @@
       ],
       "Try again.": [
         "重試。"
+      ],
+      "Try for free": [
+        "免費滿意體驗"
       ],
       "Unpin item": [
         "取消固定項目"
@@ -792,9 +801,6 @@
       "${ memberCount } member": [
         "${ memberCount } 位成員"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }次數"
-      ],
       "${ n } item": [
         "${ n } 項目"
       ],
@@ -1137,6 +1143,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "共享您的登入,安全筆記,至多10人"
       ],
+      "Sign in to your account": [
+        "登入您的帳戶"
+      ],
       "Signing you in": [
         "將您登入"
       ],
@@ -1346,6 +1355,9 @@
       "Confirm vault name": [
         "確認保管庫名稱"
       ],
+      "Copy": [
+        "複製"
+      ],
       "Create a credit card": [
         "創建一張信用卡"
       ],
@@ -1393,6 +1405,9 @@
       ],
       "Expiration date": [
         "有效期限"
+      ],
+      "Expired": [
+        "已失效"
       ],
       "Export": [
         "匯出"
@@ -2074,6 +2089,9 @@
       "Trash empty": [
         "垃圾桶已清空"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "解鎖${ brandNameJSX }"
+      ],
       "Update available": [
         "有可用更新"
       ],
@@ -2094,6 +2112,9 @@
       ],
       "Weak passwords": [
         "強度不足的密碼"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "歡迎使用 ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "甚麼是別名?"
@@ -2218,6 +2239,9 @@
       ],
       "Passphrase is required": [
         "需要密碼片語"
+      ],
+      "Passwords do not match": [
+        "密碼不一致"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP加密匯出需要驗證短語"
