@@ -2280,6 +2280,9 @@
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
         "ეს ფაილი მეისმეტად დიდია. მაქსიმალური ზომაა ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
       ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "ფაილი მეტისმეტად პატარაა. მინიმალური ზომაა ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "დამატებადი თანხის მინიმალური რაოდენობაა ${ price }"
       ],
@@ -4298,6 +4301,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "თქვენ უნდა გქონდეთ საკრედიტო ბარათი ან საბანკო ანგარიში, რომელიც დაკავშირებულია თქვენს PayPal ანგარიშთან. თუ თქვენს PayPal ანგარიშს ეს არ აქვს, გთხოვთ, დააჭიროთ ქვემოთ მოცემულ ღილაკს."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "მომხმარებლისთვის ადმინისტრატორის უფლებების მინიჭება მაშინვე შეგეძლებათ, როცა ისინი მოსაწვევს დაეთანხმებიან."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "შესვლის შემდეგ ${ destination }-ზე გადაგამისამართებთ."
       ],
@@ -6087,6 +6093,9 @@
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent-ის მსგავსი ფაილების გასაზიარებელი პროტოკოლების მხარდაჭერა"
       ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "ატვირთეთ თქვენი კომპანიის ლოგო, რომ მოირგოთ, რას დაინახავენ თქვენი გუნდები ${ BRAND_NAME }-ს ვებ-აპებში"
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "გამოიყენეთ თქვენი ელფოსტის დომენები, მაგ: you@yourname.com"
       ],
@@ -6327,6 +6336,9 @@
       ],
       "Square image of at least 128 pixels": [
         "ოთხკუთხედი გამოსახულება 128 პიქსელით მაინც"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6854,6 +6866,9 @@
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-ის საბაზისო URL და კოდი წაიშლება."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "იმისათვის, რომ თავიდან ჩართოთ სინქრონიზაცია თქვენი იდენტიფიკაციის მომწოდებლისთვის, SCIM-თან ინტეგრაცია თავიდან უნდა დაასრულოთ."
       ]
     },
     "scim: Label": {
@@ -7298,6 +7313,11 @@
         "თქვენი ონლაინ კონფიდენციალობა"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -7541,6 +7561,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე ${ maxAi } მომხმარებლისთვის",
+        "${ BRAND_NAME } Scribe წერის დამხმარე ${ maxAi } მომხმარებლისთვის"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } გამოყოფილი სერვერი",
         "${ ipAddresses } გამოყოფილი სერვერი"
@@ -7656,6 +7680,9 @@
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
+      ],
+      "${ MAIL_APP_NAME } keeps your business data secure and lets you send encrypted emails to anyone.": [
+        "${ MAIL_APP_NAME } თქვენი კომპანიის მონაცემებს უსაფრთხოთ ინარჩუნებს და საშუალებას გაძლევთ, დაშიფრული ელფოსტები აგზავნოთ."
       ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
         "${ MAIL_APP_NAME } ავტომატური ელფოსტის გადაგზავნით"
@@ -7777,6 +7804,12 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
+      "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
+        "როგორ შევუბრუნეთ ხელი, როცა ${ BRAND_NAME } აგრესიული ცენზურის კამპანიის სამიზნე იყო."
+      ],
+      "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
+        "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა ჰონკ-კონგში საფრთხის ქვეშ იყო."
+      ],
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
       ],
@@ -7785,6 +7818,9 @@
       ],
       "Keep ${ config.planName }": [
         "${ config.planName }-ის დატოვება"
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "შეინარჩუნეთ თქვენი გუნდი უსაფრთხოდ პირდაპირ მუშაობისას ჩვენი აპებით ვებისთვის, iOS-სთვის, Android-სთვის, Windows-სთვის, Mac-სთვის და Linux-სთვის."
       ],
       "Learn more": [
         "გაიგეთ მეტი"
@@ -8894,6 +8930,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "არჩეული თემა აქტიური იქნება, როცა სისტემა 'ღია რეჟიმზეა' დაყენებული"
       ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."
+      ],
       "Usually an URL that contains the identity provider's name within": [
         "ჩვეულებრივ ბმული, რომელიც იდენტიფიკატორის მომწოდებლის სახელს შეიცავს"
       ],
@@ -8948,9 +8987,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } მისამართი"
-      ],
       "Add multiple users": [
         "ერთზე მეტი მომხმარებლის დამატება"
       ],
@@ -8981,8 +9017,14 @@
       "Email": [
         "ელფოსტა"
       ],
+      "Invitation email": [
+        "მოწვევის ელფოსტა"
+      ],
       "Name": [
         "სახელი"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "ახალი ${ BRAND_NAME }-ის ელფოსტის მისამართი"
       ],
       "Optional": [
         "არასავალდებულო"

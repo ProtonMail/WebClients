@@ -7780,6 +7780,11 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizator",
+        "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } utilizatori",
+        "Asistent de scriere ${ BRAND_NAME } Scribe pentru ${ maxAi } de utilizatori"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server dedicat",
         "${ ipAddresses } servere dedicate",
@@ -9292,9 +9297,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Adresa ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Adăugare utilizatori multipli"
       ],
@@ -9325,8 +9327,14 @@
       "Email": [
         "E-mail"
       ],
+      "Invitation email": [
+        "E-mail de invitare"
+      ],
       "Name": [
         "Nume"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Adresă nouă de e-mail ${ BRAND_NAME }"
       ],
       "Optional": [
         "Opțional"

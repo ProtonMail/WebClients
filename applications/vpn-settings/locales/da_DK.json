@@ -960,6 +960,9 @@
       "Custom domain problem": [
         "Brugerdomæne-problem"
       ],
+      "Docs problem": [
+        "Docs-problem"
+      ],
       "Drive problem": [
         "Drive-problem"
       ],
@@ -7655,6 +7658,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } bruger",
+        "${ BRAND_NAME } Scribe-skriveassistent til ${ maxAi } brugere"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikeret server",
         "${ ipAddresses } dedikerede servere"
@@ -9149,9 +9156,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adresse"
-      ],
       "Add multiple users": [
         "Tilføj flere brugere"
       ],
@@ -9182,8 +9186,14 @@
       "Email": [
         "E-mail"
       ],
+      "Invitation email": [
+        "Invitationsmail"
+      ],
       "Name": [
         "Navn"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Ny ${ BRAND_NAME } e-mailadresse"
       ],
       "Optional": [
         "Valgfri"

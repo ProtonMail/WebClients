@@ -974,6 +974,9 @@
       "Custom domain problem": [
         "Праблема з карыстальніцкім даменам"
       ],
+      "Docs problem": [
+        "Праблема з Docs"
+      ],
       "Drive problem": [
         "Праблема з Дыскам"
       ],
@@ -4192,7 +4195,7 @@
         "Запампуйце лагатып сваёй арганізацыі, каб павысіць ідэнтычнасць вашага брэнда і стварыць персаналізаваны досвед для вашых карыстальнікаў."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        "Выкарыстоўвайце лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
+        "Выкарыстоўваць лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
         "Выкарыстоўвайце розныя тыпы адрасоў электроннай пошты і псеўданімы, якія прапануе ${ BRAND_NAME }."
@@ -7851,6 +7854,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальніка",
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальнікаў",
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальнікаў",
+        "${ BRAND_NAME } Scribe памочнік у напісанні для ${ maxAi } карыстальнікаў"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } вылучаны сервер",
         "${ ipAddresses } вылучаныя серверы",
@@ -9387,9 +9396,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Адрас ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Дадаць некалькі карыстальнікаў"
       ],
@@ -9420,8 +9426,14 @@
       "Email": [
         "Электронная пошта"
       ],
+      "Invitation email": [
+        "Электронны ліст запрашэння"
+      ],
       "Name": [
         "Імя"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Новы адрас электроннай пошты ${ BRAND_NAME }"
       ],
       "Optional": [
         "Неабавязкова"
