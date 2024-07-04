@@ -109,6 +109,9 @@
       "Copy and close": [
         "Salin dan tutup"
       ],
+      "Copy link": [
+        "Salin tautan"
+      ],
       "Copy to clipboard": [
         "Salin ke papan klip"
       ],
@@ -301,11 +304,11 @@
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
-      "Move to Trash": [
-        "Pindahkan ke Sampah"
-      ],
       "Move to trash": [
         "Pindahkan ke sampah"
+      ],
+      "Move to Trash": [
+        "Pindahkan ke Sampah"
       ],
       "Multiple select": [
         "Pilih banyak berkas"
@@ -343,11 +346,17 @@
       "Reject invitation": [
         "Tolak undangan"
       ],
+      "Reload": [
+        "Muat ulang"
+      ],
       "Remove": [
         "Hapus"
       ],
       "Remove access": [
         "Hapus akses"
+      ],
+      "Remove link": [
+        "Hapus tautan"
       ],
       "Remove member": [
         "Hapus anggota"
@@ -400,6 +409,12 @@
       "Set access level": [
         "Tentukan tingkat akses"
       ],
+      "Set extra password": [
+        "Tetapkan kata sandi tambahan"
+      ],
+      "Setup 2FA": [
+        "Siapkan 2FA"
+      ],
       "Share": [
         "Bagikan"
       ],
@@ -438,6 +453,9 @@
       ],
       "Try again.": [
         "Coba lagi."
+      ],
+      "Try for free": [
+        "Coba gratis"
       ],
       "Unlock offline with password": [
         "Buka kunci secara offline dengan kata sandi"
@@ -961,9 +979,6 @@
       "${ memberCount } member": [
         "${ memberCount } anggota"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } kali"
-      ],
       "${ n } item": [
         "${ n } item"
       ],
@@ -1170,6 +1185,12 @@
       ],
       "Enter your PIN code": [
         "Masukkan kode PIN Anda"
+      ],
+      "Extra password successfuly created": [
+        "Kata sandi tambahan berhasil dibuat"
+      ],
+      "Extra password successfuly removed": [
+        "Kata sandi tambahan berhasil dihapus"
       ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
@@ -1407,6 +1428,15 @@
       ],
       "Please confirm your password": [
         "Silakan konfirmasi kata sandi Anda"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Silakan konfirmasi kata sandi Anda untuk mengunci secara otomatis dengan kata sandi Anda."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Silakan konfirmasi kata sandi Anda untuk menonaktifkan kunci Anda saat ini."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Silakan konfirmasi kata sandi Anda untuk memperbarui waktu penguncian otomatis."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Silakan konfirmasi kode PIN Anda untuk menonaktifkan kunci Anda saat ini."
@@ -1770,6 +1800,9 @@
       "Confirm vault name": [
         "Konfirmasi nama brankas"
       ],
+      "Copy": [
+        "Salin"
+      ],
       "Create a credit card": [
         "Buat kartu kredit"
       ],
@@ -1830,8 +1863,14 @@
       "Expiration date": [
         "Tanggal kedaluwarsa"
       ],
+      "Expired": [
+        "Kedaluwarsa"
+      ],
       "Export": [
         "Ekspor"
+      ],
+      "Extra password": [
+        "Kata sandi tambahan"
       ],
       "Field name": [
         "Nama kolom"
@@ -2327,6 +2366,9 @@
       "Breaches detected for": [
         "Kebocoran terdeteksi untuk"
       ],
+      "Confirm extra password": [
+        "Konfirmasi kata sandi tambahan"
+      ],
       "Confirm PIN code": [
         "Konfirmasikan kode PIN"
       ],
@@ -2489,6 +2531,9 @@
       "Remove email address?": [
         "Hapus alamat email?"
       ],
+      "Remove extra password": [
+        "Hapus kata sandi tambahan"
+      ],
       "Resolved breaches": [
         "Kebocoran yang telah terselesaikan"
       ],
@@ -2512,6 +2557,9 @@
       ],
       "Set access level": [
         "Tentukan tingkat akses"
+      ],
+      "Set extra password": [
+        "Tetapkan kata sandi tambahan"
       ],
       "Set up 2FA for better security": [
         "Atur 2FA untuk keamanan yang lebih"
@@ -2658,6 +2706,12 @@
       "Expiration Date is not in the format MM/YY": [
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"
       ],
+      "Extra password cannot be empty": [
+        "Kata sandi tambahan tidak dapat kosong"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Kata sandi tambahan harus berisi setidaknya 8 karakter"
+      ],
       "Failed to load breaches.": [
         "Daftar kebocoran gagal dimuat."
       ],
@@ -2712,6 +2766,9 @@
       "Passphrase is required": [
         "Frasa sandi dibutuhkan"
       ],
+      "Passwords do not match": [
+        "Kata sandi tidak sesuai"
+      ],
       "PGP encrypted export file requires passphrase": [
         "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
       ],
@@ -2723,6 +2780,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Silakan verifikasi alamat email Anda untuk menggunakan fitur berbagi brankas"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Menghapus kata sandi tambahan Anda akan mengeluarkan Anda dari semua perangkat dan mengakhiri semua sesi aktif."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."

@@ -106,6 +106,9 @@
       "Copy and close": [
         "Скопіювати та закрити"
       ],
+      "Copy link": [
+        "Копіювати посилання"
+      ],
       "Copy to clipboard": [
         "Скопіювати до буферу обміну"
       ],
@@ -298,10 +301,10 @@
       "Move to another vault": [
         "Перемістити в інше сховище"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Перемістити до смітника"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Перемістити до смітника"
       ],
       "Multiple select": [
@@ -340,11 +343,17 @@
       "Reject invitation": [
         "Відхилити запрошення"
       ],
+      "Reload": [
+        "Перезавантажити"
+      ],
       "Remove": [
         "Вилучити"
       ],
       "Remove access": [
         "Вилучити доступ"
+      ],
+      "Remove link": [
+        "Вилучити посилання"
       ],
       "Remove member": [
         "Вилучити учасника"
@@ -432,6 +441,9 @@
       ],
       "Try again.": [
         "Спробувати знову."
+      ],
+      "Try for free": [
+        "Спробуйте безплатно"
       ],
       "Unpin item": [
         "Відкріпити елемент"
@@ -961,12 +973,6 @@
         "${ memberCount } учасників",
         "${ memberCount } учасників"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } раз",
-        "${ modifiedCount } разів",
-        "${ modifiedCount } рази",
-        "${ modifiedCount } рази"
-      ],
       "${ n } item": [
         "${ n } елемент",
         "Елементів: ${ n }",
@@ -1122,6 +1128,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введіть код підтвердження. Цифри ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Уведіть ваш додатковий пароль"
       ],
       "Enter your PIN code": [
         "Введіть PIN-код"
@@ -1423,6 +1432,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Діліться своїми входами, захищеними нотатками з 10 людьми"
       ],
+      "Sign in to your account": [
+        "Увійдіть у свій обліковий запис"
+      ],
       "Signing you in": [
         "Виконується вхід"
       ],
@@ -1701,6 +1713,9 @@
       "Confirm vault name": [
         "Підтвердити назву сховища"
       ],
+      "Copy": [
+        "Копіювати"
+      ],
       "Create a credit card": [
         "Створити кредитну картку"
       ],
@@ -1751,6 +1766,9 @@
       ],
       "Expiration date": [
         "Термін дії"
+      ],
+      "Expired": [
+        "Термін дії завершився"
       ],
       "Export": [
         "Експорт"
@@ -2459,6 +2477,9 @@
       "Trash empty": [
         "Смітник порожній"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Розблокувати ${ brandNameJSX }"
+      ],
       "Update available": [
         "Доступне оновлення"
       ],
@@ -2479,6 +2500,9 @@
       ],
       "Weak passwords": [
         "Слабкі паролі"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Ласкаво просимо до ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Що таке псевдонім?"
@@ -2568,6 +2592,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Дата закінчення терміну придатності не у форматі ММ/РР"
       ],
+      "Extra password cannot be empty": [
+        "Додатковий пароль не може бути порожнім"
+      ],
       "Failed to load breaches.": [
         "Не вдалося завантажити порушення."
       ],
@@ -2624,6 +2651,9 @@
       ],
       "Passphrase is required": [
         "Парольна фраза обов'язкова"
+      ],
+      "Passwords do not match": [
+        "Паролі відрізняються"
       ],
       "PGP encrypted export file requires passphrase": [
         "Зашифрований файл експорту PGP вимагає парольної фрази"
