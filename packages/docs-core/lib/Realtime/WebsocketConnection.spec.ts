@@ -1,4 +1,9 @@
-import { DebugConnection, WebsocketConnection, getWebSocketServerURL } from './WebsocketConnection'
+import {
+  DebugConnection,
+  TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY,
+  WebsocketConnection,
+} from './WebsocketConnection'
+import { getWebSocketServerURL } from './getWebSocketServerURL'
 import { WebsocketCallbacks } from './WebsocketCallbacks'
 import { LoggerInterface } from '@proton/utils/logs'
 import { Result } from '../Domain/Result/Result'
@@ -18,18 +23,136 @@ describe('WebsocketConnection', () => {
       } as unknown as WebsocketCallbacks,
       {
         error: jest.fn(),
+        info: jest.fn(),
       } as unknown as LoggerInterface,
     )
+
+    Object.defineProperty(document, 'visibilityState', {
+      value: 'visible',
+      writable: true,
+    })
   })
 
   afterEach(() => {
     connection.destroy()
     jest.clearAllMocks()
+    jest.useRealTimers()
   })
 
   describe('DebugConnection', () => {
     it('should not be enabled', () => {
       expect(DebugConnection.enabled).toBe(false)
+    })
+  })
+
+  describe('handleVisibilityChangeEvent', () => {
+    it('should queue reconnection with no delay if visibility state is visible', () => {
+      Object.defineProperty(document, 'visibilityState', {
+        value: 'visible',
+        writable: true,
+      })
+
+      const reconnect = (connection.queueReconnection = jest.fn())
+
+      connection.handleVisibilityChangeEvent()
+
+      expect(reconnect).toHaveBeenCalledWith({ skipDelay: true })
+    })
+
+    it('should queue disconnect if visibility state is hidden and socket is open', () => {
+      jest.useFakeTimers()
+
+      Object.defineProperty(document, 'visibilityState', {
+        value: 'hidden',
+        writable: true,
+      })
+
+      const disconnect = (connection.disconnect = jest.fn())
+
+      connection.handleVisibilityChangeEvent()
+
+      jest.advanceTimersByTime(TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY + 1)
+
+      expect(disconnect).toHaveBeenCalled()
+    })
+
+    it('should cancel queued disconnect if visibility state is visible', () => {
+      jest.useFakeTimers()
+
+      Object.defineProperty(document, 'visibilityState', {
+        value: 'hidden',
+        writable: true,
+      })
+
+      connection.handleVisibilityChangeEvent()
+
+      expect(connection.closeConnectionDueToGoingAwayTimer).not.toBeUndefined()
+
+      Object.defineProperty(document, 'visibilityState', {
+        value: 'visible',
+        writable: true,
+      })
+
+      connection.handleVisibilityChangeEvent()
+
+      expect(connection.closeConnectionDueToGoingAwayTimer).toBeUndefined()
+    })
+  })
+
+  describe('handleWindowCameOnlineEvent', () => {
+    it('should reconnect without delay', () => {
+      const reconnect = (connection.queueReconnection = jest.fn())
+
+      connection.handleWindowCameOnlineEvent()
+
+      expect(reconnect).toHaveBeenCalledWith({ skipDelay: true })
+    })
+  })
+
+  describe('connect', () => {
+    it('should not proceed if last visibility state is hidden', () => {
+      Object.defineProperty(document, 'visibilityState', {
+        value: 'hidden',
+        writable: true,
+      })
+
+      const getToken = (connection.getTokenOrFailConnection = jest.fn())
+
+      connection.connect()
+
+      expect(getToken).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('queueReconnection', () => {
+    it('should reconnect with delay if skipDelay is not set', () => {
+      jest.useFakeTimers()
+
+      const connect = (connection.connect = jest.fn())
+
+      connection.state.getBackoff = jest.fn().mockReturnValue(1000)
+
+      connection.queueReconnection()
+
+      jest.advanceTimersByTime(500)
+
+      expect(connect).not.toHaveBeenCalled()
+
+      jest.advanceTimersByTime(1000)
+
+      expect(connect).toHaveBeenCalled()
+    })
+
+    it('should reconnect without delay if skipDelay is set', () => {
+      jest.useFakeTimers()
+
+      const connect = (connection.connect = jest.fn())
+
+      connection.queueReconnection({ skipDelay: true })
+
+      jest.advanceTimersByTime(1)
+
+      expect(connect).toHaveBeenCalled()
     })
   })
 
