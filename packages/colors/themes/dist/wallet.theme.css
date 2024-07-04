@@ -77,6 +77,7 @@
   --shadow-raised-opacity: 0.35;
   --shadow-lifted-opacity: 0.4;
   --backdrop-norm: rgb(0 0 0 / 0.5);
+  --bg-overlay: #e2e2e277;
   --field-background-color: var(--background-weak);
   --field-hover-background-color: var(--background-weak);
   --optional-field-background-color: var(--background-weak);
@@ -101,9 +102,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
 }
 
 .ui-green {
@@ -119,9 +117,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
 }
 
 .ui-orange {
@@ -137,9 +132,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
 }
 
 .ui-pink {
@@ -155,9 +147,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
 }
 
 .ui-purple {
@@ -173,7 +162,4 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
 }

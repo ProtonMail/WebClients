@@ -78,7 +78,7 @@ export const TransactionReview = ({
             {loadingSend && (
                 <div
                     className="fixed top-0 left-0 w-full h-full flex flex-column items-center justify-center"
-                    style={{ background: '#e2e2e277' }}
+                    style={{ background: 'var(--bg-overlay)' }}
                 >
                     <CircleLoader size="medium" className="color-primary" />
                 </div>
