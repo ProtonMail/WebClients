@@ -231,9 +231,6 @@
       "Download anyway": [
         "Baixar mesmo assim"
       ],
-      "Duplicate": [
-        "Duplicar"
-      ],
       "Edit": [
         "Editar"
       ],
@@ -291,9 +288,6 @@
       "Hide advanced PGP settings": [
         "Ocultar configurações PGP avançadas"
       ],
-      "History": [
-        "Histórico"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Não foi possível carregar a imagem devido à proteção de rastreamento."
       ],
@@ -344,6 +338,9 @@
       ],
       "Loading verification": [
         "Carregando verificação"
+      ],
+      "Make a copy": [
+        "Fazer uma cópia"
       ],
       "Manage folders": [
         "Gerenciar pastas"
@@ -447,8 +444,8 @@
       "Remove gift code": [
         "Remover código de vale-presente"
       ],
-      "Rename": [
-        "Renomear"
+      "Rename document": [
+        "Renomear documento"
       ],
       "Replace file": [
         "Substituir arquivo"
@@ -488,6 +485,9 @@
       ],
       "See how": [
         "Veja como"
+      ],
+      "See version history": [
+        "Ver histórico de versões"
       ],
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
@@ -823,6 +823,9 @@
       ],
       "Custom domain problem": [
         "Problema com domínio personalizado"
+      ],
+      "Docs problem": [
+        "Problema no Docs"
       ],
       "Drive problem": [
         "Problemas no Drive"
@@ -2146,6 +2149,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Valor abaixo do mínimo (${ minimumAmount })."
       ],
+      "An error occurred while creating a new document. Please try again.": [
+        "Ocorreu um erro ao criar um novo documento. Tente novamente."
+      ],
       "An error occurred while loading alias options": [
         "Ocorreu um erro no carregamento de opções de alias"
       ],
@@ -2219,6 +2225,9 @@
       ],
       "External invitations are temporarily disabled. Please try again later": [
         "Convites externos estão temporariamente desabilitados. Por favor, tente novamente mais tarde"
+      ],
+      "Failed to rename document. Please try again later.": [
+        "A renomeação do documento falhou, tente novamente mais tarde"
       ],
       "File \"${ name }\" is already downloading": [
         "O arquivo \"${ name }\" já está sendo baixado"
@@ -3649,6 +3658,12 @@
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Erro ao coverter o documento ${ errorMessage }"
+      ],
+      "Error loading document${ errorDetail }": [
+        "Erro ao carregar o documento ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Erro ao sincronizar"
       ],
@@ -3808,6 +3823,9 @@
       ],
       "Loading...": [
         "Carregando..."
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Parece que você está off-line. O documento não pode ser editado enquanto você estiver off-line. Verifique a conectividade de seu dispositivo."
       ],
       "Low Priority": [
         "Baixa prioridade"
@@ -4015,6 +4033,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "Some edits are taking longer to sync than expected.": [
+        "Algumas edições estão demorando mais do que o esperado para serem sincronizadas."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
@@ -4306,6 +4327,9 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "A sua conta será atualizada assim que o pagamento for aprovado."
+      ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "Suas alterações estão sendo sincronizadas com o Drive. Não feche a página web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Seu navegador atual não suporta o download de arquivos grandes devido à indisponibilidade de agentes de serviços. O download de arquivos grandes pode congelar ou deixar o navegador sem resposta. Use as versões mais recentes de um ${ recommendedBrowser } e tente novamente."
