@@ -22,7 +22,7 @@ export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled
                 size="small"
                 className="mx-1"
             >
-                <Icon name="chevron-left" />
+                <Icon name="chevron-left" alt={c('Action').t`Previous`} />
             </Button>
             <Button
                 onClick={() => onNext()}
@@ -32,7 +32,7 @@ export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled
                 size="small"
                 className="mx-1"
             >
-                <Icon name="chevron-right" />
+                <Icon name="chevron-right" alt={c('Action').t`Next`} />
             </Button>
         </div>
     );
