@@ -109,6 +109,9 @@
       "Copy and close": [
         "Kopioi ja sulje"
       ],
+      "Copy link": [
+        "Kopioi linkki"
+      ],
       "Copy to clipboard": [
         "Kopioi leikepöydälle"
       ],
@@ -298,10 +301,10 @@
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Siirrä roskakoriin"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Siirrä roskakoriin"
       ],
       "Multiple select": [
@@ -340,11 +343,17 @@
       "Reject invitation": [
         "Kieltäydy kutsusta"
       ],
+      "Reload": [
+        "Päivitä"
+      ],
       "Remove": [
         "Poista"
       ],
       "Remove access": [
         "Mitätöi käyttöoikeus"
+      ],
+      "Remove link": [
+        "Poista linkki"
       ],
       "Remove member": [
         "Poista jäsen"
@@ -397,6 +406,9 @@
       "Set access level": [
         "Aseta käyttöoikeustaso"
       ],
+      "Set extra password": [
+        "Aseta lisäsalasana"
+      ],
       "Setup 2FA": [
         "Määritä 2FA"
       ],
@@ -438,6 +450,9 @@
       ],
       "Try again.": [
         "Yritä uudelleen."
+      ],
+      "Try for free": [
+        "Kokeile ilmaiseksi"
       ],
       "Unlock offline with password": [
         "Avaa salasanalla yhteydettömässä tilassa"
@@ -943,10 +958,6 @@
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } kerran",
-        "${ modifiedCount } kertaa"
-      ],
       "${ n } item": [
         "${ n } kohde",
         "${ n } kohdetta"
@@ -1063,6 +1074,9 @@
       "Click here to add a field for a username.": [
         "Lisää kenttä käyttäjätunnukselle klikkaamalla tästä."
       ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Vahvista lisäsalasanasi jatkaaksesi sen poistamista."
+      ],
       "Congratulations, your access has been confirmed": [
         "Onnittelut, käyttöoikeutesi on vahvistettu"
       ],
@@ -1101,6 +1115,9 @@
       ],
       "Drop to import": [
         "Tuo pudottamalla"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Safari-selaimen laajennusten rajoitusten vuoksi tiedostopääte \".pgp\" puuttuu tietojen viennin jälkeen. Nimeä tiedosto uudelleen viennin jälkeen siten, että sillä on \".pgp\" -pääte (esim. file.pgp)."
       ],
       "Editor": [
         "Muokkaus"
@@ -1141,8 +1158,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
       ],
+      "Enter your extra password": [
+        "Syötä lisäsalasanasi"
+      ],
       "Enter your PIN code": [
         "Syötä PIN-koodisi"
+      ],
+      "Extra password successfuly created": [
+        "Lisäsalasanan luonti onnistui"
+      ],
+      "Extra password successfuly removed": [
+        "Lisäsalasanan poisto onnistui"
       ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
@@ -1376,6 +1402,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vahvista ${ PASS_APP_NAME } -tietojesi vienti ${ BRAND_NAME }-salasanallasi."
       ],
+      "Please confirm your password": [
+        "Ole hyvä ja vahvista salasanasi"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Vahvista salasanasi käyttääksesi automaattista salasanalukitusta."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Poista nykyinen lukitustapa vahvistamalla salasanasi."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Vahvista salasanasi muuttaaksesi automaattilukituksen viivettä."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Poista nykyinen lukitustapa vahvistamalla PIN-koodisi."
       ],
@@ -1409,8 +1447,14 @@
       "Reconnecting": [
         "Yhdistetään uudelleen"
       ],
+      "Registering extra password...": [
+        "Lisäsalasanaa lisätään..."
+      ],
       "Registering PIN lock failed": [
         "PIN-lukituksen käyttöönotto epäonnistui"
+      ],
+      "Removing extra password...": [
+        "Lisäsalasanaa poistetaan..."
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -1447,6 +1491,9 @@
       ],
       "Share your logins, secure notes, with up to 10 people": [
         "Jaa kirjautumistietosi ja suojatut muistiinpanosi jopa 10 henkilölle"
+      ],
+      "Sign in to your account": [
+        "Kirjaudu tilillesi"
       ],
       "Signing you in": [
         "Kirjaudutaan sisään"
@@ -1517,6 +1564,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Avaa ${ PASS_SHORT_APP_NAME } lisäsalasanallasi"
       ],
       "Unpinning item...": [
         "Kohdetta irrotetaan..."
@@ -1593,6 +1646,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Sinut kirjataan ulos ja sinun on kirjauduttava uudelleen sisään kaikilla muilla laitteillasi."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "Saat ilmoituksen näihin sähköpostiosoitteisiin liittyvistä tietomurroista."
@@ -1719,6 +1775,9 @@
       "Confirm vault name": [
         "Vahvista holvin nimi"
       ],
+      "Copy": [
+        "Kopioi"
+      ],
       "Create a credit card": [
         "Luo maksukortti"
       ],
@@ -1779,8 +1838,14 @@
       "Expiration date": [
         "Voimassaolo päättyy"
       ],
+      "Expired": [
+        "Erääntynyt"
+      ],
       "Export": [
         "Vienti"
+      ],
+      "Extra password": [
+        "Lisäsalasana"
       ],
       "Field name": [
         "Kentän nimi"
@@ -1949,6 +2014,9 @@
       ],
       "Prefix": [
         "Etuliite"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Suojaa ${ PASS_APP_NAME } lisäsalasanalla"
       ],
       "Rate us": [
         "Arvostele meidät"
@@ -2275,6 +2343,9 @@
       "Breaches detected for": [
         "Havaittua tietomurtoa osoitteelle"
       ],
+      "Confirm extra password": [
+        "Vahvista lisäsalasana"
+      ],
       "Confirm PIN code": [
         "Vahvista PIN-koodi"
       ],
@@ -2437,6 +2508,9 @@
       "Remove email address?": [
         "Poistetaanko sähköpostiosoite?"
       ],
+      "Remove extra password": [
+        "Poista lisäsalasana"
+      ],
       "Resolved breaches": [
         "Ratkaistut tietomurrot"
       ],
@@ -2461,6 +2535,9 @@
       ],
       "Set access level": [
         "Aseta käyttöoikeustaso"
+      ],
+      "Set extra password": [
+        "Aseta lisäsalasana"
       ],
       "Set up 2FA for better security": [
         "Tehosta suojausta määrittämällä 2FA"
@@ -2489,6 +2566,9 @@
       "Trash empty": [
         "Roskakori on tyhjä"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Avaa ${ brandNameJSX }"
+      ],
       "Update available": [
         "Päivitys saatavilla"
       ],
@@ -2509,6 +2589,9 @@
       ],
       "Weak passwords": [
         "Heikot salasanat"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Tervetuloa ${ brandNameJSX }iin"
       ],
       "What is an alias?": [
         "Mikä on alias?"
@@ -2577,6 +2660,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Aliaksen postilaatikoiden nouto ei juuri nyt onnistu"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Varoitus: Jos kadotat tämän salasanan, et enää pääse ${ PASS_APP_NAME }-tilillesi."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Holvia \"${ vaultName }\" ei voitu luoda"
       ],
@@ -2597,6 +2683,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Erääntymisaika ei ole muodossa KK/VV"
+      ],
+      "Extra password cannot be empty": [
+        "Lisäsalasana ei voi olla tyhjä"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Lisäsalasanan on oltava vähintään 8 merkkiä"
       ],
       "Failed to load breaches.": [
         "Tietomurtojen lataus epäonnistui."
@@ -2653,17 +2745,29 @@
       "Passphrase is required": [
         "Tunnuslauseke vaaditaan"
       ],
+      "Passwords do not match": [
+        "Salasanat eivät täsmää"
+      ],
       "PGP encrypted export file requires passphrase": [
         "PGP-salattu vientitiedosto vaatii tunnuslausekkeen"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Tarkista, että laajennus on asennettu oikein ja otettu käyttöön"
+      ],
       "Please contact us for investigating the issue": [
         "Ota meihin yhteyttä ongelman tutkimiseksi"
+      ],
+      "Please update the extension to its latest version": [
+        "Päivitä laajennus uusimpaan versioon"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"
       ],
       "Please verify your email address in order to use vault sharing": [
         "Käytä hovijakoa vahvistamalla sähköpostiosoitteesi."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Lisäsalasanasi poistaminen kirjaa sinut ulos kaikista laitteista ja lopettaa kaikki aktiiviset istunnot."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."

@@ -106,6 +106,9 @@
       "Copy and close": [
         "Kopiera och stäng"
       ],
+      "Copy link": [
+        "Kopiera länk"
+      ],
       "Copy to clipboard": [
         "Kopiera till urklipp"
       ],
@@ -184,6 +187,9 @@
       "Enable Dark Web Monitoring": [
         "Aktivera övervakning för mörka webben"
       ],
+      "Entire vault": [
+        "Hela valvet"
+      ],
       "Exclude from monitoring": [
         "Exkludera från övervakning"
       ],
@@ -205,8 +211,17 @@
       "Generate password": [
         "Generera lösenord"
       ],
+      "Generate secure link": [
+        "Generera säker länk"
+      ],
       "Generated passwords": [
         "Genererade lösenord"
+      ],
+      "Generating secure link...": [
+        "Generera säker länk …"
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Skaffa ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Skaffa mobilappar"
@@ -256,6 +271,12 @@
       "Leave vault": [
         "Lämna valv"
       ],
+      "Link copied to clipboard": [
+        "Länk kopierad till urklipp"
+      ],
+      "Link expires after": [
+        "Länk löper ut efter"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Lås ${ PASS_APP_NAME }"
       ],
@@ -271,11 +292,17 @@
       "Manage access": [
         "Hantera åtkomst"
       ],
+      "Manage vault access": [
+        "Hantera valvåtkomst"
+      ],
       "Manually sync your data": [
         "Synkronisera dina data manuellt"
       ],
       "Mark as resolved": [
         "Markera som löst"
+      ],
+      "Maximum views": [
+        "Maximalt antal visningar"
       ],
       "More info: ${ safeTitle }": [
         "Mer information: ${ safeTitle }"
@@ -295,14 +322,17 @@
       "Move to another vault": [
         "Flytta till annat valv"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Flytta till papperskorg"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Flytta till papperskorg"
       ],
       "Multiple select": [
         "Välj flera"
+      ],
+      "No expired links": [
+        "Inga utlöpta länkar"
       ],
       "OK": [
         "OK"
@@ -337,11 +367,20 @@
       "Reject invitation": [
         "Avböj inbjudan"
       ],
+      "Reload": [
+        "Ladda om"
+      ],
       "Remove": [
         "Ta bort"
       ],
       "Remove access": [
         "Ta bort åtkomst"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Ta bort alla utlöpta länkar (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Ta bort länk"
       ],
       "Remove member": [
         "Ta bort medlem"
@@ -364,6 +403,9 @@
       "Restore item": [
         "Återställ objekt"
       ],
+      "Restrict number of views": [
+        "Begränsa antalet visningar"
+      ],
       "Resume monitoring": [
         "Återuppta övervakning"
       ],
@@ -378,6 +420,9 @@
       ],
       "Saving": [
         "Sparar"
+      ],
+      "Secure links": [
+        "Säkra länkar"
       ],
       "See all": [
         "Se alla"
@@ -403,11 +448,17 @@
       "Share": [
         "Dela"
       ],
+      "Share secure link": [
+        "Dela säker länk"
+      ],
       "Share this vault": [
         "Dela detta valv"
       ],
       "Share vault": [
         "Dela valv"
+      ],
+      "Shared links": [
+        "Delade länkar"
       ],
       "Show": [
         "Visa"
@@ -420,6 +471,9 @@
       ],
       "Sign out": [
         "Logga ut"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Någon delade ett objekt med dig på ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortera valvobjekt"
@@ -438,6 +492,9 @@
       ],
       "Try again.": [
         "Försök igen."
+      ],
+      "Try for free": [
+        "Prova gratis"
       ],
       "Unlock offline with password": [
         "Lås upp offline med lösenord"
@@ -459,6 +516,9 @@
       ],
       "Verify": [
         "Verifiera"
+      ],
+      "Via secure link": [
+        "Via säker länk"
       ],
       "View details": [
         "Visa detaljer"
@@ -734,6 +794,9 @@
       "Importing items failed": [
         "Misslyckades att importera objekt"
       ],
+      "Inactive secure links could not be removed.": [
+        "Inaktiva säkra länkar kunde inte tas bort."
+      ],
       "Invalid password manager": [
         "Ogiltig lösenordshanterare"
       ],
@@ -779,6 +842,12 @@
       "Restoring trashed items failed": [
         "Misslyckades återställa kastade objekt"
       ],
+      "Secure link could not be created.": [
+        "Säker länk kunde inte skapas."
+      ],
+      "Secure link could not be opened.": [
+        "Säker länk kunde inte öppnas."
+      ],
       "Settings update failed": [
         "Misslyckades att uppdatera inställningar"
       ],
@@ -800,11 +869,17 @@
       "The session has expired. Please sign in again.": [
         "Sessionen har löpt ut. Logga in igen."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Det uppstod ett fel när den säkra länken skulle tas bort. Försök igen om några minuter."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "För många misslyckade försök. Logga in igen."
       ],
       "Trashing item failed": [
         "Borttagning av objekt misslyckades"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prova att kontakta länkägaren."
       ],
       "Unable to generate an OTP code for this item": [
         "Kan inte generera en OTP-kod för detta objekt"
@@ -936,13 +1011,17 @@
       "${ count } invites successfully sent": [
         "${ count } inbjudningar skickat"
       ],
+      "${ count } time": [
+        "${ count } gång",
+        "${ count } gånger"
+      ],
+      "${ count } view": [
+        "${ count } visning",
+        "${ count } visningar"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } gång",
-        "${ modifiedCount } gånger"
       ],
       "${ n } item": [
         "${ n } objekt",
@@ -1006,6 +1085,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Alla nuvarande intrång kommer att markeras som lösta. I händelse av framtida dataintrång kommer du att aviseras."
       ],
+      "All inactive secure links were removed": [
+        "Alla inaktiva säkra länkar togs bort"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alla objekt från “${ payload.content.name }“ flyttades"
       ],
@@ -1030,6 +1112,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Är du säker på att du vill flytta objektet till “${ name }“?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Är du säker på att du vill ta bort länken?"
+      ],
       "Auto-lock successfully disabled.": [
         "Automatisk låsning inaktiverat."
       ],
@@ -1044,6 +1129,9 @@
       ],
       "Built in 2FA authenticator": [
         "Inbyggd 2FA-autentisering"
+      ],
+      "Can be viewed": [
+        "Kan visas"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
@@ -1105,6 +1193,9 @@
       "Drop to import": [
         "Släpp för att importera"
       ],
+      "Easily share your data with friends using secure links": [
+        "Dela enkelt din data med vänner med hjälp av säkra länkar"
+      ],
       "Editor": [
         "Redaktör"
       ],
@@ -1149,6 +1240,12 @@
       ],
       "Enter your PIN code": [
         "Ange din PIN-kod"
+      ],
+      "Expires in": [
+        "Löper ut om"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Löper ut om ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Extra lösenord skapat"
@@ -1430,8 +1527,14 @@
       "Registering PIN lock failed": [
         "Registrering av PIN-lås misslyckades"
       ],
+      "Removing all inactive secure links...": [
+        "Tar bort alla inaktiva säkra länkar …"
+      ],
       "Removing extra password...": [
         "Tar bort extra lösenord …"
+      ],
+      "Removing secure link...": [
+        "Tar bort säker länk …"
       ],
       "Restoring items from trash": [
         "Återställer objekt från papperskorg"
@@ -1511,6 +1614,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
         "Följande ${ result.ignored.length } objekt kunde inte importeras:"
+      ],
+      "The secure link has been removed": [
+        "Den säkra länken har tagits bort"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Texten du försöker klistra in är längre än den högsta tillåtna längden på ${ maxLength } tecken."
@@ -1667,6 +1773,18 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagar"
+      ],
+      "${ hours } hour": [
+        "${ hours } timme",
+        "${ hours } timmar"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuter"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-version"
       ],
@@ -1683,14 +1801,23 @@
       "10 minutes": [
         "10 minuter"
       ],
+      "14 days": [
+        "14 dagar"
+      ],
       "15 minutes": [
         "15 minuter"
+      ],
+      "24 hours": [
+        "24 timmar"
       ],
       "2FA secret key (TOTP)": [
         "Hemlig nyckel för 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA-token (TOTP)"
+      ],
+      "30 days": [
+        "30 dagar"
       ],
       "30 minutes": [
         "30 minuter"
@@ -1700,6 +1827,9 @@
       ],
       "5 minutes": [
         "5 minuter"
+      ],
+      "7 days": [
+        "7 dagar"
       ],
       "A-Z": [
         "A-Ö"
@@ -1754,6 +1884,9 @@
       ],
       "Confirm vault name": [
         "Bekräfta valvnamn"
+      ],
+      "Copy": [
+        "Kopiera"
       ],
       "Create a credit card": [
         "Skapa ett kreditkort"
@@ -1812,6 +1945,12 @@
       "Expiration date": [
         "Utgångsdatum"
       ],
+      "Expired": [
+        "Löpt ut"
+      ],
+      "Expired link": [
+        "Utgången länk"
+      ],
       "Export": [
         "Exportera"
       ],
@@ -1827,8 +1966,14 @@
       "Forwards to": [
         "Vidarebefordras till"
       ],
+      "Free forever": [
+        "Gratis för alltid"
+      ],
       "General": [
         "Allmänt"
+      ],
+      "Generate a secure link for this item": [
+        "Generera en säker länk för detta objekt"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -1910,6 +2055,9 @@
       ],
       "Make all viewers": [
         "Gör alla till visare"
+      ],
+      "Max views reached": [
+        "Maximalt antal visningar uppnått"
       ],
       "Members": [
         "Medlemmar"
@@ -1998,6 +2146,9 @@
       "Recent": [
         "Senaste"
       ],
+      "Remove link": [
+        "Ta bort länk"
+      ],
       "Report a problem": [
         "Rapportera ett problem"
       ],
@@ -2028,6 +2179,15 @@
       "Session locking": [
         "Sessionslåsning"
       ],
+      "Share": [
+        "Dela"
+      ],
+      "Share this vault or create a new vault": [
+        "Dela detta valv eller skapa ett nytt valv"
+      ],
+      "Shared link": [
+        "Delad länk"
+      ],
       "Show website favicons": [
         "Visa webbplatsens favicon"
       ],
@@ -2048,6 +2208,13 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Objektets valv delas för närvarande med ${ targetMembers } person",
+        "Objektets valv delas för närvarande med ${ targetMembers } personer"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL:en har kopierats till urklipp"
       ],
       "Title": [
         "Rubrik"
@@ -2452,6 +2619,9 @@
       "No reused passwords": [
         "Inga återanvända lösenord"
       ],
+      "No shared secure links": [
+        "Inga delade säkra länkar"
+      ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
       ],
@@ -2484,6 +2654,9 @@
       ],
       "Remove extra password": [
         "Ta bort extra lösenord"
+      ],
+      "Remove secure link?": [
+        "Tar bort säker länk?"
       ],
       "Resolved breaches": [
         "Lösta intrång"
@@ -2725,8 +2898,14 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-krypterad exportfil kräver lösenfras"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Kontrollera att utökningen är korrekt installerat och aktiverat"
+      ],
       "Please contact us for investigating the issue": [
         "Kontakta oss för att undersöka problemet"
+      ],
+      "Please update the extension to its latest version": [
+        "Uppdatera utökningen till den senaste versionen"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifiera din e-postadress för att kunna använda e-postalias"

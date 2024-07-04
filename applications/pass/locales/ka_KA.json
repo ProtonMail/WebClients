@@ -89,6 +89,9 @@
       "Copy and close": [
         "კოპირება და დახურვა"
       ],
+      "Copy link": [
+        "ბმულის კოპირება"
+      ],
       "Copy to clipboard": [
         "ბუფერში კოპირება"
       ],
@@ -278,10 +281,10 @@
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "ნაგვის ყუთში გადატანა"
       ],
       "Multiple select": [
@@ -320,11 +323,17 @@
       "Reject invitation": [
         "მოსაწვევის უარყოფა"
       ],
+      "Reload": [
+        "თავიდან ჩატვირთვა"
+      ],
       "Remove": [
         "წაშლა"
       ],
       "Remove access": [
         "წვდომის გაუქმება"
+      ],
+      "Remove link": [
+        "ბმულის წაშლა"
       ],
       "Remove member": [
         "წევრის წაშლა"
@@ -377,6 +386,9 @@
       "Set access level": [
         "წვდომის დონის დაყენება"
       ],
+      "Set extra password": [
+        "დამატებითი პაროლის დაყენება"
+      ],
       "Setup 2FA": [
         "2FA-ის მორგება"
       ],
@@ -418,6 +430,9 @@
       ],
       "Try again.": [
         "კიდევ სცადეთ."
+      ],
+      "Try for free": [
+        "სცადეთ უფასოდ"
       ],
       "Unlock offline with password": [
         "განბლოკვა ქსელგარეშე, პაროლით"
@@ -819,6 +834,9 @@
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
       ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "ახლა ქსელის გარეშე მუშაობთ. აღადგინეთ მიერთება, რომ ${ PASS_SHORT_APP_NAME } განბლოკოთ."
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "თქვენი PIN-კოდი წაშლილია სხვა ${ PASS_APP_NAME }-ის კლიენტის მიერ"
       ]
@@ -905,10 +923,6 @@
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }-ჯერ",
-        "${ modifiedCount }-ჯერ"
-      ],
       "${ n } item": [
         "${ n } ელემენტი",
         "${ n } ელემენტი"
@@ -962,8 +976,14 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "ფსევდონიმი \"${ item.aliasEmail }\" გადატანილია ნაგვის ყუთში. ეს ელფოსტების თქვენს საფოსტო ყუთში გადამისამართებას შეწყვეტს"
       ],
+      "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
+        "მორგებული დომენების მქონე ფსევდონიმების მონიტორინგი არ ხდება. მათი მონიტორინგისთვის ისინი მორგებული ელფოსტის სახით დაამატეთ."
+      ],
       "All breaches for this address were resolved": [
         "ამ მისამართისთვის ყველა გაჟონვა გადაწყვეტილია"
+      ],
+      "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
+        "ყველა მიმდინარე გაჟონვა მონიშნული იქნება, როგორც გადაწყვეტილი. თუ გაჟონვა მომავალშიც მოხდება, ამის შესახებ შეტყობინებას მიიღებთ."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან წარმატებით დასრულდა"
@@ -1018,6 +1038,9 @@
       ],
       "Click here to add a field for a username.": [
         "დააწკაპუნეთ აქ მომხმარებლის სახელისთვის ველის დასამატებლად."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "დაადასტურეთ თქვენი დამატებითი პაროლი, რომ ის წაშალოთ."
       ],
       "Congratulations, your access has been confirmed": [
         "გილოცავთ, თქვენი წვდომა დადასტურებულია"
@@ -1097,8 +1120,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
       ],
+      "Enter your extra password": [
+        "შეიყვანეთ თქვენი დაამატებითი პაროლი"
+      ],
       "Enter your PIN code": [
         "შეიყვანეთ თქვენი PIN კოდი"
+      ],
+      "Extra password successfuly created": [
+        "დამატებითი პაროლი წარმატებით შეიქმნა"
+      ],
+      "Extra password successfuly removed": [
+        "დამატებითი პაროლი წარმატებით წაიშალა"
       ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
@@ -1329,6 +1361,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "დაადასტურეთ თქვნი ${ BRAND_NAME }-ის პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
       ],
+      "Please confirm your password": [
+        "გთხოვთ, დაადასტუროთ პაროლი."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "დაადასტურეთ თქვენი პაროლი, რომ თქვენი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი პაროლი."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "დაადასტურეთ თქვენი პაროლი, რომ ავტოდაბლოკვის დრო განაახლოთ."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი PIN-კოდი."
       ],
@@ -1362,8 +1406,14 @@
       "Reconnecting": [
         "თავიდან დაკავშირება"
       ],
+      "Registering extra password...": [
+        "დამატებითი პაროლის რეგისტრაცია..."
+      ],
       "Registering PIN lock failed": [
         "PIN-კოდით დაბლოკვის რეგისტრაცია ჩავარდა"
+      ],
+      "Removing extra password...": [
+        "დამატებითი პაროლის წაშლა..."
       ],
       "Restoring items from trash": [
         "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
@@ -1400,6 +1450,9 @@
       ],
       "Share your logins, secure notes, with up to 10 people": [
         "გაუზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები 10 პიროვნებამდე"
+      ],
+      "Sign in to your account": [
+        "შედით თქვენს ანგარიშში"
       ],
       "Signing you in": [
         "შესვლა"
@@ -1467,6 +1520,12 @@
       ],
       "Unlimited hide-my-email aliases": [
         "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ${ BRAND_NAME }-ის პაროლით"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი დამატებითი პაროლით"
       ],
       "Unpinning item...": [
         "ელემენტის მოხსნა..."
@@ -1543,6 +1602,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "მიაღწიეთ მაქსიმალურად დაშვებულ ${ maxLength } სიმბოლოს."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "თქვენ ახლა გახვალთ და უნდა თავიდან შემოსვლა მოგიწევთ ყველა თქვენი სხვა მოწყობილობიდან."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "ამ ელფოსტის მისამართებისთვის მონაცემების გაჟონვისას გაფრთხილება მოგივათ."
@@ -1669,6 +1731,9 @@
       "Confirm vault name": [
         "დაადასტურეთ საცავის სახელი"
       ],
+      "Copy": [
+        "კოპირება"
+      ],
       "Create a credit card": [
         "საკრედიტო ბარათის შექმნა"
       ],
@@ -1729,8 +1794,14 @@
       "Expiration date": [
         "ვადა"
       ],
+      "Expired": [
+        "ვადაგასულია"
+      ],
       "Export": [
         "გატანა"
+      ],
+      "Extra password": [
+        "დამატებითი პაროლი"
       ],
       "Field name": [
         "ველის სახელწოდება"
@@ -1899,6 +1970,9 @@
       ],
       "Prefix": [
         "პრეფიქსი"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "დაიცავით ${ PASS_APP_NAME } დამატებითი პაროლით"
       ],
       "Rate us": [
         "შეგვაფასეთ"
@@ -2211,6 +2285,9 @@
       "Breaches detected for": [
         "აღმოჩენილია გაჟონვები ვისთვის"
       ],
+      "Confirm extra password": [
+        "დაადასტურეთ დამატებითი პაროლი"
+      ],
       "Confirm PIN code": [
         "დაადასტურეთ PIN–კოდი"
       ],
@@ -2373,6 +2450,9 @@
       "Remove email address?": [
         "წავშალო ელფოსტის მისამართი?"
       ],
+      "Remove extra password": [
+        "დამატებითი პაროლის წაშლა"
+      ],
       "Resolved breaches": [
         "ამოხსნილი გაჟონვები"
       ],
@@ -2397,6 +2477,9 @@
       ],
       "Set access level": [
         "წვდომის დონის დაყენება"
+      ],
+      "Set extra password": [
+        "დამატებითი პაროლის დაყენება"
       ],
       "Set up 2FA for better security": [
         "მოირგეთ 2FA უკეთესი უსაფრთხოებისთვის"
@@ -2425,6 +2508,9 @@
       "Trash empty": [
         "სანაგვე ყუთი ცარიელია"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "განბლოკეთ ${ brandNameJSX }"
+      ],
       "Update available": [
         "განახლება ხელმისაწვდომია"
       ],
@@ -2445,6 +2531,9 @@
       ],
       "Weak passwords": [
         "სუსტი პაროლები"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
       ],
       "What is an alias?": [
         "რა არის ფსევდონიმი?"
@@ -2513,6 +2602,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "ფრთხილად: თუ პაროლს დაკარგავთ, ${ PASS_APP_NAME }-ის ანგარიშთან წვდომა აღარ გექნებათ."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "საცავის '${ vaultName }' შექმნა შეუძლებელია"
       ],
@@ -2533,6 +2625,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
+      ],
+      "Extra password cannot be empty": [
+        "დამატებითი პაროლი ცარიელი არ შეიძლება იყოს"
+      ],
+      "Extra password should have at least 8 characters": [
+        "დამატებით პაროლი, სულ ცოტა, 8 სიმბოლოს უნდა შეიცავდეს"
       ],
       "Failed to load breaches.": [
         "გაჟონვების ჩატვირთვა ჩავარდა."
@@ -2589,17 +2687,29 @@
       "Passphrase is required": [
         "საკვანძო ფრაზა აუცილებელია"
       ],
+      "Passwords do not match": [
+        "პაროლები არ ემთხვევა"
+      ],
       "PGP encrypted export file requires passphrase": [
         "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "შეამოწმეთ, არის თუ არა გაფართოება სწორად დაყენებული დ ჩართული"
+      ],
       "Please contact us for investigating the issue": [
         "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
+      ],
+      "Please update the extension to its latest version": [
+        "განაახლეთ ეს გაფართოება უახლეს ვერსიამდე"
       ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
       ],
       "Please verify your email address in order to use vault sharing": [
         "საცავის გასაზიარებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "დამატებითი პაროლის წაშლა გაგიყვანთ ყველა მოწყობილობიდან და დაასრულებს ყველა აქტიურ სესიას."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
