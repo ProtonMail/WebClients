@@ -11,7 +11,7 @@ export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
     return [APPS.PROTONVPN_SETTINGS];
 };
 
-export const getAvailableApps = (options: { user?: User }) => {
+export const getAvailableApps = (options: { canAccessWallet: boolean; user?: User }) => {
     if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }
@@ -28,8 +28,11 @@ export const getAvailableApps = (options: { user?: User }) => {
         APPS.PROTONDRIVE,
         APPS.PROTONVPN_SETTINGS,
         APPS.PROTONPASS,
-        APPS.PROTONWALLET,
     ];
+
+    if (options.canAccessWallet) {
+        apps.push(APPS.PROTONWALLET);
+    }
 
     return apps;
 };
