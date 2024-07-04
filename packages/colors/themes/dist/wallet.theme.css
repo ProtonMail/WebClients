@@ -20,6 +20,7 @@
   --signal-danger-major-2: #cc5050;
   --signal-danger-major-3: #b34646;
   --signal-danger-contrast: #000000;
+  --signal-danger-contrast: #ffffff;
   --signal-warning-minor-2: #fff2e6;
   --signal-warning-minor-1: #ffe4cc;
   --signal-warning: #ff7a00;
@@ -46,7 +47,6 @@
   --text-hint: #9395a4;
   --text-disabled: #ced0de;
   --text-invert: #ffffff;
-  --signal-danger-contrast: #ffffff;
   --border-weak: #f3f5f6;
   --border-norm: #e6e8ec;
   --border-strong: #e2e2e2;
@@ -70,10 +70,6 @@
   --interaction-weak-major-3: #c0c0c0;
   --interaction-weak-contrast: #000000;
   --interaction-weak-contrast: #191927;
-  --interaction-norm-hover: var(--interaction-norm-major-1);
-  --interaction-norm-active: var(--interaction-norm-major-2);
-  --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
   --interaction-default: transparent;
   --interaction-default-hover: rgb(191 181 233 / 0.2);
   --interaction-default-active: rgb(191 181 233 / 0.35);
@@ -83,6 +79,8 @@
   --backdrop-norm: rgb(0 0 0 / 0.5);
   --field-background-color: var(--background-weak);
   --field-hover-background-color: var(--background-weak);
+  --optional-field-background-color: var(--background-weak);
+  --optional-field-hover-background-color: var(--background-weak);
   --field-disabled: var(--text-disabled);
   --font-weight-weak: 400;
   --font-weight-normal: 500;
@@ -103,7 +101,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
   --link-norm: var(--interaction-norm);
   --link-hover: var(--interaction-norm-hover);
   --link-active: var(--interaction-norm-active);
@@ -122,7 +119,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
   --link-norm: var(--interaction-norm);
   --link-hover: var(--interaction-norm-hover);
   --link-active: var(--interaction-norm-active);
@@ -141,7 +137,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
   --link-norm: var(--interaction-norm);
   --link-hover: var(--interaction-norm-hover);
   --link-active: var(--interaction-norm-active);
@@ -160,7 +155,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
   --link-norm: var(--interaction-norm);
   --link-hover: var(--interaction-norm-hover);
   --link-active: var(--interaction-norm-active);
@@ -179,7 +173,6 @@
   --interaction-norm-hover: var(--interaction-norm-major-1);
   --interaction-norm-active: var(--interaction-norm-major-2);
   --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
   --link-norm: var(--interaction-norm);
   --link-hover: var(--interaction-norm-hover);
   --link-active: var(--interaction-norm-active);

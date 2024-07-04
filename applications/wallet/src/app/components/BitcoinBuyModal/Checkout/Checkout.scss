@@ -1,3 +1,6 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
 .banxa {
 	&-iframe-container {
 		position: fixed;
