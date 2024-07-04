@@ -839,7 +839,7 @@ const Step1 = ({
                                                                   handleCompletion(subscriptionData)
                                                               ).catch(noop);
                                                           }
-                                                        : undefined
+                                                        : accountStepPaymentRef.current?.process
                                                 }
                                                 footer={(details) => {
                                                     const signIn = (
