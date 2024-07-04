@@ -25,7 +25,7 @@ const termOfUseUrlByGatewayProvider: Record<Exclude<WasmGatewayProvider, 'Unsupp
     Ramp: 'https://ramp.network/terms-of-service',
 };
 const privacyAndCookiesPolicyUrlByGatewayProvider: Record<Exclude<WasmGatewayProvider, 'Unsupported'>, string> = {
-    Banxa: 'https://banxa.com/terms-of-use',
+    Banxa: 'https://banxa.com/privacy-and-cookies-policy',
     MoonPay: 'https://www.moonpay.com/legal/cookie_policy',
     Ramp: 'https://ramp.network/cookie-policy',
 };

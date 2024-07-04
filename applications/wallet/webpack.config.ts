@@ -45,7 +45,7 @@ const result = (env: any): webpack.Configuration => {
                 path: require.resolve('path-browserify'),
             },
         },
-        experiments: { syncWebAssembly: true, asyncWebAssembly: true },
+        experiments: { asyncWebAssembly: true },
         plugins: [
             ...config.plugins,
             new webpack.ProvidePlugin({
