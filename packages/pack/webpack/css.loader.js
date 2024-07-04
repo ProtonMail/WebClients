@@ -35,6 +35,12 @@ module.exports = ({ browserslist, logical }) => {
         },
         {
             loader: require.resolve('sass-loader'),
+            options: {
+                implementation: require('sass'),
+                sassOptions: {
+                    outputStyle: 'compressed',
+                },
+            },
         },
     ].filter(Boolean);
 
