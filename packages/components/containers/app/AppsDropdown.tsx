@@ -12,7 +12,6 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
-import { useFlag } from '../unleash';
 import ProductLink from './ProductLink';
 
 interface AppsDropdownProps {
@@ -25,9 +24,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
 
-        const docsEnabled = useFlag('DocsAppSwitcher');
-
-        const availableApps = getAvailableApps({ user, docsEnabled });
+        const availableApps = getAvailableApps({ user });
 
         if (availableApps.length <= 1) {
             return null;
