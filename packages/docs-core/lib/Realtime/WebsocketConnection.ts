@@ -7,8 +7,7 @@ import metrics from '@proton/metrics'
 import { isLocalEnvironment } from '../Util/isDevOrBlack'
 import { ApiResult } from '../Domain/Result/ApiResult'
 import { ConnectionCloseMetrics } from './ConnectionCloseMetrics'
-
-const DebugDisableSockets = false
+import { getWebSocketServerURL } from './getWebSocketServerURL'
 
 /**
  * The heartbeat mechanism is temporarily disabled due to the fact that we cannot renew our heartbeat when receiving
@@ -18,24 +17,14 @@ const DebugDisableSockets = false
  */
 const HeartbeatEnabled: false = false
 
+/**
+ * We will automatically close the connection if the document's visibility state goes to hidden and this amount of time elapses.
+ */
+export const TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY = 60_000
+
 export const DebugConnection = {
   enabled: isLocalEnvironment() && false,
   url: 'ws://localhost:4000/websockets',
-}
-
-const WebSocketServerSubdomain = 'docs-rts'
-export const getWebSocketServerURL = () => {
-  const url = new URL(window.location.href)
-  const hostnameParts = url.hostname.split('.')
-
-  if (hostnameParts.length === 2) {
-    hostnameParts.unshift(WebSocketServerSubdomain)
-  } else {
-    hostnameParts[0] = WebSocketServerSubdomain
-  }
-
-  const newHostname = hostnameParts.join('.')
-  return `wss://${newHostname}/websockets`
 }
 
 export class WebsocketConnection implements WebsocketConnectionInterface {
@@ -46,23 +35,45 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
   private destroyed = false
 
   private didReceiveReadyMessageFromRTS = false
+  closeConnectionDueToGoingAwayTimer: ReturnType<typeof setTimeout> | undefined = undefined
 
   constructor(
     private callbacks: WebsocketCallbacks,
     private logger: LoggerInterface,
   ) {
-    window.addEventListener('offline', this.handleOfflineConnectionEvent)
-    window.addEventListener('online', this.handleOnlineConnectionEvent)
+    window.addEventListener('offline', this.handleWindowWentOfflineEvent)
+    window.addEventListener('online', this.handleWindowCameOnlineEvent)
+
+    document.addEventListener('visibilitychange', this.handleVisibilityChangeEvent)
   }
 
-  handleOfflineConnectionEvent = (): void => {
-    this.disconnect()
+  handleVisibilityChangeEvent = (): void => {
+    this.logger.info('Document visibility changed:', document.visibilityState)
+
+    if (document.visibilityState === 'visible') {
+      if (this.closeConnectionDueToGoingAwayTimer) {
+        clearTimeout(this.closeConnectionDueToGoingAwayTimer)
+        this.closeConnectionDueToGoingAwayTimer = undefined
+      }
+
+      if (!this.socket) {
+        this.logger.info('Document became visible, reconnecting')
+        this.queueReconnection({ skipDelay: true })
+      }
+    } else if (document.visibilityState === 'hidden') {
+      this.closeConnectionDueToGoingAwayTimer = setTimeout(() => {
+        this.logger.info('Closing connection due to user being away for too long')
+        this.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
+      }, TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY)
+    }
   }
 
-  handleOnlineConnectionEvent = (): void => {
-    const reconnectDelay = this.state.getBackoff()
-    clearTimeout(this.reconnectTimeout)
-    this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
+  handleWindowWentOfflineEvent = (): void => {
+    this.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
+  }
+
+  handleWindowCameOnlineEvent = (): void => {
+    this.queueReconnection({ skipDelay: true })
   }
 
   /**
@@ -80,21 +91,25 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     this.pingTimeout = setTimeout(() => {
       this.logger.info('Closing connection due to heartbeat timeout')
-      this.socket?.close()
+      this.socket?.close(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
     }, SERVER_HEARTBEAT_INTERVAL + 2_500)
   }
 
   destroy(): void {
     this.destroyed = true
+
     clearTimeout(this.pingTimeout)
     clearTimeout(this.reconnectTimeout)
-    window.removeEventListener('offline', this.handleOfflineConnectionEvent)
-    window.removeEventListener('online', this.handleOnlineConnectionEvent)
-    this.disconnect()
+
+    window.removeEventListener('offline', this.handleWindowWentOfflineEvent)
+    window.removeEventListener('online', this.handleWindowCameOnlineEvent)
+    document.removeEventListener('visibilitychange', this.handleVisibilityChangeEvent)
+
+    this.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
   }
 
-  disconnect(): void {
-    this.socket?.close()
+  disconnect(code: number): void {
+    this.socket?.close(code)
   }
 
   buildConnectionUrl(params: { serverUrl: string; token: string }): string {
@@ -112,11 +127,7 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
       this.callbacks.onFailToGetToken(urlAndTokenResult.getError().code)
 
-      const reconnectDelay = this.state.getBackoff()
-      this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
-
-      clearTimeout(this.reconnectTimeout)
-      this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
+      this.queueReconnection()
 
       return ApiResult.fail(urlAndTokenResult.getError())
     }
@@ -129,8 +140,8 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
       throw new Error('Attempted to connect to a destroyed WebsocketConnection')
     }
 
-    if (DebugDisableSockets) {
-      this.logger.warn('Websockets are disabled in debug mode')
+    if (document.visibilityState !== 'visible') {
+      this.logger.error('Attempting to connect socket while document is not visible')
       return
     }
 
@@ -179,37 +190,54 @@ export class WebsocketConnection implements WebsocketConnectionInterface {
 
     this.socket.onerror = (event) => {
       this.logger.error('Websocket error:', event)
+
+      this.handleSocketClose(ConnectionCloseReason.CODES.INTERNAL_ERROR, 'Websocket error')
     }
 
     this.socket.onclose = (event) => {
       this.logger.info('Websocket closed:', event.code, event.reason)
-      this.socket = undefined
-      this.state.didClose()
 
-      const reason = ConnectionCloseReason.create({
-        code: event.code,
-        message: event.reason,
-      })
-
-      metrics.docs_realtime_disconnect_error_total.increment({
-        type: ConnectionCloseMetrics[reason.props.code],
-      })
-
-      if (this.state.isConnected) {
-        this.callbacks.onClose(reason)
-      } else {
-        this.callbacks.onFailToConnect(reason)
-      }
-
-      this.logDisconnectMetric(reason)
-
-      if (reason.props.code !== ConnectionCloseReason.CODES.UNAUTHORIZED) {
-        const reconnectDelay = this.state.getBackoff()
-        this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
-        clearTimeout(this.reconnectTimeout)
-        this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
-      }
+      this.handleSocketClose(event.code, event.reason)
     }
+  }
+
+  handleSocketClose(code: number, message: string): void {
+    this.socket = undefined
+    this.state.didClose()
+
+    const reason = ConnectionCloseReason.create({
+      code,
+      message,
+    })
+
+    metrics.docs_realtime_disconnect_error_total.increment({
+      type: ConnectionCloseMetrics[reason.props.code],
+    })
+
+    if (this.state.isConnected) {
+      this.callbacks.onClose(reason)
+    } else {
+      this.callbacks.onFailToConnect(reason)
+    }
+
+    this.logDisconnectMetric(reason)
+
+    if (reason.props.code !== ConnectionCloseReason.CODES.UNAUTHORIZED) {
+      this.queueReconnection()
+    }
+  }
+
+  queueReconnection(options: { skipDelay: boolean } = { skipDelay: false }): void {
+    if (document.visibilityState !== 'visible') {
+      this.logger.info('Not queueing reconnection because document is not visible')
+      return
+    }
+
+    const reconnectDelay = options.skipDelay ? 0 : this.state.getBackoff()
+    this.logger.info(`Reconnecting in ${reconnectDelay}ms`)
+    clearTimeout(this.reconnectTimeout)
+
+    this.reconnectTimeout = setTimeout(() => this.connect(), reconnectDelay)
   }
 
   markAsReadyToAcceptMessages() {
