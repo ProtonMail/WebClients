@@ -83,6 +83,9 @@
       "Copy and close": [
         "複製並關閉"
       ],
+      "Copy link": [
+        "複製連結"
+      ],
       "Copy to clipboard": [
         "複製到剪貼板"
       ],
@@ -802,9 +805,6 @@
       "${ memberCount } member": [
         "${ memberCount } 位成員"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }次數"
-      ],
       "${ n } item": [
         "${ n } 項目"
       ],
@@ -1165,6 +1165,9 @@
       "Sign in or create an account to continue.": [
         "請登入或註冊一個帳號以繼續。"
       ],
+      "Sign in to your account": [
+        "登入您的帳戶"
+      ],
       "Signing you in": [
         "將您登入"
       ],
@@ -1389,6 +1392,9 @@
       "Confirm vault name": [
         "確認保管庫名稱"
       ],
+      "Copy": [
+        "複製"
+      ],
       "Create a credit card": [
         "創建一張信用卡"
       ],
@@ -1439,6 +1445,9 @@
       ],
       "Expiration date": [
         "有效期限"
+      ],
+      "Expired": [
+        "已失效"
       ],
       "Export": [
         "匯出"
@@ -1682,6 +1691,9 @@
       ],
       "Type": [
         "類型"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "解鎖 ${ PASS_APP_NAME }"
       ],
       "Unnamed Credit Card": [
         "未命名信用卡"
@@ -2016,6 +2028,9 @@
       "Trash empty": [
         "垃圾桶已清空"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "解鎖${ brandNameJSX }"
+      ],
       "Update available": [
         "有可用更新"
       ],
@@ -2033,6 +2048,9 @@
       ],
       "Weak password": [
         "脆弱密碼"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "歡迎使用 ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "歡迎來到你的新密碼管理器!"
@@ -2139,6 +2157,9 @@
       ],
       "Passphrase is required": [
         "需要密碼片語"
+      ],
+      "Passwords do not match": [
+        "密碼不一致"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP加密匯出需要驗證短語"

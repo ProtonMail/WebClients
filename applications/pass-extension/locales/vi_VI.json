@@ -185,6 +185,9 @@
       "Edit vault": [
         "Sửa kho lưu trữ"
       ],
+      "Exclude from monitoring": [
+        "Bỏ qua theo dõi"
+      ],
       "Export": [
         "Xuất"
       ],
@@ -229,6 +232,9 @@
       ],
       "Importing": [
         "Đang nhập"
+      ],
+      "Include in monitoring": [
+        "Thêm vào theo dõi"
       ],
       "Invite others": [
         "Mời người khác"
@@ -367,6 +373,9 @@
       ],
       "Set access level": [
         "Thiết lập cấp độ truy cập"
+      ],
+      "Set extra password": [
+        "Thiết lập mật khẩu phụ"
       ],
       "Share": [
         "Chia sẻ"
@@ -798,9 +807,6 @@
       "${ memberCount } member": [
         "${ memberCount } thành viên"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } lần"
-      ],
       "${ n } item": [
         "${ n } nội dung"
       ],
@@ -983,6 +989,9 @@
       ],
       "Enabling PIN auto-lock": [
         "Bật tự động khóa bằng mã PIN"
+      ],
+      "Enter your extra password": [
+        "Nhập mật khẩu phụ"
       ],
       "Enter your PIN code": [
         "Nhập mã PIN của bạn"
@@ -1233,6 +1242,9 @@
       "Sign in or create an account to continue.": [
         "Đăng nhập hoặc tạo tài khoản để tiếp tục."
       ],
+      "Sign in to your account": [
+        "Đăng nhập vào tài khoản của bạn"
+      ],
       "Signing you in": [
         "Đang đăng nhập"
       ],
@@ -1295,6 +1307,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Mở khóa ${ PASS_APP_NAME } với mã PIN của bạn để lưu khóa truy cập này"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Mở khóa ${ PASS_SHORT_APP_NAME } với mật khẩu ${ BRAND_NAME } của bạn."
       ],
       "Unlock it with your PIN to access the settings": [
         "Mở khóa bằng mã PIN của bạn để truy cập các cài đặt"
@@ -1487,6 +1502,9 @@
       "Confirm vault name": [
         "Xác nhận tên kho lưu trữ"
       ],
+      "Copy": [
+        "Sao chép"
+      ],
       "Create a credit card": [
         "Tạo thẻ"
       ],
@@ -1546,6 +1564,9 @@
       ],
       "Expiration date": [
         "Ngày hết hạn"
+      ],
+      "Expired": [
+        "Đã hết hạn"
       ],
       "Export": [
         "Xuất"
@@ -1790,6 +1811,9 @@
       "Type": [
         "Dạng"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Mở khóa ${ PASS_APP_NAME }"
+      ],
       "Unnamed Credit Card": [
         "Thẻ chưa đặt tên"
       ],
@@ -1976,6 +2000,9 @@
       "Auto-lock update": [
         "Cập nhật tự động khóa"
       ],
+      "Confirm extra password": [
+        "Xác nhận mật khẩu phụ"
+      ],
       "Confirm PIN code": [
         "Xác nhận mã PIN"
       ],
@@ -2081,6 +2108,9 @@
       "Pin the extension": [
         "Ghim phần mở rộng"
       ],
+      "Remove extra password": [
+        "Gỡ bỏ mật khẩu phụ"
+      ],
       "Restore this version?": [
         "Khôi phục phiên bản này?"
       ],
@@ -2092,6 +2122,9 @@
       ],
       "Set access level": [
         "Thiết lập cấp độ truy cập"
+      ],
+      "Set extra password": [
+        "Thiết lập mật khẩu phụ"
       ],
       "Share with": [
         "Chia sẻ với"
@@ -2111,6 +2144,9 @@
       "Trash empty": [
         "Thùng rác trống"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Mở khóa ${ brandNameJSX }"
+      ],
       "Update available": [
         "Có bản cập nhật"
       ],
@@ -2125,6 +2161,9 @@
       ],
       "Vault shared with you": [
         "Kho lưu trữ được chia sẽ với bạn"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Chào mừng tới ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Chào mừng đến trình quản lý mật khẩu mới của bạn!"
@@ -2234,6 +2273,9 @@
       ],
       "Passphrase is required": [
         "Mật khẩu là bắt buộc"
+      ],
+      "Passwords do not match": [
+        "Mất khẩu không hợp lệ"
       ],
       "PGP encrypted export file requires passphrase": [
         "Xuất file mã hóa bằng PGP yêu cầu mật khẩu"
