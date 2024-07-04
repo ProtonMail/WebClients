@@ -104,6 +104,9 @@
       "Copy and close": [
         "Скопировать и закрыть"
       ],
+      "Copy link": [
+        "Копировать ссылку"
+      ],
       "Copy to clipboard": [
         "Скопировать в буфер обмена"
       ],
@@ -356,6 +359,9 @@
       "Remove access": [
         "Отменить доступ"
       ],
+      "Remove link": [
+        "Удалить ссылку"
+      ],
       "Remove member": [
         "Удалить участника"
       ],
@@ -403,6 +409,9 @@
       ],
       "Set access level": [
         "Установить уровень доступа"
+      ],
+      "Set extra password": [
+        "Установить дополнительный пароль"
       ],
       "Setup 2FA": [
         "Настроить двухфакторную аутентификацию"
@@ -950,12 +959,6 @@
         "${ memberCount } членов",
         "${ memberCount } член"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } раз",
-        "${ modifiedCount } раз",
-        "${ modifiedCount } раза",
-        "${ modifiedCount } раза"
-      ],
       "${ n } item": [
         "${ n } элемент",
         "${ n } элемента",
@@ -1180,6 +1183,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Введите дополнительный пароль"
       ],
       "Enter your PIN code": [
         "Введите свой PIN-код"
@@ -1475,6 +1481,9 @@
       "Sign in or create an account to continue.": [
         "Войдите или создайте аккаунт для продолжения."
       ],
+      "Sign in to your account": [
+        "Войдите в свой аккаунт"
+      ],
       "Signing you in": [
         "Выполняется вход"
       ],
@@ -1546,6 +1555,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Разблокируйте ${ PASS_APP_NAME } с помощью своего PIN-кода, чтобы сохранить этот passkey."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
@@ -1762,6 +1774,9 @@
       "Confirm vault name": [
         "Подтвердите название хранилища"
       ],
+      "Copy": [
+        "Копировать"
+      ],
       "Create a credit card": [
         "Создать кредитную карту"
       ],
@@ -1821,6 +1836,9 @@
       ],
       "Expiration date": [
         "Срок действия"
+      ],
+      "Expired": [
+        "Истекло"
       ],
       "Export": [
         "Экспорт"
@@ -2083,6 +2101,9 @@
       "Type": [
         "Тип"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Разблокировать ${ PASS_APP_NAME }"
+      ],
       "Unnamed Credit Card": [
         "Безымянная кредитная карта"
       ],
@@ -2278,6 +2299,9 @@
       "Auto-lock update": [
         "Обновление авто-блокировки"
       ],
+      "Confirm extra password": [
+        "Подтвердить дополнительный пароль"
+      ],
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
       ],
@@ -2392,6 +2416,9 @@
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
       ],
+      "Remove extra password": [
+        "Удалить дополнительный пароль"
+      ],
       "Restore this version?": [
         "Восстановить эту версию?"
       ],
@@ -2403,6 +2430,9 @@
       ],
       "Set access level": [
         "Задать уровень доступа"
+      ],
+      "Set extra password": [
+        "Установить дополнительный пароль"
       ],
       "Set up 2FA for more security": [
         "Настройте двухфакторную идентификацию для повышения безопасности"
@@ -2431,6 +2461,9 @@
       "Trash empty": [
         "Корзина пуста"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Разблокировать ${ brandNameJSX }"
+      ],
       "Update available": [
         "Доступно обновление"
       ],
@@ -2448,6 +2481,9 @@
       ],
       "Weak password": [
         "Слабый Пароль"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Добро пожаловать в ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Добро пожаловать в ваш новый менеджер паролей!"
@@ -2528,6 +2564,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"
       ],
+      "Extra password cannot be empty": [
+        "Дополнительный пароль не может быть пустым"
+      ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
       ],
@@ -2575,6 +2614,9 @@
       ],
       "Passphrase is required": [
         "Требуется кодовая фраза"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
       ],
       "PGP encrypted export file requires passphrase": [
         "Для файла экспорта с шифрованием в PGP требуется парольная фраза"

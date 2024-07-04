@@ -104,6 +104,9 @@
       "Copy and close": [
         "Copiar e fechar"
       ],
+      "Copy link": [
+        "Copiar link"
+      ],
       "Copy to clipboard": [
         "Copiar para área de transferência"
       ],
@@ -194,6 +197,9 @@
       "Edit vault": [
         "Editar cofre"
       ],
+      "Entire vault": [
+        "Cofre completo"
+      ],
       "Exclude from monitoring": [
         "Excluir do monitoramento"
       ],
@@ -215,8 +221,14 @@
       "Generate password": [
         "Gerar senha"
       ],
+      "Generate secure link": [
+        "Gerar link seguro"
+      ],
       "Generated passwords": [
         "Senhas geradas"
+      ],
+      "Generating secure link...": [
+        "Gerando link seguro..."
       ],
       "Get mobile apps": [
         "Baixar aplicativos móveis"
@@ -266,6 +278,12 @@
       "Leave vault": [
         "Deixar cofre"
       ],
+      "Link copied to clipboard": [
+        "O link foi copiado para área de transferência."
+      ],
+      "Link expires after": [
+        "Link expira depois de"
+      ],
       "Lock extension": [
         "Bloquear extensão"
       ],
@@ -281,8 +299,14 @@
       "Manage access": [
         "Gerenciar acesso"
       ],
+      "Manage vault access": [
+        "Gerenciar acesso ao cofre"
+      ],
       "Manually sync your data": [
         "Sincronizar seus dados manualmente"
+      ],
+      "Maximum views": [
+        "Máximo de visualizações"
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -356,6 +380,9 @@
       "Remove access": [
         "Remover o acesso"
       ],
+      "Remove link": [
+        "Remover link"
+      ],
       "Remove member": [
         "Remover membro"
       ],
@@ -371,6 +398,9 @@
       "Restore item": [
         "Restaurar item"
       ],
+      "Restrict number of views": [
+        "Restringir números de visualizações"
+      ],
       "Retry": [
         "Tentar novamente"
       ],
@@ -385,6 +415,9 @@
       ],
       "Saving passkey...": [
         "Salvando chave de acesso"
+      ],
+      "Secure links": [
+        "Links seguros"
       ],
       "See all": [
         "Ver tudo"
@@ -410,11 +443,17 @@
       "Share": [
         "Compartilhar"
       ],
+      "Share secure link": [
+        "Compartilhar link seguro"
+      ],
       "Share this vault": [
         "Compartilhar esse cofre"
       ],
       "Share vault": [
         "Compartilhar cofre"
+      ],
+      "Shared links": [
+        "Links compartilhados"
       ],
       "Show": [
         "Mostrar"
@@ -475,6 +514,9 @@
       ],
       "Upgrade now to share with more people": [
         "Faça upgrade agora para compartilhar com mais pessoas"
+      ],
+      "Via secure link": [
+        "Via link seguro"
       ],
       "View app logs": [
         "Ver registros de aplicativos"
@@ -780,6 +822,12 @@
       "Restoring trashed items failed": [
         "Falha ao restaurar itens da lixeira"
       ],
+      "Secure link could not be created.": [
+        "Não foi possível criar o link seguro."
+      ],
+      "Secure link could not be opened.": [
+        "Não foi possível abrir o link seguro."
+      ],
       "Settings update failed": [
         "Erro ao atualizar as configurações"
       ],
@@ -920,13 +968,17 @@
       "${ count } invites successfully sent": [
         "${ count } convites enviados com sucesso"
       ],
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } vezes"
+      ],
+      "${ count } view": [
+        "${ count } ver",
+        "${ count } vistas"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membros"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } vez",
-        "${ modifiedCount } vezes"
       ],
       "${ n } item": [
         "${ n } item",
@@ -1002,6 +1054,9 @@
       "All breaches for this address were resolved": [
         "Todas as violações para este endereço foram resolvidas"
       ],
+      "All inactive secure links were removed": [
+        "Todos os links seguros inativos foram removidos"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
       ],
@@ -1026,6 +1081,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Você tem certeza que deseja mover o item para \"${ name }\"?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Tem certeza de que deseja remover o link?"
+      ],
       "Auto-lock successfully disabled.": [
         "Bloqueio automático desativado."
       ],
@@ -1034,6 +1092,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrado"
+      ],
+      "Can be viewed": [
+        "Pode ser visualizado"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Pode criar, editar, excluir, e exportar itens para esse cofre."
@@ -1148,6 +1209,12 @@
       ],
       "Enter your PIN code": [
         "Digite seu código PIN"
+      ],
+      "Expires in": [
+        "Expira em"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Expira em ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Senha adicional criada com sucesso"
@@ -1405,8 +1472,14 @@
       "Registering PIN lock failed": [
         "Erro ao registrar o bloqueio por PIN"
       ],
+      "Removing all inactive secure links...": [
+        "Removendo todos os links inativos..."
+      ],
       "Removing extra password...": [
         "Removendo senha adicional..."
+      ],
+      "Removing secure link...": [
+        "Removendo link seguro..."
       ],
       "Restoring items from trash": [
         "Restaurando itens da lixeira"
@@ -1495,6 +1568,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",
         "Não foi possível importar os seguintes ${ result.ignored.length } itens."
+      ],
+      "The secure link has been removed": [
+        "O link seguro foi removido"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "O texto que você está tentando colar é maior que o comprimento máximo permitido de ${ maxLength } caracteres."
@@ -1645,6 +1721,18 @@
         "${ config.options.wordCount } palavra",
         "${ config.options.wordCount } palavras"
       ],
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minutos",
+        "${ minutes } minutos"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
@@ -1660,14 +1748,23 @@
       "10 minutes": [
         "10 minutos"
       ],
+      "14 days": [
+        "14 dias"
+      ],
       "15 minutes": [
         "15 minutos"
+      ],
+      "24 hours": [
+        "24 horas"
       ],
       "2FA secret key (TOTP)": [
         "Chave secreta A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Token A2F (TOTP)"
+      ],
+      "30 days": [
+        "30 dias"
       ],
       "30 minutes": [
         "30 minutos"
@@ -1677,6 +1774,9 @@
       ],
       "5 minutes": [
         "5 minutos"
+      ],
+      "7 days": [
+        "7 dias"
       ],
       "A-Z": [
         "A-Z"
@@ -1747,6 +1847,9 @@
       "Confirm vault name": [
         "Confirmar nome do cofre"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Create a credit card": [
         "Criar um cartão de crédito"
       ],
@@ -1806,6 +1909,12 @@
       ],
       "Expiration date": [
         "Data de expiração"
+      ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expired link": [
+        "Link expirado"
       ],
       "Export": [
         "Exportar"
@@ -2002,6 +2111,9 @@
       "Recent": [
         "Recente"
       ],
+      "Remove link": [
+        "Remover link"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -2038,6 +2150,12 @@
       "Settings": [
         "Configurações"
       ],
+      "Share": [
+        "Compartilhar"
+      ],
+      "Shared link": [
+        "Link compartilhado"
+      ],
       "Show website favicons": [
         "Mostrar favicons do site"
       ],
@@ -2055,6 +2173,10 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoa",
+        "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoas"
       ],
       "Title": [
         "Título"
@@ -2390,6 +2512,9 @@
       ],
       "Remove extra password": [
         "Remover senha adicional"
+      ],
+      "Remove secure link?": [
+        "Remover link seguro?"
       ],
       "Restore this version?": [
         "Restaurar essa versão?"

@@ -104,6 +104,9 @@
       "Copy and close": [
         "Copiar y cerrar"
       ],
+      "Copy link": [
+        "Copiar enlace"
+      ],
       "Copy to clipboard": [
         "Copiar al portapapeles"
       ],
@@ -194,6 +197,9 @@
       "Edit vault": [
         "Editar bóveda"
       ],
+      "Entire vault": [
+        "Bóveda completa"
+      ],
       "Exclude from monitoring": [
         "Excluir del monitoreo"
       ],
@@ -215,8 +221,14 @@
       "Generate password": [
         "Generar contraseña"
       ],
+      "Generate secure link": [
+        "Generar un enlace seguro"
+      ],
       "Generated passwords": [
         "Contraseñas generadas"
+      ],
+      "Generating secure link...": [
+        "Generando un enlace seguro..."
       ],
       "Get mobile apps": [
         "Descargar aplicaciones móviles"
@@ -266,6 +278,12 @@
       "Leave vault": [
         "Dejar la bóveda"
       ],
+      "Link copied to clipboard": [
+        "Enlace copiado al portapapeles"
+      ],
+      "Link expires after": [
+        "El enlace expira después de"
+      ],
       "Lock extension": [
         "Bloquear extensión"
       ],
@@ -281,8 +299,14 @@
       "Manage access": [
         "Gestionar acceso"
       ],
+      "Manage vault access": [
+        "Gestionar el acceso a la bóveda"
+      ],
       "Manually sync your data": [
         "Sincronizar los datos manualmente"
+      ],
+      "Maximum views": [
+        "Vistas máximas"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -310,6 +334,9 @@
       ],
       "Multiple select": [
         "Selección múltiple"
+      ],
+      "No expired links": [
+        "No hay enlaces expirados"
       ],
       "Not now": [
         "Ahora no"
@@ -356,6 +383,12 @@
       "Remove access": [
         "Borrar el acceso"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Eliminar todos los enlaces expirados (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Borrar el enlace"
+      ],
       "Remove member": [
         "Quitar este miembro"
       ],
@@ -370,6 +403,9 @@
       ],
       "Restore item": [
         "Restaurar elemento"
+      ],
+      "Restrict number of views": [
+        "Restringir el número de vistas"
       ],
       "Retry": [
         "Reintentar"
@@ -388,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Guardando clave de acceso..."
+      ],
+      "Secure links": [
+        "Enlaces seguros"
       ],
       "See all": [
         "Ver todo"
@@ -413,11 +452,17 @@
       "Share": [
         "Compartir"
       ],
+      "Share secure link": [
+        "Compartir enlace seguro"
+      ],
       "Share this vault": [
         "Compartir esta bóveda"
       ],
       "Share vault": [
         "Compartir bóveda"
+      ],
+      "Shared links": [
+        "Enlaces compartidos"
       ],
       "Show": [
         "Mostrar"
@@ -478,6 +523,9 @@
       ],
       "Upgrade now to share with more people": [
         "Mejore ahora para compartir con más personas."
+      ],
+      "Via secure link": [
+        "Vía enlace seguro"
       ],
       "View app logs": [
         "Ver registros de la aplicación"
@@ -726,6 +774,9 @@
       "Importing items failed": [
         "Error al importar elementos"
       ],
+      "Inactive secure links could not be removed.": [
+        "No se pudieron eliminar los enlaces seguros inactivos."
+      ],
       "Invalid password manager": [
         "Contraseña del gestor inválida"
       ],
@@ -786,6 +837,12 @@
       "Restoring trashed items failed": [
         "Error al restaurar los elementos de la papelera"
       ],
+      "Secure link could not be created.": [
+        "No se pudo crear el enlace seguro."
+      ],
+      "Secure link could not be opened.": [
+        "No se pudo abrir el enlace seguro."
+      ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
       ],
@@ -806,6 +863,9 @@
       ],
       "The URL is in the list": [
         "La URL está en la lista."
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Hubo un error al eliminar el enlace seguro. Intente de nuevo en unos minutos."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiados intentos erróneos. Inicie sesión de nuevo."
@@ -929,13 +989,17 @@
       "${ count } invites successfully sent": [
         "${ count } invitaciones enviadas"
       ],
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } veces"
+      ],
+      "${ count } view": [
+        "${ count } vista",
+        "${ count } vistas"
+      ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } vez",
-        "${ modifiedCount } veces"
       ],
       "${ n } item": [
         "${ n } elemento",
@@ -1011,6 +1075,9 @@
       "All breaches for this address were resolved": [
         "Todas las vulneraciones fueron resueltas para esta dirección."
       ],
+      "All inactive secure links were removed": [
+        "Todos los enlaces seguros inactivos fueron eliminados"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" fueron movidos."
       ],
@@ -1035,6 +1102,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "¿Está seguro de que quiere mover el elemento a «${ name }»?"
       ],
+      "Are you sure you want to remove the link?": [
+        "¿En verdad desea eliminar el enlace?"
+      ],
       "Auto-lock successfully disabled.": [
         "Bloqueo automático desactivado con éxito."
       ],
@@ -1046,6 +1116,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
+      ],
+      "Can be viewed": [
+        "Puede ser visto"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
@@ -1125,6 +1198,9 @@
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importe fácilmente sus contraseñas existentes a ${ PASS_APP_NAME }."
       ],
+      "Easily share your data with friends using secure links": [
+        "Comparta fácilmente sus datos con sus amistades usando enlaces seguros"
+      ],
       "Editor": [
         "Editor"
       ],
@@ -1166,6 +1242,12 @@
       ],
       "Enter your PIN code": [
         "Ingrese el código PIN"
+      ],
+      "Expires in": [
+        "Expira en"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Expira en ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         " Se creó la contraseña adicional."
@@ -1426,8 +1508,14 @@
       "Registering PIN lock failed": [
         "Error al registrar el bloqueo por código PIN"
       ],
+      "Removing all inactive secure links...": [
+        "Eliminando todos los enlaces seguros..."
+      ],
       "Removing extra password...": [
         "Eliminando la contraseña adicional..."
+      ],
+      "Removing secure link...": [
+        "Eliminando el enlace seguro..."
       ],
       "Restoring items from trash": [
         "Restaurando los elementos de la papelera"
@@ -1516,6 +1604,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no pudo importarse:",
         "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
+      ],
+      "The secure link has been removed": [
+        "El enlace seguro fue eliminado"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
@@ -1669,6 +1760,18 @@
         "${ config.options.wordCount } palabra",
         "${ config.options.wordCount } palabras"
       ],
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Monitoreo de ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1684,14 +1787,23 @@
       "10 minutes": [
         "10 minutos"
       ],
+      "14 days": [
+        "14 días"
+      ],
       "15 minutes": [
         "15 minutos"
+      ],
+      "24 hours": [
+        "24 horas"
       ],
       "2FA secret key (TOTP)": [
         "Clave secreta 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 días"
       ],
       "30 minutes": [
         "30 minutos"
@@ -1701,6 +1813,9 @@
       ],
       "5 minutes": [
         "5 minutos"
+      ],
+      "7 days": [
+        "7 días"
       ],
       "A-Z": [
         "A-Z"
@@ -1771,6 +1886,9 @@
       "Confirm vault name": [
         "Confirmar nombre de la bóveda"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Create a credit card": [
         "Crear una tarjeta de crédito"
       ],
@@ -1831,6 +1949,12 @@
       "Expiration date": [
         "Fecha de expiración"
       ],
+      "Expired": [
+        "Expirado"
+      ],
+      "Expired link": [
+        "Enlace expirado"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -1848,6 +1972,9 @@
       ],
       "General": [
         "General"
+      ],
+      "Generate a secure link for this item": [
+        "Genere un enlace seguro para este elemento"
       ],
       "Generic CSV": [
         "CSV genérico"
@@ -1923,6 +2050,9 @@
       ],
       "Make all viewers": [
         "Promover a todos como lectores"
+      ],
+      "Max views reached": [
+        "Visualizaciones máximas alcanzadas"
       ],
       "Members": [
         "Miembros"
@@ -2023,6 +2153,9 @@
       "Recent": [
         "Reciente"
       ],
+      "Remove link": [
+        "Eliminar enlace"
+      ],
       "Report a problem": [
         "Reportar un problema"
       ],
@@ -2059,6 +2192,15 @@
       "Settings": [
         "Ajustes"
       ],
+      "Share": [
+        "Compartir"
+      ],
+      "Share this vault or create a new vault": [
+        "Comparta esta bóveda o cree una"
+      ],
+      "Shared link": [
+        "Enlace compartido"
+      ],
       "Show website favicons": [
         "Mostrar faviconos de sitios web"
       ],
@@ -2076,6 +2218,13 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "La bóveda del elemento se comparte con ${ targetMembers } persona",
+        "La bóveda del elemento se comparte con ${ targetMembers } personas"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL copiada al portapapeles"
       ],
       "Title": [
         "Título"
@@ -2388,6 +2537,9 @@
       "No items selected": [
         "No hay elementos seleccionados."
       ],
+      "No shared secure links": [
+        "No hay enlaces seguros compartidos"
+      ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para usted"
       ],
@@ -2411,6 +2563,9 @@
       ],
       "Remove extra password": [
         "Eliminar la contraseña adicional"
+      ],
+      "Remove secure link?": [
+        "¿Eliminar el enlace seguro?"
       ],
       "Restore this version?": [
         "¿Restaurar esta versión?"

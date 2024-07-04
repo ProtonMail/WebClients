@@ -104,6 +104,9 @@
       "Copy and close": [
         "Αντιγραφή και κλείσιμο"
       ],
+      "Copy link": [
+        "Αντιγραφή συνδέσμου"
+      ],
       "Copy to clipboard": [
         "Αντιγραφή στο πρόχειρο"
       ],
@@ -356,6 +359,9 @@
       "Remove access": [
         "Αφαίρεση πρόσβασης"
       ],
+      "Remove link": [
+        "Αφαίρεση συνδέσμου"
+      ],
       "Remove member": [
         "Αφαίρεση μέλους"
       ],
@@ -403,6 +409,9 @@
       ],
       "Set access level": [
         "Ορισμός επιπέδου πρόσβασης"
+      ],
+      "Set extra password": [
+        "Ορισμός επιπλέον κωδικού πρόσβασης"
       ],
       "Setup 2FA": [
         "Ρύθμιση 2FA"
@@ -930,10 +939,6 @@
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } φορά",
-        "${ modifiedCount } φορές"
-      ],
       "${ n } item": [
         "${ n } στοιχείο",
         "${ n } στοιχεία"
@@ -1071,6 +1076,9 @@
       "Close this window in order to use another passkey manager.": [
         "Κλείστε αυτό το παράθυρο για να χρησιμοποιήσετε έναν άλλο διαχειριστή κλειδιών πρόσβασης."
       ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας για να προχωρήσετε στην αφαίρεσή του."
+      ],
       "Congratulations, your access has been confirmed": [
         "Συγχαρητήρια, η πρόσβασή σας επιβεβαιώθηκε"
       ],
@@ -1155,8 +1163,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
       ],
+      "Enter your extra password": [
+        "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας"
+      ],
       "Enter your PIN code": [
         "Εισαγωγή κωδικού ΡΙΝ"
+      ],
+      "Extra password successfuly created": [
+        "Ο επιπλέον κωδικός πρόσβασης δημιουργήθηκε με επιτυχία"
+      ],
+      "Extra password successfuly removed": [
+        "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
       ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
@@ -1363,6 +1380,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Παρακαλούμε επιβεβαιώστε τον κωδικό πρόσβασης ${ BRAND_NAME } για να εξαγάγετε τα ${ PASS_APP_NAME } δεδομένα σας"
       ],
+      "Please confirm your password": [
+        "Παρακαλούμε επιβεβαίωσε τον κωδικό πρόσβασής σου"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης για να κλειδώσετε αυτόματα με τον κωδικό πρόσβασής σας."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης για να καταργήσετε την καταχώρηση του τρέχοντος κλειδώματος."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Επιβεβαιώστε τον κωδικό πρόσβασης για να ενημερώσετε την ώρα αυτόματου κλειδώματος."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Επιβεβαιώστε τον κωδικό PIN σας για να καταργήσετε την καταχώρηση της τρέχουσας κλειδαριάς σας."
       ],
@@ -1378,6 +1407,9 @@
       "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Εισαγάγετε τον επιπλέον κωδικό πρόσβασής σας για να αρχίσετε να χρησιμοποιείτε το ${ PASS_SHORT_APP_NAME }."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
       ],
@@ -1390,8 +1422,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
       ],
+      "Registering extra password...": [
+        "Καταχώρηση επιπλέον κωδικού πρόσβασης..."
+      ],
       "Registering PIN lock failed": [
         "Η καταχώρηση κλειδώματος PIN απέτυχε"
+      ],
+      "Removing extra password...": [
+        "Κατάργηση επιπλέον κωδικού πρόσβασης..."
       ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
@@ -1441,6 +1479,9 @@
       "Sign in or create an account to continue.": [
         "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
       ],
+      "Sign in to your account": [
+        "Συνδεθείτε στον λογαριασμό σας"
+      ],
       "Signing you in": [
         "Γίνεται είσοδος"
       ],
@@ -1470,6 +1511,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Το εξαγόμενο αρχείο θα κρυπτογραφηθεί χρησιμοποιώντας PGP και απαιτεί μια ισχυρή φράση πρόσβασης."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Ο επιπλέον κωδικός πρόσβασης θα απαιτηθεί για τη χρήση του ${ PASS_APP_NAME }. Λειτουργεί ως πρόσθετος κωδικός πρόσβασης πάνω από τον κωδικό πρόσβασης ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
@@ -1510,6 +1554,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Ξεκλειδώστε το ${ PASS_APP_NAME } με τον κωδικό PIN σας για να αποθηκεύσετε αυτό το κλειδί πρόσβασης"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Ξεκλειδώστε ${ PASS_SHORT_APP_NAME } με τον κωδικό πρόσβασης ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Ξεκλειδώστε το ${ PASS_SHORT_APP_NAME } με τον επιπλέον κωδικό πρόσβασης σας"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ξεκλειδώστε το με το PIN σας για πρόσβαση στις ρυθμίσεις"
@@ -1589,6 +1639,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Έχετε φτάσει στο μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Θα αποσυνδεθείτε και θα πρέπει να συνδεθείτε ξανά σε όλες τις άλλες συσκευές σας."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Θα χρησιμοποιήσετε αυτό το PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME } όταν κλειδώσει αυτόματα μετά από μια περίοδο αδράνειας."
@@ -1720,6 +1773,9 @@
       "Confirm vault name": [
         "Επιβεβαίωση ονόματος κρύπτης"
       ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
       "Create a credit card": [
         "Δημιουργία πιστωτικής κάρτας"
       ],
@@ -1780,8 +1836,14 @@
       "Expiration date": [
         "Ημερομηνία λήξης"
       ],
+      "Expired": [
+        "Έχει λήξει"
+      ],
       "Export": [
         "Εξαγωγή"
+      ],
+      "Extra password": [
+        "Επιπλέον κωδικός πρόσβασης"
       ],
       "Field name": [
         "Όνομα πεδίου"
@@ -1960,6 +2022,9 @@
       "Prompt for auto-save when generating passwords": [
         "Προτροπή για αυτόματη αποθήκευση κατά τη δημιουργία κωδικών πρόσβασης"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Προστατέψτε το ${ PASS_APP_NAME } με έναν επιπλέον κωδικό πρόσβασης"
+      ],
       "Rate us": [
         "Βαθμολογήστε μας"
       ],
@@ -2040,6 +2105,9 @@
       ],
       "Type": [
         "Τύπος"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME }"
       ],
       "Unnamed Credit Card": [
         "Πιστωτική κάρτα χωρίς όνομα"
@@ -2232,6 +2300,9 @@
       "Auto-lock update": [
         "Ενημέρωση αυτόματου κλειδώματος"
       ],
+      "Confirm extra password": [
+        "Επιβεβαίωση επιπλέον κωδικού πρόσβασης"
+      ],
       "Confirm PIN code": [
         "Επιβεβαιώστε τον κωδικό PIN"
       ],
@@ -2346,6 +2417,9 @@
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
       ],
+      "Remove extra password": [
+        "Κατάργηση επιπλέον κωδικού πρόσβασης"
+      ],
       "Restore this version?": [
         "Επαναφορά αυτής της έκδοσης?"
       ],
@@ -2357,6 +2431,9 @@
       ],
       "Set access level": [
         "Ορισμός επιπέδου πρόσβασης"
+      ],
+      "Set extra password": [
+        "Ορισμός επιπλέον κωδικού πρόσβασης"
       ],
       "Set up 2FA for more security": [
         "Ρυθμίστε το 2FA για περισσότερη ασφάλεια"
@@ -2385,6 +2462,9 @@
       "Trash empty": [
         "Τα Διαγραμμένα είναι άδεια"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Ξεκλειδώστε ${ brandNameJSX }"
+      ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
       ],
@@ -2402,6 +2482,9 @@
       ],
       "Weak password": [
         "Αδύναμος κωδικός πρόσβασης"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Καλώς ήρθατε στο ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Καλώς ήρθατε στον νέο σας διαχειριστή κωδικών πρόσβασης!"
@@ -2464,6 +2547,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Δεν είναι δυνατή η ανάκτηση γραμματοκιβωτίων για αυτό το ψευδώνυμο αυτήν τη στιγμή"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Προσοχή: Δε θα μπορείτε να αποκτήσετε πρόσβαση στον ${ PASS_APP_NAME } λογαριασμό σας αν χάσετε αυτόν τον κωδικό πρόσβασης."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Δεν ήταν δυνατή η δημιουργία κρύπτης \"${ vaultName }\""
       ],
@@ -2481,6 +2567,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"
+      ],
+      "Extra password cannot be empty": [
+        "Ο επιπλέον κωδικός πρόσβασης δεν μπορεί να είναι κενός"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Ο επιπλέον κωδικός πρόσβασης πρέπει να έχει τουλάχιστον 8 χαρακτήρες"
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"
@@ -2528,6 +2620,9 @@
       "Passphrase is required": [
         "Απαιτείται φράση πρόσβασης"
       ],
+      "Passwords do not match": [
+        "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
+      ],
       "PGP encrypted export file requires passphrase": [
         "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
       ],
@@ -2539,6 +2634,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Παρακαλούμε επαληθεύστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για να χρησιμοποιήσετε την κοινή χρήση κρυπτών"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Η κατάργηση του επιπλέον κωδικού πρόσβασης θα σας αποσυνδέσει από όλες τις συσκευές και θα τερματίσει όλες τις ενεργές περιόδους σύνδεσης."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."

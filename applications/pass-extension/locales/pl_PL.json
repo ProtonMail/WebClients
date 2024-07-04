@@ -104,6 +104,9 @@
       "Copy and close": [
         "Kopiuj i zamknij"
       ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
       "Copy to clipboard": [
         "Kopiuj do schowka"
       ],
@@ -215,8 +218,14 @@
       "Generate password": [
         "Generuj hasło"
       ],
+      "Generate secure link": [
+        "Generuj link"
+      ],
       "Generated passwords": [
         "Wygenerowane hasła"
+      ],
+      "Generating secure link...": [
+        "Generowanie linku..."
       ],
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
@@ -266,6 +275,12 @@
       "Leave vault": [
         "Opuść sejf"
       ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
+      "Link expires after": [
+        "Link wygaśnie za"
+      ],
       "Lock extension": [
         "Zablokuj rozszerzenie"
       ],
@@ -280,6 +295,9 @@
       ],
       "Manage access": [
         "Zarządzaj dostępem"
+      ],
+      "Manage vault access": [
+        "Zarządzaj dostępem do sejfu"
       ],
       "Manually sync your data": [
         "Synchronizuj dane"
@@ -356,6 +374,9 @@
       "Remove access": [
         "Usuń dostęp"
       ],
+      "Remove link": [
+        "Usuń link"
+      ],
       "Remove member": [
         "Usuń użytkownika"
       ],
@@ -389,6 +410,9 @@
       "Saving passkey...": [
         "Zapisywanie klucza dostępu..."
       ],
+      "Secure links": [
+        "Linki"
+      ],
       "See all": [
         "Zobacz wszystko"
       ],
@@ -404,17 +428,26 @@
       "Set access level": [
         "Ustaw uprawnienia"
       ],
+      "Set extra password": [
+        "Ustaw dodatkowe hasło"
+      ],
       "Setup 2FA": [
         "Skonfiguruj uwierzytelnianie dwustopniowe"
       ],
       "Share": [
         "Udostępnij"
       ],
+      "Share secure link": [
+        "Udostępnij link"
+      ],
       "Share this vault": [
         "Udostępnij sejf"
       ],
       "Share vault": [
         "Udostępnij sejf"
+      ],
+      "Shared links": [
+        "Udostępnione linki"
       ],
       "Show": [
         "Pokaż"
@@ -718,7 +751,7 @@
         "Plik nie mógł zostać przetworzony"
       ],
       "File could not be read": [
-        "Nie można odczytać pliku"
+        "Plik nie może zostać odczytany"
       ],
       "File does not match expected format": [
         "Format pliku jest nieprawidłowy"
@@ -941,17 +974,17 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
       ],
+      "${ count } time": [
+        "${ count } raz",
+        "${ count } razy",
+        "${ count } razy",
+        "${ count } razy"
+      ],
       "${ memberCount } member": [
         "${ memberCount } użytkownik",
         "${ memberCount } użytkowników",
         "${ memberCount } użytkowników",
         "${ memberCount } użytkowników"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } raz",
-        "${ modifiedCount } razy",
-        "${ modifiedCount } razy",
-        "${ modifiedCount } razy"
       ],
       "${ n } item": [
         "${ n } element",
@@ -1094,6 +1127,9 @@
       "Close this window in order to use another passkey manager.": [
         "Zamknij okno, aby użyć innego menedżera kluczy dostępu."
       ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Potwierdź dodatkowe hasło, aby je usunąć."
+      ],
       "Congratulations, your access has been confirmed": [
         "Gratulacje. Dostęp został potwierdzony"
       ],
@@ -1178,8 +1214,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
       ],
+      "Enter your extra password": [
+        "Wpisz dodatkowe hasło"
+      ],
       "Enter your PIN code": [
         "Wpisz kod PIN"
+      ],
+      "Extra password successfuly created": [
+        "Dodatkowe hasło zostało utworzone"
+      ],
+      "Extra password successfuly removed": [
+        "Dodatkowe hasło zostało usunięte"
       ],
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
@@ -1394,6 +1439,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
       ],
+      "Please confirm your password": [
+        "Potwierdź hasło"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Potwierdź hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Potwierdź hasło, aby wyłączyć blokadę."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Potwierdź hasło, aby zaktualizować czas automatycznej blokady."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Potwierdź kod PIN, aby wyłączyć blokadę."
       ],
@@ -1409,6 +1466,9 @@
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Wpisz dodatkowe hasło ${ PASS_SHORT_APP_NAME }."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Ulepsz konto, aby uzyskać wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
       ],
@@ -1421,8 +1481,17 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chroniony przez ${ PROTON_SENTINEL_LINK } — zaawansowany program ochrony konta"
       ],
+      "Registering extra password...": [
+        "Dodawanie dodatkowego hasła..."
+      ],
       "Registering PIN lock failed": [
         "Włączenie blokady za pomocą kodu PIN nie powiodła się"
+      ],
+      "Removing all inactive secure links...": [
+        "Usuwanie wszystkich nieaktywnych linków..."
+      ],
+      "Removing extra password...": [
+        "Usuwanie dodatkowego hasła..."
       ],
       "Restoring items from trash": [
         "Przywracanie elementów z Kosza"
@@ -1471,6 +1540,9 @@
       ],
       "Sign in or create an account to continue.": [
         "Zaloguj się lub utwórz konto, aby kontynuować."
+      ],
+      "Sign in to your account": [
+        "Zaloguj się"
       ],
       "Signing you in": [
         "Logowanie"
@@ -1543,6 +1615,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Odblokuj ${ PASS_APP_NAME } za pomocą kodu PIN, aby zapisać klucz dostępu."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą dodatkowego hasła"
       ],
       "Unlock it with your PIN to access the settings": [
         "Odblokuj dostęp do ustawień za pomocą kodu PIN"
@@ -1625,6 +1703,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Osiągnięto maksymalną liczbę ${ maxLength } znaków."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Konieczne będzie ponowne zalogowanie się na wszystkich urządzeniach."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Będziesz używać tego kodu PIN, aby odblokować ${ PASS_APP_NAME } po automatycznej blokadzie aplikacji."
       ],
@@ -1657,6 +1738,24 @@
         "${ config.options.wordCount } słów",
         "${ config.options.wordCount } słów"
       ],
+      "${ days } day": [
+        "${ days } dzień",
+        "${ days } dni",
+        "${ days } dni",
+        "${ days } dnia"
+      ],
+      "${ hours } hour": [
+        "${ hours } godzina",
+        "${ hours } godziny",
+        "${ hours } godzin",
+        "${ hours } godziny"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
@@ -1672,14 +1771,23 @@
       "10 minutes": [
         "10 minut"
       ],
+      "14 days": [
+        "14 dni"
+      ],
       "15 minutes": [
         "15 minut"
+      ],
+      "24 hours": [
+        "1 dzień"
       ],
       "2FA secret key (TOTP)": [
         "Sekret TOTP"
       ],
       "2FA token (TOTP)": [
         "Token TOTP"
+      ],
+      "30 days": [
+        "30 dni"
       ],
       "30 minutes": [
         "30 minut"
@@ -1689,6 +1797,9 @@
       ],
       "5 minutes": [
         "5 minut"
+      ],
+      "7 days": [
+        "7 dni"
       ],
       "A-Z": [
         "Alfabetycznie"
@@ -1759,6 +1870,9 @@
       "Confirm vault name": [
         "Potwierdź nazwę sejfu"
       ],
+      "Copy": [
+        "Kopiuj"
+      ],
       "Create a credit card": [
         "Utwórz kartę płatniczą"
       ],
@@ -1819,8 +1933,17 @@
       "Expiration date": [
         "Data wygaśnięcia"
       ],
+      "Expired": [
+        "Wygasł"
+      ],
+      "Expired link": [
+        "Link wygasł"
+      ],
       "Export": [
         "Eksportowanie"
+      ],
+      "Extra password": [
+        "Dodatkowe hasło"
       ],
       "Field name": [
         "Nazwa pola"
@@ -1833,6 +1956,9 @@
       ],
       "General": [
         "Ogólne"
+      ],
+      "Generate a secure link for this item": [
+        "Utwórz link do elementu"
       ],
       "Generic CSV": [
         "Ogólny plik CSV"
@@ -1999,11 +2125,17 @@
       "Prompt for auto-save when generating passwords": [
         "Proponuj automatyczne zapisywanie podczas generowania haseł"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Chroń ${ PASS_APP_NAME } za pomocą dodatkowego hasła"
+      ],
       "Rate us": [
         "Oceń nas"
       ],
       "Recent": [
         "Ostatnie"
+      ],
+      "Remove link": [
+        "Usuń link"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -2037,6 +2169,9 @@
       ],
       "Settings": [
         "Ustawienia"
+      ],
+      "Share": [
+        "Udostępnij"
       ],
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
@@ -2076,6 +2211,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Odblokuj ${ PASS_APP_NAME }"
       ],
       "Unnamed Credit Card": [
         "Karta płatnicza bez nazwy"
@@ -2272,6 +2410,9 @@
       "Auto-lock update": [
         "Aktualizacja automatycznej blokady"
       ],
+      "Confirm extra password": [
+        "Potwierdź dodatkowe hasło"
+      ],
       "Confirm PIN code": [
         "Potwierdź kod PIN"
       ],
@@ -2386,6 +2527,9 @@
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
       ],
+      "Remove extra password": [
+        "Usuń dodatkowe hasło"
+      ],
       "Restore this version?": [
         "Przywrócić tę wersję?"
       ],
@@ -2397,6 +2541,9 @@
       ],
       "Set access level": [
         "Ustaw uprawnienia"
+      ],
+      "Set extra password": [
+        "Ustaw dodatkowe hasło"
       ],
       "Set up 2FA for more security": [
         "Skonfiguruj uwierzytelnianie dwustopniowe dla większego bezpieczeństwa"
@@ -2425,6 +2572,9 @@
       "Trash empty": [
         "Kosz jest pusty"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Odblokuj ${ brandNameJSX }"
+      ],
       "Update available": [
         "Dostępna jest aktualizacja"
       ],
@@ -2442,6 +2592,9 @@
       ],
       "Weak password": [
         "Słabe hasło"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Witaj w ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Witaj w nowym menadżerze haseł!"
@@ -2522,6 +2675,12 @@
       "Expiration Date is not in the format MM/YY": [
         "Data wygaśnięcia nie jest w formacie MM/RR"
       ],
+      "Extra password cannot be empty": [
+        "Dodatkowe hasło nie może być puste"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Dodatkowe hasło musi zawierać co najmniej 8 znaków"
+      ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"
       ],
@@ -2570,6 +2729,9 @@
       "Passphrase is required": [
         "Hasło jest wymagane"
       ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
+      ],
       "PGP encrypted export file requires passphrase": [
         "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
       ],
@@ -2581,6 +2743,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Zweryfikuj adres e-mail, aby udostępnić sejf"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Usunięcie dodatkowego hasła spowoduje wylogowanie ze wszystkich urządzeń i zakończy wszystkie aktywne sesje."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
