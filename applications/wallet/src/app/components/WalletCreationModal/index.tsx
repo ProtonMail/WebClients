@@ -149,31 +149,28 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                     </Collapsible>
                 )}
 
-                <div className="w-full flex flex-column mt-4">
-                    <div className="flex">
-                        <Button
-                            fullWidth
-                            className="block mb-2"
-                            size="large"
-                            shape="solid"
-                            color="norm"
-                            disabled={loadingWalletSubmit}
-                            onClick={() => {
-                                void onWalletSubmit({ shouldAutoAddEmailAddress: isFirstCreation });
-                            }}
-                        >{c('Wallet setup').t`Create a new wallet`}</Button>
-                        <Button
-                            fullWidth
-                            className="block text-semibold"
-                            size="large"
-                            shape="solid"
-                            color="weak"
-                            disabled={loadingWalletSubmit}
-                            onClick={() => {
-                                setWalletImportModal(true);
-                            }}
-                        >{c('Wallet setup').t`Import wallet`}</Button>
-                    </div>
+                <div className="w-full flex flex-row gap-2 mt-4">
+                    <Button
+                        fullWidth
+                        size="large"
+                        shape="solid"
+                        color="norm"
+                        disabled={loadingWalletSubmit}
+                        onClick={() => {
+                            void onWalletSubmit({ shouldAutoAddEmailAddress: isFirstCreation });
+                        }}
+                    >{c('Wallet setup').t`Create a new wallet`}</Button>
+                    <Button
+                        fullWidth
+                        className="text-semibold"
+                        size="large"
+                        shape="ghost"
+                        color="norm"
+                        disabled={loadingWalletSubmit}
+                        onClick={() => {
+                            setWalletImportModal(true);
+                        }}
+                    >{c('Wallet setup').t`Import wallet`}</Button>
                 </div>
             </Modal>
 
