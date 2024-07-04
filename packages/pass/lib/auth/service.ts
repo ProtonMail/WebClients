@@ -412,7 +412,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                          * from in-memory session does not account for force lock, rather
                          * when locking the in-memory session should be cleared */
                         if (memorySession && isValidSession(memorySession)) {
-                            logger.info(`[Worker::Auth] Resuming in-memory session [lock=${options.forceLock}]`);
+                            logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
                             return await authService.login(memorySession);
                         }
 
