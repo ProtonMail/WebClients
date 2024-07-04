@@ -1,6 +1,6 @@
 import {
   DebugConnection,
-  TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY,
+  TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES,
   WebsocketConnection,
 } from './WebsocketConnection'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
@@ -71,7 +71,7 @@ describe('WebsocketConnection', () => {
 
       connection.handleVisibilityChangeEvent()
 
-      jest.advanceTimersByTime(TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_GOING_AWAY + 1)
+      jest.advanceTimersByTime(TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES + 1)
 
       expect(disconnect).toHaveBeenCalled()
     })
