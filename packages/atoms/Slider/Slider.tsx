@@ -47,9 +47,11 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
      * min and max values visually.
      */
     marks?: boolean;
-
+    /**
+     * Controls the color of the track (filled out portion of the Slider rail)
+     * And maybe the color of other things in the future, hehe. #future-proof-docs
+     */
     color?: ThemeColorUnion;
-
     /**
      * Allows for custom formatting of the value that is displayed in the
      * Slider's label. By default, unless `step` is specified the number shown

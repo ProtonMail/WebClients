@@ -190,6 +190,7 @@ const MainContainer = () => {
     const toApp = isLocal ? APPS.PROTONACCOUNT : app;
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
     const prefixPath = `/${appSlug}`;
+    const canAccessWallet = useFlag("Wallet");
 
     const hasPassB2bPlan = getHasPassB2BPlan(subscription);
 
@@ -352,19 +353,16 @@ const MainContainer = () => {
                         <DocsSettingsRouter docsAppRoutes={routes.docs} redirect={redirect} />
                     </Suspense>
                 </Route>
-                <Route path={`/${walletSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
-                    </Suspense>
-                </Route>
+                {canAccessWallet && (
+                    <Route path={`/${walletSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                )}
                 <Route path={`/${passSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
                         <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
-                    </Suspense>
-                </Route>
-                <Route path={`/${walletSlug}`}>
-                    <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
                     </Suspense>
                 </Route>
                 {redirect}

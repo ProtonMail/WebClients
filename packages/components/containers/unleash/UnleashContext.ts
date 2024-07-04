@@ -21,7 +21,7 @@ enum CommonFeatureFlag {
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     InboxFreeUserRotatingButtonStyles = 'InboxFreeUserRotatingButtonStyles',
-    WalletAccess = 'WalletAccess',
+    Wallet = 'Wallet',
     WalletAutoSetup = 'WalletAutoSetup',
 }
 
