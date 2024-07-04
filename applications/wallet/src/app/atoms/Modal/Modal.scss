@@ -1,3 +1,8 @@
 .modal-two-header-title {
-	width: 100%;
+	inline-size: 100%;
+}
+
+.modal-two-dialog.prompt {
+	--modal-background-color: var(--background-weak);
+	--size: 24rem;
 }

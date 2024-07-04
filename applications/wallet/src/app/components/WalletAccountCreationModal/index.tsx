@@ -119,18 +119,17 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
     return (
         <Modal
             title={c('Wallet Account').t`Add wallet account`}
-            subline={
-                <div className="flex flex-columns items-center gap-2">
-                    <p className="my-0">{c('Wallet Account')
-                        .t`Create multiple wallet accounts to separate your financial activities for better privacy and organization.`}</p>
-                    <p className="my-0">{c('Wallet Account')
-                        .t`If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.`}</p>
-                </div>
-            }
             enableCloseWhenClickOutside
             className={theme}
             {...modalProps}
         >
+            <div className="flex flex-row gap-2 mb-6 text-center color-weak">
+                <p className="my-0">{c('Wallet Account')
+                    .t`Create multiple wallet accounts to separate your financial activities for better privacy and organization.`}</p>
+                <p className="my-0">{c('Wallet Account')
+                    .t`If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.`}</p>
+            </div>
+
             <div className="flex flex-row">
                 <Input
                     label={c('Wallet Account').t`Account label`}
