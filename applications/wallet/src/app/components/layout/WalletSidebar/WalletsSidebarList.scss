@@ -11,20 +11,18 @@
 	color: var(--interaction-norm);
 }
 
-.wallet-account-list-item:has([aria-current='page'].navigation-link) {
-	.navigation-link {
-		background: var(--background-weak);
-		color: var(--interaction-norm);
-	}
+.wallet-account-list-item .navigation-link[aria-current='page'] {
+	background: var(--background-weak);
+	color: var(--interaction-norm);
 }
 
 .disabled-sidebar-link {
 	&,
 	& * {
-		background: var(--background-norm) !important;
-		border: 0 solid transparent !important;
-		color: var(--text-disabled) !important;
-		outline: none !important;
-		cursor: not-allowed !important;
+		background: var(--background-weak);
+		border: 0 solid transparent;
+		color: var(--text-disabled);
+		outline: none;
+		cursor: not-allowed;
 	}
 }
