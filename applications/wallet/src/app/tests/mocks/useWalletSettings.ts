@@ -12,6 +12,9 @@ export const mockUseWalletSettings = (
             FiatCurrency: 'USD',
             HideEmptyUsedAddresses: 0,
             TwoFactorAmountThreshold: 0,
+            ReceiveEmailIntegrationNotification: null,
+            ReceiveInviterNotification: null,
+            WalletCreated: null,
         },
         mockedValue?.[1] ?? false,
     ]);

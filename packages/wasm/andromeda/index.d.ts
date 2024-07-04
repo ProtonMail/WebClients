@@ -20,18 +20,15 @@ export function setPanicHook(): void;
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
+export enum WasmKeychainKind {
 /**
+* External keychain, used for deriving recipient addresses.
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
 }
 /**
 */
@@ -40,12 +37,6 @@ export enum WasmScriptType {
   NestedSegwit = 2,
   NativeSegwit = 3,
   Taproot = 4,
-}
-/**
-*/
-export enum WasmWalletTransactionFlag {
-  Suspicious = 0,
-  Private = 1,
 }
 /**
 */
@@ -63,12 +54,16 @@ export enum WasmSortOrder {
 }
 /**
 */
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmWalletTransactionFlag {
+  Suspicious = 0,
+  Private = 1,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -92,18 +87,6 @@ export enum WasmNetwork {
 }
 /**
 */
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
 export enum WasmLanguage {
   English = 0,
   SimplifiedChinese = 1,
@@ -114,6 +97,23 @@ export enum WasmLanguage {
   Japanese = 6,
   Korean = 7,
   Spanish = 8,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
 }
 export interface WasmApiWalletBitcoinAddressLookup {
     BitcoinAddress: string | null;
@@ -185,6 +185,7 @@ export interface WasmApiWalletSettings {
     InvoiceDefaultDescription: string | null;
     InvoiceExpirationTime: number;
     MaxChannelOpeningFee: number;
+    ShowWalletRecovery: boolean | null;
 }
 
 export interface WasmApiEmailAddress {
@@ -295,6 +296,9 @@ export interface WasmUserSettings {
     FiatCurrency: WasmFiatCurrencySymbol;
     HideEmptyUsedAddresses: number;
     TwoFactorAmountThreshold: number | null;
+    ReceiveInviterNotification: number | null;
+    ReceiveEmailIntegrationNotification: number | null;
+    WalletCreated: number | null;
 }
 
 export interface WasmTxOut {
