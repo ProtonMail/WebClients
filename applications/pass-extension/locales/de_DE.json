@@ -104,6 +104,9 @@
       "Copy and close": [
         "Kopieren und schließen"
       ],
+      "Copy link": [
+        "Link kopieren"
+      ],
       "Copy to clipboard": [
         "In die Zwischenablage kopieren"
       ],
@@ -356,6 +359,9 @@
       "Remove access": [
         "Zugriff entfernen"
       ],
+      "Remove link": [
+        "Link entfernen"
+      ],
       "Remove member": [
         "Mitglied entfernen"
       ],
@@ -400,6 +406,9 @@
       ],
       "Set access level": [
         "Zugriffsstufe festlegen"
+      ],
+      "Set extra password": [
+        "Zusätzliches Passwort festlegen"
       ],
       "Share": [
         "Teilen"
@@ -918,10 +927,6 @@
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } Mal",
-        "${ modifiedCount } Mal"
-      ],
       "${ n } item": [
         "${ n } Eintrag",
         "${ n } Einträge"
@@ -1118,6 +1123,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Gib dein zusätzliches Passwort ein."
       ],
       "Enter your PIN code": [
         "PIN-Code eingeben"
@@ -1396,6 +1404,9 @@
       "Sign in or create an account to continue.": [
         "Melde dich an oder erstelle ein Konto, um fortzufahren."
       ],
+      "Sign in to your account": [
+        "Mit deinem Konto anmelden"
+      ],
       "Signing you in": [
         "Du wirst angemeldet"
       ],
@@ -1465,6 +1476,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Entsperre ${ PASS_APP_NAME } mit deinem PIN-Code, um diesen Passkey zu speichern."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Entsperre ${ PASS_SHORT_APP_NAME } mit deinem ${ BRAND_NAME }-Passwort"
       ],
       "Unlock it with your PIN to access the settings": [
         "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
@@ -1675,6 +1689,9 @@
       "Confirm vault name": [
         "Tresorname bestätigen"
       ],
+      "Copy": [
+        "Kopieren"
+      ],
       "Create a credit card": [
         "Kreditkarte erfassen"
       ],
@@ -1734,6 +1751,9 @@
       ],
       "Expiration date": [
         "Ablaufdatum"
+      ],
+      "Expired": [
+        "Abgelaufen"
       ],
       "Export": [
         "Exportieren"
@@ -1996,6 +2016,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } entsperren"
+      ],
       "Unnamed Credit Card": [
         "Unbenannte Kreditkarte"
       ],
@@ -2187,6 +2210,9 @@
       "Auto-lock update": [
         "Aktualisieren der automatischen Sperre"
       ],
+      "Confirm extra password": [
+        "Zusätzliches Passwort bestätigen"
+      ],
       "Confirm PIN code": [
         "PIN-Code bestätigen"
       ],
@@ -2301,6 +2327,9 @@
       "Pinned (${ items.length })": [
         "Angeheftet (${ items.length })"
       ],
+      "Remove extra password": [
+        "Zusätzliches Passwort entfernen"
+      ],
       "Restore this version?": [
         "Diese Version wiederherstellen?"
       ],
@@ -2312,6 +2341,9 @@
       ],
       "Set access level": [
         "Zugriffsstufe festlegen"
+      ],
+      "Set extra password": [
+        "Zusätzliches Passwort festlegen"
       ],
       "Set up 2FA for more security": [
         "Richte 2FA für mehr Sicherheit ein"
@@ -2340,6 +2372,9 @@
       "Trash empty": [
         "Papierkorb leer"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } entsperren"
+      ],
       "Update available": [
         "Update verfügbar"
       ],
@@ -2357,6 +2392,9 @@
       ],
       "Weak password": [
         "Schwaches Passwort"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Willkommen bei ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"
@@ -2437,6 +2475,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Ablaufdatum ist nicht im Format MM/JJ."
       ],
+      "Extra password cannot be empty": [
+        "Das zusätzliche Passwort darf nicht leer sein."
+      ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
       ],
@@ -2482,6 +2523,9 @@
       ],
       "Passphrase is required": [
         "Passphrase ist erforderlich"
+      ],
+      "Passwords do not match": [
+        "Die Passwörter stimmen nicht überein"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-verschlüsselte Exportdatei erfordert Passphrase"

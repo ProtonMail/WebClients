@@ -104,6 +104,9 @@
       "Copy and close": [
         "Copia e chiudi"
       ],
+      "Copy link": [
+        "Copia link"
+      ],
       "Copy to clipboard": [
         "Copia negli appunti"
       ],
@@ -194,6 +197,9 @@
       "Edit vault": [
         "Modifica cassaforte"
       ],
+      "Entire vault": [
+        "Intera cassaforte"
+      ],
       "Exclude from monitoring": [
         "Escludi dal monitoraggio"
       ],
@@ -215,8 +221,14 @@
       "Generate password": [
         "Genera password"
       ],
+      "Generate secure link": [
+        "Genera un link sicuro"
+      ],
       "Generated passwords": [
         "Password generate"
+      ],
+      "Generating secure link...": [
+        "Generazione del link sicuro..."
       ],
       "Get mobile apps": [
         "Scarica le applicazioni per dispositivi mobili"
@@ -266,6 +278,12 @@
       "Leave vault": [
         "Abbandona cassaforte"
       ],
+      "Link copied to clipboard": [
+        "Link copiato negli appunti"
+      ],
+      "Link expires after": [
+        "Il link scade dopo"
+      ],
       "Lock extension": [
         "Blocca l'estensione"
       ],
@@ -281,8 +299,14 @@
       "Manage access": [
         "Gestisci accesso"
       ],
+      "Manage vault access": [
+        "Gestisci l'accesso alla cassaforte"
+      ],
       "Manually sync your data": [
         "Sincronizza manualmente i tuoi dati"
+      ],
+      "Maximum views": [
+        "Visualizzazioni massime"
       ],
       "More info: ${ safeTitle }": [
         "Maggiori informazioni: ${ safeTitle }"
@@ -310,6 +334,9 @@
       ],
       "Multiple select": [
         "Selezione multipla"
+      ],
+      "No expired links": [
+        "Nessun link scaduto"
       ],
       "Not now": [
         "Non ora"
@@ -356,6 +383,12 @@
       "Remove access": [
         "Rimuovi accesso"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Rimuovi tutti i link scaduti (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Rimuovi collegamento"
+      ],
       "Remove member": [
         "Rimuovi questo membro"
       ],
@@ -370,6 +403,9 @@
       ],
       "Restore item": [
         "Ripristina elemento"
+      ],
+      "Restrict number of views": [
+        "Limita il numero di visualizzazioni"
       ],
       "Retry": [
         "Riprova"
@@ -388,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Salvataggio della passkey in corso"
+      ],
+      "Secure links": [
+        "Link sicuri"
       ],
       "See all": [
         "Mostra tutto"
@@ -413,11 +452,17 @@
       "Share": [
         "Condividi"
       ],
+      "Share secure link": [
+        "Condividi il link sicuro"
+      ],
       "Share this vault": [
         "Condividi questa cassaforte"
       ],
       "Share vault": [
         "Condividi cassaforte"
+      ],
+      "Shared links": [
+        "Link condivisi"
       ],
       "Show": [
         "Mostra"
@@ -478,6 +523,9 @@
       ],
       "Upgrade now to share with more people": [
         "Effettua l'upgrade ora per condividere con più persone"
+      ],
+      "Via secure link": [
+        "Tramite link sicuro"
       ],
       "View app logs": [
         "Visualizza i log dell'app"
@@ -786,6 +834,12 @@
       "Restoring trashed items failed": [
         "Ripristino degli elementi nel cestino non riuscito"
       ],
+      "Secure link could not be created.": [
+        "Impossibile creare il link sicuro."
+      ],
+      "Secure link could not be opened.": [
+        "Impossibile aprire il link sicuro."
+      ],
       "Settings update failed": [
         "Aggiornamento impostazioni non riuscito"
       ],
@@ -929,13 +983,17 @@
       "${ count } invites successfully sent": [
         "${ count } inviti spediti con successo"
       ],
+      "${ count } time": [
+        "${ count } volta",
+        "${ count } volte"
+      ],
+      "${ count } view": [
+        "${ count } visualizzazione",
+        "${ count } visualizzazioni"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membri"
-      ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } volta",
-        "${ modifiedCount } volte"
       ],
       "${ n } item": [
         "${ n } elemento",
@@ -1011,6 +1069,9 @@
       "All breaches for this address were resolved": [
         "Tutte le violazioni di dati relative a questo indirizzo sono state risolte"
       ],
+      "All inactive secure links were removed": [
+        "Tutti i link sicuri inattivi sono stati rimossi"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tutti gli elementi di \"${ payload.content.name }\" spostati con successo"
       ],
@@ -1046,6 +1107,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autenticazione 2FA integrata"
+      ],
+      "Can be viewed": [
+        "Può essere visualizzato"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Può creare, modificare, eliminare ed esportare gli elementi in questa cassaforte."
@@ -1166,6 +1230,12 @@
       ],
       "Enter your PIN code": [
         "Inserisci il tuo PIN"
+      ],
+      "Expires in": [
+        "Scade tra"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Scade tra ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Password aggiuntiva creata"
@@ -1426,8 +1496,14 @@
       "Registering PIN lock failed": [
         "Impossibile impostare il blocco con PIN"
       ],
+      "Removing all inactive secure links...": [
+        "Rimozione di tutti i link sicuri inattivi..."
+      ],
       "Removing extra password...": [
         "Rimozione della password aggiuntiva..."
+      ],
+      "Removing secure link...": [
+        "Rimozione del link sicuro..."
       ],
       "Restoring items from trash": [
         "Ripristino degli elementi dal cestino"
@@ -1516,6 +1592,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Impossibile importare il seguente ${ result.ignored.length } elemento:",
         "Impossibile importare i seguenti ${ result.ignored.length } elementi:"
+      ],
+      "The secure link has been removed": [
+        "Il link sicuro è stato rimosso"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Il testo che stai provando a incollare è più lungo della lunghezza massima di ${ maxLength } caratteri."
@@ -1669,6 +1748,18 @@
         "${ config.options.wordCount } parola",
         "${ config.options.wordCount } parole"
       ],
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
@@ -1684,14 +1775,23 @@
       "10 minutes": [
         "10 minuti"
       ],
+      "14 days": [
+        "14 giorni"
+      ],
       "15 minutes": [
         "15 minuti"
+      ],
+      "24 hours": [
+        "24 ore"
       ],
       "2FA secret key (TOTP)": [
         "Chiave segreta 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 giorni"
       ],
       "30 minutes": [
         "30 minuti"
@@ -1701,6 +1801,9 @@
       ],
       "5 minutes": [
         "5 minuti"
+      ],
+      "7 days": [
+        "7 giorni"
       ],
       "A-Z": [
         "A-Z"
@@ -1771,6 +1874,9 @@
       "Confirm vault name": [
         "Conferma il nome della cassaforte"
       ],
+      "Copy": [
+        "Copia"
+      ],
       "Create a credit card": [
         "Crea una carta di credito"
       ],
@@ -1831,6 +1937,12 @@
       "Expiration date": [
         "Data di scadenza"
       ],
+      "Expired": [
+        "Scaduto"
+      ],
+      "Expired link": [
+        "Link scaduto"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -1848,6 +1960,9 @@
       ],
       "General": [
         "Generale"
+      ],
+      "Generate a secure link for this item": [
+        "Genera un link sicuro per questo elemento"
       ],
       "Generic CSV": [
         "CSV generico"
@@ -1923,6 +2038,9 @@
       ],
       "Make all viewers": [
         "Rendi tutti visualizzatori"
+      ],
+      "Max views reached": [
+        "Numero massimo di visualizzazioni raggiunto"
       ],
       "Members": [
         "Membri"
@@ -2023,6 +2141,9 @@
       "Recent": [
         "Recenti"
       ],
+      "Remove link": [
+        "Rimuovi il link"
+      ],
       "Report a problem": [
         "Segnala un problema"
       ],
@@ -2059,6 +2180,15 @@
       "Settings": [
         "Impostazioni"
       ],
+      "Share": [
+        "Condividi"
+      ],
+      "Share this vault or create a new vault": [
+        "Condividi questa cassaforte o creane una nuova"
+      ],
+      "Shared link": [
+        "Link condiviso"
+      ],
       "Show website favicons": [
         "Mostra le icone dei siti web"
       ],
@@ -2076,6 +2206,9 @@
       ],
       "Text": [
         "Testo"
+      ],
+      "The URL has been copied to the clipboard": [
+        "L'URL è stato copiato negli appunti"
       ],
       "Title": [
         "Titolo"
@@ -2411,6 +2544,9 @@
       ],
       "Remove extra password": [
         "Rimuovi la password aggiuntiva"
+      ],
+      "Remove secure link?": [
+        "Vuoi rimuovere il link sicuro?"
       ],
       "Restore this version?": [
         "Vuoi ripristinare questa versione?"

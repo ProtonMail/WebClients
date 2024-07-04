@@ -104,6 +104,9 @@
       "Copy and close": [
         "Kopyala ve kapat"
       ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
+      ],
       "Copy to clipboard": [
         "Panoya kopyala"
       ],
@@ -355,6 +358,9 @@
       ],
       "Remove access": [
         "Erişimi kaldır"
+      ],
+      "Remove link": [
+        "Bağlantıyı kaldır"
       ],
       "Remove member": [
         "Üyeyi kaldır"
@@ -933,10 +939,6 @@
         "${ memberCount } üye",
         "${ memberCount } üye"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } kez",
-        "${ modifiedCount } kez"
-      ],
       "${ n } item": [
         "${ n } öge",
         "${ n } öge"
@@ -1157,6 +1159,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Ek parolanızı yazın"
       ],
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
@@ -1444,6 +1449,9 @@
       "Sign in or create an account to continue.": [
         "İlerlemek için oturum ya da hesap açın."
       ],
+      "Sign in to your account": [
+        "Hesabınızda oturum açın"
+      ],
       "Signing you in": [
         "Oturumunuz açılıyor"
       ],
@@ -1513,6 +1521,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Bu geçiş anahtarını kaydetmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
       ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
@@ -1723,6 +1734,9 @@
       "Confirm vault name": [
         "Kasa adı onayı"
       ],
+      "Copy": [
+        "Kopyala"
+      ],
       "Create a credit card": [
         "Kredi kartı ekle"
       ],
@@ -1782,6 +1796,9 @@
       ],
       "Expiration date": [
         "Son kullanma tarihi"
+      ],
+      "Expired": [
+        "Geçerlilik süresi dolmuş"
       ],
       "Export": [
         "Dışa aktar"
@@ -2049,6 +2066,9 @@
       ],
       "Type": [
         "Tür"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kilidini aç"
       ],
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
@@ -2506,6 +2526,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"
       ],
+      "Extra password cannot be empty": [
+        "Ek parola boş olamaz"
+      ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
       ],
@@ -2551,6 +2574,9 @@
       ],
       "Passphrase is required": [
         "Parola ifadesinin yazılması zorunludur"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
