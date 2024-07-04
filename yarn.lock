@@ -12466,16 +12466,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"adjust-sourcemap-loader@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "adjust-sourcemap-loader@npm:4.0.0"
-  dependencies:
-    loader-utils: "npm:^2.0.0"
-    regex-parser: "npm:^2.2.11"
-  checksum: 10c0/6a6e5bb8b670e4e1238c708f6163e92aa2ad0308fe5913de73c89e4cbf41738ee0bcc5552b94d0b7bf8be435ee49b78c6de8a6db7badd80762051e843c8aa14f
-  languageName: node
-  linkType: hard
-
 "ag-channel@npm:^5.0.0":
   version: 5.0.0
   resolution: "ag-channel@npm:5.0.0"
@@ -35700,13 +35690,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regex-parser@npm:^2.2.11":
-  version: 2.2.11
-  resolution: "regex-parser@npm:2.2.11"
-  checksum: 10c0/6572acbd46b5444215a73cf164f3c6fdbd73b8a2cde6a31a97307e514d20f5cbb8609f9e4994a7744207f2d1bf9e6fca4bbc0c9854f2b3da77ae0063efdc3f98
-  languageName: node
-  linkType: hard
-
 "regexp.prototype.flags@npm:^1.5.1, regexp.prototype.flags@npm:^1.5.2":
   version: 1.5.2
   resolution: "regexp.prototype.flags@npm:1.5.2"
@@ -36099,19 +36082,6 @@ __metadata:
   version: 1.0.0
   resolution: "resolve-pkg-maps@npm:1.0.0"
   checksum: 10c0/fb8f7bbe2ca281a73b7ef423a1cbc786fb244bd7a95cbe5c3fba25b27d327150beca8ba02f622baea65919a57e061eb5005204daa5f93ed590d9b77463a567ab
-  languageName: node
-  linkType: hard
-
-"resolve-url-loader@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "resolve-url-loader@npm:5.0.0"
-  dependencies:
-    adjust-sourcemap-loader: "npm:^4.0.0"
-    convert-source-map: "npm:^1.7.0"
-    loader-utils: "npm:^2.0.0"
-    postcss: "npm:^8.2.14"
-    source-map: "npm:0.6.1"
-  checksum: 10c0/53eef3620332f2fc35a4deffaa4395064b2ffd1bc28be380faa3f1e99c2fb7bbf0f705700b4539387d5b6c39586df54a92cd5d031606f19de4bf9e0ff1b6a522
   languageName: node
   linkType: hard
 
@@ -37735,17 +37705,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:0.6.1, source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
-  version: 0.6.1
-  resolution: "source-map@npm:0.6.1"
-  checksum: 10c0/ab55398007c5e5532957cb0beee2368529618ac0ab372d789806f5718123cc4367d57de3904b4e6a4170eb5a0b0f41373066d02ca0735a0c4d75c7d328d3e011
-  languageName: node
-  linkType: hard
-
 "source-map@npm:^0.5.0, source-map@npm:^0.5.6, source-map@npm:^0.5.7, source-map@npm:~0.5.1":
   version: 0.5.7
   resolution: "source-map@npm:0.5.7"
   checksum: 10c0/904e767bb9c494929be013017380cbba013637da1b28e5943b566031e29df04fba57edf3f093e0914be094648b577372bd8ad247fa98cfba9c600794cd16b599
+  languageName: node
+  linkType: hard
+
+"source-map@npm:^0.6.0, source-map@npm:^0.6.1, source-map@npm:~0.6.0, source-map@npm:~0.6.1":
+  version: 0.6.1
+  resolution: "source-map@npm:0.6.1"
+  checksum: 10c0/ab55398007c5e5532957cb0beee2368529618ac0ab372d789806f5718123cc4367d57de3904b4e6a4170eb5a0b0f41373066d02ca0735a0c4d75c7d328d3e011
   languageName: node
   linkType: hard
 
