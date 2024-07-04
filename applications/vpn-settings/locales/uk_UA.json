@@ -5082,6 +5082,9 @@
       "Create account": [
         "Зареєструватися"
       ],
+      "Don't have access to your 2FA?": [
+        "Не маєте доступу до 2FA?"
+      ],
       "Forgot password?": [
         "Забули пароль?"
       ],
@@ -7845,7 +7848,7 @@
         "${ MaxCalendars } календар на користувача",
         "${ MaxCalendars } календарі на користувача",
         "${ MaxCalendars } календарів на користувача",
-        "${ MaxCalendars } календарі на користувача"
+        "${ MaxCalendars } календарів на користувача"
       ],
       "${ maxDomainNames } custom email domain": [
         "${ maxDomainNames } власний домен",
@@ -9020,9 +9023,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } адреса"
-      ],
       "Add multiple users": [
         "Додати кількох користувачів"
       ],

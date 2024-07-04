@@ -960,6 +960,9 @@
       "Custom domain problem": [
         "Problème avec les domaines personnalisés"
       ],
+      "Docs problem": [
+        "Problème de Docs"
+      ],
       "Drive problem": [
         "Problème avec Proton Drive"
       ],
@@ -7655,6 +7658,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe pour ${ maxAi } utilisateur",
+        "Assistant d'écriture ${ BRAND_NAME } Scribe pour ${ maxAi } utilisateurs"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } serveur dédié",
         "${ ipAddresses } serveurs dédiés"
@@ -9149,9 +9156,6 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "Adresse ${ BRAND_NAME }"
-      ],
       "Add multiple users": [
         "Ajouter plusieurs utilisateurs"
       ],
@@ -9182,8 +9186,14 @@
       "Email": [
         "E-mail"
       ],
+      "Invitation email": [
+        "E-mail d’invitation"
+      ],
       "Name": [
         "Nom"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Nouvelle adresse e-mail ${ BRAND_NAME }"
       ],
       "Optional": [
         "Facultatif"
