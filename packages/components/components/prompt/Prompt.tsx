@@ -13,7 +13,7 @@ const PromptTitle = ({ children }: { children: ReactNode }) => (
 );
 
 export interface PromptProps extends Omit<ModalProps, 'children' | 'size' | 'title'> {
-    title: string | JSX.Element;
+    title?: string | JSX.Element;
     subline?: string;
     footnote?: string;
     buttons: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element];
