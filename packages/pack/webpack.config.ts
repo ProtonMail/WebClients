@@ -6,7 +6,7 @@ import { parseResource } from 'webpack/lib/util/identifier';
 
 import { getEntries } from './webpack/entries';
 
-const { getJsLoaders } = require('./webpack/js.loader');
+const { getJsLoaders } = require('./webpack/js.loader.swc');
 const getCssLoaders = require('./webpack/css.loader');
 const getAssetsLoaders = require('./webpack/assets.loader');
 const getPlugins = require('./webpack/plugins');
