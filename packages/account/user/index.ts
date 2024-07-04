@@ -1,10 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import {
+    createAsyncModelThunk,
+    getFetchedAt,
+    getFetchedEphemeral,
+    handleAsyncModel,
+    previousSelector,
+} from '@proton/redux-utilities';
 import { getUser } from '@proton/shared/lib/api/user';
 import { DAY } from '@proton/shared/lib/constants';
-import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
@@ -25,12 +30,13 @@ type Model = NonNullable<SliceState['value']>;
 export const selectUser = (state: UserState) => state.user;
 
 const modelThunk = createAsyncModelThunk<Model, UserState, ProtonThunkArguments>(`${name}/fetch`, {
+    expiry: 14 * DAY, // Longer expiration since this is set on init
     miss: ({ extraArgument }) => {
         return extraArgument.api<{ User: User }>(getUser()).then(({ User }) => {
             return formatUser(User);
         });
     },
-    previous: previousSelector(selectUser, 14 * DAY), // Longer expiration since this is set on init
+    previous: previousSelector(selectUser),
 });
 
 const initialState = getInitialModelState<Model>();
@@ -45,6 +51,7 @@ const slice = createSlice({
                 if (action.payload.User) {
                     state.value = formatUser(action.payload.User);
                     state.meta.fetchedAt = getFetchedAt();
+                    state.meta.fetchedEphemeral = getFetchedEphemeral();
                 }
             })
             .addCase(serverEvent, (state, action) => {

@@ -11,6 +11,7 @@ import {
     useGetCalendarUserSettings,
     useGetCalendars,
 } from '@proton/components';
+import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { setupCalendarKeys } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
@@ -99,7 +100,10 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
             }
 
             await call();
-            await Promise.all([getCalendars({ cache: 'no-cache' }), getCalendarUserSettings({ cache: 'no-cache' })]);
+            await Promise.all([
+                getCalendars({ cache: CacheType.None }),
+                getCalendarUserSettings({ cache: CacheType.None }),
+            ]);
         };
         run()
             .then(() => {

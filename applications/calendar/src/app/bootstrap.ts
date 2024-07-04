@@ -98,23 +98,16 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: user }));
         }
 
-        const cacheOptions = {
-            cache: 'stale',
-        } as const;
-
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
-                dispatch(userThunk(cacheOptions)),
-                dispatch(userSettingsThunk(cacheOptions)),
+                dispatch(userThunk()),
+                dispatch(userSettingsThunk()),
                 dispatch(
-                    fetchFeatures(
-                        [
-                            FeatureCode.EarlyAccessScope,
-                            FeatureCode.CalendarFetchMetadataOnly,
-                            FeatureCode.AutoAddHolidaysCalendars,
-                        ],
-                        cacheOptions
-                    )
+                    fetchFeatures([
+                        FeatureCode.EarlyAccessScope,
+                        FeatureCode.CalendarFetchMetadataOnly,
+                        FeatureCode.AutoAddHolidaysCalendars,
+                    ])
                 ),
             ]);
 
@@ -130,15 +123,15 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const loadPreload = () => {
             return Promise.all([
-                dispatch(addressesThunk(cacheOptions)),
-                dispatch(calendarsThunk(cacheOptions)),
-                dispatch(calendarSettingsThunk(cacheOptions)),
+                dispatch(addressesThunk()),
+                dispatch(calendarsThunk()),
+                dispatch(calendarSettingsThunk()),
             ]);
         };
 
         const loadPreloadButIgnored = () => {
             loadAllowedTimeZones(silentApi).catch(noop);
-            dispatch(holidaysDirectoryThunk(cacheOptions)).catch(noop);
+            dispatch(holidaysDirectoryThunk()).catch(noop);
         };
 
         const userPromise = loadUser();

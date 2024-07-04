@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { CacheType, createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getInvitations } from '@proton/shared/lib/api/user';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces';
@@ -70,7 +70,7 @@ export const userInvitationsListener = (startListening: SharedStartListening<Use
             return false;
         },
         effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(userInvitationsThunk({ cache: 'no-cache' }));
+            await listenerApi.dispatch(userInvitationsThunk({ cache: CacheType.None }));
         },
     });
 };
