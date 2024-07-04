@@ -104,6 +104,9 @@
       "Copy and close": [
         "Kopírovať a zatvoriť"
       ],
+      "Copy link": [
+        "Kopírovať odkaz"
+      ],
       "Copy to clipboard": [
         "Skopírovať do schránky"
       ],
@@ -356,6 +359,9 @@
       "Remove access": [
         "Odstrániť prístup"
       ],
+      "Remove link": [
+        "Odstrániť odkaz"
+      ],
       "Remove member": [
         "Odstániť člena"
       ],
@@ -400,6 +406,9 @@
       ],
       "Set access level": [
         "Nastaviť úroveň prístupu"
+      ],
+      "Set extra password": [
+        "Nastaviť dodatočné heslo"
       ],
       "Share": [
         "Zdieľať"
@@ -941,12 +950,6 @@
         "${ memberCount } členov",
         "${ memberCount } členov"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }-krát",
-        "${ modifiedCount } -krát",
-        "${ modifiedCount } -krát",
-        "${ modifiedCount } krát"
-      ],
       "${ n } item": [
         "${ n } položka",
         "${ n } položky",
@@ -1165,6 +1168,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadajte overovací kód. Číslice ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Zadajte vaše dodatočné heslo"
       ],
       "Enter your PIN code": [
         "Zadajte PIN kód"
@@ -1460,6 +1466,9 @@
       "Sign in or create an account to continue.": [
         "Pre pokračovanie sa prihláste alebo si vytvorte účet."
       ],
+      "Sign in to your account": [
+        "Prihláste sa do svojho účtu"
+      ],
       "Signing you in": [
         "Prihlasujeme vás"
       ],
@@ -1531,6 +1540,9 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Odomknúť ${ PASS_APP_NAME } s PIN kódom pre uloženie tohto prístupového kľúča"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
@@ -1744,6 +1756,9 @@
       "Confirm vault name": [
         "Potvrdiť názov trezoru"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
       "Create a credit card": [
         "Vytvoriť platobnú kartu"
       ],
@@ -1803,6 +1818,9 @@
       ],
       "Expiration date": [
         "Koniec platnosti "
+      ],
+      "Expired": [
+        "Vypršal"
       ],
       "Export": [
         "Export"
@@ -2065,6 +2083,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Odomknúť ${ PASS_APP_NAME }"
+      ],
       "Unnamed Credit Card": [
         "Nepomenovaná platobná karta"
       ],
@@ -2260,6 +2281,9 @@
       "Auto-lock update": [
         "Aktualizácia automatického uzamknutia"
       ],
+      "Confirm extra password": [
+        "Potvrďte dodatočné heslo"
+      ],
       "Confirm PIN code": [
         "Potvrdiť PIN kód"
       ],
@@ -2374,6 +2398,9 @@
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
       ],
+      "Remove extra password": [
+        "Odstrániť dodatočné heslo"
+      ],
       "Restore this version?": [
         "Obnoviť túto verziu?"
       ],
@@ -2385,6 +2412,9 @@
       ],
       "Set access level": [
         "Nastavte úroveň prístupu"
+      ],
+      "Set extra password": [
+        "Nastaviť dodatočné heslo"
       ],
       "Set up 2FA for more security": [
         "Nastavte 2FA na zvýšenie bezpečnosti"
@@ -2413,6 +2443,9 @@
       "Trash empty": [
         "Kôš je prázdny"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Odomknúť ${ brandNameJSX }"
+      ],
       "Update available": [
         "K dispozícii je aktualizácia"
       ],
@@ -2430,6 +2463,9 @@
       ],
       "Weak password": [
         "Slabé heslo"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Víta vás ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Vitajte vo svojom novom správcovi hesiel!"
@@ -2510,6 +2546,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"
       ],
+      "Extra password cannot be empty": [
+        "Dodatočné heslo nemôže byť prázdne"
+      ],
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"
       ],
@@ -2557,6 +2596,9 @@
       ],
       "Passphrase is required": [
         "Prístupová fáza je povinná"
+      ],
+      "Passwords do not match": [
+        "Heslá sa nezhodujú"
       ],
       "PGP encrypted export file requires passphrase": [
         "Šifrovaný exportný súbor PGP vyžaduje prístupovú frázu"

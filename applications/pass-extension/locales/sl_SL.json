@@ -101,6 +101,9 @@
       "Copy and close": [
         "Kopiraj in zapri"
       ],
+      "Copy link": [
+        "Kopiraj povezavo"
+      ],
       "Copy to clipboard": [
         "Kopiraj v odložišče"
       ],
@@ -397,6 +400,9 @@
       ],
       "Set access level": [
         "Nastavite raven dostopa"
+      ],
+      "Set extra password": [
+        "Nastavite dodatno geslo"
       ],
       "Share": [
         "Deli"
@@ -929,12 +935,6 @@
         "${ memberCount } člani",
         "${ memberCount } članov"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }-krat",
-        "${ modifiedCount }-krat",
-        "${ modifiedCount }-krat",
-        "${ modifiedCount }-krat"
-      ],
       "${ n } item": [
         "${ n } predmet",
         "${ n } predmeti",
@@ -1117,6 +1117,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Vnesite potrditveno kodo. Števka ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Vnesite dodatno geslo"
       ],
       "Enter your PIN code": [
         "Vnesi svojo PIN kodo."
@@ -1393,6 +1396,9 @@
       ],
       "Sign in or create an account to continue.": [
         "Za nadaljevanje se vpišite ali ustvarite račun."
+      ],
+      "Sign in to your account": [
+        "Vpišite se v svoj račun"
       ],
       "Signing you in": [
         "Vpisujem vas"
@@ -1678,6 +1684,9 @@
       "Confirm vault name": [
         "Potrdite ime trezorja"
       ],
+      "Copy": [
+        "Kopiraj"
+      ],
       "Create a credit card": [
         "Ustvarite plačilno kartico"
       ],
@@ -1728,6 +1737,9 @@
       ],
       "Expiration date": [
         "Datum poteka"
+      ],
+      "Expired": [
+        "Poteklo"
       ],
       "Export": [
         "Izvozi"
@@ -1987,6 +1999,9 @@
       "Type": [
         "Vrsta"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Odkleni ${ PASS_APP_NAME }"
+      ],
       "Unnamed Credit Card": [
         "Neimenovana plačilna kartica"
       ],
@@ -2176,6 +2191,9 @@
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
       ],
+      "Confirm extra password": [
+        "Potrdite dodatno geslo"
+      ],
       "Confirm PIN code": [
         "Potrdi PIN kodo"
       ],
@@ -2302,6 +2320,9 @@
       "Set access level": [
         "Nastavite raven dostopa"
       ],
+      "Set extra password": [
+        "Nastavite dodatno geslo"
+      ],
       "Set up 2FA for more security": [
         "Nastavite 2FA za večjo varnost"
       ],
@@ -2329,6 +2350,9 @@
       "Trash empty": [
         "Smetnjak je prazen"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Odkleni ${ brandNameJSX }"
+      ],
       "Update available": [
         "Na voljo je nadgradnja!"
       ],
@@ -2346,6 +2370,9 @@
       ],
       "Weak password": [
         "Šibko geslo."
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Dobrodošli v ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Dobrodošli v svojem novem upravitelju gesel!"
@@ -2426,6 +2453,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Datum poteka ni v obliki MM/LL"
       ],
+      "Extra password cannot be empty": [
+        "Dodatno geslo ne more biti prazno"
+      ],
       "Invalid alias prefix": [
         "Neveljavna predpona vzdevka"
       ],
@@ -2473,6 +2503,9 @@
       ],
       "Passphrase is required": [
         "Zahtevano je geslo"
+      ],
+      "Passwords do not match": [
+        "Gesli se ne ujemata"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP šifrirana izvozna datoteka zahteva geslo"

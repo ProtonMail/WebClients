@@ -104,6 +104,9 @@
       "Copy and close": [
         "Copiere și închidere"
       ],
+      "Copy link": [
+        "Copiere legătură"
+      ],
       "Copy to clipboard": [
         "Copiere în memorie"
       ],
@@ -356,6 +359,9 @@
       "Remove access": [
         "Eliminare acces"
       ],
+      "Remove link": [
+        "Eliminare legătură web"
+      ],
       "Remove member": [
         "Eliminare membru"
       ],
@@ -403,6 +409,9 @@
       ],
       "Set access level": [
         "Setare nivel de acces"
+      ],
+      "Set extra password": [
+        "Setare parolă suplimentară"
       ],
       "Setup 2FA": [
         "Setare A2F"
@@ -940,11 +949,6 @@
         "${ memberCount } membri",
         "${ memberCount } de membri"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } dată",
-        "de ${ modifiedCount } ori",
-        "de ${ modifiedCount } de ori"
-      ],
       "${ n } item": [
         "${ n } articol",
         "${ n } articole",
@@ -1084,6 +1088,9 @@
       "Close this window in order to use another passkey manager.": [
         "Închideți această fereastră pentru a utiliza un alt manager de chei de acces."
       ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Confirmați parola suplimentară pentru a continua eliminarea sa."
+      ],
       "Congratulations, your access has been confirmed": [
         "Accesul v-a fost confirmat."
       ],
@@ -1168,8 +1175,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "Introduceți codul de verificare. ${ digit } cifre."
       ],
+      "Enter your extra password": [
+        "Introduceți parola suplimentară"
+      ],
       "Enter your PIN code": [
         "Introduceți codul PIN"
+      ],
+      "Extra password successfuly created": [
+        "S-a creat parola suplimentară."
+      ],
+      "Extra password successfuly removed": [
+        "S-a eliminat parola suplimentară."
       ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
@@ -1380,6 +1396,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirmați-vă parola ${ BRAND_NAME } pentru a vă exporta datele ${ PASS_APP_NAME }"
       ],
+      "Please confirm your password": [
+        "Confirmați parola"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Confirmați parola pentru a bloca automat cu parolă."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Confirmați parola pentru a anula blocarea curentă."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Confirmați parola pentru a actualiza timpul de autoblocare."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Confirmați codul PIN pentru a anula blocarea curentă."
       ],
@@ -1395,6 +1423,9 @@
       "Please enter your current PIN code to continue": [
         "Introduceți codul PIN curent pentru a continua"
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Introduceți parola suplimentară pentru a începe să utilizați ${ PASS_SHORT_APP_NAME }."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Treceți la un plan superior pentru a avea acces timpuriu la aplicația web ${ PASS_APP_NAME }."
       ],
@@ -1407,8 +1438,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
+      "Registering extra password...": [
+        "Se înregistrează parola suplimentară..."
+      ],
       "Registering PIN lock failed": [
         "Înregistrarea blocării cu PIN a eșuat."
+      ],
+      "Removing extra password...": [
+        "Se elimină parola suplimentară..."
       ],
       "Restoring items from trash": [
         "Se restaurează articolele din gunoi."
@@ -1458,6 +1495,9 @@
       "Sign in or create an account to continue.": [
         "Conectați-vă sau creați un cont pentru a continua."
       ],
+      "Sign in to your account": [
+        "Conectare la cont"
+      ],
       "Signing you in": [
         "Conectare la"
       ],
@@ -1487,6 +1527,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Fișierul exportat va fi criptat folosind PGP și necesită o frază de acces puternică."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Va fi necesară o parolă suplimentară pentru a utiliza ${ PASS_APP_NAME }. Acționează ca o parolă adițională pe lângă parola ${ BRAND_NAME } principală."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
@@ -1528,6 +1571,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a salva această cheie de acces"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Deblocați ${ PASS_SHORT_APP_NAME } cu parola ${ BRAND_NAME }."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Deblocați ${ PASS_SHORT_APP_NAME } cu parola suplimentară."
       ],
       "Unlock it with your PIN to access the settings": [
         "Deblocați-o cu codul PIN pentru a accesa setările."
@@ -1608,6 +1657,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Ați atins lungimea maximă permisă de ${ maxLength } de caractere."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Contul se va deconecta și trebuie să vă reconectați pe toate celelalte dispozitive."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Veți folosi acest cod PIN pentru a debloca ${ PASS_APP_NAME } când se va autobloca după o perioadă de inactivitate."
@@ -1741,6 +1793,9 @@
       "Confirm vault name": [
         "Confirmare nume seif"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Create a credit card": [
         "Creare card de credit"
       ],
@@ -1801,8 +1856,14 @@
       "Expiration date": [
         "Dată expirare"
       ],
+      "Expired": [
+        "Expirat"
+      ],
       "Export": [
         "Exportare"
+      ],
+      "Extra password": [
+        "Parola suplimentară"
       ],
       "Field name": [
         "Nume câmp"
@@ -1981,6 +2042,9 @@
       "Prompt for auto-save when generating passwords": [
         "Solicitare autosalvare la generarea parolelor"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Protejați ${ PASS_APP_NAME } cu o parolă suplimentară"
+      ],
       "Rate us": [
         "Evaluați-ne"
       ],
@@ -2061,6 +2125,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Deblocare ${ PASS_APP_NAME }"
       ],
       "Unnamed Credit Card": [
         "Card de credit nedenumit"
@@ -2255,6 +2322,9 @@
       "Auto-lock update": [
         "Actualizare autoblocare"
       ],
+      "Confirm extra password": [
+        "Confirmare parolă suplimentară"
+      ],
       "Confirm PIN code": [
         "Confirmare cod PIN"
       ],
@@ -2369,6 +2439,9 @@
       "Pinned (${ items.length })": [
         "Fixate (${ items.length })"
       ],
+      "Remove extra password": [
+        "Eliminare parolă suplimentară"
+      ],
       "Restore this version?": [
         "Restaurați această versiune?"
       ],
@@ -2380,6 +2453,9 @@
       ],
       "Set access level": [
         "Setare nivel de acces"
+      ],
+      "Set extra password": [
+        "Setare parolă suplimentară"
       ],
       "Set up 2FA for more security": [
         "Setați A2F pentru mai multă securitate"
@@ -2408,6 +2484,9 @@
       "Trash empty": [
         "Gunoiul este gol"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Deblocare ${ brandNameJSX }"
+      ],
       "Update available": [
         "Actualizare disponibilă"
       ],
@@ -2425,6 +2504,9 @@
       ],
       "Weak password": [
         "Parolă slabă"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Bun venit la ${ brandNameJSX }"
       ],
       "Welcome to your new password manager!": [
         "Bun venit la noul manager de parole!"
@@ -2487,6 +2569,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Nu se pot prelua mesajele pentru acest alias chiar acum."
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Atenție: nu veți putea accesa contul ${ PASS_APP_NAME } dacă pierdeți această parolă."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Nu s-a putut crea seiful „${ vaultName }”."
       ],
@@ -2504,6 +2589,12 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Data de expirare nu este în format LL/AA."
+      ],
+      "Extra password cannot be empty": [
+        "Parola suplimentară nu poate fi goală."
+      ],
+      "Extra password should have at least 8 characters": [
+        "Parola suplimentară trebuie să aibă cel puțin 8 caractere."
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."
@@ -2552,6 +2643,9 @@
       "Passphrase is required": [
         "Este necesară o frază de acces."
       ],
+      "Passwords do not match": [
+        "Parolele nu coincid."
+      ],
       "PGP encrypted export file requires passphrase": [
         "Fișierul criptat PGP exportat necesită o frază de acces."
       ],
@@ -2563,6 +2657,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verificați-vă adresa de e-mail pentru a utiliza partajarea seifului."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Eliminarea parolei suplimentare vă va deconecta de pe toate dispozitivele și veți încheia toate sesiunile active."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."

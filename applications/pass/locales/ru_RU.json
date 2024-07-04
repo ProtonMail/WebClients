@@ -109,6 +109,9 @@
       "Copy and close": [
         "Скопировать и закрыть"
       ],
+      "Copy link": [
+        "Копировать ссылку"
+      ],
       "Copy to clipboard": [
         "Скопировать в буфер обмена"
       ],
@@ -298,11 +301,11 @@
       "Move to another vault": [
         "Переместить в другое хранилище"
       ],
-      "Move to Trash": [
-        "Переместить в корзину"
-      ],
       "Move to trash": [
         "Переместить в Корзину"
+      ],
+      "Move to Trash": [
+        "Переместить в корзину"
       ],
       "Multiple select": [
         "Множественный выбор"
@@ -340,11 +343,17 @@
       "Reject invitation": [
         "Отклонить приглашение"
       ],
+      "Reload": [
+        "Перезагрузить"
+      ],
       "Remove": [
         "Удалить"
       ],
       "Remove access": [
         "Отменить доступ"
+      ],
+      "Remove link": [
+        "Удалить ссылку"
       ],
       "Remove member": [
         "Удалить участника"
@@ -397,6 +406,9 @@
       "Set access level": [
         "Установить уровень доступа"
       ],
+      "Set extra password": [
+        "Установить дополнительный пароль"
+      ],
       "Setup 2FA": [
         "Настроить двухфакторную аутентификацию"
       ],
@@ -438,6 +450,9 @@
       ],
       "Try again.": [
         "Повторите попытку."
+      ],
+      "Try for free": [
+        "Попробовать бесплатно"
       ],
       "Unlock offline with password": [
         "Разблокировать паролем офлайн"
@@ -966,12 +981,6 @@
         "${ memberCount } членов",
         "${ memberCount } член"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } раз",
-        "${ modifiedCount } раз",
-        "${ modifiedCount } раза",
-        "${ modifiedCount } раза"
-      ],
       "${ n } item": [
         "${ n } элемент",
         "${ n } элемента",
@@ -1175,6 +1184,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Введите дополнительный пароль"
       ],
       "Enter your PIN code": [
         "Введите свой PIN-код"
@@ -1491,6 +1503,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Делитесь своими логинами и защищенными заметками с максимум 10 людьми."
       ],
+      "Sign in to your account": [
+        "Войдите в свой аккаунт"
+      ],
       "Signing you in": [
         "Выполняется вход"
       ],
@@ -1562,6 +1577,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
       ],
       "Unpinning item...": [
         "Открепление элемента..."
@@ -1772,6 +1790,9 @@
       "Confirm vault name": [
         "Подтвердите название хранилища"
       ],
+      "Copy": [
+        "Копировать"
+      ],
       "Create a credit card": [
         "Создать кредитную карту"
       ],
@@ -1831,6 +1852,9 @@
       ],
       "Expiration date": [
         "Срок действия"
+      ],
+      "Expired": [
+        "Истекло"
       ],
       "Export": [
         "Экспорт"
@@ -2332,6 +2356,9 @@
       "Breaches detected for": [
         "Обнаружены утечки для"
       ],
+      "Confirm extra password": [
+        "Подтвердить дополнительный пароль"
+      ],
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
       ],
@@ -2494,6 +2521,9 @@
       "Remove email address?": [
         "Удалить адрес электронной почты?"
       ],
+      "Remove extra password": [
+        "Удалить дополнительный пароль"
+      ],
       "Resolved breaches": [
         "Устраненные утечки"
       ],
@@ -2520,6 +2550,9 @@
       ],
       "Set access level": [
         "Задать уровень доступа"
+      ],
+      "Set extra password": [
+        "Установить дополнительный пароль"
       ],
       "Set up 2FA for better security": [
         "Настройте двухфакторную идентификацию для повышения безопасности"
@@ -2548,6 +2581,9 @@
       "Trash empty": [
         "Корзина пуста"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Разблокировать ${ brandNameJSX }"
+      ],
       "Update available": [
         "Доступно обновление"
       ],
@@ -2568,6 +2604,9 @@
       ],
       "Weak passwords": [
         "Слабые пароли"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Добро пожаловать в ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Что такое псевдоним?"
@@ -2657,6 +2696,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Срок действия не в формате ММ/ГГ"
       ],
+      "Extra password cannot be empty": [
+        "Дополнительный пароль не может быть пустым"
+      ],
       "Failed to load breaches.": [
         "Не удалось загрузить утечки."
       ],
@@ -2713,6 +2755,9 @@
       ],
       "Passphrase is required": [
         "Требуется кодовая фраза"
+      ],
+      "Passwords do not match": [
+        "Пароли не совпадают"
       ],
       "PGP encrypted export file requires passphrase": [
         "Для файла экспорта с шифрованием в PGP требуется парольная фраза"

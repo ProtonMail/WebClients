@@ -103,8 +103,14 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Continue offline": [
+        "Pokračovat offline"
+      ],
       "Copy and close": [
         "Kopírovat a zavřít"
+      ],
+      "Copy link": [
+        "Kopírovat odkaz"
       ],
       "Copy to clipboard": [
         "Zkopírovat do schránky"
@@ -295,10 +301,10 @@
       "Move to another vault": [
         "Přesunout do jiného trezoru"
       ],
-      "Move to Trash": [
+      "Move to trash": [
         "Přesunout do koše"
       ],
-      "Move to trash": [
+      "Move to Trash": [
         "Přesunout do koše"
       ],
       "Multiple select": [
@@ -337,11 +343,17 @@
       "Reject invitation": [
         "Odmítnout pozvánku"
       ],
+      "Reload": [
+        "Znovu načíst"
+      ],
       "Remove": [
         "Odstranit"
       ],
       "Remove access": [
         "Odebrat přístup"
+      ],
+      "Remove link": [
+        "Odstranit odkaz"
       ],
       "Remove member": [
         "Odebrat člena"
@@ -391,6 +403,12 @@
       "Set access level": [
         "Nastavit úroveň přístupu"
       ],
+      "Set extra password": [
+        "Nastavte dodatečné heslo"
+      ],
+      "Setup 2FA": [
+        "Nastavit 2FA"
+      ],
       "Share": [
         "Sdílet"
       ],
@@ -429,6 +447,9 @@
       ],
       "Try again.": [
         "Zkusit znovu."
+      ],
+      "Try for free": [
+        "Vyzkoušet zdarma"
       ],
       "Unpin item": [
         "Odepnout položku"
@@ -951,12 +972,6 @@
         "${ memberCount } členů",
         "${ memberCount } členů"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount }krát",
-        "${ modifiedCount }krát",
-        "${ modifiedCount }krát",
-        "${ modifiedCount }krát"
-      ],
       "${ n } item": [
         "${ n } položka",
         "${ n } položky",
@@ -1142,6 +1157,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Zadejte ověřovací kód. Číslice ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Zadejte své dodatečné heslo"
       ],
       "Enter your PIN code": [
         "Zadejte PIN kód"
@@ -1452,6 +1470,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Sdílení přihlašovacích údajů, zabezpečených poznámek, až s 10 lidmi"
       ],
+      "Sign in to your account": [
+        "Přihlaste se ke svému účtu"
+      ],
       "Signing you in": [
         "Přihlašujeme vás"
       ],
@@ -1733,6 +1754,9 @@
       "Confirm vault name": [
         "Potvrdit název trezoru"
       ],
+      "Copy": [
+        "Kopírovat"
+      ],
       "Create a credit card": [
         "Vytvořit platební kartu"
       ],
@@ -1744,6 +1768,9 @@
       ],
       "Create an encrypted note": [
         "Vytvořit šifrovanou poznámku"
+      ],
+      "Create lock": [
+        "Vytvořit zámek"
       ],
       "Create new vault": [
         "Vytvořit nový trezor"
@@ -1772,6 +1799,9 @@
       "Email": [
         "E-mail"
       ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
       "Email address": [
         "E-mailová adresa"
       ],
@@ -1784,8 +1814,14 @@
       "Expiration date": [
         "Konec platnosti"
       ],
+      "Expired": [
+        "Vypršelo"
+      ],
       "Export": [
         "Export"
+      ],
+      "Extra password": [
+        "Dodatečné heslo"
       ],
       "Field name": [
         "Název pole"
@@ -2170,11 +2206,17 @@
       "Enter a prefix": [
         "Zadejte předponu"
       ],
+      "Enter email": [
+        "Zadejte e-mail"
+      ],
       "Enter email or username": [
         "Zadejte e-mail nebo uživatelské jméno"
       ],
       "Enter password": [
         "Zadejte heslo"
+      ],
+      "Enter username": [
+        "Zadejte uživatelské jméno"
       ],
       "Full Name": [
         "Celé jméno"
@@ -2277,6 +2319,9 @@
       ],
       "Breaches detected for": [
         "Zjištěny úniky informací pro"
+      ],
+      "Confirm extra password": [
+        "Potvrdit dodatečné heslo"
       ],
       "Confirm PIN code": [
         "Potvrdit PIN kód"
@@ -2440,6 +2485,9 @@
       "Remove email address?": [
         "Odebrat e-mailovou adresu?"
       ],
+      "Remove extra password": [
+        "Odstranit dodatečné heslo"
+      ],
       "Resolved breaches": [
         "Vyřešené úniky informací"
       ],
@@ -2466,6 +2514,9 @@
       ],
       "Set access level": [
         "Nastavit úroveň přístupu"
+      ],
+      "Set extra password": [
+        "Nastavte dodatečné heslo"
       ],
       "Set up 2FA for better security": [
         "Nastavte 2FA pro lepší zabezpečení"
@@ -2494,6 +2545,9 @@
       "Trash empty": [
         "Koš je prázdný"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Odemknout ${ brandNameJSX }"
+      ],
       "Update available": [
         "Aktualizace k dispozici"
       ],
@@ -2514,6 +2568,9 @@
       ],
       "Weak passwords": [
         "Slabá hesla"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Vítejte v ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Co je alias?"
@@ -2603,6 +2660,9 @@
       "Expiration Date is not in the format MM/YY": [
         "Datum konce platnosti není ve formátu MM/RR"
       ],
+      "Extra password cannot be empty": [
+        "Dodatečné heslo nemůže být prázdné"
+      ],
       "Failed to load breaches.": [
         "Nelze načíst úniky informací."
       ],
@@ -2659,6 +2719,9 @@
       ],
       "Passphrase is required": [
         "Je vyžadováno heslo"
+      ],
+      "Passwords do not match": [
+        "Hesla se neshodují"
       ],
       "PGP encrypted export file requires passphrase": [
         "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"

@@ -470,6 +470,9 @@
       "Send my username": [
         "Poslat mé uživatelské jméno"
       ],
+      "Send new invite": [
+        "Odeslat novou pozvánku"
+      ],
       "Send reminder": [
         "Poslat připomenutí"
       ],
@@ -598,6 +601,9 @@
       ],
       "Verify code again": [
         "Znovu ověřit kód"
+      ],
+      "Verify domain": [
+        "Ověřte doménu"
       ],
       "View": [
         "Zobrazit"
@@ -4524,6 +4530,9 @@
       "Paid": [
         "Zaplaceno"
       ],
+      "Processing": [
+        "Zpracovává se"
+      ],
       "Unpaid": [
         "Nezaplaceno"
       ],
@@ -4938,6 +4947,9 @@
       ],
       "Reveal password": [
         "Zobrazit heslo"
+      ],
+      "Second password": [
+        "Druhé heslo"
       ],
       "Security code (${ codeName })": [
         "Kód zabezpečení (${ codeName })"
@@ -8567,6 +8579,9 @@
       "Email addresses": [
         "E-mailové adresy"
       ],
+      "Invitation email": [
+        "E-mail pozvánky:"
+      ],
       "Name": [
         "Jméno"
       ],
@@ -9051,6 +9066,9 @@
       "Send email reminders?": [
         "Poslat připomenutí e-mailem?"
       ],
+      "Send new invite?": [
+        "Odeslat novou pozvánku?"
+      ],
       "Set new password": [
         "Nastavit nové heslo"
       ],
@@ -9333,11 +9351,17 @@
       ]
     },
     "user_modal": {
-      "${ BRAND_NAME } address": [
-        "${ BRAND_NAME } adresa"
-      ],
       "Add multiple users": [
         "Přidat více uživatelů"
+      ],
+      "Add new user": [
+        "Přidat nového uživatele"
+      ],
+      "Admin": [
+        "Administrátor"
+      ],
+      "Cancel": [
+        "Zrušit"
       ],
       "Confirm password": [
         "Potvrzení hesla"
@@ -9345,8 +9369,29 @@
       "Create password": [
         "Vytvořit heslo"
       ],
+      "Create user": [
+        "Vytvořit uživatele"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Invitation email": [
+        "E-mail pozvánky"
+      ],
+      "Name": [
+        "Název"
+      ],
+      "Optional": [
+        "Volitelné"
+      ],
+      "Private": [
+        "Soukromý"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
+      ],
+      "User created": [
+        "Uživatel vytvořen"
       ],
       "VPN connections": [
         "VPN připojení"
@@ -9356,6 +9401,18 @@
       ]
     },
     "Users table: badge": {
+      "Invite sent": [
+        "Pozvánka odeslána"
+      ],
+      "It's you": [
+        "To jsi ty"
+      ],
+      "Private": [
+        "Soukromý"
+      ],
+      "SSO": [
+        "SSO"
+      ],
       "SSO user provided by your identity provider": [
         "SSO uživatel poskytnutý poskytovatelem identity"
       ],

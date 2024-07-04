@@ -101,6 +101,9 @@
       "Copy and close": [
         "コピーして閉じる"
       ],
+      "Copy link": [
+        "リンクをコピー"
+      ],
       "Copy to clipboard": [
         "クリップボードにコピー"
       ],
@@ -397,6 +400,9 @@
       ],
       "Set access level": [
         "アクセスレベルの設定"
+      ],
+      "Set extra password": [
+        "追加のパスワードを設定する"
       ],
       "Share": [
         "共有"
@@ -890,9 +896,6 @@
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } 回"
-      ],
       "${ n } item": [
         "${ n } アイテム"
       ],
@@ -1334,6 +1337,9 @@
       "Sign in or create an account to continue.": [
         "サインインするか、アカウントを作成してください。"
       ],
+      "Sign in to your account": [
+        "アカウントにサインインする"
+      ],
       "Signing you in": [
         "サインインする"
       ],
@@ -1606,6 +1612,9 @@
       "Confirm vault name": [
         "保管庫名を確認する"
       ],
+      "Copy": [
+        "コピー"
+      ],
       "Create a credit card": [
         "クレジットカード情報を作成"
       ],
@@ -1653,6 +1662,9 @@
       ],
       "Expiration date": [
         "有効期限"
+      ],
+      "Expired": [
+        "有効期限切れ"
       ],
       "Export": [
         "エクスポート"
@@ -1911,6 +1923,9 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }のロックを解除します"
       ],
       "Unnamed Credit Card": [
         "無名のクレジットカード"
@@ -2218,6 +2233,9 @@
       "Set access level": [
         "アクセスレベルの設定"
       ],
+      "Set extra password": [
+        "追加のパスワードを設定する"
+      ],
       "Set up 2FA for more security": [
         "2要素認証を設定するとより安全になります"
       ],
@@ -2245,6 +2263,9 @@
       "Trash empty": [
         "ごみ箱は空です"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } のロックを解除します"
+      ],
       "Update available": [
         "更新あり"
       ],
@@ -2262,6 +2283,9 @@
       ],
       "Weak password": [
         "弱いパスワード"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX } へようこそ"
       ],
       "Welcome to your new password manager!": [
         "新しいパスワード マネージャーへようこそ!"
@@ -2386,6 +2410,9 @@
       ],
       "Passphrase is required": [
         "パスフレーズが必要です"
+      ],
+      "Passwords do not match": [
+        "パスワードが一致しません"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP暗号化エクスポートファイルにはパスフレーズが必要です。"

@@ -97,6 +97,9 @@
       "Copy and close": [
         "Kopiëren en sluiten"
       ],
+      "Copy link": [
+        "Link kopiëren"
+      ],
       "Copy to clipboard": [
         "Kopieer naar klembord"
       ],
@@ -286,11 +289,11 @@
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
-      "Move to Trash": [
-        "Verplaats naar prullenbak"
-      ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "Move to Trash": [
+        "Verplaats naar prullenbak"
       ],
       "Multiple select": [
         "Meervoudige selectie"
@@ -328,11 +331,17 @@
       "Reject invitation": [
         "Uitnodiging afwijzen"
       ],
+      "Reload": [
+        "Opnieuw laden"
+      ],
       "Remove": [
         "Verwijderen"
       ],
       "Remove access": [
         "Toegang verwijderen"
+      ],
+      "Remove link": [
+        "Link verwijderen"
       ],
       "Remove member": [
         "Lid verwijderen"
@@ -420,6 +429,9 @@
       ],
       "Try again.": [
         "Probeer opnieuw."
+      ],
+      "Try for free": [
+        "Probeer het gratis"
       ],
       "Unpin item": [
         "Item losmaken"
@@ -910,10 +922,6 @@
         "${ memberCount } lid",
         "${ memberCount } leden"
       ],
-      "${ modifiedCount } time": [
-        "${ modifiedCount } keer",
-        "${ modifiedCount } keer"
-      ],
       "${ n } item": [
         "${ n } item",
         "${ n } items"
@@ -1358,6 +1366,9 @@
       "Share your logins, secure notes, with up to 10 people": [
         "Deel uw inloggevens met maximaal 10 personen"
       ],
+      "Sign in to your account": [
+        "Inloggen bij uw account"
+      ],
       "Signing you in": [
         "U wordt ingelogd"
       ],
@@ -1629,6 +1640,9 @@
       "Confirm vault name": [
         "Bevestig naam van kluis"
       ],
+      "Copy": [
+        "Kopiëren"
+      ],
       "Create a credit card": [
         "Kredietkaart aanmaken"
       ],
@@ -1679,6 +1693,9 @@
       ],
       "Expiration date": [
         "Vervaldatum"
+      ],
+      "Expired": [
+        "Verlopen"
       ],
       "Export": [
         "Exporteren"
@@ -2381,6 +2398,9 @@
       "Trash empty": [
         "Prullenbak leeg"
       ],
+      "Unlock ${ brandNameJSX }": [
+        "Ontgrendel ${ brandNameJSX }"
+      ],
       "Update available": [
         "Update beschikbaar"
       ],
@@ -2401,6 +2421,9 @@
       ],
       "Weak passwords": [
         "Zwakke wachtwoorden"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Welkom bij ${ brandNameJSX }"
       ],
       "What is an alias?": [
         "Wat is een alias?"
@@ -2544,6 +2567,9 @@
       ],
       "Passphrase is required": [
         "Wachtzin is vereist"
+      ],
+      "Passwords do not match": [
+        "Wachtwoorden komen niet overeen"
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-versleuteld exportbestand vereist wachtzin"
