@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button';
+import { ModalOwnProps, Prompt } from '@proton/components/components';
 import walletSeedphraseSrc from '@proton/styles/assets/img/illustrations/wallet-access-key.svg';
 import walletPassphraseSrc from '@proton/styles/assets/img/illustrations/wallet-passphrase.svg';
-
-import { Modal } from '../../atoms';
 
 type ContentKind = 'wallet-seedphrase-introduction' | 'wallet-passphrase-introduction';
 
@@ -35,14 +34,14 @@ export const WalletInformationalModal = ({ kind, ...modalProps }: WalletInformat
     const { title, image, text } = getContent(kind);
 
     return (
-        <Modal size="small" {...modalProps}>
-            <div className="flex flex-column items-center">
+        <Prompt size="medium" buttons={<Button onClick={modalProps.onClose}>Ok</Button>} {...modalProps}>
+            <div className="flex flex-column items-center text-center">
                 <img src={image} alt="" className="mb-6" />
 
                 <h1 className="my-4 text-semibold text-3xl">{title ?? c('Wallet Upgrade').t`Upgrade your privacy`}</h1>
 
-                <p className="mt-0 mb-8 color-hint text-center">{text}</p>
+                <p className="m-0 color-hint text-center">{text}</p>
             </div>
-        </Modal>
+        </Prompt>
     );
 };
