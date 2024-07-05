@@ -34,7 +34,7 @@ import {
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS, Recipient } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -65,6 +65,8 @@ interface Props {
     getContentBeforeBlockquote: () => string;
     setReplacementStyle: (action: ReplacementStyle) => void;
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
+    recipients: Recipient[];
+    sender: Recipient | undefined;
 }
 
 const ComposerAssistantInput = ({
@@ -83,6 +85,8 @@ const ComposerAssistantInput = ({
     getContentBeforeBlockquote,
     setReplacementStyle,
     setInnerModal,
+    recipients,
+    sender,
 }: Props) => {
     // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
@@ -155,6 +159,8 @@ const ComposerAssistantInput = ({
             return {
                 type: 'writeFullEmail',
                 prompt: assistantRequest,
+                recipient: recipients?.[0]?.Name,
+                sender: sender?.Name,
             };
         }
 
@@ -719,7 +725,7 @@ const ComposerAssistantInput = ({
                         modalProps={{
                             ...upsellModal.modalProps,
                         }}
-                        handleCloseAssistant={() => closeAssistant(assistantID)}
+                        handleCloseAssistant={() => closeAssistant(assistantID, true)}
                     />
                 )}
                 {falsePositiveFeedback.render && (

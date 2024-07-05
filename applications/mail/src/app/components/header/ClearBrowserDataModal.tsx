@@ -24,7 +24,7 @@ const ClearBrowserDataModal = (rest: ModalProps) => {
             void deleteAssistantCachedFiles().then(() => {
                 if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
                     for (const { id } of openedAssistants) {
-                        closeAssistant(id);
+                        closeAssistant(id, true);
                     }
                 }
                 resetAssistantState();
