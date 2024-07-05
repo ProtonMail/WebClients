@@ -6,8 +6,8 @@ import { renderHook } from '@testing-library/react-hooks';
 import * as WasmBlockchainClientModule from '@proton/andromeda';
 import CacheProvider from '@proton/components/containers/cache/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
+import { getFeesEstimationMap, mockUseWalletApi } from '@proton/wallet/tests';
 
-import { getFeesEstimationMap, mockUseWalletApi } from '../../tests';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 
 const feesEstimationMap = getFeesEstimationMap();

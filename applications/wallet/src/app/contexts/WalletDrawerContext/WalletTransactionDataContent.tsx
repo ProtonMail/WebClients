@@ -6,13 +6,12 @@ import { Scroll } from '@proton/atoms/Scroll';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
+import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { RecipientDetailsModal, RecipientDetailsModalOwnProps } from '../../components/RecipientDetailsModal';
-import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { TransactionData } from '../../hooks/useWalletTransactions';
-import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { convertAmountStr, getLabelByUnit } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import {

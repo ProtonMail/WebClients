@@ -25,10 +25,10 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
+import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-integration';
 
 import { CoreButton, Input, InputProps } from '../../atoms';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
-import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '../../constants/email-integration';
 import { getThemeByIndex, isValidBitcoinAddress } from '../../utils';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
 import { BtcAddressOrError, RecipientEmailMap } from './useEmailAndBtcAddressesMaps';

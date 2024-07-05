@@ -11,6 +11,7 @@ import {
 } from '@proton/andromeda';
 import { Icon, Tooltip } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { useUserWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButton } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
@@ -18,7 +19,6 @@ import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/Bitc
 import { usePsbt } from '../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../store/hooks';
-import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { AccountWithChainData } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';

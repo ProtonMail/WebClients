@@ -1,4 +1,4 @@
-import { exchangeRate } from '@proton/wallet';
+import { exchangeRate } from '@proton/wallet/tests';
 
 import * as useWalletAccountExchangeRateModule from '../../hooks/useWalletAccountExchangeRate';
 

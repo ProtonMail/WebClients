@@ -3,8 +3,8 @@ import CorePrice, { Props as PriceOwnProps } from '@proton/components/components
 import '@proton/components/components/price/Price.scss';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 
-import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { convertAmount, convertAmountStr } from '../../utils';
 
 type ClassNamesProps = {

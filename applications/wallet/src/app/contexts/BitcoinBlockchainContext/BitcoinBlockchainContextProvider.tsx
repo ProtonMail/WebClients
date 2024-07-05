@@ -1,10 +1,9 @@
 import { ReactNode, useContext } from 'react';
 
-import { useDecryptedApiWalletsData } from '@proton/wallet';
+import { useBitcoinNetwork, useDecryptedApiWalletsData } from '@proton/wallet';
 
 import { BitcoinBlockchainContext } from '.';
 import { useBitcoinAddressPool } from '../../hooks/useBitcoinAddressPool';
-import { useBitcoinNetwork } from '../../store/hooks';
 import { useDebounceEffect } from '../../utils/hooks/useDebouncedEffect';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useWalletsChainData } from './useWalletsChainData';

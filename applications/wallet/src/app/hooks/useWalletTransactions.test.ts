@@ -16,15 +16,11 @@ import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
 import { IWasmApiWalletData, getSymmetricKey } from '@proton/wallet';
+import { getAddressKey, getMockedApi, getUserKeys, mockUseWalletApiClients } from '@proton/wallet/tests';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { useGetApiWalletTransactionData } from '../store/hooks';
-import {
-    mockUseBitcoinBlockchainContext,
-    mockUseGetApiWalletTransactionData,
-    mockUseWalletApiClients,
-} from '../tests/';
-import { getAddressKey, getUserKeys } from '../tests/utils/keys';
+import { mockUseBitcoinBlockchainContext, mockUseGetApiWalletTransactionData } from '../tests/';
 import { useWalletTransactions } from './useWalletTransactions';
 
 const networkTransactions: WasmTransactionDetails[] = [
@@ -369,13 +365,15 @@ leuf2nQGByJvgUsPBuLkNG6E9zU8oOKy6NU1FNnutwI=
 
         mockedUpdateWalletTransactionHashedTxId.mockReset();
 
-        mockUseWalletApiClients({
-            wallet: {
-                getWalletTransactionsToHash: mockedGetWalletTransactionsToHash,
-                createWalletTransaction: mockedCreateWalletTransaction,
-                updateWalletTransactionHashedTxId: mockedUpdateWalletTransactionHashedTxId,
-            },
-        });
+        mockUseWalletApiClients(
+            getMockedApi({
+                wallet: {
+                    getWalletTransactionsToHash: mockedGetWalletTransactionsToHash,
+                    createWalletTransaction: mockedCreateWalletTransaction,
+                    updateWalletTransactionHashedTxId: mockedUpdateWalletTransactionHashedTxId,
+                },
+            })
+        );
     });
 
     describe('when transactions is empty', () => {

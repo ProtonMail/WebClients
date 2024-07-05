@@ -6,6 +6,9 @@ import {
     WasmTransactionDetails,
     WasmWallet,
 } from '@proton/andromeda';
+
+import { WalletChainDataByWalletId } from '../../types';
+import { freeable } from '../utils/wasm';
 import {
     apiWalletAccountOneA,
     apiWalletAccountOneB,
@@ -13,10 +16,7 @@ import {
     apiWalletAccountTwoA,
     apiWalletAccountTwoB,
     apiWalletsData,
-} from '@proton/wallet';
-
-import { WalletChainDataByWalletId } from '../../types';
-import { freeable } from '../utils/wasm';
+} from './api';
 import { simpleTransactions } from './transactions';
 
 export const getMockedWallet = (mocked?: Partial<WasmWallet>): WasmWallet => {

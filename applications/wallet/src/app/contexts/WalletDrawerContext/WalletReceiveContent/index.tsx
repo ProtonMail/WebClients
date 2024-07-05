@@ -9,7 +9,7 @@ import Href from '@proton/atoms/Href/Href';
 import Copy from '@proton/components/components/button/Copy';
 import QRCode from '@proton/components/components/image/QRCode';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButton, Select } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
@@ -18,7 +18,6 @@ import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';
 import { useWalletAccountExchangeRate } from '../../../hooks/useWalletAccountExchangeRate';
 import { useFiatCurrencies, useGetExchangeRate } from '../../../store/hooks';
-import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
 import { useBitcoinReceive } from './useBitcoinReceive';
