@@ -3,6 +3,7 @@
     "description": "Feature toggles",
     "dependencies": {
         "@proton/redux-shared-store": "workspace:^",
+        "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
         "@reduxjs/toolkit": "^2.2.5"
     }

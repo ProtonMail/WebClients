@@ -11,6 +11,7 @@ import {
 } from '@proton/components/components';
 import { useApi, useConfig, useEventManager, useGetOrganization, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
+import { CacheType } from '@proton/redux-utilities';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -52,7 +53,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
         });
         if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
             // Force refresh the organization since it's not present in the event manager
-            getOrganization({ cache: 'no-cache' }).catch(noop);
+            getOrganization({ cache: CacheType.None }).catch(noop);
             goToSettings('/account-password', APPS.PROTONACCOUNT);
         }
     };

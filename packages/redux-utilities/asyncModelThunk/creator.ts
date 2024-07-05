@@ -8,17 +8,18 @@ import {
 } from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
-import { defaultExpiry, getFetchedAt as getDefaultFetchedAt, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
-
-import type { CacheType, ReducerValue, ThunkOptions } from './interface';
-import { createPromiseCache } from './promiseCache';
+import { getFetchedAt as getDefaultFetchedAt, getFetchedEphemeral } from './fetchedAt';
+import type { ReducerValue, ThunkOptions } from './interface';
+import { cacheHelper, createPromiseStore } from './promiseStore';
 
 export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
     prefix: string,
     {
+        expiry,
         miss,
         previous,
     }: {
+        expiry?: number;
         miss: (extra: {
             dispatch: ThunkDispatch<State, Extra, Action>;
             getState: () => State;
@@ -30,7 +31,7 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
             getState: () => State;
             extraArgument: Extra;
             options?: ThunkOptions<ThunkArg>;
-        }) => Promise<Returned> | undefined;
+        }) => ReducerValue<Returned> | undefined;
     }
 ) => {
     const pending = createAction(`${prefix}/pending`, () => ({
@@ -45,7 +46,7 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
         payload,
     }));
 
-    const promiseCache = createPromiseCache<Returned>();
+    const promiseStore = createPromiseStore<Returned>();
 
     const thunk = (
         options?: ThunkOptions<ThunkArg>
@@ -70,7 +71,7 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
                     throw error;
                 }
             };
-            return promiseCache(select, cb);
+            return cacheHelper({ store: promiseStore, select, cb, cache: options?.cache, expiry });
         };
     };
 
@@ -85,7 +86,11 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
 export const handleAsyncModel = <Returned, State, Extra, Options>(
     builder: ActionReducerMapBuilder<ReducerValue<Returned>>,
     cases: ReturnType<typeof createAsyncModelThunk<Returned, State, Extra, Options>>,
-    { getFetchedAt }: { getFetchedAt: typeof getDefaultFetchedAt } = { getFetchedAt: getDefaultFetchedAt }
+    {
+        getFetchedAt,
+    }: {
+        getFetchedAt: typeof getDefaultFetchedAt;
+    } = { getFetchedAt: getDefaultFetchedAt }
 ) => {
     return builder
         .addCase(cases.pending, (state) => {
@@ -95,6 +100,7 @@ export const handleAsyncModel = <Returned, State, Extra, Options>(
             state.value = action.payload as Draft<Returned> | undefined;
             state.error = undefined;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         })
         .addCase(cases.rejected, (state, action) => {
             state.error = action.payload;
@@ -102,31 +108,17 @@ export const handleAsyncModel = <Returned, State, Extra, Options>(
         });
 };
 
-export const getValidModel = <T>({ value, cache }: { value: T; cache?: CacheType }) => {
-    if (value !== undefined && cache === 'stale') {
-        return Promise.resolve(value);
-    }
-};
-
 export const previousSelector =
     <Returned, State, Extra, ThunkArg = void>(
-        selector: (state: State) => ReducerValue<Returned>,
-        expiry = defaultExpiry
+        selector: (state: State) => ReducerValue<Returned>
     ): ((extra: {
         dispatch: ThunkDispatch<State, Extra, Action>;
         getState: () => State;
         extraArgument: Extra;
         options?: ThunkOptions<ThunkArg>;
-    }) => Promise<Returned> | undefined) =>
-    ({ getState, options }) => {
-        const state = selector(getState());
-        if (!state) {
-            return;
-        }
-        return getValidModel({
-            value: state.value,
-            cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, expiry) ? 'stale' : undefined),
-        });
+    }) => ReducerValue<Returned> | undefined) =>
+    ({ getState }) => {
+        return selector(getState());
     };
 
 export const selectPersistModel = <T>(state: ReducerValue<T>) => {

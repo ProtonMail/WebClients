@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import { CacheType } from '@proton/redux-utilities';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -64,7 +65,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const MaxDomains = organization?.MaxDomains || 0;
 
     const handleRefresh = async () => {
-        await getCustomDomains({ cache: 'no-cache' });
+        await getCustomDomains({ cache: CacheType.None });
     };
 
     const reviewText = c('Action').t`Review`;

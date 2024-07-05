@@ -3,5 +3,6 @@ export interface ModelState<T> {
     error: any;
     meta: {
         fetchedAt: number;
+        fetchedEphemeral: boolean | undefined;
     };
 }

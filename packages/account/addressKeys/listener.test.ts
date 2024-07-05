@@ -118,8 +118,8 @@ describe('address keys keys listener', () => {
         });
         const newResult = [getKey(4), getKey(5)];
         store.dispatch(addressKeysFulfilledAction({ id: '1', value: newResult }));
-        expect(selectAddressKeys(store.getState())['1'].value).toEqual(newResult);
-        expect(selectAddressKeys(store.getState())['2'].value).toBe(initialState['2'].value);
+        expect(selectAddressKeys(store.getState())['1']?.value).toEqual(newResult);
+        expect(selectAddressKeys(store.getState())['2']?.value).toBe(initialState['2'].value);
 
         await waitFor(() => expect(mockedCryptoProxy.clearKey).toHaveBeenCalledTimes(2));
         expect(mockedCryptoProxy.clearKey.mock.calls[0][0]).toEqual({ key: firstKeys[0].privateKey });
@@ -157,11 +157,25 @@ describe('address keys keys listener', () => {
         expect(selectAddressKeys(store.getState())).toEqual({ ...initialState });
         expect(mockedAddressKeysThunk).toHaveBeenCalledTimes(0);
 
+        const getState = (value: any) => {
+            return {
+                value,
+                error: undefined,
+                meta: {
+                    fetchedAt: expect.any(Number),
+                    fetchedEphemeral: true,
+                },
+            };
+        };
+
         const result = [getKey(3)];
         mockedGetDecryptedAddressKeysHelper.mockReturnValue(result);
         await store.dispatch(addressKeysThunk({ addressID: '2' }));
         expect(mockedAddressKeysThunk).toHaveBeenCalledTimes(1);
-        expect(selectAddressKeys(store.getState())).toEqual({ ...initialState, '2': { value: result } });
+        expect(selectAddressKeys(store.getState())).toEqual({
+            ...initialState,
+            '2': getState(result),
+        });
 
         store.dispatch(
             serverEvent({
@@ -175,7 +189,7 @@ describe('address keys keys listener', () => {
             })
         );
 
-        expect(selectAddressKeys(store.getState())).toEqual({ ...initialState, '2': { value: result } });
+        expect(selectAddressKeys(store.getState())).toEqual({ ...initialState, '2': getState(result) });
         expect(mockedAddressKeysThunk).toHaveBeenCalledTimes(1);
 
         const result2 = [getKey(2)];
@@ -194,7 +208,7 @@ describe('address keys keys listener', () => {
 
         expect(mockedAddressKeysThunk).toHaveBeenCalledTimes(2);
         await waitFor(() => expect(mockedGetDecryptedAddressKeysHelper).toHaveBeenCalledTimes(2));
-        expect(selectAddressKeys(store.getState())).toEqual({ ...initialState, '2': { value: result2 } });
+        expect(selectAddressKeys(store.getState())).toEqual({ ...initialState, '2': getState(result2) });
 
         store.dispatch(
             serverEvent({

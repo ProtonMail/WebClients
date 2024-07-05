@@ -16,3 +16,7 @@ export const getFetchedAt = () => {
 export const isNotStale = (fetchedAt: number | undefined, expiry: number) => {
     return Date.now() - (fetchedAt || 0) < expiry;
 };
+
+export const getFetchedEphemeral = () => {
+    return true;
+};

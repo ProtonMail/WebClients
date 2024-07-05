@@ -8,20 +8,27 @@ import {
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createPromiseMapCache } from '@proton/redux-utilities';
+import {
+    CacheType,
+    cacheHelper,
+    createPromiseMapStore,
+    getFetchedAt,
+    getFetchedEphemeral,
+} from '@proton/redux-utilities';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
 
 import { type AddressesState, addressesThunk } from '../addresses';
 import { inactiveKeysActions } from '../inactiveKeys';
+import type { ModelState } from '../interface';
 import { type UserState, userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 
 const name = 'addressKeys' as const;
 
 export interface AddressKeysState extends UserState, AddressesState, UserKeysState {
-    [name]: { [id: string]: { value: DecryptedAddressKey[] | undefined; error: any } };
+    [name]: { [id: string]: ModelState<DecryptedAddressKey[]> | undefined };
 }
 
 type SliceState = AddressKeysState[typeof name];
@@ -42,15 +49,23 @@ const slice = createSlice({
             }
         },
         fulfilled: (state, action: PayloadAction<{ id: string; value: DecryptedAddressKey[] }>) => {
-            state[action.payload.id] = { value: action.payload.value, error: undefined };
+            state[action.payload.id] = {
+                value: action.payload.value,
+                error: undefined,
+                meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: getFetchedEphemeral() },
+            };
         },
         rejected: (state, action: PayloadAction<{ id: string; value: any }>) => {
-            state[action.payload.id] = { value: undefined, error: action.payload.value };
+            state[action.payload.id] = {
+                value: undefined,
+                error: action.payload.value,
+                meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: undefined },
+            };
         },
     },
 });
 
-const promiseCache = createPromiseMapCache<DecryptedAddressKey[]>();
+const promiseStore = createPromiseMapStore<DecryptedAddressKey[]>();
 
 export const addressKeysThunk = ({
     addressID,
@@ -61,10 +76,7 @@ export const addressKeysThunk = ({
 }): ThunkAction<Promise<DecryptedAddressKey[]>, AddressKeysState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const select = () => {
-            const oldValue = selectAddressKeys(getState())?.[addressID || '']?.value;
-            if (oldValue !== undefined && cache !== 'no-cache') {
-                return Promise.resolve(oldValue);
-            }
+            return selectAddressKeys(getState())?.[addressID || ''];
         };
         const cb = async () => {
             try {
@@ -102,7 +114,7 @@ export const addressKeysThunk = ({
                 throw error;
             }
         };
-        return promiseCache(addressID, select, cb);
+        return cacheHelper({ store: promiseStore, key: addressID, select, cb, cache, expiry: 9999999 });
     };
 };
 

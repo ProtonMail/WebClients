@@ -68,15 +68,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: user }));
         }
 
-        const cacheOptions = {
-            cache: 'stale',
-        } as const;
-
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
-                dispatch(userThunk(cacheOptions)),
-                dispatch(userSettingsThunk(cacheOptions)),
-                dispatch(fetchFeatures([FeatureCode.EarlyAccessScope], cacheOptions)),
+                dispatch(userThunk()),
+                dispatch(userSettingsThunk()),
+                dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
             ]);
 
             dispatch(welcomeFlagsActions.initial(userSettings));
@@ -90,23 +86,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         };
 
         const userPromise = loadUser();
-        const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
-
-        if (persistedState?.state?.userSettings?.value) {
-            // Force fetch user settings in background in case it is persisted because entities like referral program have tricky
-            // eligibility conditions which don't properly propagate through the event loop. E.g. unleash feature flags which are enabled or disabled.
-            dispatch(userSettingsThunk({ cache: 'no-cache' })).catch(noop);
-        }
-
-        if (persistedState?.state?.user?.value && !user) {
-            // Force fetching user in background in case it is persisted.
-            // We need to keep the user fresh, because the payments migration relies on the user being up-to-date,
-            // and the event loop isn't always enough in this particular case.
-            // Probably, this workaround can be disabled after the payments migration is fully completed,
-            // e.g. no payments code rely on the user being up-to-date. The condition might be softer,
-            // please check with the payments team.
-            dispatch(userThunk({ cache: 'no-cache' })).catch(noop);
-        }
+        const evPromise = bootstrap.eventManager({ api: silentApi });
 
         await unleashPromise;
         await bootstrap.loadCrypto({ appName, unleashClient });
@@ -125,14 +105,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        if (persistedState?.eventID) {
-            setTimeout(() => {
-                eventManager.call();
-                // If we're resuming a session, we'd like to call the ev to get up-to-speed.
-                // This is in an arbitrary timeout since there are some consumers who subscribe through react useEffects triggered later through the app.
-            }, 350);
-        }
 
         bootstrap.onAbort(signal, () => {
             unsubscribeEventManager();
