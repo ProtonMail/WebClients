@@ -11,6 +11,7 @@ import { UserState } from '@lexical/yjs'
 import { NativeVersionHistory } from '../../VersionHistory'
 import { TranslatedResult } from '../../Domain/Result/TranslatedResult'
 import { Result } from '../../Domain/Result/Result'
+import { SerializedEditorState } from 'lexical'
 
 export interface DocControllerInterface {
   userAddress?: string
@@ -35,4 +36,5 @@ export interface DocControllerInterface {
   squashDocument(): Promise<void>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   printAsPDF(): Promise<void>
+  getEditorJSON(): Promise<SerializedEditorState | undefined>
 }
