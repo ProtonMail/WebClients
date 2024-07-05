@@ -26,7 +26,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   }, [application.docLoader])
 
   return (
-    <div className="flex items-center px-4 py-2">
+    <div className="flex items-center px-4 py-2" data-testid="docs-header">
       <DocumentTitleDropdown action={action} controller={controller} />
       <div className="w-2" />
       <ConnectionStatus />

@@ -223,6 +223,7 @@ export function TableMenu() {
         opacity: !tableNode ? 0 : 1,
         transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
       }}
+      data-testid="table-button-group"
     >
       <Button icon shape="ghost" size="small" onClick={fitTableToPageWidth}>
         <span className="sr-only">{c('Action').t`Fit table to page width`}</span>

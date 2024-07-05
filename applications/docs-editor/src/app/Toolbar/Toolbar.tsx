@@ -559,13 +559,24 @@ export default function DocumentEditorToolbar({
         style={{
           boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)',
         }}
+        data-testid="main-toolbar"
       >
         {showUndoRedoInToolbar && (
           <>
-            <ToolbarButton label={c('Action').t`Undo`} onClick={undo} disabled={!isEditable || !canUndo}>
+            <ToolbarButton
+              label={c('Action').t`Undo`}
+              onClick={undo}
+              disabled={!isEditable || !canUndo}
+              data-testid="undo-button"
+            >
               <UndoIcon className="h-4 w-4 fill-current" />
             </ToolbarButton>
-            <ToolbarButton label={c('Action').t`Redo`} onClick={redo} disabled={!isEditable || !canRedo}>
+            <ToolbarButton
+              label={c('Action').t`Redo`}
+              onClick={redo}
+              disabled={!isEditable || !canRedo}
+              data-testid="redo-button"
+            >
               <RedoIcon className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarSeparator />
@@ -590,6 +601,7 @@ export default function DocumentEditorToolbar({
           }
           disabled={!isEditable}
           contentProps={DropdownContentProps}
+          data-testid="headings-options"
         >
           <DropdownMenu>
             {blockTypes.map(({ type, name, onClick }) => (
@@ -618,6 +630,7 @@ export default function DocumentEditorToolbar({
           }
           disabled={!isEditable}
           contentProps={DropdownContentProps}
+          data-testid="font-family"
         >
           <DropdownMenu>
             {FontOptions.map(({ id, label, value }) => (
@@ -631,6 +644,7 @@ export default function DocumentEditorToolbar({
                   setFontFamilyForSelection(id)
                 }}
                 disabled={!isEditable}
+                data-testid="font-family-options"
               >
                 {label}
               </DropdownMenuButton>
@@ -647,6 +661,7 @@ export default function DocumentEditorToolbar({
           content={<>{fontSize}</>}
           disabled={!isEditable}
           contentProps={DropdownContentProps}
+          data-testid="font-size"
         >
           <DropdownMenu>
             {FontSizes.map((size) => (
@@ -658,6 +673,7 @@ export default function DocumentEditorToolbar({
                   setFontSizeForSelection(`${clampedValue}px`)
                 }}
                 disabled={!isEditable}
+                data-testid="font-size-options"
               >
                 {size}px
               </DropdownMenuButton>
@@ -667,7 +683,13 @@ export default function DocumentEditorToolbar({
         <ToolbarSeparator />
         {showTextFormattingOptionsInToolbar && (
           <>
-            <ToolbarButton label={c('Action').t`Bold`} disabled={!isEditable} active={isBold} onClick={formatBold}>
+            <ToolbarButton
+              label={c('Action').t`Bold`}
+              disabled={!isEditable}
+              active={isBold}
+              onClick={formatBold}
+              data-testid="bold-button"
+            >
               <Icon name="text-bold" />
             </ToolbarButton>
             <ToolbarButton
@@ -675,6 +697,7 @@ export default function DocumentEditorToolbar({
               disabled={!isEditable}
               active={isItalic}
               onClick={formatItalic}
+              data-testid="italic-button"
             >
               <Icon name="text-italic" />
             </ToolbarButton>
@@ -683,6 +706,7 @@ export default function DocumentEditorToolbar({
               disabled={!isEditable}
               active={isUnderline}
               onClick={formatUnderline}
+              data-testid="underline-button"
             >
               <Icon name="text-underline" />
             </ToolbarButton>
@@ -691,6 +715,7 @@ export default function DocumentEditorToolbar({
               disabled={!isEditable}
               active={isStrikethrough}
               onClick={formatStrikethrough}
+              data-testid="strikethrough-button"
             >
               <Icon name="text-strikethrough" />
             </ToolbarButton>
@@ -702,6 +727,7 @@ export default function DocumentEditorToolbar({
               content={<Icon name="palette" />}
               disabled={!isEditable}
               contentProps={DropdownContentProps}
+              data-testid="font-color-dropdown"
             >
               <FontColorMenu
                 textColors={TextColors}
@@ -726,6 +752,7 @@ export default function DocumentEditorToolbar({
               }
               disabled={!isEditable}
               contentProps={DropdownContentProps}
+              data-testid="alignment-button"
             >
               <DropdownMenu>
                 <AlignmentMenuOptions
@@ -753,6 +780,7 @@ export default function DocumentEditorToolbar({
               }
               disabled={!isEditable}
               contentProps={DropdownContentProps}
+              data-testid="list-types-dropdown"
             >
               <DropdownMenu>
                 {listTypes.map(({ type, icon, name, onClick }) => (
@@ -797,6 +825,7 @@ export default function DocumentEditorToolbar({
               imageInputRef.current!.value = ''
             }
           }}
+          data-testid="image-input"
         />
         {showCodeAndQuoteOptionsInToolbar && (
           <>
@@ -805,10 +834,17 @@ export default function DocumentEditorToolbar({
               active={isCodeBlock}
               disabled={!isEditable}
               onClick={formatCode}
+              data-testid="code-block-button"
             >
               <Icon name="code" />
             </ToolbarButton>
-            <ToolbarButton label={c('Action').t`Quote`} active={isQuote} disabled={!isEditable} onClick={formatQuote}>
+            <ToolbarButton
+              label={c('Action').t`Quote`}
+              active={isQuote}
+              disabled={!isEditable}
+              onClick={formatQuote}
+              data-testid="quote-button"
+            >
               <Icon name="text-quote" />
             </ToolbarButton>
             <ToolbarSeparator />
@@ -816,13 +852,29 @@ export default function DocumentEditorToolbar({
         )}
         {showInsertOptionsInToolbar && (
           <>
-            <ToolbarButton label={c('Action').t`Link`} disabled={!isEditable} active={isLink} onClick={editLink}>
+            <ToolbarButton
+              label={c('Action').t`Link`}
+              disabled={!isEditable}
+              active={isLink}
+              onClick={editLink}
+              data-testid="link-button"
+            >
               <Icon name="link" className="h-4 w-4 fill-current" />
             </ToolbarButton>
-            <ToolbarButton label={c('Action').t`Insert image`} disabled={!isEditable} onClick={insertImage}>
+            <ToolbarButton
+              label={c('Action').t`Insert image`}
+              disabled={!isEditable}
+              onClick={insertImage}
+              data-testid="image-insert-button"
+            >
               <Icon name="image" className="h-4 w-4 fill-current" />
             </ToolbarButton>
-            <ToolbarButton label={c('Action').t`Insert table`} disabled={!isEditable} onClick={insertTable}>
+            <ToolbarButton
+              label={c('Action').t`Insert table`}
+              disabled={!isEditable}
+              onClick={insertTable}
+              data-testid="table-button"
+            >
               <TableIcon className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarSeparator />
@@ -837,6 +889,7 @@ export default function DocumentEditorToolbar({
           disabled={!isEditable}
           hasCaret={false}
           contentProps={DropdownContentProps}
+          data-testid="content-properties-button"
         >
           <DropdownMenu className="[&>li>hr]:min-h-px">
             {!showUndoRedoInToolbar && (
@@ -866,6 +919,7 @@ export default function DocumentEditorToolbar({
               onClick={() => {
                 activeEditor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
               }}
+              data-testid="indent-dropdown"
             >
               <IndentIcon className="h-4 w-4 fill-current" />
               {c('Action').t`Indent`}
@@ -876,6 +930,7 @@ export default function DocumentEditorToolbar({
               onClick={() => {
                 activeEditor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
               }}
+              data-testid="outdent-dropdown"
             >
               <OutdentIcon className="h-4 w-4 fill-current" />
               {c('Action').t`Outdent`}
@@ -1001,6 +1056,7 @@ export default function DocumentEditorToolbar({
               className="flex items-center gap-2 text-left text-sm"
               disabled={!isEditable}
               onClick={clearFormatting}
+              data-testid="clear-formatting-button"
             >
               <Icon name="eraser" />
               {c('Action').t`Clear formatting`}
@@ -1019,6 +1075,7 @@ export default function DocumentEditorToolbar({
           content={<>{isEditable ? <Icon name="pencil" /> : <Icon name="eye" />}</>}
           hasCaret={!viewportWidth['<=small']}
           contentProps={DropdownContentProps}
+          data-testid="edit-options-dropdown"
         >
           <DropdownMenu>
             {hasEditAccess && (
@@ -1027,6 +1084,7 @@ export default function DocumentEditorToolbar({
                 onClick={() => {
                   onInteractionModeChange('edit')
                 }}
+                data-testid="edit-dropdown-button"
               >
                 <Icon name="pencil" size={4.5} />
                 {c('Info').t`Editing`}
@@ -1037,6 +1095,7 @@ export default function DocumentEditorToolbar({
               onClick={() => {
                 onInteractionModeChange('view')
               }}
+              data-testid="view-dropdown-button"
             >
               <Icon name="eye" size={4.5} />
               {c('Info').t`Viewing`}
