@@ -9,7 +9,6 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-    Info,
     ModalOwnProps,
 } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
@@ -27,6 +26,8 @@ import {
 } from '@proton/wallet';
 
 import { Button, CoreButton, Input, Modal, Select, SelectOption } from '../../atoms';
+import { ModalParagraph } from '../../atoms/ModalParagraph';
+import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { SubTheme, getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
@@ -123,12 +124,12 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
             className={theme}
             {...modalProps}
         >
-            <div className="flex flex-row gap-2 mb-6 text-center color-weak">
-                <p className="my-0">{c('Wallet Account')
+            <ModalParagraph>
+                <p>{c('Wallet Account')
                     .t`Create multiple wallet accounts to separate your financial activities for better privacy and organization.`}</p>
-                <p className="my-0">{c('Wallet Account')
+                <p>{c('Wallet Account')
                     .t`If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.`}</p>
-            </div>
+            </ModalParagraph>
 
             <div className="flex flex-row">
                 <Input
@@ -150,13 +151,13 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                             <Icon name="chevron-down" />
                         </CollapsibleHeaderIconButton>
                     }
-                >{c('Wallet account').t`View advanced settings`}</CollapsibleHeader>
+                >{c('Wallet account').t`Advanced settings`}</CollapsibleHeader>
                 <CollapsibleContent>
                     <div className="flex flex-column items-center">
-                        <h3 className="text-center mt-6 mb-2 text-semibold">{c('Wallet account').t`Address Type`}</h3>
-                        <p className="mt-2 mb-6 color-weak text-center">{c('Wallet account')
-                            .t`We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.`}</p>
-
+                        <ModalSectionHeader header={c('Wallet account').t`Address Type`}>
+                            {c('Wallet account')
+                                .t`We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.`}
+                        </ModalSectionHeader>
                         <div className="flex flex-row mt-4 w-full">
                             <Select
                                 label={c('Wallet Account').t`Address type`}
@@ -187,17 +188,16 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                     </div>
 
                     <div className="flex flex-column items-center">
-                        <h3 className="text-center mt-6 mb-2 text-semibold">{c('Wallet account').t`Account Index`}</h3>
-                        <p className="mt-2 mb-6 color-weak text-center">{c('Wallet account')
-                            .t`We default to the next unused index. You can change this to recover or to skip a previous account.`}</p>
-
+                        <ModalSectionHeader header={c('Wallet account').t`Account Index`}>
+                            {c('Wallet account')
+                                .t`We default to the next unused index. You can change this to recover or to skip a previous account.`}
+                        </ModalSectionHeader>
                         <div className="flex flex-row mt-2 w-full">
                             <div className="grow">
                                 <Select
                                     label={
                                         <div className="flex flex-row">
                                             <span className="block mr-1">{c('Wallet Account').t`Index`}</span>
-                                            <Info title={c('Wallet Account').t`Index of the account to add`} />
                                         </div>
                                     }
                                     id="account-index-selector"
@@ -254,7 +254,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                     onClick={() => {
                         void withLoading(onAccountCreation());
                     }}
-                >{c('Wallet Account').t`Add`}</Button>
+                >{c('Wallet Account').t`Create wallet account`}</Button>
                 <Button
                     disabled={loading}
                     fullWidth
