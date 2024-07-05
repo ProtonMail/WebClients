@@ -6,7 +6,7 @@ if (typeof process.env.WEBPACK_PARALLELISM !== 'undefined') {
     parallel = parseInt(process.env.WEBPACK_PARALLELISM, 10);
 }
 
-const EXCLUDED_CHUNKS = ['recovery-kit', 'crypto-worker', 'drive-worker'];
+const EXCLUDED_CHUNKS = new Set(['recovery-kit', 'crypto-worker', 'drive-worker']);
 
 module.exports = /** @type { (env: any) => import('webpack').Options.Optimization } */ ({ isProduction }) => ({
     // Needs to be single because we embed two entry points
@@ -30,7 +30,7 @@ module.exports = /** @type { (env: any) => import('webpack').Options.Optimizatio
         maxInitialRequests: 30,
         enforceSizeThreshold: 50000,
         chunks(chunk) {
-            return !chunk.canBeInitial() && !EXCLUDED_CHUNKS.includes(chunk.name);
+            return !chunk.canBeInitial() && !EXCLUDED_CHUNKS.has(chunk.name);
         },
         cacheGroups: {
             defaultVendors: {
