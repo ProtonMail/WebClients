@@ -11,7 +11,6 @@ import {
     getIsMailApp,
     getIsPassApp,
     getIsVPNApp,
-    getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -43,9 +42,7 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
         if (getIsVPNApp(app)) {
             return { path: SSO_PATHS.VPN_SIGN_IN };
         }
-        if (getIsWalletApp(app)) {
-            return { path: SSO_PATHS.WALLET_SIGN_IN };
-        }
+
         return { path: SSO_PATHS.LOGIN };
     })();
     return `${localePath}${path}`;
@@ -93,9 +90,6 @@ export const getSignupUrl = (
         }
         if (getIsVPNApp(app)) {
             return { path: SSO_PATHS.VPN_SIGNUP, params };
-        }
-        if (getIsWalletApp(app)) {
-            return { path: SSO_PATHS.WALLET_SIGNUP, params };
         }
 
         if (productParam === 'business') {
