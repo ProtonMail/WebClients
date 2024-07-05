@@ -18,6 +18,7 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
@@ -74,6 +75,7 @@ export enum WorkerMessageType {
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     AUTOSUGGEST_PASSWORD_CONFIG = 'AUTOSUGGEST_PASSWORD_CONFIG',
+    B2B_EVENT = 'B2B_EVENT',
     DEBUG = 'DEBUG',
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
@@ -141,6 +143,7 @@ export type AutofillQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_QUERY,
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, AutofillResult>;
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
+export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportOptions>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
@@ -206,6 +209,7 @@ export type WorkerMessage =
     | AutofillSelectMessage
     | AutofillSyncMessage
     | AutoSaveRequestMessage
+    | B2BEventMessage
     | DebugMessage
     | ExportRequestMessage
     | FeatureFlagsUpdateMessage

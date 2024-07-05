@@ -30,6 +30,7 @@ export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
     /** flag indicating if we should force lock on next resume */
+    b2bEvents: string;
     forceLock: boolean;
     lastReload: number;
     logs: string;
