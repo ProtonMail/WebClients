@@ -1,0 +1,38 @@
+{
+    "name": "@proton/wallet",
+    "description": "",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "main": "index.ts",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "true",
+        "test": "TZ=UTC vitest",
+        "test:ci": "yarn test --coverage",
+        "test:ui": "yarn test --ui",
+        "test:watch": "yarn test --watch"
+    },
+    "dependencies": {
+        "@proton/account": "workspace:^",
+        "@proton/andromeda": "workspace:packages/wasm/andromeda",
+        "@proton/redux-shared-store": "workspace:^",
+        "@reduxjs/toolkit": "^2.2.0",
+        "cross-env": "^7.0.3",
+        "react": "^18.3.1",
+        "react-redux": "^9.1.0"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^6.4.2",
+        "@testing-library/react": "^14.2.1",
+        "@vitest/coverage-v8": "^1.0.1",
+        "@vitest/ui": "^1.0.2",
+        "eslint": "^8.56.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.2.0",
+        "ts-jest": "^29.1.2",
+        "typescript": "^5.4.5",
+        "vitest": "^1.0.1"
+    }
+}

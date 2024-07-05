@@ -145,6 +145,7 @@ const SIGN_IN_ROUTES = [
     SSO_PATHS.VPN_SIGN_IN,
     SSO_PATHS.DRIVE_SIGN_IN,
     SSO_PATHS.DOCS_SIGN_IN,
+    SSO_PATHS.WALLET_SIGN_IN,
 ];
 
 const getDefaultPath = (toApp: APP_NAMES) => {

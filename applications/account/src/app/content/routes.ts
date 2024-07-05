@@ -10,6 +10,7 @@ import { getMailAppRoutes } from '../containers/mail/routes';
 import { getOrganizationAppRoutes } from '../containers/organization/routes';
 import { getPassAppRoutes } from '../containers/pass/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
+import { getWalletAppRoutes } from '../containers/wallet/routes';
 
 interface Arguments {
     app: APP_NAMES;
@@ -77,6 +78,7 @@ export const getRoutes = ({
             subscription,
         }),
         vpn: getVpnAppRoutes({ app }),
+        wallet: getWalletAppRoutes(),
     };
 };
 

@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { Dropdown, DropdownSizeUnit } from '../dropdown';
-import { DropdownSize } from '../dropdown/utils';
-import { SearchInput } from '../input';
+import Dropdown from '../dropdown/Dropdown';
+import { DropdownSize, DropdownSizeUnit } from '../dropdown/utils';
+import SearchInput from '../input/SearchInput';
 import Option, { Props as OptionProps } from '../option/Option';
 import { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
@@ -24,6 +24,7 @@ export interface Props<V> extends SelectProps<V> {
     size?: DropdownSize;
     originalPlacement?: PopperPlacement;
     placeholder?: string;
+    dropdownClassName?: string;
 }
 
 const SearchableSelect = <V extends any>({
@@ -45,6 +46,7 @@ const SearchableSelect = <V extends any>({
     onChange,
     renderSelected,
     originalPlacement,
+    dropdownClassName,
     ...rest
 }: Props<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -166,6 +168,7 @@ const SearchableSelect = <V extends any>({
                 className={clsx([
                     searchContainerRef?.current && 'dropdown--is-searchable',
                     multiple && 'select-dropdown--togglable',
+                    dropdownClassName,
                 ])}
             >
                 <div onKeyDown={handleDropdownContentKeyDown}>

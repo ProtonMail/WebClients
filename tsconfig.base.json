@@ -16,7 +16,7 @@
         "strict": true,
         "target": "es2021",
         "skipLibCheck": true,
-        "types": ["webpack-env", "jest"],
+        "types": ["webpack-env", "jest", "vitest/globals"],
         "baseUrl": ".",
         "paths": {
             "proton-mail/*": ["./applications/mail/src/app/*"],
@@ -40,14 +40,16 @@
             "@proton/pack/*": ["./packages/pack/*"],
             "@proton/pass/*": ["./packages/pass/*"],
             "@proton/polyfill/*": ["./packages/polyfill/*"],
-            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
             "@proton/shared/*": ["./packages/shared/*"],
             "@proton/sieve/*": ["./packages/sieve/*"],
             "@proton/srp/*": ["./packages/srp/*"],
             "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
             "@proton/styles/*": ["./packages/styles/*"],
             "@proton/testing/*": ["./packages/testing/*"],
-            "@proton/utils/*": ["./packages/utils/*"]
+            "@proton/utils/*": ["./packages/utils/*"],
+            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
+            "@proton/wallet": ["./packages/wallet/*"],
+            "@proton/andromeda": ["./packages/wasm/andromeda/*"]
         }
     },
     "exclude": ["**/node_modules", "**/.*/"]

@@ -17,5 +17,6 @@ export { default as SidebarListItemButton } from './SidebarListItemButton';
 export { default as SidebarNav } from './SidebarNav';
 export { default as SidebarPrimaryButton } from './SidebarPrimaryButton';
 export { default as SidebarLogo } from './SidebarLogo';
+export { default as SidebarListItemSettingsLink } from './SidebarListItemSettingsLink';
 
 export { default as SettingsListItem } from './SettingsListItem';

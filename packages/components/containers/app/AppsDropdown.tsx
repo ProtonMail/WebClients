@@ -2,16 +2,18 @@ import { ForwardedRef, Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { useConfig, useUser } from '@proton/components/hooks';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
+import { useFlag } from '../unleash';
 import ProductLink from './ProductLink';
 
 interface AppsDropdownProps {
@@ -24,7 +26,10 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
 
-        const availableApps = getAvailableApps({ user });
+        const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
+        const canAccessWallet = useFlag('Wallet');
+
+        const availableApps = getAvailableApps({ user, canAccessWallet });
 
         if (availableApps.length <= 1) {
             return null;
@@ -58,7 +63,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         app={app}
                                         user={user}
                                         appToLinkTo={appToLinkTo}
-                                        className="text-center text-no-decoration outline-none--at-all apps-dropdown-link"
+                                        className="text-center text-no-decoration outline-none--at-all apps-dropdown-link flex flex-column items-center"
                                         current={current}
                                     >
                                         <div
@@ -81,6 +86,9 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         >
                                             {appToLinkToName}
                                         </span>
+                                        {appToLinkTo === APPS.PROTONWALLET && isWalletAppSwitcherNewBadgeEnabled && (
+                                            <NewBadge />
+                                        )}
                                     </ProductLink>
                                 </li>
                             </Fragment>

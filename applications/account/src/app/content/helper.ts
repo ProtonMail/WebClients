@@ -42,6 +42,7 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
         if (getIsVPNApp(app)) {
             return { path: SSO_PATHS.VPN_SIGN_IN };
         }
+
         return { path: SSO_PATHS.LOGIN };
     })();
     return `${localePath}${path}`;
@@ -90,6 +91,7 @@ export const getSignupUrl = (
         if (getIsVPNApp(app)) {
             return { path: SSO_PATHS.VPN_SIGNUP, params };
         }
+
         if (productParam === 'business') {
             return { path: SSO_PATHS.BUSINESS_SIGNUP, params };
         }

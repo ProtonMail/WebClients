@@ -79,11 +79,16 @@ const PassSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/PassSettingsRouter" */ '../containers/pass/PassSettingsRouter')
 );
 
+const WalletSettingsRouter = lazy(
+    () => import(/* webpackChunkName: "routers/WalletSettingsRouter" */ '../containers/wallet/WalletSettingsRouter')
+);
+
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
 const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
+const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
 const passSlug = getSlugFromApp(APPS.PROTONPASS);
 
 const getRoutePaths = (prefix: string, sectionConfigs: SectionConfig[]) => {
@@ -185,6 +190,7 @@ const MainContainer = () => {
     const toApp = isLocal ? APPS.PROTONACCOUNT : app;
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
     const prefixPath = `/${appSlug}`;
+    const canAccessWallet = useFlag("Wallet");
 
     const hasPassB2bPlan = getHasPassB2BPlan(subscription);
 
@@ -347,6 +353,13 @@ const MainContainer = () => {
                         <DocsSettingsRouter docsAppRoutes={routes.docs} redirect={redirect} />
                     </Suspense>
                 </Route>
+                {canAccessWallet && (
+                    <Route path={`/${walletSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                )}
                 <Route path={`/${passSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
                         <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />

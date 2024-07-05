@@ -56,6 +56,9 @@ export const getIsDriveApp = (toApp?: APP_NAMES) => {
 export const getIsDocsApp = (toApp?: APP_NAMES) => {
     return toApp === APPS.PROTONDOCS;
 };
+export const getIsWalletApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONWALLET;
+};
 
 export const getRequiresAddress = (toApp: APP_NAMES) => {
     return requiresAddress.includes(toApp);
