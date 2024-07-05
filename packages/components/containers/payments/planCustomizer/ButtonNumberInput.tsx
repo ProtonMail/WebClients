@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 
-import { Icon } from '../../../components';
+import { Icon, Info } from '../../../components';
+import { DecreaseBlockedReason } from './helpers';
 
 export const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
     return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;
@@ -19,6 +20,7 @@ export const ButtonNumberInput = ({
     max = 999,
     step = 1,
     disabled = false,
+    decreaseBlockedReasons,
 }: {
     step?: number;
     id: string;
@@ -27,6 +29,7 @@ export const ButtonNumberInput = ({
     value: number;
     disabled?: boolean;
     onChange?: (newValue: number) => void;
+    decreaseBlockedReasons: DecreaseBlockedReason[];
 }) => {
     const [tmpValue, setTmpValue] = useState<number | null | undefined>(undefined);
 
@@ -46,6 +49,12 @@ export const ButtonNumberInput = ({
     const isDecDisabled = disabled || !getIsValidValue(min, max, step, currentValue - step);
     const isIncDisabled = disabled || !getIsValidValue(min, max, step, currentValue + step);
 
+    const decreaseBlockedReason = decreaseBlockedReasons[0] ?? null;
+    const reasonText =
+        decreaseBlockedReason === 'forbidden-modification'
+            ? c('Payments').t`Please reactivate your subscription first to decrease the number of add-ons.`
+            : null;
+
     return (
         <div className="border rounded shrink-0 flex flex-nowrap">
             <button
@@ -57,8 +66,18 @@ export const ButtonNumberInput = ({
                     handleAddition(-1);
                 }}
             >
-                <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />
+                {!decreaseBlockedReason && <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />}
             </button>
+            {decreaseBlockedReason && (
+                <span
+                    className="mr-2 mt-1 ml-custom"
+                    style={{
+                        '--ml-custom': 'calc(var(--space-1) * -1)',
+                    }}
+                >
+                    <Info title={reasonText} className="mt-1" />
+                </span>
+            )}
             <label htmlFor={id} className="my-2 flex">
                 <input
                     autoComplete="off"
