@@ -7,7 +7,6 @@ import {
     welcomeFlagsActions,
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
-import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar';
 import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
@@ -21,7 +20,7 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';
-import { AccountState, extendStore, setupStore } from '../store/store';
+import { extendStore, setupStore } from '../store/store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer').then((result) => result.default);
@@ -56,12 +55,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, history, unleashClient });
 
-        let persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
-            authentication,
-            user,
-        });
-
-        const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
+        const store = setupStore({ mode: 'default' });
         const dispatch = store.dispatch;
 
         if (user) {
@@ -90,15 +84,9 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         };
 
         const userPromise = loadUser();
-        const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
+        const evPromise = bootstrap.eventManager({ api: silentApi });
 
-        if (persistedState?.state?.userSettings?.value) {
-            // Force fetch user settings in background in case it is persisted because entities like referral program have tricky
-            // eligibility conditions which don't properly propagate through the event loop. E.g. unleash feature flags which are enabled or disabled.
-            dispatch(userSettingsThunk({ cache: 'no-cache' })).catch(noop);
-        }
-
-        if (persistedState?.state?.user?.value && !user) {
+        if (!user) {
             // Force fetching user in background in case it is persisted.
             // We need to keep the user fresh, because the payments migration relies on the user being up-to-date,
             // and the event loop isn't always enough in this particular case.
@@ -125,14 +113,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        if (persistedState?.eventID) {
-            setTimeout(() => {
-                eventManager.call();
-                // If we're resuming a session, we'd like to call the ev to get up-to-speed.
-                // This is in an arbitrary timeout since there are some consumers who subscribe through react useEffects triggered later through the app.
-            }, 350);
-        }
 
         bootstrap.onAbort(signal, () => {
             unsubscribeEventManager();
