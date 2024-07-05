@@ -180,4 +180,5 @@ export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearc
     localID: number | undefined;
     mode: SignupMode;
     invite?: SignupInviteParameters;
+    signIn?: 'standard' | 'redirect';
 }
