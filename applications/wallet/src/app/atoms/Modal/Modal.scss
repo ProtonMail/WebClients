@@ -10,6 +10,8 @@
 }
 
 .modal-two-header-actions {
+	--button-default-text-color: var(--text-weak);
+
 	position: absolute;
 	margin: 0;
 	inset-block-start: rem(10);
