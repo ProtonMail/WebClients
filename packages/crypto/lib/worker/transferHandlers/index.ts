@@ -38,27 +38,28 @@ const KeyReferenceSerializer = {
         })),
     }),
 
-    deserialize: (serialized: SerializedKeyReference): KeyReference => ({
-        ...serialized,
-        _getCompatibilityError: () => serialized._getCompatibilityError,
-        isPrivate: () => serialized.isPrivate,
-        getFingerprint: () => serialized.getFingerprint,
-        getKeyID: () => serialized.getKeyID,
-        getKeyIDs: () => serialized.getKeyIDs,
-        getAlgorithmInfo: () => serialized.getAlgorithmInfo,
-        getCreationTime: () => serialized.getCreationTime,
-        getExpirationTime: () => serialized.getExpirationTime,
-        getUserIDs: () => serialized.getUserIDs,
-        isWeak: () => serialized.isWeak,
-        equals: (otherKey, ignoreOtherCerts) =>
-            ignoreOtherCerts
-                ? otherKey._keyContentHash[1] === serialized._keyContentHash[1]
-                : otherKey._keyContentHash[0] === serialized._keyContentHash[0],
-        subkeys: serialized.subkeys.map((subkey) => ({
-            getAlgorithmInfo: () => subkey.getAlgorithmInfo,
-            getKeyID: () => subkey.getKeyID,
-        })),
-    }),
+    deserialize: (serialized: SerializedKeyReference): KeyReference =>
+        ({
+            ...serialized,
+            _getCompatibilityError: () => serialized._getCompatibilityError,
+            isPrivate: () => serialized.isPrivate,
+            getFingerprint: () => serialized.getFingerprint,
+            getKeyID: () => serialized.getKeyID,
+            getKeyIDs: () => serialized.getKeyIDs,
+            getAlgorithmInfo: () => serialized.getAlgorithmInfo,
+            getCreationTime: () => serialized.getCreationTime,
+            getExpirationTime: () => serialized.getExpirationTime,
+            getUserIDs: () => serialized.getUserIDs,
+            isWeak: () => serialized.isWeak,
+            equals: (otherKey, ignoreOtherCerts) =>
+                ignoreOtherCerts
+                    ? otherKey._keyContentHash[1] === serialized._keyContentHash[1]
+                    : otherKey._keyContentHash[0] === serialized._keyContentHash[0],
+            subkeys: serialized.subkeys.map((subkey) => ({
+                getAlgorithmInfo: () => subkey.getAlgorithmInfo,
+                getKeyID: () => subkey.getKeyID,
+            })),
+        }) as KeyReference,
 };
 
 const KeyOptionsSerializer = {

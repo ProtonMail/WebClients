@@ -87,7 +87,7 @@ class MetricsApi implements IMetricsApi {
             }
 
             await wait(METRICS_DEFAULT_RETRY_SECONDS * SECOND);
-            return await this.fetch(requestInfo, requestInit, attempt + 1);
+            return this.fetch(requestInfo, requestInit, attempt + 1);
         }
     }
 

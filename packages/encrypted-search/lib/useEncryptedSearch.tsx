@@ -1267,7 +1267,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         try {
             ({ newEvents, shouldRefresh, eventsToStore } = await esCallbacks.getEventFromIDB());
         } catch (error: any) {
-            return await dbCorruptError();
+            return dbCorruptError();
         }
 
         if (shouldRefresh) {
