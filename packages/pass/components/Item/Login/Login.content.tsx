@@ -10,6 +10,7 @@ import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPV
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import { PasskeyContentModal } from '@proton/pass/components/Item/Passkey/Passkey.modal';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
@@ -23,8 +24,6 @@ import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-
-import { PasskeyContentModal } from '../Passkey/Passkey.modal';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem = false }) => {
     const { data: item, shareId, itemId } = revision;
