@@ -587,6 +587,25 @@ const AccountStepDetails = ({
     const hasSwitchSignupType = signupTypes.includes(SignupType.Email) && signupTypes.length > 1;
     const dense = !passwordFields && signupTypes.length <= 1;
 
+    const handleSubmit = () => {
+        // Not valid
+        if (!onSubmit) {
+            return;
+        }
+        measure({
+            event: TelemetryAccountSignupEvents.userCheckout,
+            dimensions: {
+                type: 'free',
+                plan: PLANS.FREE,
+                cycle: `${model.subscriptionData.cycle}`,
+                currency: model.subscriptionData.currency,
+            },
+        });
+        if (validateAccountDetails()) {
+            onSubmit();
+        }
+    };
+
     return (
         <>
             {loading && (
@@ -600,22 +619,7 @@ const AccountStepDetails = ({
                 name="account-form"
                 onSubmit={async (event) => {
                     event.preventDefault();
-                    // Not valid
-                    if (!onSubmit) {
-                        return;
-                    }
-                    measure({
-                        event: TelemetryAccountSignupEvents.userCheckout,
-                        dimensions: {
-                            type: 'free',
-                            plan: PLANS.FREE,
-                            cycle: `${model.subscriptionData.cycle}`,
-                            currency: model.subscriptionData.currency,
-                        },
-                    });
-                    if (validateAccountDetails()) {
-                        onSubmit();
-                    }
+                    handleSubmit();
                 }}
             >
                 {/*This is attempting to position at the same place as the select since it's in the challenge iframe*/}
@@ -687,7 +691,7 @@ const AccountStepDetails = ({
                                     }}
                                     onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                         if (event.key === 'Enter') {
-                                            onSubmit?.();
+                                            handleSubmit();
                                         }
                                         if (event.key === 'Tab') {
                                             setInputsStateDiff({ email: { focus: true } });
@@ -792,7 +796,7 @@ const AccountStepDetails = ({
                                     }}
                                     onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                                         if (event.key === 'Enter') {
-                                            onSubmit?.();
+                                            handleSubmit();
                                         }
                                         if (event.key === 'Tab') {
                                             setInputsStateDiff({ username: { focus: true } });
