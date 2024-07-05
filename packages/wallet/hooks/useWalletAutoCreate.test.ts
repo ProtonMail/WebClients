@@ -23,6 +23,7 @@ import {
     mockUseGetBitcoinNetwork,
     mockUseGetUserWalletSettings,
     mockUseWalletApiClients,
+    userWalletSettings,
 } from '../tests';
 import { useWalletAutoCreate } from './useWalletAutoCreate';
 
@@ -43,17 +44,16 @@ vi.mock('../constants/email-integration', () => ({ POOL_FILLING_THRESHOLD: 3 }))
 describe('useWalletAutoCreate', () => {
     let addressWithKey: { address: Address; keys: DecryptedAddressKey[] };
 
-    const mockedGetWallets = vi.fn(async () => [apiWalletsData]);
     const mockedCreateWallet = vi.fn(async () => apiWalletsData[0]);
     const mockedCreateWalletAccount = vi.fn(async () => ({ Data: apiWalletAccountOneA }));
     const mockedAddEmailAddress = vi.fn();
     const mockedAddBitcoinAddress = vi.fn();
+    let mockedGetUserWalletSettings: Parameters<typeof mockUseGetUserWalletSettings>[0];
 
     let mocked = getMockedApi({
         wallet: {
             createWallet: mockedCreateWallet as any,
             createWalletAccount: mockedCreateWalletAccount as any,
-            getWallets: mockedGetWallets as any,
             addEmailAddress: mockedAddEmailAddress,
         },
         bitcoin_address: {
@@ -66,7 +66,8 @@ describe('useWalletAutoCreate', () => {
     });
 
     beforeEach(async () => {
-        mockedGetWallets.mockClear();
+        mockedGetUserWalletSettings = vi.fn(async () => ({ ...userWalletSettings, WalletCreated: 0 }));
+
         mockedCreateWallet.mockClear();
         mockedCreateWalletAccount.mockClear();
         mockedAddEmailAddress.mockClear();
@@ -75,7 +76,7 @@ describe('useWalletAutoCreate', () => {
         mockUseWalletApiClients(mocked);
         mockUseGetBitcoinNetwork();
         mockUseGetUserKeys(await getUserKeys());
-        mockUseGetUserWalletSettings();
+        mockUseGetUserWalletSettings(mockedGetUserWalletSettings);
         mockUseUser();
         mockUseGetOrganization();
         mockUseAuthentication({ getPassword: vi.fn(() => 'testtest') });
@@ -84,12 +85,17 @@ describe('useWalletAutoCreate', () => {
         mockUseGetAddresses([addressWithKey.address]);
     });
 
-    describe('when some wallet already exist', () => {
+    describe('when user wallet has already created a wallet before', () => {
+        beforeEach(() => {
+            mockedGetUserWalletSettings = vi.fn(async () => ({ ...userWalletSettings, WalletCreated: 1 }));
+            mockUseGetUserWalletSettings(mockedGetUserWalletSettings);
+        });
+
         it('should not autocreate wallet', async () => {
             const { waitFor } = renderHook(() => useWalletAutoCreate());
 
-            await waitFor(() => expect(mockedGetWallets).toHaveBeenCalled());
-            expect(mockedGetWallets).toHaveBeenCalledWith();
+            await waitFor(() => expect(mockedGetUserWalletSettings).toHaveBeenCalled());
+            expect(mockedGetUserWalletSettings).toHaveBeenCalledWith();
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
@@ -99,24 +105,19 @@ describe('useWalletAutoCreate', () => {
     });
 
     describe('when higher level pilot is false', () => {
-        beforeEach(() => {
-            mockedGetWallets.mockResolvedValue([[]]);
-        });
-
         it('should not autocreate wallet', async () => {
             renderHook(() => useWalletAutoCreate({ higherLevelPilot: false }));
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
 
-            expect(mockedGetWallets).not.toHaveBeenCalled();
+            expect(mockedGetUserWalletSettings).not.toHaveBeenCalled();
             expect(mockedCreateWallet).not.toHaveBeenCalled();
         });
     });
 
     describe('when user is not free and is part of org with > 1 max member', () => {
         beforeEach(() => {
-            mockedGetWallets.mockResolvedValue([[]]);
             mockUseUser([{ isFree: false }]);
             mockUseGetOrganization({ MaxMembers: 3 });
         });
@@ -127,24 +128,20 @@ describe('useWalletAutoCreate', () => {
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
 
-            expect(mockedGetWallets).not.toHaveBeenCalled();
+            expect(mockedGetUserWalletSettings).not.toHaveBeenCalled();
             expect(mockedCreateWallet).not.toHaveBeenCalled();
         });
     });
 
-    describe('when no wallet exist', () => {
-        beforeEach(() => {
-            mockedGetWallets.mockResolvedValue([[]]);
-        });
-
-        it('should autocreate wallet when no exist', async () => {
+    describe('when user has not created a wallet yet', () => {
+        it('should autocreate wallet', async () => {
             const [primaryKey] = addressWithKey.keys;
             const { waitFor } = renderHook(() => useWalletAutoCreate());
 
             await waitFor(() => expect(mockedCreateWallet).toHaveBeenCalled());
 
-            expect(mockedGetWallets).toHaveBeenCalled();
-            expect(mockedGetWallets).toHaveBeenCalledWith();
+            expect(mockedGetUserWalletSettings).toHaveBeenCalled();
+            expect(mockedGetUserWalletSettings).toHaveBeenCalledWith();
 
             expect(mockedCreateWallet).toHaveBeenCalledWith(
                 expect.any(String),
