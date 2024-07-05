@@ -66,6 +66,8 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
     const [mnemonicError, setMnemonicError] = useState<string>();
     const [mnemonic, setMnemonic] = useState<string>();
     const [passphrase, setPassphrase] = useState<string>();
+    const [confirmedPassphrase, setConfirmedPassphrase] = useState<string>();
+    const [error, setError] = useState<string>('');
 
     const [walletName, setWalletName] = useState<string>('');
 
@@ -89,6 +91,10 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
         setPassphrase(passphrase);
     }, []);
 
+    const handleConfirmedPassphraseChange = useCallback((confirmedPassphrase: string) => {
+        setConfirmedPassphrase(confirmedPassphrase);
+    }, []);
+
     const [loadingWalletSubmit, withLoadingWalletSubmit] = useLoading();
 
     useEffect(() => {
@@ -105,6 +111,8 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
         shouldAutoAddEmailAddress?: boolean;
         isImported?: boolean;
     }) => {
+        // if(!validatePassphrases()) return;
+
         // Typeguard
         if (!userKeys || isUndefined(network) || !selectedCurrency) {
             return;
@@ -224,8 +232,18 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
         passphrase,
         handlePassphraseChange,
 
+        confirmedPassphrase,
+        handleConfirmedPassphraseChange,
+
+        error,
+
         loadingWalletSubmit,
-        onWalletSubmit: (...args: Parameters<typeof onWalletSubmit>) =>
-            withLoadingWalletSubmit(onWalletSubmit(...args)),
+        onWalletSubmit: (...args: Parameters<typeof onWalletSubmit>) => {
+            if (passphrase !== confirmedPassphrase) {
+                setError(c('Error').t`The passphrases do not match`);
+                return;
+            }
+            withLoadingWalletSubmit(onWalletSubmit(...args));
+        },
     };
 };

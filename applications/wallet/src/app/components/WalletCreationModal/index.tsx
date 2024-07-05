@@ -18,6 +18,7 @@ import {
 import { Button, CoreButton, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
+import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import { SubTheme } from '../../utils';
 import { WalletImportModal } from '../WalletImportModal';
@@ -50,6 +51,9 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
         setSelectedCurrency,
         loadingWalletSubmit,
         onWalletSubmit,
+        confirmedPassphrase,
+        handleConfirmedPassphraseChange,
+        error,
     } = useWalletCreation({
         onSetupFinish,
     });
@@ -66,13 +70,19 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                 hasClose={!isFirstCreation}
                 {...modalProps}
             >
-                <ModalParagraph>
-                    <p>{c('Wallet setup')
-                        .t`Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.`}</p>
-                </ModalParagraph>
+                {isFirstCreation ? (
+                    <ModalParagraph>
+                        <p>{c('Wallet setup')
+                            .t`Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.`}</p>
+                    </ModalParagraph>
+                ) : (
+                    <ModalParagraph>
+                        <p className="m-auto">{c('Wallet setup').t`Choose a name and default currency.`}</p>
+                    </ModalParagraph>
+                )}
                 <div className="flex flex-column">
                     {!isFirstCreation && (
-                        <div className="mb-4">
+                        <div className="mb-1">
                             <Input
                                 prefix={
                                     <div
@@ -82,7 +92,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                                         <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>
                                     </div>
                                 }
-                                label={c('Wallet setup').t`Wallet name`}
+                                label={c('Wallet setup').t`Name`}
                                 id="wallet-name-input"
                                 placeholder={c('Wallet setup').t`Give a name to this wallet`}
                                 value={walletName}
@@ -123,12 +133,11 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                             }
                         >{c('Wallet setup').t`Add a passphrase (optional)`}</CollapsibleHeader>
                         <CollapsibleContent>
-                            <h3 className="text-center mt-6 mb-2 text-semibold">{c('Wallet setup')
-                                .t`Add a passphrase`}</h3>
-                            <p className="mt-2 mb-6 color-weak text-center">{c('Wallet setup')
-                                .t`A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.`}</p>
-
-                            <div className="mt-8">
+                            <ModalSectionHeader header={c('Wallet setup').t`Add a passphrase`}>
+                                {c('Wallet setup')
+                                    .t`A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.`}
+                            </ModalSectionHeader>
+                            <div className="mt-2 flex flex-column gap-3">
                                 <Input
                                     autoFocus
                                     id="passphrase"
@@ -138,6 +147,17 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                                     onValue={handlePassphraseChange}
                                     label={c('Wallet setup').t`Passphrase`}
                                     placeholder={c('Placeholder').t`Enter a passphrase or leave empty`}
+                                />
+                                <Input
+                                    autoFocus
+                                    id="confirmedPassphrase"
+                                    as={PasswordInputTwo}
+                                    value={confirmedPassphrase}
+                                    disabled={loadingWalletSubmit}
+                                    onValue={handleConfirmedPassphraseChange}
+                                    label={c('Wallet setup').t`Confirm Passphrase`}
+                                    placeholder={c('Placeholder').t`Confirm passphrase or leave empty`}
+                                    error={error}
                                 />
                             </div>
 
@@ -153,7 +173,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                     </Collapsible>
                 )}
 
-                <div className="w-full flex flex-row gap-2 mt-4">
+                <div className="w-full flex flex-row gap-2">
                     <Button
                         fullWidth
                         size="large"
@@ -163,7 +183,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                         onClick={() => {
                             void onWalletSubmit({ shouldAutoAddEmailAddress: isFirstCreation });
                         }}
-                    >{c('Wallet setup').t`Create a new wallet`}</Button>
+                    >{c('Wallet setup').t`Create new wallet`}</Button>
                     <Button
                         fullWidth
                         className="text-semibold"
