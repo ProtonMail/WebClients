@@ -153,7 +153,7 @@ export const ConnectionStatus = () => {
         if (shouldShowConnecting) {
           connectionPill = (
             <Pill>
-              <Icon name="arrow-rotate-right" className="animate-spin" />
+              <Icon name="arrow-rotate-right" className="animate-spin" data-testid="network-status-connecting" />
               {c('Info').t`Opening...`}
             </Pill>
           )
@@ -165,7 +165,7 @@ export const ConnectionStatus = () => {
       connectionPill = (
         <PopoverPill
           title={
-            <div className="flex gap-2">
+            <div className="flex gap-2" data-testid="network-status-offline">
               <CloudSlashIcon className="h-6 w-6 fill-current" />
               <span>{c('Title').t`Offline`}</span>
             </div>
@@ -175,7 +175,9 @@ export const ConnectionStatus = () => {
               <div>{c('Info')
                 .t`Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.`}</div>
               {disconnectReasonMessage && (
-                <div className="pt-4">Disconnection error code: {disconnectReasonMessage}</div>
+                <div className="pt-4" data-testid="network-status-offline-info">
+                  Disconnection error code: {disconnectReasonMessage}
+                </div>
               )}
             </>
           }
@@ -207,14 +209,14 @@ export const ConnectionStatus = () => {
             </>
           }
         >
-          <ArrowsRotate className="h-3.5 w-3.5 animate-spin fill-current" />
+          <ArrowsRotate className="h-3.5 w-3.5 animate-spin fill-current" data-testid="changes-info-saving" />
           {c('Info').t`Saving...`}
         </PopoverPill>
       )}
       {saved && (
         <PopoverPill
           title={
-            <div className="flex gap-2">
+            <div className="flex gap-2" data-testid="changes-info-saved">
               <CloudIcon className="h-6 w-6 fill-current" />
               <span>{c('Info').t`All changes saved to Drive`}</span>
             </div>
@@ -228,7 +230,7 @@ export const ConnectionStatus = () => {
       {hasErroredMessages && (
         <PopoverPill
           title={
-            <div className="flex gap-2">
+            <div className="flex gap-2" data-testid="changes-info-error">
               <Icon name="exclamation-circle" className="h-6 w-6 fill-current" />
               <span>{c('Title').t`Error Syncing`}</span>
             </div>
@@ -244,7 +246,7 @@ export const ConnectionStatus = () => {
       {isUserLimitReached && (
         <PopoverPill
           title={
-            <div className="flex gap-2">
+            <div className="flex gap-2" data-testid="changes-info-limited">
               <Icon name="exclamation-circle" className="h-6 w-6 fill-current" />
               <span>{c('Title').t`Limited availability`}</span>
             </div>
