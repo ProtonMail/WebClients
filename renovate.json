@@ -5,6 +5,7 @@
     "postUpdateOptions": ["yarnDedupeHighest"],
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
+    "prConcurrentLimit": 2,
     "ignoreDeps": [
         "roosterjs",
         "emoji-mart",
@@ -15,11 +16,15 @@
         "@protontech/pass-rust-core",
         "@mlc-ai/web-llm"
     ],
-    "ignorePaths": ["**/node_modules/**"],
+    "ignorePaths": ["**/node_modules/**", "applications/pass-extension/safari/**"],
     "packageRules": [
         {
             "groupName": "Playwright",
             "matchPackageNames": ["playwright", "@playwright/test", "mcr.microsoft.com/playwright"]
+        },
+        {
+            "groupName": "lexical",
+            "matchPackagePatterns": ["@lexical/*", "yjs", "y-protocols"]
         },
         {
             "groupName": "Unleash",
