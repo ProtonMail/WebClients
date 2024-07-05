@@ -1,8 +1,10 @@
 applications/**/locales/**/*.json
 packages/styles/scss/**/_index.scss
+packages/wasm/**/*
 packages/metrics/types/**/*.d.ts
 tests/account/poms/LoginPage/challenge.html
 applications/**/public/assets/sandbox.js
+applications/wallet/src/pkg/
 
 .idea
 .cache

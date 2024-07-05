@@ -62,6 +62,38 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
     return [modalProps, handleSetOpen, render] as const;
 };
 
+export type ModalPropsWithData<T> = ModalStateProps & { data?: T };
+
+type ModalStateWithDataReturnTuple<T> = [
+    modalProps: ModalPropsWithData<T>,
+    openModal: (data: T) => void,
+    renderModal: boolean,
+];
+
+export const useModalStateWithData = <T>(options?: ModalStateOptions): ModalStateWithDataReturnTuple<T> => {
+    const [modalData, setModalData] = useState<T>();
+
+    const [modalCoreProps, handleSetOpen, render] = useModalState({
+        ...options,
+        onExit: () => {
+            options?.onExit?.();
+            setModalData(undefined);
+        },
+    });
+
+    const openModal = useCallback(
+        (data: T) => {
+            setModalData(data);
+            handleSetOpen(true);
+        },
+        [handleSetOpen]
+    );
+
+    const modalProps = useMemo(() => ({ ...modalCoreProps, data: modalData }), [modalData, modalCoreProps]);
+
+    return [modalProps, openModal, render] as const;
+};
+
 export const useModalStateObject = (options?: ModalStateOptions): ModalStateReturnObj => {
     const [modalProps, openModal, render] = useModalState(options);
 

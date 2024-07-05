@@ -17,7 +17,10 @@ import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { HotkeyTuple, useDropdownArrowNavigation, useElementRect, useHotkeys, useIsClosing } from '../../hooks';
+import useDropdownArrowNavigation from '../../hooks/useDropdownArrowNavigation';
+import useElementRect from '../../hooks/useElementRect';
+import { HotkeyTuple, useHotkeys } from '../../hooks/useHotkeys';
+import useIsClosing from '../../hooks/useIsClosing';
 import { useFocusTrap } from '../focus';
 import { PopperPlacement, PopperPosition, allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';

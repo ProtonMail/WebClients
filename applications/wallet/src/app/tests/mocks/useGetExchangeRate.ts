@@ -1,0 +1,15 @@
+import { MockedFunction } from 'vitest';
+
+import { exchangeRate } from '@proton/wallet';
+
+import * as useExchangeRateModule from '../../store/hooks/useExchangeRate';
+
+export const mockUseGetExchangeRate = (
+    mockedValue?: MockedFunction<ReturnType<typeof useExchangeRateModule.useGetExchangeRate>>
+) => {
+    const spy = vi.spyOn(useExchangeRateModule, 'useGetExchangeRate');
+
+    spy.mockReturnValue(mockedValue ?? vi.fn().mockResolvedValue(exchangeRate));
+
+    return spy;
+};

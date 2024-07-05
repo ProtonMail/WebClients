@@ -4,7 +4,7 @@ import usePrevious from '@proton/hooks/usePrevious';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
-import { DropdownMenuButton } from '../dropdown';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 
 export interface Props<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onChange' | 'title'> {
     value: V;

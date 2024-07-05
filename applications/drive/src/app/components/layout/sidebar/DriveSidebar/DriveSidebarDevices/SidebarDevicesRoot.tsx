@@ -2,7 +2,7 @@ import { Loader } from '@proton/components';
 
 import { useDevicesListing } from '../../../../../store/_devices';
 import { getDevicesSectionName } from '../../../../sections/Devices/constants';
-import ExpandButton from '../DriveSidebarFolders/ExpandButton';
+import ExpandButton from '../DriveSidebarFolders/DriveExpandButton';
 import DriveSidebarListItem from '../DriveSidebarListItem';
 
 export function SidebarDevicesRoot({ isExpanded, toggleExpand }: { toggleExpand: () => void; isExpanded: boolean }) {

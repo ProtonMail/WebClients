@@ -1,0 +1,13 @@
+.fees-selection-button {
+	--button-hover-background-color: var(--interaction-weak);
+}
+
+.fees-selection-modal {
+	.modal-two-content {
+		&#{&} {
+			margin-block-end: 1rem;
+			margin-inline: 0;
+			padding-block-end: 0;
+		}
+	}
+}

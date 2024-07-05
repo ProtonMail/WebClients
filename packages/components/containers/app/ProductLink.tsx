@@ -25,7 +25,14 @@ export const apps = (user?: UserModel) => {
     if (isElectronMail) {
         return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
     }
-    return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS];
+    return [
+        APPS.PROTONMAIL,
+        APPS.PROTONCALENDAR,
+        APPS.PROTONDRIVE,
+        APPS.PROTONVPN_SETTINGS,
+        APPS.PROTONPASS,
+        APPS.PROTONWALLET,
+    ];
 };
 
 interface ProductLinkProps {

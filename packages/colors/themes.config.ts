@@ -141,6 +141,35 @@ const config: ThemeConfig[] = [
             },
         ],
     },
+    {
+        output: './themes/dist/wallet.theme.css',
+        files: [
+            {
+                path: './themes/src/wallet/light-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/wallet/ui-blue.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/wallet/ui-green.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/wallet/ui-orange.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/wallet/ui-pink.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/wallet/ui-purple.css',
+                type: 'light',
+            },
+        ],
+    },
 ];
 
 export default config;

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { ReactNode, useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,6 +14,7 @@ import {
     optionToPreselectedOption,
 } from '@proton/components/components/country/helpers';
 import { Props as OptionProps } from '@proton/components/components/option/Option';
+import { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
 
 import { defaultFilterFunction } from '../selectTwo/helpers';
@@ -50,6 +51,15 @@ interface Props {
     error?: string;
     hint?: string;
     disabled?: boolean;
+
+    /**
+     * Custom searchable select
+     */
+    as?: (props: SearchableSelectProps<string>) => JSX.Element;
+    /**
+     * Whether selector should have a label or not
+     */
+    label?: ReactNode | null;
 }
 
 const CountrySelect = ({
@@ -61,6 +71,8 @@ const CountrySelect = ({
     error,
     hint,
     disabled,
+    label = c('Label').t`Country`,
+    as = SearchableSelect<string>,
 }: Props) => {
     const [selectedCountryOption, setSelectedCountryOption] = useState<CountryOption | undefined>(
         value || (preSelectedOption ? optionToPreselectedOption(preSelectedOption) : undefined)
@@ -123,9 +135,9 @@ const CountrySelect = ({
     return (
         <InputFieldTwo
             id="countrySelect"
-            as={SearchableSelect<string>}
+            as={as}
             placeholder={c('Placeholder').t`Please select a country`}
-            label={c('Label').t`Country`}
+            label={label}
             value={selectedCountryOption?.countryCode}
             onChange={handleSelectOption}
             search={countryFilterFunction}
