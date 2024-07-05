@@ -18,11 +18,11 @@ const WalletDrawerAppButton = ({
     return (
         <DrawerAppButton
             key="open-wallet-drawer-app-button"
-            tooltipText={c('Title').t`Wallet`}
+            tooltipText={c('wallet_signup_2024:Title').t`Wallet`}
             data-testid="wallet-drawer-app-button:wallet-icon"
             buttonContent={<WalletDrawerLogo />}
             onClick={handleClick}
-            alt={c('Action').t`Access Wallet app`}
+            alt={c('wallet_signup_2024:Action').t`Access Wallet app`}
             aria-controls="drawer-app-proton-wallet"
             {...rest}
         />

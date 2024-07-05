@@ -123,28 +123,28 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
     };
 
     const autoCreateWallet = async () => {
-        const userKeys = await getUserKeys();
-        const network = await getBitcoinNetwork();
-
-        const [primaryUserKey] = userKeys;
-
-        const mnemonic = new WasmMnemonic(WasmWordCount.Words12).asString();
-        const hasPassphrase = false;
-
-        const compelledWalletName = getDefaultWalletName(false, []);
-
-        // Encrypt wallet data
-        const [
-            [encryptedName, encryptedMnemonic, encryptedFirstAccountLabel],
-            [walletKey, walletKeySignature, userKeyId],
-        ] = await encryptWalletData([compelledWalletName, mnemonic, DEFAULT_ACCOUNT_LABEL], primaryUserKey);
-
-        const wasmWallet = new WasmWallet(network, mnemonic, '');
-        const fingerprint = wasmWallet.getFingerprint();
-
-        const derivationPathParts = [PURPOSE_BY_SCRIPT_TYPE[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
-
         try {
+            const userKeys = await getUserKeys();
+            const network = await getBitcoinNetwork();
+
+            const [primaryUserKey] = userKeys;
+
+            const mnemonic = new WasmMnemonic(WasmWordCount.Words12).asString();
+            const hasPassphrase = false;
+
+            const compelledWalletName = getDefaultWalletName(false, []);
+
+            // Encrypt wallet data
+            const [
+                [encryptedName, encryptedMnemonic, encryptedFirstAccountLabel],
+                [walletKey, walletKeySignature, userKeyId],
+            ] = await encryptWalletData([compelledWalletName, mnemonic, DEFAULT_ACCOUNT_LABEL], primaryUserKey);
+
+            const wasmWallet = new WasmWallet(network, mnemonic, '');
+            const fingerprint = wasmWallet.getFingerprint();
+
+            const derivationPathParts = [PURPOSE_BY_SCRIPT_TYPE[DEFAULT_SCRIPT_TYPE], network, FIRST_INDEX] as const;
+
             const { Wallet } = await walletApi.wallet.createWallet(
                 encryptedName,
                 false,
@@ -177,23 +177,28 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
     };
 
     const shouldCreateWallet = async () => {
-        if (!higherLevelPilot) {
+        try {
+            if (!higherLevelPilot) {
+                return false;
+            }
+
+            let isUserCompatible = user.isFree;
+
+            if (!isUserCompatible) {
+                const organization = await getOrganization();
+                isUserCompatible = organization?.MaxMembers === 1;
+            }
+
+            if (!isUserCompatible) {
+                return false;
+            }
+
+            const userWalletSettings = await getUserWalletSettings();
+            return !userWalletSettings.WalletCreated;
+        } catch (e) {
+            console.error('Could not check whether or not wallet autocreation is needed', e);
             return false;
         }
-
-        let isUserCompatible = user.isFree;
-
-        if (!isUserCompatible) {
-            const organization = await getOrganization();
-            isUserCompatible = organization?.MaxMembers === 1;
-        }
-
-        if (!isUserCompatible) {
-            return false;
-        }
-
-        const userWalletSettings = await getUserWalletSettings();
-        return !userWalletSettings.WalletCreated;
     };
 
     useEffect(() => {
