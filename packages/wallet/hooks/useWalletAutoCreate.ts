@@ -177,6 +177,10 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
     };
 
     const shouldCreateWallet = async () => {
+        if (!higherLevelPilot) {
+            return false;
+        }
+
         let isUserCompatible = user.isFree;
 
         if (!isUserCompatible) {
@@ -184,12 +188,12 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
             isUserCompatible = organization?.MaxMembers === 1;
         }
 
-        if (!higherLevelPilot || !isUserCompatible) {
+        if (!isUserCompatible) {
             return false;
         }
 
-        const wallets = await walletApi.wallet.getWallets();
-        return !wallets[0].length;
+        const userWalletSettings = await getUserWalletSettings();
+        return !userWalletSettings.WalletCreated;
     };
 
     useEffect(() => {
