@@ -6,7 +6,7 @@ import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { and, invert } from '@proton/pass/utils/fp/predicates';
+import { and, not } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 import type { ShareItem, VaultShareItem } from '../reducers';
@@ -27,12 +27,12 @@ export const selectAllVaults = createSelector([selectAllShares], (shares) =>
 
 export const selectWritableVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isWritableVault));
 export const selectOwnVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isOwnVault));
-export const selectNonOwnedVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(invert(isOwnVault)));
+export const selectNonOwnedVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(not(isOwnVault)));
 export const selectOwnWritableVaults = createSelector([selectAllVaults], (vaults) =>
     vaults.filter(and(isWritableVault, isOwnVault))
 );
 export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (vaults) =>
-    vaults.filter(and(invert(isWritableVault), isOwnVault))
+    vaults.filter(and(not(isWritableVault), isOwnVault))
 );
 
 export const selectWritableSharedVaults = createSelector([selectAllVaults], (vaults) =>

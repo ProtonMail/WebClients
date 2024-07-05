@@ -1,4 +1,4 @@
-import { invert } from '../fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 
 type StackResult =
     | [true, number] /* Represents a stacking context with a z-index value */
@@ -47,5 +47,5 @@ export const getMaxZIndex = (start: HTMLElement) => {
     const children = start.querySelectorAll('*');
     const childZIndexes = Array.from(children, (el) => parseInt(getComputedStyle(el).zIndex, 10));
 
-    return Math.max(zTraverse(start), ...childZIndexes.filter(invert(Number.isNaN)));
+    return Math.max(zTraverse(start), ...childZIndexes.filter(not(Number.isNaN)));
 };
