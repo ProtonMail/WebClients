@@ -38,3 +38,5 @@ export const contactHref = (
         {contactString}
     </a>
 );
+
+export type DecreaseBlockedReason = 'forbidden-modification';
