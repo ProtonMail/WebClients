@@ -18,6 +18,7 @@ import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import {
+    CalendarBootstrap,
     CalendarMember,
     CalendarMemberInvitation,
     GetAllMembersApiResponse,
@@ -60,7 +61,7 @@ const CalendarSubpage = ({
 
     const [renderCount, setRenderCount] = useState(0);
     const [calendar, setCalendar] = useState<SubscribedCalendar | VisualCalendar>();
-    const [bootstrap, setBootstrap] = useState();
+    const [bootstrap, setBootstrap] = useState<CalendarBootstrap>();
     const [invitations, setInvitations] = useState<CalendarMemberInvitation[]>([]);
     const [members, setMembers] = useState<CalendarMember[]>([]);
     const [loadingShareData, setLoadingShareData] = useState(true);

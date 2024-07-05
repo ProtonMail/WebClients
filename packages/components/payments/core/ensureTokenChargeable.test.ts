@@ -31,6 +31,7 @@ describe('process', () => {
         signal = {
             aborted: false,
             reason: null,
+            any: jest.fn(),
             onabort: jest.fn(),
             throwIfAborted: jest.fn(),
             addEventListener: jest.fn(),
