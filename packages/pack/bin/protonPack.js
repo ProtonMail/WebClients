@@ -30,6 +30,7 @@ const addGlobalOptions = (program) => {
         .option('--api <api>', '', (api) => getApi(api), getApi(''))
         .option('--sso <sso>', '')
         .option('--no-api-proxy', '')
+        .option('--swc', '', false)
         .option('--logical', '', false)
         .option(
             '--publicPath <publicPath>',
@@ -58,6 +59,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         overlayErrors: options.overlayErrors,
         overlayRuntimeErrors: options.overlayRuntimeErrors,
         logical: Boolean(options.logical),
+        swc: Boolean(options.swc),
         analyze: options.analyze,
         ...buildData,
     };

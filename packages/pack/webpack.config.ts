@@ -6,7 +6,6 @@ import { parseResource } from 'webpack/lib/util/identifier';
 
 import { getEntries } from './webpack/entries';
 
-const { getJsLoaders } = require('./webpack/js.loader.swc');
 const getCssLoaders = require('./webpack/css.loader');
 const getAssetsLoaders = require('./webpack/assets.loader');
 const getPlugins = require('./webpack/plugins');
@@ -19,6 +18,8 @@ const getConfig = (env: any): Configuration => {
     // This folder is separate from the assets folder because they are special assets which get served through
     // a long-term storage
     const assetsFolder = 'assets/static';
+
+    const { getJsLoaders } = require(env.swc ? './webpack/js.loader.swc' : './webpack/js.loader');
 
     const defaultBrowsersList = isProduction
         ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
