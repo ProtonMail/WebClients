@@ -132,6 +132,12 @@ export const getRecipientsAddresses = (message: Partial<Message>) =>
     getRecipients(message)
         .map(({ Address }) => Address || '')
         .filter(identity);
+
+export const getPublicRecipients = (message?: Partial<Message>) => {
+    const { ToList = [], CCList = [] } = message || {};
+    return [...ToList, ...CCList];
+};
+
 /**
  * Get date from message
  */
