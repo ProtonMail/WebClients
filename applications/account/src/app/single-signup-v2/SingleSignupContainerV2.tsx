@@ -343,11 +343,9 @@ const SingleSignupContainerV2 = ({
         };
     });
 
-    const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
-
     const signupConfiguration = (() => {
         const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
-        const plan = model.optimistic.plan || selectedPlan;
+        const plan = getPlanFromPlanIDs(model.plansMap, planIDs) || FREE_PLAN;
 
         if (toApp === APPS.PROTONDRIVE) {
             return getDriveConfiguration({
@@ -1218,7 +1216,6 @@ const SingleSignupContainerV2 = ({
                         isLargeViewport={viewportWidth['>=large']}
                         api={normalApi}
                         measure={measure}
-                        selectedPlan={selectedPlan}
                         currentPlan={model.upsell.currentPlan}
                         onOpenSwitch={() => {
                             setSwitchModal(true);

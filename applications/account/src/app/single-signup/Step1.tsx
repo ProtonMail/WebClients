@@ -94,7 +94,6 @@ import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
@@ -427,10 +426,10 @@ const Step1 = ({
         payment: false,
     });
 
-    const options: OptimisticOptions = {
+    const options: OptimisticOptions & { plan: Plan } = {
         currency: model.optimistic.currency || model.subscriptionData.currency,
         cycle: model.optimistic.cycle || model.subscriptionData.cycle,
-        plan: model.optimistic.plan || selectedPlan,
+        plan: getPlanFromPlanIDs(model.plansMap, model.optimistic.planIDs) || selectedPlan,
         planIDs: model.optimistic.planIDs || model.subscriptionData.planIDs,
         checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
         billingAddress: model.optimistic.billingAddress || model.subscriptionData.billingAddress,
@@ -464,12 +463,12 @@ const Step1 = ({
         const newCurrency = optimistic.currency || options.currency;
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
-        const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs) || FREE_PLAN;
+        const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs);
         const newBillingAddress = optimistic.billingAddress || options.billingAddress;
 
         // Try a pre-saved check first. If it's not available, then use the default optimistic one.
         // With the regular cycles, it should be available.
-        let subscriptionMapping = model.subscriptionDataCycleMapping?.[newPlan.Name as PLANS]?.[newCycle];
+        let subscriptionMapping = model.subscriptionDataCycleMapping?.[newPlan?.Name as PLANS]?.[newCycle];
         if (!isDeepEqual(newPlanIDs, subscriptionMapping?.planIDs)) {
             subscriptionMapping = undefined;
         }
@@ -484,7 +483,6 @@ const Step1 = ({
 
         const newOptimistic = {
             ...optimistic,
-            plan: newPlan,
             checkResult: optimisticCheckResult,
         };
 
