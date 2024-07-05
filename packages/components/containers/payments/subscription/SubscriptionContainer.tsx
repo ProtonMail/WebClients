@@ -652,12 +652,23 @@ const SubscriptionContainer = ({
                 };
             }
 
+            // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
+            // if user re-enters the same coupon code as in the currently active subscription.
+            // We must do it because of backend limitations. The backend won't recognize the currently active
+            // subscription coupon if there is any other valid coupon in the request payload.
+            const codesArgument =
+                !!subscriptionCouponCode && newModel.gift === subscriptionCouponCode
+                    ? { coupon: subscriptionCouponCode }
+                    : { gift: newModel.gift, coupon };
+
+            const Codes = getCodes(codesArgument);
+
             const checkResult = await paymentsApi.checkWithAutomaticVersion(
                 {
+                    Codes,
                     Plans: newModel.planIDs,
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
-                    Codes: getCodes({ gift: newModel.gift, coupon }),
                     BillingAddress: {
                         CountryCode: newModel.taxBillingAddress.CountryCode,
                         State: newModel.taxBillingAddress.State,
