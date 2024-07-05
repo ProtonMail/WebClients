@@ -58,7 +58,6 @@ import {
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
-import debounce from '@proton/utils/debounce';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -81,6 +80,7 @@ import {
     useConfig,
     useEventManager,
     useGetCalendars,
+    useHandler,
     useNotifications,
     useUser,
     useVPNServersCount,
@@ -921,6 +921,33 @@ const SubscriptionContainer = ({
 
     const { currentPlan, hasPlanCustomizer } = getHasPlanCustomizer({ plansMap, planIDs: model.planIDs });
 
+    const [optimisticPlanIDs, setOptimisticPlanIDs] = useState<PlanIDs | null>(null);
+    const optimisticPlanIDsRef = useRef<any | undefined>();
+
+    const handleChangePlanIDs = useHandler(
+        (planIDs: PlanIDs, id: any) => {
+            const newModel = { ...model, planIDs };
+            setModel(newModel);
+            const checkPromise = check(newModel);
+            void withLoadingCheck(checkPromise);
+            void withBlockCycleSelector(checkPromise);
+            checkPromise.catch(noop).finally(() => {
+                // Only if it's the latest call is it reset
+                if (optimisticPlanIDsRef.current === id) {
+                    setOptimisticPlanIDs(null);
+                }
+            });
+        },
+        { debounce: 300 }
+    );
+
+    const handleOptimisticPlanIDs = (planIDs: PlanIDs) => {
+        const id = {};
+        optimisticPlanIDsRef.current = id;
+        setOptimisticPlanIDs(planIDs);
+        handleChangePlanIDs(planIDs, id);
+    };
+
     const content = (
         <>
             {!customTopRef && <div ref={topRef} />}
@@ -988,15 +1015,9 @@ const SubscriptionContainer = ({
                                                     cycle={model.cycle}
                                                     plansMap={plansMap}
                                                     currentPlan={currentPlan}
-                                                    planIDs={model.planIDs}
+                                                    planIDs={optimisticPlanIDs ?? model.planIDs}
                                                     organization={organization}
-                                                    onChangePlanIDs={debounce((planIDs) => {
-                                                        const newModel = { ...model, planIDs };
-                                                        setModel(newModel);
-                                                        const checkPromise = check(newModel);
-                                                        void withLoadingCheck(checkPromise);
-                                                        void withBlockCycleSelector(checkPromise);
-                                                    }, 300)}
+                                                    onChangePlanIDs={handleOptimisticPlanIDs}
                                                     forceHideDescriptions
                                                     showUsersTooltip={false}
                                                     latestSubscription={latestSubscription}

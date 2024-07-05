@@ -42,10 +42,10 @@ export type OnOpenSwitch = () => void;
 export interface OptimisticOptions {
     cycle: CYCLE;
     currency: Currency;
-    plan: Plan;
     planIDs: PlanIDs;
     billingAddress: BillingAddress;
     checkResult: RequiredCheckResponse;
+    coupon?: string;
 }
 
 export const enum Steps {
