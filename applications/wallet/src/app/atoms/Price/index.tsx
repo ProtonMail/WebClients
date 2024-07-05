@@ -31,7 +31,7 @@ const tryNumberFormat = (currency: string, minimumFractionDigits: number): Intl.
     const commonParams = {
         style: 'currency',
         currencyDisplay: 'symbol',
-    };
+    } as const;
 
     try {
         return new Intl.NumberFormat(dateLocale.code, {

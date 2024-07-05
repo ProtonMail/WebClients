@@ -212,7 +212,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
                 getKeyID: () => subkeyKeyID,
             };
         }),
-    };
+    } as PublicKeyReference;
 };
 
 const getPrivateKeyReference = async (privateKey: PrivateKey, keyStoreID: number): Promise<PrivateKeyReference> => {
@@ -220,7 +220,8 @@ const getPrivateKeyReference = async (privateKey: PrivateKey, keyStoreID: number
     return {
         ...publicKeyReference,
         isPrivate: () => true,
-    };
+        _dummyType: 'private',
+    } as PrivateKeyReference;
 };
 
 class KeyStore {
