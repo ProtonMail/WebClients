@@ -29,17 +29,17 @@
         "cross-env": "^7.0.3",
         "eslint": "^8.57.0",
         "lodash.startcase": "^4.4.0",
-        "prettier": "^3.2.5",
+        "prettier": "^3.3.2",
         "prop-types": "15.8.1",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-router-dom": "^5.3.4",
         "ts-loader": "^9.5.1",
-        "typescript": "^5.4.5",
-        "webpack": "^5.91.0"
+        "typescript": "^5.5.3",
+        "webpack": "^5.92.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.24.6",
+        "@babel/core": "^7.24.7",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
         "@storybook/addon-links": "^6.5.16",
@@ -50,6 +50,6 @@
         "@storybook/source-loader": "^6.5.16",
         "babel-loader": "^9.1.3",
         "eslint-plugin-storybook": "^0.8.0",
-        "netlify-cli": "17.25.0"
+        "netlify-cli": "17.33.0"
     }
 }
