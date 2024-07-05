@@ -2,6 +2,7 @@ import { ConvertibleDataType } from '../ConvertibleDataType'
 import { DocumentRoleType } from '../Doc/DocumentRole'
 import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
+import { SerializedEditorState } from 'lexical'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
@@ -27,5 +28,6 @@ export interface ClientRequiresEditorMethods {
   changeLockedState(locked: boolean): Promise<void>
   broadcastPresenceState(): Promise<void>
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array | Blob>
+  getCurrentEditorState(): Promise<SerializedEditorState | undefined>
   printAsPDF(): Promise<void>
 }

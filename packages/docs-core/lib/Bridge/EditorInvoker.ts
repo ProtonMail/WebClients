@@ -13,6 +13,7 @@ import {
 } from '@proton/docs-shared'
 import { LoggerInterface } from '@proton/utils/logs'
 import { GenerateUUID } from '../Util/GenerateUuid'
+import { SerializedEditorState } from 'lexical'
 
 /** Allows the client to invoke methods on the editor */
 export class EditorInvoker implements ClientRequiresEditorMethods {
@@ -89,6 +90,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
 
   async printAsPDF(): Promise<void> {
     return this.invokeEditorMethod('printAsPDF', [])
+  }
+
+  async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
+    return this.invokeEditorMethod('getCurrentEditorState', [])
   }
 
   async initializeEditor(

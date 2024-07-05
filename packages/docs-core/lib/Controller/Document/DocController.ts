@@ -51,6 +51,7 @@ import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/Websocke
 import { DocSizeTracker } from './SizeTracker'
 import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
 import { DocParticipantTracker, ParticipantTrackerEvent } from './DocParticipantTracker'
+import { SerializedEditorState } from 'lexical'
 
 /**
  * @TODO DRVDOC-802
@@ -844,6 +845,15 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
 
     void this.editorInvoker.printAsPDF()
+  }
+
+  async getEditorJSON(): Promise<SerializedEditorState | undefined> {
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+
+    const json = await this.editorInvoker.getCurrentEditorState()
+    return json
   }
 
   deinit() {}
