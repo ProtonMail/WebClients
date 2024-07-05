@@ -319,7 +319,7 @@ export const passPlusUpsell = {
     upsellRefLink: 'upsell_pass-button-pass-dashboard_settings',
     features: [
         {
-            text: 'Unlimited logins and notes',
+            text: 'Unlimited logins, notes and credit cards',
             icon: 'note',
             included: true,
             hideInDowngrade: true,
