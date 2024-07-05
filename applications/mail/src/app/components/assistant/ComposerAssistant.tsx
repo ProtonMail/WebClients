@@ -11,6 +11,7 @@ import { getHasAssistantStatus } from '@proton/llm/lib';
 import { OpenedAssistantStatus, PartialRefineAction, RefineAction } from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -38,6 +39,8 @@ interface Props {
     getContentBeforeBlockquote: () => string;
     setContentBeforeBlockquote: (content: string) => void;
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
+    recipients: Recipient[];
+    sender: Recipient | undefined;
 }
 
 export type ReplacementStyle = 'generateFullMessage' | 'refineFullMessage' | 'refineSelectedText' | undefined;
@@ -54,6 +57,8 @@ const ComposerAssistant = ({
     getContentBeforeBlockquote,
     setContentBeforeBlockquote,
     setInnerModal,
+    recipients,
+    sender,
 }: Props) => {
     const [result, setResult] = useState('');
     const [replacementStyle, setReplacementStyle] = useState<ReplacementStyle>(
@@ -310,6 +315,8 @@ const ComposerAssistant = ({
                             setSelectedText('');
                         }}
                         setInnerModal={setInnerModal}
+                        recipients={recipients}
+                        sender={sender}
                     />
                 </div>
                 <div className="flex-1 flex flex-nowrap flex-column">

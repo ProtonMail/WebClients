@@ -53,6 +53,8 @@ export type GenerationCallback = (fulltext: string, details?: GenerationCallback
 export type WriteFullEmailAction = {
     type: 'writeFullEmail';
     prompt: string;
+    recipient?: string;
+    sender?: string;
 };
 
 // Identifies a substring to refine along with its context. Only for refine actions.
