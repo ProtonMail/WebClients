@@ -34,7 +34,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONDRIVE]: c('Navigation').t`Drive`,
         [APPS.PROTONPASS]: c('Navigation').t`Pass vaults`,
         [APPS.PROTONDOCS]: c('Navigation').t`Documents`,
-        [APPS.PROTONWALLET]: c('Navigation').t`Wallet`,
+        [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Wallet`,
     };
     const backButtonCopyTitle = {
         [APPS.PROTONMAIL]: c('Navigation').t`Back to inbox`,
@@ -42,7 +42,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONDRIVE]: c('Navigation').t`Back to files`,
         [APPS.PROTONPASS]: c('Navigation').t`Back to vaults`,
         [APPS.PROTONDOCS]: c('Navigation').t`Back to documents`,
-        [APPS.PROTONWALLET]: c('Navigation').t`Back to wallet`,
+        [APPS.PROTONWALLET]: c('wallet_signup_2024:Navigation').t`Back to wallet`,
     };
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];

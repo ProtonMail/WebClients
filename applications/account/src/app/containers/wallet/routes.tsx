@@ -9,7 +9,7 @@ export const getWalletAppRoutes = (): SidebarConfig => {
         header: WALLET_APP_NAME,
         routes: {
             downloads: {
-                text: c('Wallet Settings').t`Downloads`,
+                text: c('wallet_signup_2024:Wallet Settings').t`Downloads`,
                 to: WALLET_SETTINGS_ROUTES.DOWNLOADS,
                 icon: 'arrow-down-line',
                 subsections: [
