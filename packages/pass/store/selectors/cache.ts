@@ -6,8 +6,11 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 export const selectCachableState = (state: State) => {
     const whiteListedState = asIfNotOptimistic(state, reducerMap);
 
-    /** Remove monitoring data - revalidate on boot */
+    /** Remove "hot" data that should never be cached.
+     * These should be revalidated on boot or via polling. */
     whiteListedState.monitor = null;
+    whiteListedState.items.secureLinks = {};
+    whiteListedState.invites = {};
 
     /** Filter stale request metadata and optimisticIds */
     whiteListedState.items.byOptimisticId = {};
