@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky.reader';
 import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass.csv.reader';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -119,6 +120,10 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
 
         case ImportProvider.ENPASS: {
             return readEnpassData({ data: await file.text(), importUsername });
+        }
+
+        case ImportProvider.KASPERSKY: {
+            return readKasperskyData({ data: await file.text(), importUsername });
         }
 
         default:
