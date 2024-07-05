@@ -20,9 +20,7 @@ export const DocsLayout = ({ children, action }: Props) => {
       sidebar={null}
       drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
     >
-      <PrivateMainArea hasToolbar className="bg-[white] [&>div]:h-full">
-        {children}
-      </PrivateMainArea>
+      <PrivateMainArea hasToolbar>{children}</PrivateMainArea>
     </PrivateAppContainer>
   )
 }

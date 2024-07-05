@@ -27,6 +27,14 @@ input[type='number'] {
 	border-block-start: 0;
 }
 
+.main-area {
+	background-color: white;
+
+	> div {
+		block-size: 100%;
+	}
+}
+
 .drawer-sidebar-button {
 	inline-size: rem(36);
 	block-size: rem(36);
