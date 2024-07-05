@@ -177,7 +177,7 @@ const ThemeProvider = ({ children, appName }: Props) => {
         }
 
         return themeSetting;
-    }, []);
+    }, [themeSetting]);
 
     const setThemeSetting = useCallback((theme: ThemeSetting = getDefaultThemeSetting()) => {
         setThemeSettingDefault((oldTheme: ThemeSetting) => {
