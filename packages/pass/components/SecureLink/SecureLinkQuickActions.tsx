@@ -8,10 +8,10 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { secureLinksRemoveInactive } from '@proton/pass/store/actions';
 import { secureLinksRemoveInactiveRequest } from '@proton/pass/store/actions/requests';
-import { selectInactiveSecureLinkCount } from '@proton/pass/store/selectors';
+import { selectInactiveSecureLinks } from '@proton/pass/store/selectors';
 
 export const SecureLinkQuickActions: FC = () => {
-    const inactiveLinkCount = useSelector(selectInactiveSecureLinkCount);
+    const inactiveLinkCount = useSelector(selectInactiveSecureLinks).length;
 
     const { loading, dispatch } = useRequest(secureLinksRemoveInactive, {
         initialRequestId: secureLinksRemoveInactiveRequest(),

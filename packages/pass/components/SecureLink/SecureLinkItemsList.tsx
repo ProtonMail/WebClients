@@ -13,7 +13,7 @@ import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/r
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
-import { selectOptimisticItemsWithSecureLink } from '@proton/pass/store/selectors';
+import { selectAllSecureLinks, selectOptimisticItemsWithSecureLink } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 
 import { SecureLinkQuickActions } from './SecureLinkQuickActions';
@@ -23,6 +23,7 @@ export const SecureLinkItemsList: FC = () => {
     const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
 
+    const secureLinkCount = useSelector(selectAllSecureLinks).length;
     const items = useSelector(selectOptimisticItemsWithSecureLink);
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'secure-links' });
     const selectedItem = useRouteMatch<SelectedItem>(itemRoute)?.params;
@@ -48,7 +49,7 @@ export const SecureLinkItemsList: FC = () => {
                     >
                         <Icon name="link" className="shrink-0" />
                         <span className="text-ellipsis hidden sm:block">
-                            {c('Action').t`Shared links`} ({items.length})
+                            {c('Action').t`Secure links`} ({secureLinkCount})
                         </span>
                     </DropdownButton>
                     <SecureLinkQuickActions />
