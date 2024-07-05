@@ -18,7 +18,7 @@ import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { selectSelectedItems } from '@proton/pass/store/selectors';
 import type { ItemRevision, SelectedItem } from '@proton/pass/types';
-import { invert } from '@proton/pass/utils/fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 
 const BTN_STYLES = {
     '--button-default-background-color': 'var(--interaction-weak-major-1)',
@@ -34,7 +34,7 @@ const DuplicatePasswordReport: FC<SelectedItem> = (item) => {
     const { selectItem } = useNavigation();
 
     const group = duplicates.data.find((group) => group.some(itemEq(item))) ?? [];
-    const others = useSelector(selectSelectedItems(group?.filter(invert(itemEq(item))) ?? []));
+    const others = useSelector(selectSelectedItems(group?.filter(not(itemEq(item))) ?? []));
     const total = others.length;
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();

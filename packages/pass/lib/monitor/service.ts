@@ -6,7 +6,7 @@ import { hasDomain, hasOTP } from '@proton/pass/lib/items/item.predicates';
 import { intoSelectedItem } from '@proton/pass/lib/items/item.utils';
 import { selectMonitoredLogins } from '@proton/pass/store/selectors';
 import { type UniqueItem } from '@proton/pass/types';
-import { and, invert } from '@proton/pass/utils/fp/predicates';
+import { and, not } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import chunk from '@proton/utils/chunk';
 
@@ -23,7 +23,7 @@ export const createMonitorService = (core: PassCoreProxy, store: Store): Monitor
     const service: MonitorService = {
         checkMissing2FAs: async () => {
             const logins = getLoginItems();
-            const candidates = logins.filter(and(hasDomain, invert(hasOTP)));
+            const candidates = logins.filter(and(hasDomain, not(hasOTP)));
             const domains = candidates.flatMap((item) => item.data.content.urls);
             const chunks = chunk(domains, WASM_PROCEDURE_BATCH_SIZE);
 
