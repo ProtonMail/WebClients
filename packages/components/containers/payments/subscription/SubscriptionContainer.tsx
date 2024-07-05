@@ -1016,7 +1016,6 @@ const SubscriptionContainer = ({
                                                     plansMap={plansMap}
                                                     currentPlan={currentPlan}
                                                     planIDs={optimisticPlanIDs ?? model.planIDs}
-                                                    organization={organization}
                                                     onChangePlanIDs={handleOptimisticPlanIDs}
                                                     forceHideDescriptions
                                                     showUsersTooltip={false}
