@@ -11,8 +11,10 @@ export const mockUseUserWalletSettings = (
     return spy;
 };
 
-export const mockUseGetUserWalletSettings = (mockedValue: typeof userWalletSettings = userWalletSettings) => {
+export const mockUseGetUserWalletSettings = (
+    mockedValue: () => Promise<typeof userWalletSettings> = async () => userWalletSettings
+) => {
     const spy = vi.spyOn(useUserWalletSettingsModule, 'useGetUserWalletSettings');
-    spy.mockReturnValue(vi.fn(async () => mockedValue));
+    spy.mockReturnValue(mockedValue ?? vi.fn(async () => userWalletSettings));
     return spy;
 };
