@@ -1,5 +1,5 @@
 import type { Unpack } from '@proton/pass/types';
-import { invert } from '@proton/pass/utils/fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 
 import type { OptimisticReducersMapObject, OptimisticSelector, StateFromOptimisticReducersMapObject } from '../types';
 import { asIfNotFailed } from './select-is-failed';
@@ -30,8 +30,8 @@ const selectOptimisticList =
 
         return stateWithOptimistic.map((value) => ({
             ...value,
-            optimistic: invert(compare)(value, stateWithoutOptimistic),
-            failed: invert(compare)(value, stateWithoutFailed),
+            optimistic: not(compare)(value, stateWithoutOptimistic),
+            failed: not(compare)(value, stateWithoutFailed),
         }));
     };
 
