@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms/Input/Input';
@@ -29,21 +29,23 @@ export const BitcoinAmountInput = ({
     inputClassName,
     ...inputProps
 }: Props) => {
+    const [fiatAmount, setFiatAmount] = useState(0);
+
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const amount = parseFloat(event.target.value);
+        setFiatAmount(amount);
         const safeAmount = Number.isFinite(amount) ? amount : 0;
 
         onValueChange?.(convertAmount(safeAmount, unit, COMPUTE_BITCOIN_UNIT));
     };
 
-    const fValue = convertAmount(value, COMPUTE_BITCOIN_UNIT, unit);
     const constrainedMin = Math.max(0, Number(min));
 
     return (
         <CoreInput
             dense={dense}
             type="number"
-            value={fValue}
+            value={fiatAmount}
             min={constrainedMin}
             step={getDecimalStepByUnit(unit)}
             onChange={onChange}
