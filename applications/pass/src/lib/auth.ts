@@ -3,6 +3,7 @@ import { flushSync } from 'react-dom';
 import type { History } from 'history';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { store } from 'proton-pass-web/app/Store/store';
+import { b2bEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
@@ -213,6 +214,8 @@ export const createAuthService = ({
 
             onboarding.reset();
             telemetry.stop();
+            b2bEvents.stop();
+
             void settings.clear();
             setSentryUID(undefined);
 
