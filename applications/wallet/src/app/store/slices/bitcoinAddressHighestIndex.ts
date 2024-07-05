@@ -1,9 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { ModelState, getInitialModelState } from '@proton/account';
-import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -44,6 +43,7 @@ const modelThunk = createAsyncModelThunk<
             [walletAccountId]: { index, time: Date.now() },
         };
     },
+    expiry: 10 * MINUTE,
     previous: ({ getState, options }) => {
         const state = getState()[name];
 
@@ -58,10 +58,7 @@ const modelThunk = createAsyncModelThunk<
             return undefined;
         }
 
-        return getValidModel({
-            value: state.value,
-            cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, 10 * MINUTE) ? 'stale' : undefined),
-        });
+        return state;
     },
 });
 

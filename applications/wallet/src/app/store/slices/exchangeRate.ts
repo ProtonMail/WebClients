@@ -2,9 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmApiExchangeRate, WasmFiatCurrencySymbol } from '@proton/andromeda';
-import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { SECOND } from '@proton/shared/lib/constants';
-import { defaultExpiry, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -74,10 +73,7 @@ const modelThunk = createAsyncModelThunk<
         const [key] = getKeyAndTs(fiat, date);
 
         if (state.value[key]) {
-            return getValidModel({
-                value: state.value,
-                cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, defaultExpiry) ? 'stale' : undefined),
-            });
+            return state;
         }
 
         return undefined;
