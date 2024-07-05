@@ -747,7 +747,6 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.DOCS_SIGNUP,
                                                         SSO_PATHS.PASS_SIGNUP,
                                                         SSO_PATHS.PASS_SIGNUP_B2B,
-                                                        SSO_PATHS.WALLET_SIGNUP,
                                                     ]}
                                                 >
                                                     <SingleSignupSwitchContainer
@@ -833,7 +832,6 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.DOCS_SIGN_IN,
                                                         SSO_PATHS.VPN_SIGN_IN,
                                                         SSO_PATHS.PASS_SIGN_IN,
-                                                        SSO_PATHS.WALLET_SIGN_IN,
                                                     ]}
                                                     exact
                                                 >
