@@ -89,7 +89,7 @@ const result = (env: any): Configuration => {
             })
         );
 
-        config.experiments = { syncWebAssembly: true, asyncWebAssembly: true };
+        config.experiments = { asyncWebAssembly: true };
     });
 };
 
