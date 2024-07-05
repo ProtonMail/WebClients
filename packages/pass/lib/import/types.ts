@@ -20,6 +20,7 @@ export enum ImportProvider {
     ROBOFORM = 'roboform',
     NORDPASS = 'nordpass',
     ENPASS = 'enpass',
+    KASPERSKY = 'kaspersky',
     CSV = 'csv',
 }
 
@@ -98,6 +99,11 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         [ImportProvider.ENPASS]: {
             title: 'Enpass',
             fileExtension: 'json',
+            tutorialUrl: '',
+        },
+        [ImportProvider.KASPERSKY]: {
+            title: 'Kaspersky',
+            fileExtension: 'txt',
             tutorialUrl: '',
         },
         [ImportProvider.CSV]: {
