@@ -5,6 +5,7 @@ import { createApiProxyService } from 'proton-pass-extension/app/worker/services
 import { createAuthService } from 'proton-pass-extension/app/worker/services/auth';
 import { createAutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
+import { createB2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
 import { createPassCoreProxyService } from 'proton-pass-extension/app/worker/services/core';
 import { createExportService } from 'proton-pass-extension/app/worker/services/export';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
@@ -63,6 +64,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             auth,
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
+            b2bEvents: createB2BEventsService(storage.local),
             core,
             export: createExportService(),
             formTracker: createFormTrackerService(),
