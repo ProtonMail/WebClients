@@ -4,6 +4,7 @@ import { DocControllerInterface } from '@proton/docs-core'
 import { useApplication } from '../Containers/ApplicationProvider'
 import { useLocalState } from '@proton/components/hooks'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
+import { Button } from '@proton/atoms'
 
 export const useDebug = () => {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
@@ -42,6 +43,16 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
   const createStressTestors = async () => {
     const count = 10
     void application.websocketService.createStressTestConnections(count)
+  }
+
+  const copyEditorJSON = async () => {
+    const json = await docController.getEditorJSON()
+    if (!json) {
+      return
+    }
+
+    const stringified = JSON.stringify(json)
+    void navigator.clipboard.writeText(stringified)
   }
 
   useEffect(() => {
@@ -88,36 +99,24 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
             <div>ClientID: {clientId}</div>
           </>
         )}
-        <button
-          className="rounded border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm hover:bg-[--background-strong]"
-          onClick={commitToRTS}
-        >
+        <Button size="small" onClick={commitToRTS}>
           Commit Doc with RTS
-        </button>
-        <button
-          className="rounded border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm hover:bg-[--background-strong]"
-          onClick={squashDocument}
-        >
+        </Button>
+        <Button size="small" onClick={squashDocument}>
           Squash Last Commit with DX
-        </button>
-        <button
-          className="rounded border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm hover:bg-[--background-strong]"
-          onClick={createInitialCommit}
-        >
+        </Button>
+        <Button size="small" onClick={createInitialCommit}>
           Create Initial Commit
-        </button>
-        <button
-          className="rounded border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm hover:bg-[--background-strong]"
-          onClick={createStressTestors}
-        >
+        </Button>
+        <Button size="small" onClick={createStressTestors}>
           Create Websocket Stress Testers
-        </button>
-        <button
-          className="rounded border border-[--border-weak] bg-[--background-norm] px-2 py-1 text-sm hover:bg-[--background-strong]"
-          onClick={closeConnection}
-        >
+        </Button>
+        <Button size="small" onClick={closeConnection}>
           Close Connection
-        </button>
+        </Button>
+        <Button size="small" onClick={copyEditorJSON}>
+          Copy Editor JSON
+        </Button>
         {sharingUrl && (
           <div className="flex flex-col">
             <div>Sharing URL</div>
