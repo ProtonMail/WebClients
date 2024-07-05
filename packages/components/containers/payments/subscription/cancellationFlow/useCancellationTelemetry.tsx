@@ -9,22 +9,31 @@ export enum REACTIVATE_SOURCE {
     banners = 'banners',
 }
 
+// We send a string since it comes from a query params, the value is validated in the function
+const validateSource = (source: string) => {
+    switch (source) {
+        case 'cancellation_flow':
+            return REACTIVATE_SOURCE.cancellationFlow;
+        case 'reminder_modal':
+            return REACTIVATE_SOURCE.reminderModal;
+        case 'banners':
+            return REACTIVATE_SOURCE.banners;
+        default:
+            return REACTIVATE_SOURCE.default;
+    }
+};
+
 const useCancellationTelemetry = () => {
     const api = useApi();
 
-    const sendStartCancellationSectionReport = () => {
+    const sendStartCancellationReport = (source: 'cancellation_section' | 'cancellation_pricing') => {
         void sendTelemetryReport({
             api,
             measurementGroup: TelemetryMeasurementGroups.accountCancellation,
-            event: TelemtryAccountCancellationEvents.startCancellationSection,
-        });
-    };
-
-    const sendStartCancellationPricingReport = () => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.accountCancellation,
-            event: TelemtryAccountCancellationEvents.startCancellationPricing,
+            event: TelemtryAccountCancellationEvents.startCancellation,
+            dimensions: {
+                cancellation_start: source,
+            },
         });
     };
 
@@ -92,34 +101,20 @@ const useCancellationTelemetry = () => {
         });
     };
 
-    // We send a string since it comes from a query params, the value is validated in the function
     const sendDashboardReactivateReport = (source: string) => {
-        const validateSource = () => {
-            switch (source) {
-                case 'cancellation_flow':
-                    return REACTIVATE_SOURCE.cancellationFlow;
-                case 'reminder_modal':
-                    return REACTIVATE_SOURCE.reminderModal;
-                case 'banners':
-                    return REACTIVATE_SOURCE.banners;
-                default:
-                    return REACTIVATE_SOURCE.default;
-            }
-        };
-
         void sendTelemetryReport({
             api,
             measurementGroup: TelemetryMeasurementGroups.accountCancellation,
             event: TelemtryAccountCancellationEvents.dashboardReactivate,
             dimensions: {
-                source: validateSource(),
+                cancellation_reactivate: validateSource(source),
             },
         });
     };
 
     return {
-        sendStartCancellationSectionReport,
-        sendStartCancellationPricingReport,
+        sendStartCancellationSectionReport: () => sendStartCancellationReport('cancellation_section'),
+        sendStartCancellationPricingReport: () => sendStartCancellationReport('cancellation_pricing'),
         sendCancelPageKeepPlanReport,
         sendCancelPageConfirmCancelReport,
         sendCancelModalKeepPlanReport,
