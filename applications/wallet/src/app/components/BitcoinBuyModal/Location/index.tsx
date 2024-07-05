@@ -40,7 +40,6 @@ export const Location = ({ onConfirm }: Props) => {
                     options={allCountryOptions}
                     as={(props: CoreSearchableSelectProps<string>) => (
                         <SearchableSelect
-                            bordered
                             disabled={loadingCountries}
                             label={c('bitcoin buy').t`Your location`}
                             placeholder={c('bitcoin buy').t`Choose a country`}

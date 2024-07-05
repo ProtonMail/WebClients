@@ -7,6 +7,7 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Icon from '@proton/components/components/icon/Icon';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -49,8 +50,9 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
     } = useAccountPreferences(wallet, walletAccount, otherWallets);
 
     return (
-        <div className="flex flex-column my-4 bg-weak rounded-xl">
+        <InputFieldStackedGroup>
             <Input
+                isGroupElement
                 label={c('Wallet preference').t`Account label`}
                 placeholder={c('Wallet preference').t`My super account`}
                 value={label}
@@ -68,11 +70,16 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                             isOpen={isOpen}
                             onClick={toggle}
                             icon
-                            className="rounded-full"
+                            className="rounded-full p-3 border-none"
                             size="small"
                             disabled={isLoadingLabelUpdate}
                         >
-                            <Icon size={3} name="three-dots-vertical" alt={c('Action').t`More options`} />
+                            <Icon
+                                size={4}
+                                name="three-dots-vertical"
+                                className="color-weak"
+                                alt={c('Action').t`More options`}
+                            />
                         </DropdownButton>
                         <Dropdown
                             isOpen={isOpen}
@@ -100,7 +107,7 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                     </>
                 }
             />
-            <hr className="my-0" />
+
             <CurrencySelect
                 disabled={loadingCurrencies || isLoadingFiatCurrencyUpdate}
                 label={c('Wallet preferences').t`Local currency`}
@@ -114,9 +121,8 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                     width: DropdownSizeUnit.Anchor,
                     maxWidth: DropdownSizeUnit.Viewport,
                 }}
+                isGroupElement
             />
-
-            <hr className="my-0" />
 
             <EmailIntegrationInput
                 walletAccountId={walletAccount.ID}
@@ -133,6 +139,6 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
                     void onReplaceEmailAddress(oldAddress, address);
                 }}
             />
-        </div>
+        </InputFieldStackedGroup>
     );
 };

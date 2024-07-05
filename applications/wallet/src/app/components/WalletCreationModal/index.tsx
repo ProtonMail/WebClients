@@ -80,28 +80,26 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                         <p className="m-auto">{c('Wallet setup').t`Choose a name and default currency.`}</p>
                     </ModalParagraph>
                 )}
-                <div className="flex flex-column">
+                <div className="flex flex-column gap-3">
                     {!isFirstCreation && (
-                        <div className="mb-1">
-                            <Input
-                                prefix={
-                                    <div
-                                        className="rounded-full flex p-3 mr-4"
-                                        style={{ background: 'var(--interaction-norm-minor-2)' }}
-                                    >
-                                        <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>
-                                    </div>
-                                }
-                                label={c('Wallet setup').t`Name`}
-                                id="wallet-name-input"
-                                placeholder={c('Wallet setup').t`Give a name to this wallet`}
-                                value={walletName}
-                                disabled={loadingWalletSubmit}
-                                onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                                    handleWalletNameChange(event.target.value);
-                                }}
-                            />
-                        </div>
+                        <Input
+                            prefix={
+                                <div
+                                    className="rounded-full flex p-3"
+                                    style={{ background: 'var(--interaction-norm-minor-2)' }}
+                                >
+                                    <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>
+                                </div>
+                            }
+                            label={c('Wallet setup').t`Name`}
+                            id="wallet-name-input"
+                            placeholder={c('Wallet setup').t`Give a name to this wallet`}
+                            value={walletName}
+                            disabled={loadingWalletSubmit}
+                            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                                handleWalletNameChange(event.target.value);
+                            }}
+                        />
                     )}
 
                     <div className="mb-4">
