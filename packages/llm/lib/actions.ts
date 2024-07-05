@@ -11,9 +11,9 @@ import { AppCaches, CacheId, getCachedFiles, storeInCache } from './downloader';
 import {
     convertToDoubleNewlines,
     isAssistantPostMessage,
+    makeTransformWriteFullEmail,
     postMessageParentToIframe,
     removeStopStrings,
-    validateAndCleanupWriteFullEmail,
 } from './helpers';
 import { BaseRunningAction } from './runningAction';
 import type {
@@ -69,7 +69,7 @@ const INSTRUCTIONS_WRITE_FULL_EMAIL = [
         'Be mindful to direct the message to the recipient as indicated by the user.',
         'Match the style and tone of the email (friendly, formal, tu/vous, etc)',
         'with the type of relationship the user is likely to have with the recipient.',
-        'Who is the recipient? Write their name in the opening.',
+        '{RECIPIENT_INSTRUCTIONS}',
     ].join(' '),
 ].join('\n');
 
@@ -198,13 +198,29 @@ function makePromptFromTurns(turns: Turn[]): string {
         .join('\n\n');
 }
 
+function makeInstructions(recipient?: string) {
+    let system = INSTRUCTIONS_WRITE_FULL_EMAIL;
+    recipient = recipient?.replaceAll('["\']', '')?.trim();
+    if (recipient) {
+        system = system.replace(
+            '{RECIPIENT_INSTRUCTIONS}',
+            `The recipient is called "${recipient}".\n` +
+                'Depending on the context, you decide whether to use the full name, ' +
+                'only the first or last name, or none.'
+        );
+    } else {
+        system = system.replace('{RECIPIENT_INSTRUCTIONS}', 'Who is the recipient? Write their name in the opening.');
+    }
+    return system;
+}
+
 function formatPromptShorten(action: ShortenAction): string {
     // todo rework this to follow the custom refine prompt format
     const partToRephrase = action.fullEmail.slice(action.idxStart, action.idxEnd);
     const prompt = makePromptFromTurns([
         {
             role: 'system',
-            contents: INSTRUCTIONS_WRITE_FULL_EMAIL,
+            contents: makeInstructions(),
         },
         {
             role: 'email',
@@ -229,7 +245,7 @@ function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
     return makePromptFromTurns([
         {
             role: 'instructions',
-            contents: INSTRUCTIONS_WRITE_FULL_EMAIL,
+            contents: makeInstructions(action.recipient),
         },
         {
             role: 'user',
@@ -677,7 +693,7 @@ export function getPromptForAction(action: Action) {
 export function getTransformForAction(action: Action): TransformCallback {
     switch (action.type) {
         case 'writeFullEmail':
-            return validateAndCleanupWriteFullEmail;
+            return makeTransformWriteFullEmail(action.sender);
         default:
             return genericCleanup;
     }

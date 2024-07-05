@@ -46,12 +46,16 @@ export const AssistantContext = createContext<{
     openedAssistants: OpenedAssistant[];
     /**
      * Add assistant instance to the context
+     * `manual` has to be set to true when the user is manually opening the assistant.
+     * This will set the sticky value in the localstorage
      */
-    openAssistant: (assistantID: string) => void;
+    openAssistant: (assistantID: string, manual?: boolean) => void;
     /**
      * Remove assistant instance from the context
+     * `manual` has to be set to true when the user is manually closing the assistant.
+     * This will set the sticky value in the localstorage
      */
-    closeAssistant: (assistantID: string) => void;
+    closeAssistant: (assistantID: string, manual?: boolean) => void;
     /**
      * Set the status of an assistant in the context
      */

@@ -149,70 +149,87 @@ export function convertToDoubleNewlines(input: string): string {
         .replace(/\n{3,}/g, '\n\n');
 }
 
-export const validateAndCleanupWriteFullEmail: TransformCallback = (inputText: string): string | undefined => {
-    /* The LLM generates text that contains extraneous data, such as:
-     *
-     *   - a token to tell if the prompt was harmful (yes/no)
-     *   - a subject (we drop it)
-     *   - a prefix "Body:" (we drop it)
-     *   - a signature "[Your Name]" (we drop it)
-     *
-     * This method preprocesses the LLM generated text and return only the extracted email content without
-     * the extraneous text.
-     */
-
-    function isLast(i: number, lines: any[]) {
-        return i + 1 === lines.length;
+export function removePartialEndsWith(s: string, target: string): string {
+    const n = target.length;
+    if (n === 0) {
+        return s;
     }
-
-    let text = inputText.trim();
-
-    // The LLM begins with an answer to the question: "Harmful? (yes/no):"
-    // If the prompt is harmful, we do not let the text pass through.
-    if (text.toLowerCase().startsWith('yes')) {
-        return undefined;
+    for (let i = 1; i < n - 1; i++) {
+        const subtarget = target.slice(0, i);
+        if (s.endsWith(subtarget)) {
+            s = s.slice(0, s.length - subtarget.length);
+            break;
+        }
     }
+    return s;
+}
 
-    // Remove stop strings and anything that come after.
-    text = removeStopStrings(text, STOP_STRINGS_WRITE_FULL_EMAIL);
+export const makeTransformWriteFullEmail = (senderName?: string): TransformCallback => {
+    return (inputText: string): string | undefined => {
+        /* The LLM generates text that contains extraneous data, such as:
+         *
+         *   - a token to tell if the prompt was harmful (yes/no)
+         *   - a subject (we drop it)
+         *   - a prefix "Body:" (we drop it)
+         *   - a signature "[Your Name]" (we replace it with the sender name)
+         *
+         * This method preprocesses the LLM generated text and return only the extracted email content without
+         * the extraneous text.
+         */
 
-    // Split lines
-    let lines = text.split('\n');
-    lines = lines.map((line) => line.trim());
+        function isLast(i: number, lines: any[]) {
+            return i + 1 === lines.length;
+        }
 
-    // The LLM first line should be the reply to the harmful prompt ("no" or "No")
-    // We drop this answer since it's not part of the actual email we want to generate.
-    lines = lines.filter((_line, i) => i !== 0);
+        let text = inputText.trim();
 
-    // Drop the subject.
-    // The LLM often wants to generates a subject line before the email content. We're not using it at
-    // the moment, so we just get rid of this line altogether.
-    lines = lines.filter((line) => !line.startsWith('Subject'));
-    // Do not show a partially generated line, like "Subj"
-    lines = lines.filter((line, i) => !isLast(i, lines) || !'Subject'.startsWith(line));
+        // The LLM begins with an answer to the question: "Harmful? (yes/no):"
+        // If the prompt is harmful, we do not let the text pass through.
+        if (text.toLowerCase().startsWith('yes')) {
+            return undefined;
+        }
 
-    // Drop the signature.
-    // It's very difficult to ask the LLM to **not sign**, but dropping [Your Name] seems to work better, so
-    // in the instructions, we ask explicitly the LLM to sign with "[Your Name]" so we can look for it
-    // and remove it.
-    lines = lines.filter((line) => !line.startsWith('[Your Name]'));
-    // Do not show a partially generated line, like "[", "[Your", "[Your Name"
-    lines = lines.filter((line, i) => !isLast(i, lines) || !'[Your Name]'.startsWith(line));
+        // Remove stop strings and anything that come after.
+        text = removeStopStrings(text, STOP_STRINGS_WRITE_FULL_EMAIL);
 
-    // Drop the "Body:" prefix, but keep the rest of the line.
-    // Do not show a partially generated line, like "Bo"
-    lines = lines.filter((line, i) => !isLast(i, lines) || !'Body:'.startsWith(line));
-    lines = lines.map((line) => line.replace(/^Body:\s*/, ''));
+        // Split lines
+        let lines = text.split('\n');
+        lines = lines.map((line) => line.trim());
 
-    // Drop spaces at the beginning of lines (not sure why it happens, but it does).
-    lines = lines.map((line) => line.replace(/^ +/, ''));
+        // The LLM first line should be the reply to the harmful prompt ("no" or "No")
+        // We drop this answer since it's not part of the actual email we want to generate.
+        lines = lines.filter((_line, i) => i !== 0);
 
-    // Join back the lines into a string. We set newlines to 2 between paragraphs.
-    let outputText = lines.join('\n').trim();
-    outputText = convertToDoubleNewlines(outputText);
-    outputText = outputText.trim();
+        // Drop the subject.
+        // The LLM often wants to generates a subject line before the email content. We're not using it at
+        // the moment, so we just get rid of this line altogether.
+        lines = lines.filter((line) => !line.startsWith('Subject'));
+        // Do not show a partially generated line, like "Subj"
+        lines = lines.filter((line, i) => !isLast(i, lines) || !'Subject'.startsWith(line));
 
-    return outputText;
+        // Drop the "Body:" prefix, but keep the rest of the line.
+        // Do not show a partially generated line, like "Bo"
+        lines = lines.filter((line, i) => !isLast(i, lines) || !'Body:'.startsWith(line));
+        lines = lines.map((line) => line.replace(/^Body:\s*/, ''));
+
+        // Drop spaces at the beginning of lines (not sure why it happens, but it does).
+        lines = lines.map((line) => line.replace(/^ +/, ''));
+
+        // Join back the lines into a string. We set newlines to 2 between paragraphs.
+        let outputText = lines.join('\n').trim();
+        outputText = convertToDoubleNewlines(outputText);
+        outputText = outputText.trim();
+
+        // Replace in-line instances of "[Your Name]" with the sender name.
+        senderName = senderName?.trim();
+        if (senderName) {
+            outputText = outputText.replaceAll('[Your Name]', senderName);
+            // Hide a partial string like "[Your".
+            outputText = removePartialEndsWith(outputText, '[Your Name]');
+        }
+
+        return outputText;
+    };
 };
 
 export const queryAssistantModels = async (api: Api) => {
