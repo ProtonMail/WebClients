@@ -1,4 +1,4 @@
-import { invert } from '@proton/pass/utils/fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 
 import { api } from './api';
 
@@ -8,4 +8,4 @@ export const getSilenced = ({ silence }: any = {}, code: string | number): boole
     Array.isArray(silence) ? silence.includes(code) : !!silence;
 
 export const isOnline = () => navigator.onLine && api.getState().online;
-export const isOffline = invert(isOnline);
+export const isOffline = not(isOnline);

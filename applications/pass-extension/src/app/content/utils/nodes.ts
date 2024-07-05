@@ -7,9 +7,9 @@ import {
     selectFormCandidates,
     selectInputCandidates,
 } from '@proton/pass/fathom';
-import { invert } from '@proton/pass/utils/fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 
-const unprocessed = invert(isProcessed);
+const unprocessed = not(isProcessed);
 
 export const hasUnprocessedForms = () => selectFormCandidates().some(unprocessed);
 export const hasUnprocessedFields = (target?: Document | HTMLElement) =>

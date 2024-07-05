@@ -1,4 +1,4 @@
-import { invert } from '@proton/pass/utils/fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 
 import type { WithOptimisticReducer, WrappedOptimisticState } from '../types';
 import { isOptimisticHistoryItem } from './assertions';
@@ -23,7 +23,7 @@ const getWithoutOptimistic = <T extends {}>(
     }
 
     const nextState = history
-        .filter(invert(isOptimisticHistoryItem))
+        .filter(not(isOptimisticHistoryItem))
         .map(getActionFromHistoryItem)
         .reduce(innerReducer, checkpoint);
 

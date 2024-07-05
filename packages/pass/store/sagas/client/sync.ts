@@ -17,7 +17,7 @@ import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { and, invert, notIn } from '@proton/pass/utils/fp/predicates';
+import { and, not, notIn } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -43,7 +43,7 @@ export function* synchronize(type: SyncType) {
      * `deletedShareIds` : local shares which have been deleted
      * `disabledShareIds` : `deletedShareIds` + `inactiveCachedShareIds` */
     const cachedShareIds = cachedShares.map(prop('shareId'));
-    const inactiveCachedShareIds = cachedShareIds.filter(invert(PassCrypto.canOpenShare));
+    const inactiveCachedShareIds = cachedShareIds.filter(not(PassCrypto.canOpenShare));
     const remoteShareIds = remote.map(prop('ShareID'));
     const deletedShareIds = cachedShareIds.filter(notIn(remoteShareIds));
     const disabledShareIds = Array.from(new Set(deletedShareIds.concat(inactiveCachedShareIds)));
