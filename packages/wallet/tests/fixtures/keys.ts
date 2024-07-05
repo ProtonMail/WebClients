@@ -208,7 +208,7 @@ aceHpdu2d8Joc1kEbbdMJdrzcCUX/kh8Q+5Akb0bfjvy/Gcs7Bhs5iOo7BsZA/7S
 xAgAt7F6vsmptSJF5tV5KaLpzrl387beu1IqaeyIkVxggVRaFjugwEQELx8t3hCD
 RUspGlbZZ1aw+gE1iuDbJCE9JfY=
 =sEvU
------END PGP PUBLIC KEY BLOCK-----`
+-----END PGP PUBLIC KEY BLOCK-----`;
 
 export const userPgpPrvKey = `-----BEGIN PGP PRIVATE KEY BLOCK-----
 Version: Keybase OpenPGP v2.0.76
@@ -307,4 +307,4 @@ eo4UYNvDcbdvLAuNLVdIlkyutVRqfwjJ0aqxcUQWF1vG+/PBe9iB9v5z7BwDbZDm
 /kh8Q+5Akb0bfjvy/Gcs7Bhs5iOo7BsZA/7SxAgAt7F6vsmptSJF5tV5KaLpzrl3
 87beu1IqaeyIkVxggVRaFjugwEQELx8t3hCDRUspGlbZZ1aw+gE1iuDbJCE9JfY=
 =CYYI
------END PGP PRIVATE KEY BLOCK-----`
+-----END PGP PRIVATE KEY BLOCK-----`;

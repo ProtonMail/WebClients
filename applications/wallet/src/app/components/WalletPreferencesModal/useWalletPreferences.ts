@@ -9,6 +9,7 @@ import useLoading from '@proton/hooks/useLoading';
 import {
     IWasmApiWalletData,
     encryptWalletDataWithWalletKey,
+    useUserWalletSettings,
     useWalletApiClients,
     walletNameUpdate,
 } from '@proton/wallet';
@@ -16,7 +17,6 @@ import {
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { useWalletDispatch } from '../../store/hooks';
-import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { userWalletSettingsChange } from '../../store/slices/userWalletSettings';
 import { getThemeForWallet } from '../../utils';
 

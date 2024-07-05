@@ -14,15 +14,13 @@ import {
 } from '@proton/andromeda';
 import { CryptoProxy } from '@proton/crypto/lib';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
-import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
-import { verifySignedData } from '@proton/wallet';
+import { expectSignedBy, getAddressKey, getMockedApi, mockUseWalletApiClients } from '@proton/wallet/tests';
 
 import { useBitcoinAddressPool } from '.';
 import { useGetBitcoinAddressHighestIndex } from '../../store/hooks/useBitcoinAddressHighestIndex';
-import { mockUseWalletApiClients } from '../../tests';
 import { mockUseGetBitcoinAddressHighestIndex } from '../../tests/mocks/useBitcoinAddressHighestIndex';
-import { getAddressKey } from '../../tests/utils/keys';
 
 const mockedPushBitcoinAddressesCreationPayload = vi.fn();
 vi.mock('@proton/andromeda', async (importOriginal) => {
@@ -35,15 +33,6 @@ vi.mock('@proton/andromeda', async (importOriginal) => {
         })),
     };
 });
-vi.mock('../constants/email-integration', () => ({ POOL_FILLING_THRESHOLD: 3 }));
-
-const expectSignedBy = async (k: DecryptedKey, a?: string, w?: string) => {
-    expect(a).toBeTruthy();
-    expect(w).toBeTruthy();
-
-    const isVerified = await verifySignedData(a as string, w as string, 'wallet.bitcoin-address', [k.publicKey]);
-    expect(isVerified).toBeTruthy();
-};
 
 const wallet = {
     Wallet: {
@@ -258,13 +247,15 @@ describe('useBitcoinAddressPool', () => {
             },
         };
 
-        mockUseWalletApiClients({
-            bitcoin_address: {
-                getBitcoinAddresses: mockedGetBitcoinAddresses,
-                addBitcoinAddress: mockedAddBitcoinAddresses,
-                updateBitcoinAddress: mockedUpdateBitcoinAddress,
-            },
-        });
+        mockUseWalletApiClients(
+            getMockedApi({
+                bitcoin_address: {
+                    getBitcoinAddresses: mockedGetBitcoinAddresses,
+                    addBitcoinAddress: mockedAddBitcoinAddresses,
+                    updateBitcoinAddress: mockedUpdateBitcoinAddress,
+                },
+            })
+        );
 
         mockedGetBitcoinAddresses.mockResolvedValue(addresses);
     });

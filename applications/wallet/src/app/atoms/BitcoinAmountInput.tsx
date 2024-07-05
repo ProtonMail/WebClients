@@ -3,8 +3,8 @@ import { ChangeEvent } from 'react';
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms/Input/Input';
 import { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 
-import { COMPUTE_BITCOIN_UNIT } from '../constants';
 import { convertAmount, getDecimalStepByUnit } from '../utils';
 import { CoreInput } from './Input';
 

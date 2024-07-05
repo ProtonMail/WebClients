@@ -8,10 +8,12 @@ import {
     useActiveBreakpoint,
     useConfig,
     useFeatures,
+    useFlag,
 } from '@proton/components';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
+import { useWalletAutoCreate } from '@proton/wallet';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 
@@ -38,6 +40,9 @@ const MainContainer: FunctionComponent = () => {
     ]);
 
     const { feature: featureSw, loading: loadingSw } = getFeature(FeatureCode.MailServiceWorker);
+
+    const shouldAutoSetupWallet = useFlag('WalletAutoSetup');
+    useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet });
 
     // Service Worker registration
     // Including a kill switch with a feature flag

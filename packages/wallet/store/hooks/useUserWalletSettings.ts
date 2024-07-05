@@ -1,7 +1,7 @@
 import { WasmUserSettings } from '@proton/andromeda';
 import { createHooks } from '@proton/redux-utilities';
 
-import { DEFAULT_DISPLAY_BITCOIN_UNIT, DEFAULT_FIAT_CURRENCY } from '../../constants';
+import { DEFAULT_DISPLAY_BITCOIN_UNIT, DEFAULT_FIAT_CURRENCY } from '../../constants/bitcoin';
 import { selectUserWalletSettings, userWalletSettingsThunk } from '../slices';
 
 const hooks = createHooks(userWalletSettingsThunk, selectUserWalletSettings);

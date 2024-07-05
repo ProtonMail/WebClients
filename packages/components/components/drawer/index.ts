@@ -6,3 +6,4 @@ export { default as ContactDrawerAppButton } from './drawerAppButtons/ContactDra
 export { default as InboxQuickSettingsAppButton } from './drawerAppButtons/InboxQuickSettingsAppButton';
 export { default as QuickSettingsAppButton } from './drawerAppButtons/QuickSettingsAppButton';
 export { default as SecurityCenterDrawerAppButton } from './drawerAppButtons/SecurityCenterDrawerAppButton';
+export { default as WalletDrawerAppButton } from './drawerAppButtons/WalletDrawerAppButton';

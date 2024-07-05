@@ -8,15 +8,13 @@ import { WasmApiWalletAccount } from '@proton/andromeda';
 import { Icon } from '@proton/components/components';
 import { useToggle } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
-import { COMPUTE_BITCOIN_UNIT } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
-import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { convertAmountStr, getLabelByUnit } from '../../utils';
 import { useBalance } from './useBalance';
 
