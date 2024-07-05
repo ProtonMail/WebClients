@@ -11,7 +11,8 @@ export const WalletDownloadsSettingsPage = () => {
     return (
         <SettingsSectionWide>
             <SettingsParagraph>
-                {c('Info').t`Seamlessly hold and transfer bitcoins. Install the relevant ${WALLET_APP_NAME} apps.`}
+                {c('wallet_signup_2024:Info')
+                    .t`Seamlessly hold and transfer bitcoins. Install the relevant ${WALLET_APP_NAME} apps.`}
             </SettingsParagraph>
             <div className="flex gap-4 flex-column md:flex-row">
                 {Object.values(WALLET_CLIENTS).map(({ title, icon, link }) => {
