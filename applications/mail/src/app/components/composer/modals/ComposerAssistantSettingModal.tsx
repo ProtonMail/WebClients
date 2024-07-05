@@ -106,12 +106,12 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
     };
 
     const handleCancel = () => {
-        closeAssistant(composerID);
+        closeAssistant(composerID, true);
         closeSettingModal();
     };
 
     const PrivacyLink = (
-        <Href key="privacy-link" href={getStaticURL('/blog/building-private-ai-email-assistant')}>{
+        <Href key="privacy-link" href={getStaticURL('/blog/proton-scribe-writing-assistant')}>{
             // translator: full sentence => <Learn more> about Proton's writing assistant`
             c('Link').t`Learn more`
         }</Href>

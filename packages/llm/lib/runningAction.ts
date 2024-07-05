@@ -55,7 +55,7 @@ export class BaseRunningAction implements RunningAction {
             this.finishedPromiseSignals = { resolve, reject };
         });
 
-        const stopStrings = ['<|', '\n[Your Name]', ...(stop || [])];
+        const stopStrings = ['<|', '\n[Your Name]\n', ...(stop || [])];
         const genConfig: GenerationConfig = {
             stop: stopStrings,
         };
