@@ -1,4 +1,4 @@
-import { FormEvent, useEffect } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,7 +21,7 @@ import {
     WrappedTaxCountrySelector,
 } from '@proton/components/containers/payments/TaxCountrySelector';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { useConfig } from '@proton/components/hooks';
+import { useConfig, useHandler } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -48,6 +48,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -61,7 +62,7 @@ export interface Props {
     plans: Plan[];
     onBack?: () => void;
     onPay: (payment: ExtendedTokenPayment, type: 'cc' | 'pp') => Promise<void>;
-    onChangePlanIDs: (planIDs: PlanIDs) => void;
+    onChangePlanIDs: (planIDs: PlanIDs) => Promise<void>;
     onChangeCurrency: (currency: Currency) => void;
     onChangeCycle: (cycle: Cycle) => void;
     onChangeBillingAddress: OnBillingAddressChange;
@@ -195,6 +196,30 @@ const PaymentStep = ({
     const isB2bAudience = getIsB2BAudienceFromPlan(getPlanFromIds(subscriptionData.planIDs));
     const defaultCycles = isB2bAudience ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
 
+    const [optimisticPlanIDs, setOptimisticPlanIDs] = useState<PlanIDs | null>(null);
+    const optimisticPlanIDsRef = useRef<any | undefined>();
+
+    const handleChangePlanIDs = useHandler(
+        (planIDs: PlanIDs, id: any) => {
+            onChangePlanIDs(planIDs)
+                .catch(noop)
+                .finally(() => {
+                    // Only if it's the latest call is it reset
+                    if (optimisticPlanIDsRef.current === id) {
+                        setOptimisticPlanIDs(null);
+                    }
+                });
+        },
+        { debounce: 300 }
+    );
+
+    const handleOptimisticPlanIDs = (planIDs: PlanIDs) => {
+        const id = {};
+        optimisticPlanIDsRef.current = id;
+        setOptimisticPlanIDs(planIDs);
+        handleChangePlanIDs(planIDs, id);
+    };
+
     return (
         <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
             <Main center={false}>
@@ -263,8 +288,8 @@ const PaymentStep = ({
                                 currency={subscriptionData.currency}
                                 cycle={subscriptionData.cycle}
                                 plansMap={plansMap}
-                                planIDs={subscriptionData.planIDs}
-                                onChangePlanIDs={onChangePlanIDs}
+                                planIDs={optimisticPlanIDs ?? subscriptionData.planIDs}
+                                onChangePlanIDs={handleOptimisticPlanIDs}
                                 className="pb-7 mb-8"
                                 scribeEnabled={scribeEnabled}
                             />

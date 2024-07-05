@@ -6,6 +6,7 @@ import { Href } from '@proton/atoms/Href';
 import {
     Badge,
     Icon,
+    getScribeUpsellLearnMore,
     useAssistantSubscriptionStatus,
     useAssistantUpsellConfig,
     usePlans,
@@ -13,11 +14,11 @@ import {
     useSubscriptionModal,
 } from '@proton/components';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
-import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { getScribeUpsellText } from './helpers';
 import useAssistantToggle from './useAssistantToggle';
 
 const AssistantToggle = () => {
@@ -51,9 +52,7 @@ const AssistantToggle = () => {
     }
 
     const learnMore = (
-        <Href href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant')} className="inline-block color-weak">{c(
-            'Link'
-        ).t`Learn more`}</Href>
+        <Href href={getScribeUpsellLearnMore()} className="inline-block color-weak">{c('Link').t`Learn more`}</Href>
     );
 
     const handleCustomize = () => {
@@ -73,8 +72,9 @@ const AssistantToggle = () => {
                     )}
                 </div>
             </div>
-            <p className="m-0 mb-2 color-weak">{c('Assistant toggle')
-                .jt`Take email productivity to new levels. Let ${BRAND_NAME} Scribe help you write, reply to, and proofread your emails. ${learnMore}.`}</p>
+            <p className="m-0 mb-2 color-weak">
+                {getScribeUpsellText()} ${learnMore}.
+            </p>
             <div className="flex flex-row items-baseline gap-2">
                 <Button shape="outline" size="small" onClick={handleCustomize}>{c('Assistant toggle')
                     .t`Customize plan`}</Button>

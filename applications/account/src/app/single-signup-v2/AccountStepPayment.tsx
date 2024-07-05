@@ -17,7 +17,6 @@ import {
 } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import useHandler from '@proton/components/hooks/useHandler';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -38,7 +37,7 @@ import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Api, VPNServersCountData, isBilledUser, isTaxInclusive } from '@proton/shared/lib/interfaces';
+import { Api, Audience, Plan, VPNServersCountData, isBilledUser, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -64,6 +63,7 @@ interface Props {
     api: Api;
     model: SignupModelV2;
     options: OptimisticOptions;
+    selectedPlan: Plan;
     vpnServersCountData: VPNServersCountData;
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
@@ -74,7 +74,7 @@ interface Props {
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
     takeNullCreditCard?: boolean;
-    handleOptimistic: (optimistic: Partial<OptimisticOptions>) => Promise<void>;
+    handleOptimistic: (optimistic: Partial<OptimisticOptions>) => void;
     onBillingAddressChange: OnBillingAddressChange;
 }
 
@@ -88,6 +88,7 @@ const AccountStepPayment = ({
     onPay,
     onValidate,
     model,
+    selectedPlan,
     options,
     vpnServersCountData,
     loadingPaymentDetails,
@@ -103,7 +104,7 @@ const AccountStepPayment = ({
         type: TelemetryPayType,
         event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError
     ) => {
-        if (!options.plan) {
+        if (!selectedPlan) {
             return;
         }
 
@@ -111,7 +112,7 @@ const AccountStepPayment = ({
             event,
             dimensions: {
                 type: type,
-                plan: options.plan.Name as any,
+                plan: selectedPlan.Name as any,
                 cycle: `${options.cycle}`,
                 currency: options.currency,
             },
@@ -155,7 +156,7 @@ const AccountStepPayment = ({
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,
-        selectedPlanName: options.plan?.Name,
+        selectedPlanName: selectedPlan.Name,
         flow,
         paymentMethods: model.session?.paymentMethods,
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
@@ -207,13 +208,6 @@ const AccountStepPayment = ({
         },
     });
 
-    const debouncedHandlePlanIDs = useHandler(
-        (planIDs) => {
-            handleOptimistic({ planIDs });
-        },
-        { debounce: 200 }
-    );
-
     if (isBilledUser(user)) {
         return <BilledUserInlineMessage />;
     }
@@ -227,7 +221,7 @@ const AccountStepPayment = ({
         </Href>
     );
 
-    const summaryPlan = getSummaryPlan({ plan: options.plan, vpnServersCountData, freePlan: model.freePlan });
+    const summaryPlan = getSummaryPlan({ plan: selectedPlan, vpnServersCountData, freePlan: model.freePlan });
 
     const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
     const currentCheckout = getCheckout({
@@ -283,8 +277,8 @@ const AccountStepPayment = ({
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         cycle: options.cycle,
-                        plan: options.plan,
-                        planName: options.plan?.Name,
+                        plan: selectedPlan,
+                        planName: selectedPlan.Name,
                         paymentsVersion: getPaymentsVersion(),
                         chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
@@ -300,9 +294,9 @@ const AccountStepPayment = ({
         withLoadingSignup(run()).catch(noop);
     };
 
-    const isB2BPlan = getIsB2BAudienceFromPlan(options.plan.Name);
+    const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlan.Name);
 
-    const hasSomeVpnPlan = getIsVpnPlan(options.plan.Name);
+    const hasSomeVpnPlan = getIsVpnPlan(selectedPlan.Name);
 
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
@@ -327,9 +321,10 @@ const AccountStepPayment = ({
                     method="post"
                 >
                     {(() => {
+                        const planIDs = options.planIDs;
                         const { hasPlanCustomizer, currentPlan } = getHasPlanCustomizer({
                             plansMap: model.plansMap,
-                            planIDs: subscriptionData.planIDs,
+                            planIDs,
                         });
                         if (!hasPlanCustomizer || !currentPlan) {
                             return null;
@@ -341,11 +336,12 @@ const AccountStepPayment = ({
                                     mode="signup"
                                     loading={false}
                                     currentPlan={currentPlan}
-                                    currency={subscriptionData.currency}
-                                    cycle={subscriptionData.cycle}
+                                    currency={options.currency}
+                                    cycle={options.cycle}
                                     plansMap={model.plansMap}
-                                    planIDs={subscriptionData.planIDs}
-                                    onChangePlanIDs={debouncedHandlePlanIDs}
+                                    planIDs={planIDs}
+                                    onChangePlanIDs={(planIDs) => handleOptimistic({ planIDs })}
+                                    audience={isB2BPlan ? Audience.B2B : Audience.B2C}
                                 />
                                 <div className="mt-6 mb-6">
                                     <hr />
