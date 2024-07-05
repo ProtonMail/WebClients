@@ -136,7 +136,7 @@ export const createHooks = <State, Extra, Returned, ThunkArg = void>(
             queueRef.state = false;
         }
 
-        if (error) {
+        if (error && value === undefined) {
             const thrownError = new Error(error.message);
             thrownError.name = error.name || thrownError.name;
             thrownError.stack = error.stack || thrownError.stack;
