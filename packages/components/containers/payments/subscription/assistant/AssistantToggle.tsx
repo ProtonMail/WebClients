@@ -73,7 +73,7 @@ const AssistantToggle = () => {
                 </div>
             </div>
             <p className="m-0 mb-2 color-weak">
-                {getScribeUpsellText()} ${learnMore}.
+                {getScribeUpsellText()} {learnMore}.
             </p>
             <div className="flex flex-row items-baseline gap-2">
                 <Button shape="outline" size="small" onClick={handleCustomize}>{c('Assistant toggle')
