@@ -3,14 +3,19 @@ import { format } from 'date-fns';
 import { MAX_CHARS_API } from '@proton/account';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
+import { getInitialStorage, getStorageRange } from '@proton/components/containers/members/MemberStorageSelector';
 import { V5PaymentToken, isTokenPayment, isWrappedPaymentsVersion } from '@proton/components/payments/core';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
-import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
-import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
+import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
+import {
+    createPasswordlessOrganizationKeys,
+    getOrganization,
+    updateOrganizationName,
+} from '@proton/shared/lib/api/organization';
 import { PaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
@@ -35,8 +40,15 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/err
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { Api, HumanVerificationMethodType, KeyTransparencyActivation, User } from '@proton/shared/lib/interfaces';
+import {
+    Api,
+    HumanVerificationMethodType,
+    KeyTransparencyActivation,
+    Organization,
+    User,
+} from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import {
     generateKeySaltAndPassphrase,
@@ -48,6 +60,7 @@ import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
+import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
 import {
@@ -291,6 +304,14 @@ export const handleSetupOrg = async ({
     // So that other users can get connections allocated.
     if (hasPaidVpn(user)) {
         await api(updateVPN(selfMemberID, VPN_CONNECTIONS)).catch(noop);
+    }
+    const result = await api<{ Organization: Organization }>(getOrganization()).catch(noop);
+    const organization = result?.Organization;
+    if (organization && !getIsPassB2BPlan(organization.PlanName) && !getIsVpnB2BPlan(organization.PlanName)) {
+        const storageRange = getStorageRange(selfMember, organization);
+        const initialStorage = getInitialStorage(organization);
+        const storageValue = clamp(initialStorage, storageRange.min, storageRange.max);
+        await api(updateQuota(selfMemberID, storageValue)).catch(noop);
     }
     // Slice the org name (to ensure the request passes validation), specifically for VPN B2B signup where it's passed as a query param and not validated.
     await api(updateOrganizationName(orgName.slice(0, MAX_CHARS_API.ORG_NAME)));
