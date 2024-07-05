@@ -2,9 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmGatewayProvider, WasmPaymentMethod, WasmQuote } from '@proton/andromeda';
-import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
+import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -57,6 +56,7 @@ const modelThunk = createAsyncModelThunk<Model, QuotesByProviderState, WalletThu
                     };
                 });
         },
+        expiry: 1 * MINUTE,
         previous: ({ getState, options }) => {
             const state = getState()[name];
             if (!options?.thunkArg || !state.value) {
@@ -67,10 +67,7 @@ const modelThunk = createAsyncModelThunk<Model, QuotesByProviderState, WalletThu
             const key = `${amount}_${fiat}_${paymentMethod}_${gatewayProvider}`;
 
             if (state.value[key]) {
-                return getValidModel({
-                    value: state.value,
-                    cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, 1 * MINUTE) ? 'stale' : undefined),
-                });
+                return state;
             }
 
             return undefined;
