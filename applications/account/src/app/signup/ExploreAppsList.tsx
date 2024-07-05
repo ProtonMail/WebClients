@@ -67,7 +67,7 @@ export const getExploreApps = ({
             name: APPS.PROTONWALLET,
             bit: PRODUCT_BIT.WALLET,
             description: () => {
-                return c('app-switcher').t`Securely hold and transfer your bitcoins`;
+                return c('wallet_signup_2024:app-switcher').t`Securely hold and transfer your bitcoins`;
             },
         },
     ]
