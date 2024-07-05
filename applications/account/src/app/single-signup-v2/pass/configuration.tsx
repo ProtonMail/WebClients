@@ -5,14 +5,14 @@ import { getPassKeys, getPassMonitor } from '@proton/components/containers/payme
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     FREE_VAULTS,
+    PAID_VAULTS,
     get2FAAuthenticator,
     get2FAAuthenticatorText,
     getDevices,
     getDevicesAndAliases,
     getLoginsAndNotes,
-    getSecureSharingText,
+    getSecureSharingTextEmpty,
     getSecureVaultSharing,
-    getSecureVaultSharingWith,
     getUnlimitedVaultSharingText,
     getVaultSharing,
 } from '@proton/components/containers/payments/features/pass';
@@ -122,7 +122,7 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
             ? [
                   {
                       key: 3,
-                      text: getSecureSharingText('multiple'),
+                      text: getSecureSharingTextEmpty(true),
                       icon: {
                           name: 'arrow-up-from-square' as const,
                       },
@@ -145,7 +145,7 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
             : [
                   {
                       key: 3,
-                      text: getSecureSharingText(FREE_VAULTS),
+                      text: getSecureSharingTextEmpty(false),
                       icon: {
                           name: 'arrow-up-from-square' as const,
                       },
@@ -176,7 +176,7 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
 };
 
 export const getFreePassFeatures = () => {
-    return [getLoginsAndNotes(), getDevices(), getPassKeys(true), getSecureVaultSharingWith(FREE_VAULTS)];
+    return [getLoginsAndNotes(), getDevices(), getPassKeys(true), getSecureVaultSharing(FREE_VAULTS)];
 };
 
 export const getCustomPassFeatures = () => {
@@ -184,7 +184,7 @@ export const getCustomPassFeatures = () => {
         getLoginsAndNotes(),
         getDevicesAndAliases(),
         getPassKeys(true),
-        getSecureVaultSharing(),
+        getSecureVaultSharing(PAID_VAULTS, true),
         getPassMonitor(true),
         get2FAAuthenticator(true),
     ];

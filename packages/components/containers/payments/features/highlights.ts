@@ -1,6 +1,12 @@
 import { c, msgid } from 'ttag';
 
-import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    DARK_WEB_MONITORING_NAME,
+    FAMILY_MAX_USERS,
+    PLANS,
+    PROTON_SENTINEL_NAME,
+} from '@proton/shared/lib/constants';
 import { Audience, FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
@@ -85,7 +91,7 @@ export const getSentinel = (included: boolean = false): PlanCardFeatureDefinitio
 
 export const getPassMonitor = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Pass Monitor - premium features`,
+        text: c('new_plans: feature').t`${DARK_WEB_MONITORING_NAME} and ${PROTON_SENTINEL_NAME}`,
         included: included,
         icon: 'shield',
     };
