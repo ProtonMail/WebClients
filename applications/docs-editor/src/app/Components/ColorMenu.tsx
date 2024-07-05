@@ -28,6 +28,7 @@ export function FontColorMenu({
               color: color,
             }}
             onClick={() => onTextColorChange(color)}
+            data-testid="text-colors"
           >
             <div aria-hidden="true">A</div>
           </button>
@@ -45,6 +46,7 @@ export function FontColorMenu({
                 borderColor: color || 'var(--border-weak)',
               }}
               onClick={() => onBackgroundColorChange(color)}
+              data-testid="background-colors"
             >
               <div aria-hidden="true">A</div>
             </button>
