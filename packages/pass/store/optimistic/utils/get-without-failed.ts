@@ -1,4 +1,4 @@
-import { invert } from '@proton/pass/utils/fp/predicates';
+import { not } from '@proton/pass/utils/fp/predicates';
 
 import type { WithOptimisticReducer, WrappedOptimisticState } from '../types';
 import { isFailedOptimisticHistoryItem } from './assertions';
@@ -22,7 +22,7 @@ const getWithoutFailed = <T extends {}>(
     }
 
     const nextState = history
-        .filter(invert(isFailedOptimisticHistoryItem))
+        .filter(not(isFailedOptimisticHistoryItem))
         .map(getActionFromHistoryItem)
         .reduce(innerReducer, checkpoint);
 

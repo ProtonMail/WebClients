@@ -18,8 +18,8 @@ export const and = <P extends Predicate<any>, T extends P[]>(...guards: T) =>
 
 /* inverts a predicate function :
  * const isPositive = (x: number) => x >= 0;
- * [-1, 0, 1].filter(invert(isPositive)) */
-export const invert =
+ * [-1, 0, 1].filter(not(isPositive)) */
+export const not =
     <T extends Predicate = Predicate>(predicate: T): ((...args: Parameters<T>) => boolean) =>
     (...args: Parameters<T>) =>
         !predicate(...args);
