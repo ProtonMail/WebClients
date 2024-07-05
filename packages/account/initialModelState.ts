@@ -6,6 +6,7 @@ export const getInitialModelState = <T>(value?: T | undefined): ModelState<T> =>
         error: undefined,
         meta: {
             fetchedAt: 0,
+            fetchedEphemeral: true,
         },
     };
 };

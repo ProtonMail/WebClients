@@ -12,6 +12,12 @@ export const getPersistedState = <T extends object, K extends keyof T>(
                     return transformedValue ? [key, transformedValue] : undefined;
                 })
                 .filter(isTruthy)
-        )
+        ),
+        (key, value) => {
+            if (key === 'fetchedEphemeral') {
+                return undefined;
+            }
+            return value;
+        }
     );
 };

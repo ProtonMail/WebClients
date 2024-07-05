@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { activatePasswordlessKey, updateRolePasswordless } from '@proton/shared/lib/api/members';
 import {
@@ -840,7 +841,7 @@ export const acceptOrganizationKeyInvite = ({
                 })
             );
             // Warning: Force a refetch of the org key because it's not present in the event manager.
-            await dispatch(organizationKeyThunk({ cache: 'no-cache' }));
+            await dispatch(organizationKeyThunk({ cache: CacheType.None }));
         }
     };
 };

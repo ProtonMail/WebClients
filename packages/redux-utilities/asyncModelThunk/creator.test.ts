@@ -1,9 +1,8 @@
 import { describe, expect, test } from '@jest/globals';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-import { DAY } from '@proton/shared/lib/constants';
-
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from './creator';
+import { getFetchedEphemeral } from './fetchedAt';
 
 describe('creator', () => {
     test('creates the action types', () => {
@@ -12,7 +11,7 @@ describe('creator', () => {
             {
                 value: number;
                 error: any;
-                meta: { fetchedAt: 0 };
+                meta: { fetchedAt: 0; fetchedEphemeral: undefined };
             },
             any
         >('myState/fetch', {
@@ -29,7 +28,8 @@ describe('creator', () => {
         value: T | undefined;
         error: any;
         meta: {
-            fetchedAt: 0;
+            fetchedAt: number;
+            fetchedEphemeral: boolean | undefined;
         };
     }
 
@@ -41,20 +41,23 @@ describe('creator', () => {
 
     const selectState = <T>(state: StoreState<T>) => state[stateKey];
 
-    const setup = <T>(miss: () => Promise<T>) => {
-        const initialState: ModelState<T> = {
+    const setup = <T>(
+        miss: () => Promise<T>,
+        initialState: ModelState<T> = {
             value: undefined,
             error: undefined,
             meta: {
                 fetchedAt: 0,
+                fetchedEphemeral: undefined,
             },
-        };
-
+        }
+    ) => {
+        const fetchedEphemeral = getFetchedEphemeral();
         const getFetchedAt = jest.fn(() => 0);
 
         const thunkActionCreator = createAsyncModelThunk<T, StoreState<T>, undefined>('myState/fetch', {
             miss,
-            previous: previousSelector(selectState, DAY),
+            previous: previousSelector(selectState),
         });
 
         const slice = createSlice({
@@ -86,24 +89,33 @@ describe('creator', () => {
             actions,
             thunkActionCreator,
             getFetchedAt,
+            fetchedEphemeral,
         };
     };
 
     test('successfully syncs to a value', async () => {
         const value = 42;
 
-        const { getNewStore, actions, thunkActionCreator, getFetchedAt } = setup(async () => value);
+        const { fetchedEphemeral, getNewStore, actions, thunkActionCreator, getFetchedAt } = setup(async () => value);
 
         const store = getNewStore();
 
-        expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined, meta: { fetchedAt: 0 } });
+        expect(selectState(store.getState())).toEqual({
+            value: undefined,
+            error: undefined,
+            meta: { fetchedAt: 0, fetchedEphemeral: undefined },
+        });
         getFetchedAt.mockImplementation(() => 1);
         const promise = store.dispatch(thunkActionCreator.thunk());
         expect(actions[1]).toEqual(thunkActionCreator.pending());
 
         await expect(promise).resolves.toEqual(value);
 
-        expect(selectState(store.getState())).toEqual({ value: value, error: undefined, meta: { fetchedAt: 1 } });
+        expect(selectState(store.getState())).toEqual({
+            value: value,
+            error: undefined,
+            meta: { fetchedAt: 1, fetchedEphemeral },
+        });
         expect(actions[2]).toEqual(thunkActionCreator.fulfilled(value));
     });
 
@@ -162,7 +174,11 @@ describe('creator', () => {
         const store = getNewStore();
         getFetchedAt.mockImplementation(() => 1);
 
-        expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined, meta: { fetchedAt: 0 } });
+        expect(selectState(store.getState())).toEqual({
+            value: undefined,
+            error: undefined,
+            meta: { fetchedAt: 0, fetchedEphemeral: undefined },
+        });
         const promise = store.dispatch(thunkActionCreator.thunk());
         expect(actions[1]).toEqual(thunkActionCreator.pending());
 
@@ -172,7 +188,7 @@ describe('creator', () => {
         expect(selectState(store.getState())).toEqual({
             value: undefined,
             error: serializedError,
-            meta: { fetchedAt: 1 },
+            meta: { fetchedAt: 1, fetchedEphemeral: undefined },
         });
         expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError));
     });
@@ -181,7 +197,7 @@ describe('creator', () => {
         const value = 42;
         const error = new Error('Something went wrong');
         let calls = 0;
-        const { getNewStore, actions, thunkActionCreator, getFetchedAt } = setup(async () => {
+        const { fetchedEphemeral, getNewStore, actions, thunkActionCreator, getFetchedAt } = setup(async () => {
             if (calls++ === 0) {
                 throw error;
             }
@@ -191,7 +207,11 @@ describe('creator', () => {
         const store = getNewStore();
         getFetchedAt.mockImplementation(() => 1);
 
-        expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined, meta: { fetchedAt: 0 } });
+        expect(selectState(store.getState())).toEqual({
+            value: undefined,
+            error: undefined,
+            meta: { fetchedAt: 0, fetchedEphemeral: undefined },
+        });
         const promise = store.dispatch(thunkActionCreator.thunk());
         expect(actions[1]).toEqual(thunkActionCreator.pending());
 
@@ -201,18 +221,69 @@ describe('creator', () => {
         expect(selectState(store.getState())).toEqual({
             value: undefined,
             error: serializedError,
-            meta: { fetchedAt: 1 },
+            meta: { fetchedAt: 1, fetchedEphemeral: undefined },
         });
         expect(actions[2]).toEqual(thunkActionCreator.rejected(serializedError));
 
         const successfulPromise = store.dispatch(thunkActionCreator.thunk());
         getFetchedAt.mockImplementation(() => 2);
-        expect(selectState(store.getState())).toEqual({ value: undefined, error: undefined, meta: { fetchedAt: 1 } });
+        expect(selectState(store.getState())).toEqual({
+            value: undefined,
+            error: undefined,
+            meta: { fetchedAt: 1, fetchedEphemeral: undefined },
+        });
         expect(actions[4]).toEqual(thunkActionCreator.pending());
 
         await expect(successfulPromise).resolves.toEqual(value);
 
-        expect(selectState(store.getState())).toEqual({ value: value, error: undefined, meta: { fetchedAt: 2 } });
+        expect(selectState(store.getState())).toEqual({
+            value: value,
+            error: undefined,
+            meta: { fetchedAt: 2, fetchedEphemeral },
+        });
         expect(actions[5]).toEqual(thunkActionCreator.fulfilled(value));
+    });
+
+    test('successfully re-fetches when fetchedEphemeral is unset', async () => {
+        const fn = jest.fn(async () => 43);
+        const { getNewStore, thunkActionCreator, getFetchedAt } = setup(fn, {
+            value: 42,
+            error: undefined,
+            meta: {
+                fetchedAt: 2,
+                fetchedEphemeral: undefined,
+            },
+        });
+        getFetchedAt.mockImplementation(() => 1);
+        const store = getNewStore();
+
+        await expect(store.dispatch(thunkActionCreator.thunk())).resolves.toEqual(43);
+        expect(selectState(store.getState())).toEqual({
+            value: 43,
+            error: undefined,
+            meta: { fetchedAt: 1, fetchedEphemeral: true },
+        });
+    });
+
+    test('does not refetch when ephmeral is set and fetchedAt is good', async () => {
+        const fn = jest.fn(async () => 43);
+        const now = Date.now();
+        const { getNewStore, thunkActionCreator, getFetchedAt } = setup(fn, {
+            value: 42,
+            error: undefined,
+            meta: {
+                fetchedAt: now,
+                fetchedEphemeral: true,
+            },
+        });
+        getFetchedAt.mockImplementation(() => 1);
+        const store = getNewStore();
+
+        await expect(store.dispatch(thunkActionCreator.thunk())).resolves.toEqual(42);
+        expect(selectState(store.getState())).toEqual({
+            value: 42,
+            error: undefined,
+            meta: { fetchedAt: now, fetchedEphemeral: true },
+        });
     });
 });

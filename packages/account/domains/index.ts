@@ -2,10 +2,16 @@ import { PayloadAction, UnknownAction, createSlice, miniSerializeError, original
 import { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
+import {
+    CacheType,
+    cacheHelper,
+    createPromiseStore,
+    getFetchedAt,
+    getFetchedEphemeral,
+    previousSelector,
+} from '@proton/redux-utilities';
 import { queryDomains } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
-import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Domain, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
@@ -39,6 +45,7 @@ const initialState: SliceState = {
     value: undefined,
     error: undefined,
     meta: {
+        fetchedEphemeral: undefined,
         fetchedAt: 0,
         type: ValueType.dummy,
     },
@@ -55,6 +62,7 @@ const slice = createSlice({
             state.error = undefined;
             state.meta.type = action.payload.type;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
         rejected: (state, action) => {
             state.error = action.payload;
@@ -93,7 +101,7 @@ const slice = createSlice({
     },
 });
 
-const promiseCache = createPromiseCache<Model>();
+const promiseStore = createPromiseStore<Model>();
 
 const previous = previousSelector(selectDomains);
 
@@ -137,7 +145,7 @@ const modelThunk = (options?: {
                 throw error;
             }
         };
-        return promiseCache(select, cb);
+        return cacheHelper({ store: promiseStore, select, cb, cache: options?.cache });
     };
 };
 

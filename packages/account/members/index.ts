@@ -1,9 +1,15 @@
 import { PayloadAction, ThunkAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
+import {
+    CacheType,
+    cacheHelper,
+    createPromiseStore,
+    getFetchedAt,
+    getFetchedEphemeral,
+    previousSelector,
+} from '@proton/redux-utilities';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
-import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
@@ -43,7 +49,7 @@ const freeMembers: EnhancedMember[] = [];
 const initialState: SliceState = {
     value: undefined,
     error: undefined,
-    meta: { type: ValueType.complete, fetchedAt: 0 },
+    meta: { type: ValueType.complete, fetchedAt: 0, fetchedEphemeral: undefined },
 };
 const slice = createSlice({
     name,
@@ -57,6 +63,7 @@ const slice = createSlice({
             state.error = undefined;
             state.meta.type = action.payload.type;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
         rejected: (state, action) => {
             state.error = action.payload;
@@ -129,7 +136,7 @@ const slice = createSlice({
     },
 });
 
-const promiseCache = createPromiseCache<Model>();
+const promiseStore = createPromiseStore<Model>();
 const previous = previousSelector(selectMembers);
 
 const modelThunk = (options?: {
@@ -169,7 +176,7 @@ const modelThunk = (options?: {
                 throw error;
             }
         };
-        return promiseCache(select, cb);
+        return cacheHelper({ store: promiseStore, select, cb, cache: options?.cache });
     };
 };
 

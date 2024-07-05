@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import type { Key } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -26,7 +27,7 @@ export const userKeysListener = (startListening: SharedStartListening<UserKeysSt
             return false;
         },
         effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(userKeysThunk({ cache: 'no-cache' }));
+            await listenerApi.dispatch(userKeysThunk({ cache: CacheType.None }));
         },
     });
 

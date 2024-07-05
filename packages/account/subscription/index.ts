@@ -8,10 +8,16 @@ import {
 } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { CacheType, createPromiseCache, previousSelector } from '@proton/redux-utilities';
+import {
+    CacheType,
+    cacheHelper,
+    createPromiseStore,
+    getFetchedAt,
+    getFetchedEphemeral,
+    previousSelector,
+} from '@proton/redux-utilities';
 import { getSubscription } from '@proton/shared/lib/api/payments';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
-import { getFetchedAt } from '@proton/shared/lib/helpers/fetchedAt';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { Subscription, SubscriptionModel, User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
@@ -49,6 +55,7 @@ const initialState: SliceState = {
     meta: {
         type: ValueType.dummy,
         fetchedAt: 0,
+        fetchedEphemeral: undefined,
     },
 };
 const slice = createSlice({
@@ -63,6 +70,7 @@ const slice = createSlice({
             state.error = undefined;
             state.meta.type = action.payload.type;
             state.meta.fetchedAt = getFetchedAt();
+            state.meta.fetchedEphemeral = getFetchedEphemeral();
         },
         rejected: (state, action) => {
             state.error = action.payload;
@@ -120,7 +128,7 @@ const slice = createSlice({
     },
 });
 
-const promiseCache = createPromiseCache<Model>();
+const promiseStore = createPromiseStore<Model>();
 const previous = previousSelector(selectSubscription);
 
 const modelThunk = (options?: {
@@ -155,7 +163,7 @@ const modelThunk = (options?: {
                 throw error;
             }
         };
-        return promiseCache(select, cb);
+        return cacheHelper({ store: promiseStore, select, cb, cache: options?.cache });
     };
 };
 

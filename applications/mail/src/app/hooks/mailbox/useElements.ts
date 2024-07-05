@@ -7,6 +7,7 @@ import {
     useGetMessageCounts,
     useMessageCounts,
 } from '@proton/components';
+import { CacheType } from '@proton/redux-utilities';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
@@ -148,8 +149,8 @@ export const useElements: UseElements = ({
             return;
         }
         elements.forEach((element) => dispatch(removeExpired(element)));
-        getConversationCounts({ cache: 'no-cache' });
-        getMessageCounts({ cache: 'no-cache' });
+        getConversationCounts({ cache: CacheType.None });
+        getMessageCounts({ cache: CacheType.None });
     });
 
     useEffect(() => {

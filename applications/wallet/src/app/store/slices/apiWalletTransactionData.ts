@@ -3,8 +3,7 @@ import { uniqBy } from 'lodash';
 
 import { ModelState, getInitialModelState } from '@proton/account';
 import { WasmApiWalletTransactionData } from '@proton/andromeda';
-import { createAsyncModelThunk, getValidModel, handleAsyncModel } from '@proton/redux-utilities';
-import { defaultExpiry, isNotStale } from '@proton/shared/lib/helpers/fetchedAt';
+import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 
 import { WalletThunkArguments } from '../thunk';
 
@@ -54,10 +53,7 @@ const modelThunk = createAsyncModelThunk<
         const cachedTxIds = stateValue?.filter((tx) => hashedTxIds?.includes(tx.Data.HashedTransactionID ?? ''));
 
         if (hashedTxIds?.length === cachedTxIds?.length) {
-            return getValidModel({
-                value: stateValue,
-                cache: options?.cache ?? (isNotStale(state.meta?.fetchedAt, defaultExpiry) ? 'stale' : undefined),
-            });
+            return state;
         }
 
         return undefined;

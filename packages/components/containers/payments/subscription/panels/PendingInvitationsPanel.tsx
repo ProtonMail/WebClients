@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import { useModalState } from '@proton/components/components';
 import { useGetUserInvitations } from '@proton/components/hooks';
 import useUid from '@proton/components/hooks/useUid';
+import { CacheType } from '@proton/redux-utilities';
 import { PendingInvitation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -23,7 +24,7 @@ const PendingInvitationPanel = ({ invites }: Props) => {
 
     useEffect(() => {
         // Force refresh the invitations when user navigates back to the dashboard
-        getUserInvitations({ cache: 'no-cache' }).catch(noop);
+        getUserInvitations({ cache: CacheType.None }).catch(noop);
     }, []);
 
     const handleInvitationClick = (invitation: PendingInvitation) => {
