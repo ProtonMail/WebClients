@@ -14,7 +14,7 @@ const getSwcLoader = ({ browserslist, isProduction = false, hasReactRefresh = tr
     return {
         loader: require.resolve('swc-loader'),
         options: {
-            env: { coreJs: '3.22.1', mode: 'usage', targets: browserslist },
+            env: { coreJs: require('core-js/package.json').version, mode: 'usage', targets: browserslist },
             jsc: {
                 parser: {
                     syntax: 'typescript',
