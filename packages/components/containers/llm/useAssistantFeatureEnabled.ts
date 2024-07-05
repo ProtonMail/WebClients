@@ -1,4 +1,4 @@
-import { selectOrganization } from '@proton/account';
+import { selectOrganization, selectUser } from '@proton/account';
 import { useFlag, useIsOrganizationBeforeBackfill, useScribePaymentsEnabled } from '@proton/components/containers';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { PLANS } from '@proton/shared/lib/constants';
@@ -29,7 +29,19 @@ const useAssistantFeatureEnabled = () => {
     const organization = baseUseSelector(selectOrganization)?.value;
     const planSupportsScribe = isScribeSupported(organization);
 
-    const paymentsEnabled = accessToAssistant && scribePaymentsEnabled && !isOrganizationBeforeBackfill;
+    const paymentsEnabled = accessToAssistant && !isOrganizationBeforeBackfill && scribePaymentsEnabled;
+
+    const user = baseUseSelector(selectUser)?.value;
+    const userHasScribeSeat = !!user?.NumAI;
+
+    const enabled =
+        accessToAssistant &&
+        !isOrganizationBeforeBackfill &&
+        // the first condition checks trial eligibility for paying users (you can enter trial if you can pay for scribe)
+        // the second condition checks trial eligibility for members of organizations that support Scribe
+        // (you're a member of Mail Pro organization, so you can enter the trial and you admin can pruchase it later)
+        // the thir condition allows paying users to use and configure Scribe
+        (scribePaymentsEnabled || planSupportsScribe || userHasScribeSeat);
 
     return {
         /**
@@ -42,7 +54,7 @@ const useAssistantFeatureEnabled = () => {
          * have an upsell for scribe addon. In this case we need to check both things: payments are possible and
          * scribe is supported by the organization's plan.
          */
-        enabled: paymentsEnabled && planSupportsScribe,
+        enabled,
         killSwitch,
     };
 };
