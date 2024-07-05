@@ -89,8 +89,7 @@ export enum TelemetryAccountSignupEvents {
 }
 
 export enum TelemtryAccountCancellationEvents {
-    startCancellationSection = 'start_cancellation_section',
-    startCancellationPricing = 'start_cancellation_pricing',
+    startCancellation = 'start_cancellation',
     cancelPageKeepPlan = 'cancel_page_keep_plan',
     cancelPageConfirmCancel = 'cancel_page_confirm_cancel',
     cancelModalKeepPlan = 'cancel_modal_keep_plan',
