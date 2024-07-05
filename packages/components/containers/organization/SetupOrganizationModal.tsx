@@ -43,7 +43,11 @@ import {
     useUser,
 } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
-import MemberStorageSelector, { getStorageRange, getTotalStorage } from '../members/MemberStorageSelector';
+import MemberStorageSelector, {
+    getInitialStorage,
+    getStorageRange,
+    getTotalStorage,
+} from '../members/MemberStorageSelector';
 import AdministratorList from './AdministratorList';
 
 enum STEPS {
@@ -85,10 +89,10 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     const selfMemberID = selfMember?.ID;
-    const minStorage = organization?.RequiresKey ? 5 : 500;
+    const initialStorage = getInitialStorage(organization);
     // Storage can be undefined in the beginning because org is undefined. So we keep it floating until it's set.
     const storageValue =
-        model.storage === -1 ? clamp(minStorage * GIGA, storageRange.min, storageRange.max) : model.storage;
+        model.storage === -1 ? clamp(initialStorage, storageRange.min, storageRange.max) : model.storage;
 
     const finalizeOrganizationCreation = async () => {
         await call();
