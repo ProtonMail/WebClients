@@ -3,14 +3,7 @@ import { ComponentPropsWithoutRef, useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { SelectedPlan } from '@proton/components/payments/core';
-import {
-    ADDON_NAMES,
-    AddonKey,
-    AddonLimit,
-    GIGA,
-    MEMBER_ADDON_PREFIX,
-    SCRIBE_ADDON_PREFIX,
-} from '@proton/shared/lib/constants';
+import { ADDON_NAMES, AddonKey, AddonLimit, GIGA } from '@proton/shared/lib/constants';
 import {
     AddonGuard,
     SupportedAddons,
@@ -27,9 +20,9 @@ import {
     Audience,
     Currency,
     Cycle,
-    Organization,
     Plan,
     PlanIDs,
+    Renew,
     Subscription,
     getMaxValue,
     getPlanMaxIPs,
@@ -42,6 +35,7 @@ import { AccountSizeCustomiser } from './AccountSizeCustomiser';
 import { AdditionalOptionsCustomiser } from './AdditionalOptionsCustomiser';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { IPsNumberCustomiser } from './IPsNumberCustomiser';
+import { DecreaseBlockedReason } from './helpers';
 
 export type CustomiserMode = 'signup' | undefined;
 
@@ -53,7 +47,6 @@ interface AddonCustomizerProps {
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plansMap: { [key: string]: Plan };
     currentPlan: Plan;
-    organization?: Organization;
     loading?: boolean;
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription;
@@ -72,7 +65,6 @@ const AddonCustomizer = ({
     onChangePlanIDs,
     plansMap,
     currentPlan,
-    organization,
     loading,
     showUsersTooltip,
     latestSubscription,
@@ -113,22 +105,6 @@ const AddonCustomizer = ({
 
     const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
 
-    // We get the amount of add-ons starting with the members, this is used for the GPT add-ons
-    // We start at one since the members starts at 1 not 0 (for the admin)
-    const memberTotal = Object.entries(planIDs).reduce((previous, value) => {
-        if (value[0].startsWith(MEMBER_ADDON_PREFIX)) {
-            return previous + value[1];
-        }
-        return previous;
-    }, 1);
-
-    const gptAddonNumber = Object.entries(planIDs).reduce((previous, value) => {
-        if (value[0].startsWith(SCRIBE_ADDON_PREFIX)) {
-            return previous + value[1];
-        }
-        return previous;
-    }, 0);
-
     const min: number = getMaxValue(currentPlan, addonMaxKey);
     const max = AddonLimit[addonNameKey] * addonMultiplier;
 
@@ -158,6 +134,30 @@ const AddonCustomizer = ({
         </Price>
     );
 
+    const subscriptionPlan = SelectedPlan.createFromSubscription(latestSubscription, plansMap);
+
+    const decreaseBlockedReasons: DecreaseBlockedReason[] = [];
+
+    const applyForbiddenModificationLimitation = (value: number) => {
+        // If user disabled subscription renewal then it counts like a scheduled modification.
+        // At the same time, the addon downgrading will also create scheduled modification
+        // The system can't process /check if user wants to schedule another modification.
+        // So we need to prevent user from doing that.
+        const isForbiddenScheduledModification = latestSubscription?.Renew === Renew.Disabled;
+        if (!isForbiddenScheduledModification) {
+            return value;
+        }
+
+        const minAddonNumberIfModificationFordidden = subscriptionPlan.getTotalByMaxKey(addonMaxKey);
+
+        if (minAddonNumberIfModificationFordidden > value) {
+            decreaseBlockedReasons.push('forbidden-modification');
+            return minAddonNumberIfModificationFordidden;
+        }
+
+        return value;
+    };
+
     const displayMin = (() => {
         // Minimum is 0 for the AI assistant addon .
         // If seats are already assigned, they will be removed at the end of the
@@ -165,33 +165,20 @@ const AddonCustomizer = ({
         // Crucial for multi-account plans that do not have multi users enabled.
         // This is currently the only way for them to unassign their own seat
         if (isScribeAddon(addonNameKey)) {
-            return 0;
+            return applyForbiddenModificationLimitation(0);
         }
 
         if (addonMaxKey === 'MaxIPs' || hasVpnBusiness(latestSubscription)) {
-            return getVPNDedicatedIPs(latestSubscription);
+            return applyForbiddenModificationLimitation(getVPNDedicatedIPs(latestSubscription));
         }
 
-        const usedAiAddons = organization?.UsedAI ?? 0;
-        if (addonMaxKey === 'MaxAI') {
-            return usedAiAddons;
-        }
-
-        const result = min / divider;
-        if (addonMaxKey === 'MaxMembers') {
-            // If user has used AI addons, then we can't set less members than AI addons.
-            // Because the number of users can't be lower than the number of AI addons.
-            // Note: this is valid only if we don't have customizable plans with included AI addons.
-            // For example, if we introduce at some point a B2B plan that includes AI seats without the addon
-            // then this section should be refactored.
-            return Math.max(result, usedAiAddons);
-        }
-
-        return result;
+        return applyForbiddenModificationLimitation(min / divider);
     })();
 
+    const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
     if (isScribeAddon(addonNameKey)) {
-        maxTotal = gptAddonNumber > memberTotal ? gptAddonNumber : memberTotal;
+        // The total number of GPT addons can't be higher than the total number of members
+        maxTotal = selectedPlan.getTotalMembers();
     }
 
     const displayValue = value / divider;
@@ -217,6 +204,7 @@ const AddonCustomizer = ({
                 onChangePlanIDs(newPlanIDs);
             }}
             step={addonMultiplier}
+            decreaseBlockedReasons={decreaseBlockedReasons}
         />
     );
 
@@ -290,7 +278,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     planIDs: PlanIDs;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plansMap: { [key: string]: Plan };
-    organization?: Organization;
     loading?: boolean;
     mode?: CustomiserMode;
     forceHideDescriptions?: boolean;
@@ -309,7 +296,6 @@ export const ProtonPlanCustomizer = ({
     planIDs,
     plansMap,
     currentPlan,
-    organization,
     loading,
     className,
     forceHideDescriptions,
@@ -357,7 +343,6 @@ export const ProtonPlanCustomizer = ({
                         }}
                         plansMap={plansMap}
                         currentPlan={currentPlan}
-                        organization={organization}
                         loading={loading}
                         showUsersTooltip={showUsersTooltip}
                         latestSubscription={latestSubscription}
