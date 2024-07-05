@@ -35,7 +35,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
       {controller?.role.isAdmin() && (
         <Button
           shape="ghost"
-          className="hidden items-center gap-2 text-sm md:flex"
+          className="flex items-center gap-2 text-sm"
           data-testid="share-button"
           onClick={() => controller.openDocumentSharingModal()}
         >
