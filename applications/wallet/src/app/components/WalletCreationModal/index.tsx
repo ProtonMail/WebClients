@@ -17,6 +17,7 @@ import {
 
 import { Button, CoreButton, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';
+import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { useWalletCreation } from '../../hooks/useWalletCreation';
 import { SubTheme } from '../../utils';
 import { WalletImportModal } from '../WalletImportModal';
@@ -61,11 +62,14 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
         <>
             <Modal
                 title={c('Wallet setup').t`Wallet setup`}
-                subline={c('Wallet setup').t`Choose a name and default currency.`}
                 className={theme}
                 hasClose={!isFirstCreation}
                 {...modalProps}
             >
+                <ModalParagraph>
+                    <p>{c('Wallet setup')
+                        .t`Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.`}</p>
+                </ModalParagraph>
                 <div className="flex flex-column">
                     {!isFirstCreation && (
                         <div className="mb-4">
