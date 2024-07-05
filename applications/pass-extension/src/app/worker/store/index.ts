@@ -87,8 +87,11 @@ const options: RootSagaOptions = {
      * clear */
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
+            const state = store.getState();
+
             ctx.service.telemetry?.start().catch(noop);
-            ctx.service.i18n.setLocale(selectLocale(store.getState())).catch(noop);
+            ctx.service.b2bEvents?.start().catch(noop);
+            ctx.service.i18n.setLocale(selectLocale(state)).catch(noop);
             ctx.service.autofill.sync();
             WorkerMessageBroker.buffer.flush();
 
