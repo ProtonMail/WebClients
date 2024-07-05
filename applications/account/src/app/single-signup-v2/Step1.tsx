@@ -37,6 +37,7 @@ import {
     DRIVE_APP_NAME,
     PASS_APP_NAME,
     PLANS,
+    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -741,6 +742,12 @@ const Step1 = ({
                             );
                         }
 
+                        const showSignIn =
+                            signupParameters.signIn &&
+                            (signupParameters.mode !== SignupMode.Invite ||
+                                signupParameters.invite?.type === 'drive') &&
+                            signupParameters.mode !== SignupMode.MailReferral;
+
                         return (
                             <>
                                 <BoxHeader
@@ -842,33 +849,6 @@ const Step1 = ({
                                                         : accountStepPaymentRef.current?.process
                                                 }
                                                 footer={(details) => {
-                                                    const signIn = (
-                                                        <InlineLinkButton
-                                                            key="signin"
-                                                            className="link link-focus text-nowrap"
-                                                            onClick={() => {
-                                                                onOpenLogin({
-                                                                    email: details.email.trim(),
-                                                                    location: 'step2',
-                                                                });
-                                                            }}
-                                                        >
-                                                            {c('Link').t`Sign in`}
-                                                        </InlineLinkButton>
-                                                    );
-
-                                                    const switchAccount = (
-                                                        <InlineLinkButton
-                                                            key="switch"
-                                                            className="link link-focus text-nowrap"
-                                                            onClick={() => {
-                                                                onOpenSwitch();
-                                                            }}
-                                                        >
-                                                            {c('Link').t`switch account`}
-                                                        </InlineLinkButton>
-                                                    );
-
                                                     return (
                                                         <>
                                                             {hasSelectedFree && (
@@ -885,21 +865,74 @@ const Step1 = ({
                                                                     </Button>
                                                                 </div>
                                                             )}
-                                                            {(signupParameters.mode !== SignupMode.Invite ||
-                                                                signupParameters.invite?.type === 'drive') &&
-                                                                signupParameters.mode !== SignupMode.MailReferral && (
-                                                                    <div className="text-center">
-                                                                        <span>
-                                                                            {(activeSessions?.length || 0) >= 1
+                                                            {showSignIn && (
+                                                                <div className="text-center">
+                                                                    <span>
+                                                                        {(() => {
+                                                                            if (
+                                                                                signupParameters.signIn === 'redirect'
+                                                                            ) {
+                                                                                const signIn = (
+                                                                                    <InlineLinkButton
+                                                                                        key="signin"
+                                                                                        className="link link-focus text-nowrap"
+                                                                                        onClick={() => {
+                                                                                            const searchParams =
+                                                                                                new URLSearchParams();
+                                                                                            searchParams.set(
+                                                                                                'email',
+                                                                                                details.email
+                                                                                            );
+                                                                                            history.push(
+                                                                                                `${SSO_PATHS.SWITCH}?${searchParams.toString()}`
+                                                                                            );
+                                                                                        }}
+                                                                                    >
+                                                                                        {c('Link').t`Sign in`}
+                                                                                    </InlineLinkButton>
+                                                                                );
+                                                                                // translator: Full sentence "Already have an account? Sign in"
+                                                                                return c('Go to sign in')
+                                                                                    .jt`Already have an account? ${signIn}`;
+                                                                            }
+
+                                                                            const signIn = (
+                                                                                <InlineLinkButton
+                                                                                    key="signin"
+                                                                                    className="link link-focus text-nowrap"
+                                                                                    onClick={() => {
+                                                                                        onOpenLogin({
+                                                                                            email: details.email.trim(),
+                                                                                            location: 'step2',
+                                                                                        });
+                                                                                    }}
+                                                                                >
+                                                                                    {c('Link').t`Sign in`}
+                                                                                </InlineLinkButton>
+                                                                            );
+
+                                                                            const switchAccount = (
+                                                                                <InlineLinkButton
+                                                                                    key="switch"
+                                                                                    className="link link-focus text-nowrap"
+                                                                                    onClick={() => {
+                                                                                        onOpenSwitch();
+                                                                                    }}
+                                                                                >
+                                                                                    {c('Link').t`switch account`}
+                                                                                </InlineLinkButton>
+                                                                            );
+                                                                            return (activeSessions?.length || 0) >= 1
                                                                                 ? // translator: Full sentence "Already have an account? Sign in or switch account"
                                                                                   c('Go to sign in')
                                                                                       .jt`Already have an account? ${signIn} or ${switchAccount}`
                                                                                 : // translator: Full sentence "Already have an account? Sign in"
                                                                                   c('Go to sign in')
-                                                                                      .jt`Already have an account? ${signIn}`}
-                                                                        </span>
-                                                                    </div>
-                                                                )}
+                                                                                      .jt`Already have an account? ${signIn}`;
+                                                                        })()}
+                                                                    </span>
+                                                                </div>
+                                                            )}
                                                         </>
                                                     );
                                                 }}
