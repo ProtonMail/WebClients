@@ -90,6 +90,21 @@ export class SelectedPlan {
         return this.getTotalAddons(isScribeAddon, 'MaxAI');
     }
 
+    getTotalByMaxKey(maxKey: MaxKeys): number {
+        if (maxKey === 'MaxMembers') {
+            return this.getTotalMembers();
+        } else if (maxKey === 'MaxIPs') {
+            return this.getTotalIPs();
+        } else if (maxKey === 'MaxDomains') {
+            return this.getTotalDomains();
+        } else if (maxKey === 'MaxAI') {
+            return this.getTotalScribes();
+        } else {
+            // Just count the respective maxKey in all the addons and plans
+            return this.getTotalAddons(() => true, maxKey);
+        }
+    }
+
     setScribeCount(newCount: number): SelectedPlan {
         const scribeAddonName = getScribeAddonNameByPlan(this.getPlanName());
         if (!scribeAddonName) {

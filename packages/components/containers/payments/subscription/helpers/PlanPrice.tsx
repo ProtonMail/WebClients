@@ -14,7 +14,7 @@ interface PlanPriceProps {
 
 function PlanPrice({ loading, currency, total, className }: PlanPriceProps) {
     const totalPrice = (
-        <Price currency={currency} data-testid="subscription-total-price">
+        <Price currency={currency} data-testid="subscription-total-price" key="total-price">
             {total}
         </Price>
     );
