@@ -82,7 +82,7 @@ export const WalletImportModal = ({
                             <Input
                                 prefix={
                                     <div
-                                        className="rounded-full flex p-3 mr-4"
+                                        className="rounded-full flex p-3"
                                         style={{ background: 'var(--interaction-norm-minor-2)' }}
                                     >
                                         <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>

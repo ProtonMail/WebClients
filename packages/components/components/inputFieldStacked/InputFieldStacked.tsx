@@ -1,36 +1,45 @@
+import { forwardRef } from 'react';
+
 import clsx from '@proton/utils/clsx';
 
 import { Icon, IconName } from '../icon';
 
 import './InputFieldStacked.scss';
 
-const InputFieldStacked = ({
-    children,
-    icon,
-    hasError,
-    isBigger,
-    isGroupElement,
-    classname,
-}: {
+interface InputFieldStackedProps {
     children: React.ReactNode;
-    icon?: IconName;
+    icon?: IconName | React.ReactNode;
+    suffix?: React.ReactNode;
     hasError?: boolean;
     isBigger?: boolean;
     isGroupElement?: boolean;
     classname?: string;
-}) => (
-    <div
-        className={clsx(
-            'relative stacked-field border-weak px-4 py-3 flex items-center gap-x-4',
-            hasError && 'stacked-field--errors',
-            isBigger && 'stacked-field--bigger-field',
-            isGroupElement ? 'border-top border-left border-right' : 'border rounded-lg',
-            classname
-        )}
-    >
-        {icon && <Icon name={icon} className="shrink-0" />}
-        <div className="flex-1">{children}</div>
-    </div>
+}
+
+const InputFieldStacked = forwardRef<HTMLDivElement, InputFieldStackedProps>(
+    ({ children, icon, suffix, hasError, isBigger, isGroupElement, classname }, ref) => (
+        <div
+            ref={ref}
+            className={clsx(
+                'relative stacked-field border-weak flex items-center gap-x-4 w-full',
+                hasError && 'stacked-field--errors',
+                isBigger && 'stacked-field--bigger-field',
+                isGroupElement ? 'border-top border-left border-right' : 'border stacked-field--rounded',
+                classname
+            )}
+        >
+            {icon &&
+                (typeof icon === 'string' ? (
+                    <Icon name={icon as IconName} className="shrink-0" />
+                ) : (
+                    <div className="shrink-0">{icon}</div>
+                ))}
+            <div className="flex-1">{children}</div>
+            {suffix && <div className="shrink-0">{suffix}</div>}
+        </div>
+    )
 );
+
+InputFieldStacked.displayName = 'InputFieldStacked';
 
 export default InputFieldStacked;

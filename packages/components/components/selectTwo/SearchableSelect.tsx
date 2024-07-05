@@ -50,6 +50,8 @@ const SearchableSelect = <V extends any>({
     originalPlacement,
     availablePlacements,
     dropdownClassName,
+    caretIconName,
+    caretClassName,
     anchorRef: maybeAnchorRef,
     ...rest
 }: Props<V>) => {
@@ -152,7 +154,15 @@ const SearchableSelect = <V extends any>({
 
     return (
         <SelectProvider {...select}>
-            <SelectButton isOpen={isOpen} onClick={handleAnchorClick} aria-label={ariaLabel} ref={anchorRef} {...rest}>
+            <SelectButton
+                isOpen={isOpen}
+                onClick={handleAnchorClick}
+                aria-label={ariaLabel}
+                ref={anchorRef}
+                caretIconName={caretIconName}
+                caretClassName={caretClassName}
+                {...rest}
+            >
                 {renderSelected?.(value) ?? (
                     <SelectDisplayValue selectedChildren={selectedChildren} placeholder={placeholder} />
                 )}
