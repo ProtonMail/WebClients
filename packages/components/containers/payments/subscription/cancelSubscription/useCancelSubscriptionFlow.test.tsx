@@ -198,7 +198,7 @@ describe('downgrade subscription', () => {
                 organization: getOrganizationState(organization),
                 plans: {
                     ...getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
-                    meta: { fetchedAt: Date.now() },
+                    meta: { fetchedAt: Date.now(), fetchedEphemeral: true },
                 },
             },
         });

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
+import { CacheType } from '@proton/redux-utilities';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -97,7 +98,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
             await api(activateOrganizationKey(armoredPrivateKey));
             await call();
             // Warning: Force a refetch of the org key because it's not present in the event manager.
-            await getOrganizationKey({ cache: 'no-cache' });
+            await getOrganizationKey({ cache: CacheType.None });
 
             createNotification({ text: success });
             onClose?.();

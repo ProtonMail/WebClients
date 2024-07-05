@@ -87,26 +87,19 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: user }));
         }
 
-        const cacheOptions = {
-            cache: 'stale',
-        } as const;
-
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
-                dispatch(userThunk(cacheOptions)),
-                dispatch(userSettingsThunk(cacheOptions)),
+                dispatch(userThunk()),
+                dispatch(userSettingsThunk()),
                 dispatch(
-                    fetchFeatures(
-                        [
-                            FeatureCode.EarlyAccessScope,
-                            FeatureCode.CleanUTMTrackers,
-                            FeatureCode.ESAutomaticBackgroundIndexing,
-                            FeatureCode.MailActionsChunkSize,
-                            FeatureCode.SLIntegration,
-                            FeatureCode.AccountSecurityDismissed2FACard,
-                        ],
-                        cacheOptions
-                    )
+                    fetchFeatures([
+                        FeatureCode.EarlyAccessScope,
+                        FeatureCode.CleanUTMTrackers,
+                        FeatureCode.ESAutomaticBackgroundIndexing,
+                        FeatureCode.MailActionsChunkSize,
+                        FeatureCode.SLIntegration,
+                        FeatureCode.AccountSecurityDismissed2FACard,
+                    ])
                 ),
             ]);
 
@@ -122,10 +115,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const loadPreload = () => {
             return Promise.all([
-                dispatch(addressesThunk(cacheOptions)),
-                dispatch(mailSettingsThunk(cacheOptions)),
-                dispatch(contactEmailsThunk(cacheOptions)),
-                dispatch(categoriesThunk(cacheOptions)),
+                dispatch(addressesThunk()),
+                dispatch(mailSettingsThunk()),
+                dispatch(contactEmailsThunk()),
+                dispatch(categoriesThunk()),
             ]);
         };
 
@@ -136,7 +129,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
         const evPromise = bootstrap.eventManager({
-            eventID: persistedState?.eventID,
             api: silentApi,
             query: (eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 }),
         });
@@ -160,14 +152,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(serverEvent(event));
         });
         eventManager.start();
-
-        if (persistedState?.eventID) {
-            setTimeout(() => {
-                eventManager.call();
-                // If we're resuming a session, we'd like to call the ev to get up-to-speed.
-                // This is in an arbitrary timeout since there are some consumers who subscribe through react useEffects triggered later through the app.
-            }, 350);
-        }
 
         bootstrap.onAbort(signal, () => {
             unsubscribeEventManager();

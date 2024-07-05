@@ -6,6 +6,7 @@ export const getSubscriptionState = (value: SubscriptionModel = {} as any): Subs
         meta: {
             type: 1,
             fetchedAt: Date.now(),
+            fetchedEphemeral: true,
         },
         value,
         error: undefined,
@@ -19,6 +20,7 @@ export const getOrganizationState = (
         meta: {
             type: 1,
             fetchedAt: Date.now(),
+            fetchedEphemeral: true,
         },
         value,
         error: undefined,
