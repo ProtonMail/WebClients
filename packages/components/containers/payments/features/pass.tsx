@@ -38,7 +38,7 @@ export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): Pla
 };
 
 export const getLoginsAndNotesText = () => {
-    return c('new_plans: feature').t`Unlimited logins and notes`;
+    return c('new_plans: feature').t`Unlimited logins, notes and credit cards`;
 };
 
 export const getGroupManagement = (included: boolean = false): PlanCardFeatureDefinition => {
@@ -192,31 +192,31 @@ export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinit
     };
 };
 
-export const getSecureVaultSharing = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('pass_signup_2023: Info').t`Secure vault sharing`,
-        icon: 'arrow-up-from-square',
-        included: true,
-        hideInDowngrade: true,
-    };
+export const getSecureSharingTextEmpty = (link?: boolean) => {
+    if (link) {
+        return c('pass_signup_2023: Info').t`Secure vault and link sharing`;
+    }
+    return c('pass_signup_2023: Info').t`Secure vault sharing`;
 };
 
-export const getSecureSharingText = (n: number | 'multiple') => {
-    if (n === 'multiple') {
-        return c('pass_signup_2023: Info').t`Secure sharing with multiple vaults`;
+export const getSecureSharingText = (n: number, link?: boolean) => {
+    if (link) {
+        return c('pass_signup_2023: Info').ngettext(
+            msgid`Secure vault sharing (${n} vault) and link sharing`,
+            `Secure vault sharing (${n} vaults) and link sharing`,
+            n
+        );
     }
     return c('pass_signup_2023: Info').ngettext(
-        msgid`Secure sharing with ${n} vault`,
-        `Secure sharing with ${n} vaults`,
+        msgid`Secure vault sharing (${n} vault)`,
+        `Secure vault sharing (${n} vaults)`,
         n
     );
 };
 
-export const getSecureVaultSharingWith = (
-    n: Parameters<typeof getSecureSharingText>['0']
-): PlanCardFeatureDefinition => {
+export const getSecureVaultSharing = (...args: Parameters<typeof getSecureSharingText>): PlanCardFeatureDefinition => {
     return {
-        text: getSecureSharingText(n),
+        text: getSecureSharingText(...args),
         icon: 'arrow-up-from-square',
         included: true,
         hideInDowngrade: true,
@@ -244,6 +244,7 @@ export const getPasswordManager = (): PlanCardFeatureDefinition => {
 
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
+export const PAID_VAULTS = 10;
 export const FREE_VAULT_SHARING = 3;
 
 export const MAIL_BUSINESS_PASS_ALIASES = 20;

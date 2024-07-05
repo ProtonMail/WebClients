@@ -8,6 +8,7 @@ import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import { GIGA } from '@proton/shared/lib/constants';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
 import { Tooltip } from '../../components';
@@ -23,6 +24,10 @@ export const getTotalStorage = (
         organizationUsedSpace: organizationAssignedSpace - memberMaxSpace,
         organizationMaxSpace: organizationMaxSpace,
     };
+};
+
+export const getInitialStorage = (organization?: Organization) => {
+    return (organization?.RequiresKey ? 5 : 500) * GIGA;
 };
 
 export const getStorageRange = (
