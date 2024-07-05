@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../../components';
@@ -27,26 +28,23 @@ export const ButtonNumberInput = ({
     disabled?: boolean;
     onChange?: (newValue: number) => void;
 }) => {
-    const [tmpValue, setTmpValue] = useState<number | undefined>(value);
+    const [tmpValue, setTmpValue] = useState<number | null | undefined>(undefined);
 
-    const isDecDisabled = disabled || !getIsValidValue(min, max, step, (tmpValue || 0) - step);
-    const isIncDisabled = disabled || !getIsValidValue(min, max, step, (tmpValue || 0) + step);
-
-    const isValidTmpValue = getIsValidValue(min, max, step, tmpValue);
-
-    useEffect(() => {
-        if (tmpValue === undefined) {
-            return;
+    const handleOnChange = (value: number) => {
+        const safeValue = clamp(value, min, max);
+        if (getIsValidValue(min, max, step, safeValue)) {
+            onChange?.(safeValue);
         }
+    };
 
-        if (tmpValue > max) {
-            setTmpValue(max);
-            onChange?.(max);
-        } else if (tmpValue < min) {
-            setTmpValue(min);
-            onChange?.(min);
-        }
-    }, [min, max, tmpValue]);
+    const currentValue = Number(tmpValue ?? value);
+
+    const handleAddition = (diff: number) => {
+        handleOnChange(currentValue + step * diff);
+    };
+
+    const isDecDisabled = disabled || !getIsValidValue(min, max, step, currentValue - step);
+    const isIncDisabled = disabled || !getIsValidValue(min, max, step, currentValue + step);
 
     return (
         <div className="border rounded shrink-0 flex flex-nowrap">
@@ -56,12 +54,7 @@ export const ButtonNumberInput = ({
                 className={clsx(['p-2 flex', isDecDisabled && 'color-disabled'])}
                 disabled={isDecDisabled}
                 onClick={() => {
-                    if (!isValidTmpValue || tmpValue === undefined) {
-                        return;
-                    }
-                    const newValue = tmpValue - step;
-                    setTmpValue?.(newValue);
-                    onChange?.(newValue);
+                    handleAddition(-1);
                 }}
             >
                 <Icon name="minus" alt={c('Action').t`Decrease`} className="m-auto" />
@@ -71,26 +64,22 @@ export const ButtonNumberInput = ({
                     autoComplete="off"
                     min={min}
                     max={max}
-                    value={tmpValue}
+                    value={tmpValue === null ? '' : currentValue}
                     id={id}
                     className="w-custom border-left border-right text-center"
                     style={{ '--w-custom': '6em' }}
                     onBlur={() => {
-                        if (!isValidTmpValue) {
-                            // Revert to the latest valid value upon blur
-                            setTmpValue(value);
-                        }
+                        // Revert to the latest valid value upon blur
+                        setTmpValue(undefined);
                     }}
                     onChange={({ target: { value: newValue } }) => {
                         if (newValue === '') {
-                            setTmpValue?.(undefined);
+                            setTmpValue(null);
                             return;
                         }
+                        setTmpValue(undefined);
                         const newIntValue = parseInt(newValue, 10);
-                        setTmpValue?.(newIntValue);
-                        if (getIsValidValue(min, max, step, newIntValue)) {
-                            onChange?.(newIntValue);
-                        }
+                        handleOnChange(newIntValue);
                     }}
                 />
             </label>
@@ -100,12 +89,7 @@ export const ButtonNumberInput = ({
                 className={clsx(['p-2 flex', isIncDisabled && 'color-disabled'])}
                 disabled={isIncDisabled}
                 onClick={() => {
-                    if (!isValidTmpValue || tmpValue === undefined) {
-                        return;
-                    }
-                    const newValue = tmpValue + step;
-                    setTmpValue?.(newValue);
-                    onChange?.(newValue);
+                    handleAddition(1);
                 }}
             >
                 <Icon name="plus" alt={c('Action').t`Increase`} className="m-auto" />

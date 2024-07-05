@@ -22,6 +22,7 @@ import { useIsChargebeeEnabled } from '@proton/components/containers/payments/Pa
 import { getBlackFridayRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useHandler from '@proton/components/hooks/useHandler';
 import { BillingAddress } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -38,7 +39,7 @@ import {
     PLANS,
 } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getHas2023OfferCoupon,
     getPlanIDs,
@@ -51,12 +52,12 @@ import {
     Audience,
     Currency,
     Cycle,
-    Plan,
     PlanIDs,
     SubscriptionPlan,
     User,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -64,7 +65,6 @@ import { usePublicTheme } from '../containers/PublicThemeProvider';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
-import { useFlowRef } from '../useFlowRef';
 import AccountStepDetails, { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepPayment, { AccountStepPaymentRef } from './AccountStepPayment';
 import AccountSwitcherItem from './AccountSwitcherItem';
@@ -95,7 +95,6 @@ import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { getFreePassFeatures } from './pass/configuration';
 
 export interface Step1Rref {
-    handleOptimistic: (options: Partial<OptimisticOptions>) => Promise<void>;
     scrollIntoPayment: () => void;
 }
 
@@ -116,7 +115,6 @@ const Step1 = ({
     },
     signupParameters,
     relativePrice,
-    selectedPlan,
     currentPlan,
     onComplete,
     model,
@@ -137,7 +135,6 @@ const Step1 = ({
     signupConfiguration: SignupConfiguration;
     signupParameters: SignupParameters2;
     relativePrice: string | undefined;
-    selectedPlan: Plan;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     measure: Measure;
@@ -175,143 +172,148 @@ const Step1 = ({
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
-    const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
+    const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
     const theme = usePublicTheme();
 
     const history = useHistory();
 
-    const createFlow = useFlowRef();
-
+    const subscriptionCheckOptions = {
+        planIDs: model.subscriptionData.planIDs,
+        cycle: model.subscriptionData.cycle,
+        currency: model.subscriptionData.currency,
+        coupon: model.subscriptionData.checkResult.Coupon?.Code || undefined,
+        billingAddress: model.subscriptionData.billingAddress,
+        checkResult: model.subscriptionData.checkResult,
+    };
     const options: OptimisticOptions = {
-        currency: model.optimistic.currency || model.subscriptionData.currency,
-        cycle: model.optimistic.cycle || model.subscriptionData.cycle,
-        plan: model.optimistic.plan || selectedPlan,
-        planIDs: model.optimistic.planIDs || model.subscriptionData.planIDs,
-        checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
-        billingAddress: model.optimistic.billingAddress || model.subscriptionData.billingAddress,
+        ...subscriptionCheckOptions,
+        ...model.optimistic,
+    };
+    const selectedPlan = getPlanFromPlanIDs(model.plansMap, options.planIDs) || FREE_PLAN;
+
+    const latestRef = useRef<any>();
+    const check = async (values: {
+        currency: Currency;
+        planIDs: PlanIDs;
+        cycle: Cycle;
+        billingAddress: BillingAddress;
+        coupon?: string;
+    }) => {
+        let chargebeeEnabled = undefined;
+        if (model.session?.UID && model.session?.user) {
+            const user: User = model.session.user;
+            chargebeeEnabled = await isChargebeeEnabled(model.session.UID, async () => user);
+        }
+        return getSubscriptionPrices(
+            getPaymentsApi(silentApi, chargebeeEnabled?.result),
+            values.planIDs,
+            values.currency,
+            values.cycle,
+            values.billingAddress,
+            values.coupon
+        );
     };
 
-    const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
-        setModel((old) => ({
-            ...old,
-            optimistic: {
-                ...old.optimistic,
-                ...diff,
-            },
-        }));
+    const handleOptimisticCheck = async (optimistic: Parameters<typeof check>[0], latest: any) => {
+        try {
+            const checkResult = await check(optimistic);
+            if (latestRef.current === latest) {
+                setModel((old) => ({
+                    ...old,
+                    subscriptionData: {
+                        ...old.subscriptionData,
+                        currency: optimistic.currency,
+                        cycle: optimistic.cycle,
+                        planIDs: optimistic.planIDs,
+                        checkResult,
+                        billingAddress: optimistic.billingAddress,
+                    },
+                    optimistic: {},
+                }));
+            }
+        } catch (e) {
+            if (latestRef.current === latest) {
+                // Reset any optimistic state on failures
+                setModel((old) => ({
+                    ...old,
+                    optimistic: {},
+                }));
+                return;
+            }
+        } finally {
+            if (latestRef.current === latest) {
+                setLoadingPaymentDetails(false);
+            }
+        }
     };
 
-    const handleOptimistic = async (optimistic: Partial<OptimisticOptions & { coupon: string }>) => {
+    const debouncedCheck = useHandler(
+        (optimistic: Parameters<typeof check>[0], latest: any) => {
+            handleOptimisticCheck(optimistic, latest).catch(noop);
+        },
+        { debounce: 400 }
+    );
+
+    const handleOptimistic = (checkOptions: Partial<OptimisticOptions>) => {
         if (model.session?.state.payable === false) {
             return;
         }
-        const newCurrency = optimistic.currency || options.currency;
-        const newPlanIDs = optimistic.planIDs || options.planIDs;
-        const newCycle = optimistic.cycle || options.cycle;
-        const newBillingAddress = optimistic.billingAddress || options.billingAddress;
-        const newCoupon = optimistic.coupon;
-
+        const mergedCheckOptions = {
+            ...model.optimistic,
+            ...checkOptions,
+        };
+        const completeCheckOptions = {
+            ...subscriptionCheckOptions,
+            coupon: subscriptionCheckOptions.coupon || signupParameters.coupon,
+            ...mergedCheckOptions,
+        };
         const optimisticCheckResult = getOptimisticCheckResult({
             plansMap: model.plansMap,
-            planIDs: newPlanIDs,
-            cycle: newCycle,
+            planIDs: completeCheckOptions.planIDs,
+            cycle: completeCheckOptions.cycle,
         });
-
-        const newOptimistic = {
-            ...optimistic,
-            checkResult: optimisticCheckResult,
-        };
-
-        const resetOptimistic = Object.keys(newOptimistic).reduce<Partial<OptimisticOptions>>((acc, key) => {
-            acc[key as keyof typeof acc] = undefined;
-            return acc;
-        }, {});
-
-        try {
-            const validateFlow = createFlow();
-            const couponCode = newCoupon || model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon;
-
-            // If there's a couponCode, we ignore optimistically setting new values because they'll be incorrect.
-            setOptimisticDiff(newOptimistic);
-
-            let chargebeeEnabled = undefined;
-            if (model.session?.UID && model.session?.user) {
-                const user: User = model.session.user;
-                chargebeeEnabled = await isChargebeeEnabled(model.session.UID, async () => user);
-            }
-
-            const checkResult = await getSubscriptionPrices(
-                getPaymentsApi(silentApi, chargebeeEnabled?.result),
-                newPlanIDs,
-                newCurrency,
-                newCycle,
-                newBillingAddress,
-                couponCode
-            );
-
-            if (!validateFlow()) {
-                return;
-            }
-
-            setModel((old) => ({
-                ...old,
-                subscriptionData: {
-                    ...model.subscriptionData,
-                    currency: newCurrency,
-                    cycle: newCycle,
-                    planIDs: newPlanIDs,
-                    checkResult,
-                    billingAddress: newBillingAddress,
-                },
-                optimistic: {
-                    ...old.optimistic,
-                    ...resetOptimistic,
-                },
-            }));
-        } catch (e) {
-            // Reset any optimistic state on failures
-            setModel((old) => ({
-                ...old,
-                optimistic: {},
-            }));
-        }
+        setModel((old) => ({
+            ...old,
+            optimistic: {
+                ...mergedCheckOptions,
+                checkResult: optimisticCheckResult,
+            },
+        }));
+        const latest = {};
+        latestRef.current = latest;
+        setLoadingPaymentDetails(true);
+        debouncedCheck(completeCheckOptions, latest);
     };
 
-    const handleChangeCurrency = async (currency: Currency) => {
+    const handleChangeCurrency = (currency: Currency) => {
         measure({ event: TelemetryAccountSignupEvents.currencySelect, dimensions: { currency } });
         return handleOptimistic({ currency });
     };
 
-    const handleChangeCycle = async (cycle: Cycle) => {
+    const handleChangeCycle = (cycle: Cycle) => {
         measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
         return handleOptimistic({ cycle });
     };
 
-    const handleChangePlan = async (planIDs: PlanIDs, planName: PLANS) => {
+    const handleChangePlan = (planIDs: PlanIDs, planName: PLANS) => {
         measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
-        const plan = model.plans.find((plan) => plan.Name === planName);
 
-        if (model.session?.subscription && model.session.organization && plan?.Name) {
+        if (model.session?.subscription && model.session.organization && model.plansMap[planName]) {
             const switchedPlanIds = switchPlan({
                 planIDs: getPlanIDs(model.session.subscription),
-                planID: plan.Name,
+                planID: planName,
                 organization: model.session.organization,
                 plans: model.plans,
             });
-            return handleOptimistic({ plan, planIDs: switchedPlanIds });
+            return handleOptimistic({ planIDs: switchedPlanIds });
         }
 
-        return handleOptimistic({ plan, planIDs });
-    };
-
-    const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
-        return handleOptimistic({ billingAddress });
+        return handleOptimistic({ planIDs });
     };
 
     useImperativeHandle(step1Ref, () => ({
-        handleOptimistic,
         scrollIntoPayment: () => accountStepPaymentRef.current?.scrollIntoView(),
     }));
 
@@ -333,10 +335,10 @@ const Step1 = ({
     }));
 
     const cta =
-        mode === SignupMode.MailReferral && options.plan.Name !== PLANS.FREE
+        mode === SignupMode.MailReferral && selectedPlan.Name !== PLANS.FREE
             ? c('Action in trial plan').t`Try free for 30 days`
             : c('pass_signup_2023: Action').t`Start using ${appName} now`;
-    const hasSelectedFree = options.plan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
+    const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
     const isOnboardingMode = mode === SignupMode.Onboarding;
 
     const isDarkBg = theme.dark;
@@ -344,11 +346,12 @@ const Step1 = ({
     let step = 1;
 
     const hasUpsellSection = model.upsell.mode === UpsellTypes.UPSELL;
+    const hidePlanSelectorCoupons = new Set([COUPON_CODES.TRYMAILPLUS2024, COUPON_CODES.MAILPLUSINTRO]);
     const hasPlanSelector =
         (!model.planParameters?.defined || hasUpsellSection) &&
         [SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) &&
-        model.subscriptionData.checkResult.Coupon?.Code !== COUPON_CODES.TRYMAILPLUS2024 &&
-        model.subscriptionData.checkResult.Coupon?.Code !== COUPON_CODES.MAILPLUSINTRO &&
+        !hidePlanSelectorCoupons.has(model.subscriptionData.checkResult.Coupon?.Code as any) &&
+        !hidePlanSelectorCoupons.has(model.optimistic.coupon as any) &&
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
         !model.session?.state.access;
 
@@ -408,7 +411,7 @@ const Step1 = ({
                     {...upsellMailTrialModal}
                     currency={options.currency}
                     onConfirm={async () => {
-                        await handleOptimistic({
+                        return handleOptimistic({
                             coupon: COUPON_CODES.MAILPLUSINTRO,
                             planIDs: { [PLANS.MAIL]: 1 },
                             cycle: CYCLE.MONTHLY,
@@ -468,7 +471,7 @@ const Step1 = ({
                         );
                     }
 
-                    if (options.plan?.Name === PLANS.VISIONARY) {
+                    if (selectedPlan.Name === PLANS.VISIONARY) {
                         const textLaunchOffer = c('mail_signup_2023: Info').t`Limited time offer`;
                         return wrap('hourglass', textLaunchOffer);
                     }
@@ -476,9 +479,9 @@ const Step1 = ({
                     const mailOfferPlans = [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS, PLANS.MAIL_PRO];
 
                     const businessYearlyCycle =
-                        model.subscriptionDataCycleMapping[options.plan?.Name as PLANS]?.[CYCLE.YEARLY];
+                        model.subscriptionDataCycleMapping[selectedPlan.Name as PLANS]?.[CYCLE.YEARLY];
                     if (
-                        mailOfferPlans.includes(options.plan?.Name as PLANS) &&
+                        mailOfferPlans.includes(selectedPlan.Name as PLANS) &&
                         !!businessYearlyCycle?.checkResult.Coupon?.Code
                     ) {
                         const textLaunchOffer = getBoldFormattedText(
@@ -560,11 +563,7 @@ const Step1 = ({
                                                     mode="buttons"
                                                     cycle={options.cycle}
                                                     options={cycleOptions}
-                                                    onSelect={(newCycle) => {
-                                                        return withLoadingPaymentDetails(
-                                                            handleChangeCycle(newCycle)
-                                                        ).catch(noop);
-                                                    }}
+                                                    onSelect={handleChangeCycle}
                                                     size="small"
                                                     color="norm"
                                                     separators={false}
@@ -582,16 +581,12 @@ const Step1 = ({
                                         subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
                                         audience={audience}
                                         plansMap={model.plansMap}
-                                        plan={options.plan.Name}
+                                        plan={selectedPlan.Name}
                                         cycle={options.cycle}
                                         currency={options.currency}
                                         dark={theme.dark}
                                         planCards={planCards[audience]}
-                                        onSelect={(planIDs, planName) => {
-                                            return withLoadingPaymentDetails(handleChangePlan(planIDs, planName)).catch(
-                                                noop
-                                            );
-                                        }}
+                                        onSelect={handleChangePlan}
                                         onSelectedClick={() => {
                                             accountDetailsRef.current?.scrollInto('email');
                                         }}
@@ -605,7 +600,7 @@ const Step1 = ({
                                         freePlan={model.freePlan}
                                         subscription={model.session?.subscription}
                                         checkout={checkout}
-                                        plan={options.plan}
+                                        plan={selectedPlan}
                                         cycle={options.cycle}
                                         currency={options.currency}
                                         coupon={options.checkResult?.Coupon?.Code}
@@ -626,9 +621,7 @@ const Step1 = ({
                                                     mode="select-two"
                                                     className="h-full ml-auto px-3 color-primary relative interactive-pseudo interactive--no-background"
                                                     currency={options.currency}
-                                                    onSelect={(currency) =>
-                                                        withLoadingPaymentDetails(handleChangeCurrency(currency))
-                                                    }
+                                                    onSelect={handleChangeCurrency}
                                                     unstyled
                                                 />
                                             </div>
@@ -817,7 +810,7 @@ const Step1 = ({
                                                     hasSelectedFree
                                                         ? () => {
                                                               if (
-                                                                  options.plan.Name === PLANS.FREE &&
+                                                                  selectedPlan.Name === PLANS.FREE &&
                                                                   !signupParameters.noPromo
                                                               ) {
                                                                   if (
@@ -834,7 +827,7 @@ const Step1 = ({
                                                               );
                                                               if (
                                                                   mode === SignupMode.MailReferral &&
-                                                                  options.plan.Name !== PLANS.FREE
+                                                                  selectedPlan.Name !== PLANS.FREE
                                                               ) {
                                                                   subscriptionData = {
                                                                       ...subscriptionData,
@@ -924,6 +917,7 @@ const Step1 = ({
                         <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
                         <BoxContent>
                             <AccountStepPayment
+                                selectedPlan={selectedPlan}
                                 measure={measure}
                                 cta={cta}
                                 key={model.session?.UID || 'free'}
@@ -931,9 +925,7 @@ const Step1 = ({
                                 accountStepPaymentRef={accountStepPaymentRef}
                                 api={normalApi}
                                 model={model}
-                                handleOptimistic={(args) =>
-                                    withLoadingPaymentDetails(handleOptimistic(args)).catch(noop)
-                                }
+                                handleOptimistic={handleOptimistic}
                                 options={options}
                                 vpnServersCountData={vpnServersCountData}
                                 loadingSignup={loadingSignup}
@@ -954,7 +946,9 @@ const Step1 = ({
                                     return accountDetailsRef.current?.validate() ?? true;
                                 }}
                                 withLoadingSignup={withLoadingSignup}
-                                onBillingAddressChange={handleChangeBillingAddress}
+                                onBillingAddressChange={(billingAddress: BillingAddress) => {
+                                    handleOptimistic({ billingAddress });
+                                }}
                             />
                         </BoxContent>
                     </Box>

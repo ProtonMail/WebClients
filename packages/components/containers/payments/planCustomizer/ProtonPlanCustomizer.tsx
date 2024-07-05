@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, useCallback } from 'react';
+import { ComponentPropsWithoutRef, useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,6 +13,7 @@ import {
 } from '@proton/shared/lib/constants';
 import {
     AddonGuard,
+    SupportedAddons,
     getSupportedAddons,
     isDomainAddon,
     isIpAddon,
@@ -23,6 +24,7 @@ import {
 } from '@proton/shared/lib/helpers/planIDs';
 import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
 import {
+    Audience,
     Currency,
     Cycle,
     Organization,
@@ -35,6 +37,7 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import { Price } from '../../../components';
+import ScribeAddon from '../ScribeAddon';
 import { AccountSizeCustomiser } from './AccountSizeCustomiser';
 import { AdditionalOptionsCustomiser } from './AdditionalOptionsCustomiser';
 import { ButtonNumberInput } from './ButtonNumberInput';
@@ -54,9 +57,11 @@ interface AddonCustomizerProps {
     loading?: boolean;
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription;
-    supportedAddons: { [key: string]: boolean };
+    supportedAddons: SupportedAddons;
     showAddonDescriptions: boolean;
     scribeAddonEnabled?: boolean;
+    audience?: Audience;
+    mode: CustomiserMode;
 }
 
 const AddonCustomizer = ({
@@ -74,8 +79,11 @@ const AddonCustomizer = ({
     supportedAddons,
     showAddonDescriptions,
     scribeAddonEnabled,
+    audience,
+    mode,
 }: AddonCustomizerProps) => {
     const addon = plansMap[addonName];
+    const [showScribeBanner, setShowScribeBanner] = useState(mode === 'signup');
 
     if (!addon) {
         return null;
@@ -103,6 +111,24 @@ const AddonCustomizer = ({
         addonMultiplier = getMaxValue(addon, addonMaxKey) ?? 1;
     }
 
+    const scribeAddonKey = (Object.keys(supportedAddons) as ADDON_NAMES[]).find(isScribeAddon);
+
+    // We get the amount of add-ons starting with the members, this is used for the GPT add-ons
+    // We start at one since the members starts at 1 not 0 (for the admin)
+    const memberTotal = Object.entries(planIDs).reduce((previous, value) => {
+        if (value[0].startsWith(MEMBER_ADDON_PREFIX)) {
+            return previous + value[1];
+        }
+        return previous;
+    }, 1);
+
+    const gptAddonNumber = Object.entries(planIDs).reduce((previous, value) => {
+        if (value[0].startsWith(SCRIBE_ADDON_PREFIX)) {
+            return previous + value[1];
+        }
+        return previous;
+    }, 0);
+
     const min: number = getMaxValue(currentPlan, addonMaxKey);
     const max = AddonLimit[addonNameKey] * addonMultiplier;
 
@@ -119,7 +145,15 @@ const AddonCustomizer = ({
 
     const addonPricePerCycle = addon.Pricing[cycle] || 0;
     const addonPriceInline = (
-        <Price key={`${addon.Name}-1`} currency={currency} suffix={c('Suffix for price').t`per month`}>
+        <Price
+            key={`${addon.Name}-1`}
+            currency={currency}
+            suffix={
+                isScribeAddon(addonNameKey)
+                    ? c('Suffix for price').t`per user per month`
+                    : c('Suffix for price').t`per month`
+            }
+        >
             {addonPricePerCycle / cycle}
         </Price>
     );
@@ -157,35 +191,30 @@ const AddonCustomizer = ({
     })();
 
     if (isScribeAddon(addonNameKey)) {
-        // We get the amount of add-ons starting with the members, this is used for the GPT add-ons
-        // We start at one since the members starts at 1 not 0 (for the admin)
-        const memberTotal = Object.entries(planIDs).reduce((previous, value) => {
-            if (value[0].startsWith(MEMBER_ADDON_PREFIX)) {
-                return previous + value[1];
-            }
-            return previous;
-        }, 1);
-
-        const gptAddonNumber = Object.entries(planIDs).reduce((previous, value) => {
-            if (value[0].startsWith(SCRIBE_ADDON_PREFIX)) {
-                return previous + value[1];
-            }
-            return previous;
-        }, 0);
-
         maxTotal = gptAddonNumber > memberTotal ? gptAddonNumber : memberTotal;
     }
 
+    const displayValue = value / divider;
     const input = (
         <ButtonNumberInput
             key={`${addon.Name}-input`}
             id={addon.Name}
-            value={value / divider}
+            value={displayValue}
             min={displayMin}
             max={maxTotal}
             disabled={loading || !isSupported}
             onChange={(newQuantity) => {
-                onChangePlanIDs(setQuantity(planIDs, addon.Name, (newQuantity * divider - min) / addonMultiplier));
+                const newValue = (newQuantity * divider - min) / addonMultiplier;
+                let newPlanIDs = setQuantity(planIDs, addon.Name, newValue);
+                if (isMemberAddon(addonNameKey) && scribeAddonKey) {
+                    const membersValue = displayValue;
+                    const scribeValue = planIDs[scribeAddonKey];
+                    const scribeConstrain = membersValue === scribeValue;
+                    if (scribeConstrain) {
+                        newPlanIDs = setQuantity(newPlanIDs, scribeAddonKey, newQuantity);
+                    }
+                }
+                onChangePlanIDs(newPlanIDs);
             }}
             step={addonMultiplier}
         />
@@ -233,15 +262,20 @@ const AddonCustomizer = ({
 
     if (isScribeAddon(addonNameKey) && scribeAddonEnabled) {
         return (
-            <AccountSizeCustomiser
+            <ScribeAddon
                 key={`${addon.Name}-size`}
                 addon={addon}
                 price={addonPriceInline}
                 input={input}
                 maxUsers={maxTotal}
+                showScribeBanner={showScribeBanner}
+                onShowScribeBanner={() => {
+                    setShowScribeBanner(false);
+                    onChangePlanIDs(setQuantity(planIDs, addon.Name, maxTotal));
+                }}
                 showDescription={showAddonDescriptions}
                 showTooltip={showUsersTooltip}
-                mode="gpt-seats"
+                audience={audience}
             />
         );
     }
@@ -263,6 +297,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     showUsersTooltip?: boolean;
     latestSubscription?: Subscription;
     allowedAddonTypes?: AddonGuard[];
+    audience?: Audience;
     scribeEnabled: boolean;
 }
 
@@ -281,6 +316,7 @@ export const ProtonPlanCustomizer = ({
     showUsersTooltip,
     latestSubscription,
     allowedAddonTypes,
+    audience,
     scribeEnabled,
     ...rest
 }: Props) => {
@@ -309,6 +345,7 @@ export const ProtonPlanCustomizer = ({
 
                 return (
                     <AddonCustomizer
+                        key={addonName}
                         scribeAddonEnabled={scribeEnabled}
                         addonName={addonName}
                         cycle={cycle}
@@ -326,6 +363,8 @@ export const ProtonPlanCustomizer = ({
                         latestSubscription={latestSubscription}
                         supportedAddons={supportedAddons}
                         showAddonDescriptions={showAddonDescriptions}
+                        audience={audience}
+                        mode={mode}
                     />
                 );
             })}
