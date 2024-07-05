@@ -3,5 +3,5 @@ import { ReactNode } from 'react';
 import './ModalParagraph.scss';
 
 export const ModalParagraph = ({ children }: { children: ReactNode }) => {
-    return <div className="modal-paragraph flex flex-columns text-center mb-6 color-weak gap-2">{children}</div>;
+    return <div className="modal-paragraph flex flex-row gap-2 mb-6 text-center color-weak">{children}</div>;
 };
