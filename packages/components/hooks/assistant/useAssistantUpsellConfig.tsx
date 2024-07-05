@@ -1,5 +1,5 @@
 import { useSubscription, useUser } from '@proton/components/hooks';
-import { SelectedPlan } from '@proton/components/payments/core/subscription/selected-plan';
+import { SelectedPlan } from '@proton/components/payments/core';
 import { Plan } from '@proton/shared/lib/interfaces';
 
 import { getAssistantDowngradeConfig, getAssistantUpsellConfig } from './assistantUpsellConfig';
