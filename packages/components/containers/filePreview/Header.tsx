@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
-import { DOCS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
@@ -112,10 +112,7 @@ const Header = ({
             <div className="flex items-center">
                 {isLargeViewport && onOpenInDocs && (
                     <Button
-                        title={
-                            // translator: Open in Docs
-                            c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
-                        }
+                        title={getOpenInDocsString(mimeType)}
                         onClick={onOpenInDocs}
                         shape="outline"
                         className="mr-4 flex items-center"
@@ -123,10 +120,7 @@ const Header = ({
                         data-testid="file-preview:actions:open-in-docs"
                     >
                         <MimeIcon name="proton-doc" className="mr-2" />
-                        {
-                            // translator: Open in Docs
-                            c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
-                        }
+                        {getOpenInDocsString(mimeType)}
                     </Button>
                 )}
                 {onRestore && (

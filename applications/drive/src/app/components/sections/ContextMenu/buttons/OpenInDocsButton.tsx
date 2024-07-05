@@ -1,7 +1,5 @@
-import { c } from 'ttag';
-
-import { NewFeatureTag } from '@proton/components/components';
-import { DOCS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { MimeIcon, NewFeatureTag } from '@proton/components/components';
+import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
 import { DecryptedLink } from '../../../../store';
 import { useOpenInDocs } from '../../../../store/_documents';
@@ -18,11 +16,8 @@ const OpenInDocsButton = ({ shareId, link, close }: Props) => {
 
     return (
         <ContextMenuButton
-            name={
-                // translator: Open in Docs
-                c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
-            }
-            icon="file-arrow-out"
+            name={getOpenInDocsString(link.mimeType)}
+            icon={<MimeIcon name="proton-doc" className="mr-2" />}
             testId="context-menu-open-in-docs"
             action={() => {
                 void openInDocsAction({ shareId, linkId: link.linkId });
