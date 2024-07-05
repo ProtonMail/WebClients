@@ -23,7 +23,7 @@ import { ApplicationProvider } from './ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
-import { LexicalEditor } from 'lexical'
+import { LexicalEditor, SerializedEditorState } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 import { generateEditorStatefromYDoc } from './Conversion/GenerateEditorStateFromYDoc'
 import { exportDataFromEditorState } from './Conversion/ExportDataFromEditorState'
@@ -202,6 +202,13 @@ export function App({ nonInteractiveMode = false }: Props) {
 
         async printAsPDF(): Promise<void> {
           window.print()
+        },
+
+        async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
+          if (!editorRef.current) {
+            return undefined
+          }
+          return editorRef.current.getEditorState().toJSON()
         },
       }
 
