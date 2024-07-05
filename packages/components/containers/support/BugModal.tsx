@@ -32,6 +32,7 @@ import {
 } from '../../components';
 import { getClientName, getReportInfo } from '../../helpers/report';
 import { useApi, useConfig, useNotifications } from '../../hooks';
+import { useFlag } from '../unleash';
 import AttachScreenshot, { Screenshot } from './AttachScreenshot';
 
 export type BugModalMode = 'chat-no-agents';
@@ -56,7 +57,7 @@ export interface Props {
     open: ModalProps['open'];
 }
 
-const getMailOptions = (): OptionItem[] => {
+const getMailOptions = ({ canAccessWallet }: { canAccessWallet: boolean }): OptionItem[] => {
     return [
         { type: 'label', value: c('Group').t`Account` },
         { type: 'option', value: 'Sign in problem', title: c('Bug category').t`Sign in problem` },
@@ -77,10 +78,15 @@ const getMailOptions = (): OptionItem[] => {
         { type: 'option', value: 'Mail problem', title: c('Bug category').t`Mail problem` },
         { type: 'option', value: 'VPN problem', title: c('Bug category').t`VPN problem`, clientType: CLIENT_TYPES.VPN },
         { type: 'option', value: 'Pass problem', title: c('Bug category').t`Pass problem` },
+        canAccessWallet && {
+            type: 'option',
+            value: 'Wallet problem',
+            title: c('wallet_signup_2024:Bug category').t`Wallet problem`,
+        },
         { type: 'label', value: c('Group').t`Other category` },
         { type: 'option', value: 'Feature request', title: c('Bug category').t`Feature request` },
         { type: 'option', value: 'Other', title: c('Bug category').t`Other` },
-    ];
+    ].filter((opt): opt is OptionItem => !!opt);
 };
 
 const getVPNOptions = (): OptionItem[] => {
@@ -116,9 +122,10 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     const Client = getClientName(APP_NAME);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();
+    const canAccessWallet = useFlag('Wallet');
 
     const options = useMemo(() => {
-        return isVpn ? getVPNOptions() : getMailOptions();
+        return isVpn ? getVPNOptions() : getMailOptions({ canAccessWallet });
     }, []);
 
     const categoryOptions = options.map((option) => {

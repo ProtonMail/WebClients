@@ -12,7 +12,7 @@ export const PassIcon: FC<Props> = ({ status, size, className }) => (
         src={`/assets/${status}.svg`}
         width={getIconSizePx(size)}
         height={getIconSizePx(size)}
-        alt={''}
+        alt=""
         className={className}
     />
 );

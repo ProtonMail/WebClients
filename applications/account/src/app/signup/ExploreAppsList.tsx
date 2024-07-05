@@ -17,8 +17,16 @@ interface App {
     bit: PRODUCT_BIT;
 }
 
-export const getExploreApps = ({ subscribed, user }: { subscribed?: User['Subscribed']; user: User | undefined }) => {
-    const availableApps = getAvailableApps({ user });
+export const getExploreApps = ({
+    subscribed,
+    user,
+    canAccessWallet,
+}: {
+    subscribed?: User['Subscribed'];
+    user: User | undefined;
+    canAccessWallet: boolean;
+}) => {
+    const availableApps = getAvailableApps({ user, canAccessWallet });
     return [
         {
             name: APPS.PROTONMAIL,
@@ -55,6 +63,13 @@ export const getExploreApps = ({ subscribed, user }: { subscribed?: User['Subscr
                 return c('app-switcher').t`Protect your passwords and identity`;
             },
         },
+        {
+            name: APPS.PROTONWALLET,
+            bit: PRODUCT_BIT.WALLET,
+            description: () => {
+                return c('wallet_signup_2024:app-switcher').t`Securely hold and transfer your bitcoins`;
+            },
+        },
     ]
         .sort((a, b) => {
             if (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) {
@@ -77,7 +92,7 @@ interface Props {
     };
 }
 
-const allBits = PRODUCT_BIT.MAIL | PRODUCT_BIT.PASS | PRODUCT_BIT.DRIVE | PRODUCT_BIT.VPN;
+const allBits = PRODUCT_BIT.MAIL | PRODUCT_BIT.PASS | PRODUCT_BIT.DRIVE | PRODUCT_BIT.VPN | PRODUCT_BIT.WALLET;
 
 const getNameFromPlan = (plan?: PLANS) => {
     if (!plan) {

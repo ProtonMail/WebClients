@@ -1,0 +1,87 @@
+.wallet-button {
+	font-weight: var(--font-weight-semibold);
+}
+
+// Norm
+
+.wallet-button.button-solid-norm {
+	--button-default-text-color: var(--text-invert);
+	--button-hover-text-color: var(--text-invert);
+	--button-active-text-color: var(--text-invert);
+}
+
+.wallet-button.button-outline-norm {
+	--button-default-text-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+	--button-active-text-color: var(--interaction-norm);
+	--button-default-background-color: var(--interaction-weak-minor-1);
+	--button-hover-background-color: var(--interaction-weak-major-1);
+	--button-active-background-color: var(--interaction-weak-major-2);
+}
+
+.wallet-button.button-ghost-norm {
+	--button-default-background-color: var(--background-weak);
+	--button-hover-background-color: var(--background-weak);
+	--button-active-background-color: var(--background-weak);
+}
+
+// Weak
+
+.wallet-button.button-solid-weak,
+.wallet-button.button-outline-weak,
+.wallet-button.button-ghost-weak {
+	--button-default-text-color: var(--text-norm);
+	--button-hover-text-color: var(--text-norm);
+	--button-active-text-color: var(--text-norm);
+}
+
+.wallet-button.button-solid-weak {
+	--button-default-background-color: var(--interaction-weak-minor-1);
+	--button-hover-background-color: var(--interaction-weak-major-2);
+	--button-active-background-color: var(--interaction-weak-major-3);
+}
+
+.wallet-button.button-outline-weak {
+	--button-default-border-color: var(--interaction-weak-major-1);
+	--button-default-background-color: var(--interaction-weak-minor-1);
+	--button-hover-background-color: var(--interaction-weak-major-1);
+	--button-active-background-color: var(--interaction-weak-major-2);
+}
+
+.wallet-button.button-ghost-weak {
+	--button-default-background-color: var(--interaction-weak);
+}
+
+// Dark
+
+.button-darker {
+	--button-default-background-color: var(--primary-contrast) !important;
+	--button-hover-background-color: var(--interaction-weak-contrast) !important;
+	--button-active-background-color: var(--interaction-weak-contrast) !important;
+	--button-default-text-color: var(--text-invert) !important;
+	--button-hover-text-color: var(--text-invert) !important;
+	--button-active-text-color: var(--text-invert) !important;
+}
+
+// Shadow
+
+.wallet-button.shadow {
+	box-shadow: 0 20px 30px 0 var(--interaction-weak-major-2);
+}
+
+// Sizes
+
+.wallet-button.button-large {
+	padding-block: 1rem;
+	padding-inline: 2.5rem;
+}
+
+.wallet-button.button-medium {
+	padding-block: 0.75rem;
+	padding-inline: 2rem;
+}
+
+.wallet-button.button-small {
+	padding-block: 0.5rem;
+	padding-inline: 1rem;
+}

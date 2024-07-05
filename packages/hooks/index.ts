@@ -6,3 +6,4 @@ export { default as useInterval } from './useInterval';
 export { default as useLoading } from './useLoading';
 export { default as useEffectOnce } from './useEffectOnce';
 export { default as useSynchronizingState } from './useSynchronizingState';
+export { default as useSearchParams } from './useSearchParams';

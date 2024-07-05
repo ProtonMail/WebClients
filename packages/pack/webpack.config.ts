@@ -69,6 +69,7 @@ const getConfig = (env: any): Configuration => {
                 punycode: false,
             },
         },
+        experiments: { asyncWebAssembly: true },
         entry: getEntries(),
         output: {
             filename: isProduction

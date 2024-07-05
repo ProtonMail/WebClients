@@ -1,6 +1,15 @@
-import { ReactNode, createContext, useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
+import {
+    ReactNode,
+    createContext,
+    useCallback,
+    useContext,
+    useEffect,
+    useLayoutEffect,
+    useMemo,
+    useState,
+} from 'react';
 
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
@@ -155,6 +164,21 @@ const ThemeProvider = ({ children, appName }: Props) => {
     const [themeSetting, setThemeSettingDefault] = useState(() => {
         return getParsedThemeSetting(storedTheme);
     });
+
+    const constrainedThemeSettings: ThemeSetting = useMemo(() => {
+        // We want to protonwallet to inherit from all theme settings except styles
+        if (appName === APPS.PROTONWALLET) {
+            return {
+                ...themeSetting,
+                LightTheme: ThemeTypes.WalletLight,
+                // TOOD: move to wallet dark once theme is ready
+                DarkTheme: ThemeTypes.WalletLight,
+            };
+        }
+
+        return themeSetting;
+    }, [themeSetting]);
+
     const setThemeSetting = useCallback((theme: ThemeSetting = getDefaultThemeSetting()) => {
         setThemeSettingDefault((oldTheme: ThemeSetting) => {
             if (isDeepEqual(theme, oldTheme)) {
@@ -242,7 +266,7 @@ const ThemeProvider = ({ children, appName }: Props) => {
         });
     };
 
-    const theme = getThemeType(themeSetting, colorScheme);
+    const theme = getThemeType(constrainedThemeSettings, colorScheme);
 
     const style = getThemeStyle(theme);
 
@@ -256,8 +280,8 @@ const ThemeProvider = ({ children, appName }: Props) => {
         colorScheme,
         motionMode,
         features: {
-            scrollbars: hasBit(themeSetting.Features, ThemeFeatureSetting.SCROLLBARS_OFF),
-            animations: hasBit(themeSetting.Features, ThemeFeatureSetting.ANIMATIONS_OFF),
+            scrollbars: hasBit(constrainedThemeSettings.Features, ThemeFeatureSetting.SCROLLBARS_OFF),
+            animations: hasBit(constrainedThemeSettings.Features, ThemeFeatureSetting.ANIMATIONS_OFF),
         },
     };
 
@@ -265,23 +289,23 @@ const ThemeProvider = ({ children, appName }: Props) => {
         const htmlEl = document.querySelector('html');
 
         const defaultValue = ThemeFontSizeSettingMap[ThemeFontSizeSetting.DEFAULT].value;
-        const actualValue = ThemeFontSizeSettingMap[themeSetting.FontSize]?.value;
+        const actualValue = ThemeFontSizeSettingMap[constrainedThemeSettings.FontSize]?.value;
 
         const value = !actualValue || defaultValue === actualValue ? undefined : `${actualValue}`;
 
         syncStyleToEl(htmlEl, styles.fontSize, value);
-    }, [themeSetting.FontSize]);
+    }, [constrainedThemeSettings.FontSize]);
 
     useLayoutEffect(() => {
         const htmlEl = document.querySelector('html');
 
         const defaultValue = ThemeFontFaceSettingMap[ThemeFontFaceSetting.DEFAULT].value;
-        const actualValue = ThemeFontFaceSettingMap[themeSetting.FontFace]?.value;
+        const actualValue = ThemeFontFaceSettingMap[constrainedThemeSettings.FontFace]?.value;
 
         const value = !actualValue || defaultValue === actualValue ? undefined : `${actualValue}`;
 
         syncStyleToEl(htmlEl, styles.fontFamily, value);
-    }, [themeSetting.FontFace]);
+    }, [constrainedThemeSettings.FontFace]);
 
     useLayoutEffect(() => {
         const htmlEl = document.querySelector('html');
