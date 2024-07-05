@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { SelectedPlan } from '@proton/components/payments/core/subscription/selected-plan';
+import { SelectedPlan } from '@proton/components/payments/core';
 import {
     ADDON_NAMES,
     AddonKey,
