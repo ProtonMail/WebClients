@@ -190,6 +190,7 @@ export function LinkInfoEditor({
         top: position.top,
         left: position.left,
       }}
+      data-testid="hyperlink-form"
     >
       {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
       <form
