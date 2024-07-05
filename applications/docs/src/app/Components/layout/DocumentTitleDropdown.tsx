@@ -234,6 +234,7 @@ const DocumentTitleDropdown = ({
               onClick={() => {
                 void controller.printAsPDF()
               }}
+              data-testid="dropdown-print"
             >
               <Icon name="printer" className="color-weak mr-2" />
               {c('Action').t`Print`}
@@ -244,6 +245,7 @@ const DocumentTitleDropdown = ({
             <SimpleDropdown
               as={DropdownMenuButton}
               className="flex items-center text-left"
+              data-testid="dropdown-download"
               content={
                 <>
                   <Icon name="arrow-down-to-square" className="color-weak mr-2" />
@@ -267,6 +269,7 @@ const DocumentTitleDropdown = ({
                   onClick={() => {
                     void controller.exportAndDownload('docx')
                   }}
+                  data-testid="download-docx"
                 >
                   {c('Action').t`Microsoft Word (.docx)`}
                 </DropdownMenuButton>
@@ -275,6 +278,7 @@ const DocumentTitleDropdown = ({
                   onClick={() => {
                     void controller.exportAndDownload('html')
                   }}
+                  data-testid="download-html"
                 >
                   {c('Action').t`Web page (.html)`}
                 </DropdownMenuButton>
@@ -283,6 +287,7 @@ const DocumentTitleDropdown = ({
                   onClick={() => {
                     void controller.exportAndDownload('txt')
                   }}
+                  data-testid="download-txt"
                 >
                   {c('Action').t`Plain Text (.txt)`}
                 </DropdownMenuButton>
@@ -291,6 +296,7 @@ const DocumentTitleDropdown = ({
                   onClick={() => {
                     void controller.exportAndDownload('md')
                   }}
+                  data-testid="download-md"
                 >
                   {c('Action').t`Markdown (.md)`}
                 </DropdownMenuButton>
@@ -305,6 +311,7 @@ const DocumentTitleDropdown = ({
             onClick={() => {
               window.open(getStaticURL('/support'), '_blank')
             }}
+            data-testid="dropdown-help"
           >
             <Icon name="info-circle" className="color-weak mr-2" />
             {c('Action').t`Help`}
@@ -314,6 +321,7 @@ const DocumentTitleDropdown = ({
             onClick={() => {
               window.open(getAppHref('/', APPS.PROTONDRIVE), '_blank')
             }}
+            data-testid="dropdown-open-drive"
           >
             <Icon name="brand-proton-drive" className="color-weak mr-2" />
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
@@ -326,6 +334,7 @@ const DocumentTitleDropdown = ({
             style={{
               background: 'var(--primary-minor-2)',
             }}
+            data-testid="e2e-info"
           >
             <Icon name="lock-check" className="color-weak mr-2 align-middle" />
             <span className="align-middle">{c('Info').t`End to end encrypted.`} </span>

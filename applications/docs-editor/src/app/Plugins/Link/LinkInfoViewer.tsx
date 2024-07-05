@@ -96,6 +96,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
         top: position.top,
         left: position.left,
       }}
+      data-testid="hyperlink-form"
     >
       <div className="flex items-center gap-1.5">
         <a
@@ -110,6 +111,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             event.preventDefault()
             openLink(linkUrl)
           }}
+          data-testid="hyperlink-link"
         >
           <Icon name="arrow-out-square" className="ml-1 flex-shrink-0" />
           <div className="max-w-[35ch] overflow-hidden text-ellipsis">{linkUrl}</div>
@@ -122,6 +124,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             onClick={() => {
               navigator.clipboard.writeText(linkUrl).catch(sendErrorMessage)
             }}
+            data-testid="hyperlink-copy-link-button"
           >
             <Icon name="link" />
           </Button>
@@ -136,6 +139,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
                 onClick={() => {
                   setIsEditingLink(true)
                 }}
+                data-testid="hyperlink-edit-button"
               >
                 <Icon name="pencil" />
               </Button>
@@ -148,6 +152,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
                 onClick={() => {
                   editor.dispatchCommand(TOGGLE_LINK_COMMAND, null)
                 }}
+                data-testid="hyperlink-delete-button"
               >
                 <Icon name="trash" />
               </Button>
