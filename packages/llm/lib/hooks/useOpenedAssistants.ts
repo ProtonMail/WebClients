@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { getIsAssistantOpened } from '@proton/llm/lib/helpers';
+import useAssistantSticky from '@proton/llm/lib/hooks/useAssistantSticky';
 import { OpenedAssistant, OpenedAssistantStatus } from '@proton/llm/lib/types';
 
 interface Props {
@@ -9,14 +10,18 @@ interface Props {
 
 const useOpenedAssistants = ({ cleanSpecificErrors }: Props) => {
     const [openedAssistants, setOpenedAssistants] = useState<OpenedAssistant[]>([]);
+    const { setAssistantStickyOff, setAssistantStickyOn } = useAssistantSticky({ openedAssistants });
 
     // By default, open the assistant with the collapsed status
-    const openAssistant = (assistantID: string, status: OpenedAssistantStatus = OpenedAssistantStatus.COLLAPSED) => {
+    const openAssistant = (assistantID: string, manual = false) => {
         const newAssistant: OpenedAssistant = {
             id: assistantID,
-            status,
+            status: OpenedAssistantStatus.COLLAPSED,
         };
         setOpenedAssistants([...openedAssistants, newAssistant]);
+        if (manual) {
+            setAssistantStickyOn();
+        }
     };
 
     const setAssistantStatus = (assistantID: string, status: OpenedAssistantStatus) => {
@@ -29,15 +34,20 @@ const useOpenedAssistants = ({ cleanSpecificErrors }: Props) => {
         }
     };
 
-    const closeAssistant = (cancelRunningAction: (assistantId: string) => void) => (assistantID: string) => {
-        const isAssistantOpened = getIsAssistantOpened(openedAssistants, assistantID);
-        if (isAssistantOpened) {
-            const filteredAssistants = openedAssistants.filter((assistant) => assistant.id !== assistantID);
-            setOpenedAssistants(filteredAssistants);
-            cancelRunningAction(assistantID);
-            cleanSpecificErrors(assistantID);
-        }
-    };
+    const closeAssistant =
+        (cancelRunningAction: (assistantId: string) => void) =>
+        (assistantID: string, manual = false) => {
+            const isAssistantOpened = getIsAssistantOpened(openedAssistants, assistantID);
+            if (isAssistantOpened) {
+                const filteredAssistants = openedAssistants.filter((assistant) => assistant.id !== assistantID);
+                setOpenedAssistants(filteredAssistants);
+                cancelRunningAction(assistantID);
+                cleanSpecificErrors(assistantID);
+                if (manual) {
+                    setAssistantStickyOff();
+                }
+            }
+        };
 
     return { openedAssistants, openAssistant, setAssistantStatus, closeAssistant };
 };

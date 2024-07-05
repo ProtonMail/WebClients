@@ -14,11 +14,13 @@ import { c } from 'ttag';
 
 import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { getIsAssistantOpened } from '@proton/llm/lib';
+import useAssistantSticky from '@proton/llm/lib/hooks/useAssistantSticky';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import { getRecipients } from '@proton/shared/lib/mail/messages';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
+import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
@@ -90,8 +92,16 @@ const Composer = (
     const composerContainerRef = useRef<HTMLDivElement>(null);
     const composerMetaRef = useRef<HTMLDivElement>(null);
 
-    const { openedAssistants, openAssistant, closeAssistant, setAssistantStatus, canShowAssistant } =
-        useAssistant(composerID);
+    const {
+        openedAssistants,
+        openAssistant,
+        closeAssistant,
+        setAssistantStatus,
+        canShowAssistant,
+        hasCompatibleBrowser,
+        hasCompatibleHardware,
+    } = useAssistant(composerID);
+    const { getIsStickyAssistant } = useAssistantSticky({ openedAssistants });
 
     // onClose handler can be called in an async handler
     // Input onClose ref can change in the meantime
@@ -224,11 +234,12 @@ const Composer = (
 
     const isAssistantOpenedInComposer = getIsAssistantOpened(openedAssistants, composerID);
 
-    const handleToggleAssistant = () => {
+    // Set manual to false when you want to open/close the assistant without setting the localstorage value
+    const handleToggleAssistant = (manual = true) => {
         if (isAssistantOpenedInComposer) {
-            closeAssistant(composerID);
+            closeAssistant(composerID, manual);
         } else {
-            openAssistant(composerID);
+            openAssistant(composerID, manual);
         }
     };
 
@@ -239,12 +250,26 @@ const Composer = (
      */
     const disableAssistantButton = openedAssistants.length > 0 && !isAssistantOpenedInComposer;
 
+    const canRunAssistant =
+        userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY ||
+        (hasCompatibleBrowser && hasCompatibleHardware);
+
     // Hook used to open the assistant automatically the first time the user opens the composer
     const { isAssistantInitialSetup } = useComposerAssistantInitialSetup({
         onToggleAssistant: handleToggleAssistant,
         canShowAssistant,
+        canRunAssistant,
         disableAssistantButton,
+        assistantID: composerID,
+        openedAssistants,
     });
+
+    // open assistant by default if it was opened last time
+    useEffect(() => {
+        if (getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)) {
+            openAssistant(composerID);
+        }
+    }, [isAssistantInitialSetup, composerID, canShowAssistant]);
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
         handleChange((message) => {
@@ -361,6 +386,8 @@ const Composer = (
                         getContentBeforeBlockquote={getContentBeforeBlockquote}
                         setContentBeforeBlockquote={setContentBeforeBlockquote}
                         setInnerModal={setInnerModal}
+                        recipients={getPublicRecipients(modelMessage?.data)}
+                        sender={getSender(modelMessage?.data)}
                     />
                 )}
                 <div
