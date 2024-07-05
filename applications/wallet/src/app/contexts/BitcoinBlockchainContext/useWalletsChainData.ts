@@ -9,13 +9,12 @@ import generateUID from '@proton/atoms/generateUID';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData, useGetBitcoinNetwork } from '@proton/wallet';
+import { POOL_FILLING_THRESHOLD } from '@proton/wallet/utils/email-integration';
 
-import { POOL_FILLING_THRESHOLD } from '../../constants/email-integration';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';
-import { useGetBitcoinNetwork } from '../../store/hooks';
 import {
     AccountChainDataByAccountId,
     AccountIdByDerivationPathAndWalletId,

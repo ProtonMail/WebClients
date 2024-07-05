@@ -6,12 +6,12 @@ import { c } from 'ttag';
 import { WasmApiExchangeRate, WasmBitcoinUnit, WasmTxBuilder } from '@proton/andromeda';
 import { Icon, IconName, Tooltip } from '@proton/components/components';
 import { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import { useUserWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
 import { usePsbt } from '../../../../hooks/usePsbt';
 import { TxBuilderUpdater } from '../../../../hooks/useTxBuilder';
-import { useUserWalletSettings } from '../../../../store/hooks/useUserWalletSettings';
 import { isExchangeRate } from '../../../../utils';
 
 import './FeesModal.scss';

@@ -1,13 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
-import { apiWalletsData } from '@proton/wallet';
+import { apiWalletsData, mockUseUserWalletSettings } from '@proton/wallet/tests';
 
 import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext, mockUseWalletAccountExchangeRate } from '../../../tests';
 import { mockUseFiatCurrencies } from '../../../tests/mocks/useFiatCurrencies';
 import { mockUseGetExchangeRate } from '../../../tests/mocks/useGetExchangeRate';
-import { mockUseUserWalletSettings } from '../../../tests/mocks/useUserWalletSettings';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
 describe('WalletReceiveContent', () => {

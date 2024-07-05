@@ -1,4 +1,4 @@
-import { WalletClient, WalletClientKeys } from './types';
+import { WalletClient, WalletClientKeys } from '../types';
 
 export const WALLET_SETTINGS_ROUTES = {
     DOWNLOADS: '/downloads',

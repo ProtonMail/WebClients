@@ -7,3 +7,9 @@ export const mockUseAddresses = (value: [Address[]?, boolean?] = []) => {
     mockedUseAddresses.mockReturnValue([addresses ?? [], Boolean(cached)]);
     return mockedUseAddresses;
 };
+
+export const mockUseGetAddresses = (value: Address[] = []) => {
+    const mockedUseAddresses = vi.spyOn(useAddressesModule, 'useGetAddresses');
+    mockedUseAddresses.mockReturnValue(vi.fn(async () => value ?? []));
+    return mockedUseAddresses;
+};

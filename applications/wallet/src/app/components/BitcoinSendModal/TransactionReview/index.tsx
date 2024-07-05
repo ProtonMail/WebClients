@@ -4,14 +4,12 @@ import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuild
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, Button, CoreButton, CoreInput } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { Price } from '../../../atoms/Price';
-import { COMPUTE_BITCOIN_UNIT } from '../../../constants';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
-import { useUserWalletSettings } from '../../../store/hooks/useUserWalletSettings';
 import { convertAmountStr, getLabelByUnit, isExchangeRate } from '../../../utils';
 import { EmailListItem } from '../../EmailOrBitcoinAddressInput';
 import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';

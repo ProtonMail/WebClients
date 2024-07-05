@@ -1,1 +1,2 @@
-export * from "./useDecryptedApiWalletsData"
+export * from './useDecryptedApiWalletsData';
+export * from './useWalletAutoCreate';

@@ -1,4 +1,4 @@
-import * as useWalletSettingsModule from '@proton/wallet/store/hooks/useWalletSettings';
+import * as useWalletSettingsModule from '../../store';
 
 export const mockUseWalletSettings = (
     mockedValue?: Partial<ReturnType<typeof useWalletSettingsModule.useWalletSettings>>

@@ -15,18 +15,21 @@ import {
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
+    BASE_INDEX_OPTIONS,
+    DEFAULT_INDEX,
     IWasmApiWalletData,
+    PURPOSE_BY_SCRIPT_TYPE,
+    SCRIPT_TYPES,
     encryptWalletDataWithWalletKey,
+    getDefaultWalletAccountName,
     useWalletApiClients,
     walletAccountCreation,
 } from '@proton/wallet';
 
 import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
-import { BASE_INDEX_OPTIONS, DEFAULT_INDEX, PURPOSE_BY_SCRIPT_TYPE, SCRIPT_TYPES } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
 import { SubTheme, getLabelByScriptType, isUndefined } from '../../utils';
-import { getDefaultWalletAccountName } from '../../utils/wallet';
 
 export interface WalletAccountCreationModalOwnProps {
     apiWalletData: IWasmApiWalletData;

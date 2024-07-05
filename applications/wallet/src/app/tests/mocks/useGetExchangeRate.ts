@@ -1,6 +1,6 @@
 import { MockedFunction } from 'vitest';
 
-import { exchangeRate } from '@proton/wallet';
+import { exchangeRate } from '@proton/wallet/tests';
 
 import * as useExchangeRateModule from '../../store/hooks/useExchangeRate';
 

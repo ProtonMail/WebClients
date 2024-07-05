@@ -10,28 +10,26 @@ import {
     WasmFiatCurrencySymbol,
     WasmMnemonic,
     WasmWallet,
-    WasmWordCount,
 } from '@proton/andromeda';
 import { useAddresses, useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { WalletType, encryptWalletData, useWalletApiClients, walletCreation } from '@proton/wallet';
+import {
+    DEFAULT_ACCOUNT_LABEL,
+    DEFAULT_SCRIPT_TYPE,
+    FIRST_INDEX,
+    PURPOSE_BY_SCRIPT_TYPE,
+    WalletType,
+    encryptWalletData,
+    getDefaultWalletName,
+    useUserWalletSettings,
+    useWalletApiClients,
+    walletCreation,
+    wordCountToNumber,
+} from '@proton/wallet';
 
-import { DEFAULT_ACCOUNT_LABEL, DEFAULT_SCRIPT_TYPE, PURPOSE_BY_SCRIPT_TYPE } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useFiatCurrencies, useWalletDispatch } from '../../store/hooks';
-import { useUserWalletSettings } from '../../store/hooks/useUserWalletSettings';
 import { isUndefined } from '../../utils';
-import { getDefaultWalletName } from '../../utils/wallet';
-
-const wordCountToNumber: Record<WasmWordCount, number> = {
-    [WasmWordCount.Words12]: 12,
-    [WasmWordCount.Words15]: 15,
-    [WasmWordCount.Words18]: 18,
-    [WasmWordCount.Words21]: 21,
-    [WasmWordCount.Words24]: 24,
-};
-
-const FIRST_ACCOUNT_INDEX = 0;
 
 const parseMnemonic = (value?: string): { mnemonic: WasmMnemonic } | { error: string } => {
     const words = value?.trim().split(' ') ?? [];
@@ -155,7 +153,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 const derivationPath = WasmDerivationPath.fromParts(
                     PURPOSE_BY_SCRIPT_TYPE[DEFAULT_SCRIPT_TYPE],
                     network,
-                    FIRST_ACCOUNT_INDEX
+                    FIRST_INDEX
                 );
 
                 // Typeguard

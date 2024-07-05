@@ -3,7 +3,5 @@ export * from './useDecryptedWallet';
 export * from './useGetApiWalletTransactionData';
 export * from './useWalletAccountExchangeRate';
 export * from './useWalletDispatch';
-export * from './useWalletSettings';
-export * from './useWalletApi';
 export * from './useBlockchainClient';
 export * from './useContactEmailsMap';

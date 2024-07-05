@@ -1,8 +1,8 @@
 import { useEffect, useMemo } from 'react';
 
 import { WasmTxBuilder } from '@proton/andromeda';
+import { DEFAULT_TARGET_BLOCK } from '@proton/wallet';
 
-import { DEFAULT_TARGET_BLOCK } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';
 
 type BlockTarget = number;

@@ -52,5 +52,5 @@
             "@proton/andromeda": ["./packages/wasm/andromeda/*"]
         }
     },
-    "exclude": ["**/node_modules", "**/.*/"]
+    "exclude": ["**/node_modules", "**/.*/", "./packages/wallet/tests"]
 }
