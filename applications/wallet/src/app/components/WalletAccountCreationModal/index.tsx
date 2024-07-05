@@ -131,18 +131,16 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                     .t`If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.`}</p>
             </ModalParagraph>
 
-            <div className="flex flex-row">
-                <Input
-                    label={c('Wallet Account').t`Account label`}
-                    id="account-label-input"
-                    placeholder={c('Wallet Account').t`Savings for holiday`}
-                    value={label}
-                    disabled={loading}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                        setLabel(event.target.value);
-                    }}
-                />
-            </div>
+            <Input
+                label={c('Wallet Account').t`Account label`}
+                id="account-label-input"
+                placeholder={c('Wallet Account').t`Savings for holiday`}
+                value={label}
+                disabled={loading}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setLabel(event.target.value);
+                }}
+            />
 
             <Collapsible className="my-6">
                 <CollapsibleHeader
@@ -158,30 +156,28 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                             {c('Wallet account')
                                 .t`We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.`}
                         </ModalSectionHeader>
-                        <div className="flex flex-row mt-4 w-full">
-                            <Select
-                                label={c('Wallet Account').t`Address type`}
-                                id="account-script-type-selector"
-                                aria-describedby="label-account-script-type"
-                                value={selectedScriptType}
-                                disabled={loading}
-                                onChange={(event) => {
-                                    setSelectedScriptType(event.value);
-                                }}
-                                options={SCRIPT_TYPES.map((opt) => ({
-                                    label: getLabelByScriptType(opt as WasmScriptType),
-                                    value: opt,
-                                    id: opt.toString(),
-                                    children: (
-                                        <SelectOption
-                                            label={getLabelByScriptType(opt as WasmScriptType)}
-                                            description={getDescriptionByScriptType(opt as WasmScriptType)}
-                                        />
-                                    ),
-                                }))}
-                                renderSelected={(selected) => getLabelByScriptType(selected as WasmScriptType)}
-                            />
-                        </div>
+                        <Select
+                            label={c('Wallet Account').t`Address type`}
+                            id="account-script-type-selector"
+                            aria-describedby="label-account-script-type"
+                            value={selectedScriptType}
+                            disabled={loading}
+                            onChange={(event) => {
+                                setSelectedScriptType(event.value);
+                            }}
+                            options={SCRIPT_TYPES.map((opt) => ({
+                                label: getLabelByScriptType(opt as WasmScriptType),
+                                value: opt,
+                                id: opt.toString(),
+                                children: (
+                                    <SelectOption
+                                        label={getLabelByScriptType(opt as WasmScriptType)}
+                                        description={getDescriptionByScriptType(opt as WasmScriptType)}
+                                    />
+                                ),
+                            }))}
+                            renderSelected={(selected) => getLabelByScriptType(selected as WasmScriptType)}
+                        />
 
                         <CoreButton className="my-3 mr-auto" shape="underline" color="norm">{c('Wallet account')
                             .t`Learn more`}</CoreButton>

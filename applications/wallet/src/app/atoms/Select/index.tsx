@@ -1,14 +1,14 @@
 import { MutableRefObject, ReactNode, useRef } from 'react';
 
+import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import Option from '@proton/components/components/option/Option';
 import CoreSearchableSelect, {
     Props as _CoreSearchableSelectProps,
 } from '@proton/components/components/selectTwo/SearchableSelect';
 import SelectTwo, { Props as SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import InputField, { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
-import clsx from '@proton/utils/clsx';
 
-import './Select.scss';
+import '../InputFieldStacked/InputFieldStacked.scss';
 
 type Props<V> = Omit<
     SelectTwoProps<V> & InputFieldOwnProps,
@@ -16,33 +16,32 @@ type Props<V> = Omit<
 > & {
     options: { id: string; value: V; label: string; disabled?: boolean; children?: ReactNode }[];
     label?: string | JSX.Element;
-    bordered?: boolean;
     containerClassName?: string;
     prefix?: JSX.Element;
+    isGroupElement?: boolean;
 };
 
-export const Select = <V extends unknown>({ options, bordered, containerClassName, prefix, ...props }: Props<V>) => {
+export const Select = <V extends unknown>({
+    options,
+    containerClassName,
+    prefix,
+    isGroupElement,
+    ...props
+}: Props<V>) => {
     const selectRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div
-            className={clsx(
-                'wallet-select flex flex-row items-center flex-nowrap bg-weak py-5 px-4 rounded-xl color-norm w-full',
-                bordered && 'bordered',
-                props.disabled && 'disabled',
-                containerClassName
-            )}
-            ref={selectRef}
-        >
+        <InputFieldStacked isGroupElement={isGroupElement} isBigger ref={selectRef} classname={containerClassName}>
             {prefix}
             <InputField<typeof SelectTwo<V>>
                 as={SelectTwo}
                 dropdownClassName="wallet-select-dropdown"
                 assistContainerClassName="empty:hidden"
-                labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
                 originalPlacement="bottom"
                 unstyled
                 anchorRef={selectRef as MutableRefObject<any>}
+                caretIconName="chevron-down"
+                caretClassName="stacked-field-caret"
                 {...props}
             >
                 {options.map((opt) => (
@@ -51,7 +50,7 @@ export const Select = <V extends unknown>({ options, bordered, containerClassNam
                     </Option>
                 ))}
             </InputField>
-        </div>
+        </InputFieldStacked>
     );
 };
 
@@ -60,40 +59,33 @@ export type CoreSearchableSelectProps<V> = _CoreSearchableSelectProps<V>;
 type SearchableSelectProps<V> = CoreSearchableSelectProps<V> & {
     label: string | JSX.Element;
     hint?: string;
-    bordered?: boolean;
     containerClassName?: string;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
+    isGroupElement?: boolean;
 };
 
 export const SearchableSelect = <V extends unknown>({
-    bordered,
     containerClassName,
+    isGroupElement,
     ...props
 }: SearchableSelectProps<V>) => {
     const selectRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div
-            className={clsx(
-                'wallet-select wallet-select-dropdown-button bg-weak py-5 px-4 rounded-xl color-norm w-full',
-                bordered && 'bordered',
-                props.disabled && 'disabled',
-                containerClassName
-            )}
-            ref={selectRef}
-        >
+        <InputFieldStacked isGroupElement={isGroupElement} isBigger ref={selectRef}>
             <InputField
                 as={CoreSearchableSelect<V>}
                 dropdownClassName="wallet-select-dropdown"
                 assistContainerClassName="empty:hidden"
-                labelContainerClassName="expand-click-area color-hint m-0 text-normal text-sm"
                 originalPlacement="bottom"
                 availablePlacements={['bottom']}
                 unstyled
                 anchorRef={selectRef as MutableRefObject<any>}
+                caretIconName="chevron-down"
+                caretClassName="stacked-field-caret"
                 {...props}
             />
-        </div>
+        </InputFieldStacked>
     );
 };
 
