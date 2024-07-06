@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -9,6 +9,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { vaultMoveAllItemsIntent } from '@proton/pass/store/actions';
 import { type VaultShareItem } from '@proton/pass/store/reducers';
+import { selectVaultHasSecureLinks } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 
@@ -32,6 +33,8 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
             [vault]
         )
     );
+
+    const vaultHasSecureLinks = useSelector(selectVaultHasSecureLinks(vault.shareId));
 
     return (
         <>
@@ -61,6 +64,10 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
                             submitText={c('Action').t`Move all items`}
                             title={c('Title').t`Move all items ?`}
                         >
+                            {vaultHasSecureLinks && (
+                                <Card className="mb-2 text-sm" type="warning">{c('Info')
+                                    .t`The item's secure links will be removed when it's moved to another vault, please confirm`}</Card>
+                            )}
                             <Card className="mb-2 text-sm" type="primary">{c('Info')
                                 .t`Moving an item to another vault will erase its history`}</Card>
                             <Alert className="mb-4" type="info">
