@@ -1,5 +1,5 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -20,6 +20,7 @@ import {
     itemRestoreIntent,
     itemTrashIntent,
 } from '@proton/pass/store/actions';
+import { selectItemSecureLinksCount } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -81,6 +82,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         bulk.disable();
     };
 
+    const hasSecureLinks = Boolean(
+        useSelector(selectItemSecureLinksCount(moveItem?.param?.item?.shareId, moveItem?.param?.item.itemId))
+    );
+
     const context = useMemo<ItemActionsContextType>(() => {
         return {
             move: (item, mode) =>
@@ -129,6 +134,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                         submitText={c('Action').t`Confirm`}
                         title={c('Title').t`Move item?`}
                     >
+                        {hasSecureLinks && (
+                            <Card className="mb-2 text-sm" type="warning">{c('Info')
+                                .t`The item's secure links will be removed when it's moved to another vault, please confirm`}</Card>
+                        )}
                         <Card className="mb-2 text-sm" type="primary">{c('Info')
                             .t`Moving an item to another vault will erase its history`}</Card>
                         <Alert className="mb-4" type="info">
