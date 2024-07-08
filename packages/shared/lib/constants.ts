@@ -440,6 +440,7 @@ export enum ADDRESS_TYPE {
     TYPE_CUSTOM_DOMAIN = 3,
     TYPE_PREMIUM = 4,
     TYPE_EXTERNAL = 5,
+    TYPE_GROUP = 6,
 }
 
 export enum ADDRESS_RECEIVE {

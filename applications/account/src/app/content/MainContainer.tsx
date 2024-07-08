@@ -140,6 +140,7 @@ const MainContainer = () => {
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
+    const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
     const recoveryNotification = useRecoveryNotification(false);
@@ -169,6 +170,7 @@ const MainContainer = () => {
         isSessionRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
         isBreachesAccountDashboardEnabled,
+        isUserGroupsFeatureEnabled,
         showThemeSelection,
         isNewCancellationFlowExtended,
         assistantKillSwitch,
