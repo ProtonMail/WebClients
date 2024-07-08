@@ -5,9 +5,7 @@ const useKeyPress = (cb: (e: KeyboardEvent) => void, deps: DependencyList = [], 
 
     useEffect(() => {
         el.addEventListener('keydown', callback);
-        return () => {
-            el.removeEventListener('keydown', cb);
-        };
+        return () => el.removeEventListener('keydown', callback);
     }, deps);
 };
 
