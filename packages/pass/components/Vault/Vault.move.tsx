@@ -63,8 +63,8 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
                         ]}
                     >
                         {hasSecureLinks
-                            ? c('Info').t`Moving an item to another vault will erase its history and all secure links.`
-                            : c('Info').t`Moving an item to another vault will erase its history.`}
+                            ? c('Info').t`Moving items to another vault will erase their history and all secure links.`
+                            : c('Info').t`Moving items to another vault will erase their history.`}
                     </Prompt>
                 )}
             </WithVault>
