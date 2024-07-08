@@ -2,7 +2,13 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { addTokensResponse, apiMock } from '@proton/testing';
 
-import { Autopay, PAYMENT_METHOD_TYPES, PaymentMethodPaypal, SavedPaymentMethodInternal } from '../core';
+import {
+    AmountAndCurrency,
+    Autopay,
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodPaypal,
+    SavedPaymentMethodInternal,
+} from '../core';
 import { useSavedMethod } from './useSavedMethod';
 
 const onChargeableMock = jest.fn();
@@ -153,13 +159,15 @@ it('should process token', async () => {
         v: 5,
     });
 
+    const amountAndCurrency: AmountAndCurrency = {
+        Amount: 1000,
+        Currency: 'USD',
+    };
+
     const { result } = renderHook(() =>
         useSavedMethod(
             {
-                amountAndCurrency: {
-                    Amount: 1000,
-                    Currency: 'USD',
-                },
+                amountAndCurrency,
                 savedMethod,
                 onChargeable: onChargeableMock,
             },
@@ -213,13 +221,15 @@ it('should reset token if verification failed', async () => {
     addTokensResponse().pending();
     verifyPaymentMock.mockRejectedValue(new Error('Verification failed'));
 
+    const amountAndCurrency: AmountAndCurrency = {
+        Amount: 1000,
+        Currency: 'USD',
+    };
+
     const { result } = renderHook(() =>
         useSavedMethod(
             {
-                amountAndCurrency: {
-                    Amount: 1000,
-                    Currency: 'USD',
-                },
+                amountAndCurrency,
                 savedMethod,
                 onChargeable: onChargeableMock,
             },
@@ -279,4 +289,39 @@ it('should update the saved method', async () => {
 
     expect((result.current.paymentProcessor as any).state.method.paymentMethodId).toEqual(newSavedMethod.ID);
     expect((result.current.paymentProcessor as any).state.method.type).toEqual(newSavedMethod.Type);
+});
+
+it('should reset token if amountAndCurrency changes', async () => {
+    addTokensResponse().pending();
+    verifyPaymentMock.mockRejectedValue(new Error('Verification failed'));
+
+    const { result, rerender } = renderHook(() =>
+        useSavedMethod(
+            {
+                amountAndCurrency: {
+                    Amount: 1000,
+                    Currency: 'USD',
+                },
+                savedMethod,
+                onChargeable: onChargeableMock,
+            },
+            {
+                api: apiMock,
+                verifyPayment: verifyPaymentMock,
+            }
+        )
+    );
+
+    await result.current.fetchPaymentToken();
+
+    rerender({
+        amountAndCurrency: {
+            Amount: 2000,
+            Currency: 'USD',
+        },
+        savedMethod,
+        onChargeable: onChargeableMock,
+    });
+
+    expect(result.current.paymentProcessor?.fetchedPaymentToken).toEqual(null);
 });

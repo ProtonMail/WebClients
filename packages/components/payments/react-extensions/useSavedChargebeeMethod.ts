@@ -67,6 +67,7 @@ export const useSavedChargebeeMethod = (
     useEffect(() => {
         if (paymentProcessor) {
             paymentProcessor.amountAndCurrency = amountAndCurrency;
+            paymentProcessor.reset();
         }
     }, [amountAndCurrency]);
 
