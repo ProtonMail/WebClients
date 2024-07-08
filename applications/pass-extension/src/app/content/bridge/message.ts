@@ -34,24 +34,32 @@ export const isBridgeRequest = (data: any): data is BridgeRequest =>
     data?.type === BRIDGE_REQUEST &&
     ALLOWED_MESSAGES.includes(data?.request?.type);
 
+const bridgeTimeout = () => wait(BRIDGE_INIT_TIMEOUT).then(() => throwError({ name: 'BridgeTimeout' }));
+
 export const createMessageBridge = () => {
     const state: BridgeState = { connected: true, ready: awaiter<void>() };
 
-    const init = () => {
-        void Promise.race([
-            waitForPageReady().then(() => {
-                const onClientScriptReady = (event: MessageEvent) => {
-                    if (event.data?.type === CLIENT_SCRIPT_READY_EVENT) {
-                        state.ready.resolve();
-                        window.removeEventListener('message', onClientScriptReady);
-                    }
-                };
+    const onClientScriptReady = (event: MessageEvent) => {
+        if (event.data?.type === CLIENT_SCRIPT_READY_EVENT) {
+            state.ready.resolve();
+            window.removeEventListener('message', onClientScriptReady);
+        }
+    };
 
-                window.addEventListener('message', onClientScriptReady);
-                return state.ready;
-            }),
-            wait(BRIDGE_INIT_TIMEOUT).then(() => throwError({ name: 'BridgeTimeout' })),
-        ]).catch(state.ready.reject);
+    /** The bridge is created in the MAIN world on `document_start`, while
+     * the content script is injected on `document_end`. As such, we wait
+     * for the page to be ready before setting up the listener. A timeout
+     * is used to prevent indefinite waiting in case of a stale script. */
+    const init = () => {
+        window.addEventListener('message', onClientScriptReady);
+
+        waitForPageReady()
+            .catch(() => {
+                state.connected = false;
+                throwError({ name: 'BridgeDisconnected' });
+            })
+            .then(() => Promise.race([state.ready, bridgeTimeout()]))
+            .catch(state.ready.reject);
     };
 
     const sendMessage = async <T extends BridgeMessageType>(
