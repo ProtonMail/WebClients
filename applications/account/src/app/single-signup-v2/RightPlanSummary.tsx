@@ -2,12 +2,15 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getDealDurationText } from '@proton/components/containers/offers/helpers/offerCopies';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 
 import SaveLabel from './SaveLabel';
 
@@ -16,6 +19,7 @@ interface Props {
     title: string;
     price: ReactNode;
     regularPrice: ReactNode;
+    addons?: ReactNode;
     logo: ReactNode;
     children?: ReactNode;
     discount: number;
@@ -30,6 +34,7 @@ const RightPlanSummary = ({
     cycle,
     title,
     price,
+    addons,
     regularPrice,
     logo,
     children,
@@ -80,20 +85,12 @@ const RightPlanSummary = ({
                 </div>
             </div>
             {(() => {
-                // TODO: Add all addons
-                if (mode !== 'addons' || !checkout) {
+                if (mode !== 'addons' || !checkout || cycle === undefined) {
                     return null;
                 }
-
                 return (
                     <>
-                        <div className="flex flex-nowrap mb-4">
-                            <div className="flex-1">{checkout.usersTitle}</div>
-                            <div className="text-right">
-                                <div className="text-rg text-bold">{price}</div>
-                                <span className="color-weak ml-1">{` ${c('Suffix').t`/month`}`}</span>
-                            </div>
-                        </div>
+                        {addons}
                         <div className="mb-4">
                             <hr />
                         </div>
@@ -117,3 +114,48 @@ const RightPlanSummary = ({
 };
 
 export default RightPlanSummary;
+
+const getPrice = (price: string) => {
+    return (
+        <div className="text-right">
+            <div className="text-rg text-bold">{price}</div>
+            <span className="color-weak ml-1">{` ${c('Suffix').t`/month`}`}</span>
+        </div>
+    );
+};
+
+export const RightPlanSummaryAddons = ({
+    cycle,
+    currency,
+    checkout,
+}: {
+    cycle: Cycle;
+    currency: Currency;
+    checkout: SubscriptionCheckoutData;
+}) => {
+    return [
+        {
+            key: 'users',
+            left: checkout?.usersTitle,
+            right: getPrice(getSimplePriceString(currency, checkout.membersPerMonth, '')),
+        },
+        ...checkout.addons.map((addon) => {
+            const price = (addon.quantity * (addon.pricing[cycle] || 0)) / cycle;
+            if (isNaN(price)) {
+                return;
+            }
+            return {
+                key: addon.name,
+                left: <span>{addon.title}</span>,
+                right: getPrice(getSimplePriceString(currency, price, '')),
+            };
+        }),
+    ]
+        .filter(isTruthy)
+        .map(({ key, left, right }) => (
+            <div key={key} className="flex flex-nowrap mb-4">
+                <div className="flex-1">{left}</div>
+                {right}
+            </div>
+        ));
+};
