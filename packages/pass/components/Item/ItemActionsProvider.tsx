@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, Prompt } from '@proton/components/index';
+import { Prompt } from '@proton/components/index';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
@@ -21,7 +19,7 @@ import {
     itemRestoreIntent,
     itemTrashIntent,
 } from '@proton/pass/store/actions';
-import { selectItemSecureLinks } from '@proton/pass/store/selectors';
+import { selectItemSecureLinks, selectSecureLinksByItems } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -83,9 +81,13 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         bulk.disable();
     };
 
-    const hasSecureLinks = Boolean(
+    const itemHasSecureLinks = Boolean(
         useSelector(selectItemSecureLinks(moveItem?.param?.item?.shareId ?? '', moveItem?.param?.item.itemId ?? ''))
             .length
+    );
+
+    const itemsHasSecureLinks = Boolean(
+        useSelector(selectSecureLinksByItems(moveManyItems.param?.selected ?? {})).length
     );
 
     const context = useMemo<ItemActionsContextType>(() => {
@@ -137,7 +139,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                             <Button onClick={moveItem.cancel}>{c('Action').t`Cancel`}</Button>,
                         ]}
                     >
-                        {hasSecureLinks
+                        {itemHasSecureLinks
                             ? c('Info').t`Moving an item to another vault will erase its history and all secure links.`
                             : c('Info').t`Moving an item to another vault will erase its history.`}
                     </Prompt>
@@ -146,22 +148,18 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             <WithVault shareId={moveManyItems.param?.shareId}>
                 {({ content: { name } }) => (
-                    <ConfirmationModal
+                    <Prompt
                         open={moveManyItems.pending}
-                        onClose={moveManyItems.cancel}
-                        onSubmit={moveManyItems.confirm}
-                        submitText={c('Action').t`Confirm`}
-                        title={c('Title').t`Move items?`}
+                        title={c('Title').t`Move items to "${name}"?`}
+                        buttons={[
+                            <Button color="norm" onClick={moveManyItems.confirm}>{c('Action').t`Confirm`}</Button>,
+                            <Button onClick={moveManyItems.cancel}>{c('Action').t`Cancel`}</Button>,
+                        ]}
                     >
-                        <Card className="mb-2 text-sm" type="primary">{c('Info')
-                            .t`Moving items to another vault will erase their history`}</Card>
-                        <Alert className="mb-4" type="info">
-                            {
-                                // translator: variable here is the name of the user's vault
-                                c('Info').t`Are you sure you want to move items to "${name}" ?`
-                            }
-                        </Alert>
-                    </ConfirmationModal>
+                        {itemsHasSecureLinks
+                            ? c('Info').t`Moving items to another vault will erase their history and all secure links.`
+                            : c('Info').t`Moving items to another vault will erase their history.`}
+                    </Prompt>
                 )}
             </WithVault>
         </ItemActionsContext.Provider>
