@@ -1,26 +1,16 @@
-export type KasperskyLogin = {
-    websiteName?: string;
-    websiteURL?: string;
-    application?: string;
-    accountName?: string;
-    loginName?: string;
-    login?: string;
-    password?: string;
-    comment?: string;
-};
+export type KasperskyItem = Partial<Record<KasperskyItemKey, string>>;
 
-export enum KasperskyLoginLabel {
+export enum KasperskyItemKey {
+    ACCOUNT_NAME = 'Account name',
+    APPLICATION = 'Application',
+    COMMENT = 'Comment',
+    LOGIN = 'Login',
+    LOGIN_NAME = 'Login name',
+    NAME = 'Name',
+    TEXT = 'Text',
+    PASSWORD = 'Password',
     WEBSITE_NAME = 'Website name',
     WEBSITE_URL = 'Website URL',
-    APPLICATION = 'Application',
-    ACCOUNT_NAME = 'Account name',
-    LOGIN_NAME = 'Login name',
-    LOGIN = 'Login',
-    PASSWORD = 'Password',
-    COMMENT = 'Comment',
 }
 
-export enum KasperskyNoteLabel {
-    NAME = 'Name',
-    NOTE = 'Text',
-}
+export const KasperskyItemKeys = Object.values(KasperskyItemKey) as string[];
