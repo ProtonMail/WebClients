@@ -1,7 +1,7 @@
 import { getBrowser, getOS, isAndroid, isDesktop, isIos, isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { MIME_TYPES } from '../constants';
-import { SupportedMimeTypes } from '../drive/constants';
+import { SupportedMimeTypes, SupportedProtonDocsMimeTypes } from '../drive/constants';
 import { Version } from './version';
 
 const isWebpSupported = () => {
@@ -131,10 +131,10 @@ export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mim
  * A helper function to determine if a mimetype can be converted by Proton Docs.
  */
 export const isProtonDocsConvertible = (mimeType: string) =>
-    mimeType === SupportedMimeTypes.docx ||
-    mimeType === 'text/plain' ||
-    mimeType === 'text/markdown' ||
-    mimeType === 'text/html';
+    mimeType === SupportedProtonDocsMimeTypes.docx ||
+    mimeType === SupportedProtonDocsMimeTypes.txt ||
+    mimeType === SupportedProtonDocsMimeTypes.md ||
+    mimeType === SupportedProtonDocsMimeTypes.html;
 
 export const PROTON_DOC_MIMETYPE = 'application/vnd.proton.doc';
 export const isProtonDocument = (mimeType: string) => mimeType === PROTON_DOC_MIMETYPE;
