@@ -20,7 +20,6 @@ enum CommonFeatureFlag {
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
-    InboxFreeUserRotatingButtonStyles = 'InboxFreeUserRotatingButtonStyles',
     Wallet = 'Wallet',
     WalletAutoSetup = 'WalletAutoSetup',
 }
