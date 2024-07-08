@@ -1,0 +1,29 @@
+.main-area:has(section > .groups-management) {
+	display: flex;
+}
+
+.container-section-sticky:has(section > .groups-management) {
+	display: flex;
+	flex-direction: column;
+}
+
+section:has(> .groups-management) {
+	flex-grow: 1;
+}
+
+.groups-management .dual-pane-content {
+	box-shadow: unset;
+
+	&:empty {
+		display: block;
+	}
+}
+
+.groups-management .pass-field-box {
+	border: 1px solid var(--border-norm);
+	background-color: var(--sidebar-background-color);
+}
+
+.groups-management form > fieldset {
+	margin-block-start: var(--space-2);
+}
