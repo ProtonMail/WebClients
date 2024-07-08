@@ -5,6 +5,7 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants'
 import { getErrorString } from '../Util/GetErrorString'
 import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '../Domain/Result/Result'
+import { getNodeNameWithoutExtension } from '@proton/docs-shared'
 
 /**
  * Creates a new empty document shell file. This file will then be opened, and the contents will be converted by the editor.
@@ -30,10 +31,7 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
           }
         : await this.driveCompat.getMyFilesNodeMeta()
 
-      const extension = node.mimeType === SupportedMimeTypes.docx ? 'docx' : 'md'
-      const nodeNameWithoutExtension = node.name.endsWith(`.${extension}`)
-        ? node.name.substring(0, node.name.lastIndexOf(`.${extension}`))
-        : node.name
+      const nodeNameWithoutExtension = getNodeNameWithoutExtension(node)
       const newDocName = await this.driveCompat.findAvailableNodeName(parentMeta, nodeNameWithoutExtension)
       const shellResult = await this.driveCompat.createDocumentNode(parentMeta, newDocName)
 
