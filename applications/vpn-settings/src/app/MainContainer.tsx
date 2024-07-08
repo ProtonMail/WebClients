@@ -101,7 +101,14 @@ const MainContainer: FunctionComponent = () => {
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
     const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
-    const routes = getRoutes({ user, subscription, organization, isNewCancellationFlowExtended });
+    const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
+    const routes = getRoutes({
+        user,
+        subscription,
+        organization,
+        isNewCancellationFlowExtended,
+        isUserGroupsFeatureEnabled,
+    });
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();

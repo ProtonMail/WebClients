@@ -12,9 +12,16 @@ interface Arguments {
     subscription?: Subscription;
     organization?: Organization;
     isNewCancellationFlowExtended: boolean;
+    isUserGroupsFeatureEnabled: boolean;
 }
 
-export const getRoutes = ({ user, subscription, organization, isNewCancellationFlowExtended }: Arguments) => {
+export const getRoutes = ({
+    user,
+    subscription,
+    organization,
+    isNewCancellationFlowExtended,
+    isUserGroupsFeatureEnabled,
+}: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     const canCancelNewPlan = isNewCancellationFlowExtended && hasNewCancellablePlan(subscription, user);
@@ -27,6 +34,7 @@ export const getRoutes = ({ user, subscription, organization, isNewCancellationF
         organization,
         user,
         subscription,
+        isUserGroupsFeatureEnabled,
     });
 
     return {
