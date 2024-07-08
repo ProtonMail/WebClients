@@ -65,6 +65,7 @@ export const useSavedMethod = (
     useEffect(() => {
         if (paymentProcessor) {
             paymentProcessor.amountAndCurrency = amountAndCurrency;
+            paymentProcessor.reset();
         }
     }, [amountAndCurrency]);
 
