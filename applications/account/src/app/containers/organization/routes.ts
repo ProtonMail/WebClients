@@ -17,9 +17,16 @@ interface Props {
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
+    isUserGroupsFeatureEnabled: boolean;
 }
 
-export const getOrganizationAppRoutes = ({ app, user, organization, subscription }: Props) => {
+export const getOrganizationAppRoutes = ({
+    app,
+    user,
+    organization,
+    subscription,
+    isUserGroupsFeatureEnabled,
+}: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
@@ -71,6 +78,17 @@ export const getOrganizationAppRoutes = ({ app, user, organization, subscription
                         text: c('Title').t`Create multiple user accounts`,
                         id: 'multi-user-creation',
                         available: organization && !!organization.RequiresKey && !hasVpnOrPassB2BPlan,
+                    },
+                ],
+            },
+            groups: <SectionConfig>{
+                text: c('Title').t`Groups`,
+                to: '/user-groups',
+                icon: 'pass-group',
+                available: isUserGroupsFeatureEnabled && !!organization && hasActiveOrganizationKey,
+                subsections: [
+                    {
+                        id: 'groups-management',
                     },
                 ],
             },

@@ -51,6 +51,7 @@ enum AccountFlag {
     SignedOutForgot2FAFlow = 'SignedOutForgot2FAFlow',
     SingleSignup = 'SingleSignup',
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
+    UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
 }
 
 enum CalendarFeatureFlag {
