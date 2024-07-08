@@ -75,7 +75,7 @@ enum DriveFeatureFlag {
     // Docs
     DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',
-    DriveDocsCreationWarningModal = 'DriveDocsCreationWarningModal',
+    DocsAppSwitcher = 'DocsAppSwitcher',
     // Bookmarks
     DriveShareURLBookmarks = 'DriveShareURLBookmarks',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
