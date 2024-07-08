@@ -46,8 +46,9 @@ import noop from '@proton/utils/noop';
 import { usePublicTheme } from '../containers/PublicThemeProvider';
 import { getLocaleTermsURL } from '../content/helper';
 import Guarantee from './Guarantee';
-import RightPlanSummary from './RightPlanSummary';
+import RightPlanSummary, { RightPlanSummaryAddons } from './RightPlanSummary';
 import RightSummary from './RightSummary';
+import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
 import { Measure, OptimisticOptions, SignupModelV2 } from './interface';
 import { TelemetryPayType, getPaymentMethod } from './measure';
@@ -482,8 +483,9 @@ const AccountStepPayment = ({
 
                 const proration = subscriptionData.checkResult?.Proration ?? 0;
                 const credits = subscriptionData.checkResult?.Credit ?? 0;
+                const couponDiscount = currentCheckout.couponDiscount || 0;
 
-                const showAmountDue = proration !== 0 || credits !== 0;
+                const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0;
 
                 const taxInclusiveText = (
                     <InclusiveVatText
@@ -504,6 +506,13 @@ const AccountStepPayment = ({
                                 currentCheckout.withoutDiscountPerMonth,
                                 ''
                             )}
+                            addons={
+                                <RightPlanSummaryAddons
+                                    cycle={options.cycle}
+                                    checkout={currentCheckout}
+                                    currency={options.currency}
+                                />
+                            }
                             logo={summaryPlan.logo}
                             discount={currentCheckout.discountPercent}
                             features={summaryPlan.features}
@@ -527,12 +536,33 @@ const AccountStepPayment = ({
                             )}
                             <div className="flex flex-column gap-2">
                                 {(() => {
+                                    const getPrice = (price: number) => {
+                                        return <Price currency={subscriptionData.currency}>{price}</Price>;
+                                    };
                                     return [
                                         {
                                             id: 'amount',
                                             left: <span>{getTotalBillingText(options.cycle)}</span>,
-                                            right: currentCheckout.withDiscountPerCycle,
+                                            right: (
+                                                <>
+                                                    {getPrice(currentCheckout.withoutDiscountPerCycle)}
+                                                    {!showAmountDue && '*'}
+                                                </>
+                                            ),
                                             bold: true,
+                                            loader: !showAmountDue,
+                                        },
+                                        couponDiscount !== 0 && {
+                                            id: 'discount',
+                                            left: (
+                                                <div>
+                                                    {c('Info').t`Discount`}{' '}
+                                                    <span className="text-sm">
+                                                        <SaveLabel percent={currentCheckout.discountPercent} />
+                                                    </span>
+                                                </div>
+                                            ),
+                                            right: getPrice(couponDiscount),
                                         },
                                         proration !== 0 && {
                                             id: 'proration',
@@ -550,13 +580,13 @@ const AccountStepPayment = ({
                                                     />
                                                 </span>
                                             ),
-                                            right: proration,
+                                            right: getPrice(proration),
                                             bold: false,
                                         },
                                         credits !== 0 && {
                                             id: 'credits',
                                             left: <span>{c('Title').t`Credits`}</span>,
-                                            right: credits,
+                                            right: getPrice(credits),
                                             bold: false,
                                         },
                                         !showAmountDue &&
@@ -566,7 +596,7 @@ const AccountStepPayment = ({
                                             },
                                     ]
                                         .filter(isTruthy)
-                                        .map(({ id, bold, left, right }) => {
+                                        .map(({ id, bold, left, right, loader }) => {
                                             return (
                                                 <div
                                                     key={id}
@@ -583,20 +613,13 @@ const AccountStepPayment = ({
                                                             }
 
                                                             if (loadingPaymentDetails) {
-                                                                // When we don't show amount due, we put the circle loader instead of empty value.
-                                                                if (!showAmountDue) {
+                                                                if (loader) {
                                                                     return <CircleLoader />;
                                                                 }
                                                                 return null;
                                                             }
-                                                            return (
-                                                                <>
-                                                                    <Price currency={subscriptionData.currency}>
-                                                                        {right}
-                                                                    </Price>
-                                                                    {id === 'amount' && '*'}
-                                                                </>
-                                                            );
+
+                                                            return right;
                                                         })()}
                                                     </span>
                                                 </div>
@@ -613,9 +636,12 @@ const AccountStepPayment = ({
                                                 {loadingPaymentDetails ? (
                                                     <CircleLoader />
                                                 ) : (
-                                                    <Price currency={subscriptionData.currency}>
-                                                        {options.checkResult.AmountDue}
-                                                    </Price>
+                                                    <>
+                                                        <Price currency={subscriptionData.currency}>
+                                                            {options.checkResult.AmountDue}
+                                                        </Price>
+                                                        *
+                                                    </>
                                                 )}
                                             </span>
                                         </div>
