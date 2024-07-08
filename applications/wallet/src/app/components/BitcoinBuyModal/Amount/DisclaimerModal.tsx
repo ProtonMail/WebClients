@@ -78,12 +78,12 @@ export const DisclaimerModal = ({ provider, onConfirm, ...modalProps }: Props) =
 
             <div className="flex flex-row items-start mt-12">
                 <Checkbox
-                    className="bg-weak"
                     onClick={() => {
                         setHasReadAndAgree((prev) => !prev);
                     }}
-                />
-                <label className="ml-2">{c('Gateway disclaimer').t`I have read and agree to the disclaimer`}</label>
+                >
+                    <label className="ml-2">{c('Gateway disclaimer').t`I have read and agree to the disclaimer`}</label>
+                </Checkbox>
             </div>
 
             <div className="w-full px-8">
