@@ -25,7 +25,17 @@ import { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
 import { SERVICES } from './interfaces';
 
 export const getProduct = (maybeProduct: string | undefined): APP_NAMES | undefined => {
-    return maybeProduct ? SERVICES[maybeProduct] : undefined;
+    if (!maybeProduct) {
+        return;
+    }
+    const directMatch = SERVICES[maybeProduct];
+    if (directMatch) {
+        return directMatch;
+    }
+    const partialMatch = Object.keys(SERVICES).find((service) => maybeProduct.startsWith(service));
+    if (partialMatch) {
+        return SERVICES[partialMatch];
+    }
 };
 
 const getDefaultProductParam = (): 'generic' => {
@@ -40,17 +50,32 @@ const getSanitisedProductParam = (value: string | undefined): OtherProductParam 
     }
 };
 
-export const getProductParam = (product: APP_NAMES | undefined, productParam: string | undefined): ProductParam => {
+export const getProductParam = (
+    product: APP_NAMES | undefined,
+    productParam: string | undefined
+): ProductParam | undefined => {
     const sanitisedProductParam = getSanitisedProductParam(productParam);
-    const defaultProductParam = getDefaultProductParam();
-    return product || sanitisedProductParam || defaultProductParam;
+    return product || sanitisedProductParam;
 };
 
 export const getProductParams = (pathname: string, searchParams: URLSearchParams) => {
     const maybeProductPathname = pathname.match(/\/([^/]*)/)?.[1];
-    const maybeProductParam = (searchParams.get('service') || searchParams.get('product') || undefined)?.toLowerCase();
-    let product = getProduct(maybeProductPathname) || getProduct(maybeProductParam);
-    const productParam = getProductParam(product, maybeProductParam || maybeProductPathname);
+    const maybeProductParam = (
+        searchParams.get('service') ||
+        searchParams.get('product') ||
+        searchParams.get('app') ||
+        undefined
+    )
+        ?.toLowerCase()
+        ?.replace('proton-', '');
+
+    let [product] = [maybeProductPathname, maybeProductParam].map((value) => getProduct(value)).filter(Boolean);
+    let [productParam] = [maybeProductPathname, maybeProductParam]
+        .map((value) => getProductParam(product, value))
+        .filter(Boolean);
+
+    productParam = productParam || getDefaultProductParam();
+
     if (!product) {
         if (
             [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(
