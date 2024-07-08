@@ -6,13 +6,59 @@ import {
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import {
-    type KasperskyLogin,
-    KasperskyLoginLabel,
-    KasperskyNoteLabel,
+    type KasperskyItem,
+    KasperskyItemKey,
+    KasperskyItemKeys,
 } from '@proton/pass/lib/import/providers/kaspersky.types';
 import { type ImportPayload } from '@proton/pass/lib/import/types';
-import { type ItemImportIntent } from '@proton/pass/types';
+import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+
+const LOGIN_NAME_KEYS = [KasperskyItemKey.LOGIN_NAME, KasperskyItemKey.ACCOUNT_NAME, KasperskyItemKey.WEBSITE_NAME];
+
+type LineReaderState = {
+    items: KasperskyItem[];
+    current: MaybeNull<KasperskyItem>;
+    property: MaybeNull<KasperskyItemKey>;
+};
+
+const parseLine = (line: string): MaybeNull<[key: KasperskyItemKey, value: string]> => {
+    const colonIndex = line.indexOf(':');
+
+    if (colonIndex !== -1) {
+        const prop = line.slice(0, colonIndex).trim();
+        const value = line.slice(colonIndex + 1).trim();
+        if (KasperskyItemKeys.includes(prop)) return [prop as KasperskyItemKey, value];
+    }
+
+    return null;
+};
+
+const processLine = (state: LineReaderState, line: string): LineReaderState => {
+    const newSection = line.trim() === '---' || state.current === null;
+    const parsedLine = parseLine(line);
+
+    if (newSection) {
+        /* If this is a new section, create a new item */
+        const item: KasperskyItem = {};
+        state.items.push(item);
+        state.current = item;
+        state.property = null;
+    } else if (parsedLine && state.current) {
+        /* if the line was successfully parsed, append
+         * the new property to the current item */
+        const [property, value] = parsedLine;
+        state.current[property] = value.trim();
+        state.property = property;
+    } else if (state.property && state.current) {
+        /* if we're dealing with a new line at this point,
+         * append to the last seen property */
+        const value = state.current[state.property];
+        state.current[state.property] = `${value}\n${line}`;
+    }
+
+    return state;
+};
 
 export const readKasperskyData = ({
     data,
@@ -21,97 +67,49 @@ export const readKasperskyData = ({
     data: string;
     importUsername?: boolean;
 }): ImportPayload => {
-    const ignored: string[] = [];
-    const warnings: string[] = [];
+    type KasperskyReaderResult = { items: ItemImportIntent[]; warnings: string[]; ignored: string[] };
 
     try {
-        const kasperskyItems = data
-            .replace(/\r\n/g, '\n')
-            .split(/---|Websites|Other Accounts|Applications|Notes/)
-            .map((section) => section.trim())
-            .filter((section) => section.length);
-        const items: ItemImportIntent[] = [];
+        const reader = data
+            .replace(/\n*---\n*/g, '\n---\n') // Normalize separators
+            .replace(/\n*---\n*$/, '') // Remove trailing separator
+            .split('\n')
+            .reduce<LineReaderState>(processLine, { items: [], current: null, property: null });
 
-        kasperskyItems.forEach((kasperskyItem) => {
-            const lines = kasperskyItem.split('\n');
-            const isLoginItem = [
-                KasperskyLoginLabel.WEBSITE_NAME,
-                KasperskyLoginLabel.APPLICATION,
-                KasperskyLoginLabel.ACCOUNT_NAME,
-            ].some((prefix) => lines[0].startsWith(prefix));
-            const isNoteItem = lines[0].startsWith(KasperskyNoteLabel.NAME);
+        const { items, ignored, warnings } = reader.items.reduce<KasperskyReaderResult>(
+            (result, item) => {
+                if (KasperskyItemKey.LOGIN in item) {
+                    const nameKey = LOGIN_NAME_KEYS.find((key) => key in item && item[key]);
+                    const name = nameKey ? item[nameKey] : '';
+                    const app = item[KasperskyItemKey.APPLICATION];
+                    const note = item[KasperskyItemKey.COMMENT];
+                    const email = item[KasperskyItemKey.LOGIN];
+                    const password = item[KasperskyItemKey.PASSWORD];
+                    const urls = [item[KasperskyItemKey.WEBSITE_URL] ?? []].flat();
 
-            if (isLoginItem) {
-                let isComment = false;
-                const item = lines.reduce<KasperskyLogin>((acc, line) => {
-                    if (isComment) {
-                        acc.comment += `\n${line}`;
-                        return acc;
-                    }
-                    const [key, value] = line.split(': ');
-                    switch (key) {
-                        case KasperskyLoginLabel.WEBSITE_NAME:
-                            acc.websiteName = value;
-                            break;
-                        case KasperskyLoginLabel.WEBSITE_URL:
-                            acc.websiteURL = value;
-                            break;
-                        case KasperskyLoginLabel.APPLICATION:
-                            acc.application = value;
-                            break;
-                        case KasperskyLoginLabel.ACCOUNT_NAME:
-                            acc.accountName = value;
-                            break;
-                        case KasperskyLoginLabel.LOGIN_NAME:
-                            acc.loginName = value;
-                            break;
-                        case KasperskyLoginLabel.LOGIN:
-                            acc.login = value;
-                            break;
-                        case KasperskyLoginLabel.PASSWORD:
-                            acc.password = value;
-                            break;
-                        case KasperskyLoginLabel.COMMENT:
-                            acc.comment = value;
-                            isComment = true;
-                            break;
-                    }
-                    return acc;
-                }, {});
+                    result.items.push(
+                        importLoginItem({
+                            ...(importUsername ? getEmailOrUsername(email) : { email }),
+                            name: app ? `${app} ${name}`.trim() : name,
+                            note,
+                            password,
+                            urls,
+                        })
+                    );
+                } else if (KasperskyItemKey.TEXT in item) {
+                    const name = item[KasperskyItemKey.NAME];
+                    const note = item[KasperskyItemKey.TEXT];
 
-                const name = item.loginName || item.websiteName || item.accountName;
-                items.push(
-                    importLoginItem({
-                        name: item.application ? `${item.application} ${name}` : name,
-                        note: item.comment,
-                        ...(importUsername ? getEmailOrUsername(item.login) : { email: item.login }),
-                        password: item.password,
-                        urls: item.websiteURL ? [item.websiteURL] : [],
-                    })
-                );
-            } else if (isNoteItem) {
-                const name = lines[0].substring(`${KasperskyNoteLabel.NAME}: `.length);
-                const note = lines.slice(1).join('\n').substring(`${KasperskyNoteLabel.NOTE}: `.length);
+                    result.items.push(importNoteItem({ name, note }));
+                } else result.ignored.push(Object.values(item).join('|').substring(0, 50));
 
-                items.push(
-                    importNoteItem({
-                        name,
-                        note,
-                    })
-                );
-            } else {
-                ignored.push(`${kasperskyItem.substring(0, 50)}...`);
-            }
-        });
+                return result;
+            },
+            { items: [], ignored: [], warnings: [] }
+        );
 
         return {
-            vaults: [
-                {
-                    name: getImportedVaultName(),
-                    shareId: null,
-                    items,
-                },
-            ],
+            vaults: [{ name: getImportedVaultName(), shareId: null, items }],
             ignored,
             warnings,
         };
