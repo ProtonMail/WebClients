@@ -1,7 +1,18 @@
 import { ReactNode } from 'react';
 
+import clsx from '@proton/utils/clsx';
+
 import './ModalParagraph.scss';
 
-export const ModalParagraph = ({ children }: { children: ReactNode }) => {
-    return <div className="modal-paragraph flex flex-row gap-2 mb-6 text-center color-weak">{children}</div>;
+interface ModalParagraphProps {
+    children: ReactNode;
+    prompt?: boolean;
+}
+
+export const ModalParagraph = ({ children, prompt }: ModalParagraphProps) => {
+    return (
+        <div className={clsx('modal-paragraph flex flex-row gap-2 text-center color-weak', prompt ? '' : 'mb-6')}>
+            {children}
+        </div>
+    );
 };

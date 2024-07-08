@@ -15,7 +15,7 @@ const PromptTitle = ({ children }: { children: ReactNode }) => (
 export interface PromptProps extends Omit<ModalProps, 'children' | 'size' | 'title'> {
     title?: string | JSX.Element;
     subline?: string;
-    footnote?: string;
+    footnote?: string | any[]; //need footnote to accept any[] for ttag with link as variable
     buttons: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element];
     actions?: JSX.Element | [JSX.Element] | [JSX.Element, JSX.Element] | undefined;
     children: ReactNode;
