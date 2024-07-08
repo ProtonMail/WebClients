@@ -85,6 +85,7 @@ export interface SubscriptionCheckoutData {
     coupon?: string;
     withDiscountPerCycle: number;
     withoutDiscountPerMonth: number;
+    withoutDiscountPerCycle: number;
     withDiscountPerMonth: number;
     membersPerMonth: number;
     discountPerCycle: number;
@@ -169,7 +170,7 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap, priceTyp
         addonsMap[IP].title = getAddonTitle(IP, addonsMap[IP].quantity, planIDs);
     }
 
-    const addons: AddonDescription[] = Object.values(addonsMap);
+    const addons: AddonDescription[] = Object.values(addonsMap).sort((a, b) => a.name.localeCompare(b.name));
 
     const planName = (plan?.Name as PLANS) ?? null;
     const planTitle = plan?.Title ?? '';
@@ -260,6 +261,7 @@ export const getCheckout = ({
         usersTitle: getUserTitle(usersAndAddons.users || 1), // VPN and free plan has no users
         users: usersAndAddons.users || 1,
         withoutDiscountPerMonth,
+        withoutDiscountPerCycle: amount,
         withDiscountPerCycle,
         withDiscountPerMonth: withDiscountPerCycle / cycle,
         membersPerMonth,
