@@ -6,6 +6,7 @@ import {
     DomainsSection,
     GatewaysSection,
     MultiUserCreationSection,
+    OrganizationGroupsManagementSection,
     OrganizationPasswordSection,
     OrganizationScheduleCallSection,
     OrganizationSection,
@@ -40,7 +41,7 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso },
+        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, groups },
     } = organizationAppRoutes;
 
     if (!organizationAppRoutes.available) {
@@ -125,6 +126,13 @@ const OrganizationSettingsRouter = ({
                             <SsoPage />
                         </SubscriptionModalProvider>
                     </PrivateMainSettingsAreaBase>
+                </Route>
+            )}
+            {getIsSectionAvailable(groups) && (
+                <Route path={getSectionPath(path, groups)}>
+                    <PrivateMainSettingsArea config={groups}>
+                        <OrganizationGroupsManagementSection />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {redirect}

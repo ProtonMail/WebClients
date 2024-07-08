@@ -23,6 +23,7 @@ interface Arguments {
     isSessionRecoveryAvailable: boolean;
     recoveryNotification?: ThemeColor;
     isBreachesAccountDashboardEnabled: boolean;
+    isUserGroupsFeatureEnabled: boolean;
     showThemeSelection: boolean;
     isNewCancellationFlowExtended: boolean;
     assistantKillSwitch: boolean;
@@ -40,6 +41,7 @@ export const getRoutes = ({
     isReferralProgramEnabled,
     recoveryNotification,
     isBreachesAccountDashboardEnabled,
+    isUserGroupsFeatureEnabled,
     showThemeSelection,
     isNewCancellationFlowExtended,
     assistantKillSwitch,
@@ -76,6 +78,7 @@ export const getRoutes = ({
             user,
             organization,
             subscription,
+            isUserGroupsFeatureEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),
