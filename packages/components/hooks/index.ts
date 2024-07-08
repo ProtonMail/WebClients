@@ -12,7 +12,6 @@ export { default as useAppTitle } from './useAppTitle';
 export { default as useAuthentication } from './useAuthentication';
 export { default as useAutocompleteAriaProps } from './useAutocompleteAriaProps';
 export { default as useBeforeUnload } from './useBeforeUnload';
-export { default as useButtonVariants } from './useButtonVariants';
 export { default as useCache } from './useCache';
 export { default as useCachedModelResult } from './useCachedModelResult';
 export { default as useCalendars, useGetCalendars } from './useCalendars';
