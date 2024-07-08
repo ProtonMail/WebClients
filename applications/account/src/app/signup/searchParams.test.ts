@@ -53,6 +53,31 @@ describe('search params helper', () => {
             pathname: '/mail/signup',
             expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
         },
+        {
+            params: 'product=mail',
+            pathname: '/foo/signup',
+            expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
+        },
+        {
+            params: 'product=foo',
+            pathname: '/mail/signup',
+            expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
+        },
+        {
+            params: 'product=foo',
+            pathname: '/foo/signup',
+            expectation: { product: undefined, productParam: 'generic' },
+        },
+        {
+            params: 'app=proton-pass-extension',
+            pathname: '/authorize',
+            expectation: { product: SERVICES.pass, productParam: SERVICES.pass },
+        },
+        {
+            params: 'app=proton-mail',
+            pathname: '/authorize',
+            expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
+        },
     ];
     it.each(values)('$pathname?$params should be $expectation', ({ params, pathname, expectation }) => {
         expect(getProductParams(pathname, new URLSearchParams(params))).toEqual(expectation);
