@@ -130,7 +130,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
                     </Button>
                     {trialStatus === 'trial-not-started' && (
                         <div className="color-weak pt-4 text-center">{
-                            // translator: ASSISTANT_TRIAL_TIME_DAYS will always be more than one. Full sentence: "Free for 30 days".
+                            // translator: ASSISTANT_TRIAL_TIME_DAYS will always be more than one. Full sentence: "Free for 14 days".
                             c('Info').t`Free for ${ASSISTANT_TRIAL_TIME_DAYS} days`
                         }</div>
                     )}
