@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { OnLoginCallback, UnAuthenticated, useFlag } from '@proton/components/index';
 import { ProductParam } from '@proton/shared/lib/apps/product';
+import { passApps } from '@proton/shared/lib/authentication/apps';
 import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, APP_NAMES, CLIENT_TYPES, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
 
@@ -30,6 +31,10 @@ interface Props {
     onBack?: () => void;
 }
 
+// Always enabled for these apps
+const singlePageSignupApps = new Set([APPS.PROTONDRIVE, ...passApps]);
+const singlePageSignupPaths = new Set([SSO_PATHS.MAIL_SIGNUP_B2B, SSO_PATHS.CALENDAR_SIGNUP_B2B]);
+
 const SingleSignupSwitchContainer = ({
     hasBFCoupon,
     maybePreAppIntent,
@@ -51,9 +56,8 @@ const SingleSignupSwitchContainer = ({
 
     const renderSingleSignup =
         hasBFCoupon ||
-        maybePreAppIntent === APPS.PROTONDRIVE ||
-        maybePreAppIntent === APPS.PROTONPASS ||
-        [SSO_PATHS.MAIL_SIGNUP_B2B, SSO_PATHS.CALENDAR_SIGNUP_B2B].includes(location.pathname as any) ||
+        singlePageSignupApps.has(maybePreAppIntent as any) ||
+        singlePageSignupPaths.has(location.pathname as any) ||
         searchParams.get('mode') === 'sps' ||
         searchParams.get('plan') === PLANS.VISIONARY ||
         singleSignupEnabled;

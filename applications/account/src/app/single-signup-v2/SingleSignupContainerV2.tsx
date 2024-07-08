@@ -32,6 +32,7 @@ import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
 import { ProductParam, normalizeProduct } from '@proton/shared/lib/apps/product';
+import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import {
     LocalSessionPersisted,
     ResumedSessionResult,
@@ -282,7 +283,7 @@ const SingleSignupContainerV2 = ({
 
         const preVerifiedAddressToken = searchParams.get('preVerifiedAddressToken') || undefined;
 
-        if (toApp == APPS.PROTONPASS && invitee && inviter) {
+        if (getIsPassApp(toApp) && invitee && inviter) {
             mode = SignupMode.Invite;
             localID = -1;
             invite = {
@@ -379,7 +380,7 @@ const SingleSignupContainerV2 = ({
                 freePlan: model.freePlan,
             });
         }
-        if (toApp === APPS.PROTONPASS) {
+        if (getIsPassApp(toApp)) {
             return getPassConfiguration({
                 audience,
                 isLargeViewport: viewportWidth['>=large'],
@@ -480,7 +481,7 @@ const SingleSignupContainerV2 = ({
                 }
                 return 'mail_signup';
             }
-            if (toApp === APPS.PROTONPASS) {
+            if (getIsPassApp(toApp)) {
                 if (signupParameters.mode === SignupMode.Onboarding) {
                     return 'pass_web_first_onboard';
                 }
@@ -718,7 +719,7 @@ const SingleSignupContainerV2 = ({
             if (session?.user) {
                 setLoadingChallenge(false);
 
-                if (toApp === APPS.PROTONPASS) {
+                if (product === APPS.PROTONPASS) {
                     const onboardingMode = mode === SignupMode.Onboarding;
 
                     if (onboardingMode && hasPaidPass(session.user)) {
@@ -1327,7 +1328,7 @@ const SingleSignupContainerV2 = ({
                                         invite: signupParameters.invite,
                                         cache,
                                         api: silentApi,
-                                        mode: toApp === APPS.PROTONPASS ? 'ov' : 'cro',
+                                        mode: product === APPS.PROTONPASS ? 'ov' : 'cro',
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,
