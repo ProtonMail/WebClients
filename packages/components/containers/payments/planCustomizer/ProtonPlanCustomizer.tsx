@@ -168,8 +168,11 @@ const AddonCustomizer = ({
             return applyForbiddenModificationLimitation(0);
         }
 
-        if (addonMaxKey === 'MaxIPs' || hasVpnBusiness(latestSubscription)) {
-            return applyForbiddenModificationLimitation(getVPNDedicatedIPs(latestSubscription));
+        // Existing users of VPN Business can't downgrade the number of IP addons, it must be done by contacting
+        // customer support.
+        if (isIpAddon(addonNameKey) && hasVpnBusiness(latestSubscription)) {
+            const minNumberOfServers = getVPNDedicatedIPs(latestSubscription);
+            return applyForbiddenModificationLimitation(minNumberOfServers);
         }
 
         return applyForbiddenModificationLimitation(min / divider);
