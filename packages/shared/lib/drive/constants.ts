@@ -163,6 +163,13 @@ export enum SupportedMimeTypes {
     vdnMicrosoftIcon = 'image/vnd.microsoft.icon',
 }
 
+export enum SupportedProtonDocsMimeTypes {
+    docx = SupportedMimeTypes.docx,
+    txt = 'text/plain',
+    md = 'text/markdown',
+    html = 'text/html',
+}
+
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
     py: 'text/x-python',
     ts: 'application/typescript',
