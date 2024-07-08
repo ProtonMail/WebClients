@@ -13,6 +13,8 @@
 	--min-width: 10em;
 	--max-width: min(var(--custom-max-width, 100vw), 100vw);
 	--max-height: min(var(--custom-max-height, 100vh), 100vh);
+	--selection-background-color: var(--interaction-norm);
+	--selection-text-color: var(--interaction-norm-contrast);
 
 	position: fixed;
 	z-index: map.get($z-indexes, 'modals');
@@ -238,8 +240,8 @@
 			&:hover,
 			&:focus,
 			&:active {
-				background-color: var(--interaction-norm);
-				color: var(--interaction-norm-contrast);
+				background-color: var(--selection-background-color);
+				color: var(--selection-text-color);
 				pointer-events: none;
 			}
 
@@ -249,7 +251,7 @@
 					background-color: unset;
 
 					&::after {
-						background-color: var(--interaction-norm);
+						background-color: var(--selection-background-color);
 						box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 						z-index: -1;
 					}
@@ -262,7 +264,7 @@
 					background-color: unset;
 
 					&::after {
-						background-color: var(--interaction-norm);
+						background-color: var(--selection-background-color);
 						box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 						z-index: -1;
 					}
