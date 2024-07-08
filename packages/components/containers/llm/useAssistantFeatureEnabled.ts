@@ -41,7 +41,11 @@ const useAssistantFeatureEnabled = () => {
         // the second condition checks trial eligibility for members of organizations that support Scribe
         // (you're a member of Mail Pro organization, so you can enter the trial and you admin can pruchase it later)
         // the thir condition allows paying users to use and configure Scribe
-        (scribePaymentsEnabled || planSupportsScribe || userHasScribeSeat);
+        (scribePaymentsEnabled || planSupportsScribe || userHasScribeSeat) &&
+        // The additional entry && planSupportsScribe ensures that planSupportsScribe === true can turn on the feature
+        // alone, while scribePaymentsEnabled === true and userHasScribeSeat === true still require
+        // planSupportsScribe === true
+        planSupportsScribe;
 
     return {
         /**
