@@ -8,7 +8,7 @@ import useFeature from '../useFeature';
 import useNotifications from '../useNotifications';
 import useUser from '../useUser';
 
-export const ASSISTANT_TRIAL_TIME_DAYS = 30;
+export const ASSISTANT_TRIAL_TIME_DAYS = 14;
 
 export type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' | 'is-paid';
 
