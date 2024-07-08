@@ -656,7 +656,7 @@ const Step1 = ({
                                     discount={0}
                                     free
                                     features={getFreePassFeatures()}
-                                ></RightPlanSummary>
+                                />
                             </RightSummary>
                         ) : (
                             <RightSummary

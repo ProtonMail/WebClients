@@ -192,13 +192,7 @@ export const getSummaryPlan = ({
             ),
             ...shortPlan,
             plan,
-            features: [
-                getMailAppFeature(),
-                getCalendarAppFeature(),
-                getDriveAppFeature(),
-                getVPNAppFeature({ serversCount: vpnServersCountData }),
-                getPassAppFeature(),
-            ],
+            features: [],
         };
     }
 
@@ -208,7 +202,7 @@ export const getSummaryPlan = ({
             logo: <MailLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
-            features: [getMailAppFeature(), getCalendarAppFeature()],
+            features: [],
         };
     }
 
@@ -218,7 +212,7 @@ export const getSummaryPlan = ({
             logo: <MailLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
-            features: [getMailAppFeature(), getCalendarAppFeature()],
+            features: [],
         };
     }
 };
