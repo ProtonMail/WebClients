@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info } from '../../../components';
@@ -34,9 +33,11 @@ export const ButtonNumberInput = ({
     const [tmpValue, setTmpValue] = useState<number | null | undefined>(undefined);
 
     const handleOnChange = (value: number) => {
-        const safeValue = clamp(value, min, max);
-        if (getIsValidValue(min, max, step, safeValue)) {
-            onChange?.(safeValue);
+        if (getIsValidValue(min, max, step, value)) {
+            setTmpValue(undefined);
+            onChange?.(value);
+        } else {
+            setTmpValue(value);
         }
     };
 
@@ -96,7 +97,6 @@ export const ButtonNumberInput = ({
                             setTmpValue(null);
                             return;
                         }
-                        setTmpValue(undefined);
                         const newIntValue = parseInt(newValue, 10);
                         handleOnChange(newIntValue);
                     }}
