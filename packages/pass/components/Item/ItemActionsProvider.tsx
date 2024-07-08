@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Alert } from '@proton/components/index';
+import { Button } from '@proton/atoms/Button';
+import { Alert, Prompt } from '@proton/components/index';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -20,7 +21,7 @@ import {
     itemRestoreIntent,
     itemTrashIntent,
 } from '@proton/pass/store/actions';
-import { selectItemSecureLinksCount } from '@proton/pass/store/selectors';
+import { selectItemSecureLinks } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -83,7 +84,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     };
 
     const hasSecureLinks = Boolean(
-        useSelector(selectItemSecureLinksCount(moveItem?.param?.item?.shareId, moveItem?.param?.item.itemId))
+        useSelector(selectItemSecureLinks(moveItem?.param?.item?.shareId ?? '', moveItem?.param?.item.itemId ?? ''))
+            .length
     );
 
     const context = useMemo<ItemActionsContextType>(() => {
@@ -127,26 +129,18 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             <WithVault shareId={moveItem.param?.shareId}>
                 {({ content: { name } }) => (
-                    <ConfirmationModal
+                    <Prompt
                         open={moveItem.pending}
-                        onClose={moveItem.cancel}
-                        onSubmit={moveItem.confirm}
-                        submitText={c('Action').t`Confirm`}
-                        title={c('Title').t`Move item?`}
+                        title={c('Title').t`Move item to "${name}"?`}
+                        buttons={[
+                            <Button color="norm" onClick={moveItem.confirm}>{c('Action').t`Confirm`}</Button>,
+                            <Button onClick={moveItem.cancel}>{c('Action').t`Cancel`}</Button>,
+                        ]}
                     >
-                        {hasSecureLinks && (
-                            <Card className="mb-2 text-sm" type="warning">{c('Info')
-                                .t`The item's secure links will be removed when it's moved to another vault, please confirm`}</Card>
-                        )}
-                        <Card className="mb-2 text-sm" type="primary">{c('Info')
-                            .t`Moving an item to another vault will erase its history`}</Card>
-                        <Alert className="mb-4" type="info">
-                            {
-                                // translator: variable here is the name of the user's vault
-                                c('Info').t`Are you sure you want to move the item to "${name}" ?`
-                            }
-                        </Alert>
-                    </ConfirmationModal>
+                        {hasSecureLinks
+                            ? c('Info').t`Moving an item to another vault will erase its history and all secure links.`
+                            : c('Info').t`Moving an item to another vault will erase its history.`}
+                    </Prompt>
                 )}
             </WithVault>
 

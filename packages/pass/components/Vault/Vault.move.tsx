@@ -4,16 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Alert } from '@proton/components/index';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { Button } from '@proton/atoms/Button';
+import { Prompt } from '@proton/components/index';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { vaultMoveAllItemsIntent } from '@proton/pass/store/actions';
 import { type VaultShareItem } from '@proton/pass/store/reducers';
-import { selectVaultHasSecureLinks } from '@proton/pass/store/selectors';
+import { selectSecureLinksByShareId } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 
-import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
 import { VaultSelect, VaultSelectMode } from './VaultSelect';
 import { WithVault } from './WithVault';
 
@@ -34,7 +33,7 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
         )
     );
 
-    const vaultHasSecureLinks = useSelector(selectVaultHasSecureLinks(vault.shareId));
+    const hasSecureLinks = Boolean(useSelector(selectSecureLinksByShareId(vault.shareId)).length);
 
     return (
         <>
@@ -53,33 +52,21 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
             />
 
             <WithVault shareId={moveItems.param?.destinationShareId}>
-                {({ content: { name: toVaultName } }) => {
-                    const fromVaultName = vault.content.name;
-
-                    return (
-                        <ConfirmationModal
-                            open={moveItems.pending}
-                            onClose={pipe(moveItems.cancel, tap(onClose))}
-                            onSubmit={pipe(moveItems.confirm, tap(onClose))}
-                            submitText={c('Action').t`Move all items`}
-                            title={c('Title').t`Move all items ?`}
-                        >
-                            {vaultHasSecureLinks && (
-                                <Card className="mb-2 text-sm" type="warning">{c('Info')
-                                    .t`The item's secure links will be removed when it's moved to another vault, please confirm`}</Card>
-                            )}
-                            <Card className="mb-2 text-sm" type="primary">{c('Info')
-                                .t`Moving an item to another vault will erase its history`}</Card>
-                            <Alert className="mb-4" type="info">
-                                {
-                                    // translator: variables here are the names of the source and destination vault
-                                    c('Info')
-                                        .t`Are you sure you want to move all items from "${fromVaultName}" to "${toVaultName}" ?`
-                                }
-                            </Alert>
-                        </ConfirmationModal>
-                    );
-                }}
+                {({ content: { name: toVaultName } }) => (
+                    <Prompt
+                        open={moveItems.pending}
+                        title={c('Title').t`Move all items to "${toVaultName}"?`}
+                        buttons={[
+                            <Button color="norm" onClick={pipe(moveItems.confirm, tap(onClose))}>{c('Action')
+                                .t`Confirm`}</Button>,
+                            <Button onClick={pipe(moveItems.cancel, tap(onClose))}>{c('Action').t`Cancel`}</Button>,
+                        ]}
+                    >
+                        {hasSecureLinks
+                            ? c('Info').t`Moving an item to another vault will erase its history and all secure links.`
+                            : c('Info').t`Moving an item to another vault will erase its history.`}
+                    </Prompt>
+                )}
             </WithVault>
         </>
     );

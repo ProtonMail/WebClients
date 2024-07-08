@@ -317,12 +317,7 @@ export const selectItemSecureLinks = (shareId: string, itemId: string) =>
         (secureLinks[shareId]?.[itemId] ?? []).slice().sort(sortOn('active', 'DESC'))
     );
 
-export const selectItemSecureLinksCount = (shareId?: string, itemId?: string) =>
-    createSelector(selectSecureLinks, (secureLinks): number => {
-        if (!shareId || !itemId) return 0;
-
-        return secureLinks[shareId]?.[itemId]?.length ?? 0;
-    });
-
-export const selectVaultHasSecureLinks = (shareId: string) =>
-    createSelector(selectSecureLinks, (secureLinks): boolean => Boolean(secureLinks[shareId]));
+export const selectSecureLinksByShareId = (shareId: string) =>
+    createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
+        Object.values(secureLinks?.[shareId] ?? {}).flat()
+    );
