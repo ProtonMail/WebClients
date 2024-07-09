@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
       ],
+      "Add": [
+        "Дадаць"
+      ],
       "Add address": [
         "Дадаць адрас"
       ],
@@ -745,9 +748,6 @@
       "Browse the web privately and block ads": [
         "Праглядайце вэб-старонкі прыватна і блакіруйце рэкламу"
       ],
-      "Create and collaborate on documents securely": [
-        "Стварайце і бяспечна працуйце над дакументамі з іншымі"
-      ],
       "Keep your schedule private": [
         "Трымайце свой расклад у сакрэце"
       ],
@@ -759,6 +759,11 @@
       ],
       "Secure your communications": [
         "Абараняйце свае зносіны"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Badge for domain": {
@@ -5300,6 +5305,14 @@
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Дадаць памочніка ў напісанні"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -5480,6 +5493,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -5759,9 +5775,6 @@
       "Organize items with multiple vaults": [
         "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - прэміяльныя функцыі"
-      ],
       "Passkeys supported": [
         "Падтрымліваюцца ключы доступу"
       ],
@@ -5888,8 +5901,8 @@
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
       ],
-      "Unlimited logins and notes": [
-        "Неабмежаваная колькасць запісаў уваходу і нататак"
+      "Unlimited logins, notes and credit cards": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
@@ -6639,17 +6652,23 @@
       "Preparing your Recovery Kit": [
         "Падрыхтоўка вашага камплекту аднаўлення"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Бяспечнае абагульванне з ${ n } сховішчам",
-        "Бяспечнае абагульванне з ${ n } сховішчамі",
-        "Бяспечнае абагульванне з ${ n } сховішчамі",
-        "Бяспечнае абагульванне з ${ n } сховішчамі"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Бяспечнае абагульванне з некалькімі сховішчамі"
+      "Secure vault and link sharing": [
+        "Бяспечнае сховішча і абагульванне спасылкі"
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Бяспечнае абагульванне сховішча (${ n } сховішча)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчы)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Бяспечнае абагульванне сховішча (${ n } сховішча) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
       ],
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
@@ -6795,6 +6814,9 @@
       ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
       "Processing payment": [
         "Апрацоўка плацяжу"
@@ -7611,11 +7633,6 @@
       "Go to subscription plans": [
         "Перайсці да тарыфных планаў"
       ],
-      "Upgrade": [
-        "Палепшыць"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Палепшыць"
       ]
@@ -8570,6 +8587,9 @@
     "Suffix for price": {
       "per month": [
         "у месяц"
+      ],
+      "per user per month": [
+        "на карыстальніка ў месяц"
       ]
     },
     "summer2023: Tooltip": {
@@ -8972,6 +8992,9 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "Groups": [
+        "Групы"
       ],
       "How to choose a good logo": [
         "Як выбраць добры лагатып"
@@ -9427,7 +9450,7 @@
         "Электронная пошта"
       ],
       "Invitation email": [
-        "Электронны ліст запрашэння"
+        "Электронны ліст з запрашэннем"
       ],
       "Name": [
         "Імя"

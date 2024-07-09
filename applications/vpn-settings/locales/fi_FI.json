@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktivoi organisaation avain"
       ],
+      "Add": [
+        "Lisää"
+      ],
       "Add address": [
         "Lisää osoite"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Selaa verkkoa yksityisesti ja estä mainoksia"
       ],
-      "Create and collaborate on documents securely": [
-        "Luo ja tee yhteistyötä asiakirjojen parissa turvallisesti"
-      ],
       "Keep your schedule private": [
         "Pidä aikataulusi yksityisenä"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Suojaa viestintäsi"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan sähköpostejasi."
       ]
     },
     "Badge for domain": {
@@ -959,6 +964,9 @@
       ],
       "Custom domain problem": [
         "Oman verkkotunnuksen ongelma"
+      ],
+      "Docs problem": [
+        "Docs-ongelma"
       ],
       "Drive problem": [
         "Drive-ongelma"
@@ -5197,6 +5205,14 @@
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Lisää kirjoitusavustaja"
+      ],
+      "for ${ price }": [
+        "hintaan ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Hanki tarjous"
@@ -5377,6 +5393,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalenteri",
         "${ n } kalenteria"
@@ -5623,9 +5642,6 @@
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor – premium-ominaisuudet"
-      ],
       "Passkeys supported": [
         "Suojausavaimia tuetaan"
       ],
@@ -5748,8 +5764,8 @@
       "Unlimited labels": [
         "Rajattomasti tunnisteita"
       ],
-      "Unlimited logins and notes": [
-        "Rajattomasti kirjautumistietoja ja muistiinpanoja"
+      "Unlimited logins, notes and credit cards": [
+        "Rajattomasti kirjautumistietoja, muistiinpanoja ja maksukortteja"
       ],
       "Unlimited messages per day": [
         "Rajattomasti viestejä päivässä"
@@ -6485,15 +6501,19 @@
       "Preparing your Recovery Kit": [
         "Palautuspakettiasi valmistellaan"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Turvallinen jakaminen ${ n } holvin kanssa",
-        "Turvallinen jakaminen ${ n } holvin kanssa"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Turvallinen useamman holvin jako"
+      "Secure vault and link sharing": [
+        "Turvallisten holvien ja linkkien jakaminen"
       ],
       "Secure vault sharing": [
         "Turvallinen holvien jako"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Turvallisten holvien jakaminen (${ n } holvi)",
+        "Turvallisten holvien jakaminen (${ n } holvia)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Turvallisten holvien (${ n } holvi) ja linkkien jakaminen",
+        "Turvallisten holvien (${ n } holvia) ja linkkien jakaminen"
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
@@ -6639,6 +6659,9 @@
       ],
       "Payment Processing": [
         "Maksua käsitellään"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
       "Processing payment": [
         "Käsitellään maksua"
@@ -7410,11 +7433,6 @@
       "Go to subscription plans": [
         "Siirry tilauksiin"
       ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Päivitä tilaus"
       ]
@@ -8302,6 +8320,9 @@
     "Suffix for price": {
       "per month": [
         "kuukaudessa"
+      ],
+      "per user per month": [
+        "käyttäjää kohti kuukaudessa"
       ]
     },
     "summer2023: Tooltip": {
@@ -8698,6 +8719,9 @@
       ],
       "Gift code": [
         "Lahjakoodi"
+      ],
+      "Groups": [
+        "Ryhmät"
       ],
       "How to choose a good logo": [
         "Miten valita hyvä logo"

@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Organisatiesleutel activeren"
       ],
+      "Add": [
+        "Voeg toe"
+      ],
       "Add address": [
         "Adres toevoegen"
       ],
@@ -316,6 +319,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Openen in ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -3636,7 +3642,7 @@
         "Voeg e-mailadressen toe voor de gebruikers op de rijen"
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Vraag aan de eigenaar om je rechtstreeks uit te nodigen voor het document."
+        "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
       ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
@@ -3657,7 +3663,7 @@
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
       ],
       "Please open the document to view it.": [
-        "Open het document om het te bekijken, alstublieft."
+        "Open het document om het te bekijken."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
@@ -5205,6 +5211,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -5448,9 +5457,6 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium functies"
-      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -5569,9 +5575,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal wachtwoorden en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -6282,13 +6285,6 @@
       ],
       "Preparing your Recovery Kit": [
         "Uw herstelkit voorbereiden"
-      ],
-      "Secure sharing with ${ n } vault": [
-        "Veilig delen met kluis ${ n }",
-        "Veilig delen met ${ n } kluizen"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Veilig delen met meerdere kluizen"
       ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
@@ -7187,11 +7183,6 @@
       "Go to subscription plans": [
         "Naar abonnementen"
       ],
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Upgraden"
       ]
@@ -8291,6 +8282,9 @@
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Groups": [
+        "Groepen"
       ],
       "How to choose a good logo": [
         "Hoe kiest u een goed logo"

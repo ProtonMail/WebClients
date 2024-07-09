@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
+      "Add": [
+        "Tambah"
+      ],
       "Add address": [
         "Tambah alamat"
       ],
@@ -733,9 +736,6 @@
       "Browse the web privately and block ads": [
         "Jelajahi internet secara privat dan blokir iklan"
       ],
-      "Create and collaborate on documents securely": [
-        "Buat dan kolaborasikan dokumen secara aman"
-      ],
       "Keep your schedule private": [
         "Jaga jadwal Anda tetap privat"
       ],
@@ -747,6 +747,11 @@
       ],
       "Secure your communications": [
         "Amankan komunikasi Anda"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
       ]
     },
     "Badge for domain": {
@@ -952,6 +957,9 @@
       ],
       "Custom domain problem": [
         "Masalah domain khusus"
+      ],
+      "Docs problem": [
+        "Masalah Docs"
       ],
       "Drive problem": [
         "Masalah Drive"
@@ -5144,6 +5152,14 @@
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Tambah asisten penulisan"
+      ],
+      "for ${ price }": [
+        "untuk ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Dapatkan penawaran ini"
@@ -5324,6 +5340,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } dan ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender"
       ],
@@ -5558,9 +5577,6 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - fitur premium"
-      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -5681,8 +5697,8 @@
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
       ],
-      "Unlimited logins and notes": [
-        "Tanpa batasan jumlah login dan catatan"
+      "Unlimited logins, notes and credit cards": [
+        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
@@ -6411,14 +6427,17 @@
       "Preparing your Recovery Kit": [
         "Menyiapkan Peralatan Pemulihan Anda"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Berbagi aman dengan ${ n } brankas"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Berbagi aman dengan beberapa brankas"
+      "Secure vault and link sharing": [
+        "Pembagian brankas dan tautan aman"
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Pembagian brankas aman (${ n } brankas)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
@@ -6564,6 +6583,9 @@
       ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
       "Processing payment": [
         "Memproses pembayaran"
@@ -7321,11 +7343,6 @@
         "Tingkatkan akun"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Tingkatkan"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } bulan"
@@ -7554,6 +7571,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe untuk ${ maxAi } pengguna"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server terdedikasi"
       ],
@@ -8213,6 +8233,9 @@
     "Suffix for price": {
       "per month": [
         "per bulan"
+      ],
+      "per user per month": [
+        "per pengguna per bulan"
       ]
     },
     "summer2023: Tooltip": {
@@ -8606,6 +8629,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Groups": [
+        "Grup"
       ],
       "How to choose a good logo": [
         "Cara memilih logo yang baik"
@@ -9062,6 +9088,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Alamat email ${ BRAND_NAME } baru"
       ],
       "Optional": [
         "Opsional"
