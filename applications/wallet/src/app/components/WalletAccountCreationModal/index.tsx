@@ -17,12 +17,11 @@ import {
     BASE_INDEX_OPTIONS,
     DEFAULT_INDEX,
     IWasmApiWalletData,
-    PURPOSE_BY_SCRIPT_TYPE,
     SCRIPT_TYPES,
     encryptWalletDataWithWalletKey,
     getDefaultWalletAccountName,
     useWalletApiClients,
-    walletAccountCreation,
+    walletAccountCreation
 } from '@proton/wallet';
 
 import { Button, CoreButton, Input, Modal, Select, SelectOption } from '../../atoms';
@@ -90,7 +89,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
             return;
         }
 
-        const derivationPath = WasmDerivationPath.fromParts(PURPOSE_BY_SCRIPT_TYPE[selectedScriptType], network, index);
+        const derivationPath = WasmDerivationPath.fromParts(selectedScriptType, network, index);
 
         const { Wallet, WalletKey } = apiWalletData;
 

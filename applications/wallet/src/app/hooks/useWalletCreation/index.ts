@@ -17,14 +17,13 @@ import {
     DEFAULT_ACCOUNT_LABEL,
     DEFAULT_SCRIPT_TYPE,
     FIRST_INDEX,
-    PURPOSE_BY_SCRIPT_TYPE,
     WalletType,
     encryptWalletData,
     getDefaultWalletName,
     useUserWalletSettings,
     useWalletApiClients,
     walletCreation,
-    wordCountToNumber,
+    wordCountToNumber
 } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -158,11 +157,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 undefined
             )
             .then(async ({ Wallet, WalletKey, WalletSettings }): Promise<void> => {
-                const derivationPath = WasmDerivationPath.fromParts(
-                    PURPOSE_BY_SCRIPT_TYPE[DEFAULT_SCRIPT_TYPE],
-                    network,
-                    FIRST_INDEX
-                );
+                const derivationPath = WasmDerivationPath.fromParts(DEFAULT_SCRIPT_TYPE, network, FIRST_INDEX);
 
                 // Typeguard
                 const account = encryptedFirstAccountLabel
@@ -243,7 +238,8 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 setError(c('Error').t`The passphrases do not match`);
                 return;
             }
-            withLoadingWalletSubmit(onWalletSubmit(...args));
+
+            void withLoadingWalletSubmit(onWalletSubmit(...args));
         },
     };
 };
