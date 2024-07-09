@@ -15,7 +15,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { getLocalPath, removeLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -72,9 +72,12 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
-                        const onboardingEnabled = selectOnboardingEnabled(installed)(state);
-                        const b2bOnboard = await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING);
-                        if (onboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
+                        /* redirect only if initial path is empty */
+                        if (!removeLocalPath(history.location.pathname)) {
+                            const onboardingEnabled = selectOnboardingEnabled(installed)(state);
+                            const b2bOnboard = await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING);
+                            if (onboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
+                        }
                     } else if (res.clearCache) void deletePassDB(userID);
                 },
 

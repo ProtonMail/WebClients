@@ -28,9 +28,11 @@ export const getLocalPath = (path: string = '') => {
 };
 
 export const removeLocalPath = (path: string) => {
-    const re = /\/u\/\d+\/(.+)/;
+    const re = /\/u\/\d+(?:\/(.+))?\/?$/;
+    if (!re.test(path)) return path;
+
     const match = path.match(re);
-    return match?.[1] ?? path;
+    return match?.[1] ?? '';
 };
 
 export const subPath = (path: string, sub: string) => `${path}/${sub}`;

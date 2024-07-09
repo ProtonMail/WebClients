@@ -53,9 +53,8 @@ const PassEvents = () => {
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    // const [downloading, withDownloading ] = useLoading();
     const [filter, setFilter] = useState<FilterModel>(initialFilter);
-    const [events, setEvents] = useState<PassEvent[] | []>([]);
+    const [events, setEvents] = useState<PassEvent[]>([]);
     const [keyword, setKeyword] = useState<string>('');
     const [total, setTotal] = useState<number>(0);
     const [query, setQuery] = useState({});
@@ -86,6 +85,7 @@ const PassEvents = () => {
         }
         const queryParams = getQueryParams(filter, searchType, keyword);
         setQuery({ ...queryParams });
+        reset();
     };
 
     const handleDownloadClick = () => {
@@ -158,17 +158,15 @@ const PassEvents = () => {
                     shape="outline"
                     onClick={handleDownloadClick}
                     title={c('Action').t`Download`}
-                    // loading={loadingDownload}
+                    disabled={events.length === 0}
                 >
                     {c('Action').t`Download`}
                 </Button>
                 <Button
                     shape="outline"
                     onClick={handleResetFilter}
-                    // icon
                     disabled={filter == initialFilter}
                     title={c('Action').t`Clear filter`}
-                    // loading={loadingDownload}
                 >
                     {c('Action').t`Clear filters`}
                 </Button>
