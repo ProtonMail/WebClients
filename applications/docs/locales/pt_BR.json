@@ -2119,6 +2119,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
+      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
+        "Ocorreu um erro de integridade de dados e as alterações recentes não podem ser salvas. Atualize a página."
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -2148,6 +2151,9 @@
       ],
       "Amount below minimum (${ minimumAmount }).": [
         "Valor abaixo do mínimo (${ minimumAmount })."
+      ],
+      "An error occurred while attempting to duplicate the document. Please try again.": [
+        "Ocorreu um erro ao tentar duplicar o documento. Tente novamente."
       ],
       "An error occurred while creating a new document. Please try again.": [
         "Ocorreu um erro ao criar um novo documento. Tente novamente."
@@ -2438,6 +2444,9 @@
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Escolha um nome diferente."
       ],
+      "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
+        "A última atualização feita no documento é muito grande ou excederia o limite de tamanho do documento. A edição foi temporariamente desativada e sua alteração não será salva. Exporte uma cópia do documento e recarregue a página."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "O valor mínimo de crédito que pode ser adicionado é ${ price }."
       ],
@@ -2497,6 +2506,9 @@
       ],
       "Unknown payment token status": [
         "Status da token de pagamento desconhecido"
+      ],
+      "Update Too Large": [
+        "Atualização muito grande"
       ],
       "Upload for this folder is temporarily disabled": [
         "O envio para essa pasta está temporariamente desativado"
@@ -3667,6 +3679,9 @@
       "Error Syncing": [
         "Erro ao sincronizar"
       ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "Cada alteração feita é salva automaticamente e com segurança no Drive."
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -3678,6 +3693,9 @@
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Erro ao abrir um link seguro. O motivo é: ${ error }"
+      ],
+      "Failing signatures will be re-signed by you": [
+        "As assinaturas que não forem aceitas serão assinadas novamente por você"
       ],
       "File \"${ name }\" was deleted during download": [
         "Arquivo \"${ name }\" foi deletado durante o download"
@@ -3858,6 +3876,9 @@
       "No contacts added yet": [
         "Nenhum contato foi adicionado ainda"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nenhum documento fornecido no URL. Retorne ao ${ DRIVE_APP_NAME } e selecione um documento."
+      ],
       "No email address": [
         "Nenhum endereço de e-mail"
       ],
@@ -3924,6 +3945,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Autentique seu pagamento na guia de verificação."
+      ],
+      "Please export a copy of your current changes from the main menu and reload the page.": [
+        "Exporte uma cópia das suas alterações atuais do menu principal e recarregue a página."
       ],
       "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
         "Exporte-os diretamente do aplicativo ${ DOCS_APP_NAME } se desejar baixá-los."
@@ -4058,6 +4082,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
       ],
+      "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
+        "Não foi possível verificar a autoria das edições no documento. Deseja marcar esse documento como verificado? Você pode optar por Ignorar para decidir mais tarde."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
       ],
@@ -4075,6 +4102,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "Este documento tem muita atividade. Alguns recursos podem estar temporariamente indisponíveis."
       ],
       "This item already exists in your library": [
         "Esse item já existe na sua biblioteca"
@@ -4096,6 +4126,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar a sua pasta. Para compartilhar novamente a pasta, você precisará de um novo link."
+      ],
+      "This message will be presented again later": [
+        "Esta mensagem será mostrada novamente mais tarde"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Este link será excluído e removeremos o acesso ao seu arquivo ou pasta para qualquer pessoa com o link.",
@@ -4330,6 +4363,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Suas alterações estão sendo sincronizadas com o Drive. Não feche a página web."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "Suas alterações não foram sincronizadas. O Drive tentará salvar as alterações automaticamente. Não feche a página da web."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Seu navegador atual não suporta o download de arquivos grandes devido à indisponibilidade de agentes de serviços. O download de arquivos grandes pode congelar ou deixar o navegador sem resposta. Use as versões mais recentes de um ${ recommendedBrowser } e tente novamente."
@@ -5026,6 +5062,14 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Adicionar assistente de escrita"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicativo ${ MAIL_APP_NAME } para desktop"
@@ -5383,6 +5427,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -5614,9 +5661,6 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - recursos premium"
-      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -5728,9 +5772,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -6319,6 +6360,9 @@
       "File or folder is missing a name": [
         "Arquivo ou pasta sem nome"
       ],
+      "Invitation's email was sent again": [
+        "O e-mail do convite foi enviado novamente"
+      ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
@@ -6404,13 +6448,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Compartilhamento seguro com ${ n } cofre",
-        "Compartilhamento seguro com ${ n } cofres"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartilhamento seguro de múltiplos cofres"
-      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
       ]
@@ -7409,6 +7446,9 @@
     "Suffix for price": {
       "per month": [
         "por mês"
+      ],
+      "per user per month": [
+        "por mês por usuário"
       ]
     },
     "summer2023: Tooltip": {
@@ -8007,6 +8047,9 @@
       ],
       "Load image": [
         "Carregar imagem"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "A mensagem e o nome do arquivo são armazenados com criptografia de acesso zero quando incluídos no e-mail."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a ser usado durante a assinatura ou criptografia de um usuário. Observe que o PGP/Incorporado força o envio de mensagens de texto sem formatação"
