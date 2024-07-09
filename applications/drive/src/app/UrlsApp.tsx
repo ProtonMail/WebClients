@@ -17,6 +17,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import noop from '@proton/utils/noop';
 
 import * as config from './config';
 import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
@@ -51,7 +52,7 @@ const UrlsApp = () => {
                     error: getNonEmptyErrorMessage(error),
                 });
             }
-        })();
+        })().catch(noop);
     });
 
     return (

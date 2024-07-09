@@ -1,4 +1,5 @@
 import { useCache } from '@proton/components';
+import noop from '@proton/utils/noop';
 
 type CacheValue = {
     promise: Promise<any>;
@@ -78,9 +79,11 @@ function addAbortListener(value: CacheValue, originalSignal?: AbortSignal) {
         }
     };
     originalSignal.addEventListener('abort', handleAbort);
-    value.promise.finally(() => {
-        originalSignal.removeEventListener('abort', handleAbort);
-    });
+    value.promise
+        .finally(() => {
+            originalSignal.removeEventListener('abort', handleAbort);
+        })
+        .catch(noop);
 }
 
 async function propagateErrors<T>(

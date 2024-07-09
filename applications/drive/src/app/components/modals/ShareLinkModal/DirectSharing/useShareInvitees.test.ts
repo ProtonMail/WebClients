@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { useNotifications } from '@proton/components/hooks';
-import { PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import noop from '@proton/utils/noop';
 
 import { useGetPublicKeysForEmail } from '../../../../../app/store';
 import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
@@ -87,12 +87,9 @@ describe('useShareInvitees', () => {
                 .mockResolvedValueOnce(undefined);
 
             await act(async () => {
-                result.current.add([
-                    inviteeInternal,
-                    inviteeInternal2,
-                    inviteeExternalProton,
-                    inviteeExternalNonProton,
-                ]);
+                void result.current
+                    .add([inviteeInternal, inviteeInternal2, inviteeExternalProton, inviteeExternalNonProton])
+                    .catch(noop);
             });
             // @ts-ignore
             expect(result.all[1].invitees).toEqual([
@@ -130,7 +127,7 @@ describe('useShareInvitees', () => {
             const { result, waitFor } = renderHook(() => useShareInvitees([]));
 
             act(() => {
-                result.current.add([inviteeInternal, inviteeInternal]);
+                result.current.add([inviteeInternal, inviteeInternal]).catch(noop);
             });
 
             await waitFor(() =>
@@ -148,7 +145,7 @@ describe('useShareInvitees', () => {
             const { result, waitFor } = renderHook(() => useShareInvitees([inviteeInternal.email]));
 
             act(() => {
-                result.current.add([inviteeInternal]);
+                result.current.add([inviteeInternal]).catch(noop);
             });
 
             await waitFor(() =>
@@ -165,7 +162,7 @@ describe('useShareInvitees', () => {
             const { result, waitFor } = renderHook(() => useShareInvitees([]));
 
             act(() => {
-                result.current.add([{ ...inviteeInternal, email: 'lucienTest.com' }]);
+                result.current.add([{ ...inviteeInternal, email: 'lucienTest.com' }]).catch(noop);
             });
 
             await waitFor(() =>
@@ -186,7 +183,7 @@ describe('useShareInvitees', () => {
             const error = new Error('This is an error');
 
             act(() => {
-                result.current.add([inviteeInternal]);
+                result.current.add([inviteeInternal]).catch(noop);
             });
 
             await waitFor(() => expect(result.current.invitees).toEqual([{ ...inviteeInternal, isLoading: true }]));
@@ -210,7 +207,7 @@ describe('useShareInvitees', () => {
             const { result } = renderHook(() => useShareInvitees([]));
 
             await act(async () => {
-                result.current.add([inviteeInternal, inviteeInternal2]);
+                result.current.add([inviteeInternal, inviteeInternal2]).catch(noop);
             });
 
             expect(result.current.invitees).toEqual([
@@ -238,7 +235,7 @@ describe('useShareInvitees', () => {
             const { result } = renderHook(() => useShareInvitees([]));
 
             await act(async () => {
-                result.current.add([inviteeInternal, inviteeInternal2]);
+                result.current.add([inviteeInternal, inviteeInternal2]).catch(noop);
             });
             expect(result.current.invitees).toEqual([
                 { ...inviteeInternal, publicKey, isExternal: false, isLoading: false, error: undefined },
