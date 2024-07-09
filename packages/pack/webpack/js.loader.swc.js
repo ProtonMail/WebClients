@@ -5,7 +5,7 @@ const getUnsupportedLoader = () => {
     return {
         loader: require.resolve('swc-loader'),
         options: {
-            env: { coreJs: '3.22.1', mode: 'usage', targets: 'ie 11' },
+            env: { coreJs: require('core-js/package.json').version, mode: 'usage', targets: 'ie 11' },
         },
     };
 };
