@@ -797,10 +797,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1680,6 +1680,9 @@
       ],
       "Custom domain problem": [
         "მომხმარებლის დომენის პრობლემა"
+      ],
+      "Docs problem": [
+        "Docs-ის პრობლემა"
       ],
       "Drive problem": [
         "Drive-ის პრობლემა"
@@ -5747,6 +5750,9 @@
       "Body: ": [
         "ტანი: "
       ],
+      "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
+        "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
+      ],
       "Browser not supported": [
         "ბრაუზერი მხარდაუჭერელია"
       ],
@@ -6193,6 +6199,9 @@
       ],
       "Loading ${ appName }": [
         "იტვირთება ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
       ],
       "Loading message": [
         "შეტყობინების ჩატვირთვა"
@@ -8433,6 +8442,14 @@
         "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "წერაში დამხმარის დამატება"
+      ],
+      "for ${ price }": [
+        "${ price }-თვის"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "არქივი"
@@ -8753,6 +8770,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } და ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } კალენდარი",
         "${ n } კალენდარი"
@@ -8984,9 +9004,6 @@
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - ფასიანი ფუნქციები"
-      ],
       "Passkeys supported": [
         "საკვანძო გასაღებები მხარდაჭერილია"
       ],
@@ -9096,8 +9113,8 @@
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
       ],
-      "Unlimited logins and notes": [
-        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
+      "Unlimited logins, notes and credit cards": [
+        "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
       ],
       "Unlimited messages per day": [
         "ულიმიტო დღიური გზავნა/დღეში"
@@ -9726,15 +9743,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "უსაფრთხო გაზიარება ${ n } საცავთან",
-        "უსაფრთხო გაზიარება ${ n } საცავთან"
-      ],
-      "Secure sharing with multiple vaults": [
-        "უსაფრთხო გაზიარება ერთზე მეტ საცავთან"
+      "Secure vault and link sharing": [
+        "დაცული საცავი და ბმულის გაზიარება"
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "დაცული საცავის გაზიარება (${ n } საცავი)",
+        "დაცული საცავის გაზიარება (${ n } საცავი)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება",
+        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ]
     },
     "passwordless": {
@@ -9777,6 +9798,9 @@
       ],
       "Payment Processing": [
         "გადახდის დამუშავება"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
         "საგანგებოდ დაკლებული ფასი ${ priceWithDiscount }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ price } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
@@ -10205,6 +10229,9 @@
       ]
     },
     "Security Center - Info": {
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "მიიღეთ გაფრთხილება, თუ თქვენი პაროლი ან სხვა მონაცემები გაიჟონა მესამე პირების სერვისისგან. ${ learnMoreLink }"
       ],
@@ -10648,11 +10675,6 @@
         "ტარიფის აწევა"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } თვე",
@@ -10768,6 +10790,9 @@
       ],
       "Schedule send": [
         "გაგზავნის დაგეგმვა"
+      ],
+      "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
+        "ჩართეთ ${ DARK_WEB_MONITORING_NAME }, რომ მიიღოთ გაფრთხიელბა, თუ თქვენი მონაცემების მესამე პირებისთვის გაჟონვა მოხდება."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "ახლა გამოსახულებებს ნაგულისხმევად ჩავტვირთავთ და დავბლოკავთ გამომგზავნებს თქვენი ტრეკინგისგან. შეცვლა შეგიძლიათ აქ ${ settingsLink }."
@@ -11115,6 +11140,9 @@
       "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
         "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა ჰონკ-კონგში საფრთხის ქვეშ იყო."
       ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "თუ გადააცილებით უფასო სატარიფო გეგმას, როცა ${ planName } გამოწერა ამოიწურება, თქვენ არ გექნებათ საშუალება, რომ:"
+      ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
       ],
@@ -11135,6 +11163,9 @@
       ],
       "Online privacy, for your whole family": [
         "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "ორგანიზაციები, დამატებითი მომხმარებლები და მორგებული ელფოსტის დომენები უფასო სატარიფო გეგმაზე ხელმისაწვდომი არაა. ეს ნიშნავს, რომ:"
       ],
       "Our fight against censorship in Russia": [
         "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
@@ -11198,6 +11229,12 @@
       ],
       "What you give up when you cancel ${ planName }": [
         "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 1 გბ ელფოსტის საცავს და 5 გბ-მდე Drive-ის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 5 გბ Drive-ის საცავს და 1 გბ-მდე ელფოსტის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
       ],
       "Yearly free storage bonuses": [
         "წლიური უფასო საცავის ბონუსები"
@@ -11596,6 +11633,9 @@
     "Suffix for price": {
       "per month": [
         "თვეში"
+      ],
+      "per user per month": [
+        "თითოეული მომხმარებლისთვის თვეში"
       ]
     },
     "summer2023: Tooltip": {

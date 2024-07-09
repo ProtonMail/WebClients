@@ -681,6 +681,11 @@
         "Jeśli wyjdziesz teraz, niektóre wydarzenia nie zostaną zaimportowane"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Wznieś produktywność poczty na nowy poziom. ${ BRAND_NAME } Scribe pomoże Ci pisać, odpowiadać i sprawdzać wiadomości."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Plik ICS jest pusty"
@@ -2473,7 +2478,7 @@
         "Nazwa etykiety jest zbyt długa. Wpisz krótszą nazwę."
       ],
       "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
-        "Ostatnia aktualizacja dokonana w dokumencie jest albo za duża, albo przekracza całkowity limit rozmiaru dokumentu. Edycja została tymczasowo wyłączona. Twoja zmiana nie zostanie zapisana. Wyeksportuj kopię dokumentu i ponownie załaduj stronę."
+        "Ostatnia aktualizacja dokumentu jest za duża lub przekracza maksymalny rozmiar pliku. Edycja została tymczasowo wyłączona. Twoja zmiana nie zostanie zapisana. Wyeksportuj kopię dokumentu i odśwież stronę."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimalna kwota doładowania wynosi ${ price }"
@@ -4202,7 +4207,7 @@
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
-        "Dokument był edytowany wiele razy. Niektóre funkcje mogą być i tymczasowo niedostępne."
+        "Dokument był edytowany wiele razy. Niektóre funkcje mogą być tymczasowo niedostępne."
       ],
       "This item already exists in your library": [
         "Ten element już istnieje"
@@ -5176,6 +5181,14 @@
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Dodaj asystenta pisania"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplikacja desktopowa ${ MAIL_APP_NAME }"
@@ -5533,6 +5546,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -5794,9 +5810,6 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funkcja premium"
-      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -5910,9 +5923,6 @@
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
-      ],
-      "Unlimited logins and notes": [
-        "Nieograniczona liczba danych logowania i notatek"
       ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
@@ -6616,17 +6626,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Bezpieczne udostępnianie wielu sejfów"
-      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpieczne udostępnianie sejfu (${ n } sejf)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfy)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfów)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfów)"
       ]
     },
     "Payment method option": {
@@ -7671,6 +7678,9 @@
     "Suffix for price": {
       "per month": [
         "miesięcznie"
+      ],
+      "per user per month": [
+        "za użytkownika miesięcznie"
       ]
     },
     "summer2023: Tooltip": {

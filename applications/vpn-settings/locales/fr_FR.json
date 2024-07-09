@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Activer la clé de l'organisation"
       ],
+      "Add": [
+        "Ajouter"
+      ],
       "Add address": [
         "Ajouter une adresse"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Naviguez en privé sur le web tout en bloquant les publicités"
       ],
-      "Create and collaborate on documents securely": [
-        "Créez et modifiez des documents en mode collaboratif, en toute sécurité."
-      ],
       "Keep your schedule private": [
         "Protégez votre emploi du temps des regards indiscrets"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Sécurisez vos communications"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
       ]
     },
     "Badge for domain": {
@@ -2676,7 +2681,7 @@
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Connexion pour ${ plusVpnConnections } appareil au maximum",
-        "Connexion pour ${ plusVpnConnections }  appareils maximum"
+        "Connexion pour ${ plusVpnConnections } appareils au maximum"
       ],
       "Fastest VPN servers": [
         "Serveurs VPN les plus rapides"
@@ -5200,6 +5205,14 @@
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Ajouter l'assistant d'écriture"
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "J'en profite"
@@ -5380,6 +5393,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
@@ -5629,9 +5645,6 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - fonctionnalités premium"
-      ],
       "Passkeys supported": [
         "Les clés d'accès sont prises en charge."
       ],
@@ -5754,8 +5767,8 @@
       "Unlimited labels": [
         "Nombre illimité de labels"
       ],
-      "Unlimited logins and notes": [
-        "Nombre illimité de connexions et de notes"
+      "Unlimited logins, notes and credit cards": [
+        "Nombre illimité de connexions, de notes et de cartes de crédit"
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
@@ -6491,15 +6504,19 @@
       "Preparing your Recovery Kit": [
         "Préparation de votre kit de récupération"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Partage sécurisé avec ${ n } coffre-fort",
-        "Partage sécurisé avec ${ n } coffre-forts"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Partage sécurisé avec plusieurs coffres-forts"
+      "Secure vault and link sharing": [
+        "Coffre-fort sécurisé et partage de liens"
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort)",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
       ],
       "Setting up your organization": [
         "Configuration de votre organisation"
@@ -6638,13 +6655,16 @@
         "CVC"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "MM/YY": [
         "MM/AA"
       ],
       "Payment Processing": [
         "Traitement des paiements"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
       ],
       "Processing payment": [
         "Traitement du paiement"
@@ -7419,11 +7439,6 @@
       "Go to subscription plans": [
         "Voir les abonnements"
       ],
-      "Upgrade": [
-        "Passez à Premium"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Passez à Premium"
       ]
@@ -8338,6 +8353,9 @@
     "Suffix for price": {
       "per month": [
         "par mois"
+      ],
+      "per user per month": [
+        "par utilisateur par mois"
       ]
     },
     "summer2023: Tooltip": {
@@ -8734,6 +8752,9 @@
       ],
       "Gift code": [
         "Code-cadeau"
+      ],
+      "Groups": [
+        "Groupes"
       ],
       "How to choose a good logo": [
         "Comment choisir un bon logo ?"

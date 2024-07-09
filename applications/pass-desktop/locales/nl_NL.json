@@ -202,6 +202,9 @@
       "Generated passwords": [
         "Gegenereerd wachtwoorden"
       ],
+      "Get ${ PASS_APP_NAME }": [
+        "Kies ${ PASS_APP_NAME }"
+      ],
       "Get mobile apps": [
         "Download mobiele apps"
       ],
@@ -252,6 +255,9 @@
       ],
       "Leave vault": [
         "Verlaat kluis"
+      ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Vergrendel ${ PASS_APP_NAME }"
@@ -946,6 +952,10 @@
       "${ count } invites successfully sent": [
         "${ count } uitnodigingen succesvol verzonden"
       ],
+      "${ count } time": [
+        "${ count } keer",
+        "${ count } keren"
+      ],
       "${ memberCount } member": [
         "${ memberCount } lid",
         "${ memberCount } leden"
@@ -1110,6 +1120,9 @@
       ],
       "Enter your PIN code": [
         "Voer uw pincode in"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Verloopt over ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
@@ -1588,6 +1601,18 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } woord",
         "${ config.options.wordCount } woorden"
+      ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } versie"

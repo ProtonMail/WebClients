@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "Navegue na web de maneira privada e bloqueie anúncios"
       ],
-      "Create and collaborate on documents securely": [
-        "Crie e colabore em documentos com segurança"
-      ],
       "Keep your schedule private": [
         "Mantenha privada sua agenda"
       ],
@@ -3204,7 +3201,7 @@
     },
     "Delete address prompt": {
       "Are you sure you want to delete this address?": [
-        "Tem a certeza de que quer apagar esta endereço?"
+        "Você tem certeza que deseja excluir este endereço?"
       ],
       "Delete address": [
         "Excluir endereço"
@@ -3216,7 +3213,7 @@
         "Excluir endereço?"
       ],
       "Once deleted, this address ${ address } can't be used again by anyone else.": [
-        "Uma vez excluído, este endereço ${ address } não pode ser usado novamente por qualquer outra pessoa."
+        "Uma vez excluído, este endereço ${ address } não pode ser usado novamente por mais ninguém."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
         "Observe que se você excluir este endereço ${ address }, você não poderá mais enviar ou receber e-mails usando este endereço."
@@ -3363,7 +3360,7 @@
         "Você tem certeza de que deseja desativar este endereço?"
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
-        "Ao desativar esse endereço ${ address }, você não poderá enviar ou receber e-mails usando esse endereço e todos os produtos da ${ BRAND_NAME } serão desativados."
+        "Ao desativar esse endereço ${ address }, você não poderá enviar ou receber e-mails usando esse endereço e todos os produtos vinculados da ${ BRAND_NAME } serão desativados."
       ],
       "Disable address": [
         "Desativar endereço"
@@ -3470,7 +3467,7 @@
     },
     "drive_signup_2023: Feature": {
       "${ totalStorageSize } of storage for free": [
-        "${ totalStorageSize } de armazenamento gratuitamente"
+        "${ totalStorageSize } de armazenamento gratuito"
       ],
       "End-to-end encrypted": [
         "Criptografado de ponta a ponta"
@@ -3489,13 +3486,13 @@
     },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
-        "Crie uma conta grátis da ${ DRIVE_APP_NAME } para proteger com segurança seus arquivos."
+        "Crie uma conta gratuita no ${ DRIVE_APP_NAME } para acessar o arquivo com segurança"
       ],
       "Free, encrypted, and secure cloud storage": [
-        "Armazenamento em nuvem grátis, criptografado e seguro"
+        "Armazenamento em nuvem gratuito, criptografado e seguro"
       ],
       "Secure cloud storage and file sharing that protects your data": [
-        "Armazenamento seguro na nuvem e compartilhamento de arquivos que protege seus dados"
+        "Armazenamento seguro na nuvem e compartilhamento de arquivos que protegem seus dados"
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Você está convidado a acessar um arquivo no ${ DRIVE_APP_NAME }"
@@ -7193,11 +7190,17 @@
       "Item deleted in vault": [
         "Item excluído no cofre"
       ],
+      "Item in vault untrashed": [
+        "Item do cofre foi restaurado"
+      ],
       "Item Read": [
         "Item lido"
       ],
       "Item read in vault": [
         "Item lido no cofre"
+      ],
+      "Item trashed in vault": [
+        "Item excluído do cofre"
       ],
       "Item Updated": [
         "Item atualizado"
@@ -7795,9 +7798,6 @@
       ],
       "Single sign-on removed": [
         "Autenticação única removida"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem e-mails por meio do ${ MAIL_APP_NAME } para seus endereços de domínio personalizados. Este recurso está disponível apenas para usuários ${ BRAND_NAME } for Business com domínios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de uso, os domínios personalizados que gostaria de usar e os números de e-mail previstos por hora e por dia."
@@ -8869,22 +8869,22 @@
         "Não foi possível gerar a chave. Por favor, tente novamente mais tarde."
       ],
       "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Se você está gerando uma nova chave porque você acredita que a existente tenha sido comprometida, marque-a como comprometida após gerar a nova chave, por favor."
+        "Se você estiver gerando uma nova chave porque acredita que a chave existente tenha sido comprometida, marque-a como comprometida após gerar a nova chave."
       ],
       "Key successfully generated.": [
         "Chave gerada com sucesso."
       ],
       "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: você já tem uma chave com o mesmo algoritmo para esse endereço. A não ser que sua chave tenha sido comprometida, pode ser desnecessário gerar uma nova chave, além de causar lentidão em sua conta."
+        "Nota: você já possui uma chave com o mesmo algoritmo para este usuário. A menos que ela tenha sido comprometida, pode ser desnecessário gerar uma nova chave e isso pode tornar sua conta mais lenta."
       ],
       "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Nota: você já tem uma chave com o mesmo algoritmo para esse usuário. A não ser que a chave tenha sido comprometida, pode ser desnecessário gerar uma nova chave, além de causar lentidão em sua conta."
+        "Nota: você já possui uma chave com o mesmo algoritmo para este usuário. A menos que ela tenha sido comprometida, pode ser desnecessário gerar uma nova chave e isso pode tornar sua conta mais lenta."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
-        "Isso irá gerar uma nova chave que será usada para criptografar futuros detalhes de contato, chaves de criptografia de e-mail e outros dados."
+        "Isso irá gerar uma nova chave, que será usada para criptografar detalhes de contato futuros, chaves de criptografia de e-mail e outros dados."
       ],
       "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Isso gerará uma nova chave, que será usado para criptografar futuros e-mails, entre outros dados."
+        "Isso irá gerar uma nova chave, que será usada para criptografar futuros e-mails, entre outros dados."
       ]
     },
     "Key state badge": {
@@ -10527,20 +10527,26 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Adicionar assistente de escrita"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
-        "Todos os aplicativos da ${ BRAND_NAME } for Business e recursos premium para proteger a sua empresa"
+        "Todos os aplicativos da ${ BRAND_NAME } for Business e recursos premium para proteger seu negócio"
       ],
       "An encrypted email service that puts your privacy first": [
-        "Um serviço de e-mail criptografado que põe sua privacidade em primeiro lugar"
+        "Um serviço de e-mail criptografado que coloca sua privacidade em primeiro lugar"
       ],
       "Encrypted email and calendar to get you started": [
-        "E-mail criptografado e calendário para você começar"
+        "E-mail e calendário criptografados para você começar"
       ],
       "Encrypted solutions to protect your entire business": [
-        "Soluções criptografadas para proteger a sua empresa"
+        "Soluções criptografadas para proteger todo o seu negócio"
       ],
       "Enhanced security and premium features for teams": [
         "Segurança melhorada e recursos premium para equipes"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta por tempo limitado: **Obtenha até 35% de desconto** nos planos anuais."
@@ -10972,6 +10978,23 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11001,24 +11024,10 @@
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -11274,9 +11283,6 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - recursos premium"
-      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -11401,9 +11407,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -12412,7 +12415,7 @@
         "Certifique-se de que seu logotipo tenha espaço de preenchimento ao redor."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
-        "Opte por uma imagem PNG de 128x128 píxeis para maior claridade."
+        "Opte por uma imagem PNG de 128x128 píxeis para maior clareza."
       ],
       "Tips on choosing a good logo": [
         "Dicas para escolher um bom logotipo"
@@ -12438,7 +12441,7 @@
         "Imagem quadrada de pelo menos 128 pixels"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Os usuários verão o seu logotipo em vez do ícone da ${ BRAND_NAME } quando iniciado sessão nos nossos aplicativos web."
+        "Os usuários verão o seu logotipo em vez do ícone da ${ BRAND_NAME } quando conectados nos nossos aplicativos web."
       ]
     },
     "OS compatibility": {
@@ -12719,7 +12722,7 @@
         "Código aberto e auditado"
       ],
       "Passkeys supported on all devices": [
-        "Claves de acesso são suportadas em todos os dispositivos."
+        "Chaves de acesso suportadas em todos os dispositivos"
       ],
       "per month": [
         "por mês"
@@ -12741,13 +12744,6 @@
       ],
       "Save your recovery kit to continue": [
         "Salve o seu kit de recuperação para continuar"
-      ],
-      "Secure sharing with ${ n } vault": [
-        "Compartilhamento seguro com ${ n } cofre",
-        "Compartilhamento seguro com ${ n } cofres"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartilhamento seguro de múltiplos cofres"
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
@@ -13404,7 +13400,7 @@
         "Simplifica o gerenciamento de usuário entre diferentes serviços. Adicione, edite e remova usuários do seu provedor de identidade, e essas mudanças serão automaticamente aplicadas à sua organização ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
-        "O aprovisionamento automático do SCIM será desabilitado até que você entre com um novo token SCIM nas configurações do seu provedor de identidade."
+        "O provisionamento automático do SCIM será desabilitado até você inserir o novo token SCIM nas configurações do seu provedor de identidade."
       ],
       "The SCIM base URL and token will be deleted.": [
         "O URL base e o token do SCIM serão excluídos."
@@ -13437,10 +13433,10 @@
     },
     "scim: Tooltip": {
       "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
-        "Chave da API do conector SCIM o qual seu Agente de Provisionamento do Provedor de Identidade encaminha os dados do SCIM"
+        "Chave da API do conector SCIM para o qual seu agente de provisionamento do provedor de identidade encaminha dados SCIM"
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
-        "URL do conector SCIM o qual seu Agente de Provisionamento do Provedor de Identidade encaminha os dados do SCIM"
+        "URL do conector SCIM para o qual seu agente de provisionamento do provedor de identidade encaminha dados SCIM"
       ]
     },
     "Security Center - Info": {
@@ -14048,11 +14044,6 @@
       "Go to subscription plans": [
         "Acessar planos de assinatura"
       ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Fazer upgrade"
       ]
@@ -15071,6 +15062,9 @@
     "Suffix for price": {
       "per month": [
         "por mês"
+      ],
+      "per user per month": [
+        "por mês por usuário"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15784,6 +15778,9 @@
       "Gift code": [
         "Código de vale-presente"
       ],
+      "Groups": [
+        "Grupos"
+      ],
       "History": [
         "Histórico"
       ],
@@ -15958,9 +15955,6 @@
       ],
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalize o rodapé do seu e-mail"
       ],
       "Phone": [
         "Telefone"
@@ -16761,6 +16755,9 @@
       "Name": [
         "Nome"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Novo endereço de e-mail da ${ BRAND_NAME }"
+      ],
       "Optional": [
         "Opcional"
       ],
@@ -16768,7 +16765,7 @@
         "Privado"
       ],
       "Remember to share the user's sign in details with them.": [
-        "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
+        "Lembre-se de compartilhar os detalhes de início de sessão do usuário com eles."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Isso criará um endereço do ${ MAIL_APP_NAME }."
@@ -16785,7 +16782,7 @@
     },
     "Users table: badge": {
       "Administrators can't access the data of private users": [
-        "Administradores não podem acessar os dados privados de usuários"
+        "Os administradores não podem acessar os dados de usuários privados"
       ],
       "Invite sent": [
         "Convite enviado"
@@ -17009,7 +17006,7 @@
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."
       ],
       "Please update the extension to its latest version": [
-        "Atualize a extensão para sua versão mais recente"
+        "Atualize a extensão para a versão mais recente"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."

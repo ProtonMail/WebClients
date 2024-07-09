@@ -727,11 +727,11 @@
       "Not saved": [
         "Ur yettwasekles ara"
       ],
-      "OK": [
-        "Ih"
-      ],
       "Ok": [
         "IH"
+      ],
+      "OK": [
+        "Ih"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Ldi ${ CALENDAR_APP_NAME }"
@@ -7003,6 +7003,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } d ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } uwitay",
         "${ n } yiwitayen"
@@ -7198,9 +7201,6 @@
       ],
       "Unlimited labels": [
         "Tibzimin war tilas"
-      ],
-      "Unlimited logins and notes": [
-        "Inekcam d tezmilin war tilas"
       ],
       "Unlimited messages per day": [
         "War talast n yiznan i wass"

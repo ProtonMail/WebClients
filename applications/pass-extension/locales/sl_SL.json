@@ -110,11 +110,11 @@
       "Create": [
         "Ustvari"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Ustvarite račun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Ustvarite svoj račun ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Ustvarite račun ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Ustvarite nov trezor za skupno rabo"
@@ -266,6 +266,12 @@
       "Leave vault": [
         "Zapusti trezor"
       ],
+      "Link copied to clipboard": [
+        "Povezava je kopirana v odložišče"
+      ],
+      "Link expires after": [
+        "Povezava poteče čez"
+      ],
       "Lock extension": [
         "Podaljšek ključavnice"
       ],
@@ -370,6 +376,9 @@
       ],
       "Restore item": [
         "Obnovi predmet"
+      ],
+      "Restrict number of views": [
+        "Omejite število dostopov"
       ],
       "Retry": [
         "Poskusite znova"
@@ -929,6 +938,12 @@
       "${ count } invites successfully sent": [
         "${ count } povabil je bilo poslanih."
       ],
+      "${ count } time": [
+        "${ count }-krat",
+        "${ count }-krat",
+        "${ count }-krat",
+        "${ count }-krat"
+      ],
       "${ memberCount } member": [
         "${ memberCount } član",
         "${ memberCount } člana",
@@ -1123,6 +1138,9 @@
       ],
       "Enter your PIN code": [
         "Vnesi svojo PIN kodo."
+      ],
+      "Expires in ${ remainingTime }": [
+        "Poteče ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
@@ -1581,6 +1599,24 @@
         "${ config.options.wordCount } besedi",
         "${ config.options.wordCount } besede",
         "${ config.options.wordCount } besed"
+      ],
+      "${ days } day": [
+        "${ days } dan",
+        "${ days } dneva",
+        "${ days } dnevi",
+        "${ days } dni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ura",
+        "${ hours } uri",
+        "${ hours } ure",
+        "${ hours } ur"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuti",
+        "${ minutes } minute",
+        "${ minutes } minut"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } nadzor"

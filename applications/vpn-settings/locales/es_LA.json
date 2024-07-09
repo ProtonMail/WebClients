@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Activar clave de la organización"
       ],
+      "Add": [
+        "Añadir"
+      ],
       "Add address": [
         "Añadir dirección"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Navegue en la web de manera privada y bloquee anuncios"
       ],
-      "Create and collaborate on documents securely": [
-        "Cree y colabore en documentos de forma segura"
-      ],
       "Keep your schedule private": [
         "Mantenga privada el agenda"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Proteja sus comunicaciones"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
       ]
     },
     "Badge for domain": {
@@ -4153,7 +4158,7 @@
         "Versión ${ version }"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versión fue copiado en el portapapeles."
+        "Número de versión copiado al portapapeles"
       ],
       "View, download, and manage your invoices.": [
         "Vea, descargue y gestione sus facturas."
@@ -5200,6 +5205,14 @@
         "La suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Añadir el asistente de escritura"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Obtener la oferta"
@@ -5380,6 +5393,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -5629,9 +5645,6 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en bóvedas múltiples"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funciones premium"
-      ],
       "Passkeys supported": [
         "Claves de acceso admitidas"
       ],
@@ -5754,8 +5767,8 @@
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y notas"
+      "Unlimited logins, notes and credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
@@ -6491,15 +6504,19 @@
       "Preparing your Recovery Kit": [
         "Preparando su kit de recuperación"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Uso compartido seguro con ${ n } bóveda",
-        "Uso compartido seguro con ${ n } bóvedas"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Uso compartido seguro con varias bóvedas"
+      "Secure vault and link sharing": [
+        "Intercambio seguro de bóveda y enlaces"
       ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Intercambio seguro de bóveda (${ n } bóveda)",
+        "Intercambio seguro de bóveda (${ n } bóvedas)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Intercambio seguro de bóveda (${ n } bóveda) e intercambio de enlaces",
+        "Intercambio seguro de bóveda (${ n } bóvedas) e intercambio de enlaces"
       ],
       "Setting up your organization": [
         "Configurando la organización"
@@ -6645,6 +6662,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
       "Processing payment": [
         "Procesando el pago"
@@ -7419,11 +7439,6 @@
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
       ],
-      "Upgrade": [
-        "Mejorar"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Mejorar"
       ]
@@ -8338,6 +8353,9 @@
     "Suffix for price": {
       "per month": [
         "al mes"
+      ],
+      "per user per month": [
+        "/usuario al mes"
       ]
     },
     "summer2023: Tooltip": {
@@ -8734,6 +8752,9 @@
       ],
       "Gift code": [
         "Código de regalo"
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "How to choose a good logo": [
         "Cómo elegir un buen logo"

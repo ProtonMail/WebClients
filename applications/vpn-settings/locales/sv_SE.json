@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktivera organisationsnyckel"
       ],
+      "Add": [
+        "Lägg till"
+      ],
       "Add address": [
         "Lägg till adress"
       ],
@@ -733,9 +736,6 @@
       "Browse the web privately and block ads": [
         "Surfa på webben privat och blockera annonser"
       ],
-      "Create and collaborate on documents securely": [
-        "Skapa och samarbeta på dokument säkert"
-      ],
       "Keep your schedule private": [
         "Håll ditt schema privat"
       ],
@@ -747,6 +747,11 @@
       ],
       "Secure your communications": [
         "Säkra din kommunikation"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ]
     },
     "Badge for domain": {
@@ -5187,6 +5192,14 @@
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Lägg till skrivassistent"
+      ],
+      "for ${ price }": [
+        "för ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Ta del av erbjudandet"
@@ -5364,6 +5377,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } och ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -5610,9 +5626,6 @@
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premiumfunktioner"
-      ],
       "Passkeys supported": [
         "Passkeys stöds"
       ],
@@ -5735,8 +5748,8 @@
       "Unlimited labels": [
         "Obegränsade etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Obegränsat antal inloggningar och anteckningar"
+      "Unlimited logins, notes and credit cards": [
+        "Obegränsat antal inloggningar, anteckningar och kreditkort"
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
@@ -6496,15 +6509,19 @@
       "Preparing your Recovery Kit": [
         "Förbereder ditt återställningskit"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Säker delning med ${ n } valv",
-        "Säker delning med ${ n } valv"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Säker delning med flera valv"
+      "Secure vault and link sharing": [
+        "Säker delning av valv och länk"
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Säker valvdelning (${ n } valv)",
+        "Säker valvdelning (${ n } valv)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Säker valvdelning (${ n } valv) och länkdelning",
+        "Säker valvdelning (${ n } valv) och länkdelning"
       ],
       "Setting up your organization": [
         "Ställer in din organisation"
@@ -6656,6 +6673,9 @@
       ],
       "Payment Processing": [
         "Betalning behandlas"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
       "Processing payment": [
         "Bearbetar betalning"
@@ -7401,11 +7421,6 @@
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
       ],
-      "Upgrade": [
-        "Uppgradera"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Uppgradera"
       ]
@@ -8298,6 +8313,9 @@
     "Suffix for price": {
       "per month": [
         "per månad"
+      ],
+      "per user per month": [
+        "per användare per månad"
       ]
     },
     "summer2023: Tooltip": {
@@ -8694,6 +8712,9 @@
       ],
       "Gift code": [
         "Presentkod"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "How to choose a good logo": [
         "Hur man väljer en bra logga"

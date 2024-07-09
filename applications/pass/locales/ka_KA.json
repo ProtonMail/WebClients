@@ -191,8 +191,14 @@
       "Generate password": [
         "პაროლის გენერირება"
       ],
+      "Generate secure link": [
+        "დაცული ბმულის გენერაცია"
+      ],
       "Generated passwords": [
         "გენერირებული პაროლები"
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის მიღება"
       ],
       "Get mobile apps": [
         "მობილური აპების დაყენება"
@@ -242,6 +248,12 @@
       "Leave vault": [
         "საცავის დატოვება"
       ],
+      "Link copied to clipboard": [
+        "ბმული კოპირებულია ბუფერში"
+      ],
+      "Link expires after": [
+        "ბმულის ვადა"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის დაბლოკვა"
       ],
@@ -256,6 +268,9 @@
       ],
       "Manage access": [
         "წვდომის მართვა"
+      ],
+      "Manage vault access": [
+        "საცავის წვდომის მართვა"
       ],
       "Manually sync your data": [
         "თქვენი მონაცემების ხელით სინქრონიზაცია"
@@ -356,6 +371,9 @@
       "Restore item": [
         "ელემენტის აღდგენა"
       ],
+      "Restrict number of views": [
+        "ნახვების რიცხვის შეზღუდვა"
+      ],
       "Resume monitoring": [
         "მონიტორინგის გაგრძელება"
       ],
@@ -394,6 +412,9 @@
       ],
       "Share": [
         "გაზიარება"
+      ],
+      "Share secure link": [
+        "დაცული ბმულის გაზიარება"
       ],
       "Share this vault": [
         "ამ საცავის გაზიარება"
@@ -454,6 +475,9 @@
       ],
       "Verify": [
         "გადამოწმება"
+      ],
+      "Via secure link": [
+        "დაცული ბმულით"
       ],
       "View details": [
         "დეტალების ხილვა"
@@ -919,6 +943,14 @@
       "${ count } invites successfully sent": [
         "წარმატებით გაგზავნილია ${ count } მოსაწვევი"
       ],
+      "${ count } time": [
+        "${ count }-ჯერ",
+        "${ count }-ჯერ"
+      ],
+      "${ count } view": [
+        "${ count } ხედი",
+        "${ count } ხედი"
+      ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
@@ -1125,6 +1157,9 @@
       ],
       "Enter your PIN code": [
         "შეიყვანეთ თქვენი PIN კოდი"
+      ],
+      "Expires in ${ remainingTime }": [
+        "ვადა ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "დამატებითი პაროლი წარმატებით შეიქმნა"
@@ -1642,6 +1677,18 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } სიტყვა",
         "${ config.options.wordCount } სიტყვა"
+      ],
+      "${ days } day": [
+        "${ days } დღე",
+        "${ days } დღე"
+      ],
+      "${ hours } hour": [
+        "${ hours } საათი",
+        "${ hours } საათი"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } წუთი",
+        "${ minutes } წუთი"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-ის ვერსია"
@@ -2255,6 +2302,11 @@
       ],
       "Write your note": [
         "დაწერეთ თქვენი შენიშვნა"
+      ]
+    },
+    "Security Center - Info": {
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
     },
     "Success": {

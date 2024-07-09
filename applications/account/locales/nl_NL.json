@@ -679,6 +679,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
       ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Openen in ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Open navigation": [
         "Navigatie openen"
       ],
@@ -7311,7 +7314,7 @@
         "Voeg e-mailadressen toe voor de gebruikers op de rijen"
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Vraag aan de eigenaar om je rechtstreeks uit te nodigen voor het document."
+        "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
       ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
@@ -7341,7 +7344,7 @@
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
       ],
       "Please open the document to view it.": [
-        "Open het document om het te bekijken, alstublieft."
+        "Open het document om het te bekijken."
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
@@ -10557,6 +10560,23 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -10586,24 +10606,10 @@
         "Upgraden naar ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -10847,9 +10853,6 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium functies"
-      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -10968,9 +10971,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal wachtwoorden en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -12231,13 +12231,6 @@
       "Save your recovery kit to continue": [
         "Sla uw herstelkit op om verder te gaan"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Veilig delen met kluis ${ n }",
-        "Veilig delen met ${ n } kluizen"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Veilig delen met meerdere kluizen"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ],
@@ -13497,11 +13490,6 @@
       "Go to subscription plans": [
         "Naar abonnementen"
       ],
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Upgraden"
       ]
@@ -15028,6 +15016,9 @@
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Groups": [
+        "Groepen"
       ],
       "History": [
         "Geschiedenis"

@@ -113,10 +113,10 @@
       "Create": [
         "Erstellen"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
       "Create a new vault to share": [
@@ -218,6 +218,9 @@
       "Generate password": [
         "Passwort generieren"
       ],
+      "Generate secure link": [
+        "Sicheren Link generieren"
+      ],
       "Generated passwords": [
         "Generierte Passwörter"
       ],
@@ -268,6 +271,12 @@
       ],
       "Leave vault": [
         "Tresor verlassen"
+      ],
+      "Link copied to clipboard": [
+        "Link in die Zwischenablage kopiert"
+      ],
+      "Link expires after": [
+        "Link läuft ab nach"
       ],
       "Lock extension": [
         "Erweiterung sperren"
@@ -377,6 +386,9 @@
       "Restore item": [
         "Eintrag wiederherstellen"
       ],
+      "Restrict number of views": [
+        "Anzahl der Ansichten einschränken"
+      ],
       "Retry": [
         "Erneut versuchen"
       ],
@@ -410,8 +422,14 @@
       "Set extra password": [
         "Zusätzliches Passwort festlegen"
       ],
+      "Setup 2FA": [
+        "2FA einrichten"
+      ],
       "Share": [
         "Teilen"
+      ],
+      "Share secure link": [
+        "Sicheren Link teilen"
       ],
       "Share this vault": [
         "Diesen Tresor teilen"
@@ -478,6 +496,9 @@
       ],
       "Upgrade now to share with more people": [
         "Jetzt upgraden, um mit weiteren Personen zu teilen"
+      ],
+      "Via secure link": [
+        "Über sicheren Link"
       ],
       "View app logs": [
         "App-Protokolle anzeigen"
@@ -714,6 +735,9 @@
       "File could not be parsed": [
         "Datei konnte nicht geparst werden."
       ],
+      "File could not be read": [
+        "Fehler beim Lesen der Datei."
+      ],
       "File does not match expected format": [
         "Die Datei entspricht nicht dem erwarteten Format."
       ],
@@ -923,6 +947,10 @@
       "${ count } invites successfully sent": [
         "${ count } Einladung erfolgreich gesendet"
       ],
+      "${ count } time": [
+        "${ count } Mal",
+        "${ count } Mal"
+      ],
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
@@ -1031,6 +1059,9 @@
       "Built in 2FA authenticator": [
         "Integrierter 2FA-Authenticator"
       ],
+      "Can be viewed": [
+        "Kann angezeigt werden"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Darf Einträge in diesem Tresor erstellen, bearbeiten, löschen und exportieren."
       ],
@@ -1129,6 +1160,12 @@
       ],
       "Enter your PIN code": [
         "PIN-Code eingeben"
+      ],
+      "Expires in": [
+        "Läuft ab in"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Läuft ab in ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
@@ -1331,6 +1368,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
+      ],
+      "Please confirm your password": [
+        "Bitte bestätige dein Passwort"
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben."
@@ -1586,6 +1626,18 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } Wort",
         "${ config.options.wordCount } Wörter"
+      ],
+      "${ days } day": [
+        "${ days } Tag",
+        "${ days } Tage"
+      ],
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"

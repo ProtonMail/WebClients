@@ -17,6 +17,9 @@
       "Activate organization key": [
         "ორგანიზაციის გასაღების აქტივაცია"
       ],
+      "Add": [
+        "დამატება"
+      ],
       "Add address": [
         "მისამართის დამატება"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "იმუშავეთ ინტერნეტში კონფიდენციალურად და დაბლოკეთ რეკლამა"
       ],
-      "Create and collaborate on documents securely": [
-        "შექმენით და იმუშავეთ დოკუმენტზე ერთდროულად და დაცულად"
-      ],
       "Keep your schedule private": [
         "შეინარჩუნეთ თქვენი განრიგი კონფიდენციალურად"
       ],
@@ -959,6 +959,9 @@
       ],
       "Custom domain problem": [
         "მომხმარებლის დომენის პრობლემა"
+      ],
+      "Docs problem": [
+        "Docs-ის პრობლემა"
       ],
       "Drive problem": [
         "Drive-ის პრობლემა"
@@ -3516,6 +3519,9 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "თუ გნებავთ ამ ანგარიშის სხვა ანგარიშთან გაერთიანება, არ წაშალოთ ის."
       ],
+      "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists, or open a ${ boldLiveChat } for chat support.": [
+        "თუ პრობლემები გაქვთ, ჩვენ დასახმარებლად მზად ვართ. ${ boldPhoneCall } ან ${ boldZoomMeeting } ჩვენი მხარდაჭერის სპეცალისტით, ან გახსენით ${ boldLiveChat } ჩატიდან მხარდაჭერისთვის."
+      ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "მნიშვნელოვანია: თუ თქვენს DNS კონსოლს CNAME მნიშვნელობების, რომლებიც მძიმით მთავრდება, მხარდაჭერა არ აქვს, CNAME-ის მნიშვნელობებში ბოლო წერტილი შეგიძლიათ წაშალოთ."
       ],
@@ -3584,6 +3590,9 @@
       ],
       "Loading ${ appName }": [
         "იტვირთება ${ appName }"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
       ],
       "Loading preview": [
         "გადახედვის ჩატვირთვა"
@@ -5153,6 +5162,14 @@
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "წერაში დამხმარის დამატება"
+      ],
+      "for ${ price }": [
+        "${ price }-თვის"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "ფასდაკლების მიღება"
@@ -5333,6 +5350,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } და ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } კალენდარი",
         "${ n } კალენდარი"
@@ -5582,9 +5602,6 @@
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - ფასიანი ფუნქციები"
-      ],
       "Passkeys supported": [
         "საკვანძო გასაღებები მხარდაჭერილია"
       ],
@@ -5704,8 +5721,8 @@
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
       ],
-      "Unlimited logins and notes": [
-        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
+      "Unlimited logins, notes and credit cards": [
+        "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
       ],
       "Unlimited messages per day": [
         "ულიმიტო დღიური გზავნა/დღეში"
@@ -6435,15 +6452,19 @@
       "Preparing your Recovery Kit": [
         "თქვენი აღგენის ნაკრების მომზადება"
       ],
-      "Secure sharing with ${ n } vault": [
-        "უსაფრთხო გაზიარება ${ n } საცავთან",
-        "უსაფრთხო გაზიარება ${ n } საცავთან"
-      ],
-      "Secure sharing with multiple vaults": [
-        "უსაფრთხო გაზიარება ერთზე მეტ საცავთან"
+      "Secure vault and link sharing": [
+        "დაცული საცავი და ბმულის გაზიარება"
       ],
       "Secure vault sharing": [
         "დაცული საცავის გაზიარება"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "დაცული საცავის გაზიარება (${ n } საცავი)",
+        "დაცული საცავის გაზიარება (${ n } საცავი)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება",
+        "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ],
       "Setting up your organization": [
         "ორგანიზაციის მორგება"
@@ -6586,6 +6607,9 @@
       ],
       "Payment Processing": [
         "გადახდის დამუშავება"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
       ],
       "Processing payment": [
         "გადახდის დამუშავება"
@@ -6860,6 +6884,9 @@
       ],
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
+        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა კოდი და თავიდან ჩართეთ SCIM ${ VPN_APP_NAME }-სთვის."
       ],
       "Make sure you copy the above SCIM token now.": [
         "დარწმუნდით, რომ დააკოპირეთ ზემორე SCIM კოდი."
@@ -7322,11 +7349,6 @@
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
       ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "ტარიფის აწევა"
       ]
@@ -7813,6 +7835,9 @@
       "I still want to cancel": [
         "მე მაინც მინდა, გავაუქმო"
       ],
+      "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
+        "თუ გადააცილებით უფასო სატარიფო გეგმას, როცა ${ planName } გამოწერა ამოიწურება, თქვენ არ გექნებათ საშუალება, რომ:"
+      ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
       ],
@@ -7836,6 +7861,9 @@
       ],
       "Online privacy, for your whole family": [
         "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
+      ],
+      "Organizations, additional users, and custom email domains are not supported on the free plan. This means:": [
+        "ორგანიზაციები, დამატებითი მომხმარებლები და მორგებული ელფოსტის დომენები უფასო სატარიფო გეგმაზე ხელმისაწვდომი არაა. ეს ნიშნავს, რომ:"
       ],
       "Our fight against censorship in Russia": [
         "ჩვენი ბრძოლა რუსეთის ცენზურის წინააღმდეგ"
@@ -7908,6 +7936,12 @@
       ],
       "What you give up when you cancel ${ planName }": [
         "რას დაკარგავთ, როცა გააუქმებთ ${ planName }-ს"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 1 გბ ელფოსტის საცავს და 5 გბ-მდე Drive-ის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
+        "როცა ${ planName }-ს გააუქმებთ, სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა, რაც, მხოლოდ, 5 გბ Drive-ის საცავს და 1 გბ-მდე ელფოსტის საცავს შეიცავს. ასევე დაკარგავთ ადრე მონიჭებულ საცავის ბონუსებსაც."
       ],
       "Yearly free storage bonuses": [
         "წლიური უფასო საცავის ბონუსები"
@@ -8172,6 +8206,9 @@
     "Suffix for price": {
       "per month": [
         "თვეში"
+      ],
+      "per user per month": [
+        "თითოეული მომხმარებლისთვის თვეში"
       ]
     },
     "summer2023: Tooltip": {
@@ -8569,6 +8606,9 @@
       "Gift code": [
         "სასაჩუქრე კოდი"
       ],
+      "Groups": [
+        "ჯგუფები"
+      ],
       "How to choose a good logo": [
         "როგორ აირჩიოთ კარგი ლოგო"
       ],
@@ -8929,6 +8969,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "არჩეული თემა აქტიური იქნება, როცა სისტემა 'ღია რეჟიმზეა' დაყენებული"
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "ეს ელფოსტის მისამართი ნაჩვენები იქნება ყველა ორგანიზაციის წევრისთვის, როცა ანგარიშის მართვის ოპერაციებს განახორციელებთ."
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "მომხმარებლები ჩვენს ვებ-აპებში შესვლისას ${ BRAND_NAME }-ის ხატულას მაგიერ თქვენს ლოგოს დაინახავენ."

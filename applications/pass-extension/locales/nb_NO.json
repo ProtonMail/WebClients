@@ -113,10 +113,10 @@
       "Create": [
         "Opprett"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -197,6 +197,9 @@
       "Edit vault": [
         "Rediger hvelv"
       ],
+      "Entire vault": [
+        "Hele hvelvet"
+      ],
       "Exclude from monitoring": [
         "Ekskluder fra overvåking"
       ],
@@ -218,8 +221,14 @@
       "Generate password": [
         "Generer passord"
       ],
+      "Generate secure link": [
+        "Generer sikker kobling"
+      ],
       "Generated passwords": [
         "Generert passord"
+      ],
+      "Generating secure link...": [
+        "Genererer sikker kobling..."
       ],
       "Get mobile apps": [
         "Få mobilapper"
@@ -269,6 +278,12 @@
       "Leave vault": [
         "Forlat hvelv"
       ],
+      "Link copied to clipboard": [
+        "Kobling kopiert til utklippstavlen"
+      ],
+      "Link expires after": [
+        "Koblingen utløper etter"
+      ],
       "Lock extension": [
         "Lås utvidelse"
       ],
@@ -284,8 +299,14 @@
       "Manage access": [
         "Administrer tilgang"
       ],
+      "Manage vault access": [
+        "Administrer hvelvtilgang"
+      ],
       "Manually sync your data": [
         "Synkroniser dine data manuelt"
+      ],
+      "Maximum views": [
+        "Maksimalt antall visninger"
       ],
       "More info: ${ safeTitle }": [
         "Mer informasjon: ${ safeTitle }"
@@ -313,6 +334,9 @@
       ],
       "Multiple select": [
         "Flere valg"
+      ],
+      "No expired links": [
+        "Ingen utløpte koblinger"
       ],
       "Not now": [
         "Ikke nå"
@@ -359,6 +383,9 @@
       "Remove access": [
         "Fjern tilgang"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Fjern alle utløpte koblinger (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Fjern kobling"
       ],
@@ -377,6 +404,9 @@
       "Restore item": [
         "Gjenopprett element"
       ],
+      "Restrict number of views": [
+        "Begrens antall visninger"
+      ],
       "Retry": [
         "Prøv på nytt"
       ],
@@ -394,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Lagrer tilgangsnøkkel..."
+      ],
+      "Secure links": [
+        "Sikre koblinger"
       ],
       "See all": [
         "Se alle"
@@ -418,6 +451,9 @@
       ],
       "Share": [
         "Del"
+      ],
+      "Share secure link": [
+        "Del sikker kobling"
       ],
       "Share this vault": [
         "Del dette hvelvet"
@@ -484,6 +520,9 @@
       ],
       "Upgrade now to share with more people": [
         "Oppgrader nå for å dele med flere"
+      ],
+      "Via secure link": [
+        "Via sikker kobling"
       ],
       "View app logs": [
         "Se applogger"
@@ -732,6 +771,9 @@
       "Importing items failed": [
         "Import av elementer mislyktes"
       ],
+      "Inactive secure links could not be removed.": [
+        "Inaktive sikre koblinger kunne ikke fjernes."
+      ],
       "Invalid password manager": [
         "Ugyldig passordbehandler"
       ],
@@ -792,6 +834,12 @@
       "Restoring trashed items failed": [
         "Gjennoppretting av elementer fra papirkurven mislyktes."
       ],
+      "Secure link could not be created.": [
+        "Kunne ikke opprette sikker kobling."
+      ],
+      "Secure link could not be opened.": [
+        "Sikker kobling kunne ikke åpnes."
+      ],
       "Settings update failed": [
         "Oppdatering av innstillinger mislyktes"
       ],
@@ -812,6 +860,9 @@
       ],
       "The URL is in the list": [
         "Nettadressen er i listen"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Det oppstod en feil under fjerning av den sikre koblingen. Vennligst prøv igjen om noen minutter."
       ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøk. Vennligst logg på igjen."
@@ -935,6 +986,14 @@
       "${ count } invites successfully sent": [
         "${ count } invitasjoner sendt"
       ],
+      "${ count } time": [
+        "${ count } gang",
+        "${ count } ganger"
+      ],
+      "${ count } view": [
+        "${ count } visning",
+        "${ count } visninger"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -1013,6 +1072,9 @@
       "All breaches for this address were resolved": [
         "Alle brudd for denne adressen ble løst"
       ],
+      "All inactive secure links were removed": [
+        "Alle inaktive sikre koblinger ble fjernet"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" flyttet"
       ],
@@ -1037,6 +1099,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Er du sikker på at du ønsker å flytte elementet til \"${ name }\"?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Er du sikker på at du vil fjerne denne koblingen?"
+      ],
       "Auto-lock successfully disabled.": [
         "Auto-lås vellykket deaktivert."
       ],
@@ -1048,6 +1113,9 @@
       ],
       "Built in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
+      ],
+      "Can be viewed": [
+        "Kan sees"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan opprette, redigere, slette og eksportere elementer i dette hvelvet."
@@ -1168,6 +1236,12 @@
       ],
       "Enter your PIN code": [
         "Skriv inn din PIN-kode"
+      ],
+      "Expires in": [
+        "Utløper om"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Utløper om ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Ekstra passord vellykket opprettet"
@@ -1428,8 +1502,14 @@
       "Registering PIN lock failed": [
         "Registrering av PIN-lås mislyktes"
       ],
+      "Removing all inactive secure links...": [
+        "Fjerner alle inaktive sikre koblinger..."
+      ],
       "Removing extra password...": [
         "Fjerner ekstra passord..."
+      ],
+      "Removing secure link...": [
+        "Fjerner sikker kobling..."
       ],
       "Restoring items from trash": [
         "Gjenoppretter elementer fra papirkurven"
@@ -1518,6 +1598,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kan ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
+      ],
+      "The secure link has been removed": [
+        "Den sikre koblingen er fjernet"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten du prøver å lime inn, er lengre enn den maksimalt tillatte lengden på ${ maxLength }-tegn."
@@ -1671,6 +1754,18 @@
         "${ config.options.wordCount } ord",
         "${ config.options.wordCount } ord"
       ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dager"
+      ],
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minutt",
+        "${ minutes } minutter"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME }-overvåking"
       ],
@@ -1686,14 +1781,23 @@
       "10 minutes": [
         "10 minutter"
       ],
+      "14 days": [
+        "14 dager"
+      ],
       "15 minutes": [
         "15 minutter"
+      ],
+      "24 hours": [
+        "24 timer"
       ],
       "2FA secret key (TOTP)": [
         "2FA-hemmelig nøkkel (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA-token (TOTP)"
+      ],
+      "30 days": [
+        "30 dager"
       ],
       "30 minutes": [
         "30 minutter"
@@ -1703,6 +1807,9 @@
       ],
       "5 minutes": [
         "5 minutter"
+      ],
+      "7 days": [
+        "7 dager"
       ],
       "A-Z": [
         "A-Å"
@@ -1839,6 +1946,9 @@
       "Expired": [
         "Utløpt"
       ],
+      "Expired link": [
+        "Utgått kobling"
+      ],
       "Export": [
         "Eksporter"
       ],
@@ -1856,6 +1966,9 @@
       ],
       "General": [
         "Generelt"
+      ],
+      "Generate a secure link for this item": [
+        "Generer en sikker kobling til dette elementet"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -1931,6 +2044,9 @@
       ],
       "Make all viewers": [
         "Gjør alle seere"
+      ],
+      "Max views reached": [
+        "Maks antall visninger nådd"
       ],
       "Members": [
         "Medlemmer"
@@ -2031,6 +2147,9 @@
       "Recent": [
         "Nylig"
       ],
+      "Remove link": [
+        "Fjern kobling"
+      ],
       "Report a problem": [
         "Rapporter et problem"
       ],
@@ -2067,6 +2186,15 @@
       "Settings": [
         "Innstillinger"
       ],
+      "Share": [
+        "Del"
+      ],
+      "Share this vault or create a new vault": [
+        "Del dette hvelvet eller opprett et nytt hvelv"
+      ],
+      "Shared link": [
+        "Delt kobling"
+      ],
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
       ],
@@ -2084,6 +2212,13 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Elementets hvelv er for øyeblikket delt med ${ targetMembers } person.",
+        "Elementets hvelv er for øyeblikket delt med ${ targetMembers } personer."
+      ],
+      "The URL has been copied to the clipboard": [
+        "Nettadressen er kopiert til utklippstavlen"
       ],
       "Title": [
         "Tittel"
@@ -2396,6 +2531,9 @@
       "No items selected": [
         "Ingen elementer valgt"
       ],
+      "No shared secure links": [
+        "Ingen delte sikre koblinger"
+      ],
       "Our welcome gift to you": [
         "Vår velkomstgave til deg"
       ],
@@ -2419,6 +2557,9 @@
       ],
       "Remove extra password": [
         "Fjern ekstra passord"
+      ],
+      "Remove secure link?": [
+        "Fjerne sikker kobling?"
       ],
       "Restore this version?": [
         "Gjenopprette denne versjonen?"

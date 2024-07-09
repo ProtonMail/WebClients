@@ -113,11 +113,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta na ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Criar um cofre para compartilhar"
@@ -335,6 +335,9 @@
       "Multiple select": [
         "Seleção múltipla"
       ],
+      "No expired links": [
+        "Nenhum link expirado"
+      ],
       "Not now": [
         "Agora não"
       ],
@@ -379,6 +382,9 @@
       ],
       "Remove access": [
         "Remover o acesso"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Remover todos os links expirados (${ inactiveLinkCount })"
       ],
       "Remove link": [
         "Remover link"
@@ -451,9 +457,6 @@
       ],
       "Share vault": [
         "Compartilhar cofre"
-      ],
-      "Shared links": [
-        "Links compartilhados"
       ],
       "Show": [
         "Mostrar"
@@ -752,6 +755,9 @@
       ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
+      ],
+      "File could not be read": [
+        "Não foi possível encontrar o arquivo."
       ],
       "File does not match expected format": [
         "O arquivo não corresponde ao formato esperado"
@@ -1934,6 +1940,9 @@
       "General": [
         "Geral"
       ],
+      "Generate a secure link for this item": [
+        "Gerar um link seguro para este item"
+      ],
       "Generic CSV": [
         "CSV genérico"
       ],
@@ -2011,6 +2020,9 @@
       ],
       "Make all viewers": [
         "Definir todos como leitores"
+      ],
+      "Max views reached": [
+        "Visualizações máximas alcançadas"
       ],
       "Members": [
         "Membros"
@@ -2153,6 +2165,9 @@
       "Share": [
         "Compartilhar"
       ],
+      "Share this vault or create a new vault": [
+        "Compartilhe esse cofre ou crie um cofre"
+      ],
       "Shared link": [
         "Link compartilhado"
       ],
@@ -2177,6 +2192,9 @@
       "The item's vault is currently shared with ${ targetMembers } person": [
         "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoa",
         "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoas"
+      ],
+      "The URL has been copied to the clipboard": [
+        "O link foi copiado para a área de transferência"
       ],
       "Title": [
         "Título"
@@ -2488,6 +2506,9 @@
       ],
       "No items selected": [
         "Nenhum item selecionado"
+      ],
+      "No shared secure links": [
+        "Nenhum link seguro compartilhado"
       ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"

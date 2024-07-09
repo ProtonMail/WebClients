@@ -220,9 +220,6 @@
       "Create and copy alias": [
         "Opprett og kopier alias"
       ],
-      "Create Document": [
-        "Opprett dokument"
-      ],
       "Create link": [
         "Opprett kobling"
       ],
@@ -976,6 +973,11 @@
         "${ BRAND_NAME }-applikasjoner"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Tom ICS-fil"
@@ -1144,6 +1146,9 @@
       ],
       "Custom domain problem": [
         "Egendefinert domeneproblem"
+      ],
+      "Docs problem": [
+        "Docs problem"
       ],
       "Drive problem": [
         "Problem med Drive"
@@ -4891,9 +4896,6 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
       ],
-      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
-        "Den nye dokumentfunksjonen krever den nyeste versjonen av ${ DRIVE_APP_NAME }. Oppdater appene dine på mobil og datamaskin for en sømløs opplevelse."
-      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
@@ -6165,6 +6167,14 @@
         "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etiketter og merk dem som."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Legg til skriveassistent"
+      ],
+      "for ${ price }": [
+        "for ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Få avtalen"
@@ -6548,6 +6558,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -6779,9 +6792,6 @@
       "Organize items with multiple vaults": [
         "Organiser elementer med flere hvelv"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium funksjoner"
-      ],
       "Passkeys supported": [
         "Tilgangsnøkler støttes"
       ],
@@ -6894,8 +6904,8 @@
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Ubegrensede pålogginger og notater"
+      "Unlimited logins, notes and credit cards": [
+        "Ubegrenset antall pålogginger, notater og kredittkort"
       ],
       "Unlimited messages per day": [
         "Ubegrensede meldinger per dag"
@@ -7693,15 +7703,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Sikker deling med ${ n } hvelv",
-        "Sikker deling med ${ n } hvelv"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Sikker deling med flere hvelv"
+      "Secure vault and link sharing": [
+        "Sikker hvelv og deling av koblinger"
       ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Sikker hvelvdeling (${ n } hvelv)",
+        "Sikker hvelvdeling (${ n } hvelv)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling",
+        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling"
       ]
     },
     "Payment method option": {
@@ -7733,6 +7747,9 @@
       ],
       "Payment Processing": [
         "Betalingsbehandling"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ months }. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Da vil den automatisk bli fornyet til ${ price } for ${ months } måneder. Du kan avbryte når som helst."
@@ -8356,11 +8373,6 @@
       "Go to subscription plans": [
         "Gå til abonnementsplaner"
       ],
-      "Upgrade": [
-        "Oppgrader"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Oppgrader"
       ]
@@ -9159,6 +9171,9 @@
     "Suffix for price": {
       "per month": [
         "per måned"
+      ],
+      "per user per month": [
+        "per bruker per måned"
       ]
     },
     "summer2023: Tooltip": {
@@ -9456,9 +9471,6 @@
       ],
       "Discard changes?": [
         "Forkaste endringer?"
-      ],
-      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
-        "Docs er en ny funksjon i ${ DRIVE_APP_NAME }"
       ],
       "Downgrade account": [
         "Nedgrader kontoen"

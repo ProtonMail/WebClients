@@ -190,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Включить мониторинг Темной паутины"
       ],
+      "Entire vault": [
+        "Все хранилище"
+      ],
       "Exclude from monitoring": [
         "Исключить из мониторинга"
       ],
@@ -211,8 +214,17 @@
       "Generate password": [
         "Создать пароль"
       ],
+      "Generate secure link": [
+        "Сгенерировать защищенную ссылку"
+      ],
       "Generated passwords": [
         "Generated passwords"
+      ],
+      "Generating secure link...": [
+        "Создание защищенной ссылки..."
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Перейти на тариф ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Получить мобильные приложения"
@@ -265,6 +277,12 @@
       "Leave vault": [
         "Покинуть хранилище"
       ],
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
+      ],
+      "Link expires after": [
+        "Срок действия ссылки истекает после"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Заблокировать ${ PASS_APP_NAME }"
       ],
@@ -280,11 +298,17 @@
       "Manage access": [
         "Управление доступом"
       ],
+      "Manage vault access": [
+        "Управление доступом к хранилищу"
+      ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
       ],
       "Mark as resolved": [
         "Отметить как устраненную"
+      ],
+      "Maximum views": [
+        "Максимум просмотров"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -312,6 +336,9 @@
       ],
       "Multiple select": [
         "Множественный выбор"
+      ],
+      "No expired links": [
+        "Ссылок с испеченным срока действия нет"
       ],
       "OK": [
         "OK"
@@ -355,6 +382,9 @@
       "Remove access": [
         "Отменить доступ"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Удалить все ссылки с истекшим сроком действия (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Удалить ссылку"
       ],
@@ -379,6 +409,9 @@
       "Restore item": [
         "Восстановить элемент"
       ],
+      "Restrict number of views": [
+        "Ограничить количество просмотров"
+      ],
       "Resume monitoring": [
         "Возобновить мониторинг"
       ],
@@ -393,6 +426,9 @@
       ],
       "Saving": [
         "Сохранение"
+      ],
+      "Secure links": [
+        "Защищенные ссылки"
       ],
       "See all": [
         "Посмотреть все"
@@ -418,6 +454,9 @@
       "Share": [
         "Поделиться"
       ],
+      "Share secure link": [
+        "Поделиться защищенной ссылкой"
+      ],
       "Share this vault": [
         "Поделитесь этим хранилищем"
       ],
@@ -435,6 +474,9 @@
       ],
       "Sign out": [
         "Выйти"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Кто-то поделился с вами элементом в ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Сортировать элементы хранилища"
@@ -477,6 +519,9 @@
       ],
       "Verify": [
         "Подтвердить"
+      ],
+      "Via secure link": [
+        "Через защищенную ссылку"
       ],
       "View details": [
         "Просмотреть информацию"
@@ -761,6 +806,9 @@
       "Importing items failed": [
         "Сбой импорта элементов"
       ],
+      "Inactive secure links could not be removed.": [
+        "Не удалось удалить неактивные защитные ссылки."
+      ],
       "Invalid password manager": [
         "Неверный менеджер паролей"
       ],
@@ -809,6 +857,12 @@
       "Restoring trashed items failed": [
         "Сбой восстановления элементов из корзины."
       ],
+      "Secure link could not be created.": [
+        "Не удалось создать защищенную ссылку."
+      ],
+      "Secure link could not be opened.": [
+        "Не удалось открыть защищенную ссылку."
+      ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
       ],
@@ -830,11 +884,17 @@
       "The session has expired. Please sign in again.": [
         "Время сеанса истекло. Пожалуйста, войдите снова."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Произошла ошибка при удалении защищенной ссылки. Повторите попытку через несколько минут."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Слишком много неудачных попыток. Пожалуйста, войдите снова."
       ],
       "Trashing item failed": [
         "Ошибка при перемещении элемента в корзину"
+      ],
+      "Try reaching out to the link owner.": [
+        "Попробуйте связаться с владельцем ссылки."
       ],
       "Unable to generate an OTP code for this item": [
         "Невозможно сгенерировать OTP-код для этого элемента"
@@ -1003,6 +1063,18 @@
       "${ count } invites successfully sent": [
         "${ count } приглашения успешно отправлены"
       ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } раза",
+        "${ count } раз",
+        "${ count } раз"
+      ],
+      "${ count } view": [
+        "${ count } просмотр",
+        "${ count } просмотра",
+        "${ count } просмотров",
+        "${ count } просмотров"
+      ],
       "${ memberCount } member": [
         "${ memberCount } член",
         "${ memberCount } члена",
@@ -1075,6 +1147,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Все текущие утечки будут отмечены как устраненные. В случае будущих утечек данных вы будете уведомлены."
       ],
+      "All inactive secure links were removed": [
+        "Все неактивные защищенные ссылки были удалены"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Все элементы из \"${ payload.content.name }\" успешно удалены"
       ],
@@ -1099,6 +1174,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Вы уверены, что хотите переместить элемент в \"${ name }\" ?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Вы уверены, что хотите удалить ссылку?"
+      ],
       "Auto-lock successfully disabled.": [
         "Автоблокировка успешно отключена."
       ],
@@ -1113,6 +1191,9 @@
       ],
       "Built in 2FA authenticator": [
         "Встроенный двухфакторный аутентификатор"
+      ],
+      "Can be viewed": [
+        "Можно просмотреть"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
@@ -1131,6 +1212,9 @@
       ],
       "Click here to add a field for a username.": [
         "Нажмите здесь, чтобы добавить поле для имени пользователя."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Подтвердите дополнительный пароль, чтобы продолжить его удаление."
       ],
       "Congratulations, your access has been confirmed": [
         "Congratulations, your access has been confirmed"
@@ -1218,6 +1302,18 @@
       ],
       "Enter your PIN code": [
         "Введите свой PIN-код"
+      ],
+      "Expires in": [
+        "Истекает через"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Истекает через ${ remainingTime }"
+      ],
+      "Extra password successfuly created": [
+        "Дополнительный пароль успешно создан"
+      ],
+      "Extra password successfuly removed": [
+        "Дополнительный пароль успешно удален"
       ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
@@ -1465,6 +1561,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
       ],
+      "Please confirm your password": [
+        "Подтвердите ваш пароль"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Подтвердите свой пароль для автоматической блокировки с помощью пароля."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Подтвердите свой пароль, чтобы отменить текущую блокировку."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Подтвердите свой пароль, чтобы обновить время автоблокировки."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Подтвердите PIN-код, чтобы отменить выполнение вашей текущей блокировки."
       ],
@@ -1498,8 +1606,20 @@
       "Reconnecting": [
         "Переподключение"
       ],
+      "Registering extra password...": [
+        "Регистрация дополнительного пароля..."
+      ],
       "Registering PIN lock failed": [
         "Выполнение блокировки PIN-кодом не удалась"
+      ],
+      "Removing all inactive secure links...": [
+        "Удаление всех неактивных защищенных ссылок..."
+      ],
+      "Removing extra password...": [
+        "Удаление дополнительного пароля..."
+      ],
+      "Removing secure link...": [
+        "Удаление защищенной ссылки..."
       ],
       "Restoring items from trash": [
         "Восстановление элементов из Корзины"
@@ -1576,11 +1696,17 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Следующий ${ result.ignored.length } элемент не может быть импортирован:",
         "Следующие ${ result.ignored.length } элемента не могут быть импортированы:",
         "Следующие ${ result.ignored.length } элементов не могут быть импортированы:",
         "Следующие ${ result.ignored.length } элемента не могут быть импортированы:"
+      ],
+      "The secure link has been removed": [
+        "Защищенная ссылка удалена"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Текст, который вы пытаетесь вставить, длиннее разрешенного максимального количества символов ${ maxLength }."
@@ -1617,6 +1743,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью дополнительного пароля"
       ],
       "Unpinning item...": [
         "Открепление элемента..."
@@ -1696,6 +1825,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Вы достигли максимально разрешенной длины в ${ maxLength } символов."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Вы выйдете из системы и должны будете заново войти в нее на всех остальных устройствах."
+      ],
       "You will be notified of data breaches for these email addresses.": [
         "Вы будете получать уведомления об утечках данных по этим адресам электронной почты."
       ],
@@ -1737,6 +1869,24 @@
         "${ config.options.wordCount } слов",
         "${ config.options.wordCount } слов"
       ],
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дней"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версия ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1755,14 +1905,23 @@
       "10 minutes": [
         "10 минут"
       ],
+      "14 days": [
+        "14 дней"
+      ],
       "15 minutes": [
         "15 минут"
+      ],
+      "24 hours": [
+        "24 часа"
       ],
       "2FA secret key (TOTP)": [
         "Секретный ключ двухфакторной аутентификации (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Токен 2ФА (TOTP)"
+      ],
+      "30 days": [
+        "30 дней"
       ],
       "30 minutes": [
         "30 минут"
@@ -1772,6 +1931,9 @@
       ],
       "5 minutes": [
         "5 минут"
+      ],
+      "7 days": [
+        "7 дней"
       ],
       "A-Z": [
         "А-Я"
@@ -1893,8 +2055,14 @@
       "Expired": [
         "Истекло"
       ],
+      "Expired link": [
+        "Срок действия ссылки истек"
+      ],
       "Export": [
         "Экспорт"
+      ],
+      "Extra password": [
+        "Дополнительный пароль"
       ],
       "Field name": [
         "Название поля"
@@ -1905,8 +2073,14 @@
       "Forwards to": [
         "Переслать"
       ],
+      "Free forever": [
+        "Бесплатно навсегда"
+      ],
       "General": [
         "Общие"
+      ],
+      "Generate a secure link for this item": [
+        "Создать защищенную ссылку для этого элемента"
       ],
       "Generic CSV": [
         "Общий CSV"
@@ -1986,6 +2160,9 @@
       "Make all viewers": [
         "Заставьте всех зрителями"
       ],
+      "Max views reached": [
+        "Достигнуто максимальное количество просмотров"
+      ],
       "Members": [
         "Участники"
       ],
@@ -2037,6 +2214,9 @@
       "Oldest to newest": [
         "От старых к новым"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Менеджер паролей с открытым исходным кодом для защиты без усилий."
+      ],
       "Organization": [
         "Организация"
       ],
@@ -2064,11 +2244,17 @@
       "Prefix": [
         "Префикс"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Защитить ${ PASS_APP_NAME } дополнительным паролем"
+      ],
       "Rate us": [
         "Оцените нас"
       ],
       "Recent": [
         "Недавние"
+      ],
+      "Remove link": [
+        "Удалить ссылку"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
@@ -2078,6 +2264,9 @@
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Защищенно храните, делитесь и автоматически входите в свои аккаунты с помощью ${ PASS_APP_NAME }, использующего сквозное шифрование, которому доверяют миллионы."
       ],
       "Security": [
         "Безопасность"
@@ -2100,6 +2289,15 @@
       "Session locking": [
         "Сеанс блокируется"
       ],
+      "Share": [
+        "Поделиться"
+      ],
+      "Share this vault or create a new vault": [
+        "Поделиться этим хранилищем или создать новое хранилище"
+      ],
+      "Shared link": [
+        "Общая ссылка"
+      ],
       "Show website favicons": [
         "Показать значки сайтов"
       ],
@@ -2120,6 +2318,18 @@
       ],
       "Text": [
         "Текст"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } человека",
+        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } людей",
+        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } людей",
+        "В настоящее время хранилище этого элемента находится в общем доступе для ${ targetMembers } людей"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL был скопирован в буфер обмена"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Этот элемент останется доступным до ${ remaining }"
       ],
       "Title": [
         "Заголовок"
@@ -2528,6 +2738,9 @@
       "No reused passwords": [
         "Нет повторно использованных паролей"
       ],
+      "No shared secure links": [
+        "Нет общих защищенных ссылок"
+      ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
       ],
@@ -2560,6 +2773,9 @@
       ],
       "Remove extra password": [
         "Удалить дополнительный пароль"
+      ],
+      "Remove secure link?": [
+        "Удалить защищенную ссылку?"
       ],
       "Resolved breaches": [
         "Устраненные утечки"
@@ -2712,6 +2928,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Не удалось получить почтовые ящики для этого псевдонима в данный момент"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Внимание: Если вы потеряете этот пароль, вы не сможете получить доступ к своему аккаунту ${ PASS_APP_NAME }."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Не могу создать хранилище \"${ vaultName }\""
       ],
@@ -2735,6 +2954,9 @@
       ],
       "Extra password cannot be empty": [
         "Дополнительный пароль не может быть пустым"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Дополнительный пароль должен содержать не менее 8 символов"
       ],
       "Failed to load breaches.": [
         "Не удалось загрузить утечки."
@@ -2799,14 +3021,23 @@
       "PGP encrypted export file requires passphrase": [
         "Для файла экспорта с шифрованием в PGP требуется парольная фраза"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Убедитесь, что расширение правильно установлено и включено."
+      ],
       "Please contact us for investigating the issue": [
         "Пожалуйста, свяжитесь с нами для исследования этой проблемы"
+      ],
+      "Please update the extension to its latest version": [
+        "Обновите расширение до последней версии"
       ],
       "Please verify your email address in order to use email aliases": [
         "Пожалуйста, подтвердите свой адрес электронной почты, чтобы использовать псевдонимы электронной почты"
       ],
       "Please verify your email address in order to use vault sharing": [
         "Пожалуйста, подтвердите свой адрес электронной почты, чтобы воспользоваться функцией обмена хранилищами."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Удаление дополнительного пароля приведет вас к выходу со всех устройств и завершению всех активных сеансов."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."

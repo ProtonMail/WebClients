@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
       ],
+      "Add": [
+        "Aggiungi"
+      ],
       "Add address": [
         "Aggiungi indirizzo"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Naviga privatamente sul web e blocca gli annunci"
       ],
-      "Create and collaborate on documents securely": [
-        "Crea e collabora sui documenti in modo sicuro"
-      ],
       "Keep your schedule private": [
         "Mantieni privata la tua agenda"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Proteggi le tue comunicazioni"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
       ]
     },
     "Badge for domain": {
@@ -5206,6 +5211,14 @@
         "Il tuo abbonamento è terminato. ${ cta } ed evitare la perdita di dati."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Aggiungi l'assistente alla scrittura"
+      ],
+      "for ${ price }": [
+        "per ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Approfitta dell'offerta"
@@ -5386,6 +5399,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendari"
@@ -5635,9 +5651,6 @@
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funzionalità premium"
-      ],
       "Passkeys supported": [
         "Passkey supportate"
       ],
@@ -5760,8 +5773,8 @@
       "Unlimited labels": [
         "Etichette illimitate"
       ],
-      "Unlimited logins and notes": [
-        "Login e note illimitati"
+      "Unlimited logins, notes and credit cards": [
+        "Accessi, note e carte di credito illimitati"
       ],
       "Unlimited messages per day": [
         "Messaggi illimitati al giorno"
@@ -6521,15 +6534,19 @@
       "Preparing your Recovery Kit": [
         "Preparazione del tuo kit di recupero"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Condivisione sicura con ${ n } cassaforte",
-        "Condivisione sicura con ${ n } casseforti"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Condivisione sicura con più casseforti"
+      "Secure vault and link sharing": [
+        "Cassaforte sicura e condivisione dei collegamenti"
       ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Condivisione sicura della cassaforte (${ n } cassaforte)",
+        "Condivisione sicura delle casseforti (${ n } casseforti)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Condivisione sicura della cassaforte (${ n } cassaforte) e condivisione dei collegamenti",
+        "Condivisione sicura delle casseforti (${ n } casseforti) e condivisione dei collegamenti"
       ],
       "Setting up your organization": [
         "Configurazione dell'organizzazione in corso"
@@ -6675,6 +6692,9 @@
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
       "Processing payment": [
         "Elaborazione pagamento"
@@ -7449,11 +7469,6 @@
       "Go to subscription plans": [
         "Vai ai piani di abbonamento"
       ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Effettua l'upgrade"
       ]
@@ -8368,6 +8383,9 @@
     "Suffix for price": {
       "per month": [
         "al mese"
+      ],
+      "per user per month": [
+        "per utente al mese"
       ]
     },
     "summer2023: Tooltip": {
@@ -8764,6 +8782,9 @@
       ],
       "Gift code": [
         "Codice regalo"
+      ],
+      "Groups": [
+        "Gruppi"
       ],
       "How to choose a good logo": [
         "Come scegliere un buon logo"

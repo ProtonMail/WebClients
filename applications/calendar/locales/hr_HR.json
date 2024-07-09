@@ -4128,6 +4128,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendar",
         "${ n } kalendara",
@@ -4887,11 +4890,6 @@
     "specialoffer: Link": {
       "Upgrade": [
         "Nadogradnja"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Nadogradi"
       ]
     },
     "specialoffer: Offers": {

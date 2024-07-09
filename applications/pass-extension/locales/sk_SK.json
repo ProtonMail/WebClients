@@ -113,11 +113,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
       ],
       "Create a new vault to share": [
         "Vytvoriť nový trezor na zdieľanie"
@@ -218,6 +218,9 @@
       "Generate password": [
         "Vygenerovať heslo"
       ],
+      "Generate secure link": [
+        "Generovať bezpečný odkaz"
+      ],
       "Generated passwords": [
         "Vygenerované heslá"
       ],
@@ -268,6 +271,12 @@
       ],
       "Leave vault": [
         "Opustiť trezor"
+      ],
+      "Link copied to clipboard": [
+        "Odkaz bol skopírovaný do schránky"
+      ],
+      "Link expires after": [
+        "Platnosť odkazu vyprší po"
       ],
       "Lock extension": [
         "Zamknúť rozšírenie"
@@ -377,6 +386,9 @@
       "Restore item": [
         "Obnoviť položku"
       ],
+      "Restrict number of views": [
+        "Obmedziť počet zobrazení"
+      ],
       "Retry": [
         "Opakovať"
       ],
@@ -412,6 +424,9 @@
       ],
       "Share": [
         "Zdieľať"
+      ],
+      "Share secure link": [
+        "Zdieľať bezpečný odkaz"
       ],
       "Share this vault": [
         "Zdieľať tento trezor"
@@ -478,6 +493,9 @@
       ],
       "Upgrade now to share with more people": [
         "Aktualizujte teraz, aby ste sa mohli podeliť s viacerými ľuďmi"
+      ],
+      "Via secure link": [
+        "Cez bezpečný odkaz"
       ],
       "View app logs": [
         "Zobraziť zázmamy aplikácie"
@@ -944,6 +962,18 @@
       "${ count } invites successfully sent": [
         "${ count } pozvánok úspešne odoslaných"
       ],
+      "${ count } time": [
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát"
+      ],
+      "${ count } view": [
+        "${ count } zobrazenie",
+        "${ count } zobrazení",
+        "${ count } zobrazenia",
+        "${ count } zobrazenia"
+      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členovia",
@@ -1174,6 +1204,9 @@
       ],
       "Enter your PIN code": [
         "Zadajte PIN kód"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Vyprší o ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
@@ -1653,6 +1686,18 @@
         "${ config.options.wordCount } slová",
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
+      ],
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dňa"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodiny",
+        "${ hours } hodiny",
+        "${ hours } hodín",
+        "${ hours } hodín"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"

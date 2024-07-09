@@ -190,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Käytä Pimeän verkon valvontaa"
       ],
+      "Entire vault": [
+        "Koko holvi"
+      ],
       "Exclude from monitoring": [
         "Poissulje valvonnasta"
       ],
@@ -211,8 +214,17 @@
       "Generate password": [
         "Luo salasana"
       ],
+      "Generate secure link": [
+        "Luo turvallinen linkki"
+      ],
       "Generated passwords": [
         "Luodut salasanat"
+      ],
+      "Generating secure link...": [
+        "Turvallinen linkkiä luodaan..."
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Hanki ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
@@ -265,6 +277,12 @@
       "Leave vault": [
         "Poistu holvista"
       ],
+      "Link copied to clipboard": [
+        "Linkki kopioitiin leikepöydälle"
+      ],
+      "Link expires after": [
+        "Linkki erääntyy"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Lukitse ${ PASS_APP_NAME }"
       ],
@@ -280,11 +298,17 @@
       "Manage access": [
         "Hallitse käyttöoikeuksia"
       ],
+      "Manage vault access": [
+        "Hallitse holvin käyttöoikeuksia"
+      ],
       "Manually sync your data": [
         "Synkronoi tietosi"
       ],
       "Mark as resolved": [
         "Merkitse ratkaistuksi"
+      ],
+      "Maximum views": [
+        "Katselujen enimmäismäärä"
       ],
       "More info: ${ safeTitle }": [
         "Lisätietoja: ${ safeTitle }"
@@ -312,6 +336,9 @@
       ],
       "Multiple select": [
         "Monivalinta"
+      ],
+      "No expired links": [
+        "Ei erääntyneitä linkkejä"
       ],
       "OK": [
         "OK"
@@ -355,6 +382,9 @@
       "Remove access": [
         "Mitätöi käyttöoikeus"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Poista kaikki erääntyneet linkit (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Poista linkki"
       ],
@@ -379,6 +409,9 @@
       "Restore item": [
         "Palauta kohde"
       ],
+      "Restrict number of views": [
+        "Rajoita tarkastelumäärää"
+      ],
       "Resume monitoring": [
         "Palauta valvonta"
       ],
@@ -393,6 +426,9 @@
       ],
       "Saving": [
         "Tallennetaan"
+      ],
+      "Secure links": [
+        "Turvalliset linkit"
       ],
       "See all": [
         "Näytä kaikki"
@@ -417,6 +453,9 @@
       ],
       "Share": [
         "Jaa"
+      ],
+      "Share secure link": [
+        "Jaa turvallinen linkki"
       ],
       "Share this vault": [
         "Jaa tämä holvi"
@@ -477,6 +516,9 @@
       ],
       "Verify": [
         "Vahvista"
+      ],
+      "Via secure link": [
+        "Turvallisen linkin kautta"
       ],
       "View details": [
         "Näytä tiedot"
@@ -755,6 +797,9 @@
       "Importing items failed": [
         "Kohteiden tuonti epäonnistui"
       ],
+      "Inactive secure links could not be removed.": [
+        "Käytöstä poistettuja turvallisia linkkejä ei voitu poistaa."
+      ],
       "Invalid password manager": [
         "Virheellinen salasanahallinta"
       ],
@@ -803,6 +848,12 @@
       "Restoring trashed items failed": [
         "Roskakorin kohteiden palautus epäonnistui"
       ],
+      "Secure link could not be created.": [
+        "Turvallista linkkiä ei voitu luoda."
+      ],
+      "Secure link could not be opened.": [
+        "Turvallista linkkiä ei voitu avata."
+      ],
       "Settings update failed": [
         "Asetusten tallennus epäonnistui"
       ],
@@ -829,6 +880,9 @@
       ],
       "Trashing item failed": [
         "Kohteen siirto roskakoriin epäonnistui"
+      ],
+      "Try reaching out to the link owner.": [
+        "Yritä ottaa yhteyttä linkin omistajaan."
       ],
       "Unable to generate an OTP code for this item": [
         "OTP-koodia ei voida luoda tälle kohteelle"
@@ -982,6 +1036,14 @@
       "${ count } invites successfully sent": [
         "${ count } kutsua lähetettiin"
       ],
+      "${ count } time": [
+        "${ count } kerran",
+        "${ count } kertaa"
+      ],
+      "${ count } view": [
+        "${ count } tarkastelukerta",
+        "${ count } tarkastelukertaa"
+      ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
@@ -1048,6 +1110,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Kaikki nykyiset tietomurrot merkitään ratkaistuiksi. Tulevista tietomurroista ilmoitetaan."
       ],
+      "All inactive secure links were removed": [
+        "Kaikki käytöstä poistetut turvalliset linkit on poistettu"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Kohteen \"${ payload.content.name }\" kaikki kohteet on siirretty"
       ],
@@ -1072,6 +1137,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Haluatko varmasti siirtää kohteen holviin \"${ name }\"?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Haluatko varmasti poistaa linkin?"
+      ],
       "Auto-lock successfully disabled.": [
         "Automaattilukitus poistettiin käytöstä."
       ],
@@ -1083,6 +1151,9 @@
       ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu toisen vaiheen todentaja"
+      ],
+      "Can be viewed": [
+        "Voi katsella"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
@@ -1191,6 +1262,12 @@
       ],
       "Enter your PIN code": [
         "Syötä PIN-koodisi"
+      ],
+      "Expires in": [
+        "Erääntyy"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Vanhenee: ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Lisäsalasanan luonti onnistui"
@@ -1487,8 +1564,14 @@
       "Registering PIN lock failed": [
         "PIN-lukituksen käyttöönotto epäonnistui"
       ],
+      "Removing all inactive secure links...": [
+        "Kaikkia käytöstä poistetttuja turvallisia linkkejä poistetaan..."
+      ],
       "Removing extra password...": [
         "Lisäsalasanaa poistetaan..."
+      ],
+      "Removing secure link...": [
+        "Turvallista linkkiä poistetaan..."
       ],
       "Restoring items from trash": [
         "Kohteita palautetaan roskakorista"
@@ -1568,6 +1651,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
         "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
+      ],
+      "The secure link has been removed": [
+        "Turvallinen linkki on poistettu"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
@@ -1724,6 +1810,18 @@
         "${ config.options.wordCount } sana",
         "${ config.options.wordCount } sanaa"
       ],
+      "${ days } day": [
+        "${ days } päivä",
+        "${ days } päivää"
+      ],
+      "${ hours } hour": [
+        "${ hours } tunti",
+        "${ hours } tuntia"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuutti",
+        "${ minutes } minuuttia"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versio"
       ],
@@ -1740,14 +1838,23 @@
       "10 minutes": [
         "10 minuutin kuluttua"
       ],
+      "14 days": [
+        "14 päivää"
+      ],
       "15 minutes": [
         "15 minuutin kuluttua"
+      ],
+      "24 hours": [
+        "24 tuntia"
       ],
       "2FA secret key (TOTP)": [
         "Salainen 2FA-avain (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA-tunniste (TOTP)"
+      ],
+      "30 days": [
+        "30 päivää"
       ],
       "30 minutes": [
         "30 minuutin kuluttua"
@@ -1757,6 +1864,9 @@
       ],
       "5 minutes": [
         "5 minuutin kuluttua"
+      ],
+      "7 days": [
+        "7 päivää"
       ],
       "A-Z": [
         "A-Ö"
@@ -1878,6 +1988,9 @@
       "Expired": [
         "Erääntynyt"
       ],
+      "Expired link": [
+        "Erääntynyt linkki"
+      ],
       "Export": [
         "Vienti"
       ],
@@ -1893,8 +2006,14 @@
       "Forwards to": [
         "Ohjaa osoitteeseen"
       ],
+      "Free forever": [
+        "Ikuisesti ilmainen"
+      ],
       "General": [
         "Yleiset"
+      ],
+      "Generate a secure link for this item": [
+        "Luo turvallinen linkki tälle kohteelle"
       ],
       "Generic CSV": [
         "Yleispätevä CSV"
@@ -1973,6 +2092,9 @@
       ],
       "Make all viewers": [
         "Määritä kaikki tarkastelijoiksi"
+      ],
+      "Max views reached": [
+        "Katselukertojen enimmäismäärä saavutettu"
       ],
       "Members": [
         "Jäsenet"
@@ -2061,6 +2183,9 @@
       "Recent": [
         "Käytön mukaan"
       ],
+      "Remove link": [
+        "Poista linkki"
+      ],
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
@@ -2091,6 +2216,15 @@
       "Session locking": [
         "Istunnon lukitus"
       ],
+      "Share": [
+        "Jaa"
+      ],
+      "Share this vault or create a new vault": [
+        "Jaa tämä holvi, tai luo uusi holvi"
+      ],
+      "Shared link": [
+        "Jaettu linkki"
+      ],
       "Show website favicons": [
         "Näytä sivustokuvakkeet"
       ],
@@ -2111,6 +2245,16 @@
       ],
       "Text": [
         "Teksti"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilön kanssa",
+        "Kohteen holvi on tällä hetkellä jaettu ${ targetMembers } henkilön kanssa"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL-osoite on kopioitu leikepöydälle"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Tämä kohde on käytettävissä, kunnes ${ remaining }"
       ],
       "Title": [
         "Nimi"
@@ -2515,6 +2659,9 @@
       "No reused passwords": [
         "Toistuvia salasanoja ei ole"
       ],
+      "No shared secure links": [
+        "Jaettuja turvallisia linkkejä ei ole"
+      ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
       ],
@@ -2547,6 +2694,9 @@
       ],
       "Remove extra password": [
         "Poista lisäsalasana"
+      ],
+      "Remove secure link?": [
+        "Poista turvallinen linkki?"
       ],
       "Resolved breaches": [
         "Ratkaistut tietomurrot"

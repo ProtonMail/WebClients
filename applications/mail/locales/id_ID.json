@@ -813,10 +813,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1520,6 +1520,11 @@
         "Jalankan pada server"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Berkas ICS kosong"
@@ -1693,6 +1698,9 @@
       ],
       "Custom domain problem": [
         "Masalah domain khusus"
+      ],
+      "Docs problem": [
+        "Masalah Docs"
       ],
       "Drive problem": [
         "Masalah Drive"
@@ -3948,6 +3956,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Kunci utama yang diambil untuk pengguna ${ BRAND_NAME } tidak valid untuk pengiriman"
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Terjadi masalah mengunduh asisten penulisan. Jika Anda menggunakan mode pribadi, coba menggunakan mode penjelajahan normal atau jalankan asisten penulisan pada server."
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Terdapat masalah dalam mengunduh asisten penulisan. Silakan coba lagi."
@@ -6756,7 +6767,7 @@
         "Untuk berhenti berlangganan dari milis ini, Anda akan dibawa ke URL berikut yang berisikan arahan lebih lanjut dari pengelola milis:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
+        "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk kunci yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
       ],
       "Tomorrow, ${ formattedTime }": [
         "Besok, ${ formattedTime }"
@@ -7242,7 +7253,7 @@
         "Apakah Anda ingin memercayai kunci publik utama dengan sidik jari berikut?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Anda telah mengaktifkan Verifikasi Alamat dengan Kunci Terpercaya untuk alamat email ini,\nnamun Anda belum memercayai kunci enkripsi aktif manapun.\nAnda harus memercayai kunci yang valid untuk dapat mengirim pesan ke alamat email ini."
+        "Anda telah mengaktifkan Verifikasi Alamat dengan Kunci Terpercaya untuk alamat email ini,\nnamun Anda belum memercayai kunci enkripsi aktif mana pun.\nAnda harus memercayai kunci yang valid untuk pengiriman untuk dapat mengirim pesan ke alamat email ini."
       ]
     },
     "Key validation warning": {
@@ -8336,6 +8347,14 @@
         "Impor seluruh pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan labeli sebagai"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Tambah asisten penulisan"
+      ],
+      "for ${ price }": [
+        "untuk ${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arsip"
@@ -8653,6 +8672,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } dan ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender"
       ],
@@ -8869,9 +8891,6 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - fitur premium"
-      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -8983,8 +9002,8 @@
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
       ],
-      "Unlimited logins and notes": [
-        "Tanpa batasan jumlah login dan catatan"
+      "Unlimited logins, notes and credit cards": [
+        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
@@ -9615,14 +9634,17 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Berbagi aman dengan ${ n } brankas"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Berbagi aman dengan beberapa brankas"
+      "Secure vault and link sharing": [
+        "Pembagian brankas dan tautan aman"
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Pembagian brankas aman (${ n } brankas)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ]
     },
     "passwordless": {
@@ -9668,6 +9690,9 @@
       ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Harga diskon spesial ${ priceWithDiscount } berlaku untuk ${ months } pertama. Voucer berlaku untuk pembaruan ${ couponRedemptions }. Setelahnya, langganan akan secara otomatis diperbarui seharga ${ price } untuk ${ months } bulan. Kamu bisa membatalkan langganan kapan saja."
@@ -10535,11 +10560,6 @@
       ],
       "Upgrade": [
         "Tingkatkan akun"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Tingkatkan"
       ]
     },
     "specialoffer: Offers": {
@@ -11520,6 +11540,9 @@
     "Suffix for price": {
       "per month": [
         "per bulan"
+      ],
+      "per user per month": [
+        "per pengguna per bulan"
       ]
     },
     "summer2023: Tooltip": {
