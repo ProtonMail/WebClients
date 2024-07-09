@@ -4,14 +4,18 @@ import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/c
 import type { Api, Maybe } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { getLocalKey } from '@proton/shared/lib/api/auth';
+import { setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
+import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
+import getRandomString from '@proton/utils/getRandomString';
 
 import type { LockMode } from './lock/types';
 import type { AuthServiceConfig } from './service';
@@ -131,6 +135,36 @@ export const resumeSession = async (
     { api, authStore, onSessionInvalid }: AuthServiceConfig
 ): Promise<ResumeSessionResult> => {
     try {
+        const { cookies } = authStore.options;
+        const { AccessToken, RefreshToken, UID } = persistedSession;
+
+        /** If the previous auth session was token based :
+         * refresh and set the cookies before resuming. */
+        if (cookies && AccessToken && RefreshToken) {
+            const refresh = await api<RefreshSessionResponse>(
+                withAuthHeaders(
+                    UID,
+                    AccessToken,
+                    refreshTokens({
+                        RefreshToken: RefreshToken,
+                    })
+                )
+            );
+
+            await api(
+                withAuthHeaders(
+                    UID,
+                    refresh.AccessToken,
+                    setCookies({
+                        UID,
+                        RefreshToken: refresh.RefreshToken,
+                        State: getRandomString(24),
+                        Persistent: true,
+                    })
+                )
+            );
+        }
+
         const [clientKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
             api<{ User: UserType }>(getUser()),
