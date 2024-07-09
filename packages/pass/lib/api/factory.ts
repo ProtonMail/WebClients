@@ -38,6 +38,9 @@ import { getSilenced } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
+    /** When `true` - API handlers will use cookie based
+     * authentication and refresh handlers */
+    cookies: boolean;
     /** Specifies the maximum number of concurrent requests. If not provided,
      * all requests will be processed immediately. When a value is set, ongoing
      * requests will be deferred until the threshold is ready for additional processing. */
@@ -45,7 +48,9 @@ export type ApiFactoryOptions = {
     getAuth?: () => Maybe<ApiAuth>;
 };
 
-export const getAPIAuth = () => {
+/** In token based auth, each request should attach
+ * the necessary token based Authorization headers */
+export const getTokenAuth = (): Maybe<ApiAuth> => {
     const AccessToken = authStore.getAccessToken();
     const RefreshToken = authStore.getRefreshToken();
     const RefreshTime = authStore.getRefreshTime();
@@ -54,12 +59,27 @@ export const getAPIAuth = () => {
     return { UID, AccessToken, RefreshToken, RefreshTime };
 };
 
-export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactoryOptions): Api => {
+/** If the API is configured to use cookies - we only
+ * need the session UID in order to send out requests */
+export const getCookieAuth = (): Maybe<ApiAuth> => {
+    const RefreshTime = authStore.getRefreshTime();
+    const UID = authStore.getUID();
+    if (!UID) return undefined;
+    return { UID, AccessToken: '', RefreshToken: '', RefreshTime };
+};
+
+export const createApi = ({
+    config,
+    cookies,
+    getAuth = cookies ? getCookieAuth : getTokenAuth,
+    threshold,
+}: ApiFactoryOptions): Api => {
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
     const state = objectHandler<ApiState>({
         appVersionBad: false,
+        cookies,
         online: true,
         pendingCount: 0,
         queued: [],
@@ -76,9 +96,10 @@ export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactor
         call,
         getAuth,
         onRefresh: (data) => pubsub.publishAsync({ type: 'refresh', data }),
+        cookies,
     });
 
-    const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
+    const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state, cookies });
 
     const api = async (options: ApiOptions): Promise<ApiResult> => {
         const pending = state.get('pendingCount') + 1;

@@ -126,8 +126,8 @@ const config = {
             version: FuseVersion.V1,
             // Disables ELECTRON_RUN_AS_NODE
             [FuseV1Options.RunAsNode]: false,
-            // To remove the Keychain Access prompt on Intel Mac
-            [FuseV1Options.EnableCookieEncryption]: false,
+            // Enables cookie encryption
+            [FuseV1Options.EnableCookieEncryption]: true,
             // Disables the NODE_OPTIONS environment variable
             [FuseV1Options.EnableNodeOptionsEnvironmentVariable]: false,
             // Disables the --inspect and --inspect-brk family of CLI options

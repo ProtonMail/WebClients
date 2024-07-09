@@ -3,16 +3,19 @@ import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey } from '@proton/shared/lib/api/auth';
+import { setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
+import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
+import getRandomString from '@proton/utils/getRandomString';
 
 import type { LockMode } from './lock/types';
 import type { AuthServiceConfig } from './service';
@@ -61,24 +64,6 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'UID',
     'UserID',
 ];
-
-export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
-    Boolean(
-        data.AccessToken &&
-            data.RefreshToken &&
-            data.UID &&
-            data.UserID &&
-            data.keyPassword &&
-            (!data.offlineConfig || data.offlineKD)
-    );
-
-export const isValidPersistedSession = (data: any): data is EncryptedAuthSession =>
-    isObject(data) &&
-    Boolean('AccessToken' in data && data.AccessToken) &&
-    Boolean('RefreshToken' in data && data.RefreshToken) &&
-    Boolean('UID' in data && data.UID) &&
-    Boolean('UserID' in data && data.UserID) &&
-    Boolean('blob' in data && data.blob);
 
 export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array> =>
     version === 2 ? stringToUtf8Array('session') : undefined;
@@ -150,6 +135,36 @@ export const resumeSession = async (
     { api, authStore, onSessionInvalid }: AuthServiceConfig
 ): Promise<ResumeSessionResult> => {
     try {
+        const { cookies } = authStore.options;
+        const { AccessToken, RefreshToken, UID } = persistedSession;
+
+        /** If the previous auth session was token based :
+         * refresh and set the cookies before resuming. */
+        if (cookies && AccessToken && RefreshToken) {
+            const refresh = await api<RefreshSessionResponse>(
+                withAuthHeaders(
+                    UID,
+                    AccessToken,
+                    refreshTokens({
+                        RefreshToken: RefreshToken,
+                    })
+                )
+            );
+
+            await api(
+                withAuthHeaders(
+                    UID,
+                    refresh.AccessToken,
+                    setCookies({
+                        UID,
+                        RefreshToken: refresh.RefreshToken,
+                        State: getRandomString(24),
+                        Persistent: true,
+                    })
+                )
+            );
+        }
+
         const [clientKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
             api<{ User: UserType }>(getUser()),
@@ -172,14 +187,28 @@ export const resumeSession = async (
 };
 
 export const migrateSession = async (authStore: AuthStore): Promise<boolean> => {
+    let migrated = false;
+
     const offlineKD = authStore.getOfflineKD();
     const offlineConfig = authStore.getOfflineConfig();
     const offlineVerifier = authStore.getOfflineVerifier();
+    const AccessToken = authStore.getAccessToken();
+    const RefreshToken = authStore.getRefreshToken();
 
-    if (offlineKD && offlineConfig && !offlineVerifier) {
-        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
-        return true;
+    const { cookies } = authStore.options;
+
+    /** Remove session tokens if a cookie based session has tokens */
+    if (cookies && (AccessToken || RefreshToken)) {
+        authStore.setAccessToken(undefined);
+        authStore.setRefreshToken(undefined);
+        migrated = true;
     }
 
-    return false;
+    /** Create the `offlineVerifier` if it hasn't been generated (<1.18.0) */
+    if (offlineKD && offlineConfig && !offlineVerifier) {
+        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+        migrated = true;
+    }
+
+    return migrated;
 };
