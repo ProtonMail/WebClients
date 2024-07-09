@@ -6,7 +6,10 @@ import { c } from 'ttag';
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import Href from '@proton/atoms/Href/Href';
+import { Info } from '@proton/components/components';
 import QRCode from '@proton/components/components/image/QRCode';
+import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { IWasmApiWalletData } from '@proton/wallet';
 
@@ -74,7 +77,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         const paymentLinkUri = paymentLink.toUri();
 
                         return (
-                            <div className="bg-weak rounded-xl flex flex-column items-center w-full p-0.5">
+                            <InputFieldStackedGroup>
                                 {/* We only display selector when account was not provided */}
                                 {!account && (
                                     <Select
@@ -104,23 +107,37 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                                 />
                                             ),
                                         }))}
+                                        isGroupElement
                                     />
                                 )}
-                                <div className="w-custom pt-6 px-6" style={{ '--w-custom': '12.5rem' }}>
-                                    <QRCode data-testid="serialized-payment-info-qrcode" value={paymentLinkString} />
-                                </div>
-                                <div className="flex flex-row flex-nowrap items-center mt-4 pb-6 px-6">
-                                    <div>
-                                        <Tooltip title={paymentLinkString}>
-                                            <Href href={paymentLinkUri} className="color-norm">
-                                                <span className="block text-break-all text-center text-no-decoration">
-                                                    {paymentLinkString}
-                                                </span>
-                                            </Href>
-                                        </Tooltip>
+                                <InputFieldStacked isGroupElement classname="bg-weak text-center">
+                                    <div className="w-custom pt-6 px-6 mx-auto" style={{ '--w-custom': '11.5rem' }}>
+                                        <QRCode
+                                            data-testid="serialized-payment-info-qrcode"
+                                            value={paymentLinkString}
+                                        />
                                     </div>
-                                </div>
-                            </div>
+                                    <div className="flex flex-row flex-nowrap items-center p-4">
+                                        <div>
+                                            <h4 className="text-rg font-bold flex gap-2 mb-2 items-center text-center justify-center">
+                                                {c('Wallet Receive').t`Bitcoin address`}{' '}
+                                                <Info
+                                                    className="color-norm"
+                                                    title={c('Wallet Receive')
+                                                        .t`For better privacy, generate a new address for each transaction.`}
+                                                />
+                                            </h4>
+                                            <Tooltip title={paymentLinkString}>
+                                                <Href href={paymentLinkUri} className="color-norm">
+                                                    <span className="block text-break-all text-center text-no-decoration">
+                                                        {paymentLinkString}
+                                                    </span>
+                                                </Href>
+                                            </Tooltip>
+                                        </div>
+                                    </div>
+                                </InputFieldStacked>
+                            </InputFieldStackedGroup>
                         );
                     })()
                 ) : (
