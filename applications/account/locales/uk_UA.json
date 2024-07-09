@@ -190,6 +190,9 @@
       "Change password": [
         "Змінити пароль"
       ],
+      "Change second password": [
+        "Змініть другий пароль"
+      ],
       "Chat with us": [
         "Чат з нами"
       ],
@@ -1368,9 +1371,6 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Переглядайте інтернет приватно та блокуйте рекламу"
-      ],
-      "Create and collaborate on documents securely": [
-        "Безпечно створюйте документи й співпрацюйте"
       ],
       "Keep your schedule private": [
         "Збережіть приватність свого розкладу"
@@ -4275,6 +4275,9 @@
       ],
       "Require at least one condition": [
         "Необхідна принаймні одна умова"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Сесія закінчилася. Будь ласка, оновіть сторінку."
       ],
       "Signature not verified": [
         "Підпис не перевірено"
@@ -8042,6 +8045,9 @@
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Термін дії цього посилання для запрошення закінчився. Будь ласка, зверніться до свого адміністратора, щоб отримати доступ."
       ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Це посилання для запрошення вже використане. Будь ласка, використайте інший шлях для входу."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Це фраза з 12 слів, яку ви просили встановити."
       ],
@@ -11021,6 +11027,23 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Залишити безплатний"
@@ -11050,24 +11073,10 @@
         "Покращити до ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } та ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } календар",
         "${ n } календарі",
@@ -11350,9 +11359,6 @@
       "Organize items with multiple vaults": [
         "Упорядкування елементів за допомогою різних сховищ"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor – преміальні функції"
-      ],
       "Passkeys supported": [
         "Підтримуються ключі доступу"
       ],
@@ -11475,9 +11481,6 @@
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
-      ],
-      "Unlimited logins and notes": [
-        "Необмежена кількість паролів і нотаток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -12779,15 +12782,6 @@
       ],
       "Save your recovery kit to continue": [
         "Збережіть комплект для відновлення, щоб продовжити"
-      ],
-      "Secure sharing with ${ n } vault": [
-        "Безпечний спільний доступ до ${ n } сховища",
-        "Безпечний спільний доступ до ${ n } сховищ",
-        "Безпечний спільний доступ до ${ n } сховищ",
-        "Безпечний спільний доступ до ${ n } сховищ"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Безпечний спільний доступ з кількома сховищами"
       ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
@@ -14101,11 +14095,6 @@
       "Go to subscription plans": [
         "Перейти до тарифних планів"
       ],
-      "Upgrade": [
-        "Покращити"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Покращити"
       ]
@@ -15706,6 +15695,9 @@
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "Groups": [
+        "Групи"
       ],
       "History": [
         "Історія"

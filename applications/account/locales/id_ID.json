@@ -1360,9 +1360,6 @@
       "Browse the web privately and block ads": [
         "Jelajahi internet secara privat dan blokir iklan"
       ],
-      "Create and collaborate on documents securely": [
-        "Buat dan kolaborasikan dokumen secara aman"
-      ],
       "Keep your schedule private": [
         "Jaga jadwal Anda tetap privat"
       ],
@@ -1402,8 +1399,8 @@
       "New": [
         "Baru"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan memeriksa isi tulisan email Anda. ${ learnMore }"
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
       ],
       "Trial expires on ${ formattedDate }": [
         "Uji coba akan berakhir pada ${ formattedDate }"
@@ -1691,6 +1688,9 @@
       ],
       "Custom domain problem": [
         "Masalah domain khusus"
+      ],
+      "Docs problem": [
+        "Masalah Docs"
       ],
       "Drive problem": [
         "Masalah Drive"
@@ -7738,7 +7738,7 @@
         "Single sign-on dihapus"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } kepada alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
+        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda. Untuk meminta akses, silakan ${ createTicket } yang menyertakan rincian penggunaan Anda, domain khusus apa saja yang Anda ingin gunakan, dan kisaran volume email yang masuk per jamnya dan per harinya."
@@ -9800,7 +9800,7 @@
         "Kata sandi sebelumnya"
       ],
       "Prompt to trust keys": [
-        "Tanyakan untuk mempercayai kunci"
+        "Tanyakan untuk memercayai kunci"
       ],
       "Proration": [
         "Prorasi"
@@ -10446,6 +10446,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Tambah asisten penulisan"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Seluruh aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi semua bisnis Anda"
       ],
@@ -10460,6 +10463,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Keamanan mutakhir dan fitur premium untuk tim"
+      ],
+      "for ${ price }": [
+        "untuk ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Penawaran waktu terbatas: **Dapatkan potongan harga hingga 35%** untuk paket tahunan"
@@ -10883,6 +10889,23 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -10912,24 +10935,10 @@
         "Tingkatkan ke ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } dan ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender"
       ],
@@ -11170,9 +11179,6 @@
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - fitur premium"
-      ],
       "Passkeys supported": [
         "Passkey didukung"
       ],
@@ -11296,8 +11302,8 @@
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
       ],
-      "Unlimited logins and notes": [
-        "Tanpa batasan jumlah login dan catatan"
+      "Unlimited logins, notes and credit cards": [
+        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
@@ -12603,14 +12609,17 @@
       "Save your recovery kit to continue": [
         "Simpan kit pemulihan Anda untuk melanjutkan"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Berbagi aman dengan ${ n } brankas"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Berbagi aman dengan beberapa brankas"
+      "Secure vault and link sharing": [
+        "Pembagian brankas dan tautan aman"
       ],
       "Secure vault sharing": [
         "Pembagian brankas yang aman"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Pembagian brankas aman (${ n } brankas)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ],
       "Secured by end-to-end encryption": [
         "Terlindung oleh enkripsi end-to-end"
@@ -12812,6 +12821,9 @@
       ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
       ],
       "Processing payment": [
         "Memproses pembayaran"
@@ -13893,11 +13905,6 @@
         "Tingkatkan akun"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Tingkatkan"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } bulan"
@@ -14176,6 +14183,9 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe untuk ${ maxAi } pengguna"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } server terdedikasi"
       ],
@@ -14929,6 +14939,9 @@
     "Suffix for price": {
       "per month": [
         "per bulan"
+      ],
+      "per user per month": [
+        "per pengguna per bulan"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15629,6 +15642,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Groups": [
+        "Grup"
       ],
       "History": [
         "Riwayat"
@@ -16598,6 +16614,9 @@
       "Name": [
         "Nama"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Alamat email ${ BRAND_NAME } baru"
+      ],
       "Optional": [
         "Opsional"
       ],
@@ -16816,8 +16835,14 @@
       "Please add at least one recipient.": [
         "Mohon tambahkan setidaknya satu nama penerima."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah diaktifkan"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
+      ],
+      "Please update the extension to its latest version": [
+        "Silakan perbarui ekstensi ke versi terkini"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
