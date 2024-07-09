@@ -1627,6 +1627,9 @@
       "Custom domain problem": [
         "自訂網域問題"
       ],
+      "Docs problem": [
+        "Docs 問題"
+      ],
       "Drive problem": [
         "雲端硬碟問題"
       ],
@@ -3121,11 +3124,20 @@
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電子郵件位址嗎？"
       ],
+      "Delete address": [
+        "刪除地址"
+      ],
       "Delete address permanently?": [
         "永久刪除主要地址？"
       ],
       "Delete address?": [
         "刪除地址?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "一旦刪除，這個地址${ address }將無法再讓任何人使用。"
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "請注意：假如您刪除此電郵位址${ address }，將無法再以此電郵位址傳送或接收郵件。"
       ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
@@ -3147,6 +3159,12 @@
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Delete domain?": [
+        "刪除網域?"
       ]
     },
     "Delinquent modal title": {
@@ -3250,6 +3268,17 @@
       ],
       "You can safely close this tab.": [
         "現在您可以安全地關閉此分頁。"
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "您確定要停用這個地址？"
+      ],
+      "Disable address": [
+        "停用電子郵件地址"
+      ],
+      "Disable address?": [
+        "停用電子郵件地址?"
       ]
     },
     "Domain label": {
@@ -3954,6 +3983,9 @@
       "Incorrect password": [
         "密碼錯誤"
       ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
+      ],
       "Incorrect username": [
         "錯誤的使用者名稱"
       ],
@@ -4046,6 +4078,9 @@
       ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
+      ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
       ],
       "Organization key must be activated to create non-private users": [
         "需啟用組織金鑰才能建立非私人使用者"
@@ -4142,6 +4177,9 @@
       ],
       "Require at least one condition": [
         "必須有至少一個條件"
+      ],
+      "Session expired. Please refresh the page.": [
+        "作業階段逾期。請重新整理網頁。"
       ],
       "Signature not verified": [
         "簽章尚未驗證"
@@ -6163,6 +6201,9 @@
       "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
+      "All Events ": [
+        "所有事件 "
+      ],
       "All keys successfully reactivated": [
         "所有金鑰都已成功重新啟用"
       ],
@@ -6853,6 +6894,12 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "Invitation link expired": [
+        "邀請函連結逾時"
+      ],
+      "Invitation link used": [
+        "邀請連結已使用"
+      ],
       "Invite Accepted": [
         "已接受邀請"
       ],
@@ -6864,6 +6911,9 @@
       ],
       "Invite Deleted": [
         "邀請已刪除"
+      ],
+      "Invite for User deleted": [
+        "邀請使用者已刪除"
       ],
       "Invite rejected": [
         "邀請已婉拒"
@@ -7231,6 +7281,9 @@
       "Please add an email address for the user on row": [
         "請在此行使用者處加入電郵位址"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "請詢問擁有者直接邀請至文件。"
+      ],
       "Please authenticate your card in the verification tab.": [
         "請在驗證索引標籤中認證您的信用卡。"
       ],
@@ -7257,6 +7310,12 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
+      ],
+      "please open a support ticket": [
+        "請開啟支援票卷"
+      ],
+      "Please open the document to view it.": [
+        "請開啟文件以瀏覽。"
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
@@ -7297,6 +7356,9 @@
       "Preview for this file type is not supported": [
         "不支援預覽此檔案類型"
       ],
+      "Preview of documents is not yet supported.": [
+        "預覽分享尚未支援。"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
       ],
@@ -7314,6 +7376,9 @@
       ],
       "Public link invite": [
         "公開的連結邀請"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "公開分享尚未支援。"
       ],
       "purchase additional storage": [
         "購買額外的儲存空間"
@@ -7452,6 +7517,15 @@
       ],
       "Settings updated": [
         "已更新設定"
+      ],
+      "Share Created": [
+        "共享已創建"
+      ],
+      "Share Deleted": [
+        "共享已刪除"
+      ],
+      "Share Updated": [
+        "共享已更新"
       ],
       "Shared vault deleted": [
         "共享保管庫已刪除"
@@ -7647,6 +7721,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "這是您先前可能儲存的加密金鑰。"
+      ],
+      "This is an invitation from:": [
+        "此邀請函寄件者："
       ],
       "This is the password you used before the password reset.": [
         "此密碼是你重設前的舊密碼。"
@@ -7882,13 +7959,22 @@
       "Vault created": [
         "保管庫已創建"
       ],
+      "Vault Created": [
+        "保管已庫創建"
+      ],
       "Vault deleted": [
+        "保管庫已刪除"
+      ],
+      "Vault Deleted": [
         "保管庫已刪除"
       ],
       "Vault shared with email": [
         "用電子郵件分享的保管庫"
       ],
       "Vault updated": [
+        "保管庫已更新"
+      ],
+      "Vault Updated": [
         "保管庫已更新"
       ],
       "Verification can take a few minutes.": [
@@ -8387,6 +8473,9 @@
       ],
       "Paid": [
         "已付"
+      ],
+      "Processing": [
+        "處理中"
       ],
       "Unpaid": [
         "未付"
@@ -9798,6 +9887,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "活動記錄"
+      ],
       "Add a gift code": [
         "加入禮品代碼"
       ],
@@ -10029,6 +10121,12 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "添加撰寫幫手"
+      ],
+      "for ${ price }": [
+        "${ price } 版"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "您已獲邀滿意體驗 ${ MAIL_APP_NAME }"
       ]
@@ -10126,6 +10224,9 @@
       ],
       "Remove": [
         "移除"
+      ],
+      "Resend invite link": [
+        "重新發送邀請連結"
       ],
       "Revoke sessions": [
         "撤銷工作階段"
@@ -10439,6 +10540,23 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10468,24 +10586,10 @@
         "升級到 ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }和${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } 個行事曆"
       ],
@@ -10570,6 +10674,9 @@
       "Advanced sharing security": [
         "進階的共享安全性"
       ],
+      "All ${ BRAND_NAME } services": [
+        "全部${ BRAND_NAME }服務"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -10629,6 +10736,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "資料外洩監測 (即將登場)"
+      ],
+      "Dedicated account manager": [
+        "專屬客戶經理"
       ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
@@ -10719,9 +10829,6 @@
       ],
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
-      ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - 進階功能"
       ],
       "Passkeys supported": [
         "支援密碼金鑰"
@@ -10839,9 +10946,6 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
-      ],
-      "Unlimited logins and notes": [
-        "登入與附註無上限"
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
@@ -11576,6 +11680,9 @@
       "Add to existing group": [
         "加入至現有群組"
       ],
+      "Archive": [
+        "封存"
+      ],
       "Ask each time": [
         "每一次都詢問我"
       ],
@@ -11614,6 +11721,9 @@
       ],
       "Left to Right": [
         "由左至右"
+      ],
+      "Mark as read": [
+        "標示為已讀取"
       ],
       "My reason isn't listed": [
         "其實我的理由，你沒有懂"
@@ -11672,11 +11782,20 @@
       "Setup incomplete": [
         "設置未完成"
       ],
+      "Spam": [
+        "垃圾郵件"
+      ],
       "Standard server configs": [
         "標準伺服器組態設定"
       ],
+      "Star": [
+        "標注星號"
+      ],
       "The whole organization": [
         "整個組織"
+      ],
+      "Trash": [
+        "垃圾"
       ]
     },
     "Option delay send seconds": {
@@ -11910,6 +12029,9 @@
       "Advanced protection that goes beyond industry standards": [
         "超越業界標準的進階保護"
       ],
+      "Alerts for vulnerable passwords": [
+        "有風險的密碼警示"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "全部付費版${ BRAND_NAME }服務。"
       ],
@@ -11973,6 +12095,9 @@
       "Get in touch with our sales team": [
         "與銷售團隊聯繫"
       ],
+      "Get the security and features your business needs": [
+        "取得您企業需要的安全和功能"
+      ],
       "Includes:": [
         "包含:"
       ],
@@ -12003,6 +12128,9 @@
       "Open-source and audited": [
         "經過審核開放原始碼"
       ],
+      "Passkeys supported on all devices": [
+        "密碼金鑰於全部裝置"
+      ],
       "per month": [
         "每月"
       ],
@@ -12024,14 +12152,20 @@
       "Save your recovery kit to continue": [
         "儲存您的復原包並繼續"
       ],
-      "Secure sharing with ${ n } vault": [
-        "與${ n }安全共享保管庫"
-      ],
-      "Secure sharing with multiple vaults": [
-        "安全共享多重保管庫"
+      "Secure vault and link sharing": [
+        "安全保管庫和共享連結"
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "安全保管庫共享(${ n }保管庫)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全保管庫共享(${ n } 保管庫)和連結共享"
+      ],
+      "Secured by end-to-end encryption": [
+        "以端對端加密安全"
       ],
       "Setting up your organization": [
         "設定您的組織"
@@ -12157,8 +12291,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "瞭解"
+      ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Payment Processing": [
+        "付款處理中"
       ],
       "Processing payment": [
         "正在處理付款"
@@ -12262,6 +12402,9 @@
       ],
       "Email address": [
         "電郵位址"
+      ],
+      "Email or IP": [
+        "電子郵件或IP"
       ],
       "End date": [
         "結束日期"
@@ -12543,6 +12686,9 @@
       "Disable SCIM": [
         "停用 SCIM"
       ],
+      "Disable SCIM integration": [
+        "停用SCIM整合"
+      ],
       "Generate new token": [
         "產生新代碼"
       ],
@@ -12556,6 +12702,9 @@
       ]
     },
     "scim: Label": {
+      "SCIM base URL": [
+        "基於SCIM的網址"
+      ],
       "SCIM token": [
         "SMTP 憑證"
       ]
@@ -12633,7 +12782,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "帳號備援不適用於舊的位址金鑰"
+        "帳號備援不適用於舊的地址金鑰"
       ],
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
@@ -13124,11 +13273,6 @@
         "升級"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "升級"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n }個月"
@@ -13544,6 +13688,9 @@
       ],
       "Cancel subscription?": [
         "取消訂購授權?"
+      ],
+      "Catch-all email address": [
+        "跟上電子郵件地址"
       ],
       "Close": [
         "關閉"
@@ -13968,6 +14115,9 @@
     "Suffix for price": {
       "per month": [
         "每月"
+      ],
+      "per user per month": [
+        "每月每位用戶"
       ]
     },
     "Summary of errors during export calendar": {
@@ -14040,6 +14190,9 @@
       ],
       "Import": [
         "匯入"
+      ],
+      "Invitation email": [
+        "邀請電子郵件"
       ],
       "List": [
         "列表"
@@ -14618,6 +14771,9 @@
       "Folders and labels": [
         "資料夾和標籤"
       ],
+      "For Windows": [
+        "適用於 Windows"
+      ],
       "Forgot recovery method": [
         "忘記復原方法"
       ],
@@ -14653,6 +14809,9 @@
       ],
       "Gift code": [
         "禮品代碼"
+      ],
+      "Groups": [
+        "群組"
       ],
       "History": [
         "歷程記錄"
@@ -15568,14 +15727,32 @@
       "Add multiple users": [
         "添加多位使用者"
       ],
+      "Admin": [
+        "系統管理員"
+      ],
+      "Cancel": [
+        "取消"
+      ],
       "Confirm password": [
         "確認密碼"
       ],
       "Create password": [
         "創建密碼"
       ],
+      "Create user": [
+        "創建使用者"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "新的${ BRAND_NAME }電子郵件地址"
+      ],
+      "Private": [
+        "不公開"
+      ],
       "Remember to share the user's sign in details with them.": [
         "請記得與使用者分享其登入詳細資料。"
+      ],
+      "User created": [
+        "使用者創建"
       ],
       "VPN connections": [
         "VPN 連線"
@@ -15585,6 +15762,15 @@
       ]
     },
     "Users table: badge": {
+      "Invite sent": [
+        "已傳送邀請"
+      ],
+      "Private": [
+        "不公開"
+      ],
+      "SSO": [
+        "單一登入"
+      ],
       "SSO user provided by your identity provider": [
         "您身份提供者提供的單一登入使用者"
       ],

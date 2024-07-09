@@ -1369,9 +1369,6 @@
       "Browse the web privately and block ads": [
         "Zasebno brskajte po spletu in blokirajte oglase"
       ],
-      "Create and collaborate on documents securely": [
-        "Varno ustvarjajte dokumente in sodelujte pri njih"
-      ],
       "Keep your schedule private": [
         "Naj bo vaš urnik zaseben"
       ],
@@ -1396,8 +1393,8 @@
       ]
     },
     "Assistant toggle": {
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Dvignite produktivnost e-pošte na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Dvignite produktivnost e-pošte na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ],
       "Trial in progress": [
         "Preizkus v teku"
@@ -10462,6 +10459,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Dodajte pomočnika za pisanje"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Vse ${ BRAND_NAME } poslovne aplikacije in premijske funkcije za zaščito celotnega podjetja"
       ],
@@ -10896,6 +10896,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
@@ -10925,24 +10942,10 @@
         "Nadgradi na ${ upsellPlanHumanSize }."
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } in ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } koledar",
         "${ n } koledarja",
@@ -11222,9 +11225,6 @@
       "Organize items with multiple vaults": [
         "Organizirajte predmete z več arhivi."
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premijska funkcija"
-      ],
       "Passkeys supported": [
         "Podprti identifikacijski ključi"
       ],
@@ -11347,9 +11347,6 @@
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"
-      ],
-      "Unlimited logins and notes": [
-        "Neomejeno število prijav in beležk"
       ],
       "Unlimited messages per day": [
         "Neomejeno število sporočil na dan"
@@ -12669,15 +12666,6 @@
       ],
       "Save your recovery kit to continue": [
         "Shranite vaš komplet za obnovitev za nadaljevanje"
-      ],
-      "Secure sharing with ${ n } vault": [
-        "Varna skupna raba z ${ n } trezorjem",
-        "Varna skupna raba z ${ n } trezorjema",
-        "Varna skupna raba s ${ n } trezorji",
-        "Varna skupna raba s ${ n } trezorji"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Varna skupna raba z več trezorji"
       ],
       "Secure vault sharing": [
         "Varna in zanesljiva skupna raba"
@@ -15693,6 +15681,9 @@
       ],
       "Gift code": [
         "Darilna koda"
+      ],
+      "Groups": [
+        "Skupine"
       ],
       "History": [
         "Zgodovina"

@@ -5154,7 +5154,7 @@
         "Aplicação para desktop ${ MAIL_APP_NAME }"
       ],
       "Back to sign in": [
-        "Voltar para o inicio de sessão"
+        "Voltar para o início de sessão"
       ]
     },
     "Frequency of news": {
@@ -8551,7 +8551,7 @@
         "Premiado"
       ],
       "Beta": [
-        "Versão Beta"
+        "Beta"
       ],
       "Billing address": [
         "Endereço de faturação"
@@ -8941,7 +8941,7 @@
         "Servidor de e-mail (IMAP)"
       ],
       "Mail settings": [
-        "Configurações do Mail"
+        "Definições do Mail"
       ],
       "Main": [
         "Principal"
@@ -9190,7 +9190,7 @@
         "Spam"
       ],
       "Spam and filters": [
-        "Spam i filtros"
+        "Spam e filtros"
       ],
       "Starred": [
         "Com estrela"
@@ -9771,7 +9771,7 @@
     },
     "Member action": {
       "Activate user": [
-        "Ativar o utilizador"
+        "Ativar utilizador"
       ],
       "Add address": [
         "Adicionar um endereço"
@@ -10103,6 +10103,23 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10132,24 +10149,10 @@
         "Atualizar para ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -10387,9 +10390,6 @@
       "Organize items with multiple vaults": [
         "Organize os itens com vários cofres"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funcionalidades premium"
-      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -10487,9 +10487,6 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -11743,7 +11740,7 @@
         "A data de expiração é inválida."
       ],
       "Invalid security code": [
-        "O código de segurança não é válido."
+        "O código de segurança inválido."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
@@ -12674,11 +12671,6 @@
       ],
       "Upgrade": [
         "Actualizar"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Melhorar"
       ]
     },
     "specialoffer: Offers": {
@@ -14135,6 +14127,9 @@
       "Gift code": [
         "Código de oferta"
       ],
+      "Groups": [
+        "Grupos"
+      ],
       "History": [
         "Histórico"
       ],
@@ -14297,9 +14292,6 @@
       ],
       "PayPal verification failed": [
         "Erro na verificação PayPal"
-      ],
-      "Personalise your e-mail footer": [
-        "Personalize o rodapé do seu e-mail"
       ],
       "Phone": [
         "Telefone"

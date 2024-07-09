@@ -1372,9 +1372,6 @@
       "Browse the web privately and block ads": [
         "Праглядайце вэб-старонкі прыватна і блакіруйце рэкламу"
       ],
-      "Create and collaborate on documents securely": [
-        "Стварайце і бяспечна працуйце над дакументамі з іншымі"
-      ],
       "Keep your schedule private": [
         "Трымайце свой расклад у сакрэце"
       ],
@@ -1414,8 +1411,8 @@
       "New": [
         "Новае"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў. ${ learnMore }"
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ],
       "Trial expires on ${ formattedDate }": [
         "Пробны перыяд міне ${ formattedDate }"
@@ -6870,6 +6867,9 @@
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза"
       ],
+      "Discount": [
+        "Скідка"
+      ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
@@ -8600,6 +8600,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "З групамі карыстальнікаў вы зможаце лёгка адпраўляць лісты, абагульваць даныя або адначасова змяняць налады для канкрэтных груп усіх карыстальнікаў."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "На вашым бягучым тарыфным плане даступна толькі атрыманне лістоў з адраса @pm.me. Палепшыце яго, каб адпраўляць лісты і ствараць дадатковыя адрасы з выкарыстаннем @pm.me."
@@ -10740,6 +10743,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Дадаць памочніка ў напісанні"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для яго комплекснай абароны"
       ],
@@ -10754,6 +10760,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Палепшаная бяспека і прэміяльныя функцыі для каманд"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Прапанова абмежавана па часе: **Атрымайце скідку ў памеры 35%** за штогадовыя тарыфныя планы"
@@ -11192,6 +11201,23 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11221,24 +11247,10 @@
         "Палепшыць да ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -11524,9 +11536,6 @@
       "Organize items with multiple vaults": [
         "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - прэміяльныя функцыі"
-      ],
       "Passkeys supported": [
         "Падтрымліваюцца ключы доступу"
       ],
@@ -11656,8 +11665,8 @@
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
       ],
-      "Unlimited logins and notes": [
-        "Неабмежаваная колькасць запісаў уваходу і нататак"
+      "Unlimited logins, notes and credit cards": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
@@ -12999,17 +13008,23 @@
       "Save your recovery kit to continue": [
         "Захавайце свой камплект аднаўлення для працягу"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Бяспечнае абагульванне з ${ n } сховішчам",
-        "Бяспечнае абагульванне з ${ n } сховішчамі",
-        "Бяспечнае абагульванне з ${ n } сховішчамі",
-        "Бяспечнае абагульванне з ${ n } сховішчамі"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Бяспечнае абагульванне з некалькімі сховішчамі"
+      "Secure vault and link sharing": [
+        "Бяспечнае сховішча і абагульванне спасылкі"
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Бяспечнае абагульванне сховішча (${ n } сховішча)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчы)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Бяспечнае абагульванне сховішча (${ n } сховішча) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
       ],
       "Secured by end-to-end encryption": [
         "Абаронена скразным шыфраваннем"
@@ -13211,6 +13226,9 @@
       ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
       "Processing payment": [
         "Апрацоўка плацяжу"
@@ -14358,11 +14376,6 @@
         "Палепшыць"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Палепшыць"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } месяц",
@@ -15457,6 +15470,9 @@
     "Suffix for price": {
       "per month": [
         "у месяц"
+      ],
+      "per user per month": [
+        "на карыстальніка ў месяц"
       ]
     },
     "Summary of errors during export calendar": {
@@ -16184,6 +16200,9 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "Groups": [
+        "Групы"
       ],
       "History": [
         "Гісторыя"
@@ -17157,7 +17176,7 @@
         "Электронная пошта"
       ],
       "Invitation email": [
-        "Электронны ліст запрашэння"
+        "Электронны ліст з запрашэннем"
       ],
       "Name": [
         "Імя"

@@ -7674,6 +7674,23 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7700,24 +7717,10 @@
         "Leqqem ɣer ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } d ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } uwitay",
         "${ n } yiwitayen"
@@ -7923,9 +7926,6 @@
       ],
       "Unlimited labels": [
         "Tibzimin war tilas"
-      ],
-      "Unlimited logins and notes": [
-        "Inekcam d tezmilin war tilas"
       ],
       "Unlimited messages per day": [
         "War talast n yiznan i wass"
@@ -10179,6 +10179,9 @@
       ],
       "Gift code": [
         "Tangalt n usefk"
+      ],
+      "Groups": [
+        "Igrawen"
       ],
       "History": [
         "Amazray"

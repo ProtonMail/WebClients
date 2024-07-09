@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
       ],
-      "Create and collaborate on documents securely": [
-        "Güvenle belgeler oluşturup üzerinde birlikte çalışın"
-      ],
       "Keep your schedule private": [
         "Zaman planınızı gizli tutun"
       ],
@@ -1406,8 +1403,8 @@
       "New": [
         "Yeni"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
       ],
       "Trial expires on ${ formattedDate }": [
         "Deneme süresi ${ formattedDate } tarihinde bitecek"
@@ -1698,6 +1695,9 @@
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
+      ],
+      "Docs problem": [
+        "Docs sorunu"
       ],
       "Drive problem": [
         "Drive sorunu"
@@ -10542,6 +10542,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Yazma yardımcısını ekle"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler"
       ],
@@ -10556,6 +10559,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Ekipler için gelişmiş güvenlik ile ücretli özellikler"
+      ],
+      "for ${ price }": [
+        "${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Sınırlı süreli teklif: Yıllık tarifelerde **35% indirim alın**"
@@ -10984,6 +10990,23 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11013,24 +11036,10 @@
         "${ upsellPlanHumanSize } tarifesine yükselt"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -11286,9 +11295,6 @@
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - ücretli özellikler"
-      ],
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
@@ -11414,8 +11420,8 @@
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+      "Unlimited logins, notes and credit cards": [
+        "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
       ],
       "Unlimited messages per day": [
         "Her gün sınırsız sayıda ileti"
@@ -12733,15 +12739,19 @@
       "Save your recovery kit to continue": [
         "İlerlemek için kurtarma paketinizi kaydedin"
       ],
-      "Secure sharing with ${ n } vault": [
-        "${ n } kasa ile güvenli paylaşım",
-        "${ n } kasa ile güvenli paylaşım"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Çok sayıda kasa ile güvenli paylaşım"
+      "Secure vault and link sharing": [
+        "Güvenli kasa ve bağlantı ile paylaşım"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Güvenli kasa paylaşımı (${ n } kasa)",
+        "Güvenli kasa paylaşımı (${ n } kasa)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ],
       "Secured by end-to-end encryption": [
         "Uçtan uca şifreleme koruması"
@@ -12943,6 +12953,9 @@
       ],
       "Payment Processing": [
         "Ödeme işleniyor"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
       "Processing payment": [
         "Ödeme işleniyor"
@@ -14046,11 +14059,6 @@
         "Yükselt"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Yükselt"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } ay",
@@ -14331,6 +14339,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı",
+        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } size ayrılmış sunucu",
         "${ ipAddresses } size ayrılmış sunucu"
@@ -15098,6 +15110,9 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15807,6 +15822,9 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "Groups": [
+        "Gruplar"
       ],
       "History": [
         "Geçmiş"
@@ -16776,6 +16794,9 @@
       "Name": [
         "Ad"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Yeni ${ BRAND_NAME } e-posta adresi"
+      ],
       "Optional": [
         "İsteğe bağlı"
       ],
@@ -17003,8 +17024,14 @@
       "Please add at least one recipient.": [
         "Lütfen en az bir alıcı ekleyin."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Lütfen eklentinin düzgün olarak kurulduğundan ve etkin olduğundan emin olun"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
+      ],
+      "Please update the extension to its latest version": [
+        "Lütfen eklentiyi son sürümüne güncelleyin"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
