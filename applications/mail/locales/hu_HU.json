@@ -767,10 +767,10 @@
       "Not saved": [
         "Nincs mentve"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -7940,6 +7940,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } és ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -8192,9 +8195,6 @@
       ],
       "Unlimited labels": [
         "Korlátlan számú címke"
-      ],
-      "Unlimited logins and notes": [
-        "Korlátlan számú bejelentkezés és jegyzet"
       ],
       "Unlimited messages per day": [
         "Korlátlan számú üzenet naponta"
@@ -8666,10 +8666,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Biztonságos megosztás ${ n } trezorral",
-        "Biztonságos megosztás ${ n } trezorokkal"
-      ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
       ]
