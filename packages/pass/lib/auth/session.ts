@@ -153,14 +153,28 @@ export const resumeSession = async (
 };
 
 export const migrateSession = async (authStore: AuthStore): Promise<boolean> => {
+    let migrated = false;
+
     const offlineKD = authStore.getOfflineKD();
     const offlineConfig = authStore.getOfflineConfig();
     const offlineVerifier = authStore.getOfflineVerifier();
+    const AccessToken = authStore.getAccessToken();
+    const RefreshToken = authStore.getRefreshToken();
 
-    if (offlineKD && offlineConfig && !offlineVerifier) {
-        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
-        return true;
+    const { cookies } = authStore.options;
+
+    /** Remove session tokens if a cookie based session has tokens */
+    if (cookies && (AccessToken || RefreshToken)) {
+        authStore.setAccessToken(undefined);
+        authStore.setRefreshToken(undefined);
+        migrated = true;
     }
 
-    return false;
+    /** Create the `offlineVerifier` if it hasn't been generated (<1.18.0) */
+    if (offlineKD && offlineConfig && !offlineVerifier) {
+        authStore.setOfflineVerifier(await getOfflineVerifier(stringToUint8Array(offlineKD)));
+        migrated = true;
+    }
+
+    return migrated;
 };
