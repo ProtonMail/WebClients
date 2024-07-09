@@ -190,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Aktifkan Pengawasan Web Gelap"
       ],
+      "Entire vault": [
+        "Seluruh brankas"
+      ],
       "Exclude from monitoring": [
         "Kecualikan dari pemantauan"
       ],
@@ -211,8 +214,17 @@
       "Generate password": [
         "Hasilkan kata sandi"
       ],
+      "Generate secure link": [
+        "Hasilkan tautan aman"
+      ],
       "Generated passwords": [
         "Kata sandi yang dihasilkan"
+      ],
+      "Generating secure link...": [
+        "Membuat tautan aman..."
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Dapatkan ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Dapatkan Pass versi mobile"
@@ -265,6 +277,12 @@
       "Leave vault": [
         "Tinggalkan brankas"
       ],
+      "Link copied to clipboard": [
+        "Tautan disalin ke papan klip"
+      ],
+      "Link expires after": [
+        "Tautan akan kedaluwarsa setelah"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Kunci ${ PASS_APP_NAME }"
       ],
@@ -280,11 +298,17 @@
       "Manage access": [
         "Kelola akses"
       ],
+      "Manage vault access": [
+        "Kelola akses brankas"
+      ],
       "Manually sync your data": [
         "Sinkronkan data"
       ],
       "Mark as resolved": [
         "Tandai sebagai terselesaikan"
+      ],
+      "Maximum views": [
+        "Jumlah tampilan maksimum"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -312,6 +336,9 @@
       ],
       "Multiple select": [
         "Pilih banyak berkas"
+      ],
+      "No expired links": [
+        "Tidak ada tautan yang kedaluwarsa"
       ],
       "OK": [
         "OK"
@@ -355,6 +382,9 @@
       "Remove access": [
         "Hapus akses"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Seluruh tautan yang kedaluwarsa dihapus (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Hapus tautan"
       ],
@@ -379,6 +409,9 @@
       "Restore item": [
         "Pulihkan item"
       ],
+      "Restrict number of views": [
+        "Batasi jumlah tampilan"
+      ],
       "Resume monitoring": [
         "Lanjutkan pemantauan"
       ],
@@ -393,6 +426,9 @@
       ],
       "Saving": [
         "Menyimpan"
+      ],
+      "Secure links": [
+        "Tautan aman"
       ],
       "See all": [
         "Lihat semua"
@@ -418,6 +454,9 @@
       "Share": [
         "Bagikan"
       ],
+      "Share secure link": [
+        "Bagikan tautan aman"
+      ],
       "Share this vault": [
         "Bagikan brankas ini"
       ],
@@ -435,6 +474,9 @@
       ],
       "Sign out": [
         "Keluar"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Seseorang telah membagikan item kepada Anda di ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortir item brankas"
@@ -477,6 +519,9 @@
       ],
       "Verify": [
         "Verifikasi"
+      ],
+      "Via secure link": [
+        "Via tautan aman"
       ],
       "View details": [
         "Lihat rincian"
@@ -752,6 +797,9 @@
       "Importing items failed": [
         "Item gagal diimpor"
       ],
+      "Inactive secure links could not be removed.": [
+        "Tautan aman yang tidak aktif tidak dapat dihapus."
+      ],
       "Invalid password manager": [
         "Pengelola kata sandi tidak valid"
       ],
@@ -800,6 +848,12 @@
       "Restoring trashed items failed": [
         "Item yang dibuang gagal dipulihkan"
       ],
+      "Secure link could not be created.": [
+        "Tautan aman tidak dapat dibuat."
+      ],
+      "Secure link could not be opened.": [
+        "Tautan aman tidak dapat dibuka."
+      ],
       "Settings update failed": [
         "Pengaturan gagal diperbarui"
       ],
@@ -821,11 +875,17 @@
       "The session has expired. Please sign in again.": [
         "Masa berlaku sesi telah habis. Silakan masuk lagi."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Terdapat masalah pada saat menghapus tautan aman. Silakan coba lagi dalam beberapa menit."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Terlalu banyak percobaan yang gagal. Silakan masuk kembali."
       ],
       "Trashing item failed": [
         "Item gagal dibuang"
+      ],
+      "Try reaching out to the link owner.": [
+        "Cobalah untuk menghubungi pemilik tautan."
       ],
       "Unable to generate an OTP code for this item": [
         "Kode OTP untuk item ini tidak dapat dibuat"
@@ -976,6 +1036,12 @@
       "${ count } invites successfully sent": [
         "${ count } undangan berhasil dikirim"
       ],
+      "${ count } time": [
+        "${ count } kali"
+      ],
+      "${ count } view": [
+        "${ count } kali dilihat"
+      ],
       "${ memberCount } member": [
         "${ memberCount } anggota"
       ],
@@ -1039,6 +1105,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Seluruh kebocoran yang ada saat ini akan ditandai sebagai telah terselesaikan. Apabila ke depannya terdapat kebocoran data baru, Anda akan menerima notifikasi seputar hal ini."
       ],
+      "All inactive secure links were removed": [
+        "Seluruh tautan aman yang tidak aktif dihapus"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
       ],
@@ -1063,6 +1132,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Apakah Anda yakin untuk memindahkan item ini ke \"${ name }\"?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Apakah Anda yakin ingin menghapus tautan?"
+      ],
       "Auto-lock successfully disabled.": [
         "Pengunci otomatis berhasil dinonaktifkan."
       ],
@@ -1077,6 +1149,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
+      ],
+      "Can be viewed": [
+        "Dapat dilihat"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Dapat membuat, menyunting, menghapus, dan mengekspor item dalam brankas ini."
@@ -1185,6 +1260,12 @@
       ],
       "Enter your PIN code": [
         "Masukkan kode PIN Anda"
+      ],
+      "Expires in": [
+        "Kedaluwarsa dalam"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Kedaluwarsa dalam ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Kata sandi tambahan berhasil dibuat"
@@ -1477,8 +1558,14 @@
       "Registering PIN lock failed": [
         "Pendaftaran kunci PIN gagal"
       ],
+      "Removing all inactive secure links...": [
+        "Menghapus seluruh tautan aman yang tidak aktif..."
+      ],
       "Removing extra password...": [
         "Menghapus kata sandi tambahan..."
+      ],
+      "Removing secure link...": [
+        "Menghapus tautan aman..."
       ],
       "Restoring items from trash": [
         "Memulihkan item dari sampah"
@@ -1560,6 +1647,9 @@
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
+      ],
+      "The secure link has been removed": [
+        "Tautan aman telah dihapus"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
@@ -1713,6 +1803,15 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } kata"
       ],
+      "${ days } day": [
+        "${ days } hari"
+      ],
+      "${ hours } hour": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } menit"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versi ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1728,14 +1827,23 @@
       "10 minutes": [
         "10 menit"
       ],
+      "14 days": [
+        "14 hari"
+      ],
       "15 minutes": [
         "15 menit"
+      ],
+      "24 hours": [
+        "24 jam"
       ],
       "2FA secret key (TOTP)": [
         "Kunci rahasia 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 hari"
       ],
       "30 minutes": [
         "30 menit"
@@ -1745,6 +1853,9 @@
       ],
       "5 minutes": [
         "5 menit"
+      ],
+      "7 days": [
+        "7 hari"
       ],
       "A-Z": [
         "A-Z"
@@ -1866,6 +1977,9 @@
       "Expired": [
         "Kedaluwarsa"
       ],
+      "Expired link": [
+        "Tautan kedaluwarsa"
+      ],
       "Export": [
         "Ekspor"
       ],
@@ -1881,8 +1995,14 @@
       "Forwards to": [
         "Teruskan ke"
       ],
+      "Free forever": [
+        "Gratis untuk selamanya"
+      ],
       "General": [
         "Umum"
+      ],
+      "Generate a secure link for this item": [
+        "Hasilkan tautan aman untuk item ini"
       ],
       "Generic CSV": [
         "Berkas CSV umum"
@@ -1962,6 +2082,9 @@
       "Make all viewers": [
         "Jadikan seluruh anggota sebagai pengamat"
       ],
+      "Max views reached": [
+        "Tampilan maksimum tercapai"
+      ],
       "Members": [
         "Anggota"
       ],
@@ -2013,6 +2136,9 @@
       "Oldest to newest": [
         "Terlama ke terbaru"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Pengelola kata sandi open-source untuk perlindungan yang mudah."
+      ],
       "Organization": [
         "Organisasi"
       ],
@@ -2049,6 +2175,9 @@
       "Recent": [
         "Baru digunakan"
       ],
+      "Remove link": [
+        "Hapus tautan"
+      ],
       "Report a problem": [
         "Laporkan masalah"
       ],
@@ -2057,6 +2186,9 @@
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Simpan, bagikan, dan masuk otomatis ke akun Anda secara aman dengan ${ PASS_APP_NAME }, yang menggunakan enkripsi end-to-end yang telah dipercaya oleh jutaan orang."
       ],
       "Security": [
         "Keamanan"
@@ -2079,6 +2211,15 @@
       "Session locking": [
         "Penguncian sesi"
       ],
+      "Share": [
+        "Bagikan"
+      ],
+      "Share this vault or create a new vault": [
+        "Bagikan brankas ini atau buat brankas baru"
+      ],
+      "Shared link": [
+        "Tautan terbagi"
+      ],
       "Show website favicons": [
         "Tampilkan favicon situs web"
       ],
@@ -2099,6 +2240,15 @@
       ],
       "Text": [
         "Teks"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Brankas milik item ini sedang dibagikan dengan ${ targetMembers } pengguna"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL telah disalin ke papan klip"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Item ini akan dapat diakses hingga ${ remaining }"
       ],
       "Title": [
         "Judul"
@@ -2501,6 +2651,9 @@
       "No reused passwords": [
         "Tidak ada kata sandi yang digunakan ulang"
       ],
+      "No shared secure links": [
+        "Tidak ada tautan aman terbagi"
+      ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
       ],
@@ -2533,6 +2686,9 @@
       ],
       "Remove extra password": [
         "Hapus kata sandi tambahan"
+      ],
+      "Remove secure link?": [
+        "Hapus tautan aman?"
       ],
       "Resolved breaches": [
         "Kebocoran yang telah terselesaikan"
@@ -2772,8 +2928,14 @@
       "PGP encrypted export file requires passphrase": [
         "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah diaktifkan"
+      ],
       "Please contact us for investigating the issue": [
         "Silakan hubungi kami untuk menyelidiki masalah"
+      ],
+      "Please update the extension to its latest version": [
+        "Silakan perbarui ekstensi ke versi terkini"
       ],
       "Please verify your email address in order to use email aliases": [
         "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur alias email"
