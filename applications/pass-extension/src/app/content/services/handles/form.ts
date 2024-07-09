@@ -132,6 +132,10 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         }),
     };
 
+    const repositionFields = (reflow: boolean) => {
+        formHandle.getFields().forEach((field) => field.action && field.icon?.reposition(reflow));
+    };
+
     /**
      * Detection trigger & repositioning via Form Resize
      *
@@ -145,25 +149,16 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
      * on the full DOM as this may lead to too many detection triggers */
     const onFormResize = debounce(
         withContext((ctx) => {
-            const fields = formHandle.getFields();
-            fields.forEach((field) => {
-                if (field.action) {
-                    field.getBoxElement({ revalidate: true });
-                    field.icon?.reposition();
-                }
-            });
-
-            if (options.form.parentElement === null || hasUnprocessedFields(options.form.parentElement)) {
-                void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });
-            }
+            repositionFields(true);
+            const formParent = options.form.parentElement;
+            const triggerDetection = formParent === null || hasUnprocessedFields(formParent);
+            if (triggerDetection) void ctx?.service.formManager.detect({ reason: 'NewFormFieldsOnResize' });
         }),
         50
     );
 
     listeners.addResizeObserver(options.form, onFormResize);
-    listeners.addListener(scrollRef, 'scroll', () =>
-        formHandle.getFields().forEach((field) => field.icon?.reposition())
-    );
+    listeners.addListener(scrollRef, 'scroll', () => repositionFields(false));
 
     return formHandle;
 };

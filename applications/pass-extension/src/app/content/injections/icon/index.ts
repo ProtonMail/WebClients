@@ -26,7 +26,7 @@ type InjectionElements = {
     control: ProtonPassControl;
 };
 
-type SharedInjectionOptions = {
+type InjectionOptions = {
     inputBox: HTMLElement;
     getInputStyle: BoundComputeStyles;
     getBoxStyle: BoundComputeStyles;
@@ -77,9 +77,9 @@ const getOverlayedElement = (options: {
  * reproduce issue */
 const computeIconInjectionStyles = (
     { input, control, form }: Omit<InjectionElements, 'icon'>,
-    { getInputStyle, getBoxStyle, inputBox }: SharedInjectionOptions
+    { getInputStyle, getBoxStyle, inputBox }: InjectionOptions
 ) => {
-    repaint(input);
+    repaint(input, control);
 
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
     const { top: boxTop, height: boxMaxHeight } = inputBox.getBoundingClientRect();
@@ -132,6 +132,7 @@ const computeIconInjectionStyles = (
      * the bounding box :
      * mt = boxTop - boxOffset.top - controlTop - size / 2
      * top = mt + boxHeight / 2 */
+
     const top = boxTop - controlTop + boxOffset.top + (boxHeight - size) / 2;
     const right = controlRight - inputRight + iconPaddingRight + overlayDx;
 
@@ -171,9 +172,9 @@ export const cleanupInjectionStyles = ({ control, input }: Pick<InjectionElement
     cleanupInputInjectedStyles(input);
 };
 
-const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInjectionOptions) => {
+const applyIconInjectionStyles = (elements: InjectionElements, options: InjectionOptions) => {
     const { icon, input } = elements;
-    const styles = computeIconInjectionStyles(elements, shared);
+    const styles = computeIconInjectionStyles(elements, options);
 
     /* Handle a specific scenario where input has transitions or
      * animations set, which could affect width change detection
@@ -226,13 +227,13 @@ export const applyInjectionStyles = (elements: InjectionElements) => {
     const { input, inputBox } = elements;
     cleanupInputInjectedStyles(input);
 
-    const sharedOptions = {
+    const options = {
         inputBox,
         getInputStyle: createStyleCompute(input),
         getBoxStyle: createStyleCompute(inputBox),
     };
 
-    applyIconInjectionStyles(elements, sharedOptions);
+    applyIconInjectionStyles(elements, options);
 };
 
 export const createIcon = (field: FieldHandle, controlTag: string): InjectionElements => {
