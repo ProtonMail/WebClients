@@ -334,6 +334,9 @@
       "Multiple select": [
         "Seleção múltipla"
       ],
+      "No expired links": [
+        "Nenhum link expirado"
+      ],
       "OK": [
         "OK"
       ],
@@ -375,6 +378,9 @@
       ],
       "Remove access": [
         "Remover o acesso"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Remover todos os links expirados (${ inactiveLinkCount })"
       ],
       "Remove link": [
         "Remover link"
@@ -451,9 +457,6 @@
       "Share vault": [
         "Compartilhar cofre"
       ],
-      "Shared links": [
-        "Links compartilhados"
-      ],
       "Show": [
         "Mostrar"
       ],
@@ -465,6 +468,9 @@
       ],
       "Sign out": [
         "Encerrar sessão"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguém compartilhou um item com você em ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar itens do cofre"
@@ -775,6 +781,9 @@
       ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
+      ],
+      "File could not be read": [
+        "Não foi possível encontrar o arquivo."
       ],
       "File does not match expected format": [
         "O arquivo não corresponde ao formato esperado"
@@ -1954,6 +1963,9 @@
       "General": [
         "Geral"
       ],
+      "Generate a secure link for this item": [
+        "Gerar um link seguro para este item"
+      ],
       "Generic CSV": [
         "CSV genérico"
       ],
@@ -2035,6 +2047,9 @@
       "Make all viewers": [
         "Definir todos como leitores"
       ],
+      "Max views reached": [
+        "Visualizações máximas alcançadas"
+      ],
       "Members": [
         "Membros"
       ],
@@ -2085,6 +2100,9 @@
       ],
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
+      ],
+      "Open-source password manager for effortless protection.": [
+        "Gerenciador de senha de código aberto para proteção sem esforço."
       ],
       "Organization": [
         "Organização"
@@ -2158,6 +2176,9 @@
       "Share": [
         "Compartilhar"
       ],
+      "Share this vault or create a new vault": [
+        "Compartilhe esse cofre ou crie um cofre"
+      ],
       "Shared link": [
         "Link compartilhado"
       ],
@@ -2185,6 +2206,9 @@
       "The item's vault is currently shared with ${ targetMembers } person": [
         "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoa",
         "O item do cofre está atualmente compartilhado com ${ targetMembers } pessoas"
+      ],
+      "The URL has been copied to the clipboard": [
+        "O link foi copiado para a área de transferência"
       ],
       "Title": [
         "Título"
@@ -2589,6 +2613,9 @@
       "No reused passwords": [
         "Sem senhas reutilizadas"
       ],
+      "No shared secure links": [
+        "Nenhum link seguro compartilhado"
+      ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
       ],
@@ -2869,7 +2896,7 @@
         "Entre em contato conosco para investigar o problema"
       ],
       "Please update the extension to its latest version": [
-        "Atualize a extensão para sua versão mais recente"
+        "Atualize a extensão para a versão mais recente"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique seu endereço de e-mail para usar os aliases de e-mail"

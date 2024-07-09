@@ -211,6 +211,9 @@
       "Generated passwords": [
         "Ustvarjena gesla"
       ],
+      "Get ${ PASS_APP_NAME }": [
+        "Pridobi ${ PASS_APP_NAME }."
+      ],
       "Get mobile apps": [
         "Priskrbite si mobilno aplikacijo"
       ],
@@ -258,6 +261,12 @@
       ],
       "Leave vault": [
         "Zapusti trezor"
+      ],
+      "Link copied to clipboard": [
+        "Povezava je kopirana v odložišče"
+      ],
+      "Link expires after": [
+        "Povezava poteče čez"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Zakleni ${ PASS_APP_NAME }"
@@ -369,6 +378,9 @@
       ],
       "Restore item": [
         "Obnovi predmet"
+      ],
+      "Restrict number of views": [
+        "Omejite število dostopov"
       ],
       "Resume monitoring": [
         "Nadaljuj spremljanje"
@@ -948,6 +960,12 @@
       "${ count } invites successfully sent": [
         "${ count } povabil je bilo poslanih."
       ],
+      "${ count } time": [
+        "${ count }-krat",
+        "${ count }-krat",
+        "${ count }-krat",
+        "${ count }-krat"
+      ],
       "${ memberCount } member": [
         "${ memberCount } član",
         "${ memberCount } člana",
@@ -1121,6 +1139,9 @@
       ],
       "Enter your PIN code": [
         "Vnesi svojo PIN kodo."
+      ],
+      "Expires in ${ remainingTime }": [
+        "Poteče ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
@@ -1606,6 +1627,24 @@
         "${ config.options.wordCount } besedi",
         "${ config.options.wordCount } besede",
         "${ config.options.wordCount } besed"
+      ],
+      "${ days } day": [
+        "${ days } dan",
+        "${ days } dneva",
+        "${ days } dnevi",
+        "${ days } dni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ura",
+        "${ hours } uri",
+        "${ hours } ure",
+        "${ hours } ur"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuti",
+        "${ minutes } minute",
+        "${ minutes } minut"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Različica ${ PASS_SHORT_APP_NAME }"

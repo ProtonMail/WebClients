@@ -211,8 +211,14 @@
       "Generate password": [
         "비밀번호 생성"
       ],
+      "Generate secure link": [
+        "안전한 링크 만들기"
+      ],
       "Generated passwords": [
         "생성된 비밀번호"
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 사용하기"
       ],
       "Get mobile apps": [
         "모바일 앱 다운로드"
@@ -262,6 +268,12 @@
       "Leave vault": [
         "금고 떠나기"
       ],
+      "Link copied to clipboard": [
+        "링크가 클립보드에 복사됨"
+      ],
+      "Link expires after": [
+        "링크 만료시점은"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 잠금"
       ],
@@ -276,6 +288,9 @@
       ],
       "Manage access": [
         "접근 관리"
+      ],
+      "Manage vault access": [
+        "금고 접근 관리"
       ],
       "Manually sync your data": [
         "수동으로 데이터 동기화"
@@ -376,6 +391,9 @@
       "Restore item": [
         "항목 복구"
       ],
+      "Restrict number of views": [
+        "보기 횟수 제한"
+      ],
       "Resume monitoring": [
         "모니터링 재개"
       ],
@@ -414,6 +432,9 @@
       ],
       "Share": [
         "공유"
+      ],
+      "Share secure link": [
+        "안전한 링크로 공유하기"
       ],
       "Share this vault": [
         "이 금고 공유"
@@ -474,6 +495,9 @@
       ],
       "Verify": [
         "인증"
+      ],
+      "Via secure link": [
+        "안전한 링크를 이용함"
       ],
       "View details": [
         "자세히 보기"
@@ -948,6 +972,12 @@
       "${ count } invites successfully sent": [
         "초대 ${ count }개를 잘 보냈습니다"
       ],
+      "${ count } time": [
+        "${ count }번"
+      ],
+      "${ count } view": [
+        "${ count }명 조회"
+      ],
       "${ memberCount } member": [
         "${ memberCount }명 회원"
       ],
@@ -1157,6 +1187,9 @@
       ],
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
+      ],
+      "Expires in ${ remainingTime }": [
+        "${ remainingTime }에 만료"
       ],
       "Extra password successfuly created": [
         "추가 비밀번호를 설정했습니다."
@@ -1675,6 +1708,15 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }단어"
+      ],
+      "${ days } day": [
+        "${ days }일"
+      ],
+      "${ hours } hour": [
+        "${ hours }시간"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }분"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 버전"
