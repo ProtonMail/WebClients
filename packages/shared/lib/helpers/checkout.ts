@@ -44,7 +44,11 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
 export const getAddonTitle = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {
     if (isDomainAddon(addonName)) {
         const domains = quantity;
-        return c('Addon').ngettext(msgid`${domains} custom domain`, `${domains} custom domains`, domains);
+        return c('Addon').ngettext(
+            msgid`${domains} additional custom domain`,
+            `${domains} additional custom domains`,
+            domains
+        );
     }
     if (isMemberAddon(addonName)) {
         const users = quantity;
