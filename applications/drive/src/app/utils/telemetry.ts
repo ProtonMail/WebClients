@@ -19,13 +19,19 @@ export enum Features {
     optimisticFileUploads = 'optimisticFileUploads',
     optimisticFolderUploads = 'optimisticFolderUploads',
     mountToFirstItemRendered = 'mountToFirstItemRendered',
+    totalSizeComputation = 'totalSizeComputation',
 }
+
+type PerformanceTelemetryAdditionalValues = {
+    quantity?: number;
+};
 
 export const sendTelemetryFeaturePerformance = (
     api: Api,
     featureName: Features,
     timeInMs: number,
-    treatment: ExperimentGroup
+    treatment: ExperimentGroup,
+    additionalValues: PerformanceTelemetryAdditionalValues = {}
 ) => {
     void sendTelemetryReport({
         api: api,
@@ -33,6 +39,7 @@ export const sendTelemetryFeaturePerformance = (
         event: TelemetryDriveWebFeature.performance,
         values: {
             milliseconds: timeInMs,
+            ...additionalValues,
         },
         dimensions: {
             experimentGroup: treatment,
@@ -47,13 +54,14 @@ const measureAndReport = (
     group: ExperimentGroup,
     measureName: string,
     startMark: string,
-    endMark: string
+    endMark: string,
+    additionalValues?: PerformanceTelemetryAdditionalValues
 ) => {
     try {
         const measure = performance.measure(measureName, startMark, endMark);
         // it can be undefined on browsers below Safari below 14.1 and Firefox 103
         if (measure) {
-            sendTelemetryFeaturePerformance(api, feature, measure.duration, group);
+            sendTelemetryFeaturePerformance(api, feature, measure.duration, group, additionalValues);
         }
     } catch (e) {
         sendErrorReport(
@@ -113,7 +121,7 @@ export const measureExperimentalPerformance = <T>(
     return result;
 };
 
-export const measureFeaturePerformance = (api: Api, feature: Features) => {
+export const measureFeaturePerformance = (api: Api, feature: Features, experimentGroup = ExperimentGroup.control) => {
     const startMark = `start-${feature}-${randomHexString4()}`;
     const endMark = `end-${feature}-${randomHexString4()}`;
     const measureName = `measure-${feature}-${randomHexString4()}`;
@@ -136,11 +144,11 @@ export const measureFeaturePerformance = (api: Api, feature: Features) => {
                 performance.mark(startMark);
             }
         },
-        end: () => {
+        end: (additionalValues?: PerformanceTelemetryAdditionalValues) => {
             if (!ended && started) {
                 ended = true;
                 performance.mark(endMark);
-                measureAndReport(api, feature, ExperimentGroup.control, measureName, startMark, endMark);
+                measureAndReport(api, feature, experimentGroup, measureName, startMark, endMark, additionalValues);
                 clear();
             }
         },

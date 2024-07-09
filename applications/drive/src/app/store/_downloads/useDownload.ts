@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 import { ReadableStream } from 'web-streams-polyfill';
 
+import { useFlag } from '@proton/components/containers';
+import { useApi } from '@proton/components/hooks';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import {
     DriveFileBlock,
@@ -39,6 +41,9 @@ export default function useDownload() {
     const { getVerificationKey } = useDriveCrypto();
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
+    // TODO: DRVWEB-4064 - Clean this up
+    const isNewFolderTreeAlgorithmEnabled = useFlag('DriveWebDownloadNewFolderLoaderAlgorithm');
+    const api = useApi();
 
     const getChildren = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink[]> => {
         await loadChildren(abortSignal, shareId, linkId, false, false);
@@ -160,7 +165,9 @@ export default function useDownload() {
                     return eventCallbacks.onSignatureIssue?.(abortSignal, link, signatureIssues);
                 },
             },
-            log
+            log,
+            isNewFolderTreeAlgorithmEnabled,
+            api
         );
     };
 
@@ -168,16 +175,21 @@ export default function useDownload() {
         list: LinkDownload[],
         eventCallbacks?: DownloadEventCallbacks
     ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
-        const controls = initDownloadStream(list, {
-            getChildren,
-            getBlocks,
-            getKeys: getKeysGenerator(eventCallbacks?.onSignatureIssue),
-            ...eventCallbacks,
-            onSignatureIssue: async (abortSignal, link, signatureIssues) => {
-                await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
-                return eventCallbacks?.onSignatureIssue?.(abortSignal, link, signatureIssues);
+        const controls = initDownloadStream(
+            list,
+            {
+                getChildren,
+                getBlocks,
+                getKeys: getKeysGenerator(eventCallbacks?.onSignatureIssue),
+                ...eventCallbacks,
+                onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                    await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
+                    return eventCallbacks?.onSignatureIssue?.(abortSignal, link, signatureIssues);
+                },
             },
-        });
+            isNewFolderTreeAlgorithmEnabled,
+            api
+        );
         const stream = controls.start();
         return { controls, stream };
     };

@@ -79,6 +79,8 @@ enum DriveFeatureFlag {
     // Bookmarks
     DriveShareURLBookmarks = 'DriveShareURLBookmarks',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
+    // TODO: DRVWEB-4064 - Clean this up
+    DriveWebDownloadNewFolderLoaderAlgorithm = 'DriveWebDownloadNewFolderLoaderAlgorithm',
 }
 
 enum MailFeatureFlag {
