@@ -13,10 +13,11 @@ import {
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
-import { useWalletAutoCreate } from '@proton/wallet';
+import { useWalletAutoCreate } from '@proton/wallet/hooks/useWalletAutoCreate';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 
+import * as config from './config';
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
@@ -42,7 +43,7 @@ const MainContainer: FunctionComponent = () => {
     const { feature: featureSw, loading: loadingSw } = getFeature(FeatureCode.MailServiceWorker);
 
     const shouldAutoSetupWallet = useFlag('WalletAutoSetup');
-    useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet });
+    useWalletAutoCreate({ higherLevelPilot: shouldAutoSetupWallet, configUrl: config.API_URL });
 
     // Service Worker registration
     // Including a kill switch with a feature flag
