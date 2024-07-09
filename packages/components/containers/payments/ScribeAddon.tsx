@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { Icon } from '@proton/components/components';
 import { getScribeUpsellLearnMore, getScribeUpsellText } from '@proton/components/containers';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience, Plan } from '@proton/shared/lib/interfaces';
 
 import { AccountSizeCustomiser } from './planCustomizer/AccountSizeCustomiser';
@@ -18,7 +19,8 @@ const ScribeB2BBanner = ({ onClick, price }: { onClick: () => void; price: React
         <div className="w-full">
             <p className="m-0 mb-1 text-lg">
                 {/* {translator: Full sentence: Add writing assistant for ${price} per user per month } */}
-                <strong className="block lg:inline">{c('mail_signup_2024: Info').t`Add writing assistant`}</strong>{' '}
+                <strong className="block lg:inline">{c('mail_signup_2024: Info')
+                    .t`Add ${BRAND_NAME} Scribe writing assistant`}</strong>{' '}
                 {c('mail_signup_2024: Info').jt`for ${price}`}
             </p>
             <p className="m-0 text-sm color-weak">
