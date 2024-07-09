@@ -1,19 +1,21 @@
 @import '~@proton/styles/scss/lib';
 
-.stacked-field.stacked-field {
-	--stacked-field-border-radius: var(--border-radius-xl);
-	--stacked-field-background: var(--background-weak);
-	--field-focus-background-color: var(--background-weak);
-	--stacked-field-padding-block: var(--space-4);
-	--stacked-field-padding-inline: var(--space-5);
-	--stacked-field-min-block-size: #{rem(80)};
+.stacked-field {
+	&#{&} {
+		--stacked-field-border-radius: var(--border-radius-xl);
+		--stacked-field-background: var(--background-weak);
+		--field-focus-background-color: var(--background-weak);
+		--stacked-field-padding-block: var(--space-4);
+		--stacked-field-padding-inline: var(--space-5);
+		--stacked-field-min-block-size: #{rem(80)};
 
-	.field-two-label {
-		font-size: rem(14);
-	}
+		.field-two-label {
+			font-size: rem(14);
+		}
 
-	.stacked-field-caret {
-		margin-block-start: rem(-12);
-		color: var(--text-hint);
+		.stacked-field-caret {
+			margin-block-start: rem(-12);
+			color: var(--text-hint);
+		}
 	}
 }
