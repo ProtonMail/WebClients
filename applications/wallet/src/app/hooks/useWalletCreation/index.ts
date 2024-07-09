@@ -110,8 +110,6 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
         shouldAutoAddEmailAddress?: boolean;
         isImported?: boolean;
     }) => {
-        // if(!validatePassphrases()) return;
-
         // Typeguard
         if (!userKeys || isUndefined(network) || !selectedCurrency) {
             return;
