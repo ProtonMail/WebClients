@@ -105,7 +105,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                     <div className="mb-4">
                         <CurrencySelect
                             disabled={loadingCurrencies || loadingWalletSubmit}
-                            label={c('Wallet preferences').t`Local currency`}
+                            label={c('Wallet preferences').t`Default currency`}
                             placeholder={c('Wallet preferences').t`Select your currency`}
                             value={selectedCurrency}
                             onSelect={(value) => {
