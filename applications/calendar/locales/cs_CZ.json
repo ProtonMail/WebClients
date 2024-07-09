@@ -907,6 +907,11 @@
         "Aplikace ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Prázdný soubor ICS"
@@ -1091,6 +1096,9 @@
       ],
       "Custom domain problem": [
         "Problém s vlastní doménou"
+      ],
+      "Docs problem": [
+        "Problém s aplikací Docs"
       ],
       "Drive problem": [
         "Problém s aplikací Drive"
@@ -4713,7 +4721,7 @@
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
       ],
       "New": [
-        "Nový"
+        "Nově"
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -6010,6 +6018,14 @@
         "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Přidat asistenta psaní"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Získejte nabídku"
@@ -6344,6 +6360,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendář",
         "${ n } kalendáře",
@@ -6605,9 +6624,6 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - prémiové funkce"
-      ],
       "Passkeys supported": [
         "Přístupové klíče podporovány"
       ],
@@ -6722,8 +6738,8 @@
       "Unlimited labels": [
         "Neomezeně štítků"
       ],
-      "Unlimited logins and notes": [
-        "Neomezený počet přihlášení a poznámek"
+      "Unlimited logins, notes and credit cards": [
+        "Neomezený počet přihlášení, poznámek a platebních karet"
       ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
@@ -7526,17 +7542,23 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Zabezpečené sdílení s ${ n } trezorem",
-        "Zabezpečené sdílení s ${ n } trezory",
-        "Zabezpečené sdílení s ${ n } trezory",
-        "Zabezpečené sdílení s ${ n } trezory"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Zabezpečené sdílení s více trezory"
+      "Secure vault and link sharing": [
+        "Bezpečné sdílení trezoru a odkazu"
       ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpečné sdílení trezoru (${ n } trezor)",
+        "Bezpečné sdílení trezoru (${ n } trezory)",
+        "Bezpečné sdílení trezoru (${ n } trezorů)",
+        "Bezpečné sdílení trezoru (${ n } trezorů)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpečné sdílení trezoru (${ n } trezor) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ]
     },
     "Payment method option": {
@@ -7571,6 +7593,9 @@
       ],
       "Payment Processing": [
         "Zpracování platby"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Speciálně zvýhodněná cena ${ priceWithDiscount } platí první ${ months }. Kupón je platný pro ${ couponRedemptions } obnovení. Poté dojde k automatickému obnovení za cenu ${ price } na dobu ${ months }. Toto můžete kdykoli zrušit."
@@ -8298,11 +8323,6 @@
       "Go to subscription plans": [
         "Přejít na předplatné"
       ],
-      "Upgrade": [
-        "Navýšit"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Navýšit"
       ]
@@ -9205,6 +9225,9 @@
     "Suffix for price": {
       "per month": [
         "za měsíc"
+      ],
+      "per user per month": [
+        "za uživatele měsíčně"
       ]
     },
     "summer2023: Tooltip": {

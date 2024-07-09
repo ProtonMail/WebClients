@@ -891,6 +891,11 @@
         "Aplicaciones de ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Archivo ICS vacío"
@@ -4847,7 +4852,7 @@
         "La verificación abrirá una pestaña nueva, desactive cualquier bloqueador de ventanas emergentes. No se le cobrará este proceso. Cualquier monto usado para verificar la tarjeta le será reembolsado inmediatamente."
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versión fue copiado en el portapapeles."
+        "Número de versión copiado al portapapeles"
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
@@ -5844,6 +5849,14 @@
         "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas y etiquetarlos como"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Añadir el asistente de escritura"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Obtener la oferta"
@@ -6172,6 +6185,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -6403,9 +6419,6 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en bóvedas múltiples"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funciones premium"
-      ],
       "Passkeys supported": [
         "Claves de acceso admitidas"
       ],
@@ -6518,8 +6531,8 @@
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y notas"
+      "Unlimited logins, notes and credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
@@ -6976,7 +6989,7 @@
         "Grupo de contactos actualizado"
       ],
       "Link copied to clipboard": [
-        "El enlace fue copiado al portapapeles"
+        "Enlace copiado al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7070,7 +7083,7 @@
       ],
       "${ value } hour after": [
         "${ value } hora después",
-        "${ value } hora después"
+        "${ value } horas después"
       ],
       "${ value } hour after at ${ time }": [
         "${ value } hora después a las ${ time }",
@@ -7264,15 +7277,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Uso compartido seguro con ${ n } bóveda",
-        "Uso compartido seguro con ${ n } bóvedas"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Uso compartido seguro con varias bóvedas"
+      "Secure vault and link sharing": [
+        "Intercambio seguro de bóveda y enlaces"
       ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Intercambio seguro de bóveda (${ n } bóveda)",
+        "Intercambio seguro de bóveda (${ n } bóvedas)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Intercambio seguro de bóveda (${ n } bóveda) e intercambio de enlaces",
+        "Intercambio seguro de bóveda (${ n } bóvedas) e intercambio de enlaces"
       ]
     },
     "Payment method option": {
@@ -7304,6 +7321,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puede cancelarla en cualquier momento."
@@ -7987,11 +8007,6 @@
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
       ],
-      "Upgrade": [
-        "Mejorar"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Mejorar"
       ]
@@ -8869,6 +8884,9 @@
     "Suffix for price": {
       "per month": [
         "al mes"
+      ],
+      "per user per month": [
+        "/usuario al mes"
       ]
     },
     "summer2023: Tooltip": {
