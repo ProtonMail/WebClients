@@ -41,14 +41,16 @@ export async function $importDataIntoEditor(
   )
 
   if (dataFormat === 'docx') {
-    editor.update(
-      () => {
-        void $importNodesFromDocx(editor, data)
-      },
-      {
-        discrete: true,
-      },
-    )
+    await new Promise((resolve) => {
+      editor.update(
+        () => {
+          $importNodesFromDocx(editor, data).then(resolve).catch(sendErrorMessage)
+        },
+        {
+          discrete: true,
+        },
+      )
+    }).catch(sendErrorMessage)
     return
   }
 
