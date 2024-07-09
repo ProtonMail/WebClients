@@ -1,6 +1,7 @@
 import { Button } from '@proton/atoms/Button'
 import {
   Icon,
+  MimeIcon,
   ModalStateProps,
   ModalTwo,
   ModalTwoContent,
@@ -9,14 +10,14 @@ import {
   Tooltip,
   useModalTwoStatic,
 } from '@proton/components/components'
-import { NativeVersionHistory, VersionHistoryBatch } from '@proton/docs-core'
-import clsx from '@proton/utils/clsx'
+import { NativeVersionHistory } from '@proton/docs-core'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { EditorFrame } from './EditorFrame'
 import { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
 import { Logger } from '@proton/utils/logs'
 import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
+import HistoryTimeline from './HistoryTimeline'
 
 function HistoryViewerModalContent({
   versionHistory,
@@ -25,12 +26,11 @@ function HistoryViewerModalContent({
   versionHistory: NativeVersionHistory
   onClose: () => void
 }) {
-  const [batches] = useState<VersionHistoryBatch[]>(() => versionHistory.batches)
-  const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => batches.length - 1)
+  const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => versionHistory.batches.length - 1)
 
   const selectedBatch = useMemo(() => {
-    return batches[selectedBatchIndex]
-  }, [batches, selectedBatchIndex])
+    return versionHistory.batches[selectedBatchIndex]
+  }, [versionHistory.batches, selectedBatchIndex])
 
   const mergedUpdate = useMemo(() => {
     return versionHistory.getMergedUpdateForBatchIndex(selectedBatchIndex)
@@ -59,10 +59,10 @@ function HistoryViewerModalContent({
     return versionHistory.getFormattedDateAndTimeForBatch(selectedBatch)
   }, [selectedBatch, versionHistory])
 
-  if (!batches.length) {
+  if (!versionHistory.batches.length) {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center">
-        No version history batches available
+        {c('Info').t`No version history batches available`}
       </div>
     )
   }
@@ -75,15 +75,15 @@ function HistoryViewerModalContent({
           {selectedBatchTimestamp}
           <div className="flex items-center gap-1 rounded-lg bg-[--background-weak] px-2 py-1 text-xs text-[--text-weak]">
             <Icon name="eye" />
-            View only
+            {c('Info').t`View only`}
           </div>
         </div>
-        <div className="min-h-0 flex-grow">
+        <div className="min-h-0 flex-grow overflow-scroll">
           <EditorFrame key={selectedBatchTimestamp + `${Math.random()}`} isViewOnly onFrameReady={onFrameReady} />
         </div>
       </div>
-      <div className="border-l border-[--border-weak]">
-        <div className="flex items-center justify-between gap-2 px-3.5 py-1.5">
+      <div className="w-[18.75rem] overflow-scroll border-l border-[--border-weak] bg-[--optional-background-lowered]">
+        <div className="sticky top-0 flex items-center justify-between gap-2 bg-[--optional-background-lowered] px-3.5 py-1.5">
           <div className="text-bold text-base">Document History</div>
           <Tooltip title={c('Action').t`Close`}>
             <Button className="shrink-0" icon shape="ghost" onClick={onClose}>
@@ -91,20 +91,16 @@ function HistoryViewerModalContent({
             </Button>
           </Tooltip>
         </div>
-        <div className="flex flex-col-reverse">
-          {batches.map((batch, index) => {
-            return (
-              <button
-                key={index}
-                className={clsx('px-2.5 py-1.5 text-left', index === selectedBatchIndex && 'bg-[--primary-minor-2]')}
-                onClick={() => {
-                  setSelectedBatchIndex(index)
-                }}
-              >
-                {versionHistory.getFormattedDateAndTimeForBatch(batch)}
-              </button>
-            )
-          })}
+        <div className="flex flex-col">
+          <HistoryTimeline
+            versionHistory={versionHistory}
+            selectedBatchIndex={selectedBatchIndex}
+            onSelectedBatchIndexChange={setSelectedBatchIndex}
+          />
+          <div className="flex items-center gap-2 px-5 pb-3 pt-5">
+            <MimeIcon name="proton-doc" size={4} />
+            <span>{c('Info').t`The Beginning`}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -130,7 +126,7 @@ function HistoryViewerModal({ versionHistory, onClose, ...rest }: HistoryViewerM
       ) : (
         <>
           <ModalTwoHeader title="Document history" />
-          <ModalTwoContent>No version history available</ModalTwoContent>
+          <ModalTwoContent>{c('Info').t`No version history available`}</ModalTwoContent>
           <ModalTwoFooter />
         </>
       )}
