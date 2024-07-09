@@ -1,5 +1,5 @@
 // This file defines interfaces for model received from Wallet API
-import { WasmBitcoinUnit, WasmScriptType } from '@proton/andromeda';
+import type { WasmBitcoinUnit, WasmScriptType } from '@proton/andromeda';
 
 export enum WalletPassphrase {
     WithoutPassphrase = 0,

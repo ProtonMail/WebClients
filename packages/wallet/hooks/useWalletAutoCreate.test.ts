@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { WasmApiBitcoinAddressesCreationPayload, WasmDerivationPath } from '@proton/andromeda';
+import * as andromedaModule from '@proton/andromeda';
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -18,11 +18,7 @@ import {
     apiWalletsData,
     expectSignedBy,
     getAddressKey,
-    getMockedApi,
     getUserKeys,
-    mockUseGetBitcoinNetwork,
-    mockUseGetUserWalletSettings,
-    mockUseWalletApiClients,
     userWalletSettings,
 } from '../tests';
 import { useWalletAutoCreate } from './useWalletAutoCreate';
@@ -48,35 +44,44 @@ describe('useWalletAutoCreate', () => {
     const mockedCreateWalletAccount = vi.fn(async () => ({ Data: apiWalletAccountOneA }));
     const mockedAddEmailAddress = vi.fn();
     const mockedAddBitcoinAddress = vi.fn();
-    let mockedGetUserWalletSettings: Parameters<typeof mockUseGetUserWalletSettings>[0];
-
-    let mocked = getMockedApi({
-        wallet: {
-            createWallet: mockedCreateWallet as any,
-            createWalletAccount: mockedCreateWalletAccount as any,
-            addEmailAddress: mockedAddEmailAddress,
-        },
-        bitcoin_address: {
-            addBitcoinAddress: mockedAddBitcoinAddress,
-        },
-    });
+    const mockedUpdateWalletAccountFiatCurrency = vi.fn();
+    const mockedGetUserWalletSettings = vi.fn(async () => [{ ...userWalletSettings, WalletCreated: 0 }]);
 
     beforeAll(async () => {
         await CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     });
 
     beforeEach(async () => {
-        mockedGetUserWalletSettings = vi.fn(async () => ({ ...userWalletSettings, WalletCreated: 0 }));
-
         mockedCreateWallet.mockClear();
         mockedCreateWalletAccount.mockClear();
         mockedAddEmailAddress.mockClear();
         mockedAddBitcoinAddress.mockClear();
+        mockedUpdateWalletAccountFiatCurrency.mockClear();
+        mockedGetUserWalletSettings.mockClear();
 
-        mockUseWalletApiClients(mocked);
-        mockUseGetBitcoinNetwork();
+        mockedGetUserWalletSettings.mockResolvedValue([{ ...userWalletSettings, WalletCreated: 0 }]);
+
+        vi.spyOn(andromedaModule, 'WasmProtonWalletApiClient').mockReturnValue({
+            clients: vi.fn(() => {
+                return {
+                    network: { getNetwork: vi.fn(() => andromedaModule.WasmNetwork.Testnet) },
+                    wallet: {
+                        createWallet: mockedCreateWallet,
+                        createWalletAccount: mockedCreateWalletAccount,
+                        addEmailAddress: mockedAddEmailAddress,
+                        updateWalletAccountFiatCurrency: mockedUpdateWalletAccountFiatCurrency,
+                    },
+                    bitcoin_address: {
+                        addBitcoinAddress: mockedAddBitcoinAddress,
+                    },
+                    settings: {
+                        getUserSettings: mockedGetUserWalletSettings,
+                    },
+                };
+            }),
+        } as unknown as andromedaModule.WasmProtonWalletApiClient);
+
         mockUseGetUserKeys(await getUserKeys());
-        mockUseGetUserWalletSettings(mockedGetUserWalletSettings);
         mockUseUser();
         mockUseGetOrganization();
         mockUseAuthentication({ getPassword: vi.fn(() => 'testtest') });
@@ -87,8 +92,7 @@ describe('useWalletAutoCreate', () => {
 
     describe('when user wallet has already created a wallet before', () => {
         beforeEach(() => {
-            mockedGetUserWalletSettings = vi.fn(async () => ({ ...userWalletSettings, WalletCreated: 1 }));
-            mockUseGetUserWalletSettings(mockedGetUserWalletSettings);
+            mockedGetUserWalletSettings.mockResolvedValue([{ ...userWalletSettings, WalletCreated: 1 }]);
         });
 
         it('should not autocreate wallet', async () => {
@@ -106,7 +110,7 @@ describe('useWalletAutoCreate', () => {
 
     describe('when higher level pilot is false', () => {
         it('should not autocreate wallet', async () => {
-            renderHook(() => useWalletAutoCreate({ higherLevelPilot: false }));
+            renderHook(() => useWalletAutoCreate({ higherLevelPilot: false, configUrl: 'api' }));
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
@@ -161,7 +165,7 @@ describe('useWalletAutoCreate', () => {
             expect(mockedCreateWalletAccount).toHaveBeenCalledWith(
                 '0',
                 // TODO: check derivation path when toString is impl for WasmDerivationPath
-                expect.any(WasmDerivationPath),
+                expect.any(andromedaModule.WasmDerivationPath),
                 expect.any(String),
                 3
             );
@@ -175,7 +179,7 @@ describe('useWalletAutoCreate', () => {
             expect(mockedAddBitcoinAddress).toHaveBeenCalledWith(
                 '0',
                 '8',
-                expect.any(WasmApiBitcoinAddressesCreationPayload)
+                expect.any(andromedaModule.WasmApiBitcoinAddressesCreationPayload)
             );
 
             const bitcoinAddressesPayload = mockedAddBitcoinAddress.mock.calls[0][2];
