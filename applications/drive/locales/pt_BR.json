@@ -220,9 +220,6 @@
       "Create and copy alias": [
         "Criar e copiar alias"
       ],
-      "Create Document": [
-        "Criar documento"
-      ],
       "Create link": [
         "Criar link"
       ],
@@ -4906,9 +4903,6 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
-      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
-        "O novo recurso de Documentos requer a versão mais recente do ${ DRIVE_APP_NAME }. Atualize seus aplicativos no celular e no computador para ter uma experiência perfeita."
-      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
       ],
@@ -6186,6 +6180,14 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Adicionar assistente de escrita"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Obtenha a oferta"
@@ -6512,6 +6514,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -6743,9 +6748,6 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - recursos premium"
-      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -6857,9 +6859,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -7482,6 +7481,9 @@
       "File removed": [
         "Arquivo removido"
       ],
+      "Invitation's email was sent again": [
+        "O e-mail do convite foi enviado novamente"
+      ],
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
@@ -7659,13 +7661,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Compartilhamento seguro com ${ n } cofre",
-        "Compartilhamento seguro com ${ n } cofres"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartilhamento seguro de múltiplos cofres"
-      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
       ]
@@ -8322,11 +8317,6 @@
       "Go to subscription plans": [
         "Acessar planos de assinatura"
       ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Fazer upgrade"
       ]
@@ -9083,6 +9073,9 @@
     "Suffix for price": {
       "per month": [
         "por mês"
+      ],
+      "per user per month": [
+        "por mês por usuário"
       ]
     },
     "summer2023: Tooltip": {
@@ -9380,9 +9373,6 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
-      ],
-      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
-        "Docs é um novo recurso do ${ DRIVE_APP_NAME }"
       ],
       "Downgrade account": [
         "Fazer downgrade da conta"
@@ -9877,6 +9867,9 @@
       ],
       "Load image": [
         "Carregar imagem"
+      ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "A mensagem e o nome do arquivo são armazenados com criptografia de acesso zero quando incluídos no e-mail."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a ser usado durante a assinatura ou criptografia de um usuário. Observe que o PGP/Incorporado força o envio de mensagens de texto sem formatação"

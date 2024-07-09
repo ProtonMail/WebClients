@@ -465,6 +465,9 @@
       "Manage link": [
         "Beheer link"
       ],
+      "Manage share": [
+        "Delen beheren"
+      ],
       "Mark as resolved": [
         "Markeren als opgelost"
       ],
@@ -533,6 +536,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
+      ],
+      "Open in ${ DOCS_SHORT_APP_NAME }": [
+        "Openen in ${ DOCS_SHORT_APP_NAME }"
       ],
       "Open navigation": [
         "Navigatie openen"
@@ -803,6 +809,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
+      ],
+      "Understood": [
+        "Begrepen"
       ],
       "Undo": [
         "Ongedaan maken"
@@ -2521,6 +2530,15 @@
       "External accounts are not supported yet": [
         "Externe accounts worden nog niet ondersteund"
       ],
+      "External invitations are not available yet.": [
+        "Externe uitnodigingen zijn nog niet beschikbaar."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Externe uitnodigingen zijn tijdelijk uitgeschakeld."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Externe uitnodigingen zijn tijdelijk uitgeschakeld. Probeer het later opnieuw"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
       ],
@@ -2733,6 +2751,12 @@
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "De uitnodiging kan nog niet worden voltooid. Probeer het later opnieuw."
+      ],
+      "The invitation doesn't exist anymore": [
+        "De uitnodiging bestaat niet meer"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "De naam van het label is ongeldig. Kies een andere naam."
       ],
@@ -2798,6 +2822,9 @@
       ],
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "Uploaden voor deze map is tijdelijk uitgeschakeld"
       ],
       "Username must begin with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer beginnen"
@@ -3919,6 +3946,9 @@
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Available": [
+        "Beschikbaar"
+      ],
       "Awaiting transaction": [
         "Transactie wordt afgewacht"
       ],
@@ -4107,6 +4137,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Downloaden gepauseerd vanwege verbindingsproblemen; het hervat automatisch"
       ],
+      "Download was canceled": [
+        "Download is geannuleerd"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
       ],
@@ -4115,6 +4148,9 @@
       ],
       "Downloading": [
         "Downloaden"
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Downloaden van ${ DOCS_APP_NAME } bestanden van ${ DRIVE_APP_NAME } wordt momenteel niet ondersteund - deze worden niet opgenomen in uw download."
       ],
       "Downloading all encrypted files": [
         "Alle versleutelde bestanden downloaden"
@@ -4556,7 +4592,7 @@
         "Foto's zijn succesvol hersteld."
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Vraag aan de eigenaar om je rechtstreeks uit te nodigen voor het document."
+        "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
       ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
@@ -4566,6 +4602,9 @@
       ],
       "Please enter the password to decrypt and view content.": [
         "Voer een wachtwoord in om de content te ontsleutelen en te bekijken."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Exporteer ze rechtstreeks vanuit de ${ DOCS_APP_NAME }-applicatie als je ze wilt downloaden."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
@@ -4580,7 +4619,7 @@
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
       ],
       "Please open the document to view it.": [
-        "Open het document om het te bekijken, alstublieft."
+        "Open het document om het te bekijken."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
@@ -4841,6 +4880,9 @@
       ],
       "There is nothing to see here": [
         "Er is hier niets te zien"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -5641,6 +5683,9 @@
       "Import to:": [
         "Importeren naar:"
       ],
+      "Include message and file name in invite email": [
+        "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
+      ],
       "Keep both": [
         "Beide behouden"
       ],
@@ -5767,6 +5812,9 @@
       "Public keys": [
         "Openbare sleutels"
       ],
+      "Public link expiration date": [
+        "Vervaldatum van openbare link"
+      ],
       "Public link password": [
         "Wachtwoord voor openbare link"
       ],
@@ -5796,6 +5844,9 @@
       ],
       "Set recovery method": [
         "Herstelmethode instellen"
+      ],
+      "Share a file": [
+        "Een bestand delen"
       ],
       "Shared by": [
         "Gedeeld door"
@@ -6410,6 +6461,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -6635,9 +6689,6 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium functies"
-      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -6746,9 +6797,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal wachtwoorden en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -7272,6 +7320,9 @@
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
       ],
+      "An invitation has been sent": [
+        "Er is een uitnodiging verzonden"
+      ],
       "Cannot load link": [
         "Kan koppelingen niet laden"
       ],
@@ -7299,8 +7350,17 @@
       "Encrypted search activated": [
         "Versleuteld zoeken geactiveerd"
       ],
+      "External invitation removed from the share": [
+        "Externe uitnodiging is verwijderd uit de share"
+      ],
+      "External invitation's email was sent again": [
+        "Externe uitnodigingsmail is opnieuw verzonden"
+      ],
       "Failed to accept share invitation": [
         "Accepteren van uitnodiging mislukt"
+      ],
+      "Failed to convert external invitation": [
+        "Omzetten van externe uitnodiging mislukt"
       ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
@@ -7329,6 +7389,9 @@
       ],
       "File removed": [
         "Bestand verwijderd"
+      ],
+      "Invitation's email was sent again": [
+        "Uitnodigingsmail is opnieuw verzonden"
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
@@ -7428,8 +7491,17 @@
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Ga aan de slag met ${ DRIVE_APP_NAME } en we zullen uw opslag upgraden naar 5 GB!"
       ],
+      "Invite others via email to view and edit your files, or create a public link for quick access": [
+        "Nodig anderen uit via e-mail om uw bestanden te bekijken en te bewerken of maak een openbare link aan voor snelle toegang"
+      ],
       "Set a recovery method": [
         "Stel een herstelmethode in"
+      ],
+      "Share a file": [
+        "Een bestand delen"
+      ],
+      "Share files with one click": [
+        "Bestanden delen met één klik"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Vul eenvoudigweg het volgende vandaag nog in:",
@@ -7498,13 +7570,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Veilig delen met kluis ${ n }",
-        "Veilig delen met ${ n } kluizen"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Veilig delen met meerdere kluizen"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ]
@@ -7629,6 +7694,9 @@
       ],
       "Last name": [
         "Familienaam"
+      ],
+      "Message": [
+        "Bericht"
       ],
       "Name": [
         "Naam"
@@ -8147,11 +8215,6 @@
         "Upgraden"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } maand",
@@ -8277,6 +8340,9 @@
     "Status": {
       "Accepted": [
         "Geaccepteerd"
+      ],
+      "Pending": [
+        "In behandeling"
       ]
     },
     "Storage": {
@@ -9270,6 +9336,9 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
+      "Public shared link status": [
+        "Status van openbare gedeelde link"
+      ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
       ],
@@ -9471,6 +9540,9 @@
       "Your changes are not synced yet": [
         "Uw wijzigingen zijn nog niet gesynchroniseerd"
       ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Uw download bevat een ${ DOCS_APP_NAME }-bestand"
+      ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
       ],
@@ -9543,6 +9615,9 @@
       "Load image": [
         "Laad foto"
       ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Bericht- en bestandsnaam worden opgeslagen met zero access versleuteling wanneer opgenomen in de e-mail"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
@@ -9569,6 +9644,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "We have sent them an invite to access the item.": [
+        "We hebben ze een uitnodiging gestuurd om het item te bekijken."
       ],
       "You do not have any contacts to export": [
         "U heeft geen contactpersonen om te exporteren"

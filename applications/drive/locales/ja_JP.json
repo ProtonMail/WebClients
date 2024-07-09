@@ -5964,6 +5964,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } カレンダー"
       ],
@@ -6165,9 +6168,6 @@
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - プレミアム機能"
-      ],
       "Passkeys supported": [
         "パスキーに対応しています"
       ],
@@ -6257,9 +6257,6 @@
       ],
       "Unlimited labels": [
         "ラベル制限なし"
-      ],
-      "Unlimited logins and notes": [
-        "無制限のログインとメモ"
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
