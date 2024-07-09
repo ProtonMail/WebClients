@@ -113,11 +113,11 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
       ],
       "Create a new vault to share": [
         "Δημιουργία νέας κρύπτης για κοινή χρήση"
@@ -197,6 +197,9 @@
       "Edit vault": [
         "Επεξεργασία κρύπτης"
       ],
+      "Entire vault": [
+        "Ολόκληρη κρύπτη"
+      ],
       "Exclude from monitoring": [
         "Εξαίρεση από την παρακολούθηση"
       ],
@@ -218,8 +221,14 @@
       "Generate password": [
         "Παραγωγή τυχαίου κωδικού πρόσβασης"
       ],
+      "Generate secure link": [
+        "Δημιουργήστε ασφαλή σύνδεσμο"
+      ],
       "Generated passwords": [
         "Δημιουργημένα συνθηματικά"
+      ],
+      "Generating secure link...": [
+        "Δημιουργία ασφαλούς συνδέσμου..."
       ],
       "Get mobile apps": [
         "Αποκτήστε εφαρμογές κινητών"
@@ -269,6 +278,12 @@
       "Leave vault": [
         "Αποχώρηση από την κρύπτη"
       ],
+      "Link copied to clipboard": [
+        "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Link expires after": [
+        "Ο σύνδεσμος λήγει μετά"
+      ],
       "Lock extension": [
         "Κλείδωμα προέκτασης"
       ],
@@ -284,8 +299,14 @@
       "Manage access": [
         "Διαχείριση πρόσβασης"
       ],
+      "Manage vault access": [
+        "Διαχείριση πρόσβασης κρύπτης"
+      ],
       "Manually sync your data": [
         "Μη αυτόματος συγχρονισμός των δεδομένων σας"
+      ],
+      "Maximum views": [
+        "Μέγιστος αριθμός εμφανίσεων"
       ],
       "More info: ${ safeTitle }": [
         "Περισσότερες πληροφορίες: ${ safeTitle }"
@@ -313,6 +334,9 @@
       ],
       "Multiple select": [
         "Πολλαπλή επιλογή"
+      ],
+      "No expired links": [
+        "Δεν υπάρχουν σύνδεσμοι που έχουν λήξει"
       ],
       "Not now": [
         "Όχι τώρα"
@@ -359,6 +383,9 @@
       "Remove access": [
         "Αφαίρεση πρόσβασης"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Κατάργηση όλων των συνδέσμων που έχουν λήξει (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Αφαίρεση συνδέσμου"
       ],
@@ -377,6 +404,9 @@
       "Restore item": [
         "Επαναφορά στοιχείου"
       ],
+      "Restrict number of views": [
+        "Περιορισμός αριθμού προβολών"
+      ],
       "Retry": [
         "Δοκιμάστε ξανά"
       ],
@@ -394,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Αποθήκευση κλειδιού πρόσβασης..."
+      ],
+      "Secure links": [
+        "Ασφαλής σύνδεσμοι"
       ],
       "See all": [
         "Προβολή όλων"
@@ -418,6 +451,9 @@
       ],
       "Share": [
         "Κοινοποίηση"
+      ],
+      "Share secure link": [
+        "Κοινή χρήση ασφαλούς συνδέσμου"
       ],
       "Share this vault": [
         "Κοινή χρήση αυτής της κρύπτης"
@@ -484,6 +520,9 @@
       ],
       "Upgrade now to share with more people": [
         "Κάντε αναβάθμιση τώρα για κοινή χρήση με περισσότερα άτομα"
+      ],
+      "Via secure link": [
+        "Μέσω ασφαλούς συνδέσμου"
       ],
       "View app logs": [
         "Προβολή αρχείων καταγραφής εφαρμογών"
@@ -732,6 +771,9 @@
       "Importing items failed": [
         "Η εισαγωγή στοιχείων απέτυχε"
       ],
+      "Inactive secure links could not be removed.": [
+        "Δεν ήταν δυνατή η κατάργηση ανενεργών ασφαλών συνδέσεων."
+      ],
       "Invalid password manager": [
         "Μη έγκυρος διαχειριστής κωδικών πρόσβασης"
       ],
@@ -792,6 +834,12 @@
       "Restoring trashed items failed": [
         "Η επαναφορά των απορριφθέντων στοιχείων απέτυχε"
       ],
+      "Secure link could not be created.": [
+        "Δεν ήταν δυνατή η δημιουργία ασφαλούς σύνδεσης."
+      ],
+      "Secure link could not be opened.": [
+        "Δεν ήταν δυνατό το άνοιγμα ασφαλούς σύνδεσης."
+      ],
       "Settings update failed": [
         "Η ενημέρωση των ρυθμίσεων απέτυχε"
       ],
@@ -812,6 +860,9 @@
       ],
       "The URL is in the list": [
         "Η διεύθυνση URL βρίσκεται στη λίστα"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Παρουσιάστηκε σφάλμα κατά την κατάργηση του ασφαλούς συνδέσμου. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Πάρα πολλές αποτυχημένες προσπάθειες. Παρακαλούμε συνδεθείτε ξανά."
@@ -935,6 +986,14 @@
       "${ count } invites successfully sent": [
         "${ count } προσκλήσεις στάλθηκαν με επιτυχία"
       ],
+      "${ count } time": [
+        "${ count } φορά",
+        "${ count } φορές"
+      ],
+      "${ count } view": [
+        "${ count } προβολή",
+        "${ count } προβολές"
+      ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
@@ -1013,6 +1072,9 @@
       "All breaches for this address were resolved": [
         "Επιλύθηκαν όλες οι παραβιάσεις για αυτήν τη διεύθυνση"
       ],
+      "All inactive secure links were removed": [
+        "Όλοι οι ανενεργοί ασφαλείς σύνδεσμοι καταργήθηκαν"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Όλα τα στοιχεία από το \"${ payload.content.name }\" μετακινήθηκαν με επιτυχία"
       ],
@@ -1037,6 +1099,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Είστε βέβαιοι ότι θέλετε να μετακινήσετε το στοιχείο στο \"${ name }\";"
       ],
+      "Are you sure you want to remove the link?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον σύνδεσμο;"
+      ],
       "Auto-lock successfully disabled.": [
         "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία."
       ],
@@ -1048,6 +1113,9 @@
       ],
       "Built in 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής ταυτότητας 2FA"
+      ],
+      "Can be viewed": [
+        "Μπορεί να προβληθεί"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Μπορεί να δημιουργήσει, επεξεργαστεί, διαγράψει και εξάγει στοιχεία σε αυτήν την κρύπτη."
@@ -1168,6 +1236,12 @@
       ],
       "Enter your PIN code": [
         "Εισαγωγή κωδικού ΡΙΝ"
+      ],
+      "Expires in": [
+        "Λήγει σε"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Λήγει σε ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Ο επιπλέον κωδικός πρόσβασης δημιουργήθηκε με επιτυχία"
@@ -1428,8 +1502,14 @@
       "Registering PIN lock failed": [
         "Η καταχώρηση κλειδώματος PIN απέτυχε"
       ],
+      "Removing all inactive secure links...": [
+        "Κατάργηση όλων των ασφαλών συνδέσμων..."
+      ],
       "Removing extra password...": [
         "Κατάργηση επιπλέον κωδικού πρόσβασης..."
+      ],
+      "Removing secure link...": [
+        "Αφαίρεση ασφαλούς συνδέσμου..."
       ],
       "Restoring items from trash": [
         "Επαναφορά στοιχείων από τα διαγραμμένα"
@@ -1518,6 +1598,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
         "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων:"
+      ],
+      "The secure link has been removed": [
+        "Ο ασφαλής σύνδεσμος καταργήθηκε"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Το κείμενο που προσπαθείτε να επικολλήσετε είναι μεγαλύτερο από το μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
@@ -1671,6 +1754,18 @@
         "${ config.options.wordCount } λέξη",
         "${ config.options.wordCount } λέξεις"
       ],
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } παρακολούθηση"
       ],
@@ -1686,14 +1781,23 @@
       "10 minutes": [
         "10 λεπτά"
       ],
+      "14 days": [
+        "14 ημέρες"
+      ],
       "15 minutes": [
         "15 λεπτά"
+      ],
+      "24 hours": [
+        "24 ώρες"
       ],
       "2FA secret key (TOTP)": [
         "Μυστικό κλειδί 2FA (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Διακριτικό 2FA (TOTP)"
+      ],
+      "30 days": [
+        "30 ημέρες"
       ],
       "30 minutes": [
         "30 λεπτά"
@@ -1703,6 +1807,9 @@
       ],
       "5 minutes": [
         "5 λεπτά"
+      ],
+      "7 days": [
+        "7 ημέρες"
       ],
       "A-Z": [
         "Α-Ω"
@@ -1839,6 +1946,9 @@
       "Expired": [
         "Έχει λήξει"
       ],
+      "Expired link": [
+        "Ληγμένος σύνδεσμος"
+      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -1856,6 +1966,9 @@
       ],
       "General": [
         "Γενικά"
+      ],
+      "Generate a secure link for this item": [
+        "Δημιουργία ασφαλούς σύνδεσης για αυτό το στοιχείο"
       ],
       "Generic CSV": [
         "Γενικό CSV"
@@ -1931,6 +2044,9 @@
       ],
       "Make all viewers": [
         "Κάντε τους όλους θεατές"
+      ],
+      "Max views reached": [
+        "Μέγιστος αριθμός προβολών που επιτεύχθηκε"
       ],
       "Members": [
         "Μέλη"
@@ -2031,6 +2147,9 @@
       "Recent": [
         "Πρόσφατα"
       ],
+      "Remove link": [
+        "Αφαίρεση συνδέσμου"
+      ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
@@ -2067,6 +2186,15 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "Share": [
+        "Κοινοποίηση"
+      ],
+      "Share this vault or create a new vault": [
+        "Κοινοποιήστε αυτή την κρύπτη ή δημιουργήστε μια νέα κρύπτη"
+      ],
+      "Shared link": [
+        "Κοινοποιημένος συνδέσμος"
+      ],
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
       ],
@@ -2084,6 +2212,13 @@
       ],
       "Text": [
         "Κείμενο"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Η κρύπτη του στοιχείου είναι προς το παρόν κοινόχρηστη με ${ targetMembers } άτομο",
+        "Η κρύπτη του στοιχείου είναι προς το παρόν κοινόχρηστη με ${ targetMembers } άτομα"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Αυτός το URL αντιγράφτηκε στο πρόχειρο"
       ],
       "Title": [
         "Τίτλος"
@@ -2396,6 +2531,9 @@
       "No items selected": [
         "Δεν επιλέχθηκαν αντικείμενα"
       ],
+      "No shared secure links": [
+        "Δεν υπάρχουν κοινόχρηστοι ασφαλείς σύνδεσμοι"
+      ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
       ],
@@ -2419,6 +2557,9 @@
       ],
       "Remove extra password": [
         "Κατάργηση επιπλέον κωδικού πρόσβασης"
+      ],
+      "Remove secure link?": [
+        "Αφαίρεση ασφαλούς συνδέσμου;"
       ],
       "Restore this version?": [
         "Επαναφορά αυτής της έκδοσης?"

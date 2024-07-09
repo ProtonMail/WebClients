@@ -113,11 +113,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvořte účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvořte účet ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Vytvořit nový trezor ke sdílení"
@@ -218,6 +218,9 @@
       "Generate password": [
         "Generovat heslo"
       ],
+      "Generate secure link": [
+        "Vytvořit bezpečný odkaz"
+      ],
       "Generated passwords": [
         "Vygenerovaná hesla"
       ],
@@ -269,6 +272,12 @@
       "Leave vault": [
         "Opustit trezor"
       ],
+      "Link copied to clipboard": [
+        "Odkaz zkopírován do schránky"
+      ],
+      "Link expires after": [
+        "Odkazu vyprší platnost za"
+      ],
       "Lock extension": [
         "Zamknout rozšíření"
       ],
@@ -283,6 +292,9 @@
       ],
       "Manage access": [
         "Spravovat přístup"
+      ],
+      "Manage vault access": [
+        "Spravovat přístup do trezoru"
       ],
       "Manually sync your data": [
         "Manuálně synchronizovat"
@@ -377,8 +389,14 @@
       "Restore item": [
         "Obnovit položku"
       ],
+      "Restrict number of views": [
+        "Omezit počet zobrazení"
+      ],
       "Retry": [
         "Opakovat"
+      ],
+      "Right click and download this CSV": [
+        "Klikněte pravým tlačítkem a stáhněte toto CSV"
       ],
       "Save": [
         "Uložit"
@@ -415,6 +433,9 @@
       ],
       "Share": [
         "Sdílet"
+      ],
+      "Share secure link": [
+        "Sdílet bezpečný odkaz"
       ],
       "Share this vault": [
         "Sdílet tento trezor"
@@ -458,6 +479,9 @@
       "Try again": [
         "Zkuste to znovu"
       ],
+      "Unlock offline with password": [
+        "Odemknout offline s heslem"
+      ],
       "Unpin item": [
         "Odepnout položku"
       ],
@@ -478,6 +502,9 @@
       ],
       "Upgrade now to share with more people": [
         "Navyšte nyní a sdílejte s více lidmi"
+      ],
+      "Via secure link": [
+        "Přes bezpečný odkaz"
       ],
       "View app logs": [
         "Prohlédnout logy aplikace"
@@ -720,6 +747,9 @@
       "File could not be parsed": [
         "Soubor nelze analyzovat"
       ],
+      "File could not be read": [
+        "Soubor nelze přečíst"
+      ],
       "File does not match expected format": [
         "Soubor neodpovídá očekávanému formátu"
       ],
@@ -944,6 +974,18 @@
       "${ count } invites successfully sent": [
         "${ count } pozvánek úspěšně odesláno"
       ],
+      "${ count } time": [
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát"
+      ],
+      "${ count } view": [
+        "${ count } zobrazení",
+        "${ count } zobrazení",
+        "${ count } zobrazení",
+        "${ count } zobrazení"
+      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členové",
@@ -955,6 +997,9 @@
         "${ n } položky",
         "${ n } položek",
         "${ n } položek"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } bude vždy přístupný"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
@@ -1004,8 +1049,14 @@
       "Access successfully confirmed": [
         "Přístup úspěšně potvrzen"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše ${ BRAND_NAME } heslo."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Pomocí našich mobilních aplikací přistupujte ke svým heslům i na cestách."
+      ],
+      "Add a username field": [
+        "Přidat pole uživatelského jména"
       ],
       "Admin": [
         "Správce"
@@ -1049,6 +1100,9 @@
       "Autosaved on ${ payload.domain }": [
         "Automaticky uloženo na ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Před exportem dat v tomto formátu otevřete nastavení Safari -> záložku \"Obecné\" -> vypněte možnost \"Bezpečné soubory po stažení otevírat\". Tím zabráníte tomu, aby Safari nesprávně extrahoval exportovaný soubor."
+      ],
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
       ],
@@ -1067,6 +1121,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený přístupový klíč pro přihlášení do ${ domain }"
       ],
+      "Click here to add a field for a username.": [
+        "Zde klikněte pro přidání pole pro uživatelské jméno."
+      ],
       "Click the icon to open it anytime.": [
         "Otevřete kdykoli kliknutím na ikonu."
       ],
@@ -1075,6 +1132,9 @@
       ],
       "Close this window in order to use another passkey manager.": [
         "Zavřete toto okno, abyste mohli použít jiného správce přístupových klíčů."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Potvrďte své dodatečné heslo pro pokračování v jeho odebrání."
       ],
       "Congratulations, your access has been confirmed": [
         "Blahopřejeme, váš přístup byl potvrzen"
@@ -1117,6 +1177,9 @@
       ],
       "Drop to import": [
         "Přetažením provedete import"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Kvůli omezení rozšíření prohlížeče Safari bude po exportu dat chybět souboru přípona \".pgp\". Po exportu soubor přejmenujte tak, aby obsahoval příponu .pgp (např. soubor.pgp)."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Snadno importujte svá stávající hesla do ${ PASS_APP_NAME }."
@@ -1162,6 +1225,15 @@
       ],
       "Enter your PIN code": [
         "Zadejte PIN kód"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Vyprší za ${ remainingTime }"
+      ],
+      "Extra password successfuly created": [
+        "Dodatečné heslo úspěšně vytvořeno"
+      ],
+      "Extra password successfuly removed": [
+        "Dodatečné heslo úspěšně odebráno"
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
@@ -1328,6 +1400,9 @@
       "Offline support successfully disabled": [
         "Podpora offline byla úspěšně vypnuta"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód pro odemčení vaší relace. Budete odhlášeni po 3 neúspěšných pokusech."
+      ],
       "Open the Extensions menu": [
         "Otevřít menu rozšíření"
       ],
@@ -1373,6 +1448,21 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
       ],
+      "Please confirm your password": [
+        "Potvrďte prosím své heslo"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Pro automatické zamykání vaším heslem prosím potvrďte své heslo."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Pro zrušení aktuálního zámku prosím potvrďte své heslo."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Pro aktualizaci času automatického zamykání prosím potvrďte své heslo."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Prosím, potvrďte svůj PIN kód, pro zrušení stávajícího zámku."
+      ],
       "Please confirm your PIN code to edit this setting.": [
         "Pro úpravu tohoto nastavení potvrďte PIN kód."
       ],
@@ -1384,6 +1474,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Pro pokračování zadejte svůj aktuální PIN kód"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Zadejte prosím vaše dodatečné heslo pro používání ${ PASS_SHORT_APP_NAME }."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Pro předběžný přístup k webové aplikaci ${ PASS_APP_NAME } prosím navyšte svůj tarif"
@@ -1397,8 +1490,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
       ],
+      "Registering extra password...": [
+        "Registrování dodatečného hesla..."
+      ],
       "Registering PIN lock failed": [
         "Registrace zamykání PIN kódem selhala"
+      ],
+      "Removing extra password...": [
+        "Odstraňování dodatečného hesla..."
       ],
       "Restoring items from trash": [
         "Obnovují se položky z koše"
@@ -1481,6 +1580,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Exportovaný soubor bude zašifrován pomocí PGP a vyžaduje silné heslo."
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Pro použití ${ PASS_APP_NAME } bude vyžadováno dodatečné heslo. Slouží jako doplněk k vašemu heslu ${ BRAND_NAME }."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Následující ${ result.ignored.length } položku nelze importovat:",
         "Následující ${ result.ignored.length } položky nelze importovat:",
@@ -1522,6 +1624,12 @@
       ],
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Pro uložení tohoto přístupového klíče, odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho dodatečného hesla ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho dodatečného hesla"
       ],
       "Unlock it with your PIN to access the settings": [
         "Odemkněte ji pomocí PIN kódu pro přístup k nastavením"
@@ -1604,6 +1712,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosáhli jste maximální povolené délky ${ maxLength } znaků."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Budete odhlášeni a budete se muset znovu přihlásit na všech svých ostatních zařízeních."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN použijete k odemknutí ${ PASS_APP_NAME }, jakmile se po určité době nečinnosti automaticky zamkne."
       ],
@@ -1635,6 +1746,18 @@
         "${ config.options.wordCount } slova",
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
+      ],
+      "${ days } day": [
+        "${ days } den",
+        "${ days } dny",
+        "${ days } dnů",
+        "${ days } dnů"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodin",
+        "${ hours } hodin"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
@@ -1788,6 +1911,9 @@
       ],
       "Email (alias)": [
         "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (nový alias)"
       ],
       "Email aliases": [
         "E-mailové aliasy"
@@ -1983,6 +2109,9 @@
       ],
       "Prompt for auto-save when generating passwords": [
         "Výzva k automatickému uložení při generování hesel"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Chraňte ${ PASS_APP_NAME } pomocí dodatečného hesla"
       ],
       "Rate us": [
         "Ohodnoťte nás"
@@ -2510,6 +2639,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Pro tento alias nelze nyní načíst e-mailové schránky"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Upozornění: Pokud toto heslo ztratíte, ztratíte také přístup ke svému účtu ${ PASS_APP_NAME }."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Nelze vytvořit trezor \"${ vaultName }\""
       ],
@@ -2530,6 +2662,9 @@
       ],
       "Extra password cannot be empty": [
         "Dodatečné heslo nemůže být prázdné"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Dodatečné heslo by mělo mít alespoň 8 znaků"
       ],
       "Invalid alias prefix": [
         "Nesprávná předpona aliasu"
@@ -2593,6 +2728,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Ověřte prosím svou e-mailovou adresu, abyste mohli používat sdílení trezoru"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Odebráním vašeho dodatečného hesla budete odhlášeni ze všech zařízení a aktivních relací."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
