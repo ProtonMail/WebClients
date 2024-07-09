@@ -73,6 +73,8 @@ describe('apiWalletsData', () => {
                 ScriptType: WasmScriptType.NativeSegwit,
                 DerivationPath: "m/84'/0'/0'",
                 Addresses: [],
+                Priority: 1,
+                LastUsedIndex: 0,
             };
 
             store.dispatch(walletAccountCreation(account));

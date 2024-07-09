@@ -26,6 +26,7 @@ export const getMockedWallet = (mocked?: Partial<WasmWallet>): WasmWallet => {
         getBalance: vi.fn().mockResolvedValue({ confirmed: BigInt(0) } as WasmBalance),
         getTransactions: vi.fn().mockResolvedValue([]),
         getTransaction: vi.fn().mockResolvedValue(() => ({}) as WasmTransactionDetails),
+        discoverAccounts: vi.fn().mockResolvedValue([]),
         getFingerprint: vi.fn(() => ''),
         free: vi.fn(),
         ...mocked,
@@ -43,7 +44,7 @@ export const getMockedWasmAccount = (mocked?: Partial<WasmAccount>): WasmAccount
                 WasmPaymentLink.tryParse('bitcoin:tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h', WasmNetwork.Testnet)
             ),
         getAddress: vi.fn(),
-        getLastUnusedAddressIndex: vi.fn().mockReturnValue(0),
+        getIndexAfterLastUsedAddress: vi.fn().mockReturnValue(0),
         getBalance: vi.fn().mockResolvedValue({ confirmed: BigInt(0) } as WasmBalance),
         getDerivationPath: vi.fn().mockResolvedValue("84'/1'/1'/0"),
         getUtxos: vi.fn().mockResolvedValue([]),
