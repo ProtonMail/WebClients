@@ -463,6 +463,9 @@
       "Get in touch": [
         "保持聯絡"
       ],
+      "Get it from only ${ addonPriceWithCurrency } /month": [
+        "取得每月只要${ addonPriceWithCurrency }"
+      ],
       "Get SimpleLogin extension": [
         "取得 SimpleLogin 延伸功能"
       ],
@@ -784,11 +787,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
@@ -1653,6 +1656,9 @@
       ],
       "Custom domain problem": [
         "自訂網域問題"
+      ],
+      "Docs problem": [
+        "Docs 問題"
       ],
       "Drive problem": [
         "雲端硬碟問題"
@@ -3882,6 +3888,9 @@
       "Please select a category and what went wrong with the generated text": [
         "請挑選一個分類以告訴我們生成的文字哪裡錯了。"
       ],
+      "Please try generating the text again": [
+        "請重新生成"
+      ],
       "Port is required": [
         "通訊埠為必填"
       ],
@@ -4005,6 +4014,9 @@
       "The sending key is not valid": [
         "寄送金鑰無效"
       ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "系統正忙碌。請於幾分鐘後重新嘗試。"
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待匯入的外部帳號裡資料夾過多，請自訂匯入內容並刪除部份資料夾。"
       ],
@@ -4061,6 +4073,9 @@
       ],
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
+      ],
+      "Wrong second password": [
+        "第二密碼錯誤"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
@@ -5896,6 +5911,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
+      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
+        "免費${ ASSISTANT_TRIAL_TIME_DAYS }天"
+      ],
       "From": [
         "寄件人"
       ],
@@ -6220,6 +6238,9 @@
       "Please add at least one recipient.": [
         "請輸入最少一位收件者."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "請詢問擁有者直接邀請至文件。"
+      ],
       "Please authenticate your card in the verification tab.": [
         "請在驗證索引標籤中認證您的信用卡。"
       ],
@@ -6240,6 +6261,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
+      ],
+      "Please open the document to view it.": [
+        "請開啟文件以瀏覽。"
       ],
       "Please provide a name and an email address for creating a group.": [
         "請提供一個名子和電子郵件位址以創建群組。"
@@ -6292,6 +6316,9 @@
       "Preview for this file type is not supported": [
         "不支援預覽此檔案類型"
       ],
+      "Preview of documents is not yet supported.": [
+        "預覽分享尚未支援。"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
       ],
@@ -6309,6 +6336,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
         "防止您的郵件位址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "公開分享尚未支援。"
       ],
       "Recipient: ": [
         "收件人 : "
@@ -6862,6 +6892,9 @@
       "Writing assistant add-on": [
         "撰寫幫手添加"
       ],
+      "writing assistant iframe": [
+        "撰寫幫手自動格式"
+      ],
       "Yearly": [
         "每年"
       ],
@@ -7024,6 +7057,9 @@
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
       ],
+      "Your browser doesn't support the writing assistant. Try running it on servers.": [
+        "您的瀏覽器無法在本地運行寫作助手。嘗試在伺服器執行。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
@@ -7038,6 +7074,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
+      ],
+      "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
+        "您的硬體無法在本地運行寫作助手。嘗試在伺服器執行。"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
@@ -8222,6 +8261,14 @@
         "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "添加撰寫幫手"
+      ],
+      "for ${ price }": [
+        "${ price } 版"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "封存"
@@ -8539,6 +8586,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }和${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } 個行事曆"
       ],
@@ -8755,9 +8805,6 @@
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - 進階功能"
-      ],
       "Passkeys supported": [
         "支援密碼金鑰"
       ],
@@ -8865,9 +8912,6 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
-      ],
-      "Unlimited logins and notes": [
-        "登入與附註無上限"
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
@@ -9453,14 +9497,17 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "與${ n }安全共享保管庫"
-      ],
-      "Secure sharing with multiple vaults": [
-        "安全共享多重保管庫"
+      "Secure vault and link sharing": [
+        "安全保管庫和共享連結"
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "安全保管庫共享(${ n }保管庫)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全保管庫共享(${ n } 保管庫)和連結共享"
       ]
     },
     "passwordless": {
@@ -9492,8 +9539,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "瞭解"
+      ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Payment Processing": [
+        "付款處理中"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
@@ -10033,7 +10086,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "帳號備援不適用於舊的位址金鑰"
+        "帳號備援不適用於舊的地址金鑰"
       ],
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
@@ -10331,11 +10384,6 @@
       "Go to subscription plans": [
         "查看訂購授權"
       ],
-      "Upgrade": [
-        "升級"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "升級"
       ]
@@ -10712,6 +10760,9 @@
       ],
       "Calendar sharing": [
         "行事曆分享"
+      ],
+      "Catch-all email address": [
+        "跟上電子郵件地址"
       ],
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
@@ -11144,6 +11195,9 @@
     "Suffix for price": {
       "per month": [
         "每月"
+      ],
+      "per user per month": [
+        "每月每位用戶"
       ]
     },
     "summer2023: Tooltip": {

@@ -825,10 +825,10 @@
       "Not saved": [
         "Не сохранено"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1547,6 +1547,11 @@
         "Выполнять на серверах"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Пустой файл ICS"
@@ -1729,6 +1734,9 @@
       ],
       "Custom domain problem": [
         "Проблема своих доменов"
+      ],
+      "Docs problem": [
+        "Проблема с документами"
       ],
       "Drive problem": [
         "Проблема Drive"
@@ -4029,6 +4037,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Основной ключ, полученный для пользователя ${ BRAND_NAME }, недействителен для отправки"
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Проблема со скачиванием помощника по написанию. Если вы используете приватный режим, попробуйте использовать обычный режим просмотра или запустите помощника по написанию на серверах."
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Ошибка при загрузке помощника по написанию. Попробуйте еще раз."
@@ -8747,6 +8758,14 @@
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Добавить помощника по написанию"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Архив"
@@ -9073,6 +9092,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } и ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } календарь",
         "${ n } календаря",
@@ -9334,9 +9356,6 @@
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - платные функции"
-      ],
       "Passkeys supported": [
         "Поддерживаются пропускные ключи"
       ],
@@ -9451,8 +9470,8 @@
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
       ],
-      "Unlimited logins and notes": [
-        "Неограниченное количество имен пользователей и заметок"
+      "Unlimited logins, notes and credit cards": [
+        "Неограниченное количество имен пользователей, заметок и кредитных карт"
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
@@ -10095,17 +10114,23 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Безопасный общий доступ с ${ n } хранилищем",
-        "Безопасный общий доступ с ${ n } хранилищами",
-        "Безопасный общий доступ с ${ n } хранилищами",
-        "Безопасный общий доступ с ${ n } хранилищами"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Безопасное совместное использование с помощью нескольких хранилищ"
+      "Secure vault and link sharing": [
+        "Защищенное хранилище и обмен ссылками"
       ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ]
     },
     "passwordless": {
@@ -10151,6 +10176,9 @@
       ],
       "Payment Processing": [
         "Обработка платежа"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
@@ -11102,11 +11130,6 @@
       ],
       "Upgrade": [
         "Сменить тариф"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Улучшить"
       ]
     },
     "specialoffer: Offers": {
@@ -12195,6 +12218,9 @@
     "Suffix for price": {
       "per month": [
         "в месяц"
+      ],
+      "per user per month": [
+        "на пользователя в месяц"
       ]
     },
     "summer2023: Tooltip": {

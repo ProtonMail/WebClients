@@ -820,11 +820,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -8493,6 +8493,14 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Adicionar assistente de escrita"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arquivo"
@@ -8813,6 +8821,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -9044,9 +9055,6 @@
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - recursos premium"
-      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -9158,9 +9166,6 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -9800,13 +9805,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Compartilhamento seguro com ${ n } cofre",
-        "Compartilhamento seguro com ${ n } cofres"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartilhamento seguro de múltiplos cofres"
-      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
       ]
@@ -10741,11 +10739,6 @@
       "Go to subscription plans": [
         "Acessar planos de assinatura"
       ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Fazer upgrade"
       ]
@@ -11723,6 +11716,9 @@
     "Suffix for price": {
       "per month": [
         "por mês"
+      ],
+      "per user per month": [
+        "por mês por usuário"
       ]
     },
     "summer2023: Tooltip": {
