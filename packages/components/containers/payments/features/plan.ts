@@ -180,7 +180,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
         description: c('new_plans: info').t`For next-level password management and identity protection.`,
         cta: getCTA(plan.Title),
         features: [
-            getLoginsAndNotes(),
+            getLoginsAndNotes('paid'),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
@@ -201,7 +201,7 @@ export const getPassProPlan = (plan: Plan): ShortPlan => {
         description: c('new_plans: info').t`Essential protection and secure collaboration for unlimited users.`,
         cta: getCTA(plan.Title),
         features: [
-            getLoginsAndNotes(),
+            getLoginsAndNotes('paid'),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PRO_VAULTS),
@@ -224,7 +224,7 @@ export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
         description: c('new_plans: info').t`Advanced protection for teams that goes beyond industry standards.`,
         cta: getCTA(title),
         features: [
-            getLoginsAndNotes(),
+            getLoginsAndNotes('paid'),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_BIZ_VAULTS),
@@ -250,7 +250,7 @@ export const getPassEssentialsSignupPlan = (plan?: Plan): ShortPlan => {
         label: '',
         description: '',
         cta: getCTA(title),
-        features: [getLoginsAndNotes(), getDevicesAndAliases(), get2FAAuthenticator(true)],
+        features: [getLoginsAndNotes('paid'), getDevicesAndAliases(), get2FAAuthenticator(true)],
     };
 };
 
@@ -275,7 +275,7 @@ export const getFreePassPlan = (): ShortPlan => {
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
         features: [
-            getLoginsAndNotes(),
+            getLoginsAndNotes('free'),
             getDevices(),
             getVaults(FREE_VAULTS),
             getVaultSharing(FREE_VAULT_SHARING),
