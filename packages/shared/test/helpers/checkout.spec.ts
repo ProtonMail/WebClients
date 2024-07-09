@@ -397,7 +397,7 @@ describe('should get checkout result', () => {
                 {
                     name: ADDON_NAMES.DOMAIN_BUNDLE_PRO,
                     quantity: 3,
-                    title: '3 custom domains',
+                    title: '3 additional custom domains',
                     pricing: {
                         [CYCLE.MONTHLY]: 150,
                         [CYCLE.YEARLY]: 1680,
