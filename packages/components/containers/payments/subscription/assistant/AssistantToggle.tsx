@@ -14,7 +14,7 @@ import {
     useSubscriptionModal,
 } from '@proton/components';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
@@ -64,7 +64,7 @@ const AssistantToggle = () => {
             <div className="flex justify-space-between items-center">
                 <div className="flex gap-2 items-center">
                     <Icon name="pen-sparks" size={6} style={{ color: '#D132EA' }} />
-                    <p className="m-0 text-bold text-2xl">{c('Info').t`Writing assistant`}</p>
+                    <p className="m-0 text-bold text-2xl">{c('Info').t`${BRAND_NAME} Scribe writing assistant`}</p>
                     {trialStatus === 'trial-ongoing' ? (
                         <Badge type="info">{c('Assistant toggle').t`Trial in progress`}</Badge>
                     ) : (
@@ -77,7 +77,7 @@ const AssistantToggle = () => {
             </p>
             <div className="flex flex-row items-baseline gap-2">
                 <Button shape="outline" size="small" onClick={handleCustomize}>{c('Assistant toggle')
-                    .t`Customize plan`}</Button>
+                    .t`Buy now`}</Button>
                 {trialStatus === 'trial-ongoing' && (
                     <p className="color-weak text-sm m-0">{c('Assistant toggle')
                         .t`Trial expires on ${formattedDate}`}</p>
