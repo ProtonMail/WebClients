@@ -14,9 +14,9 @@ export const useComputeNextAddressToReceive = (walletsChainData: WalletChainData
             const wasmAccount = getAccountWithChainDataFromManyWallets(walletsChainData, account.WalletID, account.ID);
 
             const apiHighestIndex = await getBitcoinAddressHighestIndex(account.WalletID, account.ID);
-            const clientHighestIndex = await wasmAccount?.account.getLastUnusedAddressIndex();
+            const clientHighestIndex = await wasmAccount?.account.getIndexAfterLastUsedAddress();
 
-            return Math.max(clientHighestIndex ?? 0, apiHighestIndex) + 1;
+            return Math.max(clientHighestIndex ?? 0, apiHighestIndex + 1);
         },
         [getBitcoinAddressHighestIndex, walletsChainData]
     );

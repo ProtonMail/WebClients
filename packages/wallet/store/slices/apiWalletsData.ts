@@ -1,7 +1,7 @@
 import { createAction, createSlice } from '@reduxjs/toolkit';
 
 import { ModelState, getInitialModelState } from '@proton/account';
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import { WasmApiWalletAccount, WasmApiWalletSettings } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 
 import { IWasmApiWalletData, WalletEventLoop } from '../../types';
@@ -59,6 +59,12 @@ export const walletDeletion = createAction('wallet deletion', (payload: { wallet
 export const walletNameUpdate = createAction('wallet name update', (payload: { walletID: string; name: string }) => ({
     payload,
 }));
+export const disabledWalletShowRecovery = createAction(
+    'wallet disable show recovery',
+    (payload: { walletID: string }) => ({
+        payload,
+    })
+);
 
 export const walletAccountCreation = createAction('wallet account creation', (payload: WasmApiWalletAccount) => ({
     payload,
@@ -108,6 +114,15 @@ const slice = createSlice({
                 if (state.value) {
                     const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
                     state.value[walletIndex].Wallet.Name = action.payload.name;
+                }
+            })
+            .addCase(disabledWalletShowRecovery, (state, action) => {
+                if (state.value) {
+                    const walletIndex = state.value.findIndex((data) => data.Wallet.ID === action.payload.walletID);
+
+                    if (state.value[walletIndex].WalletSettings) {
+                        (state.value[walletIndex].WalletSettings as WasmApiWalletSettings).ShowWalletRecovery = false;
+                    }
                 }
             })
             .addCase(walletAccountCreation, (state, action) => {

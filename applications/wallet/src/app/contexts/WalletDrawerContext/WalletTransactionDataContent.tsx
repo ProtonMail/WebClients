@@ -51,36 +51,12 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
     return (
         <>
             <Scroll>
-                <div className="flex flex-column">
-                    <div className="flex flex-column mb-10">
-                        <div className="flex flex-row items-center">
-                            {isSender ? (
-                                <img src={arrowSendSvg} alt="" className="mr-3" style={{ width: '1.4rem' }} />
-                            ) : (
-                                <img src={arrowReceiveSvg} alt="" className="mr-2" style={{ width: '1.4rem' }} />
-                            )}
-                            <div className="color-hint block text-ellipsis">
-                                {isSender
-                                    ? c('Wallet transaction').t`You sent`
-                                    : c('Wallet transaction').t`You received`}
-                            </div>
-                        </div>
-
-                        <div className="flex flex-row flex-nowrap items-center my-1">
-                            <div className="text-semibold">
-                                <Price
-                                    unit={exchangeRate ?? settings.BitcoinUnit}
-                                    className="h1 text-semibold"
-                                    wrapperClassName="contrast"
-                                    satsAmount={value}
-                                />
-                            </div>
-                        </div>
-                        {exchangeRate && (
-                            <div className="text-lg color-hint">
-                                {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                                {getLabelByUnit(settings.BitcoinUnit)}
-                            </div>
+                <div className="flex flex-column mb-10">
+                    <div className="flex flex-row items-center">
+                        {isSender ? (
+                            <img src={arrowSendSvg} alt="" className="mr-3" style={{ width: '1.4rem' }} />
+                        ) : (
+                            <img src={arrowReceiveSvg} alt="" className="mr-2" style={{ width: '1.4rem' }} />
                         )}
                         <div className="color-hint block text-ellipsis">
                             {isSender ? c('Wallet transaction').t`You sent` : c('Wallet transaction').t`You received`}
@@ -97,6 +73,7 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                             />
                         </div>
                     </div>
+
                     {exchangeRate && (
                         <div className="text-lg color-hint">
                             {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
