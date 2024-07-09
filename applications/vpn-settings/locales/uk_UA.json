@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Активувати ключ організації"
       ],
+      "Add": [
+        "Додати"
+      ],
       "Add address": [
         "Додати адресу"
       ],
@@ -64,6 +67,9 @@
       ],
       "Change password": [
         "Змінити пароль"
+      ],
+      "Change second password": [
+        "Змініть другий пароль"
       ],
       "Chat with us": [
         "Чат з нами"
@@ -741,9 +747,6 @@
     "app-switcher": {
       "Browse the web privately and block ads": [
         "Переглядайте інтернет приватно та блокуйте рекламу"
-      ],
-      "Create and collaborate on documents securely": [
-        "Безпечно створюйте документи й співпрацюйте"
       ],
       "Keep your schedule private": [
         "Збережіть приватність свого розкладу"
@@ -5377,6 +5380,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } та ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } календар",
         "${ n } календарі",
@@ -5653,9 +5659,6 @@
       "Organize items with multiple vaults": [
         "Упорядкування елементів за допомогою різних сховищ"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor – преміальні функції"
-      ],
       "Passkeys supported": [
         "Підтримуються ключі доступу"
       ],
@@ -5775,9 +5778,6 @@
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
-      ],
-      "Unlimited logins and notes": [
-        "Необмежена кількість паролів і нотаток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -6517,15 +6517,6 @@
       ],
       "Preparing your Recovery Kit": [
         "Підготовка комплекту відновлення"
-      ],
-      "Secure sharing with ${ n } vault": [
-        "Безпечний спільний доступ до ${ n } сховища",
-        "Безпечний спільний доступ до ${ n } сховищ",
-        "Безпечний спільний доступ до ${ n } сховищ",
-        "Безпечний спільний доступ до ${ n } сховищ"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Безпечний спільний доступ з кількома сховищами"
       ],
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
@@ -7469,11 +7460,6 @@
       "Go to subscription plans": [
         "Перейти до тарифних планів"
       ],
-      "Upgrade": [
-        "Покращити"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Покращити"
       ]
@@ -8605,6 +8591,9 @@
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "Groups": [
+        "Групи"
       ],
       "How to choose a good logo": [
         "Як обрати хороший логотип"

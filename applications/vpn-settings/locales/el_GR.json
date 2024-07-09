@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Ενεργοποιήστε το κλειδί οργανισμού"
       ],
+      "Add": [
+        "Προσθήκη"
+      ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Ιδιωτική περιήγηση στον ιστό και αποκλεισμός διαφημίσεων"
       ],
-      "Create and collaborate on documents securely": [
-        "Δημιουργήστε και συνεργαστείτε σε έγγραφα με ασφάλεια"
-      ],
       "Keep your schedule private": [
         "Διατηρήστε το πρόγραμμά σας απόρρητο"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Ασφαλίστε τις επικοινωνίες σας"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
       ]
     },
     "Badge for domain": {
@@ -959,6 +964,9 @@
       ],
       "Custom domain problem": [
         "Πρόβλημα προσαρμοσμένου τομέα"
+      ],
+      "Docs problem": [
+        "Πρόβλημα Docs"
       ],
       "Drive problem": [
         "Πρόβλημα Drive"
@@ -5197,6 +5205,14 @@
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Προσθήκη βοηθού γραφής"
+      ],
+      "for ${ price }": [
+        "για ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Αποκτήστε την προσφορά"
@@ -5377,6 +5393,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } και ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
@@ -5626,9 +5645,6 @@
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium χαρακτηριστικά"
-      ],
       "Passkeys supported": [
         "Υποστηρίζονται κλειδιά πρόσβασης"
       ],
@@ -5751,8 +5767,8 @@
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
       ],
-      "Unlimited logins and notes": [
-        "Απεριόριστες συνδέσεις και σημειώσεις"
+      "Unlimited logins, notes and credit cards": [
+        "Απεριόριστες συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
       ],
       "Unlimited messages per day": [
         "Απεριόριστα μηνύματα ανά ημέρα"
@@ -6488,15 +6504,19 @@
       "Preparing your Recovery Kit": [
         "Προετοιμασία του Κιτ Αποκατάστασης"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Ασφαλής κοινή χρήση με ${ n } κρύπτη",
-        "Ασφαλής κοινή χρήση με ${ n } κρύπτες"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Ασφαλής κοινή χρήση με πολλαπλές κρύπτες"
+      "Secure vault and link sharing": [
+        "Ασφαλής κρύπτη και κοινή χρήση συνδέσμων"
       ],
       "Secure vault sharing": [
         "Ασφαλής κοινή χρήση κρύπτης"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη)",
+        "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη) και κοινή χρήση συνδέσμων",
+        "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες) και κοινή χρήση συνδέσμων"
       ],
       "Setting up your organization": [
         "Ρύθμιση του οργανισμού σας"
@@ -6642,6 +6662,9 @@
       ],
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
@@ -7420,11 +7443,6 @@
         "Αναβάθμιση"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Αναβάθμιση"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } μήνα",
@@ -7655,6 +7673,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής για ${ maxAi } χρήστη",
+        "${ BRAND_NAME } Scribe βοηθός γραφής για ${ maxAi } χρήστες"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } αποκλειστικός διακομιστής",
         "${ ipAddresses } αποκλειστικοί διακομιστές"
@@ -8328,6 +8350,9 @@
     "Suffix for price": {
       "per month": [
         "ανά μήνα"
+      ],
+      "per user per month": [
+        "ανά χρήστη ανά μήνα"
       ]
     },
     "summer2023: Tooltip": {
@@ -8721,6 +8746,9 @@
       ],
       "Gift code": [
         "Κωδικός δώρου"
+      ],
+      "Groups": [
+        "Ομάδες"
       ],
       "How to choose a good logo": [
         "Πώς να επιλέξετε ένα καλό λογότυπο"

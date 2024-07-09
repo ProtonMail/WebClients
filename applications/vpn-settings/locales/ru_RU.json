@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Активировать ключ организации"
       ],
+      "Add": [
+        "Добавить"
+      ],
       "Add address": [
         "Добавить адрес"
       ],
@@ -745,9 +748,6 @@
       "Browse the web privately and block ads": [
         "Просматривайте веб-страницы в приватном режиме и блокируйте рекламу"
       ],
-      "Create and collaborate on documents securely": [
-        "Создавайте документы и работайте над ними в защищенном режиме"
-      ],
       "Keep your schedule private": [
         "Сохраняйте конфиденциальность своего расписания"
       ],
@@ -759,6 +759,11 @@
       ],
       "Secure your communications": [
         "Держите письма в надежном месте"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
       ]
     },
     "Badge for domain": {
@@ -973,6 +978,9 @@
       ],
       "Custom domain problem": [
         "Проблема своих доменов"
+      ],
+      "Docs problem": [
+        "Проблема с документами"
       ],
       "Drive problem": [
         "Проблема Drive"
@@ -5297,6 +5305,14 @@
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Добавить помощника по написанию"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Получить"
@@ -5477,6 +5493,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } и ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } календарь",
         "${ n } календаря",
@@ -5756,9 +5775,6 @@
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - платные функции"
-      ],
       "Passkeys supported": [
         "Поддерживаются пропускные ключи"
       ],
@@ -5885,8 +5901,8 @@
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
       ],
-      "Unlimited logins and notes": [
-        "Неограниченное количество имен пользователей и заметок"
+      "Unlimited logins, notes and credit cards": [
+        "Неограниченное количество имен пользователей, заметок и кредитных карт"
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
@@ -6636,17 +6652,23 @@
       "Preparing your Recovery Kit": [
         "Подготовка вашего набора для восстановления"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Безопасный общий доступ с ${ n } хранилищем",
-        "Безопасный общий доступ с ${ n } хранилищами",
-        "Безопасный общий доступ с ${ n } хранилищами",
-        "Безопасный общий доступ с ${ n } хранилищами"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Безопасное совместное использование с помощью нескольких хранилищ"
+      "Secure vault and link sharing": [
+        "Защищенное хранилище и обмен ссылками"
       ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ],
       "Setting up your organization": [
         "Настройка вашей организации"
@@ -6792,6 +6814,9 @@
       ],
       "Payment Processing": [
         "Обработка платежа"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
       "Processing payment": [
         "Обработка платежа"
@@ -7612,11 +7637,6 @@
         "Сменить тариф"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Улучшить"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "первый ${ n } месяц",
@@ -7851,6 +7871,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователя",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } выделенный сервер",
         "${ ipAddresses } выделенных сервера",
@@ -8558,6 +8584,9 @@
     "Suffix for price": {
       "per month": [
         "в месяц"
+      ],
+      "per user per month": [
+        "на пользователя в месяц"
       ]
     },
     "summer2023: Tooltip": {
@@ -8957,6 +8986,9 @@
       ],
       "Gift code": [
         "Подарочный код"
+      ],
+      "Groups": [
+        "Группы"
       ],
       "How to choose a good logo": [
         "Как выбрать хороший логотип"
@@ -9416,6 +9448,9 @@
       ],
       "Name": [
         "Имя"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Новый адрес электронной почты ${ BRAND_NAME }"
       ],
       "Optional": [
         "Необязательно"

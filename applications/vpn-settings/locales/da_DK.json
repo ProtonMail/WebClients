@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
+      "Add": [
+        "Tilføj"
+      ],
       "Add address": [
         "Tilføj adresse"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Surf privat på nettet og bloker reklamer"
       ],
-      "Create and collaborate on documents securely": [
-        "Opret og samarbejd sikkert med dokumenter"
-      ],
       "Keep your schedule private": [
         "Hold dit skema privat"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Beskyt din kommunikation"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
       ]
     },
     "Badge for domain": {
@@ -5200,6 +5205,14 @@
         "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Tilføj skriveassistent"
+      ],
+      "for ${ price }": [
+        "til ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Få tilbuddet"
@@ -5380,6 +5393,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -5629,9 +5645,6 @@
       "Organize items with multiple vaults": [
         "Organiser elementer med flere bokse"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium-funktioner"
-      ],
       "Passkeys supported": [
         "Adgangsnøgler understøttes"
       ],
@@ -5754,8 +5767,8 @@
       "Unlimited labels": [
         "Ubegrænsede etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Ubegrænset antal logins og noter"
+      "Unlimited logins, notes and credit cards": [
+        "Ubegrænsede logins, noter og betalingskort"
       ],
       "Unlimited messages per day": [
         "Ubegrænset beskedafsendelse pr. dag"
@@ -6491,15 +6504,19 @@
       "Preparing your Recovery Kit": [
         "Forbereder dit gendannelseskit"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Sikker deling med ${ n } boks",
-        "Sikker deling med ${ n } bokse"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Sikker deling med flere bokse"
+      "Secure vault and link sharing": [
+        "Sikker boks- og linkdeling"
       ],
       "Secure vault sharing": [
         "Sikker deling af boks"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Sikker deling af boks (${ n } vault)",
+        "Sikker deling af bokse (${ n } vault)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Sikker deling af boks (${ n } vault) og deling af link",
+        "Sikker deling af bokse (${ n } vault) og deling af links"
       ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
@@ -6645,6 +6662,9 @@
       ],
       "Payment Processing": [
         "Betalingsbehandling"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
       "Processing payment": [
         "Behandler betaling"
@@ -7421,11 +7441,6 @@
       ],
       "Upgrade": [
         "Opgradér"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Opgrader"
       ]
     },
     "specialoffer: Offers": {
@@ -8338,6 +8353,9 @@
     "Suffix for price": {
       "per month": [
         "pr. måned"
+      ],
+      "per user per month": [
+        "pr. bruger, pr. måned"
       ]
     },
     "summer2023: Tooltip": {
@@ -8734,6 +8752,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "How to choose a good logo": [
         "Hvordan vælger man et godt logo"

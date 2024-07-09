@@ -17,6 +17,9 @@
       "Activate organization key": [
         "組織の鍵を有効化する"
       ],
+      "Add": [
+        "追加"
+      ],
       "Add address": [
         "住所を追加"
       ],
@@ -64,6 +67,9 @@
       ],
       "Change password": [
         "パスワードを変更"
+      ],
+      "Change second password": [
+        "セカンドパスワードを変更"
       ],
       "Chat with us": [
         "チャットする"
@@ -2010,6 +2016,9 @@
       ],
       "Incorrect password": [
         "パスワードが正しくありません"
+      ],
+      "Incorrect second password. Please try again.": [
+        "セカンドパスワードが正しくありません。もう一度お試しください。"
       ],
       "Incorrect username": [
         "ユーザー名に間違いがあります。"
@@ -4341,6 +4350,9 @@
       "Confirm password": [
         "パスワードの確認"
       ],
+      "Confirm second password": [
+        "セカンドパスワードを変更"
+      ],
       "Copy": [
         "コピー"
       ],
@@ -4479,6 +4491,9 @@
       "New password": [
         "新しいパスワード"
       ],
+      "New second password": [
+        "新しいセカンドパスワード"
+      ],
       "No filter": [
         "フィルターなし"
       ],
@@ -4568,6 +4583,9 @@
       ],
       "Reveal password": [
         "パスワードを表示する"
+      ],
+      "Second password": [
+        "セカンドパスワード"
       ],
       "Security code (${ codeName })": [
         "セキュリティコード (${ codeName })"
@@ -5002,6 +5020,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } カレンダー"
       ],
@@ -5221,9 +5242,6 @@
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - プレミアム機能"
-      ],
       "Passkeys supported": [
         "パスキーに対応しています"
       ],
@@ -5322,9 +5340,6 @@
       ],
       "Unlimited labels": [
         "ラベル制限なし"
-      ],
-      "Unlimited logins and notes": [
-        "無制限のログインとメモ"
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
@@ -7646,6 +7661,9 @@
       "Change role": [
         "役割の変更"
       ],
+      "Change second password": [
+        "セカンドパスワードを変更"
+      ],
       "Close": [
         "閉じる"
       ],
@@ -7829,6 +7847,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "Groups": [
+        "グループ"
+      ],
       "How to choose a good logo": [
         "良いロゴの選び方"
       ],
@@ -7843,6 +7864,9 @@
       ],
       "Invoices": [
         "請求書"
+      ],
+      "Main password": [
+        "メインパスワード"
       ],
       "Multi-user support": [
         "複数ユーザー対応"

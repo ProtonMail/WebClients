@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Kuruluş anahtarını kullanıma al"
       ],
+      "Add": [
+        "Ekle"
+      ],
       "Add address": [
         "Adres ekle"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "İnternet üzerinde gizliliğinizi koruyarak ve reklamları engelleyerek gezinin"
       ],
-      "Create and collaborate on documents securely": [
-        "Güvenle belgeler oluşturup üzerinde birlikte çalışın"
-      ],
       "Keep your schedule private": [
         "Zaman planınızı gizli tutun"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "İletişiminizin güvenliğini sağlayın"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
       ]
     },
     "Badge for domain": {
@@ -959,6 +964,9 @@
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
+      ],
+      "Docs problem": [
+        "Docs sorunu"
       ],
       "Drive problem": [
         "Drive sorunu"
@@ -5197,6 +5205,14 @@
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Yazma yardımcısını ekle"
+      ],
+      "for ${ price }": [
+        "${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Tekliften yararlanın"
@@ -5377,6 +5393,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -5626,9 +5645,6 @@
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - ücretli özellikler"
-      ],
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
@@ -5751,8 +5767,8 @@
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+      "Unlimited logins, notes and credit cards": [
+        "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
       ],
       "Unlimited messages per day": [
         "Her gün sınırsız sayıda ileti"
@@ -6488,15 +6504,19 @@
       "Preparing your Recovery Kit": [
         "Kurtarma paketiniz hazırlanıyor"
       ],
-      "Secure sharing with ${ n } vault": [
-        "${ n } kasa ile güvenli paylaşım",
-        "${ n } kasa ile güvenli paylaşım"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Çok sayıda kasa ile güvenli paylaşım"
+      "Secure vault and link sharing": [
+        "Güvenli kasa ve bağlantı ile paylaşım"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Güvenli kasa paylaşımı (${ n } kasa)",
+        "Güvenli kasa paylaşımı (${ n } kasa)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ],
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
@@ -6642,6 +6662,9 @@
       ],
       "Payment Processing": [
         "Ödeme işleniyor"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
       "Processing payment": [
         "Ödeme işleniyor"
@@ -7420,11 +7443,6 @@
         "Yükselt"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Yükselt"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } ay",
@@ -7655,6 +7673,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı",
+        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } size ayrılmış sunucu",
         "${ ipAddresses } size ayrılmış sunucu"
@@ -8328,6 +8350,9 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
       ]
     },
     "summer2023: Tooltip": {
@@ -8724,6 +8749,9 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "Groups": [
+        "Gruplar"
       ],
       "How to choose a good logo": [
         "İyi bir logo nasıl seçilir"
@@ -9181,6 +9209,9 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Yeni ${ BRAND_NAME } e-posta adresi"
       ],
       "Optional": [
         "İsteğe bağlı"
