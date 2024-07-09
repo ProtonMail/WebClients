@@ -19,7 +19,7 @@ const getConfig = (env: any): Configuration => {
     // a long-term storage
     const assetsFolder = 'assets/static';
 
-    const { getJsLoaders } = require(env.swc ? './webpack/js.loader.swc' : './webpack/js.loader');
+    const { getJsLoaders } = require(env.webpackOnCaffeine ? './webpack/js.loader.swc' : './webpack/js.loader');
 
     const defaultBrowsersList = isProduction
         ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
@@ -31,6 +31,7 @@ const getConfig = (env: any): Configuration => {
         publicPath: env.publicPath || '/',
         api: env.api,
         appMode: env.appMode || 'standalone',
+        webpackOnCaffeine: env.webpackOnCaffeine,
         featureFlags: env.featureFlags || '',
         writeSRI: env.writeSri !== 'false',
         browserslist: env.browserslist ?? defaultBrowsersList,

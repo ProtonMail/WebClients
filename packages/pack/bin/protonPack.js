@@ -30,7 +30,7 @@ const addGlobalOptions = (program) => {
         .option('--api <api>', '', (api) => getApi(api), getApi(''))
         .option('--sso <sso>', '')
         .option('--no-api-proxy', '')
-        .option('--swc', '', false)
+        .option('--webpackOnCaffeine', '', false)
         .option('--logical', '', false)
         .option(
             '--publicPath <publicPath>',
@@ -46,6 +46,7 @@ const addGlobalOptions = (program) => {
 };
 
 const getWebpackArgs = (options, env, { appData, buildData }) => {
+    console.log({ options, env, appData, buildData });
     const envArgs = {
         api: appData.api === '/api' ? undefined : appData.api,
         sso: appData.sso,
@@ -59,7 +60,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         overlayErrors: options.overlayErrors,
         overlayRuntimeErrors: options.overlayRuntimeErrors,
         logical: Boolean(options.logical),
-        swc: Boolean(options.swc),
+        webpackOnCaffeine: Boolean(options.webpackOnCaffeine),
         analyze: options.analyze,
         ...buildData,
     };
