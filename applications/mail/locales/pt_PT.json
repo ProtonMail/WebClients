@@ -787,11 +787,11 @@
       "Not saved": [
         "Não guardado"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -8418,6 +8418,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -8634,9 +8637,6 @@
       "Organize items with multiple vaults": [
         "Organize os itens com vários cofres"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funcionalidades premium"
-      ],
       "Passkeys supported": [
         "Chaves de acesso suportadas"
       ],
@@ -8721,9 +8721,6 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
-      ],
-      "Unlimited logins and notes": [
-        "Notas e inícios de sessão ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -9307,7 +9304,7 @@
         "A data de expiração é inválida."
       ],
       "Invalid security code": [
-        "O código de segurança não é válido."
+        "O código de segurança inválido."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
@@ -10075,11 +10072,6 @@
       ],
       "Upgrade": [
         "Actualizar"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Melhorar"
       ]
     },
     "specialoffer: Offers": {

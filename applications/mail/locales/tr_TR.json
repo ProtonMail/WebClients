@@ -817,10 +817,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1529,6 +1529,11 @@
         "Sunucular üzerinde çalışır"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "ICS dosyası boş"
@@ -1705,6 +1710,9 @@
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
+      ],
+      "Docs problem": [
+        "Docs sorunu"
       ],
       "Drive problem": [
         "Drive sorunu"
@@ -3977,7 +3985,7 @@
         "${ BRAND_NAME } kullanıcısı için alınan birincil anahtar, gönderim için geçerli değil"
       ],
       "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
-        "Yazma yardımcısı indirilirken bir sorun oluştu. Güvenli kipi kullanıyorsanız normal gezinme tipine geçmeyi deneyin veya yazma yardımcısını sunucu üzerinde çalıştırın."
+        "Yazma yardımcısı indirilirken bir sorun çıktı. Gizli pencere kullanıyorsanız normal gezinme penceresine geçmeyi deneyin veya yazma yardımcısını sunucu üzerinde çalıştırın."
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Yazma yardımcısı indirilirken sorun çıktı. Lütfen yeniden deneyin."
@@ -8476,6 +8484,14 @@
         "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Yazma yardımcısını ekle"
+      ],
+      "for ${ price }": [
+        "${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arşiv"
@@ -8796,6 +8812,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -9027,9 +9046,6 @@
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - ücretli özellikler"
-      ],
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
@@ -9142,8 +9158,8 @@
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+      "Unlimited logins, notes and credit cards": [
+        "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
       ],
       "Unlimited messages per day": [
         "Her gün sınırsız sayıda ileti"
@@ -9778,15 +9794,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "${ n } kasa ile güvenli paylaşım",
-        "${ n } kasa ile güvenli paylaşım"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Çok sayıda kasa ile güvenli paylaşım"
+      "Secure vault and link sharing": [
+        "Güvenli kasa ve bağlantı ile paylaşım"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Güvenli kasa paylaşımı (${ n } kasa)",
+        "Güvenli kasa paylaşımı (${ n } kasa)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ]
     },
     "passwordless": {
@@ -9832,6 +9852,9 @@
       ],
       "Payment Processing": [
         "Ödeme işleniyor"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -10725,11 +10748,6 @@
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
       ],
-      "Upgrade": [
-        "Yükselt"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Yükselt"
       ]
@@ -11746,6 +11764,9 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
       ]
     },
     "summer2023: Tooltip": {

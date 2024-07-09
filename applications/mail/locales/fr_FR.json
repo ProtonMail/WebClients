@@ -817,10 +817,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1527,6 +1527,11 @@
       ],
       "Run on servers": [
         "Exécuter sur les serveurs"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
       ]
     },
     "Attached ics file error": {
@@ -3980,7 +3985,7 @@
         "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi."
       ],
       "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
-        "Un problème est survenu lors du téléchargement de l'assistant d'écriture. Si vous utilisez le mode privé, essayez d'utiliser le mode de navigation normal pour exécuter l'assistant d'écriture sur les serveurs."
+        "Un problème est survenu lors du téléchargement de l'assistant d'écriture. Si vous utilisez le mode privé, essayez d'utiliser le mode de navigation normal ou exécutez l'assistant d'écriture sur les serveurs."
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Un problème est survenu lors du téléchargement de l'assistant d'écriture. Nous vous invitons à réessayer."
@@ -8479,6 +8484,14 @@
         "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Ajouter l'assistant d'écriture"
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Archives"
@@ -8799,6 +8812,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
@@ -9030,9 +9046,6 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - fonctionnalités premium"
-      ],
       "Passkeys supported": [
         "Les clés d'accès sont prises en charge."
       ],
@@ -9145,8 +9158,8 @@
       "Unlimited labels": [
         "Nombre illimité de labels"
       ],
-      "Unlimited logins and notes": [
-        "Nombre illimité de connexions et de notes"
+      "Unlimited logins, notes and credit cards": [
+        "Nombre illimité de connexions, de notes et de cartes de crédit"
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
@@ -9781,15 +9794,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Partage sécurisé avec ${ n } coffre-fort",
-        "Partage sécurisé avec ${ n } coffre-forts"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Partage sécurisé avec plusieurs coffres-forts"
+      "Secure vault and link sharing": [
+        "Coffre-fort sécurisé et partage de liens"
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort)",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
       ]
     },
     "passwordless": {
@@ -9828,13 +9845,16 @@
         "CVC"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "MM/YY": [
         "MM/AA"
       ],
       "Payment Processing": [
         "Traitement des paiements"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Le code cadeau est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
@@ -10728,11 +10748,6 @@
       "Go to subscription plans": [
         "Voir les abonnements"
       ],
-      "Upgrade": [
-        "Passez à Premium"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Passez à Premium"
       ]
@@ -11752,6 +11767,9 @@
     "Suffix for price": {
       "per month": [
         "par mois"
+      ],
+      "per user per month": [
+        "par utilisateur par mois"
       ]
     },
     "summer2023: Tooltip": {
