@@ -77,20 +77,15 @@ export const useTransactionReview = ({
                 noteToSelf: noteToSelf || undefined,
                 /**
                  * We don't want to send message field to the API if:
-                 * - There is no message attached
                  * - User has no address key at all
                  * - User is not using bitcoin via email
                  */
-                ...(senderAddress && message && isUsingBitcoinViaEmail
+                ...(senderAddress && isUsingBitcoinViaEmail
                     ? {
+                          senderAddress,
                           message: {
                               content: message,
-                              senderAddressId: senderAddress.ID,
-                              signingKeys: [senderAddress.key.privateKey],
-                              encryptionKeys: [
-                                  senderAddress.key.publicKey,
-                                  ...compact(recipients.map((r) => r.addressKey)),
-                              ],
+                              encryptionKeys: compact(recipients.map((r) => r.addressKey)),
                           },
                       }
                     : {}),
