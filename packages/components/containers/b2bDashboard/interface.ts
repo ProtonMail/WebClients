@@ -7,4 +7,8 @@ export interface PassEvent {
     };
     event: string;
     ip: string;
+    eventData: {
+        vaultId: string;
+        itemId: string;
+    };
 }
