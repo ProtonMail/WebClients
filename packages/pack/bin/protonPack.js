@@ -46,7 +46,6 @@ const addGlobalOptions = (program) => {
 };
 
 const getWebpackArgs = (options, env, { appData, buildData }) => {
-    console.log({ options, env, appData, buildData });
     const envArgs = {
         api: appData.api === '/api' ? undefined : appData.api,
         sso: appData.sso,
