@@ -426,6 +426,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                          * and `sessionLockToken` may be still encrypted at this point */
                         authStore.setSession(persistedSession);
                         await api.reset();
+
                         const { session } = await resumeSession(persistedSession, localID, config);
                         logger.info(`[AuthService] Session successfully resumed`);
 
