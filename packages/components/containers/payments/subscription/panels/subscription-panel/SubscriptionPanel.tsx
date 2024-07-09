@@ -177,7 +177,7 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
 
         const items: Item[] = [
             ...vpnItems,
-            getLoginsAndNotes(),
+            getLoginsAndNotes('paid'),
             getHideMyEmailAliases('unlimited'),
             get2FAAuthenticator(true),
             getVaultSharing(10),
@@ -201,7 +201,7 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
 
     const getPassAppFree = () => {
         const items: Item[] = [
-            getLoginsAndNotes(),
+            getLoginsAndNotes('free'),
             getDevices(),
             getVaults(FREE_VAULTS),
             getVaultSharing(FREE_VAULT_SHARING),
@@ -221,7 +221,7 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
             getCustomFields(true),
-            getLoginsAndNotes(),
+            getLoginsAndNotes('paid'),
             getDevices(),
         ];
 

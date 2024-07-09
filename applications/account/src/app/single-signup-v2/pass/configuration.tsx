@@ -176,12 +176,12 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
 };
 
 export const getFreePassFeatures = () => {
-    return [getLoginsAndNotes(), getDevices(), getPassKeys(true), getSecureVaultSharing(FREE_VAULTS)];
+    return [getLoginsAndNotes('free'), getDevices(), getPassKeys(true), getSecureVaultSharing(FREE_VAULTS)];
 };
 
 export const getCustomPassFeatures = () => {
     return [
-        getLoginsAndNotes(),
+        getLoginsAndNotes('paid'),
         getDevicesAndAliases(),
         getPassKeys(true),
         getSecureVaultSharing(PAID_VAULTS, true),
@@ -314,7 +314,7 @@ export const getPassConfiguration = ({
                     <Benefits
                         className="mt-5 mb-5"
                         features={getBenefitItems([
-                            getLoginsAndNotes(),
+                            getLoginsAndNotes('paid'),
                             getDevicesAndAliases(),
                             get2FAAuthenticator(true),
                             getVaultSharing(10),
