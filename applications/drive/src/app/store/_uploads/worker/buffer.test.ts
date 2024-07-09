@@ -61,7 +61,7 @@ describe('upload worker buffer', () => {
 
         const { generator, waitForPosition } = mockGenerator(1000, 1002);
 
-        buffer.feedEncryptedBlocks(generator()).finally(noop);
+        buffer.feedEncryptedBlocks(generator()).catch(noop);
         await waitForPosition(1000);
         buffer.encryptedBlocks.delete(0);
         await waitForPosition(1001);
@@ -88,7 +88,7 @@ describe('upload worker buffer', () => {
 
         const { generator, waitForPosition } = mockGenerator(1000, 1005);
 
-        buffer.feedEncryptedBlocks(generator()).finally(noop);
+        buffer.feedEncryptedBlocks(generator()).catch(noop);
         await waitForPosition(1000);
         buffer.uploadingBlocks.shift();
         await waitForPosition(1002);

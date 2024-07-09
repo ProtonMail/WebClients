@@ -314,7 +314,7 @@ const ManagerHeader = ({
             </div>
             <Tooltip title={isExpanded ? c('Action').t`Minimize` : c('Action').t`Maximize`}>
                 <ButtonLike
-                    className="no-pointer-events"
+                    className="pointer-events-none"
                     as="span"
                     icon
                     shape="ghost"
