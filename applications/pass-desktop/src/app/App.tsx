@@ -55,7 +55,7 @@ import './app.scss';
 
 exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 exposePassCrypto(createPassCrypto());
-exposeApi(createApi({ config: PASS_CONFIG }));
+exposeApi(createApi({ config: PASS_CONFIG, cookies: true }));
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 
 const history = createHashHistory();
