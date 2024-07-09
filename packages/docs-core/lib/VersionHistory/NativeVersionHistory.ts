@@ -2,11 +2,13 @@ import { BatchDocumentUpdates } from './BatchDocumentUpdates'
 import { mergeUpdates } from 'yjs'
 import { DecryptedCommit } from '../Models/DecryptedCommit'
 import { VersionHistoryBatch } from './VersionHistoryBatch'
+import { DateFormatter } from './DateFormatter'
 
 export class NativeVersionHistory {
   private versionHistoryBatches: VersionHistoryBatch[] = []
   private _batchDocumentUpdates = new BatchDocumentUpdates()
   private batchThreshold = 100
+  private dateFormatter = new DateFormatter()
 
   constructor(commit: DecryptedCommit) {
     this.versionHistoryBatches = this._batchDocumentUpdates.execute(commit.updates, this.batchThreshold).getValue()
@@ -25,6 +27,40 @@ export class NativeVersionHistory {
     const timestamp = this.getTimestampForBatch(batch)
     const date = new Date(timestamp)
     return date.toLocaleString()
+  }
+
+  public getFormattedDateForBatch(batch: VersionHistoryBatch) {
+    return this.dateFormatter.formatDate(this.getTimestampForBatch(batch))
+  }
+
+  public isCurrentBatchIndex(index: number) {
+    return index === this.batches.length - 1
+  }
+
+  public getFormattedTimeForBatch(batch: VersionHistoryBatch) {
+    const timestamp = this.getTimestampForBatch(batch)
+    return this.dateFormatter.formatTime(timestamp)
+  }
+
+  public getFormattedBatchGroups() {
+    const formattedBatchGroups: {
+      formattedDate: string
+      batchIndexes: { batchIndex: number; formattedTime: string }[]
+    }[] = []
+    let lastGroupKey = ''
+    this.batches.forEach((batch, batchIndex) => {
+      const formattedDate = this.getFormattedDateForBatch(batch)
+      const formattedTime = this.getFormattedTimeForBatch(batch)
+
+      if (lastGroupKey === formattedDate) {
+        formattedBatchGroups[0].batchIndexes.unshift({ batchIndex, formattedTime })
+      } else {
+        formattedBatchGroups.unshift({ formattedDate, batchIndexes: [{ batchIndex, formattedTime }] })
+      }
+
+      lastGroupKey = formattedDate
+    })
+    return formattedBatchGroups
   }
 
   public getMergedUpdateForBatchIndex(index: number): Uint8Array {
