@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import type { Api, MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
+import { pullForkSession, setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
@@ -18,6 +18,7 @@ import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/li
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
+import getRandomString from '@proton/utils/getRandomString';
 
 import { LockMode } from './lock/types';
 import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
@@ -71,6 +72,7 @@ export type ConsumeForkPayload =
           state: string;
           selector: string;
           key?: Uint8Array;
+          persistent: boolean;
           payloadVersion: AuthSessionVersion;
       }
     | {
@@ -78,6 +80,7 @@ export type ConsumeForkPayload =
           state: string;
           selector: string;
           keyPassword: string;
+          persistent: boolean;
           /** FIXME: support passing offline key components
            * when consuming a "secure" extension fork */
       };
@@ -106,6 +109,21 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<{ sessio
 
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
+
+    if (api.getState().cookies) {
+        await api(
+            withAuthHeaders(
+                UID,
+                refresh.AccessToken,
+                setCookies({
+                    UID,
+                    RefreshToken: refresh.RefreshToken,
+                    State: getRandomString(24),
+                    Persistent: options.payload.persistent,
+                })
+            )
+        );
+    }
 
     const data =
         payload.mode === 'secure'
