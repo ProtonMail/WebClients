@@ -339,6 +339,9 @@
       "Loading verification": [
         "Doğrulama yükleniyor"
       ],
+      "Make a copy": [
+        "Kopya oluştur"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
@@ -662,6 +665,11 @@
         "Şimdi ayrılırsanız, bazı etkinlikler içe aktarılamayabilir"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "ICS dosyası boş"
@@ -817,6 +825,9 @@
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
+      ],
+      "Docs problem": [
+        "Docs sorunu"
       ],
       "Drive problem": [
         "Drive sorunu"
@@ -3797,6 +3808,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Limited availability": [
+        "Sınırlı kullanılabilirlik"
+      ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
@@ -3817,6 +3831,9 @@
       ],
       "Loading...": [
         "Yükleniyor..."
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Çevrim dışı görünüyorsunuz. Belge çevrim dışı olarak düzenlenemez. Lütfen aygıtınızın bağlantısını denetleyin."
       ],
       "Low Priority": [
         "Düşük Öncelik"
@@ -3888,6 +3905,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
+      ],
+      "Opening...": [
+        "Açılıyor..."
       ],
       "Organization size": [
         "Kuruluş boyutu"
@@ -4028,6 +4048,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
       ],
+      "Some edits are taking longer to sync than expected.": [
+        "Bazı değişikliklerin eşitlenmesi beklendiğinden uzun sürüyor."
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
@@ -4071,7 +4094,7 @@
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
-        "Bu dokümanın çok fazla sayıda etkileşimi bulunmakta. Bazı özellikler geçici olarak devre dışı bırakılmış olabilir."
+        "Bu belgede çok sayıda işlem yapılmış. Bazı özellikler geçici olarak kullanılamayabilir."
       ],
       "This item already exists in your library": [
         "Bu öge kitaplığınızda zaten var"
@@ -4330,6 +4353,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Değişiklikleriniz Drive ile eşitleniyor. Lütfen sayfayı kapatmayın."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "Değişiklikleriniz eşitlenemedi. Drive değişikliklerinizi otomatik olarak kaydetmeyi deneyecek. Lütfen bu sayfayı kapatmayın."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Hizmet işlemleri kullanılamadığından kullandığınız tarayıcı büyük dosyaların indirilmesini desteklemiyor. Büyük dosyaları indirmek tarayıcının donmasına ya da yanıt vermemesine neden olabilir. Lütfen güncel ${ recommendedBrowser } sürümünü kullanarak yeniden deneyin."
@@ -5020,6 +5046,14 @@
         "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Yazma yardımcısını ekle"
+      ],
+      "for ${ price }": [
+        "${ price }"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
@@ -5320,6 +5354,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -5551,9 +5588,6 @@
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - ücretli özellikler"
-      ],
       "Passkeys supported": [
         "Geçiş anahtarları destekleniyor"
       ],
@@ -5666,8 +5700,8 @@
       "Unlimited labels": [
         "Sınırsız etiket"
       ],
-      "Unlimited logins and notes": [
-        "Sınırsız sayıda oturum açma bilgisi ve not"
+      "Unlimited logins, notes and credit cards": [
+        "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
       ],
       "Unlimited messages per day": [
         "Her gün sınırsız sayıda ileti"
@@ -6339,15 +6373,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "${ n } kasa ile güvenli paylaşım",
-        "${ n } kasa ile güvenli paylaşım"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Çok sayıda kasa ile güvenli paylaşım"
+      "Secure vault and link sharing": [
+        "Güvenli kasa ve bağlantı ile paylaşım"
       ],
       "Secure vault sharing": [
         "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Güvenli kasa paylaşımı (${ n } kasa)",
+        "Güvenli kasa paylaşımı (${ n } kasa)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ]
     },
     "Payment method option": {
@@ -6379,6 +6417,9 @@
       ],
       "Payment Processing": [
         "Ödeme işleniyor"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -7344,6 +7385,9 @@
     "Suffix for price": {
       "per month": [
         "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
       ]
     },
     "summer2023: Tooltip": {
@@ -7690,6 +7734,9 @@
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Limited availability": [
+        "Sınırlı kullanılabilirlik"
       ],
       "Link confirmation": [
         "Bağlantı onayı"

@@ -330,6 +330,9 @@
       "Loading verification": [
         "Verificatie laden"
       ],
+      "Make a copy": [
+        "Een kopie maken"
+      ],
       "Manage folders": [
         "Mappen beheren"
       ],
@@ -429,6 +432,9 @@
       "Remove gift code": [
         "Verwijder geschenkcode"
       ],
+      "Rename document": [
+        "Document hernoemen"
+      ],
       "Replace file": [
         "Bestand vervangen"
       ],
@@ -521,6 +527,9 @@
       ],
       "Try another method": [
         "Andere methode proberen"
+      ],
+      "Understood": [
+        "Begrepen"
       ],
       "Undo": [
         "Ongedaan maken"
@@ -2088,6 +2097,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
+      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
+        "Er is een gegevensintegriteitsfout opgetreden en recente wijzigingen kunnen niet worden opgeslagen. Vernieuw de pagina."
+      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -2188,6 +2200,15 @@
       ],
       "External accounts are not supported yet": [
         "Externe accounts worden nog niet ondersteund"
+      ],
+      "External invitations are not available yet.": [
+        "Externe uitnodigingen zijn nog niet beschikbaar."
+      ],
+      "External invitations are temporarily disabled.": [
+        "Externe uitnodigingen zijn tijdelijk uitgeschakeld."
+      ],
+      "External invitations are temporarily disabled. Please try again later": [
+        "Externe uitnodigingen zijn tijdelijk uitgeschakeld. Probeer het later opnieuw"
       ],
       "Failed to rename document. Please try again later.": [
         "Hernoemen van document mislukt. Probeer het later opnieuw."
@@ -2389,11 +2410,20 @@
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
       ],
+      "The invitation cannot be completed yet. Please try again later.": [
+        "De uitnodiging kan nog niet worden voltooid. Probeer het later opnieuw."
+      ],
+      "The invitation doesn't exist anymore": [
+        "De uitnodiging bestaat niet meer"
+      ],
       "The label name is invalid. Please choose a different name.": [
         "De naam van het label is ongeldig. Kies een andere naam."
       ],
       "The label name is too long. Please choose a different name.": [
         "De naam van het label is te lang. Kies een andere naam."
+      ],
+      "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
+        "De laatste update die u hebt gemaakt aan het document is te groot of overschrijdt de totale limiet voor documentgrootte. Bewerken is tijdelijk uitgeschakeld. Uw wijziging wordt niet opgeslagen. Exporteer een kopie van uw document en laad de pagina opnieuw."
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
@@ -2454,6 +2484,12 @@
       ],
       "Unknown payment token status": [
         "Onbekende betalingstoken status"
+      ],
+      "Update Too Large": [
+        "Update te groot"
+      ],
+      "Upload for this folder is temporarily disabled": [
+        "Uploaden voor deze map is tijdelijk uitgeschakeld"
       ],
       "Username must begin with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer beginnen"
@@ -3394,6 +3430,9 @@
         "Alle (${ totalFoldersCount } label)",
         "Alle (${ totalFoldersCount } labels)"
       ],
+      "All changes saved to Drive": [
+        "Alle wijzigingen opgeslagen op Drive"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
@@ -3546,8 +3585,14 @@
       "Download of ${ downloadFileName } will be aborted": [
         "Download van ${ downloadFileName } zal afgebroken worden"
       ],
+      "Download was canceled": [
+        "Download is geannuleerd"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
+      ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Downloaden van ${ DOCS_APP_NAME } bestanden van ${ DRIVE_APP_NAME } wordt momenteel niet ondersteund - deze worden niet opgenomen in uw download."
       ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
@@ -3576,6 +3621,9 @@
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
+      "End to end encrypted.": [
+        "End-to-end versleuteld."
+      ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw verificatie-app in"
       ],
@@ -3596,6 +3644,12 @@
       ],
       "Error loading document${ errorDetail }": [
         "Fout bij laden document${ errorDetail }"
+      ],
+      "Error Syncing": [
+        "Synchronisatiefout"
+      ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "Elke wijziging die u maakt wordt automatisch en veilig opgeslagen op Drive."
       ],
       "Expired": [
         "Verlopen"
@@ -3733,6 +3787,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Limited availability": [
+        "Beperkte beschikbaarheid"
+      ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
@@ -3753,6 +3810,9 @@
       ],
       "Loading...": [
         "Laden..."
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Het lijkt erop dat u offline bent. Het document kan niet worden bewerkt terwijl u offline bent. Controleer de verbinding van uw apparaat."
       ],
       "Low Priority": [
         "Lage Prioriteit"
@@ -3809,6 +3869,9 @@
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
       ],
+      "Offline": [
+        "Offline"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
@@ -3821,6 +3884,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot deze map."
+      ],
+      "Opening...": [
+        "Openen..."
       ],
       "Organization size": [
         "Grootte van de organisatie"
@@ -3851,6 +3917,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporteer een kopie van de huidige wijzigingen vanuit het hoofdmenu en laad de pagina opnieuw."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Exporteer ze rechtstreeks vanuit de ${ DOCS_APP_NAME }-applicatie als je ze wilt downloaden."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
@@ -3913,6 +3982,15 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
+      "Saved in ${ DRIVE_APP_NAME }": [
+        "Opgeslagen op ${ DRIVE_APP_NAME }"
+      ],
+      "Saving": [
+        "Bezig met opslaan"
+      ],
+      "Saving...": [
+        "Opslaan..."
+      ],
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
       ],
@@ -3948,6 +4026,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "Some edits are taking longer to sync than expected.": [
+        "Sommige bewerkingen duren langer om te synchroniseren dan verwacht."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
@@ -3985,8 +4066,14 @@
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
+      "This action will delete the link and revoke access for all users.": [
+        "Deze actie verwijdert de link en trekt de toegang voor alle gebruikers in."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "Dit document heeft veel activiteit. Sommige functies zijn mogelijk tijdelijk niet beschikbaar."
       ],
       "This item already exists in your library": [
         "Dit item bestaat al in uw bibliotheek"
@@ -4242,6 +4329,12 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
+      ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "Uw wijzigingen worden gesynchroniseerd met Drive. Sluit de webpagina niet."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "Uw wijzigingen konden niet worden gesynchroniseerd. Drive zal automatisch proberen de wijzigingen op te slaan. Sluit de webpagina niet."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Uw huidige browser ondersteunt het downloaden van grote bestanden niet wegens de onbeschikbaarheid van service workers. Het downloaden van grote bestanden kan ervoor zorgen dat uw browser vastloopt of niet langer reageert. Gebruik de meest recente versie van een ${ recommendedBrowser } en probeer het opnieuw."
@@ -4579,6 +4672,9 @@
       "Import to:": [
         "Importeren naar:"
       ],
+      "Include message and file name in invite email": [
+        "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
+      ],
       "Keep both": [
         "Beide behouden"
       ],
@@ -4674,6 +4770,9 @@
       ],
       "Public keys": [
         "Openbare sleutels"
+      ],
+      "Public link expiration date": [
+        "Vervaldatum van openbare link"
       ],
       "Public link password": [
         "Wachtwoord voor openbare link"
@@ -5221,6 +5320,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -5446,9 +5548,6 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium functies"
-      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -5557,9 +5656,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal wachtwoorden en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -6097,6 +6193,12 @@
       "Device renamed": [
         "Apparaat hernoemd"
       ],
+      "External invitation removed from the share": [
+        "Externe uitnodiging is verwijderd uit de share"
+      ],
+      "External invitation's email was sent again": [
+        "Externe uitnodigingsmail is opnieuw verzonden"
+      ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
       ],
@@ -6112,6 +6214,9 @@
       ],
       "File or folder is missing a name": [
         "Bestand of map heeft geen naam"
+      ],
+      "Invitation's email was sent again": [
+        "Uitnodigingsmail is opnieuw verzonden"
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
@@ -6198,13 +6303,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Veilig delen met kluis ${ n }",
-        "Veilig delen met ${ n } kluizen"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Veilig delen met meerdere kluizen"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ]
@@ -6317,6 +6415,9 @@
       ],
       "Last name": [
         "Familienaam"
+      ],
+      "Message": [
+        "Bericht"
       ],
       "Name": [
         "Naam"
@@ -6889,6 +6990,9 @@
     "Status": {
       "Accepted": [
         "Geaccepteerd"
+      ],
+      "Pending": [
+        "In behandeling"
       ]
     },
     "storage_split: action": {
@@ -7495,6 +7599,9 @@
       "Error": [
         "Fout"
       ],
+      "Error Syncing": [
+        "Synchronisatiefout"
+      ],
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
       ],
@@ -7525,6 +7632,9 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Limited availability": [
+        "Beperkte beschikbaarheid"
       ],
       "Link confirmation": [
         "Link bevestigen"
@@ -7558,6 +7668,9 @@
       ],
       "Notes": [
         "Notities"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
@@ -7676,6 +7789,9 @@
       "Unlock contacts groups": [
         "Ontgrendel contactgroepen"
       ],
+      "Untitled document ${ date }": [
+        "Naamloos document ${ date }"
+      ],
       "Uploading a large file or folder": [
         "Groot bestand of map aan het uploaden"
       ],
@@ -7702,6 +7818,9 @@
       ],
       "Your document cannot be loaded": [
         "Uw document kan niet worden geladen"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Uw download bevat een ${ DOCS_APP_NAME }-bestand"
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"
@@ -7766,6 +7885,9 @@
       "Load image": [
         "Laad foto"
       ],
+      "Message and file name are stored with zero access encryption when included in the email": [
+        "Bericht- en bestandsnaam worden opgeslagen met zero access versleuteling wanneer opgenomen in de e-mail"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
@@ -7789,6 +7911,9 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
+      ],
+      "We have sent them an invite to access the item.": [
+        "We hebben ze een uitnodiging gestuurd om het item te bekijken."
       ],
       "You do not have any contacts to export": [
         "U heeft geen contactpersonen om te exporteren"
