@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
       ],
+      "Add": [
+        "Legg til"
+      ],
       "Add address": [
         "Legg til adresse"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Surf privat på nettet og blokker annonser"
       ],
-      "Create and collaborate on documents securely": [
-        "Opprett og samarbeid på dokumenter på en sikker måte"
-      ],
       "Keep your schedule private": [
         "Hold timeplanen privat"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Sikre kommunikasjonen din"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktiviteten til nye nivåer. La ${ BRAND_NAME } Scribe hjelpe deg med å skrive, svare på og korrekturlese e-postene dine."
       ]
     },
     "Badge for domain": {
@@ -959,6 +964,9 @@
       ],
       "Custom domain problem": [
         "Egendefinert domeneproblem"
+      ],
+      "Docs problem": [
+        "Docs problem"
       ],
       "Drive problem": [
         "Problem med Drive"
@@ -5203,6 +5211,14 @@
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Legg til skriveassistent"
+      ],
+      "for ${ price }": [
+        "for ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Få avtalen"
@@ -5383,6 +5399,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -5632,9 +5651,6 @@
       "Organize items with multiple vaults": [
         "Organiser elementer med flere hvelv"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium funksjoner"
-      ],
       "Passkeys supported": [
         "Tilgangsnøkler støttes"
       ],
@@ -5757,8 +5773,8 @@
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Ubegrensede pålogginger og notater"
+      "Unlimited logins, notes and credit cards": [
+        "Ubegrenset antall pålogginger, notater og kredittkort"
       ],
       "Unlimited messages per day": [
         "Ubegrensede meldinger per dag"
@@ -6515,15 +6531,19 @@
       "Preparing your Recovery Kit": [
         "Forbereder gjenopprettingssettet ditt"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Sikker deling med ${ n } hvelv",
-        "Sikker deling med ${ n } hvelv"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Sikker deling med flere hvelv"
+      "Secure vault and link sharing": [
+        "Sikker hvelv og deling av koblinger"
       ],
       "Secure vault sharing": [
         "Sikker hvelvdeling"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Sikker hvelvdeling (${ n } hvelv)",
+        "Sikker hvelvdeling (${ n } hvelv)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling",
+        "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling"
       ],
       "Setting up your organization": [
         "Setter opp organisasjonen din"
@@ -6669,6 +6689,9 @@
       ],
       "Payment Processing": [
         "Betalingsbehandling"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "Processing payment": [
         "Behandler betaling"
@@ -7447,11 +7470,6 @@
         "Oppgrader"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Oppgrader"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } måned",
@@ -7682,6 +7700,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe skriveassistent for ${ maxAi } bruker",
+        "${ BRAND_NAME } Scribe skriveassistent for ${ maxAi } brukere"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikert tjener",
         "${ ipAddresses } dedikerte tjenere"
@@ -8358,6 +8380,9 @@
     "Suffix for price": {
       "per month": [
         "per måned"
+      ],
+      "per user per month": [
+        "per bruker per måned"
       ]
     },
     "summer2023: Tooltip": {
@@ -8751,6 +8776,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "How to choose a good logo": [
         "Hvordan velge en god logo"
