@@ -132,7 +132,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
             </ModalParagraph>
 
             <Input
-                label={c('Wallet Account').t`Account label`}
+                label={c('Wallet Account').t`Name`}
                 id="account-label-input"
                 placeholder={c('Wallet Account').t`Savings for holiday`}
                 value={label}
@@ -193,7 +193,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                 <Select
                                     label={
                                         <div className="flex flex-row">
-                                            <span className="block mr-1">{c('Wallet Account').t`Index`}</span>
+                                            <span className="block mr-1">{c('Wallet Account').t`Account index`}</span>
                                         </div>
                                     }
                                     id="account-index-selector"
