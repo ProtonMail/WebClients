@@ -39,7 +39,9 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
         openWalletDeletionConfirmationModal,
         openBackupModal,
         clearBrowserStorage,
-    } = useWalletPreferences(wallet);
+    } = useWalletPreferences(wallet, () => {
+        modalProps.onClose?.();
+    });
 
     return (
         <>
