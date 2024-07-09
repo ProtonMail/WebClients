@@ -1,4 +1,5 @@
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { Api } from '@proton/shared/lib/interfaces';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import fileSaver from '../fileSaver/fileSaver';
@@ -32,6 +33,8 @@ export default function initDownload(
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
     log: LogCallback,
+    isNewFolderTreeAlgorithmEnabled: boolean,
+    api: Api,
     options?: { virusScan?: boolean }
 ): DownloadControls {
     let gotErr: any;
@@ -50,6 +53,8 @@ export default function initDownload(
             },
         },
         log,
+        isNewFolderTreeAlgorithmEnabled,
+        api,
         options
     );
     return {
@@ -84,16 +89,23 @@ export default function initDownload(
     };
 }
 
-export function initDownloadStream(links: LinkDownload[], callbacks: DownloadCallbacks) {
+export function initDownloadStream(
+    links: LinkDownload[],
+    callbacks: DownloadCallbacks,
+    isNewFolderTreeAlgorithmEnabled: boolean,
+    api: Api
+) {
     // Stream is used in direct preview. There we do not support logs just yet.
     const noLog = () => {};
-    return getControls(links, callbacks, noLog);
+    return getControls(links, callbacks, noLog, isNewFolderTreeAlgorithmEnabled, api);
 }
 
 function getControls(
     links: LinkDownload[],
     callbacks: DownloadCallbacks,
     log: LogCallback,
+    isNewFolderTreeAlgorithmEnabled: boolean,
+    api: Api,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
     if (links.length === 1) {
@@ -101,9 +113,9 @@ function getControls(
         if (link.isFile) {
             return initDownloadLinkFile(link, callbacks, log, options);
         }
-        return initDownloadLinkFolder(link, callbacks, log, options);
+        return initDownloadLinkFolder(link, callbacks, log, isNewFolderTreeAlgorithmEnabled, api, options);
     }
-    return initDownloadLinks(links, callbacks, log, options);
+    return initDownloadLinks(links, callbacks, log, isNewFolderTreeAlgorithmEnabled, api, options);
 }
 
 /**
