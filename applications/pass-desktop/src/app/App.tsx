@@ -53,9 +53,9 @@ import locales from './locales';
 
 import './app.scss';
 
-exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+exposeAuthStore(createAuthStore(createSecureSessionStorage(), { cookies: true }));
 exposePassCrypto(createPassCrypto());
-exposeApi(createApi({ config: PASS_CONFIG }));
+exposeApi(createApi({ config: PASS_CONFIG, cookies: true }));
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 
 const history = createHashHistory();

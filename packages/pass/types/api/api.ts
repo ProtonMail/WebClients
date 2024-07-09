@@ -16,6 +16,7 @@ export type ApiAuth = {
 
 export type ApiState = {
     appVersionBad: boolean;
+    cookies: boolean;
     online: boolean;
     pendingCount: number;
     queued: Awaiter<void>[];
