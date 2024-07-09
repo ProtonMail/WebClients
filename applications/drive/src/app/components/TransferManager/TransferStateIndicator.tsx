@@ -116,7 +116,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             <span className="hidden md:inline-flex text-ellipsis" data-testid="transfer-item-status">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
-                        <span className="flex flex-align-items-center mr-2">
+                        <span className="flex items-center mr-2">
                             <Icon name="info-circle" />
                         </span>
                     </Tooltip>
