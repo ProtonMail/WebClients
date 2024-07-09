@@ -1,8 +1,9 @@
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import startCase from 'lodash/startCase';
 import { c } from 'ttag';
 
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { PassEvent } from '.';
 
@@ -30,6 +31,9 @@ enum Event {
     VaultCreated = 'VaultCreated',
     VaultDeleted = 'VaultDeleted',
     VaultUpdated = 'VaultUpdated',
+    BreachCustomEmailCreated = 'BreachCustomEmailCreated',
+    BreachCustomEmailValidated = 'BreachCustomEmailValidated',
+    BreachCustomEmailDeleted = 'BreachCustomEmailDeleted',
 }
 
 export const getDesciptionText = (event: string): string => {
@@ -43,9 +47,9 @@ export const getDesciptionText = (event: string): string => {
         case 'InviteRejected':
             return c('Info').t`Invite rejected`;
         case 'NewUserInviteCreated':
-            return c('Info').t`User invited to organization`;
+            return c('Info').t`New user invited to organization`;
         case 'NewUserInviteDeleted':
-            return c('Info').t`Invite for User deleted`;
+            return c('Info').t`Invite for new user deleted`;
         case 'ItemCreated':
             return c('Info').t`Item created in vault`;
         case 'ItemUpdated':
@@ -55,9 +59,9 @@ export const getDesciptionText = (event: string): string => {
         case 'ItemRead':
             return c('Info').t`Item read in vault`;
         case 'ItemDeleted':
-            return c('Info').t`Item deleted in vault`;
+            return c('Info').t`Item deleted from vault`;
         case 'ItemTrashed':
-            return c('Info').t`Item trashed in vault`;
+            return c('Info').t`Item in vault trashed`;
         case 'ItemUntrashed':
             return c('Info').t`Item in vault untrashed`;
         case 'ItemChangedFlags':
@@ -74,8 +78,67 @@ export const getDesciptionText = (event: string): string => {
             return c('Info').t`Vault deleted`;
         case 'VaultUpdated':
             return c('Info').t`Vault updated`;
+        case 'BreachCustomEmailCreated':
+            return c('Info').t`Custom email added`;
+        case 'BreachCustomEmailValidated':
+            return c('Info').t`Custom email validated`;
+        case 'BreachCustomEmailDeleted':
+            return c('Info').t`Custom email deleted`;
         default:
             return c('Info').t`Unknown event type`;
+    }
+};
+
+export const getDescriptionTextWithLink = (event: string, vaultLink: React.JSX.Element) => {
+    switch (event) {
+        case 'InviteCreated':
+            return c('Info').jt`Invite for organization created`;
+        case 'InviteAccepted':
+            return c('Info').jt`Invite for organization accepted`;
+        case 'InviteDeleted':
+            return c('Info').jt`Invite deleted`;
+        case 'InviteRejected':
+            return c('Info').jt`Invite rejected`;
+        case 'NewUserInviteCreated':
+            return c('Info').jt`New user invited to organization`;
+        case 'NewUserInviteDeleted':
+            return c('Info').jt`Invite for new user deleted`;
+        case 'ItemCreated':
+            return c('Info').jt`Item created in ${vaultLink}`;
+        case 'ItemUpdated':
+            return c('Info').jt`Item updated in ${vaultLink}`;
+        case 'ItemUsed':
+            return c('Info').jt`Item autofilled in ${vaultLink}`;
+        case 'ItemRead':
+            return c('Info').jt`Item read in ${vaultLink}`;
+        case 'ItemDeleted':
+            return c('Info').jt`Item deleted from ${vaultLink}`;
+        case 'ItemTrashed':
+            return c('Info').jt`Item in ${vaultLink} trashed`;
+        case 'ItemUntrashed':
+            return c('Info').jt`Item in ${vaultLink} untrashed`;
+        case 'ItemChangedFlags':
+            return c('Info').jt`Item flags changed in ${vaultLink}`;
+        case 'ShareCreated':
+            return c('Info').jt`${vaultLink} shared with email`;
+        case 'ShareDeleted':
+            return c('Info').jt`Shared ${vaultLink} deleted`;
+        case 'ShareUpdated':
+            return c('Info').jt`Shared ${vaultLink} updated`;
+        case 'VaultCreated':
+            return c('Info').jt`${vaultLink} created`;
+        case 'VaultDeleted':
+            return c('Info').jt`${vaultLink} deleted`;
+        case 'VaultUpdated':
+            return c('Info').jt`${vaultLink} updated`;
+        case 'BreachCustomEmailCreated':
+            return c('Info').jt`Custom email added`;
+        case 'BreachCustomEmailValidated':
+            return c('Info').jt`Custom email validated`;
+        case 'BreachCustomEmailDeleted':
+            return c('Info').jt`Custom email deleted`;
+        default:
+            return c('Info').jt`Unknown event type`;
     }
 };
 
@@ -121,6 +184,12 @@ export const getEventNameText = (event: string): string => {
             return c('Info').t`Vault Deleted`;
         case 'VaultUpdated':
             return c('Info').t`Vault Updated`;
+        case 'BreachCustomEmailCreated':
+            return c('Info').t`Breach Custom Email Added`;
+        case 'BreachCustomEmailValidated':
+            return c('Info').t`Breach Custom Email Validated`;
+        case 'BreachCustomEmailDeleted':
+            return c('Info').t`Breach Custom Email Deleted`;
         default:
             return c('Info').t`All Events `;
     }
@@ -186,4 +255,44 @@ export const getUniqueEventTypes = (eventLogs: PassEvent[]) => {
     const events = eventLogs.map((log) => log.event);
     const uniqueEvents = ['All Events', ...new Set(events)];
     return uniqueEvents.map((event) => startCase(event));
+};
+
+const formatDateCSV = (date: string) => {
+    const parsedDate = parseISO(date);
+    const formattedDate = format(parsedDate, 'MMM d, yyyy, h:mm a', { locale: dateLocale });
+    return `"${formattedDate}"`;
+};
+
+export const formatPassEventsCSV = async (csv: string) => {
+    if (!csv.trim()) {
+        return '';
+    }
+
+    const rows = csv.trim().split('\n');
+    const header = ['Time', 'User Name', 'User Email', 'Event', 'IP'];
+
+    const formatRow = (row: string) => {
+        const columns = row.split(',');
+
+        try {
+            const formattedDate = formatDateCSV(columns[0]);
+            const formattedColumn4 = getEventNameText(columns[1]);
+            const otherColumns = [...columns.slice(2, 4), formattedColumn4, ...columns.slice(4, 5)].map((column) =>
+                column?.trim()
+            );
+
+            return [formattedDate, ...otherColumns].join(',');
+        } catch (error) {
+            console.error(`Error formatting row "${row}":`, error);
+            return row;
+        }
+    };
+
+    return [
+        header,
+        ...rows.slice(1).reduce<string[]>((acc, row) => {
+            acc.push(formatRow(row));
+            return acc;
+        }, []),
+    ].join('\n');
 };
