@@ -113,11 +113,11 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Crea un compte de ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Crear un compte de ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Crea un compte de ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Crea una caixa forta per compartir"
@@ -197,6 +197,9 @@
       "Edit vault": [
         "Edita la caixa forta"
       ],
+      "Entire vault": [
+        "Caixa forta sencera"
+      ],
       "Exclude from monitoring": [
         "Exclou de la supervisió"
       ],
@@ -218,8 +221,14 @@
       "Generate password": [
         "Genera la contrasenya"
       ],
+      "Generate secure link": [
+        "Genereu un enllaç segur"
+      ],
       "Generated passwords": [
         "Contrasenyes generades"
+      ],
+      "Generating secure link...": [
+        "S'està generant un enllaç segur..."
       ],
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
@@ -269,6 +278,12 @@
       "Leave vault": [
         "Deixa la caixa forta"
       ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Link expires after": [
+        "L'enllaç caduca després de"
+      ],
       "Lock extension": [
         "Bloqueja l'extensió"
       ],
@@ -284,8 +299,14 @@
       "Manage access": [
         "Gestiona l'accés"
       ],
+      "Manage vault access": [
+        "Gestiona l'accés a la caixa forta"
+      ],
       "Manually sync your data": [
         "Sincronitzeu les vostres dades manualment"
+      ],
+      "Maximum views": [
+        "Màxim de visualitzacions"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
@@ -313,6 +334,9 @@
       ],
       "Multiple select": [
         "Selecció múltiple"
+      ],
+      "No expired links": [
+        "Sense enllaços caducats"
       ],
       "Not now": [
         "Ara no"
@@ -359,6 +383,9 @@
       "Remove access": [
         "Esborra l'accés"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Esborra tots els enllaços caducats (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Esborra l'enllaç"
       ],
@@ -377,6 +404,9 @@
       "Restore item": [
         "Restaura l'element"
       ],
+      "Restrict number of views": [
+        "Restringeix el nombre de visualitzacions"
+      ],
       "Retry": [
         "Reintenta"
       ],
@@ -394,6 +424,9 @@
       ],
       "Saving passkey...": [
         "S'està desant la clau d'accés"
+      ],
+      "Secure links": [
+        "Enllaços segurs"
       ],
       "See all": [
         "Mostra-les totes"
@@ -418,6 +451,9 @@
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share secure link": [
+        "Comparteix un enllaç segur"
       ],
       "Share this vault": [
         "Comparteix aquesta caixa forta"
@@ -484,6 +520,9 @@
       ],
       "Upgrade now to share with more people": [
         "Milloreu el pla ara per a compartir-ho amb més persones"
+      ],
+      "Via secure link": [
+        "Mitjançant un enllaç segur"
       ],
       "View app logs": [
         "Mostra els registres de l'aplicació"
@@ -732,6 +771,9 @@
       "Importing items failed": [
         "No s'ha pogut importar els elements."
       ],
+      "Inactive secure links could not be removed.": [
+        "Els enllaços segurs inactius no es van poder esborrar."
+      ],
       "Invalid password manager": [
         "Gestor de contrasenya invàlid"
       ],
@@ -792,6 +834,12 @@
       "Restoring trashed items failed": [
         "No s'ha pogut restaurar els elements de la paperera."
       ],
+      "Secure link could not be created.": [
+        "No s'ha pogut crear l'enllaç segur."
+      ],
+      "Secure link could not be opened.": [
+        "No s'ha pogut obrir l'enllaç segur."
+      ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
       ],
@@ -812,6 +860,9 @@
       ],
       "The URL is in the list": [
         "L'URL és a la llista."
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "S'ha produït un error en eliminar l'enllaç segur. Torneu a provar-ho en uns minuts."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Massa intents erronis. Torneu a iniciar la sessió."
@@ -935,6 +986,14 @@
       "${ count } invites successfully sent": [
         "S'han enviat ${ count } invitacions"
       ],
+      "${ count } time": [
+        "${ count } vegada",
+        "${ count } vegades"
+      ],
+      "${ count } view": [
+        "${ count } vista",
+        "${ count } vistes"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
@@ -1013,6 +1072,9 @@
       "All breaches for this address were resolved": [
         "S'han resolt totes les infraccions d'aquesta adreça"
       ],
+      "All inactive secure links were removed": [
+        "S'han esborrat tots els enllaços segurs inactius."
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tots els elements de «${ payload.content.name }» s'han mogut correctament"
       ],
@@ -1037,6 +1099,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Esteu segur que voleu moure l'element a \"${ name }\"?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Esteu segur que voleu esborrar l'enllaç?"
+      ],
       "Auto-lock successfully disabled.": [
         "El bloqueig automàtic s'ha desactivat correctament."
       ],
@@ -1048,6 +1113,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrat"
+      ],
+      "Can be viewed": [
+        "Es pot veure"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
@@ -1168,6 +1236,12 @@
       ],
       "Enter your PIN code": [
         "Introduïu el codi PIN"
+      ],
+      "Expires in": [
+        "Caduca en"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Caduca en ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "S'ha creat la contrasenya addicional."
@@ -1428,8 +1502,14 @@
       "Registering PIN lock failed": [
         "No s'ha pogut registrar el bloqueig del PIN"
       ],
+      "Removing all inactive secure links...": [
+        "Esborrant tots els enllaços segurs inactius..."
+      ],
       "Removing extra password...": [
         "Esborrant la contrasenya addicional..."
+      ],
+      "Removing secure link...": [
+        "S'està eliminant l'enllaç segur..."
       ],
       "Restoring items from trash": [
         "S'estan restaurant els elements de la paperera"
@@ -1518,6 +1598,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "No s'ha pogut importar ${ result.ignored.length } element:",
         "No s'han pogut importar els ${ result.ignored.length } elements següents:"
+      ],
+      "The secure link has been removed": [
+        "S'ha eliminat l'enllaç segur."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El text que esteu intentant enganxar és més llarg que la longitud màxima permesa de ${ maxLength } caràcters."
@@ -1671,6 +1754,18 @@
         "${ config.options.wordCount } paraula",
         "${ config.options.wordCount } paraules"
       ],
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "Monitor de ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1686,14 +1781,23 @@
       "10 minutes": [
         "10 minuts"
       ],
+      "14 days": [
+        "14 dies"
+      ],
       "15 minutes": [
         "15 minuts"
+      ],
+      "24 hours": [
+        "24 hores"
       ],
       "2FA secret key (TOTP)": [
         "Clau secreta d'A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Testimoni d'A2F (TOTP)"
+      ],
+      "30 days": [
+        "30 dies"
       ],
       "30 minutes": [
         "30 minuts"
@@ -1703,6 +1807,9 @@
       ],
       "5 minutes": [
         "5 minuts"
+      ],
+      "7 days": [
+        "7 dies"
       ],
       "A-Z": [
         "A-Z"
@@ -1839,6 +1946,9 @@
       "Expired": [
         "Caducat"
       ],
+      "Expired link": [
+        "L'enllaç està caducat."
+      ],
       "Export": [
         "Exporta"
       ],
@@ -1856,6 +1966,9 @@
       ],
       "General": [
         "General"
+      ],
+      "Generate a secure link for this item": [
+        "Genera un enllaç segur a aquest element"
       ],
       "Generic CSV": [
         "CSV genèric"
@@ -1931,6 +2044,9 @@
       ],
       "Make all viewers": [
         "Estableix tots com a visualitzadors"
+      ],
+      "Max views reached": [
+        "S'ha assolit el nombre màxim de vistas."
       ],
       "Members": [
         "Membres"
@@ -2031,6 +2147,9 @@
       "Recent": [
         "Recents"
       ],
+      "Remove link": [
+        "Esborra l'enllaç"
+      ],
       "Report a problem": [
         "Notifica un problema"
       ],
@@ -2067,6 +2186,15 @@
       "Settings": [
         "Preferències"
       ],
+      "Share": [
+        "Comparteix"
+      ],
+      "Share this vault or create a new vault": [
+        "Comparteix aquesta caixa forte o crea una nova"
+      ],
+      "Shared link": [
+        "Enllaç compartit"
+      ],
       "Show website favicons": [
         "Mostra els favicons del lloc web"
       ],
@@ -2084,6 +2212,13 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "La caixa forta de l'element es comparteix actualment amb ${ targetMembers } persona.",
+        "La caixa forta de l'element es comparteix actualment amb ${ targetMembers } persones."
+      ],
+      "The URL has been copied to the clipboard": [
+        "S'ha copiat l'URL al porta-retalls."
       ],
       "Title": [
         "Títol"
@@ -2396,6 +2531,9 @@
       "No items selected": [
         "No s'ha seleccionat cap element."
       ],
+      "No shared secure links": [
+        "Sense enllaços segurs compartits"
+      ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vostè."
       ],
@@ -2419,6 +2557,9 @@
       ],
       "Remove extra password": [
         "Esborra la contrasenya addicional"
+      ],
+      "Remove secure link?": [
+        "Voleu esborrar l'enllaç segur?"
       ],
       "Restore this version?": [
         "Vol restaurar aquesta versió?"

@@ -110,11 +110,11 @@
       "Create": [
         "作成"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "${ BRAND_NAME } アカウントを作成する"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
       ],
       "Create a new vault to share": [
         "共有する新しい保管庫を作成する"
@@ -266,6 +266,9 @@
       "Leave vault": [
         "フォルダーを出る"
       ],
+      "Link copied to clipboard": [
+        "クリップボードにリンクがコピーされました"
+      ],
       "Lock extension": [
         "ロック延長"
       ],
@@ -355,6 +358,9 @@
       ],
       "Remove access": [
         "アクセス権の削除"
+      ],
+      "Remove link": [
+        "リンクを削除"
       ],
       "Remove member": [
         "メンバーを削除する"
@@ -892,6 +898,9 @@
       ],
       "${ count } invites successfully sent": [
         "${ count } へ正常に招待状が送られました"
+      ],
+      "${ count } time": [
+        "${ count } 回"
       ],
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
@@ -1509,6 +1518,15 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } 単語"
+      ],
+      "${ days } day": [
+        "${ days } 日"
+      ],
+      "${ hours } hour": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
