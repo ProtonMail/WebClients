@@ -93,7 +93,6 @@ const getJsLoader = (options) => {
 };
 
 const getJsLoaders = (options) => {
-    console.log('using babel-loader');
     return [
         {
             test: /(unsupported|pre)\.ts$/,
