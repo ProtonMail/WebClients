@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "Navega en la web de manera privada y bloquea anuncios"
       ],
-      "Create and collaborate on documents securely": [
-        "Crea y colabora en documentos de forma segura."
-      ],
       "Keep your schedule private": [
         "Mantén privada tu agenda"
       ],
@@ -1406,8 +1403,8 @@
       "New": [
         "Nuevo"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
       ],
       "Trial expires on ${ formattedDate }": [
         "La prueba expira el ${ formattedDate }."
@@ -1698,6 +1695,9 @@
       ],
       "Custom domain problem": [
         "Problema con el dominio personalizado"
+      ],
+      "Docs problem": [
+        "Problema de Docs"
       ],
       "Drive problem": [
         "Problema con unidad de almacenamiento"
@@ -8448,6 +8448,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME }."
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Con grupos de usuarios puedes fácilmente enviar correos, compartir datos o cambiar los ajustes de grupos específicos todo a la vez."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con tu plan actual, sólo puedes recibir mensajes con tu dirección @pm.me. Actualiza tu cuenta para enviar mensajes y crear direcciones adicionales con @pm.me."
       ],
@@ -10545,6 +10548,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Añadir el asistente de escritura"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Todas las aplicaciones de ${ BRAND_NAME } for Business y funciones premium para proteger todo tu negocio"
       ],
@@ -10559,6 +10565,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Seguridad mejorada y funciones premium para equipos"
+      ],
+      "for ${ price }": [
+        "para ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta de tiempo limitado: **Hasta 35% de descuento** en planes anuales"
@@ -10987,6 +10996,23 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11016,24 +11042,10 @@
         "Cambiar a ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -11289,9 +11301,6 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funciones premium"
-      ],
       "Passkeys supported": [
         "Las claves de acceso están admitidas."
       ],
@@ -11417,8 +11426,8 @@
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y notas"
+      "Unlimited logins, notes and credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
@@ -12325,7 +12334,7 @@
         "Toda la organización"
       ],
       "Trash": [
-        "Papelera"
+        "Enviar a papelera"
       ]
     },
     "Option delay send seconds": {
@@ -12736,15 +12745,19 @@
       "Save your recovery kit to continue": [
         "Guarda tu kit de recuperación para continuar"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Compartición segura con ${ n } caja fuerte",
-        "Compartición segura con ${ n } cajas fuertes"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartición segura con varias cajas fuertes"
+      "Secure vault and link sharing": [
+        "Intercambio seguro de caja fuerte y enlaces"
       ],
       "Secure vault sharing": [
         "Compartición segura de cajas fuertes"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Intercambio seguro de caja fuerte (${ n } caja fuerte)",
+        "Intercambio seguro de caja fuerte (${ n } cajas fuertes)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
+        "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
       ],
       "Secured by end-to-end encryption": [
         "Protegido por encriptación de extremo a extremo"
@@ -12946,6 +12959,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
       "Processing payment": [
         "Procesando el pago"
@@ -14049,11 +14065,6 @@
         "Mejorar"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Mejorar"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mes",
@@ -14334,6 +14345,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuario",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuarios"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -15104,6 +15119,9 @@
     "Suffix for price": {
       "per month": [
         "por mes"
+      ],
+      "per user per month": [
+        "/usuario al mes"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15813,6 +15831,9 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "History": [
         "Historial"
@@ -17015,8 +17036,14 @@
       "Please add at least one recipient.": [
         "Añade al menos un destinatario."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Comprueba que la extensión está instalada y activada correctamente."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ten en cuenta que al elegir este método de pago, tu cuenta no será actualizada inmediatamente. Actualizaremos tu cuenta una vez que el pago se haya completado."
+      ],
+      "Please update the extension to its latest version": [
+        "Actualiza la extensión a la última versión."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."

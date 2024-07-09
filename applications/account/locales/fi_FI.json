@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "Selaa verkkoa yksityisesti ja estä mainoksia"
       ],
-      "Create and collaborate on documents securely": [
-        "Luo ja tee yhteistyötä asiakirjojen parissa turvallisesti"
-      ],
       "Keep your schedule private": [
         "Pidä aikataulusi yksityisenä"
       ],
@@ -1406,8 +1403,8 @@
       "New": [
         "Uusi"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan sähköpostejasi. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan sähköpostejasi."
       ],
       "Trial expires on ${ formattedDate }": [
         "Kokeilujakso päättyy ${ formattedDate }"
@@ -1698,6 +1695,9 @@
       ],
       "Custom domain problem": [
         "Oman verkkotunnuksen ongelma"
+      ],
+      "Docs problem": [
+        "Docs-ongelma"
       ],
       "Drive problem": [
         "Drive-ongelma"
@@ -10542,6 +10542,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Lisää kirjoitusavustaja"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi"
       ],
@@ -10556,6 +10559,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Parannettu turvallisuus ja premium-ominaisuuksia tiimeille"
+      ],
+      "for ${ price }": [
+        "hintaan ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Rajoitetun ajan tarjous: **Saat jopa 35 % alennusta** vuosittaisista tilauksista"
@@ -10984,6 +10990,23 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11013,24 +11036,10 @@
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalenteri",
         "${ n } kalenteria"
@@ -11283,9 +11292,6 @@
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor – premium-ominaisuudet"
-      ],
       "Passkeys supported": [
         "Suojausavaimia tuetaan"
       ],
@@ -11411,8 +11417,8 @@
       "Unlimited labels": [
         "Rajattomasti tunnisteita"
       ],
-      "Unlimited logins and notes": [
-        "Rajattomasti kirjautumistietoja ja muistiinpanoja"
+      "Unlimited logins, notes and credit cards": [
+        "Rajattomasti kirjautumistietoja, muistiinpanoja ja maksukortteja"
       ],
       "Unlimited messages per day": [
         "Rajattomasti viestejä päivässä"
@@ -12730,15 +12736,19 @@
       "Save your recovery kit to continue": [
         "Jatka tallentamalla palautuspakettisi"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Turvallinen jakaminen ${ n } holvin kanssa",
-        "Turvallinen jakaminen ${ n } holvin kanssa"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Turvallinen useamman holvin jako"
+      "Secure vault and link sharing": [
+        "Turvallisten holvien ja linkkien jakaminen"
       ],
       "Secure vault sharing": [
         "Turvallinen holvien jako"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Turvallisten holvien jakaminen (${ n } holvi)",
+        "Turvallisten holvien jakaminen (${ n } holvia)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Turvallisten holvien (${ n } holvi) ja linkkien jakaminen",
+        "Turvallisten holvien (${ n } holvia) ja linkkien jakaminen"
       ],
       "Secured by end-to-end encryption": [
         "Suojattu päästä päähän -salauksella"
@@ -12940,6 +12950,9 @@
       ],
       "Payment Processing": [
         "Maksua käsitellään"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
       "Processing payment": [
         "Käsitellään maksua"
@@ -14040,11 +14053,6 @@
         "Päivitä tilaus"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Päivitä tilaus"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } kuukausi",
@@ -15072,6 +15080,9 @@
     "Suffix for price": {
       "per month": [
         "kuukaudessa"
+      ],
+      "per user per month": [
+        "käyttäjää kohti kuukaudessa"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15781,6 +15792,9 @@
       ],
       "Gift code": [
         "Lahjakoodi"
+      ],
+      "Groups": [
+        "Ryhmät"
       ],
       "History": [
         "Historia"

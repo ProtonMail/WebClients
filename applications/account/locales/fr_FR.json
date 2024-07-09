@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "Naviguez en privé sur le web tout en bloquant les publicités"
       ],
-      "Create and collaborate on documents securely": [
-        "Créez et modifiez des documents en mode collaboratif, en toute sécurité."
-      ],
       "Keep your schedule private": [
         "Protégez votre emploi du temps des regards indiscrets"
       ],
@@ -1406,8 +1403,8 @@
       "New": [
         "Nouveau"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
       ],
       "Trial expires on ${ formattedDate }": [
         "La version d'essai arrive à expiration le ${ formattedDate }."
@@ -5168,7 +5165,7 @@
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Connexion pour ${ plusVpnConnections } appareil au maximum",
-        "Connexion pour ${ plusVpnConnections }  appareils maximum"
+        "Connexion pour ${ plusVpnConnections } appareils au maximum"
       ],
       "Fastest VPN servers": [
         "Serveurs VPN les plus rapides"
@@ -6739,6 +6736,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
         "Suppression de ${ deletedServerCount } serveurs de Passerelle"
+      ],
+      "Discount": [
+        "Réduction"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -8451,6 +8451,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Grâce aux groupes d'utilisateurs, vous pouvez facilement envoyer des messages, partager des données ou modifier les paramètres de certains groupes d'utilisateurs en une seule fois."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Avec votre abonnement actuel, vous pouvez uniquement recevoir des messages avec votre adresse @pm.me. Changez d'abonnement pour envoyer des messages et créer des adresses supplémentaires en utilisant @pm.me."
       ],
@@ -9992,7 +9995,7 @@
         "Indésirables/spam"
       ],
       "Spam and filters": [
-        "Filtres et spam"
+        "Filtres et indésirables/spam"
       ],
       "Starred": [
         "Favoris"
@@ -10548,6 +10551,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Ajouter l'assistant d'écriture"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
       ],
@@ -10562,6 +10568,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Sécurité renforcée et fonctionnalités premium pour vos équipes"
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Offre à durée limitée. **Jusqu'à -35 %** sur les abonnements annuels"
@@ -10990,6 +10999,23 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuer avec Free"
@@ -11019,24 +11045,10 @@
         "Passer à ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
@@ -11292,9 +11304,6 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - fonctionnalités premium"
-      ],
       "Passkeys supported": [
         "Les clés d'accès sont prises en charge."
       ],
@@ -11420,8 +11429,8 @@
       "Unlimited labels": [
         "Nombre illimité de labels"
       ],
-      "Unlimited logins and notes": [
-        "Nombre illimité de connexions et de notes"
+      "Unlimited logins, notes and credit cards": [
+        "Nombre illimité de connexions, de notes et de cartes de crédit"
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
@@ -12214,7 +12223,7 @@
         "Ajouter à un groupe existant"
       ],
       "Archive": [
-        "Déplacer dans le dossier Archives"
+        "Archiver"
       ],
       "Ask each time": [
         "Demander à chaque fois"
@@ -12739,15 +12748,19 @@
       "Save your recovery kit to continue": [
         "Enregistrez votre kit de récupération pour continuer."
       ],
-      "Secure sharing with ${ n } vault": [
-        "Partage sécurisé avec ${ n } coffre-fort",
-        "Partage sécurisé avec ${ n } coffre-forts"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Partage sécurisé avec plusieurs coffres-forts"
+      "Secure vault and link sharing": [
+        "Coffre-fort sécurisé et partage de liens"
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort)",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
       ],
       "Secured by end-to-end encryption": [
         "Sécurisé avec un chiffrement de bout en bout"
@@ -12942,13 +12955,16 @@
         "CVC"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "MM/YY": [
         "MM/AA"
       ],
       "Payment Processing": [
         "Traitement des paiements"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
       ],
       "Processing payment": [
         "Traitement du paiement"
@@ -14052,11 +14068,6 @@
         "Passez à Premium"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Passez à Premium"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mois",
@@ -15111,6 +15122,9 @@
     "Suffix for price": {
       "per month": [
         "par mois"
+      ],
+      "per user per month": [
+        "par utilisateur par mois"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15820,6 +15834,9 @@
       ],
       "Gift code": [
         "Code-cadeau"
+      ],
+      "Groups": [
+        "Groupes"
       ],
       "History": [
         "Historique"

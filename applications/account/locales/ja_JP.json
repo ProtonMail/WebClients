@@ -170,6 +170,9 @@
       "Change password": [
         "パスワードを変更"
       ],
+      "Change second password": [
+        "セカンドパスワードを変更"
+      ],
       "Chat with us": [
         "チャットする"
       ],
@@ -3813,6 +3816,9 @@
       ],
       "Incorrect password": [
         "パスワードが正しくありません"
+      ],
+      "Incorrect second password. Please try again.": [
+        "セカンドパスワードが正しくありません。もう一度お試しください。"
       ],
       "Incorrect username": [
         "ユーザー名に間違いがあります。"
@@ -8737,6 +8743,9 @@
       "Confirm password": [
         "パスワードの確認"
       ],
+      "Confirm second password": [
+        "セカンドパスワードを変更"
+      ],
       "Contacts": [
         "連絡先"
       ],
@@ -9082,6 +9091,9 @@
       "New password": [
         "新しいパスワード"
       ],
+      "New second password": [
+        "新しいセカンドパスワード"
+      ],
       "No filter": [
         "フィルターなし"
       ],
@@ -9219,6 +9231,9 @@
       ],
       "Reveal password": [
         "パスワードを表示する"
+      ],
+      "Second password": [
+        "セカンドパスワード"
       ],
       "Security code (${ codeName })": [
         "セキュリティコード (${ codeName })"
@@ -10166,6 +10181,23 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -10195,24 +10227,10 @@
         "${ upsellPlanHumanSize } へアップグレード"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } カレンダー"
       ],
@@ -10432,9 +10450,6 @@
       "Organize items with multiple vaults": [
         "複数の保管庫でアイテムを管理"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - プレミアム機能"
-      ],
       "Passkeys supported": [
         "パスキーに対応しています"
       ],
@@ -10533,9 +10548,6 @@
       ],
       "Unlimited labels": [
         "ラベル制限なし"
-      ],
-      "Unlimited logins and notes": [
-        "無制限のログインとメモ"
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
@@ -14013,6 +14025,9 @@
       "Change role": [
         "役割の変更"
       ],
+      "Change second password": [
+        "セカンドパスワードを変更"
+      ],
       "Choose an account": [
         "アカウントの選択"
       ],
@@ -14346,6 +14361,9 @@
       "Gift code": [
         "ギフトコード"
       ],
+      "Groups": [
+        "グループ"
+      ],
       "History": [
         "履歴"
       ],
@@ -14423,6 +14441,9 @@
       ],
       "Link confirmation": [
         "リンクの確認"
+      ],
+      "Main password": [
+        "メインパスワード"
       ],
       "Messages": [
         "メッセージ"

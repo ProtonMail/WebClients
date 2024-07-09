@@ -190,6 +190,9 @@
       "Change password": [
         "Změnit heslo"
       ],
+      "Change second password": [
+        "Změnit druhé heslo"
+      ],
       "Chat with us": [
         "Chatujte s námi"
       ],
@@ -209,10 +212,10 @@
         "Vymazat veškeré formátování"
       ],
       "Clear filter": [
-        "Vyčistit filtr"
+        "Smazat filtr"
       ],
       "Clear filters": [
-        "Vyčistit filtry"
+        "Smazat filtry"
       ],
       "Close": [
         "Zavřít"
@@ -1136,7 +1139,7 @@
         "Ověřit účet"
       ],
       "Verify domain": [
-        "Ověřte doménu"
+        "Ověřit doménu"
       ],
       "View": [
         "Zobrazit"
@@ -1369,9 +1372,6 @@
       "Browse the web privately and block ads": [
         "Procházejte web soukromě a blokujte reklamu"
       ],
-      "Create and collaborate on documents securely": [
-        "Bezpečně vytvářejte dokumenty a spolupracujte na nich"
-      ],
       "Keep your schedule private": [
         "Udržujte svůj rozvrh v soukromí"
       ],
@@ -1394,6 +1394,9 @@
       "Faster, broader device compatibility": [
         "Rychlejší a s širší kompatibilitou se zařízeními"
       ],
+      "No data transmitted while using, requires one-time download": [
+        "Během používání se nepřenášejí žádná data, vyžaduje jednorázové stažení"
+      ],
       "Run locally": [
         "Lokální fungování"
       ],
@@ -1408,8 +1411,8 @@
       "New": [
         "Nový"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
       ],
       "Trial expires on ${ formattedDate }": [
         "Zkušební doba vyprší ${ formattedDate }"
@@ -1706,6 +1709,9 @@
       ],
       "Custom domain problem": [
         "Problém s vlastní doménou"
+      ],
+      "Docs problem": [
+        "Problém s aplikací Docs"
       ],
       "Drive problem": [
         "Problém s aplikací Drive"
@@ -3488,6 +3494,9 @@
       ]
     },
     "drive_signup_2023: Feature": {
+      "${ totalStorageSize } of storage for free": [
+        "${ totalStorageSize } úložiště zdarma"
+      ],
       "End-to-end encrypted": [
         "Koncově šifrováno"
       ]
@@ -3504,8 +3513,17 @@
       ]
     },
     "drive_signup_2023: Title": {
+      "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
+        "Vytvořte bezplatný účet ${ DRIVE_APP_NAME } pro bezpečný přístup k souboru"
+      ],
+      "Free, encrypted, and secure cloud storage": [
+        "Bezplatné, šifrované a bezpečné cloudové úložiště"
+      ],
       "Secure cloud storage and file sharing that protects your data": [
         "Bezpečné cloudové úložiště a sdílení souborů, které chrání vaše údaje"
+      ],
+      "You're invited to access a file in ${ DRIVE_APP_NAME }": [
+        "Jste pozváni k souboru v ${ DRIVE_APP_NAME }"
       ]
     },
     "Duration": {
@@ -4040,6 +4058,9 @@
       "Could not save preference": [
         "Nelze uložit předvolbu"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "Nelze načíst faktury. Zkuste to prosím později."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
         "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
@@ -4060,6 +4081,9 @@
       ],
       "Email address is invalid": [
         "E-mailová adresa je neplatná"
+      ],
+      "Email address is not available": [
+        "E-mailová adresa není dostupná"
       ],
       "Email address is required": [
         "Je vyžadována e-mailová adresa"
@@ -4117,6 +4141,9 @@
       ],
       "Incorrect password": [
         "Nesprávné heslo"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávné druhé heslo. Zkuste to prosím znovu."
       ],
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
@@ -4213,6 +4240,9 @@
       ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
       ],
       "Organization key must be activated to create non-private users": [
         "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
@@ -4315,6 +4345,9 @@
       ],
       "Require at least one condition": [
         "Vyžaduje alespoň jednu podmínku"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Relace vypršela. Prosím obnovte stránku."
       ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
@@ -6219,6 +6252,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } chce s vámi sdílet data v ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } lze také použít s jediným heslem, které nahradí přihlašovací i druhé heslo. Chcete-li přepnout do režimu jediného hesla, zadejte jediné heslo, které chcete použít, a klikněte na tlačítko Uložit."
+      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
@@ -6487,7 +6523,7 @@
         "Všech (${ totalFoldersCount } štítků)"
       ],
       "All Events ": [
-        "Všechny Události"
+        "Všechny události "
       ],
       "All keys successfully reactivated": [
         "Všechny klíče byly úspěšně znovu aktivovány"
@@ -7230,17 +7266,32 @@
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
       ],
+      "Invitation link expired": [
+        "Odkazu pozvánky vypršela platnost"
+      ],
+      "Invitation link used": [
+        "Odkaz pozvánky použit"
+      ],
       "Invite Accepted": [
         "Pozvánka přijata"
       ],
       "Invite Created": [
-        "Pozvánka Vytvořena"
+        "Pozvánka vytvořena"
       ],
       "Invite deleted": [
         "Pozvánka smazána"
       ],
       "Invite Deleted": [
-        "Pozvánka Smazána"
+        "Pozvánka smazána"
+      ],
+      "Invite for organization accepted": [
+        "Pozvánka pro organizaci přijata"
+      ],
+      "Invite for organization created": [
+        "Pozvánka pro organizaci vytvořena"
+      ],
+      "Invite for User deleted": [
+        "Pozvánka pro uživatele smazána"
       ],
       "Invite rejected": [
         "Pozvánka odmítnuta"
@@ -7257,23 +7308,53 @@
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
       ],
+      "Item Autofilled": [
+        "Položka automaticky vyplněna"
+      ],
+      "Item autofilled in vault": [
+        "Položka automaticky vyplněna v trezoru"
+      ],
+      "Item Changed Flags": [
+        "Změněné příznaky položky"
+      ],
       "Item Created": [
         "Položka vytvořena"
+      ],
+      "Item created in vault": [
+        "Položka v trezoru vytvořena"
       ],
       "Item Deleted": [
         "Položka odstraněna"
       ],
+      "Item deleted in vault": [
+        "Položka v trezoru smazána"
+      ],
+      "Item flags changed in vault": [
+        "Příznaky položky změněny v trezoru"
+      ],
+      "Item in vault untrashed": [
+        "Položka v trezoru přesunuta z koše"
+      ],
       "Item Read": [
         "Položka přečtena"
       ],
+      "Item read in vault": [
+        "Položka v trezoru přečtena"
+      ],
       "Item Trashed": [
         "Položka přesunuta do koše"
+      ],
+      "Item trashed in vault": [
+        "Položka v trezoru přesunuta do koše"
       ],
       "Item Untrashed": [
         "Položka přesunuta z koše"
       ],
       "Item Updated": [
         "Položka aktualizována"
+      ],
+      "Item updated in vault": [
+        "Položka v trezoru aktualizována"
       ],
       "it’s imperative": [
         "je to nezbytně nutné"
@@ -7432,7 +7513,13 @@
         "NetShield je funkce blokování reklam od ${ VPN_APP_NAME }, která chrání vaše zařízení před reklamami, sledovacímí prvky a malware."
       ],
       "New": [
-        "Nový"
+        "Nově"
+      ],
+      "New User Invite Created": [
+        "Nová uživatelská pozvánka vytvořena"
+      ],
+      "New User Invite Deleted": [
+        "Nová uživatelská pozvánka smazána"
       ],
       "No account keys exist": [
         "Neexistují žádné klíče k účtu"
@@ -7834,13 +7921,19 @@
         "Nastavení aktualizováno"
       ],
       "Share Created": [
-        "Sdílet Vytvořené"
+        "Sdílení vytvořeno"
       ],
       "Share Deleted": [
-        "Sdílet Smazané"
+        "Sdílení smazáno"
       ],
       "Share Updated": [
-        "Sdílet Aktualizované"
+        "Sdílení aktualizováno"
+      ],
+      "Shared vault deleted": [
+        "Sdílený trezor smazán"
+      ],
+      "Shared vault updated": [
+        "Sdílený trezor aktualizován"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zobrazení obrázku každého odesílatele v seznamu zpráv. Pokud není k dispozici fotka, zobrazí se iniciály odesílatele."
@@ -8043,6 +8136,12 @@
       "This file is too large to preview": [
         "Tento soubor je pro náhled příliš velký"
       ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Tomuto odkazu pozvánky vypršela platnost. Kontaktujte prosím správce a požádejte ho o přístup."
+      ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Odkaz pozvánky je již použit. Místo toho se prosím přihlaste přímo."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráze, kterou jste byli vyzváni nastavit."
       ],
@@ -8051,6 +8150,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Toto je šifrovací klíč, který jste si možná dříve uložili."
+      ],
+      "This is an invitation from:": [
+        "Tato pozvánka je od:"
       ],
       "This is the password you used before the password reset.": [
         "Toto heslo jste použili předtím, než jste ho resetovali."
@@ -8078,6 +8180,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
+      ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Toto ověření může trvat až jednu hodinu. Po úspěšném ověření neodebírejte záznam TXT, protože je potřebný k potvrzení, že jste nadále vlastníkem domény."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
@@ -8208,6 +8313,12 @@
       "Two-factor authentication enabled": [
         "Dvoufázové ověřování zapnuto"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Režim dvou hesel vyžaduje dvě hesla: jedno pro přihlášení k účtu a druhé pro dešifrování dat. (Pokročilé)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Režim se dvěma hesly využívá dvě samostatná hesla pro přihlášení a dešifrování dat. V určitých situacích to zvyšuje bezpečnost, nicméně pro většinu uživatelů je vhodné používat režim jednoho hesla. Chcete-li přepnout do režimu se dvěma hesly, nejprve zadejte své přihlašovací heslo, a poté druhé heslo."
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nelze ověřit podpis souboru pro obnovení. Kontaktujte podporu."
       ],
@@ -8216,6 +8327,9 @@
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikátní ID vygenerované vyším poskytovatelem identity. Obvykle má podobu URL adresy, která obsahuje jméno vašeho poskytovatele identity (např. https://idp.example.com/XXXXX)."
+      ],
+      "Unknown event type": [
+        "Neznámý typ události"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Pokud se neodhlásíte z účtu nebo nezměníte heslo, Vaše relace zůstane aktivní. Relace vyprší po 60 dnech nečinnosti."
@@ -8292,6 +8406,9 @@
       "User activated": [
         "Uživatel aktivován"
       ],
+      "User invited to organization": [
+        "Uživatel byl pozván do organizace"
+      ],
       "username": [
         "uživatelské jméno"
       ],
@@ -8302,19 +8419,22 @@
         "Trezor vytvořen"
       ],
       "Vault Created": [
-        "Trezor Vytvořen"
+        "Trezor vytvořen"
       ],
       "Vault deleted": [
         "Trezor smazán"
       ],
       "Vault Deleted": [
-        "Trezor Smazán"
+        "Trezor smazán"
+      ],
+      "Vault shared with email": [
+        "Trezor sdílený e-mailem"
       ],
       "Vault updated": [
         "Trezor aktualizován"
       ],
       "Vault Updated": [
-        "Trezor Aktualizován"
+        "Trezor aktualizován"
       ],
       "Verification can take a few minutes.": [
         "Ověřování může trvat několik minut."
@@ -8513,6 +8633,18 @@
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a ${ usedAI } ze své ${ maxAI } dostupné licence asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze své ${ maxAI } dostupné licence asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence.",
@@ -9475,6 +9607,9 @@
       "Confirm password": [
         "Potvrdit heslo"
       ],
+      "Confirm second password": [
+        "Potvrdit druhé heslo"
+      ],
       "Contacts": [
         "Kontakty"
       ],
@@ -9832,6 +9967,9 @@
       "New password": [
         "Nové heslo"
       ],
+      "New second password": [
+        "Nové druhé heslo"
+      ],
       "No filter": [
         "Žádný filtr"
       ],
@@ -10059,6 +10197,9 @@
       ],
       "Swipe left action": [
         "Přejetí doleva"
+      ],
+      "Swipe right action": [
+        "Přejetí doprava"
       ],
       "Synchronize with system": [
         "Synchronizovat se systémem"
@@ -10599,14 +10740,29 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Přidat asistenta psaní"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy"
+      ],
+      "An encrypted email service that puts your privacy first": [
+        "Šifrovaná e-mailová služba, která upřednostňuje vaše soukromí"
       ],
       "Encrypted email and calendar to get you started": [
         "Šifrovaný e-mail a kalendář na začátek"
       ],
+      "Encrypted solutions to protect your entire business": [
+        "Šifrovaná řešení pro kompletní ochranu vašeho podnikání"
+      ],
       "Enhanced security and premium features for teams": [
         "Vylepšené zabezpečení a prémiové funkce pro týmy"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Časově omezená nabídka: **Získejte až 35% slevu** z ročních tarifů"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Byli jste pozváni k vyzkoušení ${ MAIL_APP_NAME }"
@@ -10709,11 +10865,17 @@
       "Delete": [
         "Odstranit"
       ],
+      "Delete and revoke invite": [
+        "Smazat a zrušit pozvánku"
+      ],
       "Edit": [
         "Upravit"
       ],
       "Remove": [
         "Odebrat"
+      ],
+      "Resend invite link": [
+        "Znovu poslat odkaz pozvánky"
       ],
       "Revoke sessions": [
         "Odhlásit z relací"
@@ -11036,6 +11198,23 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -11065,24 +11244,10 @@
         "Přejít na ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendář",
         "${ n } kalendáře",
@@ -11208,6 +11373,9 @@
       ],
       "Advanced sharing security": [
         "Pokročilé zabezpečení sdílení"
+      ],
+      "All ${ BRAND_NAME } services": [
+        "Všechny ${ BRAND_NAME } služby"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
@@ -11365,9 +11533,6 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - prémiové funkce"
-      ],
       "Passkeys supported": [
         "Přístupové klíče podporovány"
       ],
@@ -11467,6 +11632,9 @@
       "Strict no-logs policy": [
         "Přísné zásady neukládání záznamů"
       ],
+      "Tailored to your needs": [
+        "Na míru vaším potřebám"
+      ],
       "Tor over VPN": [
         "TOR skrze VPN"
       ],
@@ -11494,8 +11662,8 @@
       "Unlimited labels": [
         "Neomezeně štítků"
       ],
-      "Unlimited logins and notes": [
-        "Neomezený počet přihlášení a poznámek"
+      "Unlimited logins, notes and credit cards": [
+        "Neomezený počet přihlášení, poznámek a platebních karet"
       ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
@@ -12062,6 +12230,9 @@
       ],
       "Invalid code": [
         "Neplatný kód"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Neplatný vstup. Hledejte e-mail nebo IP adresu."
       ],
       "IP Address copied to clipboard": [
         "IP adresa zkopírována do schránky"
@@ -12732,6 +12903,9 @@
       "Current plan": [
         "Aktuální tarif"
       ],
+      "Customizable services for large teams.": [
+        "Přizpůsobitelné služby pro velké týmy."
+      ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Pro používání ${ PASS_APP_NAME } si stáhněte a nainstalujte příslušné aplikace a rozšíření."
       ],
@@ -12852,17 +13026,23 @@
       "Save your recovery kit to continue": [
         "Chcete-li pokračovat, uložte sadu pro obnovu"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Zabezpečené sdílení s ${ n } trezorem",
-        "Zabezpečené sdílení s ${ n } trezory",
-        "Zabezpečené sdílení s ${ n } trezory",
-        "Zabezpečené sdílení s ${ n } trezory"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Zabezpečené sdílení s více trezory"
+      "Secure vault and link sharing": [
+        "Bezpečné sdílení trezoru a odkazu"
       ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpečné sdílení trezoru (${ n } trezor)",
+        "Bezpečné sdílení trezoru (${ n } trezory)",
+        "Bezpečné sdílení trezoru (${ n } trezorů)",
+        "Bezpečné sdílení trezoru (${ n } trezorů)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpečné sdílení trezoru (${ n } trezor) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ],
       "Secured by end-to-end encryption": [
         "Zabezpečeno koncovým šifrováním"
@@ -13064,6 +13244,9 @@
       ],
       "Payment Processing": [
         "Zpracování platby"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
       "Processing payment": [
         "Zpracovávání platby"
@@ -13490,6 +13673,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Předpoklad:** ověření SAML musí být nastaveno pro povolení zprovoznění SCIM."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Předpoklad:** pro povolení zprovozňování SCIM, je nutné ověřit vlastnictví domény **${ domainName }**. Toto ověření může trvat až jednu hodinu."
       ],
       "Enter token into your identity provider": [
         "Zadejte token do vašeho poskytovatele identity"
@@ -14208,11 +14394,6 @@
         "Navýšit"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Navýšit"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } měsíc",
@@ -14497,6 +14678,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikovaný server",
         "${ ipAddresses } dedikované servery",
@@ -15232,6 +15419,9 @@
       "Domain deleted": [
         "Doména byla odstraněna"
       ],
+      "Invitation resent": [
+        "Pozvánka znovu odeslána"
+      ],
       "Sessions revoked": [
         "Relace byla zrušena"
       ],
@@ -15295,6 +15485,9 @@
     "Suffix for price": {
       "per month": [
         "za měsíc"
+      ],
+      "per user per month": [
+        "za uživatele měsíčně"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15369,7 +15562,7 @@
         "Importovat"
       ],
       "Invitation email": [
-        "E-mail pozvánky:"
+        "E-mail pozvánky"
       ],
       "List": [
         "Seznam"
@@ -15650,6 +15843,9 @@
       ],
       "Change role": [
         "Změnit roli"
+      ],
+      "Change second password": [
+        "Změnit druhé heslo"
       ],
       "Choose an account": [
         "Vybrat účet"
@@ -16019,6 +16215,9 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Groups": [
+        "Skupiny"
       ],
       "History": [
         "Historie"
@@ -16967,6 +17166,9 @@
       "Admin": [
         "Administrátor"
       ],
+      "An invitation will be sent to this email address.": [
+        "Na tuto adresu bude odeslána pozvánka."
+      ],
       "Cancel": [
         "Zrušit"
       ],
@@ -16975,6 +17177,9 @@
       ],
       "Create password": [
         "Vytvořit heslo"
+      ],
+      "Create password instead": [
+        "Místo toho vytvořit heslo"
       ],
       "Create user": [
         "Vytvořit uživatele"
@@ -16988,6 +17193,9 @@
       "Name": [
         "Název"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Nová ${ BRAND_NAME } e-mailová adresa"
+      ],
       "Optional": [
         "Volitelné"
       ],
@@ -16996,6 +17204,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
+      ],
+      "Send invite link via email instead": [
+        "Místo toho poslat pozvánku přes e-mail"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Toto vytvoří novou adresu ${ MAIL_APP_NAME }."
       ],
       "User created": [
         "Uživatel vytvořen"
@@ -17008,6 +17222,12 @@
       ]
     },
     "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Správci nemají přístup k datům soukromých uživatelů"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Pozvánka odeslána, čeká se na odpověď od pozvaného uživatele"
+      ],
       "Invite sent": [
         "Pozvánka odeslána"
       ],
@@ -17244,8 +17464,14 @@
       "Please add at least one recipient.": [
         "Zadejte alespoň jednoho příjemce."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Zkontrolujte prosím, že je rozšíření správně nainstalováno a povoleno"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Berte prosím na vědomí, že výběrem této platební metody nemůže být váš účet navýšen okamžitě. Předplatné vašeho účtu aktualizujeme v momentě, kdy bude proces platební transakce ukončen."
+      ],
+      "Please update the extension to its latest version": [
+        "Prosím, aktualizujte rozšíření na jeho nejnovější verzi"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
