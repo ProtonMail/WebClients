@@ -10,7 +10,7 @@ const handleUrlResolve = (url) => {
     return true;
 };
 
-module.exports = ({ browserslist, logical }) => {
+module.exports = ({ browserslist, logical, webpackOnCaffeine }) => {
     const sassLoaders = [
         {
             loader: require.resolve('css-loader'),
@@ -33,14 +33,19 @@ module.exports = ({ browserslist, logical }) => {
                 },
             },
         },
+        !webpackOnCaffeine && {
+            loader: require.resolve('resolve-url-loader'),
+        },
         {
             loader: require.resolve('sass-loader'),
-            options: {
-                implementation: require('sass'),
-                sassOptions: {
-                    outputStyle: 'compressed',
-                },
-            },
+            options: webpackOnCaffeine
+                ? {
+                      implementation: require('sass'),
+                      sassOptions: {
+                          outputStyle: 'compressed',
+                      },
+                  }
+                : {},
         },
     ].filter(Boolean);
 
