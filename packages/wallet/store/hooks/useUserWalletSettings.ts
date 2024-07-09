@@ -1,4 +1,4 @@
-import { WasmUserSettings } from '@proton/andromeda';
+import { type WasmUserSettings } from '@proton/andromeda';
 import { createHooks } from '@proton/redux-utilities';
 
 import { DEFAULT_DISPLAY_BITCOIN_UNIT, DEFAULT_FIAT_CURRENCY } from '../../constants/bitcoin';
