@@ -665,6 +665,11 @@
         "Uscendo ora, alcuni eventi potrebbero non essere importati"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "File ICS vuoto"
@@ -5044,6 +5049,14 @@
         "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichette su ${ itemsToImportCount } ed etichettali come"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Aggiungi l'assistente alla scrittura"
+      ],
+      "for ${ price }": [
+        "per ${ price }"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Applicazione desktop di ${ MAIL_APP_NAME }"
@@ -5392,6 +5405,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendari"
@@ -5623,9 +5639,6 @@
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funzionalità premium"
-      ],
       "Passkeys supported": [
         "Passkey supportate"
       ],
@@ -5738,8 +5751,8 @@
       "Unlimited labels": [
         "Etichette illimitate"
       ],
-      "Unlimited logins and notes": [
-        "Login e note illimitati"
+      "Unlimited logins, notes and credit cards": [
+        "Accessi, note e carte di credito illimitati"
       ],
       "Unlimited messages per day": [
         "Messaggi illimitati al giorno"
@@ -6416,15 +6429,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Condivisione sicura con ${ n } cassaforte",
-        "Condivisione sicura con ${ n } casseforti"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Condivisione sicura con più casseforti"
+      "Secure vault and link sharing": [
+        "Cassaforte sicura e condivisione dei collegamenti"
       ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Condivisione sicura della cassaforte (${ n } cassaforte)",
+        "Condivisione sicura delle casseforti (${ n } casseforti)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Condivisione sicura della cassaforte (${ n } cassaforte) e condivisione dei collegamenti",
+        "Condivisione sicura delle casseforti (${ n } casseforti) e condivisione dei collegamenti"
       ]
     },
     "Payment method option": {
@@ -6456,6 +6473,9 @@
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La tariffa scontata, con un prezzo speciale di ${ priceWithDiscount }, è valida per i primi ${ months }. Il coupon è valido per ${ couponRedemptions } rinnovi. Il piano si rinnoverà poi automaticamente a ${ price } ogni ${ months }. Puoi annullare in qualsiasi momento."
@@ -7421,6 +7441,9 @@
     "Suffix for price": {
       "per month": [
         "al mese"
+      ],
+      "per user per month": [
+        "per utente al mese"
       ]
     },
     "summer2023: Tooltip": {
