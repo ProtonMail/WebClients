@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 
 import { IWasmApiWalletData } from '../types';
 

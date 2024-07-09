@@ -21,7 +21,6 @@ import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
-import { ExtendedApiProvider } from '@proton/wallet';
 
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
@@ -74,36 +73,31 @@ const App = () => {
                     <ProtonStoreProvider store={state.store}>
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
                             <ApiProvider api={extraThunkArguments.api}>
-                                <ExtendedApiProvider walletApi={extraThunkArguments.walletApi}>
-                                    <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                        <FlagProvider
-                                            unleashClient={extraThunkArguments.unleashClient}
-                                            startClient={false}
-                                        >
-                                            <Router history={extraThunkArguments.history}>
-                                                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                    <CalendarModelEventManagerProvider
-                                                        calendarModelEventManager={
-                                                            extraThunkArguments.calendarModelEventManager
-                                                        }
-                                                    >
-                                                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                            <StandardPrivateApp
-                                                                hasReadableMemberKeyActivation
-                                                                hasMemberKeyMigration
-                                                                hasPrivateMemberKeyGeneration
-                                                                noModals
-                                                                loader={loader}
-                                                            >
-                                                                <state.MainContainer />
-                                                            </StandardPrivateApp>
-                                                        </ErrorBoundary>
-                                                    </CalendarModelEventManagerProvider>
-                                                </EventManagerProvider>
-                                            </Router>
-                                        </FlagProvider>
-                                    </DrawerProvider>
-                                </ExtendedApiProvider>
+                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                        <Router history={extraThunkArguments.history}>
+                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                                <CalendarModelEventManagerProvider
+                                                    calendarModelEventManager={
+                                                        extraThunkArguments.calendarModelEventManager
+                                                    }
+                                                >
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp
+                                                            hasReadableMemberKeyActivation
+                                                            hasMemberKeyMigration
+                                                            hasPrivateMemberKeyGeneration
+                                                            noModals
+                                                            loader={loader}
+                                                        >
+                                                            <state.MainContainer />
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
+                                                </CalendarModelEventManagerProvider>
+                                            </EventManagerProvider>
+                                        </Router>
+                                    </FlagProvider>
+                                </DrawerProvider>
                             </ApiProvider>
                         </AuthenticationProvider>
                     </ProtonStoreProvider>
