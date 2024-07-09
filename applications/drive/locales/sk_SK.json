@@ -989,6 +989,11 @@
         "Aplikácia ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Prázdny súbor ICS"
@@ -1163,6 +1168,9 @@
       ],
       "Custom domain problem": [
         "Problém s vlastnou doménou"
+      ],
+      "Docs problem": [
+        "Problém s aplikáciou Docs"
       ],
       "Drive problem": [
         "Problém s aplikáciou Drive"
@@ -4762,6 +4770,9 @@
       "Photos have been successfully recovered.": [
         "Fotografie boli úspešne obnovené."
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Požiadajte vlastníka, aby vás do dokumentu priamo pozval."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Overte svoju kartu v okne overenia."
       ],
@@ -4785,6 +4796,9 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ creditsRemaining }."
+      ],
+      "Please open the document to view it.": [
+        "Ak si chcete dokument pozrieť, otvorte ho, prosím."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Na vytvorenie skupiny zadajte meno a emailovú adresu, prosím."
@@ -4837,6 +4851,9 @@
       "Preview for this file type is not supported": [
         "Ukážka tohto typu súboru nie je podporovaná"
       ],
+      "Preview of documents is not yet supported.": [
+        "Náhľady dokumentov zatiaľ nie sú podporované."
+      ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Predošlé verzie sú uchované na ${ retentionLabel }"
       ],
@@ -4851,6 +4868,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Súkromné vyhľadávanie povolené. Môžete teraz zatvoriť tento dialóg a vyhľadávať súbory a priečinky."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
       ],
       "Queued": [
         "V poradí"
@@ -6333,6 +6353,14 @@
         "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítkov a označiť ich štítkom"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Pridať asistenta písania"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Získať ponuku"
@@ -6659,6 +6687,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendár",
         "${ n } kalendáre",
@@ -6920,9 +6951,6 @@
       "Organize items with multiple vaults": [
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - prémiové funkcie"
-      ],
       "Passkeys supported": [
         "Podpora prístupových kľúčov"
       ],
@@ -7037,8 +7065,8 @@
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
       ],
-      "Unlimited logins and notes": [
-        "Neobmedzený počet prihlásení a poznámok"
+      "Unlimited logins, notes and credit cards": [
+        "Neobmedzené prihlásenia, poznámky a platobné karty"
       ],
       "Unlimited messages per day": [
         "Neobmedzený počet správ za deň"
@@ -7876,17 +7904,23 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Bezpečné zdieľanie s ${ n } trezorom",
-        "Bezpečné zdieľanie s ${ n } trezormi",
-        "Bezpečné zdieľanie s ${ n } trezormi",
-        "Bezpečné zdieľanie s ${ n } trezormi"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Bezpečné zdieľanie s viacerými trezormi"
+      "Secure vault and link sharing": [
+        "Zabezpečený trezor a zdieľanie odkazov"
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpečné zdieľanie trezora (${ n } trezor)",
+        "Bezpečné zdieľanie trezorov (${ n } trezory)",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov)",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpečné zdieľanie trezora (${ n } trezor) a zdieľanie odkazu",
+        "Bezpečné zdieľanie trezorov (${ n } trezory) a zdieľanie odkazu",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
       ]
     },
     "Payment method option": {
@@ -7910,8 +7944,17 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Rozumiem"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Spracovanie platby"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvých ${ months }. Kupón je platný na ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ price } na ${ months }. Službu môžete kedykoľvek zrušiť."
@@ -7924,6 +7967,9 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Spracovávame vašu platbu za vyúčtovanú faktúru. Pred vykonaním zmien vo vašom pláne alebo aktualizáciou platobných údajov počkajte, kým bude platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ]
     },
     "Payments.Error": {
@@ -8576,11 +8622,6 @@
       ],
       "Upgrade": [
         "Inovovať"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "specialoffer: Offers": {
@@ -9404,6 +9445,9 @@
     "Suffix for price": {
       "per month": [
         "mesačne"
+      ],
+      "per user per month": [
+        "za používateľa mesačne"
       ]
     },
     "summer2023: Tooltip": {
