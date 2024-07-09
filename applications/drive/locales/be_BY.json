@@ -222,9 +222,6 @@
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
-      "Create Document": [
-        "Стварыць дакумент"
-      ],
       "Create link": [
         "Стварыць спасылку"
       ],
@@ -990,6 +987,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Праграмы ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
     "Attached ics file error": {
@@ -5050,9 +5052,6 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што гэтыя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
-      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
-        "Новая функцыя Documents патрабуе апошнюю версію ${ DRIVE_APP_NAME }. Абнавіце праграму на мабільнай прыладзе і камп'ютары для бясшвовага выкарыстання."
-      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
       ],
@@ -5228,7 +5227,7 @@
         "Запампоўванне"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        "Запампоўванне сотняў файлаў адразу можа паўплываць на прадукцыйнасць."
+        "Запампоўванне сотняў файлаў адначасова можа паўплываць на прадукцыйнасць."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Выкарыстоўвайце гэту форму, каб апавясціць нас пра непрымальны, недапушчальны або іншы падазроны абагулены файл. Вы збіраецеся паскардзіцца:"
@@ -6354,6 +6353,14 @@
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Дадаць памочніка ў напісанні"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -6731,6 +6738,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -6992,9 +7002,6 @@
       "Organize items with multiple vaults": [
         "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - прэміяльныя функцыі"
-      ],
       "Passkeys supported": [
         "Падтрымліваюцца ключы доступу"
       ],
@@ -7109,8 +7116,8 @@
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
       ],
-      "Unlimited logins and notes": [
-        "Неабмежаваная колькасць запісаў уваходу і нататак"
+      "Unlimited logins, notes and credit cards": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
@@ -7948,17 +7955,23 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Бяспечнае абагульванне з ${ n } сховішчам",
-        "Бяспечнае абагульванне з ${ n } сховішчамі",
-        "Бяспечнае абагульванне з ${ n } сховішчамі",
-        "Бяспечнае абагульванне з ${ n } сховішчамі"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Бяспечнае абагульванне з некалькімі сховішчамі"
+      "Secure vault and link sharing": [
+        "Бяспечнае сховішча і абагульванне спасылкі"
       ],
       "Secure vault sharing": [
         "Бяспечнае абагульванне сховішча"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Бяспечнае абагульванне сховішча (${ n } сховішча)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчы)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Бяспечнае абагульванне сховішча (${ n } сховішча) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
+        "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
       ]
     },
     "Payment method option": {
@@ -7990,6 +8003,9 @@
       ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы ${ months }. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за ${ months } месяцы. Скасаваць можна ў любы момант."
@@ -8655,11 +8671,6 @@
       "Go to subscription plans": [
         "Перайсці да тарыфных планаў"
       ],
-      "Upgrade": [
-        "Палепшыць"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Палепшыць"
       ]
@@ -9488,6 +9499,9 @@
     "Suffix for price": {
       "per month": [
         "у месяц"
+      ],
+      "per user per month": [
+        "на карыстальніка ў месяц"
       ]
     },
     "summer2023: Tooltip": {
@@ -9811,9 +9825,6 @@
       ],
       "Discard changes?": [
         "Адхіліць змены?"
-      ],
-      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
-        "Дакументы Docs - гэта новая функцыя ў ${ DRIVE_APP_NAME }"
       ],
       "Downgrade account": [
         "Панізіць уліковы запіс"

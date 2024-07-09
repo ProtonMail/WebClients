@@ -220,9 +220,6 @@
       "Create and copy alias": [
         "Créer et copier l'alias"
       ],
-      "Create Document": [
-        "Créer un document"
-      ],
       "Create link": [
         "Créer un lien"
       ],
@@ -394,7 +391,7 @@
         "Aller au panneau ${ index }"
       ],
       "Go to parent": [
-        "Revenir au dossier parent"
+        "Revenir au dossier principal"
       ],
       "Go to settings": [
         "Accéder aux paramètres"
@@ -974,6 +971,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "applications ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
       ]
     },
     "Attached ics file error": {
@@ -4894,9 +4896,6 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Les éléments suivants ont peut-être été falsifiés : ${ items }. N'ouvrez que si vous avez confiance."
       ],
-      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
-        "La nouvelle fonction Documents nécessite la version la plus récente de ${ DRIVE_APP_NAME }. Veuillez actualiser vos applications sur votre appareil mobile et ordinateur pour bénéficier d'une expérience optimale."
-      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
       ],
@@ -6168,6 +6167,14 @@
         "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Ajouter l'assistant d'écriture"
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "J'en profite"
@@ -6494,6 +6501,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
@@ -6725,9 +6735,6 @@
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - fonctionnalités premium"
-      ],
       "Passkeys supported": [
         "Les clés d'accès sont prises en charge."
       ],
@@ -6840,8 +6847,8 @@
       "Unlimited labels": [
         "Nombre illimité de labels"
       ],
-      "Unlimited logins and notes": [
-        "Nombre illimité de connexions et de notes"
+      "Unlimited logins, notes and credit cards": [
+        "Nombre illimité de connexions, de notes et de cartes de crédit"
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
@@ -7639,15 +7646,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Partage sécurisé avec ${ n } coffre-fort",
-        "Partage sécurisé avec ${ n } coffre-forts"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Partage sécurisé avec plusieurs coffres-forts"
+      "Secure vault and link sharing": [
+        "Coffre-fort sécurisé et partage de liens"
       ],
       "Secure vault sharing": [
         "Partage sécurisé de coffre-fort"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort)",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
+        "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
       ]
     },
     "Payment method option": {
@@ -7672,13 +7683,16 @@
         "CVC"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "MM/YY": [
         "MM/AA"
       ],
       "Payment Processing": [
         "Traitement des paiements"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Veuillez réactiver votre abonnement avant de diminuer le nombre d'extensions."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Le tarif réduit de ${ priceWithDiscount } s'applique pendant les ${ months } premiers mois. Le code cadeau est valable pour ${ couponRedemptions } renouvellement. L'abonnement sera ensuite reconduit automatiquement à ${ price } pendant ${ months } mois. Vous pouvez annuler à tout moment."
@@ -8302,11 +8316,6 @@
       "Go to subscription plans": [
         "Voir les abonnements"
       ],
-      "Upgrade": [
-        "Passez à Premium"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Passez à Premium"
       ]
@@ -9105,6 +9114,9 @@
     "Suffix for price": {
       "per month": [
         "par mois"
+      ],
+      "per user per month": [
+        "par utilisateur par mois"
       ]
     },
     "summer2023: Tooltip": {
@@ -9403,9 +9415,6 @@
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
-      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
-        "Docs est une nouvelle fonctionnalité de ${ DRIVE_APP_NAME }."
-      ],
       "Downgrade account": [
         "Passer à un abonnement inférieur"
       ],
@@ -9622,7 +9631,7 @@
         "Traitement en cours…"
       ],
       "Public shared link status": [
-        "État du lien partagé public"
+        "État du lien public partagé"
       ],
       "Re-sign all contacts": [
         "Signer à nouveau tous les contacts"
