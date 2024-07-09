@@ -1,5 +1,6 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
+import { useFlag } from '@proton/components/containers';
 import { querySharedURLFileRevision, querySharedURLSecurity } from '@proton/shared/lib/api/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { SharedFileScan, SharedURLRevision, ThumbnailURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -28,6 +29,8 @@ export default function usePublicDownload() {
     const { getLinkPrivateKey, getLinkSessionKey } = useLink();
     const { loadChildren, getCachedChildren } = usePublicLinksListing();
 
+    // TODO: DRVWEB-4064 - Clean this up
+    const isNewFolderTreeAlgorithmEnabled = useFlag('DriveWebDownloadNewFolderLoaderAlgorithm');
     const getChildren = async (abortSignal: AbortSignal, token: string, linkId: string): Promise<DecryptedLink[]> => {
         await loadChildren(abortSignal, token, linkId, false);
         const { links } = getCachedChildren(abortSignal, token, linkId);
@@ -105,6 +108,8 @@ export default function usePublicDownload() {
                 onSignatureIssue: undefined,
             },
             log,
+            isNewFolderTreeAlgorithmEnabled,
+            request,
             options
         );
     };
@@ -135,15 +140,20 @@ export default function usePublicDownload() {
         list: LinkDownload[],
         eventCallbacks?: DownloadEventCallbacks
     ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
-        const controls = initDownloadStream(list, {
-            getChildren,
-            getBlocks,
-            getKeys: async (abortSignal: AbortSignal, link: LinkDownload) => {
-                return getKeys(abortSignal, link.shareId, link.linkId);
+        const controls = initDownloadStream(
+            list,
+            {
+                getChildren,
+                getBlocks,
+                getKeys: async (abortSignal: AbortSignal, link: LinkDownload) => {
+                    return getKeys(abortSignal, link.shareId, link.linkId);
+                },
+                scanFilesHash,
+                ...eventCallbacks,
             },
-            scanFilesHash,
-            ...eventCallbacks,
-        });
+            isNewFolderTreeAlgorithmEnabled,
+            request
+        );
         const stream = controls.start();
         return { controls, stream };
     };
