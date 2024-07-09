@@ -6139,6 +6139,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -6364,9 +6367,6 @@
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premium functies"
-      ],
       "Passkeys supported": [
         "Toegangscodes ondersteund"
       ],
@@ -6475,9 +6475,6 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
-      ],
-      "Unlimited logins and notes": [
-        "Onbeperkt aantal wachtwoorden en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -7198,13 +7195,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Veilig delen met kluis ${ n }",
-        "Veilig delen met ${ n } kluizen"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Veilig delen met meerdere kluizen"
-      ],
       "Secure vault sharing": [
         "Veilig delen van kluis"
       ]
@@ -7906,11 +7896,6 @@
       "Go to subscription plans": [
         "Naar abonnementen"
       ],
-      "Upgrade": [
-        "Upgraden"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Upgraden"
       ]

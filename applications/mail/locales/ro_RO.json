@@ -821,10 +821,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1538,6 +1538,11 @@
         "Rulare pe servere."
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Fișier ICS gol."
@@ -1717,6 +1722,9 @@
       ],
       "Custom domain problem": [
         "Problemă domeniu personal"
+      ],
+      "Docs problem": [
+        "Problemă Docs"
       ],
       "Drive problem": [
         "Problemă „Drive”"
@@ -8613,6 +8621,14 @@
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Adăugare asistent de scriere"
+      ],
+      "for ${ price }": [
+        "cu ${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arhivă"
@@ -8936,6 +8952,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } și ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -9182,9 +9201,6 @@
       "Organize items with multiple vaults": [
         "Organizați articole cu seifuri multiple"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funcții premium"
-      ],
       "Passkeys supported": [
         "Chei de acces suportate"
       ],
@@ -9298,8 +9314,8 @@
       "Unlimited labels": [
         "Etichete nelimitate"
       ],
-      "Unlimited logins and notes": [
-        "Date de autentificare și note nelimitate"
+      "Unlimited logins, notes and credit cards": [
+        "Date de autentificare, note și carduri de credit nelimitate"
       ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
@@ -9362,7 +9378,7 @@
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilizați propria adresă de domeniu pentru e-mail, de ex., nume@adresapersonala.com."
+        "Utilizați propria adresă de domeniu pentru e-mail. De exemplu: nume@adresapersonala.ro"
       ]
     },
     "new_plans: heading": {
@@ -9479,7 +9495,7 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare bilaterală. Include suport pentru calendare personalizate, calendare partajate și multe altele."
+        "${ CALENDAR_APP_NAME }: Asigurați-vă programul personal cu criptarea bilaterală. Include suport pentru calendare personale, calendare partajate și multe altele."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include istoricul versiunilor, partajarea fișierelor criptate și multe altele."
@@ -9655,13 +9671,13 @@
         "NetShield special conceput să vă protejeze dispozitivul și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
-        "Spațiul de stocare este partajat între aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } și${ PASS_APP_NAME }."
+        "Spațiul de stocare este partajat între aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } și ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }. Administratorii pot aloca spațiu de stocare diferit utilizatorilor din organizația lor."
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
-        "Spațiul de stocare este partajat între utilizatori în aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } și${ PASS_APP_NAME }."
+        "Spațiul de stocare este partajat între utilizatori în aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } și ${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
@@ -9670,7 +9686,7 @@
         "Încărcați sigla companiei proprii pentru a vă personaliza experiența echipei în aplicațiile web ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Utilizați propriile adrese de domeniu de e-mail, de exemplu, nume@adresapersonala.com"
+        "Utilizați propria adresă de domeniu pentru e-mail. De exemplu: nume@adresapersonala.ro"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Nu păstrăm jurnale ale activității online și nu înregistrăm metadate care vă pot compromite confidențialitatea."
@@ -9938,16 +9954,21 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Partajare sigură cu ${ n } seif",
-        "Partajare sigură cu ${ n } seifuri",
-        "Partajare sigură cu ${ n } de seifuri"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Partajare sigură cu seifuri multiple"
+      "Secure vault and link sharing": [
+        "Partajare sigură seif și legături web"
       ],
       "Secure vault sharing": [
         "Partajare sigură a seifurilor"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Partajare securizată seif (${ n } seif)",
+        "Partajare securizată seifuri (${ n } seifuri)",
+        "Partajare securizată seifuri (${ n } de seifuri)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Partajare securizată seif (${ n } seif) și legături web",
+        "Partajare securizată seifuri (${ n } seifuri) și legături web",
+        "Partajare securizată seifuri (${ n } de seifuri) și legături web"
       ]
     },
     "passwordless": {
@@ -9993,6 +10014,9 @@
       ],
       "Payment Processing": [
         "Se procesează plata"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactivați mai întâi abonamentul pentru a reduce numărul de suplimente."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Prețul cu reducere specială de ${ priceWithDiscount } este valabil pentru primele ${ months } luni. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi va fi reînnoit automat cu prețul de ${ price } timp de ${ months } luni. Puteți anula oricând."
@@ -10914,11 +10938,6 @@
       "Go to subscription plans": [
         "Accesare planuri abonamente"
       ],
-      "Upgrade": [
-        "Modificare"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Modificare"
       ]
@@ -11972,6 +11991,9 @@
     "Suffix for price": {
       "per month": [
         "pe lună"
+      ],
+      "per user per month": [
+        "per utilizator per lună"
       ]
     },
     "summer2023: Tooltip": {

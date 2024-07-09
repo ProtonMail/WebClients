@@ -1372,9 +1372,6 @@
       "Browse the web privately and block ads": [
         "Просматривайте веб-страницы в приватном режиме и блокируйте рекламу"
       ],
-      "Create and collaborate on documents securely": [
-        "Создавайте документы и работайте над ними в защищенном режиме"
-      ],
       "Keep your schedule private": [
         "Сохраняйте конфиденциальность своего расписания"
       ],
@@ -1414,8 +1411,8 @@
       "New": [
         "Новый"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
       ],
       "Trial expires on ${ formattedDate }": [
         "Пробный период истекает ${ formattedDate }"
@@ -1712,6 +1709,9 @@
       ],
       "Custom domain problem": [
         "Проблема своих доменов"
+      ],
+      "Docs problem": [
+        "Проблема с документами"
       ],
       "Drive problem": [
         "Проблема Drive"
@@ -10734,6 +10734,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Добавить помощника по написанию"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса"
       ],
@@ -10748,6 +10751,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Повышенная безопасность и платные функции для команд"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Предложение ограничено по времени: **Получите скидку до 35%** на годовые тарифы"
@@ -11186,6 +11192,23 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11215,24 +11238,10 @@
         "Улучшить до ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } и ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } календарь",
         "${ n } календаря",
@@ -11518,9 +11527,6 @@
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - платные функции"
-      ],
       "Passkeys supported": [
         "Поддерживаются пропускные ключи"
       ],
@@ -11650,8 +11656,8 @@
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
       ],
-      "Unlimited logins and notes": [
-        "Неограниченное количество имен пользователей и заметок"
+      "Unlimited logins, notes and credit cards": [
+        "Неограниченное количество имен пользователей, заметок и кредитных карт"
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
@@ -12993,17 +12999,23 @@
       "Save your recovery kit to continue": [
         "Сохраните свой набор для восстановления, чтобы продолжить."
       ],
-      "Secure sharing with ${ n } vault": [
-        "Безопасный общий доступ с ${ n } хранилищем",
-        "Безопасный общий доступ с ${ n } хранилищами",
-        "Безопасный общий доступ с ${ n } хранилищами",
-        "Безопасный общий доступ с ${ n } хранилищами"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Безопасное совместное использование с помощью нескольких хранилищ"
+      "Secure vault and link sharing": [
+        "Защищенное хранилище и обмен ссылками"
       ],
       "Secure vault sharing": [
         "Защищенный общий доступ к хранилищу"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищу",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищу и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам",
+        "Защищенный общий доступ к (\"${ n } vault\") хранилищам и общий доступ к ссылкам"
       ],
       "Secured by end-to-end encryption": [
         "Защищено сквозным шифрованием"
@@ -13205,6 +13217,9 @@
       ],
       "Payment Processing": [
         "Обработка платежа"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
       "Processing payment": [
         "Обработка платежа"
@@ -14352,11 +14367,6 @@
         "Сменить тариф"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Улучшить"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "первый ${ n } месяц",
@@ -14641,6 +14651,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователя",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } выделенный сервер",
         "${ ipAddresses } выделенных сервера",
@@ -15442,6 +15458,9 @@
     "Suffix for price": {
       "per month": [
         "в месяц"
+      ],
+      "per user per month": [
+        "на пользователя в месяц"
       ]
     },
     "Summary of errors during export calendar": {
@@ -16166,6 +16185,9 @@
       ],
       "Gift code": [
         "Подарочный код"
+      ],
+      "Groups": [
+        "Группы"
       ],
       "History": [
         "История"
@@ -17141,6 +17163,9 @@
       "Name": [
         "Имя"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Новый адрес электронной почты ${ BRAND_NAME }"
+      ],
       "Optional": [
         "Необязательно"
       ],
@@ -17386,8 +17411,14 @@
       "Please add at least one recipient.": [
         "Добавьте хотя бы одного получателя."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Убедитесь, что расширение правильно установлено и включено."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Обратите внимание, что при выборе этого способа оплаты тип вашего аккаунта не может быть изменен сразу. Мы обновим ваш аккаунт, как только будет произведена оплата."
+      ],
+      "Please update the extension to its latest version": [
+        "Обновите расширение до последней версии"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."

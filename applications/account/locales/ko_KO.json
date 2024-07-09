@@ -1360,9 +1360,6 @@
       "Browse the web privately and block ads": [
         "웹을 비공개로 탐색하고 광고를 차단하세요"
       ],
-      "Create and collaborate on documents securely": [
-        "안전하게 문서를 만들고 협업하세요"
-      ],
       "Keep your schedule private": [
         "스케쥴을 사적으로 유지하세요"
       ],
@@ -1402,8 +1399,8 @@
       "New": [
         "신규"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
       ],
       "Trial expires on ${ formattedDate }": [
         "체험이 ${ formattedDate }에 만료됩니다."
@@ -1691,6 +1688,9 @@
       ],
       "Custom domain problem": [
         "커스텀 도메인 문제"
+      ],
+      "Docs problem": [
+        "Docs 문제"
       ],
       "Drive problem": [
         "드라이브 문제"
@@ -10446,6 +10446,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "글쓰기 도우미 추가"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "모든 ${ BRAND_NAME } 비즈니스 앱 및 프리미엄 기능이 전체 비즈니스를 보호합니다"
       ],
@@ -10460,6 +10463,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "팀을 위한 강화된 보안과 프리미엄 기능"
+      ],
+      "for ${ price }": [
+        "${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "기간 한정 할인: 연간 요금제가 **최대 35% 할인**"
@@ -10883,6 +10889,23 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -10912,24 +10935,10 @@
         "${ upsellPlanHumanSize } 로 업그레이드"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "캘린더 ${ n }개"
       ],
@@ -11170,9 +11179,6 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - 프리미엄 기능"
-      ],
       "Passkeys supported": [
         "패스키를 지원함"
       ],
@@ -11295,9 +11301,6 @@
       ],
       "Unlimited labels": [
         "무제한 라벨"
-      ],
-      "Unlimited logins and notes": [
-        "무제한 로그인 및 메모"
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
@@ -12624,12 +12627,6 @@
       "Save your recovery kit to continue": [
         "계속하려면 복구 키트를 저장해주세요"
       ],
-      "Secure sharing with ${ n } vault": [
-        "${ n } 금고를 통한 안전한 공유하기"
-      ],
-      "Secure sharing with multiple vaults": [
-        "여러 금고를 통한 안전한 공유하기"
-      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
       ],
@@ -12833,6 +12830,9 @@
       ],
       "Payment Processing": [
         "결제 처리중"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
       "Processing payment": [
         "결제 처리 중"
@@ -13914,11 +13914,6 @@
         "업그레이드"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "업그레이드"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n }개월"
@@ -14950,6 +14945,9 @@
     "Suffix for price": {
       "per month": [
         "매월"
+      ],
+      "per user per month": [
+        "사용자당 월별"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15647,6 +15645,9 @@
       ],
       "Gift code": [
         "기프트 코드"
+      ],
+      "Groups": [
+        "그룹"
       ],
       "History": [
         "기록"

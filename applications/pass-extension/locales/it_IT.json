@@ -113,10 +113,10 @@
       "Create": [
         "Crea"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crea un account ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crea un account ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -461,9 +461,6 @@
       "Share vault": [
         "Condividi cassaforte"
       ],
-      "Shared links": [
-        "Link condivisi"
-      ],
       "Show": [
         "Mostra"
       ],
@@ -774,6 +771,9 @@
       "Importing items failed": [
         "Importazione degli elementi non riuscita"
       ],
+      "Inactive secure links could not be removed.": [
+        "Impossibile rimuovere i link sicuri inattivi."
+      ],
       "Invalid password manager": [
         "Gestore di password non valido"
       ],
@@ -860,6 +860,9 @@
       ],
       "The URL is in the list": [
         "L'URL è nell'elenco"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Si è verificato un errore durante la rimozione del link sicuro. Riprova tra qualche minuto."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Troppi tentativi errati. Effettua nuovamente l'accesso."
@@ -1095,6 +1098,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Sei sicuro di voler spostare l'elemento nella cassaforte \"${ name }\" ?"
+      ],
+      "Are you sure you want to remove the link?": [
+        "Sei sicuro di voler rimuovere il link?"
       ],
       "Auto-lock successfully disabled.": [
         "Blocco automatico disabilitato."
@@ -2207,6 +2213,10 @@
       "Text": [
         "Testo"
       ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "L'elemento della cassaforte è attualmente condiviso con ${ targetMembers } persona.",
+        "L'elemento della cassaforte è attualmente condiviso con ${ targetMembers } persone."
+      ],
       "The URL has been copied to the clipboard": [
         "L'URL è stato copiato negli appunti"
       ],
@@ -2520,6 +2530,9 @@
       ],
       "No items selected": [
         "Nessun elemento selezionato"
+      ],
+      "No shared secure links": [
+        "Nessun link sicuro condiviso"
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"

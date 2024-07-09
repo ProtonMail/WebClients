@@ -14,6 +14,9 @@
       "Activate organization key": [
         "Szervezeti kulcs aktiválása"
       ],
+      "Add": [
+        "Hozzáadás"
+      ],
       "Add address": [
         "Cím hozzáadása"
       ],
@@ -4108,6 +4111,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } és ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -4367,9 +4373,6 @@
       ],
       "Unlimited labels": [
         "Korlátlan számú címke"
-      ],
-      "Unlimited logins and notes": [
-        "Korlátlan számú bejelentkezés és jegyzet"
       ],
       "Unlimited messages per day": [
         "Korlátlan számú üzenet naponta"
@@ -4844,10 +4847,6 @@
       ],
       "per month": [
         "havonta"
-      ],
-      "Secure sharing with ${ n } vault": [
-        "Biztonságos megosztás ${ n } trezorral",
-        "Biztonságos megosztás ${ n } trezorokkal"
       ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
@@ -6145,6 +6144,9 @@
       "Gift code": [
         "Ajándék kód"
       ],
+      "Groups": [
+        "Csoportok"
+      ],
       "Human verification": [
         "Robot ellenőrzés"
       ],
@@ -6473,6 +6475,12 @@
       ],
       "Create password": [
         "Jelszó létrehozása"
+      ],
+      "Invitation email": [
+        "Meghívó e-mail"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Új ${ BRAND_NAME } e-mail cím"
       ],
       "Remember to share the user's sign in details with them.": [
         "Ne felejtse el megosztani a felhasználóval belépési adatait."

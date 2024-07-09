@@ -1360,9 +1360,6 @@
       "Browse the web privately and block ads": [
         "Surfa på webben privat och blockera annonser"
       ],
-      "Create and collaborate on documents securely": [
-        "Skapa och samarbeta på dokument säkert"
-      ],
       "Keep your schedule private": [
         "Håll ditt schema privat"
       ],
@@ -1402,8 +1399,8 @@
       "New": [
         "Nytt"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
       ],
       "Trial expires on ${ formattedDate }": [
         "Provperiod löper ut den ${ formattedDate }"
@@ -6746,6 +6743,9 @@
         "Tar bort ${ deletedServerCount } gatewayserver",
         "Tar bort ${ deletedServerCount } gatewayservrar"
       ],
+      "Discount": [
+        "Rabatt"
+      ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
@@ -8423,6 +8423,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Med användargrupper kan du enkelt skicka e-post, dela data eller ändra inställningarna för specifika grupper av användare samtidigt."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med ditt nuvarande paket kan du endast ta emot meddelanden med din adress @pm.me. Uppgradera för att skicka meddelanden och skapa ytterligare adresser med @pm.me."
@@ -10510,6 +10513,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Lägg till skrivassistent"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Alla ${ BRAND_NAME } företagsappar och premiumfunktioner för att skydda hela ditt företag"
       ],
@@ -10524,6 +10530,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Förbättrad säkerhet och premiumfunktioner för team"
+      ],
+      "for ${ price }": [
+        "för ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tidsbegränsat erbjudande: **Få upp till 35 % rabatt** på årliga paket"
@@ -10952,6 +10961,23 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -10981,24 +11007,10 @@
         "Uppgradera till ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } och ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -11251,9 +11263,6 @@
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - premiumfunktioner"
-      ],
       "Passkeys supported": [
         "Passkeys stöds"
       ],
@@ -11379,8 +11388,8 @@
       "Unlimited labels": [
         "Obegränsade etiketter"
       ],
-      "Unlimited logins and notes": [
-        "Obegränsat antal inloggningar och anteckningar"
+      "Unlimited logins, notes and credit cards": [
+        "Obegränsat antal inloggningar, anteckningar och kreditkort"
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
@@ -12722,15 +12731,19 @@
       "Save your recovery kit to continue": [
         "Spara ditt återställningskit för att fortsätta"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Säker delning med ${ n } valv",
-        "Säker delning med ${ n } valv"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Säker delning med flera valv"
+      "Secure vault and link sharing": [
+        "Säker delning av valv och länk"
       ],
       "Secure vault sharing": [
         "Säker valvdelning"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Säker valvdelning (${ n } valv)",
+        "Säker valvdelning (${ n } valv)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Säker valvdelning (${ n } valv) och länkdelning",
+        "Säker valvdelning (${ n } valv) och länkdelning"
       ],
       "Secured by end-to-end encryption": [
         "Säkrad med end-to-end-kryptering"
@@ -12938,6 +12951,9 @@
       ],
       "Payment Processing": [
         "Betalning behandlas"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
       "Processing payment": [
         "Bearbetar betalning"
@@ -14012,11 +14028,6 @@
         "Uppgradera"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Uppgradera"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } månad",
@@ -15049,6 +15060,9 @@
     "Suffix for price": {
       "per month": [
         "per månad"
+      ],
+      "per user per month": [
+        "per användare per månad"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15761,6 +15775,9 @@
       ],
       "Gift code": [
         "Presentkod"
+      ],
+      "Groups": [
+        "Grupper"
       ],
       "History": [
         "Historik"

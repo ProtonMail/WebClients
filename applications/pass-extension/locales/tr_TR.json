@@ -113,10 +113,10 @@
       "Create": [
         "Ekle"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
       "Create a new vault to share": [
@@ -218,6 +218,9 @@
       "Generate password": [
         "Parola üret"
       ],
+      "Generate secure link": [
+        "Güvenli bağlantı oluştur"
+      ],
       "Generated passwords": [
         "Oluşturulmuş parolalar"
       ],
@@ -269,6 +272,12 @@
       "Leave vault": [
         "Kasayı bırak"
       ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
+      "Link expires after": [
+        "Bağlantının geçerlilik süresi sonu"
+      ],
       "Lock extension": [
         "Eklentiyi kilitle"
       ],
@@ -283,6 +292,9 @@
       ],
       "Manage access": [
         "Erişim yönetimi"
+      ],
+      "Manage vault access": [
+        "Kasa erişimi yönetimi"
       ],
       "Manually sync your data": [
         "Verilerinizi el ile eşitleyin"
@@ -377,6 +389,9 @@
       "Restore item": [
         "Ögeyi geri yükle"
       ],
+      "Restrict number of views": [
+        "Görüntüleme sayısı sınırlansın"
+      ],
       "Retry": [
         "Yeniden dene"
       ],
@@ -418,6 +433,9 @@
       ],
       "Share": [
         "Paylaş"
+      ],
+      "Share secure link": [
+        "Güvenli bağlantıyı paylaş"
       ],
       "Share this vault": [
         "Bu kasayı paylaş"
@@ -484,6 +502,9 @@
       ],
       "Upgrade now to share with more people": [
         "Daha fazla kişiyle paylaşmak için tarifenizi yükseltin"
+      ],
+      "Via secure link": [
+        "Güvenli bağlantı ile"
       ],
       "View app logs": [
         "Uygulama günlüklerini görüntüle"
@@ -935,6 +956,14 @@
       "${ count } invites successfully sent": [
         "${ count } davetiye gönderildi"
       ],
+      "${ count } time": [
+        "${ count } kez",
+        "${ count } kez"
+      ],
+      "${ count } view": [
+        "${ count } görüntülenme",
+        "${ count } görüntülenme"
+      ],
       "${ memberCount } member": [
         "${ memberCount } üye",
         "${ memberCount } üye"
@@ -1076,6 +1105,9 @@
       "Close this window in order to use another passkey manager.": [
         "Başka bir geçiş anahtarı yöneticisi kullanmak için bu pencereyi kapatın."
       ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Kaldırma işlemini tamamlamak için ek parolanızı doğrulayın."
+      ],
       "Congratulations, your access has been confirmed": [
         "Tebrikler erişiminiz onaylandı"
       ],
@@ -1165,6 +1197,15 @@
       ],
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
+      ],
+      "Expires in ${ remainingTime }": [
+        "${ remainingTime } sonra geçerlilik süresi dolacak"
+      ],
+      "Extra password successfuly created": [
+        "Ek parola oluşturuldu"
+      ],
+      "Extra password successfuly removed": [
+        "Ek parola kaldırıldı"
       ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
@@ -1371,6 +1412,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
+      "Please confirm your password": [
+        "Lütfen parolanızı onaylayın"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Parolanızla otomatik kilitlemek için lütfen parolanızı doğrulayın."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Geçerli kilidi kaldırmak için lütfen parolanızı doğrulayın."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Otomatik kilitleme süresini güncellemek için lütfen parolanızı doğrulayın."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın."
       ],
@@ -1386,6 +1439,9 @@
       "Please enter your current PIN code to continue": [
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } uygulamasını kullanmaya başlamak için lütfen ek parolanızı yazın."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } İnternet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
       ],
@@ -1398,8 +1454,14 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
       ],
+      "Registering extra password...": [
+        "Ek parola kaydediliyor..."
+      ],
       "Registering PIN lock failed": [
         "PIN ile kilitleme kaydedilemedi"
+      ],
+      "Removing extra password...": [
+        "Ek parola kaldırılıyor..."
       ],
       "Restoring items from trash": [
         "Ögeler çöpten çıkarılıyor"
@@ -1482,6 +1544,9 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
         "Şu ${ result.ignored.length } öge içe aktarılamadı:"
@@ -1524,6 +1589,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için ek parola kullanın"
       ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
@@ -1604,6 +1672,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Oturumunuz kapatılacak ve diğer tüm aygıtlarınızda yeniden oturum açmanız gerekecek."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Belirli bir süre kullanılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
       ],
@@ -1631,6 +1702,18 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } sözcük",
         "${ config.options.wordCount } sözcük"
+      ],
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } izleyici"
@@ -2508,6 +2591,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Bu takma adın e-posta kutuları şu anda alınamadı"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Dikkat: Bu parolayı kaybederseniz ${ PASS_APP_NAME } hesabınıza erişemezsiniz."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" kasası oluşturulamadı"
       ],
@@ -2528,6 +2614,9 @@
       ],
       "Extra password cannot be empty": [
         "Ek parola boş olamaz"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Ek parola en az 8 karakter uzunluğunda olmalıdır"
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
@@ -2589,6 +2678,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Lütfen kasa paylaşımını kullanabilmek için e-posta adresinizi doğrulayın"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Ek parolanızı kaldırdığınızda tüm aygıtlarınızdaki oturumlar kapatılır."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

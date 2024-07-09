@@ -665,6 +665,11 @@
         "Wenn du jetzt beendest, werden einige Termine eventuell nicht importiert."
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Leere ICS-Datei"
@@ -820,6 +825,9 @@
       ],
       "Custom domain problem": [
         "Problem mit eigener Domain"
+      ],
+      "Docs problem": [
+        "Docs-Problem"
       ],
       "Drive problem": [
         "Problem mit Drive"
@@ -2110,6 +2118,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
+      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
+        "Ein Datenintegritätsfehler ist aufgetreten, und die neuesten Änderungen können nicht gespeichert werden. Bitte aktualisiere die Seite."
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -2432,6 +2443,9 @@
       "The label name is too long. Please choose a different name.": [
         "Der Name der Kategorie ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
+      "The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.": [
+        "Die letzte Aktualisierung, die du an dem Dokument vorgenommen hast, ist entweder zu groß oder würde die maximale Dokumentgröße überschreiten. Die Bearbeitung wurde vorübergehend deaktiviert. Deine Änderung wird nicht gespeichert. Bitte exportiere eine Kopie deines Dokuments und lade die Seite neu."
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ price }"
       ],
@@ -2491,6 +2505,9 @@
       ],
       "Unknown payment token status": [
         "Unbekannter Status des Zahlungstoken"
+      ],
+      "Update Too Large": [
+        "Aktualisierung zu groß"
       ],
       "Upload for this folder is temporarily disabled": [
         "Für diesen Ordner ist das Hochladen vorübergehend deaktiviert."
@@ -3434,6 +3451,9 @@
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
+      "All changes saved to Drive": [
+        "Alle Änderungen in Drive gespeichert"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
@@ -3592,6 +3612,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lade noch heute diese großartige App herunter und nimm deine Privatsphäre überall hin mit."
       ],
+      "Downloading ${ DOCS_APP_NAME } files from ${ DRIVE_APP_NAME } is currently not supported — these will not be included in your download.": [
+        "Das Herunterladen von ${ DOCS_APP_NAME }-Dateien aus ${ DRIVE_APP_NAME } wird derzeit nicht unterstützt – diese werden nicht in deinem Download enthalten sein."
+      ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
       ],
@@ -3642,6 +3665,12 @@
       ],
       "Error loading document${ errorDetail }": [
         "Fehler beim Laden des Dokuments ${ errorDetail }"
+      ],
+      "Error Syncing": [
+        "Fehler beim Synchronisieren"
+      ],
+      "Every change you make is automatically and securely saved to Drive.": [
+        "Jede von dir vorgenommene Änderung wird automatisch und sicher in Drive gespeichert."
       ],
       "Expired": [
         "Abgelaufen"
@@ -3779,6 +3808,9 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "Limited availability": [
+        "Begrenzte Verfügbarkeit"
+      ],
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
@@ -3799,6 +3831,9 @@
       ],
       "Loading...": [
         "Wird geladen..."
+      ],
+      "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
+        "Du bist anscheinend offline. Das Dokument kann nicht bearbeitet werden, während du offline bist. Bitte überprüfe die Konnektivität deines Geräts."
       ],
       "Low Priority": [
         "Niedrige Priorität"
@@ -3871,6 +3906,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Nur die Personen mit dem Link und dem Passwort können auf diesen Ordner zugreifen."
       ],
+      "Opening...": [
+        "Wird geöffnet..."
+      ],
       "Organization size": [
         "Organisationsgröße"
       ],
@@ -3900,6 +3938,9 @@
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Bitte exportiere eine Kopie deiner aktuellen Änderungen aus dem Hauptmenü und lade die Seite neu."
+      ],
+      "Please export them directly from the ${ DOCS_APP_NAME } application instead if you wish to download them.": [
+        "Bitte exportiere sie stattdessen direkt aus der ${ DOCS_APP_NAME }-Anwendung, wenn du sie herunterladen möchtest."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Bitte beachte, dass die diesen Gruppen zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
@@ -3962,6 +4003,15 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
+      "Saved in ${ DRIVE_APP_NAME }": [
+        "Gespeichert in ${ DRIVE_APP_NAME }"
+      ],
+      "Saving": [
+        "Wird gespeichert"
+      ],
+      "Saving...": [
+        "Wird gespeichert..."
+      ],
       "Select a service provider to start": [
         "Wähle einen Dienstanbieter, um anzufangen"
       ],
@@ -3997,6 +4047,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
+      ],
+      "Some edits are taking longer to sync than expected.": [
+        "Für einige Änderungen dauert die Synchronisierung länger als erwartet."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
@@ -4039,6 +4092,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
+      ],
+      "This document has lots of activity. Some features may be temporarily unavailable.": [
+        "Für dieses Dokument findet viel Aktivität statt. Einige Funktionen sind möglicherweise vorübergehend nicht verfügbar."
       ],
       "This item already exists in your library": [
         "Dieses Element existiert bereits in deiner Bibliothek."
@@ -4294,6 +4350,12 @@
       ],
       "Your account will be updated once the payment is cleared.": [
         "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
+      ],
+      "Your changes are being synced to Drive. Please do not close the web page.": [
+        "Deine Änderungen werden mit Drive synchronisiert. Bitte schließe die Webseite nicht."
+      ],
+      "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
+        "Deine Änderungen konnten nicht synchronisiert werden. Drive wird automatisch versuchen, die Änderungen zu speichern. Bitte schließe die Webseite nicht."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Dein aktueller Browser unterstützt das Herunterladen großer Dateien nicht, da keine Service Worker zur Verfügung stehen. Beim Herunterladen großer Dateien kann es dazu kommen, dass der Browser einfriert oder nicht mehr reagiert. Bitte verwende die neuesten Versionen eines ${ recommendedBrowser } und versuche es erneut."
@@ -4984,6 +5046,11 @@
         "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Schreibassistent hinzufügen"
+      ]
+    },
     "mailtrial2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
@@ -5341,6 +5408,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } Kalender",
         "${ n } Kalender"
@@ -5572,9 +5642,6 @@
       "Organize items with multiple vaults": [
         "Strukturiere Einträge mit mehreren Tresoren"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - Premiumfunktionen"
-      ],
       "Passkeys supported": [
         "Passkeys unterstützt"
       ],
@@ -5687,8 +5754,8 @@
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
       ],
-      "Unlimited logins and notes": [
-        "Unbegrenzte Zugangsdaten und Notizen"
+      "Unlimited logins, notes and credit cards": [
+        "Unbegrenzte Anmeldungen, Notizen und Kreditkarten"
       ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
@@ -6360,15 +6427,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Sicheres Teilen mit ${ n } Tresor",
-        "Sicheres Teilen mit ${ n } Tresoren"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Sicheres Teilen mit mehreren Tresoren"
+      "Secure vault and link sharing": [
+        "Sichere Tresor- und Linkfreigabe"
       ],
       "Secure vault sharing": [
         "Sicheres Teilen von Tresoren"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Sichere Tresorfreigabe (${ n } Tresor)",
+        "Sichere Tresorfreigabe (${ n } Tresore)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Sichere Tresorfreigabe (${ n } Tresor) und Linkfreigabe",
+        "Sichere Tresorfreigabe (${ n } Tresore) und Linkfreigabe"
       ]
     },
     "Payment method option": {
@@ -6397,6 +6468,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ months } gültig. Der Gutschein kann bei ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ price } während ${ months } verlängert. Du kannst jederzeit kündigen."
@@ -7359,6 +7433,9 @@
     "Suffix for price": {
       "per month": [
         "pro Monat"
+      ],
+      "per user per month": [
+        "pro Benutzer pro Monat"
       ]
     },
     "summer2023: Tooltip": {
@@ -7672,6 +7749,9 @@
       "Error": [
         "Fehler"
       ],
+      "Error Syncing": [
+        "Fehler beim Synchronisieren"
+      ],
       "Exporting contacts": [
         "Kontakte werden exportiert"
       ],
@@ -7702,6 +7782,9 @@
       ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
+      ],
+      "Limited availability": [
+        "Begrenzte Verfügbarkeit"
       ],
       "Link confirmation": [
         "Linkbestätigung"
@@ -7856,6 +7939,9 @@
       "Unlock contacts groups": [
         "Kontaktgruppen freischalten"
       ],
+      "Untitled document ${ date }": [
+        "Unbenanntes Dokument ${ date }"
+      ],
       "Uploading a large file or folder": [
         "Hochladen einer großen Datei oder eines großen Ordners"
       ],
@@ -7882,6 +7968,9 @@
       ],
       "Your document cannot be loaded": [
         "Dein Dokument kann nicht geladen werden"
+      ],
+      "Your download has a ${ DOCS_APP_NAME } file": [
+        "Dein Download beinhaltet eine ${ DOCS_APP_NAME }-Datei."
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"

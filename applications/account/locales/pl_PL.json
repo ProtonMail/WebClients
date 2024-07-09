@@ -1372,9 +1372,6 @@
       "Browse the web privately and block ads": [
         "Przeglądaj prywatnie Internet i blokuj reklamy"
       ],
-      "Create and collaborate on documents securely": [
-        "Bezpieczne tworzenie i edytowanie dokumentów"
-      ],
       "Keep your schedule private": [
         "Zachowaj prywatność swojego harmonogramu"
       ],
@@ -1414,8 +1411,8 @@
       "New": [
         "Nowość"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Wznieś produktywność poczty na nowy poziom. ${ BRAND_NAME } Scribe pomoże Ci pisać, odpowiadać i sprawdzać wiadomości. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Wznieś produktywność poczty na nowy poziom. ${ BRAND_NAME } Scribe pomoże Ci pisać, odpowiadać i sprawdzać wiadomości."
       ],
       "Trial expires on ${ formattedDate }": [
         "Wersja próbna wygasa ${ formattedDate }"
@@ -6517,7 +6514,7 @@
         "Wszystkie (${ totalFoldersCount } etykiety)"
       ],
       "All Events ": [
-        "Wszystkie wydarzenia "
+        "Wszystkie zdarzenia"
       ],
       "All keys successfully reactivated": [
         "Wszystkie klucze zostały reaktywowane"
@@ -8303,6 +8300,9 @@
       ],
       "Two-factor authentication enabled": [
         "Uwierzytelnianie dwustopniowe zostało włączone"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania danych. (Opcja zaawansowana)"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie można zweryfikować podpisu pliku odzyskiwania. Skontaktuj się ze wsparciem technicznym."
@@ -10163,10 +10163,10 @@
         "Opcje subskrypcji"
       ],
       "Swipe left action": [
-        "Przesuń w lewo"
+        "Przesuń palcem w lewo"
       ],
       "Swipe right action": [
-        "Przesuń w prawo"
+        "Przesuń palcem w prawo"
       ],
       "Synchronize with system": [
         "Domyślny systemu"
@@ -10704,6 +10704,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Dodaj asystenta pisania"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy"
       ],
@@ -10718,6 +10721,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Zwiększone bezpieczeństwo i funkcje premium dla zespołów"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta ograniczona czasowo: **Uzyskaj do 35% zniżki** na plany roczne"
@@ -11156,6 +11162,23 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11185,24 +11208,10 @@
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -11488,9 +11497,6 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funkcja premium"
-      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -11619,9 +11625,6 @@
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
-      ],
-      "Unlimited logins and notes": [
-        "Nieograniczona liczba danych logowania i notatek"
       ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
@@ -12963,17 +12966,14 @@
       "Save your recovery kit to continue": [
         "Zapisz zestaw odzyskiwania, aby kontynuować"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Bezpieczne udostępnianie wielu sejfów"
-      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpieczne udostępnianie sejfu (${ n } sejf)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfy)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfów)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfów)"
       ],
       "Secured by end-to-end encryption": [
         "Zabezpieczone za pomocą szyfrowania end-to-end"
@@ -13595,6 +13595,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Uwaga:** Aby włączyć konfigurację SCIM, skonfiguruj uwierzytelnianie SAML."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Uwaga:** Aby włączyć konfigurację SCIM, zweryfikuj domenę **${ domainName }**. Weryfikacja może potrwać do godziny."
       ],
       "Enter token into your identity provider": [
         "Wpisz token do dostawcy tożsamości"
@@ -14313,11 +14316,6 @@
         "Ulepsz"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Ulepsz"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } miesiąc",
@@ -14602,6 +14600,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asystent pisania ${ BRAND_NAME } Scribe dla ${ maxAi } użytkownika",
+        "Asystent pisania ${ BRAND_NAME } Scribe dla ${ maxAi } użytkowników",
+        "Asystent pisania ${ BRAND_NAME } Scribe dla ${ maxAi } użytkowników",
+        "Asystent pisania ${ BRAND_NAME } Scribe dla ${ maxAi } użytkowników"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedykowany serwer",
         "${ ipAddresses } dedykowane serwery",
@@ -15406,6 +15410,9 @@
     "Suffix for price": {
       "per month": [
         "miesięcznie"
+      ],
+      "per user per month": [
+        "za użytkownika miesięcznie"
       ]
     },
     "Summary of errors during export calendar": {
@@ -16087,13 +16094,13 @@
         "Foldery i etykiety"
       ],
       "For Linux": [
-        "Dla systemu Linux"
+        "Linux"
       ],
       "For macOS": [
-        "Dla systemu macOS"
+        "macOS"
       ],
       "For Windows": [
-        "Dla systemu Windows"
+        "Windows"
       ],
       "Forgot recovery method": [
         "Przypomnij metodę odzyskiwania"
@@ -16130,6 +16137,9 @@
       ],
       "Gift code": [
         "Kod podarunkowy"
+      ],
+      "Groups": [
+        "Grupy"
       ],
       "History": [
         "Historia"

@@ -220,9 +220,6 @@
       "Create and copy alias": [
         "Crear y copiar alias"
       ],
-      "Create Document": [
-        "Crear un documento"
-      ],
       "Create link": [
         "Crear enlace"
       ],
@@ -976,6 +973,11 @@
         "Aplicaciones de ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Archivo ICS vacío"
@@ -1144,6 +1146,9 @@
       ],
       "Custom domain problem": [
         "Problema con el dominio personalizado"
+      ],
+      "Docs problem": [
+        "Problema de Docs"
       ],
       "Drive problem": [
         "Problema con unidad de almacenamiento"
@@ -6165,6 +6170,14 @@
         "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Añadir el asistente de escritura"
+      ],
+      "for ${ price }": [
+        "para ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Aprovéchate de la oferta"
@@ -6491,6 +6504,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -6722,9 +6738,6 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funciones premium"
-      ],
       "Passkeys supported": [
         "Las claves de acceso están admitidas."
       ],
@@ -6837,8 +6850,8 @@
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y notas"
+      "Unlimited logins, notes and credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
@@ -7636,15 +7649,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Compartición segura con ${ n } caja fuerte",
-        "Compartición segura con ${ n } cajas fuertes"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartición segura con varias cajas fuertes"
+      "Secure vault and link sharing": [
+        "Intercambio seguro de caja fuerte y enlaces"
       ],
       "Secure vault sharing": [
         "Compartición segura de cajas fuertes"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Intercambio seguro de caja fuerte (${ n } caja fuerte)",
+        "Intercambio seguro de caja fuerte (${ n } cajas fuertes)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
+        "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
       ]
     },
     "Payment method option": {
@@ -7676,6 +7693,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "La oferta especial de ${ priceWithDiscount } es válida durante el primer ${ months }. El cupón es válido por ${ couponRedemptions } renovaciones. Después se renovará automáticamente al precio de ${ price } cada ${ months } meses. Puedes cancelarla en cualquier momento."
@@ -8299,11 +8319,6 @@
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
       ],
-      "Upgrade": [
-        "Mejorar"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Mejorar"
       ]
@@ -9102,6 +9117,9 @@
     "Suffix for price": {
       "per month": [
         "por mes"
+      ],
+      "per user per month": [
+        "/usuario al mes"
       ]
     },
     "summer2023: Tooltip": {

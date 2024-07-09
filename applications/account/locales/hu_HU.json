@@ -7442,6 +7442,9 @@
       "Awarded": [
         "Megszerezve"
       ],
+      "Beta": [
+        "Béta"
+      ],
       "Billing address": [
         "Számlázási cím"
       ],
@@ -8800,6 +8803,20 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -8829,21 +8846,10 @@
         "Váltás ${ upsellPlanHumanSize } csomagra"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } és ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -9103,9 +9109,6 @@
       ],
       "Unlimited labels": [
         "Korlátlan számú címke"
-      ],
-      "Unlimited logins and notes": [
-        "Korlátlan számú bejelentkezés és jegyzet"
       ],
       "Unlimited messages per day": [
         "Korlátlan számú üzenet naponta"
@@ -9973,10 +9976,6 @@
       ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
-      ],
-      "Secure sharing with ${ n } vault": [
-        "Biztonságos megosztás ${ n } trezorral",
-        "Biztonságos megosztás ${ n } trezorokkal"
       ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
@@ -11865,6 +11864,15 @@
       "Folders and labels": [
         "Mappák és címkék"
       ],
+      "For Linux": [
+        "Linux-ra"
+      ],
+      "For macOS": [
+        "MacOS-re"
+      ],
+      "For Windows": [
+        "Windows-ra"
+      ],
       "Forward and auto-reply": [
         "Továbbít és automatikus válasz"
       ],
@@ -11894,6 +11902,9 @@
       ],
       "Gift code": [
         "Ajándék kód"
+      ],
+      "Groups": [
+        "Csoportok"
       ],
       "History": [
         "Előzmények"
@@ -12631,6 +12642,12 @@
       "Create password": [
         "Jelszó létrehozása"
       ],
+      "Invitation email": [
+        "Meghívó e-mail"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Új ${ BRAND_NAME } e-mail cím"
+      ],
       "Remember to share the user's sign in details with them.": [
         "Ne felejtse el megosztani a felhasználóval belépési adatait."
       ],
@@ -12755,8 +12772,14 @@
       "Please add at least one recipient.": [
         "Kérjük, adjon meg legalább egy címzettet."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Kérjük, ellenőrizze, hogy a bővítmény megfelelően van-e telepítve és engedélyezve!"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Ha ezt a fizetési módot választja, akkor a csomagját nem tudjuk azonnal frissíteni. A frissítést akkor végezzük, amint a befizetés megérkezik."
+      ],
+      "Please update the extension to its latest version": [
+        "Kérjük, frissítse a bővítményt a legújabb verzióra!"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."

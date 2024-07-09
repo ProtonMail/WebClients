@@ -1039,6 +1039,9 @@
       "Custom domain problem": [
         "自訂網域問題"
       ],
+      "Docs problem": [
+        "Docs 問題"
+      ],
       "Drive problem": [
         "雲端硬碟問題"
       ],
@@ -5715,6 +5718,14 @@
         "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "添加撰寫幫手"
+      ],
+      "for ${ price }": [
+        "${ price } 版"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "取得優惠"
@@ -6040,6 +6051,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }和${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } 個行事曆"
       ],
@@ -6256,9 +6270,6 @@
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - 進階功能"
-      ],
       "Passkeys supported": [
         "支援密碼金鑰"
       ],
@@ -6366,9 +6377,6 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
-      ],
-      "Unlimited logins and notes": [
-        "登入與附註無上限"
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
@@ -7039,14 +7047,17 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "與${ n }安全共享保管庫"
-      ],
-      "Secure sharing with multiple vaults": [
-        "安全共享多重保管庫"
+      "Secure vault and link sharing": [
+        "安全保管庫和共享連結"
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "安全保管庫共享(${ n }保管庫)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全保管庫共享(${ n } 保管庫)和連結共享"
       ]
     },
     "Payment method option": {
@@ -7067,8 +7078,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "瞭解"
+      ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Payment Processing": [
+        "付款處理中"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "享受特惠折扣 ${ priceWithDiscount } ${ months } 個月。而後將以每 ${ months } 月 ${ price } 的價格自動續約。您可以在任何時候取消訂閱。"
@@ -7409,7 +7426,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "帳號備援不適用於舊的位址金鑰"
+        "帳號備援不適用於舊的地址金鑰"
       ],
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
@@ -7708,11 +7725,6 @@
       "Go to subscription plans": [
         "查看訂購授權"
       ],
-      "Upgrade": [
-        "升級"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "升級"
       ]
@@ -8066,6 +8078,9 @@
       "Calendar sharing": [
         "行事曆分享"
       ],
+      "Catch-all email address": [
+        "跟上電子郵件地址"
+      ],
       "Custom schedule send and snooze times": [
         "自訂寄出時間與暫緩處理郵件"
       ],
@@ -8399,6 +8414,9 @@
     "Suffix for price": {
       "per month": [
         "每月"
+      ],
+      "per user per month": [
+        "每月每位用戶"
       ]
     },
     "summer2023: Tooltip": {

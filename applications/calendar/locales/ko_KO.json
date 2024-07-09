@@ -883,6 +883,11 @@
         "${ BRAND_NAME } 애플리케이션"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "비어있는 ICS 파일"
@@ -1058,6 +1063,9 @@
       ],
       "Custom domain problem": [
         "커스텀 도메인 문제"
+      ],
+      "Docs problem": [
+        "Docs 문제"
       ],
       "Drive problem": [
         "드라이브 문제"
@@ -5752,6 +5760,14 @@
         "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "글쓰기 도우미 추가"
+      ],
+      "for ${ price }": [
+        "${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "특가 받기"
@@ -6077,6 +6093,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "캘린더 ${ n }개"
       ],
@@ -6293,9 +6312,6 @@
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - 프리미엄 기능"
-      ],
       "Passkeys supported": [
         "패스키를 지원함"
       ],
@@ -6406,9 +6422,6 @@
       ],
       "Unlimited labels": [
         "무제한 라벨"
-      ],
-      "Unlimited logins and notes": [
-        "무제한 로그인 및 메모"
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
@@ -7124,12 +7137,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "${ n } 금고를 통한 안전한 공유하기"
-      ],
-      "Secure sharing with multiple vaults": [
-        "여러 금고를 통한 안전한 공유하기"
-      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
       ]
@@ -7163,6 +7170,9 @@
       ],
       "Payment Processing": [
         "결제 처리중"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "특별 할인가 ${ priceWithDiscount }는 첫 ${ months }개월간 적용됩니다. 쿠폰은 ${ couponRedemptions }회 갱신까지 유효합니다. 이후에는 매월 ${ price }로 ${ months }개월 동안 자동 갱신되며, 언제든지 취소할 수 있습니다."
@@ -7824,11 +7834,6 @@
       "Go to subscription plans": [
         "구독 요금제 보러가기"
       ],
-      "Upgrade": [
-        "업그레이드"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "업그레이드"
       ]
@@ -8689,6 +8694,9 @@
     "Suffix for price": {
       "per month": [
         "매월"
+      ],
+      "per user per month": [
+        "사용자당 월별"
       ]
     },
     "summer2023: Tooltip": {

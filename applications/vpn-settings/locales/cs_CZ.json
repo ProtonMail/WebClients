@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktivovat klíč organizace"
       ],
+      "Add": [
+        "Přidat"
+      ],
       "Add address": [
         "Přidat adresu"
       ],
@@ -64,6 +67,9 @@
       ],
       "Change password": [
         "Změnit heslo"
+      ],
+      "Change second password": [
+        "Změnit druhé heslo"
       ],
       "Chat with us": [
         "Chatujte s námi"
@@ -603,7 +609,7 @@
         "Znovu ověřit kód"
       ],
       "Verify domain": [
-        "Ověřte doménu"
+        "Ověřit doménu"
       ],
       "View": [
         "Zobrazit"
@@ -742,9 +748,6 @@
       "Browse the web privately and block ads": [
         "Procházejte web soukromě a blokujte reklamu"
       ],
-      "Create and collaborate on documents securely": [
-        "Bezpečně vytvářejte dokumenty a spolupracujte na nich"
-      ],
       "Keep your schedule private": [
         "Udržujte svůj rozvrh v soukromí"
       ],
@@ -756,6 +759,11 @@
       ],
       "Secure your communications": [
         "Zabezpečte svou komunikaci"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
       ]
     },
     "Badge for domain": {
@@ -970,6 +978,9 @@
       ],
       "Custom domain problem": [
         "Problém s vlastní doménou"
+      ],
+      "Docs problem": [
+        "Problém s aplikací Docs"
       ],
       "Drive problem": [
         "Problém s aplikací Drive"
@@ -2130,11 +2141,17 @@
       "Code wrong or not valid anymore": [
         "Chybný nebo neplatný kód"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "Nelze načíst faktury. Zkuste to prosím později."
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
       "Email address is invalid": [
         "E-mailová adresa je neplatná"
+      ],
+      "Email address is not available": [
+        "E-mailová adresa není dostupná"
       ],
       "Email is not valid": [
         "E-mailová adresa není platná"
@@ -2172,6 +2189,9 @@
       "Incorrect password": [
         "Nesprávné heslo"
       ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávné druhé heslo. Zkuste to prosím znovu."
+      ],
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
       ],
@@ -2207,6 +2227,9 @@
       ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
+      ],
+      "Organization key must be activated to create invited users": [
+        "Pro vytvoření pozvaných uživatelů musí být aktivován klíč organizace"
       ],
       "Organization key must be activated to create non-private users": [
         "Pro vytvoření nesoukromých uživatelů musí být aktivován klíč organizace"
@@ -3035,6 +3058,9 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhled v nízkém rozlišení"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } lze také použít s jediným heslem, které nahradí přihlašovací i druhé heslo. Chcete-li přepnout do režimu jediného hesla, zadejte jediné heslo, které chcete použít, a klikněte na tlačítko Uložit."
       ],
       "${ n } address": [
         "${ n } adresa",
@@ -4053,6 +4079,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
       ],
+      "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
+        "Toto ověření může trvat až jednu hodinu. Po úspěšném ověření neodebírejte záznam TXT, protože je potřebný k potvrzení, že jste nadále vlastníkem domény."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
       ],
@@ -4139,6 +4168,12 @@
       ],
       "Two-factor authentication enabled": [
         "Dvoufázové ověřování zapnuto"
+      ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Režim dvou hesel vyžaduje dvě hesla: jedno pro přihlášení k účtu a druhé pro dešifrování dat. (Pokročilé)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Režim se dvěma hesly využívá dvě samostatná hesla pro přihlášení a dešifrování dat. V určitých situacích to zvyšuje bezpečnost, nicméně pro většinu uživatelů je vhodné používat režim jednoho hesla. Chcete-li přepnout do režimu se dvěma hesly, nejprve zadejte své přihlašovací heslo, a poté druhé heslo."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Bohužel neexistuje žádná metoda obnovení uložená pro tento účet."
@@ -4325,6 +4360,18 @@
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a ${ usedAI } ze své ${ maxAI } dostupné licence asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze své ${ maxAI } dostupné licence asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence.",
@@ -4711,6 +4758,9 @@
       "Confirm password": [
         "Potvrdit heslo"
       ],
+      "Confirm second password": [
+        "Potvrdit druhé heslo"
+      ],
       "Copy": [
         "Kopírovat"
       ],
@@ -4854,6 +4904,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "New second password": [
+        "Nové druhé heslo"
       ],
       "No filter": [
         "Žádný filtr"
@@ -5258,6 +5311,14 @@
         "Vaše předplatné skončilo. ${ cta } pro předejití ztrátě dat."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Přidat asistenta psaní"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Získejte nabídku"
@@ -5317,11 +5378,17 @@
       "Delete": [
         "Odstranit"
       ],
+      "Delete and revoke invite": [
+        "Smazat a zrušit pozvánku"
+      ],
       "Edit": [
         "Upravit"
       ],
       "Remove": [
         "Odebrat"
+      ],
+      "Resend invite link": [
+        "Znovu poslat odkaz pozvánky"
       ],
       "Revoke sessions": [
         "Odhlásit z relací"
@@ -5432,6 +5499,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendář",
         "${ n } kalendáře",
@@ -5711,9 +5781,6 @@
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - prémiové funkce"
-      ],
       "Passkeys supported": [
         "Přístupové klíče podporovány"
       ],
@@ -5840,8 +5907,8 @@
       "Unlimited labels": [
         "Neomezeně štítků"
       ],
-      "Unlimited logins and notes": [
-        "Neomezený počet přihlášení a poznámek"
+      "Unlimited logins, notes and credit cards": [
+        "Neomezený počet přihlášení, poznámek a platebních karet"
       ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
@@ -6612,17 +6679,23 @@
       "Preparing your Recovery Kit": [
         "Příprava sady pro obnovení"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Zabezpečené sdílení s ${ n } trezorem",
-        "Zabezpečené sdílení s ${ n } trezory",
-        "Zabezpečené sdílení s ${ n } trezory",
-        "Zabezpečené sdílení s ${ n } trezory"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Zabezpečené sdílení s více trezory"
+      "Secure vault and link sharing": [
+        "Bezpečné sdílení trezoru a odkazu"
       ],
       "Secure vault sharing": [
         "Zabezpečené sdílení trezorů"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpečné sdílení trezoru (${ n } trezor)",
+        "Bezpečné sdílení trezoru (${ n } trezory)",
+        "Bezpečné sdílení trezoru (${ n } trezorů)",
+        "Bezpečné sdílení trezoru (${ n } trezorů)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpečné sdílení trezoru (${ n } trezor) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
+        "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ],
       "Setting up your organization": [
         "Nastavení vaší organizace"
@@ -6768,6 +6841,9 @@
       ],
       "Payment Processing": [
         "Zpracování platby"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
       "Processing payment": [
         "Zpracovávání platby"
@@ -7048,6 +7124,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Předpoklad:** ověření SAML musí být nastaveno pro povolení zprovoznění SCIM."
+      ],
+      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Předpoklad:** pro povolení zprovozňování SCIM, je nutné ověřit vlastnictví domény **${ domainName }**. Toto ověření může trvat až jednu hodinu."
       ],
       "Enter token into your identity provider": [
         "Zadejte token do vašeho poskytovatele identity"
@@ -7585,11 +7664,6 @@
         "Navýšit"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Navýšit"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } měsíc",
@@ -7824,6 +7898,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikovaný server",
         "${ ipAddresses } dedikované servery",
@@ -8484,6 +8564,9 @@
       "Domain deleted": [
         "Doména byla odstraněna"
       ],
+      "Invitation resent": [
+        "Pozvánka znovu odeslána"
+      ],
       "Sessions revoked": [
         "Relace byla zrušena"
       ],
@@ -8528,6 +8611,9 @@
     "Suffix for price": {
       "per month": [
         "za měsíc"
+      ],
+      "per user per month": [
+        "za uživatele měsíčně"
       ]
     },
     "summer2023: Tooltip": {
@@ -8580,7 +8666,7 @@
         "E-mailové adresy"
       ],
       "Invitation email": [
-        "E-mail pozvánky:"
+        "E-mail pozvánky"
       ],
       "Name": [
         "Jméno"
@@ -8729,6 +8815,9 @@
       ],
       "Change role": [
         "Změnit roli"
+      ],
+      "Change second password": [
+        "Změnit druhé heslo"
       ],
       "Close": [
         "Zavřít"
@@ -8927,6 +9016,9 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Groups": [
+        "Skupiny"
       ],
       "How to choose a good logo": [
         "Jak vybrat správné logo"
@@ -9360,6 +9452,9 @@
       "Admin": [
         "Administrátor"
       ],
+      "An invitation will be sent to this email address.": [
+        "Na tuto adresu bude odeslána pozvánka."
+      ],
       "Cancel": [
         "Zrušit"
       ],
@@ -9368,6 +9463,9 @@
       ],
       "Create password": [
         "Vytvořit heslo"
+      ],
+      "Create password instead": [
+        "Místo toho vytvořit heslo"
       ],
       "Create user": [
         "Vytvořit uživatele"
@@ -9381,6 +9479,9 @@
       "Name": [
         "Název"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Nová ${ BRAND_NAME } e-mailová adresa"
+      ],
       "Optional": [
         "Volitelné"
       ],
@@ -9389,6 +9490,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
+      ],
+      "Send invite link via email instead": [
+        "Místo toho poslat pozvánku přes e-mail"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Toto vytvoří novou adresu ${ MAIL_APP_NAME }."
       ],
       "User created": [
         "Uživatel vytvořen"
@@ -9401,6 +9508,12 @@
       ]
     },
     "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Správci nemají přístup k datům soukromých uživatelů"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Pozvánka odeslána, čeká se na odpověď od pozvaného uživatele"
+      ],
       "Invite sent": [
         "Pozvánka odeslána"
       ],

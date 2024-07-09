@@ -211,8 +211,14 @@
       "Generate password": [
         "Vygenerovať heslo"
       ],
+      "Generate secure link": [
+        "Generovať bezpečný odkaz"
+      ],
       "Generated passwords": [
         "Vygenerované heslá"
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Získať ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Získať mobilné aplikácie"
@@ -264,6 +270,12 @@
       ],
       "Leave vault": [
         "Opustiť trezor"
+      ],
+      "Link copied to clipboard": [
+        "Odkaz bol skopírovaný do schránky"
+      ],
+      "Link expires after": [
+        "Platnosť odkazu vyprší po"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "Uzamknúť ${ PASS_APP_NAME }"
@@ -379,6 +391,9 @@
       "Restore item": [
         "Obnoviť položku"
       ],
+      "Restrict number of views": [
+        "Obmedziť počet zobrazení"
+      ],
       "Resume monitoring": [
         "Pokračovať v monitorovaní"
       ],
@@ -411,6 +426,9 @@
       ],
       "Share": [
         "Zdieľať"
+      ],
+      "Share secure link": [
+        "Zdieľať bezpečný odkaz"
       ],
       "Share this vault": [
         "Zdieľať tento trezor"
@@ -471,6 +489,9 @@
       ],
       "Verify": [
         "Overiť"
+      ],
+      "Via secure link": [
+        "Cez bezpečný odkaz"
       ],
       "View details": [
         "Zobraziť podrobnosti"
@@ -994,6 +1015,18 @@
       "${ count } invites successfully sent": [
         "${ count } pozvánok úspešne odoslaných"
       ],
+      "${ count } time": [
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát"
+      ],
+      "${ count } view": [
+        "${ count } zobrazenie",
+        "${ count } zobrazení",
+        "${ count } zobrazenia",
+        "${ count } zobrazenia"
+      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členovia",
@@ -1203,6 +1236,9 @@
       ],
       "Enter your PIN code": [
         "Zadajte PIN kód"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Vyprší o ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
@@ -1718,6 +1754,18 @@
         "${ config.options.wordCount } slová",
         "${ config.options.wordCount } slov",
         "${ config.options.wordCount } slov"
+      ],
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dňa"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodiny",
+        "${ hours } hodiny",
+        "${ hours } hodín",
+        "${ hours } hodín"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Verzia ${ PASS_SHORT_APP_NAME }"
