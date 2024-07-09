@@ -4,6 +4,7 @@ import { Route, RouteComponentProps } from 'react-router';
 import { useAppTitle } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import noop from '@proton/utils/noop';
 
 import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
@@ -81,12 +82,14 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
         if (!volumeId) {
             return;
         }
-        getDefaultShare().then((defaultShare) => {
-            // We exclude subscribing to volumes event of main share (Already done in MainContainer)
-            if (defaultShare.volumeId !== volumeId) {
-                driveEventManager.volumes.startSubscription(volumeId);
-            }
-        });
+        getDefaultShare()
+            .then((defaultShare) => {
+                // We exclude subscribing to volumes event of main share (Already done in MainContainer)
+                if (defaultShare.volumeId !== volumeId) {
+                    driveEventManager.volumes.startSubscription(volumeId).catch(noop);
+                }
+            })
+            .catch(noop);
 
         return () => {
             driveEventManager.volumes.pauseSubscription(volumeId);

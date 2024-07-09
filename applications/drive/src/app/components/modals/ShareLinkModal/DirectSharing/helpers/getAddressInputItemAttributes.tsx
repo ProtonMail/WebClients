@@ -11,7 +11,7 @@ import { ShareInvitee } from '../../../../../store';
 export const getAddressInputItemAttributes = ({ isLoading, error, email, isExternal }: ShareInvitee) => {
     if (isLoading) {
         return {
-            icon: <Loader className="icon-16p pl-2 m-auto flex shrink-0" />,
+            icon: <Loader className="icon-size-4 pl-2 m-auto flex shrink-0" />,
         };
     }
     if (error) {

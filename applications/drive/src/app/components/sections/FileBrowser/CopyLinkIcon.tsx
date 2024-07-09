@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
+import noop from '@proton/utils/noop';
 
 import { useActions } from '../../../store';
 import { BrowserItemId } from '../../FileBrowser/interface';
@@ -30,9 +31,11 @@ const CopyLinkIcon = ({ shareId, linkId, trashed, isExpired, className }: Props)
             e.stopPropagation(); // To not show file preview when clicking (to not trigger other click event).
             e.preventDefault(); // To not show file preview when pressing enter (to disable click event).
 
-            copyShareLinkToClipboard(new AbortController().signal, shareId, linkId).finally(() => {
-                setIsLoading(false);
-            });
+            copyShareLinkToClipboard(new AbortController().signal, shareId, linkId)
+                .finally(() => {
+                    setIsLoading(false);
+                })
+                .catch(noop);
         },
         [shareId, linkId]
     );

@@ -21,6 +21,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY, UserModel } from '@proton/shared/lib/interfaces';
 import { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
+import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';
 import * as config from './config';
@@ -65,7 +66,7 @@ const App = () => {
                     },
                 });
             }
-        })();
+        })().catch(noop);
     });
 
     return (

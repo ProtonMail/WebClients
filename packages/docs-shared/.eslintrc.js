@@ -23,11 +23,11 @@ module.exports = {
     ],
     'max-classes-per-file': 'off',
     '@typescript-eslint/no-use-before-define': [
-        'error',
-        {
-            functions: false,
-            classes: false,
-        },
+      'error',
+      {
+        functions: false,
+        classes: false,
+      },
     ],
   },
   overrides: [
