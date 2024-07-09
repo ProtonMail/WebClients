@@ -37,7 +37,10 @@ export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): Pla
     };
 };
 
-export const getLoginsAndNotesText = () => {
+export const getLoginsAndNotesText = (type: 'free' | 'paid') => {
+    if (type === 'free') {
+        return c('new_plans: feature').t`Unlimited logins and notes`;
+    }
     return c('new_plans: feature').t`Unlimited logins, notes and credit cards`;
 };
 
@@ -49,9 +52,9 @@ export const getGroupManagement = (included: boolean = false): PlanCardFeatureDe
     };
 };
 
-export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
+export const getLoginsAndNotes = (type: Parameters<typeof getLoginsAndNotesText>[0]): PlanCardFeatureDefinition => {
     return {
-        text: getLoginsAndNotesText(),
+        text: getLoginsAndNotesText(type),
         icon: 'note',
         included: true,
         hideInDowngrade: true,
@@ -263,19 +266,19 @@ export const getPassFeatures = (): PlanCardFeature[] => {
         {
             name: 'passwords-and-notes',
             plans: {
-                [PLANS.FREE]: getLoginsAndNotes(),
-                [PLANS.BUNDLE]: getLoginsAndNotes(),
-                [PLANS.MAIL]: getLoginsAndNotes(),
-                [PLANS.VPN]: getLoginsAndNotes(),
-                [PLANS.DRIVE]: getLoginsAndNotes(),
-                [PLANS.PASS_PLUS]: getLoginsAndNotes(),
-                [PLANS.FAMILY]: getLoginsAndNotes(),
-                [PLANS.MAIL_PRO]: getLoginsAndNotes(),
-                [PLANS.MAIL_BUSINESS]: getLoginsAndNotes(),
-                [PLANS.BUNDLE_PRO]: getLoginsAndNotes(),
-                [PLANS.BUNDLE_PRO_2024]: getLoginsAndNotes(),
-                [PLANS.PASS_PRO]: getLoginsAndNotes(),
-                [PLANS.PASS_BUSINESS]: getLoginsAndNotes(),
+                [PLANS.FREE]: getLoginsAndNotes('free'),
+                [PLANS.BUNDLE]: getLoginsAndNotes('paid'),
+                [PLANS.MAIL]: getLoginsAndNotes('free'),
+                [PLANS.VPN]: getLoginsAndNotes('free'),
+                [PLANS.DRIVE]: getLoginsAndNotes('free'),
+                [PLANS.PASS_PLUS]: getLoginsAndNotes('paid'),
+                [PLANS.FAMILY]: getLoginsAndNotes('paid'),
+                [PLANS.MAIL_PRO]: getLoginsAndNotes('free'),
+                [PLANS.MAIL_BUSINESS]: getLoginsAndNotes('free'),
+                [PLANS.BUNDLE_PRO]: getLoginsAndNotes('paid'),
+                [PLANS.BUNDLE_PRO_2024]: getLoginsAndNotes('paid'),
+                [PLANS.PASS_PRO]: getLoginsAndNotes('paid'),
+                [PLANS.PASS_BUSINESS]: getLoginsAndNotes('paid'),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

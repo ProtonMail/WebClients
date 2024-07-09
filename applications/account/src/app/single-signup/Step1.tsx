@@ -214,7 +214,7 @@ const getPlanInformation = ({
                 {
                     title: `${PASS_APP_NAME} Plus`,
                     features: [
-                        getLoginsAndNotes(),
+                        getLoginsAndNotes('paid'),
                         getHideMyEmailAliases('unlimited'),
                         get2FAAuthenticator(true),
                         getItems(),
