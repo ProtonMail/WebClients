@@ -76,6 +76,18 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                     return <WalletCreationModal theme={SubTheme.ORANGE} open isFirstCreation />;
                 }
 
+                const walletWithoutWalletAccount = decryptedApiWalletsData?.find((w) => !w.WalletAccounts.length);
+                if (decryptedApiWalletsData && walletWithoutWalletAccount) {
+                    // We want to open wallet account creation modal whenever there is no wallet account setup on for the wallet
+                    return (
+                        <WalletAccountCreationModal
+                            theme={SubTheme.ORANGE}
+                            open
+                            apiWalletData={walletWithoutWalletAccount}
+                        />
+                    );
+                }
+
                 if (walletUpgradeModal.data) {
                     return (
                         <WalletUpgradeModal
