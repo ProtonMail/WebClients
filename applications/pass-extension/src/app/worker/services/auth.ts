@@ -9,7 +9,7 @@ import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proto
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
-import { SESSION_KEYS, isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
+import { SESSION_KEYS } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import {
     clientAuthorized,
@@ -82,7 +82,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (!ps) return null;
 
             const persistedSession = JSON.parse(ps);
-            return isValidPersistedSession(persistedSession) ? persistedSession : null;
+            return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
         }),
 
         getMemorySession: withContext((ctx) => ctx.service.storage.session.getItems(SESSION_KEYS)),
@@ -180,7 +180,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (mode === LockMode.SESSION) {
                 /** If the unlock request was triggered before the authentication
                  * store session was fully hydrated, trigger a session resume. */
-                const validSession = isValidSession(authStore.getSession());
+                const validSession = authStore.validSession(authStore.getSession());
                 if (!validSession) await authService.resumeSession(localID, { retryable: false, unlocked: true });
                 else await authService.login(authStore.getSession(), { unlocked: true });
             }

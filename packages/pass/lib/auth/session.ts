@@ -3,7 +3,6 @@ import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
@@ -61,24 +60,6 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'UID',
     'UserID',
 ];
-
-export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
-    Boolean(
-        data.AccessToken &&
-            data.RefreshToken &&
-            data.UID &&
-            data.UserID &&
-            data.keyPassword &&
-            (!data.offlineConfig || data.offlineKD)
-    );
-
-export const isValidPersistedSession = (data: any): data is EncryptedAuthSession =>
-    isObject(data) &&
-    Boolean('AccessToken' in data && data.AccessToken) &&
-    Boolean('RefreshToken' in data && data.RefreshToken) &&
-    Boolean('UID' in data && data.UID) &&
-    Boolean('UserID' in data && data.UserID) &&
-    Boolean('blob' in data && data.blob);
 
 export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array> =>
     version === 2 ? stringToUtf8Array('session') : undefined;

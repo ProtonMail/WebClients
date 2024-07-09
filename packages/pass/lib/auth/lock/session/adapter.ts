@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthService } from '@proton/pass/lib/auth/service';
-import { isValidSession } from '@proton/pass/lib/auth/session';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -141,7 +140,7 @@ export const sessionLockAdapterFactory = (auth: AuthService): LockAdapter => {
             authStore.setLockMode(LockMode.SESSION);
 
             /** session may be partially hydrated when unlocking  */
-            const validSession = isValidSession(authStore.getSession());
+            const validSession = authStore.validSession(authStore.getSession());
             const shouldPersist = validSession && (currentToken !== token || currentMode !== LockMode.SESSION);
             if (shouldPersist) await auth.persistSession().catch(noop);
 

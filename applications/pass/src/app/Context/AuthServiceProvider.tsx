@@ -33,7 +33,7 @@ import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
-import { isValidPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
+import { resumeSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
@@ -122,7 +122,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (!encryptedSession) return null;
 
                 const persistedSession = JSON.parse(encryptedSession);
-                return isValidPersistedSession(persistedSession) ? persistedSession : null;
+
+                return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
             },
 
             onInit: async (options) => {
@@ -169,13 +170,13 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 const session = authStore.getSession();
 
-                const loggedIn = await (authStore.hasSession(pathLocalID) && isValidSession(session)
+                const loggedIn = await (authStore.hasSession(pathLocalID) && authStore.validSession(session)
                     ? auth.login(session, options)
                     : auth.resumeSession(initialLocalID, options));
 
                 const locked = authStore.getLocked();
                 const hasLocalID = pathLocalID !== undefined;
-                const validSession = isValidSession(session) && session.LocalID === initialLocalID;
+                const validSession = authStore.validSession(session) && session.LocalID === initialLocalID;
                 const autoFork = !loggedIn && !locked && hasLocalID && !validSession;
 
                 if (!online.current) client.current.setStatus(AppStatus.ERROR);
@@ -324,7 +325,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             onUnlocked: async (mode, _, localID) => {
                 if (clientBooted(client.current.state.status)) return;
 
-                const validSession = isValidSession(authStore.getSession());
+                const validSession = authStore.validSession(authStore.getSession());
 
                 if (mode === LockMode.SESSION) {
                     /** If the unlock request was triggered before the authentication
@@ -356,24 +357,6 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                         case LockMode.NONE:
                             return sw?.send({ broadcast, localID, mode: lock.mode, type: 'lock_deleted' });
                     }
-                }
-            },
-
-            onSessionRefresh: async (localID, data, broadcast) => {
-                logger.info('[AuthServiceProvider] Session tokens have been refreshed');
-                const persistedSession = await auth.config.getPersistedSession(localID);
-
-                if (persistedSession) {
-                    const { AccessToken, RefreshTime, RefreshToken } = data;
-                    /* update the persisted session tokens without re-encrypting the
-                     * session blob as session refresh may happen before a full login
-                     * with a partially hydrated authentication store. */
-                    persistedSession.AccessToken = AccessToken;
-                    persistedSession.RefreshToken = RefreshToken;
-                    persistedSession.RefreshTime = RefreshTime;
-
-                    localStorage.setItem(getSessionKey(localID), JSON.stringify(persistedSession));
-                    if (broadcast) sw?.send({ type: 'session', localID, data, broadcast });
                 }
             },
 
