@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import { EditorMetadata, FeatureCode, Icon, Tooltip, useFeature, useUserSettings } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
@@ -202,7 +203,7 @@ const ComposerActions = ({
                                     title={
                                         disableAssistant
                                             ? c('Info').t`Only one writing assistant may be be open at a time`
-                                            : c('Action').t`Your email writing assistant`
+                                            : c('Action').t`${BRAND_NAME} Scribe writing assistant`
                                     }
                                 >
                                     <div>
