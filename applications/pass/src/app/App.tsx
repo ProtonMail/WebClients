@@ -58,7 +58,7 @@ import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
 import locales from './locales';
 
-exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+exposeAuthStore(createAuthStore(createSecureSessionStorage(), { cookies: true }));
 exposePassCrypto(createPassCrypto());
 exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD, cookies: true }));
 sentry({ config: PASS_CONFIG });

@@ -1,12 +1,14 @@
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import type { Maybe, Store } from '@proton/pass/types';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
 
 import { LockMode } from './lock/types';
-import type { AuthSessionVersion } from './session';
+import type { AuthSessionVersion, EncryptedAuthSession } from './session';
 import { type AuthSession, SESSION_VERSION } from './session';
 
 export type AuthStore = ReturnType<typeof createAuthStore>;
+export type AuthStoreOptions = { cookies: boolean };
 
 const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
 const PASS_EXTRA_PWD_KEY = 'pass:extra_password';
@@ -27,8 +29,10 @@ const PASS_UID_KEY = 'pass:uid';
 const PASS_UNLOCK_RETRY_KEY = 'pass:unlock_retry_count';
 const PASS_USER_ID_KEY = 'pass:user_id';
 
-export const createAuthStore = (store: Store) => {
+export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
     const authStore = {
+        options,
+
         clear: () => store.reset(),
 
         hasSession: (localID?: number) =>
@@ -55,6 +59,26 @@ export const createAuthStore = (store: Store) => {
             unlockRetryCount: authStore.getUnlockRetryCount(),
             UserID: authStore.getUserID() ?? '',
         }),
+
+        validSession: (data: Partial<AuthSession>): data is AuthSession =>
+            Boolean(
+                data.UID &&
+                    data.UserID &&
+                    data.keyPassword &&
+                    (!data.offlineConfig || data.offlineKD) &&
+                    (options.cookies || (data.AccessToken && data.RefreshToken))
+            ),
+
+        /** Checks wether a parsed persisted session object is
+         * a valid `EncryptedAuthSession` in order to resume */
+        validPersistedSession: (data: any): data is EncryptedAuthSession =>
+            isObject(data) &&
+            Boolean('UID' in data && data.UID) &&
+            Boolean('UserID' in data && data.UserID) &&
+            Boolean('blob' in data && data.blob) &&
+            (options.cookies ||
+                (Boolean('AccessToken' in data && data.AccessToken) &&
+                    Boolean('RefreshToken' in data && data.RefreshToken))),
 
         setSession: (session: Partial<AuthSession>) => {
             if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
