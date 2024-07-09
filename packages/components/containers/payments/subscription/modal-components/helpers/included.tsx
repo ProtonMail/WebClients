@@ -103,7 +103,7 @@ export const getWhatsIncluded = ({
         return [
             {
                 type: 'text',
-                text: getLoginsAndNotesText(),
+                text: getLoginsAndNotesText('paid'),
             },
             {
                 type: 'text',
