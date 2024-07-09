@@ -34,7 +34,7 @@ describe('API factory', () => {
     const listener = jest.fn();
 
     (global as any).fetch = fetchMock;
-    const api = createApi({ config, getAuth });
+    const api = createApi({ config, getAuth, cookies: false });
 
     beforeEach(async () => {
         auth = undefined;
@@ -58,6 +58,7 @@ describe('API factory', () => {
                 sessionInactive: false,
                 sessionLocked: false,
                 unreachable: false,
+                cookies: false,
             });
         });
 
@@ -92,7 +93,7 @@ describe('API factory', () => {
         });
 
         test('should support request treshold', async () => {
-            const backPressuredApi = createApi({ config, getAuth, threshold: 1 });
+            const backPressuredApi = createApi({ config, getAuth, threshold: 1, cookies: false });
             const resolvers: ((res: Response) => void)[] = [];
 
             fetchMock

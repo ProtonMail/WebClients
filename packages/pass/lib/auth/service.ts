@@ -18,7 +18,6 @@ import { revoke, setLocalKey } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { generateClientKey } from '@proton/shared/lib/authentication/clientKey';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import noop from '@proton/utils/noop';
@@ -48,7 +47,6 @@ import {
     type ResumeSessionResult,
     encryptPersistedSessionWithKey,
     getPersistedSessionKey,
-    isValidSession,
     mergeSessionTokens,
     migrateSession,
     resumeSession,
@@ -162,7 +160,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             config.onAuthorize?.();
 
             try {
-                if (!isValidSession(session)) {
+                if (!authStore.validSession(session)) {
                     authStore.clear();
                     throw new Error('Invalid session');
                 }
@@ -373,14 +371,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
         persistSession: async (options?: { regenerateClientKey: boolean }) => {
             try {
                 const session = authStore.getSession();
-                const { UID, AccessToken } = session;
-
-                if (!isValidSession(session)) throw new Error('Trying to persist invalid session');
+                if (!authStore.validSession(session)) throw new Error('Trying to persist invalid session');
 
                 const clientKey = await (async () => {
                     if (options?.regenerateClientKey) {
                         const { serializedData, key } = await generateClientKey();
-                        await api<LocalKeyResponse>(withAuthHeaders(UID, AccessToken, setLocalKey(serializedData)));
+                        await api<LocalKeyResponse>(setLocalKey(serializedData));
                         return key;
                     }
 
@@ -411,7 +407,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                          * login without making any other API requests. Authorizing
                          * from in-memory session does not account for force lock, rather
                          * when locking the in-memory session should be cleared */
-                        if (memorySession && isValidSession(memorySession)) {
+                        if (memorySession && authStore.validSession(memorySession)) {
                             logger.info(`[AuthService] Resuming in-memory session [lock=${options.forceLock}]`);
                             return await authService.login(memorySession);
                         }
@@ -430,6 +426,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                          * and `sessionLockToken` may be still encrypted at this point */
                         authStore.setSession(persistedSession);
                         await api.reset();
+
                         const { session } = await resumeSession(persistedSession, localID, config);
                         logger.info(`[AuthService] Session successfully resumed`);
 

@@ -5,17 +5,18 @@ import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { LockedSessionError, PassErrorCode } from './errors';
 import type { RefreshHandler } from './refresh';
 
 type ApiHandlersOptions = {
+    cookies: boolean;
+    state: ObjectHandler<ApiState>;
     call: ApiCallFn;
     getAuth: () => Maybe<ApiAuth>;
     refreshHandler: RefreshHandler;
-    state: ObjectHandler<ApiState>;
 };
 
 /* Simplified version of withApiHandlers.js :
@@ -23,7 +24,7 @@ type ApiHandlersOptions = {
  * - handles appBadVersion
  * - handles basic offline error detection
  * - FIXME: handle code 9001 errors with human verification  */
-export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHandlersOptions): ApiCallFn => {
+export const withApiHandlers = ({ cookies, state, call, getAuth, refreshHandler }: ApiHandlersOptions): ApiCallFn => {
     return (options: ApiOptions) => {
         const {
             ignoreHandler = [],
@@ -43,8 +44,15 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
                  * throw an error early to prevent triggering the API call */
                 if (options.signal?.aborted) throw new Error('Aborted');
 
-                const auth = getAuth();
-                return await call(auth ? withAuthHeaders(auth.UID, auth.AccessToken, options) : options);
+                const config = (() => {
+                    const auth = getAuth();
+                    if (!auth) return options;
+                    return cookies
+                        ? withUIDHeaders(auth.UID, options)
+                        : withAuthHeaders(auth.UID, auth.AccessToken, options);
+                })();
+
+                return await call(config);
             } catch (error: any) {
                 const { status, name, response } = error;
                 const { code } = getApiError(error);
