@@ -278,7 +278,7 @@
         "Quitter le coffre-fort"
       ],
       "Link copied to clipboard": [
-        "Le lien a été copié dans le presse-papiers"
+        "Le lien a été copié dans le presse-papiers."
       ],
       "Link expires after": [
         "Le lien arrive à expiration après"
@@ -383,7 +383,7 @@
         "Retirer l’accès"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
-        "Supprimer tous les liens expirés (${ inactiveLinkCount })"
+        "Retirer tous les liens expirés (${ inactiveLinkCount })"
       ],
       "Remove link": [
         "Retirer le lien"
@@ -449,7 +449,7 @@
         "Définir un mot de passe supplémentaire"
       ],
       "Setup 2FA": [
-        "Configurer l'A2F"
+        "Configurer l'authentification A2F"
       ],
       "Share": [
         "Partager"
@@ -462,9 +462,6 @@
       ],
       "Share vault": [
         "Partager le coffre-fort"
-      ],
-      "Shared links": [
-        "Liens partagés"
       ],
       "Show": [
         "Afficher"
@@ -803,6 +800,9 @@
       "Importing items failed": [
         "L'importation d'éléments n'a pas abouti."
       ],
+      "Inactive secure links could not be removed.": [
+        "Les liens sécurisés inactifs n'ont pas pu être retirés."
+      ],
       "Invalid password manager": [
         "Le gestionnaire de mots de passe n'est pas valide."
       ],
@@ -851,6 +851,12 @@
       "Restoring trashed items failed": [
         "La restauration des éléments mis à la corbeille n'a pas abouti."
       ],
+      "Secure link could not be created.": [
+        "Le lien sécurisé n'a pas pu être créé."
+      ],
+      "Secure link could not be opened.": [
+        "Le lien sécurisé n'a pas pu être ouvert."
+      ],
       "Settings update failed": [
         "La mise à jour des paramètres n'a pas abouti."
       ],
@@ -872,11 +878,17 @@
       "The session has expired. Please sign in again.": [
         "La session a expiré. Nous vous invitons à vous reconnecter."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Une erreur s'est produite lors du retrait du lien sécurisé. Nous vous invitons à réessayer dans quelques minutes."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Trop de tentatives n'ont pas abouti. Connectez-vous à nouveau."
       ],
       "Trashing item failed": [
         "La suppression de l'élément n'a pas abouti."
+      ],
+      "Try reaching out to the link owner.": [
+        "Essayez de contacter le propriétaire du lien."
       ],
       "Unable to generate an OTP code for this item": [
         "Impossible de générer un mot de passe à usage unique (code OTP) pour cet élément."
@@ -1038,8 +1050,8 @@
         "${ count } fois"
       ],
       "${ count } view": [
-        "${ count } affichage",
-        "${ count } affichages"
+        "${ count } vue",
+        "${ count } vues"
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1108,7 +1120,7 @@
         "Toutes les fuites de données actuelles seront marquées comme résolues. Vous serez averti en cas de futures fuites de données."
       ],
       "All inactive secure links were removed": [
-        "Tous les liens sécurisés inactifs ont été supprimés"
+        "Tous les liens sécurisés inactifs ont été supprimés."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tous les éléments ont été déplacés depuis « ${ payload.content.name } »."
@@ -1135,7 +1147,7 @@
         "Voulez-vous vraiment déplacer l'élément vers « ${ name } » ?"
       ],
       "Are you sure you want to remove the link?": [
-        "Êtes-vous sûr de vouloir supprimer le lien ?"
+        "Êtes-vous sûr de vouloir retirer le lien ?"
       ],
       "Auto-lock successfully disabled.": [
         "Le verrouillage automatique a été désactivé."
@@ -1217,9 +1229,6 @@
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
         "En raison de la limitation des extensions du navigateur Safari, l'extension de fichier « *.pgp » sera manquante après l'exportation. Veuillez renommer le fichier pour y ajouter l'extension *.pgp (par ex. fichier.pgp) après l'avoir exporté."
-      ],
-      "Easily share your data with friends using secure links": [
-        "Partagez facilement vos données avec des amis en utilisant des liens sécurisés"
       ],
       "Editor": [
         "Éditeur"
@@ -1568,13 +1577,13 @@
         "L'enregistrement du verrouillage par code PIN n'a pas abouti."
       ],
       "Removing all inactive secure links...": [
-        "Suppression de tous les liens sécurisés inactifs..."
+        "Retrait de tous les liens sécurisés inactifs..."
       ],
       "Removing extra password...": [
         "Retrait du mot de passe supplémentaire..."
       ],
       "Removing secure link...": [
-        "Suppression du lien sécurisé…"
+        "Retrait du lien sécurisé…"
       ],
       "Restoring items from trash": [
         "Restauration des éléments depuis la corbeille"
@@ -1659,7 +1668,7 @@
         "${ result.ignored.length } éléments n'ont pas pu être importés :"
       ],
       "The secure link has been removed": [
-        "Le lien sécurisé a été supprimé"
+        "Le lien sécurisé a été supprimé."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Le texte que vous essayez de coller dépasse le nombre maximum de ${ maxLength } caractères."
@@ -2018,6 +2027,9 @@
       "General": [
         "Général"
       ],
+      "Generate a secure link for this item": [
+        "Créer un lien sécurisé pour cet élément"
+      ],
       "Generic CSV": [
         "CSV générique"
       ],
@@ -2095,6 +2107,9 @@
       ],
       "Make all viewers": [
         "Les définir comme lecteur"
+      ],
+      "Max views reached": [
+        "Le nombre maximum de vues a été atteint."
       ],
       "Members": [
         "Membres"
@@ -2198,6 +2213,9 @@
       "Reveal password": [
         "Afficher le mot de passe"
       ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Stockez, partagez et connectez-vous automatiquement à vos comptes en toute sécurité avec ${ PASS_APP_NAME } à l'aide du chiffrement de bout en bout approuvé par des millions d'utilisateurs."
+      ],
       "Security": [
         "Sécurité"
       ],
@@ -2223,7 +2241,7 @@
         "Partager"
       ],
       "Share this vault or create a new vault": [
-        "Partager ce coffre-fort ou créer un nouveau coffre-fort"
+        "Partager ce coffre-fort ou en créer un nouveau"
       ],
       "Shared link": [
         "Lien partagé"
@@ -2255,6 +2273,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "L'URL a été copiée dans le presse-papiers."
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Cet élément restera accessible jusqu'à ${ remaining }."
       ],
       "Title": [
         "Titre"
@@ -2696,7 +2717,7 @@
         "Retirer le mot de passe supplémentaire"
       ],
       "Remove secure link?": [
-        "Supprimer le lien sécurisé ?"
+        "Retirer le lien sécurisé ?"
       ],
       "Resolved breaches": [
         "Fuites de données résolues"

@@ -173,6 +173,9 @@
       "Generated passwords": [
         "已生成的密碼"
       ],
+      "Get ${ PASS_APP_NAME }": [
+        "取得 ${ PASS_APP_NAME }"
+      ],
       "Get mobile apps": [
         "取得手機應用程式"
       ],
@@ -220,6 +223,9 @@
       ],
       "Leave vault": [
         "離開保管庫"
+      ],
+      "Link copied to clipboard": [
+        "已複製連結到剪貼簿"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "鎖定${ PASS_APP_NAME }"
@@ -798,6 +804,9 @@
       "${ count } invites successfully sent": [
         "${ count }邀請成功寄出"
       ],
+      "${ count } time": [
+        "${ count }次數"
+      ],
       "${ memberCount } member": [
         "${ memberCount } 位成員"
       ],
@@ -914,6 +923,9 @@
       ],
       "Enter your PIN code": [
         "輸入個人識別數字代碼"
+      ],
+      "Expires in ${ remainingTime }": [
+        "將於${ remainingTime }過期"
       ],
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
@@ -1267,6 +1279,15 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }個字"
+      ],
+      "${ days } day": [
+        "${ days }天"
+      ],
+      "${ hours } hour": [
+        "${ hours }小時"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }分鐘"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }版本"

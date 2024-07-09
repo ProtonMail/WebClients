@@ -191,6 +191,9 @@
       "Generated passwords": [
         "生成されたパスワード"
       ],
+      "Get ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を取得"
+      ],
       "Get mobile apps": [
         "モバイルアプリを入手する"
       ],
@@ -241,6 +244,9 @@
       ],
       "Leave vault": [
         "フォルダーを出る"
+      ],
+      "Link copied to clipboard": [
+        "クリップボードにリンクがコピーされました"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }をロックする"
@@ -328,6 +334,9 @@
       ],
       "Remove access": [
         "アクセス権の削除"
+      ],
+      "Remove link": [
+        "リンクを削除"
       ],
       "Remove member": [
         "メンバーを削除する"
@@ -916,6 +925,9 @@
       ],
       "${ count } invites successfully sent": [
         "${ count } へ正常に招待状が送られました"
+      ],
+      "${ count } time": [
+        "${ count } 回"
       ],
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
@@ -1533,6 +1545,15 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } 単語"
+      ],
+      "${ days } day": [
+        "${ days } 日"
+      ],
+      "${ hours } hour": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } バージョン"
