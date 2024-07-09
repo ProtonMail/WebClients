@@ -103,7 +103,7 @@ export const WalletImportModal = ({
                     <div className="mb-4">
                         <CurrencySelect
                             disabled={loadingCurrencies || loadingWalletSubmit}
-                            label={c('Wallet preferences').t`Local currency`}
+                            label={c('Wallet preferences').t`Default currency`}
                             placeholder={c('Wallet preferences').t`Select your currency`}
                             value={selectedCurrency}
                             onSelect={(value) => {
@@ -127,6 +127,7 @@ export const WalletImportModal = ({
                         onValue={(v: string) => handleMnemonicChange(v)}
                         className="bg-weak"
                         error={mnemonicError}
+                        // placeholder={c('Wallet Account').t`Enter your seed phrase in exact order`}
                     />
 
                     <CoreButtonLike
@@ -157,7 +158,7 @@ export const WalletImportModal = ({
                             disabled={loadingWalletSubmit}
                             onValue={handlePassphraseChange}
                             label={c('Wallet setup').t`Passphrase`}
-                            placeholder={c('Placeholder').t`Leave empty if you don't want to add passphrase`}
+                            placeholder={c('Placeholder').t`Enter a passphrase or leave empty`}
                         />
 
                         <CoreButton
