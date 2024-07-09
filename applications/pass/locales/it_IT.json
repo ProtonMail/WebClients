@@ -460,9 +460,6 @@
       "Share vault": [
         "Condividi cassaforte"
       ],
-      "Shared links": [
-        "Link condivisi"
-      ],
       "Show": [
         "Mostra"
       ],
@@ -800,6 +797,9 @@
       "Importing items failed": [
         "Importazione degli elementi non riuscita"
       ],
+      "Inactive secure links could not be removed.": [
+        "Impossibile rimuovere i link sicuri inattivi."
+      ],
       "Invalid password manager": [
         "Gestore di password non valido"
       ],
@@ -875,11 +875,17 @@
       "The session has expired. Please sign in again.": [
         "La sessione è scaduta. Effettua di nuovo il login."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Si è verificato un errore durante la rimozione del link sicuro. Riprova tra qualche minuto."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Troppi tentativi errati. Effettua nuovamente l'accesso."
       ],
       "Trashing item failed": [
         "Cancellazione dell'elemento non riuscita"
+      ],
+      "Try reaching out to the link owner.": [
+        "Prova a contattare il proprietario del link."
       ],
       "Unable to generate an OTP code for this item": [
         "Impossibile generare il codice OTP per questo elemento"
@@ -1111,6 +1117,9 @@
       ],
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Sei sicuro di voler spostare l'elemento nella cassaforte \"${ name }\" ?"
+      ],
+      "Are you sure you want to remove the link?": [
+        "Sei sicuro di voler rimuovere il link?"
       ],
       "Auto-lock successfully disabled.": [
         "Blocco automatico disabilitato."
@@ -2167,6 +2176,9 @@
       "Reveal password": [
         "Mostra la password"
       ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Archivia, condividi e accedi automaticamente in modo sicuro ai tuoi account con ${ PASS_APP_NAME }, utilizzando la crittografia end-to-end a cui si affidano milioni di persone."
+      ],
       "Security": [
         "Sicurezza"
       ],
@@ -2218,8 +2230,15 @@
       "Text": [
         "Testo"
       ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "L'elemento della cassaforte è attualmente condiviso con ${ targetMembers } persona.",
+        "L'elemento della cassaforte è attualmente condiviso con ${ targetMembers } persone."
+      ],
       "The URL has been copied to the clipboard": [
         "L'URL è stato copiato negli appunti"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Questo elemento rimarrà accessibile fino al ${ remaining }"
       ],
       "Title": [
         "Titolo"
@@ -2623,6 +2642,9 @@
       ],
       "No reused passwords": [
         "Nessuna password riutilizzata"
+      ],
+      "No shared secure links": [
+        "Nessun link sicuro condiviso"
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
