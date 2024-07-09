@@ -44,7 +44,7 @@ import store from '../store';
 import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
-    const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
+    const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD, cookies: false }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
     const core = createPassCoreProxyService();

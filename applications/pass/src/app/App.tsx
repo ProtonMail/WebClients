@@ -60,7 +60,7 @@ import locales from './locales';
 
 exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 exposePassCrypto(createPassCrypto());
-exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
+exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD, cookies: true }));
 sentry({ config: PASS_CONFIG });
 
 export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps => {

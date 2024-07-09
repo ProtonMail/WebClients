@@ -417,12 +417,20 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     useEffect(() => {
         if (isUnauthorizedPath(getCurrentLocation())) return;
 
-        const { key, selector, state, payloadVersion } = getConsumeForkParameters();
+        const { key, selector, state, payloadVersion, persistent } = getConsumeForkParameters();
         const localState = sessionStorage.getItem(getStateKey(state));
 
         const run = async () => {
             if (matchConsumeFork) {
-                return authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
+                return authService.consumeFork({
+                    mode: 'sso',
+                    key,
+                    localState,
+                    state,
+                    selector,
+                    payloadVersion,
+                    persistent,
+                });
             } else {
                 await checkConnectivity?.();
                 return authService.init({ forceLock: true });
