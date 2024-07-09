@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import Href from '@proton/atoms/Href/Href';
-import { Info } from '@proton/components/components';
 import QRCode from '@proton/components/components/image/QRCode';
-import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import Info from '@proton/components/components/link/Info';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { IWasmApiWalletData } from '@proton/wallet';
 
