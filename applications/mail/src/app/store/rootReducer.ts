@@ -6,7 +6,6 @@ import { breachesCountReducer } from '@proton/components/components/drawer/views
 import { conversationCountsReducer, filtersReducer, messageCountsReducer } from '@proton/mail';
 import { sharedPersistReducer, sharedReducers } from '@proton/redux-shared-store';
 import { selectPersistModel } from '@proton/redux-utilities';
-import { walletReducers } from '@proton/wallet';
 
 import { attachmentsReducer } from './attachments/attachmentsSlice';
 import { composersReducer } from './composers/composersSlice';
@@ -37,7 +36,6 @@ export const rootReducer = combineReducers({
     ...snoozeReducer,
     ...securityCenterReducer,
     ...breachesCountReducer,
-    ...walletReducers,
 });
 
 export type MailState = ReturnType<typeof rootReducer>;
