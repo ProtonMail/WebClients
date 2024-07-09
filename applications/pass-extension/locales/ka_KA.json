@@ -113,10 +113,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create a new vault to share": [
@@ -218,6 +218,9 @@
       "Generate password": [
         "პაროლის გენერირება"
       ],
+      "Generate secure link": [
+        "დაცული ბმულის გენერაცია"
+      ],
       "Generated passwords": [
         "გენერირებული პაროლები"
       ],
@@ -269,6 +272,12 @@
       "Leave vault": [
         "საცავის დატოვება"
       ],
+      "Link copied to clipboard": [
+        "ბმული კოპირებულია ბუფერში"
+      ],
+      "Link expires after": [
+        "ბმულის ვადა"
+      ],
       "Lock extension": [
         "გაფართოების დაბლოკვა"
       ],
@@ -283,6 +292,9 @@
       ],
       "Manage access": [
         "წვდომის მართვა"
+      ],
+      "Manage vault access": [
+        "საცავის წვდომის მართვა"
       ],
       "Manually sync your data": [
         "თქვენი მონაცემების ხელით სინქრონიზაცია"
@@ -377,6 +389,9 @@
       "Restore item": [
         "ელემენტის აღდგენა"
       ],
+      "Restrict number of views": [
+        "ნახვების რიცხვის შეზღუდვა"
+      ],
       "Retry": [
         "თავიდან"
       ],
@@ -418,6 +433,9 @@
       ],
       "Share": [
         "გაზიარება"
+      ],
+      "Share secure link": [
+        "დაცული ბმულის გაზიარება"
       ],
       "Share this vault": [
         "ამ საცავის გაზიარება"
@@ -484,6 +502,9 @@
       ],
       "Upgrade now to share with more people": [
         "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
+      ],
+      "Via secure link": [
+        "დაცული ბმულით"
       ],
       "View app logs": [
         "აპის ჟურნალის ნახვა"
@@ -932,6 +953,14 @@
       "${ count } invites successfully sent": [
         "წარმატებით გაგზავნილია ${ count } მოსაწვევი"
       ],
+      "${ count } time": [
+        "${ count }-ჯერ",
+        "${ count }-ჯერ"
+      ],
+      "${ count } view": [
+        "${ count } ხედი",
+        "${ count } ხედი"
+      ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
@@ -1159,6 +1188,9 @@
       ],
       "Enter your PIN code": [
         "შეიყვანეთ თქვენი PIN კოდი"
+      ],
+      "Expires in ${ remainingTime }": [
+        "ვადა ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "დამატებითი პაროლი წარმატებით შეიქმნა"
@@ -1655,6 +1687,18 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } სიტყვა",
         "${ config.options.wordCount } სიტყვა"
+      ],
+      "${ days } day": [
+        "${ days } დღე",
+        "${ days } დღე"
+      ],
+      "${ hours } hour": [
+        "${ hours } საათი",
+        "${ hours } საათი"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } წუთი",
+        "${ minutes } წუთი"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME }-ის მონიტორი"

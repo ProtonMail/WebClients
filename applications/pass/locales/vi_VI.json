@@ -209,6 +209,9 @@
       "Leave vault": [
         "Rời kho lưu trữ"
       ],
+      "Link expires after": [
+        "Liên kết vô hiệu sau"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Khóa ${ PASS_APP_NAME }"
       ],
@@ -296,6 +299,9 @@
       "Restore item": [
         "Khôi phục nội dung"
       ],
+      "Restrict number of views": [
+        "Giới hạn số lượt xem"
+      ],
       "Retry": [
         "Thử lại"
       ],
@@ -373,6 +379,9 @@
       ],
       "Verify": [
         "Xác minh"
+      ],
+      "Via secure link": [
+        "Thông qua liên kết an toàn"
       ],
       "View history": [
         "Xem lịch sử"
@@ -708,6 +717,12 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Cập nhật nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
       ],
+      "${ count } time": [
+        "${ count } lần"
+      ],
+      "${ count } view": [
+        "${ count } lượt xem"
+      ],
       "${ memberCount } member": [
         "${ memberCount } thành viên"
       ],
@@ -851,6 +866,9 @@
       ],
       "Enter your PIN code": [
         "Nhập mã PIN của bạn"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Hết hạn trong ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Điền vào tệp CSV bằng dữ liệu của bạn"
@@ -1204,6 +1222,15 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } từ"
+      ],
+      "${ days } day": [
+        "${ days } ngày"
+      ],
+      "${ hours } hour": [
+        "${ hours } tiếng"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } phút"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "phiên bản ${ PASS_SHORT_APP_NAME }"

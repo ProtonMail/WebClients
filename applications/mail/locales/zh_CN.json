@@ -769,10 +769,10 @@
       "Not saved": [
         "未保存"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -8273,6 +8273,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } 和 ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } 份日历"
       ],
@@ -8560,9 +8563,6 @@
       ],
       "Unlimited labels": [
         "标签数量不限"
-      ],
-      "Unlimited logins and notes": [
-        "无限制登录和备注"
       ],
       "Unlimited messages per day": [
         "每日发送邮件不限量"

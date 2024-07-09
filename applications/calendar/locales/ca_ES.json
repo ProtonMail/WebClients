@@ -891,6 +891,11 @@
         "Aplicacions de ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Fitxer ICS buit"
@@ -1069,6 +1074,9 @@
       ],
       "Custom domain problem": [
         "Problema als dominis personalitzats"
+      ],
+      "Docs problem": [
+        "Problema amb Docs"
       ],
       "Drive problem": [
         "Problemes de Drive"
@@ -5838,6 +5846,14 @@
         "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Afegeix l'assistent d'escriptura"
+      ],
+      "for ${ price }": [
+        "per a ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Obteniu l'oferta"
@@ -6166,6 +6182,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendari",
         "${ n } calendaris"
@@ -6397,9 +6416,6 @@
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - característiques prèmium"
-      ],
       "Passkeys supported": [
         "S'admeten claus de pas"
       ],
@@ -6512,8 +6528,8 @@
       "Unlimited labels": [
         "Etiquetes il·limitades"
       ],
-      "Unlimited logins and notes": [
-        "Nombre il·limitat d'inicis de sessió i de notes"
+      "Unlimited logins, notes and credit cards": [
+        "Inicis de sessió il·limitats, notes i targetes de crèdit"
       ],
       "Unlimited messages per day": [
         "Missatges diaris il·limitats"
@@ -7258,15 +7274,19 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Compartició segura amb ${ n } caixa forta",
-        "Compartició segura amb ${ n } caixes fortes"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartició segura amb diverses caixes fortes"
+      "Secure vault and link sharing": [
+        "Caixa forta i compartició d'enllaços"
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Compartició segura de la caixa forta ${ n }",
+        "Compartició segura de les caixes fortes ${ n }"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Compartició segura de la caixa forta ${ n } i compartició d'enllaços",
+        "Compartició segura de les caixes fortes ${ n } i compartició d'enllaços"
       ]
     },
     "Payment method option": {
@@ -7298,6 +7318,9 @@
       ],
       "Payment Processing": [
         "Processament de pagaments"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
@@ -7981,11 +8004,6 @@
       "Go to subscription plans": [
         "Ves als plans de subscripció"
       ],
-      "Upgrade": [
-        "Millora"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Millora"
       ]
@@ -8863,6 +8881,9 @@
     "Suffix for price": {
       "per month": [
         "per mes"
+      ],
+      "per user per month": [
+        "per usuari al mes"
       ]
     },
     "summer2023: Tooltip": {

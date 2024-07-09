@@ -113,10 +113,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -196,6 +196,9 @@
       ],
       "Edit vault": [
         "Edytuj sejf"
+      ],
+      "Entire vault": [
+        "Cały sejf"
       ],
       "Exclude from monitoring": [
         "Wyklucz z monitoringu"
@@ -302,6 +305,9 @@
       "Manually sync your data": [
         "Synchronizuj dane"
       ],
+      "Maximum views": [
+        "Maksymalna liczba dostępów"
+      ],
       "More info: ${ safeTitle }": [
         "Więcej informacji: ${ safeTitle }"
       ],
@@ -374,6 +380,9 @@
       "Remove access": [
         "Usuń dostęp"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Usuń wszystkie nieaktywne linki (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Usuń link"
       ],
@@ -392,11 +401,14 @@
       "Restore item": [
         "Przywróć element"
       ],
+      "Restrict number of views": [
+        "Ogranicz liczbę dostępów"
+      ],
       "Retry": [
         "Spróbuj ponownie"
       ],
       "Right click and download this CSV": [
-        "Kliknij prawym przyciskiem myszy i pobierz ten plik CSV"
+        "Kliknij prawym przyciskiem i pobierz plik CSV"
       ],
       "Save": [
         "Zapisz"
@@ -445,9 +457,6 @@
       ],
       "Share vault": [
         "Udostępnij sejf"
-      ],
-      "Shared links": [
-        "Udostępnione linki"
       ],
       "Show": [
         "Pokaż"
@@ -508,6 +517,9 @@
       ],
       "Upgrade now to share with more people": [
         "Ulepsz konto, aby udostępnić elementy użytkownikom"
+      ],
+      "Via secure link": [
+        "przez link"
       ],
       "View app logs": [
         "Pokaż logi aplikacji"
@@ -762,6 +774,9 @@
       "Importing items failed": [
         "Importowanie elementów nie powiodło się"
       ],
+      "Inactive secure links could not be removed.": [
+        "Nieaktywne linki nie mogły zostać usunięte."
+      ],
       "Invalid password manager": [
         "Menadżer haseł jest nieprawidłowy"
       ],
@@ -821,6 +836,12 @@
       ],
       "Restoring trashed items failed": [
         "Przywracanie usuniętych wiadomości nie powiodło się"
+      ],
+      "Secure link could not be created.": [
+        "Link nie mógł zostać utworzony."
+      ],
+      "Secure link could not be opened.": [
+        "Link nie mógł zostać otwarty."
       ],
       "Settings update failed": [
         "Aktualizacja ustawień nie powiodła się"
@@ -980,6 +1001,12 @@
         "${ count } razy",
         "${ count } razy"
       ],
+      "${ count } view": [
+        "otwarto ${ count } raz",
+        "otwarto ${ count } razy",
+        "otwarto ${ count } razy",
+        "otwarto ${ count } razy"
+      ],
       "${ memberCount } member": [
         "${ memberCount } użytkownik",
         "${ memberCount } użytkowników",
@@ -1064,6 +1091,9 @@
       "All breaches for this address were resolved": [
         "Wszystkie wycieki dla tego adresu zostały oznaczone jako rozwiązane"
       ],
+      "All inactive secure links were removed": [
+        "Wszystkie nieaktywne linki zostały usunięte"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Wszystkie elementy z sejfu \"${ payload.content.name }\" zostały przeniesione"
       ],
@@ -1088,6 +1118,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Czy na pewno chcesz przenieść element do sejfu \"${ name }\"?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Czy na pewno chcesz usunąć link?"
+      ],
       "Auto-lock successfully disabled.": [
         "Automatyczna blokada została wyłączona."
       ],
@@ -1095,10 +1128,13 @@
         "Zapisano na ${ payload.domain }"
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
-        "Przed eksportem danych w tym formacie należy otworzyć ustawienia Safari -> zakładka „Ogólne” -> wyłączyć opcję „Otwieraj bezpieczne pliki po pobraniu”. Zapobiegnie to nieprawidłowemu wyodrębnieniu wyeksportowanego pliku przez przeglądarkę Safari."
+        "Przed wyeksportowaniem danych w tym formacie otwórz ustawienia Safari -> zakładka \"Ogólne\" -> wyłącz opcję \"Otwieraj bezpieczne pliki po pobraniu\". Zapobiegnie to nieprawidłowemu przetworzeniu wyeksportowanego pliku przez przeglądarkę Safari."
       ],
       "Built in 2FA authenticator": [
         "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "Can be viewed": [
+        "Maksymalna liczba dostępów"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Może edytować i eksportować elementy w sejfie."
@@ -1173,7 +1209,7 @@
         "Upuść, aby zaimportować"
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Ze względu na ograniczenia rozszerzeń przeglądarki Safari, po wyeksportowaniu danych w pliku będzie brakować rozszerzenia „.pgp”. Po wyeksportowaniu zmień nazwę pliku, tak aby zawierał rozszerzenie .pgp (np. plik.pgp)."
+        "Ze względu na ograniczenia rozszerzeń przeglądarki Safari po wyeksportowaniu danych w pliku będzie brakowało rozszerzenia \".pgp\". Po wyeksportowaniu zmień nazwę pliku, aby zawierała rozszerzenie .pgp (np. plik.pgp)."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Łatwe importowanie haseł do ${ PASS_APP_NAME }."
@@ -1219,6 +1255,9 @@
       ],
       "Enter your PIN code": [
         "Wpisz kod PIN"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Wygasa za ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "Dodatkowe hasło zostało utworzone"
@@ -1493,6 +1532,9 @@
       "Removing extra password...": [
         "Usuwanie dodatkowego hasła..."
       ],
+      "Removing secure link...": [
+        "Usuwanie linku..."
+      ],
       "Restoring items from trash": [
         "Przywracanie elementów z Kosza"
       ],
@@ -1579,6 +1621,9 @@
         "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
         "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:",
         "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:"
+      ],
+      "The secure link has been removed": [
+        "Link został usunięty"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."
@@ -2035,6 +2080,9 @@
       "Make all viewers": [
         "Ustaw uprawnienie odczytu wszystkim"
       ],
+      "Max views reached": [
+        "Maksymalna liczba dostępów została osiągnięta"
+      ],
       "Members": [
         "Użytkownicy"
       ],
@@ -2172,6 +2220,12 @@
       ],
       "Share": [
         "Udostępnij"
+      ],
+      "Share this vault or create a new vault": [
+        "Udostępnij sejf lub utwórz nowy"
+      ],
+      "Shared link": [
+        "Udostępniony link"
       ],
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
@@ -2506,6 +2560,9 @@
       "No items selected": [
         "Nie zaznaczono elementów"
       ],
+      "No shared secure links": [
+        "Brak udostępnionych linków"
+      ],
       "Our welcome gift to you": [
         "Nasz prezent powitalny"
       ],
@@ -2529,6 +2586,9 @@
       ],
       "Remove extra password": [
         "Usuń dodatkowe hasło"
+      ],
+      "Remove secure link?": [
+        "Usunąć link?"
       ],
       "Restore this version?": [
         "Przywrócić tę wersję?"

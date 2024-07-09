@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "Naviga privatamente sul web e blocca gli annunci"
       ],
-      "Create and collaborate on documents securely": [
-        "Crea e collabora sui documenti in modo sicuro"
-      ],
       "Keep your schedule private": [
         "Mantieni privata la tua agenda"
       ],
@@ -1406,8 +1403,8 @@
       "New": [
         "Novità"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
       ],
       "Trial expires on ${ formattedDate }": [
         "Il periodo di prova termina il ${ formattedDate }"
@@ -6740,6 +6737,9 @@
         "Eliminazione di ${ deletedServerCount } server gateway",
         "Eliminazione di ${ deletedServerCount } server gateway"
       ],
+      "Discount": [
+        "Sconto"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -8453,6 +8453,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi di ${ BRAND_NAME }"
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Con i gruppi di utenti, puoi facilmente inviare email, condividere dati o modificare le impostazioni per gruppi specifici di utenti contemporaneamente."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con il tuo piano attuale puoi ricevere messaggi con tuo indirizzo @pm.me ma non puoi inviarli. Effettua l'upgrade per inviare messaggi e creare indirizzi aggiuntivi con @pm.me."
@@ -10554,6 +10557,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Aggiungi l'assistente alla scrittura"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda"
       ],
@@ -10568,6 +10574,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Sicurezza avanzata e funzionalità premium per i team"
+      ],
+      "for ${ price }": [
+        "per ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Offerta a tempo limitato: **Ottieni il 35% di sconto** sui piani annuali"
@@ -10996,6 +11005,23 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11025,24 +11051,10 @@
         "Aggiorna a ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendari"
@@ -11298,9 +11310,6 @@
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funzionalità premium"
-      ],
       "Passkeys supported": [
         "Passkey supportate"
       ],
@@ -11426,8 +11435,8 @@
       "Unlimited labels": [
         "Etichette illimitate"
       ],
-      "Unlimited logins and notes": [
-        "Login e note illimitati"
+      "Unlimited logins, notes and credit cards": [
+        "Accessi, note e carte di credito illimitati"
       ],
       "Unlimited messages per day": [
         "Messaggi illimitati al giorno"
@@ -12769,15 +12778,19 @@
       "Save your recovery kit to continue": [
         "Salva il tuo kit di recupero per continuare"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Condivisione sicura con ${ n } cassaforte",
-        "Condivisione sicura con ${ n } casseforti"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Condivisione sicura con più casseforti"
+      "Secure vault and link sharing": [
+        "Cassaforte sicura e condivisione dei collegamenti"
       ],
       "Secure vault sharing": [
         "Condivisione sicura della cassaforte"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Condivisione sicura della cassaforte (${ n } cassaforte)",
+        "Condivisione sicura delle casseforti (${ n } casseforti)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Condivisione sicura della cassaforte (${ n } cassaforte) e condivisione dei collegamenti",
+        "Condivisione sicura delle casseforti (${ n } casseforti) e condivisione dei collegamenti"
       ],
       "Secured by end-to-end encryption": [
         "Protetta con crittografia end-to-end"
@@ -12979,6 +12992,9 @@
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
       ],
       "Processing payment": [
         "Elaborazione pagamento"
@@ -14082,11 +14098,6 @@
         "Effettua l'upgrade"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mese",
@@ -15141,6 +15152,9 @@
     "Suffix for price": {
       "per month": [
         "al mese"
+      ],
+      "per user per month": [
+        "per utente al mese"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15850,6 +15864,9 @@
       ],
       "Gift code": [
         "Codice regalo"
+      ],
+      "Groups": [
+        "Gruppi"
       ],
       "History": [
         "Cronologia"

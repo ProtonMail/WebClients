@@ -222,9 +222,6 @@
       "Create and copy alias": [
         "Utwórz i skopiuj alias"
       ],
-      "Create Document": [
-        "Utwórz dokument"
-      ],
       "Create link": [
         "Utwórz link"
       ],
@@ -990,6 +987,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikacje ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Wznieś produktywność poczty na nowy poziom. ${ BRAND_NAME } Scribe pomoże Ci pisać, odpowiadać i sprawdzać wiadomości."
       ]
     },
     "Attached ics file error": {
@@ -5041,9 +5043,6 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Poniższe elementy mogły zostać naruszone: ${ items }. Otwórz te elementy tylko wtedy, kiedy masz do nich zaufanie."
       ],
-      "The new Documents feature requires the latest version of ${ DRIVE_APP_NAME }. Please update your apps on mobile and desktop for a seamless experience.": [
-        "Nowa funkcja dokumentów wymaga najnowszej wersji aplikacji ${ DRIVE_APP_NAME }. Zaktualizuj aplikacje mobilne i desktopowe."
-      ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
       ],
@@ -6345,6 +6344,14 @@
         "Importuj wiadomości z niektórych etykiet (${ selectedItemsToImportCount }/${ itemsToImportCount }) i oznacz je etykietą"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Dodaj asystenta pisania"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Skorzystaj z oferty"
@@ -6728,6 +6735,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -6989,9 +6999,6 @@
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funkcja premium"
-      ],
       "Passkeys supported": [
         "Klucze dostępu są obsługiwane"
       ],
@@ -7105,9 +7112,6 @@
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
-      ],
-      "Unlimited logins and notes": [
-        "Nieograniczona liczba danych logowania i notatek"
       ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
@@ -7945,17 +7949,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "Secure sharing with ${ n } vault": [
-        "Bezpieczne udostępnianie ${ n } sejfu",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów",
-        "Bezpieczne udostępnianie ${ n } sejfów"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Bezpieczne udostępnianie wielu sejfów"
-      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpieczne udostępnianie sejfu (${ n } sejf)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfy)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfów)",
+        "Bezpieczne udostępnianie sejfów (${ n } sejfów)"
       ]
     },
     "Payment method option": {
@@ -8646,11 +8647,6 @@
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
       ],
-      "Upgrade": [
-        "Ulepsz"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "Ulepsz"
       ]
@@ -9479,6 +9475,9 @@
     "Suffix for price": {
       "per month": [
         "miesięcznie"
+      ],
+      "per user per month": [
+        "za użytkownika miesięcznie"
       ]
     },
     "summer2023: Tooltip": {
@@ -9802,9 +9801,6 @@
       ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
-      ],
-      "Docs is a new feature in ${ DRIVE_APP_NAME }": [
-        "Dokumenty Docs to nowa funkcja w ${ DRIVE_APP_NAME }"
       ],
       "Downgrade account": [
         "Obniż plan"

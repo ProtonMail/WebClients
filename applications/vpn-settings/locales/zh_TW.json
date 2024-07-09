@@ -17,6 +17,9 @@
       "Activate organization key": [
         "啟用組織金鑰"
       ],
+      "Add": [
+        "加入"
+      ],
       "Add address": [
         "加入電郵位址"
       ],
@@ -928,6 +931,9 @@
       ],
       "Custom domain problem": [
         "自訂網域問題"
+      ],
+      "Docs problem": [
+        "Docs 問題"
       ],
       "Drive problem": [
         "雲端硬碟問題"
@@ -1904,11 +1910,20 @@
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電子郵件位址嗎？"
       ],
+      "Delete address": [
+        "刪除地址"
+      ],
       "Delete address permanently?": [
         "永久刪除主要地址？"
       ],
       "Delete address?": [
         "刪除地址?"
+      ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "一旦刪除，這個地址${ address }將無法再讓任何人使用。"
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "請注意：假如您刪除此電郵位址${ address }，將無法再以此電郵位址傳送或接收郵件。"
       ],
       "You can only delete 1 address per year.": [
         "每年只能刪除一個地址。"
@@ -1922,6 +1937,12 @@
     "Delete domain prompt": {
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
+      ],
+      "Delete": [
+        "刪除"
+      ],
+      "Delete domain?": [
+        "刪除網域?"
       ]
     },
     "Delinquent modal title": {
@@ -1932,6 +1953,17 @@
     "Description": {
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
+      ]
+    },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "您確定要停用這個地址？"
+      ],
+      "Disable address": [
+        "停用電子郵件地址"
+      ],
+      "Disable address?": [
+        "停用電子郵件地址?"
       ]
     },
     "Domain label": {
@@ -2095,6 +2127,9 @@
       "Incorrect password": [
         "密碼錯誤"
       ],
+      "Incorrect second password. Please try again.": [
+        "第二密碼錯誤。請重新再試。"
+      ],
       "Incorrect username": [
         "錯誤的使用者名稱"
       ],
@@ -2130,6 +2165,9 @@
       ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
+      ],
+      "Organization key must be activated to create invited users": [
+        "需啟用組織金鑰才能建立邀請使用者"
       ],
       "Organization key must be activated to create non-private users": [
         "需啟用組織金鑰才能建立非私人使用者"
@@ -3586,6 +3624,9 @@
       "Please add an email address for the user on row": [
         "請在此行使用者處加入電郵位址"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "請詢問擁有者直接邀請至文件。"
+      ],
       "Please authenticate your card in the verification tab.": [
         "請在驗證索引標籤中認證您的信用卡。"
       ],
@@ -3603,6 +3644,12 @@
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
+      ],
+      "please open a support ticket": [
+        "請開啟支援票卷"
+      ],
+      "Please open the document to view it.": [
+        "請開啟文件以瀏覽。"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
@@ -3634,11 +3681,17 @@
       "Preview for this file type is not supported": [
         "不支援預覽此檔案類型"
       ],
+      "Preview of documents is not yet supported.": [
+        "預覽分享尚未支援。"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
       ],
       "Protected by Swiss privacy laws": [
         "受瑞士隱私法律保障"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "公開分享尚未支援。"
       ],
       "read our two-factor authentication guide first": [
         "先閱讀我們的兩步驟驗證指南"
@@ -4259,6 +4312,9 @@
       ],
       "Paid": [
         "已付"
+      ],
+      "Processing": [
+        "處理中"
       ],
       "Unpaid": [
         "未付"
@@ -4958,6 +5014,14 @@
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "添加撰寫幫手"
+      ],
+      "for ${ price }": [
+        "${ price } 版"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "取得優惠"
@@ -5022,6 +5086,9 @@
       ],
       "Remove": [
         "移除"
+      ],
+      "Resend invite link": [
+        "重新發送邀請連結"
       ],
       "Revoke sessions": [
         "撤銷工作階段"
@@ -5132,6 +5199,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME }和${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } 個行事曆"
       ],
@@ -5366,9 +5436,6 @@
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - 進階功能"
-      ],
       "Passkeys supported": [
         "支援密碼金鑰"
       ],
@@ -5485,9 +5552,6 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
-      ],
-      "Unlimited logins and notes": [
-        "登入與附註無上限"
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
@@ -6153,14 +6217,17 @@
       "Preparing your Recovery Kit": [
         "準備復原包"
       ],
-      "Secure sharing with ${ n } vault": [
-        "與${ n }安全共享保管庫"
-      ],
-      "Secure sharing with multiple vaults": [
-        "安全共享多重保管庫"
+      "Secure vault and link sharing": [
+        "安全保管庫和共享連結"
       ],
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "安全保管庫共享(${ n }保管庫)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全保管庫共享(${ n } 保管庫)和連結共享"
       ],
       "Setting up your organization": [
         "設定您的組織"
@@ -6236,8 +6303,14 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "瞭解"
+      ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Payment Processing": [
+        "付款處理中"
       ],
       "Processing payment": [
         "正在處理付款"
@@ -6479,6 +6552,9 @@
       "Disable SCIM": [
         "停用 SCIM"
       ],
+      "Disable SCIM integration": [
+        "停用SCIM整合"
+      ],
       "Generate new token": [
         "產生新代碼"
       ],
@@ -6492,6 +6568,9 @@
       ]
     },
     "scim: Label": {
+      "SCIM base URL": [
+        "基於SCIM的網址"
+      ],
       "SCIM token": [
         "SMTP 憑證"
       ]
@@ -6541,7 +6620,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "帳號備援不適用於舊的位址金鑰"
+        "帳號備援不適用於舊的地址金鑰"
       ],
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
@@ -6891,11 +6970,6 @@
       "Go to subscription plans": [
         "查看訂購授權"
       ],
-      "Upgrade": [
-        "升級"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
       "Upgrade": [
         "升級"
       ]
@@ -7269,6 +7343,9 @@
       "Cancel subscription?": [
         "取消訂購授權?"
       ],
+      "Catch-all email address": [
+        "跟上電子郵件地址"
+      ],
       "Close": [
         "關閉"
       ],
@@ -7604,6 +7681,9 @@
     "Suffix for price": {
       "per month": [
         "每月"
+      ],
+      "per user per month": [
+        "每月每位用戶"
       ]
     },
     "summer2023: Tooltip": {
@@ -7654,6 +7734,9 @@
       ],
       "Email addresses": [
         "電郵位址"
+      ],
+      "Invitation email": [
+        "邀請電子郵件"
       ],
       "Name": [
         "名稱"
@@ -7991,6 +8074,9 @@
       ],
       "Gift code": [
         "禮品代碼"
+      ],
+      "Groups": [
+        "群組"
       ],
       "How to choose a good logo": [
         "如何選擇適當的標誌"
@@ -8400,14 +8486,32 @@
       "Add multiple users": [
         "添加多位使用者"
       ],
+      "Admin": [
+        "系統管理員"
+      ],
+      "Cancel": [
+        "取消"
+      ],
       "Confirm password": [
         "確認密碼"
       ],
       "Create password": [
         "創建密碼"
       ],
+      "Create user": [
+        "創建使用者"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "新的${ BRAND_NAME }電子郵件地址"
+      ],
+      "Private": [
+        "不公開"
+      ],
       "Remember to share the user's sign in details with them.": [
         "請記得與使用者分享其登入詳細資料。"
+      ],
+      "User created": [
+        "使用者創建"
       ],
       "VPN connections": [
         "VPN 連線"
@@ -8417,6 +8521,15 @@
       ]
     },
     "Users table: badge": {
+      "Invite sent": [
+        "已傳送邀請"
+      ],
+      "Private": [
+        "不公開"
+      ],
+      "SSO": [
+        "單一登入"
+      ],
       "SSO user provided by your identity provider": [
         "您身份提供者提供的單一登入使用者"
       ],

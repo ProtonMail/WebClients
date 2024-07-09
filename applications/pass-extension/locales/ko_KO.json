@@ -113,10 +113,10 @@
       "Create": [
         "생성"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
       "Create a new vault to share": [
@@ -218,6 +218,9 @@
       "Generate password": [
         "비밀번호 생성"
       ],
+      "Generate secure link": [
+        "안전한 링크 만들기"
+      ],
       "Generated passwords": [
         "생성된 비밀번호"
       ],
@@ -269,6 +272,12 @@
       "Leave vault": [
         "금고 떠나기"
       ],
+      "Link copied to clipboard": [
+        "링크가 클립보드에 복사됨"
+      ],
+      "Link expires after": [
+        "링크 만료시점은"
+      ],
       "Lock extension": [
         "확장 프로그램 잠금"
       ],
@@ -283,6 +292,9 @@
       ],
       "Manage access": [
         "접근 관리"
+      ],
+      "Manage vault access": [
+        "금고 접근 관리"
       ],
       "Manually sync your data": [
         "수동으로 데이터 동기화"
@@ -377,6 +389,9 @@
       "Restore item": [
         "항목 복구"
       ],
+      "Restrict number of views": [
+        "보기 횟수 제한"
+      ],
       "Retry": [
         "재시도"
       ],
@@ -418,6 +433,9 @@
       ],
       "Share": [
         "공유"
+      ],
+      "Share secure link": [
+        "안전한 링크로 공유하기"
       ],
       "Share this vault": [
         "이 금고 공유"
@@ -484,6 +502,9 @@
       ],
       "Upgrade now to share with more people": [
         "더 많은 사람들과 공유하려면 업그레이드"
+      ],
+      "Via secure link": [
+        "안전한 링크를 이용함"
       ],
       "View app logs": [
         "앱 로그 보기"
@@ -926,6 +947,12 @@
       "${ count } invites successfully sent": [
         "초대 ${ count }개를 잘 보냈습니다"
       ],
+      "${ count } time": [
+        "${ count }번"
+      ],
+      "${ count } view": [
+        "${ count }명 조회"
+      ],
       "${ memberCount } member": [
         "${ memberCount }명 회원"
       ],
@@ -1156,6 +1183,9 @@
       ],
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
+      ],
+      "Expires in ${ remainingTime }": [
+        "${ remainingTime }에 만료"
       ],
       "Extra password successfuly created": [
         "추가 비밀번호를 설정했습니다."
@@ -1650,6 +1680,15 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }단어"
+      ],
+      "${ days } day": [
+        "${ days }일"
+      ],
+      "${ hours } hour": [
+        "${ hours }시간"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }분"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"

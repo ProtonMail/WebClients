@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "Navegue en la web de manera privada y bloquee anuncios"
       ],
-      "Create and collaborate on documents securely": [
-        "Cree y colabore en documentos de forma segura"
-      ],
       "Keep your schedule private": [
         "Mantenga privada el agenda"
       ],
@@ -1406,8 +1403,8 @@
       "New": [
         "Nuevo"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos. ${ learnMore }."
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
       ],
       "Trial expires on ${ formattedDate }": [
         "La prueba expira el ${ formattedDate }"
@@ -6740,6 +6737,9 @@
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
         "Eliminando ${ deletedServerCount } servidores de puerta de enlace"
       ],
+      "Discount": [
+        "Descuento"
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -8317,7 +8317,7 @@
         "Historial de versiones"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versión fue copiado en el portapapeles."
+        "Número de versión copiado al portapapeles"
       ],
       "View, download, and manage your invoices.": [
         "Vea, descargue y gestione sus facturas."
@@ -8450,6 +8450,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección cifrada de ${ BRAND_NAME }, puede usar todos los servicios de ${ BRAND_NAME }"
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Con grupos de usuarios puede fácilmente enviar correos, compartir datos o cambiar los ajustes de grupos específicos todo a la vez."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con el plan actual, solo puede recibir mensajes con la dirección @pm.me. Mejore para enviar mensajes y crear direcciones adicionales usando @pm.me."
@@ -10548,6 +10551,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Añadir el asistente de escritura"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Todas las aplicaciones de ${ BRAND_NAME } for Business y funciones premium para proteger todo su negocio"
       ],
@@ -10562,6 +10568,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Seguridad mejorada y funciones premium para equipos"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta de tiempo limitado: **Obtenga hasta 35% de descuento** en planes anuales"
@@ -10990,6 +10999,23 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11019,24 +11045,10 @@
         "Actualizar a ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -11292,9 +11304,6 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en bóvedas múltiples"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funciones premium"
-      ],
       "Passkeys supported": [
         "Claves de acceso admitidas"
       ],
@@ -11420,8 +11429,8 @@
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y notas"
+      "Unlimited logins, notes and credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
@@ -11994,7 +12003,7 @@
         "Clave con huella digital ${ fp } eliminada."
       ],
       "Link copied to clipboard": [
-        "El enlace fue copiado al portapapeles"
+        "Enlace copiado al portapapeles"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciales OpenVPN/IKEv2 regeneradas"
@@ -12739,15 +12748,19 @@
       "Save your recovery kit to continue": [
         "Guarde su kit de recuperación para continuar"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Uso compartido seguro con ${ n } bóveda",
-        "Uso compartido seguro con ${ n } bóvedas"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Uso compartido seguro con varias bóvedas"
+      "Secure vault and link sharing": [
+        "Intercambio seguro de bóveda y enlaces"
       ],
       "Secure vault sharing": [
         "Uso compartido seguro de bóvedas"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Intercambio seguro de bóveda (${ n } bóveda)",
+        "Intercambio seguro de bóveda (${ n } bóvedas)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Intercambio seguro de bóveda (${ n } bóveda) e intercambio de enlaces",
+        "Intercambio seguro de bóveda (${ n } bóvedas) e intercambio de enlaces"
       ],
       "Secured by end-to-end encryption": [
         "Protegido por cifrado de extremo a extremo"
@@ -12949,6 +12962,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
       "Processing payment": [
         "Procesando el pago"
@@ -14052,11 +14068,6 @@
         "Mejorar"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Mejorar"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mes",
@@ -15111,6 +15122,9 @@
     "Suffix for price": {
       "per month": [
         "al mes"
+      ],
+      "per user per month": [
+        "/usuario al mes"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15820,6 +15834,9 @@
       ],
       "Gift code": [
         "Código de regalo"
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "History": [
         "Historial"

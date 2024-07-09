@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Activar clave de la organización"
       ],
+      "Add": [
+        "Añadir"
+      ],
       "Add address": [
         "Añadir dirección"
       ],
@@ -737,9 +740,6 @@
       "Browse the web privately and block ads": [
         "Navega en la web de manera privada y bloquea anuncios"
       ],
-      "Create and collaborate on documents securely": [
-        "Crea y colabora en documentos de forma segura."
-      ],
       "Keep your schedule private": [
         "Mantén privada tu agenda"
       ],
@@ -751,6 +751,11 @@
       ],
       "Secure your communications": [
         "Protege tus comunicaciones"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
       ]
     },
     "Badge for domain": {
@@ -959,6 +964,9 @@
       ],
       "Custom domain problem": [
         "Problema con el dominio personalizado"
+      ],
+      "Docs problem": [
+        "Problema de Docs"
       ],
       "Drive problem": [
         "Problema con unidad de almacenamiento"
@@ -5197,6 +5205,14 @@
         "Tu suscripción ha finalizado. ${ cta } y para evitar la pérdida de datos."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Añadir el asistente de escritura"
+      ],
+      "for ${ price }": [
+        "para ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Aprovéchate de la oferta"
@@ -5377,6 +5393,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -5626,9 +5645,6 @@
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - funciones premium"
-      ],
       "Passkeys supported": [
         "Las claves de acceso están admitidas."
       ],
@@ -5751,8 +5767,8 @@
       "Unlimited labels": [
         "Etiquetas ilimitadas"
       ],
-      "Unlimited logins and notes": [
-        "Número ilimitado de inicios de sesión y notas"
+      "Unlimited logins, notes and credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
@@ -6488,15 +6504,19 @@
       "Preparing your Recovery Kit": [
         "Preparando tu kit de recuperación"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Compartición segura con ${ n } caja fuerte",
-        "Compartición segura con ${ n } cajas fuertes"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartición segura con varias cajas fuertes"
+      "Secure vault and link sharing": [
+        "Intercambio seguro de caja fuerte y enlaces"
       ],
       "Secure vault sharing": [
         "Compartición segura de cajas fuertes"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Intercambio seguro de caja fuerte (${ n } caja fuerte)",
+        "Intercambio seguro de caja fuerte (${ n } cajas fuertes)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
+        "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
       ],
       "Setting up your organization": [
         "Configurando tu organización"
@@ -6642,6 +6662,9 @@
       ],
       "Payment Processing": [
         "Procesando el pago"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
       "Processing payment": [
         "Procesando el pago"
@@ -7420,11 +7443,6 @@
         "Mejorar"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Mejorar"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mes",
@@ -7655,6 +7673,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuario",
+        "Asistente de escritura de ${ BRAND_NAME } Scribe para ${ maxAi } usuarios"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -8331,6 +8353,9 @@
     "Suffix for price": {
       "per month": [
         "por mes"
+      ],
+      "per user per month": [
+        "/usuario al mes"
       ]
     },
     "summer2023: Tooltip": {
@@ -8727,6 +8752,9 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Groups": [
+        "Grupos"
       ],
       "How to choose a good logo": [
         "Cómo elegir un buen logo"

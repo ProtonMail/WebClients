@@ -17,6 +17,9 @@
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
       ],
+      "Add": [
+        "Pridať"
+      ],
       "Add address": [
         "Pridať adresu"
       ],
@@ -742,9 +745,6 @@
       "Browse the web privately and block ads": [
         "Prezerajte web v súkromí a blokujte reklamy"
       ],
-      "Create and collaborate on documents securely": [
-        "Bezpečne vytvárajte dokumenty a spolupracujte pri ich tvorbe"
-      ],
       "Keep your schedule private": [
         "Uchovajte si svoj program v súkromí"
       ],
@@ -756,6 +756,11 @@
       ],
       "Secure your communications": [
         "Zabezpečte si vašu komunikáciu"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Pozdvihnite efektivitu práce s emailami na novú úroveň. Nechajte ${ BRAND_NAME } Scribe, aby vám pomohol písať, odpovedať a opravovať emaily."
       ]
     },
     "Badge for domain": {
@@ -970,6 +975,9 @@
       ],
       "Custom domain problem": [
         "Problém s vlastnou doménou"
+      ],
+      "Docs problem": [
+        "Problém s aplikáciou Docs"
       ],
       "Drive problem": [
         "Problém s aplikáciou Drive"
@@ -3780,6 +3788,9 @@
         "Pridajte emailové adresy používateľov na riadkoch",
         "Pridajte emailové adresy používateľov na riadkoch"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Požiadajte vlastníka, aby vás do dokumentu priamo pozval."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Overte svoju kartu v okne overenia."
       ],
@@ -3800,6 +3811,9 @@
       ],
       "please open a support ticket": [
         "otvorte, prosím, žiadosť o technickú podporu"
+      ],
+      "Please open the document to view it.": [
+        "Ak si chcete dokument pozrieť, otvorte ho, prosím."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Skúste to znova pomocou iného spôsobu platby, alebo kontaktujte svoju banku."
@@ -3831,11 +3845,17 @@
       "Preview for this file type is not supported": [
         "Ukážka tohto typu súboru nie je podporovaná"
       ],
+      "Preview of documents is not yet supported.": [
+        "Náhľady dokumentov zatiaľ nie sú podporované."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
       ],
       "Protected by Swiss privacy laws": [
         "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
       ],
       "read our two-factor authentication guide first": [
         "aby ste si najprv prečítali nášho sprievodcu dvojstupňovým overovaním"
@@ -5255,6 +5275,14 @@
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Pridať asistenta písania"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Získať ponuku"
@@ -5435,6 +5463,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } kalendár",
         "${ n } kalendáre",
@@ -5714,9 +5745,6 @@
       "Organize items with multiple vaults": [
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - prémiové funkcie"
-      ],
       "Passkeys supported": [
         "Podpora prístupových kľúčov"
       ],
@@ -5843,8 +5871,8 @@
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
       ],
-      "Unlimited logins and notes": [
-        "Neobmedzený počet prihlásení a poznámok"
+      "Unlimited logins, notes and credit cards": [
+        "Neobmedzené prihlásenia, poznámky a platobné karty"
       ],
       "Unlimited messages per day": [
         "Neobmedzený počet správ za deň"
@@ -6594,17 +6622,23 @@
       "Preparing your Recovery Kit": [
         "Príprava sady na obnovenie"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Bezpečné zdieľanie s ${ n } trezorom",
-        "Bezpečné zdieľanie s ${ n } trezormi",
-        "Bezpečné zdieľanie s ${ n } trezormi",
-        "Bezpečné zdieľanie s ${ n } trezormi"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Bezpečné zdieľanie s viacerými trezormi"
+      "Secure vault and link sharing": [
+        "Zabezpečený trezor a zdieľanie odkazov"
       ],
       "Secure vault sharing": [
         "Bezpečné zdieľanie trezoru"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Bezpečné zdieľanie trezora (${ n } trezor)",
+        "Bezpečné zdieľanie trezorov (${ n } trezory)",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov)",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpečné zdieľanie trezora (${ n } trezor) a zdieľanie odkazu",
+        "Bezpečné zdieľanie trezorov (${ n } trezory) a zdieľanie odkazu",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu",
+        "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
       ],
       "Setting up your organization": [
         "Nastavovanie organizácie"
@@ -6742,8 +6776,17 @@
       "CVC": [
         "CVC"
       ],
+      "Got it": [
+        "Rozumiem"
+      ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Payment Processing": [
+        "Spracovanie platby"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
       "Processing payment": [
         "Spracováva sa platba"
@@ -6759,6 +6802,9 @@
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Spracovávame vašu platbu za vyúčtovanú faktúru. Pred vykonaním zmien vo vašom pláne alebo aktualizáciou platobných údajov počkajte, kým bude platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ]
     },
     "Payments.Error": {
@@ -7559,11 +7605,6 @@
       ],
       "Upgrade": [
         "Inovovať"
-      ]
-    },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Upgradovať"
       ]
     },
     "specialoffer: Offers": {
@@ -8507,6 +8548,9 @@
     "Suffix for price": {
       "per month": [
         "mesačne"
+      ],
+      "per user per month": [
+        "za používateľa mesačne"
       ]
     },
     "summer2023: Tooltip": {
@@ -8906,6 +8950,9 @@
       ],
       "Gift code": [
         "Darčekový kód"
+      ],
+      "Groups": [
+        "Skupiny"
       ],
       "How to choose a good logo": [
         "Ako vybrať dobré logo"

@@ -190,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Activare monitorizare pe internetul ascuns"
       ],
+      "Entire vault": [
+        "Întreg seiful"
+      ],
       "Exclude from monitoring": [
         "Excludere de la monitorizare"
       ],
@@ -211,8 +214,17 @@
       "Generate password": [
         "Generare parolă"
       ],
+      "Generate secure link": [
+        "Generare legătură web sigură"
+      ],
       "Generated passwords": [
         "Parola generate"
+      ],
+      "Generating secure link...": [
+        "Se generare legătura web sigură..."
+      ],
+      "Get ${ PASS_APP_NAME }": [
+        "Luați ${ PASS_APP_NAME }"
       ],
       "Get mobile apps": [
         "Obținere aplicați mobil"
@@ -262,6 +274,12 @@
       "Leave vault": [
         "Părăsire seif"
       ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
+      ],
+      "Link expires after": [
+        "Legătura web expiră după"
+      ],
       "Lock ${ PASS_APP_NAME }": [
         "Blocare ${ PASS_APP_NAME }"
       ],
@@ -277,11 +295,17 @@
       "Manage access": [
         "Gestionare acces"
       ],
+      "Manage vault access": [
+        "Gestionare acces la seif"
+      ],
       "Manually sync your data": [
         "Sincronizare manuală date"
       ],
       "Mark as resolved": [
         "Marcare ca rezolvată"
+      ],
+      "Maximum views": [
+        "Maxim vizualizări"
       ],
       "More info: ${ safeTitle }": [
         "Mai multe informații: ${ safeTitle }"
@@ -309,6 +333,9 @@
       ],
       "Multiple select": [
         "Selectare multiplă"
+      ],
+      "No expired links": [
+        "Nu există legături web expirate"
       ],
       "OK": [
         "OK"
@@ -352,6 +379,9 @@
       "Remove access": [
         "Eliminare acces"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Eliminare toate legăturile web expirate (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Eliminare legătură web"
       ],
@@ -376,6 +406,9 @@
       "Restore item": [
         "Restabilire articol"
       ],
+      "Restrict number of views": [
+        "Restricționare număr de vizualizări"
+      ],
       "Resume monitoring": [
         "Reluare monitorizare"
       ],
@@ -390,6 +423,9 @@
       ],
       "Saving": [
         "Se salvează"
+      ],
+      "Secure links": [
+        "Legături web securizate"
       ],
       "See all": [
         "Afișare toate"
@@ -415,6 +451,9 @@
       "Share": [
         "Partajare"
       ],
+      "Share secure link": [
+        "Partajare legătură web sigură"
+      ],
       "Share this vault": [
         "Partajare acest seif"
       ],
@@ -432,6 +471,9 @@
       ],
       "Sign out": [
         "Deconectare"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Sortare articole seif"
@@ -474,6 +516,9 @@
       ],
       "Verify": [
         "Verifică"
+      ],
+      "Via secure link": [
+        "Prin legătură web securizată"
       ],
       "View details": [
         "Afișare detalii"
@@ -755,6 +800,9 @@
       "Importing items failed": [
         "Importarea articolelor a eșuat."
       ],
+      "Inactive secure links could not be removed.": [
+        "Legăturile web securizate inactive nu au putut fi eliminate."
+      ],
       "Invalid password manager": [
         "Manager de parole nevalid"
       ],
@@ -803,6 +851,12 @@
       "Restoring trashed items failed": [
         "Restaurarea fișierelor din gunoi a eșuat."
       ],
+      "Secure link could not be created.": [
+        "Legătura web securizată nu a putut fi creată."
+      ],
+      "Secure link could not be opened.": [
+        "Legătura web securizată nu a putut fi deschisă."
+      ],
       "Settings update failed": [
         "Actualizarea setărilor a eșuat."
       ],
@@ -824,11 +878,17 @@
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "A existat o eroare în timpul eliminării legăturii web securizate. Reîncercați peste câteva minute."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Prea multe încercări eșuate. Reconectați-vă."
       ],
       "Trashing item failed": [
         "Punerea în gunoi a articolelor a eșuat."
+      ],
+      "Try reaching out to the link owner.": [
+        "Încercați să contactați proprietarul legăturii web."
       ],
       "Unable to generate an OTP code for this item": [
         "Nu se poate genera un cod OTP pentru acest articol."
@@ -966,6 +1026,16 @@
       "${ count } invites successfully sent": [
         "Invitații trimise: ${ count }"
       ],
+      "${ count } time": [
+        "${ count } dată",
+        "de ${ count } ori",
+        "de ${ count } de ori"
+      ],
+      "${ count } view": [
+        "${ count } vizualizare",
+        "${ count } vizualizări",
+        "${ count } de vizualizări"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membru",
         "${ memberCount } membri",
@@ -1035,6 +1105,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Toate divulgările actuale vor fi marcate ca rezolvate. În caz de compromiteri ulterioare veți primi o notificare."
       ],
+      "All inactive secure links were removed": [
+        "Toate legăturile web securizate inactive au fost eliminate."
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "S-au mutat toate articolele din „${ payload.content.name }”."
       ],
@@ -1059,6 +1132,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Sigur doriți să mutați articolul în „${ name }” ?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Sigur doriți să eliminați legătura web?"
+      ],
       "Auto-lock successfully disabled.": [
         "Blocarea automată s-a dezactivat."
       ],
@@ -1073,6 +1149,9 @@
       ],
       "Built in 2FA authenticator": [
         "Autentificator A2F încorporat."
+      ],
+      "Can be viewed": [
+        "Se poate accesa"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Poate crea, edita, șterge și exporta articole din acest seif."
@@ -1181,6 +1260,12 @@
       ],
       "Enter your PIN code": [
         "Introduceți codul PIN"
+      ],
+      "Expires in": [
+        "Expiră peste"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Expiră peste ${ remainingTime }"
       ],
       "Extra password successfuly created": [
         "S-a creat parola suplimentară."
@@ -1475,8 +1560,14 @@
       "Registering PIN lock failed": [
         "Înregistrarea blocării cu PIN a eșuat."
       ],
+      "Removing all inactive secure links...": [
+        "Se elimină toate legăturile web securizate inactive..."
+      ],
       "Removing extra password...": [
         "Se elimină parola suplimentară..."
+      ],
+      "Removing secure link...": [
+        "Se elimină legătura web securizată..."
       ],
       "Restoring items from trash": [
         "Se restaurează articolele din gunoi."
@@ -1557,6 +1648,9 @@
         "Nu s-a putut importa ${ result.ignored.length } articol:",
         "Nu s-au putut importa ${ result.ignored.length } articole:",
         "Nu s-au putut importa ${ result.ignored.length } de articole:"
+      ],
+      "The secure link has been removed": [
+        "Legătura web securizată a fost eliminată."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Textul pe care încercați să îl lipiți este mai lung decât lungimea maximă permisă de ${ maxLength } de caractere."
@@ -1716,6 +1810,21 @@
         "${ config.options.wordCount } cuvinte",
         "${ config.options.wordCount } de cuvinte"
       ],
+      "${ days } day": [
+        "${ days } zi",
+        "${ days } zile",
+        "${ days } de zile"
+      ],
+      "${ hours } hour": [
+        "${ hours } oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versiune ${ PASS_SHORT_APP_NAME }"
       ],
@@ -1733,14 +1842,23 @@
       "10 minutes": [
         "10 minute"
       ],
+      "14 days": [
+        "14 zile"
+      ],
       "15 minutes": [
         "15 minute"
+      ],
+      "24 hours": [
+        "24 de ore"
       ],
       "2FA secret key (TOTP)": [
         "Cheie secretă A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Cod de acces A2F (TOTP)"
+      ],
+      "30 days": [
+        "30 de zile"
       ],
       "30 minutes": [
         "30 de minute"
@@ -1750,6 +1868,9 @@
       ],
       "5 minutes": [
         "5 minute"
+      ],
+      "7 days": [
+        "7 zile"
       ],
       "A-Z": [
         "A-Z"
@@ -1871,6 +1992,9 @@
       "Expired": [
         "Expirat"
       ],
+      "Expired link": [
+        "Legătură web expirată"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -1886,8 +2010,14 @@
       "Forwards to": [
         "Redirecționare către"
       ],
+      "Free forever": [
+        "Gratuit întotdeauna"
+      ],
       "General": [
         "Generale"
+      ],
+      "Generate a secure link for this item": [
+        "Generare legătură web sigură pentru acest articol"
       ],
       "Generic CSV": [
         "CSV generic"
@@ -1967,6 +2097,9 @@
       "Make all viewers": [
         "Setare toți ca utilizator"
       ],
+      "Max views reached": [
+        "Vizualizări maxime depășite"
+      ],
       "Members": [
         "Membri"
       ],
@@ -2018,6 +2151,9 @@
       "Oldest to newest": [
         "De la vechi la noi"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Manager de parole cu sursa publică pentru protecție fără efort."
+      ],
       "Organization": [
         "Organizația"
       ],
@@ -2054,6 +2190,9 @@
       "Recent": [
         "Recente"
       ],
+      "Remove link": [
+        "Eliminare legătură web"
+      ],
       "Report a problem": [
         "Raportare problemă"
       ],
@@ -2062,6 +2201,9 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Stocați în siguranță, partajați și autentificați-vă automat conturile cu ${ PASS_APP_NAME }, folosind criptarea bilaterală în care milioane de oameni au încredere."
       ],
       "Security": [
         "Securitate"
@@ -2084,6 +2226,15 @@
       "Session locking": [
         "Blocare sesiune"
       ],
+      "Share": [
+        "Partajare"
+      ],
+      "Share this vault or create a new vault": [
+        "Partajare acest seif sau creare seif"
+      ],
+      "Shared link": [
+        "Legătură web partajată"
+      ],
       "Show website favicons": [
         "Afișare pictogramă site web"
       ],
@@ -2104,6 +2255,17 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Articolele seifului sunt partajate cu ${ targetMembers } persoană.",
+        "Articolele seifului sunt partajate cu ${ targetMembers } persoane.",
+        "Articolele seifului sunt partajate cu ${ targetMembers } de persoane."
+      ],
+      "The URL has been copied to the clipboard": [
+        "Legătura web a fost copiată în memorie"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Acest articol va rămâne accesibil până la ${ remaining }"
       ],
       "Title": [
         "Titlu"
@@ -2510,6 +2672,9 @@
       "No reused passwords": [
         "Nu sunt parole reutilizate"
       ],
+      "No shared secure links": [
+        "Nu există legături web partajate"
+      ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
       ],
@@ -2542,6 +2707,9 @@
       ],
       "Remove extra password": [
         "Eliminare parolă suplimentară"
+      ],
+      "Remove secure link?": [
+        "Eliminați legătura web securizată?"
       ],
       "Resolved breaches": [
         "Divulgări rezolvate"

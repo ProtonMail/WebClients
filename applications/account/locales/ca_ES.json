@@ -1364,9 +1364,6 @@
       "Browse the web privately and block ads": [
         "Navegueu pel web de manera privada i bloquegeu els anuncis"
       ],
-      "Create and collaborate on documents securely": [
-        "Creeu i col·laboreu en documents de manera segura"
-      ],
       "Keep your schedule private": [
         "Manteniu la vostra agenda privada"
       ],
@@ -1406,8 +1403,8 @@
       "New": [
         "Nou"
       ],
-      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails. ${ learnMore }.": [
-        "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. ${ learnMore }"
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
       ],
       "Trial expires on ${ formattedDate }": [
         "La prova caduca el ${ formattedDate }"
@@ -1699,6 +1696,9 @@
       "Custom domain problem": [
         "Problema als dominis personalitzats"
       ],
+      "Docs problem": [
+        "Problema amb Docs"
+      ],
       "Drive problem": [
         "Problemes de Drive"
       ],
@@ -1970,7 +1970,7 @@
         "S'ha enviat la sol·licitud."
       ],
       "We'll get back to you with more information as soon as we can.": [
-        "Ens posarem en contacte amb vós amb més informació tan aviat com puguem."
+        "Ens posarem en contacte amb més informació tan aviat com puguem."
       ],
       "You can safely close this tab.": [
         "Podeu tancar aquesta pestanya amb seguretat."
@@ -4111,7 +4111,7 @@
         "Contrasenya incorrecta"
       ],
       "Incorrect second password. Please try again.": [
-        "La contrasenya no és correcta. Torneu-ho a intentar."
+        "La segona contrasenya no és correcta. Torneu-ho a intentar."
       ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
@@ -7805,9 +7805,6 @@
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "La tramesa SMTP permet que serveis o dispositius de tercers enviïn correu electrònic a través de ${ MAIL_APP_NAME } per a les adreces de domini personalitzat. Aquesta funció només està disponible per a ${ BRAND_NAME } per als usuaris empresarials amb dominis personalitzats."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
@@ -8155,10 +8152,10 @@
         "S'ha activat l'autenticació de dos factors"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
-        "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al vostre compte i una altra per a desxifrar les vostres dades. (Avançat)"
+        "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al compte i una altra per a desxifrar les dades. (Avançat)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "El mode de doble contrasenya empra contrasenyes separades per accedir i desxifrar les dades. Això proporciona un petit benefici en seguretat en algunes situacions, però no obstant recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per canviar al mode de doble contrasenya, establiu en primer lloc una contrasenya d'accés i després una segona contrasenya."
+        "El mode de doble contrasenya empra contrasenyes separades per a l'inici de sessió i el desxifratge de les dades. Això proporciona un petit benefici de seguretat en algunes situacions, però recomanem el mode d'una contrasenya per a la majoria d'usuaris. Per a canviar al mode de doble contrasenya, primer establiu una contrasenya d'inici de sessió i després una segona contrasenya."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No es pot verificar la signatura del fitxer de recuperació. Poseu-vos en contacte amb atenció al client."
@@ -8878,7 +8875,7 @@
         "No s'ha pogut generar la clau. Torneu-ho a provar més tard."
       ],
       "If you're generating a new key because you believe your existing key has been compromised, please mark it as compromised after generating this key.": [
-        "Si esteu generant una clau nova perquè creieu que la vostra clau existent s'ha vist compromesa, marqueu-la com a compromesa després de generar aquesta clau."
+        "Si esteu generant una clau nova perquè creieu que la vostra clau existent s'ha vist compromesa, marqueu-la com a compromesa després de generar aquesta."
       ],
       "Key successfully generated.": [
         "S'ha generat la clau."
@@ -8893,7 +8890,7 @@
         "Això generarà una nova clau, que s'utilitzarà per xifrar futures dades de contacte, claus de xifratge de correu electrònic i altres dades."
       ],
       "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "Això generarà una nova clau, que servirà per xifrar futurs correus electrònics, entre altres dades."
+        "Això generarà una clau nova que servirà per xifrar futurs correus electrònics, entre altres dades."
       ]
     },
     "Key state badge": {
@@ -10536,6 +10533,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add writing assistant": [
+        "Afegeix l'assistent d'escriptura"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per a protegir tot el vostre negoci"
       ],
@@ -10550,6 +10550,9 @@
       ],
       "Enhanced security and premium features for teams": [
         "Seguretat millorada i característiques prèmium per als equips"
+      ],
+      "for ${ price }": [
+        "per a ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta per temps limitat: **Obteniu fins a un 35% de descompte** amb plans anuals"
@@ -10652,7 +10655,7 @@
         "Elimina"
       ],
       "Delete and revoke invite": [
-        "Elimina i revoca l'invitació"
+        "Elimina i revoca la invitació"
       ],
       "Edit": [
         "Edita"
@@ -10978,6 +10981,23 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11007,24 +11027,10 @@
         "Millora a ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: feature": {
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ n } calendar": [
         "${ n } calendari",
         "${ n } calendaris"
@@ -11280,9 +11286,6 @@
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
-      "Pass Monitor - premium features": [
-        "Pass Monitor - característiques prèmium"
-      ],
       "Passkeys supported": [
         "S'admeten claus de pas"
       ],
@@ -11408,8 +11411,8 @@
       "Unlimited labels": [
         "Etiquetes il·limitades"
       ],
-      "Unlimited logins and notes": [
-        "Nombre il·limitat d'inicis de sessió i de notes"
+      "Unlimited logins, notes and credit cards": [
+        "Inicis de sessió il·limitats, notes i targetes de crèdit"
       ],
       "Unlimited messages per day": [
         "Missatges diaris il·limitats"
@@ -12397,7 +12400,7 @@
         "Assegureu-vos que el logo tingui espai de farciment al seu voltant."
       ],
       "Opt for a PNG image that is a 128x128 pixels for clarity.": [
-        "Opteu per a una imatge PNG de 128x128 píxels per a una major claredat."
+        "Opteu per una imatge PNG de 128x128 píxels per a una major claredat."
       ],
       "Tips on choosing a good logo": [
         "Consells per a triar un bon logo"
@@ -12423,7 +12426,7 @@
         "Imatge quadrada d'almenys 128 píxels"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Els usuaris veuran el vostre logotip en lloc de la icona ${ BRAND_NAME } quan iniciïn la sessió a les nostres aplicacions web."
+        "Els usuaris veuran el vostre logo en lloc de la icona de ${ BRAND_NAME } quan iniciïn la sessió a les nostres aplicacions web."
       ]
     },
     "OS compatibility": {
@@ -12450,7 +12453,7 @@
     },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
-        "Aneu a la vostra caixa forta per gestionar les vostres contrasenyes, àlies i molt més."
+        "Aneu a la vostra caixa forta per gestionar les contrasenyes, àlies, etc."
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
@@ -12727,15 +12730,19 @@
       "Save your recovery kit to continue": [
         "Deseu el vostre kit de recuperació per continuar"
       ],
-      "Secure sharing with ${ n } vault": [
-        "Compartició segura amb ${ n } caixa forta",
-        "Compartició segura amb ${ n } caixes fortes"
-      ],
-      "Secure sharing with multiple vaults": [
-        "Compartició segura amb diverses caixes fortes"
+      "Secure vault and link sharing": [
+        "Caixa forta i compartició d'enllaços"
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Compartició segura de la caixa forta ${ n }",
+        "Compartició segura de les caixes fortes ${ n }"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Compartició segura de la caixa forta ${ n } i compartició d'enllaços",
+        "Compartició segura de les caixes fortes ${ n } i compartició d'enllaços"
       ],
       "Secured by end-to-end encryption": [
         "Protegit amb xifratge d’extrem a extrem"
@@ -12842,7 +12849,7 @@
         "La clau de l'organització no existeix."
       ],
       "Organization key must be activated to give admin privileges": [
-        "La clau d'organització s'ha d'activar per donar privilegis d'administrador"
+        "S'ha d'activar la clau de l'organització per a donar privilegis d'administrador"
       ],
       "Organization key restored": [
         "S'ha restaurat la clau de l'organització."
@@ -12937,6 +12944,9 @@
       ],
       "Payment Processing": [
         "Processament de pagaments"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
       "Processing payment": [
         "S'està processant el pagament."
@@ -13305,7 +13315,7 @@
     },
     "Remove organization logo": {
       "Users will no longer see your custom logo or organization name.": [
-        "Els usuaris ja no veuran el vostre logotip personalitzat o el nom de l'organització."
+        "Els usuaris ja no veuran el vostre logo personalitzat o el nom de l'organització."
       ]
     },
     "Restore administrator panel": {
@@ -13359,7 +13369,7 @@
         "**Prerequisit:** Cal configurar l'autenticació SAML per a activar el subministrament SCIM."
       ],
       "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Requisit previ:** per habilitar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
+        "**Prerequisit:** per a habilitar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
       ],
       "Enter token into your identity provider": [
         "Introduïu el token al vostre proveïdor d'identitat"
@@ -13368,7 +13378,7 @@
         "Introduïu l'URL i el token al vostre proveïdor d'identitat"
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
-        "Per motius de seguretat, el token SCIM s'amagarà després de desar els canvis i no el podreu tornar a veure."
+        "Per motius de seguretat, el testimoni d'SCIM s'amagarà després de desar els canvis i no el podreu tornar a veure."
       ],
       "For security reasons, the token is hidden": [
         "Per raons de seguretat, el testimoni està amagat"
@@ -13380,7 +13390,7 @@
         "Aneu al vostre proveïdor d'identitat, copieu i enganxeu el token que apareix a continuació i torneu a activar l'SCIM per a ${ VPN_APP_NAME }."
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
-        "Si heu perdut o oblidat el token SCIM, en podeu generar un de nou, però tingueu en compte que la configuració del vostre proveïdor d'identitat s'haurà d'actualitzar."
+        "Si heu perdut o oblidat el testimoni d'SCIM, en podeu generar un de nou, però tingueu en compte que caldrà actualitzar les preferències del vostre proveïdor d'identitat."
       ],
       "Make sure you copy the above SCIM token now.": [
         "Assegureu-vos de copiar el testimoni d'SCIM anterior."
@@ -13392,7 +13402,7 @@
         "Se simplifica la gestió d'usuaris en diferents serveis. Afegiu, editeu i esborreu usuaris del vostre proveïdor d'identitat i aquests canvis s'aplicaran automàticament a la vostra organització de ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
-        "El subministrament automàtic d'SCIM es desactivarà fins que introduïu el nou token d'SCIM a la configuració del vostre proveïdor d'identitat."
+        "El subministrament automàtic d'SCIM es desactivarà fins que introduïu el nou testimoni d'SCIM a la configuració del vostre proveïdor d'identitat."
       ],
       "The SCIM base URL and token will be deleted.": [
         "Se suprimiran l'URL base i el testimoni SCIM."
@@ -13709,13 +13719,13 @@
         "Per motius de seguretat, haureu d'esperar **72 hores** abans de poder canviar la contrasenya."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
-        "Si teniu un **mètode de recuperació** configurat, proveu la recuperació del compte. Això us permetrà canviar la vostra contrasenya immediatament."
+        "Si teniu un **mètode de recuperació** configurat, proveu la recuperació del compte. Això us permetrà canviar la contrasenya immediatament."
       ],
       "We will contact you again when the password reset is available.": [
         "Ens posarem en contacte de nou quan hi hagi disponible el restabliment de contrasenya."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment al ${ accountAndPasswordSectionLink } de la configuració."
+        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment en la ${ accountAndPasswordSectionLink } de les preferències."
       ]
     },
     "session_recovery:initiation:link": {
@@ -14040,11 +14050,6 @@
         "Millora"
       ]
     },
-    "specialoffer: Link only for Free users": {
-      "Upgrade": [
-        "Millora"
-      ]
-    },
     "specialoffer: Offers": {
       "${ n } month": [
         "${ n } mes",
@@ -14325,6 +14330,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Assistent d'escriptura de ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
+        "Assistent d'escriptura de ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicat",
         "${ ipAddresses } servidors dedicats"
@@ -15095,6 +15104,9 @@
     "Suffix for price": {
       "per month": [
         "per mes"
+      ],
+      "per user per month": [
+        "per usuari al mes"
       ]
     },
     "Summary of errors during export calendar": {
@@ -15804,6 +15816,9 @@
       ],
       "Gift code": [
         "Codi regal"
+      ],
+      "Groups": [
+        "Grups"
       ],
       "History": [
         "Historial"
@@ -16653,7 +16668,7 @@
     },
     "Tooltip for news": {
       "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Rebeu les últimes notícies sobre privadesa i sobre el què passa a l'univers ${ BRAND_NAME }"
+        "Rebeu les últimes notícies sobre privacitat i sobre el que passa a l'univers de ${ BRAND_NAME }"
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participeu en enquestes per millorar els serveis de ${ BRAND_NAME }"
@@ -16759,7 +16774,7 @@
         "Crea una contrasenya"
       ],
       "Create password instead": [
-        "En lloc d'això, creeu la contrasenya"
+        "En lloc d'això, creeu una contrasenya"
       ],
       "Create user": [
         "Crea un usuari"
@@ -16773,6 +16788,9 @@
       "Name": [
         "Nom"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Adreça electrònica nova de ${ BRAND_NAME }"
+      ],
       "Optional": [
         "Opcional"
       ],
@@ -16783,10 +16801,10 @@
         "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
       ],
       "Send invite link via email instead": [
-        "En canvi, envieu l'enllaç d'invitació per correu electrònic"
+        "Envieu l'enllaç d'invitació per correu electrònic"
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
-        "Això crearà una nova adreça ${ MAIL_APP_NAME }."
+        "Això crearà una nova adreça de ${ MAIL_APP_NAME }."
       ],
       "User created": [
         "S'ha creat l'usuari"
@@ -16803,7 +16821,7 @@
         "Els administradors no poden accedir a les dades dels usuaris privats"
       ],
       "Invitation sent, awaiting reply from the invited member": [
-        "Invitació enviada, esperant resposta del membre convidat"
+        "S'ha enviat la invitació. S'està esperant la resposta del membre convidat."
       ],
       "Invite sent": [
         "S'ha enviat la invitació."
@@ -17000,8 +17018,14 @@
       "Please add at least one recipient.": [
         "Afegiu almenys un destinatari."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Comproveu que l'extensió estigui instal·lada i correctament activada"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
+      ],
+      "Please update the extension to its latest version": [
+        "Actualitzeu l'extensió a la seva darrera versió"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
