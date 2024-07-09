@@ -44,7 +44,6 @@ const getJsLoader = (options) => {
 };
 
 const getJsLoaders = (options) => {
-    console.log('using swc-loader');
     return [
         {
             test: /(unsupported|pre)\.ts$/,
