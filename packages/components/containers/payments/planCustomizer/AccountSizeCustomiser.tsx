@@ -2,6 +2,7 @@ import { ReactElement, ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Plan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -61,7 +62,7 @@ export const AccountSizeCustomiser = ({
             tooltip: c('Info').t`A user is an account associated with a single username, mailbox, and person`,
         },
         'gpt-seats': {
-            label: c('Info').t`Writing assistant add-on`,
+            label: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
             tooltip: c('Infog').t`AI powered assistant to help you craft better emails, quickly and effortlessly.`,
         },
     };
