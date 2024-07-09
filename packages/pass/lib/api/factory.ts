@@ -48,7 +48,9 @@ export type ApiFactoryOptions = {
     getAuth?: () => Maybe<ApiAuth>;
 };
 
-export const getAPIAuth = () => {
+/** In token based auth, each request should attach
+ * the necessary token based Authorization headers */
+export const getTokenAuth = (): Maybe<ApiAuth> => {
     const AccessToken = authStore.getAccessToken();
     const RefreshToken = authStore.getRefreshToken();
     const RefreshTime = authStore.getRefreshTime();
@@ -57,7 +59,21 @@ export const getAPIAuth = () => {
     return { UID, AccessToken, RefreshToken, RefreshTime };
 };
 
-export const createApi = ({ config, cookies, getAuth = getAPIAuth, threshold }: ApiFactoryOptions): Api => {
+/** If the API is configured to use cookies - we only
+ * need the session UID in order to send out requests */
+export const getCookieAuth = (): Maybe<ApiAuth> => {
+    const RefreshTime = authStore.getRefreshTime();
+    const UID = authStore.getUID();
+    if (!UID) return undefined;
+    return { UID, AccessToken: '', RefreshToken: '', RefreshTime };
+};
+
+export const createApi = ({
+    config,
+    cookies,
+    getAuth = cookies ? getCookieAuth : getTokenAuth,
+    threshold,
+}: ApiFactoryOptions): Api => {
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
