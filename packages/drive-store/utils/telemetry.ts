@@ -26,7 +26,7 @@ export const sendTelemetryFeaturePerformance = (
     timeInMs: number,
     treatment: ExperimentGroup
 ) => {
-    sendTelemetryReport({
+    void sendTelemetryReport({
         api: api,
         measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
         event: TelemetryDriveWebFeature.performance,

@@ -12,6 +12,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
@@ -149,8 +150,8 @@ export const useElements: UseElements = ({
             return;
         }
         elements.forEach((element) => dispatch(removeExpired(element)));
-        getConversationCounts({ cache: CacheType.None });
-        getMessageCounts({ cache: CacheType.None });
+        getConversationCounts({ cache: CacheType.None }).catch(noop);
+        getMessageCounts({ cache: CacheType.None }).catch(noop);
     });
 
     useEffect(() => {

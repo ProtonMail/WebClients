@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
+import noop from '@proton/utils/noop';
 
 import { DriveFolder } from '../../hooks/drive/useActiveShare';
 import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
@@ -124,9 +125,11 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
             })
             .catch(sendErrorReport);
 
-        getIsSharedWithMe(abortController.signal, activeFolder.shareId).then((result) => {
-            setIsSharedWithMeFolder(result);
-        });
+        getIsSharedWithMe(abortController.signal, activeFolder.shareId)
+            .then((result) => {
+                setIsSharedWithMeFolder(result);
+            })
+            .catch(noop);
         return () => {
             abortController.abort();
         };

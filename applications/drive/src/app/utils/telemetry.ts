@@ -5,6 +5,7 @@ import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/sh
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
 import { Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
@@ -26,7 +27,7 @@ export const sendTelemetryFeaturePerformance = (
     timeInMs: number,
     treatment: ExperimentGroup
 ) => {
-    sendTelemetryReport({
+    void sendTelemetryReport({
         api: api,
         measurementGroup: TelemetryMeasurementGroups.driveWebFeaturePerformance,
         event: TelemetryDriveWebFeature.performance,
@@ -90,22 +91,24 @@ export const measureExperimentalPerformance = <T>(
     performance.mark(startMark);
     const result = applyTreatment ? treatmentFunction() : controlFunction();
 
-    result.finally(() => {
-        performance.mark(endMark);
+    result
+        .finally(() => {
+            performance.mark(endMark);
 
-        measureAndReport(
-            api,
-            feature,
-            applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control,
-            measureName,
-            startMark,
-            endMark
-        );
+            measureAndReport(
+                api,
+                feature,
+                applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control,
+                measureName,
+                startMark,
+                endMark
+            );
 
-        performance.clearMarks(endMark);
-        performance.clearMeasures(measureName);
-        performance.clearMarks(startMark);
-    });
+            performance.clearMarks(endMark);
+            performance.clearMeasures(measureName);
+            performance.clearMarks(startMark);
+        })
+        .catch(noop);
 
     return result;
 };
