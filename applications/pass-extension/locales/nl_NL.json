@@ -110,10 +110,10 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
       "Create a new vault to share": [
@@ -265,6 +265,9 @@
       ],
       "Leave vault": [
         "Verlaat kluis"
+      ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
       ],
       "Lock extension": [
         "Extensie vergrendelen"
@@ -908,6 +911,10 @@
       "${ count } invites successfully sent": [
         "${ count } uitnodigingen succesvol verzonden"
       ],
+      "${ count } time": [
+        "${ count } keer",
+        "${ count } keren"
+      ],
       "${ memberCount } member": [
         "${ memberCount } lid",
         "${ memberCount } leden"
@@ -1093,6 +1100,9 @@
       ],
       "Enter your PIN code": [
         "Voer uw pincode in"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Verloopt over ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
@@ -1538,6 +1548,18 @@
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } woord",
         "${ config.options.wordCount } woorden"
+      ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"

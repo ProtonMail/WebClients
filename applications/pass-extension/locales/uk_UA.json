@@ -110,10 +110,10 @@
       "Create": [
         "Створити"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -266,6 +266,12 @@
       "Leave vault": [
         "Покинути сховище"
       ],
+      "Link copied to clipboard": [
+        "Посилання скопійовано в буфер обміну"
+      ],
+      "Link expires after": [
+        "Термін дії посилання закінчується після"
+      ],
       "Lock extension": [
         "Блокування розширення"
       ],
@@ -373,6 +379,9 @@
       ],
       "Restore item": [
         "Відновити елемент"
+      ],
+      "Restrict number of views": [
+        "Обмежити кількість переглядів"
       ],
       "Retry": [
         "Повторити спробу"
@@ -920,6 +929,12 @@
       "${ count } invites successfully sent": [
         "${ count } запрошень успішно відправлено"
       ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разів",
+        "${ count } рази",
+        "${ count } рази"
+      ],
       "${ memberCount } member": [
         "${ memberCount } учасник",
         "${ memberCount } учасники",
@@ -1114,6 +1129,9 @@
       ],
       "Enter your PIN code": [
         "Введіть PIN-код"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Термін дії завершується ${ remainingTime }"
       ],
       "Fill in the CSV with your data": [
         "Заповніть CSV своїми даними"
@@ -1575,6 +1593,18 @@
         "${ config.options.wordCount } слова",
         "${ config.options.wordCount } слів",
         "${ config.options.wordCount } слів"
+      ],
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } монітор"

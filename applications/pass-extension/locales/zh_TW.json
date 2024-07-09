@@ -92,10 +92,10 @@
       "Create": [
         "創建"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "創建一個${ BRAND_NAME } 帳號"
       ],
       "Create a new vault to share": [
@@ -247,6 +247,9 @@
       ],
       "Leave vault": [
         "離開保管庫"
+      ],
+      "Link copied to clipboard": [
+        "已複製連結到剪貼簿"
       ],
       "Lock extension": [
         "鎖定擴充"
@@ -802,6 +805,9 @@
       "${ count } invites successfully sent": [
         "${ count }邀請成功寄出"
       ],
+      "${ count } time": [
+        "${ count }次數"
+      ],
       "${ memberCount } member": [
         "${ memberCount } 位成員"
       ],
@@ -936,6 +942,9 @@
       ],
       "Enter your PIN code": [
         "輸入個人識別數字代碼"
+      ],
+      "Expires in ${ remainingTime }": [
+        "將於${ remainingTime }過期"
       ],
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
@@ -1289,6 +1298,15 @@
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount }個字"
+      ],
+      "${ days } day": [
+        "${ days }天"
+      ],
+      "${ hours } hour": [
+        "${ hours }小時"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }分鐘"
       ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME }監控"
