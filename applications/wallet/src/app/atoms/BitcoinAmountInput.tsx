@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import type { InputProps } from '@proton/atoms/Input/Input';
@@ -29,12 +29,7 @@ export const BitcoinAmountInput = ({
     inputClassName,
     ...inputProps
 }: Props) => {
-    const [fiatAmount, setFiatAmount] = useState(0);
-
-    useEffect(() => {
-        setFiatAmount(convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const [fiatAmount, setFiatAmount] = useState(convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const amount = parseFloat(event.target.value);
