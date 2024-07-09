@@ -222,7 +222,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                         </ModalTwoContent>
                         {!isShareUrlEnabled ? (
                             <>
-                                <hr className="mb-0.5" />
+                                <hr className="mb-0.5 min-h-px" />
                                 <ModalTwoFooter>
                                     <PublicSharing
                                         createSharedLink={createSharedLink}
