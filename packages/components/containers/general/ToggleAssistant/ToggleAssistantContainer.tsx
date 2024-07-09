@@ -9,6 +9,7 @@ import {
     useUserSettings,
 } from '@proton/components';
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -38,7 +39,7 @@ const ToggleAssistantContainer = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="assistantSelect" className="flex-1">
-                        <span className="text-semibold">{c('Title').t`Writing assistant`}</span>
+                        <span className="text-semibold">{c('Title').t`${BRAND_NAME} Scribe writing assistant`}</span>
                     </label>
                     <Href className="block text-sm" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant')}>{c(
                         'Link'
