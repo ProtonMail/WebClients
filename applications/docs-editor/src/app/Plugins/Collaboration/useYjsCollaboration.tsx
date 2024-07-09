@@ -1,5 +1,5 @@
 import type { Binding, ExcludedProperties, Provider } from '@lexical/yjs'
-import type { LexicalEditor } from 'lexical'
+import type { LexicalCommand, LexicalEditor } from 'lexical'
 
 import { mergeRegister } from '@lexical/utils'
 import {
@@ -19,6 +19,7 @@ import {
   FOCUS_COMMAND,
   REDO_COMMAND,
   UNDO_COMMAND,
+  createCommand,
 } from 'lexical'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
@@ -31,6 +32,8 @@ import { sendErrorMessage } from '../../Utils/errorMessage'
 export type CursorsContainerRef = React.MutableRefObject<HTMLElement | null>
 
 // Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
+
+const CLEAR_HISTORY_COMMAND: LexicalCommand<void> = createCommand('CLEAR_HISTORY')
 
 export function useYjsCollaboration(
   editor: LexicalEditor,
@@ -108,7 +111,11 @@ export function useYjsCollaboration(
     if (!didPostReadyEvent.current) {
       onCollabReady()
       if (root.isEmpty() && root._xmlText.length === 0 && injectWithNewContent) {
-        $importDataIntoEditor(editor, injectWithNewContent.data, injectWithNewContent.type).catch(sendErrorMessage)
+        $importDataIntoEditor(editor, injectWithNewContent.data, injectWithNewContent.type)
+          .then(() => {
+            editor.dispatchCommand(CLEAR_HISTORY_COMMAND, undefined)
+          })
+          .catch(sendErrorMessage)
       }
       didPostReadyEvent.current = true
     }
@@ -196,6 +203,10 @@ export function useYjsFocusTracking(
 export function useYjsHistory(editor: LexicalEditor, binding: Binding): () => void {
   const undoManager = useMemo(() => createUndoManager(binding, binding.root.getSharedType()), [binding])
 
+  const clearHistory = useCallback(() => {
+    undoManager.clear()
+  }, [undoManager])
+
   useEffect(() => {
     const undo = () => {
       undoManager.undo()
@@ -222,11 +233,16 @@ export function useYjsHistory(editor: LexicalEditor, binding: Binding): () => vo
         },
         COMMAND_PRIORITY_EDITOR,
       ),
+      editor.registerCommand(
+        CLEAR_HISTORY_COMMAND,
+        () => {
+          clearHistory()
+          return true
+        },
+        COMMAND_PRIORITY_EDITOR,
+      ),
     )
   })
-  const clearHistory = useCallback(() => {
-    undoManager.clear()
-  }, [undoManager])
 
   // Exposing undo and redo states
   useEffect(() => {
