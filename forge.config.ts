@@ -162,6 +162,8 @@ const config: ForgeConfig = {
             [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
             // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths
             [FuseV1Options.OnlyLoadAppFromAsar]: true,
+            // Encrypt cookies to avoid session hijacking
+            [FuseV1Options.EnableCookieEncryption]: true,
         }),
     ],
 };
