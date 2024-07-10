@@ -98,7 +98,15 @@ export const mergeSessionTokens = (session: AuthSession, authStore: AuthStore): 
 
 /** Retrieves the current local key to decrypt the persisted session */
 export const getPersistedSessionKey = async (api: Api, authStore: AuthStore): Promise<CryptoKey> => {
-    const clientKey = authStore.getClientKey() ?? (await api<LocalKeyResponse>(getLocalKey())).ClientKey;
+    const clientKey =
+        authStore.getClientKey() ??
+        (
+            await api<LocalKeyResponse>({
+                ...getLocalKey(),
+                silence: true,
+            })
+        ).ClientKey;
+
     authStore.setClientKey(clientKey);
     return getClientKey(clientKey);
 };

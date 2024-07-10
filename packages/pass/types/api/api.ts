@@ -55,7 +55,7 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     sideEffects?: boolean;
     unauth?: boolean;
     signal?: AbortSignal;
-    silent?: boolean;
+    silence?: boolean | (string | number)[];
     url?: U;
 };
 
@@ -70,7 +70,7 @@ export type ApiResponseMapper<T extends any = void, U extends string = string, M
 export type ApiSessionEvent = 'inactive' | 'locked' | 'not-allowed' | 'missing-scope';
 
 export type ApiSubscriptionEvent =
-    | { type: 'error'; error: string }
+    | { type: 'error'; error: string; silent?: boolean }
     | { type: 'network'; online: boolean }
     | { type: 'refresh'; data: RefreshSessionResponse & { RefreshTime: number } }
-    | { type: 'session'; status: ApiSessionEvent; error?: string };
+    | { type: 'session'; status: ApiSessionEvent; error?: string; silent?: boolean };

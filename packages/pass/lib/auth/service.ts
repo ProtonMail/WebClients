@@ -222,7 +222,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const localID = authStore.getLocalID();
             const userID = authStore.getUserID();
 
-            if (!options?.soft) await api({ ...revoke(), silent: true }).catch(noop);
+            if (!options?.soft) await api({ ...revoke(), silence: true }).catch(noop);
 
             await api.reset();
             authStore.clear();
@@ -542,7 +542,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
             switch (event.type) {
                 case 'session': {
                     if (event.status === 'inactive') {
-                        config.onNotification?.({ text: c('Warning').t`Your session is inactive.`, type: 'error' });
+                        if (!event.silent) {
+                            config.onNotification?.({
+                                text: c('Warning').t`Your session is inactive.`,
+                                type: 'error',
+                            });
+                        }
                         await authService.logout({ soft: true, broadcast: true });
                     }
 
