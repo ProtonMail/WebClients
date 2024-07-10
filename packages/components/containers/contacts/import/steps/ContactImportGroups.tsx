@@ -232,7 +232,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
 
     return (
         <form className="modal-two-dialog-container h-full" onSubmit={handleSubmit}>
-            <ModalTwoHeader title={c('Title').t`Warning`} />
+            <ModalTwoHeader title={c('Title').t`Import groups`} />
             <ModalTwoContent>
                 <Alert className="mb-4">
                     {c('Description')
