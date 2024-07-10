@@ -5,23 +5,23 @@ import {
     WalletDrawerAppButton,
 } from '@proton/components/components';
 import { useFlag } from '@proton/components/containers';
-import { useDrawer, useOrganization, useUser } from '@proton/components/hooks';
+import { useDrawer } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import isTruthy from '@proton/utils/isTruthy';
 
 const useMailDrawer = () => {
     const { appInView, showDrawerSidebar } = useDrawer();
-    const [user] = useUser();
-    const [organization] = useOrganization();
+
     // TODO: add UserSettings."WalletAccess" condition once available
-    const canAccessWallet = useFlag('Wallet') && (user.isFree || organization?.MaxMembers === 1);
+    const canShowWalletRightSidebarLink = useFlag('WalletRightSidebarLink');
 
     const drawerSidebarButtons = [
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
         <CalendarDrawerAppButton aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)} />,
-        canAccessWallet && <WalletDrawerAppButton />,
+        canShowWalletRightSidebarLink && !isElectronApp && <WalletDrawerAppButton />,
         <SecurityCenterDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.SECURITY_CENTER, appInView)} />,
     ].filter(isTruthy);
 

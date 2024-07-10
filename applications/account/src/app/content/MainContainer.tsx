@@ -192,7 +192,7 @@ const MainContainer = () => {
     const toApp = isLocal ? APPS.PROTONACCOUNT : app;
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
     const prefixPath = `/${appSlug}`;
-    const canAccessWallet = useFlag("Wallet");
+    const canAccessWallet = useFlag('Wallet');
 
     const hasPassB2bPlan = getHasPassB2BPlan(subscription);
 
