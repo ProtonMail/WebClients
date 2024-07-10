@@ -1,4 +1,3 @@
-import { compact } from 'lodash';
 import { c } from 'ttag';
 
 import { WasmTxBuilder } from '@proton/andromeda';
@@ -10,7 +9,8 @@ import { CryptoProxy, PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { ProcessedApiKey, Recipient } from '@proton/shared/lib/interfaces';
+import { getKeyHasFlagsToVerify } from '@proton/shared/lib/keys';
 import { useBitcoinNetwork, useWalletApiClients, verifySignedData } from '@proton/wallet';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-integration';
 
@@ -18,7 +18,10 @@ import { Button } from '../../atoms';
 import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { isUndefined, isValidBitcoinAddress } from '../../utils';
 import { EmailOrBitcoinAddressInput } from '../EmailOrBitcoinAddressInput';
-import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import {
+    InvalidRecipientErrorCode,
+    useEmailAndBtcAddressesMaps,
+} from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import { RecipientDetailsModal } from '../RecipientDetailsModal';
 import { WalletNotFoundErrorDropdown } from './WalletNotFoundError/WalletNotFoundErrorDropdown';
@@ -30,6 +33,33 @@ interface Props {
     txBuilder: WasmTxBuilder;
     updateTxBuilder: (updater: TxBuilderUpdater) => void;
 }
+
+const getVerifiedAddressKey = async (
+    addressKeys: ProcessedApiKey[],
+    btcAddress: string,
+    btcAddressSignature: string
+): Promise<PublicKeyReference | undefined> => {
+    const keys = await Promise.allSettled(
+        addressKeys
+            .filter((k) => {
+                return getKeyHasFlagsToVerify(k.flags);
+            })
+            .map(async (addressKey) => {
+                const pubkey = await CryptoProxy.importPublicKey({ armoredKey: addressKey.armoredKey });
+                const isVerified = await verifySignedData(btcAddress, btcAddressSignature, 'wallet.bitcoin-address', [
+                    pubkey,
+                ]);
+
+                return isVerified ? pubkey : null;
+            })
+    );
+
+    const [firstAddressKey] = keys
+        .map((result) => ('value' in result ? result.value : undefined))
+        .filter((key): key is PublicKeyReference => !!key);
+
+    return firstAddressKey;
+};
 
 export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsConfirm, updateTxBuilder }: Props) => {
     const {
@@ -102,7 +132,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     if (!btcAddress) {
                         addInvalidRecipient(
                             recipientOrBitcoinAddress,
-                            c('Wallet send').t`No address set on this BitcoinAddress`
+                            InvalidRecipientErrorCode.NoAddressSetOnBitcoinAddress
                         );
                         continue;
                     }
@@ -110,7 +140,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     if (!btcAddressSignature) {
                         addInvalidRecipient(
                             recipientOrBitcoinAddress,
-                            c('Wallet send').t`No signature set on this BitcoinAddress`
+                            InvalidRecipientErrorCode.NoSignatureSetOnBitcoinAddress
                         );
                         continue;
                     }
@@ -123,29 +153,15 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                         verifyOutboundPublicKeys,
                     });
 
-                    // TODO: maybe find a better way to find publickey that signed address
-                    const publicKeys = await Promise.all(
-                        addressKeys.map(async (addressKey) => {
-                            const pubkey = await CryptoProxy.importPublicKey({ armoredKey: addressKey.armoredKey });
-                            const isVerified = await verifySignedData(
-                                btcAddress,
-                                btcAddressSignature,
-                                'wallet.bitcoin-address',
-                                [pubkey]
-                            );
+                    const addressKey = await getVerifiedAddressKey(addressKeys, btcAddress, btcAddressSignature);
 
-                            return isVerified ? pubkey : null;
-                        })
-                    );
-
-                    const [firstAddressKey] = compact(publicKeys);
-                    if (!firstAddressKey) {
+                    if (!addressKey) {
                         addInvalidRecipient(
                             recipientOrBitcoinAddress,
-                            c('Wallet send').t`Bitcoin address signature could not be verified`
+                            InvalidRecipientErrorCode.BitcoinAddressSignatureCouldNotBeVerified
                         );
                     } else {
-                        safeAddRecipient(recipientOrBitcoinAddress, btcAddress, firstAddressKey);
+                        safeAddRecipient(recipientOrBitcoinAddress, btcAddress, addressKey);
                     }
                 } catch {
                     const hasRecipientSentInvite =
@@ -163,13 +179,13 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
 
                     addInvalidRecipient(
                         recipientOrBitcoinAddress,
-                        c('Wallet send').t`Could not find address linked to this email`
+                        InvalidRecipientErrorCode.CouldNotFindBitcoinAddressLinkedToEmail
                     );
                 }
             } else if (isValidBitcoinAddress(recipientOrBitcoinAddress.Address, network)) {
                 safeAddRecipient(recipientOrBitcoinAddress, recipientOrBitcoinAddress.Address);
             } else {
-                addInvalidRecipient(recipientOrBitcoinAddress, c('Wallet send').t`Added address is invalid`);
+                addInvalidRecipient(recipientOrBitcoinAddress, InvalidRecipientErrorCode.InvalidAddress);
             }
         }
     };
@@ -200,15 +216,33 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     recipientEmailMap={recipientEmailMap}
                     network={network}
                     loading={loadingBitcoinAddressLookup}
-                    fetchedEmailListItemRightNode={({ email, error }) =>
-                        error ? (
-                            <WalletNotFoundErrorDropdown
-                                hasSentInvite={checkHasSentInvite(email)}
-                                email={email}
-                                onSendInvite={handleSendInvite}
-                            />
-                        ) : null
-                    }
+                    fetchedEmailListItemRightNode={({ email, error }) => {
+                        if (error === InvalidRecipientErrorCode.CouldNotFindBitcoinAddressLinkedToEmail) {
+                            return (
+                                <WalletNotFoundErrorDropdown
+                                    hasSentInvite={checkHasSentInvite(email)}
+                                    email={email}
+                                    onSendInvite={handleSendInvite}
+                                />
+                            );
+                        }
+
+                        if (error === InvalidRecipientErrorCode.InvalidAddress) {
+                            return (
+                                <span className="block text-sm color-danger w-1/3">{c('Wallet send')
+                                    .t`Address is neither a valid bitcoin or email address`}</span>
+                            );
+                        }
+
+                        if (error) {
+                            return (
+                                <span className="block text-sm color-danger w-1/3">{c('Wallet send')
+                                    .t`Bitcoin address signature could not be verified`}</span>
+                            );
+                        }
+
+                        return null;
+                    }}
                     onClickRecipient={(recipient, btcAddress, index) => {
                         if (btcAddress.value) {
                             setRecipientDetailsModal({ recipient, btcAddress: btcAddress.value, index });
