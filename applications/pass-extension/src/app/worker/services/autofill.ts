@@ -10,8 +10,10 @@ import { intoSafeLoginItem, intoUserIdentifier } from '@proton/pass/lib/items/it
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { itemAutofilled } from '@proton/pass/store/actions';
+import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
 import {
     selectAutofillCandidates,
+    selectAutosuggestCopyToClipboard,
     selectItem,
     selectPasswordOptions,
     selectVaultLimits,
@@ -113,8 +115,12 @@ export const createAutoFillService = () => {
         })
     );
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG, () => {
-        return { config: selectPasswordOptions(store.getState()) ?? DEFAULT_RANDOM_PW_OPTIONS };
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOSUGGEST_PASSWORD, () => {
+        const state = store.getState();
+        return {
+            config: selectPasswordOptions(state) ?? DEFAULT_RANDOM_PW_OPTIONS,
+            copy: selectAutosuggestCopyToClipboard(state) ?? INITIAL_SETTINGS.autosuggest.passwordCopy,
+        };
     });
 
     WorkerMessageBroker.registerMessage(
