@@ -23,6 +23,7 @@ const PASS_MAILBOX_PWD_KEY = 'pass:mailbox_pwd';
 const PASS_OFFLINE_CONFIG_KEY = 'pass:offline_config';
 const PASS_OFFLINE_KD_KEY = 'pass:offline_kd';
 const PASS_OFFLINE_VERIFIER_KEY = 'pass:offline_verifier';
+const PASS_PERSISTENT_SESSION_KEY = 'pass:persistent';
 const PASS_REFRESH_TIME_KEY = 'pass:refresh_time';
 const PASS_REFRESH_TOKEN_KEY = 'pass:refresh_token';
 const PASS_SESSION_VERSION_KEY = 'pass:session_version';
@@ -53,6 +54,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             offlineKD: authStore.getOfflineKD(),
             offlineVerifier: authStore.getOfflineVerifier(),
             payloadVersion: authStore.getSessionVersion(),
+            persistent: authStore.getPersistent(),
             RefreshTime: authStore.getRefreshTime(),
             RefreshToken: authStore.getRefreshToken() ?? '',
             sessionLockToken: authStore.getLockToken(),
@@ -95,6 +97,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             if (session.offlineKD) authStore.setOfflineKD(session.offlineKD);
             if (session.offlineVerifier) authStore.setOfflineVerifier(session.offlineVerifier);
             if (session.payloadVersion !== undefined) authStore.setSessionVersion(session.payloadVersion);
+            if (session.persistent) authStore.setPersistent(session.persistent);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken && !options.cookies) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
@@ -148,6 +151,9 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
 
         getClientKey: encodedGetter(store)(PASS_CLIENT_KEY),
         setClientKey: encodedSetter(store)(PASS_CLIENT_KEY),
+
+        getPersistent: (): Maybe<boolean> => store.get(PASS_PERSISTENT_SESSION_KEY),
+        setPersistent: (persistent: boolean): void => store.set(PASS_PERSISTENT_SESSION_KEY, persistent),
     };
 
     return authStore;

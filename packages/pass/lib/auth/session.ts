@@ -33,6 +33,7 @@ export type AuthSession = {
     offlineKD?: string;
     offlineVerifier?: string;
     payloadVersion?: AuthSessionVersion;
+    persistent?: boolean;
     RefreshTime?: number;
     RefreshToken: string;
     sessionLockToken?: string;
@@ -57,6 +58,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'offlineKD',
     'offlineVerifier',
     'payloadVersion',
+    'persistent',
     'RefreshToken',
     'sessionLockToken',
     'UID',
@@ -176,7 +178,14 @@ export const resumeSession = async (
         return {
             cookieUpgrade,
             clientKey,
-            session: mergeSessionTokens({ ...session, ...decryptedBlob }, authStore),
+            session: mergeSessionTokens(
+                {
+                    ...session,
+                    ...decryptedBlob,
+                    persistent: cookieUpgrade || session.persistent,
+                },
+                authStore
+            ),
         };
     } catch (error: unknown) {
         if (onSessionInvalid) {
