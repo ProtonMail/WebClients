@@ -37,14 +37,10 @@ const useAssistantFeatureEnabled = () => {
     const enabled =
         accessToAssistant &&
         !isOrganizationBeforeBackfill &&
-        // the first condition checks trial eligibility for paying users (you can enter trial if you can pay for scribe)
-        // the second condition checks trial eligibility for members of organizations that support Scribe
-        // (you're a member of Mail Pro organization, so you can enter the trial and you admin can pruchase it later)
-        // the thir condition allows paying users to use and configure Scribe
-        (scribePaymentsEnabled || planSupportsScribe || userHasScribeSeat) &&
-        // The additional entry && planSupportsScribe ensures that planSupportsScribe === true can turn on the feature
-        // alone, while scribePaymentsEnabled === true and userHasScribeSeat === true still require
-        // planSupportsScribe === true
+        // you can't see anything Scribe related if the payments can't support you buying it
+        // but if you have a seat you can still use it
+        (scribePaymentsEnabled || userHasScribeSeat) &&
+        // user can't enter scribe trial if the organization plan doesn't support it
         planSupportsScribe;
 
     return {
