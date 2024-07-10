@@ -34,6 +34,7 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import { USE_COOKIES } from '@proton/pass/lib/auth/flags';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
@@ -53,9 +54,9 @@ import locales from './locales';
 
 import './app.scss';
 
-exposeAuthStore(createAuthStore(createSecureSessionStorage(), { cookies: true }));
+exposeAuthStore(createAuthStore(createSecureSessionStorage(), { cookies: USE_COOKIES }));
+exposeApi(createApi({ config: PASS_CONFIG, cookies: USE_COOKIES }));
 exposePassCrypto(createPassCrypto());
-exposeApi(createApi({ config: PASS_CONFIG, cookies: true }));
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 
 const history = createHashHistory();
