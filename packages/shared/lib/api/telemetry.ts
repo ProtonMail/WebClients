@@ -90,14 +90,10 @@ export enum TelemetryAccountSignupEvents {
 
 export enum TelemtryAccountCancellationEvents {
     startCancellation = 'start_cancellation',
-    cancelPageKeepPlan = 'cancel_page_keep_plan',
-    cancelPageConfirmCancel = 'cancel_page_confirm_cancel',
-    cancelModalKeepPlan = 'cancel_modal_keep_plan',
-    cancelModalConfirmCancel = 'cancel_modal_confirm_cancel',
-    feedbackModalSubmit = 'feedback_modal_submit',
-    feedbackModalCancel = 'feedback_modal_cancel',
-    resubscribeModalResubcribe = 'resubscribe_modal_resubscribe',
-    resubscribeModalClose = 'resubscribe_modal_close',
+    cancelPage = 'cancel_page',
+    cancelModal = 'cancel_modal',
+    feedbackModal = 'feedback_modal',
+    resubscribeModal = 'resubscribe_modal',
     dashboardReactivate = 'dashboard_reactivate',
 }
 
