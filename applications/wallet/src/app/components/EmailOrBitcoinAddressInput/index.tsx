@@ -51,7 +51,13 @@ interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
     excludedEmails?: string[];
     loading?: boolean;
     network: WasmNetwork;
-    fetchedEmailListItemRightNode: ({ email, error }: { email: string; error?: string }) => JSX.Element | null;
+    fetchedEmailListItemRightNode: ({
+        email,
+        error,
+    }: {
+        email: string;
+        error?: BtcAddressOrError['error'];
+    }) => JSX.Element | null;
 }
 
 interface EmailListItemProps {
@@ -286,7 +292,10 @@ export const EmailOrBitcoinAddressInput = ({
                                                 className="mr-1 shrink-0 rounded-full"
                                                 size="small"
                                                 icon
-                                                onClick={() => onRemoveRecipient(recipient)}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    onRemoveRecipient(recipient);
+                                                }}
                                             >
                                                 <Icon name="cross" />
                                             </CoreButton>
@@ -321,7 +330,7 @@ export const EmailOrBitcoinAddressInput = ({
                 ) : null}
             </>
         );
-    }, [fetchedEmailListItemRightNode, onRemoveRecipient, recipientsWithBtcAddress]);
+    }, [fetchedEmailListItemRightNode, onClickRecipient, onRemoveRecipient, recipientsWithBtcAddress]);
 
     return (
         <>
