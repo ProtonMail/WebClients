@@ -1,6 +1,19 @@
-import { BillingPlatform, ChargebeeEnabled, Subscription, User } from '@proton/shared/lib/interfaces';
+import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import {
+    BillingPlatform,
+    ChargebeeEnabled,
+    ChargebeeUserExists,
+    Subscription,
+    User,
+} from '@proton/shared/lib/interfaces';
+import { buildSubscription, buildUser } from '@proton/testing/builders';
 
-import { isOnSessionMigration, onSessionMigrationChargebeeStatus, onSessionMigrationPaymentsVersion } from './utils';
+import {
+    isOnSessionMigration,
+    isSplittedUser,
+    onSessionMigrationChargebeeStatus,
+    onSessionMigrationPaymentsVersion,
+} from './utils';
 
 describe('isOnSessionMigration', () => {
     it.each([
@@ -192,5 +205,87 @@ describe('onSessionMigrationPaymentsVersion', () => {
                 } as Subscription
             )
         ).toBe('v4');
+    });
+});
+
+describe('isSplittedUser', () => {
+    it.each([
+        {
+            ChargebeeUserExists: true as any,
+            BillingPlatform: BillingPlatform.Proton,
+        },
+        {
+            ChargebeeUserExists: 1 as any,
+            BillingPlatform: BillingPlatform.Proton,
+        },
+        {
+            ChargebeeUserExists: ChargebeeUserExists.YES,
+            BillingPlatform: BillingPlatform.Proton,
+        },
+        {
+            ChargebeeUserExists: ChargebeeUserExists.YES,
+            BillingPlatform: 0,
+        },
+    ])(
+        'should be splitted if BillingPlatform is proton and CB customer exists',
+        ({ ChargebeeUserExists, BillingPlatform }) => {
+            expect(
+                isSplittedUser(
+                    buildUser({ ChargebeeUserExists }),
+                    buildSubscription({
+                        BillingPlatform,
+                    })
+                )
+            ).toBe(true);
+        }
+    );
+
+    it.each([
+        {
+            ChargebeeUserExists: ChargebeeUserExists.NO,
+            BillingPlatform: BillingPlatform.Proton,
+        },
+        {
+            ChargebeeUserExists: ChargebeeUserExists.NO,
+            BillingPlatform: 0,
+        },
+        {
+            ChargebeeUserExists: ChargebeeUserExists.YES,
+            BillingPlatform: BillingPlatform.Chargebee,
+        },
+    ])(
+        'should not be splitted if BillingPlatform is not proton or CB customer does not exist',
+        ({ ChargebeeUserExists, BillingPlatform }) => {
+            expect(
+                isSplittedUser(
+                    buildUser({ ChargebeeUserExists }),
+                    buildSubscription({
+                        BillingPlatform,
+                    })
+                )
+            ).toBe(false);
+        }
+    );
+
+    it('should not be splitted if subscription is undefined', () => {
+        expect(
+            isSplittedUser(
+                buildUser({
+                    ChargebeeUserExists: ChargebeeUserExists.YES,
+                }),
+                undefined
+            )
+        ).toBe(false);
+    });
+
+    it('should not be splitted if subscription is free', () => {
+        expect(
+            isSplittedUser(
+                buildUser({
+                    ChargebeeUserExists: ChargebeeUserExists.YES,
+                }),
+                FREE_SUBSCRIPTION as any
+            )
+        ).toBe(false);
     });
 });
