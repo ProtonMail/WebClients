@@ -6,9 +6,9 @@ export function FontColorMenu({
   backgroundColors,
   onBackgroundColorChange,
 }: {
-  textColors: string[]
+  textColors: [() => string, string][]
   onTextColorChange: (color: string) => void
-  backgroundColors: (string | null)[]
+  backgroundColors: [() => string, string | null][]
   onBackgroundColorChange: (color: string | null) => void
 }) {
   return (
@@ -20,15 +20,15 @@ export function FontColorMenu({
     >
       <div>{c('Label').t`Text colour`}</div>
       <div className="flex items-center gap-3">
-        {textColors.map((color) => (
-          // eslint-disable-next-line jsx-a11y/control-has-associated-label
+        {textColors.map(([name, color]) => (
           <button
             className="border-weak flex h-8 w-8 items-center justify-center rounded-full border text-base hover:brightness-75"
             style={{
               color: color,
             }}
             onClick={() => onTextColorChange(color)}
-            data-testid="text-colors"
+            data-testid={`${name()}-text-color`}
+            aria-label={name()}
           >
             <div aria-hidden="true">A</div>
           </button>
@@ -36,8 +36,7 @@ export function FontColorMenu({
       </div>
       <div>{c('Label').t`Background colour`}</div>
       <div className="flex items-center gap-3">
-        {backgroundColors.map((color) => {
-          // eslint-disable-next-line jsx-a11y/control-has-associated-label
+        {backgroundColors.map(([name, color]) => {
           return (
             <button
               className="text-norm flex h-8 w-8 items-center justify-center rounded-full border text-base hover:brightness-75"
@@ -46,7 +45,8 @@ export function FontColorMenu({
                 borderColor: color || 'var(--border-weak)',
               }}
               onClick={() => onBackgroundColorChange(color)}
-              data-testid="background-colors"
+              data-testid={`${name()}-background-color`}
+              aria-label={name()}
             >
               <div aria-hidden="true">A</div>
             </button>
