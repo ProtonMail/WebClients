@@ -48,6 +48,7 @@ interface Props {
     activeSessions?: LocalSessionPersisted[];
     updateActiveSessions: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
     onAddAccount: () => void;
+    onEmptySessions: () => void;
     metaTags: MetaTags;
 }
 
@@ -71,6 +72,7 @@ const SwitchAccountContainer = ({
     activeSessions,
     onAddAccount,
     updateActiveSessions,
+    onEmptySessions,
 }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -103,6 +105,8 @@ const SwitchAccountContainer = ({
                 updateActiveSessions(sessions);
             };
             void withLoading(run().catch(() => setError(true)));
+        } else if (!activeSessions.length) {
+            onEmptySessions();
         }
     }, []);
 
