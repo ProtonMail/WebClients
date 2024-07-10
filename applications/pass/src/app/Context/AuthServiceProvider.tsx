@@ -33,7 +33,7 @@ import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
-import { resumeSession } from '@proton/pass/lib/auth/session';
+import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canPasswordUnlock } from '@proton/pass/lib/cache/utils';
@@ -141,9 +141,24 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 const persistedSession = await auth.config.getPersistedSession(initialLocalID);
 
-                /** configure the authentication store partially in order to
-                 * hydrate the userID and offline salts properties */
-                if (persistedSession) authStore.setSession(persistedSession);
+                if (persistedSession) {
+                    /** Configure the authentication store partially in order to
+                     * hydrate the userID and offline salts before resuming session. */
+                    authStore.setSession(persistedSession);
+                    const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
+
+                    /** If no cookie upgrade is required, then the persisted session is now
+                     * cookie-based. As such, if the user is online, resolve the `clientKey`
+                     * as soon as possible in order to make an authenticated API call before
+                     * applying the `forceLock` option. This allows detecting stale sessions
+                     * before allowing the user to password unlock. */
+                    if (!cookieUpgrade && online.current) {
+                        await getPersistedSessionKey(api, authStore).catch((err) => {
+                            client.current.setStatus(AppStatus.ERROR);
+                            throw err;
+                        });
+                    }
+                }
 
                 if (options.forceLock) {
                     /** if we had an in-memory session - most likely due to a
@@ -239,7 +254,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 history.replace('/');
             },
 
-            onForkConsumed: async (session, state) => {
+            onForkConsumed: async (session, { state }) => {
                 const { offlineConfig, offlineKD, UserID, LocalID } = session;
                 history.replace({ hash: '' }); /** removes selector from hash */
 
@@ -290,13 +305,13 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
              * If the 'getPersistedSessionKey' call was queued by another tab updating the local key
              * and persisted session, this process prevents retries to ensure decryption of the most
              * recent session blob */
-            onSessionInvalid: async (error, { localID, invalidSession }) => {
+            onSessionInvalid: async (error, { localID, invalidSession, retry }) => {
                 if (error instanceof InvalidPersistentSessionError) {
                     await wait(randomIntFromInterval(0, 500));
 
                     const persistedSession = await authService.config.getPersistedSession(localID);
                     const shouldRetry = persistedSession && !isDeepEqual(persistedSession, invalidSession);
-                    if (shouldRetry) return resumeSession(persistedSession, localID, authService.config);
+                    if (shouldRetry) return retry(persistedSession);
 
                     authStore.clear();
                     localStorage.removeItem(getSessionKey(localID));
@@ -462,6 +477,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             if (authStore.hasSession(localID)) {
                 logger.info(`[AuthServiceProvider] syncing session for localID[${localID}]`);
                 authStore.setSession(data);
+                authStore.setClientKey(undefined); /* client key may have been regenerated */
             }
         };
 

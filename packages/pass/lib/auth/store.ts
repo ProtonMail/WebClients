@@ -11,6 +11,7 @@ export type AuthStore = ReturnType<typeof createAuthStore>;
 export type AuthStoreOptions = { cookies: boolean };
 
 const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
+const PASS_CLIENT_KEY = 'pass:client_key';
 const PASS_EXTRA_PWD_KEY = 'pass:extra_password';
 const PASS_LOCAL_ID_KEY = 'pass:local_id';
 const PASS_LOCK_EXTEND_TIME_KEY = 'pass:lock_extend_time';
@@ -60,6 +61,9 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             UserID: authStore.getUserID() ?? '',
         }),
 
+        shouldCookieUpgrade: (data: Partial<AuthSession>) =>
+            options.cookies && Boolean(data.AccessToken || data.RefreshToken),
+
         validSession: (data: Partial<AuthSession>): data is AuthSession =>
             Boolean(
                 data.UID &&
@@ -81,7 +85,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
                     Boolean('RefreshToken' in data && data.RefreshToken))),
 
         setSession: (session: Partial<AuthSession>) => {
-            if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
+            if (session.AccessToken && !options.cookies) authStore.setAccessToken(session.AccessToken);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
@@ -92,7 +96,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             if (session.offlineVerifier) authStore.setOfflineVerifier(session.offlineVerifier);
             if (session.payloadVersion !== undefined) authStore.setSessionVersion(session.payloadVersion);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
-            if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
+            if (session.RefreshToken && !options.cookies) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
@@ -141,6 +145,9 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
 
         getSessionVersion: (): AuthSessionVersion => store.get(PASS_SESSION_VERSION_KEY) ?? SESSION_VERSION,
         setSessionVersion: (version: AuthSessionVersion) => store.set(PASS_SESSION_VERSION_KEY, version),
+
+        getClientKey: encodedGetter(store)(PASS_CLIENT_KEY),
+        setClientKey: encodedSetter(store)(PASS_CLIENT_KEY),
     };
 
     return authStore;
