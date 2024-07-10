@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,7 +20,7 @@ import { useWalletDispatch } from '../../store/hooks';
 import { userWalletSettingsChange } from '../../store/slices/userWalletSettings';
 import { getThemeForWallet } from '../../utils';
 
-export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
+export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAccount?: () => void) => {
     const [walletName, setWalletName] = useState(wallet.Wallet.Name);
     const [userWalletSettings, loadingGetUserWalletSettings] = useUserWalletSettings();
     const [loadingSetUserWalletSettings, withLoadingSetUserWalletSettings] = useLoading();
@@ -123,6 +123,12 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData) => {
         window.localStorage.clear();
         createNotification({ text: c('Wallet Settings').t`Local storage cleared` });
     };
+
+    useEffect(() => {
+        if (!wallet.WalletAccounts?.length) {
+            onEmptyWalletAccount?.();
+        }
+    }, [onEmptyWalletAccount, wallet.WalletAccounts?.length]);
 
     return {
         walletName,
