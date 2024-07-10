@@ -261,13 +261,19 @@ export const getMailConfiguration = ({
         audiences: [
             {
                 value: Audience.B2C,
-                pathname: SSO_PATHS.MAIL_SIGNUP,
+                locationDescriptor: {
+                    pathname: SSO_PATHS.MAIL_SIGNUP,
+                    search: 'mode=sps',
+                },
                 title: c('mail_signup_2024: title').t`For individuals`,
                 defaultPlan: PLANS.BUNDLE,
             },
             {
                 value: Audience.B2B,
-                pathname: SSO_PATHS.MAIL_SIGNUP_B2B,
+                locationDescriptor: {
+                    pathname: SSO_PATHS.MAIL_SIGNUP_B2B,
+                    search: 'mode=sps',
+                },
                 title: c('mail_signup_2024: title').t`For businesses`,
                 defaultPlan: PLANS.BUNDLE_PRO_2024,
             },

@@ -390,7 +390,7 @@ const Step1 = ({
             audiences={audiences}
             onChangeAudience={(audience) => {
                 handleChangePlan({ [audience.defaultPlan]: 1 }, audience.defaultPlan);
-                history.push(audience.pathname);
+                history.push(audience.locationDescriptor);
             }}
         />
     ) : undefined;

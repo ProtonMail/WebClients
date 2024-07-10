@@ -1,5 +1,7 @@
 import { FunctionComponent, Key, ReactNode } from 'react';
 
+import { LocationDescriptor } from 'history';
+
 import { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
@@ -158,7 +160,7 @@ export interface SignupConfiguration {
     benefits: ReactNode;
     planCards: { [Audience.B2C]: PlanCard[]; [Audience.B2B]: PlanCard[] };
     audience: Audience.B2C | Audience.B2B;
-    audiences?: { value: Audience; pathname: string; title: string; defaultPlan: PLANS }[];
+    audiences?: { value: Audience; locationDescriptor: LocationDescriptor; title: string; defaultPlan: PLANS }[];
     generateMnemonic: boolean;
     defaults: SignupDefaults;
     product: APP_NAMES;
