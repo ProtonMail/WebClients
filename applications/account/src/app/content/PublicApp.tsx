@@ -730,6 +730,9 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                             onLogin={handleLogin}
                                                             updateActiveSessions={updateActiveSessions}
                                                             onAddAccount={handleAddAccount}
+                                                            onEmptySessions={() => {
+                                                                history.replace(paths.login);
+                                                            }}
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
