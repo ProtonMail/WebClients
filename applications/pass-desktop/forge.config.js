@@ -136,6 +136,7 @@ const config = {
             [FuseV1Options.EnableEmbeddedAsarIntegrityValidation]: true,
             // Enforces that Electron will only load your app from "app.asar" instead of its normal search paths
             [FuseV1Options.OnlyLoadAppFromAsar]: true,
+            [FuseV1Options.GrantFileProtocolExtraPrivileges]: true,
         }),
     ],
 };
