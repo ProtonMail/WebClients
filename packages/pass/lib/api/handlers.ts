@@ -84,6 +84,11 @@ export const withApiHandlers = ({ cookies, state, call, getAuth, refreshHandler 
                     return next(attempts + 1, RETRY_ATTEMPTS_MAX);
                 }
 
+                if (status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
+                    /* Catch inactive session errors during cookie upgrade */
+                    if (code === PassErrorCode.INVALID_COOKIES_REFRESH) throw InactiveSessionError();
+                }
+
                 if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
                     if (code === PassErrorCode.SESSION_ERROR) throw InactiveSessionError();
 
