@@ -27,25 +27,26 @@
     --interaction-norm: #767dff;
     --interaction-norm-contrast: var(--text-invert);
 
-    --interaction-weak: #e2e2e2;
+    --interaction-weak: #E6E8EC;
     --interaction-weak-contrast: #191927;
 
     --interaction-default: transparent;
-    --interaction-default-hover: rgb(191 181 233 / 0.2);
-    --interaction-default-active: rgb(191 181 233 / 0.35);
+    --interaction-default-hover: rgb(132 142 163 / 0.2);
+    --interaction-default-active: rgb(99 109 127 / 0.2);
 
-    --shadow-norm-opacity: 0.32;
-    --shadow-raised-opacity: 0.35;
-    --shadow-lifted-opacity: 0.4;
+    --shadow-norm-opacity: 0.26;
+    --shadow-raised-opacity: 0.22;
+    --shadow-lifted-opacity: 0.16;
 
-    --backdrop-norm: rgb(0 0 0 / 0.5);
+    --backdrop-norm: rgb(25 28 50 / 0.4);
 
     --bg-overlay: #e2e2e277;
 
     --field-background-color: var(--background-weak);
     --field-hover-background-color: var(--background-weak);
-    --optional-field-background-color: var(--background-weak);
-    --optional-field-hover-background-color: var(--background-weak);
+    --field-focus-background-color: var(--background-weak);
+    --field-norm: #e6e8ec;
+    --field-hover: #e2e2e2;
     --field-disabled: var(--text-disabled);
 
     --font-weight-weak: 400;

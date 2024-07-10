@@ -4,6 +4,7 @@ import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import clsx from '@proton/utils/clsx';
 
 import DropdownCaret from '../dropdown/DropdownCaret';
+import { IconName } from '../icon';
 import { NodeOrBoolean } from '../v2/field/InputField';
 
 interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {
@@ -13,10 +14,27 @@ interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value
     isOpen?: boolean;
     onOpen?: () => void;
     noCaret?: boolean;
+    caretIconName?: IconName;
+    caretClassName?: string;
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
-    ({ className, unstyled, loading, error, isOpen, onOpen, children, noCaret, ...rest }, ref) => {
+    (
+        {
+            className,
+            unstyled,
+            loading,
+            error,
+            isOpen,
+            onOpen,
+            children,
+            noCaret,
+            caretIconName,
+            caretClassName,
+            ...rest
+        },
+        ref
+    ) => {
         const handleAnchorKeydown = (e: KeyboardEvent<HTMLButtonElement>) => {
             switch (e.key) {
                 case ' ': {
@@ -42,6 +60,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 className={clsx([
                     !unstyled && 'select field',
                     unstyled && 'select-unstyled',
+                    isOpen && 'select--open',
                     'outline-none w-full flex justify-space-between items-center flex-nowrap *:pointer-events-none',
                     className,
                 ])}
@@ -54,7 +73,11 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                     loading ? (
                         <CircleLoader className="shrink-0 ml-1" />
                     ) : noCaret ? null : (
-                        <DropdownCaret className="shrink-0 ml-1" isOpen={isOpen} />
+                        <DropdownCaret
+                            className={clsx('shrink-0 ml-1', caretClassName)}
+                            iconName={caretIconName}
+                            isOpen={isOpen}
+                        />
                     )
                 }
             </button>

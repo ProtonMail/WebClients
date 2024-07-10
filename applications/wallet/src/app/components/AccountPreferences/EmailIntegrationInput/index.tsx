@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { WasmApiEmailAddress } from '@proton/andromeda';
 import { Toggle, useModalState } from '@proton/components/components';
+import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import { useMembers, useUser } from '@proton/components/hooks';
 
 import { EmailAddressCreationModal } from '../../EmailAddressCreationModal';
@@ -59,7 +60,7 @@ export const EmailIntegrationInput = ({
 
     return (
         <>
-            <div className="px-6 py-5">
+            <InputFieldStacked isBigger isGroupElement>
                 <div className="flex flex-row items-center justify-space-between">
                     <div className="flex flex-column items-start">
                         <span className="color-hint mb-1">{c('Wallet preferences').t`Email integration`}</span>
@@ -78,7 +79,7 @@ export const EmailIntegrationInput = ({
                         }}
                     />
                 </div>
-            </div>
+            </InputFieldStacked>
 
             <EmailIntegrationModal
                 loading={loading}

@@ -17,14 +17,9 @@ export interface UseBitcoinReceiveHelper {
      * Memoized. Can be either a bitcoin Address, a bitcoin URI, a lightning URI or unified URI (URI containing both bitcoin and lightning needed payment informations)
      */
     paymentLink?: WasmPaymentLink;
-    shouldShowAmountInput: boolean;
-    amount: number;
 
     isIndexAboveGap: boolean;
     incrementIndex: () => void;
-
-    handleChangeAmount: (amount?: number) => void;
-    showAmountInput: () => void;
 }
 
 export const useBitcoinReceive = (isOpen: boolean, account?: WasmApiWalletAccount): UseBitcoinReceiveHelper => {
@@ -36,8 +31,6 @@ export const useBitcoinReceive = (isOpen: boolean, account?: WasmApiWalletAccoun
     const [index, setIndex] = useState(0);
     // This is used to check that user don't create too much gap between indexes
     const initialIndex = useRef(0);
-    const [amount, setAmount] = useState(0);
-    const [shouldShowAmountInput, setShouldShowAmountInput] = useState(false);
 
     const computeNextIndexToReceive = useComputeNextAddressToReceive(walletsChainData);
 
@@ -62,9 +55,7 @@ export const useBitcoinReceive = (isOpen: boolean, account?: WasmApiWalletAccoun
         const wasmAccount = getAccountWithChainDataFromManyWallets(walletsChainData, account.WalletID, account.ID);
 
         const generatePaymentLink = async () => {
-            const paymentAmount = amount ? BigInt(amount) : undefined;
-
-            const generatedPaymentLink = await wasmAccount?.account.getBitcoinUri(index, paymentAmount);
+            const generatedPaymentLink = await wasmAccount?.account.getBitcoinUri(index);
 
             if (generatedPaymentLink) {
                 setPaymentLink(generatedPaymentLink);
@@ -72,7 +63,7 @@ export const useBitcoinReceive = (isOpen: boolean, account?: WasmApiWalletAccoun
         };
 
         void withLoadingPaymentLink(generatePaymentLink());
-    }, [isOpen, amount, account, walletsChainData, withLoadingPaymentLink, index]);
+    }, [isOpen, account, walletsChainData, withLoadingPaymentLink, index]);
 
     const incrementIndex = () => {
         setIndex((prev) => prev + 1);
@@ -83,18 +74,8 @@ export const useBitcoinReceive = (isOpen: boolean, account?: WasmApiWalletAccoun
     return {
         loadingPaymentLink,
         paymentLink,
-        shouldShowAmountInput,
-        amount,
 
         isIndexAboveGap,
         incrementIndex,
-
-        showAmountInput: () => setShouldShowAmountInput(true),
-        handleChangeAmount: (inputAmount) => {
-            const numbered = Number(inputAmount);
-            const nonConstrainedAmount = Number.isInteger(numbered) ? numbered : 0;
-
-            setAmount(nonConstrainedAmount < 0 ? 0 : nonConstrainedAmount);
-        },
     };
 };

@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
 import { useUserKeys } from '@proton/components/hooks';
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
+import { PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
+import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { IWasmApiWalletData, encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
@@ -21,9 +22,11 @@ interface BroadcastData
     exchangeRateId?: string;
     message?: {
         content: string;
-        signingKeys: PrivateKeyReference[];
         encryptionKeys: PublicKeyReference[];
-        senderAddressId: string;
+    };
+    senderAddress?: {
+        ID: string;
+        key: DecryptedAddressKey;
     };
 }
 
@@ -76,6 +79,7 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
         apiAccount: account,
         exchangeRateId,
         noteToSelf,
+        senderAddress,
         message,
     }: BroadcastData) => {
         return withLoadingBroadcast(async () => {
@@ -95,13 +99,19 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                 throw new Error(c('Wallet Send').t`Could not sign transaction`);
             });
 
-            const encryptedData = message
-                ? await encryptPgp(message.content, message.encryptionKeys, message.signingKeys).catch(() => null)
-                : null;
-
             const [encryptedNoteToSelf] = noteToSelf
                 ? await encryptWalletDataWithWalletKey([noteToSelf], wallet.WalletKey.DecryptedKey).catch(() => [null])
                 : [null];
+
+            const getEncryptedBody = async (senderAddressKey: DecryptedAddressKey) => ({
+                body: message?.content
+                    ? await encryptPgp(
+                          message.content,
+                          [senderAddressKey.publicKey, ...message.encryptionKeys],
+                          [senderAddressKey.privateKey]
+                      ).catch(() => null)
+                    : null,
+            });
 
             const txId = await blockchainClient
                 .broadcastPsbt(
@@ -117,11 +127,11 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
                               }
                             : { key: 'TransactionTime', value: getNowTimestamp() },
                     },
-                    message
+                    senderAddress
                         ? {
-                              address_id: message.senderAddressId,
+                              address_id: senderAddress.ID,
                               subject: null,
-                              body: encryptedData,
+                              ...(await getEncryptedBody(senderAddress.key)),
                           }
                         : undefined
                 )

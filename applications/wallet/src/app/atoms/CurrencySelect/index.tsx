@@ -30,6 +30,7 @@ interface Props<S extends string, T extends { Symbol: S; Name: string }> {
     dense?: boolean;
     containerClassName?: string;
     size?: DropdownSize;
+    isGroupElement?: boolean;
 }
 
 export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: string }>({
@@ -45,6 +46,7 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
     dense,
     containerClassName,
     size,
+    isGroupElement,
 }: Props<S, T>) => {
     const [selectedCurrency, setSelectedCurrency] = useState<S | undefined>(value);
 
@@ -114,6 +116,9 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
             data-testid="currency-selector"
             disabled={disabled}
             containerClassName={containerClassName}
+            isGroupElement={isGroupElement}
+            caretIconName="chevron-down"
+            caretClassName="stacked-field-caret"
             renderSelected={(selected) => {
                 const option = onlyOptions.find((o) => getSerialisedOption(o) === selected);
                 return dense ? (

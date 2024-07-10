@@ -60,6 +60,8 @@ const wallet = {
             DerivationPath: "84'/1'/0'",
             Addresses: [{ ID: '0000001', Email: 'pro@proton.black' }],
             FiatCurrency: 'USD' as WasmFiatCurrencySymbol,
+            Priority: 1,
+            LastUsedIndex: 0,
         },
     ],
     WalletKey: {
@@ -269,7 +271,7 @@ describe('useBitcoinAddressPool', () => {
     });
 
     it('should ask for highest index for each wallet account', async () => {
-        wasmAccount.getLastUnusedAddressIndex = vi.fn().mockReturnValue(7);
+        wasmAccount.getIndexAfterLastUsedAddress = vi.fn().mockReturnValue(7);
 
         const { result } = renderHook(() => useBitcoinAddressPool(baseArgs));
         await result.current.fillBitcoinAddressPools();
@@ -277,8 +279,8 @@ describe('useBitcoinAddressPool', () => {
         expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledTimes(1);
         expect(mockedGetBitcoinAddressHighestIndex).toHaveBeenCalledWith('01', '001');
 
-        expect(wasmAccount.getLastUnusedAddressIndex).toHaveBeenCalledTimes(1);
-        expect(wasmAccount.getLastUnusedAddressIndex).toHaveBeenCalledWith();
+        expect(wasmAccount.getIndexAfterLastUsedAddress).toHaveBeenCalledTimes(1);
+        expect(wasmAccount.getIndexAfterLastUsedAddress).toHaveBeenCalledWith();
     });
 
     describe('when wallet account has no email address set', () => {
@@ -329,7 +331,7 @@ describe('useBitcoinAddressPool', () => {
         describe('when highest index is api one', () => {
             beforeEach(() => {
                 mockedGetBitcoinAddressHighestIndex.mockResolvedValue(13);
-                wasmAccount.getLastUnusedAddressIndex = vi.fn().mockReturnValue(5);
+                wasmAccount.getIndexAfterLastUsedAddress = vi.fn().mockReturnValue(5);
             });
 
             it('should update them with correct addresses, starting at correct index', async () => {
@@ -382,7 +384,7 @@ describe('useBitcoinAddressPool', () => {
         describe('when highest index is network one', () => {
             beforeEach(() => {
                 mockedGetBitcoinAddressHighestIndex.mockResolvedValue(3);
-                wasmAccount.getLastUnusedAddressIndex = vi.fn().mockReturnValue(7);
+                wasmAccount.getIndexAfterLastUsedAddress = vi.fn().mockReturnValue(7);
             });
 
             it('should update them with correct addresses, starting at correct index', async () => {
@@ -395,8 +397,8 @@ describe('useBitcoinAddressPool', () => {
                 expect(mockedAddBitcoinAddresses).toHaveBeenCalledTimes(0);
                 expect(mockedUpdateBitcoinAddress).toHaveBeenCalledTimes(3);
                 expect(mockedUpdateBitcoinAddress).toHaveBeenNthCalledWith(1, '01', '001', '00001', {
-                    BitcoinAddress: 'tb1qfwcaxat96fqa9s5v509gx9lnltku5tnetk7f7m',
-                    BitcoinAddressIndex: 8,
+                    BitcoinAddress: 'tb1qnj8ug2fas83smtndy6gptdq2pjc4hjtpakmkcz',
+                    BitcoinAddressIndex: 7,
                     BitcoinAddressSignature: expect.any(String),
                 });
                 const firstCallPayload = mockedUpdateBitcoinAddress.mock.calls[0]?.[3];
@@ -407,8 +409,8 @@ describe('useBitcoinAddressPool', () => {
                 );
 
                 expect(mockedUpdateBitcoinAddress).toHaveBeenNthCalledWith(2, '01', '001', '00002', {
-                    BitcoinAddress: 'tb1q3tzkkgyvcvgjknn9fzn64e8kkm8hcx7ad0p89q',
-                    BitcoinAddressIndex: 9,
+                    BitcoinAddress: 'tb1qfwcaxat96fqa9s5v509gx9lnltku5tnetk7f7m',
+                    BitcoinAddressIndex: 8,
                     BitcoinAddressSignature: expect.any(String),
                 });
                 const secondCallPayload = mockedUpdateBitcoinAddress.mock.calls[1]?.[3];
@@ -419,8 +421,8 @@ describe('useBitcoinAddressPool', () => {
                 );
 
                 expect(mockedUpdateBitcoinAddress).toHaveBeenNthCalledWith(3, '01', '001', '00003', {
-                    BitcoinAddress: 'tb1q57tgpzu6pd3djp5w7l9smcwaqu2ap7y2e9x6k8',
-                    BitcoinAddressIndex: 10,
+                    BitcoinAddress: 'tb1q3tzkkgyvcvgjknn9fzn64e8kkm8hcx7ad0p89q',
+                    BitcoinAddressIndex: 9,
                     BitcoinAddressSignature: expect.any(String),
                 });
                 const thirdCallPayload = mockedUpdateBitcoinAddress.mock.calls[2]?.[3];
@@ -441,7 +443,7 @@ describe('useBitcoinAddressPool', () => {
         describe('when highest index is api one', () => {
             beforeEach(() => {
                 mockedGetBitcoinAddressHighestIndex.mockResolvedValue(13);
-                wasmAccount.getLastUnusedAddressIndex = vi.fn().mockReturnValue(5);
+                wasmAccount.getIndexAfterLastUsedAddress = vi.fn().mockReturnValue(5);
             });
 
             it('should update them with correct addresses, starting at correct index', async () => {
@@ -502,7 +504,7 @@ describe('useBitcoinAddressPool', () => {
         describe('when highest index is network one', () => {
             beforeEach(() => {
                 mockedGetBitcoinAddressHighestIndex.mockResolvedValue(3);
-                wasmAccount.getLastUnusedAddressIndex = vi.fn().mockReturnValue(7);
+                wasmAccount.getIndexAfterLastUsedAddress = vi.fn().mockReturnValue(7);
             });
 
             it('should update them with correct addresses, starting at correct index', async () => {
@@ -516,8 +518,8 @@ describe('useBitcoinAddressPool', () => {
 
                 expect(mockedPushBitcoinAddressesCreationPayload).toHaveBeenCalledTimes(3);
                 expect(mockedPushBitcoinAddressesCreationPayload).toHaveBeenNthCalledWith(1, {
-                    BitcoinAddress: 'tb1qfwcaxat96fqa9s5v509gx9lnltku5tnetk7f7m',
-                    BitcoinAddressIndex: 8,
+                    BitcoinAddress: 'tb1qnj8ug2fas83smtndy6gptdq2pjc4hjtpakmkcz',
+                    BitcoinAddressIndex: 7,
                     BitcoinAddressSignature: expect.any(String),
                 });
                 const firstCallPayload = mockedPushBitcoinAddressesCreationPayload.mock.calls[0]?.[0];
@@ -528,8 +530,8 @@ describe('useBitcoinAddressPool', () => {
                 );
 
                 expect(mockedPushBitcoinAddressesCreationPayload).toHaveBeenNthCalledWith(2, {
-                    BitcoinAddress: 'tb1q3tzkkgyvcvgjknn9fzn64e8kkm8hcx7ad0p89q',
-                    BitcoinAddressIndex: 9,
+                    BitcoinAddress: 'tb1qfwcaxat96fqa9s5v509gx9lnltku5tnetk7f7m',
+                    BitcoinAddressIndex: 8,
                     BitcoinAddressSignature: expect.any(String),
                 });
                 const secondCallPayload = mockedPushBitcoinAddressesCreationPayload.mock.calls[1]?.[0];
@@ -540,8 +542,8 @@ describe('useBitcoinAddressPool', () => {
                 );
 
                 expect(mockedPushBitcoinAddressesCreationPayload).toHaveBeenNthCalledWith(3, {
-                    BitcoinAddress: 'tb1q57tgpzu6pd3djp5w7l9smcwaqu2ap7y2e9x6k8',
-                    BitcoinAddressIndex: 10,
+                    BitcoinAddress: 'tb1q3tzkkgyvcvgjknn9fzn64e8kkm8hcx7ad0p89q',
+                    BitcoinAddressIndex: 9,
                     BitcoinAddressSignature: expect.any(String),
                 });
                 const thirdCallPayload = mockedPushBitcoinAddressesCreationPayload.mock.calls[2]?.[0];

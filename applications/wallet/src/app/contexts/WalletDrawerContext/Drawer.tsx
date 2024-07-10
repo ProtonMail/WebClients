@@ -1,5 +1,6 @@
 import { CSSProperties, PropsWithChildren, useRef } from 'react';
 
+import { Scroll } from '@proton/atoms/Scroll';
 import { useHotkeys } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -43,21 +44,23 @@ export const Drawer = ({
                 className="fixed top-0 left-0 h-full w-full"
                 onClick={() => onClose?.()}
                 style={{
-                    background: '#76767644',
-                    transform: open ? undefined : 'translateX(-100%)',
-                    transitionDuration: '100ms',
+                    background: 'var(--backdrop-norm)',
+                    transform: 'opacity',
+                    transitionDuration: '300ms',
                 }}
             />
             <div
                 className={clsx(
-                    'absolute top-0 right-0 h-full w-custom max-w-full py-3 px-6 flex flex-column flex-nowrap',
+                    'absolute top-0 right-0 h-full w-custom max-w-full flex flex-column flex-nowrap',
                     bg,
                     className
                 )}
                 style={{ ...style, transform: open ? undefined : 'translateX(100%)', transitionDuration: '300ms' }}
             >
                 <DrawerHeader title={title} onClose={() => onClose?.()} bg={bg} />
-                {children}
+                <Scroll>
+                    <div className="pb-3 px-6">{children}</div>
+                </Scroll>
             </div>
         </>
     );
