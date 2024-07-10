@@ -41,6 +41,11 @@ const AssistantToggle = () => {
     });
     const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef, plans: plans?.plans ?? [] });
 
+    // don't show scribe upsell if user can't pay for it
+    if (!composerAssistantEnabled.enabled) {
+        return null;
+    }
+
     // We don't want to propose the upsell if the users cannot use the assistant and didn't purchase it beforehand
     if (!composerAssistantEnabled.enabled && !hasBoughtPlan) {
         return null;
