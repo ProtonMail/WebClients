@@ -122,13 +122,12 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 if (!encryptedSession) return null;
 
                 const persistedSession = JSON.parse(encryptedSession);
-
                 return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
             },
 
             onInit: async (options) => {
                 const pathLocalID = getLocalIDFromPathname(location.pathname);
-                const initialLocalID = pathLocalID ?? getDefaultLocalID();
+                const initialLocalID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID();
                 const error = getRouteError(history.location.search);
 
                 if (error !== null) {
