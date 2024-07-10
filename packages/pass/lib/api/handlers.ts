@@ -33,7 +33,7 @@ export const withApiHandlers = ({ cookies, state, call, getAuth, refreshHandler 
         } = options ?? {};
 
         const next = async (attempts: number, maxAttempts?: number): Promise<any> => {
-            if (!options.unauth) {
+            if (!options.unauthenticated) {
                 if (state.get('sessionInactive')) throw InactiveSessionError();
                 if (state.get('sessionLocked')) throw LockedSessionError();
                 if (state.get('appVersionBad')) throw AppVersionBadError();

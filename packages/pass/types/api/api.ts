@@ -53,7 +53,7 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     output?: 'json' | 'raw' | 'stream';
     params?: { [key: string]: any };
     sideEffects?: boolean;
-    unauth?: boolean;
+    unauthenticated?: boolean;
     signal?: AbortSignal;
     silence?: boolean | (string | number)[];
     url?: U;
