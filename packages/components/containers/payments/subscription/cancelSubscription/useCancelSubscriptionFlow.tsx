@@ -2,8 +2,8 @@ import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
-import { onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
-import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
+import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
+import { PaymentsVersion, changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { PLANS, PLAN_SERVICES, isFreeSubscription } from '@proton/shared/lib/constants';
@@ -190,7 +190,10 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         </>
     );
 
-    const cancelRenew = async (subscriptionReminderFlow?: boolean) => {
+    const cancelRenew = async (
+        subscriptionReminderFlow: boolean | undefined,
+        paymentsVersionOverride: PaymentsVersion | undefined
+    ) => {
         if (!subscriptionReminderFlow) {
             const result = await showCancelSubscriptionModal();
 
@@ -217,7 +220,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                         RenewalState: Renew.Disabled,
                         CancellationFeedback: feedback,
                     },
-                    onSessionMigrationPaymentsVersion(user, subscription)
+                    paymentsVersionOverride ?? onSessionMigrationPaymentsVersion(user, subscription)
                 )
             );
             await eventManager.call();
@@ -319,15 +322,24 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 return SUBSCRIPTION_KEPT;
             }
 
+            // Splitted users should go to PUT v4 renew because they still have an active subscription in inhouse system
+            // And we force them to to the renew cancellation instead of subscription deletion because this case is much
+            // simpler to handle
+            const splittedUser = isSplittedUser(user, subscription);
             if (
                 hasCancellablePlan(subscription) ||
-                (isCancellationExtended && hasNewCancellablePlan(subscription, user))
+                (isCancellationExtended && hasNewCancellablePlan(subscription, user)) ||
+                splittedUser
             ) {
                 if (subscription.Renew === Renew.Disabled) {
                     return SUBSCRIPTION_KEPT;
                 }
-                return cancelRenew(subscriptionReminderFlow);
+
+                const paymentsVersionOverride: PaymentsVersion | undefined = splittedUser ? 'v4' : undefined;
+
+                return cancelRenew(subscriptionReminderFlow, paymentsVersionOverride);
             }
+
             return handleUnsubscribe(subscriptionReminderFlow);
         },
     };
