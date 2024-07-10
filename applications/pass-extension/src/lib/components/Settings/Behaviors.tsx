@@ -75,7 +75,10 @@ const getSettings =
                         checked: settings.autosave.prompt,
                         onChange: (checked) =>
                             onSettingsUpdate({
-                                autosave: { prompt: checked, ...(!checked ? { passwordSuggest: false } : {}) },
+                                autosave: {
+                                    prompt: checked,
+                                    passwordSuggest: checked,
+                                },
                             }),
                     },
                     {
