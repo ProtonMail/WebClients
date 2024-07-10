@@ -159,6 +159,7 @@ export const createApi = ({
                 const serverTime = e.response?.headers ? getDateHeader(e.response.headers) : undefined;
                 const { code } = getApiError(e);
                 const error = getApiErrorMessage(e);
+                const silent = getSilenced(options, code);
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
                 const notAllowed = code === PassErrorCode.NOT_ALLOWED && options.url?.includes('pass/v1/user/access');
@@ -179,10 +180,10 @@ export const createApi = ({
 
                 if (serverTime) state.set('serverTime', updateServerTime(serverTime));
                 if (sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
-                if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive' });
+                if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive', silent });
                 if (notAllowed) pubsub.publish({ type: 'session', status: 'not-allowed', error });
                 if (missingScope) pubsub.publish({ type: 'session', status: 'missing-scope' });
-                if (error && !getSilenced(e.config, code)) pubsub.publish({ type: 'error', error });
+                if (error) pubsub.publish({ type: 'error', error, silent });
 
                 throw e;
             })

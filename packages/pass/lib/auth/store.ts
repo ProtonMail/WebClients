@@ -11,6 +11,7 @@ export type AuthStore = ReturnType<typeof createAuthStore>;
 export type AuthStoreOptions = { cookies: boolean };
 
 const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
+const PASS_CLIENT_KEY = 'pass:client_key';
 const PASS_EXTRA_PWD_KEY = 'pass:extra_password';
 const PASS_LOCAL_ID_KEY = 'pass:local_id';
 const PASS_LOCK_EXTEND_TIME_KEY = 'pass:lock_extend_time';
@@ -22,6 +23,7 @@ const PASS_MAILBOX_PWD_KEY = 'pass:mailbox_pwd';
 const PASS_OFFLINE_CONFIG_KEY = 'pass:offline_config';
 const PASS_OFFLINE_KD_KEY = 'pass:offline_kd';
 const PASS_OFFLINE_VERIFIER_KEY = 'pass:offline_verifier';
+const PASS_PERSISTENT_SESSION_KEY = 'pass:persistent';
 const PASS_REFRESH_TIME_KEY = 'pass:refresh_time';
 const PASS_REFRESH_TOKEN_KEY = 'pass:refresh_token';
 const PASS_SESSION_VERSION_KEY = 'pass:session_version';
@@ -52,6 +54,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             offlineKD: authStore.getOfflineKD(),
             offlineVerifier: authStore.getOfflineVerifier(),
             payloadVersion: authStore.getSessionVersion(),
+            persistent: authStore.getPersistent(),
             RefreshTime: authStore.getRefreshTime(),
             RefreshToken: authStore.getRefreshToken() ?? '',
             sessionLockToken: authStore.getLockToken(),
@@ -59,6 +62,9 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             unlockRetryCount: authStore.getUnlockRetryCount(),
             UserID: authStore.getUserID() ?? '',
         }),
+
+        shouldCookieUpgrade: (data: Partial<AuthSession>) =>
+            options.cookies && Boolean(data.AccessToken || data.RefreshToken),
 
         validSession: (data: Partial<AuthSession>): data is AuthSession =>
             Boolean(
@@ -81,7 +87,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
                     Boolean('RefreshToken' in data && data.RefreshToken))),
 
         setSession: (session: Partial<AuthSession>) => {
-            if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
+            if (session.AccessToken && !options.cookies) authStore.setAccessToken(session.AccessToken);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
@@ -91,8 +97,9 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             if (session.offlineKD) authStore.setOfflineKD(session.offlineKD);
             if (session.offlineVerifier) authStore.setOfflineVerifier(session.offlineVerifier);
             if (session.payloadVersion !== undefined) authStore.setSessionVersion(session.payloadVersion);
+            if (session.persistent) authStore.setPersistent(session.persistent);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
-            if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
+            if (session.RefreshToken && !options.cookies) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
@@ -141,6 +148,12 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
 
         getSessionVersion: (): AuthSessionVersion => store.get(PASS_SESSION_VERSION_KEY) ?? SESSION_VERSION,
         setSessionVersion: (version: AuthSessionVersion) => store.set(PASS_SESSION_VERSION_KEY, version),
+
+        getClientKey: encodedGetter(store)(PASS_CLIENT_KEY),
+        setClientKey: encodedSetter(store)(PASS_CLIENT_KEY),
+
+        getPersistent: (): Maybe<boolean> => store.get(PASS_PERSISTENT_SESSION_KEY),
+        setPersistent: (persistent: boolean): void => store.set(PASS_PERSISTENT_SESSION_KEY, persistent),
     };
 
     return authStore;

@@ -158,6 +158,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<{ sessio
         AccessToken: refresh.AccessToken,
         LocalID,
         lockMode: LockMode.NONE,
+        persistent: payload.persistent,
         RefreshToken: refresh.RefreshToken,
         UID,
         UserID: User.ID,
