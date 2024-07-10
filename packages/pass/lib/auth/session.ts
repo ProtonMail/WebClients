@@ -16,7 +16,7 @@ import type { User as UserType } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
 import type { LockMode } from './lock/types';
-import type { AuthServiceConfig } from './service';
+import type { AuthOptions, AuthServiceConfig } from './service';
 import type { AuthStore } from './store';
 
 export type AuthSessionVersion = 1 | 2;
@@ -33,6 +33,7 @@ export type AuthSession = {
     offlineKD?: string;
     offlineVerifier?: string;
     payloadVersion?: AuthSessionVersion;
+    persistent?: boolean;
     RefreshTime?: number;
     RefreshToken: string;
     sessionLockToken?: string;
@@ -57,6 +58,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
     'offlineKD',
     'offlineVerifier',
     'payloadVersion',
+    'persistent',
     'RefreshToken',
     'sessionLockToken',
     'UID',
@@ -95,9 +97,18 @@ export const mergeSessionTokens = (session: AuthSession, authStore: AuthStore): 
 });
 
 /** Retrieves the current local key to decrypt the persisted session */
-export const getPersistedSessionKey = async (api: Api): Promise<CryptoKey> => {
-    const { ClientKey } = await api<LocalKeyResponse>(getLocalKey());
-    return getClientKey(ClientKey);
+export const getPersistedSessionKey = async (api: Api, authStore: AuthStore): Promise<CryptoKey> => {
+    const clientKey =
+        authStore.getClientKey() ??
+        (
+            await api<LocalKeyResponse>({
+                ...getLocalKey(),
+                silence: true,
+            })
+        ).ClientKey;
+
+    authStore.setClientKey(clientKey);
+    return getClientKey(clientKey);
 };
 
 export const decryptSessionBlob = async (
@@ -121,7 +132,11 @@ export const decryptSessionBlob = async (
     }
 };
 
-export type ResumeSessionResult = { session: AuthSession; clientKey: CryptoKey };
+export type ResumeSessionResult = {
+    session: AuthSession;
+    clientKey: CryptoKey;
+    cookieUpgrade: boolean;
+};
 
 /** Session resuming sequence responsible for decrypting the encrypted session
  * blob. ⚠️ Ensure the authentication store has been configured with authentication
@@ -130,15 +145,19 @@ export type ResumeSessionResult = { session: AuthSession; clientKey: CryptoKey }
 export const resumeSession = async (
     persistedSession: EncryptedAuthSession,
     localID: Maybe<number>,
-    { api, authStore, onSessionInvalid }: AuthServiceConfig
+    config: AuthServiceConfig,
+    options: AuthOptions
 ): Promise<ResumeSessionResult> => {
-    try {
-        const { cookies } = authStore.options;
-        const { AccessToken, RefreshToken, UID } = persistedSession;
+    const { api, authStore, onSessionInvalid } = config;
+    const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
+    const { AccessToken, RefreshToken, UID } = persistedSession;
 
+    try {
         /** If the previous auth session was token based :
-         * refresh and set the cookies before resuming. */
-        if (cookies && AccessToken && RefreshToken) {
+         * refresh and set the cookies before resuming. Assume
+         * persistent when migrating to cookie based auth as
+         * token based auth was already persistent. */
+        if (cookieUpgrade) {
             await api(
                 withAuthHeaders(
                     UID,
@@ -154,7 +173,7 @@ export const resumeSession = async (
         }
 
         const [clientKey, { User }] = await Promise.all([
-            getPersistedSessionKey(api),
+            getPersistedSessionKey(api, authStore),
             api<{ User: UserType }>(getUser()),
         ]);
 
@@ -165,12 +184,27 @@ export const resumeSession = async (
         const decryptedBlob = await decryptSessionBlob(clientKey, blob, payloadVersion);
 
         return {
+            cookieUpgrade,
             clientKey,
-            session: mergeSessionTokens({ ...session, ...decryptedBlob }, authStore),
+            session: mergeSessionTokens(
+                {
+                    ...session,
+                    ...decryptedBlob,
+                    persistent: cookieUpgrade || session.persistent,
+                },
+                authStore
+            ),
         };
     } catch (error: unknown) {
-        if (onSessionInvalid) return onSessionInvalid(error, { localID, invalidSession: persistedSession });
-        else throw error;
+        if (onSessionInvalid) {
+            return onSessionInvalid(error, {
+                localID,
+                invalidSession: persistedSession,
+                retry: (session) => resumeSession(session, localID, config, options),
+            });
+        }
+
+        throw error;
     }
 };
 
@@ -180,17 +214,6 @@ export const migrateSession = async (authStore: AuthStore): Promise<boolean> => 
     const offlineKD = authStore.getOfflineKD();
     const offlineConfig = authStore.getOfflineConfig();
     const offlineVerifier = authStore.getOfflineVerifier();
-    const AccessToken = authStore.getAccessToken();
-    const RefreshToken = authStore.getRefreshToken();
-
-    const { cookies } = authStore.options;
-
-    /** Remove session tokens if a cookie based session has tokens */
-    if (cookies && (AccessToken || RefreshToken)) {
-        authStore.setAccessToken(undefined);
-        authStore.setRefreshToken(undefined);
-        migrated = true;
-    }
 
     /** Create the `offlineVerifier` if it hasn't been generated (<1.18.0) */
     if (offlineKD && offlineConfig && !offlineVerifier) {
