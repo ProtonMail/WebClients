@@ -22,11 +22,28 @@ export const selectExchangeRate = (state: ExchangeRateState) => {
     return state[name];
 };
 
-export const getKeyAndTs = (fiat: WasmFiatCurrencySymbol, date?: Date) => {
-    const ts = date && BigInt(Math.floor(date.getTime() / SECOND));
-    const key = ts ? `${fiat}-${Number(ts)}` : fiat;
+const SEPARATOR = '-';
 
-    return [key, ts] as const;
+export const serialiseKey = (fiat: WasmFiatCurrencySymbol, timestamp?: number) => {
+    return timestamp ? `${fiat}${SEPARATOR}${Number(timestamp)}` : fiat;
+};
+export const parseKey = (key: string) => {
+    const [fiat, timestamp] = key.split(SEPARATOR) as [WasmFiatCurrencySymbol, string?];
+
+    return {
+        fiat,
+        timestamp: timestamp ? Number(timestamp) : undefined,
+    };
+};
+
+export const getKeyAndTs = (fiat: WasmFiatCurrencySymbol, date?: Date) => {
+    const ts = date?.getTime();
+    const key = serialiseKey(fiat, ts);
+
+    // API expects ts in seconds
+    const tsInSeconds = ts && Math.floor(ts / SECOND);
+
+    return [key, tsInSeconds] as const;
 };
 
 const modelThunk = createAsyncModelThunk<
@@ -49,7 +66,7 @@ const modelThunk = createAsyncModelThunk<
         try {
             const exchangeRate = await extraArgument.walletApi
                 .clients()
-                .exchange_rate.getExchangeRate(fiat, ts)
+                .exchange_rate.getExchangeRate(fiat, ts ? BigInt(ts) : undefined)
                 .then((data) => {
                     return data.Data;
                 });
