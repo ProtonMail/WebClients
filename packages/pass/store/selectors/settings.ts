@@ -19,6 +19,7 @@ export const selectLockTTL = ({ settings }: State): Maybe<number> => settings.lo
 export const selectDisallowedDomains = ({ settings }: State): DomainCriterias => settings.disallowedDomains;
 export const selectLocale = ({ settings }: State) => settings.locale;
 export const selectPasswordOptions = (state: State) => state.settings.passwordOptions;
+export const selectAutosuggestCopyToClipboard = ({ settings }: State) => settings.autosuggest.passwordCopy;
 export const selectCreatedItemsCount = ({ settings }: State) => settings.createdItemsCount;
 export const selectOfflineEnabled = ({ settings }: State) => settings.offlineEnabled ?? false;
 export const selectExtraPasswordEnabled = ({ settings }: State) => settings.extraPassword ?? false;

@@ -53,7 +53,7 @@ export type ProxiedSettings = Omit<SettingsState, ExcludedProxiedSettingsKeys>;
 export const INITIAL_SETTINGS: ProxiedSettings = {
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true, passwordSuggest: true },
-    autosuggest: { password: true, email: true },
+    autosuggest: { password: true, email: true, passwordCopy: false },
     disallowedDomains: {},
     loadDomainImages: true,
     passkeys: { get: true, create: true },
