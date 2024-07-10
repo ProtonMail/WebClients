@@ -47,17 +47,27 @@ const createSession = () => {
         // Use certificate pinning
         if (config.SSO_URL.endsWith('proton.me')) secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
-        // Allow cross-origin requests when fetching favicon blobs and similar from the API
-        secureSession.webRequest.onHeadersReceived({ urls: [`${config.API_URL}/*`] }, (details, callback) => {
-            const responseHeaders = {
-                ...details.responseHeaders,
-                'access-control-allow-origin': 'file://',
-                'access-control-allow-credentials': 'true',
-                'access-control-allow-headers': Object.keys(details.responseHeaders || {}),
-            };
+        secureSession.webRequest.onHeadersReceived(
+            { urls: [`${config.API_URL}/*`, `${config.SSO_URL}/*`] },
+            (details, callback) => {
+                const { responseHeaders = {} } = details;
 
-            callback({ responseHeaders });
-        });
+                /** Allow cross-origin requests when fetching favicon blobs and similar from the API */
+                responseHeaders['access-control-allow-origin'] = ['file://'];
+                responseHeaders['access-control-allow-credentials'] = ['true'];
+                responseHeaders['access-control-allow-headers'] = Object.keys(details.responseHeaders || {});
+
+                /** `file://` protocol cannot forward strict cookies. Re-write the same site directive
+                 * to `None` to allow cookie based authentication in the packaged electron app */
+                if (responseHeaders['set-cookie']) {
+                    responseHeaders['set-cookie'] = responseHeaders['set-cookie'].map((cookie) =>
+                        cookie.replace(/samesite=(strict|lax)/i, 'SameSite=None')
+                    );
+                }
+
+                callback({ cancel: false, responseHeaders });
+            }
+        );
     }
 
     const clientId = ((): string => {
