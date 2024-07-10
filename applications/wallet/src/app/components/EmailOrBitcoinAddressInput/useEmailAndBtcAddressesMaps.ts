@@ -5,7 +5,15 @@ import { omit } from 'lodash';
 import { PublicKeyReference } from '@proton/crypto/lib';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
-export type BtcAddressOrError = { value?: string; error?: string };
+export enum InvalidRecipientErrorCode {
+    NoAddressSetOnBitcoinAddress,
+    NoSignatureSetOnBitcoinAddress,
+    BitcoinAddressSignatureCouldNotBeVerified,
+    CouldNotFindBitcoinAddressLinkedToEmail,
+    InvalidAddress,
+}
+
+export type BtcAddressOrError = { value?: string; error?: InvalidRecipientErrorCode };
 
 export type MapItem = { btcAddress: BtcAddressOrError; recipient: Recipient; addressKey?: PublicKeyReference };
 
