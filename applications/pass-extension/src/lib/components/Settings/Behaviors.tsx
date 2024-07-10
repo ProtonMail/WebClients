@@ -103,6 +103,13 @@ const getSettings =
                         onChange: (checked) => onSettingsUpdate({ autosuggest: { password: checked } }),
                     },
                     {
+                        label: c('Label').t`Copy password`,
+                        description: c('Info').t`Automatically copy the generated password to the clipboard`,
+                        checked: settings.autosuggest.passwordCopy,
+                        disabled: !settings.autosuggest.password,
+                        onChange: (checked) => onSettingsUpdate({ autosuggest: { passwordCopy: checked } }),
+                    },
+                    {
                         label: c('Label').t`Email aliases`,
                         description: c('Info')
                             .t`${PASS_APP_NAME} will suggest creating an email alias on sign-up forms.`,
