@@ -9,6 +9,7 @@ export * from './Checklist';
 export * from './Domain';
 export * from './EncryptionPreferences';
 export * from './Environment';
+export * from './Group';
 export * from './Hotkeys';
 export * from './Folder';
 export * from './IncomingDefault';

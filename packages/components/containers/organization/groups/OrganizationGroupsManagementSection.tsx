@@ -1,12 +1,25 @@
 import { c } from 'ttag';
 
-import { SettingsParagraph, SettingsSectionWide } from '@proton/components';
+import { DualPaneContent, DualPaneSidebar } from '@proton/atoms/DualPane';
+import { Loader, SettingsParagraph, SettingsSectionWide } from '@proton/components';
+import { Organization } from '@proton/shared/lib/interfaces';
+
+import GroupList from './GroupList';
+import useGroupsManagement from './useGroupsManagement';
 
 import './OrganizationGroupsManagementSection.scss';
 
-interface Props {}
+interface Props {
+    organization?: Organization;
+}
 
-const OrganizationGroupsManagementSection = ({}: Props) => {
+const OrganizationGroupsManagementSection = ({ organization }: Props) => {
+    const groupsManagement = useGroupsManagement(organization);
+
+    if (!groupsManagement) {
+        return <Loader />;
+    }
+
     return (
         <SettingsSectionWide className="h-full groups-management">
             <SettingsParagraph learnMoreUrl="https://proton.me">
@@ -15,7 +28,12 @@ const OrganizationGroupsManagementSection = ({}: Props) => {
             </SettingsParagraph>
             <div className="content flex-1 overflow-hidden h-full">
                 <div className="flex flex-nowrap flex-column h-full">
-                    <div className="flex items-center justify-start flex-nowrap w-full h-full"></div>
+                    <div className="flex items-center justify-start flex-nowrap w-full h-full">
+                        <DualPaneSidebar>
+                            <GroupList groupsManagement={groupsManagement} />
+                        </DualPaneSidebar>
+                        <DualPaneContent></DualPaneContent>
+                    </div>
                 </div>
             </div>
         </SettingsSectionWide>
