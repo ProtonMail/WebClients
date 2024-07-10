@@ -220,8 +220,8 @@ describe('API factory', () => {
             fetchMock.mockResolvedValueOnce(mockAPIResponse({}, 401));
             await expect(api({ url: 'some/protected/endpoint' })).rejects.toThrow(InactiveSessionError());
             expect(listener).toHaveBeenCalledTimes(2);
-            expect(listener.mock.calls[0][0]).toEqual({ status: 'inactive', type: 'session' });
-            expect(listener.mock.calls[1][0]).toEqual({ type: 'error', error: 'Session timed out' });
+            expect(listener.mock.calls[0][0]).toEqual({ status: 'inactive', type: 'session', silent: false });
+            expect(listener.mock.calls[1][0]).toEqual({ type: 'error', error: 'Session timed out', silent: false });
             expect(api.getState().sessionInactive).toEqual(true);
         });
 
