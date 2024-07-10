@@ -38,6 +38,10 @@ export function canUseChargebee(chargebeeEnabled: ChargebeeEnabled): boolean {
     );
 }
 
+export function isSplittedUser(user: User, subscription: Subscription | undefined) {
+    return !!user.ChargebeeUserExists && subscription?.BillingPlatform === BillingPlatform.Proton;
+}
+
 export function isOnSessionMigration(
     chargebeeUser: ChargebeeEnabled,
     billingPlatform: BillingPlatform | undefined
