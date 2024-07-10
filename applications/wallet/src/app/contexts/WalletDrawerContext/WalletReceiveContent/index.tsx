@@ -3,21 +3,19 @@ import { useEffect, useState } from 'react';
 import { first } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmApiFiatCurrency, WasmApiWalletAccount } from '@proton/andromeda';
+import { WasmApiWalletAccount } from '@proton/andromeda';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import Href from '@proton/atoms/Href/Href';
-import Copy from '@proton/components/components/button/Copy';
 import QRCode from '@proton/components/components/image/QRCode';
+import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import Info from '@proton/components/components/link/Info';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
+import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, CoreButton, Select } from '../../../atoms';
-import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import { Button, Select } from '../../../atoms';
 import { BitcoinViaEmailNote } from '../../../atoms/BitcoinViaEmailNote';
-import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';
-import { useWalletAccountExchangeRate } from '../../../hooks/useWalletAccountExchangeRate';
-import { useFiatCurrencies, useGetExchangeRate } from '../../../store/hooks';
 import { getAccountWithChainDataFromManyWallets } from '../../../utils';
 import { useBitcoinBlockchainContext } from '../../BitcoinBlockchainContext';
 import { useBitcoinReceive } from './useBitcoinReceive';
@@ -31,17 +29,10 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
     const defaultAccount = first(wallet.WalletAccounts);
 
     const [selectedAccount, setSelectedAccount] = useState(account ?? defaultAccount);
-    const [defaultExchangeRate] = useWalletAccountExchangeRate(selectedAccount);
 
-    const [settings] = useUserWalletSettings();
-    const [controlledExchangeRate, setControlledExchangeRate] = useState<WasmApiExchangeRate>();
-    const getExchangeRate = useGetExchangeRate();
-    const exchangeRate = controlledExchangeRate ?? defaultExchangeRate;
     const [isOpen, setOpen] = useState(false);
 
     const { walletsChainData } = useBitcoinBlockchainContext();
-
-    const [currencies] = useFiatCurrencies();
 
     useEffect(() => {
         setOpen(true);
@@ -51,29 +42,15 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
     }, []);
 
     const {
-        shouldShowAmountInput,
         loadingPaymentLink,
         paymentLink,
-        amount,
 
         isIndexAboveGap,
         incrementIndex,
-
-        showAmountInput,
-        handleChangeAmount,
     } = useBitcoinReceive(isOpen, selectedAccount);
 
-    const handleChange = async (currency?: WasmApiFiatCurrency) => {
-        if (currency) {
-            const exchangeRate = await getExchangeRate(currency.Symbol);
-            if (exchangeRate) {
-                setControlledExchangeRate(exchangeRate);
-            }
-        }
-    };
-
     return (
-        <div className="block overflow-auto">
+        <div className="block">
             <div className="flex flex-column">
                 <h3 className="text-4xl text-bold mx-auto text-center">{c('Receive bitcoin')
                     .t`Your bitcoin address`}</h3>
@@ -100,7 +77,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         const paymentLinkUri = paymentLink.toUri();
 
                         return (
-                            <div className="bg-weak rounded-xl flex flex-column items-center w-full p-0.5">
+                            <InputFieldStackedGroup>
                                 {/* We only display selector when account was not provided */}
                                 {!account && (
                                     <Select
@@ -130,72 +107,37 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                                 />
                                             ),
                                         }))}
+                                        isGroupElement
                                     />
                                 )}
-
-                                <div className="w-custom pt-6 px-6" style={{ '--w-custom': '12.5rem' }}>
-                                    <QRCode data-testid="serialized-payment-info-qrcode" value={paymentLinkString} />
-                                </div>
-
-                                <div className="flex flex-row flex-nowrap items-center mt-4 px-6">
-                                    <div>
-                                        <Tooltip title={paymentLinkString}>
-                                            <Href href={paymentLinkUri} className="color-norm">
-                                                <span className="block text-break-all text-center text-no-decoration">
-                                                    {paymentLinkString}
-                                                </span>
-                                            </Href>
-                                        </Tooltip>
+                                <InputFieldStacked isGroupElement classname="bg-weak text-center">
+                                    <div className="w-custom pt-6 px-6 mx-auto" style={{ '--w-custom': '11.5rem' }}>
+                                        <QRCode
+                                            data-testid="serialized-payment-info-qrcode"
+                                            value={paymentLinkString}
+                                        />
                                     </div>
-
-                                    <Copy
-                                        value={paymentLinkString}
-                                        className="flex items-start flex-nowrap gap-2 shrink-0 ml-1"
-                                        shape="ghost"
-                                        color="weak"
-                                    />
-                                </div>
-
-                                <div className="flex flex-row flex-nowrap items-center mt-4 px-6 pb-6">
-                                    {!shouldShowAmountInput ? (
-                                        <CoreButton
-                                            data-testid="show-amount-input-button"
-                                            shape="ghost"
-                                            color="norm"
-                                            onClick={() => {
-                                                showAmountInput();
-                                            }}
-                                        >
-                                            {c('Wallet Receive').t`Enter custom amount`}
-                                        </CoreButton>
-                                    ) : (
-                                        <>
-                                            <div className="mr-4">
-                                                <BitcoinAmountInput
-                                                    dense={false}
-                                                    data-testid="amount-input"
-                                                    title={c('Wallet Receive').t`Amount`}
-                                                    placeholder={c('Wallet Receive').t`Amount to receive`}
-                                                    value={amount}
-                                                    onValueChange={(amount: number) => handleChangeAmount(amount)}
-                                                    unit={exchangeRate ?? settings.BitcoinUnit}
-                                                    assistiveText={c('Wallet Receive')
-                                                        .t`Leave empty to let the sender choose the amount`}
+                                    <div className="flex flex-row flex-nowrap items-center p-4">
+                                        <div>
+                                            <h4 className="text-rg font-bold flex gap-2 mb-2 items-center text-center justify-center">
+                                                {c('Wallet Receive').t`Bitcoin address`}{' '}
+                                                <Info
+                                                    className="color-norm"
+                                                    title={c('Wallet Receive')
+                                                        .t`For better privacy, generate a new address for each transaction.`}
                                                 />
-                                            </div>
-
-                                            <div>
-                                                <CurrencySelect
-                                                    dense
-                                                    options={currencies ?? []}
-                                                    value={exchangeRate?.FiatCurrency}
-                                                    onSelect={(u) => handleChange(u)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-                            </div>
+                                            </h4>
+                                            <Tooltip title={paymentLinkString}>
+                                                <Href href={paymentLinkUri} className="color-norm">
+                                                    <span className="block text-break-all text-center text-no-decoration">
+                                                        {paymentLinkString}
+                                                    </span>
+                                                </Href>
+                                            </Tooltip>
+                                        </div>
+                                    </div>
+                                </InputFieldStacked>
+                            </InputFieldStackedGroup>
                         );
                     })()
                 ) : (
@@ -212,8 +154,12 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         color="norm"
                         disabled={!paymentLink || loadingPaymentLink}
                         size="large"
-                        onClick={() => {}}
-                    >{c('Wallet receive').t`Share address`}</Button>
+                        onClick={() => {
+                            if (paymentLink) {
+                                void navigator.clipboard.writeText(paymentLink.toString());
+                            }
+                        }}
+                    >{c('Wallet receive').t`Copy address`}</Button>
 
                     {(() => {
                         const button = (

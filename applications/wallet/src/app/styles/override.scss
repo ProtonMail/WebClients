@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 .price.contrast {
 	.decimal {
 		color: var(--text-hint);
@@ -26,15 +28,48 @@
 }
 
 .dropdown {
-	border: none;
+	--selection-background-color: var(--interaction-weak-minor-1);
+	--selection-text-color: var(--interaction-weak-contrast);
 
-	.dropdown-content {
-		background-color: var(--background-weak);
+	border: none;
+	border-radius: var(--border-radius-lg);
+
+	&-content {
+		padding: var(--space-2);
+		background: var(--background-weak);
+
+		&:not(:has(:nth-child(2))) {
+			padding: 0;
+
+			.dropdown-item-button {
+				border-radius: 0;
+			}
+		}
+
+		&::before,
+		&::after {
+			display: none;
+		}
 	}
 
-	.dropdown-content::before,
-	.dropdown-content::after {
+	&--is-searchable &-content,
+	&:has(.dropdown-search) &-content {
+		padding-block-start: 0;
+	}
+
+	.dropdown-search {
+		margin-inline: calc(var(--space-2) * -1);
+		inline-size: calc(100% + var(--space-2) * 2);
 		background-color: var(--background-weak);
+		box-shadow: none;
+	}
+
+	&-item-button {
+		border-radius: var(--border-radius-md);
+
+		&::after {
+			border-radius: calc(var(--border-radius-md) - #{rem(2)});
+		}
 	}
 }
 

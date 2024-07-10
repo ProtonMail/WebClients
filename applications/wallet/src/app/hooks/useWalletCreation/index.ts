@@ -17,14 +17,13 @@ import {
     DEFAULT_ACCOUNT_LABEL,
     DEFAULT_SCRIPT_TYPE,
     FIRST_INDEX,
-    PURPOSE_BY_SCRIPT_TYPE,
     WalletType,
     encryptWalletData,
     getDefaultWalletName,
     useUserWalletSettings,
     useWalletApiClients,
     walletCreation,
-    wordCountToNumber,
+    wordCountToNumber
 } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -66,6 +65,8 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
     const [mnemonicError, setMnemonicError] = useState<string>();
     const [mnemonic, setMnemonic] = useState<string>();
     const [passphrase, setPassphrase] = useState<string>();
+    const [confirmedPassphrase, setConfirmedPassphrase] = useState<string>();
+    const [error, setError] = useState<string>('');
 
     const [walletName, setWalletName] = useState<string>('');
 
@@ -87,6 +88,10 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
 
     const handlePassphraseChange = useCallback((passphrase: string) => {
         setPassphrase(passphrase);
+    }, []);
+
+    const handleConfirmedPassphraseChange = useCallback((confirmedPassphrase: string) => {
+        setConfirmedPassphrase(confirmedPassphrase);
     }, []);
 
     const [loadingWalletSubmit, withLoadingWalletSubmit] = useLoading();
@@ -150,11 +155,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 undefined
             )
             .then(async ({ Wallet, WalletKey, WalletSettings }): Promise<void> => {
-                const derivationPath = WasmDerivationPath.fromParts(
-                    PURPOSE_BY_SCRIPT_TYPE[DEFAULT_SCRIPT_TYPE],
-                    network,
-                    FIRST_INDEX
-                );
+                const derivationPath = WasmDerivationPath.fromParts(DEFAULT_SCRIPT_TYPE, network, FIRST_INDEX);
 
                 // Typeguard
                 const account = encryptedFirstAccountLabel
@@ -224,8 +225,19 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
         passphrase,
         handlePassphraseChange,
 
+        confirmedPassphrase,
+        handleConfirmedPassphraseChange,
+
+        error,
+
         loadingWalletSubmit,
-        onWalletSubmit: (...args: Parameters<typeof onWalletSubmit>) =>
-            withLoadingWalletSubmit(onWalletSubmit(...args)),
+        onWalletSubmit: (...args: Parameters<typeof onWalletSubmit>) => {
+            if (passphrase !== confirmedPassphrase) {
+                setError(c('Error').t`The passphrases do not match`);
+                return;
+            }
+
+            void withLoadingWalletSubmit(onWalletSubmit(...args));
+        },
     };
 };

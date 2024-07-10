@@ -33,11 +33,28 @@ export const getLabelByScriptType = (unit: WasmScriptType) => {
         case WasmScriptType.Legacy:
             return c('Bitcoin Script Type').t`Legacy`;
         case WasmScriptType.NestedSegwit:
-            return c('Bitcoin Script Type').t`Nested Segwit`;
+            return c('Bitcoin Script Type').t`Legacy Segwit`;
         case WasmScriptType.NativeSegwit:
             return c('Bitcoin Script Type').t`Native Segwit`;
         case WasmScriptType.Taproot:
             return c('Bitcoin Script Type').t`Taproot`;
+    }
+};
+
+export const getDescriptionByScriptType = (unit: WasmScriptType) => {
+    switch (unit) {
+        case WasmScriptType.Legacy:
+            return c('Bitcoin Script Type Description')
+                .t`Original format. Most widely supported but higher fees. Address starts with "1".`;
+        case WasmScriptType.NestedSegwit:
+            return c('Bitcoin Script Type Description')
+                .t`Lower fees and compatible with older systems. Address starts with "3".`;
+        case WasmScriptType.NativeSegwit:
+            return c('Bitcoin Script Type Description')
+                .t`Recommended format with lowest fees. Address starts with "bc1q".`;
+        case WasmScriptType.Taproot:
+            return c('Bitcoin Script Type Description')
+                .t`Latest format with enhanced privacy but not as widely adopted. Address starts with "bc1p".`;
     }
 };
 

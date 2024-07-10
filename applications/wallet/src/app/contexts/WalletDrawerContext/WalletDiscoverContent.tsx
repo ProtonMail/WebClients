@@ -1,12 +1,12 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/components';
+import { Icon, SettingsLink } from '@proton/components/components';
+import { useUser, useUserSettings } from '@proton/components/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
+import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
+import { IWasmApiWalletData, disabledWalletShowRecovery, useWalletApi } from '@proton/wallet';
 
 import { getThemeForWallet } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
@@ -16,25 +16,32 @@ interface ChecklistItemProps {
     done?: boolean;
     text: string;
     onClick?: () => void;
+    path?: string;
 }
 
-enum ChecklistItems {
-    ClaimWallet = 1,
-    BackupAccount = 2,
-    BackupWallet = 4,
-    Setup2FA = 8,
-}
-
-const ChecklistItem = ({ text, done, onClick }: ChecklistItemProps) => {
-    return (
-        <button
-            onClick={() => onClick?.()}
-            className="bg-weak flex flex-row items-center py-5 px-6 color-primary cursor-pointer"
-            style={{ borderRadius: '24px' }}
-        >
+const ChecklistItem = ({ text, done, onClick, path }: ChecklistItemProps) => {
+    const containerClassname = 'bg-weak flex flex-row items-center py-5 px-6 color-primary cursor-pointer rounded-xl';
+    const content = (
+        <>
             <Icon className="mr-4" name={done ? 'circle-filled' : 'circle'} size={6} />
             <span className={clsx(done && 'text-strike')}>{text}</span>
             <Icon className="ml-auto" name="chevron-right" />
+        </>
+    );
+
+    if (path) {
+        return (
+            <SettingsLink target="_blank" className={containerClassname} path={path} style={{ textDecoration: 'none' }}>
+                <Icon className="mr-4" name={done ? 'circle-filled' : 'circle'} size={6} />
+                <span className={clsx(done && 'text-strike')}>{text}</span>
+                <Icon className="ml-auto" name="chevron-right" />
+            </SettingsLink>
+        );
+    }
+
+    return (
+        <button onClick={() => onClick?.()} className={containerClassname}>
+            {content}
         </button>
     );
 };
@@ -59,51 +66,69 @@ interface Props {
     wallet: IWasmApiWalletData;
 }
 
-export const WalletDiscoverContent = ({ wallet }: Props) => {
-    const [checkedItem, setCheckedItem] = useState(1);
+export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
+    const [user] = useUser();
+    const [userSettings] = useUserSettings();
     const { decryptedApiWalletsData = [] } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
+    const walletApi = useWalletApi();
+    const dispatch = useDispatch();
+
+    const wallet = decryptedApiWalletsData.find((wa) => wa.Wallet.ID === initWallet.Wallet.ID);
+    if (!wallet) {
+        return null;
+    }
+
+    const handleClickBackupSeedphrase = () => {
+        if (wallet.Wallet.Mnemonic) {
+            open(
+                {
+                    theme: getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID),
+                    kind: WalletSetupModalKind.WalletBackup,
+                    apiWalletData: wallet,
+                },
+                {
+                    onClose: () => {
+                        void walletApi
+                            .clients()
+                            .wallet.disableShowWalletRecovery(wallet.Wallet.ID)
+                            .then(() => {
+                                dispatch(disabledWalletShowRecovery({ walletID: wallet.Wallet.ID }));
+                            });
+                    },
+                }
+            );
+        }
+    };
 
     return (
-        <div className="block overflow-auto">
+        <div className="block">
             <div className="block h-full">
                 <div className="flex flex-column flex-nowrap mb-10">
-                    <div className="text-3xl text-semibold mb-6">{c('Wallet discover')
-                        .t`Finish your account setup`}</div>
+                    <div className="text-3xl text-semibold mb-6">{c('Wallet discover').t`Secure your wallet`}</div>
 
                     <div className="flex flex-column gap-1">
+                        {!wallet.Wallet.IsImported && (
+                            <ChecklistItem
+                                done={!wallet.WalletSettings?.ShowWalletRecovery}
+                                text={c('Wallet discover').t`Backup this wallet's seed phrase`}
+                                onClick={() => {
+                                    handleClickBackupSeedphrase();
+                                }}
+                            />
+                        )}
+
                         <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.ClaimWallet)}
-                            text={c('Wallet discover').t`Claim your wallet`}
+                            path="/recovery#data"
+                            done={Boolean(userSettings.DeviceRecovery || user.MnemonicStatus === MNEMONIC_STATUS.SET)}
+                            text={c('Wallet discover').t`Backup your ${BRAND_NAME} account data`}
                         />
+
                         <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.BackupAccount)}
-                            text={c('Wallet discover').t`Backup your ${BRAND_NAME} account`}
-                        />
-                        <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.BackupWallet)}
-                            text={c('Wallet discover').t`Backup your wallet's mnemonic`}
-                            onClick={() => {
-                                if (wallet.Wallet.Mnemonic) {
-                                    open(
-                                        {
-                                            theme: getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID),
-                                            kind: WalletSetupModalKind.WalletBackup,
-                                            apiWalletData: wallet,
-                                        },
-                                        {
-                                            onClose: () => {
-                                                setCheckedItem(setBit(checkedItem, ChecklistItems.BackupWallet));
-                                            },
-                                        }
-                                    );
-                                }
-                            }}
-                        />
-                        <ChecklistItem
-                            done={hasBit(checkedItem, ChecklistItems.Setup2FA)}
-                            text={c('Wallet discover').t`Set up your 2FA`}
+                            path="/account-password#two-fa"
+                            done={Boolean(userSettings['2FA'].Enabled)}
+                            text={c('Wallet discover').t`Set up 2FA to secure your account`}
                         />
                     </div>
                 </div>

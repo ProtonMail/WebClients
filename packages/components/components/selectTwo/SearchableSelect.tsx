@@ -1,4 +1,4 @@
-import { FormEvent, KeyboardEvent, MouseEvent, ReactNode, useMemo, useRef, useState } from 'react';
+import { FormEvent, KeyboardEvent, MouseEvent, MutableRefObject, ReactNode, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,8 +23,10 @@ export interface Props<V> extends SelectProps<V> {
     unstyled?: boolean;
     size?: DropdownSize;
     originalPlacement?: PopperPlacement;
+    availablePlacements?: PopperPlacement[];
     placeholder?: string;
     dropdownClassName?: string;
+    anchorRef?: MutableRefObject<HTMLButtonElement | null>;
 }
 
 const SearchableSelect = <V extends any>({
@@ -46,7 +48,11 @@ const SearchableSelect = <V extends any>({
     onChange,
     renderSelected,
     originalPlacement,
+    availablePlacements,
     dropdownClassName,
+    caretIconName,
+    caretClassName,
+    anchorRef: maybeAnchorRef,
     ...rest
 }: Props<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -148,7 +154,15 @@ const SearchableSelect = <V extends any>({
 
     return (
         <SelectProvider {...select}>
-            <SelectButton isOpen={isOpen} onClick={handleAnchorClick} aria-label={ariaLabel} ref={anchorRef} {...rest}>
+            <SelectButton
+                isOpen={isOpen}
+                onClick={handleAnchorClick}
+                aria-label={ariaLabel}
+                ref={anchorRef}
+                caretIconName={caretIconName}
+                caretClassName={caretClassName}
+                {...rest}
+            >
                 {renderSelected?.(value) ?? (
                     <SelectDisplayValue selectedChildren={selectedChildren} placeholder={placeholder} />
                 )}
@@ -157,7 +171,7 @@ const SearchableSelect = <V extends any>({
             <Dropdown
                 isOpen={isOpen}
                 onClosed={handleClosed}
-                anchorRef={anchorRef}
+                anchorRef={maybeAnchorRef || anchorRef}
                 onClose={close}
                 autoClose={autoclose}
                 offset={4}
@@ -165,6 +179,7 @@ const SearchableSelect = <V extends any>({
                 size={size}
                 disableDefaultArrowNavigation={!searchValue}
                 originalPlacement={originalPlacement}
+                availablePlacements={availablePlacements}
                 className={clsx([
                     searchContainerRef?.current && 'dropdown--is-searchable',
                     multiple && 'select-dropdown--togglable',

@@ -239,7 +239,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                             options={allCountryOptions}
                             as={(props: CoreSearchableSelectProps<string>) => (
                                 <SearchableSelect
-                                    bordered
                                     label={c('bitcoin buy').t`Your location`}
                                     placeholder={c('bitcoin buy').t`Choose a country`}
                                     {...props}
@@ -362,7 +361,6 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                 </div>
 
                 <Select
-                    bordered
                     prefix={(() => {
                         if (!selectedPaymentMethod) {
                             return undefined;

@@ -1,6 +1,9 @@
 @import '~@proton/styles/scss/lib';
 
-$scrollshadow-size: rem(5) !default;
+:root {
+	--scrollshadow-size: 0.313rem;
+	--scrollshadow-opacity: var(--shadow-norm-opacity);
+}
 
 .scroll {
 	&-outer {
@@ -38,7 +41,7 @@ $scrollshadow-size: rem(5) !default;
 				z-index: 1;
 				position: absolute;
 				inset-block-start: 0;
-				inline-size: $scrollshadow-size;
+				inline-size: var(--scrollshadow-size);
 				block-size: 100%;
 				opacity: 0;
 				transition: 250ms easing(ease-out-cubic);
@@ -46,12 +49,12 @@ $scrollshadow-size: rem(5) !default;
 
 			.scroll-start-shadow {
 				inset-inline-start: 0;
-				background: linear-gradient(90deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
+				background: linear-gradient(90deg, rgb(0 0 0 / var(--scrollshadow-opacity)), transparent);
 			}
 
 			.scroll-end-shadow {
 				inset-inline-end: 0;
-				background: linear-gradient(270deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
+				background: linear-gradient(270deg, rgb(0 0 0 / var(--scrollshadow-opacity)), transparent);
 			}
 
 			.scroll-start-shadow-visible,
@@ -73,21 +76,20 @@ $scrollshadow-size: rem(5) !default;
 			.scroll-end-shadow {
 				z-index: 1;
 				position: absolute;
-				inset-inline-start: 0;
-				inset-inline-end: 0;
-				block-size: $scrollshadow-size;
+				inset-inline: 0 0;
+				block-size: var(--scrollshadow-size);
 				transition: 250ms easing(ease-out-cubic);
 				opacity: 0;
 			}
 
 			.scroll-start-shadow {
 				inset-block-start: 0;
-				background: linear-gradient(180deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
+				background: linear-gradient(180deg, rgb(0 0 0 / var(--scrollshadow-opacity)), transparent);
 			}
 
 			.scroll-end-shadow {
 				inset-block-end: 0;
-				background: linear-gradient(0deg, rgb(0 0 0 / var(--shadow-norm-opacity)), transparent);
+				background: linear-gradient(0deg, rgb(0 0 0 / var(--scrollshadow-opacity)), transparent);
 			}
 
 			.scroll-start-shadow-visible,

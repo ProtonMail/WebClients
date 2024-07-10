@@ -29,13 +29,6 @@ export const SCRIPT_TYPES = [
     WasmScriptType.Taproot,
 ];
 
-export const PURPOSE_BY_SCRIPT_TYPE: Record<WasmScriptType, number> = {
-    [WasmScriptType.Legacy]: 44,
-    [WasmScriptType.NestedSegwit]: 48,
-    [WasmScriptType.NativeSegwit]: 84,
-    [WasmScriptType.Taproot]: 86,
-};
-
 export const MIN_FEE_RATE = 1;
 
 export const DEFAULT_TARGET_BLOCK = 5;

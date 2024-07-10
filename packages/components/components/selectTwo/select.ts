@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
+import { IconName } from '../icon';
 import { Props as OptionProps } from '../option/Option';
 import { NodeOrBoolean } from '../v2/field/InputField';
 
@@ -36,6 +37,8 @@ export interface SelectProps<V>
      * anchor. If null is returned, will fall back to the internal implementation.
      */
     renderSelected?: (selected?: V) => ReactNode;
+    caretIconName?: IconName;
+    caretClassName?: string;
 }
 
 export function isValidMultiMode<V>(value: any, multiple: boolean): value is V & any[] {
