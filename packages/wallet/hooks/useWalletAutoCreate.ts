@@ -22,7 +22,7 @@ import { POOL_FILLING_THRESHOLD } from '../utils/email-integration';
 import { getDefaultWalletName } from '../utils/wallet';
 
 const DEFAULT_ACCOUNT_LABEL = 'Primary Account';
-const DEFAULT_PURPOSE = 84;
+
 const FIRST_INDEX = 0;
 
 // Flag to tell the API the wallet was autocreated
@@ -55,7 +55,7 @@ export const useWalletAutoCreate = (
         return new wasm.WasmProtonWalletApiClient(authentication.UID, window.location.origin, configUrl).clients();
     };
 
-    const defaultDefaultScriptType = () => wasm.WasmScriptType.NativeSegwit;
+    const defaultScriptType = () => wasm.WasmScriptType.NativeSegwit;
 
     const enableBitcoinViaEmail = async ({
         wallet,
@@ -75,7 +75,7 @@ export const useWalletAutoCreate = (
 
         const wasmAccount = new wasm.WasmAccount(
             wasmWallet,
-            defaultDefaultScriptType(),
+            defaultScriptType(),
             wasm.WasmDerivationPath.fromParts(...derivationPathParts)
         );
 
@@ -121,7 +121,7 @@ export const useWalletAutoCreate = (
             wallet.ID,
             wasm.WasmDerivationPath.fromParts(...derivationPathParts),
             label,
-            defaultDefaultScriptType()
+            defaultScriptType()
         );
 
         await walletApi.wallet.updateWalletAccountFiatCurrency(wallet.ID, account.Data.ID, fiatCurrency);
@@ -152,7 +152,7 @@ export const useWalletAutoCreate = (
             const wasmWallet = new wasm.WasmWallet(network, mnemonic, '');
             const fingerprint = wasmWallet.getFingerprint();
 
-            const derivationPathParts = [DEFAULT_PURPOSE, network, FIRST_INDEX] as const;
+            const derivationPathParts = [defaultScriptType(), network, FIRST_INDEX] as const;
 
             const { Wallet } = await walletApi.wallet.createWallet(
                 encryptedName,

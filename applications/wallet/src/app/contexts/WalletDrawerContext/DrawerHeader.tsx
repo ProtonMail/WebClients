@@ -13,7 +13,7 @@ interface Props {
 
 export const DrawerHeader = ({ title, bg, onClose }: Props) => {
     return (
-        <div className="flex flex-row mb-3">
+        <div className="flex flex-row mb-3 px-6 pt-3">
             {title && <div>{title}</div>}
             <div className="ml-auto">
                 <CoreButton

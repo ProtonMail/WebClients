@@ -9,7 +9,6 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-    Info,
     ModalOwnProps,
 } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
@@ -18,18 +17,19 @@ import {
     BASE_INDEX_OPTIONS,
     DEFAULT_INDEX,
     IWasmApiWalletData,
-    PURPOSE_BY_SCRIPT_TYPE,
     SCRIPT_TYPES,
     encryptWalletDataWithWalletKey,
     getDefaultWalletAccountName,
     useWalletApiClients,
-    walletAccountCreation,
+    walletAccountCreation
 } from '@proton/wallet';
 
-import { Button, CoreButton, Input, Modal, Select } from '../../atoms';
+import { Button, CoreButton, Input, Modal, Select, SelectOption } from '../../atoms';
+import { ModalParagraph } from '../../atoms/ModalParagraph';
+import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletDispatch } from '../../store/hooks';
-import { SubTheme, getLabelByScriptType, isUndefined } from '../../utils';
+import { SubTheme, getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
 
 export interface WalletAccountCreationModalOwnProps {
     apiWalletData: IWasmApiWalletData;
@@ -89,7 +89,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
             return;
         }
 
-        const derivationPath = WasmDerivationPath.fromParts(PURPOSE_BY_SCRIPT_TYPE[selectedScriptType], network, index);
+        const derivationPath = WasmDerivationPath.fromParts(selectedScriptType, network, index);
 
         const { Wallet, WalletKey } = apiWalletData;
 
@@ -119,30 +119,27 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
     return (
         <Modal
             title={c('Wallet Account').t`Add wallet account`}
-            subline={
-                <div className="flex flex-columns items-center gap-2">
-                    <p className="my-0">{c('Wallet Account')
-                        .t`Create multiple wallet accounts to separate your financial activities for better privacy and organization.`}</p>
-                    <p className="my-0">{c('Wallet Account')
-                        .t`If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.`}</p>
-                </div>
-            }
             enableCloseWhenClickOutside
             className={theme}
             {...modalProps}
         >
-            <div className="flex flex-row">
-                <Input
-                    label={c('Wallet Account').t`Account label`}
-                    id="account-label-input"
-                    placeholder={c('Wallet Account').t`Savings for holiday`}
-                    value={label}
-                    disabled={loading}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                        setLabel(event.target.value);
-                    }}
-                />
-            </div>
+            <ModalParagraph>
+                <p>{c('Wallet Account')
+                    .t`Create multiple wallet accounts to separate your financial activities for better privacy and organization.`}</p>
+                <p>{c('Wallet Account')
+                    .t`If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.`}</p>
+            </ModalParagraph>
+
+            <Input
+                label={c('Wallet Account').t`Name`}
+                id="account-label-input"
+                placeholder={c('Wallet Account').t`Savings for holiday`}
+                value={label}
+                disabled={loading}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setLabel(event.target.value);
+                }}
+            />
 
             <Collapsible className="my-6">
                 <CollapsibleHeader
@@ -151,55 +148,51 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                             <Icon name="chevron-down" />
                         </CollapsibleHeaderIconButton>
                     }
-                >{c('Wallet account').t`View advanced settings`}</CollapsibleHeader>
+                >{c('Wallet account').t`Advanced settings`}</CollapsibleHeader>
                 <CollapsibleContent>
                     <div className="flex flex-column items-center">
-                        <h3 className="text-center mt-6 mb-2 text-semibold">{c('Wallet account').t`Address Type`}</h3>
-                        <p className="mt-2 mb-6 color-weak text-center">{c('Wallet account')
-                            .t`We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.`}</p>
-
-                        <div className="flex flex-row mt-4 w-full">
-                            <Select
-                                label={
-                                    <div className="flex flex-row">
-                                        <span className="block mr-1">{c('Wallet Account').t`Script Type`}</span>
-                                        <Info
-                                            title={c('Wallet Account')
-                                                .t`Script type used in account. This will have an impact on account derivation path.`}
-                                        />
-                                    </div>
-                                }
-                                id="account-script-type-selector"
-                                aria-describedby="label-account-script-type"
-                                value={selectedScriptType}
-                                disabled={loading}
-                                onChange={(event) => {
-                                    setSelectedScriptType(event.value);
-                                }}
-                                options={SCRIPT_TYPES.map((opt) => ({
-                                    label: getLabelByScriptType(opt as WasmScriptType),
-                                    value: opt,
-                                    id: opt.toString(),
-                                }))}
-                            />
-                        </div>
+                        <ModalSectionHeader header={c('Wallet account').t`Address Type`}>
+                            {c('Wallet account')
+                                .t`We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.`}
+                        </ModalSectionHeader>
+                        <Select
+                            label={c('Wallet Account').t`Address type`}
+                            id="account-script-type-selector"
+                            aria-describedby="label-account-script-type"
+                            value={selectedScriptType}
+                            disabled={loading}
+                            onChange={(event) => {
+                                setSelectedScriptType(event.value);
+                            }}
+                            options={SCRIPT_TYPES.map((opt) => ({
+                                label: getLabelByScriptType(opt as WasmScriptType),
+                                value: opt,
+                                id: opt.toString(),
+                                children: (
+                                    <SelectOption
+                                        label={getLabelByScriptType(opt as WasmScriptType)}
+                                        description={getDescriptionByScriptType(opt as WasmScriptType)}
+                                    />
+                                ),
+                            }))}
+                            renderSelected={(selected) => getLabelByScriptType(selected as WasmScriptType)}
+                        />
 
                         <CoreButton className="my-3 mr-auto" shape="underline" color="norm">{c('Wallet account')
                             .t`Learn more`}</CoreButton>
                     </div>
 
                     <div className="flex flex-column items-center">
-                        <h3 className="text-center mt-6 mb-2 text-semibold">{c('Wallet account').t`Account Index`}</h3>
-                        <p className="mt-2 mb-6 color-weak text-center">{c('Wallet account')
-                            .t`We default to the next unused index. You can change this to recover or to skip a previous account.`}</p>
-
+                        <ModalSectionHeader header={c('Wallet account').t`Account Index`}>
+                            {c('Wallet account')
+                                .t`We default to the next unused index. You can change this to recover or to skip a previous account.`}
+                        </ModalSectionHeader>
                         <div className="flex flex-row mt-2 w-full">
                             <div className="grow">
                                 <Select
                                     label={
                                         <div className="flex flex-row">
-                                            <span className="block mr-1">{c('Wallet Account').t`Index`}</span>
-                                            <Info title={c('Wallet Account').t`Index of the account to add`} />
+                                            <span className="block mr-1">{c('Wallet Account').t`Account index`}</span>
                                         </div>
                                     }
                                     id="account-index-selector"
@@ -256,7 +249,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                     onClick={() => {
                         void withLoading(onAccountCreation());
                     }}
-                >{c('Wallet Account').t`Add`}</Button>
+                >{c('Wallet Account').t`Create wallet account`}</Button>
                 <Button
                     disabled={loading}
                     fullWidth

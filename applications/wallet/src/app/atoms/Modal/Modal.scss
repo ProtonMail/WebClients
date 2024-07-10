@@ -1,3 +1,19 @@
+@import '~@proton/styles/scss/lib';
+
 .modal-two-header-title {
-	width: 100%;
+	inline-size: 100%;
+}
+
+.modal-two-dialog.prompt {
+	--modal-background-color: var(--background-weak);
+	--size: 24rem;
+}
+
+.modal-two-header-actions {
+	--button-default-text-color: var(--text-weak);
+
+	position: absolute;
+	margin: 0;
+	inset-block-start: rem(10);
+	inset-inline-end: rem(10);
 }

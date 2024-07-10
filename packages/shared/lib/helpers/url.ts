@@ -320,6 +320,10 @@ export const getAppStaticUrl = (app: APP_NAMES) => {
         return getStaticURL('/vpn');
     }
 
+    if (app === 'proton-wallet') {
+        return getStaticURL('/wallet');
+    }
+
     return getStaticURL('');
 };
 

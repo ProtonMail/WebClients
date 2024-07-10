@@ -149,6 +149,8 @@ export const apiWalletAccountOneA: WasmApiWalletAccount = {
     DerivationPath: "84'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
+    Priority: 1,
+    LastUsedIndex: 0,
 };
 
 export const apiWalletAccountOneB: WasmApiWalletAccount = {
@@ -159,6 +161,8 @@ export const apiWalletAccountOneB: WasmApiWalletAccount = {
     DerivationPath: "86'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
+    Priority: 2,
+    LastUsedIndex: 0,
 };
 
 export const apiWalletAccountTwoA: WasmApiWalletAccount = {
@@ -169,6 +173,8 @@ export const apiWalletAccountTwoA: WasmApiWalletAccount = {
     DerivationPath: "49'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
+    Priority: 1,
+    LastUsedIndex: 0,
 };
 
 export const apiWalletAccountTwoB: WasmApiWalletAccount = {
@@ -179,6 +185,8 @@ export const apiWalletAccountTwoB: WasmApiWalletAccount = {
     DerivationPath: "84'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
+    Priority: 2,
+    LastUsedIndex: 0,
 };
 
 export const apiWalletAccountThree: WasmApiWalletAccount = {
@@ -189,6 +197,8 @@ export const apiWalletAccountThree: WasmApiWalletAccount = {
     DerivationPath: "84'/0'/0'",
     Addresses: [],
     FiatCurrency: 'USD',
+    Priority: 1,
+    LastUsedIndex: 0,
 };
 
 export const apiWalletsData: IWasmApiWalletData[] = [

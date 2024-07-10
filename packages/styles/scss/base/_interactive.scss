@@ -15,7 +15,9 @@
 	}
 
 	color: inherit;
-	transition: 0.15s easing(ease-out-quint), background-position 0s;
+	transition:
+		0.15s easing(ease-out-quint),
+		background-position 0s;
 
 	&:hover {
 		background-color: var(--interaction-default-hover);
@@ -105,9 +107,15 @@
 			}
 
 			&:hover {
+				background-color: transparent;
+
 				&::after {
 					background-color: var(--interaction-default-hover);
 				}
+			}
+
+			&:active {
+				background-color: transparent;
 			}
 		}
 	}
@@ -121,9 +129,15 @@
 			}
 
 			&:hover {
+				background-color: transparent;
+
 				&::after {
 					background-color: var(--interaction-default-hover);
 				}
+			}
+
+			&:active {
+				background-color: transparent;
 			}
 		}
 	}

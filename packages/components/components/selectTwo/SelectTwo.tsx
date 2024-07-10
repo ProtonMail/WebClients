@@ -65,6 +65,8 @@ const SelectTwo = <V extends any>({
     getSearchableValue,
     renderSelected,
     noDropdownCaret,
+    caretIconName,
+    caretClassName,
     dropdownClassName,
     ...rest
 }: Props<V>) => {
@@ -195,6 +197,8 @@ const SelectTwo = <V extends any>({
                 onClick={handleAnchorClick}
                 onKeyDown={handleKeydown}
                 noCaret={noDropdownCaret}
+                caretIconName={caretIconName}
+                caretClassName={caretClassName}
                 aria-label={ariaLabel}
                 ref={anchorRef}
                 {...rest}

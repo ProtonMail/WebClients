@@ -272,6 +272,8 @@ describe('useWalletTransactions', () => {
                     DerivationPath: "84'/1'/0'",
                     ScriptType: WasmScriptType.NativeSegwit,
                     FiatCurrency: 'USD',
+                    LastUsedIndex: 0,
+                    Priority: 1,
                     // match address defined in getAddressKey utils
                     Addresses: [{ Email: 'pro@prootn.test', ID: '0000001' }],
                 },

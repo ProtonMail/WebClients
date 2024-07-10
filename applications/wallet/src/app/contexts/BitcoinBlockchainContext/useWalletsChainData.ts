@@ -158,18 +158,16 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 try {
                     const wasmAccount = account.account;
 
-                    if ((await blockchainClient.shouldSync(wasmAccount)) || manual) {
-                        addNewSyncing(walletId, accountId);
+                    addNewSyncing(walletId, accountId);
 
-                        // If syncing is manual, we do a full sync
-                        if ((await wasmAccount.hasSyncData()) && !manual) {
-                            await blockchainClient.partialSync(wasmAccount);
-                        } else {
-                            await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + POOL_FILLING_THRESHOLD);
-                        }
-
-                        incrementSyncKey(walletId, accountId);
+                    // If syncing is manual, we do a full sync
+                    if ((await wasmAccount.hasSyncData()) && !manual) {
+                        await blockchainClient.partialSync(wasmAccount);
+                    } else {
+                        await blockchainClient.fullSync(wasmAccount, getDefaultStopGap() + POOL_FILLING_THRESHOLD);
                     }
+
+                    incrementSyncKey(walletId, accountId);
                 } catch (error) {
                     createNotification({ text: c('Wallet').t`An error occured`, type: 'error' });
                 } finally {

@@ -8,12 +8,12 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-    Info,
     ModalOwnProps,
 } from '@proton/components/components';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, Input, Modal, Select } from '../../atoms';
+import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
 import { BitcoinViaEmailNote } from '../../atoms/BitcoinViaEmailNote';
 import { getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
@@ -50,9 +50,9 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                 {...modalProps}
             >
                 <div className="flex flex-column">
-                    <div className="flex flex-column my-4 bg-weak rounded-xl">
+                    <InputFieldStackedGroup classname="mb-4">
                         <Input
-                            label={c('Wallet preference').t`Wallet name`}
+                            label={c('Wallet preference').t`Name`}
                             placeholder={c('Wallet preference').t`My super wallet`}
                             value={walletName}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -64,15 +64,19 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                                 }
                             }}
                             disabled={loadingWalletNameUpdate}
+                            isGroupElement
+                            prefix={
+                                <div
+                                    className="rounded-full flex p-3"
+                                    style={{ background: 'var(--interaction-norm-minor-2)' }}
+                                >
+                                    <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>
+                                </div>
+                            }
                         />
 
                         <Select
-                            label={
-                                <div className="flex flex-row">
-                                    <span className="block mr-1">{c('Wallet settings').t`Bitcoin unit`}</span>
-                                    <Info title={c('Wallet settings').t`Unit in which bitcoin will be displayed`} />
-                                </div>
-                            }
+                            label={c('Wallet settings').t`Bitcoin unit`}
                             id="bitcoin-unit-selector"
                             aria-describedby="label-bitcoin-unit"
                             value={userWalletSettings?.BitcoinUnit}
@@ -84,9 +88,15 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                                 label: option.label,
                                 value: option.unit,
                                 id: option.unit,
+                                children: <SelectOption label={option.label} />,
                             }))}
+                            renderSelected={(selected) => {
+                                const option = getBitcoinUnitOptions().find((option) => option.unit === selected);
+                                return option ? option.label : null;
+                            }}
+                            isGroupElement
                         />
-                    </div>
+                    </InputFieldStackedGroup>
 
                     <div className="flex flex-column my-3">
                         <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>

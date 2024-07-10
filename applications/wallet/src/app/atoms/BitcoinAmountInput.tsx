@@ -29,7 +29,7 @@ export const BitcoinAmountInput = ({
     inputClassName,
     ...inputProps
 }: Props) => {
-    const [fiatAmount, setFiatAmount] = useState(0);
+    const [fiatAmount, setFiatAmount] = useState(convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const amount = parseFloat(event.target.value);

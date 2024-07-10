@@ -1,12 +1,27 @@
 @import '~@proton/styles/scss/lib';
 
 .stacked-field {
+	--stacked-field-border-radius: var(--border-radius-lg);
+	--stacked-field-background: transparent;
+	--stacked-field-padding-block: var(--space-3);
+	--stacked-field-padding-inline: var(--space-4);
+	--stacked-field-min-block-size: 0;
+
 	/*
 	 small reset
 	 */
 	.input-element {
 		padding: 0;
 		background-color: transparent;
+	}
+
+	background-color: var(--stacked-field-background);
+	padding-block: var(--stacked-field-padding-block);
+	padding-inline: var(--stacked-field-padding-inline);
+	min-block-size: var(--stacked-field-min-block-size);
+
+	&--rounded {
+		border-radius: var(--stacked-field-border-radius);
 	}
 
 	.field-two {
@@ -71,12 +86,19 @@
 		}
 	}
 
+	.select-unstyled {
+		outline: none !important; // nuclear option
+	}
+
 	/*
 	  States
 	 */
 	// bigger field
-	&--bigger-field .input-element {
-		font-size: rem(16);
+	&--bigger-field {
+		.input-element,
+		.select-unstyled {
+			font-size: rem(16);
+		}
 	}
 
 	&--errors {
@@ -84,9 +106,19 @@
 	}
 
 	&:focus-within {
-		border-color: var(--focus-outline);
-		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
 		background-color: var(--field-focus-background-color);
 		color: var(--field-focus-text-color);
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			block-size: 100%;
+			border-radius: inherit;
+			border: 1px solid var(--focus-outline) !important;
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			z-index: 1;
+			pointer-events: none;
+		}
 	}
 }
