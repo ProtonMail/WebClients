@@ -133,7 +133,7 @@ const ItemAttachmentThumbnails = ({
                 <div
                     // 1. prevent the event propagation (a click inside the portal would open the message)
                     onClick={(e) => {
-                        e.preventDefault();
+                        e.stopPropagation();
                     }}
                     // 2. prevent the context menu to be opened on the message in Safari
                     onContextMenu={(e) => {
