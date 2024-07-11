@@ -3,6 +3,7 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
+import { PasswordInputTwo } from '@proton/components/components';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';
@@ -50,6 +51,7 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
                 <div className="flex flex-row mb-5">
                     <Input
                         id="passphrase-input"
+                        as={PasswordInputTwo}
                         label={c('Wallet passphrase').t`Wallet passphrase`}
                         placeholder={c('Wallet passphrase').t`My wallet passphrase`}
                         value={passphrase}
