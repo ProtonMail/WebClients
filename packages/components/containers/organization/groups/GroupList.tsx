@@ -7,14 +7,22 @@ interface Props {
     groupsManagement: GroupsManagementReturn;
 }
 
-const GroupList = (props: Props) => {
-    const { groups } = props.groupsManagement;
-
+const GroupList = ({ groupsManagement: { setUiState, setSelectedGroup, groups, selectedGroup } }: Props) => {
     return (
         <>
             <Scroll className="mr-6">
                 {groups.map((groupData) => (
-                    <GroupItem key={groupData.Address.ID} groupData={groupData} active={true} />
+                    <GroupItem
+                        key={groupData.Address.ID}
+                        groupData={groupData}
+                        active={groupData.Address.ID === selectedGroup?.ID}
+                        onClick={() => {
+                            if (groupData.Address.ID) {
+                                setSelectedGroup(groupData);
+                            }
+                            setUiState('view');
+                        }}
+                    />
                 ))}
             </Scroll>
         </>

@@ -1,0 +1,25 @@
+@import '~@proton/styles/scss/lib';
+
+.panel-section {
+	min-block-size: 100%;
+	max-block-size: 100%;
+	overflow: hidden;
+
+	&--content {
+		transition: opacity 250ms ease-in-out;
+	}
+
+	&--full {
+		.scroll-inner {
+			.scroll-child {
+				block-size: 100%;
+
+				> div {
+					block-size: 100%;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+		}
+	}
+}
