@@ -804,11 +804,11 @@
       "Not saved": [
         "Не збережено"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
@@ -1380,12 +1380,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } власний домен",
-        "${ domains } власні домени",
-        "${ domains } власних доменів",
-        "${ domains } власних доменів"
-      ],
       "${ ips } server": [
         "${ ips } сервер",
         "${ ips } сервери",
@@ -7126,9 +7120,6 @@
       ],
       "Writing assistant": [
         "Помічник з написання"
-      ],
-      "Writing assistant add-on": [
-        "Додаток – помічник з написання"
       ],
       "Yearly": [
         "Щороку"
