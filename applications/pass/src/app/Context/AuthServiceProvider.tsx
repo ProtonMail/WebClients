@@ -126,8 +126,15 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             },
 
             onInit: async (options) => {
+                const activeLocalID = authStore.getLocalID();
                 const pathLocalID = getLocalIDFromPathname(location.pathname);
-                const initialLocalID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID();
+
+                /** if we have mismatch between the path localID and the in-memory
+                 * one, wipe the auth store. This can happen if a user manually
+                 * mutates the local path in the URL */
+                if (pathLocalID && activeLocalID !== pathLocalID) authStore.clear();
+
+                const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID();
                 const error = getRouteError(history.location.search);
 
                 if (error !== null) {
@@ -138,7 +145,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                     return false;
                 } else history.replace({ state: null });
 
-                const persistedSession = await auth.config.getPersistedSession(initialLocalID);
+                const persistedSession = await auth.config.getPersistedSession(localID);
 
                 if (persistedSession) {
                     /** Configure the authentication store partially in order to
@@ -186,11 +193,11 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 const loggedIn = await (authStore.hasSession(pathLocalID) && authStore.validSession(session)
                     ? auth.login(session, options)
-                    : auth.resumeSession(initialLocalID, options));
+                    : auth.resumeSession(localID, options));
 
                 const locked = authStore.getLocked();
                 const hasLocalID = pathLocalID !== undefined;
-                const validSession = authStore.validSession(session) && session.LocalID === initialLocalID;
+                const validSession = authStore.validSession(session) && session.LocalID === localID;
                 const autoFork = !loggedIn && !locked && hasLocalID && !validSession;
 
                 if (!online.current) client.current.setStatus(AppStatus.ERROR);
