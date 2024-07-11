@@ -334,6 +334,9 @@
       "Multiple select": [
         "Zaznacz"
       ],
+      "No expired links": [
+        "Brak wygaśniętych linków"
+      ],
       "OK": [
         "OK"
       ],
@@ -468,6 +471,9 @@
       ],
       "Sign out": [
         "Wyloguj"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Udostępniono Tobie element w ${ PASS_APP_NAME }"
       ],
       "Sort vault items": [
         "Sortuj elementy sejfu"
@@ -875,11 +881,17 @@
       "The session has expired. Please sign in again.": [
         "Sesja wygasła. Zaloguj się ponownie."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Wystąpił błąd podczas usuwania linku. Spróbuj ponownie za kilka minut."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Zbyt wiele nieudanych prób. Zaloguj się ponownie."
       ],
       "Trashing item failed": [
         "Usunięcie elementu nie powiodło się"
+      ],
+      "Try reaching out to the link owner.": [
+        "Skontaktuj się z właścicielem linku."
       ],
       "Unable to generate an OTP code for this item": [
         "Nie można wygenerować kodu uwierzytelniającego dla tego elementu"
@@ -1259,6 +1271,9 @@
       ],
       "Enter your PIN code": [
         "Wpisz kod PIN"
+      ],
+      "Expires in": [
+        "Wygasa za"
       ],
       "Expires in ${ remainingTime }": [
         "Wygasa za ${ remainingTime }"
@@ -1641,6 +1656,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Dodatkowe hasło ${ BRAND_NAME } będzie wymagane do korzystania z ${ PASS_APP_NAME }."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
         "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
@@ -2015,6 +2033,9 @@
       "Forwards to": [
         "Przekaż do"
       ],
+      "Free forever": [
+        "Darmowy na zawsze"
+      ],
       "General": [
         "Ogólne"
       ],
@@ -2153,6 +2174,9 @@
       "Oldest to newest": [
         "Od najstarszych"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Menedżer haseł z otwartym kodem źródłowym ."
+      ],
       "Organization": [
         "Organizacja"
       ],
@@ -2201,6 +2225,9 @@
       "Reveal password": [
         "Pokaż hasło"
       ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Bezpieczne przechowywanie, udostępnianie i automatyczne uzupełnianie kont w ${ PASS_APP_NAME } za pomocą szyfrowania end-to-end, któremu zaufały miliony użytkowników."
+      ],
       "Security": [
         "Bezpieczeństwo"
       ],
@@ -2248,6 +2275,18 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikowi",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Link został skopiowany do schowka"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Element będzie dostępny do ${ remaining }"
       ],
       "Title": [
         "Tytuł"
@@ -2846,6 +2885,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Ostrzeżenie: Jeśli zapomnisz tego hasła, stracisz dostęp do konta ${ PASS_APP_NAME }."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Nie można utworzyć sejfu \"${ vaultName }\""
       ],
@@ -2936,8 +2978,14 @@
       "PGP encrypted export file requires passphrase": [
         "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Sprawdź, czy rozszerzenie jest poprawnie zainstalowane i włączone"
+      ],
       "Please contact us for investigating the issue": [
         "Skontaktuj się z nami, aby zbadać problem"
+      ],
+      "Please update the extension to its latest version": [
+        "Zaktualizuj rozszerzenie do najnowszej wersji"
       ],
       "Please verify your email address in order to use email aliases": [
         "Zweryfikuj adres e-mail, aby użyć aliasów"

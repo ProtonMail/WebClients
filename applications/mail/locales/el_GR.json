@@ -817,11 +817,11 @@
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα ${ CALENDAR_APP_NAME }"
@@ -1415,10 +1415,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } προσαρμοσμένος τομέας",
-        "${ domains } προσαρμοσμένοι τομείς"
-      ],
       "${ ips } server": [
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
@@ -7075,9 +7071,6 @@
       "Writing assistant": [
         "Βοηθός γραφής"
       ],
-      "Writing assistant add-on": [
-        "Πρόσθετο βοηθού γραφής"
-      ],
       "writing assistant iframe": [
         "iframe βοηθού γραφής"
       ],
@@ -8485,9 +8478,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Προσθήκη βοηθού γραφής"
-      ],
       "for ${ price }": [
         "για ${ price }"
       ]

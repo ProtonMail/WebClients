@@ -13,11 +13,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -526,11 +526,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "Refresh the page": [
-        "Osvježi stranicu"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Refresh the page": [
+        "Osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -835,11 +835,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } prilagođena domena",
-        "${ domains } prilagođene domene",
-        "${ domains } prilagođena domena"
-      ],
       "${ ips } server": [
         "${ ips } poslužitelj",
         "${ ips } poslužitelja",
@@ -5940,14 +5935,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5960,6 +5947,14 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -7605,10 +7600,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

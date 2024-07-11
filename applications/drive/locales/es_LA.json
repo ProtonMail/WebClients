@@ -934,9 +934,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } dominio personalizado",
-        "${ domains } dominios personalizados"
+      "${ domains } additional custom domain": [
+        "${ domains } dominio personalizado adicional",
+        "${ domains } dominios personalizados adicionales"
       ],
       "${ ips } server": [
         "${ ips } servidor",
@@ -3734,6 +3734,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a la contraseña, ni siquiera nosotros."
       ],
@@ -5170,9 +5173,6 @@
       "Writing assistant": [
         "Asistente de escritura"
       ],
-      "Writing assistant add-on": [
-        "Complemento del asistente de escritura"
-      ],
       "Yes": [
         "Sí"
       ],
@@ -6171,8 +6171,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Añadir el asistente de escritura"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -6906,6 +6906,9 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
+      ],
+      "Unlimited logins and notes": [
+        "Número ilimitado de inicios de sesión y notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"
@@ -9587,6 +9590,9 @@
       ],
       "Import failed": [
         "Error en la importación"
+      ],
+      "Import groups": [
+        "Importar grupos"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"

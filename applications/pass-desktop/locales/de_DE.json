@@ -190,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Dark Web-Überwachung aktivieren"
       ],
+      "Entire vault": [
+        "Gesamter Tresor"
+      ],
       "Exclude from monitoring": [
         "Von der Überwachung ausschließen"
       ],
@@ -216,6 +219,9 @@
       ],
       "Generated passwords": [
         "Generierte Passwörter"
+      ],
+      "Generating secure link...": [
+        "Sicheren Link generieren..."
       ],
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } holen"
@@ -292,11 +298,17 @@
       "Manage access": [
         "Zugriff verwalten"
       ],
+      "Manage vault access": [
+        "Tresorzugriff verwalten"
+      ],
       "Manually sync your data": [
         "Daten manuell synchronisieren"
       ],
       "Mark as resolved": [
         "Als gelöst markieren"
+      ],
+      "Maximum views": [
+        "Maximale Ansichten"
       ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
@@ -324,6 +336,9 @@
       ],
       "Multiple select": [
         "Mehrfachauswahl"
+      ],
+      "No expired links": [
+        "Keine abgelaufenen Links"
       ],
       "OK": [
         "OK"
@@ -367,6 +382,9 @@
       "Remove access": [
         "Zugriff entfernen"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Alle abgelaufenen Links entfernen (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Link entfernen"
       ],
@@ -405,6 +423,9 @@
       ],
       "Saving": [
         "Wird gespeichert"
+      ],
+      "Secure links": [
+        "Sichere Links"
       ],
       "See all": [
         "Alle ansehen"
@@ -450,6 +471,9 @@
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Jemand hat einen Eintrag über ${ PASS_APP_NAME } mit dir geteilt."
       ],
       "Sort vault items": [
         "Tresoreinträge sortieren"
@@ -773,6 +797,9 @@
       "Importing items failed": [
         "Fehler beim Importieren der Einträge."
       ],
+      "Inactive secure links could not be removed.": [
+        "Fehler beim Entfernen inaktiver sicherer Links."
+      ],
       "Invalid password manager": [
         "Ungültiger Passwort-Manager"
       ],
@@ -821,6 +848,12 @@
       "Restoring trashed items failed": [
         "Fehler beim Wiederherstellen der Einträge aus dem Papierkorb."
       ],
+      "Secure link could not be created.": [
+        "Fehler beim Erstellen des sicheren Links."
+      ],
+      "Secure link could not be opened.": [
+        "Fehler beim Öffnen des sicheren Links."
+      ],
       "Settings update failed": [
         "Fehler beim Aktualisieren der Einstellungen."
       ],
@@ -841,6 +874,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Fehler beim Entfernen des sicheren Links. Bitte versuche es in einigen Minuten erneut."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Zu viele Fehlversuche! Bitte melde dich erneut an."
@@ -1004,6 +1040,10 @@
         "${ count } Mal",
         "${ count } Mal"
       ],
+      "${ count } view": [
+        "${ count } Ansicht",
+        "${ count } Ansichten"
+      ],
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
@@ -1156,6 +1196,9 @@
       ],
       "Drop to import": [
         "Ablegen zum Importieren"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Aufgrund einer Einschränkung der Safari-Browsererweiterungen fehlt nach dem Exportieren der Daten die Dateierweiterung \".pgp\". Bitte benenne die Datei nach dem Export so um, dass sie die Erweiterung .pgp enthält (z.B. Datei.pgp)."
       ],
       "Editor": [
         "Bearbeiter"
@@ -1446,6 +1489,9 @@
       "Please consider leaving a review.": [
         "Bitte ziehe in Erwägung, eine Bewertung zu schreiben."
       ],
+      "Please do not close this window": [
+        "Bitte schließe dieses Fenster nicht."
+      ],
       "Please enter your current PIN code to continue": [
         "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
       ],
@@ -1723,14 +1769,23 @@
       "10 minutes": [
         "10 Minuten"
       ],
+      "14 days": [
+        "14 Tage"
+      ],
       "15 minutes": [
         "15 Minuten"
+      ],
+      "24 hours": [
+        "24 Stunden"
       ],
       "2FA secret key (TOTP)": [
         "Geheimer 2FA-Schlüssel (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA-Token (TOTP)"
+      ],
+      "30 days": [
+        "30 Tage"
       ],
       "30 minutes": [
         "30 Minuten"
@@ -1740,6 +1795,9 @@
       ],
       "5 minutes": [
         "5 Minuten"
+      ],
+      "7 days": [
+        "7 Tage"
       ],
       "A-Z": [
         "A-Z"
@@ -1861,8 +1919,14 @@
       "Expired": [
         "Abgelaufen"
       ],
+      "Expired link": [
+        "Abgelaufener Link"
+      ],
       "Export": [
         "Exportieren"
+      ],
+      "Extra password": [
+        "Zusätzliches Passwort"
       ],
       "Field name": [
         "Feldname"
@@ -1873,8 +1937,14 @@
       "Forwards to": [
         "Leitet weiter an"
       ],
+      "Free forever": [
+        "Dauerhaft kostenlos"
+      ],
       "General": [
         "Allgemein"
+      ],
+      "Generate a secure link for this item": [
+        "Einen sicheren Link für diesen Eintrag generieren"
       ],
       "Generic CSV": [
         "Generische CSV"
@@ -1954,6 +2024,9 @@
       "Make all viewers": [
         "Alle zu Betrachtern machen"
       ],
+      "Max views reached": [
+        "Maximale Ansichten erreicht"
+      ],
       "Members": [
         "Mitglieder"
       ],
@@ -2032,11 +2105,17 @@
       "Prefix": [
         "Präfix"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Schütze ${ PASS_APP_NAME } mit einem zusätzlichen Passwort"
+      ],
       "Rate us": [
         "Bewerte uns"
       ],
       "Recent": [
         "Kürzlich"
+      ],
+      "Remove link": [
+        "Link entfernen"
       ],
       "Report a problem": [
         "Ein Problem melden"
@@ -2068,6 +2147,15 @@
       "Session locking": [
         "Sperren der Sitzung"
       ],
+      "Share": [
+        "Teilen"
+      ],
+      "Share this vault or create a new vault": [
+        "Teilen diesen Tresor oder erstelle einen neuen"
+      ],
+      "Shared link": [
+        "Geteilter Link"
+      ],
       "Show website favicons": [
         "Website-Symbole anzeigen"
       ],
@@ -2088,6 +2176,16 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Der Tresor dieses Eintrags ist derzeit mit ${ targetMembers } Person geteilt.",
+        "Der Tresor dieses Eintrags ist derzeit mit ${ targetMembers } Personen geteilt."
+      ],
+      "The URL has been copied to the clipboard": [
+        "Der Link wurde in die Zwischenablage kopiert."
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Der Zugriff auf diesen Eintrag bleibt bestehen bis ${ remaining }."
       ],
       "Title": [
         "Titel"
@@ -2492,6 +2590,9 @@
       "No reused passwords": [
         "Keine wiederverwendeten Passwörter"
       ],
+      "No shared secure links": [
+        "Keine geteilten sicheren Links"
+      ],
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"
       ],
@@ -2524,6 +2625,9 @@
       ],
       "Remove extra password": [
         "Zusätzliches Passwort entfernen"
+      ],
+      "Remove secure link?": [
+        "Sicheren Link entfernen?"
       ],
       "Resolved breaches": [
         "Gelöste Datenlecks"
@@ -2673,6 +2777,9 @@
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Mailboxen für diesen Alias können derzeit nicht abgerufen werden."
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Achtung! Wenn du dieses Passwort verlierst, kannst du nicht mehr auf dein ${ PASS_APP_NAME }-Konto zugreifen."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Tresor \"${ vaultName }\" konnte nicht erstellt werden."

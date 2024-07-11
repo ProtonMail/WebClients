@@ -113,10 +113,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -334,6 +334,9 @@
       ],
       "Multiple select": [
         "Zaznacz"
+      ],
+      "No expired links": [
+        "Brak wygaśniętych linków"
       ],
       "Not now": [
         "Nie teraz"
@@ -864,6 +867,9 @@
       "The URL is in the list": [
         "Adres URL jest na liście"
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Wystąpił błąd podczas usuwania linku. Spróbuj ponownie za kilka minut."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Zbyt wiele nieudanych prób. Zaloguj się ponownie."
       ],
@@ -1256,6 +1262,9 @@
       "Enter your PIN code": [
         "Wpisz kod PIN"
       ],
+      "Expires in": [
+        "Wygasa za"
+      ],
       "Expires in ${ remainingTime }": [
         "Wygasa za ${ remainingTime }"
       ],
@@ -1615,6 +1624,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Plik eksportu danych zostanie zaszyfrowany za pomocą PGP i będzie wymagał silnego hasła."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Dodatkowe hasło ${ BRAND_NAME } będzie wymagane do korzystania z ${ PASS_APP_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
@@ -2245,6 +2257,15 @@
       "Text": [
         "Tekst"
       ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikowi",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Link został skopiowany do schowka"
+      ],
       "Title": [
         "Tytuł"
       ],
@@ -2716,6 +2737,9 @@
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Ostrzeżenie: Jeśli zapomnisz tego hasła, stracisz dostęp do konta ${ PASS_APP_NAME }."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nie można utworzyć sejfu \"${ vaultName }\""

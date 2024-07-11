@@ -639,10 +639,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } dominio personalizzato",
-        "${ domains } domini personalizzati"
-      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } server"
@@ -3014,6 +3010,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
       ],
@@ -4268,9 +4267,6 @@
       "Writing assistant": [
         "Assistente alla scrittura"
       ],
-      "Writing assistant add-on": [
-        "Componente aggiuntivo dell'assistente alla scrittura"
-      ],
       "You already have a free account": [
         "Hai già un account gratuito"
       ],
@@ -5212,8 +5208,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Aggiungi l'assistente alla scrittura"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "per ${ price }"
@@ -5772,6 +5768,9 @@
       ],
       "Unlimited labels": [
         "Etichette illimitate"
+      ],
+      "Unlimited logins and notes": [
+        "Login e note illimitati"
       ],
       "Unlimited logins, notes and credit cards": [
         "Accessi, note e carte di credito illimitati"

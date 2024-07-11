@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reload": [
         "Neu laden"
@@ -1221,9 +1221,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } eigene Domain",
-        "${ domains } eigene Domains"
+      "${ domains } additional custom domain": [
+        "${ domains } zusätzliche eigene Domain",
+        "${ domains } zusätzliche eigene Domains"
       ],
       "${ ips } server": [
         "${ ips } Server",
@@ -1394,8 +1394,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Abonnement anpassen"
+      "Buy now": [
+        "Jetzt kaufen"
       ],
       "New": [
         "Neu"
@@ -1538,14 +1538,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1567,6 +1559,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -6134,6 +6134,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } hat einen Import angehalten, weil der Speicherplatz auf deinem Konto knapp wird. Du kannst:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } wird versuchen, den Import fortzusetzen, sobald dein E-Mail-Anbieter die ${ bandwidthLimitLink } deines Kontos zurücksetzt. Du brauchst nichts weiter zu unternehmen. Wenn du den Import abbrichst, kannst du ihn nicht mehr fortsetzen und er muss erneut begonnen werden."
       ],
@@ -6235,6 +6238,15 @@
       "${ userFound } user found": [
         "${ userFound } Benutzer gefunden",
         "${ userFound } Benutzer gefunden"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } erstellt."
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } gelöscht."
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } aktualisiert."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
@@ -6709,11 +6721,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -6727,6 +6739,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
+      ],
+      "Discount": [
+        "Rabatt"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
@@ -7141,14 +7156,14 @@
       "Invite Deleted": [
         "Einladung gelöscht"
       ],
+      "Invite for new user deleted": [
+        "Einladung für neuen Benutzer gelöscht"
+      ],
       "Invite for organization accepted": [
         "Organisationseinladung angenommen"
       ],
       "Invite for organization created": [
         "Organisationseinladung erstellt"
-      ],
-      "Invite for User deleted": [
-        "Einladung für Benutzer gelöscht"
       ],
       "Invite rejected": [
         "Einladung abgelehnt"
@@ -7166,8 +7181,17 @@
       "Item Autofilled": [
         "Eintrag automatisch ausgefüllt"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } automatisch ausgefüllt."
+      ],
+      "Item autofilled in vault": [
+        "Eintrag automatisch im Tresor ausgefüllt"
+      ],
       "Item Created": [
         "Eintrag erstellt"
+      ],
+      "Item created in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } erstellt."
       ],
       "Item created in vault": [
         "Eintrag in Tresor erstellt"
@@ -7175,8 +7199,8 @@
       "Item Deleted": [
         "Eintrag gelöscht"
       ],
-      "Item deleted in vault": [
-        "Eintrag in Tresor gelöscht"
+      "Item deleted from ${ vaultLink }": [
+        "Eintrag aus ${ vaultLink } gelöscht."
       ],
       "Item in vault untrashed": [
         "Eintrag in Tresor wiederhergestellt"
@@ -7184,20 +7208,23 @@
       "Item Read": [
         "Eintrag angesehen"
       ],
+      "Item read in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } angesehen."
+      ],
       "Item read in vault": [
         "Eintrag in Tresor angesehen"
       ],
       "Item Trashed": [
         "Eintrag in den Papierkorb gelegt"
       ],
-      "Item trashed in vault": [
-        "Eintrag in Tresor weggeworfen"
-      ],
       "Item Untrashed": [
         "Eintrag aus dem Papierkorb entfernt"
       ],
       "Item Updated": [
         "Eintrag aktualisiert"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } aktualisiert."
       ],
       "Item updated in vault": [
         "Eintrag in Tresor aktualisiert"
@@ -7363,6 +7390,9 @@
       ],
       "New User Invite Created": [
         "Neue Benutzereinladung erstellt"
+      ],
+      "New user invited to organization": [
+        "Neuen Benutzer zur Organisation eingeladen"
       ],
       "No account keys exist": [
         "Es sind keine Kontoschlüssel vorhanden"
@@ -7753,6 +7783,12 @@
       ],
       "Settings updated": [
         "Einstellungen aktualisiert"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Geteilten ${ vaultLink } gelöscht."
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Geteilten ${ vaultLink } aktualisiert."
       ],
       "Shared vault deleted": [
         "Geteilter Tresor gelöscht"
@@ -8220,9 +8256,6 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
-      "User invited to organization": [
-        "Benutzer zur Organisation eingeladen"
-      ],
       "username": [
         "Benutzername"
       ],
@@ -8240,6 +8273,9 @@
       ],
       "Vault Deleted": [
         "Tresor gelöscht"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Der Tresor wurde gelöscht oder erfordert Zugriffsberechtigungen."
       ],
       "Vault shared with email": [
         "Tresor geteilt via E-Mail"
@@ -8426,9 +8462,6 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
-      ],
-      "Writing assistant add-on": [
-        "Schreibassistent Add-on"
       ],
       "Yearly": [
         "Jährlich"
@@ -9965,6 +9998,12 @@
       "Subscription options": [
         "Abonnement-Optionen"
       ],
+      "Swipe left action": [
+        "Aktion beim Wischen nach links"
+      ],
+      "Swipe right action": [
+        "Aktion beim Wischen nach rechts"
+      ],
       "Synchronize with system": [
         "Mit System synchronisieren"
       ],
@@ -10285,6 +10324,9 @@
       "Create an alias": [
         "Alias erstellen"
       ],
+      "Don't have access to your 2FA?": [
+        "Du hast keinen Zugriff auf deine 2FA?"
+      ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
       ],
@@ -10374,6 +10416,9 @@
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
+      ],
+      "Vault": [
+        "Tresor"
       ],
       "View guide": [
         "Anleitung anzeigen"
@@ -10486,17 +10531,23 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Schreibassistent hinzufügen"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Alle ${ BRAND_NAME } Premiumfunktionen und Gewerbeapps, um dein gesamtes Unternehmen zu schützen"
+      ],
+      "An encrypted email service that puts your privacy first": [
+        "Ein verschlüsselter E-Mail-Dienst, bei dem deine Privatsphäre an erster Stelle steht."
       ],
       "Encrypted email and calendar to get you started": [
         "Verschlüsselter Kalender und E-Mails, um loszulegen"
       ],
       "Enhanced security and premium features for teams": [
         "Erweiterte Sicherheits- und Premiumfunktionen für Teams"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
@@ -10922,23 +10973,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -10966,6 +11000,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -13874,6 +13925,11 @@
         "Demo anfordern"
       ]
     },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "DSGVO-konform"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Schließen"
@@ -14578,6 +14634,9 @@
       "Receive new emails": [
         "Neue E-Mails empfangen"
       ],
+      "See your colleagues’ availability": [
+        "Verfügbarkeit deiner Kollegen sehen"
+      ],
       "Send emails with attachments": [
         "Versende E-Mails mit Anhängen"
       ],
@@ -15150,6 +15209,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15327,11 +15389,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -16151,6 +16213,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock your data": [
+        "Entsperre deine Daten"
+      ],
       "Upgrade plan": [
         "Abonnement upgraden"
       ],
@@ -16210,9 +16275,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard-Konfiguration"
-      ],
-      "Writing assistant": [
-        "Schreibassistent"
       ],
       "You have no open alerts": [
         "Du hast keine offenen Warnungen"
@@ -16685,6 +16747,9 @@
       "Name": [
         "Name"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Neue ${ BRAND_NAME }-E-Mail-Adresse"
+      ],
       "Optional": [
         "Optional"
       ],
@@ -16697,6 +16762,9 @@
       "Send invite link via email instead": [
         "Einladungslink stattdessen via E-Mail senden"
       ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Dadurch wird eine neue ${ MAIL_APP_NAME }-Adresse erstellt."
+      ],
       "User created": [
         "Benutzer erstellt"
       ],
@@ -16708,6 +16776,9 @@
       ]
     },
     "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administratoren können nicht auf die Daten von privaten Benutzern zugreifen."
+      ],
       "Invite sent": [
         "Einladung gesendet"
       ],

@@ -622,10 +622,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } eigen domein",
-        "${ domains } eigen domeinen"
-      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servers"
@@ -3558,6 +3554,9 @@
       "Current plan": [
         "Huidig abonnement"
       ],
+      "Current version": [
+        "Huidige versie"
+      ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
@@ -4231,9 +4230,6 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
-      ],
-      "Writing assistant add-on": [
-        "Schrijfassistent add-on"
       ],
       "you": [
         "u"

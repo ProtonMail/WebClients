@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -760,10 +760,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Reload": [
@@ -1221,10 +1221,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } oma verkkotunnus",
-        "${ domains } omaa verkkotunnusta"
-      ],
       "${ ips } server": [
         "${ ips } palvelin",
         "${ ips } palvelinta"
@@ -1397,9 +1393,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Mukauta tilausta"
-      ],
       "New": [
         "Uusi"
       ],
@@ -1541,14 +1534,6 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1570,6 +1555,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4659,7 +4652,7 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
-        "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
+        "Virhe tiedostoa \"${ formattedFilename }\" luettaessa. Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Virhe ladattaessa tiedostoa \"${ formattedFilename }\". Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -6718,11 +6711,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -6736,6 +6729,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta"
+      ],
+      "Discount": [
+        "Alennus"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
@@ -7156,9 +7152,6 @@
       "Invite for organization created": [
         "Kutsu organisaatioon luotiin"
       ],
-      "Invite for User deleted": [
-        "Käyttäjän kutsu poistettiin"
-      ],
       "Invite rejected": [
         "Kutsusta kieltäydyttiin"
       ],
@@ -7190,9 +7183,6 @@
       "Item Deleted": [
         "Kohde poistettiin"
       ],
-      "Item deleted in vault": [
-        "Holvin kohde poistettiin"
-      ],
       "Item flags changed in vault": [
         "Holvin kohteen liput muuttuivat"
       ],
@@ -7207,9 +7197,6 @@
       ],
       "Item Trashed": [
         "Kohde siirrettiin roskakoriin"
-      ],
-      "Item trashed in vault": [
-        "Holvin kohde siirrettiin roskakoriin"
       ],
       "Item Untrashed": [
         "Kohde palautettiin roskakorista"
@@ -8253,9 +8240,6 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "User invited to organization": [
-        "Käyttäjä kutsuttiin organisaatioon"
-      ],
       "username": [
         "käyttäjätunnus"
       ],
@@ -8445,6 +8429,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME }-palveluita"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Käyttäjäryhmien avulla voit helposti lähettää sähköposteja, jakaa tietoja, tai muuttaa tiettyjen käyttäjäryhmien asetuksia kerralla."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Nykyisellä tilauksellasi voit vain vastaanottaa viestejä @pm.me-osoitteellasi. Päivittämällä tilauksesi voit myös lähettää @pm.me-osoitteesta ja luoda niitä lisää."
       ],
@@ -8459,9 +8446,6 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
-      ],
-      "Writing assistant add-on": [
-        "Kirjoitusavustaja-lisäosa"
       ],
       "Yearly": [
         "Vuosittain"
@@ -10542,9 +10526,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Lisää kirjoitusavustaja"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi"
       ],
@@ -10990,23 +10971,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11034,6 +10998,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -11191,6 +11172,9 @@
       ],
       "Custom snooze time": [
         "Oma torkutusaika"
+      ],
+      "Custom workspace branding": [
+        "Mukautettu työtilan ilme"
       ],
       "Data breach monitoring": [
         "Tietomurtovalvonta"
@@ -14678,6 +14662,9 @@
       "Subscription canceled": [
         "Tilaus on peruttu"
       ],
+      "Support your compliance objectives": [
+        "Tue vaatimustenmukaisuustavoitteitasi"
+      ],
       "Sync files on devices": [
         "Synkronoi tiedostoja laitteilla"
       ],
@@ -15406,10 +15393,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -16289,9 +16276,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard-määritykset"
-      ],
-      "Writing assistant": [
-        "Kirjoitusavustaja"
       ],
       "You have no open alerts": [
         "Avoimia hälytyksiä ei ole"

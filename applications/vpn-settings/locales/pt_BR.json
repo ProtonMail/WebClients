@@ -639,9 +639,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domínio personalizado",
-        "${ domains } domínios personalizados"
+      "${ domains } additional custom domain": [
+        "${ domains } domínio personalizado adicional",
+        "${ domains } domínios personalizados adicionais"
       ],
       "${ ips } server": [
         "${ ips } servidor",
@@ -3015,6 +3015,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Você perderá o acesso a todos os dados criptografados atuais em sua conta se continuar."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
@@ -4266,9 +4269,6 @@
       "Writing assistant": [
         "Assistente de escrita"
       ],
-      "Writing assistant add-on": [
-        "Extensão do assistente de escrita"
-      ],
       "You already have a free account": [
         "Você já possui uma conta gratuita"
       ],
@@ -5204,8 +5204,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Adicionar assistente de escrita"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Adicionar assistente de escrita da ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -5764,6 +5764,12 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
+      ],
+      "Unlimited logins and notes": [
+        "Notas e inícios de sessão ilimitados"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Inícios de sessão ilimitados, notas e cartões de crédito"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -6511,8 +6517,15 @@
       "Preparing your Recovery Kit": [
         "Preparando o kit de recuperação"
       ],
+      "Secure vault and link sharing": [
+        "Compartilhamento seguro de cofres e links"
+      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Compartilhamento seguro de cofre (${ n } cofre) e de link.",
+        "Compartilhamento seguro de cofres (${ n } cofres) e links."
       ],
       "Setting up your organization": [
         "Configurando a sua organização"
@@ -7663,6 +7676,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuário",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuários"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -9148,6 +9165,9 @@
       "Create password": [
         "Criar senha"
       ],
+      "Create password instead": [
+        "Crie uma senha em vez disso"
+      ],
       "Create user": [
         "Criar usuário"
       ],
@@ -9172,6 +9192,9 @@
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de início de sessão do usuário com eles."
       ],
+      "Send invite link via email instead": [
+        "Envie o link de convite por e-mail em vez disso"
+      ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Isso criará um endereço do ${ MAIL_APP_NAME }."
       ],
@@ -9188,6 +9211,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "Os administradores não podem acessar os dados de usuários privados"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Convite enviado, aguardando resposta do membro convidado"
       ],
       "Invite sent": [
         "Convite enviado"

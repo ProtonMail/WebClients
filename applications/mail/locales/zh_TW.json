@@ -787,11 +787,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
@@ -1381,9 +1381,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } 個自訂網域"
-      ],
       "${ ips } server": [
         "${ ips } 台伺服器"
       ],
@@ -6889,9 +6886,6 @@
       "Writing assistant": [
         "撰寫幫手"
       ],
-      "Writing assistant add-on": [
-        "撰寫幫手添加"
-      ],
       "writing assistant iframe": [
         "撰寫幫手自動格式"
       ],
@@ -8262,9 +8256,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "添加撰寫幫手"
-      ],
       "for ${ price }": [
         "${ price } 版"
       ]

@@ -934,9 +934,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } anpassad domän",
-        "${ domains } anpassade domäner"
+      "${ domains } additional custom domain": [
+        "${ domains } ytterligare anpassad domän",
+        "${ domains } ytterligare anpassade domäner"
       ],
       "${ ips } server": [
         "${ ips } server",
@@ -6179,8 +6179,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Lägg till skrivassistent"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
       ],
       "for ${ price }": [
         "för ${ price }"
@@ -6908,6 +6908,9 @@
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Obegränsat antal inloggningar och anteckningar"
       ],
       "Unlimited logins, notes and credit cards": [
         "Obegränsat antal inloggningar, anteckningar och kreditkort"

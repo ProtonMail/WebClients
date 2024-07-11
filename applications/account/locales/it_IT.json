@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "Refresh the page": [
-        "Aggiorna la pagina"
-      ],
       "refresh the page": [
         "aggiorna la pagina"
+      ],
+      "Refresh the page": [
+        "Aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -1221,10 +1221,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } dominio personalizzato",
-        "${ domains } domini personalizzati"
-      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } server"
@@ -1397,9 +1393,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Personalizza il piano"
-      ],
       "New": [
         "Novità"
       ],
@@ -1541,14 +1534,6 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1570,6 +1555,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5600,6 +5593,12 @@
         "Servizi"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membri"
+      ]
+    },
     "Header": {
       "Access": [
         "Accesso"
@@ -6140,6 +6139,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } ha messo in pausa un'importazione perché il tuo account sta esaurendo lo spazio. Puoi:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } proverà a riprendere l'importazione non appena il fornitore della tua email avrà ripristinato il ${ bandwidthLimitLink } del tuo account. Non devi fare nulla. Se annulli l'importazione, non potrai riprenderla, e dovrai riavviarla."
       ],
@@ -6244,6 +6246,18 @@
       "${ userFound } user found": [
         "${ userFound } utente trovato",
         "${ userFound } utenti trovati"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } creato"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } eliminato"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } condiviso tramite email"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } aggiornato"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } richiesta per la connessione a livello di Paese."
@@ -6697,8 +6711,17 @@
       "Custom daily": [
         "Personalizzato giornaliero"
       ],
+      "Custom email added": [
+        "Email personalizzata aggiunta"
+      ],
+      "Custom email deleted": [
+        "Email personalizzata eliminata"
+      ],
       "Custom email domains": [
         "Domini email personalizzati"
+      ],
+      "Custom email validated": [
+        "Email personalizzata convalidata"
       ],
       "Custom monthly": [
         "Personalizzato mensile"
@@ -6718,11 +6741,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -7159,9 +7182,6 @@
       "Invite for organization created": [
         "Invito all'organizzazione creato"
       ],
-      "Invite for User deleted": [
-        "Invito per utente eliminato"
-      ],
       "Invite rejected": [
         "Invito rifiutato"
       ],
@@ -7193,11 +7213,14 @@
       "Item Deleted": [
         "Elemento eliminato"
       ],
-      "Item deleted in vault": [
-        "Elemento eliminato nella cassaforte"
+      "Item deleted from vault": [
+        "Elemento eliminato dalla cassaforte"
       ],
       "Item flags changed in vault": [
         "Flag dell'elemento modificati nella cassaforte"
+      ],
+      "Item in vault trashed": [
+        "Elemento nella cassaforte spostato nel cestino"
       ],
       "Item in vault untrashed": [
         "Elemento nella cassaforte rimosso dal cestino"
@@ -7210,9 +7233,6 @@
       ],
       "Item Trashed": [
         "Elemento spostato nel cestino"
-      ],
-      "Item trashed in vault": [
-        "Elemento spostato nel cestino nella cassaforte"
       ],
       "Item Untrashed": [
         "Elemento rimosso dal cestino"
@@ -7790,6 +7810,12 @@
       "Share Updated": [
         "Condivisione aggiornata"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "${ vaultLink } condiviso eliminato"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "${ vaultLink } condiviso aggiornato"
+      ],
       "Shared vault deleted": [
         "Cassaforte condivisa eliminata"
       ],
@@ -8262,9 +8288,6 @@
       "User activated": [
         "Utente attivato"
       ],
-      "User invited to organization": [
-        "Utente invitato all'organizzazione"
-      ],
       "username": [
         "nome utente"
       ],
@@ -8471,9 +8494,6 @@
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
-      ],
-      "Writing assistant add-on": [
-        "Componente aggiuntivo dell'assistente alla scrittura"
       ],
       "Yearly": [
         "Annuale"
@@ -10446,6 +10466,9 @@
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
       ],
+      "Vault": [
+        "Cassaforte"
+      ],
       "View guide": [
         "Visualizza guida"
       ],
@@ -10557,8 +10580,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Aggiungi l'assistente alla scrittura"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Tutte le app aziendali e le funzionalità premium di ${ BRAND_NAME } per proteggere l'intera azienda"
@@ -11005,23 +11028,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11049,6 +11055,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -11434,6 +11457,9 @@
       ],
       "Unlimited labels": [
         "Etichette illimitate"
+      ],
+      "Unlimited logins and notes": [
+        "Login e note illimitati"
       ],
       "Unlimited logins, notes and credit cards": [
         "Accessi, note e carte di credito illimitati"
@@ -15301,6 +15327,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Strumento di esportazione di ${ MAIL_APP_NAME }"
       ],
@@ -15478,11 +15507,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-All address": [
-        "Indirizzi catch-all"
-      ],
       "Catch-all address": [
         "Indirizzi Catch-all"
+      ],
+      "Catch-All address": [
+        "Indirizzi catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -16364,9 +16393,6 @@
       ],
       "WireGuard configuration": [
         "Configurazione di WireGuard"
-      ],
-      "Writing assistant": [
-        "Assistente alla scrittura"
       ],
       "You have no open alerts": [
         "Non hai avvisi aperti"
