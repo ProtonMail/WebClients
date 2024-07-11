@@ -529,7 +529,7 @@ const SignupContainer = ({
         }
 
         if (toApp === APPS.PROTONPASS || toApp === APPS.PROTONEXTENSION || toApp === APPS.PROTONPASSBROWSEREXTENSION) {
-            return { upsellPlanName: PLANS.PASS_PLUS };
+            return { upsellPlanName: PLANS.PASS };
         }
 
         if (hasPaidPlanPreSelected) {

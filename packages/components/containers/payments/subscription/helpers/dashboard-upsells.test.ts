@@ -301,7 +301,7 @@ describe('resolveUpsellsToDisplay', () => {
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
                 cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
-                plan: PLANS.PASS_PLUS,
+                plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 metrics: {
                     source: 'upsells',
