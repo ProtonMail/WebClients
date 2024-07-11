@@ -44,7 +44,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                 setWalletUpgradeModal({
                     theme: data.theme,
                     content: c('Wallet upgrade')
-                        .t`To add a new wallet, you can either remove an existing wallet from your account or upgrade your current plan to get more wallets.`,
+                        .t`You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
                 });
                 return;
             }
@@ -56,8 +56,8 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
             if (hasReachedWalletAccountLimit) {
                 setWalletUpgradeModal({
                     theme: data.theme,
-                    content: c('Wallet upgrade')
-                        .t`To add a new wallet account, you can either remove an existing wallet account from this wallet or upgrade your current plan to get more wallet accounts per wallet.`,
+                    content: c('Account upgrade')
+                        .t`You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.`,
                 });
                 return;
             }
