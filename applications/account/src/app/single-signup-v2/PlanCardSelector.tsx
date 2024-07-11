@@ -440,7 +440,7 @@ export const UpsellCardSelector = ({
                 {relativePrice &&
                     getHasAnyPlusPlan(currentPlan.Name) &&
                     (() => {
-                        if (currentPlan?.Name === PLANS.PASS_PLUS && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
+                        if (currentPlan?.Name === PLANS.PASS && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
                             return getBoldFormattedText(
                                 c('pass_signup_2023: Info')
                                     .t`For just **${relativePrice} per month** more, you get access to ${BRAND_NAME}'s premium VPN service!`

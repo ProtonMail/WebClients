@@ -106,7 +106,7 @@ const UpsellStep = ({
             return getFreeDrivePlan(freePlan);
         }
 
-        if (upsellPlanName === PLANS.PASS_PLUS) {
+        if (upsellPlanName === PLANS.PASS) {
             return getFreePassPlan();
         }
 

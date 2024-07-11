@@ -215,7 +215,7 @@ const PlanSelection = ({
         PLANS.MAIL,
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
-        PLANS.PASS_PLUS,
+        PLANS.PASS,
     ];
     const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
 

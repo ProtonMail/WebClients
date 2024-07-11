@@ -108,7 +108,7 @@ const getPremiumVPNFeature = () => ({
 });
 
 const getPremiumPasswordManagerFeature = () => ({
-    name: PLAN_NAMES[PLANS.PASS_PLUS],
+    name: PLAN_NAMES[PLANS.PASS],
     tooltip: c('bf2023: Tooltip')
         .t`Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.`,
 });

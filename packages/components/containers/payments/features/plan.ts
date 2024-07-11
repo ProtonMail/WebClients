@@ -174,7 +174,7 @@ export const getDrivePlan = ({
 
 export const getPassPlan = (plan: Plan): ShortPlan => {
     return {
-        plan: PLANS.PASS_PLUS,
+        plan: PLANS.PASS,
         title: plan.Title,
         label: '',
         description: c('new_plans: info').t`For next-level password management and identity protection.`,
@@ -611,7 +611,7 @@ export const getShortPlan = (
             return getVPNPassPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan({ plan: planData, boldStorageSize, freePlan });
-        case PLANS.PASS_PLUS:
+        case PLANS.PASS:
             return getPassPlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);

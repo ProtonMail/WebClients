@@ -75,9 +75,9 @@ const getPaidMap = (plansMap: PlansMap, logoSize: IconSize): { [key in PLANS]?: 
             selected: true,
             bold: false,
         },
-        [PLANS.PASS_PLUS]: {
-            plan: PLANS.PASS_PLUS,
-            title: plansMap[PLANS.PASS_PLUS]?.Title || '',
+        [PLANS.PASS]: {
+            plan: PLANS.PASS,
+            title: plansMap[PLANS.PASS]?.Title || '',
             icon: <PassLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
@@ -133,7 +133,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
                   service: PLAN_SERVICES.MAIL,
               },
         {
-            plan: PLANS.PASS_PLUS,
+            plan: PLANS.PASS,
             title: getFreeTitle(PASS_SHORT_APP_NAME),
             icon: <FreeLogo app={APPS.PROTONPASS} size={iconImgSize} dark={dark} />,
             selected: false,
