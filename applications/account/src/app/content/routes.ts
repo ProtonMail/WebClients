@@ -28,6 +28,7 @@ interface Arguments {
     isNewCancellationFlowExtended: boolean;
     assistantKillSwitch: boolean;
     canDisplayB2BLogsPass: boolean;
+    canDisplayB2BLogsVPN: boolean;
 }
 
 export const getRoutes = ({
@@ -46,6 +47,7 @@ export const getRoutes = ({
     isNewCancellationFlowExtended,
     assistantKillSwitch,
     canDisplayB2BLogsPass,
+    canDisplayB2BLogsVPN,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -78,6 +80,7 @@ export const getRoutes = ({
             user,
             organization,
             subscription,
+            canDisplayB2BLogsVPN,
             isUserGroupsFeatureEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),

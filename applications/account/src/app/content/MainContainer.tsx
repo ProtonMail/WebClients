@@ -140,6 +140,7 @@ const MainContainer = () => {
     const isBreachesAccountDashboardEnabled = useFlag('BreachesAccountDashboard');
     const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
+    const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
 
@@ -177,6 +178,7 @@ const MainContainer = () => {
         isNewCancellationFlowExtended,
         assistantKillSwitch,
         canDisplayB2BLogsPass,
+        canDisplayB2BLogsVPN,
     });
 
     useEffect(() => {

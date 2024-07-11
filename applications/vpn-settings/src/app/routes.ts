@@ -13,6 +13,7 @@ interface Arguments {
     organization?: Organization;
     isNewCancellationFlowExtended: boolean;
     isUserGroupsFeatureEnabled: boolean;
+    canDisplayB2BLogsVPN: boolean;
 }
 
 export const getRoutes = ({
@@ -21,6 +22,7 @@ export const getRoutes = ({
     organization,
     isNewCancellationFlowExtended,
     isUserGroupsFeatureEnabled,
+    canDisplayB2BLogsVPN,
 }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
@@ -35,6 +37,7 @@ export const getRoutes = ({
         user,
         subscription,
         isUserGroupsFeatureEnabled,
+        canDisplayB2BLogsVPN,
     });
 
     return {
