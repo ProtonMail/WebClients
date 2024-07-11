@@ -123,4 +123,5 @@ export { default as useIsInboxElectronApp } from './useIsInboxElectronApp';
 export { default as useISESEnabledElectron } from './useISESEnabledElectron';
 export { default as useInboxDesktopBadgeCount } from './useInboxDesktopBadgeCount';
 export { default as useAllowAddressDeletion, useGetAllowAddressDeletion } from './useAllowAddressDeletion';
+export { default as useGroups, useGetGroups } from './useGroups';
 export { default as useIsSentinelUser } from './useIsSentinelUser';

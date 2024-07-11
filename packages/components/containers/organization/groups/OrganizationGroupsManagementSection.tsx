@@ -4,6 +4,7 @@ import { DualPaneContent, DualPaneSidebar } from '@proton/atoms/DualPane';
 import { Loader, SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import { Organization } from '@proton/shared/lib/interfaces';
 
+import GroupForm from './GroupForm';
 import GroupList from './GroupList';
 import useGroupsManagement from './useGroupsManagement';
 
@@ -32,7 +33,9 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                         <DualPaneSidebar>
                             <GroupList groupsManagement={groupsManagement} />
                         </DualPaneSidebar>
-                        <DualPaneContent></DualPaneContent>
+                        <DualPaneContent>
+                            <GroupForm groupsManagement={groupsManagement} />
+                        </DualPaneContent>
                     </div>
                 </div>
             </div>
