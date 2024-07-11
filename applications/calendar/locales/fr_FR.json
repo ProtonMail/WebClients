@@ -811,9 +811,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domaine personnalisé",
-        "${ domains } domaines personnalisés"
+      "${ domains } additional custom domain": [
+        "${ domains } domaine personnalisé supplémentaire",
+        "${ domains } domaines personnalisés supplémentaires"
       ],
       "${ ips } server": [
         "${ ips } serveur",
@@ -4054,6 +4054,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
       ],
@@ -4928,9 +4931,6 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
-      ],
-      "Writing assistant add-on": [
-        "Extension Assistant d'écriture"
       ],
       "Yearly": [
         "Chaque année"
@@ -5847,8 +5847,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Ajouter l'assistant d'écriture"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "pour ${ price }"
@@ -6527,6 +6527,9 @@
       ],
       "Unlimited labels": [
         "Nombre illimité de labels"
+      ],
+      "Unlimited logins and notes": [
+        "Nombre illimité d'identifiants et de notes"
       ],
       "Unlimited logins, notes and credit cards": [
         "Nombre illimité de connexions, de notes et de cartes de crédit"

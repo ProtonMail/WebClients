@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1221,9 +1221,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domínio personalizado",
-        "${ domains } domínios personalizados"
+      "${ domains } additional custom domain": [
+        "${ domains } domínio personalizado adicional",
+        "${ domains } domínios personalizados adicionais"
       ],
       "${ ips } server": [
         "${ ips } servidor",
@@ -1397,8 +1397,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Personalizar plano"
+      "Buy now": [
+        "Comprar agora"
       ],
       "New": [
         "Novo"
@@ -1538,14 +1538,6 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1567,6 +1559,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6149,6 +6149,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "A ${ BRAND_NAME } pausou uma importação porque sua conta está com pouco espaço. Você pode:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "A ${ BRAND_NAME } tentará retomar a importação assim que seu provedor de e-mail redefinir o ${ bandwidthLimitLink } de sua conta. Você não precisa fazer nada. Se você cancelar sua importação, não poderá retomá-la e precisará reiniciá-la."
       ],
@@ -6253,6 +6256,15 @@
       "${ userFound } user found": [
         "${ userFound } usuário encontrado",
         "${ userFound } usuários encontrados"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } criado"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } excluído"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } atualizado"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } necessária para conexão em nível de país."
@@ -6706,8 +6718,17 @@
       "Custom daily": [
         "Personalizar diariamente"
       ],
+      "Custom email added": [
+        "E-mail personalizado adicionado"
+      ],
+      "Custom email deleted": [
+        "E-mail personalizado excluído"
+      ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
+      ],
+      "Custom email validated": [
+        "E-mail personalizado validado"
       ],
       "Custom monthly": [
         "Personalizar mensalmente"
@@ -6727,11 +6748,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -6745,6 +6766,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Deletando ${ deletedServerCount } servidor gateway",
         "Deletando ${ deletedServerCount } servidores gateway"
+      ],
+      "Discount": [
+        "Desconto"
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
@@ -7156,14 +7180,14 @@
       "Invite Deleted": [
         "Convite excluído"
       ],
+      "Invite for new user deleted": [
+        "Convite para usuário novo excluído"
+      ],
       "Invite for organization accepted": [
         "Convite para organização aceito."
       ],
       "Invite for organization created": [
         "Convite para organização criado"
-      ],
-      "Invite for User deleted": [
-        "Convite para usuário excluído"
       ],
       "Invite rejected": [
         "Convite rejeitado"
@@ -7181,14 +7205,20 @@
       "Item Created": [
         "Item criado"
       ],
+      "Item created in ${ vaultLink }": [
+        "Item criado do ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Item criado no cofre"
       ],
       "Item Deleted": [
         "Item excluído"
       ],
-      "Item deleted in vault": [
-        "Item excluído no cofre"
+      "Item deleted from ${ vaultLink }": [
+        "Item excluído do ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Item excluído do cofre"
       ],
       "Item in vault untrashed": [
         "Item do cofre foi restaurado"
@@ -7196,14 +7226,17 @@
       "Item Read": [
         "Item lido"
       ],
+      "Item read in ${ vaultLink }": [
+        "Item lido do ${ vaultLink }"
+      ],
       "Item read in vault": [
         "Item lido no cofre"
       ],
-      "Item trashed in vault": [
-        "Item excluído do cofre"
-      ],
       "Item Updated": [
         "Item atualizado"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Item atualizado do ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Item atualizado no cofre"
@@ -7372,6 +7405,9 @@
       ],
       "New User Invite Deleted": [
         "Convite de novo usuário excluído"
+      ],
+      "New user invited to organization": [
+        "Usuário novo convidado para a organização"
       ],
       "No account keys exist": [
         "Não existem chaves de conta"
@@ -7798,6 +7834,9 @@
       ],
       "Single sign-on removed": [
         "Autenticação única removida"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "O envio SMTP permite que serviços ou dispositivos de terceiros enviem e-mails por meio do ${ MAIL_APP_NAME } para seus endereços de domínio personalizados. Este recurso está disponível apenas para usuários ${ BRAND_NAME } for Business com domínios personalizados."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "O envio SMTP permite que serviços ou dispositivos de terceiros enviem correio e-mail através do ${ MAIL_APP_NAME } para os seus endereços de domínio personalizado. Para solicitar acesso, ${ createTicket } e descreva os seus casos de uso, os domínios personalizados que gostaria de usar e os números de e-mail previstos por hora e por dia."
@@ -8244,9 +8283,6 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "User invited to organization": [
-        "Usuário convidado para a organização"
-      ],
       "username": [
         "Nome de usuário"
       ],
@@ -8264,6 +8300,9 @@
       ],
       "Vault Deleted": [
         "Cofre excluído"
+      ],
+      "Vault shared with email": [
+        "Cofre compartilhado por e-mail"
       ],
       "Vault updated": [
         "Cofre atualizado"
@@ -8447,9 +8486,6 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
-      ],
-      "Writing assistant add-on": [
-        "Extensão do assistente de escrita"
       ],
       "Yearly": [
         "Anualmemnte"
@@ -10416,6 +10452,9 @@
       "Upgrade your plan": [
         "Faça upgrade de seu plano"
       ],
+      "Vault": [
+        "Cofre"
+      ],
       "View guide": [
         "Ver guia"
       ],
@@ -10527,8 +10566,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Adicionar assistente de escrita"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Adicionar assistente de escrita da ${ BRAND_NAME } Scribe"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Todos os aplicativos da ${ BRAND_NAME } for Business e recursos premium para proteger seu negócio"
@@ -10978,23 +11017,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11022,6 +11044,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -11407,6 +11446,12 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
+      ],
+      "Unlimited logins and notes": [
+        "Notas e inícios de sessão ilimitados"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Inícios de sessão ilimitados, notas e cartões de crédito"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -12745,8 +12790,15 @@
       "Save your recovery kit to continue": [
         "Salve o seu kit de recuperação para continuar"
       ],
+      "Secure vault and link sharing": [
+        "Compartilhamento seguro de cofres e links"
+      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Compartilhamento seguro de cofre (${ n } cofre) e de link.",
+        "Compartilhamento seguro de cofres (${ n } cofres) e links."
       ],
       "Secured by end-to-end encryption": [
         "Seguro com criptografia de ponta a ponta"
@@ -14328,6 +14380,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuário",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } usuários"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -15211,6 +15267,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -15391,11 +15450,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -15956,6 +16015,9 @@
       "PayPal verification failed": [
         "Ocorreu um erro na verificação do PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personalize o rodapé do seu e-mail"
+      ],
       "Phone": [
         "Telefone"
       ],
@@ -16283,9 +16345,6 @@
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
-      ],
-      "Writing assistant": [
-        "Assistente de escrita"
       ],
       "You have no open alerts": [
         "Você não tem alertas abertos"
@@ -16743,6 +16802,9 @@
       "Create password": [
         "Criar senha"
       ],
+      "Create password instead": [
+        "Crie uma senha em vez disso"
+      ],
       "Create user": [
         "Criar usuário"
       ],
@@ -16767,6 +16829,9 @@
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de início de sessão do usuário com eles."
       ],
+      "Send invite link via email instead": [
+        "Envie o link de convite por e-mail em vez disso"
+      ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Isso criará um endereço do ${ MAIL_APP_NAME }."
       ],
@@ -16783,6 +16848,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "Os administradores não podem acessar os dados de usuários privados"
+      ],
+      "Invitation sent, awaiting reply from the invited member": [
+        "Convite enviado, aguardando resposta do membro convidado"
       ],
       "Invite sent": [
         "Convite enviado"

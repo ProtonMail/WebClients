@@ -793,10 +793,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domínio personalizado",
-        "${ domains } domínios personalizados"
-      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
@@ -5658,6 +5654,11 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
       ]
     },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Aproveite a promoção"
@@ -7839,6 +7840,9 @@
       "${ maxEmails } email address per user": [
         "${ maxEmails } endereço de e-mail por utilizador",
         "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } incluindo aliases hide-my-email Ilimitados"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } de armazenamento por utilizador"

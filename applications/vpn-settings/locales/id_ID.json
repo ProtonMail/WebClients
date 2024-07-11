@@ -639,8 +639,8 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domain khusus"
+      "${ domains } additional custom domain": [
+        "${ domains } domain khusus tambahan"
       ],
       "${ ips } server": [
         "${ ips } server"
@@ -2996,6 +2996,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
@@ -4226,9 +4229,6 @@
       "Writing assistant": [
         "Asisten penulisan"
       ],
-      "Writing assistant add-on": [
-        "Pengaya asisten penulisan"
-      ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
       ],
@@ -5153,8 +5153,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Tambah asisten penulisan"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "untuk ${ price }"
@@ -5696,6 +5696,9 @@
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
+      ],
+      "Unlimited logins and notes": [
+        "Tanpa batasan jumlah entri masuk dan catatan"
       ],
       "Unlimited logins, notes and credit cards": [
         "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"

@@ -817,10 +817,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1415,10 +1415,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } oma verkkotunnus",
-        "${ domains } omaa verkkotunnusta"
-      ],
       "${ ips } server": [
         "${ ips } palvelin",
         "${ ips } palvelinta"
@@ -3702,10 +3698,10 @@
         "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Alias-asetusten lataamisessa tapahtui virhe"
+        "Virhe aliasvaihtoehtoja ladatessa"
       ],
       "An error occurred while saving your alias": [
-        "Aliaksesi tallentamisessa tapahtui virhe"
+        "Virhe aliasta tallentaessa"
       ],
       "Attachments are limited to 25 MB": [
         "Liitteiden enimmäiskoko on 25 Mt"
@@ -3984,11 +3980,17 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME }-käyttäjälle noudettu ensisijainen avain ei kelpaa lähetykseen"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Ongelma kirjoitusavustajaa ladattaessa. Jos käytät yksityistä tilaa, kokeile normaalia selaustilaa tai suorita kirjoitusavustaja palvelimilla."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Ongelma kirjoitusavustajan lataamisessa. Yritä uudelleen."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
         "Ongelma kirjoitusavustajan lataamisessa laitteellesi. Yritä uudelleen."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Virhe purkaessa tietoja, jotka ovat tarpeettomia kirjoitusavustajan ollessa pois käytöstä"
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
@@ -7069,9 +7071,6 @@
       "Writing assistant": [
         "Kirjoitusavustaja"
       ],
-      "Writing assistant add-on": [
-        "Kirjoitusavustaja-lisäosa"
-      ],
       "writing assistant iframe": [
         "kirjoitusavustaja-iframe"
       ],
@@ -8479,9 +8478,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Lisää kirjoitusavustaja"
-      ],
       "for ${ price }": [
         "hintaan ${ price }"
       ]
@@ -8948,6 +8944,9 @@
       ],
       "Custom snooze time": [
         "Oma torkutusaika"
+      ],
+      "Custom workspace branding": [
+        "Mukautettu työtilan ilme"
       ],
       "Data breach monitoring": [
         "Tietomurtovalvonta"
@@ -11288,6 +11287,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Pysy turvassa ja yhdistettynä missä tahansa"
+      ],
+      "Support your compliance objectives": [
+        "Tue vaatimustenmukaisuustavoitteitasi"
       ],
       "Sync files on devices": [
         "Synkronoi tiedostoja laitteilla"

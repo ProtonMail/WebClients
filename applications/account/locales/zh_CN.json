@@ -38,11 +38,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -674,10 +674,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -1088,9 +1088,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } 个自有域名"
-      ],
       "${ ips } server": [
         "${ ips } 个服务器"
       ],
@@ -1322,14 +1319,6 @@
         "选择您的年终优惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1351,6 +1340,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -2945,6 +2942,14 @@
       ],
       "Delete address?": [
         "删除地址?"
+      ],
+      "You can only delete 1 address per year.": [
+        "您每年只能删除一个地址。"
+      ]
+    },
+    "Delete address tooltip": {
+      "You can only delete 1 address per year": [
+        "您每年只能删除一个地址。"
       ]
     },
     "Delete calendar section description": {
@@ -3500,6 +3505,9 @@
       "Could not save preference": [
         "设置保存失败"
       ],
+      "Couldn't load invoices. Please try again later.": [
+        "账单加载失败，请稍后再试。"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "至少取消选择 ${ calendarsToFixCount } 份日历"
       ],
@@ -3547,6 +3555,9 @@
       ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "文件类型不正确。上传一个 PNG 或 JPEG 格式的文件。"
       ],
       "Incorrect login credentials. Please try again.": [
         "登录凭据不正确，请重试。"
@@ -4071,6 +4082,9 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
+      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "上传文件 ${ formattedFilename } 时出错。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -4105,6 +4119,9 @@
       ],
       "Something went wrong": [
         "出错了"
+      ],
+      "Support ticket does not exist.": [
+        "支持工单不存在.。"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
         "要使用 ${ MAIL_APP_NAME } 或 ${ CALENDAR_APP_NAME }，请切换到网页版本。"
@@ -5811,10 +5828,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6662,6 +6679,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。此功能仅供具备自有域名的 ${ BRAND_NAME } 商务用户使用。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需开通此功能，请${ createTicket }并说明您的用途、希望使用的自有域名，以及每小时与每天的预计邮件数量。"
@@ -9389,23 +9409,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -9433,6 +9436,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -9846,6 +9866,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "各项 ${ BRAND_NAME } 服务深度融合，为您提供全方位的隐私保护。"
+      ],
+      "Early access to new apps and features": [
+        "抢先访问新应用和功能"
       ],
       "For next-level password management and identity protection.": [
         "体验更高等级的密码管理与身份保护。"
@@ -10604,6 +10627,9 @@
       "Continue to ${ free }": [
         "继续使用 ${ free }"
       ],
+      "Continue with Bitcoin": [
+        "使用 Bitcoin 继续"
+      ],
       "create a new account": [
         "创建新账户"
       ],
@@ -10718,6 +10744,9 @@
       ]
     },
     "passwordless": {
+      "Organization key activated": [
+        "机构密钥已激活"
+      ],
       "Organization key does not exist.": [
         "组织密钥不存在."
       ],
@@ -12506,10 +12535,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -12976,6 +13005,9 @@
       ],
       "PayPal verification failed": [
         "PayPal 验证失败"
+      ],
+      "Personalise your e-mail footer": [
+        "个性化您的电子邮件页脚"
       ],
       "Phone": [
         "电话"

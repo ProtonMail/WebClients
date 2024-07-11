@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "Refresh the page": [
-        "Muat ulang halaman"
-      ],
       "refresh the page": [
         "muat ulang halaman"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -1221,8 +1221,8 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domain khusus"
+      "${ domains } additional custom domain": [
+        "${ domains } domain khusus tambahan"
       ],
       "${ ips } server": [
         "${ ips } server"
@@ -1393,8 +1393,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Sesuaikan paket"
+      "Buy now": [
+        "Beli sekarang"
       ],
       "New": [
         "Baru"
@@ -1537,14 +1537,6 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1566,6 +1558,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6102,6 +6102,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } menghentikan sementara proses impor karena ruang penyimpanan Anda hampir habis. Anda dapat:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } akan mencoba untuk melanjutkan proses impor segera setelah layanan penyedia email Anda mengatur ulang ${ bandwidthLimitLink } akun Anda. Anda tidak harus melakukan apa pun. Apabila Anda membatalkan proses impor Anda, impor Anda tidak akan dapat dilanjut dan Anda harus mengulang kembali segala sesuatunya dari awal."
       ],
@@ -6191,6 +6194,9 @@
       ],
       "${ userFound } user found": [
         "${ userFound } pengguna ditemukan"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } dibagikan dengan email"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
@@ -6516,6 +6522,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Angkat identitas merek organisasi Anda dan ciptakan pengalaman online yang lebih konsisten bagi para pengguna Anda."
       ],
+      "Breach Custom Email Added": [
+        "Email Khusus Kebocoran Ditambahkan"
+      ],
+      "Breach Custom Email Deleted": [
+        "Email Khusus Kebocoran Dihapus"
+      ],
+      "Breach Custom Email Validated": [
+        "Email Khusus Kebocoran Divalidasi"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Secara bawaan, anggota organisasi hanya dapat mengekspor brankas yang mereka miliki. Apabila opsi ini diaktifkan, mereka tidak akan dapat mengekspor data apa pun"
       ],
@@ -6633,8 +6648,17 @@
       "Custom daily": [
         "Sesuaikan harian"
       ],
+      "Custom email added": [
+        "Email khusus ditambahkan"
+      ],
+      "Custom email deleted": [
+        "Email khusus dihapus"
+      ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Custom email validated": [
+        "Email khusus divalidasi"
       ],
       "Custom monthly": [
         "Sesuaikan bulanan"
@@ -6654,11 +6678,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -6671,6 +6695,9 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
+      ],
+      "Discount": [
+        "Diskon"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -7083,14 +7110,14 @@
       "Invite Deleted": [
         "Undangan Dihapus"
       ],
+      "Invite for new user deleted": [
+        "Undangan untuk pengguna baru dihapus"
+      ],
       "Invite for organization accepted": [
         "Undangan untuk organisasi disetujui"
       ],
       "Invite for organization created": [
         "Undangan untuk organisasi dibuat"
-      ],
-      "Invite for User deleted": [
-        "Undangan untuk Pengguna dihapus"
       ],
       "Invite rejected": [
         "Undangan ditolak"
@@ -7122,11 +7149,14 @@
       "Item Deleted": [
         "Item Dihapus"
       ],
-      "Item deleted in vault": [
-        "Item dihapus dalam brankas"
+      "Item deleted from vault": [
+        "Item dihapus dari brankas"
       ],
       "Item flags changed in vault": [
         "Tanda item diubah dalam brankas"
+      ],
+      "Item in vault trashed": [
+        "Item dalam brankas dihapus"
       ],
       "Item in vault untrashed": [
         "Item dalam brankas dipulihkan dari sampah"
@@ -7139,9 +7169,6 @@
       ],
       "Item Trashed": [
         "Item di Sampah"
-      ],
-      "Item trashed in vault": [
-        "Item di sampah dalam brankas"
       ],
       "Item Untrashed": [
         "Item Dipulihkan dari Sampah"
@@ -7316,6 +7343,9 @@
       ],
       "New User Invite Deleted": [
         "Undangan Pengguna Baru Dihapus"
+      ],
+      "New user invited to organization": [
+        "Pengguna baru diundang ke organisasi"
       ],
       "No account keys exist": [
         "Tidak ada kunci akun"
@@ -8181,9 +8211,6 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "User invited to organization": [
-        "Pengguna diundang ke organisasi"
-      ],
       "username": [
         "nama pengguna"
       ],
@@ -8201,6 +8228,9 @@
       ],
       "Vault Deleted": [
         "Brankas Dihapus"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Brankas telah dihapus atau memerlukan izin akses"
       ],
       "Vault shared with email": [
         "Brankas dibagikan dengan email"
@@ -8373,6 +8403,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME }"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Dengan kelompok pengguna, Anda dapat mengirim email, membagikan data, atau mengubah pengaturan bagi kelompok pengguna tertentu dengan mudah secara sekaligus."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Dengan paket Anda saat ini, Anda hanya dapat menerima pesan melalui akun @pm.me milik Anda. Tingkatkan paket Anda untuk mengirim pesan dan membuat alamat tambahan melalui @pm.me."
       ],
@@ -8387,9 +8420,6 @@
       ],
       "Writing assistant": [
         "Asisten penulisan"
-      ],
-      "Writing assistant add-on": [
-        "Pengaya asisten penulisan"
       ],
       "Yearly": [
         "Tahunan"
@@ -10341,6 +10371,9 @@
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
       ],
+      "Vault": [
+        "Brankas"
+      ],
       "View guide": [
         "Lihat panduan"
       ],
@@ -10446,8 +10479,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Tambah asisten penulisan"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Seluruh aplikasi bisnis dan fitur premium ${ BRAND_NAME } untuk melindungi semua bisnis Anda"
@@ -10889,23 +10922,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -10933,6 +10949,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -11301,6 +11334,9 @@
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
+      ],
+      "Unlimited logins and notes": [
+        "Tanpa batasan jumlah entri masuk dan catatan"
       ],
       "Unlimited logins, notes and credit cards": [
         "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
@@ -15082,6 +15118,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15259,11 +15298,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -16140,9 +16179,6 @@
       ],
       "WireGuard configuration": [
         "Konfigurasi WireGuard"
-      ],
-      "Writing assistant": [
-        "Asisten penulisan"
       ],
       "You have no open alerts": [
         "Anda tidak memiliki peringatan yang terbuka"

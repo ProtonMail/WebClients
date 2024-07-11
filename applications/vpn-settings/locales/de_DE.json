@@ -639,9 +639,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } eigene Domain",
-        "${ domains } eigene Domains"
+      "${ domains } additional custom domain": [
+        "${ domains } zusätzliche eigene Domain",
+        "${ domains } zusätzliche eigene Domains"
       ],
       "${ ips } server": [
         "${ ips } Server",
@@ -3011,6 +3011,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
@@ -4253,9 +4256,6 @@
       "Writing assistant": [
         "Schreibassistent"
       ],
-      "Writing assistant add-on": [
-        "Schreibassistent Add-on"
-      ],
       "You already have a free account": [
         "Du verfügst bereits über ein kostenloses Konto."
       ],
@@ -5060,6 +5060,9 @@
       "Create account": [
         "Konto erstellen"
       ],
+      "Don't have access to your 2FA?": [
+        "Du hast keinen Zugriff auf deine 2FA?"
+      ],
       "Forgot password?": [
         "Passwort vergessen?"
       ],
@@ -5180,8 +5183,11 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Schreibassistent hinzufügen"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ]
     },
     "mailtrial2024: Action": {
@@ -7962,6 +7968,9 @@
       "Receive new emails": [
         "Neue E-Mails empfangen"
       ],
+      "See your colleagues’ availability": [
+        "Verfügbarkeit deiner Kollegen sehen"
+      ],
       "Send emails with attachments": [
         "Versende E-Mails mit Anhängen"
       ],
@@ -8911,6 +8920,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock your data": [
+        "Entsperre deine Daten"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Verbessere den Schutz deines Netzwerks mit dedizierten Servern"
       ],
@@ -9148,6 +9160,9 @@
       "Name": [
         "Name"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Neue ${ BRAND_NAME }-E-Mail-Adresse"
+      ],
       "Optional": [
         "Optional"
       ],
@@ -9160,6 +9175,9 @@
       "Send invite link via email instead": [
         "Einladungslink stattdessen via E-Mail senden"
       ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Dadurch wird eine neue ${ MAIL_APP_NAME }-Adresse erstellt."
+      ],
       "User created": [
         "Benutzer erstellt"
       ],
@@ -9171,6 +9189,9 @@
       ]
     },
     "Users table: badge": {
+      "Administrators can't access the data of private users": [
+        "Administratoren können nicht auf die Daten von privaten Benutzern zugreifen."
+      ],
       "Invite sent": [
         "Einladung gesendet"
       ],

@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
@@ -817,11 +820,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } öffnen"
@@ -1412,9 +1415,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } eigene Domain",
-        "${ domains } eigene Domains"
+      "${ domains } additional custom domain": [
+        "${ domains } zusätzliche eigene Domain",
+        "${ domains } zusätzliche eigene Domains"
       ],
       "${ ips } server": [
         "${ ips } Server",
@@ -1513,6 +1516,12 @@
       ]
     },
     "Assistant option": {
+      "Fast and secure. No logs are kept.": [
+        "Schnell und sicher. Ohne Protokollierung."
+      ],
+      "Requires a one-time download and compatible hardware.": [
+        "Erfordert einen einmaligen Download und kompatible Hardware."
+      ],
       "Run locally": [
         "Lokal ausführen"
       ],
@@ -5402,6 +5411,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
@@ -7066,9 +7078,6 @@
       "Writing assistant": [
         "Schreibassistent"
       ],
-      "Writing assistant add-on": [
-        "Schreibassistent Add-on"
-      ],
       "writing assistant iframe": [
         "Schreibassistent-iFrame"
       ],
@@ -8476,8 +8485,11 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Schreibassistent hinzufügen"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ]
     },
     "Mailbox": {
@@ -11261,6 +11273,9 @@
       ],
       "Receive new emails": [
         "Neue E-Mails empfangen"
+      ],
+      "See your colleagues’ availability": [
+        "Verfügbarkeit deiner Kollegen sehen"
       ],
       "Send emails with attachments": [
         "Versende E-Mails mit Anhängen"

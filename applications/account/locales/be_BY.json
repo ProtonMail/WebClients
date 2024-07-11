@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -1221,11 +1221,11 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } карыстальніцкі дамен",
-        "${ domains } карыстальніцкія дамены",
-        "${ domains } карыстальніцкіх даменаў",
-        "${ domains } карыстальніцкіх даменаў"
+      "${ domains } additional custom domain": [
+        "${ domains } дадатковы карыстальніцкі дамен",
+        "${ domains } дадатковыя карыстальніцкія дамены",
+        "${ domains } дадатковых карыстальніцкіх даменаў",
+        "${ domains } дадатковых карыстальніцкіх даменаў"
       ],
       "${ ips } server": [
         "${ ips } сервер",
@@ -1405,8 +1405,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Наладзіць тарыфны план"
+      "Buy now": [
+        "Купіць зараз"
       ],
       "New": [
         "Новае"
@@ -1549,14 +1549,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1578,6 +1570,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5660,6 +5660,14 @@
         "Сэрвісы"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } удзельнік",
+        "${ memberCount } удзельнікі",
+        "${ memberCount } удзельнікаў",
+        "${ memberCount } удзельнікаў"
+      ]
+    },
     "Header": {
       "Access": [
         "Доступ"
@@ -6216,6 +6224,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } прыпыніў імпартаванне, бо ў вашага ўліковага запісу канчаецца месца. Вы можаце:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe памочнік у напісанні"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі ваш пастаўшчык паслуг электроннай пошты скіне ${ bandwidthLimitLink } вашага ўліковага запісу. Вам не трэба нічога рабіць. Калі вы скасуеце імпартаванне, то ў вас не будзе магчымасці ўзнавіць яго і вам давядзецца пачынаць усё спачатку."
       ],
@@ -6350,6 +6361,18 @@
         "Знойдзена ${ userFound } карыстальнікі",
         "Знойдзена ${ userFound } карыстальнікаў",
         "Знойдзена ${ userFound } карыстальнікі"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } створана"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } выдалена"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } абагулена з электроннай поштай"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } абноўлена"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Для выбару падключэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
@@ -6702,6 +6725,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Палепшыце ідэнтычнасць вашай арганізацыі і стварыце больш паслядоўны досвед працы ў інтэрнэце для сваіх карыстальнікаў."
       ],
+      "Breach Custom Email Added": [
+        "Уцечка карыстальніцкай электроннай пошты дададзена"
+      ],
+      "Breach Custom Email Deleted": [
+        "Уцечка карыстальніцкай электроннай пошты выдалена"
+      ],
+      "Breach Custom Email Validated": [
+        "Уцечка карыстальніцкай электроннай пошты праверана"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Прадвызначана, удзельнікі арганізацыі могуць экспартаваць толькі тыя сховішчы, якімі яны валодаюць. Калі гэты параметр уключаны, то магчымасці экспартаваць даныя ў іх не будзе."
       ],
@@ -6825,8 +6857,17 @@
       "Custom daily": [
         "Штодзень (карыстальніцкае)"
       ],
+      "Custom email added": [
+        "Карыстальніцкая электронная пошта дададзена"
+      ],
+      "Custom email deleted": [
+        "Карыстальніцкія электронная пошта выдалена"
+      ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Custom email validated": [
+        "Карыстальніцкая электронная пошта праверана"
       ],
       "Custom monthly": [
         "Штомесяц (карыстальніцкае)"
@@ -6846,11 +6887,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7287,14 +7328,14 @@
       "Invite Deleted": [
         "Запрашэнне выдалена"
       ],
+      "Invite for new user deleted": [
+        "Запрашэнне для новага карыстальніка выдалена"
+      ],
       "Invite for organization accepted": [
         "Запрашэнне для арганізацыі прынята"
       ],
       "Invite for organization created": [
         "Запрашэнне для арганізацыі створана"
-      ],
-      "Invite for User deleted": [
-        "Запрашэнне для карыстальніка выдалена"
       ],
       "Invite rejected": [
         "Запрашэнне адхілена"
@@ -7314,6 +7355,9 @@
       "Item Autofilled": [
         "Элемент аўтазапоўнены"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Элемент аўтазапоўнены ў ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Элемент аўтазапоўнены ў сховішчы"
       ],
@@ -7323,17 +7367,35 @@
       "Item Created": [
         "Элемент створаны"
       ],
+      "Item created in ${ vaultLink }": [
+        "Элемент створаны ў ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Элемент створаны ў сховішчы"
       ],
       "Item Deleted": [
         "Элемент выдалены"
       ],
-      "Item deleted in vault": [
-        "Элемент выдалены ў сховішчы"
+      "Item deleted from ${ vaultLink }": [
+        "Элемент выдалены ў ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Элемент выдалены са сховішча"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Сцягі элемента зменены ў ${ vaultLink }"
       ],
       "Item flags changed in vault": [
         "Сцягі элемента зменены ў сховішчы"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Элемент са ${ vaultLink } перамешчаны ў сметніцу"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Элемент са ${ vaultLink } перамешчаны ў сховішча"
+      ],
+      "Item in vault trashed": [
+        "Элемент са сховішча перамешчаны ў сметніцу"
       ],
       "Item in vault untrashed": [
         "Элемент са сметніцы перамешчаны ў сховішча"
@@ -7341,20 +7403,23 @@
       "Item Read": [
         "Элемент прачытаны"
       ],
+      "Item read in ${ vaultLink }": [
+        "Элемент прачытаны ў ${ vaultLink }"
+      ],
       "Item read in vault": [
         "Элемент прачытаны ў сховішчы"
       ],
       "Item Trashed": [
         "Элемент перамешчаны ў сметніцу"
       ],
-      "Item trashed in vault": [
-        "Элемент са сховішча перашчаны ў сметніцу"
-      ],
       "Item Untrashed": [
         "Элемент адноўлены са сметніцы"
       ],
       "Item Updated": [
         "Элемент абноўлены"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Элемент абноўлены ў ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Элемент абноўлены ў сховішчы"
@@ -7523,6 +7588,9 @@
       ],
       "New User Invite Deleted": [
         "Запрашэнне для новага карыстальніка выдалена"
+      ],
+      "New user invited to organization": [
+        "Новы карыстальнік запрошаны ў арганізацыю"
       ],
       "No account keys exist": [
         "Адсутнічаюць ключы ўліковага запісу"
@@ -7928,6 +7996,12 @@
       ],
       "Share Updated": [
         "Абагульванне абноўлена"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Абагульванне ${ vaultLink } выдалена"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Абагульванне ${ vaultLink } абноўлена"
       ],
       "Shared vault deleted": [
         "Абагуленае сховішча выдалена"
@@ -8409,9 +8483,6 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "User invited to organization": [
-        "Карыстальнік запрошаны ў арганізацыю"
-      ],
       "username": [
         "імя карыстальніка"
       ],
@@ -8429,6 +8500,9 @@
       ],
       "Vault Deleted": [
         "Сховішча выдалена"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Сховішча выдалена або патрабуе правы доступу"
       ],
       "Vault shared with email": [
         "Сховішча абаагулена з электроннай поштай"
@@ -8618,9 +8692,6 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
-      ],
-      "Writing assistant add-on": [
-        "Дадатак памочніка ў напісанні"
       ],
       "Yearly": [
         "Штогод"
@@ -10620,6 +10691,9 @@
       "Upgrade your plan": [
         "Палепшыць тарыфны план"
       ],
+      "Vault": [
+        "Сховішча"
+      ],
       "View guide": [
         "Паглядзець дапаможнік"
       ],
@@ -10743,8 +10817,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Дадаць памочніка ў напісанні"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Дадаванне памочніка ў напісанні ${ BRAND_NAME } Scribe"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для яго комплекснай абароны"
@@ -11201,23 +11275,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11245,6 +11302,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -11664,6 +11738,9 @@
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
+      ],
+      "Unlimited logins and notes": [
+        "Неабмежаваная колькасць запісаў уваходу і нататак"
       ],
       "Unlimited logins, notes and credit cards": [
         "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
@@ -15631,6 +15708,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe памочнік у напісанні"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15808,10 +15888,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -16242,6 +16322,9 @@
       ],
       "Import failed": [
         "Не ўдалося імпартаваць"
+      ],
+      "Import groups": [
+        "Імпартаванне груп"
       ],
       "Import key": [
         "Імпартаваць ключ"
@@ -16704,9 +16787,6 @@
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
-      ],
-      "Writing assistant": [
-        "Памочнік у напісанні"
       ],
       "You have no open alerts": [
         "У вас няма адкрытых папярэджанняў"

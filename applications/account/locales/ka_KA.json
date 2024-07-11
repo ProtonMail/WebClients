@@ -43,14 +43,19 @@
         "გააჩერებთ ელფოსტის გადაგზავნას."
       ]
     },
+    "Account Settings - Info": {
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -740,10 +745,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
       "Reload": [
@@ -1201,10 +1206,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } მომხმარებლის დომენი",
-        "${ domains } მომხმარებლის დომენი"
-      ],
       "${ ips } server": [
         "${ ips } სერვერი",
         "${ ips } სერვერი"
@@ -1377,9 +1378,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "გეგმის მორგება"
-      ],
       "New": [
         "ახალი"
       ],
@@ -1518,14 +1516,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1547,6 +1537,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -6686,11 +6684,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -6704,6 +6702,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
         "${ deletedServerCount } რაუტერი სერვერის წაშლა"
+      ],
+      "Discount": [
+        "ფასდაკლება"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy-ის ლოგო"
@@ -7121,9 +7122,6 @@
       "Invite for organization created": [
         "მოწვევა ორგანიზაციისთვის შექმნილია"
       ],
-      "Invite for User deleted": [
-        "მოწვევა მომხმარებლისთვის წაიშალა"
-      ],
       "Invite rejected": [
         "მოწვევა უარყოფილია"
       ],
@@ -7155,9 +7153,6 @@
       "Item Deleted": [
         "ელემენტი წაიშალა"
       ],
-      "Item deleted in vault": [
-        "ელემენტი წაიშალა საცავში"
-      ],
       "Item flags changed in vault": [
         "ელემენტის ალმები შეიცვალა საცავში"
       ],
@@ -7172,9 +7167,6 @@
       ],
       "Item Trashed": [
         "ელემენტი გადატანილია ნაგვის ყუთში"
-      ],
-      "Item trashed in vault": [
-        "ელემენტი გადატანილია საცავის ნაგვის ყუთში"
       ],
       "Item Untrashed": [
         "ელემენტი გადმოტანილია ნაგვის ყუთიდან"
@@ -8113,6 +8105,9 @@
       "Two-factor authentication enabled": [
         "2FA ჩართულია"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი მონაცემების გასაშიფრად. (დამატებით)"
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "ფაილის ხელმოწერის შემოწმების შეცდომა. დაუკავშირდით მხარდაჭერის გუნდს."
       ],
@@ -8173,11 +8168,17 @@
       "Upload your completed CSV file to create accounts": [
         "ანგარიშების შესაქმნელად ატვირთეთ თქვენი დასრულებული CSV ფაილი"
       ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "ატვირთეთ თქვენი ორგანიზაციის ლოგო, რომ გაზარდოთ თქვენი ბრენდის ცნობადობა და შექმნათ პერსონალიზებული გარემო თქვენი მომხმარებლებისთვის."
+      ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "ატვირთული ფაილი სწორ პირად გასაღებს არ წარმოადგენს. გადაამოწმეთ და თავიდან სცადეთ."
       ],
       "URL link": [
         "URL ბმული"
+      ],
+      "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
+        "გამოიყენეთ პაროლების მმართველი თქვენი პაროლების გენერაციისა და უსაფრთხოს შესანახად. იქონიეთ ძლიერი პაროლები და გამოიყენეთ ისნი ადვილად."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
@@ -8193,9 +8194,6 @@
       ],
       "User activated": [
         "მომხმრებელი გააქტიურდა"
-      ],
-      "User invited to organization": [
-        "მომხმარებელი მოწვეულია მორგანიზაციაში"
       ],
       "username": [
         "მომხმარებლის სახელი"
@@ -8392,9 +8390,6 @@
       "Writing assistant": [
         "წერაში დამხმარე"
       ],
-      "Writing assistant add-on": [
-        "წერაში დამხმარის დამატება"
-      ],
       "Yearly": [
         "წლიურად"
       ],
@@ -8410,6 +8405,10 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ.",
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან.",
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ.",
@@ -10445,9 +10444,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "წერაში დამხმარის დამატება"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ"
       ],
@@ -10893,23 +10889,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -10937,6 +10916,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -13268,6 +13264,9 @@
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა მონაცემები და დაასრულეთ SCIM-ის მორგება ${ VPN_APP_NAME }-სთვის."
+      ],
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა კოდი და თავიდან ჩართეთ SCIM ${ VPN_APP_NAME }-სთვის."
       ],
@@ -13312,6 +13311,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
@@ -13478,6 +13480,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -15229,10 +15236,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -16112,9 +16119,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard-ის მორგება"
-      ],
-      "Writing assistant": [
-        "წერაში დამხმარე"
       ],
       "You have no open alerts": [
         "ღია განგაშები არ გაქვთ"
