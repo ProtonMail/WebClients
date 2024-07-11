@@ -100,6 +100,8 @@ const Composer = (
         canShowAssistant,
         hasCompatibleBrowser,
         hasCompatibleHardware,
+        initAssistant,
+        downloadPaused,
     } = useAssistant(composerID);
     const { getIsStickyAssistant } = useAssistantSticky({ openedAssistants });
 
@@ -256,20 +258,21 @@ const Composer = (
 
     // Hook used to open the assistant automatically the first time the user opens the composer
     const { isAssistantInitialSetup } = useComposerAssistantInitialSetup({
-        onToggleAssistant: handleToggleAssistant,
         canShowAssistant,
-        canRunAssistant,
         disableAssistantButton,
-        assistantID: composerID,
-        openedAssistants,
     });
 
     // open assistant by default if it was opened last time
     useEffect(() => {
         if (getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)) {
             openAssistant(composerID);
+
+            // Start initializing the Assistant when opening it if able to
+            if (userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY && !downloadPaused) {
+                void initAssistant?.();
+            }
         }
-    }, [isAssistantInitialSetup, composerID, canShowAssistant]);
+    }, [composerID, canShowAssistant]);
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
         handleChange((message) => {
