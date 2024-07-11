@@ -21,7 +21,7 @@ const InputFieldStacked = forwardRef<HTMLDivElement, InputFieldStackedProps>(
         <div
             ref={ref}
             className={clsx(
-                'relative stacked-field border-weak flex items-center gap-x-4 w-full',
+                'relative stacked-field flex items-center gap-x-4 w-full',
                 hasError && 'stacked-field--errors',
                 isBigger && 'stacked-field--bigger-field',
                 isGroupElement ? 'border-top border-left border-right' : 'border stacked-field--rounded',

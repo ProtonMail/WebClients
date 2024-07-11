@@ -1,0 +1,14 @@
+.field-caret {
+	color: var(--text-hint);
+}
+
+.wallet-select .select {
+	border-color: transparent;
+}
+
+.wallet-select-dense .select {
+	border-radius: var(--border-radius-full);
+	padding-block: var(--space-2);
+	padding-inline: var(--space-4);
+	background-color: var(--background-norm);
+}
