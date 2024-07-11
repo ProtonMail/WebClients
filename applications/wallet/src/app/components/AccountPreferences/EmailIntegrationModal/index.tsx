@@ -23,7 +23,7 @@ export const EmailIntegrationModal = ({
     ...modalProps
 }: Props) => {
     return (
-        <Modal title={c('Wallet Settings').t`Bitcoin via Email`} {...modalProps} enableCloseWhenClickOutside>
+        <Modal title={c('Wallet Settings').t`Bitcoin via Email`} {...modalProps}>
             <div className="mb-4">
                 <p className="text-center color-weak my-0">{c('Wallet Settings')
                     .t`Link an email to this wallet account so other ${WALLET_APP_NAME} users can easily send bitcoin to your email.`}</p>
