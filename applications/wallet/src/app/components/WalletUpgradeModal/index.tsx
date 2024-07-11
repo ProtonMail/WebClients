@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps } from '@proton/components/components';
+import { ModalOwnProps, Prompt } from '@proton/components/components';
 import upgradeWalletSrc from '@proton/styles/assets/img/illustrations/wallet-upgrade.svg';
 
-import { Button, Modal } from '../../atoms';
+import { Button } from '../../atoms';
 import { SubTheme } from '../../utils';
 
 export interface WalletUpgradeModalOwnProps {
@@ -16,17 +16,24 @@ type Props = WalletUpgradeModalOwnProps & ModalOwnProps;
 
 export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Props) => {
     return (
-        <Modal {...modalProps} className={theme}>
-            <div className="flex flex-column items-center">
+        <Prompt
+            {...modalProps}
+            className={theme}
+            buttons={[
+                <Button fullWidth shadow size="large" shape="solid" color="norm">
+                    {c('Action').t`Upgrade now`}
+                </Button>,
+                <Button fullWidth size="large" shape="solid" color="weak" onClick={modalProps.onClose}>{c('Wallet')
+                    .t`Close`}</Button>,
+            ]}
+        >
+            <div className="flex flex-column items-center text-center">
                 <img src={upgradeWalletSrc} alt="" />
-
-                <h1 className="my-4 text-semibold text-3xl">{title ?? c('Wallet Upgrade').t`Upgrade your privacy`}</h1>
-
-                <p className="mt-0 mb-8 color-hint text-center">{content}</p>
-
-                <Button className="my-8 mx-auto w-4/5" size="large" shape="solid" color="norm">{c('Action')
-                    .t`Upgrade now`}</Button>
+                <h1 className="my-4 text-semibold text-3xl">
+                    {title ?? c('Wallet Upgrade').t`Upgrade to support financial freedom`}
+                </h1>
+                <p className="mt-0 text-center">{content}</p>
             </div>
-        </Modal>
+        </Prompt>
     );
 };
