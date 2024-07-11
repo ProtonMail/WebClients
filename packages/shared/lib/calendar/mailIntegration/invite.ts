@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getIsAddressExternal } from '@proton/shared/lib/helpers/address';
+import { unescape } from '@proton/shared/lib/sanitize/escape';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
@@ -50,6 +51,7 @@ import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
 import { getSupportedStringValue } from '../icsSurgery/vcal';
 import { getIsRruleEqual } from '../recurrence/rruleEqual';
+import { stripAllTags } from '../sanitize';
 import { fromTriggerString, serialize } from '../vcal';
 import { getAllDayInfo, getHasModifiedDateTimes, getIsEquivalentAttendee, propertyToUTCDate } from '../vcalConverter';
 import {
@@ -707,11 +709,19 @@ export const getHasUpdatedInviteData = ({
     const hasUpdatedDateTimes = hasModifiedDateTimes ?? getHasModifiedDateTimes(newVevent, oldVevent);
 
     const keys: VcalComponentKeys[] = ['summary', 'description', 'location'];
-    const hasUpdatedTitleDescriptionOrLocation = keys.some(
-        (key) =>
-            getSupportedStringValue(newVevent[key] as VcalStringProperty) !==
-            getSupportedStringValue(oldVevent[key] as VcalStringProperty)
-    );
+    const hasUpdatedTitleDescriptionOrLocation = keys.some((key) => {
+        const newValue = getSupportedStringValue(newVevent[key] as VcalStringProperty);
+        const oldValue = getSupportedStringValue(oldVevent[key] as VcalStringProperty);
+
+        // Sanitize to better diff detection, and unescape characters
+        // `oldvalue` is the original event value, so it can contain HTML tags
+        // `newValue` is supposed to be already sanitized
+        // Always doing the computation because sometimes the new values is undefined, but not the old one
+        const cleanedNewValue = stripAllTags(unescape(newValue || '')).trim();
+        const cleanedOldValue = stripAllTags(unescape(oldValue || '')).trim();
+        return cleanedNewValue !== cleanedOldValue;
+    });
+
     const hasUpdatedRrule = hasModifiedRrule ?? !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
     return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
 };
