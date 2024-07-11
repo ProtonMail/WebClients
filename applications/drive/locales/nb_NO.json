@@ -934,9 +934,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } egendefinert domene",
-        "${ domains } egendefinerte domener"
+      "${ domains } additional custom domain": [
+        "${ domains } ekstra egendefinert domene",
+        "${ domains } ekstra egendefinerte domener"
       ],
       "${ ips } server": [
         "${ ips } tjener",
@@ -3734,6 +3734,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
       ],
@@ -5170,9 +5173,6 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
-      "Writing assistant add-on": [
-        "Skriveassistent-tillegg"
-      ],
       "Yes": [
         "Ja"
       ],
@@ -6168,8 +6168,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Legg til skriveassistent"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Legg til ${ BRAND_NAME } Scribe skriveassistent"
       ],
       "for ${ price }": [
         "for ${ price }"
@@ -6903,6 +6903,9 @@
       ],
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Ubegrenset antall pålogginger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrenset antall pålogginger, notater og kredittkort"
@@ -9584,6 +9587,9 @@
       ],
       "Import failed": [
         "Importen mislyktes"
+      ],
+      "Import groups": [
+        "Importer grupper"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"

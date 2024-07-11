@@ -934,9 +934,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } eigene Domain",
-        "${ domains } eigene Domains"
+      "${ domains } additional custom domain": [
+        "${ domains } zusätzliche eigene Domain",
+        "${ domains } zusätzliche eigene Domains"
       ],
       "${ ips } server": [
         "${ ips } Server",
@@ -3734,6 +3734,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
@@ -5170,9 +5173,6 @@
       "Writing assistant": [
         "Schreibassistent"
       ],
-      "Writing assistant add-on": [
-        "Schreibassistent Add-on"
-      ],
       "Yes": [
         "Ja"
       ],
@@ -6168,8 +6168,11 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Schreibassistent hinzufügen"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent hinzufügen"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ]
     },
     "mailtrial2024: Action": {
@@ -8875,6 +8878,9 @@
       ],
       "Receive new emails": [
         "Neue E-Mails empfangen"
+      ],
+      "See your colleagues’ availability": [
+        "Verfügbarkeit deiner Kollegen sehen"
       ],
       "Send emails with attachments": [
         "Versende E-Mails mit Anhängen"
