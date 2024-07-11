@@ -2,6 +2,10 @@
 
 .modal-two-header-title {
 	inline-size: 100%;
+
+	h1 {
+		font-weight: var(--font-weight-semibold);
+	}
 }
 
 .modal-two-dialog.prompt {
