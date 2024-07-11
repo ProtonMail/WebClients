@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { createAsyncModelThunk, defaultLongExpiry, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
@@ -24,7 +24,7 @@ type Model = NonNullable<SliceState['value']>;
 export const selectUserKeys = (state: UserKeysState) => state.userKeys;
 
 const modelThunk = createAsyncModelThunk<Model, UserKeysState, ProtonThunkArguments>(`${name}/fetch`, {
-    expiry: 9999999,
+    expiry: defaultLongExpiry,
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
         const keys = await getDecryptedUserKeysHelper(user, extraArgument.authentication.getPassword());

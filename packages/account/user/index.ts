@@ -30,7 +30,7 @@ type Model = NonNullable<SliceState['value']>;
 export const selectUser = (state: UserState) => state.user;
 
 const modelThunk = createAsyncModelThunk<Model, UserState, ProtonThunkArguments>(`${name}/fetch`, {
-    expiry: 14 * DAY, // Longer expiration since this is set on init
+    expiry: 7 * DAY,
     miss: ({ extraArgument }) => {
         return extraArgument.api<{ User: User }>(getUser()).then(({ User }) => {
             return formatUser(User);
