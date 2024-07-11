@@ -148,4 +148,12 @@ export interface UserSettings {
     WeekStart: SETTINGS_WEEK_START;
     WelcomeFlag: number;
     Welcome: number;
+    ProductDisabled: {
+        Mail: number;
+        VPN: number;
+        Calendar: number;
+        Drive: number;
+        Pass: number;
+        Wallet: number;
+    };
 }
