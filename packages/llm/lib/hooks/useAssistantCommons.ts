@@ -1,18 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
-import { useAssistantSubscriptionStatus, useOrganization, useUserSettings } from '@proton/components/hooks';
+import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
 import { getAssistantHasCompatibleBrowser, getAssistantHasCompatibleHardware } from '@proton/llm/lib';
 import useAssistantErrors from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
-import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
-const { OFF, UNSET } = AI_ASSISTANT_ACCESS;
+const { OFF } = AI_ASSISTANT_ACCESS;
 
 const useAssistantCommons = () => {
     const assistantFeatureEnabled = useAssistantFeatureEnabled();
     const [{ AIAssistantFlags }] = useUserSettings();
-    const [organization] = useOrganization();
 
     const assistantSubscriptionStatus = useAssistantSubscriptionStatus();
 
@@ -27,14 +25,8 @@ const useAssistantCommons = () => {
             return false;
         }
 
-        // We don't show the assistant to visionary users that have not set the AIAssistant setting
-        const isVisionaryUnset = isOrganizationVisionary(organization) && AIAssistantFlags === UNSET;
-        if (isVisionaryUnset) {
-            return false;
-        }
-
         return true;
-    }, [assistantFeatureEnabled, AIAssistantFlags, organization]);
+    }, [assistantFeatureEnabled, AIAssistantFlags]);
 
     // When hardware is not compatible, show an error in the UI
     const [hasCompatibleHardware, setHasCompatibleHardware] = useState(false);

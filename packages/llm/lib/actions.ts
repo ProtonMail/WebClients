@@ -2,6 +2,7 @@ import '@mlc-ai/web-llm';
 import { ChatOptions, WebWorkerEngine } from '@mlc-ai/web-llm';
 
 import {
+    CACHING_FAILED,
     GENERAL_STOP_STRINGS,
     IFRAME_COMMUNICATION_TIMEOUT,
     STOP_STRINGS_REFINE,
@@ -496,7 +497,7 @@ export class GpuLlmManager implements LlmManager {
                                     console.error(e);
                                     this.status = 'error';
                                     void this.chat?.unload?.();
-                                    const error = new Error('Caching failed');
+                                    const error = new Error(CACHING_FAILED);
                                     downloadPromiseReject(error);
                                 }
                             );
@@ -512,7 +513,7 @@ export class GpuLlmManager implements LlmManager {
                                 // In case they're not, we need to show an error
                                 const { needsAdditionalDownload } = await getCachedFiles(modelVariant, assistantConfig);
                                 if (needsAdditionalDownload) {
-                                    const error = new Error('Caching failed');
+                                    const error = new Error(CACHING_FAILED);
                                     console.error(error);
                                     this.status = 'error';
                                     downloadPromiseReject(error);

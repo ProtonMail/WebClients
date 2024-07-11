@@ -19,6 +19,7 @@ interface ComposerAssistantContextType {
      * Display a modal and wait for the user to resolve or reject it.
      */
     displayAssistantModalPromise: (modalType: 'incompatibleHardware' | 'incompatibleBrowser') => Promise<void>;
+    /** Manage different kind of Assistant needed refs */
     assistantRefManager: {
         input: Manager<HTMLTextAreaElement>;
         container: Manager<HTMLDivElement>;
@@ -44,27 +45,6 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
     const [browserModalPromise, showBrowserModalPromise] = useModalTwoPromise();
     const { sendIncompatibleAssistantReport } = useAssistantTelemetry();
 
-    const assistantRefManager = useMemo(() => {
-        const assistantInputs: Record<string, RefObject<HTMLTextAreaElement>> = {};
-        const assistantContainers: Record<string, RefObject<HTMLDivElement>> = {};
-        const managerFactory = <TElement extends HTMLElement>(
-            store: Record<string, RefObject<TElement>>
-        ): Manager<TElement> => ({
-            get: (composerID: string) => store[composerID],
-            set: (composerID: string, ref: RefObject<TElement>) => {
-                store[composerID] = ref;
-            },
-            delete: (composerID: string) => {
-                delete store[composerID];
-            },
-        });
-
-        return {
-            input: managerFactory(assistantInputs),
-            container: managerFactory(assistantContainers),
-        };
-    }, []);
-
     const displayAssistantModal = (modalType: 'incompatibleHardware' | 'incompatibleBrowser') => {
         if (modalType === 'incompatibleHardware') {
             incompatibleHardwareModal.openModal(true);
@@ -86,6 +66,27 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
             await showBrowserModalPromise();
         }
     };
+
+    const assistantRefManager = useMemo(() => {
+        const assistantInputs: Record<string, RefObject<HTMLTextAreaElement>> = {};
+        const assistantContainers: Record<string, RefObject<HTMLDivElement>> = {};
+        const managerFactory = <TElement extends HTMLElement>(
+            store: Record<string, RefObject<TElement>>
+        ): Manager<TElement> => ({
+            get: (composerID: string) => store[composerID],
+            set: (composerID: string, ref: RefObject<TElement>) => {
+                store[composerID] = ref;
+            },
+            delete: (composerID: string) => {
+                delete store[composerID];
+            },
+        });
+
+        return {
+            input: managerFactory(assistantInputs),
+            container: managerFactory(assistantContainers),
+        };
+    }, []);
 
     return (
         <ComposerAssistantContext.Provider
