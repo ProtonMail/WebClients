@@ -269,6 +269,12 @@ export const enableBreachAlert = () => ({
     data: {},
 });
 
+export const setProductDisabled = (data: { Product: number; Disabled: 1 | 0 }) => ({
+    url: 'core/v4/settings/product-disabled',
+    method: 'put',
+    data,
+});
+
 export const disableBreachAlert = () => ({
     url: 'core/v4/settings/breachalerts',
     method: 'delete',

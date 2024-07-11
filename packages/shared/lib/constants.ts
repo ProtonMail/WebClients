@@ -250,6 +250,15 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
 };
 
+export enum PRODUCT {
+    MAIL = 1,
+    VPN = 2,
+    CALENDAR = 3,
+    DRIVE = 4,
+    PASS = 5,
+    WALLET = 6,
+}
+
 export enum PRODUCT_BIT {
     MAIL = 1,
     DRIVE = 2,

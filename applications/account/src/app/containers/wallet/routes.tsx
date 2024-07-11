@@ -8,6 +8,16 @@ export const getWalletAppRoutes = (): SidebarConfig => {
     return {
         header: WALLET_APP_NAME,
         routes: {
+            authorization: {
+                text: c('wallet_signup_2024:Wallet Settings').t`Authorization`,
+                to: '/authorize',
+                icon: 'checkmark',
+                subsections: [
+                    {
+                        id: 'activate`',
+                    },
+                ],
+            },
             downloads: {
                 text: c('wallet_signup_2024:Wallet Settings').t`Downloads`,
                 to: WALLET_SETTINGS_ROUTES.DOWNLOADS,

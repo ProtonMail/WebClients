@@ -8,6 +8,7 @@ export * from './userKeys/listener';
 export * from './inactiveKeys';
 export * from './inactiveKeys/hooks';
 export * from './userSettings';
+export * from './userSettings/hooks';
 export * from './paymentMethods';
 export * from './protonDomains';
 export * from './subscription';
