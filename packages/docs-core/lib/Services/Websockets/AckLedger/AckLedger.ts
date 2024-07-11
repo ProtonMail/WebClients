@@ -145,6 +145,7 @@ export class AckLedger implements AckLedgerInterface {
 
       if (update) {
         const timeToReceiveAck = new Date().getTime() - update.postedAt.getTime()
+
         this.avgTimeToReceiveAck = (this.avgTimeToReceiveAck + timeToReceiveAck) / 2
 
         this.unconfirmedMessages.delete(ack.uuid)
@@ -158,6 +159,11 @@ export class AckLedger implements AckLedgerInterface {
         this.logger.info(
           `Received ack for message ${ack.uuid} in ${timeToReceiveAck}ms avg time to ack: ${this.avgTimeToReceiveAck}ms`,
         )
+
+        metrics.docs_realtime_edit_latency_histogram.observe({
+          Labels: {},
+          Value: timeToReceiveAck,
+        })
       }
     }
   }

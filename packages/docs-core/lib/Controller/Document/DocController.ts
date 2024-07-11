@@ -52,6 +52,7 @@ import { DocSizeTracker } from './SizeTracker'
 import { getPlatformFriendlyDateForFileName } from '../../Util/PlatformFriendlyFileNameDate'
 import { DocParticipantTracker, ParticipantTrackerEvent } from './DocParticipantTracker'
 import { SerializedEditorState } from 'lexical'
+import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
 
 /**
  * @TODO DRVDOC-802
@@ -272,6 +273,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public async initialize(): Promise<Result<DocLoadSuccessResult>> {
+    const startTime = Date.now()
+
     const loadResult = await this._loadDocument.execute(this.nodeMeta)
     if (loadResult.isFailed()) {
       this.logger.error('Failed to load document', loadResult.getError())
@@ -311,6 +314,15 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     this.handleDocsServerConnectionReady()
 
     void this.loadDecryptedNode()
+
+    const endTime = Date.now()
+    const timeToLoadInSeconds = (endTime - startTime) / 1000
+    metrics.docs_time_load_document_histogram.observe({
+      Labels: {
+        updates: metricsBucketNumberForUpdateCount(this.initialCommit?.numberOfUpdates() ?? 0),
+      },
+      Value: timeToLoadInSeconds,
+    })
 
     return Result.ok({
       entitlements: this.entitlements,
@@ -642,7 +654,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     if (result.isFailed()) {
       this.logger.error('Failed to squash document', result.getError())
     } else {
-      metrics.docs_squashes_total.increment({})
       this.logger.info('Squash result', result.getValue())
     }
   }
