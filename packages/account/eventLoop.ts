@@ -8,6 +8,7 @@ import type {
     ApiEnvironmentConfig,
     BreachAlertUpdateEvent,
     Domain,
+    Group,
     IncomingAddressForwarding,
     LabelCount,
     MailSettings,
@@ -60,6 +61,7 @@ export interface EventLoop {
     ProductUsedSpace?: User['ProductUsedSpace'];
     Refresh?: number;
     BreachAlerts?: BreachAlertUpdateEvent[];
+    Groups?: EventItemUpdate<Group, 'Group'>[];
 }
 
 export const serverEvent = createAction('server event', (payload: EventLoop) => ({ payload }));
