@@ -12,6 +12,7 @@ import {
     CacheType,
     cacheHelper,
     createPromiseMapStore,
+    defaultLongExpiry,
     getFetchedAt,
     getFetchedEphemeral,
 } from '@proton/redux-utilities';
@@ -114,7 +115,7 @@ export const addressKeysThunk = ({
                 throw error;
             }
         };
-        return cacheHelper({ store: promiseStore, key: addressID, select, cb, cache, expiry: 9999999 });
+        return cacheHelper({ store: promiseStore, key: addressID, select, cb, cache, expiry: defaultLongExpiry });
     };
 };
 
