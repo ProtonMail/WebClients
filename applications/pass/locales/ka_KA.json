@@ -4,6 +4,11 @@
     "language": "ka_KA"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ]
+    },
     "Action": {
       "Add": [
         "დამატება"
@@ -170,6 +175,9 @@
       "Enable Dark Web Monitoring": [
         "Dark Web-ის მონიტორინგის ჩართვა"
       ],
+      "Entire vault": [
+        "მთელი საცავი"
+      ],
       "Exclude from monitoring": [
         "მონიტორინგიდან ამოღება"
       ],
@@ -196,6 +204,9 @@
       ],
       "Generated passwords": [
         "გენერირებული პაროლები"
+      ],
+      "Generating secure link...": [
+        "დაცული ბმულის გენერაცია..."
       ],
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის მიღება"
@@ -278,6 +289,9 @@
       "Mark as resolved": [
         "მონიშნე გადაწყვეტილად"
       ],
+      "Maximum views": [
+        "მაქსიმალური ნახვები"
+      ],
       "More info: ${ safeTitle }": [
         "გაიგეთ მეტი: ${ safeTitle }"
       ],
@@ -304,6 +318,9 @@
       ],
       "Multiple select": [
         "ერთზე მეტის მონიშვნა"
+      ],
+      "No expired links": [
+        "ვადაგასული ბმულების გარეშე"
       ],
       "OK": [
         "დიახ"
@@ -347,6 +364,9 @@
       "Remove access": [
         "წვდომის გაუქმება"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "ყველა ვადაამოწურული ბმულის (${ inactiveLinkCount }) წაშლა"
+      ],
       "Remove link": [
         "ბმულის წაშლა"
       ],
@@ -388,6 +408,9 @@
       ],
       "Saving": [
         "დაზოგვა"
+      ],
+      "Secure links": [
+        "დაცული ბმულები"
       ],
       "See all": [
         "ყველას ნახვა"
@@ -433,6 +456,9 @@
       ],
       "Sign out": [
         "გასვლა"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "ვიღაცამ გაგიზიარათ ელემენტი ${ PASS_APP_NAME }-ზე."
       ],
       "Sort vault items": [
         "საცავის ელემენტების დალაგება"
@@ -741,6 +767,9 @@
       "Importing items failed": [
         "ელემენტების შემოტანის შეცდომა"
       ],
+      "Inactive secure links could not be removed.": [
+        "არააქტიური დაცული ბმულების წაშლა შეუძლებელია."
+      ],
       "Invalid password manager": [
         "არასწორი პაროლების მმართველი"
       ],
@@ -789,6 +818,12 @@
       "Restoring trashed items failed": [
         "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა ჩავარდა"
       ],
+      "Secure link could not be created.": [
+        "დაცული ბმულის შექმნა შეუძლებელია."
+      ],
+      "Secure link could not be opened.": [
+        "დაცული ბმულის გახსნა შეუძლებელია."
+      ],
       "Settings update failed": [
         "პარამეტრების განახლების შეცდომა"
       ],
@@ -810,11 +845,17 @@
       "The session has expired. Please sign in again.": [
         "სესიას დრო გაუვიდა. თავიდან შედით."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "შეცდომა დაცული ბმულის წაშლისას. თავიდან სცადეთ რამდენიმე წუთში."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "მეტისმეტად ბევრი ჩავარდნილი მცდელობა. თავიდან შედით."
       ],
       "Trashing item failed": [
         "ელემენტის ნაგვის ყუთში გადატანის შეცდომა"
+      ],
+      "Try reaching out to the link owner.": [
+        "სცადეთ, ბმულის ავტორს დაუკავშირდეთ."
       ],
       "Unable to generate an OTP code for this item": [
         "ამ ელემენტისთვის OTP კოდის გენერაცია შეუძლებელია"
@@ -1017,6 +1058,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "ყველა მიმდინარე გაჟონვა მონიშნული იქნება, როგორც გადაწყვეტილი. თუ გაჟონვა მომავალშიც მოხდება, ამის შესახებ შეტყობინებას მიიღებთ."
       ],
+      "All inactive secure links were removed": [
+        "ყველა არააქტიური დაცული ბმული წაიშალა"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან წარმატებით დასრულდა"
       ],
@@ -1041,6 +1085,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტი \"${ name }\"-ში?"
       ],
+      "Are you sure you want to remove the link?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ბმული?"
+      ],
       "Auto-lock successfully disabled.": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო."
       ],
@@ -1052,6 +1099,9 @@
       ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Can be viewed": [
+        "შეიძლება, ნახონ"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
@@ -1157,6 +1207,9 @@
       ],
       "Enter your PIN code": [
         "შეიყვანეთ თქვენი PIN კოდი"
+      ],
+      "Expires in": [
+        "ვადა"
       ],
       "Expires in ${ remainingTime }": [
         "ვადა ${ remainingTime }"
@@ -1447,8 +1500,14 @@
       "Registering PIN lock failed": [
         "PIN-კოდით დაბლოკვის რეგისტრაცია ჩავარდა"
       ],
+      "Removing all inactive secure links...": [
+        "ყველა არააქტიური ბმულის მოცილება..."
+      ],
       "Removing extra password...": [
         "დამატებითი პაროლის წაშლა..."
+      ],
+      "Removing secure link...": [
+        "დაცული ბმულის წაშლა..."
       ],
       "Restoring items from trash": [
         "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
@@ -1522,6 +1581,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
+      ],
+      "The secure link has been removed": [
+        "დაცული ბმული წაიშალა"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "ტექსტი, რომლის ჩასმასაც ცდილობთ, დაშვებულ ${ maxLength } სიმბოლოზე გრძელია."
@@ -1706,14 +1768,23 @@
       "10 minutes": [
         "10 წუთი"
       ],
+      "14 days": [
+        "14 დღე"
+      ],
       "15 minutes": [
         "15 წუთი"
+      ],
+      "24 hours": [
+        "24 სთ"
       ],
       "2FA secret key (TOTP)": [
         "2FA საიდუმლო გასაღები (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA კოდი (TOTP)"
+      ],
+      "30 days": [
+        "30 დღე"
       ],
       "30 minutes": [
         "30 წუთი"
@@ -1723,6 +1794,9 @@
       ],
       "5 minutes": [
         "5 წუთი"
+      ],
+      "7 days": [
+        "7 დღე"
       ],
       "A-Z": [
         "A-Z"
@@ -1844,6 +1918,9 @@
       "Expired": [
         "ვადაგასულია"
       ],
+      "Expired link": [
+        "ვადაგასული ბმული"
+      ],
       "Export": [
         "გატანა"
       ],
@@ -1859,8 +1936,14 @@
       "Forwards to": [
         "გადაგზავნა"
       ],
+      "Free forever": [
+        "სამუდამოდ უფასო"
+      ],
       "General": [
         "ზოგადი"
+      ],
+      "Generate a secure link for this item": [
+        "დაცული ბმულის შექმნა ამ ელემენტისთვის"
       ],
       "Generic CSV": [
         "ზოგადი CSV"
@@ -1940,6 +2023,9 @@
       "Make all viewers": [
         "ყველას მონიშვნა დამთვალიერებლად"
       ],
+      "Max views reached": [
+        "მიღწეულია მაქს. ნახვები"
+      ],
       "Members": [
         "წევრები"
       ],
@@ -1991,6 +2077,9 @@
       "Oldest to newest": [
         "უძველესიდან ახლისკენ"
       ],
+      "Open-source password manager for effortless protection.": [
+        "ღია კოდის მქონე პაროლების მმართველი თავის შეუწუხებლად დაცვისთვის."
+      ],
       "Organization": [
         "ორგანიზაცია"
       ],
@@ -2027,6 +2116,9 @@
       "Recent": [
         "უახლესი"
       ],
+      "Remove link": [
+        "ბმულის წაშლა"
+      ],
       "Report a problem": [
         "შეტყობინება პრობლემის შესახებ"
       ],
@@ -2057,6 +2149,15 @@
       "Session locking": [
         "სესიის ჩაკეტვა"
       ],
+      "Share": [
+        "გაზიარება"
+      ],
+      "Share this vault or create a new vault": [
+        "ამ საცავის გაზიარება ან ახლის შექმნა"
+      ],
+      "Shared link": [
+        "გაზიარებული ბმული"
+      ],
       "Show website favicons": [
         "ვებგვერდის favicon-ების ჩვენება"
       ],
@@ -2077,6 +2178,16 @@
       ],
       "Text": [
         "ტექსტი"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "ელემენტის საცავი ამჟამად ${ targetMembers } მომხმარებელთანაა გაზიარებული",
+        "ელემენტის საცავი ამჟამად ${ targetMembers } მომხმარებელთანაა გაზიარებული"
+      ],
+      "The URL has been copied to the clipboard": [
+        "ბმული დაკოპირდა ბუფერში"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "ეს ელემენტი ხელმისაწვდომი იქნება თარიღამდე ${ remaining }"
       ],
       "Title": [
         "სათაური"
@@ -2305,6 +2416,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
@@ -2472,6 +2586,9 @@
       "No reused passwords": [
         "განმეორებით გამოყენებული პაროლების გარეშე"
       ],
+      "No shared secure links": [
+        "გაზიარებული დაცული ბმულების გარეშე"
+      ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
       ],
@@ -2504,6 +2621,9 @@
       ],
       "Remove extra password": [
         "დამატებითი პაროლის წაშლა"
+      ],
+      "Remove secure link?": [
+        "წავშალო დაცული ბმული?"
       ],
       "Resolved breaches": [
         "ამოხსნილი გაჟონვები"
