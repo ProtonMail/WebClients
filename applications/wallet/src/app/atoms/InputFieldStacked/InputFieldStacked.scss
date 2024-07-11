@@ -8,6 +8,7 @@
 		--stacked-field-padding-block: var(--space-4);
 		--stacked-field-padding-inline: var(--space-5);
 		--stacked-field-min-block-size: #{rem(80)};
+		--stacked-field-border-color: var(--border-norm);
 
 		.field-two-label {
 			font-size: rem(14);
