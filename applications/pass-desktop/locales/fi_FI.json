@@ -475,6 +475,9 @@
       "Sign out": [
         "Kirjaudu ulos"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Joku jakoi sinulle kohteen sovelluksessa ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Järjestä holvin kohteet"
       ],
@@ -875,6 +878,9 @@
       "The session has expired. Please sign in again.": [
         "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Virhe poistettaessa turvallista linkkiä. Yritä uudelleen muutaman minuutin kuluttua."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
       ],
@@ -919,6 +925,9 @@
       ],
       "Vault name does not match": [
         "Holvin nimi ei täsmää"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Tapahtui virhe sovellusta ${ PASS_SHORT_APP_NAME } käynnistettäessä. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluun saadaksesi apua."
       ],
       "Wrong password": [
         "Väärä salasana"
@@ -1142,6 +1151,9 @@
       ],
       "Auto-lock successfully disabled.": [
         "Automaattilukitus poistettiin käytöstä."
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
       ],
       "Breaches detected": [
         "Tietovuotoja havaittiin"
@@ -1648,6 +1660,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } -sovelluksen käyttäminen vaatii lisäsalasanan. Se toimii ylimääräisenä salasanana ${ BRAND_NAME } -salasanasi lisäksi."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
         "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
@@ -2147,6 +2162,9 @@
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Avoimen lähdekoodin salasanahallinta vaivattomaan suojaukseen."
+      ],
       "Organization": [
         "Organisaatio"
       ],
@@ -2194,6 +2212,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "${ PASS_APP_NAME } antaa sinun tallentaa, jakaa ja automaattikirjautua tileillesi turvallisesti, miljoonien luottamaa päästä päähän-salausta käyttämällä."
       ],
       "Security": [
         "Suojaus"
