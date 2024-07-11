@@ -395,7 +395,7 @@ const SingleSignupContainerV2 = ({
                     PLANS.BUNDLE_PRO,
                     PLANS.BUNDLE_PRO_2024,
                     PLANS.VPN_PASS_BUNDLE,
-                    PLANS.PASS_PLUS,
+                    PLANS.PASS,
                     PLANS.PASS_BUSINESS,
                     PLANS.PASS_PRO,
                 ].some((plan) => planIDs[plan]),

@@ -198,7 +198,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.MONTHLY],
                 },
                 target: {
@@ -209,7 +209,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.MONTHLY],
                 },
                 target: {
@@ -220,7 +220,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.YEARLY],
                 },
                 target: {
@@ -231,7 +231,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.YEARLY],
                 },
                 target: {
@@ -242,7 +242,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.TWO_YEARS],
                 },
                 target: {
@@ -315,7 +315,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.TWO_YEARS],
                 },
                 target: {
@@ -362,7 +362,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {
@@ -399,7 +399,7 @@ export const getEligibility = ({
             },
             {
                 latest: {
-                    plan: PLANS.PASS_PLUS,
+                    plan: PLANS.PASS,
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {

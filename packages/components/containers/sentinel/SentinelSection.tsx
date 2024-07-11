@@ -107,7 +107,7 @@ const SentinelSection = ({ app }: Props) => {
         return (
             <>
                 {/* translator: full sentence with pass plus: "Upgrade to Pass Plus, Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
-                {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS_PLUS]}, ${PLAN_NAMES[PLANS.BUNDLE]}, ${
+                {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS]}, ${PLAN_NAMES[PLANS.BUNDLE]}, ${
                     PLAN_NAMES[PLANS.FAMILY]
                 }, or ${PLAN_NAMES[bundleProPlan]} plan to get access to ${PROTON_SENTINEL_NAME}.`}
             </>

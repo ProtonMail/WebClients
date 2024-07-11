@@ -111,7 +111,7 @@ const HighlightPlanDowngradeModal = ({
                             return c('storage_split: info')
                                 .t`You’ll lose access to ${gb} storage and priority support.`;
                         }
-                        if (shortPlan.plan === PLANS.PASS_PLUS) {
+                        if (shortPlan.plan === PLANS.PASS) {
                             return c('storage_split: info')
                                 .t`You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.`;
                         }

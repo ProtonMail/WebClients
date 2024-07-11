@@ -42,7 +42,7 @@ const {
     MAIL_BUSINESS,
     DRIVE,
     DRIVE_PRO,
-    PASS_PLUS,
+    PASS,
     VPN,
     VPN2024,
     VPN_PASS_BUNDLE,
@@ -78,7 +78,7 @@ const {
 
 type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
 
-export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
+export const getPlan = (subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) => {
     const result = (subscription?.Plans || []).find(
         ({ Services, Type }) => Type === PLAN && (service === undefined ? true : hasBit(Services, service))
     );
@@ -153,7 +153,7 @@ export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(s
 export const hasMailBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_BUSINESS);
 export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE);
 export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_PRO);
-export const hasPassPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_PLUS);
+export const hasPass = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS);
 export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
 export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE);
 export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
@@ -200,7 +200,7 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
     if (hasFree(subscription)) {
         switch (app) {
             case APPS.PROTONPASS:
-                return PLANS.PASS_PLUS;
+                return PLANS.PASS;
             case APPS.PROTONDRIVE:
                 return PLANS.DRIVE;
             case APPS.PROTONVPN_SETTINGS:
@@ -242,7 +242,7 @@ export const canCheckItemPaidChecklist = (subscription: Subscription | undefined
 };
 
 export const canCheckItemGetStarted = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => [VPN, PASS_PLUS, VPN_PASS_BUNDLE].includes(Name as any));
+    return subscription?.Plans?.some(({ Name }) => [VPN, PASS, VPN_PASS_BUNDLE].includes(Name as any));
 };
 
 export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => {
@@ -262,11 +262,11 @@ export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
 };
 
 export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    return [PASS_PLUS, VPN_PASS_BUNDLE, PASS_PRO, PASS_BUSINESS].includes(planName as any);
+    return [PASS, VPN_PASS_BUNDLE, PASS_PRO, PASS_BUSINESS].includes(planName as any);
 };
 
 export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    return [PASS_PLUS, VPN_PASS_BUNDLE].includes(planName as any);
+    return [PASS, VPN_PASS_BUNDLE].includes(planName as any);
 };
 
 export const getIsB2BAudienceFromSubscription = (subscription: Subscription | undefined) => {
@@ -345,7 +345,11 @@ export function getPlanFromIds(planIDs: PlanIDs): PLANS | undefined {
     });
 }
 
-export const isTrial = (subscription: Subscription | undefined, plan?: PLANS): boolean => {
+export const isTrial = (subscription: Subscription | FreeSubscription | undefined, plan?: PLANS): boolean => {
+    if (isFreeSubscription(subscription)) {
+        return false;
+    }
+
     const isTrialV4 =
         subscription?.CouponCode === COUPON_CODES.REFERRAL ||
         subscription?.CouponCode === COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
@@ -809,7 +813,7 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
 export const hasCancellablePlan = (subscription: Subscription | undefined) => {
-    return getHasConsumerVpnPlan(subscription) || hasPassPlus(subscription);
+    return getHasConsumerVpnPlan(subscription) || hasPass(subscription);
 };
 
 /**
