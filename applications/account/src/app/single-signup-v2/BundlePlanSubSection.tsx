@@ -27,7 +27,7 @@ const BundlePlanSubSection = ({
 }) => {
     const logoSize = 8;
     return (
-        <div className={clsx(className, 'bg-weak p-4 rounded-xl w-full')}>
+        <div className={clsx(className, 'card-plan-premium bg-weak p-4 rounded-xl w-full')}>
             <div className="color-weak text-center text-sm mb-4">
                 {c('pass_signup_2023: Info').t`All premium ${BRAND_NAME} services.`}
                 <br />

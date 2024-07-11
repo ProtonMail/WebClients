@@ -104,6 +104,7 @@ import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getPassConfiguration } from './pass/configuration';
+import { getWalletConfiguration } from './wallet/configuration';
 
 const getRecoveryKit = async () => {
     // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
@@ -203,6 +204,7 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
+    const walletEASignupEnabled = useFlag('WalletEASignup');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -315,6 +317,18 @@ const SingleSignupContainerV2 = ({
             result.preSelectedPlan = PLANS.FREE;
         }
 
+        if (toApp === APPS.PROTONWALLET && email && preVerifiedAddressToken) {
+            mode = SignupMode.Invite;
+            localID = -1;
+            invite = {
+                type: 'wallet',
+                data: { invitee: email, preVerifiedAddressToken },
+            };
+            result.preSelectedPlan = PLANS.FREE;
+        } else if (toApp === APPS.PROTONWALLET && walletEASignupEnabled) {
+            result.preSelectedPlan = PLANS.VISIONARY;
+        }
+
         if (result.referrer) {
             mode = SignupMode.MailReferral;
             localID = -1;
@@ -399,6 +413,15 @@ const SingleSignupContainerV2 = ({
                     PLANS.PASS_BUSINESS,
                     PLANS.PASS_PRO,
                 ].some((plan) => planIDs[plan]),
+            });
+        }
+        if (toApp === APPS.PROTONWALLET) {
+            return getWalletConfiguration({
+                audience,
+                isLargeViewport: viewportWidth['>=large'],
+                vpnServersCountData,
+                hideFreePlan: signupParameters.hideFreePlan,
+                mode: signupParameters.mode,
             });
         }
         return getGenericConfiguration({
