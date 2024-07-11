@@ -56,7 +56,7 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan && plan?.Name === PLANS.PASS_PLUS) {
+    if (plan && plan?.Name === PLANS.PASS) {
         const shortPlan = getPassPlan(plan);
         return {
             logo: <PassLogo variant="glyph-only" size={iconSize} />,

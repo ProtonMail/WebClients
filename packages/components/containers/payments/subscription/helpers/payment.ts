@@ -92,7 +92,7 @@ export const getDefaultSelectedProductPlans = ({
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
-        defaultB2CPlan = PLANS.PASS_PLUS;
+        defaultB2CPlan = PLANS.PASS;
     }
     const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, /*PLANS.VPN2024, */ PLANS.DRIVE].find(
         (planName) => plan === planName || planIDs[planName]

@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 const UpgradeBanner = ({ className }: { className?: string }) => {
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
-    const passPlan = plansResult?.plans?.find(({ Name }) => Name === PLANS.PASS_PLUS);
+    const passPlan = plansResult?.plans?.find(({ Name }) => Name === PLANS.PASS);
 
     const shouldUpgrade = user.isFree;
 
@@ -30,7 +30,7 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
                 }
             </span>
 
-            <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?plan=${PLANS.PASS_PLUS}`}>
+            <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?plan=${PLANS.PASS}`}>
                 {c('Action').t`Upgrade`}
             </ButtonLike>
         </Card>

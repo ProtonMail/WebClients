@@ -66,7 +66,7 @@ export const getHasBusinessUpsell = (subscribedPlan: PLANS | ADDON_NAMES | undef
 };
 
 export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    return [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE].some(
+    return [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN, PLANS.PASS, PLANS.VPN_PASS_BUNDLE].some(
         (plan) => plan === subscribedPlan
     );
 };
@@ -143,7 +143,7 @@ const hasSelectedPlan = (plan: Plan | undefined, plans: (PLANS | ADDON_NAMES)[])
 
 const getUnlockPlanName = (toApp: APP_NAMES) => {
     if (toApp === APPS.PROTONPASS) {
-        return PLANS.PASS_PLUS;
+        return PLANS.PASS;
     }
     if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
         return PLANS.MAIL;
@@ -198,7 +198,7 @@ const getUpsell = ({
                     [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(options.cycle);
 
                 const isValidPassBundleFromPass =
-                    currentPlan.Name === PLANS.PASS_PLUS &&
+                    currentPlan.Name === PLANS.PASS &&
                     hasSelectedPassBundle &&
                     !(options.cycle === CYCLE.FIFTEEN && subscription?.Cycle === CYCLE.TWO_YEARS);
 
