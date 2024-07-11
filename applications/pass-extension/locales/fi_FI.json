@@ -113,10 +113,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create a new vault to share": [
@@ -861,6 +861,9 @@
       "The URL is in the list": [
         "URL-osoite on jo listalla"
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Virhe poistettaessa turvallista linkkiä. Yritä uudelleen muutaman minuutin kuluttua."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
       ],
@@ -905,6 +908,9 @@
       ],
       "Vault name does not match": [
         "Holvin nimi ei täsmää"
+      ],
+      "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
+        "Tapahtui virhe sovellusta ${ PASS_SHORT_APP_NAME } käynnistettäessä. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluun saadaksesi apua."
       ],
       "Wrong password": [
         "Väärä salasana"
@@ -1101,6 +1107,9 @@
       ],
       "Autosaved on ${ payload.domain }": [
         "Automaattitallennettiin osoitteesta ${ payload.domain }"
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
       ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu toisen vaiheen todentaja"
@@ -1472,6 +1481,9 @@
       "Please enter your current PIN code to continue": [
         "Jatka syöttämällä nykyinen PIN-koodisi"
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Syötä lisäsalasanasi aloittaaksesi ${ PASS_SHORT_APP_NAME }n käytön."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -verkkosovellukseen"
       ],
@@ -1579,6 +1591,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } -sovelluksen käyttäminen vaatii lisäsalasanan. Se toimii ylimääräisenä salasanana ${ BRAND_NAME } -salasanasi lisäksi."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
