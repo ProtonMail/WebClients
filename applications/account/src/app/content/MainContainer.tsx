@@ -141,9 +141,11 @@ const MainContainer = () => {
     const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
+    const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
+
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const recoveryNotification = useRecoveryNotification(false);
+    const recoveryNotification = useRecoveryNotification(false, false, canDisplayNewSentinelSettings);
 
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
     const app = appFromPathname || getToApp(undefined, user);
