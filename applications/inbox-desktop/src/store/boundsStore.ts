@@ -34,8 +34,8 @@ export const getWindowBounds = () => {
 
     if (windowBounds.x === DEFAULT_WINDOW_BOUNDS.x || windowBounds.y === DEFAULT_WINDOW_BOUNDS.y) {
         const currentDisplay = screen.getDisplayNearestPoint(screen.getCursorScreenPoint());
-        windowBounds.x = currentDisplay.workArea.width / 2 - windowBounds.width / 2;
-        windowBounds.y = currentDisplay.workArea.height / 2 - windowBounds.height / 2;
+        windowBounds.x = Math.round(currentDisplay.workArea.width / 2 - windowBounds.width / 2);
+        windowBounds.y = Math.round(currentDisplay.workArea.height / 2 - windowBounds.height / 2);
     }
 
     return {

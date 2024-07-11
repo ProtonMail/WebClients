@@ -70,6 +70,31 @@ describe("boundStore", () => {
                 maximized: false,
             });
         });
+
+        it("rounds to the nearest integer when centering the window", () => {
+            (screen.getDisplayNearestPoint as jest.MockedFn<typeof screen.getDisplayNearestPoint>).mockReturnValue({
+                workArea: {
+                    width: 1921,
+                    height: 1081,
+                },
+            } as Display);
+
+            MockedStore.INSTANCE.get.mockReturnValue({
+                x: -1,
+                y: -1,
+                width: 1000,
+                height: 500,
+                maximized: false,
+            });
+
+            expect(getWindowBounds()).toEqual({
+                x: 461,
+                y: 291,
+                width: 1000,
+                height: 500,
+                maximized: false,
+            });
+        });
     });
 
     describe("saveWindowBounds", () => {
