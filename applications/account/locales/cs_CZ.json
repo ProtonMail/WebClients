@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "Refresh the page": [
-        "Obnovit stránku"
-      ],
       "refresh the page": [
         "obnovit stránku"
+      ],
+      "Refresh the page": [
+        "Obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -1221,12 +1221,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } vlastní doména",
-        "${ domains } vlastní domény",
-        "${ domains } vlastních domén",
-        "${ domains } vlastních domén"
-      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servery",
@@ -1405,9 +1399,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Přizpůsobit tarif"
-      ],
       "New": [
         "Nový"
       ],
@@ -1549,14 +1540,6 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1578,6 +1561,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6846,11 +6837,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -7290,9 +7281,6 @@
       "Invite for organization created": [
         "Pozvánka pro organizaci vytvořena"
       ],
-      "Invite for User deleted": [
-        "Pozvánka pro uživatele smazána"
-      ],
       "Invite rejected": [
         "Pozvánka odmítnuta"
       ],
@@ -7326,9 +7314,6 @@
       "Item Deleted": [
         "Položka odstraněna"
       ],
-      "Item deleted in vault": [
-        "Položka v trezoru smazána"
-      ],
       "Item flags changed in vault": [
         "Příznaky položky změněny v trezoru"
       ],
@@ -7343,9 +7328,6 @@
       ],
       "Item Trashed": [
         "Položka přesunuta do koše"
-      ],
-      "Item trashed in vault": [
-        "Položka v trezoru přesunuta do koše"
       ],
       "Item Untrashed": [
         "Položka přesunuta z koše"
@@ -8406,9 +8388,6 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "User invited to organization": [
-        "Uživatel byl pozván do organizace"
-      ],
       "username": [
         "uživatelské jméno"
       ],
@@ -8612,9 +8591,6 @@
       ],
       "Writing assistant": [
         "Asistent psaní"
-      ],
-      "Writing assistant add-on": [
-        "Doplněk asistenta psaní"
       ],
       "Yearly": [
         "Ročně"
@@ -10740,9 +10716,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Přidat asistenta psaní"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Všechny firemní aplikace ${ BRAND_NAME } a prémiové funkce pro ochranu celé vaší firmy"
       ],
@@ -11198,23 +11171,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -11242,6 +11198,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -15823,10 +15796,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -16716,9 +16689,6 @@
       ],
       "WireGuard configuration": [
         "Konfigurace WireGuard"
-      ],
-      "Writing assistant": [
-        "Asistent psaní"
       ],
       "You have no open alerts": [
         "Nemáte žádná otevřená upozornění"

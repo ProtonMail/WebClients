@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "Refresh the page": [
-        "Oppdater siden"
-      ],
       "refresh the page": [
         "oppdater siden"
+      ],
+      "Refresh the page": [
+        "Oppdater siden"
       ],
       "Reload": [
         "Last inn på nytt"
@@ -1221,9 +1221,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } egendefinert domene",
-        "${ domains } egendefinerte domener"
+      "${ domains } additional custom domain": [
+        "${ domains } ekstra egendefinert domene",
+        "${ domains } ekstra egendefinerte domener"
       ],
       "${ ips } server": [
         "${ ips } tjener",
@@ -1397,8 +1397,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Tilpass plan"
+      "Buy now": [
+        "Kjøp nå"
       ],
       "New": [
         "Ny"
@@ -1541,14 +1541,6 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1570,6 +1562,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5600,6 +5600,12 @@
         "Tjenester"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmer"
+      ]
+    },
     "Header": {
       "Access": [
         "Tilgang"
@@ -6140,6 +6146,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } satte en import på pause fordi kontoen din begynner å få lite plass. Du kan:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } vil forsøke å gjenoppta importen så snart din e-posttilbyder nullstiller din kontos ${ bandwidthLimitLink }. Du trenger ikke å foreta deg noe. Hvis du avbryter importen, vil du ikke være i stand til å gjenoppta den og du må begynne på nytt."
       ],
@@ -6244,6 +6253,18 @@
       "${ userFound } user found": [
         "${ userFound } bruker funnet",
         "${ userFound } brukere funnet"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } opprettet"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } slettet"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } delt med e-post"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } oppdatert"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } kreves for tilknytning på landnivå."
@@ -6578,6 +6599,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk organisasjonens merkeidentitet og skap en mer konsekvent nettopplevelse for brukerne."
       ],
+      "Breach Custom Email Added": [
+        "Brudd tilpasset e-post lagt til"
+      ],
+      "Breach Custom Email Deleted": [
+        "Brudd tilpasset e-post slettet"
+      ],
+      "Breach Custom Email Validated": [
+        "Brudd tilpasset e-post validert"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Som standard kan organisasjonsmedlemmer bare eksportere hvelv der de er eiere. Hvis dette alternativet er aktivert, kan de ikke eksportere noe data"
       ],
@@ -6697,8 +6727,17 @@
       "Custom daily": [
         "Tilpasset daglig"
       ],
+      "Custom email added": [
+        "Tilpasset e-postadresse lagt til"
+      ],
+      "Custom email deleted": [
+        "Tilpasset e-post slettet"
+      ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
+      ],
+      "Custom email validated": [
+        "Tilpasset e-post validert"
       ],
       "Custom monthly": [
         "Tilpasset månedlig"
@@ -6718,11 +6757,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -6736,6 +6775,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } mellomtjener",
         "Sletter ${ deletedServerCount } mellomtjenere"
+      ],
+      "Discount": [
+        "Rabatt"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -7150,14 +7192,14 @@
       "Invite Deleted": [
         "Invitasjon slettet"
       ],
+      "Invite for new user deleted": [
+        "Invitasjon for ny bruker slettet"
+      ],
       "Invite for organization accepted": [
         "Invitasjon til organisasjon akseptert"
       ],
       "Invite for organization created": [
         "Invitasjon til organisasjon opprettet"
-      ],
-      "Invite for User deleted": [
-        "Invitasjon for bruker slettet"
       ],
       "Invite rejected": [
         "Invitasjon avslått"
@@ -7175,6 +7217,9 @@
       "Item Autofilled": [
         "Element autofylt"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Element automatisk utfylt i ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Element automatisk utfylt i hvelv"
       ],
@@ -7184,17 +7229,35 @@
       "Item Created": [
         "Element opprettet"
       ],
+      "Item created in ${ vaultLink }": [
+        "Element opprettet i ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Element opprettet i hvelv"
       ],
       "Item Deleted": [
         "Element slettet"
       ],
-      "Item deleted in vault": [
-        "Element slettet i hvelv"
+      "Item deleted from ${ vaultLink }": [
+        "Element slettet fra ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Element slettet fra hvelv"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Elementflagg endret i ${ vaultLink }"
       ],
       "Item flags changed in vault": [
         "Elementflagg endret i hvelv"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Element i ${ vaultLink } flyttet til papirkurv"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Element i ${ vaultLink } flyttet fra papirkurv"
+      ],
+      "Item in vault trashed": [
+        "Element i hvelv flyttet til papirkurv"
       ],
       "Item in vault untrashed": [
         "Element flyttet fra papirkurv i hvelv"
@@ -7202,20 +7265,23 @@
       "Item Read": [
         "Element lest"
       ],
+      "Item read in ${ vaultLink }": [
+        "Element lest i ${ vaultLink }"
+      ],
       "Item read in vault": [
         "Element lest i hvelv"
       ],
       "Item Trashed": [
         "Element flyttet til papirkurv"
       ],
-      "Item trashed in vault": [
-        "Element slettet til papirkurv i hvelv"
-      ],
       "Item Untrashed": [
         "Element fjernet fra papirkurv"
       ],
       "Item Updated": [
         "Element oppdatert"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Element oppdatert i ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Element oppdatert i hvelv"
@@ -7384,6 +7450,9 @@
       ],
       "New User Invite Deleted": [
         "Ny brukerinvitasjon slettet"
+      ],
+      "New user invited to organization": [
+        "Ny bruker invitert til organisasjon"
       ],
       "No account keys exist": [
         "Ingen kontonøkler eksisterer"
@@ -7786,6 +7855,12 @@
       ],
       "Share Updated": [
         "Delt ressurs oppdatert"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Delt ${ vaultLink } slettet"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Delt ${ vaultLink } oppdatert"
       ],
       "Shared vault deleted": [
         "Delt hvelv slettet"
@@ -8259,9 +8334,6 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "User invited to organization": [
-        "Bruker invitert til organisasjon"
-      ],
       "username": [
         "brukernavn"
       ],
@@ -8279,6 +8351,9 @@
       ],
       "Vault Deleted": [
         "Hvelv slettet"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Hvelvet enten slettet eller krever tilgangstillatelser"
       ],
       "Vault shared with email": [
         "Hvelv delt med e-post"
@@ -8451,6 +8526,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en kryptert ${ BRAND_NAME }-adresse, kan du bruke alle ${ BRAND_NAME }-tjenester"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Med brukergrupper kan du enkelt sende e-post, dele data eller endre innstillingene for bestemte brukergrupper samtidig."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med din gjeldende plan, kan du bare motta meldinger med din @pm.me-adresse. Oppgrader for å sende meldinger og opprette tilleggsadresser ved å bruke @pm.me."
       ],
@@ -8465,9 +8543,6 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
-      ],
-      "Writing assistant add-on": [
-        "Skriveassistent-tillegg"
       ],
       "Yearly": [
         "Årlig"
@@ -10440,6 +10515,9 @@
       "Upgrade your plan": [
         "Oppgrader planen din"
       ],
+      "Vault": [
+        "Hvelv"
+      ],
       "View guide": [
         "Vis veiledning"
       ],
@@ -10551,8 +10629,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Legg til skriveassistent"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Legg til ${ BRAND_NAME } Scribe skriveassistent"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Alle ${ BRAND_NAME } forretningsapper og premiumfunksjoner for å beskytte hele virksomheten din"
@@ -10999,23 +11077,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11043,6 +11104,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -11428,6 +11506,9 @@
       ],
       "Unlimited labels": [
         "Ubegrenset antall etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Ubegrenset antall pålogginger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrenset antall pålogginger, notater og kredittkort"
@@ -15289,6 +15370,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15466,10 +15550,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -15892,6 +15976,9 @@
       ],
       "Import failed": [
         "Importen mislyktes"
+      ],
+      "Import groups": [
+        "Importer grupper"
       ],
       "Import key": [
         "Importer nøkkel"
@@ -16352,9 +16439,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard-konfigurering"
-      ],
-      "Writing assistant": [
-        "Skriveassistent"
       ],
       "You have no open alerts": [
         "Du har ingen åpne varsler"

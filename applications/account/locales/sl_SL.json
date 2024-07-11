@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -757,11 +757,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "Refresh the page": [
-        "Osveži stran"
-      ],
       "refresh the page": [
         "Osvežite stran"
+      ],
+      "Refresh the page": [
+        "Osveži stran"
       ],
       "Reload": [
         "Osveži"
@@ -1218,12 +1218,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domena po meri",
-        "${ domains } domeni po meri",
-        "${ domains } domene po meri",
-        "${ domains } domen po meri"
-      ],
       "${ ips } server": [
         "${ ips } strežnik",
         "${ ips } strežnika",
@@ -1528,14 +1522,6 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1557,6 +1543,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6795,11 +6789,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "dedicated servers": [
-        "namenski strežniki"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -8393,9 +8387,6 @@
       ],
       "Writing assistant": [
         "Pomočnik pri pisanju"
-      ],
-      "Writing assistant add-on": [
-        "Dodatek za pomočnika pri pisanju"
       ],
       "Yearly": [
         "Letno"
@@ -10459,9 +10450,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Dodajte pomočnika za pisanje"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Vse ${ BRAND_NAME } poslovne aplikacije in premijske funkcije za zaščito celotnega podjetja"
       ],
@@ -10896,23 +10884,6 @@
         "Srednja hitrost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
@@ -10940,6 +10911,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadgradi na ${ upsellPlanHumanSize }."
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -15301,10 +15289,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -16176,9 +16164,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard nastavitev"
-      ],
-      "Writing assistant": [
-        "Pomočnik pri pisanju"
       ],
       "You have no open alerts": [
         "Nimate odprtih opozoril"
