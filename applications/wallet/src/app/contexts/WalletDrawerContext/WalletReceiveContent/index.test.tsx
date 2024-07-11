@@ -17,6 +17,8 @@ describe('WalletReceiveContent', () => {
     const [testWallet] = apiWalletsData;
     const [testAccount] = testWallet.WalletAccounts;
 
+    const copyAddressButtonText = 'Copy Bitcoin address';
+
     beforeEach(() => {
         mockUseBitcoinBlockchainContext();
         mockUseWalletAccountExchangeRate(null);
@@ -55,7 +57,7 @@ describe('WalletReceiveContent', () => {
         });
 
         it('should disable actions', () => {
-            const copyButton = screen.getByText('Copy address');
+            const copyButton = screen.getByText(copyAddressButtonText);
             expect(copyButton).toBeDisabled();
 
             const buttonGenNew = screen.getByText('Generate new address');
@@ -83,7 +85,7 @@ describe('WalletReceiveContent', () => {
         });
 
         it('should disable actions', () => {
-            const copyButton = screen.getByText('Copy address');
+            const copyButton = screen.getByText(copyAddressButtonText);
             expect(copyButton).toBeDisabled();
 
             const buttonGenNew = screen.getByText('Generate new address');

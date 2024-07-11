@@ -84,7 +84,7 @@ export const WalletDrawerContextProvider = ({ children }: Props) => {
                 <Drawer
                     open={isDrawerOpen}
                     onClose={closeDrawer}
-                    style={{ '--w-custom': '24rem' }}
+                    style={{ '--w-custom': '24.125rem' }}
                     className={clsx('overflow-auto', drawerData.data.theme)}
                     bg={style?.bg}
                 >
