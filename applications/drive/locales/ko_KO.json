@@ -930,9 +930,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "사용자 지정 이메일 도메인 ${ domains }개"
-      ],
       "${ ips } server": [
         "${ ips }개 서버"
       ],
@@ -5091,9 +5088,6 @@
       "Writing assistant": [
         "글쓰기 도우미"
       ],
-      "Writing assistant add-on": [
-        "글쓰기 도우미 애드온"
-      ],
       "Yes": [
         "예"
       ],
@@ -6075,9 +6069,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "글쓰기 도우미 추가"
-      ],
       "for ${ price }": [
         "${ price }"
       ]
@@ -6737,6 +6728,9 @@
       ],
       "Unlimited labels": [
         "무제한 라벨"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "무제한 로그인, 메모 및 신용 카드"
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
@@ -7514,8 +7508,17 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "안전한 금고 및 링크 공유"
+      ],
       "Secure vault sharing": [
         "안전한 금고 공유"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "안전한 링크 공유 (${ n }개 금고)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "안전한 링크 공유 (${ n }개 금고) 및 링크 공유"
       ]
     },
     "Payment method option": {
