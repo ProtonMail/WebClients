@@ -10,16 +10,20 @@ import './GroupItem.scss';
 interface Props {
     active: boolean;
     groupData: Group;
+    onClick?: () => void;
 }
 
-const GroupItem = ({ active, groupData }: Props) => {
-    const { MemberCount, Address, Name } = groupData;
-
+const GroupItem = ({ active, groupData: { MemberCount, Address, Name }, onClick }: Props) => {
     const memberCount = MemberCount ?? 0;
 
     return (
         <div className="relative">
-            <Button className={clsx(['interactive-pseudo w-full', active && 'is-active'])} color="weak" shape="ghost">
+            <Button
+                className={clsx(['interactive-pseudo w-full', active && 'is-active'])}
+                color="weak"
+                shape="ghost"
+                onClick={onClick}
+            >
                 <div className="text-left flex items-start">
                     <div
                         className="mr-2 mb-2 rounded flex w-custom h-custom group-item-avatar"
