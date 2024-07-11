@@ -91,6 +91,10 @@
 		}
 	}
 
+	&-header-title h1 {
+		font-weight: var(--font-weight-bold);
+	}
+
 	&-dialog {
 		--size: #{rem(480)}; // medium
 		--margin: #{rem(32)};
