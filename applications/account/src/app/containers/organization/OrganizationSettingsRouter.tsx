@@ -18,6 +18,7 @@ import {
     SsoPage,
     SubscriptionModalProvider,
     UsersAndAddressesSection,
+    VPNEvents,
     useOrganization,
 } from '@proton/components';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
@@ -41,7 +42,7 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, groups },
+        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, connectionEvents, groups },
     } = organizationAppRoutes;
 
     if (!organizationAppRoutes.available) {
@@ -126,6 +127,13 @@ const OrganizationSettingsRouter = ({
                             <SsoPage />
                         </SubscriptionModalProvider>
                     </PrivateMainSettingsAreaBase>
+                </Route>
+            )}
+            {getIsSectionAvailable(connectionEvents) && (
+                <Route path={getSectionPath(path, connectionEvents)}>
+                    <PrivateMainSettingsArea config={connectionEvents}>
+                        <VPNEvents />
+                    </PrivateMainSettingsArea>
                 </Route>
             )}
             {getIsSectionAvailable(groups) && (

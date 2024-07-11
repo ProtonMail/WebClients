@@ -11,15 +11,16 @@ import { getPassLogs } from '@proton/shared/lib/api/b2blogs';
 import { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import { GenericError, SettingsSectionWide } from '../..';
-import { PassEvent } from '../..';
-import { usePaginationAsync } from '../..';
-import { toCamelCase } from '../credentialLeak/helpers';
-import FilterAndSortEventsBlock from './FilterAndSortEventBlock';
+import { GenericError, SettingsSectionWide } from '../../..';
+import { PassEvent } from '../../..';
+import { usePaginationAsync } from '../../..';
+import { toCamelCase } from '../../credentialLeak/helpers';
+import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';
 import PassEventsTable from './PassEventsTable';
 import {
     ALL_EVENTS_DEFAULT,
     PAGINATION_LIMIT,
+    getEventNameText,
     getLocalTimeStringFromDate,
     getSearchType,
     handlePassEventsDownload,
@@ -141,6 +142,10 @@ const PassEvents = () => {
         reset();
     };
 
+    const getPassEventTypeText = (eventType: string) => {
+        return getEventNameText(eventType);
+    };
+
     return (
         <SettingsSectionWide>
             <FilterAndSortEventsBlock
@@ -152,6 +157,7 @@ const PassEvents = () => {
                 handleEndDateChange={handleEndDateChange}
                 eventTypesList={uniquePassEventsArray || []}
                 handleSearchSubmit={handleSearchSubmit}
+                getEventTypeText={getPassEventTypeText}
             />
             <Block className="flex flex-nowrap flex-row-reverse items-end items-center gap-2">
                 <Button
@@ -165,7 +171,7 @@ const PassEvents = () => {
                 <Button
                     shape="outline"
                     onClick={handleResetFilter}
-                    disabled={filter == initialFilter}
+                    disabled={Object.keys(query).length === 0}
                     title={c('Action').t`Clear filter`}
                 >
                     {c('Action').t`Clear filters`}

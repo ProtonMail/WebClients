@@ -49,6 +49,7 @@ import {
     UserDropdown,
     UsernameSection,
     UsersAndAddressesSection,
+    VPNEvents,
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
@@ -102,12 +103,15 @@ const MainContainer: FunctionComponent = () => {
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
     const isNewCancellationFlowExtended = useFlag('ExtendCancellationProcess');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
+    const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
+
     const routes = getRoutes({
         user,
         subscription,
         organization,
         isNewCancellationFlowExtended,
         isUserGroupsFeatureEnabled,
+        canDisplayB2BLogsVPN,
     });
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
@@ -346,6 +350,13 @@ const MainContainer: FunctionComponent = () => {
                                             <SsoPage />
                                         </SubscriptionModalProvider>
                                     </PrivateMainSettingsAreaBase>
+                                </Route>
+                            )}
+                            {getIsSectionAvailable(routes.connectionEvents) && (
+                                <Route path={routes.connectionEvents.to}>
+                                    <PrivateMainSettingsArea config={routes.connectionEvents}>
+                                        <VPNEvents />
+                                    </PrivateMainSettingsArea>
                                 </Route>
                             )}
                             <Route path={`${CANCEL_ROUTE}`}>
