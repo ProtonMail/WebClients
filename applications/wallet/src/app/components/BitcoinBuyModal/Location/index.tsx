@@ -52,9 +52,10 @@ export const Location = ({ onConfirm }: Props) => {
             <div className="w-full px-8">
                 <Button
                     fullWidth
-                    shadow
+                    size="large"
                     shape="solid"
                     color="norm"
+                    shadow
                     disabled={!country}
                     onClick={() => {
                         if (country) {

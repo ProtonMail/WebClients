@@ -122,7 +122,7 @@ export const EmailListItem = ({
         return (
             <button
                 onClick={onClick}
-                className="email-select-button flex flex-row w-full flex-nowrap items-center grow p-2 rounded-lg"
+                className="dropdown-item-button email-select-button flex flex-row w-full flex-nowrap items-center grow p-2 rounded-lg"
             >
                 {inner}
             </button>
@@ -393,10 +393,10 @@ export const EmailOrBitcoinAddressInput = ({
                         inputRef.current?.focus();
                     }}
                 >
-                    <ul className="unstyled m-0 w-full p-2">
+                    <ul className="unstyled m-0 w-full">
                         {filteredOptions.map(({ chunks, option }, index) => {
                             return (
-                                <li key={`${option.key}-${index}`} title={option.label} className="flex">
+                                <li key={`${option.key}-${index}`} title={option.label} className="flex dropdown-item">
                                     <EmailListItem
                                         index={index}
                                         chunks={chunks}

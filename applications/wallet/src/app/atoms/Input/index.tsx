@@ -28,9 +28,9 @@ export const Input = forwardRef(
                 isGroupElement={isGroupElement}
                 isBigger
                 classname={containerClassName}
+                ref={ref}
             >
                 <CoreInput
-                    ref={ref}
                     autoComplete="off"
                     assistContainerClassName="empty:hidden"
                     inputClassName="p-0 rounded-none"
