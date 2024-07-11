@@ -82,7 +82,7 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                         />
                     </div>
 
-                    <CoreButton shape="ghost" className="ml-2" aria-pressed={showBalance}>
+                    <CoreButton shape="ghost" pill icon className="ml-2" aria-pressed={showBalance}>
                         <Icon
                             name={showBalance ? 'eye-slash' : 'eye'}
                             alt={c('Action').t`Show balance`}
@@ -98,7 +98,9 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                             syncingData?.syncing && !totalBalance && 'skeleton-loader'
                         )}
                     >
-                        {convertAmountStr(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                        <span className={clsx(!showBalance && 'blurred')}>
+                            {convertAmountStr(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                        </span>
                         {getLabelByUnit(settings.BitcoinUnit)}
                     </div>
                 )}

@@ -225,11 +225,12 @@ export const AmountInput = ({
                 })}
             </div>
 
-            <div className="px-10">
+            <div className="px-10 mt-6">
                 <Button
                     color="norm"
                     shape="solid"
-                    className="mt-6"
+                    size="large"
+                    shadow
                     fullWidth
                     onClick={async () => {
                         if (!(await checkCreatePsbt())) {

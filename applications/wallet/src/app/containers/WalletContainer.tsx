@@ -111,19 +111,20 @@ export const WalletContainer = () => {
                                 <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
                             </CoreButton>
                         </div>
-
-                        <Button
-                            size="small"
-                            shape="ghost"
-                            color="norm"
-                            className="my-2"
-                            onClick={() => {
-                                openDrawer({ kind: 'discover', wallet, theme });
-                            }}
-                        >
-                            {c('Wallet header').t`Secure your wallet`}
-                            <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
-                        </Button>
+                        <div className="ui-standard">
+                            <Button
+                                size="small"
+                                shape="ghost"
+                                color="norm"
+                                className="my-2 button-lighter"
+                                onClick={() => {
+                                    openDrawer({ kind: 'discover', wallet, theme });
+                                }}
+                            >
+                                {c('Wallet header').t`Secure your wallet`}
+                                <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
+                            </Button>
+                        </div>
                     </div>
 
                     {/* Balance */}

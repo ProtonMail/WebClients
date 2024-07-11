@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 .wallet-button {
 	font-weight: var(--font-weight-semibold);
 }
@@ -17,12 +19,6 @@
 	--button-default-background-color: var(--interaction-weak-minor-1);
 	--button-hover-background-color: var(--interaction-weak-major-1);
 	--button-active-background-color: var(--interaction-weak-major-2);
-}
-
-.wallet-button.button-ghost-norm {
-	--button-default-background-color: var(--background-weak);
-	--button-hover-background-color: var(--background-weak);
-	--button-active-background-color: var(--background-weak);
 }
 
 // Weak
@@ -55,18 +51,33 @@
 // Dark
 
 .button-darker {
-	--button-default-background-color: var(--primary-contrast) !important;
-	--button-hover-background-color: var(--interaction-weak-contrast) !important;
-	--button-active-background-color: var(--interaction-weak-contrast) !important;
-	--button-default-text-color: var(--text-invert) !important;
-	--button-hover-text-color: var(--text-invert) !important;
-	--button-active-text-color: var(--text-invert) !important;
+	&#{&} {
+		--button-default-background-color: var(--button-darker-default-background-color);
+		--button-hover-background-color: var(--button-darker-hover-background-color);
+		--button-active-background-color: var(button-darker-active-background-color);
+		--button-default-text-color: var(--text-invert);
+		--button-hover-text-color: var(--text-invert);
+		--button-active-text-color: var(--text-invert);
+	}
+}
+
+// Light
+
+.button-lighter {
+	&#{&} {
+		--button-default-background-color: var(--button-lighter-default-background-color);
+		--button-hover-background-color: var(--button-lighter-hover-background-color);
+		--button-active-background-color: var(--button-lighter-active-background-color);
+		--button-default-text-color: var(--primary);
+		--button-hover-text-color: var(--primary);
+		--button-active-text-color: var(--primary);
+	}
 }
 
 // Shadow
 
 .wallet-button.shadow {
-	box-shadow: 0 20px 30px 0 var(--interaction-weak-major-2);
+	box-shadow: 0 rem(20) rem(30) 0 var(--interaction-weak-major-2);
 }
 
 // Sizes
@@ -77,8 +88,8 @@
 }
 
 .wallet-button.button-medium {
-	padding-block: 0.75rem;
-	padding-inline: 2rem;
+	padding-block: rem(12);
+	padding-inline: rem(10);
 }
 
 .wallet-button.button-small {

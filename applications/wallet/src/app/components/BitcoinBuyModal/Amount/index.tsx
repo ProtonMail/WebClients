@@ -405,14 +405,18 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                 <div className="w-full px-8  my-5">
                     <Button
                         fullWidth
-                        shadow
                         shape="solid"
                         color="norm"
+                        size="large"
                         disabled={!selectedQuote || loadingQuotes}
                         onClick={() => {
                             setDisclaimerModal(true);
                         }}
-                    >{c('bitcoin buy').t`Buy with`}</Button>
+                    >
+                        {!!selectedPaymentProvider
+                            ? c('bitcoin buy').t`Continue with ${selectedPaymentProvider}`
+                            : c('bitcoin buy').t`Continue`}
+                    </Button>
                 </div>
 
                 <div className="color-hint text-sm">{c('bitcoin buy')
