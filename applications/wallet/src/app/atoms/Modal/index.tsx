@@ -32,7 +32,7 @@ export const Modal = ({
             {header ?? (
                 <ModalTwoHeader
                     title={title}
-                    titleClassName={clsx('text-4xl mx-auto text-center', titleClassName)}
+                    titleClassName={clsx('mx-auto text-center', titleClassName)}
                     subline={subline && <p className="text-center">{subline}</p>}
                     closeButtonProps={{ shape: 'solid', className: 'shrink-0 rounded-full bg-norm' }}
                     hasClose={hasClose}
