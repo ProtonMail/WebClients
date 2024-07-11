@@ -170,6 +170,15 @@ const config: ThemeConfig[] = [
             },
         ],
     },
+    {
+        output: './themes/dist/storefront-wallet.theme.css',
+        files: [
+            {
+                path: './themes/src/storefront-wallet/standard-base.css',
+                type: 'light',
+            },
+        ],
+    },
 ];
 
 export default config;

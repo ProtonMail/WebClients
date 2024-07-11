@@ -442,6 +442,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getVPNConnections(FREE_VPN_CONNECTIONS),
                 [PLANS.VPN_PRO]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.VPN_BUSINESS]: getVPNConnections(VPN_CONNECTIONS),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -463,6 +464,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getVPNConnections(1),
                 [PLANS.VPN_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
                 [PLANS.VPN_BUSINESS]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -484,6 +486,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getVPNConnections(1),
                 [PLANS.VPN_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
                 [PLANS.VPN_BUSINESS]: getVPNConnectionsB2B(VPN_CONNECTIONS),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -504,6 +507,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getCountries(freeServers),
                 [PLANS.VPN_PRO]: getCountries(plusServers),
                 [PLANS.VPN_BUSINESS]: getCountries(plusServers),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -524,6 +528,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getVPNSpeed('medium'),
                 [PLANS.VPN_PRO]: getVPNSpeed('highest'),
                 [PLANS.VPN_BUSINESS]: getVPNSpeed('highest'),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -543,8 +548,8 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.BUNDLE_PRO]: getNetShield(true),
                 [PLANS.BUNDLE_PRO_2024]: getNetShield(true),
                 [PLANS.VPN_PRO]: getNetShield(true),
-
                 [PLANS.VPN_BUSINESS]: getNetShield(true),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -565,6 +570,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getStreaming(false),
                 [PLANS.VPN_PRO]: getStreaming(true),
                 [PLANS.VPN_BUSINESS]: getStreaming(true),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -585,6 +591,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getP2P(false),
                 [PLANS.VPN_PRO]: getP2P(true),
                 [PLANS.VPN_BUSINESS]: getP2P(true),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -605,6 +612,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getDoubleHop(false),
                 [PLANS.VPN_PRO]: getDoubleHop(true, true),
                 [PLANS.VPN_BUSINESS]: getDoubleHop(true, true),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -625,6 +633,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getSecureCore(false),
                 [PLANS.VPN_PRO]: getSecureCore(true),
                 [PLANS.VPN_BUSINESS]: getSecureCore(true),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -645,6 +654,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getTor(false),
                 [PLANS.VPN_PRO]: getTor(true),
                 [PLANS.VPN_BUSINESS]: getTor(true),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -665,6 +675,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getNoLogs(),
                 [PLANS.VPN_PRO]: getNoLogs(),
                 [PLANS.VPN_BUSINESS]: getNoLogs(),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -685,6 +696,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getBandwidth(),
                 [PLANS.VPN_PRO]: getBandwidth(),
                 [PLANS.VPN_BUSINESS]: getBandwidth(),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -705,6 +717,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getDNSLeak(),
                 [PLANS.VPN_PRO]: getDNSLeak(),
                 [PLANS.VPN_BUSINESS]: getDNSLeak(),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -725,6 +738,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getKillSwitch(),
                 [PLANS.VPN_PRO]: getKillSwitch(),
                 [PLANS.VPN_BUSINESS]: getKillSwitch(),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -745,6 +759,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getEncryption(),
                 [PLANS.VPN_PRO]: getEncryption(),
                 [PLANS.VPN_BUSINESS]: getEncryption(),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -765,6 +780,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getRouterSupport(),
                 [PLANS.VPN_PRO]: getRouterSupport(),
                 [PLANS.VPN_BUSINESS]: getRouterSupport(),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -785,6 +801,7 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
                 [PLANS.PASS_BUSINESS]: getSplitTunnel(false),
                 [PLANS.VPN_PRO]: getSplitTunnel(true),
                 [PLANS.VPN_BUSINESS]: getSplitTunnel(true),
+                [PLANS.WALLET]: null,
             },
         },
     ];

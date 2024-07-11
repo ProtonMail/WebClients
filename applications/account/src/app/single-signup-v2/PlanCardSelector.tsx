@@ -44,8 +44,8 @@ import './PlanCardSelector.scss';
 export const planCardFeatureProps = {
     odd: false,
     margin: false,
-    iconSize: 4,
     tooltip: false,
+    iconSize: 4,
     className: 'text-sm gap-1',
     itemClassName: 'color-weak',
 } as const;

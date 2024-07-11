@@ -1,0 +1,66 @@
+:root,
+.ui-standard {
+    --primary: #767DFF;
+
+    --signal-danger: #FF6464;
+
+    --signal-warning: #FF7A00;
+
+    --signal-success: #6AC06B;
+
+    --signal-info: #767DFF;
+
+    --interaction-norm: #767DFF;
+
+    --interaction-weak: #E2E2E2;
+
+    --text-norm: #191C32;
+    --text-weak: #535964;
+    --text-hint: #9395A4;
+    --text-disabled: #CED0DE;
+    --text-invert: white;
+
+    --field-norm: #CED0DE;
+    --field-hover: #9395A4;
+    --field-disabled: #E2E2E2;
+
+    --focus-outline: #767DFF;
+    --focus-ring: rgb(117 124 255 / 0.2);
+
+    --border-norm: #E2E2E2;
+    --border-weak: #E6E8EC;
+
+    --background-norm: white;
+    --background-weak: #F3F5F6;
+    --background-strong: #E6E8EC;
+    --background-invert: #191927;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(200 209 214 / 0.2);
+    --interaction-default-active: rgb(200 209 214 / 0.35);
+
+    --shadow-primary-color: 118 125 255;
+    --shadow-norm-opacity: 0.1;
+    --shadow-raised-opacity: 0.1;
+    --shadow-lifted-opacity: 0.16;
+
+    --backdrop-norm: rgb(0 10 77 / 0.32);
+
+    /* Optional colors */
+
+    --optional-scrollbar-thumb-color: #d1cfcd;
+
+    /* Reset because prominent part overrides those colors */
+    --optional-link-norm: #5B63F6;
+    --optional-link-hover: #4449E4;
+    --optional-link-active: #3E3C88;
+    --optional-mini-calendar-today-color: initial;
+    --optional-logo-text-proton-color: initial;
+    --optional-logo-text-product-color: initial;
+
+    --optional-promotion-text-color: #15006F;
+	--optional-promotion-text-weak: #50409b;
+	--optional-promotion-interaction-hover: rgb(109 74 255 / 0.08);
+    --optional-promotion-background-start: rgb(109 74 255 / 0.15);
+    --optional-promotion-background-end: rgb(70 26 255 / 0.04);
+}
