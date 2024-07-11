@@ -18,8 +18,10 @@ import { DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
     confirmPasswordValidator,
     emailValidator,
@@ -201,7 +203,8 @@ const getPasswordError = ({
 interface Props {
     accountStepDetailsRef: MutableRefObject<AccountStepDetailsRef | undefined>;
     disableChange: boolean;
-    disableEmail?: boolean;
+    emailDisabled?: boolean;
+    emailReadOnly?: boolean;
     onSubmit?: () => void;
     api: Api;
     model: SignupModelV2;
@@ -210,7 +213,7 @@ interface Props {
     loading: boolean;
     measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
-    footer: ({ details, email }: { details: AccountDetails; email: string }) => ReactNode;
+    footer: (data: { emailAlreadyUsed: boolean; details: AccountDetails; email: string }) => ReactNode;
     defaultEmail?: string;
     signupTypes: SignupType[];
     domains: string[];
@@ -222,7 +225,8 @@ const AccountStepDetails = ({
     loading,
     accountStepDetailsRef,
     disableChange,
-    disableEmail,
+    emailDisabled,
+    emailReadOnly,
     footer,
     api,
     model,
@@ -606,6 +610,11 @@ const AccountStepDetails = ({
         }
     };
 
+    const emailAlreadyUsed =
+        emailError &&
+        emailAsyncValidationState.error &&
+        getApiError(emailAsyncValidationState.error)?.code === API_CUSTOM_ERROR_CODES.ALREADY_USED;
+
     return (
         <>
             {loading && (
@@ -680,7 +689,8 @@ const AccountStepDetails = ({
                                         }
                                     })()}
                                     disableChange={disableChange}
-                                    disabled={disableEmail}
+                                    disabled={emailDisabled}
+                                    readOnly={emailReadOnly}
                                     dense={dense ? !emailError : undefined}
                                     rootClassName={dense ? (!emailError ? 'pb-2' : undefined) : undefined}
                                     value={details.email}
@@ -888,6 +898,7 @@ const AccountStepDetails = ({
                     )}
                 </div>
                 {footer({
+                    emailAlreadyUsed,
                     details,
                     email: (() => {
                         if (signupType === SignupType.Username) {

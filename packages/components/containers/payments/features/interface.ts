@@ -35,6 +35,7 @@ export interface PlanCardFeature {
         [PLANS.PASS_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_BUSINESS]: PlanCardFeatureDefinition | null;
+        [PLANS.WALLET]: PlanCardFeatureDefinition | null;
     };
 }
 
@@ -68,7 +69,8 @@ export interface ShortPlan {
         | PLANS.VISIONARY
         | PLANS.FAMILY
         | PLANS.VPN_PRO
-        | PLANS.VPN_BUSINESS;
+        | PLANS.VPN_BUSINESS
+        | PLANS.WALLET;
     cta: string;
     features: PlanCardFeatureDefinition[];
 }

@@ -43,6 +43,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.PASS_BUSINESS]: null,
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
+            [PLANS.WALLET]: null,
         },
     };
 };
@@ -100,8 +101,6 @@ export const getPassMonitor = (included: boolean = false): PlanCardFeatureDefini
 export const getPassKeys = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Passkeys supported`,
-        tooltip: c('new_plans: tooltip')
-            .t`Provides the highest level of account security protection and specialist support`,
         included: included,
         icon: 'shield',
     };
@@ -146,6 +145,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: get24x7Support(),
                 [PLANS.VPN_PRO]: getSupport('priority'),
                 [PLANS.VPN_BUSINESS]: getSupport('priority'),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -166,6 +166,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getSentinel(true),
                 [PLANS.VPN_PRO]: getSentinel(),
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -186,6 +187,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -206,6 +208,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getEasySwitch(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -227,6 +230,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getAdminPanel(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
     ];

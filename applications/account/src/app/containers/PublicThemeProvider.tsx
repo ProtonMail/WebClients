@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext } from 'react';
 
 import type { Breakpoints } from '@proton/components/hooks';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
@@ -37,6 +37,14 @@ export const getPublicTheme = (
     audience: Audience,
     viewportWidth: Breakpoints['viewportWidth']
 ): PublicTheme => {
+    if (toApp === APPS.PROTONWALLET) {
+        return {
+            ...defaultValue,
+            type: ThemeTypes.StorefrontWallet,
+            intent: toApp,
+        };
+    }
+
     if (audience === Audience.B2B) {
         return {
             type: ThemeTypes.Storefront,

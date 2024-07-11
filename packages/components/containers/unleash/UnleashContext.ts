@@ -53,6 +53,8 @@ enum AccountFlag {
     B2BLogsVPN = 'B2BLogsVPN',
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
+    WalletSignup = 'WalletSignup',
+    WalletEASignup = 'WalletEASignup',
 }
 
 enum CalendarFeatureFlag {
