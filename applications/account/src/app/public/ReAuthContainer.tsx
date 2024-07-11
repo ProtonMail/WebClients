@@ -135,6 +135,7 @@ const ReAuthContainer = ({
                 as={PasswordInputTwo}
                 disableChange={submitting}
                 autoComplete="current-password"
+                autoFocus
                 value={password}
                 onValue={setPassword}
                 rootClassName="mt-2"
