@@ -281,6 +281,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getLoginsAndNotes('paid'),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -301,6 +302,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getDevices(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -321,6 +323,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getVaults(PASS_BIZ_VAULTS),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -341,6 +344,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getHideMyEmailAliases('unlimited'),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -361,6 +365,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getVaultSharing(PASS_BIZ_VAULT_SHARING),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -381,6 +386,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: get2FAAuthenticator(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -401,6 +407,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getCustomFields(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -421,6 +428,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getGroupManagement(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -441,6 +449,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getDataBreachMonitoring(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
     ];

@@ -158,6 +158,9 @@ export const getThemeFromLocation = (location: Location, searchParams: URLSearch
             isDarkBg: true,
         };
     }
+    if (location.pathname === SSO_PATHS.WALLET_SIGNUP) {
+        return { themeType: ThemeTypes.StorefrontWallet, className: 'signup-v2-account-gradient--wallet' };
+    }
     const hasBFCoupon = getHas2023OfferCoupon(searchParams.get('coupon')?.toUpperCase());
     const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
     if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary)) {

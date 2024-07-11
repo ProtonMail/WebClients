@@ -20,6 +20,7 @@ export interface AsyncValidationState {
     state: AsyncValidationStateValue;
     value: string;
     message: string;
+    error?: any;
 }
 
 type AsyncValidator = (value: string, abortController: AbortController) => Promise<AsyncValidationState>;
@@ -35,9 +36,9 @@ export const validateUsernameAvailability = async (
             signal: abortController.signal,
         });
 
-        return { state: AsyncValidationStateValue.Success, message: '', value: username };
-    } catch (e) {
-        const { code, message } = getApiError(e);
+        return { state: AsyncValidationStateValue.Success, message: '', value: username, error: undefined };
+    } catch (error) {
+        const { code, message } = getApiError(error);
         if (
             [
                 API_CUSTOM_ERROR_CODES.ALREADY_USED,
@@ -45,12 +46,13 @@ export const validateUsernameAvailability = async (
                 API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
             ].includes(code)
         ) {
-            return { state: AsyncValidationStateValue.Fatal, message, value: username };
+            return { state: AsyncValidationStateValue.Fatal, message, value: username, error };
         }
         return {
             state: AsyncValidationStateValue.Error,
             message: message || c('Error').t`Try again later`,
             value: username,
+            error,
         };
     }
 };
@@ -66,9 +68,9 @@ export const validateEmailAvailability = async (
             signal: abortController.signal,
         });
 
-        return { state: AsyncValidationStateValue.Success, message: '', value: email };
-    } catch (e) {
-        const { code, message } = getApiError(e);
+        return { state: AsyncValidationStateValue.Success, message: '', value: email, error: undefined };
+    } catch (error) {
+        const { code, message } = getApiError(error);
         if (
             [
                 API_CUSTOM_ERROR_CODES.ALREADY_USED,
@@ -76,12 +78,13 @@ export const validateEmailAvailability = async (
                 API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
             ].includes(code)
         ) {
-            return { state: AsyncValidationStateValue.Fatal, message, value: email };
+            return { state: AsyncValidationStateValue.Fatal, message, value: email, error };
         }
         return {
             state: AsyncValidationStateValue.Error,
             message: message || c('Error').t`Try again later`,
             value: email,
+            error,
         };
     }
 };

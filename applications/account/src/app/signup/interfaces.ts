@@ -113,6 +113,7 @@ export interface SignupModel {
 export type SignupInviteParameters =
     | { type: 'generic'; data: { selector: string; token: string } }
     | { type: 'drive'; data: { invitee: string; externalInvitationID: string; preVerifiedAddressToken: string } }
+    | { type: 'wallet'; data: { invitee: string; preVerifiedAddressToken: string } }
     | { type: 'pass'; data: { inviter: string; invitee: string; preVerifiedAddressToken?: string } }
     | { type: 'mail'; data: { referrer: string; invite: string | undefined } };
 

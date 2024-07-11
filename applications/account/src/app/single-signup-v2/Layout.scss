@@ -76,6 +76,24 @@
 		}
 	}
 
+	&-bg--wallet {
+		.card-plan {
+			--card-box-shadow-color1: rgb(205 79 232 / 0.3);
+			--card-box-shadow-color2: rgb(108 73 255 / 0.3);
+			--card-box-shadow-color3: rgb(246 198 146 / 0.3);
+			--card-box-shadow-color4: rgb(172 154 246 / 0.3);
+		}
+
+		.right-summary {
+			--summary-gradient-border-color: 211 213 255;
+		}
+
+		@include media('>xsmall') {
+			background: radial-gradient(38.47% 29.48% at 50% -3.24%, #f3f5f6 0%, rgb(243 245 246 / 0) 100%),
+				linear-gradient(180deg, #f5f6ff 0.04%, rgb(245 246 255 / 0) 55.94%), #f3f5f6;
+		}
+	}
+
 	&-offer-banner {
 		background: linear-gradient(81.4deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%),
 			var(--background-norm);
@@ -105,5 +123,15 @@
 
 	&.ui-prominent {
 		background: linear-gradient(62.88deg, #32226f 29.93%, #1d1738 100%);
+	}
+
+	&--wallet {
+		background: radial-gradient(24% 36% at 20% 5.5%, rgb(232 213 255 / 0.5) 0%, rgb(232 213 255 / 0) 100%),
+			radial-gradient(26% 46% at 7% 85%, rgb(232 213 255 / 0.3) 0%, rgb(232 213 255 / 0) 100%),
+			radial-gradient(23% 42% at 15% 39%, rgb(213 233 255 / 0.3) 0%, rgb(213 233 255 / 0) 100%),
+			radial-gradient(25% 45% at 90% 14%, rgb(232 213 255 / 0.3) 0%, rgb(232 213 255 / 0) 100%),
+			radial-gradient(24% 43% at 90% 95%, rgb(232 213 255 / 0.5) 0%, rgb(232 213 255 / 0) 100%),
+			radial-gradient(22% 38% at 78% 59%, rgb(213 233 255 / 0.5) 0%, rgb(213 233 255 / 0) 100%),
+			linear-gradient(0deg, #f3f5f6, #f3f5f6);
 	}
 }

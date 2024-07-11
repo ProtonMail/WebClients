@@ -110,6 +110,7 @@ import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
+import UnauthorizedRedirect from './UnauthorizedRedirect';
 import { UNAUTHENTICATED_ROUTES, getLocalRedirect, getPaths } from './helper';
 import { addSession } from './session';
 
@@ -199,12 +200,14 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const [
         {
             data: { product: maybeQueryAppIntent, productParam },
+            initialLocation,
             initialSearchParams,
             maybeLocalRedirect,
         },
     ] = useState(() => {
         return {
             data: getSearchParams(location, searchParams),
+            initialLocation: location,
             initialSearchParams: searchParams,
             maybeLocalRedirect: getLocalRedirect(location),
         };
@@ -662,6 +665,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                 <PublicAppSetup loader={loader}>
                                     <PaymentSwitcher loader={loader}>
                                         <ForceRefreshContext.Provider value={refresh}>
+                                            <UnauthorizedRedirect initialLocation={initialLocation} />
                                             <Switch location={location}>
                                                 <Route path={`${SSO_PATHS.JOIN_MAGIC_LINK}`}>
                                                     <UnAuthenticated>
@@ -750,6 +754,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.DOCS_SIGNUP,
                                                         SSO_PATHS.PASS_SIGNUP,
                                                         SSO_PATHS.PASS_SIGNUP_B2B,
+                                                        SSO_PATHS.WALLET_SIGNUP,
                                                     ]}
                                                 >
                                                     <SingleSignupSwitchContainer
@@ -835,6 +840,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         SSO_PATHS.DOCS_SIGN_IN,
                                                         SSO_PATHS.VPN_SIGN_IN,
                                                         SSO_PATHS.PASS_SIGN_IN,
+                                                        SSO_PATHS.WALLET_SIGN_IN,
                                                     ]}
                                                     exact
                                                 >

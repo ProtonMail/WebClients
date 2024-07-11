@@ -19,6 +19,8 @@ import passTheme from '@proton/colors/themes/dist/pass.theme.css';
 // @ts-ignore
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
 // @ts-ignore
+import storefrontWalletTheme from '@proton/colors/themes/dist/storefront-wallet.theme.css';
+// @ts-ignore
 import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 // @ts-ignore
 import walletLightTheme from '@proton/colors/themes/dist/wallet.theme.css';
@@ -39,6 +41,7 @@ export enum ThemeTypes {
     Pass = 8,
     Storefront = 9,
     WalletLight = 10,
+    StorefrontWallet = 11,
 }
 
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
@@ -164,6 +167,17 @@ export const PROTON_THEMES_MAP = {
             weak: '#6c6b70',
         },
         theme: walletLightTheme.toString(),
+    },
+    [ThemeTypes.StorefrontWallet]: {
+        label: 'StorefrontWallet',
+        identifier: ThemeTypes.StorefrontWallet,
+        thumbColors: {
+            prominent: '#FFFFFF',
+            standard: '#FAF8F6',
+            primary: '#767DFF',
+            weak: '#F3F5F6',
+        },
+        theme: storefrontWalletTheme.toString(),
     },
 } as const;
 
@@ -354,7 +368,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 };
 
 const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
-    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.WalletLight) {
+    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.StorefrontWallet) {
         return themeType;
     }
 };
