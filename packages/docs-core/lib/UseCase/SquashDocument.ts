@@ -25,6 +25,7 @@ import {
   SquashVerificationObjectionDecision,
 } from '../Types/SquashVerificationObjection'
 import { GenerateUUID } from '../Util/GenerateUuid'
+import { metricsBucketNumberForUpdateCount } from '../Util/bucketNumberForUpdateCount'
 
 export type SquashDocumentDTO = {
   docMeta: DocumentMetaInterface
@@ -46,6 +47,8 @@ export class SquashDocument implements UseCaseInterface<boolean> {
   ) {}
 
   async execute(dto: SquashDocumentDTO): Promise<Result<boolean>> {
+    const startTime = Date.now()
+
     const { docMeta, commitId, keys } = dto
 
     const lockResult = await this.docsApi.lockDocument(docMeta, commitId)
@@ -87,6 +90,18 @@ export class SquashDocument implements UseCaseInterface<boolean> {
     if (commitResult.isFailed()) {
       return Result.fail(commitResult.getError())
     }
+
+    const endTime = Date.now()
+    const timeToSquashInSeconds = Math.floor((endTime - startTime) / 1000)
+
+    metrics.docs_squashes_latency_histogram.observe({
+      Labels: {
+        updates: metricsBucketNumberForUpdateCount(decryptedCommit.updates.length),
+      },
+      Value: timeToSquashInSeconds,
+    })
+
+    metrics.docs_squashes_total.increment({})
 
     return Result.ok(true)
   }
