@@ -7,8 +7,7 @@ import { Input } from '@proton/atoms/Input';
 import { Block, DateInput, Icon, Option, SelectTwo } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
 
-import { FilterModel } from './PassEvents';
-import { getEventNameText } from './helpers';
+import { FilterModel } from './Pass/PassEvents';
 
 interface Props {
     filter: FilterModel;
@@ -19,6 +18,7 @@ interface Props {
     eventTypesList: string[] | [];
     handleSetEventType: (eventType: string) => void;
     handleSearchSubmit: () => void;
+    getEventTypeText: (eventType: string) => string;
 }
 
 const FilterAndSortEventsBlock = ({
@@ -30,6 +30,7 @@ const FilterAndSortEventsBlock = ({
     eventTypesList,
     handleSetEventType,
     handleSearchSubmit,
+    getEventTypeText,
 }: Props) => {
     const [submitting] = useLoading();
 
@@ -57,7 +58,7 @@ const FilterAndSortEventsBlock = ({
                     {eventTypesList.map((type) => {
                         return (
                             <Option key={type} value={type} title={type}>
-                                {getEventNameText(type)}
+                                {getEventTypeText(type)}
                             </Option>
                         );
                     })}
