@@ -631,10 +631,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } dominio personalizzato",
-        "${ domains } domini personalizzati"
-      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } server"
@@ -3328,6 +3324,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
       ],
@@ -3578,6 +3577,9 @@
       ],
       "Current plan": [
         "Piano attuale"
+      ],
+      "Current version": [
+        "Versione attuale"
       ],
       "Custom email domains": [
         "Domini email personalizzati"
@@ -3881,6 +3883,12 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "No version history available": [
+        "Nessuna cronologia delle versioni disponibile"
+      ],
+      "No version history batches available": [
+        "Nessun batch di cronologia delle versioni disponibile"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nessuna delle chiavi caricate è valida per la crittografia. Per inviare messaggi a questo indirizzo, carica una chiave valida o disabilita \"Email crittografate\"."
       ],
@@ -4075,6 +4083,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "L'autenticità del documento non può essere verificata. Vuoi contrassegnarlo come verificato? Potrai ignorare o decidere più tardi."
       ],
+      "The Beginning": [
+        "L'inizio"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Le informazioni sono state rese pubbliche da un servizio di terze parti. Quelle relative al tuo account ${ BRAND_NAME } rimangono sicure e crittografate. ${ learnMoreLink }"
       ],
@@ -4199,6 +4210,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verifica aprirà una nuova scheda, disabilita qualsiasi blocco pop-up. Non ti verrà addebitato nulla. Qualsiasi importo utilizzato per verificare la tua carta sarà immediatamente rimborsato."
       ],
+      "View only": [
+        "Solo visualizzazione"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -4252,9 +4266,6 @@
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
-      ],
-      "Writing assistant add-on": [
-        "Componente aggiuntivo dell'assistente alla scrittura"
       ],
       "you": [
         "tu"
@@ -5050,8 +5061,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Aggiungi l'assistente alla scrittura"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "per ${ price }"
@@ -5750,6 +5761,9 @@
       ],
       "Unlimited labels": [
         "Etichette illimitate"
+      ],
+      "Unlimited logins and notes": [
+        "Login e note illimitati"
       ],
       "Unlimited logins, notes and credit cards": [
         "Accessi, note e carte di credito illimitati"
