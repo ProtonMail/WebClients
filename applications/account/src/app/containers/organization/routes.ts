@@ -8,6 +8,7 @@ import {
     getHasVpnB2BPlan,
     getHasVpnOrPassB2BPlan,
     hasFamily,
+    hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -17,6 +18,7 @@ interface Props {
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
+    canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
 }
 
@@ -24,7 +26,7 @@ export const getOrganizationAppRoutes = ({
     app,
     user,
     organization,
-    subscription,
+    subscription, canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
@@ -41,7 +43,13 @@ export const getOrganizationAppRoutes = ({
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
-
+    const hasVpnB2BPlanWithEventLogging = hasVpnBusiness(subscription); //only vpnbiz2023 has Connection Events feature
+    const canShowB2BConnectionEvents =
+        canDisplayB2BLogsVPN &&
+        hasVpnB2BPlanWithEventLogging &&
+        app === APPS.PROTONVPN_SETTINGS &&
+        canHaveOrganization &&
+        (hasOrganizationKey || hasOrganization);
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = hasFamily(subscription);
 
@@ -200,6 +208,17 @@ export const getOrganizationAppRoutes = ({
                     hasVpnB2BPlan &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
+            },
+            connectionEvents: <SectionConfig>{
+                text: c('Title').t`Connection events`,
+                to: '/connection-events',
+                icon: 'globe',
+                available: canShowB2BConnectionEvents,
+                subsections: [
+                    {
+                        id: 'vpn-connection-events',
+                    },
+                ],
             },
         },
     };

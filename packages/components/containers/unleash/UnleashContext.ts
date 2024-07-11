@@ -50,6 +50,7 @@ enum AccountFlag {
     B2BLogsPass = 'B2BLogsPass',
     SignedOutForgot2FAFlow = 'SignedOutForgot2FAFlow',
     SingleSignup = 'SingleSignup',
+    B2BLogsVPN = 'B2BLogsVPN',
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
 }
