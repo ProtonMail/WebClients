@@ -51,7 +51,7 @@ export const SecureLinkCard: FC<Props> = ({
 
     const views = useMemo(
         () =>
-            readCount === maxReadCount ? c('Label').t`Max views reached` : getViewCountString(readCount, maxReadCount),
+            `${getViewCountString(readCount, maxReadCount)} ${readCount === maxReadCount ? `(${c('Label').t`max views reached`})` : ''}`,
         [maxReadCount, readCount]
     );
 
