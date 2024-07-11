@@ -11,6 +11,8 @@ import {
     AssistantRunningAction,
     AssistantRunningActionResolver,
     AssistantStatus,
+    CACHING_FAILED,
+    FAILED_TO_DOWNLOAD,
     GenerateAssistantResult,
     PromptRejectedError,
     UNLOAD_ASSISTANT_TIMEOUT,
@@ -196,7 +198,7 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             return false;
         } catch (e: any) {
             let errorMessage;
-            if (e.message === 'Caching failed') {
+            if (e.message === CACHING_FAILED) {
                 errorMessage = c('Error')
                     .t`Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.`;
                 addGlobalError(errorMessage, ERROR_TYPE.CACHING_FAILED);
@@ -206,10 +208,14 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                 });
             } else {
                 errorMessage = c('Error').t`Problem downloading the writing assistant. Please try again.`;
-                addGlobalError(errorMessage, ERROR_TYPE.DOWNLOAD_FAIL);
+                const isRequestError = e.message.includes(FAILED_TO_DOWNLOAD);
+                addGlobalError(
+                    errorMessage,
+                    isRequestError ? ERROR_TYPE.DOWNLOAD_REQUEST_FAIL : ERROR_TYPE.DOWNLOAD_FAIL
+                );
                 sendAssistantErrorReport({
                     assistantType: ASSISTANT_TYPE.LOCAL,
-                    errorType: ERROR_TYPE.DOWNLOAD_FAIL,
+                    errorType: isRequestError ? ERROR_TYPE.DOWNLOAD_REQUEST_FAIL : ERROR_TYPE.DOWNLOAD_FAIL,
                 });
             }
 

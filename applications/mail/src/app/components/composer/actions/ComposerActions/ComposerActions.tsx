@@ -99,7 +99,8 @@ const ComposerActions = ({
         syncInProgress,
     });
 
-    const { initAssistant, hasCompatibleHardware, hasCompatibleBrowser, openedAssistants } = useAssistant(composerID);
+    const { initAssistant, hasCompatibleHardware, hasCompatibleBrowser, openedAssistants, downloadPaused } =
+        useAssistant(composerID);
 
     const { displayAssistantModal } = useComposerAssistantProvider();
 
@@ -120,7 +121,9 @@ const ComposerActions = ({
             }
 
             // Start initializing the Assistant when opening it if able to
-            void initAssistant?.();
+            if (!downloadPaused) {
+                void initAssistant?.();
+            }
         }
 
         onToggleAssistant();

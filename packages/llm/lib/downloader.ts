@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
+import { FAILED_TO_DOWNLOAD } from '@proton/llm/lib/constants';
 import { postMessageIframeToParent } from '@proton/llm/lib/helpers';
 import * as _ndarrayCache from '@proton/llm/resources/Mistral-7B-Instruct-v0.2-q4f16_1-MLC/ndarray-cache.json';
 import throttle from '@proton/utils/throttle';
@@ -74,7 +75,7 @@ async function downloadFile(
     const response = await fetch(downloadUrl, { signal });
     const { status, statusText, ok } = response;
     if (!ok) {
-        throw Error(`${downloadUrl}: Failed to download: ${status} ${statusText}`);
+        throw Error(`${downloadUrl}: ${FAILED_TO_DOWNLOAD} ${status} ${statusText}`);
     }
     const headers = new Headers(response.headers);
     const reader = response.body?.getReader();

@@ -2,28 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { useSpotlightOnFeature } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
-import useAssistantSticky from '@proton/llm/lib/hooks/useAssistantSticky';
-import { OpenedAssistant } from '@proton/llm/lib/types';
 
 interface Props {
-    onToggleAssistant: (manual?: boolean) => void;
     canShowAssistant: boolean;
-    canRunAssistant: boolean;
     disableAssistantButton: boolean;
-    assistantID: string;
-    openedAssistants: OpenedAssistant[];
 }
-const useComposerAssistantInitialSetup = ({
-    onToggleAssistant,
-    canShowAssistant,
-    canRunAssistant,
-    disableAssistantButton,
-    assistantID,
-    openedAssistants,
-}: Props) => {
+const useComposerAssistantInitialSetup = ({ canShowAssistant, disableAssistantButton }: Props) => {
     const [isAssistantInitialSetup, setIsAssistantInitialSetup] = useState(false);
-
-    const { getIsStickyAssistant } = useAssistantSticky({ openedAssistants });
 
     // Feature flag that we use to open the assistant automatically the first time the user opens the composer
     const { show: showComposerSpotlight, onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
@@ -42,12 +27,9 @@ const useComposerAssistantInitialSetup = ({
          * so that we don't open the assistant next time.
          * The default value being true, on the first opening, the assistant should be opened
          */
-        const isStickyAssistant = getIsStickyAssistant(assistantID, canShowAssistant, canRunAssistant);
-        const canOpenAssistantOnSetup =
-            isStickyAssistant && showComposerSpotlight && canShowAssistant && !disableAssistantButton;
+        const canOpenAssistantOnSetup = showComposerSpotlight && canShowAssistant && !disableAssistantButton;
         if (canOpenAssistantOnSetup) {
             setIsAssistantInitialSetup(true);
-            onToggleAssistant(false);
 
             /* If the user account has been created recently, the user won't see the sidebar spotlight.
              * But if the user opens manually the composer in the meantime and sees the assistant,
@@ -63,7 +45,6 @@ const useComposerAssistantInitialSetup = ({
         showSidebarSpotlight,
         onDisplayedSidebarSpotlight,
         canShowAssistant,
-        assistantID,
     ]);
 
     return { isAssistantInitialSetup };
