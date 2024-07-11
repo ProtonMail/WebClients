@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Reload": [
         "Ανανέωση"
@@ -1221,10 +1221,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } προσαρμοσμένος τομέας",
-        "${ domains } προσαρμοσμένοι τομείς"
-      ],
       "${ ips } server": [
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
@@ -1397,9 +1393,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Προσαρμογή πλάνου"
-      ],
       "New": [
         "Νέο"
       ],
@@ -1541,14 +1534,6 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1570,6 +1555,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -6718,11 +6711,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -6736,6 +6729,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
         "Διαγραφή ${ deletedServerCount } διακομιστών πύλης"
+      ],
+      "Discount": [
+        "Έκπτωση"
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
@@ -7156,9 +7152,6 @@
       "Invite for organization created": [
         "Η πρόσκληση για τον οργανισμό δημιουργήθηκε"
       ],
-      "Invite for User deleted": [
-        "Η πρόσκληση για τον Χρήστη διαγράφηκε"
-      ],
       "Invite rejected": [
         "Η πρόσκληση απορρίφθηκε"
       ],
@@ -7190,9 +7183,6 @@
       "Item Deleted": [
         "Το στοιχείο Διαγράφτηκε"
       ],
-      "Item deleted in vault": [
-        "Το στοιχείο διαγράφηκε από την κρύπτη"
-      ],
       "Item flags changed in vault": [
         "Οι σημαίες στοιχείου άλλαξαν στην κρύπτη"
       ],
@@ -7207,9 +7197,6 @@
       ],
       "Item Trashed": [
         "Το στοιχείο Απορρίφθηκε"
-      ],
-      "Item trashed in vault": [
-        "Το στοιχείο απορρίφθηκε στην κρύπτη"
       ],
       "Item Untrashed": [
         "Το στοιχείο Επαναφέρθηκε"
@@ -8253,9 +8240,6 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "User invited to organization": [
-        "Ο χρήστης προσκλήθηκε στον οργανισμό"
-      ],
       "username": [
         "όνομα χρήστη"
       ],
@@ -8445,6 +8429,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Με τις ομάδες χρηστών, μπορείτε εύκολα να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου, να μοιραστείτε δεδομένα ή να αλλάξετε τις ρυθμίσεις για συγκεκριμένες ομάδες χρηστών ταυτόχρονα."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Με το τρέχον πρόγραμμά σας, μπορείτε να λαμβάνετε μηνύματα μόνο με τη διεύθυνση @pm.me σας. Κάντε αναβάθμιση για να στείλετε μηνύματα και να δημιουργήσετε πρόσθετες διευθύνσεις χρησιμοποιώντας @pm.me."
       ],
@@ -8459,9 +8446,6 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
-      ],
-      "Writing assistant add-on": [
-        "Πρόσθετο βοηθού γραφής"
       ],
       "Yearly": [
         "Ετησίως"
@@ -10542,9 +10526,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Προσθήκη βοηθού γραφής"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Όλες οι επιχειρηματικές εφαρμογές ${ BRAND_NAME } και premium λειτουργίες για την προστασία ολόκληρης της επιχείρησής σας"
       ],
@@ -10990,23 +10971,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -11034,6 +10998,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -15433,10 +15414,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -16316,9 +16297,6 @@
       ],
       "WireGuard configuration": [
         "Διαμόρφωση WireGuard"
-      ],
-      "Writing assistant": [
-        "Βοηθός γραφής"
       ],
       "You have no open alerts": [
         "Δεν έχετε ανοιχτές ειδοποιήσεις"

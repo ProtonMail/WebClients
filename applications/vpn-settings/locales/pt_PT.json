@@ -627,10 +627,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domínio personalizado",
-        "${ domains } domínios personalizados"
-      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
@@ -3383,6 +3379,9 @@
       "Password copied to clipboard": [
         "Palavra-passe copiada para a área de transferência"
       ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "A palavra-passe deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -4701,6 +4700,11 @@
         "atualize para obter mais armazenamento"
       ]
     },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Aproveite a promoção"
@@ -5839,11 +5843,17 @@
       "Reset organization key": [
         "Redefinir a chave da organização"
       ],
+      "The following administrators could not be restored.": [
+        "Não foi possível restaurar os seguintes administradores."
+      ],
       "The organization key must be activated first.": [
         "Tem de ativar a chave da organização primeiro."
       ],
       "We couldn't verify authenticity of this identity.": [
         "Não foi possível verificar a autenticidade desta identidade."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Nós verificamos a autenticidade desta identidade."
       ]
     },
     "Payment method option": {
@@ -6709,6 +6719,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } utilizador",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } utilizadores"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -6817,6 +6831,9 @@
       "${ maxEmails } email address per user": [
         "${ maxEmails } endereço de e-mail por utilizador",
         "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } incluindo aliases hide-my-email Ilimitados"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } de armazenamento por utilizador"

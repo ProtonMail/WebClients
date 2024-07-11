@@ -12,6 +12,11 @@
         "ფოსტის გაგზავნა შეჩერდა"
       ]
     },
+    "Account Settings - Info": {
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
@@ -914,10 +919,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } მომხმარებლის დომენი",
-        "${ domains } მომხმარებლის დომენი"
-      ],
       "${ ips } server": [
         "${ ips } სერვერი",
         "${ ips } სერვერი"
@@ -5139,9 +5140,6 @@
       "Writing assistant": [
         "წერაში დამხმარე"
       ],
-      "Writing assistant add-on": [
-        "წერაში დამხმარის დამატება"
-      ],
       "Yes": [
         "დიახ"
       ],
@@ -6131,9 +6129,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "წერაში დამხმარის დამატება"
-      ],
       "for ${ price }": [
         "${ price }-თვის"
       ]
@@ -7934,6 +7929,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ],
@@ -8055,6 +8053,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {

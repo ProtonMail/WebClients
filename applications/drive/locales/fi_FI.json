@@ -934,10 +934,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } oma verkkotunnus",
-        "${ domains } omaa verkkotunnusta"
-      ],
       "${ ips } server": [
         "${ ips } palvelin",
         "${ ips } palvelinta"
@@ -2484,10 +2480,10 @@
         "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Alias-asetusten lataamisessa tapahtui virhe"
+        "Virhe aliasvaihtoehtoja ladatessa"
       ],
       "An error occurred while saving your alias": [
-        "Aliaksesi tallentamisessa tapahtui virhe"
+        "Virhe aliasta tallentaessa"
       ],
       "Authentication canceled.": [
         "Todennus peruttiin."
@@ -5170,9 +5166,6 @@
       "Writing assistant": [
         "Kirjoitusavustaja"
       ],
-      "Writing assistant add-on": [
-        "Kirjoitusavustaja-lisäosa"
-      ],
       "Yes": [
         "Kyllä"
       ],
@@ -6168,9 +6161,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Lisää kirjoitusavustaja"
-      ],
       "for ${ price }": [
         "hintaan ${ price }"
       ]
@@ -6643,6 +6633,9 @@
       ],
       "Custom snooze time": [
         "Oma torkutusaika"
+      ],
+      "Custom workspace branding": [
+        "Mukautettu työtilan ilme"
       ],
       "Data breach monitoring": [
         "Tietomurtovalvonta"
@@ -8839,6 +8832,9 @@
       ],
       "Stay secure and connected anywhere": [
         "Pysy turvassa ja yhdistettynä missä tahansa"
+      ],
+      "Support your compliance objectives": [
+        "Tue vaatimustenmukaisuustavoitteitasi"
       ],
       "Sync files on devices": [
         "Synkronoi tiedostoja laitteilla"

@@ -631,9 +631,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domaine personnalisé",
-        "${ domains } domaines personnalisés"
+      "${ domains } additional custom domain": [
+        "${ domains } domaine personnalisé supplémentaire",
+        "${ domains } domaines personnalisés supplémentaires"
       ],
       "${ ips } server": [
         "${ ips } serveur",
@@ -3328,6 +3328,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
       ],
@@ -3578,6 +3581,9 @@
       ],
       "Current plan": [
         "Abonnement actuel"
+      ],
+      "Current version": [
+        "Version actuelle"
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
@@ -3881,6 +3887,12 @@
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
+      "No version history available": [
+        "Aucun historique de version disponible"
+      ],
+      "No version history batches available": [
+        "Aucun lot d'historiques de version n'est disponible."
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Pour pouvoir envoyer des messages à cette adresse, veuillez télécharger une clé valide ou désactiver l'option Chiffrer les messages."
       ],
@@ -4075,6 +4087,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "La provenance des modifications dans le document n'a pas pu être vérifiée. Voulez-vous marquer ce document comme vérifié ? Vous pouvez choisir d'ignorer et décider plus tard."
       ],
+      "The Beginning": [
+        "Le début"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
       ],
@@ -4199,6 +4214,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La vérification ouvrira un nouvel onglet : veillez à désactiver les bloqueurs de pop-up. Vous ne serez pas facturé, le montant utilisé pour vérifier la carte vous sera immédiatement remboursé."
       ],
+      "View only": [
+        "Lecture seule"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -4252,9 +4270,6 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
-      ],
-      "Writing assistant add-on": [
-        "Extension Assistant d'écriture"
       ],
       "you": [
         "vous"
@@ -5047,8 +5062,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Ajouter l'assistant d'écriture"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "pour ${ price }"
@@ -5699,6 +5714,9 @@
       ],
       "Unlimited labels": [
         "Nombre illimité de labels"
+      ],
+      "Unlimited logins and notes": [
+        "Nombre illimité d'identifiants et de notes"
       ],
       "Unlimited logins, notes and credit cards": [
         "Nombre illimité de connexions, de notes et de cartes de crédit"

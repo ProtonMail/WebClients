@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
@@ -825,11 +828,11 @@
       "Not saved": [
         "Nie zapisano"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otwórz ${ CALENDAR_APP_NAME }"
@@ -1425,11 +1428,11 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } niestandardowa domena",
-        "${ domains } niestandardowe domeny",
-        "${ domains } niestandardowych domen",
-        "${ domains } niestandardowych domen"
+      "${ domains } additional custom domain": [
+        "${ domains } dodatkowa niestandardowa domena",
+        "${ domains } dodatkowe niestandardowe domeny",
+        "${ domains } dodatkowych niestandardowych domen",
+        "${ domains } dodatkowych niestandardowych domen"
       ],
       "${ ips } server": [
         "${ ips } serwer",
@@ -1526,6 +1529,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplikacje ${ BRAND_NAME }"
+      ]
+    },
+    "Assistant feedback": {
+      "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
+        "Opinia będzie udostępniona zespołowi moderacyjnemu ${ BRAND_NAME }."
       ]
     },
     "Assistant option": {
@@ -5498,6 +5506,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
@@ -7283,9 +7294,6 @@
       "Writing assistant": [
         "Asystent pisania"
       ],
-      "Writing assistant add-on": [
-        "Dodatek asystenta pisania"
-      ],
       "writing assistant iframe": [
         "okno asystenta pisania"
       ],
@@ -8745,8 +8753,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Dodaj asystenta pisania"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -9456,6 +9464,12 @@
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
       ],
+      "Unlimited logins and notes": [
+        "Nieograniczona liczba danych logowania i notatek"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Nieograniczona liczba danych logowania, notatek i kart płatniczych"
+      ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
       ],
@@ -10097,14 +10111,23 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Bezpieczne udostępnianie sejfu i linków"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],
       "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie sejfu (${ n } sejf)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfy)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfów)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfów)"
+        "Bezpieczne udostępnianie ${ n } sejfu",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpieczne udostępnianie ${ n } sejfu i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ]
     },
     "passwordless": {
@@ -10151,6 +10174,9 @@
       "Payment Processing": [
         "Przetwarzanie płatności"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
       ],
@@ -10159,6 +10185,9 @@
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
       ]
     },
     "Payments.Error": {

@@ -631,9 +631,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } dominio personalizado",
-        "${ domains } dominios personalizados"
+      "${ domains } additional custom domain": [
+        "${ domains } dominio personalizado adicional",
+        "${ domains } dominios personalizados adicionales"
       ],
       "${ ips } server": [
         "${ ips } servidor",
@@ -3328,6 +3328,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } conlleva que nadie tiene acceso a tu contraseña - ni siquiera nosotros."
       ],
@@ -3578,6 +3581,9 @@
       ],
       "Current plan": [
         "Plan actual"
+      ],
+      "Current version": [
+        "Versión actual"
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
@@ -3881,6 +3887,12 @@
       "No results found": [
         "No se han encontrado resultados."
       ],
+      "No version history available": [
+        "No hay historial de versiones disponible."
+      ],
+      "No version history batches available": [
+        "No hay lotes de historial de versiones disponibles."
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ninguna de las claves cargadas es válida para cifrar los datos. Para enviar mensajes a esta dirección, carga una clave válida o desactiva \"Cifrar correos electrónicos\"."
       ],
@@ -4075,6 +4087,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "La autoría de las ediciones en este documento no se ha podido verificar. ¿Deseas marcar este documento como verificado? Puedes ignorar ahora y decidir después."
       ],
+      "The Beginning": [
+        "El inicio"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de tu cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
@@ -4199,6 +4214,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una nueva pestaña, desactiva cualquier bloqueador de ventanas emergentes. No se te cobrará este proceso. Cualquier monto utilizado para verificar la tarjeta te será reembolsado inmediatamente."
       ],
+      "View only": [
+        "Solo lectura"
+      ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
@@ -4252,9 +4270,6 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
-      ],
-      "Writing assistant add-on": [
-        "Complemento del asistente de escritura"
       ],
       "you": [
         "tú"
@@ -5050,8 +5065,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Añadir el asistente de escritura"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "para ${ price }"
@@ -5702,6 +5717,9 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
+      ],
+      "Unlimited logins and notes": [
+        "Número ilimitado de accesos y de notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"

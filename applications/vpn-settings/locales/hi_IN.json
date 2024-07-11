@@ -83,6 +83,9 @@
       "Close this banner": [
         "ये बैनर बंद करें"
       ],
+      "Configure SAML": [
+        "SAML विन्यस्त करें"
+      ],
       "Confirm": [
         "पक्का करें"
       ],
@@ -110,6 +113,9 @@
       "Create": [
         "बनाएँ"
       ],
+      "Create Gateway": [
+        "गेटवे बनाएं"
+      ],
       "Create users": [
         "उपयोगकर्ता बनाएं"
       ],
@@ -124,6 +130,9 @@
       ],
       "Delete": [
         "मिटाएं"
+      ],
+      "Delete Gateway": [
+        "गेटवे मिटाएं"
       ],
       "Delete logo": [
         "चिन्ह मिटाएं"
@@ -173,8 +182,14 @@
       "Edit email address": [
         "ईमेल पता बदलें"
       ],
+      "Edit Gateway": [
+        "गेटवे बदलें"
+      ],
       "Edit invoice details": [
         "रसीद संपादित करें"
+      ],
+      "Edit name": [
+        "नाम बदलें"
       ],
       "Edit password": [
         "पासवर्ड बदलें"
@@ -182,11 +197,17 @@
       "Edit phone number": [
         "फोन नंबर बदलें"
       ],
+      "Edit servers": [
+        "सर्वर बदलें"
+      ],
       "Edit sign-in details": [
         "साइनइन की जानकारी बदलें"
       ],
       "Edit subscription": [
         "सदस्यता संपादित करें"
+      ],
+      "Edit users": [
+        "यूजर बदलें"
       ],
       "enable desktop notifications": [
         "डेस्कटॉप सूचनाएं सक्षम करें"
@@ -221,6 +242,9 @@
       "Get more licenses": [
         "और लाइसेंस प्राप्त करें"
       ],
+      "Get more servers": [
+        "और सर्वर प्राप्त करें"
+      ],
       "Get the deal": [
         "सौदा लें"
       ],
@@ -238,6 +262,9 @@
       ],
       "Hide plan features": [
         "योजना की विशेषताओं को छुपाएं"
+      ],
+      "Import new SAML metadata": [
+        "नया SAML मेटाडाटा आयात करें"
       ],
       "Increase": [
         "बढ़ाएं"
@@ -329,8 +356,14 @@
       "Remove bonuses": [
         "बोनस हटाएं"
       ],
+      "Remove domain": [
+        "डोमेन हटाएं"
+      ],
       "Remove gift code": [
         "उपहार कोड हटाएं"
+      ],
+      "Remove single sign-on": [
+        "एकल साइन-ऑन हटाएं"
       ],
       "Rename": [
         "नाम बदलें"
@@ -383,11 +416,17 @@
       "Save address": [
         "पता सहेजें"
       ],
+      "Save SAML configuration": [
+        "SAML संरचना सहेजें"
+      ],
       "Search": [
         "खोजें"
       ],
       "Search countries": [
         "देश खोजें"
+      ],
+      "See DNS TXT record": [
+        "DNS TXT रिकॉर्ड देखें"
       ],
       "See how": [
         "देखें कैसे"
@@ -400,6 +439,9 @@
       ],
       "select file": [
         "फ़ाइल चुनें"
+      ],
+      "Select file": [
+        "फाइल चुनें"
       ],
       "Send code": [
         "कोड भेजें"
@@ -458,6 +500,9 @@
       "Start live chat": [
         "लाइव चैट शुरू करें"
       ],
+      "Stop using single sign-on": [
+        "सिंगल साइन-ऑन का उपयोग बंद करें"
+      ],
       "Submit": [
         "जमा करें"
       ],
@@ -490,6 +535,9 @@
       ],
       "Upgrade now": [
         "अभी अपग्रेड करें"
+      ],
+      "Upgrade to Business": [
+        "Business में अपग्रेड करें"
       ],
       "Upgrade your plan": [
         "अपनी योजना अपग्रेड करें"
@@ -545,6 +593,9 @@
       "What do I get?": [
         "मुझे क्या मिलेगा?"
       ],
+      "Your server will be provisioned in the next days": [
+        "सर्वर अगले कुछ दिनों में उपलब्ध करा दिया जाएगा"
+      ],
       "Zoom in": [
         "ज़ूम करें"
       ],
@@ -553,10 +604,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } कस्टम डोमेन",
-        "${ domains } कस्टम डोमेन"
-      ],
       "${ ips } server": [
         "${ ips } सर्वर",
         "${ ips } सर्वर"
@@ -1855,6 +1902,9 @@
       ]
     },
     "Error": {
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ user.Name } यूजर नाम है। ${ emailAddress } बनाने के लिए, कृपया सेटिंग्स > संदेश और रचना > लघु डोमेन (pm.me) पर जाएं"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "सभी भंडारण स्थान आवंटित किया गया है। कृपया अन्य उपयोगकर्ताओं को आवंटित संग्रहण कम करें।"
       ],
@@ -1893,6 +1943,15 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "अगर आपके टीवी का वक्त एक्सपायर हो गया है, तो अपने टीवी को रीफ्रेश करें और अपना कोड वापस डालें।"
+      ],
+      "Impossible to create the gateway": [
+        "गेटवे बनाना असंभव"
+      ],
+      "Impossible to edit the gateway": [
+        "गेटवे को बदलना असंभव"
+      ],
+      "Impossible to rename the gateway": [
+        "गेटवे का नाम बदलना असंभव"
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "ग़लत फ़ाइल प्रकार। PNG या JPEG प्रारूप में फ़ाइल अपलोड करें।"
@@ -1984,6 +2043,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "कई-यूज़र संभालने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
       ],
+      "Please upload an xml file": [
+        "कृपया एक xml फाइल अपलोड करें"
+      ],
+      "Please upload only 1 file": [
+        "कृपया केवल 1 फाइल अपलोड करें"
+      ],
       "Process aborted": [
         "प्रक्रिया निरस्त की गई"
       ],
@@ -2031,6 +2096,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "सिर्फ अक्षर, नंबर, और _ के इस्तेमाल की कोशिश करें।-"
+      ],
+      "Unable to upload file": [
+        "फाइल अपलोड करने में असमर्थ"
       ],
       "Unknown error": [
         "अज्ञात त्रुटि"
@@ -2316,6 +2384,10 @@
       "Add": [
         "जोड़ें"
       ],
+      "Add (${ numberOfAddedServers })": [
+        "(${ numberOfAddedServers }) जोड़ें",
+        "(${ numberOfAddedServers }) जोड़ें"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
         "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
@@ -2540,6 +2612,9 @@
       "Create your account": [
         "अपना खाता बनाएं"
       ],
+      "IP address": [
+        "IP पता"
+      ],
       "Key type": [
         "कुंजी प्रकार"
       ],
@@ -2610,6 +2685,11 @@
         "हमें संपर्क करें"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "डोमेन नाम रजिस्ट्रार के नियंत्रण पैनल में इस रिकॉर्ड को डोमेन में जोड़ें"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "ईमेल"
@@ -2624,6 +2704,9 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
+      ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } और आपको उन्हें संगठन में वापस जोड़ने के लिए मैन्युअल रूप से बनाना होगा"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } अगर आप जारी रखते हैं तो आप अपने खाते के सभी मौजूदा एन्क्रिप्टेड डेटा तक पहुंच खो देंगे।"
@@ -2654,6 +2737,10 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } सर्वर अभी भी सेटअप किया जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।",
+        "${ provisioningCounter } सर्वर अभी भी सेटअप किए जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।"
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: प्राप्तकर्ता प्लेटफ़ॉर्मों से अनधिकृत ईमेल को स्पैम के रूप में चिह्नित करने या उन्हें क्वारंटीन करने के लिए कहा जा रहा है।"
@@ -2719,17 +2806,35 @@
       "Account successfully updated": [
         "खाता आधुनिकीकरण सफल हो गया है"
       ],
+      "active": [
+        "सक्रिय"
+      ],
       "add a recovery method": [
         "रिकवरी तरीका जोड़े"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "अपने खाते पे सुरक्षा की एक और परत डालें। आपको हर बार साइनइन करते वक्त 2-एफए से खुद को सत्यापित करना पड़ेगा।"
       ],
+      "Add domain": [
+        "डोमेन जोड़ें"
+      ],
       "Add multiple users to your organization at once.": [
         "एक समय में अपने संगठन में कई यूज़र एक साथ जोड़े"
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "सर्वर जोड़ें (${ availableAddedCount } उपलब्ध)",
+        "सर्वर जोड़ें (${ availableAddedCount } उपलब्ध)"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "अपने संगठन के लिए व्यक्तिगत अनुभव बनाने के लिए अपना नाम और चिन्ह जोड़ें।"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } गेटवे सर्वर जोड़ा जा रहा है",
+        "${ addedServerCount } गेटवे सर्वर जोड़ें जा रहें हैं"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "गेटवे सर्वर जोड़ा जा रहा है: ${ serverNumber } / ${ total }",
+        "गेटवे सर्वर जोड़ें जा रहें हैं: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "अतिरिक्त विकल्प"
@@ -2777,6 +2882,12 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "क्या आप वाकई इस उपयोगकर्ता से प्रशासनिक विशेषाधिकार हटाना चाहते हैं?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "क्या वाकई डोमेन ${ boldDomain } हटाना चाहते हैं?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "संगठन एडमिन से गेटवे सेटअप करने के लिए कहें।"
+      ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
       ],
@@ -2822,14 +2933,32 @@
       "By leaving now, changes may not be saved": [
         "अब छोड़ने से, परिवर्तनों को बचाया नहीं जा सकता है"
       ],
+      "Can’t access your recovery email?": [
+        "क्या रिकवरी ईमेल एक्सेस नहीं कर सकते?"
+      ],
+      "Can’t access your recovery phone?": [
+        "क्या रिकवरी फोन एक्सेस नहीं कर सकते?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong } पर एक नया सत्यापन कोड भेजने के लिए \"नए कोड का अनुरोध करें\" पर क्लिक करें। यदि यह फ़ोन नंबर गलत है, तो इसे ठीक करने के लिए \"संपादित करें\" पर क्लिक करें।"
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "संगठन के लिए पहचान प्रदाता (IdP) के माध्यम से SAML सत्यापन कॉन्फ़िगर करें। यह पूरे संगठन के लिए SAML सक्षम करेगा।"
+      ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
+        "Okta, Microsoft Azure या Google Identity Platform जैसे पहचान प्रदाता के माध्यम से संगठन के लिए SAML सत्यापन कॉन्फ़िगर करें। यह पूरे संगठन के लिए SAML सक्षम करेगा।"
       ],
       "Continue with ${ freeName }": [
         "${ freeName } के साथ जारी रखें"
       ],
       "Copied to clipboard": [
         "क्लिपबोर्ड पर प्रतिलिपि बनाई गई"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के ACS (अभिकथन उपभोक्ता सेवा) यूआरएल फील्ड में पेस्ट करें"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "इस यूआरएल को कॉपी करके पहचान प्रदाता के इकाई आईडी फील्ड में पेस्ट करें"
       ],
       "Copy the suggested password to clipboard": [
         "दिए गए पासवर्ड को क्लिपबोर्ड पे कॉपी करें"
@@ -2842,6 +2971,13 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "अन्य लोगों के लिए ईमेल पते बनाएं, व्यवसाय, स्कूल या समूह के लिए ${ MAIL_APP_NAME } प्रबंधित करें। अपने संगठन का नाम और कस्टम डोमेन (उदा. @aapkicompany.in) जोड़कर प्रारंभ करें। "
+      ],
+      "Create your first Gateway": [
+        "पहला गेटवे बनाएं"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "गेटवे सर्वर बनाया जा रहा है: ${ serverNumber } / ${ total }",
+        "गेटवे सर्वर बनाएं जा रहें हैं: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "आपका खाता बन रहा है"
@@ -2861,6 +2997,9 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
+      ],
       "Dedicated servers": [
         "विशेष सर्वर"
       ],
@@ -2869,6 +3008,10 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } गेटवे सर्वर को मिटाया जा रहा है",
+        "${ deletedServerCount } गेटवे सर्वर को मिटाये जा रहे हैं"
       ],
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
@@ -2879,8 +3022,20 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC यह जांचता है कि भेजने वाले के SPF और DKIM रिकॉर्ड आपके डोमेन से हैं या नहीं। यह हमलावरों को दूसरे डोमेन के SPF \nऔर DKIM का उपयोग करके आपके डोमेन का अवतार बनाने से रोक सकता है। इस रिकॉर्ड में \"p=\" (policy) दर्शाता है कि आप कैसे चाहते हैं कि प्राप्तकर्ता प्लेटफ़ॉर्म अनधिकृत ईमेल को संभालें। हम सर्वाधिक डोमेन के लिए \"p=quarantine\" नीति का उपयोग करने की अनुशंसा करते हैं। सुनिश्चित करें कि आप अपने DNS कंसोल (उस प्लेटफ़ॉर्म पर स्थित जहां आपने कस्टम डोमेन खरीदा है) में निम्नलिखित TXT रिकॉर्ड को जोड़ें।"
       ],
+      "DNS TXT record": [
+        "DNS TXT रिकॉर्ड"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "इस पासवर्ड को न भूलें। यदि आप इसे भूल जाते हैं, तो आप अपने संगठन का प्रबंधन नहीं कर पाएंगे।"
+      ],
+      "Domain ownership failed verification.": [
+        "डोमेन स्वामित्व सत्यापन असफल हुआ।"
+      ],
+      "Domain ownership not verified.": [
+        "डोमेन स्वामित्व सत्यापित नहीं है।"
+      ],
+      "Domain ownership verified.": [
+        "डोमेन स्वामित्व सत्यापित।"
       ],
       "domain used": [
         "डोमेन का उपयोग किया",
@@ -2888,6 +3043,9 @@
       ],
       "Done! We sent a code to ${ destination }.": [
         "किया हुआ! हमने ${ destination } पर एक कोड भेजा है।"
+      ],
+      "Don’t know your recovery phrase?": [
+        "क्या पुनर्प्राप्ति वाक्यांश नहीं जानते?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "कुछ दिख नहीं रहा? पॉप-अप ब्लॉकर बंद करना ना भूले।"
@@ -2921,6 +3079,15 @@
       ],
       "Emailing preference saved": [
         "ईमेल वरीयता सहेजी गई"
+      ],
+      "Enable single sign-on to keep your organization safe": [
+        "संगठन को सुरक्षित रखने के लिए सिंगल साइन-ऑन सक्षम करें"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "पहचान प्रदाता से प्राप्त एंडपॉइंट यूआरएल (उदा. https://idp.udaaharan.in/sso/saml)।"
+      ],
+      "Enhance your network security": [
+        "नेटवर्क सुरक्षा बढ़ाएं"
       ],
       "Enter key manually instead": [
         "इसके बजाय मैन्युअल रूप से कुंजी दर्ज करें"
@@ -2961,6 +3128,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "पासवर्ड बदलने के लिए पुनर्प्राप्ति रिकवरी दर्ज करें।"
+      ],
       "Example: ${ spfExample }": [
         "उदाहरण: ${ spfExample }"
       ],
@@ -2985,11 +3155,20 @@
       "Free forever": [
         "हमेशा मुफ्त"
       ],
+      "Gateways": [
+        "गेटवे"
+      ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } लें"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "पहचान प्रदाता के पास जाएं, ${ appName } के लिए SAML मेटाडाटा प्राप्त करें और इसे यहां आयात करें।"
+      ],
       "here": [
         "यहां"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "सत्यापन अभिकथन पर हस्ताक्षर करने के लिए पहचान प्रदाता की सार्वजनिक कुंजी। पहचान प्रदाता से प्रमाणपत्र हैश को डाउनलोड या कॉपी करने के लिए एक स्थान होना चाहिए। बस प्रमाणपत्र हैश को टेक्स्ट क्षेत्र फील्ड में पेस्ट करें।"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "यदि किसी अन्य व्यवस्थापक ने इस पासवर्ड को बदल दिया है, तो आपको उन्हें नए संगठन पासवर्ड के लिए पूछना होगा।"
@@ -3048,6 +3227,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
       ],
+      "inactive": [
+        "निष्क्रिय"
+      ],
       "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
         "${ formattedTaxRate }% ${ taxName } सहित: ${ price }"
       ],
@@ -3077,6 +3259,12 @@
       ],
       "Keys created": [
         "कुंजी बनाई गई"
+      ],
+      "Lean more about gateways": [
+        "गेटवे के बारे में और जानें"
+      ],
+      "Lean more about single sign-on": [
+        "सिंगल साइन-ऑन के बारे में और जानें"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "दूसरे वीपीएन ऐप से ${ VPN_APP_NAME } पे साइनइन करना सीखें।"
@@ -3129,14 +3317,35 @@
       "Multi-user support not enabled.": [
         "बहु-उपयोगकर्ता समर्थन सक्षम नहीं है।"
       ],
+      "Must be between 3 and 20 characters long.": [
+        "3 से 20 अक्षरों के बीच लंबा होना चाहिए।"
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "केवल अक्षर, अंक और डैश (-) होने चाहिए।"
+      ],
+      "Must not contain spaces.": [
+        "रिक्त स्थान नहीं होना चाहिए।"
+      ],
+      "Must start with a letter.": [
+        "किसी अक्षर से शुरू होना चाहिए।"
+      ],
       "No addresses exist": [
         "कोई पता मौजूद नहीं है"
+      ],
+      "No gateways": [
+        "कोई गेटवे नहीं"
+      ],
+      "No Gateways yet": [
+        "अभी तक कोई गेटवे नहीं"
       ],
       "No payment is required at this time.": [
         "इस समय कोई भुगतान आवश्यक नहीं है।"
       ],
       "No results found": [
         "कोई परिणाम नहीं मिला"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "गैर-SSO यूजर (मैन्युअल रूप से बनाए गए, पहचान प्रदाता द्वारा प्रदान नहीं किए गए) अभी भी संगठन में लॉग इन कर सकते हैं"
       ],
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
@@ -3147,17 +3356,26 @@
       "of": [
         "का"
       ],
+      "Once single sign-on is disabled for your organization:": [
+        "एक बार संगठन के लिए एकल साइन-ऑन अक्षम हो जाने पर:"
+      ],
       "Once you reset your password:": [
         "आप एक बार अपना पासवर्ड बदलते है तो:"
       ],
       "Open source": [
         "ओपन सोर्स"
       ],
+      "or ${ selectFileButton }": [
+        "या ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
       ],
       "Organization size": [
         "संगठन का साइज़"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "समर्पित सर्वर को गेटवे में व्यवस्थित करें और तय करें कि कौन से सदस्य उनका एक्सेस कर सकते हैं।"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "आपके संगठन में अन्य व्यवस्थापक मौजूद हैं, आप उनके लिए नया पासवर्ड संचार करने के लिए जिम्मेदार हैं।"
@@ -3266,6 +3484,9 @@
       "Revoke certificate ${ name }": [
         "${ name } प्रमाणपत्र रद्द करें"
       ],
+      "SAML configuration saved": [
+        "SAML संरचना सहेजी गई"
+      ],
       "Save ${ percentage }": [
         "${ percentage } की छूट"
       ],
@@ -3314,8 +3535,20 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
+      "Single sign-on removed": [
+        "एकल साइन-ऑन हटाया गया है।"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "कुछ उपलब्ध सर्वर हाल ही में हटाए जाने के कारण केवल विशिष्ट देशों में ही उपयोग किए जा सकते हैं"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "वह डोमेन निर्दिष्ट करें जिसे SAML SSO के साथ प्रमाणित करने की अनुमति है।"
+      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF स्पष्ट करता है कि आपके डोमेन के लिए किसे ईमेल भेजने की अनुमति है। सुनिश्चित करें कि आप निम्नलिखित TXT रेकॉर्ड को अपने DNS कंसोल में जोड़ें (जो प्लेटफ़ॉर्म पर स्थित है जहां आपने कस्टम डोमेन खरीदा है)।"
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "पहचान प्रदाता द्वारा प्रदान किए गए SSO यूजर हटा दिए जाएंगे"
       ],
       "Step ${ step }": [
         "कदम ${ step }",
@@ -3354,6 +3587,9 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "एक बेहतर इंटरनेट बनाने के हमारे मिशन का समर्थन करने के लिए धन्यवाद, जहां गोपनीयता और स्वतंत्रता को प्रथमिकता दी जाती है।"
       ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "पहचान प्रदाता के क्रेडेंशियल मिटा दिए जाएंगे।"
+      ],
       "The following address is invalid.": [
         "ये पता अमान्य है।",
         "निम्नलिखित पते अमान्य हैं।"
@@ -3387,6 +3623,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "ये संरचना WireGuard राऊटर और अधिकारिक क्लाइंट के साथ काम करने के लिए दिया गया है।"
       ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "इन प्रमाण का उपयोग हमारे आधिकारिक ${ VPN_APP_NAME } ऐप में साइनइन करने के लिए नहीं किया जा सकता। ${ learnMore }"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "संभावित नीति उल्लंघन के कारण इस खाते को निलंबित कर दिया गया है।"
       ],
@@ -3413,6 +3652,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "यह आपके खाते और उसके सभी डेटा को स्थायी रूप से हटा देगा। आप इस खाते को फिर से सक्रिय नहीं कर पाएंगे."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "इससे ${ boldDomainName } के लिए SSO हट जाएगा।"
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "यह आपके अस्थायी पासवर्ड को बदल देगा। आप भविष्य में अपने ${ BRAND_NAME } खाते तक पहुंचने के लिए इसका उपयोग करेंगे।"
@@ -3447,6 +3689,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "आगे बढ़ने के लिए, खाता पुनर्प्राप्ति विधि चुनें ताकि हम अनुरोध को सत्यापित कर सकें।"
       ],
+      "To proceed, we must verify the request.": [
+        "आगे बढ़ने के लिए हमें अनुरोध का सत्यापन करना होगा।"
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "अपना इंटरनेट कनेक्शन सुरक्षित करने के लिए, अपने डिवाइस के लिए ${ VPN_APP_NAME } ऐप डाउनलोड और इंस्टॉल करें और किसी सर्वर से जुड़े।"
       ],
@@ -3473,6 +3718,9 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "दुर्भाग्य से इस खाते के लिए कोई पुनर्प्राप्ति विधि सहेजी नहीं गई है।"
+      ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "पहचान प्रदाता द्वारा जनरेट की गई विशिष्ट आईडी, आमतौर पर एक यूआरएल के रूप में जिसमें पहचान प्रदाता का नाम शामिल होता है (उदा. https://idp.udaaharan.in/XXXXX)।"
       ],
       "Unsaved changes": [
         "सेव नहीं बदलाव"
@@ -3519,6 +3767,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "सत्यापन एक नया टैब खोलेगा, कृपया किसी भी पॉपअप ब्लॉकर्स को अक्षम करें। आपसे शुल्क नहीं लिया जाएगा। कार्ड को सत्यापित करने के लिए उपयोग की गई कोई भी राशि तुरंत वापस कर दी जाएगी।"
       ],
+      "Verify domain": [
+        "डोमेन सत्यापित करें"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "सत्यापन ऐप से एक सीमित समय वाले ओटीपी से अपनी पहचान सत्यापित करें।"
       ],
@@ -3533,6 +3784,9 @@
       ],
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
+      ],
+      "Want servers in other countries?": [
+        "क्या अन्य देशों में सर्वर चाहते हैं?"
       ],
       "Warning:": [
         "चेतावनी:"
@@ -3558,6 +3812,9 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "हम अतिरेक प्रदान करने के लिए कम से कम 2 सर्वर रखने की अनुशंसा करते हैं।"
       ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "हम अतिरेक प्रदान करने के लिए विभिन्न स्थानों पर एकाधिक सर्वर रखने की अनुशंसा करते हैं।"
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले संगठन के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA स्थापित करने के लिए कहें।"
       ],
@@ -3579,17 +3836,26 @@
       "Welcome": [
         "स्वागत है"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "हम ${ boldValue } पर एक रीसेट कोड भेजेंगे।"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "हम आपके द्वारा खाता पुनर्प्राप्ति के लिए प्रदान किए गए ईमेल पते पर एक रीसेट कोड भेजेंगे।"
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "खाता पुनर्प्राप्ति के लिए आपके द्वारा प्रदान किए गए फ़ोन नंबर पर हम एक रीसेट कोड भेजेंगे।"
       ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "पहचान प्रदाता में ${ appName } के लिए SAML सक्षम करते समय, कॉलबैक (ACS) URL और जारीकर्ता ID का उपयोग करने के लिए कहा जा सकता है। बस नीचे दिए गए डाटा को पहचान प्रदाता फील्ड में कॉपी-पेस्ट करें।"
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "जब आपकी सदस्यता नवीनीकृत हो जाती है, तो हम उपरोक्त भुगतान विधि से शुल्क लेने से पहले कोई भी उपलब्ध क्रेडिट लागू करेंगे।"
+      ],
+      "Whole organization": [
+        "संपूर्ण संगठन"
       ],
       "Why?": [
         "क्यों?"
@@ -3614,6 +3880,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "आप वर्तमान में ${ user.Name } (${ user.Email }) के रूप में साइन इन हैं।"
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "वर्तमान में ${ ipAddresses } उपलब्ध समर्पित सर्वर में से ${ ipCount } का उपयोग कर रहे हैं।",
+        "वर्तमान में ${ ipAddresses } उपलब्ध समर्पित सर्वरों में से ${ ipCount } का उपयोग कर रहे हैं।"
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "आप वर्तमान में अपने ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंस में से ${ usedMembers } का उपयोग कर रहे हैं।",
@@ -3647,6 +3917,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "आपके पास ${ availableCount } समर्पित सर्वर उपलब्ध है।",
+        "आपके पास ${ availableCount } समर्पित सर्वर उपलब्ध है।"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "आपके पास परीक्षण ${ planTitle } सदस्यता है। यदि आप परीक्षण अवधि के बाद अपनी सदस्यता जारी रखना चाहते हैं, तो कृपया भुगतान विधि जोड़ें।"
@@ -3861,11 +4135,20 @@
       "Allow recovery by phone": [
         "फ़ोन द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
+      "Allowed domain": [
+        "अनुमत डोमेन"
+      ],
+      "Allowed Domain": [
+        "अनुमत डोमेन"
+      ],
       "Amount": [
         "रकम"
       ],
       "Amount due": [
         "देय राशि"
+      ],
+      "Assertion Consumer Service URL": [
+        "अभिकथन उपभोक्ता सेवा URL"
       ],
       "Attach screenshot(s)": [
         "स्क्रीनशॉट(स) संलग्न करें"
@@ -3987,6 +4270,9 @@
       "Domain name": [
         "डोमेन नाम"
       ],
+      "e.g. example.com": [
+        "उदा. udaaharan.in"
+      ],
       "Email": [
         "ईमेल"
       ],
@@ -4005,6 +4291,9 @@
       "Expires": [
         "समय खत्म"
       ],
+      "Gateway name": [
+        "गेटवे का नाम"
+      ],
       "Gift code": [
         "उपहार कोड"
       ],
@@ -4013,6 +4302,9 @@
       ],
       "Interval": [
         "अंतराल"
+      ],
+      "Issuer ID": [
+        "जारीकर्ता आईडी"
       ],
       "Keep me signed in": [
         "मुझे साइन इन बनाए रखें"
@@ -4028,6 +4320,15 @@
       ],
       "Main": [
         "मुख्‍य"
+      ],
+      "Metadata file for ${ appName }": [
+        "${ appName } के लिए मेटाडाटा फाइल"
+      ],
+      "Metadata URL for ${ appName }": [
+        "${ appName } के लिए मेटाडाटा URL"
+      ],
+      "Method for importing metadata": [
+        "मेटाडाटा आयात करने की विधि"
       ],
       "Moderate NAT": [
         "मध्यम एनएटी"
@@ -4125,6 +4426,9 @@
       "Proration": [
         "प्रोडशन"
       ],
+      "Public certificate (X.509)": [
+        "सार्वजनिक प्रमाणपत्र (X.509)"
+      ],
       "Recovery email address": [
         "ईमेल पतों की प्राप्ति"
       ],
@@ -4133,6 +4437,9 @@
       ],
       "Recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश"
+      ],
+      "Reply (ACS) URL": [
+        "प्रतिक्रिया URL (ACS)"
       ],
       "Require 2FA for administrators": [
         "प्रशासकों के लिए 2FA आवश्यक करें"
@@ -4145,6 +4452,12 @@
       ],
       "Security code (${ codeName })": [
         "सुरक्षा कोड (${ codeName })"
+      ],
+      "Single sign-on entity ID": [
+        "एकल साइन-ऑन इकाई आईडी"
+      ],
+      "Single sign-on URL": [
+        "एकल साइन-ऑन URL"
       ],
       "Start date": [
         "आरंभ करने की तिथि"
@@ -4172,6 +4485,9 @@
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
+      ],
+      "Value": [
+        "मान"
       ],
       "VAT": [
         "VAT"
@@ -4296,6 +4612,9 @@
       "Create account": [
         "खाता बनाएं"
       ],
+      "Don't have access to your 2FA?": [
+        "क्या 2-एफए तक एक्सेस नहीं है?"
+      ],
       "Forgot username?": [
         "उपयोगकर्ता नाम भूल गए?"
       ],
@@ -4394,6 +4713,9 @@
       "Activate user": [
         "उपयोगकर्ता को सक्रिय करें"
       ],
+      "Add address": [
+        "पता जोड़ें"
+      ],
       "Change password": [
         "पासवर्ड परिवर्तित करें"
       ],
@@ -4427,11 +4749,26 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: साइन-इन करें"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: साइन-अप करें"
+      ],
+      "Create a new ${ appName } account": [
+        "नया ${ appName } खाता बनाएं"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "अपना ${ BRAND_NAME } खाता पासवर्ड भूल गए? पुनर्प्राप्ति कोड, ईमेल या एसएमएस का उपयोग करके इसे यहां रीसेट करें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अधिक तक पहुंच पुनः प्राप्त करें।"
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "अपना ${ BRAND_NAME } खाता उपयोगकर्ता नाम भूल गए? अपने पुनर्प्राप्ति ईमेल या फ़ोन नंबर का उपयोग करके इसे ढूंढें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अन्य तक पहुंच पुनः प्राप्त करें।"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "${ BRAND_NAME } खाता पासवर्ड रीसेट करें"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "${ appName } खाते तक पहुंचने के लिए साइन इन करें"
       ]
     },
     "Monetary unit": {
@@ -5181,6 +5518,9 @@
       "Invalid code": [
         "अमान्य कोड"
       ],
+      "IP Address copied to clipboard": [
+        "IP पता क्लिपबोर्ड पर कॉपी किया गया"
+      ],
       "Key copied to the clipboard": [
         "कुंजी क्लिपबोर्ड पर कॉपी की गई"
       ],
@@ -5242,6 +5582,9 @@
       "Secure Core configs": [
         "Secure Core कॉन्फ़िगरेशन"
       ],
+      "Select who can access...": [
+        "चुनें कि कौन एक्सेस कर सकता है..."
+      ],
       "Send to all": [
         "सभी को भेजें"
       ],
@@ -5250,6 +5593,9 @@
       ],
       "Standard server configs": [
         "स्टैंडर्ड सर्वर कॉन्फ़िगरेशन"
+      ],
+      "The whole organization": [
+        "संपूर्ण संगठन"
       ]
     },
     "Organization capacity error": {
@@ -5514,6 +5860,15 @@
       "Confirm": [
         "पुष्टि करें"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "उदा. https://example.in/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "उदा. https://idp.example.in/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "उदा. https://idp.example.in/XXXXX"
+      ],
       "Feedback": [
         "सुझाव"
       ],
@@ -5729,6 +6084,17 @@
     "Select file": {
       "Upload CSV file": [
         "CSV फाइल अपलोड करे"
+      ]
+    },
+    "Select invoice document": {
+      "Credit note": [
+        "क्रेडिट नोट"
+      ],
+      "Currency conversion": [
+        "मुद्रा परिवर्तन"
+      ],
+      "Invoice": [
+        "रसीद"
       ]
     },
     "Select search results": {
@@ -6641,8 +7007,14 @@
       "Add PayPal payment method": [
         "पेपैल भुगतान विधि जोड़ें"
       ],
+      "Add servers": [
+        "सर्वर जोड़ें"
+      ],
       "Add user accounts": [
         "उपयोगकर्ता खाता जोड़ें"
+      ],
+      "Add users": [
+        "यूजर जोड़ें"
       ],
       "Allocate storage": [
         "भंडारण आवंटित करें"
@@ -6729,6 +7101,15 @@
         "${ selectedUserIds.length } यूज़र खाता बनाए",
         "${ selectedUserIds.length } यूज़र खाते बनाए"
       ],
+      "Create a new Gateway": [
+        "नया गेटवे बनाएं"
+      ],
+      "Create a new gateway": [
+        "नया गेटवे बनाएं"
+      ],
+      "Create Gateway": [
+        "गेटवे बनाएं"
+      ],
       "Create multiple user accounts": [
         "कई यूज़र खाते बनाएं"
       ],
@@ -6747,8 +7128,14 @@
       "Currency": [
         "मुद्रा"
       ],
+      "Custom selection of users": [
+        "यूजर का कस्टम चयन"
+      ],
       "Customization": [
         "अनुकूलन"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "प्लान में IP पतों की संख्या को अनुकूलित करें"
       ],
       "Date": [
         "दिनांक"
@@ -6805,17 +7192,38 @@
       "Edit email address": [
         "ईमेल पता संपादित करें"
       ],
+      "Edit Gateway ${ currentName }": [
+        "${ currentName } गेटवे बदलें"
+      ],
       "Edit invoice details": [
         "रसीद विवरण संपादित करें"
       ],
+      "Edit servers": [
+        "सर्वर बदलें"
+      ],
+      "Edit the list of servers of the gateway": [
+        "गेटवे के सर्वर की सूची संपादित करें"
+      ],
       "Edit user": [
         "यूजर को संपादित करो"
+      ],
+      "Edit users": [
+        "यूजर बदलें"
+      ],
+      "Edit who can access the gateway": [
+        "बदलें कि गेटवे तक कौन एक्सेस कर सकता है"
       ],
       "Email": [
         "ईमेल"
       ],
       "Email subscriptions": [
         "ईमेल सदस्यताएँ"
+      ],
+      "Enter endpoints into your identity provider": [
+        "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
+      ],
+      "Enter SAML metadata": [
+        "SAML मेटाडाटा दर्ज करें"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } बीटा कार्यक्रम में शामिल होने के लिए अपनी ${ BRAND_NAME } खाता जानकारी दर्ज करें"
@@ -6826,12 +7234,18 @@
       "Error": [
         "गड़बड़"
       ],
+      "Every member of the organization can access": [
+        "संगठन का प्रत्येक सदस्य एक्सेस कर सकता है"
+      ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } यूज़र खाता बनाने में असफल",
         "${ failedUsers.length } यूज़र खाते बनाने में असफल"
       ],
       "Find email or username": [
         "ईमेल या उपयोगकर्ता नाम खोजें"
+      ],
+      "Gateways": [
+        "गेटवे"
       ],
       "Generate missing keys": [
         "लापता कुंजी उत्पन्न करें"
@@ -6938,8 +7352,20 @@
       "Recovery": [
         "पुनर्प्राप्ति"
       ],
+      "Remove domain": [
+        "डोमेन हटाएं"
+      ],
+      "Remove single sign-on": [
+        "एकल साइन-ऑन हटाएं"
+      ],
+      "Remove single sign-on for your organization?": [
+        "अपने संगठन के लिए एकल साइन-ऑन हटाएं?"
+      ],
       "Remove user?": [
         "यूज़र हटाएं?"
+      ],
+      "Rename the gateway": [
+        "गेटवे का नाम बदलें"
       ],
       "Report a problem": [
         "समस्या रिपोर्ट करें"
@@ -6962,6 +7388,9 @@
       "Revoke certificate": [
         "प्रमाणपत्र रद्द करें"
       ],
+      "SAML authentication": [
+        "SAML सत्यापन"
+      ],
       "Select a plan": [
         "एक योजना चुनें"
       ],
@@ -6983,6 +7412,9 @@
       "Settings": [
         "सेटिंग्स"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Business में अपग्रेड करके समर्पित सर्वर सेटअप करें"
+      ],
       "Sign in": [
         "साइन इन करें"
       ],
@@ -7000,6 +7432,9 @@
       ],
       "Signed in to member account": [
         "सदस्य खाते पे साइनइन हुए"
+      ],
+      "Single sign-on": [
+        "एकल साइन-ऑन"
       ],
       "Spam, block, and allow lists": [
         "स्पैम, ब्लॉक और अलाउ सूची"
@@ -7037,6 +7472,9 @@
       ],
       "Type": [
         "प्रकार"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "समर्पित सर्वर के साथ नेटवर्क सुरक्षा को अपग्रेड करें"
       ],
       "Upload CSV file to create multiple accounts": [
         "एक से अधिक खाते बनाने के लिए CSV फ़ाइल अपलोड करें"
@@ -7134,11 +7572,26 @@
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
         "व्यवस्थापक आपकी सदस्यता में परिवर्तन कर सकते हैं, उपयोगकर्ता खातों और पासवर्डों का प्रबंधन कर सकते हैं, तथा अन्य उपयोगकर्ताओं को प्रशासनिक विशेषाधिकार दे सकते हैं।"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के ACS (अभिकथन उपभोक्ता सेवा) यूआरएल फील्ड में पेस्ट करें"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "इस यूआरएल को कॉपी करके अपने पहचान प्रदाता के इकाई आईडी फील्ड में पेस्ट करें"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "पहचान प्रदाता से एंडपॉइंट URL (उदा. https://idp.udaaharan.in/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "सत्यापन अभिकथन पर हस्ताक्षर करने के लिए पहचान प्रदाता की सार्वजनिक कुंजी। पहचान प्रदाता से प्रमाणपत्र हैश प्राप्त करें।"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "जो सदस्य 2FA का उपयोग नहीं करते हैं, उन्हें एक ईमेल प्राप्त होगा जिसमें उन्हें इसे यथाशीघ्र सक्षम करने के लिए कहा जाएगा।"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "वह डोमेन निर्दिष्ट करें जिसे SAML SSO के साथ प्रमाणित करने की अनुमति है"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
@@ -7151,6 +7604,9 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "हमारे वेब ऐप पर साइन इन करने पर उपयोगकर्ताओं को ${ BRAND_NAME } आइकन के बजाय आपका चिन्ह दिखाई देगा।"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "आम तौर पर यूआरएल जिसमें पहचान प्रदाता का नाम शामिल होता है"
       ],
       "Verified email address": [
         "सत्यापित ईमेल पता"

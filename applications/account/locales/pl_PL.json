@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -760,10 +760,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -1221,11 +1221,11 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } niestandardowa domena",
-        "${ domains } niestandardowe domeny",
-        "${ domains } niestandardowych domen",
-        "${ domains } niestandardowych domen"
+      "${ domains } additional custom domain": [
+        "${ domains } dodatkowa niestandardowa domena",
+        "${ domains } dodatkowe niestandardowe domeny",
+        "${ domains } dodatkowych niestandardowych domen",
+        "${ domains } dodatkowych niestandardowych domen"
       ],
       "${ ips } server": [
         "${ ips } serwer",
@@ -1405,8 +1405,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Dostosuj plan"
+      "Buy now": [
+        "Kup teraz"
       ],
       "New": [
         "Nowość"
@@ -1549,14 +1549,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1578,6 +1570,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6210,6 +6210,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } wstrzymał proces importowania, ponieważ na Twoim koncie brakuje miejsca. Możesz:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } spróbuje wznowić proces importowania, jak tylko dostawca poczty e-mail zresetuje ${ bandwidthLimitLink } konta. Nie musisz nic robić. Jeśli anulujesz proces importowania, nie będziesz mógł wznowić tego procesu i będziesz musiał rozpocząć go od nowa."
       ],
@@ -6245,6 +6248,9 @@
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "Użytkownik ${ inviterEmailJSX } zaprasza Cię do ${ PASS_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje hasło logowania oraz drugie hasło. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
       ],
       "${ n } address": [
         "${ n } adres",
@@ -6341,6 +6347,18 @@
         "Znaleziono ${ userFound } użytkowników",
         "Znaleziono ${ userFound } użytkowników",
         "Znaleziono ${ userFound } użytkowników"
+      ],
+      "${ vaultLink } created": [
+        "Utworzenie sejfu ${ vaultLink }"
+      ],
+      "${ vaultLink } deleted": [
+        "Usunięcie sejfu ${ vaultLink }"
+      ],
+      "${ vaultLink } shared with email": [
+        "Udostępnienie sejfu ${ vaultLink } za pomocą adresu e-mail"
+      ],
+      "${ vaultLink } updated": [
+        "Zaktualziwoanie sejfu ${ vaultLink }"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Połączenie z poziomu kraju wymagana planu ${ vpnPlus }."
@@ -6693,6 +6711,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Zwiększ rozpoznawalność marki."
       ],
+      "Breach Custom Email Added": [
+        "Dodanie niestandardowego adresu e-mail do monitoringu"
+      ],
+      "Breach Custom Email Deleted": [
+        "Usunięcie niestandardowego adresu e-mail z monitoringu"
+      ],
+      "Breach Custom Email Validated": [
+        "Zweryfikowanie niestandardowego adresu e-mail w monitoringu"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Domyślnie użytkownicy organizacji mogą eksportować tylko swoje sejfy. Po włączeniu tej opcji, użytkownicy nie będą mogli eksportować żadnych danych"
       ],
@@ -6816,8 +6843,17 @@
       "Custom daily": [
         "Codziennie (niestandardowo)"
       ],
+      "Custom email added": [
+        "Dodanie niestandardowego adresu e-mail"
+      ],
+      "Custom email deleted": [
+        "Usunięcie niestandardowego adresu e-mail"
+      ],
       "Custom email domains": [
         "Niestandardowe domeny"
+      ],
+      "Custom email validated": [
+        "Zweryfikowanie niestandardowego adresu e-mail"
       ],
       "Custom monthly": [
         "Co miesiąc (niestandardowo)"
@@ -6837,11 +6873,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -6857,6 +6893,9 @@
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy"
+      ],
+      "Discount": [
+        "Rabat"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -7275,14 +7314,14 @@
       "Invite Deleted": [
         "Usunięcie zaproszenia"
       ],
+      "Invite for new user deleted": [
+        "Usunięcie zaproszenia dla nowego użytkownika"
+      ],
       "Invite for organization accepted": [
         "Zaakceptowanie zaproszenia do organizacji"
       ],
       "Invite for organization created": [
         "Utworzenie zaproszenia do organizacji"
-      ],
-      "Invite for User deleted": [
-        "Usunięcie zaproszenia dla użytkownika"
       ],
       "Invite rejected": [
         "Odrzucenie zaproszenia"
@@ -7302,6 +7341,9 @@
       "Item Autofilled": [
         "Autouzupełnienie elementu"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Autouzupełnienie elementu w sejfie ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Autouzupełnienie elementu w sejfie"
       ],
@@ -7311,17 +7353,35 @@
       "Item Created": [
         "Utworzenie elementu"
       ],
+      "Item created in ${ vaultLink }": [
+        "Utworzenie elementu w sejfie ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Utworzenie elementu w sejfie"
       ],
       "Item Deleted": [
         "Usunięcie elementu"
       ],
-      "Item deleted in vault": [
+      "Item deleted from ${ vaultLink }": [
+        "Usunięcie elementu z sejfu ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
         "Usunięcie elementu z sejfu"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Zmiana flag elementu w sejfie ${ vaultLink }"
       ],
       "Item flags changed in vault": [
         "Zmiana flag elementu w sejfie"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Przeniesienie elementu do Kosza sejfu ${ vaultLink }"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Przywrócenie elementu z Kosza sejfu ${ vaultLink }"
+      ],
+      "Item in vault trashed": [
+        "Przeniesienie elementu do Kosza sejfu"
       ],
       "Item in vault untrashed": [
         "Przywrócenie elementu z Kosza sejfu"
@@ -7329,20 +7389,23 @@
       "Item Read": [
         "Odczytanie elementu"
       ],
+      "Item read in ${ vaultLink }": [
+        "Odczytanie elementu w sejfie ${ vaultLink }"
+      ],
       "Item read in vault": [
         "Odczytanie elementu w sejfie"
       ],
       "Item Trashed": [
         "Przeniesienie elementu do Kosza"
       ],
-      "Item trashed in vault": [
-        "Przeniesienie elementu sejfu do Kosza"
-      ],
       "Item Untrashed": [
         "Przywrócenie elementu z Kosza"
       ],
       "Item Updated": [
         "Zaktualizowanie elementu"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Zaktualizowanie elementu w sejfie ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Zaktualizowanie elementu w sejfie"
@@ -7511,6 +7574,9 @@
       ],
       "New User Invite Deleted": [
         "Usunięcie zaproszenia dla nowego użytkownika"
+      ],
+      "New user invited to organization": [
+        "Zaproszenie nowego użytkownika do organizacji"
       ],
       "No account keys exist": [
         "Kucze konta nie istnieją"
@@ -7917,6 +7983,12 @@
       "Share Updated": [
         "Zaktualizowanie udostępnionego obiektu"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "Usunięcie udostępniania sejfu ${ vaultLink }"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Zaktualizowanie udostępniania sejfu ${ vaultLink }"
+      ],
       "Shared vault deleted": [
         "Usunięcie udostępnionego sejfu"
       ],
@@ -8304,6 +8376,9 @@
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania danych. (Opcja zaawansowana)"
       ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Tryb podwójnego hasła umożliwia oddzielenie haseł logowania i odszyfrowywania danych. W określonych sytuacjach zwiększa to nieznacznie bezpieczeństwo. Dla większości użytkowników wystarczający jest tryb pojedynczego hasła. Aby przełączyć się do trybu podwójnego hasła, wpisz hasło logowania, a następnie drugie hasło."
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie można zweryfikować podpisu pliku odzyskiwania. Skontaktuj się ze wsparciem technicznym."
       ],
@@ -8391,9 +8466,6 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "User invited to organization": [
-        "Zaproszenie użytkownika do organizacji"
-      ],
       "username": [
         "nazwa użytkownika"
       ],
@@ -8411,6 +8483,9 @@
       ],
       "Vault Deleted": [
         "Usunięcie sejfu"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Sejf został usunięty lub wymaga uprawnień dostępu"
       ],
       "Vault shared with email": [
         "Udostępnienie sejfu za pomocą adresu e-mail"
@@ -8583,6 +8658,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Dzięki szyfrowanemu adresowi ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME }"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Dzięki grupom użytkowników możesz wysyłać wiadomości, udostępniać dane lub zmieniać ustawienia dla konkretnych grup użytkowników."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "W obecnym planie możesz tylko odbierać wiadomości z adresu @pm.me. Ulepsz konto, aby wysyłać wiadomości i tworzyć dodatkowe adresy @pm.me."
       ],
@@ -8597,9 +8675,6 @@
       ],
       "Writing assistant": [
         "Asystent pisania"
-      ],
-      "Writing assistant add-on": [
-        "Dodatek asystenta pisania"
       ],
       "Yearly": [
         "Co rok"
@@ -8750,6 +8825,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Nadal musisz odpowiedzieć na zaproszenia, aby organizator zobaczył odpowiedź."
+      ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Po zaakceptowaniu zaproszenia będziesz mógł ustawić użytkownikowi uprawnienia administratora."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po zalogowaniu się zostaniesz przekierowany do ${ destination }."
@@ -10581,6 +10659,9 @@
       "Upgrade your plan": [
         "Ulepsz plan"
       ],
+      "Vault": [
+        "Sejf"
+      ],
       "View guide": [
         "Pokaż przewodnik"
       ],
@@ -10704,8 +10785,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Dodaj asystenta pisania"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Wszystkie biznesowe aplikacje ${ BRAND_NAME } i funkcje premium dla ochrony firmy"
@@ -11162,23 +11243,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11206,6 +11270,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -11625,6 +11706,12 @@
       ],
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
+      ],
+      "Unlimited logins and notes": [
+        "Nieograniczona liczba danych logowania i notatek"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Nieograniczona liczba danych logowania, notatek i kart płatniczych"
       ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
@@ -12966,14 +13053,23 @@
       "Save your recovery kit to continue": [
         "Zapisz zestaw odzyskiwania, aby kontynuować"
       ],
+      "Secure vault and link sharing": [
+        "Bezpieczne udostępnianie sejfu i linków"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],
       "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie sejfu (${ n } sejf)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfy)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfów)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfów)"
+        "Bezpieczne udostępnianie ${ n } sejfu",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpieczne udostępnianie ${ n } sejfu i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ],
       "Secured by end-to-end encryption": [
         "Zabezpieczone za pomocą szyfrowania end-to-end"
@@ -13176,6 +13272,9 @@
       "Payment Processing": [
         "Przetwarzanie płatności"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
+      ],
       "Processing payment": [
         "Przetwarzanie płatności"
       ],
@@ -13187,6 +13286,9 @@
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
       ]
     },
     "Payments.Error": {
@@ -15486,6 +15588,9 @@
       "Import": [
         "Importuj"
       ],
+      "Invitation email": [
+        "Adres e-mail zaproszenia"
+      ],
       "List": [
         "Lista"
       ],
@@ -15567,6 +15672,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
@@ -15745,10 +15853,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -16642,9 +16750,6 @@
       "WireGuard configuration": [
         "Konfiguracja WireGuard"
       ],
-      "Writing assistant": [
-        "Asystent pisania"
-      ],
       "You have no open alerts": [
         "Brak nierozwiązanych alertów"
       ],
@@ -17112,6 +17217,9 @@
       "Email": [
         "Adres e-mail"
       ],
+      "Invitation email": [
+        "Adres e-mail zaproszenia"
+      ],
       "Name": [
         "Nazwa"
       ],
@@ -17129,6 +17237,9 @@
       ],
       "Send invite link via email instead": [
         "Wyślij zaproszenie zamiast tego"
+      ],
+      "This will create a new ${ MAIL_APP_NAME } address.": [
+        "Spowoduje to utworzenie nowego adresu ${ MAIL_APP_NAME }."
       ],
       "User created": [
         "Użytkownik został utworzony"
@@ -17360,8 +17471,14 @@
       "Please add at least one recipient.": [
         "Wpisz co najmniej jednego odbiorcę."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Sprawdź, czy rozszerzenie jest poprawnie zainstalowane i włączone"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Wybór tej metody płatności uniemożliwia natychmiastową aktualizację konta. Konto zostanie zaktualizowane po zaksięgowaniu płatności."
+      ],
+      "Please update the extension to its latest version": [
+        "Zaktualizuj rozszerzenie do najnowszej wersji"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."

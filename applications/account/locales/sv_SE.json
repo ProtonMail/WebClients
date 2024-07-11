@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -1221,9 +1221,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } anpassad domän",
-        "${ domains } anpassade domäner"
+      "${ domains } additional custom domain": [
+        "${ domains } ytterligare anpassad domän",
+        "${ domains } ytterligare anpassade domäner"
       ],
       "${ ips } server": [
         "${ ips } server",
@@ -1393,8 +1393,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Anpassa paket"
+      "Buy now": [
+        "Köp nu"
       ],
       "New": [
         "Nytt"
@@ -1537,14 +1537,6 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1566,6 +1558,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5600,6 +5600,12 @@
         "Tjänster"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmar"
+      ]
+    },
     "Header": {
       "Access": [
         "Åtkomst"
@@ -6251,6 +6257,18 @@
         "${ userFound } användare hittades",
         "${ userFound } användare hittades"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } skapad"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } uppdaterad"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } delad med e-post"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } uppdaterad"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } krävs för anslutning på landsnivå."
       ],
@@ -6703,8 +6721,17 @@
       "Custom daily": [
         "Anpassad daglig"
       ],
+      "Custom email added": [
+        "Anpassad e-post tillagd"
+      ],
+      "Custom email deleted": [
+        "Anpassad e-post borttagen"
+      ],
       "Custom email domains": [
         "Anpassade e-domäner"
+      ],
+      "Custom email validated": [
+        "Anpassad e-post validerad"
       ],
       "Custom monthly": [
         "Anpassad månatlig"
@@ -6724,11 +6751,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7156,14 +7183,14 @@
       "Invite Deleted": [
         "Inbjudan borttagen"
       ],
+      "Invite for new user deleted": [
+        "Inbjudan för ny användare borttagen"
+      ],
       "Invite for organization accepted": [
         "Inbjudan för organisation accepterad"
       ],
       "Invite for organization created": [
         "Inbjudan för organisation skapad"
-      ],
-      "Invite for User deleted": [
-        "Inbjudan för användare borttagen"
       ],
       "Invite rejected": [
         "Inbjudan avvisad"
@@ -7178,8 +7205,14 @@
       "It appears some of your data is encrypted and locked.": [
         "Det verkar som om en del av dina data är krypterade och låsta."
       ],
+      "Item Changed Flags": [
+        "Objekt ändrade flaggor"
+      ],
       "Item Created": [
         "Objekt skapat"
+      ],
+      "Item created in ${ vaultLink }": [
+        "Objekt skapat i ${ vaultLink }"
       ],
       "Item created in vault": [
         "Objekt skapat i valv"
@@ -7187,17 +7220,32 @@
       "Item Deleted": [
         "Objekt borttaget"
       ],
-      "Item deleted in vault": [
-        "Objekt borttagna i valv"
+      "Item deleted from ${ vaultLink }": [
+        "Objekt borttaget från ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Objekt borttaget från valv"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Objektflaggor ändrade i ${ vaultLink }"
+      ],
+      "Item flags changed in vault": [
+        "Objektflaggor ändrade i valv"
       ],
       "Item Read": [
         "Objekt läst"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Objekt läst i ${ vaultLink }"
       ],
       "Item read in vault": [
         "Objekt läst i valv"
       ],
       "Item Updated": [
         "Objekt uppdaterat"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Objekt uppdaterat i ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Objekt uppdaterat i valv"
@@ -7366,6 +7414,9 @@
       ],
       "New User Invite Deleted": [
         "Ny användarinbjudan borttagen"
+      ],
+      "New user invited to organization": [
+        "Ny användare inbjuden till organisation"
       ],
       "No account keys exist": [
         "Det finns inga kontonycklar"
@@ -7768,6 +7819,12 @@
       ],
       "Share Updated": [
         "Delning uppdaterad"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Delad ${ vaultLink } borttagen"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Delad ${ vaultLink } uppdaterad"
       ],
       "Shared vault deleted": [
         "Delat valv borttaget"
@@ -8235,9 +8292,6 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "User invited to organization": [
-        "Användare inbjuden till organisation"
-      ],
       "username": [
         "användarnamn"
       ],
@@ -8255,6 +8309,9 @@
       ],
       "Vault Deleted": [
         "Valv borttaget"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Valv antingen borttaget eller kräver åtkomstbehörigheter"
       ],
       "Vault shared with email": [
         "Valv delad med e-post"
@@ -10402,6 +10459,9 @@
       "Upgrade your plan": [
         "Uppgradera ditt paket"
       ],
+      "Vault": [
+        "Valv"
+      ],
       "View guide": [
         "Visa guide"
       ],
@@ -10513,8 +10573,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Lägg till skrivassistent"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Alla ${ BRAND_NAME } företagsappar och premiumfunktioner för att skydda hela ditt företag"
@@ -10961,23 +11021,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11005,6 +11048,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -11387,6 +11447,9 @@
       ],
       "Unlimited labels": [
         "Obegränsade etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Obegränsat antal inloggningar och anteckningar"
       ],
       "Unlimited logins, notes and credit cards": [
         "Obegränsat antal inloggningar, anteckningar och kreditkort"
@@ -15209,6 +15272,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -15389,10 +15455,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -16284,9 +16350,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard-konfiguration"
-      ],
-      "Writing assistant": [
-        "Skrivassistent"
       ],
       "You have no open alerts": [
         "Du har inga öppna varningar"

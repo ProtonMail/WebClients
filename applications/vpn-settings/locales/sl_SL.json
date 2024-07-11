@@ -636,12 +636,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domena po meri",
-        "${ domains } domeni po meri",
-        "${ domains } domene po meri",
-        "${ domains } domen po meri"
-      ],
       "${ ips } server": [
         "${ ips } strežnik",
         "${ ips } strežnika",
@@ -4304,9 +4298,6 @@
       "Writing assistant": [
         "Pomočnik pri pisanju"
       ],
-      "Writing assistant add-on": [
-        "Dodatek za pomočnika pri pisanju"
-      ],
       "You already have a free account": [
         "Brezplačen račun že imate"
       ],
@@ -5226,11 +5217,6 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
-      ]
-    },
-    "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Dodajte pomočnika za pisanje"
       ]
     },
     "mailtrial2024: Action": {

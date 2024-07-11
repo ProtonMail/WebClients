@@ -631,10 +631,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } özel etki alanı",
-        "${ domains } özel etki alanı"
-      ],
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
@@ -3579,6 +3575,9 @@
       "Current plan": [
         "Geçerli tarife"
       ],
+      "Current version": [
+        "Güncel sürüm"
+      ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
@@ -4252,9 +4251,6 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
-      ],
-      "Writing assistant add-on": [
-        "Yazma yardımcısı eklentisi"
       ],
       "you": [
         "siz"
@@ -5047,9 +5043,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Yazma yardımcısını ekle"
-      ],
       "for ${ price }": [
         "${ price }"
       ]

@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -1221,10 +1221,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } özel etki alanı",
-        "${ domains } özel etki alanı"
-      ],
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
@@ -1397,9 +1393,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Tarifeyi özelleştir"
-      ],
       "New": [
         "Yeni"
       ],
@@ -1541,14 +1534,6 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1570,6 +1555,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -6718,11 +6711,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -6736,6 +6729,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
+      ],
+      "Discount": [
+        "İndirim"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
@@ -7156,9 +7152,6 @@
       "Invite for organization created": [
         "Kuruluş daveti oluşturuldu"
       ],
-      "Invite for User deleted": [
-        "Kullanıcı daveti silindi"
-      ],
       "Invite rejected": [
         "Davet reddedildi"
       ],
@@ -7190,9 +7183,6 @@
       "Item Deleted": [
         "Öge silindi"
       ],
-      "Item deleted in vault": [
-        "Kasa ögesi silindi"
-      ],
       "Item flags changed in vault": [
         "Kasa ögesi işaretleri değiştirildi"
       ],
@@ -7207,9 +7197,6 @@
       ],
       "Item Trashed": [
         "Öge çöpe atıldı"
-      ],
-      "Item trashed in vault": [
-        "Kasa ögesi çöpe atıldı"
       ],
       "Item Untrashed": [
         "Öge çöpten çıkarıldı"
@@ -8253,9 +8240,6 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "User invited to organization": [
-        "Kullanıcı kuruluşa davet edildi"
-      ],
       "username": [
         "kullanıcı adı"
       ],
@@ -8459,9 +8443,6 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
-      ],
-      "Writing assistant add-on": [
-        "Yazma yardımcısı eklentisi"
       ],
       "Yearly": [
         "Yıllık"
@@ -10542,9 +10523,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Yazma yardımcısını ekle"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler"
       ],
@@ -10990,23 +10968,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11034,6 +10995,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -15436,10 +15414,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -16319,9 +16297,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard yapılandırması"
-      ],
-      "Writing assistant": [
-        "Yazma yardımcısı"
       ],
       "You have no open alerts": [
         "Açık bir uyarınız yok"
