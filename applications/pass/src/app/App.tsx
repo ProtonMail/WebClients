@@ -33,7 +33,6 @@ import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
-import { USE_COOKIES } from '@proton/pass/lib/auth/flags';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
@@ -59,8 +58,8 @@ import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
 import locales from './locales';
 
-exposeAuthStore(createAuthStore(createSecureSessionStorage(), { cookies: USE_COOKIES }));
-exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD, cookies: USE_COOKIES }));
+exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
 exposePassCrypto(createPassCrypto());
 sentry({ config: PASS_CONFIG });
 

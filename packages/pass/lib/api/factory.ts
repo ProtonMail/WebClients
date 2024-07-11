@@ -10,6 +10,7 @@ import type {
     ApiSubscriptionEvent,
     Maybe,
 } from '@proton/pass/types';
+import { AuthMode } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
@@ -38,9 +39,6 @@ import { getSilenced } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
-    /** When `true` - API handlers will use cookie based
-     * authentication and refresh handlers */
-    cookies: boolean;
     /** Specifies the maximum number of concurrent requests. If not provided,
      * all requests will be processed immediately. When a value is set, ongoing
      * requests will be deferred until the threshold is ready for additional processing. */
@@ -48,38 +46,24 @@ export type ApiFactoryOptions = {
     getAuth?: () => Maybe<ApiAuth>;
 };
 
-/** In token based auth, each request should attach
- * the necessary token based Authorization headers */
-export const getTokenAuth = (): Maybe<ApiAuth> => {
-    const AccessToken = authStore.getAccessToken();
-    const RefreshToken = authStore.getRefreshToken();
-    const RefreshTime = authStore.getRefreshTime();
-    const UID = authStore.getUID();
-    if (!(UID && AccessToken && RefreshToken)) return undefined;
-    return { UID, AccessToken, RefreshToken, RefreshTime };
-};
-
-/** If the API is configured to use cookies - we only
- * need the session UID in order to send out requests */
-export const getCookieAuth = (): Maybe<ApiAuth> => {
-    const RefreshTime = authStore.getRefreshTime();
-    const UID = authStore.getUID();
+/** Provides dynamic API auth options based on the current session state.
+ * Supports upgrading from token-based to cookie-based authentication.
+ * This is crucial for scenarios where token-based auth is required
+ * before transitioning to cookies, enabling seamless auth upgrades. */
+export const getDynamicAuth = (): Maybe<ApiAuth> => {
+    const { cookies, UID, AccessToken, RefreshToken, RefreshTime } = authStore.getSession();
     if (!UID) return undefined;
-    return { UID, AccessToken: '', RefreshToken: '', RefreshTime };
+
+    if (cookies) return { type: AuthMode.COOKIE, UID, RefreshTime };
+    if (AccessToken && RefreshToken) return { type: AuthMode.TOKEN, UID, AccessToken, RefreshToken, RefreshTime };
 };
 
-export const createApi = ({
-    config,
-    cookies,
-    getAuth = cookies ? getCookieAuth : getTokenAuth,
-    threshold,
-}: ApiFactoryOptions): Api => {
+export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFactoryOptions): Api => {
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
     const state = objectHandler<ApiState>({
         appVersionBad: false,
-        cookies,
         online: true,
         pendingCount: 0,
         queued: [],
@@ -96,10 +80,9 @@ export const createApi = ({
         call,
         getAuth,
         onRefresh: (data) => pubsub.publishAsync({ type: 'refresh', data }),
-        cookies,
     });
 
-    const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state, cookies });
+    const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
     const api = async (options: ApiOptions): Promise<ApiResult> => {
         const pending = state.get('pendingCount') + 1;
