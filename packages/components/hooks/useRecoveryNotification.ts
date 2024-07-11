@@ -13,12 +13,14 @@ import useHasOutdatedRecoveryFile from './useHasOutdatedRecoveryFile';
 import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
 import useIsMnemonicAvailable from './useIsMnemonicAvailable';
 import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
+import useIsSentinelUser from './useIsSentinelUser';
 import useRecoveryStatus from './useRecoveryStatus';
 import useUser from './useUser';
 
 const useRecoveryNotification = (
     isLessInvasive: boolean,
-    isQuickSettings?: boolean
+    isQuickSettings?: boolean,
+    canDisplayNewSentinelSettings?: boolean
 ): { path: string; text: string; color: ThemeColor } | undefined => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -31,6 +33,7 @@ const useRecoveryNotification = (
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
     const [isDataRecoveryAvailable, loadingIsDataRecoveryAvailable] = useIsDataRecoveryAvailable();
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
+    const [{ isSentinelUser, hasMnemonic }, loadingIsSentinelUser] = useIsSentinelUser();
 
     const { feature: hasDismissedRecoverDataCard } = useFeature(FeatureCode.DismissedRecoverDataCard);
     const hasKeysToReactivate = getLikelyHasKeysToReactivate(user, addresses);
@@ -42,6 +45,7 @@ const useRecoveryNotification = (
         loadingIsRecoveryFileAvailable ||
         loadingIsMnemonicAvailable ||
         loadingIsDataRecoveryAvailable ||
+        loadingIsSentinelUser ||
         loadingAddresses;
     if (loading) {
         return;
@@ -78,6 +82,17 @@ const useRecoveryNotification = (
             text: c('Action').t`Unlock data`,
             color: ThemeColor.Danger,
         };
+    }
+    // keeps account recovery notification dot consistent with mail security center for new recovery settings for sentinel users
+    if (isSentinelUser && canDisplayNewSentinelSettings && !alreadyDisplayedInSecurityCenter) {
+        if (!hasMnemonic) {
+            return {
+                path: '/recovery#data',
+                text: c('Action').t`Update recovery phrase`,
+                color: ThemeColor.Danger,
+            };
+        }
+        return;
     }
 
     if (mnemonicIsSet || overallStatus === 'complete') {

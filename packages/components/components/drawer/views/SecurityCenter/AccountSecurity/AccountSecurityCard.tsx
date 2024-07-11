@@ -15,6 +15,7 @@ interface Props {
     description?: string;
     icon: IconName;
     isDismissible?: boolean;
+    isDanger?: boolean; //for sentinel user
     className?: string;
     onDismiss?: () => void;
     onClick?: () => void;
@@ -30,6 +31,7 @@ const AccountSecurityCard = ({
     className,
     onDismiss,
     onClick,
+    isDanger,
 }: Props) => {
     // Translator: "Warning" and "Important note" are alternatives for some icons (for blind users)
     const iconAltText = critical ? c('Info').t`Warning` : c('Info').t`Important note`;
@@ -52,7 +54,10 @@ const AccountSecurityCard = ({
                         {critical && (
                             <Icon
                                 name="exclamation-circle-filled"
-                                className="color-warning absolute top-0 right-0 security-card-icon-bubble"
+                                className={clsx(
+                                    'absolute top-0 right-0 security-card-icon-bubble',
+                                    isDanger ? 'color-danger' : 'color-warning'
+                                )}
                             />
                         )}
                     </span>
