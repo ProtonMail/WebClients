@@ -12,6 +12,7 @@ import {
 } from '@proton/andromeda';
 import { DropdownSizeUnit, Icon, IconName, useDebounceInput, useModalState } from '@proton/components/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
+import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -26,8 +27,6 @@ import { useFiatCurrenciesByProvider } from '../../../store/hooks/useFiatCurrenc
 import { useGetQuotesByProvider } from '../../../store/hooks/useQuotesByProvider';
 import { GetQuotesArgs } from '../../../store/slices/quotesByProvider';
 import { DisclaimerModal } from './DisclaimerModal';
-
-import './Amount.scss';
 
 export type QuoteWithProvider = WasmQuote & {
     provider: WasmGatewayProvider;
@@ -247,9 +246,10 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                         />
                     </div>
 
-                    <div className="amount-inputs rounded-xl">
+                    <InputFieldStackedGroup>
                         <Input
-                            label="You pay"
+                            isGroupElement
+                            label={c('bitcoin buy').t`You pay`}
                             value={amount}
                             type="number"
                             onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -260,10 +260,10 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                 <div className="flex grow items-center flex-row flex-nowrap">
                                     <CurrencySelect
                                         dense
-                                        containerClassName="currency-select-dense"
                                         value={selectedCurrency as string}
                                         disabled={loadingCurrencies}
                                         options={allCurrencies}
+                                        stackedFieldWrapper={false}
                                         onSelect={(currency) => {
                                             setSelectedCurrency(currency.Symbol as WasmFiatCurrencySymbol);
                                         }}
@@ -271,9 +271,10 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                 </div>
                             }
                         />
-                        <hr className="m-0 border" />
+
                         <Input
-                            label="You receive"
+                            isGroupElement
+                            label={c('bitcoin buy').t`You receive`}
                             readOnly
                             value={selectedQuote?.BitcoinAmount}
                             disabled={loadingQuotes}
@@ -296,6 +297,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                                 maxWidth: DropdownSizeUnit.Viewport,
                                             }}
                                             containerClassName="provider-select-dense"
+                                            stackedFieldWrapper={false}
                                             disabled={!availableProviders.length || loadingQuotes}
                                             renderSelected={(provider) => {
                                                 if (!provider) {
@@ -351,7 +353,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                 </div>
                             }
                         />
-                    </div>
+                    </InputFieldStackedGroup>
                 </div>
 
                 <div className="color-hint text-sm my-5">
@@ -373,7 +375,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                         }
 
                         return (
-                            <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-5">
+                            <div className="p-3 rounded-full bg-norm flex items-center justify-center mr-2">
                                 <Icon size={4} name={content.icon} className="color-weak" />
                             </div>
                         );

@@ -7,8 +7,10 @@ import CoreSearchableSelect, {
 } from '@proton/components/components/selectTwo/SearchableSelect';
 import SelectTwo, { Props as SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import InputField, { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import clsx from '@proton/utils/clsx';
 
 import '../InputFieldStacked/InputFieldStacked.scss';
+import './Select.scss';
 
 type Props<V> = Omit<
     SelectTwoProps<V> & InputFieldOwnProps,
@@ -19,6 +21,7 @@ type Props<V> = Omit<
     containerClassName?: string;
     prefix?: JSX.Element;
     isGroupElement?: boolean;
+    stackedFieldWrapper?: boolean;
 };
 
 export const Select = <V extends unknown>({
@@ -26,31 +29,50 @@ export const Select = <V extends unknown>({
     containerClassName,
     prefix,
     isGroupElement,
+    stackedFieldWrapper = true,
     ...props
 }: Props<V>) => {
     const selectRef = useRef<HTMLDivElement>(null);
 
-    return (
-        <InputFieldStacked isGroupElement={isGroupElement} isBigger ref={selectRef} classname={containerClassName}>
-            {prefix}
-            <InputField<typeof SelectTwo<V>>
-                as={SelectTwo}
-                dropdownClassName="wallet-select-dropdown"
-                assistContainerClassName="empty:hidden"
-                originalPlacement="bottom"
-                unstyled
-                anchorRef={selectRef as MutableRefObject<any>}
-                caretIconName="chevron-down"
-                caretClassName="stacked-field-caret"
-                {...props}
+    const searchableSelect = (
+        <InputField<typeof SelectTwo<V>>
+            as={SelectTwo}
+            dropdownClassName="wallet-select-dropdown"
+            assistContainerClassName="empty:hidden"
+            originalPlacement="bottom"
+            unstyled={stackedFieldWrapper ? true : false}
+            anchorRef={selectRef as MutableRefObject<any>}
+            caretIconName="chevron-down"
+            caretClassName={stackedFieldWrapper ? 'stacked-field-caret' : 'field-caret'}
+            {...props}
+        >
+            {options.map((opt) => (
+                <Option key={opt.id} title={opt.label} value={opt.value} disabled={opt.disabled}>
+                    {opt.children}
+                </Option>
+            ))}
+        </InputField>
+    );
+
+    if (stackedFieldWrapper) {
+        return (
+            <InputFieldStacked
+                icon={prefix}
+                isGroupElement={isGroupElement}
+                isBigger
+                ref={selectRef}
+                classname={containerClassName}
             >
-                {options.map((opt) => (
-                    <Option key={opt.id} title={opt.label} value={opt.value} disabled={opt.disabled}>
-                        {opt.children}
-                    </Option>
-                ))}
-            </InputField>
-        </InputFieldStacked>
+                {searchableSelect}
+            </InputFieldStacked>
+        );
+    }
+
+    return (
+        <div ref={selectRef} className={clsx(containerClassName, 'wallet-select')}>
+            <div className="shrink-0">{prefix}</div>
+            {searchableSelect}
+        </div>
     );
 };
 
@@ -62,30 +84,46 @@ type SearchableSelectProps<V> = CoreSearchableSelectProps<V> & {
     containerClassName?: string;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     isGroupElement?: boolean;
+    stackedFieldWrapper?: boolean;
+    caretClassName?: string;
 };
 
 export const SearchableSelect = <V extends unknown>({
     containerClassName,
     isGroupElement,
+    stackedFieldWrapper = true,
+    caretClassName,
     ...props
 }: SearchableSelectProps<V>) => {
     const selectRef = useRef<HTMLDivElement>(null);
 
+    const searchableSelect = (
+        <InputField
+            as={CoreSearchableSelect<V>}
+            dropdownClassName="wallet-select-dropdown"
+            assistContainerClassName="empty:hidden"
+            originalPlacement="bottom"
+            availablePlacements={['bottom']}
+            unstyled={stackedFieldWrapper ? true : false}
+            anchorRef={selectRef as MutableRefObject<any>}
+            caretIconName="chevron-down"
+            caretClassName={stackedFieldWrapper ? 'stacked-field-caret' : 'field-caret'}
+            {...props}
+        />
+    );
+
+    if (stackedFieldWrapper) {
+        return (
+            <InputFieldStacked isGroupElement={isGroupElement} isBigger ref={selectRef} classname={containerClassName}>
+                {searchableSelect}
+            </InputFieldStacked>
+        );
+    }
+
     return (
-        <InputFieldStacked isGroupElement={isGroupElement} isBigger ref={selectRef}>
-            <InputField
-                as={CoreSearchableSelect<V>}
-                dropdownClassName="wallet-select-dropdown"
-                assistContainerClassName="empty:hidden"
-                originalPlacement="bottom"
-                availablePlacements={['bottom']}
-                unstyled
-                anchorRef={selectRef as MutableRefObject<any>}
-                caretIconName="chevron-down"
-                caretClassName="stacked-field-caret"
-                {...props}
-            />
-        </InputFieldStacked>
+        <div ref={selectRef} className={clsx(containerClassName, 'wallet-select')}>
+            {searchableSelect}
+        </div>
     );
 };
 
