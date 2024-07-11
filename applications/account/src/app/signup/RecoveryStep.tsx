@@ -57,9 +57,17 @@ interface Props {
     defaultCountry?: string;
     defaultPhone?: string;
     defaultEmail?: string;
+    hasConfirmWarning?: boolean;
 }
 
-const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, onBack }: Props) => {
+const RecoveryStep = ({
+    defaultPhone,
+    defaultEmail,
+    defaultCountry,
+    hasConfirmWarning = true,
+    onSubmit,
+    onBack,
+}: Props) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const [loading, withLoading] = useLoading();
@@ -96,7 +104,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
             return;
         }
 
-        if (!recoveryPhone && !recoveryEmail) {
+        if (hasConfirmWarning && !recoveryPhone && !recoveryEmail) {
             setConfirmModal(true);
             return;
         }
@@ -121,7 +129,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                 {renderConfirmModal && (
                     <RecoveryConfirmModal
                         onConfirm={() => {
-                            return withLoadingDiscard(onSubmit({}));
+                            return withLoadingDiscard(onSubmit({})).catch(noop);
                         }}
                         {...confirmModal}
                     />
@@ -197,7 +205,13 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                         type="button"
                         fullWidth
                         disabled={loading}
-                        onClick={() => setConfirmModal(true)}
+                        onClick={() => {
+                            if (hasConfirmWarning) {
+                                setConfirmModal(true);
+                            } else {
+                                return withLoadingDiscard(onSubmit({})).catch(noop);
+                            }
+                        }}
                         className="mt-2"
                     >
                         {c('Action').t`Maybe later`}

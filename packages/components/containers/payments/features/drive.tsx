@@ -221,6 +221,7 @@ export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanC
             [PLANS.PASS_BUSINESS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
+            [PLANS.WALLET]: null,
         },
     };
 };
@@ -246,6 +247,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -266,6 +268,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getShareFeature(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -286,6 +289,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getAdvancedShareFeature(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -307,6 +311,7 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
                 [PLANS.PASS_BUSINESS]: getDocumentEditor(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
     ];

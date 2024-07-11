@@ -8,7 +8,7 @@ import {
     useRef,
     useState,
 } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -22,12 +22,14 @@ import { useIsChargebeeEnabled } from '@proton/components/containers/payments/Pa
 import { getBlackFridayRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useHandler from '@proton/components/hooks/useHandler';
 import { BillingAddress } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
@@ -168,6 +170,7 @@ const Step1 = ({
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
+    const handleError = useErrorHandler();
     const isChargebeeEnabled = useIsChargebeeEnabled();
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
@@ -236,6 +239,7 @@ const Step1 = ({
             }
         } catch (e) {
             if (latestRef.current === latest) {
+                handleError(e);
                 // Reset any optimistic state on failures
                 setModel((old) => ({
                     ...old,
@@ -350,7 +354,8 @@ const Step1 = ({
     const hidePlanSelectorCoupons = new Set([COUPON_CODES.TRYMAILPLUS2024, COUPON_CODES.MAILPLUSINTRO]);
     const hasPlanSelector =
         (!model.planParameters?.defined || hasUpsellSection) &&
-        [SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) &&
+        ([SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) ||
+            (mode === SignupMode.Invite && app === APPS.PROTONWALLET)) &&
         !hidePlanSelectorCoupons.has(model.subscriptionData.checkResult.Coupon?.Code as any) &&
         !hidePlanSelectorCoupons.has(model.optimistic.coupon as any) &&
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
@@ -472,8 +477,23 @@ const Step1 = ({
                         );
                     }
 
-                    if (selectedPlan.Name === PLANS.VISIONARY) {
-                        const textLaunchOffer = c('mail_signup_2023: Info').t`Limited time offer`;
+                    if (
+                        (app === APPS.PROTONWALLET || selectedPlan.Name === PLANS.VISIONARY) &&
+                        !isOnboardingMode &&
+                        model.upsell.mode !== UpsellTypes.UPSELL &&
+                        mode !== SignupMode.Invite
+                    ) {
+                        const plan = `${BRAND_NAME} Visionary`;
+                        if (app === APPS.PROTONWALLET && !signupParameters.invite) {
+                            const appName = getAppName(app);
+                            const textLaunchOffer = getBoldFormattedText(
+                                c('mail_signup_2023: Info').t`**Get ${plan}** for early access to ${appName}!`
+                            );
+                            return wrap('hourglass', textLaunchOffer);
+                        }
+                        const textLaunchOffer = getBoldFormattedText(
+                            c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`
+                        );
                         return wrap('hourglass', textLaunchOffer);
                     }
 
@@ -752,10 +772,12 @@ const Step1 = ({
                             <>
                                 <BoxHeader
                                     {...(() => {
-                                        if (signupParameters.invite?.type === 'pass') {
+                                        if (
+                                            signupParameters.invite?.type === 'wallet' ||
+                                            signupParameters.invite?.type === 'pass'
+                                        ) {
                                             return {
-                                                title: c('pass_signup_2023: Title')
-                                                    .t`Create a ${PASS_APP_NAME} account`,
+                                                title: c('pass_signup_2023: Title').t`Create a ${appName} account`,
                                             };
                                         }
 
@@ -776,28 +798,26 @@ const Step1 = ({
                                     <div className="flex items-start justify-space-between gap-14">
                                         <div className="flex-1 w-0 relative">
                                             <AccountStepDetails
+                                                signupTypes={signupTypes}
                                                 {...(signupParameters.email
                                                     ? { defaultEmail: signupParameters.email }
                                                     : undefined)}
-                                                {...(signupParameters.invite?.type === 'pass'
-                                                    ? {
-                                                          defaultEmail: signupParameters.invite.data.invitee,
-                                                          disableEmail: true,
-                                                      }
-                                                    : undefined)}
-                                                {...(signupParameters.invite?.type === 'drive'
-                                                    ? {
-                                                          defaultEmail: signupParameters.invite.data.invitee,
-                                                          disableEmail: true,
-                                                      }
-                                                    : undefined)}
+                                                {...(() => {
+                                                    const invitation = signupParameters.invite;
+                                                    if (
+                                                        invitation &&
+                                                        (invitation.type === 'wallet' ||
+                                                            invitation.type === 'pass' ||
+                                                            invitation.type === 'drive')
+                                                    ) {
+                                                        return {
+                                                            defaultEmail: invitation.data.invitee,
+                                                            emailReadOnly: true,
+                                                            signupTypes: [SignupType.Email],
+                                                        };
+                                                    }
+                                                })()}
                                                 domains={model.domains}
-                                                signupTypes={
-                                                    signupParameters.invite?.type === 'drive' ||
-                                                    signupParameters.invite?.type === 'pass'
-                                                        ? [SignupType.Email]
-                                                        : signupTypes
-                                                }
                                                 passwordFields={true}
                                                 model={model}
                                                 measure={measure}
@@ -865,31 +885,27 @@ const Step1 = ({
                                                                     </Button>
                                                                 </div>
                                                             )}
-                                                            {showSignIn && (
+                                                            {(showSignIn || details.emailAlreadyUsed) && (
                                                                 <div className="text-center">
                                                                     <span>
                                                                         {(() => {
                                                                             if (
                                                                                 signupParameters.signIn === 'redirect'
                                                                             ) {
+                                                                                const searchParams =
+                                                                                    new URLSearchParams();
+                                                                                searchParams.set(
+                                                                                    'email',
+                                                                                    details.email
+                                                                                );
                                                                                 const signIn = (
-                                                                                    <InlineLinkButton
+                                                                                    <Link
                                                                                         key="signin"
                                                                                         className="link link-focus text-nowrap"
-                                                                                        onClick={() => {
-                                                                                            const searchParams =
-                                                                                                new URLSearchParams();
-                                                                                            searchParams.set(
-                                                                                                'email',
-                                                                                                details.email
-                                                                                            );
-                                                                                            history.push(
-                                                                                                `${SSO_PATHS.SWITCH}?${searchParams.toString()}`
-                                                                                            );
-                                                                                        }}
+                                                                                        to={`${SSO_PATHS.SWITCH}?${searchParams.toString()}`}
                                                                                     >
                                                                                         {c('Link').t`Sign in`}
-                                                                                    </InlineLinkButton>
+                                                                                    </Link>
                                                                                 );
                                                                                 // translator: Full sentence "Already have an account? Sign in"
                                                                                 return c('Go to sign in')
