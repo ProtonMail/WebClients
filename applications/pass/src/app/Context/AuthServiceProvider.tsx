@@ -395,6 +395,26 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 }
             },
 
+            onSessionRefresh: async (localID, data, broadcast) => {
+                logger.info('[AuthServiceProvider] Session tokens have been refreshed');
+                const persistedSession = await auth.config.getPersistedSession(localID);
+
+                if (persistedSession) {
+                    const { AccessToken, RefreshTime, RefreshToken, cookies } = data;
+                    /* update the persisted session tokens without re-encrypting the
+                     * session blob as session refresh may happen before a full login
+                     * with a partially hydrated authentication store. */
+                    persistedSession.AccessToken = AccessToken;
+                    persistedSession.RefreshToken = RefreshToken;
+                    persistedSession.RefreshTime = RefreshTime;
+                    persistedSession.cookies = cookies;
+
+                    localStorage.setItem(getSessionKey(localID), JSON.stringify(persistedSession));
+
+                    if (broadcast) sw?.send({ type: 'session', localID, data, broadcast });
+                }
+            },
+
             onNotification: (notification) =>
                 createNotification(
                     enhance({
@@ -475,6 +495,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         const handleSession: ServiceWorkerClientMessageHandler<'session'> = ({ localID, data }) => {
             if (authStore.hasSession(localID)) {
                 logger.info(`[AuthServiceProvider] syncing session for localID[${localID}]`);
+                /** edge-case scenario when we have clients syncing sessions while migration */
+                if (!data.cookies && authStore.getCookieAuth()) return;
                 authStore.setSession(data);
                 authStore.setClientKey(undefined); /* client key may have been regenerated */
             }
