@@ -13,10 +13,14 @@ import {
 } from '@proton/components';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import drive5gbSvg from '@proton/styles/assets/img/onboarding/drive-5gb.svg';
+import accountSetupSvg from '@proton/styles/assets/img/illustrations/account-setup.svg';
+import driveOnboardingExplore from '@proton/styles/assets/img/illustrations/drive-onboarding-explore.svg';
+import driveOnboardingPendingInvite from '@proton/styles/assets/img/illustrations/drive-onboarding-pending-invitation.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
-import useChecklist from '../onboarding/useChecklist';
+import useActiveShare from '../../hooks/drive/useActiveShare';
+import { useFileUploadInput } from '../../store';
+import { useOnboarding } from '../onboarding/useOnboarding';
 
 interface Props {
     showGenericSteps?: boolean;
@@ -25,7 +29,17 @@ interface Props {
 }
 
 const DriveOnboardingModal = (props: Props) => {
-    const { isLoading, expiresInDays } = useChecklist();
+    const {
+        isLoading,
+        checklist: { expiresInDays },
+        hasPendingInvitations,
+    } = useOnboarding();
+    const { activeFolder } = useActiveShare();
+    const {
+        inputRef: fileInput,
+        handleClick: fileClick,
+        handleChange: fileChange,
+    } = useFileUploadInput(activeFolder.shareId, activeFolder.linkId);
 
     if (isLoading) {
         return (
@@ -58,6 +72,7 @@ const DriveOnboardingModal = (props: Props) => {
             </OnboardingStep>
         ),
     ];
+    const extraProductStep = [];
 
     if (expiresInDays > 0) {
         onboardingSteps.push(({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => (
@@ -66,7 +81,7 @@ const DriveOnboardingModal = (props: Props) => {
                     title={c('Onboarding Title').t`Your welcome bonus`}
                     description={c('Onboarding Info')
                         .t`Get started using ${DRIVE_APP_NAME} and we'll upgrade your storage to 5 GB!`}
-                    img={<img src={drive5gbSvg} alt={DRIVE_APP_NAME} />}
+                    img={<img src={accountSetupSvg} alt={DRIVE_APP_NAME} />}
                 />
                 <div>
                     {c('Onboarding Info').ngettext(
@@ -99,8 +114,63 @@ const DriveOnboardingModal = (props: Props) => {
             </OnboardingStep>
         ));
     }
+    if (hasPendingInvitations) {
+        extraProductStep.push(({ onNext }: OnboardingStepRenderCallback) => (
+            <OnboardingStep>
+                <OnboardingContent
+                    title={
+                        <>
+                            <span className="block">{c('Onboarding Title').t`Hang tight!`}</span>
+                            {c('Onboarding Title').t`Final approval in progress`}
+                        </>
+                    }
+                    description={
+                        <p>{c('Onboarding Info')
+                            .t`The owner needs to confirm sharing access. You’ll get an email once it’s done.`}</p>
+                    }
+                    img={<img src={driveOnboardingPendingInvite} alt={DRIVE_APP_NAME} />}
+                />
+                <footer className="flex flex-nowrap items-center justify-center">
+                    <Button size="medium" color="norm" className="px-5" fullWidth onClick={onNext}>{c('Action')
+                        .t`Explore while you wait`}</Button>
+                </footer>
+            </OnboardingStep>
+        ));
+        extraProductStep.push(({ onNext }: OnboardingStepRenderCallback) => (
+            <OnboardingStep>
+                <OnboardingContent
+                    title={c('Onboarding Title').t`Upload and protect your important files`}
+                    description={
+                        <p>{c('Onboarding Info')
+                            .t`Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.`}</p>
+                    }
+                    img={<img src={driveOnboardingExplore} alt={DRIVE_APP_NAME} />}
+                />
+                <footer className="flex flex-nowrap gap-3">
+                    <input
+                        multiple
+                        type="file"
+                        ref={fileInput}
+                        className="hidden"
+                        onChange={(e) => {
+                            fileChange(e);
+                            onNext();
+                        }}
+                    />
+                    <Button className="w-1/2" size="medium" onClick={onNext}>{c('Action').t`Explore on my own`}</Button>
+                    <Button className="w-1/2" size="medium" color="norm" onClick={fileClick}>
+                        {c('Action').t`Upload files`}
+                    </Button>
+                </footer>
+            </OnboardingStep>
+        ));
+    }
 
-    return <OnboardingModal {...props}>{onboardingSteps}</OnboardingModal>;
+    return (
+        <OnboardingModal {...props} extraProductStep={extraProductStep}>
+            {onboardingSteps}
+        </OnboardingModal>
+    );
 };
 
 export default DriveOnboardingModal;
