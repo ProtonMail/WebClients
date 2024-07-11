@@ -44,6 +44,7 @@ export const startAccountSecurityListener = (startListening: SharedStartListenin
                 accountRecoverySet: recoveryByEmail || recoveryByPhone || hasRecoveryPhrase,
                 dataRecoverySet: hasRecoveryPhrase || hasCurrentRecoveryFile,
                 twoFactorAuthSet: hasTOTPEnabled || hasFIDO2Enabled,
+                recoveryPhraseSet: hasRecoveryPhrase,
             };
 
             const shouldUpdateStore = (Object.keys(nextAccountSecurity) as (keyof typeof nextAccountSecurity)[]).some(
