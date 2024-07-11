@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import generateUID from '@proton/atoms/generateUID';
 import { DropdownSize, DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
+import clsx from '@proton/utils/clsx';
 
 import { SearchableSelect } from '../Select';
 import { currencyFilterFunction, getAllDropdownOptions, getIsCurrencyOption, getSerialisedOption } from './helpers';
@@ -31,6 +32,7 @@ interface Props<S extends string, T extends { Symbol: S; Name: string }> {
     containerClassName?: string;
     size?: DropdownSize;
     isGroupElement?: boolean;
+    stackedFieldWrapper?: boolean;
 }
 
 export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: string }>({
@@ -47,6 +49,7 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
     containerClassName,
     size,
     isGroupElement,
+    stackedFieldWrapper,
 }: Props<S, T>) => {
     const [selectedCurrency, setSelectedCurrency] = useState<S | undefined>(value);
 
@@ -115,14 +118,13 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
             hint={hint}
             data-testid="currency-selector"
             disabled={disabled}
-            containerClassName={containerClassName}
+            containerClassName={clsx(containerClassName, dense && 'wallet-select-dense')}
             isGroupElement={isGroupElement}
-            caretIconName="chevron-down"
-            caretClassName="stacked-field-caret"
+            stackedFieldWrapper={stackedFieldWrapper}
             renderSelected={(selected) => {
                 const option = onlyOptions.find((o) => getSerialisedOption(o) === selected);
                 return dense ? (
-                    <span className="block mr-2">{option?.Symbol}</span>
+                    <span className="block">{option?.Symbol}</span>
                 ) : (
                     <div className="flex flex-row items-center">
                         <span className="block mr-2">{option?.Symbol}</span>

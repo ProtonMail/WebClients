@@ -6,6 +6,7 @@
 	--stacked-field-padding-block: var(--space-3);
 	--stacked-field-padding-inline: var(--space-4);
 	--stacked-field-min-block-size: 0;
+	--stacked-field-border-color: var(--border-weak);
 
 	/*
 	 small reset
@@ -19,6 +20,7 @@
 	padding-block: var(--stacked-field-padding-block);
 	padding-inline: var(--stacked-field-padding-inline);
 	min-block-size: var(--stacked-field-min-block-size);
+	border-color: var(--stacked-field-border-color) !important;
 
 	&--rounded {
 		border-radius: var(--stacked-field-border-radius);
