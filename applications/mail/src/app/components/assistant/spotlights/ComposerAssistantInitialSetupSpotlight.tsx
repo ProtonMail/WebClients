@@ -47,12 +47,13 @@ const ComposerAssistantInitialSetupSpotlight = forwardRef<ComposerAssistantIniti
                 displayed = true;
             },
             showSpotlight: () => {
-                if (!show) {
+                if (!show || displayed) {
                     return;
                 }
 
                 setShowSpotlight(true);
                 onDisplayedComposerSpotlight();
+                displayed = true;
             },
             hideSpotlight: () => {
                 if (!showSpotlight) {
