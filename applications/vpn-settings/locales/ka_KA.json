@@ -639,10 +639,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } მომხმარებლის დომენი",
-        "${ domains } მომხმარებლის დომენი"
-      ],
       "${ ips } server": [
         "${ ips } სერვერი",
         "${ ips } სერვერი"
@@ -4074,6 +4070,9 @@
       "Two-factor authentication enabled": [
         "2FA ჩართულია"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი მონაცემების გასაშიფრად. (დამატებით)"
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "ამ ანგარიშისთვის აღდგენის მეთოდი დაყენებული არაა."
       ],
@@ -4097,6 +4096,9 @@
       ],
       "Upload your completed CSV file to create accounts": [
         "ანგარიშების შესაქმნელად ატვირთეთ თქვენი დასრულებული CSV ფაილი"
+      ],
+      "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
+        "ატვირთეთ თქვენი ორგანიზაციის ლოგო, რომ გაზარდოთ თქვენი ბრენდის ცნობადობა და შექმნათ პერსონალიზებული გარემო თქვენი მომხმარებლებისთვის."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
@@ -4236,9 +4238,6 @@
       "Writing assistant": [
         "წერაში დამხმარე"
       ],
-      "Writing assistant add-on": [
-        "წერაში დამხმარის დამატება"
-      ],
       "You already have a free account": [
         "თქვენ უკვე გაქვთ უფასო ანგარიში"
       ],
@@ -4248,6 +4247,10 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ.",
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან.",
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ.",
@@ -5163,9 +5166,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "წერაში დამხმარის დამატება"
-      ],
       "for ${ price }": [
         "${ price }-თვის"
       ]
@@ -6885,6 +6885,9 @@
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
+        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა მონაცემები და დაასრულეთ SCIM-ის მორგება ${ VPN_APP_NAME }-სთვის."
+      ],
       "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა კოდი და თავიდან ჩართეთ SCIM ${ VPN_APP_NAME }-სთვის."
       ],
@@ -7076,6 +7079,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {

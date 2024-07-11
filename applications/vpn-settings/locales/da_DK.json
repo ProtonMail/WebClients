@@ -639,9 +639,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } brugerdomæne",
-        "${ domains } brugerdomæner"
+      "${ domains } additional custom domain": [
+        "${ domains } ekstra tilpasset domæne",
+        "${ domains } yderligere tilpassede domæner"
       ],
       "${ ips } server": [
         "${ ips } server",
@@ -3014,6 +3014,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
@@ -4265,9 +4268,6 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
-      "Writing assistant add-on": [
-        "Skriveassistent-tilføjelse"
-      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -5206,8 +5206,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Tilføj skriveassistent"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "for ${ price }": [
         "til ${ price }"
@@ -5766,6 +5766,9 @@
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Ubegrænset indlogninger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrænsede logins, noter og betalingskort"
