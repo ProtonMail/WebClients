@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -817,10 +820,10 @@
       "Not saved": [
         "Ikke gemt"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1415,9 +1418,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } brugerdomæne",
-        "${ domains } brugerdomæner"
+      "${ domains } additional custom domain": [
+        "${ domains } ekstra tilpasset domæne",
+        "${ domains } yderligere tilpassede domæner"
       ],
       "${ ips } server": [
         "${ ips } server",
@@ -5411,6 +5414,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
@@ -7075,9 +7081,6 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
-      "Writing assistant add-on": [
-        "Skriveassistent-tilføjelse"
-      ],
       "writing assistant iframe": [
         "skriveassistentens iframe"
       ],
@@ -8485,8 +8488,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Tilføj skriveassistent"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "for ${ price }": [
         "til ${ price }"
@@ -9157,6 +9160,9 @@
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Ubegrænset indlogninger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrænsede logins, noter og betalingskort"
@@ -12231,6 +12237,9 @@
       "Import failed": [
         "Import mislykkedes"
       ],
+      "Import groups": [
+        "Importer grupper"
+      ],
       "Insert contacts": [
         "Indsæt kontakter"
       ],
@@ -12361,7 +12370,7 @@
         "Ingen vedhæftning fundet"
       ],
       "No breaches detected": [
-        "Ingen brud registreret"
+        "Ingen databrud registreret"
       ],
       "No trackers found": [
         "Ingen trackere fundet"

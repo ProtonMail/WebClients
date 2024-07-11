@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
@@ -813,10 +816,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1410,8 +1413,8 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domain khusus"
+      "${ domains } additional custom domain": [
+        "${ domains } domain khusus tambahan"
       ],
       "${ ips } server": [
         "${ ips } server"
@@ -5362,6 +5365,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
@@ -6964,9 +6970,6 @@
       "Writing assistant": [
         "Asisten penulisan"
       ],
-      "Writing assistant add-on": [
-        "Pengaya asisten penulisan"
-      ],
       "writing assistant iframe": [
         "iframe asisten penulisan"
       ],
@@ -8348,8 +8351,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Tambah asisten penulisan"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "untuk ${ price }"
@@ -9001,6 +9004,9 @@
       ],
       "Unlimited labels": [
         "Tanpa batasan jumlah label"
+      ],
+      "Unlimited logins and notes": [
+        "Tanpa batasan jumlah entri masuk dan catatan"
       ],
       "Unlimited logins, notes and credit cards": [
         "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"

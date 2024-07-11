@@ -459,6 +459,9 @@
       "Forgot password?": [
         "Esqueci-me da palavra-passe?"
       ],
+      "Formalize": [
+        "Formal"
+      ],
       "Forward as attachment": [
         "Encaminhar como anexo"
       ],
@@ -787,11 +790,11 @@
       "Not saved": [
         "Não guardado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -1252,6 +1255,9 @@
       "Use recovery code": [
         "Usar código de recuperação"
       ],
+      "Use this": [
+        "Usar isto"
+      ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Utilize o seu rato para redimensionar a vista. Se está a utilizar o teclado pode utilizar os botões de seta para a esquerda e direita para redimensionar."
       ],
@@ -1367,10 +1373,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domínio personalizado",
-        "${ domains } domínios personalizados"
-      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
@@ -1461,6 +1463,9 @@
     "Assistant option": {
       "Run locally": [
         "Executar localmente"
+      ],
+      "Run on servers": [
+        "Executar em servidores"
       ]
     },
     "Attached ics file error": {
@@ -8106,6 +8111,11 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
       ]
     },
+    "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "por ${ price }"
+      ]
+    },
     "Mailbox": {
       "Archive": [
         "Arquivo"
@@ -10364,6 +10374,9 @@
       "${ maxEmails } email address per user": [
         "${ maxEmails } endereço de e-mail por utilizador",
         "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } incluindo aliases hide-my-email Ilimitados"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } de armazenamento por utilizador"
