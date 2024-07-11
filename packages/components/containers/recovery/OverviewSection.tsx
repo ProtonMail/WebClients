@@ -2,6 +2,7 @@ import { useInactiveKeys } from '@proton/account';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
+import { useFlag } from '..';
 import { useModalState } from '../../components';
 import {
     useAddresses,
@@ -45,6 +46,7 @@ const OverviewSection = ({ ids }: Props) => {
     const [confirmProps, setDismissConfirmModalOpen, renderConfirm] = useModalState();
 
     const { feature: hasDismissedRecoverDataCard } = useFeature(FeatureCode.DismissedRecoverDataCard);
+    const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
 
     useSearchParamsEffect(
         (params) => {
@@ -97,7 +99,7 @@ const OverviewSection = ({ ids }: Props) => {
                     onDismiss={() => setDismissConfirmModalOpen(true)}
                 />
             )}
-            <RecoveryCard ids={ids} />
+            <RecoveryCard ids={ids} canDisplayNewSentinelSettings={canDisplayNewSentinelSettings} />
         </>
     );
 };

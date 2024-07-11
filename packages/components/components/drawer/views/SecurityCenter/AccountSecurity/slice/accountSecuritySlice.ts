@@ -2,6 +2,7 @@ import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
 
 import { UserSettingsState, UserState } from '@proton/account';
 import { FeaturesReducerState } from '@proton/features';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 
 const name = 'accountSecurity' as const;
 
@@ -11,6 +12,7 @@ export interface AccountSecuritySlice extends UserState, UserSettingsState, Feat
         accountRecoverySet: boolean;
         dataRecoverySet: boolean;
         twoFactorAuthSet: boolean;
+        recoveryPhraseSet: boolean;
     };
 }
 
@@ -29,6 +31,7 @@ const slice = createSlice({
             state.accountRecoverySet = action.payload.accountRecoverySet;
             state.dataRecoverySet = action.payload.dataRecoverySet;
             state.twoFactorAuthSet = action.payload.twoFactorAuthSet;
+            state.recoveryPhraseSet = action.payload.recoveryPhraseSet;
         },
     },
 });
@@ -45,6 +48,8 @@ const selectAccountSecurity = (state: AccountSecuritySlice) => state.accountSecu
 const selectAccountSecurityLoading = (state: AccountSecuritySlice) => state.accountSecurity.loading;
 const selectTwoFactorAuthDismissed = (state: AccountSecuritySlice) =>
     state.features.AccountSecurityDismissed2FACard?.value.Value === true;
+const selectHasSentinelEnabled = (state: AccountSecuritySlice) =>
+    state.userSettings.value?.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
 
 export const selectCanDisplayAccountSecuritySection = createSelector(
     selectIsPrivateUser,
@@ -55,15 +60,17 @@ export const selectCanDisplayAccountSecuritySection = createSelector(
  * Return exhaustive key/value list of account security issues elements
  */
 export const selectAccountSecurityElements = createSelector(
-    [selectAccountSecurity, selectTwoFactorAuthDismissed, selectIsPrivateUser],
-    (accountSecurity, twoFactorAuthDismissed) => {
-        const { accountRecoverySet, dataRecoverySet, twoFactorAuthSet } = accountSecurity;
+    [selectAccountSecurity, selectTwoFactorAuthDismissed, selectHasSentinelEnabled, selectIsPrivateUser],
+    (accountSecurity, twoFactorAuthDismissed, hasSentinelEnabled) => {
+        const { accountRecoverySet, dataRecoverySet, twoFactorAuthSet, recoveryPhraseSet } = accountSecurity;
 
         return {
             accountRecoverySet,
             dataRecoverySet,
             twoFactorAuthSetOrDismissed: twoFactorAuthSet || twoFactorAuthDismissed,
             twoFactorAuthSet,
+            recoveryPhraseSet,
+            hasSentinelEnabled,
         };
     }
 );
@@ -91,7 +98,11 @@ export const selectHasAccountSecurityIssue = createSelector(
  * Use case: Allows to know if we should display cards or success message
  */
 export const selectHasAccountSecurityCardToDisplay = createSelector(
-    [selectAccountSecurityElements, selectAccountSecurityLoading, selectCanDisplayAccountSecuritySection],
+    [
+        selectAccountSecurityElements,
+        selectAccountSecurityLoading,
+        selectCanDisplayAccountSecuritySection,
+    ],
     (elements, loading, canDisplayAccountSecurity) => {
         if (loading || !canDisplayAccountSecurity) {
             return false;
@@ -119,5 +130,25 @@ export const selectAccountSecurityIssuesCount = createSelector(
         }
 
         return [elements.accountRecoverySet, elements.dataRecoverySet].filter((value) => !value).length;
+    }
+);
+
+/**
+ * Returns the count of issues for SENTINEL USERS in the account security section
+ * Use case: Allows to know if we should display cards or success message
+ */
+export const selectHasSentinelOrTFACardToDisplay = createSelector(
+    [
+        selectAccountSecurityElements,
+        selectAccountSecurityLoading,
+        selectCanDisplayAccountSecuritySection,
+        selectHasSentinelEnabled,
+    ],
+    (elements, loading, canDisplayAccountSecurity) => {
+        if (loading || !canDisplayAccountSecurity) {
+            return false;
+        }
+
+        return [elements.recoveryPhraseSet, elements.twoFactorAuthSetOrDismissed].some((value) => !value);
     }
 );
