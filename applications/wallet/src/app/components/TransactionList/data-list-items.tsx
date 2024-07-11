@@ -78,13 +78,15 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
     const [addresses] = useAddresses();
     const { walletMap } = useBitcoinBlockchainContext();
 
-    const name = isSent
-        ? getTransactionRecipientsHumanReadableName(tx, walletMap, addresses)[0] ?? tx.networkData.outputs[0]?.address
+    const transactionRecipientsHumanReadableNameList = isSent
+        ? getTransactionRecipientsHumanReadableName(tx, walletMap, addresses).join(', ')
         : getTransactionSenderHumanReadableName(tx, walletMap);
 
     const message = getTransactionMessage(tx);
 
-    const senderOrRecipientName = <span className="color-weak">{name}</span>;
+    const senderOrRecipientName = (
+        <span className="color-weak text-ellipsis">{transactionRecipientsHumanReadableNameList}</span>
+    );
 
     return (
         <DataListItem
