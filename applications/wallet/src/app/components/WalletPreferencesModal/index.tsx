@@ -45,12 +45,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
 
     return (
         <>
-            <Modal
-                title={c('Wallet preference').t`Your wallet preferences`}
-                enableCloseWhenClickOutside
-                size="large"
-                {...modalProps}
-            >
+            <Modal title={c('Wallet preference').t`Your wallet preferences`} size="large" {...modalProps}>
                 <div className="flex flex-column">
                     <InputFieldStackedGroup classname="mb-4">
                         <Input
@@ -107,18 +102,20 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                             isActive={wallet.WalletAccounts.some((acc) => Boolean(acc.Addresses.length))}
                         />
 
-                        {wallet.WalletAccounts.map((walletAccount, index) => {
-                            return (
-                                <div key={index}>
-                                    <AccountPreferences
-                                        key={walletAccount.ID}
-                                        wallet={wallet}
-                                        walletAccount={walletAccount}
-                                        otherWallets={otherWallets}
-                                    />
-                                </div>
-                            );
-                        })}
+                        <div className="flex flex-column gap-4">
+                            {wallet.WalletAccounts.map((walletAccount, index) => {
+                                return (
+                                    <div key={index}>
+                                        <AccountPreferences
+                                            key={walletAccount.ID}
+                                            wallet={wallet}
+                                            walletAccount={walletAccount}
+                                            otherWallets={otherWallets}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
 
                     <Collapsible>
