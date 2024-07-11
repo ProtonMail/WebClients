@@ -69,7 +69,7 @@ interface Props {
     layout: (children: ReactNode, props: any) => ReactNode;
 }
 
-const plusPlans = [PLANS.VPN, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE];
+const plusPlans = [PLANS.VPN, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE];
 
 const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props) => {
     const onceCloseRef = useRef(false);
@@ -136,7 +136,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
             return { bgClassName: 'subscribe-account--drive-bg', logo: <Logo appName={APPS.PROTONDRIVE} /> };
         }
 
-        if ([PLANS.PASS_PLUS, PLANS.PASS_PRO, PLANS.PASS_BUSINESS].includes(plan as any)) {
+        if ([PLANS.PASS, PLANS.PASS_PRO, PLANS.PASS_BUSINESS].includes(plan as any)) {
             return { bgClassName: 'subscribe-account--pass-bg', logo: <Logo appName={APPS.PROTONPASS} /> };
         }
 

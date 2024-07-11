@@ -12,11 +12,11 @@ beforeEach(() => {
 });
 
 const defaultPlansMap: PlansMap = {
-    [PLANS.PASS_PLUS]: {
+    [PLANS.PASS]: {
         ID: 'id-123',
         ParentMetaPlanID: '123',
         Type: 1,
-        Name: PLANS.PASS_PLUS,
+        Name: PLANS.PASS,
         Title: 'Pass Plus',
         MaxDomains: 0,
         MaxAddresses: 0,
@@ -48,7 +48,7 @@ const defaultPlansMap: PlansMap = {
 
 const defaultPlanCards: PlanCard[] = [
     {
-        plan: PLANS.PASS_PLUS,
+        plan: PLANS.PASS,
         subsection: null,
         type: 'best',
         guarantee: true,
@@ -61,7 +61,7 @@ it('should render', () => {
             subscriptionDataCycleMapping={{}}
             cycle={CYCLE.MONTHLY}
             currency="CHF"
-            plan={PLANS.PASS_PLUS}
+            plan={PLANS.PASS}
             onSelect={onSelect}
             plansMap={defaultPlansMap}
             planCards={defaultPlanCards}
@@ -77,7 +77,7 @@ it('should display the discount price comparing against the monthly price', () =
             subscriptionDataCycleMapping={{}}
             cycle={CYCLE.YEARLY}
             currency="CHF"
-            plan={PLANS.PASS_PLUS}
+            plan={PLANS.PASS}
             onSelect={onSelect}
             plansMap={defaultPlansMap}
             planCards={defaultPlanCards}
@@ -92,8 +92,8 @@ it('should display the discount price comparing against the monthly price', () =
 it('should display the discount price against the same cycle if it is discounted', () => {
     const plansMap: PlansMap = {
         ...defaultPlansMap,
-        [PLANS.PASS_PLUS]: {
-            ...defaultPlansMap[PLANS.PASS_PLUS],
+        [PLANS.PASS]: {
+            ...defaultPlansMap[PLANS.PASS],
             Pricing: {
                 '1': 499,
                 '12': 1200,
@@ -107,7 +107,7 @@ it('should display the discount price against the same cycle if it is discounted
             subscriptionDataCycleMapping={{}}
             cycle={CYCLE.YEARLY}
             currency="CHF"
-            plan={PLANS.PASS_PLUS}
+            plan={PLANS.PASS}
             onSelect={onSelect}
             plansMap={plansMap}
             planCards={defaultPlanCards}

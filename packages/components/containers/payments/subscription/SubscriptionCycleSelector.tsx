@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, FreeSubscription, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -18,8 +18,8 @@ import {
     PlanIDs,
     PlansMap,
     PriceType,
+    Subscription,
     SubscriptionCheckResponse,
-    SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -203,9 +203,30 @@ export const SubscriptionCheckoutCycleItem = ({
     );
 };
 
+function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: PlansMap, cycle: CYCLE): CYCLE {
+    const planID = getPlanFromIds(planIDs);
+    if (!planID) {
+        return cycle;
+    }
+
+    const plan = plansMap[planID];
+    if (!plan) {
+        return cycle;
+    }
+
+    const availableCycles = Object.keys(plan.Pricing) as unknown as CYCLE[];
+    const maxCycle = Math.max(...availableCycles) as CYCLE;
+    return Math.min(cycle, maxCycle);
+}
+
 // todo: that's not a long-term solution, because we already have cycles like 3, 15, 18, 30
 // which might appear for certain promotions.
-function capMaximumCycle(maximumCycle: CYCLE, planIDs: PlanIDs, subscription: SubscriptionModel | undefined): CYCLE {
+function capMaximumCycle(
+    maximumCycle: CYCLE,
+    planIDs: PlanIDs,
+    plansMap: PlansMap,
+    subscription: Subscription | FreeSubscription | undefined
+): CYCLE {
     const cappedPlans: {
         plan: PLANS | ADDON_NAMES;
         cycle: CYCLE;
@@ -232,12 +253,16 @@ function capMaximumCycle(maximumCycle: CYCLE, planIDs: PlanIDs, subscription: Su
     // filter a capped plan from the list of capped plans if it is present in planIDs
     const plan = cappedPlans.find((cappedPlan) => planIDs[cappedPlan.plan]);
 
-    let result = maximumCycle;
+    let result: CYCLE = maximumCycle;
     if (plan) {
         result = Math.min(maximumCycle, plan.cycle);
     }
 
-    return Math.max(result, subscription?.Cycle ?? 0, subscription?.UpcomingSubscription?.Cycle ?? 0);
+    // if user already has a subscription or upcoming subscription with higher cycle, then we let user see it
+    result = Math.max(result, subscription?.Cycle ?? 0, subscription?.UpcomingSubscription?.Cycle ?? 0);
+
+    // however no matter what happens, we can't show a higher cycle than actually exist on the backend
+    return notHigherThanAvailableOnBackend(planIDs, plansMap, result);
 }
 
 export const getAllowedCycles = ({
@@ -247,13 +272,15 @@ export const getAllowedCycles = ({
     planIDs,
     defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
     disableUpcomingCycleCheck,
+    plansMap,
 }: {
-    subscription: SubscriptionModel | undefined;
+    subscription: Subscription | FreeSubscription | undefined;
     minimumCycle: CYCLE;
     maximumCycle: CYCLE;
     planIDs: PlanIDs;
     defaultCycles?: CYCLE[];
     disableUpcomingCycleCheck?: boolean;
+    plansMap: PlansMap;
 }): CYCLE[] => {
     const isTrialSubscription = isTrial(subscription);
     const sortedCycles = defaultCycles.sort((a, b) => b - a);
@@ -261,7 +288,7 @@ export const getAllowedCycles = ({
     const newPlanName: PLANS | undefined = getPlanFromIds(planIDs);
     const isSamePlan = currentPlanName === newPlanName;
 
-    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, subscription);
+    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, plansMap, subscription);
 
     const result = sortedCycles.filter((cycle) => {
         const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);
@@ -294,7 +321,7 @@ export interface Props {
     planIDs: PlanIDs;
     disabled?: boolean;
     faded?: boolean;
-    subscription?: SubscriptionModel;
+    subscription?: Subscription;
     defaultCycles?: CYCLE[];
     priceType?: PriceType;
     pricingMode?: PricingMode;
@@ -324,6 +351,7 @@ const SubscriptionCycleSelector = ({
         maximumCycle,
         defaultCycles,
         planIDs,
+        plansMap,
         disableUpcomingCycleCheck: !!disableUpcomingCycleCheck,
     });
 

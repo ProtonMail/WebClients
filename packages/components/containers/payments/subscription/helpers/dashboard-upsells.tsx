@@ -26,7 +26,7 @@ import {
     hasMail,
     hasMailBusiness,
     hasMailPro,
-    hasPassPlus,
+    hasPass,
     hasVPN,
     hasVPN2024,
     hasVPNPassBundle,
@@ -286,13 +286,13 @@ const getVPNUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsel
 
 const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     return getUpsell({
-        plan: PLANS.PASS_PLUS,
+        plan: PLANS.PASS,
         plansMap,
         upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
         onUpgrade: () =>
             openSubscriptionModal({
                 cycle: defaultUpsellCycleB2C,
-                plan: PLANS.PASS_PLUS,
+                plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
                 metrics: {
@@ -510,7 +510,7 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
     return (
         hasMail(subscription) ||
         hasDrive(subscription) ||
-        hasPassPlus(subscription) ||
+        hasPass(subscription) ||
         hasVPN(subscription) ||
         hasVPNPassBundle(subscription) ||
         hasVPN2024(subscription)
