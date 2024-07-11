@@ -24,6 +24,7 @@ type Model = NonNullable<SliceState['value']>;
 export const selectUserKeys = (state: UserKeysState) => state.userKeys;
 
 const modelThunk = createAsyncModelThunk<Model, UserKeysState, ProtonThunkArguments>(`${name}/fetch`, {
+    expiry: 9999999,
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
         const keys = await getDecryptedUserKeysHelper(user, extraArgument.authentication.getPassword());
