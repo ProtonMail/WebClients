@@ -127,6 +127,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 ),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -147,6 +148,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -167,6 +169,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getShareFeature(plansMap, PLANS.PASS_BUSINESS, Audience.B2B),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -187,6 +190,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getInvitation(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -207,6 +211,7 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
     ];

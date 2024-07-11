@@ -352,6 +352,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getNAddressesFeature({ n: plansMap[PLANS.PASS_BUSINESS]?.MaxAddresses || 1 }),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -372,6 +373,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getNDomainsFeature({ n: plansMap[PLANS.PASS_BUSINESS]?.MaxDomains ?? 0 }),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -392,6 +394,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getNMessagesFeature(150),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -412,6 +415,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getFolders(3),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -432,6 +436,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getLabels(3),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -452,6 +457,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getFilters(1),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -472,6 +478,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getAttachments(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -492,6 +499,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getSignature(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -512,6 +520,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getEndToEndEncryption(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -532,6 +541,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getEncryptionOutside(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -552,6 +562,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getEncryptedContacts(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -572,6 +583,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getContactGroups(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -592,6 +604,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getSMTP(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -612,6 +625,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getSMTPToken(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -632,6 +646,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getAutoReply(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -652,6 +667,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -672,6 +688,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getCatchAll(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -692,6 +709,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getAutoDeleteSpamAndTrash(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -712,6 +730,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getScheduleAndSnooze(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -732,6 +751,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getDesktopApp(false),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
+                [PLANS.WALLET]: null,
             },
         },
     ];
