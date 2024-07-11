@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "Refresh the page": [
-        "Actualiser la page"
-      ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "Refresh the page": [
+        "Actualiser la page"
       ],
       "Reload": [
         "Recharger"
@@ -1221,9 +1221,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domaine personnalisé",
-        "${ domains } domaines personnalisés"
+      "${ domains } additional custom domain": [
+        "${ domains } domaine personnalisé supplémentaire",
+        "${ domains } domaines personnalisés supplémentaires"
       ],
       "${ ips } server": [
         "${ ips } serveur",
@@ -1397,8 +1397,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Personnaliser l'abonnement"
+      "Buy now": [
+        "Acheter"
       ],
       "New": [
         "Nouveau"
@@ -1541,14 +1541,6 @@
         "Choisissez votre offre de fin d'année"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 To d'espace de stockage (2 fois plus que tout autre abonnement)"
@@ -1570,6 +1562,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "L'abonnement ${ plan } est de retour pour une durée limitée."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6140,6 +6140,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } a mis en pause une importation parce que votre compte manque d'espace. Vous pouvez :"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } essaiera de reprendre l'importation dès que votre fournisseur de messagerie réinitialisera la ${ bandwidthLimitLink } de votre compte. Vous n'avez rien à faire. Si vous annulez votre importation, vous ne pourrez pas la reprendre et vous devrez recommencer."
       ],
@@ -6244,6 +6247,18 @@
       "${ userFound } user found": [
         "${ userFound } utilisateur trouvé",
         "${ userFound } utilisateurs trouvés"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } a été créé."
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } a été supprimé."
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } a été partagé par e-mail."
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } a été mis à jour."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } est nécessaire pour une connexion au niveau d'un pays."
@@ -6578,6 +6593,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Mettez en avant l'image de marque de votre organisation et créez une expérience en ligne plus cohérente pour vos utilisateurs."
       ],
+      "Breach Custom Email Added": [
+        "L'e-mail personnalisé en cas de fuite de données a été ajouté."
+      ],
+      "Breach Custom Email Deleted": [
+        "L'e-mail personnalisé en cas de fuite de données a été supprimé."
+      ],
+      "Breach Custom Email Validated": [
+        "L'e-mail personnalisé en cas de fuite de données a été validé."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Par défaut, les membres de l'organisation peuvent uniquement exporter les coffres-forts dont ils sont les propriétaires. Si cette option est activée, ils ne pourront pas exporter des données."
       ],
@@ -6697,8 +6721,17 @@
       "Custom daily": [
         "Chaque jour (personnalisé)"
       ],
+      "Custom email added": [
+        "L'e-mail personnalisé a été ajouté."
+      ],
+      "Custom email deleted": [
+        "L'e-mail personnalisé a été supprimé."
+      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
+      ],
+      "Custom email validated": [
+        "L'e-mail personnalisé a été validé."
       ],
       "Custom monthly": [
         "Chaque mois (personnalisé)"
@@ -6718,11 +6751,11 @@
       "Data locked": [
         "Les données sont verrouillées."
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "dedicated servers": [
+        "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -7153,14 +7186,14 @@
       "Invite Deleted": [
         "L'invitation a été supprimée."
       ],
+      "Invite for new user deleted": [
+        "L'invitation pour le nouvel utilisateur a été supprimée."
+      ],
       "Invite for organization accepted": [
         "L'invitation pour l'organisation a été acceptée."
       ],
       "Invite for organization created": [
         "L'invitation pour l'organisation a été créée."
-      ],
-      "Invite for User deleted": [
-        "L'invitation pour l'utilisateur a été supprimée."
       ],
       "Invite rejected": [
         "L'invitation a été refusée."
@@ -7178,6 +7211,9 @@
       "Item Autofilled": [
         "L'invitation a été remplie automatiquement."
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "L'élément a été rempli automatiquement dans ${ vaultLink }."
+      ],
       "Item autofilled in vault": [
         "L'élément dans le coffre-fort a été rempli automatiquement."
       ],
@@ -7187,17 +7223,35 @@
       "Item Created": [
         "L'élément est créé."
       ],
+      "Item created in ${ vaultLink }": [
+        "L'élément a été créé dans ${ vaultLink }."
+      ],
       "Item created in vault": [
         "L'élément dans le coffre-fort a été créé."
       ],
       "Item Deleted": [
         "L'élément est supprimé."
       ],
-      "Item deleted in vault": [
-        "L'élément dans le coffre-fort a été supprimé."
+      "Item deleted from ${ vaultLink }": [
+        "L'élément a été supprimé de ${ vaultLink }."
+      ],
+      "Item deleted from vault": [
+        "L'élément a été supprimé du coffre-fort."
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Les indicateurs d'élément ont été modifiés dans ${ vaultLink }."
       ],
       "Item flags changed in vault": [
         "Les indicateurs d'élément ont été modifiés dans le coffre-fort."
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "L'élément dans ${ vaultLink } a été déplacé dans la corbeille."
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "L'élément dans ${ vaultLink } a été retiré de la corbeille."
+      ],
+      "Item in vault trashed": [
+        "L'élément dans le coffre-fort a été envoyé dans la corbeille."
       ],
       "Item in vault untrashed": [
         "L'élément dans le coffre-fort a été retiré de la corbeille."
@@ -7205,20 +7259,23 @@
       "Item Read": [
         "L'élément est lu."
       ],
+      "Item read in ${ vaultLink }": [
+        "L'élément a été lu dans ${ vaultLink }."
+      ],
       "Item read in vault": [
         "L'élément dans le coffre-fort a été lu."
       ],
       "Item Trashed": [
         "L'élément est dans la corbeille."
       ],
-      "Item trashed in vault": [
-        "L'élément dans le coffre-fort a été mis dans la corbeille."
-      ],
       "Item Untrashed": [
         "L'invitation a été retirée de la corbeille."
       ],
       "Item Updated": [
         "L'élément est mis à jour."
+      ],
+      "Item updated in ${ vaultLink }": [
+        "L'élément a été mis à jour dans ${ vaultLink }."
       ],
       "Item updated in vault": [
         "L'élément dans le coffre-fort a été mis à jour."
@@ -7387,6 +7444,9 @@
       ],
       "New User Invite Deleted": [
         "L'invitation du nouvel utilisateur a été supprimée."
+      ],
+      "New user invited to organization": [
+        "Le nouvel utilisateur a été invité à rejoindre l'organisation."
       ],
       "No account keys exist": [
         "Il n'existe aucune clé de compte."
@@ -7786,6 +7846,12 @@
       ],
       "Share Updated": [
         "Le partage a été mis à jour."
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Le partage ${ vaultLink } a été supprimé."
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Le partage ${ vaultLink } a été mis à jour."
       ],
       "Shared vault deleted": [
         "Le coffre-fort partagé a été supprimé."
@@ -8259,9 +8325,6 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "User invited to organization": [
-        "L'utilisateur a été invité à rejoindre l'organisation."
-      ],
       "username": [
         "nom d'utilisateur"
       ],
@@ -8279,6 +8342,9 @@
       ],
       "Vault Deleted": [
         "Le coffre-fort a été supprimé."
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Le coffre-fort est supprimé ou nécessite des autorisations d'accès."
       ],
       "Vault shared with email": [
         "Coffre-fort partagé par e-mail"
@@ -8468,9 +8534,6 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
-      ],
-      "Writing assistant add-on": [
-        "Extension Assistant d'écriture"
       ],
       "Yearly": [
         "Chaque année"
@@ -10440,6 +10503,9 @@
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
       ],
+      "Vault": [
+        "Coffre-fort"
+      ],
       "View guide": [
         "Voir le guide"
       ],
@@ -10551,8 +10617,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Ajouter l'assistant d'écriture"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Toutes les applications et fonctionnalités ${ BRAND_NAME } for Business et premium pour protéger votre entreprise"
@@ -10999,23 +11065,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuer avec Free"
@@ -11043,6 +11092,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
       ]
     },
     "new_plans: feature": {
@@ -11428,6 +11494,9 @@
       ],
       "Unlimited labels": [
         "Nombre illimité de labels"
+      ],
+      "Unlimited logins and notes": [
+        "Nombre illimité d'identifiants et de notes"
       ],
       "Unlimited logins, notes and credit cards": [
         "Nombre illimité de connexions, de notes et de cartes de crédit"
@@ -15271,6 +15340,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
       ],
@@ -15448,10 +15520,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -16334,9 +16406,6 @@
       ],
       "WireGuard configuration": [
         "Configuration WireGuard"
-      ],
-      "Writing assistant": [
-        "Assistant d'écriture"
       ],
       "You have no open alerts": [
         "Vous n'avez aucune alerte en cours."

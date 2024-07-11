@@ -52,11 +52,11 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -736,11 +736,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "Refresh the page": [
-        "Actualizar a página"
-      ],
       "refresh the page": [
         "actualizar a página"
+      ],
+      "Refresh the page": [
+        "Actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1194,10 +1194,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domínio personalizado",
-        "${ domains } domínios personalizados"
-      ],
       "${ ips } server": [
         "${ ips } servidor",
         "${ ips } servidores"
@@ -1342,9 +1338,15 @@
     "Assistant option": {
       "Run locally": [
         "Executar localmente"
+      ],
+      "Run on servers": [
+        "Executar em servidores"
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "Comprar agora"
+      ],
       "New": [
         "Novo"
       ]
@@ -3280,6 +3282,9 @@
       ]
     },
     "drive_signup_2023: Feature": {
+      "${ totalStorageSize } of storage for free": [
+        "${ totalStorageSize } de armazenamento gratuito"
+      ],
       "End-to-end encrypted": [
         "Encriptado de ponta a ponta"
       ]
@@ -5155,6 +5160,9 @@
       ],
       "Back to sign in": [
         "Voltar para o início de sessão"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "Abrir ${ MAIL_APP_NAME } no ${ webAppMessage }"
       ]
     },
     "Frequency of news": {
@@ -6313,11 +6321,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -6331,6 +6339,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "A apagar ${ deletedServerCount } servidor gateway",
         "A apagar ${ deletedServerCount } servidores gateway"
+      ],
+      "Discount": [
+        "Desconto"
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
@@ -6664,6 +6675,15 @@
       "Invite Accepted": [
         "O convite foi aceite."
       ],
+      "Invite Created": [
+        "O convite foi criado."
+      ],
+      "Invite deleted": [
+        "O convite foi eliminado."
+      ],
+      "Invite Deleted": [
+        "O convite foi eliminado."
+      ],
       "Invite rejected": [
         "O convite foi rejeitado."
       ],
@@ -6682,6 +6702,9 @@
       ],
       "Item Deleted": [
         "O item foi eliminado."
+      ],
+      "Item Read": [
+        "O item foi lido."
       ],
       "Item Updated": [
         "O item foi atualizado."
@@ -6941,6 +6964,9 @@
       ],
       "Password copied to clipboard": [
         "Palavra-passe copiada para a área de transferência"
+      ],
+      "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
+        "A palavra-passe deve ter ${ MIN_PASSWORD_LENGTH } caracteres ou mais."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Os pagamentos são protegidos através de encriptação TLS e pelas leis de privacidade suíças."
@@ -9609,6 +9635,9 @@
       "Upgrade your plan": [
         "Atualize o seu plano"
       ],
+      "Vault": [
+        "Cofre"
+      ],
       "View guide": [
         "Ver guia"
       ],
@@ -9696,11 +9725,17 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "for ${ price }": [
+        "por ${ price }"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Foi convidado a experimentar ${ MAIL_APP_NAME }"
       ]
     },
     "mail_signup_2024: title": {
+      "For businesses": [
+        "Para empresas"
+      ],
       "For individuals": [
         "Para indivíduos"
       ]
@@ -10103,23 +10138,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10147,6 +10165,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -11691,11 +11726,17 @@
       "Reset organization key": [
         "Redefinir a chave da organização"
       ],
+      "The following administrators could not be restored.": [
+        "Não foi possível restaurar os seguintes administradores."
+      ],
       "The organization key must be activated first.": [
         "Tem de ativar a chave da organização primeiro."
       ],
       "We couldn't verify authenticity of this identity.": [
         "Não foi possível verificar a autenticidade desta identidade."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Nós verificamos a autenticidade desta identidade."
       ]
     },
     "Payment method option": {
@@ -12581,6 +12622,16 @@
         "Verificação"
       ]
     },
+    "signup: Action": {
+      "Request a demo": [
+        "Solicitar uma demonstração"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR compliant": [
+        "Em conformidade com o RGPDD\n"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Fechar"
@@ -12894,6 +12945,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } utilizador",
+        "Assistente de escrita da ${ BRAND_NAME } Scribe para ${ maxAi } utilizadores"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
@@ -13002,6 +13057,9 @@
       "${ maxEmails } email address per user": [
         "${ maxEmails } endereço de e-mail por utilizador",
         "${ maxEmails } endereços de e-mail por utilizador"
+      ],
+      "${ PASS_APP_NAME } including unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } incluindo aliases hide-my-email Ilimitados"
       ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } de armazenamento por utilizador"
@@ -13749,11 +13807,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -14293,6 +14351,9 @@
       "PayPal verification failed": [
         "Erro na verificação PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personalize o rodapé do seu e-mail"
+      ],
       "Phone": [
         "Telefone"
       ],
@@ -14604,9 +14665,6 @@
       ],
       "WireGuard configuration": [
         "Configuração WireGuard"
-      ],
-      "Writing assistant": [
-        "Assistente de escrita"
       ],
       "You have no open alerts": [
         "Não há alertas abertos."

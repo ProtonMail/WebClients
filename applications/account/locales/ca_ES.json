@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1221,9 +1221,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domini personalitzat",
-        "${ domains } dominis personalitzats"
+      "${ domains } additional custom domain": [
+        "${ domains } domini personalitzat addicional",
+        "${ domains } dominis personalitzats addicionals"
       ],
       "${ ips } server": [
         "${ ips } servidor",
@@ -1397,8 +1397,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Personalitza el pla"
+      "Buy now": [
+        "Compreu ara"
       ],
       "New": [
         "Nou"
@@ -1541,14 +1541,6 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1570,6 +1562,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6140,6 +6140,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } ha posat en pausa una importació perquè queda poc d'espai al vostre compte. Podeu:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } intentarà reprendre la importació tan aviat com el vostre proveïdor de correu electrònic restableixi el ${ bandwidthLimitLink } del vostre compte. No cal que feu res. Si cancel·leu la importació, no la podreu reprendre i haureu de tornar a començar."
       ],
@@ -6244,6 +6247,15 @@
       "${ userFound } user found": [
         "S'ha trobat ${ userFound } usuari",
         "S'han trobat ${ userFound } usuaris"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } creat"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } eliminat"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } actualitzat"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Es requereix ${ vpnPlus } per a la conexió a nivell de país."
@@ -6697,8 +6709,17 @@
       "Custom daily": [
         "Personalitzat diàriament"
       ],
+      "Custom email added": [
+        "Adreça de correu electrònic personalitzada afegida"
+      ],
+      "Custom email deleted": [
+        "Adreça de correu electrònic personalitzada eliminada"
+      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
+      ],
+      "Custom email validated": [
+        "Adreça de correu electrònic personalitzada validada"
       ],
       "Custom monthly": [
         "Mensual (personalitzat)"
@@ -6718,11 +6739,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -6736,6 +6757,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
         "S'estan eliminant ${ deletedServerCount } servidors de passarel·la"
+      ],
+      "Discount": [
+        "Descompte"
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
@@ -7150,14 +7174,14 @@
       "Invite Deleted": [
         "S'ha eliminat la invitació."
       ],
+      "Invite for new user deleted": [
+        "S'ha eliminat la invitació per a nou usuari."
+      ],
       "Invite for organization accepted": [
         "S'ha acceptat la invitació per a l'organització"
       ],
       "Invite for organization created": [
         "S'ha creat una invitació per a l'organització"
-      ],
-      "Invite for User deleted": [
-        "S'ha eliminat la invitació per a l'usuari"
       ],
       "Invite rejected": [
         "S'ha rebutjat la invitació"
@@ -7190,11 +7214,14 @@
       "Item Deleted": [
         "S'ha eliminat l'element."
       ],
-      "Item deleted in vault": [
-        "S'ha eliminat un element de la caixa forta"
+      "Item deleted from vault": [
+        "S'ha eliminat un element de la caixa forta."
       ],
       "Item flags changed in vault": [
         "S'han canviat les marques de l'element a la caixa forta"
+      ],
+      "Item in vault trashed": [
+        "S'ha enviat a la paperera un element a la caixa forta."
       ],
       "Item in vault untrashed": [
         "S'ha restaurat un element a la caixa forta"
@@ -7207,9 +7234,6 @@
       ],
       "Item Trashed": [
         "S'ha enviat l'element a la paperera"
-      ],
-      "Item trashed in vault": [
-        "S'ha enviat a la paperera un element de la caixa forta"
       ],
       "Item Untrashed": [
         "S'ha restaurat l'element"
@@ -7384,6 +7408,9 @@
       ],
       "New User Invite Deleted": [
         "S'ha eliminat la invitació d'usuari nou"
+      ],
+      "New user invited to organization": [
+        "S'ha convidat el nou usuari a l'organització."
       ],
       "No account keys exist": [
         "No existeixen claus per a aquest compte"
@@ -7805,6 +7832,9 @@
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "La tramesa SMTP permet que serveis o dispositius de tercers enviïn correu electrònic a través de ${ MAIL_APP_NAME } per a les adreces de domini personalitzat. Aquesta funció només està disponible per a ${ BRAND_NAME } per als usuaris empresarials amb dominis personalitzats."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
@@ -7819,6 +7849,9 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Els usuaris SSO (proporcionats pel vostre proveïdor d'identitat) seran eliminats."
       ],
       "Stay tuned for future promotions.": [
         "Estigueu atent a futures promocions."
@@ -8244,9 +8277,6 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "User invited to organization": [
-        "S'ha convidat l'usuari a l'organització"
-      ],
       "username": [
         "nom d'usuari"
       ],
@@ -8436,6 +8466,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
       ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Amb els grups d'usuaris, podeu enviar correus electrònics fàcilment, compartir dades o canviar la configuració per a grups específics d'usuaris tot alhora."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Amb el vostre pla actual, només podeu rebre missatges amb la vostra adreça @pm.me. Milloreu per enviar missatges i crear adreces addicionals utilitzant @pm.me."
       ],
@@ -8450,9 +8483,6 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
-      ],
-      "Writing assistant add-on": [
-        "Extensió de l'assistent d'escriptura"
       ],
       "Yearly": [
         "Anual"
@@ -10422,6 +10452,9 @@
       "Upgrade your plan": [
         "Milloreu el vostre pla"
       ],
+      "Vault": [
+        "Caixa forta"
+      ],
       "View guide": [
         "Veure la guia"
       ],
@@ -10533,8 +10566,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Afegeix l'assistent d'escriptura"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Totes les aplicacions empresarials i característiques prèmium de ${ BRAND_NAME } per a protegir tot el vostre negoci"
@@ -10981,23 +11014,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11025,6 +11041,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11410,6 +11443,9 @@
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
+      ],
+      "Unlimited logins and notes": [
+        "Nombre il·limitat d'inicis de sessió i de notes"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicis de sessió il·limitats, notes i targetes de crèdit"
@@ -15253,6 +15289,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Eina d'exportació de ${ MAIL_APP_NAME }"
       ],
@@ -15430,10 +15469,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -16316,9 +16355,6 @@
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
-      ],
-      "Writing assistant": [
-        "Assistent d'escriptura"
       ],
       "You have no open alerts": [
         "No teniu alertes obertes"

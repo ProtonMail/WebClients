@@ -47,10 +47,10 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -731,10 +731,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -1192,9 +1192,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } 個自訂網域"
-      ],
       "${ ips } server": [
         "${ ips } 台伺服器"
       ],
@@ -1346,9 +1343,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "客製化方案"
-      ],
       "New": [
         "新版"
       ],
@@ -1481,14 +1475,6 @@
         "選擇你的年終優惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1504,6 +1490,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -6507,10 +6501,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6912,9 +6906,6 @@
       "Invite Deleted": [
         "邀請已刪除"
       ],
-      "Invite for User deleted": [
-        "邀請使用者已刪除"
-      ],
       "Invite rejected": [
         "邀請已婉拒"
       ],
@@ -6945,9 +6936,6 @@
       "Item Deleted": [
         "項目已刪除"
       ],
-      "Item deleted in vault": [
-        "於保管庫項目已刪除"
-      ],
       "Item flags changed in vault": [
         "於保管庫項目標籤已刪除"
       ],
@@ -6962,9 +6950,6 @@
       ],
       "Item Trashed": [
         "項目已刪除"
-      ],
-      "Item trashed in vault": [
-        "於保管庫項目已刪除"
       ],
       "Item Untrashed": [
         "項目已取消刪除"
@@ -8144,9 +8129,6 @@
       ],
       "Writing assistant": [
         "撰寫幫手"
-      ],
-      "Writing assistant add-on": [
-        "撰寫幫手添加"
       ],
       "Yearly": [
         "每年"
@@ -10121,9 +10103,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "添加撰寫幫手"
-      ],
       "for ${ price }": [
         "${ price } 版"
       ],
@@ -10540,23 +10519,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10584,6 +10546,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -14435,10 +14414,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -15295,9 +15274,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard 組態"
-      ],
-      "Writing assistant": [
-        "撰寫幫手"
       ],
       "You have no open alerts": [
         "您無以開啟的警告"
