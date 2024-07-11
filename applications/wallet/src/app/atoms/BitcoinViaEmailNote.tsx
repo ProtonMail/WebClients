@@ -3,10 +3,11 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
 import Icon from '@proton/components/components/icon/Icon';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import walletSendingSimplePlane from '@proton/styles/assets/img/illustrations/wallet-sending-simple-plane.svg';
-import clsx from '@proton/utils/clsx';
+import bitcoinEmailActive from '@proton/styles/assets/img/illustrations/proton-wallet-active-email.svg';
+import bitcoinEmailInactive from '@proton/styles/assets/img/illustrations/proton-wallet-inactive-email.svg';
 
 import { CoreButton, CoreButtonLike } from '.';
 
@@ -21,15 +22,16 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
     const text = useMemo(() => {
         if (isActive) {
             if (email) {
+                const formattedEmail = <MiddleEllipsis text={email}></MiddleEllipsis>;
                 return c('Bitcoin via Email')
-                    .t`Bitcoin via Email is active! ${WALLET_APP_NAME} users can send bitcoin to ${email}`;
+                    .jt`Bitcoin via Email is active! ${WALLET_APP_NAME} users can send bitcoin to ${formattedEmail}`;
             }
 
             return c('Bitcoin via Email').t`Bitcoin via Email is active! Discover how it works`;
         }
 
         return c('Bitcoin via Email')
-            .t`Bitcoin via Email is not active. Enable it so others can easily send you bitcoin.`;
+            .t`Bitcoin via Email is not active. Enable it so ${WALLET_APP_NAME} users can easily send you bitcoin.`;
     }, [email, isActive]);
 
     if (isHidden) {
@@ -37,23 +39,18 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
     }
 
     return (
-        <div
-            className={clsx(
-                'flex flex-row flex-nowrap p-4 rounded-lg items-center color-norm my-3',
-                isActive ? 'bg-success' : 'bg-danger'
-            )}
-        >
+        <div className="flex flex-row flex-nowrap p-4 rounded-lg items-center color-norm my-3 bg-weak relative">
             <div className="shrink-0">
-                <img src={walletSendingSimplePlane} alt="" />
+                <img src={isActive ? bitcoinEmailActive : bitcoinEmailInactive} alt="" />
             </div>
             <div className="flex flex-column mx-4">
-                <p className="my-0">{text}</p>
+                <p className="my-0 pt-2 pr-1 w-full">{text}</p>
                 <div>
-                    <CoreButtonLike shape="underline" as={Href} href="kb-post">{c('Bitcoin via Email')
+                    <CoreButtonLike shape="underline" color="norm" as={Href} href="kb-post">{c('Bitcoin via Email')
                         .t`Learn more`}</CoreButtonLike>
                 </div>
             </div>
-            <div className="ml-auto shrink-0">
+            <div className="absolute top-0 right-0 shrink-0">
                 <CoreButton
                     icon
                     shape="ghost"
@@ -61,7 +58,7 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
                         setIsHidden(true);
                     }}
                 >
-                    <Icon name="cross" size={6} />
+                    <Icon name="cross" size={5} />
                 </CoreButton>
             </div>
         </div>
