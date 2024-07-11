@@ -21,7 +21,7 @@ import {
     encryptWalletDataWithWalletKey,
     getDefaultWalletAccountName,
     useWalletApiClients,
-    walletAccountCreation
+    walletAccountCreation,
 } from '@proton/wallet';
 
 import { Button, CoreButton, Input, Modal, Select, SelectOption } from '../../atoms';
@@ -117,12 +117,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
     };
 
     return (
-        <Modal
-            title={c('Wallet Account').t`Add wallet account`}
-            enableCloseWhenClickOutside
-            className={theme}
-            {...modalProps}
-        >
+        <Modal title={c('Wallet Account').t`Add wallet account`} className={theme} {...modalProps}>
             <ModalParagraph>
                 <p>{c('Wallet Account')
                     .t`Create multiple wallet accounts to separate your financial activities for better privacy and organization.`}</p>
