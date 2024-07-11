@@ -811,9 +811,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domínio personalizado",
-        "${ domains } domínios personalizados"
+      "${ domains } additional custom domain": [
+        "${ domains } domínio personalizado adicional",
+        "${ domains } domínios personalizados adicionais"
       ],
       "${ ips } server": [
         "${ ips } servidor",
@@ -4061,6 +4061,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
@@ -4935,9 +4938,6 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
-      ],
-      "Writing assistant add-on": [
-        "Extensão do assistente de escrita"
       ],
       "Yearly": [
         "Anualmemnte"
@@ -5860,8 +5860,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Adicionar assistente de escrita"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Adicionar assistente de escrita da ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -6540,6 +6540,12 @@
       ],
       "Unlimited labels": [
         "Marcadores ilimitados"
+      ],
+      "Unlimited logins and notes": [
+        "Notas e inícios de sessão ilimitados"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Inícios de sessão ilimitados, notas e cartões de crédito"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -7289,8 +7295,15 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Compartilhamento seguro de cofres e links"
+      ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Compartilhamento seguro de cofre (${ n } cofre) e de link.",
+        "Compartilhamento seguro de cofres (${ n } cofres) e links."
       ]
     },
     "Payment method option": {
