@@ -634,9 +634,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } dominio personalizado",
-        "${ domains } dominios personalizados"
+      "${ domains } additional custom domain": [
+        "${ domains } dominio personalizado adicional",
+        "${ domains } dominios personalizados adicionales"
       ],
       "${ ips } server": [
         "${ ips } servidor",
@@ -3331,6 +3331,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a la contraseña, ni siquiera nosotros."
       ],
@@ -3581,6 +3584,9 @@
       ],
       "Current plan": [
         "Plan actual"
+      ],
+      "Current version": [
+        "Versión actual"
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
@@ -3884,6 +3890,12 @@
       "No results found": [
         "No se encontraron resultados"
       ],
+      "No version history available": [
+        "No hay historial de versiones disponible"
+      ],
+      "No version history batches available": [
+        "No hay lotes de historial de versiones disponibles"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ninguna de las claves cargadas son válidas para cifrar. Para enviar mensajes a esta dirección, cargue una clave válida o desactive \"Cifrar correos electrónicos\"."
       ],
@@ -4078,6 +4090,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "La autoría de las ediciones en este documento no se pudo verificar. ¿Desea marcar este documento como verificado? Puede ignorar ahora y decidir después."
       ],
+      "The Beginning": [
+        "El inicio"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
@@ -4202,6 +4217,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una pestaña nueva, desactive cualquier bloqueador de ventanas emergentes. No se le cobrará este proceso. Cualquier monto usado para verificar la tarjeta le será reembolsado inmediatamente."
       ],
+      "View only": [
+        "Solo lectura"
+      ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
@@ -4255,9 +4273,6 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
-      ],
-      "Writing assistant add-on": [
-        "Complemento del asistente de escritura"
       ],
       "you": [
         "usted"
@@ -5053,8 +5068,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Añadir el asistente de escritura"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -5762,6 +5777,9 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
+      ],
+      "Unlimited logins and notes": [
+        "Número ilimitado de inicios de sesión y notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"
@@ -7794,6 +7812,9 @@
       ],
       "Import failed": [
         "Error en la importación"
+      ],
+      "Import groups": [
+        "Importar grupos"
       ],
       "Invalid verification code": [
         "Código de verificación inválido"

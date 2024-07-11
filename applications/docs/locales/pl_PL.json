@@ -639,11 +639,11 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } niestandardowa domena",
-        "${ domains } niestandardowe domeny",
-        "${ domains } niestandardowych domen",
-        "${ domains } niestandardowych domen"
+      "${ domains } additional custom domain": [
+        "${ domains } dodatkowa niestandardowa domena",
+        "${ domains } dodatkowe niestandardowe domeny",
+        "${ domains } dodatkowych niestandardowych domen",
+        "${ domains } dodatkowych niestandardowych domen"
       ],
       "${ ips } server": [
         "${ ips } serwer",
@@ -3396,6 +3396,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
       ],
@@ -3686,6 +3689,9 @@
       ],
       "Current plan": [
         "Obecny plan"
+      ],
+      "Current version": [
+        "Obecna wersja"
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
@@ -3993,6 +3999,12 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No version history available": [
+        "Brak historii wersji"
+      ],
+      "No version history batches available": [
+        "Brak historii wersji"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Żaden z przesłanych kluczy nie jest przeznaczony do szyfrowania. Prześlij prawidłowy klucz lub wyłącz opcję \"Zaszyfruj wiadomości\", aby wysyłać wiadomości na ten adres."
       ],
@@ -4188,6 +4200,9 @@
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Nie można zweryfikować autora zmian dokumentu. Czy chcesz oznaczyć dokument jako zweryfikowany? Możesz wybrać opcję Ignoruj, aby zdecydować później."
       ],
+      "The Beginning": [
+        "Początek"
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
       ],
@@ -4314,6 +4329,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien. Twoje konto nie zostanie obciążone, kwota pobrana w celu zweryfikowania karty płatniczej, zostanie od razu zwrócona."
       ],
+      "View only": [
+        "Tylko do odczytu"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -4367,9 +4385,6 @@
       ],
       "Writing assistant": [
         "Asystent pisania"
-      ],
-      "Writing assistant add-on": [
-        "Dodatek asystenta pisania"
       ],
       "you": [
         "Ty"
@@ -5182,8 +5197,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Dodaj asystenta pisania"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Dodaj asystenta pisania ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -5924,6 +5939,12 @@
       "Unlimited labels": [
         "Nieograniczona liczba etykiet"
       ],
+      "Unlimited logins and notes": [
+        "Nieograniczona liczba danych logowania i notatek"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Nieograniczona liczba danych logowania, notatek i kart płatniczych"
+      ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
       ],
@@ -6626,14 +6647,23 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Bezpieczne udostępnianie sejfu i linków"
+      ],
       "Secure vault sharing": [
         "Bezpieczne udostępnianie sejfu"
       ],
       "Secure vault sharing (${ n } vault)": [
-        "Bezpieczne udostępnianie sejfu (${ n } sejf)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfy)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfów)",
-        "Bezpieczne udostępnianie sejfów (${ n } sejfów)"
+        "Bezpieczne udostępnianie ${ n } sejfu",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów",
+        "Bezpieczne udostępnianie ${ n } sejfów"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Bezpieczne udostępnianie ${ n } sejfu i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków",
+        "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ]
     },
     "Payment method option": {
@@ -6666,6 +6696,9 @@
       "Payment Processing": [
         "Przetwarzanie płatności"
       ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reaktywuj subskrypcję, aby zmniejszyć liczbę dodatków."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
       ],
@@ -6674,6 +6707,9 @@
       ],
       "Timeout exceeded": [
         "Limit czasu został przekroczony"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
       ]
     },
     "Payments.Error": {
