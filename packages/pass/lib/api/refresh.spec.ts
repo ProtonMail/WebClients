@@ -26,14 +26,14 @@ describe('Refresh handlers', () => {
     });
 
     test('should throw InactiveSession error if no auth', async () => {
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await expect(refresh(getMockResponse())).rejects.toThrow('Inactive session');
     });
 
     test('should call refresh', async () => {
         getAuth.mockReturnValue({ AccessToken: 'access-000', UID: 'id-000', RefreshToken: 'refresh-000' });
         call.mockResolvedValue(mockAPIResponse({ RefreshToken: 'refresh-001' }));
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await refresh(getMockResponse(TEST_SERVER_TIME));
 
         expect(call).toHaveBeenCalledTimes(1);
@@ -55,7 +55,7 @@ describe('Refresh handlers', () => {
     test('should call refresh only once concurrently', async () => {
         getAuth.mockReturnValue({ AccessToken: 'access-000', UID: 'id-000', RefreshToken: 'refresh-000' });
         call.mockResolvedValue(mockAPIResponse({ RefreshToken: 'refresh-001' }));
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         const res = getMockResponse(TEST_SERVER_TIME);
 
         await Promise.all([refresh(res), refresh(res), refresh(res)]);
@@ -75,7 +75,7 @@ describe('Refresh handlers', () => {
             RefreshTime: +TEST_SERVER_TIME + 10,
         });
         call.mockResolvedValue(mockAPIResponse({ RefreshToken: 'refresh-001' }));
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await refresh(getMockResponse(TEST_SERVER_TIME));
 
         expect(call).not.toHaveBeenCalled();
@@ -88,7 +88,7 @@ describe('Refresh handlers', () => {
         getAuth.mockReturnValue({ AccessToken: 'access-000', UID: 'id-000', RefreshToken: 'refresh-000' });
         call.mockRejectedValueOnce(timeoutError);
 
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await expect(refresh(getMockResponse())).rejects.toThrow();
 
         expect(call).toHaveBeenCalledTimes(1);
@@ -101,7 +101,7 @@ describe('Refresh handlers', () => {
         getAuth.mockReturnValue({ AccessToken: 'access-000', UID: 'id-000', RefreshToken: 'refresh-000' });
         call.mockRejectedValueOnce(offlineError);
 
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await expect(refresh(getMockResponse())).rejects.toThrow();
 
         expect(call).toHaveBeenCalledTimes(1);
@@ -114,7 +114,7 @@ describe('Refresh handlers', () => {
         call.mockRejectedValueOnce(mockAPIResponse({}, TOO_MANY_REQUESTS, { 'retry-after': '10' }));
         call.mockResolvedValueOnce(mockAPIResponse({ RefreshToken: 'refresh-001' }));
 
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await refresh(getMockResponse());
 
         expect(call).toHaveBeenCalledTimes(2);
@@ -126,7 +126,7 @@ describe('Refresh handlers', () => {
         getAuth.mockReturnValue({ AccessToken: 'access-000', UID: 'id-000', RefreshToken: 'refresh-000' });
         call.mockRejectedValue(mockAPIResponse({}, TOO_MANY_REQUESTS, { 'retry-after': '10' }));
 
-        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh, cookies: false });
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         await expect(refresh(getMockResponse())).rejects.toBeTruthy();
         expect(call).toHaveBeenCalledTimes(RETRY_ATTEMPTS_MAX);
         expect(onRefresh).not.toHaveBeenCalled();

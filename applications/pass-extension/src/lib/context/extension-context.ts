@@ -36,7 +36,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
     try {
         /* Expose an authentication store for utilities requiring it.
          * FIXME: decouple these utilities from the `authStore` global */
-        exposeAuthStore(createAuthStore(createStore(), { cookies: false }));
+        exposeAuthStore(createAuthStore(createStore()));
 
         const tab = await getCurrentTab();
         if (tab !== undefined && tab.id !== undefined) {
