@@ -942,11 +942,11 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } карыстальніцкі дамен",
-        "${ domains } карыстальніцкія дамены",
-        "${ domains } карыстальніцкіх даменаў",
-        "${ domains } карыстальніцкіх даменаў"
+      "${ domains } additional custom domain": [
+        "${ domains } дадатковы карыстальніцкі дамен",
+        "${ domains } дадатковыя карыстальніцкія дамены",
+        "${ domains } дадатковых карыстальніцкіх даменаў",
+        "${ domains } дадатковых карыстальніцкіх даменаў"
       ],
       "${ ips } server": [
         "${ ips } сервер",
@@ -3816,6 +3816,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe памочнік у напісанні"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
@@ -5328,9 +5331,6 @@
       "Writing assistant": [
         "Памочнік у напісанні"
       ],
-      "Writing assistant add-on": [
-        "Дадатак памочніка ў напісанні"
-      ],
       "Yes": [
         "Так"
       ],
@@ -6354,8 +6354,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Дадаць памочніка ў напісанні"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Дадаванне памочніка ў напісанні ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
         "за ${ price }"
@@ -7115,6 +7115,9 @@
       ],
       "Unlimited labels": [
         "Неабмежаваная колькасць метак"
+      ],
+      "Unlimited logins and notes": [
+        "Неабмежаваная колькасць запісаў уваходу і нататак"
       ],
       "Unlimited logins, notes and credit cards": [
         "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
@@ -9942,6 +9945,9 @@
       ],
       "Import failed": [
         "Не ўдалося імпартаваць"
+      ],
+      "Import groups": [
+        "Імпартаванне груп"
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
