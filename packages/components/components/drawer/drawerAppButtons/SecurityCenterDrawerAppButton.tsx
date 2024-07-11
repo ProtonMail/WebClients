@@ -10,6 +10,7 @@ import { Optional } from '@proton/shared/lib/interfaces';
 
 import { SecurityCenterDrawerLogo } from '../drawerIcons';
 import {
+    selectAccountSecurityElements,
     selectAccountSecurityIssuesCount,
     selectHasAccountSecurityIssue,
 } from '../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
@@ -26,9 +27,26 @@ const SecurityCenterDrawerAppButton = ({
     const hasAccountSecurityWarning = baseUseSelector(selectHasAccountSecurityIssue);
     const accountSecurityCardsCount = baseUseSelector(selectAccountSecurityIssuesCount);
     const unreadBreachesCount = baseUseSelector(selectUnreadBreachesCount) || 0;
-    const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
+    const { recoveryPhraseSet, hasSentinelEnabled } = baseUseSelector(selectAccountSecurityElements);
 
-    const notificationCount = accountSecurityCardsCount + unreadBreachesCount;
+    const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
+    const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
+
+    const getNotificationCount = () => {
+        if (canDisplayNewSentinelSettings && hasSentinelEnabled) {
+            return !recoveryPhraseSet ? unreadBreachesCount + 1 : unreadBreachesCount;
+        }
+        return accountSecurityCardsCount + unreadBreachesCount;
+    };
+    const getNotificationDotColor = () => {
+        if (hasSentinelEnabled && !recoveryPhraseSet && canDisplayNewSentinelSettings) {
+            return ThemeColor.Danger;
+        }
+        if (hasAccountSecurityWarning || !!unreadBreachesCount) {
+            return ThemeColor.Warning;
+        }
+        return undefined;
+    };
 
     const handleClick = () => {
         onClick?.();
@@ -48,10 +66,8 @@ const SecurityCenterDrawerAppButton = ({
                 onClick={handleClick}
                 alt={c('Action').t`Toggle security center app`}
                 aria-controls="drawer-app-proton-security-center"
-                notificationDotColor={
-                    hasAccountSecurityWarning || !!unreadBreachesCount ? ThemeColor.Warning : undefined
-                }
-                notificationDotCounter={canDisplayBreachNotifications ? notificationCount : undefined}
+                notificationDotColor={getNotificationDotColor()}
+                notificationDotCounter={canDisplayBreachNotifications ? getNotificationCount() : undefined}
                 {...rest}
             />
         </BreachAlertsSpotlight>

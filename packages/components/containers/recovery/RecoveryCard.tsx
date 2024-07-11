@@ -10,6 +10,7 @@ import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
     useIsMnemonicAvailable,
+    useIsSentinelUser,
     useRecoverySecrets,
     useRecoveryStatus,
     useUser,
@@ -18,18 +19,21 @@ import {
 import useIsRecoveryFileAvailable from '../../hooks/useIsRecoveryFileAvailable';
 import { SettingsSectionTitle } from '../account';
 import RecoveryCardStatus, { RecoveryCardStatusProps } from './RecoveryCardStatus';
+import getSentinelRecoveryProps from './getSentinelRecoveryProps';
 
 interface Props {
     ids: {
         account: string;
         data: string;
     };
+    canDisplayNewSentinelSettings?: boolean;
 }
 
-const RecoveryCard = ({ ids }: Props) => {
+const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: Props) => {
     const [user] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [{ accountRecoveryStatus, dataRecoveryStatus }, loadingRecoveryStatus] = useRecoveryStatus();
+    const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
     const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
@@ -43,10 +47,13 @@ const RecoveryCard = ({ ids }: Props) => {
         loadingIsDataRecoveryAvailable ||
         loadingIsRecoveryFileAvailable ||
         loadingIsMnemonicAvailable ||
-        loadingUserSettings
+        loadingUserSettings ||
+        loadingIsSentinelUser
     ) {
         return <Loader />;
     }
+
+    const hasMnemonic = isMnemonicAvailable && user.MnemonicStatus === MNEMONIC_STATUS.SET;
 
     const boldImperative = (
         <b key="imperative-bold-text">{
@@ -69,7 +76,24 @@ const RecoveryCard = ({ ids }: Props) => {
         }</b>
     );
 
-    const accountStatusProps: RecoveryCardStatusProps = (() => {
+    const sentinelAccountProps: RecoveryCardStatusProps = (() => {
+        if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
+            return {
+                type: 'danger',
+                statusText: c('Info').t`Outdated recovery phrase; update to ensure access to your data`,
+                callToActions: [
+                    {
+                        text: c('Info').t`Update recovery phrase`,
+                        path: `/recovery#${ids.data}`,
+                    },
+                ],
+            };
+        }
+
+        return getSentinelRecoveryProps(userSettings.Email, userSettings.Phone, hasMnemonic, ids);
+    })();
+
+    const accountStatusProps: RecoveryCardStatusProps | undefined = (() => {
         if (accountRecoveryStatus === 'complete') {
             return {
                 type: 'success',
@@ -199,14 +223,23 @@ const RecoveryCard = ({ ids }: Props) => {
             <h3 className="text-bold text-rg mb-4">{c('Title').t`Your recovery status`}</h3>
 
             <ul className="unstyled m-0">
-                <li>
-                    <RecoveryCardStatus {...accountStatusProps} />
-                </li>
-
-                {dataStatusProps && (
-                    <li className="mt-2">
-                        <RecoveryCardStatus {...dataStatusProps} />
+                {canDisplayNewSentinelSettings && isSentinelUser ? (
+                    <li>
+                        <RecoveryCardStatus {...sentinelAccountProps} />
                     </li>
+                ) : (
+                    <>
+                        {accountStatusProps && (
+                            <li>
+                                <RecoveryCardStatus {...accountStatusProps} />
+                            </li>
+                        )}
+                        {dataStatusProps && (
+                            <li className="mt-2">
+                                <RecoveryCardStatus {...dataStatusProps} />
+                            </li>
+                        )}
+                    </>
                 )}
             </ul>
         </Card>
