@@ -190,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "다크 웹 모니터링 활성화"
       ],
+      "Entire vault": [
+        "금고 입력"
+      ],
       "Exclude from monitoring": [
         "모니터링에서 제외"
       ],
@@ -216,6 +219,9 @@
       ],
       "Generated passwords": [
         "생성된 비밀번호"
+      ],
+      "Generating secure link...": [
+        "안전한 링크 생성 중..."
       ],
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 사용하기"
@@ -301,6 +307,9 @@
       "Mark as resolved": [
         "해결됨으로 표시"
       ],
+      "Maximum views": [
+        "최대 보기 횟수"
+      ],
       "More info: ${ safeTitle }": [
         "추가 정보: ${ safeTitle }"
       ],
@@ -327,6 +336,9 @@
       ],
       "Multiple select": [
         "다중 선택"
+      ],
+      "No expired links": [
+        "만료된 링크 없음"
       ],
       "OK": [
         "확인"
@@ -370,6 +382,9 @@
       "Remove access": [
         "접근 제거"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "모든 만료된 링크 지우기 (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "링크 삭제"
       ],
@@ -411,6 +426,9 @@
       ],
       "Saving": [
         "저장 중"
+      ],
+      "Secure links": [
+        "안전한 링크"
       ],
       "See all": [
         "모두 보기"
@@ -456,6 +474,9 @@
       ],
       "Sign out": [
         "로그아웃"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
       ],
       "Sort vault items": [
         "금고 항목 정렬"
@@ -776,6 +797,9 @@
       "Importing items failed": [
         "항목 불러오기 실패"
       ],
+      "Inactive secure links could not be removed.": [
+        "비활성된 안전한 링크를 삭제할 수 없습니다."
+      ],
       "Invalid password manager": [
         "유효하지 않은 비밀번호 관리자"
       ],
@@ -824,6 +848,12 @@
       "Restoring trashed items failed": [
         "휴지통 내 항목 복구 실패"
       ],
+      "Secure link could not be created.": [
+        "안전한 링크를 생성할 수 없습니다."
+      ],
+      "Secure link could not be opened.": [
+        "안전한 링크를 열 수 없습니다."
+      ],
       "Settings update failed": [
         "설정 업데이트 실패"
       ],
@@ -845,11 +875,17 @@
       "The session has expired. Please sign in again.": [
         "세션이 만료되었습니다. 다시 로그인해 주세요."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "안전한 링크 삭제 중 문제가 발생했습니다. 몇 분 후 다시 시도하십시오."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "너무 많은 시도 실패. 다시 로그인 하세요."
       ],
       "Trashing item failed": [
         "항목을 휴지통으로 이동하는데 실패"
+      ],
+      "Try reaching out to the link owner.": [
+        "이 링크 소유자에게 연락을 시도하세요.."
       ],
       "Unable to generate an OTP code for this item": [
         "해당 항목으로 OTP 코드를 생성할 수 없습니다"
@@ -1069,6 +1105,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "현재의 모든 침해가 해결된 것으로 표시됩니다. 나중에 데이터 침해가 발생하는 경우에는 알림이 전송됩니다."
       ],
+      "All inactive secure links were removed": [
+        "모든 비활성 상태의 안전한 링크가 삭제됨"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" 내의 모든 항목을 성공적으로 이동했습니다."
       ],
@@ -1093,6 +1132,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "항목을 ${ name }으로 이동하시는 것이 맞습니까?"
       ],
+      "Are you sure you want to remove the link?": [
+        "이 링크를 삭제하시겠습니까?"
+      ],
       "Auto-lock successfully disabled.": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
@@ -1107,6 +1149,9 @@
       ],
       "Built in 2FA authenticator": [
         "2단계 인증기 내장"
+      ],
+      "Can be viewed": [
+        "확인될 수 있습니다"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
@@ -1215,6 +1260,9 @@
       ],
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
+      ],
+      "Expires in": [
+        "만료:"
       ],
       "Expires in ${ remainingTime }": [
         "${ remainingTime }에 만료"
@@ -1510,8 +1558,14 @@
       "Registering PIN lock failed": [
         "PIN 잠금 설정 실패"
       ],
+      "Removing all inactive secure links...": [
+        "모든 비활성 상태의 안전한 링크 삭제 중..."
+      ],
       "Removing extra password...": [
         "추가 비밀번호 삭제 중..."
+      ],
+      "Removing secure link...": [
+        "안전한 링크 지우는 중..."
       ],
       "Restoring items from trash": [
         "휴지통에서 항목 복구 중"
@@ -1593,6 +1647,9 @@
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
+      ],
+      "The secure link has been removed": [
+        "안전한 링크가 삭제되었습니다."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "붙여넣으려는 텍스트는 ${ maxLength } 문자의 최대 허용 길이보다 깁니다."
@@ -1770,14 +1827,23 @@
       "10 minutes": [
         "10분"
       ],
+      "14 days": [
+        "14일"
+      ],
       "15 minutes": [
         "15분"
+      ],
+      "24 hours": [
+        "24시간"
       ],
       "2FA secret key (TOTP)": [
         "2단계 인증 비밀 키 (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2단계 인증 토큰 (TOTP)"
+      ],
+      "30 days": [
+        "30일"
       ],
       "30 minutes": [
         "30분"
@@ -1787,6 +1853,9 @@
       ],
       "5 minutes": [
         "5분"
+      ],
+      "7 days": [
+        "7일"
       ],
       "A-Z": [
         "A-Z"
@@ -1908,6 +1977,9 @@
       "Expired": [
         "만료됨"
       ],
+      "Expired link": [
+        "만료된 링크"
+      ],
       "Export": [
         "내보내기"
       ],
@@ -1923,8 +1995,14 @@
       "Forwards to": [
         "다음으로 전달:"
       ],
+      "Free forever": [
+        "영원히 무료"
+      ],
       "General": [
         "일반"
+      ],
+      "Generate a secure link for this item": [
+        "이 항목에 대한 안전한 링크를 생성하세요"
       ],
       "Generic CSV": [
         "일반 CSV"
@@ -2004,6 +2082,9 @@
       "Make all viewers": [
         "전체 구성원을 뷰어로 선택"
       ],
+      "Max views reached": [
+        "최대 보기 수 도달"
+      ],
       "Members": [
         "구성원"
       ],
@@ -2055,6 +2136,9 @@
       "Oldest to newest": [
         "오래된 항목 순"
       ],
+      "Open-source password manager for effortless protection.": [
+        "손쉬운 보호를 위한 오픈 소스 비밀번호 관리자."
+      ],
       "Organization": [
         "조직"
       ],
@@ -2091,6 +2175,9 @@
       "Recent": [
         "최근"
       ],
+      "Remove link": [
+        "링크 삭제"
+      ],
       "Report a problem": [
         "문제 신고"
       ],
@@ -2099,6 +2186,9 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "수백만명의 사용자에 의해 종단 간 암호화가 검증된 ${ PASS_APP_NAME }로 안전하게 계정을 저장, 공유하고 자동 입력하세요."
       ],
       "Security": [
         "보안"
@@ -2121,6 +2211,15 @@
       "Session locking": [
         "세션 잠금"
       ],
+      "Share": [
+        "공유"
+      ],
+      "Share this vault or create a new vault": [
+        "이 금고를 공유하거나 새 금고를 생성하세요."
+      ],
+      "Shared link": [
+        "공유된 링크"
+      ],
       "Show website favicons": [
         "웹사이트 아이콘 표시"
       ],
@@ -2141,6 +2240,15 @@
       ],
       "Text": [
         "텍스트"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "이 금고의 항목이 ${ targetMembers }명과 공유 중입니다."
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL이 클립보드로 복사되었습니다."
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "이 항목은 ${ remaining }까지 접근 가능 상태로 유지됩니다."
       ],
       "Title": [
         "제목"
@@ -2543,6 +2651,9 @@
       "No reused passwords": [
         "재사용된 비밀번호 없음"
       ],
+      "No shared secure links": [
+        "안전한 링크로 공유된 항목이 없습니다."
+      ],
       "Our welcome gift to you": [
         "당신께 드리는 웰컴 기프트"
       ],
@@ -2575,6 +2686,9 @@
       ],
       "Remove extra password": [
         "추가 비밀번호 지우기"
+      ],
+      "Remove secure link?": [
+        "안전한 링크를 지울까요?"
       ],
       "Resolved breaches": [
         "해결된 유출"
