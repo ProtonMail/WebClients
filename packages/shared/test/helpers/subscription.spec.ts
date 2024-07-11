@@ -220,7 +220,7 @@ describe('getPricingFromPlanIDs', () => {
                 ID: 'id123',
                 ParentMetaPlanID: '',
                 Type: 1,
-                Name: PLANS.PASS_PLUS,
+                Name: PLANS.PASS,
                 Title: 'Pass Plus',
                 MaxDomains: 0,
                 MaxAddresses: 0,

@@ -16,7 +16,7 @@ import {
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
     getPrimaryPlan,
-    hasPassPlus,
+    hasPass,
     hasVPN,
     hasVPNPassBundle,
     hasVpnBusiness,
@@ -352,7 +352,7 @@ const SubscriptionPanel = ({ app, currency, vpnServers, subscription, organizati
                 if (user.isFree && app === APPS.PROTONPASS) {
                     return getPassAppFree();
                 }
-                if (hasPassPlus(subscription)) {
+                if (hasPass(subscription)) {
                     return getPassAppPassPlus();
                 }
                 if (getHasVpnB2BPlan(subscription)) {

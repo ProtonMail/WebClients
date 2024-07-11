@@ -98,7 +98,7 @@ export const getWhatsIncluded = ({
             },
         ];
     }
-    const passPremium = planIDs[PLANS.PASS_PLUS];
+    const passPremium = planIDs[PLANS.PASS];
     if (passPremium !== undefined && passPremium > 0) {
         return [
             {

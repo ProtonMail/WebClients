@@ -8,7 +8,7 @@ export const getScribeAddonNameByPlan = (planName: PLANS) => {
             return ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS;
         case PLANS.BUNDLE:
             return ADDON_NAMES.MEMBER_SCRIBE_BUNDLE;
-        case PLANS.PASS_PLUS:
+        case PLANS.PASS:
             return ADDON_NAMES.MEMBER_SCRIBE_PASS;
         case PLANS.VPN:
             return ADDON_NAMES.MEMBER_SCRIBE_VPN;

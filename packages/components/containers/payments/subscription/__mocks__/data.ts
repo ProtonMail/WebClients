@@ -312,8 +312,8 @@ export const drivePlusUpsell = {
 };
 
 export const passPlusUpsell = {
-    plan: PLANS.PASS_PLUS,
-    planKey: PLANS.PASS_PLUS,
+    plan: PLANS.PASS,
+    planKey: PLANS.PASS,
     title: 'Pass Plus',
     description: 'For next-level password management and identity protection.',
     upsellRefLink: 'upsell_pass-button-pass-dashboard_settings',

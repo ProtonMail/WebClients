@@ -283,7 +283,7 @@ export const getPassConfiguration = ({
                 guarantee: false,
             },
             {
-                plan: PLANS.PASS_PLUS,
+                plan: PLANS.PASS,
                 subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFeatures()} />,
                 type: 'best' as const,
                 guarantee: true,
@@ -364,7 +364,7 @@ export const getPassConfiguration = ({
                 value: Audience.B2C,
                 locationDescriptor: { pathname: SSO_PATHS.PASS_SIGNUP },
                 title: c('pass_signup_2023: title').t`For individuals`,
-                defaultPlan: PLANS.PASS_PLUS,
+                defaultPlan: PLANS.PASS,
             },
             {
                 value: Audience.B2B,
@@ -383,7 +383,7 @@ export const getPassConfiguration = ({
                 if (audience === Audience.B2B) {
                     return PLANS.PASS_BUSINESS;
                 }
-                return PLANS.PASS_PLUS;
+                return PLANS.PASS;
             })(),
             cycle: CYCLE.YEARLY,
         },
