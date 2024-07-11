@@ -1,6 +1,6 @@
+import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { Awaiter } from '@proton/pass/utils/fp/promises';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
-import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 
 import type { Maybe } from '../utils';
 import type { ApiResponse } from './pass';
@@ -73,5 +73,5 @@ export type ApiSessionEvent = 'inactive' | 'locked' | 'not-allowed' | 'missing-s
 export type ApiSubscriptionEvent =
     | { type: 'error'; error: string; silent?: boolean }
     | { type: 'network'; online: boolean }
-    | { type: 'refresh'; data: RefreshSessionResponse & { RefreshTime: number } }
+    | { type: 'refresh'; data: RefreshSessionData }
     | { type: 'session'; status: ApiSessionEvent; error?: string; silent?: boolean };

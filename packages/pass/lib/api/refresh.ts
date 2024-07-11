@@ -1,3 +1,4 @@
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import { type ApiAuth, type ApiCallFn, AuthMode, type Maybe, type MaybePromise } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
@@ -12,9 +13,15 @@ import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
+type RefreshCookieResponse = { LocalID?: number; RefreshCounter: number; RefreshTime: number; UID: string };
+
+export type RefreshSessionData = Pick<AuthSession, 'UID' | 'AccessToken' | 'RefreshToken' | 'RefreshTime' | 'cookies'>;
 export type RefreshHandler = (response: Response) => Promise<void>;
-export type RefreshSessionData = RefreshSessionResponse & { RefreshTime: number };
 export type OnRefreshCallback = (response: RefreshSessionData) => MaybePromise<void>;
+
+export type DynamicRefreshResult =
+    | { type: AuthMode.COOKIE; response: { json: () => Promise<RefreshCookieResponse> } }
+    | { type: AuthMode.TOKEN; response: { json: () => Promise<RefreshSessionResponse> } };
 
 type CreateRefreshHandlerOptions = {
     call: ApiCallFn;
@@ -32,17 +39,20 @@ const refresh = async (options: {
     call: ApiCallFn;
     attempt: number;
     maxAttempts: number;
-}): Promise<Response> => {
+}): Promise<DynamicRefreshResult> => {
     const { call, getAuth, attempt, maxAttempts } = options;
     const auth = getAuth();
     if (auth === undefined) throw InactiveSessionError();
 
     try {
-        return await call(
-            auth.type === AuthMode.COOKIE
-                ? withUIDHeaders(auth.UID, setRefreshCookies())
-                : withAuthHeaders(auth.UID, auth.AccessToken, refreshTokens({ RefreshToken: auth.RefreshToken }))
-        );
+        return {
+            type: auth.type,
+            response: await call(
+                auth.type === AuthMode.COOKIE
+                    ? withUIDHeaders(auth.UID, setRefreshCookies())
+                    : withAuthHeaders(auth.UID, auth.AccessToken, refreshTokens({ RefreshToken: auth.RefreshToken }))
+            ),
+        };
     } catch (error: any) {
         if (attempt >= maxAttempts) throw error;
 
@@ -74,13 +84,30 @@ export const refreshHandlerFactory = ({ call, getAuth, onRefresh }: CreateRefres
             const lastRefreshDate = getAuth()?.RefreshTime;
 
             if (lastRefreshDate === undefined || +(responseDate ?? new Date()) > lastRefreshDate) {
-                const response = await refresh({ call, getAuth, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
-                const timestamp = getDateHeader(response.headers) ?? new Date();
-                const result: RefreshSessionResponse = await response.json();
+                const result = await refresh({
+                    call,
+                    getAuth,
+                    attempt: 1,
+                    maxAttempts: RETRY_ATTEMPTS_MAX,
+                });
+                const RefreshTime = +(getDateHeader(response.headers) ?? new Date());
+
+                const refreshData = await (async (): Promise<RefreshSessionData> => {
+                    switch (result.type) {
+                        case AuthMode.TOKEN: {
+                            const { AccessToken, RefreshToken, UID } = await result.response.json();
+                            return { UID, AccessToken, RefreshToken, RefreshTime };
+                        }
+                        case AuthMode.COOKIE: {
+                            const { UID } = await result.response.json();
+                            return { UID, AccessToken: '', RefreshToken: '', RefreshTime, cookies: true };
+                        }
+                    }
+                })();
 
                 logger.info('[API] Successfully refreshed session tokens');
 
-                await onRefresh({ ...result, RefreshTime: +timestamp });
+                await onRefresh(refreshData);
                 await wait(randomIntFromInterval(500, 2000));
             }
         },
