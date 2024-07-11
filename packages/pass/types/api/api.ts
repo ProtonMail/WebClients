@@ -7,16 +7,17 @@ import type { ApiResponse } from './pass';
 
 export type ApiCallFn = (options: ApiOptions) => Promise<Response>;
 
-export type ApiAuth = {
-    UID: string;
-    AccessToken: string;
-    RefreshToken: string;
-    RefreshTime?: number;
-};
+export enum AuthMode {
+    TOKEN,
+    COOKIE,
+}
+
+export type ApiAuth =
+    | { type: AuthMode.TOKEN; UID: string; AccessToken: string; RefreshToken: string; RefreshTime?: number }
+    | { type: AuthMode.COOKIE; UID: string; RefreshTime?: number };
 
 export type ApiState = {
     appVersionBad: boolean;
-    cookies: boolean;
     online: boolean;
     pendingCount: number;
     queued: Awaiter<void>[];
