@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -757,11 +757,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Reload": [
         "Obnoviť"
@@ -1218,12 +1218,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } vlastná doména",
-        "${ domains } vlastné domény",
-        "${ domains } vlastných domén",
-        "${ domains } vlastných domén"
-      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } servery",
@@ -1402,9 +1396,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Prispôsobiť plán"
-      ],
       "New": [
         "Nový"
       ],
@@ -1546,14 +1537,6 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1575,6 +1558,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6834,11 +6825,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -7277,9 +7268,6 @@
       ],
       "Invite for organization created": [
         "Pozvánka pre organizáciu vytvorená"
-      ],
-      "Invite for User deleted": [
-        "Pozvánka pre používateľa vymazaná"
       ],
       "Invite rejected": [
         "Pozvánka odmietnutá"
@@ -8358,9 +8346,6 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "User invited to organization": [
-        "Používateľ bol pozvaný do organizácie"
-      ],
       "username": [
         "používateľské meno"
       ],
@@ -8561,9 +8546,6 @@
       ],
       "Writing assistant": [
         "Asistent písania"
-      ],
-      "Writing assistant add-on": [
-        "Doplnok asistenta písania"
       ],
       "Yearly": [
         "Ročne"
@@ -10659,9 +10641,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Pridať asistenta písania"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Všetky firemné aplikácie a prémiové funkcie ${ BRAND_NAME } na ochranu vašej firmy"
       ],
@@ -11117,23 +11096,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11161,6 +11123,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -15700,10 +15679,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -16575,9 +16554,6 @@
       ],
       "WireGuard configuration": [
         "Konfigurácia WireGuard"
-      ],
-      "Writing assistant": [
-        "Asistent písania"
       ],
       "You have no open alerts": [
         "Nemáte žiadne aktívne upozornenia"

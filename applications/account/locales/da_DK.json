@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -1221,9 +1221,9 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } brugerdomæne",
-        "${ domains } brugerdomæner"
+      "${ domains } additional custom domain": [
+        "${ domains } ekstra tilpasset domæne",
+        "${ domains } yderligere tilpassede domæner"
       ],
       "${ ips } server": [
         "${ ips } server",
@@ -1397,8 +1397,8 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Tilpas abonnement"
+      "Buy now": [
+        "Køb nu"
       ],
       "New": [
         "Ny"
@@ -1541,14 +1541,6 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1570,6 +1562,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5600,6 +5600,12 @@
         "Tjenester"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmer"
+      ]
+    },
     "Header": {
       "Access": [
         "Adgang"
@@ -6140,6 +6146,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } satte en import på pause, da din konto er ved at løbe tør for plads. Du kan:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } vil forsøge at genoptage importen, så snart din e-mail-udbyder nulstiller din kontos ${ bandwidthLimitLink }. Du behøver ikke selv at gøre noget. Hvis du annullerer din import, vil du ikke kunne genoptage den, og du bliver nødt til at starte forfra."
       ],
@@ -6244,6 +6253,18 @@
       "${ userFound } user found": [
         "${ userFound } bruger fundet",
         "${ userFound } brugere fundet"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } oprettet"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } slettet"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } delt med e-mail"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } opdateret"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } påkrævet for forbindelse på landniveau."
@@ -6578,6 +6599,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Styrk din organisations varemærkeidentitet, og skab en mere ensartet onlineoplevelse for dine brugere."
       ],
+      "Breach Custom Email Added": [
+        "Tilpasset e-mail om databrud tilføjet"
+      ],
+      "Breach Custom Email Deleted": [
+        "Tilpasset e-mail om databrud slettet"
+      ],
+      "Breach Custom Email Validated": [
+        "Tilpasset e-mail om databrud bekræftet"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Som standard kan organisationsmedlemmer kun eksportere bokse, hvor de er ejere. Hvis denne tilvalg er slået til, kan de ikke eksportere nogen data."
       ],
@@ -6697,8 +6727,17 @@
       "Custom daily": [
         "Brugerdefineret daglig"
       ],
+      "Custom email added": [
+        "Tilpasset e-mail tilføjet"
+      ],
+      "Custom email deleted": [
+        "Tilpasset e-mail slettet"
+      ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
+      ],
+      "Custom email validated": [
+        "Tilpasset e-mail bekræftet"
       ],
       "Custom monthly": [
         "Brugerdefineret månedlig"
@@ -6718,11 +6757,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -7153,14 +7192,14 @@
       "Invite Deleted": [
         "Invitation slettet"
       ],
+      "Invite for new user deleted": [
+        "Invitation til ny bruger slettet"
+      ],
       "Invite for organization accepted": [
         "Invitation til organisation accepteret"
       ],
       "Invite for organization created": [
         "Invitation til organisation oprettet"
-      ],
-      "Invite for User deleted": [
-        "Invitation til bruger slettet"
       ],
       "Invite rejected": [
         "Invitation afvist"
@@ -7178,6 +7217,9 @@
       "Item Autofilled": [
         "Element autoudfyldt"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Element autoudfyldt i ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Element autoudfyldt i boks"
       ],
@@ -7187,17 +7229,35 @@
       "Item Created": [
         "Element oprettet"
       ],
+      "Item created in ${ vaultLink }": [
+        "Element oprettet i ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Element oprettet i boks"
       ],
       "Item Deleted": [
         "Element slettet"
       ],
-      "Item deleted in vault": [
-        "Element slettet i boks"
+      "Item deleted from ${ vaultLink }": [
+        "Element slettet fra ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Element slettet fra boks"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Elementflag ændret i ${ vaultLink }"
       ],
       "Item flags changed in vault": [
         "Elementflag ændret i boks"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Element i ${ vaultLink } beskadiget"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Element i ${ vaultLink } ubeskadiget"
+      ],
+      "Item in vault trashed": [
+        "Element i boks beskadiget"
       ],
       "Item in vault untrashed": [
         "Element i boks ubeskadiget"
@@ -7205,20 +7265,23 @@
       "Item Read": [
         "Element læst"
       ],
+      "Item read in ${ vaultLink }": [
+        "Element læst i ${ vaultLink }"
+      ],
       "Item read in vault": [
         "Element læst i boks"
       ],
       "Item Trashed": [
         "Element skrottet"
       ],
-      "Item trashed in vault": [
-        "Element beskadiget i boks"
-      ],
       "Item Untrashed": [
         "Element ubeskadiget"
       ],
       "Item Updated": [
         "Element opdateret"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Element opdateret i ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Element opdateret i boks"
@@ -7387,6 +7450,9 @@
       ],
       "New User Invite Deleted": [
         "Ny brugerinvitation slettet"
+      ],
+      "New user invited to organization": [
+        "Ny bruger inviteret til organisation"
       ],
       "No account keys exist": [
         "Der findes ingen kontonøgler"
@@ -7786,6 +7852,12 @@
       ],
       "Share Updated": [
         "Deling opdateret"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Delt ${ vaultLink } slettet"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Delt ${ vaultLink } opdateret"
       ],
       "Shared vault deleted": [
         "Delt boks slettet"
@@ -8259,9 +8331,6 @@
       "User activated": [
         "Bruger aktiveret"
       ],
-      "User invited to organization": [
-        "Bruger inviteret til organisation"
-      ],
       "username": [
         "brugernavn"
       ],
@@ -8279,6 +8348,9 @@
       ],
       "Vault Deleted": [
         "Boks slettet"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Boks enten slettet eller kræver adgangstilladelser"
       ],
       "Vault shared with email": [
         "Boks delt med e-mail"
@@ -8468,9 +8540,6 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
-      ],
-      "Writing assistant add-on": [
-        "Skriveassistent-tilføjelse"
       ],
       "Yearly": [
         "Årlig"
@@ -10440,6 +10509,9 @@
       "Upgrade your plan": [
         "Opgradér abonnement"
       ],
+      "Vault": [
+        "Boks"
+      ],
       "View guide": [
         "Se guide"
       ],
@@ -10551,8 +10623,8 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Tilføj skriveassistent"
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Alle ${ BRAND_NAME } erhvervsapps og premiumfunktioner til at beskytte hele din virksomhed"
@@ -10999,23 +11071,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11043,6 +11098,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -11428,6 +11500,9 @@
       ],
       "Unlimited labels": [
         "Ubegrænsede etiketter"
+      ],
+      "Unlimited logins and notes": [
+        "Ubegrænset indlogninger og notater"
       ],
       "Unlimited logins, notes and credit cards": [
         "Ubegrænsede logins, noter og betalingskort"
@@ -15271,6 +15346,9 @@
       "${ appName } Free": [
         "${ appName } Gratis"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15448,11 +15526,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -15875,6 +15953,9 @@
       "Import failed": [
         "Import mislykkedes"
       ],
+      "Import groups": [
+        "Importer grupper"
+      ],
       "Import key": [
         "Importer nøgle"
       ],
@@ -15990,7 +16071,7 @@
         "Indstillinger for nulstilling af adgangskode"
       ],
       "Passwords made easy": [
-        "Adgangskoder på nem måde"
+        "Adgangskoder på den nemme måde"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -16334,9 +16415,6 @@
       ],
       "WireGuard configuration": [
         "WireGuard konfiguration"
-      ],
-      "Writing assistant": [
-        "Skriveassistent"
       ],
       "You have no open alerts": [
         "Du har ingen åbne varsler"

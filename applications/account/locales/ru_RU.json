@@ -67,11 +67,11 @@
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -760,11 +760,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1221,12 +1221,6 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } пользовательский домен",
-        "${ domains } пользовательских домена",
-        "${ domains } пользовательских доменов",
-        "${ domains } пользовательских доменов"
-      ],
       "${ ips } server": [
         "${ ips } сервер",
         "${ ips } сервера",
@@ -1405,9 +1399,6 @@
       ]
     },
     "Assistant toggle": {
-      "Customize plan": [
-        "Настроить тариф"
-      ],
       "New": [
         "Новый"
       ],
@@ -1549,14 +1540,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1578,6 +1561,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6846,11 +6837,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -6866,6 +6857,9 @@
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов"
+      ],
+      "Discount": [
+        "Скидка"
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -7290,9 +7284,6 @@
       "Invite for organization created": [
         "Создано приглашение для организации"
       ],
-      "Invite for User deleted": [
-        "Приглашение Пользователя удалено"
-      ],
       "Invite rejected": [
         "Приглашение отклонено"
       ],
@@ -7326,9 +7317,6 @@
       "Item Deleted": [
         "Элемент удален"
       ],
-      "Item deleted in vault": [
-        "Элемент удален в хранилище"
-      ],
       "Item flags changed in vault": [
         "Флажки предметов изменены в хранилище"
       ],
@@ -7343,9 +7331,6 @@
       ],
       "Item Trashed": [
         "Элемент помещен в корзину"
-      ],
-      "Item trashed in vault": [
-        "Элемент в хранилище помещен в корзину"
       ],
       "Item Untrashed": [
         "Элемент извлечен из корзины"
@@ -8403,9 +8388,6 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "User invited to organization": [
-        "Пользователь приглашен в организацию"
-      ],
       "username": [
         "имя пользователя"
       ],
@@ -8609,9 +8591,6 @@
       ],
       "Writing assistant": [
         "Помощник по написанию"
-      ],
-      "Writing assistant add-on": [
-        "Расширение для помощника по написанию"
       ],
       "Yearly": [
         "Ежегодно"
@@ -10734,9 +10713,6 @@
       ]
     },
     "mail_signup_2024: Info": {
-      "Add writing assistant": [
-        "Добавить помощника по написанию"
-      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Все бизнес-приложения ${ BRAND_NAME } и платные функции для защиты всего вашего бизнеса"
       ],
@@ -11192,23 +11168,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11236,6 +11195,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -15722,7 +15698,7 @@
         "Добавить в список спама"
       ],
       "Add user accounts": [
-        "Добавить учётную запись пользователя"
+        "Добавить аккаунты пользователя"
       ],
       "Add users": [
         "Добавить пользователей"
@@ -15793,10 +15769,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -16322,7 +16298,7 @@
         "Файлы конфигурации OpenVPN"
       ],
       "Organization filters": [
-        "Название организации"
+        "Фильтры организации"
       ],
       "Organization key": [
         "Ключ организации"
@@ -16679,16 +16655,13 @@
         "Что такое псевдоним?"
       ],
       "What is the dark web?": [
-        "Что такое темная паутина?"
+        "Что такое Dark Web?"
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
       ],
       "WireGuard configuration": [
         "Конфигурация WireGuard"
-      ],
-      "Writing assistant": [
-        "Помощник по написанию"
       ],
       "You have no open alerts": [
         "У вас нет открытых оповещений"
