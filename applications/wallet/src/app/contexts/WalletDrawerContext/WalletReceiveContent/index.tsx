@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { WasmApiWalletAccount } from '@proton/andromeda';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
-import Href from '@proton/atoms/Href/Href';
 import QRCode from '@proton/components/components/image/QRCode';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
@@ -51,16 +50,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
 
     return (
         <div className="block">
-            <div className="flex flex-column">
-                <h3 className="text-4xl text-bold mx-auto text-center">{c('Receive bitcoin')
-                    .t`Your bitcoin address`}</h3>
-                <div className="color-weak text-break mb-6">
-                    <p className="text-center my-2">
-                        {c('Receive bitcoin')
-                            .t`Here is your Bitcoin address. For better privacy, use a different address for each transaction.`}
-                    </p>
-                </div>
-            </div>
+            <h3 className="text-4xl text-bold mx-auto text-center mb-6">{c('Receive bitcoin').t`Receive Bitcoin`}</h3>
 
             {selectedAccount && (
                 <BitcoinViaEmailNote
@@ -74,7 +64,6 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                 {paymentLink && !loadingPaymentLink ? (
                     (() => {
                         const paymentLinkString = paymentLink.toString();
-                        const paymentLinkUri = paymentLink.toUri();
 
                         return (
                             <InputFieldStackedGroup>
@@ -119,7 +108,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                     </div>
                                     <div className="flex flex-row flex-nowrap items-center p-4">
                                         <div>
-                                            <h4 className="text-rg font-bold flex gap-2 mb-2 items-center text-center justify-center">
+                                            <h4 className="text-lg text-bold flex gap-2 mb-2 items-center text-center justify-center">
                                                 {c('Wallet Receive').t`Bitcoin address`}{' '}
                                                 <Info
                                                     className="color-norm"
@@ -127,13 +116,9 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                                         .t`For better privacy, generate a new address for each transaction.`}
                                                 />
                                             </h4>
-                                            <Tooltip title={paymentLinkString}>
-                                                <Href href={paymentLinkUri} className="color-norm">
-                                                    <span className="block text-break-all text-center text-no-decoration">
-                                                        {paymentLinkString}
-                                                    </span>
-                                                </Href>
-                                            </Tooltip>
+                                            <span className="block text-break-all text-center text-no-decoration">
+                                                {paymentLinkString}
+                                            </span>
                                         </div>
                                     </div>
                                 </InputFieldStacked>
@@ -159,7 +144,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                 void navigator.clipboard.writeText(paymentLink.toString());
                             }
                         }}
-                    >{c('Wallet receive').t`Copy address`}</Button>
+                    >{c('Wallet receive').t`Copy Bitcoin address`}</Button>
 
                     {(() => {
                         const button = (
