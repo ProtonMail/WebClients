@@ -255,13 +255,13 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                 />
 
                 {txBuilder.getRecipients().length ? (
-                    <div className="px-10">
+                    <div className="px-10 mt-6">
                         <Button
                             color="norm"
                             shape="solid"
-                            className="mt-6"
-                            fullWidth
+                            size="large"
                             shadow
+                            fullWidth
                             onClick={() => {
                                 onRecipientsConfirm();
                             }}
