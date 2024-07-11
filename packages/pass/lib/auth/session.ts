@@ -10,7 +10,6 @@ import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
@@ -24,6 +23,7 @@ export const SESSION_VERSION: AuthSessionVersion = 1;
 
 export type AuthSession = {
     AccessToken: string;
+    cookies?: boolean;
     extraPassword?: boolean;
     keyPassword: string;
     LocalID?: number;
@@ -50,6 +50,7 @@ export type DecryptedAuthSessionBlob = Pick<AuthSession, EncryptedSessionKeys>;
 
 export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
+    'cookies',
     'keyPassword',
     'LocalID',
     'lockMode',
@@ -86,14 +87,15 @@ export const encryptPersistedSessionWithKey = async (
     return JSON.stringify(value);
 };
 
-/** Ensures that an AuthSession contains the latest tokens in
- * case they were refreshed during the sequence preceding this call */
-export const mergeSessionTokens = (session: AuthSession, authStore: AuthStore): AuthSession => ({
+/** Synchronizes an `AuthSession` with the latest auth data from the authentication store */
+export const syncAuthSession = (session: AuthSession, authStore: AuthStore): AuthSession => ({
     ...session,
     AccessToken: authStore.getAccessToken() ?? session.AccessToken,
     RefreshTime: authStore.getRefreshTime() ?? session.RefreshTime,
     RefreshToken: authStore.getRefreshToken() ?? session.RefreshToken,
     UID: authStore.getUID() ?? session.UID,
+    cookies: authStore.getCookieAuth() ?? session.cookies,
+    persistent: authStore.getPersistent() ?? session.persistent,
 });
 
 /** Retrieves the current local key to decrypt the persisted session */
@@ -133,15 +135,15 @@ export const decryptSessionBlob = async (
 };
 
 export type ResumeSessionResult = {
-    session: AuthSession;
     clientKey: CryptoKey;
-    cookieUpgrade: boolean;
+    repersist: boolean;
+    session: AuthSession;
 };
 
-/** Session resuming sequence responsible for decrypting the encrypted session
- * blob. ⚠️ Ensure the authentication store has been configured with authentication
- * options in order for requests to succeed. Session tokens may be refreshed during
- * this sequence. Returns the plain-text session alongside its encryption key. */
+/** Resumes an encrypted session by decrypting the session blob.
+ * - Ensure the authentication store has been hydrated.
+ * - Session tokens may be refreshed during this sequence.
+ * - If applicable, upgrades the session to cookie-based auth. */
 export const resumeSession = async (
     persistedSession: EncryptedAuthSession,
     localID: Maybe<number>,
@@ -149,29 +151,12 @@ export const resumeSession = async (
     options: AuthOptions
 ): Promise<ResumeSessionResult> => {
     const { api, authStore, onSessionInvalid } = config;
+    const { blob, ...session } = persistedSession;
+    const { UID } = session;
+
     const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
-    const { AccessToken, RefreshToken, UID } = persistedSession;
 
     try {
-        /** If the previous auth session was token based :
-         * refresh and set the cookies before resuming. Assume
-         * persistent when migrating to cookie based auth as
-         * token based auth was already persistent. */
-        if (cookieUpgrade) {
-            await api(
-                withAuthHeaders(
-                    UID,
-                    AccessToken,
-                    setCookies({
-                        UID,
-                        RefreshToken,
-                        State: getRandomString(24),
-                        Persistent: true,
-                    })
-                )
-            );
-        }
-
         const [clientKey, { User }] = await Promise.all([
             getPersistedSessionKey(api, authStore),
             api<{ User: UserType }>(getUser()),
@@ -179,21 +164,32 @@ export const resumeSession = async (
 
         if (!persistedSession || persistedSession.UserID !== User.ID) throw InactiveSessionError();
 
-        const { blob, ...session } = persistedSession;
         const payloadVersion = session.payloadVersion ?? SESSION_VERSION;
         const decryptedBlob = await decryptSessionBlob(clientKey, blob, payloadVersion);
 
+        if (cookieUpgrade) {
+            /** Upgrade the session to cookie-based authentication.
+             * This occurs after a successful token-based API call to ensure
+             * tokens are refreshed before setting the refresh cookies.
+             * We assume the session was persistent for this upgrade.*/
+            const RefreshToken = authStore.getRefreshToken()!;
+            await api(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: true }));
+            authStore.setAccessToken('');
+            authStore.setCookieAuth(true);
+            authStore.setPersistent(true);
+            authStore.setRefreshToken('');
+        }
+
+        /** Synchronize the session with the auth store to capture any mutations
+         * that may have occurred during the resumption process (e.g., token refresh
+         * or cookie upgrade). This ensures the returned session contains the most
+         * up-to-date authentication data. */
+        const syncedSession = syncAuthSession({ ...session, ...decryptedBlob }, authStore);
+
         return {
-            cookieUpgrade,
             clientKey,
-            session: mergeSessionTokens(
-                {
-                    ...session,
-                    ...decryptedBlob,
-                    persistent: cookieUpgrade || session.persistent,
-                },
-                authStore
-            ),
+            repersist: cookieUpgrade,
+            session: syncedSession,
         };
     } catch (error: unknown) {
         if (onSessionInvalid) {

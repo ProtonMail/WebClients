@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
-import type { Api, MaybeNull } from '@proton/pass/types';
+import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pullForkSession, setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
@@ -20,6 +20,7 @@ import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/
 import type { User } from '@proton/shared/lib/interfaces';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { AUTH_MODE } from './flags';
 import { LockMode } from './lock/types';
 import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
 
@@ -94,6 +95,7 @@ export type ConsumeForkPayload =
  */
 export const consumeFork = async (options: ConsumeForkOptions): Promise<{ session: AuthSession; Scopes: string[] }> => {
     const { payload, apiUrl, api } = options;
+    const cookies = AUTH_MODE === AuthMode.COOKIE;
 
     const validFork =
         (payload.mode === 'secure' || (payload.localState !== null && payload.key)) &&
@@ -106,11 +108,10 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<{ sessio
     pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
 
     const { UID, RefreshToken, LocalID, Payload, Scopes } = await api<PullForkResponse>(pullForkParams);
-
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
-    if (api.getState().cookies) {
+    if (cookies) {
         await api(
             withAuthHeaders(
                 UID,
@@ -155,13 +156,14 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<{ sessio
 
     const session: AuthSession = {
         ...data,
-        AccessToken: refresh.AccessToken,
+        UID,
         LocalID,
+        UserID: User.ID,
+        AccessToken: cookies ? '' : refresh.AccessToken,
+        RefreshToken: cookies ? '' : refresh.RefreshToken,
         lockMode: LockMode.NONE,
         persistent: payload.persistent,
-        RefreshToken: refresh.RefreshToken,
-        UID,
-        UserID: User.ID,
+        cookies,
     };
 
     return { session, Scopes };

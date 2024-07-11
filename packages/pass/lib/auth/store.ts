@@ -1,8 +1,9 @@
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
-import type { Maybe, Store } from '@proton/pass/types';
+import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
 
+import { AUTH_MODE } from './flags';
 import { LockMode } from './lock/types';
 import type { AuthSessionVersion, EncryptedAuthSession } from './session';
 import { type AuthSession, SESSION_VERSION } from './session';
@@ -11,6 +12,7 @@ export type AuthStore = ReturnType<typeof createAuthStore>;
 export type AuthStoreOptions = { cookies: boolean };
 
 const PASS_ACCESS_TOKEN_KEY = 'pass:access_token';
+const PASS_COOKIE_AUTH_KEY = 'pass:auth_cookies';
 const PASS_CLIENT_KEY = 'pass:client_key';
 const PASS_EXTRA_PWD_KEY = 'pass:extra_password';
 const PASS_LOCAL_ID_KEY = 'pass:local_id';
@@ -31,9 +33,7 @@ const PASS_UID_KEY = 'pass:uid';
 const PASS_UNLOCK_RETRY_KEY = 'pass:unlock_retry_count';
 const PASS_USER_ID_KEY = 'pass:user_id';
 
-export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
-    const { cookies } = options;
-
+export const createAuthStore = (store: Store) => {
     const authStore = {
         clear: () => store.reset(),
 
@@ -45,6 +45,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
 
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',
+            cookies: authStore.getCookieAuth() ?? false,
             extraPassword: authStore.getExtraPassword(),
             keyPassword: authStore.getPassword() ?? '',
             LocalID: authStore.getLocalID(),
@@ -63,7 +64,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             UserID: authStore.getUserID() ?? '',
         }),
 
-        shouldCookieUpgrade: (data: Partial<AuthSession>) => cookies && Boolean(data.AccessToken || data.RefreshToken),
+        shouldCookieUpgrade: (data: Partial<AuthSession>) => AUTH_MODE === AuthMode.COOKIE && !data.cookies,
 
         validSession: (data: Partial<AuthSession>): data is AuthSession =>
             Boolean(
@@ -71,7 +72,7 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
                     data.UserID &&
                     data.keyPassword &&
                     (!data.offlineConfig || data.offlineKD) &&
-                    (cookies || (data.AccessToken && data.RefreshToken))
+                    (data.cookies || (data.AccessToken && data.RefreshToken))
             ),
 
         /** Checks wether a parsed persisted session object is
@@ -81,12 +82,12 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             Boolean('UID' in data && data.UID) &&
             Boolean('UserID' in data && data.UserID) &&
             Boolean('blob' in data && data.blob) &&
-            (cookies ||
+            (Boolean('cookies' in data && data.cookies) ||
                 (Boolean('AccessToken' in data && data.AccessToken) &&
                     Boolean('RefreshToken' in data && data.RefreshToken))),
 
         setSession: (session: Partial<AuthSession>) => {
-            if (session.AccessToken) authStore.setAccessToken(cookies ? undefined : session.AccessToken);
+            if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
@@ -98,11 +99,12 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
             if (session.payloadVersion !== undefined) authStore.setSessionVersion(session.payloadVersion);
             if (session.persistent) authStore.setPersistent(session.persistent);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
-            if (session.RefreshToken) authStore.setRefreshToken(cookies ? undefined : session.RefreshToken);
+            if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
             if (session.UserID) authStore.setUserID(session.UserID);
+            if (session.cookies) authStore.setCookieAuth(session.cookies);
         },
 
         setAccessToken: (accessToken: Maybe<string>): void => store.set(PASS_ACCESS_TOKEN_KEY, accessToken),
@@ -153,6 +155,9 @@ export const createAuthStore = (store: Store, options: AuthStoreOptions) => {
 
         getPersistent: (): Maybe<boolean> => store.get(PASS_PERSISTENT_SESSION_KEY),
         setPersistent: (persistent: boolean): void => store.set(PASS_PERSISTENT_SESSION_KEY, persistent),
+
+        setCookieAuth: (enabled: boolean): void => store.set(PASS_COOKIE_AUTH_KEY, enabled),
+        getCookieAuth: (): boolean => store.get(PASS_COOKIE_AUTH_KEY) ?? false,
     };
 
     return authStore;

@@ -1,4 +1,4 @@
-import type { ApiAuth, ApiCallFn, ApiOptions, ApiState, Maybe } from '@proton/pass/types';
+import { type ApiAuth, type ApiCallFn, type ApiOptions, type ApiState, AuthMode, type Maybe } from '@proton/pass/types';
 import type { ObjectHandler } from '@proton/pass/utils/object/handler';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
@@ -12,7 +12,6 @@ import { LockedSessionError, PassErrorCode } from './errors';
 import type { RefreshHandler } from './refresh';
 
 type ApiHandlersOptions = {
-    cookies: boolean;
     state: ObjectHandler<ApiState>;
     call: ApiCallFn;
     getAuth: () => Maybe<ApiAuth>;
@@ -24,7 +23,7 @@ type ApiHandlersOptions = {
  * - handles appBadVersion
  * - handles basic offline error detection
  * - FIXME: handle code 9001 errors with human verification  */
-export const withApiHandlers = ({ cookies, state, call, getAuth, refreshHandler }: ApiHandlersOptions): ApiCallFn => {
+export const withApiHandlers = ({ state, call, getAuth, refreshHandler }: ApiHandlersOptions): ApiCallFn => {
     return (options: ApiOptions) => {
         const {
             ignoreHandler = [],
@@ -33,7 +32,7 @@ export const withApiHandlers = ({ cookies, state, call, getAuth, refreshHandler 
         } = options ?? {};
 
         const next = async (attempts: number, maxAttempts?: number): Promise<any> => {
-            if (!options.unauth) {
+            if (!options.unauthenticated) {
                 if (state.get('sessionInactive')) throw InactiveSessionError();
                 if (state.get('sessionLocked')) throw LockedSessionError();
                 if (state.get('appVersionBad')) throw AppVersionBadError();
@@ -47,7 +46,7 @@ export const withApiHandlers = ({ cookies, state, call, getAuth, refreshHandler 
                 const config = (() => {
                     const auth = getAuth();
                     if (!auth) return options;
-                    return cookies
+                    return auth.type === AuthMode.COOKIE
                         ? withUIDHeaders(auth.UID, options)
                         : withAuthHeaders(auth.UID, auth.AccessToken, options);
                 })();
