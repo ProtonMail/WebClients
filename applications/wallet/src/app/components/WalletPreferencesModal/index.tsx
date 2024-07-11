@@ -121,7 +121,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                     <Collapsible>
                         <CollapsibleHeader
                             suffix={
-                                <CollapsibleHeaderIconButton>
+                                <CollapsibleHeaderIconButton className="color-weak">
                                     <Icon name="chevron-down" />
                                 </CollapsibleHeaderIconButton>
                             }

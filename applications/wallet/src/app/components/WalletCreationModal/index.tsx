@@ -123,9 +123,9 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                 {!isFirstCreation && (
                     <Collapsible className="mb-4">
                         <CollapsibleHeader
-                            className="mb-4"
+                            className="mb-4 color-weak"
                             suffix={
-                                <CollapsibleHeaderIconButton>
+                                <CollapsibleHeaderIconButton className="color-weak">
                                     <Icon name="chevron-down" />
                                 </CollapsibleHeaderIconButton>
                             }

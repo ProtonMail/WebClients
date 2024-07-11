@@ -280,6 +280,8 @@ export const TransactionReview = ({
                 <Button
                     color="norm"
                     shape="solid"
+                    size="large"
+                    shadow
                     className="mt-6"
                     fullWidth
                     onClick={() => {
