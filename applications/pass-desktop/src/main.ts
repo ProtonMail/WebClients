@@ -13,10 +13,11 @@ import logger from 'electron-log/main';
 
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
-import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
+import { getAppUrlFromApiUrl, getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
+import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
 import { isSquirrelStartup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -26,6 +27,8 @@ import { SourceType, updateElectronApp } from './update';
 if (isSquirrelStartup()) app.quit();
 
 let mainWindow: BrowserWindow | null;
+
+const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
 const createSession = () => {
     const paritionKey = ENV !== 'production' ? 'app-dev' : 'app';
@@ -47,27 +50,22 @@ const createSession = () => {
         // Use certificate pinning
         if (config.SSO_URL.endsWith('proton.me')) secureSession.setCertificateVerifyProc(certificateVerifyProc);
 
-        secureSession.webRequest.onHeadersReceived(
-            { urls: [`${config.API_URL}/*`, `${config.SSO_URL}/*`] },
-            (details, callback) => {
-                const { responseHeaders = {} } = details;
+        secureSession.webRequest.onHeadersReceived({ urls: [`https://*.${DOMAIN}/*`] }, (details, callback) => {
+            const { responseHeaders = {}, frame } = details;
+            const appRequest = frame?.url?.startsWith('file://') ?? false;
 
-                /** Allow cross-origin requests when fetching favicon blobs and similar from the API */
+            /** If the request is made from a `file://` url: migrate ALL `SameSite` directives
+             * to `None` and allow cross-origin requests for the API. If not then only upgrade
+             * EMPTY `SameSite` cookie directives to `None` to preserve `Session-ID` cookies */
+            if (appRequest) {
+                migrateSameSiteCookies(responseHeaders);
                 responseHeaders['access-control-allow-origin'] = ['file://'];
                 responseHeaders['access-control-allow-credentials'] = ['true'];
                 responseHeaders['access-control-allow-headers'] = Object.keys(details.responseHeaders || {});
+            } else upgradeSameSiteCookies(responseHeaders);
 
-                /** `file://` protocol cannot forward strict cookies. Re-write the same site directive
-                 * to `None` to allow cookie based authentication in the packaged electron app */
-                if (responseHeaders['set-cookie']) {
-                    responseHeaders['set-cookie'] = responseHeaders['set-cookie'].map((cookie) =>
-                        cookie.replace(/samesite=(strict|lax)/i, 'SameSite=None')
-                    );
-                }
-
-                callback({ cancel: false, responseHeaders });
-            }
-        );
+            callback({ cancel: false, responseHeaders });
+        });
     }
 
     const clientId = ((): string => {
@@ -84,6 +82,7 @@ const createSession = () => {
                 return config.clientID;
         }
     })();
+
     const appVersionHeaders = getAppVersionHeaders(clientId, config.APP_VERSION);
     secureSession.webRequest.onBeforeSendHeaders((details, callback) => {
         const requestHeaders = {
