@@ -277,6 +277,8 @@ export class WebsocketService implements WebsocketServiceInterface {
     this.logger.info(`Broadcasting failed document update of size: ${binary.byteLength} bytes`)
 
     void record.connection.broadcastMessage(binary, BroadcastSource.RetryingMessagesAfterReconnect)
+
+    metrics.docs_document_updates_total.increment({})
   }
 
   getConnectionRecord(linkId: LinkID): DocumentConnectionRecord | undefined {
@@ -332,6 +334,8 @@ export class WebsocketService implements WebsocketServiceInterface {
     this.ledger.messagePosted(message)
 
     void connection.broadcastMessage(binary, BroadcastSource.DocumentBufferFlush)
+
+    metrics.docs_document_updates_total.increment({})
   }
 
   async sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array): Promise<void> {
