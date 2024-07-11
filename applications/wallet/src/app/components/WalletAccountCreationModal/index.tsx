@@ -136,10 +136,11 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                 }}
             />
 
-            <Collapsible className="my-6">
+            <Collapsible className="my-2">
                 <CollapsibleHeader
+                    className="color-weak"
                     suffix={
-                        <CollapsibleHeaderIconButton>
+                        <CollapsibleHeaderIconButton className="color-weak">
                             <Icon name="chevron-down" />
                         </CollapsibleHeaderIconButton>
                     }
