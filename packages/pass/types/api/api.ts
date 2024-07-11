@@ -1,22 +1,23 @@
+import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { Awaiter } from '@proton/pass/utils/fp/promises';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
-import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 
 import type { Maybe } from '../utils';
 import type { ApiResponse } from './pass';
 
 export type ApiCallFn = (options: ApiOptions) => Promise<Response>;
 
-export type ApiAuth = {
-    UID: string;
-    AccessToken: string;
-    RefreshToken: string;
-    RefreshTime?: number;
-};
+export enum AuthMode {
+    TOKEN,
+    COOKIE,
+}
+
+export type ApiAuth =
+    | { type: AuthMode.TOKEN; UID: string; AccessToken: string; RefreshToken: string; RefreshTime?: number }
+    | { type: AuthMode.COOKIE; UID: string; RefreshTime?: number };
 
 export type ApiState = {
     appVersionBad: boolean;
-    cookies: boolean;
     online: boolean;
     pendingCount: number;
     queued: Awaiter<void>[];
@@ -53,7 +54,7 @@ export type ApiOptions<U extends string = string, M extends string = string> = {
     output?: 'json' | 'raw' | 'stream';
     params?: { [key: string]: any };
     sideEffects?: boolean;
-    unauth?: boolean;
+    unauthenticated?: boolean;
     signal?: AbortSignal;
     silence?: boolean | (string | number)[];
     url?: U;
@@ -72,5 +73,5 @@ export type ApiSessionEvent = 'inactive' | 'locked' | 'not-allowed' | 'missing-s
 export type ApiSubscriptionEvent =
     | { type: 'error'; error: string; silent?: boolean }
     | { type: 'network'; online: boolean }
-    | { type: 'refresh'; data: RefreshSessionResponse & { RefreshTime: number } }
+    | { type: 'refresh'; data: RefreshSessionData }
     | { type: 'session'; status: ApiSessionEvent; error?: string; silent?: boolean };

@@ -13,5 +13,6 @@ module.exports = {
     globals: {
         BUILD_TARGET: 'test',
         ENV: 'test',
+        EXTENSION_BUILD: false,
     },
 };

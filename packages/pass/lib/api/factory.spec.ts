@@ -1,4 +1,4 @@
-import type { ApiAuth, Maybe } from '@proton/pass/types';
+import { type ApiAuth, AuthMode, type Maybe } from '@proton/pass/types';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
@@ -34,7 +34,7 @@ describe('API factory', () => {
     const listener = jest.fn();
 
     (global as any).fetch = fetchMock;
-    const api = createApi({ config, getAuth, cookies: false });
+    const api = createApi({ config, getAuth });
 
     beforeEach(async () => {
         auth = undefined;
@@ -58,7 +58,6 @@ describe('API factory', () => {
                 sessionInactive: false,
                 sessionLocked: false,
                 unreachable: false,
-                cookies: false,
             });
         });
 
@@ -93,7 +92,7 @@ describe('API factory', () => {
         });
 
         test('should support request treshold', async () => {
-            const backPressuredApi = createApi({ config, getAuth, threshold: 1, cookies: false });
+            const backPressuredApi = createApi({ config, getAuth, threshold: 1 });
             const resolvers: ((res: Response) => void)[] = [];
 
             fetchMock
@@ -157,13 +156,24 @@ describe('API factory', () => {
     });
 
     describe('Authentication', () => {
-        test('should allow authenticated requests', async () => {
-            auth = { AccessToken: 'access-000', UID: 'id-000', RefreshToken: 'refresh-000' };
+        test('should allow authenticated requests when `AuthMode.TOKEN`', async () => {
+            auth = { type: AuthMode.TOKEN, AccessToken: 'access-000', UID: 'id-000', RefreshToken: 'refresh-000' };
             await api({ url: 'some/endpoint' });
             const [url, { headers }] = fetchMock.mock.lastCall!;
 
             expect(url.toString()).toEqual('https://test.api/some/endpoint');
             expect(headers.Authorization).toEqual(`Bearer ${auth.AccessToken}`);
+            expect(headers['x-pm-uid']).toEqual(auth.UID);
+            expect(headers['x-pm-appversion']).toEqual('web-pass@0.0.1-dev');
+        });
+
+        test('should allow authenticated requests when `AuthMode.COOKIE`', async () => {
+            auth = { type: AuthMode.COOKIE, UID: 'id-000' };
+            await api({ url: 'some/endpoint' });
+            const [url, { headers }] = fetchMock.mock.lastCall!;
+
+            expect(url.toString()).toEqual('https://test.api/some/endpoint');
+            expect(headers.Authorization).toBeUndefined();
             expect(headers['x-pm-uid']).toEqual(auth.UID);
             expect(headers['x-pm-appversion']).toEqual('web-pass@0.0.1-dev');
         });
