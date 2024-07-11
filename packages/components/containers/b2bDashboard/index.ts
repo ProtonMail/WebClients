@@ -1,3 +1,4 @@
 export { default as FilterAndSortEventBlock } from './FilterAndSortEventBlock';
-export { default as PassEvents } from './PassEvents';
-export type { PassEvent } from './interface';
+export { default as PassEvents } from './Pass/PassEvents';
+export { default as VPNEvents } from './VPN/VPNEvents';
+export type { PassEvent } from './Pass/interface';
