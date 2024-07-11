@@ -1,5 +1,3 @@
-import getMonth from 'date-fns/getMonth';
-import getYear from 'date-fns/getYear';
 import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
@@ -60,9 +58,10 @@ const getCCExpirationDate = (extra: LastPassItem['extra']) => {
 
     if (!unformatted) return null;
 
-    const date = new Date(`${unformatted} UTC`);
+    /* Firefox requires a day to be present in the date to be valid */
+    const date = new Date(`15 ${unformatted} UTC`);
 
-    return `${String(getMonth(date) + 1).padStart(2, '0')}${getYear(date)}`;
+    return `${String(date.getUTCMonth() + 1).padStart(2, '0')}${date.getUTCFullYear()}`;
 };
 
 const processCreditCardItem = (item: LastPassItem): ItemImportIntent<'creditCard'> =>
