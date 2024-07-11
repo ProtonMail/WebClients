@@ -1,6 +1,7 @@
 import {
     addressKeysReducer,
     addressesReducer,
+    groupsReducer,
     memberReducer,
     membersReducer,
     organizationKeyReducer,
@@ -48,6 +49,7 @@ export const sharedReducers = {
     ...memberReducer,
     ...membersReducer,
     ...scheduleCallReducer,
+    ...groupsReducer,
     features: featuresReducer.reducer,
 };
 
