@@ -7,6 +7,8 @@ import clsx from '@proton/utils/clsx';
 import { Icon, Info } from '../../../components';
 import { DecreaseBlockedReason } from './helpers';
 
+import './ButtonNumberInput.scss';
+
 export const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
     return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;
 };
@@ -86,7 +88,8 @@ export const ButtonNumberInput = ({
                     max={max}
                     value={tmpValue === null ? '' : currentValue}
                     id={id}
-                    className="w-custom border-left border-right text-center"
+                    type="number"
+                    className="button-number-input w-custom border-left border-right text-center"
                     style={{ '--w-custom': '6em' }}
                     onBlur={() => {
                         // Revert to the latest valid value upon blur
