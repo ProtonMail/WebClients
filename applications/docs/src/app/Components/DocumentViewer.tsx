@@ -16,7 +16,7 @@ import { useApplication } from '../Containers/ApplicationProvider'
 import {
   CommentMarkNodeChangeData,
   CommentsEvent,
-  FileToDocPendingConversion,
+  EditorInitializationConfig,
   LiveCommentsEvent,
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
@@ -29,11 +29,11 @@ import { useGenericAlertModal } from './Modals/GenericAlert'
 
 type Props = {
   lookup: NodeMeta
-  injectWithNewContent?: FileToDocPendingConversion
+  editorInitializationConfig?: EditorInitializationConfig
   action: DocumentAction['mode'] | undefined
 }
 
-export function DocumentViewer({ lookup, injectWithNewContent, action }: Props) {
+export function DocumentViewer({ lookup, editorInitializationConfig, action }: Props) {
   const application = useApplication()
 
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
@@ -197,11 +197,10 @@ export function DocumentViewer({ lookup, injectWithNewContent, action }: Props) 
         orchestrator.docMeta.uniqueIdentifier,
         orchestrator.username,
         orchestrator.role.roleType,
-        injectWithNewContent?.data,
-        injectWithNewContent?.type,
+        editorInitializationConfig,
       )
     },
-    [application.logger, injectWithNewContent?.data, injectWithNewContent?.type, application.eventBus],
+    [application.logger, application.eventBus, editorInitializationConfig],
   )
 
   const onFrameReady = useCallback(

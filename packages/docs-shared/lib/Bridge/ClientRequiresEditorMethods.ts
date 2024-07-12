@@ -1,6 +1,6 @@
-import { ConvertibleDataType } from '../ConvertibleDataType'
 import { DocumentRoleType } from '../Doc/DocumentRole'
 import { RtsMessagePayload } from '../Doc/RtsMessagePayload'
+import { EditorInitializationConfig } from '../EditorInitializationConfig'
 import { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
 import { SerializedEditorState } from 'lexical'
 
@@ -16,8 +16,7 @@ export interface ClientRequiresEditorMethods {
     documentId: string,
     username: string,
     role: DocumentRoleType,
-    initialData?: Uint8Array,
-    initialDataType?: ConvertibleDataType,
+    editorInitializationConfig?: EditorInitializationConfig,
   ): Promise<void>
   handleCommentsChange(): Promise<void>
   handleTypingStatusChange(threadId: string): Promise<void>

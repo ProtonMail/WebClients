@@ -1,39 +1,24 @@
 import type { Binding, ExcludedProperties, Provider } from '@lexical/yjs'
-import type { LexicalCommand, LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
 
-import { mergeRegister } from '@lexical/utils'
 import {
   createBinding,
-  createUndoManager,
   initLocalState,
-  setLocalStateFocus,
   syncCursorPositions,
   syncLexicalUpdateToYjs,
   syncYjsChangesToLexical,
 } from '@lexical/yjs'
-import {
-  BLUR_COMMAND,
-  CAN_REDO_COMMAND,
-  CAN_UNDO_COMMAND,
-  COMMAND_PRIORITY_EDITOR,
-  FOCUS_COMMAND,
-  REDO_COMMAND,
-  UNDO_COMMAND,
-  createCommand,
-} from 'lexical'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Doc, Transaction, UndoManager, YEvent } from 'yjs'
 
-import { FileToDocPendingConversion } from '@proton/docs-shared'
-import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
+import { EditorInitializationConfig } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
+import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
 
 export type CursorsContainerRef = React.MutableRefObject<HTMLElement | null>
 
 // Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
-
-const CLEAR_HISTORY_COMMAND: LexicalCommand<void> = createCommand('CLEAR_HISTORY')
 
 export function useYjsCollaboration(
   editor: LexicalEditor,
@@ -45,12 +30,13 @@ export function useYjsCollaboration(
   shouldBootstrap: boolean,
   onCollabReady: () => void,
   cursorsContainerRef?: CursorsContainerRef,
-  injectWithNewContent?: FileToDocPendingConversion,
+  editorInitializationConfig?: EditorInitializationConfig,
   excludedProperties?: ExcludedProperties,
   awarenessData?: object,
 ): [JSX.Element, Binding] {
   const [doc] = useState(() => docMap.get(id))
   const didPostReadyEvent = useRef(false)
+  const didInitializeEditor = useRef(false)
 
   const binding = useMemo(
     () => createBinding(editor, provider, id, doc, docMap, excludedProperties),
@@ -110,10 +96,10 @@ export function useYjsCollaboration(
 
     if (!didPostReadyEvent.current) {
       onCollabReady()
-      if (root.isEmpty() && root._xmlText.length === 0 && injectWithNewContent) {
-        $importDataIntoEditor(editor, injectWithNewContent.data, injectWithNewContent.type)
+      if (editorInitializationConfig && !didInitializeEditor.current) {
+        initializeEditorAccordingToConfigIfRootIsEmpty(editor, binding, editorInitializationConfig)
           .then(() => {
-            editor.dispatchCommand(CLEAR_HISTORY_COMMAND, undefined)
+            didInitializeEditor.current = true
           })
           .catch(sendErrorMessage)
       }
@@ -133,7 +119,7 @@ export function useYjsCollaboration(
     docMap,
     editor,
     id,
-    injectWithNewContent,
+    editorInitializationConfig,
     name,
     provider,
     shouldBootstrap,
@@ -169,96 +155,4 @@ export function useYjsCollaboration(
   }, [binding, cursorsContainerRef, editor, provider])
 
   return [cursorsContainer, binding]
-}
-
-export function useYjsFocusTracking(
-  editor: LexicalEditor,
-  provider: Provider,
-  name: string,
-  color: string,
-  awarenessData?: object,
-) {
-  useEffect(() => {
-    return mergeRegister(
-      editor.registerCommand(
-        FOCUS_COMMAND,
-        () => {
-          setLocalStateFocus(provider, name, color, true, awarenessData || {})
-          return false
-        },
-        COMMAND_PRIORITY_EDITOR,
-      ),
-      editor.registerCommand(
-        BLUR_COMMAND,
-        () => {
-          setLocalStateFocus(provider, name, color, false, awarenessData || {})
-          return false
-        },
-        COMMAND_PRIORITY_EDITOR,
-      ),
-    )
-  }, [color, editor, name, provider, awarenessData])
-}
-
-export function useYjsHistory(editor: LexicalEditor, binding: Binding): () => void {
-  const undoManager = useMemo(() => createUndoManager(binding, binding.root.getSharedType()), [binding])
-
-  const clearHistory = useCallback(() => {
-    undoManager.clear()
-  }, [undoManager])
-
-  useEffect(() => {
-    const undo = () => {
-      undoManager.undo()
-    }
-
-    const redo = () => {
-      undoManager.redo()
-    }
-
-    return mergeRegister(
-      editor.registerCommand(
-        UNDO_COMMAND,
-        () => {
-          undo()
-          return true
-        },
-        COMMAND_PRIORITY_EDITOR,
-      ),
-      editor.registerCommand(
-        REDO_COMMAND,
-        () => {
-          redo()
-          return true
-        },
-        COMMAND_PRIORITY_EDITOR,
-      ),
-      editor.registerCommand(
-        CLEAR_HISTORY_COMMAND,
-        () => {
-          clearHistory()
-          return true
-        },
-        COMMAND_PRIORITY_EDITOR,
-      ),
-    )
-  })
-
-  // Exposing undo and redo states
-  useEffect(() => {
-    const updateUndoRedoStates = () => {
-      editor.dispatchCommand(CAN_UNDO_COMMAND, undoManager.undoStack.length > 0)
-      editor.dispatchCommand(CAN_REDO_COMMAND, undoManager.redoStack.length > 0)
-    }
-    undoManager.on('stack-item-added', updateUndoRedoStates)
-    undoManager.on('stack-item-popped', updateUndoRedoStates)
-    undoManager.on('stack-cleared', updateUndoRedoStates)
-    return () => {
-      undoManager.off('stack-item-added', updateUndoRedoStates)
-      undoManager.off('stack-item-popped', updateUndoRedoStates)
-      undoManager.off('stack-cleared', updateUndoRedoStates)
-    }
-  }, [editor, undoManager])
-
-  return clearHistory
 }
