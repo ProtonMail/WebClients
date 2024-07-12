@@ -3,12 +3,19 @@ import { DocState, DocUpdateOrigin, PRESENCE_UPDATE_REPEAT_INTERVAL } from './Do
 import { DocStateCallbacks } from './DocStateCallbacks'
 import { DocsUserState } from './DocsAwareness'
 import { BroadcastSource } from '../Bridge/BroadcastSource'
+import { decodeUpdate } from 'yjs'
 
 const EmptyAwarenessUpdate = {
   added: [],
   updated: [],
   removed: [],
 }
+
+jest.mock('yjs', () => ({
+  ...jest.requireActual('yjs'),
+  decodeUpdate: jest.fn(),
+  mergeUpdates: jest.fn(),
+}))
 
 describe('DocState', () => {
   let state: DocState
@@ -232,6 +239,26 @@ describe('DocState', () => {
       state.handleDocBeingUpdatedByLexical(new Uint8Array(), DocUpdateOrigin.InitialLoad)
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
+    })
+
+    it('should hold back editor initialization update and merge with the next update', () => {
+      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+
+      state.docWasInitializedWithEmptyNode = true
+      ;(decodeUpdate as jest.Mock).mockImplementationOnce(() => ({
+        structs: [{ id: { clock: 0 } }],
+      }))
+
+      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+
+      expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
+      ;(decodeUpdate as jest.Mock).mockImplementationOnce(() => ({
+        structs: [{ id: { clock: 1 } }],
+      }))
+
+      state.handleDocBeingUpdatedByLexical(new Uint8Array(), {})
+
+      expect(docStateRequestsPropagationOfUpdateSpy).toHaveBeenCalled()
     })
   })
 })

@@ -7,7 +7,6 @@ import {
   ClientRequiresEditorMethods,
   CommentMarkNodeChangeData,
   CommentsEvent,
-  ConvertibleDataType,
   DocState,
   EDITOR_READY_POST_MESSAGE_EVENT,
   LiveCommentsEvent,
@@ -16,6 +15,7 @@ import {
   DocumentRoleType,
   DocAwarenessEvent,
   DocsAwarenessStateChangeData,
+  EditorInitializationConfig,
 } from '@proton/docs-shared'
 import { Doc as YDoc } from 'yjs'
 import { Icons } from '@proton/components'
@@ -37,10 +37,7 @@ type Props = {
 }
 
 type InitialConfig = {
-  initialData?: {
-    data: Uint8Array
-    type: ConvertibleDataType
-  }
+  editorInitializationConfig?: EditorInitializationConfig
   documentId: string
   username: string
 }
@@ -176,14 +173,13 @@ export function App({ nonInteractiveMode = false }: Props) {
           documentId: string,
           username: string,
           role: DocumentRoleType,
-          initialData?: Uint8Array,
-          initialDataType?: ConvertibleDataType,
+          editorInitializationConfig,
         ) {
           docMap.set(documentId, newDocState.getDoc())
           application.setRole(role)
 
-          if (initialData && initialDataType) {
-            setInitialConfig({ documentId, username, initialData: { data: initialData, type: initialDataType } })
+          if (editorInitializationConfig) {
+            setInitialConfig({ documentId, username, editorInitializationConfig: editorInitializationConfig })
           } else {
             setInitialConfig({ documentId, username })
           }
@@ -248,7 +244,7 @@ export function App({ nonInteractiveMode = false }: Props) {
     )
 
     return newDocState
-  }, [application.eventBus, bridge])
+  }, [application.eventBus, application.logger, bridge])
 
   useEffect(() => {
     if (docState) {
@@ -338,7 +334,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           editingLocked={editingLocked || interactionMode === 'view'}
           hasEditAccess={application.getRole().canEdit()}
           hidden={editorHidden}
-          injectWithNewContent={initialConfig.initialData}
+          editorInitializationConfig={initialConfig.editorInitializationConfig}
           nonInteractiveMode={nonInteractiveMode}
           onEditorReadyToReceiveUpdates={() => {
             docState.onEditorReadyToReceiveUpdates()
