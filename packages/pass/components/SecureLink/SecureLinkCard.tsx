@@ -3,9 +3,10 @@ import { type FC, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Alert, DropdownMenuButton } from '@proton/components';
-import { Copy, Icon } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { Copy } from '@proton/pass/components/Copy/Copy';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
