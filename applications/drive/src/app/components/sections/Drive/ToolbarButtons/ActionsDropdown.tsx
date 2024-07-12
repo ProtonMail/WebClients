@@ -43,7 +43,6 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
 
     const hasFoldersSelected = selectedLinks.some((item) => !item.isFile);
     const isMultiSelect = selectedLinks.length > 1;
-    const hasSharedLink = !!selectedLinks[0]?.shareUrl;
     const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
 
     const menuItems: {
@@ -54,9 +53,9 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
         action: () => void;
     }[] = [
         {
-            hidden: isMultiSelect || hasFoldersSelected || !isAdmin,
-            name: hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`,
-            icon: 'link',
+            hidden: isMultiSelect || !isAdmin,
+            name: c('Action').t`Share`,
+            icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
             action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinkIds[0] }),
         },
@@ -94,13 +93,6 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
             icon: 'trash',
             testId: 'actions-dropdown-trash',
             action: () => trashLinks(new AbortController().signal, selectedLinks),
-        },
-        {
-            hidden: isMultiSelect || !isEditor,
-            name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
-            icon: 'link',
-            testId: 'actions-dropdown-share-link',
-            action: () => showLinkSharingModal({ shareId: shareId, linkId: selectedLinks[0].linkId }),
         },
     ];
 
