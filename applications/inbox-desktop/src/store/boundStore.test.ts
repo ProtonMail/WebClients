@@ -26,6 +26,11 @@ jest.mock("../utils/view/windowBounds.ts", () => ({
     ensureWindowIsVisible: () => {},
 }));
 
+jest.mock("../utils/view/viewManagement.ts", () => ({
+    ZOOM_FACTOR_LIST: [1],
+    getZoom: () => 1,
+}));
+
 describe("boundStore", () => {
     describe("getWindowBounds", () => {
         it("returns stored window bounds", () => {
@@ -150,6 +155,25 @@ describe("boundStore", () => {
                 height: 100,
                 maximized: true,
                 zoom: 1,
+            });
+        });
+
+        it("allows overriding window properties", () => {
+            saveWindowBounds(
+                {
+                    getBounds: () => ({ x: 123, y: 456, width: 1000, height: 100 }),
+                    isMaximized: () => true,
+                } as BrowserWindow,
+                { zoom: 1.33 },
+            );
+
+            expect(MockedStore.INSTANCE.set).toHaveBeenCalledWith("windowBounds", {
+                x: 123,
+                y: 456,
+                width: 1000,
+                height: 100,
+                maximized: true,
+                zoom: 1.33,
             });
         });
     });
