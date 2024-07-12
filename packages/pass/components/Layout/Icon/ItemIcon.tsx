@@ -17,6 +17,7 @@ export const itemTypeToIconName: ItemMap<IconName> = {
     note: 'file-lines',
     alias: 'alias',
     creditCard: 'credit-card',
+    identity: 'card-identity',
 };
 
 export const presentItemIcon = (item: Item) => itemTypeToIconName[item.type];
