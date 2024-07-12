@@ -107,10 +107,9 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                     />
                 }
                 {...modal}
-                className="relative"
             >
-                <div className="flex flex-row justify-space-between">
-                    <div className="mb-8 mr-4">
+                <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
+                    <div className="sticky top-0">
                         <WalletAccountSelector
                             value={selectedWalletAccount}
                             onSelect={(selected) => {
@@ -123,8 +122,10 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                             }}
                         />
                     </div>
+                </div>
 
-                    <div className="w-full mx-auto" style={{ maxWidth: '31rem' }}>
+                <div>
+                    <div className="wallet-fullscreen-modal-main">
                         {stepKey === StepKey.RecipientsSelection && (
                             <RecipientsSelection
                                 txBuilder={txBuilder}
@@ -171,10 +172,10 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                             />
                         )}
                     </div>
-
-                    {/* Dumb div to equilibrate flex-box */}
-                    <div />
                 </div>
+
+                {/* empty div for grid centering */}
+                <div className="wallet-fullscreen-modal-right" />
             </FullscreenModal>
 
             <TransactionSendConfirmationModal
