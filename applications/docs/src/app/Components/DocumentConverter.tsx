@@ -81,7 +81,7 @@ export function DocumentConverter({ lookup, onSuccess, getNodeContents }: Props)
             // translator: the variable is a javascript error message
             c('Info').jt`Error converting document: ${errorMessage}`}
           {isConverting && c('Info').t`Converting document...`}
-          {isLoading && c('Info').t`Loading...`}
+          {isLoading && !isConverting && c('Info').t`Loading...`}
           {isLoading === false &&
             error != null &&
             // translator: the variable is a javascript error message
