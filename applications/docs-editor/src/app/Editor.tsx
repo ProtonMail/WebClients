@@ -7,12 +7,12 @@ import { useCallback, useMemo } from 'react'
 import { Provider } from '@lexical/yjs'
 import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import {
-  FileToDocPendingConversion,
   EditorRequiresClientMethods,
   LexicalDocProvider,
   YDocMap,
   DocStateInterface,
   getAccentColorForUsername,
+  EditorInitializationConfig,
 } from '@proton/docs-shared'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin'
@@ -50,7 +50,7 @@ type Props = {
   editingLocked: boolean
   hasEditAccess: boolean
   hidden: boolean
-  injectWithNewContent?: FileToDocPendingConversion
+  editorInitializationConfig?: EditorInitializationConfig
   /** Non-interactive mode is used when displaying the editor to show a previous history revision */
   nonInteractiveMode: boolean
   onEditorReadyToReceiveUpdates: () => void
@@ -67,7 +67,7 @@ export function Editor({
   editingLocked,
   hasEditAccess,
   hidden,
-  injectWithNewContent,
+  editorInitializationConfig,
   nonInteractiveMode: nonInteractiveMode,
   onEditorReadyToReceiveUpdates,
   onInteractionModeChange,
@@ -158,7 +158,7 @@ export function Editor({
           providerFactory={yjsWebsockProvider!}
           shouldBootstrap={ShouldBootstrap}
           onCollabReady={onEditorReadyToReceiveUpdates}
-          injectWithNewContent={injectWithNewContent}
+          editorInitializationConfig={editorInitializationConfig}
         />
         <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />
