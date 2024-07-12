@@ -69,10 +69,10 @@
         "unleash-proxy-client": "^3.4.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.24.7",
+        "@babel/core": "^7.24.8",
         "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
         "@babel/plugin-transform-runtime": "^7.24.7",
-        "@babel/preset-env": "^7.24.7",
+        "@babel/preset-env": "^7.24.8",
         "@babel/preset-react": "^7.24.7",
         "@babel/preset-typescript": "^7.24.7",
         "@proton/eslint-config-proton": "workspace:^",
@@ -83,7 +83,7 @@
         "@testing-library/react-hooks": "^8.0.1",
         "@testing-library/user-event": "^14.5.2",
         "@types/jest": "^29.5.12",
-        "@webgpu/types": "^0.1.43",
+        "@webgpu/types": "^0.1.44",
         "babel-jest": "^29.7.0",
         "babel-plugin-transform-require-context": "^0.1.1",
         "cross-fetch": "^4.0.0",
