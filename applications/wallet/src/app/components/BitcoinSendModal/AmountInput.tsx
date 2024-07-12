@@ -118,6 +118,19 @@ export const AmountInput = ({
         });
     };
 
+    /**
+     * User can update a single amount input, the update amount will be evenly split to every recipient
+     */
+    const handleUpdateSingleAmountForMultiRecipients = (newAmount: number) => {
+        const splitAmount = Math.floor(newAmount / txBuilder.getRecipients().length);
+        txBuilder.getRecipients().forEach((r, i) => {
+            const amount = r[2];
+            if (Number(amount) !== splitAmount) {
+                tryUpdateRecipientAmount(r, i, splitAmount);
+            }
+        });
+    };
+
     const handleSendAllFromSingleAmount = () => {
         const amountPerRecipient = Math.floor(accountBalance / txBuilder.getRecipients().length);
         txBuilder.getRecipients().forEach((r, i) => {
@@ -137,6 +150,8 @@ export const AmountInput = ({
                             value={Number(totalSentAmount)}
                             onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                             remainingBalance={remainingAmount}
+                            onAmountChange={(v) => handleUpdateSingleAmountForMultiRecipients(v)}
+                            onSendAll={handleSendAllFromSingleAmount}
                         />
                     </div>
                 </>
