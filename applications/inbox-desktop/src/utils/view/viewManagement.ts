@@ -362,7 +362,9 @@ export function setZoom(zoomFactor: ZoomFactor) {
     }
 
     if (mainWindow) {
-        saveWindowBounds(mainWindow);
+        saveWindowBounds(mainWindow, {
+            zoom: zoomFactor,
+        });
     }
 }
 
