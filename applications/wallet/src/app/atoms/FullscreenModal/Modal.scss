@@ -1,3 +1,98 @@
-.modal-two-header-title {
-	inline-size: 100%;
+@import '~@proton/styles/scss/lib';
+
+.wallet-fullscreen-modal {
+	--logo-size: #{rem(160)};
+	--selector-size: #{rem(256)};
+	--main-size: #{rem(532)};
+
+	background-color: var(--background-weak);
+	padding: 0;
+
+	.modal-two-header {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-6);
+		margin: 0;
+		padding-inline: rem(20);
+		padding-block: rem(20) 0;
+		border-block-end: 1px solid var(--border-norm);
+
+		@include media('>=xsmall') {
+			padding-block: rem(20) rem(10);
+		}
+
+		@include media('>=small') {
+			display: grid;
+			grid-template-columns: var(--logo-size) 1fr var(--logo-size);
+			gap: var(--space-2);
+			padding-inline: rem(60);
+			padding-block: rem(34);
+		}
+	}
+
+	.modal-logo {
+		inline-size: var(--logo-size);
+	}
+
+	.modal-two-header-actions {
+		@include media('>=small') {
+			display: flex;
+			flex-direction: row-reverse;
+			position: relative;
+			align-items: end;
+			inset-block-start: 0;
+			inset-inline-end: 0;
+		}
+	}
+
+	.modal-two-content {
+		margin: 0;
+		padding-inline: rem(20);
+		padding-block: rem(20);
+		display: flex;
+		flex-direction: column;
+		overflow: auto;
+		block-size: 100%;
+
+		@include media('>=medium') {
+			display: grid;
+			grid-template-columns: var(--selector-size) 1fr 0;
+			gap: var(--space-6);
+			padding-inline: rem(60);
+			padding-block: rem(34);
+		}
+
+		@include media('>=large') {
+			grid-template-columns: var(--selector-size) 1fr var(--selector-size);
+		}
+	}
+
+	&-main {
+		inline-size: 100%;
+
+		@include media('<medium') {
+			margin-inline: auto;
+			max-inline-size: rem(532);
+		}
+
+		@include media('>=large') {
+			margin-inline: auto;
+			max-inline-size: rem(532);
+		}
+	}
+
+	&-left {
+		inline-size: 100%;
+		max-inline-size: var(--main-size);
+		margin-inline: auto;
+	}
+
+	&-right {
+		display: none;
+
+		@include media('>=large') {
+			display: block;
+		}
+	}
 }

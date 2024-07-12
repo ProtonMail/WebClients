@@ -97,8 +97,8 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
                 }
                 {...modal}
             >
-                <div className="flex flex-row justify-space-between">
-                    <div className="mb-8 mr-4">
+                <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
+                    <div className="sticky top-0">
                         <WalletAccountSelector
                             disabled={stepKey === StepKey.Onramp}
                             value={selectedWalletAccount}
@@ -108,8 +108,10 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
                             options={toWalletAccountSelectorOptions(decryptedApiWalletsData ?? [])}
                         />
                     </div>
+                </div>
 
-                    <div className="w-full mx-auto" style={{ maxWidth: '31rem' }}>
+                <div>
+                    <div className="wallet-fullscreen-modal-main">
                         {stepKey === StepKey.Location && (
                             <Location
                                 onConfirm={(country) => {
@@ -143,10 +145,10 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
                             />
                         )}
                     </div>
-
-                    {/* Dumb div to equilibrate flexbox */}
-                    <div />
                 </div>
+
+                {/* empty div for grid centering */}
+                <div className="wallet-fullscreen-modal-right" />
             </FullscreenModal>
         </MoonPayProvider>
     );
