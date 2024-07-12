@@ -345,13 +345,7 @@ export type ZoomFactor = (typeof ZOOM_FACTOR_LIST)[number];
 export const DEFAULT_ZOOM_FACTOR: ZoomFactor = 1.0;
 
 export function getZoom() {
-    const currentView = browserViewMap[currentViewID];
-
-    if (!currentView) {
-        return DEFAULT_ZOOM_FACTOR;
-    }
-
-    const zoomFactor = currentView.webContents.getZoomFactor() as ZoomFactor;
+    const zoomFactor = getWindowBounds().zoom;
 
     if (ZOOM_FACTOR_LIST.includes(zoomFactor)) {
         return zoomFactor;
@@ -373,6 +367,7 @@ export function setZoom(zoomFactor: ZoomFactor) {
 }
 
 export function resetZoom() {
+    mainLogger.info("reset zoom");
     setZoom(DEFAULT_ZOOM_FACTOR);
 }
 
