@@ -50,7 +50,7 @@ export const PublicSharing = ({ publicSharedLink, createSharedLink, deleteShared
                             .t`Anyone on the Internet with the link can view`}</span>
                     </p>
                 </div>
-                <div className="shrink-0">{c('Label').t`Viewer`}</div>
+                <div className="hidden sm:block shrink-0">{c('Label').t`Viewer`}</div>
             </div>
             {!!publicSharedLink ? (
                 <div className="w-full flex justify-space-between">
