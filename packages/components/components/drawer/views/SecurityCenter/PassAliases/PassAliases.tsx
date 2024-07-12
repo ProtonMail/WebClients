@@ -8,10 +8,11 @@ import { ErrorBoundary } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useApi, useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { DrawerAppSection } from '../../shared';
@@ -132,19 +133,40 @@ export default function PassAliasesWrapper() {
     return (
         <ErrorBoundary
             initiative="drawer-security-center"
-            renderFunction={(e) => (
-                <>
-                    {e?.name === PASS_ALIASES_ERROR_STEP.INIT_BRIDGE ? (
-                        <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
-                            <div className="text-weak text-sm">
-                                {c('Error message').t`Please refresh the page or try again later.`}
-                            </div>
-                        </GenericErrorDisplay>
-                    ) : (
-                        <GenericErrorDisplay />
-                    )}
-                </>
-            )}
+            renderFunction={(e: any) => {
+                const status = (() => {
+                    if (e?.name === PASS_ALIASES_ERROR_STEP.INIT_BRIDGE) {
+                        return 'init-bridge-error';
+                    }
+                    if (e?.code === PassErrorCode.MISSING_SCOPE) {
+                        return 'missing-scope-error';
+                    }
+                    return 'default-error';
+                })();
+
+                return (
+                    <>
+                        {status === 'init-bridge-error' && (
+                            <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
+                                <div className="text-weak text-sm">
+                                    {c('Error message').t`Please refresh the page or try again later.`}
+                                </div>
+                            </GenericErrorDisplay>
+                        )}
+
+                        {status === 'missing-scope-error' && (
+                            <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
+                                <div className="text-weak text-sm">
+                                    {c('Error message')
+                                        .t`Aliases cannot be currently used when ${PASS_SHORT_APP_NAME} extra password is enabled.`}
+                                </div>
+                            </GenericErrorDisplay>
+                        )}
+
+                        {status === 'default-error' && <GenericErrorDisplay />}
+                    </>
+                );
+            }}
         >
             <PassBridgeProvider>
                 <PassAliasesProvider>
