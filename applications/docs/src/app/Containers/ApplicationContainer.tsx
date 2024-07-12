@@ -10,7 +10,7 @@ import { c } from 'ttag'
 import { DocumentConverter } from '../Components/DocumentConverter'
 import { useDriveCompat, DocumentAction, DriveCompat } from '@proton/drive-store'
 import { FileToDocConversionResult } from '@proton/docs-core'
-import { FileToDocPendingConversion } from '@proton/docs-shared'
+import { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
@@ -30,6 +30,7 @@ function ApplicationContainer() {
   const [openAction, setOpenAction] = useState<DocumentAction | null>(null)
   const [action, setAction] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
+  const [didCreateNewDocument, setDidCreateNewDocument] = useState<boolean>(false)
   const [contentToInject, setContentToInject] = useState<FileToDocPendingConversion | undefined>(undefined)
 
   const application = useMemo(() => {
@@ -161,6 +162,7 @@ function ApplicationContainer() {
         updateParameters(result.volumeId, result.linkId)
 
         setIsCreatingNewDocument(false)
+        setDidCreateNewDocument(true)
       })
     }
 
@@ -185,6 +187,21 @@ function ApplicationContainer() {
     [updateParameters],
   )
 
+  const editorInitializationConfig = useMemo((): EditorInitializationConfig | undefined => {
+    if (contentToInject) {
+      return {
+        mode: 'conversion',
+        ...contentToInject,
+      }
+    }
+    if (didCreateNewDocument) {
+      return {
+        mode: 'creation',
+      }
+    }
+    return undefined
+  }, [contentToInject, didCreateNewDocument])
+
   if (!isAppReady) {
     return null
   }
@@ -199,8 +216,8 @@ function ApplicationContainer() {
               openAction={openAction}
               actionMode={action}
               isCreatingNewDocument={isCreatingNewDocument}
-              injectWithNewContent={contentToInject}
               getNodeContents={driveCompat.getNodeContents}
+              editorInitializationConfig={editorInitializationConfig}
             />
           </Route>
         </Switch>
@@ -215,15 +232,15 @@ function Content({
   openAction,
   actionMode,
   onConversionSuccess,
-  injectWithNewContent,
   getNodeContents,
+  editorInitializationConfig,
 }: {
   openAction: DocumentAction | null
   actionMode: DocumentAction['mode'] | undefined
   isCreatingNewDocument: boolean
   onConversionSuccess: (result: FileToDocConversionResult) => void
-  injectWithNewContent?: FileToDocPendingConversion
   getNodeContents: DriveCompat['getNodeContents']
+  editorInitializationConfig?: EditorInitializationConfig
 }) {
   if (isCreatingNewDocument) {
     return (
@@ -250,7 +267,7 @@ function Content({
     return <DocumentConverter onSuccess={onConversionSuccess} getNodeContents={getNodeContents} lookup={lookup} />
   }
 
-  return <DocumentViewer injectWithNewContent={injectWithNewContent} lookup={lookup} action={actionMode} />
+  return <DocumentViewer editorInitializationConfig={editorInitializationConfig} lookup={lookup} action={actionMode} />
 }
 
 export default ApplicationContainer

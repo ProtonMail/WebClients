@@ -5,8 +5,10 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { ExcludedProperties, Provider } from '@lexical/yjs'
 import { useEffect, useMemo } from 'react'
 
-import { CursorsContainerRef, useYjsCollaboration, useYjsFocusTracking, useYjsHistory } from './useYjsCollaboration'
-import { FileToDocPendingConversion } from '@proton/docs-shared'
+import { CursorsContainerRef, useYjsCollaboration } from './useYjsCollaboration'
+import { useYjsHistory } from './useYjsHistory'
+import { EditorInitializationConfig } from '@proton/docs-shared'
+import { useYjsFocusTracking } from './useYjsFocusTracking'
 
 type Props = {
   id: string
@@ -20,7 +22,7 @@ type Props = {
   username?: string
   cursorColor?: string
   cursorsContainerRef?: CursorsContainerRef
-  injectWithNewContent: FileToDocPendingConversion | undefined
+  editorInitializationConfig: EditorInitializationConfig | undefined
   excludedProperties?: ExcludedProperties
   // `awarenessData` parameter allows arbitrary data to be added to the awareness.
   awarenessData?: object
@@ -34,7 +36,7 @@ export function CollaborationPlugin({
   username,
   cursorColor,
   cursorsContainerRef,
-  injectWithNewContent,
+  editorInitializationConfig,
   excludedProperties,
   awarenessData,
 }: Props): JSX.Element {
@@ -68,7 +70,7 @@ export function CollaborationPlugin({
     shouldBootstrap,
     onCollabReady,
     cursorsContainerRef,
-    injectWithNewContent,
+    editorInitializationConfig,
     excludedProperties,
     awarenessData,
   )

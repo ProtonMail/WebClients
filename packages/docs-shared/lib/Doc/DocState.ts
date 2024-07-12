@@ -1,11 +1,10 @@
 import { LoggerInterface } from '@proton/utils/logs'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { Observable } from 'lib0/observable'
-import { Doc } from 'yjs'
+import { Doc, decodeUpdate, encodeStateAsUpdate, mergeUpdates } from 'yjs'
 import * as encoding from 'lib0/encoding'
 import * as decoding from 'lib0/decoding'
 import * as syncProtocol from 'y-protocols/sync'
-import * as Y from 'yjs'
 import * as awarenessProtocol from 'y-protocols/awareness'
 import { DocsAwareness, DocsUserState } from './DocsAwareness'
 import { DocStateInterface } from './DocStateInterface'
@@ -14,6 +13,7 @@ import { RtsMessagePayload } from './RtsMessagePayload'
 import { EventTypeEnum } from '@proton/docs-proto'
 import { wrapRawYjsMessage } from './wrapRawYjsMessage'
 import { BroadcastSource } from '../Bridge/BroadcastSource'
+import { DocWillInitializeWithEmptyNodeEvent } from '../DocWillInitializeWithEmptyNodeEvent'
 
 export enum DocUpdateOrigin {
   InitialLoad = 'InitialLoad',
@@ -32,6 +32,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
   private isEditorReady = false
   private messageQueue: RtsMessagePayload[] = []
 
+  docWasInitializedWithEmptyNode = false
+  emptyNodeInitializationUpdate?: Uint8Array = undefined
+
   broadcastPresenceInterval: ReturnType<typeof setInterval>
   needsPresenceBroadcast?: BroadcastSource = undefined
 
@@ -43,6 +46,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
     this.doc = new Doc()
     this.doc.on('update', this.handleDocBeingUpdatedByLexical)
+    this.doc.on(DocWillInitializeWithEmptyNodeEvent, () => {
+      this.docWasInitializedWithEmptyNode = true
+    })
 
     this.awareness = new DocsAwareness(this.doc)
     this.awareness.on('update', this.handleAwarenessUpdateOrChange)
@@ -135,7 +141,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   }
 
   public getDocState(): Uint8Array {
-    return Y.encodeStateAsUpdate(this.doc)
+    return encodeStateAsUpdate(this.doc)
   }
 
   private handleWindowUnloadEvent = () => {
@@ -192,8 +198,28 @@ export class DocState extends Observable<string> implements DocStateInterface {
       return
     }
 
-    const updateMessage = this.createSyncMessagePayload(update)
+    const decodedUpdate = decodeUpdate(update)
+
+    /**
+     * If this update represents the empty node initialization update, don't propagate it up yet.
+     * Otherwise, this will trigger a "Saving..." UI state which may be confusing since this is an internal change.
+     * Instead, hold on to this update until the next non-initial update comes. When that second update comes,
+     * merge it with this initial update, then propagate that up instead.
+     */
+    const isFirstUpdateInLifecycleOfDocument = decodedUpdate.structs[0]?.id?.clock === 0
+    if (this.docWasInitializedWithEmptyNode && isFirstUpdateInLifecycleOfDocument) {
+      this.emptyNodeInitializationUpdate = update
+      return
+    }
+
+    const updateToPropagate = this.emptyNodeInitializationUpdate
+      ? mergeUpdates([this.emptyNodeInitializationUpdate, update])
+      : update
+
+    const updateMessage = this.createSyncMessagePayload(updateToPropagate)
     this.callbacks.docStateRequestsPropagationOfUpdate(updateMessage, BroadcastSource.HandleDocBeingUpdatedByLexical)
+
+    this.emptyNodeInitializationUpdate = undefined
   }
 
   private handleRawSyncMessage(update: Uint8Array, origin?: any): void {
