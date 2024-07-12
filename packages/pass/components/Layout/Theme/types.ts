@@ -6,6 +6,7 @@ export enum SubTheme {
     RED = 'ui-red',
     TEAL = 'ui-teal',
     VIOLET = 'ui-violet',
+    PURPLE = 'ui-purple',
 }
 
 export const itemTypeToSubThemeClassName: ItemMap<SubTheme> = {
@@ -13,4 +14,5 @@ export const itemTypeToSubThemeClassName: ItemMap<SubTheme> = {
     creditCard: SubTheme.LIME,
     login: SubTheme.VIOLET,
     note: SubTheme.ORANGE,
+    identity: SubTheme.PURPLE,
 };

@@ -64,6 +64,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                 { label: c('Label').t`Alias`, type: 'alias' },
                 { label: c('Label').t`Card`, type: 'creditCard' },
                 { label: c('Label').t`Note`, type: 'note' },
+                { label: c('Label').t`Identity`, type: 'identity' },
             ] as const,
         []
     );
