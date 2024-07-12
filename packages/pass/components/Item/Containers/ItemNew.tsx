@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasNew } from '@proton/pass/components/Item/Alias/Alias.new';
 import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCard.new';
+import { IdentityNew } from '@proton/pass/components/Item/Identity/Identity.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
 import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -19,6 +20,7 @@ const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
     note: NoteNew,
     alias: AliasNew,
     creditCard: CreditCardNew,
+    identity: IdentityNew,
 };
 
 export const ItemNew: FC = () => {
