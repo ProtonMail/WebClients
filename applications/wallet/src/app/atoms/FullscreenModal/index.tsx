@@ -24,27 +24,18 @@ export const FullscreenModal = ({
     ...rest
 }: PropsWithChildren<Props>) => {
     return (
-        <ModalTwo {...rest} className={clsx(className, 'bg-weak')} key={key} size="full" fullscreen>
+        <ModalTwo {...rest} className={clsx(className, 'wallet-fullscreen-modal')} key={key} size="full" fullscreen>
             <>
                 {header ?? (
                     <ModalTwoHeader
                         title={title}
-                        titleClassName="h2 mr-auto"
                         subline={subline && <p className="text-center mx-12">{subline}</p>}
                         closeButtonProps={{ shape: 'solid', className: 'shrink-0 rounded-full bg-norm' }}
                     />
                 )}
 
                 {/* Content */}
-                <div
-                    className={clsx(
-                        'pb-6 px-3 modal-two-content flex flex-column items-center justify-center grow overflow-auto py-8'
-                    )}
-                >
-                    <div className="flex flex-column py-auto max-h-full w-full overflow-auto p-2 grow my-auto">
-                        {children}
-                    </div>
-                </div>
+                <div className="modal-two-content">{children}</div>
             </>
         </ModalTwo>
     );
