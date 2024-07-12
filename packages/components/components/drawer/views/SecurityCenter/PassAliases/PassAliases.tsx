@@ -135,30 +135,30 @@ export default function PassAliasesWrapper() {
             initiative="drawer-security-center"
             renderFunction={(e: any) => {
                 const status = (() => {
+                    if (e?.message.includes(PassErrorCode.MISSING_SCOPE.toString())) {
+                        return 'missing-scope-error';
+                    }
                     if (e?.name === PASS_ALIASES_ERROR_STEP.INIT_BRIDGE) {
                         return 'init-bridge-error';
-                    }
-                    if (e?.code === PassErrorCode.MISSING_SCOPE) {
-                        return 'missing-scope-error';
                     }
                     return 'default-error';
                 })();
 
                 return (
                     <>
-                        {status === 'init-bridge-error' && (
+                        {status === 'missing-scope-error' && (
                             <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
-                                <div className="text-weak text-sm">
-                                    {c('Error message').t`Please refresh the page or try again later.`}
+                                <div className="text-weak text-sm text-center">
+                                    {c('Error message')
+                                        .t`Aliases cannot be currently used when ${PASS_SHORT_APP_NAME} extra password is enabled.`}
                                 </div>
                             </GenericErrorDisplay>
                         )}
 
-                        {status === 'missing-scope-error' && (
+                        {status === 'init-bridge-error' && (
                             <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
                                 <div className="text-weak text-sm">
-                                    {c('Error message')
-                                        .t`Aliases cannot be currently used when ${PASS_SHORT_APP_NAME} extra password is enabled.`}
+                                    {c('Error message').t`Please refresh the page or try again later.`}
                                 </div>
                             </GenericErrorDisplay>
                         )}
