@@ -48,11 +48,12 @@ export const getWindowBounds = (): WindowBounds => {
     };
 };
 
-export const saveWindowBounds = (browserWindow: BrowserWindow) => {
+export const saveWindowBounds = (browserWindow: BrowserWindow, overrides: Partial<WindowBounds> = {}) => {
     const newBounds = {
         ...browserWindow.getBounds(),
         maximized: browserWindow.isMaximized(),
         zoom: getZoom(),
+        ...overrides,
     } satisfies WindowBounds;
 
     mainLogger.info("update window bounds", JSON.stringify(newBounds));
