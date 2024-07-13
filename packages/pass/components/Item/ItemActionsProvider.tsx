@@ -1,13 +1,10 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Prompt } from '@proton/components/index';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
-import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import {
     itemBulkDeleteIntent,
@@ -19,9 +16,11 @@ import {
     itemRestoreIntent,
     itemTrashIntent,
 } from '@proton/pass/store/actions';
-import { selectItemSecureLinks, selectSecureLinksByItems } from '@proton/pass/store/selectors';
 import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+
+import { ConfirmMoveItem } from './Actions/ConfirmMoveItem';
+import { ConfirmMoveManyItems } from './Actions/ConfirmMoveManyItems';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
@@ -81,15 +80,6 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         bulk.disable();
     };
 
-    const itemHasSecureLinks = Boolean(
-        useSelector(selectItemSecureLinks(moveItem?.param?.item?.shareId ?? '', moveItem?.param?.item.itemId ?? ''))
-            .length
-    );
-
-    const itemsHasSecureLinks = Boolean(
-        useSelector(selectSecureLinksByItems(moveManyItems.param?.selected ?? {})).length
-    );
-
     const context = useMemo<ItemActionsContextType>(() => {
         return {
             move: (item, mode) =>
@@ -129,39 +119,25 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 {...modalState}
             />
 
-            <WithVault shareId={moveItem.param?.shareId}>
-                {({ content: { name } }) => (
-                    <Prompt
-                        open={moveItem.pending}
-                        title={c('Title').t`Move item to "${name}"?`}
-                        buttons={[
-                            <Button color="norm" onClick={moveItem.confirm}>{c('Action').t`Confirm`}</Button>,
-                            <Button onClick={moveItem.cancel}>{c('Action').t`Cancel`}</Button>,
-                        ]}
-                    >
-                        {itemHasSecureLinks
-                            ? c('Info').t`Moving an item to another vault will erase its history and all secure links.`
-                            : c('Info').t`Moving an item to another vault will erase its history.`}
-                    </Prompt>
-                )}
-            </WithVault>
+            {moveItem.pending && (
+                <ConfirmMoveItem
+                    open
+                    item={moveItem.param.item}
+                    shareId={moveItem.param.shareId}
+                    onCancel={moveItem.cancel}
+                    onConfirm={moveItem.confirm}
+                />
+            )}
 
-            <WithVault shareId={moveManyItems.param?.shareId}>
-                {({ content: { name } }) => (
-                    <Prompt
-                        open={moveManyItems.pending}
-                        title={c('Title').t`Move items to "${name}"?`}
-                        buttons={[
-                            <Button color="norm" onClick={moveManyItems.confirm}>{c('Action').t`Confirm`}</Button>,
-                            <Button onClick={moveManyItems.cancel}>{c('Action').t`Cancel`}</Button>,
-                        ]}
-                    >
-                        {itemsHasSecureLinks
-                            ? c('Info').t`Moving items to another vault will erase their history and all secure links.`
-                            : c('Info').t`Moving items to another vault will erase their history.`}
-                    </Prompt>
-                )}
-            </WithVault>
+            {moveManyItems.pending && (
+                <ConfirmMoveManyItems
+                    open
+                    selected={moveManyItems.param.selected}
+                    shareId={moveManyItems.param.shareId}
+                    onConfirm={moveManyItems.confirm}
+                    onCancel={moveManyItems.cancel}
+                />
+            )}
         </ItemActionsContext.Provider>
     );
 };
