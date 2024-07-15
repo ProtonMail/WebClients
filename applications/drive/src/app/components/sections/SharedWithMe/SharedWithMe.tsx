@@ -43,6 +43,7 @@ export interface SharedWithMeItem extends FileBrowserBaseItem {
     trashed: number | null;
     parentLinkId: string;
     rootShareId: string;
+    volumeId: string;
     sharedOn?: number;
     sharedBy?: string;
 }
@@ -93,7 +94,8 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
         [items, selectionControls!.selectedItemIds]
     );
 
-    const browserItems: SharedWithMeItem[] = items.map((item) => ({ ...item, id: item.linkId }));
+    // Because can have same linkId from multiple volume, we set volumeId + linkId as id
+    const browserItems: SharedWithMeItem[] = items.map((item) => ({ ...item, id: `${item.volumeId}+${item.linkId}` }));
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
