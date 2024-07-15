@@ -52,6 +52,7 @@ const generateCorruptDecryptedLink = (encryptedLink: EncryptedLink, name: string
         width: 0,
     },
     trashed: encryptedLink.trashed,
+    volumeId: encryptedLink.volumeId,
 });
 
 export default function useLink() {
