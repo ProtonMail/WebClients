@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps } from '@proton/components/components';
-import warningSignSrc from '@proton/styles/assets/img/illustrations/warning-sign.svg';
+import { ModalOwnProps, Prompt } from '@proton/components/components';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { IWasmApiWalletData } from '@proton/wallet';
 
-import { Button, Modal } from '../../atoms';
+import { Button } from '../../atoms';
+import { ModalParagraph } from '../../atoms/ModalParagraph';
+import { useBalance } from '../Balance/useBalance';
 import { useWalletDeletion } from './useWalletDeletion';
 
 interface Props extends ModalOwnProps {
@@ -19,45 +21,56 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
         },
     });
 
+    const { totalBalance } = useBalance(wallet);
+
     return (
-        <Modal {...modalProps}>
-            <div className="flex flex-column mb-4">
-                <div className="flex mx-auto mb-6">
-                    <img src={warningSignSrc} alt={c('Wallet deletion').t`Warning:'`} />
-                </div>
-                <h1 className="text-4xl text-bold mx-auto text-center">{c('Wallet deletion')
-                    .t`Confirm to delete "${wallet.Wallet.Name}"`}</h1>
-
-                <p className="color-weak text-center mx-12">
-                    <span className="block my-2">{c('Wallet setup')
-                        .t`Please backup your secret recovery phrase before you delete your wallet.`}</span>
-                    <span className="block my-2">{c('Wallet setup')
-                        .t`This mnemonic can help you restoring your wallet next time or on another compatible software.`}</span>
-                </p>
-            </div>
-
-            <div className="flex flex-column">
+        <Prompt
+            {...modalProps}
+            buttons={[
                 <Button
                     fullWidth
                     disabled={loadingDeletion}
-                    shape="solid"
-                    color="norm"
+                    shape="ghost"
                     onClick={() => {
                         openBackupModal();
                     }}
-                >{c('Wallet preference').t`Back up wallet first`}</Button>
-
+                >{c('Wallet preference').t`Copy seed phrase`}</Button>,
                 <Button
                     fullWidth
                     disabled={loadingDeletion}
                     shape="solid"
-                    color="weak"
+                    color="danger"
                     onClick={() => {
                         handleWalletDeletion();
                     }}
-                    className="mt-2 color-weak"
-                >{c('Wallet preference').t`Delete this wallet`}</Button>
+                >{c('Wallet preference').t`Delete wallet now`}</Button>,
+                <Button fullWidth disabled={loadingDeletion} shape="ghost" color="norm" onClick={modalProps.onClose}>{c(
+                    'Wallet preference'
+                ).t`Not now`}</Button>,
+            ]}
+        >
+            <div className="flex flex-column mb-4">
+                <h1 className="text-4xl text-bold mx-auto text-center mb-4">{c('Wallet deletion')
+                    .t`Are you sure you want to delete "${wallet.Wallet.Name}"`}</h1>
+
+                {totalBalance > 0 ? (
+                    <ModalParagraph>
+                        <p className="color-danger mb-0">{c('Wallet setup')
+                            .t`This wallet seems to still have assets.`}</p>
+                        <p>
+                            {c('Wallet setup')
+                                .t`Please transfer them to another wallet before deleting. Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. However, you can recover the wallet later if you have its seed phrase.`}
+                        </p>
+                    </ModalParagraph>
+                ) : (
+                    <ModalParagraph>
+                        <p>
+                            {c('Wallet setup')
+                                .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. However, you can recover the wallet later if you have its seed phrase.`}
+                        </p>
+                    </ModalParagraph>
+                )}
             </div>
-        </Modal>
+        </Prompt>
     );
 };

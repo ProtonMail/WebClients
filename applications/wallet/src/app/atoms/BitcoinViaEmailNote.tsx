@@ -39,7 +39,7 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
     }
 
     return (
-        <div className="flex flex-row flex-nowrap p-4 rounded-lg items-center color-norm my-3 bg-weak relative">
+        <div className="flex flex-row flex-nowrap p-4 rounded-xl items-center color-norm my-3 bg-weak relative border">
             <div className="shrink-0">
                 <img src={isActive ? bitcoinEmailActive : bitcoinEmailInactive} alt="" />
             </div>
@@ -50,15 +50,17 @@ export const BitcoinViaEmailNote = ({ email, isActive }: Props) => {
                         .t`Learn more`}</CoreButtonLike>
                 </div>
             </div>
-            <div className="absolute top-0 right-0 shrink-0">
+            <div className="absolute top-0 right-0 shrink-0 m-1">
                 <CoreButton
                     icon
+                    pill
+                    size="small"
                     shape="ghost"
                     onClick={() => {
                         setIsHidden(true);
                     }}
                 >
-                    <Icon name="cross" size={5} />
+                    <Icon name="cross" size={4} />
                 </CoreButton>
             </div>
         </div>
