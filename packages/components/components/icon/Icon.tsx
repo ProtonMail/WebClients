@@ -317,6 +317,7 @@ export type IconName =
     | 'power-off'
     | 'presentation-screen'
     | 'printer'
+    | 'qr-code'
     | 'question-circle'
     | 'question-circle-filled'
     | 'robot'

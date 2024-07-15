@@ -53,7 +53,7 @@ export const BitcoinAmountInput = ({
             min={constrainedMin}
             step={getDecimalStepByUnit(unit)}
             onChange={onChange}
-            className="invisible-number-input-arrow"
+            className="invisible-number-input-arrow bg-norm border-none"
             inputClassName={inputClassName}
             readOnly={!onValueChange}
             {...inputProps}

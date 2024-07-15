@@ -1,4 +1,4 @@
-import { KeyboardEvent, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { KeyboardEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { QRCode } from 'jsqr';
 import { compact } from 'lodash';
@@ -11,15 +11,12 @@ import {
     Dropdown,
     DropdownSizeUnit,
     Icon,
-    Marks,
     getContactsAutocompleteItems,
     getRecipientFromAutocompleteItem,
     useAutocompleteFilter,
     useModalState,
 } from '@proton/components/components';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { MatchChunk } from '@proton/shared/lib/helpers/regex';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -29,7 +26,8 @@ import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/utils/email-inte
 
 import { CoreButton, Input, InputProps } from '../../atoms';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
-import { getThemeByIndex, isValidBitcoinAddress } from '../../utils';
+import { isValidBitcoinAddress } from '../../utils';
+import { EmailListItem } from '../EmailListItem';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
 import { BtcAddressOrError, RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
 
@@ -59,78 +57,6 @@ interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
         error?: BtcAddressOrError['error'];
     }) => JSX.Element | null;
 }
-
-interface EmailListItemProps {
-    index: number;
-    chunks?: MatchChunk[];
-    name?: string;
-    address: string;
-    onClick?: () => void;
-    leftNode?: ReactNode;
-    rightNode?: ReactNode;
-    loading?: boolean;
-}
-
-export const EmailListItem = ({
-    index,
-    chunks = [],
-    name,
-    address,
-    loading,
-    leftNode,
-    rightNode,
-    onClick,
-}: EmailListItemProps) => {
-    const inner = (
-        <>
-            {leftNode}
-            {loading ? (
-                <CircleLoader className="color-primary" />
-            ) : (
-                <>
-                    <div
-                        className={clsx(
-                            'rounded-full w-custom h-custom mr-4 flex items-center justify-center text-lg text-semibold shrink-0',
-                            getThemeByIndex(index)
-                        )}
-                        style={{
-                            '--h-custom': '2.5rem',
-                            '--w-custom': '2.5rem',
-                            background: 'var(--interaction-norm-minor-1)',
-                            color: 'var(--interaction-norm)',
-                        }}
-                    >
-                        {getInitials(name || address)}
-                    </div>
-                    <div className="flex flex-column justify-center items-center mr-auto">
-                        <span className={clsx('block w-full text-ellipsis text-left text-lg')}>
-                            {<Marks chunks={chunks}>{name || address}</Marks>}
-                        </span>
-                        {Boolean(name && address) && name !== address && (
-                            <span className={clsx('block w-full text-ellipsis text-left color-hint')}>
-                                {<Marks chunks={chunks}>{address}</Marks>}
-                            </span>
-                        )}
-                    </div>
-                </>
-            )}
-            {rightNode}
-        </>
-    );
-
-    if (onClick) {
-        return (
-            <button
-                onClick={onClick}
-                className="dropdown-item-button email-select-button flex flex-row w-full flex-nowrap items-center grow p-2 rounded-lg"
-            >
-                {inner}
-            </button>
-        );
-    }
-
-    return <div className="flex flex-row w-full flex-nowrap items-center grow py-2 rounded-lg">{inner}</div>;
-};
 
 const validateInput = (input: string, network: WasmNetwork) => {
     if (!validateEmailAddress(input) && !isValidBitcoinAddress(input, network)) {
@@ -297,7 +223,7 @@ export const EmailOrBitcoinAddressInput = ({
                                                     onRemoveRecipient(recipient);
                                                 }}
                                             >
-                                                <Icon name="cross" />
+                                                <Icon name="cross-circle-filled" className="color-primary" size={4} />
                                             </CoreButton>
                                         )
                                     }
@@ -375,7 +301,7 @@ export const EmailOrBitcoinAddressInput = ({
                                     setQrCodeModal(true);
                                 }}
                             >
-                                <Icon className="color-weak" name="camera" />
+                                <Icon className="color-weak" name="qr-code" size={5} />
                             </CoreButton>
                         }
                     />
@@ -392,6 +318,7 @@ export const EmailOrBitcoinAddressInput = ({
                     onFocus={() => {
                         inputRef.current?.focus();
                     }}
+                    disableFocusTrap
                 >
                     <ul className="unstyled m-0 w-full">
                         {filteredOptions.map(({ chunks, option }, index) => {
