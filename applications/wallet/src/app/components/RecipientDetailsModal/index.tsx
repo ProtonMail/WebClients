@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps } from '@proton/components/components';
+import { ModalOwnProps, Prompt } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Button, Modal } from '../../atoms';
+import { Button } from '../../atoms';
 import { getThemeByIndex } from '../../utils';
 
 export interface RecipientDetailsModalOwnProps {
@@ -22,7 +22,25 @@ export const RecipientDetailsModal = ({ recipient, btcAddress, index, ...modalPr
     const isOnlyBtcAddress = btcAddress === recipient.Address;
 
     return (
-        <Modal {...modalProps}>
+        <Prompt
+            {...modalProps}
+            buttons={[
+                <Button
+                    onClick={async () => {
+                        await navigator.clipboard.writeText(btcAddress);
+                        createNotification({ text: c('Recipient details').t`Bitcoin address copied to clipboard` });
+                    }}
+                    fullWidth
+                    size="large"
+                    shape="solid"
+                    color="norm"
+                >
+                    {c('Action').t`Copy address`}
+                </Button>,
+                <Button fullWidth size="large" shape="solid" color="weak" onClick={modalProps.onClose}>{c('Wallet')
+                    .t`Close`}</Button>,
+            ]}
+        >
             <div className="flex flex-column items-center">
                 <div
                     className={clsx(
@@ -55,21 +73,7 @@ export const RecipientDetailsModal = ({ recipient, btcAddress, index, ...modalPr
                     <div className="text-xl color-hint mb-1">{c('Recipient details').t`BTC address`}</div>
                     <div className="text-lg text-break">{btcAddress}</div>
                 </div>
-
-                <div className="w-full px-8">
-                    <Button
-                        fullWidth
-                        shape="solid"
-                        color="weak"
-                        onClick={async () => {
-                            await navigator.clipboard.writeText(btcAddress);
-                            createNotification({ text: c('Recipient details').t`Bitcoin address copied to clipboard` });
-                        }}
-                    >
-                        {c('Recipient details').t`Copy address`}
-                    </Button>
-                </div>
             </div>
-        </Modal>
+        </Prompt>
     );
 };

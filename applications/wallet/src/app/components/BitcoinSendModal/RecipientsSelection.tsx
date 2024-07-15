@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { WasmTxBuilder } from '@proton/andromeda';
-import { useModalStateWithData } from '@proton/components/components';
+import { Icon, useModalStateWithData } from '@proton/components/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useApi, useNotifications } from '@proton/components/hooks';
@@ -241,7 +241,11 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                             );
                         }
 
-                        return null;
+                        return (
+                            <span className="mr-1 color-weak">
+                                <Icon name="chevron-right" className="my-auto" />
+                            </span>
+                        );
                     }}
                     onClickRecipient={(recipient, btcAddress, index) => {
                         if (btcAddress.value) {
