@@ -12,7 +12,8 @@ import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
 import clsx from '@proton/utils/clsx';
 
 import { DrawerAppSection } from '../../shared';
@@ -135,7 +136,7 @@ export default function PassAliasesWrapper() {
             initiative="drawer-security-center"
             renderFunction={(e: any) => {
                 const status = (() => {
-                    if (e?.message.includes(PassErrorCode.MISSING_SCOPE.toString())) {
+                    if (e?.message.includes(PassErrorCode.MISSING_SCOPE)) {
                         return 'missing-scope-error';
                     }
                     if (e?.name === PASS_ALIASES_ERROR_STEP.INIT_BRIDGE) {
@@ -147,12 +148,14 @@ export default function PassAliasesWrapper() {
                 return (
                     <>
                         {status === 'missing-scope-error' && (
-                            <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
-                                <div className="text-weak text-sm text-center">
-                                    {c('Error message')
-                                        .t`Aliases cannot be currently used when ${PASS_SHORT_APP_NAME} extra password is enabled.`}
-                                </div>
-                            </GenericErrorDisplay>
+                            <DrawerAppSection>
+                                <GenericErrorDisplay title={''} customImage={aliasSampleSvg}>
+                                    <div className="text-weak text-sm color-weak text-center">
+                                        {c('Error message')
+                                            .t`Aliases cannot be used when an extra password is enabled in ${PASS_APP_NAME}.`}
+                                    </div>
+                                </GenericErrorDisplay>
+                            </DrawerAppSection>
                         )}
 
                         {status === 'init-bridge-error' && (

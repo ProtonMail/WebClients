@@ -19,10 +19,12 @@ interface Props {
     children?: ReactNode;
     big?: boolean;
     isNetworkError?: boolean;
+    /** Custom image to display, should be local import in SVG format */
+    customImage?: string;
     title?: string;
 }
 
-export const GenericErrorDisplay = ({ children, className, big, isNetworkError, title }: Props) => {
+export const GenericErrorDisplay = ({ children, className, big, isNetworkError, title, customImage }: Props) => {
     const display: 'default' | 'with-refresh' | 'custom' = (() => {
         if (children) {
             return 'custom';
@@ -32,12 +34,14 @@ export const GenericErrorDisplay = ({ children, className, big, isNetworkError, 
 
     const line1 = c('Error message').jt`Please refresh the page or try again later.`;
 
+    const url = customImage || (isNetworkError ? networkErrorImg : errorImg);
+
     return (
         <div className={clsx('generic-error', 'm-auto', big ? 'p-1' : 'p-2', className)}>
             <IllustrationPlaceholder
                 title={title ?? c('Error message').t`Something went wrong`}
                 titleSize={big ? 'big' : 'regular'}
-                url={isNetworkError ? networkErrorImg : errorImg}
+                url={url}
             >
                 {display === 'default' && <div className="text-weak text-sm">{line1}</div>}
                 {display === 'with-refresh' && (
