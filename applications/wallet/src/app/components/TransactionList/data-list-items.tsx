@@ -11,7 +11,6 @@ import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
-import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
@@ -84,9 +83,7 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
 
     const message = getTransactionMessage(tx);
 
-    const senderOrRecipientName = (
-        <span className="color-weak text-ellipsis">{transactionRecipientsHumanReadableNameList}</span>
-    );
+    const senderOrRecipientName = <span className="text-ellipsis">{transactionRecipientsHumanReadableNameList}</span>;
 
     return (
         <DataListItem
@@ -104,7 +101,7 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
             }
             bottomNode={
                 message && (
-                    <div className={clsx('color-hint block text-ellipsis', loading && 'skeleton-loader')}>
+                    <div className={clsx('color-weak block text-ellipsis', loading && 'skeleton-loader')}>
                         {message}
                     </div>
                 )
@@ -121,15 +118,16 @@ export const NoteDataListItem = ({
     return (
         <DataListItem
             label="Note"
+            className="pl-2"
             bottomNode={
                 <div className={clsx('flex items-center', loading && 'skeleton-loader')}>
-                    <CoreButton
-                        shape="ghost"
-                        color={tx.apiData?.Label ? 'weak' : 'norm'}
-                        className="py-0.5 px-0 color-hint block text-ellipsis"
+                    <button
+                        className={clsx(
+                            'py-0.5 px-2 block text-ellipsis relative rounded-sm interactive-pseudo-inset',
+                            tx.apiData?.Label ? 'color-weak' : 'color-primary'
+                        )}
                         style={{
-                            color: !tx.apiData?.Label && 'var(--interaction-norm)',
-                            background: 'transparent',
+                            color: !tx.apiData?.Label && 'var(--interaction-norm-major-3)',
                         }}
                         onClick={(e) => {
                             e.stopPropagation();
@@ -137,7 +135,7 @@ export const NoteDataListItem = ({
                         }}
                     >
                         {tx.apiData?.Label || c('Wallet transaction').t`+ Add`}
-                    </CoreButton>
+                    </button>
                 </div>
             }
         />
