@@ -1,0 +1,30 @@
+@import '~@proton/styles/scss/lib';
+
+.tv-background-container {
+	background-image: url(./tv_bg.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 1200px 800px;
+}
+
+.tv-code {
+	block-size: rem(45);
+	inline-size: rem(160);
+
+	&--input {
+		letter-spacing: rem(15);
+		text-indent: rem(20);
+		font-size: rem(15);
+	}
+}
+
+@include media('<=small') {
+	.tv-code {
+		inline-size: rem(200);
+
+		&--input {
+			letter-spacing: rem(26);
+			text-indent: rem(30);
+		}
+	}
+}

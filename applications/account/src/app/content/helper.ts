@@ -15,7 +15,7 @@ import {
 } from '@proton/shared/lib/authentication/apps';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APP_NAMES, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, SETUP_ADDRESS_PATH, SSO_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getPathFromLocation, getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -158,7 +158,26 @@ const getCleanPath = (location: H.Location) => {
     } catch {}
 };
 
+const getParsedContinueTo = (searchParams: URLSearchParams) => {
+    const continueTo = searchParams.get('continueTo') || '';
+    // Only allowing tv for now
+    if (VPN_TV_PATHS.includes(continueTo)) {
+        return {
+            path: continueTo,
+            app: APPS.PROTONVPN_SETTINGS,
+        };
+    }
+};
+
 export const getLocalRedirect = (location: H.Location) => {
+    const searchParams = new URLSearchParams(location.search);
+    const continueTo = getParsedContinueTo(searchParams);
+    if (continueTo) {
+        return {
+            path: continueTo.path,
+            app: continueTo.app,
+        };
+    }
     // If trying to access a non-public location from this app, set up a local redirect
     const localLocation = [...Object.values(SSO_PATHS), ...Object.values(UNAUTHENTICATED_ROUTES)].includes(
         location.pathname
