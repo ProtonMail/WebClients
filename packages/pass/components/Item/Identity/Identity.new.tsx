@@ -17,7 +17,7 @@ import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/Dropdo
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import { getInitialState, useIdentityFormSections } from '@proton/pass/hooks/useIdentityFormSections';
+import { getInitialState, useIdentityFormSections } from '@proton/pass/hooks/identity/useIdentityFormSections';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { type IdentityItemFormValues, validateIdentityForm } from '@proton/pass/lib/validation/identity';
