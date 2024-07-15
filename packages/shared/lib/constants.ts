@@ -279,6 +279,12 @@ export const VPN_TV_CLIENT_IDS = {
     ANDROID: 'android_tv-vpn',
 };
 
+export const VPN_TV_PATHS_MAP = {
+    apple: '/appletv',
+    android: '/tv',
+};
+export const VPN_TV_PATHS = Object.values(VPN_TV_PATHS_MAP);
+
 export const SSO_PATHS = {
     EXTERNAL_SSO_LOGIN: '/sso/login',
     OAUTH_AUTHORIZE: '/oauth/authorize',

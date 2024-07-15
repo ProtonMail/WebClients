@@ -59,12 +59,15 @@ interface Props {
         password: string;
         persistent: boolean;
         payload: ChallengeResult;
+        path?: string;
     }) => Promise<void>;
     signInText?: string;
     externalSSO: {
         enabled?: boolean;
-        ssoToken?: string;
-        flow?: ExternalSSOFlow;
+        options?: {
+            token?: string;
+            flow?: ExternalSSOFlow;
+        };
     };
     defaultUsername?: string;
     hasRemember?: boolean;
@@ -75,6 +78,7 @@ interface Props {
     onChangeAuthType: (authType: AuthType) => void;
     loginFormRef: MutableRefObject<LoginFormRef | undefined>;
     appName: APP_NAMES;
+    externalRedirect?: string;
 }
 
 const LoginForm = ({
@@ -91,6 +95,7 @@ const LoginForm = ({
     externalSSO,
     paths,
     loginFormRef,
+    externalRedirect,
 }: Props) => {
     const handleError = useErrorHandler();
     const [submitting, withSubmitting] = useLoading();
@@ -250,6 +255,9 @@ const LoginForm = ({
                     const url = new URL('https://account.proton.me/sso/login');
                     url.searchParams.set('username', username);
                     url.searchParams.set('flow', 'redirect');
+                    if (externalRedirect && externalRedirect !== '/') {
+                        url.searchParams.set('continueTo', externalRedirect);
+                    }
                     const normalizedProductParam = normalizeProduct(productParam);
                     if (normalizedProductParam) {
                         url.searchParams.set('product', normalizedProductParam);
@@ -283,9 +291,10 @@ const LoginForm = ({
 
     useEffect(() => {
         if (
-            externalSSO.ssoToken ||
+            !externalSSO.options ||
+            externalSSO.options.token ||
             authType !== AuthType.ExternalSSO ||
-            externalSSO.flow !== ExternalSSOFlow.Redirect
+            externalSSO.options.flow !== ExternalSSOFlow.Redirect
         ) {
             return;
         }
@@ -293,14 +302,21 @@ const LoginForm = ({
     }, []);
 
     useEffect(() => {
-        if (submitting || loading || !externalSSO.ssoToken || authType !== AuthType.ExternalSSO || onceRef.current) {
+        if (
+            submitting ||
+            loading ||
+            !externalSSO.options ||
+            !externalSSO.options.token ||
+            authType !== AuthType.ExternalSSO ||
+            onceRef.current
+        ) {
             return;
         }
         onceRef.current = true;
         withSubmitting(
             handleSubmitExternalSSOToken({
                 uid: undefined,
-                token: externalSSO.ssoToken,
+                token: externalSSO.options.token,
                 payload: undefined,
             })
         ).catch(noop);
