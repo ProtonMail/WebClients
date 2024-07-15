@@ -3,6 +3,7 @@ import type { FormikErrors } from 'formik';
 import { validateItemErrors } from '@proton/pass/lib/validation/item';
 import type { ExtraField } from '@proton/pass/types';
 import type { ExtraIdentitySection } from '@proton/pass/types/protobuf/item-v1';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 export type IdentityItemFormValues = {
     shareId: string;
@@ -47,8 +48,37 @@ export type IdentityItemFormValues = {
     note: string;
 };
 
+export const validateExtraCustomFields = (values: IdentityItemFormValues) => {
+    const extraFields: (keyof Pick<
+        IdentityItemFormValues,
+        'extraPersonalDetails' | 'extraAddressDetails' | 'extraContactDetails' | 'extraWorkDetails'
+    >)[] = ['extraPersonalDetails', 'extraAddressDetails', 'extraContactDetails', 'extraWorkDetails'];
+
+    const errors = extraFields.reduce((acc, key) => {
+        const fieldErrors = values[key].map((field) => {
+            const fieldError: FormikErrors<ExtraField> = {};
+
+            if (isEmptyString(field.fieldName)) {
+                fieldError.fieldName = 'Field name is required';
+            }
+
+            return fieldError;
+        });
+
+        if (fieldErrors.some((error) => Object.keys(error).length > 0)) {
+            acc[key] = fieldErrors;
+        }
+
+        return acc;
+    }, {} as FormikErrors<IdentityItemFormValues>);
+
+    return Object.keys(errors).length > 0 ? (errors as FormikErrors<IdentityItemFormValues>) : undefined;
+};
+
 export const validateIdentityForm = (values: IdentityItemFormValues): FormikErrors<IdentityItemFormValues> => {
     const errors: FormikErrors<IdentityItemFormValues> = validateItemErrors(values);
 
-    return { ...errors };
+    const extraFieldsErrors = validateExtraCustomFields(values);
+
+    return { ...errors, ...extraFieldsErrors };
 };
