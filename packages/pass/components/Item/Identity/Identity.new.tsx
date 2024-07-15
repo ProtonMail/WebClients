@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { FieldArray, Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import { ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -158,6 +159,19 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                                 />
                             </CollapsibleItem>
                         ))}
+                        <hr />
+                        <Button
+                            className="rounded-full w-full"
+                            style={{ backgroundColor: 'var(--interaction-weak)' }}
+                            onClick={() => {}}
+                            color="norm"
+                            shape="ghost"
+                        >
+                            <div className="flex items-center justify-center">
+                                <Icon name="plus" />
+                                <div className="ml-2 text-semibold">{c('Label').t`Add section`}</div>
+                            </div>
+                        </Button>
                     </Form>
                 </FormikProvider>
             )}
