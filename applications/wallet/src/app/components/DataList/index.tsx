@@ -12,9 +12,10 @@ interface DataListItemProps {
     bottomNode: ReactNode;
     leftIcon?: IconName | ReactNode;
     align?: 'start' | 'end';
+    className?: string;
 }
 
-export const DataListItem = ({ leftIcon, label, bottomNode, align = 'start' }: DataListItemProps) => {
+export const DataListItem = ({ leftIcon, label, bottomNode, className, align = 'start' }: DataListItemProps) => {
     const { isNarrow } = useResponsiveContainerContext();
     return (
         <div className="datagrid-cell h-full">
@@ -22,7 +23,7 @@ export const DataListItem = ({ leftIcon, label, bottomNode, align = 'start' }: D
                 {leftIcon && typeof leftIcon === 'string' ? <Icon name={leftIcon as IconName} /> : leftIcon}
                 <div className="grow">
                     <div className={clsx('flex flex-column w-full', `items-${align}`)}>
-                        <div className={clsx('w-full flex', isNarrow && 'text-sm')}>{label}</div>
+                        <div className={clsx('w-full flex', className, isNarrow && 'text-sm')}>{label}</div>
                         <div className={clsx('w-full flex mt-1', isNarrow && 'text-sm')}>{bottomNode}</div>
                     </div>
                 </div>
@@ -61,9 +62,9 @@ export const DataList = <I extends { key: string }>({ columns, rows, canClickRow
                     <button
                         key={row.key}
                         className={clsx(
-                            'datagrid-row',
+                            'datagrid-row relative',
                             isNarrow ? 'px-3 py-2' : 'px-6 py-3',
-                            onClickRow && (!canClickRow || canClickRow(row)) && 'hoverable-row'
+                            onClickRow && (!canClickRow || canClickRow(row)) && 'hoverable-row interactive-pseudo-inset'
                         )}
                         onClick={() => onClickRow?.(row)}
                     >

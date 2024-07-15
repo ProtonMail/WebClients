@@ -96,3 +96,8 @@
 	padding-block: 0.5rem;
 	padding-inline: 1rem;
 }
+
+.button[disabled]:not([aria-busy='true'])[class*='button-ghost'],
+.button.is-disabled:not([aria-busy='true'])[class*='button-ghost'] {
+	--button-default-background-color: var(--interaction-weak);
+}
