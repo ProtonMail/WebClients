@@ -18,6 +18,7 @@ import {
     getMailView,
     getWebContentsViewName,
     resetHiddenViews,
+    getZoom,
     showView,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
@@ -44,6 +45,14 @@ export function handleWebContents(contents: WebContents) {
 
     contents.on("did-navigate", (ev, url) => {
         log("did-navigate", url);
+
+        if (isHostAllowed(url)) {
+            // We need to ensure that the zoom is consistent for all URLs.
+            // Currently electron stores the zoom factor for each URL (this is chromium's behavior)
+            // and it is not able to have a default zoom factor (lack of API).
+            log("did-navigate set zoom factor to", getZoom());
+            contents.setZoomFactor(getZoom());
+        }
 
         if (!isCurrentContent()) {
             return;
