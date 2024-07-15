@@ -1,10 +1,11 @@
 import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Form, FormikProvider, useFormik } from 'formik';
+import { FieldArray, Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components/components';
+import { ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -20,11 +21,13 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { type IdentityItemFormValues, validateIdentityForm } from '@proton/pass/lib/validation/identity';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
+import type { UnsafeItemExtraField } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 const FORM_ID = 'new-identity';
+const EMPTY_CUSTOM_FIELD = { type: 'text', fieldName: '', data: { content: '' } };
 
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
@@ -82,37 +85,77 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                             />
                         </FieldsetCluster>
 
-                        {sections.map(({ name, expanded, fields, addButton }) => (
+                        {sections.map(({ name, expanded, fields, addButton }, index) => (
                             <CollapsibleItem key={name} label={name} expanded={expanded}>
-                                <FieldsetCluster>
-                                    {fields.map((item) => (
-                                        <Field
-                                            key={item.name}
-                                            name={item.name}
-                                            component={item?.component ?? TextField}
-                                            label={item.label}
-                                            placeholder={item.placeholder}
-                                        />
-                                    ))}
-                                </FieldsetCluster>
-                                {addButton && Boolean(addButton?.fields.length) && (
-                                    <DropdownMenuBase
-                                        className="mb-2"
-                                        dropdownOptions={addButton.fields.map(
-                                            ({ name: fieldName, placeholder, onClick }) => ({
-                                                value: fieldName,
-                                                label: placeholder,
-                                                onClick: onClick && actions[onClick],
-                                            })
-                                        )}
-                                        onClick={actions[addButton.onClick]}
-                                    >
-                                        <div className="flex items-center">
-                                            <Icon name="plus" />
-                                            <div className="ml-2 text-semibold">{addButton.label}</div>
-                                        </div>
-                                    </DropdownMenuBase>
-                                )}
+                                <FieldArray
+                                    name={addButton?.customFieldName || ''}
+                                    render={(helpers) => {
+                                        const extraFieldName = addButton?.customFieldName;
+                                        const extraFields = helpers.form.values[extraFieldName || ''];
+
+                                        return (
+                                            <>
+                                                <FieldsetCluster>
+                                                    {fields.map((item) => (
+                                                        <Field
+                                                            key={item.name}
+                                                            component={item.component ?? TextField}
+                                                            mask={item.mask}
+                                                            type="text"
+                                                            {...item}
+                                                        />
+                                                    ))}
+                                                    {extraFields?.map((_: unknown, index: number) => (
+                                                        <Field
+                                                            key={index}
+                                                            component={ExtraFieldComponent}
+                                                            type="text"
+                                                            name={`${extraFieldName}[${index}]`}
+                                                            onDelete={() => helpers.remove(index)}
+                                                            /* Formik TS type are wrong for FormikTouched */
+                                                            touched={
+                                                                (
+                                                                    form.touched[
+                                                                        extraFieldName!
+                                                                    ] as unknown as boolean[]
+                                                                )?.[index]
+                                                            }
+                                                            error={
+                                                                form.errors[extraFieldName!]?.[
+                                                                    index
+                                                                ] as FormikErrors<UnsafeItemExtraField>
+                                                            }
+                                                            autoFocus
+                                                        />
+                                                    ))}
+                                                </FieldsetCluster>
+                                                {addButton && Boolean(addButton?.fields.length) && (
+                                                    <DropdownMenuBase
+                                                        className="mb-2"
+                                                        dropdownOptions={addButton.fields.map(
+                                                            ({ name: fieldName, placeholder }) => ({
+                                                                value: fieldName,
+                                                                label: placeholder,
+                                                                onClick: () => {
+                                                                    actions.updateSectionFields?.(index, fieldName);
+
+                                                                    if (fieldName.includes('extra')) {
+                                                                        helpers.push(EMPTY_CUSTOM_FIELD);
+                                                                    }
+                                                                },
+                                                            })
+                                                        )}
+                                                    >
+                                                        <div className="flex items-center">
+                                                            <Icon name="plus" />
+                                                            <div className="ml-2 text-semibold">{addButton.label}</div>
+                                                        </div>
+                                                    </DropdownMenuBase>
+                                                )}
+                                            </>
+                                        );
+                                    }}
+                                />
                             </CollapsibleItem>
                         ))}
                     </Form>

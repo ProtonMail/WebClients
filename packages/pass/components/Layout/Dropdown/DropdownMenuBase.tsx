@@ -8,7 +8,6 @@ import {
     usePopperAnchor,
 } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 type DropdownMenuBaseProps = PropsWithChildren & {
     className?: string;
@@ -16,10 +15,9 @@ type DropdownMenuBaseProps = PropsWithChildren & {
     dropdownOptions: {
         label: string;
         value: string;
-        onClick?: (...args: string[]) => void;
+        onClick: () => void;
     }[];
     hasCaret?: boolean;
-    onClick?: (...args: string[]) => void;
 };
 
 export const DropdownMenuBase: FC<DropdownMenuBaseProps> = ({
@@ -28,7 +26,6 @@ export const DropdownMenuBase: FC<DropdownMenuBaseProps> = ({
     className,
     dropdownMenuButtonClassname,
     hasCaret,
-    onClick = noop,
 }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -48,19 +45,15 @@ export const DropdownMenuBase: FC<DropdownMenuBaseProps> = ({
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="top">
                 <DropdownMenu>
-                    {dropdownOptions.map((option) => {
-                        const handleClick = option?.onClick ?? onClick;
-
-                        return (
-                            <DropdownMenuButton
-                                key={option.value}
-                                className={clsx('text-left', dropdownMenuButtonClassname)}
-                                onClick={() => handleClick(option.value, option.label)}
-                            >
-                                {option.label}
-                            </DropdownMenuButton>
-                        );
-                    })}
+                    {dropdownOptions.map((option) => (
+                        <DropdownMenuButton
+                            key={option.value}
+                            className={clsx('text-left', dropdownMenuButtonClassname)}
+                            onClick={option.onClick}
+                        >
+                            {option.label}
+                        </DropdownMenuButton>
+                    ))}
                 </DropdownMenu>
             </Dropdown>
         </>
