@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Icon, PrimaryButton, VpnLogo, useApi } from '@proton/components';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Icon from '@proton/components/components/icon/Icon';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
-import { VPN_TV_CLIENT_IDS } from '@proton/shared/lib/constants';
+import { VPN_TV_CLIENT_IDS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import TVCodeInputs from './TVCodeInputs';
 
@@ -16,12 +20,11 @@ enum STEP {
     DEVICE_CONNECTED,
 }
 
-export const tvPaths = {
-    apple: '/appletv',
-    android: '/tv',
-};
+interface Props {
+    background?: boolean;
+}
 
-const TVContainer = () => {
+const TVContainer = ({ background = true }: Props) => {
     const [code, setCode] = useState('');
     const [step, setStep] = useState(STEP.ENTER_CODE);
     const api = useApi();
@@ -29,13 +32,13 @@ const TVContainer = () => {
     const location = useLocation();
     const [error, setError] = useState('');
     const childClientId = (() => {
-        if (location.pathname === tvPaths.apple) {
+        if (VPN_TV_PATHS_MAP.apple.includes(location.pathname)) {
             return VPN_TV_CLIENT_IDS.APPLE;
         }
         return VPN_TV_CLIENT_IDS.ANDROID;
     })();
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         if (loading || !code) {
@@ -63,7 +66,7 @@ const TVContainer = () => {
         if (step === STEP.ENTER_CODE) {
             return (
                 <form onSubmit={(event) => withLoading(handleSubmit(event))}>
-                    <label className="h3 text-center" htmlFor="code-input">{c('Label')
+                    <label className="h3 text-center mb-3" htmlFor="code-input">{c('Label')
                         .t`Enter the code displayed on your TV`}</label>
                     <TVCodeInputs value={code} setValue={setCode} />
                     {error ? (
@@ -107,7 +110,12 @@ const TVContainer = () => {
     };
 
     return (
-        <div className="ui-prominent background-container h-full flex *:min-size-auto flex-column flex-nowrap items-center overflow-auto">
+        <div
+            className={clsx(
+                ' h-full flex *:min-size-auto flex-column flex-nowrap items-center overflow-auto',
+                background && 'tv-background-container ui-prominent'
+            )}
+        >
             <div className="flex justify-center items-center pt-7">
                 <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
                     <Href href="https://protonvpn.com" target="_self">
