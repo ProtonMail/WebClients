@@ -555,9 +555,10 @@ export default function DocumentEditorToolbar({
       }}
     >
       <div
-        className="flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
+        className="bg-norm flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
         style={{
-          boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)',
+          border: '0.5px solid var(--border-weak, #EAE7E4)',
+          boxShadow: '0px 4px 10px 0px rgba(0, 0, 0, 0.06)',
         }}
         data-testid="main-toolbar"
       >
