@@ -9,7 +9,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { ping } from '@proton/shared/lib/api/tests';
 import noop from '@proton/utils/noop';
 
-interface ClientContextValue {
+export interface ClientContextValue {
     setBooted: (booted: boolean) => void;
     setLoggedIn: (loggedIn: boolean) => void;
     setStatus: (status: AppStatus) => void;
