@@ -101,6 +101,7 @@ interface DriveLink {
     // `loadLinkThumbnail` from `useDrive`.
     CachedThumbnailURL: string;
     ThumbnailIsLoading: boolean;
+    VolumeID: string;
 }
 
 export interface FileLinkMeta extends DriveLink {
