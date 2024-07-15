@@ -18,6 +18,7 @@ module.exports = {
             },
         ],
         'max-classes-per-file': 'off',
+        '@typescript-eslint/consistent-type-imports': 'warn',
         '@typescript-eslint/no-use-before-define': [
             'error',
             {
