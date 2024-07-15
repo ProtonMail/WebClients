@@ -1,7 +1,5 @@
-import { c } from 'ttag';
-
-import { Icon, ToolbarButton } from '@proton/components';
-import { DOCS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { MimeIcon, ToolbarButton } from '@proton/components';
+import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
 import { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
@@ -22,19 +20,8 @@ const OpenInDocsButton = ({ selectedLinks, shareId }: Props) => {
 
     return (
         <ToolbarButton
-            title={
-                // translator: Open in Docs
-                c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
-            }
-            icon={
-                <Icon
-                    name="file-arrow-out"
-                    alt={
-                        // translator: Open in Docs
-                        c('Action').t`Open in ${DOCS_SHORT_APP_NAME}`
-                    }
-                />
-            }
+            title={getOpenInDocsString(selectedLink?.mimeType)}
+            icon={<MimeIcon name="proton-doc" className="mr-2" />}
             onClick={() => {
                 if (selectedLink) {
                     void openInDocsAction({
