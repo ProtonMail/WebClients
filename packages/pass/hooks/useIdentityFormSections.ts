@@ -1,16 +1,14 @@
-import { type ComponentType, useEffect, useState } from 'react';
+import { type ComponentType, useCallback, useEffect, useState } from 'react';
 
 import type { FactoryOpts } from 'imask/masked/factory';
+import cloneDeep from 'lodash/cloneDeep';
 import { c } from 'ttag';
 
+import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
+import { birthdateMask } from '@proton/pass/components/Form/Field/masks/identity';
 import type { IdentityItemFormValues } from '@proton/pass/lib/validation/identity';
 
-type ActionField =
-    | 'addPersonalDetails'
-    | 'addAddressDetails'
-    | 'addContactDetails'
-    | 'addWorkDetails'
-    | 'addCustomField';
+type ActionField = 'updateSectionFields';
 
 type FieldName = Exclude<keyof IdentityItemFormValues, 'shareId'>;
 
@@ -20,7 +18,6 @@ type IdentityField = {
     placeholder: string;
     component?: ComponentType<any>;
     mask?: FactoryOpts;
-    onClick?: ActionField;
 };
 
 type FieldSection = {
@@ -31,6 +28,7 @@ type FieldSection = {
         label: string;
         onClick: ActionField;
         fields: IdentityField[];
+        customFieldName?: FieldName;
     };
 };
 
@@ -100,7 +98,8 @@ const getFormSections = (): FieldSection[] => [
         ],
         addButton: {
             label: c('Action').t`Add more`,
-            onClick: 'addPersonalDetails',
+            onClick: 'updateSectionFields',
+            customFieldName: 'extraPersonalDetails',
             fields: [
                 {
                     name: 'firstName',
@@ -121,6 +120,8 @@ const getFormSections = (): FieldSection[] => [
                     name: 'birthdate',
                     label: c('Label').t`Birthdate`,
                     placeholder: c('Label').t`Birthdate`,
+                    component: MaskedTextField,
+                    mask: birthdateMask,
                 },
                 {
                     name: 'gender',
@@ -128,10 +129,9 @@ const getFormSections = (): FieldSection[] => [
                     placeholder: c('Label').t`Gender`,
                 },
                 {
-                    name: 'extraPersonalDetails',
+                    name: 'extraAddressDetails',
                     label: c('Label').t`Custom field`,
                     placeholder: c('Label').t`Custom field`,
-                    onClick: 'addCustomField',
                 },
             ],
         },
@@ -230,7 +230,8 @@ const getFormSections = (): FieldSection[] => [
         ],
         addButton: {
             label: c('Action').t`Add more`,
-            onClick: 'addWorkDetails',
+            onClick: 'updateSectionFields',
+            customFieldName: 'extraWorkDetails',
             fields: [
                 {
                     name: 'personalWebsite',
@@ -259,47 +260,33 @@ const getFormSections = (): FieldSection[] => [
 
 export const useIdentityFormSections = () => {
     const [sections, setSections] = useState<FieldSection[]>([]);
+    const getField = useCallback(
+        (index: number, fieldName: string) => sections[index].addButton?.fields.find(({ name }) => name === fieldName)!,
+        [sections]
+    );
 
-    const updateSectionFields = (sectionName: string, newField: IdentityField) => {
-        setSections((prevSections) =>
-            prevSections.map((section: FieldSection) => {
-                if (section.name !== sectionName) return section;
+    const updateSectionFields = (index: number, fieldName: string) => {
+        const newField = getField(index, fieldName);
+        const isExtraField = newField?.name.includes('extra');
 
-                // Add the new field to main the fields array
-                const newState: FieldSection = { ...section, fields: [...section.fields, newField] };
+        setSections((prevSections) => {
+            const newSections = cloneDeep(prevSections);
+            const section = newSections[index];
 
-                // Remove the field from the "extras" dropdown
-                if (newState.addButton) {
-                    newState.addButton = {
-                        ...newState.addButton,
-                        fields: newState.addButton.fields.filter(({ name }) => name !== newField.name),
-                    };
-                }
+            // Add the new field to main the fields array
+            if (!isExtraField) section.fields.push(newField);
 
-                return newState;
-            })
-        );
-    };
+            // Remove the field from the "extras" dropdown
+            if (section.addButton && !isExtraField) {
+                section.addButton.fields = section.addButton.fields.filter(({ name }) => name !== newField.name);
+            }
 
-    const addPersonalDetails = (fieldName: string, label: string) => {
-        updateSectionFields('Personal details', {
-            name: fieldName as FieldName,
-            label,
-            placeholder: label,
+            return newSections;
         });
     };
 
-    const addWorkDetails = (fieldName: string, label: string) => {
-        updateSectionFields('Work details', {
-            name: fieldName as FieldName,
-            label,
-            placeholder: label,
-        });
-    };
-
-    const actions: Partial<Record<ActionField, (...args: string[]) => void>> = {
-        addPersonalDetails,
-        addWorkDetails,
+    const actions: Partial<Record<ActionField, (index: number, field: string) => void>> = {
+        updateSectionFields,
     };
 
     useEffect(() => setSections(getFormSections()), []);
