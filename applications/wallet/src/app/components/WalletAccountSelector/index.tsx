@@ -145,8 +145,7 @@ export const WalletAccountSelector = ({ value, options, disabled, checkIsValid, 
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
-                className="border rounded-xl bg-weak py-5 w-custom"
-                style={{ '--w-custom': '16rem' }}
+                className="border rounded-xl bg-weak py-5 w-full"
                 disabled={disabled}
             >
                 <div className="flex flex-column">
