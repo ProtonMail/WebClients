@@ -128,6 +128,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
         signatureAddress: link.SignatureAddress,
         xAttr: link.XAttr,
+        volumeId: link.VolumeID,
     };
 }
 
