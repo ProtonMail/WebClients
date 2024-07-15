@@ -20,6 +20,8 @@ const LoginContainer = ({ metaTags, onLogin, paths }: Props) => {
     const searchParams = new URLSearchParams(location.search);
     const vpnTestflight = searchParams.get('redirect') === 'ios-beta';
 
+    const previousLocation = location.state?.from;
+
     return (
         <AccountLoginContainer
             testflight={vpnTestflight ? 'vpn' : undefined}
@@ -29,13 +31,13 @@ const LoginContainer = ({ metaTags, onLogin, paths }: Props) => {
             productParam={APPS.PROTONVPN_SETTINGS}
             setupVPN={false}
             hasRemember={false}
+            externalRedirect={previousLocation?.pathname || ''}
             onLogin={async (data) => {
                 if (vpnTestflight) {
                     document.location.assign('https://testflight.apple.com/join/3yl2MSbw');
                     return { state: 'complete' };
                 }
                 const { User } = data;
-                const previousLocation = location.state?.from;
                 const previousHash = previousLocation?.hash || '';
                 const previousSearch = previousLocation?.search || '';
                 const path = previousLocation?.pathname || (User && isMember(User) ? '/account' : '/dashboard');

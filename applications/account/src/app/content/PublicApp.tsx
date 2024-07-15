@@ -716,8 +716,10 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                             onLogin={({ username, token, flow }) =>
                                                                 history.replace(SSO_PATHS.LOGIN, {
                                                                     authType: AuthType.ExternalSSO,
-                                                                    externalSSOToken: token,
-                                                                    externalSSOFlow: flow,
+                                                                    externalSSO: {
+                                                                        token,
+                                                                        flow,
+                                                                    },
                                                                     username,
                                                                 })
                                                             }

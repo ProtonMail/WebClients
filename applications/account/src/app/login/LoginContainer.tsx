@@ -74,6 +74,7 @@ interface Props {
     metaTags: MetaTags | null;
     render?: (renderProps: RenderProps) => ReactNode;
     testflight?: 'vpn';
+    externalRedirect?: string;
 }
 
 const defaultRender = (data: RenderProps) => {
@@ -108,13 +109,16 @@ const LoginContainer = ({
     modal,
     render = defaultRender,
     testflight,
+    externalRedirect,
 }: Props) => {
     const { state } = useLocation<
         | {
               username?: string;
               authType?: AuthType;
-              externalSSOToken?: string;
-              externalSSOFlow?: ExternalSSOFlow;
+              externalSSO?: {
+                  token?: string;
+                  flow?: ExternalSSOFlow;
+              };
           }
         | undefined
     >();
@@ -253,8 +257,7 @@ const LoginContainer = ({
                                     appName={APP_NAME}
                                     externalSSO={{
                                         enabled: APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp),
-                                        ssoToken: state?.externalSSOToken,
-                                        flow: state?.externalSSOFlow,
+                                        options: state?.externalSSO,
                                     }}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                     productParam={productParam}
@@ -262,6 +265,7 @@ const LoginContainer = ({
                                     defaultUsername={previousUsernameRef.current}
                                     hasRemember={hasRemember && !isElectronPass}
                                     authType={authType}
+                                    externalRedirect={externalRedirect}
                                     onChangeAuthType={(authType) => {
                                         setAuthType(authType);
                                     }}
