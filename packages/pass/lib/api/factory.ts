@@ -145,7 +145,9 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 const silent = getSilenced(options, code);
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
-                const notAllowed = code === PassErrorCode.NOT_ALLOWED && options.url?.includes('pass/v1/user/access');
+                const notAllowed =
+                    (code === PassErrorCode.MISSING_ORG_2FA || code === PassErrorCode.NOT_ALLOWED) &&
+                    options.url?.includes('pass/v1/user/access');
                 const missingScope = code === PassErrorCode.MISSING_SCOPE;
                 const offline = getIsOfflineError(e) || networkError;
                 const unreachable = getIsUnreachableError(e);
