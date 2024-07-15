@@ -104,6 +104,7 @@ export default function usePublicShare() {
                     rootShareId: '',
                     xAttr: '',
                     hash: '',
+                    volumeId: '',
                 },
             },
         ]);
