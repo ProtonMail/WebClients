@@ -63,7 +63,7 @@ export const EmailIntegrationInput = ({
             <InputFieldStacked isBigger isGroupElement>
                 <div className="flex flex-row items-center justify-space-between">
                     <div className="flex flex-column items-start">
-                        <span className="color-hint mb-1">{c('Wallet preferences').t`Email integration`}</span>
+                        <span className="color-weak mb-1">{c('Wallet preferences').t`Bitcoin via Email`}</span>
                         <span className="color-norm text-lg">{linkedEmail?.Email ?? ''}</span>
                     </div>
 

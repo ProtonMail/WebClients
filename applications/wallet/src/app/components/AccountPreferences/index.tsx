@@ -53,7 +53,7 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets }: Prop
         <InputFieldStackedGroup>
             <Input
                 isGroupElement
-                label={c('Wallet preference').t`Account label`}
+                label={c('Wallet preference').t`Account name`}
                 placeholder={c('Wallet preference').t`My super account`}
                 value={label}
                 onChange={onChangeLabel}
