@@ -74,16 +74,16 @@ import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layou
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { BugModalMode } from '@proton/components/containers/support/BugModal';
+import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import LiveChatZendesk, {
     ZendeskRef,
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 
-import TVContainer, { tvPaths } from './containers/TVContainer';
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
 import { getRoutes } from './routes';
 
@@ -221,7 +221,7 @@ const MainContainer: FunctionComponent = () => {
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
             {renderFreeUserLiveChatModal && <FreeUserLiveChatModal {...freeUserLiveChatModal} />}
             <Switch>
-                <Route path={[tvPaths.android, tvPaths.apple]}>
+                <Route path={VPN_TV_PATHS}>
                     <UnAuthenticated>
                         <TVContainer />
                     </UnAuthenticated>

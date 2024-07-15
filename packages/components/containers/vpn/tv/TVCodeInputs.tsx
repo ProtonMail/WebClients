@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import * as React from 'react';
 
-import { Input } from '@proton/components';
+import { Input } from '@proton/atoms/Input';
 
 import './TVCodeInputs.scss';
 
@@ -53,40 +52,38 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
     }, [first, second]);
 
     return (
-        <>
-            <div className="code-input-container block md:flex justify-center">
-                <div className="code-input-div flex-1 flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
-                    <Input
-                        ref={refFirstInput}
-                        minLength={4}
-                        maxLength={4}
-                        value={first}
-                        onChange={handleOnChangeFirst}
-                        onKeyUp={handleKeyUpFirst}
-                        placeholder="1234"
-                        className="text-bold max-w-custom self-end m-auto"
-                        style={{ '--max-w-custom': '15em' }}
-                        required
-                        autoFocus
-                    />
-                </div>
-                <hr className="w-custom tv-hr mx-4 mt-6 mb-auto hidden md:flex" style={{ '--w-custom': '5%' }} />
-                <div className="code-input-div flex-1 flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
-                    <Input
-                        ref={refSecondInput}
-                        minLength={4}
-                        maxLength={4}
-                        value={second}
-                        onChange={handleOnChangeSecond}
-                        onKeyUp={handleKeyUpSecond}
-                        placeholder="ABCD"
-                        className="text-bold max-w-custom m-auto"
-                        style={{ '--max-w-custom': '15em' }}
-                        required
-                    />
-                </div>
+        <div className="flex justify-center md:items-center flex-column md:flex-row gap-4">
+            <div className="md:flex-1 ">
+                <Input
+                    ref={refFirstInput}
+                    minLength={4}
+                    maxLength={4}
+                    value={first}
+                    onChange={handleOnChangeFirst}
+                    onKeyUp={handleKeyUpFirst}
+                    placeholder="1234"
+                    inputClassName="tv-code--input"
+                    className="tv-code text-bold self-end m-auto text-monospace"
+                    required
+                    autoFocus
+                />
             </div>
-        </>
+            <hr className="w-custom shrink-0 m-0 hidden md:block" style={{ '--w-custom': '5%' }} />
+            <div className="md:flex-1">
+                <Input
+                    ref={refSecondInput}
+                    minLength={4}
+                    maxLength={4}
+                    value={second}
+                    onChange={handleOnChangeSecond}
+                    onKeyUp={handleKeyUpSecond}
+                    placeholder="ABCD"
+                    inputClassName="tv-code--input"
+                    className="tv-code text-bold m-auto text-monospace"
+                    required
+                />
+            </div>
+        </div>
     );
 };
 
