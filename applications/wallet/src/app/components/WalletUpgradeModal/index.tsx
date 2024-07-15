@@ -20,7 +20,7 @@ export const WalletUpgradeModal = ({ title, content, theme, ...modalProps }: Pro
             {...modalProps}
             className={theme}
             buttons={[
-                <Button fullWidth shadow size="large" shape="solid" color="norm">
+                <Button fullWidth size="large" shape="solid" color="norm">
                     {c('Action').t`Upgrade now`}
                 </Button>,
                 <Button fullWidth size="large" shape="solid" color="weak" onClick={modalProps.onClose}>{c('Wallet')
