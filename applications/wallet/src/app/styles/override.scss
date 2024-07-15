@@ -90,3 +90,13 @@
 		color: var(--text-invert);
 	}
 }
+
+.rounded-2xl {
+	border-radius: 24px;
+}
+
+.prompt {
+	&#{&} {
+		--size: #{rem(392)};
+	}
+}

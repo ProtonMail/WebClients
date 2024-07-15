@@ -22,7 +22,7 @@ import { useExchangeRate } from '../../store/hooks';
 import { AccountWithChainData } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
-import { EmailListItem } from '../EmailOrBitcoinAddressInput';
+import { EmailListItem } from '../EmailListItem';
 import { BtcAddressMap } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 
 interface Props {
@@ -177,7 +177,7 @@ export const AmountInput = ({
             )}
 
             <div className="w-full mt-4 flex flex-row justify-space-between items-center">
-                <span className="block color-weak">{c('Wallet send').t`Recipients`}</span>
+                <span className="block color-weak text-semibold">{c('Wallet send').t`Recipients`}</span>
 
                 <div>
                     <CoreButton size="small" shape="ghost" color="norm" onClick={() => onBack()}>
@@ -216,7 +216,11 @@ export const AmountInput = ({
                                         onClick={() => updateTxBuilder((txBuilder) => txBuilder.removeRecipient(index))}
                                     >
                                         <Tooltip title={c('Wallet send').t`Remove email`}>
-                                            <Icon name="cross" alt={c('Wallet send').t`Remove email`} />
+                                            <Icon
+                                                name="cross-circle-filled"
+                                                alt={c('Wallet send').t`Remove email`}
+                                                className="color-primary"
+                                            />
                                         </Tooltip>
                                     </CoreButton>
                                 ) : null
@@ -230,11 +234,12 @@ export const AmountInput = ({
                                             onValueChange={(v) => {
                                                 tryUpdateRecipientAmount(txBuilderRecipient, index, v);
                                             }}
-                                            inputClassName="text-right"
+                                            inputClassName="text-right bg-norm"
                                         />
                                     </div>
                                 ) : null
                             }
+                            reviewStep
                         />
                     );
                 })}
