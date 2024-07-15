@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { ModalOwnProps, Prompt } from '@proton/components/components';
+import { UnlockModal } from '@proton/components/containers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import accessKey from '@proton/styles/assets/img/illustrations/access-key.svg';
 import clsx from '@proton/utils/clsx';
@@ -21,37 +22,36 @@ type Props = ModalOwnProps & WalletBackupModalOwnProps;
 
 export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props) => {
     const [viewMnemonic, setViewMnemonic] = useState(false);
+    const [hasPassword, setHasPassword] = useState(false);
 
     const mnemonicWords = apiWalletData.Wallet.Mnemonic?.split(' ');
 
-    return (
-        <Prompt
-            size="small"
-            className={theme}
-            buttons={
-                viewMnemonic
-                    ? [
-                          <Button
-                              className="block w-4/5 mx-auto mt-6"
-                              shape="solid"
-                              color="norm"
-                              onClick={() => modalProps.onClose?.()}
-                          >
-                              {c('Wallet setup').t`Done`}
-                          </Button>,
-                      ]
-                    : [
-                          <Button fullWidth shape="solid" color="norm" onClick={() => setViewMnemonic(true)}>
-                              {c('Wallet setup').t`View wallet seed phrase`}
-                          </Button>,
-                          <Button fullWidth shape="ghost" color="norm" onClick={() => modalProps.onClose?.()}>
-                              {c('Wallet setup').t`Done`}
-                          </Button>,
-                      ]
-            }
-            {...modalProps}
-        >
-            {viewMnemonic ? (
+    if (!apiWalletData.WalletSettings) {
+        modalProps.onClose?.();
+        return null;
+    }
+
+    if (!hasPassword) {
+        return <UnlockModal open onSuccess={() => setHasPassword(true)} />;
+    }
+
+    if (viewMnemonic) {
+        return (
+            <Prompt
+                size="small"
+                className={theme}
+                buttons={[
+                    <Button
+                        className="block w-4/5 mx-auto mt-6"
+                        shape="solid"
+                        color="norm"
+                        onClick={() => modalProps.onClose?.()}
+                    >
+                        {c('Wallet setup').t`Done`}
+                    </Button>,
+                ]}
+                {...modalProps}
+            >
                 <div className="flex flex-column items-center">
                     <h1 className={'text-bold text-break text-2xl mt-3 mb-4'}>
                         {c('Wallet setup').t`Wallet seed phrase`}
@@ -84,23 +84,39 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
                         })}
                     </div>
                 </div>
-            ) : (
-                <div className="flex flex-column items-center">
-                    <img className="my-3" src={accessKey} alt="" />
+            </Prompt>
+        );
+    }
 
-                    <h1 className={'text-bold text-break text-3xl mt-3 mb-4'}>{c('Wallet setup')
-                        .t`Your keys, your coins.`}</h1>
+    return (
+        <Prompt
+            size="small"
+            className={theme}
+            buttons={[
+                <Button fullWidth shape="solid" color="norm" onClick={() => setViewMnemonic(true)}>
+                    {c('Wallet setup').t`View wallet seed phrase`}
+                </Button>,
+                <Button fullWidth shape="ghost" color="norm" onClick={() => modalProps.onClose?.()}>
+                    {c('Wallet setup').t`Done`}
+                </Button>,
+            ]}
+            {...modalProps}
+        >
+            <div className="flex flex-column items-center">
+                <img className="my-3" src={accessKey} alt="" />
 
-                    <ModalParagraph>
-                        <p>{c('Wallet setup')
-                            .t`Wallet seed phrase encode the private key that controls your digital assets.`}</p>
-                        <p>{c('Wallet setup')
-                            .t`These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${BRAND_NAME} account.`}</p>
-                        <p>{c('Wallet setup')
-                            .t`Never give them to anyone else. ${BRAND_NAME} will never ask you for them. Write them down carefully and hide it in a safe place.`}</p>
-                    </ModalParagraph>
-                </div>
-            )}
+                <h1 className={'text-bold text-break text-3xl mt-3 mb-4'}>{c('Wallet setup')
+                    .t`Your keys, your coins.`}</h1>
+
+                <ModalParagraph>
+                    <p>{c('Wallet setup')
+                        .t`Wallet seed phrase encode the private key that controls your digital assets.`}</p>
+                    <p>{c('Wallet setup')
+                        .t`These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${BRAND_NAME} account.`}</p>
+                    <p>{c('Wallet setup')
+                        .t`Never give them to anyone else. ${BRAND_NAME} will never ask you for them. Write them down carefully and hide it in a safe place.`}</p>
+                </ModalParagraph>
+            </div>
         </Prompt>
     );
 };
