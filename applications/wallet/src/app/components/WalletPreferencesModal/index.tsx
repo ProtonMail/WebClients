@@ -45,7 +45,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
 
     return (
         <>
-            <Modal title={c('Wallet preference').t`Your wallet preferences`} size="large" {...modalProps}>
+            <Modal title={c('Wallet preference').t`Wallet preferences`} size="medium" {...modalProps}>
                 <div className="flex flex-column">
                     <InputFieldStackedGroup classname="mb-4">
                         <Input
@@ -95,7 +95,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
                         />
                     </InputFieldStackedGroup>
 
-                    <div className="flex flex-column my-3">
+                    <div className="flex flex-column mb-3">
                         <span className="block color-weak">{c('Wallet preference').t`Accounts`}</span>
 
                         <BitcoinViaEmailNote
@@ -120,44 +120,36 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
 
                     <Collapsible>
                         <CollapsibleHeader
+                            className="color-weak"
                             suffix={
                                 <CollapsibleHeaderIconButton className="color-weak">
                                     <Icon name="chevron-down" />
                                 </CollapsibleHeaderIconButton>
                             }
                         >
-                            <div className="flex flex-row items-center color-weak">
-                                <Icon name="cog-wheel" />
-                                <div className="ml-1">{c('Wallet preference').t`Advanced options`}</div>
-                            </div>
+                            {c('Wallet preference').t`View more`}
                         </CollapsibleHeader>
                         <CollapsibleContent>
-                            <div className="flex flex-column items-center">
+                            <div className="flex flex-column items-center gap-2 mt-6">
                                 <Button
                                     fullWidth
                                     shape="solid"
                                     color="norm"
-                                    className="mt-6"
                                     onClick={() => {
                                         openBackupModal();
                                     }}
-                                >{c('Wallet preference').t`Back up wallet`}</Button>
+                                >{c('Wallet preference').t`View wallet seed phrase`}</Button>
 
                                 <Button
                                     fullWidth
                                     shape="solid"
                                     color="danger"
                                     onClick={() => openWalletDeletionConfirmationModal()}
-                                    className="mt-2"
                                 >{c('Wallet preference').t`Delete wallet`}</Button>
 
-                                <Button
-                                    fullWidth
-                                    shape="underline"
-                                    color="weak"
-                                    onClick={() => clearBrowserStorage()}
-                                    className="mt-2"
-                                >{c('Wallet preference').t`Clear browser storage`}</Button>
+                                <Button fullWidth shape="ghost" color="weak" onClick={() => clearBrowserStorage()}>{c(
+                                    'Wallet preference'
+                                ).t`Clear browser storage`}</Button>
                             </div>
                         </CollapsibleContent>
                     </Collapsible>
