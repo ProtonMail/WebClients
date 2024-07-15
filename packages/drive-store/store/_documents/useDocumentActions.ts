@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { getCurrentTab, getNewWindow } from '../../utils/window';
 import { useShare } from '../_shares';
 import { useAbortSignal } from '../_views/utils';
 import { useVolumesState } from '../_volumes';
@@ -38,44 +39,92 @@ export const useDocumentActions = () => {
         return volumeId;
     };
 
-    const openDocument = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
-        openDocumentWindow({
-            mode: 'open',
-            volumeId: await findVolume(shareId),
-            linkId,
-        });
+    const openDocument = async ({
+        shareId,
+        linkId,
+        openBehavior = 'tab',
+    }: {
+        shareId: string;
+        linkId: string;
+        openBehavior: 'tab' | 'redirect';
+    }) => {
+        const w = openBehavior === 'tab' ? getNewWindow() : getCurrentTab();
+
+        try {
+            openDocumentWindow({
+                mode: 'open',
+                window: w.handle,
+                volumeId: await findVolume(shareId),
+                linkId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
     };
 
     const createDocument = async ({ shareId, parentLinkId }: { shareId: string; parentLinkId: string }) => {
-        openDocumentWindow({
-            mode: 'create',
-            volumeId: await findVolume(shareId),
-            parentLinkId,
-        });
+        const w = getNewWindow();
+
+        try {
+            openDocumentWindow({
+                mode: 'create',
+                window: w.handle,
+                volumeId: await findVolume(shareId),
+                parentLinkId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
     };
 
     const convertDocument = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
-        openDocumentWindow({
-            mode: 'convert',
-            volumeId: await findVolume(shareId),
-            linkId,
-        });
+        const w = getNewWindow();
+
+        try {
+            openDocumentWindow({
+                mode: 'convert',
+                window: w.handle,
+                volumeId: await findVolume(shareId),
+                linkId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
     };
 
     const downloadDocument = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
-        openDocumentWindow({
-            mode: 'download',
-            volumeId: await findVolume(shareId),
-            linkId,
-        });
+        const w = getNewWindow();
+
+        try {
+            openDocumentWindow({
+                mode: 'download',
+                window: w.handle,
+                volumeId: await findVolume(shareId),
+                linkId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
     };
 
     const openDocumentHistory = async ({ shareId, linkId }: { shareId: string; linkId: string }) => {
-        openDocumentWindow({
-            mode: 'history',
-            volumeId: await findVolume(shareId),
-            linkId,
-        });
+        const w = getNewWindow();
+
+        try {
+            openDocumentWindow({
+                mode: 'history',
+                window: w.handle,
+                volumeId: await findVolume(shareId),
+                linkId,
+            });
+        } catch (e) {
+            w.close();
+            throw e;
+        }
     };
 
     return {
