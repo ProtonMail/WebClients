@@ -10,9 +10,18 @@ interface Props extends ModalPropsWithData<{}> {
     inputLabel: string;
     value: string;
     onSubmit: (value: string) => void;
+    maxLength?: number;
 }
 
-export const TextAreaModal = ({ title, buttonText, inputLabel, value: baseValue, onSubmit, ...modalProps }: Props) => {
+export const TextAreaModal = ({
+    title,
+    buttonText,
+    inputLabel,
+    value: baseValue,
+    onSubmit,
+    maxLength,
+    ...modalProps
+}: Props) => {
     const [value, setValue] = useState('');
 
     useEffect(() => {
@@ -28,6 +37,7 @@ export const TextAreaModal = ({ title, buttonText, inputLabel, value: baseValue,
                 label={inputLabel}
                 value={value}
                 onValue={(v: string) => setValue(v)}
+                maxLength={maxLength}
             />
 
             <Button color="norm" shape="solid" className="mt-6" fullWidth onClick={() => onSubmit(value)}>
