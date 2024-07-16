@@ -1134,6 +1134,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Bist du sicher, dass du den Eintrag nach \"${ name }\" verschieben willst?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Bist du sicher, dass du diesen Link entfernen möchtest?"
+      ],
       "Breaches detected": [
         "Datenlecks entdeckt"
       ],
@@ -1513,6 +1516,12 @@
       "Reconnecting": [
         "Verbindung wird wiederhergestellt"
       ],
+      "Registering extra password...": [
+        "Zusätzliches Passwort wird registriert..."
+      ],
+      "Removing extra password...": [
+        "Zusätzliches Passwort wird entfernt..."
+      ],
       "Restoring items from trash": [
         "Einträge vom Papierkorb werden wiederhergestellt"
       ],
@@ -1703,6 +1712,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du hast die maximal erlaubte Länge von ${ maxLength } Zeichen erreicht."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Du wirst abgemeldet und musst dich bei allen anderen Geräten erneut anmelden."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "Du wirst über Datenlecks im Zusammenhang mit diesen E-Mail-Adressen benachrichtigt."
@@ -2078,6 +2090,9 @@
       "Oldest to newest": [
         "Älteste nach neueste"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Open-Source Passwort-Manager für problemlosen Schutz."
+      ],
       "Organization": [
         "Organisation"
       ],
@@ -2125,6 +2140,9 @@
       ],
       "Reveal password": [
         "Passwort anzeigen"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Speichere, melde dich automatisch an und teile deine Accounts, geschützt mit ${ PASS_APP_NAME }, durch von Millionen vertraute Ende-zu-Ende-Verschlüsselung."
       ],
       "Security": [
         "Sicherheit"
@@ -2805,6 +2823,9 @@
       "Extra password cannot be empty": [
         "Das zusätzliche Passwort darf nicht leer sein."
       ],
+      "Extra password should have at least 8 characters": [
+        "Zusätzliches Passwort sollte mindestens 8 Zeichen lang sein."
+      ],
       "Failed to load breaches.": [
         "Fehler beim Laden der Datenlecks."
       ],
@@ -2868,6 +2889,9 @@
       ],
       "Please contact us for investigating the issue": [
         "Bitte kontaktiere uns, um das Problem zu untersuchen"
+      ],
+      "Please update the extension to its latest version": [
+        "Bitte update die Erweiterung auf die aktuelle Version"
       ],
       "Please verify your email address in order to use email aliases": [
         "Bitte bestätige deine E-Mail-Adresse, um E-Mail-Aliasse verwenden zu können."
