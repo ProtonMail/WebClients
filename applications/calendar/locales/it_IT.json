@@ -811,6 +811,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } dominio personalizzato aggiuntivo",
+        "${ domains } domini personalizzati aggiuntivi"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } server"
@@ -2441,6 +2445,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "L'operazione può richiedere alcuni minuti. Nel frattempo puoi continuare a utilizzare Calendar come al solito."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
       ],
@@ -3330,6 +3337,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Gli alias non possono essere usati quando è abilitata la password aggiuntiva in ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "App attualmente non disponibile"
       ],
@@ -9264,6 +9274,9 @@
       "Import failed": [
         "Importazione non riuscita"
       ],
+      "Import groups": [
+        "Importa gruppi"
+      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
@@ -9428,6 +9441,9 @@
       ],
       "Send invitation": [
         "Invia invito"
+      ],
+      "Set recovery phrase": [
+        "Imposta una frase di recupero"
       ],
       "Settings": [
         "Impostazioni"
