@@ -1,6 +1,14 @@
-import { useCallback, useState } from 'react';
+import { type Dispatch, type SetStateAction, useCallback, useState } from 'react';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { pipe, tap } from '@proton/pass/utils/fp/pipe';
+import noop from '@proton/utils/noop';
+
+type UseConfirmResult<P, R> = {
+    cancel: () => void;
+    confirm: () => Maybe<R>;
+    prompt: Dispatch<SetStateAction<MaybeNull<P>>>;
+} & ({ pending: true; param: P } | { pending: false; param: null });
 
 /**
  * The `useConfirm` hook lets you manage and confirm the execution of a callback.
@@ -23,16 +31,8 @@ import type { MaybeNull } from '@proton/pass/types';
 export const useConfirm = <P extends any, R extends any>(action: (param: P) => R) => {
     const [param, setParam] = useState<MaybeNull<P>>(null);
 
-    const confirm = useCallback(() => {
-        if (param === null) {
-            console.warn('No pending action');
-            return;
-        }
-
-        return action(param);
-    }, [param, action]);
-
     const cancel = useCallback(() => setParam(null), []);
+    const confirm = useCallback(pipe(param ? () => action(param) : noop, tap(cancel)), [param, action]);
 
     return {
         param,
@@ -40,5 +40,5 @@ export const useConfirm = <P extends any, R extends any>(action: (param: P) => R
         cancel,
         confirm,
         prompt: setParam,
-    };
+    } as UseConfirmResult<P, R>;
 };

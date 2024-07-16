@@ -75,7 +75,10 @@ const getSettings =
                         checked: settings.autosave.prompt,
                         onChange: (checked) =>
                             onSettingsUpdate({
-                                autosave: { prompt: checked, ...(!checked ? { passwordSuggest: false } : {}) },
+                                autosave: {
+                                    prompt: checked,
+                                    passwordSuggest: checked,
+                                },
                             }),
                     },
                     {
@@ -98,6 +101,13 @@ const getSettings =
                             .t`${PASS_APP_NAME} will suggest creating strong passwords on sign-up forms.`,
                         checked: settings.autosuggest.password,
                         onChange: (checked) => onSettingsUpdate({ autosuggest: { password: checked } }),
+                    },
+                    {
+                        label: c('Label').t`Copy password`,
+                        description: c('Info').t`Automatically copy the generated password to the clipboard`,
+                        checked: settings.autosuggest.passwordCopy,
+                        disabled: !settings.autosuggest.password,
+                        onChange: (checked) => onSettingsUpdate({ autosuggest: { passwordCopy: checked } }),
                     },
                     {
                         label: c('Label').t`Email aliases`,

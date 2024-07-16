@@ -1,4 +1,4 @@
-import { type FC, useEffect, useRef, useState } from 'react';
+import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
@@ -23,9 +23,9 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator
 import { type Maybe } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-type Props = { hostname: string; config: GeneratePasswordConfig };
+type Props = { hostname: string; config: GeneratePasswordConfig; copy: boolean };
 
-export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial }) => {
+export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial, copy }) => {
     const { visible, forwardMessage, close } = useIFrameContext();
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
@@ -43,18 +43,24 @@ export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial }) =>
 
     /* FIXME: move away from from `execCommand` and
      * prefer `navigator.clipboard` API  */
-    const copyPassword = async (immediate: boolean) => {
+    const copyToClipboard = useCallback(() => {
         inputRef.current?.select();
         document.execCommand('copy');
+        setCopied(true);
+    }, []);
 
+    const autofillPassword = (feedback: boolean) => {
         forwardMessage({
             type: IFrameMessageType.DROPDOWN_AUTOFILL_GENERATED_PW,
             payload: { password: generator.password },
         });
 
-        timer.current = setTimeout(close, immediate ? 0 : 1_500);
-        setCopied(true);
+        if (copy) copyToClipboard();
+        if (feedback) timer.current = setTimeout(close, 1_000);
+        else close();
     };
+
+    const label = copy ? c('Title').t`Fill & copy password` : c('Title').t`Fill password`;
 
     return (
         <>
@@ -94,11 +100,11 @@ export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial }) =>
                       }
                     : {
                           icon: 'key',
-                          title: c('Title').t`Fill & copy password`,
+                          title: label,
                           subTitle: (
                               <span className="text-monospace">{getCharsGroupedByColor(generator.password)}</span>
                           ),
-                          onClick: () => copyPassword(false),
+                          onClick: () => autofillPassword(copy),
                       })}
             />
             <input ref={inputRef} className="invisible" value={generator.password} readOnly />
@@ -111,8 +117,8 @@ export const AutosuggestPassword: FC<Props> = ({ hostname, config: initial }) =>
                     {isUsingMemorablePassword(generator) && <PasswordMemorableOptions advanced dense {...generator} />}
                     <hr className="m-0" />
                     <div className="flex gap-x-2">
-                        <Button className="flex-1" pill shape="solid" onClick={() => copyPassword(true)}>
-                            {c('Title').t`Fill & copy password`}
+                        <Button className="flex-1" pill shape="solid" onClick={() => autofillPassword(false)}>
+                            {label}
                         </Button>
                         <Button icon pill shape="solid" className="shrink-0" onClick={generator.regeneratePassword}>
                             <Icon name="arrows-rotate" alt={c('Action').t`Regenerate`} />

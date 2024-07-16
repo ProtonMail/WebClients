@@ -1,7 +1,10 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { clientHasSession, clientNeedsSession } from '@proton/pass/lib/client';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import type { SanitizedPublicKeyRequest } from '@proton/pass/lib/passkeys/types';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import type { Predicate } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -98,13 +101,28 @@ export const createWebAuthNService = () => {
                                 const features = ctx.getFeatures();
                                 return features.Passkeys && settings.passkeys.get;
                             })
-                                .then(() => {
-                                    ctx?.service.iframe.attachNotification()?.open({
-                                        action: NotificationAction.PASSKEY_GET,
-                                        domain,
-                                        request,
-                                        token,
-                                    });
+                                .then(async () => {
+                                    const publicKey = JSON.parse(request) as SanitizedPublicKeyRequest;
+                                    const credentialIds = (publicKey.allowCredentials ?? []).map(prop('id'));
+
+                                    await sendMessage.on(
+                                        contentScriptMessage({
+                                            type: WorkerMessageType.PASSKEY_QUERY,
+                                            payload: { domain, credentialIds },
+                                        }),
+                                        (response) => {
+                                            const passkeys = response.type === 'success' ? response.passkeys : [];
+                                            if (!passkeys.length) return abort(true);
+
+                                            return ctx?.service.iframe.attachNotification()?.open({
+                                                action: NotificationAction.PASSKEY_GET,
+                                                domain,
+                                                request,
+                                                token,
+                                                passkeys,
+                                            });
+                                        }
+                                    );
                                 })
                                 .catch(() => abort(true));
                         }

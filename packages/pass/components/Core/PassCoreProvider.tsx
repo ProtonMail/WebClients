@@ -10,6 +10,7 @@ import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, OnboardingMessage } from '@proton/pass/types';
+import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
@@ -57,6 +58,8 @@ export type PassCoreContextValue = {
         Dimensions: TelemetryEvent<T>['Dimensions'],
         platform?: TelemetryPlatform
     ) => void;
+    /** Processes an event for B2B users only */
+    onB2BEvent: (event: B2BEvent) => void;
     /** Acknowledge an onboarding message*/
     onboardingAcknowledge?: (type: OnboardingMessage) => MaybePromise<void | boolean>;
     /** Check if an onboarding message should show */

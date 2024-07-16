@@ -316,3 +316,17 @@ export const selectItemSecureLinks = (shareId: string, itemId: string) =>
     createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
         (secureLinks[shareId]?.[itemId] ?? []).slice().sort(sortOn('active', 'DESC'))
     );
+
+export const selectSecureLinksByShareId = (shareId: string) =>
+    createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
+        Object.values(secureLinks?.[shareId] ?? {}).flat()
+    );
+
+export const selectSecureLinksByItems = (items: BulkSelectionDTO) =>
+    createSelector(selectSecureLinks, (secureLinks): SecureLink[] =>
+        Object.entries(items).flatMap(([shareId, item]) => {
+            const [itemId] = Object.keys(item);
+
+            return secureLinks[shareId]?.[itemId] ?? [];
+        })
+    );

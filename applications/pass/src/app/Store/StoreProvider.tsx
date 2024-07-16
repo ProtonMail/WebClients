@@ -6,6 +6,7 @@ import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider'
 import { useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
+import { b2bEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -68,6 +69,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                     if (res.ok) {
                         telemetry.start().catch(noop);
+                        b2bEvents.start().catch(noop);
                         core.i18n.setLocale(selectLocale(state)).catch(noop);
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());

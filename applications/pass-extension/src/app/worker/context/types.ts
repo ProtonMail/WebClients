@@ -9,6 +9,7 @@ import type { AliasService } from '../services/alias';
 import type { APIProxyService } from '../services/api-proxy';
 import type { AutoFillService } from '../services/autofill';
 import type { AutoSaveService } from '../services/autosave';
+import type { B2BEventsService } from '../services/b2b';
 import type { ExportService } from '../services/export';
 import type { FormTrackerService } from '../services/form.tracker';
 import type { I18NService } from '../services/i18n';
@@ -53,6 +54,7 @@ export interface WorkerContextInterface {
         storage: StorageService;
         store: StoreService;
         telemetry: MaybeNull<TelemetryService>;
+        b2bEvents: MaybeNull<B2BEventsService>;
     };
     /* status update : side-effects will be triggered */
     setStatus: (status: AppStatus) => void;
