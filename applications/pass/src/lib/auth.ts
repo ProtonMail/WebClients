@@ -6,7 +6,7 @@ import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents, getB2BEventsStorageKey } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
-import { settings } from 'proton-pass-web/lib/settings';
+import { getSettingsStorageKey } from 'proton-pass-web/lib/settings';
 import { getTelemetryStorageKey, telemetry } from 'proton-pass-web/lib/telemetry';
 import type { ClientContextValue } from 'proton-pass-web/src/app/Context/ClientProvider';
 
@@ -220,7 +220,7 @@ export const createAuthService = ({
             telemetry.stop();
             B2BEvents.stop();
 
-            void settings.clear();
+            void settings.clear(localID);
             setSentryUID(undefined);
 
             flushSync(() => {
@@ -261,6 +261,7 @@ export const createAuthService = ({
                 await deletePassDB(UserID).catch(noop);
                 sessionsForUserID.forEach((key) => {
                     localStorage.removeItem(key);
+                    localStorage.removeItem(getSettingsStorageKey(LocalID));
                     localStorage.removeItem(getTelemetryStorageKey(LocalID));
                     localStorage.removeItem(getB2BEventsStorageKey(LocalID));
                 });
