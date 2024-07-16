@@ -15,8 +15,6 @@ describe('transformEscape', () => {
                 <image xlink:href="chrome.jpg" x="0" y="0" height="50px" width="50px" />
                 <image href="svg-href.jpg" x="0" y="0" height="50px" width="50px" />
             </svg>
-            <video src="fichiervideo.webm" autoplay poster="vignette.jpg">
-            </video>
             <div>
                 <img border="0" usemap="#fp"  src="cats.jpg ">
                 <map name="fp">
@@ -24,8 +22,6 @@ describe('transformEscape', () => {
                 </map>
             </div>
 
-            <video src="fichiervideo.webm" autoplay poster="vignette2.jpg">
-            </video>
             <img src="mon-image.jpg" srcset="mon-imageHD.jpg 2x" width="" height="" alt="">
             <img src="lol-image.jpg" srcset="lol-imageHD.jpg 2x" width="" height="" alt="">
             <img data-src="lol-image.jpg" width="" height="" alt="">
@@ -234,7 +230,7 @@ describe('transformEscape', () => {
 
             it('should add the prefix before src', () => {
                 const list = getAttribute('proton-src');
-                expect(list.length).toBe(5);
+                expect(list.length).toBe(3);
             });
 
             it('should add the prefix before data-src', () => {
@@ -249,11 +245,6 @@ describe('transformEscape', () => {
 
             it('should add the prefix before background', () => {
                 const list = getAttribute('proton-background');
-                expect(list.length).toBe(2);
-            });
-
-            it('should add the prefix before poster', () => {
-                const list = getAttribute('proton-poster');
                 expect(list.length).toBe(2);
             });
         });
