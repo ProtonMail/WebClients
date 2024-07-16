@@ -590,7 +590,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                     return (
                                                         <>
                                                             {Boolean(member.Self) && (
-                                                                <UserTableBadge type="success" className="">
+                                                                <UserTableBadge type="success">
                                                                     {c('Users table: badge').t`It's you`}
                                                                 </UserTableBadge>
                                                             )}
@@ -607,8 +607,14 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     </UserTableBadge>
                                                                 )}
                                                             {member.NumAI > 0 && (
-                                                                <Badge type="origin">{c('Users table: badge')
-                                                                    .t`Writing assistant`}</Badge>
+                                                                <Badge type="origin">
+                                                                    {c('Users table: badge').t`Writing assistant`}
+                                                                </Badge>
+                                                            )}
+                                                            {member['2faStatus'] > 0 && (
+                                                                <Badge type="origin">
+                                                                    {c('Users table: badge').t`2FA`}
+                                                                </Badge>
                                                             )}
                                                             {Boolean(member.SSO) && (
                                                                 <UserTableBadge
