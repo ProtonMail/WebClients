@@ -3,12 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Alert } from '@proton/components/index';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
-import { WithVault } from '@proton/pass/components/Vault/WithVault';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import {
     itemBulkDeleteIntent,
@@ -22,6 +18,9 @@ import {
 } from '@proton/pass/store/actions';
 import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+
+import { ConfirmMoveItem } from './Actions/ConfirmMoveItem';
+import { ConfirmMoveManyItems } from './Actions/ConfirmMoveManyItems';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
@@ -120,47 +119,25 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 {...modalState}
             />
 
-            <WithVault shareId={moveItem.param?.shareId}>
-                {({ content: { name } }) => (
-                    <ConfirmationModal
-                        open={moveItem.pending}
-                        onClose={moveItem.cancel}
-                        onSubmit={moveItem.confirm}
-                        submitText={c('Action').t`Confirm`}
-                        title={c('Title').t`Move item?`}
-                    >
-                        <Card className="mb-2 text-sm" type="primary">{c('Info')
-                            .t`Moving an item to another vault will erase its history`}</Card>
-                        <Alert className="mb-4" type="info">
-                            {
-                                // translator: variable here is the name of the user's vault
-                                c('Info').t`Are you sure you want to move the item to "${name}" ?`
-                            }
-                        </Alert>
-                    </ConfirmationModal>
-                )}
-            </WithVault>
+            {moveItem.pending && (
+                <ConfirmMoveItem
+                    open
+                    item={moveItem.param.item}
+                    shareId={moveItem.param.shareId}
+                    onCancel={moveItem.cancel}
+                    onConfirm={moveItem.confirm}
+                />
+            )}
 
-            <WithVault shareId={moveManyItems.param?.shareId}>
-                {({ content: { name } }) => (
-                    <ConfirmationModal
-                        open={moveManyItems.pending}
-                        onClose={moveManyItems.cancel}
-                        onSubmit={moveManyItems.confirm}
-                        submitText={c('Action').t`Confirm`}
-                        title={c('Title').t`Move items?`}
-                    >
-                        <Card className="mb-2 text-sm" type="primary">{c('Info')
-                            .t`Moving items to another vault will erase their history`}</Card>
-                        <Alert className="mb-4" type="info">
-                            {
-                                // translator: variable here is the name of the user's vault
-                                c('Info').t`Are you sure you want to move items to "${name}" ?`
-                            }
-                        </Alert>
-                    </ConfirmationModal>
-                )}
-            </WithVault>
+            {moveManyItems.pending && (
+                <ConfirmMoveManyItems
+                    open
+                    selected={moveManyItems.param.selected}
+                    shareId={moveManyItems.param.shareId}
+                    onConfirm={moveManyItems.confirm}
+                    onCancel={moveManyItems.cancel}
+                />
+            )}
         </ItemActionsContext.Provider>
     );
 };

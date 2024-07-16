@@ -1,10 +1,10 @@
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
-import type { TelemetryStorageData } from '@proton/pass/lib/telemetry/service';
-import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
+import { type TelemetryStorageKey, createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
 import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors';
 import type { ExtensionStorage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import type { EventDispatcherAlarm } from '@proton/pass/utils/event/dispatcher';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from '../channel';
@@ -13,16 +13,20 @@ import store from '../store';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 
-export const createTelemetryService = (storage: ExtensionStorage<TelemetryStorageData>) => {
+export const createAlarmHandles = (alarmName: string): EventDispatcherAlarm => {
+    return {
+        reset: () => browser.alarms.clear(alarmName).catch(noop),
+        when: async () => (await browser.alarms.get(alarmName).catch(noop))?.scheduledTime,
+        set: (when) => browser.alarms.create(alarmName, { when }),
+    };
+};
+
+export const createTelemetryService = (storage: ExtensionStorage<Record<TelemetryStorageKey, string>>) => {
     const { push, send, start, stop } = createCoreTelemetryService({
-        alarm: {
-            reset: () => browser.alarms.clear(TELEMETRY_ALARM_NAME).catch(noop),
-            when: async () => (await browser.alarms.get(TELEMETRY_ALARM_NAME).catch(noop))?.scheduledTime,
-            set: (when) => browser.alarms.create(TELEMETRY_ALARM_NAME, { when }),
-        },
+        alarm: createAlarmHandles(TELEMETRY_ALARM_NAME),
+        storage,
         getEnabled: () => selectTelemetryEnabled(store.getState()),
         getUserTier: () => selectUserTier(store.getState()),
-        storage,
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.TELEMETRY_EVENT, ({ payload: { event } }) => push(event));

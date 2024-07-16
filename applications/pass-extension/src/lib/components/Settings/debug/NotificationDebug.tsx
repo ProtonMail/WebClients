@@ -113,6 +113,7 @@ export const NotificationDebug: FC = () => {
                         domain: 'webauthn.io',
                         token: 'some-token',
                         request: JSON.stringify({}),
+                        passkeys: [],
                     }}
                 >
                     <Notification />

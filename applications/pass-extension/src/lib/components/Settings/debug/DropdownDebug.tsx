@@ -102,6 +102,7 @@ export const DropdownDebug: FC = () => {
                         action: DropdownAction.AUTOSUGGEST_PASSWORD,
                         config: DEFAULT_RANDOM_PW_OPTIONS,
                         hostname: 'proton.me',
+                        copy: false,
                     }}
                     width={DROPDOWN_WIDTH}
                 >

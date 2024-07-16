@@ -9,6 +9,7 @@ import dashlane from '@proton/pass/assets/import/dashlane-icon-48.png';
 import edge from '@proton/pass/assets/import/edge-icon-48.png';
 import enpass from '@proton/pass/assets/import/enpass-icon-48.png';
 import firefox from '@proton/pass/assets/import/firefox-icon-48.png';
+import kaspersky from '@proton/pass/assets/import/kaspersky-icon-48.png';
 import keepass from '@proton/pass/assets/import/keepass-icon-48.png';
 import keeper from '@proton/pass/assets/import/keeper-icon-48.png';
 import lastpass from '@proton/pass/assets/import/lastpass-icon-48.png';
@@ -37,6 +38,7 @@ const IMPORT_ICON_MAP: ImportIconMap = {
     [ImportProvider.ROBOFORM]: roboform,
     [ImportProvider.SAFARI]: safari,
     [ImportProvider.CSV]: csv,
+    [ImportProvider.KASPERSKY]: kaspersky,
 };
 
 type Props = { provider: ImportProvider; className?: string };

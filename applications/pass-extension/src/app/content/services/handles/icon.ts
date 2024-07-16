@@ -56,15 +56,16 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         cancelAnimationFrame(repositioning.animate);
     };
 
-    const reposition = (revalidate: boolean = false) => {
+    const reposition = (reflow: boolean = false) => {
         cancelReposition();
+        const inputBox = field.getBoxElement({ reflow });
+        const form = field.getFormHandle().element;
+
         repositioning.request = requestAnimationFrame(() => {
             animatePositionChange({
                 onAnimate: (request) => (repositioning.animate = request),
                 get: () => field.element.getBoundingClientRect(),
                 set: () => {
-                    const inputBox = field.getBoxElement({ revalidate });
-                    const form = field.getFormHandle().element;
                     cleanupInjectionStyles({ input, control });
                     applyInjectionStyles({ icon, control, input, inputBox, form });
                 },
@@ -113,7 +114,7 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         { childList: true, subtree: true }
     );
 
-    reposition(); /* fire reposition on initial icon handle creation */
+    reposition(true); /* fire reposition on initial icon handle creation */
 
     return { element: icon, setStatus, setCount, detach, reposition };
 };

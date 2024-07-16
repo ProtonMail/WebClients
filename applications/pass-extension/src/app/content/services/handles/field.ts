@@ -27,8 +27,8 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         const { action, element } = field;
         if (!action) return;
 
-        field.getBoxElement({ revalidate: true });
-        field?.icon?.reposition();
+        if (field.icon) field.icon.reposition(true);
+        else field.getBoxElement({ reflow: true });
 
         requestAnimationFrame(() => {
             if (actionPrevented(element)) return;
@@ -99,7 +99,7 @@ export const createFieldHandles = ({
         zIndex,
         getFormHandle,
         getBoxElement: (options) => {
-            if (options?.revalidate) field.boxElement = findBoundingInputElement(element);
+            if (options?.reflow) field.boxElement = findBoundingInputElement(element);
             return field.boxElement;
         },
         setValue: (value) => (field.value = value),
@@ -143,11 +143,11 @@ export const createFieldHandles = ({
         attach({ onChange, onSubmit }) {
             field.tracked = true;
             listeners.removeAll();
-            listeners.addListener(field.element, 'blur', () => field.icon?.reposition());
+            listeners.addListener(field.element, 'blur', () => field.icon?.reposition(false));
             listeners.addListener(field.element, 'focus', onFocusField(field));
             listeners.addListener(field.element, 'input', pipe(onInputField(field), onChange));
             listeners.addListener(field.element, 'keydown', pipe(onKeyDownField(onSubmit), onChange));
-            listeners.addResizeObserver(field.element, () => field.icon?.reposition());
+            listeners.addResizeObserver(field.element, () => field.icon?.reposition(false));
             listeners.addObserver(field.element, onFieldAttributeChange(field), {
                 attributeFilter: ['type'],
                 attributeOldValue: true,

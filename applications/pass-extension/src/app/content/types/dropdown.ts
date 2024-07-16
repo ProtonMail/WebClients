@@ -1,4 +1,4 @@
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
+import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { MaybeNull, SafeLoginItem } from '@proton/pass/types';
 
 import type { FieldHandle } from './form';
@@ -12,7 +12,7 @@ export enum DropdownAction {
 
 export type DropdownActions =
     | { action: DropdownAction.AUTOFILL; hostname: string; items: SafeLoginItem[]; needsUpgrade: boolean }
-    | { action: DropdownAction.AUTOSUGGEST_PASSWORD; hostname: string; config: GeneratePasswordConfig }
+    | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD; hostname: string } & PasswordAutosuggestOptions)
     | { action: DropdownAction.AUTOSUGGEST_ALIAS; hostname: string; prefix: string };
 
 export type DropdownOpenOptions = {
