@@ -210,10 +210,12 @@ const SingleSignupContainerV2 = ({
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
     const audience = (() => {
         if (
-            productParam === 'business' ||
-            [SSO_PATHS.PASS_SIGNUP_B2B, SSO_PATHS.MAIL_SIGNUP_B2B, SSO_PATHS.CALENDAR_SIGNUP_B2B].includes(
-                location.pathname as any
-            )
+            [
+                SSO_PATHS.PASS_SIGNUP_B2B,
+                SSO_PATHS.MAIL_SIGNUP_B2B,
+                SSO_PATHS.CALENDAR_SIGNUP_B2B,
+                SSO_PATHS.BUSINESS_SIGNUP,
+            ].includes(location.pathname as any)
         ) {
             return Audience.B2B;
         }
@@ -325,8 +327,8 @@ const SingleSignupContainerV2 = ({
                 data: { invitee: email, preVerifiedAddressToken },
             };
             result.preSelectedPlan = PLANS.FREE;
-        } else if (toApp === APPS.PROTONWALLET && walletEASignupEnabled) {
-            result.preSelectedPlan = PLANS.VISIONARY;
+        } else if (toApp === APPS.PROTONWALLET && walletEASignupEnabled && !result.preSelectedPlan) {
+            result.preSelectedPlan = PLANS.FREE;
         }
 
         if (result.referrer) {
@@ -365,6 +367,8 @@ const SingleSignupContainerV2 = ({
             invite,
         };
     });
+
+    const theme = getPublicTheme(toApp, audience, viewportWidth);
 
     const signupConfiguration = (() => {
         const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
@@ -425,6 +429,7 @@ const SingleSignupContainerV2 = ({
             });
         }
         return getGenericConfiguration({
+            theme,
             audience,
             mode: signupParameters.mode,
             plan,
@@ -1139,8 +1144,6 @@ const SingleSignupContainerV2 = ({
 
         return result.cache;
     };
-
-    const theme = getPublicTheme(toApp, audience, viewportWidth);
 
     return (
         <PublicThemeProvider value={theme}>
