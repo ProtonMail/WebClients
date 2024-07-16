@@ -257,6 +257,9 @@
       "Next": [
         "Következő"
       ],
+      "Next month": [
+        "Következő hónap"
+      ],
       "OK": [
         "OK"
       ],
@@ -289,6 +292,9 @@
       ],
       "Previous": [
         "Előző"
+      ],
+      "Previous month": [
+        "Előző hónap"
       ],
       "Recover data": [
         "Adatok helyreállítása"
@@ -1892,6 +1898,9 @@
       "Please set a recovery phone number first": [
         "Először adja meg a helyreállítási telefonszámot"
       ],
+      "Please try again in a few moments.": [
+        "Néhány perc múlva próbálja meg újra."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Váltson nagyobb üzleti csomagra, egynél több felhasználval, a többfelhasználós lehetőségekhez"
       ],
@@ -2620,6 +2629,9 @@
       "By leaving now, changes may not be saved": [
         "Ha most kilép, a módosítások elveszhetnek"
       ],
+      "Change your password": [
+        "Jelszó megváltoztatása"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
@@ -2833,6 +2845,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Invite rejected": [
+        "Meghívás elutasítva"
       ],
       "JCB logo": [
         "JCB logó"
@@ -3071,6 +3086,12 @@
       "Thank you": [
         "Köszönöm"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A letöltések száma tartalmazza a tényleges letöltéseket és az előnézet megtekintéseit is."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "A titkosított adatok egy kicsit több helyet foglalnak a titkosítás és az aláírások miatt, amelyek az adatai biztonságát szolgálják."
+      ],
       "The following address is invalid.": [
         "A következő cím érvénytelen.",
         "A következő címek érvénytelenek."
@@ -3274,6 +3295,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
+      ],
+      "Week": [
+        "Hét"
       ],
       "Welcome": [
         "Üdvözöljük"
@@ -3990,6 +4014,11 @@
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
         "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
         "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } engedélyezése"
       ]
     },
     "mailtrial2024: Action": {
@@ -4711,6 +4740,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } letiltva"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } engedélyezésre került"
+      ],
       "A disabled address cannot be default": [
         "Egy kikapcsolt cím nem lehet alapértelmezett"
       ],
@@ -4905,6 +4940,12 @@
       "Confirm": [
         "Jóváhagyás"
       ],
+      "E.g., ": [
+        "Pl., "
+      ],
+      "End date": [
+        "Befejező dátum"
+      ],
       "Feedback": [
         "Visszajelzés"
       ],
@@ -4931,6 +4972,9 @@
       ],
       "Select a reason": [
         "Válasszon egy indokot"
+      ],
+      "Start date": [
+        "Kezdő dátum"
       ],
       "yourdomain.com": [
         "domainneve.com"
@@ -5990,10 +6034,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -6154,6 +6198,9 @@
       ],
       "Invoices": [
         "Számlák"
+      ],
+      "Minicalendar": [
+        "Mini naptár"
       ],
       "Multi-user support": [
         "Többfelhasználós lehetőség"
@@ -6413,6 +6460,11 @@
       ],
       "Status": [
         "Állapot"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Ma"
       ]
     },
     "Tooltip": {

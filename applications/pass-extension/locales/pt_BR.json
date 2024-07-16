@@ -113,11 +113,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta na ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Criar um cofre para compartilhar"
@@ -1129,6 +1129,9 @@
       "Close this window in order to use another passkey manager.": [
         "Feche esta janela para usar outro gerenciador de chaves de acesso."
       ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Confirme sua senha adicional para prosseguir com a remoção."
+      ],
       "Congratulations, your access has been confirmed": [
         "Parabéns, seu acesso foi confirmado."
       ],
@@ -1698,6 +1701,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Você atingiu o comprimento máximo permitido de ${ maxLength } caracteres."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Você será desconectado e precisará iniciar sessão novamente em todos os seus outros dispositivos."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Você usará este PIN para desbloquear o ${ PASS_APP_NAME } quando ele bloquear automaticamente após um período de inatividade."
@@ -2341,7 +2347,7 @@
         "Insira a senha"
       ],
       "Enter username": [
-        "Digitar nome do usuário"
+        "Digitar nome de usuário"
       ],
       "Full Name": [
         "Nome completo"
@@ -2751,6 +2757,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verifique seu endereço de e-mail para utilizar o compartilhamento de cofre"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "A remoção da sua senha adicional fará o encerramento da sessão de todos os dispositivos e encerrará todas as sessões ativas."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."

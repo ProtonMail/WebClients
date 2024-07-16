@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Öppna"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
       ],
@@ -760,11 +763,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -1137,6 +1140,12 @@
       ],
       "Verify account": [
         "Verifiera konto"
+      ],
+      "Verify code": [
+        "Verifiera kod"
+      ],
+      "Verify code again": [
+        "Verifiera kod igen"
       ],
       "Verify domain": [
         "Verifiera domän"
@@ -1537,6 +1546,14 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1558,14 +1575,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4007,6 +4016,9 @@
       "Checkout expired, please try again": [
         "Kassan löpt ut, försök igen"
       ],
+      "Code wrong or not valid anymore": [
+        "Kod fel eller inte giltig längre"
+      ],
       "Condition incomplete": [
         "Villkor ofullständig"
       ],
@@ -4083,6 +4095,9 @@
       ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Om tiden på din TV har löpt ut, klicka på ”Uppdatera” på din TV och ange din kod igen."
       ],
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
@@ -5600,6 +5615,11 @@
         "Tjänster"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Gruppadress"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -6154,6 +6174,9 @@
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } pausade en import eftersom ditt konto har ont om lagringsutrymme. Du kan:"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
       ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } kommer att försöka återuppta importen så snart din e-postleverantör återställer ditt kontos ${ bandwidthLimitLink }. Du behöver inte göra någonting. Om du avbryter din import kommer du inte att kunna återuppta den och du måste börja om."
@@ -6751,11 +6774,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -6769,6 +6792,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Tar bort ${ deletedServerCount } gatewayserver",
         "Tar bort ${ deletedServerCount } gatewayservrar"
+      ],
+      "Disable recovery by ${ type }": [
+        "Inaktivera återställning med ${ type }"
       ],
       "Discount": [
         "Rabatt"
@@ -7796,6 +7822,12 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
+      "Session Ended": [
+        "Session avslutad"
+      ],
+      "Session Started": [
+        "Session startad"
+      ],
       "Session timed out": [
         "Session timeout"
       ],
@@ -7956,8 +7988,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Mörka webben är en dold del av Internet där stulen personlig information, som identiteter, kan köpas och säljas."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Länken för e-postverifiering har löpt ut. Logga in för att skicka en verifieringslänk igen."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Den krypterade datan är något större på grund av överbelastningen av krypteringen och signaturerna, som säkerställer säkerheten för dina data."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
@@ -8148,6 +8186,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "För att säkerställa kontinuerlig åtkomst till ditt konto, ställ in en återställningsmetod för ditt konto"
       ],
+      "To ensure highest possible security of your account": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "För att säkerställa att du inte förlorar viktig data sparar ${ DRIVE_APP_NAME } äldre versioner av dina filer när du och dina medarbetare gör ändringar. Välj hur länge ${ BRAND_NAME } ska behålla tidigare versioner."
       ],
@@ -8250,8 +8291,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Uppgradera till ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[bundleProPlan] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Uppgradera till ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[bundleProPlan] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Uppgradera för att lägga till en kortare @pm.me-adress till ditt konto som är lättare att dela. Det står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
@@ -8333,6 +8374,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifiering kommer öppna en ny flik. Inaktivera alla popup-blockerare. Du kommer inte att debiteras. Eventuellt belopp som används för att verifiera kortet kommer att återbetalas omedelbart."
+      ],
+      "Verify ${ type }": [
+        "Verifiera ${ type }"
       ],
       "Verify domain": [
         "Verifiera domän"
@@ -9614,6 +9658,9 @@
       "Enter password": [
         "Ange lösenord"
       ],
+      "Enter the code displayed on your TV": [
+        "Ange koden som visas på din TV"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ange lösenordet för nyckeln med fingeravtrycket: ${ fingerprintCode }"
       ],
@@ -10565,11 +10612,14 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Skaffa ${ plan }** under en begränsad tid!"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Skaffa ${ plan }** för förhandstillgång till ${ appName }!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Bli en Visionary och bli en del av ${ BRAND_NAME }'s berättelse"
-      ],
-      "Limited time offer": [
-        "Tidsbegränsat erbjudande"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11021,6 +11071,23 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11048,23 +11115,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -12861,8 +12911,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alla ${ BRAND_NAME } Plus-tjänster.${ br }En enkel prenumeration."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Skapa ett ${ PASS_APP_NAME }-konto"
+      "Create a ${ appName } account": [
+        "Skapa ett ${ appName }-konto"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Skapa ditt ${ BRAND_NAME }-konto"
@@ -15455,10 +15505,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -15511,6 +15561,9 @@
       ],
       "Connect ${ name }": [
         "Anslut ${ name }"
+      ],
+      "Connection events": [
+        "Anslutningshändelser"
       ],
       "Contact us": [
         "Kontakta oss"
@@ -15648,6 +15701,9 @@
       ],
       "Details": [
         "Detaljer"
+      ],
+      "Device connected!": [
+        "Enhet ansluten!"
       ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
@@ -15815,6 +15871,9 @@
       "Forward emails": [
         "Vidarebefordra e-post"
       ],
+      "Gateway": [
+        "Gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
@@ -15884,6 +15943,9 @@
       ],
       "Import failed": [
         "Import misslyckades"
+      ],
+      "Import groups": [
+        "Importera grupper"
       ],
       "Import key": [
         "Importera nyckel"
@@ -15989,6 +16051,9 @@
       ],
       "Organization name": [
         "Organisationsnamn"
+      ],
+      "Origin": [
+        "Ursprung"
       ],
       "Other calendars": [
         "Andra kalendrar"
@@ -16272,6 +16337,9 @@
       ],
       "Track your referrals": [
         "Spåra dina hänvisningar"
+      ],
+      "TV sign in": [
+        "TV-inloggning"
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"

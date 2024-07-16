@@ -1241,7 +1241,7 @@
         "Desmarca per a l'eliminació"
       ],
       "Unordered list": [
-        "Llista sense ordenar"
+        "Llista amb pics"
       ],
       "Unsnooze": [
         "Deixa de posposar"
@@ -6706,6 +6706,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "És possible que les dades que heu introduït a l'esborrany no es desin si sortiu de la pàgina."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les dades xifrades són lleugerament més grans a causa de la sobrecàrrega del xifratge i les signatures, els quals garanteixen la seguretat de les vostres dades."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
@@ -8492,7 +8498,7 @@
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
-        "per a ${ price }"
+        "per ${ price }"
       ]
     },
     "Mailbox": {
@@ -9165,7 +9171,7 @@
         "Nombre il·limitat d'inicis de sessió i de notes"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Inicis de sessió il·limitats, notes i targetes de crèdit"
+        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
       ],
       "Unlimited messages per day": [
         "Missatges diaris il·limitats"
@@ -9801,18 +9807,18 @@
     },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
-        "Caixa forta i compartició d'enllaços"
+        "Compartició segura de caixes fortes i enllaços"
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ],
       "Secure vault sharing (${ n } vault)": [
-        "Compartició segura de la caixa forta ${ n }",
-        "Compartició segura de les caixes fortes ${ n }"
+        "Compartició segura de caixes fortes (${ n } caixa forta)",
+        "Compartició segura de caixes fortes (${ n } caixes fortes)"
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartició segura de la caixa forta ${ n } i compartició d'enllaços",
-        "Compartició segura de les caixes fortes ${ n } i compartició d'enllaços"
+        "Compartició segura de caixes fortes (${ n } caixa forta) i compartició d'enllaços",
+        "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
       ]
     },
     "passwordless": {
@@ -11356,7 +11362,7 @@
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no és compatible amb usuaris addicionals."
+        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que el pla gratuït no és compatible amb usuaris addicionals."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
@@ -12236,6 +12242,9 @@
       ],
       "Import failed": [
         "Error en la importació"
+      ],
+      "Import groups": [
+        "Importa grups"
       ],
       "Insert contacts": [
         "Introdueix els contactes"

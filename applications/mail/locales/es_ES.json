@@ -826,6 +826,9 @@
       "Ok": [
         "Aceptar"
       ],
+      "Open": [
+        "Abierto"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
       ],
@@ -1241,7 +1244,7 @@
         "Desmarcar para eliminar"
       ],
       "Unordered list": [
-        "Lista desordenada"
+        "Lista con viñetas"
       ],
       "Unsnooze": [
         "Desactivar la pausa"
@@ -1640,7 +1643,7 @@
         "Incluye soporte para ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo, alias ilimitados de hide-my-email, compartir calendario y más."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
+        "Incluye soporte para 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
@@ -3385,6 +3388,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Para continuar usando el asistente de escritura, solicita el acceso a tu administrador."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para garantizar el nivel más alto de seguridad, crea una frase de recuperación."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
       ],
@@ -3398,7 +3404,7 @@
         "Desbloquea las pausas personalizadas al mejorar tu plan."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
-        "Desbloquea un número ilimitado de filtros que ordenan la bandeja de entrada para ti y más funciones premium al mejorar tu plan."
+        "Desbloquea filtros ilimitados para ordenar tu bandeja de entrada y más funciones premium al mejorar tu plan."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloquea un número ilimitado de carpetas y etiquetas y más funciones premium al mejorar tu plan."
@@ -6706,6 +6712,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Es posible que los datos que has introducido en el borrador no se guarden si abandonas la página."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "El tamaño de los datos cifrados es ligeramente mayor debido al espacio adicional necesario para cifrado y firmas, los cuales aseguran la seguridad de tus datos."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de tu cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
       ],
@@ -9165,7 +9177,7 @@
         "Etiquetas ilimitadas"
       ],
       "Unlimited logins and notes": [
-        "Número ilimitado de accesos y de notas"
+        "Número ilimitado de inicios de sesión y de notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"
@@ -10452,7 +10464,7 @@
         "La solicitud de cambio de contraseña ha sido aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Ve al dispositivo en el que se ha iniciado sesión y donde se ha realizado la solicitud para cambiar tu contraseña."
+        "Ve al dispositivo en el que se ha iniciado sesión (donde se ha realizado la solicitud) para cambiar tu contraseña."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Este permiso expira en ${ timeRemaining.inDays } día.",
@@ -10481,7 +10493,7 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
@@ -12240,6 +12252,9 @@
       "Import failed": [
         "Error en la importación"
       ],
+      "Import groups": [
+        "Importar grupos"
+      ],
       "Insert contacts": [
         "Insertar contactos"
       ],
@@ -12509,6 +12524,9 @@
       ],
       "Sending original message": [
         "Enviando mensaje original"
+      ],
+      "Set recovery phrase": [
+        "Crear una frase de recuperación"
       ],
       "Set your own schedule": [
         "Establece tu propia agenda."

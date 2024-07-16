@@ -4,6 +4,14 @@
     "language": "ka_KA"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
@@ -76,6 +84,12 @@
       ],
       "Choose my own password": [
         "ჩემი პაროლის არჩევა"
+      ],
+      "Clear filter": [
+        "ფილტრის გასუფთავება"
+      ],
+      "Clear filters": [
+        "ფილტრების გასუფთავება"
       ],
       "Close": [
         "დახურვა"
@@ -323,6 +337,9 @@
       "Next": [
         "შემდეგი"
       ],
+      "Next month": [
+        "შემდეგი თვე"
+      ],
       "OK": [
         "დიახ"
       ],
@@ -355,6 +372,9 @@
       ],
       "Previous": [
         "წინა"
+      ],
+      "Previous month": [
+        "წინა თვე"
       ],
       "Recover data": [
         "მონაცემების აღდგენა"
@@ -747,6 +767,11 @@
       ],
       "Secure your communications": [
         "დაიცავით თქვენი კომუნიკაცია"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
       ]
     },
     "Badge for domain": {
@@ -2240,6 +2265,9 @@
       "Please set a recovery phone number first": [
         "ჯერ დააყენეთ აღდგენის ტელეფონის ნომერი"
       ],
+      "Please try again in a few moments.": [
+        "გთხოვთ, ხელახლა სცადოთ რამდენიმე წამში."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "მრავალმომხმარებლიანობის მისაღებად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს"
       ],
@@ -3140,6 +3168,9 @@
         "შეცვლადი მომხმარებელი არის ხაზზე",
         "შეცვლადი მომხმარებლები არიან ხაზზე"
       ],
+      "All Events ": [
+        "ყველა ღონისძიება "
+      ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
@@ -3233,6 +3264,9 @@
       "Can’t access your recovery phone?": [
         "არ გაქვთ წვდომა თქვენი აღდგენის ტელეფონთან?"
       ],
+      "Change your password": [
+        "შეცვალეთ თქვენი პაროლი"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
@@ -3291,11 +3325,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -3371,6 +3405,9 @@
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
       ],
+      "email": [
+        "ელფოსტა"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "ელფოსტის ჰოსტინგი 10 ხელით მითითებული დომენის სახელით უფასოა. დამატებითი დომენების შეძენის ფასია ${ price }."
       ],
@@ -3443,6 +3480,9 @@
       "Fill in user details": [
         "შეავსეთ მომხმარებლის დეტალები"
       ],
+      "finance": [
+        "ფინანსები"
+      ],
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
       ],
@@ -3466,6 +3506,9 @@
       ],
       "here": [
         "აქ"
+      ],
+      "High Priority": [
+        "მაღალი პრიორიტეტი"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "იდენტიფიკატორის მომწოდებლის საჯარო გასაღები ავთენტიკაციის მცდელობების ხელმოსაწერად. იდენტიფიკატორის მომწოდებელს უნდა ჰქონდეს ადგილი, საიდანაც სერტიფიკატის ჰეშის გადმოწერა ან კოპირება შეგიძლიათ. ეს სერტიფიკატის ჰეში, უბრალოდ, ტექსტის ველში ჩასვით."
@@ -3557,6 +3600,72 @@
       "Internet connection restored.": [
         "ინტერნეტთან კავშირი აღდგენილია."
       ],
+      "Invite Accepted": [
+        "მოწვევა მიღებულია"
+      ],
+      "Invite Created": [
+        "მოწვევა შეიქმნა"
+      ],
+      "Invite deleted": [
+        "მოწვევა წაიშალა"
+      ],
+      "Invite Deleted": [
+        "მოწვევა წაიშალა"
+      ],
+      "Invite for organization accepted": [
+        "მოწვევა ორგანიზაციისთვის მიღებულია"
+      ],
+      "Invite for organization created": [
+        "მოწვევა ორგანიზაციისთვის შექმნილია"
+      ],
+      "Invite rejected": [
+        "მოწვევა უარყოფილია"
+      ],
+      "Invite Rejected": [
+        "მოწვევა უარყოფილია"
+      ],
+      "Item Autofilled": [
+        "ელემენტი ავტოშევსებულია"
+      ],
+      "Item autofilled in vault": [
+        "ელემენტი ავტოშევსებულია საცავში"
+      ],
+      "Item Changed Flags": [
+        "ელემენტის ალმები შეიცვალა"
+      ],
+      "Item Created": [
+        "ელემენტი შეიქმნა"
+      ],
+      "Item created in vault": [
+        "ელემენტი შეიქმნა საცავში"
+      ],
+      "Item Deleted": [
+        "ელემენტი წაიშალა"
+      ],
+      "Item flags changed in vault": [
+        "ელემენტის ალმები შეიცვალა საცავში"
+      ],
+      "Item in vault untrashed": [
+        "ელემენტი გადმოტანილია საცავის ნაგვის ყუთიდან"
+      ],
+      "Item Read": [
+        "ელემენტი წაკითხულია"
+      ],
+      "Item read in vault": [
+        "ელემენტი წაკითხულია საცავში"
+      ],
+      "Item Trashed": [
+        "ელემენტი გადატანილია ნაგვის ყუთში"
+      ],
+      "Item Untrashed": [
+        "ელემენტი გადმოტანილია ნაგვის ყუთიდან"
+      ],
+      "Item Updated": [
+        "ელემენტი განახლდა"
+      ],
+      "Item updated in vault": [
+        "ელემენტი განახლდა საცავში"
+      ],
       "JCB logo": [
         "JCB ლოგო"
       ],
@@ -3596,6 +3705,9 @@
       "Loading...": [
         "ჩატვირთვა..."
       ],
+      "Low Priority": [
+        "დაბალი პრიორიტეტი"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "ელფოსტის ძირითადი სერვისები უარყოფებ ან გაფილტრავენ თქვენ ელფოსტას სპამში, თუ SPF/DKIM/DMARC აკლია ან არასწორია."
       ],
@@ -3611,11 +3723,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
       ],
+      "Medium Priority": [
+        "საშუალო პრიორიტეტი"
+      ],
       "Member": [
         "წევრი"
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "Monitor accounts": [
+        "ანგარიშების მონიტორი"
       ],
       "Multi-user support not enabled.": [
         "მრავალმომხმარებლიანობის მხარდაჭერა ჩართული არაა."
@@ -3631,6 +3749,12 @@
       ],
       "Must start with a letter.": [
         "უნდა იწყებოდეს ანბანის ასოთი."
+      ],
+      "New User Invite Created": [
+        "ახალი მომხმარებლის მოწვევა შექმნილია"
+      ],
+      "New User Invite Deleted": [
+        "ახალი მომხმარებლის მოწვევა წაშლილია"
       ],
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
@@ -3682,6 +3806,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "თქვენს ორგანიზაციას სხვა ადმინისტრატორებიც გყავს. თქვენ მათთვის ახალი პაროლის გადაცემაზე პასუხისმგებელი ბრძანდებით."
+      ],
+      "password": [
+        "პაროლი"
       ],
       "Password copied to clipboard": [
         "პაროლი დაკოპირდა გაცვლის ბაფერში"
@@ -3859,6 +3986,21 @@
       "Setting up your organization": [
         "ორგანიზაციის მორგება"
       ],
+      "Share Created": [
+        "ზიარი შეიქმნა"
+      ],
+      "Share Deleted": [
+        "ზიარი წაიშალა"
+      ],
+      "Share Updated": [
+        "ზიარი განახლდა"
+      ],
+      "Shared vault deleted": [
+        "გაზიარებული საცავი წაიშალა"
+      ],
+      "Shared vault updated": [
+        "გაზიარებული საცავი განახლდა"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "თქვენი მისამართის გასააქტიურებლად შედით ${ MAIL_APP_NAME }-ში"
       ],
@@ -3925,6 +4067,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "გადმოწერების რიცხვი მოიცავს როგორც მიმდინარე გადმოწერებს, ასევე ფაილების წინასწარ გადახედვის შემთხვევებს."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "დაშიფრული მონაცემები ოდნავ უფრო დიდია დაშიფვრისა და ხელმოწერების ზედმეტი ხარჯის გამო, რაც უზრუნველყოფს თქვენი მონაცემების უსაფრთხოებას."
       ],
       "The following address is invalid.": [
         "შემდეგი მისამართი არასწორია.",
@@ -4079,6 +4227,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "იდენტიფიკატორის მომწოდებლის მიერ გენერირებული უნიკალური ID, ჩვეულებრივ, ბმულის ფორმაში, რომელიც იდენტიფიკატორის მომწოდებლის სახელს შეიცავს. (მაგ: https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "უცნობი მოვლენის ტიპი"
+      ],
       "Unsaved changes": [
         "შეუნახავი ცვლილებები"
       ],
@@ -4112,8 +4263,32 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
+      "username": [
+        "მომხმარებლის სახელი"
+      ],
       "Users": [
         "მომხმარებლები"
+      ],
+      "Vault created": [
+        "საცავი შეიქმნა"
+      ],
+      "Vault Created": [
+        "საცავი შეიქმნა"
+      ],
+      "Vault deleted": [
+        "საცავი წაიშალა"
+      ],
+      "Vault Deleted": [
+        "საცავი წაიშალა"
+      ],
+      "Vault shared with email": [
+        "საცავი გაზიარებულია ელფოსტით"
+      ],
+      "Vault updated": [
+        "საცავი განახლდა"
+      ],
+      "Vault Updated": [
+        "საცავი განახლდა"
       ],
       "Verification can take a few minutes.": [
         "შემოწმებას რამდენიმე წუთი შეიძლება, დასჭირდეს."
@@ -4192,6 +4367,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "შემოწმების ახალი კოდი გაიგზავნება ${ strong }-ზე"
+      ],
+      "Week": [
+        "კვირა"
       ],
       "Welcome": [
         "მოგესალმებით"
@@ -5165,6 +5343,11 @@
         "თქვენი გამოწერა ამოიწურა. ${ cta } მონაცემების კარგვის თავიდან ასაცილებლად."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason }-ის ჩართვა"
+      ]
+    },
     "mail_signup_2024: Info": {
       "for ${ price }": [
         "${ price }-თვის"
@@ -5632,6 +5815,9 @@
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
       ],
       "Reply to messages": [
         "პასუხი შეტყობინებებზე"
@@ -6198,6 +6384,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } გაითიშა"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } ჩაირთო"
+      ],
       "A disabled address cannot be default": [
         "გათიშული მისამართი ნაგულისხმები ვერ იქნება"
       ],
@@ -6206,6 +6398,9 @@
       ],
       "Invalid code": [
         "არასწორი კოდი"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "არასწორი შეყვანა. მოძებნეთ ელფოსტა ან IP მისამართი."
       ],
       "IP Address copied to clipboard": [
         "IP მისამართი დაკოპირდა გაცვლის ბაფერში"
@@ -6686,6 +6881,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "მაგ: https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "მაგ. "
+      ],
+      "Email or IP": [
+        "ელფოსტა ან IP"
+      ],
+      "End date": [
+        "დასასრულის დრო"
+      ],
       "Feedback": [
         "უკუკავშირი"
       ],
@@ -6724,6 +6928,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "გაგვიზიარეთ, როგორ შეგვიძლია, ${ BRAND_NAME } უკეთესი გავხადოთ"
+      ],
+      "Start date": [
+        "საწყისი თარიღი"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -6882,6 +7089,9 @@
       "Enter URL and token into your identity provider": [
         "შეიყვანეთ URL და კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "უსაფრთხოებისთვის, SCIM კოდი დამალულ იქნება, როცა თქვენს ცვლილებებს შეინახავთ და მას ვეღარასდროს იხილავთ."
+      ],
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
       ],
@@ -6929,6 +7139,17 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "SCIM კონექტორის URL, რომელზეც IdP გაშლის აგენტი SCIM მონაცემებს გააგზავნის"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
     },
     "Select file": {
@@ -7741,6 +7962,9 @@
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
@@ -8398,10 +8622,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -8586,6 +8810,9 @@
       "Error": [
         "შეცდომა"
       ],
+      "Event": [
+        "მოვლენა"
+      ],
       "Every member of the organization can access": [
         "წვდომა ორგანიზაციის ყველა წევრს აქვს"
       ],
@@ -8634,6 +8861,9 @@
       ],
       "Main password": [
         "მთავარი პაროლი"
+      ],
+      "Minicalendar": [
+        "მინიკალენდარი"
       ],
       "Multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -8819,6 +9049,9 @@
       "Switch to two-password mode": [
         "ორპაროლიან რეჟიმზე გადართვა"
       ],
+      "Time": [
+        "დრო"
+      ],
       "TV sign in": [
         "TV-ში შესვლა"
       ],
@@ -8845,6 +9078,9 @@
       ],
       "Upload your organization’s logo": [
         "ატვირთეთ თქვენი ორგანიზაციის ლოგო"
+      ],
+      "User": [
+        "მომხმარებელი"
       ],
       "Users": [
         "მომხმარებლები"
@@ -8936,6 +9172,11 @@
       ],
       "Status": [
         "სტატუსი"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "დღეს"
       ]
     },
     "Tooltip": {

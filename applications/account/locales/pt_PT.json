@@ -736,11 +736,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1040,7 +1040,7 @@
         "Desbloquear dados"
       ],
       "Unordered list": [
-        "Lista não ordenada"
+        "Lista com marcadores"
       ],
       "Unsubscribe": [
         "Cancelar subscrição"
@@ -1110,6 +1110,12 @@
       ],
       "Verify account": [
         "Verificar conta"
+      ],
+      "Verify code": [
+        "Verificar código"
+      ],
+      "Verify code again": [
+        "Verificar código novamente"
       ],
       "Verify domain": [
         "Verificar o domínio"
@@ -3736,6 +3742,9 @@
       "Checkout expired, please try again": [
         "A finalização da compra expirou. Tente novamente."
       ],
+      "Code wrong or not valid anymore": [
+        "Código errado ou já não é válido"
+      ],
       "Condition incomplete": [
         "Condição incompleta"
       ],
@@ -3809,6 +3818,9 @@
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Se o tempo na sua TV expirou, clique em Actualizar na sua TV e introduza o seu código novamente."
       ],
       "IMAP server is required": [
         "Servidor IMAP é necessário."
@@ -6321,11 +6333,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -7322,8 +7334,14 @@
       "The calendar will be removed from your account.": [
         "O calendário será removido da sua conta."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A contagem de transferências inclui ambas transferências reais e instâncias em que os ficheiros são pré-visualizados."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "A ligação de verificação de email expirou. Inicie sessão de novo para reenviarmos uma nova ligação."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Os dados encriptados são ligeiramente maiores devido à encriptação e às assinaturas, que garantem a segurança dos seus dados."
       ],
       "The following address is available:": [
         "O seguinte endereço está disponível:"
@@ -7570,9 +7588,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Atualize para o plano ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[bundleProPlan] } para ter acesso ao ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -8837,6 +8852,9 @@
       "Enter password": [
         "Introduza a palavra-passe"
       ],
+      "Enter the code displayed on your TV": [
+        "Introduza o código mostrado na sua TV"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduza a palavra-passe para a chave com impressão digital: ${ fingerprintCode }"
       ],
@@ -9719,11 +9737,6 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
       ]
     },
-    "mail_signup_2023: Info": {
-      "Limited time offer": [
-        "Oferta por tempo limitado"
-      ]
-    },
     "mail_signup_2024: Info": {
       "for ${ price }": [
         "por ${ price }"
@@ -10138,6 +10151,23 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10165,23 +10195,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -10613,6 +10626,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
+      ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novas aplicações e funcionalidades"
       ],
       "For next-level password management and identity protection.": [
         "Para uma gestão de palavras-passe e proteção de identidade de nível superior."
@@ -11685,9 +11701,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Todos os serviços ${ BRAND_NAME } Plus.${ br }Uma subscrição fácil."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Criar uma conta do ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Crie a sua conta do ${ BRAND_NAME }"
@@ -13807,11 +13820,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -13997,6 +14010,9 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Device connected!": [
+        "Dispositivo ligado!"
       ],
       "Disable two-factor authentication": [
         "Desativar a autenticação de dois fatores"
@@ -14596,6 +14612,9 @@
       ],
       "Track your referrals": [
         "Acompanhe as suas referências"
+      ],
+      "TV sign in": [
+        "Iniciar sessão na TV"
       ],
       "Two-factor authentication": [
         "Autenticação em dois fatores"

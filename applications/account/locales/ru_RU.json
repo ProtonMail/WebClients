@@ -760,11 +760,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1137,6 +1137,12 @@
       ],
       "Verify account": [
         "Подтвердить аккаунт"
+      ],
+      "Verify code": [
+        "Подтвердите код"
+      ],
+      "Verify code again": [
+        "Подтвердить код еще раз"
       ],
       "Verify domain": [
         "Проверить домен"
@@ -1540,6 +1546,14 @@
         "Выберите Новогоднее предложение"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1561,14 +1575,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4031,6 +4037,9 @@
       "Checkout expired, please try again": [
         "Срок оформления истек, пожалуйста, попробуйте снова"
       ],
+      "Code wrong or not valid anymore": [
+        "Неверный или недействительный код"
+      ],
       "Condition incomplete": [
         "Условие неполное"
       ],
@@ -4111,6 +4120,9 @@
       ],
       "Folder name cannot be empty.": [
         "Имя папки не может быть пустым."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
       ],
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
@@ -6837,11 +6849,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -8043,8 +8055,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Темная паутина - это скрытая часть Интернета, где можно купить и продать украденную персональную информацию, например, личные данные."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Истёк срок действия ссылки для подтверждения почты. Пожалуйста, войдите ещё раз, чтобы отправить её заново."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Размер зашифрованных данных увеличивается за счет дополнительной информации о шифровании и подписях, обеспечивающих безопасность ваших данных."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Утечка информации произошла из сторонней службы. Информация о вашем аккаунте ${ BRAND_NAME } остается защищенной и зашифрованной. ${ learnMoreLink }"
@@ -8345,9 +8363,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Улучшите до тарифа ${ PLAN_NAMES[PLANS.PASS_PLUS] }${ PLAN_NAMES[PLANS.BUNDLE] }${ PLAN_NAMES[PLANS.FAMILY] } или ${ PLAN_NAMES[bundleProPlan] } чтобы получить доступ к ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Обновите тариф, чтобы добавить к своей учетной записи более короткий адрес @pm.me, которым проще поделиться. Он означает «Напишите мне в ${ MAIL_APP_NAME }» или «Отправьте мне личное сообщение»."
@@ -9745,6 +9760,9 @@
       "Enter password": [
         "Введите пароль"
       ],
+      "Enter the code displayed on your TV": [
+        "Введите код, отображаемый на вашем ТВ"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введите пароль для ключа с цифровым отпечатком: ${ fingerprintCode }"
       ],
@@ -10707,9 +10725,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Перейдите на тариф Visionary и станьте частью истории ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Limited time offer"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11168,6 +11183,23 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11195,23 +11227,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -13045,9 +13060,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Все сервисы ${ BRAND_NAME } Plus.${ br }Или одна лёгкая подписка."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Создать аккаунт ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
@@ -15769,10 +15781,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -15966,6 +15978,9 @@
       ],
       "Details": [
         "Информация"
+      ],
+      "Device connected!": [
+        "Устройство подключено!"
       ],
       "Disable two-factor authentication": [
         "Отключение двухфакторной аутентификации"
@@ -16587,6 +16602,9 @@
       ],
       "Track your referrals": [
         "Отслеживание ваших рефералов"
+      ],
+      "TV sign in": [
+        "Вход на ТВ"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"

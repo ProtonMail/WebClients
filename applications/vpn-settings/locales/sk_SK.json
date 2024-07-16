@@ -4,6 +4,26 @@
     "language": "sk_SK"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti a prijať opatrenia, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik z položky ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
@@ -68,11 +88,20 @@
       "Change password": [
         "Zmeniť heslo"
       ],
+      "Change second password": [
+        "Zmeniť druhé heslo"
+      ],
       "Chat with us": [
         "Komunikácia s nami"
       ],
       "Choose my own password": [
         "Vybrať moje vlastné heslo"
+      ],
+      "Clear filter": [
+        "Vymazať filter"
+      ],
+      "Clear filters": [
+        "Vymazať filtre"
       ],
       "Close": [
         "Zatvoriť"
@@ -320,6 +349,9 @@
       "Next": [
         "Ďalej"
       ],
+      "Next month": [
+        "Budúci mesiac"
+      ],
       "OK": [
         "OK"
       ],
@@ -352,6 +384,9 @@
       ],
       "Previous": [
         "Predchádzajúci"
+      ],
+      "Previous month": [
+        "Predchádzajúci mesiac"
       ],
       "Recover data": [
         "Obnoviť dáta"
@@ -2180,6 +2215,9 @@
       "Incorrect password": [
         "Nesprávne heslo"
       ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
+      ],
       "Incorrect username": [
         "Nesprávne používateľské meno"
       ],
@@ -2257,6 +2295,9 @@
       ],
       "Please set a recovery phone number first": [
         "Najprv prosím zadajte telefónne číslo pre obnovenie"
+      ],
+      "Please try again in a few moments.": [
+        "Skúste to znova o chvíľu, prosím."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Ak chcete získať podporu pre viacerých používateľov, inovujte na obchodný plán s viac ako 1 používateľom"
@@ -3047,6 +3088,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhľad v nízkom rozlíšení"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete prepnúť do režimu jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
+      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
@@ -3197,6 +3241,9 @@
         "Zasiahnutí používatelia sú v riadkoch",
         "Zasiahnutí používatelia sú v riadkoch"
       ],
+      "All Events ": [
+        "Všetky udalosti "
+      ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
       ],
@@ -3290,6 +3337,9 @@
       "Can’t access your recovery phone?": [
         "Nemáte prístup k telefónu na obnovenie?"
       ],
+      "Change your password": [
+        "Zmeňte si heslo"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
@@ -3350,11 +3400,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -3434,6 +3484,9 @@
       "Edit email address": [
         "Upraviť emailovú adresu"
       ],
+      "email": [
+        "email"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Emailový hosting pre 10 vlastných emailových domén je zahrnutý zadarmo. Ďalšie domény je možné pridať za cenu ${ price }."
       ],
@@ -3506,6 +3559,9 @@
       "Fill in user details": [
         "Vyplňte podrobnosti o používateľovi"
       ],
+      "finance": [
+        "financie"
+      ],
       "for choosing ${ product }": [
         "za výber ${ product }"
       ],
@@ -3529,6 +3585,9 @@
       ],
       "here": [
         "tu"
+      ],
+      "High Priority": [
+        "Vysoká priorita"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Verejný kľúč poskytovateľa identity na podpisovanie autentifikačných overení. Malo by tu byť miesto na stiahnutie alebo skopírovanie hash certifikátu od poskytovateľa identity. Stačí vložiť hash certifikátu do poľa textovej oblasti."
@@ -3623,6 +3682,72 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
+      "Invite Accepted": [
+        "Pozvánka prijatá"
+      ],
+      "Invite Created": [
+        "Pozvánka vytvorená"
+      ],
+      "Invite deleted": [
+        "Pozvánka vymazaná"
+      ],
+      "Invite Deleted": [
+        "Pozvánka vymazaná"
+      ],
+      "Invite for organization accepted": [
+        "Pozvánka pre organizáciu prijatá"
+      ],
+      "Invite for organization created": [
+        "Pozvánka pre organizáciu vytvorená"
+      ],
+      "Invite rejected": [
+        "Pozvánka odmietnutá"
+      ],
+      "Invite Rejected": [
+        "Pozvánka odmietnutá"
+      ],
+      "Item Autofilled": [
+        "Položka automaticky vyplnená"
+      ],
+      "Item autofilled in vault": [
+        "Položka v trezore automaticky vyplnená"
+      ],
+      "Item Changed Flags": [
+        "Položka zmenila značky"
+      ],
+      "Item Created": [
+        "Položka bola vytvorená"
+      ],
+      "Item created in vault": [
+        "Položka v trezore vytvorená"
+      ],
+      "Item Deleted": [
+        "Položka bola vymazaná"
+      ],
+      "Item flags changed in vault": [
+        "Príznaky položky v trezore zmenené"
+      ],
+      "Item in vault untrashed": [
+        "Položka v trezore vyňatá z koša"
+      ],
+      "Item Read": [
+        "Položka bola prečítaná"
+      ],
+      "Item read in vault": [
+        "Položka v trezore prečítaná"
+      ],
+      "Item Trashed": [
+        "Položka premiestnená do koša"
+      ],
+      "Item Untrashed": [
+        "Položka vyňatá z koša"
+      ],
+      "Item Updated": [
+        "Položka bola aktualizovaná"
+      ],
+      "Item updated in vault": [
+        "Položka v trezore aktualizovaná"
+      ],
       "JCB logo": [
         "JCB logo"
       ],
@@ -3662,6 +3787,9 @@
       "Loading...": [
         "Načítavanie..."
       ],
+      "Low Priority": [
+        "Nízka priorita"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Veľké emailové služby môžu odmietnuť alebo filtrovať vaše e-maily ako spam, ak chýba alebo nie je správne nastavený SPF/DKIM/DMARC."
       ],
@@ -3677,11 +3805,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Medium Priority": [
+        "Stredná priorita"
+      ],
       "Member": [
         "Člen"
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Monitor accounts": [
+        "Monitorujte účty"
       ],
       "Multi-user support not enabled.": [
         "Podpora viacerých používateľov nie je povolená."
@@ -3697,6 +3831,12 @@
       ],
       "Must start with a letter.": [
         "Musí začínať písmenom."
+      ],
+      "New User Invite Created": [
+        "Nová pozvánka používateľa vytvorená"
+      ],
+      "New User Invite Deleted": [
+        "Nová pozvánka používateľa vymazaná"
       ],
       "No addresses exist": [
         "Neexistujú žiadne adresy"
@@ -3748,6 +3888,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Vo vašej organizácii existujú ďalší správcovia, vašou povinnosťou je oznámiť im nové heslo."
+      ],
+      "password": [
+        "heslo"
       ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
@@ -3929,6 +4072,21 @@
       "Setting up your organization": [
         "Nastavovanie organizácie"
       ],
+      "Share Created": [
+        "Zdieľanie vytvorené"
+      ],
+      "Share Deleted": [
+        "Zdieľanie vymazané"
+      ],
+      "Share Updated": [
+        "Zdieľanie aktualizované"
+      ],
+      "Shared vault deleted": [
+        "Zdieľaný trezor bol vymazaný"
+      ],
+      "Shared vault updated": [
+        "Zdieľaný trezor bol aktualizovaný"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Prihláste sa do ${ MAIL_APP_NAME } pre aktivovanie vašej adresy"
       ],
@@ -3997,6 +4155,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Poverenia od poskytovateľa identít budú vymazané."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Počet stiahnutí zahŕňa skutočné stiahnutia aj prípady, keď sú súbory zobrazené v náhľade."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Šifrované údaje sú o trochu väčšie kvôli réžii šifrovania a podpisov, čo zaručuje bezpečnosť vašich údajov."
       ],
       "The following address is invalid.": [
         "Nasledujúca adresa nie je platná.",
@@ -4151,11 +4315,20 @@
       "Two-factor authentication enabled": [
         "Dvojstupňové overenie zapnuté"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Režim dvoch hesiel vyžaduje dve heslá: jedno na prihlásenie do konta a druhé na dešifrovanie údajov. (Rozšírené)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Režim dvoch hesiel používa samostatné heslá na prihlásenie a dešifrovanie údajov. V niektorých situáciách to poskytuje menšiu bezpečnostnú výhodu, avšak väčšine používateľov odporúčame režim jedného hesla. Ak chcete prepnúť do režimu dvoch hesiel, najprv nastavte prihlasovacie heslo a potom nastavte druhé heslo."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Pre tento účet, bohužiaľ, nie je uložená žiadna metóda obnovy."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Jedinečné ID vygenerované poskytovateľom identity, zvyčajne vo forme URL adresy, ktorá obsahuje názov poskytovateľa identity (napr. https://idp.example.com/XXXXX)."
+      ],
+      "Unknown event type": [
+        "Neznámy typ udalosti"
       ],
       "Unsaved changes": [
         "Neuložené zmeny"
@@ -4190,8 +4363,32 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
+      "username": [
+        "používateľské meno"
+      ],
       "Users": [
         "Používatelia"
+      ],
+      "Vault created": [
+        "Trezor bol vytvorený"
+      ],
+      "Vault Created": [
+        "Trezor bol vytvorený"
+      ],
+      "Vault deleted": [
+        "Trezor bol vymazaný"
+      ],
+      "Vault Deleted": [
+        "Trezor bol vymazaný"
+      ],
+      "Vault shared with email": [
+        "Trezor zdieľaný emailom"
+      ],
+      "Vault updated": [
+        "Trezor bol aktualizovaný"
+      ],
+      "Vault Updated": [
+        "Trezor bol aktualizovaný"
       ],
       "Verification can take a few minutes.": [
         "Overovanie môže trvať niekoľko minút."
@@ -4270,6 +4467,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Na adresu ${ strong } pošleme nový overovací kód"
+      ],
+      "Week": [
+        "Týždeň"
       ],
       "Welcome": [
         "Vitajte"
@@ -4421,6 +4621,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
       ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Používateľa budete môcť povýšiť na správcu, keď prijme pozvanie."
+      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
       ],
@@ -4546,6 +4749,9 @@
       ],
       "Paid": [
         "Zaplatené"
+      ],
+      "Processing": [
+        "Spracovávanie"
       ],
       "Unpaid": [
         "Nezaplatené"
@@ -4725,6 +4931,9 @@
       "Confirm password": [
         "Potvrďte heslo"
       ],
+      "Confirm second password": [
+        "Potvrďte druhé heslo"
+      ],
       "Copy": [
         "Kopírovať"
       ],
@@ -4869,6 +5078,9 @@
       "New password": [
         "Nové heslo"
       ],
+      "New second password": [
+        "Nové druhé heslo"
+      ],
       "No filter": [
         "Bez filtra"
       ],
@@ -4961,6 +5173,9 @@
       ],
       "Reveal password": [
         "Odkryť heslo"
+      ],
+      "Second password": [
+        "Druhé heslo"
       ],
       "Security code (${ codeName })": [
         "Bezpečnostný kód (${ codeName })"
@@ -5264,6 +5479,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Vaše predplatné skončilo. ${ cta } a zabráňte strate údajov."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Povoliť ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6350,6 +6570,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } bol zakázaný"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } bol povolený"
+      ],
       "A disabled address cannot be default": [
         "Deaktivovaná adresa nemôže byť predvolená"
       ],
@@ -6358,6 +6584,9 @@
       ],
       "Invalid code": [
         "Neplatný kód"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Neplatný vstup. Vyhľadajte email alebo IP adresu."
       ],
       "IP Address copied to clipboard": [
         "IP adresa bola skopírovaná do schránky"
@@ -6860,6 +7089,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "napr. https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Napr., "
+      ],
+      "Email or IP": [
+        "Email alebo IP"
+      ],
+      "End date": [
+        "Dátum ukončenia"
+      ],
       "Feedback": [
         "Spätná väzba"
       ],
@@ -6898,6 +7136,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Dátum zahájenia"
       ],
       "yourdomain.com": [
         "vasadomena.com"
@@ -7127,6 +7368,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL konektora SCIM, ktorému váš IdP Provisioning Agent odovzdáva údaje SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } a 1 ďalší zistený potenciálny únik. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bol zistený potenciálny únik ${ name }. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaše informácie sa našli v najmenej jednom úniku údajov. Ak chcete zobraziť podrobnosti, zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "Select file": {
@@ -7829,6 +8084,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľa",
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľov",
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľov",
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľov"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikovaný server",
         "${ ipAddresses } dedikované servery",
@@ -8720,10 +8981,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -8740,6 +9001,9 @@
       ],
       "Change role": [
         "Zmeniť funkciu"
+      ],
+      "Change second password": [
+        "Zmeniť druhé heslo"
       ],
       "Close": [
         "Zatvoriť"
@@ -8909,6 +9173,9 @@
       "Error": [
         "Chyba"
       ],
+      "Event": [
+        "Udalosť"
+      ],
       "Every member of the organization can access": [
         "Každý člen organizácie má prístup k"
       ],
@@ -8956,6 +9223,12 @@
       ],
       "Invoices": [
         "Faktúry"
+      ],
+      "Main password": [
+        "Hlavné heslo"
+      ],
+      "Minicalendar": [
+        "Minikalendár"
       ],
       "Multi-user support": [
         "Podpora pre viac uživateľov"
@@ -9143,6 +9416,9 @@
       "Switch to two-password mode": [
         "Prepnúť do režimu s dvomi heslami"
       ],
+      "Time": [
+        "Čas"
+      ],
       "TV sign in": [
         "TV prihlásenie"
       ],
@@ -9158,6 +9434,9 @@
       "Type": [
         "Typ"
       ],
+      "Unlock your data": [
+        "Odomknúť vaše údaje"
+      ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšite ochranu vašej siete pomocou dedikovaných serverov"
       ],
@@ -9166,6 +9445,9 @@
       ],
       "Upload your organization’s logo": [
         "Nahrajte logo vašej organizácie"
+      ],
+      "User": [
+        "Používateľ"
       ],
       "Users": [
         "Používatelia"
@@ -9257,6 +9539,11 @@
       ],
       "Status": [
         "Stav"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Dnes"
       ]
     },
     "Tooltip": {
@@ -9394,6 +9681,9 @@
       ],
       "Name": [
         "Meno"
+      ],
+      "New ${ BRAND_NAME } email address": [
+        "Nová ${ BRAND_NAME } emailová adresa"
       ],
       "Optional": [
         "Voliteľné"

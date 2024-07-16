@@ -4,6 +4,26 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Deixa'm triar la meva contrasenya"
+      ],
+      "Clear filter": [
+        "Neteja el filtre"
+      ],
+      "Clear filters": [
+        "Neteja els filtres"
       ],
       "Close": [
         "Tanca"
@@ -323,6 +349,9 @@
       "Next": [
         "Següent"
       ],
+      "Next month": [
+        "Mes següent"
+      ],
       "OK": [
         "D'acord"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Previous month": [
+        "Mes anterior"
       ],
       "Recover data": [
         "Recuperar dades"
@@ -2252,6 +2284,9 @@
       "Please set a recovery phone number first": [
         "Establiu primer un número de telèfon de recuperació"
       ],
+      "Please try again in a few moments.": [
+        "Torneu-ho a provar d'aquí a uns moments."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Milloreu a un pla per a empreses amb més d'un usuari per a obtenir suport multiusuari."
       ],
@@ -3072,6 +3107,18 @@
         "S'ha trobat ${ userFound } usuari",
         "S'han trobat ${ userFound } usuaris"
       ],
+      "${ vaultLink } created": [
+        "S'ha creat ${ vaultLink }"
+      ],
+      "${ vaultLink } deleted": [
+        "S'ha eliminat ${ vaultLink }"
+      ],
+      "${ vaultLink } shared with email": [
+        "S'ha compartit ${ vaultLink } per correu electrònic"
+      ],
+      "${ vaultLink } updated": [
+        "S'ha actualitzat ${ vaultLink }."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Es requereix ${ vpnPlus } per a la conexió a nivell de país."
       ],
@@ -3155,6 +3202,9 @@
         "L'usuari afectat es troba a la fila.",
         "Els usuaris afectats es troben a les files."
       ],
+      "All Events ": [
+        "Tots els esdeveniments"
+      ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
       ],
@@ -3236,6 +3286,15 @@
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "S'ha afegit el correu electrònic personalitzat en cas de violació de les dades."
+      ],
+      "Breach Custom Email Deleted": [
+        "S'ha eliminat el correu electrònic personalitzat en cas de violació de les dades."
+      ],
+      "Breach Custom Email Validated": [
+        "S'ha validat el correu electrònic personalitzat en cas de violació de les dades."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
@@ -3247,6 +3306,9 @@
       ],
       "Can’t access your recovery phone?": [
         "No podeu accedir al vostre telèfon de recuperació?"
+      ],
+      "Change your password": [
+        "Canvieu la vostra contrasenya"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
@@ -3300,17 +3362,26 @@
       "Custom branding": [
         "Marca personalitzada"
       ],
+      "Custom email added": [
+        "S'ha afegit l'adreça de correu electrònic personalitzada"
+      ],
+      "Custom email deleted": [
+        "S'ha eliminat l'adreça de correu electrònic personalitzada"
+      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
+      ],
+      "Custom email validated": [
+        "S'ha validat l'adreça de correu electrònic personalitzada"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -3386,6 +3457,9 @@
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
+      "email": [
+        "corrreu electrònic"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "S'inclou gratuïtament l'allotjament de correu electrònic per a 10 noms de domini de correu electrònic personalitzats. Es poden afegir dominis addicionals per ${ price }."
       ],
@@ -3458,6 +3532,9 @@
       "Fill in user details": [
         "Empleneu els detalls de l'usuari"
       ],
+      "finance": [
+        "finances"
+      ],
       "for choosing ${ product }": [
         "per escollir ${ product }"
       ],
@@ -3481,6 +3558,9 @@
       ],
       "here": [
         "aquí"
+      ],
+      "High Priority": [
+        "Alta prioritat"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Hi ha d'haver un lloc on descarregar o copiar l'empremta electrònica del certificat del proveïdor d'identitat. Simplement, enganxeu-la al camp de l'àrea de text."
@@ -3575,6 +3655,105 @@
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
       ],
+      "Invite Accepted": [
+        "S'ha acceptat la invitació"
+      ],
+      "Invite Created": [
+        "S'ha creat la invitació."
+      ],
+      "Invite deleted": [
+        "S'ha eliminat la invitació."
+      ],
+      "Invite Deleted": [
+        "S'ha eliminat la invitació."
+      ],
+      "Invite for new user deleted": [
+        "S'ha eliminat la invitació per al nou usuari."
+      ],
+      "Invite for organization accepted": [
+        "S'ha acceptat la invitació per a l'organització"
+      ],
+      "Invite for organization created": [
+        "S'ha creat una invitació per a l'organització"
+      ],
+      "Invite rejected": [
+        "S'ha rebutjat la invitació"
+      ],
+      "Invite Rejected": [
+        "S'ha rebutjat la invitació."
+      ],
+      "Item Autofilled": [
+        "S'ha emplenat l'element automàticament"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "S'ha emplenat automàticament l'element a ${ vaultLink }"
+      ],
+      "Item autofilled in vault": [
+        "S'ha emplenat un element automàticament a la caixa forta"
+      ],
+      "Item Changed Flags": [
+        "Els indicadors de l'element han canviat"
+      ],
+      "Item Created": [
+        "S'ha creat l'element."
+      ],
+      "Item created in ${ vaultLink }": [
+        "S'ha creat l'element a ${ vaultLink }"
+      ],
+      "Item created in vault": [
+        "S'ha creat un element a la caixa forta"
+      ],
+      "Item Deleted": [
+        "S'ha eliminat l'element."
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "S'ha eliminat l'element a ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "S'ha eliminat un element de la caixa forta."
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "S'han canviat les marques de l'element a ${ vaultLink }."
+      ],
+      "Item flags changed in vault": [
+        "S'han canviat les marques de l'element a la caixa forta"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "S'ha enviat a la paperera l'element a ${ vaultLink }"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "S'ha recuperat de la paperera l'element a ${ vaultLink }"
+      ],
+      "Item in vault trashed": [
+        "S'ha enviat a la paperera un element a la caixa forta."
+      ],
+      "Item in vault untrashed": [
+        "S'ha restaurat un element a la caixa forta"
+      ],
+      "Item Read": [
+        "S'ha llegit l'element"
+      ],
+      "Item read in ${ vaultLink }": [
+        "S'ha llegit l'element a ${ vaultLink }"
+      ],
+      "Item read in vault": [
+        "S'ha llegit un element de la caixa forta"
+      ],
+      "Item Trashed": [
+        "S'ha enviat l'element a la paperera"
+      ],
+      "Item Untrashed": [
+        "S'ha restaurat l'element"
+      ],
+      "Item Updated": [
+        "S'ha actualitzat l'element."
+      ],
+      "Item updated in ${ vaultLink }": [
+        "S'ha actualitzat l'element a ${ vaultLink }"
+      ],
+      "Item updated in vault": [
+        "S'ha actualitzat un element a la caixa forta"
+      ],
       "JCB logo": [
         "Logotip de JCB"
       ],
@@ -3614,6 +3793,9 @@
       "Loading...": [
         "S'està carregant..."
       ],
+      "Low Priority": [
+        "Prioritat baixa"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Els principals serveis de correu electrònic poden rebutjar o filtrar els vostres correus electrònics al correu brossa si SPF/DKIM/DMARC no hi són o no estan configurats correctament."
       ],
@@ -3629,11 +3811,17 @@
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioritat mitjana"
+      ],
       "Member": [
         "Membre"
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Supervisar els comptes"
       ],
       "Multi-user support not enabled.": [
         "Suport multi-usuari no activat."
@@ -3649,6 +3837,15 @@
       ],
       "Must start with a letter.": [
         "Ha de començar amb una lletra."
+      ],
+      "New User Invite Created": [
+        "S'ha creat una invitació d'usuari nou"
+      ],
+      "New User Invite Deleted": [
+        "S'ha eliminat la invitació d'usuari nou"
+      ],
+      "New user invited to organization": [
+        "S'ha convidat el nou usuari a l'organització."
       ],
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
@@ -3697,6 +3894,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
+      ],
+      "password": [
+        "contrasenya"
       ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
@@ -3874,6 +4074,27 @@
       "Setting up your organization": [
         "S'està configurant la vostra organització."
       ],
+      "Share Created": [
+        "S'ha creat una compartició"
+      ],
+      "Share Deleted": [
+        "S'ha eliminat la compartició"
+      ],
+      "Share Updated": [
+        "S'ha actualitzat la compartició"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "S'ha eliminat l'enllaç compartit ${ vaultLink }."
+      ],
+      "Shared ${ vaultLink } updated": [
+        "S'ha actualitzat l'enllaç compartit ${ vaultLink }."
+      ],
+      "Shared vault deleted": [
+        "S'ha eliminat la caixa forta compartida"
+      ],
+      "Shared vault updated": [
+        "S'ha actualitzat la caixa forta compartida"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
       ],
@@ -3937,6 +4158,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Se suprimiran les credencials del vostre proveïdor d'identitat."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les dades xifrades són lleugerament més grans a causa de la sobrecàrrega del xifratge i les signatures, els quals garanteixen la seguretat de les vostres dades."
       ],
       "The following address is invalid.": [
         "La següent adreça no és vàlida.",
@@ -4097,6 +4324,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Identificador únic generat pel vostre proveïdor d'identitat, normalment en forma d'URL que conté el nom del proveïdor d'identitat dins d'ell (p. ex. https://idp.exemple.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Tipus d'esdeveniment desconegut"
+      ],
       "Unsaved changes": [
         "Canvis no desats"
       ],
@@ -4130,8 +4360,32 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
+      "username": [
+        "nom d'usuari"
+      ],
       "Users": [
         "Usuaris"
+      ],
+      "Vault created": [
+        "S'ha creat la caixa forta."
+      ],
+      "Vault Created": [
+        "S'ha creat la caixa forta."
+      ],
+      "Vault deleted": [
+        "S'ha eliminat la caixa forta."
+      ],
+      "Vault Deleted": [
+        "S'ha eliminat la caixa forta."
+      ],
+      "Vault shared with email": [
+        "S'ha compartit la caixa forta per correu electrònic"
+      ],
+      "Vault updated": [
+        "S'ha actualitzat la caixa forta."
+      ],
+      "Vault Updated": [
+        "S'ha actualitzat la caixa forta."
       ],
       "Verification can take a few minutes.": [
         "La verificació pot trigar uns minuts."
@@ -4210,6 +4464,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
+      ],
+      "Week": [
+        "Setmana"
       ],
       "Welcome": [
         "Us donem la benvinguda"
@@ -5199,12 +5456,17 @@
         "La vostra subscripció ha finalitzat. ${ cta } i per evitar la pèrdua de dades."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Habilita ${ reason }"
+      ]
+    },
     "mail_signup_2024: Info": {
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Afegeix l'assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
       "for ${ price }": [
-        "per a ${ price }"
+        "per ${ price }"
       ]
     },
     "mailtrial2024: Action": {
@@ -5765,7 +6027,7 @@
         "Nombre il·limitat d'inicis de sessió i de notes"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Inicis de sessió il·limitats, notes i targetes de crèdit"
+        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
       ],
       "Unlimited messages per day": [
         "Missatges diaris il·limitats"
@@ -6247,6 +6509,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } s'ha desactivat"
+      ],
+      "${ reason } has been enabled": [
+        "S'ha habilitat ${ reason } "
+      ],
       "A disabled address cannot be default": [
         "Una adreça desactivada no pot ser una adreça per defecte."
       ],
@@ -6255,6 +6523,9 @@
       ],
       "Invalid code": [
         "El codi no és vàlid."
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Entrada incorrecta. Cerqueu un correu electrònic o una adreça IP."
       ],
       "IP Address copied to clipboard": [
         "S'ha copiat l'adreça IP al porta-retalls."
@@ -6502,18 +6773,18 @@
         "S'està preparant el vostre kit de recuperació"
       ],
       "Secure vault and link sharing": [
-        "Caixa forta i compartició d'enllaços"
+        "Compartició segura de caixes fortes i enllaços"
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ],
       "Secure vault sharing (${ n } vault)": [
-        "Compartició segura de la caixa forta ${ n }",
-        "Compartició segura de les caixes fortes ${ n }"
+        "Compartició segura de caixes fortes (${ n } caixa forta)",
+        "Compartició segura de caixes fortes (${ n } caixes fortes)"
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartició segura de la caixa forta ${ n } i compartició d'enllaços",
-        "Compartició segura de les caixes fortes ${ n } i compartició d'enllaços"
+        "Compartició segura de caixes fortes (${ n } caixa forta) i compartició d'enllaços",
+        "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
       ],
       "Setting up your organization": [
         "S'està configurant la vostra organització."
@@ -6747,6 +7018,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "p. ex. https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Email or IP": [
+        "Correu electrònic o IP"
+      ],
+      "End date": [
+        "Data de finalització"
+      ],
       "Feedback": [
         "Comentaris"
       ],
@@ -6785,6 +7065,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Compartiu el que penseu que podria millorar ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Data d'inici"
       ],
       "yourdomain.com": [
         "elteudomini.com"
@@ -7008,6 +7291,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL del connector d'SCIM al qual el vostre agent d'aprovisionament IdP reenvia les dades d'SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i ${ remainingCount } altres fuites potencials. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'han detectat ${ name } i una altra fuita potencial. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha detectat una possible fuita de ${ name }. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ]
     },
     "Select file": {
@@ -7671,8 +7968,8 @@
     },
     "Subscription attribute": {
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "Assistent d'escriptura de ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
-        "Assistent d'escriptura de ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicat",
@@ -8067,7 +8364,7 @@
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no és compatible amb usuaris addicionals."
+        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que el pla gratuït no és compatible amb usuaris addicionals."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
@@ -8534,10 +8831,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -8722,6 +9019,9 @@
       "Error": [
         "Error"
       ],
+      "Event": [
+        "Esdeveniment"
+      ],
       "Every member of the organization can access": [
         "Cada membre de l'organització pot accedir."
       ],
@@ -8734,6 +9034,9 @@
       ],
       "Forgot recovery method": [
         "Oblideu el mètode de recuperació"
+      ],
+      "Gateway": [
+        "Passarel·la"
       ],
       "Gateways": [
         "Passarel·les"
@@ -8770,6 +9073,9 @@
       ],
       "Main password": [
         "Contrasenya principal"
+      ],
+      "Minicalendar": [
+        "Minicalendari"
       ],
       "Multi-user support": [
         "Suport multi-usuari"
@@ -8955,6 +9261,9 @@
       "Switch to two-password mode": [
         "Canviar al mode de dues contrasenyes"
       ],
+      "Time": [
+        "Hora"
+      ],
       "TV sign in": [
         "Inici de sessió al TV"
       ],
@@ -8981,6 +9290,9 @@
       ],
       "Upload your organization’s logo": [
         "Carregueu el logo de la vostra organització"
+      ],
+      "User": [
+        "Usuari"
       ],
       "Users": [
         "Usuaris"
@@ -9072,6 +9384,11 @@
       ],
       "Status": [
         "Estat"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Avui"
       ]
     },
     "Tooltip": {

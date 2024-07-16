@@ -339,6 +339,9 @@
       "Expand folder": [
         "Lebarkan folder"
       ],
+      "Explore while you wait": [
+        "Jelajahi selagi Anda menunggu"
+      ],
       "Export": [
         "Ekspor"
       ],
@@ -2227,6 +2230,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Tentukan metode pemulihan untuk mencegah hilangnya akses menuju akun Anda."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda, tentukanlah frasa pemulihan."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
@@ -3028,6 +3034,9 @@
     "Error message": {
       "Access denied": [
         "Akses ditolak"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Alias tidak dapat digunakan pada saat kata sandi tambahan diaktifkan di ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
@@ -7514,6 +7523,12 @@
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Anda hanya perlu menyelesaikan langkah-langkah berikut dalam ${ expiresInDays } hari ke depan:"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Simpan berkas Anda dan bagikan berkas ini secara aman. Mulailah dengan mengamankan berkas milik Anda yang paling pribadi, seperti KTP, kontrak, dan foto personal."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Pemilik berkas ini perlu untuk mengonfirmasi akses izin. Anda akan mendapatkan email setelah proses ini selesai."
+      ],
       "Upload a file": [
         "Unggah berkas"
       ],
@@ -7542,6 +7557,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Persetujuan akhir sedang berlangsung"
+      ],
+      "Hang tight!": [
+        "Bersiaplah!"
+      ],
+      "Upload and protect your important files": [
+        "Unggah dan lindungi berkas penting Anda"
+      ],
       "Your welcome bonus": [
         "Hadiah selamat datang Anda"
       ]
@@ -9406,6 +9430,9 @@
       "Import failed": [
         "Proses impor gagal"
       ],
+      "Import groups": [
+        "Impor grup"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
@@ -9576,6 +9603,9 @@
       ],
       "Send feedback": [
         "Kirim tanggapan"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
       ],
       "Settings": [
         "Pengaturan"

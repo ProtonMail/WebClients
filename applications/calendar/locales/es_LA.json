@@ -2445,6 +2445,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Esto puede tomar unos minutos. Mientras tanto puede continuar usando el calendario."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -3334,6 +3337,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -9430,6 +9436,9 @@
       ],
       "Send invitation": [
         "Enviar invitación"
+      ],
+      "Set recovery phrase": [
+        "Establecer frase de recuperación"
       ],
       "Settings": [
         "Ajustes"

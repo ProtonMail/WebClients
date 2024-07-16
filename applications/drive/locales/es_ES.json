@@ -342,6 +342,12 @@
       "Expand folder": [
         "Expandir carpeta"
       ],
+      "Explore on my own": [
+        "Explorar por mi cuenta"
+      ],
+      "Explore while you wait": [
+        "Explorar mientras esperas"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -542,6 +548,9 @@
       ],
       "Ok": [
         "Aceptar"
+      ],
+      "Open": [
+        "Abierto"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -851,6 +860,9 @@
       ],
       "Upload file": [
         "Cargar archivo"
+      ],
+      "Upload files": [
+        "Cargar archivos"
       ],
       "Upload folder": [
         "Cargar carpeta"
@@ -2239,6 +2251,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Establece un método de recuperación para evitar perder el acceso a tu cuenta."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para garantizar el nivel más alto de seguridad, crea una frase de recuperación."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
@@ -6851,7 +6866,7 @@
         "Etiquetas ilimitadas"
       ],
       "Unlimited logins and notes": [
-        "Número ilimitado de accesos y de notas"
+        "Número ilimitado de inicios de sesión y de notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"
@@ -7418,7 +7433,7 @@
         "Grupo de contactos actualizado"
       ],
       "Device failed to be removed": [
-        "Error al borrrar el dispositivo"
+        "Error al borrar el dispositivo"
       ],
       "Device failed to be renamed": [
         "Error al renombrar el dispositivo"
@@ -7589,6 +7604,12 @@
         "Completa simplemente las siguientes acciones dentro de ${ expiresInDays } día:",
         "Completa simplemente las siguientes acciones dentro de ${ expiresInDays } días:"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Guarda tus archivos y compártelos de forma segura. Empieza asegurando tus archivos más privados como identificaciones, contratos y fotos personales."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "El propietario necesita confirmar el acceso a compartir. Recibirás un correo en cuanto lo haga."
+      ],
       "Upload a file": [
         "Cargar un archivo"
       ],
@@ -7617,6 +7638,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Aprobación final en progreso"
+      ],
+      "Hang tight!": [
+        "Espera un momento."
+      ],
+      "Upload and protect your important files": [
+        "Carga y protege tus archivos importantes."
+      ],
       "Your welcome bonus": [
         "Tu bono de bienvenida"
       ]
@@ -8059,7 +8089,7 @@
         "La solicitud de cambio de contraseña ha sido aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Ve al dispositivo en el que se ha iniciado sesión y donde se ha realizado la solicitud para cambiar tu contraseña."
+        "Ve al dispositivo en el que se ha iniciado sesión (donde se ha realizado la solicitud) para cambiar tu contraseña."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Este permiso expira en ${ timeRemaining.inDays } día.",
@@ -8088,7 +8118,7 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
@@ -9534,6 +9564,9 @@
       "Import failed": [
         "Error en la importación"
       ],
+      "Import groups": [
+        "Importar grupos"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
@@ -9704,6 +9737,9 @@
       ],
       "Send feedback": [
         "Enviar comentarios"
+      ],
+      "Set recovery phrase": [
+        "Crear una frase de recuperación"
       ],
       "Settings": [
         "Configuración"

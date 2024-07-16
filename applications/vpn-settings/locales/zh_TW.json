@@ -320,6 +320,9 @@
       "Next": [
         "下一個"
       ],
+      "Next month": [
+        "下個月"
+      ],
       "OK": [
         "好"
       ],
@@ -352,6 +355,9 @@
       ],
       "Previous": [
         "上一步"
+      ],
+      "Previous month": [
+        "上個月"
       ],
       "Recover data": [
         "恢復資料"
@@ -2205,6 +2211,9 @@
       "Please set a recovery phone number first": [
         "請先設定一個復原手機號碼"
       ],
+      "Please try again in a few moments.": [
+        "請稍候再試."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "請升級至選用多於 1 位使用者的企業方案，以便享用多使用者支援"
       ],
@@ -3069,6 +3078,9 @@
       "Admin account allocation": [
         "管理員帳號指派"
       ],
+      "All Events ": [
+        "所有事件 "
+      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
@@ -3159,6 +3171,9 @@
       "Can’t access your recovery phone?": [
         "無法存取您的復原電話?"
       ],
+      "Change your password": [
+        "變更您的密碼"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
@@ -3216,10 +3231,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -3294,6 +3309,9 @@
       "Edit email address": [
         "編輯電子郵件位址"
       ],
+      "email": [
+        "電子信箱"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
@@ -3366,6 +3384,9 @@
       "Fill in user details": [
         "填入使用者詳細資料"
       ],
+      "finance": [
+        "金融"
+      ],
       "for choosing ${ product }": [
         "選用 ${ product }"
       ],
@@ -3386,6 +3407,9 @@
       ],
       "here": [
         "這裡"
+      ],
+      "High Priority": [
+        "首要優先順序"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "身分提供者簽署驗證判斷提示的公開金鑰。身分提供者應在某處備有憑證雜湊可供下載或複製。只需在文字區域欄位中貼上憑證雜湊即可。"
@@ -3471,6 +3495,66 @@
       "Internet connection restored.": [
         "網際網路連線已恢復。"
       ],
+      "Invite Accepted": [
+        "已接受邀請"
+      ],
+      "Invite Created": [
+        "邀請已建立"
+      ],
+      "Invite deleted": [
+        "邀請已刪除"
+      ],
+      "Invite Deleted": [
+        "邀請已刪除"
+      ],
+      "Invite rejected": [
+        "邀請已婉拒"
+      ],
+      "Invite Rejected": [
+        "邀請已拒絕"
+      ],
+      "Item Autofilled": [
+        "項目自動填滿"
+      ],
+      "Item autofilled in vault": [
+        "項目自動填滿保管庫項目"
+      ],
+      "Item Changed Flags": [
+        "項目已變更標籤"
+      ],
+      "Item Created": [
+        "項目已新增"
+      ],
+      "Item created in vault": [
+        "於保管庫項目以創建"
+      ],
+      "Item Deleted": [
+        "項目已刪除"
+      ],
+      "Item flags changed in vault": [
+        "於保管庫項目標籤已刪除"
+      ],
+      "Item in vault untrashed": [
+        "於保管庫的項目取消刪除"
+      ],
+      "Item Read": [
+        "項目已讀"
+      ],
+      "Item read in vault": [
+        "於保管庫項目閱讀"
+      ],
+      "Item Trashed": [
+        "項目已刪除"
+      ],
+      "Item Untrashed": [
+        "項目已取消刪除"
+      ],
+      "Item Updated": [
+        "物品已更新"
+      ],
+      "Item updated in vault": [
+        "於保管庫項目已更新"
+      ],
       "JCB logo": [
         "JCB 符號"
       ],
@@ -3510,6 +3594,9 @@
       "Loading...": [
         "載入中‧‧‧"
       ],
+      "Low Priority": [
+        "較低優先順序"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "若無正確設置 SPF/DKIM/DMARC，各大電子郵件服務可能會拒收或過濾您的電子郵件。"
       ],
@@ -3525,11 +3612,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
       ],
+      "Medium Priority": [
+        "中等優先順序"
+      ],
       "Member": [
         "成員"
       ],
       "MM/YY": [
         "月月/年年"
+      ],
+      "Monitor accounts": [
+        "監控帳號"
       ],
       "Multi-user support not enabled.": [
         "多使用者支援尚未啟用。"
@@ -3545,6 +3638,12 @@
       ],
       "Must start with a letter.": [
         "必須以字母開頭。"
+      ],
+      "New User Invite Created": [
+        "新使用者已創建"
+      ],
+      "New User Invite Deleted": [
+        "新使用者已刪除"
       ],
       "No addresses exist": [
         "無任何電郵位址"
@@ -3596,6 +3695,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
+      ],
+      "password": [
+        "密碼"
       ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"
@@ -3768,6 +3870,21 @@
       "Setting up your organization": [
         "設定您的組織"
       ],
+      "Share Created": [
+        "共享已創建"
+      ],
+      "Share Deleted": [
+        "共享已刪除"
+      ],
+      "Share Updated": [
+        "共享已更新"
+      ],
+      "Shared vault deleted": [
+        "共享保管庫已刪除"
+      ],
+      "Shared vault updated": [
+        "共享保管庫已更新"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登入 ${ MAIL_APP_NAME } 以啟用您的電子郵件位址"
       ],
@@ -3830,6 +3947,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "您的身分提供者提供的認證將予刪除。"
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "下載數量包含實際下載與預覽檔案時的實體。"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "因為加密與簽章的開銷，加密後的資料會較大，保證了您資料的安全。"
       ],
       "The following address is invalid.": [
         "下列電子郵件位址無效。"
@@ -3966,6 +4089,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "由您的身分識別者產生的唯一 ID，形式通常是一個包含身分提供者名稱的 URL (範例：https://idp.example.com/XXXXX)。"
       ],
+      "Unknown event type": [
+        "未知的事件類型"
+      ],
       "Unsaved changes": [
         "未儲存的變更"
       ],
@@ -3996,8 +4122,32 @@
       "User activated": [
         "使用者已啟用"
       ],
+      "username": [
+        "使用者名稱"
+      ],
       "Users": [
         "使用者"
+      ],
+      "Vault created": [
+        "保管庫已創建"
+      ],
+      "Vault Created": [
+        "保管已庫創建"
+      ],
+      "Vault deleted": [
+        "保管庫已刪除"
+      ],
+      "Vault Deleted": [
+        "保管庫已刪除"
+      ],
+      "Vault shared with email": [
+        "用電子郵件分享的保管庫"
+      ],
+      "Vault updated": [
+        "保管庫已更新"
+      ],
+      "Vault Updated": [
+        "保管庫已更新"
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -4076,6 +4226,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
+      ],
+      "Week": [
+        "週"
       ],
       "Welcome": [
         "歡迎"
@@ -5006,6 +5159,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "您的訂閱已到期。 ${ cta } 以避免資料遺失。"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "啟用${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -5975,6 +6133,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } 已停用。"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } 已啟用。"
+      ],
       "A disabled address cannot be default": [
         "已停用的電郵位址不能成為預設"
       ],
@@ -6381,6 +6545,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "例如 https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "例如： "
+      ],
+      "Email or IP": [
+        "電子郵件或IP"
+      ],
+      "End date": [
+        "結束日期"
+      ],
       "Feedback": [
         "意見回饋"
       ],
@@ -6416,6 +6589,9 @@
       ],
       "Select state": [
         "請選州"
+      ],
+      "Start date": [
+        "開始日期"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -6564,6 +6740,20 @@
       ],
       "SCIM token": [
         "SMTP 憑證"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到 ${ name } 與 ${ remainingCount } 筆外洩的資料。開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳細資料。 ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }及一個其他潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "偵測到${ name }潛在資料外洩。請開啟${ DARK_WEB_MONITORING_NAME }去檢視詳情。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "您的資訊已證實暴露在最少一次的資料外洩事件中。請開啟 ${ DARK_WEB_MONITORING_NAME } 以檢視詳細資料。 ${ link }"
       ]
     },
     "Select file": {
@@ -7856,10 +8046,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -8039,6 +8229,9 @@
       "Error": [
         "錯誤"
       ],
+      "Event": [
+        "行程"
+      ],
       "Every member of the organization can access": [
         "團隊內的每個成員都能存取"
       ],
@@ -8083,6 +8276,9 @@
       ],
       "Invoices": [
         "繳款單"
+      ],
+      "Minicalendar": [
+        "小型行事曆"
       ],
       "Multi-user support": [
         "多使用者支援"
@@ -8267,6 +8463,9 @@
       "Switch to two-password mode": [
         "切換為雙重密碼模式"
       ],
+      "Time": [
+        "時間"
+      ],
       "TV sign in": [
         "電視登入"
       ],
@@ -8290,6 +8489,9 @@
       ],
       "Upload your organization’s logo": [
         "上傳您的組織標誌圖片檔案"
+      ],
+      "User": [
+        "使用者"
       ],
       "Users": [
         "使用者"
@@ -8381,6 +8583,11 @@
       ],
       "Status": [
         "狀態"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今天"
       ]
     },
     "Tooltip": {

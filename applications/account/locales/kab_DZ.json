@@ -576,7 +576,7 @@
         "Uhu, tanemmirt"
       ],
       "Ok": [
-        "IH"
+        "Ih"
       ],
       "OK": [
         "Ih"
@@ -638,11 +638,11 @@
       "Refresh status": [
         "Smiren addaden"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Reload": [
         "Smiren"
@@ -964,6 +964,12 @@
       ],
       "Verify account": [
         "Selken amiḍan"
+      ],
+      "Verify code": [
+        "Senqed tangalt"
+      ],
+      "Verify code again": [
+        "Senqed tangalt i tikkelt-nniḍen"
       ],
       "View": [
         "Sken"
@@ -2983,6 +2989,9 @@
       "Checkout expired, please try again": [
         "Asenqed iɛedda wakud-is, ttxil-k·m ɛreḍ tikkelt-nniḍen"
       ],
+      "Code wrong or not valid anymore": [
+        "Yir tangalt neɣ dayen d tarameɣtut"
+      ],
       "Condition incomplete": [
         "Tawtilt tarummidt"
       ],
@@ -3036,6 +3045,9 @@
       ],
       "Folder name cannot be empty.": [
         "Isem n ukaram ur ilaq ara ad yili d ilem."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Ma yella ifur wakud ɣef TV inek·inem, sit ɣef Smiren ɣef TV inek·inem syen sekcem tangalt-ik·im i tikkelt-nniḍen."
       ],
       "Impossible to create the gateway": [
         "D awezɣi ad ternu tqenṭert"
@@ -4941,11 +4953,11 @@
       "Data locked": [
         "Isefka sekkṛen"
       ],
-      "Dedicated servers": [
-        "Iqeddacen yettwagen"
-      ],
       "dedicated servers": [
         "iqeddacen yettwagen"
+      ],
+      "Dedicated servers": [
+        "Iqeddacen yettwagen"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ${ MAIL_APP_NAME } d tameẓyant."
@@ -6618,6 +6630,9 @@
       "Enter password": [
         "Sekcem Awal Uffir"
       ],
+      "Enter the code displayed on your TV": [
+        "Sekcem tangalt yettwaskanen ɣef TV inek·inem"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Sekcem awal uffir i tsarut s udlis umḍin: ${ fingerprintCode }"
       ],
@@ -7351,11 +7366,6 @@
         "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
       ]
     },
-    "mail_signup_2023: Info": {
-      "Limited time offer": [
-        "Talast n wakud yettwamudden"
-      ]
-    },
     "mail_signup_2024: Info": {
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Tettwanecdeḍ ad tɛerḍeḍ ${ MAIL_APP_NAME }"
@@ -7670,6 +7680,23 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7694,23 +7721,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Leqqem ɣer ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8569,9 +8579,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Akk Imeẓla Plus n ${ BRAND_NAME }.${ br } Yiwen kan n umultaɣ."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Rnu amiḍan ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Rnu amiḍan ${ BRAND_NAME }"
@@ -9886,10 +9893,10 @@
       "Card verification": [
         "Takerḍa n usenqed"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tansa n urmas n meṛṛa iznan"
       ],
       "Change login password": [
@@ -10036,6 +10043,9 @@
       ],
       "Delete version history?": [
         "Kkes azray n lqem?"
+      ],
+      "Device connected!": [
+        "Ibenk yeqqnen!"
       ],
       "Disable two-factor authentication": [
         "Sens asesteb s snat n tarrayin"
@@ -10506,6 +10516,9 @@
       ],
       "Time zone": [
         "Tamnaḍt tasragant"
+      ],
+      "TV sign in": [
+        "Qqen ɣer TV"
       ],
       "Two-factor authentication": [
         "Asesteb s snat n tarrayin"

@@ -760,11 +760,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reload": [
         "Reîncărcare"
@@ -1137,6 +1137,12 @@
       ],
       "Verify account": [
         "Verificare cont"
+      ],
+      "Verify code": [
+        "Cod verificare"
+      ],
+      "Verify code again": [
+        "Verificați codul din nou"
       ],
       "Verify domain": [
         "Verificare domeniu"
@@ -1537,6 +1543,14 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1558,14 +1572,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4018,6 +4024,9 @@
       "Checkout expired, please try again": [
         "Finalizarea comenzii a expirat, mai reîncercați."
       ],
+      "Code wrong or not valid anymore": [
+        "Cod greşit sau nu mai e valid."
+      ],
       "Condition incomplete": [
         "Condiție incompletă"
       ],
@@ -4096,6 +4105,9 @@
       ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Dacă timpul de pe TV a expirat, apăsaţi pe «Împrospătare» pe TV şi introduceţi din nou codul."
       ],
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"
@@ -6774,11 +6786,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7975,8 +7987,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Internetul ascuns este o parte ascunsă a internetului unde informațiile personale furate, cum ar fi identitățile, pot fi cumpărate și vândute."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Legătura de verificare a e-mailului a expirat. Reconectați-vă pentru a vi se retrimite legătura de verificare."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informațiile expuse au fost divulgate de la un serviciu terță parte. Informațiile contului ${ BRAND_NAME } rămân securizate și criptate. ${ learnMoreLink }"
@@ -8274,9 +8292,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Treceți la ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[bundleProPlan] } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
@@ -9662,6 +9677,9 @@
       "Enter password": [
         "Introduceți parola"
       ],
+      "Enter the code displayed on your TV": [
+        "Introduceți codul afișat pe TV"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduceți parola pentru cheia cu amprenta: ${ fingerprintCode }"
       ],
@@ -10621,9 +10639,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Luați planul Visionary și faceți parte din povestea ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Ofertă limitată"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11077,6 +11092,23 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11104,23 +11136,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -12944,9 +12959,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Creați un cont ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Creați-vă contul ${ BRAND_NAME }"
@@ -15623,10 +15635,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -15818,6 +15830,9 @@
       ],
       "Details": [
         "Detalii"
+      ],
+      "Device connected!": [
+        "Dispozitiv conectat!"
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
@@ -16436,6 +16451,9 @@
       ],
       "Track your referrals": [
         "Monitorizare persoane recomandate"
+      ],
+      "TV sign in": [
+        "Autentificare TV"
       ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"

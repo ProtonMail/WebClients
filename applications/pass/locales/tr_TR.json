@@ -190,6 +190,9 @@
       "Enable Dark Web Monitoring": [
         "Karanlık ağ izlemeyi aç"
       ],
+      "Entire vault": [
+        "Tüm kasa"
+      ],
       "Exclude from monitoring": [
         "İzlemeye katma"
       ],
@@ -216,6 +219,9 @@
       ],
       "Generated passwords": [
         "Oluşturulmuş parolalar"
+      ],
+      "Generating secure link...": [
+        "Güvenli bağlantı oluşturuluyor..."
       ],
       "Get ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } tarifesini edinin"
@@ -298,6 +304,9 @@
       "Mark as resolved": [
         "Çözümlenmiş olarak işaretle"
       ],
+      "Maximum views": [
+        "En fazla görüntüleme sayısı"
+      ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
@@ -324,6 +333,9 @@
       ],
       "Multiple select": [
         "Çoklu seçim"
+      ],
+      "No expired links": [
+        "Geçerlilik süresi geçmiş bir bağlantı yok"
       ],
       "OK": [
         "Tamam"
@@ -367,6 +379,9 @@
       "Remove access": [
         "Erişimi kaldır"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Geçerlilik süresi geçmiş tüm bağlantıları kaldır (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Bağlantıyı kaldır"
       ],
@@ -408,6 +423,9 @@
       ],
       "Saving": [
         "Kaydediliyor"
+      ],
+      "Secure links": [
+        "Güvenli bağlantılar"
       ],
       "See all": [
         "Tümünü görüntüle"
@@ -453,6 +471,9 @@
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
       ],
       "Sort vault items": [
         "Kasa ögelerini sırala"
@@ -776,6 +797,9 @@
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
+      "Inactive secure links could not be removed.": [
+        "Etkin olmayan güvenli bağlantılar kaldırılamadı."
+      ],
       "Invalid password manager": [
         "Parola yöneticisi geçersiz"
       ],
@@ -824,6 +848,12 @@
       "Restoring trashed items failed": [
         "Çöpe atılmış ögeler geri yüklenemedi"
       ],
+      "Secure link could not be created.": [
+        "Güvenli bağlantı oluşturulamadı."
+      ],
+      "Secure link could not be opened.": [
+        "Güvenli bağlantı açılamadı."
+      ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
       ],
@@ -845,11 +875,17 @@
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
       ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde tekrar deneyin."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
       ],
       "Trashing item failed": [
         "Öge çöpe atılamadı"
+      ],
+      "Try reaching out to the link owner.": [
+        "Bağlantının sahibiyle görüşmeyi deneyin."
       ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
@@ -1055,6 +1091,9 @@
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Tüm verilerin ele geçirilmesi olayları çözümlenmiş olarak işaretlenecek. Gelecekte ortaya çıkabilecek verilerin ele geçirilmesi olayları size bildirilecek."
       ],
+      "All inactive secure links were removed": [
+        "Etkin olmayan tüm güvenli bağlantılar kaldırıldı"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
       ],
@@ -1079,6 +1118,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ögeyi \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Bağlantıyı kaldırmak istediğinize emin misiniz?"
+      ],
       "Auto-lock successfully disabled.": [
         "Otomatik kilitleme kapatıldı."
       ],
@@ -1093,6 +1135,9 @@
       ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Can be viewed": [
+        "Görüntülenebilir"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
@@ -1201,6 +1246,9 @@
       ],
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
+      ],
+      "Expires in": [
+        "Geçerlilik sonu"
       ],
       "Expires in ${ remainingTime }": [
         "${ remainingTime } sonra geçerlilik süresi dolacak"
@@ -1494,8 +1542,14 @@
       "Registering PIN lock failed": [
         "PIN ile kilitleme kaydedilemedi"
       ],
+      "Removing all inactive secure links...": [
+        "Etkin olmayan tüm güvenli bağlantılar kaldırılıyor..."
+      ],
       "Removing extra password...": [
         "Ek parola kaldırılıyor..."
+      ],
+      "Removing secure link...": [
+        "Güvenli bağlantı kaldırılıyor..."
       ],
       "Restoring items from trash": [
         "Ögeler çöpten çıkarılıyor"
@@ -1575,6 +1629,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
         "Şu ${ result.ignored.length } öge içe aktarılamadı:"
+      ],
+      "The secure link has been removed": [
+        "Güvenli bağlantı kaldırıldı"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
@@ -1759,14 +1816,23 @@
       "10 minutes": [
         "10 dakika"
       ],
+      "14 days": [
+        "14 gün"
+      ],
       "15 minutes": [
         "15 dakika"
+      ],
+      "24 hours": [
+        "24 saat"
       ],
       "2FA secret key (TOTP)": [
         "İki adımlı doğrulama gizli anahtarı (tek kullanımlık)"
       ],
       "2FA token (TOTP)": [
         "İki adımlı doğrulama kodu (tek kullanımlık)"
+      ],
+      "30 days": [
+        "30 gün"
       ],
       "30 minutes": [
         "30 dakika"
@@ -1776,6 +1842,9 @@
       ],
       "5 minutes": [
         "5 dakika"
+      ],
+      "7 days": [
+        "7 gün"
       ],
       "A-Z": [
         "A-Z"
@@ -1897,6 +1966,9 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Expired link": [
+        "Bağlantının geçerlilik süresi geçmiş"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -1912,8 +1984,14 @@
       "Forwards to": [
         "Şuraya iletiyor"
       ],
+      "Free forever": [
+        "Sonsuza kadar ücretsiz"
+      ],
       "General": [
         "Genel"
+      ],
+      "Generate a secure link for this item": [
+        "Bu öge için bir güvenli bağlantı oluşturun"
       ],
       "Generic CSV": [
         "CSV dosyası"
@@ -1993,6 +2071,9 @@
       "Make all viewers": [
         "Tümünü izleyici yap"
       ],
+      "Max views reached": [
+        "En fazla görüntülenme sayısına ulaşılmış"
+      ],
       "Members": [
         "Üyeler"
       ],
@@ -2044,6 +2125,9 @@
       "Oldest to newest": [
         "Eskiden yeniye"
       ],
+      "Open-source password manager for effortless protection.": [
+        "Kolay koruma için açık kaynaklı parola yöneticisi."
+      ],
       "Organization": [
         "Kuruluş"
       ],
@@ -2080,6 +2164,9 @@
       "Recent": [
         "Son"
       ],
+      "Remove link": [
+        "Bağlantıyı kaldır"
+      ],
       "Report a problem": [
         "Sorun bildireceğim"
       ],
@@ -2088,6 +2175,9 @@
       ],
       "Reveal password": [
         "Parolayı göster"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Milyonlarca kişi tarafından güvenilen uçtan uca şifrelemeyi kullanarak hesaplarınızı ${ PASS_APP_NAME } ile güvenli bir şekilde saklayın, paylaşın ve otomatik olarak oturum açın."
       ],
       "Security": [
         "Güvenlik"
@@ -2110,6 +2200,15 @@
       "Session locking": [
         "Oturum kilitleme"
       ],
+      "Share": [
+        "Paylaş"
+      ],
+      "Share this vault or create a new vault": [
+        "Bu kasayı paylaşın ya da yeni bir kasa oluşturun"
+      ],
+      "Shared link": [
+        "Paylaşılan bağlantı"
+      ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
       ],
@@ -2130,6 +2229,16 @@
       ],
       "Text": [
         "Metin"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor",
+        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Adres panoya kopyalandı"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Bu ögeye ${ remaining } zamanına kadar erişilebilir"
       ],
       "Title": [
         "Başlık"
@@ -2534,6 +2643,9 @@
       "No reused passwords": [
         "Yeniden kullanılan bir parola yok"
       ],
+      "No shared secure links": [
+        "Paylaşılan bir güvenli bağlantı yok"
+      ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
       ],
@@ -2566,6 +2678,9 @@
       ],
       "Remove extra password": [
         "Ek parolayı kaldır"
+      ],
+      "Remove secure link?": [
+        "Güvenli bağlantı kaldırılsın mı?"
       ],
       "Resolved breaches": [
         "Çözümlenmiş verileri ele geçirme olayları"
