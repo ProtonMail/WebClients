@@ -1,11 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
 
-import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint, useFlag } from '@proton/components';
+import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
 import { PrivateWalletLayout } from '../components';
 import { ResponsiveContainerContextProvider } from '../contexts/ResponsiveContainerContext/ResponsiveContainerContextProvider';
@@ -16,13 +13,6 @@ import { WalletContainer } from './WalletContainer';
 
 const MainContainer = () => {
     const { viewportWidth } = useActiveBreakpoint();
-
-    const canAccessWallet = useFlag('Wallet');
-
-    if (!canAccessWallet) {
-        replaceUrl(`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}`);
-        return null;
-    }
 
     return (
         <ErrorBoundary component={<StandardErrorPage big />}>
