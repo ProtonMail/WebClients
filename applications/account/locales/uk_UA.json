@@ -760,11 +760,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -1138,6 +1138,12 @@
       "Verify account": [
         "Підтвердити обліковий запис"
       ],
+      "Verify code": [
+        "Підтвердити код"
+      ],
+      "Verify code again": [
+        "Перевірити код знову"
+      ],
       "Verify domain": [
         "Підтвердити домен"
       ],
@@ -1509,6 +1515,14 @@
         "Оберіть свою пропозицію Кінця року"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ТБ сховища (вдвічі більше, ніж з будь-яким іншим планом)"
@@ -1530,14 +1544,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "План ${ plan } доступний знову лише протягом обмеженого часу"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3962,6 +3968,9 @@
       "Checkout expired, please try again": [
         "Час оформлення минув, повторіть спробу"
       ],
+      "Code wrong or not valid anymore": [
+        "Код неправильний або недійсний"
+      ],
       "Condition incomplete": [
         "Неповна умова"
       ],
@@ -4042,6 +4051,9 @@
       ],
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Якщо час на вашому телевізорі завершився, натисніть Оновити на телевізорі та введіть код знову."
       ],
       "IMAP server is required": [
         "Сервер IMAP обов'язковий"
@@ -6756,11 +6768,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -7947,8 +7959,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web – це прихована частина інтернету, де можна купувати й продавати викрадену особисту інформацію, як-от облікові дані."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Кількість завантажень включає як фактичні завантаження, так і випадки попереднього перегляду файлів."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Термін дії посилання для підтвердження електронною поштою завершився. Увійдіть, щоб повторно надіслати посилання."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашифровані дані трохи більші через витрату додаткових ресурсів на шифрування та підписи, які забезпечують безпеку ваших даних."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
@@ -8243,9 +8261,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[bundleProPlan] }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
@@ -9617,6 +9632,9 @@
       "Enter password": [
         "Введіть пароль"
       ],
+      "Enter the code displayed on your TV": [
+        "Введіть код, показаний на вашому телевізорі"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введіть пароль для ключа з відбитком: ${ fingerprintCode }"
       ],
@@ -10561,9 +10579,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Придбайте передплату Visionary і будьте частиною історії ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Обмежена пропозиція"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11001,6 +11016,23 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Залишити безплатний"
@@ -11028,23 +11060,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -12760,6 +12775,18 @@
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ],
+      "Secure vault sharing (${ n } vault)": [
+        "Безпечний спільний доступ до сховища (${ n } сховище)",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ)",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ)",
+        "Безпечний спільний доступ до сховища (${ n } сховищ)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Безпечний спільний доступ до сховища (${ n } vault) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями"
+      ],
       "Setting up your organization": [
         "Налаштування вашої організації"
       ],
@@ -12809,9 +12836,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Всі сервіси ${ BRAND_NAME } Plus.${ br }Одна проста передплата."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Створіть обліковий запис ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Створіть свій обліковий запис ${ BRAND_NAME }"
@@ -15280,11 +15304,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -15474,6 +15498,9 @@
       ],
       "Details": [
         "Подробиці"
+      ],
+      "Device connected!": [
+        "Пристрій під'єднано!"
       ],
       "Disable two-factor authentication": [
         "Вимкнути двоетапну перевірку"
@@ -16092,6 +16119,9 @@
       ],
       "Track your referrals": [
         "Відстежуйте свої запрошення"
+      ],
+      "TV sign in": [
+        "Вхід на телевізорі"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"

@@ -644,11 +644,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reload": [
         "Újratöltés"
@@ -976,6 +976,12 @@
       ],
       "Verify account": [
         "Fiók ellenőrzése"
+      ],
+      "Verify code": [
+        "Erősítse meg a kódot"
+      ],
+      "Verify code again": [
+        "Erősítse meg újra a kódot"
       ],
       "View": [
         "Megtekintés"
@@ -3252,6 +3258,9 @@
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
+      "Code wrong or not valid anymore": [
+        "Hibás kód, vagy már nem érvényes"
+      ],
       "Condition incomplete": [
         "Hiányos feltétel"
       ],
@@ -3316,6 +3325,9 @@
       ],
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Ha a TV készüléken a számláló lejárt, kattintson a Frissítés gombra a TV-n, és adja meg újra a kódot."
       ],
       "IMAP server is required": [
         "IMAP szerver megadása szükséges"
@@ -6322,8 +6334,14 @@
       "The calendar will be removed from your account.": [
         "Ez a naptár eltávolításra kerül a fiókjából."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A letöltések száma tartalmazza a tényleges letöltéseket és az előnézet megtekintéseit is."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Az e-mail hitelesítési hivatkozás lejárt. Jelentkezzen be, hogy újra küldjön egy hitelesítési hivatkozást."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "A titkosított adatok egy kicsit több helyet foglalnak a titkosítás és az aláírások miatt, amelyek az adatai biztonságát szolgálják."
       ],
       "The following address is available:": [
         "A következő cím érhető el:"
@@ -6552,9 +6570,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Váltson a ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } vagy ${ PLAN_NAMES[bundleProPlan] } csomagra, hogy elérhesse a ${ PROTON_SENTINEL_NAME } szolgáltatást."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Frissítsd a fiókodat egy rövidebb @pm.me cím hozzáadásához, amit könnyebb megosztani. Ez a \"Private Message me\" vagy “${ MAIL_APP_NAME } me” rövidítése."
@@ -7693,6 +7708,9 @@
       "Enter password": [
         "Jelszó megadása"
       ],
+      "Enter the code displayed on your TV": [
+        "Adja meg a TV készülékén megjelenő kódot"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Írja be a következő ujjlenyomattal rendelkező kulcshoz tartozó jelszót: ${ fingerprintCode }"
       ],
@@ -8465,11 +8483,6 @@
         "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
       ]
     },
-    "mail_signup_2023: Info": {
-      "Limited time offer": [
-        "Korlátozott idejű ajánlat"
-      ]
-    },
     "mail_signup_2024: Info": {
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Meghívás a ${ MAIL_APP_NAME } alkalmazás kipróbálására"
@@ -8799,6 +8812,20 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -8826,20 +8853,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -9984,9 +9997,6 @@
       ]
     },
     "pass_signup_2023: Title": {
-      "Create a ${ PASS_APP_NAME } account": [
-        "${ PASS_APP_NAME } fiók létrehozása"
-      ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } fiók létrehozása"
       ]
@@ -11614,10 +11624,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -11756,6 +11766,9 @@
       ],
       "Delete version history?": [
         "Változatelőzmények törlése?"
+      ],
+      "Device connected!": [
+        "Eszköz csatlakoztatva!"
       ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
@@ -12238,6 +12251,9 @@
       ],
       "Track your referrals": [
         "Meghívók megtekintése"
+      ],
+      "TV sign in": [
+        "TV bejelentkezés"
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"

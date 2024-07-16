@@ -760,11 +760,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Reload": [
         "새로고침"
@@ -1138,6 +1138,12 @@
       "Verify account": [
         "계정 인증"
       ],
+      "Verify code": [
+        "코드 인증"
+      ],
+      "Verify code again": [
+        "코드를 다시 인증하세요"
+      ],
       "Verify domain": [
         "도메인 소유권 인증"
       ],
@@ -1367,7 +1373,7 @@
         "파일과 사진을 보호하세요"
       ],
       "Secure your communications": [
-        "안전하게 소통하세요."
+        "안전하게 소통하세요"
       ]
     },
     "Apps dropdown": {
@@ -1531,6 +1537,14 @@
         "연말 할인 선택"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1552,14 +1566,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -3992,6 +3998,9 @@
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
       ],
+      "Code wrong or not valid anymore": [
+        "틀렸거나 더 이상 유효하지 않는 코드"
+      ],
       "Condition incomplete": [
         "조건 미완료"
       ],
@@ -4066,6 +4075,9 @@
       ],
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "TV의 인증 시간이 만료된 경우 TV에서 새로 고침을 클릭하고 코드를 다시 입력하십시오."
       ],
       "IMAP server is required": [
         "IMAP 서버가 필요함"
@@ -6187,10 +6199,10 @@
         "${ userFound }명 사용자 찾음"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "국가 차원의 연결에는 ${ vpnPlus }가 필요해요."
+        "국가 수준의 접속에는 ${ vpnPlus }가 필요합니다."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
-        "Secure Core 기능에는 ${ vpnPlus }가 필요해요."
+        "Secure Core 기능은 ${ vpnPlus }가 필요합니다."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
@@ -6648,10 +6660,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7042,7 +7054,7 @@
         "링크 삽입"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "선택한 국가의 임의 서버에 연결하기 위해 국가 구성 파일을 설치해요."
+        "선택한 국가의 무작위 서버에 접속하려면 국가 설정 파일을 설치하세요."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
         "세 개의 무료 위치 중 하나에 있는 특정 서버에 연결하려면 무료 서버 구성 파일을 설치하세요."
@@ -7051,7 +7063,7 @@
         "VPN 엔드포인트 손상에 대한 추가 보호를 구성하려면 Secure Core 구성 파일을 설치하세요."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "서버 구성 파일을 설치하여 선택한 국가의 특정 서버에 연결해요."
+        "선택한 국가의 특정 서버에 연결하려면 서버 구성 파일을 설치하세요."
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -7396,7 +7408,7 @@
         "전용 서버를 게이트웨이로 구성하고 어떤 구성원이 접근할 수 있는지 결정하세요."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
-        "조직에 다른 관리자가 있습니다. 새 비밀번호를 다른 관리자에게 전달해야 합니다."
+        "조직에 다른 관리자가 있습니다. 당신이 새로운 비밀번호를 전달하셔야 합니다."
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "조직 내 다른 사용자들은 나의 바쁜 시간대를 확인할 수 있습니다. 이벤트의 세부 정보는 공유되지 않습니다."
@@ -7833,8 +7845,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "다크 웹이란 신원과 같은 도난당한 개인 정보의 매매가 이루어지기도 하는 인터넷의 숨겨진 일부입니다."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "다운로드 횟수에는 실제 다운로드와 파일을 미리보는 경우도 포함됩니다."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "이메일 인증 링크가 만료되었습니다. 로그인하여 새로운 인증 링크를 재전송 하십시오."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "암호화된 데이터가 데이터의 보안을 보장하는 암호화 및 서명의 오버헤드로 인해 약간 더 큽니다."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
@@ -8126,9 +8144,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } 기능을 사용하려면 ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } 및 ${ PLAN_NAMES[bundleProPlan] } 플랜으로 업그레이드 하세요."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "공유하기 쉽도록 계정에 @pm.me 짧은 주소로 업그레이드 하세요. \"${ MAIL_APP_NAME }\" 또는 \"비공개 메시지 me\"를 의미합니다."
@@ -9478,6 +9493,9 @@
       "Enter password": [
         "비밀번호 입력"
       ],
+      "Enter the code displayed on your TV": [
+        "TV에 표시된 코드 입력"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "키의 지문 인식을 위해 비밀번호를 입력하세요: ${ fingerprintCode }"
       ],
@@ -10424,10 +10442,7 @@
     },
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "${ BRAND_NAME }의 스토리 중 일부가 되고 싶으시면 Visionary가 되어 주세요."
-      ],
-      "Limited time offer": [
-        "기간 한정 세일"
+        "Visionary가 되어 ${ BRAND_NAME }의 이야기와 하나가 되어주세요"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10871,6 +10886,23 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -10898,23 +10930,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -12676,9 +12691,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "모든 ${ BRAND_NAME } Plus 서비스. ${ br }쉬운 구독."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "${ PASS_APP_NAME } 계정 생성하기"
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정 생성하기"
@@ -15256,11 +15268,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -15447,6 +15459,9 @@
       ],
       "Details": [
         "세부 사항"
+      ],
+      "Device connected!": [
+        "디바이스 연결됨!"
       ],
       "Disable two-factor authentication": [
         "이중 인증 비활성화"
@@ -16059,6 +16074,9 @@
       ],
       "Track your referrals": [
         "추천인 추적"
+      ],
+      "TV sign in": [
+        "TV 로그인"
       ],
       "Two-factor authentication": [
         "2단계 인증"

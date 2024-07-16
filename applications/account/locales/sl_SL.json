@@ -757,11 +757,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Reload": [
         "Osveži"
@@ -1135,6 +1135,12 @@
       "Verify account": [
         "Potrdi račun"
       ],
+      "Verify code": [
+        "Preveri kodo"
+      ],
+      "Verify code again": [
+        "Ponovno preveri kodo"
+      ],
       "Verify domain": [
         "Potrdi domeno"
       ],
@@ -1388,7 +1394,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Dvignite produktivnost e-pošte na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
+        "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ],
       "Trial in progress": [
         "Preizkus v teku"
@@ -1522,6 +1528,14 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1543,14 +1557,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3998,6 +4004,9 @@
       "Checkout expired, please try again": [
         "Seja je potekla, poskusite znova."
       ],
+      "Code wrong or not valid anymore": [
+        "Koda je neveljavna ali je potekla"
+      ],
       "Condition incomplete": [
         "Nepopoln pogoj"
       ],
@@ -4078,6 +4087,9 @@
       ],
       "Folder name cannot be empty.": [
         "Ime mape ne sme biti prazno."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Če je čas za vnos kode na televizorju potekel, kliknite Osveži in znova vnesite kodo."
       ],
       "IMAP server is required": [
         "Zahtevan je strežnik IMAP"
@@ -6789,11 +6801,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenski strežniki"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -7186,16 +7198,16 @@
         "Vstavi povezavo"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Namestite konfiguracijsko datoteko Country configuration, če se želite povezati na naključen strežnik v izbrani državi."
+        "Namestite konfiguracijsko datoteko za državo, če se želite povezati na naključen strežnik v izbrani državi."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Namestite konfiguracijsko datoteko Free server, če se želite povezati na točno določen strežnik na eni izmed treh brezplačnih lokacij."
+        "Namestite konfiguracijsko datoteko za brezplačni strežnik, če se želite povezati na točno določen strežnik na eni izmed treh brezplačnih lokacij."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Namestite Secure Core konfiguracijsko datoteko za dodatno zaščito končne točke VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Namestite konfiguracijsko datoteko Server configuration, če se želite povezati na točno določen strežnik v izbrani državi."
+        "Namestite konfiguracijsko datoteko za državo, če se želite povezati na točno določen strežnik v izbrani državi."
       ],
       "Internet connection lost": [
         "Internetna povezava je prekinjena"
@@ -7887,8 +7899,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Temni splet je skriti del interneta, kjer je mogoče kupiti in prodati ukradene osebne podatke, kot je identiteta."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Število prenosov vključuje tako dejanske prenose kot tudi primere predogleda datotek."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Povezava za preverjanje elektronske pošte je potekla. Prosimo, prijavite se, da pošljete novo povezavo za preverjanje."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Šifrirani podatki so nekoliko večji zaradi šifriranja in podpisov, ki zagotavljajo varnost vaših podatkov."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
@@ -8162,9 +8180,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Nadgradite na paket ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, paket ${ PLAN_NAMES[PLANS.FAMILY] } ali paket ${ PLAN_NAMES[bundleProPlan] }, da pridobite dostop do ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Nadgradite, da boste lahko svojemu računu dodali krajši naslov @pm.me, ki je enostavnejši za deljenje. Gre za kratico za \"Pošlji mi ${ MAIL_APP_NAME }\" ali \"Zasebno sporočilo\"."
@@ -9506,6 +9521,9 @@
       "Enter password": [
         "Vnesite geslo"
       ],
+      "Enter the code displayed on your TV": [
+        "Vnesite kodo, prikazano na televizorju"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Vnesite geslo za ključ s prstnim odtisom: ${ fingerprintCode }"
       ],
@@ -10444,9 +10462,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Postanite vizionar in bodite del zgodbe ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Časovno omejena ponudba"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10884,6 +10899,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
@@ -10911,23 +10943,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadgradi na ${ upsellPlanHumanSize }."
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -11247,7 +11262,7 @@
         "Zaščitite ${ n } naprav hkrati."
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, katera je potrebno posodobiti."
+        "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, ki jih je treba posodobiti."
       ],
       "Reply to messages": [
         "Odgovorite na sporočila"
@@ -12342,7 +12357,7 @@
     },
     "Organization logo upload modal": {
       "Drop image file here to upload or": [
-        "Spustite slikovno datoteko sem za nalaganje oz"
+        "Spustite slikovno datoteko sem za nalaganje ali"
       ],
       "File in PNG or JPEG format": [
         "Datoteka v formatu PNG ali JPEG"
@@ -12710,9 +12725,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Vse ${ BRAND_NAME } Plus storitve.${ br }Ena enostavna naročnina."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Ustvarite svoj račun ${ PASS_APP_NAME }."
       ],
       "Create your ${ BRAND_NAME } account": [
         "Ustvarite svoj račun ${ BRAND_NAME }."
@@ -15289,10 +15301,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -15483,6 +15495,9 @@
       ],
       "Details": [
         "Podrobnosti"
+      ],
+      "Device connected!": [
+        "Naprava je povezana!"
       ],
       "Disable two-factor authentication": [
         "Onemogoči dvojno preverjanje pristnosti"
@@ -16092,6 +16107,9 @@
       ],
       "Track your referrals": [
         "Sledite svojim priporočilom."
+      ],
+      "TV sign in": [
+        "TV prijava"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"

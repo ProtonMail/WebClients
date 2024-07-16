@@ -44,6 +44,9 @@
       ]
     },
     "Account Settings - Info": {
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
@@ -745,10 +748,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Reload": [
@@ -1123,6 +1126,12 @@
       "Verify account": [
         "ანგარიშის გადამოწმება"
       ],
+      "Verify code": [
+        "კოდის გადამოწმება"
+      ],
+      "Verify code again": [
+        "კოდის კიდევ ერთხელ შემოწმება"
+      ],
       "Verify domain": [
         "დომენის გადამოწმება"
       ],
@@ -1381,6 +1390,9 @@
       "New": [
         "ახალი"
       ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
+      ],
       "Trial expires on ${ formattedDate }": [
         "სატესტო ვერსიის ვადის ამოწურვის დროა ${ formattedDate }"
       ],
@@ -1516,6 +1528,14 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1537,14 +1557,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -3984,6 +3996,9 @@
       "Checkout expired, please try again": [
         "გადახდის დრო გავიდა. თავიდან სცადეთ"
       ],
+      "Code wrong or not valid anymore": [
+        "კოდი არასწორია ან აღარ მოქმედებს"
+      ],
       "Condition incomplete": [
         "არასრული პირობა"
       ],
@@ -4060,6 +4075,9 @@
       ],
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "თუ ვადა თქვენს TV-ზე უკვე უკვე გავიდა, დააწკაპუნეთ განახლებაზე თქვენს TV-ზე და კოდი თავიდან შეიყვანეთ."
       ],
       "IMAP server is required": [
         "IMAP სერვერის მითითება აუცილებელია"
@@ -6409,6 +6427,9 @@
       "Amount due": [
         "გადასახდელი თანხა"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "ელფოსტის ფსევდონიმი ელფოსტის მისამართივით მუშაობს, მაგრამ ამცირებს სპამს და თქვენს ნამდვილ ელფოსის მისამართს და იდენტიფიკატორს დამალულად შეინარჩუნებს."
+      ],
       "An error occurred while communicating with the extension": [
         "შეცდომა გაფართოებასთან ურთიერთობისას"
       ],
@@ -6684,11 +6705,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -7330,6 +7351,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
       ],
+      "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
+        "NetShield ${ VPN_APP_NAME }-ის რეკლამის დაბლოკვის ფუნქციაა, რომელიც თქვენს მოწყობილობას რეკლამებისგან, მავნე პროგრამებისგან და ტრეკერებისგან იცავს."
+      ],
       "New": [
         "ახალი"
       ],
@@ -7865,8 +7889,17 @@
       "The credentials from your Identity Provider will be deleted.": [
         "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "ბნელი ვები ინტერნეტის დამალული ნაწილია, სადაც მოპარული პირადი ინფორმაცია შეგიძლიათ იყიდოთ ან გაყიდოთ."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "გადმოწერების რიცხვი მოიცავს როგორც მიმდინარე გადმოწერებს, ასევე ფაილების წინასწარ გადახედვის შემთხვევებს."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "ელფოსტის გადამოწმების ბმულის ვადა ამოიწურა. გადამოწმების ბმულის ხელახლაა გამოგზავნისთვის შედით სისტემაში."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "დაშიფრული მონაცემები ოდნავ უფრო დიდია დაშიფვრისა და ხელმოწერების ზედმეტი ხარჯის გამო, რაც უზრუნველყოფს თქვენი მონაცემების უსაფრთხოებას."
       ],
       "The following address is available:": [
         "ხელმისაწვდომია შემდეგი მისამართი:"
@@ -8152,9 +8185,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "ასწიეთ ტარიფი ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ან ${ PLAN_NAMES[bundleProPlan] } გეგმამდე, რათა ${ PROTON_SENTINEL_NAME }-სთან წვდომა მიიღოთ."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "აწიეთ ტარიფი, რათა უფრო მოკლე, @pm.me მისამართები გქონდეთ, რომლებიც გასაზიარებლად უფრო ადვილია. ის ნიშნავს \"${ MAIL_APP_NAME } მე\", ანუ \"პირადად მომწერე\"."
@@ -9488,6 +9518,9 @@
       "Enter password": [
         "შეიყვანეთ პაროლი"
       ],
+      "Enter the code displayed on your TV": [
+        "შეიყვანეთ თქვენს TV-ზე ნაჩვენები კოდი"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "შეიყვანეთ იმ გასაღების პაროლი, რომლის ანაბეჭდია: ${ fingerprintCode }"
       ],
@@ -10438,9 +10471,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "ასწიეთ ტრაფიკი Visionary-ზე და გახდით ${ BRAND_NAME }-ის ისტორიის ნაწილი"
-      ],
-      "Limited time offer": [
-        "დროში შეზღუდული შეთავაზება"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10889,6 +10919,23 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -10916,23 +10963,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -11224,6 +11254,9 @@
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
       ],
       "Reply to messages": [
         "პასუხი შეტყობინებებზე"
@@ -12696,9 +12729,6 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "ყველა ${ BRAND_NAME } Plus-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "შექმენით ${ PASS_APP_NAME }-ის ანგარიში"
-      ],
       "Create your ${ BRAND_NAME } account": [
         "შექმენით თქვენი ${ BRAND_NAME }-ის ანგარიში"
       ],
@@ -13261,6 +13291,9 @@
       "Enter URL and token into your identity provider": [
         "შეიყვანეთ URL და კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
+      "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
+        "უსაფრთხოებისთვის, SCIM კოდი დამალულ იქნება, როცა თქვენს ცვლილებებს შეინახავთ და მას ვეღარასდროს იხილავთ."
+      ],
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
       ],
@@ -13316,6 +13349,9 @@
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
     },
     "Select file": {
@@ -14343,6 +14379,9 @@
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
       ],
@@ -15236,10 +15275,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -15429,6 +15468,9 @@
       ],
       "Details": [
         "დეტალები"
+      ],
+      "Device connected!": [
+        "მოწყობილობა მიერთებულია!"
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
@@ -16044,6 +16086,9 @@
       ],
       "Track your referrals": [
         "ადევნეთ თვალყური თქვენს მიმართვებს"
+      ],
+      "TV sign in": [
+        "TV-ში შესვლა"
       ],
       "Two-factor authentication": [
         "2FA"

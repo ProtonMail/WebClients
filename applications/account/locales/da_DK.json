@@ -703,6 +703,9 @@
       "OK": [
         "Ok"
       ],
+      "Open": [
+        "Åbn"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
@@ -760,11 +763,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -1137,6 +1140,12 @@
       ],
       "Verify account": [
         "Bekræft konto"
+      ],
+      "Verify code": [
+        "Verificér kode"
+      ],
+      "Verify code again": [
+        "Verificér koden igen"
       ],
       "Verify domain": [
         "Bekræft domæne"
@@ -1541,6 +1550,14 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1562,14 +1579,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4012,6 +4021,9 @@
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
       ],
+      "Code wrong or not valid anymore": [
+        "Kode forkert eller ikke længere gyldig"
+      ],
       "Condition incomplete": [
         "Betingelse mangelfuld"
       ],
@@ -4088,6 +4100,9 @@
       ],
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Hvis tiden på dit tv er udløbet, skal du klikke på Opdater på dit TV og indtaste din kode igen."
       ],
       "IMAP server is required": [
         "IMAP-server er påkrævet."
@@ -5600,6 +5615,11 @@
         "Tjenester"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Gruppeadresse"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -6358,6 +6378,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
       ],
+      "Add a recovery ${ type }": [
+        "Tilføj en gendannelse ${ type }"
+      ],
       "Add a recovery email address": [
         "Tilføj en e-mailadresse til gendannelse"
       ],
@@ -6757,11 +6780,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -6775,6 +6798,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
+      ],
+      "Disable recovery by ${ type }": [
+        "Deaktiver gendannelse ved ${ type }"
       ],
       "Discount": [
         "Rabat"
@@ -7829,6 +7855,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
+      "Session Ended": [
+        "Session afsluttet"
+      ],
+      "Session Roaming": [
+        "Omrokering af sessioner"
+      ],
+      "Session Started": [
+        "Session startet"
+      ],
       "Session timed out": [
         "Session er udløbet"
       ],
@@ -7992,8 +8027,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Det mørke net (engelsk: dark web) er en skjult del af internettet, hvor stjålne personlige oplysninger, f.eks. identiteter, kan købes og sælges."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-mailbekræftelseslinket er udløbet. Log ind for at sende et nyt bekræftelseslink."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De krypterede data er en smule større på grund af overheadomkostningerne ved krypteringen og signaturerne, som garanterer sikkerheden for dine data."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
@@ -8184,6 +8225,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Hvis du vil sikre kontinuerlig adgang til din konto, skal du indstille en metode til gendannelse af kontoen"
       ],
+      "To ensure highest possible security of your account": [
+        "Sådan sikrer du størst mulig sikkerhed for din konto"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "For at sikre at du ikke mister vigtig data, gemmer ${ DRIVE_APP_NAME } ældre versioner af dine filer, når du og dine samarbejdspartnere foretager ændringer. Vælg, hvor længe ${ BRAND_NAME } skal gemme tidligere versioner."
       ],
@@ -8289,8 +8333,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Opgrader til ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, eller ${ PLAN_NAMES[bundleProPlan] } abonnement for at få adgang til ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Opgrader til ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[bundleProPlan] } abonnement for at tilgå ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Opgrader for at tilføje en kortere @pm.me adresse til din konto, som er lettere at dele. Det står for “${ MAIL_APP_NAME } me” eller “Private Message me”."
@@ -8372,6 +8416,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke blive debiteret. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
+      ],
+      "Verify ${ type }": [
+        "Bekræft ${ type }"
       ],
       "Verify domain": [
         "Bekræft domæne"
@@ -9664,6 +9711,9 @@
       "Enter password": [
         "Angiv adgangskode"
       ],
+      "Enter the code displayed on your TV": [
+        "Indtast den kode, der vises på dit TV"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Angiv adgangskoden til nøgle med fingeraftryk: ${ fingerprintCode }"
       ],
@@ -10615,11 +10665,14 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Få ${ plan }** i en begrænset periode!"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Få ${ plan }** for fremtidig adgang til ${ appName }!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Bliv en Visionary og vær en del af ${ BRAND_NAME }'s historie"
-      ],
-      "Limited time offer": [
-        "Tidsbegrænset tilbud"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11071,6 +11124,23 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11098,23 +11168,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -12890,8 +12943,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ét nemt abonnement"
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Opret en ${ PASS_APP_NAME }-konto"
+      "Create a ${ appName } account": [
+        "Opret en ${ appName }-konto"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Opret din ${ BRAND_NAME }-konto"
@@ -15526,11 +15579,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -15582,6 +15635,9 @@
       ],
       "Connect ${ name }": [
         "Forbind ${ name }"
+      ],
+      "Connection events": [
+        "Forbindelseshændelse"
       ],
       "Contact us": [
         "Kontakt os"
@@ -15719,6 +15775,9 @@
       ],
       "Details": [
         "Detaljer"
+      ],
+      "Device connected!": [
+        "Enhed tilsluttet!"
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
@@ -15885,6 +15944,9 @@
       ],
       "Forward emails": [
         "Videresend e-mails"
+      ],
+      "Gateway": [
+        "Portal"
       ],
       "Gateways": [
         "Gateways"
@@ -16057,6 +16119,9 @@
       ],
       "Organization name": [
         "Organisationsnavn"
+      ],
+      "Origin": [
+        "Oprindelse"
       ],
       "Other calendars": [
         "Andre kalendere"
@@ -16340,6 +16405,9 @@
       ],
       "Track your referrals": [
         "Spor dine henvisninger"
+      ],
+      "TV sign in": [
+        "TV log ind"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"

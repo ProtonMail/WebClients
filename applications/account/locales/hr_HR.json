@@ -526,11 +526,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -780,6 +780,12 @@
       ],
       "Verify account": [
         "Potvrdi račun"
+      ],
+      "Verify code": [
+        "Potvrdi kôd"
+      ],
+      "Verify code again": [
+        "Ponovno potvrdite kôd"
       ],
       "View": [
         "Pregled"
@@ -2493,6 +2499,9 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatski odgovori su plaćena značajka. Nadogradite na plaćeni račun da biste koristili ovu značajku."
       ],
+      "Code wrong or not valid anymore": [
+        "Kôd je pogrešan ili više ne vrijedi"
+      ],
       "Condition incomplete": [
         "Uvjet je nepotpun"
       ],
@@ -2531,6 +2540,9 @@
       ],
       "Folder name cannot be empty.": [
         "Naziv mape ne može biti prazan."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Ako je vrijeme na vašem TV-u isteklo, kliknite Osvježi na televizoru i ponovno unesite kôd."
       ],
       "Impossible to create the gateway": [
         "Nije moguće stvoriti pristupnik"
@@ -5115,6 +5127,9 @@
       "Enter password": [
         "Unesi lozinku"
       ],
+      "Enter the code displayed on your TV": [
+        "Unesite kôd prikazan na vašem televizoru"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Unesite lozinku za ključ s otiskom prsta: ${ fingerprintCode }"
       ],
@@ -5935,6 +5950,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5947,14 +5970,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -7600,10 +7615,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [
@@ -7701,6 +7716,9 @@
       ],
       "Details": [
         "Pojedinosti"
+      ],
+      "Device connected!": [
+        "Uređaj je povezan!"
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"
@@ -8082,6 +8100,9 @@
       ],
       "Time zone": [
         "Vremenska zona"
+      ],
+      "TV sign in": [
+        "Prijava putem televizije"
       ],
       "Two-factor authentication": [
         "Dvofaktorska autentikacija"
