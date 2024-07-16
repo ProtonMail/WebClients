@@ -6,11 +6,18 @@ import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
-import { Tab } from './index.d';
+import type { IconName } from '../icon';
+import { Icon } from '../icon';
 
 import './Tabs.scss';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
+
+export type Tab = {
+    title: string;
+    content?: ReactNode;
+    icon?: IconName;
+};
 
 interface Props {
     tabs?: Tab[];
@@ -121,7 +128,7 @@ export const Tabs = ({
                         ref={containerRef}
                         style={{ '--translate': translate, '--scale': scale }}
                     >
-                        {tabList.map(({ title }, index) => {
+                        {tabList.map(({ title, icon }, index) => {
                             const key = toKey(index, 'key_');
                             const label = toKey(index, 'label_');
                             const selected = value === index;
@@ -148,7 +155,7 @@ export const Tabs = ({
                                             onChange(index);
                                         }}
                                         type="button"
-                                        className="tabs-list-link flex justify-center relative"
+                                        className="tabs-list-link flex flex-nowrap justify-center items-center gap-1 relative"
                                         id={label}
                                         role="tab"
                                         aria-controls={key}
@@ -156,9 +163,10 @@ export const Tabs = ({
                                         aria-selected={selected}
                                         data-testid={`tab-header-${title.replace(/\s+/, '-').toLowerCase()}-button`}
                                     >
-                                        <span className={clsx(variant === 'modern' && 'text-ellipsis block')}>
+                                        <span className={clsx((variant === 'modern' || icon) && 'text-ellipsis block')}>
                                             {title}
                                         </span>
+                                        {icon && <Icon name={icon} className="shrink-0" />}
                                     </button>
                                 </li>
                             );

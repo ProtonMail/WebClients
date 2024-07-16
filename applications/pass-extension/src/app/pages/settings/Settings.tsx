@@ -51,8 +51,17 @@ const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
     { path: '/security', title: c('Label').t`Security`, content: <Security /> },
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
-    { path: '/account', title: c('Label').t`Account`, content: <></> },
-    ...(orgEnabled ? [{ path: '/organization', title: c('Label').t`Organization`, content: <></> }] : []),
+    { path: '/account', title: c('Label').t`Account`, icon: 'arrow-out-square', content: <></> },
+    ...(orgEnabled
+        ? [
+              {
+                  path: '/organization',
+                  title: c('Label').t`Organization`,
+                  icon: 'arrow-out-square',
+                  content: <></>,
+              } as const,
+          ]
+        : []),
     { path: '/support', title: c('Label').t`Support`, content: <Support /> },
     ...(ENV === 'development' ? [{ path: '/dev', title: 'Developer', content: <Developer /> }] : []),
 ];
@@ -80,7 +89,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     const handleOnChange = (nextTab: number) => {
         if (tabs[nextTab].path === '/account') navigateToAccount();
-        if (tabs[nextTab].path === '/organization') navigateToOrganization();
+        else if (tabs[nextTab].path === '/organization') navigateToOrganization();
         else history.push(tabs[nextTab].path);
     };
 
