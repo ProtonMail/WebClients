@@ -43,7 +43,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
     const { onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
         FeatureCode.ComposerAssistantInitialSetup
     );
-    const { hasCompatibleBrowser, hasCompatibleHardware, closeAssistant } = useAssistant();
+    const { hasCompatibleBrowser, hasCompatibleHardware, closeAssistant, handleSettingChange } = useAssistant();
     const { displayAssistantModalPromise, assistantRefManager: assistantInputRefManager } =
         useComposerAssistantProvider();
     const { sendShowAssistantReport } = useAssistantTelemetry();
@@ -74,6 +74,11 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
 
         if (inputValue === SERVER_ONLY) {
             await waitAndClickInput();
+            // TODO: Workaround to keep old behavior
+            // When server is selected by user we set the assistant local spotlight as viewed
+            // This is a late change to avoid side effects
+            // Can be reconsidered in near future
+            assistantInputRefManager.composerSpotlight.get(composerID).current?.setSpotlightViewed();
             return;
         }
 
@@ -81,6 +86,8 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
             const canRunLocally = hasCompatibleHardware && hasCompatibleBrowser;
             if (canRunLocally) {
                 await waitAndClickInput();
+                void handleSettingChange();
+                assistantInputRefManager.composerSpotlight.get(composerID).current?.showSpotlight();
                 return;
             }
 
@@ -139,7 +146,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
         >
             <div className="flex flex-column flex-nowrap gap-2 mt-4">
                 <RadioGroup<AI_ASSISTANT_ACCESS>
-                    name="assistant-runtime"
+                    name={`assistant-setting-${composerID}`}
                     value={inputValue}
                     className="flex-nowrap border-bottom border-weak pb-2 radio--ontop"
                     disableChange={loading}

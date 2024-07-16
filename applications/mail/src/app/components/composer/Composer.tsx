@@ -6,6 +6,7 @@ import {
     useCallback,
     useEffect,
     useImperativeHandle,
+    useMemo,
     useRef,
     useState,
 } from 'react';
@@ -26,7 +27,6 @@ import noop from '@proton/utils/noop';
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
 import { insertTextBeforeContent, sanitizeContentToInsert } from 'proton-mail/helpers/message/messageContent';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
-import useComposerAssistantInitialSetup from 'proton-mail/hooks/assistant/useComposerAssistantInitialSetup';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
@@ -241,30 +241,27 @@ const Composer = (
         if (isAssistantOpenedInComposer) {
             closeAssistant(composerID, manual);
         } else {
+            // When in local mode, we can only run one prompt at a time. It's better
+            // to restrict the UI to one composer at a time. When you try opening
+            // one, we will force close the other one you got
+            for (const { id: otherComposerID } of openedAssistants) {
+                closeAssistant(otherComposerID, true);
+            }
             openAssistant(composerID, manual);
         }
     };
-
-    /**
-     * ATM we don't have a queue mechanism in the assistant in local mode.
-     * In that case we want to disable it if another composer has the assistant opened.
-     * However, we still want to be able to close it by clicking on the button.
-     */
-    const disableAssistantButton = openedAssistants.length > 0 && !isAssistantOpenedInComposer;
 
     const canRunAssistant =
         userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY ||
         (hasCompatibleBrowser && hasCompatibleHardware);
 
-    // Hook used to open the assistant automatically the first time the user opens the composer
-    const { isAssistantInitialSetup } = useComposerAssistantInitialSetup({
-        canShowAssistant,
-        disableAssistantButton,
-    });
+    const isStickyAssistant = useMemo(() => {
+        return getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant);
+    }, [composerID, canShowAssistant, canRunAssistant]);
 
     // open assistant by default if it was opened last time
     useEffect(() => {
-        if (getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)) {
+        if (isStickyAssistant) {
             openAssistant(composerID);
 
             // Start initializing the Assistant when opening it if able to
@@ -272,7 +269,7 @@ const Composer = (
                 void initAssistant?.();
             }
         }
-    }, [composerID, canShowAssistant]);
+    }, [isStickyAssistant]);
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
         handleChange((message) => {
@@ -384,7 +381,7 @@ const Composer = (
                         composerContentRef={composerContentRef}
                         composerContainerRef={composerContainerRef}
                         composerMetaRef={composerMetaRef}
-                        isAssistantInitialSetup={isAssistantInitialSetup}
+                        preventAutofocus={isStickyAssistant}
                         selectedText={selectedText}
                         getContentBeforeBlockquote={getContentBeforeBlockquote}
                         setContentBeforeBlockquote={setContentBeforeBlockquote}
@@ -451,7 +448,6 @@ const Composer = (
                     syncInProgress={pendingSave.isPending}
                     canScheduleSend={canScheduleSend}
                     showAssistantButton={canShowAssistant}
-                    disableAssistant={disableAssistantButton}
                     onToggleAssistant={handleToggleAssistant}
                 />
             </div>
