@@ -53,7 +53,6 @@ interface Props {
     onGenerateResult: (fulltext: string, prompt: string) => void;
     assistantID: string;
     onContentChange: () => void;
-    isAssistantInitialSetup?: boolean;
     onRefine: (partialAction: PartialRefineAction) => Promise<void>;
     hasSelection: boolean;
     expanded: boolean;
@@ -67,6 +66,8 @@ interface Props {
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
     recipients: Recipient[];
     sender: Recipient | undefined;
+    preventAutofocus?: boolean;
+    onInputClicked: () => void;
 }
 
 const ComposerAssistantInput = ({
@@ -74,7 +75,6 @@ const ComposerAssistantInput = ({
     assistantID,
     onContentChange,
     onRefine,
-    isAssistantInitialSetup,
     hasSelection,
     expanded,
     canUseRefineActions,
@@ -87,6 +87,8 @@ const ComposerAssistantInput = ({
     setInnerModal,
     recipients,
     sender,
+    preventAutofocus = false,
+    onInputClicked,
 }: Props) => {
     // Request that the user is writing in the input
     const [assistantRequest, setAssistantRequest] = useState<string>('');
@@ -112,6 +114,10 @@ const ComposerAssistantInput = ({
     resetRequestRef.current = () => setAssistantRequest('');
 
     const composerAssistantInitialSetupSpotlightRef = useRef<ComposerAssistantInitialSetupSpotlightRef>(null);
+    useEffect(() => {
+        assistantInputRefManager.composerSpotlight.set(assistantID, composerAssistantInitialSetupSpotlightRef);
+    }, []);
+
     const spotlightAnchorRef = useRef<HTMLDivElement>(null);
     const upsellModal = useModalStateObject();
     const falsePositiveFeedback = useModalStateObject();
@@ -135,7 +141,6 @@ const ComposerAssistantInput = ({
         resumeDownloadModel,
         isModelDownloaded,
         error,
-        initAssistant,
         closeAssistant,
     } = useAssistant(assistantID);
 
@@ -364,24 +369,15 @@ const ComposerAssistantInput = ({
     };
 
     const handleClickOnInput = (e: MouseEvent) => {
-        e.stopPropagation(); // TODO REMOVE?
+        // To avoid infinite click caused by the spotlight in ComposerAssistant
+        e.stopPropagation();
+
+        onInputClicked();
 
         // If user hasn't set the assistant yet, invite him to do so
         if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
             setInnerModal(ComposerInnerModalStates.AssistantSettings);
             return;
-        }
-
-        // The first time the user is opening the composer, the assistant will be opened by default to show the feature
-        // Then when the user clicks on the input, we will show a spotlight and start the model init (download + load on GPU)
-        if (isAssistantInitialSetup) {
-            if (AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
-                initAssistant?.();
-                composerAssistantInitialSetupSpotlightRef.current?.showSpotlight();
-            }
-            if (AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
-                composerAssistantInitialSetupSpotlightRef.current?.setSpotlightViewed();
-            }
         }
 
         // Reset the input content when the user wants to refine text and clicks on the input, so that he can add a new prompt
@@ -624,7 +620,7 @@ const ComposerAssistantInput = ({
                     <InputFieldTwo
                         ref={inputRef}
                         as={TextArea}
-                        autoFocus={!hasSelection && !isAssistantInitialSetup}
+                        autoFocus={!hasSelection && !preventAutofocus}
                         value={assistantRequest}
                         onClick={handleClickOnInput}
                         placeholder={hasSelection ? c('Placeholder').t`Describe what to change` : placeholderRandom}

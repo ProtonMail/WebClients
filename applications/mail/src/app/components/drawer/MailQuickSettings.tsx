@@ -15,16 +15,20 @@ import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/c
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
+import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
+import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
+import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE, QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
-import { isChromiumBased, isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { AI_ASSISTANT_ACCESS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -34,6 +38,8 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
+
+const { OFF, UNSET, SERVER_ONLY } = AI_ASSISTANT_ACCESS;
 
 interface QuickSettingsSelectOption {
     value: any;
@@ -46,8 +52,10 @@ const MailQuickSettings = () => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
-    const [{ Density }] = useUserSettings();
+    const [{ Density, AIAssistantFlags }] = useUserSettings();
     const { ComposerMode, ViewLayout } = useMailModel('MailSettings');
+
+    const assistantFeatureEnabled = useAssistantFeatureEnabled();
 
     const keyTransparencyNotification = useKeyTransparencyNotification();
     const { ktActivation } = useKeyTransparencyContext();
@@ -154,6 +162,8 @@ const MailQuickSettings = () => {
 
         return [ktReminder].filter(isTruthy);
     }, [showKT, keyTransparencyNotification]);
+
+    const aiFlag = AIAssistantFlags === UNSET ? SERVER_ONLY : AIAssistantFlags;
 
     return (
         <DrawerAppScrollContainer>
@@ -288,6 +298,22 @@ const MailQuickSettings = () => {
                     }
                 />
             </DrawerAppSection>
+
+            {assistantFeatureEnabled.enabled && (
+                <DrawerAppSection>
+                    <QuickSettingsSectionRow
+                        label={c('Label').t`${BRAND_NAME} Scribe`}
+                        labelInfo={
+                            <Info
+                                title={c('Info').t`Learn more`}
+                                onClick={() => openNewTab(getKnowledgeBaseUrl('/proton-scribe-writing-assistant'))}
+                            />
+                        }
+                        action={<ToggleAssistant id="assistantSelect" aiFlag={aiFlag} />}
+                    />
+                    {aiFlag !== OFF && <ToggleAssistantEnvironment aiFlag={AIAssistantFlags} />}
+                </DrawerAppSection>
+            )}
 
             <DefaultQuickSettings inAppReminders={mailReminders} />
 

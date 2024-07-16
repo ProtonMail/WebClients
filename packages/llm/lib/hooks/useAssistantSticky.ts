@@ -7,11 +7,7 @@ interface Props {
 }
 const useAssistantSticky = ({ openedAssistants }: Props) => {
     const [user] = useUser();
-    /** The default value is true so that the user is seeing the assistant as sticky by default
-     * However, we check the localStorage value in the setup phase. So if we change the default value,
-     * Make sure to update useComposerAssistantInitialSetup too.
-     */
-    const [stickyAssistant, setStickyAssistant] = useLocalState(true, `${user.ID}-open-assistant`);
+    const [stickyAssistant, setStickyAssistant] = useLocalState(false, `${user.ID}-open-assistant`);
 
     const setAssistantStickyOn = () => {
         setStickyAssistant(true);
