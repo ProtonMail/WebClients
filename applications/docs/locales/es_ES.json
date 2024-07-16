@@ -752,7 +752,7 @@
         "Incluye soporte para ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo, alias ilimitados de hide-my-email, compartir calendario y más."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
+        "Incluye soporte para 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
@@ -1907,6 +1907,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Establece un método de recuperación para evitar perder el acceso a tu cuenta."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para garantizar el nivel más alto de seguridad, crea una frase de recuperación."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
@@ -5719,7 +5722,7 @@
         "Etiquetas ilimitadas"
       ],
       "Unlimited logins and notes": [
-        "Número ilimitado de accesos y de notas"
+        "Número ilimitado de inicios de sesión y de notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"
@@ -6273,7 +6276,7 @@
         "Grupo de contactos actualizado"
       ],
       "Device failed to be removed": [
-        "Error al borrrar el dispositivo"
+        "Error al borrar el dispositivo"
       ],
       "Device failed to be renamed": [
         "Error al renombrar el dispositivo"
@@ -6786,7 +6789,7 @@
         "La solicitud de cambio de contraseña ha sido aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Ve al dispositivo en el que se ha iniciado sesión y donde se ha realizado la solicitud para cambiar tu contraseña."
+        "Ve al dispositivo en el que se ha iniciado sesión (donde se ha realizado la solicitud) para cambiar tu contraseña."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Este permiso expira en ${ timeRemaining.inDays } día.",
@@ -6815,7 +6818,7 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
@@ -7753,6 +7756,9 @@
       "Import failed": [
         "Error en la importación"
       ],
+      "Import groups": [
+        "Importar grupos"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
@@ -7872,6 +7878,9 @@
       ],
       "Select link expiration time": [
         "Selecciona la hora de expiración del enlace."
+      ],
+      "Set recovery phrase": [
+        "Crear una frase de recuperación"
       ],
       "Settings": [
         "Configuración"

@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Abrir"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
@@ -760,11 +763,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "refresque la página"
-      ],
       "Refresh the page": [
         "Refrescar la página"
+      ],
+      "refresh the page": [
+        "refresque la página"
       ],
       "Reload": [
         "Recargar"
@@ -1137,6 +1140,12 @@
       ],
       "Verify account": [
         "Verificar cuenta"
+      ],
+      "Verify code": [
+        "Verificar código"
+      ],
+      "Verify code again": [
+        "Verificar código de nuevo"
       ],
       "Verify domain": [
         "Verificar dominio"
@@ -1541,6 +1550,14 @@
         "Seleccione la oferta de fin de año"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1562,14 +1579,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4012,6 +4021,9 @@
       "Checkout expired, please try again": [
         "La compra ha expirado, intente de nuevo"
       ],
+      "Code wrong or not valid anymore": [
+        "Código incorrecto o inválido"
+      ],
       "Condition incomplete": [
         "Condición incompleta"
       ],
@@ -4088,6 +4100,9 @@
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Si la hora en el televisor ha expirado, haga clic en Actualizar en el televisor e ingrese el código de nuevo."
       ],
       "IMAP server is required": [
         "Servidor IMAP requerido"
@@ -5600,6 +5615,11 @@
         "Servicios"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Dirección del grupo"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -6757,11 +6777,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para activar un control de acceso más preciso."
@@ -6775,6 +6795,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
         "Eliminando ${ deletedServerCount } servidores de puerta de enlace"
+      ],
+      "Disable recovery by ${ type }": [
+        "Desactivar la recuperación por ${ type }"
       ],
       "Discount": [
         "Descuento"
@@ -7829,6 +7852,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
       ],
+      "Session Ended": [
+        "Sesión finalizada"
+      ],
+      "Session Roaming": [
+        "Sesión itinerante"
+      ],
+      "Session Started": [
+        "Sesión iniciada"
+      ],
       "Session timed out": [
         "Sesión agotada"
       ],
@@ -7992,8 +8024,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "La dark web es una parte de internet oculta donde información robada, como identidades, pueden ser compradas y vendidas."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "El correo de verificación expiró. Inicie sesión para reenviar un enlace de verificación."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Los datos cifrados son un poco más grandes debido a la sobrecarga del cifrado y las firmas que garantizan la seguridad de los datos."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
@@ -8184,6 +8222,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Para asegurar el acceso a la cuenta, establezca un método de recuperación de cuenta"
       ],
+      "To ensure highest possible security of your account": [
+        "Para asegurar la seguridad máxima posible de la cuenta"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Para asegurarse de no perder datos importantes, ${ DRIVE_APP_NAME } guarda versiones anteriores de los archivos a medida que usted\ny sus colaboradores realizan cambios. Seleccione cuánto tiempo ${ BRAND_NAME } debería de conservar las versiones."
       ],
@@ -8289,8 +8330,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Mejore al plan ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, o ${ PLAN_NAMES[bundleProPlan] } para obtener acceso a ${ PROTON_SENTINEL_NAME }"
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Mejore al plan ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, o ${ PLAN_NAMES[bundleProPlan] } para obtener acceso a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Mejore para añadir una dirección corta @pm.me a la cuenta para que sea fácil de compartir. Significa “${ MAIL_APP_NAME }” o “mensaje privado” en inglés."
@@ -8372,6 +8413,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una pestaña nueva, desactive cualquier bloqueador de ventanas emergentes. No se le cobrará este proceso. Cualquier monto usado para verificar la tarjeta le será reembolsado inmediatamente."
+      ],
+      "Verify ${ type }": [
+        "Verificar ${ type }"
       ],
       "Verify domain": [
         "Verifique el dominio"
@@ -9664,6 +9708,9 @@
       "Enter password": [
         "Ingresar contraseña"
       ],
+      "Enter the code displayed on your TV": [
+        "Ingrese el código mostrado en su TV"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ingrese la contraseña para la clave con huella digital: ${ fingerprintCode }"
       ],
@@ -10615,11 +10662,14 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "¡**Obtenga ${ plan }** por tiempo limitado!"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "¡**Obtenga ${ plan }** para un acceso anticipado a ${ appName }!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Conviértase en Visionary y sea parte de la historia de ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Oferta por tiempo limitado"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11071,6 +11121,23 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11098,23 +11165,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -12890,8 +12940,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Todos los servicios Plus de ${ BRAND_NAME }.${ br }Suscripción sencilla."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Crear una cuenta de ${ PASS_APP_NAME }"
+      "Create a ${ appName } account": [
+        "Crear una cuenta de ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Cree la cuenta de ${ BRAND_NAME }"
@@ -15526,10 +15576,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -15582,6 +15632,9 @@
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
+      ],
+      "Connection events": [
+        "Eventos de la conexión"
       ],
       "Contact us": [
         "Contáctenos"
@@ -15719,6 +15772,9 @@
       ],
       "Details": [
         "Detalles"
+      ],
+      "Device connected!": [
+        "¡Dispositivo conectado!"
       ],
       "Disable two-factor authentication": [
         "Desactivar autenticación de dos factores"
@@ -15885,6 +15941,9 @@
       ],
       "Forward emails": [
         "Reenvío de correos electrónicos"
+      ],
+      "Gateway": [
+        "Puerta de enlace"
       ],
       "Gateways": [
         "Puertas de enlace"
@@ -16057,6 +16116,9 @@
       ],
       "Organization name": [
         "Nombre de la organización"
+      ],
+      "Origin": [
+        "Origen"
       ],
       "Other calendars": [
         "Otros calendarios"
@@ -16340,6 +16402,9 @@
       ],
       "Track your referrals": [
         "Rastree sus referencias"
+      ],
+      "TV sign in": [
+        "Inicio de sesión en TV"
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"

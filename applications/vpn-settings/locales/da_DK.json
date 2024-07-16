@@ -4,6 +4,26 @@
     "language": "da_DK"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage på ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiel lækage fra ${ name } blev fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer og tage handling. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Vælg min egen adgangskode"
+      ],
+      "Clear filter": [
+        "Ryd filter"
+      ],
+      "Clear filters": [
+        "Ryd filtre"
       ],
       "Close": [
         "Luk"
@@ -323,11 +349,17 @@
       "Next": [
         "Næste"
       ],
+      "Next month": [
+        "Næste måned"
+      ],
       "OK": [
         "Ok"
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "Åbn"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
@@ -355,6 +387,9 @@
       ],
       "Previous": [
         "Forrige"
+      ],
+      "Previous month": [
+        "Forrige måned"
       ],
       "Recover data": [
         "Gendan data"
@@ -2252,6 +2287,9 @@
       "Please set a recovery phone number first": [
         "Angiv først et gendannelsestelefonnummer"
       ],
+      "Please try again in a few moments.": [
+        "Prøv venligst igen om et øjeblik."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at få support til flere brugere"
       ],
@@ -3072,6 +3110,18 @@
         "${ userFound } bruger fundet",
         "${ userFound } brugere fundet"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } oprettet"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } slettet"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } delt med e-mail"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } opdateret"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } påkrævet for forbindelse på landniveau."
       ],
@@ -3155,6 +3205,9 @@
         "Berørt bruger er på række",
         "Berørt brugere er på række"
       ],
+      "All Events ": [
+        "Alle begivenheder "
+      ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
       ],
@@ -3236,6 +3289,15 @@
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "Tilpasset e-mail om databrud tilføjet"
+      ],
+      "Breach Custom Email Deleted": [
+        "Tilpasset e-mail om databrud slettet"
+      ],
+      "Breach Custom Email Validated": [
+        "Tilpasset e-mail om databrud bekræftet"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
@@ -3247,6 +3309,9 @@
       ],
       "Can’t access your recovery phone?": [
         "Kan du ikke få adgang til din gendannelses telefon?"
+      ],
+      "Change your password": [
+        "Skift din adgangskode"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -3300,17 +3365,26 @@
       "Custom branding": [
         "Tilpasset varemærke"
       ],
+      "Custom email added": [
+        "Tilpasset e-mail tilføjet"
+      ],
+      "Custom email deleted": [
+        "Tilpasset e-mail slettet"
+      ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
+      ],
+      "Custom email validated": [
+        "Tilpasset e-mail bekræftet"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -3386,6 +3460,9 @@
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mail-hosting til 10 brugerdefinerede mail-domænenavne er inkluderet gratis. Yderligere domæner kan tilføjes for ${ price }."
       ],
@@ -3458,6 +3535,9 @@
       "Fill in user details": [
         "Udfyld brugeroplysninger"
       ],
+      "finance": [
+        "finans"
+      ],
       "for choosing ${ product }": [
         "for at vælge ${ product }"
       ],
@@ -3481,6 +3561,9 @@
       ],
       "here": [
         "her"
+      ],
+      "High Priority": [
+        "Høj prioritet"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Der bør være et sted, hvor man kan downloade eller kopiere certifikatets hash fra identitetsudbyderen. Du skal bare indsætte certifikatets hash i tekstområdets felt."
@@ -3575,6 +3658,105 @@
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
       ],
+      "Invite Accepted": [
+        "Invitation accepteret"
+      ],
+      "Invite Created": [
+        "Invitation oprettet"
+      ],
+      "Invite deleted": [
+        "Invitation slettet"
+      ],
+      "Invite Deleted": [
+        "Invitation slettet"
+      ],
+      "Invite for new user deleted": [
+        "Invitation til ny bruger slettet"
+      ],
+      "Invite for organization accepted": [
+        "Invitation til organisation accepteret"
+      ],
+      "Invite for organization created": [
+        "Invitation til organisation oprettet"
+      ],
+      "Invite rejected": [
+        "Invitation afvist"
+      ],
+      "Invite Rejected": [
+        "Invitation afvist"
+      ],
+      "Item Autofilled": [
+        "Element autoudfyldt"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "Element autoudfyldt i ${ vaultLink }"
+      ],
+      "Item autofilled in vault": [
+        "Element autoudfyldt i boks"
+      ],
+      "Item Changed Flags": [
+        "Element ændrede flag"
+      ],
+      "Item Created": [
+        "Element oprettet"
+      ],
+      "Item created in ${ vaultLink }": [
+        "Element oprettet i ${ vaultLink }"
+      ],
+      "Item created in vault": [
+        "Element oprettet i boks"
+      ],
+      "Item Deleted": [
+        "Element slettet"
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "Element slettet fra ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Element slettet fra boks"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Elementflag ændret i ${ vaultLink }"
+      ],
+      "Item flags changed in vault": [
+        "Elementflag ændret i boks"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Element i ${ vaultLink } beskadiget"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Element i ${ vaultLink } ubeskadiget"
+      ],
+      "Item in vault trashed": [
+        "Element i boks beskadiget"
+      ],
+      "Item in vault untrashed": [
+        "Element i boks ubeskadiget"
+      ],
+      "Item Read": [
+        "Element læst"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Element læst i ${ vaultLink }"
+      ],
+      "Item read in vault": [
+        "Element læst i boks"
+      ],
+      "Item Trashed": [
+        "Element skrottet"
+      ],
+      "Item Untrashed": [
+        "Element ubeskadiget"
+      ],
+      "Item Updated": [
+        "Element opdateret"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Element opdateret i ${ vaultLink }"
+      ],
+      "Item updated in vault": [
+        "Element opdateret i boks"
+      ],
       "JCB logo": [
         "JCB logo"
       ],
@@ -3614,6 +3796,9 @@
       "Loading...": [
         "Indlæser..."
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Store e-mailtjenester kan afvise eller filtrere dine e-mails til spam hvis SPF/DKIM/DMARC mangler eller ikke er sat ordenligt op."
       ],
@@ -3629,11 +3814,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Medium Priority": [
+        "Mellem prioritet"
+      ],
       "Member": [
         "Medlem"
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Monitor accounts": [
+        "Overvåg konti"
       ],
       "Multi-user support not enabled.": [
         "Understøttelse af flere brugere ikke aktiveret."
@@ -3649,6 +3840,15 @@
       ],
       "Must start with a letter.": [
         "Skal begynde med et bogstav"
+      ],
+      "New User Invite Created": [
+        "Ny brugerinvitation oprettet"
+      ],
+      "New User Invite Deleted": [
+        "Ny brugerinvitation slettet"
+      ],
+      "New user invited to organization": [
+        "Ny bruger inviteret til organisation"
       ],
       "No addresses exist": [
         "Ingen adresser findes"
@@ -3700,6 +3900,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
+      ],
+      "password": [
+        "adgangskode"
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"
@@ -3871,11 +4074,41 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
+      "Session Ended": [
+        "Session afsluttet"
+      ],
+      "Session Roaming": [
+        "Omrokering af sessioner"
+      ],
+      "Session Started": [
+        "Session startet"
+      ],
       "Session timed out": [
         "Session er udløbet"
       ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
+      ],
+      "Share Created": [
+        "Deling oprettet"
+      ],
+      "Share Deleted": [
+        "Deling slettet"
+      ],
+      "Share Updated": [
+        "Deling opdateret"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Delt ${ vaultLink } slettet"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Delt ${ vaultLink } opdateret"
+      ],
+      "Shared vault deleted": [
+        "Delt boks slettet"
+      ],
+      "Shared vault updated": [
+        "Delt boks opdateret"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Log ind på ${ MAIL_APP_NAME } for at aktivere din adresse"
@@ -3943,6 +4176,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Legitimationsoplysningerne fra din identitetsudbyder vil blive slettet."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De krypterede data er en smule større på grund af overheadomkostningerne ved krypteringen og signaturerne, som garanterer sikkerheden for dine data."
       ],
       "The following address is invalid.": [
         "Den følgende adresse er ugyldig.",
@@ -4103,6 +4342,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikt ID genereret af din identitetsudbyder, normalt i form af en URL, der indeholder identitetsudbyderens navn (f.eks. https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Ukendt hændelsestype"
+      ],
       "Unsaved changes": [
         "Ikke-gemte ændringer"
       ],
@@ -4136,8 +4378,32 @@
       "User activated": [
         "Bruger aktiveret"
       ],
+      "username": [
+        "brugernavn"
+      ],
       "Users": [
         "Brugere"
+      ],
+      "Vault created": [
+        "Boks oprettet"
+      ],
+      "Vault Created": [
+        "Boks oprettet"
+      ],
+      "Vault deleted": [
+        "Boks slettet"
+      ],
+      "Vault Deleted": [
+        "Boks slettet"
+      ],
+      "Vault shared with email": [
+        "Boks delt med e-mail"
+      ],
+      "Vault updated": [
+        "Boks opdateret"
+      ],
+      "Vault Updated": [
+        "Boks opdateret"
       ],
       "Verification can take a few minutes.": [
         "Bekræftelse kan tage et par minutter."
@@ -4216,6 +4482,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
+      "Week": [
+        "Uge"
       ],
       "Welcome": [
         "Velkommen"
@@ -5203,6 +5472,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dit abonnement er ophørt. ${ cta } og for at undgå datatab."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktiver ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6253,6 +6527,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } er blevet deaktiveret"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er blevet aktiveret"
+      ],
       "A disabled address cannot be default": [
         "En deaktiveret adresse kan ikke være standard"
       ],
@@ -6261,6 +6541,9 @@
       ],
       "Invalid code": [
         "Ugyldig kode"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Ugyldig input. Søg på en e-mail eller IP-adresse."
       ],
       "IP Address copied to clipboard": [
         "IP-adresse kopieret ti udklipsholder"
@@ -6753,6 +7036,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "f.eks. https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "F.eks., "
+      ],
+      "Email or IP": [
+        "E-mail eller IP"
+      ],
+      "End date": [
+        "Slutdato"
+      ],
       "Feedback": [
         "Feedback"
       ],
@@ -6791,6 +7083,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Fortæl, hvordan du tror, ${ BRAND_NAME } kan blive bedre"
+      ],
+      "Start date": [
+        "Startdato"
       ],
       "yourdomain.com": [
         "ditdomæne.com"
@@ -7014,6 +7309,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Adresse på SCIM-forbindelsen, som ens IdP-provisioneringsagent videresender SCIM-data til"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og ${ remainingCount } andre potentielle lækager fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og 1 anden potentiel lækage fundet. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Et potentielt ${ name } læk blev opdaget. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
       ]
     },
     "Select file": {
@@ -8540,11 +8849,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -8581,6 +8890,9 @@
       ],
       "Confirm phone number": [
         "Bekræft telefonnummer"
+      ],
+      "Connection events": [
+        "Forbindelseshændelse"
       ],
       "Contact us": [
         "Kontakt os"
@@ -8728,6 +9040,9 @@
       "Error": [
         "Fejl"
       ],
+      "Event": [
+        "Begivenhed"
+      ],
       "Every member of the organization can access": [
         "Alle medlemmer af organisationen kan få adgang"
       ],
@@ -8740,6 +9055,9 @@
       ],
       "Forgot recovery method": [
         "Glemt gendannelsesmetoden"
+      ],
+      "Gateway": [
+        "Portal"
       ],
       "Gateways": [
         "Gateways"
@@ -8777,6 +9095,9 @@
       "Main password": [
         "Hovedadgangskode"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"
       ],
@@ -8812,6 +9133,9 @@
       ],
       "Organization name": [
         "Organisationsnavn"
+      ],
+      "Origin": [
+        "Oprindelse"
       ],
       "Password": [
         "Adgangskode"
@@ -8961,6 +9285,9 @@
       "Switch to two-password mode": [
         "Skift til to-adgangskode-tilstand"
       ],
+      "Time": [
+        "Tid"
+      ],
       "TV sign in": [
         "TV log ind"
       ],
@@ -8987,6 +9314,9 @@
       ],
       "Upload your organization’s logo": [
         "Upload din organisations logo"
+      ],
+      "User": [
+        "Bruger"
       ],
       "Users": [
         "Brugere"
@@ -9078,6 +9408,11 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
       ]
     },
     "Tooltip": {

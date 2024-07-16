@@ -314,6 +314,9 @@
       "Next": [
         "次へ"
       ],
+      "Next month": [
+        "翌月"
+      ],
       "OK": [
         "OK"
       ],
@@ -346,6 +349,9 @@
       ],
       "Previous": [
         "前へ"
+      ],
+      "Previous month": [
+        "前月"
       ],
       "Recover data": [
         "データを復元する"
@@ -893,6 +899,9 @@
       ],
       "Custom domain problem": [
         "独自ドメインに関する問題"
+      ],
+      "Docs problem": [
+        "Docs に関する問題"
       ],
       "Drive problem": [
         "Drive に関する問題"
@@ -3049,6 +3058,9 @@
       "Can’t access your recovery phone?": [
         "回復用携帯電話にアクセスできませんか？"
       ],
+      "Change your password": [
+        "パスワードを変更"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
@@ -3106,10 +3118,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }アプリの外観をカスタマイズ"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -3184,6 +3196,9 @@
       "Edit email address": [
         "メールアドレスを編集"
       ],
+      "email": [
+        "メール"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10個のカスタムメールドメイン名のメールホスティングが無料で含まれています。 追加のドメインを${ price } で追加できます。"
       ],
@@ -3256,6 +3271,9 @@
       "Fill in user details": [
         "ユーザーの詳細を入力します"
       ],
+      "finance": [
+        "ファイナンス"
+      ],
       "for choosing ${ product }": [
         "${ product } を選択した場合"
       ],
@@ -3279,6 +3297,9 @@
       ],
       "here": [
         "こちら"
+      ],
+      "High Priority": [
+        "優先度：高"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "認証アサーションに署名するための ID プロバイダーの公開キー。 ID プロバイダーから証明書ハッシュをダウンロードまたはコピーする場所が必要です。証明書ハッシュをテキスト領域フィールドに貼り付けるだけです。"
@@ -3370,6 +3391,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "Invite rejected": [
+        "招待を拒否"
+      ],
       "JCB logo": [
         "JCB ロゴ"
       ],
@@ -3406,6 +3430,9 @@
       "Loading...": [
         "読み込み中..."
       ],
+      "Low Priority": [
+        "優先度：低"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "SPF/DKIM/DMARC が欠落しているか正しく設定されていない場合、主要な電子メール サービスで電子メールが拒否されたり、スパムにフィルタリングされたりすることがあります。"
       ],
@@ -3421,11 +3448,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
       ],
+      "Medium Priority": [
+        "優先度：中"
+      ],
       "Member": [
         "メンバー"
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Monitor accounts": [
+        "アカウントモニター"
       ],
       "Multi-user support not enabled.": [
         "複数ユーザー対応が有効になっていません。"
@@ -3492,6 +3525,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "組織に他の管理者がいる場合、あなたの責任で新しいパスワードを伝えてください。"
+      ],
+      "password": [
+        "パスワード"
       ],
       "Password copied to clipboard": [
         "クリップボードにコピーされたパスワード"
@@ -3706,6 +3742,12 @@
       "The credentials from your Identity Provider will be deleted.": [
         "ID プロバイダーからの認証情報は削除されます。"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "ダウンロード数には、実際のダウンロードとファイルがプレビューされた場合の両方が含まれます。"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "データのセキュリティを保証する暗号化と署名のオーバーヘッドの分、暗号化済みデータはサイズが大きくなります。"
+      ],
       "The following address is invalid.": [
         "次のアドレスに間違いがあります。"
       ],
@@ -3874,6 +3916,9 @@
       "User activated": [
         "ユーザーがアクティブ化"
       ],
+      "username": [
+        "ユーザー名"
+      ],
       "Users": [
         "ユーザー"
       ],
@@ -3951,6 +3996,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
+      ],
+      "Week": [
+        "週"
       ],
       "Welcome": [
         "ようこそ"
@@ -4844,6 +4892,11 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "詳細"
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } を有効にする"
       ]
     },
     "mailtrial2024: Action": {
@@ -5787,6 +5840,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } が無効になりました"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } が有効になりました"
+      ],
       "A disabled address cannot be default": [
         "無効にされたアドレスは既定にすることができません"
       ],
@@ -6235,6 +6294,12 @@
       "e.g. https://idp.example.com/XXXXX": [
         "例:https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "例: "
+      ],
+      "End date": [
+        "終了日"
+      ],
       "Feedback": [
         "ご意見"
       ],
@@ -6267,6 +6332,9 @@
       ],
       "Select a reason": [
         "理由を選択"
+      ],
+      "Start date": [
+        "開始日"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -7637,10 +7705,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -7864,6 +7932,9 @@
       ],
       "Main password": [
         "メインパスワード"
+      ],
+      "Minicalendar": [
+        "ミニカレンダー"
       ],
       "Multi-user support": [
         "複数ユーザー対応"
@@ -8156,6 +8227,11 @@
       ],
       "Status": [
         "ステータス"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "今日"
       ]
     },
     "Tooltip": {

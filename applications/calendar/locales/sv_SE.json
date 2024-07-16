@@ -2440,6 +2440,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Detta kan ta några minuter. Under tiden kan du fortsätta använda kalendern som vanligt."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -3329,6 +3332,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Alias ​​kan inte användas när ett extra lösenord är aktiverat i ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
       ],
@@ -4057,6 +4063,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
@@ -9251,6 +9260,9 @@
       "Import failed": [
         "Import misslyckades"
       ],
+      "Import groups": [
+        "Importera grupper"
+      ],
       "Invalid verification code": [
         "Ogiltig verifieringskod"
       ],
@@ -9415,6 +9427,9 @@
       ],
       "Send invitation": [
         "Skicka inbjudan"
+      ],
+      "Set recovery phrase": [
+        "Ställ in återställningsfras"
       ],
       "Settings": [
         "Inställningar"

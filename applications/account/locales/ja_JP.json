@@ -722,10 +722,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -1094,6 +1094,12 @@
       "Verify account": [
         "アカウントを認証"
       ],
+      "Verify code": [
+        "コードを検証"
+      ],
+      "Verify code again": [
+        "コードを再検証"
+      ],
       "View": [
         "表示"
       ],
@@ -1439,6 +1445,14 @@
         "年末オファーを選択してください"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1460,14 +1474,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
       ]
     },
     "bf2023: Offers": {
@@ -1566,6 +1572,9 @@
       ],
       "Custom domain problem": [
         "独自ドメインに関する問題"
+      ],
+      "Docs problem": [
+        "Docs に関する問題"
       ],
       "Drive problem": [
         "Drive に関する問題"
@@ -3724,6 +3733,9 @@
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
+      "Code wrong or not valid anymore": [
+        "コードが間違っているか有効なコードではありません"
+      ],
       "Condition incomplete": [
         "条件が不完全です"
       ],
@@ -3792,6 +3804,9 @@
       ],
       "Folder name cannot be empty.": [
         "フォルダー名は空にできません。"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "TV 上で時間切れになったら、「再読み込み」をクリックして再度コードを入力してください。"
       ],
       "IMAP server is required": [
         "IMAP サーバーは必須です"
@@ -6326,10 +6341,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7373,8 +7388,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "ダークウェブは、アイデンティティなどの盗まれた個人情報が売買されるインターネットの隠れた部分です。"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "ダウンロード数には、実際のダウンロードとファイルがプレビューされた場合の両方が含まれます。"
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "電子メール検証リンクの有効期限が切れています。 サインインして確認リンクを再送信してください。"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "データのセキュリティを保証する暗号化と署名のオーバーヘッドの分、暗号化済みデータはサイズが大きくなります。"
       ],
       "The following address is available:": [
         "以下のアドレスが利用可能です："
@@ -7630,9 +7651,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PLAN_NAMES[PLANS.PASS_PLUS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] }、または ${ PLAN_NAMES[bundleProPlan] } プランにアップグレードすると、${ PROTON_SENTINEL_NAME } にアクセスできるようになります 。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードすると、共有しやすくなる短い @pm.me アドレスがアカウントに追加されます。 これは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
@@ -8896,6 +8914,9 @@
       "Enter password": [
         "パスワードを入力"
       ],
+      "Enter the code displayed on your TV": [
+        "TV に表示されているコードを入力"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
       ],
@@ -9771,9 +9792,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "ビジョナリーになって ${ BRAND_NAME } のストーリーに参加しましょう"
-      ],
-      "Limited time offer": [
-        "期間限定の特別な特典"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10178,6 +10196,23 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -10205,23 +10240,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -11831,9 +11849,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "すべての ${ BRAND_NAME } Plus サービス。${ br }1 つの簡単なサブスクリプション。"
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "${ PASS_APP_NAME } アカウントを作成"
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成します"
@@ -14001,10 +14016,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -14186,6 +14201,9 @@
       ],
       "Details": [
         "詳細"
+      ],
+      "Device connected!": [
+        "デバイスが接続されました！"
       ],
       "Disable two-factor authentication": [
         "2 段階認証を無効化"
@@ -14756,6 +14774,9 @@
       ],
       "Track your referrals": [
         "招待状況を確認"
+      ],
+      "TV sign in": [
+        "TV サインイン"
       ],
       "Two-factor authentication": [
         "2 要素認証"

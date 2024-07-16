@@ -4,6 +4,26 @@
     "language": "nb_NO"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } og 1 annen potensiell lekkasje oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potensiell ${ name }-lekkasje ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potensiell lekkasje fra ${ name } ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potensiell lekkasje fra ${ name } ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Velg mitt eget passord"
+      ],
+      "Clear filter": [
+        "Tøm filter"
+      ],
+      "Clear filters": [
+        "Tøm filtre"
       ],
       "Close": [
         "Lukk"
@@ -323,11 +349,17 @@
       "Next": [
         "Neste"
       ],
+      "Next month": [
+        "Neste måned"
+      ],
       "OK": [
         "OK"
       ],
       "Ok": [
         "OK"
+      ],
+      "Open": [
+        "Åpne"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
@@ -355,6 +387,9 @@
       ],
       "Previous": [
         "Forrige"
+      ],
+      "Previous month": [
+        "Forrige måned"
       ],
       "Recover data": [
         "Gjenopprett data"
@@ -2252,6 +2287,9 @@
       "Please set a recovery phone number first": [
         "Vennligst angi et gjenopprettingstelefonnummer først"
       ],
+      "Please try again in a few moments.": [
+        "Vennligst prøv igjen om få øyeblikk."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
       ],
@@ -3072,6 +3110,18 @@
         "${ userFound } bruker funnet",
         "${ userFound } brukere funnet"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } opprettet"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } slettet"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } delt med e-post"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } oppdatert"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } kreves for tilknytning på landnivå."
       ],
@@ -3155,6 +3205,9 @@
         "Berørt bruker er på rad",
         "Berørte brukere er på radene"
       ],
+      "All Events ": [
+        "Alle hendelser "
+      ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
       ],
@@ -3236,6 +3289,15 @@
       "Billing cycle: ${ text }": [
         "Faktureringssyklus: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "Brudd tilpasset e-post lagt til"
+      ],
+      "Breach Custom Email Deleted": [
+        "Brudd tilpasset e-post slettet"
+      ],
+      "Breach Custom Email Validated": [
+        "Brudd tilpasset e-post validert"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
@@ -3247,6 +3309,9 @@
       ],
       "Can’t access your recovery phone?": [
         "Har du ikke tilgang til telefonen for gjenoppretting?"
+      ],
+      "Change your password": [
+        "Endre passordet ditt"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
@@ -3300,17 +3365,26 @@
       "Custom branding": [
         "Tilpasset merkevarebygging"
       ],
+      "Custom email added": [
+        "Tilpasset e-postadresse lagt til"
+      ],
+      "Custom email deleted": [
+        "Tilpasset e-post slettet"
+      ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
+      ],
+      "Custom email validated": [
+        "Tilpasset e-post validert"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpass utseendet og følelsen av ${ BRAND_NAME }-applikasjonene."
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -3386,6 +3460,9 @@
       "Edit email address": [
         "Rediger e-postadresse"
       ],
+      "email": [
+        "e-post"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-posthotell for 10 egendefinerte e-postdomenenavn er gratis inkludert. Ytterligere domener kan legges til for ${ price }."
       ],
@@ -3458,6 +3535,9 @@
       "Fill in user details": [
         "Fyll ut brukerinformasjon"
       ],
+      "finance": [
+        "finans"
+      ],
       "for choosing ${ product }": [
         "for at du velger ${ product }"
       ],
@@ -3481,6 +3561,9 @@
       ],
       "here": [
         "her"
+      ],
+      "High Priority": [
+        "Høy prioritet"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Det bør være et sted å laste ned eller kopiere sertifikatnummeret fra identitetsleverandøren. Bare lim inn sertifikathashen i tekstfeltfeltet."
@@ -3575,6 +3658,105 @@
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
       ],
+      "Invite Accepted": [
+        "Invitasjon akseptert"
+      ],
+      "Invite Created": [
+        "Invitasjon opprettet"
+      ],
+      "Invite deleted": [
+        "Invitasjon slettet"
+      ],
+      "Invite Deleted": [
+        "Invitasjon slettet"
+      ],
+      "Invite for new user deleted": [
+        "Invitasjon for ny bruker slettet"
+      ],
+      "Invite for organization accepted": [
+        "Invitasjon til organisasjon akseptert"
+      ],
+      "Invite for organization created": [
+        "Invitasjon til organisasjon opprettet"
+      ],
+      "Invite rejected": [
+        "Invitasjon avslått"
+      ],
+      "Invite Rejected": [
+        "Invitasjon avslått"
+      ],
+      "Item Autofilled": [
+        "Element autofylt"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "Element automatisk utfylt i ${ vaultLink }"
+      ],
+      "Item autofilled in vault": [
+        "Element automatisk utfylt i hvelv"
+      ],
+      "Item Changed Flags": [
+        "Element endret flagg"
+      ],
+      "Item Created": [
+        "Element opprettet"
+      ],
+      "Item created in ${ vaultLink }": [
+        "Element opprettet i ${ vaultLink }"
+      ],
+      "Item created in vault": [
+        "Element opprettet i hvelv"
+      ],
+      "Item Deleted": [
+        "Element slettet"
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "Element slettet fra ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Element slettet fra hvelv"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Elementflagg endret i ${ vaultLink }"
+      ],
+      "Item flags changed in vault": [
+        "Elementflagg endret i hvelv"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Element i ${ vaultLink } flyttet til papirkurv"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Element i ${ vaultLink } flyttet fra papirkurv"
+      ],
+      "Item in vault trashed": [
+        "Element i hvelv flyttet til papirkurv"
+      ],
+      "Item in vault untrashed": [
+        "Element flyttet fra papirkurv i hvelv"
+      ],
+      "Item Read": [
+        "Element lest"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Element lest i ${ vaultLink }"
+      ],
+      "Item read in vault": [
+        "Element lest i hvelv"
+      ],
+      "Item Trashed": [
+        "Element flyttet til papirkurv"
+      ],
+      "Item Untrashed": [
+        "Element fjernet fra papirkurv"
+      ],
+      "Item Updated": [
+        "Element oppdatert"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Element oppdatert i ${ vaultLink }"
+      ],
+      "Item updated in vault": [
+        "Element oppdatert i hvelv"
+      ],
       "JCB logo": [
         "JCB-logo"
       ],
@@ -3614,6 +3796,9 @@
       "Loading...": [
         "Laster..."
       ],
+      "Low Priority": [
+        "Lav prioritet"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Store e-posttjenester kan avvise eller filtrere e-postene dine til søppelpost hvis SPF / DKIM / DMARC mangler eller ikke er konfigurert riktig."
       ],
@@ -3629,11 +3814,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Medium Priority": [
+        "Middels prioritet"
+      ],
       "Member": [
         "Medlem"
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Monitor accounts": [
+        "Overvåk kontoer"
       ],
       "Multi-user support not enabled.": [
         "Flerbruker støtte er ikke aktivert."
@@ -3649,6 +3840,15 @@
       ],
       "Must start with a letter.": [
         "Må begynne med en bokstav."
+      ],
+      "New User Invite Created": [
+        "Ny brukerinvitasjon opprettet"
+      ],
+      "New User Invite Deleted": [
+        "Ny brukerinvitasjon slettet"
+      ],
+      "New user invited to organization": [
+        "Ny bruker invitert til organisasjon"
       ],
       "No addresses exist": [
         "Ingen adresser eksisterer"
@@ -3703,6 +3903,9 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "password": [
+        "passord"
       ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
@@ -3874,11 +4077,41 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
       ],
+      "Session Ended": [
+        "Økten ble avsluttet"
+      ],
+      "Session Roaming": [
+        "Økt-roaming"
+      ],
+      "Session Started": [
+        "Økten ble startet"
+      ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
       ],
       "Setting up your organization": [
         "Setter opp organisasjonen din"
+      ],
+      "Share Created": [
+        "Delt ressurs opprettet"
+      ],
+      "Share Deleted": [
+        "Delt ressurs slettet"
+      ],
+      "Share Updated": [
+        "Delt ressurs oppdatert"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Delt ${ vaultLink } slettet"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Delt ${ vaultLink } oppdatert"
+      ],
+      "Shared vault deleted": [
+        "Delt hvelv slettet"
+      ],
+      "Shared vault updated": [
+        "Delt hvelv oppdatert"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logg på ${ MAIL_APP_NAME } for å aktivere din adresse"
@@ -3946,6 +4179,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Legitimasjonen fra identitetsleverandøren din blir slettet."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Nedlastingsantallet inkluderer både faktiske nedlastinger og forekomster der filer forhåndsvises."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De krypterte dataene er litt større på grunn av overbelastingen av kryptering og signaturer, som sikrer sikkerheten til dataene dine."
       ],
       "The following address is invalid.": [
         "Den følgende adressen er ugyldig.",
@@ -4106,6 +4345,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unik ID generert av identitetsleverandøren din, vanligvis i form av en URL som inneholder identitetsleverandørens navn (f.eks. https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Ukjent hendelsestype"
+      ],
       "Unsaved changes": [
         "Endringer som ikke er lagret"
       ],
@@ -4139,8 +4381,32 @@
       "User activated": [
         "Bruker aktivert"
       ],
+      "username": [
+        "brukernavn"
+      ],
       "Users": [
         "Brukere"
+      ],
+      "Vault created": [
+        "Hvelv opprettet"
+      ],
+      "Vault Created": [
+        "Hvelv opprettet"
+      ],
+      "Vault deleted": [
+        "Hvelv slettet"
+      ],
+      "Vault Deleted": [
+        "Hvelv slettet"
+      ],
+      "Vault shared with email": [
+        "Hvelv delt med e-post"
+      ],
+      "Vault updated": [
+        "Hvelv oppdatert"
+      ],
+      "Vault Updated": [
+        "Hvelv oppdatert"
       ],
       "Verification can take a few minutes.": [
         "Verifisering kan ta noen minutter."
@@ -4219,6 +4485,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
+      ],
+      "Week": [
+        "Uke"
       ],
       "Welcome": [
         "Velkommen"
@@ -5209,6 +5478,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonnementet ditt er avsluttet. ${ cta } og unngå tap av data."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktiver ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6259,6 +6533,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } er deaktivert"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } er aktivert"
+      ],
       "A disabled address cannot be default": [
         "Kan ikke angi en deaktivert adresse som standard"
       ],
@@ -6267,6 +6547,9 @@
       ],
       "Invalid code": [
         "Ugyldig kode"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Ugyldige inndata. Søk i en e-post eller IP-adresse."
       ],
       "IP Address copied to clipboard": [
         "IP-Adresse kopiert til utklippstavlen"
@@ -6780,6 +7063,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "eks. https://idp.eksempel.com/XXXXX"
       ],
+      "E.g., ": [
+        "F.eks. "
+      ],
+      "Email or IP": [
+        "E-post eller IP"
+      ],
+      "End date": [
+        "Sluttdato"
+      ],
       "Feedback": [
         "Tilbakemelding"
       ],
@@ -6818,6 +7110,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
+      ],
+      "Start date": [
+        "Startdato"
       ],
       "yourdomain.com": [
         "dittdomene.no"
@@ -7041,6 +7336,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Nettadresse til SCIM-koblingen som din IdP-klargjøringsagent videresender SCIM-data til."
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } og 1 annen potensiell lekkasje oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potensiell ${ name }-lekkasje ble oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer. ${ link }."
       ]
     },
     "Select file": {
@@ -8564,10 +8873,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -8605,6 +8914,9 @@
       ],
       "Confirm phone number": [
         "Bekreft telefonnummer"
+      ],
+      "Connection events": [
+        "Tilkoblingshendelser"
       ],
       "Contact us": [
         "Kontakt oss"
@@ -8752,6 +9064,9 @@
       "Error": [
         "Feil"
       ],
+      "Event": [
+        "Hendelse"
+      ],
       "Every member of the organization can access": [
         "Hvert medlem av organisasjonen har tilgang"
       ],
@@ -8764,6 +9079,9 @@
       ],
       "Forgot recovery method": [
         "Glemt gjenopprettingsmetode"
+      ],
+      "Gateway": [
+        "Mellomtjener"
       ],
       "Gateways": [
         "Mellomtjenere"
@@ -8801,6 +9119,9 @@
       "Main password": [
         "Hovedpassord"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "Multi-user support": [
         "Flerbruker støtte"
       ],
@@ -8836,6 +9157,9 @@
       ],
       "Organization name": [
         "Organisasjonsnavn"
+      ],
+      "Origin": [
+        "Opprinnelse"
       ],
       "Password": [
         "Passord"
@@ -8985,6 +9309,9 @@
       "Switch to two-password mode": [
         "Bytt til to-passordmodus"
       ],
+      "Time": [
+        "Tidspunkt"
+      ],
       "TV sign in": [
         "TV-innlogging"
       ],
@@ -9011,6 +9338,9 @@
       ],
       "Upload your organization’s logo": [
         "Last opp organisasjonens logo"
+      ],
+      "User": [
+        "Bruker"
       ],
       "Users": [
         "Brukere"
@@ -9102,6 +9432,11 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "I dag"
       ]
     },
     "Tooltip": {

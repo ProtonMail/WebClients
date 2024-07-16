@@ -46,7 +46,7 @@
         "주소 추가"
       ],
       "Add Bcc recipients": [
-        "숨은 참조 수신인 추가"
+        "숨은참조 수신인 추가"
       ],
       "Add birthday": [
         "생일 추가"
@@ -487,7 +487,7 @@
         "연락하기"
       ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
-        "단 매월 ${ addonPriceWithCurrency }에 시작해 보세요"
+        "매월 ${ addonPriceWithCurrency }부터 시작해 보세요"
       ],
       "Get SimpleLogin extension": [
         "간단 로그인 확장 가져오기"
@@ -6589,6 +6589,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "이 페이지를 떠난다면 받은 편지함에 있는 데이터가 저장되지 않을 수 있습니다."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "다운로드 횟수에는 실제 다운로드와 파일을 미리보는 경우도 포함됩니다."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "암호화된 데이터가 데이터의 보안을 보장하는 암호화 및 서명의 오버헤드로 인해 약간 더 큽니다."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "노출된 정보가 서드 파티 서비스에서 유출되었습니다. 사용자의 ${ BRAND_NAME } 계정 정보는 안전하고 암호화 상태로 유지됩니다. ${ learnMoreLink }"
       ],
@@ -6893,7 +6899,7 @@
         "경고"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "사과드립니다. 저희 측에서 실수했습니다. 이 이메일을 합법적인 것으로 표시하고 싶은지 확인하시겠습니까?"
+        "죄송합니다. 저희 측의 실수인 것 같습니다. 이 이메일을 확실한 것으로 표시하고자 하는 것이 맞는지 확인해주시겠습니까?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "다음 광고주 및 조직이 사용자가 이 이메일을 언제 여는지, 어떤 기기를 사용하는지, 어디에 있는지 확인할 수 없도록 차단했습니다."
@@ -7519,7 +7525,7 @@
         "나쁨"
       ],
       "BCC": [
-        "숨은 참조"
+        "숨은참조"
       ],
       "Beta Access": [
         "베타 참여"
@@ -8128,10 +8134,10 @@
         "임시 보관함"
       ],
       "Enable an email address linked to one of your calendars.": [
-        "캘린더 중 하나에 연결된 이메일 주소를 활성화해요."
+        "캘린더 중 하나에 연결된 이메일 주소를 활성화하세요."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "비활성화된 캘린더에 연결된 이메일 주소를 활성화하여 이벤트를 취소해요."
+        "이벤트를 취소하려면 비활성화된 캘린더에 연결된 이메일 주소를 활성화하세요."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
         "비활성화된 캘린더에 연결된 이메일 주소를 활성화하여 답변을 수정하세요."
@@ -8236,28 +8242,28 @@
         "복구 관련 정보란?"
       ],
       "You need to activate your calendar keys to add this event": [
-        "이 이벤트를 추가하려면 캘린더 키를 활성화해야 해요."
+        "이 이벤트를 추가하려면 캘린더 키를 활성화하셔야 합니다"
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        "이 초대에 응답하려면 캘린더 키를 활성화해야 해요."
+        "이 초대에 응답하려면 캘린더 키를 활성화하셔야 합니다"
       ],
       "You need to activate your calendar keys to manage this invitation": [
-        "이 초대를 관리하려면 캘린더 키를 활성화해야 해요."
+        "이 초대를 관리하려면 캘린더 키를 활성화하셔야 합니다"
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "업데이트된 이벤트를 보려면 캘린더 키를 활성화해야 해요."
+        "업데이트된 이벤트를 보려면 키를 다시 활성화하셔야 합니다"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "업데이트된 초대장을 보려면 캘린더 키를 활성화해야 해요."
+        "업데이트된 초대를 보려면 캘린더 키를 활성화하셔야 합니다"
       ],
       "You need to reactivate your keys to manage this invitation": [
-        "이 초대를 관리하려면 키를 다시 활성화해야 해요."
+        "이 초대를 관리하려면 키를 다시 활성화하셔야 합니다"
       ],
       "You need to reactivate your keys to see the updated event": [
-        "업데이트된 이벤트를 보려면 키를 다시 활성화해야 해요."
+        "업데이트된 이벤트를 보려면 키를 다시 활성화하셔야 합니다"
       ],
       "You need to reactivate your keys to see the updated invitation": [
-        "업데이트된 초대장을 보려면 키를 다시 활성화해야 해요."
+        "업데이트된 초대장을 보려면 키를 다시 활성화하셔야 합니다"
       ]
     },
     "Link to calendar event": {
@@ -11717,7 +11723,7 @@
         "첨부 파일"
       ],
       "BCC": [
-        "숨은 참조"
+        "숨은참조"
       ],
       "Billing cycle": [
         "결제 주기"

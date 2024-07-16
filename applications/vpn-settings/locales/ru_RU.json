@@ -4,6 +4,26 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружены ${ name } и ${ remainingCount } других потенциальных утечек. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка данных ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Обнаружена потенциальная утечка из ${ name }. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка с ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Задать собственный пароль"
+      ],
+      "Clear filter": [
+        "Сбросить фильтр"
+      ],
+      "Clear filters": [
+        "Очистить фильтры"
       ],
       "Close": [
         "Закрыть"
@@ -323,6 +349,9 @@
       "Next": [
         "Далее"
       ],
+      "Next month": [
+        "Следующий месяц"
+      ],
       "OK": [
         "OK"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Предыдущий"
+      ],
+      "Previous month": [
+        "Предыдущий месяц"
       ],
       "Recover data": [
         "Восстановить данные"
@@ -2264,6 +2296,9 @@
       "Please set a recovery phone number first": [
         "Пожалуйста, сначала задайте резервный номер телефона для восстановления"
       ],
+      "Please try again in a few moments.": [
+        "Пожалуйста, попробуйте еще раз чуть позже."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Пожалуйста, перейдите на бизнес-план с более чем 1 пользователем, чтобы получить многопользовательскую поддержку"
       ],
@@ -3206,6 +3241,9 @@
         "Затронутые пользователи находятся на строках",
         "Затронутые пользователи находятся на строках"
       ],
+      "All Events ": [
+        "Все события"
+      ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
       ],
@@ -3299,6 +3337,9 @@
       "Can’t access your recovery phone?": [
         "Нет доступа к номеру телефона для восстановления?"
       ],
+      "Change your password": [
+        "Измените пароль"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
       ],
@@ -3359,11 +3400,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Настройте внешний вид ${ BRAND_NAME } приложений."
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -3443,6 +3484,9 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
+      "email": [
+        "электронная почта"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
@@ -3515,6 +3559,9 @@
       "Fill in user details": [
         "Заполните данные пользователя"
       ],
+      "finance": [
+        "финансы"
+      ],
       "for choosing ${ product }": [
         "за выбор ${ product }"
       ],
@@ -3538,6 +3585,9 @@
       ],
       "here": [
         "здесь"
+      ],
+      "High Priority": [
+        "Высокий приоритет"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Открытый ключ поставщика идентификационных данных для подписи подтверждения подлинности. Здесь должно быть место для загрузки или копирования хэша сертификата поставщика идентификационных данных. Просто вставьте хэш сертификата в поле текстовой области."
@@ -3632,6 +3682,72 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
+      "Invite Accepted": [
+        "Приглашение принято"
+      ],
+      "Invite Created": [
+        "Приглашение создано"
+      ],
+      "Invite deleted": [
+        "Приглашение удалено"
+      ],
+      "Invite Deleted": [
+        "Приглашение удалено"
+      ],
+      "Invite for organization accepted": [
+        "Приглашение для организации принято"
+      ],
+      "Invite for organization created": [
+        "Создано приглашение для организации"
+      ],
+      "Invite rejected": [
+        "Приглашение отклонено"
+      ],
+      "Invite Rejected": [
+        "Приглашение отклонено"
+      ],
+      "Item Autofilled": [
+        "Элемент автоматически заполнен"
+      ],
+      "Item autofilled in vault": [
+        "Элемент автоматически заполнен в хранилище"
+      ],
+      "Item Changed Flags": [
+        "Элемент изменил флажки"
+      ],
+      "Item Created": [
+        "Элемент создан"
+      ],
+      "Item created in vault": [
+        "Элемент создан в хранилище"
+      ],
+      "Item Deleted": [
+        "Элемент удален"
+      ],
+      "Item flags changed in vault": [
+        "Флажки предметов изменены в хранилище"
+      ],
+      "Item in vault untrashed": [
+        "Элемент из хранилища перемещен из корзины"
+      ],
+      "Item Read": [
+        "Элемент прочитан"
+      ],
+      "Item read in vault": [
+        "Элемент прочитан в хранилище"
+      ],
+      "Item Trashed": [
+        "Элемент помещен в корзину"
+      ],
+      "Item Untrashed": [
+        "Элемент извлечен из корзины"
+      ],
+      "Item Updated": [
+        "Элемент обновлен"
+      ],
+      "Item updated in vault": [
+        "Элемент обновлен в хранилище"
+      ],
       "JCB logo": [
         "Логотип JCB"
       ],
@@ -3671,6 +3787,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Low Priority": [
+        "Низкий приоритет"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Основные почтовые службы могут отклонить или отфильтровать ваши письма в спам, если SPF/DKIM/DMARC отсутствуют или настроены неправильно."
       ],
@@ -3686,11 +3805,17 @@
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Средний приоритет"
+      ],
       "Member": [
         "Член"
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "Monitor accounts": [
+        "Отслеживать аккаунты"
       ],
       "Multi-user support not enabled.": [
         "Многопользовательский режим не включён."
@@ -3706,6 +3831,12 @@
       ],
       "Must start with a letter.": [
         "Должно начинаться с буквы."
+      ],
+      "New User Invite Created": [
+        "Приглашение нового пользователя создано"
+      ],
+      "New User Invite Deleted": [
+        "Приглашение новому пользователю удалено"
       ],
       "No addresses exist": [
         "Нет адресов"
@@ -3757,6 +3888,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
+      ],
+      "password": [
+        "пароль"
       ],
       "Password copied to clipboard": [
         "Пароль скопирован в буфер обмена"
@@ -3938,6 +4072,21 @@
       "Setting up your organization": [
         "Настройка вашей организации"
       ],
+      "Share Created": [
+        "Общий ресурс создан"
+      ],
+      "Share Deleted": [
+        "Общий ресурс удален"
+      ],
+      "Share Updated": [
+        "Общий ресурс обновлен"
+      ],
+      "Shared vault deleted": [
+        "Общее хранилище удалено"
+      ],
+      "Shared vault updated": [
+        "Общее хранилище обновлено"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
       ],
@@ -4006,6 +4155,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Учетные данные поставщика идентификационных данных будут удалены."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Размер зашифрованных данных увеличивается за счет дополнительной информации о шифровании и подписях, обеспечивающих безопасность ваших данных."
       ],
       "The following address is invalid.": [
         "Следующий адрес недействителен.",
@@ -4172,6 +4327,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Уникальный идентификатор, генерируемый поставщиком идентификационных данных, обычно в виде URL, содержащего название поставщика идентификационных данных (например, https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Неизвестный тип события"
+      ],
       "Unsaved changes": [
         "Несохраненные изменения"
       ],
@@ -4205,8 +4363,32 @@
       "User activated": [
         "Пользователь активирован"
       ],
+      "username": [
+        "имя пользователя"
+      ],
       "Users": [
         "Пользователи"
+      ],
+      "Vault created": [
+        "Хранилище создано"
+      ],
+      "Vault Created": [
+        "Хранилище создано"
+      ],
+      "Vault deleted": [
+        "Хранилище удалено"
+      ],
+      "Vault Deleted": [
+        "Хранилище удалено"
+      ],
+      "Vault shared with email": [
+        "Общий доступ к хранилищу с помощью электронной почты"
+      ],
+      "Vault updated": [
+        "Хранилище обновлено"
+      ],
+      "Vault Updated": [
+        "Хранилище обновлено"
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -4285,6 +4467,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
+      ],
+      "Week": [
+        "Неделя"
       ],
       "Welcome": [
         "Добро пожаловать"
@@ -5294,6 +5479,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша подписка закончилась. ${ cta } и избежать потери данных."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Включите ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6380,6 +6570,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } был отключен"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } был включен"
+      ],
       "A disabled address cannot be default": [
         "Отключённый адрес не может быть адресом по умолчанию"
       ],
@@ -6388,6 +6584,9 @@
       ],
       "Invalid code": [
         "Недействительный код"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Неверный ввод. Поиск по электронной почте или IP."
       ],
       "IP Address copied to clipboard": [
         "IP-адрес скопирован в буфер обмена"
@@ -6890,6 +7089,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "например, https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Например, "
+      ],
+      "Email or IP": [
+        "адрес электронной почты или IP"
+      ],
+      "End date": [
+        "Дата окончания"
+      ],
       "Feedback": [
         "Обратная связь"
       ],
@@ -6928,6 +7136,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Поделитесь тем, что, по вашему мнению, могло бы сделать ${ BRAND_NAME } лучше."
+      ],
+      "Start date": [
+        "Дата начала"
       ],
       "yourdomain.com": [
         "vashdomain.com"
@@ -7157,6 +7368,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL коннектора SCIM, на который ваш IdP Provisioning Agent направляет данные SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружены другие потенциальные утечки ${ name } и ${ remainingCount }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена ${ name } и еще 1 потенциальная утечка. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Обнаружена потенциальная утечка ${ name }. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра информации. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра подробностей. ${ link }"
       ]
     },
     "Select file": {
@@ -8753,10 +8978,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -8945,6 +9170,9 @@
       "Error": [
         "Ошибка"
       ],
+      "Event": [
+        "Событие"
+      ],
       "Every member of the organization can access": [
         "Каждый член организации может получить доступ"
       ],
@@ -8995,6 +9223,9 @@
       ],
       "Main password": [
         "Основной пароль"
+      ],
+      "Minicalendar": [
+        "Миникалендарь"
       ],
       "Multi-user support": [
         "Многопользовательская поддержка"
@@ -9182,6 +9413,9 @@
       "Switch to two-password mode": [
         "Переключение в режим с двумя паролями"
       ],
+      "Time": [
+        "Время"
+      ],
       "TV sign in": [
         "Вход на ТВ"
       ],
@@ -9208,6 +9442,9 @@
       ],
       "Upload your organization’s logo": [
         "Загрузите логотип вашей организации"
+      ],
+      "User": [
+        "Пользователь"
       ],
       "Users": [
         "Пользователи"
@@ -9299,6 +9536,11 @@
       ],
       "Status": [
         "Статус"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сегодня"
       ]
     },
     "Tooltip": {

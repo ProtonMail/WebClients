@@ -760,10 +760,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Reload": [
@@ -1138,6 +1138,12 @@
       "Verify account": [
         "Vahvista tili"
       ],
+      "Verify code": [
+        "Vahvista koodi"
+      ],
+      "Verify code again": [
+        "Vahvista koodi uudelleen"
+      ],
       "Verify domain": [
         "Vahvista verkkotunnus"
       ],
@@ -1221,6 +1227,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } oma lisäverkkotunnus",
+        "${ domains } omaa lisäverkkotunnusta"
+      ],
       "${ ips } server": [
         "${ ips } palvelin",
         "${ ips } palvelinta"
@@ -1393,11 +1403,14 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "Osta nyt"
+      ],
       "New": [
         "Uusi"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan sähköpostejasi."
+        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan viestejäsi."
       ],
       "Trial expires on ${ formattedDate }": [
         "Kokeilujakso päättyy ${ formattedDate }"
@@ -1534,6 +1547,14 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1555,14 +1576,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4005,6 +4018,9 @@
       "Checkout expired, please try again": [
         "Maksutapahtuma erääntyi. Yritä uudelleen."
       ],
+      "Code wrong or not valid anymore": [
+        "Koodi on virheellinen tai erääntynyt"
+      ],
       "Condition incomplete": [
         "Puutteellinen ehto"
       ],
@@ -4081,6 +4097,9 @@
       ],
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Jos televisiossasi näkyvä aika on umpeutunut, paina siellä olevaa päivityspainiketta ja syötä koodi uudelleen."
       ],
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
@@ -5593,6 +5612,17 @@
         "Palvelut"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Ryhmäosoite"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } jäsen",
+        "${ memberCount } jäsentä"
+      ]
+    },
     "Header": {
       "Access": [
         "Pääsy"
@@ -6711,11 +6741,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -7747,6 +7777,12 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
+      "Session Ended": [
+        "Istunto päättyi"
+      ],
+      "Session Started": [
+        "Istunto alkoi"
+      ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
       ],
@@ -7901,8 +7937,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Pimeä verkko on Internetin piilotettu osa, jossa identiteettien kaltaiset varastetut henkilökohtaiset tiedot ovat kauppatavaraa."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Latausmäärään sisältyy varsinaisten latausten lisäksi myös tiedostojen esikatselukerrat."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Sähköpostiosoitteen vahvistuslinkki on vanhentunut. Kirjaudu sisään ja lähetä uusi linkki."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Salatut tiedot varaavat tietojasi suojaavan salauksen ja allekirjoitusten vuoksi hieman enemmän tallennustilaa."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Paljastuneet tiedot vuosivat ulkopuolisesta palvelusta. ${ BRAND_NAME }-tilisi tiedot ovat suojassa ja salattuina. ${ learnMoreLink }"
@@ -8197,9 +8239,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Hanki ${ PROTON_SENTINEL_NAME } päivittämällä ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } tai ${ PLAN_NAMES[bundleProPlan] } -tilaukseen."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Päivitä tilauksesi ja lisää tilillesi jakamista helpottava lyhyempi @pm.me-osoite. Se on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
@@ -9570,6 +9609,9 @@
       "Enter password": [
         "Syötä salasana"
       ],
+      "Enter the code displayed on your TV": [
+        "Syötä televisiossasi näkyvä koodi"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Syötä salasana avaimelle sormenjäljellä: ${ fingerprintCode }"
       ],
@@ -10415,6 +10457,9 @@
       "Upgrade your plan": [
         "Päivitä tilauksesi"
       ],
+      "Vault": [
+        "Holvi"
+      ],
       "View guide": [
         "Näytä opas"
       ],
@@ -10520,12 +10565,12 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Ole Visionary ja olet osa ${ BRAND_NAME } tarinaa"
-      ],
-      "Limited time offer": [
-        "Tarjous voimassa rajoitetun ajan"
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
         "Kaikki ${ BRAND_NAME } -yrityssovellukset ja premium-ominaisuudet koko yrityksesi suojaamiseksi"
       ],
@@ -10971,6 +11016,23 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -10998,23 +11060,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -11400,6 +11445,9 @@
       ],
       "Unlimited labels": [
         "Rajattomasti tunnisteita"
+      ],
+      "Unlimited logins and notes": [
+        "Rajattomasti kirjautumistietoja ja muistiinpanoja"
       ],
       "Unlimited logins, notes and credit cards": [
         "Rajattomasti kirjautumistietoja, muistiinpanoja ja maksukortteja"
@@ -12787,8 +12835,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Kaikki ${ BRAND_NAME }in Plus-palvelut.${ br }Yksi helppo tilaus."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Luo ${ PASS_APP_NAME } -tili"
+      "Create a ${ appName } account": [
+        "Luo ${ appName }-tili"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tilisi"
@@ -14476,6 +14524,12 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
       ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } -tilauksella tiimisi voi työskennellä tuottavammin ja järjestelmällisemmin kaikkien ${ BRAND_NAME }-sovellusten ja niiden lisäominaisuuksien avulla."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } tarjoaa tiimillesi työkalut, joilla he voivat mm. olla tuottavampia, järjestelmällisempiä, sekä hallita postilaatikoitaan ja aikataulujaan."
+      ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } tarjoaa perusasioita enemmän, jotta voit olla tuotteliaampi ja järjestelmällisempi, hallita postilaatikkoasi ja sähköposti-identiteettiäsi, ja paljon muuta."
       ],
@@ -14521,6 +14575,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Kun lopetat ${ planName } -tilauksesi, tilisi alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa vain 1 Gt Mail- ja 5 Gt Drive-tallennustilan. Tiimisi työskentely keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 5 Gt Drive- ja 1 Gt Mail-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
       ],
@@ -14535,6 +14592,9 @@
       ],
       "Back up photos from your devices": [
         "Varmuuskopioi valokuvia laitteistasi"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Vahvista loutettavuutta ja tunnettavuutta ammattimaisilla omaa verkkotunnustasi käyttävillä osoitteilla."
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
@@ -14668,6 +14728,9 @@
       "Sync files on devices": [
         "Synkronoi tiedostoja laitteilla"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME }in paras"
+      ],
       "Unblocking internet access in Iran": [
         "Internet-yhteyksien vapauttaminen Iranissa"
       ],
@@ -14707,8 +14770,17 @@
       "Yearly free storage bonuses": [
         "Vuotuiset ilmaiset tallennustilakorotukset"
       ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink }"
+      ],
       "Your ${ planName } has been canceled.": [
         "${ planName }-tilauksesi on peruttu."
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "${ planName } -tilauksesi ei ainoastaan suojaa liiketoimintasi tietoja ja viestintää, vaan se tukee myös vaatimustenmukaisuustavoitteitasi, parantaa yrityksesi näkyvyyttä ja pitää tiimisi yhteydessä."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "${ planName } -tilauksesi päättyy ${ expiryDate }. Tämän jälkeen siirryt ${ BRAND_NAME } Free -tilaukseen. Jos käyttösi ylittää ilmaisen tilauksen rajat, tuotteiden ominaisuuksia ja pääsyäsi tietoihisi voidaan rajoittaa. ${ learnMoreLink }"
@@ -15216,6 +15288,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15393,10 +15468,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -15449,6 +15524,9 @@
       ],
       "Connect ${ name }": [
         "Yhdistä palveluun ${ name }"
+      ],
+      "Connection events": [
+        "Yhteystapahtumat"
       ],
       "Contact us": [
         "Ota yhteyttä"
@@ -15586,6 +15664,9 @@
       ],
       "Details": [
         "Lisätiedot"
+      ],
+      "Device connected!": [
+        "Laite on yhdistetty!"
       ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
@@ -15753,6 +15834,9 @@
       "Forward emails": [
         "Ohjaa viestit"
       ],
+      "Gateway": [
+        "Yhdyskäytävä"
+      ],
       "Gateways": [
         "Yhdyskäytävät"
       ],
@@ -15819,6 +15903,9 @@
       ],
       "Import failed": [
         "Tuonti epäonnistui"
+      ],
+      "Import groups": [
+        "Tuo ryhmiä"
       ],
       "Import key": [
         "Tuo avain"
@@ -15921,6 +16008,9 @@
       ],
       "Organization name": [
         "Organisaation nimi"
+      ],
+      "Origin": [
+        "Alkuperä"
       ],
       "Other calendars": [
         "Muut kalenterit"
@@ -16201,6 +16291,9 @@
       ],
       "Track your referrals": [
         "Seuraa suosituksiasi"
+      ],
+      "TV sign in": [
+        "Televisioon kirjautuminen"
       ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"

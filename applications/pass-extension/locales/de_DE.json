@@ -113,10 +113,10 @@
       "Create": [
         "Erstellen"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
       "Create a new vault to share": [
@@ -1090,6 +1090,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Bist du sicher, dass du den Eintrag nach \"${ name }\" verschieben willst?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Bist du sicher, dass du diesen Link entfernen möchtest?"
+      ],
       "Autosaved on ${ payload.domain }": [
         "Auf ${ payload.domain } automatisch gespeichert"
       ],
@@ -1439,6 +1442,12 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
       ],
+      "Registering extra password...": [
+        "Zusätzliches Passwort wird registriert..."
+      ],
+      "Removing extra password...": [
+        "Zusätzliches Passwort wird entfernt..."
+      ],
       "Restoring items from trash": [
         "Einträge vom Papierkorb werden wiederhergestellt"
       ],
@@ -1641,6 +1650,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Du hast die maximal erlaubte Länge von ${ maxLength } Zeichen erreicht."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Du wirst abgemeldet und musst dich bei allen anderen Geräten erneut anmelden."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du verwendest diese PIN, um ${ PASS_APP_NAME } zu entsperren, sobald es sich nach einer gewissen Zeit der Inaktivität automatisch sperrt."
@@ -2627,6 +2639,9 @@
       ],
       "Extra password cannot be empty": [
         "Das zusätzliche Passwort darf nicht leer sein."
+      ],
+      "Extra password should have at least 8 characters": [
+        "Zusätzliches Passwort sollte mindestens 8 Zeichen lang sein."
       ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"

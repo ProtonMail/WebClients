@@ -826,6 +826,9 @@
       "Ok": [
         "OK"
       ],
+      "Open": [
+        "Ouvert"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Ouvrir ${ CALENDAR_APP_NAME }"
       ],
@@ -3988,7 +3991,7 @@
         "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi."
       ],
       "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
-        "Un problème est survenu lors du téléchargement de l'assistant d'écriture. Si vous utilisez le mode privé, essayez d'utiliser le mode de navigation normal ou exécutez l'assistant d'écriture sur les serveurs."
+        "Un problème est survenu lors du téléchargement de l'assistant d'écriture. Si vous utilisez le mode privé, essayez d'utiliser le mode de navigation normal ou exécutez l'assistant d'écriture sur des serveurs."
       ],
       "Problem downloading the writing assistant. Please try again.": [
         "Un problème est survenu lors du téléchargement de l'assistant d'écriture. Nous vous invitons à réessayer."
@@ -6447,7 +6450,7 @@
         "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
       ],
       "Please open the document to view it.": [
-        "Veuillez ouvrir le document pour le visualiser."
+        "Veuillez ouvrir le document pour l'afficher."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indiquez un nom et une adresse e-mail pour créer un groupe."
@@ -6705,6 +6708,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Les données que vous avez saisies dans le brouillon ne peuvent pas être sauvegardées si vous quittez la page."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Le nombre de téléchargements comprend les téléchargements et les prévisualisations de fichiers."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les données chiffrées sont légèrement plus volumineuses en raison du chiffrement et des signatures, qui garantissent la sécurité de vos données."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Les informations exposées ont été divulguées par un service tiers. Les informations de votre compte ${ BRAND_NAME } restent sécurisées et chiffrées. ${ learnMoreLink }"
@@ -9056,7 +9065,7 @@
         "Sécurité des mots de passe"
       ],
       "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser les identifiants"
+        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -11275,7 +11284,7 @@
         "En savoir plus sur notre impact"
       ],
       "Make your business stand out": [
-        "Faites en sorte que votre entreprise se démarque"
+        "Faites en sorte que votre entreprise se démarque !"
       ],
       "Manage your calendar": [
         "Gérer votre calendrier"
@@ -12237,6 +12246,9 @@
       "Import failed": [
         "L'importation n'a pas abouti."
       ],
+      "Import groups": [
+        "Importer des groupes"
+      ],
       "Insert contacts": [
         "Insérer des contacts"
       ],
@@ -12506,6 +12518,9 @@
       ],
       "Sending original message": [
         "Envoi du message original"
+      ],
+      "Set recovery phrase": [
+        "Définir une phrase de récupération"
       ],
       "Set your own schedule": [
         "Définissez vous-même le moment de l'envoi"

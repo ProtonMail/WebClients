@@ -4,6 +4,17 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en ${ remainingCount } andere potentiële lekken gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken en actie te ondernemen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
@@ -311,6 +322,9 @@
       "Next": [
         "Volgende"
       ],
+      "Next month": [
+        "Volgende maand"
+      ],
       "OK": [
         "OK"
       ],
@@ -343,6 +357,9 @@
       ],
       "Previous": [
         "Vorige"
+      ],
+      "Previous month": [
+        "Vorige maand"
       ],
       "Recover data": [
         "Gegevens herstellen"
@@ -2177,6 +2194,9 @@
       "Please set a recovery phone number first": [
         "Stel eerst een hersteltelefoonnummer in"
       ],
+      "Please try again in a few moments.": [
+        "Probeer het opnieuw in enkele ogenblikken."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om multi-gebruiker ondersteuning te ontvangen"
       ],
@@ -3161,6 +3181,9 @@
       "Can’t access your recovery phone?": [
         "Geen toegang tot u herstel telefoon?"
       ],
+      "Change your password": [
+        "Wijzig uw wachtwoord"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -3219,11 +3242,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -3299,6 +3322,9 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
@@ -3371,6 +3397,9 @@
       "Fill in user details": [
         "Vul gebruikersgegevens in"
       ],
+      "finance": [
+        "financiën"
+      ],
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
       ],
@@ -3394,6 +3423,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "High Priority": [
+        "Hoge Prioriteit"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Er moet een plaats zijn om de certificaathash van de identiteitsprovider te downloaden of te kopiëren. Plak gewoon de certificaathash in het tekstveld."
@@ -3485,6 +3517,9 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
+      "Invite rejected": [
+        "Uitnodiging afgewezen"
+      ],
       "JCB logo": [
         "JCB-logo"
       ],
@@ -3524,6 +3559,9 @@
       "Loading...": [
         "Laden..."
       ],
+      "Low Priority": [
+        "Lage Prioriteit"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Belangrijke e-maildiensten kunnen uw e-mails weigeren of filteren op spam als SPF/DKIM/DMARC ontbreekt of niet correct wordt ingesteld."
       ],
@@ -3539,11 +3577,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
+      "Medium Priority": [
+        "Middelmatige prioriteit"
+      ],
       "Member": [
         "Lid"
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Monitor accounts": [
+        "Accounts monitoren"
       ],
       "Multi-user support not enabled.": [
         "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
@@ -3610,6 +3654,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Er zijn andere beheerders in uw organisatie aanwezig, u bent verantwoordelijk om het nieuwe wachtwoord met hen te delen."
+      ],
+      "password": [
+        "wachtwoord"
       ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
@@ -3842,6 +3889,12 @@
       "The credentials from your Identity Provider will be deleted.": [
         "De referenties van uw Identity Provider worden verwijderd."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Het aantal downloads omvat zowel daadwerkelijke downloads als exemplaren waarin bestanden worden bekeken."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De versleutelde gegevens zijn iets groter door de extra gegevens voor de versleuteling en de handtekening, die de beveiliging van uw gegevens garanderen."
+      ],
       "The following address is invalid.": [
         "Het volgende adres is ongeldig.",
         "De volgende adressen zijn ongeldig."
@@ -4013,6 +4066,9 @@
       "User activated": [
         "Gebruiker geactiveerd"
       ],
+      "username": [
+        "gebruikersnaam"
+      ],
       "Users": [
         "Gebruikers"
       ],
@@ -4093,6 +4149,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
+      ],
+      "Week": [
+        "Week"
       ],
       "Welcome": [
         "Welkom"
@@ -5028,6 +5087,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Uw abonnement is afgelopen. ${ cta } en om het verlies van gegevens te voorkomen."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } inschakelen"
       ]
     },
     "mailtrial2024: Action": {
@@ -6025,6 +6089,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } is uitgezet"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } is aangezet"
+      ],
       "A disabled address cannot be default": [
         "Een uitgeschakeld adres kan niet primair zijn"
       ],
@@ -6490,6 +6560,12 @@
       "e.g. https://idp.example.com/XXXXX": [
         "bv. https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Bijv., "
+      ],
+      "End date": [
+        "Einddatum"
+      ],
       "Feedback": [
         "Feedback"
       ],
@@ -6528,6 +6604,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ],
+      "Start date": [
+        "Begindatum"
       ],
       "yourdomain.com": [
         "uwdomein.com"
@@ -6748,6 +6827,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL van de SCIM-connector waar uw IdP Provisioning Agent de SCIM-gegevens naar doorstuurt"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en ${ remainingCount } ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } en 1 ander potentieel lek gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Een potentieel ${ name } lek werd gedetecteerd. Schakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Uw informatie is in ten minste één datalek gevonden. Shakel ${ DARK_WEB_MONITORING_NAME } in om details te bekijken. ${ link }"
       ]
     },
     "Select file": {
@@ -8069,11 +8162,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -8293,6 +8386,9 @@
       ],
       "Invoices": [
         "Facturen"
+      ],
+      "Minicalendar": [
+        "Mini-agenda"
       ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
@@ -8589,6 +8685,11 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Vandaag"
       ]
     },
     "Tooltip": {
