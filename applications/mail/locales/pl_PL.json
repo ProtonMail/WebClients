@@ -834,6 +834,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Otwórz"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otwórz ${ CALENDAR_APP_NAME }"
       ],
@@ -3417,6 +3420,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Poproś administratora o dostęp do asystenta pisania."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Ustaw hasło odzyskiwania, aby zapewnić najwyższe bezpieczeństwo konta."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
@@ -4454,6 +4460,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Nie możesz używać aliasów przy włączonym dodatkowym haśle w ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplikacja jest niedostępna"
       ],
@@ -6912,6 +6921,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Jeśli opuścisz stronę, dane wpisane w szkicu mogą nie zostać zapisane."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Liczba pobrań obejmuje rzeczywiste pobrania i podgląd plików."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Zaszyfrowane dane zajmują więcej miejsca ze względu na proces szyfrowania oraz podpisy zapewniające bezpieczeństwo danych."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
@@ -12709,6 +12724,9 @@
       "Import failed": [
         "Importowanie nie powiodło się"
       ],
+      "Import groups": [
+        "Importuj grupy"
+      ],
       "Insert contacts": [
         "Wstaw kontakty"
       ],
@@ -12978,6 +12996,9 @@
       ],
       "Sending original message": [
         "Wysyłanie oryginalnej wiadomości"
+      ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
       ],
       "Set your own schedule": [
         "Ustaw własny harmonogram"

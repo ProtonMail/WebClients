@@ -823,6 +823,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Öppna"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
       ],
@@ -3382,6 +3385,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "För att fortsätta använda skrivassistenten, begär åtkomst från din administratör."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -4388,6 +4394,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Alias ​​kan inte användas när ett extra lösenord är aktiverat i ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "App är för närvarande inte tillgänglig"
       ],
@@ -5421,6 +5430,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
@@ -6710,6 +6722,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data du har angett i utkastet kanske inte sparas om du lämnar sidan."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Den krypterade datan är något större på grund av överbelastningen av krypteringen och signaturerna, som säkerställer säkerheten för dina data."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den exponerade informationen läckte från en tredjepartstjänst. Din ${ BRAND_NAME }-kontoinformation förblir säker och krypterad. ${ learnMoreLink }"
@@ -12232,6 +12250,9 @@
       "Import failed": [
         "Import misslyckades"
       ],
+      "Import groups": [
+        "Importera grupper"
+      ],
       "Insert contacts": [
         "Infoga kontakter"
       ],
@@ -12501,6 +12522,9 @@
       ],
       "Sending original message": [
         "Skickar originalmeddelande"
+      ],
+      "Set recovery phrase": [
+        "Ställ in återställningsfras"
       ],
       "Set your own schedule": [
         "Ställ in ditt eget schema"

@@ -1526,7 +1526,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Dvignite produktivnost e-pošte na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
+        "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ]
     },
     "Attached ics file error": {
@@ -6836,6 +6836,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Če zapustite stran, se podatki, ki ste jih vnesli v osnutek, morda ne bodo shranili."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Število prenosov vključuje tako dejanske prenose kot tudi primere predogleda datotek."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Šifrirani podatki so nekoliko večji zaradi šifriranja in podpisov, ki zagotavljajo varnost vaših podatkov."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Razkrite informacije so pricurljale iz storitve tretje osebe. Podatki o vašem računu ${ BRAND_NAME } ostajajo varni in šifrirani. ${ learnMoreLink }"
       ],
@@ -9279,7 +9285,7 @@
         "Zaščitite ${ n } naprav hkrati."
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, katera je potrebno posodobiti."
+        "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, ki jih je treba posodobiti."
       ],
       "Reply to messages": [
         "Odgovorite na sporočila"
@@ -12413,7 +12419,7 @@
         "Pridobite napredno zaščito"
       ],
       "Get the ${ appName[APP_NAME] } apps": [
-        "Prenesite aplikacije ${ appName[APP_NAME] }"
+        "Prenesite aplikacijo ${ appName[APP_NAME] }"
       ],
       "Gift": [
         "Darilo"
@@ -12839,7 +12845,7 @@
         "Vaša razkrita informacija"
       ],
       "Your free trial has ended": [
-        "Brezplačno preizkusno obdobje se je izteklo"
+        "Brezplačno preizkusno obdobje se je izteklo."
       ]
     },
     "Title subscription": {

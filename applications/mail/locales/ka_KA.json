@@ -13,6 +13,9 @@
       ]
     },
     "Account Settings - Info": {
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
@@ -1508,6 +1511,11 @@
       ],
       "Run on servers": [
         "გაშვება სერვერებზე"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
       ]
     },
     "Attached ics file error": {
@@ -6673,6 +6681,12 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "მონაცემები, რომელიც მონახაზში შეიყვანეთ, სხვა გვერდზე გადასვლის შემთხვევაში შეიძლება, დაიკარგოს."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "გადმოწერების რიცხვი მოიცავს როგორც მიმდინარე გადმოწერებს, ასევე ფაილების წინასწარ გადახედვის შემთხვევებს."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "დაშიფრული მონაცემები ოდნავ უფრო დიდია დაშიფვრისა და ხელმოწერების ზედმეტი ხარჯის გამო, რაც უზრუნველყოფს თქვენი მონაცემების უსაფრთხოებას."
+      ],
       "The initial setup may take a few minutes.": [
         "მორგების დაწყებას სულ რამდენიმე წუთი შეიძლება, დასჭირდეს."
       ],
@@ -9035,6 +9049,9 @@
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
+      ],
       "Reply to messages": [
         "პასუხი შეტყობინებებზე"
       ],
@@ -10243,6 +10260,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **აქტიურია** და იცავს თქვენს ანგარიშს."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
     },
     "Select files": {
@@ -11060,6 +11080,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
