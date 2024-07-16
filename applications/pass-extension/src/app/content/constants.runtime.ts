@@ -52,6 +52,11 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
         },
+        {
+            type: FieldType.IDENTITY,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            action: DropdownAction.AUTOFILL,
+        },
     ],
     [FormType.RECOVERY]: [
         {
@@ -93,6 +98,11 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
             type: FieldType.PASSWORD_NEW,
             injection: FieldInjectionRule.FIRST_OF_TYPE,
             action: DropdownAction.AUTOSUGGEST_PASSWORD,
+        },
+        {
+            type: FieldType.IDENTITY,
+            injection: FieldInjectionRule.FIRST_OF_TYPE,
+            action: DropdownAction.AUTOFILL,
         },
     ],
 };
