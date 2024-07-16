@@ -1097,7 +1097,7 @@
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
-        "${ PASS_APP_NAME } запатрабуе ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
+        "${ PASS_APP_NAME } будзе патрабаваць ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова адключана"
@@ -1121,7 +1121,7 @@
         "Доступ паспяхова пацверджаны"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "Доступ да ${ PASS_APP_NAME } будзе заўсёды патрабаваць ваш пароль ${ BRAND_NAME }"
+        "Для доступа да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш пароль ${ BRAND_NAME }"
       ],
       "Add a username field": [
         "Дадаць поле імя карыстальніка"
@@ -1397,7 +1397,7 @@
         "запрасіў(-ла) вас атрымаць доступ да элементаў у"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
+        "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Спачатку выйдзіце з уліковага запісу ў пашырэнні, калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
       ],
       "item": [
         "элемент",
@@ -1517,7 +1517,7 @@
         "Падтрымка па-за сеткай паспяхова адключана"
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
-        "Вам спатрэбіцца ўвесці PIN-код для разблакіроўкі сеанса. Гэта дазволіць атрымаць доступу да ${ PASS_APP_NAME } праз інтэрнэт. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
+        "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код, каб разблакіраваць ваш сеанс. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
       ],
       "Owner": [
         "Уладальнік"
@@ -1697,7 +1697,7 @@
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "Дадатковы пароль спатрэбіцца для выкарыстання ${ PASS_APP_NAME }. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
+        "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
