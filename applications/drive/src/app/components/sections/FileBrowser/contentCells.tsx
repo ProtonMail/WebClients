@@ -168,7 +168,7 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
                   item.showLinkSharingModal && (
                       <ShareIcon
                           shareId={activeShareId}
-                          linkId={item.id}
+                          linkId={item.linkId}
                           trashed={item.trashed}
                           showLinkSharingModal={item.showLinkSharingModal}
                           isAdmin={item.isAdmin}
@@ -177,7 +177,7 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
                 : item.shareUrl && (
                       <CopyLinkIcon
                           shareId={activeShareId}
-                          linkId={item.id}
+                          linkId={item.linkId}
                           isExpired={Boolean(item.shareUrl?.isExpired)}
                           trashed={item.trashed}
                       />
