@@ -519,7 +519,7 @@ const SingleSignupContainerV2 = ({
                 return 'pass_signup';
             }
             if (productParam === 'business') {
-                return 'legacy_business_signup';
+                return 'business_signup';
             }
             return 'generic_signup';
         })();
