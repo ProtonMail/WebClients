@@ -113,11 +113,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
       ],
       "Create a new vault to share": [
         "Vytvoriť nový trezor na zdieľanie"
@@ -197,6 +197,9 @@
       "Edit vault": [
         "Upraviť trezor"
       ],
+      "Entire vault": [
+        "Celý trezor"
+      ],
       "Exclude from monitoring": [
         "Vylúčiť z monitorovania"
       ],
@@ -223,6 +226,9 @@
       ],
       "Generated passwords": [
         "Vygenerované heslá"
+      ],
+      "Generating secure link...": [
+        "Generovanie bezpečného odkazu..."
       ],
       "Get mobile apps": [
         "Získať mobilné aplikácie"
@@ -293,8 +299,14 @@
       "Manage access": [
         "Spravovať prístup"
       ],
+      "Manage vault access": [
+        "Spravovať prístup k trezoru"
+      ],
       "Manually sync your data": [
         "Synchronizovať údaje manuálne"
+      ],
+      "Maximum views": [
+        "Maximálny počet zobrazení"
       ],
       "More info: ${ safeTitle }": [
         "Viac informácií: ${ safeTitle }"
@@ -322,6 +334,9 @@
       ],
       "Multiple select": [
         "Viacnásobný výber"
+      ],
+      "No expired links": [
+        "Žiadne exspirované odkazy"
       ],
       "Not now": [
         "Teraz nie"
@@ -368,6 +383,9 @@
       "Remove access": [
         "Odstrániť prístup"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Odstrániť všetky odkazy, ktorým vypršala platnosť (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Odstrániť odkaz"
       ],
@@ -392,6 +410,9 @@
       "Retry": [
         "Opakovať"
       ],
+      "Right click and download this CSV": [
+        "Kliknite pravým tlačidlom myši a stiahnite tento CSV súbor"
+      ],
       "Save": [
         "Uložiť"
       ],
@@ -403,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Ukladá sa prístupový kľúč..."
+      ],
+      "Secure links": [
+        "Bezpečné odkazy"
       ],
       "See all": [
         "Zobraziť všetko"
@@ -421,6 +445,9 @@
       ],
       "Set extra password": [
         "Nastaviť dodatočné heslo"
+      ],
+      "Setup 2FA": [
+        "Nastaviť 2FA"
       ],
       "Share": [
         "Zdieľať"
@@ -738,6 +765,9 @@
       "File could not be parsed": [
         "Súbor sa nepodarilo analyzovať"
       ],
+      "File could not be read": [
+        "Súbor sa nedá čítať"
+      ],
       "File does not match expected format": [
         "Súbor nezodpovedá očakávanému formátu"
       ],
@@ -746,6 +776,9 @@
       ],
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
+      ],
+      "Inactive secure links could not be removed.": [
+        "Neaktívne bezpečné odkazy nebolo možné odstrániť."
       ],
       "Invalid password manager": [
         "Neplatný správca hesiel"
@@ -807,6 +840,12 @@
       "Restoring trashed items failed": [
         "Obnova položiek z koša zlyhala"
       ],
+      "Secure link could not be created.": [
+        "Bezpečný odkaz nie je možné vytvoriť."
+      ],
+      "Secure link could not be opened.": [
+        "Bezpečný odkaz nie je možné otvoriť"
+      ],
       "Settings update failed": [
         "Aktualizácia nastavení zlyhala"
       ],
@@ -827,6 +866,9 @@
       ],
       "The URL is in the list": [
         "URL je na zozname"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Pri odstraňovaní bezpečného odkazu došlo k chybe. Skúste to o niekoľko minút znova, prosím."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Priveľa neúspešných pokusov. Prihláste sa, prosím znova."
@@ -1058,6 +1100,9 @@
       "All breaches for this address were resolved": [
         "Všetky úniky pre túto emailovú adresu boli vyriešené"
       ],
+      "All inactive secure links were removed": [
+        "Všetky neaktívne bezpečné odkazy boli odstránené"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všetky položky z \"${ payload.content.name }\" boli úspešne presunuté"
       ],
@@ -1082,14 +1127,23 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Naozaj chcete presunúť položku do \"${ name }\" ?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Skutočne chcete odstrániť odkaz?"
+      ],
       "Auto-lock successfully disabled.": [
         "Automatické uzamknutie bolo úspešne deaktivované."
       ],
       "Autosaved on ${ payload.domain }": [
         "Automaticky uložené na ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Pred exportom údajov v tomto formáte otvorte nastavenia prehliadača Safari -> kartu \"Všeobecné\" -> vypnite možnosť \"Otvoriť zabezpečené súbory po stiahnutí\". Zabránite tým tomu, aby prehliadač Safari nesprávne extrahoval exportovaný súbor."
+      ],
       "Built in 2FA authenticator": [
         "Zabudovaný 2FA autentifikátor"
+      ],
+      "Can be viewed": [
+        "Môže byť zobrazené"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
@@ -1117,6 +1171,9 @@
       ],
       "Close this window in order to use another passkey manager.": [
         "Zatvorte toto okno pre použitie iného správcu prístupových kľúčov."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Potvrdením dodatočného hesla pokračujte v jeho odstraňovaní."
       ],
       "Congratulations, your access has been confirmed": [
         "Blahoželáme, váš prístup bol potvrdený"
@@ -1159,6 +1216,9 @@
       ],
       "Drop to import": [
         "Presuňte na import"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Z dôvodu obmedzení rozšírení v prehliadači Safari bude po exporte údajov chýbať prípona súboru \".pgp\". Po exporte premenujte súbor tak, aby obsahoval príponu .pgp (napr. file.pgp)."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Jednoducho importujte svoje existujúce heslá do ${ PASS_APP_NAME }."
@@ -1205,8 +1265,17 @@
       "Enter your PIN code": [
         "Zadajte PIN kód"
       ],
+      "Expires in": [
+        "Vyprší za"
+      ],
       "Expires in ${ remainingTime }": [
         "Vyprší o ${ remainingTime }"
+      ],
+      "Extra password successfuly created": [
+        "Dodatočné heslo bolo úspešne vytvorené"
+      ],
+      "Extra password successfuly removed": [
+        "Dodatočné heslo bolo úspešne odstránené"
       ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
@@ -1421,6 +1490,18 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Prosím, potvrďte svoje ${ BRAND_NAME } heslo, aby ste mohli exportovať vaše dáta z ${ PASS_APP_NAME }"
       ],
+      "Please confirm your password": [
+        "Potvrďte vaše heslo, prosím"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Potvrďte, prosím, vaše heslo pre automatické uzamknutie pomocou vášho hesla."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Potvrďte, prosím, vaše heslo pre zrušenie vášho aktuálneho zámku."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Potvrďte, prosím, vaše heslo pre aktualizáciu času automatického uzamknutia."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Potvrďte, prosím, svoj PIN kód pre zrušenie registrácie aktuálneho zámku."
       ],
@@ -1436,6 +1517,9 @@
       "Please enter your current PIN code to continue": [
         "Pre pokračovanie zadajte váš aktuálny PIN kód"
       ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Zadajte, prosím, vaše dodatočné heslo, aby ste mohli začať používať ${ PASS_SHORT_APP_NAME }."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Aktualizujte, aby ste získali skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
       ],
@@ -1448,8 +1532,20 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
       ],
+      "Registering extra password...": [
+        "Registrácia dodatočného hesla..."
+      ],
       "Registering PIN lock failed": [
         "Registrácia uzamknutia pomocou PIN zlyhala"
+      ],
+      "Removing all inactive secure links...": [
+        "Odstraňujem všetky neaktívne odkazy..."
+      ],
+      "Removing extra password...": [
+        "Odstraňovanie dodatočného hesla..."
+      ],
+      "Removing secure link...": [
+        "Odstraňujem bezpečný odkaz..."
       ],
       "Restoring items from trash": [
         "Obnovenie položiek z koša"
@@ -1532,11 +1628,17 @@
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Exportovaný súbor bude šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
       ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Na použitie ${ PASS_APP_NAME } bude vyžadované dodatočné heslo. Funguje ako dodatočné heslo k vášmu heslu pre ${ BRAND_NAME }."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
         "Nasledujúce ${ result.ignored.length } položky nebolo možné importovať:",
         "Nasledujúcich ${ result.ignored.length } položiek nebolo možné importovať:",
         "Nasledujúcich ${ result.ignored.length } položiek nebolo možné importovať:"
+      ],
+      "The secure link has been removed": [
+        "Bezpečný odkaz bol odstránený"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Text, ktorý sa snažíte prilepiť, je dlhší ako maximálna povolená dĺžka ${ maxLength } znakov."
@@ -1576,6 +1678,9 @@
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho dodatočného hesla"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
@@ -1658,6 +1763,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Dosiahli ste maximálnu povolenú dĺžku ${ maxLength } znakov."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Dôjde k odhláseniu a budete sa musieť znova prihlásiť na všetkých ďalších vašich zariadeniach."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN kód použijete na odomknutie aplikácie ${ PASS_APP_NAME } , keď sa po určitom čase nečinnosti automaticky uzamkne."
       ],
@@ -1669,6 +1777,9 @@
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Vaša relácia ${ PASS_APP_NAME } je uzamknutá"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Váš účet je obmedzený, pretože vaša organizácia vynútila dvojstupňové overenie. Povoľte dvojstupňové overenie v nastaveniach účtu alebo kontaktujte svojho správcu."
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
@@ -1699,6 +1810,12 @@
         "${ hours } hodín",
         "${ hours } hodín"
       ],
+      "${ minutes } minute": [
+        "${ minutes } minúta",
+        "${ minutes } minúty",
+        "${ minutes } minút",
+        "${ minutes } minút"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } monitor"
       ],
@@ -1714,14 +1831,23 @@
       "10 minutes": [
         "10 minútach"
       ],
+      "14 days": [
+        "14 dní"
+      ],
       "15 minutes": [
         "15 minútach"
+      ],
+      "24 hours": [
+        "24 hodín"
       ],
       "2FA secret key (TOTP)": [
         "2FA tajný kľúč (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
+      ],
+      "30 days": [
+        "30 dní"
       ],
       "30 minutes": [
         "30 minútach"
@@ -1731,6 +1857,9 @@
       ],
       "5 minutes": [
         "5 minútach"
+      ],
+      "7 days": [
+        "7 dní"
       ],
       "A-Z": [
         "A-Z"
@@ -1867,8 +1996,14 @@
       "Expired": [
         "Vypršal"
       ],
+      "Expired link": [
+        "Odkaz s vypršanou platnosťou"
+      ],
       "Export": [
         "Export"
+      ],
+      "Extra password": [
+        "Dodatočné heslo"
       ],
       "Field name": [
         "Názov poľa"
@@ -1881,6 +2016,9 @@
       ],
       "General": [
         "Všeobecné"
+      ],
+      "Generate a secure link for this item": [
+        "Vygenerovať bezpečný odkaz na túto položku"
       ],
       "Generic CSV": [
         "Všeobecné CSV"
@@ -1956,6 +2094,9 @@
       ],
       "Make all viewers": [
         "Urobiť všetkých čitateľmi"
+      ],
+      "Max views reached": [
+        "Bol dosiahnutý počet zobrazení"
       ],
       "Members": [
         "Členovia"
@@ -2047,11 +2188,17 @@
       "Prompt for auto-save when generating passwords": [
         "Výzva na automatické uloženie pri generovaní hesiel"
       ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Chráňte ${ PASS_APP_NAME } ďalším heslom"
+      ],
       "Rate us": [
         "Ohodnoťte nás"
       ],
       "Recent": [
         "Nedávne"
+      ],
+      "Remove link": [
+        "Odstrániť odkaz"
       ],
       "Report a problem": [
         "Nahlásiť problém"
@@ -2089,6 +2236,15 @@
       "Settings": [
         "Nastavenia"
       ],
+      "Share": [
+        "Zdieľať"
+      ],
+      "Share this vault or create a new vault": [
+        "Zdieľajte tento trezor alebo vytvorte nový trezor"
+      ],
+      "Shared link": [
+        "Zdieľaný odkaz"
+      ],
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
       ],
@@ -2106,6 +2262,15 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobou",
+        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobami",
+        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobami",
+        "Trezor položky je momentálne zdieľaný s ${ targetMembers } osobami"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL adresa bola skopírovaná do schránky"
       ],
       "Title": [
         "Názov"
@@ -2422,6 +2587,9 @@
       "No items selected": [
         "Žiadne vybrané položky"
       ],
+      "No shared secure links": [
+        "Žiadne zdieľané bezpečné odkazy"
+      ],
       "Our welcome gift to you": [
         "Náš uvítací darček pre vás"
       ],
@@ -2445,6 +2613,9 @@
       ],
       "Remove extra password": [
         "Odstrániť dodatočné heslo"
+      ],
+      "Remove secure link?": [
+        "Odstrániť bezpečný odkaz?"
       ],
       "Restore this version?": [
         "Obnoviť túto verziu?"
@@ -2573,6 +2744,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Momentálne nie je možné načítať poštové schránky pre tento alias"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Upozornenie: Ak toto heslo stratíte, nebudete mať prístup k svojmu kontu ${ PASS_APP_NAME }."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Nepodarilo sa vytvoriť trezor \"${ vaultName }\""
       ],
@@ -2593,6 +2767,9 @@
       ],
       "Extra password cannot be empty": [
         "Dodatočné heslo nemôže byť prázdne"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Dodatočné heslo by malo mať aspoň 8 znakov"
       ],
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"
@@ -2656,6 +2833,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Aby ste mohli využívať zdieľanie trezoru, overte svoju emailovú adresu, prosím"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Odstránením dodatočného hesla dôjde k odhláseniu zo všetkých zariadení a ukončeniu všetkých aktívnych relácií."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."

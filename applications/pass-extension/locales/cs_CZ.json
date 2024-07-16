@@ -113,11 +113,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvořte účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvořte účet ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Vytvořit nový trezor ke sdílení"
@@ -197,6 +197,9 @@
       "Edit vault": [
         "Upravit trezor"
       ],
+      "Entire vault": [
+        "Celý trezor"
+      ],
       "Exclude from monitoring": [
         "Vyloučit ze sledování"
       ],
@@ -223,6 +226,9 @@
       ],
       "Generated passwords": [
         "Vygenerovaná hesla"
+      ],
+      "Generating secure link...": [
+        "Vytváření bezpečného odkazu..."
       ],
       "Get mobile apps": [
         "Získat mobilní aplikace"
@@ -299,6 +305,9 @@
       "Manually sync your data": [
         "Manuálně synchronizovat"
       ],
+      "Maximum views": [
+        "Maximální počet zobrazení"
+      ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
       ],
@@ -325,6 +334,9 @@
       ],
       "Multiple select": [
         "Vícenásobný výběr"
+      ],
+      "No expired links": [
+        "Žádné prošlé odkazy"
       ],
       "Not now": [
         "Nyní ne"
@@ -371,6 +383,9 @@
       "Remove access": [
         "Odebrat přístup"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Odebrat všechny prošlé odkazy (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Odstranit odkaz"
       ],
@@ -409,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Ukládání přístupového klíče..."
+      ],
+      "Secure links": [
+        "Bezpečné odkazy"
       ],
       "See all": [
         "Zobrazit vše"
@@ -759,6 +777,9 @@
       "Importing items failed": [
         "Import položek se nezdařil"
       ],
+      "Inactive secure links could not be removed.": [
+        "Neaktivní bezpečné odkazy nemohly být odebrány."
+      ],
       "Invalid password manager": [
         "Neplatný správce hesel"
       ],
@@ -819,6 +840,12 @@
       "Restoring trashed items failed": [
         "Obnovení položek z koše selhalo"
       ],
+      "Secure link could not be created.": [
+        "Bezpečný odkaz nemohl být vytvořen."
+      ],
+      "Secure link could not be opened.": [
+        "Bezpečný odkaz nemohl být otevřen."
+      ],
       "Settings update failed": [
         "Aktualizace nastavení se nezdařila"
       ],
@@ -839,6 +866,9 @@
       ],
       "The URL is in the list": [
         "URL adresa je na seznamu"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Došlo k chybě při odebírání bezpečného odkazu. Zkuste to prosím znovu za několik minut."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Příliš mnoho neúspěšných pokusů. Přihlaste se znovu."
@@ -1070,6 +1100,9 @@
       "All breaches for this address were resolved": [
         "Všechny úniky informací pro tuto adresu byly vyřešeny"
       ],
+      "All inactive secure links were removed": [
+        "Všechny neaktivních bezpečné odkazy byly odebrány"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
       ],
@@ -1094,6 +1127,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Jste si jisti, že chcete přesunou položku do \"${ name }\" ?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Skutečně chcete odebrat tento odkaz?"
+      ],
       "Auto-lock successfully disabled.": [
         "Automatické zamykání bylo úspěšně deaktivováno."
       ],
@@ -1105,6 +1141,9 @@
       ],
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
+      ],
+      "Can be viewed": [
+        "Lze zobrazit"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Může vytvářet, upravovat, mazat a exportovat položky v tomto trezoru."
@@ -1225,6 +1264,9 @@
       ],
       "Enter your PIN code": [
         "Zadejte PIN kód"
+      ],
+      "Expires in": [
+        "Vyprší za"
       ],
       "Expires in ${ remainingTime }": [
         "Vyprší za ${ remainingTime }"
@@ -1496,8 +1538,14 @@
       "Registering PIN lock failed": [
         "Registrace zamykání PIN kódem selhala"
       ],
+      "Removing all inactive secure links...": [
+        "Odebírání všech neaktivních bezpečných odkazů..."
+      ],
       "Removing extra password...": [
         "Odstraňování dodatečného hesla..."
+      ],
+      "Removing secure link...": [
+        "Odebírání bezpečného odkazu..."
       ],
       "Restoring items from trash": [
         "Obnovují se položky z koše"
@@ -1588,6 +1636,9 @@
         "Následující ${ result.ignored.length } položky nelze importovat:",
         "Následujících ${ result.ignored.length } položek nelze importovat:",
         "Následujících ${ result.ignored.length } položek nelze importovat:"
+      ],
+      "The secure link has been removed": [
+        "Bezpečný odkaz byl odebrán"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Text, který se snažíte vložit, je delší než maximální povolená délka ${ maxLength } znaků."
@@ -1759,6 +1810,12 @@
         "${ hours } hodin",
         "${ hours } hodin"
       ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
+      ],
       "${ PASS_SHORT_APP_NAME } monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
@@ -1774,14 +1831,23 @@
       "10 minutes": [
         "10 minut"
       ],
+      "14 days": [
+        "14 dní"
+      ],
       "15 minutes": [
         "15 minut"
+      ],
+      "24 hours": [
+        "24 hodin"
       ],
       "2FA secret key (TOTP)": [
         "Klíč 2FA secret (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
+      ],
+      "30 days": [
+        "30 dní"
       ],
       "30 minutes": [
         "30 minut"
@@ -1791,6 +1857,9 @@
       ],
       "5 minutes": [
         "5 minut"
+      ],
+      "7 days": [
+        "7 dní"
       ],
       "A-Z": [
         "A-Z"
@@ -1927,6 +1996,9 @@
       "Expired": [
         "Vypršelo"
       ],
+      "Expired link": [
+        "Odkaz s prošlou platností"
+      ],
       "Export": [
         "Export"
       ],
@@ -1944,6 +2016,9 @@
       ],
       "General": [
         "Obecné"
+      ],
+      "Generate a secure link for this item": [
+        "Vygenerujte bezpečný odkaz na tuto položku"
       ],
       "Generic CSV": [
         "Obyčejný CSV"
@@ -2019,6 +2094,9 @@
       ],
       "Make all viewers": [
         "Udělat ze všech prohlížející"
+      ],
+      "Max views reached": [
+        "Max. zobrazení dosaženo"
       ],
       "Members": [
         "Členové"
@@ -2119,6 +2197,9 @@
       "Recent": [
         "Nedávné"
       ],
+      "Remove link": [
+        "Odebrat odkaz"
+      ],
       "Report a problem": [
         "Nahlásit problém"
       ],
@@ -2155,6 +2236,15 @@
       "Settings": [
         "Nastavení"
       ],
+      "Share": [
+        "Sdílet"
+      ],
+      "Share this vault or create a new vault": [
+        "Sdílejte tento trezor a nebo vytvořte nový"
+      ],
+      "Shared link": [
+        "Sdílený odkaz"
+      ],
       "Show website favicons": [
         "Zobrazit ikony webových stránek"
       ],
@@ -2172,6 +2262,15 @@
       ],
       "Text": [
         "Text"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Trezor položky je nyní sdílen s ${ targetMembers } osobou",
+        "Trezor položky je nyní sdílen se ${ targetMembers } lidmi",
+        "Trezor položky je nyní sdílen s ${ targetMembers } lidmi",
+        "Trezor položky je nyní sdílen s ${ targetMembers } lidmi"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Odkaz byl zkopírován do schránky"
       ],
       "Title": [
         "Název"
@@ -2488,6 +2587,9 @@
       "No items selected": [
         "Žádné vybrané položky"
       ],
+      "No shared secure links": [
+        "Žádné sdílené bezpečné odkazy"
+      ],
       "Our welcome gift to you": [
         "Náš dárek na přivítanou pro vás"
       ],
@@ -2511,6 +2613,9 @@
       ],
       "Remove extra password": [
         "Odstranit dodatečné heslo"
+      ],
+      "Remove secure link?": [
+        "Odebrat bezpečný odkaz?"
       ],
       "Restore this version?": [
         "Obnovit tuto verzi?"
@@ -2655,7 +2760,7 @@
         "Prázdná poznámka"
       ],
       "Encryption password is required": [
-        "Je vyžadováno heslo pro šifrování"
+        "Je vyžadováno heslo pro dešifrování"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Datum konce platnosti není ve formátu MM/RR"
