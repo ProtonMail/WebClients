@@ -760,11 +760,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -1137,6 +1137,12 @@
       ],
       "Verify account": [
         "Verifikasi akun"
+      ],
+      "Verify code": [
+        "Verifikasi kode"
+      ],
+      "Verify code again": [
+        "Verifikasi ulang kode"
       ],
       "Verify domain": [
         "Verifikasi domain"
@@ -1537,6 +1543,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1558,14 +1572,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3998,6 +4004,9 @@
       "Checkout expired, please try again": [
         "Sesi pembayaran telah kedaluwarsa, silakan coba lagi"
       ],
+      "Code wrong or not valid anymore": [
+        "Kode salah atau sudah tidak valid"
+      ],
       "Condition incomplete": [
         "Kondisi tidak lengkap"
       ],
@@ -4072,6 +4081,9 @@
       ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Apabila waktu yang tertera pada TV Anda telah habis, klik Muat Ulang pada TV Anda dan masukkan kode Anda kembali."
       ],
       "IMAP server is required": [
         "Server IMAP diperlukan"
@@ -5570,6 +5582,16 @@
         "Layanan"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Alamat grup"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } anggota"
+      ]
+    },
     "Header": {
       "Access": [
         "Akses"
@@ -6288,6 +6310,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
       ],
+      "Add a recovery ${ type }": [
+        "Tambah ${ type } pemulihan"
+      ],
       "Add a recovery email address": [
         "Tambahkan alamat email pemulihan"
       ],
@@ -6678,11 +6703,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -6695,6 +6720,9 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
+      ],
+      "Disable recovery by ${ type }": [
+        "Nonaktifkan pemulihan melalui ${ type }"
       ],
       "Discount": [
         "Diskon"
@@ -7719,6 +7747,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
+      "Session Ended": [
+        "Sesi Diakhiri"
+      ],
+      "Session Roaming": [
+        "Sesi dalam Proses Roaming"
+      ],
+      "Session Started": [
+        "Sesi Dimulai"
+      ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
@@ -7875,8 +7912,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web merupakan bagian tersembunyi dari internet di mana informasi pribadi yang dicuri, seperti identitas diri, dapat diperjualbelikan."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Tautan verifikasi ini telah kedaluwarsa. Silakan masuk untuk mengirimkan ulang kode verifikasi."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
@@ -7936,7 +7979,7 @@
         "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Fitur ini menunda pengiriman email Anda, yang memberi Anda kesempatan untuk mengurungkan pengiriman pesan dalam kurun waktu tersebut."
+        "Fitur ini menunda pengiriman email Anda, yang memberi Anda kesempatan untuk mengurungkan pengiriman dalam kurun waktu yang dipilih."
       ],
       "This file is too large to preview": [
         "Berkas ini terlalu besar untuk dipratinjau"
@@ -8064,6 +8107,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Agar akun Anda dapat selalu diakses sepanjang waktu, tentukan metode pemulihan akun"
       ],
+      "To ensure highest possible security of your account": [
+        "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda,"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Untuk memastikan agar Anda tidak kehilangan berbagai data penting, ${ DRIVE_APP_NAME } menyimpan versi lawas berkas seiring dengan perubahan yang dibuat oleh Anda dan rekan kerja Anda. Tentukan berapa lama ${ BRAND_NAME } akan menyimpan berkas versi lawas."
       ],
@@ -8169,8 +8215,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Tingkatkan ke paket ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, atau ${ PLAN_NAMES[bundleProPlan] } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Tingkatkan ke paket ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, atau ${ PLAN_NAMES[bundleProPlan] } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
@@ -8252,6 +8298,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir pop-up mana pun yang sedang aktif. Anda tidak akan dikenakan biaya sepeser pun. Seluruh dana yang digunakan untuk memverifikasi kartu akan langsung dikembalikan."
+      ],
+      "Verify ${ type }": [
+        "Verifikasi ${ type }"
       ],
       "Verify domain": [
         "Verifikasi domain"
@@ -9529,6 +9578,9 @@
       "Enter password": [
         "Masukkan kata sandi"
       ],
+      "Enter the code displayed on your TV": [
+        "Masukkan kode yang tertera pada TV Anda"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Masukkan kata sandi untuk kunci dengan kode sidik jari berikut: ${ fingerprintCode }"
       ],
@@ -10471,11 +10523,14 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Dapatkan ${ plan }** untuk jangka waktu yang terbatas!"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Dapatkan ${ plan }** untuk memperoleh akses dini ke ${ appName }!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Jadilah seorang Visionary dan jadilah bagian dari perjalanan ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Penawaran waktu terbatas"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10922,6 +10977,23 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -10949,23 +11021,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -12710,8 +12765,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Seluruh layanan ${ BRAND_NAME } Plus.${ br }Dalam satu langganan mudah."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Buat akun ${ PASS_APP_NAME }"
+      "Create a ${ appName } account": [
+        "Buat akun ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME } Anda"
@@ -15298,11 +15353,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -15354,6 +15409,9 @@
       ],
       "Connect ${ name }": [
         "Hubungkan ${ name }"
+      ],
+      "Connection events": [
+        "Peristiwa koneksi"
       ],
       "Contact us": [
         "Hubungi kami"
@@ -15489,6 +15547,9 @@
       ],
       "Details": [
         "Rincian"
+      ],
+      "Device connected!": [
+        "Perangkat tersambung!"
       ],
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
@@ -15655,6 +15716,9 @@
       "Forward emails": [
         "Penerusan email"
       ],
+      "Gateway": [
+        "Gateway"
+      ],
       "Gateways": [
         "Gateway"
       ],
@@ -15720,6 +15784,9 @@
       ],
       "Import failed": [
         "Proses impor gagal"
+      ],
+      "Import groups": [
+        "Impor grup"
       ],
       "Import key": [
         "Impor kunci"
@@ -15822,6 +15889,9 @@
       ],
       "Organization name": [
         "Nama organisasi"
+      ],
+      "Origin": [
+        "Asal"
       ],
       "Other calendars": [
         "Kalender lainnya"
@@ -16104,6 +16174,9 @@
       ],
       "Track your referrals": [
         "Lacak rujukan Anda"
+      ],
+      "TV sign in": [
+        "Masuk TV"
       ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
@@ -16451,7 +16524,7 @@
         "Alamat email ini akan ditampilkan kepada seluruh anggota organisasi pada saat melangsungkan tindakan manajemen akun."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Fitur ini menunda pengiriman email, memberi Anda kesempatan untuk menarik pesan dalam kurun waktu tersebut."
+        "Fitur ini menunda pengiriman email Anda, yang memberi Anda kesempatan untuk mengurungkan pengiriman dalam kurun waktu yang dipilih."
       ],
       "This feature is only available for paid users": [
         "Fitur ini hanya tersedia untuk pengguna berbayar"

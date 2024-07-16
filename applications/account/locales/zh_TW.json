@@ -731,10 +731,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -1109,6 +1109,12 @@
       "Verify account": [
         "驗證帳號"
       ],
+      "Verify code": [
+        "驗證碼"
+      ],
+      "Verify code again": [
+        "再次驗證代碼"
+      ],
       "Verify domain": [
         "驗證網域"
       ],
@@ -1475,6 +1481,14 @@
         "選擇你的年終優惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1490,14 +1504,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -3881,6 +3887,9 @@
       "Checkout expired, please try again": [
         "結帳已逾時，請重試"
       ],
+      "Code wrong or not valid anymore": [
+        "代碼錯誤或不再有效"
+      ],
       "Condition incomplete": [
         "條件不完整"
       ],
@@ -3955,6 +3964,9 @@
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "您電視上的時間是否已到期？在您的電視上點擊重新整理並重試您的代碼。"
       ],
       "IMAP server is required": [
         "IMAP 伺服器為必填"
@@ -6501,10 +6513,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7632,8 +7644,14 @@
       "The credentials from your Identity Provider will be deleted.": [
         "您的身分提供者提供的認證將予刪除。"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "下載數量包含實際下載與預覽檔案時的實體。"
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "電郵驗證連結已過期。請登入以重新傳送驗證連結。"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "因為加密與簽章的開銷，加密後的資料會較大，保證了您資料的安全。"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
@@ -7898,9 +7916,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "升級至${ PLAN_NAMES[PLANS.PASS_PLUS] }，${ PLAN_NAMES[PLANS.BUNDLE] }，${ PLAN_NAMES[PLANS.FAMILY] }或${ PLAN_NAMES[bundleProPlan] }以存取${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升級以新增較短且易於分享的 @pm.me 位址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
@@ -9180,6 +9195,9 @@
       "Enter password": [
         "請輸入密碼"
       ],
+      "Enter the code displayed on your TV": [
+        "輸入在您的電視上顯示的代碼"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "請輸入密碼以解密金鑰，金鑰指紋為：${ fingerprintCode }"
       ],
@@ -10097,9 +10115,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "成為Visionary並成為${ BRAND_NAME }的故事"
-      ],
-      "Limited time offer": [
-        "限時促銷"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10519,6 +10534,23 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10546,23 +10578,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -12192,9 +12207,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "全部${ BRAND_NAME }升級服務。${ br }一個簡單的訂購授權。"
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "創建一個${ PASS_APP_NAME } 帳號"
       ],
       "Create your ${ BRAND_NAME } account": [
         "創建您的 ${ BRAND_NAME } 帳號"
@@ -14414,10 +14426,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -14602,6 +14614,9 @@
       ],
       "Details": [
         "詳細資訊"
+      ],
+      "Device connected!": [
+        "裝置已連線！"
       ],
       "Disable two-factor authentication": [
         "停用兩步驟驗證"
@@ -15202,6 +15217,9 @@
       ],
       "Track your referrals": [
         "追蹤您的引薦記錄"
+      ],
+      "TV sign in": [
+        "電視登入"
       ],
       "Two-factor authentication": [
         "兩步驟驗證"

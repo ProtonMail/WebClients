@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Otwórz"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
       ],
@@ -760,10 +763,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -1137,6 +1140,12 @@
       ],
       "Verify account": [
         "Zweryfikuj konto"
+      ],
+      "Verify code": [
+        "Zweryfikuj kod"
+      ],
+      "Verify code again": [
+        "Zweryfikuj kod ponownie"
       ],
       "Verify domain": [
         "Zweryfikuj domenę"
@@ -1549,6 +1558,14 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1570,14 +1587,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4034,6 +4043,9 @@
       "Checkout expired, please try again": [
         "Płatność wygasła. Spróbuj ponownie"
       ],
+      "Code wrong or not valid anymore": [
+        "Kod jest nieprawidłowy lub stracił ważność"
+      ],
       "Condition incomplete": [
         "Warunek jest niekompletny"
       ],
@@ -4114,6 +4126,9 @@
       ],
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Jeśli czas został przekroczony, kliknij przycisk Odśwież na swoim telewizorze i wpisz kod ponownie."
       ],
       "IMAP server is required": [
         "Serwer IMAP jest wymagany"
@@ -5654,6 +5669,19 @@
         "Usługi"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Adres grupy"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } członek",
+        "${ memberCount } członków",
+        "${ memberCount } członków",
+        "${ memberCount } członków"
+      ]
+    },
     "Header": {
       "Access": [
         "Dostęp"
@@ -6358,7 +6386,7 @@
         "Udostępnienie sejfu ${ vaultLink } za pomocą adresu e-mail"
       ],
       "${ vaultLink } updated": [
-        "Zaktualziwoanie sejfu ${ vaultLink }"
+        "Zaktualizowanie sejfu ${ vaultLink }"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Połączenie z poziomu kraju wymagana planu ${ vpnPlus }."
@@ -6455,6 +6483,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
+      ],
+      "Add a recovery ${ type }": [
+        "Dodaj odzyskiwanie przez ${ type }"
       ],
       "Add a recovery email address": [
         "Dodaj adres pomocniczy"
@@ -6873,11 +6904,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -6893,6 +6924,9 @@
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy"
+      ],
+      "Disable recovery by ${ type }": [
+        "Wyłącz odzyskiwanie przez ${ type }"
       ],
       "Discount": [
         "Rabat"
@@ -7959,6 +7993,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
+      "Session Ended": [
+        "Zakończenie sesji"
+      ],
+      "Session Roaming": [
+        "Roaming sesji"
+      ],
+      "Session Started": [
+        "Rozpoczęcie sesji"
+      ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
       ],
@@ -8121,8 +8164,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web to ukryta część Internetu, w której można kupować i sprzedawać skradzione dane osobowe."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Liczba pobrań obejmuje rzeczywiste pobrania i podgląd plików."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Link weryfikacyjny wygasł. Zaloguj się, aby wysłać ponownie link."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Zaszyfrowane dane zajmują więcej miejsca ze względu na proces szyfrowania oraz podpisy zapewniające bezpieczeństwo danych."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Twoje informacje zostały ujawnione przez usługi stron trzecich. Informacje konta ${ BRAND_NAME } pozostają bezpieczne i zaszyfrowane. ${ learnMoreLink }"
@@ -8319,6 +8368,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Ustaw metodę odzyskiwania konta, aby zapewnić dostęp do swojego konta"
       ],
+      "To ensure highest possible security of your account": [
+        "Aby zapewnić najwyższe bezpieczeństwo konta"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Aby chronić ważne dane, ${ DRIVE_APP_NAME } zapisuje starsze wersje plików. Wybierz, jak długo ${ BRAND_NAME } ma przechowywać poprzednie wersje."
       ],
@@ -8424,8 +8476,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Ulepsz plan do wersji ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } lub ${ PLAN_NAMES[bundleProPlan] }, aby uzyskać dostęp do ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Ulepsz plan do wersji ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } lub ${ PLAN_NAMES[bundleProPlan] }, aby uzyskać dostęp do ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Ulepsz konto, aby dodać krótszy adres @pm.me, który jest łatwiejszy do udostępniania. To jest skrót od “${ MAIL_APP_NAME } me” lub “Private Message me”."
@@ -8507,6 +8559,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien. Twoje konto nie zostanie obciążone, kwota pobrana w celu zweryfikowania karty płatniczej, zostanie od razu zwrócona."
+      ],
+      "Verify ${ type }": [
+        "Zweryfikuj ${ type }"
       ],
       "Verify domain": [
         "Zweryfikuj domenę"
@@ -8694,6 +8749,18 @@
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnych dedykowanych serwerów.",
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnych dedykowanych serwerów."
       ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika i ${ usedAI } z ${ maxAI } dostępnej licencji asystenta pisania.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika i ${ usedAI } z ${ maxAI } dostępnych licencji asystenta pisania.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika i ${ usedAI } z ${ maxAI } dostępnych licencji asystenta pisania.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika i ${ usedAI } z ${ maxAI } dostępnych licencji asystenta pisania."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnej licencji użytkownika i żadnej z ${ maxAI } dostępnych licencji asystenta pisania.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika i żadnej z ${ maxAI } dostępnych licencji asystenta pisania.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika i żadnej z ${ maxAI } dostępnych licencji asystenta pisania.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika i żadnej z ${ maxAI } dostępnych licencji asystenta pisania."
+      ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Używasz ${ usedMembers } z ${ maxMembers } dostępnej licencji użytkownika.",
         "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika.",
@@ -8827,7 +8894,7 @@
         "Nadal musisz odpowiedzieć na zaproszenia, aby organizator zobaczył odpowiedź."
       ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
-        "Po zaakceptowaniu zaproszenia będziesz mógł ustawić użytkownikowi uprawnienia administratora."
+        "Po zaakceptowaniu zaproszenia będziesz mógł nadać \nużytkownikowi uprawnienia administratora."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po zalogowaniu się zostaniesz przekierowany do ${ destination }."
@@ -9523,6 +9590,9 @@
       "Auto show remote images": [
         "Automatycznie pokazuj zdalne obrazy"
       ],
+      "Auto-advance": [
+        "Automatyczne przechodzenie"
+      ],
       "Auto-delete unwanted messages": [
         "Automatyczne usuwanie niechcianych wiadomości"
       ],
@@ -9813,6 +9883,9 @@
       ],
       "Enter password": [
         "Wpisz hasło"
+      ],
+      "Enter the code displayed on your TV": [
+        "Wpisz kod wyświetlony na telewizorze"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
@@ -10777,11 +10850,14 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Uzyskaj plan ${ plan }** przez ograniczony czas!"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Uzyskaj plan ${ plan }** dla wcześniejszego dostępu do ${ appName }!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Wybierz plan Visionary i bądź częścią historii ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Oferta ograniczona czasowo"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11243,6 +11319,23 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11270,23 +11363,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -13124,8 +13200,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji Plus.${ br }Jedna prosta subskrypcja."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Utwórz konto ${ PASS_APP_NAME }"
+      "Create a ${ appName } account": [
+        "Utwórz konto ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
@@ -15853,10 +15929,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -15909,6 +15985,9 @@
       ],
       "Connect ${ name }": [
         "Połącz ${ name }"
+      ],
+      "Connection events": [
+        "Logi połączeń"
       ],
       "Contact us": [
         "Skontaktuj się z nami"
@@ -16050,6 +16129,9 @@
       ],
       "Details": [
         "Szczegóły"
+      ],
+      "Device connected!": [
+        "Urządzenie zostało podłączone!"
       ],
       "Disable two-factor authentication": [
         "Wyłącz uwierzytelnianie dwustopniowe"
@@ -16219,6 +16301,9 @@
       "Forward emails": [
         "Przekieruj wiadomości"
       ],
+      "Gateway": [
+        "Brama"
+      ],
       "Gateways": [
         "Bramy"
       ],
@@ -16287,6 +16372,9 @@
       ],
       "Import failed": [
         "Importowanie nie powiodło się"
+      ],
+      "Import groups": [
+        "Importuj grupy"
       ],
       "Import key": [
         "Importuj klucz"
@@ -16674,6 +16762,9 @@
       ],
       "Track your referrals": [
         "Sprawdź aktywność linku polecającego"
+      ],
+      "TV sign in": [
+        "Zaloguj się na telewizorze"
       ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
