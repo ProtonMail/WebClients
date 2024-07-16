@@ -4,6 +4,26 @@
     "language": "el_GR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκαν ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή από ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Επιλέγω τον δικό μου κωδικό πρόσβασης"
+      ],
+      "Clear filter": [
+        "Καθαρισμός φίλτρου"
+      ],
+      "Clear filters": [
+        "Καθαρισμός φίλτρων"
       ],
       "Close": [
         "Κλείσιμο"
@@ -323,6 +349,9 @@
       "Next": [
         "Επόμενο"
       ],
+      "Next month": [
+        "Επόμενος μήνας"
+      ],
       "OK": [
         "ΟΚ"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Προηγούμενο"
+      ],
+      "Previous month": [
+        "Προηγούμενος μήνας"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -2248,6 +2280,9 @@
       "Please set a recovery phone number first": [
         "Παρακαλούμε ορίστε πρώτα ένα τηλέφωνο ανάκτησης"
       ],
+      "Please try again in a few moments.": [
+        "Παρακαλούμε δοκιμάστε ξανά σε λίγο."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
       ],
@@ -3148,6 +3183,9 @@
         "Ο χρήστης που επηρεάζεται βρίσκεται στη γραμμή",
         "Οι χρήστες που επηρεάζεται βρίσκονται στις γραμμές"
       ],
+      "All Events ": [
+        "Όλες οι εκδηλώσεις "
+      ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
@@ -3241,6 +3279,9 @@
       "Can’t access your recovery phone?": [
         "Δεν μπορείτε να αποκτήσετε πρόσβαση στο τηλέφωνο ανάκτησης;"
       ],
+      "Change your password": [
+        "Αλλάξτε τον κωδικό πρόσβασής σας"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
@@ -3299,11 +3340,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -3379,6 +3420,9 @@
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
       ],
+      "email": [
+        "ηλεκτρονικό ταχυδρομείο"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Η φιλοξενία email για 10 προσαρμοσμένους τομείς email συμπεριλαμβάνεται δωρεάν. Επιπρόσθετοι τομείς μπορούν να προστεθούν έναντι ${ price }."
       ],
@@ -3451,6 +3495,9 @@
       "Fill in user details": [
         "Συμπληρώστε τα στοιχεία χρήστη"
       ],
+      "finance": [
+        "οικονομικά"
+      ],
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
@@ -3474,6 +3521,9 @@
       ],
       "here": [
         "εδώ"
+      ],
+      "High Priority": [
+        "Υψηλή προτεραιότητα"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Θα πρέπει να υπάρχει ένα μέρος για τη λήψη ή την αντιγραφή του κατακερματισμού πιστοποιητικού από την υπηρεσία παροχής ταυτότητας. Απλώς επικολλήστε τον κατακερματισμό του πιστοποιητικού στο πεδίο περιοχής κειμένου."
@@ -3568,6 +3618,72 @@
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
+      "Invite Accepted": [
+        "Η Πρόσκληση Αποδέχτηκε"
+      ],
+      "Invite Created": [
+        "Η Πρόσκληση Δημιουργήθηκε"
+      ],
+      "Invite deleted": [
+        "Η πρόσκληση διαγράφηκε"
+      ],
+      "Invite Deleted": [
+        "Η Πρόσκληση Διαγράφηκε"
+      ],
+      "Invite for organization accepted": [
+        "Η πρόσκληση για τον οργανισμό αποδέχτηκε"
+      ],
+      "Invite for organization created": [
+        "Η πρόσκληση για τον οργανισμό δημιουργήθηκε"
+      ],
+      "Invite rejected": [
+        "Η πρόσκληση απορρίφθηκε"
+      ],
+      "Invite Rejected": [
+        "Η Πρόσκληση Απορρίφθηκε"
+      ],
+      "Item Autofilled": [
+        "Το στοιχείο συμπληρώθηκε αυτόματα"
+      ],
+      "Item autofilled in vault": [
+        "Το στοιχείο συμπληρώθηκε αυτόματα στην κρύπτη"
+      ],
+      "Item Changed Flags": [
+        "Το στοιχείο Άλλαξε Σημαίες"
+      ],
+      "Item Created": [
+        "Το στοιχείο Δημιουργήθηκε"
+      ],
+      "Item created in vault": [
+        "Το στοιχείο δημιουργήθηκε στην κρύπτη"
+      ],
+      "Item Deleted": [
+        "Το στοιχείο Διαγράφτηκε"
+      ],
+      "Item flags changed in vault": [
+        "Οι σημαίες στοιχείου άλλαξαν στην κρύπτη"
+      ],
+      "Item in vault untrashed": [
+        "Το στοιχείο επαναφέρθηκε στην κρύπτη"
+      ],
+      "Item Read": [
+        "Το στοιχείο διαβάστηκε"
+      ],
+      "Item read in vault": [
+        "Το στοιχείο διαβάστηκε στην κρύπτη"
+      ],
+      "Item Trashed": [
+        "Το στοιχείο Απορρίφθηκε"
+      ],
+      "Item Untrashed": [
+        "Το στοιχείο Επαναφέρθηκε"
+      ],
+      "Item Updated": [
+        "Το στοιχείο Ενημερώθηκε"
+      ],
+      "Item updated in vault": [
+        "Το στοιχείο ενημερώθηκε στην κρύπτη"
+      ],
       "JCB logo": [
         "Λογότυπο JCB"
       ],
@@ -3607,6 +3723,9 @@
       "Loading...": [
         "Φόρτωση..."
       ],
+      "Low Priority": [
+        "Χαμηλή προτεραιότητα"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Οι μεγάλες υπηρεσίες ηλεκτρονικού ταχυδρομείου ενδέχεται να απορρίψουν ή να φιλτράρουν τα μηνύματα ηλεκτρονικού ταχυδρομείου σας σε ανεπιθύμητα μηνύματα εάν λείπουν ή δεν έχουν ρυθμιστεί σωστά τα SPF / DKIM / DMARC."
       ],
@@ -3622,11 +3741,17 @@
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Μεσαία προτεραιότητα"
+      ],
       "Member": [
         "Μέλος"
       ],
       "MM/YY": [
         "ΜΜ/ΧΧ"
+      ],
+      "Monitor accounts": [
+        "Παρακολούθηση λογαριασμών"
       ],
       "Multi-user support not enabled.": [
         "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
@@ -3642,6 +3767,12 @@
       ],
       "Must start with a letter.": [
         "Πρέπει να ξεκινάει με γράμμα."
+      ],
+      "New User Invite Created": [
+        "Δημιουργήθηκε Πρόσκληση Νέου Χρήστη"
+      ],
+      "New User Invite Deleted": [
+        "Διαγράφηκε η Πρόσκληση Νέου Χρήστη"
       ],
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
@@ -3693,6 +3824,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Υπάρχουν και άλλοι διαχειριστές στον οργανισμό σας, είστε υπεύθυνοι για την ενημέρωση τους σχετικά με τον νέο κωδικό πρόσβασης."
+      ],
+      "password": [
+        "κωδικός πρόσβασης"
       ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
@@ -3870,6 +4004,21 @@
       "Setting up your organization": [
         "Ρύθμιση του οργανισμού σας"
       ],
+      "Share Created": [
+        "Η κοινοποίηση Δημιουργήθηκε"
+      ],
+      "Share Deleted": [
+        "Η κοινοποίηση Διαγράφηκε"
+      ],
+      "Share Updated": [
+        "Η κοινοποίηση Ενημερώθηκε"
+      ],
+      "Shared vault deleted": [
+        "Διαγράφηκε η κοινοποιημένη κρύπτη"
+      ],
+      "Shared vault updated": [
+        "Ενημερώθηκε η κοινοποιημένη κρύπτη"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, συνδεθείτε στο ${ MAIL_APP_NAME }"
       ],
@@ -3936,6 +4085,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Τα διαπιστευτήρια από τον πάροχο ταυτότητάς σας θα διαγραφούν."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις παρουσίες κατά την προεπισκόπηση αρχείων."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
       ],
       "The following address is invalid.": [
         "Η ακόλουθη διεύθυνση είναι μη έγκυρη.",
@@ -4096,6 +4251,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Μοναδικό αναγνωριστικό που δημιουργείται από τον πάροχο ταυτότητάς σας, συνήθως με τη μορφή διεύθυνσης URL που περιέχει το όνομα του παρόχου ταυτότητας (π.χ. https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Άγνωστος τύπος εκδήλωσης"
+      ],
       "Unsaved changes": [
         "Μη αποθηκευμένες αλλαγές"
       ],
@@ -4129,8 +4287,32 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
+      "username": [
+        "όνομα χρήστη"
+      ],
       "Users": [
         "Χρήστες"
+      ],
+      "Vault created": [
+        "Η κρύπτη δημιουργήθηκε"
+      ],
+      "Vault Created": [
+        "Η κρύπτη Δημιουργήθηκε"
+      ],
+      "Vault deleted": [
+        "Η κρύπτη διαγράφηκε"
+      ],
+      "Vault Deleted": [
+        "Η κρύπτη Διαγράφηκε"
+      ],
+      "Vault shared with email": [
+        "Η κρύπτη έχει κοινοποιηθεί με ηλεκτρονικό ταχυδρομείο"
+      ],
+      "Vault updated": [
+        "Η κρύπτη ενημερώθηκε"
+      ],
+      "Vault Updated": [
+        "Η κρύπτη Ενημερώθηκε"
       ],
       "Verification can take a few minutes.": [
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
@@ -4209,6 +4391,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "Week": [
+        "Εβδομάδα"
       ],
       "Welcome": [
         "Καλώς ήρθατε"
@@ -5196,6 +5381,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Η συνδρομή σας έχει λήξει. ${ cta } και για την αποφυγή απώλειας δεδομένων."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ενεργοποίηση ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6240,6 +6430,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } έχει απενεργοποιηθεί"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } έχει ενεργοποιηθεί"
+      ],
       "A disabled address cannot be default": [
         "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
       ],
@@ -6248,6 +6444,9 @@
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Μη έγκυρη εισαγωγή. Αναζητήστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου ή μια διεύθυνση IP."
       ],
       "IP Address copied to clipboard": [
         "Η διεύθυνση IP αντιγράφηκε στο πρόχειρο"
@@ -6740,6 +6939,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "π.χ. https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Για παράδειγμα, "
+      ],
+      "Email or IP": [
+        "Email ή IP"
+      ],
+      "End date": [
+        "Ημερομηνία λήξης"
+      ],
       "Feedback": [
         "Αξιολόγηση"
       ],
@@ -6778,6 +6986,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Μοιραστείτε αυτό που πιστεύετε ότι θα μπορούσε να κάνει το ${ BRAND_NAME } καλύτερο"
+      ],
+      "Start date": [
+        "Ημερομηνία Έναρξης"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -7001,6 +7212,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Διεύθυνση URL της σύνδεσης SCIM στην οποία ο Φορέας Παροχής IdP προωθεί δεδομένα SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } και ${ remainingCount } εντοπίστηκαν άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } και εντοπίστηκε 1 άλλη πιθανή διαρροή. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Εντοπίστηκε πιθανή διαρροή ${ name }. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες. ${ link }"
       ]
     },
     "Select file": {
@@ -8521,10 +8746,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -8709,6 +8934,9 @@
       "Error": [
         "Σφάλμα"
       ],
+      "Event": [
+        "Εκδήλωση"
+      ],
       "Every member of the organization can access": [
         "Κάθε μέλος του οργανισμού μπορεί να έχει πρόσβαση"
       ],
@@ -8757,6 +8985,9 @@
       ],
       "Main password": [
         "Κύριος κωδικός πρόσβασης"
+      ],
+      "Minicalendar": [
+        "Μίνι ημερολόγιο"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
@@ -8942,6 +9173,9 @@
       "Switch to two-password mode": [
         "Μετάβαση σε λειτουργία δύο κωδικών πρόσβασης"
       ],
+      "Time": [
+        "Ώρα"
+      ],
       "TV sign in": [
         "Σύνδεση τηλεόρασης"
       ],
@@ -8968,6 +9202,9 @@
       ],
       "Upload your organization’s logo": [
         "Αποστολή του λογότυπου του οργανισμού σας"
+      ],
+      "User": [
+        "Χρήστης"
       ],
       "Users": [
         "Χρήστες"
@@ -9059,6 +9296,11 @@
       ],
       "Status": [
         "Κατάσταση"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Σήμερα"
       ]
     },
     "Tooltip": {

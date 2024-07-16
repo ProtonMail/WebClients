@@ -4,6 +4,26 @@
     "language": "ro_RO"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "A fost detectată o posibilă divulgare ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "A fost detectată o posibilă divulgare de la ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o posibilă divulgare de la ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a lua măsuri. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Aleg parola mea"
+      ],
+      "Clear filter": [
+        "Eliminare filtru"
+      ],
+      "Clear filters": [
+        "Eliminare filtre"
       ],
       "Close": [
         "Închidere"
@@ -323,6 +349,9 @@
       "Next": [
         "Înainte"
       ],
+      "Next month": [
+        "Luna viitoare"
+      ],
       "OK": [
         "OK"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Anteriorul"
+      ],
+      "Previous month": [
+        "Luna trecută"
       ],
       "Recover data": [
         "Recuperare date"
@@ -2256,6 +2288,9 @@
       "Please set a recovery phone number first": [
         "Setați mai întâi un număr de telefon de recuperare"
       ],
+      "Please try again in a few moments.": [
+        "Mai încercați peste câteva momente."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Treceți la un plan de afaceri cu mai mult de un utilizator pentru a folosi mai mulți utilizatori."
       ],
@@ -3177,6 +3212,9 @@
         "Utilizatorii afectați sunt pe rândurile",
         "Utilizatorii afectați sunt pe rândurile"
       ],
+      "All Events ": [
+        "Toate evenimentele"
+      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
@@ -3270,6 +3308,9 @@
       "Can’t access your recovery phone?": [
         "Nu vă puteți accesa telefonul de recuperare?"
       ],
+      "Change your password": [
+        "Schimbare parolă"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
@@ -3329,11 +3370,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -3411,6 +3452,9 @@
       "Edit email address": [
         "Editare adresă de e-mail"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Gazduirea de e-mail pentru 10 nume de domeniu de e-mail personale este inclusă gratuit. Domenii suplimentare pot fi adăugate pentru ${ price }."
       ],
@@ -3483,6 +3527,9 @@
       "Fill in user details": [
         "Completați detaliile utilizatorului"
       ],
+      "finance": [
+        "finanțe"
+      ],
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
@@ -3506,6 +3553,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "High Priority": [
+        "Prioritate înaltă"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Cheia publică a furnizorului de identitate pentru a semna afirmațiile de autentificare. Ar trebui să existe un loc pentru a descărca sau copia hash-ul certificatului de la furnizorul de identitate. Doar lipiți hash-ul certificatului în câmpul de text."
@@ -3600,6 +3650,72 @@
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
       ],
+      "Invite Accepted": [
+        "Invitație acceptată."
+      ],
+      "Invite Created": [
+        "Invitația s-a creat."
+      ],
+      "Invite deleted": [
+        "Invitația s-a șters."
+      ],
+      "Invite Deleted": [
+        "Invitație ștearsă."
+      ],
+      "Invite for organization accepted": [
+        "S-a acceptat invitația pentru organizație."
+      ],
+      "Invite for organization created": [
+        "S-a creat invitația pentru organizație."
+      ],
+      "Invite rejected": [
+        "Invitație refuzată"
+      ],
+      "Invite Rejected": [
+        "Invitație refuzată."
+      ],
+      "Item Autofilled": [
+        "Articol autocompletat."
+      ],
+      "Item autofilled in vault": [
+        "Articol autocompletat în seif."
+      ],
+      "Item Changed Flags": [
+        "Stare articol modificată."
+      ],
+      "Item Created": [
+        "Articol creat."
+      ],
+      "Item created in vault": [
+        "Articol creat în seif."
+      ],
+      "Item Deleted": [
+        "Articol șters."
+      ],
+      "Item flags changed in vault": [
+        "Stare articol schimbată în seif."
+      ],
+      "Item in vault untrashed": [
+        "Articol recuperat din coșul de gunoi în seif."
+      ],
+      "Item Read": [
+        "Articol citit."
+      ],
+      "Item read in vault": [
+        "Articol citit în seif."
+      ],
+      "Item Trashed": [
+        "Articol pus în gunoi."
+      ],
+      "Item Untrashed": [
+        "Articol scos din gunoi."
+      ],
+      "Item Updated": [
+        "Articol actualizat."
+      ],
+      "Item updated in vault": [
+        "Articol actualizat în seif."
+      ],
       "JCB logo": [
         "Logo JCB"
       ],
@@ -3639,6 +3755,9 @@
       "Loading...": [
         "Se încarcă…"
       ],
+      "Low Priority": [
+        "Prioritate scăzută"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Serviciile de e-mail majore v-ar putea refuza sau considera mesajele ca fiind nedorite dacă SPF/DKIM/DMARC/ lipsesc sau nu sunt setate corespunzător."
       ],
@@ -3654,11 +3773,17 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioritate medie"
+      ],
       "Member": [
         "Membru"
       ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "Monitor accounts": [
+        "Monitorizare conturi"
       ],
       "Multi-user support not enabled.": [
         "Suportul pentru utilizatori multipli nu e activat."
@@ -3674,6 +3799,12 @@
       ],
       "Must start with a letter.": [
         "Trebuie să înceapă cu o literă."
+      ],
+      "New User Invite Created": [
+        "Invitație pentru utilizator nou creată."
+      ],
+      "New User Invite Deleted": [
+        "Invitație pentru utilizator nou ștearsă."
       ],
       "No addresses exist": [
         "Nu există adrese"
@@ -3728,6 +3859,9 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "password": [
+        "parola"
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
@@ -3907,6 +4041,21 @@
       "Setting up your organization": [
         "Setare organizație"
       ],
+      "Share Created": [
+        "Partajare creată."
+      ],
+      "Share Deleted": [
+        "Partajare ștearsă."
+      ],
+      "Share Updated": [
+        "Partajare actualizată."
+      ],
+      "Shared vault deleted": [
+        "Seif partajat șters."
+      ],
+      "Shared vault updated": [
+        "Seif partajat actualizat."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
@@ -3974,6 +4123,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Acreditările de la furnizorul de identitate vă vor fi șterse."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
       ],
       "The following address is invalid.": [
         "Următoarea adresă nu este validă.",
@@ -4137,6 +4292,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unic generat de furnizorul de identitate, de obicei sub forma unei adrese URL care conține numele furnizorului de identitate (ex. https://idp.exemplu.com/XXXX)."
       ],
+      "Unknown event type": [
+        "Tipul evenimentului nu este cunoscut."
+      ],
       "Unsaved changes": [
         "Modificări nesalvate"
       ],
@@ -4170,8 +4328,32 @@
       "User activated": [
         "Utilizator activat"
       ],
+      "username": [
+        "utilizator"
+      ],
       "Users": [
         "Utilizatori"
+      ],
+      "Vault created": [
+        "Seiful s-a creat."
+      ],
+      "Vault Created": [
+        "Seiful s-a creat."
+      ],
+      "Vault deleted": [
+        "Seiful s-a șters."
+      ],
+      "Vault Deleted": [
+        "Seiful s-a șters."
+      ],
+      "Vault shared with email": [
+        "Seif partajat pe e-mail."
+      ],
+      "Vault updated": [
+        "Seiful a fost actualizat."
+      ],
+      "Vault Updated": [
+        "Seiful a fost actualizat."
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
@@ -4250,6 +4432,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
+      ],
+      "Week": [
+        "Săptămâna"
       ],
       "Welcome": [
         "Bun venit"
@@ -5251,6 +5436,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Abonamentul s-a încheiat. ${ cta } și pentru a evita pierderea datelor."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activare ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6316,6 +6506,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } a fost dezactivat"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a fost activat"
+      ],
       "A disabled address cannot be default": [
         "O adresă dezactivată nu poate fi implicită."
       ],
@@ -6324,6 +6520,9 @@
       ],
       "Invalid code": [
         "Cod nevalid"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Date de intrare incorecte. Căutați o adresă de e-mai sau IP."
       ],
       "IP Address copied to clipboard": [
         "Adresa IP a fost copiată în memorie"
@@ -6842,6 +7041,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "ex. https://idp.exemplu.com/XXXXX"
       ],
+      "E.g., ": [
+        "Ex.: "
+      ],
+      "Email or IP": [
+        "E-mail sau IP"
+      ],
+      "End date": [
+        "Data sfârșit"
+      ],
       "Feedback": [
         "Feedback"
       ],
@@ -6880,6 +7088,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Dată început"
       ],
       "yourdomain.com": [
         "domeniuldvs.com"
@@ -7106,6 +7317,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Adresa URL a conectorului SCIM către care agentul dvs. de aprovizionare IdP transmite datele SCIM."
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } şi încă o potențială divulgare a fost detectată. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "A fost detectată o potențială divulgare pentru ${ name }. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a acționa. ${ link }"
       ]
     },
     "Select file": {
@@ -8667,10 +8892,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -8857,6 +9082,9 @@
       "Error": [
         "Eroare"
       ],
+      "Event": [
+        "Eveniment"
+      ],
       "Every member of the organization can access": [
         "Orice membru din organizație are acces"
       ],
@@ -8906,6 +9134,9 @@
       ],
       "Main password": [
         "Parola principală"
+      ],
+      "Minicalendar": [
+        "Minicalendar"
       ],
       "Multi-user support": [
         "Suport utilizatori multipli"
@@ -9092,6 +9323,9 @@
       "Switch to two-password mode": [
         "Comutare la modul cu două parole"
       ],
+      "Time": [
+        "Ora"
+      ],
       "TV sign in": [
         "Autentificare TV"
       ],
@@ -9118,6 +9352,9 @@
       ],
       "Upload your organization’s logo": [
         "Încărcați logoul organizației"
+      ],
+      "User": [
+        "Utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -9209,6 +9446,11 @@
       ],
       "Status": [
         "Stare"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Astăzi"
       ]
     },
     "Tooltip": {

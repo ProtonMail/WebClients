@@ -4,6 +4,26 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations et prendre les mesures nécessaires. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Une fuite potentielle de données depuis ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Choisir mon propre mot de passe"
+      ],
+      "Clear filter": [
+        "Effacer le filtre"
+      ],
+      "Clear filters": [
+        "Effacer les filtres"
       ],
       "Close": [
         "Fermer"
@@ -323,11 +349,17 @@
       "Next": [
         "Suivant"
       ],
+      "Next month": [
+        "Mois suivant"
+      ],
       "OK": [
         "OK"
       ],
       "Ok": [
         "OK"
+      ],
+      "Open": [
+        "Ouvert"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
@@ -355,6 +387,9 @@
       ],
       "Previous": [
         "Précédent"
+      ],
+      "Previous month": [
+        "Mois précédent"
       ],
       "Recover data": [
         "Récupérer les données"
@@ -2252,6 +2287,9 @@
       "Please set a recovery phone number first": [
         "Définissez d'abord un numéro de téléphone de récupération."
       ],
+      "Please try again in a few moments.": [
+        "Veuillez réessayer dans quelques instants."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Nous vous invitons à passer à un abonnement entreprise, avec plus d'un utilisateur, pour bénéficier de la prise en charge de plusieurs utilisateurs."
       ],
@@ -3072,6 +3110,18 @@
         "${ userFound } utilisateur trouvé",
         "${ userFound } utilisateurs trouvés"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } a été créé."
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } a été supprimé."
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } a été partagé par e-mail."
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } a été mis à jour."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } est nécessaire pour une connexion au niveau d'un pays."
       ],
@@ -3155,6 +3205,9 @@
         "L'utilisateur affecté est sur la ligne.",
         "Les utilisateurs affectés sont sur les lignes."
       ],
+      "All Events ": [
+        "Tous les événements"
+      ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
@@ -3236,6 +3289,15 @@
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "L'e-mail personnalisé en cas de fuite de données a été ajouté."
+      ],
+      "Breach Custom Email Deleted": [
+        "L'e-mail personnalisé en cas de fuite de données a été supprimé."
+      ],
+      "Breach Custom Email Validated": [
+        "L'e-mail personnalisé en cas de fuite de données a été validé."
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
       ],
@@ -3247,6 +3309,9 @@
       ],
       "Can’t access your recovery phone?": [
         "Vous ne pouvez plus accéder à votre téléphone de récupération ?"
+      ],
+      "Change your password": [
+        "Modifier votre mot de passe"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
@@ -3300,17 +3365,26 @@
       "Custom branding": [
         "Personnalisation avec votre marque"
       ],
+      "Custom email added": [
+        "L'e-mail personnalisé a été ajouté."
+      ],
+      "Custom email deleted": [
+        "L'e-mail personnalisé a été supprimé."
+      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
+      ],
+      "Custom email validated": [
+        "L'e-mail personnalisé a été validé."
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "dedicated servers": [
+        "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -3386,6 +3460,9 @@
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
+      "email": [
+        "e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hébergement de messagerie pour 10 noms de domaine personnalisés est inclus gratuitement. Des domaines supplémentaires peuvent être ajoutés pour ${ price }."
       ],
@@ -3458,6 +3535,9 @@
       "Fill in user details": [
         "Renseignez les informations de l'utilisateur."
       ],
+      "finance": [
+        "finance"
+      ],
       "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
       ],
@@ -3481,6 +3561,9 @@
       ],
       "here": [
         "ici"
+      ],
+      "High Priority": [
+        "Priorité élevée"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Téléchargez ou copiez le hash du certificat de votre fournisseur d'identité. Il vous suffit ensuite de coller ce dernier dans le champ texte correspondant."
@@ -3575,6 +3658,105 @@
       "Internet connection restored.": [
         "La connexion internet est rétablie."
       ],
+      "Invite Accepted": [
+        "L'invitation a été acceptée."
+      ],
+      "Invite Created": [
+        "L'invitation a été créée."
+      ],
+      "Invite deleted": [
+        "L'invitation a été supprimée."
+      ],
+      "Invite Deleted": [
+        "L'invitation a été supprimée."
+      ],
+      "Invite for new user deleted": [
+        "L'invitation pour le nouvel utilisateur a été supprimée."
+      ],
+      "Invite for organization accepted": [
+        "L'invitation pour l'organisation a été acceptée."
+      ],
+      "Invite for organization created": [
+        "L'invitation pour l'organisation a été créée."
+      ],
+      "Invite rejected": [
+        "L'invitation a été refusée."
+      ],
+      "Invite Rejected": [
+        "L'invitation a été refusée."
+      ],
+      "Item Autofilled": [
+        "L'invitation a été remplie automatiquement."
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "L'élément a été rempli automatiquement dans ${ vaultLink }."
+      ],
+      "Item autofilled in vault": [
+        "L'élément dans le coffre-fort a été rempli automatiquement."
+      ],
+      "Item Changed Flags": [
+        "Indicateurs de l'élément modifié"
+      ],
+      "Item Created": [
+        "L'élément est créé."
+      ],
+      "Item created in ${ vaultLink }": [
+        "L'élément a été créé dans ${ vaultLink }."
+      ],
+      "Item created in vault": [
+        "L'élément dans le coffre-fort a été créé."
+      ],
+      "Item Deleted": [
+        "L'élément est supprimé."
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "L'élément a été supprimé de ${ vaultLink }."
+      ],
+      "Item deleted from vault": [
+        "L'élément a été supprimé du coffre-fort."
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Les indicateurs d'élément ont été modifiés dans ${ vaultLink }."
+      ],
+      "Item flags changed in vault": [
+        "Les indicateurs de l'élément ont été modifiés dans le coffre-fort."
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "L'élément dans ${ vaultLink } a été déplacé dans la corbeille."
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "L'élément dans ${ vaultLink } a été retiré de la corbeille."
+      ],
+      "Item in vault trashed": [
+        "L'élément dans le coffre-fort a été envoyé dans la corbeille."
+      ],
+      "Item in vault untrashed": [
+        "L'élément dans le coffre-fort a été retiré de la corbeille."
+      ],
+      "Item Read": [
+        "L'élément est lu."
+      ],
+      "Item read in ${ vaultLink }": [
+        "L'élément a été lu dans ${ vaultLink }."
+      ],
+      "Item read in vault": [
+        "L'élément dans le coffre-fort a été lu."
+      ],
+      "Item Trashed": [
+        "L'élément est dans la corbeille."
+      ],
+      "Item Untrashed": [
+        "L'invitation a été retirée de la corbeille."
+      ],
+      "Item Updated": [
+        "L'élément est mis à jour."
+      ],
+      "Item updated in ${ vaultLink }": [
+        "L'élément a été mis à jour dans ${ vaultLink }."
+      ],
+      "Item updated in vault": [
+        "L'élément dans le coffre-fort a été mis à jour."
+      ],
       "JCB logo": [
         "Logo JCB"
       ],
@@ -3614,6 +3796,9 @@
       "Loading...": [
         "Chargement en cours"
       ],
+      "Low Priority": [
+        "Priorité basse"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Les principaux services de messagerie peuvent refuser ou filtrer vos e-mails en les considérant comme indésirables/spam si les enregistrements SPF/DKIM/DMARC sont manquants ou ne sont pas correctement configurés."
       ],
@@ -3629,11 +3814,17 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Priorité moyenne"
+      ],
       "Member": [
         "Membre"
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Surveiller les comptes"
       ],
       "Multi-user support not enabled.": [
         "La prise en charge du multi-utilisateur n'est pas activée."
@@ -3649,6 +3840,15 @@
       ],
       "Must start with a letter.": [
         "Le premier caractère doit être une lettre."
+      ],
+      "New User Invite Created": [
+        "L'invitation du nouvel utilisateur a été créée."
+      ],
+      "New User Invite Deleted": [
+        "L'invitation du nouvel utilisateur a été supprimée."
+      ],
+      "New user invited to organization": [
+        "Le nouvel utilisateur a été invité à rejoindre l'organisation."
       ],
       "No addresses exist": [
         "Aucune adresse n'existe."
@@ -3700,6 +3900,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
+      ],
+      "password": [
+        "mot de passe"
       ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
@@ -3755,7 +3958,7 @@
         "ouvrez un ticket de support"
       ],
       "Please open the document to view it.": [
-        "Veuillez ouvrir le document pour le visualiser."
+        "Veuillez ouvrir le document pour l'afficher."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Nous vous invitons à réessayer en utilisant un autre moyen de paiement, ou bien à contacter votre banque."
@@ -3877,6 +4080,27 @@
       "Setting up your organization": [
         "Configuration de votre organisation"
       ],
+      "Share Created": [
+        "Le partage a été créé."
+      ],
+      "Share Deleted": [
+        "Le partage a été supprimé."
+      ],
+      "Share Updated": [
+        "Le partage a été mis à jour."
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Le lien partagé ${ vaultLink } a été supprimé."
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Le partage ${ vaultLink } a été mis à jour."
+      ],
+      "Shared vault deleted": [
+        "Le coffre-fort partagé a été supprimé."
+      ],
+      "Shared vault updated": [
+        "Le coffre-fort partagé a été mis à jour."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Connectez-vous à ${ MAIL_APP_NAME } pour activer votre adresse."
       ],
@@ -3943,6 +4167,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Les identifiants de votre fournisseur d'identité seront supprimés."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Le nombre de téléchargements comprend les téléchargements et les prévisualisations de fichiers."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les données chiffrées sont légèrement plus volumineuses en raison du chiffrement et des signatures, qui garantissent la sécurité de vos données."
       ],
       "The following address is invalid.": [
         "L'adresse suivante n'est pas valide.",
@@ -4103,6 +4333,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unique généré par votre fournisseur d'identité. Il s'agit généralement d'une URL qui comporte le nom de votre fournisseur d'identité (par ex. https://idp.exemple.fr/XXXXX)."
       ],
+      "Unknown event type": [
+        "Type d'événement inconnu"
+      ],
       "Unsaved changes": [
         "Les modifications ne sont pas enregistrées."
       ],
@@ -4136,8 +4369,32 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
+      "username": [
+        "nom d'utilisateur"
+      ],
       "Users": [
         "Utilisateurs"
+      ],
+      "Vault created": [
+        "Le coffre-fort a été créé."
+      ],
+      "Vault Created": [
+        "Le coffre-fort a été créé."
+      ],
+      "Vault deleted": [
+        "Le coffre-fort a été supprimé."
+      ],
+      "Vault Deleted": [
+        "Le coffre-fort a été supprimé."
+      ],
+      "Vault shared with email": [
+        "Coffre-fort partagé par e-mail"
+      ],
+      "Vault updated": [
+        "Le coffre-fort a été mis à jour."
+      ],
+      "Vault Updated": [
+        "Le coffre-fort a été mis à jour."
       ],
       "Verification can take a few minutes.": [
         "La vérification peut prendre quelques minutes."
@@ -4216,6 +4473,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }."
+      ],
+      "Week": [
+        "Semaine"
       ],
       "Welcome": [
         "Bienvenue"
@@ -5205,6 +5465,11 @@
         "Votre abonnement est terminé. ${ cta } et pour éviter de perdre des données."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Activer ${ reason }"
+      ]
+    },
     "mail_signup_2024: Info": {
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Ajouter l'assistant d'écriture ${ BRAND_NAME } Scribe"
@@ -5652,7 +5917,7 @@
         "Sécurité des mots de passe"
       ],
       "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser les identifiants"
+        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -6253,6 +6518,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } a été désactivé."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } a été activé."
+      ],
       "A disabled address cannot be default": [
         "Une adresse désactivée ne peut pas être une adresse par défaut."
       ],
@@ -6261,6 +6532,9 @@
       ],
       "Invalid code": [
         "Le code n’est pas valide."
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "La saisie n'est pas valide. Veuillez rechercher une adresse e-mail ou IP."
       ],
       "IP Address copied to clipboard": [
         "L'adresse IP a été copiée dans le presse-papiers."
@@ -6753,6 +7027,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "ex. : https://idp.example.fr/XXXXX"
       ],
+      "E.g., ": [
+        "Par exemple, "
+      ],
+      "Email or IP": [
+        "E-mail ou IP"
+      ],
+      "End date": [
+        "Date de fin"
+      ],
       "Feedback": [
         "Votre avis"
       ],
@@ -6791,6 +7074,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dites-nous ce qui, selon vous, pourrait améliorer ${ BRAND_NAME }."
+      ],
+      "Start date": [
+        "Date de début"
       ],
       "yourdomain.com": [
         "votredomaine.fr"
@@ -7014,6 +7300,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL du connecteur SCIM auquel votre agent de provisionnement du fournisseur d'identité transmet les données SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et ${ remainingCount } autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } et une autre fuite potentielle de données ont été détectées. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Une fuite potentielle de données pour ${ name } a été détectée. Activez la ${ DARK_WEB_MONITORING_NAME } pour afficher les informations. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations. ${ link }"
       ]
     },
     "Select file": {
@@ -7983,7 +8283,7 @@
         "En savoir plus sur notre impact"
       ],
       "Make your business stand out": [
-        "Faites en sorte que votre entreprise se démarque"
+        "Faites en sorte que votre entreprise se démarque !"
       ],
       "Manage your calendar": [
         "Gérer votre calendrier"
@@ -8540,10 +8840,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -8562,7 +8862,7 @@
         "Modifier le rôle"
       ],
       "Change second password": [
-        "Changer le mot de passe du compte"
+        "Changer le second mot de passe"
       ],
       "Close": [
         "Fermer"
@@ -8728,6 +9028,9 @@
       "Error": [
         "Erreur"
       ],
+      "Event": [
+        "Événement"
+      ],
       "Every member of the organization can access": [
         "Chaque membre de l'organisation peut accéder"
       ],
@@ -8740,6 +9043,9 @@
       ],
       "Forgot recovery method": [
         "Méthode de récupération oubliée"
+      ],
+      "Gateway": [
+        "Passerelle "
       ],
       "Gateways": [
         "Passerelles"
@@ -8776,6 +9082,9 @@
       ],
       "Main password": [
         "Mot de passe principal"
+      ],
+      "Minicalendar": [
+        "Mini calendrier"
       ],
       "Multi-user support": [
         "Prise en charge du multi-utilisateur"
@@ -8961,6 +9270,9 @@
       "Switch to two-password mode": [
         "Passer au mode deux mots de passe"
       ],
+      "Time": [
+        "Heure"
+      ],
       "TV sign in": [
         "Connexion à la télévision"
       ],
@@ -8987,6 +9299,9 @@
       ],
       "Upload your organization’s logo": [
         "Importer le logo de votre organisation"
+      ],
+      "User": [
+        "Utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -9078,6 +9393,11 @@
       ],
       "Status": [
         "Statut"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Aujourd'hui"
       ]
     },
     "Tooltip": {

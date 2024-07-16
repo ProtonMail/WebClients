@@ -4,6 +4,11 @@
     "language": "pt_PT"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -76,6 +81,12 @@
       ],
       "Choose my own password": [
         "Escolher a sua palavra-passe"
+      ],
+      "Clear filter": [
+        "Limpar o filtro"
+      ],
+      "Clear filters": [
+        "Limpar os filtros"
       ],
       "Close": [
         "Fechar"
@@ -317,6 +328,9 @@
       "Next": [
         "Seguinte"
       ],
+      "Next month": [
+        "Mês seguinte"
+      ],
       "OK": [
         "Aceitar"
       ],
@@ -346,6 +360,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Previous month": [
+        "Mês anterior"
       ],
       "Recover data": [
         "Recuperar dados"
@@ -2077,6 +2094,9 @@
       "Please set a recovery phone number first": [
         "Defina um número de telefone de recuperação."
       ],
+      "Please try again in a few moments.": [
+        "Por favor, tente novamente dentro de alguns momentos."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Subscreva um plano empresarial com mais de 1 utilizador para obter suporte multiutilizador."
       ],
@@ -2932,6 +2952,9 @@
         "O utilizador afetado está na linha.",
         "Os utilizadores afetados estão nas linhas."
       ],
+      "All Events ": [
+        "Todos os eventos "
+      ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
@@ -3007,6 +3030,9 @@
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar guardadas"
       ],
+      "Change your password": [
+        "Altere a sua palavra-passe"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
@@ -3053,11 +3079,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -3111,6 +3137,9 @@
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
+      ],
+      "email": [
+        "e-mail"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
@@ -3175,6 +3204,9 @@
       "Fill in user details": [
         "Preencher dados de utilizador"
       ],
+      "finance": [
+        "finanças"
+      ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
       ],
@@ -3189,6 +3221,9 @@
       ],
       "here": [
         "aqui"
+      ],
+      "High Priority": [
+        "Prioridade alta"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Se outro administrador alterou esta palavra-passe, terá de lhe solicitar a nova palavra-passe da organização."
@@ -3265,6 +3300,36 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Invite Accepted": [
+        "O convite foi aceite."
+      ],
+      "Invite Created": [
+        "O convite foi criado."
+      ],
+      "Invite deleted": [
+        "O convite foi eliminado."
+      ],
+      "Invite Deleted": [
+        "O convite foi eliminado."
+      ],
+      "Invite rejected": [
+        "O convite foi rejeitado."
+      ],
+      "Invite Rejected": [
+        "O convite foi rejeitado."
+      ],
+      "Item Created": [
+        "O item foi criado."
+      ],
+      "Item Deleted": [
+        "O item foi eliminado."
+      ],
+      "Item Read": [
+        "O item foi lido."
+      ],
+      "Item Updated": [
+        "O item foi atualizado."
+      ],
       "JCB logo": [
         "Logotipo JCB"
       ],
@@ -3298,6 +3363,9 @@
       "Loading...": [
         "A carregar..."
       ],
+      "Low Priority": [
+        "Prioridade baixa"
+      ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de que ${ addARecoveryMethod } para que possa voltar à sua conta se se esquecer da palavra-passe."
       ],
@@ -3307,11 +3375,17 @@
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioridade média"
+      ],
       "Member": [
         "Membro"
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Monitor accounts": [
+        "Monitor de contas"
       ],
       "Multi-user support not enabled.": [
         "Suporte a multi-utilizador não ativado."
@@ -3375,6 +3449,9 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "password": [
+        "palavra-passe"
       ],
       "Password copied to clipboard": [
         "Palavra-passe copiada para a área de transferência"
@@ -3531,6 +3608,15 @@
       "Setting up your organization": [
         "A configurar a sua organização"
       ],
+      "Share Created": [
+        "A partilha foi criada."
+      ],
+      "Share Deleted": [
+        "A partilha foi eliminada."
+      ],
+      "Share Updated": [
+        "A partilha foi atualizada."
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar o seu endereço."
       ],
@@ -3582,6 +3668,12 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Obrigado por apoiar a nossa missão em construir uma ‘internet’ melhor onde a privacidade e a liberdade vêm em primeiro lugar."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A contagem de transferências inclui ambas transferências reais e instâncias em que os ficheiros são pré-visualizados."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Os dados encriptados são ligeiramente maiores devido à encriptação e às assinaturas, que garantem a segurança dos seus dados."
       ],
       "The following address is invalid.": [
         "O seguinte endereço não é válido.",
@@ -3709,6 +3801,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há método de recuperação definido para esta conta."
       ],
+      "Unknown event type": [
+        "Categoria de evento desconhecida"
+      ],
       "Unsaved changes": [
         "Alterações não guardadas"
       ],
@@ -3739,8 +3834,20 @@
       "User activated": [
         "O utilizador foi ativado."
       ],
+      "username": [
+        "nome de utilizador"
+      ],
       "Users": [
         "Utilizadores"
+      ],
+      "Vault created": [
+        "O cofre foi criado."
+      ],
+      "Vault deleted": [
+        "O cofre foi eliminado."
+      ],
+      "Vault updated": [
+        "O cofre foi atualizado."
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -3819,6 +3926,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
+      ],
+      "Week": [
+        "Semana"
       ],
       "Welcome": [
         "Boas-vindas"
@@ -4700,6 +4810,11 @@
         "atualize para obter mais armazenamento"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ativar ${ reason }"
+      ]
+    },
     "mail_signup_2024: Info": {
       "for ${ price }": [
         "por ${ price }"
@@ -5279,6 +5394,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da ${ BRAND_NAME } combinados."
       ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novas aplicações e funcionalidades"
+      ],
       "For next-level password management and identity protection.": [
         "Para uma gestão de palavras-passe e proteção de identidade de nível superior."
       ],
@@ -5601,6 +5719,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } foi desativado"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } foi ativado"
+      ],
       "A disabled address cannot be default": [
         "Um endereço desativado não pode ser um endereço padrão."
       ],
@@ -5940,6 +6064,15 @@
       "Confirm": [
         "Confirmar"
       ],
+      "E.g., ": [
+        "Ex., "
+      ],
+      "Email or IP": [
+        "E-mail ou IP"
+      ],
+      "End date": [
+        "Data de término"
+      ],
       "Feedback": [
         "Comentários"
       ],
@@ -5975,6 +6108,9 @@
       ],
       "Select state": [
         "Selecionar estado"
+      ],
+      "Start date": [
+        "Data de início"
       ],
       "yourdomain.com": [
         "oseudomínio.com"
@@ -7354,11 +7490,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -7539,6 +7675,9 @@
       "Error": [
         "Erro"
       ],
+      "Event": [
+        "Evento"
+      ],
       "Every member of the organization can access": [
         "Todos os membros da organização podem aceder"
       ],
@@ -7581,6 +7720,9 @@
       ],
       "Invoices": [
         "Faturas"
+      ],
+      "Minicalendar": [
+        "Minicalendário"
       ],
       "Multi-user support": [
         "Suporte a múltiplos utilizadores"
@@ -7759,6 +7901,9 @@
       "Switch to two-password mode": [
         "Mudar para modo de palavra-passe dupla"
       ],
+      "Time": [
+        "Hora"
+      ],
       "TV sign in": [
         "Iniciar sessão na TV"
       ],
@@ -7779,6 +7924,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Envie um ficheiro CSV para criar múltiplas contas."
+      ],
+      "User": [
+        "Utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -7870,6 +8018,11 @@
       ],
       "Status": [
         "Estado"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoje"
       ]
     },
     "Tooltip": {
