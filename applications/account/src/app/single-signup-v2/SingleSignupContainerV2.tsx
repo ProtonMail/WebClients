@@ -298,7 +298,7 @@ const SingleSignupContainerV2 = ({
 
         // Due to the scribe addon complexity in dealing with signed in users we'll temporarily disable it
         let signIn: SignupParameters2['signIn'] = 'standard';
-        if (toApp === APPS.PROTONMAIL || productParam === 'generic') {
+        if ([APPS.PROTONMAIL, APPS.PROTONCALENDAR].includes(toApp as any) || productParam === 'generic') {
             localID = -1;
             signIn = 'redirect';
         }
