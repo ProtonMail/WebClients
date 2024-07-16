@@ -826,6 +826,9 @@
       "Ok": [
         "OK"
       ],
+      "Open": [
+        "Abrir"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
       ],
@@ -3385,6 +3388,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Para continuar usando el asistente de escritura, solicite el acceso a su administrador."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -4394,6 +4400,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -6705,6 +6714,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Los datos que ha ingresado en el borrador pueden no guardarse si sale de la página."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Los datos cifrados son un poco más grandes debido a la sobrecarga del cifrado y las firmas que garantizan la seguridad de los datos."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La información expuesta fue filtrada desde un servicio de terceros. La información de la cuenta de ${ BRAND_NAME } permanece segura y cifrada. ${ learnMoreLink }"
@@ -12512,6 +12527,9 @@
       ],
       "Sending original message": [
         "Enviando mensaje original"
+      ],
+      "Set recovery phrase": [
+        "Establecer frase de recuperación"
       ],
       "Set your own schedule": [
         "Establezca su propia programación"

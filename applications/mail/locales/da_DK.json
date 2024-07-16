@@ -826,6 +826,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Åbn"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Åbn ${ CALENDAR_APP_NAME }"
       ],
@@ -3385,6 +3388,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Du kan fortsat bruge skriveassistenten ved at anmode din administrator om adgang."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -4394,6 +4400,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasser kan ikke bruges, når en ekstra adgangskode er aktiveret i ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "App ikke tilgængelig i øjeblikket"
       ],
@@ -6705,6 +6714,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data, du har indtastet i kladden, kan ikke gemmes, hvis du forlader siden."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "De krypterede data er en smule større på grund af overheadomkostningerne ved krypteringen og signaturerne, som garanterer sikkerheden for dine data."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
@@ -12509,6 +12524,9 @@
       ],
       "Sending original message": [
         "Sender oprindelig besked"
+      ],
+      "Set recovery phrase": [
+        "Indstil gendannelsessætning"
       ],
       "Set your own schedule": [
         "Sæt din egen tidsplan"

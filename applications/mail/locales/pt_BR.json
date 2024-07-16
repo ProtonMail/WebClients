@@ -829,6 +829,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Abrir"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
       ],
@@ -951,6 +954,9 @@
       ],
       "Reply securely": [
         "Responder com segurança"
+      ],
+      "Report a good content": [
+        "Relatar um bom conteúdo"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -1535,6 +1541,11 @@
       ],
       "Run on servers": [
         "Executar nos servidores"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Leve a produtividade dos emails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus emails."
       ]
     },
     "Attached ics file error": {
@@ -3969,6 +3980,9 @@
       "Please provide either a first name, a last name or a display name": [
         "Informe o primeiro nome, o sobrenome ou nome de exibição"
       ],
+      "Please select a category and what went wrong with the generated text": [
+        "Por favor, selecione uma categoria e o que deu errado com o texto gerado"
+      ],
       "Please try generating the text again": [
         "Tente gerar o texto novamente"
       ],
@@ -3987,11 +4001,17 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "A chave principal recuperada para o usuário da ${ BRAND_NAME } não é válida para o envio."
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Ocorreu um problema ao baixar o assistente de escrita. Se você estiver usando o modo privado, tente usar o modo de navegação normal ou executar o assistente de escrita nos servidores."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Ocorreu um problema ao baixar o assistente de escrita. Tente novamente."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
         "Ocorreu um problema ao carregar o assistente de escrita no seu dispositivo. Tente novamente."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Ocorreu um problema ao descarregar dados desnecessários quando o assistente de escrita está inativo"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -6708,6 +6728,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Os dados inseridos no rascunho não podem ser salvos se você sair da página."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A contagem de downloads inclui downloads reais e instâncias em que os arquivos são visualizados."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Os dados criptografados são levemente maiores devido à sobrecarga da criptografia e assinaturas, que garantem a segurança dos seus dados."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
@@ -9815,14 +9841,18 @@
     },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
-        "Compartilhamento seguro de cofres e links"
+        "Compartilhamento seguro de cofre e link"
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
       ],
+      "Secure vault sharing (${ n } vault)": [
+        "Compartilhamento seguro de cofre (${ n } cofre)",
+        "Compartilhamento seguro de cofre (${ n } cofres)"
+      ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartilhamento seguro de cofre (${ n } cofre) e de link.",
-        "Compartilhamento seguro de cofres (${ n } cofres) e links."
+        "Compartilhamento seguro de cofre (${ n } cofre) e compartilhamento de link.",
+        "Compartilhamento seguro de cofre (${ n } cofres) e compartilhamento de link."
       ]
     },
     "passwordless": {
@@ -9942,6 +9972,9 @@
       "A way to contact you": [
         "Uma maneira de entrar em contato com você"
       ],
+      "Describe what to change": [
+        "Descreva o que deve ser alterado"
+      ],
       "E.g., ": [
         "Ex., "
       ],
@@ -10035,6 +10068,9 @@
       "Select state": [
         "Selecionar estado"
       ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Compartilhe o que você acha que poderia melhorar ${ BRAND_NAME }"
+      ],
       "Start date": [
         "Data de início"
       ],
@@ -10064,6 +10100,9 @@
       ],
       "Try “Write a cover letter for an internship”": [
         "Tente ”Escrever uma carta de apresentação para um estágio”"
+      ],
+      "Try “Write a follow-up email to a client”": [
+        "Tente \"Escreva um email de acompanhamento para um cliente\""
       ],
       "Type a command…": [
         "Digite um comando..."
@@ -12196,6 +12235,9 @@
       "Import failed": [
         "Erro na importação"
       ],
+      "Import groups": [
+        "Importar grupo"
+      ],
       "Insert contacts": [
         "Inserir contatos"
       ],
@@ -12465,6 +12507,9 @@
       ],
       "Sending original message": [
         "Enviando mensagem original"
+      ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
       ],
       "Set your own schedule": [
         "Defina sua própria agenda"

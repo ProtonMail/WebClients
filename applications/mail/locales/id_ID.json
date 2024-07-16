@@ -3366,6 +3366,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Untuk lanjut menggunakan asisten penulisan, mintalah akses dari admin Anda."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda, tentukanlah frasa pemulihan."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
@@ -4361,6 +4364,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Alias tidak dapat digunakan pada saat kata sandi tambahan diaktifkan di ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
       ],
@@ -6597,6 +6603,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Data yang Anda masukkan ke dalam draf dapat tidak tersimpan apabila Anda meninggalkan laman."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informasi yang terpapar ini dibocorkan oleh layanan pihak ketiga. Informasi Akun ${ BRAND_NAME } Anda tetap aman dan terenkripsi. ${ learnMoreLink }"
@@ -11995,6 +12007,9 @@
       "Import failed": [
         "Proses impor gagal"
       ],
+      "Import groups": [
+        "Impor grup"
+      ],
       "Insert contacts": [
         "Sisipkan kontak"
       ],
@@ -12264,6 +12279,9 @@
       ],
       "Sending original message": [
         "Mengirim pesan asli"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
       ],
       "Set your own schedule": [
         "Tentukan jadwal Anda sendiri"
