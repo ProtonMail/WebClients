@@ -1,11 +1,13 @@
 import { ProtonLogo } from '@proton/components/components';
 import { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
+import { PublicTheme } from '../../containers/PublicThemeProvider';
 import { SignupType } from '../../signup/interfaces';
 import { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
 import { getMailConfiguration } from '../mail/configuration';
 
 export const getGenericConfiguration = ({
+    theme,
     mode,
     plan,
     audience,
@@ -16,6 +18,7 @@ export const getGenericConfiguration = ({
     hideFreePlan,
     freePlan,
 }: {
+    theme: PublicTheme;
     audience: Audience.B2C | Audience.B2B;
     mode: SignupMode;
     freePlan: FreePlanDefault;
@@ -26,7 +29,7 @@ export const getGenericConfiguration = ({
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
 }): SignupConfiguration => {
-    const logo = <ProtonLogo />;
+    const logo = <ProtonLogo color={theme.dark ? 'invert' : 'brand'} />;
 
     const mailConfiguration = getMailConfiguration({
         audience,
