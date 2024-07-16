@@ -342,6 +342,12 @@
       "Expand folder": [
         "Espandi cartella"
       ],
+      "Explore on my own": [
+        "Esplora in autonomia"
+      ],
+      "Explore while you wait": [
+        "Esplora mentre aspetti"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -542,6 +548,9 @@
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "Apri"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Apri impostazioni ${ CALENDAR_APP_NAME }"
@@ -852,6 +861,9 @@
       "Upload file": [
         "Carica file"
       ],
+      "Upload files": [
+        "Carica i file"
+      ],
       "Upload folder": [
         "Carica cartella"
       ],
@@ -934,6 +946,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } dominio personalizzato aggiuntivo",
+        "${ domains } domini personalizzati aggiuntivi"
+      ],
       "${ ips } server": [
         "${ ips } server",
         "${ ips } server"
@@ -2236,6 +2252,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Imposta un metodo di recupero per evitare di perdere l'accesso al tuo account."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
       ],
@@ -3046,6 +3065,9 @@
     "Error message": {
       "Access denied": [
         "Accesso negato"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Gli alias non possono essere usati quando è abilitata la password aggiuntiva in ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "App attualmente non disponibile"
@@ -7638,6 +7660,12 @@
         "Completa le azioni seguenti entro ${ expiresInDays } giorno:",
         "Completa le azioni seguenti entro ${ expiresInDays } giorni:"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Archivia i tuoi file e condividili in modo sicuro. Inizia proteggendo i tuoi file più privati, come documenti d'identità, contratti e foto personali."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Il proprietario deve confermare l'accesso alla condivisione. Riceverai un'email una volta fatto."
+      ],
       "Upload a file": [
         "Carica un file"
       ],
@@ -7666,6 +7694,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Approvazione definitiva in corso"
+      ],
+      "Hang tight!": [
+        "Tieniti forte!"
+      ],
+      "Upload and protect your important files": [
+        "Carica e proteggi i tuoi file importanti"
+      ],
       "Your welcome bonus": [
         "Il tuo regalo di benvenuto"
       ]
@@ -9583,6 +9620,9 @@
       "Import failed": [
         "Importazione non riuscita"
       ],
+      "Import groups": [
+        "Importa gruppi"
+      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
@@ -9753,6 +9793,9 @@
       ],
       "Send feedback": [
         "Invia il tuo feedback"
+      ],
+      "Set recovery phrase": [
+        "Imposta una frase di recupero"
       ],
       "Settings": [
         "Impostazioni"

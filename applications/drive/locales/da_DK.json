@@ -342,6 +342,12 @@
       "Expand folder": [
         "Udvid mappe"
       ],
+      "Explore on my own": [
+        "Udforsk på egen hånd"
+      ],
+      "Explore while you wait": [
+        "Udforsk, mens du venter"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -542,6 +548,9 @@
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "Åbn"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
@@ -851,6 +860,9 @@
       ],
       "Upload file": [
         "Upload fil"
+      ],
+      "Upload files": [
+        "Upload filer"
       ],
       "Upload folder": [
         "Upload mappe"
@@ -2240,6 +2252,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Indstil en gendannelsesmetode for at forhindre, at du mister adgang til din konto."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -3050,6 +3065,9 @@
     "Error message": {
       "Access denied": [
         "Adgang nægtet"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasser kan ikke bruges, når en ekstra adgangskode er aktiveret i ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "App ikke tilgængelig i øjeblikket"
@@ -7586,6 +7604,12 @@
         "Du skal blot udføre følgende i løbet af den næste ${ expiresInDays } dag:",
         "Du skal blot udføre følgende i løbet af de næste ${ expiresInDays } dage:"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Opbevar dine filer og del dem sikkert. Kom i gang med at sikre dine mest private filer, f.eks. id-kort, kontrakter og personlige fotos."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Ejeren skal bekræfte adgang til deling. Du får en e-mail, når det er gjort."
+      ],
       "Upload a file": [
         "Upload en fil"
       ],
@@ -7614,6 +7638,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Slutgodkendelse i gang"
+      ],
+      "Hang tight!": [
+        "Hæng på!"
+      ],
+      "Upload and protect your important files": [
+        "Upload og beskyt dine vigtige filer"
+      ],
       "Your welcome bonus": [
         "Din velkomstbonus"
       ]
@@ -9704,6 +9737,9 @@
       ],
       "Send feedback": [
         "Send feedback"
+      ],
+      "Set recovery phrase": [
+        "Indstil gendannelsessætning"
       ],
       "Settings": [
         "Indstillinger"

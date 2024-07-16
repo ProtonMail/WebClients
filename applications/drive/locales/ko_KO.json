@@ -4489,7 +4489,7 @@
         "의"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "암호화된 드라이브 중 하나가 잠겼습니다. 이는 주로 비밀번호 재설정 때문입니다."
+        "암호화된 드라이브 중 하나가 잠겼습니다. 이는 최근의 비밀번호 재설정 때문일 가능성이 높습니다."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "신뢰할 수 있는 키 중 하나 이상이 소유자에 의해 \"유출되었음\"으로 표시되었습니다. 이 열쇠들을 \"신뢰하지 않는\" 것을 추천합니다."
@@ -4645,7 +4645,7 @@
         "사진 좀 올려 볼까요?"
       ],
       "recommended browser": [
-        "추천 브라우저"
+        "권장하는 브라우저"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 장치에 남아있어요."
@@ -5197,7 +5197,7 @@
         "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "현재 브라우저는 서비스 워커를 사용할 수 없어 대용량 파일 다운로드를 지원하지 않습니다. 대용량 파일을 다운로드하면 브라우저가 멈추거나 응답하지 않을 수 있습니다. ${ recommendedBrowser }의 최신 버전으로 다시 시도해 주세요."
+        "이 브라우저는 서비스 워커를 사용할 수 없어 큰 파일의 다운로드를 지원할 수 없습니다. 큰 파일을 다운로드하게 되면 브라우저의 프리징이 일어나거나 응답 없음 상태가 될 수 있습니다. ${ recommendedBrowser }의 최신 버전을 사용하여 다시 시도해 주세요."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
@@ -8901,7 +8901,7 @@
         "복구가 시작되었습니다"
       ],
       "Secure link copied": [
-        "안전한 링크 복사함"
+        "보안 링크 복사함"
       ],
       "The link to your file was successfully copied": [
         "파일의 링크가 성공적으로 복사되었습니다"
