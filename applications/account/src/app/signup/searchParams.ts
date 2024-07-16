@@ -76,6 +76,13 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
 
     productParam = productParam || getDefaultProductParam();
 
+    if (productParam === 'business') {
+        if ([PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS].includes(searchParams.get('plan') as any)) {
+            product = APPS.PROTONMAIL;
+            productParam = APPS.PROTONMAIL;
+        }
+    }
+
     if (!product) {
         if (
             [PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(
@@ -85,6 +92,7 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
             product = APPS.PROTONMAIL;
         }
     }
+
     return { product, productParam };
 };
 
@@ -151,7 +159,11 @@ export const getThemeFromLocation = (location: Location, searchParams: URLSearch
     if (location.pathname === SSO_PATHS.PASS_SIGNUP || location.pathname === SSO_PATHS.MAIL_SIGNUP) {
         return { themeType: ThemeTypes.Storefront, className: 'signup-v2-account-gradient' };
     }
-    if (location.pathname === SSO_PATHS.PASS_SIGNUP_B2B || location.pathname === SSO_PATHS.MAIL_SIGNUP_B2B) {
+    if (
+        location.pathname === SSO_PATHS.PASS_SIGNUP_B2B ||
+        location.pathname === SSO_PATHS.MAIL_SIGNUP_B2B ||
+        location.pathname === SSO_PATHS.BUSINESS_SIGNUP
+    ) {
         return {
             themeType: ThemeTypes.Storefront,
             className: 'ui-prominent signup-v2-account-gradient',
