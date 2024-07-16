@@ -97,8 +97,12 @@ export const createAuthService = ({
             const encryptedSession = localStorage.getItem(getSessionKey(localID));
             if (!encryptedSession) return null;
 
-            const persistedSession = JSON.parse(encryptedSession);
-            return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
+            try {
+                const persistedSession = JSON.parse(encryptedSession);
+                return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
+            } catch {
+                return null;
+            }
         },
 
         onInit: async (options) => {
