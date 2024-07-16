@@ -91,8 +91,10 @@ export const WalletContainer = () => {
 
     return (
         <>
-            <div className={clsx('flex flex-row flex-nowrap w-full min-h-full flex-nowrap', theme)}>
-                <div className={clsx('flex flex-column flex-1 pt-0 flex-nowrap grow', isNarrow ? 'p-1' : 'p-8')}>
+            <div
+                className={clsx('wallet-main relative flex flex-row flex-nowrap w-full min-h-full flex-nowrap', theme)}
+            >
+                <div className={clsx('flex flex-column flex-1 flex-nowrap grow', isNarrow ? 'p-1 pt-4' : 'p-8 pt-8')}>
                     <div className="flex flex-row justify-space-between m-4 items-center">
                         <div className="flex flex-row flex-nowrap items-center">
                             <h1 className="mr-4 text-semibold text-ellipsis">{wallet.Wallet.Name}</h1>
