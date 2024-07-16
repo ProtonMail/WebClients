@@ -751,6 +751,15 @@
         "${ ips } सर्वर",
         "${ ips } सर्वर"
       ],
+      "${ price } per dedicated server": [
+        "${ price } प्रति समर्पित सर्वर"
+      ],
+      "${ price } per domain": [
+        "${ price } प्रति डोमेन"
+      ],
+      "${ price } per user": [
+        "${ price } प्रति यूजर"
+      ],
       "${ users } user": [
         "${ users } यूज़र",
         "${ users } यूज़र"
@@ -2370,6 +2379,27 @@
     "Edit event button tooltip": {
       "Edit event": [
         "इवेंट बदलें"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "विवरण:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "All events in this series were updated.": [
+        "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
+      ],
+      "This event occurrence was updated.": [
+        "इस कार्यक्रम घटना को अपडेट किया गया था।"
+      ],
+      "This event was updated.": [
+        "यह कार्यक्रम अपडेट किया गया था।"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "समय:\n${ formattedStart }"
       ]
     },
     "Email subject": {
@@ -6517,6 +6547,9 @@
       "Card number": [
         "कार्ड नंबर"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "MM/YY": [
         "महीना/साल"
       ],
@@ -6735,6 +6768,9 @@
       ]
     },
     "Security Center": {
+      "Create an alias": [
+        "नकली-नाम बनाएं"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email नकलीनाम"
       ],
@@ -7173,6 +7209,9 @@
     "Subscription": {
       "Billed monthly": [
         "मासिक बिल"
+      ],
+      "Billed yearly": [
+        "वार्षिक बिल"
       ]
     },
     "Subscription attribute": {
@@ -7277,6 +7316,12 @@
       ],
       "Version history": [
         "संस्करण इतिहास"
+      ],
+      "Watch the interview": [
+        "इंटरव्यू देखें"
+      ],
+      "Your own custom email domain": [
+        "अपना कस्टम ईमेल डोमेन"
       ]
     },
     "Subscription renewal state": {
@@ -8079,6 +8124,9 @@
       "End date": [
         "समाप्त होने की तारीख"
       ],
+      "Plan": [
+        "प्लान"
+      ],
       "Status": [
         "स्थिति"
       ]
@@ -8222,6 +8270,11 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
         "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"
+      ]
+    },
+    "vpn_2step: feature": {
+      "No ads": [
+        "विज्ञापन नहीं"
       ]
     },
     "Warning": {
