@@ -1286,6 +1286,15 @@
         "${ ips } सर्वर",
         "${ ips } सर्वर"
       ],
+      "${ price } per dedicated server": [
+        "${ price } प्रति समर्पित सर्वर"
+      ],
+      "${ price } per domain": [
+        "${ price } प्रति डोमेन"
+      ],
+      "${ price } per user": [
+        "${ price } प्रति यूजर"
+      ],
       "${ users } user": [
         "${ users } यूज़र",
         "${ users } यूज़र"
@@ -3176,6 +3185,27 @@
     "Download attachments": {
       "Download all": [
         "सब डाउनलोड करें"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "विवरण:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "All events in this series were updated.": [
+        "इस श्रृंखला में सभी कार्यक्रमों को अपडेट किया गया था।"
+      ],
+      "This event occurrence was updated.": [
+        "इस कार्यक्रम घटना को अपडेट किया गया था।"
+      ],
+      "This event was updated.": [
+        "यह कार्यक्रम अपडेट किया गया था।"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "समय:\n${ formattedStart }"
       ]
     },
     "Email reminder banner": {
@@ -5745,6 +5775,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "यदि आपने पृष्ठ छोड़ा है तो ड्राफ्ट में आपके द्वारा दर्ज किया गया डेटा सहेजा नहीं जा सकता है।"
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "डाउनलोड गणना में डाउनलोड और उन समय को शामिल करते है जब फ़ाइलों की झलक देखी जाती है।"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "एन्क्रिप्शन और हस्ताक्षर की वजह से एन्क्रिप्ट किया डाटा थोड़ा ज़्यादा बड़ा है, जो आपके डाटा को सुरक्षित रखता है।"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "उजागर की गई जानकारी किसी तिसरे-पक्ष से लीक हुई थी। आपकी ${ BRAND_NAME } खाता जानकारी सुरक्षित और एन्क्रिप्टेड बनी हुई है। ${ learnMoreLink }"
@@ -8390,6 +8426,9 @@
       "Card number": [
         "कार्ड नंबर"
       ],
+      "CVC": [
+        "CVC"
+      ],
       "MM/YY": [
         "महीना/साल"
       ],
@@ -8694,6 +8733,9 @@
       ]
     },
     "Security Center": {
+      "Create an alias": [
+        "नकली-नाम बनाएं"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email नकलीनाम"
       ],
@@ -9216,6 +9258,9 @@
     "Subscription": {
       "Billed monthly": [
         "मासिक बिल"
+      ],
+      "Billed yearly": [
+        "वार्षिक बिल"
       ]
     },
     "Subscription attribute": {
@@ -9320,6 +9365,12 @@
       ],
       "Version history": [
         "संस्करण इतिहास"
+      ],
+      "Watch the interview": [
+        "इंटरव्यू देखें"
+      ],
+      "Your own custom email domain": [
+        "अपना कस्टम ईमेल डोमेन"
       ]
     },
     "Subscription renewal state": {
@@ -10389,6 +10440,9 @@
       "End date": [
         "समाप्त होने की तारीख"
       ],
+      "Plan": [
+        "प्लान"
+      ],
       "Status": [
         "स्थिति"
       ]
@@ -10531,6 +10585,11 @@
       "Your subscription will automatically renew in ${ cycle } month.": [
         "आपकी सदस्यता ${ cycle } महीने में स्वचालित रूप से नवीकृत होगी।",
         "आपकी सदस्यता ${ cycle } महीनों में स्वचालित रूप से नवीकृत होगी।"
+      ]
+    },
+    "vpn_2step: feature": {
+      "No ads": [
+        "विज्ञापन नहीं"
       ]
     },
     "Warning": {

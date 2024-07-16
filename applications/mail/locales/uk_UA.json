@@ -3934,6 +3934,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Для користувача ${ BRAND_NAME } отримано недійсний основний ключ для надсилання"
       ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Проблема із завантаженням помічника з написання. Якщо ви використовуєте приватний режим, спробуйте використовувати звичайний режим перегляду або запустіть помічника з написання на серверах."
+      ],
       "Problem downloading the writing assistant. Please try again.": [
         "Проблема із завантаженням помічника з написання. Будь ласка, спробуйте ще раз."
       ],
@@ -6742,6 +6745,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Введені в чернетку дані можуть не зберегтися, якщо ви покинете сторінку."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Кількість завантажень включає як фактичні завантаження, так і випадки попереднього перегляду файлів."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашифровані дані трохи більші через витрату додаткових ресурсів на шифрування та підписи, які забезпечують безпеку ваших даних."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
@@ -9882,6 +9891,18 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Безпечний спільний доступ до сховища (${ n } сховище)",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ)",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ)",
+        "Безпечний спільний доступ до сховища (${ n } сховищ)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Безпечний спільний доступ до сховища (${ n } vault) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями"
       ]
     },
     "passwordless": {

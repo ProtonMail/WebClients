@@ -834,6 +834,9 @@
       "Ok": [
         "Добра"
       ],
+      "Open": [
+        "Адкрыць"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Адкрыць ${ CALENDAR_APP_NAME }"
       ],
@@ -3423,6 +3426,9 @@
       "To continue to use the writing assistant, request access from your admin.": [
         "Адпраўце запыт на доступ свайму адміністратару, каб працягнуць карыстацца памочнікам у напісанні."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
@@ -4460,6 +4466,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -6921,6 +6930,12 @@
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "Калі вы пакінеце гэту старонку, то ўведзеныя вамі даныя могуць не захавацца ў чарнавіку."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
@@ -12993,6 +13008,9 @@
       ],
       "Sending original message": [
         "Адпраўка арыгінальнага паведамлення"
+      ],
+      "Set recovery phrase": [
+        "Задаць фразу аднаўлення"
       ],
       "Set your own schedule": [
         "Прызначыць свой уласны расклад"
