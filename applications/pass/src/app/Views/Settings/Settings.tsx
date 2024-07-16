@@ -58,7 +58,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
 
     const handleOnChange = (nextTab: number) => {
         if (tabs[nextTab].hash === 'account') navigateToAccount();
-        if (tabs[nextTab].hash === 'organization') navigateToOrganization();
+        else if (tabs[nextTab].hash === 'organization') navigateToOrganization();
         else openSettings?.(tabs[nextTab].hash);
     };
 

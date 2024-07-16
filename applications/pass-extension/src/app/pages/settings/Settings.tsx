@@ -89,7 +89,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     const handleOnChange = (nextTab: number) => {
         if (tabs[nextTab].path === '/account') navigateToAccount();
-        if (tabs[nextTab].path === '/organization') navigateToOrganization();
+        else if (tabs[nextTab].path === '/organization') navigateToOrganization();
         else history.push(tabs[nextTab].path);
     };
 
