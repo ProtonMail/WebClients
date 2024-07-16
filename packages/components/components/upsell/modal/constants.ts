@@ -19,7 +19,6 @@ export type UpsellFeatureName =
     | 'more-calendars'
     | 'calendar-sharing'
     | 'generate-emails-with-prompt'
-    | 'reply-to-messages'
     | 'proofread-an-refine'
     | 'save-time-emailing';
 
@@ -90,10 +89,6 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     'generate-emails-with-prompt': {
         icon: 'checkmark',
         getText: () => c('new_plans: feature').t`Generate emails with only a prompt`,
-    },
-    'reply-to-messages': {
-        icon: 'checkmark',
-        getText: () => c('new_plans: feature').t`Reply to messages`,
     },
     'proofread-an-refine': {
         icon: 'checkmark',

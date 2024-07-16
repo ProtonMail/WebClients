@@ -34,14 +34,19 @@ const useAssistantFeatureEnabled = () => {
     const user = baseUseSelector(selectUser)?.value;
     const userHasScribeSeat = !!user?.NumAI;
 
+    // If the user has a scribe seat, it takes precedence over the feature flags
+    // This is needed for the rollout as we can't sync the two feature flags
+    // "AIAssistantAddonSignup" and "ComposerAssistant" to be shown to the same
+    // cohort. Can be changed once this feature is fully rolled to users
     const enabled =
-        accessToAssistant &&
-        !isOrganizationBeforeBackfill &&
-        // you can't see anything Scribe related if the payments can't support you buying it
-        // but if you have a seat you can still use it
-        (scribePaymentsEnabled || userHasScribeSeat) &&
-        // user can't enter scribe trial if the organization plan doesn't support it
-        planSupportsScribe;
+        userHasScribeSeat ||
+        (accessToAssistant &&
+            !isOrganizationBeforeBackfill &&
+            // you can't see anything Scribe related if the payments can't support you buying it
+            // but if you have a seat you can still use it
+            (scribePaymentsEnabled || userHasScribeSeat) &&
+            // user can't enter scribe trial if the organization plan doesn't support it
+            planSupportsScribe);
 
     return {
         /**
@@ -53,8 +58,12 @@ const useAssistantFeatureEnabled = () => {
          * This flag controls if the configuration for scribe is available. Example: user management panel can
          * have an upsell for scribe addon. In this case we need to check both things: payments are possible and
          * scribe is supported by the organization's plan.
+         * Kill switch takes precedence
          */
-        enabled,
+        enabled: killSwitch ? false : enabled,
+        /**
+         * Deactivates the feature across every product: Mail + Payments + Account
+         */
         killSwitch,
     };
 };

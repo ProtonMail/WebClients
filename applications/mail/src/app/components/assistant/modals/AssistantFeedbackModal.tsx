@@ -28,7 +28,7 @@ interface Props {
     setFeedbackSubmitted: (value: boolean) => void;
 }
 
-const AssitantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, setFeedbackSubmitted }: Props) => {
+const AssistantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, setFeedbackSubmitted }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -214,4 +214,4 @@ const AssitantFeedbackModal = ({ disabled, result, prompt, feedbackSubmitted, se
     );
 };
 
-export default AssitantFeedbackModal;
+export default AssistantFeedbackModal;

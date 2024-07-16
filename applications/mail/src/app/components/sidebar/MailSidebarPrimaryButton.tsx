@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Kbd } from '@proton/atoms';
 import { SidebarPrimaryButton, Tooltip } from '@proton/components';
 
-import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
@@ -46,7 +45,7 @@ const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
         </SidebarPrimaryButton>
     );
 
-    return <ComposerAssistantSpotlight anchorRef={anchorRef}>{sideBarPrimaryButton}</ComposerAssistantSpotlight>;
+    return sideBarPrimaryButton;
 };
 
 export default MailSidebarPrimaryButton;
