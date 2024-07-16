@@ -29,7 +29,6 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
@@ -478,19 +477,12 @@ const Step1 = ({
                     }
 
                     if (
-                        (app === APPS.PROTONWALLET || selectedPlan.Name === PLANS.VISIONARY) &&
+                        selectedPlan.Name === PLANS.VISIONARY &&
                         !isOnboardingMode &&
                         model.upsell.mode !== UpsellTypes.UPSELL &&
                         mode !== SignupMode.Invite
                     ) {
                         const plan = `${BRAND_NAME} Visionary`;
-                        if (app === APPS.PROTONWALLET && !signupParameters.invite) {
-                            const appName = getAppName(app);
-                            const textLaunchOffer = getBoldFormattedText(
-                                c('mail_signup_2023: Info').t`**Get ${plan}** for early access to ${appName}!`
-                            );
-                            return wrap('hourglass', textLaunchOffer);
-                        }
                         const textLaunchOffer = getBoldFormattedText(
                             c('mail_signup_2023: Info').t`**Get ${plan}** for a limited time!`
                         );
