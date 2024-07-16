@@ -11,7 +11,15 @@ import {
     useSubscription,
     useUser,
 } from '@proton/components/hooks';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
+import {
+    ADDON_NAMES,
+    APP_UPSELL_REF_PATH,
+    MAIL_UPSELL_PATHS,
+    PLANS,
+    PLAN_TYPES,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
@@ -29,7 +37,7 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
 
     const [user, loadingUser] = useUser();
     const [plans, loadingPlans] = usePlans();
-    const [, loadingSubscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -42,7 +50,15 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
         return <Loader />;
     }
 
-    const monthlyPrice = plans?.plans ? getAIAddonMonthlyPrice(plans.plans) : undefined;
+    const addonPlanName = subscription?.Plans.reduce<ADDON_NAMES | undefined>((acc, { Name, Type }) => {
+        const isPlan = (Type: PLAN_TYPES, name: typeof Name): name is PLANS => Type === PLAN_TYPES.PLAN;
+
+        if (isPlan(Type, Name)) {
+            acc = getScribeAddonNameByPlan(Name);
+        }
+        return acc;
+    }, undefined);
+    const monthlyPrice = plans?.plans && addonPlanName ? getAIAddonMonthlyPrice(plans.plans, addonPlanName) : undefined;
     const addonPriceWithCurrency = monthlyPrice ? <Price currency={user.Currency}>{monthlyPrice}</Price> : null;
     const title = c('Title').t`Your free trial has ended`;
 
@@ -63,7 +79,7 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
             }}
             headerType="composer-assistant"
             featuresDescription={<b className="pb-4">{c('Description').t`Use the writing assistant to:`}</b>}
-            features={['generate-emails-with-prompt', 'reply-to-messages', 'proofread-an-refine', 'save-time-emailing']}
+            features={['generate-emails-with-prompt', 'proofread-an-refine', 'save-time-emailing']}
             size="small"
             submitText={c('Action').t`Get the writing assistant`}
             submitButton={
@@ -92,7 +108,11 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
                                 modalProps.onClose();
                             }
                         }}
-                    >{c('Action').jt`Get it from only ${addonPriceWithCurrency} /month`}</Button>
+                    >
+                        {addonPriceWithCurrency
+                            ? c('Action').jt`Get it from only ${addonPriceWithCurrency} /month`
+                            : c('Action').jt`Get it`}
+                    </Button>
                 )
             }
             submitPosition="outside"

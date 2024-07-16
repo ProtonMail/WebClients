@@ -444,7 +444,12 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                     });
                     addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_HARMFUL });
                 } else {
-                    const errorMessage = c('Error').t`Please try generating the text again`;
+                    // There is a bug where the LLM will be unloaded from the GPU
+                    // without notice. It hasn't been tracked down, in this scenario
+                    // the user might want to refresh.
+                    // The wording should be aligned with `useAssistantServer.ts`
+                    // when the issue is solved
+                    const errorMessage = c('Error').t`Please try again or refresh the page.`;
                     sendAssistantErrorReport({
                         assistantType: ASSISTANT_TYPE.LOCAL,
                         errorType: ERROR_TYPE.GENERATION_FAIL,

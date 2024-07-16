@@ -25,6 +25,10 @@
 			margin-block-start: 5em; // move it from good size (includes room for status and 2 lines error messages)
 		}
 
+		&:has(.composer-assistant-hint:empty) + .composer-body-container .editor-wrapper {
+			margin-block-start: 3em;
+		}
+
 		&--expanded {
 			// to hide properly everything, including dark modes
 			inset-block-end: 0.5em;

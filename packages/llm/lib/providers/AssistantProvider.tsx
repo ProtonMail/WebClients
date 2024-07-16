@@ -35,7 +35,20 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
      */
     const assistantState = isAssistantLocal ? assistantLocalState : assistantServerState;
 
-    return <AssistantContext.Provider value={assistantState}>{children}</AssistantContext.Provider>;
+    return (
+        <AssistantContext.Provider
+            value={{
+                ...assistantState,
+                // TODO: Temporary fix
+                // Needed to call initAssistant on composer assistant inner modal submit
+                // In this case assistant context is still set to server mode so initAssistant was undefined.
+                // in order to call initAssistant with no side effects i made a duplicate
+                handleSettingChange: assistantLocalState.initAssistant,
+            }}
+        >
+            {children}
+        </AssistantContext.Provider>
+    );
 };
 
 export default AssistantProvider;

@@ -484,7 +484,7 @@ const SubUserCreateModal = ({
                         <label className="text-semibold" htmlFor="ai-assistant-toggle">
                             {c('user_modal').t`Writing assistant`}
                         </label>
-                        {!aiSeatsRemaining && <AssistantUpdateSubscriptionButton />}
+                        {!aiSeatsRemaining && !model.numAI && <AssistantUpdateSubscriptionButton />}
                     </div>
                 )}
 
