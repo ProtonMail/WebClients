@@ -348,6 +348,12 @@
       "Expand folder": [
         "Rozwiń folder"
       ],
+      "Explore on my own": [
+        "Odkryj sam"
+      ],
+      "Explore while you wait": [
+        "Odkryj podczas oczekiwania"
+      ],
       "Export": [
         "Eksportuj"
       ],
@@ -548,6 +554,9 @@
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "Otwórz"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -857,6 +866,9 @@
       ],
       "Upload file": [
         "Prześlij plik"
+      ],
+      "Upload files": [
+        "Prześlij pliki"
       ],
       "Upload folder": [
         "Prześlij folder"
@@ -2260,6 +2272,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Ustaw metodę odzyskiwania, aby uniknąć utraty dostępu do konta."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Ustaw hasło odzyskiwania, aby zapewnić najwyższe bezpieczeństwo konta."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
@@ -3088,6 +3103,9 @@
     "Error message": {
       "Access denied": [
         "Odmowa dostępu"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Nie możesz używać aliasów przy włączonym dodatkowym haśle w ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "Aplikacja jest niedostępna"
@@ -7892,6 +7910,12 @@
         "Ukończ następujące kroki w ciągu najbliższych ${ expiresInDays } dni:",
         "Ukończ następujące kroki w ciągu najbliższych ${ expiresInDays } dni:"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Przechowuj i udostępniaj pliki w bezpieczny sposób. Rozpocznij od zabezpieczenia swoich najbardziej prywatnych plików, takich jak dokumenty tożsamości, umowy i osobiste zdjęcia."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Właściciel musi potwierdzić dostęp. Po zatwierdzeniu dostępu otrzymasz wiadomość."
+      ],
       "Upload a file": [
         "Prześlij plik"
       ],
@@ -7920,6 +7944,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Zatwierdzenie jest w toku"
+      ],
+      "Hang tight!": [
+        "Trzymaj się!"
+      ],
+      "Upload and protect your important files": [
+        "Prześlij i chroń ważne pliki"
+      ],
       "Your welcome bonus": [
         "Twój bonus powitalny"
       ]
@@ -9940,6 +9973,9 @@
       "Import failed": [
         "Importowanie nie powiodło się"
       ],
+      "Import groups": [
+        "Importuj grupy"
+      ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
@@ -10110,6 +10146,9 @@
       ],
       "Send feedback": [
         "Wyślij opinię"
+      ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
       ],
       "Settings": [
         "Ustawienia"

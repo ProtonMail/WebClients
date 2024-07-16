@@ -342,6 +342,12 @@
       "Expand folder": [
         "Expandir carpeta"
       ],
+      "Explore on my own": [
+        "Explorar por mi cuenta"
+      ],
+      "Explore while you wait": [
+        "Explore mientras espera"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -542,6 +548,9 @@
       ],
       "Ok": [
         "OK"
+      ],
+      "Open": [
+        "Abrir"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
@@ -851,6 +860,9 @@
       ],
       "Upload file": [
         "Cargar archivo"
+      ],
+      "Upload files": [
+        "Cargar archivos"
       ],
       "Upload folder": [
         "Cargar carpeta"
@@ -2240,6 +2252,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Establezca un método de recuperación para evitar pérdida de acceso a la cuenta."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -3050,6 +3065,9 @@
     "Error message": {
       "Access denied": [
         "Acceso denegado"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
@@ -7646,6 +7664,12 @@
         "Simplemente complete lo siguiente en el próximo ${ expiresInDays } día:",
         "Simplemente complete lo siguiente en los próximos ${ expiresInDays } días:"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Almacene sus archivos y compártalos con seguridad. Comience asegurando sus archivos más privados como su identificación, contratos e imágenes personales."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "El propietario necesita confirmar el acceso compartido. Recibirá un correo una vez que se realice."
+      ],
       "Upload a file": [
         "Cargar un archivo"
       ],
@@ -7674,6 +7698,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Aprobación final en progreso"
+      ],
+      "Hang tight!": [
+        "¡Un momento!"
+      ],
+      "Upload and protect your important files": [
+        "Cargue y proteja sus archivos importantes"
+      ],
       "Your welcome bonus": [
         "Su bono de bienvenida"
       ]
@@ -9764,6 +9797,9 @@
       ],
       "Send feedback": [
         "Enviar comentarios"
+      ],
+      "Set recovery phrase": [
+        "Establecer frase de recuperación"
       ],
       "Settings": [
         "Ajustes"
