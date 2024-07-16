@@ -127,7 +127,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                         }
 
                         return openDocument({
-                            linkId: item.id,
+                            linkId: item.linkId,
                             shareId: item.rootShareId,
                             openBehavior: 'tab',
                         });
@@ -136,14 +136,14 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                 return;
             }
 
-            navigateToLink(item.rootShareId, item.id, item.isFile);
+            navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
         [navigateToLink, browserItems]
     );
 
     const handleItemRender = (item: SharedLinkItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
+            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
         }
     };
 

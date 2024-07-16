@@ -228,10 +228,14 @@ export const getMimeTypeDescription = (mimeType: string) => {
     return c('Mimetype').t`Unknown file`;
 };
 
-export const getSelectedItems = (items: DecryptedLink[], selectedItemIds: string[]): DecryptedLink[] => {
+export const getSelectedItems = (
+    items: DecryptedLink[],
+    selectedItemIds: string[],
+    key: 'linkId' | 'rootShareId' = 'linkId'
+): DecryptedLink[] => {
     if (items) {
         return selectedItemIds
-            .map((selectedItemId) => items.find(({ linkId, isLocked }) => !isLocked && selectedItemId === linkId))
+            .map((selectedItemId) => items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item[key]))
             .filter(isTruthy) as DecryptedLink[];
     }
 
