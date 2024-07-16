@@ -53,7 +53,7 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
             parentLinkId: item.parentLinkId,
             name: item.name,
             isFile: item.isFile,
-            linkId: item.id,
+            linkId: item.linkId,
             rootShareId: shareId,
         }));
 

@@ -34,6 +34,7 @@ export interface ContextMenuProps {
 
 export interface FileBrowserBaseItem {
     id: string;
+    linkId: string;
     isLocked?: boolean;
     itemRowStyle?: React.CSSProperties;
 }

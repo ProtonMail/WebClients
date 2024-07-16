@@ -23,8 +23,10 @@ const SharedWithMeView = () => {
     if (!hasSharedItems && !isSharingInviteAvailable) {
         return null;
     }
+
+    // rootShareId is unique per item in shared with me section, so we can use it as id key
     return (
-        <FileBrowserStateProvider itemIds={sharedWithMeView.items.map(({ linkId }) => linkId)}>
+        <FileBrowserStateProvider itemIds={sharedWithMeView.items.map(({ rootShareId }) => rootShareId)}>
             <ToolbarRow
                 titleArea={<span className="text-strong pl-1">{c('Info').t`Shared with me`}</span>}
                 toolbar={<SharedWithMeToolbar shareId={activeShareId} items={sharedWithMeView.items} />}

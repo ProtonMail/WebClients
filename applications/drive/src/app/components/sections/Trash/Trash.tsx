@@ -107,7 +107,7 @@ function Trash({ trashView }: Props) {
 
     const handleItemRender = (item: TrashItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
+            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
         }
     };
 
