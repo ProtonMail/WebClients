@@ -2487,6 +2487,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Гэта можа заняць некалькі хвілін. Тым часам вы можаце працягнуць карыстацца Proton Calendar."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
@@ -3402,6 +3405,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Праграма часова недаступна"
       ],
@@ -9793,6 +9799,9 @@
       ],
       "Send invitation": [
         "Адправіць запрашэнне"
+      ],
+      "Set recovery phrase": [
+        "Задаць фразу аднаўлення"
       ],
       "Settings": [
         "Налады"

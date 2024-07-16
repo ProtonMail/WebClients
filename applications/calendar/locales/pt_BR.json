@@ -891,6 +891,11 @@
         "Aplicativos da ${ BRAND_NAME }"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Leve a produtividade dos emails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus emails."
+      ]
+    },
     "Attached ics file error": {
       "Empty ICS file": [
         "Arquivo ICS vazio"
@@ -7296,14 +7301,18 @@
     },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
-        "Compartilhamento seguro de cofres e links"
+        "Compartilhamento seguro de cofre e link"
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
       ],
+      "Secure vault sharing (${ n } vault)": [
+        "Compartilhamento seguro de cofre (${ n } cofre)",
+        "Compartilhamento seguro de cofre (${ n } cofres)"
+      ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartilhamento seguro de cofre (${ n } cofre) e de link.",
-        "Compartilhamento seguro de cofres (${ n } cofres) e links."
+        "Compartilhamento seguro de cofre (${ n } cofre) e compartilhamento de link.",
+        "Compartilhamento seguro de cofre (${ n } cofres) e compartilhamento de link."
       ]
     },
     "Payment method option": {
@@ -7486,6 +7495,9 @@
       ],
       "Select state": [
         "Selecionar estado"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Compartilhe o que você acha que poderia melhorar ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
@@ -8442,6 +8454,9 @@
       "Back up photos from your devices": [
         "Faça backup de fotos de seus dispositivos"
       ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Gere confiança e reconhecimento da marca com endereços de e-mail profissionais no seu próprio domínio."
+      ],
       "Calendar sharing": [
         "Calendários compartilhados"
       ],
@@ -8531,6 +8546,9 @@
       ],
       "Send emails with attachments": [
         "Envie e-mails com anexos"
+      ],
+      "Stay secure and connected anywhere": [
+        "Mantém seguro e conectado de qualquer lugar."
       ],
       "Support your compliance objectives": [
         "Apoie seus objetivos de conformidade"
@@ -9229,6 +9247,9 @@
       "Import failed": [
         "Erro na importação"
       ],
+      "Import groups": [
+        "Importar grupo"
+      ],
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
@@ -9393,6 +9414,9 @@
       ],
       "Send invitation": [
         "Enviar convite"
+      ],
+      "Set recovery phrase": [
+        "Definir frase de recuperação"
       ],
       "Settings": [
         "Configurações"

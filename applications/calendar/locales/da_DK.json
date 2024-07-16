@@ -2445,6 +2445,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Dette kan tage et par minutter. I mellemtiden kan du fortsætte med at bruge Kalender som sædvanligt."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -3334,6 +3337,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliasser kan ikke bruges, når en ekstra adgangskode er aktiveret i ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "App ikke tilgængelig i øjeblikket"
       ],
@@ -9427,6 +9433,9 @@
       ],
       "Send invitation": [
         "Send invitation"
+      ],
+      "Set recovery phrase": [
+        "Indstil gendannelsessætning"
       ],
       "Settings": [
         "Indstillinger"

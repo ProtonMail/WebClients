@@ -2445,6 +2445,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Esto puede tomar unos minutos. Mientras tanto puedes continuar utilizando el calendario."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para garantizar el nivel más alto de seguridad, crea una frase de recuperación."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
       ],
@@ -6532,7 +6535,7 @@
         "Etiquetas ilimitadas"
       ],
       "Unlimited logins and notes": [
-        "Número ilimitado de accesos y de notas"
+        "Número ilimitado de inicios de sesión y de notas"
       ],
       "Unlimited logins, notes and credit cards": [
         "Inicios de sesión, notas y tarjetas de crédito ilimitados"
@@ -7703,7 +7706,7 @@
         "La solicitud de cambio de contraseña ha sido aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Ve al dispositivo en el que se ha iniciado sesión y donde se ha realizado la solicitud para cambiar tu contraseña."
+        "Ve al dispositivo en el que se ha iniciado sesión (donde se ha realizado la solicitud) para cambiar tu contraseña."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Este permiso expira en ${ timeRemaining.inDays } día.",
@@ -7732,7 +7735,7 @@
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Tienes ${ timeRemaining.inMinutes } minuto para restablecer tu contraseña.",
-        "Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
+        " Tienes ${ timeRemaining.inMinutes } minutos para restablecer tu contraseña."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Tienes ${ timeRemaining.inSeconds } segundo para restablecer tu contraseña.",
@@ -9263,6 +9266,9 @@
       "Import failed": [
         "Error en la importación"
       ],
+      "Import groups": [
+        "Importar grupos"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
@@ -9427,6 +9433,9 @@
       ],
       "Send invitation": [
         "Enviar invitación"
+      ],
+      "Set recovery phrase": [
+        "Crear una frase de recuperación"
       ],
       "Settings": [
         "Configuración"
