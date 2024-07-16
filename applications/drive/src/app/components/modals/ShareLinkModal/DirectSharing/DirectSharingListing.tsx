@@ -111,6 +111,8 @@ export const DirectSharingListing = ({
     const [user] = useUser();
     const [contactEmails] = useContactEmails();
 
+    const displayName = user.DisplayName || user.Name;
+
     if (isLoading) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
     }
@@ -119,11 +121,11 @@ export const DirectSharingListing = ({
             <div className="flex my-4 justify-space-between items-center" data-testid="share-owner">
                 <div className={'flex items-center'}>
                     <Avatar color="weak" className="mr-2">
-                        {getInitials(user.DisplayName)}
+                        {getInitials(displayName || user.Email)}
                     </Avatar>
                     <p className="flex flex-column p-0 m-0">
                         <span className="text-semibold">
-                            {user.DisplayName} ({c('Info').t`you`})
+                            {displayName} ({c('Info').t`you`})
                         </span>
                         <span className="color-weak">{user.Email}</span>
                     </p>
