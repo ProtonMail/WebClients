@@ -129,8 +129,17 @@ const ItemAttachmentThumbnails = ({
             </div>
 
             {previewing && (
-                // Need an additional div to prevent the event propagation (a click inside the portal would open the message)
-                <div onClick={(e) => e.stopPropagation()}>
+                // Need an additional div to:
+                <div
+                    // 1. prevent the event propagation (a click inside the portal would open the message)
+                    onClick={(e) => {
+                        e.stopPropagation();
+                    }}
+                    // 2. prevent the context menu to be opened on the message in Safari
+                    onContextMenu={(e) => {
+                        e.stopPropagation();
+                    }}
+                >
                     <Portal>
                         <FilePreview
                             isLoading={!previewing.contents}
