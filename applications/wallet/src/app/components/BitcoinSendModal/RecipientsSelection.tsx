@@ -163,7 +163,7 @@ export const RecipientsSelection = ({ recipientHelpers, txBuilder, onRecipientsC
                     } else {
                         safeAddRecipient(recipientOrBitcoinAddress, btcAddress, addressKey);
                     }
-                } catch {
+                } catch (error) {
                     const hasRecipientSentInvite =
                         checkHasSentInvite(recipientOrBitcoinAddress.Address) ||
                         (await walletApi.invite

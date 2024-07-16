@@ -40,6 +40,7 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
             setFiatCurrency: mockedValue?.settings?.setFiatCurrency ?? vi.fn(),
             setTwoFaThreshold: mockedValue?.settings?.setTwoFaThreshold ?? vi.fn(),
             setHideEmptyUsedAddresses: mockedValue?.settings?.setHideEmptyUsedAddresses ?? vi.fn(),
+            acceptTermsAndConditions: mockedValue?.settings?.acceptTermsAndConditions ?? vi.fn(),
         }),
         network: freeable({ getNetwork: mockedValue?.network?.getNetwork ?? vi.fn(), free: vi.fn() }),
         wallet: freeable({

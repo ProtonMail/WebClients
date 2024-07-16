@@ -16,6 +16,7 @@ const DEFAULT_STATE: WasmUserSettings = {
     ReceiveEmailIntegrationNotification: null,
     ReceiveInviterNotification: null,
     WalletCreated: null,
+    AcceptTermsAndConditions: 0,
 };
 
 export const useUserWalletSettings = (): [WasmUserSettings, boolean] => {
