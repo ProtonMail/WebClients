@@ -4,6 +4,26 @@
     "language": "id_ID"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Kebocoran potensial ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Potensi kebocoran dari ${ name } terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Pilih kata sandi saya sendiri"
+      ],
+      "Clear filter": [
+        "Hapus filter"
+      ],
+      "Clear filters": [
+        "Hapus filter"
       ],
       "Close": [
         "Tutup"
@@ -323,6 +349,9 @@
       "Next": [
         "Selanjutnya"
       ],
+      "Next month": [
+        "Bulan selanjutnya"
+      ],
       "OK": [
         "OK"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Sebelumnya"
+      ],
+      "Previous month": [
+        "Bulan sebelumnya"
       ],
       "Recover data": [
         "Pulihkan data"
@@ -2243,6 +2275,9 @@
       "Please set a recovery phone number first": [
         "Harap atur nomor telepon pemulihan terlebih dahulu"
       ],
+      "Please try again in a few moments.": [
+        "Silakan coba lagi dalam beberapa saat."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat menggunakan fitur dukungan multi-pengguna"
       ],
@@ -3047,6 +3082,9 @@
       "${ userFound } user found": [
         "${ userFound } pengguna ditemukan"
       ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } dibagikan dengan email"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
       ],
@@ -3124,6 +3162,9 @@
       ],
       "Affected user is on row": [
         "Pengguna yang terdampak terdapat pada baris"
+      ],
+      "All Events ": [
+        "Semua Acara "
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
@@ -3206,6 +3247,15 @@
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "Email Khusus Kebocoran Ditambahkan"
+      ],
+      "Breach Custom Email Deleted": [
+        "Email Khusus Kebocoran Dihapus"
+      ],
+      "Breach Custom Email Validated": [
+        "Email Khusus Kebocoran Divalidasi"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
@@ -3217,6 +3267,9 @@
       ],
       "Can’t access your recovery phone?": [
         "Tidak dapat mengakses ponsel pemulihan Anda?"
+      ],
+      "Change your password": [
+        "Ubah kata sandi Anda"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
@@ -3269,17 +3322,26 @@
       "Custom branding": [
         "Branding khusus"
       ],
+      "Custom email added": [
+        "Email khusus ditambahkan"
+      ],
+      "Custom email deleted": [
+        "Email khusus dihapus"
+      ],
       "Custom email domains": [
         "Domain email khusus"
+      ],
+      "Custom email validated": [
+        "Email khusus divalidasi"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -3353,6 +3415,9 @@
       "Edit email address": [
         "Sunting alamat email"
       ],
+      "email": [
+        "email"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Layanan hosting email gratis untuk domain khusus terbatas hanya pada 10 domain. Anda dapat membeli domain tambahan dengan harga ${ price } per domainnya."
       ],
@@ -3425,6 +3490,9 @@
       "Fill in user details": [
         "Isi rincian pengguna"
       ],
+      "finance": [
+        "keuangan"
+      ],
       "for choosing ${ product }": [
         "telah memilih ${ product }"
       ],
@@ -3448,6 +3516,9 @@
       ],
       "here": [
         "di sini"
+      ],
+      "High Priority": [
+        "Prioritas Tinggi"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Kunci publik penyedia identitas untuk menandatangani pernyataan autentikasi. Harus ada tempat untuk mengunduh atau menyalin hash sertifikat dari penyedia identitas. Cukup tempelkan hash sertifikat di bidang area teks."
@@ -3542,6 +3613,81 @@
       "Internet connection restored.": [
         "Koneksi internet telah kembali pulih."
       ],
+      "Invite Accepted": [
+        "Undangan Diterima"
+      ],
+      "Invite Created": [
+        "Undangan Dibuat"
+      ],
+      "Invite deleted": [
+        "Undangan dihapus"
+      ],
+      "Invite Deleted": [
+        "Undangan Dihapus"
+      ],
+      "Invite for new user deleted": [
+        "Undangan untuk pengguna baru dihapus"
+      ],
+      "Invite for organization accepted": [
+        "Undangan untuk organisasi disetujui"
+      ],
+      "Invite for organization created": [
+        "Undangan untuk organisasi dibuat"
+      ],
+      "Invite rejected": [
+        "Undangan ditolak"
+      ],
+      "Invite Rejected": [
+        "Undangan Ditolak"
+      ],
+      "Item Autofilled": [
+        "Item Diisi Otomatis"
+      ],
+      "Item autofilled in vault": [
+        "Item diisi secara otomatis dalam brankas"
+      ],
+      "Item Changed Flags": [
+        "Bendera Item Diubah"
+      ],
+      "Item Created": [
+        "Item Dibuat"
+      ],
+      "Item created in vault": [
+        "Item dibuat dalam brankas"
+      ],
+      "Item Deleted": [
+        "Item Dihapus"
+      ],
+      "Item deleted from vault": [
+        "Item dihapus dari brankas"
+      ],
+      "Item flags changed in vault": [
+        "Tanda item diubah dalam brankas"
+      ],
+      "Item in vault trashed": [
+        "Item dalam brankas dihapus"
+      ],
+      "Item in vault untrashed": [
+        "Item dalam brankas dipulihkan dari sampah"
+      ],
+      "Item Read": [
+        "Item Dibaca"
+      ],
+      "Item read in vault": [
+        "Item dibaca dalam brankas"
+      ],
+      "Item Trashed": [
+        "Item di Sampah"
+      ],
+      "Item Untrashed": [
+        "Item Dipulihkan dari Sampah"
+      ],
+      "Item Updated": [
+        "Item Diperbarui"
+      ],
+      "Item updated in vault": [
+        "Item diperbarui dalam brankas"
+      ],
       "JCB logo": [
         "Logo JCB"
       ],
@@ -3581,6 +3727,9 @@
       "Loading...": [
         "Memuat..."
       ],
+      "Low Priority": [
+        "Prioritas Rendah"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Layanan email terkemuka tertentu dapat menolak atau menyaring email Anda sebagai spam apabila SPF/DKIM/DRC Anda tidak ada atatu tidak diatur dengan benar."
       ],
@@ -3596,11 +3745,17 @@
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Prioritas Menengah"
+      ],
       "Member": [
         "Anggota"
       ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "Monitor accounts": [
+        "Monitor akun"
       ],
       "Multi-user support not enabled.": [
         "Dukungan multi-pengguna tidak diaktifkan."
@@ -3616,6 +3771,15 @@
       ],
       "Must start with a letter.": [
         "Nama gateway harus diawali dengan huruf."
+      ],
+      "New User Invite Created": [
+        "Undangan Pengguna Baru Dibuat"
+      ],
+      "New User Invite Deleted": [
+        "Undangan Pengguna Baru Dihapus"
+      ],
+      "New user invited to organization": [
+        "Pengguna baru diundang ke organisasi"
       ],
       "No addresses exist": [
         "Tidak ada alamat"
@@ -3667,6 +3831,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Berhubung terdapat admin-admin lain pada organisasi Anda, Anda bertanggung jawab untuk memberitahu kata sandi baru ini kepada mereka."
+      ],
+      "password": [
+        "kata sandi"
       ],
       "Password copied to clipboard": [
         "Kata sandi disalin ke papan klip"
@@ -3836,11 +4003,35 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
+      "Session Ended": [
+        "Sesi Diakhiri"
+      ],
+      "Session Roaming": [
+        "Sesi dalam Proses Roaming"
+      ],
+      "Session Started": [
+        "Sesi Dimulai"
+      ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
+      ],
+      "Share Created": [
+        "Pembagian Dibuat"
+      ],
+      "Share Deleted": [
+        "Pembagian Dihapus"
+      ],
+      "Share Updated": [
+        "Pembagian Diperbarui"
+      ],
+      "Shared vault deleted": [
+        "Brankas terbagi dihapus"
+      ],
+      "Shared vault updated": [
+        "Brankas terbagi diperbarui"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
@@ -3907,6 +4098,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Informasi kredensial dari Penyedia Identitas Anda akan dihapus."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
       ],
       "The following address is invalid.": [
         "Alamat berikut tidak valid."
@@ -4064,6 +4261,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID unik yang dihasilkan oleh penyedia identitas Anda, yang pada umumnya berupa URL dengan nama penyedia identitas di dalamnya (mis. https://idp.contoh.com/XXXXX)"
       ],
+      "Unknown event type": [
+        "Jenis peristiwa tidak diketahui"
+      ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
       ],
@@ -4097,8 +4297,32 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
+      "username": [
+        "nama pengguna"
+      ],
       "Users": [
         "Pengguna"
+      ],
+      "Vault created": [
+        "Brankas dibuat"
+      ],
+      "Vault Created": [
+        "Brankas Dibuat"
+      ],
+      "Vault deleted": [
+        "Brankas dihapus"
+      ],
+      "Vault Deleted": [
+        "Brankas Dihapus"
+      ],
+      "Vault shared with email": [
+        "Brankas dibagikan dengan email"
+      ],
+      "Vault updated": [
+        "Brankas diperbarui"
+      ],
+      "Vault Updated": [
+        "Brankas Diperbarui"
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
@@ -4177,6 +4401,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
+      ],
+      "Week": [
+        "Pekan"
       ],
       "Welcome": [
         "Selamat datang"
@@ -5150,6 +5377,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Langganan Anda telah berakhir. ${ cta } dan mencegah hilangnya data."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktifkan ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6179,6 +6411,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } telah dinonaktifkan"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } telah diaktifkan"
+      ],
       "A disabled address cannot be default": [
         "Alamat yang dinonaktifkan tidak dapat dijadikan alamat default"
       ],
@@ -6187,6 +6425,9 @@
       ],
       "Invalid code": [
         "Kode tidak valid"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Input tidak valid. Silakan cari alamat email atau IP."
       ],
       "IP Address copied to clipboard": [
         "Alamat IP disalin ke papan klip"
@@ -6674,6 +6915,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "mis. https://idp.contoh.com/XXXXX"
       ],
+      "E.g., ": [
+        "Misalnya "
+      ],
+      "Email or IP": [
+        "Email atau IP"
+      ],
+      "End date": [
+        "Tanggal berakhir"
+      ],
       "Feedback": [
         "Kritik dan Saran"
       ],
@@ -6712,6 +6962,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Berikan pendapatmu tentang apa yang bisa membuat ${ BRAND_NAME } menjadi lebih baik"
+      ],
+      "Start date": [
+        "Tanggal mulai"
       ],
       "yourdomain.com": [
         "domainanda.com"
@@ -6932,6 +7185,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL konektor SCIM yang digunakan oleh Agen Penyedia IdP Anda untuk meneruskan data SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } dan ${ remainingCount } kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } dan 1 kebocoran data potensial lainnya terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } kebocoran potensial terdeteksi. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
       ]
     },
     "Select file": {
@@ -8420,11 +8687,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -8461,6 +8728,9 @@
       ],
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
+      ],
+      "Connection events": [
+        "Peristiwa koneksi"
       ],
       "Contact us": [
         "Hubungi kami"
@@ -8606,6 +8876,9 @@
       "Error": [
         "Kesalahan"
       ],
+      "Event": [
+        "Peristiwa"
+      ],
       "Every member of the organization can access": [
         "Dapat diakses oleh seluruh anggota organisasi"
       ],
@@ -8617,6 +8890,9 @@
       ],
       "Forgot recovery method": [
         "Lupakan metode pemulihan"
+      ],
+      "Gateway": [
+        "Gateway"
       ],
       "Gateways": [
         "Gateway"
@@ -8654,6 +8930,9 @@
       "Main password": [
         "Kata sandi utama"
       ],
+      "Minicalendar": [
+        "Kalender mini"
+      ],
       "Multi-user support": [
         "Dukungan multi-pengguna"
       ],
@@ -8689,6 +8968,9 @@
       ],
       "Organization name": [
         "Nama organisasi"
+      ],
+      "Origin": [
+        "Asal"
       ],
       "Password": [
         "Kata sandi"
@@ -8837,6 +9119,9 @@
       "Switch to two-password mode": [
         "Beralih ke mode kata sandi ganda"
       ],
+      "Time": [
+        "Waktu"
+      ],
       "TV sign in": [
         "Masuk TV"
       ],
@@ -8863,6 +9148,9 @@
       ],
       "Upload your organization’s logo": [
         "Unggah logo organisasi Anda"
+      ],
+      "User": [
+        "Pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -8954,6 +9242,11 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hari ini"
       ]
     },
     "Tooltip": {

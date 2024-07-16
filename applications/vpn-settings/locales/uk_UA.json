@@ -4,6 +4,26 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інші потенційні витоки даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік даних з ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Обрати власний пароль"
+      ],
+      "Clear filter": [
+        "Очистити фільтр"
+      ],
+      "Clear filters": [
+        "Очистити фільтри"
       ],
       "Close": [
         "Закрити"
@@ -323,6 +349,9 @@
       "Next": [
         "Далі"
       ],
+      "Next month": [
+        "Наступний місяць"
+      ],
       "OK": [
         "Застосувати"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Попередній"
+      ],
+      "Previous month": [
+        "Минулий місяць"
       ],
       "Recover data": [
         "Відновити дані"
@@ -2227,6 +2259,9 @@
       "Please set a recovery phone number first": [
         "Спершу встановіть номер телефону для відновлення"
       ],
+      "Please try again in a few moments.": [
+        "Будь ласка, спробуйте знову за хвильку."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Для підтримки декількох користувачів, перейдіть на тарифний план для бізнесу"
       ],
@@ -3160,6 +3195,9 @@
         "Залучених користувачів перелічено в рядках",
         "Залучених користувачів перелічено в рядках"
       ],
+      "All Events ": [
+        "Усі події "
+      ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
       ],
@@ -3253,6 +3291,9 @@
       "Can’t access your recovery phone?": [
         "Не можете отримати доступ до номера телефону для відновлення?"
       ],
+      "Change your password": [
+        "Змініть свій пароль"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
@@ -3313,11 +3354,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "виділені сервери"
-      ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "dedicated servers": [
+        "виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -3397,6 +3438,9 @@
       "Edit email address": [
         "Змінити адресу електронної пошти"
       ],
+      "email": [
+        "е-пошта"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Розміщення до 10 власних доменних імен електронної пошти включено безплатно. Більше доменів можна додати за ${ price }."
       ],
@@ -3469,6 +3513,9 @@
       "Fill in user details": [
         "Заповніть дані користувача"
       ],
+      "finance": [
+        "фінанси"
+      ],
       "for choosing ${ product }": [
         "за вибір ${ product }"
       ],
@@ -3492,6 +3539,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "High Priority": [
+        "Високий пріоритет"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Відкритий ключ провайдера ідентифікації для підпису твердження автентифікації. У провайдера ідентифікації має бути місце для завантаження копії хешу сертифіката. Просто вставте хеш сертифіката в текстове поле."
@@ -3586,6 +3636,72 @@
       "Internet connection restored.": [
         "З'єднання з інтернетом відновлено."
       ],
+      "Invite Accepted": [
+        "Запрошення Прийнято"
+      ],
+      "Invite Created": [
+        "Запрошення створено"
+      ],
+      "Invite deleted": [
+        "Запрошення видалено"
+      ],
+      "Invite Deleted": [
+        "Запрошення видалено"
+      ],
+      "Invite for organization accepted": [
+        "Запрошення для організації прийнято"
+      ],
+      "Invite for organization created": [
+        "Запрошення до організації створено"
+      ],
+      "Invite rejected": [
+        "Запрошення відхилено"
+      ],
+      "Invite Rejected": [
+        "Запрошення Відхилено"
+      ],
+      "Item Autofilled": [
+        "Елемент Автоматично Заповнений"
+      ],
+      "Item autofilled in vault": [
+        "Елемент автоматично заповнений у сховищі"
+      ],
+      "Item Changed Flags": [
+        "Елемент Змінив Прапорці"
+      ],
+      "Item Created": [
+        "Елемент Створено"
+      ],
+      "Item created in vault": [
+        "Елемент створений у сховищі"
+      ],
+      "Item Deleted": [
+        "Елемент Видалено"
+      ],
+      "Item flags changed in vault": [
+        "Прапори предметів/предмету змінено в сховищі"
+      ],
+      "Item in vault untrashed": [
+        "Елемент забрано зі смітника сховища"
+      ],
+      "Item Read": [
+        "Елемент Прочитаний"
+      ],
+      "Item read in vault": [
+        "Пункт прочитаний у сховищі"
+      ],
+      "Item Trashed": [
+        "Елемент Переміщено до Смітника"
+      ],
+      "Item Untrashed": [
+        "Елемент Переміщено зі Смітника"
+      ],
+      "Item Updated": [
+        "Елемент Оновлено"
+      ],
+      "Item updated in vault": [
+        "Елемент оновлено в сховищі"
+      ],
       "JCB logo": [
         "Логотип JCB"
       ],
@@ -3625,6 +3741,9 @@
       "Loading...": [
         "Завантаження..."
       ],
+      "Low Priority": [
+        "Низький пріоритет"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Основні поштові сервіси можуть відхиляти або фільтрувати ваші листи як спам, якщо SPF/DKIM/DMARC відсутні або налаштовані неправильно."
       ],
@@ -3640,11 +3759,17 @@
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Середній пріоритет"
+      ],
       "Member": [
         "Учасник"
       ],
       "MM/YY": [
         "ММ/РР"
+      ],
+      "Monitor accounts": [
+        "Моніторинг облікових записів"
       ],
       "Multi-user support not enabled.": [
         "Підтримка декількох користувачів не увімкнена."
@@ -3660,6 +3785,12 @@
       ],
       "Must start with a letter.": [
         "Має починатися з літери."
+      ],
+      "New User Invite Created": [
+        "Створено Запрошення для Нового Користувача"
+      ],
+      "New User Invite Deleted": [
+        "Запрошення для Нового Користувача Видалено"
       ],
       "No addresses exist": [
         "Немає адрес"
@@ -3711,6 +3842,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашій організації є інші адміністратори. Ви відповідальні за передачу їм нового пароля."
+      ],
+      "password": [
+        "пароль"
       ],
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
@@ -3880,6 +4014,21 @@
       "Setting up your organization": [
         "Налаштування вашої організації"
       ],
+      "Share Created": [
+        "Поділитися створеним"
+      ],
+      "Share Deleted": [
+        "Поділитися вилученим"
+      ],
+      "Share Updated": [
+        "Поділитися оновленим"
+      ],
+      "Shared vault deleted": [
+        "Спільне сховище видалено"
+      ],
+      "Shared vault updated": [
+        "Спільне сховище оновлено"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
       ],
@@ -3948,6 +4097,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Облікові дані будуть видалені у вашого провайдера ідентифікації."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Кількість завантажень включає як фактичні завантаження, так і випадки попереднього перегляду файлів."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашифровані дані трохи більші через витрату додаткових ресурсів на шифрування та підписи, які забезпечують безпеку ваших даних."
       ],
       "The following address is invalid.": [
         "Ця адреса недійсна.",
@@ -4108,6 +4263,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальний ідентифікатор, згенерований вашим провайдером ідентифікації, зазвичай у вигляді URL-адреси, що містить ім'я провайдера (наприклад, https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Невідомий тип події"
+      ],
       "Unsaved changes": [
         "Незбережені зміни"
       ],
@@ -4141,8 +4299,32 @@
       "User activated": [
         "Користувач активований"
       ],
+      "username": [
+        "ім'я користувача"
+      ],
       "Users": [
         "Користувачі"
+      ],
+      "Vault created": [
+        "Сховище створено"
+      ],
+      "Vault Created": [
+        "Сховище створено"
+      ],
+      "Vault deleted": [
+        "Сховище видалено"
+      ],
+      "Vault Deleted": [
+        "Сховище видалено"
+      ],
+      "Vault shared with email": [
+        "Сховище поширено за допомогою електронної пошти"
+      ],
+      "Vault updated": [
+        "Сховище оновлено"
+      ],
+      "Vault Updated": [
+        "Сховище оновлено"
       ],
       "Verification can take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
@@ -4221,6 +4403,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
+      ],
+      "Week": [
+        "Тиждень"
       ],
       "Welcome": [
         "Вітаємо"
@@ -5195,6 +5380,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша передплата завершилася. ${ cta } і щоб уникнути втрати даних."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Увімкнути ${ reason }"
       ]
     },
     "mailtrial2024: Action": {
@@ -6249,6 +6439,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } вимкнено"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } увімкнено"
+      ],
       "A disabled address cannot be default": [
         "Неможливо зробити типовою вимкнену адресу"
       ],
@@ -6257,6 +6453,9 @@
       ],
       "Invalid code": [
         "Недійсний код"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Невірний ввід. Відшукайте адресу електронної пошти або IP-адресу"
       ],
       "IP Address copied to clipboard": [
         "IP-адресу скопійовано до буфера обміну"
@@ -6512,6 +6711,18 @@
       "Secure vault sharing": [
         "Безпечний спільний доступ до сховища"
       ],
+      "Secure vault sharing (${ n } vault)": [
+        "Безпечний спільний доступ до сховища (${ n } сховище)",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ)",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ)",
+        "Безпечний спільний доступ до сховища (${ n } сховищ)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Безпечний спільний доступ до сховища (${ n } vault) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
+        "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями"
+      ],
       "Setting up your organization": [
         "Налаштування вашої організації"
       ],
@@ -6723,6 +6934,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "наприклад, https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Наприклад, "
+      ],
+      "Email or IP": [
+        "Електронна пошта або IP-адреса"
+      ],
+      "End date": [
+        "Дата завершення"
+      ],
       "Feedback": [
         "Відгук"
       ],
@@ -6761,6 +6981,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Поділіться своїми враженнями, щоб вдосконалити ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Дата початку"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -6987,6 +7210,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL-адреса SCIM-конектора, на який агент забезпечення вашого IdP пересилає SCIM-дані"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ${ remainingCount } інших потенційних витоків даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено ${ name } та ще 1 потенційний витік даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Виявлено потенційний витік даних ${ name }. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Вашу інформацію знайдено принаймні в одному витоці даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці. ${ link }"
       ]
     },
     "Select file": {
@@ -8364,11 +8601,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-All address": [
-        "Catch-All адреса"
-      ],
       "Catch-all address": [
         "Catch-all адреси"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -8553,6 +8790,9 @@
       "Error": [
         "Помилка"
       ],
+      "Event": [
+        "Подія"
+      ],
       "Every member of the organization can access": [
         "Кожен учасник організації може отримати доступ до"
       ],
@@ -8600,6 +8840,9 @@
       ],
       "Invoices": [
         "Рахунки"
+      ],
+      "Minicalendar": [
+        "Мінікалендар"
       ],
       "Multi-user support": [
         "Підтримка декількох користувачів"
@@ -8787,6 +9030,9 @@
       "Switch to two-password mode": [
         "Перемкнутися на двопарольний режим"
       ],
+      "Time": [
+        "Час"
+      ],
       "TV sign in": [
         "Вхід на телевізорі"
       ],
@@ -8810,6 +9056,9 @@
       ],
       "Upload your organization’s logo": [
         "Вивантажте логотип вашої організації"
+      ],
+      "User": [
+        "Користувач"
       ],
       "Users": [
         "Користувачі"
@@ -8901,6 +9150,11 @@
       ],
       "Status": [
         "Стан"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сьогодні"
       ]
     },
     "Tooltip": {

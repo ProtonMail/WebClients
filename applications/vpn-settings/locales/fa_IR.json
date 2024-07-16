@@ -197,6 +197,9 @@
       "Next": [
         "بعدی"
       ],
+      "Next month": [
+        "ماه بعد"
+      ],
       "OK": [
         "تایید"
       ],
@@ -217,6 +220,9 @@
       ],
       "Previous": [
         "پیشین"
+      ],
+      "Previous month": [
+        "ماه پیشین"
       ],
       "Recover data": [
         "بازیابی داده‌"
@@ -2032,6 +2038,9 @@
       "By leaving now, changes may not be saved": [
         "اگر حال ترک کنید، تغییرات ممکن است ذخیره نشوند"
       ],
+      "Change your password": [
+        "گذرواژه خود را تغییر دهید"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
@@ -2322,6 +2331,12 @@
       "support team": [
         "تیم پشتیبانی"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "تعداد دانلود شامل تعداد دانلود های واقعی و تعداد بارهایی است که فایل پیش نمایش داده شده است."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "فایل های رمزگذاری شده بخاطر رمزنگاری و امضا ها مقداری حجیم تر هستند، تا امنیت داده های شما تضمین شود."
+      ],
       "The following address is invalid.": [
         "نشانی زیر نامعتبر است.",
         "نشانی‌های زیر نامعتبر هستند."
@@ -2449,6 +2464,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "یک کد تأیید جدید به ${ strong } ارسال خواهیم کرد"
+      ],
+      "Week": [
+        "هفته"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "برای بازیابی حسابتان، ما یک کد بازنشانی به آدرس ایمیل بازیابی که ارائه کرده‌اید ارسال می‌کنیم."
@@ -3685,6 +3703,12 @@
       "Confirm": [
         "تایید"
       ],
+      "E.g., ": [
+        "به‌عنوان مثال., "
+      ],
+      "End date": [
+        "تاریخ پایان"
+      ],
       "Feedback": [
         "بازخورد"
       ],
@@ -3711,6 +3735,9 @@
       ],
       "Select a reason": [
         "دلیلی انتخاب کنید"
+      ],
+      "Start date": [
+        "تاریخ شروع"
       ]
     },
     "plan customizer, users": {
@@ -4275,11 +4302,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-All address": [
-        "نشانی همه‌گیر"
-      ],
       "Catch-all address": [
         "نشانی دریافت-همه"
+      ],
+      "Catch-All address": [
+        "نشانی همه‌گیر"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
@@ -4409,6 +4436,9 @@
       ],
       "Invoices": [
         "صورت‌حساب‌ها"
+      ],
+      "Minicalendar": [
+        "تقویم کوچک"
       ],
       "Multi-user support": [
         "پشتیبانی چند کاربره"
@@ -4588,6 +4618,11 @@
       ],
       "Role": [
         "نقش"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "امروز"
       ]
     },
     "Tooltip": {

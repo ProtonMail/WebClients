@@ -4,6 +4,26 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer olası sızıntı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } ve 1 başka olası sızıntı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Olası bir ${ name } sızıntısı bulundu. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Kendi parolamı seçeceğim"
+      ],
+      "Clear filter": [
+        "Süzgeci temizle"
+      ],
+      "Clear filters": [
+        "Süzgeçleri temizle"
       ],
       "Close": [
         "Kapat"
@@ -323,6 +349,9 @@
       "Next": [
         "İleri"
       ],
+      "Next month": [
+        "Sonraki ay"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Önceki"
+      ],
+      "Previous month": [
+        "Önceki ay"
       ],
       "Recover data": [
         "Verileri kurtar"
@@ -2248,6 +2280,9 @@
       "Please set a recovery phone number first": [
         "Lütfen önce bir kurtarma telefonu numarası ayarlayın"
       ],
+      "Please try again in a few moments.": [
+        "Lütfen biraz sonra yeniden deneyin."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Çok kullanıcı desteği almak için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin"
       ],
@@ -3148,6 +3183,9 @@
         "Etkilenen kullanıcı şu satırda",
         "Etkilenen kullanıcılar şu satırlarda"
       ],
+      "All Events ": [
+        "Tüm etkinlikler "
+      ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
@@ -3241,6 +3279,9 @@
       "Can’t access your recovery phone?": [
         "Kurtarma telefonunuza erişemiyor musunuz?"
       ],
+      "Change your password": [
+        "Parolanızı değiştirin"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
@@ -3299,11 +3340,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -3379,6 +3420,9 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
+      "email": [
+        "e-posta"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
       ],
@@ -3451,6 +3495,9 @@
       "Fill in user details": [
         "Kullanıcı bilgilerini yazın"
       ],
+      "finance": [
+        "finans"
+      ],
       "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
       ],
@@ -3474,6 +3521,9 @@
       ],
       "here": [
         "buraya"
+      ],
+      "High Priority": [
+        "Yüksek öncelik"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Kimlik hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamakta kullanacağı herkese açık anahtarı. Kimlik hizmeti sağlayıcıdan sertifika karmasının indirileceği veya kopyalanacağı bir yer bulunmalıdır. Sertifika karmasını metin alanı alanına yapıştırmanız yeterlidir."
@@ -3568,6 +3618,72 @@
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
       ],
+      "Invite Accepted": [
+        "Davet kabul edildi"
+      ],
+      "Invite Created": [
+        "Davet oluşturuldu"
+      ],
+      "Invite deleted": [
+        "Davet silindi"
+      ],
+      "Invite Deleted": [
+        "Davet silindi"
+      ],
+      "Invite for organization accepted": [
+        "Kuruluş daveti kabul edildi"
+      ],
+      "Invite for organization created": [
+        "Kuruluş daveti oluşturuldu"
+      ],
+      "Invite rejected": [
+        "Davet reddedildi"
+      ],
+      "Invite Rejected": [
+        "Davet reddedildi"
+      ],
+      "Item Autofilled": [
+        "Öge otomatik dolduruldu"
+      ],
+      "Item autofilled in vault": [
+        "Kasa ögesi otomatik olarak dolduruldu"
+      ],
+      "Item Changed Flags": [
+        "Öge işaretleri değiştirildi"
+      ],
+      "Item Created": [
+        "Öge oluşturuldu"
+      ],
+      "Item created in vault": [
+        "Kasa ögesi oluşturuldu"
+      ],
+      "Item Deleted": [
+        "Öge silindi"
+      ],
+      "Item flags changed in vault": [
+        "Kasa ögesi işaretleri değiştirildi"
+      ],
+      "Item in vault untrashed": [
+        "Kasa ögesi çöpten çıkarıldı"
+      ],
+      "Item Read": [
+        "Öge okundu"
+      ],
+      "Item read in vault": [
+        "Kasa ögesi okundu"
+      ],
+      "Item Trashed": [
+        "Öge çöpe atıldı"
+      ],
+      "Item Untrashed": [
+        "Öge çöpten çıkarıldı"
+      ],
+      "Item Updated": [
+        "Öge güncellendi"
+      ],
+      "Item updated in vault": [
+        "Kasa ögesi güncellendi"
+      ],
       "JCB logo": [
         "JCB logosu"
       ],
@@ -3607,6 +3723,9 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Low Priority": [
+        "Düşük Öncelik"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "SPF/DKIM/DMARC ayarları doğru değilse, büyük e-posta hizmeti sağlayıcıları e-postalarınızı istenmeyen olarak algılayarak reddebilir ya da süzebilir."
       ],
@@ -3622,11 +3741,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
       ],
+      "Medium Priority": [
+        "Orta öncelik"
+      ],
       "Member": [
         "Üye"
       ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "Monitor accounts": [
+        "Hesapları izle"
       ],
       "Multi-user support not enabled.": [
         "Çok kullanıcı desteği açılmamış."
@@ -3642,6 +3767,12 @@
       ],
       "Must start with a letter.": [
         "Bir harf ile başlamalıdır."
+      ],
+      "New User Invite Created": [
+        "Yeni kullanıcı daveti oluşturuldu"
+      ],
+      "New User Invite Deleted": [
+        "Yeni kullanıcı daveti silindi"
       ],
       "No addresses exist": [
         "Herhangi bir adres yok"
@@ -3693,6 +3824,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Kuruluşunuzda başka yöneticiler de var. Yeni parolayı onlara bildirmek sizin sorumluluğunuzdur."
+      ],
+      "password": [
+        "parola"
       ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
@@ -3870,6 +4004,21 @@
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
       ],
+      "Share Created": [
+        "Paylaşım oluşturuldu"
+      ],
+      "Share Deleted": [
+        "Paylaşım silindi"
+      ],
+      "Share Updated": [
+        "Paylaşım güncellendi"
+      ],
+      "Shared vault deleted": [
+        "Paylaşılmış kasa silindi"
+      ],
+      "Shared vault updated": [
+        "Paylaşılmış kasa güncellendi"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
       ],
@@ -3936,6 +4085,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Kimlik hizmeti sağlayıcınızdaki kimlik bilgileri silinecek."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Şifrelenmiş veriler, verilerinizin güvenliğini sağlayan şifreleme ve imzaların ek yükü nedeniyle biraz daha büyüktür."
       ],
       "The following address is invalid.": [
         "Şu adres geçersiz.",
@@ -4096,6 +4251,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Kimlik hizmeti sağlayıcınız tarafından oluşturulan, genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres biçimindeki benzersiz kimlik (örnek: https://idp.ornek.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Etkinlik türü bilinmiyor"
+      ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
       ],
@@ -4129,8 +4287,32 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
+      "username": [
+        "kullanıcı adı"
+      ],
       "Users": [
         "Kullanıcılar"
+      ],
+      "Vault created": [
+        "Kasa oluşturuldu"
+      ],
+      "Vault Created": [
+        "Kasa oluşturuldu"
+      ],
+      "Vault deleted": [
+        "Kasa silindi"
+      ],
+      "Vault Deleted": [
+        "Kasa silindi"
+      ],
+      "Vault shared with email": [
+        "Kasa e-posta ile paylaşıldı"
+      ],
+      "Vault updated": [
+        "Kasa güncellendi"
+      ],
+      "Vault Updated": [
+        "Kasa güncellendi"
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -4209,6 +4391,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "Week": [
+        "Hafta"
       ],
       "Welcome": [
         "Hoş geldiniz"
@@ -5196,6 +5381,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Aboneliğinizin süresi dolmuş. Verilerinizin kaybolmasını önlemek için ${ cta }."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } özelliğini aç"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6240,6 +6430,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } özelliği kapatıldı"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } özelliği açıldı"
+      ],
       "A disabled address cannot be default": [
         "Kullanım dışı bırakılmış bir adres varsayılan olamaz"
       ],
@@ -6248,6 +6444,9 @@
       ],
       "Invalid code": [
         "Kod geçersiz"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Giriş geçersiz. Bir e-posta ya da IP adresi arayın."
       ],
       "IP Address copied to clipboard": [
         "IP adresi panoya kopyalandı"
@@ -6740,6 +6939,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "örnek: https://idp.ornek.com/XXXXX"
       ],
+      "E.g., ": [
+        "Örneğin, "
+      ],
+      "Email or IP": [
+        "E-posta ya da IP adresi"
+      ],
+      "End date": [
+        "Bitiş tarihi"
+      ],
       "Feedback": [
         "Geri bildirim"
       ],
@@ -6778,6 +6986,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
       ],
       "yourdomain.com": [
         "etkialaniniz.com"
@@ -7001,6 +7212,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "IdP veri sağlama aracınızın SCIM verilerini ilettiği SCIM bağlantısının adresi"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve ${ remainingCount } diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } ve 1 diğer olası veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Olası ${ name } veri sızıntısı bulundu. Ayrıntıları görüntülemek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Bilgileriniz en az bir veri sızıntısı olayında görüldü. Ayrıntıları görmek için ${ DARK_WEB_MONITORING_NAME } özelliğini açın. ${ link }"
       ]
     },
     "Select file": {
@@ -8524,10 +8749,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -8712,6 +8937,9 @@
       "Error": [
         "Hata"
       ],
+      "Event": [
+        "Etkinlik"
+      ],
       "Every member of the organization can access": [
         "Kuruluşun tüm üyeleri erişebilir"
       ],
@@ -8760,6 +8988,9 @@
       ],
       "Main password": [
         "Ana parola"
+      ],
+      "Minicalendar": [
+        "Mini takvim"
       ],
       "Multi-user support": [
         "Çok kullanıcı desteği"
@@ -8945,6 +9176,9 @@
       "Switch to two-password mode": [
         "İki parola kipini aç"
       ],
+      "Time": [
+        "Saat"
+      ],
       "TV sign in": [
         "TV oturumu açma"
       ],
@@ -8971,6 +9205,9 @@
       ],
       "Upload your organization’s logo": [
         "Kuruluşunuzun logosunu yükleyin"
+      ],
+      "User": [
+        "Kullanıcı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -9062,6 +9299,11 @@
       ],
       "Status": [
         "Durum"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Bugün"
       ]
     },
     "Tooltip": {
