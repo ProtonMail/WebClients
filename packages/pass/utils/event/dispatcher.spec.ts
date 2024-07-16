@@ -27,12 +27,12 @@ describe('EventDispatcher', () => {
 
         options = {
             alarm,
-            key,
             maxRetries: 3,
             storage: storage as any,
             dispatch,
             getEnabled,
             getSendTime,
+            getStorageKey: () => key,
             prepare,
         };
 
