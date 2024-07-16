@@ -1928,6 +1928,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Ustaw metodę odzyskiwania, aby uniknąć utraty dostępu do konta."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Ustaw hasło odzyskiwania, aby zapewnić najwyższe bezpieczeństwo konta."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
@@ -2742,6 +2745,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Nie możesz używać aliasów przy włączonym dodatkowym haśle w ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplikacja jest niedostępna"
       ],
@@ -8083,6 +8089,9 @@
       "Import failed": [
         "Importowanie nie powiodło się"
       ],
+      "Import groups": [
+        "Importuj grupy"
+      ],
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
@@ -8202,6 +8211,9 @@
       ],
       "Select link expiration time": [
         "Wybierz czas wygaśnięcia linku"
+      ],
+      "Set recovery phrase": [
+        "Ustaw hasło odzyskiwania"
       ],
       "Settings": [
         "Ustawienia"
