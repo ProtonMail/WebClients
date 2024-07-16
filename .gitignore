@@ -8,7 +8,11 @@ yarn-debug.log*
 yarn-error.log*
 node_modules
 dist
-.turbo/
+.turbo/*
+!.turbo/config.json
+applications/**/.turbo
+packages/**/.turbo
+tests/**/.turbo
 config.ts
 tsconfig.tsbuildinfo
 .yarn/*
