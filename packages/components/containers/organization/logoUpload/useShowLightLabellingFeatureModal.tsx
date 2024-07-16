@@ -28,6 +28,8 @@ export const useShowLightLabellingFeatureModal = () => {
 
     const seenLightLabellingFeatureModal = useFeature<boolean>(FeatureCode.SeenLightLabellingFeatureModal);
 
+    const hasOrganizationUsage = organization && organization.UsedDomains >= 1 && organization.UsedMembers >= 2;
+
     if (
         ((APP_NAME !== APPS.PROTONACCOUNT && welcomeFlags.isDone) || APP_NAME === APPS.PROTONACCOUNT) &&
         hasOrganizationKey &&
@@ -35,6 +37,7 @@ export const useShowLightLabellingFeatureModal = () => {
         seenLightLabellingFeatureModal.feature?.Value === false &&
         !isPartOfFamily &&
         isAdmin &&
+        hasOrganizationUsage &&
         organizationTheme.access &&
         !organizationTheme.logoURL
     ) {
