@@ -7,12 +7,12 @@
 		border-radius: rem(4);
 		background-color: var(--calendar-color, transparent);
 		margin-inline-end: rem(25);
+		min-block-size: rem(28);
+		margin-block-end: rem(4);
+
 		@include media('<=xsmall') {
 			margin-inline-end: rem(18);
 		}
-
-		min-block-size: rem(28);
-		margin-block-end: rem(4);
 
 		&.isUnanswered {
 			// 1 pseudo element for white background

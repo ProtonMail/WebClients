@@ -99,14 +99,6 @@
 		--size: #{rem(480)}; // medium
 		--margin: #{rem(32)};
 
-		@include media('<=small') {
-			--margin: #{rem(24)};
-		}
-
-		@include media('<=xsmall') {
-			--margin: #{rem(16)};
-		}
-
 		position: relative;
 		z-index: 1;
 		display: flex;
@@ -122,6 +114,14 @@
 		color: var(--modal-text-color);
 		animation: 0.25s easing(ease-out-cubic) both;
 		animation-name: anime-modal-two-dialog-in;
+
+		@include media('<=small') {
+			--margin: #{rem(24)};
+		}
+
+		@include media('<=xsmall') {
+			--margin: #{rem(16)};
+		}
 
 		&-container {
 			flex-grow: 1;

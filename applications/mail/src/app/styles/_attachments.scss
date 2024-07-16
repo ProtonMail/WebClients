@@ -21,16 +21,16 @@
 }
 
 .message-attachmentSecondaryAction {
-	svg[aria-busy='true'] {
-		background-size: 16px;
-	}
-
 	transition:
 		0.15s easing(ease-out-quint),
 		background-position 0s;
 	background-color: transparent;
 	min-inline-size: rem(36);
 	align-content: flex-end;
+
+	svg[aria-busy='true'] {
+		background-size: 16px;
+	}
 
 	&::after {
 		background-color: transparent !important;
