@@ -4,6 +4,26 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Mein eigenes Passwort wählen"
+      ],
+      "Clear filter": [
+        "Filter zurücksetzen"
+      ],
+      "Clear filters": [
+        "Filter zurücksetzen"
       ],
       "Close": [
         "Schließen"
@@ -323,6 +349,9 @@
       "Next": [
         "Weiter"
       ],
+      "Next month": [
+        "Nächster Monat"
+      ],
       "OK": [
         "OK"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Zurück"
+      ],
+      "Previous month": [
+        "Vorheriger Monat"
       ],
       "Recover data": [
         "Daten wiederherstellen"
@@ -2249,6 +2281,9 @@
       "Please set a recovery phone number first": [
         "Bitte lege zuerst eine Wiederherstellungs-Telefonnummer fest."
       ],
+      "Please try again in a few moments.": [
+        "Bitte versuche es in wenigen Augenblicken nochmals"
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um Support für mehrere Benutzer zu erhalten."
       ],
@@ -3066,6 +3101,15 @@
         "${ userFound } Benutzer gefunden",
         "${ userFound } Benutzer gefunden"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } erstellt."
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } gelöscht."
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } aktualisiert."
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } ist für die länderbasierte Verbindung notwendig."
       ],
@@ -3148,6 +3192,9 @@
       "Affected user is on row": [
         "Betroffener Benutzer ist in Zeile",
         "Betroffene Benutzer sind in Zeilen"
+      ],
+      "All Events ": [
+        "Alle Ereignisse "
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
@@ -3242,6 +3289,9 @@
       "Can’t access your recovery phone?": [
         "Du hast keinen Zugriff auf deine Wiederherstellungs-Telefonnummer?"
       ],
+      "Change your password": [
+        "Passwort ändern"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
       ],
@@ -3300,11 +3350,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -3380,6 +3430,9 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "email": [
+        "E-Mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-Mail-Hosting für 10 eigene E-Mail-Domainnamen ist kostenlos enthalten. Zusätzliche Domains können für ${ price } hinzugefügt werden."
       ],
@@ -3452,6 +3505,9 @@
       "Fill in user details": [
         "Daten des Benutzers ausfüllen"
       ],
+      "finance": [
+        "Finanzen"
+      ],
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
       ],
@@ -3475,6 +3531,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "High Priority": [
+        "Hohe Priorität"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Öffentlicher Schlüssel des Identitätsanbieters zur Signierung von Authentifizierungsbehauptungen. Es sollte einen Ort geben, um den Zertifikat-Hash vom Identitätsanbieter herunterzuladen oder zu kopieren. Füge einfach den Zertifikat-Hash in das Textfeld ein."
@@ -3569,6 +3628,87 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
+      "Invite Accepted": [
+        "Einladung akzeptiert"
+      ],
+      "Invite Created": [
+        "Einladung erstellt"
+      ],
+      "Invite deleted": [
+        "Einladung gelöscht"
+      ],
+      "Invite Deleted": [
+        "Einladung gelöscht"
+      ],
+      "Invite for new user deleted": [
+        "Einladung für neuen Benutzer gelöscht"
+      ],
+      "Invite for organization accepted": [
+        "Organisationseinladung angenommen"
+      ],
+      "Invite for organization created": [
+        "Organisationseinladung erstellt"
+      ],
+      "Invite rejected": [
+        "Einladung abgelehnt"
+      ],
+      "Invite Rejected": [
+        "Einladung zurückgewiesen"
+      ],
+      "Item Autofilled": [
+        "Eintrag automatisch ausgefüllt"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } automatisch ausgefüllt."
+      ],
+      "Item autofilled in vault": [
+        "Eintrag automatisch im Tresor ausgefüllt"
+      ],
+      "Item Created": [
+        "Eintrag erstellt"
+      ],
+      "Item created in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } erstellt."
+      ],
+      "Item created in vault": [
+        "Eintrag in Tresor erstellt"
+      ],
+      "Item Deleted": [
+        "Eintrag gelöscht"
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "Eintrag aus ${ vaultLink } gelöscht."
+      ],
+      "Item deleted from vault": [
+        "Eintrag aus Tresor gelöscht"
+      ],
+      "Item in vault untrashed": [
+        "Eintrag in Tresor wiederhergestellt"
+      ],
+      "Item Read": [
+        "Eintrag angesehen"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } angesehen."
+      ],
+      "Item read in vault": [
+        "Eintrag in Tresor angesehen"
+      ],
+      "Item Trashed": [
+        "Eintrag in den Papierkorb gelegt"
+      ],
+      "Item Untrashed": [
+        "Eintrag aus dem Papierkorb entfernt"
+      ],
+      "Item Updated": [
+        "Eintrag aktualisiert"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Eintrag in ${ vaultLink } aktualisiert."
+      ],
+      "Item updated in vault": [
+        "Eintrag in Tresor aktualisiert"
+      ],
       "JCB logo": [
         "JCB-Logo"
       ],
@@ -3608,6 +3748,9 @@
       "Loading...": [
         "Wird geladen..."
       ],
+      "Low Priority": [
+        "Niedrige Priorität"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Große E-Mail-Dienste können deine E-Mails zurückweisen oder als Spam filtern, wenn SPF/DKIM/DMARC fehlen oder nicht richtig eingerichtet sind."
       ],
@@ -3623,11 +3766,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
       ],
+      "Medium Priority": [
+        "Mittlere Priorität"
+      ],
       "Member": [
         "Mitglied"
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Monitor accounts": [
+        "Konten überwachen"
       ],
       "Multi-user support not enabled.": [
         "Mehrbenutzerunterstützung nicht aktiviert."
@@ -3643,6 +3792,12 @@
       ],
       "Must start with a letter.": [
         "Muss mit einem Buchstaben beginnen."
+      ],
+      "New User Invite Created": [
+        "Neue Benutzereinladung erstellt"
+      ],
+      "New user invited to organization": [
+        "Neuen Benutzer zur Organisation eingeladen"
       ],
       "No addresses exist": [
         "Keine Adressen vorhanden"
@@ -3694,6 +3849,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "In deiner Organisation gibt es weitere Administratoren. Du selbst bist verantwortlich dafür, ihnen das neue Passwort mitzuteilen."
+      ],
+      "password": [
+        "Passwort"
       ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert"
@@ -3871,6 +4029,18 @@
       "Setting up your organization": [
         "Deine Organisation wird eingerichtet"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "Geteilten ${ vaultLink } gelöscht."
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Geteilten ${ vaultLink } aktualisiert."
+      ],
+      "Shared vault deleted": [
+        "Geteilter Tresor gelöscht"
+      ],
+      "Shared vault updated": [
+        "Geteilter Tresor aktualisiert"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Melde dich bei ${ MAIL_APP_NAME } an, um deine Adresse zu aktivieren"
       ],
@@ -3937,6 +4107,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Die Anzahl der Downloads umfasst sowohl die tatsächlichen Downloads als auch die Fälle, in denen Dateien in der Vorschau angezeigt werden."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Die verschlüsselten Daten sind aufgrund des Overheads der Verschlüsselung und der Signaturen, die die Sicherheit deiner Daten gewährleisten, etwas größer."
       ],
       "The following address is invalid.": [
         "Die folgende Adresse ist ungültig.",
@@ -4091,6 +4267,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Eindeutige ID, generiert von deinem Identitätsanbieter, normalerweise in Form einer URL, die den Namen des Identitätsanbieters enthält (z.B. https://idp.beispiel.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Unbekannte Ereignisart"
+      ],
       "Unsaved changes": [
         "Ungespeicherte Änderungen"
       ],
@@ -4124,8 +4303,32 @@
       "User activated": [
         "Benutzer aktiviert"
       ],
+      "username": [
+        "Benutzername"
+      ],
       "Users": [
         "Benutzer"
+      ],
+      "Vault created": [
+        "Tresor angelegt"
+      ],
+      "Vault Created": [
+        "Tresor angelegt"
+      ],
+      "Vault deleted": [
+        "Tresor gelöscht"
+      ],
+      "Vault Deleted": [
+        "Tresor gelöscht"
+      ],
+      "Vault shared with email": [
+        "Tresor geteilt via E-Mail"
+      ],
+      "Vault updated": [
+        "Tresor aktualisiert"
+      ],
+      "Vault Updated": [
+        "Tresor aktualisiert"
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
@@ -4204,6 +4407,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "Week": [
+        "Woche"
       ],
       "Welcome": [
         "Willkommen"
@@ -4332,6 +4538,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
+      ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Du kannst den Nutzer zum Administrator machen, nach dem dieser die Einladung angenommen hat."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
@@ -5180,6 +5389,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Dein Abonnement ist beendet. ${ cta } und um Datenverlust zu vermeiden."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } aktivieren"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6227,6 +6441,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } wurde deaktiviert."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } wurde aktiviert."
+      ],
       "A disabled address cannot be default": [
         "Eine deaktivierte Adresse kann nicht als Standardadresse verwendet werden."
       ],
@@ -6235,6 +6455,9 @@
       ],
       "Invalid code": [
         "Ungültiger Code"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Ungültige Eingabe. Suche eine E-Mail- oder IP-Adresse."
       ],
       "IP Address copied to clipboard": [
         "IP-Adresse in Zwischenablage kopiert"
@@ -6637,6 +6860,9 @@
       "MM/YY": [
         "MM/JJ"
       ],
+      "Payment Processing": [
+        "Zahlungsabwicklung"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
@@ -6721,6 +6947,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "z.B. https://idp.beispiel.com/XXXXX"
       ],
+      "E.g., ": [
+        "Z. B. "
+      ],
+      "Email or IP": [
+        "Email oder IP"
+      ],
+      "End date": [
+        "Enddatum"
+      ],
       "Feedback": [
         "Feedback"
       ],
@@ -6759,6 +6994,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
+      ],
+      "Start date": [
+        "Startdatum"
       ],
       "yourdomain.com": [
         "ihredomain.com"
@@ -6979,6 +7217,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL des SCIM-Connectors, an den dein IdP Provisioning Agent SCIM-Daten weiterleitet"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch ${ remainingCount } weitere potenzielle Lecks entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } und noch 1 weiteres potenzielles Leck entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Ein mögliches Leck bei ${ name } wurde entdeckt. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details dazu anzuzeigen. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
       ]
     },
     "Select file": {
@@ -7896,6 +8148,9 @@
       "Extra storage and bonuses": [
         "Zusätzlicher Speicherplatz und Boni"
       ],
+      "Extra storage and users": [
+        "Zusätzlicher Speicherplatz und Benutzer"
+      ],
       "Have a question?": [
         "Du hast eine Frage?"
       ],
@@ -8484,11 +8739,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -8672,6 +8927,9 @@
       "Error": [
         "Fehler"
       ],
+      "Event": [
+        "Ereignis"
+      ],
       "Every member of the organization can access": [
         "Jedes Mitglied der Organisation kann darauf zugreifen"
       ],
@@ -8720,6 +8978,9 @@
       ],
       "Main password": [
         "Primäres Passwort"
+      ],
+      "Minicalendar": [
+        "Minikalender"
       ],
       "Multi-user support": [
         "Mehrbenutzerunterstützung"
@@ -8905,6 +9166,9 @@
       "Switch to two-password mode": [
         "Wechseln zum Zwei-Passwörter-Modus"
       ],
+      "Time": [
+        "Zeit"
+      ],
       "TV sign in": [
         "TV-Anmeldung"
       ],
@@ -8931,6 +9195,9 @@
       ],
       "Upload your organization’s logo": [
         "Organisationslogo aktualisieren"
+      ],
+      "User": [
+        "Benutzer"
       ],
       "Users": [
         "Benutzer"
@@ -9022,6 +9289,11 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Heute"
       ]
     },
     "Tooltip": {

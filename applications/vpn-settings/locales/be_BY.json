@@ -4,6 +4,26 @@
     "language": "be_BY"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ад ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Выбраць свой уласны пароль"
+      ],
+      "Clear filter": [
+        "Ачысціць фільтр"
+      ],
+      "Clear filters": [
+        "Ачысціць фільтры"
       ],
       "Close": [
         "Закрыць"
@@ -323,11 +349,17 @@
       "Next": [
         "Далей"
       ],
+      "Next month": [
+        "Наступны месяц"
+      ],
       "OK": [
         "Добра"
       ],
       "Ok": [
         "Добра"
+      ],
+      "Open": [
+        "Адкрыць"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
@@ -355,6 +387,9 @@
       ],
       "Previous": [
         "Папярэдні"
+      ],
+      "Previous month": [
+        "Папярэдні месяц"
       ],
       "Recover data": [
         "Аднавіць даныя"
@@ -2270,6 +2305,9 @@
       "Please set a recovery phone number first": [
         "Спачатку задайце нумар тэлефона для аднаўлення доступу"
       ],
+      "Please try again in a few moments.": [
+        "Паўтарыце спробу крыху пазней."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму"
       ],
@@ -3122,6 +3160,18 @@
         "Знойдзена ${ userFound } карыстальнікаў",
         "Знойдзена ${ userFound } карыстальнікі"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } створана"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } выдалена"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } абагулена з электроннай поштай"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } абноўлена"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Для выбару падключэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
       ],
@@ -3215,6 +3265,9 @@
         "Уплывае на карыстальнікаў у радку",
         "Уплывае на карыстальнікаў у радку"
       ],
+      "All Events ": [
+        "Усе падзеі "
+      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
@@ -3296,6 +3349,15 @@
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "Уцечка карыстальніцкай электроннай пошты дададзена"
+      ],
+      "Breach Custom Email Deleted": [
+        "Уцечка карыстальніцкай электроннай пошты выдалена"
+      ],
+      "Breach Custom Email Validated": [
+        "Уцечка карыстальніцкай электроннай пошты праверана"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
@@ -3307,6 +3369,9 @@
       ],
       "Can’t access your recovery phone?": [
         "Не можаце атрымаць доступ да нумара тэлефона для аднаўлення доступу?"
+      ],
+      "Change your password": [
+        "Змяніць свой пароль"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
@@ -3362,17 +3427,26 @@
       "Custom branding": [
         "Карыстальніцкі брэндзінг"
       ],
+      "Custom email added": [
+        "Карыстальніцкая электронная пошта дададзена"
+      ],
+      "Custom email deleted": [
+        "Карыстальніцкія электронная пошта выдалена"
+      ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Custom email validated": [
+        "Карыстальніцкая электронная пошта праверана"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -3452,6 +3526,9 @@
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
       ],
+      "email": [
+        "электронная пошта"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Размяшчэнне электроннай пошты для 10 карыстальніцкіх даменных імён электроннай пошты даецца карыстальніку бясплатна. За дадатковыя дамены будзе спаганяцца плата ў памеры ${ price }."
       ],
@@ -3524,6 +3601,9 @@
       "Fill in user details": [
         "Запоўніце даныя карыстальніка"
       ],
+      "finance": [
+        "фінансы"
+      ],
       "for choosing ${ product }": [
         "за выбар ${ product }"
       ],
@@ -3547,6 +3627,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "High Priority": [
+        "Высокі прыярытэт"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
@@ -3641,6 +3724,105 @@
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
       ],
+      "Invite Accepted": [
+        "Запрашэнне прынята"
+      ],
+      "Invite Created": [
+        "Запрашэнне створана"
+      ],
+      "Invite deleted": [
+        "Запрашэнне выдалена"
+      ],
+      "Invite Deleted": [
+        "Запрашэнне выдалена"
+      ],
+      "Invite for new user deleted": [
+        "Запрашэнне для новага карыстальніка выдалена"
+      ],
+      "Invite for organization accepted": [
+        "Запрашэнне для арганізацыі прынята"
+      ],
+      "Invite for organization created": [
+        "Запрашэнне для арганізацыі створана"
+      ],
+      "Invite rejected": [
+        "Запрашэнне адхілена"
+      ],
+      "Invite Rejected": [
+        "Запрашэнне адхілена"
+      ],
+      "Item Autofilled": [
+        "Элемент аўтазапоўнены"
+      ],
+      "Item autofilled in ${ vaultLink }": [
+        "Элемент аўтазапоўнены ў ${ vaultLink }"
+      ],
+      "Item autofilled in vault": [
+        "Элемент аўтазапоўнены ў сховішчы"
+      ],
+      "Item Changed Flags": [
+        "Змененыя сцягі элемента"
+      ],
+      "Item Created": [
+        "Элемент створаны"
+      ],
+      "Item created in ${ vaultLink }": [
+        "Элемент створаны ў ${ vaultLink }"
+      ],
+      "Item created in vault": [
+        "Элемент створаны ў сховішчы"
+      ],
+      "Item Deleted": [
+        "Элемент выдалены"
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "Элемент выдалены ў ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Элемент выдалены са сховішча"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Сцягі элемента зменены ў ${ vaultLink }"
+      ],
+      "Item flags changed in vault": [
+        "Сцягі элемента зменены ў сховішчы"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Элемент у ${ vaultLink } перамешчаны ў сметніцу"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Элемент у ${ vaultLink } перамешчаны ў сховішча"
+      ],
+      "Item in vault trashed": [
+        "Элемент са сховішча перамешчаны ў сметніцу"
+      ],
+      "Item in vault untrashed": [
+        "Элемент са сметніцы перамешчаны ў сховішча"
+      ],
+      "Item Read": [
+        "Элемент прачытаны"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Элемент прачытаны ў ${ vaultLink }"
+      ],
+      "Item read in vault": [
+        "Элемент прачытаны ў сховішчы"
+      ],
+      "Item Trashed": [
+        "Элемент перамешчаны ў сметніцу"
+      ],
+      "Item Untrashed": [
+        "Элемент адноўлены са сметніцы"
+      ],
+      "Item Updated": [
+        "Элемент абноўлены"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Элемент абноўлены ў ${ vaultLink }"
+      ],
+      "Item updated in vault": [
+        "Элемент абноўлены ў сховішчы"
+      ],
       "JCB logo": [
         "Лагатып JCB"
       ],
@@ -3680,6 +3862,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Low Priority": [
+        "Нізкі прыярытэт"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Распаўсюджаныя паштовыя службы могуць адхіляць вашы электронныя лісты або палічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць або наладжаны не адпаведным чынам."
       ],
@@ -3695,11 +3880,17 @@
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Сярэдні прыярытэт"
+      ],
       "Member": [
         "Удзельнік"
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "Monitor accounts": [
+        "Назіранне за ўліковымі запісамі"
       ],
       "Multi-user support not enabled.": [
         "Падтрымка шматкарыстальніцкага рэжыму не ўключана."
@@ -3715,6 +3906,15 @@
       ],
       "Must start with a letter.": [
         "Назва павінна пачынацца з літары."
+      ],
+      "New User Invite Created": [
+        "Запрашэнне для новага карыстальніка створана"
+      ],
+      "New User Invite Deleted": [
+        "Запрашэнне для новага карыстальніка выдалена"
+      ],
+      "New user invited to organization": [
+        "Новы карыстальнік запрошаны ў арганізацыю"
       ],
       "No addresses exist": [
         "Няма адрасоў"
@@ -3766,6 +3966,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "У вашай арганізацыі існуюць іншыя ўліковыя запісы са статусам адміністратар. Вы адказваеце за тое, каб паведаміць ім новы пароль."
+      ],
+      "password": [
+        "пароль"
       ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
@@ -3941,11 +4144,41 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
+      "Session Ended": [
+        "Сеанс завершаны"
+      ],
+      "Session Roaming": [
+        "Блукаючы сеанс"
+      ],
+      "Session Started": [
+        "Сеанс запушчаны"
+      ],
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
+      ],
+      "Share Created": [
+        "Абагульванне створана"
+      ],
+      "Share Deleted": [
+        "Абагульванне выдалена"
+      ],
+      "Share Updated": [
+        "Абагульванне абноўлена"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Абагульванне ${ vaultLink } выдалена"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Абагульванне ${ vaultLink } абноўлена"
+      ],
+      "Shared vault deleted": [
+        "Абагуленае сховішча выдалена"
+      ],
+      "Shared vault updated": [
+        "Абагуленае сховішча абноўлена"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увайдзіце ў ${ MAIL_APP_NAME }, каб актываваць свой адрас"
@@ -4015,6 +4248,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Уліковыя даныя ад вашага пастаўшчыка пасведчанняў будуць выдалены."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
       ],
       "The following address is invalid.": [
         "Наступны адрас з'яўляецца памылковым.",
@@ -4181,6 +4420,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальны ідэнтыфікатар згенерыраваны вашым пастаўшчыком пасведчанняў. Звычайна ён уяўляе сабой URL-адрас, які ўключае назву вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Невядомы тып падзеі"
+      ],
       "Unsaved changes": [
         "Незахаваныя змены"
       ],
@@ -4214,8 +4456,32 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
+      "username": [
+        "імя карыстальніка"
+      ],
       "Users": [
         "Карыстальнікі"
+      ],
+      "Vault created": [
+        "Сховішча створана"
+      ],
+      "Vault Created": [
+        "Сховішча створана"
+      ],
+      "Vault deleted": [
+        "Сховішча выдалена"
+      ],
+      "Vault Deleted": [
+        "Сховішча выдалена"
+      ],
+      "Vault shared with email": [
+        "Сховішча абаагулена з электроннай поштай"
+      ],
+      "Vault updated": [
+        "Сховішча абноўлена"
+      ],
+      "Vault Updated": [
+        "Сховішча абноўлена"
       ],
       "Verification can take a few minutes.": [
         "Праверка можа заняць некалькі хвілін."
@@ -4294,6 +4560,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы адправім новы праверачны код на ${ strong }"
+      ],
+      "Week": [
+        "Тыдзень"
       ],
       "Welcome": [
         "Вітаем"
@@ -5303,6 +5572,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Ваша падпіска завяршылася. ${ cta } і пазбегнуць страты даных."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Уключыць ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6395,6 +6669,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } было адключана"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } было ўключана"
+      ],
       "A disabled address cannot be default": [
         "Адключаны адрас не можа быць прадвызначаным"
       ],
@@ -6403,6 +6683,9 @@
       ],
       "Invalid code": [
         "Памылковы код"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Памылкова ўведзеныя даныя. Шукайце электронную пошту або IP-адрас."
       ],
       "IP Address copied to clipboard": [
         "IP-адрас скапіяваны ў буфер абмену"
@@ -6905,6 +7188,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "напрыклад, https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Напрыклад, "
+      ],
+      "Email or IP": [
+        "Электронная пошта або IP"
+      ],
+      "End date": [
+        "Дата завяршэння"
+      ],
       "Feedback": [
         "Зваротная сувязь"
       ],
@@ -6943,6 +7235,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
+      ],
+      "Start date": [
+        "Дата пачатку"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -7172,6 +7467,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL-адрас злучальніка SCIM, якому ваш агент забеспячэння IdP перасылае даныя SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлены ${ name } і 1 іншая патэнцыяльная ўцечка. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ]
     },
     "Select file": {
@@ -8774,10 +9083,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -8815,6 +9124,9 @@
       ],
       "Confirm phone number": [
         "Пацвердзіць нумар тэлефона"
+      ],
+      "Connection events": [
+        "Падзеі падключэння"
       ],
       "Contact us": [
         "Звязацца з намі"
@@ -8966,6 +9278,9 @@
       "Error": [
         "Памылка"
       ],
+      "Event": [
+        "Падзея"
+      ],
       "Every member of the organization can access": [
         "Кожны ўдзельнік арганізацыі будзе мець доступ"
       ],
@@ -8980,6 +9295,9 @@
       ],
       "Forgot recovery method": [
         "Забылі спосаб аднаўлення"
+      ],
+      "Gateway": [
+        "Шлюз"
       ],
       "Gateways": [
         "Шлюзы"
@@ -9017,6 +9335,9 @@
       "Main password": [
         "Галоўны пароль"
       ],
+      "Minicalendar": [
+        "Мінікаляндар"
+      ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
       ],
@@ -9052,6 +9373,9 @@
       ],
       "Organization name": [
         "Назва арганізацыі"
+      ],
+      "Origin": [
+        "Арыгінальны"
       ],
       "Password": [
         "Пароль"
@@ -9203,6 +9527,9 @@
       "Switch to two-password mode": [
         "Пераключыцца ў рэжым двух пароляў"
       ],
+      "Time": [
+        "Час"
+      ],
       "TV sign in": [
         "Увайсці на тэлевізары"
       ],
@@ -9229,6 +9556,9 @@
       ],
       "Upload your organization’s logo": [
         "Запампаваць лагатып вашай арганізацыі"
+      ],
+      "User": [
+        "Карыстальнік"
       ],
       "Users": [
         "Карыстальнікі"
@@ -9320,6 +9650,11 @@
       ],
       "Status": [
         "Статус"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Сёння"
       ]
     },
     "Tooltip": {

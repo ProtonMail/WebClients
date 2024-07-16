@@ -4,6 +4,26 @@
     "language": "ko_KO"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }에서 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "사용자의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "나만의 비밀번호 선택"
+      ],
+      "Clear filter": [
+        "필터 초기화"
+      ],
+      "Clear filters": [
+        "필터 초기화"
       ],
       "Close": [
         "닫기"
@@ -323,6 +349,9 @@
       "Next": [
         "다음"
       ],
+      "Next month": [
+        "다음 달"
+      ],
       "OK": [
         "확인"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "이전"
+      ],
+      "Previous month": [
+        "지난 달"
       ],
       "Recover data": [
         "데이터 복구"
@@ -743,7 +775,7 @@
         "파일과 사진을 보호하세요"
       ],
       "Secure your communications": [
-        "안전하게 소통하세요."
+        "안전하게 소통하세요"
       ]
     },
     "Assistant toggle": {
@@ -2240,6 +2272,9 @@
       "Please set a recovery phone number first": [
         "복원 전화번호를 먼저 설정해주세요."
       ],
+      "Please try again in a few moments.": [
+        "잠시 후 다시 시도하십시오."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "다중 사용자 지원을 이용하시려면 2명 이상의 사용자를 지원하는 비즈니스 플랜으로 업그레이드하세요"
       ],
@@ -3042,10 +3077,10 @@
         "${ userFound }명 사용자 찾음"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "국가 차원의 연결에는 ${ vpnPlus }가 필요해요."
+        "국가 수준의 접속에는 ${ vpnPlus }가 필요합니다."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
-        "Secure Core 기능에는 ${ vpnPlus }가 필요해요."
+        "Secure Core 기능은 ${ vpnPlus }가 필요합니다."
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } / 개월)"
@@ -3118,6 +3153,9 @@
       ],
       "Affected user is on row": [
         "영향받는 사용자 목록"
+      ],
+      "All Events ": [
+        "모든 이벤트 "
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
@@ -3212,6 +3250,9 @@
       "Can’t access your recovery phone?": [
         "복구 전화번호에 접근할 수 없나요?"
       ],
+      "Change your password": [
+        "비밀번호를 변경하십시오"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
@@ -3269,10 +3310,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -3347,6 +3388,9 @@
       "Edit email address": [
         "이메일 주소 변경"
       ],
+      "email": [
+        "이메일"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "10개 사용자 지정 이메일 도메인 호스팅이 무료로 포함되어 있습니다. 추가적인 도메인이 ${ price } 으로 추가할 수 있습니다."
       ],
@@ -3419,6 +3463,9 @@
       "Fill in user details": [
         "사용자 세부 정보를 입력하세요"
       ],
+      "finance": [
+        "금융정보"
+      ],
       "for choosing ${ product }": [
         "${ product }을(를) 선택해 주셔서 진심으로 감사드립니다."
       ],
@@ -3442,6 +3489,9 @@
       ],
       "here": [
         "여기"
+      ],
+      "High Priority": [
+        "중요도 높음"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "인증 주장에 서명하기 위한 신원 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 다운로드하거나 복사할 수 있는 장소가 있어야 합니다. 텍스트 영역 입력란에 인증서 해시를 붙여넣기만 하면 됩니다."
@@ -3516,7 +3566,7 @@
         "이메일 인증을 통해 계정 보안을 한차원 더 끌어올리세요."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "선택한 국가의 임의 서버에 연결하기 위해 국가 구성 파일을 설치해요."
+        "선택한 국가의 무작위 서버에 접속하려면 국가 설정 파일을 설치하세요."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
         "세 개의 무료 위치 중 하나에 있는 특정 서버에 연결하려면 무료 서버 구성 파일을 설치하세요."
@@ -3525,7 +3575,7 @@
         "VPN 엔드포인트 손상에 대한 추가 보호를 구성하려면 Secure Core 구성 파일을 설치하세요."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "서버 구성 파일을 설치하여 선택한 국가의 특정 서버에 연결해요."
+        "선택한 국가의 특정 서버에 연결하려면 서버 구성 파일을 설치하세요."
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -3535,6 +3585,72 @@
       ],
       "Internet connection restored.": [
         "인터넷 연결이 복원되었습니다."
+      ],
+      "Invite Accepted": [
+        "초대를 수락했습니다"
+      ],
+      "Invite Created": [
+        "초대를 생성했습니다"
+      ],
+      "Invite deleted": [
+        "초대 삭제됨"
+      ],
+      "Invite Deleted": [
+        "초대를 삭제했습니다"
+      ],
+      "Invite for organization accepted": [
+        "조직에 대한 초대가 수락되었습니다."
+      ],
+      "Invite for organization created": [
+        "조직에 대한 초대가 생성되었습니다."
+      ],
+      "Invite rejected": [
+        "초대가 거부됨"
+      ],
+      "Invite Rejected": [
+        "초대를 거부했습니다"
+      ],
+      "Item Autofilled": [
+        "항목을 자동 입력했습니다"
+      ],
+      "Item autofilled in vault": [
+        "금고 내에 항목을 자동 완성했습니다."
+      ],
+      "Item Changed Flags": [
+        "항목의 플래그를 변경했습니다"
+      ],
+      "Item Created": [
+        "항목을 생성했습니다"
+      ],
+      "Item created in vault": [
+        "금고 내에 항목을 생성했습니다."
+      ],
+      "Item Deleted": [
+        "항목 삭제됨"
+      ],
+      "Item flags changed in vault": [
+        "금고의 항목 플래그가 변경되었습니다"
+      ],
+      "Item in vault untrashed": [
+        "금고의 항목이 복원되었습니다"
+      ],
+      "Item Read": [
+        "항목을 읽었습니다"
+      ],
+      "Item read in vault": [
+        "항목 내에 항목을 읽었습니다."
+      ],
+      "Item Trashed": [
+        "항목을 쓰레기통으로 보냈습니다"
+      ],
+      "Item Untrashed": [
+        "항목을 복원했습니다"
+      ],
+      "Item Updated": [
+        "항목을 업데이트했습니다"
+      ],
+      "Item updated in vault": [
+        "금고 내에 항목을 업데이트했습니다."
       ],
       "JCB logo": [
         "JCB 로고"
@@ -3575,6 +3691,9 @@
       "Loading...": [
         "불러오는 중..."
       ],
+      "Low Priority": [
+        "중요도 낮음"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
       ],
@@ -3590,11 +3709,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
+      "Medium Priority": [
+        "중요도 보통"
+      ],
       "Member": [
         "회원"
       ],
       "MM/YY": [
         "MM/YY"
+      ],
+      "Monitor accounts": [
+        "계정 모니터링"
       ],
       "Multi-user support not enabled.": [
         "멀티 유저 지원이 활성화되지 않았습니다."
@@ -3610,6 +3735,12 @@
       ],
       "Must start with a letter.": [
         "문자로 시작해야 합니다."
+      ],
+      "New User Invite Created": [
+        "새로운 사용자 초대를 생성했습니다"
+      ],
+      "New User Invite Deleted": [
+        "새로운 사용자 초대를 삭제했습니다"
       ],
       "No addresses exist": [
         "주소 없음"
@@ -3660,10 +3791,13 @@
         "전용 서버를 게이트웨이로 구성하고 어떤 구성원이 접근할 수 있는지 결정하세요."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
-        "조직에 다른 관리자가 있습니다. 새 비밀번호를 다른 관리자에게 전달해야 합니다."
+        "조직에 다른 관리자가 있습니다. 당신이 새로운 비밀번호를 전달하셔야 합니다."
       ],
       "P2P": [
         "P2P"
+      ],
+      "password": [
+        "비밀번호"
       ],
       "Password copied to clipboard": [
         "비밀번호 복사됨"
@@ -3839,6 +3973,21 @@
       "Setting up your organization": [
         "조직을 설정하세요"
       ],
+      "Share Created": [
+        "공유를 생성했습니다"
+      ],
+      "Share Deleted": [
+        "공유를 삭제했습니다"
+      ],
+      "Share Updated": [
+        "공유를 업데이트했습니다"
+      ],
+      "Shared vault deleted": [
+        "공유 금고를 삭제했습니다"
+      ],
+      "Shared vault updated": [
+        "공유 금고를 업데이트했습니다"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
       ],
@@ -3904,6 +4053,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "ID 제공자가 제공한 크리덴셜 정보가 삭제됩니다."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "다운로드 횟수에는 실제 다운로드와 파일을 미리보는 경우도 포함됩니다."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "암호화된 데이터가 데이터의 보안을 보장하는 암호화 및 서명의 오버헤드로 인해 약간 더 큽니다."
       ],
       "The following address is invalid.": [
         "다음 주소가 유효하지 않습니다."
@@ -4061,6 +4216,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID 공급자에 의해 생성된 고유 ID는 일반적으로 ID 공급자의 이름이 포함된 URL의 형태입니다. (예: e.g. https://idp.example.com/XXXXX)"
       ],
+      "Unknown event type": [
+        "알 수 없는 이벤트 유형"
+      ],
       "Unsaved changes": [
         "저장되지 않은 변경 사항"
       ],
@@ -4094,8 +4252,32 @@
       "User activated": [
         "사용자 활성화됨"
       ],
+      "username": [
+        "사용자 이름"
+      ],
       "Users": [
         "사용자"
+      ],
+      "Vault created": [
+        "금고를 생성했습니다"
+      ],
+      "Vault Created": [
+        "금고를 생성했습니다"
+      ],
+      "Vault deleted": [
+        "금고를 삭제했습니다"
+      ],
+      "Vault Deleted": [
+        "금고를 지웠습니다"
+      ],
+      "Vault shared with email": [
+        "이메일로 공유한 금고"
+      ],
+      "Vault updated": [
+        "금고를 업데이트했습니다"
+      ],
+      "Vault Updated": [
+        "금고 업데이트됨"
       ],
       "Verification can take a few minutes.": [
         "인증은 몇 분이 걸릴 수 있습니다."
@@ -4174,6 +4356,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } 에 새 인증 코드를 보내드려요."
+      ],
+      "Week": [
+        "주"
       ],
       "Welcome": [
         "환영합니다"
@@ -5147,6 +5332,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "구독이 종료되었습니다. 데이터 접근 권한 상실 방지를 위해 ${ cta }."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "${ reason } 활성화"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6170,6 +6360,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason }이(가) 비활성화 되었습니다."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason }이(가) 활성화 되었습니다."
+      ],
       "A disabled address cannot be default": [
         "비활성된 주소를 기본으로 할 수 없음"
       ],
@@ -6178,6 +6374,9 @@
       ],
       "Invalid code": [
         "잘못된 코드입니다."
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "유효하지 않은 입력임. 이메일 및 IP 주소를 검색해 보세요."
       ],
       "IP Address copied to clipboard": [
         "IP 주소를 클립보드에 복사했습니다."
@@ -6686,6 +6885,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "예시: https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "예, "
+      ],
+      "Email or IP": [
+        "이메일 또는 IP"
+      ],
+      "End date": [
+        "종료일"
+      ],
       "Feedback": [
         "의견"
       ],
@@ -6724,6 +6932,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
+      ],
+      "Start date": [
+        "시작일"
       ],
       "yourdomain.com": [
         "yourdomain.com"
@@ -6944,6 +7155,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "IdP 프로비저닝 에이전트가 SCIM 데이터를 전달하는 SCIM 커넥터의 URL"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name }과 하나의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "잠재적인 ${ name } 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "회원님의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하십시오. ${ link }"
       ]
     },
     "Select file": {
@@ -8426,11 +8651,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -8612,6 +8837,9 @@
       "Error": [
         "오류"
       ],
+      "Event": [
+        "이벤트"
+      ],
       "Every member of the organization can access": [
         "모든 조직의 구성원이 사용할 수 있습니다."
       ],
@@ -8659,6 +8887,9 @@
       ],
       "Main password": [
         "기본 비밀번호"
+      ],
+      "Minicalendar": [
+        "간편 캘린더"
       ],
       "Multi-user support": [
         "다중 사용자 지원"
@@ -8843,6 +9074,9 @@
       "Switch to two-password mode": [
         "이중 비밀번호 모드로 전환"
       ],
+      "Time": [
+        "시간"
+      ],
       "TV sign in": [
         "TV 로그인"
       ],
@@ -8869,6 +9103,9 @@
       ],
       "Upload your organization’s logo": [
         "조직의 로고를 업로드하세요"
+      ],
+      "User": [
+        "사용자"
       ],
       "Users": [
         "사용자"
@@ -8960,6 +9197,11 @@
       ],
       "Status": [
         "상태"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "오늘"
       ]
     },
     "Tooltip": {
