@@ -8,3 +8,4 @@ export * from './mockUseAddressKeys';
 export * from './mockUseAddresses';
 export * from './mockUseAuthentication';
 export * from './mockUseOrganization';
+export * from './mockUseConfig';
