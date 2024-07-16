@@ -3,23 +3,20 @@ import { c } from 'ttag';
 import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MessageChange } from '../Composer';
 import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';
 
 interface Props {
     isPassword: boolean;
-    onChange: MessageChange;
     onPassword: () => void;
+    onRemoveOutsideEncryption: () => void;
 }
 
-const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) => {
+const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPassword }: Props) => {
     const { Shortcuts } = useMailModel('MailSettings');
 
     const titleEncryption = Shortcuts ? (
@@ -31,22 +28,6 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
     ) : (
         c('Title').t`External encryption`
     );
-
-    const handleRemoveOutsideEncryption = () => {
-        onChange(
-            (message) => ({
-                data: {
-                    Flags: clearBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
-                    Password: undefined,
-                    PasswordHint: undefined,
-                },
-                draftFlags: {
-                    expiresIn: undefined,
-                },
-            }),
-            true
-        );
-    };
 
     if (isPassword) {
         return (
@@ -73,7 +54,7 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap items-center color-danger"
-                    onClick={handleRemoveOutsideEncryption}
+                    onClick={onRemoveOutsideEncryption}
                     data-testid="composer:remove-outside-encryption"
                 >
                     <Icon name="trash" />

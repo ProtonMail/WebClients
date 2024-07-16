@@ -7,6 +7,8 @@ import { Href } from '@proton/atoms/Href';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon, Tooltip } from '@proton/components/components';
 import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
+import { useSpotlightOnFeature } from '@proton/components/hooks';
+import { FeatureCode } from '@proton/features';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { OpenedAssistantStatus, PartialRefineAction, RefineAction } from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
@@ -22,7 +24,7 @@ import useComposerAssistantSelectedText from 'proton-mail/hooks/assistant/useCom
 import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
 
 import useComposerAssistantPosition from '../../hooks/assistant/useComposerAssistantPosition';
-import AssitantFeedbackModal from './modals/AssistantFeedbackModal';
+import AssistantFeedbackModal from './modals/AssistantFeedbackModal';
 import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';
 
 import './ComposerAssistant.scss';
@@ -33,7 +35,6 @@ interface Props {
     composerContentRef: RefObject<HTMLElement>;
     composerContainerRef: RefObject<HTMLElement>;
     composerMetaRef: RefObject<HTMLElement>;
-    isAssistantInitialSetup?: boolean;
     selectedText: string;
     onUseRefinedText: (value: string) => void;
     getContentBeforeBlockquote: () => string;
@@ -41,6 +42,7 @@ interface Props {
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
     recipients: Recipient[];
     sender: Recipient | undefined;
+    preventAutofocus?: boolean;
 }
 
 export type ReplacementStyle = 'generateFullMessage' | 'refineFullMessage' | 'refineSelectedText' | undefined;
@@ -50,7 +52,6 @@ const ComposerAssistant = ({
     composerContainerRef,
     composerContentRef,
     composerMetaRef,
-    isAssistantInitialSetup,
     onUseGeneratedText,
     onUseRefinedText,
     selectedText: inputSelectedText,
@@ -59,7 +60,9 @@ const ComposerAssistant = ({
     setInnerModal,
     recipients,
     sender,
+    preventAutofocus,
 }: Props) => {
+    const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight);
     const [result, setResult] = useState('');
     const [replacementStyle, setReplacementStyle] = useState<ReplacementStyle>(
         inputSelectedText ? 'refineSelectedText' : undefined
@@ -261,6 +264,10 @@ const ComposerAssistant = ({
         };
     }, []);
 
+    const onInputClicked = () => {
+        assistantSpotlight.onClose();
+    };
+
     return (
         <div
             className={clsx([
@@ -303,7 +310,6 @@ const ComposerAssistant = ({
                         expanded={isAssistantExpanded}
                         getContentBeforeBlockquote={getContentBeforeBlockquote}
                         hasSelection={selectedText ? selectedText.length > 0 : false}
-                        isAssistantInitialSetup={isAssistantInitialSetup}
                         resetRequestRef={resetRequestRef}
                         setReplacementStyle={setReplacementStyle}
                         onClickRefine={handleClickRefine}
@@ -317,6 +323,8 @@ const ComposerAssistant = ({
                         setInnerModal={setInnerModal}
                         recipients={recipients}
                         sender={sender}
+                        preventAutofocus={preventAutofocus}
+                        onInputClicked={onInputClicked}
                     />
                 </div>
                 <div className="flex-1 flex flex-nowrap flex-column">
@@ -364,7 +372,7 @@ const ComposerAssistant = ({
                             >
                                 {c('Action').t`Use this`}
                             </Button>
-                            <AssitantFeedbackModal
+                            <AssistantFeedbackModal
                                 disabled={!result || isGeneratingResult}
                                 result={result}
                                 prompt={submittedPrompt}

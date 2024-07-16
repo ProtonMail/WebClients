@@ -3,16 +3,27 @@ import { MutableRefObject, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { EditorMetadata, FeatureCode, Icon, Tooltip, useFeature, useUserSettings } from '@proton/components';
+import {
+    EditorMetadata,
+    FeatureCode,
+    Icon,
+    Tooltip,
+    useActiveBreakpoint,
+    useFeature,
+    useSpotlightOnFeature,
+    useUserSettings,
+} from '@proton/components';
 import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { hasFlag } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { useComposerAssistantProvider } from 'proton-mail/components/assistant/provider/ComposerAssistantProvider';
+import ComposerAssistantSpotlight from 'proton-mail/components/assistant/spotlights/ComposerAssistantSpotlight';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { MessageState } from '../../../../store/messages/messagesTypes';
@@ -50,7 +61,6 @@ interface Props {
     opening: boolean;
     syncInProgress: boolean;
     showAssistantButton: boolean;
-    disableAssistant: boolean;
     onToggleAssistant: () => void;
 }
 
@@ -77,9 +87,10 @@ const ComposerActions = ({
     syncInProgress,
     canScheduleSend,
     showAssistantButton,
-    disableAssistant,
     onToggleAssistant,
 }: Props) => {
+    const { viewportWidth } = useActiveBreakpoint();
+    const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight);
     const disabled = opening;
     const [{ AIAssistantFlags }] = useUserSettings();
     const { feature: numAttachmentsWithoutEmbeddedFeature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
@@ -108,7 +119,12 @@ const ComposerActions = ({
         return getIsAssistantOpened(openedAssistants, composerID);
     }, [composerID, openedAssistants]);
 
+    const isSmallViewport = viewportWidth['<=small'];
+
     const handleToggleAssistant = () => {
+        if (assistantSpotlight.show) {
+            assistantSpotlight.onClose();
+        }
         if (!isAssistantOpened && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             if (!hasCompatibleHardware) {
                 displayAssistantModal('incompatibleHardware');
@@ -129,6 +145,26 @@ const ComposerActions = ({
         onToggleAssistant();
         sendShowAssistantReport();
     };
+
+    const handleRemoveOutsideEncryption = () => {
+        onChange(
+            (message) => ({
+                data: {
+                    Flags: clearBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                    Password: undefined,
+                    PasswordHint: undefined,
+                },
+                draftFlags: {
+                    expiresIn: undefined,
+                },
+            }),
+            true
+        );
+    };
+
+    const assistantTooltipText = (() => {
+        return !assistantSpotlight.show ? c('Action').t`${BRAND_NAME} Scribe writing assistant` : '';
+    })();
 
     return (
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
@@ -190,7 +226,13 @@ const ComposerActions = ({
                                 <Icon name="trash" alt={c('Action').t`Delete draft`} />
                             </Button>
                         </Tooltip>
-                        <ComposerPasswordActions isPassword={isPassword} onChange={onChange} onPassword={onPassword} />
+                        {!isSmallViewport && (
+                            <ComposerPasswordActions
+                                isPassword={isPassword}
+                                onPassword={onPassword}
+                                onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
+                            />
+                        )}
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton
                                 isAttachments={isAttachments}
@@ -202,29 +244,25 @@ const ComposerActions = ({
                         </Tooltip>
                         {showAssistantButton && (
                             <>
-                                <Tooltip
-                                    title={
-                                        disableAssistant
-                                            ? c('Info').t`Only one writing assistant may be be open at a time`
-                                            : c('Action').t`${BRAND_NAME} Scribe writing assistant`
-                                    }
-                                >
+                                <Tooltip title={assistantTooltipText}>
                                     <div>
-                                        <Button
-                                            icon
-                                            disabled={disabled || disableAssistant}
-                                            onClick={handleToggleAssistant}
-                                            shape="ghost"
-                                            data-testid="composer:use-assistant-button"
-                                            aria-expanded={isAssistantOpened}
-                                            className="hidden sm:flex sm:mx-2"
-                                        >
-                                            <Icon
-                                                name="pen-sparks"
-                                                alt={c('Action').t`Your email writing assistant`}
-                                                style={{ color: '#D132EA' }}
-                                            />
-                                        </Button>
+                                        <ComposerAssistantSpotlight {...assistantSpotlight}>
+                                            <Button
+                                                icon
+                                                disabled={disabled}
+                                                onClick={handleToggleAssistant}
+                                                shape="ghost"
+                                                data-testid="composer:use-assistant-button"
+                                                aria-expanded={isAssistantOpened}
+                                                className="flex sm:mx-2"
+                                            >
+                                                <Icon
+                                                    name="pen-sparks"
+                                                    alt={c('Action').t`Your email writing assistant`}
+                                                    style={{ color: '#D132EA' }}
+                                                />
+                                            </Button>
+                                        </ComposerAssistantSpotlight>
                                     </div>
                                 </Tooltip>
                             </>
@@ -238,6 +276,10 @@ const ComposerActions = ({
                             editorActionsRef={editorActionsRef}
                             editorMetadata={editorMetadata}
                             onChange={onChange}
+                            showExternalEncryption={isSmallViewport}
+                            isPassword={isPassword}
+                            onPassword={onPassword}
+                            onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
                         />
                     </div>
                     <div className="flex-1 flex pr-4">
