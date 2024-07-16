@@ -1,17 +1,24 @@
 import DOMPurify from 'dompurify';
 
-DOMPurify.addHook('afterSanitizeAttributes', (node) => {
+const addRelNoopenerAndTargetBlank = (node: Element) => {
     if (node.tagName === 'A') {
         node.setAttribute('rel', 'noopener noreferrer');
         node.setAttribute('target', '_blank');
     }
-});
+};
 
 export const restrictedCalendarSanitize = (source: string) => {
-    return DOMPurify.sanitize(source, {
+    DOMPurify.clearConfig();
+    DOMPurify.addHook('afterSanitizeAttributes', addRelNoopenerAndTargetBlank);
+
+    const sanitizedContent = DOMPurify.sanitize(source, {
         ALLOWED_TAGS: ['a', 'b', 'em', 'br', 'i', 'u', 'ul', 'ol', 'li', 'span', 'p'],
         ALLOWED_ATTR: ['href'],
     });
+
+    DOMPurify.removeHook('afterSanitizeAttributes');
+
+    return sanitizedContent;
 };
 
 export const stripAllTags = (source: string) => {
