@@ -1911,6 +1911,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Establezca un método de recuperación para evitar pérdida de acceso a la cuenta."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -2707,6 +2710,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
@@ -7935,6 +7941,9 @@
       ],
       "Select link expiration time": [
         "Seleccione la hora de expiración del enlace"
+      ],
+      "Set recovery phrase": [
+        "Establecer frase de recuperación"
       ],
       "Settings": [
         "Ajustes"
