@@ -11,9 +11,12 @@ import type {
 } from '@proton/andromeda';
 import { useGetAddresses } from '@proton/components/hooks/useAddresses';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useGetOrganization } from '@proton/components/hooks/useOrganization';
 import { useUser } from '@proton/components/hooks/useUser';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
+import { getClientID } from '@proton/shared/lib/apps/helper';
+import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 
 import { WalletType } from '..';
@@ -41,18 +44,24 @@ let wasm: typeof import('@proton/andromeda');
  * Note:
  * - For now we create a new wallet for any user without one. Later a field will be introduced by the API so that we can filter only user that never had a wallet
  */
-export const useWalletAutoCreate = (
-    { higherLevelPilot = true, configUrl = '' }: { higherLevelPilot?: boolean; configUrl: string } = { configUrl: '' }
-) => {
+export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPilot?: boolean }) => {
     const getUserKeys = useGetUserKeys();
     const getOrganization = useGetOrganization();
     const getAddresses = useGetAddresses();
+    const config = useConfig();
 
     const [user] = useUser();
     const authentication = useAuthentication();
 
     const getWalletApi = async () => {
-        return new wasm.WasmProtonWalletApiClient(authentication.UID, window.location.origin, configUrl).clients();
+        const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
+        return new wasm.WasmProtonWalletApiClient(
+            appVersion,
+            navigator.userAgent,
+            authentication.UID,
+            window.location.origin,
+            config.API_URL
+        ).clients();
     };
 
     const defaultScriptType = () => wasm.WasmScriptType.NativeSegwit;

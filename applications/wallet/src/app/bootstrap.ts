@@ -12,9 +12,11 @@ import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guest
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
+import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -56,7 +58,14 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                   })
                 : undefined) || (await bootstrap.loadSession({ authentication, api, pathname, searchParams }));
 
-        const walletApi = new WasmProtonWalletApiClient(authentication.UID, window.location.origin, config.API_URL);
+        const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
+        const walletApi = new WasmProtonWalletApiClient(
+            appVersion,
+            navigator.userAgent,
+            authentication.UID,
+            window.location.origin,
+            config.API_URL
+        );
 
         const history = bootstrap.createHistory({ sessionResult, pathname });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });

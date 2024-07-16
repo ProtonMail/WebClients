@@ -8,6 +8,7 @@ import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     IWasmApiWalletData,
+    bitcoinUnitChange,
     encryptWalletDataWithWalletKey,
     useUserWalletSettings,
     useWalletApiClients,
@@ -17,7 +18,6 @@ import {
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
 import { useWalletDispatch } from '../../store/hooks';
-import { userWalletSettingsChange } from '../../store/slices/userWalletSettings';
 import { getThemeForWallet } from '../../utils';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAccount?: () => void) => {
@@ -94,7 +94,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
                     await api.settings.setBitcoinUnit(bitcoinUnit);
 
                     dispatch(
-                        userWalletSettingsChange({
+                        bitcoinUnitChange({
                             bitcoinUnit,
                         })
                     );

@@ -2,22 +2,37 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { ModalOwnProps, Prompt } from '@proton/components/components';
+import { useNotifications } from '@proton/components/index';
+import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import walletPlaneImg from '@proton/styles/assets/img/illustrations/wallet-sending-plane.svg';
+import { acceptTermsAndConditions, useWalletApiClients } from '@proton/wallet';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { APP_NAME } from '../../config';
-
-interface Props extends ModalOwnProps {
-    onAcceptConditions: () => void;
-}
+import { useWalletDispatch } from '../../store/hooks';
 
 const termsLink = `${getAppStaticUrl(APP_NAME)}/legal/terms`;
 
-export const WalletTermsAndConditionsPrompt = ({ onAcceptConditions, ...modalProps }: Props) => {
-    const termsAndConditionsLink = <Href className="" href={termsLink}>{c('Wallet T&C Link').t`(${termsLink})`}</Href>;
+export const WalletTermsAndConditionsPrompt = ({ ...modalProps }: ModalOwnProps) => {
+    const walletApi = useWalletApiClients();
+    const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+    const dispatch = useWalletDispatch();
+
+    const handleAcceptConditions = async () => {
+        try {
+            await walletApi.settings.acceptTermsAndConditions();
+            createNotification({ text: c('Wallet terms and conditions').t`Terms and conditions were accepted` });
+            dispatch(acceptTermsAndConditions());
+        } catch (e) {
+            createNotification({ text: c('Wallet terms and conditions').t`Could not accept terms and conditions` });
+        }
+    };
+
+    const termsAndConditionsLink = <Href className="" href={termsLink}>{`(${termsLink})`}</Href>;
 
     return (
         <Prompt
@@ -32,7 +47,10 @@ export const WalletTermsAndConditionsPrompt = ({ onAcceptConditions, ...modalPro
                     color="norm"
                     shadow
                     className="block"
-                    onClick={modalProps.onClose}
+                    disabled={loading}
+                    onClick={() => {
+                        void withLoading(handleAcceptConditions());
+                    }}
                 >{c('Wallet').t`Continue`}</Button>
             }
             {...modalProps}

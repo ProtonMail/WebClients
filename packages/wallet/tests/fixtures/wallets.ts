@@ -28,6 +28,7 @@ export const getMockedWallet = (mocked?: Partial<WasmWallet>): WasmWallet => {
         getTransaction: vi.fn().mockResolvedValue(() => ({}) as WasmTransactionDetails),
         discoverAccounts: vi.fn().mockResolvedValue([]),
         getFingerprint: vi.fn(() => ''),
+        clearStore: vi.fn(),
         free: vi.fn(),
         ...mocked,
     };
@@ -51,6 +52,7 @@ export const getMockedWasmAccount = (mocked?: Partial<WasmAccount>): WasmAccount
         getTransactions: vi.fn().mockResolvedValue([]),
         getTransaction: vi.fn().mockResolvedValue({} as WasmTransactionDetails),
         insertUnconfirmedTransaction: vi.fn(),
+        clearStore: vi.fn(),
         ...mocked,
     };
 };
