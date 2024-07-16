@@ -48,6 +48,7 @@ import type {
 } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
 export const draftDiscard = createAction('draft::discard', (payload: DraftBase) => withThrottledCache({ payload }));
@@ -539,6 +540,7 @@ export const itemHistoryFailure = createAction(
 
 export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-link::get')({
     requestId: secureLinksGetRequest,
+    success: { config: { maxAge: UNIX_MINUTE } },
 });
 
 export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
