@@ -1,9 +1,17 @@
 @import '~@proton/styles/scss/lib';
 
 .card-plan {
+	--card-box-shadow-color1: rgb(205 79 232 / 0.28);
+	--card-box-shadow-color2: rgb(108 73 254 / 0.3);
+	--card-box-shadow-color3: rgb(246 198 146 / 0.3);
+	--card-box-shadow-color4: rgb(172 154 246 / 0.3);
 	--card-background: var(--background-norm); // can't use opacity because some issues with card borders
 	--card-transition: background-color 0.2s ease, border 0.2s ease, opacity 0.2s ease, color 0.2s ease,
 		box-shadow 0.4s ease, transform 0.4s ease;
+
+	background-color: var(--card-background);
+	transition: var(--card-transition);
+	outline: none;
 
 	&-highlight {
 		&#{&} {
@@ -44,15 +52,6 @@
 			}
 		}
 	}
-
-	background-color: var(--card-background);
-	transition: var(--card-transition);
-	outline: none;
-
-	--card-box-shadow-color1: rgb(205 79 232 / 0.28);
-	--card-box-shadow-color2: rgb(108 73 254 / 0.3);
-	--card-box-shadow-color3: rgb(246 198 146 / 0.3);
-	--card-box-shadow-color4: rgb(172 154 246 / 0.3);
 
 	&::after,
 	&::before {

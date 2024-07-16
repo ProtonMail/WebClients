@@ -1,5 +1,7 @@
 // Add the screen size inside a pseudo element on <body> to be read in useActiveBreakpoint in React
 body::before {
+	display: none;
+
 	@each $screeSize,
 		$query
 			in (
@@ -15,6 +17,4 @@ body::before {
 			content: '#{$screeSize}';
 		}
 	}
-
-	display: none;
 }

@@ -16,13 +16,6 @@ $field-container: rem(260) !default;
 .field {
 	block-size: rem($default-height-fields);
 	min-block-size: rem($default-height-fields); // To ensure minimum size when overriding block-size to 'auto'
-
-	@at-root {
-		details & {
-			block-size: auto; // crazy chrome bug in details (share drive modal)
-		}
-	}
-
 	padding-inline: em(16);
 	padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
 	border-radius: var(--border-radius-md);
@@ -34,6 +27,12 @@ $field-container: rem(260) !default;
 	transition:
 		0.15s easing(ease-out-quint),
 		visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
+
+	@at-root {
+		details & {
+			block-size: auto; // crazy chrome bug in details (share drive modal)
+		}
+	}
 
 	@include media('<=xsmall') {
 		padding-inline: em(8);
