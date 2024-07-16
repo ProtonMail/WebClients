@@ -199,14 +199,13 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 	&-percentage {
 		inset-inline-start: 50%;
 		transform: translateX(-50%) translateY(-50%);
+		white-space: nowrap;
+		border-radius: 1em;
+		z-index: 1;
 
 		[dir='rtl'] & {
 			transform: translateX(50%) translateY(-50%);
 		}
-
-		white-space: nowrap;
-		border-radius: 1em;
-		z-index: 1;
 	}
 
 	&-most-popular {

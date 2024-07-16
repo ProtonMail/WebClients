@@ -5,6 +5,9 @@
 
 .sign-layout {
 	transform: translateZ(0); // to be rendered by GPU
+	// main content
+	transition: max-inline-size 0.15s easing(ease-in);
+	border-radius: var(--border-radius-lg);
 
 	&-main-header {
 		display: flex;
@@ -71,10 +74,6 @@
 	.h1 {
 		font-weight: var(--font-weight-bold); // design request
 	}
-
-	// main content
-	transition: max-inline-size 0.15s easing(ease-in);
-	border-radius: var(--border-radius-lg);
 
 	@include media('>small') {
 		min-block-size: rem(390); // value to keep back button centered when > mobile breakpoint

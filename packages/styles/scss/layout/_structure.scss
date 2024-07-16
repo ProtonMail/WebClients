@@ -143,14 +143,14 @@ html,
 
 		&[data-expanded='false'] {
 			transform: translateX(-100%);
+			visibility: hidden;
+			transition-delay: 0.25s, 0s;
+
 			@at-root {
 				[dir='rtl'] & {
 					transform: translateX(100%);
 				}
 			}
-
-			visibility: hidden;
-			transition-delay: 0.25s, 0s;
 		}
 
 		&[aria-hidden='true'] {
