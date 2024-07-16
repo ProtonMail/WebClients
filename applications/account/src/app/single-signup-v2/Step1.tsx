@@ -388,16 +388,17 @@ const Step1 = ({
         </div>
     );
 
-    const audienceTabs = hasPlanSelector ? (
-        <AudienceTabs
-            audience={audience}
-            audiences={audiences}
-            onChangeAudience={(audience) => {
-                handleChangePlan({ [audience.defaultPlan]: 1 }, audience.defaultPlan);
-                history.push(audience.locationDescriptor);
-            }}
-        />
-    ) : undefined;
+    const audienceTabs =
+        hasPlanSelector && location.pathname !== SSO_PATHS.BUSINESS_SIGNUP ? (
+            <AudienceTabs
+                audience={audience}
+                audiences={audiences}
+                onChangeAudience={(audience) => {
+                    handleChangePlan({ [audience.defaultPlan]: 1 }, audience.defaultPlan);
+                    history.push(audience.locationDescriptor);
+                }}
+            />
+        ) : undefined;
 
     const boxWidth = { '--max-w-custom': planCards[audience].length === 4 && hasPlanSelector ? '74rem' : '57rem' };
 
