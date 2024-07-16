@@ -31,7 +31,9 @@ $toggle-width-button: em(24) !default;
 		transform: translateX(0);
 		border-radius: $toggle-width-button;
 		background-color: var(--field-norm);
-		transition: transform 0.25s easing(ease-out-back), background-color 0.25s easing(ease-out-cubic);
+		transition:
+			transform 0.25s easing(ease-out-back),
+			background-color 0.25s easing(ease-out-cubic);
 	}
 
 	&::after {
@@ -123,13 +125,12 @@ $toggle-width-button: em(24) !default;
 
 		&::before {
 			transform: translateX(#{$toggle-width - $toggle-width-button});
+			background-color: var(--interaction-norm);
 			@at-root {
 				[dir='rtl'] & {
 					transform: translateX(-#{$toggle-width - $toggle-width-button});
 				}
 			}
-
-			background-color: var(--interaction-norm);
 		}
 	}
 

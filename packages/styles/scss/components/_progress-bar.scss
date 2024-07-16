@@ -17,11 +17,11 @@
 }
 
 .progress-bar {
-	@include progress-bar-size;
-
 	background: var(--background-weak);
 	color: var(--signal-info);
 	appearance: none;
+
+	@include progress-bar-size;
 
 	&::-webkit-progress-bar {
 		background-color: var(--background-weak);

@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .dropzone {
@@ -19,6 +19,10 @@
 		}
 
 		&--transparent {
+			border: none;
+			border-radius: 0;
+			background-color: transparent;
+
 			&::before {
 				content: '';
 				position: absolute;
@@ -27,13 +31,12 @@
 				background-color: var(--background-norm);
 				z-index: -1; // We want the pseudo element to be behind the element to use it as a "transparent" background
 			}
-
-			border: none;
-			border-radius: 0;
-			background-color: transparent;
 		}
 
 		&--flashy {
+			border: 1px solid var(--primary);
+			color: var(--primary);
+
 			&::before {
 				content: '';
 				position: absolute;
@@ -43,9 +46,6 @@
 				border: inherit;
 				border-radius: inherit;
 			}
-
-			border: 1px solid var(--primary);
-			color: var(--primary);
 		}
 
 		&--white {

@@ -2,13 +2,13 @@
 	@extend .border-collapse;
 	@extend .border-none;
 
+	inline-size: 100%;
+
 	--table-border-color: var(--border-norm);
 
 	&--border-weak {
 		--table-border-color: var(--border-weak);
 	}
-
-	inline-size: 100%;
 
 	caption {
 		transform: scale(0);

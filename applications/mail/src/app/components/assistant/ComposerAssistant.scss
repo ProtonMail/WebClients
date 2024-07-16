@@ -4,6 +4,11 @@
 	// will need to taxonomise, left as exception ATM
 	--special-color: #d132ea;
 
+	position: relative;
+	block-size: 95%;
+	padding-inline: 1em;
+	padding-block: 0;
+
 	&-special-color {
 		color: var(--special-color);
 	}
@@ -40,11 +45,6 @@
 			block-size: calc(100% - 3.5em);
 		}
 	}
-
-	position: relative;
-	block-size: 95%;
-	padding-inline: 1em;
-	padding-block: 0;
 
 	// If hint is empty in field, add some margin to generated content
 	&:has(.composer-assistant-hint:empty) .text-pre-line {
