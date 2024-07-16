@@ -760,11 +760,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Reload": [
         "Neu laden"
@@ -1137,6 +1137,12 @@
       ],
       "Verify account": [
         "Konto verifizieren"
+      ],
+      "Verify code": [
+        "Code bestätigen"
+      ],
+      "Verify code again": [
+        "Code erneut bestätigen"
       ],
       "Verify domain": [
         "Domain verifizieren"
@@ -1538,6 +1544,14 @@
         "Wähle dein Jahresendangebot"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1559,14 +1573,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -4009,6 +4015,9 @@
       "Checkout expired, please try again": [
         "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal."
       ],
+      "Code wrong or not valid anymore": [
+        "Code falsch oder inzwischen verfallen"
+      ],
       "Condition incomplete": [
         "Bedingung unvollständig"
       ],
@@ -4085,6 +4094,9 @@
       ],
       "Folder name cannot be empty.": [
         "Name des Ordners kann nicht leer sein."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Kam es auf deinem Fernseher zu einer Zeitüberschreitung, klicke auf „Aktualisieren” auf deinem Fernseher und gib deinen Code erneut ein."
       ],
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
@@ -6721,11 +6733,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -6739,6 +6751,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
+      ],
+      "Disable recovery by ${ type }": [
+        "Wiederherstellung über ${ type } deaktivieren"
       ],
       "Discount": [
         "Rabatt"
@@ -7201,6 +7216,9 @@
       ],
       "Item deleted from ${ vaultLink }": [
         "Eintrag aus ${ vaultLink } gelöscht."
+      ],
+      "Item deleted from vault": [
+        "Eintrag aus Tresor gelöscht"
       ],
       "Item in vault untrashed": [
         "Eintrag in Tresor wiederhergestellt"
@@ -7923,8 +7941,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Das Dark Web ist ein verborgener Teil des Internets, in dem gestohlene persönliche Informationen, wie z. B. Identitäten, gekauft und verkauft werden können."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Die Anzahl der Downloads umfasst sowohl die tatsächlichen Downloads als auch die Fälle, in denen Dateien in der Vorschau angezeigt werden."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Der E-Mail-Verifizierungslink ist abgelaufen. Bitte melde dich an, um den Verifizierungslink erneut zu versenden."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Die verschlüsselten Daten sind aufgrund des Overheads der Verschlüsselung und der Signaturen, die die Sicherheit deiner Daten gewährleisten, etwas größer."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Die offengelegten Informationen wurden von einem Service eines Drittanbieters preisgegeben. Deine ${ BRAND_NAME } Kontoinformationen bleiben sicher und verschlüsselt. ${ learnMoreLink }"
@@ -8214,9 +8238,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Führe eine Abonnementaufwertung auf ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder ${ PLAN_NAMES[bundleProPlan] } durch um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
       ],
@@ -8297,6 +8318,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Verifizierung öffnet einen neuen Tab — bitte deaktiviere daher alle Pop-up-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Verifizierung der Karte verwendet wird, wird sofort zurückerstattet."
+      ],
+      "Verify ${ type }": [
+        "${ type } verifizieren"
       ],
       "Verify domain": [
         "Domain verifizieren"
@@ -8600,6 +8624,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du musst weiterhin auf Einladungen antworten, damit der Gastgeber deine Antwort sehen kann."
+      ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Du kannst den Nutzer zum Administrator machen, nach dem dieser die Einladung angenommen hat."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
@@ -9572,6 +9599,9 @@
       "Enter password": [
         "Passwort eingeben"
       ],
+      "Enter the code displayed on your TV": [
+        "Gib den auf deinem Fernseher angezeigten Code ein"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Gib das Passwort für den Schlüssel mit dem folgenden Fingerabdruck ein: ${ fingerprintCode }"
       ],
@@ -10525,9 +10555,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Werde ein Visionary und sei Teil der Geschichte von ${ BRAND_NAME }."
-      ],
-      "Limited time offer": [
-        "Zeitlich begrenztes Angebot"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10548,6 +10575,9 @@
       ],
       "for ${ price }": [
         "für ${ price }"
+      ],
+      "Limited time offer: **Get up to 35% off** yearly plans": [
+        "Zeitlich begrenztes Angebot: **Erhalte bis zu 35 % Rabatt** auf Jahresabos"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
@@ -10973,6 +11003,23 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -11000,23 +11047,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -12783,9 +12813,6 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-Dienste.${ br }Ein einfaches Abonnement."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Erstelle ein ${ PASS_APP_NAME }-Konto"
-      ],
       "Create your ${ BRAND_NAME } account": [
         "Erstelle dein ${ BRAND_NAME }-Konto"
       ],
@@ -12927,6 +12954,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "Payment Processing": [
+        "Zahlungsabwicklung"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
@@ -14562,6 +14592,9 @@
       "Extra storage and bonuses": [
         "Zusätzlicher Speicherplatz und Boni"
       ],
+      "Extra storage and users": [
+        "Zusätzlicher Speicherplatz und Benutzer"
+      ],
       "Have a question?": [
         "Du hast eine Frage?"
       ],
@@ -15389,11 +15422,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-all address": [
-        "Catch-all-Weiterleitungsadresse"
-      ],
       "Catch-All address": [
         "Catch-all-Adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -15582,6 +15615,9 @@
       ],
       "Details": [
         "Details"
+      ],
+      "Device connected!": [
+        "Gerät verbunden!"
       ],
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
@@ -15815,6 +15851,9 @@
       ],
       "Import failed": [
         "Import fehlgeschlagen"
+      ],
+      "Import groups": [
+        "Gruppen importieren"
       ],
       "Import key": [
         "Schlüssel importieren"
@@ -16200,6 +16239,9 @@
       ],
       "Track your referrals": [
         "Verfolge deine Empfehlungen"
+      ],
+      "TV sign in": [
+        "TV-Anmeldung"
       ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
@@ -16976,6 +17018,9 @@
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bitte beachte, dass ein Upgrade deines Kontos durch die Wahl dieser Zahlungsmethode nicht sofort durchgeführt werden kann. Wir werden dein Konto umstellen, sobald die Zahlung bei uns eingegangen ist."
+      ],
+      "Please update the extension to its latest version": [
+        "Bitte update die Erweiterung auf die aktuelle Version"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."

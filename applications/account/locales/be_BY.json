@@ -703,6 +703,9 @@
       "OK": [
         "Добра"
       ],
+      "Open": [
+        "Адкрыць"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
       ],
@@ -760,11 +763,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -1137,6 +1140,12 @@
       ],
       "Verify account": [
         "Праверыць уліковы запіс"
+      ],
+      "Verify code": [
+        "Праверыць код"
+      ],
+      "Verify code again": [
+        "Праверыць код яшчэ раз"
       ],
       "Verify domain": [
         "Праверыць дамен"
@@ -1549,6 +1558,14 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1570,14 +1587,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4040,6 +4049,9 @@
       "Checkout expired, please try again": [
         "Час завяршэння пакупкі пратэрмінаваны. Паспрабуйце яшчэ раз"
       ],
+      "Code wrong or not valid anymore": [
+        "Няправільны або пратэрмінаваны код"
+      ],
       "Condition incomplete": [
         "Няпоўная ўмова"
       ],
@@ -4120,6 +4132,9 @@
       ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Калі час на вашым тэлевізары завяршыўся, націсніце на ім кнопку \"Абнавіць\" і ўвядзіце код паўторна."
       ],
       "IMAP server is required": [
         "Патрабуецца ўвесці сервер IMAP"
@@ -5660,6 +5675,11 @@
         "Сэрвісы"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Адрас групы"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -6470,6 +6490,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
       ],
+      "Add a recovery ${ type }": [
+        "Дадаць аднаўленне ${ type }"
+      ],
       "Add a recovery email address": [
         "Дадаць адрас электроннай пошты для аднаўлення доступу"
       ],
@@ -6887,11 +6910,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -6907,6 +6930,9 @@
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза"
+      ],
+      "Disable recovery by ${ type }": [
+        "Адключыць аднаўленне ${ type }"
       ],
       "Discount": [
         "Скідка"
@@ -7389,10 +7415,10 @@
         "Сцягі элемента зменены ў сховішчы"
       ],
       "Item in ${ vaultLink } trashed": [
-        "Элемент са ${ vaultLink } перамешчаны ў сметніцу"
+        "Элемент у ${ vaultLink } перамешчаны ў сметніцу"
       ],
       "Item in ${ vaultLink } untrashed": [
-        "Элемент са ${ vaultLink } перамешчаны ў сховішча"
+        "Элемент у ${ vaultLink } перамешчаны ў сховішча"
       ],
       "Item in vault trashed": [
         "Элемент са сховішча перамешчаны ў сметніцу"
@@ -7973,6 +7999,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
       ],
+      "Session Ended": [
+        "Сеанс завершаны"
+      ],
+      "Session Roaming": [
+        "Блукаючы сеанс"
+      ],
+      "Session Started": [
+        "Сеанс запушчаны"
+      ],
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
@@ -8138,8 +8173,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Цёмная сетка - гэта схаваная частка інтэрнэту, дзе знаходзяцца скрадзеныя асабістыя звесткі, якія можна купіць або прадаць."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Тэрмін дзеяння спасылкі для праверкі электроннай пошты завяршыўся. Увайдзіце, каб адправіць яе яшчэ раз."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
@@ -8336,6 +8377,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Для пастаяннага доступу да вашага ўліковага запісу, задайце спосаб аднаўлення ўліковага запісу"
       ],
+      "To ensure highest possible security of your account": [
+        "Для забеспячэння вашаму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME } захоўвае старыя версіі вашых файлаў, калі вы і іншыя ўдзельнікі сумеснай працы ўносіце змены. Гэта гарантуе, што вы не страціце важныя даныя. Выберыце, як доўга ${ BRAND_NAME } павінен захоўваць папярэднюю версію."
       ],
@@ -8441,8 +8485,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Палепшыце да тарыфнага плана ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[bundleProPlan] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Палепшыце да тарыфнага плана ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[bundleProPlan] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
@@ -8524,6 +8568,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
+      ],
+      "Verify ${ type }": [
+        "Праверыць ${ type }"
       ],
       "Verify domain": [
         "Праверыць дамен"
@@ -9846,6 +9893,9 @@
       "Enter password": [
         "Увядзіце пароль"
       ],
+      "Enter the code displayed on your TV": [
+        "Увядзіце код, які вы бачыце на сваім тэлевізары"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Увядзіце пароль для ключа з адбіткам: ${ fingerprintCode }"
       ],
@@ -10809,11 +10859,14 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Атрымайце тарыфны план ${ plan }** на абмежаваны час!"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Атрымайце тарыфны план ${ plan }** для ранняга доступу да ${ appName }!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Набудзьце тарыфны план Visionary і станьце часткай гісторыі ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Прапанова абмежавана па часе"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11275,6 +11328,23 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11302,23 +11372,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -13156,8 +13209,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Стварыць уліковы запіс ${ PASS_APP_NAME }"
+      "Create a ${ appName } account": [
+        "Стварыце ўліковы запіс ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
@@ -15888,10 +15941,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -15944,6 +15997,9 @@
       ],
       "Connect ${ name }": [
         "Падключыць ${ name }"
+      ],
+      "Connection events": [
+        "Падзеі падключэння"
       ],
       "Contact us": [
         "Звязацца з намі"
@@ -16085,6 +16141,9 @@
       ],
       "Details": [
         "Падрабязнасці"
+      ],
+      "Device connected!": [
+        "Прылада падключана!"
       ],
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
@@ -16253,6 +16312,9 @@
       ],
       "Forward emails": [
         "Перасылка лістоў"
+      ],
+      "Gateway": [
+        "Шлюз"
       ],
       "Gateways": [
         "Шлюзы"
@@ -16427,6 +16489,9 @@
       ],
       "Organization name": [
         "Назва арганізацыі"
+      ],
+      "Origin": [
+        "Арыгінальны"
       ],
       "Other calendars": [
         "Іншыя календары"
@@ -16712,6 +16777,9 @@
       ],
       "Track your referrals": [
         "Сачэнне за рэферальнымі запрашэннямі"
+      ],
+      "TV sign in": [
+        "Увайсці на тэлевізары"
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
