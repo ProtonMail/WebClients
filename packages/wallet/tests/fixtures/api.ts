@@ -279,4 +279,5 @@ export const userWalletSettings: WasmUserSettings = {
     ReceiveEmailIntegrationNotification: null,
     ReceiveInviterNotification: null,
     WalletCreated: null,
+    AcceptTermsAndConditions: 0,
 };

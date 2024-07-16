@@ -20,7 +20,9 @@ interface ChecklistItemProps {
 }
 
 const ChecklistItem = ({ text, done, onClick, path }: ChecklistItemProps) => {
-    const containerClassname = 'bg-weak flex flex-row items-center py-5 px-6 color-primary cursor-pointer rounded-xl';
+    const containerClassname =
+        'bg-weak flex flex-row flex-nowrap items-center py-5 px-6 color-primary cursor-pointer rounded-xl';
+
     const content = (
         <>
             <Icon className="mr-4" name={done ? 'circle-filled' : 'circle'} size={6} />
@@ -32,9 +34,7 @@ const ChecklistItem = ({ text, done, onClick, path }: ChecklistItemProps) => {
     if (path) {
         return (
             <SettingsLink target="_blank" className={containerClassname} path={path} style={{ textDecoration: 'none' }}>
-                <Icon className="mr-4" name={done ? 'circle-filled' : 'circle'} size={6} />
-                <span className={clsx(done && 'text-strike')}>{text}</span>
-                <Icon className="ml-auto" name="chevron-right" />
+                {content}
             </SettingsLink>
         );
     }
