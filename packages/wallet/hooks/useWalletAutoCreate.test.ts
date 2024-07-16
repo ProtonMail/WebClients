@@ -7,6 +7,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import {
     mockUseAuthentication,
+    mockUseConfig,
     mockUseGetAddresses,
     mockUseGetOrganization,
     mockUseGetUserKeys,
@@ -49,6 +50,7 @@ describe('useWalletAutoCreate', () => {
 
     beforeAll(async () => {
         await CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+        mockUseConfig();
     });
 
     beforeEach(async () => {
@@ -96,7 +98,7 @@ describe('useWalletAutoCreate', () => {
         });
 
         it('should not autocreate wallet', async () => {
-            const { waitFor } = renderHook(() => useWalletAutoCreate());
+            const { waitFor } = renderHook(() => useWalletAutoCreate({}));
 
             await waitFor(() => expect(mockedGetUserWalletSettings).toHaveBeenCalled());
             expect(mockedGetUserWalletSettings).toHaveBeenCalledWith();
@@ -110,7 +112,7 @@ describe('useWalletAutoCreate', () => {
 
     describe('when higher level pilot is false', () => {
         it('should not autocreate wallet', async () => {
-            renderHook(() => useWalletAutoCreate({ higherLevelPilot: false, configUrl: 'api' }));
+            renderHook(() => useWalletAutoCreate({ higherLevelPilot: false }));
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
@@ -127,7 +129,7 @@ describe('useWalletAutoCreate', () => {
         });
 
         it('should not autocreate wallet', async () => {
-            renderHook(() => useWalletAutoCreate());
+            renderHook(() => useWalletAutoCreate({}));
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
@@ -140,7 +142,7 @@ describe('useWalletAutoCreate', () => {
     describe('when user has not created a wallet yet', () => {
         it('should autocreate wallet', async () => {
             const [primaryKey] = addressWithKey.keys;
-            const { waitFor } = renderHook(() => useWalletAutoCreate());
+            const { waitFor } = renderHook(() => useWalletAutoCreate({}));
 
             await waitFor(() => expect(mockedCreateWallet).toHaveBeenCalled());
 

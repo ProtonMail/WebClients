@@ -3,11 +3,13 @@ import { ReactNode, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useModalStateWithData } from '@proton/components/components';
+import { useUserWalletSettings } from '@proton/wallet';
 
 import { ModalData, WalletSetupModalContext, WalletSetupModalKind } from '.';
 import { WalletCreationModal } from '../../components';
 import { WalletAccountCreationModal } from '../../components/WalletAccountCreationModal';
 import { WalletBackupModal } from '../../components/WalletBackupModal';
+import { WalletTermsAndConditionsPrompt } from '../../components/WalletTermsAndConditionsPrompt';
 import { WalletUpgradeModal, WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeModal';
 import { MAX_WALLETS_FREE, MAX_WALLET_ACCOUNTS_PER_WALLET_FREE } from '../../constants/wallet';
 import { SubTheme } from '../../utils';
@@ -19,6 +21,8 @@ interface Props {
 
 export const WalletSetupModalContextProvider = ({ children }: Props) => {
     const onCloseRef = useRef<() => void>();
+
+    const [settings, loadingSettings] = useUserWalletSettings();
 
     const [walletUpgradeModal, setWalletUpgradeModal] = useModalStateWithData<WalletUpgradeModalOwnProps>();
     const [walletSetupModal, setWalletSetupModal] = useModalStateWithData<ModalData>({
@@ -74,6 +78,10 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                 if (decryptedApiWalletsData && !decryptedApiWalletsData.length) {
                     // We want to open wallet creation modal whenever there is no wallet setup on for the user
                     return <WalletCreationModal theme={SubTheme.ORANGE} open isFirstCreation />;
+                }
+
+                if (!settings.AcceptTermsAndConditions && !loadingSettings) {
+                    return <WalletTermsAndConditionsPrompt open />;
                 }
 
                 const walletWithoutWalletAccount = decryptedApiWalletsData?.find((w) => !w.WalletAccounts.length);

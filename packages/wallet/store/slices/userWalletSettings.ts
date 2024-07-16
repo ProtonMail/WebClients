@@ -15,12 +15,11 @@ export interface UserWalletSettingsState {
 type SliceState = UserWalletSettingsState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const userWalletSettingsChange = createAction(
-    'settings change',
-    (payload: { bitcoinUnit: WasmBitcoinUnit }) => ({
-        payload,
-    })
-);
+export const bitcoinUnitChange = createAction('bitcoin unit change', (payload: { bitcoinUnit: WasmBitcoinUnit }) => ({
+    payload,
+}));
+
+export const acceptTermsAndConditions = createAction('accept terms and conditions', () => ({ payload: {} }));
 
 export const selectUserWalletSettings = (state: UserWalletSettingsState) => state[name];
 
@@ -44,13 +43,19 @@ const slice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
-        builder.addCase(userWalletSettingsChange, (state, action) => {
-            if (state.value) {
-                if (action.payload.bitcoinUnit) {
-                    state.value.BitcoinUnit = action.payload.bitcoinUnit;
+        builder
+            .addCase(bitcoinUnitChange, (state, action) => {
+                if (state.value) {
+                    if (action.payload.bitcoinUnit) {
+                        state.value.BitcoinUnit = action.payload.bitcoinUnit;
+                    }
                 }
-            }
-        });
+            })
+            .addCase(acceptTermsAndConditions, (state) => {
+                if (state.value) {
+                    state.value.AcceptTermsAndConditions = 1;
+                }
+            });
     },
 });
 
