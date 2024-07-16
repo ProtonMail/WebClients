@@ -89,13 +89,13 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
 
     const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
 
+    // rootShareId is unique per item in shared with me section, so we can use it as id key
     const selectedItems = useMemo(
-        () => getSelectedItems(items, selectionControls!.selectedItemIds),
+        () => getSelectedItems(items, selectionControls!.selectedItemIds, 'rootShareId'),
         [items, selectionControls!.selectedItemIds]
     );
 
-    // Because can have same linkId from multiple volume, we set volumeId + linkId as id
-    const browserItems: SharedWithMeItem[] = items.map((item) => ({ ...item, id: `${item.volumeId}+${item.linkId}` }));
+    const browserItems: SharedWithMeItem[] = items.map((item) => ({ ...item, id: item.rootShareId }));
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
@@ -114,7 +114,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
                         }
 
                         return openDocument({
-                            linkId: item.id,
+                            linkId: item.linkId,
                             shareId: item.rootShareId,
                             openBehavior: 'tab',
                         });
@@ -123,14 +123,14 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
                 return;
             }
 
-            navigateToLink(item.rootShareId, item.id, item.isFile);
+            navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
         [navigateToLink, browserItems]
     );
 
     const handleItemRender = (item: SharedWithMeItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
+            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
         }
     };
 

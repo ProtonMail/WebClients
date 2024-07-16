@@ -151,7 +151,7 @@ function Drive({ activeFolder, folderView }: Props) {
 
     const handleItemRender = (item: DriveItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(shareId, item.id, item.activeRevision.id);
+            thumbnails.addToDownloadQueue(shareId, item.linkId, item.activeRevision.id);
         }
     };
 

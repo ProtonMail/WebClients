@@ -123,7 +123,7 @@ export const Search = ({ shareId, searchView }: Props) => {
                 return;
             }
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.id, item.isFile);
+            navigateToLink(shareId, item.linkId, item.isFile);
         },
         [navigateToLink, shareId, browserItems]
     );
