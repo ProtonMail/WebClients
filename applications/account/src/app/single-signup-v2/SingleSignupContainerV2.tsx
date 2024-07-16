@@ -325,8 +325,8 @@ const SingleSignupContainerV2 = ({
                 data: { invitee: email, preVerifiedAddressToken },
             };
             result.preSelectedPlan = PLANS.FREE;
-        } else if (toApp === APPS.PROTONWALLET && walletEASignupEnabled) {
-            result.preSelectedPlan = PLANS.VISIONARY;
+        } else if (toApp === APPS.PROTONWALLET && walletEASignupEnabled && !result.preSelectedPlan) {
+            result.preSelectedPlan = PLANS.FREE;
         }
 
         if (result.referrer) {
