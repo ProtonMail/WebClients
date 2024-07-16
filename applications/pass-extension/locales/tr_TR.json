@@ -113,10 +113,10 @@
       "Create": [
         "Ekle"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
       "Create a new vault to share": [
@@ -197,6 +197,9 @@
       "Edit vault": [
         "Kasayı düzenle"
       ],
+      "Entire vault": [
+        "Tüm kasa"
+      ],
       "Exclude from monitoring": [
         "İzlemeye katma"
       ],
@@ -223,6 +226,9 @@
       ],
       "Generated passwords": [
         "Oluşturulmuş parolalar"
+      ],
+      "Generating secure link...": [
+        "Güvenli bağlantı oluşturuluyor..."
       ],
       "Get mobile apps": [
         "Mobil uygulamaları edinin"
@@ -299,6 +305,9 @@
       "Manually sync your data": [
         "Verilerinizi el ile eşitleyin"
       ],
+      "Maximum views": [
+        "En fazla görüntüleme sayısı"
+      ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
       ],
@@ -325,6 +334,9 @@
       ],
       "Multiple select": [
         "Çoklu seçim"
+      ],
+      "No expired links": [
+        "Geçerlilik süresi geçmiş bir bağlantı yok"
       ],
       "Not now": [
         "Şimdi değil"
@@ -371,6 +383,9 @@
       "Remove access": [
         "Erişimi kaldır"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Geçerlilik süresi geçmiş tüm bağlantıları kaldır (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Bağlantıyı kaldır"
       ],
@@ -409,6 +424,9 @@
       ],
       "Saving passkey...": [
         "Geçiş anahtarı kaydediliyor..."
+      ],
+      "Secure links": [
+        "Güvenli bağlantılar"
       ],
       "See all": [
         "Tümünü görüntüle"
@@ -753,6 +771,9 @@
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
+      "Inactive secure links could not be removed.": [
+        "Etkin olmayan güvenli bağlantılar kaldırılamadı."
+      ],
       "Invalid password manager": [
         "Parola yöneticisi geçersiz"
       ],
@@ -813,6 +834,12 @@
       "Restoring trashed items failed": [
         "Çöpe atılmış ögeler geri yüklenemedi"
       ],
+      "Secure link could not be created.": [
+        "Güvenli bağlantı oluşturulamadı."
+      ],
+      "Secure link could not be opened.": [
+        "Güvenli bağlantı açılamadı."
+      ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
       ],
@@ -833,6 +860,9 @@
       ],
       "The URL is in the list": [
         "Adres listede var"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde tekrar deneyin."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
@@ -1042,6 +1072,9 @@
       "All breaches for this address were resolved": [
         "Bu adres için tüm verilerin ele geçirilmesi olayları çözümlendi"
       ],
+      "All inactive secure links were removed": [
+        "Etkin olmayan tüm güvenli bağlantılar kaldırıldı"
+      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
       ],
@@ -1066,6 +1099,9 @@
       "Are you sure you want to move the item to \"${ name }\" ?": [
         "Ögeyi \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
       ],
+      "Are you sure you want to remove the link?": [
+        "Bağlantıyı kaldırmak istediğinize emin misiniz?"
+      ],
       "Auto-lock successfully disabled.": [
         "Otomatik kilitleme kapatıldı."
       ],
@@ -1077,6 +1113,9 @@
       ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Can be viewed": [
+        "Görüntülenebilir"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
@@ -1197,6 +1236,9 @@
       ],
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
+      ],
+      "Expires in": [
+        "Geçerlilik sonu"
       ],
       "Expires in ${ remainingTime }": [
         "${ remainingTime } sonra geçerlilik süresi dolacak"
@@ -1460,8 +1502,14 @@
       "Registering PIN lock failed": [
         "PIN ile kilitleme kaydedilemedi"
       ],
+      "Removing all inactive secure links...": [
+        "Etkin olmayan tüm güvenli bağlantılar kaldırılıyor..."
+      ],
       "Removing extra password...": [
         "Ek parola kaldırılıyor..."
+      ],
+      "Removing secure link...": [
+        "Güvenli bağlantı kaldırılıyor..."
       ],
       "Restoring items from trash": [
         "Ögeler çöpten çıkarılıyor"
@@ -1550,6 +1598,9 @@
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
         "Şu ${ result.ignored.length } öge içe aktarılamadı:"
+      ],
+      "The secure link has been removed": [
+        "Güvenli bağlantı kaldırıldı"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
@@ -1730,14 +1781,23 @@
       "10 minutes": [
         "10 dakika"
       ],
+      "14 days": [
+        "14 gün"
+      ],
       "15 minutes": [
         "15 dakika"
+      ],
+      "24 hours": [
+        "24 saat"
       ],
       "2FA secret key (TOTP)": [
         "İki adımlı doğrulama gizli anahtarı (tek kullanımlık)"
       ],
       "2FA token (TOTP)": [
         "İki adımlı doğrulama kodu (tek kullanımlık)"
+      ],
+      "30 days": [
+        "30 gün"
       ],
       "30 minutes": [
         "30 dakika"
@@ -1747,6 +1807,9 @@
       ],
       "5 minutes": [
         "5 dakika"
+      ],
+      "7 days": [
+        "7 gün"
       ],
       "A-Z": [
         "A-Z"
@@ -1883,6 +1946,9 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Expired link": [
+        "Bağlantının geçerlilik süresi geçmiş"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -1900,6 +1966,9 @@
       ],
       "General": [
         "Genel"
+      ],
+      "Generate a secure link for this item": [
+        "Bu öge için bir güvenli bağlantı oluşturun"
       ],
       "Generic CSV": [
         "CSV dosyası"
@@ -1975,6 +2044,9 @@
       ],
       "Make all viewers": [
         "Tümünü izleyici yap"
+      ],
+      "Max views reached": [
+        "En fazla görüntülenme sayısına ulaşılmış"
       ],
       "Members": [
         "Üyeler"
@@ -2075,6 +2147,9 @@
       "Recent": [
         "Son"
       ],
+      "Remove link": [
+        "Bağlantıyı kaldır"
+      ],
       "Report a problem": [
         "Sorun bildireceğim"
       ],
@@ -2111,6 +2186,15 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Share": [
+        "Paylaş"
+      ],
+      "Share this vault or create a new vault": [
+        "Bu kasayı paylaşın ya da yeni bir kasa oluşturun"
+      ],
+      "Shared link": [
+        "Paylaşılan bağlantı"
+      ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
       ],
@@ -2128,6 +2212,13 @@
       ],
       "Text": [
         "Metin"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor",
+        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Adres panoya kopyalandı"
       ],
       "Title": [
         "Başlık"
@@ -2440,6 +2531,9 @@
       "No items selected": [
         "Herhangi bir öge seçilmemiş"
       ],
+      "No shared secure links": [
+        "Paylaşılan bir güvenli bağlantı yok"
+      ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
       ],
@@ -2463,6 +2557,9 @@
       ],
       "Remove extra password": [
         "Ek parolayı kaldır"
+      ],
+      "Remove secure link?": [
+        "Güvenli bağlantı kaldırılsın mı?"
       ],
       "Restore this version?": [
         "Bu sürüm geri yüklensin mi?"
