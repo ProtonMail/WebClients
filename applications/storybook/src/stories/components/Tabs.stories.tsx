@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { Checkbox, Tabs } from '@proton/components';
+import { Checkbox } from '@proton/components/components/input';
+import { type Tab, Tabs } from '@proton/components/components/tabs/Tabs';
 
 import bulbasaur from '../../assets/bulbasaur.png';
 import charmander from '../../assets/charmander.png';
@@ -19,7 +20,7 @@ export default {
 };
 
 export const Basic = () => {
-    const tabs = [
+    const tabs: Tab[] = [
         {
             title: 'Bulbasaur',
             content: (
@@ -34,6 +35,7 @@ export const Basic = () => {
         },
         {
             title: 'Charmander',
+            icon: 'fire',
             content: (
                 <>
                     <img src={charmander} alt="Charmander" />
