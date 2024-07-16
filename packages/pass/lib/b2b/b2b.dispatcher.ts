@@ -6,24 +6,28 @@ import { createEventDispatcher } from '@proton/pass/utils/event/dispatcher';
 import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
-const STORAGE_KEY = 'b2bEvents' as const;
-export type B2BEventsStorageKey = typeof STORAGE_KEY;
-
-type B2BDispatcherOptions = {
+type B2BDispatcherOptions<StorageKey extends string> = {
     alarm: EventDispatcherAlarm;
-    storage: AnyStorage<Record<B2BEventsStorageKey, string>>;
+    storage: AnyStorage<Record<StorageKey, string>>;
     getEnabled: () => boolean;
+    getStorageKey: () => StorageKey;
 };
 
-export const createB2BEventDispatcher = ({ alarm, storage, getEnabled }: B2BDispatcherOptions) =>
-    createEventDispatcher<B2BEvent, B2BEventsStorageKey>({
+export const createB2BEventDispatcher = <StorageKey extends string>({
+    alarm,
+    storage,
+    getEnabled,
+    getStorageKey,
+}: B2BDispatcherOptions<StorageKey>) =>
+    createEventDispatcher<B2BEvent, StorageKey>({
+        id: 'B2BEvents',
         alarm,
-        key: STORAGE_KEY,
         maxRetries: 3,
         storage,
         dispatch: sendB2BEventsBundle,
         getEnabled,
         getSendTime: () => getEpoch() + (ENV === 'production' ? UNIX_HOUR : UNIX_MINUTE),
+        getStorageKey,
     });
 
 export type B2BEventDispatcher = EventDispatcher<B2BEvent>;

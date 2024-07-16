@@ -24,6 +24,7 @@ export type EventDispatcherAlarm = {
 };
 
 export type EventDispatcherOptions<Event, StorageKey extends string> = {
+    id: string;
     storage: AnyStorage<Record<StorageKey, string>>;
     alarm: EventDispatcherAlarm;
     maxRetries: number;
@@ -45,6 +46,7 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
     options: EventDispatcherOptions<Event, StorageKey>
 ): EventDispatcher<Event> => {
     const {
+        id,
         alarm,
         maxRetries,
         storage,
@@ -54,7 +56,7 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
         getStorageKey,
         prepare = identity,
     } = options;
-    const log = (message: string) => logger.info(`[EventDispatcher::${getStorageKey()}] ${message}`);
+    const log = (message: string) => logger.info(`[EventDispatcher::${id}] ${message}`);
 
     const shouldSetAlarm = async (): Promise<boolean> => (await alarm.when()) === undefined;
     const createBundle = (): EventBundle<Event> => ({ sendTime: getSendTime(), events: [], retryCount: 0 });

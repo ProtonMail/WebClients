@@ -26,6 +26,7 @@ describe('EventDispatcher', () => {
         prepare = jest.fn().mockImplementation(identity);
 
         options = {
+            id: 'test',
             alarm,
             maxRetries: 3,
             storage: storage as any,

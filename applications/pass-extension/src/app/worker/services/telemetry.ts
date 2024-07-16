@@ -1,6 +1,6 @@
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
-import { type TelemetryStorageKey, createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
+import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
 import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors';
 import type { ExtensionStorage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -12,6 +12,7 @@ import { withContext } from '../context';
 import store from '../store';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
+export const TELEMETRY_STORAGE_KEY = 'telemetry';
 
 export const createAlarmHandles = (alarmName: string): EventDispatcherAlarm => {
     return {
@@ -21,11 +22,12 @@ export const createAlarmHandles = (alarmName: string): EventDispatcherAlarm => {
     };
 };
 
-export const createTelemetryService = (storage: ExtensionStorage<Record<TelemetryStorageKey, string>>) => {
+export const createTelemetryService = (storage: ExtensionStorage<Record<typeof TELEMETRY_STORAGE_KEY, string>>) => {
     const { push, send, start, stop } = createCoreTelemetryService({
         alarm: createAlarmHandles(TELEMETRY_ALARM_NAME),
         storage,
         getEnabled: () => selectTelemetryEnabled(store.getState()),
+        getStorageKey: () => TELEMETRY_STORAGE_KEY,
         getUserTier: () => selectUserTier(store.getState()),
     });
 
