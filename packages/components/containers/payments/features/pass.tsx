@@ -250,8 +250,6 @@ export const FREE_VAULTS = 2;
 export const PAID_VAULTS = 10;
 export const FREE_VAULT_SHARING = 3;
 
-export const MAIL_BUSINESS_PASS_ALIASES = 20;
-
 export const PASS_PLUS_VAULTS = 50;
 export const PASS_PLUS_VAULT_SHARING = 10;
 
@@ -337,7 +335,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS]: getHideMyEmailAliases('unlimited'),
                 [PLANS.FAMILY]: getHideMyEmailAliases('unlimited'),
                 [PLANS.MAIL_PRO]: getHideMyEmailAliases(FREE_PASS_ALIASES),
-                [PLANS.MAIL_BUSINESS]: getHideMyEmailAliases(MAIL_BUSINESS_PASS_ALIASES),
+                [PLANS.MAIL_BUSINESS]: getHideMyEmailAliases(FREE_PASS_ALIASES),
                 [PLANS.BUNDLE_PRO]: getHideMyEmailAliases('unlimited'),
                 [PLANS.BUNDLE_PRO_2024]: getHideMyEmailAliases('unlimited'),
                 [PLANS.PASS_PRO]: getHideMyEmailAliases('unlimited'),
