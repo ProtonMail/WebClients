@@ -80,14 +80,14 @@
 		inset-inline: 0;
 		block-size: 0;
 		transform-origin: left center;
+		transform: translateX(var(--translate)) scaleX(var(--scale));
+		border-block-end: 2px solid var(--interaction-norm);
+		transition: transform 0.15s easing(ease-out-quad);
+
 		@at-root {
 			[dir='rtl'] & {
 				transform-origin: right center;
 			}
 		}
-
-		transform: translateX(var(--translate)) scaleX(var(--scale));
-		border-block-end: 2px solid var(--interaction-norm);
-		transition: transform 0.15s easing(ease-out-quad);
 	}
 }

@@ -51,13 +51,13 @@
 			border-width: 2px;
 
 			&-pill {
+				border-radius: 5em;
+
 				&-container {
 					position: absolute;
 					inset-block-end: calc(100% - 1em);
 					inset-inline: 0;
 				}
-
-				border-radius: 5em;
 			}
 		}
 
