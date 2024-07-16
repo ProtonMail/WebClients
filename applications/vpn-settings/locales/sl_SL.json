@@ -4,6 +4,26 @@
     "language": "sl_SL"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno uhajanje iz ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Trgovina ${ BRAND_NAME }"
@@ -73,6 +93,12 @@
       ],
       "Choose my own password": [
         "Izberite svoje geslo"
+      ],
+      "Clear filter": [
+        "Počisti filter"
+      ],
+      "Clear filters": [
+        "Počisti filtre"
       ],
       "Close": [
         "Zapri"
@@ -320,6 +346,9 @@
       "Next": [
         "Naprej"
       ],
+      "Next month": [
+        "Naslednji mesec"
+      ],
       "OK": [
         "V redu"
       ],
@@ -352,6 +381,9 @@
       ],
       "Previous": [
         "Prejšnje"
+      ],
+      "Previous month": [
+        "Prejšnji mesec"
       ],
       "Recover data": [
         "Obnovi podatke"
@@ -754,7 +786,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Dvignite produktivnost e-pošte na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
+        "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ]
     },
     "Badge for domain": {
@@ -2255,6 +2287,9 @@
       "Please set a recovery phone number first": [
         "Najprej nastavite telefonsko številko za obnovitev"
       ],
+      "Please try again in a few moments.": [
+        "Poskusite znova čez nekaj trenutkov."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Prosim, nadgradite na poslovni paket z več kot enim uporabnikom, da dobite večuporabniško podporo."
       ],
@@ -3287,6 +3322,9 @@
       "Can’t access your recovery phone?": [
         "Ne morete dostopati do telefona za obnovitev?"
       ],
+      "Change your password": [
+        "Spremenite vaše geslo"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite »Zahtevaj novo kodo« za pošiljanje nove kode za preverjanje na ${ strong }. Če je ta telefonska številka napačna, kliknite »Uredi« in jo popravite."
       ],
@@ -3347,11 +3385,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "namenski strežniki"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -3431,6 +3469,9 @@
       "Edit email address": [
         "Uredi e-poštni naslov"
       ],
+      "email": [
+        "e-pošta"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-poštno gostovanje za deset po meri prilagojenih domenskih imen je brezplačno vključeno. Dodatne domene je mogoče dodati za ${ price }."
       ],
@@ -3503,6 +3544,9 @@
       "Fill in user details": [
         "Vnesite podatke o uporabniku"
       ],
+      "finance": [
+        "finance"
+      ],
       "for choosing ${ product }": [
         "za izbiro ${ product }"
       ],
@@ -3526,6 +3570,9 @@
       ],
       "here": [
         "tukaj"
+      ],
+      "High Priority": [
+        "Visoka pomembnost"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Javni ključ ponudnika identitete za podpis trditev o pristnosti. Moralo bi biti mesto za prenos ali kopiranje zgoščene vrednosti potrdila od ponudnika identitete. Preprosto prilepite zgoščeno vrednost potrdila v besedilno polje."
@@ -3620,6 +3667,9 @@
       "Internet connection restored.": [
         "Internetna povezava je spet vzpostavljena."
       ],
+      "Invite rejected": [
+        "Povabilo zavrnjeno"
+      ],
       "JCB logo": [
         "Logotip JCB"
       ],
@@ -3659,6 +3709,9 @@
       "Loading...": [
         "Nalaganje ..."
       ],
+      "Low Priority": [
+        "Nizka pomembnost"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Večje e-poštne storitve lahko zavrnejo ali filtrirajo vašo e-pošto v neželeno pošto, če SPF/DKIM/DMARC manjka ali ni pravilno nastavljen."
       ],
@@ -3674,11 +3727,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logotip"
       ],
+      "Medium Priority": [
+        "Srednja pomembnost"
+      ],
       "Member": [
         "Član"
       ],
       "MM/YY": [
         "MM/LL"
+      ],
+      "Monitor accounts": [
+        "Nadzor računov"
       ],
       "Multi-user support not enabled.": [
         "Podpora za več uporabnikov ni omogočena."
@@ -3745,6 +3804,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "V vaši organizaciji obstajajo drugi skrbniki, vi pa ste odgovorni za obveščanje o novih gesel zanje."
+      ],
+      "password": [
+        "geslo"
       ],
       "Password copied to clipboard": [
         "Geslo je kopirano v odložišče."
@@ -3983,6 +4045,12 @@
       "The credentials from your Identity Provider will be deleted.": [
         "Poverilnice vašega ponudnika identitete bodo izbrisane."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Število prenosov vključuje tako dejanske prenose kot tudi primere predogleda datotek."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Šifrirani podatki so nekoliko večji zaradi šifriranja in podpisov, ki zagotavljajo varnost vaših podatkov."
+      ],
       "The following address is invalid.": [
         "Naslednji naslov ni veljaven.",
         "Naslednja naslova nista veljavna.",
@@ -4166,6 +4234,9 @@
       "User activated": [
         "Uporabnik je aktiviran"
       ],
+      "username": [
+        "uporabniško ime"
+      ],
       "Users": [
         "Uporabniki"
       ],
@@ -4246,6 +4317,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Poslali vam bomo novo kodo za preverjanje na ${ strong }."
+      ],
+      "Week": [
+        "Teden"
       ],
       "Welcome": [
         "Dobrodošli"
@@ -5219,6 +5293,11 @@
         "Naročnina se je končala. ${ cta } in se izognite izgubi podatkov."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogoči ${ reason }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Get the deal": [
         "Izkoristite posebno ponudbo"
@@ -5709,7 +5788,7 @@
         "Zaščitite ${ n } naprav hkrati."
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
-        "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, katera je potrebno posodobiti."
+        "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, ki jih je treba posodobiti."
       ],
       "Reply to messages": [
         "Odgovorite na sporočila"
@@ -6286,6 +6365,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } je bil onemogočen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je bil omogočen."
+      ],
       "A disabled address cannot be default": [
         "Onemogočen naslov ne more biti privzeti."
       ],
@@ -6437,7 +6522,7 @@
     },
     "Organization logo upload modal": {
       "Drop image file here to upload or": [
-        "Spustite slikovno datoteko sem za nalaganje oz"
+        "Spustite slikovno datoteko sem za nalaganje ali"
       ],
       "File in PNG or JPEG format": [
         "Datoteka v formatu PNG ali JPEG"
@@ -6766,6 +6851,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "npr. https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "Npr. "
+      ],
+      "Email or IP": [
+        "E-pošta ali IP"
+      ],
+      "End date": [
+        "Končni datum"
+      ],
       "Feedback": [
         "Povratne informacije"
       ],
@@ -6804,6 +6898,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Delite, kaj bi po vašem mnenju lahko izboljšalo ${ BRAND_NAME }"
+      ],
+      "Start date": [
+        "Začetni datum"
       ],
       "yourdomain.com": [
         "vašadomena.com"
@@ -7030,6 +7127,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "URL konektorja SCIM, na katerega posreduje podatke SCIM vaš agent za zagotavljanje IdP"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } in ${ remainingCount } drugih možnih uhajanj. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Zaznano je bilo morebitno puščanje ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "Select file": {
@@ -8521,10 +8632,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -8710,6 +8821,9 @@
       "Error": [
         "Napaka"
       ],
+      "Event": [
+        "Dogodek"
+      ],
       "Every member of the organization can access": [
         "Vsak član organizacije ima dostop"
       ],
@@ -8757,6 +8871,9 @@
       ],
       "Invoices": [
         "Izdani računi"
+      ],
+      "Minicalendar": [
+        "Mini koledar"
       ],
       "Multi-user support": [
         "Podpora za več uporabnikov"
@@ -8944,6 +9061,9 @@
       "Switch to two-password mode": [
         "Preklopite na dvojno geslo"
       ],
+      "Time": [
+        "Čas"
+      ],
       "TV sign in": [
         "TV prijava"
       ],
@@ -8967,6 +9087,9 @@
       ],
       "Upload your organization’s logo": [
         "Naložite logotip svoje organizacije"
+      ],
+      "User": [
+        "Uporabnik"
       ],
       "Users": [
         "Uporabniki"
@@ -9058,6 +9181,11 @@
       ],
       "Status": [
         "Stanje"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danes"
       ]
     },
     "Tooltip": {

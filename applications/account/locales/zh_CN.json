@@ -674,10 +674,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -1019,6 +1019,12 @@
       "Verify account": [
         "验证账户"
       ],
+      "Verify code": [
+        "验证"
+      ],
+      "Verify code again": [
+        "重新验证"
+      ],
       "View": [
         "查看"
       ],
@@ -1319,6 +1325,14 @@
         "选择您的年终优惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1340,14 +1354,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -3487,6 +3493,9 @@
       "Checkout expired, please try again": [
         "支付超时，请重试"
       ],
+      "Code wrong or not valid anymore": [
+        "代码错误或不再有效"
+      ],
       "Condition incomplete": [
         "条件不完整"
       ],
@@ -3552,6 +3561,9 @@
       ],
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "如果电视上的时间已过期，请在电视上单击“重新整理” ，然后再次输入代码。"
       ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
@@ -5828,10 +5840,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6770,8 +6782,14 @@
       "The calendar will be removed from your account.": [
         "日历将会从您的账号中移除。"
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "下载次数是在线预览和实际下载的总次数。"
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "电子邮件验证链接已过期。请登录以重新发送验证链接。"
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "由于加密和签名的开销，加密后的数据会稍大一些，但这能确保数据的安全。"
       ],
       "The following address is available:": [
         "以下地址可以使用："
@@ -7018,9 +7036,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "开通 ${ PLAN_NAMES[PLANS.PASS_PLUS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[bundleProPlan] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -8209,6 +8224,9 @@
       "Enter password": [
         "输入密码"
       ],
+      "Enter the code displayed on your TV": [
+        "输入电视上显示的代码"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
       ],
@@ -9061,11 +9079,6 @@
         "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
       ]
     },
-    "mail_signup_2023: Info": {
-      "Limited time offer": [
-        "限时优惠"
-      ]
-    },
     "mail_signup_2024: Info": {
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "诚邀您体验 ${ MAIL_APP_NAME }"
@@ -9409,6 +9422,23 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -9436,23 +9466,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -10731,9 +10744,6 @@
       ]
     },
     "pass_signup_2023: Title": {
-      "Create a ${ PASS_APP_NAME } account": [
-        "创建 ${ PASS_APP_NAME } 账户"
-      ],
       "Create your ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
       ]
@@ -11953,14 +11963,38 @@
       ]
     },
     "subscription reminder": {
+      "15 GB storage": [
+        "15 GB 存储空间"
+      ],
+      "and 15 more premium features": [
+        "以及 15 项高级功能"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "数据泄露监控${ strongArgument }"
+      ],
       "Desktop app": [
         "桌面应用"
+      ],
+      "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
+        "开通付费账户，帮助我们为全世界构建更加安全、更加尊重隐私的互联网。"
+      ],
+      "No ads or tracking": [
+        "无广告，无追踪"
+      ],
+      "Support our mission": [
+        "支持我们的使命"
       ],
       "Upgrade": [
         "升级账户"
       ],
       "Upgrade your productivity": [
         "提升你的工作效率"
+      ],
+      "We don't sell your data": [
+        "绝不兜售您的数据"
+      ],
+      "Your privacy is our mission": [
+        "保护您的隐私就是我们的使命"
       ]
     },
     "Subscription renewal state": {
@@ -12535,10 +12569,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -12696,6 +12730,9 @@
       ],
       "Details": [
         "详细信息"
+      ],
+      "Device connected!": [
+        "设备已连接！"
       ],
       "Disable two-factor authentication": [
         "关闭双重验证"
@@ -13218,6 +13255,9 @@
       ],
       "Track your referrals": [
         "跟踪邀请进展"
+      ],
+      "TV sign in": [
+        "使用电视登录"
       ],
       "Two-factor authentication": [
         "双重验证"

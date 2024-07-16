@@ -4,6 +4,26 @@
     "language": "sv_SE"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärd. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vita åtgärd. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiell läcka från ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer och vidta åtgärder. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Välj mitt eget lösenord"
+      ],
+      "Clear filter": [
+        "Rensa filter"
+      ],
+      "Clear filters": [
+        "Rensa filter"
       ],
       "Close": [
         "Stäng"
@@ -323,11 +349,17 @@
       "Next": [
         "Nästa"
       ],
+      "Next month": [
+        "Nästa månad"
+      ],
       "OK": [
         "OK"
       ],
       "Ok": [
         "Ok"
+      ],
+      "Open": [
+        "Öppna"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -355,6 +387,9 @@
       ],
       "Previous": [
         "Föregående"
+      ],
+      "Previous month": [
+        "Föregående månad"
       ],
       "Recover data": [
         "Återställ data"
@@ -2248,6 +2283,9 @@
       "Please set a recovery phone number first": [
         "Ange ett telefonnummer för återställning först"
       ],
+      "Please try again in a few moments.": [
+        "Försök igen om en stund."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att få support för flera användare"
       ],
@@ -3021,6 +3059,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
@@ -3072,6 +3113,18 @@
       "${ userFound } user found": [
         "${ userFound } användare hittades",
         "${ userFound } användare hittades"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } skapad"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } uppdaterad"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } delad med e-post"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } uppdaterad"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } krävs för anslutning på landsnivå."
@@ -3155,6 +3208,9 @@
       "Affected user is on row": [
         "Berörd användare är på rad",
         "Berörda användare är på raderna"
+      ],
+      "All Events ": [
+        "Alla händelser "
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
@@ -3249,6 +3305,9 @@
       "Can’t access your recovery phone?": [
         "Kan du inte komma åt din telefon för återställning?"
       ],
+      "Change your password": [
+        "Ändra ditt lösenord"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
@@ -3301,17 +3360,26 @@
       "Custom branding": [
         "Anpassat varumärke"
       ],
+      "Custom email added": [
+        "Anpassad e-post tillagd"
+      ],
+      "Custom email deleted": [
+        "Anpassad e-post borttagen"
+      ],
       "Custom email domains": [
         "Anpassade e-domäner"
+      ],
+      "Custom email validated": [
+        "Anpassad e-post validerad"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -3387,6 +3455,9 @@
       "Edit email address": [
         "Redigera e-postadress"
       ],
+      "email": [
+        "e-post"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-postlagring för 10 anpassade e-postdomännamn är inkluderat gratis. Ytterligare domäner kan läggas till för ${ price }."
       ],
@@ -3459,6 +3530,9 @@
       "Fill in user details": [
         "Fyll i användaruppgifter"
       ],
+      "finance": [
+        "finans"
+      ],
       "for choosing ${ product }": [
         "för att välja ${ product }"
       ],
@@ -3482,6 +3556,9 @@
       ],
       "here": [
         "här"
+      ],
+      "High Priority": [
+        "Hög prioritet"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Om en annan administratör har ändrat detta lösenord måste du be dem om det nya organisationslösenordet."
@@ -3573,6 +3650,78 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "Invite Accepted": [
+        "Inbjudan accepterad"
+      ],
+      "Invite Created": [
+        "Inbjudning skapad"
+      ],
+      "Invite deleted": [
+        "Inbjudan borttagen"
+      ],
+      "Invite Deleted": [
+        "Inbjudan borttagen"
+      ],
+      "Invite for new user deleted": [
+        "Inbjudan för ny användare borttagen"
+      ],
+      "Invite for organization accepted": [
+        "Inbjudan för organisation accepterad"
+      ],
+      "Invite for organization created": [
+        "Inbjudan för organisation skapad"
+      ],
+      "Invite rejected": [
+        "Inbjudan avvisad"
+      ],
+      "Invite Rejected": [
+        "Inbjudan avvisad"
+      ],
+      "Item Changed Flags": [
+        "Objekt ändrade flaggor"
+      ],
+      "Item Created": [
+        "Objekt skapat"
+      ],
+      "Item created in ${ vaultLink }": [
+        "Objekt skapat i ${ vaultLink }"
+      ],
+      "Item created in vault": [
+        "Objekt skapat i valv"
+      ],
+      "Item Deleted": [
+        "Objekt borttaget"
+      ],
+      "Item deleted from ${ vaultLink }": [
+        "Objekt borttaget från ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Objekt borttaget från valv"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Objektflaggor ändrade i ${ vaultLink }"
+      ],
+      "Item flags changed in vault": [
+        "Objektflaggor ändrade i valv"
+      ],
+      "Item Read": [
+        "Objekt läst"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Objekt läst i ${ vaultLink }"
+      ],
+      "Item read in vault": [
+        "Objekt läst i valv"
+      ],
+      "Item Updated": [
+        "Objekt uppdaterat"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Objekt uppdaterat i ${ vaultLink }"
+      ],
+      "Item updated in vault": [
+        "Objekt uppdaterat i valv"
+      ],
       "JCB logo": [
         "JCB-logga"
       ],
@@ -3612,6 +3761,9 @@
       "Loading...": [
         "Laddar..."
       ],
+      "Low Priority": [
+        "Låg prioritet"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Stora e-posttjänster kan avvisa eller filtrera din e-post till skräppost om SPF/DKIM/DMARC saknas eller inte är korrekt inställda."
       ],
@@ -3627,11 +3779,17 @@
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
       ],
+      "Medium Priority": [
+        "Medium prioritet"
+      ],
       "Member": [
         "Medlem"
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "Monitor accounts": [
+        "Övervaka konton"
       ],
       "Multi-user support not enabled.": [
         "Stöd för flera användare är inte aktiverat."
@@ -3647,6 +3805,15 @@
       ],
       "Must start with a letter.": [
         "Måste börja med en bokstav."
+      ],
+      "New User Invite Created": [
+        "Ny användarinbjudan skapad"
+      ],
+      "New User Invite Deleted": [
+        "Ny användarinbjudan borttagen"
+      ],
+      "New user invited to organization": [
+        "Ny användare inbjuden till organisation"
       ],
       "No addresses exist": [
         "Inga adresser finns"
@@ -3701,6 +3868,9 @@
       ],
       "P2P": [
         "P2P"
+      ],
+      "password": [
+        "lösenord"
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
@@ -3872,11 +4042,38 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
+      "Session Ended": [
+        "Session avslutad"
+      ],
+      "Session Started": [
+        "Session startad"
+      ],
       "Session timed out": [
         "Session timeout"
       ],
       "Setting up your organization": [
         "Ställer in din organisation"
+      ],
+      "Share Created": [
+        "Delning skapad"
+      ],
+      "Share Deleted": [
+        "Delning borttagen"
+      ],
+      "Share Updated": [
+        "Delning uppdaterad"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Delad ${ vaultLink } borttagen"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Delad ${ vaultLink } uppdaterad"
+      ],
+      "Shared vault deleted": [
+        "Delat valv borttaget"
+      ],
+      "Shared vault updated": [
+        "Delat valv uppdaterat"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logga in på ${ MAIL_APP_NAME } för att aktivera din adress"
@@ -3944,6 +4141,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Inloggningsuppgifterna från din identitetsleverantör kommer att tas bort."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Den krypterade datan är något större på grund av överbelastningen av krypteringen och signaturerna, som säkerställer säkerheten för dina data."
       ],
       "The following address is invalid.": [
         "Följande adress är ogiltig.",
@@ -4101,6 +4304,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Unikt ID genererat av din identitetsleverantör, vanligtvis i form av en URL som innehåller identitetsleverantörens namn (t.ex. https://idp.example.com/XXXXX)."
       ],
+      "Unknown event type": [
+        "Okänd händelsetyp"
+      ],
       "Unsaved changes": [
         "Osparade ändringar"
       ],
@@ -4134,8 +4340,32 @@
       "User activated": [
         "Användare aktiverad"
       ],
+      "username": [
+        "användarnamn"
+      ],
       "Users": [
         "Användare"
+      ],
+      "Vault created": [
+        "Valv skapat"
+      ],
+      "Vault Created": [
+        "Valv skapat"
+      ],
+      "Vault deleted": [
+        "Valv borttaget"
+      ],
+      "Vault Deleted": [
+        "Valv borttaget"
+      ],
+      "Vault shared with email": [
+        "Valv delad med e-post"
+      ],
+      "Vault updated": [
+        "Valv uppdaterat"
+      ],
+      "Vault Updated": [
+        "Valv uppdaterat"
       ],
       "Verification can take a few minutes.": [
         "Verifiering kan ta några minuter."
@@ -4214,6 +4444,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
+      ],
+      "Week": [
+        "Vecka"
       ],
       "Welcome": [
         "Välkommen"
@@ -5190,6 +5423,11 @@
       ],
       "Your subscription has ended. ${ cta } and to avoid data loss.": [
         "Din prenumeration har upphört. ${ cta } och för att undvika dataförlust."
+      ]
+    },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Aktivera ${ reason }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6237,6 +6475,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } har inaktiverats"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } har aktiverats"
+      ],
       "A disabled address cannot be default": [
         "En inaktiverad adress kan inte vara standard"
       ],
@@ -6245,6 +6489,9 @@
       ],
       "Invalid code": [
         "Ogiltig kod"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Ogiltig inmatning. Sök efter en e-post eller en IP-adress."
       ],
       "IP Address copied to clipboard": [
         "IP-adress kopierad till urklipp"
@@ -6761,6 +7008,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "t.ex. https://idp.example.com/XXXXX"
       ],
+      "E.g., ": [
+        "T.ex., "
+      ],
+      "Email or IP": [
+        "E-post eller IP"
+      ],
+      "End date": [
+        "Slutdatum"
+      ],
       "Feedback": [
         "Feedback"
       ],
@@ -6799,6 +7055,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
+      ],
+      "Start date": [
+        "Startdatum"
       ],
       "yourdomain.com": [
         "dindomän.com"
@@ -6996,6 +7255,20 @@
       ],
       "SCIM automatic provisioning": [
         "Automatisk tillhandahållande av SCIM"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } och ${ remainingCount } andra potentiella läckor har upptäckts. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "${ name } och 1 annan potentiell läcka upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "En potentiell läcka på ${ name } upptäcktes. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
       ]
     },
     "Select file": {
@@ -8500,10 +8773,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -8541,6 +8814,9 @@
       ],
       "Confirm phone number": [
         "Bekräfta telefonnummer"
+      ],
+      "Connection events": [
+        "Anslutningshändelser"
       ],
       "Contact us": [
         "Kontakta oss"
@@ -8688,6 +8964,9 @@
       "Error": [
         "Fel"
       ],
+      "Event": [
+        "Händelse"
+      ],
       "Every member of the organization can access": [
         "Varje medlem i organisationen kan komma åt"
       ],
@@ -8700,6 +8979,9 @@
       ],
       "Forgot recovery method": [
         "Glömt återställningsmetod"
+      ],
+      "Gateway": [
+        "Gateway"
       ],
       "Gateways": [
         "Gateways"
@@ -8737,6 +9019,9 @@
       "Main password": [
         "Huvudlösenord"
       ],
+      "Minicalendar": [
+        "Minikalender"
+      ],
       "Multi-user support": [
         "Stöd för flera användare"
       ],
@@ -8772,6 +9057,9 @@
       ],
       "Organization name": [
         "Organisationsnamn"
+      ],
+      "Origin": [
+        "Ursprung"
       ],
       "Password": [
         "Lösenord"
@@ -8921,6 +9209,9 @@
       "Switch to two-password mode": [
         "Växla till två-lösenordsläge"
       ],
+      "Time": [
+        "Tid"
+      ],
       "TV sign in": [
         "TV-inloggning"
       ],
@@ -8947,6 +9238,9 @@
       ],
       "Upload your organization’s logo": [
         "Ladda upp din organisationslogga"
+      ],
+      "User": [
+        "Användare"
       ],
       "Users": [
         "Användare"
@@ -9038,6 +9332,11 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Idag"
       ]
     },
     "Tooltip": {

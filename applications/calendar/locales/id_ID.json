@@ -2424,6 +2424,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Ini dapat berlangsung selama beberapa menit. Selagi menunggu, Anda juga dapat menggunakan Proton Calendar seperti biasanya."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda, tentukanlah frasa pemulihan."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
@@ -3300,6 +3303,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Alias tidak dapat digunakan pada saat kata sandi tambahan diaktifkan di ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Aplikasi saat ini tidak tersedia"
       ],
@@ -9077,6 +9083,9 @@
       "Import failed": [
         "Proses impor gagal"
       ],
+      "Import groups": [
+        "Impor grup"
+      ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
@@ -9241,6 +9250,9 @@
       ],
       "Send invitation": [
         "Kirim undangan"
+      ],
+      "Set recovery phrase": [
+        "Tentukan frasa pemulihan"
       ],
       "Settings": [
         "Pengaturan"

@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Abrir"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
@@ -760,11 +763,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1138,6 +1141,12 @@
       "Verify account": [
         "Verificar conta"
       ],
+      "Verify code": [
+        "Verificar código"
+      ],
+      "Verify code again": [
+        "Verificar código novamente"
+      ],
       "Verify domain": [
         "Verificar domínio"
       ],
@@ -1403,6 +1412,9 @@
       "New": [
         "Novo"
       ],
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Leve a produtividade dos emails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus emails."
+      ],
       "Trial expires on ${ formattedDate }": [
         "Avaliação expira em ${ formattedDate }"
       ],
@@ -1538,6 +1550,14 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1559,14 +1579,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4012,6 +4024,9 @@
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
       ],
+      "Code wrong or not valid anymore": [
+        "Código errado ou não é mais válido"
+      ],
       "Condition incomplete": [
         "Condição incompleta"
       ],
@@ -4088,6 +4103,9 @@
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
       ],
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
@@ -5600,6 +5618,17 @@
         "Serviços"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Endereço do grupo"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membros"
+      ]
+    },
     "Header": {
       "Access": [
         "Acesso"
@@ -6358,6 +6387,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
       ],
+      "Add a recovery ${ type }": [
+        "Adicionar uma recuperação ${ type }"
+      ],
       "Add a recovery email address": [
         "Adicionar um e-mail de recuperação"
       ],
@@ -6599,6 +6631,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Aumente a identidade de marca da sua organização e crie uma experiência on-line mais consistente para os seus usuários."
       ],
+      "Breach Custom Email Added": [
+        "E-mail personalizado de violação adicionado"
+      ],
+      "Breach Custom Email Deleted": [
+        "E-mail personalizado de violação excluído"
+      ],
+      "Breach Custom Email Validated": [
+        "E-mail personalizado de violação validado"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Por padrão, membros da organização só podem exportar cofres dos quais são os proprietários. Se essa opção for ativada, eles não poderão exportar nenhum dado"
       ],
@@ -6748,11 +6789,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -6766,6 +6807,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Deletando ${ deletedServerCount } servidor gateway",
         "Deletando ${ deletedServerCount } servidores gateway"
+      ],
+      "Disable recovery by ${ type }": [
+        "Desativar recuperação por${ type }"
       ],
       "Discount": [
         "Desconto"
@@ -7035,6 +7079,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Se você iniciou a sessão em outro lugar, você pode ser capaz de ${ signedInPasswordResetLink }."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
       ],
@@ -7221,7 +7268,7 @@
         "Item excluído do cofre"
       ],
       "Item in vault untrashed": [
-        "Item do cofre foi restaurado"
+        "Item do cofre restaurado"
       ],
       "Item Read": [
         "Item lido"
@@ -7787,6 +7834,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
       ],
+      "Session Ended": [
+        "Sessão encerrada"
+      ],
+      "Session Roaming": [
+        "Roaming de sessão"
+      ],
+      "Session Started": [
+        "Sessão iniciada"
+      ],
       "Session timed out": [
         "Sessão expirada"
       ],
@@ -7810,6 +7866,12 @@
       ],
       "Share Updated": [
         "Compartilhamento atualizado"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "${ vaultLink } compartilhado excluído"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "${ vaultLink } compartilhado atualizado"
       ],
       "Shared vault deleted": [
         "Cofre compartilhado excluído"
@@ -7944,8 +8006,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "A dark web é uma parte oculta da Internet onde informações pessoais roubadas, como identidades, podem ser compradas e vendidas."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "A contagem de downloads inclui downloads reais e instâncias em que os arquivos são visualizados."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "O link de verificação de e-mail expirou. Faça login para reenviar um link de verificação."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Os dados criptografados são levemente maiores devido à sobrecarga da criptografia e assinaturas, que garantem a segurança dos seus dados."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "As informações expostas vazaram de um serviço de terceiros. As informações da sua conta ${ BRAND_NAME } permanecem seguras e criptografadas. ${ learnMoreLink }"
@@ -8241,8 +8309,8 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Fazer upgrade para o plano ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[bundleProPlan] } para acessar a ${ PROTON_SENTINEL_NAME }."
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Fazer upgrade para o plano ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[bundleProPlan] } para acessar a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
@@ -8321,6 +8389,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "O processo de verificação abrirá uma nova guia. Desative os bloqueadores de pop-ups. Você não será cobrado. Qualquer quantia usada para verificar seu cartão será reembolsada imediatamente."
+      ],
+      "Verify ${ type }": [
+        "Verificar ${ type }"
       ],
       "Verify domain": [
         "Verificar domínio"
@@ -8632,6 +8703,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Você ainda precisa responder aos convites para que o hospedeiro veja sua resposta."
+      ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Você poderá promover o usuário a administrador assim que ele aceitar o convite."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Você será redirecionado para ${ destination } depois de iniciar sessão."
@@ -9607,6 +9681,9 @@
       "Enter password": [
         "Digite a senha"
       ],
+      "Enter the code displayed on your TV": [
+        "Digite o código exibido na sua TV"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Digite a senha da chave com impressão digital ${ fingerprintCode }"
       ],
@@ -10558,11 +10635,14 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Obter ${ plan }** por tempo limitado!"
+      ],
+      "**Get ${ plan }** for early access to ${ appName }!": [
+        "**Obter ${ plan }** para acesso antecipado para ${ appName }!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Torne-se um Visionário e faça parte da história da ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Oferta por tempo limitado"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11017,6 +11097,23 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11044,23 +11141,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -12014,6 +12094,9 @@
       "Invalid code": [
         "Código inválido"
       ],
+      "Invalid input. Search an email or IP address.": [
+        "A entrada não é válida. Pesquise por e-mail ou endereço."
+      ],
       "IP Address copied to clipboard": [
         "Endereço de IP copiado para a área de transferência"
       ],
@@ -12791,14 +12874,18 @@
         "Salve o seu kit de recuperação para continuar"
       ],
       "Secure vault and link sharing": [
-        "Compartilhamento seguro de cofres e links"
+        "Compartilhamento seguro de cofre e link"
       ],
       "Secure vault sharing": [
         "Compartilhamento seguro de cofres"
       ],
+      "Secure vault sharing (${ n } vault)": [
+        "Compartilhamento seguro de cofre (${ n } cofre)",
+        "Compartilhamento seguro de cofre (${ n } cofres)"
+      ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartilhamento seguro de cofre (${ n } cofre) e de link.",
-        "Compartilhamento seguro de cofres (${ n } cofres) e links."
+        "Compartilhamento seguro de cofre (${ n } cofre) e compartilhamento de link.",
+        "Compartilhamento seguro de cofre (${ n } cofres) e compartilhamento de link."
       ],
       "Secured by end-to-end encryption": [
         "Seguro com criptografia de ponta a ponta"
@@ -12853,8 +12940,8 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Todos os serviços Plus da ${ BRAND_NAME }.${ br }assinatura facilitada."
       ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Criar uma conta no ${ PASS_APP_NAME }"
+      "Create a ${ appName } account": [
+        "Criar uma conta no ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Crie sua conta do ${ BRAND_NAME }"
@@ -13178,6 +13265,9 @@
       ],
       "Select state": [
         "Selecionar estado"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Compartilhe o que você acha que poderia melhorar ${ BRAND_NAME }"
       ],
       "Start date": [
         "Data de início"
@@ -15450,11 +15540,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -15506,6 +15596,9 @@
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
+      ],
+      "Connection events": [
+        "Eventos de conexão"
       ],
       "Contact us": [
         "Fale conosco"
@@ -15643,6 +15736,9 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Device connected!": [
+        "Dispositivo conectado!"
       ],
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
@@ -15810,6 +15906,9 @@
       "Forward emails": [
         "Encaminhamento de e-mails"
       ],
+      "Gateway": [
+        "Gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
@@ -15879,6 +15978,9 @@
       ],
       "Import failed": [
         "Erro na importação"
+      ],
+      "Import groups": [
+        "Importar grupo"
       ],
       "Import key": [
         "Importar chave"
@@ -15984,6 +16086,9 @@
       ],
       "Organization name": [
         "Nome da organização"
+      ],
+      "Origin": [
+        "Origem"
       ],
       "Other calendars": [
         "Outros calendários"
@@ -16267,6 +16372,9 @@
       ],
       "Track your referrals": [
         "Acompanhe suas referências"
+      ],
+      "TV sign in": [
+        "Iniciar sessão na TV"
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
@@ -17069,6 +17177,9 @@
       ],
       "Please add at least one recipient.": [
         "Adicione ao menos um destinatário."
+      ],
+      "Please check that the extension is properly installed and enabled": [
+        "Verifique se a extensão está instalada e ativada corretamente"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Observe que, ao escolher esta forma de pagamento, sua conta não será atualizada imediatamente. Iremos atualizar a sua conta assim que o pagamento for compensado."

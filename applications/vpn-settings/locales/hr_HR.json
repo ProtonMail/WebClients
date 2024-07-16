@@ -239,6 +239,9 @@
       "Next": [
         "Sljedeće"
       ],
+      "Next month": [
+        "Sljedeći mjesec"
+      ],
       "OK": [
         "U redu"
       ],
@@ -271,6 +274,9 @@
       ],
       "Previous": [
         "Prethodno"
+      ],
+      "Previous month": [
+        "Prethodni mjesec"
       ],
       "Recover data": [
         "Oporavi podatke"
@@ -2121,6 +2127,9 @@
       "By leaving now, changes may not be saved": [
         "Ako sada napustite, promjene se možda neće spremiti"
       ],
+      "Change your password": [
+        "Promijenite vašu lozinku"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
@@ -2294,6 +2303,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
       ],
+      "password": [
+        "lozinka"
+      ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
       ],
@@ -2422,6 +2434,9 @@
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
+      "username": [
+        "korisničko ime"
+      ],
       "Users": [
         "Korisnici"
       ],
@@ -2448,6 +2463,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Preusmjerit ćemo vas na PayPal u novoj kartici preglednika da biste dovršili ovu transakciju. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
+      ],
+      "Week": [
+        "Tjedan"
       ],
       "Welcome": [
         "Dobrodošli"
@@ -2963,6 +2981,11 @@
         "Saznajte više"
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Omogući ${ reason }"
+      ]
+    },
     "mailtrial2024: Action": {
       "Special Offer": [
         "Posebna ponuda"
@@ -3219,6 +3242,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } je onemogućen."
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } je omogućen."
+      ],
       "Invalid code": [
         "Nevažeći kôd"
       ],
@@ -3340,6 +3369,12 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "E.g., ": [
+        "Npr. "
+      ],
+      "End date": [
+        "Datum završetka"
+      ],
       "Feedback": [
         "Povratne informacije"
       ],
@@ -3366,6 +3401,9 @@
       ],
       "Select": [
         "Odaberi"
+      ],
+      "Start date": [
+        "Početni datum"
       ],
       "yourdomain.com": [
         "vasadomena.hr"
@@ -4054,10 +4092,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [
@@ -4173,6 +4211,9 @@
       ],
       "Error": [
         "Pogreška"
+      ],
+      "Event": [
+        "Događaj"
       ],
       "Find email or username": [
         "Adresa e-pošte ili korisničko ime"
@@ -4403,6 +4444,11 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danas"
       ]
     },
     "Tooltip": {

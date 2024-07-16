@@ -760,11 +760,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -1137,6 +1137,12 @@
       ],
       "Verify account": [
         "Hesabı doğrula"
+      ],
+      "Verify code": [
+        "Kodu doğrula"
+      ],
+      "Verify code again": [
+        "Kodu yeniden doğrula"
       ],
       "Verify domain": [
         "Etki alanını doğrula"
@@ -1534,6 +1540,14 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1555,14 +1569,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -4005,6 +4011,9 @@
       "Checkout expired, please try again": [
         "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
       ],
+      "Code wrong or not valid anymore": [
+        "Kod yanlış ya da artık geçersiz"
+      ],
       "Condition incomplete": [
         "Koşul eksik"
       ],
@@ -4081,6 +4090,9 @@
       ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Geçerlilik süresi dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
       ],
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
@@ -6711,11 +6723,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -7901,8 +7913,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir İnternet bölümüdür."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-posta doğrulama bağlantısının geçerlilik süresi dolmuş. Lütfen yeni bir doğrulama bağlantısının gönderilmesi için oturum açın."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Şifrelenmiş veriler, verilerinizin güvenliğini sağlayan şifreleme ve imzaların ek yükü nedeniyle biraz daha büyüktür."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten açığa çıkmış. ${ BRAND_NAME } Hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
@@ -8198,9 +8216,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[bundleProPlan] } tarifesine yükseltin."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
       ],
@@ -8428,6 +8443,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Kullanıcı gruplarını kullanarak e-postalar gönderebilir, verileri paylaşabilir ve belirli kullanıcı gruplarının ayarlarını tek seferde değiştirebilirsiniz."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Geçerli tarifeniz ile @pm.me adresiniz iletileri yalnızca alabilir. @pm.me kullanarak ileti göndermek ve başka adresler oluşturmak için tarifenizi yükseltin."
@@ -9567,6 +9585,9 @@
       "Enter password": [
         "Parolayı yazın"
       ],
+      "Enter the code displayed on your TV": [
+        "Televizyonunuzda görüntülenen kodu yazın"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Şu parmak izli anahtar için parolayı yazın: ${ fingerprintCode }"
       ],
@@ -10517,9 +10538,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Visionary tarifesine geçin ve ${ BRAND_NAME } öyküsünün bir parçası olun"
-      ],
-      "Limited time offer": [
-        "Sınırlı süreli teklif"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10968,6 +10986,23 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -10995,23 +11030,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -12783,9 +12801,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tüm ${ BRAND_NAME } Plus hizmetleri.${ br }Tek bir kolay abonelik."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Bir ${ PASS_APP_NAME } hesabı açın"
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızı açın"
@@ -15414,10 +15429,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -15607,6 +15622,9 @@
       ],
       "Details": [
         "Ayrıntılar"
+      ],
+      "Device connected!": [
+        "Aygıt bağlandı!"
       ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
@@ -16222,6 +16240,9 @@
       ],
       "Track your referrals": [
         "Önerilerinizi izleyin"
+      ],
+      "TV sign in": [
+        "TV oturumu açma"
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"

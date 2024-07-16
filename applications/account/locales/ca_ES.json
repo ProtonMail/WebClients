@@ -760,11 +760,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1067,7 +1067,7 @@
         "Desbloqueja les dades"
       ],
       "Unordered list": [
-        "Llista sense ordenar"
+        "Llista amb pics"
       ],
       "Unsubscribe": [
         "Anul·la la subscripció"
@@ -1137,6 +1137,12 @@
       ],
       "Verify account": [
         "Verifiqueu el compte"
+      ],
+      "Verify code": [
+        "Verifiqueu el codi"
+      ],
+      "Verify code again": [
+        "Torneu a verificar el codi"
       ],
       "Verify domain": [
         "Verifica el domini"
@@ -1541,6 +1547,14 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1562,14 +1576,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4012,6 +4018,9 @@
       "Checkout expired, please try again": [
         "El termini de pagament ha expirat. Torneu-ho a provar"
       ],
+      "Code wrong or not valid anymore": [
+        "El codi és incorrecte o ja no és vàlid."
+      ],
       "Condition incomplete": [
         "Condició incompleta"
       ],
@@ -4088,6 +4097,9 @@
       ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Si el temps a la vostra televisió s'ha exhaurit, premeu-hi a Refresca i escriviu-hi el codi un altre cop."
       ],
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
@@ -5600,6 +5612,12 @@
         "Serveis"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
+      ]
+    },
     "Header": {
       "Access": [
         "Accés"
@@ -6249,13 +6267,16 @@
         "S'han trobat ${ userFound } usuaris"
       ],
       "${ vaultLink } created": [
-        "${ vaultLink } creat"
+        "S'ha creat ${ vaultLink }"
       ],
       "${ vaultLink } deleted": [
-        "${ vaultLink } eliminat"
+        "S'ha eliminat ${ vaultLink }"
+      ],
+      "${ vaultLink } shared with email": [
+        "S'ha compartit ${ vaultLink } per correu electrònic"
       ],
       "${ vaultLink } updated": [
-        "${ vaultLink } actualitzat"
+        "S'ha actualitzat ${ vaultLink }."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Es requereix ${ vpnPlus } per a la conexió a nivell de país."
@@ -6590,6 +6611,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Potencieu la identitat de marca de la vostra organització i creeu una experiència en línia més coherent per als usuaris."
       ],
+      "Breach Custom Email Added": [
+        "S'ha afegit el correu electrònic personalitzat en cas de violació de les dades."
+      ],
+      "Breach Custom Email Deleted": [
+        "S'ha eliminat el correu electrònic personalitzat en cas de violació de les dades."
+      ],
+      "Breach Custom Email Validated": [
+        "S'ha validat el correu electrònic personalitzat en cas de violació de les dades."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Per defecte, els membres de l'organització només poden exportar caixes fortes de les quals són propietaris. Si s'activa aquesta opció, no podran exportar cap dada"
       ],
@@ -6710,16 +6740,16 @@
         "Personalitzat diàriament"
       ],
       "Custom email added": [
-        "Adreça de correu electrònic personalitzada afegida"
+        "S'ha afegit l'adreça de correu electrònic personalitzada"
       ],
       "Custom email deleted": [
-        "Adreça de correu electrònic personalitzada eliminada"
+        "S'ha eliminat l'adreça de correu electrònic personalitzada"
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
       "Custom email validated": [
-        "Adreça de correu electrònic personalitzada validada"
+        "S'ha validat l'adreça de correu electrònic personalitzada"
       ],
       "Custom monthly": [
         "Mensual (personalitzat)"
@@ -6739,11 +6769,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -7175,7 +7205,7 @@
         "S'ha eliminat la invitació."
       ],
       "Invite for new user deleted": [
-        "S'ha eliminat la invitació per a nou usuari."
+        "S'ha eliminat la invitació per al nou usuari."
       ],
       "Invite for organization accepted": [
         "S'ha acceptat la invitació per a l'organització"
@@ -7199,6 +7229,9 @@
       "Item Autofilled": [
         "S'ha emplenat l'element automàticament"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "S'ha emplenat automàticament l'element a ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "S'ha emplenat un element automàticament a la caixa forta"
       ],
@@ -7208,17 +7241,32 @@
       "Item Created": [
         "S'ha creat l'element."
       ],
+      "Item created in ${ vaultLink }": [
+        "S'ha creat l'element a ${ vaultLink }"
+      ],
       "Item created in vault": [
         "S'ha creat un element a la caixa forta"
       ],
       "Item Deleted": [
         "S'ha eliminat l'element."
       ],
+      "Item deleted from ${ vaultLink }": [
+        "S'ha eliminat l'element a ${ vaultLink }"
+      ],
       "Item deleted from vault": [
         "S'ha eliminat un element de la caixa forta."
       ],
+      "Item flags changed in ${ vaultLink }": [
+        "S'han canviat les marques de l'element a ${ vaultLink }."
+      ],
       "Item flags changed in vault": [
         "S'han canviat les marques de l'element a la caixa forta"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "S'ha enviat a la paperera l'element a ${ vaultLink }"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "S'ha recuperat de la paperera l'element a ${ vaultLink }"
       ],
       "Item in vault trashed": [
         "S'ha enviat a la paperera un element a la caixa forta."
@@ -7228,6 +7276,9 @@
       ],
       "Item Read": [
         "S'ha llegit l'element"
+      ],
+      "Item read in ${ vaultLink }": [
+        "S'ha llegit l'element a ${ vaultLink }"
       ],
       "Item read in vault": [
         "S'ha llegit un element de la caixa forta"
@@ -7240,6 +7291,9 @@
       ],
       "Item Updated": [
         "S'ha actualitzat l'element."
+      ],
+      "Item updated in ${ vaultLink }": [
+        "S'ha actualitzat l'element a ${ vaultLink }"
       ],
       "Item updated in vault": [
         "S'ha actualitzat un element a la caixa forta"
@@ -7808,6 +7862,12 @@
       "Share Updated": [
         "S'ha actualitzat la compartició"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "S'ha eliminat l'enllaç compartit ${ vaultLink }."
+      ],
+      "Shared ${ vaultLink } updated": [
+        "S'ha actualitzat l'enllaç compartit ${ vaultLink }."
+      ],
       "Shared vault deleted": [
         "S'ha eliminat la caixa forta compartida"
       ],
@@ -7938,8 +7998,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "El web fosc és una part amagada d'Internet on es pot comprar i vendre informació personal robada, com ara les identitats."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "L'enllaç de verificació per correu electrònic ha caducat. Inicieu la sessió per a tornar a enviar un enllaç de verificació."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Les dades xifrades són lleugerament més grans a causa de la sobrecàrrega del xifratge i les signatures, els quals garanteixen la seguretat de les vostres dades."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
@@ -8235,9 +8301,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Milloreu al pla ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[bundleProPlan] } per a accedir a ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
       ],
@@ -8294,6 +8357,9 @@
       ],
       "Vault Deleted": [
         "S'ha eliminat la caixa forta."
+      ],
+      "Vault either deleted or requires access permissions": [
+        "La caixa forta ha estat eliminada o requereix permisos d'accés."
       ],
       "Vault shared with email": [
         "S'ha compartit la caixa forta per correu electrònic"
@@ -8467,7 +8533,7 @@
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
       ],
       "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Amb els grups d'usuaris, podeu enviar correus electrònics fàcilment, compartir dades o canviar la configuració per a grups específics d'usuaris tot alhora."
+        "Amb els grups d'usuaris, podeu enviar correus electrònics, compartir dades o canviar la configuració per a grups específics d'usuaris tot alhora de manera senzilla."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Amb el vostre pla actual, només podeu rebre missatges amb la vostra adreça @pm.me. Milloreu per enviar missatges i crear adreces addicionals utilitzant @pm.me."
@@ -9607,6 +9673,9 @@
       "Enter password": [
         "Introduïu la contrasenya"
       ],
+      "Enter the code displayed on your TV": [
+        "Introduïu el codi que es mostra al televisor"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Introduïu la contrasenya per la clau amb l'empremta digital ${ fingerprintCode }"
       ],
@@ -10560,9 +10629,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Convertiu-vos en Visionary i sigueu part de la història de ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Oferta per temps limitat"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10585,7 +10651,7 @@
         "Seguretat millorada i característiques prèmium per als equips"
       ],
       "for ${ price }": [
-        "per a ${ price }"
+        "per ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta per temps limitat: **Obteniu fins a un 35% de descompte** amb plans anuals"
@@ -11014,6 +11080,23 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11041,23 +11124,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11448,7 +11514,7 @@
         "Nombre il·limitat d'inicis de sessió i de notes"
       ],
       "Unlimited logins, notes and credit cards": [
-        "Inicis de sessió il·limitats, notes i targetes de crèdit"
+        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
       ],
       "Unlimited messages per day": [
         "Missatges diaris il·limitats"
@@ -12767,18 +12833,18 @@
         "Deseu el vostre kit de recuperació per continuar"
       ],
       "Secure vault and link sharing": [
-        "Caixa forta i compartició d'enllaços"
+        "Compartició segura de caixes fortes i enllaços"
       ],
       "Secure vault sharing": [
         "Compartició segura de caixes fortes"
       ],
       "Secure vault sharing (${ n } vault)": [
-        "Compartició segura de la caixa forta ${ n }",
-        "Compartició segura de les caixes fortes ${ n }"
+        "Compartició segura de caixes fortes (${ n } caixa forta)",
+        "Compartició segura de caixes fortes (${ n } caixes fortes)"
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Compartició segura de la caixa forta ${ n } i compartició d'enllaços",
-        "Compartició segura de les caixes fortes ${ n } i compartició d'enllaços"
+        "Compartició segura de caixes fortes (${ n } caixa forta) i compartició d'enllaços",
+        "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
       ],
       "Secured by end-to-end encryption": [
         "Protegit amb xifratge d’extrem a extrem"
@@ -12832,9 +12898,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tots els serveis de ${ BRAND_NAME } Plus. ${ br } Una subscripció senzilla."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Crea un compte de ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Creeu el vostre compte de ${ BRAND_NAME }"
@@ -14367,8 +14430,8 @@
     },
     "Subscription attribute": {
       "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "Assistent d'escriptura de ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
-        "Assistent d'escriptura de ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuari",
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe per a ${ maxAi } usuaris"
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicat",
@@ -14763,7 +14826,7 @@
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 1 GB d'emmagatzematge de correu i fins a 5 GB d'emmagatzematge de Drive. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que al pla gratuït no és compatible amb usuaris addicionals."
+        "Quan cancel·leu ${ planName }, passareu a ${ BRAND_NAME } Free, el qual només ofereix 1 GB d'emmagatzematge a Mail i fins a 5 GB d'emmagatzematge a Drive. La feina del vostre equip es veurà interrompuda, ja que el pla gratuït no és compatible amb usuaris addicionals."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Quan cancel·leu ${ planName }, descarregareu a ${ BRAND_NAME } Free, que només ofereix fins a 5 GB d'emmagatzematge de Drive i fins a 1 GB d'emmagatzematge de correu. També perdreu les bonificacions d'emmagatzematge concedides anteriorment."
@@ -15469,10 +15532,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -15663,6 +15726,9 @@
       "Details": [
         "Detalls"
       ],
+      "Device connected!": [
+        "S'ha connectat el dispositiu"
+      ],
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
       ],
@@ -15829,6 +15895,9 @@
       "Forward emails": [
         "Reenviament de correus electrònics"
       ],
+      "Gateway": [
+        "Passarel·la"
+      ],
       "Gateways": [
         "Passarel·les"
       ],
@@ -15895,6 +15964,9 @@
       ],
       "Import failed": [
         "Error en la importació"
+      ],
+      "Import groups": [
+        "Importa grups"
       ],
       "Import key": [
         "Importa una clau"
@@ -16280,6 +16352,9 @@
       ],
       "Track your referrals": [
         "Seguiment de persones recomanades"
+      ],
+      "TV sign in": [
+        "Inici de sessió al TV"
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"

@@ -760,11 +760,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Reload": [
         "Ανανέωση"
@@ -1137,6 +1137,12 @@
       ],
       "Verify account": [
         "Επαλήθευση λογαριασμού"
+      ],
+      "Verify code": [
+        "Επαλήθευση κωδικού"
+      ],
+      "Verify code again": [
+        "Επαλήθευση κωδικού ξανά"
       ],
       "Verify domain": [
         "Επαλήθευση τομέα"
@@ -1534,6 +1540,14 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1555,14 +1569,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -4005,6 +4011,9 @@
       "Checkout expired, please try again": [
         "Η ταμειακή διαδικασία εξέπνευσε, παρακαλούμε δοκιμάστε ξανά"
       ],
+      "Code wrong or not valid anymore": [
+        "Κωδικός λανθασμένος ή μη έγκυρος πλέον"
+      ],
       "Condition incomplete": [
         "Μη ολοκληρωμένη συνθήκη"
       ],
@@ -4081,6 +4090,9 @@
       ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Εάν ο χρόνος στην τηλεόρασή σας έχει λήξει, κάντε κλικ στο Ανανέωση στην τηλεόρασή σας και εισαγάγετε ξανά τον κωδικό σας."
       ],
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
@@ -6711,11 +6723,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -7901,8 +7913,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Ο σκοτεινός ιστός είναι ένα κρυφό μέρος του διαδικτύου όπου κλεμμένες προσωπικές πληροφορίες, όπως ταυτότητες, μπορούν να αγοραστούν και να πωληθούν."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Ο αριθμός λήψεων περιλαμβάνει τόσο τις πραγματικές λήψεις όσο και τις παρουσίες κατά την προεπισκόπηση αρχείων."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Ο σύνδεσμος επαλήθευσης ηλεκτρονικού ταχυδρομείου έχει λήξει. Συνδεθείτε για να στείλετε ξανά έναν σύνδεσμο επαλήθευσης."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Τα κρυπτογραφημένα δεδομένα είναι ελαφρώς μεγαλύτερα λόγω της επιβάρυνσης της κρυπτογράφησης και των υπογραφών, που διασφαλίζουν την ασφάλεια των δεδομένων σας."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
@@ -8197,9 +8215,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Αναβαθμίστε στο ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ή ${ PLAN_NAMES[bundleProPlan] } πλάνο για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\". (Στείλε μου Προσωπικό Μήνυμα)"
@@ -9570,6 +9585,9 @@
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
       ],
+      "Enter the code displayed on your TV": [
+        "Εισάγετε τον κωδικό που εμφανίζεται στην τηλεόρασή σας"
+      ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Εισάγετε τον κωδικό πρόσβασης για το κλειδί με δακτυλικό αποτύπωμα: ${ fingerprintCode }"
       ],
@@ -10520,9 +10538,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Γίνετε Visionary και γίνετε μέρος της ιστορίας του ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Προσφορά περιορισμένου χρόνου"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10971,6 +10986,23 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -10998,23 +11030,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -12786,9 +12801,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Όλες οι ${ BRAND_NAME } Plus λειτουργείες.${ br }Μία εύκολη συνδρομή."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Δημιουργία ενός ${ PASS_APP_NAME } λογαριασμού"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Δημιουργήστε το ${ BRAND_NAME } λογαριασμό σας"
@@ -15414,10 +15426,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -15607,6 +15619,9 @@
       ],
       "Details": [
         "Λεπτομέρειες"
+      ],
+      "Device connected!": [
+        "Συσκευή συνδεδεμένη!"
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
@@ -16222,6 +16237,9 @@
       ],
       "Track your referrals": [
         "Παρακολουθήστε τις παραπομπές σας"
+      ],
+      "TV sign in": [
+        "Σύνδεση τηλεόρασης"
       ],
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"

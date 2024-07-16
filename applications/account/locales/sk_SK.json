@@ -190,6 +190,9 @@
       "Change password": [
         "Zmeniť heslo"
       ],
+      "Change second password": [
+        "Zmeniť druhé heslo"
+      ],
       "Chat with us": [
         "Komunikácia s nami"
       ],
@@ -757,11 +760,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "refresh the page": [
-        "obnoviť stránku"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Reload": [
         "Obnoviť"
@@ -1134,6 +1137,12 @@
       ],
       "Verify account": [
         "Overiť účet"
+      ],
+      "Verify code": [
+        "Overiť kód"
+      ],
+      "Verify code again": [
+        "Znovu overiť kód"
       ],
       "Verify domain": [
         "Overiť doménu"
@@ -1537,6 +1546,14 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1558,14 +1575,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4028,6 +4037,9 @@
       "Checkout expired, please try again": [
         "Objednávka vypršala, skúste to prosím znova"
       ],
+      "Code wrong or not valid anymore": [
+        "Nesprávny alebo neplatný kód"
+      ],
       "Condition incomplete": [
         "Neúplná podmienka"
       ],
@@ -4109,6 +4121,9 @@
       "Folder name cannot be empty.": [
         "Názov priečinka nesmie byť prázdny."
       ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Ak čas v TV vypršal, kliknite na Obnoviť na vašej TV a znovu zadajte váš kód."
+      ],
       "IMAP server is required": [
         "IMAP server je požadovaný"
       ],
@@ -4129,6 +4144,9 @@
       ],
       "Incorrect password": [
         "Nesprávne heslo"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nesprávne druhé heslo. Skúste to znova, prosím."
       ],
       "Incorrect username": [
         "Nesprávne používateľské meno"
@@ -4330,6 +4348,9 @@
       ],
       "Require at least one condition": [
         "Vyžaduje sa aspoň jedna podmienka"
+      ],
+      "Session expired. Please refresh the page.": [
+        "Platnosť relácie skončila. Obnovte stránku, prosím."
       ],
       "Signature not verified": [
         "Podpis nebol overený"
@@ -6234,6 +6255,9 @@
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
       ],
+      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete prepnúť do režimu jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
+      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
@@ -6825,11 +6849,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -6845,6 +6869,9 @@
         "Odstraňovanie ${ deletedServerCount } serverov brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány"
+      ],
+      "Discount": [
+        "Zľava"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -7287,17 +7314,32 @@
       "Item Autofilled": [
         "Položka automaticky vyplnená"
       ],
+      "Item autofilled in vault": [
+        "Položka v trezore automaticky vyplnená"
+      ],
       "Item Changed Flags": [
         "Položka zmenila značky"
       ],
       "Item Created": [
         "Položka bola vytvorená"
       ],
+      "Item created in vault": [
+        "Položka v trezore vytvorená"
+      ],
       "Item Deleted": [
         "Položka bola vymazaná"
       ],
+      "Item flags changed in vault": [
+        "Príznaky položky v trezore zmenené"
+      ],
+      "Item in vault untrashed": [
+        "Položka v trezore vyňatá z koša"
+      ],
       "Item Read": [
         "Položka bola prečítaná"
+      ],
+      "Item read in vault": [
+        "Položka v trezore prečítaná"
       ],
       "Item Trashed": [
         "Položka premiestnená do koša"
@@ -7307,6 +7349,9 @@
       ],
       "Item Updated": [
         "Položka bola aktualizovaná"
+      ],
+      "Item updated in vault": [
+        "Položka v trezore aktualizovaná"
       ],
       "it’s imperative": [
         "je nevyhnutné"
@@ -8010,8 +8055,14 @@
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Dark web je skrytá časť internetu, kde sa dajú kúpiť a predať ukradnuté osobné údaje, ako napríklad identita."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Počet stiahnutí zahŕňa skutočné stiahnutia aj prípady, keď sú súbory zobrazené v náhľade."
+      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Platnosť odkazu na overenie emailu vypršala. Ak chcete znova odoslať overovací odkaz, prihláste sa."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Šifrované údaje sú o trochu väčšie kvôli réžii šifrovania a podpisov, čo zaručuje bezpečnosť vašich údajov."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
@@ -8087,6 +8138,9 @@
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Platnosť tohto pozývacieho odkazu vypršala. Ak chcete požiadať o prístup, obráťte sa na svojho správcu, prosím."
+      ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Tento pozývací odkaz už bol použitý. Namiesto toho sa prihláste priamo."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráza, ktorú musíte nastaviť."
@@ -8259,6 +8313,12 @@
       "Two-factor authentication enabled": [
         "Dvojstupňové overenie zapnuté"
       ],
+      "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
+        "Režim dvoch hesiel vyžaduje dve heslá: jedno na prihlásenie do konta a druhé na dešifrovanie údajov. (Rozšírené)"
+      ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "Režim dvoch hesiel používa samostatné heslá na prihlásenie a dešifrovanie údajov. V niektorých situáciách to poskytuje menšiu bezpečnostnú výhodu, avšak väčšine používateľov odporúčame režim jedného hesla. Ak chcete prepnúť do režimu dvoch hesiel, najprv nastavte prihlasovacie heslo a potom nastavte druhé heslo."
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie je možné overiť podpis súboru pre obnovenie. Kontaktujte podporu."
       ],
@@ -8303,9 +8363,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Upgradujte na ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] },${ PLAN_NAMES[PLANS.FAMILY] } alebo ${ PLAN_NAMES[bundleProPlan] } pre získanie prístupu k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgradujte, ak chcete pridať kratšiu @pm.me adresu k vášmu účtu, ktorá sa jednoduchšie zdieľa. To znamená „${ MAIL_APP_NAME } me“ alebo „Private message me“."
@@ -8363,6 +8420,9 @@
       ],
       "Vault Deleted": [
         "Trezor bol vymazaný"
+      ],
+      "Vault shared with email": [
+        "Trezor zdieľaný emailom"
       ],
       "Vault updated": [
         "Trezor bol aktualizovaný"
@@ -8531,6 +8591,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "So šifrovanou ${ BRAND_NAME } adresou môžete používať všetky služby ${ BRAND_NAME }"
+      ],
+      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
+        "Pomocou skupín používateľov môžete jednoducho odosielať emaily, zdieľať údaje alebo meniť nastavenia pre konkrétne skupiny používateľov naraz."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "S vašim súčasným plánom môžete dostávať správy iba s vašou @pm.me adresou. Upgradujte ho, aby ste mohli správy odosielať a vytvárať ďalšie adresy použitím @pm.me."
@@ -8708,6 +8771,9 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Aby hostiteľ videl vašu odpoveď, na pozvánky musíte stále odpovedať."
+      ],
+      "You will be able to promote the user to administrator once they've accepted the invitation.": [
+        "Používateľa budete môcť povýšiť na správcu, keď prijme pozvanie."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
@@ -8930,6 +8996,9 @@
       ],
       "Paid": [
         "Zaplatené"
+      ],
+      "Processing": [
+        "Spracovávanie"
       ],
       "Unpaid": [
         "Nezaplatené"
@@ -9400,6 +9469,9 @@
       "Auto show remote images": [
         "Automaticky zobrazovať vzdialené obrázky"
       ],
+      "Auto-advance": [
+        "Automatický postup"
+      ],
       "Auto-delete unwanted messages": [
         "Automaticky mazať nechcené správy"
       ],
@@ -9420,6 +9492,9 @@
       ],
       "Awarded": [
         "Ocenený"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fakturačná adresa"
@@ -9525,6 +9600,9 @@
       ],
       "Confirm password": [
         "Potvrďte heslo"
+      ],
+      "Confirm second password": [
+        "Potvrďte druhé heslo"
       ],
       "Contacts": [
         "Kontakty"
@@ -9684,6 +9762,9 @@
       ],
       "Enter password": [
         "Vložte heslo"
+      ],
+      "Enter the code displayed on your TV": [
+        "Zadajte kód zobrazený na vašej TV"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Zadajte heslo pre kľúč s odtlačkom: ${ fingerprintCode }"
@@ -9883,6 +9964,9 @@
       "New password": [
         "Nové heslo"
       ],
+      "New second password": [
+        "Nové druhé heslo"
+      ],
       "No filter": [
         "Bez filtra"
       ],
@@ -10024,6 +10108,9 @@
       "Reveal password": [
         "Odkryť heslo"
       ],
+      "Second password": [
+        "Druhé heslo"
+      ],
       "Security code (${ codeName })": [
         "Bezpečnostný kód (${ codeName })"
       ],
@@ -10104,6 +10191,12 @@
       ],
       "Subscription options": [
         "Možnosti predplatného"
+      ],
+      "Swipe left action": [
+        "Akcia potiahnutia prstom doľava"
+      ],
+      "Swipe right action": [
+        "Akcia potiahnutia prstom doprava"
       ],
       "Synchronize with system": [
         "Synchronizovať so systémom"
@@ -10635,9 +10728,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Staňte sa Vizionárom a buďte súčasťou príbehu ${ BRAND_NAME }"
-      ],
-      "Limited time offer": [
-        "Časovo obmedzená ponuka"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11096,6 +11186,23 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11123,23 +11230,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -12371,6 +12461,9 @@
       "Add to existing group": [
         "Pridať do existujúcej skupiny"
       ],
+      "Archive": [
+        "Archív"
+      ],
       "Ask each time": [
         "Vždy sa opýtať"
       ],
@@ -12409,6 +12502,9 @@
       ],
       "Left to Right": [
         "Zľava Doprava"
+      ],
+      "Mark as read": [
+        "Označiť ako prečítané"
       ],
       "My reason isn't listed": [
         "Môj dôvod nie je na zozname"
@@ -12467,11 +12563,20 @@
       "Setup incomplete": [
         "Nastavenie nebolo dokončené"
       ],
+      "Spam": [
+        "Nevyžiadaná pošta"
+      ],
       "Standard server configs": [
         "Konfigurácia štandardného servera"
       ],
+      "Star": [
+        "S hviezdičkou"
+      ],
       "The whole organization": [
         "Celá organizácia"
+      ],
+      "Trash": [
+        "Kôš"
       ]
     },
     "Option delay send seconds": {
@@ -12958,9 +13063,6 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Všetky ${ BRAND_NAME } Plus služby.${ br }Jedno jednoduché predplatné."
-      ],
-      "Create a ${ PASS_APP_NAME } account": [
-        "Vytvoriť ${ PASS_APP_NAME } účet"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Vytvorte svoj ${ BRAND_NAME } účet"
@@ -14540,6 +14642,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľa",
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľov",
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľov",
+        "${ BRAND_NAME } Scribe, asistent písania pre ${ maxAi } používateľov"
+      ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikovaný server",
         "${ ipAddresses } dedikované servery",
@@ -15679,10 +15787,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -15699,6 +15807,9 @@
       ],
       "Change role": [
         "Zmeniť funkciu"
+      ],
+      "Change second password": [
+        "Zmeniť druhé heslo"
       ],
       "Choose an account": [
         "Vybrať účet"
@@ -15874,6 +15985,9 @@
       "Details": [
         "Podrobnosti"
       ],
+      "Device connected!": [
+        "Zariadenie pripojené!"
+      ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
       ],
@@ -16024,6 +16138,15 @@
       "Folders and labels": [
         "Priečinky a štítky"
       ],
+      "For Linux": [
+        "Pre Linux"
+      ],
+      "For macOS": [
+        "Pre macOS"
+      ],
+      "For Windows": [
+        "Pre Windows"
+      ],
       "Forgot recovery method": [
         "Zabudnutá metóda obnovenia"
       ],
@@ -16146,6 +16269,9 @@
       ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
+      ],
+      "Main password": [
+        "Hlavné heslo"
       ],
       "Messages": [
         "Správy"
@@ -16483,6 +16609,9 @@
       "Track your referrals": [
         "Sledujte svoje odporúčania"
       ],
+      "TV sign in": [
+        "TV prihlásenie"
+      ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
       ],
@@ -16494,6 +16623,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Unlock your data": [
+        "Odomknúť vaše údaje"
       ],
       "Upgrade plan": [
         "Navýšit tarif"
@@ -17028,6 +17160,9 @@
       "Name": [
         "Meno"
       ],
+      "New ${ BRAND_NAME } email address": [
+        "Nová ${ BRAND_NAME } emailová adresa"
+      ],
       "Optional": [
         "Voliteľné"
       ],
@@ -17273,8 +17408,14 @@
       "Please add at least one recipient.": [
         "Zadajte aspoň jedného príjemcu, prosím."
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Skontrolujte prosím, či je rozšírenie správne nainštalované a povolené."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."
+      ],
+      "Please update the extension to its latest version": [
+        "Aktualizujte, prosím, rozšírenie na jeho najnovšiu verziu"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."

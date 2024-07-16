@@ -878,6 +878,9 @@
       "Trashing item failed": [
         "Erro ao mover item para a lixeira"
       ],
+      "Try reaching out to the link owner.": [
+        "Tente entrar em contato com o proprietário do link."
+      ],
       "Unable to generate an OTP code for this item": [
         "Não é possível gerar um código OTP para este item"
       ],
@@ -1166,6 +1169,9 @@
       ],
       "Click here to add a field for a username.": [
         "Clique aqui para adicionar um campo para um nome de usuário."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Confirme sua senha adicional para prosseguir com a remoção."
       ],
       "Congratulations, your access has been confirmed": [
         "Parabéns, seu acesso foi confirmado."
@@ -1761,6 +1767,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "Você atingiu o comprimento máximo permitido de ${ maxLength } caracteres."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Você será desconectado e precisará iniciar sessão novamente em todos os seus outros dispositivos."
+      ],
       "You will be notified of data breaches for these email addresses.": [
         "Você será notificado sobre violações de dados para estes endereços de e-mail."
       ],
@@ -2189,6 +2198,9 @@
       "Reveal password": [
         "Mostrar senha"
       ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
+        "Armazene, compartilhe e inicie a sessão automática em suas contas com segurança com o ${ PASS_APP_NAME }, usando a criptografia de ponta a ponta que tem a confiança de milhões de pessoas."
+      ],
       "Security": [
         "Segurança"
       ],
@@ -2246,6 +2258,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "O link foi copiado para a área de transferência"
+      ],
+      "This item will remain accessible until ${ remaining }": [
+        "Este item permanecerá acessível até ${ remaining }"
       ],
       "Title": [
         "Título"
@@ -2413,7 +2428,7 @@
         "Insira a senha"
       ],
       "Enter username": [
-        "Digitar nome do usuário"
+        "Digitar nome de usuário"
       ],
       "Full Name": [
         "Nome completo"
@@ -2929,6 +2944,9 @@
       "PGP encrypted export file requires passphrase": [
         "O arquivo de exportação criptografado com PGP requer uma frase secreta"
       ],
+      "Please check that the extension is properly installed and enabled": [
+        "Verifique se a extensão está instalada e ativada corretamente"
+      ],
       "Please contact us for investigating the issue": [
         "Entre em contato conosco para investigar o problema"
       ],
@@ -2940,6 +2958,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verifique seu endereço de e-mail para utilizar o compartilhamento de cofre"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "A remoção da sua senha adicional fará o encerramento da sessão de todos os dispositivos e encerrará todas as sessões ativas."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."

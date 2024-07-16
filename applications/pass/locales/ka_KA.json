@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Account Settings - Info": {
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
@@ -565,6 +568,9 @@
         "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს",
         "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს"
       ],
+      "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
+        "ელფოსტის ფსევდონიმი ელფოსტის მისამართივით მუშაობს, მაგრამ ამცირებს სპამს და თქვენს ნამდვილ ელფოსის მისამართს და იდენტიფიკატორს დამალულად შეინარჩუნებს."
+      ],
       "Change your passwords": [
         "შეცვალეთ თქვენი პაროლები"
       ],
@@ -585,6 +591,12 @@
       ],
       "Set up 2FA for more security": [
         "მოირგეთ 2FA მეტი უსაფრთხოებისთვის"
+      ],
+      "Start monitoring for data breaches related to accounts created with your email address and your hide-my-email aliases.": [
+        "დაიწყეთ მონაცემების გაჟონვის მონიტორინგი თქვენი ელფოსტის მისამართებით და hide-my-email-ის ფსევდონიმებით შექმნილი ანგარიშებისთვის."
+      ],
+      "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
+        "ბნელი ვები ინტერნეტის დამალული ნაწილია, სადაც მოპარული პირადი ინფორმაცია შეგიძლიათ იყიდოთ ან გაყიდოთ."
       ],
       "These items remain at risk": [
         "ეს ელემენტები რჩება რისკის ქვეშ"
@@ -2421,6 +2433,9 @@
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
     },
     "Success": {

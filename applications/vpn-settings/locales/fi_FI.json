@@ -4,6 +4,26 @@
     "language": "fi_FI"
   },
   "contexts": {
+    "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ],
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot ja ryhtyäksesi toimenpiteisiin. ${ link }"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
@@ -76,6 +96,12 @@
       ],
       "Choose my own password": [
         "Valitse oma salasana"
+      ],
+      "Clear filter": [
+        "Tyhjennä suodatin"
+      ],
+      "Clear filters": [
+        "Tyhjennä suodattimet"
       ],
       "Close": [
         "Sulje"
@@ -323,6 +349,9 @@
       "Next": [
         "Seuraava"
       ],
+      "Next month": [
+        "Seuraava kuukausi"
+      ],
       "OK": [
         "OK"
       ],
@@ -355,6 +384,9 @@
       ],
       "Previous": [
         "Edellinen"
+      ],
+      "Previous month": [
+        "Edellinen kuukausi"
       ],
       "Recover data": [
         "Palauta tiedot"
@@ -639,6 +671,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } oma lisäverkkotunnus",
+        "${ domains } omaa lisäverkkotunnusta"
+      ],
       "${ ips } server": [
         "${ ips } palvelin",
         "${ ips } palvelinta"
@@ -751,7 +787,7 @@
     },
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
-        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan sähköpostejasi."
+        "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan viestejäsi."
       ]
     },
     "Badge for domain": {
@@ -2248,6 +2284,9 @@
       "Please set a recovery phone number first": [
         "Määritä palautuspuhelin ensin"
       ],
+      "Please try again in a few moments.": [
+        "Yritä uudelleen hetken kuluttua."
+      ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Saadaksesi usean käyttäjän tuen, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
@@ -3148,6 +3187,9 @@
         "Käyttäjä, jota tämä koskee, on rivillä",
         "Käyttäjät, joita tämä koskee, ovat riveillä"
       ],
+      "All Events ": [
+        "Kaikki tapahtumat"
+      ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
@@ -3241,6 +3283,9 @@
       "Can’t access your recovery phone?": [
         "Etkö voi käyttää palautuspuhelintasi?"
       ],
+      "Change your password": [
+        "Vaihda salasanasi"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
@@ -3299,11 +3344,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -3379,6 +3424,9 @@
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
       ],
+      "email": [
+        "sähköpostiosoite"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "Sisältää sähköpostin isännöinnin 10 omalla verkkotunnuksella veloituksetta. Lisää verkkotunnuksia voidaan lisätä ${ price } kappalehintaan."
       ],
@@ -3451,6 +3499,9 @@
       "Fill in user details": [
         "Täytä käyttäjän tiedot"
       ],
+      "finance": [
+        "rahoitus"
+      ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
       ],
@@ -3474,6 +3525,9 @@
       ],
       "here": [
         "tässä"
+      ],
+      "High Priority": [
+        "Korkea tärkeys"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identiteetinhallinnan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetinhallinnassasi pitäisi olla kohta, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
@@ -3568,6 +3622,72 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "Invite Accepted": [
+        "Kutsu hyväksyttiin"
+      ],
+      "Invite Created": [
+        "Kutsu luotiin"
+      ],
+      "Invite deleted": [
+        "Kutsu poistettiin"
+      ],
+      "Invite Deleted": [
+        "Kutsu poistettiin"
+      ],
+      "Invite for organization accepted": [
+        "Kutsu organisaatioon hyväksyttiin"
+      ],
+      "Invite for organization created": [
+        "Kutsu organisaatioon luotiin"
+      ],
+      "Invite rejected": [
+        "Kutsusta kieltäydyttiin"
+      ],
+      "Invite Rejected": [
+        "Kutsusta kieltäydyttiin"
+      ],
+      "Item Autofilled": [
+        "Kohde automaattitäytettiin"
+      ],
+      "Item autofilled in vault": [
+        "Holvin kohde automaattitäytettiin"
+      ],
+      "Item Changed Flags": [
+        "Kohteen liput muuttuivat"
+      ],
+      "Item Created": [
+        "Kohde luotiin"
+      ],
+      "Item created in vault": [
+        "Holviin luotiin kohde"
+      ],
+      "Item Deleted": [
+        "Kohde poistettiin"
+      ],
+      "Item flags changed in vault": [
+        "Holvin kohteen liput muuttuivat"
+      ],
+      "Item in vault untrashed": [
+        "Holvin kohde palautettiin roskakorista"
+      ],
+      "Item Read": [
+        "Kohdetta tarkasteltiin"
+      ],
+      "Item read in vault": [
+        "Holvin kohdetta tarkasteltiin"
+      ],
+      "Item Trashed": [
+        "Kohde siirrettiin roskakoriin"
+      ],
+      "Item Untrashed": [
+        "Kohde palautettiin roskakorista"
+      ],
+      "Item Updated": [
+        "Kohdetta muokattiin"
+      ],
+      "Item updated in vault": [
+        "Holvin kohdetta muokattiin"
+      ],
       "JCB logo": [
         "JCB-logo"
       ],
@@ -3607,6 +3727,9 @@
       "Loading...": [
         "Ladataan..."
       ],
+      "Low Priority": [
+        "Alhainen tärkeys"
+      ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Monet sähköpostipalvelut saattavat hylätä tai suodattaa sähköpostisi roskapostiksi, jos SPF/DKIM/DMARC puuttuvat tai niitä ei ole määritetty oikein."
       ],
@@ -3622,11 +3745,17 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
+      "Medium Priority": [
+        "Keskitason tärkeys"
+      ],
       "Member": [
         "Jäsen"
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "Monitor accounts": [
+        "Valvo tilejä"
       ],
       "Multi-user support not enabled.": [
         "Usean käyttäjän tuki ei ole käytössä."
@@ -3642,6 +3771,12 @@
       ],
       "Must start with a letter.": [
         "Täytyy alkaa kirjaimella."
+      ],
+      "New User Invite Created": [
+        "Uuden käyttäjän kutsu luotiin"
+      ],
+      "New User Invite Deleted": [
+        "Uuden käyttäjän kutsu poistettiin"
       ],
       "No addresses exist": [
         "Osoitteita ei ole"
@@ -3693,6 +3828,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Organisaatiossasi on muita ylläpitäjiä ja olet vastuussa uuden salasanan välityksestä heille."
+      ],
+      "password": [
+        "salasana"
       ],
       "Password copied to clipboard": [
         "Salasana kopioitiin leikepöydälle"
@@ -3864,11 +4002,32 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
+      "Session Ended": [
+        "Istunto päättyi"
+      ],
+      "Session Started": [
+        "Istunto alkoi"
+      ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
+      ],
+      "Share Created": [
+        "Jako luotiin"
+      ],
+      "Share Deleted": [
+        "Jako poistettiin"
+      ],
+      "Share Updated": [
+        "Jakoa muokattiin"
+      ],
+      "Shared vault deleted": [
+        "Jaettu holvi poistettiin"
+      ],
+      "Shared vault updated": [
+        "Jaettua holvia muokattiin"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Aktivoi osoitteesi kirjautumalla ${ MAIL_APP_NAME }iin"
@@ -3936,6 +4095,12 @@
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Identiteetinhallintasi kirjautumistiedot poistetaan."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Latausmäärään sisältyy varsinaisten latausten lisäksi myös tiedostojen esikatselukerrat."
+      ],
+      "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
+        "Salatut tiedot varaavat tietojasi suojaavan salauksen ja allekirjoitusten vuoksi hieman enemmän tallennustilaa."
       ],
       "The following address is invalid.": [
         "Seuraava osoite on virheellinen.",
@@ -4096,6 +4261,9 @@
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Identiteetin tarjoajan luoma yksilöllinen tunnistetieto, yleensä identiteetin tarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
       ],
+      "Unknown event type": [
+        "Tuntematon tapahtumatyyppi"
+      ],
       "Unsaved changes": [
         "Tallentamattomia muutoksia"
       ],
@@ -4129,8 +4297,32 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
+      "username": [
+        "käyttäjätunnus"
+      ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Vault created": [
+        "Holvi luotiin"
+      ],
+      "Vault Created": [
+        "Holvi luotiin"
+      ],
+      "Vault deleted": [
+        "Holvi poistettiin"
+      ],
+      "Vault Deleted": [
+        "Holvi poistettiin"
+      ],
+      "Vault shared with email": [
+        "Holvi jaettiin sähköpostitse"
+      ],
+      "Vault updated": [
+        "Holvia muokattiin"
+      ],
+      "Vault Updated": [
+        "Holvia muokattiin"
       ],
       "Verification can take a few minutes.": [
         "Vahvistus saattaa kestää muutamia minuutteja."
@@ -4209,6 +4401,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Uusi vahvistuskoodi lähetetään kohteeseen ${ strong }"
+      ],
+      "Week": [
+        "Viikko"
       ],
       "Welcome": [
         "Tervetuloa"
@@ -5198,7 +5393,15 @@
         "Tilauksesi on päättynyt. ${ cta } välttääksesi tietojen menetyksen."
       ]
     },
+    "Log preference": {
+      "Enable ${ reason }": [
+        "Ota ${ reason } käyttöön"
+      ]
+    },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Lisää ${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "for ${ price }": [
         "hintaan ${ price }"
       ]
@@ -5757,6 +5960,9 @@
       "Unlimited labels": [
         "Rajattomasti tunnisteita"
       ],
+      "Unlimited logins and notes": [
+        "Rajattomasti kirjautumistietoja ja muistiinpanoja"
+      ],
       "Unlimited logins, notes and credit cards": [
         "Rajattomasti kirjautumistietoja, muistiinpanoja ja maksukortteja"
       ],
@@ -6240,6 +6446,12 @@
       ]
     },
     "Notification": {
+      "${ reason } has been disabled": [
+        "${ reason } poistettiin käytöstä"
+      ],
+      "${ reason } has been enabled": [
+        "${ reason } otettiin käyttöön"
+      ],
       "A disabled address cannot be default": [
         "Käytöstä poistettu osoite ei voi olla oletusosoite"
       ],
@@ -6248,6 +6460,9 @@
       ],
       "Invalid code": [
         "Virheellinen koodi"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Virheellinen syöte. Hae sähköposti- tai IP-osoitetta."
       ],
       "IP Address copied to clipboard": [
         "IP-osoite kopioitiin leikepöydälle"
@@ -6740,6 +6955,15 @@
       "e.g. https://idp.example.com/XXXXX": [
         "esim. https://idp.esimerkki.fi/XXXXX"
       ],
+      "E.g., ": [
+        "Esim. "
+      ],
+      "Email or IP": [
+        "Sähköposti- tai IP-osoite"
+      ],
+      "End date": [
+        "Päättymispäivä"
+      ],
       "Feedback": [
         "Palautteesi"
       ],
@@ -6778,6 +7002,9 @@
       ],
       "Share what you think could make ${ BRAND_NAME } better": [
         "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
+      ],
+      "Start date": [
+        "Aloituspäivä"
       ],
       "yourdomain.com": [
         "verkkotunnuksesi.fi"
@@ -6998,6 +7225,20 @@
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
         "Sen SCIM-yhdistäjän URL-osoite, johon IdP Provisioning -agenttisi ohjaa SCIM-tiedot"
+      ]
+    },
+    "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä ${ remainingCount } muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name } sekä yhdestä muusta lähteestä. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tietojasi on saattanut vuotaa palvelusta ${ name }. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ]
     },
     "Select file": {
@@ -7819,6 +8060,12 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } antaa sinulle kaikki sovellukset ja ominaisuudet, varhaisen pääsyn uusiin julkaisuihin ja kaiken, mitä tarvitset tietojesi ja niiden turvallisuuden hallintaan."
       ],
+      "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
+        "${ planName } -tilauksella tiimisi voi työskennellä tuottavammin ja järjestelmällisemmin kaikkien ${ BRAND_NAME }-sovellusten ja niiden lisäominaisuuksien avulla."
+      ],
+      "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planName } tarjoaa tiimillesi työkalut, joilla he voivat mm. olla tuottavampia, järjestelmällisempiä, sekä hallita postilaatikoitaan ja aikataulujaan."
+      ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } tarjoaa perusasioita enemmän, jotta voit olla tuotteliaampi ja järjestelmällisempi, hallita postilaatikkoasi ja sähköposti-identiteettiäsi, ja paljon muuta."
       ],
@@ -7864,6 +8111,9 @@
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "Kun lopetat ${ planName } -tilauksesi, tilisi alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa vain 1 Gt Mail- ja 5 Gt Drive-tallennustilan. Tiimisi työskentely keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
+      ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "${ planName } -tilauksesi päätyttyä sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 5 Gt Drive- ja 1 Gt Mail-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
       ],
@@ -7878,6 +8128,9 @@
       ],
       "Back up photos from your devices": [
         "Varmuuskopioi valokuvia laitteistasi"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Vahvista loutettavuutta ja tunnettavuutta ammattimaisilla omaa verkkotunnustasi käyttävillä osoitteilla."
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
@@ -8011,6 +8264,9 @@
       "Sync files on devices": [
         "Synkronoi tiedostoja laitteilla"
       ],
+      "The best of ${ BRAND_NAME }": [
+        "${ BRAND_NAME }in paras"
+      ],
       "Unblocking internet access in Iran": [
         "Internet-yhteyksien vapauttaminen Iranissa"
       ],
@@ -8050,8 +8306,17 @@
       "Yearly free storage bonuses": [
         "Vuotuiset ilmaiset tallennustilakorotukset"
       ],
+      "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
+        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink } ${ unavailablePlan }"
+      ],
+      "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
+        "${ planName } -tilauksellasi on edelleen ${ expiryDate }. Lisäämme jäljellä olevan ajan krediitit ${ BRAND_NAME }-tilillesi. Varmista, ettet ylitä ilmaistilauksen rajoituksia ennen tilauksesi päättymistä. ${ learnMoreLink }"
+      ],
       "Your ${ planName } has been canceled.": [
         "${ planName }-tilauksesi on peruttu."
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "${ planName } -tilauksesi ei ainoastaan suojaa liiketoimintasi tietoja ja viestintää, vaan se tukee myös vaatimustenmukaisuustavoitteitasi, parantaa yrityksesi näkyvyyttä ja pitää tiimisi yhteydessä."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
         "${ planName } -tilauksesi päättyy ${ expiryDate }. Tämän jälkeen siirryt ${ BRAND_NAME } Free -tilaukseen. Jos käyttösi ylittää ilmaisen tilauksen rajat, tuotteiden ominaisuuksia ja pääsyäsi tietoihisi voidaan rajoittaa. ${ learnMoreLink }"
@@ -8500,10 +8765,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -8541,6 +8806,9 @@
       ],
       "Confirm phone number": [
         "Vahvista puhelinnumero"
+      ],
+      "Connection events": [
+        "Yhteystapahtumat"
       ],
       "Contact us": [
         "Ota yhteyttä"
@@ -8688,6 +8956,9 @@
       "Error": [
         "Virhe"
       ],
+      "Event": [
+        "Tapahtuma"
+      ],
       "Every member of the organization can access": [
         "Organisaation kaikki käyttäjät voivat käyttää"
       ],
@@ -8700,6 +8971,9 @@
       ],
       "Forgot recovery method": [
         "Unohtunut palautustapa"
+      ],
+      "Gateway": [
+        "Yhdyskäytävä"
       ],
       "Gateways": [
         "Yhdyskäytävät"
@@ -8737,6 +9011,9 @@
       "Main password": [
         "Pääsalasana"
       ],
+      "Minicalendar": [
+        "Pienoiskalenteri"
+      ],
       "Multi-user support": [
         "Usean käyttäjän tuki"
       ],
@@ -8772,6 +9049,9 @@
       ],
       "Organization name": [
         "Organisaation nimi"
+      ],
+      "Origin": [
+        "Alkuperä"
       ],
       "Password": [
         "Salasana"
@@ -8921,6 +9201,9 @@
       "Switch to two-password mode": [
         "Vaihda kahden salasanan tilaan"
       ],
+      "Time": [
+        "Aika"
+      ],
       "TV sign in": [
         "Televisioon kirjautuminen"
       ],
@@ -8947,6 +9230,9 @@
       ],
       "Upload your organization’s logo": [
         "Lähetä organisaatiosi logo"
+      ],
+      "User": [
+        "Käyttäjä"
       ],
       "Users": [
         "Käyttäjät"
@@ -9038,6 +9324,11 @@
       ],
       "Status": [
         "Tila"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Tänään"
       ]
     },
     "Tooltip": {
