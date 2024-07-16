@@ -607,8 +607,13 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     </UserTableBadge>
                                                                 )}
                                                             {member.NumAI > 0 && (
+                                                                <Badge type="origin">
+                                                                    {c('Users table: badge').t`Writing assistant`}
+                                                                </Badge>
+                                                            )}
+                                                            {member['2faStatus'] > 0 && (
                                                                 <Badge type="origin">{c('Users table: badge')
-                                                                    .t`Writing assistant`}</Badge>
+                                                                    .t`2FA`}</Badge>
                                                             )}
                                                             {Boolean(member.SSO) && (
                                                                 <UserTableBadge
