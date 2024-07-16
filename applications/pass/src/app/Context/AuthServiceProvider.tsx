@@ -62,8 +62,8 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
             history,
             sw,
             getClient: () => client.current,
-            getOnline: () => online.current,
             getOfflineEnabled,
+            getOnline: () => online.current,
             onNotification: (notification) =>
                 createNotification(
                     enhance({

@@ -2,15 +2,13 @@ import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reduc
 import type { MaybePromise } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 
-export type SettingsOptions = {
+export interface SettingsService {
     clear: () => MaybePromise<void>;
-    resolve: () => MaybePromise<ProxiedSettings>;
+    resolve: () => Promise<ProxiedSettings>;
     sync: (settings: ProxiedSettings) => MaybePromise<void>;
-};
+}
 
-export type SettingsService = ReturnType<typeof createSettingsService>;
-
-export const createSettingsService = (options: SettingsOptions) => {
+export const createSettingsService = (options: SettingsService): SettingsService => {
     return {
         clear: options.clear,
         resolve: async () => {
