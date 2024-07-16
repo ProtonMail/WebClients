@@ -33,7 +33,11 @@ interface Props {
 
 // Always enabled for these apps
 const singlePageSignupApps = new Set([APPS.PROTONDRIVE, APPS.PROTONWALLET, ...passApps]);
-const singlePageSignupPaths = new Set([SSO_PATHS.MAIL_SIGNUP_B2B, SSO_PATHS.CALENDAR_SIGNUP_B2B]);
+const singlePageSignupPaths = new Set([
+    SSO_PATHS.MAIL_SIGNUP_B2B,
+    SSO_PATHS.CALENDAR_SIGNUP_B2B,
+    SSO_PATHS.BUSINESS_SIGNUP,
+]);
 
 const SingleSignupSwitchContainer = ({
     hasBFCoupon,
