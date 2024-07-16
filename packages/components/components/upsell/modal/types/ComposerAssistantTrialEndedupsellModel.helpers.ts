@@ -1,8 +1,8 @@
 import { ADDON_NAMES, CYCLE } from '@proton/shared/lib/constants';
 import { Plan } from '@proton/shared/lib/interfaces';
 
-export const getAIAddonMonthlyPrice = (plans: Plan[]) => {
-    const addonPlan = plans?.find((plan) => plan.Name === ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS);
+export const getAIAddonMonthlyPrice = (plans: Plan[], addonPlanName: ADDON_NAMES) => {
+    const addonPlan = plans?.find((plan) => plan.Name === addonPlanName);
     if (!addonPlan) {
         return;
     }

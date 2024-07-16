@@ -128,6 +128,12 @@ export const AssistantContext = createContext<{
      *  - Then loads it on the GPU (if necessary)
      */
     initAssistant?: () => void;
+    /** TODO: Temporary fix - initAssistant copy
+     * Needed to call `initAssistant` on composer assistant inner modal submit
+     * In this case assistant context is still set to server mode so initAssistant was undefined.
+     * In order to call initAssistant with no side effects i made a duplicate
+     */
+    handleSettingChange: () => void;
     /**
      * Generate a result from a prompt
      */
@@ -179,6 +185,7 @@ export const useAssistant = (assistantID?: string) => {
         cancelRunningAction,
         runningActionResolvers,
         resetAssistantState,
+        handleSettingChange,
     } = assistantContext;
 
     const isGeneratingResult = useMemo(() => {
@@ -240,5 +247,6 @@ export const useAssistant = (assistantID?: string) => {
         cancelRunningAction: handleCancelRunningAction,
         assistantConfig: assistantContext.assistantConfig,
         resetAssistantState,
+        handleSettingChange,
     };
 };

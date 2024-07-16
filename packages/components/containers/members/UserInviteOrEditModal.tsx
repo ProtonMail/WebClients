@@ -165,7 +165,7 @@ const UserInviteOrEditModal = ({
                         <label className="text-semibold" htmlFor="ai-assistant-toggle">
                             {c('Info').t`Writing assistant`}
                         </label>
-                        {!aiSeatsRemaining && <AssistantUpdateSubscriptionButton />}
+                        {!aiSeatsRemaining && !model.numAI && <AssistantUpdateSubscriptionButton />}
                     </div>
                 )}
 

@@ -23,6 +23,10 @@ interface Props {
     editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     editorMetadata: EditorMetadata;
     onChange: MessageChange;
+    showExternalEncryption: boolean;
+    isPassword: boolean;
+    onPassword: () => void;
+    onRemoveOutsideEncryption: () => void;
 }
 
 const ComposerMoreActions = ({
@@ -34,6 +38,10 @@ const ComposerMoreActions = ({
     editorActionsRef,
     editorMetadata,
     onChange,
+    showExternalEncryption,
+    isPassword,
+    onPassword,
+    onRemoveOutsideEncryption,
 }: Props) => {
     const dispatch = useMailDispatch();
     const titleMoreOptions = c('Title').t`More options`;
@@ -56,6 +64,8 @@ const ComposerMoreActions = ({
         dispatch(updateExpires({ ID: message?.localID || '', expiresIn: undefined }));
     };
 
+    const dotsInColor = isExpiration || isPassword;
+
     return (
         <ComposerMoreOptionsDropdown
             title={titleMoreOptions}
@@ -65,7 +75,7 @@ const ComposerMoreActions = ({
                 <Icon
                     name="three-dots-horizontal"
                     alt={titleMoreOptions}
-                    className={clsx([isExpiration && 'color-primary'])}
+                    className={clsx([dotsInColor && 'color-primary'])}
                 />
             }
         >
@@ -95,6 +105,36 @@ const ComposerMoreActions = ({
                     <Icon name="trash" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Remove expiration time`}</span>
                 </DropdownMenuButton>
+            )}
+
+            {showExternalEncryption && (
+                <>
+                    <div className="dropdown-item-hr" key="hr-more-options" />
+
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap items-center"
+                        onClick={onPassword}
+                        aria-pressed={isPassword}
+                        data-testid="composer:encryption-button"
+                    >
+                        <Icon name="lock" />
+                        <span className="ml-2 my-auto flex-1">
+                            {isPassword ? c('Action').t`Edit encryption` : c('Action').t`External encryption`}
+                        </span>
+                    </DropdownMenuButton>
+
+                    {isPassword && (
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap items-center color-danger"
+                            onClick={onRemoveOutsideEncryption}
+                            aria-pressed={isPassword}
+                            data-testid="composer:remove-encryption-button"
+                        >
+                            <Icon name="trash" />
+                            <span className="ml-2 my-auto flex-1">{c('Action').t`Remove encryption`}</span>
+                        </DropdownMenuButton>
+                    )}
+                </>
             )}
         </ComposerMoreOptionsDropdown>
     );
