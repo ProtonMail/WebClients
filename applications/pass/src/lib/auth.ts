@@ -6,7 +6,7 @@ import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents, getB2BEventsStorageKey } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
-import { getSettingsStorageKey } from 'proton-pass-web/lib/settings';
+import { getSettingsStorageKey, settings } from 'proton-pass-web/lib/settings';
 import { getTelemetryStorageKey, telemetry } from 'proton-pass-web/lib/telemetry';
 import type { ClientContextValue } from 'proton-pass-web/src/app/Context/ClientProvider';
 
@@ -190,12 +190,12 @@ export const createAuthService = ({
             return loggedIn;
         },
 
-        onAuthorize: () => {
+        onLoginStart: () => {
             if (client.state.booted) return;
             return client.setStatus(AppStatus.AUTHORIZING);
         },
 
-        onAuthorized: async (_, localID) => {
+        onLoginComplete: async (_, localID) => {
             client.setLoggedIn(true);
             onboarding.init().catch(noop);
             setSentryUID(authStore.getUID());
@@ -209,19 +209,22 @@ export const createAuthService = ({
             }
         },
 
-        onUnauthorized: (userID, localID, broadcast) => {
-            if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
-
-            /* wipe the local DB cache and session data */
-            if (userID) deletePassDB(userID).catch(noop);
-            localStorage.removeItem(getSessionKey(localID));
-
+        onLogoutStart: () => {
+            /** These services use the LocalID from the authentication store
+             * to index their storage keys in the web-app. We must trigger
+             * their clean-up functions before the auth store is cleared
+             * in the `onLogoutComplete` hook. */
             onboarding.reset();
             telemetry.stop();
             B2BEvents.stop();
+            settings.clear();
 
-            void settings.clear(localID);
             setSentryUID(undefined);
+        },
+
+        onLogoutComplete: (userID, localID, broadcast) => {
+            if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
+            if (userID) deletePassDB(userID).catch(noop);
 
             flushSync(() => {
                 client.setBooted(false);
