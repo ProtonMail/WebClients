@@ -19,6 +19,21 @@ describe('search params helper', () => {
             expectation: { product: undefined, productParam: 'business' },
         },
         {
+            params: 'plan=bundlepro2024',
+            pathname: '/business/signup',
+            expectation: { product: SERVICES.mail, productParam: 'business' },
+        },
+        {
+            params: 'plan=mailbiz2024',
+            pathname: '/business/signup',
+            expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
+        },
+        {
+            params: 'plan=mailpro2022',
+            pathname: '/business/signup',
+            expectation: { product: SERVICES.mail, productParam: SERVICES.mail },
+        },
+        {
             params: 'product=generic',
             pathname: '/signup',
             expectation: { product: undefined, productParam: 'generic' },
