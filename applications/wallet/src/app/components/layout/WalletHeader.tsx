@@ -32,7 +32,7 @@ const WalletHeader = ({ isHeaderExpanded, toggleHeaderExpanded, title = c('Title
         wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint();
 
     return (
-        <Header className="p-0" title={title}>
+        <Header className="p-0 h-auto" title={title}>
             {isSmallViewport && (
                 <div className="p-1 flex">
                     <Hamburger className="p-2 my-auto" expanded={isHeaderExpanded} onToggle={toggleHeaderExpanded} />
