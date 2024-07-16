@@ -2,7 +2,13 @@ import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import { clientBooted } from '@proton/pass/lib/client';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
-import { getUserAccessIntent, stateHydrate, wakeupIntent, wakeupSuccess } from '@proton/pass/store/actions';
+import {
+    getUserAccessIntent,
+    secureLinksGet,
+    stateHydrate,
+    wakeupIntent,
+    wakeupSuccess,
+} from '@proton/pass/store/actions';
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
 import { popupTabStateGarbageCollect } from '@proton/pass/store/actions/creators/popup';
 import type { WithReceiverAction } from '@proton/pass/store/actions/enhancers/endpoint';
@@ -30,6 +36,7 @@ function* wakeupWorker(
         /* garbage collect any stale popup tab
          * state on each popup wakeup call */
         if (endpoint === 'popup') {
+            yield put(secureLinksGet.intent());
             yield put(passwordHistoryGarbageCollect());
 
             yield fork(function* () {

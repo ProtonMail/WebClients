@@ -151,6 +151,9 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
                 })
             ).catch(noop),
 
+        onB2BEvent: (event) =>
+            sendMessage(messageFactory({ type: WorkerMessageType.B2B_EVENT, payload: { event } })).catch(noop),
+
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
     };
 };

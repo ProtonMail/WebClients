@@ -8,6 +8,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Copy } from '@proton/pass/components/Copy/Copy';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
@@ -50,7 +51,8 @@ export const SecureLinkCard: FC<Props> = ({
     );
 
     const views = useMemo(
-        () => (readCount === maxReadCount ? c('Label').t`Max views reached` : getViewCountString(readCount)),
+        () =>
+            `${getViewCountString(readCount, maxReadCount)} ${readCount === maxReadCount ? `(${c('Label').t`max views reached`})` : ''}`,
         [maxReadCount, readCount]
     );
 
@@ -95,8 +97,7 @@ export const SecureLinkCard: FC<Props> = ({
                                 }}
                                 className="flex items-center gap-1 color-danger hover:color-danger"
                             >
-                                <Icon name="cross-circle" size={4} />
-                                <span>{c('Label').t`Remove link`}</span>
+                                <DropdownMenuButtonLabel label={c('Label').t`Remove link`} icon="cross-circle" danger />
                             </DropdownMenuButton>
                         </QuickActionsDropdown>
                     </div>

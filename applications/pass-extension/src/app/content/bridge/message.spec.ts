@@ -1,9 +1,7 @@
 import { CLIENT_SCRIPT_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 
 import * as domUtils from '@proton/pass/utils/dom/state';
-import { error } from '@proton/pass/utils/fp/throw';
 import * as stringUtils from '@proton/pass/utils/string/unique-id';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { ALLOWED_MESSAGES, BRIDGE_ABORT, BRIDGE_DISCONNECT, BRIDGE_REQUEST, BRIDGE_RESPONSE } from './constants';
 import {
@@ -118,23 +116,21 @@ describe('Bridge', () => {
                 await expect(bridge.getState().ready).resolves.toBeUndefined();
             });
 
-            test('ready state should reject after timeout if page not ready', async () => {
-                waitForPageReady.mockReturnValueOnce(wait(BRIDGE_INIT_TIMEOUT + 1));
+            test('ready state should reject if page ready throws', async () => {
+                waitForPageReady.mockReturnValueOnce(Promise.reject());
                 const bridge = createMessageBridge();
                 bridge.init();
 
-                jest.advanceTimersByTime(BRIDGE_INIT_TIMEOUT);
-                await expect(bridge.getState().ready).rejects.toEqual(error({ name: 'BridgeTimeout' }));
+                await expect(bridge.getState().ready).rejects.toHaveProperty('name', 'BridgeDisconnected');
             });
 
-            test('ready state should reject after timeout if content-script not ready', async () => {
+            test('ready state should reject after timeout', async () => {
                 waitForPageReady.mockReturnValueOnce(Promise.resolve());
                 const bridge = createMessageBridge();
                 bridge.init();
 
-                /* CLIENT_SCRIPT_READY_EVENT not dispatched */
-                jest.advanceTimersByTime(BRIDGE_INIT_TIMEOUT);
-                await expect(bridge.getState().ready).rejects.toEqual(error({ name: 'BridgeTimeout' }));
+                await jest.advanceTimersByTimeAsync(BRIDGE_INIT_TIMEOUT + 1);
+                await expect(bridge.getState().ready).rejects.toHaveProperty('name', 'BridgeTimeout');
             });
         });
 

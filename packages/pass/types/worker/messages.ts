@@ -14,10 +14,11 @@ import type {
     PasskeyQueryPayload,
     SelectedPasskey,
 } from '@proton/pass/lib/passkeys/types';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
+import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/fork/extension';
@@ -73,7 +74,8 @@ export enum WorkerMessageType {
     AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
-    AUTOSUGGEST_PASSWORD_CONFIG = 'AUTOSUGGEST_PASSWORD_CONFIG',
+    AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
+    B2B_EVENT = 'B2B_EVENT',
     DEBUG = 'DEBUG',
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
@@ -136,11 +138,12 @@ export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONF
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthOptions };
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
-export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG };
+export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
 export type AutofillQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_QUERY, AutofillOptions>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, AutofillResult>;
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
+export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportOptions>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
@@ -206,6 +209,7 @@ export type WorkerMessage =
     | AutofillSelectMessage
     | AutofillSyncMessage
     | AutoSaveRequestMessage
+    | B2BEventMessage
     | DebugMessage
     | ExportRequestMessage
     | FeatureFlagsUpdateMessage
@@ -271,7 +275,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
     [WorkerMessageType.AUTOFILL_SELECT]: FormCredentials;
-    [WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG]: { config: GeneratePasswordConfig };
+    [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
