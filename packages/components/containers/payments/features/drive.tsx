@@ -167,13 +167,10 @@ const getAdvancedShareFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getDocumentEditor = (included: boolean): PlanCardFeatureDefinition => {
+const getDocumentEditor = (): PlanCardFeatureDefinition => {
     return {
-        text: included
-            ? c('new_plans: feature').t`Document editors (docs, sheets, slides) (soon)`
-            : c('new_plans: feature').t`Document editors (docs, sheets, slides)`,
-        included,
-        status: 'coming-soon',
+        text: c('new_plans: feature').t`Collaborative document editor`,
+        included: true,
     };
 };
 
@@ -296,19 +293,19 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
             name: 'document-editor',
             target: Audience.B2B,
             plans: {
-                [PLANS.FREE]: getDocumentEditor(false),
-                [PLANS.BUNDLE]: getDocumentEditor(false),
-                [PLANS.MAIL]: getDocumentEditor(false),
-                [PLANS.VPN]: getDocumentEditor(false),
-                [PLANS.DRIVE]: getDocumentEditor(false),
-                [PLANS.PASS]: getDocumentEditor(false),
-                [PLANS.FAMILY]: getDocumentEditor(false),
-                [PLANS.MAIL_PRO]: getDocumentEditor(false),
-                [PLANS.MAIL_BUSINESS]: getDocumentEditor(false),
-                [PLANS.BUNDLE_PRO]: getDocumentEditor(true),
-                [PLANS.BUNDLE_PRO_2024]: getDocumentEditor(true),
-                [PLANS.PASS_PRO]: getDocumentEditor(false),
-                [PLANS.PASS_BUSINESS]: getDocumentEditor(false),
+                [PLANS.FREE]: getDocumentEditor(),
+                [PLANS.BUNDLE]: getDocumentEditor(),
+                [PLANS.MAIL]: getDocumentEditor(),
+                [PLANS.VPN]: getDocumentEditor(),
+                [PLANS.DRIVE]: getDocumentEditor(),
+                [PLANS.PASS]: getDocumentEditor(),
+                [PLANS.FAMILY]: getDocumentEditor(),
+                [PLANS.MAIL_PRO]: getDocumentEditor(),
+                [PLANS.MAIL_BUSINESS]: getDocumentEditor(),
+                [PLANS.BUNDLE_PRO]: getDocumentEditor(),
+                [PLANS.BUNDLE_PRO_2024]: getDocumentEditor(),
+                [PLANS.PASS_PRO]: getDocumentEditor(),
+                [PLANS.PASS_BUSINESS]: getDocumentEditor(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
                 [PLANS.WALLET]: null,
