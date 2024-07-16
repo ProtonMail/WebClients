@@ -348,6 +348,12 @@
       "Expand folder": [
         "Разгарнуць папку"
       ],
+      "Explore on my own": [
+        "Даследую самастойна"
+      ],
+      "Explore while you wait": [
+        "Даследуйце, пакуль чакаеце"
+      ],
       "Export": [
         "Экспартаваць"
       ],
@@ -548,6 +554,9 @@
       ],
       "Ok": [
         "Добра"
+      ],
+      "Open": [
+        "Адкрыць"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
@@ -857,6 +866,9 @@
       ],
       "Upload file": [
         "Запампаваць файл"
+      ],
+      "Upload files": [
+        "Запампаваць файлы"
       ],
       "Upload folder": [
         "Запампаваць папку"
@@ -2266,6 +2278,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту доступу да вашага ўліковага запісу."
       ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
@@ -3094,6 +3109,9 @@
     "Error message": {
       "Access denied": [
         "У доступе адмоўлена"
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Псеўданімы не могуць быць выкарыстаны, калі дадатковы пароль уключаны ў ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "Праграма часова недаступна"
@@ -7895,6 +7913,12 @@
         "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:",
         "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Захоўвайце свае файлы і абагульвайце іх бяспечна. Пачніце з абароны вашых самых прыватных файлаў, такіх як пасведчанні асобы, кантакты і асабістыя фатаграфіі."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Уладальнік патрабуе пацвердзіць абагульванне доступу. Вы атрымаеце ліст, калі пацвярджэнне будзе атрымана."
+      ],
       "Upload a file": [
         "Запампаваць файл"
       ],
@@ -7923,6 +7947,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Адбываецца фінальнае зацвярджэнне"
+      ],
+      "Hang tight!": [
+        "Падрыхтуйцеся!"
+      ],
+      "Upload and protect your important files": [
+        "Запампуйце і абараніце вашы важныя файлы"
+      ],
       "Your welcome bonus": [
         "Ваш прывітальны бонус"
       ]
@@ -10119,6 +10152,9 @@
       ],
       "Send feedback": [
         "Адправіць водгук"
+      ],
+      "Set recovery phrase": [
+        "Задаць фразу аднаўлення"
       ],
       "Settings": [
         "Налады"

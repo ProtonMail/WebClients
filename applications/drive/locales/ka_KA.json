@@ -13,6 +13,9 @@
       ]
     },
     "Account Settings - Info": {
+      "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
@@ -952,6 +955,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-ის აპლიკაციები"
+      ]
+    },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
       ]
     },
     "Attached ics file error": {
@@ -6724,6 +6732,9 @@
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
+      ],
       "Reply to messages": [
         "პასუხი შეტყობინებებზე"
       ],
@@ -7943,6 +7954,9 @@
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **აქტიურია** და იცავს თქვენს ანგარიშს."
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ]
     },
     "Select files": {
@@ -8605,6 +8619,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "ჯამში საცავი ${ planMaxSpace }"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } პროგრამა"
