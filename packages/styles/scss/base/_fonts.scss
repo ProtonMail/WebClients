@@ -83,6 +83,15 @@ html,
 .apply-font {
 	// Set fallback font stack as default
 	font-family: var(--setting-font-family, var(--optional-font-family, #{$fallback-fonts}));
+	font-synthesis: none;
+	font-weight: var(--font-weight-normal);
+	font-style: normal;
+
+	/* stylelint-disable */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	/* stylelint-enable */
 
 	// If the browser supports `@supports`, set Inter static if it doesn't support variable fonts
 	@supports not (font-variation-settings: normal) {
@@ -93,14 +102,4 @@ html,
 	@supports (font-variation-settings: normal) {
 		font-family: var(--setting-font-family, var(--optional-font-family, 'InterVariable', #{$fallback-fonts}));
 	}
-
-	font-synthesis: none;
-	font-weight: var(--font-weight-normal);
-	font-style: normal;
-
-	/* stylelint-disable */
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	/* stylelint-enable */
 }

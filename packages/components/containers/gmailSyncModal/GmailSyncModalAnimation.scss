@@ -250,7 +250,7 @@
 		animation: duration(forwarded) easing(ease-out-quad) delay(new-mail_pause) both anime-gsma-new-email;
 
 		@keyframes anime-gsma-new-email {
-			from {
+			0% {
 				inset-inline-start: 0;
 				opacity: 1;
 			}
@@ -259,7 +259,7 @@
 				opacity: 0;
 			}
 
-			to {
+			100% {
 				inset-inline-start: calc(100% - 4.5rem);
 				opacity: 0;
 			}
@@ -496,6 +496,8 @@
 			padding: 1rem;
 
 			.gsma-gmail-username-inbox {
+				margin-block-end: 0.75rem;
+
 				.gsma-username {
 					max-inline-size: calc(100% - #{rem(40)});
 
@@ -503,8 +505,6 @@
 						inset-inline: #{rem(40) * -1} 0;
 					}
 				}
-
-				margin-block-end: 0.75rem;
 			}
 
 			.gsma-envelope {

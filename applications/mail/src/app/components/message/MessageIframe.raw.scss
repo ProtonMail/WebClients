@@ -329,6 +329,16 @@ blockquote.protonmail_quote
 ------------------------ */
 
 .proton-print {
+	font-family: var(--font-family);
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--text-norm);
+	background-color: white;
+	text-rendering: geometricprecision;
+	-webkit-font-smoothing: antialiased;
+	padding-block-end: 1em;
+	overflow: auto;
+
 	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 	@import '~@proton/styles/scss/utilities/flex';
 	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
@@ -345,16 +355,6 @@ blockquote.protonmail_quote
 		inline-size: 1px;
 		inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
 	}
-
-	font-family: var(--font-family);
-	font-size: 14px;
-	line-height: 1.5;
-	color: var(--text-norm);
-	background-color: white;
-	text-rendering: geometricprecision;
-	-webkit-font-smoothing: antialiased;
-	padding-block-end: 1em;
-	overflow: auto;
 
 	.flex {
 		display: flex;
