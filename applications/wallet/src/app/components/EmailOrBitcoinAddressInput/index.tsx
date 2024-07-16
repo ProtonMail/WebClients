@@ -16,6 +16,7 @@ import {
     useAutocompleteFilter,
     useModalState,
 } from '@proton/components/components';
+import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -313,6 +314,7 @@ export const EmailOrBitcoinAddressInput = ({
                         maxHeight: DropdownSizeUnit.Viewport,
                         maxWidth: DropdownSizeUnit.Viewport,
                     }}
+                    availablePlacements={verticalPopperPlacements}
                     isOpen={!!filteredOptions.length}
                     anchorRef={inputRef}
                     onFocus={() => {
