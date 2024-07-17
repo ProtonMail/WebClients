@@ -11,7 +11,12 @@ import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const KEY = 'CALENDAR_BOOTSTRAP';
 
-export const useGetCalendarBootstrap = (): ((id: string) => Promise<CalendarBootstrap>) => {
+type GetCalendarBootstrap = {
+    (calendarID?: undefined): Promise<undefined>;
+    (calendarID: string): Promise<CalendarBootstrap>;
+};
+
+export const useGetCalendarBootstrap: () => GetCalendarBootstrap = () => {
     const api = useApi();
     const cache = useCache();
     const miss = useCallback(
@@ -25,9 +30,12 @@ export const useGetCalendarBootstrap = (): ((id: string) => Promise<CalendarBoot
     );
 
     return useCallback(
-        (calendarID: string) => {
+        (calendarID?: string) => {
             if (!cache.has(KEY)) {
                 cache.set(KEY, createCache());
+            }
+            if (!calendarID) {
+                return Promise.resolve(undefined);
             }
             return getPromiseValue(cache.get(KEY), calendarID, miss);
         },
