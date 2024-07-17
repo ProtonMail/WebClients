@@ -1,20 +1,22 @@
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
-import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
+import { WasmApiExchangeRate, WasmApiFiatCurrency, WasmBitcoinUnit } from '@proton/andromeda';
+import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY, useUserWalletSettings } from '@proton/wallet';
 
 import { useFiatCurrencies, useGetExchangeRate } from '../store/hooks';
-import { convertAmountStr, getLabelByUnit } from '../utils';
+import { convertAmountStr, getExchangeRateFromBitcoinUnit, getLabelByUnit, isExchangeRate } from '../utils';
 import { BitcoinAmountInput } from './BitcoinAmountInput';
 import { CoreButton } from './Button';
-import { CurrencySelect } from './CurrencySelect';
+import { BitcoinCurrency, CurrencySelect, DEFAULT_POPULAR_SYMBOLS } from './CurrencySelect';
 import { Price } from './Price';
 
 interface Props {
     remainingBalance: number;
 
     exchangeRate?: WasmApiExchangeRate;
-    onExchangeRateChange: (u?: WasmApiExchangeRate) => void;
+    onExchangeRateChange: (u: WasmApiExchangeRate) => void;
+
+    secondaryExchangeRate?: WasmApiExchangeRate;
 
     onSendAll?: () => void;
 
@@ -22,11 +24,50 @@ interface Props {
     onAmountChange?: (v: number) => void;
 }
 
+export const secondaryAmount = ({
+    key,
+    exchangeRateOrBitcoinUnit,
+    secondaryExchangeRate,
+    value,
+    settingsBitcoinUnit,
+}: {
+    key: string;
+    exchangeRateOrBitcoinUnit: WasmApiExchangeRate | WasmBitcoinUnit;
+    secondaryExchangeRate?: WasmApiExchangeRate;
+    value: number;
+    settingsBitcoinUnit: WasmBitcoinUnit;
+}) => {
+    if (!isExchangeRate(exchangeRateOrBitcoinUnit)) {
+        return null;
+    }
+
+    if (
+        (['BTC', 'SATS', 'MBTC'] as WasmBitcoinUnit[]).includes(
+            exchangeRateOrBitcoinUnit.FiatCurrency as WasmBitcoinUnit
+        )
+    ) {
+        if (!secondaryExchangeRate) {
+            return null;
+        }
+
+        return <Price key={key} satsAmount={value} unit={secondaryExchangeRate} />;
+    }
+
+    return (
+        <>
+            {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settingsBitcoinUnit)} {getLabelByUnit(settingsBitcoinUnit)}
+        </>
+    );
+};
+
 export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     remainingBalance,
+
     exchangeRate,
-    value,
     onExchangeRateChange,
+    secondaryExchangeRate,
+
+    value,
     onAmountChange,
     onSendAll,
 }: Props) => {
@@ -34,20 +75,21 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     const [settings] = useUserWalletSettings();
     const getExchangeRate = useGetExchangeRate();
 
-    const handleChange = async (currency?: WasmApiFiatCurrency) => {
-        if (currency) {
-            const exchangeRate = await getExchangeRate(currency.Symbol);
-            if (exchangeRate) {
-                onExchangeRateChange(exchangeRate);
-            }
-        } else {
-            onExchangeRateChange();
+    const handleChange = async (currency: WasmApiFiatCurrency | BitcoinCurrency) => {
+        const exchangeRate =
+            'isBitcoinUnit' in currency
+                ? getExchangeRateFromBitcoinUnit(currency.Symbol)
+                : await getExchangeRate(currency.Symbol);
+
+        if (exchangeRate) {
+            onExchangeRateChange(exchangeRate);
         }
     };
 
-    const price = (
-        <Price key={'available-amount'} satsAmount={remainingBalance} unit={exchangeRate ?? settings.BitcoinUnit} />
-    );
+    const exchangeRateOrBitcoinUnit = exchangeRate ?? settings.BitcoinUnit;
+    const exchangeRateSymbolOrBitcoinUnit = exchangeRate?.FiatCurrency ?? settings.BitcoinUnit;
+
+    const price = <Price key="available-amount" satsAmount={remainingBalance} unit={exchangeRateOrBitcoinUnit} />;
 
     return (
         <div className="mt-12 mb-4">
@@ -73,36 +115,38 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
                         onValueChange={(v) => {
                             onAmountChange?.(v);
                         }}
-                        unit={exchangeRate ?? settings.BitcoinUnit}
+                        unit={exchangeRateOrBitcoinUnit}
                         unstyled
                         className="h1 invisible-number-input-arrow"
                         inputClassName="p-0"
                         style={{ fontSize: '3.75rem' }}
                         value={value}
                         readOnly={!onAmountChange}
-                        prefix={exchangeRate?.FiatCurrency ?? settings.BitcoinUnit}
+                        prefix={exchangeRateSymbolOrBitcoinUnit}
                     />
                 </div>
 
-                {exchangeRate && (
-                    <div className="shrink-0">
-                        <CurrencySelect
-                            dense
-                            options={currencies ?? []}
-                            value={exchangeRate?.FiatCurrency}
-                            onSelect={(u) => handleChange(u)}
-                            stackedFieldWrapper={false}
-                        />
-                    </div>
-                )}
+                <div className="shrink-0">
+                    <CurrencySelect
+                        dense
+                        popularSymbols={['BTC', ...DEFAULT_POPULAR_SYMBOLS]}
+                        options={[BITCOIN_CURRENCY, SATS_CURRENCY, ...(currencies ?? [])]}
+                        value={exchangeRateSymbolOrBitcoinUnit}
+                        onSelect={(u) => handleChange(u)}
+                        stackedFieldWrapper={false}
+                    />
+                </div>
             </div>
 
-            {!!exchangeRate && (
-                <span className="block color-weak">
-                    {convertAmountStr(value, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                    {getLabelByUnit(settings.BitcoinUnit)}
-                </span>
-            )}
+            <span className="block color-weak">
+                {secondaryAmount({
+                    key: 'amount-hint',
+                    settingsBitcoinUnit: settings.BitcoinUnit,
+                    secondaryExchangeRate,
+                    exchangeRateOrBitcoinUnit,
+                    value,
+                })}
+            </span>
         </div>
     );
 };

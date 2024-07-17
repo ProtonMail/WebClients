@@ -6,9 +6,12 @@ import generateUID from '@proton/atoms/generateUID';
 import { DropdownSize, DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import clsx from '@proton/utils/clsx';
+import { BITCOIN_CURRENCY } from '@proton/wallet';
 
 import { SearchableSelect } from '../Select';
 import { currencyFilterFunction, getAllDropdownOptions, getIsCurrencyOption, getSerialisedOption } from './helpers';
+
+export type BitcoinCurrency = typeof BITCOIN_CURRENCY;
 
 interface Props<S extends string, T extends { Symbol: S; Name: string }> {
     /**
@@ -35,8 +38,10 @@ interface Props<S extends string, T extends { Symbol: S; Name: string }> {
     stackedFieldWrapper?: boolean;
 }
 
+export const DEFAULT_POPULAR_SYMBOLS = ['USD', 'CHF', 'EUR', 'GBP', 'CAD', 'CNY'];
+
 export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: string }>({
-    popularSymbols = ['USD', 'CHF', 'EUR', 'GBP', 'CAD', 'CNY'] as S[],
+    popularSymbols = DEFAULT_POPULAR_SYMBOLS as S[],
     options,
     value,
     onSelect,
