@@ -102,8 +102,9 @@ export function TablePlugin({
         COMMAND_PRIORITY_EDITOR,
       ),
       editor.registerNodeTransform(TableNode, (node) => {
-        if (node.getChildren().some((child) => !$isTableRowNode(child))) {
-          node.getChildren().forEach((child) => {
+        const children = node.getChildren()
+        if (children.some((child) => !$isTableRowNode(child))) {
+          for (const child of children) {
             if (!$isTableRowNode(child)) {
               // We remove any nodes that are not TableRowNodes
               child.remove()
@@ -113,7 +114,17 @@ export function TablePlugin({
                 node.insertBefore(child)
               }
             }
-          })
+          }
+        }
+        const nextSibling = node.getNextSibling()
+        const hasPreviousSibling = !!node.getPreviousSibling()
+        if ($isTableNode(nextSibling)) {
+          node.insertAfter($createParagraphNode())
+        } else if (!nextSibling) {
+          node.insertAfter($createParagraphNode())
+        }
+        if (!hasPreviousSibling) {
+          node.insertBefore($createParagraphNode())
         }
         const [gridMap] = $computeTableMapSkipCellCheck(node, null, null)
         const maxRowLength = gridMap.reduce((curLength, row) => {
