@@ -52,7 +52,7 @@ const PopoverPill = ({
 
   useEffect(() => {
     const handler = () => {
-      setUpdateFlag(!updateFlag)
+      setUpdateFlag((updateFlag) => !updateFlag)
     }
     document.addEventListener(POPOVER_FOCUS_EVENT_NAME, handler)
     return () => {
@@ -132,7 +132,7 @@ const PopoverPill = ({
             left: 0,
             transform: `translate3d(${position.left}px, ${position.top}px, 0)`,
           }}
-          className="w-[392px] select-text overflow-hidden rounded-lg bg-[--background-norm] shadow"
+          className="bg-norm border-norm shadow-lifted w-[392px] select-text overflow-hidden rounded-lg border"
           ref={floating}
         >
           <div className="flex flex-col gap-4 p-6">
