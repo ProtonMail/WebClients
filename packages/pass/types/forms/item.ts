@@ -85,4 +85,4 @@ export type ItemIdentity = {
     extraSections: UnsafeItemExtraSection[];
 };
 
-export type NewIdentityItemFormValues = NoteFormValues & ItemIdentity;
+export type IdentityItemFormValues = NoteFormValues & ItemIdentity;

@@ -1,69 +1,58 @@
 import { type FC } from 'react';
 
-import { Form, FormikProvider, useFormik } from 'formik';
+import { FieldArray, Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
+import { Icon, useModalState } from '@proton/components/components';
+import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
+import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import {
-    cardNumberHiddenValue,
-    cardNumberMask,
-    expDateMask,
-} from '@proton/pass/components/Form/Field/masks/credit-card';
-import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
+import { CollapsibleItem } from '@proton/pass/components/Layout/Collapsible/CollapsibleItem';
+import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
+import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
+import { useIdentityFormSections } from '@proton/pass/hooks/identity/useIdentityFormSections';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
-import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
-import { CardType } from '@proton/pass/types/protobuf/item-v1';
+import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
+import type { IdentityItemFormValues, UnsafeItemExtraField } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
-const FORM_ID = 'edit-creditCard';
+import { IdentityAddNewSection } from './Identity.modal';
+import { EMPTY_CUSTOM_FIELD } from './Identity.new';
 
-export const IdentityEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, revision, onSubmit, onCancel }) => {
+const FORM_ID = 'edit-identity';
+
+export const IdentityEdit: FC<ItemEditViewProps<'identity'>> = ({ vault, revision, onSubmit, onCancel }) => {
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
+    const { metadata, content } = useDeobfuscatedItem(item);
+    const { sections, updateSectionFields } = useIdentityFormSections(content);
+    const [showWarningMessage, setShowWarningMessage] = useModalState();
 
-    const { metadata, content, ...uneditable } = useDeobfuscatedItem(item);
-
-    const form = useFormik<CreditCardItemFormValues>({
-        initialValues: {
-            ...content,
-            expirationDate: formatExpirationDateMMYY(content.expirationDate),
-            name: metadata.name,
-            note: metadata.note,
-            shareId,
-        },
-        onSubmit: ({ name, note, ...creditCardValues }) => {
+    const form = useFormik<IdentityItemFormValues>({
+        initialValues: { ...content, name: metadata.name, note: metadata.note, shareId },
+        onSubmit: ({ shareId, name, note, ...content }) => {
             onSubmit({
-                ...uneditable,
-                content: {
-                    ...creditCardValues,
-                    cardType: CardType.Unspecified,
-                    expirationDate: creditCardValues.expirationDate,
-                    number: obfuscate(creditCardValues.number),
-                    pin: obfuscate(creditCardValues.pin),
-                    verificationNumber: obfuscate(creditCardValues.verificationNumber),
-                },
+                type: 'identity',
+                shareId,
+                metadata: { ...metadata, name, note: obfuscate(note) },
+                content,
                 extraFields: [],
                 itemId,
                 lastRevision,
-                metadata: { ...metadata, name, note: obfuscate(note) },
-                shareId,
             });
         },
-        validate: validateCreditCardForm,
-        validateOnChange: true,
-        validateOnMount: true,
+        validate: validateIdentityForm,
+        validateOnBlur: true,
     });
 
-    useItemDraft<CreditCardItemFormValues>(form, {
+    useItemDraft<IdentityItemFormValues>(form, {
         mode: 'edit',
         itemId,
         revision: lastRevision,
@@ -71,14 +60,14 @@ export const IdentityEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, revis
     });
 
     return (
-        <ItemEditPanel
-            type="creditCard"
-            formId={FORM_ID}
-            valid={form.isValid && form.dirty}
+        <ItemCreatePanel
             discardable={!form.dirty}
+            formId={FORM_ID}
             handleCancelClick={onCancel}
+            type="identity"
+            valid={form.isValid}
         >
-            {() => (
+            {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         <FieldsetCluster>
@@ -86,72 +75,210 @@ export const IdentityEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, revis
                                 lengthLimiters
                                 name="name"
                                 label={c('Label').t`Title`}
+                                placeholder={c('Placeholder').t`Untitled`}
                                 component={TitleField}
+                                autoFocus={didEnter}
+                                key={`identity-name-${didEnter}`}
                                 maxLength={MAX_ITEM_NAME_LENGTH}
                             />
                         </FieldsetCluster>
+                        {sections.map(({ name, expanded, fields, optionalFields }, index) => (
+                            <CollapsibleItem key={name} label={name} expanded={expanded}>
+                                <FieldArray
+                                    name={optionalFields?.extraFieldKey || name}
+                                    render={(helpers) => {
+                                        const extraFieldName = optionalFields?.extraFieldKey || name;
+                                        const extraFields = helpers.form.values[extraFieldName];
 
-                        <FieldsetCluster>
-                            <Field
-                                name="cardholderName"
-                                component={TextField}
-                                icon="user"
-                                label={c('Label').t`Name on card`}
-                                placeholder={c('Placeholder').t`Full Name`}
-                            />
-                            <Field
-                                hidden
-                                name="number"
-                                component={MaskedTextField}
-                                hiddenValue={cardNumberHiddenValue(form.values.number)}
-                                icon="credit-card"
-                                label={c('Label').t`Card number`}
-                                mask={cardNumberMask(form.values.number)}
-                                placeholder="1234 1234 1234 1234"
-                            />
-                            <Field
-                                name="expirationDate"
-                                component={MaskedTextField}
-                                icon="calendar-today"
-                                label={c('Label').t`Expiration date`}
-                                mask={expDateMask}
-                                placeholder={c('Placeholder').t`MM/YY`}
-                            />
-                            <Field
-                                hidden
-                                name="verificationNumber"
-                                component={MaskedTextField}
-                                hiddenValue="••••"
-                                icon="credit-card"
-                                label={c('Label').t`Security code`}
-                                mask={{ mask: '0000' }}
-                                placeholder="123"
-                            />
-                            <Field
-                                hidden
-                                name="pin"
-                                component={MaskedTextField}
-                                hiddenValue="••••"
-                                icon="grid-3"
-                                label={c('Label').t`PIN`}
-                                mask={{ mask: '000000000000' }}
-                                placeholder="1234"
-                            />
-                        </FieldsetCluster>
+                                        return (
+                                            <>
+                                                <FieldsetCluster>
+                                                    {fields.map((item) => (
+                                                        <Field
+                                                            key={item.name}
+                                                            component={item.component ?? TextField}
+                                                            mask={item.mask}
+                                                            type="text"
+                                                            {...item}
+                                                        />
+                                                    ))}
+                                                    {extraFields?.map((_: unknown, index: number) => (
+                                                        <Field
+                                                            key={`${extraFieldName}[${index}]`}
+                                                            component={ExtraFieldComponent}
+                                                            type="text"
+                                                            name={`${extraFieldName}[${index}]`}
+                                                            onDelete={() => helpers.remove(index)}
+                                                            /* Formik TS type are wrong for FormikTouched */
+                                                            touched={
+                                                                (
+                                                                    form.touched as unknown as Record<
+                                                                        string,
+                                                                        Record<number, boolean>
+                                                                    >
+                                                                )?.[extraFieldName]?.[index]
+                                                            }
+                                                            error={
+                                                                (
+                                                                    form.errors as unknown as Record<
+                                                                        string,
+                                                                        Record<
+                                                                            number,
+                                                                            FormikErrors<UnsafeItemExtraField>
+                                                                        >
+                                                                    >
+                                                                )?.[extraFieldName]?.[index]
+                                                            }
+                                                            autoFocus
+                                                        />
+                                                    ))}
+                                                </FieldsetCluster>
+                                                {optionalFields && Boolean(optionalFields?.fields.length) && (
+                                                    <DropdownMenuBase
+                                                        className="mb-2"
+                                                        dropdownOptions={optionalFields.fields.map(
+                                                            ({ name: fieldName, placeholder }) => ({
+                                                                value: fieldName,
+                                                                label: placeholder,
+                                                                onClick: () => {
+                                                                    if (fieldName.includes('extra')) {
+                                                                        helpers.push(EMPTY_CUSTOM_FIELD);
+                                                                    } else {
+                                                                        updateSectionFields?.(index, fieldName);
+                                                                    }
+                                                                },
+                                                            })
+                                                        )}
+                                                    >
+                                                        <div className="flex items-center">
+                                                            <Icon name="plus" />
+                                                            <div className="ml-2 text-semibold">{c('Action')
+                                                                .t`Add more`}</div>
+                                                        </div>
+                                                    </DropdownMenuBase>
+                                                )}
+                                            </>
+                                        );
+                                    }}
+                                />
+                            </CollapsibleItem>
+                        ))}
 
-                        <FieldsetCluster>
-                            <Field
-                                name="note"
-                                label={c('Label').t`Note`}
-                                placeholder={c('Placeholder').t`Add note`}
-                                component={TextAreaField}
-                                icon="note"
-                                maxLength={MAX_ITEM_NOTE_LENGTH}
-                            />
-                        </FieldsetCluster>
+                        <FieldArray
+                            name="extraSections"
+                            render={(extraSectionsHelpers) => {
+                                return (
+                                    <>
+                                        {form.values.extraSections.map(
+                                            ({ sectionName, sectionFields }, sectionIndex) => {
+                                                const sectionKey = `extraSections[${sectionIndex}].sectionFields`;
+                                                return (
+                                                    <CollapsibleItem
+                                                        key={sectionKey}
+                                                        label={sectionName}
+                                                        expanded
+                                                        suffix={
+                                                            <DeleteButton
+                                                                size="small"
+                                                                onDelete={() =>
+                                                                    extraSectionsHelpers.remove(sectionIndex)
+                                                                }
+                                                            />
+                                                        }
+                                                    >
+                                                        <FieldArray
+                                                            name={sectionKey}
+                                                            render={(helpers) => {
+                                                                return (
+                                                                    <>
+                                                                        <FieldsetCluster>
+                                                                            {sectionFields.map(
+                                                                                (_: unknown, index: number) => (
+                                                                                    <Field
+                                                                                        key={`${sectionName}[${index}]`}
+                                                                                        component={ExtraFieldComponent}
+                                                                                        type="text"
+                                                                                        name={`${sectionKey}[${index}]`}
+                                                                                        onDelete={() => {
+                                                                                            if (index === 0) {
+                                                                                                setShowWarningMessage(
+                                                                                                    true
+                                                                                                );
+                                                                                            } else {
+                                                                                                helpers.remove(index);
+                                                                                            }
+                                                                                        }}
+                                                                                        /* Formik TS type are wrong for FormikTouched */
+                                                                                        touched={
+                                                                                            (form.touched as any)
+                                                                                                .extraSections?.[
+                                                                                                sectionIndex
+                                                                                            ]?.sectionFields?.[index]
+                                                                                        }
+                                                                                        error={
+                                                                                            (
+                                                                                                form.errors as unknown as IdentityItemFormValues
+                                                                                            ).extraSections?.[
+                                                                                                sectionIndex
+                                                                                            ]?.sectionFields?.[index]
+                                                                                        }
+                                                                                        autoFocus
+                                                                                    />
+                                                                                )
+                                                                            )}
+                                                                        </FieldsetCluster>
+                                                                        <Button
+                                                                            className="mb-2 rounded-full"
+                                                                            style={{
+                                                                                backgroundColor:
+                                                                                    'var(--interaction-weak)',
+                                                                            }}
+                                                                            color="norm"
+                                                                            shape="ghost"
+                                                                            onClick={() =>
+                                                                                helpers.push(EMPTY_CUSTOM_FIELD)
+                                                                            }
+                                                                        >
+                                                                            <div className="flex items-center">
+                                                                                <Icon name="plus" />
+                                                                                <div className="ml-2 text-semibold">{c(
+                                                                                    'Action'
+                                                                                ).t`Add custom field`}</div>
+                                                                            </div>
+                                                                        </Button>
+                                                                    </>
+                                                                );
+                                                            }}
+                                                        />
+                                                        <ConfirmationModal
+                                                            open={showWarningMessage.open}
+                                                            onClose={showWarningMessage.onClose}
+                                                            onSubmit={() => extraSectionsHelpers.remove(sectionIndex)}
+                                                            submitText={c('Action').t`Delete section`}
+                                                            title={c('Title').t`Remove section?`}
+                                                            alertText={c('Warning')
+                                                                .t`Removing the last field will remove the custom section.`}
+                                                        />
+                                                    </CollapsibleItem>
+                                                );
+                                            }
+                                        )}
+                                        <hr />
+                                        <IdentityAddNewSection
+                                            onAdd={(sectionName: string) => {
+                                                extraSectionsHelpers.push({
+                                                    sectionName,
+                                                    sectionFields: [EMPTY_CUSTOM_FIELD],
+                                                });
+                                            }}
+                                        />
+                                    </>
+                                );
+                            }}
+                        />
                     </Form>
                 </FormikProvider>
             )}
-        </ItemEditPanel>
+        </ItemCreatePanel>
     );
 };

@@ -23,7 +23,7 @@ import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type { NewIdentityItemFormValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { IdentityItemFormValues, UnsafeItemExtraField, UnsafeItemExtraSection } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -31,7 +31,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { IdentityAddNewSection } from './Identity.modal';
 
 const FORM_ID = 'new-identity';
-const EMPTY_CUSTOM_FIELD = { type: 'text', fieldName: '', data: { content: '' } };
+export const EMPTY_CUSTOM_FIELD = { type: 'text', fieldName: '', data: { content: '' } };
 
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
@@ -39,9 +39,9 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
     const { sections, updateSectionFields } = useIdentityFormSections();
     const [showWarningMessage, setShowWarningMessage] = useModalState();
 
-    const initialValues: NewIdentityItemFormValues = useMemo(() => getInitialState(shareId), []);
+    const initialValues: IdentityItemFormValues = useMemo(() => getInitialState(shareId), []);
 
-    const form = useFormik<NewIdentityItemFormValues>({
+    const form = useFormik<IdentityItemFormValues>({
         initialValues,
         initialErrors: validateIdentityForm(initialValues),
         onSubmit: ({ shareId, name, note, ...content }) => {
@@ -61,7 +61,7 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
         validateOnBlur: true,
     });
 
-    useItemDraft<NewIdentityItemFormValues>(form, { mode: 'new', type: 'identity' });
+    useItemDraft<IdentityItemFormValues>(form, { mode: 'new', type: 'identity' });
 
     return (
         <ItemCreatePanel
@@ -119,15 +119,22 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                                                             /* Formik TS type are wrong for FormikTouched */
                                                             touched={
                                                                 (
-                                                                    form.touched[
-                                                                        extraFieldName!
-                                                                    ] as unknown as boolean[]
-                                                                )?.[index]
+                                                                    form.touched as unknown as Record<
+                                                                        string,
+                                                                        Record<number, boolean>
+                                                                    >
+                                                                )?.[extraFieldName]?.[index]
                                                             }
                                                             error={
-                                                                form.errors[extraFieldName!]?.[
-                                                                    index
-                                                                ] as FormikErrors<UnsafeItemExtraField>
+                                                                (
+                                                                    form.errors as unknown as Record<
+                                                                        string,
+                                                                        Record<
+                                                                            number,
+                                                                            FormikErrors<UnsafeItemExtraField>
+                                                                        >
+                                                                    >
+                                                                )?.[extraFieldName]?.[index]
                                                             }
                                                             autoFocus
                                                         />
@@ -170,7 +177,10 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                                 return (
                                     <>
                                         {extraSectionsHelpers.form.values.extraSections.map(
-                                            ({ sectionName, sectionFields }, sectionIndex) => {
+                                            (
+                                                { sectionName, sectionFields }: UnsafeItemExtraSection,
+                                                sectionIndex: number
+                                            ) => {
                                                 const sectionKey = `extraSections[${sectionIndex}].sectionFields`;
                                                 return (
                                                     <CollapsibleItem
@@ -210,20 +220,16 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                                                                                         }}
                                                                                         /* Formik TS type are wrong for FormikTouched */
                                                                                         touched={
-                                                                                            (
-                                                                                                form.touched
-                                                                                                    .extraSections?.[
-                                                                                                    sectionIndex
-                                                                                                ]
-                                                                                                    ?.sectionFields as unknown as boolean[]
-                                                                                            )?.[index]
+                                                                                            (form.touched as any)
+                                                                                                .extraSections?.[
+                                                                                                sectionIndex
+                                                                                            ]?.sectionFields?.[index]
                                                                                         }
                                                                                         error={
-                                                                                            form.errors.extraSections?.[
+                                                                                            (form.errors as any)
+                                                                                                .extraSections?.[
                                                                                                 sectionIndex
-                                                                                            ]?.sectionFields?.[
-                                                                                                index
-                                                                                            ] as FormikErrors<UnsafeItemExtraField>
+                                                                                            ]?.sectionFields?.[index]
                                                                                         }
                                                                                         autoFocus
                                                                                     />
