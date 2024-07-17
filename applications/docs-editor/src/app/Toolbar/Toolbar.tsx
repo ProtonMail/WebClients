@@ -71,6 +71,8 @@ import { FontColorMenu } from '../Components/ColorMenu'
 import { BackgroundColors, TextColors } from '../Shared/Color'
 import { isMac } from '@proton/shared/lib/helpers/browser'
 
+import './Toolbar.scss'
+
 type BlockType = keyof typeof blockTypeToBlockName
 
 export default function DocumentEditorToolbar({
@@ -555,11 +557,7 @@ export default function DocumentEditorToolbar({
       }}
     >
       <div
-        className="bg-norm flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
-        style={{
-          border: '0.5px solid var(--border-weak, #EAE7E4)',
-          boxShadow: '0px 4px 10px 0px rgba(0, 0, 0, 0.06)',
-        }}
+        className="DocumentEditorToolbar bg-norm flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
         data-testid="main-toolbar"
       >
         {showUndoRedoInToolbar && (
@@ -588,13 +586,12 @@ export default function DocumentEditorToolbar({
           shape="ghost"
           type="button"
           color="norm"
-          className="color-norm px-2 text-left text-sm"
+          className="px-2 text-left text-sm"
           content={
             <span
               className="w-custom line-clamp-1 break-all"
               style={{
                 '--w-custom': '9ch',
-                color: 'var(--text-norm)',
               }}
             >
               {blockTypeToBlockName[blockType]}
@@ -617,13 +614,12 @@ export default function DocumentEditorToolbar({
           shape="ghost"
           type="button"
           color="norm"
-          className="color-norm px-2 text-left text-sm"
+          className="px-2 text-left text-sm"
           content={
             <span
               className="w-custom line-clamp-1 break-all"
               style={{
                 '--w-custom': '7ch',
-                color: 'var(--text-norm)',
               }}
             >
               {fontFamilyLabel}
@@ -658,8 +654,8 @@ export default function DocumentEditorToolbar({
           shape="ghost"
           type="button"
           color="norm"
-          className="color-norm px-2 text-left text-sm"
-          content={<>{fontSize}</>}
+          className="px-2 text-left text-sm"
+          content={fontSize}
           disabled={!isEditable}
           contentProps={DropdownContentProps}
           data-testid="font-size"
@@ -1068,7 +1064,7 @@ export default function DocumentEditorToolbar({
           as={Button}
           shape="solid"
           type="button"
-          className="color-norm ml-auto flex gap-2 py-2"
+          className="ml-auto flex gap-2 py-2"
           style={{
             border: '0',
           }}
