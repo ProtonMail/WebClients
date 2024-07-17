@@ -222,7 +222,12 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
             return (
                 <>
                     <div className="flex flex-column grow flex-nowrap mb-2 grow overflow-auto">
-                        <div className={clsx('relative flex flex-column bg-weak rounded-xl', !isNarrow && 'mx-4')}>
+                        <div
+                            className={clsx(
+                                'relative flex flex-column bg-weak rounded-xl overflow-hidden',
+                                !isNarrow && 'mx-4'
+                            )}
+                        >
                             <DataList
                                 onClickRow={(tx) => handleClickRow(tx)}
                                 canClickRow={(tx) => !!tx}
