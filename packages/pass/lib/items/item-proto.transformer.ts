@@ -1,6 +1,7 @@
 import { parsePasskey } from '@proton/pass/lib/passkeys/utils';
 import { formatExpirationDateYYYYMM } from '@proton/pass/lib/validation/credit-card';
 import type {
+    ExtraField,
     Item,
     ItemRevision,
     OpenedItem,
@@ -10,13 +11,13 @@ import type {
     UnsafeItemExtraField,
 } from '@proton/pass/types';
 import { ProtobufItem } from '@proton/pass/types';
-import type { ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
+import type { ItemCreditCard, ItemIdentity } from '@proton/pass/types/protobuf/item-v1';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 
-const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): UnsafeItemExtraField => {
+const protobufSafeToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): UnsafeItemExtraField => {
     switch (field.content.oneofKind) {
         case 'text':
             return {
@@ -49,12 +50,28 @@ const protobufToCreditCardContent = (creditCard: ItemCreditCard): UnsafeItem<'cr
     expirationDate: creditCard.expirationDate,
 });
 
+const parseUnsafeExtraField =
+    (converter: (s: SafeProtobufExtraField) => UnsafeItemExtraField) => (extraField: ExtraField) =>
+        converter(extraField as SafeProtobufExtraField);
+
+const protobufToIdentityContent = (identity: ItemIdentity): UnsafeItem<'identity'>['content'] => ({
+    ...identity,
+    extraAddressDetails: identity.extraAddressDetails.map(parseUnsafeExtraField(protobufSafeToExtraField)),
+    extraContactDetails: identity.extraContactDetails.map(parseUnsafeExtraField(protobufSafeToExtraField)),
+    extraPersonalDetails: identity.extraPersonalDetails.map(parseUnsafeExtraField(protobufSafeToExtraField)),
+    extraWorkDetails: identity.extraWorkDetails.map(parseUnsafeExtraField(protobufSafeToExtraField)),
+    extraSections: identity.extraSections.map((extraSections) => ({
+        ...extraSections,
+        sectionFields: extraSections.sectionFields.map(parseUnsafeExtraField(protobufSafeToExtraField)),
+    })),
+});
+
 export const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
     const { platformSpecific, metadata, content: itemContent } = item;
 
     const base = {
         metadata: { ...metadata, note: metadata.note },
-        extraFields: item.extraFields.map(protobufToExtraField),
+        extraFields: item.extraFields.map(protobufSafeToExtraField),
         platformSpecific,
     };
 
@@ -74,7 +91,7 @@ export const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
         case 'creditCard':
             return { ...base, type: 'creditCard', content: protobufToCreditCardContent(data.creditCard) };
         case 'identity':
-            return { ...base, type: 'identity', content: data.identity };
+            return { ...base, type: 'identity', content: protobufToIdentityContent(data.identity) };
         default:
             throw new Error('Unsupported item type');
     }
@@ -119,6 +136,18 @@ const creditCardContentToProtobuf = (creditCard: UnsafeItem<'creditCard'>['conte
     pin: creditCard.pin,
 });
 
+const identityContentToProtobuf = (identity: UnsafeItem<'identity'>['content']): ItemIdentity => ({
+    ...identity,
+    extraAddressDetails: identity.extraAddressDetails.map(extraFieldToProtobuf),
+    extraContactDetails: identity.extraContactDetails.map(extraFieldToProtobuf),
+    extraPersonalDetails: identity.extraPersonalDetails.map(extraFieldToProtobuf),
+    extraWorkDetails: identity.extraWorkDetails.map(extraFieldToProtobuf),
+    extraSections: identity.extraSections.map((extraSections) => ({
+        ...extraSections,
+        sectionFields: extraSections.sectionFields.map(extraFieldToProtobuf),
+    })),
+});
+
 const itemToProtobuf = (item: UnsafeItem): SafeProtobufItem => {
     const { platformSpecific, metadata } = item;
 
@@ -158,7 +187,12 @@ const itemToProtobuf = (item: UnsafeItem): SafeProtobufItem => {
                 },
             };
         case 'identity':
-            return { ...base, content: { content: { oneofKind: 'identity', identity: item.content } } };
+            return {
+                ...base,
+                content: {
+                    content: { oneofKind: 'identity', identity: identityContentToProtobuf(item.content) },
+                },
+            };
         default:
             throw new Error('Unsupported item type');
     }

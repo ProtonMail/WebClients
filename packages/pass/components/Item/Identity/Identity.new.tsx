@@ -20,9 +20,9 @@ import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { getInitialState, useIdentityFormSections } from '@proton/pass/hooks/identity/useIdentityFormSections';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
-import { type IdentityItemFormValues, validateIdentityForm } from '@proton/pass/lib/validation/identity';
+import { validateIdentityForm } from '@proton/pass/lib/validation/identity';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type { UnsafeItemExtraField } from '@proton/pass/types';
+import type { NewIdentityItemFormValues, UnsafeItemExtraField } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -33,14 +33,14 @@ const EMPTY_CUSTOM_FIELD = { type: 'text', fieldName: '', data: { content: '' } 
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { ParentPortal, openPortal } = usePortal();
-    const { sections, actions } = useIdentityFormSections();
+    const { sections, updateSectionFields } = useIdentityFormSections();
 
-    const initialValues: IdentityItemFormValues = useMemo(() => getInitialState(shareId), []);
+    const initialValues: NewIdentityItemFormValues = useMemo(() => getInitialState(shareId), []);
 
-    const form = useFormik<IdentityItemFormValues>({
+    const form = useFormik<NewIdentityItemFormValues>({
         initialValues,
         initialErrors: validateIdentityForm(initialValues),
-        onSubmit: ({ shareId, name, note, ...identityValues }) => {
+        onSubmit: ({ shareId, name, note, ...content }) => {
             const id = uniqueId();
             onSubmit({
                 type: 'identity',
@@ -48,7 +48,7 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                 shareId,
                 createTime: getEpoch(),
                 metadata: { name, note: obfuscate(note), itemUuid: id },
-                content: identityValues,
+                content,
                 extraData: {},
                 extraFields: [],
             });
@@ -57,7 +57,7 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
         validateOnBlur: true,
     });
 
-    useItemDraft<IdentityItemFormValues>(form, { mode: 'new', type: 'identity' });
+    useItemDraft<NewIdentityItemFormValues>(form, { mode: 'new', type: 'identity' });
 
     return (
         <ItemCreatePanel
@@ -86,12 +86,12 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                             />
                         </FieldsetCluster>
 
-                        {sections.map(({ name, expanded, fields, addButton }, index) => (
+                        {sections.map(({ name, expanded, fields, optionalFields }, index) => (
                             <CollapsibleItem key={name} label={name} expanded={expanded}>
                                 <FieldArray
-                                    name={addButton?.customFieldName || ''}
+                                    name={optionalFields?.extraFieldKey || ''}
                                     render={(helpers) => {
-                                        const extraFieldName = addButton?.customFieldName;
+                                        const extraFieldName = optionalFields?.extraFieldKey;
                                         const extraFields = helpers.form.values[extraFieldName || ''];
 
                                         return (
@@ -130,18 +130,18 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                                                         />
                                                     ))}
                                                 </FieldsetCluster>
-                                                {addButton && Boolean(addButton?.fields.length) && (
+                                                {optionalFields && Boolean(optionalFields?.fields.length) && (
                                                     <DropdownMenuBase
                                                         className="mb-2"
-                                                        dropdownOptions={addButton.fields.map(
+                                                        dropdownOptions={optionalFields.fields.map(
                                                             ({ name: fieldName, placeholder }) => ({
                                                                 value: fieldName,
                                                                 label: placeholder,
                                                                 onClick: () => {
-                                                                    actions.updateSectionFields?.(index, fieldName);
-
                                                                     if (fieldName.includes('extra')) {
                                                                         helpers.push(EMPTY_CUSTOM_FIELD);
+                                                                    } else {
+                                                                        updateSectionFields?.(index, fieldName);
                                                                     }
                                                                 },
                                                             })
@@ -149,7 +149,8 @@ export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmi
                                                     >
                                                         <div className="flex items-center">
                                                             <Icon name="plus" />
-                                                            <div className="ml-2 text-semibold">{addButton.label}</div>
+                                                            <div className="ml-2 text-semibold">{c('Action')
+                                                                .t`Add more`}</div>
                                                         </div>
                                                     </DropdownMenuBase>
                                                 )}

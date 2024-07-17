@@ -20,6 +20,9 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
     note: NoteEdit,
     alias: AliasEdit,
     creditCard: CreditCardEdit,
+    identity: () => {
+        throw new Error('Fix me');
+    },
 };
 
 export const ItemEdit: FC = () => {

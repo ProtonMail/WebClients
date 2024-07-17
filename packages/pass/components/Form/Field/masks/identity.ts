@@ -14,7 +14,7 @@ export const birthdateMask: FactoryOpts = {
             from: 1,
             to: 12,
         },
-        YY: {
+        YYYY: {
             mask: MaskedRange,
             from: 0,
             to: 9999,
