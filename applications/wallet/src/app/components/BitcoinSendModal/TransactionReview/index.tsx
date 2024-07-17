@@ -4,14 +4,16 @@ import { WasmApiExchangeRate, WasmApiWalletAccount, WasmBitcoinUnit, WasmTxBuild
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
-import { COMPUTE_BITCOIN_UNIT, IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
+import { IWasmApiWalletData, useUserWalletSettings } from '@proton/wallet';
 
 import { BitcoinAmount, Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
+import { secondaryAmount } from '../../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
-import { convertAmountStr, getLabelByUnit, isExchangeRate } from '../../../utils';
+import { useExchangeRate } from '../../../store/hooks';
+import { isExchangeRate } from '../../../utils';
 import { EmailListItem } from '../../EmailListItem';
 import { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { RecipientDetailsModal, RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
@@ -47,6 +49,8 @@ export const TransactionReview = ({
     updateTxBuilder,
     getFeesByBlockTarget,
 }: Props) => {
+    const [accountExchangeRate] = useExchangeRate(account.FiatCurrency);
+
     const [settings] = useUserWalletSettings();
     const [feesModal, setFeesModal] = useModalState();
     const [loadingSend, withLoadingSend] = useLoading();
@@ -105,12 +109,16 @@ export const TransactionReview = ({
                             prefix={typeof unit === 'object' ? unit.FiatCurrency : unit}
                         />
                     </div>
-                    {isExchangeRate(unit) && (
-                        <span className="block color-weak">
-                            {convertAmountStr(totalSentAmount, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                            {getLabelByUnit(settings.BitcoinUnit)}
-                        </span>
-                    )}
+
+                    <span className="block color-weak">
+                        {secondaryAmount({
+                            key: 'hint-secondary-amount',
+                            settingsBitcoinUnit: settings.BitcoinUnit,
+                            secondaryExchangeRate: accountExchangeRate,
+                            exchangeRateOrBitcoinUnit: unit,
+                            value: totalSentAmount,
+                        })}
+                    </span>
                 </div>
 
                 <div className="w-full mt-4 flex flex-row justify-space-between items-center">
@@ -215,11 +223,15 @@ export const TransactionReview = ({
 
                             <div className="mb-1">{unit && <Price satsAmount={totalFees} unit={unit} />}</div>
 
-                            {isExchangeRate(unit) && (
-                                <div className="color-hint">
-                                    <Price satsAmount={totalFees} unit={settings.BitcoinUnit} />
-                                </div>
-                            )}
+                            <span className="block color-hint">
+                                {secondaryAmount({
+                                    key: 'hint-fiat-amount',
+                                    settingsBitcoinUnit: settings.BitcoinUnit,
+                                    secondaryExchangeRate: accountExchangeRate,
+                                    exchangeRateOrBitcoinUnit: unit,
+                                    value: totalFees,
+                                })}
+                            </span>
                         </div>
 
                         <CoreButton
@@ -255,11 +267,15 @@ export const TransactionReview = ({
 
                         <div className="mb-1">{unit && <Price satsAmount={totalAmount} unit={unit} />}</div>
 
-                        {isExchangeRate(unit) && (
-                            <div className="color-hint">
-                                <Price satsAmount={totalAmount} unit={settings.BitcoinUnit} />
-                            </div>
-                        )}
+                        <span className="block color-hint">
+                            {secondaryAmount({
+                                key: 'hint-total-amount',
+                                settingsBitcoinUnit: settings.BitcoinUnit,
+                                secondaryExchangeRate: accountExchangeRate,
+                                exchangeRateOrBitcoinUnit: unit,
+                                value: totalAmount,
+                            })}
+                        </span>
                     </div>
                 </div>
 

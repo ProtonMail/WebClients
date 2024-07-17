@@ -29,15 +29,15 @@ export const BitcoinAmountInput = ({
     inputClassName,
     ...inputProps
 }: Props) => {
-    const [fiatAmount, setFiatAmount] = useState(0);
+    const [innerAmount, setInnerAmount] = useState(0);
 
     useEffect(() => {
-        setFiatAmount(convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
+        setInnerAmount(convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
     }, [value, unit]);
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const amount = parseFloat(event.target.value);
-        setFiatAmount(amount);
+        setInnerAmount(amount);
         const safeAmount = Number.isFinite(amount) ? amount : 0;
 
         onValueChange?.(convertAmount(safeAmount, unit, COMPUTE_BITCOIN_UNIT));
@@ -49,7 +49,7 @@ export const BitcoinAmountInput = ({
         <CoreInput
             dense={dense}
             type="number"
-            value={fiatAmount}
+            value={innerAmount}
             min={constrainedMin}
             step={getDecimalStepByUnit(unit)}
             onChange={onChange}
