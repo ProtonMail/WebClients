@@ -73,6 +73,12 @@ export const getInitialState = (shareId: string): NewIdentityItemFormValues => (
     note: '',
 });
 
+const buildCustomField = (fieldName: FieldName | string) => ({
+    name: fieldName,
+    label: c('Label').t`Custom field`,
+    placeholder: c('Label').t`Custom field`,
+});
+
 type IdentityFormFields = Record<string, IdentityField>;
 const getIdentityFields = (): IdentityFormFields => ({
     fullName: {
@@ -117,11 +123,7 @@ const getIdentityFields = (): IdentityFormFields => ({
         label: c('Label').t`Gender`,
         placeholder: c('Label').t`Gender`,
     },
-    extraPersonalDetails: {
-        name: 'extraPersonalDetails',
-        label: c('Label').t`Custom field`,
-        placeholder: c('Label').t`Custom field`,
-    },
+    extraPersonalDetails: buildCustomField('extraPersonalDetails'),
     organization: {
         name: 'organization',
         label: c('Label').t`Organization`,
@@ -212,11 +214,7 @@ const getIdentityFields = (): IdentityFormFields => ({
         label: c('Label').t`Work email`,
         placeholder: c('Label').t`Work email`,
     },
-    extraWorkDetails: {
-        name: 'extraWorkDetails',
-        label: c('Label').t`Custom field`,
-        placeholder: c('Label').t`Custom field`,
-    },
+    extraWorkDetails: buildCustomField('extraWorkDetails'),
 });
 
 const buildFormSections = (identityFields: IdentityFormFields): FieldSection[] => {
@@ -320,37 +318,38 @@ export const useIdentityFormSections = () => {
         });
     };
 
-    const getFilteredSections = (identity: ItemIdentity): FieldSection[] => {
-        const extraSections: FieldSection[] = identity.extraSections.map((section) => ({
-            name: section.sectionName,
-            fields: mapToIdentityField(section.sectionFields, section.sectionName),
-            expanded: true,
-        }));
+    const getFilteredSections = (identity: ItemIdentity): FieldSection[] =>
+        sections
+            .reduce<FieldSection[]>((fieldSections, section) => {
+                const fields = [...section.fields, ...(section.optionalFields?.fields ?? [])];
 
-        return sections.reduce<FieldSection[]>((fieldSections, section) => {
-            const fields = [...section.fields, ...(section.optionalFields?.fields ?? [])];
+                const filteredFields = fields.reduce<IdentityField[]>((acc, field) => {
+                    const fieldName = field.name;
+                    const fieldValue = identity[fieldName];
 
-            const filteredFields = fields.reduce<IdentityField[]>((acc, field) => {
-                const fieldName = field.name;
-                const fieldValue = identity[fieldName];
+                    if (!fieldValue) return acc;
+                    if (!Array.isArray(fieldValue)) return [...acc, { ...field, value: fieldValue }];
 
-                if (!fieldValue) return acc;
-                if (!Array.isArray(fieldValue)) return [...acc, { ...field, value: fieldValue }];
+                    if (isUnsafeItemExtraFieldArray(fieldValue)) {
+                        return [...acc, ...mapToIdentityField(fieldValue, fieldName)];
+                    }
 
-                if (isUnsafeItemExtraFieldArray(fieldValue)) {
-                    return [...acc, ...mapToIdentityField(fieldValue, fieldName)];
-                }
+                    return acc;
+                }, []);
 
-                return acc;
-            }, []);
+                if (!filteredFields.length) return fieldSections;
 
-            if (!filteredFields.length) return fieldSections;
+                section.fields = filteredFields;
 
-            section.fields = filteredFields;
-
-            return [...fieldSections, section];
-        }, extraSections);
-    };
+                return [...fieldSections, section];
+            }, [])
+            .concat(
+                ...identity.extraSections.map<FieldSection[]>((section) => ({
+                    name: section.sectionName,
+                    fields: mapToIdentityField(section.sectionFields, section.sectionName),
+                    expanded: true,
+                }))
+            );
 
     useEffect(() => setSections(buildFormSections(identityFields)), []);
 

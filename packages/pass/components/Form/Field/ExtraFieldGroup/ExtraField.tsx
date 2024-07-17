@@ -3,7 +3,7 @@ import type { ChangeEvent, FC } from 'react';
 import type { FieldInputProps, FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button, type ButtonProps } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
@@ -56,8 +56,8 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
 
 export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOptions()[type];
 
-const DeleteButton: FC<{ onDelete: () => void }> = ({ onDelete }) => (
-    <Button icon pill color="weak" onClick={onDelete} shape="solid" size="medium" title={c('Action').t`Delete`}>
+export const DeleteButton: FC<ButtonProps & { onDelete: () => void }> = ({ onDelete, size = 'medium' }) => (
+    <Button icon pill color="weak" onClick={onDelete} shape="solid" size={size} title={c('Action').t`Delete`}>
         <Icon name="cross" size={5} />
     </Button>
 );
