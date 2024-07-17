@@ -3,8 +3,17 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { CalendarLogo, DriveLogo, Icon, MailLogo, Meter, PassLogo, SettingsLink } from '@proton/components/components';
-import { SettingsSection } from '@proton/components/containers';
+import {
+    CalendarLogo,
+    DriveLogo,
+    Icon,
+    MailLogo,
+    Meter,
+    PassLogo,
+    SettingsLink,
+    WalletLogo,
+} from '@proton/components/components';
+import { SettingsSection, useFlag } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import {
@@ -139,11 +148,12 @@ const YourStorageSection = ({ app }: Props) => {
     const space = getSpace(user);
     const details = getCompleteSpaceDetails(space);
     const plan = getPlanToUpsell({ storageDetails: details, app });
+    const canAccessWallet = useFlag('Wallet');
 
     return (
         <SettingsSection>
             {(() => {
-                const { icon, description } = (() => {
+                const data = (() => {
                     if (details.drive.type === SpaceState.Danger && details.base.type === SpaceState.Danger) {
                         return {
                             icon: upsellStorageGlobal,
@@ -185,22 +195,27 @@ const YourStorageSection = ({ app }: Props) => {
                         };
                     }
 
-                    return {
-                        icon: upsellStorageIncrease,
-                        description: getDescription({
-                            header: getTryOut(MAIL_SHORT_APP_NAME),
-                            upgrade: upgradePlan,
-                        }),
-                    };
+                    if (app == APPS.PROTONMAIL || app == APPS.PROTONCALENDAR) {
+                        return {
+                            icon: upsellStorageIncrease,
+                            description: getDescription({
+                                header: getTryOut(MAIL_SHORT_APP_NAME),
+                                upgrade: upgradePlan,
+                            }),
+                        };
+                    }
                 })();
+                if (!data) {
+                    return null;
+                }
                 return (
                     <div className="mb-6 mt-4">
                         <PromotionBanner
                             mode="banner"
                             rounded
                             contentCentered={false}
-                            icon={<img width="40" src={icon} alt="" className="shrink-0" />}
-                            description={description}
+                            icon={<img width="40" src={data.icon} alt="" className="shrink-0" />}
+                            description={data.description}
                             cta={
                                 <ButtonLike
                                     as={SettingsLink}
@@ -235,6 +250,7 @@ const YourStorageSection = ({ app }: Props) => {
                                 <MailLogo variant="glyph-only" />
                                 <CalendarLogo variant="glyph-only" />
                                 <PassLogo variant="glyph-only" />
+                                {canAccessWallet && <WalletLogo variant="glyph-only" />}
                             </div>
                             <div className="text-2xl text-bold">{getAppStorage(MAIL_SHORT_APP_NAME)}</div>
                         </div>
