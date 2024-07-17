@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import {
     Collapsible,
@@ -9,20 +9,21 @@ import {
 } from '@proton/components/components';
 
 type CollapsibleHeaderProps = PropsWithChildren & {
-    expanded?: boolean;
     label: string;
+    expanded?: boolean;
+    suffix?: ReactNode;
 };
 
-export const CollapsibleItem: FC<CollapsibleHeaderProps> = ({ children, label, expanded = false }) => {
-    return (
-        <Collapsible expandByDefault={expanded}>
-            <CollapsibleHeader className="mb-2 color-weak">
+export const CollapsibleItem: FC<CollapsibleHeaderProps> = ({ children, label, expanded = false, suffix }) => (
+    <Collapsible expandByDefault={expanded}>
+        <CollapsibleHeader className="flex flex-nowrap justify-space-between mb-2 color-weak" suffix={suffix}>
+            <div>
                 <CollapsibleHeaderIconButton className="color-weak">
                     <Icon name="chevron-down" />
                 </CollapsibleHeaderIconButton>
                 {label}
-            </CollapsibleHeader>
-            <CollapsibleContent>{children}</CollapsibleContent>
-        </Collapsible>
-    );
-};
+            </div>
+        </CollapsibleHeader>
+        <CollapsibleContent>{children}</CollapsibleContent>
+    </Collapsible>
+);
