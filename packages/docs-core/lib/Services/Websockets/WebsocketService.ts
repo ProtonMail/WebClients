@@ -407,8 +407,7 @@ export class WebsocketService implements WebsocketServiceInterface {
     const result = await this._encryptMessage.execute(content, metadata, keys)
 
     if (result.isFailed()) {
-      const message = c('Error')
-        .t`A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.`
+      const message = c('Error').t`We are having trouble saving recent edits. Please refresh the page.`
 
       this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EncryptionError]>({
         type: WebsocketConnectionEvent.EncryptionError,
