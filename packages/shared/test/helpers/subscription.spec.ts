@@ -9,6 +9,9 @@ import { PLANS_MAP } from '@proton/testing/data';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
     AggregatedPricing,
+    allCycles,
+    customCycles,
+    getNormalCycleFromCustomCycle,
     getPlanFromIds,
     getPlanIDs,
     getPlanNameFromIDs,
@@ -19,6 +22,7 @@ import {
     isManagedExternally,
     isTrial,
     isTrialExpired,
+    regularCycles,
     willTrialExpire,
 } from '../../lib/helpers/subscription';
 
@@ -931,5 +935,59 @@ describe('hasSomeAddOn', () => {
 
         const result = hasSomeAddonOrPlan(subscription, [ADDON_NAMES.MEMBER_DRIVE_PRO, ADDON_NAMES.MEMBER_VPN_PRO]);
         expect(result).toEqual(false);
+    });
+});
+
+describe('cycles', () => {
+    it('should have all cycles', () => {
+        expect(allCycles).toEqual([
+            CYCLE.MONTHLY,
+            CYCLE.THREE,
+            CYCLE.YEARLY,
+            CYCLE.FIFTEEN,
+            CYCLE.EIGHTEEN,
+            CYCLE.TWO_YEARS,
+            CYCLE.THIRTY,
+        ]);
+    });
+
+    it('should have regular cycles', () => {
+        expect(regularCycles).toEqual([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]);
+    });
+
+    it('should have custom cycles', () => {
+        expect(customCycles).toEqual([CYCLE.THREE, CYCLE.FIFTEEN, CYCLE.EIGHTEEN, CYCLE.THIRTY]);
+    });
+
+    it('should return normal cycle from custom cycle - undefined', () => {
+        expect(getNormalCycleFromCustomCycle(undefined)).toEqual(undefined);
+    });
+
+    it('should return normal cycle from custom cycle - monthly', () => {
+        expect(getNormalCycleFromCustomCycle(CYCLE.THREE)).toEqual(CYCLE.MONTHLY);
+    });
+
+    it('should return normal cycle from custom cycle - three', () => {
+        expect(getNormalCycleFromCustomCycle(CYCLE.THREE)).toEqual(CYCLE.MONTHLY);
+    });
+
+    it('should return normal cycle from custom cycle - yearly', () => {
+        expect(getNormalCycleFromCustomCycle(CYCLE.YEARLY)).toEqual(CYCLE.YEARLY);
+    });
+
+    it('should return normal cycle from custom cycle - fifteen', () => {
+        expect(getNormalCycleFromCustomCycle(CYCLE.FIFTEEN)).toEqual(CYCLE.YEARLY);
+    });
+
+    it('should return normal cycle from custom cycle - eighteen', () => {
+        expect(getNormalCycleFromCustomCycle(CYCLE.EIGHTEEN)).toEqual(CYCLE.YEARLY);
+    });
+
+    it('should return normal cycle from custom cycle - two years', () => {
+        expect(getNormalCycleFromCustomCycle(CYCLE.TWO_YEARS)).toEqual(CYCLE.TWO_YEARS);
+    });
+
+    it('should return normal cycle from custom cycle - thirty', () => {
+        expect(getNormalCycleFromCustomCycle(CYCLE.THIRTY)).toEqual(CYCLE.TWO_YEARS);
     });
 });

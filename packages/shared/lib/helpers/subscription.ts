@@ -403,17 +403,13 @@ export const hasMailBlackFridayDiscount = (subscription: Subscription | undefine
     return subscription?.CouponCode === COUPON_CODES.MAIL_BLACK_FRIDAY_2022;
 };
 
-export const allCycles = [
-    CYCLE.MONTHLY,
-    CYCLE.THREE,
-    CYCLE.YEARLY,
-    CYCLE.TWO_YEARS,
-    CYCLE.FIFTEEN,
-    CYCLE.EIGHTEEN,
-    CYCLE.THIRTY,
-];
-export const customCycles = [CYCLE.THREE, CYCLE.FIFTEEN, CYCLE.EIGHTEEN, CYCLE.THIRTY];
-export const regularCycles = allCycles.filter((cycle) => !customCycles.includes(cycle));
+export const allCycles = Object.freeze(
+    Object.values(CYCLE)
+        .filter((cycle): cycle is CYCLE => typeof cycle === 'number')
+        .sort((a, b) => a - b)
+);
+export const regularCycles = Object.freeze([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]);
+export const customCycles = Object.freeze(allCycles.filter((cycle) => !regularCycles.includes(cycle)));
 
 export const getValidCycle = (cycle: number): CYCLE | undefined => {
     return allCycles.includes(cycle) ? cycle : undefined;
@@ -434,13 +430,22 @@ export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE |
     if (!cycle) {
         return undefined;
     }
-    if (cycle === CYCLE.FIFTEEN) {
-        return CYCLE.YEARLY;
+
+    if (regularCycles.includes(cycle)) {
+        return cycle;
     }
-    if (cycle === CYCLE.THIRTY) {
-        return CYCLE.TWO_YEARS;
+
+    // find the closest lower regular cycle
+    for (let i = regularCycles.length - 1; i >= 0; i--) {
+        const regularCycle = regularCycles[i];
+
+        if (regularCycle < cycle) {
+            return regularCycle;
+        }
     }
-    return cycle;
+
+    // well, that should be unreachable, but let it be just in case
+    return CYCLE.MONTHLY;
 }
 
 export function getLongerCycle(cycle: CYCLE): CYCLE;
