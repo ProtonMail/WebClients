@@ -10,7 +10,9 @@ interface Props {
 
 const useOpenedAssistants = ({ cleanSpecificErrors }: Props) => {
     const [openedAssistants, setOpenedAssistants] = useState<OpenedAssistant[]>([]);
-    const { setAssistantStickyOff, setAssistantStickyOn } = useAssistantSticky({ openedAssistants });
+    const { setAssistantStickyOff, setAssistantStickyOn, getIsStickyAssistant } = useAssistantSticky({
+        openedAssistants,
+    });
 
     // By default, open the assistant with the collapsed status
     const openAssistant = (assistantID: string, manual = false) => {
@@ -18,7 +20,7 @@ const useOpenedAssistants = ({ cleanSpecificErrors }: Props) => {
             id: assistantID,
             status: OpenedAssistantStatus.COLLAPSED,
         };
-        setOpenedAssistants([...openedAssistants, newAssistant]);
+        setOpenedAssistants((openedAssistants) => [...openedAssistants, newAssistant]);
         if (manual) {
             setAssistantStickyOn();
         }
@@ -28,9 +30,11 @@ const useOpenedAssistants = ({ cleanSpecificErrors }: Props) => {
         const assistant = openedAssistants.find((assistant) => assistant.id === assistantID);
         if (assistant) {
             const updatedAssistant = { ...assistant, status };
-            const filteredAssistants = openedAssistants.filter((assistant) => assistant.id !== assistantID);
 
-            setOpenedAssistants([...filteredAssistants, updatedAssistant]);
+            setOpenedAssistants((openedAssistants) => {
+                const filteredAssistants = openedAssistants.filter((assistant) => assistant.id !== assistantID);
+                return [...filteredAssistants, updatedAssistant];
+            });
         }
     };
 
@@ -39,8 +43,9 @@ const useOpenedAssistants = ({ cleanSpecificErrors }: Props) => {
         (assistantID: string, manual = false) => {
             const isAssistantOpened = getIsAssistantOpened(openedAssistants, assistantID);
             if (isAssistantOpened) {
-                const filteredAssistants = openedAssistants.filter((assistant) => assistant.id !== assistantID);
-                setOpenedAssistants(filteredAssistants);
+                setOpenedAssistants((openedAssistants) => {
+                    return openedAssistants.filter((assistant) => assistant.id !== assistantID);
+                });
                 cancelRunningAction(assistantID);
                 cleanSpecificErrors(assistantID);
                 if (manual) {
@@ -49,7 +54,7 @@ const useOpenedAssistants = ({ cleanSpecificErrors }: Props) => {
             }
         };
 
-    return { openedAssistants, openAssistant, setAssistantStatus, closeAssistant };
+    return { openedAssistants, openAssistant, setAssistantStatus, closeAssistant, getIsStickyAssistant };
 };
 
 export default useOpenedAssistants;

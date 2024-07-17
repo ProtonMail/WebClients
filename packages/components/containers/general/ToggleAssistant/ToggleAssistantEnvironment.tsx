@@ -8,6 +8,8 @@ import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 interface Props {
     aiFlag: AI_ASSISTANT_ACCESS;
+    onEnableLocal?: () => void;
+    onEnableServer?: () => void;
 }
 
 const { SERVER_ONLY, CLIENT_ONLY } = AI_ASSISTANT_ACCESS;
@@ -30,7 +32,7 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     );
 };
 
-const ToggleAssistantEnvironment = ({ aiFlag }: Props) => {
+const ToggleAssistantEnvironment = ({ aiFlag, onEnableLocal, onEnableServer }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -39,6 +41,12 @@ const ToggleAssistantEnvironment = ({ aiFlag }: Props) => {
     const handleChange = async (value: AI_ASSISTANT_ACCESS) => {
         await api(updateAIAssistant(value));
         void call();
+
+        if (value === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+            onEnableLocal?.();
+        } else if (value === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
+            onEnableServer?.();
+        }
 
         createNotification({ text: c('Success').t`Writing assistant setting updated` });
     };

@@ -44,6 +44,7 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
                 // In this case assistant context is still set to server mode so initAssistant was undefined.
                 // in order to call initAssistant with no side effects i made a duplicate
                 handleSettingChange: assistantLocalState.initAssistant,
+                getIsStickyAssistant: openedAssistantsState.getIsStickyAssistant,
             }}
         >
             {children}
