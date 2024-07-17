@@ -26,7 +26,7 @@ export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd })
             onClose();
         },
         validate: ({ value }) => {
-            const errors: FormikErrors = {};
+            const errors: FormikErrors<{ value: string }> = {};
 
             if (!Boolean(value.length)) {
                 errors.value = c('Validation').t`Section name cannot be empty`;

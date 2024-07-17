@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
 import { birthdateMask } from '@proton/pass/components/Form/Field/masks/identity';
-import type { ItemIdentity, NewIdentityItemFormValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { IdentityItemFormValues, ItemIdentity, UnsafeItemExtraField } from '@proton/pass/types';
 import { isArrayOfType } from '@proton/pass/utils/array/is-type-of';
 
 type FieldName = keyof ItemIdentity;
@@ -30,7 +30,7 @@ type FieldSection = {
     };
 };
 
-export const getInitialState = (shareId: string): NewIdentityItemFormValues => ({
+export const getInitialState = (shareId: string): IdentityItemFormValues => ({
     shareId,
     fullName: '',
     email: '',
@@ -73,7 +73,7 @@ export const getInitialState = (shareId: string): NewIdentityItemFormValues => (
     note: '',
 });
 
-const buildCustomField = (fieldName: FieldName | string) => ({
+const buildCustomField = (fieldName: FieldName) => ({
     name: fieldName,
     label: c('Label').t`Custom field`,
     placeholder: c('Label').t`Custom field`,
@@ -217,65 +217,63 @@ const getIdentityFields = (): IdentityFormFields => ({
     extraWorkDetails: buildCustomField('extraWorkDetails'),
 });
 
-const buildFormSections = (identityFields: IdentityFormFields): FieldSection[] => {
-    return [
-        {
-            name: c('Label').t`Personal details`,
-            expanded: true,
-            fields: [identityFields.fullName, identityFields.email, identityFields.phoneNumber],
-            optionalFields: {
-                extraFieldKey: 'extraPersonalDetails',
-                fields: [
-                    identityFields.firstName,
-                    identityFields.middleName,
-                    identityFields.lastName,
-                    identityFields.birthdate,
-                    identityFields.gender,
-                    identityFields.extraPersonalDetails,
-                ],
-            },
-        },
-        {
-            name: c('Label').t`Address details`,
-            expanded: true,
+const buildNewFormSections = (identityFields: IdentityFormFields): FieldSection[] => [
+    {
+        name: c('Label').t`Personal details`,
+        expanded: true,
+        fields: [identityFields.fullName, identityFields.email, identityFields.phoneNumber],
+        optionalFields: {
+            extraFieldKey: 'extraPersonalDetails',
             fields: [
-                identityFields.organization,
-                identityFields.streetAddress,
-                identityFields.floor,
-                identityFields.zipOrPostalCode,
-                identityFields.city,
-                identityFields.stateOrProvince,
-                identityFields.countryOrRegion,
+                identityFields.firstName,
+                identityFields.middleName,
+                identityFields.lastName,
+                identityFields.birthdate,
+                identityFields.gender,
+                identityFields.extraPersonalDetails,
             ],
         },
-        {
-            name: c('Label').t`Contact details`,
-            expanded: false,
+    },
+    {
+        name: c('Label').t`Address details`,
+        expanded: true,
+        fields: [
+            identityFields.organization,
+            identityFields.streetAddress,
+            identityFields.floor,
+            identityFields.zipOrPostalCode,
+            identityFields.city,
+            identityFields.stateOrProvince,
+            identityFields.countryOrRegion,
+        ],
+    },
+    {
+        name: c('Label').t`Contact details`,
+        expanded: false,
+        fields: [
+            identityFields.socialSecurityNumber,
+            identityFields.passportNumber,
+            identityFields.licenseNumber,
+            identityFields.website,
+            identityFields.xHandle,
+            identityFields.secondPhoneNumber,
+        ],
+    },
+    {
+        name: c('Label').t`Work details`,
+        expanded: false,
+        fields: [identityFields.company, identityFields.jobTitle],
+        optionalFields: {
+            extraFieldKey: 'extraWorkDetails',
             fields: [
-                identityFields.socialSecurityNumber,
-                identityFields.passportNumber,
-                identityFields.licenseNumber,
-                identityFields.website,
-                identityFields.xHandle,
-                identityFields.secondPhoneNumber,
+                identityFields.personalWebsite,
+                identityFields.workPhoneNumber,
+                identityFields.workEmail,
+                identityFields.extraWorkDetails,
             ],
         },
-        {
-            name: c('Label').t`Work details`,
-            expanded: false,
-            fields: [identityFields.company, identityFields.jobTitle],
-            optionalFields: {
-                extraFieldKey: 'extraWorkDetails',
-                fields: [
-                    identityFields.personalWebsite,
-                    identityFields.workPhoneNumber,
-                    identityFields.workEmail,
-                    identityFields.extraWorkDetails,
-                ],
-            },
-        },
-    ];
-};
+    },
+];
 
 const isUnsafeItemExtraFieldArray = (value: any): value is UnsafeItemExtraField[] =>
     isArrayOfType(value, (item: any): item is UnsafeItemExtraField => typeof item.data?.content === 'string');
@@ -288,7 +286,21 @@ const mapToIdentityField = (fields: UnsafeItemExtraField[], fieldName: string): 
         value: customField.type === 'text' ? customField.data.content : '',
     }));
 
-export const useIdentityFormSections = () => {
+const buildEditFormSections = (identityFields: IdentityFormFields, initialValues: ItemIdentity): FieldSection[] => {
+    const formSections = buildNewFormSections(identityFields);
+    return formSections.map<FieldSection>((section) => {
+        const { fields = [], optionalFields = [] } = Object.groupBy(section?.optionalFields?.fields ?? [], (field) =>
+            !field.name.includes('extra') && initialValues[field.name] ? 'fields' : 'optionalFields'
+        );
+
+        section.fields.push(...fields);
+        if (section.optionalFields) section.optionalFields.fields = optionalFields;
+
+        return section;
+    });
+};
+
+export const useIdentityFormSections = (initialValues?: ItemIdentity) => {
     const identityFields = useMemo(() => getIdentityFields(), []);
     const [sections, setSections] = useState<FieldSection[]>([]);
     const getField = useCallback(
@@ -344,14 +356,17 @@ export const useIdentityFormSections = () => {
                 return [...fieldSections, section];
             }, [])
             .concat(
-                ...identity.extraSections.map<FieldSection[]>((section) => ({
+                identity.extraSections.map<FieldSection>((section) => ({
                     name: section.sectionName,
                     fields: mapToIdentityField(section.sectionFields, section.sectionName),
                     expanded: true,
                 }))
             );
 
-    useEffect(() => setSections(buildFormSections(identityFields)), []);
+    useEffect(() => {
+        if (initialValues) setSections(buildEditFormSections(identityFields, initialValues));
+        else setSections(buildNewFormSections(identityFields));
+    }, []);
 
     return { sections, getFilteredSections, updateSectionFields };
 };

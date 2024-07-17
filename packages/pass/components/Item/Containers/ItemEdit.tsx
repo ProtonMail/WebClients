@@ -5,6 +5,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
 import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
+import { IdentityEdit } from '@proton/pass/components/Item/Identity/Identity.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
 import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
@@ -20,9 +21,7 @@ const itemEditMap: { [T in ItemType]: FC<ItemEditViewProps<T>> } = {
     note: NoteEdit,
     alias: AliasEdit,
     creditCard: CreditCardEdit,
-    identity: () => {
-        throw new Error('Fix me');
-    },
+    identity: IdentityEdit,
 };
 
 export const ItemEdit: FC = () => {
