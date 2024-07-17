@@ -21,6 +21,7 @@ import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAss
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
+import { useAssistant } from '@proton/llm/lib';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -54,6 +55,7 @@ const MailQuickSettings = () => {
 
     const [{ Density, AIAssistantFlags }] = useUserSettings();
     const { ComposerMode, ViewLayout } = useMailModel('MailSettings');
+    const { openedAssistants, resetAssistantState, closeAssistant, handleSettingChange } = useAssistant();
 
     const assistantFeatureEnabled = useAssistantFeatureEnabled();
 
@@ -162,6 +164,13 @@ const MailQuickSettings = () => {
 
         return [ktReminder].filter(isTruthy);
     }, [showKT, keyTransparencyNotification]);
+
+    const handleDisableAssistant = () => {
+        for (const { id: otherComposerID } of openedAssistants) {
+            closeAssistant(otherComposerID, true);
+        }
+        resetAssistantState();
+    };
 
     const aiFlag = AIAssistantFlags === UNSET ? SERVER_ONLY : AIAssistantFlags;
 
@@ -309,9 +318,22 @@ const MailQuickSettings = () => {
                                 onClick={() => openNewTab(getKnowledgeBaseUrl('/proton-scribe-writing-assistant'))}
                             />
                         }
-                        action={<ToggleAssistant id="assistantSelect" aiFlag={aiFlag} />}
+                        action={
+                            <ToggleAssistant
+                                id="assistantSelect"
+                                aiFlag={aiFlag}
+                                onDisableSetting={handleDisableAssistant}
+                            />
+                        }
                     />
-                    {aiFlag !== OFF && <ToggleAssistantEnvironment aiFlag={AIAssistantFlags} />}
+                    {/* Need to use handleSettingChange because at this stage we're still on the server mode, so we need to start the local init process*/}
+                    {aiFlag !== OFF && (
+                        <ToggleAssistantEnvironment
+                            aiFlag={AIAssistantFlags}
+                            onEnableLocal={handleSettingChange}
+                            onEnableServer={resetAssistantState}
+                        />
+                    )}
                 </DrawerAppSection>
             )}
 

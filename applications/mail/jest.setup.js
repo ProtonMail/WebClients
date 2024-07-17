@@ -105,6 +105,7 @@ jest.mock('@proton/llm/lib/useAssistant.tsx', () => {
             initAssistant: jest.fn(),
             generateResult: jest.fn(),
             cancelRunningAction: jest.fn(),
+            getIsStickyAssistant: jest.fn(),
         })),
     };
 });

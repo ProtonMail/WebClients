@@ -90,7 +90,7 @@ const ComposerActions = ({
     onToggleAssistant,
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
-    const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight);
+    const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight, !viewportWidth['<=small']);
     const disabled = opening;
     const [{ AIAssistantFlags }] = useUserSettings();
     const { feature: numAttachmentsWithoutEmbeddedFeature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
