@@ -91,7 +91,7 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
     const context = useMemo<PassCoreContextValue>(() => ({ ...core, locale: appLocale }), [appLocale]);
 
     useEffect(() => {
-        core.i18n.getLocale().then(core.i18n.setLocale).catch(noop);
+        core.i18n.setLocale().catch(noop);
         core.i18n.subscribe(({ locale }) => setAppLocale(locale));
 
         const client = ['desktop', 'web'].includes(core.endpoint) ? core.endpoint : 'extension';

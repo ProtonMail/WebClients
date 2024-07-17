@@ -32,3 +32,5 @@ jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
 jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
+
+jest.mock('loglevel');

@@ -24,7 +24,6 @@ describe('AuthService', () => {
 
     const config = { SSO_URL: 'test://' } as PassConfig;
 
-    const getOfflineEnabled = jest.fn(async () => false);
     const getOnline = jest.fn(() => true);
     const onNotification = jest.fn();
     const setStatus = jest.fn();
@@ -49,7 +48,6 @@ describe('AuthService', () => {
             history,
             getClient: () => client,
             getOnline,
-            getOfflineEnabled,
             onNotification,
         });
     });
@@ -92,6 +90,29 @@ describe('AuthService', () => {
             expect(requestFork).toHaveBeenCalled();
 
             clear.mockRestore();
+        });
+    });
+
+    describe('getPersistedSession', () => {
+        const cases = [
+            { desc: 'not persisted', value: null },
+            { desc: 'invalid', value: '//invalid//' },
+            { desc: 'not valid', value: JSON.stringify({}) },
+        ];
+
+        test.each(cases)('should return null if session is $desc', ({ value }) => {
+            const getItem = jest.spyOn(Storage.prototype, 'getItem').mockReturnValue(value);
+            const result = authService.config.getPersistedSession(0);
+            expect(getItem).toHaveBeenCalledWith(auth.getSessionKey(0));
+            expect(result).toBe(null);
+        });
+
+        test('should return session if parsed and valid', () => {
+            const session = { UID: '42', UserID: '42', blob: 'encrypted-blob', cookies: true };
+            const getItem = jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => JSON.stringify(session));
+            const result = authService.config.getPersistedSession(0);
+            expect(getItem).toHaveBeenCalledWith(auth.getSessionKey(0));
+            expect(result).toEqual(session);
         });
     });
 });
