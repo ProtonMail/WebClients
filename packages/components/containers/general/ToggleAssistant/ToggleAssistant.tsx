@@ -9,11 +9,12 @@ import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 interface Props {
     id: string;
     aiFlag: AI_ASSISTANT_ACCESS;
+    onDisableSetting?: () => void;
 }
 
 const { OFF, SERVER_ONLY, CLIENT_ONLY } = AI_ASSISTANT_ACCESS;
 
-const ToggleAssistant = ({ id, aiFlag }: Props) => {
+const ToggleAssistant = ({ id, aiFlag, onDisableSetting }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -33,16 +34,14 @@ const ToggleAssistant = ({ id, aiFlag }: Props) => {
         }
     };
 
-    return (
-        <Toggle
-            id={id}
-            checked={state}
-            onChange={() => {
-                void withLoading(handleChange(enabled ? OFF : SERVER_ONLY));
-            }}
-            loading={loading}
-        />
-    );
+    const handleToggleSetting = () => {
+        void withLoading(handleChange(enabled ? OFF : SERVER_ONLY));
+        if (enabled) {
+            onDisableSetting?.();
+        }
+    };
+
+    return <Toggle id={id} checked={state} onChange={handleToggleSetting} loading={loading} />;
 };
 
 export default ToggleAssistant;
