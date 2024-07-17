@@ -1,21 +1,15 @@
+import { round } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmAddress, WasmApiExchangeRate, WasmBitcoinUnit, WasmNetwork, WasmScriptType } from '@proton/andromeda';
-import { BITCOIN, COMPUTE_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '@proton/wallet';
-
-import { fiatToSats, satsToFiat } from '.';
-
-export const bitcoinToSats = (btc: number) => {
-    return btc * BITCOIN;
-};
-
-export const satsToBitcoin = (sats: number) => {
-    return sats / BITCOIN;
-};
-
-export const satsToMBitcoin = (sats: number) => {
-    return sats / mBITCOIN;
-};
+import {
+    WasmAddress,
+    WasmApiExchangeRate,
+    WasmBitcoinUnit,
+    WasmFiatCurrencySymbol,
+    WasmNetwork,
+    WasmScriptType,
+} from '@proton/andromeda';
+import { BITCOIN, CENTS_BY_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '@proton/wallet';
 
 export const getLabelByUnit = (unit: WasmBitcoinUnit) => {
     switch (unit) {
@@ -89,13 +83,13 @@ export const convertAmount = (
     const precision = getPrecision(to);
 
     if (typeof from === 'object' && 'FiatCurrency' in from) {
-        const sats = fiatToSats(value, from);
-        return convertAmount(sats, COMPUTE_BITCOIN_UNIT, to);
+        const valueInBitcoinUnit = value / (from.ExchangeRate / from.Cents);
+        return convertAmount(valueInBitcoinUnit, from.BitcoinUnit, to);
     }
 
     if (typeof to === 'object' && 'FiatCurrency' in to) {
-        const sats = convertAmount(value, from, COMPUTE_BITCOIN_UNIT);
-        return satsToFiat(sats, to);
+        const valueInBitcoinUnit = convertAmount(value, from, to.BitcoinUnit);
+        return round(valueInBitcoinUnit * (to.ExchangeRate / to.Cents), Math.log10(to.Cents));
     }
 
     switch (from) {
@@ -164,3 +158,18 @@ export const getBitcoinUnitOptions: () => { unit: WasmBitcoinUnit; label: string
     { unit: 'MBTC', label: getLabelByUnit('MBTC') },
     { unit: 'SATS', label: getLabelByUnit('SATS') },
 ];
+
+export const getExchangeRateFromBitcoinUnit = (unit: WasmBitcoinUnit): WasmApiExchangeRate => {
+    return {
+        ID: '-1',
+        BitcoinUnit: unit,
+        FiatCurrency: unit as WasmFiatCurrencySymbol,
+        ExchangeRateTime: '-1',
+        ExchangeRate: CENTS_BY_BITCOIN_UNIT[unit],
+        Cents: CENTS_BY_BITCOIN_UNIT[unit],
+    };
+};
+
+export const isExchangeRateFromBitcoinUnit = (rate: WasmApiExchangeRate) => {
+    return ['BTC', 'SATS', 'MBTC'].includes(rate.FiatCurrency);
+};
