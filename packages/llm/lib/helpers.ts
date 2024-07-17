@@ -201,7 +201,7 @@ export const makeTransformWriteFullEmail = (senderName?: string): TransformCallb
         lines = lines.filter((_line, i) => i !== 0);
 
         // Drop the subject.
-        // The LLM often wants to generates a subject line before the email content. We're not using it at
+        // The LLM often wants to generate a subject line before the email content. We're not using it at
         // the moment, so we just get rid of this line altogether.
         lines = lines.filter((line) => !line.startsWith('Subject'));
         // Do not show a partially generated line, like "Subj"

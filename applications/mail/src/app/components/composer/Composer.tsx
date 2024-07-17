@@ -6,7 +6,6 @@ import {
     useCallback,
     useEffect,
     useImperativeHandle,
-    useMemo,
     useRef,
     useState,
 } from 'react';
@@ -15,7 +14,6 @@ import { c } from 'ttag';
 
 import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { getIsAssistantOpened } from '@proton/llm/lib';
-import useAssistantSticky from '@proton/llm/lib/hooks/useAssistantSticky';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
@@ -102,8 +100,8 @@ const Composer = (
         hasCompatibleHardware,
         initAssistant,
         downloadPaused,
+        getIsStickyAssistant,
     } = useAssistant(composerID);
-    const { getIsStickyAssistant } = useAssistantSticky({ openedAssistants });
 
     // onClose handler can be called in an async handler
     // Input onClose ref can change in the meantime
@@ -245,7 +243,7 @@ const Composer = (
             // to restrict the UI to one composer at a time. When you try opening
             // one, we will force close the other one you got
             for (const { id: otherComposerID } of openedAssistants) {
-                closeAssistant(otherComposerID, true);
+                closeAssistant(otherComposerID);
             }
             openAssistant(composerID, manual);
         }
@@ -255,13 +253,9 @@ const Composer = (
         userSettings.AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY ||
         (hasCompatibleBrowser && hasCompatibleHardware);
 
-    const isStickyAssistant = useMemo(() => {
-        return getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant);
-    }, [composerID, canShowAssistant, canRunAssistant]);
-
     // open assistant by default if it was opened last time
     useEffect(() => {
-        if (isStickyAssistant) {
+        if (getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)) {
             openAssistant(composerID);
 
             // Start initializing the Assistant when opening it if able to
@@ -269,7 +263,7 @@ const Composer = (
                 void initAssistant?.();
             }
         }
-    }, [isStickyAssistant]);
+    }, []);
 
     const handleChangeFlag = useHandler((changes: Map<number, boolean>, shouldReloadSendInfo: boolean = false) => {
         handleChange((message) => {
@@ -381,7 +375,7 @@ const Composer = (
                         composerContentRef={composerContentRef}
                         composerContainerRef={composerContainerRef}
                         composerMetaRef={composerMetaRef}
-                        preventAutofocus={isStickyAssistant}
+                        preventAutofocus={getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)}
                         selectedText={selectedText}
                         getContentBeforeBlockquote={getContentBeforeBlockquote}
                         setContentBeforeBlockquote={setContentBeforeBlockquote}
