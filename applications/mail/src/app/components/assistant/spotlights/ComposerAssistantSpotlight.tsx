@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Spotlight } from '@proton/components/components';
+import { Spotlight, useSpotlightShow } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/ai-assistant-spotlight.svg';
 
@@ -14,10 +14,11 @@ interface Props {
 }
 
 const ComposerAssistantSpotlight = ({ children, show, onClose, onDisplayed }: Props) => {
+    const shouldShowSpotlight = useSpotlightShow(show);
     return (
         <Spotlight
             originalPlacement="top"
-            show={show}
+            show={shouldShowSpotlight}
             onClose={onClose}
             onDisplayed={onDisplayed}
             content={

@@ -66,7 +66,6 @@ interface Props {
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
     recipients: Recipient[];
     sender: Recipient | undefined;
-    preventAutofocus?: boolean;
     onInputClicked: () => void;
 }
 
@@ -87,7 +86,6 @@ const ComposerAssistantInput = ({
     setInnerModal,
     recipients,
     sender,
-    preventAutofocus = false,
     onInputClicked,
 }: Props) => {
     // Request that the user is writing in the input
@@ -620,7 +618,7 @@ const ComposerAssistantInput = ({
                     <InputFieldTwo
                         ref={inputRef}
                         as={TextArea}
-                        autoFocus={!hasSelection && !preventAutofocus}
+                        autoFocus={!hasSelection}
                         value={assistantRequest}
                         onClick={handleClickOnInput}
                         placeholder={hasSelection ? c('Placeholder').t`Describe what to change` : placeholderRandom}
