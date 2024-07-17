@@ -7,13 +7,14 @@ import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/mana
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
-import { selectFeatureFlag } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectFeatureFlag } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { InvitesGetResponse, MaybeNull } from '@proton/pass/types';
+import type { InvitesGetResponse, MaybeNull, Share, ShareType } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { Invite } from '@proton/pass/types/data/invites';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -37,8 +38,17 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
 
     logger.info(`[ServerEvents::Invites] ${event.Invites.length} new invite(s) received`);
 
+    const vaults = (yield select(selectAllVaults)) as Share<ShareType.Vault>[];
+    const vaultIds = vaults.map(prop('vaultId'));
+
     const invites: MaybeNull<Invite>[] = yield Promise.all(
         event.Invites.map<Promise<MaybeNull<Invite>>>(async (invite) => {
+            /* Filter out invites that were just accepted. This is necessary
+             * because there might be a slight delay between invite acceptance
+             * and database replication, potentially causing accepted invites
+             * to still appear in the results. */
+            if (vaultIds.includes(invite.TargetID)) return null;
+
             /* if invite already decrypted early return */
             const cachedInvite = cachedInvites[invite.InviteToken];
             if (cachedInvite) return cachedInvite;
