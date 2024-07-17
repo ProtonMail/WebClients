@@ -83,7 +83,7 @@ export function LinkInfoEditor({
         return
       }
 
-      const sanitizedURL = sanitizeUrl(url)
+      const sanitizedURL = sanitizeUrl(url.startsWith('http') ? url : 'https://' + url)
 
       const isSelectionCollapsed = selection.isCollapsed()
       if (isSelectionCollapsed && !!url && !linkNode) {
