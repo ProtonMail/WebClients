@@ -10,23 +10,6 @@
 	}
 }
 
-.invisible-number-input-arrow {
-	/* Chrome, Safari, Edge, Opera */
-	&::-webkit-outer-spin-button,
-	input::-webkit-outer-spin-button,
-	&::-webkit-inner-spin-button,
-	input::-webkit-inner-spin-button {
-		appearance: none;
-		margin: 0;
-	}
-
-	/* Firefox */
-	input[type='number'],
-	&[type='number'] {
-		appearance: textfield;
-	}
-}
-
 .modal-two-dialog {
 	border-radius: 1.5rem;
 }
