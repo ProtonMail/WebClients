@@ -169,6 +169,7 @@ export const WalletContainer = () => {
                         <WalletPreferencesModal
                             wallet={wallet}
                             otherWallets={otherWallets}
+                            theme={theme}
                             {...walletPreferencesModalState}
                         />
                     )}

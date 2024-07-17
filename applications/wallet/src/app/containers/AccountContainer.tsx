@@ -169,7 +169,12 @@ export const AccountContainer = () => {
             </div>
 
             {renderWalletPreferencesModalState && (
-                <WalletPreferencesModal wallet={wallet} otherWallets={otherWallets} {...walletPreferencesModalState} />
+                <WalletPreferencesModal
+                    wallet={wallet}
+                    otherWallets={otherWallets}
+                    theme={theme}
+                    {...walletPreferencesModalState}
+                />
             )}
         </>
     );
