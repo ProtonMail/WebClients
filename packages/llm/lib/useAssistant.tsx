@@ -151,6 +151,7 @@ export const AssistantContext = createContext<{
      */
     assistantConfig?: AssistantConfig;
     resetAssistantState: () => void;
+    getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
 } | null>(null);
 
 export const useAssistant = (assistantID?: string) => {
@@ -186,6 +187,7 @@ export const useAssistant = (assistantID?: string) => {
         runningActionResolvers,
         resetAssistantState,
         handleSettingChange,
+        getIsStickyAssistant,
     } = assistantContext;
 
     const isGeneratingResult = useMemo(() => {
@@ -248,5 +250,6 @@ export const useAssistant = (assistantID?: string) => {
         assistantConfig: assistantContext.assistantConfig,
         resetAssistantState,
         handleSettingChange,
+        getIsStickyAssistant,
     };
 };
