@@ -255,6 +255,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                             onChange={(e: ChangeEvent<HTMLInputElement>) => {
                                 setAmount(Number(e.target.value));
                             }}
+                            className="invisible-number-input-arrow"
                             disabled={loadingQuotes}
                             suffix={
                                 <div className="flex grow items-center flex-row flex-nowrap">
