@@ -18,16 +18,20 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     if (runtime === SERVER_ONLY) {
         return (
             <>
-                <h3 className="text-rg mr-2">{c('Assistant option').t`Run on servers`}</h3>
-                <Info title={c('Assistant option').t`Faster, broader device compatibility`} />
+                <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run on servers`}</div>
+                <span className="shrink-0">
+                    <Info title={c('Assistant option').t`Faster, broader device compatibility`} />
+                </span>
             </>
         );
     }
 
     return (
         <>
-            <h3 className="text-rg mr-2">{c('Assistant option').t`Run locally`}</h3>
-            <Info title={c('Assistant option').t`No data transmitted while using, requires one-time download`} />
+            <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run locally`}</div>
+            <span className="shrink-0">
+                <Info title={c('Assistant option').t`No data transmitted while using, requires one-time download`} />
+            </span>
         </>
     );
 };
@@ -56,6 +60,7 @@ const ToggleAssistantEnvironment = ({ aiFlag, onEnableLocal, onEnableServer }: P
             <div className="flex flex-column gap-2">
                 <RadioGroup<AI_ASSISTANT_ACCESS>
                     name="assistant-runtime"
+                    className="md:mr-0 w-full flex-nowrap"
                     value={aiFlag}
                     disableChange={loading}
                     onChange={(value) => {
