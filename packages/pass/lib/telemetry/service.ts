@@ -9,28 +9,33 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { sendTelemetryBundle } from './telemetry.requests';
 
-const STORAGE_KEY = 'telemetry' as const;
 const MIN_DT = ENV === 'production' ? 6 * UNIX_HOUR : UNIX_MINUTE; /* DEV: chrome alarms need to be >60 seconds */
 const MAX_DT = ENV === 'production' ? 12 * UNIX_HOUR : 2 * UNIX_MINUTE;
 
-export type TelemetryStorageKey = typeof STORAGE_KEY;
-
-type TelemetryServiceOptions = {
+type TelemetryServiceOptions<StorageKey extends string> = {
     alarm: EventDispatcherAlarm;
-    storage: AnyStorage<Record<TelemetryStorageKey, string>>;
+    storage: AnyStorage<Record<StorageKey, string>>;
+    getStorageKey: () => StorageKey;
     getEnabled: () => boolean;
     getUserTier: () => Maybe<string>;
 };
 
-export const createCoreTelemetryService = ({ alarm, storage, getEnabled, getUserTier }: TelemetryServiceOptions) =>
-    createEventDispatcher<TelemetryEvent, TelemetryStorageKey>({
+export const createCoreTelemetryService = <StorageKey extends string>({
+    alarm,
+    storage,
+    getEnabled,
+    getStorageKey,
+    getUserTier,
+}: TelemetryServiceOptions<StorageKey>) =>
+    createEventDispatcher<TelemetryEvent, StorageKey>({
+        id: 'Telemetry',
         alarm,
-        key: STORAGE_KEY,
         maxRetries: 2,
         storage,
         dispatch: sendTelemetryBundle,
         getEnabled,
         getSendTime: () => getEpoch() + MIN_DT + Math.floor(Math.random() * (MAX_DT - MIN_DT)),
+        getStorageKey,
         prepare: (event) => {
             logger.info(`[Telemetry] Adding ${event.Event} to current bundle`);
             return merge(event, { Dimensions: { user_tier: getUserTier() } });

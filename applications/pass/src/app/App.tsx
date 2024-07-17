@@ -1,7 +1,7 @@
 import { Router } from 'react-router-dom';
 
 import * as config from 'proton-pass-web/app/config';
-import { b2bEvents } from 'proton-pass-web/lib/b2b';
+import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { core } from 'proton-pass-web/lib/core';
 import { PASS_CONFIG } from 'proton-pass-web/lib/env';
 import { i18n } from 'proton-pass-web/lib/i18n';
@@ -113,7 +113,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         onLink: (url, options) => window.open(url, options?.replace ? '_self' : '_blank'),
 
         onTelemetry: pipe(createTelemetryEvent, telemetry.push),
-        onB2BEvent: b2bEvents.push,
+        onB2BEvent: B2BEvents.push,
 
         openSettings: (page) =>
             history.push({
