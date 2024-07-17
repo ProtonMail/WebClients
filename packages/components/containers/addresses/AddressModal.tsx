@@ -208,6 +208,10 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
 
     const handleClose = submitting ? undefined : rest.onClose;
 
+    const getMemberName = (member: Member | undefined) => {
+        return (member?.Self && user.Name ? user.Name : member?.Name) || '';
+    };
+
     return (
         <Modal
             as="form"
@@ -227,25 +231,29 @@ const AddressModal = ({ member, members, useEmail, ...rest }: Props) => {
                 <div className="mb-6">
                     <div className="text-semibold mb-1" id="label-user-select">{c('Label').t`User`}</div>
                     {member || members?.length === 1 ? (
-                        <div className="text-ellipsis">{member?.Name || members?.[0].Name}</div>
+                        <div className="text-ellipsis">{getMemberName(selectedMember)}</div>
                     ) : (
                         <SelectTwo
                             aria-describedby="label-user-select"
                             value={model.id}
                             onChange={({ value }) => setModel({ ...model, id: value })}
                         >
-                            {members.map((member) => (
-                                <Option
-                                    value={member.ID}
-                                    title={member.Name}
-                                    disabled={
-                                        member.State === MEMBER_STATE.STATUS_DISABLED ||
-                                        member.State === MEMBER_STATE.STATUS_INVITED
-                                    }
-                                >
-                                    {member.Name}
-                                </Option>
-                            ))}
+                            {members.map((member) => {
+                                const name = getMemberName(member);
+                                return (
+                                    <Option
+                                        key={member.ID}
+                                        value={member.ID}
+                                        title={name}
+                                        disabled={
+                                            member.State === MEMBER_STATE.STATUS_DISABLED ||
+                                            member.State === MEMBER_STATE.STATUS_INVITED
+                                        }
+                                    >
+                                        {name}
+                                    </Option>
+                                );
+                            })}
                         </SelectTwo>
                     )}
                 </div>
