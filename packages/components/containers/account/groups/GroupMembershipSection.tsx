@@ -33,10 +33,9 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
                                         key={key}
                                         labels={[
                                             c('Title').t`Group`,
-                                            c('Title').t`Amount`,
-                                            c('Title').t`Type`,
+                                            c('Title').t`Address`,
                                             c('Title').t`Status`,
-                                            c('Title').t`Date`,
+                                            c('Title').t`Action`,
                                             '',
                                         ]}
                                         cells={[

@@ -22,7 +22,7 @@ interface Props {
 const GroupItem = ({ active, groupData: { ID, MemberCount, Address, Name }, onClick, isNew, onDeleteGroup }: Props) => {
     const api = useApi();
 
-    const memberCount = MemberCount ?? 0;
+    const memberCount = Number.isInteger(MemberCount) ? MemberCount : undefined;
 
     const handleDeleteGroup = async () => {
         await api(deleteGroup(ID));
@@ -56,13 +56,15 @@ const GroupItem = ({ active, groupData: { ID, MemberCount, Address, Name }, onCl
                             <p className="m-0 text-bold text-lg text-ellipsis">{Name}</p>
                             {Address.Email && <p className="m-0 text-ellipsis">{Address.Email}</p>}
                         </p>
-                        <p className="m-0 text-sm color-weak">
-                            {c('Group member count').ngettext(
-                                msgid`${memberCount} member`,
-                                `${memberCount} members`,
-                                memberCount
-                            )}
-                        </p>
+                        {memberCount !== undefined && (
+                            <p className="m-0 text-sm color-weak">
+                                {c('Group member count').ngettext(
+                                    msgid`${memberCount} member`,
+                                    `${memberCount} members`,
+                                    memberCount
+                                )}
+                            </p>
+                        )}
                     </div>
                     {!isNew && (
                         <div className="absolute top-0 right-0 mt-2 mr-2">
