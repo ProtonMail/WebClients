@@ -38,10 +38,11 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         handleSaveGroup,
         form,
         groupMembers,
+        loadingGroupMembers,
         groups,
         domainData,
-        getSuggestedAddressDomainName,
-        getSuggestedAddressDomainPart,
+        suggestedAddressDomainName,
+        suggestedAddressDomainPart,
     } = groupsManagement;
     const { resetForm, dirty, values: formValues, setFieldValue } = form;
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
@@ -56,7 +57,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
             setFieldValue('address', addressWithoutDomain);
             setSelectedDomain(addressDomain);
         } else if (uiState === 'new') {
-            setSelectedDomain(getSuggestedAddressDomainPart());
+            setSelectedDomain(suggestedAddressDomainPart);
         }
     }, [uiState]);
 
@@ -178,7 +179,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                             <GroupAddressDomainSelect
                                                 domains={customDomains}
                                                 selectedDomain={selectedDomain}
-                                                suggestedDomainName={getSuggestedAddressDomainName()}
+                                                suggestedDomainName={suggestedAddressDomainName}
                                                 onChange={(value: string) => setSelectedDomain(value)}
                                                 setSelectedDomain={setSelectedDomain}
                                                 disabled={uiState === 'edit'} // disable until BE supports address change
@@ -238,7 +239,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                     </Form>
                 </FormikProvider>
 
-                <GroupMemberList groupMembers={groupMembers}></GroupMemberList>
+                <GroupMemberList groupMembers={groupMembers} loading={loadingGroupMembers} />
             </Panel>
         </>
     );

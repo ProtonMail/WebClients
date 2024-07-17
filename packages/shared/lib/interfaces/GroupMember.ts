@@ -24,7 +24,10 @@ export interface GroupMemberAddressPendingKey {
 export interface GroupMember {
     ID: string;
     Type: GROUP_MEMBER_TYPE;
-    AddressID: string;
+    AddressID?: string;
+    // the backend is currently returning Id but it should use ID
+    // TODO(plavarin): 2024-07-23, remove when fixed
+    AddressId?: string;
     Email: string;
     State: GROUP_MEMBER_STATE;
     GroupMemberAddressPendingKey?: GroupMemberAddressPendingKey;
