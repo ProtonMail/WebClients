@@ -6,7 +6,7 @@ import { AuthServiceProvider } from 'proton-pass-web/app/Context/AuthServiceProv
 import { ClientProvider } from 'proton-pass-web/app/Context/ClientProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
 import { store } from 'proton-pass-web/app/Store/store';
-import { b2bEvents } from 'proton-pass-web/lib/b2b';
+import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { core } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
@@ -91,7 +91,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     onboardingAcknowledge: onboarding.acknowledge,
     onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
     onTelemetry: pipe(createTelemetryEvent, telemetry.push),
-    onB2BEvent: b2bEvents.push,
+    onB2BEvent: B2BEvents.push,
 
     openSettings: (page) =>
         history.push({

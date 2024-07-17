@@ -18,4 +18,10 @@ module.exports = {
     },
     coverageReporters: ['text-summary', 'json'],
     reporters: ['default', ['jest-junit', { suiteNameTemplate: '{filepath}', outputName: 'test-report.xml' }]],
+    globals: {
+        BUILD_TARGET: 'test',
+        ENV: 'test',
+        EXTENSION_BUILD: false,
+        DESKTOP_BUILD: false,
+    },
 };

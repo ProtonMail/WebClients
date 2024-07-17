@@ -80,15 +80,17 @@ export interface AuthServiceConfig {
     onInit: (options: AuthOptions) => Promise<boolean>;
     /** Called when authorization sequence starts: this can happen when consuming a
      * session fork or when trying to resume a session. */
-    onAuthorize?: () => void;
+    onLoginStart?: () => void;
     /** Called whenever a user is successfully authenticated. This can happen
      * after consuming a fork or resuming a session.  */
-    onAuthorized?: (userID: string, localID: Maybe<number>) => void;
+    onLoginComplete?: (userID: string, localID: Maybe<number>) => void;
+    /** Called when logout sequence starts before the authentication store is cleared */
+    onLogoutStart?: () => void;
     /** Called whenever a user is unauthenticated. This will be triggered any time
      * the `logout` function is called (either via user action or when an inactive
      * session is detected). The `broadcast` flag indicates wether we should
      * broadcast the unauthorized session to other clients. */
-    onUnauthorized?: (userID: Maybe<string>, localID: Maybe<number>, broadcast: boolean) => void;
+    onLogoutComplete?: (userID: Maybe<string>, localID: Maybe<number>, broadcast: boolean) => void;
     /** Called immediately after a fork has been successfully consumed. At this
      * point the user is not fully logged in yet. */
     onForkConsumed?: (session: AuthSession, payload: ConsumeForkPayload) => MaybePromise<void>;
@@ -163,7 +165,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
         registerLockAdapter: (mode: LockMode, adapter: LockAdapter) => adapters.set(mode, adapter),
 
         login: async (session: AuthSession, options: AuthOptions) => {
-            config.onAuthorize?.();
+            config.onLoginStart?.();
 
             try {
                 if (!authStore.validSession(session)) {
@@ -211,31 +213,32 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
 
             logger.info(`[AuthService] User is authorized`);
-            config.onAuthorized?.(authStore.getUserID()!, authStore.getLocalID());
+            config.onLoginComplete?.(authStore.getUserID()!, authStore.getLocalID());
 
             return true;
         },
 
         logout: async (options: { soft: boolean; broadcast?: boolean }) => {
-            logger.info(`[AuthService] User is not authorized`);
+            config.onLogoutStart?.();
 
             const localID = authStore.getLocalID();
             const userID = authStore.getUserID();
 
             if (!options?.soft) await api({ ...revoke(), silence: true }).catch(noop);
+            logger.info(`[AuthService] User is not authorized`);
 
             await api.reset();
             authStore.clear();
             authService.resumeSession.resetCount();
 
-            config.onUnauthorized?.(userID, localID, options.broadcast ?? true);
+            config.onLogoutComplete?.(userID, localID, options.broadcast ?? true);
 
             return true;
         },
 
         consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<boolean> => {
             try {
-                config.onAuthorize?.();
+                config.onLoginStart?.();
                 const { session, Scopes } = await consumeFork({ api, payload, apiUrl });
                 const validScope = Scopes.includes('pass');
 
@@ -427,7 +430,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         }
 
                         logger.info(`[AuthService] Resuming persisted session [lock=${options.forceLock ?? false}]`);
-                        config.onAuthorize?.();
+                        config.onLoginStart?.();
 
                         /** Partially configure the auth store before resume sequence. `keyPassword`
                          * and `sessionLockToken` may be still encrypted at this point */

@@ -24,13 +24,14 @@ export type EventDispatcherAlarm = {
 };
 
 export type EventDispatcherOptions<Event, StorageKey extends string> = {
-    key: StorageKey;
+    id: string;
     storage: AnyStorage<Record<StorageKey, string>>;
     alarm: EventDispatcherAlarm;
     maxRetries: number;
     dispatch: (bundle: EventBundle<Event>) => Promise<void>;
     getEnabled: () => boolean;
     getSendTime: () => number;
+    getStorageKey: () => StorageKey;
     prepare?: (event: Event) => Event;
 };
 
@@ -44,20 +45,30 @@ export interface EventDispatcher<Event> {
 export const createEventDispatcher = <Event, StorageKey extends string = string>(
     options: EventDispatcherOptions<Event, StorageKey>
 ): EventDispatcher<Event> => {
-    const { key, storage, alarm, maxRetries, getEnabled, getSendTime, dispatch, prepare = identity } = options;
-    const serviceID = `EventDispatcher::${key}`;
+    const {
+        id,
+        alarm,
+        maxRetries,
+        storage,
+        dispatch,
+        getEnabled,
+        getSendTime,
+        getStorageKey,
+        prepare = identity,
+    } = options;
+    const log = (message: string) => logger.info(`[EventDispatcher::${id}] ${message}`);
 
     const shouldSetAlarm = async (): Promise<boolean> => (await alarm.when()) === undefined;
     const createBundle = (): EventBundle<Event> => ({ sendTime: getSendTime(), events: [], retryCount: 0 });
-    const saveBundle = (bundle: EventBundle<Event>) => storage.setItem(key, JSON.stringify(bundle));
-    const resetBundle = () => storage.removeItem(key);
+    const saveBundle = (bundle: EventBundle<Event>) => storage.setItem(getStorageKey(), JSON.stringify(bundle));
+    const resetBundle = () => storage.removeItem(getStorageKey());
     const shouldSendBundle = ({ sendTime }: { sendTime: number }): boolean => sendTime - getEpoch() <= 0;
 
     /** Resolves any currently cached event bundle or creates a
      * new one if it does not exist or if we cannot parse it  */
     const resolveBundle = async (): Promise<EventBundle<Event>> => {
         try {
-            const bundle = await storage.getItem(key);
+            const bundle = await storage.getItem(getStorageKey());
             if (!bundle) throw new Error();
             return JSON.parse(bundle);
         } catch {
@@ -84,10 +95,10 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
 
         const shouldReset = result.ok || !result.retry;
 
-        if (result.ok) logger.info(`[${serviceID}] Dispatched current bundle [${events.length} event(s)]`);
+        if (result.ok) log(`Dispatched current bundle [${events.length} event(s)]`);
         if (shouldReset) return resetBundle();
         else {
-            logger.info(`[${serviceID}] Failed sending out bundle. Retrying later...`);
+            log(`Failed sending out bundle. Retrying later...`);
             bundle.retryCount += 1;
             await saveBundle(bundle);
         }
@@ -101,7 +112,7 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
             /* If the API call failed we may hit a sendTime lower than the
              * current time, in this case, retry in 1 minute. */
             const when = Math.max(bundle.sendTime - getEpoch(), UNIX_MINUTE);
-            logger.info(`[${serviceID}] New dispatcher alarm in ${when}s`);
+            log(`New dispatcher alarm in ${when}s`);
 
             await alarm.reset();
             await alarm.set((getEpoch() + when) * 1000, send);
@@ -109,7 +120,7 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
     };
 
     const stop = () => {
-        logger.info(`[${serviceID}] Stopping dispatcher...`);
+        log(`Stopping dispatcher...`);
         alarm.reset();
         void resetBundle();
     };
@@ -118,11 +129,11 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
         try {
             if (!getEnabled()) return stop();
 
-            logger.info(`[${serviceID}] Starting dispatcher - [enabled: ${getEnabled()}]`);
+            log(`Starting dispatcher - [enabled: ${getEnabled()}]`);
             const sendTime = await alarm.when();
             if (sendTime) {
                 const secondsUntilAlarm = Math.max(sendTime / 1000 - getEpoch(), 0);
-                logger.info(`[${serviceID}] Found dispatcher alarm in ${secondsUntilAlarm}s`);
+                log(`Found dispatcher alarm in ${secondsUntilAlarm}s`);
             } else await setAlarm().catch(noop);
         } catch {}
     };

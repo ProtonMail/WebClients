@@ -1,6 +1,6 @@
 import { createAlarmHandles } from 'proton-pass-extension/app/worker/services/telemetry';
 
-import { type B2BEventsStorageKey, createB2BEventDispatcher } from '@proton/pass/lib/b2b/b2b.dispatcher';
+import { createB2BEventDispatcher } from '@proton/pass/lib/b2b/b2b.dispatcher';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
@@ -13,12 +13,14 @@ import { withContext } from '../context';
 import store from '../store';
 
 export const B2B_EVENTS_ALARM_NAME = 'PassB2BEventsAlarm';
+export const B2B_EVENTS_STORAGE_KEY = 'b2bEvents';
 
-export const createB2BEventsService = (storage: ExtensionStorage<Record<B2BEventsStorageKey, string>>) => {
+export const createB2BEventsService = (storage: ExtensionStorage<Record<typeof B2B_EVENTS_STORAGE_KEY, string>>) => {
     const { push, send, start, stop } = createB2BEventDispatcher({
         alarm: createAlarmHandles(B2B_EVENTS_ALARM_NAME),
         storage,
         getEnabled: () => isBusinessPlan(selectPassPlan(store.getState())),
+        getStorageKey: () => B2B_EVENTS_STORAGE_KEY,
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.B2B_EVENT, ({ payload: { event } }) => push(event));

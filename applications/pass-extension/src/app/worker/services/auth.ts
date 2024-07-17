@@ -87,12 +87,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         getMemorySession: withContext((ctx) => ctx.service.storage.session.getItems(SESSION_KEYS)),
 
-        onAuthorize: withContext((ctx) => {
+        onLoginStart: withContext((ctx) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
             ctx.setStatus(AppStatus.AUTHORIZING);
         }),
 
-        onAuthorized: withContext((ctx, _) => {
+        onLoginComplete: withContext((ctx, _) => {
             ctx.setStatus(AppStatus.AUTHORIZED);
             ctx.service.activation.boot();
             void ctx.service.storage.local.removeItem('forceLock');
@@ -101,7 +101,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: authStore.getSession() });
         }),
 
-        onUnauthorized: withContext((ctx, _) => {
+        onLogoutComplete: withContext((ctx, _) => {
             /* important to call setStatus before dispatching the
              * the `stateDestroy` action : we might have active
              * clients currently consuming the store data */

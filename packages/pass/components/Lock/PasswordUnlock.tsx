@@ -32,7 +32,7 @@ export const PasswordUnlock: FC<Props> = ({ offlineEnabled }) => {
     const onSubmit = useCallback(({ password }: PasswordCredentials) => {
         /** As booting offline will not trigger the AuthService::login
          * sequence we need to re-apply the redirection logic implemented
-         * in the service's `onAuthorized` callback */
+         * in the service's `onLoginComplete` callback */
         const localID = authStore?.getLocalID();
         history.replace(getBasename(localID) ?? '/');
         passwordUnlock.dispatch({ mode: LockMode.PASSWORD, secret: password });
