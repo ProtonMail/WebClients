@@ -3,8 +3,17 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { CalendarLogo, DriveLogo, Icon, MailLogo, Meter, PassLogo, SettingsLink } from '@proton/components/components';
-import { SettingsSection } from '@proton/components/containers';
+import {
+    CalendarLogo,
+    DriveLogo,
+    Icon,
+    MailLogo,
+    Meter,
+    PassLogo,
+    SettingsLink,
+    WalletLogo,
+} from '@proton/components/components';
+import { SettingsSection, useFlag } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import {
@@ -139,6 +148,7 @@ const YourStorageSection = ({ app }: Props) => {
     const space = getSpace(user);
     const details = getCompleteSpaceDetails(space);
     const plan = getPlanToUpsell({ storageDetails: details, app });
+    const canAccessWallet = useFlag('Wallet');
 
     return (
         <SettingsSection>
@@ -240,6 +250,7 @@ const YourStorageSection = ({ app }: Props) => {
                                 <MailLogo variant="glyph-only" />
                                 <CalendarLogo variant="glyph-only" />
                                 <PassLogo variant="glyph-only" />
+                                {canAccessWallet && <WalletLogo variant="glyph-only" />}
                             </div>
                             <div className="text-2xl text-bold">{getAppStorage(MAIL_SHORT_APP_NAME)}</div>
                         </div>
