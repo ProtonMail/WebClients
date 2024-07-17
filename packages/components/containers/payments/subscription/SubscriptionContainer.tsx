@@ -336,10 +336,12 @@ const SubscriptionContainer = ({
             return cycle;
         })();
 
-        cycle = Math.max(
-            capCycle(showB2CAddons, cycle),
-            subscription?.Cycle ?? Number.NEGATIVE_INFINITY,
-            subscription?.UpcomingSubscription?.Cycle ?? Number.NEGATIVE_INFINITY
+        cycle = getNormalCycleFromCustomCycle(
+            Math.max(
+                capCycle(showB2CAddons, cycle),
+                subscription?.Cycle ?? Number.NEGATIVE_INFINITY,
+                subscription?.UpcomingSubscription?.Cycle ?? Number.NEGATIVE_INFINITY
+            )
         );
 
         const currency = (() => {
