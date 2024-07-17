@@ -10,7 +10,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useFlag,
     useLocalState,
     useMyCountry,
     useNotifications,
@@ -82,8 +81,6 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
     const [defaultCountry] = useMyCountry();
 
     const createFlow = useFlowRef();
-
-    const showNoRecoveryMethodFlow = useFlag('ShowNoRecoveryMethodFlow');
 
     const handleBack = () => {
         history.push(loginUrl);
@@ -338,45 +335,25 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl, product
                     <Header title={c('Title').t`No recovery method`} onBack={handleBackStep} />
                     <Content>
                         <Text>{c('Info').t`Unfortunately there is no recovery method saved for this account.`}</Text>
-                        {showNoRecoveryMethodFlow && (
-                            <Text>{c('Info')
-                                .jt`If you are signed in somewhere else, you may be able to ${signedInPasswordResetLink}.`}</Text>
-                        )}
+                        <Text>
+                            {c('Info')
+                                .jt`If you are signed in somewhere else, you may be able to ${signedInPasswordResetLink}.`}
+                        </Text>
                         <form>
-                            {showNoRecoveryMethodFlow ? (
-                                <>
-                                    <Button color="norm" size="large" onClick={handleBack} fullWidth>
-                                        {c('Action').t`Return to sign in`}
-                                    </Button>
-                                    <ButtonLike
-                                        className="mt-2"
-                                        as={Href}
-                                        shape="ghost"
-                                        color="norm"
-                                        size="large"
-                                        href={getKnowledgeBaseUrl('/common-login-problems')}
-                                        fullWidth
-                                    >
-                                        {c('Link').t`Common sign in issues`}
-                                    </ButtonLike>
-                                </>
-                            ) : (
-                                <>
-                                    <Button color="norm" size="large" onClick={handleBack} fullWidth>
-                                        {c('Action').t`Return to sign in`}
-                                    </Button>
-                                    <ButtonLike
-                                        as={Href}
-                                        shape="ghost"
-                                        color="norm"
-                                        size="large"
-                                        href={getStaticURL('/support')}
-                                        target="_self"
-                                        fullWidth
-                                        className="mt-2"
-                                    >{c('Action').t`Contact support`}</ButtonLike>
-                                </>
-                            )}
+                            <Button color="norm" size="large" onClick={handleBack} fullWidth>
+                                {c('Action').t`Return to sign in`}
+                            </Button>
+                            <ButtonLike
+                                className="mt-2"
+                                as={Href}
+                                shape="ghost"
+                                color="norm"
+                                size="large"
+                                href={getKnowledgeBaseUrl('/common-login-problems')}
+                                fullWidth
+                            >
+                                {c('Link').t`Common sign in issues`}
+                            </ButtonLike>
                         </form>
                     </Content>
                 </>
