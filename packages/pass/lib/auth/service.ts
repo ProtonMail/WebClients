@@ -569,12 +569,14 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     }
 
                     if (event.status === 'not-allowed') {
-                        config.onNotification?.({
-                            text: '',
-                            key: NotificationKey.ORG_MISSING_2FA,
-                            type: 'error',
-                            expiration: -1,
-                        });
+                        if (event.error?.includes('two-factor-authentication-2fa')) {
+                            config.onNotification?.({
+                                text: '',
+                                key: NotificationKey.ORG_MISSING_2FA,
+                                type: 'error',
+                                expiration: -1,
+                            });
+                        }
 
                         await authService.logout({ soft: true, broadcast: true });
                     }
