@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,7 +23,6 @@ import {
     getAccountWithChainDataFromManyWallets,
     getLabelByUnit,
 } from '../../utils';
-import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
 
 type ValidAccountChecker = (
     wallet: WasmApiWallet,
@@ -60,7 +59,7 @@ const WalletAccountBalance = ({ walletAccount, balance }: { walletAccount: WasmA
 };
 
 export const WalletAccountItem = ({
-    withIcon = true,
+    withIcon = false,
     walletAccount,
     accountChainData,
 }: {
@@ -75,7 +74,7 @@ export const WalletAccountItem = ({
     }, [accountChainData]);
 
     return (
-        <div className="flex flex-row w-full flex-nowrap justify-space-between items-center text-sm">
+        <div className="flex flex-row w-full flex-nowrap justify-space-between items-center text-sm gap-4">
             <div className="flex flex-row flex-nowrap items-center">
                 {withIcon && <Icon name={'brand-bitcoin'} className="mr-1 shrink-0" />}
                 <div style={{ whiteSpace: 'nowrap' }} className="overflow-hidden text-ellipsis">
@@ -88,47 +87,29 @@ export const WalletAccountItem = ({
     );
 };
 
-const DropdownButtonWalletAccountButton = ({
-    wallet,
-    walletAccount,
-    checkIsValid,
-    onClick,
-}: {
-    wallet: WasmApiWallet;
-    walletAccount: WasmApiWalletAccount;
-    checkIsValid?: ValidAccountChecker;
-    onClick: () => void;
-}) => {
-    const { walletsChainData } = useBitcoinBlockchainContext();
-    const accountChainData = getAccountWithChainDataFromManyWallets(
-        walletsChainData,
-        walletAccount.WalletID,
-        walletAccount.ID
-    );
-
-    const promiseIsValid = checkIsValid ? checkIsValid(wallet, walletAccount, accountChainData) : Promise.resolve(true);
-    const isValid = useAsyncValue(promiseIsValid, true);
-
-    return (
-        <DropdownMenuButton
-            onClick={() => onClick()}
-            className={clsx('text-left', !isValid && 'color-danger')}
-            disabled={!isValid}
-        >
-            <WalletAccountItem walletAccount={walletAccount} accountChainData={accountChainData} />
-        </DropdownMenuButton>
-    );
-};
-
 interface Props {
     value: [WasmApiWallet, WasmApiWalletAccount];
     onSelect: (selected: [WasmApiWallet, WasmApiWalletAccount]) => void;
     checkIsValid?: ValidAccountChecker;
     options: [WasmApiWallet, WasmApiWalletAccount[]][];
     disabled?: boolean;
+    doNotShowInvalidWalletAccounts?: boolean;
 }
 
-export const WalletAccountSelector = ({ value, options, disabled, checkIsValid, onSelect }: Props) => {
+interface CheckedAccount {
+    walletAccount: WasmApiWalletAccount;
+    accountChainData: AccountWithChainData;
+    isValid: true;
+}
+
+export const WalletAccountSelector = ({
+    value,
+    options: inputOptions,
+    disabled,
+    checkIsValid,
+    onSelect,
+    doNotShowInvalidWalletAccounts,
+}: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { walletsChainData } = useBitcoinBlockchainContext();
 
@@ -138,6 +119,77 @@ export const WalletAccountSelector = ({ value, options, disabled, checkIsValid, 
         account.WalletID,
         account.ID
     );
+
+    const [checkedOptions, setCheckedOptions] = useState<[WasmApiWallet, CheckedAccount[]][]>([]);
+
+    useEffect(() => {
+        const fetchAllValidAccounts = async () => {
+            const checkedAccountAndWallet = await Promise.all(
+                inputOptions.map(async ([wallet, walletAccounts]) => {
+                    const accounts = await Promise.all(
+                        walletAccounts.map(async (walletAccount) => {
+                            const accountChainData = getAccountWithChainDataFromManyWallets(
+                                walletsChainData,
+                                walletAccount.WalletID,
+                                walletAccount.ID
+                            );
+
+                            return {
+                                walletAccount,
+                                accountChainData,
+                                isValid: checkIsValid
+                                    ? await checkIsValid(wallet, walletAccount, accountChainData)
+                                    : true,
+                            };
+                        })
+                    );
+
+                    return [wallet, accounts] as [WasmApiWallet, CheckedAccount[]];
+                })
+            );
+
+            setCheckedOptions(checkedAccountAndWallet);
+        };
+
+        void fetchAllValidAccounts();
+    }, [inputOptions, walletsChainData, checkIsValid]);
+
+    const validOptions = useMemo(() => {
+        return checkedOptions
+            .map(
+                ([w, a]) =>
+                    [w, a.filter((a) => !doNotShowInvalidWalletAccounts || a.isValid)] as [
+                        WasmApiWallet,
+                        CheckedAccount[],
+                    ]
+            )
+            .filter(([, a]) => a.length);
+    }, [checkedOptions, doNotShowInvalidWalletAccounts]);
+
+    const onlyHasOneWalletWithOneAccount = validOptions.length === 1 && validOptions[0][1].length === 1;
+
+    if (onlyHasOneWalletWithOneAccount) {
+        // check if the selected account is the single valid account
+        const { walletAccount } = validOptions[0][1][0];
+        if (account.ID !== walletAccount.ID) {
+            onSelect([wallet, walletAccount]);
+        }
+        return (
+            <div className="border rounded-xl bg-weak py-5 px-4 w-full">
+                <div className="flex flex-column">
+                    <div className="flex flex-row flex-nowrap w-full justify-space-between items-center mb-3">
+                        <div className="text-semibold text-ellipsis">{wallet.Name}</div>
+                    </div>
+
+                    <WalletAccountItem
+                        walletAccount={account}
+                        accountChainData={selectedAccountChainData}
+                        withIcon={false}
+                    />
+                </div>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -167,21 +219,25 @@ export const WalletAccountSelector = ({ value, options, disabled, checkIsValid, 
                 size={{ width: DropdownSizeUnit.Anchor }}
             >
                 <DropdownMenu>
-                    {options.map(([wallet, walletAccounts]) => {
+                    {validOptions.map(([wallet, walletAccounts]) => {
                         return (
                             <div key={wallet.ID}>
                                 <div className="flex flex-row items-center p-4">
                                     <div className="text-semibold">{wallet.Name}</div>
                                 </div>
 
-                                {walletAccounts.map((walletAccount) => (
-                                    <DropdownButtonWalletAccountButton
+                                {walletAccounts.map(({ walletAccount, accountChainData, isValid }) => (
+                                    <DropdownMenuButton
                                         onClick={() => onSelect([wallet, walletAccount])}
-                                        wallet={wallet}
-                                        walletAccount={walletAccount}
-                                        checkIsValid={checkIsValid}
-                                        key={walletAccount.ID}
-                                    />
+                                        className="text-left"
+                                        disabled={!isValid}
+                                    >
+                                        <WalletAccountItem
+                                            walletAccount={walletAccount}
+                                            accountChainData={accountChainData}
+                                            withIcon={false}
+                                        />
+                                    </DropdownMenuButton>
                                 ))}
                             </div>
                         );
