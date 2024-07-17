@@ -3,6 +3,7 @@ import { useFlag, useIsOrganizationBeforeBackfill, useScribePaymentsEnabled } fr
 import { baseUseSelector } from '@proton/react-redux-store';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Organization } from '@proton/shared/lib/interfaces';
+import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 const PLANS_SUPPORTING_SCRIBE = [
     PLANS.MAIL_PRO,
@@ -38,8 +39,12 @@ const useAssistantFeatureEnabled = () => {
     // This is needed for the rollout as we can't sync the two feature flags
     // "AIAssistantAddonSignup" and "ComposerAssistant" to be shown to the same
     // cohort. Can be changed once this feature is fully rolled to users
+    //
+    // A check for the org is added so we gradually release the feature out
+    // for visionaries as they have 6 AI seats assigned by default
+    // TODO: Remove once Scribe has been fully rolled out
     const enabled =
-        userHasScribeSeat ||
+        (userHasScribeSeat && !isOrganizationVisionary(organization)) ||
         (accessToAssistant &&
             !isOrganizationBeforeBackfill &&
             // you can't see anything Scribe related if the payments can't support you buying it

@@ -375,7 +375,6 @@ const Composer = (
                         composerContentRef={composerContentRef}
                         composerContainerRef={composerContainerRef}
                         composerMetaRef={composerMetaRef}
-                        preventAutofocus={getIsStickyAssistant(composerID, canShowAssistant, canRunAssistant)}
                         selectedText={selectedText}
                         getContentBeforeBlockquote={getContentBeforeBlockquote}
                         setContentBeforeBlockquote={setContentBeforeBlockquote}
