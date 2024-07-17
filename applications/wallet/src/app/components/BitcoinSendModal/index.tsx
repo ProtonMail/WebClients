@@ -63,7 +63,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
 
     const wasmAccount = getAccountWithChainDataFromManyWallets(
         walletsChainData,
-        wallet?.Wallet.ID,
+        selectedWalletAccount[0]?.ID,
         selectedWalletAccount[1]?.ID
     );
 
@@ -111,6 +111,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                 <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
                     <div className="sticky top-0">
                         <WalletAccountSelector
+                            doNotShowInvalidWalletAccounts
                             value={selectedWalletAccount}
                             onSelect={(selected) => {
                                 setSelectedWalletAccount(selected);
