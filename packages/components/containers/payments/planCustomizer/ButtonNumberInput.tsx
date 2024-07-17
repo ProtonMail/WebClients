@@ -86,7 +86,8 @@ export const ButtonNumberInput = ({
                     max={max}
                     value={tmpValue === null ? '' : currentValue}
                     id={id}
-                    className="w-custom border-left border-right text-center"
+                    type="number"
+                    className="w-custom border-left border-right text-center invisible-number-input-arrow"
                     style={{ '--w-custom': '6em' }}
                     onBlur={() => {
                         // Revert to the latest valid value upon blur
