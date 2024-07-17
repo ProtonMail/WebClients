@@ -6,6 +6,7 @@ import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider'
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
+import { IdentityView } from '@proton/pass/components/Item/Identity/Identity.view';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
@@ -41,6 +42,7 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     note: NoteView,
     alias: AliasView,
     creditCard: CreditCardView,
+    identity: IdentityView,
 };
 
 export const ItemView: FC = () => {

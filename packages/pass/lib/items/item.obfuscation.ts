@@ -60,7 +60,7 @@ export const obfuscateItem = <T extends ItemType = ItemType>(item: UnsafeItem): 
         case 'alias':
             return { ...item, ...base } satisfies Item<'alias'> as Item<T>;
         case 'identity':
-            throw new Error('FIXME');
+            return { ...item, ...base } satisfies Item<'identity'> as Item<T>;
     }
 };
 
@@ -100,6 +100,6 @@ export const deobfuscateItem = <T extends ItemType>(item: Item): UnsafeItem<T> =
         case 'alias':
             return { ...item, ...base } satisfies UnsafeItem<'alias'> as UnsafeItem<T>;
         case 'identity':
-            throw new Error('FIXME');
+            return { ...item, ...base } satisfies UnsafeItem<'identity'> as UnsafeItem<T>;
     }
 };

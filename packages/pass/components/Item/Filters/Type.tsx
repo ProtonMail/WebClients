@@ -38,6 +38,10 @@ export const getItemTypeOptions = (): { [key in ItemTypeFilter]: { label: string
         label: c('Label').t`Notes`,
         icon: itemTypeToIconName.note,
     },
+    identity: {
+        label: c('Label').t`Identities`,
+        icon: itemTypeToIconName.identity,
+    },
 });
 
 export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
