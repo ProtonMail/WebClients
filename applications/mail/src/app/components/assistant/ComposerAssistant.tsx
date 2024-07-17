@@ -42,7 +42,6 @@ interface Props {
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
     recipients: Recipient[];
     sender: Recipient | undefined;
-    preventAutofocus?: boolean;
 }
 
 export type ReplacementStyle = 'generateFullMessage' | 'refineFullMessage' | 'refineSelectedText' | undefined;
@@ -60,7 +59,6 @@ const ComposerAssistant = ({
     setInnerModal,
     recipients,
     sender,
-    preventAutofocus,
 }: Props) => {
     const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight);
     const [result, setResult] = useState('');
@@ -323,7 +321,6 @@ const ComposerAssistant = ({
                         setInnerModal={setInnerModal}
                         recipients={recipients}
                         sender={sender}
-                        preventAutofocus={preventAutofocus}
                         onInputClicked={onInputClicked}
                     />
                 </div>

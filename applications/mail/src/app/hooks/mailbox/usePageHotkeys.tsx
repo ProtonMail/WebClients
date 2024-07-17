@@ -64,6 +64,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
             'N',
             (e) => {
                 if (Shortcuts && !isBusy(e)) {
+                    e.preventDefault();
                     onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
                 }
             },
