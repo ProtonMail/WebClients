@@ -3,11 +3,9 @@ import { c } from 'ttag';
 import { getAssistantIframeURL, useAssistant } from '@proton/llm/lib';
 
 const AssistantIframe = () => {
-    const { canShowAssistant, hasCompatibleHardware, hasCompatibleBrowser, isModelDownloaded } = useAssistant();
-    const renderAssistantIframe =
-        canShowAssistant && hasCompatibleHardware && hasCompatibleBrowser && !isModelDownloaded;
+    const { canShowAssistant } = useAssistant();
 
-    if (!renderAssistantIframe) {
+    if (!canShowAssistant) {
         return null;
     }
 
