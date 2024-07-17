@@ -148,6 +148,7 @@ export const AmountInput = ({
                         <BitcoinAmountInputWithBalanceAndCurrencySelect
                             exchangeRate={exchangeRate}
                             value={Number(totalSentAmount)}
+                            secondaryExchangeRate={defaultExchangeRate}
                             onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                             remainingBalance={remainingAmount}
                             onAmountChange={(v) => handleUpdateSingleAmountForMultiRecipients(v)}
@@ -166,6 +167,7 @@ export const AmountInput = ({
                             <BitcoinAmountInputWithBalanceAndCurrencySelect
                                 exchangeRate={exchangeRate}
                                 value={Number(firstRecipientAmount)}
+                                secondaryExchangeRate={defaultExchangeRate}
                                 onSendAll={handleSendAllFromSingleAmount}
                                 onAmountChange={(v) => handleUpdateSingleAmount(v)}
                                 onExchangeRateChange={(e) => setControlledExchangeRate(e)}
