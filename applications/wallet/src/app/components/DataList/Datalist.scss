@@ -17,6 +17,10 @@
 	display: grid;
 	grid-column: 1 / -1; // row covers all grid columns
 	grid-template-columns: subgrid;
+
+	&#{&}::after {
+		border-radius: var(--border-radius-lg);
+	}
 }
 
 .datagrid-cell {
