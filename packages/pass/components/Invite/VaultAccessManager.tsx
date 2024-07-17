@@ -73,6 +73,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                     inline
                     label={c('Action').t`Upgrade now to share with more people`}
                     upsellRef={UpsellRef.LIMIT_SHARING}
+                    key="access-upgrade-link"
                 />
             );
             return plan === UserPassPlan.FREE
