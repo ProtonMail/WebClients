@@ -113,7 +113,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
     return application.eventBus.addEventCallback(
       (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.EncryptionError]) => {
         showGenericAlertModal({
-          title: c('Title').t`An error occurred`,
+          title: c('Title').t`Something went wrong`,
           translatedMessage: payload.error,
         })
       },
