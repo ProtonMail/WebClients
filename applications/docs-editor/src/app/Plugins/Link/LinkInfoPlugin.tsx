@@ -85,7 +85,10 @@ export function LinkInfoPlugin({ openLink }: { openLink: (url: string) => void }
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
-      editor.registerUpdateListener(({ editorState, tags }) => {
+      editor.registerUpdateListener(({ editorState, tags, dirtyElements, dirtyLeaves }) => {
+        if (dirtyElements.size === 0 && dirtyLeaves.size === 0) {
+          return
+        }
         editorState.read(getLinkInfo)
         if (tags.has('collaboration') === false) {
           setIsEditingLink(false)
