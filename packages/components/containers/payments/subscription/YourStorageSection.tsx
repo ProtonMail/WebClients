@@ -143,7 +143,7 @@ const YourStorageSection = ({ app }: Props) => {
     return (
         <SettingsSection>
             {(() => {
-                const { icon, description } = (() => {
+                const data = (() => {
                     if (details.drive.type === SpaceState.Danger && details.base.type === SpaceState.Danger) {
                         return {
                             icon: upsellStorageGlobal,
@@ -185,22 +185,27 @@ const YourStorageSection = ({ app }: Props) => {
                         };
                     }
 
-                    return {
-                        icon: upsellStorageIncrease,
-                        description: getDescription({
-                            header: getTryOut(MAIL_SHORT_APP_NAME),
-                            upgrade: upgradePlan,
-                        }),
-                    };
+                    if (app == APPS.PROTONMAIL || app == APPS.PROTONCALENDAR) {
+                        return {
+                            icon: upsellStorageIncrease,
+                            description: getDescription({
+                                header: getTryOut(MAIL_SHORT_APP_NAME),
+                                upgrade: upgradePlan,
+                            }),
+                        };
+                    }
                 })();
+                if (!data) {
+                    return null;
+                }
                 return (
                     <div className="mb-6 mt-4">
                         <PromotionBanner
                             mode="banner"
                             rounded
                             contentCentered={false}
-                            icon={<img width="40" src={icon} alt="" className="shrink-0" />}
-                            description={description}
+                            icon={<img width="40" src={data.icon} alt="" className="shrink-0" />}
+                            description={data.description}
                             cta={
                                 <ButtonLike
                                     as={SettingsLink}
