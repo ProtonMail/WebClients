@@ -35,7 +35,7 @@ import noop from '@proton/utils/noop';
 import { PassErrorCode } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
-import { getSilenced } from './utils';
+import { getSilenced, isAccessRestricted } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
@@ -145,8 +145,8 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 const silent = getSilenced(options, code);
 
                 const networkError = code === PassErrorCode.SERVICE_NETWORK_ERROR;
-                const notAllowed = code === PassErrorCode.NOT_ALLOWED && options.url?.includes('pass/v1/user/access');
                 const missingScope = code === PassErrorCode.MISSING_SCOPE;
+                const notAllowed = isAccessRestricted(code, options.url);
                 const offline = getIsOfflineError(e) || networkError;
                 const unreachable = getIsUnreachableError(e);
                 const sessionLocked = e.name === 'LockedSession';
