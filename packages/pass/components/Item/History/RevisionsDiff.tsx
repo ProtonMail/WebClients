@@ -9,6 +9,7 @@ import { Alert, Icon } from '@proton/components/index';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
+import { IdentityContent } from '@proton/pass/components/Item/Identity/Identity.content';
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
@@ -29,6 +30,7 @@ const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     note: NoteContent,
     alias: AliasContent,
     creditCard: CreditCardContent,
+    identity: IdentityContent,
 };
 
 export const RevisionDiff: FC = () => {

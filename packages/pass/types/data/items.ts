@@ -1,3 +1,4 @@
+import type { ItemIdentity } from '@proton/pass/types';
 import type { ItemIDRevision2 } from '@proton/pass/types/api/pass';
 import type { OpenedItem } from '@proton/pass/types/crypto';
 import type {
@@ -6,7 +7,6 @@ import type {
     Metadata,
     ProtobufItemAlias,
     ProtobufItemCreditCard,
-    ProtobufItemIdentity,
     ProtobufItemLogin,
     ProtobufItemNote,
 } from '@proton/pass/types/protobuf';
@@ -40,7 +40,7 @@ export type ItemContent<T extends ItemType> = {
     note: ProtobufItemNote;
     login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'password' | 'totpUri'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
-    identity: ProtobufItemIdentity;
+    identity: ItemIdentity;
 }[T];
 
 export type UnsafeItemContent<T extends ItemType = ItemType> = Deobfuscate<ItemContent<T>>;
@@ -54,6 +54,11 @@ export type ItemExtraField<T extends ExtraFieldType = ExtraFieldType> = {
 }[T];
 
 export type UnsafeItemExtraField<T extends ExtraFieldType = ExtraFieldType> = Deobfuscate<ItemExtraField<T>>;
+
+export type UnsafeItemExtraSection<T extends ExtraFieldType = ExtraFieldType> = {
+    sectionName: string;
+    sectionFields: UnsafeItemExtraField<T>[];
+};
 
 /**
  * Derives a generic "distributive object type" over all possible

@@ -2,6 +2,7 @@ import { type FC } from 'react';
 
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';
+import { IdentityContent } from '@proton/pass/components/Item/Identity/Identity.content';
 import { presentListItem } from '@proton/pass/components/Item/List/utils';
 import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
@@ -17,6 +18,7 @@ const itemContentViewMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     creditCard: CreditCardContent,
     login: LoginContent,
     note: NoteContent,
+    identity: IdentityContent,
 };
 
 export const ItemContentView: FC<ItemContentProps> = ({ revision, secureLinkItem }) => {
