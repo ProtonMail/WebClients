@@ -4,6 +4,30 @@ export const SATOSHI = 1;
 export const BITCOIN = 100000000 * SATOSHI;
 export const mBITCOIN = BITCOIN / 1000;
 
+export const BITCOIN_CURRENCY = {
+    Symbol: 'BTC' as WasmBitcoinUnit,
+    Name: 'Bitcoin',
+    Sign: '₿',
+    Cents: BITCOIN,
+    ID: '-1',
+    isBitcoinUnit: true,
+};
+
+export const SATS_CURRENCY = {
+    Symbol: 'SATS' as WasmBitcoinUnit,
+    Name: 'Sats',
+    Sign: '₿',
+    Cents: SATOSHI,
+    ID: '-2',
+    isBitcoinUnit: true,
+};
+
+export const CENTS_BY_BITCOIN_UNIT: Record<WasmBitcoinUnit, number> = {
+    ['BTC']: BITCOIN,
+    ['MBTC']: mBITCOIN,
+    ['SATS']: SATOSHI,
+};
+
 export const DEFAULT_INDEX = 0;
 
 /**

@@ -7,25 +7,13 @@ import { BitcoinAmount } from './BitcoinAmount';
 describe('BitcoinAmount', () => {
     it('should display bitcoin in correct currency', () => {
         render(<BitcoinAmount bitcoin={500100} unit={{ value: 'BTC' }} />);
-        expect(screen.getByText('0.005001 BTC')).toBeInTheDocument();
+        expect(screen.getByText('0.00500100 BTC')).toBeInTheDocument();
 
         render(<BitcoinAmount bitcoin={500100} unit={{ value: 'MBTC' }} />);
-        expect(screen.getByText('5.001 mBTC')).toBeInTheDocument();
+        expect(screen.getByText('5.00100 mBTC')).toBeInTheDocument();
 
         render(<BitcoinAmount bitcoin={500100} unit={{ value: 'SATS' }} />);
         expect(screen.getByText('500100 Sats')).toBeInTheDocument();
-    });
-
-    it('should change precision', () => {
-        // default is 6
-        render(<BitcoinAmount bitcoin={500100} unit={{ value: 'BTC' }} />);
-        expect(screen.getByText('0.005001 BTC')).toBeInTheDocument();
-
-        render(<BitcoinAmount bitcoin={500100} unit={{ value: 'BTC' }} precision={3} />);
-        expect(screen.getByText('0.005 BTC')).toBeInTheDocument();
-
-        render(<BitcoinAmount bitcoin={500100} unit={{ value: 'BTC' }} precision={9} />);
-        expect(screen.getByText('0.005001000 BTC')).toBeInTheDocument();
     });
 
     describe('when fiat is provided', () => {
@@ -90,14 +78,14 @@ describe('BitcoinAmount', () => {
                         showColor
                     />
                 );
-                expect(screen.getByTestId('first-content')).toHaveTextContent('0.005001 BTC');
+                expect(screen.getByTestId('first-content')).toHaveTextContent('0.00500100 BTC');
             });
         });
 
         describe('when fiat is not provided', () => {
             it('should display bitcoin as first content', () => {
                 render(<BitcoinAmount bitcoin={500100} unit={{ value: 'BTC' }} firstClassName="my-first-classname" />);
-                expect(screen.getByText('0.005001 BTC')).toHaveClass('my-first-classname');
+                expect(screen.getByText('0.00500100 BTC')).toHaveClass('my-first-classname');
             });
         });
     });

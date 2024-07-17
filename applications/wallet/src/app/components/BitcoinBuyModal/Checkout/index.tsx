@@ -11,7 +11,7 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { DEFAULT_DISPLAY_BITCOIN_UNIT, useWalletApi } from '@proton/wallet';
 
 import { useGatewaysPublicApiKeys } from '../../../store/hooks/useGatewaysPublicApiKeys';
-import { bitcoinToSats } from '../../../utils';
+import { convertAmountStr } from '../../../utils';
 import { QuoteWithProvider } from '../Amount';
 
 import './Checkout.scss';
@@ -125,7 +125,7 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
                     fiatValue: quote.FiatAmount,
                     fiatCurrency: quote.FiatCurrencySymbol,
                     swapAsset: RAMP_SWAP_ASSET,
-                    swapAmount: bitcoinToSats(Number(quote.BitcoinAmount)).toFixed(0),
+                    swapAmount: convertAmountStr(Number(quote.BitcoinAmount), 'BTC', 'SATS'),
                     userAddress: btcAddress,
 
                     hostAppName: WALLET_APP_NAME,

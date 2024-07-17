@@ -5,7 +5,7 @@ import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
 import { DEFAULT_DISPLAY_BITCOIN_UNIT } from '@proton/wallet';
 
-import { getLabelByUnit, satsToBitcoin, satsToMBitcoin } from '../utils';
+import { convertAmountStr, getLabelByUnit } from '../utils';
 import { Price } from './Price';
 
 interface Props {
@@ -13,7 +13,6 @@ interface Props {
      * Bitcoin amount in satoshis (1 BTC = 100_000_000 SAT)
      */
     bitcoin: number;
-    precision?: number;
 
     unit?: { value?: WasmBitcoinUnit; loading?: boolean };
     exchangeRate?: { value?: WasmApiExchangeRate; loading?: boolean };
@@ -45,7 +44,6 @@ interface Props {
 
 export const BitcoinAmount = ({
     bitcoin,
-    precision = 6,
 
     unit,
     exchangeRate,
@@ -66,13 +64,13 @@ export const BitcoinAmount = ({
     const amount = useMemo(() => {
         switch (unit?.value) {
             case 'BTC':
-                return satsToBitcoin(bitcoin).toFixed(precision);
+                return convertAmountStr(bitcoin, 'SATS', 'BTC');
             case 'MBTC':
-                return satsToMBitcoin(bitcoin).toFixed(precision - 3);
+                return convertAmountStr(bitcoin, 'SATS', 'MBTC');
             default:
                 return bitcoin;
         }
-    }, [unit, bitcoin, precision]);
+    }, [unit, bitcoin]);
 
     const sign = useMemo(() => {
         if (showExplicitSign && bitcoin > 0) {
