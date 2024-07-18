@@ -2,8 +2,6 @@ import valid from 'card-validator';
 import creditCardType from 'credit-card-type';
 import { c } from 'ttag';
 
-import { getFirstTop } from '@proton/components/helpers/countries';
-
 import { CreateCardDetailsBackend, isSavedCardDetails } from './interface';
 
 const formatYear = (year: any) => {
@@ -38,7 +36,7 @@ export const toDetails = ({
     };
 };
 export const getDefaultCard = (): CardModel => {
-    const { value: country } = getFirstTop();
+    const initialCountry = 'US';
 
     return {
         number: '',
@@ -46,7 +44,7 @@ export const getDefaultCard = (): CardModel => {
         year: '',
         cvc: '',
         zip: '',
-        country,
+        country: initialCountry,
     };
 };
 export const isCardNumber = (value: string | undefined) => valid.number(value).isValid;
