@@ -101,10 +101,11 @@ export const WalletContainer = () => {
 
                             <CoreButton
                                 icon
+                                pill
                                 size="medium"
                                 shape="ghost"
                                 color="weak"
-                                className="ml-2 mr-6 rounded-full bg-weak shrink-0"
+                                className="ml-2 mr-6 bg-weak shrink-0"
                                 disabled={loading}
                                 onClick={() => {
                                     setWalletPreferencesModalState(true);

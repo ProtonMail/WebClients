@@ -1,8 +1,30 @@
+@import '~@proton/styles/scss/lib';
+
 .wallet-sidebar-overide {
 	.logo-container {
 		display: flex;
-		margin-block: 0.5rem 2rem;
+		margin-block: 0.5rem 1rem;
 		margin-inline: 0;
+	}
+
+	.wallet-logo {
+		margin-inline-start: calc(var(--space-1) * -1);
+	}
+
+	.navigation-link {
+		--navigation-current-item-background-color: var(--interaction-norm-minor-2);
+		--navigation-current-item-text-color: var(--interaction-norm-major-1);
+
+		&.active .button {
+			--button-hover-background-color: var(--interaction-norm-minor-1);
+			--button-default-text-color: var(--navigation-current-item-text-color);
+			--button-hover-text-color: var(--interaction-norm-major-2);
+			--button-active-text-color: var(--navigation-current-item-text-color);
+		}
+
+		&[aria-current='page'] {
+			font-weight: var(--font-weight-semibold);
+		}
 	}
 }
 
@@ -10,15 +32,17 @@
 	.user-dropdown-button {
 		flex-direction: row-reverse;
 		inline-size: 100%;
-		padding: var(--space-2);
-		border: 1px solid var(--border-weak);
-		border-radius: var(--border-radius-lg);
 		transition: none;
+	}
+
+	.user-initials {
+		display: none;
 	}
 
 	.user-dropdown-displayName,
 	.user-dropdown-email {
 		text-align: start;
+		font-size: rem($base-font-size) !important;
 	}
 
 	.user-dropdown-text {
