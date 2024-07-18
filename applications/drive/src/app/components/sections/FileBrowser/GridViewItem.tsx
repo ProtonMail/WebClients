@@ -10,6 +10,7 @@ import { SelectionState } from '../../FileBrowser/hooks/useSelectionControls';
 import { DeviceItem } from '../Devices/Devices';
 import { DriveItem } from '../Drive/Drive';
 import { SharedLinkItem } from '../SharedLinks/SharedLinks';
+import { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
 import { TrashItem } from '../Trash/Trash';
 
 const GridViewItemBase = ({
@@ -20,7 +21,7 @@ const GridViewItemBase = ({
 }: {
     IconComponent: React.ReactNode;
     SignatureIconComponent?: React.ReactNode;
-    item: DriveItem | TrashItem | SharedLinkItem | DeviceItem;
+    item: DriveItem | TrashItem | SharedLinkItem | DeviceItem | SharedWithMeItem;
     disableSelection?: boolean;
 }) => {
     const selectionControls = useSelection()!;

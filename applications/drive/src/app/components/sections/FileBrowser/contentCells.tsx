@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
-import { FileIcon, Icon, TableCell, useActiveBreakpoint, useContactEmails } from '@proton/components';
+import { Button } from '@proton/atoms/Button';
+import { FileIcon, Icon, TableCell, Tooltip, useActiveBreakpoint, useContactEmails } from '@proton/components';
+import useWindowSize from '@proton/components/hooks/useWindowSize';
+import useLoading from '@proton/hooks/useLoading';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
@@ -21,7 +24,7 @@ import { getDeviceIconText, getLinkIconText } from './utils';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
 
-export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | TrashItem }) => {
+export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | SharedWithMeItem | TrashItem }) => {
     const iconText = getLinkIconText({
         linkName: item.name,
         mimeType: item.mimeType,
@@ -218,6 +221,62 @@ export const SharedOnCell = ({ item }: { item: SharedWithMeItem }) => {
     return (
         <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-created">
             {item.sharedOn && <TimeCell time={item.sharedOn} />}
+        </TableCell>
+    );
+};
+
+export const AcceptOrRejectInvite = ({ item }: { item: SharedWithMeItem }) => {
+    const [isLoading, withLoading] = useLoading();
+    // We need to use custom breakpoint to show proper Accept/Decline UI.
+    const [windowWidth] = useWindowSize();
+    const showButtonText = windowWidth >= 1300;
+    return (
+        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-accept-reject">
+            {item.invitationDetails && item.acceptInvitation && (
+                <div className={clsx('flex', 'gap-1')}>
+                    <Button
+                        loading={isLoading}
+                        disabled={isLoading}
+                        color="norm"
+                        shape="ghost"
+                        size="small"
+                        icon={!showButtonText}
+                        data-testid="share-accept-button"
+                        onClick={async (e) => {
+                            e.stopPropagation();
+                            await withLoading(
+                                item.acceptInvitation?.(item.invitationDetails?.invitation.invitationId!)
+                            );
+                        }}
+                    >
+                        {showButtonText ? (
+                            c('Action').t`Accept`
+                        ) : (
+                            <Tooltip title={c('Action').t`Accept`}>
+                                <Icon name="checkmark-circle" alt={c('Action').t`Accept`} />
+                            </Tooltip>
+                        )}
+                    </Button>
+                    {!isLoading && (
+                        <Button
+                            color="norm"
+                            shape="ghost"
+                            size="small"
+                            icon={!showButtonText}
+                            data-testid="share-decline-button"
+                            onClick={() => item.rejectInvitation?.(item.invitationDetails?.invitation.invitationId!)}
+                        >
+                            {showButtonText ? (
+                                c('Action').t`Decline`
+                            ) : (
+                                <Tooltip title={c('Action').t`Decline`}>
+                                    <Icon name="cross-circle" alt={c('Action').t`Decline`} />
+                                </Tooltip>
+                            )}
+                        </Button>
+                    )}
+                </div>
+            )}
         </TableCell>
     );
 };
