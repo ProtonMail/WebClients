@@ -32,10 +32,10 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';

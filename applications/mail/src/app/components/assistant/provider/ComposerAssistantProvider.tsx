@@ -3,7 +3,8 @@ import React, { createContext, useContext, useMemo } from 'react';
 
 import { useModalStateObject, useModalTwoPromise } from '@proton/components/components';
 import { AssistantIncompatibleBrowserModal, AssistantIncompatibleHardwareModal } from '@proton/components/containers';
-import useAssistantTelemetry, { INCOMPATIBILITY_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
 
 import type { ComposerAssistantInitialSetupSpotlightRef } from '../spotlights/ComposerAssistantInitialSetupSpotlight';
 

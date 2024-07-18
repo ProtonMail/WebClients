@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { getAssistantHasCompatibleBrowser, getAssistantHasCompatibleHardware } from '@proton/llm/lib';
 import useAssistantErrors from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
