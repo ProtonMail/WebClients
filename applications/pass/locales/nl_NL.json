@@ -1000,15 +1000,6 @@
       "An item previously shared with you was removed": [
         "Een item dat eerder gedeeld was met u, werd verwijderd"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Weet u zeker dat u alle items wil verplaatsen van \"${ fromVaultName }\" naar \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Weet u zeker dat u items wilt verplaatsen naar \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Weet u zeker dat u het item wilt verplaatsen naar \"${ name }\" ?"
-      ],
       "Auto-lock successfully disabled.": [
         "Auto-vergrendelen succesvol ingeschakeld."
       ],
@@ -1249,14 +1240,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis"
+      "Moving an item to another vault will erase its history.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
       ],
-      "Moving items to another vault will erase their history": [
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis"
+      "Moving items to another vault will erase their history.": [
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items to trash": [
         "Items verplaatsen naar prullenbak"
@@ -2316,15 +2307,6 @@
       ],
       "Modified": [
         "Gewijzigd"
-      ],
-      "Move all items ?": [
-        "Alle items verplaatsen?"
-      ],
-      "Move item?": [
-        "Item verplaatsen?"
-      ],
-      "Move items?": [
-        "Items verplaatsen?"
       ],
       "No excluded items": [
         "Geen uitgesloten onderdelen"
