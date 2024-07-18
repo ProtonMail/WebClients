@@ -10,6 +10,7 @@ import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../constants';
 import {
     Address,
     AddressKey,
+    CachedOrganizationKey,
     DecryptedAddressKey,
     DecryptedKey,
     KeyGenConfig,
@@ -65,6 +66,41 @@ export const encryptAddressKeyToken = async ({
         encryptedToken,
         signature: userSignatureResult,
         ...(organizationSignatureResult && { organizationSignature: organizationSignatureResult }),
+    };
+};
+
+interface EncryptAddressKeyUsingOrgKeyTokenArguments {
+    token: string;
+    organizationKey: PrivateKeyReference;
+    context?: Parameters<typeof CryptoProxy.signMessage<any>>[0]['context'];
+}
+
+export const encryptAddressKeyUsingOrgKeyToken = async ({
+    token,
+    organizationKey,
+    context,
+}: EncryptAddressKeyUsingOrgKeyTokenArguments) => {
+    const date = serverTime(); // ensure the signed message and the encrypted one have the same creation time, otherwise verification will fail
+    const textData = token;
+
+    const organizationSignatureResult = await CryptoProxy.signMessage({
+        textData,
+        date,
+        signingKeys: [organizationKey],
+        detached: true,
+        context,
+    });
+
+    const { message: encryptedToken } = await CryptoProxy.encryptMessage({
+        textData,
+        date,
+        encryptionKeys: [organizationKey],
+    });
+
+    return {
+        token,
+        encryptedToken,
+        signature: organizationSignatureResult,
     };
 };
 
@@ -124,6 +160,12 @@ export async function generateAddressKeyTokens(userKey: PrivateKeyReference, org
     const randomBytes = crypto.getRandomValues(new Uint8Array(32));
     const token = arrayToHexString(randomBytes);
     return encryptAddressKeyToken({ token, organizationKey, userKey });
+}
+
+export async function generateAddressKeyTokensUsingOrgKey(organizationKey: PrivateKeyReference) {
+    const randomBytes = crypto.getRandomValues(new Uint8Array(32));
+    const token = arrayToHexString(randomBytes);
+    return encryptAddressKeyUsingOrgKeyToken({ token, organizationKey });
 }
 
 interface GetAddressKeyTokenArguments {
@@ -411,5 +453,34 @@ export const getNewAddressKeyToken = async ({ address, userKeys }: { address: Ad
         });
     } catch {
         return generateAddressKeyTokens(userKey);
+    }
+};
+
+export const getNewAddressKeyTokenFromOrgKey = async ({
+    address,
+    organizationKey,
+}: {
+    address: Address;
+    organizationKey: CachedOrganizationKey;
+}) => {
+    const { privateKey: decryptedOrganizationKey, publicKey } = organizationKey;
+    if (!decryptedOrganizationKey) {
+        throw new Error('Missing organization primary key');
+    }
+    if (!address.Keys?.length) {
+        return generateAddressKeyTokensUsingOrgKey(decryptedOrganizationKey);
+    }
+    // When a primary key is available, we prefer re-using the existing token instead of generating a new one.
+    // For non-private members we can generate a new key without requiring access to the org key
+    // For future shared addresses, reusing the token will ensure other users can decrypt the new key as well
+    const [primaryAddressKey] = address.Keys;
+    try {
+        return await getPreviousAddressKeyToken({
+            addressKey: primaryAddressKey,
+            privateKeys: decryptedOrganizationKey,
+            publicKeys: publicKey,
+        });
+    } catch {
+        return generateAddressKeyTokensUsingOrgKey(decryptedOrganizationKey);
     }
 };
