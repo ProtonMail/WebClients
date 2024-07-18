@@ -2412,6 +2412,9 @@
       "Falkland Islands": [
         "フォークランド諸島"
       ],
+      "Falkland Islands (Malvinas)": [
+        "フォークランド諸島 (マルビナス)"
+      ],
       "Faroe Islands": [
         "フェロー諸島"
       ],
@@ -2851,6 +2854,9 @@
         "スイス"
       ],
       "Syria": [
+        "シリア"
+      ],
+      "Syrian Arab Republic": [
         "シリア"
       ],
       "Taiwan": [
@@ -5281,6 +5287,11 @@
         "サービス"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount }人のメンバー"
+      ]
+    },
     "Header": {
       "Access": [
         "アクセス"
@@ -5896,6 +5907,12 @@
       ],
       "${ userFound } user found": [
         "${ userFound } 人のユーザーが見つかりました"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } が作成されました"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } 更新されました"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "国別の接続には ${ vpnPlus } が必要です。"
@@ -7651,6 +7668,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PLAN_NAMES[PLANS.PASS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] }、または ${ PLAN_NAMES[bundleProPlan] } プランにアップグレードすると、${ PROTON_SENTINEL_NAME } にアクセスできるようになります 。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードすると、共有しやすくなる短い @pm.me アドレスがアカウントに追加されます。 これは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
@@ -10390,9 +10410,6 @@
       "DNS leak prevention": [
         "DNS 漏洩防止"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "ドキュメント編集 (ドキュメント、シート、スライド)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -10563,6 +10580,9 @@
       ],
       "Unlimited labels": [
         "ラベル制限なし"
+      ],
+      "Unlimited logins and notes": [
+        "無制限のログインとメモ"
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
@@ -11849,6 +11869,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "すべての ${ BRAND_NAME } Plus サービス。${ br }1 つの簡単なサブスクリプション。"
+      ],
+      "Create a ${ appName } account": [
+        "${ appName } アカウントを作成"
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成します"

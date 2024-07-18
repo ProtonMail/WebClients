@@ -1753,6 +1753,9 @@
       "Falkland Islands": [
         "Insulele Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Insulele Falkland (Malvine)"
+      ],
       "Faroe Islands": [
         "Insulele Feroe"
       ],
@@ -2193,6 +2196,9 @@
       ],
       "Syria": [
         "Siria"
+      ],
+      "Syrian Arab Republic": [
+        "Republica Arabă Siriană"
       ],
       "Taiwan": [
         "Taiwan"
@@ -4099,6 +4105,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
@@ -6432,12 +6441,6 @@
       "DNS leak prevention": [
         "Prevenire breșe DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editor documente (documente, foi de calcul, prezentări)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editor documente (documente, foi de calcul, prezentări) (în curând)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6544,9 +6547,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Verificări regulate ale securității contului deținut. Vă alertăm dacă aveți parole slabe sau reutilizate care trebuie modificate."
       ],
-      "Reply to messages": [
-        "Răspundeți la mesaje"
-      ],
       "Require 2FA for organization": [
         "Este necesară A2F pentru organizație"
       ],
@@ -6621,6 +6621,9 @@
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
+      ],
+      "Unlimited logins and notes": [
+        "Date de autentificare și note nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
         "Date de autentificare, note și carduri de credit nelimitate"
@@ -7412,6 +7415,20 @@
         "Partajare securizată seif (${ n } seif) și legături web",
         "Partajare securizată seifuri (${ n } seifuri) și legături web",
         "Partajare securizată seifuri (${ n } de seifuri) și legături web"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Cheia organizației nu există."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permisiune refuzată, drepturile de administrator au fost restricționate."
+      ],
+      "The organization key must be activated first.": [
+        "Cheia organizației trebuie mai întâi activată."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Aveți nevoie de accesul la cheia organizației pentru a efectua această operație."
       ]
     },
     "Payment method option": {
@@ -9590,6 +9607,9 @@
       ],
       "Send invitation": [
         "Trimitere invitație"
+      ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
       ],
       "Settings": [
         "Setări"

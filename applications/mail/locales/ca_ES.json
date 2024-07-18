@@ -826,6 +826,9 @@
       "Ok": [
         "D'acord"
       ],
+      "Open": [
+        "Obert"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Obrir ${ CALENDAR_APP_NAME }"
       ],
@@ -1521,6 +1524,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Ràpid i segur. No es guarden registres."
+      ],
+      "Faster, broader device compatibility": [
+        "Compatibilitat amb dispositius més ràpida i àmplia"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "No es transmeten dades mentre s'utilitza. Requereix una sola descàrrega."
       ],
       "Requires a one-time download and compatible hardware.": [
         "Requereix una descàrrega única i un maquinari compatible."
@@ -2681,6 +2690,9 @@
       "Falkland Islands": [
         "Illes Flkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Illes Falkland (Malvines)"
+      ],
       "Faroe Islands": [
         "Illes Fèroe"
       ],
@@ -3120,6 +3132,9 @@
         "Suïssa"
       ],
       "Syria": [
+        "Síria"
+      ],
+      "Syrian Arab Republic": [
         "Síria"
       ],
       "Taiwan": [
@@ -5094,9 +5109,6 @@
       ],
       "Tell us more": [
         "Expliqueu-nos més"
-      ],
-      "Write faster with the writing assistant": [
-        "Escriviu més de pressa amb l'assistent d'escriptura"
       ]
     },
     "Hint": {
@@ -6224,9 +6236,6 @@
       "Left to Right": [
         "Esquerra a Dreta"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Deixeu que l'assistent d'escriptura us ajudi a escriure i respondre correus electrònics, i mireu com augmenta la vostra productivitat."
-      ],
       "Link type": [
         "Tipus d'enllaç"
       ],
@@ -6385,9 +6394,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Només un assistent d'escriptura pot estar obert alhora"
       ],
       "Open shortcut cheat sheet": [
         "Obre el resum de dreceres"
@@ -7591,6 +7597,9 @@
       ],
       " and ${ l }": [
         " i ${ l }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
@@ -8979,12 +8988,6 @@
       "DNS leak prevention": [
         "Prevenció de fuites de DNS."
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions) (aviat)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9088,9 +9091,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
-      ],
-      "Reply to messages": [
-        "Respon als missatges"
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -11748,6 +11748,12 @@
       "Verification successful": [
         "Èxit de verificació"
       ],
+      "Writing assistant disabled": [
+        "S'ha desactivat l'assistent d'escriptura."
+      ],
+      "Writing assistant enabled": [
+        "S'ha activat l'assistent d'escriptura."
+      ],
       "Writing assistant setting updated": [
         "S'ha actualitzat la configuració de l'assistent d'escriptura"
       ],
@@ -12515,6 +12521,9 @@
       ],
       "Sending original message": [
         "Enviant missatge original"
+      ],
+      "Set recovery phrase": [
+        "Estableix la frase de recuperació"
       ],
       "Set your own schedule": [
         "Establiu el vostre propi horari"

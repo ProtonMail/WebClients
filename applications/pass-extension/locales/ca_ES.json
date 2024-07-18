@@ -113,11 +113,11 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Crear un compte de ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Crea un compte de ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Crear un compte de ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Crea una caixa forta per compartir"
@@ -682,7 +682,7 @@
         "El JSON xifrat no és compatible"
       ],
       "Error reporting problem": [
-        "Hi ha hagut un error en informar del problema"
+        "S'ha produït un error en informar del problema"
       ],
       "Failed removing the invite.": [
         "No s'ha pogut suprimir la invitació."
@@ -808,7 +808,7 @@
         "Error de xarxa"
       ],
       "Passphrase is incorrect": [
-        "La frase de pas és incorrecta"
+        "La frase de contrasenya no és correcta"
       ],
       "PIN codes do not match": [
         "Els codis PIN no coincideixen"
@@ -1090,15 +1090,6 @@
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Esteu segur que voleu moure tots els elements de «${ fromVaultName }» a «${ toVaultName }»?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "N'esteu segur, de voler moure elements a \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Esteu segur que voleu moure l'element a \"${ name }\"?"
-      ],
       "Are you sure you want to remove the link?": [
         "Esteu segur que voleu esborrar l'enllaç?"
       ],
@@ -1378,14 +1369,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial"
+      "Moving an item to another vault will erase its history.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial."
       ],
       "Moving items": [
         "S'estan movent elements"
       ],
-      "Moving items to another vault will erase their history": [
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial"
+      "Moving items to another vault will erase their history.": [
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial."
       ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
@@ -1883,6 +1874,9 @@
       "Copy": [
         "Copia"
       ],
+      "Copy password": [
+        "Copia la contrasenya"
+      ],
       "Create a credit card": [
         "Crea una targeta de crèdit"
       ],
@@ -2045,8 +2039,8 @@
       "Make all viewers": [
         "Estableix tots com a visualitzadors"
       ],
-      "Max views reached": [
-        "S'ha assolit el nombre màxim de vistas."
+      "max views reached": [
+        "s'ha assolit el nombre màxim de vistas."
       ],
       "Members": [
         "Membres"
@@ -2474,6 +2468,9 @@
       "Fill & copy password": [
         "Emplena i copia la contrasenya"
       ],
+      "Fill password": [
+        "Emplena la contrasenya"
+      ],
       "Get Started": [
         "Comenceu"
       ],
@@ -2519,15 +2516,6 @@
       "Modified": [
         "Modificació"
       ],
-      "Move all items ?": [
-        "Mou tots els elements ?"
-      ],
-      "Move item?": [
-        "Vol moure l'element?"
-      ],
-      "Move items?": [
-        "Vol moure els elements?"
-      ],
       "No items selected": [
         "No s'ha seleccionat cap element."
       ],
@@ -2535,7 +2523,7 @@
         "Sense enllaços segurs compartits"
       ],
       "Our welcome gift to you": [
-        "El nostre regal de benvinguda per a vostè."
+        "El nostre regal de benvinguda per a vós"
       ],
       "Passkey": [
         "Clau d'accés"
@@ -2745,9 +2733,6 @@
       ],
       "No items matching": [
         "No hi ha cap element coincident"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "No s'han trobat claus d'accés. Deseu les vostres claus d'accés a ${ PASS_APP_NAME } per iniciar la sessió a ${ domain }."
       ],
       "No password manager selected": [
         "No s'ha seleccionat cap gestor de contrasenyes"

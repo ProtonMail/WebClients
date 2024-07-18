@@ -773,7 +773,7 @@
         "Recargar"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove bonuses": [
         "Borrar los beneficios"
@@ -2553,6 +2553,9 @@
       "Falkland Islands": [
         "Islas Malvinas"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Islas Falkland (Malvinas)"
+      ],
       "Faroe Islands": [
         "Islas Faroe"
       ],
@@ -2992,6 +2995,9 @@
         "Suiza"
       ],
       "Syria": [
+        "Siria"
+      ],
+      "Syrian Arab Republic": [
         "Siria"
       ],
       "Taiwan": [
@@ -10662,8 +10668,11 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "¡**Obtén ${ plan }** por tiempo limitado!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Conviértate en Visionary y haz parte de la historia de ${ BRAND_NAME }"
+        "Conviértate en Visionary y forma parte de la historia de ${ BRAND_NAME }"
       ]
     },
     "mail_signup_2024: Info": {
@@ -11338,12 +11347,6 @@
       "DNS leak prevention": [
         "Protección contra filtraciones del DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editores de documentos (documentos, hojas de cálculo y presentaciones)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editores de documentos (documentos, hojas de cálculo y presentaciones) (próximamente)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11453,9 +11456,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
-      ],
-      "Reply to messages": [
-        "Responder a mensajes"
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -11983,7 +11983,7 @@
         "La tecnología NetShield se ha diseñado especialmente para proteger tu dispositivo y que puedas navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
-        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y${ PASS_APP_NAME }."
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }. Los administradores pueden asignar cantidades distintas a los usuarios de tu organización"
@@ -12456,7 +12456,7 @@
         "Toda la organización"
       ],
       "Trash": [
-        "Enviar a papelera"
+        "Enviar a la papelera"
       ]
     },
     "Option delay send seconds": {
@@ -12634,10 +12634,10 @@
         "Solicitar una prueba gratuita"
       ],
       "Start using ${ appName }": [
-        "Comienzar a utilizar${ appName }"
+        "Comienza a utilizar ${ appName }"
       ],
       "Start using ${ appName } now": [
-        "Comenzar a utilizar${ appName }"
+        "Comenzar a utilizar ${ appName }"
       ],
       "Upgrade": [
         "Mejorar"
@@ -13792,7 +13792,7 @@
         "Cancelar la solicitud"
       ],
       "Got it": [
-        "Entiendo"
+        "Entendido"
       ],
       "Learn more": [
         "Más información"
@@ -13862,7 +13862,7 @@
         "Te contactaremos de nuevo cuando el restablecimiento de contraseña esté disponible."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Puedes comprobar el estado detu solicitud en cualquier momento en la ${ accountAndPasswordSectionLink } de los ajustes."
+        "Puedes comprobar el estado de tu solicitud en cualquier momento en la ${ accountAndPasswordSectionLink } de los ajustes."
       ]
     },
     "session_recovery:initiation:link": {
@@ -16975,6 +16975,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados."
       ],
@@ -17233,7 +17236,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Después de la verificación, no borres este registro TXT porqué se necesita para confirmar que continúas siendo el propietario del dominio."
+        "Después de la verificación, no borres este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
       ]
     },
     "Weak personal key warning": {

@@ -2469,6 +2469,9 @@
       "Falkland Islands": [
         "福克蘭群島 (馬維納斯群島)"
       ],
+      "Falkland Islands (Malvinas)": [
+        "福克蘭群島 (馬維納斯群島)"
+      ],
       "Faroe Islands": [
         "法羅群島"
       ],
@@ -2908,6 +2911,9 @@
         "瑞士"
       ],
       "Syria": [
+        "敘利亞"
+      ],
+      "Syrian Arab Republic": [
         "敘利亞"
       ],
       "Taiwan": [
@@ -5453,6 +5459,11 @@
         "服務"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } 位成員"
+      ]
+    },
     "Header": {
       "Access": [
         "存取"
@@ -6065,6 +6076,12 @@
       ],
       "${ userFound } user found": [
         "找到 ${ userFound } 個使用者"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } 已創建"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } 已更新"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "國家等級的連線需要 ${ vpnPlus } 。"
@@ -7916,6 +7933,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "升級至${ PLAN_NAMES[PLANS.PASS] }，${ PLAN_NAMES[PLANS.BUNDLE] }，${ PLAN_NAMES[PLANS.FAMILY] }或${ PLAN_NAMES[bundleProPlan] }以存取${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升級以新增較短且易於分享的 @pm.me 位址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
@@ -10743,12 +10763,6 @@
       "DNS leak prevention": [
         "DNS 外洩預防"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "文件編輯程式 (圖文檔、工作表、簡報)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "文件編輯程式 (圖文檔、工作表、簡報)(將至)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -10854,9 +10868,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
       ],
-      "Reply to messages": [
-        "回覆訊息"
-      ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
@@ -10940,6 +10951,9 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
+      ],
+      "Unlimited logins and notes": [
+        "無限登入資訊與筆記"
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
@@ -12207,6 +12221,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "全部${ BRAND_NAME }升級服務。${ br }一個簡單的訂購授權。"
+      ],
+      "Create a ${ appName } account": [
+        "創建一個${ appName } 帳號"
       ],
       "Create your ${ BRAND_NAME } account": [
         "創建您的 ${ BRAND_NAME } 帳號"

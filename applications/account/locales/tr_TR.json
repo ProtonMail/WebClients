@@ -703,6 +703,9 @@
       "OK": [
         "Tamam"
       ],
+      "Open": [
+        "Açık"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
@@ -1227,6 +1230,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } ek özel etki alanı",
+        "${ domains } ek özel etki alanı"
+      ],
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
@@ -1399,6 +1406,9 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "Satın al"
+      ],
       "New": [
         "Yeni"
       ],
@@ -2543,6 +2553,9 @@
       "Falkland Islands": [
         "Falkland Adaları"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Adaları (Malvinas)"
+      ],
       "Faroe Islands": [
         "Faroe Adaları"
       ],
@@ -2983,6 +2996,9 @@
       ],
       "Syria": [
         "Suriye"
+      ],
+      "Syrian Arab Republic": [
+        "Suriye Arap Cumhuriyeti"
       ],
       "Taiwan": [
         "Tayvan"
@@ -5605,6 +5621,17 @@
         "Hizmetler"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Grup adresi"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } üye",
+        "${ memberCount } üye"
+      ]
+    },
     "Header": {
       "Access": [
         "Erişim"
@@ -6250,6 +6277,18 @@
         "${ userFound } kullanıcı bulundu",
         "${ userFound } kullanıcı bulundu"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } eklendi"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } silindi"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } e-posta ile paylaşıldı"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } güncellendi"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Ülke düzeyinde bağlantı için ${ vpnPlus } tarifesi gereklidir."
       ],
@@ -6702,8 +6741,17 @@
       "Custom daily": [
         "Günde bir, özel"
       ],
+      "Custom email added": [
+        "Özel e-posta adresi eklendi"
+      ],
+      "Custom email deleted": [
+        "Özel e-posta adresi silindi"
+      ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Custom email validated": [
+        "Özel e-posta adresi doğrulandı"
       ],
       "Custom monthly": [
         "Ayda bir, özel"
@@ -7158,6 +7206,9 @@
       "Invite Deleted": [
         "Davet silindi"
       ],
+      "Invite for new user deleted": [
+        "Yeni kullanıcı daveti silindi"
+      ],
       "Invite for organization accepted": [
         "Kuruluş daveti kabul edildi"
       ],
@@ -7180,6 +7231,9 @@
       "Item Autofilled": [
         "Öge otomatik dolduruldu"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge otomatik olarak dolduruldu"
+      ],
       "Item autofilled in vault": [
         "Kasa ögesi otomatik olarak dolduruldu"
       ],
@@ -7189,20 +7243,44 @@
       "Item Created": [
         "Öge oluşturuldu"
       ],
+      "Item created in ${ vaultLink }": [
+        "${ vaultLink } kasasına öge eklendi"
+      ],
       "Item created in vault": [
         "Kasa ögesi oluşturuldu"
       ],
       "Item Deleted": [
         "Öge silindi"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge silindi"
+      ],
+      "Item deleted from vault": [
+        "Öge kasadan silindi"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge işaretleri değiştirildi"
+      ],
       "Item flags changed in vault": [
         "Kasa ögesi işaretleri değiştirildi"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "${ vaultLink } kasasındaki öge çöpe atıldı"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "${ vaultLink } kasasındaki öge çöpten çıkarıldı"
+      ],
+      "Item in vault trashed": [
+        "Kasadaki öge çöpe atıldı"
       ],
       "Item in vault untrashed": [
         "Kasa ögesi çöpten çıkarıldı"
       ],
       "Item Read": [
         "Öge okundu"
+      ],
+      "Item read in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge okundu"
       ],
       "Item read in vault": [
         "Kasa ögesi okundu"
@@ -7215,6 +7293,9 @@
       ],
       "Item Updated": [
         "Öge güncellendi"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge güncellendi"
       ],
       "Item updated in vault": [
         "Kasa ögesi güncellendi"
@@ -7383,6 +7464,9 @@
       ],
       "New User Invite Deleted": [
         "Yeni kullanıcı daveti silindi"
+      ],
+      "New user invited to organization": [
+        "Kuruluşa yeni kullanıcı davet edildi"
       ],
       "No account keys exist": [
         "Herhangi bir hesap anahtarı yok"
@@ -7759,6 +7843,12 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
+      "Session Ended": [
+        "Oturum Sona Erdi"
+      ],
+      "Session Started": [
+        "Oturum Başladı"
+      ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
@@ -7782,6 +7872,12 @@
       ],
       "Share Updated": [
         "Paylaşım güncellendi"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Paylaşılan ${ vaultLink } silindi"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Paylaşılan ${ vaultLink } güncellendi"
       ],
       "Shared vault deleted": [
         "Paylaşılmış kasa silindi"
@@ -8216,6 +8312,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[bundleProPlan] } tarifesine yükseltin."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
       ],
@@ -8272,6 +8371,9 @@
       ],
       "Vault Deleted": [
         "Kasa silindi"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Kasa silinmiş ya da erişim izni gerektiriyor"
       ],
       "Vault shared with email": [
         "Kasa e-posta ile paylaşıldı"
@@ -11209,12 +11311,6 @@
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar) (yakında)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11325,9 +11421,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
-      "Reply to messages": [
-        "İletileri yanıtlayın"
-      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
@@ -11415,6 +11508,9 @@
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
+      ],
+      "Unlimited logins and notes": [
+        "Sınırsız sayıda oturum açma bilgisi ve not"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -12801,6 +12897,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tüm ${ BRAND_NAME } Plus hizmetleri.${ br }Tek bir kolay abonelik."
+      ],
+      "Create a ${ appName } account": [
+        "Bir ${ appName } hesabı açın"
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızı açın"
@@ -15252,6 +15351,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15485,6 +15587,9 @@
       ],
       "Connect ${ name }": [
         "${ name } bağlantısı kur"
+      ],
+      "Connection events": [
+        "Bağlantı işlemleri"
       ],
       "Contact us": [
         "Bize ulaşın"
@@ -15792,6 +15897,9 @@
       "Forward emails": [
         "E-postaları ilet"
       ],
+      "Gateway": [
+        "Ağ geçidi"
+      ],
       "Gateways": [
         "Ağ geçitleri"
       ],
@@ -15858,6 +15966,9 @@
       ],
       "Import failed": [
         "İçe aktarılamadı"
+      ],
+      "Import groups": [
+        "Grupları içe aktar"
       ],
       "Import key": [
         "Anahtarı içe aktar"
@@ -15960,6 +16071,9 @@
       ],
       "Organization name": [
         "Kuruluş adı"
+      ],
+      "Origin": [
+        "Kaynak"
       ],
       "Other calendars": [
         "Diğer takvimler"

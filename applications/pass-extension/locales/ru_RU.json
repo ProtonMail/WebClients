@@ -113,11 +113,11 @@
       "Create": [
         "Создать"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Создать аккаунт ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Создать аккаунт ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Создать новое хранилище для совместного использования"
@@ -1118,15 +1118,6 @@
       "An item previously shared with you was removed": [
         "Элемент, которым ранее поделились с вами, был удален"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Вы уверены, что хотите переместить все элементы из \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Вы уверены, что хотите переместить элементы в \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Вы уверены, что хотите переместить элемент в \"${ name }\" ?"
-      ],
       "Are you sure you want to remove the link?": [
         "Вы уверены, что хотите удалить ссылку?"
       ],
@@ -1412,14 +1403,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Перемещение элемента в другое хранилище удалит его историю"
+      "Moving an item to another vault will erase its history.": [
+        "Перемещение элемента в другое хранилище удалит его историю."
       ],
       "Moving items": [
         "Перемещение элементов"
       ],
-      "Moving items to another vault will erase their history": [
-        "Перемещение элементов в другое хранилище удалит их историю"
+      "Moving items to another vault will erase their history.": [
+        "Перемещение элементов в другое хранилище удалит их историю."
       ],
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
@@ -2095,8 +2086,8 @@
       "Make all viewers": [
         "Заставьте всех зрителями"
       ],
-      "Max views reached": [
-        "Достигнуто максимальное количество просмотров"
+      "max views reached": [
+        "достигнуто максимальное количество просмотров"
       ],
       "Members": [
         "Участники"
@@ -2575,15 +2566,6 @@
       "Modified": [
         "Изменено"
       ],
-      "Move all items ?": [
-        "Переместить все элементы?"
-      ],
-      "Move item?": [
-        "Переместить элемент?"
-      ],
-      "Move items?": [
-        "Переместить элементы?"
-      ],
       "No items selected": [
         "Элементы не выбраны"
       ],
@@ -2803,9 +2785,6 @@
       ],
       "No items matching": [
         "Нет совпадающих элементов"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "PassKey не найдены. Сохраните свои PassKey в ${ PASS_APP_NAME }, чтобы войти в ${ domain }."
       ],
       "No password manager selected": [
         "Не выбран менеджер паролей"

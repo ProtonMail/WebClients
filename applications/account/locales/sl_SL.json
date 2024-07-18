@@ -2540,6 +2540,9 @@
       "Falkland Islands": [
         "Falklandski otoki"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandski otoki (Malvinas)"
+      ],
       "Faroe Islands": [
         "Ferski otoki"
       ],
@@ -2979,6 +2982,9 @@
         "Švica"
       ],
       "Syria": [
+        "Sirija"
+      ],
+      "Syrian Arab Republic": [
         "Sirija"
       ],
       "Taiwan": [
@@ -5624,6 +5630,14 @@
         "Storitve"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } članov",
+        "${ memberCount } članov",
+        "${ memberCount } člani"
+      ]
+    },
     "Header": {
       "Access": [
         "Dostop"
@@ -6311,6 +6325,12 @@
         "Najdena sta ${ userFound } uporabnika.",
         "Najdeni so ${ userFound } uporabniki.",
         "Najdenih je ${ userFound } uporabnikov."
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } ustvarjeno"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } je posodobljen"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } potreben za povezavo na ravni države."
@@ -8180,6 +8200,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Nadgradite in dobite premijske funkcije, izdelke in shrambo po posebni ceni"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Nadgradite na paket ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, paket ${ PLAN_NAMES[PLANS.FAMILY] } ali paket ${ PLAN_NAMES[bundleProPlan] }, da pridobite dostop do ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Nadgradite, da boste lahko svojemu računu dodali krajši naslov @pm.me, ki je enostavnejši za deljenje. Gre za kratico za \"Pošlji mi ${ MAIL_APP_NAME }\" ali \"Zasebno sporočilo\"."
@@ -11144,12 +11167,6 @@
       "DNS leak prevention": [
         "Zaščita pred uhajanjem DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve) (kmalu na voljo)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11264,9 +11281,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, ki jih je treba posodobiti."
       ],
-      "Reply to messages": [
-        "Odgovorite na sporočila"
-      ],
       "Require 2FA for organization": [
         "Za organizacijo zahtevajte 2FA"
       ],
@@ -11350,6 +11364,9 @@
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"
+      ],
+      "Unlimited logins and notes": [
+        "Neomejeno število prijav in beležk"
       ],
       "Unlimited messages per day": [
         "Neomejeno število sporočil na dan"
@@ -12725,6 +12742,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Vse ${ BRAND_NAME } Plus storitve.${ br }Ena enostavna naročnina."
+      ],
+      "Create a ${ appName } account": [
+        "Ustvarite svoj račun ${ appName }."
       ],
       "Create your ${ BRAND_NAME } account": [
         "Ustvarite svoj račun ${ BRAND_NAME }."

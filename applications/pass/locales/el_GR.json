@@ -1025,6 +1025,9 @@
         "${ count } προβολή",
         "${ count } προβολές"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } προβολές"
+      ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
@@ -1108,15 +1111,6 @@
       ],
       "An item previously shared with you was removed": [
         "Ένα στοιχείο που είχε μοιραστεί προηγουμένως μαζί σας καταργήθηκε"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε όλα τα στοιχεία από το \"${ fromVaultName }\" στο \"${ toVaultName }\";"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε τα στοιχεία στο \"${ name }\";"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε το στοιχείο στο \"${ name }\";"
       ],
       "Are you sure you want to remove the link?": [
         "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον σύνδεσμο;"
@@ -1412,14 +1406,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του και όλους τους ασφαλείς συνδέσμους."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
-      "Moving items to another vault will erase their history": [
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους και όλους τους ασφαλείς συνδέσμους."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους."
       ],
       "Moving items to trash": [
         "Μετακίνηση στοιχείων στα Διαγραμμένα"
@@ -2071,8 +2071,8 @@
       "Make all viewers": [
         "Κάντε τους όλους θεατές"
       ],
-      "Max views reached": [
-        "Μέγιστος αριθμός προβολών που επιτεύχθηκε"
+      "max views reached": [
+        "μέγιστος αριθμός προβολών που επιτεύχθηκε"
       ],
       "Members": [
         "Μέλη"
@@ -2619,14 +2619,14 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
-      "Move all items ?": [
-        "Μετακίνηση όλων των στοιχείων ;"
+      "Move all items to \"${ vaultName }\"?": [
+        "Μετακίνηση όλων των στοιχείων στο \"${ vaultName }\";"
       ],
-      "Move item?": [
-        "Μετακίνηση στοιχείου;"
+      "Move item to \"${ vaultName }\"?": [
+        "Μετακίνηση στοιχείου στο \"${ vaultName }\";"
       ],
-      "Move items?": [
-        "Μετακίνηση στοιχείων;"
+      "Move items to \"${ vaultName }\"?": [
+        "Μετακίνηση στοιχείων στο \"${ vaultName }\";"
       ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"

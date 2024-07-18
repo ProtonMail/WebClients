@@ -1647,6 +1647,9 @@
       "Falkland Islands": [
         "Falklandski Otoci"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandski Otoci (Malvinas)"
+      ],
       "Faroe Islands": [
         "Farski Otoci"
       ],
@@ -2084,6 +2087,9 @@
       ],
       "Syria": [
         "Sirija"
+      ],
+      "Syrian Arab Republic": [
+        "Sirijska Arapska Republika"
       ],
       "Taiwan": [
         "Tajvan"
@@ -3303,6 +3309,13 @@
         "Usluge"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } članova",
+        "${ memberCount } člana"
+      ]
+    },
     "Header": {
       "Access": [
         "Pristup"
@@ -3710,6 +3723,12 @@
         "${ selectedFoldersCountLocalized } oznaka odabrana",
         "${ selectedFoldersCountLocalized } oznake odabrane",
         "${ selectedFoldersCountLocalized } oznaka odabrano"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } stvoreno"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } ažurirano"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } član)",
@@ -7083,6 +7102,11 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ]
+    },
+    "storage_split: info": {
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Nadogradite svoj plan da nastavite korištenje bez smetnji."
       ]
     },
     "Subscribe to calendar modal": {

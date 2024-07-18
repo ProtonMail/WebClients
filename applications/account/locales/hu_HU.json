@@ -2138,6 +2138,9 @@
       "Falkland Islands": [
         "Aland-szigetek"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland-szigetek (Malvinas)"
+      ],
       "Faroe Islands": [
         "Feröer-szigetek"
       ],
@@ -2578,6 +2581,9 @@
       ],
       "Syria": [
         "Szíria"
+      ],
+      "Syrian Arab Republic": [
+        "Sziriai Arab Köztársaság"
       ],
       "Taiwan": [
         "Tajvan"
@@ -4565,6 +4571,12 @@
         "Szolgáltatások"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } tag",
+        "${ memberCount } tag"
+      ]
+    },
     "Header": {
       "Access": [
         "Elérés"
@@ -5147,6 +5159,12 @@
       "${ userFound } user found": [
         "${ userFound } felhasználót találtam",
         "${ userFound } felhasználót találtam"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } létrehozva"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } frissítve"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } csomag szükséges az ország-szintű kapcsolódáshoz."
@@ -6570,6 +6588,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Váltson a ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } vagy ${ PLAN_NAMES[bundleProPlan] } csomagra, hogy elérhesse a ${ PROTON_SENTINEL_NAME } szolgáltatást."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Frissítsd a fiókodat egy rövidebb @pm.me cím hozzáadásához, amit könnyebb megosztani. Ez a \"Private Message me\" vagy “${ MAIL_APP_NAME } me” rövidítése."
@@ -8981,12 +9002,6 @@
       "DNS leak prevention": [
         "DNS szivárgás elleni védelem"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentum szerkesztők (dokumentum, táblázat, prezentáció)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumentum szerkesztők (szöveg, táblázat, dia) (hamarosan)"
-      ],
       "Easy Switch import assistant": [
         "Easy Switch importálási segéd"
       ],
@@ -9118,6 +9133,9 @@
       ],
       "Unlimited labels": [
         "Korlátlan számú címke"
+      ],
+      "Unlimited logins and notes": [
+        "Korlátlan számú bejelentkezés és jegyzet"
       ],
       "Unlimited messages per day": [
         "Korlátlan számú üzenet naponta"
@@ -9997,6 +10015,9 @@
       ]
     },
     "pass_signup_2023: Title": {
+      "Create a ${ appName } account": [
+        "${ appName } fiók létrehozása"
+      ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } fiók létrehozása"
       ]

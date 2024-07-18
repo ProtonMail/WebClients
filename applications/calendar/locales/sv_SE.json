@@ -1621,6 +1621,9 @@
       "British Indian Ocean Territory": [
         "Brittiska territoriet i Indiska oceanen"
       ],
+      "British Virgin Islands": [
+        "Brittiska Jungfruöarna"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1714,6 +1717,9 @@
       "Dominican Republic": [
         "Dominikanska republiken"
       ],
+      "East Timor": [
+        "Östtimor"
+      ],
       "Ecuador": [
         "Ecuador"
       ],
@@ -1740,6 +1746,9 @@
       ],
       "Falkland Islands": [
         "Falklandsöarna"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandsöarna (Malvinas)"
       ],
       "Faroe Islands": [
         "Färöarna"
@@ -1852,6 +1861,9 @@
       "Ireland": [
         "Irland"
       ],
+      "Islamic Republic of Iran": [
+        "Iran"
+      ],
       "Isle of Man": [
         "Isle of Man"
       ],
@@ -1882,6 +1894,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Demokratiska folkrepubliken av)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republiken av)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1890,6 +1908,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgizistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos"
       ],
       "Laos": [
         "Laos"
@@ -1909,6 +1930,9 @@
       "Libya": [
         "Libyen"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libyen"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1920,6 +1944,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Makedonien"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2173,6 +2200,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard och Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Sverige"
       ],
@@ -2182,6 +2212,9 @@
       "Syria": [
         "Syrien"
       ],
+      "Syrian Arab Republic": [
+        "Syriska Arabrepubliken"
+      ],
       "Taiwan": [
         "Taiwan"
       ],
@@ -2189,6 +2222,9 @@
         "Tadzjikistan"
       ],
       "Tanzania": [
+        "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
         "Tanzania"
       ],
       "Thailand": [
@@ -6350,12 +6386,6 @@
       "DNS leak prevention": [
         "Förebyggande av DNS-läckage"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentredigerare (dokument, kalkylark, bildspel)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumentredigerare (dokument, kalkylark, bildspel) (snart)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6459,9 +6489,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
-      ],
-      "Reply to messages": [
-        "Svara på meddelanden"
       ],
       "Require 2FA for organization": [
         "Kräver 2FA för organisation"
@@ -7305,6 +7332,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Säker valvdelning (${ n } valv) och länkdelning",
         "Säker valvdelning (${ n } valv) och länkdelning"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisationsnyckel finns inte."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Åtkomst nekad, administratörsrättigheter har begränsats."
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnyckeln måste aktiveras först."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du behöver åtkomst till organisationsnyckeln för att utföra denna operation."
       ]
     },
     "Payment method option": {

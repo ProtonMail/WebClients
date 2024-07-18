@@ -1402,6 +1402,9 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "Cumpărare"
+      ],
       "New": [
         "Nou"
       ],
@@ -2552,6 +2555,9 @@
       "Falkland Islands": [
         "Insulele Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Insulele Falkland (Malvine)"
+      ],
       "Faroe Islands": [
         "Insulele Feroe"
       ],
@@ -2992,6 +2998,9 @@
       ],
       "Syria": [
         "Siria"
+      ],
+      "Syrian Arab Republic": [
+        "Republica Arabă Siriană"
       ],
       "Taiwan": [
         "Taiwan"
@@ -5634,6 +5643,18 @@
         "Servicii"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Grup adrese"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membru",
+        "${ memberCount } membri",
+        "${ memberCount } de membri"
+      ]
+    },
     "Header": {
       "Access": [
         "Accesare"
@@ -6182,6 +6203,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } a oprit importarea deoarece contul nu mai are spațiu suficient. Puteți să:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } va încerca să reia importarea imediat ce furnizorul de e-mail vă resetează ${ bandwidthLimitLink } a contului. Nu trebuie să faceți nimic. Dacă anulați importarea, nu veți mai putea să o reluați și va trebui să o reîncepeți."
       ],
@@ -6302,6 +6326,18 @@
         "S-au găsit ${ userFound } utilizatori",
         "S-au găsit ${ userFound } de utilizatori"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } creată"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } șters."
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } partajat cu e-mail."
+      ],
+      "${ vaultLink } updated": [
+        "S-a actualizat ${ vaultLink }"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Trebuie ${ vpnPlus } pentru conexiunea la nivel de țară."
       ],
@@ -6395,6 +6431,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
+      ],
+      "Add a recovery ${ type }": [
+        "Adăugare recuperare prin ${ type }."
       ],
       "Add a recovery email address": [
         "Adăugați o adresă de e-mail de recuperare"
@@ -6644,6 +6683,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Îmbunătățiți-vă identitatea de brand a organizației proprii și creați o experiență online mai consistentă pentru utilizatorii acesteia."
       ],
+      "Breach Custom Email Added": [
+        "S-a adăugat e-mail personal pentru verificare divulgare."
+      ],
+      "Breach Custom Email Deleted": [
+        "E-mail personal pentru verificare divulgare șters."
+      ],
+      "Breach Custom Email Validated": [
+        "E-mail personal pentru verificare divulgare validat."
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "În mod implicit, membrii organizației pot exporta doar seifurile care le aparțin. Dacă această opțiune este activată, aceștia nu vor putea exporta date."
       ],
@@ -6765,8 +6813,17 @@
       "Custom daily": [
         "Zilnic personalizat"
       ],
+      "Custom email added": [
+        "Adresă de e-mail personală adăugată."
+      ],
+      "Custom email deleted": [
+        "Adresa de e-mail personală ștearsă."
+      ],
       "Custom email domains": [
         "Domenii personale e-mail"
+      ],
+      "Custom email validated": [
+        "Adresă de e-mail personală validată."
       ],
       "Custom monthly": [
         "Lunar personalizat"
@@ -6805,6 +6862,9 @@
         "Se șterge ${ deletedServerCount } server poartă de acces",
         "Se șterg ${ deletedServerCount } servere poartă de acces",
         "Se șterg ${ deletedServerCount } de servere poartă de acces"
+      ],
+      "Disable recovery by ${ type }": [
+        "Dezactivare recuperare prin ${ type }."
       ],
       "Discount": [
         "Reducere"
@@ -7224,6 +7284,9 @@
       "Invite Deleted": [
         "Invitație ștearsă."
       ],
+      "Invite for new user deleted": [
+        "S-a șters invitația pentru utilizatorul nou."
+      ],
       "Invite for organization accepted": [
         "S-a acceptat invitația pentru organizație."
       ],
@@ -7247,6 +7310,9 @@
       "Item Autofilled": [
         "Articol autocompletat."
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Articol autocompletat în ${ vaultLink }."
+      ],
       "Item autofilled in vault": [
         "Articol autocompletat în seif."
       ],
@@ -7256,20 +7322,44 @@
       "Item Created": [
         "Articol creat."
       ],
+      "Item created in ${ vaultLink }": [
+        "Articol creat în ${ vaultLink }."
+      ],
       "Item created in vault": [
         "Articol creat în seif."
       ],
       "Item Deleted": [
         "Articol șters."
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Articol șters din ${ vaultLink }."
+      ],
+      "Item deleted from vault": [
+        "Articol șters din seif."
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Stare articol modificată în ${ vaultLink }."
+      ],
       "Item flags changed in vault": [
         "Stare articol schimbată în seif."
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Articol din ${ vaultLink } mutat în gunoi."
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Articol din ${ vaultLink } scos din gunoi."
+      ],
+      "Item in vault trashed": [
+        "Articol din seif mutat în gunoi."
       ],
       "Item in vault untrashed": [
         "Articol recuperat din coșul de gunoi în seif."
       ],
       "Item Read": [
         "Articol citit."
+      ],
+      "Item read in ${ vaultLink }": [
+        "Articol accesat din ${ vaultLink }."
       ],
       "Item read in vault": [
         "Articol citit în seif."
@@ -7282,6 +7372,9 @@
       ],
       "Item Updated": [
         "Articol actualizat."
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Articol actualizat în ${ vaultLink }."
       ],
       "Item updated in vault": [
         "Articol actualizat în seif."
@@ -7450,6 +7543,9 @@
       ],
       "New User Invite Deleted": [
         "Invitație pentru utilizator nou ștearsă."
+      ],
+      "New user invited to organization": [
+        "Utilizator nou invitat în organizație."
       ],
       "No account keys exist": [
         "Nu există chei pentru cont."
@@ -7832,6 +7928,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai încercați peste câteva minute."
       ],
+      "Session Ended": [
+        "Sesiune încheiată."
+      ],
+      "Session Roaming": [
+        "Sesiune transferată."
+      ],
+      "Session Started": [
+        "Sesiune începută."
+      ],
       "Session timed out": [
         "Sesiunea a expirat"
       ],
@@ -7855,6 +7960,12 @@
       ],
       "Share Updated": [
         "Partajare actualizată."
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "${ vaultLink } partajat șters."
+      ],
+      "Shared ${ vaultLink } updated": [
+        "${ vaultLink } partajat actualizat."
       ],
       "Shared vault deleted": [
         "Seif partajat șters."
@@ -8188,6 +8299,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Pentru a vă asigura accesul continuu la cont, setați o metodă de recuperare a contului."
       ],
+      "To ensure highest possible security of your account": [
+        "Pentru a asigura cea mai mare securitate posibilă a contului"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pentru a vă asigura că nu pierdeți date importante, ${ DRIVE_APP_NAME } salvează versiuni mai vechi ale fișierelor pe măsură ce acestea sunt modificate. Selectați cât timp ${ BRAND_NAME } ar trebui să păstreze versiunile anterioare."
       ],
@@ -8293,6 +8407,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Treceți la ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[bundleProPlan] } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
       ],
@@ -8350,6 +8467,9 @@
       "Vault Deleted": [
         "Seiful s-a șters."
       ],
+      "Vault either deleted or requires access permissions": [
+        "Seiful fie este șters fie necesită permisiuni de acces."
+      ],
       "Vault shared with email": [
         "Seif partajat pe e-mail."
       ],
@@ -8370,6 +8490,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu veți fi taxat. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
+      ],
+      "Verify ${ type }": [
+        "Verificare ${ type }."
       ],
       "Verify domain": [
         "Verificare domeniu"
@@ -10528,6 +10651,9 @@
       "Upgrade your plan": [
         "Treceți la alt plan"
       ],
+      "Vault": [
+        "Seif"
+      ],
       "View guide": [
         "Consultare ghid"
       ],
@@ -10637,6 +10763,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Luați ${ plan }** pentru o perioadă limitată!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Luați planul Visionary și faceți parte din povestea ${ BRAND_NAME }"
       ]
@@ -11329,12 +11458,6 @@
       "DNS leak prevention": [
         "Prevenire breșe DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editor documente (documente, foi de calcul, prezentări)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editor documente (documente, foi de calcul, prezentări) (în curând)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11447,9 +11570,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Verificări regulate ale securității contului deținut. Vă alertăm dacă aveți parole slabe sau reutilizate care trebuie modificate."
       ],
-      "Reply to messages": [
-        "Răspundeți la mesaje"
-      ],
       "Require 2FA for organization": [
         "Este necesară A2F pentru organizație"
       ],
@@ -11538,6 +11658,9 @@
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
+      ],
+      "Unlimited logins and notes": [
+        "Date de autentificare și note nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
         "Date de autentificare, note și carduri de credit nelimitate"
@@ -12959,6 +13082,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
+      ],
+      "Create a ${ appName } account": [
+        "Creați un cont ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Creați-vă contul ${ BRAND_NAME }"
@@ -15458,6 +15584,9 @@
       "${ appName } Free": [
         "${ appName } gratuit"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Instrumentul de exportare ${ MAIL_APP_NAME }"
       ],
@@ -15691,6 +15820,9 @@
       ],
       "Connect ${ name }": [
         "Conectare ${ name }"
+      ],
+      "Connection events": [
+        "Evenimente de conexiune"
       ],
       "Contact us": [
         "Contactați-ne"
@@ -16001,6 +16133,9 @@
       "Forward emails": [
         "Redirecționare mesaje"
       ],
+      "Gateway": [
+        "Poartă de acces"
+      ],
       "Gateways": [
         "Porți de acces"
       ],
@@ -16170,6 +16305,9 @@
       ],
       "Organization name": [
         "Nume organizație"
+      ],
+      "Origin": [
+        "Origine"
       ],
       "Other calendars": [
         "Alte calendare"

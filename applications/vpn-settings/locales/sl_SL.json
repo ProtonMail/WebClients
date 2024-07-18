@@ -1396,6 +1396,9 @@
       "Falkland Islands": [
         "Falklandski otoki"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandski otoki (Malvinas)"
+      ],
       "Faroe Islands": [
         "Ferski otoki"
       ],
@@ -1835,6 +1838,9 @@
         "Švica"
       ],
       "Syria": [
+        "Sirija"
+      ],
+      "Syrian Arab Republic": [
         "Sirija"
       ],
       "Taiwan": [
@@ -3136,6 +3142,12 @@
         "Najdeni so ${ userFound } uporabniki.",
         "Najdenih je ${ userFound } uporabnikov."
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } ustvarjeno"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } je posodobljen"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } potreben za povezavo na ravni države."
       ],
@@ -3385,11 +3397,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenski strežniki"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -5670,12 +5682,6 @@
       "DNS leak prevention": [
         "Zaščita pred uhajanjem DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve) (kmalu na voljo)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5790,9 +5796,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, ki jih je treba posodobiti."
       ],
-      "Reply to messages": [
-        "Odgovorite na sporočila"
-      ],
       "Require 2FA for organization": [
         "Za organizacijo zahtevajte 2FA"
       ],
@@ -5876,6 +5879,9 @@
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"
+      ],
+      "Unlimited logins and notes": [
+        "Neomejeno število prijav in beležk"
       ],
       "Unlimited messages per day": [
         "Neomejeno število sporočil na dan"
@@ -8632,10 +8638,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

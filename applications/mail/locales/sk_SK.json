@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
+      ],
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
@@ -1531,6 +1534,12 @@
       "Fast and secure. No logs are kept.": [
         "Rýchlo a bezpečne. Bez ukladania záznamov."
       ],
+      "Faster, broader device compatibility": [
+        "Rýchlejší a väčšia kompatibilita so zariadeniami"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Počas používania sa neprenášajú žiadne údaje, vyžaduje jednorazové stiahnutie"
+      ],
       "Requires a one-time download and compatible hardware.": [
         "Vyžaduje jednorazové stiahnutie a kompatibilný hardvér."
       ],
@@ -2700,6 +2709,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -3140,6 +3152,9 @@
       ],
       "Syria": [
         "Sýria"
+      ],
+      "Syrian Arab Republic": [
+        "Sýrska arabská republika"
       ],
       "Taiwan": [
         "Taiwan"
@@ -5163,9 +5178,6 @@
       ],
       "Tell us more": [
         "Povedzte nám viac"
-      ],
-      "Write faster with the writing assistant": [
-        "Píšte rýchlejšie s asistentom písania"
       ]
     },
     "Hint": {
@@ -5502,6 +5514,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
@@ -6424,9 +6439,6 @@
       "Left to Right": [
         "Zľava Doprava"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Nechajte asistenta písania, aby vám pomáhal písať a odpovedať na emaily a sledujte, ako stúpa vaša produktivita."
-      ],
       "Link type": [
         "Typ odkazu"
       ],
@@ -6585,9 +6597,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "V jednom okamihu môže byť otvorený iba jeden asistent písania"
       ],
       "Open shortcut cheat sheet": [
         "Otvoriť zoznam skratiek"
@@ -9272,12 +9281,6 @@
       "DNS leak prevention": [
         "Prevencia úniku DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie) (čoskoro)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9386,9 +9389,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
       ],
-      "Reply to messages": [
-        "Odpovedať na správy"
-      ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
       ],
@@ -9463,6 +9463,9 @@
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
+      ],
+      "Unlimited logins and notes": [
+        "Neobmedzený počet prihlásení a poznámok"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
@@ -12181,6 +12184,12 @@
       "Verification successful": [
         "Overenie prebehlo úspešne"
       ],
+      "Writing assistant disabled": [
+        "Asistent písania vypnutý"
+      ],
+      "Writing assistant enabled": [
+        "Asistent písania zapnutý"
+      ],
       "Writing assistant setting updated": [
         "Nastavenia asistenta písania aktualizované"
       ],
@@ -12975,6 +12984,9 @@
       ],
       "Sending original message": [
         "Odoslanie pôvodnej správy"
+      ],
+      "Set recovery phrase": [
+        "Nastaviť obnovovaciu frázu"
       ],
       "Set your own schedule": [
         "Naplánujte si svoj vlastný program"

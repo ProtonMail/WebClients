@@ -826,6 +826,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Geöffnet"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } öffnen"
       ],
@@ -1518,6 +1521,9 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Schnell und sicher. Ohne Protokollierung."
+      ],
+      "Faster, broader device compatibility": [
+        "Schnellere, umfassendere Gerätekompatibilität"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Erfordert einen einmaligen Download und kompatible Hardware."
@@ -5091,9 +5097,6 @@
       ],
       "Tell us more": [
         "Erzähl uns mehr"
-      ],
-      "Write faster with the writing assistant": [
-        "Schreibe schneller mit dem Schreibassistenten"
       ]
     },
     "Hint": {
@@ -6221,9 +6224,6 @@
       "Left to Right": [
         "Von links nach rechts"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Lass dich beim Schreiben von und Antworten auf E-Mails von dem Schreibassistenten unterstützen und sieh dabei zu, wie deine Produktivität rasant ansteigt."
-      ],
       "Link type": [
         "Linktyp"
       ],
@@ -6382,9 +6382,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Es kann nur ein Schreibassistent gleichzeitig geöffnet sein"
       ],
       "Open shortcut cheat sheet": [
         "Spickzettel für Tastaturkürzel öffnen"
@@ -8976,12 +8973,6 @@
       "DNS leak prevention": [
         "DNS-Leakschutz"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentbearbeitung (Dokumente, Tabellen, Präsentationen)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Bearbeitungsprogramme (Dokumente, Tabellen, Präsentationen) (kommt bald)"
-      ],
       "Double hop": [
         "Double Hop"
       ],
@@ -9086,9 +9077,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
       ],
-      "Reply to messages": [
-        "Antworte auf Nachrichten"
-      ],
       "Require 2FA for organization": [
         "2FA für die Organisation erforderlich"
       ],
@@ -9163,6 +9151,9 @@
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
+      ],
+      "Unlimited logins and notes": [
+        "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Anmeldungen, Notizen und Kreditkarten"
@@ -11717,6 +11708,12 @@
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
+      ],
+      "Writing assistant disabled": [
+        "Schreibassistent deaktiviert."
+      ],
+      "Writing assistant enabled": [
+        "Schreibassistent aktiviert."
       ],
       "Writing assistant setting updated": [
         "Einstellung des Schreibassistenten aktualisiert"

@@ -1151,15 +1151,6 @@
       "An item previously shared with you was removed": [
         "Un articol care v-a fost partajat a fost eliminat."
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Sigur doriți să mutați toate articolele din „${ fromVaultName }” în „${ toVaultName }”?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Sigur doriți să mutați articolele în „${ name }” ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Sigur doriți să mutați articolul în „${ name }” ?"
-      ],
       "Are you sure you want to remove the link?": [
         "Sigur doriți să eliminați legătura web?"
       ],
@@ -1460,14 +1451,8 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its history": [
-        "Mutarea unui articol în alt seif îi va șterge istoricul."
-      ],
       "Moving items": [
         "Se mută articolele."
-      ],
-      "Moving items to another vault will erase their history": [
-        "Mutarea articolelor în alt seif le va șterge istoricul."
       ],
       "Moving items to trash": [
         "Se mută articolele în gunoi."
@@ -2134,8 +2119,8 @@
       "Make all viewers": [
         "Setare toți ca utilizator"
       ],
-      "Max views reached": [
-        "Vizualizări maxime depășite"
+      "max views reached": [
+        "vizualizări maxime depășite"
       ],
       "Members": [
         "Membri"
@@ -2684,15 +2669,6 @@
       ],
       "Modified": [
         "Modificat"
-      ],
-      "Move all items ?": [
-        "Se mută toate articolele?"
-      ],
-      "Move item?": [
-        "Mutați articolul?"
-      ],
-      "Move items?": [
-        "Mutați articolele?"
       ],
       "No excluded items": [
         "Nu sunt articole excluse"
