@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .drawer-visibility-control {
@@ -29,14 +29,13 @@
 		&::before {
 			position: absolute;
 			content: '';
-			inset-inline-start: -1em;
-			inset-inline-end: 0;
+			inset-inline: -1em 0;
 			inset-block: -0.5em;
 		}
 	}
 
-	&--hide {
-		// not needed for now
+	&.drawer-visibility-control .drawer-visibility-control-button {
+		color: var(--text-weak);
 	}
 
 	@include media('print') {

@@ -19,6 +19,7 @@ interface Props {
     testId?: string;
     headerRef?: Ref<HTMLDivElement>;
     spaceAbove?: boolean;
+    collapsed?: boolean;
 }
 
 const SimpleSidebarListItemHeader = ({
@@ -33,6 +34,7 @@ const SimpleSidebarListItemHeader = ({
     title,
     onFocus = noop,
     spaceAbove = false,
+    collapsed = false,
 }: Props) => {
     const buttonRef = useRef<HTMLButtonElement>(null);
     const shortcutHandlers: HotkeyTuple[] = [
@@ -75,14 +77,14 @@ const SimpleSidebarListItemHeader = ({
                     data-testid={testId}
                 >
                     {hasCaret && (
-                        <span className="shrink-0">
+                        <span className={clsx('shrink-0', collapsed && 'flex m-auto')}>
                             <Icon
                                 name="chevron-down-filled"
                                 className={clsx(['navigation-icon--expand', !toggle && 'rotateZ-270'])}
                             />
                         </span>
                     )}
-                    <span className="ml-2 mt-0.5 text-ellipsis">{text}</span>
+                    <span className={clsx('ml-2 mt-0.5 text-ellipsis', collapsed && 'sr-only')}>{text}</span>
                 </button>
                 {right}
             </div>

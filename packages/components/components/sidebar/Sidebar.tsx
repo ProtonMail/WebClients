@@ -98,13 +98,16 @@ const Storage = ({
 interface Props extends ComponentPropsWithoutRef<'div'> {
     app: APP_NAMES;
     logo?: ReactNode;
+    /**
+     * Expanded is only for mobile
+     */
     expanded?: boolean;
     onToggleExpand?: () => void;
     primary?: ReactNode;
     children?: ReactNode;
     version?: ReactNode;
     hasAppLinks?: boolean;
-    appsDropdown: ReactNode;
+    appsDropdown: ReactNode | null;
     /**
      * Extra content that will be rendered below the storage meter and version.
      */
@@ -121,6 +124,10 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
      */
     growContent?: boolean;
     showStorage?: boolean;
+    /**
+     * Only when collapse button is present
+     */
+    collapsed?: boolean;
 }
 
 const Sidebar = ({
@@ -137,6 +144,7 @@ const Sidebar = ({
     postFooter,
     growContent = true,
     showStorage = true,
+    collapsed = false,
     className,
     ...rest
 }: Props) => {
@@ -155,7 +163,11 @@ const Sidebar = ({
         <>
             <div
                 ref={rootRef}
-                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', className)}
+                className={clsx(
+                    'sidebar flex flex-nowrap flex-column no-print outline-none',
+                    collapsed && 'sidebar--collapsed',
+                    className
+                )}
                 data-expanded={expanded}
                 {...rest}
                 {...focusTrapProps}
@@ -169,10 +181,16 @@ const Sidebar = ({
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
 
                 {!isElectronMail && (
-                    <div className="logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap gap-0.5">
+                    <div
+                        className={clsx(
+                            'logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap gap-0.5',
+                            collapsed && 'self-center border-bottom mb-3'
+                        )}
+                    >
                         {logo}
+
                         <div
-                            className="hidden md:block w-custom h-custom grow-0 shrink-0"
+                            className={clsx('hidden md:block w-custom h-custom grow-0 shrink-0', collapsed && 'my-2')}
                             style={{ '--w-custom': '2.25rem', '--h-custom': '2.25rem' }}
                         >
                             {appsDropdown}
@@ -207,7 +225,8 @@ const Sidebar = ({
                 <div
                     className={clsx(
                         growContent ? 'flex-1' : 'grow-0',
-                        'flex-nowrap flex flex-column overflow-overlay pb-2 md:mt-2'
+                        'flex-nowrap flex flex-column pb-2 md:mt-2',
+                        !collapsed && 'overflow-overlay'
                     )}
                     tabIndex={-1}
                 >
@@ -229,12 +248,16 @@ const Sidebar = ({
                         {postFooter}
                     </div>
                 ) : (
-                    <div className="border-top">
+                    <div className={clsx('border-top', collapsed && 'hidden')}>
                         <div className="text-center py-2 px-3">{version}</div>
                     </div>
                 )}
             </div>
-            {expanded ? <div className="sidebar-backdrop" onClick={onToggleExpand}></div> : undefined}
+            {
+                // mobile backdrop
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                expanded ? <div className="sidebar-backdrop" onClick={onToggleExpand}></div> : undefined
+            }
         </>
     );
 };
