@@ -195,9 +195,5 @@ export const getAutoCoupon = ({
         return COUPON_CODES.VPN_INTRO_2024;
     }
 
-    if (!coupon && [PLANS.BUNDLE_PRO_2024, PLANS.MAIL_BUSINESS].some((plan) => planIDs?.[plan])) {
-        return COUPON_CODES.MAIL_B2B_INTRO;
-    }
-
     return coupon || undefined;
 };
