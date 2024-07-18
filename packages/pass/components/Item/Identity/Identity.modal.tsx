@@ -1,6 +1,7 @@
 import { type FC } from 'react';
 
 import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
+import type { FormikHelpers } from 'formik/dist/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -19,11 +20,16 @@ type IdentityAddNewSectionProps = {
 export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd }) => {
     const [{ open, onClose }, setModal] = useModalState();
 
+    const closeModal = (resetForm: FormikHelpers<{ value: string }>['resetForm']) => {
+        onClose();
+        resetForm();
+    };
+
     const form = useFormik({
         initialValues: { value: '' },
-        onSubmit: ({ value }) => {
+        onSubmit: ({ value }, { resetForm }) => {
             onAdd(value);
-            onClose();
+            closeModal(resetForm);
         },
         validate: ({ value }) => {
             const errors: FormikErrors<{ value: string }> = {};
@@ -45,7 +51,7 @@ export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd })
                     <div className="ml-2 text-semibold">{c('Label').t`Add section`}</div>
                 </div>
             </Button>
-            <PassModal size="small" open={open} enableCloseWhenClickOutside onClose={onClose}>
+            <PassModal size="small" open={open} enableCloseWhenClickOutside onClose={() => closeModal(form.resetForm)}>
                 <ModalTwoHeader title={c('Action').t`Custom section`} />
                 <FormikProvider value={form}>
                     <Form id={formId}>
