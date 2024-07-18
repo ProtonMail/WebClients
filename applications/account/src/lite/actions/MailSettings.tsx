@@ -125,7 +125,7 @@ const MailSettings = ({ layout }: { layout: (children: ReactNode, props?: any) =
     const handleRedirect = (action: SupportedActions) => {
         const searchParams = new URLSearchParams(location.search);
         searchParams.set('action', action);
-        history.push(location.pathname, { search: searchParams.toString() });
+        history.push({ pathname: location.pathname, search: searchParams.toString() });
     };
 
     return layout(
