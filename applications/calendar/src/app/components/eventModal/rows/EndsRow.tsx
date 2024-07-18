@@ -61,7 +61,7 @@ const EndsRow = ({
         },
         {
             value: AFTER_N_TIMES,
-            text: c('Custom frequency option').t`Ends after…`,
+            text: c('Custom frequency option').t`After…`,
         },
     ];
 
