@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useHandler, useSubscribeEventManager, useUserSettings } from '@proton/components';
 import { getIsAssistantOpened } from '@proton/llm/lib';
-import { useAssistant } from '@proton/llm/lib/useAssistant';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';

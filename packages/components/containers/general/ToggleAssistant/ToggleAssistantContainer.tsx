@@ -1,9 +1,14 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, useUserSettings } from '@proton/components';
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
+import {
+    SettingsLayout,
+    SettingsLayoutLeft,
+    SettingsLayoutRight,
+    useUserSettings,
+} from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 

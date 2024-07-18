@@ -8,7 +8,6 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Info, Price } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
-import { useAssistantAddonEnabledSignup } from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
@@ -16,6 +15,7 @@ import { WrappedTaxCountrySelector } from '@proton/components/containers/payment
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
+import { useAssistantAddonEnabledSignup } from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';

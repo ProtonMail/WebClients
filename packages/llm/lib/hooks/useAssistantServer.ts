@@ -1,18 +1,14 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
-
-import useAssistantTelemetry, {
-    ASSISTANT_TYPE,
-    ERROR_TYPE,
-} from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useApi } from '@proton/components/hooks';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
-import type { AssistantRunningActionResolver, GenerateAssistantResult } from '@proton/llm/lib';
+import type { AssistantContextType, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
 import { PromptRejectedError, getGenerationType, sendAssistantRequest } from '@proton/llm/lib';
 import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
 import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
+import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -23,42 +19,38 @@ interface Props {
     openedAssistantsState: ReturnType<typeof useOpenedAssistants>;
 }
 
-export const useAssistantServer = ({ commonState, openedAssistantsState }: Props) => {
+export const useAssistantServer = ({
+    commonState,
+    openedAssistantsState,
+}: Props): Omit<AssistantContextType, 'getIsStickyAssistant'> => {
     const api = useApi();
+    const { sendRequestAssistantReport, sendAssistantErrorReport } = useAssistantTelemetry();
+    const [runningActions, setRunningActions] = useState<AssistantRunningActions>({});
 
     const { openAssistant, setAssistantStatus, closeAssistant, openedAssistants } = openedAssistantsState;
     const {
-        canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
-        canUseAssistant,
-        errors,
         addSpecificError,
-        cleanSpecificErrors,
         assistantSubscriptionStatus,
+        canShowAssistant,
+        canUseAssistant,
+        cleanSpecificErrors,
+        errors,
+        hasCompatibleBrowser,
+        hasCompatibleHardware,
     } = commonState;
 
-    const { sendRequestAssistantReport, sendAssistantErrorReport } = useAssistantTelemetry();
-
-    const [runningActionResolvers, setRunningActionResolvers] = useState<AssistantRunningActionResolver[]>([]);
-
-    const getRunningActionPromiseFromAssistantID = (assistantID: string) => {
-        return runningActionResolvers.find((resolver) => resolver.assistantID === assistantID);
-    };
-
     const cleanRunningActionPromises = (assistantID: string) => {
-        setRunningActionResolvers((runningActionResolvers) =>
-            runningActionResolvers.filter((resolver) => {
-                return resolver.assistantID !== assistantID;
-            })
-        );
+        setRunningActions((runningActions) => {
+            delete runningActions[assistantID];
+            return { ...runningActions };
+        });
     };
 
     const cancelRunningAction = (assistantID: string) => {
         try {
-            const actionResolver = getRunningActionPromiseFromAssistantID(assistantID);
+            const actionResolver = runningActions[assistantID];
             if (actionResolver) {
-                actionResolver.resolver();
+                actionResolver();
             }
             cleanRunningActionPromises(assistantID);
         } catch (e: any) {
@@ -70,8 +62,7 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
     };
 
     const generateResult = async ({ action, callback, assistantID }: GenerateAssistantResult) => {
-        const runningActionInAssistant = getRunningActionPromiseFromAssistantID(assistantID);
-        if (runningActionInAssistant) {
+        if (assistantID in runningActions) {
             return;
         }
 
@@ -88,8 +79,10 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
 
             // Set the running actions directly with a fake resolver so that the UI gets updated directly
             // Then, when we'll have access to the resolver we will set the running actions again
-            const runningActions = runningActionResolvers;
-            setRunningActionResolvers([...runningActions, { assistantID, resolver: noop }]);
+            setRunningActions((runningActions) => {
+                runningActions[assistantID] = noop;
+                return { ...runningActions };
+            });
 
             const response = await api({
                 ...sendAssistantRequest({ prompt, stopStrings }),
@@ -102,7 +95,10 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
                 reader.cancel();
             };
 
-            setRunningActionResolvers([...runningActions, { assistantID, resolver }]);
+            setRunningActions((runningActions) => {
+                runningActions[assistantID] = resolver;
+                return { ...runningActions };
+            });
 
             if (assistantSubscriptionStatus.trialStatus === 'trial-not-started') {
                 await assistantSubscriptionStatus.start();
@@ -167,27 +163,23 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
                 return;
             }
             if (e.name === 'PromptRejectedError') {
-                const errorMessage = c('Error')
-                    .t`The writing assistant cannot proceed with your request. Please try a different prompt.`;
-                sendAssistantErrorReport({
+                addSpecificError({
+                    assistantID,
                     assistantType: ASSISTANT_TYPE.SERVER,
                     errorType: ERROR_TYPE.GENERATION_HARMFUL,
                 });
-                addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_HARMFUL });
             } else if (e?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
-                const errorMessage = c('Error').t`The system is busy at the moment. Please try again in a few minutes.`;
-                sendAssistantErrorReport({
+                addSpecificError({
+                    assistantID,
                     assistantType: ASSISTANT_TYPE.SERVER,
                     errorType: ERROR_TYPE.TOO_MANY_REQUESTS,
                 });
-                addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.TOO_MANY_REQUESTS });
             } else {
-                const errorMessage = c('Error').t`Please try generating the text again`;
-                sendAssistantErrorReport({
+                addSpecificError({
+                    assistantID,
                     assistantType: ASSISTANT_TYPE.SERVER,
                     errorType: ERROR_TYPE.GENERATION_FAIL,
                 });
-                addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_FAIL });
             }
             traceInitiativeError('assistant', e);
             console.error(e);
@@ -203,25 +195,25 @@ export const useAssistantServer = ({ commonState, openedAssistantsState }: Props
 
     // TODO, remove set values once we removed the "duplicated" context for server and local modes
     return {
-        isModelDownloaded: true,
-        isModelDownloading: false,
-        downloadReceivedBytes: 0,
         downloadModelSize: 0,
         downloadPaused: false,
+        downloadReceivedBytes: 0,
+        isModelDownloaded: true,
+        isModelDownloading: false,
         isModelLoadedOnGPU: true,
         isModelLoadingOnGPU: false,
-        canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
-        canUseAssistant,
-        openedAssistants,
-        errors,
-        openAssistant,
-        setAssistantStatus,
-        closeAssistant: closeAssistant(cancelRunningAction),
-        generateResult,
         cancelRunningAction,
-        runningActionResolvers,
+        canShowAssistant,
+        canUseAssistant,
+        closeAssistant: closeAssistant(cancelRunningAction),
+        errors,
+        generateResult,
+        hasCompatibleBrowser,
+        hasCompatibleHardware,
+        openAssistant,
+        openedAssistants,
         resetAssistantState: noop,
+        runningActions,
+        setAssistantStatus,
     };
 };

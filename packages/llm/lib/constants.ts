@@ -13,12 +13,4 @@ export const STOP_STRINGS_REFINE = ['</span>', '</div>'];
 export const FAILED_TO_DOWNLOAD = 'Failed to download:';
 export const CACHING_FAILED = 'Caching failed';
 
-export const enum AssistantStatus {
-    NOT_LOADED,
-    DOWNLOADING,
-    DOWNLOADED,
-    LOADING_GPU,
-    READY,
-}
-
 export const assistantAuthorizedApps = [APPS_CONFIGURATION[PROTONMAIL].subdomain];
