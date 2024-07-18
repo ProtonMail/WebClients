@@ -1765,6 +1765,9 @@
       "Falkland Islands": [
         "Falklandski otoki"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandski otoki (Malvinas)"
+      ],
       "Faroe Islands": [
         "Ferski otoki"
       ],
@@ -2204,6 +2207,9 @@
         "Švica"
       ],
       "Syria": [
+        "Sirija"
+      ],
+      "Syrian Arab Republic": [
         "Sirija"
       ],
       "Taiwan": [
@@ -6521,12 +6527,6 @@
       "DNS leak prevention": [
         "Zaščita pred uhajanjem DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Urejevalniki dokumentov (dokumenti, preglednice, predstavitve) (kmalu na voljo)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6635,9 +6635,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, ki jih je treba posodobiti."
       ],
-      "Reply to messages": [
-        "Odgovorite na sporočila"
-      ],
       "Require 2FA for organization": [
         "Za organizacijo zahtevajte 2FA"
       ],
@@ -6709,6 +6706,9 @@
       ],
       "Unlimited labels": [
         "Neomejeno število oznak"
+      ],
+      "Unlimited logins and notes": [
+        "Neomejeno število prijav in beležk"
       ],
       "Unlimited messages per day": [
         "Neomejeno število sporočil na dan"
@@ -7513,6 +7513,20 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Varna in zanesljiva skupna raba"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Ključ organizacije ne obstaja."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Dovoljenje zavrnjeno, skrbniške pravice so bile omejene."
+      ],
+      "The organization key must be activated first.": [
+        "Najprej je treba aktivirati ključ organizacije."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Za izvedbo te operacije potrebujete dostop do ključa organizacije."
       ]
     },
     "Payment method option": {
@@ -9630,6 +9644,9 @@
       ],
       "Send invitation": [
         "Pošlji povabilo"
+      ],
+      "Set recovery phrase": [
+        "Nastavi obnovitveno frazo"
       ],
       "Settings": [
         "Nastavitve"

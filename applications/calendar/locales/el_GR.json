@@ -811,6 +811,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } πρόσθετος προσαρμοσμένος τομέας",
+        "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
+      ],
       "${ ips } server": [
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
@@ -1618,6 +1622,9 @@
       "British Indian Ocean Territory": [
         "Βρετανικό Έδαφος Ινδικού Ωκεανού"
       ],
+      "British Virgin Islands": [
+        "Βρετανικές Παρθένοι Νήσοι"
+      ],
       "Brunei Darussalam": [
         "Μπρουνέι"
       ],
@@ -1672,6 +1679,9 @@
       "Congo": [
         "Κογκό"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Λαϊκή Δημοκρατία του Κονγκό"
+      ],
       "Congo, Democratic Republic of the": [
         "Κονγκό-Κινσάσα"
       ],
@@ -1711,6 +1721,9 @@
       "Dominican Republic": [
         "Δομινικανή Δημοκρατία"
       ],
+      "East Timor": [
+        "Ανατολικό Τιμόρ"
+      ],
       "Ecuador": [
         "Ισημερινός"
       ],
@@ -1737,6 +1750,9 @@
       ],
       "Falkland Islands": [
         "Νήσοι Φόκλαντ"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Νησιά Φώκλαντ (Μαλβίνες)"
       ],
       "Faroe Islands": [
         "Φερόες"
@@ -1849,6 +1865,9 @@
       "Ireland": [
         "Ιρλανδία"
       ],
+      "Islamic Republic of Iran": [
+        "Ισλαμική Δημοκρατία του Ιράν"
+      ],
       "Isle of Man": [
         "Νήσος Μαν"
       ],
@@ -1879,6 +1898,12 @@
       "Kiribati": [
         "Κιριμπάτι"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Λαϊκή Δημοκρατία της Κορέας"
+      ],
+      "Korea (Republic of)": [
+        "Δημοκρατία της Κορέας"
+      ],
       "Kosovo": [
         "Κόσοβο"
       ],
@@ -1887,6 +1912,9 @@
       ],
       "Kyrgyzstan": [
         "Κιργιστάν"
+      ],
+      "Lao People's Democratic Republic": [
+        "Λαϊκή Δημοκρατία του Λάος"
       ],
       "Laos": [
         "Λάος"
@@ -1906,6 +1934,9 @@
       "Libya": [
         "Λιβύη"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Λιβυκή Αραβική Τζαμαχιρία"
+      ],
       "Liechtenstein": [
         "Λιχτενστάιν"
       ],
@@ -1917,6 +1948,9 @@
       ],
       "Macao": [
         "Μακάο"
+      ],
+      "Macedonia": [
+        "ΠΓΔ Μακεδονίας"
       ],
       "Madagascar": [
         "Μαδαγασκάρη"
@@ -2170,6 +2204,9 @@
       "Svalbard and Jan Mayen": [
         "Σβάλμπαρντ"
       ],
+      "Swaziland": [
+        "Σουαζιλάνδη"
+      ],
       "Sweden": [
         "Σουηδία"
       ],
@@ -2179,6 +2216,9 @@
       "Syria": [
         "Συρία"
       ],
+      "Syrian Arab Republic": [
+        "Αραβική Δημοκρατία της Συρίας"
+      ],
       "Taiwan": [
         "Ταϊβάν"
       ],
@@ -2187,6 +2227,9 @@
       ],
       "Tanzania": [
         "Τανζανία"
+      ],
+      "Tanzania, United Republic of": [
+        "Ενωμένη Δημοκρατία της Τανζανίας"
       ],
       "Thailand": [
         "Ταϊλάνδη"
@@ -2440,6 +2483,9 @@
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Αυτό μπορεί να διαρκέσει λίγα λεπτά. Εν τω μεταξύ, μπορείτε να συνεχίσετε να χρησιμοποιείτε το Ημερολόγιο ως συνήθως."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, ορίστε μια φράση ανάκτησης."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Για να εισαγάγετε τις επαφές σας από την Google ή το Outlook, ${ easySwitchLink }."
@@ -3330,6 +3376,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Τα ψευδώνυμα δεν μπορούν να χρησιμοποιηθούν όταν είναι ενεργοποιημένος ένας επιπλέον κωδικός πρόσβασης στο ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -4049,6 +4098,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
@@ -5840,6 +5892,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "for ${ price }": [
         "για ${ price }"
       ]
@@ -6297,6 +6352,9 @@
       "Collaborate and share large files": [
         "Συνεργασία και κοινή χρήση μεγάλων αρχείων"
       ],
+      "Collaborative document editor": [
+        "Συνεργατικό πρόγραμμα επεξεργασίας εγγράφων"
+      ],
       "Contact groups": [
         "Ομάδες επαφών"
       ],
@@ -6329,12 +6387,6 @@
       ],
       "DNS leak prevention": [
         "Αποτροπή διαρροής DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Επεξεργαστές εγγράφων (έγγραφα, φύλλα, διαφάνειες)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Επεξεργαστές εγγράφων (έγγραφα, φύλλα, διαφάνειες) (σύντομα)"
       ],
       "Double hop": [
         "Διπλή μεταπήδηση"
@@ -6440,9 +6492,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Τακτικοί έλεγχοι της ασφάλειας του λογαριασμού σας. Σας ειδοποιούμε εάν έχετε αδύναμους ή επαναχρησιμοποιημένους κωδικούς πρόσβασης που πρέπει να ενημερωθούν."
       ],
-      "Reply to messages": [
-        "Απαντήστε σε μηνύματα"
-      ],
       "Require 2FA for organization": [
         "Απαιτείται 2FA για οργάνωση"
       ],
@@ -6517,6 +6566,9 @@
       ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
+      ],
+      "Unlimited logins and notes": [
+        "Απεριόριστες συνδέσεις και σημειώσεις"
       ],
       "Unlimited logins, notes and credit cards": [
         "Απεριόριστες συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
@@ -7277,6 +7329,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Ασφαλής κοινή χρήση κρύπτης (${ n } κρύπτη) και κοινή χρήση συνδέσμων",
         "Ασφαλής κοινή χρήση κρυπτών (${ n } κρύπτες) και κοινή χρήση συνδέσμων"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Το κλειδί οργανισμού δεν υπάρχει."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "The organization key must be activated first.": [
+        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Χρειάζεστε πρόσβαση στο κλειδί οργανισμού για να εκτελέσετε αυτήν τη λειτουργία."
       ]
     },
     "Payment method option": {
@@ -9244,6 +9310,9 @@
       "Import failed": [
         "Αποτυχία εισαγωγής"
       ],
+      "Import groups": [
+        "Εισαγωγή ομάδων"
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
@@ -9408,6 +9477,9 @@
       ],
       "Send invitation": [
         "Αποστολή πρόσκλησης"
+      ],
+      "Set recovery phrase": [
+        "Ορισμός φράσης ανάκτησης"
       ],
       "Settings": [
         "Ρυθμίσεις"
