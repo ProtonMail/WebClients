@@ -45,9 +45,9 @@ export const DropdownMenuBase: FC<DropdownMenuBaseProps> = ({
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="top">
                 <DropdownMenu>
-                    {dropdownOptions.map((option) => (
+                    {dropdownOptions.map((option, index) => (
                         <DropdownMenuButton
-                            key={option.value}
+                            key={`${option.value}${index}`}
                             className={clsx('text-left', dropdownMenuButtonClassname)}
                             onClick={option.onClick}
                         >

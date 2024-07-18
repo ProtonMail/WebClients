@@ -29,6 +29,7 @@ export const IdentityContent: FC<ItemContentProps<'identity'>> = ({
                             label={field.label}
                             value={field.value}
                             mask={field.mask}
+                            hidden={field.type === 'hidden'}
                         />
                     );
                 })}

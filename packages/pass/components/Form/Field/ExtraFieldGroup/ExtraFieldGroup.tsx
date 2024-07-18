@@ -14,7 +14,7 @@ import { ExtraFieldComponent } from './ExtraField';
 
 export type ExtraFieldGroupProps<V extends ExtraFieldGroupValues> = { form: FormikProps<V> };
 
-const getNewField = <T extends ExtraFieldType>(type: T): UnsafeItemExtraField => {
+export const getNewField = <T extends ExtraFieldType>(type: T): UnsafeItemExtraField => {
     switch (type) {
         case 'text':
         case 'hidden':

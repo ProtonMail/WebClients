@@ -13,8 +13,6 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { IdentityForm } from './Identity.form';
 
-export const EMPTY_CUSTOM_FIELD = { type: 'text', fieldName: '', data: { content: '' } };
-
 export const IdentityNew: FC<ItemNewViewProps<'identity'>> = ({ shareId, onSubmit, onCancel }) => {
     const initialValues: IdentityItemFormValues = useMemo(() => getInitialState(shareId), []);
 
