@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { localeCode } from '@proton/shared/lib/i18n';
+
 const TOP_COUNTRIES = [
     { value: 'US', label: c('Country name').t`United States` },
     { value: 'GB', label: c('Country name').t`United Kingdom` },
@@ -249,6 +251,10 @@ const COUNTRIES = [
     { value: 'ZM', label: c('Country name').t`Zambia` },
     { value: 'ZW', label: c('Country name').t`Zimbabwe` },
 ];
+
+try {
+    COUNTRIES.sort((a, b) => a.label.localeCompare(b.label, localeCode.split('_').join('-')));
+} catch {}
 
 const countriesByAbbr = COUNTRIES.reduce<{ [key: string]: string }>(
     (list, country) => ({ ...list, [country.value]: country.label }),
