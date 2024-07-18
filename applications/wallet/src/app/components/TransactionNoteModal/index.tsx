@@ -7,6 +7,7 @@ import { ModalPropsWithData } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import { IWasmApiWalletData, encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
 
+import { TEXT_AREA_MAX_LENGTH } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { TransactionData } from '../../hooks/useWalletTransactions';
 import { TextAreaModal } from '../TextAreaModal';
@@ -84,6 +85,7 @@ export const TransactionNoteModal = ({ onUpdate, apiWalletData, data, ...modalPr
             value={baseLabel}
             onSubmit={(value) => handleSaveNote(value)}
             {...modalProps}
+            maxLength={TEXT_AREA_MAX_LENGTH}
         />
     );
 };
