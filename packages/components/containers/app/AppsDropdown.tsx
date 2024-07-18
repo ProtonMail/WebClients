@@ -20,10 +20,11 @@ interface AppsDropdownProps {
     onDropdownClick?: () => void;
     app?: APP_NAMES;
     user?: UserModel;
+    title?: string;
 }
 
 const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
-    ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
+    ({ onDropdownClick, app, user, title, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
 
         const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
@@ -43,7 +44,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                 className="apps-dropdown-button shrink-0"
                 dropdownClassName="apps-dropdown rounded-lg"
                 originalPlacement="bottom-start"
-                title={c('Apps dropdown').t`${BRAND_NAME} applications`}
+                title={title ? title : c('Apps dropdown').t`${BRAND_NAME} applications`}
                 onClick={onDropdownClick}
                 disableDefaultArrowNavigation
                 {...rest}

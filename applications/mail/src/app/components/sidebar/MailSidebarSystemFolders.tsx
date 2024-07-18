@@ -24,6 +24,7 @@ interface Props {
     showScheduled: boolean;
     showSnoozed: boolean;
     onToggleMoreItems: (display: boolean) => void;
+    collapsed?: boolean;
 }
 
 const DND_MORE_FOLDER_ID = 'DND_MORE_FOLDER_ID';
@@ -33,7 +34,14 @@ interface DnDWrapperProps extends React.DetailedHTMLProps<React.HTMLAttributes<H
     children: React.ReactElement;
 }
 const DnDElementWrapper = ({ isDnDAllowed, children, ...rest }: DnDWrapperProps) => {
-    return isDnDAllowed ? <div {...rest}>{children}</div> : children;
+    return isDnDAllowed ? (
+        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+        <div role="presentation" {...rest}>
+            {children}
+        </div>
+    ) : (
+        children
+    );
 };
 
 const MailSidebarSystemFolders = ({
@@ -47,6 +55,7 @@ const MailSidebarSystemFolders = ({
     totalMessagesMap,
     displayMoreItems,
     onToggleMoreItems,
+    collapsed = false,
 }: Props) => {
     const { ShowMoved, AlmostAllMail } = mailSettings;
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({
@@ -236,24 +245,29 @@ const MailSidebarSystemFolders = ({
                             onFocus={setFocusedItem}
                             shortcutText={element.shortcutText}
                             text={element.text}
+                            collapsed={collapsed}
                         />
                     </DnDElementWrapper>
                 ))}
-            <DnDElementWrapper
-                isDnDAllowed
-                key={'MORE_FOLDER_ITEM'}
-                onDragOver={handleDragOver(DND_MORE_FOLDER_ID)}
-                onDrop={handleDrop('MORE_FOLDER_ITEM', draggedElementId)}
-            >
-                <SimpleSidebarListItemHeader
-                    toggle={displayMoreItems}
-                    onToggle={(display: boolean) => onToggleMoreItems(display)}
-                    text={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
-                    title={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
-                    id="toggle-more-items"
-                    onFocus={setFocusedItem}
-                />
-            </DnDElementWrapper>
+            {!collapsed && (
+                <DnDElementWrapper
+                    isDnDAllowed
+                    key={'MORE_FOLDER_ITEM'}
+                    onDragOver={handleDragOver(DND_MORE_FOLDER_ID)}
+                    onDrop={handleDrop('MORE_FOLDER_ITEM', draggedElementId)}
+                >
+                    <SimpleSidebarListItemHeader
+                        toggle={displayMoreItems}
+                        onToggle={(display: boolean) => onToggleMoreItems(display)}
+                        text={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
+                        title={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
+                        id="toggle-more-items"
+                        onFocus={setFocusedItem}
+                        collapsed={collapsed}
+                    />
+                </DnDElementWrapper>
+            )}
+
             {displayMoreItems
                 ? sidebarElements
                       .filter((element) => element.display === SYSTEM_FOLDER_SECTION.MORE)
@@ -277,6 +291,7 @@ const MailSidebarSystemFolders = ({
                                   onFocus={setFocusedItem}
                                   shortcutText={element.shortcutText}
                                   text={element.text}
+                                  collapsed={collapsed}
                               />
                           </DnDElementWrapper>
                       ))
