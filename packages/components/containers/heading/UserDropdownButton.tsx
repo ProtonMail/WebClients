@@ -8,16 +8,20 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DropdownCaret } from '../..';
+import { DropdownCaret, IconName } from '../..';
 
 export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
     className?: string;
     isOpen?: boolean;
     notification?: ThemeColor;
+    dropdownIcon?: IconName;
 }
 
-const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
+const UserDropdownButton = (
+    { user, isOpen, notification, dropdownIcon, ...rest }: Props,
+    ref: Ref<HTMLButtonElement>
+) => {
     const { Email, DisplayName, Name } = user;
     const nameToDisplay = DisplayName || Name || ''; // nameToDisplay can be falsy for external account
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
@@ -33,7 +37,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             className="max-w-full flex items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
             title={title}
         >
-            <DropdownCaret className="md:hidden ml-1 color-weak" isOpen={isOpen} />
+            <DropdownCaret className="md:hidden ml-1 color-weak" iconName={dropdownIcon} isOpen={isOpen} />
 
             {nameToDisplay ? (
                 <span className="flex-1 lh130 user-dropdown-text">
