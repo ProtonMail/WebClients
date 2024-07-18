@@ -1041,6 +1041,9 @@
         "${ count } ver",
         "${ count } vistas"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } visualizações"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membros"
@@ -1124,15 +1127,6 @@
       ],
       "An item previously shared with you was removed": [
         "Um item compartilhado anteriormente com você foi removido"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Você tem certeza de que deseja mover todos os itens de \"${ fromVaultName }\" para \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Você tem certeza que deseja mover os itens para \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Você tem certeza que deseja mover o item para \"${ name }\"?"
       ],
       "Are you sure you want to remove the link?": [
         "Tem certeza de que deseja remover o link?"
@@ -1425,14 +1419,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Movendo um item para outro cofre apagará seu histórico"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Movendo um item para outro cofre apagará seu histórico e todos os links seguros."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Movendo um item para outro cofre apagará seu histórico."
       ],
       "Moving items": [
         "Movendo itens"
       ],
-      "Moving items to another vault will erase their history": [
-        "Movendo item para outro cofre apagará seus históricos"
+      "Moving items to another vault will erase their history.": [
+        "Movendo item para outro cofre apagará seus históricos."
       ],
       "Moving items to trash": [
         "Movendo itens para a lixeira"
@@ -2093,8 +2090,8 @@
       "Make all viewers": [
         "Definir todos como leitores"
       ],
-      "Max views reached": [
-        "Visualizações máximas alcançadas"
+      "max views reached": [
+        "visualizações máximas alcançadas"
       ],
       "Members": [
         "Membros"
@@ -2641,14 +2638,14 @@
       "Modified": [
         "Modificado"
       ],
-      "Move all items ?": [
-        "Mover todos os itens?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Mover todos os itens para \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Mover item?"
+      "Move item to \"${ vaultName }\"?": [
+        "Mover item para \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Mover itens?"
+      "Move items to \"${ vaultName }\"?": [
+        "Mover itens para \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Sem itens excluídos"
