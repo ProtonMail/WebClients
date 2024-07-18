@@ -39,13 +39,7 @@ export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd })
 
     return (
         <>
-            <Button
-                className="rounded-full w-full"
-                style={{ backgroundColor: 'var(--interaction-weak)' }}
-                color="norm"
-                shape="ghost"
-                onClick={() => setModal(true)}
-            >
+            <Button className="rounded-full w-full" color="weak" shape="solid" onClick={() => setModal(true)}>
                 <div className="flex items-center justify-center">
                     <Icon name="plus" />
                     <div className="ml-2 text-semibold">{c('Label').t`Add section`}</div>
@@ -69,11 +63,11 @@ export const IdentityAddNewSection: FC<IdentityAddNewSectionProps> = ({ onAdd })
 
                             <Button
                                 className="rounded-full w-full mt-2"
-                                style={{ backgroundColor: 'var(--interaction-weak)' }}
                                 form={formId}
                                 disabled={!form.isValid}
-                                color="norm"
-                                shape="ghost"
+                                color="weak"
+                                shape="solid"
+                                pill
                                 type="submit"
                             >
                                 <span className="text-ellipsis">{c('Action').t`Add section`}</span>
