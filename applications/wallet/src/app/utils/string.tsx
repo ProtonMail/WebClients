@@ -23,3 +23,16 @@ export const multilineStrToOnelineJsx = (str: string, prefix = 'oneline-str') =>
         ],
         [] as React.JSX.Element[]
     );
+
+export const formatReadableNameAndEmail = (name: string, email: string) => {
+    return (
+        <>
+            {name}{' '}
+            <span className="color-weak">
+                {'<'}
+                {email}
+                {'>'}
+            </span>
+        </>
+    );
+};
