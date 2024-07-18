@@ -34,9 +34,9 @@ export const getDefaultWalletName = (imported: boolean, wallets: IWasmApiWalletD
     return name;
 };
 
-export const getDefaultWalletAccountName = (walletAccounts: WasmApiWalletAccount[], index = 0): string => {
-    const indexStr = index.toString().padStart(2, '0');
-    const label = c('wallet_signup_2024:Wallet setup').t`My wallet account ${indexStr}`;
+export const getDefaultWalletAccountName = (walletAccounts: WasmApiWalletAccount[], index = 2): string => {
+    const indexStr = index.toString();
+    const label = c('wallet_signup_2024:Wallet setup').t`Account ${indexStr}`;
 
     if (walletAccounts.some((account) => account.Label === label)) {
         return getDefaultWalletAccountName(walletAccounts, index + 1);

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
+import { mockUseNotifications } from '@proton/testing/lib/vitest';
 import { apiWalletsData, mockUseUserWalletSettings } from '@proton/wallet/tests';
 
 import { WalletReceiveContent } from '.';
@@ -25,6 +26,7 @@ describe('WalletReceiveContent', () => {
         mockUseGetExchangeRate();
         mockUseFiatCurrencies();
         mockUseUserWalletSettings();
+        mockUseNotifications();
 
         const bitcoinURI = WasmPaymentLink.tryParse(
             'bitcoin:tb1qddqzdcxs9fp0xdd9nfycar58nfcq9s0xpsqf9h?amount=0.005',
