@@ -11,6 +11,10 @@
 		margin-inline-start: calc(var(--space-1) * -1);
 	}
 
+	.navigation-item {
+		flex-shrink: 0;
+	}
+
 	.navigation-link {
 		--navigation-current-item-background-color: var(--interaction-norm-minor-2);
 		--navigation-current-item-text-color: var(--interaction-norm-major-1);
