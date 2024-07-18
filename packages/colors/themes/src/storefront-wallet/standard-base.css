@@ -11,33 +11,37 @@
     --signal-info: #767DFF;
 
     --interaction-norm: #767DFF;
+    --interaction-norm-hover: #6367D7;
+    --interaction-norm-active: #6367D7;
 
-    --interaction-weak: #E2E2E2;
+    --interaction-weak: #E8E8E8;
+    --interaction-weak-hover: #CACBD3;
+    --interaction-weak-hover: #B3B6CC;
 
     --text-norm: #191C32;
-    --text-weak: #535964;
-    --text-hint: #9395A4;
-    --text-disabled: #CED0DE;
+    --text-weak: #767F8E;
+    --text-hint: #8E909F;
+    --text-disabled: #B3B6CC;
     --text-invert: white;
 
-    --field-norm: #CED0DE;
-    --field-hover: #9395A4;
-    --field-disabled: #E2E2E2;
+    --field-norm: #B3B6CC;
+    --field-hover: #8E909F;
+    --field-disabled: #CFCFCF;
 
     --focus-outline: #767DFF;
     --focus-ring: rgb(117 124 255 / 0.2);
 
-    --border-norm: #E2E2E2;
+    --border-norm: #CFCFCF;
     --border-weak: #E6E8EC;
 
     --background-norm: white;
-    --background-weak: #F3F5F6;
+    --background-weak: #F0F3F4;
     --background-strong: #E6E8EC;
     --background-invert: #191927;
 
     --interaction-default: transparent;
     --interaction-default-hover: rgb(200 209 214 / 0.2);
-    --interaction-default-active: rgb(200 209 214 / 0.35);
+    --interaction-default-active: rgb(200 209 214 / 0.45);
 
     --shadow-primary-color: 118 125 255;
     --shadow-norm-opacity: 0.1;
