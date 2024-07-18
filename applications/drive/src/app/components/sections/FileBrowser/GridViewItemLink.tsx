@@ -3,11 +3,12 @@ import { FileIcon } from '@proton/components';
 import SignatureIcon from '../../SignatureIcon';
 import { DriveItem } from '../Drive/Drive';
 import { SharedLinkItem } from '../SharedLinks/SharedLinks';
+import { SharedWithMeItem } from '../SharedWithMe/SharedWithMe';
 import { TrashItem } from '../Trash/Trash';
 import GridViewItemBase from './GridViewItem';
 import { getLinkIconText } from './utils';
 
-export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLinkItem }) {
+export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLinkItem | SharedWithMeItem }) {
     const iconText = getLinkIconText({
         isFile: item.isFile,
         mimeType: item.mimeType,
