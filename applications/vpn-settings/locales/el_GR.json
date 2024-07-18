@@ -358,6 +358,9 @@
       "Ok": [
         "OK"
       ],
+      "Open": [
+        "Άνοιγμα"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
@@ -671,6 +674,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } πρόσθετος προσαρμοσμένος τομέας",
+        "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
+      ],
       "${ ips } server": [
         "${ ips } διακομιστής",
         "${ ips } διακομιστές"
@@ -1266,6 +1273,9 @@
       "British Indian Ocean Territory": [
         "Βρετανικό Έδαφος Ινδικού Ωκεανού"
       ],
+      "British Virgin Islands": [
+        "Βρετανικές Παρθένοι Νήσοι"
+      ],
       "Brunei Darussalam": [
         "Μπρουνέι"
       ],
@@ -1320,6 +1330,9 @@
       "Congo": [
         "Κογκό"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Λαϊκή Δημοκρατία του Κονγκό"
+      ],
       "Congo, Democratic Republic of the": [
         "Κονγκό-Κινσάσα"
       ],
@@ -1359,6 +1372,9 @@
       "Dominican Republic": [
         "Δομινικανή Δημοκρατία"
       ],
+      "East Timor": [
+        "Ανατολικό Τιμόρ"
+      ],
       "Ecuador": [
         "Ισημερινός"
       ],
@@ -1385,6 +1401,9 @@
       ],
       "Falkland Islands": [
         "Νήσοι Φόκλαντ"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Νησιά Φώκλαντ (Μαλβίνες)"
       ],
       "Faroe Islands": [
         "Φερόες"
@@ -1497,6 +1516,9 @@
       "Ireland": [
         "Ιρλανδία"
       ],
+      "Islamic Republic of Iran": [
+        "Ισλαμική Δημοκρατία του Ιράν"
+      ],
       "Isle of Man": [
         "Νήσος Μαν"
       ],
@@ -1527,6 +1549,12 @@
       "Kiribati": [
         "Κιριμπάτι"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Λαϊκή Δημοκρατία της Κορέας"
+      ],
+      "Korea (Republic of)": [
+        "Δημοκρατία της Κορέας"
+      ],
       "Kosovo": [
         "Κόσοβο"
       ],
@@ -1535,6 +1563,9 @@
       ],
       "Kyrgyzstan": [
         "Κιργιστάν"
+      ],
+      "Lao People's Democratic Republic": [
+        "Λαϊκή Δημοκρατία του Λάος"
       ],
       "Laos": [
         "Λάος"
@@ -1554,6 +1585,9 @@
       "Libya": [
         "Λιβύη"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Λιβυκή Αραβική Τζαμαχιρία"
+      ],
       "Liechtenstein": [
         "Λιχτενστάιν"
       ],
@@ -1565,6 +1599,9 @@
       ],
       "Macao": [
         "Μακάο"
+      ],
+      "Macedonia": [
+        "ΠΓΔ Μακεδονίας"
       ],
       "Madagascar": [
         "Μαδαγασκάρη"
@@ -1818,6 +1855,9 @@
       "Svalbard and Jan Mayen": [
         "Σβάλμπαρντ"
       ],
+      "Swaziland": [
+        "Σουαζιλάνδη"
+      ],
       "Sweden": [
         "Σουηδία"
       ],
@@ -1827,6 +1867,9 @@
       "Syria": [
         "Συρία"
       ],
+      "Syrian Arab Republic": [
+        "Αραβική Δημοκρατία της Συρίας"
+      ],
       "Taiwan": [
         "Ταϊβάν"
       ],
@@ -1835,6 +1878,9 @@
       ],
       "Tanzania": [
         "Τανζανία"
+      ],
+      "Tanzania, United Republic of": [
+        "Ενωμένη Δημοκρατία της Τανζανίας"
       ],
       "Thailand": [
         "Ταϊλάνδη"
@@ -3045,6 +3091,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
@@ -3099,6 +3148,18 @@
       "${ userFound } user found": [
         "${ userFound } χρήστης βρέθηκε",
         "${ userFound } χρήστες βρέθηκαν"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } δημιουργήθηκε"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } διαγράφηκε"
+      ],
+      "${ vaultLink } shared with email": [
+        "Η ${ vaultLink } κοινοποιήθηκε μέσω ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } ενημερώθηκε"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } απαιτείται για σύνδεση επιπέδου Χώρας."
@@ -3267,6 +3328,15 @@
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "Προστέθηκε Προσαρμοσμένο Email Παραβίασης"
+      ],
+      "Breach Custom Email Deleted": [
+        "Διαγράφηκε Προσαρμοσμένο Email Παραβίασης"
+      ],
+      "Breach Custom Email Validated": [
+        "Επικυρώθηκε Προσαρμοσμένο Email Παραβίασης"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
@@ -3334,17 +3404,26 @@
       "Custom branding": [
         "Προσαρμοσμένη επωνυμία"
       ],
+      "Custom email added": [
+        "Η προσαρμοσμένη διεύθυνση ηλεκτρονικού ταχυδρομείου προστέθηκε"
+      ],
+      "Custom email deleted": [
+        "Το προσαρμοσμένο ηλεκτρονικό ταχυδρομείο διαγράφηκε"
+      ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
+      ],
+      "Custom email validated": [
+        "Η προσαρμοσμένη διεύθυνση ηλεκτρονικού ταχυδρομείου επικυρώθηκε"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -3630,6 +3709,9 @@
       "Invite Deleted": [
         "Η Πρόσκληση Διαγράφηκε"
       ],
+      "Invite for new user deleted": [
+        "Η πρόσκληση για τον νέο χρήστη διαγράφηκε"
+      ],
       "Invite for organization accepted": [
         "Η πρόσκληση για τον οργανισμό αποδέχτηκε"
       ],
@@ -3645,6 +3727,9 @@
       "Item Autofilled": [
         "Το στοιχείο συμπληρώθηκε αυτόματα"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Αυτόματη συμπλήρωση στοιχείου στο ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Το στοιχείο συμπληρώθηκε αυτόματα στην κρύπτη"
       ],
@@ -3654,20 +3739,44 @@
       "Item Created": [
         "Το στοιχείο Δημιουργήθηκε"
       ],
+      "Item created in ${ vaultLink }": [
+        "Το στοιχείο δημιουργήθηκε στην ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Το στοιχείο δημιουργήθηκε στην κρύπτη"
       ],
       "Item Deleted": [
         "Το στοιχείο Διαγράφτηκε"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Το στοιχείο διαγράφηκε από την ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Το στοιχείο διαγράφηκε από την κρύπτη"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Οι σημαίες στοιχείου άλλαξαν στην ${ vaultLink }"
+      ],
       "Item flags changed in vault": [
         "Οι σημαίες στοιχείου άλλαξαν στην κρύπτη"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Στοιχείο στο ${ vaultLink } απορρίφθηκε"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Στοιχείο στο ${ vaultLink } επαναφέρθηκε"
+      ],
+      "Item in vault trashed": [
+        "Το στοιχείο απορρίφθηκε από την κρύπτη"
       ],
       "Item in vault untrashed": [
         "Το στοιχείο επαναφέρθηκε στην κρύπτη"
       ],
       "Item Read": [
         "Το στοιχείο διαβάστηκε"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Το στοιχείο διαβάστηκε στην ${ vaultLink }"
       ],
       "Item read in vault": [
         "Το στοιχείο διαβάστηκε στην κρύπτη"
@@ -3680,6 +3789,9 @@
       ],
       "Item Updated": [
         "Το στοιχείο Ενημερώθηκε"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Το στοιχείο ενημερώθηκε στην ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Το στοιχείο ενημερώθηκε στην κρύπτη"
@@ -3773,6 +3885,9 @@
       ],
       "New User Invite Deleted": [
         "Διαγράφηκε η Πρόσκληση Νέου Χρήστη"
+      ],
+      "New user invited to organization": [
+        "Ο νέος χρήστης προσκλήθηκε στον οργανισμό"
       ],
       "No addresses exist": [
         "Δεν υπάρχουν διευθύνσεις"
@@ -3998,6 +4113,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
+      "Session Ended": [
+        "Η Συνεδρία Έληξε"
+      ],
+      "Session Roaming": [
+        "Περιαγωγή Συνεδρίας"
+      ],
+      "Session Started": [
+        "Η Συνεδρία Ξεκίνησε"
+      ],
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
       ],
@@ -4012,6 +4136,12 @@
       ],
       "Share Updated": [
         "Η κοινοποίηση Ενημερώθηκε"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Κοινόχρηστο ${ vaultLink } διαγράφηκε"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Κοινόχρηστο ${ vaultLink } ενημερώθηκε"
       ],
       "Shared vault deleted": [
         "Διαγράφηκε η κοινοποιημένη κρύπτη"
@@ -5389,6 +5519,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "for ${ price }": [
         "για ${ price }"
       ]
@@ -5707,6 +5840,9 @@
       "Collaborate and share large files": [
         "Συνεργασία και κοινή χρήση μεγάλων αρχείων"
       ],
+      "Collaborative document editor": [
+        "Συνεργατικό πρόγραμμα επεξεργασίας εγγράφων"
+      ],
       "Contact groups": [
         "Ομάδες επαφών"
       ],
@@ -5742,12 +5878,6 @@
       ],
       "DNS leak prevention": [
         "Αποτροπή διαρροής DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Επεξεργαστές εγγράφων (έγγραφα, φύλλα, διαφάνειες)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Επεξεργαστές εγγράφων (έγγραφα, φύλλα, διαφάνειες) (σύντομα)"
       ],
       "Double hop": [
         "Διπλή μεταπήδηση"
@@ -5859,9 +5989,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Τακτικοί έλεγχοι της ασφάλειας του λογαριασμού σας. Σας ειδοποιούμε εάν έχετε αδύναμους ή επαναχρησιμοποιημένους κωδικούς πρόσβασης που πρέπει να ενημερωθούν."
       ],
-      "Reply to messages": [
-        "Απαντήστε σε μηνύματα"
-      ],
       "Require 2FA for organization": [
         "Απαιτείται 2FA για οργάνωση"
       ],
@@ -5946,6 +6073,9 @@
       ],
       "Unlimited labels": [
         "Απεριόριστες ετικέτες"
+      ],
+      "Unlimited logins and notes": [
+        "Απεριόριστες συνδέσεις και σημειώσεις"
       ],
       "Unlimited logins, notes and credit cards": [
         "Απεριόριστες συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
@@ -8746,10 +8876,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -8787,6 +8917,9 @@
       ],
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
+      ],
+      "Connection events": [
+        "Συμβάντα σύνδεσης"
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
@@ -8950,6 +9083,9 @@
       "Forgot recovery method": [
         "Ξεχάσατε τη μέθοδο ανάκτησης"
       ],
+      "Gateway": [
+        "Πύλη"
+      ],
       "Gateways": [
         "Πύλες"
       ],
@@ -9024,6 +9160,9 @@
       ],
       "Organization name": [
         "Όνομα οργανισμού"
+      ],
+      "Origin": [
+        "Προέλευση"
       ],
       "Password": [
         "Κωδικός"

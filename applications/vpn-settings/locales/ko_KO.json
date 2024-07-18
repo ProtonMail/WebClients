@@ -1378,6 +1378,9 @@
       "Falkland Islands": [
         "포클랜드 제도"
       ],
+      "Falkland Islands (Malvinas)": [
+        "포클랜드 제도 (말비나스)"
+      ],
       "Faroe Islands": [
         "페로 제도"
       ],
@@ -1818,6 +1821,9 @@
       ],
       "Syria": [
         "시리아"
+      ],
+      "Syrian Arab Republic": [
+        "시리아 아랍 공화국"
       ],
       "Taiwan": [
         "타이완"
@@ -3076,6 +3082,12 @@
       "${ userFound } user found": [
         "${ userFound }명 사용자 찾음"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } 생성됨"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } 업데이트됨"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "국가 수준의 접속에는 ${ vpnPlus }가 필요합니다."
       ],
@@ -3310,10 +3322,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -5680,12 +5692,6 @@
       "DNS leak prevention": [
         "DNS 유출 방지"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "문서 편집기 (문서, 스프레드시트, 슬라이드 쇼)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "문서 편집기 (문서, 스프레드시트, 슬라이드 쇼) (곧 찾아옵니다)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5794,9 +5800,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
       ],
-      "Reply to messages": [
-        "메시지에 답장하기"
-      ],
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
       ],
@@ -5880,6 +5883,9 @@
       ],
       "Unlimited labels": [
         "무제한 라벨"
+      ],
+      "Unlimited logins and notes": [
+        "무제한 로그인 및 메모"
       ],
       "Unlimited logins, notes and credit cards": [
         "무제한 로그인, 메모 및 신용 카드"
@@ -8651,11 +8657,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -8692,6 +8698,9 @@
       ],
       "Confirm phone number": [
         "전화번호 확인"
+      ],
+      "Connection events": [
+        "연결된 이벤트"
       ],
       "Contact us": [
         "문의"

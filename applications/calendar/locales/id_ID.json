@@ -1606,6 +1606,9 @@
       "British Indian Ocean Territory": [
         "Teritori Samudera Hindia Inggris"
       ],
+      "British Virgin Islands": [
+        "Kepulauan Virgin Inggris"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -1660,6 +1663,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Republik Demokratik)"
+      ],
       "Congo, Democratic Republic of the": [
         "Republik Demokratik Kongo"
       ],
@@ -1699,6 +1705,9 @@
       "Dominican Republic": [
         "Republik Dominika"
       ],
+      "East Timor": [
+        "Timor Timur"
+      ],
       "Ecuador": [
         "Ekuador"
       ],
@@ -1725,6 +1734,9 @@
       ],
       "Falkland Islands": [
         "Kepulauan Falkland"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Kepulauan Falkland (Malvinas)"
       ],
       "Faroe Islands": [
         "Kepulauan Faroe"
@@ -1837,6 +1849,9 @@
       "Ireland": [
         "Irlandia"
       ],
+      "Islamic Republic of Iran": [
+        "Republik Islam Iran"
+      ],
       "Isle of Man": [
         "Pulau Mann"
       ],
@@ -1867,6 +1882,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Republik Rakyat Demokratik)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republik)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1875,6 +1896,9 @@
       ],
       "Kyrgyzstan": [
         "Kyrgyzstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Republik Demokratik Rakyat Laos"
       ],
       "Laos": [
         "Laos"
@@ -1894,6 +1918,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya Arab Libya"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1905,6 +1932,9 @@
       ],
       "Macao": [
         "Makau"
+      ],
+      "Macedonia": [
+        "Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2158,6 +2188,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard dan Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Swedia"
       ],
@@ -2167,6 +2200,9 @@
       "Syria": [
         "Suriah"
       ],
+      "Syrian Arab Republic": [
+        "Republik Arab Suriah"
+      ],
       "Taiwan": [
         "Taiwan"
       ],
@@ -2175,6 +2211,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, Republik Serikat"
       ],
       "Thailand": [
         "Thailand"
@@ -6210,6 +6249,9 @@
       "Collaborate and share large files": [
         "Kolaborasi dan berbagi file besar"
       ],
+      "Collaborative document editor": [
+        "Penyunting dokumen kolaboratif"
+      ],
       "Contact groups": [
         "Grup kontak"
       ],
@@ -6242,12 +6284,6 @@
       ],
       "DNS leak prevention": [
         "Perlindungan terhadap kebocoran DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Editor dokumen (doc, sheet, slide)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Penyunting dokumen (dokumen, lembar bentang, salindia) (segera)"
       ],
       "Double hop": [
         "Double hop"
@@ -6350,9 +6386,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
-      ],
-      "Reply to messages": [
-        "Balas pesan"
       ],
       "Require 2FA for organization": [
         "2FA wajib bagi organisasi"
@@ -7160,6 +7193,20 @@
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Pembagian brankas aman (${ n } brankas) dan tautan aman"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Kunci organisasi tidak ada."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Izin ditolak. Hak administrator telah dibatasi."
+      ],
+      "The organization key must be activated first.": [
+        "Kunci organisasi harus diaktifkan terlebih dahulu."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Anda memerlukan akses ke kunci organisasi untuk melangsungkan tindakan ini."
       ]
     },
     "Payment method option": {

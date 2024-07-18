@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Geöffnet"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
       ],
@@ -5606,6 +5609,17 @@
         "Dienste"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Gruppenadresse"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } mitglied",
+        "${ memberCount } mitglieder"
+      ]
+    },
     "Header": {
       "Access": [
         "Zugriff"
@@ -8237,6 +8251,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Führe eine Abonnementaufwertung auf ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder ${ PLAN_NAMES[bundleProPlan] } durch um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -11226,12 +11243,6 @@
       "DNS leak prevention": [
         "DNS-Leakschutz"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentbearbeitung (Dokumente, Tabellen, Präsentationen)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Bearbeitungsprogramme (Dokumente, Tabellen, Präsentationen) (kommt bald)"
-      ],
       "Double hop": [
         "Double Hop"
       ],
@@ -11342,9 +11353,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
       ],
-      "Reply to messages": [
-        "Antworte auf Nachrichten"
-      ],
       "Require 2FA for organization": [
         "2FA für die Organisation erforderlich"
       ],
@@ -11432,6 +11440,9 @@
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
+      ],
+      "Unlimited logins and notes": [
+        "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Anmeldungen, Notizen und Kreditkarten"
@@ -12812,6 +12823,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-Dienste.${ br }Ein einfaches Abonnement."
+      ],
+      "Create a ${ appName } account": [
+        "Erstelle ein ${ appName }-Konto"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Erstelle dein ${ BRAND_NAME }-Konto"
@@ -15785,6 +15799,9 @@
       "Forward emails": [
         "E-Mails weiterleiten"
       ],
+      "Gateway": [
+        "Gateway"
+      ],
       "Gateways": [
         "Gateways"
       ],
@@ -16818,6 +16835,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administratoren können nicht auf die Daten von privaten Benutzern zugreifen."
       ],

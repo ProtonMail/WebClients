@@ -113,10 +113,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -378,7 +378,7 @@
         "Recargar la extensión"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove access": [
         "Eliminar el acceso"
@@ -501,7 +501,7 @@
         "Desbloquear el modo sin conexión con contraseña"
       ],
       "Unpin item": [
-        "Desanclar elemento"
+        "Desanclar el elemento"
       ],
       "Update": [
         "Actualizar"
@@ -1090,15 +1090,6 @@
       "An item previously shared with you was removed": [
         "Se ha borrado un elemento previamente compartido contigo."
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "¿Estás seguro de que quieres mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "¿Estás seguro de que quieres mover los elementos a «${ name }»?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "¿Estás seguro de que quieres mover el elemento a «${ name }»?"
-      ],
       "Are you sure you want to remove the link?": [
         "¿Estás seguro de que quieres borrar el enlace?"
       ],
@@ -1378,14 +1369,8 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Mover un elemento a otra caja fuerte eliminará su historial."
-      ],
       "Moving items": [
         "Moviendo elementos"
-      ],
-      "Moving items to another vault will erase their history": [
-        "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
         "Moviendo elemento a la papelera"
@@ -1440,7 +1425,7 @@
         "Acceso pendiente a los datos compartidos"
       ],
       "Permanently deleting selected items": [
-        "Eliminando permanentemente los elementos selecionados"
+        "Eliminando permanentemente los elementos seleccionados"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fija ${ PASS_APP_NAME } en tu barra de herramientas"
@@ -1687,7 +1672,7 @@
         "Lector"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
+        "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione correctamente."
       ],
       "You are about to create:": [
         "Vas a crear:"
@@ -1883,6 +1868,9 @@
       "Copy": [
         "Copiar"
       ],
+      "Copy password": [
+        "Copiar la contraseña"
+      ],
       "Create a credit card": [
         "Crear una tarjeta de crédito"
       ],
@@ -2045,8 +2033,8 @@
       "Make all viewers": [
         "Promover a todos como lectores"
       ],
-      "Max views reached": [
-        "Se ha alcanzado el máximo de visualizaciones."
+      "max views reached": [
+        "se ha alcanzado el máximo de visualizaciones."
       ],
       "Members": [
         "Miembros"
@@ -2407,7 +2395,7 @@
         "Seleccionar un sufijo"
       ],
       "Shared vault": [
-        "caja fuerte compartida"
+        "Caja fuerte compartida"
       ],
       "Unknown origin": [
         "Origen desconocido"
@@ -2474,6 +2462,9 @@
       "Fill & copy password": [
         "Rellenar y copiar la contraseña"
       ],
+      "Fill password": [
+        "Rellenar la contraseña"
+      ],
       "Get Started": [
         "Comenzar"
       ],
@@ -2518,15 +2509,6 @@
       ],
       "Modified": [
         "Modificado"
-      ],
-      "Move all items ?": [
-        "¿Mover todos los elementos?"
-      ],
-      "Move item?": [
-        "¿Mover el elemento?"
-      ],
-      "Move items?": [
-        "¿Mover los elementos?"
       ],
       "No items selected": [
         "No hay elementos seleccionados."
@@ -2589,7 +2571,7 @@
         "Sugerencias"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
-        "¿Quieries cambiar a ${ PASS_APP_NAME }?"
+        "¿Quieres cambiar a ${ PASS_APP_NAME }?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Gracias por instalar ${ PASS_APP_NAME }"
@@ -2745,9 +2727,6 @@
       ],
       "No items matching": [
         "No hay elementos que coincidan."
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "No se ha encontrado ninguna clave de acceso. Guarda tus claves de acceso en ${ PASS_APP_NAME } para iniciar sesión en ${ domain }."
       ],
       "No password manager selected": [
         "No has seleccionado ningún gestor de contraseñas."

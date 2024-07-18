@@ -1768,6 +1768,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -2207,6 +2210,9 @@
         "Švýcarsko"
       ],
       "Syria": [
+        "Sýrie"
+      ],
+      "Syrian Arab Republic": [
         "Sýrie"
       ],
       "Taiwan": [
@@ -6534,12 +6540,6 @@
       "DNS leak prevention": [
         "Prevence úniků DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace) (již brzy)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6648,9 +6648,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
-      "Reply to messages": [
-        "Odpovědět na zprávy"
-      ],
       "Require 2FA for organization": [
         "Vyžaduje 2FA pro organizaci"
       ],
@@ -6725,6 +6722,9 @@
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
+      ],
+      "Unlimited logins and notes": [
+        "Neomezený počet přihlášení a poznámek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
@@ -7547,6 +7547,20 @@
         "Bezpečné sdílení trezoru (${ n } trezory) a sdílení odkazu",
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Klíč organizace neexistuje."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Přístup odepřen, oprávnění správce byla omezena."
+      ],
+      "The organization key must be activated first.": [
+        "Nejprve musí být aktivován klíč organizace."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Pro provedení této operace potřebujete přístup ke klíči organizace."
       ]
     },
     "Payment method option": {
@@ -9775,6 +9789,9 @@
       ],
       "Send invitation": [
         "Odeslat pozvánku"
+      ],
+      "Set recovery phrase": [
+        "Nastavit obnovovací frázi"
       ],
       "Settings": [
         "Nastavení"

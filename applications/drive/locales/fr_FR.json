@@ -342,6 +342,12 @@
       "Expand folder": [
         "Agrandir le dossier"
       ],
+      "Explore on my own": [
+        "Explorer par moi-même"
+      ],
+      "Explore while you wait": [
+        "Explorez pendant que vous attendez"
+      ],
       "Export": [
         "Exporter"
       ],
@@ -1637,6 +1643,9 @@
       "Falkland Islands": [
         "Îles Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Îles Malouines"
+      ],
       "Faroe Islands": [
         "Îles Féroé"
       ],
@@ -2078,6 +2087,9 @@
       "Syria": [
         "Syrie"
       ],
+      "Syrian Arab Republic": [
+        "Syrie"
+      ],
       "Taiwan": [
         "Taïwan"
       ],
@@ -2245,6 +2257,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Définissez une méthode de récupération pour éviter de perdre l'accès à votre compte."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Pour garantir la plus grande sécurité possible de votre compte, définissez une phrase de récupération."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -3056,6 +3071,9 @@
     "Error message": {
       "Access denied": [
         "L'accès est refusé."
+      ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
       ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
@@ -6632,6 +6650,9 @@
       "Collaborate and share large files": [
         "Collaboration et partage de fichiers volumineux"
       ],
+      "Collaborative document editor": [
+        "Éditeur de documents collaboratif"
+      ],
       "Contact groups": [
         "Groupes de contacts"
       ],
@@ -6664,12 +6685,6 @@
       ],
       "DNS leak prevention": [
         "Prévention des fuites DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations) (bientôt)"
       ],
       "Double hop": [
         "Double hop"
@@ -6774,9 +6789,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
-      ],
-      "Reply to messages": [
-        "Répondre aux messages"
       ],
       "Require 2FA for organization": [
         "A2F requise pour l'organisation"
@@ -7592,6 +7604,12 @@
         "Il suffit de faire les actions suivantes d'ici ${ expiresInDays } jour :",
         "Il suffit de faire les actions suivantes d'ici ${ expiresInDays } jours :"
       ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Stockez vos fichiers et partagez-les en toute sécurité. Commencez par sécuriser vos fichiers les plus confidentiels, comme vos pièces d'identité, vos contrats et vos photos personnelles."
+      ],
+      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
+        "Le propriétaire doit confirmer l'accès au partage. Vous recevrez un e-mail une fois confirmation."
+      ],
       "Upload a file": [
         "Importer un fichier"
       ],
@@ -7620,6 +7638,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Approbation finale en cours"
+      ],
+      "Hang tight!": [
+        "Patientez un instant."
+      ],
+      "Upload and protect your important files": [
+        "Importez et protégez vos fichiers importants"
+      ],
       "Your welcome bonus": [
         "Votre bonus de bienvenue"
       ]
@@ -7668,6 +7695,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
         "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clé de l'organisation n'existe pas."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "L'autorisation est refusée. Les droits administrateur ont été restreints."
+      ],
+      "The organization key must be activated first.": [
+        "La clé de l'organisation doit d'abord être activée."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
       ]
     },
     "Payment method option": {
@@ -8661,7 +8702,7 @@
         "${ MAIL_APP_NAME } garantit la sécurité de vos données et permet d'envoyer des e-mails chiffrés à tout le monde."
       ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME }avec transfert automatique des messages"
+        "${ MAIL_APP_NAME } avec transfert automatique des messages"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } calendrier par utilisateur",
@@ -8754,7 +8795,7 @@
         "Tout ce dont votre entreprise a besoin"
       ],
       "Any custom email domains will be disabled": [
-        "Toute demande de messagerie personnalisé sera désactivé."
+        "Toute demande de messagerie personnalisée sera désactivée."
       ],
       "Automatic email forwarding": [
         "Transfert automatique des messages"
@@ -8865,7 +8906,7 @@
         "Restez en sécurité et connecté partout"
       ],
       "Support your compliance objectives": [
-        "Facilitez vos efforts pour être en conformité"
+        "Prise en charge de vos objectifs de conformité"
       ],
       "Sync files on devices": [
         "Synchroniser des fichiers sur vos appareils"

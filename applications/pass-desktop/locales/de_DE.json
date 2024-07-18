@@ -1125,15 +1125,6 @@
       "An item previously shared with you was removed": [
         "Ein zuvor mit dir geteilter Eintrag wurde entfernt."
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Bist du dir sicher, dass du alle Einträge von \"${ fromVaultName }\" nach \"${ toVaultName }\" verschieben willst?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Bist du sicher, dass du die Einträge nach \"${ name }\" verschieben willst?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Bist du sicher, dass du den Eintrag nach \"${ name }\" verschieben willst?"
-      ],
       "Are you sure you want to remove the link?": [
         "Bist du sicher, dass du diesen Link entfernen möchtest?"
       ],
@@ -1401,14 +1392,8 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf."
-      ],
       "Moving items": [
         "Einträge verschieben"
-      ],
-      "Moving items to another vault will erase their history": [
-        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf."
       ],
       "Moving items to trash": [
         "Einträge werden in den Papierkorb verschoben"
@@ -1521,6 +1506,9 @@
       ],
       "Removing extra password...": [
         "Zusätzliches Passwort wird entfernt..."
+      ],
+      "Removing secure link...": [
+        "Entfernen des sicheren Links..."
       ],
       "Restoring items from trash": [
         "Einträge vom Papierkorb werden wiederhergestellt"
@@ -2036,8 +2024,8 @@
       "Make all viewers": [
         "Alle zu Betrachtern machen"
       ],
-      "Max views reached": [
-        "Maximale Ansichten erreicht"
+      "max views reached": [
+        "maximale Ansichten erreicht"
       ],
       "Members": [
         "Mitglieder"
@@ -2583,15 +2571,6 @@
       ],
       "Modified": [
         "Geändert"
-      ],
-      "Move all items ?": [
-        "Alle Einträge verschieben?"
-      ],
-      "Move item?": [
-        "Eintrag verschieben?"
-      ],
-      "Move items?": [
-        "Einträge verschieben?"
       ],
       "No excluded items": [
         "Keine ausgeschlossenen Einträge"

@@ -831,6 +831,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Otevřít"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
       ],
@@ -1530,6 +1533,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Rychlé a bezpečné. Nejsou uchovávány logy."
+      ],
+      "Faster, broader device compatibility": [
+        "Rychlejší a s širší kompatibilitou se zařízeními"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Během používání se nepřenášejí žádná data, vyžaduje jednorázové stažení"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Vyžaduje jednorázové stažení a kompatibilní hardware."
@@ -2700,6 +2709,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -3139,6 +3151,9 @@
         "Švýcarsko"
       ],
       "Syria": [
+        "Sýrie"
+      ],
+      "Syrian Arab Republic": [
         "Sýrie"
       ],
       "Taiwan": [
@@ -5163,9 +5178,6 @@
       ],
       "Tell us more": [
         "Řekněte nám více"
-      ],
-      "Write faster with the writing assistant": [
-        "Pište rychleji s asistentem psaní"
       ]
     },
     "Hint": {
@@ -6424,9 +6436,6 @@
       "Left to Right": [
         "Zleva doprava"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Dovolte asistentovi psaní pomoci vám se psaním a odpovídáním na e-maily a sledujte, jak díky tomu roste vaše produktivita."
-      ],
       "Link type": [
         "Typ odkazu"
       ],
@@ -6585,9 +6594,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Můžete mít otevřeného jen jednoho asistenta psaní."
       ],
       "Open shortcut cheat sheet": [
         "Otevření nápovědy pro klávesové zkratky"
@@ -9272,12 +9278,6 @@
       "DNS leak prevention": [
         "Prevence úniků DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace) (již brzy)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9386,9 +9386,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
-      "Reply to messages": [
-        "Odpovědět na zprávy"
-      ],
       "Require 2FA for organization": [
         "Vyžaduje 2FA pro organizaci"
       ],
@@ -9463,6 +9460,9 @@
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
+      ],
+      "Unlimited logins and notes": [
+        "Neomezený počet přihlášení a poznámek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
@@ -12181,6 +12181,12 @@
       "Verification successful": [
         "Ověření proběhlo úspěšně"
       ],
+      "Writing assistant disabled": [
+        "Asistent psaní deaktivován"
+      ],
+      "Writing assistant enabled": [
+        "Asistent psaní povolen"
+      ],
       "Writing assistant setting updated": [
         "Aktualizováno nastavení asistenta psaní"
       ],
@@ -12975,6 +12981,9 @@
       ],
       "Sending original message": [
         "Odesílání původní zprávy"
+      ],
+      "Set recovery phrase": [
+        "Nastavit obnovovací frázi"
       ],
       "Set your own schedule": [
         "Nastavte si vlastní plán"

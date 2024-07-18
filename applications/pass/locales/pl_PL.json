@@ -1044,6 +1044,9 @@
         "otwarto ${ count } razy",
         "otwarto ${ count } razy"
       ],
+      "${ count }/${ maxReads } views": [
+        "Otwarto ${ count } / ${ maxReads } razy"
+      ],
       "${ memberCount } member": [
         "${ memberCount } użytkownik",
         "${ memberCount } użytkowników",
@@ -1133,15 +1136,6 @@
       ],
       "An item previously shared with you was removed": [
         "Poprzednio udostępniony element został usunięty"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Czy chcesz przenieść wszystkie elementy z sejfu \"${ fromVaultName }\" do \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Czy na pewno chcesz przenieść elementy do sejfu \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Czy na pewno chcesz przenieść element do sejfu \"${ name }\"?"
       ],
       "Are you sure you want to remove the link?": [
         "Czy na pewno chcesz usunąć link?"
@@ -1443,14 +1437,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii i linków."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii."
       ],
       "Moving items": [
         "Przenoszenie elementów"
       ],
-      "Moving items to another vault will erase their history": [
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i linków."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii."
       ],
       "Moving items to trash": [
         "Przenoszenie elementów do Kosza"
@@ -2120,8 +2120,8 @@
       "Make all viewers": [
         "Ustaw uprawnienie odczytu wszystkim"
       ],
-      "Max views reached": [
-        "Maksymalna liczba dostępów została osiągnięta"
+      "max views reached": [
+        "maksymalna liczba dostępów została osiągnięta"
       ],
       "Members": [
         "Użytkownicy"
@@ -2671,14 +2671,14 @@
       "Modified": [
         "Zmodyfikowano"
       ],
-      "Move all items ?": [
-        "Przenieść wszystkie elementy?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Przenieść element?"
+      "Move item to \"${ vaultName }\"?": [
+        "Przenieść element do sejfu \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Przenieść elementy?"
+      "Move items to \"${ vaultName }\"?": [
+        "Przenieść elementy do sejfu \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Brak wykluczonych elementów"

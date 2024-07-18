@@ -537,7 +537,7 @@
         "Actualizar la página"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove bonuses": [
         "Borrar los beneficios"
@@ -1742,6 +1742,9 @@
       "Falkland Islands": [
         "Islas Malvinas"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Islas Falkland (Malvinas)"
+      ],
       "Faroe Islands": [
         "Islas Faroe"
       ],
@@ -2181,6 +2184,9 @@
         "Suiza"
       ],
       "Syria": [
+        "Siria"
+      ],
+      "Syrian Arab Republic": [
         "Siria"
       ],
       "Taiwan": [
@@ -6346,12 +6352,6 @@
       "DNS leak prevention": [
         "Protección contra filtraciones del DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editores de documentos (documentos, hojas de cálculo y presentaciones)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editores de documentos (documentos, hojas de cálculo y presentaciones) (próximamente)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6455,9 +6455,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
-      ],
-      "Reply to messages": [
-        "Responder a mensajes"
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -6891,7 +6888,7 @@
         "La tecnología NetShield se ha diseñado especialmente para proteger tu dispositivo y que puedas navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
-        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y${ PASS_APP_NAME }."
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }. Los administradores pueden asignar cantidades distintas a los usuarios de tu organización"
@@ -7296,6 +7293,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
         "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clave de la organización no existe."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "El permiso ha sido denegado. Los privilegios de administrador se han limitado."
+      ],
+      "The organization key must be activated first.": [
+        "La clave de la organización debe activarse primero."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Necesitas acceso a la clave de la organización para realizar esta acción."
       ]
     },
     "Payment method option": {
@@ -7792,7 +7803,7 @@
         "Cancelar la solicitud"
       ],
       "Got it": [
-        "Entiendo"
+        "Entendido"
       ],
       "Learn more": [
         "Más información"

@@ -920,7 +920,7 @@
         "Actualizar la página"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove ${ attachmentName }": [
         "Borrar ${ attachmentName }"
@@ -1524,6 +1524,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Rápido y seguro. No se guardan registros."
+      ],
+      "Faster, broader device compatibility": [
+        "Compatibilidad con dispositivos más rápida y amplia"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "No se transmiten datos durante el uso. Requiere una descarga única."
       ],
       "Requires a one-time download and compatible hardware.": [
         "Requiere una sola descarga y hardware compatible."
@@ -2684,6 +2690,9 @@
       "Falkland Islands": [
         "Islas Malvinas"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Islas Falkland (Malvinas)"
+      ],
       "Faroe Islands": [
         "Islas Faroe"
       ],
@@ -3123,6 +3132,9 @@
         "Suiza"
       ],
       "Syria": [
+        "Siria"
+      ],
+      "Syrian Arab Republic": [
         "Siria"
       ],
       "Taiwan": [
@@ -5100,9 +5112,6 @@
       ],
       "Tell us more": [
         "Cuéntanos más"
-      ],
-      "Write faster with the writing assistant": [
-        "Escribe más rápido con el asistente de escritura"
       ]
     },
     "Hint": {
@@ -6230,9 +6239,6 @@
       "Left to Right": [
         "Izquierda a Derecha"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Permite que el asistente de escritura te ayude a escribir y responder a correos y mira cómo aumenta tu productividad."
-      ],
       "Link type": [
         "Tipo de enlace"
       ],
@@ -6391,9 +6397,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Solo un asistente de escritura puede estar abierto a la vez."
       ],
       "Open shortcut cheat sheet": [
         "Abrir la lista de trucos de atajos"
@@ -7600,6 +7603,9 @@
       ],
       " and ${ l }": [
         " y ${ l }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
@@ -8988,12 +8994,6 @@
       "DNS leak prevention": [
         "Protección contra filtraciones del DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editores de documentos (documentos, hojas de cálculo y presentaciones)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editores de documentos (documentos, hojas de cálculo y presentaciones) (próximamente)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9097,9 +9097,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
-      ],
-      "Reply to messages": [
-        "Responder a mensajes"
       ],
       "Require 2FA for organization": [
         "Requerir 2FA para organización"
@@ -9533,7 +9530,7 @@
         "La tecnología NetShield se ha diseñado especialmente para proteger tu dispositivo y que puedas navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
-        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y${ PASS_APP_NAME }."
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }. Los administradores pueden asignar cantidades distintas a los usuarios de tu organización"
@@ -9746,7 +9743,7 @@
         "Operaciones bancarias"
       ],
       "Crypto": [
-        "Cripto"
+        "Criptomonedas"
       ],
       "E-commerce and Retail": [
         "Comercio electrónico y en tienda"
@@ -10550,7 +10547,7 @@
         "Cancelar la solicitud"
       ],
       "Got it": [
-        "Entiendo"
+        "Entendido"
       ],
       "Learn more": [
         "Más información"
@@ -11756,6 +11753,12 @@
       ],
       "Verification successful": [
         "Verificación completada"
+      ],
+      "Writing assistant disabled": [
+        "El asistente de escritura ha sido desactivado."
+      ],
+      "Writing assistant enabled": [
+        "El asistente de escritura ha sido activado."
       ],
       "Writing assistant setting updated": [
         "El ajuste del asistente de escritura ha sido actualizado."

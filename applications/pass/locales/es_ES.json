@@ -374,7 +374,7 @@
         "Recargar"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove access": [
         "Eliminar el acceso"
@@ -491,7 +491,7 @@
         "Papelera"
       ],
       "Try again.": [
-        "Vuelva a intentarlo."
+        "Intenta nuevamente."
       ],
       "Try for free": [
         "Pruébalo gratis"
@@ -500,7 +500,7 @@
         "Desbloquear el modo sin conexión con contraseña"
       ],
       "Unpin item": [
-        "Desanclar elemento"
+        "Desanclar el elemento"
       ],
       "Update vault": [
         "Actualizar la caja fuerte"
@@ -1109,15 +1109,6 @@
       "An item previously shared with you was removed": [
         "Se ha borrado un elemento previamente compartido contigo."
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "¿Estás seguro de que quieres mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "¿Estás seguro de que quieres mover los elementos a «${ name }»?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "¿Estás seguro de que quieres mover el elemento a «${ name }»?"
-      ],
       "Are you sure you want to remove the link?": [
         "¿Estás seguro de que quieres borrar el enlace?"
       ],
@@ -1412,14 +1403,8 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Mover un elemento a otra caja fuerte eliminará su historial."
-      ],
       "Moving items": [
         "Moviendo elementos"
-      ],
-      "Moving items to another vault will erase their history": [
-        "Mover los elementos a otra caja fuerte eliminará su historial."
       ],
       "Moving items to trash": [
         "Moviendo elemento a la papelera"
@@ -1474,7 +1459,7 @@
         "En pausa"
       ],
       "Permanently deleting selected items": [
-        "Eliminando permanentemente los elementos selecionados"
+        "Eliminando permanentemente los elementos seleccionados"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se ha registrado el código PIN. Utilízalo para desbloquear ${ PASS_APP_NAME }."
@@ -1712,7 +1697,7 @@
         "Lector"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
+        "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione correctamente."
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Hemos enviado un código de verificación a ${ email }. Ingresa el código abajo:"
@@ -2071,8 +2056,8 @@
       "Make all viewers": [
         "Promover a todos como lectores"
       ],
-      "Max views reached": [
-        "Se ha alcanzado el máximo de visualizaciones."
+      "max views reached": [
+        "se ha alcanzado el máximo de visualizaciones."
       ],
       "Members": [
         "Miembros"
@@ -2451,7 +2436,7 @@
         "Seleccionar un sufijo"
       ],
       "Shared vault": [
-        "caja fuerte compartida"
+        "Caja fuerte compartida"
       ],
       "Unknown origin": [
         "Origen desconocido"
@@ -2618,15 +2603,6 @@
       ],
       "Modified": [
         "Modificado"
-      ],
-      "Move all items ?": [
-        "¿Mover todos los elementos?"
-      ],
-      "Move item?": [
-        "¿Mover el elemento?"
-      ],
-      "Move items?": [
-        "¿Mover los elementos?"
       ],
       "No excluded items": [
         "No hay elementos excluidos."
