@@ -7,7 +7,7 @@ import ContactEmailsProvider from '@proton/components/containers/contacts/Contac
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { EncryptedLink, LinkShareUrl, useSharedWithMeView, useThumbnailsDownload } from '../../../store';
+import { EncryptedLink, ShareInvitationDetails, useSharedWithMeView, useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -21,7 +21,7 @@ import FileBrowser, {
     useSelection,
 } from '../../FileBrowser';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
-import { NameCell, SharedByCell, SharedOnCell } from '../FileBrowser/contentCells';
+import { AcceptOrRejectInvite, NameCell, SharedByCell, SharedOnCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
 import { getSelectedItems } from '../helpers';
@@ -31,21 +31,21 @@ import { SharedWithMeContextMenu } from './SharedWithMeItemContextMenu';
 export interface SharedWithMeItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];
     cachedThumbnailUrl?: string;
-    hasThumbnail: boolean;
+    hasThumbnail?: boolean;
     isFile: boolean;
     mimeType: string;
-    fileModifyTime: number;
     name: string;
-    shareUrl?: LinkShareUrl;
     signatureIssues?: any;
     signatureAddress?: string;
-    size: number;
+    size?: number;
     trashed: number | null;
-    parentLinkId: string;
     rootShareId: string;
     volumeId: string;
     sharedOn?: number;
     sharedBy?: string;
+    invitationDetails?: ShareInvitationDetails;
+    acceptInvitation?: (invitationId: string) => Promise<void>;
+    rejectInvitation?: (invitationId: string) => Promise<void>;
 }
 
 type Props = {
@@ -59,7 +59,7 @@ const largeScreenCells: React.FC<{ item: SharedWithMeItem }>[] = [
     CheckboxCell,
     NameCell,
     SharedByCell,
-    SharedOnCell,
+    ({ item }) => (item.invitationDetails ? <AcceptOrRejectInvite item={item} /> : <SharedOnCell item={item} />),
     ContextMenuCell,
 ];
 const smallScreenCells = [CheckboxCell, NameCell, ContextMenuCell];
@@ -87,16 +87,27 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const { openDocument } = useDocumentActions();
     const { canUseDocs } = useDriveDocsFeatureFlag();
 
-    const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
-
-    // rootShareId is unique per item in shared with me section, so we can use it as id key
+    const { layout, items, sortParams, setSorting, isLoading, pendingInvitations } = sharedWithMeView;
     const selectedItems = useMemo(
         () => getSelectedItems(items, selectionControls!.selectedItemIds, 'rootShareId'),
         [items, selectionControls!.selectedItemIds]
     );
 
     const browserItems: SharedWithMeItem[] = items.map((item) => ({ ...item, id: item.rootShareId }));
-
+    const pendingInvitationsItems: SharedWithMeItem[] = pendingInvitations.map((item) => ({
+        isFile: item.link.isFile,
+        trashed: null,
+        mimeType: item.link.mimeType,
+        rootShareId: item.share.shareId,
+        id: item.link.linkId,
+        name: item.link.name,
+        invitationDetails: item,
+        sharedBy: item.invitation.inviterEmail,
+        acceptInvitation: sharedWithMeView.acceptPendingInvitation,
+        rejectInvitation: sharedWithMeView.rejectPendingInvitation,
+        linkId: item.link.linkId,
+        volumeId: item.share.volumeId,
+    }));
     const handleClick = useCallback(
         (id: BrowserItemId) => {
             const item = browserItems.find((item) => item.id === id);
@@ -155,7 +166,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    if (!items.length && !isLoading) {
+    if (!items.length && !pendingInvitations.length && !isLoading) {
         return <EmptySharedWithMe />;
     }
 
@@ -174,7 +185,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
             />
             <FileBrowser
                 caption={c('Title').t`Shared`}
-                items={browserItems}
+                items={[...browserItems, ...pendingInvitationsItems]}
                 headerItems={headerItems}
                 layout={layout}
                 loading={isLoading}
