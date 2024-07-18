@@ -1,3 +1,25 @@
+### Version 1.20.1
+
+-   Improved authentication system
+-   Revamped cookie management to preserve SessionUID
+
+### Version 1.20.0
+
+-   Add support for secure-links
+-   Add support for email/username split on login items
+-   Fix stale invites being cached
+
+### Version 1.19.2
+
+-   Improved offline detection
+-   Fine-tune password unlocking
+-   Fix auth refresh triggered on too many unlock attempts
+
+### Version 1.19.1
+
+-   Add extra password support
+-   Fix missing 2FA warning for B2B organizations
+
 ### Version 1.18.0
 
 -   Allow locking pass with account password
