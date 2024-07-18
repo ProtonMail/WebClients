@@ -1057,15 +1057,6 @@
       "An item previously shared with you was removed": [
         "Елемент, до якого раніше було надано доступ, було видалено"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Ви впевнені, що хочете перемістити всі елементи з \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Ви дійсно бажаєте перемістити елементи до \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Ви впевнені, що хочете перемістити елемент до \"${ name }\" ?"
-      ],
       "Auto-lock successfully disabled.": [
         "Автоблокування успішно вимкнено."
       ],
@@ -1318,14 +1309,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Переміщення предмета до іншого сховища призведе до стирання його історії"
+      "Moving an item to another vault will erase its history.": [
+        "Переміщення предмета до іншого сховища призведе до стирання його історії."
       ],
       "Moving items": [
         "Переміщення елементів"
       ],
-      "Moving items to another vault will erase their history": [
-        "Переміщення елементів до іншого сховища призведе до стирання їх історії"
+      "Moving items to another vault will erase their history.": [
+        "Переміщення елементів до іншого сховища призведе до стирання їх історії."
       ],
       "Moving items to trash": [
         "Переміщення елементів до смітника"
@@ -2401,15 +2392,6 @@
       ],
       "Modified": [
         "Змінено"
-      ],
-      "Move all items ?": [
-        "Перемістити всі елементи ?"
-      ],
-      "Move item?": [
-        "Перемістити елемент?"
-      ],
-      "Move items?": [
-        "Перемістити елементи?"
       ],
       "No excluded items": [
         "Немає виключених елементів"
