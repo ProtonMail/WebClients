@@ -1,4 +1,4 @@
-import { type ComponentType, useCallback, useEffect, useMemo, useState } from 'react';
+import { type ComponentType, useCallback, useMemo, useState } from 'react';
 
 import type { FactoryOpts } from 'imask/masked/factory';
 import cloneDeep from 'lodash/cloneDeep';
@@ -73,12 +73,6 @@ export const getInitialState = (shareId: string): IdentityItemFormValues => ({
     note: '',
 });
 
-const buildCustomField = (fieldName: FieldName) => ({
-    name: fieldName,
-    label: c('Label').t`Custom field`,
-    placeholder: c('Label').t`Custom field`,
-});
-
 type IdentityFormFields = Record<string, IdentityField>;
 const getIdentityFields = (): IdentityFormFields => ({
     fullName: {
@@ -123,7 +117,11 @@ const getIdentityFields = (): IdentityFormFields => ({
         label: c('Label').t`Gender`,
         placeholder: c('Label').t`Gender`,
     },
-    extraPersonalDetails: buildCustomField('extraPersonalDetails'),
+    extraPersonalDetails: {
+        name: 'extraPersonalDetails',
+        label: c('Label').t`Custom field`,
+        placeholder: c('Label').t`Custom field`,
+    },
     organization: {
         name: 'organization',
         label: c('Label').t`Organization`,
@@ -214,10 +212,19 @@ const getIdentityFields = (): IdentityFormFields => ({
         label: c('Label').t`Work email`,
         placeholder: c('Label').t`Work email`,
     },
-    extraWorkDetails: buildCustomField('extraWorkDetails'),
+    extraWorkDetails: {
+        name: 'extraWorkDetails',
+        label: c('Label').t`Custom field`,
+        placeholder: c('Label').t`Custom field`,
+    },
+    extraWorkDetailsHidden: {
+        name: 'extraWorkDetails',
+        label: c('Label').t`Custom field`,
+        placeholder: c('Label').t`Custom field`,
+    },
 });
 
-const buildNewFormSections = (identityFields: IdentityFormFields): FieldSection[] => [
+const getFormSections = (identityFields: IdentityFormFields): FieldSection[] => [
     {
         name: c('Label').t`Personal details`,
         expanded: true,
@@ -270,6 +277,7 @@ const buildNewFormSections = (identityFields: IdentityFormFields): FieldSection[
                 identityFields.workPhoneNumber,
                 identityFields.workEmail,
                 identityFields.extraWorkDetails,
+                identityFields.extraWorkDetailsHidden,
             ],
         },
     },
@@ -286,8 +294,11 @@ const mapToIdentityField = (fields: UnsafeItemExtraField[], fieldName: string): 
         value: customField.type === 'text' ? customField.data.content : '',
     }));
 
-const buildEditFormSections = (identityFields: IdentityFormFields, initialValues: ItemIdentity): FieldSection[] => {
-    const formSections = buildNewFormSections(identityFields);
+const buildSections = (identityFields: IdentityFormFields, initialValues?: ItemIdentity): FieldSection[] => {
+    const formSections = getFormSections(identityFields);
+
+    if (!initialValues) return formSections;
+
     return formSections.map<FieldSection>((section) => {
         const { fields = [], optionalFields = [] } = Object.groupBy(section?.optionalFields?.fields ?? [], (field) =>
             !field.name.includes('extra') && initialValues[field.name] ? 'fields' : 'optionalFields'
@@ -302,7 +313,7 @@ const buildEditFormSections = (identityFields: IdentityFormFields, initialValues
 
 export const useIdentityFormSections = (initialValues?: ItemIdentity) => {
     const identityFields = useMemo(() => getIdentityFields(), []);
-    const [sections, setSections] = useState<FieldSection[]>([]);
+    const [sections, setSections] = useState<FieldSection[]>(buildSections(identityFields, initialValues));
     const getField = useCallback(
         (index: number, fieldName: string) =>
             sections[index].optionalFields?.fields.find(({ name }) => name === fieldName)!,
@@ -362,11 +373,6 @@ export const useIdentityFormSections = (initialValues?: ItemIdentity) => {
                     expanded: true,
                 }))
             );
-
-    useEffect(() => {
-        if (initialValues) setSections(buildEditFormSections(identityFields, initialValues));
-        else setSections(buildNewFormSections(identityFields));
-    }, []);
 
     return { sections, getFilteredSections, updateSectionFields };
 };

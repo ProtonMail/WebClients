@@ -13,7 +13,7 @@ export const IdentityContent: FC<ItemContentProps<'identity'>> = ({
     },
 }) => {
     const { sections, getFilteredSections } = useIdentityFormSections();
-    const fieldSections = useMemo(() => getFilteredSections(content), [content, sections]);
+    const fieldSections = useMemo(() => getFilteredSections(content), [sections]);
 
     return fieldSections.map(({ name, fields }, sectionIndex) => (
         <section key={`${name}${sectionIndex}`}>
