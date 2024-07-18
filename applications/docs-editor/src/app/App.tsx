@@ -180,6 +180,7 @@ export function App({ nonInteractiveMode = false }: Props) {
 
           if (editorInitializationConfig) {
             setInitialConfig({ documentId, username, editorInitializationConfig: editorInitializationConfig })
+            newDocState.initializeIsConverting(true)
           } else {
             setInitialConfig({ documentId, username })
           }
