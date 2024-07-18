@@ -2410,6 +2410,9 @@
       "Falkland Islands": [
         "फ़ॉकलैंड आइलैंड"
       ],
+      "Falkland Islands (Malvinas)": [
+        "फ़ॉकलैंड आइलैंड्स (माल्विनास)"
+      ],
       "Faroe Islands": [
         "फ़ेरो आइलैंड्स"
       ],
@@ -2850,6 +2853,9 @@
       ],
       "Syria": [
         "सिरिया"
+      ],
+      "Syrian Arab Republic": [
+        "सीरियाई अरब गणराज्य"
       ],
       "Taiwan": [
         "ताइवान"
@@ -5082,6 +5088,12 @@
         "सेवाएं"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } मेंबर",
+        "${ memberCount } मेंबर"
+      ]
+    },
     "Header": {
       "Access": [
         "एक्सेस करें"
@@ -5717,6 +5729,12 @@
       "${ userFound } user found": [
         "${ userFound } यूज़र मिले",
         "${ userFound } यूज़र मिले"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } बनाया गया"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } अपडेट किया गया"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "देश स्तर के कनेक्शन के लिए ${ vpnPlus } चाहिए।"
@@ -7553,6 +7571,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } तक पहुंच प्राप्त करने के लिए ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, या ${ PLAN_NAMES[bundleProPlan] } प्लान में अपग्रेड करें।"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "अपने खाते में एक छोटा @pm.me पता जोड़ने के लिए अपग्रेड करें जिसे साझा करना आसान हो। इसका मतलब है “${ MAIL_APP_NAME } me” या “मुझे निजी संदेश भेजें”।"
@@ -10277,9 +10298,6 @@
       "DNS leak prevention": [
         "DNS लीक सुरक्षा"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "दस्तावेज़ बदलें (डॉक, शीट, स्लाइड)"
-      ],
       "Double hop": [
         "Double Hop"
       ],
@@ -10444,6 +10462,9 @@
       ],
       "Unlimited labels": [
         "असीमित लेबल"
+      ],
+      "Unlimited logins and notes": [
+        "असीम लॉगइन और नोट"
       ],
       "Unlimited messages per day": [
         "असीमित संदेश हर दिन"
@@ -13716,6 +13737,9 @@
       ],
       "Folders and labels": [
         "फ़ोल्डर्स और लेबल"
+      ],
+      "Forgot recovery method": [
+        "रिकवरी विधि भूल गए"
       ],
       "Forward and auto-reply": [
         "फॉरवर्ड और स्वचालित-उत्तर"

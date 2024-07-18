@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Otevřít"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
@@ -2561,6 +2564,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -3000,6 +3006,9 @@
         "Švýcarsko"
       ],
       "Syria": [
+        "Sýrie"
+      ],
+      "Syrian Arab Republic": [
         "Sýrie"
       ],
       "Taiwan": [
@@ -5663,6 +5672,14 @@
         "Služby"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členové",
+        "${ memberCount } členů",
+        "${ memberCount } členů"
+      ]
+    },
     "Header": {
       "Access": [
         "Přístup"
@@ -6353,6 +6370,12 @@
         "Nalezeni ${ userFound } uživatelé",
         "Nalezeno ${ userFound } uživatelů",
         "Nalezeno ${ userFound } uživatelů"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } byl vytvořen"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } byl aktualizován"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Země vyžaduje tarif ${ vpnPlus }."
@@ -8366,6 +8389,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Navyšte na tarif ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, nebo ${ PLAN_NAMES[bundleProPlan] } a získejte přístup k ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Navyšte tarif pro získání kratší adresy @pm.me, kterou lze snáze sdílet. Její význam je \"${ MAIL_APP_NAME } me\" nebo \"Private Message me\"."
@@ -11443,12 +11469,6 @@
       "DNS leak prevention": [
         "Prevence úniků DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace) (již brzy)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11563,9 +11583,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
-      "Reply to messages": [
-        "Odpovědět na zprávy"
-      ],
       "Require 2FA for organization": [
         "Vyžaduje 2FA pro organizaci"
       ],
@@ -11655,6 +11672,9 @@
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
+      ],
+      "Unlimited logins and notes": [
+        "Neomezený počet přihlášení a poznámek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
@@ -12815,7 +12835,7 @@
     },
     "pass_signup_2023: Header": {
       "Checkout": [
-        "Zaplaťte"
+        "Zaplatit"
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Pokračujte pomocí vašeho ${ BRAND_NAME } účtu"
@@ -13090,6 +13110,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Všechny služby ${ BRAND_NAME } Plus.${ br }Jedno jednoduché předplatné."
+      ],
+      "Create a ${ appName } account": [
+        "Vytvořit účet ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
