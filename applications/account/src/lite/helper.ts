@@ -2,6 +2,7 @@ import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 
 export enum SupportedActions {
+    WalletSettings = 'wallet-settings',
     DeleteAccount = 'delete-account',
     SubscribeAccount = 'subscribe-account',
     SubscribeAccountLink = 'subscribe-account-link',
