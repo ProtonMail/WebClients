@@ -162,7 +162,7 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
 
                     <div className="mt-2">
                         <Input
-                            label={c('Unknown sender').t`Email address (optional)`}
+                            label={c('Unknown sender').t`Email address`}
                             placeholder={c('Unknown sender').t`Add their email address`}
                             value={email}
                             error={error}

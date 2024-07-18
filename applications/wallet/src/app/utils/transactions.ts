@@ -10,7 +10,7 @@ import { WalletMap } from '@proton/wallet';
 
 import { TransactionData } from '../hooks/useWalletTransactions';
 import { isSelfAddress } from './email';
-import { multilineStrToOnelineJsx } from './string';
+import { formatReadableNameAndEmail, multilineStrToOnelineJsx } from './string';
 
 const toMsTimestamp = (ts: number | BigInt) => {
     return Number(ts) * SECOND;
@@ -45,25 +45,37 @@ export const getFormattedPeriodSinceConfirmation = (now: Date, confirmation: Dat
     return format(confirmation, 'MMM d, y, p', options);
 };
 
-export const getTransactionSenderHumanReadableName = (transaction: TransactionData, walletMap: WalletMap) => {
-    const isSentTx = transaction.networkData.sent > transaction.networkData.received;
+const getWalletAndAccountFromTransaction = (transaction: TransactionData, walletMap: WalletMap) => {
+    const { apiData } = transaction;
 
-    // If transaction was sent using the current wallet account, we display the Wallet - WalletAccount as sender
-    if (isSentTx && transaction.apiData?.WalletID && transaction.apiData?.WalletAccountID) {
-        const wallet = walletMap[transaction.apiData.WalletID];
-        const account = wallet?.accounts[transaction.apiData.WalletAccountID];
-
-        if (wallet && account) {
-            return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
-        }
+    if (!apiData) {
+        return { wallet: undefined, account: undefined };
     }
 
+    const wallet = walletMap[apiData.WalletID];
+    const account = apiData.WalletAccountID ? wallet?.accounts[apiData.WalletAccountID] : undefined;
+
+    return { wallet, account };
+};
+
+export const getTransactionSenderHumanReadableName = (transaction: TransactionData, walletMap: WalletMap) => {
+    const isSentTx = transaction.networkData.sent > transaction.networkData.received;
+    const { wallet, account } = getWalletAndAccountFromTransaction(transaction, walletMap);
+
+    // If transaction was sent using the current wallet account, we display the Wallet - WalletAccount as sender
+    if (isSentTx && wallet && account) {
+        return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
+    }
     // If there is a sender attached to the transaction, we display it
-    if (transaction.apiData?.Sender) {
-        if (typeof transaction.apiData?.Sender === 'string') {
-            return transaction.apiData?.Sender;
+    const sender = transaction.apiData?.Sender;
+    if (sender) {
+        if (typeof sender === 'string') {
+            return sender;
         } else {
-            return `${transaction.apiData?.Sender.name} - ${transaction.apiData?.Sender.email}`;
+            if (sender.name && sender.email) {
+                return formatReadableNameAndEmail(sender.name, sender.email);
+            }
+            return sender.email;
         }
     }
 
@@ -79,15 +91,11 @@ export const getTransactionRecipientHumanReadableName = (
 ) => {
     const address = transaction.apiData?.ToList[output.address];
     const isSentTx = transaction.networkData.sent > transaction.networkData.received;
+    const { wallet, account } = getWalletAndAccountFromTransaction(transaction, walletMap);
 
     // If output is owned by wallet account and transaction wasn't sent from it, we display the Wallet - WalletAccount as recipient
-    if (!isSentTx && output.is_mine && transaction.apiData?.WalletID && transaction.apiData?.WalletAccountID) {
-        const wallet = walletMap[transaction.apiData.WalletID];
-        const account = wallet?.accounts[transaction.apiData.WalletAccountID];
-
-        if (wallet && account) {
-            return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
-        }
+    if (!isSentTx && output.is_mine && wallet && account) {
+        return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
     }
 
     if (address) {
