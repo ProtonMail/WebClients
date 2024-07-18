@@ -358,6 +358,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Otevřít"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
@@ -1402,6 +1405,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -1841,6 +1847,9 @@
         "Švýcarsko"
       ],
       "Syria": [
+        "Sýrie"
+      ],
+      "Syrian Arab Republic": [
         "Sýrie"
       ],
       "Taiwan": [
@@ -3148,6 +3157,12 @@
         "Nalezeno ${ userFound } uživatelů",
         "Nalezeno ${ userFound } uživatelů"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } byl vytvořen"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } byl aktualizován"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Země vyžaduje tarif ${ vpnPlus }."
       ],
@@ -3400,11 +3415,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -5875,12 +5890,6 @@
       "DNS leak prevention": [
         "Prevence úniků DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentů (dokumenty, tabulky, prezentace) (již brzy)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5995,9 +6004,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
       ],
-      "Reply to messages": [
-        "Odpovědět na zprávy"
-      ],
       "Require 2FA for organization": [
         "Vyžaduje 2FA pro organizaci"
       ],
@@ -6084,6 +6090,9 @@
       ],
       "Unlimited labels": [
         "Neomezeně štítků"
+      ],
+      "Unlimited logins and notes": [
+        "Neomezený počet přihlášení a poznámek"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neomezený počet přihlášení, poznámek a platebních karet"
@@ -9008,10 +9017,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [

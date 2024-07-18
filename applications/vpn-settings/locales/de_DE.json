@@ -358,6 +358,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Geöffnet"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
       ],
@@ -3350,11 +3353,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -5754,12 +5757,6 @@
       "DNS leak prevention": [
         "DNS-Leakschutz"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentbearbeitung (Dokumente, Tabellen, Präsentationen)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Bearbeitungsprogramme (Dokumente, Tabellen, Präsentationen) (kommt bald)"
-      ],
       "Double hop": [
         "Double Hop"
       ],
@@ -5870,9 +5867,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
       ],
-      "Reply to messages": [
-        "Antworte auf Nachrichten"
-      ],
       "Require 2FA for organization": [
         "2FA für die Organisation erforderlich"
       ],
@@ -5957,6 +5951,9 @@
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
+      ],
+      "Unlimited logins and notes": [
+        "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Anmeldungen, Notizen und Kreditkarten"
@@ -8739,11 +8736,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-all address": [
-        "Catch-all-Weiterleitungsadresse"
-      ],
       "Catch-All address": [
         "Catch-all-Adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -8942,6 +8939,9 @@
       ],
       "Forgot recovery method": [
         "Wiederherstellungsmethode vergessen"
+      ],
+      "Gateway": [
+        "Gateway"
       ],
       "Gateways": [
         "Gateways"
@@ -9461,6 +9461,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Administratoren können nicht auf die Daten von privaten Benutzern zugreifen."
       ],

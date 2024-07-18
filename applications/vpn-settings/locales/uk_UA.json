@@ -1385,6 +1385,9 @@
       "Falkland Islands": [
         "Фолклендські острови"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Фолклендські острови (Мальвінські)"
+      ],
       "Faroe Islands": [
         "Фарерські острови"
       ],
@@ -1825,6 +1828,9 @@
       ],
       "Syria": [
         "Сирія"
+      ],
+      "Syrian Arab Republic": [
+        "Сирійська Арабська Республіка"
       ],
       "Taiwan": [
         "Тайвань"
@@ -3102,6 +3108,12 @@
         "Знайдено ${ userFound } користувачів",
         "Знайдено ${ userFound } користувачів"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } створено"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } оновлено"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Для з'єднання на рівні країни потрібен ${ vpnPlus }."
       ],
@@ -3354,11 +3366,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -5759,12 +5771,6 @@
       "DNS leak prevention": [
         "Захист від витоку DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Редактори документів (документи, таблиці, слайди)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Засоби редагування (документи, електронні таблиці, слайди) (незабаром)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5959,6 +5965,9 @@
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
+      ],
+      "Unlimited logins and notes": [
+        "Необмежена кількість імен користувачів та нотаток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -8601,11 +8610,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"
