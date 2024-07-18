@@ -543,6 +543,9 @@
       "Ok": [
         "Ok"
       ],
+      "Open": [
+        "Geöffnet"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
       ],
@@ -6716,12 +6719,6 @@
       "DNS leak prevention": [
         "DNS-Leakschutz"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentbearbeitung (Dokumente, Tabellen, Präsentationen)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Bearbeitungsprogramme (Dokumente, Tabellen, Präsentationen) (kommt bald)"
-      ],
       "Double hop": [
         "Double Hop"
       ],
@@ -6826,9 +6823,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
       ],
-      "Reply to messages": [
-        "Antworte auf Nachrichten"
-      ],
       "Require 2FA for organization": [
         "2FA für die Organisation erforderlich"
       ],
@@ -6903,6 +6897,9 @@
       ],
       "Unlimited labels": [
         "Unbegrenzte Anzahl von Kategorien"
+      ],
+      "Unlimited logins and notes": [
+        "Unbegrenzte Logins und Notizen"
       ],
       "Unlimited logins, notes and credit cards": [
         "Unbegrenzte Anmeldungen, Notizen und Kreditkarten"
@@ -7716,6 +7713,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Sichere Tresorfreigabe (${ n } Tresor) und Linkfreigabe",
         "Sichere Tresorfreigabe (${ n } Tresore) und Linkfreigabe"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisation-Schlüssel ist nicht vorhanden."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
+      ],
+      "The organization key must be activated first.": [
+        "Der Organisationsschlüssel muss zuerst aktiviert werden."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du benötigst Zugriff auf den Organisationsschlüssel, um diese Operation durchzuführen."
       ]
     },
     "Payment method option": {

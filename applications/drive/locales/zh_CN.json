@@ -1561,6 +1561,9 @@
       "Falkland Islands": [
         "奥兰群岛"
       ],
+      "Falkland Islands (Malvinas)": [
+        "福克兰群岛（马尔维纳斯）"
+      ],
       "Faroe Islands": [
         "法罗群岛"
       ],
@@ -2000,6 +2003,9 @@
         "瑞士"
       ],
       "Syria": [
+        "叙利亚"
+      ],
+      "Syrian Arab Republic": [
         "叙利亚"
       ],
       "Taiwan": [
@@ -6375,9 +6381,6 @@
       "DNS leak prevention": [
         "防范 DNS 泄露"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "文档编辑器（文字、表格、幻灯片）"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6527,6 +6530,9 @@
       ],
       "Unlimited labels": [
         "标签数量不限"
+      ],
+      "Unlimited logins and notes": [
+        "无限制登录和备注"
       ],
       "Unlimited messages per day": [
         "每日发送邮件不限量"
@@ -7214,6 +7220,17 @@
     "Participant name": {
       "You": [
         "你"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "组织密钥不存在."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "权限被拒绝, 管理员权限受到限制。"
+      ],
+      "The organization key must be activated first.": [
+        "必须先激活机构密钥。"
       ]
     },
     "Payment method option": {
@@ -8794,6 +8811,9 @@
       ],
       "Send feedback": [
         "发送反馈"
+      ],
+      "Set recovery phrase": [
+        "设置恢复密语"
       ],
       "Settings": [
         "设置"
