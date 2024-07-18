@@ -1402,6 +1402,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -1842,6 +1845,9 @@
       ],
       "Syria": [
         "Sýria"
+      ],
+      "Syrian Arab Republic": [
+        "Sýrska arabská republika"
       ],
       "Taiwan": [
         "Taiwan"
@@ -3079,6 +3085,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Ak budete pokračovať, stratíte prístup ku všetkým aktuálnym zašifrovaným údajom vo vašom účte."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
       ],
@@ -3147,6 +3156,12 @@
         "${ userFound } nájdení používatelia",
         "${ userFound } nájdených používateľov",
         "${ userFound } nájdených používateľov"
+      ],
+      "${ vaultLink } created": [
+        "Štítok ${ vaultLink } bol vytvorený"
+      ],
+      "${ vaultLink } updated": [
+        "Štítok ${ vaultLink } bol aktualizovaný"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Pre pripojenie na úrovni krajiny sa vyžaduje ${ vpnPlus }."
@@ -3394,17 +3409,26 @@
       "Custom branding": [
         "Vlastná značka"
       ],
+      "Custom email added": [
+        "Vlastný email pridaný"
+      ],
+      "Custom email deleted": [
+        "Vlastný email vymazaný"
+      ],
       "Custom email domains": [
         "Vlastné emailové domény"
+      ],
+      "Custom email validated": [
+        "Vlastný email overený"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prispôsobte si vzhľad a štýl aplikácií ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -3694,6 +3718,9 @@
       "Invite Deleted": [
         "Pozvánka vymazaná"
       ],
+      "Invite for new user deleted": [
+        "Pozvánka pre nového používateľa bola vymazaná"
+      ],
       "Invite for organization accepted": [
         "Pozvánka pre organizáciu prijatá"
       ],
@@ -3718,14 +3745,23 @@
       "Item Created": [
         "Položka bola vytvorená"
       ],
+      "Item created in ${ vaultLink }": [
+        "Položka vytvorená v trezore ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Položka v trezore vytvorená"
       ],
       "Item Deleted": [
         "Položka bola vymazaná"
       ],
+      "Item deleted from vault": [
+        "Položka bola z trezora vymazaná"
+      ],
       "Item flags changed in vault": [
         "Príznaky položky v trezore zmenené"
+      ],
+      "Item in vault trashed": [
+        "Položka v trezore bola presunutá do koša"
       ],
       "Item in vault untrashed": [
         "Položka v trezore vyňatá z koša"
@@ -3744,6 +3780,9 @@
       ],
       "Item Updated": [
         "Položka bola aktualizovaná"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Položka v trezore ${ vaultLink } bola aktualizovaná"
       ],
       "Item updated in vault": [
         "Položka v trezore aktualizovaná"
@@ -3837,6 +3876,9 @@
       ],
       "New User Invite Deleted": [
         "Nová pozvánka používateľa vymazaná"
+      ],
+      "New user invited to organization": [
+        "Do organizácie bol pozvaný nový používateľ"
       ],
       "No addresses exist": [
         "Neexistujú žiadne adresy"
@@ -5869,12 +5911,6 @@
       "DNS leak prevention": [
         "Prevencia úniku DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie) (čoskoro)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5989,9 +6025,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
       ],
-      "Reply to messages": [
-        "Odpovedať na správy"
-      ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
       ],
@@ -6078,6 +6111,9 @@
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
+      ],
+      "Unlimited logins and notes": [
+        "Neobmedzený počet prihlásení a poznámok"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
@@ -8981,10 +9017,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -9191,6 +9227,9 @@
       "Forgot recovery method": [
         "Zabudnutá metóda obnovenia"
       ],
+      "Gateway": [
+        "Brána"
+      ],
       "Gateways": [
         "Brány"
       ],
@@ -9265,6 +9304,9 @@
       ],
       "Organization name": [
         "Názov organizácie"
+      ],
+      "Origin": [
+        "Pôvod"
       ],
       "Password": [
         "Heslo"

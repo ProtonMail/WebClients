@@ -358,6 +358,9 @@
       "Ok": [
         "D'acord"
       ],
+      "Open": [
+        "Obert"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
@@ -1390,6 +1393,9 @@
       "Falkland Islands": [
         "Illes Flkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Illes Falkland (Malvines)"
+      ],
       "Faroe Islands": [
         "Illes Fèroe"
       ],
@@ -1829,6 +1835,9 @@
         "Suïssa"
       ],
       "Syria": [
+        "Síria"
+      ],
+      "Syrian Arab Republic": [
         "Síria"
       ],
       "Taiwan": [
@@ -3377,11 +3386,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -4067,6 +4076,15 @@
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
+      ],
+      "Session Ended": [
+        "S'ha finalitzat la sessió."
+      ],
+      "Session Roaming": [
+        "Sessió itinerant"
+      ],
+      "Session Started": [
+        "S'ha iniciat la sessió."
       ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
@@ -5819,12 +5837,6 @@
       "DNS leak prevention": [
         "Prevenció de fuites de DNS."
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions) (aviat)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5934,9 +5946,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
-      ],
-      "Reply to messages": [
-        "Respon als missatges"
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -8831,10 +8840,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -8872,6 +8881,9 @@
       ],
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
+      ],
+      "Connection events": [
+        "Esdeveniments de connexió"
       ],
       "Contact us": [
         "Contacteu amb nosaltres"
@@ -9112,6 +9124,9 @@
       ],
       "Organization name": [
         "Nom de l'organització"
+      ],
+      "Origin": [
+        "Origen"
       ],
       "Password": [
         "Contrasenya"
@@ -9553,6 +9568,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
       ],

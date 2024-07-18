@@ -358,6 +358,9 @@
       "Ok": [
         "OK"
       ],
+      "Open": [
+        "Avaa"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
@@ -1390,6 +1393,9 @@
       "Falkland Islands": [
         "Falklandinsaaret"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandinsaaret"
+      ],
       "Faroe Islands": [
         "Färsaaret"
       ],
@@ -1829,6 +1835,9 @@
         "Sveitsi"
       ],
       "Syria": [
+        "Syyria"
+      ],
+      "Syrian Arab Republic": [
         "Syyria"
       ],
       "Taiwan": [
@@ -3049,6 +3058,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Menetät pääsyn kaikkiin tililläsi tällä hetkellä oleviin salattuihin tietoihin, jos jatkat."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
@@ -3103,6 +3115,18 @@
       "${ userFound } user found": [
         "Löytyi ${ userFound } käyttäjä",
         "Löytyi ${ userFound } käyttäjää"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } luotiin"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } poistettiin"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } jaettiin sähköpostitse"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } päivitettiin"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Maakohtaiset yhteydet edellyttävät ${ vpnPlus } -tilausta."
@@ -3271,6 +3295,15 @@
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "Tietomurtojen oma sähköposti lisättiin"
+      ],
+      "Breach Custom Email Deleted": [
+        "Tietomurtojen oma sähköposti poistettiin"
+      ],
+      "Breach Custom Email Validated": [
+        "Tietomurtojen oma sähköposti vahvistettiin"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
@@ -3338,17 +3371,26 @@
       "Custom branding": [
         "Oma brändäys"
       ],
+      "Custom email added": [
+        "Oma sähköpostiosoite lisättiin"
+      ],
+      "Custom email deleted": [
+        "Oma sähköpostiosoite poistettiin"
+      ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
+      ],
+      "Custom email validated": [
+        "Oma sähköpostiosoite vahvistettiin"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -3634,6 +3676,9 @@
       "Invite Deleted": [
         "Kutsu poistettiin"
       ],
+      "Invite for new user deleted": [
+        "Uuden käyttäjän kutsu poistettiin"
+      ],
       "Invite for organization accepted": [
         "Kutsu organisaatioon hyväksyttiin"
       ],
@@ -3649,6 +3694,9 @@
       "Item Autofilled": [
         "Kohde automaattitäytettiin"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Holvin ${ vaultLink } kohde automaattitäytettiin"
+      ],
       "Item autofilled in vault": [
         "Holvin kohde automaattitäytettiin"
       ],
@@ -3658,20 +3706,44 @@
       "Item Created": [
         "Kohde luotiin"
       ],
+      "Item created in ${ vaultLink }": [
+        "Kohde luotiin holviin ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Holviin luotiin kohde"
       ],
       "Item Deleted": [
         "Kohde poistettiin"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Kohde poistettiin holvista ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Kohde poistettiin holvista"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Holvin ${ vaultLink } kohteen liput muuttuivat"
+      ],
       "Item flags changed in vault": [
         "Holvin kohteen liput muuttuivat"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Kohde siirrettiin holvista ${ vaultLink } roskakoriin"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Kohde palautettiin roskakorista holviin ${ vaultLink }"
+      ],
+      "Item in vault trashed": [
+        "Kohde siirrettiin holvista roskakoriin"
       ],
       "Item in vault untrashed": [
         "Holvin kohde palautettiin roskakorista"
       ],
       "Item Read": [
         "Kohdetta tarkasteltiin"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Kohde luettiin holvissa ${ vaultLink }"
       ],
       "Item read in vault": [
         "Holvin kohdetta tarkasteltiin"
@@ -3684,6 +3756,9 @@
       ],
       "Item Updated": [
         "Kohdetta muokattiin"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Kohde päivitettiin holvissa ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Holvin kohdetta muokattiin"
@@ -3777,6 +3852,9 @@
       ],
       "New User Invite Deleted": [
         "Uuden käyttäjän kutsu poistettiin"
+      ],
+      "New user invited to organization": [
+        "Uusi käyttäjä kutsuttiin organisaatioon"
       ],
       "No addresses exist": [
         "Osoitteita ei ole"
@@ -4022,6 +4100,12 @@
       ],
       "Share Updated": [
         "Jakoa muokattiin"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Jaettu ${ vaultLink } poistettiin"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Jaettu ${ vaultLink } päivitettiin"
       ],
       "Shared vault deleted": [
         "Jaettu holvi poistettiin"
@@ -5720,6 +5804,9 @@
       "Collaborate and share large files": [
         "Tee yhteistyötä ja jaa suuria tiedostoja"
       ],
+      "Collaborative document editor": [
+        "Yhteistoiminnallinen dokumenttieditori"
+      ],
       "Contact groups": [
         "Yhteystietoryhmät"
       ],
@@ -5755,12 +5842,6 @@
       ],
       "DNS leak prevention": [
         "DNS-vuotosuojaus"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumenttieditorit (tekstinkäsittely, taulukot, esitykset) (tulossa pian)"
       ],
       "Double hop": [
         "Double hop"
@@ -5871,9 +5952,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
-      ],
-      "Reply to messages": [
-        "Vastaa viesteihin"
       ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
@@ -8765,10 +8843,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
