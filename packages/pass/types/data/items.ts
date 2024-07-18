@@ -1,4 +1,4 @@
-import type { ItemIdentity } from '@proton/pass/types';
+import type { IdentityValues } from '@proton/pass/types';
 import type { ItemIDRevision2 } from '@proton/pass/types/api/pass';
 import type { OpenedItem } from '@proton/pass/types/crypto';
 import type {
@@ -40,7 +40,7 @@ export type ItemContent<T extends ItemType> = {
     note: ProtobufItemNote;
     login: Obfuscate<SanitizedBuffers<ProtobufItemLogin>, 'itemEmail' | 'itemUsername' | 'password' | 'totpUri'>;
     creditCard: Obfuscate<ProtobufItemCreditCard, 'number' | 'verificationNumber' | 'pin'>;
-    identity: ItemIdentity;
+    identity: IdentityValues;
 }[T];
 
 export type UnsafeItemContent<T extends ItemType = ItemType> = Deobfuscate<ItemContent<T>>;

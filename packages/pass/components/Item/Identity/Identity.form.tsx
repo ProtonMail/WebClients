@@ -25,7 +25,7 @@ import { usePortal } from '@proton/pass/hooks/usePortal';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type {
     IdentityItemFormValues,
-    ItemIdentity,
+    IdentityValues,
     UnsafeItemExtraField,
     UnsafeItemExtraSection,
 } from '@proton/pass/types';
@@ -34,7 +34,7 @@ type IdentityFormType = {
     form: FormikContextType<IdentityItemFormValues>;
     onCancel: () => void;
     editing?: boolean;
-    content?: ItemIdentity;
+    content?: IdentityValues;
 };
 
 export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = false, onCancel }) => {
