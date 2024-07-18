@@ -1,21 +1,17 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import useAssistantTelemetry, {
-    ASSISTANT_TYPE,
-    ERROR_TYPE,
-} from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useApi, useNotifications } from '@proton/components/hooks';
-import type { AssistantRunningAction, AssistantRunningActionResolver, GenerateAssistantResult } from '@proton/llm/lib';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import useStateRef from '@proton/hooks/useStateRef';
+import type { AssistantContextType, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
 import {
-    AssistantStatus,
     CACHING_FAILED,
     FAILED_TO_DOWNLOAD,
     PromptRejectedError,
     UNLOAD_ASSISTANT_TIMEOUT,
     buildMLCConfig,
-    getAssistantStatus,
     getGenerationType,
     queryAssistantModels,
 } from '@proton/llm/lib';
@@ -29,6 +25,7 @@ import type {
     LlmManager,
     LlmModel,
 } from '@proton/llm/lib/types';
+import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -39,7 +36,11 @@ interface Props {
     active: boolean;
 }
 
-export const useAssistantLocal = ({ commonState, openedAssistantsState, active }: Props) => {
+export const useAssistantLocal = ({
+    commonState,
+    openedAssistantsState,
+    active,
+}: Props): Omit<AssistantContextType, 'getIsStickyAssistant'> => {
     const api = useApi();
     const { createNotification } = useNotifications();
 
@@ -50,24 +51,32 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
     /** In order to be able to wait for config to be set */
     const assistantConfigPromiseRef = useRef<Promise<void>>();
 
-    const [isModelDownloaded, setIsModelDownloaded] = useState(false);
-    const [isModelDownloading, setIsModelDownloading] = useState(false);
-    const [downloadReceivedBytes, setDownloadReceivedBytes] = useState(0);
-    const [downloadModelSize, setDownloadModelSize] = useState(0);
-    const [downloadPaused, setDownloadPaused] = useState(false);
-    // ref to know if the user downloaded the model in this session
-    const userDownloadedModel = useRef(false);
-
-    const [isModelLoadedOnGPU, setIsModelLoadedOnGPU] = useState(false);
-    const [isModelLoadingOnGPU, setIsModelLoadingOnGPU] = useState(false);
+    const [
+        {
+            downloadModelSize,
+            downloadPaused,
+            downloadReceivedBytes,
+            isModelDownloaded,
+            isModelDownloading,
+            isModelLoadedOnGPU,
+            isModelLoadingOnGPU,
+        },
+        setLocalState,
+        localStateRef,
+    ] = useStateRef({
+        isModelDownloaded: false,
+        isModelDownloading: false,
+        downloadReceivedBytes: 0,
+        downloadModelSize: 0,
+        downloadPaused: false,
+        isModelLoadedOnGPU: false,
+        isModelLoadingOnGPU: false,
+        // ref to know if the user downloaded the model in this session
+        userDownloadedModel: false,
+    });
 
     const generatedTokensNumber = useRef(0);
     const initPromise = useRef<Promise<void>>();
-
-    const runningActionsRef = useRef<AssistantRunningAction[]>([]);
-    const [runningActionResolvers, setRunningActionResolvers] = useState<AssistantRunningActionResolver[]>([]);
-
-    const assistantStatus = useRef<AssistantStatus>(AssistantStatus.NOT_LOADED);
 
     const { openedAssistants, openAssistant, setAssistantStatus, closeAssistant } = openedAssistantsState;
     const {
@@ -83,84 +92,39 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         assistantSubscriptionStatus,
     } = commonState;
 
-    useEffect(() => {
-        assistantStatus.current = getAssistantStatus({
-            isModelDownloading,
-            isModelDownloaded,
-            isModelLoadingOnGPU,
-            isModelLoadedOnGPU,
-        });
-    }, [isModelDownloading, isModelDownloaded, isModelLoadingOnGPU, isModelLoadedOnGPU]);
-
     const {
         sendRequestAssistantReport,
         sendUnloadModelAssistantReport,
         sendDownloadAssistantReport,
-        sendAssistantErrorReport,
         sendLoadModelAssistantReport,
     } = useAssistantTelemetry();
 
-    const cleanRunningActionPromises = (assistantID: string) => {
-        setRunningActionResolvers((runningActionResolvers) =>
-            runningActionResolvers.filter((resolver) => {
-                if (resolver.assistantID === assistantID) {
-                    resolver.resolver();
-                }
-                return resolver.assistantID !== assistantID;
-            })
-        );
-    };
-
-    const getRunningActionFromAssistantID = (assistantID: string) => {
-        return runningActionsRef.current.find((runningAction) => runningAction.assistantID === assistantID);
-    };
-
-    const cleanAssistantRunningAction = (assistantID: string) => {
-        runningActionsRef.current = runningActionsRef.current.filter(
-            (runningAction) => runningAction.assistantID !== assistantID
-        );
-    };
-
-    const cancelAssistantRunningAction = (assistantID: string) => {
-        const assistantRunningAction = getRunningActionFromAssistantID(assistantID);
-        if (assistantRunningAction) {
-            assistantRunningAction.runningAction.cancel();
-            cleanAssistantRunningAction(assistantID);
-        }
-    };
-
-    const cancelRunningAction = (assistantID: string) => {
-        try {
-            cleanRunningActionPromises(assistantID);
-            cancelAssistantRunningAction(assistantID);
-        } catch (e: any) {
-            traceInitiativeError('assistant', e);
-            const errorMessage = c('Error').t`Due to an error, text generation couldn’t be canceled`;
-            addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_CANCEL_FAIL });
-            sendAssistantErrorReport({
-                assistantType: ASSISTANT_TYPE.LOCAL,
-                errorType: ERROR_TYPE.GENERATION_CANCEL_FAIL,
-            });
-        }
-    };
-
-    const handleGetAssistantModels = () => {
-        assistantConfigPromiseRef.current = new Promise((resolve, reject) => {
-            void queryAssistantModels(api)
-                .then((models) => {
-                    const config = buildMLCConfig(models);
-                    if (config) {
-                        assistantConfigRef.current = config;
-                    }
-                    resolve();
-                })
-                .catch(reject);
-        });
-    };
+    const {
+        addRunningAction,
+        runningActions,
+        getRunningActionFromAssistantID,
+        cleanRunningActions,
+        resetResolvers,
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+    } = useRunningActions({ addSpecificError });
 
     useEffect(() => {
         if (active && !llmManager.current && canShowAssistant && hasCompatibleHardware && hasCompatibleBrowser) {
             llmManager.current = new GpuLlmManager();
+
+            const handleGetAssistantModels = () => {
+                assistantConfigPromiseRef.current = new Promise((resolve, reject) => {
+                    void queryAssistantModels(api)
+                        .then((models) => {
+                            const config = buildMLCConfig(models);
+                            if (config) {
+                                assistantConfigRef.current = config;
+                            }
+                            resolve();
+                        })
+                        .catch(reject);
+                });
+            };
 
             // Get assistant models API side
             handleGetAssistantModels();
@@ -168,9 +132,12 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
     }, [active, canShowAssistant, hasCompatibleHardware, hasCompatibleBrowser]);
 
     const downloadCallback = (info: DownloadProgressInfo) => {
-        userDownloadedModel.current = true;
-        setDownloadModelSize(info.estimatedTotalBytes);
-        setDownloadReceivedBytes(info.receivedBytes);
+        setLocalState((localState) => ({
+            ...localState,
+            downloadModelSize: info.estimatedTotalBytes,
+            downloadReceivedBytes: info.receivedBytes,
+            userDownloadedModel: true,
+        }));
     };
 
     const downloadModel = async () => {
@@ -182,10 +149,16 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             cleanGlobalErrors();
 
             const startDownloadingTime = performance.now();
-            setIsModelDownloading(true);
+            setLocalState((localState) => ({
+                ...localState,
+                isModelDownloading: true,
+            }));
             const completed = await llmManager.current.startDownload(downloadCallback, assistantConfigRef.current);
-            setIsModelDownloading(false);
-            setIsModelDownloaded(completed);
+            setLocalState((localState) => ({
+                ...localState,
+                isModelDownloading: false,
+                isModelDownloaded: completed,
+            }));
             if (completed) {
                 // fixme: this can report partial download time if we were resuming a previous download session
                 const endDownloadingTime = performance.now();
@@ -197,29 +170,21 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         } catch (e: any) {
             let errorMessage;
             if (e.message === CACHING_FAILED) {
-                errorMessage = c('Error')
-                    .t`Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.`;
-                addGlobalError(errorMessage, ERROR_TYPE.CACHING_FAILED);
-                sendAssistantErrorReport({
-                    assistantType: ASSISTANT_TYPE.LOCAL,
-                    errorType: ERROR_TYPE.CACHING_FAILED,
-                });
+                addGlobalError(ASSISTANT_TYPE.LOCAL, ERROR_TYPE.CACHING_FAILED);
             } else {
-                errorMessage = c('Error').t`Problem downloading the writing assistant. Please try again.`;
                 const isRequestError = e.message.includes(FAILED_TO_DOWNLOAD);
                 addGlobalError(
-                    errorMessage,
+                    ASSISTANT_TYPE.LOCAL,
                     isRequestError ? ERROR_TYPE.DOWNLOAD_REQUEST_FAIL : ERROR_TYPE.DOWNLOAD_FAIL
                 );
-                sendAssistantErrorReport({
-                    assistantType: ASSISTANT_TYPE.LOCAL,
-                    errorType: isRequestError ? ERROR_TYPE.DOWNLOAD_REQUEST_FAIL : ERROR_TYPE.DOWNLOAD_FAIL,
-                });
             }
 
             traceInitiativeError('assistant', e);
             console.error(e);
-            setIsModelDownloading(false);
+            setLocalState((localState) => ({
+                ...localState,
+                isModelDownloading: false,
+            }));
             throw new Error(errorMessage);
         }
     };
@@ -233,11 +198,17 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             // Clean global errors when loading the model
             cleanGlobalErrors();
 
-            setIsModelLoadingOnGPU(true);
+            setLocalState((localState) => ({
+                ...localState,
+                isModelLoadingOnGPU: true,
+            }));
             const model = await llmManager.current.loadOnGpu(assistantConfigRef.current);
             llmModel.current = model;
-            setIsModelLoadingOnGPU(false);
-            setIsModelLoadedOnGPU(true);
+            setLocalState((localState) => ({
+                ...localState,
+                isModelLoadingOnGPU: false,
+                isModelLoadedOnGPU: true,
+            }));
             const endLoadingTime = performance.now();
             const loadingTime = endLoadingTime - startLoadingTime;
 
@@ -245,14 +216,12 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
             console.error(e);
-            const errorMessage = c('Error').t`Problem loading the writing assistant to your device. Please try again.`;
-            addGlobalError(errorMessage, ERROR_TYPE.LOADGPU_FAIL);
-            setIsModelLoadingOnGPU(false);
-            setIsModelLoadedOnGPU(false);
-            sendAssistantErrorReport({
-                assistantType: ASSISTANT_TYPE.LOCAL,
-                errorType: ERROR_TYPE.LOADGPU_FAIL,
-            });
+            const errorMessage = addGlobalError(ASSISTANT_TYPE.LOCAL, ERROR_TYPE.LOADGPU_FAIL);
+            setLocalState((localState) => ({
+                ...localState,
+                isModelLoadingOnGPU: false,
+                isModelLoadedOnGPU: false,
+            }));
             throw new Error(errorMessage);
         }
     };
@@ -261,25 +230,26 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         try {
             if (llmModel.current) {
                 await llmModel.current?.unload();
-                setIsModelLoadedOnGPU(false);
+                setLocalState((localState) => ({
+                    ...localState,
+                    isModelLoadedOnGPU: false,
+                }));
 
                 sendUnloadModelAssistantReport();
             }
         } catch (e: any) {
             traceInitiativeError('assistant', e);
             console.error(e);
-            const errorMessage = c('Error').t`Problem unloading data not needed when the writing assistant is inactive`;
-            sendAssistantErrorReport({
-                assistantType: ASSISTANT_TYPE.LOCAL,
-                errorType: ERROR_TYPE.UNLOAD_FAIL,
-            });
-            addGlobalError(errorMessage, ERROR_TYPE.UNLOAD_FAIL);
+            addGlobalError(ASSISTANT_TYPE.LOCAL, ERROR_TYPE.UNLOAD_FAIL);
         }
     };
 
     const initAssistant = useCallback(() => {
         // Reset download pause state
-        setDownloadPaused(false);
+        setLocalState((localState) => ({
+            ...localState,
+            downloadPaused: false,
+        }));
 
         // If the assistant is already initializing, then we simply wait for the end of the initialization
         if (initPromise.current) {
@@ -292,10 +262,14 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
              * 1 - We start by downloading the model if not downloaded yet and model is not downloading at the moment
              * 2 - Then we can load the model on the GPU if not loaded yet and not loading at the moment
              */
-            const isModelDownloaded = assistantStatus.current >= AssistantStatus.DOWNLOADED;
-            const isModelDownloading = assistantStatus.current === AssistantStatus.DOWNLOADING;
-            const isModelLoadedOnGPU = assistantStatus.current >= AssistantStatus.READY;
-            const isModelLoadingOnGPU = assistantStatus.current === AssistantStatus.LOADING_GPU;
+            const {
+                isModelDownloaded,
+                isModelDownloading,
+                isModelLoadedOnGPU,
+                isModelLoadingOnGPU,
+                userDownloadedModel,
+            } = localStateRef.current;
+
             // Use try catch in case one of the steps fails, so that we don't run the next step
             try {
                 let completedDownload;
@@ -313,11 +287,15 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                 }
 
                 // Show a notification only when the user had to download the model
-                if (completedDownload && userDownloadedModel.current) {
+                if (completedDownload && userDownloadedModel) {
                     createNotification({
                         text: c('Notification').t`The writing assistant is ready to use`,
                     });
-                    userDownloadedModel.current = false;
+
+                    setLocalState((localState) => ({
+                        ...localState,
+                        userDownloadedModel: false,
+                    }));
                 }
             } catch {}
         })().finally(() => {
@@ -332,13 +310,19 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         if (llmManager.current) {
             llmManager.current.cancelDownload();
             initPromise.current = undefined;
-            setDownloadPaused(true);
+            setLocalState((localState) => ({
+                ...localState,
+                downloadPaused: true,
+            }));
         }
     };
 
     const resumeDownloadModel = () => {
         void initAssistant();
-        setDownloadPaused(false);
+        setLocalState((localState) => ({
+            ...localState,
+            downloadPaused: false,
+        }));
     };
 
     const generateResult = async ({ action, callback, assistantID }: GenerateAssistantResult) => {
@@ -362,11 +346,11 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         //      In that case, we don't have the running action yet, so we need to cancel the promise.
         //      That's why the entire function is run into a Promise. We can then store it in a ref and cancel it when needed.
         await new Promise<void>(async (res) => {
-            const resolver = () => {
+            const resolve = () => {
                 res();
                 isResolved = true;
             };
-            setRunningActionResolvers([...runningActionResolvers, { resolver, assistantID }]);
+            addRunningAction(assistantID, resolve);
 
             const ingestionStart = performance.now();
             try {
@@ -399,9 +383,7 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                             callback(fulltext);
                         } else {
                             promptRejectedOnce = true;
-                            runningActionsRef.current
-                                ?.find((a) => a.assistantID === assistantID)
-                                ?.runningAction?.cancel();
+                            cleanRunningActions(assistantID);
                         }
                     };
 
@@ -412,7 +394,14 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                     }
 
                     const runningAction = await llmModel.current.performAction(action, generationCallback);
-                    runningActionsRef.current.push({ runningAction, assistantID });
+
+                    addRunningAction(assistantID, () => {
+                        // Resolve is needed to end parent promise
+                        resolve();
+                        // Here we stop the LLM generation
+                        runningAction.cancel();
+                    });
+
                     await runningAction.waitForCompletion();
 
                     // Throw an error if the user made a harmful request
@@ -434,25 +423,17 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                 }
             } catch (e: any) {
                 if (e.name === 'PromptRejectedError') {
-                    const errorMessage = c('Error')
-                        .t`The writing assistant cannot proceed with your request. Please try a different prompt.`;
-                    sendAssistantErrorReport({
+                    addSpecificError({
+                        assistantID,
                         assistantType: ASSISTANT_TYPE.LOCAL,
                         errorType: ERROR_TYPE.GENERATION_HARMFUL,
                     });
-                    addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_HARMFUL });
                 } else {
-                    // There is a bug where the LLM will be unloaded from the GPU
-                    // without notice. It hasn't been tracked down, in this scenario
-                    // the user might want to refresh.
-                    // The wording should be aligned with `useAssistantServer.ts`
-                    // when the issue is solved
-                    const errorMessage = c('Error').t`Please try again or refresh the page.`;
-                    sendAssistantErrorReport({
+                    addSpecificError({
+                        assistantID,
                         assistantType: ASSISTANT_TYPE.LOCAL,
                         errorType: ERROR_TYPE.GENERATION_FAIL,
                     });
-                    addSpecificError({ assistantID, errorMessage, errorType: ERROR_TYPE.GENERATION_FAIL });
                 }
                 traceInitiativeError('assistant', e);
                 console.error(e);
@@ -461,10 +442,8 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
                 // Otherwise, on next submit the previous result will be displayed for a few ms
                 callback('');
             }
-
             // Reset the generating state
-            cleanAssistantRunningAction(assistantID);
-            cleanRunningActionPromises(assistantID);
+            cleanRunningActions(assistantID);
         });
     };
 
@@ -478,19 +457,21 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
             void unloadModelOnGPU();
         }
         // Cancel all running actions
-        if (runningActionResolvers) {
-            runningActionsRef.current = [];
-            runningActionResolvers.forEach((resolver) => resolver.resolver());
+        if (Object.keys(runningActions).length) {
+            resetResolvers();
         }
 
         // Reset all states
-        setIsModelDownloaded(false);
-        setIsModelDownloading(false);
-        setIsModelLoadedOnGPU(false);
-        setIsModelLoadingOnGPU(false);
-        setDownloadPaused(false);
-        setDownloadModelSize(0);
-        setDownloadReceivedBytes(0);
+        setLocalState((localState) => ({
+            ...localState,
+            isModelDownloaded: false,
+            isModelDownloading: false,
+            isModelLoadedOnGPU: false,
+            isModelLoadingOnGPU: false,
+            downloadPaused: false,
+            downloadModelSize: 0,
+            downloadReceivedBytes: 0,
+        }));
     };
 
     // Unload the model after some time of non usage
@@ -515,33 +496,76 @@ export const useAssistantLocal = ({ commonState, openedAssistantsState, active }
         return () => {
             clearInterval(id);
         };
-    }, [isModelLoadedOnGPU, runningActionResolvers]);
+    }, [isModelLoadedOnGPU, runningActions]);
 
     return {
-        isModelDownloaded,
-        isModelDownloading,
-        downloadReceivedBytes,
+        assistantConfig: assistantConfigRef.current,
+        cancelDownloadModel,
+        cancelRunningAction: cleanRunningActions,
+        canShowAssistant,
+        canUseAssistant,
+        closeAssistant: closeAssistant(cleanRunningActions),
         downloadModelSize,
         downloadPaused,
+        downloadReceivedBytes,
+        errors,
+        generateResult,
+        hasCompatibleBrowser,
+        hasCompatibleHardware,
+        initAssistant,
+        isModelDownloaded,
+        isModelDownloading,
         isModelLoadedOnGPU,
         isModelLoadingOnGPU,
-        canShowAssistant,
-        hasCompatibleHardware,
-        hasCompatibleBrowser,
-        canUseAssistant,
-        openedAssistants,
-        errors,
         openAssistant,
-        setAssistantStatus,
-        closeAssistant: closeAssistant(cancelRunningAction),
-        cancelDownloadModel,
-        resumeDownloadModel,
-        unloadModelOnGPU,
-        initAssistant,
-        generateResult,
-        cancelRunningAction,
-        runningActionResolvers,
-        assistantConfig: assistantConfigRef.current,
+        openedAssistants,
         resetAssistantState,
+        resumeDownloadModel,
+        runningActions,
+        setAssistantStatus,
+        unloadModelOnGPU,
     };
 };
+
+interface UseRunningActionsProps {
+    addSpecificError: ReturnType<typeof useAssistantCommons>['addSpecificError'];
+}
+
+function useRunningActions({ addSpecificError }: UseRunningActionsProps) {
+    const [runningActions, setRunningAction, runningActionsRef] = useStateRef<AssistantRunningActions>({});
+
+    const addRunningAction = (assistantID: string, resolver: () => void) => {
+        setRunningAction((runningActions) => ({
+            ...runningActions,
+            [assistantID]: resolver,
+        }));
+    };
+
+    const cleanRunningActions = (assistantID: string) => {
+        try {
+            const runningAction = runningActionsRef.current[assistantID];
+            if (runningAction) {
+                runningAction();
+                setRunningAction((runningAction) => {
+                    delete runningAction[assistantID];
+                    return { ...runningAction };
+                });
+            }
+        } catch (e: any) {
+            traceInitiativeError('assistant', e);
+            addSpecificError({
+                assistantID,
+                assistantType: ASSISTANT_TYPE.LOCAL,
+                errorType: ERROR_TYPE.GENERATION_CANCEL_FAIL,
+            });
+        }
+    };
+
+    return {
+        addRunningAction,
+        cleanRunningActions,
+        getRunningActionFromAssistantID: (assistantID: string) => assistantID in runningActions,
+        resetResolvers: () => setRunningAction({}),
+        runningActions,
+    };
+}

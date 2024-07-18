@@ -18,8 +18,8 @@ import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/component
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
 import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-import useAssistantFeatureEnabled from '@proton/components/containers/llm/useAssistantFeatureEnabled';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
 import { useAssistant } from '@proton/llm/lib';

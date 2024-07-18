@@ -7,7 +7,6 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import {
-    ComposerAssistantTrialEndedUpsellModal,
     Dropdown,
     DropdownButton,
     DropdownMenuButton,
@@ -16,70 +15,56 @@ import {
     InputFieldTwo,
     Progress,
     Tooltip,
-    useModalState,
     useModalStateObject,
     usePopperAnchor,
 } from '@proton/components/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import useAssistantTelemetry, { ERROR_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
-import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
-import type { Action, ActionType, PartialRefineAction, RefineActionType, RefineLocation } from '@proton/llm/lib/types';
-import { isPredefinedRefineActionType, isRefineActionType } from '@proton/llm/lib/types';
-import { useAssistant } from '@proton/llm/lib/useAssistant';
+import { useUserSettings } from '@proton/components/hooks';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
+import type { ActionType } from '@proton/llm/lib/types';
+import { ERROR_TYPE } from '@proton/shared/lib/assistant';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Recipient } from '@proton/shared/lib/interfaces';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import clsx from '@proton/utils/clsx';
 
-import { removeLineBreaks } from 'proton-mail/helpers/string';
+import type { GenerateResultProps } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
 import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
 
-import type { ReplacementStyle } from './ComposerAssistant';
 import AssistantUnsafeErrorFeedbackModal from './modals/AssistantUnsafeErrorFeedbackModal';
-import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
 import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';
 import type { ComposerAssistantInitialSetupSpotlightRef } from './spotlights/ComposerAssistantInitialSetupSpotlight';
 import ComposerAssistantInitialSetupSpotlight from './spotlights/ComposerAssistantInitialSetupSpotlight';
 
 interface Props {
-    onGenerateResult: (fulltext: string, prompt: string) => void;
     assistantID: string;
     onContentChange: () => void;
-    onRefine: (partialAction: PartialRefineAction) => Promise<void>;
     hasSelection: boolean;
     expanded: boolean;
     canUseRefineActions: boolean;
     assistantResult?: string;
     onClickRefine: () => void;
-    onResetSelection: () => void;
     resetRequestRef: MutableRefObject<() => void>;
-    getContentBeforeBlockquote: () => string;
-    setReplacementStyle: (action: ReplacementStyle) => void;
     setInnerModal: (innerModal: ComposerInnerModalStates) => void;
-    recipients: Recipient[];
-    sender: Recipient | undefined;
+    isRefiningText: boolean;
+    onGenerate: (props: GenerateResultProps) => void;
     onInputClicked: () => void;
 }
 
 const ComposerAssistantInput = ({
-    onGenerateResult,
     assistantID,
     onContentChange,
-    onRefine,
     hasSelection,
     expanded,
     canUseRefineActions,
     assistantResult,
     onClickRefine,
-    onResetSelection,
     resetRequestRef,
-    getContentBeforeBlockquote,
-    setReplacementStyle,
     setInnerModal,
-    recipients,
-    sender,
+    isRefiningText,
+    onGenerate,
     onInputClicked,
 }: Props) => {
     // Request that the user is writing in the input
@@ -102,7 +87,6 @@ const ComposerAssistantInput = ({
      */
     const [shouldShowRefineButtons, setShouldShowRefineButtons] = useState(assistantRequest === '');
     const [{ AIAssistantFlags }] = useUserSettings();
-    const [isRefiningText, setIsRefiningText] = useState(false);
 
     resetRequestRef.current = () => setAssistantRequest('');
 
@@ -112,10 +96,7 @@ const ComposerAssistantInput = ({
     }, []);
 
     const spotlightAnchorRef = useRef<HTMLDivElement>(null);
-    const upsellModal = useModalStateObject();
     const falsePositiveFeedback = useModalStateObject();
-
-    const [resumeDownloadProps, setResumeDownloadModalOpen] = useModalState();
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -127,173 +108,20 @@ const ComposerAssistantInput = ({
         downloadReceivedBytes,
         downloadModelSize,
         downloadPaused,
-        generateResult,
         cancelRunningAction,
+        resumeDownloadModel,
         isGeneratingResult,
         cancelDownloadModel,
-        resumeDownloadModel,
         isModelDownloaded,
         error,
-        closeAssistant,
     } = useAssistant(assistantID);
 
     const hasDownloadError = useMemo(() => {
         return !!error && !isModelDownloaded;
     }, [isModelDownloaded, error]);
 
-    const { trialStatus, start: startTrial } = useAssistantSubscriptionStatus();
-
-    function getEmailContentsForRefinement() {
-        const composerContent = removeLineBreaks(getContentBeforeBlockquote());
-        if (expanded && assistantResult) {
-            return assistantResult;
-        } else if (composerContent) {
-            return composerContent;
-        }
-    }
-
-    function buildAction(actionType: ActionType): Action | undefined {
-        if (actionType === 'writeFullEmail') {
-            return {
-                type: 'writeFullEmail',
-                prompt: assistantRequest,
-                recipient: recipients?.[0]?.Name,
-                sender: sender?.Name,
-                locale,
-            };
-        }
-
-        const fullEmail = getEmailContentsForRefinement();
-        if (!fullEmail) {
-            return undefined;
-        }
-
-        const refineLocation: RefineLocation = {
-            fullEmail,
-            idxStart: 0,
-            idxEnd: fullEmail.length,
-        };
-
-        // Predefined refine (shorten, proofread etc)
-        if (isPredefinedRefineActionType(actionType)) {
-            return {
-                type: actionType,
-                ...refineLocation,
-            };
-        }
-
-        // Custom refine (with user prompt)
-        return {
-            type: actionType,
-            prompt: assistantRequest,
-            ...refineLocation,
-        };
-    }
-
-    async function refineWithSelection(actionType: RefineActionType) {
-        let partialAction: PartialRefineAction;
-        if (isPredefinedRefineActionType(actionType)) {
-            partialAction = {
-                type: actionType,
-            };
-        } else {
-            partialAction = {
-                type: actionType,
-                prompt: assistantRequest,
-            };
-        }
-
-        await onRefine(partialAction); // refine location (idxStart/idxEnd) is set later
-    }
-
-    function detectReplacementStyle(actionType: ActionType, hasGeneratedText: boolean): ReplacementStyle | undefined {
-        const isRefine = isRefineActionType(actionType);
-        // @formatter:off
-        // prettier-ignore
-        return (
-            ( hasSelection && !assistantResult              ) ? 'refineSelectedText' :
-            (!hasSelection && !hasGeneratedText &&  isRefine) ? 'refineFullMessage' :
-            (!hasSelection && !assistantResult  && !isRefine) ? 'generateFullMessage' :
-            undefined
-        )
-        // @formatter:on
-    }
-
     const startGeneratingResult = async (actionType?: ActionType) => {
-        // If user hasn't set the assistant yet, invite him to do so
-        if (AIAssistantFlags === AI_ASSISTANT_ACCESS.UNSET) {
-            setInnerModal(ComposerInnerModalStates.AssistantSettings);
-            return;
-        }
-
-        // Warn the user that we need the download to be completed before generating a result
-        if (downloadPaused) {
-            setResumeDownloadModalOpen(true);
-            return;
-        }
-
-        // Stop if trial ended
-        if (trialStatus === 'trial-ended') {
-            upsellModal.openModal(true);
-            return;
-        }
-
-        // Unselect text (may take effect later, due to useState?)
-        onResetSelection();
-
-        // If actionType is undefined, it means we're being called with a user request
-        // (user has typed stuff the AI input field), but caller doesn't know if this
-        // has to be applied to full message generation or refinement of a specific part.
-        const hasGeneratedText = Boolean(expanded && assistantResult);
-        if (!actionType) {
-            actionType = hasSelection ? 'customRefine' : 'writeFullEmail';
-        }
-
-        // Figure out which replacement style must be used to insert the new content
-        const replacementStyle = detectReplacementStyle(actionType, hasGeneratedText);
-        if (replacementStyle) {
-            setReplacementStyle(replacementStyle);
-        }
-
-        const isRefineAction = isRefineActionType(actionType);
-
-        if (isRefineAction) {
-            setIsRefiningText(true);
-        }
-
-        // In case some text is selected, this is a refine action and
-        // we let the composer input figure out idxStart / idxEnd
-        if (hasSelection && isRefineAction) {
-            await refineWithSelection(actionType as RefineActionType);
-            setIsRefiningText(false);
-            setShouldShowRefineButtons(true);
-            return;
-        }
-
-        // Empty the user request field after they typed Enter
-        if (isRefineActionType(actionType)) {
-            setAssistantRequest('');
-        }
-
-        // No text is selected. It can be either full email generation, or a refine action.
-        // Prepare the action and fire the LLM with it.
-        const action = buildAction(actionType);
-        if (action) {
-            let trialStarted = false;
-            await generateResult({
-                action,
-                callback: (res) => {
-                    if (!trialStarted && trialStatus === 'trial-not-started') {
-                        trialStarted = true;
-                        void startTrial();
-                    }
-                    onGenerateResult(res, assistantRequest);
-                },
-            });
-        }
-
-        setIsRefiningText(false);
-        setShouldShowRefineButtons(true);
+        onGenerate({ actionType, assistantRequest, setAssistantRequest, setShouldShowRefineButtons });
     };
 
     const handleGenerateSubmit = async () => {
@@ -356,10 +184,6 @@ const ComposerAssistantInput = ({
     const handlePauseDownload = () => {
         sendPauseDownloadAssistantReport();
         cancelDownloadModel?.();
-    };
-
-    const handleResumeDownload = () => {
-        resumeDownloadModel?.();
     };
 
     const handleClickOnInput = (e: MouseEvent) => {
@@ -679,7 +503,7 @@ const ComposerAssistantInput = ({
                                         color="norm"
                                         shape="underline"
                                         className="ml-2 inline-flex items-center"
-                                        onClick={handleResumeDownload}
+                                        onClick={() => resumeDownloadModel?.()}
                                     >
                                         {c('Action').t`Resume downloading`}
                                     </Button>
@@ -709,15 +533,6 @@ const ComposerAssistantInput = ({
                     )}
                     {showInitializationState && <span>{c('Info').t`Initializing…`}</span>}
                 </span>
-                <ResumeDownloadingModal onResumeDownload={handleResumeDownload} {...resumeDownloadProps} />
-                {upsellModal.render && (
-                    <ComposerAssistantTrialEndedUpsellModal
-                        modalProps={{
-                            ...upsellModal.modalProps,
-                        }}
-                        handleCloseAssistant={() => closeAssistant(assistantID, true)}
-                    />
-                )}
                 {falsePositiveFeedback.render && (
                     <AssistantUnsafeErrorFeedbackModal
                         prompt={assistantRequest}

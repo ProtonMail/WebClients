@@ -14,7 +14,7 @@ import {
     useSpotlightOnFeature,
     useUserSettings,
 } from '@proton/components';
-import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';

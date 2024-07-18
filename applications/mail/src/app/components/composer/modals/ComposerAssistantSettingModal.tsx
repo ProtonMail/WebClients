@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { RadioGroup } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
-import useAssistantTelemetry from '@proton/components/containers/llm/useAssistantTelemetry';
 import {
     useApi,
     useAssistantSubscriptionStatus,
@@ -15,6 +14,7 @@ import {
     useUserSettings,
 } from '@proton/components/hooks';
 import { ASSISTANT_TRIAL_TIME_DAYS } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
@@ -87,7 +87,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal 
             const canRunLocally = hasCompatibleHardware && hasCompatibleBrowser;
             if (canRunLocally) {
                 await waitAndClickInput();
-                void handleSettingChange();
+                void handleSettingChange?.();
                 assistantInputRefManager.composerSpotlight.get(composerID).current?.showSpotlight();
                 return;
             }
