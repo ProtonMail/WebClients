@@ -4,12 +4,9 @@ import type { FactoryOpts } from 'imask/masked/factory';
 import cloneDeep from 'lodash/cloneDeep';
 import { c } from 'ttag';
 
-import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
-import { birthdateMask } from '@proton/pass/components/Form/Field/masks/identity';
 import type { IdentityItemFormValues, IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
-import { isArrayOfType } from '@proton/pass/utils/array/is-type-of';
 
-type FieldName = keyof IdentityValues;
+type FieldName = keyof Omit<IdentityValues, 'extraSections'>;
 
 type IdentityField = {
     name: FieldName;
@@ -20,7 +17,7 @@ type IdentityField = {
     value?: string;
 };
 
-type FieldSection = {
+type IdentityFieldSection = {
     name: string;
     expanded: boolean;
     fields: IdentityField[];
@@ -109,8 +106,6 @@ const getIdentityFields = (): IdentityFormFields => ({
         name: 'birthdate',
         label: c('Label').t`Birthdate`,
         placeholder: c('Label').t`Birthdate`,
-        component: MaskedTextField,
-        mask: birthdateMask,
     },
     gender: {
         name: 'gender',
@@ -224,7 +219,7 @@ const getIdentityFields = (): IdentityFormFields => ({
     },
 });
 
-const getFormSections = (identityFields: IdentityFormFields): FieldSection[] => [
+const getFormSections = (identityFields: IdentityFormFields): IdentityFieldSection[] => [
     {
         name: c('Label').t`Personal details`,
         expanded: true,
@@ -283,9 +278,6 @@ const getFormSections = (identityFields: IdentityFormFields): FieldSection[] => 
     },
 ];
 
-const isUnsafeItemExtraFieldArray = (value: any): value is UnsafeItemExtraField[] =>
-    isArrayOfType(value, (item: any): item is UnsafeItemExtraField => typeof item.data?.content === 'string');
-
 const mapToIdentityField = (fields: UnsafeItemExtraField[], fieldName: string): IdentityField[] =>
     fields.map((customField) => ({
         label: customField.fieldName,
@@ -294,12 +286,12 @@ const mapToIdentityField = (fields: UnsafeItemExtraField[], fieldName: string): 
         value: customField.type === 'text' ? customField.data.content : '',
     }));
 
-const buildSections = (identityFields: IdentityFormFields, initialValues?: IdentityValues): FieldSection[] => {
+const buildSections = (identityFields: IdentityFormFields, initialValues?: IdentityValues): IdentityFieldSection[] => {
     const formSections = getFormSections(identityFields);
 
     if (!initialValues) return formSections;
 
-    return formSections.map<FieldSection>((section) => {
+    return formSections.map<IdentityFieldSection>((section) => {
         const { fields = [], optionalFields = [] } = Object.groupBy(section?.optionalFields?.fields ?? [], (field) =>
             !field.name.includes('extra') && initialValues[field.name] ? 'fields' : 'optionalFields'
         );
@@ -311,9 +303,14 @@ const buildSections = (identityFields: IdentityFormFields, initialValues?: Ident
     });
 };
 
-export const useIdentityFormSections = (initialValues?: IdentityValues) => {
+type IdentityFormSectionsProps = {
+    initialValues?: IdentityValues;
+    identity?: IdentityValues;
+};
+
+export const useIdentityFormSections = ({ initialValues, identity }: IdentityFormSectionsProps) => {
     const identityFields = useMemo(() => getIdentityFields(), []);
-    const [sections, setSections] = useState<FieldSection[]>(buildSections(identityFields, initialValues));
+    const [sections, setSections] = useState<IdentityFieldSection[]>(buildSections(identityFields, initialValues));
     const getField = useCallback(
         (index: number, fieldName: string) =>
             sections[index].optionalFields?.fields.find(({ name }) => name === fieldName)!,
@@ -341,9 +338,11 @@ export const useIdentityFormSections = (initialValues?: IdentityValues) => {
         });
     };
 
-    const getFilteredSections = (identity: IdentityValues): FieldSection[] =>
-        sections
-            .reduce<FieldSection[]>((fieldSections, section) => {
+    const getIdentitySections = (): IdentityFieldSection[] => {
+        if (!identity) return [];
+
+        return sections
+            .reduce<IdentityFieldSection[]>((fieldSections, section) => {
                 const fields = [...section.fields, ...(section.optionalFields?.fields ?? [])];
 
                 const filteredFields = fields.reduce<IdentityField[]>((acc, field) => {
@@ -352,12 +351,7 @@ export const useIdentityFormSections = (initialValues?: IdentityValues) => {
 
                     if (!fieldValue) return acc;
                     if (!Array.isArray(fieldValue)) return [...acc, { ...field, value: fieldValue }];
-
-                    if (isUnsafeItemExtraFieldArray(fieldValue)) {
-                        return [...acc, ...mapToIdentityField(fieldValue, fieldName)];
-                    }
-
-                    return acc;
+                    return [...acc, ...mapToIdentityField(fieldValue, fieldName)];
                 }, []);
 
                 if (!filteredFields.length) return fieldSections;
@@ -367,12 +361,13 @@ export const useIdentityFormSections = (initialValues?: IdentityValues) => {
                 return [...fieldSections, section];
             }, [])
             .concat(
-                identity.extraSections.map<FieldSection>((section) => ({
+                identity.extraSections.map<IdentityFieldSection>((section) => ({
                     name: section.sectionName,
                     fields: mapToIdentityField(section.sectionFields, section.sectionName),
                     expanded: true,
                 }))
             );
+    };
 
-    return { sections, getFilteredSections, updateSectionFields };
+    return useMemo(() => ({ sections, identitySections: getIdentitySections(), updateSectionFields }), [sections]);
 };

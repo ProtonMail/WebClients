@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC } from 'react';
 
 import { MaskedValueControl } from '@proton/pass/components/Form/Field/Control/MaskedValueControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -9,13 +9,12 @@ import { useIdentityFormSections } from '@proton/pass/hooks/identity/useIdentity
 
 export const IdentityContent: FC<ItemContentProps<'identity'>> = ({
     revision: {
-        data: { content },
+        data: { content: identity },
     },
 }) => {
-    const { sections, getFilteredSections } = useIdentityFormSections();
-    const fieldSections = useMemo(() => getFilteredSections(content), [sections]);
+    const { identitySections } = useIdentityFormSections({ identity });
 
-    return fieldSections.map(({ name, fields }, sectionIndex) => (
+    return identitySections.map(({ name, fields }, sectionIndex) => (
         <section key={`${name}${sectionIndex}`}>
             <FieldBox className="color-weak my-4" unstyled>
                 {name}
