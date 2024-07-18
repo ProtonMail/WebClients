@@ -85,7 +85,7 @@ interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onCli
     hasAppLinks?: boolean;
 }
 
-const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) => {
+const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...rest }: Props) => {
     const dispatch = useDispatch();
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
@@ -264,6 +264,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                     user={user}
                     ref={anchorRef}
                     isOpen={isOpen}
+                    dropdownIcon={dropdownIcon}
                     onClick={() => {
                         onCloseSpotlight();
                         toggle();
