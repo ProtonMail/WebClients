@@ -12,8 +12,8 @@ interface Props {
 export const NoteOrMessage = ({ handleClick, value, type }: Props) => {
     return (
         <Button
-            className="rounded-2xl w-full px-4 py-3 border-none color-norm min-h-custom"
-            style={{ '--min-h-custom': '80px' }}
+            className="text-pre-wrap rounded-2xl w-full px-4 py-3 border-none color-norm min-h-custom"
+            style={{ '--min-h-custom': '5rem' }}
             onClick={handleClick}
         >
             <span className="flex flex-nowrap items-start gap-4 p-1">

@@ -10,6 +10,7 @@ import InputFieldStacked from '@proton/components/components/inputFieldStacked/I
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Info from '@proton/components/components/link/Info';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Select } from '../../../atoms';
@@ -25,6 +26,7 @@ interface Props {
 }
 
 export const WalletReceiveContent = ({ wallet, account }: Props) => {
+    const { createNotification } = useNotifications();
     const defaultAccount = first(wallet.WalletAccounts);
 
     const [selectedAccount, setSelectedAccount] = useState(account ?? defaultAccount);
@@ -142,6 +144,9 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         onClick={() => {
                             if (paymentLink) {
                                 void navigator.clipboard.writeText(paymentLink.toString());
+                                createNotification({
+                                    text: c('Recipient details').t`Bitcoin address copied to clipboard`,
+                                });
                             }
                         }}
                     >{c('Wallet receive').t`Copy Bitcoin address`}</Button>
