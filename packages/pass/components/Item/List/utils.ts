@@ -30,7 +30,7 @@ const itemListPresenter: ItemListPresenterMap = {
     }),
     identity: ({ data }) => ({
         heading: data.metadata.name,
-        subheading: data.metadata.name,
+        subheading: '',
     }),
 };
 

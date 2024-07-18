@@ -33,13 +33,13 @@ export const DropdownMenuBase: FC<DropdownMenuBaseProps> = ({
         <>
             <DropdownButton
                 className={clsx('rounded-full', className)}
-                style={{ backgroundColor: 'var(--interaction-weak)' }}
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
                 hasCaret={hasCaret}
-                color="norm"
-                shape="ghost"
+                color="weak"
+                shape="solid"
+                pill
             >
                 {children}
             </DropdownButton>

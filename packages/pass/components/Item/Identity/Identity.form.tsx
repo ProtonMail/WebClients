@@ -5,7 +5,7 @@ import { FieldArray, Form, type FormikContextType, type FormikErrors, FormikProv
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, useModalState } from '@proton/components/components';
+import { Icon, useModalStateWithData } from '@proton/components/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -15,7 +15,7 @@ import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
 import { EMPTY_CUSTOM_FIELD } from '@proton/pass/components/Item/Identity/Identity.new';
-import { CollapsibleItem } from '@proton/pass/components/Layout/Collapsible/CollapsibleItem';
+import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
@@ -39,8 +39,8 @@ type IdentityFormType = {
 
 export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = false, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
-    const { sections, updateSectionFields } = useIdentityFormSections(content);
-    const [showWarningMessage, setShowWarningMessage] = useModalState();
+    const { sections, updateSectionFields } = useIdentityFormSections({ initialValues: content });
+    const [showWarningMessage, setShowWarningMessage] = useModalStateWithData<number>();
     const { ParentPortal, openPortal } = usePortal();
     const [ItemPanel, formId] = useMemo(
         () => (editing ? [ItemEditPanel, 'edit-identity'] : [ItemCreatePanel, 'new-identity']),
@@ -75,7 +75,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                             />
                         </FieldsetCluster>
                         {sections.map(({ name, expanded, fields, optionalFields }, index) => (
-                            <CollapsibleItem key={name} label={name} expanded={expanded}>
+                            <CollapsibleSection key={name} label={name} expanded={expanded}>
                                 <FieldArray
                                     name={optionalFields?.extraFieldKey || name}
                                     render={(helpers) => {
@@ -153,7 +153,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                                         );
                                     }}
                                 />
-                            </CollapsibleItem>
+                            </CollapsibleSection>
                         ))}
 
                         <FieldArray
@@ -168,7 +168,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                                             ) => {
                                                 const sectionKey = `extraSections[${sectionIndex}].sectionFields`;
                                                 return (
-                                                    <CollapsibleItem
+                                                    <CollapsibleSection
                                                         key={sectionKey}
                                                         label={sectionName}
                                                         expanded
@@ -197,7 +197,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                                                                                         onDelete={() => {
                                                                                             if (index === 0) {
                                                                                                 setShowWarningMessage(
-                                                                                                    true
+                                                                                                    sectionIndex
                                                                                                 );
                                                                                             } else {
                                                                                                 helpers.remove(index);
@@ -244,16 +244,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                                                                 );
                                                             }}
                                                         />
-                                                        <ConfirmationModal
-                                                            open={showWarningMessage.open}
-                                                            onClose={showWarningMessage.onClose}
-                                                            onSubmit={() => extraSectionsHelpers.remove(sectionIndex)}
-                                                            submitText={c('Action').t`Delete section`}
-                                                            title={c('Title').t`Remove section?`}
-                                                            alertText={c('Warning')
-                                                                .t`Removing the last field will remove the custom section.`}
-                                                        />
-                                                    </CollapsibleItem>
+                                                    </CollapsibleSection>
                                                 );
                                             }
                                         )}
@@ -265,6 +256,15 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                                                     sectionFields: [EMPTY_CUSTOM_FIELD],
                                                 });
                                             }}
+                                        />
+                                        <ConfirmationModal
+                                            open={showWarningMessage.open}
+                                            onClose={showWarningMessage.onClose}
+                                            onSubmit={() => extraSectionsHelpers.remove(showWarningMessage.data ?? 0)}
+                                            submitText={c('Action').t`Delete section`}
+                                            title={c('Title').t`Remove section?`}
+                                            alertText={c('Warning')
+                                                .t`Removing the last field will remove the custom section.`}
                                         />
                                     </>
                                 );
