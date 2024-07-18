@@ -91,7 +91,16 @@ export function useSharedWithMeLinksListing() {
     /**
      * Loads shared with me links.
      */
-    const loadSharedWithMeLinks = async (signal: AbortSignal, loadLinksMeta: FetchLoadLinksMeta): Promise<void> => {
+    const loadSharedWithMeLinks = async (
+        signal: AbortSignal,
+        loadLinksMeta: FetchLoadLinksMeta,
+        resetFetchStatus: boolean = false
+    ): Promise<void> => {
+        // TODO: Remove this when we will have share events in place
+        // This allow us to retrigger the loadSharedWithMeLinks call
+        if (resetFetchStatus) {
+            fetchMeta.current.isEverythingFetched = false;
+        }
         const callback = (AnchorID?: string) => fetchSharedLinksNextPage(signal, loadLinksMeta, AnchorID);
         return loadFullListingWithAnchor(callback);
     };
