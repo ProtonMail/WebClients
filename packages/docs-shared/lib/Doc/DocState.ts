@@ -30,6 +30,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
 
   private resyncInterval: ReturnType<typeof setInterval> | null = null
   private isEditorReady = false
+  private isConverting = false
   private messageQueue: RtsMessagePayload[] = []
 
   docWasInitializedWithEmptyNode = false
@@ -62,6 +63,24 @@ export class DocState extends Observable<string> implements DocStateInterface {
     }, PRESENCE_UPDATE_REPEAT_INTERVAL)
 
     window.addEventListener('unload', this.handleWindowUnloadEvent)
+  }
+
+  initializeIsConverting(isConverting: boolean) {
+    if (this.isConverting !== true) {
+      this.isConverting = isConverting
+    }
+  }
+
+  /**
+   * @returns a boolean that tells us if this update is the first one since a conversion
+   */
+  docUpdated(): boolean {
+    if (!this.isConverting) {
+      return false
+    }
+
+    this.isConverting = false
+    return true
   }
 
   destroy(): void {
@@ -212,11 +231,12 @@ export class DocState extends Observable<string> implements DocStateInterface {
       return
     }
 
+    const isConversionUpdate = this.docUpdated()
     const updateToPropagate = this.emptyNodeInitializationUpdate
       ? mergeUpdates([this.emptyNodeInitializationUpdate, update])
       : update
 
-    const updateMessage = this.createSyncMessagePayload(updateToPropagate)
+    const updateMessage = this.createSyncMessagePayload(updateToPropagate, isConversionUpdate)
     this.callbacks.docStateRequestsPropagationOfUpdate(updateMessage, BroadcastSource.HandleDocBeingUpdatedByLexical)
 
     this.emptyNodeInitializationUpdate = undefined
@@ -230,9 +250,9 @@ export class DocState extends Observable<string> implements DocStateInterface {
     syncProtocol.readSyncMessage(decoder, unusedReply, this.doc, origin ?? this)
   }
 
-  private createSyncMessagePayload(update: Uint8Array): RtsMessagePayload {
+  private createSyncMessagePayload(update: Uint8Array, isConversion: boolean): RtsMessagePayload {
     return {
-      type: { wrapper: 'du' },
+      type: { wrapper: isConversion ? 'conversion' : 'du' },
       content: update,
     }
   }

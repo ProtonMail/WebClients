@@ -23,6 +23,7 @@ export interface DocControllerInterface {
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
   duplicateDocument(): Promise<void>
+  seedDocument(content: Uint8Array): Promise<void>
   editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void>
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   getDocumentClientId(): Promise<number | undefined>

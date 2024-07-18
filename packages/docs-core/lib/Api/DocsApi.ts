@@ -36,6 +36,7 @@ import { GetAllThreadIDsResponse } from './Types/GetAllThreadIDsResponse'
 import { GetCommentThreadResponse } from './Types/GetCommentThreadResponse'
 import { ResolveThreadResponse } from './Types/ResolveThreadResponse'
 import { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
+import { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
 import { forgeImageURL } from '@proton/shared/lib/helpers/image'
 import { ImageProxyParams } from './Types/ImageProxyParams'
 
@@ -88,7 +89,10 @@ export class DocsApi {
     }
   }
 
-  async seedInitialCommit(docMeta: DocumentMetaInterface, commit: Commit): Promise<Result<Uint8Array>> {
+  async seedInitialCommit(
+    docMeta: Pick<DocumentMetaInterface, 'linkId' | 'volumeId'>,
+    commit: Commit,
+  ): Promise<Result<SeedInitialCommitApiResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
