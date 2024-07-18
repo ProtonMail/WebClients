@@ -299,6 +299,9 @@ const buildSections = (identityFields: IdentityFormFields, initialValues?: Ident
         section.fields.push(...fields);
         if (section.optionalFields) section.optionalFields.fields = optionalFields;
 
+        // Edge case: Identities with custom fields only will not auto-expand
+        section.expanded = section.fields.some((field) => initialValues[field.name]);
+
         return section;
     });
 };
