@@ -11,6 +11,7 @@ import {
     queryInvitationList,
     queryInviteExternalUser,
     queryInviteProtonUser,
+    queryRejectShareInvite,
     queryResendExternalInvitation,
     queryResendInvitation,
     queryShareInvitationDetails,
@@ -43,7 +44,7 @@ import {
 import { useDriveCrypto } from '../_crypto';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import { useLink } from '../_links';
-import { ShareInvitationDetails,ShareInvitationEmailDetails } from './interface';
+import { ShareInvitationDetails, ShareInvitationEmailDetails } from './interface';
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
@@ -337,6 +338,10 @@ export const useShareInvitation = () => {
         );
     };
 
+    const rejectInvitation = async (abortSignal: AbortSignal, invitationId: string) => {
+        return debouncedRequest<{ Code: number }>(queryRejectShareInvite(invitationId), abortSignal);
+    };
+
     const convertExternalInvitation = async (
         abortSignal: AbortSignal,
         {
@@ -462,6 +467,7 @@ export const useShareInvitation = () => {
         listExternalInvitations,
         deleteInvitation,
         acceptInvitation,
+        rejectInvitation,
         resendInvitationEmail,
         resendExternalInvitationEmail,
         updateInvitationPermissions,

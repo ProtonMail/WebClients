@@ -329,8 +329,8 @@ export function useLinksListingProvider() {
         loadLinksSharedByMeLink: (signal: AbortSignal, volumeId: string) => {
             return sharedLinksListing.loadSharedByMeLinks(signal, volumeId, loadLinksMeta);
         },
-        loadLinksSharedWithMeLink: (signal: AbortSignal) => {
-            return sharedWithMeLinksListing.loadSharedWithMeLinks(signal, loadLinksMeta);
+        loadLinksSharedWithMeLink: (signal: AbortSignal, resetFetchStatus?: boolean) => {
+            return sharedWithMeLinksListing.loadSharedWithMeLinks(signal, loadLinksMeta, resetFetchStatus);
         },
         loadLinksMeta,
         getCachedChildren,

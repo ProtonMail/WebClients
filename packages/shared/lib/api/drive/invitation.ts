@@ -38,6 +38,11 @@ export const queryAcceptShareInvite = (
     },
 });
 
+export const queryRejectShareInvite = (invitationID: string) => ({
+    method: 'post',
+    url: `drive/v2/shares/invitations/${invitationID}/reject`,
+});
+
 export const queryDeleteInvitation = (shareID: string, invitationID: string) => ({
     method: 'delete',
     url: `drive/v2/shares/${shareID}/invitations/${invitationID}`,
@@ -112,4 +117,10 @@ export const queryUpdateExternalInvitationPermissions = (
     data: {
         Permissions,
     },
+});
+
+export const queryListPendingInvitations = (params?: { AnchorID?: string }) => ({
+    method: 'get',
+    url: `drive/v2/shares/invitations`,
+    params,
 });
