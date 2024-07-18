@@ -44,11 +44,20 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
       ]
     },
     "Action": {
@@ -690,6 +699,9 @@
       ],
       "OK": [
         "დიახ"
+      ],
+      "Open": [
+        "გახსნა"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
@@ -1387,6 +1399,9 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "შეიძინეთ ახლავე"
+      ],
       "New": [
         "ახალი"
       ],
@@ -2531,6 +2546,9 @@
       "Falkland Islands": [
         "ფოლკლენდის კუნძულები"
       ],
+      "Falkland Islands (Malvinas)": [
+        "ფელკლენდის კუნძულები"
+      ],
       "Faroe Islands": [
         "ფაროს კუნძულები"
       ],
@@ -2970,6 +2988,9 @@
         "შვეიცარია"
       ],
       "Syria": [
+        "სირია"
+      ],
+      "Syrian Arab Republic": [
         "სირია"
       ],
       "Taiwan": [
@@ -5590,6 +5611,17 @@
         "სერვისები"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "ჯგუფის მისამართი"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } წევრი",
+        "${ memberCount } წევრი"
+      ]
+    },
     "Header": {
       "Access": [
         "წვდომა"
@@ -6127,6 +6159,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "თქვენს ანგარიშზე დარჩენილი ცოტა ადგილის გამო ${ BRAND_NAME }-მა შემოტანა შეწყვიტა. თქვენ შეგიძლიათ:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } სცდის, გააგრძელოს შემოტანა მაშინვე, როგორც კი თქვენი ელფოსტის სერვისის მომწოდებლის ${ bandwidthLimitLink } განულდება. თქვენ არაფრის გაკეთება არ გჭირდებათ. თუ შემოტანას გააუქმებთ, მას ვეღარ გააგრძელებთ და მოგიწევთ, ის თავიდან გაუშვათ."
       ],
@@ -6232,6 +6267,18 @@
         "აღმოჩენილია ${ userFound } მომხმარებელი",
         "აღმოჩენილია ${ userFound } მომხმარებელი"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } შეიქმნა"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } წაიშალა"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } გაზიარებულია ელფოსტით"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } განახლდა"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "ქვეყნის დონეზე დასაკავშირებლად საჭიროა ${ vpnPlus }."
       ],
@@ -6323,6 +6370,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "დაამატეთ @pm.me ელ. ფოსტის მისამართი თქვენს ანგარიშზე. ეს მარტივი, მოკლე დომენი ნიშნავს \"${ MAIL_APP_NAME } me \" ან \" პირადად მომწერე.\""
+      ],
+      "Add a recovery ${ type }": [
+        "${ type } აღდგენის დამატება"
       ],
       "Add a recovery email address": [
         "აღდგენის ელფოსტის მისამართის დამატება"
@@ -6565,6 +6615,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "გააძლიერეთ თქვენი ორგანიზაციის ბრენდინგი და შეექმენით უფრო ერთგვაროვანი გამოცდილება თქვენი მომხმარებლებისთვის."
       ],
+      "Breach Custom Email Added": [
+        "მორგებული ელფოსტის გაჯონვა დაემატა"
+      ],
+      "Breach Custom Email Deleted": [
+        "მორგებული ელფოსტის გაჯონვა წაიშალა"
+      ],
+      "Breach Custom Email Validated": [
+        "მორგებული ელფოსტის გაჟონვა დადასტურებულია"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "ნაგულისხმევად ორგანიზაციის წევრებს შეუძლიათ გაიტანონ საცავები, როცა ისინი მფლობელები არიან. თუ ეს პარამეტრი ჩართულია, მათ მონაცემების გატანის უფლება საერთოდ არ ექნებათ"
       ],
@@ -6684,8 +6743,17 @@
       "Custom daily": [
         "ხელით, ყოველდღე"
       ],
+      "Custom email added": [
+        "მორგებული ელფოსტა დაემატა"
+      ],
+      "Custom email deleted": [
+        "მორგებული ელფოსტა წაიშალა"
+      ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
+      ],
+      "Custom email validated": [
+        "მორგებული ელფოსტა დადასტურებულია"
       ],
       "Custom monthly": [
         "ხელით, თვეში ერთხელ"
@@ -6723,6 +6791,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
         "${ deletedServerCount } რაუტერი სერვერის წაშლა"
+      ],
+      "Disable recovery by ${ type }": [
+        "${ type }-ით აღდგენის გათიშვა"
       ],
       "Discount": [
         "ფასდაკლება"
@@ -7137,6 +7208,9 @@
       "Invite Deleted": [
         "მოწვევა წაიშალა"
       ],
+      "Invite for new user deleted": [
+        "ახალი მომხმარებლის მოწვევა წაიშალა"
+      ],
       "Invite for organization accepted": [
         "მოწვევა ორგანიზაციისთვის მიღებულია"
       ],
@@ -7159,6 +7233,9 @@
       "Item Autofilled": [
         "ელემენტი ავტოშევსებულია"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
+      ],
       "Item autofilled in vault": [
         "ელემენტი ავტოშევსებულია საცავში"
       ],
@@ -7168,20 +7245,44 @@
       "Item Created": [
         "ელემენტი შეიქმნა"
       ],
+      "Item created in ${ vaultLink }": [
+        "ელემენტი შეიქმნა ${ vaultLink }-ში"
+      ],
       "Item created in vault": [
         "ელემენტი შეიქმნა საცავში"
       ],
       "Item Deleted": [
         "ელემენტი წაიშალა"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "ელემენტი წაიშალა ${ vaultLink }-დან"
+      ],
+      "Item deleted from vault": [
+        "ელემენტი წაიშალა საცავიდან"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "ელემენტის ალმები შეიცვალა ${ vaultLink }-ში"
+      ],
       "Item flags changed in vault": [
         "ელემენტის ალმები შეიცვალა საცავში"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "ელემენტი ${ vaultLink }-დან გადატანილია ნაგვის ყუთში"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "ელემენტი ${ vaultLink }-დან გადმოტანილია ნაგვის ყუთიდან"
+      ],
+      "Item in vault trashed": [
+        "საცავის ელემენტი გადმოტანილია საცავის ნაგვის ყუთში"
       ],
       "Item in vault untrashed": [
         "ელემენტი გადმოტანილია საცავის ნაგვის ყუთიდან"
       ],
       "Item Read": [
         "ელემენტი წაკითხულია"
+      ],
+      "Item read in ${ vaultLink }": [
+        "ელემენტი წაკითხულია ${ vaultLink }-ში"
       ],
       "Item read in vault": [
         "ელემენტი წაკითხულია საცავში"
@@ -7194,6 +7295,9 @@
       ],
       "Item Updated": [
         "ელემენტი განახლდა"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "ელემენტი განახლდა ${ vaultLink }-ში"
       ],
       "Item updated in vault": [
         "ელემენტი განახლდა საცავში"
@@ -7362,6 +7466,9 @@
       ],
       "New User Invite Deleted": [
         "ახალი მომხმარებლის მოწვევა წაშლილია"
+      ],
+      "New user invited to organization": [
+        "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
       ],
       "No account keys exist": [
         "ანგარიშის გასაღები არ არსებობს"
@@ -7738,6 +7845,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
+      "Session Ended": [
+        "სესია დასრულდა"
+      ],
+      "Session Roaming": [
+        "სესიის როუმინგი"
+      ],
+      "Session Started": [
+        "სესია დაიწყო"
+      ],
       "Session timed out": [
         "სესიის დრო გავიდა"
       ],
@@ -7761,6 +7877,12 @@
       ],
       "Share Updated": [
         "ზიარი განახლდა"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "გაზიარებული ${ vaultLink } წაიშალა"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "გაზიარებული ${ vaultLink } განახლდა"
       ],
       "Shared vault deleted": [
         "გაზიარებული საცავი წაიშალა"
@@ -8084,6 +8206,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "ანგარიშთან გარანტირებული უწყვეტი წვდომისთვის აღდგენის მეთოდის დაყენებაა საჭირო"
       ],
+      "To ensure highest possible security of your account": [
+        "რომ გარანტირებულად მოგაწოდოთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "იმისათვის, რომ არ დაკარგოთ მნიშვნელოვანი მონაცემები, ${ DRIVE_APP_NAME } თქვენი ფაილების ძველ ვერსიებსაც ინახავს. აირჩიეთ, რამდენ ხანს გნებავთ, ${ BRAND_NAME }-მა ძველი ვერსიები შეინახოს."
       ],
@@ -8141,6 +8266,9 @@
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი მონაცემების გასაშიფრად. (დამატებით)"
       ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "ორპაროლიანი რეჟიმი იყენებს სხვადასხვა პაროლებს შესასვლელად და მონაცემების გასაშიფრად. ეს ქმედება უსაფრთხოების უმნიშვნელო გაუმჯობესებაა, მაგრამ მომხმარებლების უმრავლესობას ჩვენ მაინც ერთპაროლიან რეჟმს ვურჩევთ. ორპაროლიან რეჟიმზე გადასართავად ჯერ დააყენეთ შესვლის პაროლი, მერე კი მეორე პაროლი."
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "ფაილის ხელმოწერის შემოწმების შეცდომა. დაუკავშირდით მხარდაჭერის გუნდს."
       ],
@@ -8185,6 +8313,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "ასწიეთ ტარიფი ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ან ${ PLAN_NAMES[bundleProPlan] } გეგმამდე, რათა ${ PROTON_SENTINEL_NAME }-სთან წვდომა მიიღოთ."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "აწიეთ ტარიფი, რათა უფრო მოკლე, @pm.me მისამართები გქონდეთ, რომლებიც გასაზიარებლად უფრო ადვილია. ის ნიშნავს \"${ MAIL_APP_NAME } მე\", ანუ \"პირადად მომწერე\"."
@@ -8243,6 +8374,9 @@
       "Vault Deleted": [
         "საცავი წაიშალა"
       ],
+      "Vault either deleted or requires access permissions": [
+        "საცავი ან წაშლილია, ან წვდომის უფლებები გჭირდებათ"
+      ],
       "Vault shared with email": [
         "საცავი გაზიარებულია ელფოსტით"
       ],
@@ -8263,6 +8397,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "შემოწმებისთვის ახალი ჩანართი გაიხსნება. გთხოვთ გამორთოთ მხტუნარების მბლოკავები. თანხა, რომელიც ბარათის შესამოწმებლად ჩამოგეჭრებათ, მომენტალურად დაგიბრუნდებათ."
+      ],
+      "Verify ${ type }": [
+        "${ type }-ის გადამოწმება"
       ],
       "Verify domain": [
         "დომენის გადამოწმება"
@@ -8439,6 +8576,10 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან.",
         "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და არც ერთ თქვენს ${ maxAI }-ის ხელმისაწვდომ წერის დამხმარის ლიცენზიას.",
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და არც ერთ თქვენს ${ maxAI }-ის ხელმისაწვდომ წერის დამხმარის ლიცენზიას."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ.",
@@ -10366,6 +10507,9 @@
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
       ],
+      "Vault": [
+        "საცავი"
+      ],
       "View guide": [
         "სახელმძღვანელოს ნახვა"
       ],
@@ -10469,6 +10613,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**მიიღეთ ${ plan }** შეზღუდული დროით!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "ასწიეთ ტრაფიკი Visionary-ზე და გახდით ${ BRAND_NAME }-ის ისტორიის ნაწილი"
       ]
@@ -11142,12 +11289,6 @@
       "DNS leak prevention": [
         "DNS გაპარების თავიდან აცილება"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები) (მალე)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11258,9 +11399,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
       ],
-      "Reply to messages": [
-        "პასუხი შეტყობინებებზე"
-      ],
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
       ],
@@ -11348,6 +11486,9 @@
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited logins and notes": [
+        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
       ],
       "Unlimited logins, notes and credit cards": [
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
@@ -12729,6 +12870,9 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "ყველა ${ BRAND_NAME } Plus-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
       ],
+      "Create a ${ appName } account": [
+        "შექმენით ${ appName }-ის ანგარიში"
+      ],
       "Create your ${ BRAND_NAME } account": [
         "შექმენით თქვენი ${ BRAND_NAME }-ის ანგარიში"
       ],
@@ -13344,6 +13488,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ],
@@ -15098,6 +15245,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -15331,6 +15481,9 @@
       ],
       "Connect ${ name }": [
         "${ name }-სთან დაკავშირება"
+      ],
+      "Connection events": [
+        "მიერთების მოვლენები"
       ],
       "Contact us": [
         "დაგვიკავშირდით"
@@ -15638,6 +15791,9 @@
       "Forward emails": [
         "ელფოსტების გადამისამართება"
       ],
+      "Gateway": [
+        "კარიბჭე"
+      ],
       "Gateways": [
         "რაუტერები"
       ],
@@ -15806,6 +15962,9 @@
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
+      ],
+      "Origin": [
+        "საიდან მოვიდა"
       ],
       "Other calendars": [
         "სხვა კალენდარები"

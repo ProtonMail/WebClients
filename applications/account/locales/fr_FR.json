@@ -2553,6 +2553,9 @@
       "Falkland Islands": [
         "Îles Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Îles Malouines"
+      ],
       "Faroe Islands": [
         "Îles Féroé"
       ],
@@ -2992,6 +2995,9 @@
         "Suisse"
       ],
       "Syria": [
+        "Syrie"
+      ],
+      "Syrian Arab Republic": [
         "Syrie"
       ],
       "Taiwan": [
@@ -5615,6 +5621,11 @@
         "Services"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Groupe d'adresses"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -6373,6 +6384,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Ajoutez une adresse e-mail @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
       ],
+      "Add a recovery ${ type }": [
+        "Ajouter une récupération ${ type }"
+      ],
       "Add a recovery email address": [
         "Ajoutez une adresse e-mail de récupération."
       ],
@@ -6790,6 +6804,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
         "Suppression de ${ deletedServerCount } serveurs de Passerelle"
+      ],
+      "Disable recovery by ${ type }": [
+        "Désactiver la récupération de ${ type }"
       ],
       "Discount": [
         "Réduction"
@@ -7844,6 +7861,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
+      "Session Ended": [
+        "La session est terminée."
+      ],
+      "Session Roaming": [
+        "Session itinérante"
+      ],
+      "Session Started": [
+        "La session a démarré."
+      ],
       "Session timed out": [
         "La session a expiré."
       ],
@@ -8205,6 +8231,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Pour vous assurer d'avoir toujours accès à votre compte, définissez une méthode de récupération du compte."
       ],
+      "To ensure highest possible security of your account": [
+        "Pour garantir la sécurité maximale de votre compte"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pour vous éviter de perdre des données importantes, ${ DRIVE_APP_NAME } enregistre les versions précédentes de vos fichiers au fur et à mesure que vous et vos collaborateurs les modifiez. Sélectionnez la durée pendant laquelle ${ BRAND_NAME } doit conserver les versions précédentes."
       ],
@@ -8393,6 +8422,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La vérification ouvrira un nouvel onglet : veillez à désactiver les bloqueurs de pop-up. Vous ne serez pas facturé, le montant utilisé pour vérifier la carte vous sera immédiatement remboursé."
+      ],
+      "Verify ${ type }": [
+        "Vérifier ${ type }"
       ],
       "Verify domain": [
         "Vérifier le domaine"
@@ -10639,6 +10671,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Bénéficier de ${ plan }** pour une période limitée !"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Passez à l'abonnement Visionary et participez à l’histoire de ${ BRAND_NAME }"
       ]
@@ -10657,7 +10692,7 @@
         "Boite mail et calendrier chiffrés pour bien démarrer"
       ],
       "Encrypted solutions to protect your entire business": [
-        "Des solutions chiffrées pour protéger l'ensemble de vos activités"
+        "Des solutions chiffrées pour protéger l'ensemble de vos activités professionnelles"
       ],
       "Enhanced security and premium features for teams": [
         "Sécurité renforcée et fonctionnalités premium pour vos équipes"
@@ -11276,6 +11311,9 @@
       "Collaborate and share large files": [
         "Collaboration et partage de fichiers volumineux"
       ],
+      "Collaborative document editor": [
+        "Éditeur de documents collaboratif"
+      ],
       "Contact groups": [
         "Groupes de contacts"
       ],
@@ -11314,12 +11352,6 @@
       ],
       "DNS leak prevention": [
         "Prévention des fuites DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations) (bientôt)"
       ],
       "Double hop": [
         "Double hop"
@@ -11430,9 +11462,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
-      ],
-      "Reply to messages": [
-        "Répondre aux messages"
       ],
       "Require 2FA for organization": [
         "A2F requise pour l'organisation"
@@ -14571,7 +14600,7 @@
         "${ MAIL_APP_NAME } garantit la sécurité de vos données et permet d'envoyer des e-mails chiffrés à tout le monde."
       ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME }avec transfert automatique des messages"
+        "${ MAIL_APP_NAME } avec transfert automatique des messages"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } calendrier par utilisateur",
@@ -14664,7 +14693,7 @@
         "Tout ce dont votre entreprise a besoin"
       ],
       "Any custom email domains will be disabled": [
-        "Toute demande de messagerie personnalisé sera désactivé."
+        "Toute demande de messagerie personnalisée sera désactivée."
       ],
       "Automatic email forwarding": [
         "Transfert automatique des messages"
@@ -14802,7 +14831,7 @@
         "L'abonnement a été annulé."
       ],
       "Support your compliance objectives": [
-        "Facilitez vos efforts pour être en conformité"
+        "Prise en charge de vos objectifs de conformité"
       ],
       "Sync files on devices": [
         "Synchroniser des fichiers sur vos appareils"
@@ -15604,6 +15633,9 @@
       "Connect ${ name }": [
         "Se connecter à ${ name }"
       ],
+      "Connection events": [
+        "Événements de connexion"
+      ],
       "Contact us": [
         "Nous contacter"
       ],
@@ -16084,6 +16116,9 @@
       ],
       "Organization name": [
         "Nom de l'organisation"
+      ],
+      "Origin": [
+        "Origine"
       ],
       "Other calendars": [
         "Autres calendriers"
@@ -16946,6 +16981,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "A2F"
+      ],
       "Administrators can't access the data of private users": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés."
       ],
@@ -16965,7 +17003,7 @@
         "Authentification unique (SSO)"
       ],
       "SSO user provided by your identity provider": [
-        "Authentification unique (SSO) de l'utilisateur fournie par votre fournisseur d'identité"
+        "Utilisateur d'authentification unique (SSO) fourni par votre fournisseur d'identité"
       ],
       "Writing assistant": [
         "Assistant d'écriture"

@@ -2395,6 +2395,9 @@
       "Falkland Islands": [
         "Ilhas Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Ilhas Falkland (Malvinas)"
+      ],
       "Faroe Islands": [
         "Ilhas Faroé"
       ],
@@ -2834,6 +2837,9 @@
         "Suíça"
       ],
       "Syria": [
+        "Síria"
+      ],
+      "Syrian Arab Republic": [
         "Síria"
       ],
       "Taiwan": [
@@ -5282,6 +5288,12 @@
         "Serviços"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membros"
+      ]
+    },
     "Header": {
       "Access": [
         "Acesso"
@@ -5901,6 +5913,12 @@
       "${ userFound } user found": [
         "${ userFound } utilizador encontrado",
         "${ userFound } utilizadores encontrados"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } criada"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } actualizada"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "É obrigatória ${ vpnPlus } para ligação ao nível de país."
@@ -7588,6 +7606,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Atualize para o plano ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[bundleProPlan] } para ter acesso ao ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -10362,9 +10383,6 @@
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editores de documentos (documentos, folhas de cálculo, apresentações)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -10464,7 +10482,7 @@
         "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
       "Require 2FA for organization": [
-        "Exigir 2FA para a organização"
+        "Exigir A2F para a organização"
       ],
       "Router support": [
         "Suporte para router"
@@ -10535,6 +10553,9 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
+      ],
+      "Unlimited logins and notes": [
+        "Inícios de sessão e notas ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -11701,6 +11722,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Todos os serviços ${ BRAND_NAME } Plus.${ br }Uma subscrição fácil."
+      ],
+      "Create a ${ appName } account": [
+        "Criar uma conta do ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Crie a sua conta do ${ BRAND_NAME }"
