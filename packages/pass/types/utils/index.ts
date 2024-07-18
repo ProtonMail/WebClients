@@ -21,3 +21,11 @@ export type DefinedKeys<S extends {}, K = keyof S> = Extract<
 >;
 
 export type ColorRGB = `${number} ${number} ${number}`;
+
+/** This type transformer iterates over each property of T and checks if its type
+ * matches any of the OriginalTypes in U. If a match is found, the property's type
+ * is replaced with the corresponding NewType. If no match is found, the property's
+ * type remains unchanged. */
+export type ObjectTypeMap<T, U extends [unknown, unknown][]> = {
+    [K in keyof T]: T[K] extends U[number][0] ? Extract<U[number], [T[K], unknown]>[1] : T[K];
+};
