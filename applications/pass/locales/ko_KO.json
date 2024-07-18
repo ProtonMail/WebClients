@@ -278,7 +278,7 @@
         "링크가 클립보드에 복사됨"
       ],
       "Link expires after": [
-        "링크 만료시점은"
+        "링크 만료시점"
       ],
       "Lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 잠금"
@@ -518,7 +518,7 @@
         "인증"
       ],
       "Via secure link": [
-        "안전한 링크를 이용함"
+        "안전한 링크를 통해 공유"
       ],
       "View details": [
         "자세히 보기"
@@ -1095,15 +1095,6 @@
       "An item previously shared with you was removed": [
         "사용자가 이전에 공유한 항목이 삭제되었습니다."
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "\"${ fromVaultName }\" 에서 \"${ toVaultName }\"(으)로 모든 항목을 이동하시겠습니까?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "항목들을 ${ name }으로 이동하시는 것이 맞습니까?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "항목을 ${ name }으로 이동하시는 것이 맞습니까?"
-      ],
       "Are you sure you want to remove the link?": [
         "이 링크를 삭제하시겠습니까?"
       ],
@@ -1123,7 +1114,7 @@
         "2단계 인증기 내장"
       ],
       "Can be viewed": [
-        "확인될 수 있습니다"
+        "확인 가능 횟수"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
@@ -1395,14 +1386,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its history": [
-        "항목을 다른 금고로 이동하면 그 기록이 지워집니다"
+      "Moving an item to another vault will erase its history.": [
+        "항목을 다른 금고로 이동하면 그 기록이 지워집니다."
       ],
       "Moving items": [
         "항목 이동 중"
       ],
-      "Moving items to another vault will erase their history": [
-        "항목들을 다른 금고로 이동하면 그 기록이 지워집니다"
+      "Moving items to another vault will erase their history.": [
+        "항목들을 다른 금고로 이동하면 그 기록이 지워집니다."
       ],
       "Moving items to trash": [
         "항목을 휴지통으로 이동 중"
@@ -2045,7 +2036,7 @@
       "Make all viewers": [
         "전체 구성원을 뷰어로 선택"
       ],
-      "Max views reached": [
+      "max views reached": [
         "최대 보기 수 도달"
       ],
       "Members": [
@@ -2589,15 +2580,6 @@
       ],
       "Modified": [
         "수정됨"
-      ],
-      "Move all items ?": [
-        "모든 항목을 이동하시겠어요?"
-      ],
-      "Move item?": [
-        "항목을 이동하시겠습니까?"
-      ],
-      "Move items?": [
-        "항목들을 이동하시겠습니까?"
       ],
       "No excluded items": [
         "제외된 항목 없음"

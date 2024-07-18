@@ -1014,6 +1014,9 @@
       "${ count } view": [
         "${ count } kali dilihat"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } tampilan"
+      ],
       "${ memberCount } member": [
         "${ memberCount } anggota"
       ],
@@ -1094,15 +1097,6 @@
       ],
       "An item previously shared with you was removed": [
         "Item yang sebelumnya dibagikan dengan Anda telah dihapus"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Apakah Anda yakin ingin memindahkan semua item dari \"${ fromVaultName }\" ke \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Apakah Anda yakin untuk memindahkan rangkaian item ini ke \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Apakah Anda yakin untuk memindahkan item ini ke \"${ name }\"?"
       ],
       "Are you sure you want to remove the link?": [
         "Apakah Anda yakin ingin menghapus tautan?"
@@ -1395,14 +1389,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Memindahkan item ke brankas lain akan menghapus riwayatnya"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayat dan semua tautan aman."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
       ],
       "Moving items": [
         "Memindahkan item"
       ],
-      "Moving items to another vault will erase their history": [
-        "Memindahkan item ke brankas lain akan menghapus riwayatnya"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
       ],
       "Moving items to trash": [
         "Memindahkan item ke sampah"
@@ -2045,8 +2045,8 @@
       "Make all viewers": [
         "Jadikan seluruh anggota sebagai pengamat"
       ],
-      "Max views reached": [
-        "Tampilan maksimum tercapai"
+      "max views reached": [
+        "tampilan maksimum tercapai"
       ],
       "Members": [
         "Anggota"
@@ -2590,14 +2590,14 @@
       "Modified": [
         "Dimodifikasi"
       ],
-      "Move all items ?": [
-        "Pindahkan semua item?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Pindahkan semua item ke \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Pindahkan item?"
+      "Move item to \"${ vaultName }\"?": [
+        "Pindahkan item ke \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Pindahkan item?"
+      "Move items to \"${ vaultName }\"?": [
+        "Pindahkan item ke \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Tidak ada item yang dikecualikan"

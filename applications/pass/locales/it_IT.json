@@ -1025,6 +1025,9 @@
         "${ count } visualizzazione",
         "${ count } visualizzazioni"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } visualizzazioni"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membri"
@@ -1108,15 +1111,6 @@
       ],
       "An item previously shared with you was removed": [
         "Un elemento precedentemente condiviso con te è stato rimosso"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Sei sicuro di voler spostare tutti gli elementi di \"${ fromVaultName }\" a \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Sei sicuro di voler spostare gli elementi nella cassaforte \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Sei sicuro di voler spostare l'elemento nella cassaforte \"${ name }\" ?"
       ],
       "Are you sure you want to remove the link?": [
         "Sei sicuro di voler rimuovere il link?"
@@ -1412,14 +1406,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia"
+      "Moving an item to another vault will erase its history.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia."
       ],
       "Moving items": [
         "Spostamento degli elementi"
       ],
-      "Moving items to another vault will erase their history": [
-        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia"
+      "Moving items to another vault will erase their history.": [
+        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia."
       ],
       "Moving items to trash": [
         "Spostamento degli elementi nel cestino"
@@ -2071,8 +2065,8 @@
       "Make all viewers": [
         "Rendi tutti visualizzatori"
       ],
-      "Max views reached": [
-        "Numero massimo di visualizzazioni raggiunto"
+      "max views reached": [
+        "numero massimo di visualizzazioni raggiunto"
       ],
       "Members": [
         "Membri"
@@ -2619,14 +2613,14 @@
       "Modified": [
         "Modificato"
       ],
-      "Move all items ?": [
-        "Spostare tutti gli elementi?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Vuoi spostare tutti gli elementi in \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Vuoi spostare l'elemento?"
+      "Move item to \"${ vaultName }\"?": [
+        "Vuoi spostare l'elemento in \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Vuoi spostare gli elementi?"
+      "Move items to \"${ vaultName }\"?": [
+        "Vuoi spostare gli elementi in \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Nessun elemento escluso"

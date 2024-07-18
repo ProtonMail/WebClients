@@ -1025,6 +1025,9 @@
         "${ count } tarkastelukerta",
         "${ count } tarkastelukertaa"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count } / ${ maxReads } katselua"
+      ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
@@ -1108,15 +1111,6 @@
       ],
       "An item previously shared with you was removed": [
         "Sinulle aiemmin jaettu kohde on poistettu"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Haluatko varmasti siirtää kaikki holvin \"${ fromVaultName }\" kohteet holviin \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Haluatko varmasti siirtää kohteet holviin \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Haluatko varmasti siirtää kohteen holviin \"${ name }\"?"
       ],
       "Are you sure you want to remove the link?": [
         "Haluatko varmasti poistaa linkin?"
@@ -1412,14 +1406,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Kohteen siirto toiseen holviin poistaa sen historiatiedot"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen historiatiedot ja turvalliset linkit."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Kohteen siirto toiseen holviin poistaa sen historiatiedot."
       ],
       "Moving items": [
         "Siirretään kohteita"
       ],
-      "Moving items to another vault will erase their history": [
-        "Kohteiden siirto toiseen holviin poistaa niiden historian"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Kohteiden siirto toiseen holviin poistaa niiden historiatiedot ja turvalliset linkit."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Kohteiden siirto toiseen holviin poistaa niiden historian."
       ],
       "Moving items to trash": [
         "Kohteita siirretään roskakoriin"
@@ -2071,8 +2071,8 @@
       "Make all viewers": [
         "Määritä kaikki tarkastelijoiksi"
       ],
-      "Max views reached": [
-        "Katselukertojen enimmäismäärä saavutettu"
+      "max views reached": [
+        "katselukertojen enimmäismäärä saavutettu"
       ],
       "Members": [
         "Jäsenet"
@@ -2619,14 +2619,14 @@
       "Modified": [
         "Muokattu"
       ],
-      "Move all items ?": [
-        "Siirretäänkö kaikki kohteet?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Siirrä kaikki kohteet holviin \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Siirretäänkö kohde?"
+      "Move item to \"${ vaultName }\"?": [
+        "Siirrä kohde holviin \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Siirrä kohteet?"
+      "Move items to \"${ vaultName }\"?": [
+        "Siirrä kohteet holviin \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Poissuljettuja kohteita ei ole"

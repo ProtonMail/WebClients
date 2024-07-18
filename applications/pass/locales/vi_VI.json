@@ -780,15 +780,6 @@
       "An item previously shared with you was removed": [
         "Một nội dung đã được chia sẽ cho bạn trước đây đã bị gỡ bỏ"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Bạn có muốn chuyển tất cả nội dung từ \"${ fromVaultName }\" tới \"${ toVaultName }\" không?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Bạn có muốn chuyển các nội dung này tới \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Bạn có muốn chuyển nội dung này tới \"${ name }\"?"
-      ],
       "Auto-lock successfully disabled.": [
         "Đã vô hiệu hóa Tự động khóa thành công."
       ],
@@ -972,14 +963,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Chuyển một nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó"
+      "Moving an item to another vault will erase its history.": [
+        "Chuyển một nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó."
       ],
       "Moving items": [
         "Đang chuyển nội dung"
       ],
-      "Moving items to another vault will erase their history": [
-        "Chuyển các nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó"
+      "Moving items to another vault will erase their history.": [
+        "Chuyển các nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó."
       ],
       "Moving items to trash": [
         "Đang chuyển nội dung tới thùng rác"
@@ -1852,15 +1843,6 @@
       ],
       "Modified": [
         "Đã chỉnh sửa"
-      ],
-      "Move all items ?": [
-        "Chuyển tất cả nội dung ?"
-      ],
-      "Move item?": [
-        "Di chuyển nội dung?"
-      ],
-      "Move items?": [
-        "Di chuyển các nội dung?"
       ],
       "No items selected": [
         "Không có nội dung nào được chọn"
