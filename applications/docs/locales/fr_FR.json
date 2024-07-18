@@ -1299,6 +1299,9 @@
       "Falkland Islands": [
         "Îles Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Îles Malouines"
+      ],
       "Faroe Islands": [
         "Îles Féroé"
       ],
@@ -1740,6 +1743,9 @@
       "Syria": [
         "Syrie"
       ],
+      "Syrian Arab Republic": [
+        "Syrie"
+      ],
       "Taiwan": [
         "Taïwan"
       ],
@@ -1907,6 +1913,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Définissez une méthode de récupération pour éviter de perdre l'accès à votre compte."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Pour garantir la plus grande sécurité possible de votre compte, définissez une phrase de récupération."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -2117,9 +2126,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
-      ],
-      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
-        "Une erreur d'intégrité des données s'est produite et les modifications récentes ne peuvent pas être enregistrées. Veuillez actualiser la page."
       ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
@@ -2704,6 +2710,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
       ],
@@ -3691,7 +3700,7 @@
         "Le lien sécurisé n'a pas pu être ouvert : ${ error }."
       ],
       "Failing signatures will be re-signed by you": [
-        "Les signatures en erreur seront signées à nouveau par vous."
+        "Les signatures avec des erreurs seront signées à nouveau par vous."
       ],
       "File \"${ name }\" was deleted during download": [
         "Le fichier « ${ name } » a été supprimé pendant le téléchargement."
@@ -4133,7 +4142,7 @@
         "Ce lien sera définitivement désactivé. Aucune personne ayant ce lien ne pourra accéder à votre dossier. Pour partager à nouveau le dossier, vous aurez besoin d'un nouveau lien."
       ],
       "This message will be presented again later": [
-        "Ce message sera de nouveau présenté plus tard"
+        "Ce message sera de nouveau présenté plus tard."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Cela supprimera le lien et retirera l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
@@ -5494,6 +5503,9 @@
       "Collaborate and share large files": [
         "Collaboration et partage de fichiers volumineux"
       ],
+      "Collaborative document editor": [
+        "Éditeur de documents collaboratif"
+      ],
       "Contact groups": [
         "Groupes de contacts"
       ],
@@ -5526,12 +5538,6 @@
       ],
       "DNS leak prevention": [
         "Prévention des fuites DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations) (bientôt)"
       ],
       "Double hop": [
         "Double hop"
@@ -5636,9 +5642,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
-      ],
-      "Reply to messages": [
-        "Répondre aux messages"
       ],
       "Require 2FA for organization": [
         "A2F requise pour l'organisation"
@@ -6404,6 +6407,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
         "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clé de l'organisation n'existe pas."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "L'autorisation est refusée. Les droits administrateur ont été restreints."
+      ],
+      "The organization key must be activated first.": [
+        "La clé de l'organisation doit d'abord être activée."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
       ]
     },
     "Payment method option": {
