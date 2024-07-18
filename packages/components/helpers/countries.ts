@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { localeCode } from '@proton/shared/lib/i18n';
 
-const TOP_COUNTRIES = [
+const getTopCounties = () => [
     { value: 'US', label: c('Country name').t`United States` },
     { value: 'GB', label: c('Country name').t`United Kingdom` },
     { value: 'CH', label: c('Country name').t`Switzerland` },
@@ -16,7 +16,10 @@ export const DEFAULT_SEPARATOR = {
     disabled: true,
     key: 'separator',
 };
-const COUNTRIES = [
+
+// It has to be wrapped in a function because otherwise the tranlsations will not be available at the time when
+// the expression is evaluated
+const getCountries = () => [
     { value: 'AF', label: c('Country name').t`Afghanistan` },
     { value: 'AL', label: c('Country name').t`Albania` },
     { value: 'DZ', label: c('Country name').t`Algeria` },
@@ -252,16 +255,24 @@ const COUNTRIES = [
     { value: 'ZW', label: c('Country name').t`Zimbabwe` },
 ];
 
-try {
-    COUNTRIES.sort((a, b) => a.label.localeCompare(b.label, localeCode.split('_').join('-')));
-} catch {}
+const getSortedCountries = () => {
+    const countries = getCountries();
 
-const countriesByAbbr = COUNTRIES.reduce<{ [key: string]: string }>(
-    (list, country) => ({ ...list, [country.value]: country.label }),
-    {}
-);
+    try {
+        countries.sort((a, b) => a.label.localeCompare(b.label, localeCode.split('_').join('-')));
+    } catch {}
 
-const getCountryByAbbr = (abbr: string) => countriesByAbbr[abbr];
+    return countries;
+};
+
+const getCountryByAbbr = (abbr: string) => {
+    const countriesByAbbr = getCountries().reduce<{ [key: string]: string }>(
+        (list, country) => ({ ...list, [country.value]: country.label }),
+        {}
+    );
+
+    return countriesByAbbr[abbr];
+};
 
 export const getLocalizedCountryByAbbr = (
     abbr: string,
@@ -310,16 +321,18 @@ export interface CountryItem {
 }
 
 export const getFullList = (): CountryItem[] =>
-    TOP_COUNTRIES.map(
-        (country) =>
-            ({
-                ...country,
-                key: `${country.value}-top`,
-                disabled: false,
-                isTop: true,
-            }) as CountryItem
-    ).concat(
-        [DEFAULT_SEPARATOR],
-        COUNTRIES.map((country) => ({ ...country, disabled: false, key: country.value }))
-    );
-export const getFirstTop = () => TOP_COUNTRIES[0];
+    getTopCounties()
+        .map(
+            (country) =>
+                ({
+                    ...country,
+                    key: `${country.value}-top`,
+                    disabled: false,
+                    isTop: true,
+                }) as CountryItem
+        )
+        .concat(
+            [DEFAULT_SEPARATOR],
+            getSortedCountries().map((country) => ({ ...country, disabled: false, key: country.value }))
+        );
+export const getFirstTop = () => getTopCounties()[0];
