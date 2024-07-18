@@ -9,6 +9,7 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
+    Tooltip,
     useEventManager,
     useHotkeys,
     useItemsDroppable,
@@ -56,6 +57,7 @@ interface Props {
     onFocus?: (id: string) => void;
     isOptionDropdownOpened?: boolean;
     id?: string;
+    collapsed?: boolean;
 }
 
 const SidebarItem = ({
@@ -77,6 +79,7 @@ const SidebarItem = ({
     onFocus = noop,
     id,
     isOptionDropdownOpened,
+    collapsed = false,
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
@@ -151,6 +154,9 @@ const SidebarItem = ({
     const elementRef = useRef<HTMLAnchorElement>(null);
     useHotkeys(elementRef, shortcutHandlers);
 
+    const tooltipText = text;
+    const titleText = shortcutText !== undefined && Shortcuts ? `${text} ${shortcutText}` : text;
+
     return (
         <SidebarListItem
             className={clsx([
@@ -159,50 +165,57 @@ const SidebarItem = ({
             ])}
             data-testid={`sidebar-label:${text}`}
         >
-            <SidebarListItemLink
-                aria-current={ariaCurrent}
-                to={link}
-                onClick={handleClick}
-                {...dragProps}
-                onDrop={handleDrop}
-                ref={elementRef}
-                data-testid={`navigation-link:${humanID}`}
-                data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
-                onFocus={() => onFocus(id || '')}
-            >
-                <SidebarListItemContent
-                    left={
-                        icon ? (
-                            <SidebarListItemContentIcon
-                                className={clsx([isLabel && 'navigation-icon--fixAliasing'])}
-                                name={icon}
-                                color={color}
-                                size={iconSize}
-                            />
-                        ) : undefined
-                    }
-                    right={
-                        <LocationAside
-                            unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
-                            weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
-                            active={isActive}
-                            refreshing={refreshing}
-                            onRefresh={handleRefresh}
-                            shouldDisplayTotal={needsTotalDisplay}
-                            hideCountOnHover={hideCountOnHover}
-                            itemOptions={itemOptions}
-                            isOptionDropdownOpened={isOptionDropdownOpened}
-                        />
-                    }
+            <Tooltip originalPlacement="right" title={collapsed ? tooltipText : null}>
+                <SidebarListItemLink
+                    aria-current={ariaCurrent}
+                    to={link}
+                    onClick={handleClick}
+                    {...dragProps}
+                    onDrop={handleDrop}
+                    ref={elementRef}
+                    data-testid={`navigation-link:${humanID}`}
+                    data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
+                    onFocus={() => onFocus(id || '')}
                 >
-                    <span
-                        className="text-ellipsis"
-                        title={shortcutText !== undefined && Shortcuts ? `${text} ${shortcutText}` : text}
+                    <SidebarListItemContent
+                        collapsed={collapsed}
+                        left={
+                            icon ? (
+                                <SidebarListItemContentIcon
+                                    className={clsx([
+                                        collapsed && 'flex mx-auto',
+                                        isLabel && 'navigation-icon--fixAliasing',
+                                    ])}
+                                    name={icon}
+                                    color={color}
+                                    size={iconSize}
+                                />
+                            ) : undefined
+                        }
+                        right={
+                            <LocationAside
+                                unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
+                                weak={labelID !== MAILBOX_LABEL_IDS.INBOX}
+                                active={isActive}
+                                refreshing={refreshing}
+                                onRefresh={handleRefresh}
+                                shouldDisplayTotal={needsTotalDisplay}
+                                hideCountOnHover={hideCountOnHover}
+                                itemOptions={itemOptions}
+                                isOptionDropdownOpened={isOptionDropdownOpened}
+                                collapsed={collapsed}
+                            />
+                        }
                     >
-                        {content}
-                    </span>
-                </SidebarListItemContent>
-            </SidebarListItemLink>
+                        <span
+                            className={clsx('text-ellipsis', collapsed && 'sr-only')}
+                            title={collapsed ? undefined : titleText}
+                        >
+                            {content}
+                        </span>
+                    </SidebarListItemContent>
+                </SidebarListItemLink>
+            </Tooltip>
             {moveScheduledModal}
             {moveSnoozedModal}
             {moveAllModal}

@@ -1,13 +1,15 @@
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { AppLink, AppLinkProps, CustomLogo, MainLogo } from '../';
 import { useOrganizationTheme } from '../../containers/organization/logoUpload';
 
 interface Props extends AppLinkProps {
     app: APP_NAMES;
+    collapsed?: boolean;
 }
 
-const SidebarLogo = ({ app, ...rest }: Props) => {
+const SidebarLogo = ({ app, collapsed = false, ...rest }: Props) => {
     const organizationTheme = useOrganizationTheme();
 
     if (organizationTheme.logoURL && organizationTheme.showName) {
@@ -15,17 +17,25 @@ const SidebarLogo = ({ app, ...rest }: Props) => {
             <AppLink
                 toApp={app}
                 target="_self"
-                className="relative interactive-pseudo-protrude interactive--no-background text-no-decoration rounded-lg"
+                className={clsx(
+                    'relative interactive-pseudo-protrude interactive--no-background text-no-decoration rounded-lg',
+                    collapsed && 'mt-3'
+                )}
                 {...rest}
             >
                 <CustomLogo
                     url={organizationTheme.logoURL}
                     app={app}
+                    collapsed={collapsed}
                     organizationName={organizationTheme.name}
                     organizationNameDataTestId="sidebar:organization-name"
                 />
             </AppLink>
         );
+    }
+
+    if (collapsed) {
+        return <MainLogo variant="glyph-only" className="mt-3" {...rest} data-testid="main-logo" />;
     }
 
     return <MainLogo {...rest} data-testid="main-logo" />;
