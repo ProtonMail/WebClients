@@ -492,6 +492,9 @@
       "Get in touch": [
         "Nous contacter"
       ],
+      "Get it": [
+        "Obtenez-le"
+      ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Profitez-en pour seulement ${ addonPriceWithCurrency }/mois."
       ],
@@ -1524,6 +1527,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Rapide et sécurisé. Aucune trace de vos activités n'est conservée."
+      ],
+      "Faster, broader device compatibility": [
+        "Compatibilité avec plus d'appareils et plus rapide"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Aucune donnée n'est transmise lors de son utilisation et un seul téléchargement est nécessaire."
       ],
       "Requires a one-time download and compatible hardware.": [
         "Nécessite un seul téléchargement et le matériel compatible."
@@ -2684,6 +2693,9 @@
       "Falkland Islands": [
         "Îles Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Îles Malouines"
+      ],
       "Faroe Islands": [
         "Îles Féroé"
       ],
@@ -3125,6 +3137,9 @@
       "Syria": [
         "Syrie"
       ],
+      "Syrian Arab Republic": [
+        "Syrie"
+      ],
       "Taiwan": [
         "Taïwan"
       ],
@@ -3387,6 +3402,9 @@
       ],
       "To continue to use the writing assistant, request access from your admin.": [
         "Pour continuer à utiliser l'assistant d'écriture, demandez l'accès à votre administrateur."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Pour garantir la plus grande sécurité possible de votre compte, définissez une phrase de récupération."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -3972,6 +3990,9 @@
       "Please select a category and what went wrong with the generated text": [
         "Sélectionnez une catégorie et ce qui n'a pas fonctionné avec le texte généré."
       ],
+      "Please try again or refresh the page.": [
+        "Veuillez réessayer ou actualisez la page."
+      ],
       "Please try generating the text again": [
         "Essayez à nouveau de générer du texte."
       ],
@@ -4397,6 +4418,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
       ],
@@ -5097,9 +5121,6 @@
       ],
       "Tell us more": [
         "Dites-nous-en plus"
-      ],
-      "Write faster with the writing assistant": [
-        "Rédigez vos messages en un rien de temps grâce à l'assistant d'écriture"
       ]
     },
     "Hint": {
@@ -5864,6 +5885,9 @@
       "Country code": [
         "Indicatif du pays"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Améliorez rapidement et facilement la rédaction de vos e-mails Essayez cette fonction dès maintenant."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
         "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -6227,9 +6251,6 @@
       "Left to Right": [
         "De gauche à droite"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "L'assistant d'écriture vous aide à rédiger et à répondre à vos e-mails et maximisez ainsi votre productivité."
-      ],
       "Link type": [
         "Type de lien"
       ],
@@ -6388,9 +6409,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Vous ne pouvez ouvrir qu'un seul assistant d'écriture à la fois."
       ],
       "Open shortcut cheat sheet": [
         "Ouvrir l'aide-mémoire des raccourcis"
@@ -7594,6 +7612,9 @@
       ],
       " and ${ l }": [
         " et ${ l }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
@@ -8949,6 +8970,9 @@
       "Collaborate and share large files": [
         "Collaboration et partage de fichiers volumineux"
       ],
+      "Collaborative document editor": [
+        "Éditeur de documents collaboratif"
+      ],
       "Contact groups": [
         "Groupes de contacts"
       ],
@@ -8981,12 +9005,6 @@
       ],
       "DNS leak prevention": [
         "Prévention des fuites DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations) (bientôt)"
       ],
       "Double hop": [
         "Double hop"
@@ -9091,9 +9109,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
-      ],
-      "Reply to messages": [
-        "Répondre aux messages"
       ],
       "Require 2FA for organization": [
         "A2F requise pour l'organisation"
@@ -11122,7 +11137,7 @@
         "${ MAIL_APP_NAME } garantit la sécurité de vos données et permet d'envoyer des e-mails chiffrés à tout le monde."
       ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME }avec transfert automatique des messages"
+        "${ MAIL_APP_NAME } avec transfert automatique des messages"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } calendrier par utilisateur",
@@ -11215,7 +11230,7 @@
         "Tout ce dont votre entreprise a besoin"
       ],
       "Any custom email domains will be disabled": [
-        "Toute demande de messagerie personnalisé sera désactivé."
+        "Toute demande de messagerie personnalisée sera désactivée."
       ],
       "Automatic email forwarding": [
         "Transfert automatique des messages"
@@ -11326,7 +11341,7 @@
         "Restez en sécurité et connecté partout"
       ],
       "Support your compliance objectives": [
-        "Facilitez vos efforts pour être en conformité"
+        "Prise en charge de vos objectifs de conformité"
       ],
       "Sync files on devices": [
         "Synchroniser des fichiers sur vos appareils"
@@ -11750,6 +11765,12 @@
       ],
       "Verification successful": [
         "La vérification a abouti."
+      ],
+      "Writing assistant disabled": [
+        "L'assistant d'écriture est désactivé."
+      ],
+      "Writing assistant enabled": [
+        "L'assistant d'écriture est activé."
       ],
       "Writing assistant setting updated": [
         "Le paramètre de l'assistant d'écriture a été mis à jour."

@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
@@ -489,6 +492,9 @@
       "Get in touch": [
         "Bizimle görüşün"
       ],
+      "Get it": [
+        "Al"
+      ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "${ addonPriceWithCurrency } /ay tutarla alın"
       ],
@@ -822,6 +828,9 @@
       ],
       "Ok": [
         "Tamam"
+      ],
+      "Open": [
+        "Açık"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } uygulamasını aç"
@@ -1415,6 +1424,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } ek özel etki alanı",
+        "${ domains } ek özel etki alanı"
+      ],
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
@@ -1514,6 +1527,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Hızlı ve güvenli. Herhangi bir kayıt tutulmaz."
+      ],
+      "Faster, broader device compatibility": [
+        "Daha hızlı, daha geniş aygıt uyumluluğu"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Kullanırken veri aktarılmaz, tek seferlik indirme gerekir"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Tek seferlik indirme ve uyumlu donanım gerekir."
@@ -2674,6 +2693,9 @@
       "Falkland Islands": [
         "Falkland Adaları"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Adaları (Malvinas)"
+      ],
       "Faroe Islands": [
         "Faroe Adaları"
       ],
@@ -3114,6 +3136,9 @@
       ],
       "Syria": [
         "Suriye"
+      ],
+      "Syrian Arab Republic": [
+        "Suriye Arap Cumhuriyeti"
       ],
       "Taiwan": [
         "Tayvan"
@@ -3961,6 +3986,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Lütfen bir kategori seçin ve oluşturulan metinde neyin yanlış olduğunu belirtin"
+      ],
+      "Please try again or refresh the page.": [
+        "Sayfayı yenileyerek tekrar deneyin."
       ],
       "Please try generating the text again": [
         "Lütfen metni yeniden oluşturmayı deneyin"
@@ -5087,9 +5115,6 @@
       ],
       "Tell us more": [
         "Bize daha fazla bilgi verin"
-      ],
-      "Write faster with the writing assistant": [
-        "Yazma yardımcısı ile daha hızlı yazın"
       ]
     },
     "Hint": {
@@ -5851,6 +5876,9 @@
       "Country code": [
         "Ülke kodu"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Daha iyi e-postaları hızlı ve zahmetsizce oluşturun. Hemen deneyin."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim ekle",
         "${ calendarsToBeCreatedCount } yeni takvim ekle"
@@ -6214,9 +6242,6 @@
       "Left to Right": [
         "Soldan sağa"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Yazma yardımcısının e-postalarınızı yazmanıza ve yanıtlamanıza yardımcı olmasına izin verin ve üretkenliğinizin nasıl arttığını görün."
-      ],
       "Link type": [
         "Bağlantı türü"
       ],
@@ -6375,9 +6400,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Aynı anda yalnızca bir yazma yardımcısı açık olabilir"
       ],
       "Open shortcut cheat sheet": [
         "Kısayol rehberini aç"
@@ -8966,12 +8988,6 @@
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar) (yakında)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9076,9 +9092,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
-      "Reply to messages": [
-        "İletileri yanıtlayın"
-      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
@@ -9153,6 +9166,9 @@
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
+      ],
+      "Unlimited logins and notes": [
+        "Sınırsız sayıda oturum açma bilgisi ve not"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -11729,6 +11745,12 @@
       "Verification successful": [
         "Doğrulandı"
       ],
+      "Writing assistant disabled": [
+        "Yazma yardımcısı kapalı"
+      ],
+      "Writing assistant enabled": [
+        "Yazma yardımcısı açık"
+      ],
       "Writing assistant setting updated": [
         "Yazma yardımcısı ayarları güncellendi"
       ],
@@ -12224,6 +12246,9 @@
       "Import failed": [
         "İçe aktarılamadı"
       ],
+      "Import groups": [
+        "Grupları içe aktar"
+      ],
       "Insert contacts": [
         "Kişi ekle"
       ],
@@ -12493,6 +12518,9 @@
       ],
       "Sending original message": [
         "Özgün ileti gönderiliyor"
+      ],
+      "Set recovery phrase": [
+        "Kurtarma ifadesini ayarla"
       ],
       "Set your own schedule": [
         "Kendi zamanlamanızı yapın"

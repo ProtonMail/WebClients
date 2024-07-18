@@ -13,14 +13,26 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
@@ -477,6 +489,9 @@
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
+      "Get it": [
+        "მიღება"
+      ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "მიიღეთ ტარიფი, მხოლოდ, ${ addonPriceWithCurrency }-ად თვეში"
       ],
@@ -810,6 +825,9 @@
       ],
       "Ok": [
         "დიახ"
+      ],
+      "Open": [
+        "გახსნა"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME }-ის გახსნა"
@@ -1502,6 +1520,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "სწრაფი და უსაფრთხო. ჟურნალს არ ვინახავთ."
+      ],
+      "Faster, broader device compatibility": [
+        "უფრო სწრაფი, თავსებადი უფრო მეტ მოწყობილობასთან"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "გამოყენებისას მონაცემების გადაცემა არ ხდება. სჭირდება ერთჯერადი გადმოწერა"
       ],
       "Requires a one-time download and compatible hardware.": [
         "ესაჭიროება ერთჯერადი გადმოწერა და თავსებადი აპარატურა."
@@ -2662,6 +2686,9 @@
       "Falkland Islands": [
         "ფოლკლენდის კუნძულები"
       ],
+      "Falkland Islands (Malvinas)": [
+        "ფელკლენდის კუნძულები"
+      ],
       "Faroe Islands": [
         "ფაროს კუნძულები"
       ],
@@ -3101,6 +3128,9 @@
         "შვეიცარია"
       ],
       "Syria": [
+        "სირია"
+      ],
+      "Syrian Arab Republic": [
         "სირია"
       ],
       "Taiwan": [
@@ -5072,9 +5102,6 @@
       ],
       "Tell us more": [
         "გვითხარით მეტი"
-      ],
-      "Write faster with the writing assistant": [
-        "წერეთ უფრო სწრაფად დამხმარესთან ერთად"
       ]
     },
     "Hint": {
@@ -5391,6 +5418,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
@@ -6199,9 +6229,6 @@
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "მიეცით საშუალება წერის დამხმარეს, დაგეხმაროთ ელფოსტების წერაში და მათზე პასუხის გაცემაში და შეამჩნევთ, რომ თქვენი პროდუქტიულობა ცამდე აფრინდება."
-      ],
       "Link type": [
         "ბმულის ტიპი"
       ],
@@ -6360,9 +6387,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "დროის ერთ მონაკვეთში, მხოლოდ, ერთი წერის დამხმარე შეიძლება იყოს აქტიური"
       ],
       "Open shortcut cheat sheet": [
         "მალსახმობების ჩამონათვლის გახსნა"
@@ -8942,12 +8966,6 @@
       "DNS leak prevention": [
         "DNS გაპარების თავიდან აცილება"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები) (მალე)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9052,9 +9070,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
       ],
-      "Reply to messages": [
-        "პასუხი შეტყობინებებზე"
-      ],
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
       ],
@@ -9129,6 +9144,9 @@
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited logins and notes": [
+        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
       ],
       "Unlimited logins, notes and credit cards": [
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
@@ -10246,6 +10264,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ],
@@ -11633,6 +11654,12 @@
       "Verification successful": [
         "გადამოწმება წარმატებულია"
       ],
+      "Writing assistant disabled": [
+        "წერის დამხმარე გათიშულია"
+      ],
+      "Writing assistant enabled": [
+        "წერაში დამხმარე ჩართულია"
+      ],
       "Writing assistant setting updated": [
         "წერის დამხმარის პარამეტრი განახლდა"
       ],
@@ -12397,6 +12424,9 @@
       ],
       "Sending original message": [
         "საწყისი შეტყობინების გაგზავნა"
+      ],
+      "Set recovery phrase": [
+        "აღსადგენი ფრაზის დაყენება"
       ],
       "Set your own schedule": [
         "თქვენი განრიგის დაყენება"

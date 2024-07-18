@@ -831,6 +831,9 @@
       "Ok": [
         "OK"
       ],
+      "Open": [
+        "Открыть"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Открыть ${ CALENDAR_APP_NAME }"
       ],
@@ -1530,6 +1533,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Быстро и безопасно. Журналы не сохраняются."
+      ],
+      "Faster, broader device compatibility": [
+        "Более быстрая и широкая совместимость устройств"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Во время использования данные не передаются, требуется одноразовое скачиваение"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Требуется одноразовая загрузка и совместимое оборудование."
@@ -2700,6 +2709,9 @@
       "Falkland Islands": [
         "Фолклендские острова"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Фолклендские (Мальвинские) острова"
+      ],
       "Faroe Islands": [
         "Фарерские острова"
       ],
@@ -3132,6 +3144,9 @@
       "Svalbard and Jan Mayen": [
         "Шпицберген и Ян-Майен"
       ],
+      "Swaziland": [
+        "Эсватини"
+      ],
       "Sweden": [
         "Швеция"
       ],
@@ -3141,6 +3156,9 @@
       "Syria": [
         "Сирия"
       ],
+      "Syrian Arab Republic": [
+        "Сирийская Арабская Республика"
+      ],
       "Taiwan": [
         "Тайвань"
       ],
@@ -3148,6 +3166,9 @@
         "Таджикистан"
       ],
       "Tanzania": [
+        "Танзания"
+      ],
+      "Tanzania, United Republic of": [
         "Танзания"
       ],
       "Thailand": [
@@ -5163,9 +5184,6 @@
       ],
       "Tell us more": [
         "Расскажи подробнее"
-      ],
-      "Write faster with the writing assistant": [
-        "Пишите быстрее с помощью помощника по написанию"
       ]
     },
     "Hint": {
@@ -6424,9 +6442,6 @@
       "Left to Right": [
         "Слева направо"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Позвольте помощнику по написанию помогать вам писать и отвечать на них, и вы увидите, как повысится ваша производительность."
-      ],
       "Link type": [
         "Тип ссылки"
       ],
@@ -6585,9 +6600,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Одновременно может быть открыт только один помощник по написанию."
       ],
       "Open shortcut cheat sheet": [
         "Открыть шпаргалку сочетаний клавиш"
@@ -9239,6 +9251,9 @@
       "Collaborate and share large files": [
         "Работайте вместе и делитесь большими файлами"
       ],
+      "Collaborative document editor": [
+        "Редактор для совместной работы над документами"
+      ],
       "Contact groups": [
         "Группы контактов"
       ],
@@ -9271,12 +9286,6 @@
       ],
       "DNS leak prevention": [
         "Предотвращение утечки DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Редакторы документов (текстовых документов, электронных таблиц, слайдов)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Редакторы документов (текстовых документов, электронных таблиц, слайдов) (скоро)"
       ],
       "Double hop": [
         "Двойной перелёт"
@@ -9386,9 +9395,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Регулярная проверка безопасности вашего аккаунта. Мы предупредим вас, если у вас есть ненадежные или повторно используемые пароли, которые необходимо обновить."
       ],
-      "Reply to messages": [
-        "Ответить на сообщения"
-      ],
       "Require 2FA for organization": [
         "Требуется двухфакторная идентификация для организации"
       ],
@@ -9463,6 +9469,9 @@
       ],
       "Unlimited labels": [
         "Неограниченное количество ярлыков"
+      ],
+      "Unlimited logins and notes": [
+        "Неограниченное количество имен пользователей и заметок"
       ],
       "Unlimited logins, notes and credit cards": [
         "Неограниченное количество имен пользователей, заметок и кредитных карт"
@@ -12181,6 +12190,12 @@
       "Verification successful": [
         "Проверка прошла успешно"
       ],
+      "Writing assistant disabled": [
+        "Помощник по написанию выключен"
+      ],
+      "Writing assistant enabled": [
+        "Помощник по написанию включен"
+      ],
       "Writing assistant setting updated": [
         "Настройки помощника по написанию обновлены"
       ],
@@ -12975,6 +12990,9 @@
       ],
       "Sending original message": [
         "Отправление исходного сообщения"
+      ],
+      "Set recovery phrase": [
+        "Установить фразу для восстановления"
       ],
       "Set your own schedule": [
         "Установить своё собственное расписание"

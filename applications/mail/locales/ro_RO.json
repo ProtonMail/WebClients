@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
@@ -1523,6 +1526,12 @@
       "Fast and secure. No logs are kept.": [
         "Rapid și sigur. Nu se păstrează jurnale."
       ],
+      "Faster, broader device compatibility": [
+        "Compatibilitate cu mai multe dispozitive și mai rapid."
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Nu sunt transmise date în timpul utilizării. Necesită descărcare o singură dată."
+      ],
       "Requires a one-time download and compatible hardware.": [
         "Necesită o singură descărcare și dispozitiv fizic compatibil."
       ],
@@ -2687,6 +2696,9 @@
       "Falkland Islands": [
         "Insulele Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Insulele Falkland (Malvine)"
+      ],
       "Faroe Islands": [
         "Insulele Feroe"
       ],
@@ -3127,6 +3139,9 @@
       ],
       "Syria": [
         "Siria"
+      ],
+      "Syrian Arab Republic": [
+        "Republica Arabă Siriană"
       ],
       "Taiwan": [
         "Taiwan"
@@ -5125,9 +5140,6 @@
       ],
       "Tell us more": [
         "Spuneți-ne mai multe"
-      ],
-      "Write faster with the writing assistant": [
-        "Scrieți mai repede cu asistentul de scriere"
       ]
     },
     "Hint": {
@@ -5454,6 +5466,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
@@ -6319,9 +6334,6 @@
       "Left to Right": [
         "De la stânga la dreapta"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Lăsați asistentul de scriere să vă ajute să scrieți și să răspundeți la mesajele de pe e-mail și priviți cum vă măriți productivitatea."
-      ],
       "Link type": [
         "Tip legătură"
       ],
@@ -6480,9 +6492,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Numai un singur asistent de scris poate fi deschis la un moment dat."
       ],
       "Open shortcut cheat sheet": [
         "Deschidere listă combinații de taste"
@@ -9119,12 +9128,6 @@
       "DNS leak prevention": [
         "Prevenire breșe DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editor documente (documente, foi de calcul, prezentări)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editor documente (documente, foi de calcul, prezentări) (în curând)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9231,9 +9234,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Verificări regulate ale securității contului deținut. Vă alertăm dacă aveți parole slabe sau reutilizate care trebuie modificate."
       ],
-      "Reply to messages": [
-        "Răspundeți la mesaje"
-      ],
       "Require 2FA for organization": [
         "Este necesară A2F pentru organizație"
       ],
@@ -9308,6 +9308,9 @@
       ],
       "Unlimited labels": [
         "Etichete nelimitate"
+      ],
+      "Unlimited logins and notes": [
+        "Date de autentificare și note nelimitate"
       ],
       "Unlimited logins, notes and credit cards": [
         "Date de autentificare, note și carduri de credit nelimitate"
@@ -11955,6 +11958,12 @@
       "Verification successful": [
         "Verificare reușită"
       ],
+      "Writing assistant disabled": [
+        "Asistent de scriere dezactivat"
+      ],
+      "Writing assistant enabled": [
+        "Asistent de scriere activat"
+      ],
       "Writing assistant setting updated": [
         "Setări asistent de scriere actualizate"
       ],
@@ -12734,6 +12743,9 @@
       ],
       "Sending original message": [
         "Se trimite mesajul original"
+      ],
+      "Set recovery phrase": [
+        "Setare frază de recuperare"
       ],
       "Set your own schedule": [
         "Setare programare"
