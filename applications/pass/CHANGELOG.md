@@ -1,3 +1,27 @@
+### Version 1.20.1
+
+-   Improved authentication system
+
+### Version 1.20.0
+
+-   Add support for secure-links
+-   Add support for email/username split on login items
+-   Fix stale invites being cached
+-   Improve app version update detection
+-   Improve app service worker
+
+### Version 1.19.2
+
+-   Improved offline detection
+-   Fine-tune password unlocking
+-   Fix auth refresh triggered on too many unlock attempts
+
+### Version 1.19.0
+
+-   Add extra password support
+-   Improve web-app deep linking for B2B organizations
+-   Fix missing 2FA warning for B2B organizations
+
 ### Version 1.18.0
 
 -   Add offline mode support on web app
