@@ -3,12 +3,16 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { LocationErrorBoundary } from '@proton/components';
+import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
+import { SignUpFlowModal } from '../components/SharedPage/Bookmarks/SignUpFlowModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import { DecryptedLink, PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
+import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_shares/useDriveShareURLBookmarking';
+import { deleteStoredUrlPassword } from '../utils/url/password';
 
 export default function PublicSharedLinkContainer() {
     return (
@@ -29,7 +33,8 @@ function PublicShareLinkInitContainer() {
     const { clearDownloads } = useDownload();
     const { token, urlPassword } = usePublicToken();
     const { isLoading, error, isPasswordNeeded, submitPassword } = usePublicAuth(token, urlPassword);
-
+    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
+    const isProtonUser = isProtonUserFromCookie();
     // If password to the share was changed, page need to reload everything.
     // In such case we need to also clear all downloads to not keep anything
     // from before.
@@ -38,6 +43,11 @@ function PublicShareLinkInitContainer() {
             clearDownloads();
         }
     }, [isLoading]);
+
+    useEffect(() => {
+        // Always delete saved public share URL when browsing a public share url
+        deleteStoredUrlPassword();
+    }, []);
 
     if (isLoading) {
         return <LoadingPage />;
@@ -51,7 +61,13 @@ function PublicShareLinkInitContainer() {
         return <PasswordPage submitPassword={submitPassword} />;
     }
 
-    return <PublicSharedLink token={token} />;
+    return (
+        <>
+            <PublicSharedLink token={token} />
+            {/** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */}
+            {isDriveShareUrlBookmarkingEnabled && !isProtonUser && <SignUpFlowModal urlPassword={urlPassword} />}
+        </>
+    );
 }
 
 /**
