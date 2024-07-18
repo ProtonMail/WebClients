@@ -3,15 +3,15 @@ import type { FC } from 'react';
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
 import { Icon, useModalStateWithData } from '@proton/components/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
+import { getNewField } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
-import { EMPTY_CUSTOM_FIELD } from '@proton/pass/components/Item/Identity/Identity.new';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
+import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import type { IdentityItemFormValues, UnsafeItemExtraSection } from '@proton/pass/types';
 
 type IdentityCustomSectionsProps = {
@@ -48,11 +48,11 @@ export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }
                                                 return (
                                                     <>
                                                         <FieldsetCluster>
-                                                            {sectionFields.map((_: unknown, index: number) => (
+                                                            {sectionFields.map(({ type }, index: number) => (
                                                                 <Field
                                                                     key={`${sectionName}[${index}]`}
                                                                     component={ExtraFieldComponent}
-                                                                    type="text"
+                                                                    type={type}
                                                                     name={`${sectionKey}[${index}]`}
                                                                     onDelete={() => {
                                                                         if (index === 0) {
@@ -76,21 +76,27 @@ export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }
                                                                 />
                                                             ))}
                                                         </FieldsetCluster>
-                                                        <Button
-                                                            className="mb-2 rounded-full"
-                                                            style={{
-                                                                backgroundColor: 'var(--interaction-weak)',
-                                                            }}
-                                                            color="norm"
-                                                            shape="ghost"
-                                                            onClick={() => helpers.push(EMPTY_CUSTOM_FIELD)}
+                                                        <DropdownMenuBase
+                                                            className="mb-2"
+                                                            dropdownOptions={[
+                                                                {
+                                                                    value: 'text',
+                                                                    label: c('Label').t`Text field`,
+                                                                    onClick: () => helpers.push(getNewField('text')),
+                                                                },
+                                                                {
+                                                                    value: 'hidden',
+                                                                    label: c('Label').t`Hidden field`,
+                                                                    onClick: () => helpers.push(getNewField('hidden')),
+                                                                },
+                                                            ]}
                                                         >
                                                             <div className="flex items-center">
                                                                 <Icon name="plus" />
                                                                 <div className="ml-2 text-semibold">{c('Action')
-                                                                    .t`Add custom field`}</div>
+                                                                    .t`Add more`}</div>
                                                             </div>
-                                                        </Button>
+                                                        </DropdownMenuBase>
                                                     </>
                                                 );
                                             }}
@@ -104,7 +110,7 @@ export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }
                             onAdd={(sectionName: string) => {
                                 extraSectionsHelpers.push({
                                     sectionName,
-                                    sectionFields: [EMPTY_CUSTOM_FIELD],
+                                    sectionFields: [getNewField('text')],
                                 });
                             }}
                         />

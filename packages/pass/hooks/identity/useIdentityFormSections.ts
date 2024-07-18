@@ -4,17 +4,19 @@ import type { FactoryOpts } from 'imask/masked/factory';
 import cloneDeep from 'lodash/cloneDeep';
 import { c } from 'ttag';
 
-import type { IdentityItemFormValues, IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { ExtraFieldType, IdentityItemFormValues, IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
+import { deduplicate } from '@proton/pass/utils/array/duplicate';
 
 type FieldName = keyof Omit<IdentityValues, 'extraSections'>;
 
-type IdentityField = {
+export type IdentityField = {
     name: FieldName;
     label: string;
     placeholder: string;
     component?: ComponentType<any>;
     mask?: FactoryOpts;
     value?: string;
+    type?: ExtraFieldType;
 };
 
 export type IdentityFieldSection = {
@@ -114,8 +116,14 @@ const getIdentityFields = (): IdentityFormFields => ({
     },
     extraPersonalDetails: {
         name: 'extraPersonalDetails',
-        label: c('Label').t`Custom field`,
-        placeholder: c('Label').t`Custom field`,
+        label: c('Label').t`Text field`,
+        placeholder: c('Label').t`Text field`,
+    },
+    extraPersonalDetailsHidden: {
+        name: 'extraPersonalDetails',
+        label: c('Label').t`Hidden field`,
+        placeholder: c('Label').t`Hidden field`,
+        type: 'hidden',
     },
     organization: {
         name: 'organization',
@@ -209,13 +217,14 @@ const getIdentityFields = (): IdentityFormFields => ({
     },
     extraWorkDetails: {
         name: 'extraWorkDetails',
-        label: c('Label').t`Custom field`,
-        placeholder: c('Label').t`Custom field`,
+        label: c('Label').t`Text field`,
+        placeholder: c('Label').t`Text field`,
     },
     extraWorkDetailsHidden: {
         name: 'extraWorkDetails',
-        label: c('Label').t`Custom field`,
-        placeholder: c('Label').t`Custom field`,
+        label: c('Label').t`Hidden field`,
+        placeholder: c('Label').t`Hidden field`,
+        type: 'hidden',
     },
 });
 
@@ -233,6 +242,7 @@ const getFormSections = (identityFields: IdentityFormFields): IdentityFieldSecti
                 identityFields.birthdate,
                 identityFields.gender,
                 identityFields.extraPersonalDetails,
+                identityFields.extraPersonalDetailsHidden,
             ],
         },
     },
@@ -283,7 +293,8 @@ const mapToIdentityField = (fields: UnsafeItemExtraField[], fieldName: string): 
         label: customField.fieldName,
         placeholder: customField.fieldName,
         name: fieldName as FieldName,
-        value: customField.type === 'text' ? customField.data.content : '',
+        value: customField.type !== 'totp' ? customField.data.content : '',
+        type: customField.type,
     }));
 
 const buildSections = (identityFields: IdentityFormFields, initialValues?: IdentityValues): IdentityFieldSection[] => {
@@ -299,8 +310,9 @@ const buildSections = (identityFields: IdentityFormFields, initialValues?: Ident
         section.fields.push(...fields);
         if (section.optionalFields) section.optionalFields.fields = optionalFields;
 
-        // Edge case: Identities with custom fields only will not auto-expand
-        section.expanded = section.fields.some((field) => initialValues[field.name]);
+        section.expanded = [...section.fields, ...(section.optionalFields?.fields ?? [])].some(
+            (field) => initialValues[field.name]?.length ?? initialValues[field.name]
+        );
 
         return section;
     });
@@ -346,7 +358,10 @@ export const useIdentityFormSections = ({ initialValues, identity }: IdentityFor
 
         return sections
             .reduce<IdentityFieldSection[]>((fieldSections, section) => {
-                const fields = [...section.fields, ...(section.optionalFields?.fields ?? [])];
+                const fields = deduplicate(
+                    [...section.fields, ...(section.optionalFields?.fields ?? [])],
+                    (f) => (f2) => f.name === f2.name
+                );
 
                 const filteredFields = fields.reduce<IdentityField[]>((acc, field) => {
                     const fieldName = field.name;
