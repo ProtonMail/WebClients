@@ -1,3 +1,4 @@
+import EditGroup from './EditGroup';
 import ViewGroup from './ViewGroup';
 import { GroupsManagementReturn } from './types';
 
@@ -14,7 +15,7 @@ const GroupForm = ({ groupsManagement, groupsManagement: { uiState, selectedGrou
         return <ViewGroup groupsManagement={groupsManagement} groupData={selectedGroup} />;
     }
 
-    return undefined;
+    return <EditGroup groupsManagement={groupsManagement} groupData={selectedGroup} />;
 };
 
 export default GroupForm;
