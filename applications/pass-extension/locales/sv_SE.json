@@ -110,10 +110,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -988,6 +988,9 @@
         "${ count } visning",
         "${ count } visningar"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } visningar"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
@@ -1081,20 +1084,14 @@
       "An item previously shared with you was removed": [
         "Ett objekt som tidigare delats med dig togs bort"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Är du säker på att du vill flytta alla objekten från “${ fromVaultName }“ till “${ toVaultName }“?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Är du säker på att du vill flytta objekten till “${ name }“?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Är du säker på att du vill flytta objektet till “${ name }“?"
-      ],
       "Are you sure you want to remove the link?": [
         "Är du säker på att du vill ta bort länken?"
       ],
       "Auto-lock successfully disabled.": [
         "Automatisk låsning inaktiverat."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Kopiera automatiskt det genererade lösenordet till urklipp"
       ],
       "Autosaved on ${ payload.domain }": [
         "Autosparad på ${ payload.domain }"
@@ -1366,14 +1363,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Att flytta ett objekt till annat valv kommer radera dess historik"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Att flytta ett objekt till annat valv kommer att radera dess historik och alla säkra länkar."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Att flytta ett objekt till annat valv kommer radera dess historik."
       ],
       "Moving items": [
         "Flyttar objekt"
       ],
-      "Moving items to another vault will erase their history": [
-        "Att flytta objekt till annat valv kommer radera dess historik"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Att flytta objekt till annat valv kommer att radera dess historik och alla säkra länkar."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Att flytta objekt till annat valv kommer radera dess historik."
       ],
       "Moving items to trash": [
         "Flyttar objekt till papperskorg"
@@ -1862,6 +1865,9 @@
       "Copy": [
         "Kopiera"
       ],
+      "Copy password": [
+        "Kopiera lösenord"
+      ],
       "Create a credit card": [
         "Skapa ett kreditkort"
       ],
@@ -2024,8 +2030,8 @@
       "Make all viewers": [
         "Gör alla till visare"
       ],
-      "Max views reached": [
-        "Maximalt antal visningar uppnått"
+      "max views reached": [
+        "maximalt antal visningar uppnått"
       ],
       "Members": [
         "Medlemmar"
@@ -2453,6 +2459,9 @@
       "Fill & copy password": [
         "Fyll i och kopiera lösenord"
       ],
+      "Fill password": [
+        "Fyll lösenord"
+      ],
       "Get Started": [
         "Kom igång"
       ],
@@ -2498,14 +2507,14 @@
       "Modified": [
         "Ändrad"
       ],
-      "Move all items ?": [
-        "Flytta alla objekt?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Flytta alla objekt till ”${ vaultName }”?"
       ],
-      "Move item?": [
-        "Flytta objekt?"
+      "Move item to \"${ vaultName }\"?": [
+        "Flytta objekt till ”${ vaultName }”?"
       ],
-      "Move items?": [
-        "Flytta objekt?"
+      "Move items to \"${ vaultName }\"?": [
+        "Flytta objekt till ”${ vaultName }”?"
       ],
       "No items selected": [
         "Inga objekt markerade"
@@ -2724,9 +2733,6 @@
       ],
       "No items matching": [
         "Inga objekt matchar"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Inga passkeys hittades. Spara dina passkeys i ${ PASS_APP_NAME } för att logga in på ${ domain }."
       ],
       "No password manager selected": [
         "Ingen lösenordshanterare vald"
