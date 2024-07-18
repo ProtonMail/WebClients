@@ -1711,6 +1711,9 @@
       "Falkland Islands": [
         "Falklandeilanden"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Eilanden (Malvinas)"
+      ],
       "Faroe Islands": [
         "Faeröer Eilanden"
       ],
@@ -2151,6 +2154,9 @@
       ],
       "Syria": [
         "Syrië"
+      ],
+      "Syrian Arab Republic": [
+        "Syrische Arabische Republiek"
       ],
       "Taiwan": [
         "Taiwan"
@@ -6287,9 +6293,6 @@
       "DNS leak prevention": [
         "DNS-lekbescherming"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Document-editors (documenten, werkbladen, dia's)"
-      ],
       "Double hop": [
         "Dubbel hop"
       ],
@@ -6394,9 +6397,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
       ],
-      "Reply to messages": [
-        "Antwoorden op berichten"
-      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
@@ -6468,6 +6468,9 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
+      ],
+      "Unlimited logins and notes": [
+        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -7190,6 +7193,20 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "Veilig delen van kluis"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisatiesleutel bestaat niet."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
       ]
     },
     "Payment method option": {
@@ -9114,6 +9131,9 @@
       ],
       "Send invitation": [
         "Stuur uitnodiging"
+      ],
+      "Set recovery phrase": [
+        "Herstelzin instellen"
       ],
       "Settings": [
         "Instellingen"

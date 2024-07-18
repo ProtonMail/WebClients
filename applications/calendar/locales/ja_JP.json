@@ -1623,6 +1623,9 @@
       "Falkland Islands": [
         "フォークランド諸島"
       ],
+      "Falkland Islands (Malvinas)": [
+        "フォークランド諸島 (マルビナス)"
+      ],
       "Faroe Islands": [
         "フェロー諸島"
       ],
@@ -2062,6 +2065,9 @@
         "スイス"
       ],
       "Syria": [
+        "シリア"
+      ],
+      "Syrian Arab Republic": [
         "シリア"
       ],
       "Taiwan": [
@@ -5887,9 +5893,6 @@
       "DNS leak prevention": [
         "DNS 漏洩防止"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "ドキュメント編集 (ドキュメント、シート、スライド)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6045,6 +6048,9 @@
       ],
       "Unlimited labels": [
         "ラベル制限なし"
+      ],
+      "Unlimited logins and notes": [
+        "無制限のログインとメモ"
       ],
       "Unlimited messages per day": [
         "送信数制限なし"
@@ -6716,6 +6722,20 @@
     "Participants expand button label": {
       "Expand participants list": [
         "参加者一覧を展開"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "組織の鍵が存在しません。"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "アクセスが拒否されました。管理者権限は制限されています。"
+      ],
+      "The organization key must be activated first.": [
+        "組織の鍵を最初に有効にする必要があります。"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "この操作を実行するには、組織キーにアクセスする必要があります。"
       ]
     },
     "Payment method option": {
@@ -8429,6 +8449,9 @@
       ],
       "Send invitation": [
         "招待を送信"
+      ],
+      "Set recovery phrase": [
+        "回復用フレーズを設定"
       ],
       "Settings": [
         "設定"
