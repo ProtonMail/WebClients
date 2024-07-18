@@ -8,11 +8,19 @@ import './WalletNotFoundErrorDropdown.scss';
 
 interface Props {
     email: string;
+    textContent: string;
     hasSentInvite: boolean;
     onSendInvite: (email: string) => void;
+    canSendInvite: boolean;
 }
 
-export const WalletNotFoundErrorDropdown = ({ email, hasSentInvite, onSendInvite }: Props) => {
+export const WalletNotFoundErrorDropdown = ({
+    email,
+    hasSentInvite,
+    onSendInvite,
+    textContent,
+    canSendInvite,
+}: Props) => {
     const { anchorRef, isOpen, close, open } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -20,14 +28,14 @@ export const WalletNotFoundErrorDropdown = ({ email, hasSentInvite, onSendInvite
             <button
                 ref={anchorRef}
                 onClick={() => {
-                    if (!hasSentInvite) {
+                    if (!hasSentInvite && canSendInvite) {
                         open();
                     }
                 }}
                 className="ml-1 items-center flex-nowrap flex flex-row color-primary shrink-0"
             >
                 <div className="shrink-0 flex items-center px-2">
-                    {hasSentInvite ? (
+                    {hasSentInvite && canSendInvite ? (
                         <>
                             <span className="block shrink-0 mr-1">{c('Bitcoin send').t`Invitation sent`}</span>
                             <Icon name="paper-plane" />
@@ -51,7 +59,7 @@ export const WalletNotFoundErrorDropdown = ({ email, hasSentInvite, onSendInvite
                 }}
                 contentProps={{ className: 'wallet-not-found-dropdown' }}
             >
-                <WalletNotFoundErrorContent onSendInvite={onSendInvite} email={email} dense />
+                <WalletNotFoundErrorContent onSendInvite={onSendInvite} email={email} textContent={textContent} dense />
             </Dropdown>
         </>
     );
