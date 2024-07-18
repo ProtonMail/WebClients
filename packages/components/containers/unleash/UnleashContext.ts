@@ -23,6 +23,7 @@ enum CommonFeatureFlag {
     Wallet = 'Wallet',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
+    LeftSidebarCollapsible = 'LeftSidebarCollapsible',
 }
 
 enum AccountFlag {
