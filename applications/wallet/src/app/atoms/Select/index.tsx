@@ -2,6 +2,7 @@ import { MutableRefObject, ReactNode, useRef } from 'react';
 
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import Option from '@proton/components/components/option/Option';
+import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import CoreSearchableSelect, {
     Props as _CoreSearchableSelectProps,
 } from '@proton/components/components/selectTwo/SearchableSelect';
@@ -103,7 +104,7 @@ export const SearchableSelect = <V extends unknown>({
             dropdownClassName="wallet-select-dropdown"
             assistContainerClassName="empty:hidden"
             originalPlacement="bottom"
-            availablePlacements={['bottom']}
+            availablePlacements={verticalPopperPlacements}
             unstyled={stackedFieldWrapper ? true : false}
             anchorRef={selectRef as MutableRefObject<any>}
             caretIconName="chevron-down"
