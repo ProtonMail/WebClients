@@ -6,10 +6,10 @@ import { c } from 'ttag';
 
 import { MaskedTextField } from '@proton/pass/components/Form/Field/MaskedTextField';
 import { birthdateMask } from '@proton/pass/components/Form/Field/masks/identity';
-import type { IdentityItemFormValues, ItemIdentity, UnsafeItemExtraField } from '@proton/pass/types';
+import type { IdentityItemFormValues, IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
 import { isArrayOfType } from '@proton/pass/utils/array/is-type-of';
 
-type FieldName = keyof ItemIdentity;
+type FieldName = keyof IdentityValues;
 
 type IdentityField = {
     name: FieldName;
@@ -294,7 +294,7 @@ const mapToIdentityField = (fields: UnsafeItemExtraField[], fieldName: string): 
         value: customField.type === 'text' ? customField.data.content : '',
     }));
 
-const buildSections = (identityFields: IdentityFormFields, initialValues?: ItemIdentity): FieldSection[] => {
+const buildSections = (identityFields: IdentityFormFields, initialValues?: IdentityValues): FieldSection[] => {
     const formSections = getFormSections(identityFields);
 
     if (!initialValues) return formSections;
@@ -311,7 +311,7 @@ const buildSections = (identityFields: IdentityFormFields, initialValues?: ItemI
     });
 };
 
-export const useIdentityFormSections = (initialValues?: ItemIdentity) => {
+export const useIdentityFormSections = (initialValues?: IdentityValues) => {
     const identityFields = useMemo(() => getIdentityFields(), []);
     const [sections, setSections] = useState<FieldSection[]>(buildSections(identityFields, initialValues));
     const getField = useCallback(
@@ -341,7 +341,7 @@ export const useIdentityFormSections = (initialValues?: ItemIdentity) => {
         });
     };
 
-    const getFilteredSections = (identity: ItemIdentity): FieldSection[] =>
+    const getFilteredSections = (identity: IdentityValues): FieldSection[] =>
         sections
             .reduce<FieldSection[]>((fieldSections, section) => {
                 const fields = [...section.fields, ...(section.optionalFields?.fields ?? [])];
