@@ -15,7 +15,7 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
 import { BitcoinViaEmailNote } from '../../atoms/BitcoinViaEmailNote';
-import { getBitcoinUnitOptions } from '../../utils';
+import { SubTheme, getBitcoinUnitOptions } from '../../utils';
 import { AccountPreferences } from '../AccountPreferences';
 import { WalletDeletionModal } from '../WalletDeletionModal';
 import { useWalletPreferences } from './useWalletPreferences';
@@ -23,9 +23,10 @@ import { useWalletPreferences } from './useWalletPreferences';
 interface Props extends ModalOwnProps {
     wallet: IWasmApiWalletData;
     otherWallets: IWasmApiWalletData[];
+    theme?: SubTheme;
 }
 
-export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: Props) => {
+export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalProps }: Props) => {
     const {
         userWalletSettings,
         loadingUserWalletSettings,
@@ -45,7 +46,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, ...modalProps }: 
 
     return (
         <>
-            <Modal title={c('Wallet preference').t`Wallet preferences`} size="medium" {...modalProps}>
+            <Modal title={c('Wallet preference').t`Wallet preferences`} size="medium" className={theme} {...modalProps}>
                 <div className="flex flex-column">
                     <InputFieldStackedGroup classname="mb-4">
                         <Input
