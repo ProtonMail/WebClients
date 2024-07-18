@@ -89,8 +89,7 @@
 		}
 
 		@include media('>xsmall') {
-			background: radial-gradient(38.47% 29.48% at 50% -3.24%, #f3f5f6 0%, rgb(243 245 246 / 0) 100%),
-				linear-gradient(180deg, #f5f6ff 0.04%, rgb(245 246 255 / 0) 55.94%), #f3f5f6;
+			background: linear-gradient(180deg, #f3f4fc 0%, transparent 40%);
 		}
 	}
 
@@ -132,6 +131,6 @@
 			radial-gradient(25% 45% at 90% 14%, rgb(232 213 255 / 0.3) 0%, rgb(232 213 255 / 0) 100%),
 			radial-gradient(24% 43% at 90% 95%, rgb(232 213 255 / 0.5) 0%, rgb(232 213 255 / 0) 100%),
 			radial-gradient(22% 38% at 78% 59%, rgb(213 233 255 / 0.5) 0%, rgb(213 233 255 / 0) 100%),
-			linear-gradient(0deg, #f3f5f6, #f3f5f6);
+			linear-gradient(0deg, #fff, #fff);
 	}
 }
