@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { WalletLogo } from '@proton/components/components';
+import { Icon, WalletLogo } from '@proton/components/components';
 import { getSentinel } from '@proton/components/containers/payments/features/highlights';
 import {
     FREE_WALLETS,
@@ -16,7 +16,6 @@ import {
     WALLET_PLUS_WALLET_ACCOUNTS,
     WALLET_PLUS_WALLET_EMAIL,
     getBitcoinViaEmail,
-    getVisionaryWallet,
     getWalletAccounts,
     getWalletEmailAddresses,
     getWallets,
@@ -103,8 +102,16 @@ export const getVisionaryFeatures = () => {
         getWalletEmailAddresses(VISIONARY_WALLET_EMAIL),
         getBitcoinViaEmail(),
         getSentinel(true),
-        getVisionaryWallet(),
     ];
+};
+
+const VisionaryWalletFeature = () => {
+    return (
+        <div className="mt-4 px-4 py-3 grow-0 bg-weak rounded flex items-center justify-center flex-nowrap gap-2 w-full">
+            <Icon name="clock" className="color-hint shrink-0" />
+            <p className="color-weak text-sm m-0">{c('wallet_signup_2024: Info').t`Early access to new features`}</p>
+        </div>
+    );
 };
 
 export const getWalletConfiguration = ({
@@ -122,7 +129,7 @@ export const getWalletConfiguration = ({
 }): SignupConfiguration => {
     const logo = <WalletLogo />;
 
-    const title = c('wallet_signup_2024: Info').t`The easiest way to securely own, send, and receive Bitcoin`;
+    const title = c('wallet_signup_2024: Info').t`A safer way to hold your Bitcoin`;
     const inviteTitle = c('wallet_signup_2024: Info').t`You have been invited to join ${WALLET_APP_NAME}`;
     const onboardingTitle = c('wallet_signup_2024: Info').t`Unlock ${WALLET_APP_NAME} premium features by upgrading`;
 
@@ -151,7 +158,12 @@ export const getWalletConfiguration = ({
             },
             {
                 plan: PLANS.VISIONARY,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getVisionaryFeatures()} />,
+                subsection: (
+                    <>
+                        <PlanCardFeatureList {...planCardFeatureProps} features={getVisionaryFeatures()} />
+                        <VisionaryWalletFeature />
+                    </>
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
