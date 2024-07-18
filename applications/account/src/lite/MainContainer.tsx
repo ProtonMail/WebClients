@@ -9,6 +9,7 @@ import LabelsSettings from './actions/LabelsSettings';
 import MailSettings from './actions/MailSettings';
 import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
+import WalletSettings from './actions/WalletSettings';
 import SubscriptionDetails from './actions/SubscriptionDetails';
 import { SupportedActions } from './helper';
 
@@ -28,6 +29,7 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
 
     return (
         <>
+            {action === SupportedActions.WalletSettings && <WalletSettings loader={loader} layout={layout} />}
             {action === SupportedActions.MailSettings && <MailSettings layout={layout} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
