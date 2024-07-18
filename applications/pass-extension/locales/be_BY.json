@@ -113,10 +113,10 @@
       "Create": [
         "Стварыць"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -1016,6 +1016,9 @@
         "${ count } праглядаў",
         "${ count } праглядаў"
       ],
+      "${ count }/${ maxReads } views": [
+        "Праглядаў: ${ count }; засталося: ${ maxReads }"
+      ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
         "${ memberCount } удзельнікі",
@@ -1118,20 +1121,14 @@
       "An item previously shared with you was removed": [
         "Раней абагулены з вамі элемент быў выдалены"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Вы сапраўды хочаце перамясціць усе элементы з \"${ fromVaultName }\" у \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Вы ўпэўнены, што хочаце перамясціць элементы ў \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Вы ўпэўнены, што хочаце перамясціць элемент у \"${ name }\"?"
-      ],
       "Are you sure you want to remove the link?": [
         "Вы сапраўды хочаце выдаліць спасылку?"
       ],
       "Auto-lock successfully disabled.": [
         "Аўтаблакіроўка паспяхова адключана."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Аўтаматычнае капіяванне згенерыраванага пароля ў буфер абмену"
       ],
       "Autosaved on ${ payload.domain }": [
         "Аўтазахавана на ${ payload.domain }"
@@ -1412,14 +1409,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю і ўсе бяспечныя спасылкі."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
-      "Moving items to another vault will erase their history": [
-        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю і ўсе бяспечныя спасылкі."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю."
       ],
       "Moving items to trash": [
         "Перамяшчэнне элементаў у сметніцу"
@@ -1933,6 +1936,9 @@
       "Copy": [
         "Капіяваць"
       ],
+      "Copy password": [
+        "Скапіяваць пароль"
+      ],
       "Create a credit card": [
         "Стварыць крэдытную картку"
       ],
@@ -2095,8 +2101,8 @@
       "Make all viewers": [
         "Даць усім правы прагляду"
       ],
-      "Max views reached": [
-        "Дасягнута максімальная колькасць праглядаў"
+      "max views reached": [
+        "дасягнута максімальная колькасць праглядаў"
       ],
       "Members": [
         "Удзельнікі"
@@ -2530,6 +2536,9 @@
       "Fill & copy password": [
         "Запаўненне і капіяванне пароля"
       ],
+      "Fill password": [
+        "Запаўненне пароля"
+      ],
       "Get Started": [
         "Пачаць працу"
       ],
@@ -2575,14 +2584,14 @@
       "Modified": [
         "Зменена"
       ],
-      "Move all items ?": [
-        "Перамясціць усе элементы?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Перамясціць усе элементы ў \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Перамясціць элемент?"
+      "Move item to \"${ vaultName }\"?": [
+        "Перамясціць элемент у \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Перамясціць элементы?"
+      "Move items to \"${ vaultName }\"?": [
+        "Перамясціць элементы ў \"${ vaultName }\"?"
       ],
       "No items selected": [
         "Элементы не выбраны"
@@ -2803,9 +2812,6 @@
       ],
       "No items matching": [
         "Няма адпаведных элементаў"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Ключы доступу не знойдзены. Захавайце свае ключы доступу ў ${ PASS_APP_NAME }, каб увайсці ў ${ domain }."
       ],
       "No password manager selected": [
         "Не выбраны менеджар пароляў"

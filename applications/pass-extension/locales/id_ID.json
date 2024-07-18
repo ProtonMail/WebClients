@@ -113,11 +113,11 @@
       "Create": [
         "Buat"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Buat akun ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Buat Akun ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Buat akun ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Buat brankas baru untuk dibagikan"
@@ -983,6 +983,9 @@
       "${ count } view": [
         "${ count } kali dilihat"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } tampilan"
+      ],
       "${ memberCount } member": [
         "${ memberCount } anggota"
       ],
@@ -1076,20 +1079,14 @@
       "An item previously shared with you was removed": [
         "Item yang sebelumnya dibagikan dengan Anda telah dihapus"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Apakah Anda yakin ingin memindahkan semua item dari \"${ fromVaultName }\" ke \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Apakah Anda yakin untuk memindahkan rangkaian item ini ke \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Apakah Anda yakin untuk memindahkan item ini ke \"${ name }\"?"
-      ],
       "Are you sure you want to remove the link?": [
         "Apakah Anda yakin ingin menghapus tautan?"
       ],
       "Auto-lock successfully disabled.": [
         "Pengunci otomatis berhasil dinonaktifkan."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Salin kata sandi yang dibuat secara otomatis ke papan klip"
       ],
       "Autosaved on ${ payload.domain }": [
         "Tersimpan secara otomatis pada ${ payload.domain }"
@@ -1361,14 +1358,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Memindahkan item ke brankas lain akan menghapus riwayatnya"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayat dan semua tautan aman."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
       ],
       "Moving items": [
         "Memindahkan item"
       ],
-      "Moving items to another vault will erase their history": [
-        "Memindahkan item ke brankas lain akan menghapus riwayatnya"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Memindahkan item ke brankas lain akan menghapus riwayatnya."
       ],
       "Moving items to trash": [
         "Memindahkan item ke sampah"
@@ -1858,6 +1861,9 @@
       "Copy": [
         "Salin"
       ],
+      "Copy password": [
+        "Salin kata sandi"
+      ],
       "Create a credit card": [
         "Buat kartu kredit"
       ],
@@ -2020,8 +2026,8 @@
       "Make all viewers": [
         "Jadikan seluruh anggota sebagai pengamat"
       ],
-      "Max views reached": [
-        "Tampilan maksimum tercapai"
+      "max views reached": [
+        "tampilan maksimum tercapai"
       ],
       "Members": [
         "Anggota"
@@ -2446,6 +2452,9 @@
       "Fill & copy password": [
         "Isi & salin kata sandi"
       ],
+      "Fill password": [
+        "Isi kata sandi"
+      ],
       "Get Started": [
         "Mulai"
       ],
@@ -2491,14 +2500,14 @@
       "Modified": [
         "Dimodifikasi"
       ],
-      "Move all items ?": [
-        "Pindahkan semua item?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Pindahkan semua item ke \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Pindahkan item?"
+      "Move item to \"${ vaultName }\"?": [
+        "Pindahkan item ke \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Pindahkan item?"
+      "Move items to \"${ vaultName }\"?": [
+        "Pindahkan item ke \"${ vaultName }\"?"
       ],
       "No items selected": [
         "Tidak ada item yang dipilih"
@@ -2716,9 +2725,6 @@
       ],
       "No items matching": [
         "Tidak ada item yang cocok"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Tidak ada passkey yang ditemukan. Simpan passkey Anda di ${ PASS_APP_NAME } untuk melanjutkan ke ${ domain }."
       ],
       "No password manager selected": [
         "Tidak ada pengelola kata sandi yang dipilih"
