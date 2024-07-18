@@ -970,15 +970,6 @@
       "An item previously shared with you was removed": [
         "以前にあなたと共有したアイテムが削除されました"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "すべてのアイテムを「${ fromVaultName }」から「${ toVaultName }」に移動してもよろしいですか?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "項目を「${ name }」に移動してもよろしいですか?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "項目を「${ name }」に移動してもよろしいですか?"
-      ],
       "Auto-lock successfully disabled.": [
         "自動ロックを無効にしました."
       ],
@@ -1210,14 +1201,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべての項目を移動します"
       ],
-      "Moving an item to another vault will erase its history": [
-        "アイテムを別の保管庫に移動すると、その履歴が消去されます"
+      "Moving an item to another vault will erase its history.": [
+        "アイテムを別の保管庫に移動すると、その履歴が消去されます."
       ],
       "Moving items": [
         "アイテムの移動"
       ],
-      "Moving items to another vault will erase their history": [
-        "アイテムを別の保管庫に移動すると、その履歴が消去されます"
+      "Moving items to another vault will erase their history.": [
+        "アイテムを別の保管庫に移動すると、その履歴が消去されます."
       ],
       "Moving items to trash": [
         "アイテムをごみ箱に移動中"
@@ -2231,15 +2222,6 @@
       ],
       "Modified": [
         "更新日時"
-      ],
-      "Move all items ?": [
-        "すべてのアイテムを移動しますか?"
-      ],
-      "Move item?": [
-        "アイテムを移動しますか?"
-      ],
-      "Move items?": [
-        "アイテムを移動しますか?"
       ],
       "No excluded items": [
         "除外項目なし"

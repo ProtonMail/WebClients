@@ -1025,6 +1025,9 @@
         "${ count } vue",
         "${ count } vues"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } vues"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
@@ -1108,15 +1111,6 @@
       ],
       "An item previously shared with you was removed": [
         "Un élément partagé avec vous a été retiré."
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Voulez-vous vraiment déplacer tous les éléments depuis « ${ fromVaultName } » vers « ${ toVaultName } » ?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Voulez-vous vraiment déplacer les éléments vers « ${ name } » ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Voulez-vous vraiment déplacer l'élément vers « ${ name } » ?"
       ],
       "Are you sure you want to remove the link?": [
         "Êtes-vous sûr de vouloir retirer le lien ?"
@@ -1412,13 +1406,19 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
-      "Moving an item to another vault will erase its history": [
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Déplacer un élément vers un autre coffre-fort effacera son historique et tous les liens sécurisés."
+      ],
+      "Moving an item to another vault will erase its history.": [
         "Le déplacement d'un élément vers un autre coffre-fort effacera son historique."
       ],
       "Moving items": [
         "Déplacement des éléments"
       ],
-      "Moving items to another vault will erase their history": [
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Le déplacement d'éléments vers un autre coffre-fort effacera leur historique et tous les liens sécurisés."
+      ],
+      "Moving items to another vault will erase their history.": [
         "Le déplacement d'éléments vers un autre coffre-fort effacera leur historique."
       ],
       "Moving items to trash": [
@@ -2071,8 +2071,8 @@
       "Make all viewers": [
         "Les définir comme lecteur"
       ],
-      "Max views reached": [
-        "Le nombre maximum de vues a été atteint."
+      "max views reached": [
+        "le nombre maximum de vues a été atteint."
       ],
       "Members": [
         "Membres"
@@ -2619,14 +2619,14 @@
       "Modified": [
         "Modifié"
       ],
-      "Move all items ?": [
-        "Déplacer tous les éléments ?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Déplacer tous les éléments vers « ${ vaultName } » ?"
       ],
-      "Move item?": [
-        "Déplacer l'élément ?"
+      "Move item to \"${ vaultName }\"?": [
+        "Déplacer l'élément vers « ${ vaultName } » ?"
       ],
-      "Move items?": [
-        "Déplacer les éléments ?"
+      "Move items to \"${ vaultName }\"?": [
+        "Déplacer les éléments vers « ${ vaultName } » ?"
       ],
       "No excluded items": [
         "Aucun élément exclu"

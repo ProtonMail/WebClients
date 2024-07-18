@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
       ]
     },
     "Action": {
@@ -1088,15 +1097,6 @@
       "An item previously shared with you was removed": [
         "თქვენთვის ადრე გაზიარებული ელემენტი წაიშალა"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ყველა ელემენტი \"${ fromVaultName }\"-დან \"${ toVaultName }\"-ში?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტები \"${ name }\"-ში?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტი \"${ name }\"-ში?"
-      ],
       "Are you sure you want to remove the link?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ბმული?"
       ],
@@ -1385,14 +1385,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its history": [
-        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის"
+      "Moving an item to another vault will erase its history.": [
+        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
-      "Moving items to another vault will erase their history": [
-        "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის"
+      "Moving items to another vault will erase their history.": [
+        "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის."
       ],
       "Moving items to trash": [
         "ელემენტების გადატანა ნაგვის ყუთში"
@@ -1420,6 +1420,9 @@
       ],
       "Offline support successfully disabled": [
         "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომას PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
       ],
       "Owner": [
         "მფლობელი"
@@ -1589,6 +1592,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "გატანილი ფაილი PGP-ით დაიშიფრება და რთულ საკვანძო ფრაზას მოითხოვს."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "დამატებითი პაროლი აუცილებელია ${ PASS_APP_NAME }-ის გამოყენებისას. ის ${ BRAND_NAME }-ის პაროლთან ერთად დამატებით პაროლად გამოიყენება."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
@@ -2035,7 +2041,7 @@
       "Make all viewers": [
         "ყველას მონიშვნა დამთვალიერებლად"
       ],
-      "Max views reached": [
+      "max views reached": [
         "მიღწეულია მაქს. ნახვები"
       ],
       "Members": [
@@ -2428,6 +2434,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ],
@@ -2576,15 +2585,6 @@
       ],
       "Modified": [
         "შეცვლილია"
-      ],
-      "Move all items ?": [
-        "გადავიტანო ყველა ელემენტი?"
-      ],
-      "Move item?": [
-        "გადავიტანო ელემენტი?"
-      ],
-      "Move items?": [
-        "გადავიტანო ელემენტები?"
       ],
       "No excluded items": [
         "ამოღებული ელემენტების გარეშე"
