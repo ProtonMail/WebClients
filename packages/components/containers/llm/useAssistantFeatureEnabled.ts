@@ -77,6 +77,5 @@ export default useAssistantFeatureEnabled;
 
 export const useAssistantAddonEnabledSignup = () => {
     const killSwitch = useFlag('AIAssistantToggleKillSwitch');
-    const enabled = useFlag('AIAssistantAddonSignup');
-    return !killSwitch && enabled;
+    return !killSwitch;
 };
