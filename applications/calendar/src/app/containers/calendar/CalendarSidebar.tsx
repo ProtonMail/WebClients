@@ -13,13 +13,17 @@ import {
     SidebarDrawerItems,
     SidebarList,
     SidebarListItemHeaderLink,
+    SidebarLogo,
     SidebarNav,
     SidebarPrimaryButton,
     SimpleDropdown,
     SimpleSidebarListItemHeader,
     Tooltip,
+    useActiveBreakpoint,
     useApi,
     useEventManager,
+    useFlag,
+    useLocalState,
     useModalState,
     useUser,
 } from '@proton/components';
@@ -36,8 +40,10 @@ import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/cal
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import clsx from '@proton/utils/clsx';
 
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 
@@ -46,7 +52,6 @@ export interface CalendarSidebarProps {
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
     expanded?: boolean;
-    logo?: ReactNode;
     miniCalendar: ReactNode;
     onToggleExpand: () => void;
     onCreateEvent?: () => void;
@@ -57,7 +62,6 @@ const CalendarSidebar = ({
     addresses,
     calendars,
     calendarUserSettings,
-    logo,
     expanded = false,
     onToggleExpand,
     miniCalendar,
@@ -67,6 +71,13 @@ const CalendarSidebar = ({
     const { call } = useEventManager();
     const api = useApi();
     const [user] = useUser();
+
+    const featureFlagCollapsible = useFlag('LeftSidebarCollapsible');
+    const [showSideBar, setshowSideBar] = useLocalState(true, `${user.ID}-${APPS.PROTONCALENDAR}-left-nav-opened`);
+    const { viewportWidth } = useActiveBreakpoint();
+    const collapsed = !showSideBar && !viewportWidth['<=small'] && featureFlagCollapsible;
+
+    const onClickExpandNav = () => setshowSideBar(!showSideBar);
 
     const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
 
@@ -140,9 +151,13 @@ const CalendarSidebar = ({
             data-testid="calendar-view:new-event-button"
             disabled={!onCreateEvent}
             onClick={onCreateEvent}
-            className="hidden md:flex items-center justify-center flex-nowrap gap-2"
+            className={clsx('hidden md:flex items-center justify-center flex-nowrap gap-2', collapsed && 'px-0')}
         >
-            <span className="text-ellipsis">{c('Action').t`New event`}</span>
+            {collapsed ? (
+                <Icon name="plus" className="flex mx-auto my-0.5" alt={c('Action').t`New event`} />
+            ) : (
+                <span className="text-ellipsis">{c('Action').t`New event`}</span>
+            )}
         </SidebarPrimaryButton>
     );
 
@@ -258,6 +273,8 @@ const CalendarSidebar = ({
 
     const displayContactsInHeader = useDisplayContactsWidget();
 
+    const logo = <SidebarLogo collapsed={collapsed} to="/" app={APPS.PROTONCALENDAR} />;
+
     return (
         <Sidebar
             app={APPS.PROTONCALENDAR}
@@ -267,6 +284,8 @@ const CalendarSidebar = ({
             onToggleExpand={onToggleExpand}
             primary={primaryAction}
             version={<AppVersion />}
+            showStorage={showSideBar}
+            collapsed={collapsed}
         >
             {renderCalendarModal && (
                 <PersonalCalendarModal
@@ -286,11 +305,44 @@ const CalendarSidebar = ({
                 <CalendarLimitReachedModal user={user} {...limitReachedModal} isFreeUser={!user.hasPaidMail} />
             )}
 
-            <SidebarNav data-testid="calendar-sidebar:calendars-list-area">
-                <div className="shrink-0">{miniCalendar}</div>
-                {myCalendarsList}
-                {otherCalendarsList}
-                {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
+            <SidebarNav className="flex *:min-size-auto" data-testid="calendar-sidebar:calendars-list-area">
+                {!collapsed && (
+                    <>
+                        <div className="shrink-0 w-full">{miniCalendar}</div>
+                        {myCalendarsList}
+                        {otherCalendarsList}
+                        {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
+                    </>
+                )}
+
+                {featureFlagCollapsible && !isElectronApp && (
+                    <span className={clsx('mt-auto w-full', !collapsed && 'absolute bottom-0 right-0 mb-11 mr-2')}>
+                        {collapsed && <div aria-hidden="true" className="border-top my-1 mx-3"></div>}
+                        <Tooltip
+                            title={
+                                showSideBar
+                                    ? c('Action').t`Collapse navigation bar`
+                                    : c('Action').t`Display navigation bar`
+                            }
+                            originalPlacement="right"
+                        >
+                            <button
+                                className={clsx(
+                                    'hidden md:flex mt-auto sidebar-collapse-button navigation-link-header-group-control color-weak shrink-0',
+                                    !showSideBar && 'sidebar-collapse-button--collapsed',
+                                    collapsed ? 'mx-auto' : 'mr-2 ml-auto'
+                                )}
+                                onClick={onClickExpandNav}
+                                aria-pressed={showSideBar}
+                            >
+                                <Icon
+                                    name={showSideBar ? 'chevrons-left' : 'chevrons-right'}
+                                    alt={c('Action').t`Show navigation bar`}
+                                />
+                            </button>
+                        </Tooltip>
+                    </span>
+                )}
             </SidebarNav>
         </Sidebar>
     );

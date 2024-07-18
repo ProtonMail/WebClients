@@ -5,8 +5,11 @@ import { c } from 'ttag';
 
 import {
     HotkeyTuple,
+    Icon,
     SidebarList,
+    SidebarListItem,
     SimpleSidebarListItemHeader,
+    Tooltip,
     useConversationCounts,
     useFolders,
     useHotkeys,
@@ -22,9 +25,10 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
+import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { isCustomFolder, isCustomLabel } from 'proton-mail/helpers/labels';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
@@ -41,11 +45,13 @@ export type UnreadCounts = { [labelID: string]: number | undefined };
 interface Props {
     labelID: string;
     postItems: ReactNode;
+    collapsed?: boolean;
+    onClickExpandNav?: () => void;
 }
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
 
-const MailSidebarList = ({ labelID: currentLabelID, postItems }: Props) => {
+const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false, onClickExpandNav }: Props) => {
     const location = useLocation();
     const [user] = useUser();
     const [conversationCounts] = useConversationCounts();
@@ -64,6 +70,15 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems }: Props) => {
     const [focusedItem, setFocusedItem] = useState<string | null>(null);
     const [foldersUI, setFoldersUI] = useState<Folder[]>([]);
     const foldersTreeview = useMemo(() => buildTreeview(foldersUI), [foldersUI]);
+
+    const mailboxCount = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
+
+    const foldersUnread = !!mailboxCount?.find((labelCount) => {
+        return (labelCount?.LabelID && isCustomFolder(labelCount?.LabelID, folders) && labelCount?.Unread) || 0 > 0;
+    });
+    const labelsUnread = !!mailboxCount?.find((labelCount) => {
+        return (labelCount?.LabelID && isCustomLabel(labelCount.LabelID, labels) && labelCount?.Unread) || 0 > 0;
+    });
 
     useEffect(() => {
         if (folders) {
@@ -280,46 +295,111 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems }: Props) => {
                         showScheduled={showScheduled}
                         showSnoozed={showSnoozed}
                         onToggleMoreItems={toggleDisplayMoreItems}
+                        collapsed={collapsed}
                     />
-                    <SimpleSidebarListItemHeader
-                        toggle={displayFolders}
-                        onToggle={(display: boolean) => toggleFolders(display)}
-                        text={c('Link').t`Folders`}
-                        title={c('Link').t`Folders`}
-                        id="toggle-folders"
-                        onFocus={setFocusedItem}
-                        right={<MailSidebarListActions type="folder" items={folders || []} />}
-                        spaceAbove
-                    />
-                    {displayFolders && (
-                        <SidebarFolders
-                            currentLabelID={currentLabelID}
-                            counterMap={counterMap}
-                            folders={folders || []}
-                            loadingFolders={loadingFolders}
-                            updateFocusItem={updateFocusItem}
-                            handleToggleFolder={handleToggleFolder}
-                            foldersTreeview={foldersTreeview}
-                        />
+
+                    {collapsed ? (
+                        <SidebarListItem>
+                            <Tooltip
+                                originalPlacement="right"
+                                title={c('Action').t`Expand navigation bar to see folders`}
+                            >
+                                <button
+                                    onClick={onClickExpandNav}
+                                    className="flex items-center relative navigation-link-header-group-link mx-auto w-full"
+                                >
+                                    <Icon
+                                        name="folders"
+                                        alt={c('Action').t`Expand navigation bar to see folders`}
+                                        className="mx-auto"
+                                    />
+                                    {foldersUnread && (
+                                        <span className="navigation-counter-item shrink-0">
+                                            <span className="sr-only">
+                                                {mailSettings.ViewMode === VIEW_MODE.GROUP
+                                                    ? c('Info').t`Unread conversations`
+                                                    : c('Info').t`Unread messages`}
+                                            </span>
+                                        </span>
+                                    )}
+                                </button>
+                            </Tooltip>
+                        </SidebarListItem>
+                    ) : (
+                        <>
+                            <SimpleSidebarListItemHeader
+                                toggle={displayFolders}
+                                onToggle={(display: boolean) => toggleFolders(display)}
+                                text={c('Link').t`Folders`}
+                                title={c('Link').t`Folders`}
+                                id="toggle-folders"
+                                onFocus={setFocusedItem}
+                                right={<MailSidebarListActions type="folder" items={folders || []} />}
+                                spaceAbove
+                            />
+                            {displayFolders && (
+                                <SidebarFolders
+                                    currentLabelID={currentLabelID}
+                                    counterMap={counterMap}
+                                    folders={folders || []}
+                                    loadingFolders={loadingFolders}
+                                    updateFocusItem={updateFocusItem}
+                                    handleToggleFolder={handleToggleFolder}
+                                    foldersTreeview={foldersTreeview}
+                                />
+                            )}
+                        </>
                     )}
-                    <SimpleSidebarListItemHeader
-                        toggle={displayLabels}
-                        onToggle={(display: boolean) => toggleLabels(display)}
-                        text={c('Link').t`Labels`}
-                        title={c('Link').t`Labels`}
-                        id="toggle-labels"
-                        onFocus={setFocusedItem}
-                        right={<MailSidebarListActions type="label" items={labels || []} />}
-                        spaceAbove
-                    />
-                    {displayLabels && (
-                        <SidebarLabels
-                            currentLabelID={currentLabelID}
-                            counterMap={counterMap}
-                            labels={labels || []}
-                            updateFocusItem={updateFocusItem}
-                        />
+                    {collapsed ? (
+                        <SidebarListItem>
+                            <Tooltip
+                                originalPlacement="right"
+                                title={c('Action').t`Expand navigation bar to see labels`}
+                            >
+                                <button
+                                    onClick={onClickExpandNav}
+                                    className="flex items-center relative navigation-link-header-group-link mx-auto w-full"
+                                >
+                                    <Icon
+                                        name="tags"
+                                        alt={c('Action').t`Expand navigation bar to see labels`}
+                                        className="mx-auto"
+                                    />
+                                    {labelsUnread && (
+                                        <span className="navigation-counter-item shrink-0">
+                                            <span className="sr-only">
+                                                {mailSettings.ViewMode === VIEW_MODE.GROUP
+                                                    ? c('Info').t`Unread conversations`
+                                                    : c('Info').t`Unread messages`}
+                                            </span>
+                                        </span>
+                                    )}
+                                </button>
+                            </Tooltip>
+                        </SidebarListItem>
+                    ) : (
+                        <>
+                            <SimpleSidebarListItemHeader
+                                toggle={displayLabels}
+                                onToggle={(display: boolean) => toggleLabels(display)}
+                                text={c('Link').t`Labels`}
+                                title={c('Link').t`Labels`}
+                                id="toggle-labels"
+                                onFocus={setFocusedItem}
+                                right={<MailSidebarListActions type="label" items={labels || []} />}
+                                spaceAbove
+                            />
+                            {displayLabels && (
+                                <SidebarLabels
+                                    currentLabelID={currentLabelID}
+                                    counterMap={counterMap}
+                                    labels={labels || []}
+                                    updateFocusItem={updateFocusItem}
+                                />
+                            )}
+                        </>
                     )}
+
                     {postItems}
                 </SidebarList>
             </div>

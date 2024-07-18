@@ -17,6 +17,7 @@ interface Props {
     hideCountOnHover: boolean;
     onRefresh?: () => void;
     isOptionDropdownOpened?: boolean;
+    collapsed?: boolean;
 }
 
 const { GROUP } = VIEW_MODE;
@@ -32,6 +33,7 @@ const LocationAside = ({
     hideCountOnHover,
     itemOptions,
     isOptionDropdownOpened,
+    collapsed = false,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
 
@@ -53,7 +55,7 @@ const LocationAside = ({
 
     return (
         <>
-            {active && (
+            {active && !collapsed && (
                 <ReloadSpinner
                     className={clsx([unreadCount > 0 ? 'mr-2' : 'mr-0.5'])}
                     refreshing={refreshing}

@@ -3,15 +3,17 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { SidebarPrimaryButton, Tooltip } from '@proton/components';
+import { Icon, SidebarPrimaryButton, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
+    collapsed: boolean;
     handleCompose: () => void;
 }
 
-const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
+const MailSidebarPrimaryButton = ({ collapsed = false, handleCompose }: Props) => {
     const anchorRef = useRef<HTMLButtonElement>(null);
     const { Shortcuts } = useMailModel('MailSettings');
 
@@ -26,22 +28,32 @@ const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
     const sideBarPrimaryButton = Shortcuts ? (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
             <SidebarPrimaryButton
-                className="hidden md:inline"
+                className={clsx('hidden md:inline', collapsed && 'px-0')}
                 onClick={handleCompose}
                 data-testid="sidebar:compose"
+                size={collapsed ? 'medium' : undefined}
                 ref={anchorRef}
             >
-                {c('Action').t`New message`}
+                {collapsed ? (
+                    <Icon name="pencil" className="flex mx-auto my-0.5" alt={c('Action').t`New message`} />
+                ) : (
+                    c('Action').t`New message`
+                )}
             </SidebarPrimaryButton>
         </Tooltip>
     ) : (
         <SidebarPrimaryButton
-            className="hidden md:inline"
+            className={clsx('hidden', collapsed ? 'px-0 md:flex' : 'md:inline')}
             onClick={handleCompose}
             data-testid="sidebar:compose"
+            size={collapsed ? 'medium' : undefined}
             ref={anchorRef}
         >
-            {c('Action').t`New message`}
+            {collapsed ? (
+                <Icon name="pencil" className="flex mx-auto my-0.5" alt={c('Action').t`New message`} />
+            ) : (
+                c('Action').t`New message`
+            )}
         </SidebarPrimaryButton>
     );
 

@@ -118,12 +118,47 @@ html,
 	transition:
 		visibility 0s ease,
 		transform 0s ease,
-		inline-size 0s ease,
+		inline-size 0.15s ease,
 		opacity 1s ease;
 	transition-delay: 0s;
 	overflow: auto;
 	background-color: var(--sidebar-background-color);
 	color: var(--sidebar-text-color, var(--text-norm));
+
+	&--collapsed {
+		&#{&} {
+			inline-size: rem(60);
+			z-index: map.get($z-indexes, 'up');
+		}
+
+		.navigation-link,
+		.navigation-link-header-group-link {
+			padding-inline: 0;
+		}
+
+		.logo-container {
+			inline-size: auto;
+			block-size: auto;
+			padding-inline: 0;
+			flex-direction: column;
+		}
+
+		.apps-dropdown-button {
+			margin-inline: auto;
+		}
+
+		.navigation-counter-item {
+			position: absolute;
+			inset-block-start: 0;
+			inset-inline-end: 0;
+			transform: translateX(50%) translateY(-50%);
+			inline-size: rem(8);
+			block-size: rem(8);
+			overflow: hidden;
+			color: transparent;
+			background: var(--navigation-item-count-background-color);
+		}
+	}
 
 	@include media('<=small') {
 		position: fixed;
