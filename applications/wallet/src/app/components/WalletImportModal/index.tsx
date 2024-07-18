@@ -76,9 +76,9 @@ export const WalletImportModal = ({
     return (
         <>
             <Modal title={c('Wallet setup').t`Import wallet`} className={theme} {...modalProps}>
-                <div className="flex flex-column mt-6">
+                <div className="flex flex-column mt-6 gap-1">
                     {!isFirstCreation && (
-                        <div className="mb-4">
+                        <div>
                             <Input
                                 prefix={
                                     <div
@@ -100,7 +100,7 @@ export const WalletImportModal = ({
                         </div>
                     )}
 
-                    <div className="mb-4">
+                    <div>
                         <CurrencySelect
                             disabled={loadingCurrencies || loadingWalletSubmit}
                             label={c('Wallet preferences').t`Default currency`}
@@ -116,9 +116,6 @@ export const WalletImportModal = ({
                             }}
                         />
                     </div>
-                </div>
-
-                <div className="flex flex-column mb-3">
                     <Input
                         as={TextAreaTwo}
                         rows={3}
@@ -131,18 +128,17 @@ export const WalletImportModal = ({
                     />
 
                     <CoreButtonLike
-                        className="mr-auto my-3"
+                        className="mr-auto"
                         shape="underline"
                         color="norm"
                         onClick={() => {
                             setModal({ kind: 'wallet-seedphrase-introduction' });
                         }}
-                    >{c('Wallet setup').t`What's a wallet seed phrase`}</CoreButtonLike>
+                    >{c('Wallet setup').t`What's a wallet seed phrase?`}</CoreButtonLike>
                 </div>
-
-                <Collapsible className="mb-4">
+                <Collapsible>
                     <CollapsibleHeader
-                        className="mb-4"
+                        className="color-hint my-3"
                         suffix={
                             <CollapsibleHeaderIconButton>
                                 <Icon name="chevron-down" />
@@ -168,14 +164,14 @@ export const WalletImportModal = ({
                             onClick={() => {
                                 setModal({ kind: 'wallet-passphrase-introduction' });
                             }}
-                        >{c('Wallet setup').t`What's a wallet passphrase`}</CoreButton>
+                        >{c('Wallet setup').t`What's a wallet passphrase?`}</CoreButton>
                     </CollapsibleContent>
                 </Collapsible>
 
-                <div className="w-full flex mt-6">
+                <div className="w-full flex">
                     <Button
                         fullWidth
-                        className="block mb-2"
+                        className="block mt-2"
                         size="large"
                         shape="solid"
                         color="norm"
