@@ -41,6 +41,8 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
             setTwoFaThreshold: mockedValue?.settings?.setTwoFaThreshold ?? vi.fn(),
             setHideEmptyUsedAddresses: mockedValue?.settings?.setHideEmptyUsedAddresses ?? vi.fn(),
             acceptTermsAndConditions: mockedValue?.settings?.acceptTermsAndConditions ?? vi.fn(),
+            setReceiveNotificationEmail: mockedValue?.settings?.setReceiveNotificationEmail ?? vi.fn(),
+            getUserWalletEligibility: mockedValue?.settings?.getUserWalletEligibility ?? vi.fn(),
         }),
         network: freeable({ getNetwork: mockedValue?.network?.getNetwork ?? vi.fn(), free: vi.fn() }),
         wallet: freeable({
@@ -83,11 +85,13 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
             createOnRampCheckout: mockedValue?.payment_gateway?.createOnRampCheckout ?? vi.fn(),
             signUrl: mockedValue?.payment_gateway?.signUrl ?? vi.fn(),
             getPublicApiKey: mockedValue?.payment_gateway?.getPublicApiKey ?? vi.fn(),
+            getCheckoutIframeSrc: mockedValue?.payment_gateway?.getCheckoutIframeSrc ?? vi.fn(),
         }),
         invite: freeable({
             checkInviteStatus: mockedValue?.invite?.checkInviteStatus ?? vi.fn(),
             sendNewcomerInvite: mockedValue?.invite?.sendNewcomerInvite ?? vi.fn(),
             sendEmailIntegrationInvite: mockedValue?.invite?.sendEmailIntegrationInvite ?? vi.fn(),
+            getRemainingMonthlyInvitation: mockedValue?.invite?.getRemainingMonthlyInvitation ?? vi.fn(),
         }),
     });
 

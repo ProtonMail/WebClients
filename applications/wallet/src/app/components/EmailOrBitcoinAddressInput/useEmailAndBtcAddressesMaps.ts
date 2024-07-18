@@ -11,6 +11,7 @@ export enum InvalidRecipientErrorCode {
     BitcoinAddressSignatureCouldNotBeVerified,
     CouldNotFindBitcoinAddressLinkedToEmail,
     InvalidAddress,
+    CouldNotFindProtonWallet,
 }
 
 export type BtcAddressOrError = { value?: string; error?: InvalidRecipientErrorCode };

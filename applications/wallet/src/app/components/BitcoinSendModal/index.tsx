@@ -58,6 +58,8 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
         wallet.Wallet,
         account ?? defaultWalletAccount,
     ]);
+    const [, walletAccount] = selectedWalletAccount;
+    const inviterAddressID = walletAccount?.Addresses?.[0]?.ID;
 
     const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
 
@@ -127,8 +129,9 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
 
                 <div>
                     <div className="wallet-fullscreen-modal-main">
-                        {stepKey === StepKey.RecipientsSelection && (
+                        {stepKey === StepKey.RecipientsSelection && walletAccount && (
                             <RecipientsSelection
+                                apiAccount={walletAccount}
                                 txBuilder={txBuilder}
                                 updateTxBuilder={updateTxBuilder}
                                 recipientHelpers={recipientHelpers}
@@ -138,9 +141,9 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                             />
                         )}
 
-                        {stepKey === StepKey.AmountInput && wasmAccount?.account && (
+                        {stepKey === StepKey.AmountInput && walletAccount && wasmAccount?.account && (
                             <AmountInput
-                                apiAccount={selectedWalletAccount[1]}
+                                apiAccount={walletAccount}
                                 account={wasmAccount}
                                 txBuilder={txBuilder}
                                 updateTxBuilder={updateTxBuilder}
@@ -153,11 +156,11 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                             />
                         )}
 
-                        {stepKey === StepKey.ReviewTransaction && (
+                        {stepKey === StepKey.ReviewTransaction && walletAccount && (
                             <TransactionReview
                                 isUsingBitcoinViaEmail={isUsingBitcoinViaEmail}
                                 wallet={wallet}
-                                account={selectedWalletAccount[1]}
+                                account={walletAccount}
                                 unit={unit}
                                 txBuilder={txBuilder}
                                 updateTxBuilder={updateTxBuilder}
@@ -182,6 +185,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
             <TransactionSendConfirmationModal
                 {...sendConfirmModal}
                 theme={theme}
+                inviterAddressID={inviterAddressID}
                 onClickDone={() => {
                     sendConfirmModal.onClose?.();
                     onDone?.();
@@ -192,17 +196,20 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                 }}
             />
 
-            <InviteModal
-                {...inviteModal}
-                onInviteSent={(email) => {
-                    inviteModal.onClose();
-                    setSentInviteConfirmModal({ email });
-                }}
-                onClose={() => {
-                    inviteModal.onClose();
-                    setSendConfirmModal(true);
-                }}
-            />
+            {inviterAddressID && (
+                <InviteModal
+                    inviterAddressID={inviterAddressID}
+                    {...inviteModal}
+                    onInviteSent={(email) => {
+                        inviteModal.onClose();
+                        setSentInviteConfirmModal({ email });
+                    }}
+                    onClose={() => {
+                        inviteModal.onClose();
+                        setSendConfirmModal(true);
+                    }}
+                />
+            )}
 
             {sentInviteConfirmModal.data && (
                 <InviteSentConfirmModal

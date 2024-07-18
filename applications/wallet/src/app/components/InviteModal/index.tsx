@@ -13,11 +13,12 @@ import { APP_NAME } from '../../config';
 
 interface InviteModalOwnProps {
     onInviteSent: (email: string) => void;
+    inviterAddressID: string;
 }
 
 type Props = ModalOwnProps & InviteModalOwnProps;
 
-export const InviteModal = ({ onInviteSent, ...modalProps }: Props) => {
+export const InviteModal = ({ inviterAddressID, onInviteSent, ...modalProps }: Props) => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState<string | null>(null);
     const walletApi = useWalletApiClients();
@@ -30,7 +31,7 @@ export const InviteModal = ({ onInviteSent, ...modalProps }: Props) => {
         }
 
         try {
-            await walletApi.invite.sendNewcomerInvite(email);
+            await walletApi.invite.sendNewcomerInvite(email, inviterAddressID);
 
             onInviteSent(email);
             createNotification({ text: c('Bitcoin send').t`Invitation sent` });

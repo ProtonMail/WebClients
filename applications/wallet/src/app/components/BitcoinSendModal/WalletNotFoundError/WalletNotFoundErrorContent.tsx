@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletNotFoundImg from '@proton/styles/assets/img/illustrations/wallet_not_found.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -10,11 +9,12 @@ import './WalletNotFoundErrorDropdown.scss';
 
 interface Props {
     email: string;
+    textContent: string;
     dense?: boolean;
     onSendInvite: (email: string) => void;
 }
 
-export const WalletNotFoundErrorContent = ({ email, dense, onSendInvite }: Props) => {
+export const WalletNotFoundErrorContent = ({ email, textContent, dense, onSendInvite }: Props) => {
     return (
         <div className="flex flex-column p-6">
             <div className={clsx('flex items-center', dense ? 'flex-row flex-nowrap mb-6' : 'flex-column')}>
@@ -34,11 +34,7 @@ export const WalletNotFoundErrorContent = ({ email, dense, onSendInvite }: Props
 
             {dense && <hr className="m-0" />}
 
-            <p className="my-4 text-center color-hint">
-                {c('Bitcoin send')
-                    .t`This user may not have a ${WALLET_APP_NAME} integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.`}
-            </p>
-
+            <p className="my-4 text-center color-hint">{textContent}</p>
             <Button
                 color="norm"
                 shape="solid"
