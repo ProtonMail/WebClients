@@ -17,7 +17,7 @@ type IdentityField = {
     value?: string;
 };
 
-type IdentityFieldSection = {
+export type IdentityFieldSection = {
     name: string;
     expanded: boolean;
     fields: IdentityField[];

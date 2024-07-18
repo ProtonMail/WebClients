@@ -1,34 +1,23 @@
 import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { FieldArray, Form, type FormikContextType, type FormikErrors, FormikProvider } from 'formik';
+import { Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon, useModalStateWithData } from '@proton/components/components';
-import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { DeleteButton, ExtraFieldComponent } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraField';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
-import { IdentityAddNewSection } from '@proton/pass/components/Item/Identity/Identity.modal';
-import { EMPTY_CUSTOM_FIELD } from '@proton/pass/components/Item/Identity/Identity.new';
-import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
-import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useIdentityFormSections } from '@proton/pass/hooks/identity/useIdentityFormSections';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type {
-    IdentityItemFormValues,
-    IdentityValues,
-    UnsafeItemExtraField,
-    UnsafeItemExtraSection,
-} from '@proton/pass/types';
+import type { IdentityItemFormValues, IdentityValues } from '@proton/pass/types';
+
+import { IdentityCollapsibleSection } from './Form/IdentityCollapsibleSection';
+import { IdentityCustomSections } from './Form/IdentityCustomSections';
 
 type IdentityFormType = {
     form: FormikContextType<IdentityItemFormValues>;
@@ -40,7 +29,6 @@ type IdentityFormType = {
 export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = false, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { sections, updateSectionFields } = useIdentityFormSections({ initialValues: content });
-    const [showWarningMessage, setShowWarningMessage] = useModalStateWithData<number>();
     const { ParentPortal, openPortal } = usePortal();
     const [ItemPanel, formId] = useMemo(
         () => (editing ? [ItemEditPanel, 'edit-identity'] : [ItemCreatePanel, 'new-identity']),
@@ -74,202 +62,17 @@ export const IdentityForm: FC<IdentityFormType> = ({ content, form, editing = fa
                                 maxLength={MAX_ITEM_NAME_LENGTH}
                             />
                         </FieldsetCluster>
-                        {sections.map(({ name, expanded, fields, optionalFields }, index) => (
-                            <CollapsibleSection key={name} label={name} expanded={expanded}>
-                                <FieldArray
-                                    name={optionalFields?.extraFieldKey || name}
-                                    render={(helpers) => {
-                                        const extraFieldName = optionalFields?.extraFieldKey || name;
-                                        const extraFields = helpers.form.values[extraFieldName];
 
-                                        return (
-                                            <>
-                                                <FieldsetCluster>
-                                                    {fields.map((item) => (
-                                                        <Field
-                                                            key={item.name}
-                                                            component={item.component ?? TextField}
-                                                            mask={item.mask}
-                                                            type="text"
-                                                            {...item}
-                                                        />
-                                                    ))}
-                                                    {extraFields?.map((_: unknown, index: number) => (
-                                                        <Field
-                                                            key={`${extraFieldName}[${index}]`}
-                                                            component={ExtraFieldComponent}
-                                                            type="text"
-                                                            name={`${extraFieldName}[${index}]`}
-                                                            onDelete={() => helpers.remove(index)}
-                                                            /* Formik TS type are wrong for FormikTouched */
-                                                            touched={
-                                                                (
-                                                                    form.touched as unknown as Record<
-                                                                        string,
-                                                                        Record<number, boolean>
-                                                                    >
-                                                                )?.[extraFieldName]?.[index]
-                                                            }
-                                                            error={
-                                                                (
-                                                                    form.errors as unknown as Record<
-                                                                        string,
-                                                                        Record<
-                                                                            number,
-                                                                            FormikErrors<UnsafeItemExtraField>
-                                                                        >
-                                                                    >
-                                                                )?.[extraFieldName]?.[index]
-                                                            }
-                                                            autoFocus
-                                                        />
-                                                    ))}
-                                                </FieldsetCluster>
-                                                {optionalFields && Boolean(optionalFields?.fields.length) && (
-                                                    <DropdownMenuBase
-                                                        className="mb-2"
-                                                        dropdownOptions={optionalFields.fields.map(
-                                                            ({ name: fieldName, placeholder }) => ({
-                                                                value: fieldName,
-                                                                label: placeholder,
-                                                                onClick: () => {
-                                                                    if (fieldName.includes('extra')) {
-                                                                        helpers.push(EMPTY_CUSTOM_FIELD);
-                                                                    } else {
-                                                                        updateSectionFields?.(index, fieldName);
-                                                                    }
-                                                                },
-                                                            })
-                                                        )}
-                                                    >
-                                                        <div className="flex items-center">
-                                                            <Icon name="plus" />
-                                                            <div className="ml-2 text-semibold">{c('Action')
-                                                                .t`Add more`}</div>
-                                                        </div>
-                                                    </DropdownMenuBase>
-                                                )}
-                                            </>
-                                        );
-                                    }}
-                                />
-                            </CollapsibleSection>
+                        {sections.map((section, index) => (
+                            <IdentityCollapsibleSection
+                                key={section.name}
+                                form={form}
+                                onAdd={(field: string) => updateSectionFields?.(index, field)}
+                                {...section}
+                            />
                         ))}
 
-                        <FieldArray
-                            name="extraSections"
-                            render={(extraSectionsHelpers) => {
-                                return (
-                                    <>
-                                        {extraSectionsHelpers.form.values.extraSections.map(
-                                            (
-                                                { sectionName, sectionFields }: UnsafeItemExtraSection,
-                                                sectionIndex: number
-                                            ) => {
-                                                const sectionKey = `extraSections[${sectionIndex}].sectionFields`;
-                                                return (
-                                                    <CollapsibleSection
-                                                        key={sectionKey}
-                                                        label={sectionName}
-                                                        expanded
-                                                        suffix={
-                                                            <DeleteButton
-                                                                size="small"
-                                                                onDelete={() =>
-                                                                    extraSectionsHelpers.remove(sectionIndex)
-                                                                }
-                                                            />
-                                                        }
-                                                    >
-                                                        <FieldArray
-                                                            name={sectionKey}
-                                                            render={(helpers) => {
-                                                                return (
-                                                                    <>
-                                                                        <FieldsetCluster>
-                                                                            {sectionFields.map(
-                                                                                (_: unknown, index: number) => (
-                                                                                    <Field
-                                                                                        key={`${sectionName}[${index}]`}
-                                                                                        component={ExtraFieldComponent}
-                                                                                        type="text"
-                                                                                        name={`${sectionKey}[${index}]`}
-                                                                                        onDelete={() => {
-                                                                                            if (index === 0) {
-                                                                                                setShowWarningMessage(
-                                                                                                    sectionIndex
-                                                                                                );
-                                                                                            } else {
-                                                                                                helpers.remove(index);
-                                                                                            }
-                                                                                        }}
-                                                                                        /* Formik TS type are wrong for FormikTouched */
-                                                                                        touched={
-                                                                                            (form.touched as any)
-                                                                                                .extraSections?.[
-                                                                                                sectionIndex
-                                                                                            ]?.sectionFields?.[index]
-                                                                                        }
-                                                                                        error={
-                                                                                            (form.errors as any)
-                                                                                                .extraSections?.[
-                                                                                                sectionIndex
-                                                                                            ]?.sectionFields?.[index]
-                                                                                        }
-                                                                                        autoFocus
-                                                                                    />
-                                                                                )
-                                                                            )}
-                                                                        </FieldsetCluster>
-                                                                        <Button
-                                                                            className="mb-2 rounded-full"
-                                                                            style={{
-                                                                                backgroundColor:
-                                                                                    'var(--interaction-weak)',
-                                                                            }}
-                                                                            color="norm"
-                                                                            shape="ghost"
-                                                                            onClick={() =>
-                                                                                helpers.push(EMPTY_CUSTOM_FIELD)
-                                                                            }
-                                                                        >
-                                                                            <div className="flex items-center">
-                                                                                <Icon name="plus" />
-                                                                                <div className="ml-2 text-semibold">{c(
-                                                                                    'Action'
-                                                                                ).t`Add custom field`}</div>
-                                                                            </div>
-                                                                        </Button>
-                                                                    </>
-                                                                );
-                                                            }}
-                                                        />
-                                                    </CollapsibleSection>
-                                                );
-                                            }
-                                        )}
-                                        <hr />
-                                        <IdentityAddNewSection
-                                            onAdd={(sectionName: string) => {
-                                                extraSectionsHelpers.push({
-                                                    sectionName,
-                                                    sectionFields: [EMPTY_CUSTOM_FIELD],
-                                                });
-                                            }}
-                                        />
-                                        <ConfirmationModal
-                                            open={showWarningMessage.open}
-                                            onClose={showWarningMessage.onClose}
-                                            onSubmit={() => extraSectionsHelpers.remove(showWarningMessage.data ?? 0)}
-                                            submitText={c('Action').t`Delete section`}
-                                            title={c('Title').t`Remove section?`}
-                                            alertText={c('Warning')
-                                                .t`Removing the last field will remove the custom section.`}
-                                        />
-                                    </>
-                                );
-                            }}
-                        />
+                        <IdentityCustomSections form={form} />
                     </Form>
                 </FormikProvider>
             )}
