@@ -589,7 +589,7 @@ export const getWalletPlan = (plan: Plan): ShortPlan => {
         plan: PLANS.WALLET,
         title: plan.Title,
         label: '',
-        description: c('wallet_signup_2024: Info').t`The easiest way to securely own, send, and receive Bitcoin`,
+        description: c('wallet_signup_2024: Info').t`A safer way to hold your Bitcoin`,
         cta: getCTA(plan.Title),
         features: [
             getWallets(WALLET_PLUS_WALLETS),
