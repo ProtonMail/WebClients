@@ -581,6 +581,11 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       throw new Error('Attempting to propagate update before entitlements are initialized')
     }
 
+    if (message.type.wrapper === 'conversion') {
+      await this.seedDocument(message.content)
+      return
+    }
+
     if (message.type.wrapper === 'du') {
       if (!this.sizeTracker.canPostUpdateOfSize(message.content.byteLength)) {
         this.handleAttemptingToBroadcastUpdateThatIsTooLarge()
@@ -687,6 +692,30 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const shell = result.getValue()
 
     void this.driveCompat.openDocument(shell)
+  }
+
+  public async seedDocument(content: Uint8Array): Promise<void> {
+    if (!this.docMeta) {
+      throw new Error('Attempting to seed document before it is initialized')
+    }
+
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized')
+    }
+    const keys = await this.driveCompat.getDocumentKeys(this.nodeMeta)
+    const result = await this._createInitialCommit.execute(this.nodeMeta, content, keys)
+
+    if (result.isFailed()) {
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`An error occurred while attempting to seed the document. Please try again.`,
+      })
+
+      this.logger.error('Failed to seed document', result.getError())
+      return
+    }
+
+    const resultValue = result.getValue()
+    this.lastCommitIdReceivedFromRtsOrApi = resultValue.commitId
   }
 
   public async createNewDocument(): Promise<void> {
