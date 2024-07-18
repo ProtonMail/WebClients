@@ -1768,6 +1768,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -2208,6 +2211,9 @@
       ],
       "Syria": [
         "Sýria"
+      ],
+      "Syrian Arab Republic": [
+        "Sýrska arabská republika"
       ],
       "Taiwan": [
         "Taiwan"
@@ -4149,6 +4155,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
@@ -6534,12 +6543,6 @@
       "DNS leak prevention": [
         "Prevencia úniku DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie) (čoskoro)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6648,9 +6651,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
       ],
-      "Reply to messages": [
-        "Odpovedať na správy"
-      ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
       ],
@@ -6725,6 +6725,9 @@
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
+      ],
+      "Unlimited logins and notes": [
+        "Neobmedzený počet prihlásení a poznámok"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
@@ -7547,6 +7550,20 @@
         "Bezpečné zdieľanie trezorov (${ n } trezory) a zdieľanie odkazu",
         "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu",
         "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Kľúč organizácie neexistuje."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
+      ],
+      "The organization key must be activated first.": [
+        "Najprv musí byť aktivovaný kľúč organizácie."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
       ]
     },
     "Payment method option": {
@@ -9772,6 +9789,9 @@
       ],
       "Send invitation": [
         "Poslať pozvánku"
+      ],
+      "Set recovery phrase": [
+        "Nastaviť obnovovaciu frázu"
       ],
       "Settings": [
         "Nastavenia"

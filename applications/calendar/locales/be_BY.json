@@ -1654,6 +1654,9 @@
       "British Indian Ocean Territory": [
         "Брытанская тэрыторыя ў Індыйскім акіяне"
       ],
+      "British Virgin Islands": [
+        "Брытанскія Віргінскія астравы"
+      ],
       "Brunei Darussalam": [
         "Брунэй-Дарусалам"
       ],
@@ -1708,6 +1711,9 @@
       "Congo": [
         "Конга"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Конга"
+      ],
       "Congo, Democratic Republic of the": [
         "Дэмакратычная Рэспубліка Конга"
       ],
@@ -1747,6 +1753,9 @@
       "Dominican Republic": [
         "Дамініканская Рэспубліка"
       ],
+      "East Timor": [
+        "Усходні Тымор"
+      ],
       "Ecuador": [
         "Эквадор"
       ],
@@ -1773,6 +1782,9 @@
       ],
       "Falkland Islands": [
         "Фалклендскія астравы"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Фалклендскія (Мальвінскія) астравы"
       ],
       "Faroe Islands": [
         "Фарэрскія астравы"
@@ -1885,6 +1897,9 @@
       "Ireland": [
         "Ірландыя"
       ],
+      "Islamic Republic of Iran": [
+        "Іран"
+      ],
       "Isle of Man": [
         "Востраў Мэн"
       ],
@@ -1915,6 +1930,12 @@
       "Kiribati": [
         "Кірыбаці"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Паўночная Карэя"
+      ],
+      "Korea (Republic of)": [
+        "Паўднёвая Карэя"
+      ],
       "Kosovo": [
         "Косава"
       ],
@@ -1923,6 +1944,9 @@
       ],
       "Kyrgyzstan": [
         "Кыргызстан"
+      ],
+      "Lao People's Democratic Republic": [
+        "Лаос"
       ],
       "Laos": [
         "Лаос"
@@ -1942,6 +1966,9 @@
       "Libya": [
         "Лівія"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Лівія"
+      ],
       "Liechtenstein": [
         "Ліхтэнштэйн"
       ],
@@ -1953,6 +1980,9 @@
       ],
       "Macao": [
         "Макаа"
+      ],
+      "Macedonia": [
+        "Македонія"
       ],
       "Madagascar": [
         "Мадагаскар"
@@ -2206,6 +2236,9 @@
       "Svalbard and Jan Mayen": [
         "Шпіцберген і Ян-Маен"
       ],
+      "Swaziland": [
+        "Свазіленд"
+      ],
       "Sweden": [
         "Швецыя"
       ],
@@ -2215,6 +2248,9 @@
       "Syria": [
         "Сірыя"
       ],
+      "Syrian Arab Republic": [
+        "Сірыя"
+      ],
       "Taiwan": [
         "Тайвань"
       ],
@@ -2222,6 +2258,9 @@
         "Таджыкістан"
       ],
       "Tanzania": [
+        "Танзанія"
+      ],
+      "Tanzania, United Republic of": [
         "Танзанія"
       ],
       "Thailand": [
@@ -6519,6 +6558,9 @@
       "Collaborate and share large files": [
         "Сумесная праца і абагульванне вялікіх файлаў"
       ],
+      "Collaborative document editor": [
+        "Сумесны рэдактар дакументаў"
+      ],
       "Contact groups": [
         "Групы кантактаў"
       ],
@@ -6551,12 +6593,6 @@
       ],
       "DNS leak prevention": [
         "Прадухіленне ўцечак DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Рэдактары дакументаў (тэкставыя дакументы, электронныя табліцы, слайды) (неўзабаве)"
       ],
       "Double hop": [
         "Double hop"
@@ -6665,9 +6701,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
-      ],
-      "Reply to messages": [
-        "Адказ на паведамленні"
       ],
       "Require 2FA for organization": [
         "Патрабаванне 2ФА для арганізацыі"
@@ -7568,6 +7601,20 @@
         "Бяспечнае абагульванне сховішча (${ n } сховішчы) і абагульванне спасылкі",
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Ключ арганізацыі не існуе."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "У доступе адмоўлена, а правы адміністратара абмежаваны."
+      ],
+      "The organization key must be activated first.": [
+        "Спачатку неабходна актываваць ключ арганізацыі."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Вам патрэбны доступ да ключа арганізацыі, каб выканаць гэту аперацыю."
       ]
     },
     "Payment method option": {
