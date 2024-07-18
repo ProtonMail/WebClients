@@ -543,6 +543,9 @@
       "Ok": [
         "D'acord"
       ],
+      "Open": [
+        "Obert"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
@@ -1631,6 +1634,9 @@
       "Falkland Islands": [
         "Illes Flkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Illes Falkland (Malvines)"
+      ],
       "Faroe Islands": [
         "Illes Fèroe"
       ],
@@ -2070,6 +2076,9 @@
         "Suïssa"
       ],
       "Syria": [
+        "Síria"
+      ],
+      "Syrian Arab Republic": [
         "Síria"
       ],
       "Taiwan": [
@@ -6659,12 +6668,6 @@
       "DNS leak prevention": [
         "Prevenció de fuites de DNS."
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions) (aviat)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6768,9 +6771,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
-      ],
-      "Reply to messages": [
-        "Respon als missatges"
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -7662,6 +7662,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Compartició segura de caixes fortes (${ n } caixa forta) i compartició d'enllaços",
         "Compartició segura de caixes fortes (${ n } caixes fortes) i compartició d'enllaços"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clau de l'organització no existeix."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "S'ha denegat el permís. S'han restringit els privilegis d'administrador."
+      ],
+      "The organization key must be activated first.": [
+        "S'ha d'activar primer la clau de l'organització."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
       ]
     },
     "Payment method option": {
@@ -9704,6 +9718,9 @@
       ],
       "Send feedback": [
         "Enviar comentaris"
+      ],
+      "Set recovery phrase": [
+        "Estableix la frase de recuperació"
       ],
       "Settings": [
         "Preferències"

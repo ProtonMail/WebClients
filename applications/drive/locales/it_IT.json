@@ -1523,6 +1523,9 @@
       "British Indian Ocean Territory": [
         "Territori Britannici dell'Oceano Indiano"
       ],
+      "British Virgin Islands": [
+        "Isole Vergini Britanniche"
+      ],
       "Brunei Darussalam": [
         "Sultanato del Brunei"
       ],
@@ -1577,6 +1580,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Repubblica Democratica del)"
+      ],
       "Congo, Democratic Republic of the": [
         "Repubblica democratica del Congo"
       ],
@@ -1616,6 +1622,9 @@
       "Dominican Republic": [
         "Repubblica Dominicana"
       ],
+      "East Timor": [
+        "Timor Est"
+      ],
       "Ecuador": [
         "Ecuador"
       ],
@@ -1642,6 +1651,9 @@
       ],
       "Falkland Islands": [
         "Isole Falkland"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Isole Falkland (Malvine)"
       ],
       "Faroe Islands": [
         "Isole Faroe"
@@ -1754,6 +1766,9 @@
       "Ireland": [
         "Irlanda"
       ],
+      "Islamic Republic of Iran": [
+        "Iran"
+      ],
       "Isle of Man": [
         "Isola di Man"
       ],
@@ -1784,6 +1799,9 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Republic of)": [
+        "Corea (Repubblica di)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1792,6 +1810,9 @@
       ],
       "Kyrgyzstan": [
         "Kirghizistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos"
       ],
       "Laos": [
         "Laos"
@@ -1811,6 +1832,9 @@
       "Libya": [
         "Libia"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libia"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -1822,6 +1846,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Macedonia"
       ],
       "Madagascar": [
         "Madagascar"
@@ -2075,6 +2102,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Svezia"
       ],
@@ -2082,6 +2112,9 @@
         "Svizzera"
       ],
       "Syria": [
+        "Siria"
+      ],
+      "Syrian Arab Republic": [
         "Siria"
       ],
       "Taiwan": [
@@ -2092,6 +2125,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, Repubblica unita di"
       ],
       "Thailand": [
         "Thailandia"
@@ -6728,12 +6764,6 @@
       "DNS leak prevention": [
         "Prevenzione perdite DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editor di documenti (documenti, fogli di lavoro, diapositive)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editor di documenti (documenti, fogli di lavoro, diapositive) (presto disponibile)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6837,9 +6867,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Controlli regolari della sicurezza del tuo account. Ti avvisiamo se hai password deboli o riutilizzate che devono essere aggiornate."
-      ],
-      "Reply to messages": [
-        "Rispondi ai messaggi"
       ],
       "Require 2FA for organization": [
         "Richiedi 2FA per l'organizzazione"
@@ -7751,6 +7778,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Condivisione sicura della cassaforte (${ n } cassaforte) e condivisione dei collegamenti",
         "Condivisione sicura delle casseforti (${ n } casseforti) e condivisione dei collegamenti"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Chiave dell'organizzazione non esistente."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
+      ],
+      "The organization key must be activated first.": [
+        "La chiave dell'organizzazione deve essere prima attivata."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
     "Payment method option": {
