@@ -1,19 +1,20 @@
 import { AppLink, AppLinkProps } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { useConfig } from '../../hooks';
-import Logo from './Logo';
+import Logo, { LogoVariant } from './Logo';
 
-const MainLogo = (props: AppLinkProps) => {
+const MainLogo = (props: AppLinkProps & { className?: string; variant?: LogoVariant }) => {
     const { APP_NAME } = useConfig();
 
     return (
         <AppLink
             toApp={APP_NAME}
             target="_self"
-            className="relative interactive-pseudo-protrude interactive--no-background"
+            className={clsx('relative interactive-pseudo-protrude interactive--no-background', props.className)}
             {...props}
         >
-            <Logo appName={APP_NAME} />
+            <Logo variant={props.variant} appName={APP_NAME} />
         </AppLink>
     );
 };

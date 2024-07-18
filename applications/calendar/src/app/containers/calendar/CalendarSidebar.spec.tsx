@@ -122,6 +122,16 @@ jest.mock('@proton/components/hooks/drawer/useDrawer', () => () => {
     return { toggleDrawerApp: jest.fn() };
 });
 
+jest.mock('@proton/components/containers/organization/logoUpload/useOrganizationTheme.ts', () => ({
+    __esModule: true,
+    useOrganizationTheme: jest.fn(() => ({
+        logoURL: 'logo',
+        showName: false,
+        name: 'org',
+        access: false,
+    })),
+}));
+
 const mockedUseSubscribedCalendars = useSubscribedCalendars as jest.Mock<ReturnType<typeof useSubscribedCalendars>>;
 
 const mockCalendar: VisualCalendar = {

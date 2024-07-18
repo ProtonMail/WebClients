@@ -53,7 +53,7 @@ const DrawerVisibilityButton = ({ spotlightSeenRef }: Props) => {
                     aria-expanded={showDrawerSidebar}
                 >
                     <Icon
-                        name={showDrawerSidebar ? 'chevron-right' : 'chevron-left'}
+                        name={showDrawerSidebar ? 'chevrons-right' : 'chevrons-left'}
                         alt={c('Action').t`Show side panel`}
                     />
                 </Button>

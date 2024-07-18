@@ -10,11 +10,21 @@ type Props = {
     app: APP_NAMES;
     url: string;
     className?: string;
+    collapsed?: boolean;
     style?: React.CSSProperties;
     organizationNameDataTestId?: string;
 };
 
-const CustomLogo = ({ url, app, organizationName, className, style, organizationNameDataTestId, ...rest }: Props) => {
+const CustomLogo = ({
+    url,
+    app,
+    organizationName,
+    className,
+    collapsed = false,
+    style,
+    organizationNameDataTestId,
+    ...rest
+}: Props) => {
     const longOrgName = organizationName.length >= 9;
 
     const ProcessedOrgName = () => {
@@ -47,17 +57,19 @@ const CustomLogo = ({ url, app, organizationName, className, style, organization
             >
                 <img src={url} alt="" className="object-cover w-full h-full" />
             </div>
-            <div className={clsx('flex flex-column justify-center', longOrgName ? 'mb-1' : 'mb-0.5')}>
-                <ProcessedOrgName />
-                <div className="h-custom flex" style={{ '--h-custom': '0.625rem' }}>
-                    <Logo
-                        appName={app}
-                        variant="wordmark-only"
-                        className="color-norm opacity-70 ml-px h-full w-auto"
-                        style={{ '--h-custom': '0.625rem' }}
-                    />
+            {!collapsed && (
+                <div className={clsx('flex flex-column justify-center', longOrgName ? 'mb-1' : 'mb-0.5')}>
+                    <ProcessedOrgName />
+                    <div className="h-custom flex" style={{ '--h-custom': '0.625rem' }}>
+                        <Logo
+                            appName={app}
+                            variant="wordmark-only"
+                            className="color-norm opacity-70 ml-px h-full w-auto"
+                            style={{ '--h-custom': '0.625rem' }}
+                        />
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

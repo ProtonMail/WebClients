@@ -39,7 +39,6 @@ import {
     useToggle,
     useUser,
 } from '@proton/components';
-import { SidebarLogo } from '@proton/components/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import {
@@ -398,8 +397,6 @@ const CalendarContainerView = ({
         </>
     );
 
-    const logo = <SidebarLogo to="/" app={APPS.PROTONCALENDAR} />;
-
     const createEventText = c('Action').t`Create event`;
 
     const contactCustomActions: CustomAction[] = [
@@ -580,7 +577,6 @@ const CalendarContainerView = ({
             calendars={calendars}
             addresses={addresses}
             calendarUserSettings={calendarUserSettings}
-            logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
