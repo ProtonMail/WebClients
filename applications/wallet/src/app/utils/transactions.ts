@@ -16,6 +16,10 @@ const toMsTimestamp = (ts: number | BigInt) => {
     return Number(ts) * SECOND;
 };
 
+export const isSentTransaction = (transaction: TransactionData) => {
+    return transaction.networkData.sent > transaction.networkData.received;
+};
+
 export const transactionTime = (transaction: WasmTransactionDetails) => {
     if (transaction.time?.confirmation_time) {
         return toMsTimestamp(transaction.time?.confirmation_time);
@@ -59,11 +63,10 @@ const getWalletAndAccountFromTransaction = (transaction: TransactionData, wallet
 };
 
 export const getTransactionSenderHumanReadableName = (transaction: TransactionData, walletMap: WalletMap) => {
-    const isSentTx = transaction.networkData.sent > transaction.networkData.received;
     const { wallet, account } = getWalletAndAccountFromTransaction(transaction, walletMap);
 
     // If transaction was sent using the current wallet account, we display the Wallet - WalletAccount as sender
-    if (isSentTx && wallet && account) {
+    if (isSentTransaction(transaction) && wallet && account) {
         return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
     }
     // If there is a sender attached to the transaction, we display it
@@ -90,11 +93,10 @@ export const getTransactionRecipientHumanReadableName = (
     addresses: Address[] = []
 ) => {
     const address = transaction.apiData?.ToList[output.address];
-    const isSentTx = transaction.networkData.sent > transaction.networkData.received;
     const { wallet, account } = getWalletAndAccountFromTransaction(transaction, walletMap);
 
     // If output is owned by wallet account and transaction wasn't sent from it, we display the Wallet - WalletAccount as recipient
-    if (!isSentTx && output.is_mine && wallet && account) {
+    if (!isSentTransaction(transaction) && output.is_mine && wallet && account) {
         return `${wallet.wallet.Wallet.Name} - ${account.Label}`;
     }
 
@@ -115,6 +117,15 @@ export const getTransactionRecipientsHumanReadableName = (
             .filter((o) => !o.is_mine)
             .map((o) => getTransactionRecipientHumanReadableName(transaction, o, walletMap, addresses))
     );
+
+    if (humanReadableOutputs.length === 0 && isSentTransaction(transaction)) {
+        // If we sent to ourselves, just display all addresses without filtering
+        return compact(
+            transaction.networkData.outputs.map((o) =>
+                getTransactionRecipientHumanReadableName(transaction, o, walletMap, addresses)
+            )
+        );
+    }
 
     return humanReadableOutputs;
 };
