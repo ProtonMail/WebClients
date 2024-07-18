@@ -59,10 +59,3 @@ export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-
-export const getVisionaryWallet = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('wallet_signup_2024: Info').t`Early access to new features`,
-        included: true,
-    };
-};
