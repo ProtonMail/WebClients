@@ -631,6 +631,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } ek özel etki alanı",
+        "${ domains } ek özel etki alanı"
+      ],
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
@@ -1295,6 +1299,9 @@
       "Falkland Islands": [
         "Falkland Adaları"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Adaları (Malvinas)"
+      ],
       "Faroe Islands": [
         "Faroe Adaları"
       ],
@@ -1736,6 +1743,9 @@
       "Syria": [
         "Suriye"
       ],
+      "Syrian Arab Republic": [
+        "Suriye Arap Cumhuriyeti"
+      ],
       "Taiwan": [
         "Tayvan"
       ],
@@ -2113,9 +2123,6 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
-      ],
-      "A data integrity error has occurred and recent changes cannot be saved. Please refresh the page.": [
-        "Bir veri bütünlüğü sorunu çıktı ve son değişiklikler kaydedilemedi. Lütfen sayfayı yenileyin."
       ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
@@ -5505,12 +5512,6 @@
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar) (yakında)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5615,9 +5616,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
-      "Reply to messages": [
-        "İletileri yanıtlayın"
-      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
@@ -5692,6 +5690,9 @@
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
+      ],
+      "Unlimited logins and notes": [
+        "Sınırsız sayıda oturum açma bilgisi ve not"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -6379,6 +6380,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Kuruluş anahtarı bulunamadı."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "İzin verilmedi, yönetici yetkileri kısıtlandı."
+      ],
+      "The organization key must be activated first.": [
+        "Önce kuruluş anahtarı kullanıma alınmalıdır."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
       ]
     },
     "Payment method option": {
@@ -7725,6 +7740,9 @@
       "Import failed": [
         "İçe aktarılamadı"
       ],
+      "Import groups": [
+        "Grupları içe aktar"
+      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
@@ -7844,6 +7862,9 @@
       ],
       "Select link expiration time": [
         "Bağlantının geçerlilik sonu saatini seçin"
+      ],
+      "Set recovery phrase": [
+        "Kurtarma ifadesini ayarla"
       ],
       "Settings": [
         "Ayarlar"
