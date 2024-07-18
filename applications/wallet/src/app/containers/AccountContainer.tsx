@@ -90,10 +90,11 @@ export const AccountContainer = () => {
 
                         <CoreButton
                             icon
+                            pill
                             size="medium"
                             shape="ghost"
                             color="weak"
-                            className="ml-2 rounded-full bg-weak shrink-0"
+                            className="ml-2 bg-weak shrink-0"
                             onClick={() => {
                                 setWalletPreferencesModalState(true);
                             }}

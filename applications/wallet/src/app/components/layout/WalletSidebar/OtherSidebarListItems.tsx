@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { signoutAction } from '@proton/account';
 import {
     IconProps,
     SettingsLink,
@@ -11,6 +12,7 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemSettingsLink,
 } from '@proton/components/components';
+import { useDispatch } from '@proton/redux-shared-store';
 
 import { APP_NAME } from '../../../config';
 
@@ -27,7 +29,7 @@ const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
         <SidebarListItemSettingsLink path={to} target="_blank">
             <SidebarListItemContent
                 data-testid={props['data-testid']}
-                left={<SidebarListItemContentIcon className="color-hint" name={icon} />}
+                left={<SidebarListItemContentIcon size={5} className="color-weak" name={icon} />}
                 className="sidebar-item-content flex gap-2 max-w-full"
             >
                 <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
@@ -41,38 +43,25 @@ const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
 };
 
 export const OtherSidebarListItems = () => {
-    const discoverLabel = c('Wallet Sidebar').t`Discover`;
+    const dispatch = useDispatch();
+
+    const handleSignout = (clearDeviceRecovery: boolean) => {
+        dispatch(signoutAction({ clearDeviceRecovery }));
+    };
+
+    const handleSignOutClick = () => {
+        handleSignout(false);
+    };
+
     const recoveryLabel = c('Wallet Sidebar').t`Recovery`;
     const upgradeLabel = c('Wallet Sidebar').t`Upgrade`;
     const securityLabel = c('Wallet Sidebar').t`Security`;
-    const settingsLabel = c('Wallet Sidebar').t`Settings`;
+    const settingsLabel = c('Wallet Sidebar').t`User settings`;
+    const signoutLabel = c('Wallet Sidebar').t`Sign out`;
 
     return (
         <>
-            <SidebarListItem className="my-3">
-                <SidebarListItemButton>
-                    <SidebarListItemContent
-                        data-testid="wallet-sidebar:discover"
-                        left={<SidebarListItemContentIcon className="color-hint" name="grid-2" />}
-                        className="sidebar-item-content flex gap-2 max-w-full"
-                    >
-                        <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
-                            <span className="text-ellipsis" title={discoverLabel}>
-                                {discoverLabel}
-                            </span>
-                        </div>
-                    </SidebarListItemContent>
-                </SidebarListItemButton>
-            </SidebarListItem>
-            <SidebarListItem className="my-3">
-                <SidebarItemContent
-                    icon="arrow-rotate-right"
-                    to="/recovery"
-                    data-testid="wallet-sidebar:recovery"
-                    label={recoveryLabel}
-                />
-            </SidebarListItem>
-            <SidebarListItem className="my-3">
+            <SidebarListItem className="my-2">
                 <SidebarItemContent
                     icon="upgrade"
                     to="/upgrade"
@@ -80,7 +69,15 @@ export const OtherSidebarListItems = () => {
                     label={upgradeLabel}
                 />
             </SidebarListItem>
-            <SidebarListItem className="my-3">
+            <SidebarListItem className="my-2">
+                <SidebarItemContent
+                    icon="arrow-rotate-right"
+                    to="/recovery"
+                    data-testid="wallet-sidebar:recovery"
+                    label={recoveryLabel}
+                />
+            </SidebarListItem>
+            <SidebarListItem className="my-2">
                 <SidebarItemContent
                     icon="shield-2"
                     to="/security"
@@ -90,13 +87,29 @@ export const OtherSidebarListItems = () => {
                     <SettingsLink path="/" app={APP_NAME} />
                 </SidebarItemContent>
             </SidebarListItem>
-            <SidebarListItem className="my-3">
-                <SidebarItemContent
-                    icon="cog-wheel"
-                    to="/"
-                    data-testid="wallet-sidebar:settings"
-                    label={settingsLabel}
-                />
+            <SidebarListItem className="my-2">
+                <SidebarItemContent icon="user" to="/" data-testid="wallet-sidebar:settings" label={settingsLabel} />
+            </SidebarListItem>
+            <SidebarListItem className="my-2">
+                <SidebarListItemButton onClick={() => handleSignOutClick()}>
+                    <SidebarListItemContent
+                        data-testid="wallet-sidebar:signout"
+                        left={
+                            <SidebarListItemContentIcon
+                                className="color-weak"
+                                size={5}
+                                name="arrow-out-from-rectangle"
+                            />
+                        }
+                        className="sidebar-item-content flex gap-2 max-w-full"
+                    >
+                        <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
+                            <span className="text-ellipsis" title={signoutLabel}>
+                                {signoutLabel}
+                            </span>
+                        </div>
+                    </SidebarListItemContent>
+                </SidebarListItemButton>
             </SidebarListItem>
         </>
     );
