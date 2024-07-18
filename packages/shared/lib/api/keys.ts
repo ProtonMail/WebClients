@@ -82,6 +82,20 @@ export const createAddressKeyRouteV2 = (data: CreateAddressKeyPayloadV2) => ({
     data,
 });
 
+interface CreateGroupAddressKeyPayload {
+    AddressID: string;
+    PrivateKey: string;
+    OrgToken: string;
+    OrgSignature: string;
+    SignedKeyList: SignedKeyList;
+}
+
+export const createGroupAddressKeyRoute = (data: CreateGroupAddressKeyPayload) => ({
+    url: 'core/v4/keys/group',
+    method: 'post',
+    data,
+});
+
 export enum AddressActiveStatus {
     INACTIVE = 0,
     ACTIVE = 1,

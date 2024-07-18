@@ -16,7 +16,7 @@ interface CreateAddressKeyLegacyArguments {
     addressForwardingID?: string;
 }
 
-const removePrimary = (activeKey: ActiveKey): ActiveKey => {
+export const removePrimary = (activeKey: ActiveKey): ActiveKey => {
     if (activeKey.primary) {
         return {
             ...activeKey,
