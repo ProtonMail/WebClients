@@ -7,17 +7,23 @@ import { DocumentKeys } from '@proton/drive-store'
 import { DocumentMetaInterface } from '@proton/docs-shared'
 import { GenerateUUID } from '../Util/GenerateUuid'
 
+type SeedInitialCommitResult = { commitId: string; linkId: string; volumeId: string }
+
 /**
  * Allows the client to create an initial commit. This used by the Duplicate function to allow us to seed the document
  * with an initial commit value equaling the source document's.
  */
-export class SeedInitialCommit implements UseCaseInterface<boolean> {
+export class SeedInitialCommit implements UseCaseInterface<SeedInitialCommitResult> {
   constructor(
     private docsApi: DocsApi,
     private encryptMessage: EncryptMessage,
   ) {}
 
-  async execute(docMeta: DocumentMetaInterface, state: Uint8Array, keys: DocumentKeys): Promise<Result<boolean>> {
+  async execute(
+    docMeta: Pick<DocumentMetaInterface, 'volumeId' | 'linkId'>,
+    state: Uint8Array,
+    keys: DocumentKeys,
+  ): Promise<Result<SeedInitialCommitResult>> {
     const metadata = {
       version: DocumentUpdateVersion.V1,
       authorAddress: keys.userOwnAddress,
@@ -25,7 +31,7 @@ export class SeedInitialCommit implements UseCaseInterface<boolean> {
     }
     const encryptedUpdate = await this.encryptMessage.execute(state, metadata, keys)
     if (encryptedUpdate.isFailed()) {
-      return Result.fail(encryptedUpdate.getError())
+      return Result.fail<SeedInitialCommitResult>(encryptedUpdate.getError())
     }
 
     const update = CreateDocumentUpdate({
@@ -43,10 +49,13 @@ export class SeedInitialCommit implements UseCaseInterface<boolean> {
     })
 
     const commitResult = await this.docsApi.seedInitialCommit(docMeta, commit)
+
     if (commitResult.isFailed()) {
       return Result.fail(commitResult.getError())
     }
 
-    return Result.ok(true)
+    const { CommitID: commitId, VolumeID: volumeId, LinkID: linkId } = commitResult.getValue()
+
+    return Result.ok<SeedInitialCommitResult>({ commitId, volumeId, linkId })
   }
 }
