@@ -1109,15 +1109,6 @@
       "An item previously shared with you was removed": [
         "Daha önce sizinle paylaşılan bir öge kullanımdan kaldırıldı"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "\"${ fromVaultName }\" içindeki tüm ögeleri \"${ toVaultName }\" içine taşımak istediğinize emin misiniz?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Ögeleri \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Ögeyi \"${ name }\" kasasına taşımak istediğinize emin misiniz ?"
-      ],
       "Are you sure you want to remove the link?": [
         "Bağlantıyı kaldırmak istediğinize emin misiniz?"
       ],
@@ -1412,14 +1403,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Başka bir kasaya taşınan ögenin geçmişi silinir"
+      "Moving an item to another vault will erase its history.": [
+        "Başka bir kasaya taşınan ögenin geçmişi silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
       ],
-      "Moving items to another vault will erase their history": [
-        "Başka bir kasaya taşınan ögelerin geçmişi silinir"
+      "Moving items to another vault will erase their history.": [
+        "Başka bir kasaya taşınan ögelerin geçmişi silinir."
       ],
       "Moving items to trash": [
         "Ögeler çöpe atılıyor"
@@ -2071,8 +2062,8 @@
       "Make all viewers": [
         "Tümünü izleyici yap"
       ],
-      "Max views reached": [
-        "En fazla görüntülenme sayısına ulaşılmış"
+      "max views reached": [
+        "en fazla görüntülenme sayısına ulaşılmış"
       ],
       "Members": [
         "Üyeler"
@@ -2618,15 +2609,6 @@
       ],
       "Modified": [
         "Değiştirilme"
-      ],
-      "Move all items ?": [
-        "Tüm ögeler taşınsın mı?"
-      ],
-      "Move item?": [
-        "Öge taşınsın mı?"
-      ],
-      "Move items?": [
-        "Ögeler taşınsın mı?"
       ],
       "No excluded items": [
         "Katılmayan bir öge yok"

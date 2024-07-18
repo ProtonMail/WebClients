@@ -5,11 +5,20 @@
   },
   "contexts": {
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
       ]
     },
     "Action": {
@@ -345,6 +354,9 @@
       ],
       "Ok": [
         "დიახ"
+      ],
+      "Open": [
+        "გახსნა"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
@@ -1374,6 +1386,9 @@
       "Falkland Islands": [
         "ფოლკლენდის კუნძულები"
       ],
+      "Falkland Islands (Malvinas)": [
+        "ფელკლენდის კუნძულები"
+      ],
       "Faroe Islands": [
         "ფაროს კუნძულები"
       ],
@@ -1813,6 +1828,9 @@
         "შვეიცარია"
       ],
       "Syria": [
+        "სირია"
+      ],
+      "Syrian Arab Republic": [
         "სირია"
       ],
       "Taiwan": [
@@ -3030,6 +3048,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } თუ გააგრძელებთ, თქვენს დაშიფრულ მონაცემებთან წვდომას სრულად დაკარგავთ."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
       ],
@@ -3084,6 +3105,18 @@
       "${ userFound } user found": [
         "აღმოჩენილია ${ userFound } მომხმარებელი",
         "აღმოჩენილია ${ userFound } მომხმარებელი"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } შეიქმნა"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } წაიშალა"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } გაზიარებულია ელფოსტით"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } განახლდა"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "ქვეყნის დონეზე დასაკავშირებლად საჭიროა ${ vpnPlus }."
@@ -3252,6 +3285,15 @@
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
       ],
+      "Breach Custom Email Added": [
+        "მორგებული ელფოსტის გაჯონვა დაემატა"
+      ],
+      "Breach Custom Email Deleted": [
+        "მორგებული ელფოსტის გაჯონვა წაიშალა"
+      ],
+      "Breach Custom Email Validated": [
+        "მორგებული ელფოსტის გაჟონვა დადასტურებულია"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
       ],
@@ -3319,17 +3361,26 @@
       "Custom branding": [
         "მორგებული ბრენდინგი"
       ],
+      "Custom email added": [
+        "მორგებული ელფოსტა დაემატა"
+      ],
+      "Custom email deleted": [
+        "მორგებული ელფოსტა წაიშალა"
+      ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
+      ],
+      "Custom email validated": [
+        "მორგებული ელფოსტა დადასტურებულია"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -3612,6 +3663,9 @@
       "Invite Deleted": [
         "მოწვევა წაიშალა"
       ],
+      "Invite for new user deleted": [
+        "ახალი მომხმარებლის მოწვევა წაიშალა"
+      ],
       "Invite for organization accepted": [
         "მოწვევა ორგანიზაციისთვის მიღებულია"
       ],
@@ -3627,6 +3681,9 @@
       "Item Autofilled": [
         "ელემენტი ავტოშევსებულია"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
+      ],
       "Item autofilled in vault": [
         "ელემენტი ავტოშევსებულია საცავში"
       ],
@@ -3636,20 +3693,44 @@
       "Item Created": [
         "ელემენტი შეიქმნა"
       ],
+      "Item created in ${ vaultLink }": [
+        "ელემენტი შეიქმნა ${ vaultLink }-ში"
+      ],
       "Item created in vault": [
         "ელემენტი შეიქმნა საცავში"
       ],
       "Item Deleted": [
         "ელემენტი წაიშალა"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "ელემენტი წაიშალა ${ vaultLink }-დან"
+      ],
+      "Item deleted from vault": [
+        "ელემენტი წაიშალა საცავიდან"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "ელემენტის ალმები შეიცვალა ${ vaultLink }-ში"
+      ],
       "Item flags changed in vault": [
         "ელემენტის ალმები შეიცვალა საცავში"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "ელემენტი ${ vaultLink }-დან გადატანილია ნაგვის ყუთში"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "ელემენტი ${ vaultLink }-დან გადმოტანილია ნაგვის ყუთიდან"
+      ],
+      "Item in vault trashed": [
+        "საცავის ელემენტი გადმოტანილია საცავის ნაგვის ყუთში"
       ],
       "Item in vault untrashed": [
         "ელემენტი გადმოტანილია საცავის ნაგვის ყუთიდან"
       ],
       "Item Read": [
         "ელემენტი წაკითხულია"
+      ],
+      "Item read in ${ vaultLink }": [
+        "ელემენტი წაკითხულია ${ vaultLink }-ში"
       ],
       "Item read in vault": [
         "ელემენტი წაკითხულია საცავში"
@@ -3662,6 +3743,9 @@
       ],
       "Item Updated": [
         "ელემენტი განახლდა"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "ელემენტი განახლდა ${ vaultLink }-ში"
       ],
       "Item updated in vault": [
         "ელემენტი განახლდა საცავში"
@@ -3755,6 +3839,9 @@
       ],
       "New User Invite Deleted": [
         "ახალი მომხმარებლის მოწვევა წაშლილია"
+      ],
+      "New user invited to organization": [
+        "ახალი მომხმარებელი მოწვეულია მორგანიზაციაში"
       ],
       "No addresses exist": [
         "მისამართები ნაპოვნი არაა"
@@ -3980,6 +4067,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
+      "Session Ended": [
+        "სესია დასრულდა"
+      ],
+      "Session Roaming": [
+        "სესიის როუმინგი"
+      ],
+      "Session Started": [
+        "სესია დაიწყო"
+      ],
       "Session timed out": [
         "სესიის დრო გავიდა"
       ],
@@ -3994,6 +4090,12 @@
       ],
       "Share Updated": [
         "ზიარი განახლდა"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "გაზიარებული ${ vaultLink } წაიშალა"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "გაზიარებული ${ vaultLink } განახლდა"
       ],
       "Shared vault deleted": [
         "გაზიარებული საცავი წაიშალა"
@@ -4221,6 +4323,9 @@
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი მონაცემების გასაშიფრად. (დამატებით)"
       ],
+      "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
+        "ორპაროლიანი რეჟიმი იყენებს სხვადასხვა პაროლებს შესასვლელად და მონაცემების გასაშიფრად. ეს ქმედება უსაფრთხოების უმნიშვნელო გაუმჯობესებაა, მაგრამ მომხმარებლების უმრავლესობას ჩვენ მაინც ერთპაროლიან რეჟმს ვურჩევთ. ორპაროლიან რეჟიმზე გადასართავად ჯერ დააყენეთ შესვლის პაროლი, მერე კი მეორე პაროლი."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "ამ ანგარიშისთვის აღდგენის მეთოდი დაყენებული არაა."
       ],
@@ -4429,6 +4534,10 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
         "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან.",
         "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და წერის დამხმარის ${ usedAI } ლიცენზიას ${ maxAI }-დან."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და არც ერთ თქვენს ${ maxAI }-ის ხელმისაწვდომ წერის დამხმარის ლიცენზიას.",
+        "იყენებთ თქვენს ${ usedMembers } ლიცენზიას ${ maxMembers } ხელმისაწვდომიდან და არც ერთ თქვენს ${ maxAI }-ის ხელმისაწვდომ წერის დამხმარის ლიცენზიას."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ.",
@@ -5703,12 +5812,6 @@
       "DNS leak prevention": [
         "DNS გაპარების თავიდან აცილება"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები) (მალე)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5819,9 +5922,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
       ],
-      "Reply to messages": [
-        "პასუხი შეტყობინებებზე"
-      ],
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
       ],
@@ -5906,6 +6006,9 @@
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited logins and notes": [
+        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
       ],
       "Unlimited logins, notes and credit cards": [
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
@@ -7142,6 +7245,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ],
@@ -8622,10 +8728,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -8663,6 +8769,9 @@
       ],
       "Confirm phone number": [
         "დაადასტურეთ ტელეფონის ნომერი"
+      ],
+      "Connection events": [
+        "მიერთების მოვლენები"
       ],
       "Contact us": [
         "დაგვიკავშირდით"
@@ -8826,6 +8935,9 @@
       "Forgot recovery method": [
         "დამავიწყდა აღდგენის მეთოდი"
       ],
+      "Gateway": [
+        "კარიბჭე"
+      ],
       "Gateways": [
         "რაუტერები"
       ],
@@ -8900,6 +9012,9 @@
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
+      ],
+      "Origin": [
+        "საიდან მოვიდა"
       ],
       "Password": [
         "პაროლი"

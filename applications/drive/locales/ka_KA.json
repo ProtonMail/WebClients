@@ -13,11 +13,20 @@
       ]
     },
     "Account Settings - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
+      ],
+      "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
+      ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name }-ის გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ზომების მისაღებად. ${ link }"
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური გაჟონვა ${ name }-დან. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
       ]
     },
     "Action": {
@@ -530,6 +539,9 @@
       ],
       "Ok": [
         "დიახ"
+      ],
+      "Open": [
+        "გახსნა"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
@@ -1615,6 +1627,9 @@
       "Falkland Islands": [
         "ფოლკლენდის კუნძულები"
       ],
+      "Falkland Islands (Malvinas)": [
+        "ფელკლენდის კუნძულები"
+      ],
       "Faroe Islands": [
         "ფაროს კუნძულები"
       ],
@@ -2054,6 +2069,9 @@
         "შვეიცარია"
       ],
       "Syria": [
+        "სირია"
+      ],
+      "Syrian Arab Republic": [
         "სირია"
       ],
       "Taiwan": [
@@ -3717,6 +3735,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
@@ -6625,12 +6646,6 @@
       "DNS leak prevention": [
         "DNS გაპარების თავიდან აცილება"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "დოკუმენტის რედაქტორი (დოკუმენტები, ცხრილები, სლაიდები) (მალე)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6735,9 +6750,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
       ],
-      "Reply to messages": [
-        "პასუხი შეტყობინებებზე"
-      ],
       "Require 2FA for organization": [
         "2FA-ის მოთხოვნა ორგანიზაციისთვის"
       ],
@@ -6812,6 +6824,9 @@
       ],
       "Unlimited labels": [
         "ჭდეების ულიმიტო რაოდენობა"
+      ],
+      "Unlimited logins and notes": [
+        "მომხმარებლების და შენიშვნების უსაზღვრო რაოდენობა"
       ],
       "Unlimited logins, notes and credit cards": [
         "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
@@ -7621,6 +7636,20 @@
         "დაცული საცავის გაზიარება (${ n } საცავი) და ბმულების გაზიარება"
       ]
     },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "ორგანიზაციის გასაღები არ არსებობს."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
+      ],
+      "The organization key must be activated first.": [
+        "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "ოპერაციის შესასრულებლად ორგანიზაციის გასაღებთან წვდომა გჭირდებათ."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
@@ -7940,6 +7969,9 @@
       ]
     },
     "Security Center - Info": {
+      "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
+        "აღმოჩენილია ${ name } და კიდევ ${ remainingCount } სხვა პოტენციური გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
+      ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "აღმოჩენილია პოტენციური ${ name } და კიდევ ერთი გაჟონვა. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად. ${ link }"
       ],
@@ -9589,6 +9621,9 @@
       ],
       "Send feedback": [
         "უკუკავშირის გაგზავნა"
+      ],
+      "Set recovery phrase": [
+        "აღსადგენი ფრაზის დაყენება"
       ],
       "Settings": [
         "მორგება"

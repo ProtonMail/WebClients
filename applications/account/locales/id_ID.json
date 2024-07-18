@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Buka"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
@@ -2420,6 +2423,9 @@
       "British Indian Ocean Territory": [
         "Teritori Samudera Hindia Inggris"
       ],
+      "British Virgin Islands": [
+        "Kepulauan Virgin Inggris"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2474,6 +2480,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Republik Demokratik)"
+      ],
       "Congo, Democratic Republic of the": [
         "Republik Demokratik Kongo"
       ],
@@ -2513,6 +2522,9 @@
       "Dominican Republic": [
         "Republik Dominika"
       ],
+      "East Timor": [
+        "Timor Timur"
+      ],
       "Ecuador": [
         "Ekuador"
       ],
@@ -2539,6 +2551,9 @@
       ],
       "Falkland Islands": [
         "Kepulauan Falkland"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Kepulauan Falkland (Malvinas)"
       ],
       "Faroe Islands": [
         "Kepulauan Faroe"
@@ -2651,6 +2666,9 @@
       "Ireland": [
         "Irlandia"
       ],
+      "Islamic Republic of Iran": [
+        "Republik Islam Iran"
+      ],
       "Isle of Man": [
         "Pulau Mann"
       ],
@@ -2681,6 +2699,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Republik Rakyat Demokratik)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republik)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2689,6 +2713,9 @@
       ],
       "Kyrgyzstan": [
         "Kyrgyzstan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Republik Demokratik Rakyat Laos"
       ],
       "Laos": [
         "Laos"
@@ -2708,6 +2735,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Jamahiriya Arab Libya"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2719,6 +2749,9 @@
       ],
       "Macao": [
         "Makau"
+      ],
+      "Macedonia": [
+        "Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -2972,6 +3005,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard dan Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Swedia"
       ],
@@ -2981,6 +3017,9 @@
       "Syria": [
         "Suriah"
       ],
+      "Syrian Arab Republic": [
+        "Republik Arab Suriah"
+      ],
       "Taiwan": [
         "Taiwan"
       ],
@@ -2989,6 +3028,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, Republik Serikat"
       ],
       "Thailand": [
         "Thailand"
@@ -6217,8 +6259,17 @@
       "${ userFound } user found": [
         "${ userFound } pengguna ditemukan"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } dibuat"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } dihapus"
+      ],
       "${ vaultLink } shared with email": [
         "${ vaultLink } dibagikan dengan email"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } diperbarui"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } diperlukan untuk koneksi tingkat Negara."
@@ -7162,6 +7213,9 @@
       "Item Autofilled": [
         "Item Diisi Otomatis"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Item diisi otomatis dalam ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Item diisi secara otomatis dalam brankas"
       ],
@@ -7171,17 +7225,32 @@
       "Item Created": [
         "Item Dibuat"
       ],
+      "Item created in ${ vaultLink }": [
+        "Item dibuat dalam ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Item dibuat dalam brankas"
       ],
       "Item Deleted": [
         "Item Dihapus"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Item dihapus dari ${ vaultLink }"
+      ],
       "Item deleted from vault": [
         "Item dihapus dari brankas"
       ],
+      "Item flags changed in ${ vaultLink }": [
+        "Tanda item diubah dalam ${ vaultLink }"
+      ],
       "Item flags changed in vault": [
         "Tanda item diubah dalam brankas"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Item dalam ${ vaultLink } dibuang"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Item dalam ${ vaultLink } dipulihkan"
       ],
       "Item in vault trashed": [
         "Item dalam brankas dihapus"
@@ -7191,6 +7260,9 @@
       ],
       "Item Read": [
         "Item Dibaca"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Item telah dibaca di ${ vaultLink }"
       ],
       "Item read in vault": [
         "Item dibaca dalam brankas"
@@ -7203,6 +7275,9 @@
       ],
       "Item Updated": [
         "Item Diperbarui"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Item diperbarui dalam ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Item diperbarui dalam brankas"
@@ -7779,6 +7854,12 @@
       ],
       "Share Updated": [
         "Pembagian Diperbarui"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "${ vaultLink } terbagi telah dihapus"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "${ vaultLink } terbagi telah diperbarui"
       ],
       "Shared vault deleted": [
         "Brankas terbagi dihapus"
@@ -10526,9 +10607,6 @@
       "**Get ${ plan }** for a limited time!": [
         "**Dapatkan ${ plan }** untuk jangka waktu yang terbatas!"
       ],
-      "**Get ${ plan }** for early access to ${ appName }!": [
-        "**Dapatkan ${ plan }** untuk memperoleh akses dini ke ${ appName }!"
-      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Jadilah seorang Visionary dan jadilah bagian dari perjalanan ${ BRAND_NAME }"
       ]
@@ -11147,6 +11225,9 @@
       "Collaborate and share large files": [
         "Kolaborasi dan berbagi file besar"
       ],
+      "Collaborative document editor": [
+        "Penyunting dokumen kolaboratif"
+      ],
       "Contact groups": [
         "Grup kontak"
       ],
@@ -11185,12 +11266,6 @@
       ],
       "DNS leak prevention": [
         "Perlindungan terhadap kebocoran DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Editor dokumen (doc, sheet, slide)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Penyunting dokumen (dokumen, lembar bentang, salindia) (segera)"
       ],
       "Double hop": [
         "Double hop"
@@ -11299,9 +11374,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
-      ],
-      "Reply to messages": [
-        "Balas pesan"
       ],
       "Require 2FA for organization": [
         "2FA wajib bagi organisasi"

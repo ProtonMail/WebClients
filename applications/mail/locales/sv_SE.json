@@ -33,6 +33,9 @@
       ]
     },
     "Action": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -485,6 +488,9 @@
       ],
       "Get in touch": [
         "Kontakta oss"
+      ],
+      "Get it": [
+        "Skaffa det"
       ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Få det från endast ${ addonPriceWithCurrency }/månad"
@@ -1522,6 +1528,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Snabbt och säkert. Inga loggar förs."
+      ],
+      "Faster, broader device compatibility": [
+        "Snabbare, bredare enhetskompatibilitet"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Ingen data överförs under användning, kräver en engångsnedladdning"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Kräver en engångsnedladdning och kompatibel hårdvara."
@@ -2565,6 +2577,9 @@
       "British Indian Ocean Territory": [
         "Brittiska territoriet i Indiska oceanen"
       ],
+      "British Virgin Islands": [
+        "Brittiska Jungfruöarna"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2658,6 +2673,9 @@
       "Dominican Republic": [
         "Dominikanska republiken"
       ],
+      "East Timor": [
+        "Östtimor"
+      ],
       "Ecuador": [
         "Ecuador"
       ],
@@ -2684,6 +2702,9 @@
       ],
       "Falkland Islands": [
         "Falklandsöarna"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandsöarna (Malvinas)"
       ],
       "Faroe Islands": [
         "Färöarna"
@@ -2796,6 +2817,9 @@
       "Ireland": [
         "Irland"
       ],
+      "Islamic Republic of Iran": [
+        "Iran"
+      ],
       "Isle of Man": [
         "Isle of Man"
       ],
@@ -2826,6 +2850,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Demokratiska folkrepubliken av)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republiken av)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2834,6 +2864,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgizistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos"
       ],
       "Laos": [
         "Laos"
@@ -2853,6 +2886,9 @@
       "Libya": [
         "Libyen"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libyen"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2864,6 +2900,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Makedonien"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -3117,6 +3156,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard och Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Sverige"
       ],
@@ -3126,6 +3168,9 @@
       "Syria": [
         "Syrien"
       ],
+      "Syrian Arab Republic": [
+        "Syriska Arabrepubliken"
+      ],
       "Taiwan": [
         "Taiwan"
       ],
@@ -3133,6 +3178,9 @@
         "Tadzjikistan"
       ],
       "Tanzania": [
+        "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
         "Tanzania"
       ],
       "Thailand": [
@@ -3971,6 +4019,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Välj en kategori och vad som gick fel med den genererade texten"
+      ],
+      "Please try again or refresh the page.": [
+        "Försök igen eller uppdatera sidan."
       ],
       "Please try generating the text again": [
         "Försök att generera texten igen"
@@ -5102,9 +5153,6 @@
       ],
       "Tell us more": [
         "Berätta mer"
-      ],
-      "Write faster with the writing assistant": [
-        "Skriv snabbare med skrivassistenten"
       ]
     },
     "Hint": {
@@ -5878,6 +5926,9 @@
       "Country code": [
         "Landskod"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Utforma bättre e-postmeddelanden, snabbt och lätt. Pröva det nu."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Skapa ${ calendarsToBeCreatedCount } ny kalender",
         "Skapa ${ calendarsToBeCreatedCount } nya kalendrar"
@@ -6241,9 +6292,6 @@
       "Left to Right": [
         "Vänster till höger"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Låt skrivassistenten hjälpa dig att skriva och svara på e-post och se din produktivitet stiga."
-      ],
       "Link type": [
         "Länktyp"
       ],
@@ -6402,9 +6450,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Endast en skrivassistent kan vara öppen åt gången"
       ],
       "Open shortcut cheat sheet": [
         "Öppna bladet för genvägar"
@@ -7614,6 +7659,9 @@
       ],
       " and ${ l }": [
         " och ${ l }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
@@ -8996,12 +9044,6 @@
       "DNS leak prevention": [
         "Förebyggande av DNS-läckage"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentredigerare (dokument, kalkylark, bildspel)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumentredigerare (dokument, kalkylark, bildspel) (snart)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9105,9 +9147,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
-      ],
-      "Reply to messages": [
-        "Svara på meddelanden"
       ],
       "Require 2FA for organization": [
         "Kräver 2FA för organisation"
@@ -11754,6 +11793,12 @@
       ],
       "Verification successful": [
         "Verifiering lyckades"
+      ],
+      "Writing assistant disabled": [
+        "Skrivassistent inaktiverad"
+      ],
+      "Writing assistant enabled": [
+        "Skrivassistent aktiverad"
       ],
       "Writing assistant setting updated": [
         "Inställning för skrivassistent uppdaterad"

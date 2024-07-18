@@ -1025,6 +1025,9 @@
         "${ count } visning",
         "${ count } visninger"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } visninger"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -1108,15 +1111,6 @@
       ],
       "An item previously shared with you was removed": [
         "Et element, der tidligere var delt med dig, er blevet fjernet"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Er du sikker på at du vil flytte alle elementer fra \"${ fromVaultName }\" til \"${ toVaultName }\" ?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Er du sikker på, at du vil flytte elementer til \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Er du sikker på, at du vil flytte elementet til \"${ name }\" ?"
       ],
       "Are you sure you want to remove the link?": [
         "Er du sikker på at du vil fjerne linket?"
@@ -1412,14 +1406,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Hvis du flytter et element til en anden boks, slettes dets historik."
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Ved at flytte et element til en anden boks, slettes dets historik og alle sikre links."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Ved at flytte et element til en anden boks, slettes dets historik."
       ],
       "Moving items": [
         "Flytter elementer"
       ],
-      "Moving items to another vault will erase their history": [
-        "Hvis du flytter elementer til en anden boks, slettes deres historik."
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Ved at flytte elementer til en anden boks, slettes deres historik og alle sikre links."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Ved at flytte elementer til en anden boks, slettes deres historik."
       ],
       "Moving items to trash": [
         "Flytter elementer til papirkurven"
@@ -2071,8 +2071,8 @@
       "Make all viewers": [
         "Gør alle til seere"
       ],
-      "Max views reached": [
-        "Maks. antal visninger nået"
+      "max views reached": [
+        "maks. visninger opnået"
       ],
       "Members": [
         "Medlemmer"
@@ -2619,14 +2619,14 @@
       "Modified": [
         "Ændret"
       ],
-      "Move all items ?": [
-        "Flyt alle elementer ?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Flyt alle elementer til \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Flyt element?"
+      "Move item to \"${ vaultName }\"?": [
+        "Flyt element til \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Flyt elementer?"
+      "Move items to \"${ vaultName }\"?": [
+        "Flyt elementer til \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Ingen ekskluderede elementer"

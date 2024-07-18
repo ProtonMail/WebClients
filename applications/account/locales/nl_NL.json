@@ -2482,6 +2482,9 @@
       "Falkland Islands": [
         "Falklandeilanden"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Eilanden (Malvinas)"
+      ],
       "Faroe Islands": [
         "Faeröer Eilanden"
       ],
@@ -2922,6 +2925,9 @@
       ],
       "Syria": [
         "Syrië"
+      ],
+      "Syrian Arab Republic": [
+        "Syrische Arabische Republiek"
       ],
       "Taiwan": [
         "Taiwan"
@@ -5488,6 +5494,12 @@
         "Diensten"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } lid",
+        "${ memberCount } leden"
+      ]
+    },
     "Header": {
       "Access": [
         "Toegang"
@@ -6126,6 +6138,12 @@
       "${ userFound } user found": [
         "${ userFound } gebruiker gevonden",
         "${ userFound } gebruikers gevonden"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } aangemaakt"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } bijgewerkt"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } vereist voor verbindingen op landniveau."
@@ -7942,6 +7960,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgrade naar ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, of ${ PLAN_NAMES[PLANS.FAMILY] } of ${ PLAN_NAMES[bundleProPlan] }-abonnement om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgrade om een korter @pm.me-adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
@@ -10782,9 +10803,6 @@
       "DNS leak prevention": [
         "DNS-lekbescherming"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Document-editors (documenten, werkbladen, dia's)"
-      ],
       "Double hop": [
         "Dubbel hop"
       ],
@@ -10895,9 +10913,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
       ],
-      "Reply to messages": [
-        "Antwoorden op berichten"
-      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
@@ -10979,6 +10994,9 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
+      ],
+      "Unlimited logins and notes": [
+        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -12291,6 +12309,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
+      ],
+      "Create a ${ appName } account": [
+        "Maak een ${ appName }-account aan"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Maak uw ${ BRAND_NAME }-account aan"

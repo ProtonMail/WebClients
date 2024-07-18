@@ -492,6 +492,9 @@
       "Get in touch": [
         "Ta kontakt"
       ],
+      "Get it": [
+        "Forstått"
+      ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Få den fra kun ${ addonPriceWithCurrency }/måned"
       ],
@@ -1524,6 +1527,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Raskt og sikkert. Det føres ingen logger."
+      ],
+      "Faster, broader device compatibility": [
+        "Raskere, bredere enhetskompatibilitet"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Ingen data overføres under bruk, krever engangsnedlasting"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Krever en engangs nedlasting og kompatibel maskinvare."
@@ -2564,6 +2573,9 @@
       "British Indian Ocean Territory": [
         "Britisk Indiske hav-territorium"
       ],
+      "British Virgin Islands": [
+        "De britiske jomfruøyene"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -2618,6 +2630,9 @@
       "Congo": [
         "Republikken Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Den demokratiske republikken)"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Den demokratiske republikken"
       ],
@@ -2657,6 +2672,9 @@
       "Dominican Republic": [
         "Den dominikanske republikk"
       ],
+      "East Timor": [
+        "Øst-Timor"
+      ],
       "Ecuador": [
         "Ecuador"
       ],
@@ -2683,6 +2701,9 @@
       ],
       "Falkland Islands": [
         "Falklandsøyene"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandsøyene (Malvinas)"
       ],
       "Faroe Islands": [
         "Færøyene"
@@ -2795,6 +2816,9 @@
       "Ireland": [
         "Irland"
       ],
+      "Islamic Republic of Iran": [
+        "Den islamske republikken Iran"
+      ],
       "Isle of Man": [
         "Man"
       ],
@@ -2825,6 +2849,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Den demokratiske folkerepublikken)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republikken)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -2833,6 +2863,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgisistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Lao den demokratiske folkerepublikken"
       ],
       "Laos": [
         "Laos"
@@ -2852,6 +2885,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libysk arabisk Jamahiriya"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -2863,6 +2899,9 @@
       ],
       "Macao": [
         "Macao"
+      ],
+      "Macedonia": [
+        "Makedonia"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -3116,6 +3155,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard og Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Sverige"
       ],
@@ -3125,6 +3167,9 @@
       "Syria": [
         "Syria"
       ],
+      "Syrian Arab Republic": [
+        "Den arabiske republikken Syria"
+      ],
       "Taiwan": [
         "Taiwan"
       ],
@@ -3133,6 +3178,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, forente Republikken"
       ],
       "Thailand": [
         "Thailand"
@@ -3974,6 +4022,9 @@
       ],
       "Please select a category and what went wrong with the generated text": [
         "Vennligst velg en kategori og hva som gikk galt med den genererte teksten"
+      ],
+      "Please try again or refresh the page.": [
+        "Vennligst forsøk igjen eller last inn siden på nytt."
       ],
       "Please try generating the text again": [
         "Prøv å generere teksten på nytt"
@@ -5103,9 +5154,6 @@
       ],
       "Tell us more": [
         "Fortell oss mer"
-      ],
-      "Write faster with the writing assistant": [
-        "Skriv raskere med skriveassistenten"
       ]
     },
     "Hint": {
@@ -5870,6 +5918,9 @@
       "Country code": [
         "Landskode"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Lag bedre e-poster, raskt og enkelt. Prøv det nå."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Opprett ${ calendarsToBeCreatedCount } ny kalender",
         "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
@@ -6233,9 +6284,6 @@
       "Left to Right": [
         "Venstre til høyre"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "La skriveassistenten hjelpe deg med å skrive og svare på e-post, og se produktiviteten din skyte i været."
-      ],
       "Link type": [
         "Type kobling"
       ],
@@ -6394,9 +6442,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Bare én skriveassistent kan være åpen om gangen"
       ],
       "Open shortcut cheat sheet": [
         "Åpne jukseark for snarveier"
@@ -7600,6 +7645,9 @@
       ],
       " and ${ l }": [
         " og ${ l }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
@@ -8955,6 +9003,9 @@
       "Collaborate and share large files": [
         "Samarbeid og del store filer"
       ],
+      "Collaborative document editor": [
+        "Samarbeidende dokumentredigerer"
+      ],
       "Contact groups": [
         "Kontaktgrupper"
       ],
@@ -8987,12 +9038,6 @@
       ],
       "DNS leak prevention": [
         "DNS-lekkasjeforebyggelse"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Dokumentredigerere (dokumenter, ark, lysbilder)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumentredigerere (dokumenter, ark, lysbilder) (snart)"
       ],
       "Double hop": [
         "Double hop"
@@ -9097,9 +9142,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmessige kontroller av kontosikkerheten din. Vi varsler deg hvis du har svake eller gjenbrukte passord som må oppdateres."
-      ],
-      "Reply to messages": [
-        "Svar på meldinger"
       ],
       "Require 2FA for organization": [
         "Krev 2FA for organisasjonen"
@@ -11756,6 +11798,12 @@
       ],
       "Verification successful": [
         "Vellykket verifisering"
+      ],
+      "Writing assistant disabled": [
+        "Skriveassistent deaktivert"
+      ],
+      "Writing assistant enabled": [
+        "Skriveassistent aktivert"
       ],
       "Writing assistant setting updated": [
         "Innstilling for skriveassistent oppdatert"

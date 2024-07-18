@@ -703,6 +703,9 @@
       "OK": [
         "OK"
       ],
+      "Open": [
+        "Avaa"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
@@ -2550,6 +2553,9 @@
       "Falkland Islands": [
         "Falklandinsaaret"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandinsaaret"
+      ],
       "Faroe Islands": [
         "Färsaaret"
       ],
@@ -2989,6 +2995,9 @@
         "Sveitsi"
       ],
       "Syria": [
+        "Syyria"
+      ],
+      "Syrian Arab Republic": [
         "Syyria"
       ],
       "Taiwan": [
@@ -6163,6 +6172,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } keskeytti tuonnin, koska tilisi tallennustila on täyttymässä. Voit:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } pyrkii jatkamaan tuontia heti sähköpostipalvelusi nollattua tilisi ${ bandwidthLimitLink }. Sinun ei tarvitse tehdä mitään. Jos perut tuonnin, et voi jatkaa sitä ja joudut aloittamaan alusta."
       ],
@@ -6268,6 +6280,18 @@
         "Löytyi ${ userFound } käyttäjä",
         "Löytyi ${ userFound } käyttäjää"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } luotiin"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } poistettiin"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } jaettiin sähköpostitse"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } päivitettiin"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Maakohtaiset yhteydet edellyttävät ${ vpnPlus } -tilausta."
       ],
@@ -6359,6 +6383,9 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lisää tilillesi @pm.me-sähköpostiosoite. Tämä yksinkertainen, lyhyempi osoite on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
+      ],
+      "Add a recovery ${ type }": [
+        "Lisää palautuksen ${ type }"
       ],
       "Add a recovery email address": [
         "Lisää palautusosoite"
@@ -6601,6 +6628,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Tehosta organisaatiosi brändin identiteettiä ja tee käyttäjiesi verkkokokemuksesta yhtenäisempi."
       ],
+      "Breach Custom Email Added": [
+        "Tietomurtojen oma sähköposti lisättiin"
+      ],
+      "Breach Custom Email Deleted": [
+        "Tietomurtojen oma sähköposti poistettiin"
+      ],
+      "Breach Custom Email Validated": [
+        "Tietomurtojen oma sähköposti vahvistettiin"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Oletusarvoisesti organisaation jäsenet voivat viedä vain holveja, joiden omistajia he ovat. Jos tämä asetus on käytössä, he eivät voi viedä mitään tietoja"
       ],
@@ -6720,8 +6756,17 @@
       "Custom daily": [
         "Oma päivittäinen"
       ],
+      "Custom email added": [
+        "Oma sähköpostiosoite lisättiin"
+      ],
+      "Custom email deleted": [
+        "Oma sähköpostiosoite poistettiin"
+      ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
+      ],
+      "Custom email validated": [
+        "Oma sähköpostiosoite vahvistettiin"
       ],
       "Custom monthly": [
         "Oma kuukausittainen"
@@ -6759,6 +6804,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta"
+      ],
+      "Disable recovery by ${ type }": [
+        "Poista palautuksen ${ type }"
       ],
       "Discount": [
         "Alennus"
@@ -7176,6 +7224,9 @@
       "Invite Deleted": [
         "Kutsu poistettiin"
       ],
+      "Invite for new user deleted": [
+        "Uuden käyttäjän kutsu poistettiin"
+      ],
       "Invite for organization accepted": [
         "Kutsu organisaatioon hyväksyttiin"
       ],
@@ -7198,6 +7249,9 @@
       "Item Autofilled": [
         "Kohde automaattitäytettiin"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Holvin ${ vaultLink } kohde automaattitäytettiin"
+      ],
       "Item autofilled in vault": [
         "Holvin kohde automaattitäytettiin"
       ],
@@ -7207,20 +7261,44 @@
       "Item Created": [
         "Kohde luotiin"
       ],
+      "Item created in ${ vaultLink }": [
+        "Kohde luotiin holviin ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Holviin luotiin kohde"
       ],
       "Item Deleted": [
         "Kohde poistettiin"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Kohde poistettiin holvista ${ vaultLink }"
+      ],
+      "Item deleted from vault": [
+        "Kohde poistettiin holvista"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Holvin ${ vaultLink } kohteen liput muuttuivat"
+      ],
       "Item flags changed in vault": [
         "Holvin kohteen liput muuttuivat"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "Kohde siirrettiin holvista ${ vaultLink } roskakoriin"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Kohde palautettiin roskakorista holviin ${ vaultLink }"
+      ],
+      "Item in vault trashed": [
+        "Kohde siirrettiin holvista roskakoriin"
       ],
       "Item in vault untrashed": [
         "Holvin kohde palautettiin roskakorista"
       ],
       "Item Read": [
         "Kohdetta tarkasteltiin"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Kohde luettiin holvissa ${ vaultLink }"
       ],
       "Item read in vault": [
         "Holvin kohdetta tarkasteltiin"
@@ -7233,6 +7311,9 @@
       ],
       "Item Updated": [
         "Kohdetta muokattiin"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Kohde päivitettiin holvissa ${ vaultLink }"
       ],
       "Item updated in vault": [
         "Holvin kohdetta muokattiin"
@@ -7401,6 +7482,9 @@
       ],
       "New User Invite Deleted": [
         "Uuden käyttäjän kutsu poistettiin"
+      ],
+      "New user invited to organization": [
+        "Uusi käyttäjä kutsuttiin organisaatioon"
       ],
       "No account keys exist": [
         "Tiliavaimia ei ole olemassa"
@@ -7807,6 +7891,12 @@
       "Share Updated": [
         "Jakoa muokattiin"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "Jaettu ${ vaultLink } poistettiin"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Jaettu ${ vaultLink } päivitettiin"
+      ],
       "Shared vault deleted": [
         "Jaettu holvi poistettiin"
       ],
@@ -8135,6 +8225,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Varmista pääsy tilillesi aina määrittämällä tilin palautustapa"
       ],
+      "To ensure highest possible security of your account": [
+        "Varmistaaksesi tilisi parhaan mahdollisen turvallisuuden"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Jotta et menetä tärkeitä tietoja, ${ DRIVE_APP_NAME } säilyttää tiedostojesi vanhempia versioita, samalla kun sinä ja työtoverisi teette muutoksia. Valitse, miten kauan ${ BRAND_NAME } säilyttää aiemmat versiot."
       ],
@@ -8240,6 +8333,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Hanki ${ PROTON_SENTINEL_NAME } päivittämällä ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } tai ${ PLAN_NAMES[bundleProPlan] } -tilaukseen."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Päivitä tilauksesi ja lisää tilillesi jakamista helpottava lyhyempi @pm.me-osoite. Se on lyhenne sanoista \"${ MAIL_APP_NAME } me\" tai \"Private Message me\"."
       ],
@@ -8297,6 +8393,9 @@
       "Vault Deleted": [
         "Holvi poistettiin"
       ],
+      "Vault either deleted or requires access permissions": [
+        "Holvi on poistettu tai se vaatii käyttöoikeudet"
+      ],
       "Vault shared with email": [
         "Holvi jaettiin sähköpostitse"
       ],
@@ -8317,6 +8416,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Vahvistus avaa uuden välilehden, joten poista kaikki ponnahdusestot käytöstä. Sinua ei veloiteta ja kortin vahvistukseen käytetty summa palautetaan välittömästi."
+      ],
+      "Verify ${ type }": [
+        "Vahvista ${ type }"
       ],
       "Verify domain": [
         "Vahvista verkkotunnus"
@@ -10563,6 +10665,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Hanki ${ plan }** ajoitetun ajan!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Ole Visionary ja olet osa ${ BRAND_NAME } tarinaa"
       ]
@@ -11200,6 +11305,9 @@
       "Collaborate and share large files": [
         "Tee yhteistyötä ja jaa suuria tiedostoja"
       ],
+      "Collaborative document editor": [
+        "Yhteistoiminnallinen dokumenttieditori"
+      ],
       "Contact groups": [
         "Yhteystietoryhmät"
       ],
@@ -11238,12 +11346,6 @@
       ],
       "DNS leak prevention": [
         "DNS-vuotosuojaus"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumenttieditorit (tekstinkäsittely, taulukot, esitykset) (tulossa pian)"
       ],
       "Double hop": [
         "Double hop"
@@ -11354,9 +11456,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
-      ],
-      "Reply to messages": [
-        "Vastaa viesteihin"
       ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"

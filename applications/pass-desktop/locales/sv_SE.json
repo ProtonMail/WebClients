@@ -1044,6 +1044,9 @@
         "${ count } visning",
         "${ count } visningar"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } visningar"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
@@ -1127,15 +1130,6 @@
       ],
       "An item previously shared with you was removed": [
         "Ett objekt som tidigare delats med dig togs bort"
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Är du säker på att du vill flytta alla objekten från “${ fromVaultName }“ till “${ toVaultName }“?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Är du säker på att du vill flytta objekten till “${ name }“?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Är du säker på att du vill flytta objektet till “${ name }“?"
       ],
       "Are you sure you want to remove the link?": [
         "Är du säker på att du vill ta bort länken?"
@@ -1431,14 +1425,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its history": [
-        "Att flytta ett objekt till annat valv kommer radera dess historik"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Att flytta ett objekt till annat valv kommer att radera dess historik och alla säkra länkar."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Att flytta ett objekt till annat valv kommer radera dess historik."
       ],
       "Moving items": [
         "Flyttar objekt"
       ],
-      "Moving items to another vault will erase their history": [
-        "Att flytta objekt till annat valv kommer radera dess historik"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Att flytta objekt till annat valv kommer att radera dess historik och alla säkra länkar."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Att flytta objekt till annat valv kommer radera dess historik."
       ],
       "Moving items to trash": [
         "Flyttar objekt till papperskorg"
@@ -2087,8 +2087,8 @@
       "Make all viewers": [
         "Gör alla till visare"
       ],
-      "Max views reached": [
-        "Maximalt antal visningar uppnått"
+      "max views reached": [
+        "maximalt antal visningar uppnått"
       ],
       "Members": [
         "Medlemmar"
@@ -2629,14 +2629,14 @@
       "Modified": [
         "Ändrad"
       ],
-      "Move all items ?": [
-        "Flytta alla objekt?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Flytta alla objekt till ”${ vaultName }”?"
       ],
-      "Move item?": [
-        "Flytta objekt?"
+      "Move item to \"${ vaultName }\"?": [
+        "Flytta objekt till ”${ vaultName }”?"
       ],
-      "Move items?": [
-        "Flytta objekt?"
+      "Move items to \"${ vaultName }\"?": [
+        "Flytta objekt till ”${ vaultName }”?"
       ],
       "No excluded items": [
         "Inga exkluderade objekt"

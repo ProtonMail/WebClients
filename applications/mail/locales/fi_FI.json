@@ -492,6 +492,9 @@
       "Get in touch": [
         "Ota yhteyttä"
       ],
+      "Get it": [
+        "Hanki se"
+      ],
       "Get it from only ${ addonPriceWithCurrency } /month": [
         "Saat sen hintaan ${ addonPriceWithCurrency }/kuukausi"
       ],
@@ -825,6 +828,9 @@
       ],
       "Ok": [
         "OK"
+      ],
+      "Open": [
+        "Avaa"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Avaa ${ CALENDAR_APP_NAME }"
@@ -1521,6 +1527,12 @@
     "Assistant option": {
       "Fast and secure. No logs are kept.": [
         "Nopea ja turvallinen. Lokitietoja ei säilytetä."
+      ],
+      "Faster, broader device compatibility": [
+        "Nopeampi ja kattavampi laiteyhteensopivuus"
+      ],
+      "No data transmitted while using, requires one-time download": [
+        "Tietoja ei siirretä käytön aikana, vaatii kertalatauksen"
       ],
       "Requires a one-time download and compatible hardware.": [
         "Vaatii kertaluonteisen latauksen ja yhteensopivan laitteiston."
@@ -2681,6 +2693,9 @@
       "Falkland Islands": [
         "Falklandinsaaret"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandinsaaret"
+      ],
       "Faroe Islands": [
         "Färsaaret"
       ],
@@ -3120,6 +3135,9 @@
         "Sveitsi"
       ],
       "Syria": [
+        "Syyria"
+      ],
+      "Syrian Arab Republic": [
         "Syyria"
       ],
       "Taiwan": [
@@ -3972,6 +3990,9 @@
       "Please select a category and what went wrong with the generated text": [
         "Valitse kategoria ja mikä meni pieleen luodussa tekstissä"
       ],
+      "Please try again or refresh the page.": [
+        "Yritä uudelleen tai päivitä sivu."
+      ],
       "Please try generating the text again": [
         "Yritä luoda tekstiä uudelleen"
       ],
@@ -4397,6 +4418,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliaksia ei voida käyttää, kun lisäsalasana on käytössä sovelluksessa ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Sovellus ei ole tällä hetkellä käytettävissä"
       ],
@@ -5097,9 +5121,6 @@
       ],
       "Tell us more": [
         "Kerro meille lisää"
-      ],
-      "Write faster with the writing assistant": [
-        "Kirjoita nopeammin kirjoitusavustajan avulla"
       ]
     },
     "Hint": {
@@ -5416,6 +5437,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -5861,6 +5885,9 @@
       "Country code": [
         "Maakoodi"
       ],
+      "Craft better emails, quickly and effortlessly. Try it now.": [
+        "Laadi parempia sähköposteja nopeasti ja vaivattomasti. Kokeile sitä nyt."
+      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
         "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
@@ -6224,9 +6251,6 @@
       "Left to Right": [
         "Vasemmalta oikealle"
       ],
-      "Let the writing assistant help you write and reply to emails, and watch your productivity soar.": [
-        "Anna kirjoitusavustajan auttaa sinua sähköpostien kirjoittamisessa ja niihin vastaamisessa, ja katso, miten tuottavuutesi paranee."
-      ],
       "Link type": [
         "Linkin tyyppi"
       ],
@@ -6385,9 +6409,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
-      ],
-      "Only one writing assistant may be be open at a time": [
-        "Vain yksi kirjoitusavustaja voi olla avoinna kerrallaan"
       ],
       "Open shortcut cheat sheet": [
         "Avaa pikanäppäinlista"
@@ -7591,6 +7612,9 @@
       ],
       " and ${ l }": [
         " ja ${ l }"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -8946,6 +8970,9 @@
       "Collaborate and share large files": [
         "Tee yhteistyötä ja jaa suuria tiedostoja"
       ],
+      "Collaborative document editor": [
+        "Yhteistoiminnallinen dokumenttieditori"
+      ],
       "Contact groups": [
         "Yhteystietoryhmät"
       ],
@@ -8978,12 +9005,6 @@
       ],
       "DNS leak prevention": [
         "DNS-vuotosuojaus"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumenttieditorit (tekstinkäsittely, taulukot, esitykset) (tulossa pian)"
       ],
       "Double hop": [
         "Double hop"
@@ -9088,9 +9109,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
-      ],
-      "Reply to messages": [
-        "Vastaa viesteihin"
       ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
@@ -11747,6 +11765,12 @@
       ],
       "Verification successful": [
         "Vahvistus onnistui"
+      ],
+      "Writing assistant disabled": [
+        "Kirjoitusavustaja ei ole käytössä"
+      ],
+      "Writing assistant enabled": [
+        "Kirjoitusavustaja on käytössä"
       ],
       "Writing assistant setting updated": [
         "Kirjoitusavustajan asetukset päivitettiin"

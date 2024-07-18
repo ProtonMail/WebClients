@@ -1295,6 +1295,9 @@
       "Falkland Islands": [
         "फ़ॉकलैंड आइलैंड"
       ],
+      "Falkland Islands (Malvinas)": [
+        "फ़ॉकलैंड आइलैंड्स (माल्विनास)"
+      ],
       "Faroe Islands": [
         "फ़ेरो आइलैंड्स"
       ],
@@ -1735,6 +1738,9 @@
       ],
       "Syria": [
         "सिरिया"
+      ],
+      "Syrian Arab Republic": [
+        "सीरियाई अरब गणराज्य"
       ],
       "Taiwan": [
         "ताइवान"
@@ -2830,6 +2836,12 @@
         "${ userFound } यूज़र मिले",
         "${ userFound } यूज़र मिले"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } बनाया गया"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } अपडेट किया गया"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "देश स्तर के कनेक्शन के लिए ${ vpnPlus } चाहिए।"
       ],
@@ -3070,11 +3082,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
-      "Dedicated servers": [
-        "विशेष सर्वर"
-      ],
       "dedicated servers": [
         "समर्पित सर्वर"
+      ],
+      "Dedicated servers": [
+        "विशेष सर्वर"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -5216,9 +5228,6 @@
       "DNS leak prevention": [
         "DNS लीक सुरक्षा"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "दस्तावेज़ बदलें (डॉक, शीट, स्लाइड)"
-      ],
       "Double hop": [
         "Double Hop"
       ],
@@ -5383,6 +5392,9 @@
       ],
       "Unlimited labels": [
         "असीमित लेबल"
+      ],
+      "Unlimited logins and notes": [
+        "असीम लॉगइन और नोट"
       ],
       "Unlimited messages per day": [
         "असीमित संदेश हर दिन"
@@ -7325,10 +7337,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -7519,6 +7531,9 @@
       ],
       "Find email or username": [
         "ईमेल या उपयोगकर्ता नाम खोजें"
+      ],
+      "Forgot recovery method": [
+        "रिकवरी विधि भूल गए"
       ],
       "Gateways": [
         "गेटवे"

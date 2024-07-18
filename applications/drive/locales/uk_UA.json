@@ -1620,6 +1620,9 @@
       "Falkland Islands": [
         "Фолклендські острови"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Фолклендські острови (Мальвінські)"
+      ],
       "Faroe Islands": [
         "Фарерські острови"
       ],
@@ -2060,6 +2063,9 @@
       ],
       "Syria": [
         "Сирія"
+      ],
+      "Syrian Arab Republic": [
+        "Сирійська Арабська Республіка"
       ],
       "Taiwan": [
         "Тайвань"
@@ -6724,12 +6730,6 @@
       "DNS leak prevention": [
         "Захист від витоку DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Редактори документів (документи, таблиці, слайди)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Засоби редагування (документи, електронні таблиці, слайди) (незабаром)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6906,6 +6906,9 @@
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
+      ],
+      "Unlimited logins and notes": [
+        "Необмежена кількість імен користувачів та нотаток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -7718,6 +7721,20 @@
         "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
         "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями",
         "Безпечний спільний доступ до сховищ (${ n } сховищ) і обмін посиланнями"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Ключа організації не існує."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Доступ заборонено. Повноваження адміністратора було обмежено."
+      ],
+      "The organization key must be activated first.": [
+        "Спочатку необхідно активувати ключ організації."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Для виконання цієї операції вам потрібен доступ до ключа організації."
       ]
     },
     "Payment method option": {
@@ -9617,6 +9634,9 @@
       ],
       "Send feedback": [
         "Надіслати відгук"
+      ],
+      "Set recovery phrase": [
+        "Встановити фразу відновлення"
       ],
       "Settings": [
         "Налаштування"

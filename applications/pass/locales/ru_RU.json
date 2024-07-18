@@ -1137,15 +1137,6 @@
       "An item previously shared with you was removed": [
         "Элемент, которым ранее поделились с вами, был удален"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Вы уверены, что хотите переместить все элементы из \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Вы уверены, что хотите переместить элементы в \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Вы уверены, что хотите переместить элемент в \"${ name }\" ?"
-      ],
       "Are you sure you want to remove the link?": [
         "Вы уверены, что хотите удалить ссылку?"
       ],
@@ -1446,14 +1437,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Перемещение элемента в другое хранилище удалит его историю"
+      "Moving an item to another vault will erase its history.": [
+        "Перемещение элемента в другое хранилище удалит его историю."
       ],
       "Moving items": [
         "Перемещение элементов"
       ],
-      "Moving items to another vault will erase their history": [
-        "Перемещение элементов в другое хранилище удалит их историю"
+      "Moving items to another vault will erase their history.": [
+        "Перемещение элементов в другое хранилище удалит их историю."
       ],
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
@@ -2123,8 +2114,8 @@
       "Make all viewers": [
         "Заставьте всех зрителями"
       ],
-      "Max views reached": [
-        "Достигнуто максимальное количество просмотров"
+      "max views reached": [
+        "достигнуто максимальное количество просмотров"
       ],
       "Members": [
         "Участники"
@@ -2676,15 +2667,6 @@
       ],
       "Modified": [
         "Изменено"
-      ],
-      "Move all items ?": [
-        "Переместить все элементы?"
-      ],
-      "Move item?": [
-        "Переместить элемент?"
-      ],
-      "Move items?": [
-        "Переместить элементы?"
       ],
       "No excluded items": [
         "Нет исключенных элементов"

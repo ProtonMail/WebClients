@@ -1326,6 +1326,9 @@
       "Falkland Islands": [
         "福克蘭群島 (馬維納斯群島)"
       ],
+      "Falkland Islands (Malvinas)": [
+        "福克蘭群島 (馬維納斯群島)"
+      ],
       "Faroe Islands": [
         "法羅群島"
       ],
@@ -1765,6 +1768,9 @@
         "瑞士"
       ],
       "Syria": [
+        "敘利亞"
+      ],
+      "Syrian Arab Republic": [
         "敘利亞"
       ],
       "Taiwan": [
@@ -3006,6 +3012,12 @@
       "${ userFound } user found": [
         "找到 ${ userFound } 個使用者"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } 已創建"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } 已更新"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "國家等級的連線需要 ${ vpnPlus } 。"
       ],
@@ -3231,10 +3243,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -5504,12 +5516,6 @@
       "DNS leak prevention": [
         "DNS 外洩預防"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "文件編輯程式 (圖文檔、工作表、簡報)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "文件編輯程式 (圖文檔、工作表、簡報)(將至)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5615,9 +5621,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
       ],
-      "Reply to messages": [
-        "回覆訊息"
-      ],
       "Require 2FA for organization": [
         "要求組織雙重驗證"
       ],
@@ -5701,6 +5704,9 @@
       ],
       "Unlimited labels": [
         "無限制標籤"
+      ],
+      "Unlimited logins and notes": [
+        "無限登入資訊與筆記"
       ],
       "Unlimited messages per day": [
         "每日郵件無上限"
@@ -8046,10 +8052,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [

@@ -1742,6 +1742,9 @@
       "Falkland Islands": [
         "Îles Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Îles Malouines"
+      ],
       "Faroe Islands": [
         "Îles Féroé"
       ],
@@ -2183,6 +2186,9 @@
       "Syria": [
         "Syrie"
       ],
+      "Syrian Arab Republic": [
+        "Syrie"
+      ],
       "Taiwan": [
         "Taïwan"
       ],
@@ -2444,6 +2450,9 @@
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Cette opération peut prendre quelques minutes. Pendant ce temps, vous pouvez continuer à utiliser Proton Calendar comme d'habitude."
+      ],
+      "To ensure highest possible security of your account, set a recovery phrase.": [
+        "Pour garantir la plus grande sécurité possible de votre compte, définissez une phrase de récupération."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -3334,6 +3343,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
       ],
@@ -6307,6 +6319,9 @@
       "Collaborate and share large files": [
         "Collaboration et partage de fichiers volumineux"
       ],
+      "Collaborative document editor": [
+        "Éditeur de documents collaboratif"
+      ],
       "Contact groups": [
         "Groupes de contacts"
       ],
@@ -6339,12 +6354,6 @@
       ],
       "DNS leak prevention": [
         "Prévention des fuites DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Éditeurs de documents (documents, feuilles de calcul, présentations) (bientôt)"
       ],
       "Double hop": [
         "Double hop"
@@ -6449,9 +6458,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
-      ],
-      "Reply to messages": [
-        "Répondre aux messages"
       ],
       "Require 2FA for organization": [
         "A2F requise pour l'organisation"
@@ -7290,6 +7296,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
         "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "La clé de l'organisation n'existe pas."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "L'autorisation est refusée. Les droits administrateur ont été restreints."
+      ],
+      "The organization key must be activated first.": [
+        "La clé de l'organisation doit d'abord être activée."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
       ]
     },
     "Payment method option": {
@@ -8345,7 +8365,7 @@
         "${ MAIL_APP_NAME } garantit la sécurité de vos données et permet d'envoyer des e-mails chiffrés à tout le monde."
       ],
       "${ MAIL_APP_NAME } with automatic email forwarding": [
-        "${ MAIL_APP_NAME }avec transfert automatique des messages"
+        "${ MAIL_APP_NAME } avec transfert automatique des messages"
       ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } calendrier par utilisateur",
@@ -8438,7 +8458,7 @@
         "Tout ce dont votre entreprise a besoin"
       ],
       "Any custom email domains will be disabled": [
-        "Toute demande de messagerie personnalisé sera désactivé."
+        "Toute demande de messagerie personnalisée sera désactivée."
       ],
       "Automatic email forwarding": [
         "Transfert automatique des messages"
@@ -8549,7 +8569,7 @@
         "Restez en sécurité et connecté partout"
       ],
       "Support your compliance objectives": [
-        "Facilitez vos efforts pour être en conformité"
+        "Prise en charge de vos objectifs de conformité"
       ],
       "Sync files on devices": [
         "Synchroniser des fichiers sur vos appareils"

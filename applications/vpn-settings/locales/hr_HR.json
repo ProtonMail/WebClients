@@ -997,6 +997,9 @@
       "Falkland Islands": [
         "Falklandski Otoci"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandski Otoci (Malvinas)"
+      ],
       "Faroe Islands": [
         "Farski Otoci"
       ],
@@ -1434,6 +1437,9 @@
       ],
       "Syria": [
         "Sirija"
+      ],
+      "Syrian Arab Republic": [
+        "Sirijska Arapska Republika"
       ],
       "Taiwan": [
         "Tajvan"
@@ -2072,6 +2078,12 @@
         "${ number } poslužitelj",
         "${ number } poslužitelja",
         "${ number } poslužitelja"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } stvoreno"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } ažurirano"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
@@ -4092,10 +4104,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

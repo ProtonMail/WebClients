@@ -1025,6 +1025,9 @@
         "${ count } vista",
         "${ count } vistas"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } vistas"
+      ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
@@ -1108,15 +1111,6 @@
       ],
       "An item previously shared with you was removed": [
         "Se borró un elemento previamente compartido con usted."
-      ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "¿Está seguro de que quiere mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "¿Está seguro de que quiere mover los elementos a «${ name }»?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "¿Está seguro de que quiere mover el elemento a «${ name }»?"
       ],
       "Are you sure you want to remove the link?": [
         "¿En verdad desea eliminar el enlace?"
@@ -1412,14 +1406,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Mover un elemento a otra bóveda eliminará el historial"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Mover un elemento a otra bóveda eliminará el historial y todos los enlaces seguros."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Mover un elemento a otra bóveda eliminará el historial."
       ],
       "Moving items": [
         "Moviendo los elementos"
       ],
-      "Moving items to another vault will erase their history": [
-        "Mover los elementos a otra bóveda eliminará el historial"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Mover los elementos a otra bóveda eliminará el historial y todos los enlaces seguros."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Mover los elementos a otra bóveda eliminará el historial."
       ],
       "Moving items to trash": [
         "Moviendo los elementos a la papelera"
@@ -2071,8 +2071,8 @@
       "Make all viewers": [
         "Promover a todos como lectores"
       ],
-      "Max views reached": [
-        "Visualizaciones máximas alcanzadas"
+      "max views reached": [
+        "vistas máximas alcanzadas"
       ],
       "Members": [
         "Miembros"
@@ -2619,14 +2619,14 @@
       "Modified": [
         "Modificado"
       ],
-      "Move all items ?": [
-        "¿Mover todos los elementos?"
+      "Move all items to \"${ vaultName }\"?": [
+        "¿Mover todos los elementos a «${ vaultName }»?"
       ],
-      "Move item?": [
-        "¿Mover elemento?"
+      "Move item to \"${ vaultName }\"?": [
+        "¿Mover elemento a «${ vaultName }»?"
       ],
-      "Move items?": [
-        "¿Mover elementos?"
+      "Move items to \"${ vaultName }\"?": [
+        "¿Mover elementos a «${ vaultName }»?"
       ],
       "No excluded items": [
         "No hay elementos excluidos"

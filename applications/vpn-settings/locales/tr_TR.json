@@ -358,6 +358,9 @@
       "Ok": [
         "Tamam"
       ],
+      "Open": [
+        "Açık"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
       ],
@@ -671,6 +674,10 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } ek özel etki alanı",
+        "${ domains } ek özel etki alanı"
+      ],
       "${ ips } server": [
         "${ ips } sunucu",
         "${ ips } sunucu"
@@ -1386,6 +1393,9 @@
       "Falkland Islands": [
         "Falkland Adaları"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Adaları (Malvinas)"
+      ],
       "Faroe Islands": [
         "Faroe Adaları"
       ],
@@ -1826,6 +1836,9 @@
       ],
       "Syria": [
         "Suriye"
+      ],
+      "Syrian Arab Republic": [
+        "Suriye Arap Cumhuriyeti"
       ],
       "Taiwan": [
         "Tayvan"
@@ -3100,6 +3113,18 @@
         "${ userFound } kullanıcı bulundu",
         "${ userFound } kullanıcı bulundu"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } eklendi"
+      ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } silindi"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } e-posta ile paylaşıldı"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } güncellendi"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Ülke düzeyinde bağlantı için ${ vpnPlus } tarifesi gereklidir."
       ],
@@ -3334,17 +3359,26 @@
       "Custom branding": [
         "Özel marka"
       ],
+      "Custom email added": [
+        "Özel e-posta adresi eklendi"
+      ],
+      "Custom email deleted": [
+        "Özel e-posta adresi silindi"
+      ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Custom email validated": [
+        "Özel e-posta adresi doğrulandı"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -3630,6 +3664,9 @@
       "Invite Deleted": [
         "Davet silindi"
       ],
+      "Invite for new user deleted": [
+        "Yeni kullanıcı daveti silindi"
+      ],
       "Invite for organization accepted": [
         "Kuruluş daveti kabul edildi"
       ],
@@ -3645,6 +3682,9 @@
       "Item Autofilled": [
         "Öge otomatik dolduruldu"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge otomatik olarak dolduruldu"
+      ],
       "Item autofilled in vault": [
         "Kasa ögesi otomatik olarak dolduruldu"
       ],
@@ -3654,20 +3694,44 @@
       "Item Created": [
         "Öge oluşturuldu"
       ],
+      "Item created in ${ vaultLink }": [
+        "${ vaultLink } kasasına öge eklendi"
+      ],
       "Item created in vault": [
         "Kasa ögesi oluşturuldu"
       ],
       "Item Deleted": [
         "Öge silindi"
       ],
+      "Item deleted from ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge silindi"
+      ],
+      "Item deleted from vault": [
+        "Öge kasadan silindi"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge işaretleri değiştirildi"
+      ],
       "Item flags changed in vault": [
         "Kasa ögesi işaretleri değiştirildi"
+      ],
+      "Item in ${ vaultLink } trashed": [
+        "${ vaultLink } kasasındaki öge çöpe atıldı"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "${ vaultLink } kasasındaki öge çöpten çıkarıldı"
+      ],
+      "Item in vault trashed": [
+        "Kasadaki öge çöpe atıldı"
       ],
       "Item in vault untrashed": [
         "Kasa ögesi çöpten çıkarıldı"
       ],
       "Item Read": [
         "Öge okundu"
+      ],
+      "Item read in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge okundu"
       ],
       "Item read in vault": [
         "Kasa ögesi okundu"
@@ -3680,6 +3744,9 @@
       ],
       "Item Updated": [
         "Öge güncellendi"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "${ vaultLink } kasasındaki öge güncellendi"
       ],
       "Item updated in vault": [
         "Kasa ögesi güncellendi"
@@ -3773,6 +3840,9 @@
       ],
       "New User Invite Deleted": [
         "Yeni kullanıcı daveti silindi"
+      ],
+      "New user invited to organization": [
+        "Kuruluşa yeni kullanıcı davet edildi"
       ],
       "No addresses exist": [
         "Herhangi bir adres yok"
@@ -3998,6 +4068,12 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
       ],
+      "Session Ended": [
+        "Oturum Sona Erdi"
+      ],
+      "Session Started": [
+        "Oturum Başladı"
+      ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
@@ -4012,6 +4088,12 @@
       ],
       "Share Updated": [
         "Paylaşım güncellendi"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Paylaşılan ${ vaultLink } silindi"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Paylaşılan ${ vaultLink } güncellendi"
       ],
       "Shared vault deleted": [
         "Paylaşılmış kasa silindi"
@@ -5743,12 +5825,6 @@
       "DNS leak prevention": [
         "DNS sızıntısı önleme"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar) (yakında)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5859,9 +5935,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
       ],
-      "Reply to messages": [
-        "İletileri yanıtlayın"
-      ],
       "Require 2FA for organization": [
         "Kuruluş için iki adımlı doğrulama gereksin"
       ],
@@ -5946,6 +6019,9 @@
       ],
       "Unlimited labels": [
         "Sınırsız etiket"
+      ],
+      "Unlimited logins and notes": [
+        "Sınırsız sayıda oturum açma bilgisi ve not"
       ],
       "Unlimited logins, notes and credit cards": [
         "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
@@ -8749,10 +8825,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -8790,6 +8866,9 @@
       ],
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
+      ],
+      "Connection events": [
+        "Bağlantı işlemleri"
       ],
       "Contact us": [
         "Bize ulaşın"
@@ -8953,6 +9032,9 @@
       "Forgot recovery method": [
         "Kurtarma yöntemini unut"
       ],
+      "Gateway": [
+        "Ağ geçidi"
+      ],
       "Gateways": [
         "Ağ geçitleri"
       ],
@@ -9027,6 +9109,9 @@
       ],
       "Organization name": [
         "Kuruluş adı"
+      ],
+      "Origin": [
+        "Kaynak"
       ],
       "Password": [
         "Parola"
