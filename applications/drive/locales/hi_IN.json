@@ -1511,6 +1511,9 @@
       "Falkland Islands": [
         "फ़ॉकलैंड आइलैंड"
       ],
+      "Falkland Islands (Malvinas)": [
+        "फ़ॉकलैंड आइलैंड्स (माल्विनास)"
+      ],
       "Faroe Islands": [
         "फ़ेरो आइलैंड्स"
       ],
@@ -1951,6 +1954,9 @@
       ],
       "Syria": [
         "सिरिया"
+      ],
+      "Syrian Arab Republic": [
+        "सीरियाई अरब गणराज्य"
       ],
       "Taiwan": [
         "ताइवान"
@@ -6089,9 +6095,6 @@
       "DNS leak prevention": [
         "DNS लीक सुरक्षा"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "दस्तावेज़ बदलें (डॉक, शीट, स्लाइड)"
-      ],
       "Double hop": [
         "Double Hop"
       ],
@@ -6240,6 +6243,9 @@
       ],
       "Unlimited labels": [
         "असीमित लेबल"
+      ],
+      "Unlimited logins and notes": [
+        "असीम लॉगइन और नोट"
       ],
       "Unlimited messages per day": [
         "असीमित संदेश हर दिन"
@@ -6908,6 +6914,20 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "सुरक्षित वॉल्ट साझाकरण"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "संगठन कुंजी मौजूद नहीं है।"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
+      ],
+      "The organization key must be activated first.": [
+        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "इस कार्य को करने के लिए आपको संगठन कुंजी तक पहुंच की आवश्यकता है।"
       ]
     },
     "Payment method option": {

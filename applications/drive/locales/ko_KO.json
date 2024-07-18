@@ -1615,6 +1615,9 @@
       "Falkland Islands": [
         "포클랜드 제도"
       ],
+      "Falkland Islands (Malvinas)": [
+        "포클랜드 제도 (말비나스)"
+      ],
       "Faroe Islands": [
         "페로 제도"
       ],
@@ -2055,6 +2058,9 @@
       ],
       "Syria": [
         "시리아"
+      ],
+      "Syrian Arab Republic": [
+        "시리아 아랍 공화국"
       ],
       "Taiwan": [
         "타이완"
@@ -6543,12 +6549,6 @@
       "DNS leak prevention": [
         "DNS 유출 방지"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "문서 편집기 (문서, 스프레드시트, 슬라이드 쇼)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "문서 편집기 (문서, 스프레드시트, 슬라이드 쇼) (곧 찾아옵니다)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -6651,9 +6651,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
       ],
-      "Reply to messages": [
-        "메시지에 답장하기"
-      ],
       "Require 2FA for organization": [
         "조직에 2단계 인증 요구"
       ],
@@ -6728,6 +6725,9 @@
       ],
       "Unlimited labels": [
         "무제한 라벨"
+      ],
+      "Unlimited logins and notes": [
+        "무제한 로그인 및 메모"
       ],
       "Unlimited logins, notes and credit cards": [
         "무제한 로그인, 메모 및 신용 카드"
@@ -7519,6 +7519,20 @@
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
         "안전한 링크 공유 (${ n }개 금고) 및 링크 공유"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "조직 키가 존재하지 없습니다."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "권한이 거부되었으며 관리자 권한이 제한되었습니다."
+      ],
+      "The organization key must be activated first.": [
+        "조직 키가 먼저 활성화되어야 합니다."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "이 작업을 수행하려면 조직 키에 접근해야 합니다."
       ]
     },
     "Payment method option": {
@@ -9504,6 +9518,9 @@
       ],
       "Send feedback": [
         "의견 전송"
+      ],
+      "Set recovery phrase": [
+        "복구 키 설정"
       ],
       "Settings": [
         "설정"

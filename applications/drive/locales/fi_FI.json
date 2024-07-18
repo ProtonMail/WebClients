@@ -549,6 +549,9 @@
       "Ok": [
         "OK"
       ],
+      "Open": [
+        "Avaa"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Avaa ${ CALENDAR_APP_NAME }in asetukset"
       ],
@@ -1640,6 +1643,9 @@
       "Falkland Islands": [
         "Falklandinsaaret"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandinsaaret"
+      ],
       "Faroe Islands": [
         "Färsaaret"
       ],
@@ -2079,6 +2085,9 @@
         "Sveitsi"
       ],
       "Syria": [
+        "Syyria"
+      ],
+      "Syrian Arab Republic": [
         "Syyria"
       ],
       "Taiwan": [
@@ -3063,6 +3072,9 @@
       "Access denied": [
         "Käyttöoikeutta ei ole"
       ],
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Aliaksia ei voida käyttää, kun lisäsalasana on käytössä sovelluksessa ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Sovellus ei ole tällä hetkellä käytettävissä"
       ],
@@ -3745,6 +3757,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -6635,6 +6650,9 @@
       "Collaborate and share large files": [
         "Tee yhteistyötä ja jaa suuria tiedostoja"
       ],
+      "Collaborative document editor": [
+        "Yhteistoiminnallinen dokumenttieditori"
+      ],
       "Contact groups": [
         "Yhteystietoryhmät"
       ],
@@ -6667,12 +6685,6 @@
       ],
       "DNS leak prevention": [
         "DNS-vuotosuojaus"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        "Asiakirjaeditorit (tekstinkäsittely, taulukot, esitykset)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Dokumenttieditorit (tekstinkäsittely, taulukot, esitykset) (tulossa pian)"
       ],
       "Double hop": [
         "Double hop"
@@ -6777,9 +6789,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
-      ],
-      "Reply to messages": [
-        "Vastaa viesteihin"
       ],
       "Require 2FA for organization": [
         "Vaadi organisaatiolle 2FA"
@@ -7686,6 +7695,20 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Turvallisten holvien (${ n } holvi) ja linkkien jakaminen",
         "Turvallisten holvien (${ n } holvia) ja linkkien jakaminen"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisaation avainta ei ole olemassa."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
+      ],
+      "The organization key must be activated first.": [
+        "Organisaation avain on ensin aktivoitava."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
       ]
     },
     "Payment method option": {
