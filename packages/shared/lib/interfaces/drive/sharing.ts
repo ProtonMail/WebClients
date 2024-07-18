@@ -180,6 +180,16 @@ export interface ListDriveSharedWithMeLinksPayload {
     More: boolean;
 }
 
+export interface ListDrivePendingInvitationsPayload {
+    Invitations: {
+        VolumeID: string;
+        ShareID: string;
+        InvitationID: string;
+    }[];
+    AnchorID: string;
+    More: boolean;
+}
+
 export interface ListDriveSharedByMeLinksPayload {
     Links: {
         ContextShareID: string;
