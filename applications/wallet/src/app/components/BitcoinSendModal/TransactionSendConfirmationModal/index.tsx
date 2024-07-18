@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { ModalOwnProps } from '@proton/components/components';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletSendingPlane from '@proton/styles/assets/img/illustrations/wallet-sending-plane.svg';
 import clsx from '@proton/utils/clsx';
@@ -10,6 +11,7 @@ import { SubTheme } from '../../../utils';
 
 interface TransactionSendConfirmationModalOwnProps {
     theme?: SubTheme;
+    inviterAddressID?: String;
     onClickDone: () => void;
     onClickInviteAFriend: () => void;
 }
@@ -18,6 +20,7 @@ type Props = ModalOwnProps & TransactionSendConfirmationModalOwnProps;
 
 export const TransactionSendConfirmationModal = ({
     theme,
+    inviterAddressID,
     onClickDone,
     onClickInviteAFriend,
     ...modalProps
@@ -37,13 +40,23 @@ export const TransactionSendConfirmationModal = ({
                     {c('Wallet setup').t`Done`}
                 </Button>
 
-                <Button
-                    fullWidth
-                    className="block text-semibold"
-                    shape="ghost"
-                    color="weak"
-                    onClick={() => onClickInviteAFriend()}
-                >{c('Wallet setup').t`Invite a friend`}</Button>
+                <Tooltip
+                    title={
+                        inviterAddressID
+                            ? undefined
+                            : c('Tooltip')
+                                  .t`You need to have an email linked to your wallet account to be able to send invite`
+                    }
+                >
+                    <Button
+                        fullWidth
+                        className="block text-semibold"
+                        shape="ghost"
+                        color="weak"
+                        disabled={!inviterAddressID}
+                        onClick={() => onClickInviteAFriend()}
+                    >{c('Wallet setup').t`Invite a friend`}</Button>
+                </Tooltip>
             </div>
         </Modal>
     );
