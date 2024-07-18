@@ -21,16 +21,17 @@ import { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../../atoms';
 import { useBitcoinBlockchainContext } from '../../../contexts';
-import { getThemeByIndex } from '../../../utils';
+import { SubTheme, getThemeByIndex } from '../../../utils';
 import { WalletPreferencesModal } from '../../WalletPreferencesModal';
 import { WalletExpandButton } from './WalletExpandButton';
 
 interface WalletsSidebarListItemProps {
     wallet: IWasmApiWalletData;
     onAddWalletAccount: () => void;
+    theme?: SubTheme;
 }
 
-const WalletsSidebarListItem = ({ wallet, onAddWalletAccount }: WalletsSidebarListItemProps) => {
+const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme }: WalletsSidebarListItemProps) => {
     const { state: showAccounts, toggle: toggleShowAccounts } = useToggle(false);
 
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
@@ -94,6 +95,7 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount }: WalletsSidebarLi
                 {renderWalletPreferencesModalState && (
                     <WalletPreferencesModal
                         wallet={wallet}
+                        theme={theme}
                         otherWallets={otherWallets}
                         {...walletPreferencesModalState}
                     />
@@ -192,6 +194,7 @@ export const WalletsSidebarList = ({
                                     onAddWalletAccount={() => {
                                         onAddWalletAccount(wallet);
                                     }}
+                                    theme={getThemeByIndex(index)}
                                 />
                             </SubSidebarListItem>
                         );
