@@ -11,6 +11,7 @@ import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { secondaryAmount } from '../../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
+import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
 import { TxBuilderUpdater } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
 import { isExchangeRate } from '../../../utils';
@@ -350,7 +351,7 @@ export const TransactionReview = ({
                               },
                           })}
                     {...textAreaModal}
-                    maxLength={250}
+                    maxLength={TEXT_AREA_MAX_LENGTH}
                 />
             )}
             {recipientDetailsModal.data && (

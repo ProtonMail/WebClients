@@ -80,7 +80,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                         <p className="m-auto">{c('Wallet setup').t`Choose a name and default currency.`}</p>
                     </ModalParagraph>
                 )}
-                <div className="flex flex-column gap-3">
+                <div className="flex flex-column gap-1">
                     {!isFirstCreation && (
                         <Input
                             prefix={
@@ -135,7 +135,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, ...modalProps }: P
                                 {c('Wallet setup')
                                     .t`A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.`}
                             </ModalSectionHeader>
-                            <div className="mt-2 flex flex-column gap-3">
+                            <div className="mt-2 flex flex-column gap-1">
                                 <Input
                                     autoFocus
                                     id="passphrase"
