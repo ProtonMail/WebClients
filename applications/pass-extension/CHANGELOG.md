@@ -1,3 +1,21 @@
+### Version 1.20.0
+
+-   Add support for secure-links
+-   Add support for email/username split on login items
+-   Fix stale invites being cached
+
+### Version 1.19.2
+
+-   Fine-tune password unlocking
+-   Fix auth refresh triggered on too many unlock attempts
+
+### Version 1.19.0
+
+-   Add extra password support
+-   Add support for safari extension
+-   Disable production source maps to lighten extension size
+-   Fix missing 2FA warning for B2B organizations
+
 ### Version 1.18.0
 
 -   Support username & email as separate fields for login items
