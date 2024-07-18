@@ -23,7 +23,6 @@ import {
     getTransactionRecipientHumanReadableName,
     getTransactionSenderHumanReadableName,
 } from '../../utils';
-import { multilineStrToMultilineJsx } from '../../utils/string';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
 export const RecipientsDataItem = ({
@@ -205,9 +204,7 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
             </div>
             <div className="w-full flex">
                 {tx.apiData?.Label ? (
-                    <p className="my-0 mt-1 text-lg">
-                        {multilineStrToMultilineJsx(tx.apiData.Label, 'transaction-label')}
-                    </p>
+                    <span className="text-pre-wrap text-break text-left text-lg">{tx.apiData.Label}</span>
                 ) : (
                     <CoreButton
                         shape="ghost"
@@ -233,10 +230,8 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
 export const MessageDataItem = ({ tx }: TxDataListItemProps) => {
     return (
         <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`Message`}</span>
-            <p className="my-0 mt-1 text-lg">
-                {multilineStrToMultilineJsx(tx.apiData?.Body ?? '', 'transaction-message')}
-            </p>
+            <span className="block color-hint text-rg">{c('Wallet transaction').t`Message to recipient`}</span>
+            <span className="text-pre-wrap text-left text-break text-lg">{tx.apiData?.Body}</span>
         </div>
     );
 };

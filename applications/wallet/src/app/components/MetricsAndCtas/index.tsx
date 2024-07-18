@@ -140,7 +140,13 @@ export const MetricsAndCtas = ({
                 )}
                 style={isNarrow ? {} : { '--max-w-custom': '30rem' }}
             >
-                <Tooltip title={c('wallet dashboard').t`You need to have a positive balance to send bitcoins`}>
+                <Tooltip
+                    title={
+                        localDisabled || !canSend
+                            ? c('wallet dashboard').t`You need to have a positive balance to send bitcoins`
+                            : null
+                    }
+                >
                     <div className="flex grow">
                         <CtaButton disabled={localDisabled || !canSend} onClick={() => onClickSend()}>{c(
                             'Wallet dashboard'
