@@ -113,10 +113,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create a new vault to share": [
@@ -1087,15 +1087,6 @@
       "An item previously shared with you was removed": [
         "თქვენთვის ადრე გაზიარებული ელემენტი წაიშალა"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ყველა ელემენტი \"${ fromVaultName }\"-დან \"${ toVaultName }\"-ში?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტები \"${ name }\"-ში?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გადაიტანოთ ელემენტი \"${ name }\"-ში?"
-      ],
       "Are you sure you want to remove the link?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ბმული?"
       ],
@@ -1369,14 +1360,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its history": [
-        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის"
+      "Moving an item to another vault will erase its history.": [
+        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
-      "Moving items to another vault will erase their history": [
-        "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის"
+      "Moving items to another vault will erase their history.": [
+        "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის."
       ],
       "Moving items to trash": [
         "ელემენტების გადატანა ნაგვის ყუთში"
@@ -1398,6 +1389,9 @@
       ],
       "Offline support successfully disabled": [
         "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
+      ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომას PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
       ],
       "Open the Extensions menu": [
         "გაფართოებების მენიუს გახსნა"
@@ -1579,6 +1573,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "გატანილი ფაილი PGP-ით დაიშიფრება და რთულ საკვანძო ფრაზას მოითხოვს."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "დამატებითი პაროლი აუცილებელია ${ PASS_APP_NAME }-ის გამოყენებისას. ის ${ BRAND_NAME }-ის პაროლთან ერთად დამატებით პაროლად გამოიყენება."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
@@ -2030,7 +2027,7 @@
       "Make all viewers": [
         "ყველას მონიშვნა დამთვალიერებლად"
       ],
-      "Max views reached": [
+      "max views reached": [
         "მიღწეულია მაქს. ნახვები"
       ],
       "Members": [
@@ -2504,15 +2501,6 @@
       "Modified": [
         "შეცვლილია"
       ],
-      "Move all items ?": [
-        "გადავიტანო ყველა ელემენტი?"
-      ],
-      "Move item?": [
-        "გადავიტანო ელემენტი?"
-      ],
-      "Move items?": [
-        "გადავიტანო ელემენტები?"
-      ],
       "No items selected": [
         "ელემენტები მონიშნული არაა"
       ],
@@ -2730,9 +2718,6 @@
       ],
       "No items matching": [
         "ელემენტები არ ემთხვევა"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "შესვლის გასაღებების გარეშე. შეინახეთ თქვენი შესვლის გასაღებები ${ PASS_APP_NAME }-ში, ${ domain }-ში შესასვლელად."
       ],
       "No password manager selected": [
         "პაროლების მმართველი არჩეული არაა"

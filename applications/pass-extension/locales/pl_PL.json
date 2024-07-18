@@ -113,10 +113,10 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -1013,6 +1013,9 @@
         "otwarto ${ count } razy",
         "otwarto ${ count } razy"
       ],
+      "${ count }/${ maxReads } views": [
+        "Otwarto ${ count } / ${ maxReads } razy"
+      ],
       "${ memberCount } member": [
         "${ memberCount } użytkownik",
         "${ memberCount } użytkowników",
@@ -1115,20 +1118,14 @@
       "An item previously shared with you was removed": [
         "Poprzednio udostępniony element został usunięty"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Czy chcesz przenieść wszystkie elementy z sejfu \"${ fromVaultName }\" do \"${ toVaultName }\"?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Czy na pewno chcesz przenieść elementy do sejfu \"${ name }\"?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Czy na pewno chcesz przenieść element do sejfu \"${ name }\"?"
-      ],
       "Are you sure you want to remove the link?": [
         "Czy na pewno chcesz usunąć link?"
       ],
       "Auto-lock successfully disabled.": [
         "Automatyczna blokada została wyłączona."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Automatycznie kopiuj wygenerowane hasło do schowka"
       ],
       "Autosaved on ${ payload.domain }": [
         "Zapisano na ${ payload.domain }"
@@ -1409,14 +1406,20 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii"
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii i linków."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii."
       ],
       "Moving items": [
         "Przenoszenie elementów"
       ],
-      "Moving items to another vault will erase their history": [
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii"
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i linków."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii."
       ],
       "Moving items to trash": [
         "Przenoszenie elementów do Kosza"
@@ -1930,6 +1933,9 @@
       "Copy": [
         "Kopiuj"
       ],
+      "Copy password": [
+        "Kopiuj hasło"
+      ],
       "Create a credit card": [
         "Utwórz kartę płatniczą"
       ],
@@ -2092,8 +2098,8 @@
       "Make all viewers": [
         "Ustaw uprawnienie odczytu wszystkim"
       ],
-      "Max views reached": [
-        "Maksymalna liczba dostępów została osiągnięta"
+      "max views reached": [
+        "maksymalna liczba dostępów została osiągnięta"
       ],
       "Members": [
         "Użytkownicy"
@@ -2524,6 +2530,9 @@
       "Fill & copy password": [
         "Uzupełnij i kopiuj hasło"
       ],
+      "Fill password": [
+        "Uzupełnij hasło"
+      ],
       "Get Started": [
         "Rozpocznij"
       ],
@@ -2569,14 +2578,14 @@
       "Modified": [
         "Zmodyfikowano"
       ],
-      "Move all items ?": [
-        "Przenieść wszystkie elementy?"
+      "Move all items to \"${ vaultName }\"?": [
+        "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
       ],
-      "Move item?": [
-        "Przenieść element?"
+      "Move item to \"${ vaultName }\"?": [
+        "Przenieść element do sejfu \"${ vaultName }\"?"
       ],
-      "Move items?": [
-        "Przenieść elementy?"
+      "Move items to \"${ vaultName }\"?": [
+        "Przenieść elementy do sejfu \"${ vaultName }\"?"
       ],
       "No items selected": [
         "Nie zaznaczono elementów"
@@ -2797,9 +2806,6 @@
       ],
       "No items matching": [
         "Brak pasujących elementów"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Nie znaleziono kluczy dostępu. Zapisz klucze dostępu w ${ PASS_APP_NAME }, aby zalogować się do ${ domain }."
       ],
       "No password manager selected": [
         "Nie wybrano menadżera haseł"

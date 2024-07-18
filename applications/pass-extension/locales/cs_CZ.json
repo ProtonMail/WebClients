@@ -113,11 +113,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } account": [
-        "Vytvořit účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Vytvořit nový trezor ke sdílení"
@@ -1118,15 +1118,6 @@
       "An item previously shared with you was removed": [
         "Položka dříve sdílená s vámi byla odebrána"
       ],
-      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Jste si jisti, že chcete přesunout všechny položky z \"${ fromVaultName }\" do \"${ toVaultName }\" ?"
-      ],
-      "Are you sure you want to move items to \"${ name }\" ?": [
-        "Jste si jisti, že chcete přesunout položky do \"${ name }\" ?"
-      ],
-      "Are you sure you want to move the item to \"${ name }\" ?": [
-        "Jste si jisti, že chcete přesunou položku do \"${ name }\" ?"
-      ],
       "Are you sure you want to remove the link?": [
         "Skutečně chcete odebrat tento odkaz?"
       ],
@@ -1412,14 +1403,14 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history": [
-        "Přesunutím položky do jiného trezoru se smaže její historie"
+      "Moving an item to another vault will erase its history.": [
+        "Přesunutím položky do jiného trezoru se smaže její historie."
       ],
       "Moving items": [
         "Přesouvání položek"
       ],
-      "Moving items to another vault will erase their history": [
-        "Přesunutím položek do jiného trezoru se smaže jejich historie"
+      "Moving items to another vault will erase their history.": [
+        "Přesunutím položek do jiného trezoru se smaže jejich historie."
       ],
       "Moving items to trash": [
         "Přesouvání položek do koše"
@@ -1677,7 +1668,7 @@
         "Pro uložení tohoto přístupového klíče, odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho dodatečného hesla ${ BRAND_NAME }"
+        "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho hesla ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho dodatečného hesla"
@@ -2095,8 +2086,8 @@
       "Make all viewers": [
         "Udělat ze všech prohlížející"
       ],
-      "Max views reached": [
-        "Max. zobrazení dosaženo"
+      "max views reached": [
+        "max. zobrazení dosaženo"
       ],
       "Members": [
         "Členové"
@@ -2575,15 +2566,6 @@
       "Modified": [
         "Upraveno"
       ],
-      "Move all items ?": [
-        "Přesunout všechny položky?"
-      ],
-      "Move item?": [
-        "Přesunout položku?"
-      ],
-      "Move items?": [
-        "Přesunout položky?"
-      ],
       "No items selected": [
         "Žádné vybrané položky"
       ],
@@ -2803,9 +2785,6 @@
       ],
       "No items matching": [
         "Žadné položky se neshodují"
-      ],
-      "No passkeys found. Save your passkeys in ${ PASS_APP_NAME } to sign-in to ${ domain }.": [
-        "Nebyly nalezeny žádné přístupové klíče. Uložte své přístupové klíče k ${ domain } do ${ PASS_APP_NAME }."
       ],
       "No password manager selected": [
         "Není vybrán žádný správce hesel"
