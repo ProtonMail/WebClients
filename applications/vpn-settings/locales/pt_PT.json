@@ -1263,6 +1263,9 @@
       "Falkland Islands": [
         "Ilhas Falkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Ilhas Falkland (Malvinas)"
+      ],
       "Faroe Islands": [
         "Ilhas Faroé"
       ],
@@ -1702,6 +1705,9 @@
         "Suíça"
       ],
       "Syria": [
+        "Síria"
+      ],
+      "Syrian Arab Republic": [
         "Síria"
       ],
       "Taiwan": [
@@ -2872,6 +2878,12 @@
         "${ userFound } utilizador encontrado",
         "${ userFound } utilizadores encontrados"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } criada"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } actualizada"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "É obrigatória ${ vpnPlus } para ligação ao nível de país."
       ],
@@ -3079,11 +3091,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -5147,9 +5159,6 @@
       "DNS leak prevention": [
         "Proteção contra vazamento de DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editores de documentos (documentos, folhas de cálculo, apresentações)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -5249,7 +5258,7 @@
         "Proteja ${ n } dispositivos ao mesmo tempo"
       ],
       "Require 2FA for organization": [
-        "Exigir 2FA para a organização"
+        "Exigir A2F para a organização"
       ],
       "Router support": [
         "Suporte para router"
@@ -5317,6 +5326,9 @@
       ],
       "Unlimited labels": [
         "Etiquetas ilimitadas"
+      ],
+      "Unlimited logins and notes": [
+        "Inícios de sessão e notas ilimitados"
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
@@ -7490,11 +7502,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"

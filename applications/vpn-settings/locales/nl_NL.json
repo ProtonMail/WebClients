@@ -1338,6 +1338,9 @@
       "Falkland Islands": [
         "Falklandeilanden"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Eilanden (Malvinas)"
+      ],
       "Faroe Islands": [
         "Faeröer Eilanden"
       ],
@@ -1778,6 +1781,9 @@
       ],
       "Syria": [
         "Syrië"
+      ],
+      "Syrian Arab Republic": [
+        "Syrische Arabische Republiek"
       ],
       "Taiwan": [
         "Taiwan"
@@ -3005,6 +3011,12 @@
         "${ userFound } gebruiker gevonden",
         "${ userFound } gebruikers gevonden"
       ],
+      "${ vaultLink } created": [
+        "${ vaultLink } aangemaakt"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } bijgewerkt"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } vereist voor verbindingen op landniveau."
       ],
@@ -3242,11 +3254,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Pas het uiterlijk van ${ BRAND_NAME } applicaties aan."
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -5435,9 +5447,6 @@
       "DNS leak prevention": [
         "DNS-lekbescherming"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Document-editors (documenten, werkbladen, dia's)"
-      ],
       "Double hop": [
         "Dubbel hop"
       ],
@@ -5548,9 +5557,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
       ],
-      "Reply to messages": [
-        "Antwoorden op berichten"
-      ],
       "Require 2FA for organization": [
         "Tweestapsauthenticatie vereist voor organisatie"
       ],
@@ -5632,6 +5638,9 @@
       ],
       "Unlimited labels": [
         "Onbeperkt aantal labels"
+      ],
+      "Unlimited logins and notes": [
+        "Onbeperkt aantal logins en notities"
       ],
       "Unlimited messages per day": [
         "Onbeperkt aantal berichten per dag"
@@ -8162,11 +8171,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
