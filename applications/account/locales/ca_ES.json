@@ -703,6 +703,9 @@
       "OK": [
         "D'acord"
       ],
+      "Open": [
+        "Obert"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
@@ -2550,6 +2553,9 @@
       "Falkland Islands": [
         "Illes Flkland"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Illes Falkland (Malvines)"
+      ],
       "Faroe Islands": [
         "Illes Fèroe"
       ],
@@ -2989,6 +2995,9 @@
         "Suïssa"
       ],
       "Syria": [
+        "Síria"
+      ],
+      "Syrian Arab Republic": [
         "Síria"
       ],
       "Taiwan": [
@@ -5612,6 +5621,11 @@
         "Serveis"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Adreça del grup"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -7838,6 +7852,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
+      "Session Ended": [
+        "S'ha finalitzat la sessió."
+      ],
+      "Session Roaming": [
+        "Sessió itinerant"
+      ],
+      "Session Started": [
+        "S'ha iniciat la sessió."
+      ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
       ],
@@ -8196,6 +8219,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Per garantir l'accés continu al vostre compte, configureu un mètode de recuperació del compte"
       ],
+      "To ensure highest possible security of your account": [
+        "Per garantir la màxima seguretat possible del compte"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Per assegurar-vos que no perdeu dades importants, ${ DRIVE_APP_NAME } desa versions anteriors dels vostres fitxers a mesura que vós i els vostres col·laboradors hi feu canvis. Seleccioneu quant de temps ${ BRAND_NAME } hauria de mantenir les versions anteriors."
       ],
@@ -8301,6 +8327,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Milloreu al pla ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[bundleProPlan] } per a accedir a ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
       ],
@@ -8381,6 +8410,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una pestanya nova. Desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
+      ],
+      "Verify ${ type }": [
+        "Verifica ${ type }"
       ],
       "Verify domain": [
         "Verifica el domini"
@@ -11303,12 +11335,6 @@
       "DNS leak prevention": [
         "Prevenció de fuites de DNS."
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editors de documents (documents, fulls de càlcul i presentacions) (aviat)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11418,9 +11444,6 @@
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
-      ],
-      "Reply to messages": [
-        "Respon als missatges"
       ],
       "Require 2FA for organization": [
         "Requereix A2F per a l'organització"
@@ -12898,6 +12921,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tots els serveis de ${ BRAND_NAME } Plus. ${ br } Una subscripció senzilla."
+      ],
+      "Create a ${ appName } account": [
+        "Crea un compte de ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Creeu el vostre compte de ${ BRAND_NAME }"
@@ -15589,6 +15615,9 @@
       "Connect ${ name }": [
         "Connecta ${ name }"
       ],
+      "Connection events": [
+        "Esdeveniments de connexió"
+      ],
       "Contact us": [
         "Contacteu amb nosaltres"
       ],
@@ -16069,6 +16098,9 @@
       ],
       "Organization name": [
         "Nom de l'organització"
+      ],
+      "Origin": [
+        "Origen"
       ],
       "Other calendars": [
         "Altres calendaris"
@@ -16928,6 +16960,9 @@
       ]
     },
     "Users table: badge": {
+      "2FA": [
+        "2FA"
+      ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
       ],

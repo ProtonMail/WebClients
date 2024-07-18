@@ -1405,6 +1405,9 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "Kúpte teraz"
+      ],
       "New": [
         "Nový"
       ],
@@ -2561,6 +2564,9 @@
       "Falkland Islands": [
         "Falklandské ostrovy"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Falklandské ostrovy (Malvíny)"
+      ],
       "Faroe Islands": [
         "Faerské ostrovy"
       ],
@@ -3001,6 +3007,9 @@
       ],
       "Syria": [
         "Sýria"
+      ],
+      "Syrian Arab Republic": [
+        "Sýrska arabská republika"
       ],
       "Taiwan": [
         "Taiwan"
@@ -5663,6 +5672,19 @@
         "Služby"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Skupinové adresy"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členov",
+        "${ memberCount } členovia",
+        "${ memberCount } členovia"
+      ]
+    },
     "Header": {
       "Access": [
         "Prístup"
@@ -6219,6 +6241,9 @@
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } pozastavil import, pretože je na vašom účte málo voľného miesta. Môžete:"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
+      ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } sa pokúsi pokračovať v importe hneď ako váš poskytovateľ emailu obnoví ${ bandwidthLimitLink } vášho účtu. Nemusíte robiť nič. Ak zrušíte import, nebude v ňom môcť pokračovať a budete musieť začať od začiatku."
       ],
@@ -6353,6 +6378,12 @@
         "${ userFound } nájdení používatelia",
         "${ userFound } nájdených používateľov",
         "${ userFound } nájdených používateľov"
+      ],
+      "${ vaultLink } created": [
+        "Štítok ${ vaultLink } bol vytvorený"
+      ],
+      "${ vaultLink } updated": [
+        "Štítok ${ vaultLink } bol aktualizovaný"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Pre pripojenie na úrovni krajiny sa vyžaduje ${ vpnPlus }."
@@ -6828,8 +6859,17 @@
       "Custom daily": [
         "Denné nastavenie"
       ],
+      "Custom email added": [
+        "Vlastný email pridaný"
+      ],
+      "Custom email deleted": [
+        "Vlastný email vymazaný"
+      ],
       "Custom email domains": [
         "Vlastné emailové domény"
+      ],
+      "Custom email validated": [
+        "Vlastný email overený"
       ],
       "Custom monthly": [
         "Mesačné nastavenia"
@@ -7290,6 +7330,9 @@
       "Invite Deleted": [
         "Pozvánka vymazaná"
       ],
+      "Invite for new user deleted": [
+        "Pozvánka pre nového používateľa bola vymazaná"
+      ],
       "Invite for organization accepted": [
         "Pozvánka pre organizáciu prijatá"
       ],
@@ -7323,14 +7366,23 @@
       "Item Created": [
         "Položka bola vytvorená"
       ],
+      "Item created in ${ vaultLink }": [
+        "Položka vytvorená v trezore ${ vaultLink }"
+      ],
       "Item created in vault": [
         "Položka v trezore vytvorená"
       ],
       "Item Deleted": [
         "Položka bola vymazaná"
       ],
+      "Item deleted from vault": [
+        "Položka bola z trezora vymazaná"
+      ],
       "Item flags changed in vault": [
         "Príznaky položky v trezore zmenené"
+      ],
+      "Item in vault trashed": [
+        "Položka v trezore bola presunutá do koša"
       ],
       "Item in vault untrashed": [
         "Položka v trezore vyňatá z koša"
@@ -7349,6 +7401,9 @@
       ],
       "Item Updated": [
         "Položka bola aktualizovaná"
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Položka v trezore ${ vaultLink } bola aktualizovaná"
       ],
       "Item updated in vault": [
         "Položka v trezore aktualizovaná"
@@ -7517,6 +7572,9 @@
       ],
       "New User Invite Deleted": [
         "Nová pozvánka používateľa vymazaná"
+      ],
+      "New user invited to organization": [
+        "Do organizácie bol pozvaný nový používateľ"
       ],
       "No account keys exist": [
         "Neexistujú žiadne kľúče k účtu"
@@ -8259,6 +8317,9 @@
       "To ensure continuous access to your account, set an account recovery method": [
         "Ak chcete zabezpečiť nepretržitý prístup k svojmu účtu, nastavte spôsob obnovenia účtu"
       ],
+      "To ensure highest possible security of your account": [
+        "Na zabezpečenie čo najvyššej bezpečnosti vášho účtu"
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Aby ste nestratili dôležité údaje, ${ DRIVE_APP_NAME } ukladá staršie verzie vašich súborov, keď vy a vaši spolupracovníci vykonávate zmeny. Vyberte, ako dlho má ${ BRAND_NAME } uchovávať predchádzajúce verzie."
       ],
@@ -8364,6 +8425,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgradujte na ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] },${ PLAN_NAMES[PLANS.FAMILY] } alebo ${ PLAN_NAMES[bundleProPlan] } pre získanie prístupu k ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgradujte, ak chcete pridať kratšiu @pm.me adresu k vášmu účtu, ktorá sa jednoduchšie zdieľa. To znamená „${ MAIL_APP_NAME } me“ alebo „Private message me“."
       ],
@@ -8421,6 +8485,9 @@
       "Vault Deleted": [
         "Trezor bol vymazaný"
       ],
+      "Vault either deleted or requires access permissions": [
+        "Trezor bol buď vymazaný, alebo si vyžaduje prístupové oprávnenia"
+      ],
       "Vault shared with email": [
         "Trezor zdieľaný emailom"
       ],
@@ -8441,6 +8508,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Pri overovaní sa otvorí nová karta, vypnite prosím blokovanie automaticky otváraných okien. Nebudú vám účtované žiadne poplatky. Akákoľvek suma použitá na overenie karty bude okamžite vrátená."
+      ],
+      "Verify ${ type }": [
+        "Overte ${ type }"
       ],
       "Verify domain": [
         "Overiť doménu"
@@ -10611,6 +10681,9 @@
       "Upgrade your plan": [
         "Prejsť na vyšší plán"
       ],
+      "Vault": [
+        "Trezor"
+      ],
       "View guide": [
         "Zobraziť sprievodcu"
       ],
@@ -10726,6 +10799,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "**Get ${ plan }** for a limited time!": [
+        "**Získajte ${ plan }** na obmedzenú dobu!"
+      ],
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Staňte sa Vizionárom a buďte súčasťou príbehu ${ BRAND_NAME }"
       ]
@@ -11437,12 +11513,6 @@
       "DNS leak prevention": [
         "Prevencia úniku DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Editory dokumentov (dokumenty, tabuľky, prezentácie) (čoskoro)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11557,9 +11627,6 @@
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
       ],
-      "Reply to messages": [
-        "Odpovedať na správy"
-      ],
       "Require 2FA for organization": [
         "Vyžadovať 2FA pre organizáciu"
       ],
@@ -11649,6 +11716,9 @@
       ],
       "Unlimited labels": [
         "Neobmedzený počet štítkov"
+      ],
+      "Unlimited logins and notes": [
+        "Neobmedzený počet prihlásení a poznámok"
       ],
       "Unlimited logins, notes and credit cards": [
         "Neobmedzené prihlásenia, poznámky a platobné karty"
@@ -13063,6 +13133,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Všetky ${ BRAND_NAME } Plus služby.${ br }Jedno jednoduché predplatné."
+      ],
+      "Create a ${ appName } account": [
+        "Vytvoriť ${ appName } účet"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Vytvorte svoj ${ BRAND_NAME } účet"
@@ -15610,6 +15683,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportný nástroj ${ MAIL_APP_NAME }"
       ],
@@ -16156,6 +16232,9 @@
       "Forward emails": [
         "Preposielať emaily"
       ],
+      "Gateway": [
+        "Brána"
+      ],
       "Gateways": [
         "Brány"
       ],
@@ -16326,6 +16405,9 @@
       ],
       "Organization name": [
         "Názov organizácie"
+      ],
+      "Origin": [
+        "Pôvod"
       ],
       "Other calendars": [
         "Iné kalendáre"

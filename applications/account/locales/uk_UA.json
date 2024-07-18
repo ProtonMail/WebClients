@@ -2521,6 +2521,9 @@
       "Falkland Islands": [
         "Фолклендські острови"
       ],
+      "Falkland Islands (Malvinas)": [
+        "Фолклендські острови (Мальвінські)"
+      ],
       "Faroe Islands": [
         "Фарерські острови"
       ],
@@ -2961,6 +2964,9 @@
       ],
       "Syria": [
         "Сирія"
+      ],
+      "Syrian Arab Republic": [
+        "Сирійська Арабська Республіка"
       ],
       "Taiwan": [
         "Тайвань"
@@ -5588,6 +5594,14 @@
         "Служби"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } учасник",
+        "${ memberCount } учасників",
+        "${ memberCount } учасники",
+        "${ memberCount } учасники"
+      ]
+    },
     "Header": {
       "Access": [
         "Доступ"
@@ -6272,6 +6286,12 @@
         "Знайдено ${ userFound } користувача",
         "Знайдено ${ userFound } користувачів",
         "Знайдено ${ userFound } користувачів"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } створено"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } оновлено"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Для з'єднання на рівні країни потрібен ${ vpnPlus }."
@@ -8261,6 +8281,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Передплатіть тарифний план ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[bundleProPlan] }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
@@ -11267,12 +11290,6 @@
       "DNS leak prevention": [
         "Захист від витоку DNS"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "Редактори документів (документи, таблиці, слайди)"
-      ],
-      "Document editors (docs, sheets, slides) (soon)": [
-        "Засоби редагування (документи, електронні таблиці, слайди) (незабаром)"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -11470,6 +11487,9 @@
       ],
       "Unlimited labels": [
         "Необмежена кількість міток"
+      ],
+      "Unlimited logins and notes": [
+        "Необмежена кількість імен користувачів та нотаток"
       ],
       "Unlimited messages per day": [
         "Необмежена кількість повідомлень на день"
@@ -12836,6 +12856,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Всі сервіси ${ BRAND_NAME } Plus.${ br }Одна проста передплата."
+      ],
+      "Create a ${ appName } account": [
+        "Створіть обліковий запис ${ appName }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Створіть свій обліковий запис ${ BRAND_NAME }"

@@ -2288,6 +2288,9 @@
       "Falkland Islands": [
         "奥兰群岛"
       ],
+      "Falkland Islands (Malvinas)": [
+        "福克兰群岛（马尔维纳斯）"
+      ],
       "Faroe Islands": [
         "法罗群岛"
       ],
@@ -2727,6 +2730,9 @@
         "瑞士"
       ],
       "Syria": [
+        "叙利亚"
+      ],
+      "Syrian Arab Republic": [
         "叙利亚"
       ],
       "Taiwan": [
@@ -4829,6 +4835,11 @@
         "服务"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } 位成员"
+      ]
+    },
     "Header": {
       "Access": [
         "权限"
@@ -5419,6 +5430,12 @@
       ],
       "${ userFound } user found": [
         "已找到 ${ userFound } 位用户"
+      ],
+      "${ vaultLink } created": [
+        "${ vaultLink } 已创建"
+      ],
+      "${ vaultLink } updated": [
+        "${ vaultLink } 标签已更改"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "指定国家连接需要开通 ${ vpnPlus }。"
@@ -7036,6 +7053,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[bundleProPlan] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "开通 ${ PLAN_NAMES[PLANS.PASS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[bundleProPlan] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -9619,9 +9639,6 @@
       "DNS leak prevention": [
         "防范 DNS 泄露"
       ],
-      "Document editors (docs, sheets, slides)": [
-        "文档编辑器（文字、表格、幻灯片）"
-      ],
       "Double hop": [
         "Double hop"
       ],
@@ -9786,6 +9803,9 @@
       ],
       "Unlimited labels": [
         "标签数量不限"
+      ],
+      "Unlimited logins and notes": [
+        "无限制登录和备注"
       ],
       "Unlimited messages per day": [
         "每日发送邮件不限量"
@@ -10744,6 +10764,9 @@
       ]
     },
     "pass_signup_2023: Title": {
+      "Create a ${ appName } account": [
+        "创建 ${ appName } 账户"
+      ],
       "Create your ${ BRAND_NAME } account": [
         "创建 ${ BRAND_NAME } 账户"
       ]
