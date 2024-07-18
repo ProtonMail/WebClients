@@ -542,15 +542,18 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     return url.toString()
   }
 
+  private async refreshNodeAndDocMeta(): Promise<void> {
+    this.decryptedNode = await this.driveCompat.getNode(this.nodeMeta)
+    const newDoc = this.docMeta.copyWithNewValues({ name: this.decryptedNode.name })
+    this.docMeta = newDoc
+  }
+
   private async loadDecryptedNode(): Promise<void> {
     try {
-      this.decryptedNode = await this.driveCompat.getNode(this.nodeMeta)
-      const newDoc = this.docMeta.copyWithNewValues({ name: this.decryptedNode.name })
-      this.docMeta = newDoc
-
+      await this.refreshNodeAndDocMeta()
       this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
         type: DocControllerEvent.DidLoadDocumentTitle,
-        payload: { title: newDoc.name },
+        payload: { title: this.docMeta.name },
       })
     } catch (error) {
       this.logger.error('Failed to get decrypted link', String(error))
@@ -742,6 +745,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
         newName,
       )
       await this.driveCompat.renameDocument(this.nodeMeta, name)
+      await this.refreshNodeAndDocMeta()
       return TranslatedResult.ok()
     } catch (e) {
       this.logger.error(getErrorString(e) ?? 'Failed to rename document')
