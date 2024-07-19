@@ -42,7 +42,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
                 <SettingsParagraph>{description}</SettingsParagraph>
                 <Button
                     onClick={handleContinueClick}
-                    data-testid="CancelSubsriptionButton"
+                    data-testid="CancelSubscriptionButton"
                     shape="outline"
                     disabled={loadingCancelSubscription}
                 >
