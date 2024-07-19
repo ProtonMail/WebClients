@@ -70,7 +70,7 @@ const WalletSidebar = ({
                 )}
 
                 <SidebarNav className="flex px-1">
-                    <SidebarList className="flex flex-column w-full">
+                    <SidebarList className="flex flex-column flex-nowrap w-full flex-auto">
                         <WalletsSidebarList
                             loadingApiWalletsData={loadingApiWalletsData}
                             apiWalletsData={apiWalletsData}
