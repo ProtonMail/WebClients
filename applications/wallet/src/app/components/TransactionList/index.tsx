@@ -270,11 +270,7 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
 
         return (
             <div className="flex flex-column mx-auto justify-center grow mb-10">
-                <img
-                    className="block mb-3"
-                    src={arrowsExchange}
-                    alt="Arrow going up and down, symbolising money transfer"
-                />
+                <img className="block mb-3" src={arrowsExchange} alt="" />
                 <div>
                     <p className="h2 text-semibold text-center">{c('Wallet transaction').t`Start your journey`}</p>
                     <p className="h2 text-semibold text-center">

@@ -174,6 +174,7 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
 
                     <div className="flex flex-row items-start mt-2">
                         <Checkbox
+                            id="save-as-contact"
                             className="bg-weak"
                             disabled={alreadyExistsAsContact}
                             checked={alreadyExistsAsContact || shouldSaveAsContact}
@@ -181,7 +182,8 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
                                 setShouldSaveAsContact((prev) => !prev);
                             }}
                         />
-                        <label className="ml-2">{c('Unknown sender').t`Save as a contact`}</label>
+                        <label className="ml-2" htmlFor="save-as-contact">{c('Unknown sender')
+                            .t`Save as a contact`}</label>
                     </div>
                 </div>
 
