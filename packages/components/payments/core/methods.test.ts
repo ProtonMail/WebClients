@@ -38,7 +38,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
@@ -58,7 +59,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
@@ -77,7 +79,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -95,7 +98,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -125,7 +129,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
@@ -143,7 +148,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
@@ -161,7 +167,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -181,7 +188,8 @@ describe('getNewMethods()', () => {
                 undefined,
                 true,
                 undefined,
-                undefined
+                undefined,
+                false
             );
 
             expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -200,7 +208,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
@@ -218,7 +227,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
@@ -236,7 +246,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -256,7 +267,8 @@ describe('getNewMethods()', () => {
                 undefined,
                 true,
                 undefined,
-                undefined
+                undefined,
+                false
             );
 
             expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
@@ -275,7 +287,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -298,7 +311,8 @@ describe('getNewMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
@@ -368,7 +382,8 @@ describe('getUsedMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         expect(methods.getUsedMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -437,7 +452,8 @@ describe('getAvailablePaymentMethods()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         const availableMethods = methods.getAvailablePaymentMethods();
@@ -512,7 +528,8 @@ describe('getLastUsedMethod()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         const lastUsedMethod = methods.getLastUsedMethod();
@@ -602,7 +619,8 @@ describe('getSavedMethodById()', () => {
             undefined,
             true,
             undefined,
-            undefined
+            undefined,
+            false
         );
 
         const savedMethod = methods.getSavedMethodById('2');

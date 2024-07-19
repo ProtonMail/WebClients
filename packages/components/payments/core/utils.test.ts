@@ -1,12 +1,4 @@
-import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
-import {
-    BillingPlatform,
-    ChargebeeEnabled,
-    ChargebeeUserExists,
-    Subscription,
-    User,
-} from '@proton/shared/lib/interfaces';
-import { buildSubscription, buildUser } from '@proton/testing/builders';
+import { BillingPlatform, ChargebeeEnabled, Subscription, User } from '@proton/shared/lib/interfaces';
 
 import {
     isOnSessionMigration,
@@ -219,73 +211,45 @@ describe('isSplittedUser', () => {
             BillingPlatform: BillingPlatform.Proton,
         },
         {
-            ChargebeeUserExists: ChargebeeUserExists.YES,
+            ChargebeeUserExists: 1,
             BillingPlatform: BillingPlatform.Proton,
         },
         {
-            ChargebeeUserExists: ChargebeeUserExists.YES,
+            ChargebeeUserExists: 1,
             BillingPlatform: 0,
         },
     ])(
         'should be splitted if BillingPlatform is proton and CB customer exists',
         ({ ChargebeeUserExists, BillingPlatform }) => {
-            expect(
-                isSplittedUser(
-                    buildUser({ ChargebeeUserExists }),
-                    buildSubscription({
-                        BillingPlatform,
-                    })
-                )
-            ).toBe(true);
+            expect(isSplittedUser(ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists, BillingPlatform)).toBe(true);
         }
     );
 
     it.each([
         {
-            ChargebeeUserExists: ChargebeeUserExists.NO,
+            ChargebeeUserExists: 0,
             BillingPlatform: BillingPlatform.Proton,
         },
         {
-            ChargebeeUserExists: ChargebeeUserExists.NO,
+            ChargebeeUserExists: 0,
             BillingPlatform: 0,
         },
         {
-            ChargebeeUserExists: ChargebeeUserExists.YES,
+            ChargebeeUserExists: 1,
             BillingPlatform: BillingPlatform.Chargebee,
         },
     ])(
         'should not be splitted if BillingPlatform is not proton or CB customer does not exist',
         ({ ChargebeeUserExists, BillingPlatform }) => {
-            expect(
-                isSplittedUser(
-                    buildUser({ ChargebeeUserExists }),
-                    buildSubscription({
-                        BillingPlatform,
-                    })
-                )
-            ).toBe(false);
+            expect(isSplittedUser(ChargebeeEnabled.CHARGEBEE_FORCED, ChargebeeUserExists, BillingPlatform)).toBe(false);
         }
     );
 
     it('should not be splitted if subscription is undefined', () => {
-        expect(
-            isSplittedUser(
-                buildUser({
-                    ChargebeeUserExists: ChargebeeUserExists.YES,
-                }),
-                undefined
-            )
-        ).toBe(false);
+        expect(isSplittedUser(ChargebeeEnabled.CHARGEBEE_FORCED, 1, undefined)).toBe(false);
     });
 
     it('should not be splitted if subscription is free', () => {
-        expect(
-            isSplittedUser(
-                buildUser({
-                    ChargebeeUserExists: ChargebeeUserExists.YES,
-                }),
-                FREE_SUBSCRIPTION as any
-            )
-        ).toBe(false);
+        expect(isSplittedUser(ChargebeeEnabled.CHARGEBEE_FORCED, 1, undefined)).toBe(false);
     });
 });
