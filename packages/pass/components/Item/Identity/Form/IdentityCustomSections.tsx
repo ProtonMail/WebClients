@@ -68,9 +68,7 @@ export const IdentityCustomSections: FC<IdentityCustomSectionsProps> = ({ form }
                                                                         ]?.sectionFields?.[index]
                                                                     }
                                                                     error={
-                                                                        (form.errors as any).extraSections?.[
-                                                                            sectionIndex
-                                                                        ]?.sectionFields?.[index]
+                                                                        (form.errors as any)?.[sectionIndex]?.[index]
                                                                     }
                                                                     autoFocus
                                                                 />
