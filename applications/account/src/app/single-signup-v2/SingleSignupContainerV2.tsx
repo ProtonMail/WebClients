@@ -424,6 +424,7 @@ const SingleSignupContainerV2 = ({
         if (toApp === APPS.PROTONWALLET) {
             return getWalletConfiguration({
                 audience,
+                signedIn: Boolean(model.session),
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
