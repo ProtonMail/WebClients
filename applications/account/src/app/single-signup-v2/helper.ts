@@ -190,6 +190,11 @@ const getUpsell = ({
         subscriptionOptions: {},
     };
 
+    // TODO: WalletEA
+    if (toApp === APPS.PROTONWALLET) {
+        return defaultValue;
+    }
+
     if (currentPlan) {
         if (getHas2023OfferCoupon(options.coupon)) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
@@ -543,6 +548,11 @@ export const getUserInfo = async ({
 
     if (user && hasAccess({ toApp, user, audience, currentPlan })) {
         state.access = true;
+    }
+
+    // TODO: WalletEA
+    if (toApp === APPS.PROTONWALLET) {
+        state.access = false;
     }
 
     if (state.access && state.payable && planParameters.defined && currentPlan) {
