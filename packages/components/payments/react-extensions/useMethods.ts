@@ -38,6 +38,7 @@ export interface Props {
     bitcoinChargebeeEnabled: boolean;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
+    disableNewPaymentMethods?: boolean;
 }
 
 interface Dependencies {
@@ -54,6 +55,7 @@ export type MethodsHook = {
     selectedMethod: AvailablePaymentMethod | undefined;
     savedInternalSelectedMethod: SavedPaymentMethodInternal | undefined;
     savedExternalSelectedMethod: SavedPaymentMethodExternal | undefined;
+    savedSelectedMethod: SavedPaymentMethod | undefined;
     selectMethod: (id?: string) => AvailablePaymentMethod | undefined;
     getSavedMethodByID: (id: string | undefined) => SavedPaymentMethod | undefined;
     status: PaymentMethodStatusExtended | undefined;
@@ -158,6 +160,7 @@ export const useMethods = (
         bitcoinChargebeeEnabled,
         billingPlatform,
         chargebeeUserExists,
+        disableNewPaymentMethods,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
@@ -171,6 +174,7 @@ export const useMethods = (
         pendingBitcoinChargebeeEnabled?: boolean;
         pendingBillingPlatform?: BillingPlatform;
         pendingChargebeeUserExists?: ChargebeeUserExists;
+        pendingDisableNewPaymentMethods?: boolean;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -225,7 +229,8 @@ export const useMethods = (
                 selectedPlanName,
                 enableChargebeeB2B,
                 billingPlatform,
-                overrideChargebeeUserExists ?? chargebeeUserExists
+                overrideChargebeeUserExists ?? chargebeeUserExists,
+                !!disableNewPaymentMethods
             );
 
             // Initialization might take some time, so we need to check if there is any pending data
@@ -243,6 +248,7 @@ export const useMethods = (
                     pendingBitcoinChargebeeEnabled,
                     pendingBillingPlatform,
                     pendingChargebeeUserExists,
+                    pendingDisableNewPaymentMethods,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -279,6 +285,10 @@ export const useMethods = (
                     paymentMethodsRef.current.chargebeeUserExists =
                         overrideChargebeeUserExists ?? pendingChargebeeUserExists;
                 }
+
+                if (pendingDisableNewPaymentMethods !== undefined) {
+                    paymentMethodsRef.current.disableNewPaymentMethods = pendingDisableNewPaymentMethods;
+                }
             }
 
             setStatus(paymentMethodsRef.current.statusExtended);
@@ -305,6 +315,7 @@ export const useMethods = (
                 pendingSelectedPlanName: selectedPlanName,
                 pendingBillingPlatform: billingPlatform,
                 pendingChargebeeUserExists: chargebeeUserExists,
+                pendingDisableNewPaymentMethods: disableNewPaymentMethods,
             };
             return;
         }
@@ -317,6 +328,7 @@ export const useMethods = (
         paymentMethodsRef.current.selectedPlanName = selectedPlanName;
         paymentMethodsRef.current.billingPlatform = billingPlatform;
         paymentMethodsRef.current.chargebeeUserExists = overrideChargebeeUserExists ?? chargebeeUserExists;
+        paymentMethodsRef.current.disableNewPaymentMethods = !!disableNewPaymentMethods;
 
         updateMethods();
     }, [
@@ -329,6 +341,7 @@ export const useMethods = (
         billingPlatform,
         overrideChargebeeUserExists,
         chargebeeUserExists,
+        disableNewPaymentMethods,
     ]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
@@ -387,8 +400,8 @@ export const useMethods = (
             !overrideChargebeeUserExists &&
             paymentMethodsRef.current
         ) {
-            paymentMethodsRef.current.chargebeeUserExists = ChargebeeUserExists.YES;
-            setOverrideChargebeeUserExists(ChargebeeUserExists.YES);
+            paymentMethodsRef.current.chargebeeUserExists = 1;
+            setOverrideChargebeeUserExists(1);
         }
 
         if (method) {
@@ -418,6 +431,7 @@ export const useMethods = (
 
     const savedInternalSelectedMethod = getSavedInternalMethodByID(selectedMethod?.value);
     const savedExternalSelectedMethod = getSavedExternalMethodByID(selectedMethod?.value);
+    const savedSelectedMethod = getSavedMethodByID(selectedMethod?.value);
 
     const isNewPaypal =
         selectedMethod?.type === PAYMENT_METHOD_TYPES.PAYPAL && !isExistingPaymentMethod(selectedMethod?.value);
@@ -426,6 +440,7 @@ export const useMethods = (
         selectedMethod,
         savedInternalSelectedMethod,
         savedExternalSelectedMethod,
+        savedSelectedMethod,
         selectMethod,
         loading,
         usedMethods,
