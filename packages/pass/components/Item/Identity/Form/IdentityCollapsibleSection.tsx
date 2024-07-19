@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { FieldArray, type FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -14,8 +15,12 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { CollapsibleSection } from '@proton/pass/components/Layout/Collapsible/CollapsibleSection';
 import { DropdownMenuBase } from '@proton/pass/components/Layout/Dropdown/DropdownMenuBase';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import type { IdentityField, IdentityFieldSection } from '@proton/pass/hooks/identity/useIdentityFormSections';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { IdentityItemFormValues } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 type IdentityFormikSection<T> = { [key: string]: T[] };
 
@@ -31,71 +36,80 @@ export const IdentityCollapsibleSection: FC<IdentityCollapsibleSectionProps> = (
     fields,
     form,
     onAdd,
-}) => (
-    <CollapsibleSection label={name} expanded={expanded}>
-        <FieldArray
-            name={optionalFields?.extraFieldKey || name}
-            render={(helpers) => {
-                const extraFieldName = optionalFields?.extraFieldKey || name;
-                const extraFields: IdentityField[] = helpers.form.values[extraFieldName];
+}) => {
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const spotlight = useSpotlight();
 
-                return (
-                    <>
-                        <FieldsetCluster>
-                            {fields.map((item) => (
-                                <Field
-                                    key={item.name}
-                                    component={item.component ?? TextField}
-                                    mask={item.mask}
-                                    type="text"
-                                    {...item}
-                                />
-                            ))}
-                            {extraFields?.map(({ type }, index) => (
-                                <Field
-                                    key={`${extraFieldName}[${index}]`}
-                                    component={ExtraFieldComponent}
-                                    type={type ?? 'text'}
-                                    name={`${extraFieldName}[${index}]`}
-                                    onDelete={() => helpers.remove(index)}
-                                    touched={
-                                        (form.touched as IdentityFormikSection<boolean>)?.[extraFieldName]?.[index]
-                                    }
-                                    error={
-                                        (form.errors as IdentityFormikSection<ExtraFieldProps['error']>)?.[
-                                            extraFieldName
-                                        ]?.[index]
-                                    }
-                                    autoFocus
-                                />
-                            ))}
-                        </FieldsetCluster>
-                        {optionalFields && Boolean(optionalFields?.fields.length) && (
-                            <DropdownMenuBase
-                                className="mb-2"
-                                dropdownOptions={optionalFields.fields.map(
-                                    ({ name: fieldName, placeholder, type }) => ({
-                                        value: fieldName,
-                                        label: placeholder,
-                                        onClick: () => {
-                                            if (fieldName.includes('extra')) {
+    const openUpsell = () =>
+        spotlight.setUpselling({
+            type: 'early-access',
+            upsellRef: UpsellRef.DEFAULT,
+        });
+
+    return (
+        <CollapsibleSection label={name} expanded={expanded}>
+            <FieldArray
+                name={optionalFields?.extraFieldKey || name}
+                render={(helpers) => {
+                    const extraFieldName = optionalFields?.extraFieldKey || name;
+                    const extraFields: IdentityField[] = helpers.form.values[extraFieldName];
+
+                    return (
+                        <>
+                            <FieldsetCluster>
+                                {fields.map((item) => (
+                                    <Field
+                                        key={item.name}
+                                        component={item.component ?? TextField}
+                                        mask={item.mask}
+                                        type="text"
+                                        {...item}
+                                    />
+                                ))}
+                                {extraFields?.map(({ type }, index) => (
+                                    <Field
+                                        key={`${extraFieldName}[${index}]`}
+                                        component={ExtraFieldComponent}
+                                        type={type ?? 'text'}
+                                        name={`${extraFieldName}[${index}]`}
+                                        onDelete={() => helpers.remove(index)}
+                                        touched={
+                                            (form.touched as IdentityFormikSection<boolean>)?.[extraFieldName]?.[index]
+                                        }
+                                        error={
+                                            (form.errors as IdentityFormikSection<ExtraFieldProps['error']>)?.[
+                                                extraFieldName
+                                            ]?.[index]
+                                        }
+                                        autoFocus
+                                    />
+                                ))}
+                            </FieldsetCluster>
+                            {optionalFields && Boolean(optionalFields?.fields.length) && (
+                                <DropdownMenuBase
+                                    className="mb-2"
+                                    dropdownOptions={optionalFields.fields.map(
+                                        ({ name: fieldName, placeholder, type }) => ({
+                                            value: fieldName,
+                                            label: placeholder,
+                                            onClick: () => {
+                                                if (isFreePlan) return openUpsell();
+                                                if (!fieldName.includes('extra')) return onAdd(fieldName);
                                                 helpers.push(getNewField(type ?? 'text'));
-                                            } else {
-                                                onAdd(fieldName);
-                                            }
-                                        },
-                                    })
-                                )}
-                            >
-                                <div className="flex items-center">
-                                    <Icon name="plus" />
-                                    <div className="ml-2 text-semibold">{c('Action').t`Add more`}</div>
-                                </div>
-                            </DropdownMenuBase>
-                        )}
-                    </>
-                );
-            }}
-        />
-    </CollapsibleSection>
-);
+                                            },
+                                        })
+                                    )}
+                                >
+                                    <div className="flex items-center">
+                                        <Icon name="plus" />
+                                        <div className="ml-2 text-semibold">{c('Action').t`Add more`}</div>
+                                    </div>
+                                </DropdownMenuBase>
+                            )}
+                        </>
+                    );
+                }}
+            />
+        </CollapsibleSection>
+    );
+};
