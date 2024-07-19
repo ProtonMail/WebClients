@@ -432,6 +432,7 @@ const SingleSignupContainerV2 = ({
         if (toApp === APPS.PROTONWALLET) {
             return getWalletConfiguration({
                 audience,
+                plan,
                 signedIn: Boolean(model.session),
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
