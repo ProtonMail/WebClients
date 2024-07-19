@@ -275,12 +275,12 @@ export const TransactionList = ({ apiWalletData, apiAccount, onClickReceive, onC
                         {c('Wallet transaction').t`Add bitcoins to your wallet`}
                     </p>
                 </div>
-                <div className="flex flex-row justify-center mt-6 ui-standard gap-2">
+                <div className="flex flex-row justify-center mt-6 ui-standard bg-transparent gap-2">
                     <Button
                         onClick={() => onClickReceive()}
                         shape="ghost"
                         color="norm"
-                        className="text-lg min-w-custom button-lighter"
+                        className="text-lg min-w-custom button-lighter border border-weak"
                         style={{ '--min-w-custom': '7.5rem' }}
                     >
                         {c('Wallet transaction').t`Receive`}
