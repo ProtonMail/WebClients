@@ -32,12 +32,16 @@ const startPollingExchangeRate = (startListening: AppStartListening) => {
                         for (const key of Object.keys(value)) {
                             const { fiat, timestamp } = parseKey(key);
 
-                            await listenerApi.dispatch(
-                                exchangeRateThunk({
-                                    cache: CacheType.None,
-                                    thunkArg: [fiat, timestamp ? new Date(timestamp) : undefined],
-                                })
-                            );
+                            // Temporary fix to avoid spamming the API
+                            // This might create a small discrepency on the 24h change metric, but this will eventually be fixed with the introduction of the bitcoin price graph route
+                            if (!timestamp) {
+                                await listenerApi.dispatch(
+                                    exchangeRateThunk({
+                                        cache: CacheType.None,
+                                        thunkArg: [fiat, timestamp ? new Date(timestamp) : undefined],
+                                    })
+                                );
+                            }
                         }
                     }
                 }
