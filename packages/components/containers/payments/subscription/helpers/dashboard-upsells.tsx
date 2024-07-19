@@ -32,6 +32,7 @@ import {
     hasVPNPassBundle,
     hasVpnBusiness,
     hasVpnPro,
+    hasWallet,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -511,6 +512,7 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
         hasMail(subscription) ||
         hasDrive(subscription) ||
         hasPass(subscription) ||
+        hasWallet(subscription) ||
         hasVPN(subscription) ||
         hasVPNPassBundle(subscription) ||
         hasVPN2024(subscription)

@@ -7,6 +7,7 @@ import {
     MAIL_SHORT_APP_NAME,
     PLANS,
     VPN_SHORT_APP_NAME,
+    WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { Included } from '@proton/shared/lib/helpers/checkout';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
@@ -22,6 +23,13 @@ import {
     getLoginsAndNotesText,
     getUnlimitedHideMyEmailAliasesText,
 } from '../../../features/pass';
+import {
+    WALLET_PLUS_WALLETS,
+    getBitcoinViaEmailText,
+    getWalletAccountsText,
+    getWalletEmailAddressesText,
+    getWalletsText,
+} from '../../../features/wallet';
 
 export const getWhatsIncluded = ({
     planIDs,
@@ -75,10 +83,14 @@ export const getWhatsIncluded = ({
                 type: 'text',
                 text: getPremiumPasswordManagerText(),
             },
+            {
+                type: 'text',
+                text: getPremium(WALLET_SHORT_APP_NAME),
+            },
         ];
     }
 
-    const vpn = planIDs[PLANS.VPN];
+    const vpn = planIDs[PLANS.VPN] || planIDs[PLANS.VPN2024];
     if (vpn !== undefined && vpn > 0) {
         return [
             {
@@ -117,6 +129,28 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: get2FAAuthenticatorText(),
+            },
+        ];
+    }
+
+    const walletPremium = planIDs[PLANS.WALLET];
+    if (walletPremium !== undefined && walletPremium > 0) {
+        return [
+            {
+                type: 'text',
+                text: getWalletsText(WALLET_PLUS_WALLETS),
+            },
+            {
+                type: 'text',
+                text: getWalletAccountsText(WALLET_PLUS_WALLETS),
+            },
+            {
+                type: 'text',
+                text: getWalletEmailAddressesText(WALLET_PLUS_WALLETS),
+            },
+            {
+                type: 'text',
+                text: getBitcoinViaEmailText(),
             },
         ];
     }
@@ -168,6 +202,10 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: getPremiumPasswordManagerText(),
+            },
+            {
+                type: 'text',
+                text: getPremium(WALLET_SHORT_APP_NAME),
             },
         ];
     }
