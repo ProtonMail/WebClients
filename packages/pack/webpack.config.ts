@@ -6,7 +6,6 @@ import { parseResource } from 'webpack/lib/util/identifier';
 
 import { getEntries } from './webpack/entries';
 
-const { getJsLoaders } = require('./webpack/js.loader');
 const getCssLoaders = require('./webpack/css.loader');
 const getAssetsLoaders = require('./webpack/assets.loader');
 const getPlugins = require('./webpack/plugins');
@@ -20,6 +19,8 @@ const getConfig = (env: any): Configuration => {
     // a long-term storage
     const assetsFolder = 'assets/static';
 
+    const { getJsLoaders } = require(env.webpackOnCaffeine ? './webpack/js.loader.swc' : './webpack/js.loader');
+
     const defaultBrowsersList = isProduction
         ? `> 0.5%, not IE 11, Firefox ESR, Safari 14, iOS 14, Chrome 80`
         : 'last 1 chrome version, last 1 firefox version, last 1 safari version';
@@ -30,6 +31,7 @@ const getConfig = (env: any): Configuration => {
         publicPath: env.publicPath || '/',
         api: env.api,
         appMode: env.appMode || 'standalone',
+        webpackOnCaffeine: env.webpackOnCaffeine,
         featureFlags: env.featureFlags || '',
         writeSRI: env.writeSri !== 'false',
         browserslist: env.browserslist ?? defaultBrowsersList,
