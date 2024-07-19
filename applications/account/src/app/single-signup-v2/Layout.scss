@@ -4,10 +4,6 @@
 	--border-radius-4xl: calc(4 * var(--border-radius) * var(--1px));
 }
 
-.bg-transparent.bg-transparent {
-	background-color: transparent;
-}
-
 .rounded-4xl {
 	border-radius: var(--border-radius-4xl);
 }
