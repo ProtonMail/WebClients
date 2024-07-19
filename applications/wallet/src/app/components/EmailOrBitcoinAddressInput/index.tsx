@@ -294,16 +294,41 @@ export const EmailOrBitcoinAddressInput = ({
                         style={rest.style}
                         error={emailError}
                         suffix={
-                            <CoreButton
-                                icon
-                                size="small"
-                                shape="ghost"
-                                onClick={() => {
-                                    setQrCodeModal(true);
-                                }}
-                            >
-                                <Icon className="color-weak" name="qr-code" size={5} />
-                            </CoreButton>
+                            !input ? (
+                                <CoreButton
+                                    icon
+                                    pill
+                                    size="small"
+                                    shape="ghost"
+                                    onClick={() => {
+                                        setQrCodeModal(true);
+                                    }}
+                                >
+                                    <Icon
+                                        className="color-weak"
+                                        name="qr-code"
+                                        size={5}
+                                        alt={c('Bitcoin send').t`Open QR code reader`}
+                                    />
+                                </CoreButton>
+                            ) : (
+                                <CoreButton
+                                    icon
+                                    pill
+                                    size="small"
+                                    shape="ghost"
+                                    onClick={() => {
+                                        handleAddRecipientFromInput(input);
+                                    }}
+                                >
+                                    <Icon
+                                        className="color-weak"
+                                        name="arrow-left-and-down"
+                                        size={5}
+                                        alt={c('Bitcoin send').t`Add recipient`}
+                                    />
+                                </CoreButton>
+                            )
                         }
                     />
                 </div>
