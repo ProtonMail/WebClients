@@ -164,7 +164,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
 
     useEffect(() => {
         const run = async () => {
-            if (selectedCountry && selectedCurrency && debouncedAmount) {
+            if (selectedCurrency && debouncedAmount) {
                 const args: GetQuotesArgs = [debouncedAmount, selectedCurrency];
 
                 const quotes = await getQuotesByProviders(args);
@@ -198,14 +198,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
         };
 
         void withLoadingQuotes(run());
-    }, [
-        createNotification,
-        debouncedAmount,
-        getQuotesByProviders,
-        selectedCountry,
-        selectedCurrency,
-        withLoadingQuotes,
-    ]);
+    }, [createNotification, debouncedAmount, getQuotesByProviders, selectedCurrency, withLoadingQuotes]);
 
     const availableProviders = useMemo(() => {
         return uniqBy(sortedQuotes, (q) => q.provider).map((q) => q.provider);
