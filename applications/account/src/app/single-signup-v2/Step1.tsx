@@ -698,11 +698,15 @@ const Step1 = ({
                             return null;
                         }
 
+                        const willShowStep2 = !hasSelectedFree;
+                        const willHaveSingleStep = step === 1 && !willShowStep2;
+                        const accountStep = willHaveSingleStep ? undefined : step++;
+
                         if (user && !loadingSignout) {
                             return (
                                 <>
                                     <BoxHeader
-                                        step={step++}
+                                        step={accountStep}
                                         title={c('pass_signup_2023: Header')
                                             .t`Continue with your ${BRAND_NAME} account`}
                                     />
@@ -781,9 +785,16 @@ const Step1 = ({
                                             };
                                         }
 
+                                        if (signupParameters.preSelectedPlan === PLANS.FREE) {
+                                            return {
+                                                title: c('pass_signup_2023: Title')
+                                                    .t`Create your ${BRAND_NAME} account`,
+                                            };
+                                        }
+
                                         return {
                                             title: c('pass_signup_2023: Title').t`Create your ${BRAND_NAME} account`,
-                                            step: step++,
+                                            step: accountStep,
                                         };
                                     })()}
                                 />
