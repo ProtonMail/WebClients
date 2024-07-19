@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import useLoading from '@proton/hooks/useLoading';
-import { APP_NAMES, BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { SettingsParagraph, SettingsSection } from '../../account';

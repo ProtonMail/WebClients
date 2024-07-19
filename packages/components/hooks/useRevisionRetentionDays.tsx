@@ -1,4 +1,5 @@
-import { FormEvent, useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +11,7 @@ import type {
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useConfirmActionModal } from '../components/confirmActionModal';
+import type { useConfirmActionModal } from '../components/confirmActionModal';
 import { getRetentionLabel } from '../containers/drive/settings/retentionLabels';
 import useApi from './useApi';
 import useNotifications from './useNotifications';

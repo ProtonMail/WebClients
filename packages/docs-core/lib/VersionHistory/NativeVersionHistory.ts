@@ -1,7 +1,7 @@
 import { BatchDocumentUpdates } from './BatchDocumentUpdates'
 import { mergeUpdates } from 'yjs'
-import { DecryptedCommit } from '../Models/DecryptedCommit'
-import { VersionHistoryBatch } from './VersionHistoryBatch'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import type { VersionHistoryBatch } from './VersionHistoryBatch'
 import { DateFormatter } from './DateFormatter'
 
 export class NativeVersionHistory {

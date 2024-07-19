@@ -3,11 +3,11 @@ import { act, getByTestId as getByTestIdDefault, getByText as getByTextDefault }
 import { format } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
+import type { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
 
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { addApiKeys, clearAll, generateKeys, getDropdown, render } from '../../../helpers/test/helper';

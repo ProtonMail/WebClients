@@ -1,4 +1,5 @@
-import { FormEvent, useMemo, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,17 +9,17 @@ import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib
 import { GIGA, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
-import { Member, Organization } from '@proton/shared/lib/interfaces';
+import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
+import type { ModalStateProps } from '../../components';
 import {
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalStateProps,
     Toggle,
     useFormErrors,
 } from '../../components';

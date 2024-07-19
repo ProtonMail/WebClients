@@ -14,10 +14,10 @@ import {
     toLocalDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces';
+import type { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces';
 
 import { getDurationOptions, getMatchingTimezone } from '../utils';
-import { AutoReplyFormDate, AutoReplyFormModel } from './interfaces';
+import type { AutoReplyFormDate, AutoReplyFormModel } from './interfaces';
 
 const getDefaultFixedTimes = () => ({
     StartTime: getUnixTime(new Date()),

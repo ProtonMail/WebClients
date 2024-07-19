@@ -4,7 +4,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 

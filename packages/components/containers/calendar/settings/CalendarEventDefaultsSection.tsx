@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, Option, SelectTwo, Toggle } from '@proton/components/components';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { SettingsLayoutLeft, SettingsSectionWide, useCalendarModelEventManager } from '@proton/components/containers';
 import {
     getCalendarEventSettingsModel,
@@ -17,7 +17,7 @@ import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proto
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { getIsHolidaysCalendar, getShowDuration } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
-import {
+import type {
     CalendarBootstrap,
     NotificationModel,
     SubscribedCalendar,

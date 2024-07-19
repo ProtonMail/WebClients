@@ -1,4 +1,5 @@
-import { MutableRefObject, useEffect, useRef } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { differenceInMilliseconds, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -10,11 +11,11 @@ import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/a
 import { MINUTE } from '@proton/shared/lib/constants';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { CalendarAlarm, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarAlarm, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
 import notificationIcon from '../../../assets/notification.png';
-import { CalendarsEventsCache } from '../calendar/eventStore/interface';
+import type { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
 const MIN_CUTOFF = -MINUTE;
 

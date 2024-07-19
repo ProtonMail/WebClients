@@ -5,22 +5,18 @@ import truncate from '@proton/utils/truncate';
 
 import { CONTACT_CARD_TYPE, FORBIDDEN_LABEL_NAMES } from '../../constants';
 import { normalize } from '../../helpers/string';
-import {
+import type {
     ContactGroup,
     ContactMetadata,
-    IMPORT_GROUPS_ACTION,
     ImportCategories,
     ImportedContact,
     SimpleEncryptedContact,
 } from '../../interfaces/contacts';
-import {
-    ACCEPTED_EXTENSIONS,
-    EXTENSION,
-    EncryptedContact,
-    ImportContactsModel,
-} from '../../interfaces/contacts/Import';
-import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
-import { SimpleMap } from '../../interfaces/utils';
+import { IMPORT_GROUPS_ACTION } from '../../interfaces/contacts';
+import type { ACCEPTED_EXTENSIONS, EncryptedContact, ImportContactsModel } from '../../interfaces/contacts/Import';
+import { EXTENSION } from '../../interfaces/contacts/Import';
+import type { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
+import type { SimpleMap } from '../../interfaces/utils';
 import { MAX_CONTACT_ID_CHARS_DISPLAY } from '../constants';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '../errors/ImportContactError';
 import { createContactPropertyUid } from '../properties';

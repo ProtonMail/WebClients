@@ -1,8 +1,9 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../constants';
-import { TtagLocaleMap } from '../interfaces/Locale';
-import { Options, getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
+import type { TtagLocaleMap } from '../interfaces/Locale';
+import type { Options } from './dateFnLocale';
+import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
 import dateFnLocales from './dateFnLocales';
 import { getClosestLocaleMatch, getLangAttribute, getLanguageCode } from './helper';
 import { setDateLocales, setLocales } from './index';

@@ -1,13 +1,5 @@
-import {
-    Dispatch,
-    Fragment,
-    MutableRefObject,
-    ReactNode,
-    SetStateAction,
-    useImperativeHandle,
-    useRef,
-    useState,
-} from 'react';
+import type { Dispatch, MutableRefObject, ReactNode, SetStateAction } from 'react';
+import { Fragment, useImperativeHandle, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -15,7 +7,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, IconName, useModalState } from '@proton/components/components';
+import type { IconName } from '@proton/components/components';
+import { Icon, useModalState } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText, useFlag } from '@proton/components/containers';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
@@ -24,12 +17,12 @@ import { getShortBillingText } from '@proton/components/containers/payments/help
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useHandler from '@proton/components/hooks/useHandler';
-import { BillingAddress } from '@proton/components/payments/core';
+import type { BillingAddress } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
     BRAND_NAME,
@@ -49,9 +42,8 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import {
+import type {
     Api,
-    Audience,
     Currency,
     Cycle,
     PlanIDs,
@@ -59,6 +51,7 @@ import {
     User,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -66,9 +59,12 @@ import noop from '@proton/utils/noop';
 import { usePublicTheme } from '../containers/PublicThemeProvider';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
-import AccountStepDetails, { AccountStepDetailsRef } from './AccountStepDetails';
-import AccountStepPayment, { AccountStepPaymentRef } from './AccountStepPayment';
+import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import { SignupType } from '../signup/interfaces';
+import type { AccountStepDetailsRef } from './AccountStepDetails';
+import AccountStepDetails from './AccountStepDetails';
+import type { AccountStepPaymentRef } from './AccountStepPayment';
+import AccountStepPayment from './AccountStepPayment';
 import AccountSwitcherItem from './AccountSwitcherItem';
 import AudienceTabs from './Audience';
 import Box from './Box';
@@ -82,17 +78,16 @@ import { PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import { getFreeSubscriptionData, getFreeTitle } from './helper';
-import {
+import type {
     Measure,
     OnOpenLogin,
     OnOpenSwitch,
     OptimisticOptions,
     SignupConfiguration,
-    SignupMode,
     SignupModelV2,
     SignupParameters2,
-    UpsellTypes,
 } from './interface';
+import { SignupMode, UpsellTypes } from './interface';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
 import { getFreePassFeatures } from './pass/configuration';
 

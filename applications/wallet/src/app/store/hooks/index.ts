@@ -1,8 +1,8 @@
-import { TypedUseSelectorHook } from 'react-redux';
+import type { TypedUseSelectorHook } from 'react-redux';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 
-import { WalletDispatch, WalletState } from '../store';
+import type { WalletDispatch, WalletState } from '../store';
 
 export const useWalletDispatch: () => WalletDispatch = baseUseDispatch;
 export const useWalletSelector: TypedUseSelectorHook<WalletState> = baseUseSelector;

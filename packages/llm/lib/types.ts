@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { CacheId, DownloadResult, LlmFile } from '@proton/llm/lib/downloader';
+import type { CacheId, DownloadResult, LlmFile } from '@proton/llm/lib/downloader';
 
 export type PromiseResolve = (value: PromiseLike<void> | void) => void;
 

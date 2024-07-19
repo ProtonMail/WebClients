@@ -1,5 +1,6 @@
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
-import { ThemeModeSetting, ThemeSetting, electronAppTheme, getDarkThemes } from '../themes/themes';
+import type { ThemeSetting } from '../themes/themes';
+import { ThemeModeSetting, electronAppTheme, getDarkThemes } from '../themes/themes';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from './desktop';
 
 export const updateElectronThemeModeClassnames = (theme: ThemeSetting) => {

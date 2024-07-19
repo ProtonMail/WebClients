@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InvoiceDocument, PaymentsVersion, getInvoice } from '@proton/shared/lib/api/payments';
+import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { InvoiceDocument, getInvoice } from '@proton/shared/lib/api/payments';
 import { INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -30,9 +31,10 @@ import InvoiceAmount from './InvoiceAmount';
 import InvoiceState from './InvoiceState';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoiceType from './InvoiceType';
-import InvoicesPreview, { InvoicesPreviewControls } from './InvoicesPreview';
+import type { InvoicesPreviewControls } from './InvoicesPreview';
+import InvoicesPreview from './InvoicesPreview';
 import { getInvoicePaymentsVersion } from './helpers';
-import { Invoice } from './interface';
+import type { Invoice } from './interface';
 import useInvoices, { ELEMENTS_PER_PAGE } from './useInvoices';
 
 type InvoicesHook = ReturnType<typeof useInvoices>;

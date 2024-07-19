@@ -1,4 +1,4 @@
-import { KeyboardEvent, Ref } from 'react';
+import type { KeyboardEvent, Ref } from 'react';
 
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { MailImportPayloadError } from '@proton/activation/src/interface';

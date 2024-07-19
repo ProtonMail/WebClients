@@ -1,9 +1,10 @@
 import { Result } from '../Domain/Result/Result'
-import { DocumentKeys } from '@proton/drive-store'
-import { EncryptionService } from '../Services/Encryption/EncryptionService'
-import { EncryptionContext } from '../Services/Encryption/EncryptionContext'
-import { DecryptMessage, DecryptMessageDTO } from './DecryptMessage'
-import { DocumentUpdate } from '@proton/docs-proto'
+import type { DocumentKeys } from '@proton/drive-store'
+import type { EncryptionService } from '../Services/Encryption/EncryptionService'
+import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
+import type { DecryptMessageDTO } from './DecryptMessage'
+import { DecryptMessage } from './DecryptMessage'
+import type { DocumentUpdate } from '@proton/docs-proto'
 
 describe('DecryptMessage', () => {
   let decryptMessage: DecryptMessage

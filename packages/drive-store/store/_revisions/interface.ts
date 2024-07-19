@@ -1,4 +1,4 @@
-import { DriveFileBlock, Thumbnail } from '@proton/shared/lib/interfaces/drive/file';
+import type { DriveFileBlock, Thumbnail } from '@proton/shared/lib/interfaces/drive/file';
 
 export interface DriveFileRevision {
     id: string;

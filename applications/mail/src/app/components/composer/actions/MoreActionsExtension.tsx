@@ -1,8 +1,10 @@
-import { MutableRefObject, memo, useCallback } from 'react';
+import type { MutableRefObject } from 'react';
+import { memo, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, EditorMetadata, Icon, useAddresses, useUserSettings } from '@proton/components';
+import type { EditorMetadata } from '@proton/components';
+import { DropdownMenuButton, Icon, useAddresses, useUserSettings } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -15,9 +17,9 @@ import clsx from '@proton/utils/clsx';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
-import { MessageState } from '../../../store/messages/messagesTypes';
-import { MessageChange, MessageChangeFlag } from '../Composer';
-import { ExternalEditorActions } from '../editor/EditorWrapper';
+import type { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageChange, MessageChangeFlag } from '../Composer';
+import type { ExternalEditorActions } from '../editor/EditorWrapper';
 
 const { FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 

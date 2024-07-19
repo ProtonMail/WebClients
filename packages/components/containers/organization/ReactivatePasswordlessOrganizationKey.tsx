@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms';
 import type { Member } from '@proton/shared/lib/interfaces';
 
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '../../components';
+import type { ModalProps } from '../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '../../components';
 import AdministratorList from './AdministratorList';
 
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {

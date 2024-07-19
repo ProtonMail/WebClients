@@ -5,7 +5,14 @@ import { useConflictModal } from '../../../components/modals/ConflictModal';
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferConflict } from '../../../utils/transfer';
 import { TransferConflictStrategy } from '../interface';
-import { ConflictStrategyHandler, FileUpload, FolderUpload, UpdateData, UpdateFilter, UpdateState } from './interface';
+import type {
+    ConflictStrategyHandler,
+    FileUpload,
+    FolderUpload,
+    UpdateData,
+    UpdateFilter,
+    UpdateState,
+} from './interface';
 
 // Empty string is ensured to not conflict with any upload ID or folder name.
 // No upload has empty ID.

@@ -1,9 +1,15 @@
-import { ProductParam } from '@proton/shared/lib/apps/product';
-import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { Address, Api, DecryptedKey, KeyTransparencyActivation, ResetSelfAudit } from '@proton/shared/lib/interfaces';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type {
+    Address,
+    Api,
+    DecryptedKey,
+    KeyTransparencyActivation,
+    ResetSelfAudit,
+} from '@proton/shared/lib/interfaces';
 
-import { AuthSession } from '../login/interface';
+import type { AuthSession } from '../login/interface';
 
 export enum STEPS {
     LOADING,

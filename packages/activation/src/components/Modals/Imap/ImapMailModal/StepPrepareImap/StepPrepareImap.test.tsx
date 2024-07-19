@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import { MailImportState } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.interface';
+import type { MailImportState } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.interface';
 import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 

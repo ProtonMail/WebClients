@@ -6,10 +6,10 @@ import {
     getDecryptedCalendarKeys,
 } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { getAddressesMembersMap } from '@proton/shared/lib/calendar/crypto/keys/helpers';
-import { Address } from '@proton/shared/lib/interfaces';
-import { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
 import { splitKeys } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 

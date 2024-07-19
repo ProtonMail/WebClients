@@ -1,4 +1,5 @@
-import { ClientMessageWithDocumentUpdates, DocumentUpdate } from '../Generated'
+import type { DocumentUpdate } from '../Generated'
+import { ClientMessageWithDocumentUpdates } from '../Generated'
 import { CreateDocumentUpdateArray } from './CreateDocumentUpdateArray'
 
 export function CreateClientMessageWithDocumentUpdates(dto: {

@@ -9,18 +9,18 @@ import {
     toUTCDate,
 } from '../date/timezone';
 import { buildMailTo, getEmailTo } from '../helpers/email';
-import {
+import type {
     DateTime,
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalDateProperty,
     VcalDateTimeProperty,
-    VcalDays,
     VcalDaysKeys,
     VcalOrganizerProperty,
     VcalVeventComponent,
 } from '../interfaces/calendar';
+import { VcalDays } from '../interfaces/calendar';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 
 export const dateToProperty = ({

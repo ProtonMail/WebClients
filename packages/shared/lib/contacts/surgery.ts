@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import isTruthy from '@proton/utils/isTruthy';
 
-import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
+import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import {
     FIELDS_WITH_PREF,
     compareVCardPropertyByPref,

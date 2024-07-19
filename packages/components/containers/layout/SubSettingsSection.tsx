@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef, ReactNode, useEffect, useRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';

@@ -1,5 +1,5 @@
 import { queryCreatePhotosShare } from '@proton/shared/lib/api/drive/share';
-import { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
+import type { CreatedDriveVolumeResult } from '@proton/shared/lib/interfaces/drive/volume';
 import { generateDriveBootstrap, generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
 import { useDebouncedRequest } from '../_api';

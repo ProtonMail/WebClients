@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
-import { ConfirmationModal, PlanConfig, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
+import type { ConfirmationModal, PlanConfig, PlanConfigFeatures, PlanConfigTestimonial } from '../interface';
 import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial } from './b2cCommonConfig';
 
 export const getDrivePlusConfig = (

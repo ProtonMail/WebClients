@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { ThemeColorUnion } from '@proton/colors';
+import type { ThemeColorUnion } from '@proton/colors';
+import type { IconName } from '@proton/components';
 import {
     FloatingButton,
     Icon,
-    IconName,
     Row,
     Spotlight,
     useActiveBreakpoint,

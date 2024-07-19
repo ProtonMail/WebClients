@@ -4,7 +4,7 @@ import { SettingsParagraph } from '../../account';
 import DayOfMonthField from './fields/DayOfMonthField';
 import TimeField from './fields/TimeField';
 import TimeZoneField from './fields/TimeZoneField';
-import { AutoReplyFormModel } from './interfaces';
+import type { AutoReplyFormModel } from './interfaces';
 
 interface Props {
     model: AutoReplyFormModel;

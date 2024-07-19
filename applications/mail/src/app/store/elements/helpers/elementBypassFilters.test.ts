@@ -1,6 +1,6 @@
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 import { getElementsToBypassFilter } from './elementBypassFilters';
 
 describe('getElementsToBypassFilter', () => {

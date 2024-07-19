@@ -4,7 +4,7 @@ import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/const
 
 import { FeatureCode } from '../../../../containers/features';
 import { getMailPlus2024InboxFeatures } from '../../helpers/offerCopies';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 import sideImage from './mail-trial-400x1200.jpg';
 import sideImage2x from './mail-trial-800x2400.jpg';

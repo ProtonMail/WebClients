@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { VPNServer } from '@proton/shared/lib/interfaces/VPNServer';
+import type { VPNServer } from '@proton/shared/lib/interfaces/VPNServer';
 
 interface Props {
     group: VPNServer[];

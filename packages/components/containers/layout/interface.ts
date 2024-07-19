@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { ThemeColor } from '@proton/colors';
+import type { ThemeColor } from '@proton/colors';
 
-import { IconName } from '../../components';
+import type { IconName } from '../../components';
 
 export interface SubSectionConfig {
     text?: string;

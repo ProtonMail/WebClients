@@ -6,7 +6,8 @@ import { c } from 'ttag';
 import { getFormattedMonths, getFormattedWeekdays, getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import MiniCalendar, { Props as MiniCalProps } from './MiniCalendar';
+import type { Props as MiniCalProps } from './MiniCalendar';
+import MiniCalendar from './MiniCalendar';
 
 export type Props = MiniCalProps;
 

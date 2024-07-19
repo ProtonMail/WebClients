@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { OfferProps } from '../../../interface';
+import type { OfferProps } from '../../../interface';
 import Deal from './Deal';
 import DealCTA from './DealCTA';
 import DealFeatures from './DealFeatures';

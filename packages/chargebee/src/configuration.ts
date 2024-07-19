@@ -1,4 +1,4 @@
-import { CbIframeConfig } from '../lib/types';
+import type { CbIframeConfig } from '../lib/types';
 
 let configuration: CbIframeConfig | null = null;
 

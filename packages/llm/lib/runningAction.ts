@@ -1,4 +1,4 @@
-import { GenerationConfig, WebWorkerEngine } from '@mlc-ai/web-llm';
+import type { GenerationConfig, WebWorkerEngine } from '@mlc-ai/web-llm';
 
 import { getTransformForAction } from '@proton/llm/lib/actions';
 import type { Action, GenerationCallback, PromiseReject, PromiseResolve, RunningAction } from '@proton/llm/lib/types';

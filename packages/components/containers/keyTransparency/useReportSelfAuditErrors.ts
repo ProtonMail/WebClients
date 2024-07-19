@@ -1,15 +1,14 @@
 import { useCallback } from 'react';
 
-import { AddressAuditStatus, SelfAuditResult, ktSentryReport } from '@proton/key-transparency/lib';
+import type { SelfAuditResult } from '@proton/key-transparency/lib';
+import { AddressAuditStatus, ktSentryReport } from '@proton/key-transparency/lib';
 import metrics from '@proton/metrics';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    TelemetryKeyTransparencyErrorEvents,
-    TelemetryMeasurementGroups,
-    TelemetryReport,
-} from '@proton/shared/lib/api/telemetry';
+import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
+import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics';
-import { KeyTransparencyActivation, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getWarningReason } from '@proton/shared/lib/keyTransparency/telemetry';
 
 import { useApi } from '../../hooks';

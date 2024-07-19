@@ -2,13 +2,13 @@ import { format, isSameWeek, isToday } from 'date-fns';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmTransactionDetails, WasmTxOut } from '@proton/andromeda';
+import type { WasmTransactionDetails, WasmTxOut } from '@proton/andromeda';
 import { SECOND } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Address } from '@proton/shared/lib/interfaces';
-import { WalletMap } from '@proton/wallet';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { WalletMap } from '@proton/wallet';
 
-import { TransactionData } from '../hooks/useWalletTransactions';
+import type { TransactionData } from '../hooks/useWalletTransactions';
 import { isSelfAddress } from './email';
 import { formatReadableNameAndEmail, multilineStrToOnelineJsx } from './string';
 

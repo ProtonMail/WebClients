@@ -1,7 +1,7 @@
 import { getUnixTime } from 'date-fns';
 
 import { APPS, COUPON_CODES } from '@proton/shared/lib/constants';
-import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import isEligible from './eligibility';
 

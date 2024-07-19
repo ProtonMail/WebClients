@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode } from 'react';
+import type { FormEvent, ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';

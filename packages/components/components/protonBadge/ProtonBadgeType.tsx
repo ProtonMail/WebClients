@@ -1,6 +1,6 @@
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature } from '@proton/components/hooks';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import VerifiedBadge from './badgeTypes/VerifiedBadge';
 

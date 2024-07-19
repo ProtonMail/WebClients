@@ -1,14 +1,15 @@
-import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import type { ModalProps } from '@proton/components';
 import {
     Alert,
     InputFieldTwo,
     Label,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

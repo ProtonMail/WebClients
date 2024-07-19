@@ -1,15 +1,17 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { SettingsLink } from '@proton/components/components';
-import { APPS, APP_NAMES, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Subscription, UserLockedFlags, UserModel } from '@proton/shared/lib/interfaces';
+import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { UserLockedFlags } from '@proton/shared/lib/interfaces';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
 
 import TopBanner from './TopBanner';

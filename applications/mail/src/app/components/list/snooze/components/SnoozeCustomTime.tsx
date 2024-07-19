@@ -1,4 +1,5 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import type { MouseEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { addDays, endOfToday, fromUnixTime, isToday, set } from 'date-fns';
 import { c } from 'ttag';
@@ -10,10 +11,10 @@ import { useUserSettings } from '@proton/components/hooks';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { getSnoozeTimeFromSnoozeLabel } from 'proton-mail/helpers/snooze';
-import { Element } from 'proton-mail/models/element';
+import type { Element } from 'proton-mail/models/element';
 
 import { getMinScheduleTime } from '../../../../helpers/schedule';
-import { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
+import type { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useFutureTimeDate from '../../../../hooks/message/useFutureTimeDate';
 import SnoozeHeader from './SnoozeHeader';
 

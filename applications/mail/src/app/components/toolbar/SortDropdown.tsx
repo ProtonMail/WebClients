@@ -5,7 +5,7 @@ import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { Sort } from '../../models/tools';
+import type { Sort } from '../../models/tools';
 
 const TIME = 'Time';
 const SIZE = 'Size';

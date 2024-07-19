@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Radio } from '../../components';
-import { Condition, ConditionComparator } from '../filters/interfaces';
+import type { Condition } from '../filters/interfaces';
+import { ConditionComparator } from '../filters/interfaces';
 
 interface Props {
     index: number;

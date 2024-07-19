@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { DecryptedLink } from '../../../../store';
+import type { DecryptedLink } from '../../../../store';
 import { useMoveToFolderModal } from '../../../modals/MoveToFolderModal/MoveToFolderModal';
 
 interface Props {

@@ -3,11 +3,11 @@ import { c, msgid } from 'ttag';
 import { FeatureCode, FileNameDisplay, useFeature } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

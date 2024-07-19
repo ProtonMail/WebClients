@@ -14,18 +14,17 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { Address, UserSettings } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
-import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
-import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import type { Address, UserSettings } from '@proton/shared/lib/interfaces';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
+import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
+import type { EventInvitation, InvitationModel } from '../../../../helpers/calendar/invite';
 import {
-    EventInvitation,
-    InvitationModel,
     UPDATE_ACTION,
     getEventTimeStatus,
     getHasFullCalendarData,
@@ -40,7 +39,7 @@ import {
     sendInviteErrorTelemetryReport,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
-import { MessageStateWithData } from '../../../../store/messages/messagesTypes';
+import type { MessageStateWithData } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';

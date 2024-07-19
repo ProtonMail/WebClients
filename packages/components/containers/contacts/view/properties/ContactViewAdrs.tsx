@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { cleanAddressFromCommas } from '@proton/shared/lib/contacts/helpers/address';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import { VCardAddress, VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardAddress, VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Copy } from '../../../../components';

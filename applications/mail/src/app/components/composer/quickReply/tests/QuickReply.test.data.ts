@@ -1,10 +1,10 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { formatFullDate } from '../../../../helpers/date';
 import { createDocument } from '../../../../helpers/test/message';
-import { MessageDecryption } from '../../../../store/messages/messagesTypes';
+import type { MessageDecryption } from '../../../../store/messages/messagesTypes';
 import { addressID, messageID, subject } from '../../../message/tests/Message.test.helpers';
 
 export const fromFields = {

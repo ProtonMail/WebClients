@@ -1,6 +1,6 @@
-import { Message } from '../../interfaces/mail/Message';
-import { SendPreferences } from '../../interfaces/mail/crypto';
-import { EncryptionPreferences } from '../encryptionPreferences';
+import type { Message } from '../../interfaces/mail/Message';
+import type { SendPreferences } from '../../interfaces/mail/crypto';
+import type { EncryptionPreferences } from '../encryptionPreferences';
 import { isEO, isSign } from '../messages';
 import { getPGPSchemeAndMimeType } from './sendPreferences';
 

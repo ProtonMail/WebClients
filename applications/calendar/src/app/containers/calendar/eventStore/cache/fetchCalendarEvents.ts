@@ -1,10 +1,10 @@
 import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
-import { Api } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent, CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
 
-import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
+import type { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { getPaginatedCalendarEvents, getPaginatedCalendarEventsWithoutBlob } from '../getPaginatedEvents';
-import { CalendarEventsCache } from '../interface';
+import type { CalendarEventsCache } from '../interface';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 import upsertCalendarApiEventWithoutBlob from './upsertCalendarApiEventWithoutBlobs';
 

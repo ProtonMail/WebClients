@@ -2,13 +2,13 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { PublicKeyReference } from '@proton/crypto';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { PublicKeyReference } from '@proton/crypto';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { RecipientOrGroup } from '../../../models/address';
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { RecipientOrGroup } from '../../../models/address';
+import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
 import MailRecipientItemSingle from './MailRecipientItemSingle';
 import RecipientItemGroup from './RecipientItemGroup';

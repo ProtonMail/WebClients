@@ -1,5 +1,5 @@
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { ContactViewProperties } from './ContactViewProperties';
 import ContactViewProperty from './ContactViewProperty';

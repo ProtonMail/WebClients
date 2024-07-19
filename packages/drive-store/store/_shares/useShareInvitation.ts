@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { useGetAddressKeys, useGetAddresses } from '@proton/components';
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import {
     queryAcceptShareInvite,
     queryDeleteExternalInvitation,
@@ -18,14 +19,11 @@ import {
     queryUpdateExternalInvitationPermissions,
     queryUpdateInvitationPermissions,
 } from '@proton/shared/lib/api/drive/invitation';
-import {
-    DRIVE_SIGNATURE_CONTEXT,
-    SHARE_EXTERNAL_INVITATION_STATE,
-    SHARE_MEMBER_PERMISSIONS,
-} from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { DRIVE_SIGNATURE_CONTEXT, SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import {
+import type {
     ShareExternalInvitationPayload,
     ShareInvitationDetailsPayload,
     ShareInvitationListingPayload,
@@ -43,7 +41,7 @@ import {
 import { useDriveCrypto } from '../_crypto';
 import { getOwnAddressKeysWithEmailAsync } from '../_crypto/driveCrypto';
 import { useLink } from '../_links';
-import { ShareInvitationDetails, ShareInvitationEmailDetails } from './interface';
+import type { ShareInvitationDetails, ShareInvitationEmailDetails } from './interface';
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';

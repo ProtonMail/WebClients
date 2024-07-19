@@ -8,12 +8,13 @@ import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { PendingUpload } from '../../hooks/composer/useAttachments';
-import { AttachmentAction, AttachmentHandler } from './AttachmentList';
+import type { PendingUpload } from '../../hooks/composer/useAttachments';
+import type { AttachmentHandler } from './AttachmentList';
+import { AttachmentAction } from './AttachmentList';
 
 const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
     switch (action) {

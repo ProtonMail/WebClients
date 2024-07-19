@@ -3,7 +3,7 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../AllNodes'
 import { sendErrorMessage } from '../Utils/errorMessage'
 import { createBinding, syncYjsChangesToLexical } from '@lexical/yjs'
-import { SerializedEditorState } from 'lexical'
+import type { SerializedEditorState } from 'lexical'
 
 export function generateEditorStatefromYDoc(doc: Y.Doc): SerializedEditorState {
   const editor = createHeadlessEditor({

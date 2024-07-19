@@ -5,7 +5,7 @@ import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings'
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
 import GridView from './GridView/GridView';
 import { ListView } from './ListView/ListView';
-import { BrowserItemId, DragMoveControls, FileBrowserBaseItem, SortParams } from './interface';
+import type { BrowserItemId, DragMoveControls, FileBrowserBaseItem, SortParams } from './interface';
 
 export interface FileBrowserProps<T extends FileBrowserBaseItem, T1> {
     caption?: string;

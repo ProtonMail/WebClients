@@ -1,10 +1,11 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { getApiError } from '../../api/helpers/apiErrorHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
-import {
+import type {
     ActiveKey,
     Address,
     Api,
@@ -13,7 +14,7 @@ import {
     Address as tsAddress,
     User as tsUser,
 } from '../../interfaces';
-import { SimpleMap } from '../../interfaces/utils';
+import type { SimpleMap } from '../../interfaces/utils';
 import { generateAddressKeyTokens } from '../addressKeys';
 import {
     getActiveKeyObject,
@@ -26,7 +27,7 @@ import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKey } from '../keyMigration';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
-import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
+import type { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { getAddressReactivationPayload, getReactivatedAddressesKeys, resetUserId } from './reactivateKeyHelper';
 
 interface ReactivateUserKeysArguments {

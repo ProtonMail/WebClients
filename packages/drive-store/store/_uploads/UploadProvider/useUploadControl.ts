@@ -2,11 +2,12 @@ import { useCallback, useRef } from 'react';
 
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
-import { TransferProgresses, TransferState } from '../../../components/TransferManager/transfer';
+import type { TransferProgresses } from '../../../components/TransferManager/transfer';
+import { TransferState } from '../../../components/TransferManager/transfer';
 import { isTransferActive, isTransferFinalizing, isTransferPending, isTransferProgress } from '../../../utils/transfer';
 import { MAX_BLOCKS_PER_UPLOAD } from '../constants';
-import { UploadFileControls, UploadFolderControls } from '../interface';
-import { FileUpload, UpdateCallback, UpdateFilter, UpdateState } from './interface';
+import type { UploadFileControls, UploadFolderControls } from '../interface';
+import type { FileUpload, UpdateCallback, UpdateFilter, UpdateState } from './interface';
 
 export default function useUploadControl(
     fileUploads: FileUpload[],

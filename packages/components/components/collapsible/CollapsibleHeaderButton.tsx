@@ -2,7 +2,8 @@ import { useContext } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonProps } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 
 import { Tooltip } from '../tooltip';
 import CollapsibleContext from './CollapsibleContext';

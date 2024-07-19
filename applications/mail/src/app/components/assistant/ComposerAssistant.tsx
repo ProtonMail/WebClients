@@ -1,4 +1,5 @@
-import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
+import type { RefObject } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,10 +11,11 @@ import useAssistantTelemetry from '@proton/components/containers/llm/useAssistan
 import { useSpotlightOnFeature } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import { getHasAssistantStatus } from '@proton/llm/lib';
-import { OpenedAssistantStatus, PartialRefineAction, RefineAction } from '@proton/llm/lib/types';
+import type { PartialRefineAction, RefineAction } from '@proton/llm/lib/types';
+import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -21,7 +23,7 @@ import ComposerAssistantInput from 'proton-mail/components/assistant/ComposerAss
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useComposerAssistantScrollButton from 'proton-mail/hooks/assistant/useComposerAssistantScrollButton';
 import useComposerAssistantSelectedText from 'proton-mail/hooks/assistant/useComposerAssistantSelectedText';
-import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
+import type { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
 
 import useComposerAssistantPosition from '../../hooks/assistant/useComposerAssistantPosition';
 import AssistantFeedbackModal from './modals/AssistantFeedbackModal';

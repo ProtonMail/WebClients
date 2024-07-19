@@ -1,6 +1,6 @@
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 describe('shareProton', () => {
     describe('getSharedCalendarSubHeaderText', () => {

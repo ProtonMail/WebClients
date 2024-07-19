@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { Location } from 'history';
+import type { Location } from 'history';
 
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { SSO_PATHS } from '@proton/shared/lib/constants';

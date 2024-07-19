@@ -1,10 +1,11 @@
-import { Ref, memo } from 'react';
+import type { Ref } from 'react';
+import { memo } from 'react';
 
 import type { Breakpoints } from '@proton/components/hooks';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { Props as ListSettingsProps } from '../list/ListSettings';
+import type { Props as ListSettingsProps } from '../list/ListSettings';
 import SelectAll from './SelectAll';
 import ToolbarColumnWide from './ToolbarColumnWide';
 import ToolbarHeaderMessageNarrow from './ToolbarHeaderMessageNarrow';

@@ -1,6 +1,6 @@
-import { LabelCount } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces';
 
-import { Filter } from '../../../models/tools';
+import type { Filter } from '../../../models/tools';
 
 export const getTotal = (counts: LabelCount[], labelID: string, filter: Filter, bypassFilterCount: number) => {
     const count = counts.find((count) => count.LabelID === labelID);

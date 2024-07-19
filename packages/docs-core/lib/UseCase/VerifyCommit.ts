@@ -1,8 +1,8 @@
-import { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result } from '../Domain/Result/Result'
-import { DecryptedCommit } from '../Models/DecryptedCommit'
-import { VerifyMessages } from './VerifyMessages'
-import { VerificationUsecaseResult } from './VerifyUpdatesResult'
+import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
+import type { Result } from '../Domain/Result/Result'
+import type { DecryptedCommit } from '../Models/DecryptedCommit'
+import type { VerifyMessages } from './VerifyMessages'
+import type { VerificationUsecaseResult } from './VerifyUpdatesResult'
 
 export class VerifyCommit implements UseCaseInterface<VerificationUsecaseResult> {
   constructor(private verifyMessages: VerifyMessages) {}

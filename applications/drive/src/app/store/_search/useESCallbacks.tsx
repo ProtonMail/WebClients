@@ -1,26 +1,18 @@
 import { useHistory } from 'react-router-dom';
 
-import { PrivateKeyReference } from '@proton/crypto';
-import {
-    CachedItem,
-    ESCallbacks,
-    ESEvent,
-    ESTimepoint,
-    EventsObject,
-    normalizeKeyword,
-    readAllLastEvents,
-    testKeywords,
-} from '@proton/encrypted-search';
+import type { PrivateKeyReference } from '@proton/crypto';
+import type { CachedItem, ESCallbacks, ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search';
+import { normalizeKeyword, readAllLastEvents, testKeywords } from '@proton/encrypted-search';
 import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Api, User } from '@proton/shared/lib/interfaces';
-import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
+import type { Api, User } from '@proton/shared/lib/interfaces';
+import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { driveEventsResultToDriveEvents } from '../_api';
 import { createLinkGenerator } from './indexing/createLinkGenerator';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
-import { FetchShareMap } from './indexing/useFetchShareMap';
-import { ESDriveSearchParams, ESLink } from './types';
+import type { FetchShareMap } from './indexing/useFetchShareMap';
+import type { ESDriveSearchParams, ESLink } from './types';
 import { extractSearchParameters } from './utils';
 
 interface Props {

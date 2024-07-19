@@ -1,4 +1,4 @@
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import {
     clearValue,
     findRecipientsWithSpaceSeparator,

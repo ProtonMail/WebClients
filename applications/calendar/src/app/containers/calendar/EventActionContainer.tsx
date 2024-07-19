@@ -1,21 +1,23 @@
-import { Dispatch, SetStateAction, useEffect } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { LoaderPage, useNotifications } from '@proton/components';
-import { ACTION_VIEWS, VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { ACTION_VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import { Address } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { Address } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { generateEventUniqueId } from '../../helpers/event';
 import { useOpenEvent } from '../../hooks/useOpenEvent';
 import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
 import { VIEW_URL_PARAMS_VIEWS_CONVERSION } from './getUrlHelper';
-import { EventTargetAction } from './interface';
+import type { EventTargetAction } from './interface';
 
 const { VIEW } = ACTION_VIEWS;
 

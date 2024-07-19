@@ -1,19 +1,15 @@
 import { addClassNamesToElement, removeClassNamesFromElement } from '@lexical/utils'
-import {
-  $applyNodeReplacement,
+import type {
   EditorConfig,
   LexicalNode,
   NodeKey,
   Spread,
-  ElementNode,
-  $isElementNode,
   TextNode,
-  $isTextNode,
   SerializedElementNode,
   RangeSelection,
-  $isRangeSelection,
   BaseSelection,
 } from 'lexical'
+import { $applyNodeReplacement, ElementNode, $isElementNode, $isTextNode, $isRangeSelection } from 'lexical'
 
 export type SerializedCommentThreadMarkNode = Spread<
   {

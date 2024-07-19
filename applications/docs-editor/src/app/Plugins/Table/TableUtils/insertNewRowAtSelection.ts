@@ -1,5 +1,6 @@
-import { $insertTableRow__EXPERIMENTAL, TableRowNode } from '@lexical/table'
-import { LexicalEditor } from 'lexical'
+import type { TableRowNode } from '@lexical/table'
+import { $insertTableRow__EXPERIMENTAL } from '@lexical/table'
+import type { LexicalEditor } from 'lexical'
 
 export function insertNewRowAtSelection(editor: LexicalEditor, rowNode: TableRowNode, insertAfter: boolean) {
   editor.update(

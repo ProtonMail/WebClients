@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import clsx from '@proton/utils/clsx';
 
-import { RecipientOrGroup } from '../../../models/address';
-import { MapStatusIcons } from '../../../models/crypto';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { RecipientOrGroup } from '../../../models/address';
+import type { MapStatusIcons } from '../../../models/crypto';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import RecipientSimple from './RecipientSimple';
 import RecipientsDetails from './RecipientsDetails';
 

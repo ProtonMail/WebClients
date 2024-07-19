@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { PushNotification } from 'push.js';
+import type { PushNotification } from 'push.js';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';

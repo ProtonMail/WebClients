@@ -1,6 +1,6 @@
-import { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
-import { InviteExternalUserPayload, InviteProtonUserPayload } from '../../interfaces/drive/invitation';
+import type { InviteExternalUserPayload, InviteProtonUserPayload } from '../../interfaces/drive/invitation';
 
 export const queryInviteProtonUser = (shareID: string, { Invitation, EmailDetails }: InviteProtonUserPayload) => ({
     method: 'post',

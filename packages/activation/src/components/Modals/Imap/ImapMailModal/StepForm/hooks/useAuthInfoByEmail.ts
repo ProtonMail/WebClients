@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { getAuthenticationMethod } from '@proton/activation/src/api';
-import { ApiImporterAuthInfoResponse } from '@proton/activation/src/api/api.interface';
+import type { ApiImporterAuthInfoResponse } from '@proton/activation/src/api/api.interface';
 import { useDebounceInput } from '@proton/components/components';
 import { useApi } from '@proton/components/hooks';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';

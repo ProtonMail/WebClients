@@ -1,13 +1,14 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useInactiveKeys } from '@proton/account';
 import { Button } from '@proton/atoms';
-import { AlgorithmInfo } from '@proton/crypto';
-import { KeyGenConfig } from '@proton/shared/lib/interfaces';
+import type { AlgorithmInfo } from '@proton/crypto';
+import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
+import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
 import {
-    OnKeyImportCallback,
     addAddressKeysProcess,
     deleteAddressKey,
     importKeysProcess,
@@ -38,7 +39,7 @@ import DeleteKeyModal from './deleteKey/DeleteKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
-import { ImportKey } from './importKeys/interface';
+import type { ImportKey } from './importKeys/interface';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import { getNewKeyFlags } from './shared/flags';
 import { getKeyByID } from './shared/helper';

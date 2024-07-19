@@ -1,6 +1,6 @@
 import { ValueObject } from '@standardnotes/domain-core'
 import { EventTypeEnum } from './EventTypeEnum'
-import { EventTypeProps } from './EventTypeProps'
+import type { EventTypeProps } from './EventTypeProps'
 
 export class EventType extends ValueObject<EventTypeProps> {
   static TYPES = EventTypeEnum

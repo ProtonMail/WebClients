@@ -1,4 +1,4 @@
-import { Logical } from '../Logical';
+import type { Logical } from '../Logical';
 import { normalizeName } from './normalizeName';
 
 describe('normalizeName', () => {

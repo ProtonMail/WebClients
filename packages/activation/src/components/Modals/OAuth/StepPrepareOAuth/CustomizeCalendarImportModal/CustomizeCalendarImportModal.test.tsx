@@ -1,17 +1,17 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
+import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { selectOauthImportStateImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
 import { prepareState } from '@proton/activation/src/tests/data/prepareState';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
-import { ModalStateProps } from '@proton/components/index';
+import type { ModalStateProps } from '@proton/components/index';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import { CalendarMember, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarMember, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CustomizeCalendarImportModal from './CustomizeCalendarImportModal';
-import { DerivedCalendarType } from './useCustomizeCalendarImportModal';
+import type { DerivedCalendarType } from './useCustomizeCalendarImportModal';
 
 const modalProps: ModalStateProps = {
     open: true,

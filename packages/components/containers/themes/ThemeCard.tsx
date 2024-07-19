@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
-import ThemeSvg, { ThemeSvgColors, ThemeSvgSize } from './ThemeSvg';
+import type { ThemeSvgColors, ThemeSvgSize } from './ThemeSvg';
+import ThemeSvg from './ThemeSvg';
 
 import './ThemeCard.scss';
 

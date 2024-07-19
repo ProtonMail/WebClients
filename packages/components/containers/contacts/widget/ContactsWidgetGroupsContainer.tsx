@@ -5,19 +5,19 @@ import { c, msgid } from 'ttag';
 import { CircleLoader } from '@proton/atoms';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { SearchInput } from '../../../components';
 import { useContactEmails, useContactGroups, useMailSettings, useNotifications, useUser } from '../../../hooks';
 import { useItemsSelection } from '../../items';
-import { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import type { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import ContactsGroupsList from '../lists/ContactsGroupsList';
 import ContactsWidgetGroupsToolbar from './ContactsWidgetGroupsToolbar';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
-import { CustomAction } from './types';
+import type { CustomAction } from './types';
 
 interface Props {
     onClose?: () => void;

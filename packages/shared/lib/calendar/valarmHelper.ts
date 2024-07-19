@@ -1,5 +1,5 @@
 import { buildMailTo } from '../helpers/email';
-import { VcalValarmComponent } from '../interfaces/calendar';
+import type { VcalValarmComponent } from '../interfaces/calendar';
 import { ICAL_ALARM_ACTION } from './constants';
 import { getSupportedAlarmAction } from './icsSurgery/valarm';
 

@@ -7,7 +7,8 @@ import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { Prompt, PromptProps } from '../../../components';
+import type { PromptProps } from '../../../components';
+import { Prompt } from '../../../components';
 import { useNotifications } from '../../../hooks';
 
 enum STEPS {

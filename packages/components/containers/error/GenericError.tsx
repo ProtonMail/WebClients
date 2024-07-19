@@ -1,4 +1,5 @@
-import { ReactNode, useContext, useEffect } from 'react';
+import type { ReactNode } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { FlagContext, useFlag } from '@unleash/proxy-client-react';
 import { differenceInMilliseconds } from 'date-fns';

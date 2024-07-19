@@ -6,9 +6,9 @@ import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     BRAND_NAME,
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
@@ -18,10 +18,11 @@ import {
 import { getHasMemberCapablePlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Audience, Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
-import { Credentials } from '@proton/shared/lib/srp';
+import type { Credentials } from '@proton/shared/lib/srp';
 
 import {
     ButtonGroup,

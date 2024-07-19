@@ -1,4 +1,4 @@
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import { SUPPORTED_VIEWS_IN_DRAWER } from '../containers/calendar/constants';
 import { VIEW_URL_PARAMS_VIEWS_CONVERSION } from '../containers/calendar/getUrlHelper';

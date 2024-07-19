@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FolderIcon, HotkeyTuple, Icon } from '@proton/components';
+import type { HotkeyTuple } from '@proton/components';
+import { FolderIcon, Icon } from '@proton/components';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
-import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
 import SidebarItem from './SidebarItem';
@@ -91,11 +92,7 @@ const SidebarFolder = ({
                     ) : (
                         noChevron
                     )}
-                    <FolderIcon
-                        className="navigation-icon shrink-0"
-                        alt={c('Info').t`Folder`}
-                        folder={folder}
-                    />
+                    <FolderIcon className="navigation-icon shrink-0" alt={c('Info').t`Folder`} folder={folder} />
                     <div className="text-ellipsis">{formatFolderName(level, folder.Name)}</div>
                 </div>
             }

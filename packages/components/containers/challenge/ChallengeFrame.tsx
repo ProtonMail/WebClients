@@ -1,19 +1,11 @@
-import {
-    DetailedHTMLProps,
-    IframeHTMLAttributes,
-    MutableRefObject,
-    ReactNode,
-    useLayoutEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import type { DetailedHTMLProps, IframeHTMLAttributes, MutableRefObject, ReactNode } from 'react';
+import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { ICONS_ID } from '../../components/icon/Icons';
 import { useActiveBreakpoint } from '../../hooks';
 import { THEME_ID } from '../themes/ThemeProvider';
 import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
-import { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
+import type { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
 
 export const ERROR_TIMEOUT_MS = 15000;
 export const CHALLENGE_TIMEOUT_MS = 9000;

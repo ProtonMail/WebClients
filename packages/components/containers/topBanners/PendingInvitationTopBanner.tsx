@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { useModalState, useSettingsLink } from '@proton/components/components';
 import useUid from '@proton/components/hooks/useUid';
-import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useConfig, usePendingUserInvitations } from '../../hooks';
 import PendingInvitationModal from '../payments/subscription/PendingInvitationModal';

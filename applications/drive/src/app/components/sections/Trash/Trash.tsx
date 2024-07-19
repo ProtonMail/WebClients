@@ -5,11 +5,12 @@ import { c } from 'ttag';
 import { useActiveBreakpoint } from '@proton/components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { EncryptedLink, LinkShareUrl, useThumbnailsDownload } from '../../../store';
-import { useTrashView } from '../../../store';
+import type { EncryptedLink, LinkShareUrl } from '../../../store';
+import { useThumbnailsDownload } from '../../../store';
+import type { useTrashView } from '../../../store';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
-import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { DeletedCell, LocationCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';

@@ -1,6 +1,6 @@
-import { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 type ImporterContact = {
     error?: string;

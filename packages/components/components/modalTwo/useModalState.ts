@@ -1,4 +1,5 @@
-import { Key, useCallback, useMemo, useState } from 'react';
+import type { Key } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 

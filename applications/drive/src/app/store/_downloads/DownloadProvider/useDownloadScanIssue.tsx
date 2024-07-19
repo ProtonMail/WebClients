@@ -1,6 +1,6 @@
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
 import { waitUntil } from '../../../utils/async';
-import { Download, UpdateData, UpdateFilter, UpdateState } from './interface';
+import type { Download, UpdateData, UpdateFilter, UpdateState } from './interface';
 
 export default function useDownloadScanIssue(
     updateWithData: (filter: UpdateFilter, newState: UpdateState, data?: UpdateData) => void,

@@ -15,7 +15,7 @@ import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '..
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { deleteConversation } from '../../store/conversations/conversationsActions';
 import { deleteDraft, draftSaved } from '../../store/messages/draft/messagesDraftActions';
-import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';

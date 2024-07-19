@@ -13,7 +13,7 @@ import {
     isStoreInitializedSelector,
     passwordSelector,
 } from '../../store/eo/eoSelectors';
-import { OutsideKey } from '../../store/messages/messagesTypes';
+import type { OutsideKey } from '../../store/messages/messagesTypes';
 
 export const useGetEOMessage = () => {
     const store = useEOMailStore();

@@ -1,8 +1,8 @@
-import { MutableRefObject } from 'react';
+import type { MutableRefObject } from 'react';
 
 import { tabbable } from 'tabbable';
 
-import { HotkeyTuple } from './useHotkeys';
+import type { HotkeyTuple } from './useHotkeys';
 
 interface Context {
     rootRef: MutableRefObject<HTMLDivElement | null>;

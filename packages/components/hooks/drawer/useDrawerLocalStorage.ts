@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useGetUser } from '@proton/components/hooks';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getLocalStorageUserDrawerKey } from '@proton/shared/lib/drawer/helpers';
-import { DrawerApp, DrawerLocalStorageValue, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
+import type { DrawerApp, DrawerLocalStorageValue, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, drawerIsReady: boolean, appInView?: DrawerApp) => {

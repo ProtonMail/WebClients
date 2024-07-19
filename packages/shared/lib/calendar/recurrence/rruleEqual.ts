@@ -4,13 +4,13 @@ import { isSameDay } from '../../date-fns-utc';
 import { toUTCDate } from '../../date/timezone';
 import isDeepEqual from '../../helpers/isDeepEqual';
 import { omit } from '../../helpers/object';
-import {
+import type {
     VcalDateOrDateTimeValue,
-    VcalDays,
     VcalDaysKeys,
     VcalRruleProperty,
     VcalRrulePropertyValue,
 } from '../../interfaces/calendar/VcalModel';
+import { VcalDays } from '../../interfaces/calendar/VcalModel';
 import { FREQUENCY } from '../constants';
 import { dayToNumericDay } from '../vcalConverter';
 import { getRruleValue } from './rrule';

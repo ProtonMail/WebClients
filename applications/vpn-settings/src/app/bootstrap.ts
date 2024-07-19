@@ -1,10 +1,11 @@
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { AccountStore, extendStore } from './store/store';
+import type { AccountStore } from './store/store';
+import { extendStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 
 const getAppContainer = () =>

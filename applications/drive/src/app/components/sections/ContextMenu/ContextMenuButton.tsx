@@ -1,6 +1,8 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
+import React from 'react';
 
-import { DropdownMenuButton, Icon, IconName } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { DropdownMenuButton, Icon } from '@proton/components';
 
 interface Props {
     name: string;

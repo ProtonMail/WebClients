@@ -6,7 +6,7 @@ import { encodeImageUri } from '@proton/shared/lib/helpers/image';
 
 import { get } from '../../../helpers/attachment/attachmentLoader';
 import { createBlob } from '../../../helpers/message/messageEmbeddeds';
-import {
+import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
     LoadFakeRemoteParams,

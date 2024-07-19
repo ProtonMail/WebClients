@@ -1,5 +1,5 @@
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import { getSignedKeyList } from '../../lib/keys';
 import { getActiveKeyObject, getActiveKeys } from '../../lib/keys/getActiveKeys';

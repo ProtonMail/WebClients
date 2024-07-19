@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components';
-import { AuthTypes } from '@proton/components/containers/login/interface';
-import { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
+import type { AuthTypes } from '@proton/components/containers/login/interface';
+import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Fido2Form from './Fido2Form';

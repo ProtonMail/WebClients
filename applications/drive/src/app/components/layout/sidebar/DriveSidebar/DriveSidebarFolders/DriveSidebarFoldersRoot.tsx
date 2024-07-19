@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Loader } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
-import { TreeItem } from '../../../../../store';
+import type { TreeItem } from '../../../../../store';
 import FileRecoveryIcon from '../../../../ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
 import DriveSidebarListItem from '../DriveSidebarListItem';
 import ExpandButton from './DriveExpandButton';

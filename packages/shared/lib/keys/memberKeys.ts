@@ -1,9 +1,10 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 
 import { createMemberKeyRoute, setupMemberKeyRoute } from '../api/memberKeys';
 import { MEMBER_PRIVATE } from '../constants';
-import {
+import type {
     Api,
     CachedOrganizationKey,
     DecryptedKey,

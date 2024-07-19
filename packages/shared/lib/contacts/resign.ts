@@ -1,7 +1,8 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
-import { ContactCard } from '../interfaces/contacts';
+import type { ContactCard } from '../interfaces/contacts';
 
 /**
  * Re-sign contact cards

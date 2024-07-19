@@ -1,4 +1,5 @@
-import { ReactNode, Ref, RefObject, forwardRef } from 'react';
+import type { ReactNode, Ref, RefObject } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 

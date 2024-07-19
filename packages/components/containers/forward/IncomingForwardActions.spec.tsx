@@ -2,7 +2,8 @@ import { fireEvent } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { rejectForwarding } from '@proton/shared/lib/api/forwardings';
-import { Address, ForwardingState, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
+import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { ForwardingState } from '@proton/shared/lib/interfaces';
 import {
     applyHOCs,
     mockUseAddresses,

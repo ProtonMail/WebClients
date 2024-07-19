@@ -1,4 +1,5 @@
-import React, { FC, ReactNode, useCallback, useMemo, useRef, useState } from 'react';
+import type { FC, ReactNode } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';

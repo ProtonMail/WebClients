@@ -1,5 +1,5 @@
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { ShareMembership } from '../interface';
+import type { ShareMembership } from '../interface';
 
 /*
  * This helper is just here to centralize the check of if the memberships array is correct.

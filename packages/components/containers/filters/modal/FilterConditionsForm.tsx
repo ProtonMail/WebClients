@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { Radio, UnderlineButton } from '../../../components';
-import { FilterStatement, SimpleFilterModalModel } from '../interfaces';
+import type { SimpleFilterModalModel } from '../interfaces';
+import { FilterStatement } from '../interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 import useFilterConditions from './useFilterConditions';
 

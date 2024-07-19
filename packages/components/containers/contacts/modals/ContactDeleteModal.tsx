@@ -5,9 +5,10 @@ import { useLoading } from '@proton/hooks';
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 
-import { Alert, ErrorButton, ModalProps, Prompt } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Alert, ErrorButton, Prompt } from '../../../components';
 import { useApi, useContacts, useEventManager, useNotifications } from '../../../hooks';
 import { getDeleteText } from '../../general/helper';
 

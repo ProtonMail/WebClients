@@ -7,10 +7,11 @@ import {
     PLANS,
     PROTON_SENTINEL_NAME,
 } from '@proton/shared/lib/constants';
-import { Audience, FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
-import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getNUsersText = (n: number) => {
     return c('new_plans: feature').ngettext(msgid`Up to ${n} user`, `Up to ${n} users`, n);

@@ -1,6 +1,6 @@
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { Parameters } from '../../pages/interface';
+import type { Parameters } from '../../pages/interface';
 
 const signupJsonContext = require.context('../../pages', true, /signup.ts$/, 'sync');
 

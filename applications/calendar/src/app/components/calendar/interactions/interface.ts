@@ -1,5 +1,6 @@
-import { CalendarViewEvent } from '../../../containers/calendar/interface';
-import { ACTIONS, TYPE } from './constants';
+import type { CalendarViewEvent } from '../../../containers/calendar/interface';
+import type { TYPE } from './constants';
+import { ACTIONS } from './constants';
 
 export interface EventDownAction {
     action: ACTIONS.EVENT_DOWN;

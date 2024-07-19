@@ -4,9 +4,10 @@ import { MoonPayProvider } from '@moonpay/moonpay-react';
 import { first } from 'lodash';
 import { c } from 'ttag';
 
-import { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
-import { ModalOwnProps } from '@proton/components/components';
-import { IWasmApiWalletData, toWalletAccountSelectorOptions } from '@proton/wallet';
+import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
+import type { ModalOwnProps } from '@proton/components/components';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { toWalletAccountSelectorOptions } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -14,9 +15,11 @@ import { useGatewaysPublicApiKeys } from '../../store/hooks/useGatewaysPublicApi
 import { getAccountWithChainDataFromManyWallets, isWalletAccountSet } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
 import { useComputeNextAddressToReceive } from '../../utils/hooks/useComputeNextIndexToReceive';
-import { ModalHeaderWithStepper, Steps } from '../ModalHeaderWithStepper';
+import type { Steps } from '../ModalHeaderWithStepper';
+import { ModalHeaderWithStepper } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
-import { Amount, QuoteWithProvider } from './Amount';
+import type { QuoteWithProvider } from './Amount';
+import { Amount } from './Amount';
 import { Checkout } from './Checkout';
 import { Location } from './Location';
 

@@ -1,8 +1,10 @@
-import { DependencyList, RefObject, useRef } from 'react';
+import type { DependencyList, RefObject } from 'react';
+import { useRef } from 'react';
 
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { KeyboardKey, KeyboardKeyType } from '@proton/shared/lib/interfaces';
+import type { KeyboardKeyType } from '@proton/shared/lib/interfaces';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useEventListener } from './useHandler';

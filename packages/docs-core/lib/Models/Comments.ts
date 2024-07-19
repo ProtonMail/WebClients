@@ -1,4 +1,5 @@
-import { CommentInterface, CommentPayload, ServerTime } from '@proton/docs-shared'
+import type { CommentInterface, CommentPayload } from '@proton/docs-shared'
+import { ServerTime } from '@proton/docs-shared'
 
 export class Comment implements CommentInterface {
   constructor(

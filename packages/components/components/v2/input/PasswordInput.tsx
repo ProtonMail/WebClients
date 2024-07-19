@@ -1,8 +1,10 @@
-import { Ref, forwardRef, useState } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input, InputProps } from '@proton/atoms';
+import type { InputProps } from '@proton/atoms';
+import { Button, Input } from '@proton/atoms';
 
 import Icon from '../../icon/Icon';
 

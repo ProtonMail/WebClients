@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 
-import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useMarkAllAs } from 'proton-mail/hooks/actions/markAs/useMarkAllAs';
 import { useMarkSelectionAs } from 'proton-mail/hooks/actions/markAs/useMarkSelectionAs';
 
 import { isMessage as testIsMessage } from '../../../helpers/elements';
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 
 export interface MarkAsParams {
     elements: Element[];

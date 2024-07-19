@@ -1,6 +1,6 @@
 import { isProtonDocsConvertible, isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { DecryptedLink } from '../_links';
+import type { DecryptedLink } from '../_links';
 import { useDocumentActions } from './useDocumentActions';
 import { useDriveDocsFeatureFlag } from './useDriveDocsFeatureFlag';
 

@@ -2,11 +2,11 @@ import { addDays, getUnixTime, nextMonday, nextSaturday, set } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { SNOOZE_DURATION } from '../hooks/actions/useSnooze';
-import { Conversation } from '../models/conversation';
-import { Element } from '../models/element';
+import type { SNOOZE_DURATION } from '../hooks/actions/useSnooze';
+import type { Conversation } from '../models/conversation';
+import type { Element } from '../models/element';
 import { getDate, isConversation, isMessage } from './elements';
 
 export const getSnoozeUnixTime = (duration: SNOOZE_DURATION, snoozeTime?: Date) => {

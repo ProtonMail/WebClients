@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { DecryptedLink } from '../../../../../store';
-import { useLinkSharingModal } from '../../../../modals/ShareLinkModal/ShareLinkModal';
+import type { DecryptedLink } from '../../../../../store';
+import type { useLinkSharingModal } from '../../../../modals/ShareLinkModal/ShareLinkModal';
 import ContextMenuButton from '../../ContextMenuButton';
 
 interface Props {

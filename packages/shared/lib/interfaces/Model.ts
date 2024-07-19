@@ -1,4 +1,4 @@
-import { Api } from './Api';
+import type { Api } from './Api';
 
 export interface Model<T> {
     key: string;

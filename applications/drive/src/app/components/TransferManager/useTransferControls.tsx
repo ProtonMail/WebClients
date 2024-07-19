@@ -1,6 +1,7 @@
 import { useDownload, useUpload } from '../../store';
 import { isTransferPaused } from '../../utils/transfer';
-import { Download, TransferType, Upload } from './transfer';
+import type { Download, Upload } from './transfer';
+import { TransferType } from './transfer';
 
 function useTransferControls() {
     const {

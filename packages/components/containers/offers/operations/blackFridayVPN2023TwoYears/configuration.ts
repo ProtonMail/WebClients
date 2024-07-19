@@ -2,7 +2,7 @@ import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/const
 
 import { FeatureCode } from '../../../../containers/features';
 import { getUnlimitedVPNFeatures } from '../../helpers/offerCopies';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import sideImage from './EOY-VPN-App-Modal-400x1200-60.png';
 import sideImage2x from './EOY-VPN-App-Modal-800x2400-60.png';
 import Layout from './Layout';

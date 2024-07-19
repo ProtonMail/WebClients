@@ -5,11 +5,11 @@ import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constant
 import { FeatureCode } from '@proton/components/containers/features';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { getFeatureFlagsState } from '@proton/testing/lib/features';
 
-import { MailStore } from 'proton-mail/store/store';
+import type { MailStore } from 'proton-mail/store/store';
 
 import { MESSAGE_ACTIONS } from '../../../../constants';
 import { addApiMock } from '../../../../helpers/test/api';

@@ -14,9 +14,9 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
-import {
+import type {
     ConfirmationModal,
     PlanConfig,
     PlanConfigFeatures,

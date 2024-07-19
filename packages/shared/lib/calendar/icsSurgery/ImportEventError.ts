@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
+import type { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
 
 export enum IMPORT_EVENT_ERROR_TYPE {
     WRONG_FORMAT,

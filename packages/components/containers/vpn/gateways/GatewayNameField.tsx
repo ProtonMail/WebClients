@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { InputFieldTwo } from '@proton/components/components';
 import { maxLengthValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { GatewayDto } from './GatewayDto';
+import type { GatewayDto } from './GatewayDto';
 
 type GatewayName = Pick<GatewayDto, 'name'>;
 

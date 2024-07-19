@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLikeProps } from '@proton/atoms/Button';
+import type { ButtonLikeProps } from '@proton/atoms/Button';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
-    APP_NAMES,
     BRAND_NAME,
     CYCLE,
     DASHBOARD_UPSELL_PATHS,
@@ -35,7 +35,7 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { Currency, FreePlanDefault, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Currency, FreePlanDefault, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -43,7 +43,7 @@ import { getPhoneSupport } from '../../features/b2b';
 import { getNCalendarsFeature } from '../../features/calendar';
 import { getCollaborate, getStorageBoostFeatureB2B, getStorageFeature } from '../../features/drive';
 import { getCustomBranding, getSentinel, getUsersFeature } from '../../features/highlights';
-import { PlanCardFeatureDefinition } from '../../features/interface';
+import type { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     getB2BNDomainsFeature,
     getFoldersAndLabelsFeature,
@@ -61,7 +61,7 @@ import {
     getVPNConnections,
     getVPNConnectionsFeature,
 } from '../../features/vpn';
-import { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
+import type { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import VpnEnterpriseAction from './VpnEnterpriseAction';
 

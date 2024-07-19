@@ -1,8 +1,9 @@
-import { ReactNode, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useMemo, useState } from 'react';
 
 import { ModalPositionsProvider } from '../../components/modalTwo/modalPositions';
 import ModalsChildrenContext from './childrenContext';
-import { Modal } from './interface';
+import type { Modal } from './interface';
 import createManager from './manager';
 import ModalsContext from './modalsContext';
 

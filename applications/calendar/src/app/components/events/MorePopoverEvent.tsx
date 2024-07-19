@@ -1,9 +1,9 @@
-import { CSSProperties, Ref } from 'react';
+import type { CSSProperties, Ref } from 'react';
 
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import {
+import type {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
     TargetEventData,

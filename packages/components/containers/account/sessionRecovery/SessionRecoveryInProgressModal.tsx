@@ -1,15 +1,16 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
+import type { ModalProps } from '../../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     SettingsLink,
 } from '../../../components';
 import { useSessionRecoveryGracePeriodHoursRemaining, useUser } from '../../../hooks';

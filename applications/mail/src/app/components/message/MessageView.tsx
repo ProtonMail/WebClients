@@ -1,22 +1,12 @@
-import {
-    FocusEvent,
-    FocusEventHandler,
-    Ref,
-    RefObject,
-    forwardRef,
-    memo,
-    useEffect,
-    useImperativeHandle,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
+import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
-import { Breakpoints, FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -25,7 +15,8 @@ import noop from '@proton/utils/noop';
 import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isUnread } from '../../helpers/elements';
-import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
+import type { MessageViewIcons } from '../../helpers/message/icon';
+import { getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
 import { isElementReminded } from '../../helpers/snooze';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
@@ -37,8 +28,8 @@ import { useMessage } from '../../hooks/message/useMessage';
 import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
-import { Element } from '../../models/element';
-import { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
+import type { Element } from '../../models/element';
+import type { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
 import MessageBody from './MessageBody';
 import MessageFooter from './MessageFooter';

@@ -11,7 +11,7 @@ import {
     UnderlineButton,
 } from '@proton/components';
 
-import { DecryptedLink, TreeItem } from '../../../store';
+import type { DecryptedLink, TreeItem } from '../../../store';
 import FolderTree from '../../FolderTree/FolderTree';
 import EmptyFileTreePlaceholder from './EmptyFileTreePlaceholder';
 

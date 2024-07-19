@@ -1,4 +1,5 @@
-import { MouseEvent as ReactMouseEvent, RefObject, useEffect, useState } from 'react';
+import type { MouseEvent as ReactMouseEvent, RefObject } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * This hook will allow any element to be scrolled by dragging it

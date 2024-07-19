@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { PhotoLink, useDriveSharingFlags } from '../../../../store';
+import type { PhotoLink } from '../../../../store';
+import { useDriveSharingFlags } from '../../../../store';
 import { isDecryptedLink } from '../../../../store/_photos/utils/isDecryptedLink';
 import { getSharedStatus } from '../../../../utils/share';
 import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';

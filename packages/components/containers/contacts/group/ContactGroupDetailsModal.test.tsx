@@ -1,9 +1,10 @@
 import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 import { clearAll, minimalCache, renderWithProviders } from '../tests/render';
-import ContactGroupDetailsModal, { ContactGroupDetailsProps } from './ContactGroupDetailsModal';
+import type { ContactGroupDetailsProps } from './ContactGroupDetailsModal';
+import ContactGroupDetailsModal from './ContactGroupDetailsModal';
 
 describe('ContactGroupDetailsModal', () => {
     const props: ContactGroupDetailsProps = {

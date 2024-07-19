@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 
+import type { IconName } from '@proton/components';
 import {
     Autocomplete,
     AutocompleteList,
     Icon,
-    IconName,
     Input,
     Marks,
     Option,

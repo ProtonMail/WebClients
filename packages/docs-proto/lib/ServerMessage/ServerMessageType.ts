@@ -1,5 +1,5 @@
 import { ValueObject } from '@standardnotes/domain-core'
-import { ServerMessageTypeProps } from './ServerMessageTypeProps'
+import type { ServerMessageTypeProps } from './ServerMessageTypeProps'
 import { ServerMessageTypeEnum } from './ServerMessageTypeEnum'
 
 export class ServerMessageType extends ValueObject<ServerMessageTypeProps> {

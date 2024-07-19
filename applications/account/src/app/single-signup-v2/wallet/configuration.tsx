@@ -22,14 +22,17 @@ import {
 } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { APPS, CYCLE, PLANS, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { Audience, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
-import Benefits, { BenefitItem } from '../Benefits';
+import type { BenefitItem } from '../Benefits';
+import Benefits from '../Benefits';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
-import { SignupConfiguration, SignupMode } from '../interface';
+import type { SignupConfiguration } from '../interface';
+import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
 import CustomStep from './CustomStep';
 

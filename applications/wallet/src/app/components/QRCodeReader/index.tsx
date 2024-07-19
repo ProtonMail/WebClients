@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useEffect, useRef } from 'react';
 
-import jsQR, { QRCode } from 'jsqr';
+import type { QRCode } from 'jsqr';
+import jsQR from 'jsqr';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';

@@ -1,5 +1,5 @@
-import IMetricsApi from './IMetricsApi';
-import MetricsRequest from './MetricsRequest';
+import type IMetricsApi from './IMetricsApi';
+import type MetricsRequest from './MetricsRequest';
 
 export default interface IMetricsRequestService {
     api: IMetricsApi;

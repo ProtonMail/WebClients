@@ -3,9 +3,10 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, Label, ModalProps, Prompt } from '@proton/components';
+import type { ModalProps } from '@proton/components';
+import { Checkbox, Label, Prompt } from '@proton/components';
 
-import { Element } from '../../../models/element';
+import type { Element } from '../../../models/element';
 
 export interface MoveToSpamModalResolveProps {
     unsubscribe: boolean;

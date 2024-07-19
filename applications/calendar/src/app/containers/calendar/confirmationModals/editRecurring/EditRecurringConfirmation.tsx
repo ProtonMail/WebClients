@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/index';
 import { Alert, BasicModal, Prompt } from '@proton/components/index';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
-import { InviteActions } from '../../../../interfaces/Invite';
+import type { InviteActions } from '../../../../interfaces/Invite';
 import SelectRecurringType from '../SelectRecurringType';
 import {
     getCalendarChangeForbiddenTexts,

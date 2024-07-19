@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { OfferProps } from '../../interface';
+import type { OfferProps } from '../../interface';
 
 interface Props extends OfferProps {
     children: ReactNode;

@@ -1,4 +1,5 @@
-import { EscapeVariableType, LABEL_KEYS, LABEL_KEY_TYPE } from './interface';
+import type { EscapeVariableType, LABEL_KEY_TYPE } from './interface';
+import { LABEL_KEYS } from './interface';
 
 type ReturnValue = { Value: String; Type: String };
 

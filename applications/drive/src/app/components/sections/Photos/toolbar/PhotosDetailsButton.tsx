@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
 
-import { PhotoLink } from '../../../../store';
+import type { PhotoLink } from '../../../../store';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 

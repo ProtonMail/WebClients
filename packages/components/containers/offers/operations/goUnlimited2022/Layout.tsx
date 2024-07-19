@@ -9,7 +9,7 @@ import OfferLoader from '../../components/shared/OfferLoader';
 import OfferTitle from '../../components/shared/OfferTitle';
 import Deals from '../../components/shared/deal/Deals';
 import hasOffer from '../../helpers/hasOffer';
-import { OfferLayoutProps } from '../../interface';
+import type { OfferLayoutProps } from '../../interface';
 
 const Layout = (props: OfferLayoutProps) => {
     const planName = PLAN_NAMES[PLANS.BUNDLE];

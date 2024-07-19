@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton } from '@proton/atoms';
 import { Icon, useAddresses, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, MailSettings } from '@proton/shared/lib/interfaces';
-import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 import { isInternal } from '@proton/shared/lib/mail/messages';
@@ -19,7 +19,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
+import type { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -154,8 +154,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
 
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
-    const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some(
-        (pinKey) => bePinnedPublicKey?.equals(pinKey)
+    const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some((pinKey) =>
+        bePinnedPublicKey?.equals(pinKey)
     );
 
     const contact = useMemo<ContactWithBePinnedPublicKey>(() => {

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import type { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup, Option, SelectTwo } from '../../components';

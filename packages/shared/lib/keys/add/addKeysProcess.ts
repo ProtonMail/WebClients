@@ -10,7 +10,7 @@ import noop from '@proton/utils/noop';
 
 import { createUserKeyRoute, replaceAddressTokens } from '../../api/keys';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '../../constants';
-import {
+import type {
     Address,
     Api,
     CachedOrganizationKey,

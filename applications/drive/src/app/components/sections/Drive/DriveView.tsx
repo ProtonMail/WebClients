@@ -1,7 +1,8 @@
 import { useEffect, useMemo } from 'react';
 
 import { Toolbar } from '@proton/components';
-import { LinkURLType, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import type { LinkURLType } from '@proton/shared/lib/drive/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';

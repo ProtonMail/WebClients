@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import clsx from '@proton/utils/clsx';

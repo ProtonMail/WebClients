@@ -1,4 +1,4 @@
-import { IDBPDatabase } from 'idb';
+import type { IDBPDatabase } from 'idb';
 
 import { CryptoProxy } from '@proton/crypto';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -31,7 +31,7 @@ import {
     wrappedGetOldestInfo,
     writeAllEvents,
 } from '../esIDB';
-import {
+import type {
     AesGcmCiphertext,
     ESCache,
     ESItemInfo,

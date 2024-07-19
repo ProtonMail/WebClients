@@ -1,4 +1,4 @@
-import {
+import type {
     ADDRESS_FLAGS,
     ADDRESS_RECEIVE,
     ADDRESS_SEND,
@@ -6,8 +6,8 @@ import {
     ADDRESS_TYPE,
     EVENT_ACTIONS,
 } from '../constants';
-import { AddressKey } from './Key';
-import { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
+import type { AddressKey } from './Key';
+import type { ActiveSignedKeyList, SignedKeyList } from './SignedKeyList';
 
 export enum AddressConfirmationState {
     CONFIRMATION_NOT_CONFIRMED = 0,

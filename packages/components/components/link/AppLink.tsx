@@ -1,8 +1,10 @@
-import { AnchorHTMLAttributes, Ref, forwardRef } from 'react';
+import type { AnchorHTMLAttributes, Ref } from 'react';
+import { forwardRef } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, VPN_HOSTNAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 
 import { useAuthentication, useConfig } from '../../hooks';

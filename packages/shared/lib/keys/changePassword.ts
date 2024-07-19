@@ -1,8 +1,9 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { DecryptedKey, Address as tsAddress } from '../interfaces';
+import type { DecryptedKey, Address as tsAddress } from '../interfaces';
 import { getEncryptedArmoredAddressKey } from './addressKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
 

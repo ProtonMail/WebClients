@@ -7,7 +7,7 @@ import {
     serialize,
 } from '../../lib/calendar/vcal';
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../../lib/constants';
-import {
+import type {
     VcalErrorComponent,
     VcalValarmComponent,
     VcalVcalendarWithMaybeErrors,

@@ -1,6 +1,7 @@
 import { createHeadlessEditor } from '@lexical/headless'
-import { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
-import { $nodesOfType, SerializedEditorState } from 'lexical'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
+import type { SerializedEditorState } from 'lexical'
+import { $nodesOfType } from 'lexical'
 import { AllNodes } from '../AllNodes'
 import { sendErrorMessage } from '../Utils/errorMessage'
 import { generatePlaintextFromEditor } from './GeneratePlaintextFromEditor'
@@ -10,7 +11,7 @@ import { generateHTMLFromEditor } from './GenerateHTMLFromEditor'
 import { generateDocxFromEditor } from './GenerateDocxFromEditor/GenerateDocxFromEditor'
 import { Packer } from 'docx'
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
-import { DocxExportContext } from './GenerateDocxFromEditor/Context'
+import type { DocxExportContext } from './GenerateDocxFromEditor/Context'
 
 export async function exportDataFromEditorState(
   editorState: SerializedEditorState,

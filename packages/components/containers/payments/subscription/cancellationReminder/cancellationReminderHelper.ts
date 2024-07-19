@@ -1,5 +1,5 @@
-import { Feature } from '@proton/features/interface';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Feature } from '@proton/features/interface';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 export type ReminderFlag = Record<string, number>;
 

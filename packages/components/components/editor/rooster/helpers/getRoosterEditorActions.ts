@@ -1,10 +1,11 @@
-import { RefObject } from 'react';
+import type { RefObject } from 'react';
 
-import { ChangeSource, IEditor, SelectionRangeTypes } from 'roosterjs-editor-types';
+import type { IEditor } from 'roosterjs-editor-types';
+import { ChangeSource, SelectionRangeTypes } from 'roosterjs-editor-types';
 
-import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
+import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
-import { EditorActions } from '../../interface';
+import type { EditorActions } from '../../interface';
 
 /**
  * @param editorInstance

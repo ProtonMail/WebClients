@@ -1,16 +1,5 @@
-import {
-    ComponentPropsWithoutRef,
-    ReactNode,
-    Ref,
-    RefObject,
-    useCallback,
-    useEffect,
-    useImperativeHandle,
-    useLayoutEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import type { ComponentPropsWithoutRef, ReactNode, Ref, RefObject } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import { compareAsc } from 'date-fns';
 import { c } from 'ttag';
@@ -23,7 +12,7 @@ import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import {
+import type {
     CalendarViewBusyEvent,
     CalendarViewEvent,
     TargetEventData,
@@ -40,7 +29,7 @@ import DayEvents from './TimeGrid/DayEvents';
 import HourLines from './TimeGrid/HourLines';
 import HourTexts from './TimeGrid/HourTexts';
 import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
-import { OnMouseDown } from './interactions/interface';
+import type { OnMouseDown } from './interactions/interface';
 import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
 import { toPercent } from './mouseHelpers/mathHelpers';
 import { disableScroll, enableScroll } from './mouseHelpers/scrollHelper';

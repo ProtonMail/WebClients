@@ -1,4 +1,5 @@
-import { ReactNode, isValidElement, useState } from 'react';
+import type { ReactNode } from 'react';
+import { isValidElement, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +12,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
-import { ModalTwoContent as ModalContent, ModalSize, ModalTwo, StepDot, StepDots } from '../../components';
+import type { ModalSize } from '../../components';
+import { ModalTwoContent as ModalContent, ModalTwo, StepDot, StepDots } from '../../components';
 import {
     useApi,
     useConfig,
@@ -26,7 +28,7 @@ import OnboardingDiscoverApps from './OnboardingDiscoverApps';
 import OnboardingSetupOrganization from './OnboardingSetupOrganization';
 import OnboardingStep from './OnboardingStep';
 import OnboardingThemes from './OnboardingThemes';
-import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
+import type { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
 
 import './OnboardingModal.scss';
 

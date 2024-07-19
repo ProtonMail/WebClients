@@ -1,7 +1,7 @@
-import { ConnectionCloseReason } from '@proton/docs-proto'
-import { RealtimeUrlAndToken } from '@proton/docs-shared'
-import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
-import { ApiResult } from '../Domain/Result/ApiResult'
+import type { ConnectionCloseReason } from '@proton/docs-proto'
+import type { RealtimeUrlAndToken } from '@proton/docs-shared'
+import type { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import type { ApiResult } from '../Domain/Result/ApiResult'
 
 export type WebsocketCallbacks = {
   onClose: (reason: ConnectionCloseReason) => void

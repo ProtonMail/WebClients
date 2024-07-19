@@ -1,14 +1,15 @@
 import { useModalTwo } from '@proton/components/components';
 import { useApi, useGetVerificationPreferences } from '@proton/components/hooks';
-import { WorkerDecryptionResult } from '@proton/crypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 import { bigIntToNumber } from '@proton/crypto/lib/bigInteger';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
-import { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import ConfirmDownloadAttachments from 'proton-mail/components/attachment/modals/ConfirmDownloadAttachments';
-import { Download, generateDownload } from 'proton-mail/helpers/attachment/attachmentDownloader';
+import type { Download } from 'proton-mail/helpers/attachment/attachmentDownloader';
+import { generateDownload } from 'proton-mail/helpers/attachment/attachmentDownloader';
 import { decryptAndVerify, getVerificationStatusFromKeys } from 'proton-mail/helpers/attachment/attachmentLoader';
 import { useGetAttachment } from 'proton-mail/hooks/attachments/useAttachment';
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';

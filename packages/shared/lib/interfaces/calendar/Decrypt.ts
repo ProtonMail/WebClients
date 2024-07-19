@@ -1,8 +1,8 @@
-import { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@proton/crypto';
 
-import { EVENT_VERIFICATION_STATUS } from '../../calendar/constants';
-import { Address } from '../Address';
-import { VcalAttendeeProperty, VcalVeventComponent } from './VcalModel';
+import type { EVENT_VERIFICATION_STATUS } from '../../calendar/constants';
+import type { Address } from '../Address';
+import type { VcalAttendeeProperty, VcalVeventComponent } from './VcalModel';
 
 export interface SelfAddressData {
     isOrganizer: boolean;

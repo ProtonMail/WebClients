@@ -1,12 +1,13 @@
-import { Fragment, ReactNode, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
+import { Fragment, useMemo, useState } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
+import type { CreateNotificationOptions } from '@proton/components';
 import {
     AuthenticationProvider,
     CacheProvider,
     ConfigProvider,
-    CreateNotificationOptions,
     ErrorBoundary,
     Icons,
     ModalsProvider,

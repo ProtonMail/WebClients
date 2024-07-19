@@ -4,21 +4,15 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
-import {
-    AutocompleteList,
-    Icon,
-    IconName,
-    Marks,
-    Option,
-    useAutocomplete,
-    useAutocompleteFilter,
-} from '@proton/components';
+import type { IconName } from '@proton/components';
+import { AutocompleteList, Icon, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getRoutes } from './routes';
+import type { getRoutes } from './routes';
 
 type Routes = ReturnType<typeof getRoutes>;
 type RouteParents = keyof Routes;

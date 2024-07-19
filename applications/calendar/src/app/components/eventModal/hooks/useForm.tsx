@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { NOTIFICATION_ID } from '@proton/components/containers/calendar/notifications/Notifications';
 import { useLoading } from '@proton/hooks';
 import { TITLE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
-import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { InviteActions } from '../../../interfaces/Invite';
+import type { InviteActions } from '../../../interfaces/Invite';
 import { COUNT_ID, UNTIL_ID } from '../rows/EndsRow';
 
 const focusInput = (el: HTMLElement | null, id: string) => {

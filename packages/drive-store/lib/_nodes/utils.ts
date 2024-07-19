@@ -1,5 +1,5 @@
-import { DecryptedLink } from '../../store';
-import { DecryptedNode } from './interface';
+import type { DecryptedLink } from '../../store';
+import type { DecryptedNode } from './interface';
 
 /**
  * Converts a Drive store object to a DecryptedNode.

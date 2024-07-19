@@ -4,9 +4,10 @@ import { Button } from '@proton/atoms';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { deleteLabel } from '@proton/shared/lib/api/labels';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces';
 
-import { ErrorButton, ModalProps, Prompt } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { ErrorButton, Prompt } from '../../../components';
 
 interface Props extends ModalProps {
     label: Label;

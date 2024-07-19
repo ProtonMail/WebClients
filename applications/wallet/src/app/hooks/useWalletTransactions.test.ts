@@ -1,25 +1,26 @@
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { noop, omit } from 'lodash';
-import { Mock } from 'vitest';
+import type { Mock } from 'vitest';
 
-import {
+import type {
     WasmApiWalletTransaction,
     WasmApiWalletTransactionData,
     WasmApiWalletTransactions,
-    WasmScriptType,
     WasmTransactionDetails,
     WasmWalletClient,
 } from '@proton/andromeda';
+import { WasmScriptType } from '@proton/andromeda';
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
-import { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { mockUseAddressKeys, mockUseNotifications } from '@proton/testing/lib/vitest';
-import { IWasmApiWalletData, getSymmetricKey } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
+import { getSymmetricKey } from '@proton/wallet';
 import { getAddressKey, getMockedApi, getUserKeys, mockUseWalletApiClients } from '@proton/wallet/tests';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
-import { useGetApiWalletTransactionData } from '../store/hooks';
+import type { useGetApiWalletTransactionData } from '../store/hooks';
 import { mockUseBitcoinBlockchainContext, mockUseGetApiWalletTransactionData } from '../tests/';
 import { useWalletTransactions } from './useWalletTransactions';
 

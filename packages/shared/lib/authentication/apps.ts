@@ -1,5 +1,5 @@
 import { DEFAULT_APP } from '@proton/shared/lib/apps/slugHelper';
-import { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 import {
     getIsExternalAccount,
     getIsPublicUserWithoutProtonAddress,
@@ -7,7 +7,8 @@ import {
     getIsVPNOnlyAccount,
 } from '@proton/shared/lib/keys';
 
-import { APPS, APPS_CONFIGURATION, APP_NAMES, CLIENT_TYPES, PRODUCT_BIT } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS, APPS_CONFIGURATION, CLIENT_TYPES, PRODUCT_BIT } from '../constants';
 
 export const getToAppName = (toApp?: APP_NAMES) => {
     if (!toApp || toApp === APPS.PROTONACCOUNT) {

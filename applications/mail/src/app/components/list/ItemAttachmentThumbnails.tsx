@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { Tooltip } from '@proton/components/components';
 import Portal from '@proton/components/components/portal/Portal';
 import { FilePreview, NavigationControl } from '@proton/components/containers';
-import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 

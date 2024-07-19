@@ -9,7 +9,7 @@ import {
     hasMaximumCycle,
     hasVPNPassBundle,
 } from '@proton/shared/lib/helpers/subscription';
-import { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';

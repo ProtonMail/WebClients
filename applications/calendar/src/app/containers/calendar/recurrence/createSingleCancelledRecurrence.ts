@@ -1,5 +1,5 @@
 import { ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { withIncrementedSequence } from '../eventActions/sequence';
 

@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { PlanCardFeatureDefinition } from '../../../features/interface';
+import type { PlanCardFeatureDefinition } from '../../../features/interface';
 
 export interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
     status?: PlanCardFeatureDefinition['status'];

@@ -8,7 +8,8 @@ import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
-import ToolbarDropdown, { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
+import type { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
+import ToolbarDropdown from '../../../toolbar/ToolbarDropdown';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
 import { sendSnoozeReport } from '../helpers/snoozeTelemetry';
 import SnoozeToolbarDropdownStepWrapper, {

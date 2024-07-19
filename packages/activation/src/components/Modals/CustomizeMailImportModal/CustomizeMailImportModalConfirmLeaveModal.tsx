@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalStateProps, Prompt } from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 
 interface Props extends ModalStateProps {
     onContinue: () => void;

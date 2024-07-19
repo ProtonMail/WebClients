@@ -1,13 +1,14 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
-import * as H from 'history';
+import type * as H from 'history';
 
 import { publicApp } from '@proton/account/bootstrap';
 import { StandardLoadErrorPage } from '@proton/components';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { APPS } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
     location: H.Location;

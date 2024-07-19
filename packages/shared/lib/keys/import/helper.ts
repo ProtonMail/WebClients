@@ -1,6 +1,6 @@
-import { ActiveKey, InactiveKey } from '../../interfaces';
-import { KeyReactivationData } from '../reactivation/interface';
-import { KeyImportData } from './interface';
+import type { ActiveKey, InactiveKey } from '../../interfaces';
+import type { KeyReactivationData } from '../reactivation/interface';
+import type { KeyImportData } from './interface';
 
 export const getFilteredImportRecords = (
     keyImportRecords: KeyImportData[],

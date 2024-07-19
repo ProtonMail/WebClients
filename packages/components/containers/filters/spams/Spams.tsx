@@ -17,18 +17,15 @@ import {
 import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 
-import {
-    HandleSpamListActionClick,
-    getActionsByLocation,
-    getLabelByLocation,
-    getNotificationByAction,
-} from './Spams.helpers';
-import { SpamLocation } from './Spams.interfaces';
+import type { HandleSpamListActionClick } from './Spams.helpers';
+import { getActionsByLocation, getLabelByLocation, getNotificationByAction } from './Spams.helpers';
+import type { SpamLocation } from './Spams.interfaces';
 import SpamsButtonDropdown from './SpamsButtonDropdown';
 import SpamsNav from './SpamsNav';
 import useSpamApi from './hooks/useSpamApi';
 import useSpamState from './hooks/useSpamState';
-import SpamModal, { SpamMode } from './modals/SpamModal';
+import type { SpamMode } from './modals/SpamModal';
+import SpamModal from './modals/SpamModal';
 
 const getActions = (): { type: SpamLocation; getName: () => string }[] => {
     return [

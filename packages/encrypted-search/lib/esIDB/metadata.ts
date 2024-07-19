@@ -1,8 +1,8 @@
-import { IDBPDatabase } from 'idb';
+import type { IDBPDatabase } from 'idb';
 
 import { STORING_OUTCOME } from '../constants';
 import { ciphertextSize, decryptFromDB } from '../esHelpers';
-import { ESItemInfo, ESTimepoint, EncryptedItemWithInfo, EncryptedSearchDB } from '../models';
+import type { ESItemInfo, ESTimepoint, EncryptedItemWithInfo, EncryptedSearchDB } from '../models';
 import { updateSize } from './configObjectStore';
 import { openESDB, safelyWriteToIDBConditionally } from './indexedDB';
 

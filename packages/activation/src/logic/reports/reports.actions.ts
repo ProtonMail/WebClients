@@ -2,10 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { deleteImportReport, getImportReportsList, rollbackImport } from '@proton/activation/src/api';
-import { ApiImportReportListResponse } from '@proton/activation/src/api/api.interface';
+import type { ApiImportReportListResponse } from '@proton/activation/src/api/api.interface';
 
-import { EasySwitchThunkExtra } from '../store';
-import { ReportSummaryID } from './reports.interface';
+import type { EasySwitchThunkExtra } from '../store';
+import type { ReportSummaryID } from './reports.interface';
 
 export const loadReports = createAsyncThunk<ApiImportReportListResponse, undefined, EasySwitchThunkExtra>(
     'reports/load',

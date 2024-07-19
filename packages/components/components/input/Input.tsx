@@ -1,14 +1,5 @@
-import {
-    DetailedHTMLProps,
-    InputHTMLAttributes,
-    KeyboardEventHandler,
-    ReactElement,
-    ReactNode,
-    Ref,
-    cloneElement,
-    forwardRef,
-    useState,
-} from 'react';
+import type { DetailedHTMLProps, InputHTMLAttributes, KeyboardEventHandler, ReactElement, ReactNode, Ref } from 'react';
+import { cloneElement, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 

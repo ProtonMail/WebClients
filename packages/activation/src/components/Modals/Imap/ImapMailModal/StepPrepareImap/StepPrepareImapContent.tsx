@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { getTimeUnitLabels } from '@proton/activation/src/constants';
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
-import { TIME_PERIOD } from '@proton/activation/src/interface';
+import type { TIME_PERIOD } from '@proton/activation/src/interface';
 import { Icon, LabelStack, Tooltip } from '@proton/components/components';
-import { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces';
 
 interface Props {
     selectedPeriod: TIME_PERIOD;

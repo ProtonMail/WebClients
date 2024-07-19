@@ -9,7 +9,7 @@ import { orderLabels } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { Label } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces';
 
 import { LabelsUpsellModal, Loader, MailUpsellButton, useDebounceInput, useModalState } from '../../components';
 import { useApi, useEventManager, useLabels, useNotifications, useUser } from '../../hooks';

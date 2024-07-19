@@ -1,7 +1,8 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
+import type { OnLoginCallback } from '@proton/components';
 import {
-    OnLoginCallback,
     StandardLoadErrorPage,
     UnAuthenticated,
     useActiveBreakpoint,
@@ -14,7 +15,7 @@ import useKTActivation from '@proton/components/containers/keyTransparency/useKT
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
+import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -22,16 +23,17 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
-import { APP_NAMES, CLIENT_TYPES, CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2023OfferCoupon, getIsVpnB2BPlan, getPlanNameFromIDs } from '@proton/shared/lib/helpers/subscription';
-import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
@@ -39,7 +41,8 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
-import { SignupCacheResult, SignupType } from '../signup/interfaces';
+import type { SignupCacheResult } from '../signup/interfaces';
+import { SignupType } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import {
     getSubscriptionMetricsData,
@@ -49,19 +52,22 @@ import {
     handleSetupUser,
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
-import { SubscriptionDataCycleMapping, getPlanCardSubscriptionData } from '../single-signup-v2/helper';
-import { SignupDefaults, Steps } from '../single-signup-v2/interface';
+import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
+import { getPlanCardSubscriptionData } from '../single-signup-v2/helper';
+import type { SignupDefaults } from '../single-signup-v2/interface';
+import { Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
-import { MetaTags, useMetaTags } from '../useMetaTags';
+import type { MetaTags } from '../useMetaTags';
+import { useMetaTags } from '../useMetaTags';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
 import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
-import { VPNSignupModel } from './interface';
-import { TelemetryMeasurementData } from './measure';
+import type { VPNSignupModel } from './interface';
+import type { TelemetryMeasurementData } from './measure';
 import { defaultVPNSignupModel, getCycleData } from './state';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 

@@ -1,10 +1,10 @@
-import { MutableRefObject } from 'react';
+import type { MutableRefObject } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import {
     OrganizationKeyMode,
     OrganizationKeyState,

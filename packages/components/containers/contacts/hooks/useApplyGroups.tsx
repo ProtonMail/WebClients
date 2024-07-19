@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useModalTwoStatic } from '@proton/components/components';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
-import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import {
     useApi,
@@ -17,7 +17,7 @@ import {
     useNotifications,
 } from '../../../hooks';
 import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
-import { SelectEmailsProps } from '../modals/SelectEmailsModal';
+import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 /**
  * Collect contacts having multiple emails

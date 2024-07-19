@@ -1,7 +1,7 @@
-import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import { MIME_TYPES } from '../../constants';
-import { Recipient } from '../Address';
+import type { MIME_TYPES } from '../../constants';
+import type { Recipient } from '../Address';
 
 export interface AttachmentInfo {
     inline?: number;

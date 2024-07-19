@@ -1,11 +1,12 @@
-import { Action, Draft, createSlice } from '@reduxjs/toolkit';
+import type { Action, Draft } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import { ImportType } from '@proton/activation/src/interface';
 import { ImportProvider } from '@proton/activation/src/interface';
-import { RequireSome } from '@proton/shared/lib/interfaces';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
 
 import * as actions from './imapDraft.actions';
-import { ImapDraftState } from './imapDraft.interface';
+import type { ImapDraftState } from './imapDraft.interface';
 
 const initialState: ImapDraftState = { step: 'idle' };
 

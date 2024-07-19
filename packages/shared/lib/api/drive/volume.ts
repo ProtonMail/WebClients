@@ -1,5 +1,5 @@
 import { FOLDER_PAGE_SIZE } from '../../drive/constants';
-import { CreateDriveVolume, RestoreDriveVolume } from '../../interfaces/drive/volume';
+import type { CreateDriveVolume, RestoreDriveVolume } from '../../interfaces/drive/volume';
 
 export const queryCreateDriveVolume = (data: CreateDriveVolume) => ({
     method: 'post',

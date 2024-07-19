@@ -1,4 +1,4 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { clearFlag, hasFlag, setFlag, toggleFlag } from '@proton/shared/lib/mail/messages';
 

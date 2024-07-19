@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { Copy, Icon, Tooltip } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
-import { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';
-import { ContactGroupEditProps } from '../../group/ContactGroupEditModal';
+import type { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';
+import type { ContactGroupEditProps } from '../../group/ContactGroupEditModal';
 import ContactGroupLabels from '../../group/ContactGroupLabels';
 import { ContactViewProperties } from './ContactViewProperties';
 import ContactViewProperty from './ContactViewProperty';
@@ -76,11 +76,7 @@ const ContactViewEmails = ({
                         isSignatureVerified={isSignatureVerified}
                     >
                         <span className="w-full flex">
-                            <a
-                                className="mr-2 flex-1 text-ellipsis"
-                                href={`mailto:${email.value}`}
-                                title={email.value}
-                            >
+                            <a className="mr-2 flex-1 text-ellipsis" href={`mailto:${email.value}`} title={email.value}>
                                 {email.value}
                             </a>
                             <span className="shrink-0 flex py-1 contact-view-actions">

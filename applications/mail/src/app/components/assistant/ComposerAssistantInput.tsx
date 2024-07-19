@@ -1,4 +1,5 @@
-import { KeyboardEvent, MouseEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
+import type { KeyboardEvent, MouseEvent, MutableRefObject } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -22,32 +23,25 @@ import {
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useAssistantTelemetry, { ERROR_TYPE } from '@proton/components/containers/llm/useAssistantTelemetry';
 import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
-import {
-    Action,
-    ActionType,
-    PartialRefineAction,
-    RefineActionType,
-    RefineLocation,
-    isPredefinedRefineActionType,
-    isRefineActionType,
-} from '@proton/llm/lib/types';
+import type { Action, ActionType, PartialRefineAction, RefineActionType, RefineLocation } from '@proton/llm/lib/types';
+import { isPredefinedRefineActionType, isRefineActionType } from '@proton/llm/lib/types';
 import { useAssistant } from '@proton/llm/lib/useAssistant';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { AI_ASSISTANT_ACCESS, Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import generatingLoader from '@proton/styles/assets/img/illustrations/dot-loader.svg';
 import clsx from '@proton/utils/clsx';
 
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 import { ComposerInnerModalStates } from 'proton-mail/hooks/composer/useComposerInnerModals';
 
-import { ReplacementStyle } from './ComposerAssistant';
+import type { ReplacementStyle } from './ComposerAssistant';
 import AssistantUnsafeErrorFeedbackModal from './modals/AssistantUnsafeErrorFeedbackModal';
 import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
 import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';
-import ComposerAssistantInitialSetupSpotlight, {
-    ComposerAssistantInitialSetupSpotlightRef,
-} from './spotlights/ComposerAssistantInitialSetupSpotlight';
+import type { ComposerAssistantInitialSetupSpotlightRef } from './spotlights/ComposerAssistantInitialSetupSpotlight';
+import ComposerAssistantInitialSetupSpotlight from './spotlights/ComposerAssistantInitialSetupSpotlight';
 
 interface Props {
     onGenerateResult: (fulltext: string, prompt: string) => void;

@@ -1,11 +1,13 @@
-import { NodeMeta } from '@proton/drive-store'
-import { BeganTypingData, BroadcastSource, CommentsMessageType, StoppedTypingData } from '@proton/docs-shared'
-import { LiveCommentsEvent, LiveCommentsTypeStatusChangeData, InternalEventBusInterface } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/drive-store'
+import type { BeganTypingData, StoppedTypingData } from '@proton/docs-shared'
+import { BroadcastSource, CommentsMessageType } from '@proton/docs-shared'
+import type { LiveCommentsTypeStatusChangeData, InternalEventBusInterface } from '@proton/docs-shared'
+import { LiveCommentsEvent } from '@proton/docs-shared'
 import { CreateRealtimeCommentPayload } from '../../Services/Comments/CreateRealtimeCommentPayload'
 import { CommentTypers } from './CommentTypers'
-import { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
+import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
 import { EventTypeEnum } from '@proton/docs-proto'
-import { LoggerInterface } from '@proton/utils/logs'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 export class LiveComments {
   private state: Record<string, CommentTypers> = {}

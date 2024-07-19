@@ -1,6 +1,6 @@
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
-import { DriveEvents } from '../_events';
+import type { DriveEvents } from '../_events';
 import { useShareInvitation } from '../_shares';
 
 export const useShareBackgroundActions = () => {

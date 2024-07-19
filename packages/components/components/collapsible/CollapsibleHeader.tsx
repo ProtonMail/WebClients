@@ -1,6 +1,7 @@
-import { ElementType, ReactNode, useContext } from 'react';
+import type { ElementType, ReactNode } from 'react';
+import { useContext } from 'react';
 
-import { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
+import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import CollapsibleContext from './CollapsibleContext';

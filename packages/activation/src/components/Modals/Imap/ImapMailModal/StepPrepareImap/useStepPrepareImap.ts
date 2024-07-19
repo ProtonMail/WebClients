@@ -3,11 +3,12 @@ import { useMemo, useState } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { GMAIL_CATEGORIES, IMAPS } from '@proton/activation/src/constants';
-import { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportFolder } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { getDefaultTimePeriod } from '@proton/activation/src/helpers/getDefaultTimePeriod';
 import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
-import { MailImportDestinationFolder, OAUTH_PROVIDER, TIME_PERIOD } from '@proton/activation/src/interface';
+import type { TIME_PERIOD } from '@proton/activation/src/interface';
+import { MailImportDestinationFolder, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import {
     displayConfirmLeaveModal,
     saveImapMailFields,
@@ -17,9 +18,9 @@ import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/im
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { useFolders, useLabels } from '@proton/components';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, Label, UserModel } from '@proton/shared/lib/interfaces';
 
-import { MailImportFields } from '../../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
+import type { MailImportFields } from '../../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import { formatPrepareStepPayload } from './StepPrepareImap.helpers';
 import getDefaultLabel from './useStepPrepareImap.helpers';
 

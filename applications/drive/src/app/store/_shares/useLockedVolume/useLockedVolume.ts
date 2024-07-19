@@ -4,12 +4,13 @@ import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { useGetAddressKeys, useGetAddresses, usePreventLeave } from '@proton/components';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { queryDeleteLockedVolumes, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { encryptPassphrase, generateLookupHash, sign } from '@proton/shared/lib/keys/driveKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -18,7 +19,12 @@ import { useDriveCrypto } from '../../_crypto';
 import { useLink } from '../../_links';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
 import { useDebouncedFunction } from '../../_utils';
-import { LockedDeviceForRestore, LockedPhotosForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
+import type {
+    LockedDeviceForRestore,
+    LockedPhotosForRestore,
+    LockedVolumeForRestore,
+    ShareWithKey,
+} from './../interface';
 import useDefaultShare from './../useDefaultShare';
 import useShare from './../useShare';
 import useSharesState from './../useSharesState';

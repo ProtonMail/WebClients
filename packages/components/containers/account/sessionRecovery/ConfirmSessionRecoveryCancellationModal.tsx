@@ -10,6 +10,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     InputFieldTwo,
@@ -17,7 +18,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     PasswordInputTwo,
     useFormErrors,
 } from '../../../components';

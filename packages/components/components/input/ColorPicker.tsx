@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 import { generateUID } from '../../helpers';
 import ColorSelector from '../color/ColorSelector';
 import { Dropdown, DropdownButton, DropdownSizeUnit } from '../dropdown';
-import { DropdownButtonProps } from '../dropdown/DropdownButton';
+import type { DropdownButtonProps } from '../dropdown/DropdownButton';
 import { Icon } from '../icon';
 import { usePopperAnchor } from '../popper';
 

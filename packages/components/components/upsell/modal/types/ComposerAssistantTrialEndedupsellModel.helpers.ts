@@ -1,5 +1,6 @@
-import { ADDON_NAMES, CYCLE } from '@proton/shared/lib/constants';
-import { Plan } from '@proton/shared/lib/interfaces';
+import type { ADDON_NAMES } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/interfaces';
 
 export const getAIAddonMonthlyPrice = (plans: Plan[], addonPlanName: ADDON_NAMES) => {
     const addonPlan = plans?.find((plan) => plan.Name === addonPlanName);

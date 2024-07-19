@@ -4,7 +4,7 @@ import { absoluteToRelativeTrigger, getIsAbsoluteTrigger } from '@proton/shared/
 import { DAY } from '../constants';
 import { fromUTCDate, toUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
-import {
+import type {
     AttendeeClearPartResult,
     AttendeePart,
     CalendarEventData,
@@ -12,7 +12,7 @@ import {
     VcalValarmComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
-import { RequireOnly } from '../interfaces/utils';
+import type { RequireOnly } from '../interfaces/utils';
 import { fromInternalAttendee } from './attendees';
 import {
     CALENDAR_CARD_TYPE,

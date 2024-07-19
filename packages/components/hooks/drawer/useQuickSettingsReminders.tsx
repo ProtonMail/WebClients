@@ -1,6 +1,7 @@
-import { ReactNode, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext } from 'react';
 
-import { ThemeColor } from '@proton/colors/types';
+import type { ThemeColor } from '@proton/colors/types';
 import MailQuickSettingsReminderContextProvider from '@proton/components/containers/drawer/MailQuickSettingsReminderContextProvider';
 import { useConfig, useRecoveryNotification } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';

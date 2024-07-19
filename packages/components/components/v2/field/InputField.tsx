@@ -1,10 +1,11 @@
-import React, { ElementType, ForwardedRef, ReactNode, Ref, forwardRef, useContext, useRef, useState } from 'react';
+import type { ElementType, ForwardedRef, ReactNode, Ref } from 'react';
+import React, { forwardRef, useContext, useRef, useState } from 'react';
 
 import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
-import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import { FormContext } from '../../../components/form';

@@ -1,11 +1,12 @@
-import { Ref, forwardRef, useImperativeHandle, useRef, useState } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 
 import { getInvoice } from '@proton/shared/lib/api/payments';
 
 import { useApi } from '../../hooks';
 import { FilePreview, NavigationControl } from '../filePreview';
 import { getInvoicePaymentsVersion } from './helpers';
-import { Invoice } from './interface';
+import type { Invoice } from './interface';
 
 export interface InvoicesPreviewControls {
     preview: (invoice: Invoice) => void;

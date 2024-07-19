@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { InputFieldTwo, RequestNewCodeModal, useApi, useErrorHandler, useFormErrors } from '@proton/components';
-import { RecoveryMethod, ValidateResetTokenResponse } from '@proton/components/containers/resetPassword/interface';
+import type { RecoveryMethod, ValidateResetTokenResponse } from '@proton/components/containers/resetPassword/interface';
 import { useLoading } from '@proton/hooks';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';

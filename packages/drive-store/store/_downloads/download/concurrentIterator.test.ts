@@ -3,9 +3,9 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import { MAX_DOWNLOADING_BLOCKS_LOAD, MAX_DOWNLOADING_FILES_LOAD } from '../constants';
-import { DownloadCallbacks } from '../interface';
+import type { DownloadCallbacks } from '../interface';
 import ConcurrentIterator from './concurrentIterator';
-import { NestedLinkDownload, StartedNestedLinkDownload } from './interface';
+import type { NestedLinkDownload, StartedNestedLinkDownload } from './interface';
 
 const mockDownloadLinkFile = jest.fn();
 jest.mock('./downloadLinkFile', () => {

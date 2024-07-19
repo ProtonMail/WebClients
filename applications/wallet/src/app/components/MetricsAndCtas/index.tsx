@@ -1,15 +1,16 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { sub } from 'date-fns';
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount } from '@proton/andromeda';
+import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { Tooltip } from '@proton/components/components';
 import { SECOND } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton } from '../../atoms/Button';
 import { CorePrice } from '../../atoms/Price';

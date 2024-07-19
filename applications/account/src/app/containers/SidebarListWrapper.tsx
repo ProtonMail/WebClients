@@ -1,4 +1,5 @@
-import { SettingsListItem, SidebarConfig, SidebarList, SidebarListItem } from '@proton/components';
+import type { SidebarConfig } from '@proton/components';
+import { SettingsListItem, SidebarList, SidebarListItem } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 interface Props extends SidebarConfig {

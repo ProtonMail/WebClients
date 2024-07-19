@@ -1,9 +1,10 @@
-import { ReactNode, useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
+import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
@@ -14,8 +15,8 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useExpiringElement } from '../../hooks/useExpiringElement';
-import { Element } from '../../models/element';
-import { ESMessage } from '../../models/encryptedSearch';
+import type { Element } from '../../models/element';
+import type { ESMessage } from '../../models/encryptedSearch';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';

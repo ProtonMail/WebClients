@@ -1,5 +1,6 @@
-import { FC } from 'react';
-import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
+import type { FC } from 'react';
+import type { RouteComponentProps } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { PhotosView } from '../components/sections/Photos';
 

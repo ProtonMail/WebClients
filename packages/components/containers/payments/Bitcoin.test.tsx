@@ -1,14 +1,12 @@
 import { act, render, waitFor } from '@testing-library/react';
 
 import { createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
-import { Api, Currency } from '@proton/shared/lib/interfaces';
+import type { Api, Currency } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock, applyHOCs, flushPromises, withNotifications } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../../payments/core';
-import useBitcoin, {
-    BITCOIN_POLLING_INTERVAL,
-    OnBitcoinTokenValidated,
-} from '../../payments/react-extensions/useBitcoin';
+import type { OnBitcoinTokenValidated } from '../../payments/react-extensions/useBitcoin';
+import useBitcoin, { BITCOIN_POLLING_INTERVAL } from '../../payments/react-extensions/useBitcoin';
 import Bitcoin from './Bitcoin';
 
 const onTokenValidated = jest.fn();

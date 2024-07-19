@@ -1,10 +1,12 @@
-import { ReactNode, createContext, useContext, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useRef } from 'react';
 
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
-import { Nullable, isBilledUser } from '@proton/shared/lib/interfaces';
+import type { Nullable } from '@proton/shared/lib/interfaces';
+import { isBilledUser } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -14,7 +16,8 @@ import { useOrganization, usePlans, useSubscription, useUser } from '../../../ho
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import InAppPurchaseModal from './InAppPurchaseModal';
-import SubscriptionContainer, { SubscriptionContainerProps } from './SubscriptionContainer';
+import type { SubscriptionContainerProps } from './SubscriptionContainer';
+import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 
 export interface OpenCallbackProps

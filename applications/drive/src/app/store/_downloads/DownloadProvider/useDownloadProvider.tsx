@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
+import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { useDownloadIsTooBigModal } from '../../../components/modals/DownloadIsTooBigModal';
@@ -16,12 +16,12 @@ import {
     isTransferPausedByConnection,
     isTransferProgress,
 } from '../../../utils/transfer';
-import { SignatureIssues } from '../../_links';
+import type { SignatureIssues } from '../../_links';
 import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
-import { InitDownloadCallback, LinkDownload } from '../interface';
-import { UpdateFilter } from './interface';
+import type { InitDownloadCallback, LinkDownload } from '../interface';
+import type { UpdateFilter } from './interface';
 import useDownloadContainsDocument from './useDownloadContainsDocument';
 import useDownloadControl from './useDownloadControl';
 import useDownloadQueue from './useDownloadQueue';

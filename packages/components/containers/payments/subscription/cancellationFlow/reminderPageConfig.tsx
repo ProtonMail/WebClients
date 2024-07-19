@@ -1,6 +1,6 @@
 import { PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { getBundleConfig } from './config/bundle';
 import { getBundleProConfig } from './config/bundlePro';
@@ -10,7 +10,7 @@ import { getMailBusinessConfig } from './config/mailBusiness';
 import { getMailEssentialConfig } from './config/mailEssential';
 import { getMailPlusConfig } from './config/mailPlus';
 import { getVisionaryConfig } from './config/visionary';
-import { PlanConfig } from './interface';
+import type { PlanConfig } from './interface';
 
 export const getReminderPageConfig = ({
     subscription,

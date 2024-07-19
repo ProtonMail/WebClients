@@ -1,4 +1,5 @@
-import { MouseEvent, useEffect, useMemo, useState } from 'react';
+import type { MouseEvent } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router';
 
 import { addDays, fromUnixTime } from 'date-fns';
@@ -41,12 +42,11 @@ import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { ForkType, requestFork } from '@proton/shared/lib/authentication/fork';
+import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
     APPS_CONFIGURATION,
-    APP_NAMES,
     BRAND_NAME,
-    PLANS,
     PLAN_NAMES,
     SHARED_UPSELL_PATHS,
     SSO_PATHS,
@@ -61,7 +61,8 @@ import { getPlan, hasLifetime, isTrial } from '@proton/shared/lib/helpers/subscr
 import { canScheduleOrganizationPhoneCalls, openCalendlyLink } from '@proton/shared/lib/helpers/support';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
-import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interfaces';
+import type { Subscription } from '@proton/shared/lib/interfaces';
+import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
@@ -69,7 +70,8 @@ import ProductLink from '../../containers/app/ProductLink';
 import { generateUID } from '../../helpers';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import { AuthenticatedBugModal } from '../support';
-import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
+import type { Props as UserDropdownButtonProps } from './UserDropdownButton';
+import UserDropdownButton from './UserDropdownButton';
 
 const getPlanTitle = (subscription: Subscription | undefined) => {
     if (hasLifetime(subscription)) {

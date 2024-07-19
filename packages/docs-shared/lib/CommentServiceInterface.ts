@@ -1,6 +1,6 @@
-import { CommentInterface } from './CommentInterface'
-import { CommentThreadInterface } from './CommentThreadInterface'
-import { InternalEventBusInterface } from './Events/InternalEventBusInterface'
+import type { CommentInterface } from './CommentInterface'
+import type { CommentThreadInterface } from './CommentThreadInterface'
+import type { InternalEventBusInterface } from './Events/InternalEventBusInterface'
 
 export interface CommentServiceInterface {
   userDisplayName: string

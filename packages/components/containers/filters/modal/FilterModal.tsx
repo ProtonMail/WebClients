@@ -8,11 +8,11 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
+import type { ModalProps } from '../../../components';
 import {
     Checkbox,
     Form,
     Loader,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -22,7 +22,7 @@ import {
 import { generateUID } from '../../../helpers';
 import { useApi, useEventManager, useFilters, useFolders, useLabels, useNotifications } from '../../../hooks';
 import { getDefaultFolders, noFolderValue } from '../constants';
-import {
+import type {
     Actions,
     Condition,
     CreateFilter,
@@ -31,10 +31,9 @@ import {
     FilterActions,
     FilterCondition,
     FilterOperator,
-    FilterStatement,
     SimpleFilterModalModel,
-    Step,
 } from '../interfaces';
+import { FilterStatement, Step } from '../interfaces';
 import { computeFromTree, convertModel } from '../utils';
 import CloseFilterModal from './CloseFilterModal';
 import FilterActionsForm from './FilterActionsForm';

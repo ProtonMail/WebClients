@@ -4,7 +4,8 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Badge } from '../../components';
-import { KeyStatus, KeyType } from './shared/interface';
+import type { KeyStatus } from './shared/interface';
+import { KeyType } from './shared/interface';
 
 const KeysStatus = ({
     type,

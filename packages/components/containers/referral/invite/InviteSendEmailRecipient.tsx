@@ -1,10 +1,10 @@
-import { MouseEventHandler } from 'react';
+import type { MouseEventHandler } from 'react';
 
 import { c } from 'ttag';
 
 import { Icon, Tooltip } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isProtonAddress } from './helpers';

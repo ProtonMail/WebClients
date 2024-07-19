@@ -1,11 +1,12 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-import { Optional, Recipient } from '@proton/shared/lib/interfaces';
+import type { Optional, Recipient } from '@proton/shared/lib/interfaces';
 
-import { RecipientType } from '../../models/address';
+import type { RecipientType } from '../../models/address';
 import { globalReset } from '../actions';
-import { MessageState } from '../messages/messagesTypes';
-import { Composer, ComposerID, ComposersState } from './composerTypes';
+import type { MessageState } from '../messages/messagesTypes';
+import type { Composer, ComposerID, ComposersState } from './composerTypes';
 
 export const composersInitialState: ComposersState = {
     composers: {},

@@ -1,14 +1,8 @@
 import { round } from 'lodash';
 import { c } from 'ttag';
 
-import {
-    WasmAddress,
-    WasmApiExchangeRate,
-    WasmBitcoinUnit,
-    WasmFiatCurrencySymbol,
-    WasmNetwork,
-    WasmScriptType,
-} from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmFiatCurrencySymbol, WasmNetwork } from '@proton/andromeda';
+import { WasmAddress, WasmScriptType } from '@proton/andromeda';
 import { BITCOIN, CENTS_BY_BITCOIN_UNIT, SATOSHI, mBITCOIN } from '@proton/wallet';
 
 export const getLabelByUnit = (unit: WasmBitcoinUnit) => {

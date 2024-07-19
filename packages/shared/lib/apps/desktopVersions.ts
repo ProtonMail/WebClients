@@ -1,4 +1,4 @@
-import { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
+import type { DESKTOP_APP_NAMES, DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
 
 export interface Props {

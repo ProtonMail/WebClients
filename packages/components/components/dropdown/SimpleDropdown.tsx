@@ -1,20 +1,14 @@
-import {
-    ElementType,
-    ForwardedRef,
-    HTMLAttributes,
-    MouseEventHandler,
-    ReactNode,
-    RefObject,
-    forwardRef,
-    useState,
-} from 'react';
+import type { ElementType, ForwardedRef, HTMLAttributes, MouseEventHandler, ReactNode, RefObject } from 'react';
+import { forwardRef, useState } from 'react';
 
 import { useCombinedRefs } from '@proton/hooks';
 
 import { generateUID } from '../../helpers';
 import { usePopperAnchor } from '../popper';
-import Dropdown, { DropdownProps } from './Dropdown';
-import DropdownButton, { DropdownButtonProps } from './DropdownButton';
+import type { DropdownProps } from './Dropdown';
+import Dropdown from './Dropdown';
+import type { DropdownButtonProps } from './DropdownButton';
+import DropdownButton from './DropdownButton';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;

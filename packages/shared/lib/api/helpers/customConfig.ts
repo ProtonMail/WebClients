@@ -1,6 +1,6 @@
 import { getUIDHeaderValue, withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 
-import { Api } from '../../interfaces';
+import type { Api } from '../../interfaces';
 
 export const getSilentApi = (api: Api) => {
     return <T>(config: any) => api<T>({ ...config, silence: true });

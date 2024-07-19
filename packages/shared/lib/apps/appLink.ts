@@ -1,7 +1,8 @@
-import { History } from 'history';
+import type { History } from 'history';
 
-import { AuthenticationStore } from '../authentication/createAuthenticationStore';
-import { APPS, APP_NAMES } from '../constants';
+import type { AuthenticationStore } from '../authentication/createAuthenticationStore';
+import type { APP_NAMES } from '../constants';
+import { APPS } from '../constants';
 import { appMode } from '../webpack.constants';
 import { getAppHref, getAppHrefBundle } from './helper';
 

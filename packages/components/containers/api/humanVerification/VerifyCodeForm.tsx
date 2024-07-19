@@ -1,4 +1,5 @@
-import { KeyboardEvent, ReactNode, useState } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +12,7 @@ import noop from '@proton/utils/noop';
 import { InputFieldTwo, useFormErrors } from '../../../components';
 import Text from './Text';
 import { getFormattedCode } from './helper';
-import { VerificationModel } from './interface';
+import type { VerificationModel } from './interface';
 
 interface Props {
     onSubmit: (code: string, verificationModel: VerificationModel) => void;

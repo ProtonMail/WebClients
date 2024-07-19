@@ -1,4 +1,5 @@
-import { MutableRefObject, useCallback } from 'react';
+import type { MutableRefObject } from 'react';
+import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -28,10 +29,10 @@ import { composerActions } from 'proton-mail/store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
-import { MESSAGE_ACTIONS } from '../../constants';
+import type { MESSAGE_ACTIONS } from '../../constants';
 import { isDirtyAddress } from '../../helpers/addresses';
 import { openDraft } from '../../store/messages/draft/messagesDraftActions';
-import { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
+import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 import { EditorTypes } from './useComposerContent';

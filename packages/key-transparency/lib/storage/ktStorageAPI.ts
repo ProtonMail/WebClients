@@ -1,6 +1,7 @@
 import { instance } from '@proton/cross-storage/account-impl/guestInstance';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
 
 /**

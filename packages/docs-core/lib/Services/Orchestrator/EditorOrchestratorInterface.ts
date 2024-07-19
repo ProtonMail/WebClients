@@ -1,5 +1,5 @@
-import { UserState } from '@lexical/yjs'
-import {
+import type { UserState } from '@lexical/yjs'
+import type {
   CommentInterface,
   CommentThreadInterface,
   ClientRequiresEditorMethods,

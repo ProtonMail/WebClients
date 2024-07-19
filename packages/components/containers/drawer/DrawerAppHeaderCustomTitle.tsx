@@ -1,10 +1,11 @@
-import { ReactNode, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useRef } from 'react';
 
 import { Button } from '@proton/atoms';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
-import { Color } from '../../components/button/ButtonGroup';
+import type { Color } from '../../components/button/ButtonGroup';
 import { useHotkeys } from '../../hooks';
 
 interface Props {

@@ -1,5 +1,5 @@
-import { Nullable } from '../utils';
-import { Calendar } from './Calendar';
+import type { Nullable } from '../utils';
+import type { Calendar } from './Calendar';
 
 export enum ACCESS_LEVEL {
     LIMITED = 0,

@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
-import { IconName } from '@proton/components';
+import type { IconName } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN } from '../constants';
-import { Conversation } from '../models/conversation';
-import { Element } from '../models/element';
-import { MessageWithOptionalBody } from '../store/messages/messagesTypes';
+import type { Conversation } from '../models/conversation';
+import type { Element } from '../models/element';
+import type { MessageWithOptionalBody } from '../store/messages/messagesTypes';
 import { getLabelIDs } from './elements';
 
 const {

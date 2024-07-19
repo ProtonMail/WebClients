@@ -1,12 +1,16 @@
-import createIntervalTree from '@protontech/interval-tree';
+import type createIntervalTree from '@protontech/interval-tree';
 
-import { CALENDAR_SIGNED_FIELDS, SHARED_SIGNED_FIELDS } from '@proton/shared/lib/calendar/constants';
-import { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
-import { RequireSome } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, CalendarEventSharedData, DecryptedVeventResult } from '@proton/shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { CALENDAR_SIGNED_FIELDS, SHARED_SIGNED_FIELDS } from '@proton/shared/lib/calendar/constants';
+import type { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
+import type { RequireSome } from '@proton/shared/lib/interfaces';
+import type {
+    CalendarEvent,
+    CalendarEventSharedData,
+    DecryptedVeventResult,
+} from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { EventInternalProperties } from '../../../interfaces/EventInternalProperties';
+import type { EventInternalProperties } from '../../../interfaces/EventInternalProperties';
 
 export type IntervalTree = ReturnType<typeof createIntervalTree>;
 

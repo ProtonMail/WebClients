@@ -1,5 +1,5 @@
-import { CommentPayload } from '../CommentPayload'
-import { CommentThreadPayload } from '../CommentThreadPayload'
+import type { CommentPayload } from '../CommentPayload'
+import type { CommentThreadPayload } from '../CommentThreadPayload'
 
 export enum CommentsMessageType {
   AddThread = 0,

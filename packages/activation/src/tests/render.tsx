@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import type { PropsWithChildren, ReactElement } from 'react';
 import { Router } from 'react-router';
 
 import { render as originalRender } from '@testing-library/react';
@@ -20,7 +20,7 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
-import { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import type { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { getFeatureFlagsState } from '@proton/testing';
 
 import fakeCache from './fakeCache';

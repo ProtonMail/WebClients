@@ -2,12 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import {
-    EXPORT_ERRORS,
-    EXPORT_EVENT_ERROR_TYPES,
-    ExportCalendarModel,
-    ExportError,
-} from '@proton/shared/lib/interfaces/calendar';
+import type { ExportCalendarModel, ExportError } from '@proton/shared/lib/interfaces/calendar';
+import { EXPORT_ERRORS, EXPORT_EVENT_ERROR_TYPES } from '@proton/shared/lib/interfaces/calendar';
 import partition from '@proton/utils/partition';
 
 import { Alert, Bordered, Details, DynamicProgress, Summary } from '../../../components';

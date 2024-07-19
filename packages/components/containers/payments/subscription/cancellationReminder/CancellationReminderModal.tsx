@@ -3,9 +3,9 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
+import type { ModalProps } from '@proton/components/components';
 import {
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -22,7 +22,8 @@ import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscrip
 
 import { REACTIVATE_SOURCE } from '../cancellationFlow';
 import { getReminderPageConfig } from '../cancellationFlow/reminderPageConfig';
-import { ReminderFlag, markRemindersAsSeen } from './cancellationReminderHelper';
+import type { ReminderFlag } from './cancellationReminderHelper';
+import { markRemindersAsSeen } from './cancellationReminderHelper';
 
 const CancellationReminderModal = (props: ModalProps) => {
     const [user] = useUser();

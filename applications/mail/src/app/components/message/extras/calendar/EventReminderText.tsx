@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { Banner } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
-import { Nullable } from '@proton/shared/lib/interfaces';
+import type { Nullable } from '@proton/shared/lib/interfaces';
 
 export interface EventReminderTextProps {
     isAllDay: boolean;

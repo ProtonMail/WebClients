@@ -1,4 +1,5 @@
-import { ChangeEvent, DetailedHTMLProps, Ref, TextareaHTMLAttributes, useEffect, useRef, useState } from 'react';
+import type { ChangeEvent, DetailedHTMLProps, Ref, TextareaHTMLAttributes } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

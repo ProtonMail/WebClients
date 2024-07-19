@@ -1,5 +1,5 @@
-import { CalendarKey, CalendarMember, CalendarSettings as tsCalendarSettings } from '../../interfaces/calendar';
-import { CalendarMemberEventManager } from '../../interfaces/calendar/EventManager';
+import type { CalendarKey, CalendarMember, CalendarSettings as tsCalendarSettings } from '../../interfaces/calendar';
+import type { CalendarMemberEventManager } from '../../interfaces/calendar/EventManager';
 import {
     getIsCalendarMemberEventManagerCreate,
     getIsCalendarMemberEventManagerDelete,

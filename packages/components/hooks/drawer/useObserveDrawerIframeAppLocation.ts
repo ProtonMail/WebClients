@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { useConfig, useDrawer } from '@proton/components/hooks';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_EVENTS, DrawerApp } from '@proton/shared/lib/drawer/interfaces';
+import type { DrawerApp } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 
 const useObserveDrawerIframeAppLocation = () => {
     const { APP_NAME } = useConfig();

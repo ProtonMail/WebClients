@@ -1,8 +1,9 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import { DecryptedLink, useActions, useDriveSharingFlags } from '../../../store';
+import type { DecryptedLink } from '../../../store';
+import { useActions, useDriveSharingFlags } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
-import { ContextMenuProps } from '../../FileBrowser';
+import type { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { useRenameModal } from '../../modals/RenameModal';

@@ -1,4 +1,5 @@
-import { MouseEventHandler, Reducer, useCallback, useEffect, useReducer, useRef } from 'react';
+import type { MouseEventHandler, Reducer } from 'react';
+import { useCallback, useEffect, useReducer, useRef } from 'react';
 
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import debounce from '@proton/utils/debounce';
@@ -6,7 +7,8 @@ import throttle from '@proton/utils/throttle';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { ComposerDimension, computeLeftPosition } from '../../helpers/composerPositioning';
+import type { ComposerDimension } from '../../helpers/composerPositioning';
+import { computeLeftPosition } from '../../helpers/composerPositioning';
 
 interface Props {
     composerDimension: ComposerDimension;

@@ -1,21 +1,21 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
 import {
     Form,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
 } from '@proton/components';
 import { useApi, useEventManager } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics/index';
 import { deleteOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { Organization } from '@proton/shared/lib/interfaces';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import SidebarPreview from './SidebarPreview';

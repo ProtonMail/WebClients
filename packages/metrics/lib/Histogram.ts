@@ -1,5 +1,5 @@
 import Metric from './Metric';
-import MetricSchema from './types/MetricSchema';
+import type MetricSchema from './types/MetricSchema';
 
 class Histogram<D extends MetricSchema> extends Metric<D> {
     public observe(data: D) {

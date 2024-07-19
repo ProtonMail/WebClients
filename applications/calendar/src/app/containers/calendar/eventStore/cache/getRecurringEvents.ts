@@ -1,10 +1,7 @@
-import {
-    RecurringResult,
-    getOccurrences,
-    getOccurrencesBetween,
-} from '@proton/shared/lib/calendar/recurrence/recurring';
+import type { RecurringResult } from '@proton/shared/lib/calendar/recurrence/recurring';
+import { getOccurrences, getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
 
-import { EventsCache, RecurringEventsCache } from '../interface';
+import type { EventsCache, RecurringEventsCache } from '../interface';
 
 interface Result {
     id: string;

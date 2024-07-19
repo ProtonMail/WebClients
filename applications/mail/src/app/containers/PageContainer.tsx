@@ -1,8 +1,9 @@
-import { Ref, forwardRef, memo } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, memo } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
+import type { Breakpoints } from '@proton/components';
 import {
-    Breakpoints,
     MailShortcutsModal,
     useFolders,
     useLabels,
@@ -11,8 +12,8 @@ import {
     useUserSettings,
     useWelcomeFlags,
 } from '@proton/components';
-import { UserSettings } from '@proton/shared/lib/interfaces';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import AssistantIframe from 'proton-mail/components/assistant/AssistantIframe';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -20,7 +21,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
-import { MailUrlParams } from '../helpers/mailboxUrl';
+import type { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
 import { useConversationsEvent } from '../hooks/events/useConversationsEvents';
 import { useMessagesEvents } from '../hooks/events/useMessagesEvents';

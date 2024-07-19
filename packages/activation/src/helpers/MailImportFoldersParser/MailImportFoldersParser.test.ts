@@ -1,7 +1,8 @@
-import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
+import type { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import { MailImportDestinationFolder } from '@proton/activation/src/interface';
 
-import MailImportFoldersParser, { MailImportFolder } from './MailImportFoldersParser';
+import type { MailImportFolder } from './MailImportFoldersParser';
+import MailImportFoldersParser from './MailImportFoldersParser';
 
 /**
  * List of provider folders paths

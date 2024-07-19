@@ -2,7 +2,7 @@ import { isWithinInterval } from 'date-fns';
 
 import { BLACK_FRIDAY, CYCLE, PLANS } from '../constants';
 import { getHas2023OfferCoupon } from '../helpers/subscription';
-import { PlanIDs } from '../interfaces';
+import type { PlanIDs } from '../interfaces';
 
 export const isBlackFridayPeriod = () => {
     return isWithinInterval(new Date(), { start: BLACK_FRIDAY.START, end: BLACK_FRIDAY.END });

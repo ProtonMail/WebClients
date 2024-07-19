@@ -1,19 +1,19 @@
-import { MutableRefObject } from 'react';
+import type { MutableRefObject } from 'react';
 
 import { fireEvent, getAllByRole, screen } from '@testing-library/react';
 import { act, getByText } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, clearAll, minimalCache, render } from '../../../helpers/test/helper';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { composerActions } from '../../../store/composers/composersSlice';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import Addresses from './Addresses';
 
 const email1 = 'test@test.com';

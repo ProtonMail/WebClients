@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
+import type { ModalProps } from '@proton/components/components';
 import {
     Icon,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -16,7 +16,7 @@ import cleanLinkImg from '@proton/styles/assets/img/illustrations/clean-utm-trac
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props extends ModalProps {
     message: MessageState;

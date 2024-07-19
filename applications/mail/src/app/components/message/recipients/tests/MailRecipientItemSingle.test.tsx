@@ -1,8 +1,10 @@
-import { Matcher, fireEvent } from '@testing-library/react';
+import type { Matcher } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
-import { GeneratedKey, generateKeys } from '../../../../helpers/test/crypto';
+import type { GeneratedKey } from '../../../../helpers/test/crypto';
+import { generateKeys } from '../../../../helpers/test/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { clearAll } from '../../../../helpers/test/helper';
 import { render, tick } from '../../../../helpers/test/render';

@@ -2,14 +2,15 @@ import { encodeBase64 } from '@proton/crypto/lib/utils';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
+import type { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
 import { api } from '../../test/api';
-import { GeneratedKey, generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
+import type { GeneratedKey } from '../../test/crypto';
+import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
+import type { Download } from '../attachmentDownloader';
 import {
-    Download,
     formatDownload,
     formatDownloadAll,
     generateDownload,

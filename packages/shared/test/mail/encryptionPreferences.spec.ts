@@ -1,8 +1,10 @@
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 import { PACKAGE_TYPE, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES, PGP_SCHEMES_MORE } from '../../lib/constants';
-import { KT_VERIFICATION_STATUS, MailSettings, SelfSend } from '../../lib/interfaces';
+import type { CONTACT_MIME_TYPES } from '../../lib/constants';
+import { MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES, PGP_SCHEMES_MORE } from '../../lib/constants';
+import type { MailSettings, SelfSend } from '../../lib/interfaces';
+import { KT_VERIFICATION_STATUS } from '../../lib/interfaces';
 import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
 
 const fakeKey1: PublicKeyReference = {

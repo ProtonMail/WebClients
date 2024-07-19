@@ -1,5 +1,5 @@
-import { InternalEventBusInterface } from '@proton/docs-shared'
-import { UserState } from '@lexical/yjs'
+import type { InternalEventBusInterface } from '@proton/docs-shared'
+import type { UserState } from '@lexical/yjs'
 
 const MAX_USER_STATES_FOR_LOCKING_EDITOR = 10
 

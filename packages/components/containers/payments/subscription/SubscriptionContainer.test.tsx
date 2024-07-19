@@ -10,7 +10,8 @@ import {
 import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
 import { createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
-import { Audience, Organization, Plan } from '@proton/shared/lib/interfaces';
+import type { Organization, Plan } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { buildUser } from '@proton/testing/builders';
@@ -26,7 +27,8 @@ import {
     withNotifications,
 } from '@proton/testing/index';
 
-import SubscriptionContainer, { SubscriptionContainerProps } from './SubscriptionContainer';
+import type { SubscriptionContainerProps } from './SubscriptionContainer';
+import SubscriptionContainer from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/components/components/portal/Portal');

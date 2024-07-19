@@ -1,5 +1,5 @@
 import * as useAddressesModule from '@proton/account/addresses/hooks';
-import { Address } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 
 import { buildAddress } from '../builders/address';
 

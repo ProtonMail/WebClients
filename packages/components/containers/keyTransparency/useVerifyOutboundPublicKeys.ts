@@ -1,12 +1,12 @@
 import { ktSentryReportError, verifyPublicKeysAddressAndCatchall } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
+import type {
     FetchedSignedKeyList,
-    KeyTransparencyActivation,
     KeyTransparencyVerificationResult,
     ProcessedApiKey,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';

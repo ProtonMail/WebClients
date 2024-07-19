@@ -5,7 +5,7 @@ import { useHandler, useNotifications } from '@proton/components';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { deleteDraft } from '../../store/messages/draft/messagesDraftActions';
-import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
 import { useCreateDraft } from '../message/useSaveDraft';
 

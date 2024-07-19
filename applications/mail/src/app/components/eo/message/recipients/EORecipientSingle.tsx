@@ -1,5 +1,5 @@
 import { usePopperAnchor } from '@proton/components';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import RecipientItemSingle from '../../../message/recipients/RecipientItemSingle';
 

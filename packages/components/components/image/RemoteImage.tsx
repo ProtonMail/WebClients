@@ -1,4 +1,5 @@
-import { DetailedHTMLProps, ImgHTMLAttributes, useEffect } from 'react';
+import type { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
+import { useEffect } from 'react';
 
 import { c } from 'ttag';
 

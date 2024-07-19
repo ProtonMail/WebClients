@@ -15,7 +15,7 @@ import {
     useVPNServersCount,
 } from '@proton/components';
 import { onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 

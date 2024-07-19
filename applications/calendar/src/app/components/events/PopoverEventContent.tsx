@@ -1,4 +1,5 @@
-import { ReactElement, RefObject, useMemo } from 'react';
+import type { ReactElement, RefObject } from 'react';
+import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -29,10 +30,10 @@ import {
     canonicalizeInternalEmail,
 } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
-import { DisplayNameEmail } from '../../containers/calendar/interface';
+import type { DisplayNameEmail } from '../../containers/calendar/interface';
 import { getOrganizerDisplayData } from '../../helpers/attendees';
 import AttendeeStatusIcon from './AttendeeStatusIcon';
 import Participant from './Participant';

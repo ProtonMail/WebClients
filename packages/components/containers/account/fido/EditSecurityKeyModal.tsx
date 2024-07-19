@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import type { FormEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,6 +8,7 @@ import { useLoading } from '@proton/hooks';
 import { renameSecurityKey } from '@proton/shared/lib/api/settings';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
+import type { ModalProps } from '../../../components';
 import {
     Form,
     InputFieldTwo,
@@ -14,7 +16,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     useFormErrors,
 } from '../../../components';
 import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../../hooks';

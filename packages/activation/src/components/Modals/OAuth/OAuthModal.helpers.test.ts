@@ -1,4 +1,5 @@
-import { EasySwitchFeatureFlag, ImportProvider } from '@proton/activation/src/interface';
+import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
+import { ImportProvider } from '@proton/activation/src/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getEnabledFeature } from './OAuthModal.helpers';

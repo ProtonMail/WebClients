@@ -2,13 +2,8 @@ import { c } from 'ttag';
 
 import { ktKeyVerificationFailureTelemetryAndMetrics, ktSentryReport } from '@proton/key-transparency/lib';
 
-import {
-    Api,
-    ApiKeysConfig,
-    KT_VERIFICATION_STATUS,
-    KeyTransparencyActivation,
-    VerifyOutboundPublicKeys,
-} from '../../interfaces';
+import type { Api, ApiKeysConfig, VerifyOutboundPublicKeys } from '../../interfaces';
+import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '../../interfaces';
 import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';
 
 export const KEY_VERIFICATION_ERROR_MESSAGE = c('loc_nightly: Key verification error')

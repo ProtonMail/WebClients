@@ -4,16 +4,16 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { Element } from '../../models/element';
-import { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
-import { SearchParameters } from '../../models/tools';
+import type { Element } from '../../models/element';
+import type { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
+import type { SearchParameters } from '../../models/tools';
 import { eventUpdates, invalidate } from '../../store/elements/elementsActions';
 import {
     isES as isESSelector,
     shouldInvalidateElementsState as shouldInvalidateElementsStateSelector,
     taskRunning as taskRunningSelector,
 } from '../../store/elements/elementsSelectors';
-import { EventUpdates } from '../../store/elements/elementsTypes';
+import type { EventUpdates } from '../../store/elements/elementsTypes';
 
 export const useElementsEvents = (conversationMode: boolean, search: SearchParameters) => {
     const { esStatus } = useEncryptedSearchContext();

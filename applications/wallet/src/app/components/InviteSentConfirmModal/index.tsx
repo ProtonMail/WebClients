@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { ModalOwnProps, Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletSendingPlane from '@proton/styles/assets/img/illustrations/wallet-sending-plane.svg';
 

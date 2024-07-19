@@ -6,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import { Prompt } from '../../../components';
 import { isVerifyAddressOwnership } from './helper';
-import { VerificationModel } from './interface';
+import type { VerificationModel } from './interface';
 
 interface Props {
     verificationModel: VerificationModel;

@@ -2,8 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { useApiResult } from '@proton/components/hooks';
 
-import { Gateway } from './Gateway';
-import { GatewayUser } from './GatewayUser';
+import type { Gateway } from './Gateway';
+import type { GatewayUser } from './GatewayUser';
 import { queryVPNGateways } from './api';
 
 interface TableConfig {

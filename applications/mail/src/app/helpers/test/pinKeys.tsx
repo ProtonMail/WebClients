@@ -2,13 +2,14 @@ import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { prepareCardsFromVCard } from '@proton/shared/lib/contacts/encrypt';
 import { createContactPropertyUid, fromVCardProperties } from '@proton/shared/lib/contacts/properties';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiMock } from './api';
-import { GeneratedKey, generateKeys } from './crypto';
+import type { GeneratedKey } from './crypto';
+import { generateKeys } from './crypto';
 
 export const contactID = 'contactID';
 export const receiver = {

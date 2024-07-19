@@ -1,6 +1,6 @@
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { ApiImporterError, ApiImporterState, ApiReportRollbackState } from './api/api.interface';
+import type { ApiImporterError, ApiImporterState, ApiReportRollbackState } from './api/api.interface';
 
 export enum ImportProvider {
     GOOGLE = 'google',

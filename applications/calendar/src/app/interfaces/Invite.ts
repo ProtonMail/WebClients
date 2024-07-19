@@ -1,9 +1,9 @@
-import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import { Address, RequireSome } from '@proton/shared/lib/interfaces';
-import { CalendarEvent, VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+import type { Address, RequireSome } from '@proton/shared/lib/interfaces';
+import type { CalendarEvent, VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
-import { AugmentedSendPreferences } from '../containers/calendar/interface';
+import type { AugmentedSendPreferences } from '../containers/calendar/interface';
 
 export enum INVITE_ACTION_TYPES {
     NONE,

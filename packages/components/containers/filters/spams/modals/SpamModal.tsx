@@ -6,11 +6,11 @@ import { Button, Input } from '@proton/atoms';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isDomain } from '@proton/shared/lib/helpers/validators';
 
+import type { ModalProps } from '../../../../components';
 import {
     Field,
     Form,
     Label,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -18,7 +18,7 @@ import {
     Radio,
     Row,
 } from '../../../../components';
-import { SpamLocation } from '../Spams.interfaces';
+import type { SpamLocation } from '../Spams.interfaces';
 
 export type SpamMode = 'email' | 'domain';
 

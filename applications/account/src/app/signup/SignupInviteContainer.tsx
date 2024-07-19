@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -6,9 +7,9 @@ import { c } from 'ttag';
 import { StandardLoadErrorPage, useApi, useErrorHandler, useNotifications } from '@proton/components';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { checkInvitation } from '@proton/shared/lib/api/invites';
-import { CLIENT_TYPES } from '@proton/shared/lib/constants';
+import type { CLIENT_TYPES } from '@proton/shared/lib/constants';
 
-import { InviteData } from './interfaces';
+import type { InviteData } from './interfaces';
 
 interface Props {
     onInvalid: () => void;

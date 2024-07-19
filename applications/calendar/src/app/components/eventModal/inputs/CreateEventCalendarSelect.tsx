@@ -1,9 +1,9 @@
 import { useGetAddresses, useGetCalendarBootstrap } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
-import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import type { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { useLoading } from '@proton/hooks';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
-import { CalendarMember, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarMember, EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { getIsAvailableCalendar } from '../../../helpers/event';
 import { getInitialMemberModel, getOrganizerAndSelfAddressModel } from '../eventForm/state';

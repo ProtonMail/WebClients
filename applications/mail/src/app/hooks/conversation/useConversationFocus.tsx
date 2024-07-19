@@ -1,6 +1,7 @@
-import { FocusEvent, RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import type { FocusEvent, RefObject } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import useClickOutsideFocusedMessage from './useClickOutsideFocusedMessage';
 

@@ -1,9 +1,10 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 import { format } from 'date-fns';
 
 import { addDays } from '@proton/shared/lib/date-fns-utc';
-import formatUTC, { Options } from '@proton/shared/lib/date-fns-utc/format';
+import type { Options } from '@proton/shared/lib/date-fns-utc/format';
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { EnDash } from '../text';

@@ -1,4 +1,4 @@
-import { KeyboardEvent } from 'react';
+import type { KeyboardEvent } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +7,8 @@ import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { Field } from '../../../components';
-import { AdvancedSimpleFilterModalModel, SimpleFilterModalModel, Step } from '../interfaces';
+import type { AdvancedSimpleFilterModalModel, SimpleFilterModalModel } from '../interfaces';
+import { Step } from '../interfaces';
 
 interface Errors {
     name: string;

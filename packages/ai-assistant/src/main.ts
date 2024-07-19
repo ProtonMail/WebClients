@@ -1,6 +1,8 @@
-import { LlmFile, downloadModel } from '@proton/llm/lib/downloader';
+import type { LlmFile } from '@proton/llm/lib/downloader';
+import { downloadModel } from '@proton/llm/lib/downloader';
 import { isAssistantPostMessage, postMessageIframeToParent } from '@proton/llm/lib/helpers';
-import { AssistantConfig, AssistantEvent } from '@proton/llm/lib/types';
+import type { AssistantConfig } from '@proton/llm/lib/types';
+import { AssistantEvent } from '@proton/llm/lib/types';
 
 window.addEventListener('load', async () => {
     let abortController: AbortController | undefined; // defined if status === 'loading'

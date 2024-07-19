@@ -1,8 +1,10 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Logo, ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Logo } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';

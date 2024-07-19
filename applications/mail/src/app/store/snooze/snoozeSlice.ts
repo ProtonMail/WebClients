@@ -1,6 +1,7 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 
 interface SnoozeState {
     element?: Element;

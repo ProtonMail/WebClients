@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { PrivateAppContainer, PrivateMainArea, useToggle } from '@proton/components';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { LayoutViewLoader } from '../../atoms/LayoutViewLoader';
 import { useBitcoinBlockchainContext } from '../../contexts';

@@ -1,12 +1,7 @@
-import {
-  TableNode,
-  $createTableNode,
-  $createTableRowNode,
-  TableCellHeaderStates,
-  $createTableCellNode,
-} from '@lexical/table'
+import type { TableNode } from '@lexical/table'
+import { $createTableNode, $createTableRowNode, TableCellHeaderStates, $createTableCellNode } from '@lexical/table'
 import { $createParagraphNode, $createTextNode, $getEditor } from 'lexical'
-import { InsertTableCommandPayload } from './InsertTableCommand'
+import type { InsertTableCommandPayload } from './InsertTableCommand'
 
 export function $createTableNodeWithDimensions(
   rowCount: number,

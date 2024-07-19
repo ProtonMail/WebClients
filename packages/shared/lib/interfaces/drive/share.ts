@@ -1,4 +1,4 @@
-import { ShareMembershipPayload } from './member';
+import type { ShareMembershipPayload } from './member';
 
 export interface CreateDriveShare {
     AddressID: string;

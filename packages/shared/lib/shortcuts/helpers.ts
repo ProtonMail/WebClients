@@ -1,6 +1,6 @@
 import { isDialogOpen, isDropdownOpen, isEditing, isModalOpen } from '../busy';
 import { isMac } from '../helpers/browser';
-import { KeyboardKeyType } from '../interfaces';
+import type { KeyboardKeyType } from '../interfaces';
 
 const HTML_TAGS_TO_IGNORE = ['input', 'select', 'textarea', 'button', 'a'];
 

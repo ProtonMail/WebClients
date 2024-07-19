@@ -1,7 +1,8 @@
-import { OAuthForkResponse, postOAuthFork } from '../../api/oauth';
+import type { OAuthForkResponse } from '../../api/oauth';
+import { postOAuthFork } from '../../api/oauth';
 import { withUIDHeaders } from '../../fetch/headers';
 import { replaceUrl } from '../../helpers/browser';
-import { Api } from '../../interfaces';
+import type { Api } from '../../interfaces';
 
 export interface OAuthProduceForkParameters {
     clientID: string;

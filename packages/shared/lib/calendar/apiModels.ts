@@ -1,5 +1,5 @@
-import { RequireSome } from '../interfaces';
-import { CalendarCreateOrUpdateEventBlobData, CalendarEvent } from '../interfaces/calendar';
+import type { RequireSome } from '../interfaces';
+import type { CalendarCreateOrUpdateEventBlobData, CalendarEvent } from '../interfaces/calendar';
 
 export const getHasSharedEventContent = (
     data: CalendarCreateOrUpdateEventBlobData

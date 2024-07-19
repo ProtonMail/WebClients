@@ -11,12 +11,12 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
-import { BusySlot } from '../../store/busySlots/busySlotsSlice';
-import { CalendarViewBusyEvent, CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
+import type { BusySlot } from '../../store/busySlots/busySlotsSlice';
+import type { CalendarViewBusyEvent, CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 export const getViewEventDateProperties = (eventComponent: VcalVeventComponent) => {
     const utcStart = propertyToUTCDate(eventComponent.dtstart);

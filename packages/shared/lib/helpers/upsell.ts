@@ -1,6 +1,7 @@
-import { APPS, APP_NAMES, APP_UPSELL_REF_PATH, PLANS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import type { APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS, APP_UPSELL_REF_PATH, PLANS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 /**
  * Add an upsell ref param to a URL

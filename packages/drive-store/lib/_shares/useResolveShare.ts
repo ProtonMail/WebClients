@@ -5,7 +5,7 @@ import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 import { useDebouncedRequest } from '../../store/_api';
 import { useAbortSignal } from '../../store/_views/utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { LegacyNodeMeta, NodeMeta } from '../interface';
+import type { LegacyNodeMeta, NodeMeta } from '../interface';
 
 /**
  * Gets the cache key for a `NodeMeta` pair.

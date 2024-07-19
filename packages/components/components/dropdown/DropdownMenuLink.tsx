@@ -1,7 +1,7 @@
-import { ElementType } from 'react';
+import type { ElementType } from 'react';
 
 import { Href } from '@proton/atoms';
-import { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
+import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 interface DropdownMenuLinkOwnProps {}

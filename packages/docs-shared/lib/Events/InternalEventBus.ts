@@ -1,8 +1,8 @@
-import { InternalEventBusInterface } from './InternalEventBusInterface'
-import { InternalEventHandlerInterface } from './InternalEventHandlerInterface'
-import { InternalEventInterface } from './InternalEventInterface'
+import type { InternalEventBusInterface } from './InternalEventBusInterface'
+import type { InternalEventHandlerInterface } from './InternalEventHandlerInterface'
+import type { InternalEventInterface } from './InternalEventInterface'
 import { InternalEventPublishStrategy } from './InternalEventPublishStrategy'
-import { InternalEventType } from './InternalEventType'
+import type { InternalEventType } from './InternalEventType'
 
 export class InternalEventBus implements InternalEventBusInterface {
   private eventHandlers: Map<InternalEventType, InternalEventHandlerInterface[]>

@@ -4,7 +4,7 @@ import { CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { FeatureCode } from '../../../../containers/features';
 import { getUnlimitedDealFeatures } from '../../helpers/offerCopies';
-import { OfferConfig } from '../../interface';
+import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 import sideImage from './Unlimited-400x1200.png';
 import sideImage2x from './Unlimited-800x2400.png';

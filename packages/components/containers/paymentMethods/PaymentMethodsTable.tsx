@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { SavedPaymentMethod, isPaypalDetails } from '@proton/components/payments/core';
+import type { SavedPaymentMethod } from '@proton/components/payments/core';
+import { isPaypalDetails } from '@proton/components/payments/core';
 import orderBy from '@proton/utils/orderBy';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';

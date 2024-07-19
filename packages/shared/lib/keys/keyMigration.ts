@@ -1,4 +1,5 @@
-import { CryptoProxy, PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -10,7 +11,7 @@ import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members'
 import { getOrganizationKeys } from '../api/organization';
 import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
 import { ApiError } from '../fetch/ApiError';
-import {
+import type {
     Address,
     Api,
     DecryptedKey,
@@ -28,7 +29,8 @@ import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDec
 import { getDecryptedOrganizationKeyHelper } from './getDecryptedOrganizationKey';
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
-import { OnSKLPublishSuccess, createSignedKeyListForMigration } from './signedKeyList';
+import type { OnSKLPublishSuccess } from './signedKeyList';
+import { createSignedKeyListForMigration } from './signedKeyList';
 
 export const getSentryError = (error: any): any => {
     // Only interested in api errors where the API gave a valid error response, or run time errors.

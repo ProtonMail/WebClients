@@ -1,8 +1,9 @@
-import { ChangeEvent, ReactNode, useEffect, useRef } from 'react';
+import type { ChangeEvent, ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 
 import useIsMounted from '@proton/hooks/useIsMounted';
 
-import { EditorActions } from '../interface';
+import type { EditorActions } from '../interface';
 
 interface Props {
     onChange: (value: string) => void;

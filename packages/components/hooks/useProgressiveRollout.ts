@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { getUserByte } from '@proton/shared/lib/user/helpers';
 
-import { FeatureCode } from '../containers/features';
+import type { FeatureCode } from '../containers/features';
 import useFeature from './useFeature';
 import useUser from './useUser';
 

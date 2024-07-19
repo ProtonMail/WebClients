@@ -4,16 +4,11 @@ import { useActiveBreakpoint, useNewFeatureOnboarding } from '@proton/components
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { DriveFolder } from '../../../hooks/drive/useActiveShare';
+import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import {
-    EncryptedLink,
-    LinkShareUrl,
-    useDriveSharingFlags,
-    useFolderView,
-    useThumbnailsDownload,
-} from '../../../store';
+import type { EncryptedLink, LinkShareUrl, useFolderView } from '../../../store';
+import { useDriveSharingFlags, useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -24,7 +19,7 @@ import FileBrowser, {
     useItemContextMenu,
     useSelection,
 } from '../../FileBrowser';
-import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import DriveSharingOnboardingModal from '../../modals/DriveSharingOnboardingModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import useOpenPreview from '../../useOpenPreview';

@@ -7,8 +7,8 @@ import {
     toUTCDate,
 } from '../../date/timezone';
 import { omit, pick } from '../../helpers/object';
-import { RequireSome } from '../../interfaces';
-import {
+import type { RequireSome } from '../../interfaces';
+import type {
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
     VcalDaysKeys,

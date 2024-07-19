@@ -1,4 +1,4 @@
-import { IStorageProvider } from 'unleash-proxy-client';
+import type { IStorageProvider } from 'unleash-proxy-client';
 
 export default class ProtonUnleashStorageProvider implements IStorageProvider {
     private prefix = 'unleash:repository';

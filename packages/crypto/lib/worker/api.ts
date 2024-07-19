@@ -42,11 +42,12 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { AlgorithmInfo as AlgorithmInfoV5, Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { SubkeyOptions, UserID, enums } from 'pmcrypto/lib/openpgp';
+import type { SubkeyOptions, UserID } from 'pmcrypto/lib/openpgp';
+import { enums } from 'pmcrypto/lib/openpgp';
 
 import { ARGON2_PARAMS } from '../constants';
 import { arrayToHexString } from '../utils';
-import {
+import type {
     AlgorithmInfo,
     ComputeHashStreamOptions,
     KeyInfo,

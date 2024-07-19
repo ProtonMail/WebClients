@@ -2,8 +2,9 @@ import { act } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, MIME_TYPES } from '@proton/shared/lib/constants';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import type { MIME_TYPES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
@@ -11,8 +12,9 @@ import { MESSAGE_ACTIONS } from '../constants';
 import { formatFullDate } from '../helpers/date';
 import { clearAll, getCompleteAddress, minimalCache, render, tick } from '../helpers/test/helper';
 import { preparePlainText } from '../helpers/transforms/transforms';
-import { ComposeTypes, OnCompose } from '../hooks/composer/useCompose';
-import { MessageState } from '../store/messages/messagesTypes';
+import type { OnCompose } from '../hooks/composer/useCompose';
+import { ComposeTypes } from '../hooks/composer/useCompose';
+import type { MessageState } from '../store/messages/messagesTypes';
 import { useOnCompose } from './ComposeProvider';
 import ComposerContainer from './ComposerContainer';
 

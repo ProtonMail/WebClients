@@ -1,4 +1,5 @@
-import { User, UserType } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
+import { UserType } from '@proton/shared/lib/interfaces';
 
 export const getDriveDrawerPermissions = ({ user }: { user: User }) => {
     return {

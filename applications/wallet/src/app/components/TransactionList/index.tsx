@@ -4,19 +4,15 @@ import { add, isBefore } from 'date-fns';
 import { compact } from 'lodash';
 import { c } from 'ttag';
 
-import {
-    WasmApiWalletAccount,
-    WasmApiWalletTransaction,
-    WasmSortOrder,
-    WasmTransactionDetails,
-} from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
+import { WasmSortOrder } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Tooltip, useModalStateWithData } from '@proton/components/components';
 import { useUserKeys } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-exchange.svg';
 import clsx from '@proton/utils/clsx';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, CoreButton, SimplePaginator } from '../../atoms';
 import { ITEMS_PER_PAGE } from '../../constants';
@@ -25,9 +21,11 @@ import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletDrawerContext } from '../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../hooks/useLocalPagination';
-import { DecryptedTransactionData, TransactionData, useWalletTransactions } from '../../hooks/useWalletTransactions';
+import type { DecryptedTransactionData, TransactionData } from '../../hooks/useWalletTransactions';
+import { useWalletTransactions } from '../../hooks/useWalletTransactions';
 import { getAccountTransactions, getThemeForWallet, getWalletTransactions } from '../../utils';
-import { DataColumn, DataList } from '../DataList';
+import type { DataColumn } from '../DataList';
+import { DataList } from '../DataList';
 import { TransactionNoteModal } from '../TransactionNoteModal';
 import { UnknownSenderModal } from '../UnknownSenderModal';
 import {

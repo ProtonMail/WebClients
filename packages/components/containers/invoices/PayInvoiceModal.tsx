@@ -4,13 +4,14 @@ import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/Ch
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
-import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
-import { ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { EllipsisLoader, Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
@@ -18,7 +19,7 @@ import { useApiResult, useEventManager, useNotifications, useSubscription, useUs
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { getInvoicePaymentsVersion } from './helpers';
-import { Invoice } from './interface';
+import type { Invoice } from './interface';
 
 interface CheckInvoiceResponse {
     Code: number;

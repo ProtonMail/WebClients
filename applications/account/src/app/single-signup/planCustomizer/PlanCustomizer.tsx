@@ -1,11 +1,11 @@
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Icon, Info } from '@proton/components';
 import { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { Currency, Cycle, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import ButtonNumberInput from './ButtonNumberInput';

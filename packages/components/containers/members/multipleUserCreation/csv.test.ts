@@ -1,9 +1,10 @@
 import { BASE_SIZE, GIGA } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 
-import { CsvConfig, getSampleCSV, parseMultiUserCsv } from './csv';
+import type { CsvConfig } from './csv';
+import { getSampleCSV, parseMultiUserCsv } from './csv';
 import { CSV_CONVERSION_ERROR_TYPE } from './errors/CsvConversionError';
-import { SampleCsvUser } from './types';
+import type { SampleCsvUser } from './types';
 
 const csvConfig = {
     mode: CreateMemberMode.Password,

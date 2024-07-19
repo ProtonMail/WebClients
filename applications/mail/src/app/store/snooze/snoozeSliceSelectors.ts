@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-import { MailState } from '../store';
+import type { MailState } from '../store';
 
 const snooze = (state: MailState) => state.snooze;
 

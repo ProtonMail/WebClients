@@ -1,13 +1,12 @@
-import {
+import type {
     ChangeEvent,
     ChangeEventHandler,
     FocusEvent,
     FocusEventHandler,
     KeyboardEvent,
     KeyboardEventHandler,
-    useMemo,
-    useState,
 } from 'react';
+import { useMemo, useState } from 'react';
 
 const FOCUSED_CLASS = 'focused';
 const BLURRED_CLASS = 'blurred';

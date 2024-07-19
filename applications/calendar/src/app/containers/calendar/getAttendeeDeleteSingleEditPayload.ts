@@ -1,8 +1,8 @@
-import { useGetAddressKeys } from '@proton/components';
+import type { useGetAddressKeys } from '@proton/components';
 import { CALENDAR_CARD_TYPE } from '@proton/shared/lib/calendar/constants';
 import { signPart } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { getCalendarSignedPartWithExdate } from '@proton/shared/lib/calendar/veventHelper';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
 interface AttendeeDeleteSingleEditPayloadArguments {

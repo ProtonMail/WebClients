@@ -1,8 +1,8 @@
-import { ADDRESS_PERMISSIONS } from '@proton/shared/lib/constants';
+import type { ADDRESS_PERMISSIONS } from '@proton/shared/lib/constants';
 
-import { Address, Api, SignedKeyList } from '../interfaces';
+import type { Address, Api, SignedKeyList } from '../interfaces';
 import queryPages from './helpers/queryPages';
-import { PaginationParams } from './interface';
+import type { PaginationParams } from './interface';
 
 export const queryAddresses = (params?: PaginationParams) => ({
     url: 'core/v4/addresses',

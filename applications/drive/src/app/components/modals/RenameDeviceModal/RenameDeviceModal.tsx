@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     Form,
     InputFieldTwo,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -19,7 +19,8 @@ import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import { Device, useActions } from '../../../store';
+import type { Device } from '../../../store';
+import { useActions } from '../../../store';
 
 interface Props {
     onClose?: () => void;

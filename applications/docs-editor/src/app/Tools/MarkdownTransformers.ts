@@ -1,9 +1,9 @@
+import type { ElementTransformer } from '@lexical/markdown'
 import {
   $convertFromMarkdownString,
   $convertToMarkdownString,
   CHECK_LIST,
   ELEMENT_TRANSFORMERS,
-  ElementTransformer,
   TEXT_FORMAT_TRANSFORMERS,
   TEXT_MATCH_TRANSFORMERS,
 } from '@lexical/markdown'
@@ -24,7 +24,8 @@ import {
   TableNode,
   TableRowNode,
 } from '@lexical/table'
-import { $isParagraphNode, $isTextNode, LexicalNode } from 'lexical'
+import type { LexicalNode } from 'lexical'
+import { $isParagraphNode, $isTextNode } from 'lexical'
 
 const HorizontalRule: ElementTransformer = {
   dependencies: [HorizontalRuleNode],

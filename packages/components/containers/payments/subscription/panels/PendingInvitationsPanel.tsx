@@ -7,7 +7,7 @@ import { useModalState } from '@proton/components/components';
 import { useGetUserInvitations } from '@proton/components/hooks';
 import useUid from '@proton/components/hooks/useUid';
 import { CacheType } from '@proton/redux-utilities';
-import { PendingInvitation } from '@proton/shared/lib/interfaces';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import PendingInvitationModal from '../PendingInvitationModal';

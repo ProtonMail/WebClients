@@ -1,6 +1,7 @@
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 
-import { OpenCallbackProps, SUBSCRIPTION_STEPS } from '../..';
+import type { OpenCallbackProps } from '../..';
+import { SUBSCRIPTION_STEPS } from '../..';
 
 const getUpsellSubscriptionModalConfig = (upsellRef: string, step = SUBSCRIPTION_STEPS.CHECKOUT): OpenCallbackProps => {
     return {

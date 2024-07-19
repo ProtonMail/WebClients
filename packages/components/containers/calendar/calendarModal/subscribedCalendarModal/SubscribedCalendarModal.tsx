@@ -1,4 +1,5 @@
-import { ChangeEvent, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +11,8 @@ import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/hel
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
 import { BasicModal, Form, InputFieldTwo, Loader } from '../../../../components';
 import { useApi } from '../../../../hooks';

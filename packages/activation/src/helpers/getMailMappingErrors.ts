@@ -1,9 +1,9 @@
 import { MAX_FOLDER_LIMIT } from '@proton/activation/src/constants';
 import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
+import type { MailImportFolder } from './MailImportFoldersParser/MailImportFoldersParser';
 import { hasMergeWarning, isNameAlreadyUsed, isNameEmpty, isNameReserved, isNameTooLong } from './errorsMapping';
 
 const {

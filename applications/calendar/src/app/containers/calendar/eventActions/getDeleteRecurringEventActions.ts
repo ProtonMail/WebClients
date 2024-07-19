@@ -4,26 +4,22 @@ import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegra
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import type { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import unary from '@proton/utils/unary';
 
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventOldData } from '../../../interfaces/EventData';
-import {
+import type { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import type { EventOldData } from '../../../interfaces/EventData';
+import type {
     AttendeeDeleteSingleEditOperation,
-    INVITE_ACTION_TYPES,
     InviteActions,
     SendIcs,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
-import {
-    SyncEventActionOperation,
-    SyncEventActionOperations,
-    getDeleteSyncOperation,
-    getUpdateSyncOperation,
-} from '../getSyncMultipleEventsPayload';
+import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import type { SyncEventActionOperation, SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import { getDeleteSyncOperation, getUpdateSyncOperation } from '../getSyncMultipleEventsPayload';
 import createSingleCancelledRecurrence from '../recurrence/createSingleCancelledRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';

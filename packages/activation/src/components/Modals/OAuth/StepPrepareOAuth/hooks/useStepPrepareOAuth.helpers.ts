@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { getMailMappingErrors } from '@proton/activation/src/helpers/getMailMappingErrors';
 import { ImportType, TIME_PERIOD } from '@proton/activation/src/interface';
-import { ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
+import type { ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import { willUserReachCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
-import { Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder } from '@proton/shared/lib/interfaces/Folder';
+import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 export const getMailCustomLabel = (period?: TIME_PERIOD) => {

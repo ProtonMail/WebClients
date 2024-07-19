@@ -1,4 +1,5 @@
-import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
+import type { FC } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,7 +7,8 @@ import { NavigationControl, TopBanner, useAppTitle, useFlag } from '@proton/comp
 import { Loader } from '@proton/components/components';
 
 import { useShiftKey } from '../../../hooks/util/useShiftKey';
-import { PhotoLink, isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../../store';
+import type { PhotoLink } from '../../../store';
+import { isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../../store';
 import PortalPreview from '../../PortalPreview';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';

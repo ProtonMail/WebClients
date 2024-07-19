@@ -1,7 +1,8 @@
-import { ElementType, forwardRef } from 'react';
+import type { ElementType } from 'react';
+import { forwardRef } from 'react';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import DropdownCaret from './DropdownCaret';

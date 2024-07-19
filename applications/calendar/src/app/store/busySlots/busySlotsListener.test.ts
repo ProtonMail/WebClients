@@ -2,10 +2,11 @@ import { addHours, getUnixTime } from 'date-fns';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar';
 import { addApiResolver, apiMock } from '@proton/testing';
 
-import { CalendarStore, extendStore, setupStore } from '../store';
+import type { CalendarStore } from '../store';
+import { extendStore, setupStore } from '../store';
 import { busySlotsActions, busySlotsSliceName } from './busySlotsSlice';
 
 const busySlotsResponseFaker = ({ dataAccessible }: { dataAccessible: boolean }): GetBusySlotsResponse => {

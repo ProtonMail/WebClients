@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Rect } from '../../hooks/observeRect';
+import type { Rect } from '../../hooks/observeRect';
 import { useRect } from '../../hooks/useRect';
 
 export interface PopoverRenderData {

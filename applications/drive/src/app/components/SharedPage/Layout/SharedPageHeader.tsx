@@ -13,7 +13,8 @@ import clsx from '@proton/utils/clsx';
 import { useDownloadScanFlag } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
-import { DownloadButton, DownloadButtonProps } from './DownloadButton';
+import type { DownloadButtonProps } from './DownloadButton';
+import { DownloadButton } from './DownloadButton';
 
 interface Props extends DownloadButtonProps {
     children: React.ReactNode;

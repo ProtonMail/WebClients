@@ -1,4 +1,5 @@
-import { ChangeEvent, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,13 +15,13 @@ import {
     PrimaryButton,
     generateUID,
 } from '@proton/components';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { RecipientGroup } from '../../../models/address';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import type { RecipientGroup } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 

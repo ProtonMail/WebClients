@@ -41,7 +41,7 @@ import {
     updateFromLoadElements,
     updateMessageOnSend,
 } from './conversationsReducers';
-import { ConversationsState } from './conversationsTypes';
+import type { ConversationsState } from './conversationsTypes';
 
 const name = 'conversations';
 const conversationSlice = createSlice({

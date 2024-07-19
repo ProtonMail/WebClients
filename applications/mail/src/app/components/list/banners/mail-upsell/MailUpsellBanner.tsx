@@ -1,10 +1,12 @@
-import { MutableRefObject, useEffect, useState } from 'react';
+import type { MutableRefObject } from 'react';
+import { useEffect, useState } from 'react';
 
 import { MailShortcutsModal, PromotionBanner, useModalState } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import useMailUpsellOption, { MessageOption } from './useMailUpsellOption';
+import type { MessageOption } from './useMailUpsellOption';
+import useMailUpsellOption from './useMailUpsellOption';
 
 interface Props {
     needToShowUpsellBanner: MutableRefObject<boolean>;

@@ -1,6 +1,6 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { MessageImage, MessageRemoteImage } from '../../store/messages/messagesTypes';
+import type { MessageImage, MessageRemoteImage } from '../../store/messages/messagesTypes';
 import { getRemoteSelector } from './messageImages';
 
 export const ATTRIBUTES_TO_FIND = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];

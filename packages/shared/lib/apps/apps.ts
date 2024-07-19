@@ -1,4 +1,5 @@
-import { APPS, APP_NAMES } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS } from '../constants';
 import { isElectronApp } from '../helpers/desktop';
 import type { User } from '../interfaces';
 import { getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';

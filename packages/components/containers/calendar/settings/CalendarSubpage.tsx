@@ -16,17 +16,17 @@ import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/ca
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import {
+import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type {
     CalendarBootstrap,
     CalendarMember,
     CalendarMemberInvitation,
     GetAllMembersApiResponse,
     GetCalendarInvitationsResponse,
-    MEMBER_INVITATION_STATUS,
     SubscribedCalendar,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
 import { PrivateMainSettingsAreaBase } from '../../layout/PrivateMainSettingsArea';
 import CalendarDeleteSection from './CalendarDeleteSection';

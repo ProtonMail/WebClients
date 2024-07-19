@@ -1,8 +1,9 @@
-import { CSSProperties, useMemo } from 'react';
+import type { CSSProperties } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiExchangeRate } from '@proton/andromeda';
+import type { WasmApiExchangeRate } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Tooltip } from '@proton/components/components';
 import { useAddresses } from '@proton/components/hooks';
@@ -15,7 +16,7 @@ import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
-import { TransactionData } from '../../hooks/useWalletTransactions';
+import type { TransactionData } from '../../hooks/useWalletTransactions';
 import {
     convertAmountStr,
     getFormattedPeriodSinceConfirmation,

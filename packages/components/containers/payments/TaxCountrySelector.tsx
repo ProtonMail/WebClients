@@ -3,12 +3,13 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
 import { Option } from '../../components';
-import SearchableSelect, { Props as SearchableSelectProps } from '../../components/selectTwo/SearchableSelect';
+import type { Props as SearchableSelectProps } from '../../components/selectTwo/SearchableSelect';
+import SearchableSelect from '../../components/selectTwo/SearchableSelect';
 import CountriesDropdown, { useCountries } from './CountriesDropdown';
 
 function getStateList(countryCode: string) {

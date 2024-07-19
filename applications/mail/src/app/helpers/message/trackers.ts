@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Tracker } from '../../hooks/message/useMessageTrackers';
-import { MessageState } from '../../store/messages/messagesTypes';
+import type { Tracker } from '../../hooks/message/useMessageTrackers';
+import type { MessageState } from '../../store/messages/messagesTypes';
 
 export const getImageTrackersFromMessage = (message: MessageState) => {
     const trackersImages = message.messageImages?.images.filter((image) => {

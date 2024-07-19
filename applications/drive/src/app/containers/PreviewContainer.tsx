@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { RouteComponentProps, useLocation } from 'react-router-dom';
+import type { RouteComponentProps } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 

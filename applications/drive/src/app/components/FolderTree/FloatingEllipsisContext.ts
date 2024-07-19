@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { FloatingEllipsisContextValue } from './hooks';
+import type { FloatingEllipsisContextValue } from './hooks';
 
 export const FloatingEllipsisContext = createContext<FloatingEllipsisContextValue>({
     events: new EventTarget(),

@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';

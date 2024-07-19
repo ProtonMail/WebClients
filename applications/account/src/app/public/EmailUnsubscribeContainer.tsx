@@ -11,22 +11,18 @@ import {
     useErrorHandler,
     useNotifications,
 } from '@proton/components';
-import { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
+import type { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
 import { useLoading } from '@proton/hooks';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNewsExternal, patchNewsExternal } from '@proton/shared/lib/api/settings';
-import {
-    NEWSLETTER_SUBSCRIPTIONS,
-    NEWSLETTER_SUBSCRIPTIONS_BITS,
-    NEWSLETTER_SUBSCRIPTIONS_BY_BITS,
-    SSO_PATHS,
-} from '@proton/shared/lib/constants';
+import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
+import { NEWSLETTER_SUBSCRIPTIONS, NEWSLETTER_SUBSCRIPTIONS_BY_BITS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getBits } from '@proton/shared/lib/helpers/bitset';
 import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import EmailResubscribed from '../components/EmailResubscribed';
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';

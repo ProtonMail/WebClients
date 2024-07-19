@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { getCanonicalAddresses } from '@proton/shared/lib/api/addresses';
 import { API_CODES, GET_CANONICAL_EMAILS_API_LIMIT } from '@proton/shared/lib/constants';
-import { GetCanonicalAddressesApiResponse } from '@proton/shared/lib/interfaces/calendar';
-import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import type { GetCanonicalAddressesApiResponse } from '@proton/shared/lib/interfaces/calendar';
+import type { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import chunk from '@proton/utils/chunk';
 
 import useApi from './useApi';

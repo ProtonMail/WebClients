@@ -1,4 +1,4 @@
-import { EncryptedSearchFunctions } from '@proton/encrypted-search';
+import type { EncryptedSearchFunctions } from '@proton/encrypted-search';
 
 export interface ESLink {
     createTime: number;

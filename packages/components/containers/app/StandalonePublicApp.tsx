@@ -1,10 +1,10 @@
 import { LoaderPage, UnleashFlagProvider } from '@proton/components/containers';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import UnAuthenticatedApiProvider from '../api/UnAuthenticatedApiProvider';
 import MinimalLoginContainer from '../login/MinimalLoginContainer';
 import StandardPublicApp from './StandardPublicApp';
-import { OnLoginCallback } from './interface';
+import type { OnLoginCallback } from './interface';
 
 interface Props {
     onLogin: OnLoginCallback;

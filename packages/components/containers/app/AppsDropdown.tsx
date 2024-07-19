@@ -1,4 +1,5 @@
-import { ForwardedRef, Fragment, forwardRef } from 'react';
+import type { ForwardedRef } from 'react';
+import { Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,9 +7,10 @@ import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { useConfig, useUser } from '@proton/components/hooks';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';

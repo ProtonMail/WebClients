@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
+import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getEmailSubscriptionsMap } from './constants/email-subscriptions';

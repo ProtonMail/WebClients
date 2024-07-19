@@ -1,4 +1,5 @@
-import { Ref, forwardRef, useRef } from 'react';
+import type { Ref } from 'react';
+import { forwardRef, useRef } from 'react';
 import * as React from 'react';
 
 import { useFocusTrap, useHotkeys } from '@proton/components';

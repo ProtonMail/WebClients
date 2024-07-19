@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Currency, Tax } from '@proton/shared/lib/interfaces';
+import type { Currency, Tax } from '@proton/shared/lib/interfaces';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 import { Price } from '../../components/price';

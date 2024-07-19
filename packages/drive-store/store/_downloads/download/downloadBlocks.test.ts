@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react';
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
-import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';

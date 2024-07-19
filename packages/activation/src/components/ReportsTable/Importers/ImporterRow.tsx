@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
+import type { ActiveImportID } from '@proton/activation/src/logic/importers/importers.interface';
 import {
     selectActiveImporterById,
     selectImporterById,

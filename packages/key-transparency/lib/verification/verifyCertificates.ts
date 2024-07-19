@@ -1,11 +1,13 @@
 import { fromBER } from 'asn1js';
-import { Certificate, CertificateChainValidationEngine, GeneralName, verifySCTsForCertificate } from 'pkijs';
+import type { GeneralName } from 'pkijs';
+import { Certificate, CertificateChainValidationEngine, verifySCTsForCertificate } from 'pkijs';
 import { getParametersValue } from 'pvutils';
 
 import { hexStringToArray } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { KT_CERTIFICATE_ISSUER, SCT_THRESHOLD, epochChainVersion } from '../constants';
+import type { KT_CERTIFICATE_ISSUER } from '../constants';
+import { SCT_THRESHOLD, epochChainVersion } from '../constants';
 import { ctLogs, rootCertificates } from '../constants/certificates';
 import { getBaseDomain, throwKTError } from '../helpers/utils';
 

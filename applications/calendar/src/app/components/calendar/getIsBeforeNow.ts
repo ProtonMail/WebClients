@@ -1,6 +1,6 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 
-import { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
+import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../containers/calendar/interface';
 
 const getIsBeforeNow = (event: CalendarViewEvent | CalendarViewBusyEvent, now: Date) => {
     const isPartDay = !event.isAllDay || event.isAllPartDay;

@@ -4,7 +4,8 @@ import { addMonths } from 'date-fns';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { PlanIDs, PlansMap, PriceType, Subscription } from '@proton/shared/lib/interfaces';
+import type { PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import { PriceType } from '@proton/shared/lib/interfaces';
 
 import { getCheckoutRenewNoticeText } from './RenewalNotice';
 

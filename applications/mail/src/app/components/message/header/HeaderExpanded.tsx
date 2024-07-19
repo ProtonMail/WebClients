@@ -1,13 +1,14 @@
-import { MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
-import { Breakpoints, ButtonGroup, Icon, Tooltip, useAddresses, useContactModals, useToggle } from '@proton/components';
+import type { Breakpoints } from '@proton/components';
+import { ButtonGroup, Icon, Tooltip, useAddresses, useContactModals, useToggle } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -17,10 +18,10 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';
-import { MessageViewIcons } from '../../../helpers/message/icon';
+import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

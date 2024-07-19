@@ -9,7 +9,7 @@ import { useMailDispatch } from 'proton-mail/store/hooks';
 import { canSetExpiration } from '../../../../helpers/expiration';
 import useExpiration from '../../../../hooks/useExpiration';
 import { expireMessages } from '../../../../store/messages/expire/messagesExpireActions';
-import { MessageState } from '../../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

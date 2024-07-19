@@ -1,4 +1,5 @@
-import { ReactNode, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { useRef } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import {
@@ -23,7 +24,7 @@ import {
 } from '@proton/components';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { getOrganizationAppRoutes } from './routes';
 

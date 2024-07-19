@@ -1,5 +1,5 @@
-import { PGP_SCHEMES } from '../../constants';
-import { MimeTypeVcard } from '../EncryptionPreferences';
+import type { PGP_SCHEMES } from '../../constants';
+import type { MimeTypeVcard } from '../EncryptionPreferences';
 
 export type VCardKey =
     | 'fn'

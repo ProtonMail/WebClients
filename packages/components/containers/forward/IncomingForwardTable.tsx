@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
+import type { Address, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
 
 import { Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from '../../components';
 import ForwardStatus from './ForwardStatus';

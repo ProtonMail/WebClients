@@ -7,7 +7,7 @@ import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/const
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';
-import { Element } from '../../models/element';
+import type { Element } from '../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { params } from '../../store/elements/elementsSelectors';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';

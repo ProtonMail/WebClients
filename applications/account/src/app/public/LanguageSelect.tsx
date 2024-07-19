@@ -1,12 +1,12 @@
 import { useHistory } from 'react-router-dom';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { ThemeColorUnion } from '@proton/colors/types';
+import type { ThemeColorUnion } from '@proton/colors/types';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale, getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import clsx from '@proton/utils/clsx';
 
 import { getLocaleMapping } from '../locales';

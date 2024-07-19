@@ -1,4 +1,4 @@
-import { HTMLProps, ReactNode } from 'react';
+import type { HTMLProps, ReactNode } from 'react';
 
 export interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
     description?: ReactNode;

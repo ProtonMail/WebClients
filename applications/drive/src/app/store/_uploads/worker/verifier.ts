@@ -3,8 +3,8 @@ import type { CaptureContext } from '@sentry/types';
 import { CryptoProxy } from '@proton/crypto';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { VerificationData } from '../interface';
-import { Verifier } from './interface';
+import type { VerificationData } from '../interface';
+import type { Verifier } from './interface';
 
 const VERIFIER_ERROR_MESSAGE = 'Upload failed: Verification of data failed';
 

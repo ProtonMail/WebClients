@@ -1,8 +1,9 @@
-import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
-import { OnLoginCallback } from '@proton/components/containers';
-import { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ModalProps } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
+import type { OnLoginCallback } from '@proton/components/containers';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 
-import { Paths } from '../content/helper';
+import type { Paths } from '../content/helper';
 import LoginContainer from '../login/LoginContainer';
 
 interface Props extends ModalProps {

@@ -1,12 +1,12 @@
-import { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
 import { HARDWARE_CONCURRENCY } from '@proton/shared/lib/drive/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
+import type { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
 import { runInQueueAbortable } from '../../../utils/parallelRunners';
-import { ESLink } from '../types';
+import type { ESLink } from '../types';
 import { convertLinkToESItem } from '../utils';
-import { KeyCache } from './useKeysCache';
+import type { KeyCache } from './useKeysCache';
 
 export class LinkMapDecryptionBuffer {
     keyCache;

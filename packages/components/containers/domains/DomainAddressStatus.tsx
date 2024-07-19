@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { DomainAddress } from '@proton/shared/lib/interfaces';
+import type { DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { Badge } from '../../components';
 

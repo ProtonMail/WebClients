@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { Href } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';

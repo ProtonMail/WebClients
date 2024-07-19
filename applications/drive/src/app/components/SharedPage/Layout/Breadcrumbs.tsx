@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { CollapsingBreadcrumbs } from '@proton/components';
-import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
+import type { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useLinkPathPublic } from '../../../store/_views/useLinkPath';

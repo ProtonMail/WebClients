@@ -2,13 +2,13 @@ import { findByTestId, fireEvent } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock, assertIcon, clearAll, minimalCache } from '../../../helpers/test/helper';
 import { createDocument } from '../../../helpers/test/message';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import MessageView from '../MessageView';
 import { defaultProps, getIframeRootDiv, setup } from './Message.test.helpers';
 

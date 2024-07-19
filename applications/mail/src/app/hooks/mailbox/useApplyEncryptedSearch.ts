@@ -10,8 +10,8 @@ import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
 import { parseSearchParams } from '../../helpers/encryptedSearch';
-import { Element } from '../../models/element';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+import type { Element } from '../../models/element';
+import type { Filter, SearchParameters, Sort } from '../../models/tools';
 import {
     addESResults,
     load as loadAction,
@@ -24,7 +24,7 @@ import {
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
     shouldLoadElements as shouldSendRequestSelector,
 } from '../../store/elements/elementsSelectors';
-import { MailState } from '../../store/store';
+import type { MailState } from '../../store/store';
 
 interface EncryptedSearchParams {
     conversationMode: boolean;

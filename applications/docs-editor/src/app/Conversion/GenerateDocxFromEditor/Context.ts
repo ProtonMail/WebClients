@@ -1,4 +1,4 @@
-import { EditorState } from 'lexical'
+import type { EditorState } from 'lexical'
 
 export type DocxExportContext = {
   state: EditorState

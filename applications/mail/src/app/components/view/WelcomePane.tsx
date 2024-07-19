@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-import { Location } from 'history';
+import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Loader, useUser } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 import capitalize from '@proton/utils/capitalize';
 

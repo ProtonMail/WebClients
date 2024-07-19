@@ -1,4 +1,4 @@
-import { Currency } from '../interfaces';
+import type { Currency } from '../interfaces';
 
 /**
  * Make amount readable

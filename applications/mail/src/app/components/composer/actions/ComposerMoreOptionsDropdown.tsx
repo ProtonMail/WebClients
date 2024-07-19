@@ -1,14 +1,8 @@
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
 
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownButtonProps,
-    DropdownProps,
-    Tooltip,
-    generateUID,
-    usePopperAnchor,
-} from '@proton/components';
+import type { DropdownButtonProps, DropdownProps } from '@proton/components';
+import { Dropdown, DropdownButton, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content'> {

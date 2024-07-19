@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction, useCallback, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { useCallback, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -12,7 +13,7 @@ import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
+import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
 import MoveSnoozedModal from 'proton-mail/components/list/snooze/components/MoveSnoozedModal';
 import MoveScheduledModal from 'proton-mail/components/message/modals/MoveScheduledModal';
@@ -32,13 +33,13 @@ import {
     searchForSnoozed,
 } from 'proton-mail/helpers/moveToFolder';
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
-import { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder';
+import type { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
 import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
 import useMailModel from 'proton-mail/hooks/useMailModel';
-import { Element } from 'proton-mail/models/element';
-import { SearchParameters } from 'proton-mail/models/tools';
+import type { Element } from 'proton-mail/models/element';
+import type { SearchParameters } from 'proton-mail/models/tools';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
 import { pageSize as pageSizeSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';

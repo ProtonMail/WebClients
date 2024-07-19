@@ -1,11 +1,11 @@
-import { Nullable } from '@proton/shared/lib/interfaces';
+import type { Nullable } from '@proton/shared/lib/interfaces';
 
-import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constants';
-import { DecryptedKey } from '../Key';
-import { CalendarSettings, VisualCalendar } from './Calendar';
-import { DecryptedCalendarKey } from './CalendarKey';
-import { CalendarEvent } from './Event';
-import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
+import type { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constants';
+import type { DecryptedKey } from '../Key';
+import type { CalendarSettings, VisualCalendar } from './Calendar';
+import type { DecryptedCalendarKey } from './CalendarKey';
+import type { CalendarEvent } from './Event';
+import type { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
 
 export interface PartstatActions {
     accept: () => Promise<void>;

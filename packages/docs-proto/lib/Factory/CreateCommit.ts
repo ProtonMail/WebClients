@@ -1,5 +1,6 @@
-import { Commit, DocumentUpdate } from '../Generated'
-import { CommitVersion } from '../Version'
+import type { DocumentUpdate } from '../Generated'
+import { Commit } from '../Generated'
+import type { CommitVersion } from '../Version'
 import { CreateDocumentUpdateArray } from './CreateDocumentUpdateArray'
 
 export function CreateCommit(dto: { updates: DocumentUpdate[]; version: CommitVersion; lockId: string }): Commit {

@@ -1,8 +1,9 @@
-import { ReactNode, Ref, forwardRef, useMemo } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { forwardRef, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps } from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components/components';
 import { Portal } from '@proton/components/components/portal';
 import { FilePreview } from '@proton/components/containers';
 

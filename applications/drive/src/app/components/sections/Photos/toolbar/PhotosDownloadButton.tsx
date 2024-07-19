@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +7,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
-import { PhotoLink } from '../../../../store';
+import type { PhotoLink } from '../../../../store';
 
 interface Props {
     selectedLinks: PhotoLink[];

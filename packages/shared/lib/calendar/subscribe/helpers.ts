@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { CALENDAR_APP_NAME, EVENT_ACTIONS, HOUR } from '../../constants';
-import { CALENDAR_SUBSCRIPTION_STATUS, Calendar, SubscribedCalendar } from '../../interfaces/calendar';
-import {
+import type { Calendar, SubscribedCalendar } from '../../interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '../../interfaces/calendar';
+import type {
     CalendarSubscriptionEventManager,
     CalendarSubscriptionEventManagerCreate,
     CalendarSubscriptionEventManagerDelete,

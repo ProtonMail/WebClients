@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { APPS } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
     messageID: string;

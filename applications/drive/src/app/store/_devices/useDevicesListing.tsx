@@ -9,7 +9,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useLink } from '../_links';
 import { useVolumesState } from '../_volumes';
-import { Device } from './interface';
+import type { Device } from './interface';
 import useDevicesApi from './useDevicesApi';
 
 export function useDevicesListingProvider() {

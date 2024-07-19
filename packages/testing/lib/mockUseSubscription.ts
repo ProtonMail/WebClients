@@ -1,5 +1,5 @@
 import * as useSubscriptionModule from '@proton/account/subscription/hooks';
-import { SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { buildSubscription } from '../builders';
 

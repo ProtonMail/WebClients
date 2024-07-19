@@ -1,4 +1,4 @@
-import { Snapshots, UndoSnapshotsService } from 'roosterjs-editor-types';
+import type { Snapshots, UndoSnapshotsService } from 'roosterjs-editor-types';
 
 import { ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
 
@@ -11,7 +11,10 @@ interface Functions {
     createSnapshots: (maxSize: number) => Snapshots;
 }
 export default class UndoSnapshots implements UndoSnapshotsService {
-    constructor(private snapshots: Snapshots, private functions: Functions) {}
+    constructor(
+        private snapshots: Snapshots,
+        private functions: Functions
+    ) {}
 
     public canMove(delta: number): boolean {
         return this.functions.canMoveCurrentSnapshot(this.snapshots, delta);

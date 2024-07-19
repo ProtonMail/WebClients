@@ -3,9 +3,11 @@ import { LOCALSTORAGE_DRAWER_KEY } from '@proton/shared/lib/drawer/constants';
 
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
-import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
+import type { APP_NAMES } from '../constants';
+import { APPS, APPS_CONFIGURATION } from '../constants';
 import window from '../window';
-import { DRAWER_ACTION, DRAWER_EVENTS, DRAWER_NATIVE_APPS, DrawerApp } from './interfaces';
+import type { DRAWER_ACTION, DrawerApp } from './interfaces';
+import { DRAWER_EVENTS, DRAWER_NATIVE_APPS } from './interfaces';
 
 const { PROTONMAIL, PROTONCALENDAR, PROTONDRIVE } = APPS;
 export const drawerAuthorizedApps = [

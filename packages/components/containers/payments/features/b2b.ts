@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
-import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getTwoFA = (): PlanCardFeatureDefinition => {
     return {
@@ -110,7 +110,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getTwoFA(),
                 [PLANS.VPN_PRO]: getTwoFA(),
                 [PLANS.VPN_BUSINESS]: getTwoFA(),
-                [PLANS.WALLET]: null
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -132,7 +132,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getRequire2FA(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
-                [PLANS.WALLET]: null
+                [PLANS.WALLET]: null,
             },
         },
         {
@@ -154,7 +154,7 @@ export const getTeamManagementFeatures = (): PlanCardFeature[] => {
                 [PLANS.PASS_BUSINESS]: getConsole(),
                 [PLANS.VPN_PRO]: getConsole(),
                 [PLANS.VPN_BUSINESS]: getConsole(),
-                [PLANS.WALLET]: null
+                [PLANS.WALLET]: null,
             },
         },
         {

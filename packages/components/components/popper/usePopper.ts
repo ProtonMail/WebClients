@@ -1,21 +1,12 @@
-import { RefObject, useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import type { RefObject } from 'react';
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import {
-    Placement,
-    Strategy,
-    VirtualElement,
-    autoUpdate,
-    computePosition,
-    flip,
-    hide,
-    offset,
-    shift,
-    size,
-} from '@floating-ui/dom';
+import type { Placement, Strategy, VirtualElement } from '@floating-ui/dom';
+import { autoUpdate, computePosition, flip, hide, offset, shift, size } from '@floating-ui/dom';
 
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
-import { PopperArrow, PopperPlacement, PopperPosition } from './interface';
+import type { PopperArrow, PopperPlacement, PopperPosition } from './interface';
 import { allPopperPlacements, arrowOffset, getClickRect, getFallbackPlacements, rtlPlacement } from './utils';
 
 type ReferenceType = Element | VirtualElement;

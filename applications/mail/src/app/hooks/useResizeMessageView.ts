@@ -1,4 +1,5 @@
-import { RefObject, useCallback, useEffect, useState } from 'react';
+import type { RefObject } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useDrawer, useHandler, useHotkeys, useWindowSize } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';

@@ -1,4 +1,4 @@
-import { User } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 
 import { canPay, isAdmin, isFree, isMember, isPaid } from './helpers';
 

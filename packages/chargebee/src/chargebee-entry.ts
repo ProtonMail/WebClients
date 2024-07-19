@@ -1,4 +1,4 @@
-import {
+import type {
     AuthorizedPaymentIntent,
     CbCardConfig,
     CbIframeConfig,
@@ -10,7 +10,7 @@ import {
 import { createChargebee, getChargebeeInstance, pollUntilLoaded } from './chargebee';
 import { addCheckpoint } from './checkpoints';
 import { getConfiguration, setConfiguration } from './configuration';
-import {
+import type {
     ChangeRenderModeEvent,
     ChargebeeSubmitEvent,
     OnChangeRenderModeHandler,
@@ -20,9 +20,8 @@ import {
     OnValidateFormHandler,
     OnVerifySavedCardHandler,
     SetPaypalPaymentIntentEvent,
-    createMessageBus,
-    getMessageBus,
 } from './message-bus';
+import { createMessageBus, getMessageBus } from './message-bus';
 // eslint-disable-next-line import/no-unresolved
 import cardTemplateString from './templates/card.html?raw';
 // eslint-disable-next-line import/no-unresolved

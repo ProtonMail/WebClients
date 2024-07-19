@@ -14,7 +14,7 @@ import { useUserSettings } from '../_settings';
 import { useShareInvitation } from '../_shares';
 import { useLoadLinksShareInfo } from '../_shares/useLoadLinksShareInfo';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
-import { SortField } from './utils/useSorting';
+import type { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {
     sortField: 'name' as SortField,

@@ -6,19 +6,13 @@ import { useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { EncryptedLink, LinkShareUrl, useSharedLinksView, useThumbnailsDownload } from '../../../store';
+import type { EncryptedLink, LinkShareUrl, useSharedLinksView } from '../../../store';
+import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { sendErrorReport } from '../../../utils/errorHandling';
-import FileBrowser, {
-    BrowserItemId,
-    Cells,
-    FileBrowserBaseItem,
-    GridHeader,
-    ListViewHeaderItem,
-    useItemContextMenu,
-    useSelection,
-} from '../../FileBrowser';
+import type { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser';
+import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { AccessCountCell, CreatedCell, ExpirationCell, LocationCell, NameCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';

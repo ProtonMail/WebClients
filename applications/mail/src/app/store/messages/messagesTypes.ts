@@ -1,13 +1,13 @@
 import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
-import { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
-import { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
+import type { VerificationPreferences } from '@proton/shared/lib/interfaces/VerificationPreferences';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { MESSAGE_ACTIONS } from '../../constants';
-import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
-import { Preparation } from '../../helpers/transforms/transforms';
+import type { MESSAGE_ACTIONS } from '../../constants';
+import type { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
+import type { Preparation } from '../../helpers/transforms/transforms';
 
 export interface OutsideKey {
     type: 'outside';

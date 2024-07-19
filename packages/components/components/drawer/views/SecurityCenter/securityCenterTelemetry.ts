@@ -1,6 +1,7 @@
-import { TelemetryMeasurementGroups, TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
+import type { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 type Options =
     | {

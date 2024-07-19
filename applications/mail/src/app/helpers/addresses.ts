@@ -1,6 +1,6 @@
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address, Key } from '@proton/shared/lib/interfaces';
+import type { Address, Key } from '@proton/shared/lib/interfaces';
 import { getAddressFromPlusAlias, getByEmail } from '@proton/shared/lib/mail/addresses';
 
 /**

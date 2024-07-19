@@ -1,4 +1,4 @@
-import { Parameters } from './interface';
+import type { Parameters } from './interface';
 import login from './login';
 
 const data = (): Parameters => ({

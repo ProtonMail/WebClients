@@ -3,7 +3,8 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import { DecryptedLink, useLinksActions, useLinksListing } from '../_links';
+import type { DecryptedLink } from '../_links';
+import { useLinksActions, useLinksListing } from '../_links';
 import useSharesState from '../_shares/useSharesState';
 import { usePhotos } from './PhotosProvider';
 import { usePhotosRecovery } from './usePhotosRecovery';

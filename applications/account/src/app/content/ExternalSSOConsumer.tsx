@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import { ExternalSSOFlow } from '@proton/components/containers/login/interface';

@@ -2,9 +2,10 @@ import { c } from 'ttag';
 
 import { PassLogo, Toggle } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { ToggleProps } from '@proton/components/components/toggle/Toggle';
-import { CYCLE, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import type { ToggleProps } from '@proton/components/components/toggle/Toggle';
+import type { CYCLE } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import SaveLabel2 from './SaveLabel2';
 

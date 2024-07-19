@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { EditorMetadata } from '@proton/components/components';
-import {
+import type { EditorMetadata } from '@proton/components/components';
+import type {
     ModalDefaultFontProps,
     ModalImageProps,
     ModalLinkProps,

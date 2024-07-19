@@ -1,6 +1,6 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { c } from 'ttag';
-import { ReadableStream } from 'web-streams-polyfill';
+import type { ReadableStream } from 'web-streams-polyfill';
 
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -8,7 +8,7 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import orderBy from '@proton/utils/orderBy';
 
@@ -19,7 +19,7 @@ import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { MAX_DOWNLOADING_BLOCKS, MAX_RETRIES_BEFORE_FAIL, TIME_TO_RESET_RETRIES } from '../constants';
-import { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';
+import type { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';
 import downloadBlock from './downloadBlock';
 
 export type DownloadBlocksCallbacks = Omit<

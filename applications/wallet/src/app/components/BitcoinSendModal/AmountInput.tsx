@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
+import type {
     WasmApiExchangeRate,
     WasmApiWalletAccount,
     WasmBitcoinUnit,
@@ -17,13 +17,13 @@ import { Button, CoreButton } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from '../../atoms/BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { usePsbt } from '../../hooks/usePsbt';
-import { TxBuilderUpdater } from '../../hooks/useTxBuilder';
+import type { TxBuilderUpdater } from '../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../store/hooks';
-import { AccountWithChainData } from '../../types';
+import type { AccountWithChainData } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useAsyncValue } from '../../utils/hooks/useAsyncValue';
 import { EmailListItem } from '../EmailListItem';
-import { BtcAddressMap } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import type { BtcAddressMap } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 
 interface Props {
     txBuilder: WasmTxBuilder;

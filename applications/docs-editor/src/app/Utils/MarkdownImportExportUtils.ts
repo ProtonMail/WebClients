@@ -1,12 +1,5 @@
-import {
-  ELEMENT_TRANSFORMERS,
-  ElementTransformer,
-  TEXT_FORMAT_TRANSFORMERS,
-  TEXT_MATCH_TRANSFORMERS,
-  TextFormatTransformer,
-  TextMatchTransformer,
-  Transformer,
-} from '@lexical/markdown'
+import type { ElementTransformer, TextFormatTransformer, TextMatchTransformer, Transformer } from '@lexical/markdown'
+import { ELEMENT_TRANSFORMERS, TEXT_FORMAT_TRANSFORMERS, TEXT_MATCH_TRANSFORMERS } from '@lexical/markdown'
 
 function indexBy<T>(list: T[], callback: (arg0: T) => string): Readonly<Record<string, T[]>> {
   const index: Record<string, T[]> = {}

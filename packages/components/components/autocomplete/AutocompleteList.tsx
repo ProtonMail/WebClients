@@ -1,9 +1,10 @@
-import { Children, MouseEvent, ReactElement, RefObject, cloneElement } from 'react';
+import type { MouseEvent, ReactElement, RefObject } from 'react';
+import { Children, cloneElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Dropdown, DropdownSizeUnit } from '../dropdown';
-import { Props as OptionProps } from '../option/Option';
+import type { Props as OptionProps } from '../option/Option';
 import { verticalPopperPlacements } from '../popper/utils';
 
 interface Props<V> {

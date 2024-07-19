@@ -6,7 +6,8 @@ import { removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import noop from '@proton/utils/noop';
 
-import { ModalProps, Prompt, useModalState } from '../../../components';
+import type { ModalProps } from '../../../components';
+import { Prompt, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 

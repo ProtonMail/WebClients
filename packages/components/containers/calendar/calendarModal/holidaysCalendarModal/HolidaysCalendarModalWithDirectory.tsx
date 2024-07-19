@@ -10,7 +10,8 @@ import { removeHolidaysCalendar, updateCalendarSettings } from '@proton/shared/l
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
-import { EditableCalendarSettings, updateCalendar } from '@proton/shared/lib/calendar/calendar';
+import type { EditableCalendarSettings } from '@proton/shared/lib/calendar/calendar';
+import { updateCalendar } from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_TYPE,
     DEFAULT_EVENT_DURATION,
@@ -25,7 +26,7 @@ import {
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { languageCode } from '@proton/shared/lib/i18n';
 import { getBrowserLanguageTags } from '@proton/shared/lib/i18n/helper';
-import {
+import type {
     CalendarBootstrap,
     CalendarCreateData,
     HolidaysDirectoryCalendar,
@@ -34,11 +35,11 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import type { ModalProps } from '../../../../components';
 import {
     ColorPicker,
     Form,
     InputFieldTwo as InputField,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

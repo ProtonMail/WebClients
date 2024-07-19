@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { equivalentReducer } from '@proton/components/hooks/useElementRect';
 import clamp from '@proton/utils/clamp';

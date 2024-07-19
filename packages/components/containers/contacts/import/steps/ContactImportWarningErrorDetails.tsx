@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
+import type { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 
 import { Bordered, Details, Summary } from '../../../../components';
 

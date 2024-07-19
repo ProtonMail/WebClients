@@ -1,4 +1,5 @@
-import { DetailedHTMLProps, OptionHTMLAttributes, Ref, SelectHTMLAttributes, forwardRef, useState } from 'react';
+import type { DetailedHTMLProps, OptionHTMLAttributes, Ref, SelectHTMLAttributes } from 'react';
+import { forwardRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { Button } from '@proton/atoms/Button';
+import type { DropdownProps } from '@proton/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -10,7 +11,6 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    DropdownProps,
     DropdownSizeUnit,
     Icon,
     Option,

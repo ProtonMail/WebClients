@@ -4,7 +4,8 @@ import userEvent from '@testing-library/user-event';
 import { useCard } from '@proton/components/payments/react-extensions';
 import { apiMock } from '@proton/testing';
 
-import CreditCard, { Props } from './CreditCard';
+import type { Props } from './CreditCard';
+import CreditCard from './CreditCard';
 
 beforeEach(() => {
     jest.clearAllMocks();

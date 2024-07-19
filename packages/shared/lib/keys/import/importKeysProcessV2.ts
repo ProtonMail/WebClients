@@ -1,15 +1,16 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { createAddressKeyRouteV2 } from '../../api/keys';
-import { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
+import type { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../../interfaces';
 import { generateAddressKeyTokens } from '../addressKeys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
 import { reactivateAddressKeysV2 } from '../reactivation/reactivateKeysProcessV2';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { getFilteredImportRecords } from './helper';
-import { KeyImportData, OnKeyImportCallback } from './interface';
+import type { KeyImportData, OnKeyImportCallback } from './interface';
 
 export interface ImportKeysProcessV2Arguments {
     api: Api;

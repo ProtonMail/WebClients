@@ -1,8 +1,8 @@
 import { CALENDAR_CARD_TYPE } from '@proton/shared/lib/calendar/constants';
 import { unwrap } from '@proton/shared/lib/calendar/helper';
 import { parse } from '@proton/shared/lib/calendar/vcal';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 const { CLEAR_TEXT, SIGNED } = CALENDAR_CARD_TYPE;
 

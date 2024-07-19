@@ -3,6 +3,7 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import type { SectionConfig } from '@proton/components';
 import {
     AppLink,
     CancellationReminderSection,
@@ -13,7 +14,6 @@ import {
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainAreaLoading,
-    SectionConfig,
     TopBanners,
     TopNavbarUpsell,
     UserDropdown,
@@ -45,7 +45,7 @@ import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS } from '@proton/shared/lib/const
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getHasPassB2BPlan, hasAIAssistant, hasAllProductsB2CPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import {
     getIsPublicUserWithoutProtonAddress,
     getIsSSOVPNOnlyAccount,

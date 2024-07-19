@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { DecryptedLink, useDownload } from '../../../../store';
+import type { DecryptedLink } from '../../../../store';
+import { useDownload } from '../../../../store';
 import { useDocumentActions } from '../../../../store/_documents';
 import ContextMenuButton from '../ContextMenuButton';
 

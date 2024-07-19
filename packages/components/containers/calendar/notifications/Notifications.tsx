@@ -1,12 +1,13 @@
 import { Button, ButtonLike } from '@proton/atoms';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import addItem from '@proton/utils/addItem';
 import clsx from '@proton/utils/clsx';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 
-import { Icon, IconName, Tooltip } from '../../../components';
+import type { IconName } from '../../../components';
+import { Icon, Tooltip } from '../../../components';
 import { generateUID } from '../../../helpers';
 import NotificationInput from './inputs/NotificationInput';
 

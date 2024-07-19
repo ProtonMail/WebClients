@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,10 +15,12 @@ import noop from '@proton/utils/noop';
 
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
 import { useApi, useConfig, useErrorHandler, useNotifications } from '../../hooks';
-import { OnLoginCallback } from '../app/interface';
-import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
+import type { OnLoginCallback } from '../app/interface';
+import type { ChallengeRef, ChallengeResult } from '../challenge';
+import { Challenge, ChallengeError } from '../challenge';
 import AbuseModal from './AbuseModal';
-import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
+import type { AuthActionResponse, AuthCacheResult } from './interface';
+import { AuthStep } from './interface';
 import { handleLogin, handleNextLogin, handleTotp, handleUnlock } from './loginActions';
 
 const UnlockForm = ({

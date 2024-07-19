@@ -1,14 +1,16 @@
-import { Dispatch, Fragment, SetStateAction, useEffect, useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import { API_KEY_SOURCE } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces';
+import type { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import clsx from '@proton/utils/clsx';

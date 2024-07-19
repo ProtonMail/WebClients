@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
-import { EditorMetadata } from './interface';
+import type { EditorMetadata } from './interface';
 
 /**
  * Can be unique because set inside iframe

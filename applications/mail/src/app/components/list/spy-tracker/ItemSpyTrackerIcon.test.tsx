@@ -1,14 +1,14 @@
 import { fireEvent, getByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
-import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { minimalCache } from '../../../helpers/test/cache';
 import { clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
-import { MessageState } from '../../../store/messages/messagesTypes';
+import type { MessageState } from '../../../store/messages/messagesTypes';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 
 jest.mock('@proton/components/hooks/useProgressiveRollout', () => {

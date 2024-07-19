@@ -1,13 +1,14 @@
-import { ChangeEvent, useCallback, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { useAddresses, useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
+import type { IWasmApiWalletData } from '@proton/wallet';
 import {
-    IWasmApiWalletData,
     encryptWalletDataWithWalletKey,
     useWalletApiClients,
     walletAccountDeletion,

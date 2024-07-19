@@ -1,6 +1,6 @@
-import IMetricsApi from './types/IMetricsApi';
-import IMetricsRequestService from './types/IMetricsRequestService';
-import MetricsRequest from './types/MetricsRequest';
+import type IMetricsApi from './types/IMetricsApi';
+import type IMetricsRequestService from './types/IMetricsRequestService';
+import type MetricsRequest from './types/MetricsRequest';
 
 interface BatchOptions {
     frequency: number;

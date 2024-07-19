@@ -14,9 +14,10 @@ import {
     PLANS,
 } from '@proton/shared/lib/constants';
 import humanSize, { getSizeFormat } from '@proton/shared/lib/helpers/humanSize';
-import { Audience, FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 
-import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 const getTb = (n: number) => {
     return `${n} ${getSizeFormat('TB', n)}`;

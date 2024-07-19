@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info } from '../../../components';
-import { DecreaseBlockedReason } from './helpers';
+import type { DecreaseBlockedReason } from './helpers';
 
 export const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {
     return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;

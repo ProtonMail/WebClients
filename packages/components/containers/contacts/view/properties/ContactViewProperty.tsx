@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -15,11 +15,7 @@ interface Props {
 const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Props) => {
     return (
         <div className="contact-view-row flex flex-nowrap items-start mb-4">
-            <div
-                className={clsx([
-                    'contact-view-row-left flex flex-nowrap flex-1 flex-column md:flex-row w-full',
-                ])}
-            >
+            <div className={clsx(['contact-view-row-left flex flex-nowrap flex-1 flex-column md:flex-row w-full'])}>
                 <div
                     className={clsx([
                         'contact-view-row-label flex *:min-size-auto w-full md:w-1/5 shrink-0 items-start label',

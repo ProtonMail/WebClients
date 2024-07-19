@@ -1,7 +1,7 @@
-import { PLANS } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import type { PLANS } from '@proton/shared/lib/constants';
+import type { Audience } from '@proton/shared/lib/interfaces';
 
-import { IconName } from '../../../components';
+import type { IconName } from '../../../components';
 
 export interface PlanCardFeatureDefinition {
     text: string | string[];

@@ -5,8 +5,8 @@ import { CacheType } from '@proton/redux-utilities';
 
 import { getSilentApi } from '../../../api/helpers/customConfig';
 import getHasSharedCalendars from '../../../calendar/sharing/getHasSharedCalendars';
-import { Api } from '../../../interfaces';
-import { VisualCalendar } from '../../../interfaces/calendar';
+import type { Api } from '../../../interfaces';
+import type { VisualCalendar } from '../../../interfaces/calendar';
 import { getIsOwnedCalendar } from '../../calendar';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 import { resetCalendarKeys } from './resetCalendarKeys';

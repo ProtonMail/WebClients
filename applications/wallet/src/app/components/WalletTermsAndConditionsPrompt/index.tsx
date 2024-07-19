@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { ModalOwnProps, Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
+import { Prompt } from '@proton/components/components';
 import { useNotifications } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME, WALLET_SHORT_APP_NAME } from '@proton/shared/lib/constants';

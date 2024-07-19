@@ -1,16 +1,18 @@
-import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { compact, pick, uniq, uniqBy } from 'lodash';
 import { c } from 'ttag';
 
-import {
+import type {
     WasmApiCountry,
     WasmFiatCurrencySymbol,
     WasmGatewayProvider,
     WasmPaymentMethod,
     WasmQuote,
 } from '@proton/andromeda';
-import { DropdownSizeUnit, Icon, IconName, useDebounceInput, useModalState } from '@proton/components/components';
+import type { IconName } from '@proton/components/components';
+import { DropdownSizeUnit, Icon, useDebounceInput, useModalState } from '@proton/components/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useNotifications } from '@proton/components/hooks';
@@ -20,12 +22,13 @@ import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
 import moonpayLogo from '@proton/styles/assets/img/brand/moonpay.svg';
 import rampLogo from '@proton/styles/assets/img/brand/ramp.svg';
 
-import { Button, CoreSearchableSelectProps, Input, SearchableSelect, Select } from '../../../atoms';
+import type { CoreSearchableSelectProps } from '../../../atoms';
+import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
 import { useCountriesByProvider } from '../../../store/hooks/useCountriesByProvider';
 import { useFiatCurrenciesByProvider } from '../../../store/hooks/useFiatCurrenciesByProvider';
 import { useGetQuotesByProvider } from '../../../store/hooks/useQuotesByProvider';
-import { GetQuotesArgs } from '../../../store/slices/quotesByProvider';
+import type { GetQuotesArgs } from '../../../store/slices/quotesByProvider';
 import { DisclaimerModal } from './DisclaimerModal';
 
 export type QuoteWithProvider = WasmQuote & {

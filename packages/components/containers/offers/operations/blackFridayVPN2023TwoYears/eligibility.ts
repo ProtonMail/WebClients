@@ -7,7 +7,7 @@ import {
     hasTwoYears,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
-import { ProtonConfig, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
     subscription?: SubscriptionModel;

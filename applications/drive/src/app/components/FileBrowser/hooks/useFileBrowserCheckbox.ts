@@ -1,4 +1,5 @@
-import { ChangeEvent, MouseEvent, useCallback } from 'react';
+import type { ChangeEvent, MouseEvent } from 'react';
+import { useCallback } from 'react';
 
 import { useSelection } from '../state/useSelection';
 

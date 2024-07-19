@@ -1,4 +1,4 @@
-import { Attributes, ImgHTMLAttributes } from 'react';
+import type { Attributes, ImgHTMLAttributes } from 'react';
 
 import { getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
 import clsx from '@proton/utils/clsx';

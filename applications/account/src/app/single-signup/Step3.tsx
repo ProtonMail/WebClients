@@ -1,13 +1,14 @@
-import { ReactNode, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
 import { Button } from '@proton/atoms/Button';
+import type { ModalProps } from '@proton/components/components';
 import {
     Copy,
     InputFieldTwo,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -34,8 +35,9 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import { getContinueToString } from '../public/helper';
-import Layout, { Background } from './Layout';
-import { Measure } from './interface';
+import type { Background } from './Layout';
+import Layout from './Layout';
+import type { Measure } from './interface';
 
 const CopyPasswordModal = ({
     password,

@@ -1,6 +1,6 @@
-import { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@proton/crypto';
 
-import { KeyTransparencyVerificationResult } from './KeyTransparency';
+import type { KeyTransparencyVerificationResult } from './KeyTransparency';
 
 export interface VerificationPreferences {
     isOwnAddress: boolean;

@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 
 import { useApi, useGetVerificationPreferences } from '@proton/components';
-import { PublicKeyReference, WorkerDecryptionResult, getMatchingSigningKey } from '@proton/crypto';
+import type { PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
+import { getMatchingSigningKey } from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
@@ -10,7 +11,7 @@ import { isNetworkError } from '../../helpers/errors';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import { MessageErrors, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
+import type { MessageErrors, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
 import { verificationComplete } from '../../store/messages/read/messagesReadActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useContactsMap } from '../contact/useContacts';

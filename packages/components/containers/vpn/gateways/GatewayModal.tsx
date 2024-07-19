@@ -3,9 +3,9 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components/components';
 import {
     Form,
-    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -14,10 +14,10 @@ import {
 } from '@proton/components/components';
 
 import { GatewayCountrySelection } from './GatewayCountrySelection';
-import { GatewayDto } from './GatewayDto';
-import { GatewayModel } from './GatewayModel';
+import type { GatewayDto } from './GatewayDto';
+import type { GatewayModel } from './GatewayModel';
 import { GatewayNameField } from './GatewayNameField';
-import { GatewayUser } from './GatewayUser';
+import type { GatewayUser } from './GatewayUser';
 import { GatewayUserSelection } from './GatewayUserSelection';
 import { getInitialModel } from './helpers';
 import { useAddedQuantities } from './useAddedQuantities';

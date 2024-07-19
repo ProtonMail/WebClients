@@ -1,5 +1,5 @@
 import { getAppHref } from '../../apps/helper';
-import { APP_NAMES } from '../../constants';
+import type { APP_NAMES } from '../../constants';
 import { getPathFromLocation } from '../../helpers/url';
 import { ForkType } from './constants';
 

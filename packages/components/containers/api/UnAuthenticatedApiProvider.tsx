@@ -1,7 +1,9 @@
-import { ReactNode, useContext, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 
-import { Challenge, ChallengeRef } from '@proton/components/containers';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { ChallengeRef } from '@proton/components/containers';
+import { Challenge } from '@proton/components/containers';
+import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import StandardLoadErrorPage from '../app/StandardLoadErrorPage';

@@ -1,7 +1,8 @@
 import { format, fromUnixTime } from 'date-fns';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
+import type { Referral } from '@proton/shared/lib/interfaces';
+import { ReferralState } from '@proton/shared/lib/interfaces';
 
 interface Props {
     referral: Referral;

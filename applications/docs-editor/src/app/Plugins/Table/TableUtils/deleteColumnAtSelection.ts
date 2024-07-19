@@ -1,5 +1,5 @@
 import { $deleteTableColumn__EXPERIMENTAL } from '@lexical/table'
-import { LexicalEditor } from 'lexical'
+import type { LexicalEditor } from 'lexical'
 
 export function deleteColumnAtSelection(editor: LexicalEditor) {
   editor.update(

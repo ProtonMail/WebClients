@@ -9,8 +9,8 @@ import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
 
 import { APP_NAME, APP_VERSION } from '../../../config';
 import { MAX_RETRIES_BEFORE_FAIL, MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_JOBS } from '../constants';
-import { UploadingBlockControl } from './interface';
-import { Pauser } from './pauser';
+import type { UploadingBlockControl } from './interface';
+import type { Pauser } from './pauser';
 
 type LogCallback = (message: string) => void;
 

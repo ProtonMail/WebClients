@@ -7,15 +7,16 @@ import { useLoading } from '@proton/hooks';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
+import type { MnemonicData } from '@proton/shared/lib/mnemonic';
+import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import noop from '@proton/utils/noop';
 
+import type { ModalProps } from '../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    ModalProps,
     Prompt,
     useModalState,
 } from '../../components';

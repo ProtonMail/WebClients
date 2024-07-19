@@ -12,7 +12,7 @@ import {
 } from '@proton/components';
 import { APPS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
-import { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { APP_NAME } from '../../../config';
 import { OtherSidebarListItems } from './OtherSidebarListItems';

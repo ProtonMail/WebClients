@@ -1,12 +1,11 @@
 import { c, msgid } from 'ttag';
 
-import { BadgeType } from '@proton/components/components/badge/Badge';
+import type { BadgeType } from '@proton/components/components/badge/Badge';
+import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import {
     DKIM_STATE,
     DMARC_STATE,
     DOMAIN_STATE,
-    Domain,
-    DomainAddress,
     MX_STATE,
     SPF_STATE,
     VERIFY_STATE,
