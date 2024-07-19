@@ -1,20 +1,19 @@
 import { c, msgid } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
-import { SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';
+import { SettingsLink, SettingsSectionWide, usePlans, useUser } from '@proton/components';
 import { PLANS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { canPay, isPaid } from '@proton/shared/lib/user/helpers';
 
 const VpnUpgradeSection = () => {
-    const [plansResult, loadingPlans] = usePlans();
-    const vpnPlan = plansResult?.plans?.find(({ Name }) => Name === PLANS.VPN);
+    const [user] = useUser();
+    const [plansResult] = usePlans();
+    const targetPlan = PLANS.VPN2024;
+    const vpnPlan = plansResult?.plans?.find(({ Name }) => Name === targetPlan);
     const n = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
-    const { result } = useUserVPN();
-    const userVPN = result?.VPN;
-    const currentPlanName = userVPN?.PlanName;
-    const shouldUpgrade = currentPlanName === PLANS.FREE;
-
-    if (loadingPlans || !shouldUpgrade || !vpnPlan) {
+    // Only showing this for free users, otherwise it'd need extra work to determine the correct upsell
+    if (!vpnPlan || isPaid(user) || !canPay(user)) {
         return null;
     }
 
@@ -31,7 +30,7 @@ const VpnUpgradeSection = () => {
                     )}
                 </p>
 
-                <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?plan=${PLANS.VPN}`}>
+                <ButtonLike color="norm" as={SettingsLink} path={`/dashboard?plan=${targetPlan}`}>
                     {c('Action').t`Upgrade`}
                 </ButtonLike>
             </Card>
