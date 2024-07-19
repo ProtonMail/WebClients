@@ -78,3 +78,9 @@
 .fill-currentcolor {
 	fill: currentcolor;
 }
+
+.bg-transparent {
+	&#{&} {
+		background-color: transparent;
+	}
+}
