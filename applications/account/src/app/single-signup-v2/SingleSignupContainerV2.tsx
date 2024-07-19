@@ -274,10 +274,8 @@ const SingleSignupContainerV2 = ({
 
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         const searchParams = new URLSearchParams(location.search);
-        if (!visionarySignupEnabled) {
-            if (searchParams.get('plan') === PLANS.VISIONARY) {
-                searchParams.delete('plan');
-            }
+        if (toApp !== APPS.PROTONWALLET && !visionarySignupEnabled && searchParams.get('plan') === PLANS.VISIONARY) {
+            searchParams.delete('plan');
         }
         const result = getSignupSearchParams(location.pathname, searchParams);
         if (!result.email && initialSearchParams) {
