@@ -120,7 +120,7 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
                 </ul>
             </div>
 
-            {tx.apiData?.Type && ['NotSend', 'ExternalSend', 'ExternalReceive'].includes(tx.apiData?.Type) && (
+            {tx.apiData?.Type && ['NotSend', 'ExternalReceive'].includes(tx.apiData?.Type) && (
                 <Tooltip title={c('Action').t`Edit`}>
                     <CoreButton
                         className="rounded-full bg-norm"
