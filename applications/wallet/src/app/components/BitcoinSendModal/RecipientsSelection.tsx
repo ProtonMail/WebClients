@@ -215,6 +215,7 @@ export const RecipientsSelection = ({
                         errorCode === InvalidRecipientErrorCode.CouldNotFindProtonWallet
                             ? 'Newcomer'
                             : 'EmailIntegration';
+
                     const hasRecipientSentInvite =
                         !inviterAddressID ||
                         checkHasSentInvite(recipientOrBitcoinAddress.Address) ||
