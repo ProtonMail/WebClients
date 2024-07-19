@@ -38,7 +38,9 @@ import {
     SelectTwo,
     Tabs,
     VpnLogo,
+    WalletLogo,
 } from '../../../components';
+import { useFlag } from '../../unleash';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -50,6 +52,7 @@ import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './
 import { useCancellationFlow } from './cancellationFlow';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
+import { notHigherThanAvailableOnBackend } from './helpers/notHigherThanAvailableOnBackend';
 import { getBundleProPlanToUse, getVPNPlanToUse } from './helpers/payment';
 
 import './PlanSelection.scss';
@@ -152,7 +155,7 @@ const getCycleSelectorOptions = (app: ProductParam) => {
     const oneYear = { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY };
     const twoYears = { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS };
 
-    if (app === APPS.PROTONPASS) {
+    if (app === APPS.PROTONPASS || app === APPS.PROTONWALLET) {
         return [oneMonth, oneYear];
     }
 
@@ -200,6 +203,8 @@ const PlanSelection = ({
     onChangeSelectedProductPlans,
     filter,
 }: Props) => {
+    const canAccessWalletPlan = useFlag('WalletPlan');
+
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app == APPS.PROTONPASS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
@@ -209,7 +214,9 @@ const PlanSelection = ({
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
         PLANS.PASS,
-    ];
+        canAccessWalletPlan && PLANS.WALLET,
+    ].filter(isTruthy);
+
     const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
 
     const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
@@ -320,13 +327,16 @@ const PlanSelection = ({
             return null;
         }
 
+        // This was added to display Wallet Plus 12 even if users selects 24 months. wallet2024 doesn't have 24 cycle
+        // on the backend, so without this hack the frontend attempts to display wallet2024 24 months, doesn't
+        // find prices for it and completely hides the card of wallet plan.
+        const cycle = notHigherThanAvailableOnBackend({ [plan.Name]: 1 }, plansMap, restrictedCycle);
+
         const planTitle = shortPlan.title;
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
         const action = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
         const actionLabel =
-            plan.Name === PLANS.VPN_BUSINESS ? (
-                <ActionLabel plan={plan} currency={currency} cycle={restrictedCycle} />
-            ) : null;
+            plan.Name === PLANS.VPN_BUSINESS ? <ActionLabel plan={plan} currency={currency} cycle={cycle} /> : null;
 
         const plansList = audience === Audience.B2C ? plansListB2C : [];
         const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
@@ -336,7 +346,7 @@ const PlanSelection = ({
             ? selectedProductPlans[audience]
             : plansList[0]?.planName;
 
-        const price = getPrice(plan, restrictedCycle, plansMap);
+        const price = getPrice(plan, cycle, plansMap);
         if (price === null) {
             return null;
         }
@@ -383,7 +393,7 @@ const PlanSelection = ({
                         !isFreeSubscription(subscription) &&
                         subscription?.Renew === Renew.Disabled)
                 }
-                cycle={restrictedCycle}
+                cycle={cycle}
                 key={plan.ID}
                 price={price}
                 features={featuresElement}
@@ -402,7 +412,7 @@ const PlanSelection = ({
                             organization,
                             plans,
                         }),
-                        restrictedCycle
+                        cycle
                     );
                 }}
             />
@@ -520,6 +530,12 @@ const PlanSelection = ({
             <VpnLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
             <PassLogo variant="glyph-only" />
+            {canAccessWalletPlan && (
+                <>
+                    <Icon name="plus" alt="+" className="mx-2" />
+                    <WalletLogo variant="glyph-only" />
+                </>
+            )}
         </div>
     );
 

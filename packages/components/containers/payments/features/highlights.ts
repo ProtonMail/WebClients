@@ -31,6 +31,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.VPN]: null,
             [PLANS.PASS]: null,
             [PLANS.DRIVE]: null,
+            [PLANS.WALLET]: null,
             [PLANS.FAMILY]: {
                 text: getNUsersText(FAMILY_MAX_USERS),
                 included: true,
@@ -44,7 +45,6 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.PASS_BUSINESS]: null,
             [PLANS.VPN_PRO]: null,
             [PLANS.VPN_BUSINESS]: null,
-            [PLANS.WALLET]: null,
         },
     };
 };
@@ -137,6 +137,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN]: getSupport('priority'),
                 [PLANS.DRIVE]: getSupport('priority'),
                 [PLANS.PASS]: getSupport('priority'),
+                [PLANS.WALLET]: getSupport('priority'),
                 [PLANS.FAMILY]: getSupport('priority'),
                 [PLANS.MAIL_PRO]: getSupport('priority'),
                 [PLANS.MAIL_BUSINESS]: getSupport('priority'),
@@ -146,7 +147,6 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: get24x7Support(),
                 [PLANS.VPN_PRO]: getSupport('priority'),
                 [PLANS.VPN_BUSINESS]: getSupport('priority'),
-                [PLANS.WALLET]: null,
             },
         },
         {
@@ -158,6 +158,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN]: getSentinel(),
                 [PLANS.DRIVE]: getSentinel(),
                 [PLANS.PASS]: getSentinel(true),
+                [PLANS.WALLET]: getSentinel(true),
                 [PLANS.FAMILY]: getSentinel(true),
                 [PLANS.MAIL_PRO]: getSentinel(),
                 [PLANS.MAIL_BUSINESS]: getSentinel(true),
@@ -167,7 +168,6 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getSentinel(true),
                 [PLANS.VPN_PRO]: getSentinel(),
                 [PLANS.VPN_BUSINESS]: getSentinel(true),
-                [PLANS.WALLET]: null,
             },
         },
         {
@@ -178,6 +178,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.MAIL]: null,
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,
+                [PLANS.WALLET]: null,
                 [PLANS.PASS]: null,
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: getCustomBranding(false),
@@ -188,7 +189,6 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
-                [PLANS.WALLET]: null,
             },
         },
         {
@@ -200,6 +200,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN]: getEasySwitch(),
                 [PLANS.DRIVE]: getEasySwitch(),
                 [PLANS.PASS]: getEasySwitch(),
+                [PLANS.WALLET]: getEasySwitch(),
                 [PLANS.FAMILY]: getEasySwitch(),
                 [PLANS.MAIL_PRO]: getEasySwitch(),
                 [PLANS.MAIL_BUSINESS]: getEasySwitch(),
@@ -209,7 +210,6 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getEasySwitch(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
-                [PLANS.WALLET]: null,
             },
         },
         {
@@ -222,6 +222,7 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,
                 [PLANS.PASS]: null,
+                [PLANS.WALLET]: null,
                 [PLANS.FAMILY]: null,
                 [PLANS.MAIL_PRO]: null,
                 [PLANS.MAIL_BUSINESS]: null,
@@ -231,7 +232,6 @@ export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefau
                 [PLANS.PASS_BUSINESS]: getAdminPanel(),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
-                [PLANS.WALLET]: null,
             },
         },
     ];
