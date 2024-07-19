@@ -11,6 +11,7 @@ import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
 import type { ShareInvitationDetails } from '../_shares';
 import { useShareInvitation } from '../_shares';
+import { EXTERNAL_INVITATIONS_ERROR_NAMES } from '../_shares/useShareInvitation';
 import { useVolumesState } from '../_volumes';
 
 export const useVolumeLinkView = () => {
@@ -145,7 +146,12 @@ export const useVolumeLinkView = () => {
             })
             .catch((error) => {
                 if (error.message) {
-                    sendErrorReport(error);
+                    if (
+                        error.name !== EXTERNAL_INVITATIONS_ERROR_NAMES.DISABLED &&
+                        error.name !== EXTERNAL_INVITATIONS_ERROR_NAMES.NOT_FOUND
+                    ) {
+                        sendErrorReport(error);
+                    }
                     createNotification({
                         type: 'error',
                         text: error.message,
